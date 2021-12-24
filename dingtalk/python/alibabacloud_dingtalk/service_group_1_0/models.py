@@ -6609,11 +6609,14 @@ class QueryActiveUsersRequest(TeaModel):
         self,
         open_team_id: str = None,
         open_conversation_id: str = None,
+        top_n: int = None,
     ):
         # 开放团队ID
         self.open_team_id = open_team_id
         # 开放群ID
         self.open_conversation_id = open_conversation_id
+        # 查询topN的数据
+        self.top_n = top_n
 
     def validate(self):
         pass
@@ -6628,6 +6631,8 @@ class QueryActiveUsersRequest(TeaModel):
             result['openTeamId'] = self.open_team_id
         if self.open_conversation_id is not None:
             result['openConversationId'] = self.open_conversation_id
+        if self.top_n is not None:
+            result['topN'] = self.top_n
         return result
 
     def from_map(self, m: dict = None):
@@ -6636,6 +6641,8 @@ class QueryActiveUsersRequest(TeaModel):
             self.open_team_id = m.get('openTeamId')
         if m.get('openConversationId') is not None:
             self.open_conversation_id = m.get('openConversationId')
+        if m.get('topN') is not None:
+            self.top_n = m.get('topN')
         return self
 
 

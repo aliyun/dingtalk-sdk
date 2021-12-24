@@ -1955,6 +1955,550 @@ class BatchSendOfficialAccountOTOMessageResponse(TeaModel):
         return self
 
 
+class QueryCrmGroupChatsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryCrmGroupChatsRequest(TeaModel):
+    def __init__(
+        self,
+        relation_type: str = None,
+        next_token: str = None,
+        max_results: int = None,
+        query_dsl: str = None,
+    ):
+        # 关系类型
+        self.relation_type = relation_type
+        # 第一页不传，下一页传入上一页返回的nextToken
+        self.next_token = next_token
+        # 每页返回的结果集个数
+        self.max_results = max_results
+        # 查询DSL
+        self.query_dsl = query_dsl
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.relation_type is not None:
+            result['relationType'] = self.relation_type
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.query_dsl is not None:
+            result['queryDsl'] = self.query_dsl
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('relationType') is not None:
+            self.relation_type = m.get('relationType')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('queryDsl') is not None:
+            self.query_dsl = m.get('queryDsl')
+        return self
+
+
+class QueryCrmGroupChatsResponseBodyResultList(TeaModel):
+    def __init__(
+        self,
+        chat_id: str = None,
+        open_conversation_id: str = None,
+        open_group_set_id: str = None,
+        owner_user_id: str = None,
+        owner_user_name: str = None,
+        name: str = None,
+        member_count: int = None,
+        gmt_create: int = None,
+    ):
+        # 客户群chatId
+        self.chat_id = chat_id
+        # 客户群openConversationId
+        self.open_conversation_id = open_conversation_id
+        # 群组openGroupSetId
+        self.open_group_set_id = open_group_set_id
+        # 群主userId
+        self.owner_user_id = owner_user_id
+        # 群主userName
+        self.owner_user_name = owner_user_name
+        # 客户群名
+        self.name = name
+        # 客户群成员数
+        self.member_count = member_count
+        # 创建时间(时间戳)
+        self.gmt_create = gmt_create
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.chat_id is not None:
+            result['chatId'] = self.chat_id
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.open_group_set_id is not None:
+            result['openGroupSetId'] = self.open_group_set_id
+        if self.owner_user_id is not None:
+            result['ownerUserId'] = self.owner_user_id
+        if self.owner_user_name is not None:
+            result['ownerUserName'] = self.owner_user_name
+        if self.name is not None:
+            result['name'] = self.name
+        if self.member_count is not None:
+            result['memberCount'] = self.member_count
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('chatId') is not None:
+            self.chat_id = m.get('chatId')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('openGroupSetId') is not None:
+            self.open_group_set_id = m.get('openGroupSetId')
+        if m.get('ownerUserId') is not None:
+            self.owner_user_id = m.get('ownerUserId')
+        if m.get('ownerUserName') is not None:
+            self.owner_user_name = m.get('ownerUserName')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('memberCount') is not None:
+            self.member_count = m.get('memberCount')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        return self
+
+
+class QueryCrmGroupChatsResponseBody(TeaModel):
+    def __init__(
+        self,
+        result_list: List[QueryCrmGroupChatsResponseBodyResultList] = None,
+        has_more: bool = None,
+        next_token: str = None,
+        total_count: int = None,
+    ):
+        # 数据列表
+        self.result_list = result_list
+        # 是否还有下一页
+        self.has_more = has_more
+        # 下一页的游标
+        self.next_token = next_token
+        # 总条数，queryDsl入参为空时才会返回
+        self.total_count = total_count
+
+    def validate(self):
+        if self.result_list:
+            for k in self.result_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['resultList'] = []
+        if self.result_list is not None:
+            for k in self.result_list:
+                result['resultList'].append(k.to_map() if k else None)
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result_list = []
+        if m.get('resultList') is not None:
+            for k in m.get('resultList'):
+                temp_model = QueryCrmGroupChatsResponseBodyResultList()
+                self.result_list.append(temp_model.from_map(k))
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class QueryCrmGroupChatsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryCrmGroupChatsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryCrmGroupChatsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetGroupSetHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetGroupSetRequest(TeaModel):
+    def __init__(
+        self,
+        open_group_set_id: str = None,
+    ):
+        self.open_group_set_id = open_group_set_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_group_set_id is not None:
+            result['openGroupSetId'] = self.open_group_set_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openGroupSetId') is not None:
+            self.open_group_set_id = m.get('openGroupSetId')
+        return self
+
+
+class GetGroupSetResponseBodyOwner(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        user_id: str = None,
+    ):
+        self.name = name
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class GetGroupSetResponseBodyManager(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        user_id: str = None,
+    ):
+        self.name = name
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class GetGroupSetResponseBody(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        open_group_set_id: str = None,
+        relation_type: str = None,
+        member_quota: int = None,
+        corp_id: str = None,
+        member_count: int = None,
+        template_id: str = None,
+        owner_user_id: str = None,
+        manager_user_ids: str = None,
+        notice: str = None,
+        notice_toped: int = None,
+        owner: GetGroupSetResponseBodyOwner = None,
+        manager: List[GetGroupSetResponseBodyManager] = None,
+        last_open_conversation_id: str = None,
+        gmt_create: str = None,
+        gmt_modified: str = None,
+    ):
+        self.name = name
+        self.open_group_set_id = open_group_set_id
+        self.relation_type = relation_type
+        self.member_quota = member_quota
+        self.corp_id = corp_id
+        self.member_count = member_count
+        self.template_id = template_id
+        self.owner_user_id = owner_user_id
+        self.manager_user_ids = manager_user_ids
+        self.notice = notice
+        self.notice_toped = notice_toped
+        self.owner = owner
+        self.manager = manager
+        self.last_open_conversation_id = last_open_conversation_id
+        self.gmt_create = gmt_create
+        self.gmt_modified = gmt_modified
+
+    def validate(self):
+        if self.owner:
+            self.owner.validate()
+        if self.manager:
+            for k in self.manager:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.open_group_set_id is not None:
+            result['openGroupSetId'] = self.open_group_set_id
+        if self.relation_type is not None:
+            result['relationType'] = self.relation_type
+        if self.member_quota is not None:
+            result['memberQuota'] = self.member_quota
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.member_count is not None:
+            result['memberCount'] = self.member_count
+        if self.template_id is not None:
+            result['templateId'] = self.template_id
+        if self.owner_user_id is not None:
+            result['ownerUserId'] = self.owner_user_id
+        if self.manager_user_ids is not None:
+            result['managerUserIds'] = self.manager_user_ids
+        if self.notice is not None:
+            result['notice'] = self.notice
+        if self.notice_toped is not None:
+            result['noticeToped'] = self.notice_toped
+        if self.owner is not None:
+            result['owner'] = self.owner.to_map()
+        result['manager'] = []
+        if self.manager is not None:
+            for k in self.manager:
+                result['manager'].append(k.to_map() if k else None)
+        if self.last_open_conversation_id is not None:
+            result['lastOpenConversationId'] = self.last_open_conversation_id
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.gmt_modified is not None:
+            result['gmtModified'] = self.gmt_modified
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('openGroupSetId') is not None:
+            self.open_group_set_id = m.get('openGroupSetId')
+        if m.get('relationType') is not None:
+            self.relation_type = m.get('relationType')
+        if m.get('memberQuota') is not None:
+            self.member_quota = m.get('memberQuota')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('memberCount') is not None:
+            self.member_count = m.get('memberCount')
+        if m.get('templateId') is not None:
+            self.template_id = m.get('templateId')
+        if m.get('ownerUserId') is not None:
+            self.owner_user_id = m.get('ownerUserId')
+        if m.get('managerUserIds') is not None:
+            self.manager_user_ids = m.get('managerUserIds')
+        if m.get('notice') is not None:
+            self.notice = m.get('notice')
+        if m.get('noticeToped') is not None:
+            self.notice_toped = m.get('noticeToped')
+        if m.get('owner') is not None:
+            temp_model = GetGroupSetResponseBodyOwner()
+            self.owner = temp_model.from_map(m['owner'])
+        self.manager = []
+        if m.get('manager') is not None:
+            for k in m.get('manager'):
+                temp_model = GetGroupSetResponseBodyManager()
+                self.manager.append(temp_model.from_map(k))
+        if m.get('lastOpenConversationId') is not None:
+            self.last_open_conversation_id = m.get('lastOpenConversationId')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('gmtModified') is not None:
+            self.gmt_modified = m.get('gmtModified')
+        return self
+
+
+class GetGroupSetResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetGroupSetResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetGroupSetResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateRelationMetaHeaders(TeaModel):
     def __init__(
         self,
@@ -2754,6 +3298,396 @@ class UpdateRelationMetaFieldResponse(TeaModel):
         return self
 
 
+class ListGroupSetHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListGroupSetRequest(TeaModel):
+    def __init__(
+        self,
+        next_token: str = None,
+        max_results: int = None,
+        query_dsl: str = None,
+        relation_type: str = None,
+    ):
+        # 第一页不传，下一页传入上一页返回的nextToken
+        self.next_token = next_token
+        # 每页返回的结果集个数
+        self.max_results = max_results
+        # 查询DSL
+        self.query_dsl = query_dsl
+        # 关系类型
+        self.relation_type = relation_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.query_dsl is not None:
+            result['queryDsl'] = self.query_dsl
+        if self.relation_type is not None:
+            result['relationType'] = self.relation_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('queryDsl') is not None:
+            self.query_dsl = m.get('queryDsl')
+        if m.get('relationType') is not None:
+            self.relation_type = m.get('relationType')
+        return self
+
+
+class ListGroupSetResponseBodyResultListOwner(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        user_id: str = None,
+    ):
+        # 群主姓名
+        self.name = name
+        # 群主userId
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class ListGroupSetResponseBodyResultListManager(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        user_id: str = None,
+    ):
+        # 群管理员姓名
+        self.name = name
+        # 群管理员userId
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class ListGroupSetResponseBodyResultList(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        open_group_set_id: str = None,
+        relation_type: str = None,
+        member_quota: int = None,
+        corp_id: str = None,
+        member_count: int = None,
+        template_id: str = None,
+        owner_user_id: str = None,
+        manager_user_ids: str = None,
+        notice: str = None,
+        notice_toped: int = None,
+        owner: ListGroupSetResponseBodyResultListOwner = None,
+        manager: List[ListGroupSetResponseBodyResultListManager] = None,
+        last_open_conversation_id: str = None,
+        gmt_create: str = None,
+        gmt_modified: str = None,
+    ):
+        # 群组名
+        self.name = name
+        # 群组openGroupSetId
+        self.open_group_set_id = open_group_set_id
+        # 关系类型
+        self.relation_type = relation_type
+        # 单个群的人数上限
+        self.member_quota = member_quota
+        # 企业corpId
+        self.corp_id = corp_id
+        # 群组内所有群的成员数量
+        self.member_count = member_count
+        # 群模板id
+        self.template_id = template_id
+        # 群主userId，裂变出的新群会自动设置该userId为群主
+        self.owner_user_id = owner_user_id
+        # 群管理员userId列表，多个用逗号隔开，裂变出的新群会自动设置这些userId为群管理员
+        self.manager_user_ids = manager_user_ids
+        # 群公告文本，裂变出的新群会自动设置上该群公告
+        self.notice = notice
+        # 群公告是否置顶，0：不置顶，1：置顶。裂变出的新群会自动设置上该属性
+        self.notice_toped = notice_toped
+        # 群主
+        self.owner = owner
+        # 群管理员列表
+        self.manager = manager
+        # 最新裂变群的群openConversationId
+        self.last_open_conversation_id = last_open_conversation_id
+        # 创建时间
+        self.gmt_create = gmt_create
+        # 修改时间
+        self.gmt_modified = gmt_modified
+
+    def validate(self):
+        if self.owner:
+            self.owner.validate()
+        if self.manager:
+            for k in self.manager:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.open_group_set_id is not None:
+            result['openGroupSetId'] = self.open_group_set_id
+        if self.relation_type is not None:
+            result['relationType'] = self.relation_type
+        if self.member_quota is not None:
+            result['memberQuota'] = self.member_quota
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.member_count is not None:
+            result['memberCount'] = self.member_count
+        if self.template_id is not None:
+            result['templateId'] = self.template_id
+        if self.owner_user_id is not None:
+            result['ownerUserId'] = self.owner_user_id
+        if self.manager_user_ids is not None:
+            result['managerUserIds'] = self.manager_user_ids
+        if self.notice is not None:
+            result['notice'] = self.notice
+        if self.notice_toped is not None:
+            result['noticeToped'] = self.notice_toped
+        if self.owner is not None:
+            result['owner'] = self.owner.to_map()
+        result['manager'] = []
+        if self.manager is not None:
+            for k in self.manager:
+                result['manager'].append(k.to_map() if k else None)
+        if self.last_open_conversation_id is not None:
+            result['lastOpenConversationId'] = self.last_open_conversation_id
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.gmt_modified is not None:
+            result['gmtModified'] = self.gmt_modified
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('openGroupSetId') is not None:
+            self.open_group_set_id = m.get('openGroupSetId')
+        if m.get('relationType') is not None:
+            self.relation_type = m.get('relationType')
+        if m.get('memberQuota') is not None:
+            self.member_quota = m.get('memberQuota')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('memberCount') is not None:
+            self.member_count = m.get('memberCount')
+        if m.get('templateId') is not None:
+            self.template_id = m.get('templateId')
+        if m.get('ownerUserId') is not None:
+            self.owner_user_id = m.get('ownerUserId')
+        if m.get('managerUserIds') is not None:
+            self.manager_user_ids = m.get('managerUserIds')
+        if m.get('notice') is not None:
+            self.notice = m.get('notice')
+        if m.get('noticeToped') is not None:
+            self.notice_toped = m.get('noticeToped')
+        if m.get('owner') is not None:
+            temp_model = ListGroupSetResponseBodyResultListOwner()
+            self.owner = temp_model.from_map(m['owner'])
+        self.manager = []
+        if m.get('manager') is not None:
+            for k in m.get('manager'):
+                temp_model = ListGroupSetResponseBodyResultListManager()
+                self.manager.append(temp_model.from_map(k))
+        if m.get('lastOpenConversationId') is not None:
+            self.last_open_conversation_id = m.get('lastOpenConversationId')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('gmtModified') is not None:
+            self.gmt_modified = m.get('gmtModified')
+        return self
+
+
+class ListGroupSetResponseBody(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        next_token: str = None,
+        result_list: List[ListGroupSetResponseBodyResultList] = None,
+        total_count: int = None,
+    ):
+        # 是否有下一页
+        self.has_more = has_more
+        # 下一页的游标
+        self.next_token = next_token
+        # 群组列表
+        self.result_list = result_list
+        # 总条数，queryDsl入参为空时才会返回
+        self.total_count = total_count
+
+    def validate(self):
+        if self.result_list:
+            for k in self.result_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        result['resultList'] = []
+        if self.result_list is not None:
+            for k in self.result_list:
+                result['resultList'].append(k.to_map() if k else None)
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        self.result_list = []
+        if m.get('resultList') is not None:
+            for k in m.get('resultList'):
+                temp_model = ListGroupSetResponseBodyResultList()
+                self.result_list.append(temp_model.from_map(k))
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class ListGroupSetResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ListGroupSetResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ListGroupSetResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class SendOfficialAccountOTOMessageHeaders(TeaModel):
     def __init__(
         self,
@@ -3465,6 +4399,153 @@ class GetOfficialAccountOTOMessageResultResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = GetOfficialAccountOTOMessageResultResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetCrmGroupChatHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetCrmGroupChatResponseBody(TeaModel):
+    def __init__(
+        self,
+        chat_id: str = None,
+        open_conversation_id: str = None,
+        open_group_set_id: str = None,
+        owner_user_id: str = None,
+        owner_user_name: str = None,
+        name: str = None,
+        member_count: int = None,
+        gmt_create: int = None,
+    ):
+        # 客户群chatId
+        self.chat_id = chat_id
+        # 客户群openConversationId
+        self.open_conversation_id = open_conversation_id
+        # 群组openGroupSetId
+        self.open_group_set_id = open_group_set_id
+        # 群主userId
+        self.owner_user_id = owner_user_id
+        # 群主userName
+        self.owner_user_name = owner_user_name
+        # 客户群名
+        self.name = name
+        # 客户群成员数
+        self.member_count = member_count
+        # 创建时间(时间戳)
+        self.gmt_create = gmt_create
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.chat_id is not None:
+            result['chatId'] = self.chat_id
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.open_group_set_id is not None:
+            result['openGroupSetId'] = self.open_group_set_id
+        if self.owner_user_id is not None:
+            result['ownerUserId'] = self.owner_user_id
+        if self.owner_user_name is not None:
+            result['ownerUserName'] = self.owner_user_name
+        if self.name is not None:
+            result['name'] = self.name
+        if self.member_count is not None:
+            result['memberCount'] = self.member_count
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('chatId') is not None:
+            self.chat_id = m.get('chatId')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('openGroupSetId') is not None:
+            self.open_group_set_id = m.get('openGroupSetId')
+        if m.get('ownerUserId') is not None:
+            self.owner_user_id = m.get('ownerUserId')
+        if m.get('ownerUserName') is not None:
+            self.owner_user_name = m.get('ownerUserName')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('memberCount') is not None:
+            self.member_count = m.get('memberCount')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        return self
+
+
+class GetCrmGroupChatResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetCrmGroupChatResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetCrmGroupChatResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -4553,11 +5634,15 @@ class QueryCrmPersonalCustomerResponseBody(TeaModel):
         has_more: bool = None,
         next_token: str = None,
         max_results: int = None,
+        total_count: int = None,
     ):
         self.values = values
         self.has_more = has_more
         self.next_token = next_token
+        # 当前分页条数
         self.max_results = max_results
+        # 总条数
+        self.total_count = total_count
 
     def validate(self):
         if self.values:
@@ -4581,6 +5666,8 @@ class QueryCrmPersonalCustomerResponseBody(TeaModel):
             result['nextToken'] = self.next_token
         if self.max_results is not None:
             result['maxResults'] = self.max_results
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
         return result
 
     def from_map(self, m: dict = None):
@@ -4596,6 +5683,8 @@ class QueryCrmPersonalCustomerResponseBody(TeaModel):
             self.next_token = m.get('nextToken')
         if m.get('maxResults') is not None:
             self.max_results = m.get('maxResults')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
         return self
 
 
@@ -5054,6 +6143,345 @@ class DeleteRelationMetaFieldResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = DeleteRelationMetaFieldResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CreateGroupSetHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateGroupSetRequest(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        owner_user_id: str = None,
+        creator_user_id: str = None,
+        template_id: str = None,
+        member_quota: int = None,
+        manager_user_ids: str = None,
+        notice: str = None,
+        notice_toped: int = None,
+        relation_type: str = None,
+    ):
+        self.name = name
+        self.owner_user_id = owner_user_id
+        self.creator_user_id = creator_user_id
+        self.template_id = template_id
+        self.member_quota = member_quota
+        self.manager_user_ids = manager_user_ids
+        self.notice = notice
+        self.notice_toped = notice_toped
+        self.relation_type = relation_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.owner_user_id is not None:
+            result['ownerUserId'] = self.owner_user_id
+        if self.creator_user_id is not None:
+            result['creatorUserId'] = self.creator_user_id
+        if self.template_id is not None:
+            result['templateId'] = self.template_id
+        if self.member_quota is not None:
+            result['memberQuota'] = self.member_quota
+        if self.manager_user_ids is not None:
+            result['managerUserIds'] = self.manager_user_ids
+        if self.notice is not None:
+            result['notice'] = self.notice
+        if self.notice_toped is not None:
+            result['noticeToped'] = self.notice_toped
+        if self.relation_type is not None:
+            result['relationType'] = self.relation_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('ownerUserId') is not None:
+            self.owner_user_id = m.get('ownerUserId')
+        if m.get('creatorUserId') is not None:
+            self.creator_user_id = m.get('creatorUserId')
+        if m.get('templateId') is not None:
+            self.template_id = m.get('templateId')
+        if m.get('memberQuota') is not None:
+            self.member_quota = m.get('memberQuota')
+        if m.get('managerUserIds') is not None:
+            self.manager_user_ids = m.get('managerUserIds')
+        if m.get('notice') is not None:
+            self.notice = m.get('notice')
+        if m.get('noticeToped') is not None:
+            self.notice_toped = m.get('noticeToped')
+        if m.get('relationType') is not None:
+            self.relation_type = m.get('relationType')
+        return self
+
+
+class CreateGroupSetResponseBodyOwner(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        user_id: str = None,
+    ):
+        self.name = name
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class CreateGroupSetResponseBodyManager(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        user_id: str = None,
+    ):
+        self.name = name
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class CreateGroupSetResponseBody(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        open_group_set_id: str = None,
+        relation_type: str = None,
+        member_quota: int = None,
+        corp_id: str = None,
+        member_count: int = None,
+        template_id: str = None,
+        owner_user_id: str = None,
+        manager_user_ids: str = None,
+        notice: str = None,
+        notice_toped: int = None,
+        owner: CreateGroupSetResponseBodyOwner = None,
+        manager: List[CreateGroupSetResponseBodyManager] = None,
+        last_open_conversation_id: str = None,
+        gmt_create: str = None,
+        gmt_modified: str = None,
+    ):
+        self.name = name
+        self.open_group_set_id = open_group_set_id
+        self.relation_type = relation_type
+        self.member_quota = member_quota
+        self.corp_id = corp_id
+        self.member_count = member_count
+        self.template_id = template_id
+        self.owner_user_id = owner_user_id
+        self.manager_user_ids = manager_user_ids
+        self.notice = notice
+        self.notice_toped = notice_toped
+        self.owner = owner
+        self.manager = manager
+        self.last_open_conversation_id = last_open_conversation_id
+        self.gmt_create = gmt_create
+        self.gmt_modified = gmt_modified
+
+    def validate(self):
+        if self.owner:
+            self.owner.validate()
+        if self.manager:
+            for k in self.manager:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.open_group_set_id is not None:
+            result['openGroupSetId'] = self.open_group_set_id
+        if self.relation_type is not None:
+            result['relationType'] = self.relation_type
+        if self.member_quota is not None:
+            result['memberQuota'] = self.member_quota
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.member_count is not None:
+            result['memberCount'] = self.member_count
+        if self.template_id is not None:
+            result['templateId'] = self.template_id
+        if self.owner_user_id is not None:
+            result['ownerUserId'] = self.owner_user_id
+        if self.manager_user_ids is not None:
+            result['managerUserIds'] = self.manager_user_ids
+        if self.notice is not None:
+            result['notice'] = self.notice
+        if self.notice_toped is not None:
+            result['noticeToped'] = self.notice_toped
+        if self.owner is not None:
+            result['owner'] = self.owner.to_map()
+        result['manager'] = []
+        if self.manager is not None:
+            for k in self.manager:
+                result['manager'].append(k.to_map() if k else None)
+        if self.last_open_conversation_id is not None:
+            result['lastOpenConversationId'] = self.last_open_conversation_id
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.gmt_modified is not None:
+            result['gmtModified'] = self.gmt_modified
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('openGroupSetId') is not None:
+            self.open_group_set_id = m.get('openGroupSetId')
+        if m.get('relationType') is not None:
+            self.relation_type = m.get('relationType')
+        if m.get('memberQuota') is not None:
+            self.member_quota = m.get('memberQuota')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('memberCount') is not None:
+            self.member_count = m.get('memberCount')
+        if m.get('templateId') is not None:
+            self.template_id = m.get('templateId')
+        if m.get('ownerUserId') is not None:
+            self.owner_user_id = m.get('ownerUserId')
+        if m.get('managerUserIds') is not None:
+            self.manager_user_ids = m.get('managerUserIds')
+        if m.get('notice') is not None:
+            self.notice = m.get('notice')
+        if m.get('noticeToped') is not None:
+            self.notice_toped = m.get('noticeToped')
+        if m.get('owner') is not None:
+            temp_model = CreateGroupSetResponseBodyOwner()
+            self.owner = temp_model.from_map(m['owner'])
+        self.manager = []
+        if m.get('manager') is not None:
+            for k in m.get('manager'):
+                temp_model = CreateGroupSetResponseBodyManager()
+                self.manager.append(temp_model.from_map(k))
+        if m.get('lastOpenConversationId') is not None:
+            self.last_open_conversation_id = m.get('lastOpenConversationId')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('gmtModified') is not None:
+            self.gmt_modified = m.get('gmtModified')
+        return self
+
+
+class CreateGroupSetResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CreateGroupSetResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CreateGroupSetResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -9463,6 +10891,7 @@ class AddCrmPersonalCustomerRequest(TeaModel):
         data: Dict[str, Any] = None,
         extend_data: Dict[str, Any] = None,
         permission: AddCrmPersonalCustomerRequestPermission = None,
+        relation_type: str = None,
         skip_duplicate_check: bool = None,
         action: str = None,
     ):
@@ -9476,6 +10905,8 @@ class AddCrmPersonalCustomerRequest(TeaModel):
         self.extend_data = extend_data
         # 权限
         self.permission = permission
+        # 关系类型
+        self.relation_type = relation_type
         # 跳过uk查重
         self.skip_duplicate_check = skip_duplicate_check
         # 公海领取客户：publicDraw 公海分配客户：publicAssign 其余场景：（不用传）
@@ -9501,6 +10932,8 @@ class AddCrmPersonalCustomerRequest(TeaModel):
             result['extendData'] = self.extend_data
         if self.permission is not None:
             result['permission'] = self.permission.to_map()
+        if self.relation_type is not None:
+            result['relationType'] = self.relation_type
         if self.skip_duplicate_check is not None:
             result['skipDuplicateCheck'] = self.skip_duplicate_check
         if self.action is not None:
@@ -9520,6 +10953,8 @@ class AddCrmPersonalCustomerRequest(TeaModel):
         if m.get('permission') is not None:
             temp_model = AddCrmPersonalCustomerRequestPermission()
             self.permission = temp_model.from_map(m['permission'])
+        if m.get('relationType') is not None:
+            self.relation_type = m.get('relationType')
         if m.get('skipDuplicateCheck') is not None:
             self.skip_duplicate_check = m.get('skipDuplicateCheck')
         if m.get('action') is not None:
@@ -10316,6 +11751,142 @@ class AbandonCustomerResponse(TeaModel):
         if m.get('body') is not None:
             temp_model = AbandonCustomerResponseBody()
             self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateGroupSetHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateGroupSetRequest(TeaModel):
+    def __init__(
+        self,
+        open_group_set_id: str = None,
+        name: str = None,
+        member_quota: int = None,
+        owner_user_id: str = None,
+        manager_user_ids: str = None,
+        notice: str = None,
+        notice_toped: int = None,
+        template_id: str = None,
+    ):
+        self.open_group_set_id = open_group_set_id
+        self.name = name
+        self.member_quota = member_quota
+        self.owner_user_id = owner_user_id
+        self.manager_user_ids = manager_user_ids
+        self.notice = notice
+        self.notice_toped = notice_toped
+        self.template_id = template_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_group_set_id is not None:
+            result['openGroupSetId'] = self.open_group_set_id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.member_quota is not None:
+            result['memberQuota'] = self.member_quota
+        if self.owner_user_id is not None:
+            result['ownerUserId'] = self.owner_user_id
+        if self.manager_user_ids is not None:
+            result['managerUserIds'] = self.manager_user_ids
+        if self.notice is not None:
+            result['notice'] = self.notice
+        if self.notice_toped is not None:
+            result['noticeToped'] = self.notice_toped
+        if self.template_id is not None:
+            result['templateId'] = self.template_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openGroupSetId') is not None:
+            self.open_group_set_id = m.get('openGroupSetId')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('memberQuota') is not None:
+            self.member_quota = m.get('memberQuota')
+        if m.get('ownerUserId') is not None:
+            self.owner_user_id = m.get('ownerUserId')
+        if m.get('managerUserIds') is not None:
+            self.manager_user_ids = m.get('managerUserIds')
+        if m.get('notice') is not None:
+            self.notice = m.get('notice')
+        if m.get('noticeToped') is not None:
+            self.notice_toped = m.get('noticeToped')
+        if m.get('templateId') is not None:
+            self.template_id = m.get('templateId')
+        return self
+
+
+class UpdateGroupSetResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: bool = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            self.body = m.get('body')
         return self
 
 

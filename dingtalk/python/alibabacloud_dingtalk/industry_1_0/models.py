@@ -4,6 +4,245 @@ from Tea.model import TeaModel
 from typing import Dict, List
 
 
+class QueryHospitalDistrictInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryHospitalDistrictInfoRequest(TeaModel):
+    def __init__(
+        self,
+        page_size: int = None,
+        page_number: int = None,
+    ):
+        # 分页查询分页大小
+        self.page_size = page_size
+        # 分页查询页码
+        self.page_number = page_number
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        return self
+
+
+class QueryHospitalDistrictInfoResponseBodyContent(TeaModel):
+    def __init__(
+        self,
+        id: int = None,
+        district_name: str = None,
+        district_type: int = None,
+        parent_district_id: int = None,
+        address: str = None,
+        deleted: int = None,
+        gmt_create: str = None,
+        gmt_modified: str = None,
+    ):
+        # 主键
+        self.id = id
+        # 院区或病区名称
+        self.district_name = district_name
+        # 类型，1：院区；2：病区
+        self.district_type = district_type
+        # 院区id
+        self.parent_district_id = parent_district_id
+        # 病区对应的物理地址
+        self.address = address
+        # 删除，0:正常，其他：已删除
+        self.deleted = deleted
+        # 创建时间
+        self.gmt_create = gmt_create
+        # 修改时间
+        self.gmt_modified = gmt_modified
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.district_name is not None:
+            result['districtName'] = self.district_name
+        if self.district_type is not None:
+            result['districtType'] = self.district_type
+        if self.parent_district_id is not None:
+            result['parentDistrictId'] = self.parent_district_id
+        if self.address is not None:
+            result['address'] = self.address
+        if self.deleted is not None:
+            result['deleted'] = self.deleted
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.gmt_modified is not None:
+            result['gmtModified'] = self.gmt_modified
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('districtName') is not None:
+            self.district_name = m.get('districtName')
+        if m.get('districtType') is not None:
+            self.district_type = m.get('districtType')
+        if m.get('parentDistrictId') is not None:
+            self.parent_district_id = m.get('parentDistrictId')
+        if m.get('address') is not None:
+            self.address = m.get('address')
+        if m.get('deleted') is not None:
+            self.deleted = m.get('deleted')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('gmtModified') is not None:
+            self.gmt_modified = m.get('gmtModified')
+        return self
+
+
+class QueryHospitalDistrictInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: List[QueryHospitalDistrictInfoResponseBodyContent] = None,
+        total_pages: int = None,
+        total_count: int = None,
+        current_page: int = None,
+    ):
+        # 院区病区详情
+        self.content = content
+        # 总页数
+        self.total_pages = total_pages
+        # 数据总量
+        self.total_count = total_count
+        # 当前页码
+        self.current_page = current_page
+
+    def validate(self):
+        if self.content:
+            for k in self.content:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['content'] = []
+        if self.content is not None:
+            for k in self.content:
+                result['content'].append(k.to_map() if k else None)
+        if self.total_pages is not None:
+            result['totalPages'] = self.total_pages
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        if self.current_page is not None:
+            result['currentPage'] = self.current_page
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.content = []
+        if m.get('content') is not None:
+            for k in m.get('content'):
+                temp_model = QueryHospitalDistrictInfoResponseBodyContent()
+                self.content.append(temp_model.from_map(k))
+        if m.get('totalPages') is not None:
+            self.total_pages = m.get('totalPages')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        if m.get('currentPage') is not None:
+            self.current_page = m.get('currentPage')
+        return self
+
+
+class QueryHospitalDistrictInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryHospitalDistrictInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryHospitalDistrictInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryUserInfoHeaders(TeaModel):
     def __init__(
         self,
@@ -1059,6 +1298,189 @@ class QueryUserRolesResponse(TeaModel):
         return self
 
 
+class QueryHospitalRolesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryHospitalRolesResponseBodyContent(TeaModel):
+    def __init__(
+        self,
+        id: int = None,
+        gmt_create: str = None,
+        is_deleted: int = None,
+        role_code: str = None,
+        role_name: str = None,
+        remark: str = None,
+        sort: int = None,
+        read_only: int = None,
+    ):
+        # 主键
+        self.id = id
+        # 修改时间
+        self.gmt_create = gmt_create
+        # 是否已删除，默认0未删除，1已删除
+        self.is_deleted = is_deleted
+        # 角色编码
+        self.role_code = role_code
+        # 角色名称
+        self.role_name = role_name
+        # 备注
+        self.remark = remark
+        # 排序，数字越小越靠前，默认0
+        self.sort = sort
+        # 角色关联权限点是否只读
+        self.read_only = read_only
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.is_deleted is not None:
+            result['isDeleted'] = self.is_deleted
+        if self.role_code is not None:
+            result['roleCode'] = self.role_code
+        if self.role_name is not None:
+            result['roleName'] = self.role_name
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.sort is not None:
+            result['sort'] = self.sort
+        if self.read_only is not None:
+            result['readOnly'] = self.read_only
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('isDeleted') is not None:
+            self.is_deleted = m.get('isDeleted')
+        if m.get('roleCode') is not None:
+            self.role_code = m.get('roleCode')
+        if m.get('roleName') is not None:
+            self.role_name = m.get('roleName')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('sort') is not None:
+            self.sort = m.get('sort')
+        if m.get('readOnly') is not None:
+            self.read_only = m.get('readOnly')
+        return self
+
+
+class QueryHospitalRolesResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: List[QueryHospitalRolesResponseBodyContent] = None,
+    ):
+        # 角色列表
+        self.content = content
+
+    def validate(self):
+        if self.content:
+            for k in self.content:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['content'] = []
+        if self.content is not None:
+            for k in self.content:
+                result['content'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.content = []
+        if m.get('content') is not None:
+            for k in m.get('content'):
+                temp_model = QueryHospitalRolesResponseBodyContent()
+                self.content.append(temp_model.from_map(k))
+        return self
+
+
+class QueryHospitalRolesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryHospitalRolesResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryHospitalRolesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryAllGroupHeaders(TeaModel):
     def __init__(
         self,
@@ -1751,6 +2173,238 @@ class QueryBizOptLogResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = QueryBizOptLogResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryHospitalRoleUserInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryHospitalRoleUserInfoRequest(TeaModel):
+    def __init__(
+        self,
+        page_size: int = None,
+        page_number: int = None,
+    ):
+        # 分页查询分页大小
+        self.page_size = page_size
+        # 分页查询页码
+        self.page_number = page_number
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        return self
+
+
+class QueryHospitalRoleUserInfoResponseBodyContent(TeaModel):
+    def __init__(
+        self,
+        user_code: str = None,
+        user_name: str = None,
+        job_number: str = None,
+        role_code: str = None,
+        role_name: str = None,
+        gmt_create: str = None,
+        gmt_modified: str = None,
+    ):
+        # 用户编码
+        self.user_code = user_code
+        # 用户名称
+        self.user_name = user_name
+        # 用户工号
+        self.job_number = job_number
+        # 角色编码
+        self.role_code = role_code
+        # 角色名称
+        self.role_name = role_name
+        # gmtCreate
+        self.gmt_create = gmt_create
+        # 修改时间
+        self.gmt_modified = gmt_modified
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_code is not None:
+            result['userCode'] = self.user_code
+        if self.user_name is not None:
+            result['userName'] = self.user_name
+        if self.job_number is not None:
+            result['jobNumber'] = self.job_number
+        if self.role_code is not None:
+            result['roleCode'] = self.role_code
+        if self.role_name is not None:
+            result['roleName'] = self.role_name
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.gmt_modified is not None:
+            result['gmtModified'] = self.gmt_modified
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userCode') is not None:
+            self.user_code = m.get('userCode')
+        if m.get('userName') is not None:
+            self.user_name = m.get('userName')
+        if m.get('jobNumber') is not None:
+            self.job_number = m.get('jobNumber')
+        if m.get('roleCode') is not None:
+            self.role_code = m.get('roleCode')
+        if m.get('roleName') is not None:
+            self.role_name = m.get('roleName')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('gmtModified') is not None:
+            self.gmt_modified = m.get('gmtModified')
+        return self
+
+
+class QueryHospitalRoleUserInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: List[QueryHospitalRoleUserInfoResponseBodyContent] = None,
+        total_pages: int = None,
+        total_count: int = None,
+        current_page: int = None,
+    ):
+        # 角色人员信息
+        self.content = content
+        # 总页数
+        self.total_pages = total_pages
+        # 总数量
+        self.total_count = total_count
+        # 当前页码
+        self.current_page = current_page
+
+    def validate(self):
+        if self.content:
+            for k in self.content:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['content'] = []
+        if self.content is not None:
+            for k in self.content:
+                result['content'].append(k.to_map() if k else None)
+        if self.total_pages is not None:
+            result['totalPages'] = self.total_pages
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        if self.current_page is not None:
+            result['currentPage'] = self.current_page
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.content = []
+        if m.get('content') is not None:
+            for k in m.get('content'):
+                temp_model = QueryHospitalRoleUserInfoResponseBodyContent()
+                self.content.append(temp_model.from_map(k))
+        if m.get('totalPages') is not None:
+            self.total_pages = m.get('totalPages')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        if m.get('currentPage') is not None:
+            self.current_page = m.get('currentPage')
+        return self
+
+
+class QueryHospitalRoleUserInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryHospitalRoleUserInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryHospitalRoleUserInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -2820,6 +3474,11 @@ class QueryUserExtInfoResponseBodyContent(TeaModel):
         user_extend_key: str = None,
         user_extend_value: str = None,
         user_extend_display_name: str = None,
+        org_id: str = None,
+        status: int = None,
+        user_code: str = None,
+        gmt_create: str = None,
+        gmt_modified: str = None,
     ):
         # 扩展属性Key
         self.user_extend_key = user_extend_key
@@ -2827,6 +3486,16 @@ class QueryUserExtInfoResponseBodyContent(TeaModel):
         self.user_extend_value = user_extend_value
         # 扩展属性描述
         self.user_extend_display_name = user_extend_display_name
+        # 组织id
+        self.org_id = org_id
+        # 状态：0-有效，1-无效
+        self.status = status
+        # 用户标识
+        self.user_code = user_code
+        # 创建时间
+        self.gmt_create = gmt_create
+        # 修改时间
+        self.gmt_modified = gmt_modified
 
     def validate(self):
         pass
@@ -2843,6 +3512,16 @@ class QueryUserExtInfoResponseBodyContent(TeaModel):
             result['userExtendValue'] = self.user_extend_value
         if self.user_extend_display_name is not None:
             result['userExtendDisplayName'] = self.user_extend_display_name
+        if self.org_id is not None:
+            result['orgId'] = self.org_id
+        if self.status is not None:
+            result['status'] = self.status
+        if self.user_code is not None:
+            result['userCode'] = self.user_code
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.gmt_modified is not None:
+            result['gmtModified'] = self.gmt_modified
         return result
 
     def from_map(self, m: dict = None):
@@ -2853,6 +3532,16 @@ class QueryUserExtInfoResponseBodyContent(TeaModel):
             self.user_extend_value = m.get('userExtendValue')
         if m.get('userExtendDisplayName') is not None:
             self.user_extend_display_name = m.get('userExtendDisplayName')
+        if m.get('orgId') is not None:
+            self.org_id = m.get('orgId')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('userCode') is not None:
+            self.user_code = m.get('userCode')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('gmtModified') is not None:
+            self.gmt_modified = m.get('gmtModified')
         return self
 
 
@@ -3152,6 +3841,34 @@ class QueryAllDepartmentRequest(TeaModel):
         return self
 
 
+class QueryAllDepartmentResponseBodyContentDeptAndExtDepartmentWardIdList(TeaModel):
+    def __init__(
+        self,
+        id: int = None,
+    ):
+        # 病区id
+        self.id = id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        return self
+
+
 class QueryAllDepartmentResponseBodyContentDeptAndExtDepartment(TeaModel):
     def __init__(
         self,
@@ -3167,6 +3884,7 @@ class QueryAllDepartmentResponseBodyContentDeptAndExtDepartment(TeaModel):
         remark: str = None,
         dept_name: str = None,
         name: str = None,
+        ward_id_list: List[QueryAllDepartmentResponseBodyContentDeptAndExtDepartmentWardIdList] = None,
     ):
         # 科室ID
         self.id = id
@@ -3192,9 +3910,14 @@ class QueryAllDepartmentResponseBodyContentDeptAndExtDepartment(TeaModel):
         self.dept_name = dept_name
         # 科室名称，同deptName
         self.name = name
+        # 病区id列表
+        self.ward_id_list = ward_id_list
 
     def validate(self):
-        pass
+        if self.ward_id_list:
+            for k in self.ward_id_list:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -3226,6 +3949,10 @@ class QueryAllDepartmentResponseBodyContentDeptAndExtDepartment(TeaModel):
             result['deptName'] = self.dept_name
         if self.name is not None:
             result['name'] = self.name
+        result['wardIdList'] = []
+        if self.ward_id_list is not None:
+            for k in self.ward_id_list:
+                result['wardIdList'].append(k.to_map() if k else None)
         return result
 
     def from_map(self, m: dict = None):
@@ -3254,6 +3981,11 @@ class QueryAllDepartmentResponseBodyContentDeptAndExtDepartment(TeaModel):
             self.dept_name = m.get('deptName')
         if m.get('name') is not None:
             self.name = m.get('name')
+        self.ward_id_list = []
+        if m.get('wardIdList') is not None:
+            for k in m.get('wardIdList'):
+                temp_model = QueryAllDepartmentResponseBodyContentDeptAndExtDepartmentWardIdList()
+                self.ward_id_list.append(temp_model.from_map(k))
         return self
 
 

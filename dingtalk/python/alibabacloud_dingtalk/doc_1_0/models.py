@@ -562,6 +562,7 @@ class CreateWorkspaceDocRequest(TeaModel):
         name: str = None,
         doc_type: str = None,
         operator_id: str = None,
+        parent_node_id: str = None,
     ):
         # 文档名
         self.name = name
@@ -569,6 +570,8 @@ class CreateWorkspaceDocRequest(TeaModel):
         self.doc_type = doc_type
         # 操作人unionId
         self.operator_id = operator_id
+        # 父节点nodeId
+        self.parent_node_id = parent_node_id
 
     def validate(self):
         pass
@@ -585,6 +588,8 @@ class CreateWorkspaceDocRequest(TeaModel):
             result['docType'] = self.doc_type
         if self.operator_id is not None:
             result['operatorId'] = self.operator_id
+        if self.parent_node_id is not None:
+            result['parentNodeId'] = self.parent_node_id
         return result
 
     def from_map(self, m: dict = None):
@@ -595,6 +600,8 @@ class CreateWorkspaceDocRequest(TeaModel):
             self.doc_type = m.get('docType')
         if m.get('operatorId') is not None:
             self.operator_id = m.get('operatorId')
+        if m.get('parentNodeId') is not None:
+            self.parent_node_id = m.get('parentNodeId')
         return self
 
 

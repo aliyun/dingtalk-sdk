@@ -23,6 +23,74 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def query_hospital_district_info(
+        self,
+        request: dingtalkindustry__1__0_models.QueryHospitalDistrictInfoRequest,
+    ) -> dingtalkindustry__1__0_models.QueryHospitalDistrictInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.QueryHospitalDistrictInfoHeaders()
+        return self.query_hospital_district_info_with_options(request, headers, runtime)
+
+    async def query_hospital_district_info_async(
+        self,
+        request: dingtalkindustry__1__0_models.QueryHospitalDistrictInfoRequest,
+    ) -> dingtalkindustry__1__0_models.QueryHospitalDistrictInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.QueryHospitalDistrictInfoHeaders()
+        return await self.query_hospital_district_info_with_options_async(request, headers, runtime)
+
+    def query_hospital_district_info_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.QueryHospitalDistrictInfoRequest,
+        headers: dingtalkindustry__1__0_models.QueryHospitalDistrictInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.QueryHospitalDistrictInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.QueryHospitalDistrictInfoResponse(),
+            self.do_roarequest('QueryHospitalDistrictInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/districts', 'json', req, runtime)
+        )
+
+    async def query_hospital_district_info_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.QueryHospitalDistrictInfoRequest,
+        headers: dingtalkindustry__1__0_models.QueryHospitalDistrictInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.QueryHospitalDistrictInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.QueryHospitalDistrictInfoResponse(),
+            await self.do_roarequest_async('QueryHospitalDistrictInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/districts', 'json', req, runtime)
+        )
+
     def query_user_info(
         self,
         user_id: str,
@@ -275,6 +343,52 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('QueryUserRoles', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/users/{user_id}/roles', 'json', req, runtime)
         )
 
+    def query_hospital_roles(self) -> dingtalkindustry__1__0_models.QueryHospitalRolesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.QueryHospitalRolesHeaders()
+        return self.query_hospital_roles_with_options(headers, runtime)
+
+    async def query_hospital_roles_async(self) -> dingtalkindustry__1__0_models.QueryHospitalRolesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.QueryHospitalRolesHeaders()
+        return await self.query_hospital_roles_with_options_async(headers, runtime)
+
+    def query_hospital_roles_with_options(
+        self,
+        headers: dingtalkindustry__1__0_models.QueryHospitalRolesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.QueryHospitalRolesResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.QueryHospitalRolesResponse(),
+            self.do_roarequest('QueryHospitalRoles', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/roles', 'json', req, runtime)
+        )
+
+    async def query_hospital_roles_with_options_async(
+        self,
+        headers: dingtalkindustry__1__0_models.QueryHospitalRolesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.QueryHospitalRolesResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.QueryHospitalRolesResponse(),
+            await self.do_roarequest_async('QueryHospitalRoles', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/roles', 'json', req, runtime)
+        )
+
     def query_all_group(
         self,
         request: dingtalkindustry__1__0_models.QueryAllGroupRequest,
@@ -481,6 +595,74 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.QueryBizOptLogResponse(),
             await self.do_roarequest_async('QueryBizOptLog', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/bizOptLogs', 'json', req, runtime)
+        )
+
+    def query_hospital_role_user_info(
+        self,
+        request: dingtalkindustry__1__0_models.QueryHospitalRoleUserInfoRequest,
+    ) -> dingtalkindustry__1__0_models.QueryHospitalRoleUserInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.QueryHospitalRoleUserInfoHeaders()
+        return self.query_hospital_role_user_info_with_options(request, headers, runtime)
+
+    async def query_hospital_role_user_info_async(
+        self,
+        request: dingtalkindustry__1__0_models.QueryHospitalRoleUserInfoRequest,
+    ) -> dingtalkindustry__1__0_models.QueryHospitalRoleUserInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.QueryHospitalRoleUserInfoHeaders()
+        return await self.query_hospital_role_user_info_with_options_async(request, headers, runtime)
+
+    def query_hospital_role_user_info_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.QueryHospitalRoleUserInfoRequest,
+        headers: dingtalkindustry__1__0_models.QueryHospitalRoleUserInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.QueryHospitalRoleUserInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.QueryHospitalRoleUserInfoResponse(),
+            self.do_roarequest('QueryHospitalRoleUserInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/roles/userInfos', 'json', req, runtime)
+        )
+
+    async def query_hospital_role_user_info_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.QueryHospitalRoleUserInfoRequest,
+        headers: dingtalkindustry__1__0_models.QueryHospitalRoleUserInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.QueryHospitalRoleUserInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.QueryHospitalRoleUserInfoResponse(),
+            await self.do_roarequest_async('QueryHospitalRoleUserInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/roles/userInfos', 'json', req, runtime)
         )
 
     def query_user_prob_code_dictionary(self) -> dingtalkindustry__1__0_models.QueryUserProbCodeDictionaryResponse:

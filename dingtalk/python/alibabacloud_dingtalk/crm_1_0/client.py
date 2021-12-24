@@ -403,6 +403,146 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('BatchSendOfficialAccountOTOMessage', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/officialAccounts/oToMessages/batchSend', 'json', req, runtime)
         )
 
+    def query_crm_group_chats(
+        self,
+        request: dingtalkcrm__1__0_models.QueryCrmGroupChatsRequest,
+    ) -> dingtalkcrm__1__0_models.QueryCrmGroupChatsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.QueryCrmGroupChatsHeaders()
+        return self.query_crm_group_chats_with_options(request, headers, runtime)
+
+    async def query_crm_group_chats_async(
+        self,
+        request: dingtalkcrm__1__0_models.QueryCrmGroupChatsRequest,
+    ) -> dingtalkcrm__1__0_models.QueryCrmGroupChatsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.QueryCrmGroupChatsHeaders()
+        return await self.query_crm_group_chats_with_options_async(request, headers, runtime)
+
+    def query_crm_group_chats_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.QueryCrmGroupChatsRequest,
+        headers: dingtalkcrm__1__0_models.QueryCrmGroupChatsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.QueryCrmGroupChatsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.relation_type):
+            query['relationType'] = request.relation_type
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.query_dsl):
+            query['queryDsl'] = request.query_dsl
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.QueryCrmGroupChatsResponse(),
+            self.do_roarequest('QueryCrmGroupChats', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/crmGroupChats', 'json', req, runtime)
+        )
+
+    async def query_crm_group_chats_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.QueryCrmGroupChatsRequest,
+        headers: dingtalkcrm__1__0_models.QueryCrmGroupChatsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.QueryCrmGroupChatsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.relation_type):
+            query['relationType'] = request.relation_type
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.query_dsl):
+            query['queryDsl'] = request.query_dsl
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.QueryCrmGroupChatsResponse(),
+            await self.do_roarequest_async('QueryCrmGroupChats', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/crmGroupChats', 'json', req, runtime)
+        )
+
+    def get_group_set(
+        self,
+        request: dingtalkcrm__1__0_models.GetGroupSetRequest,
+    ) -> dingtalkcrm__1__0_models.GetGroupSetResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.GetGroupSetHeaders()
+        return self.get_group_set_with_options(request, headers, runtime)
+
+    async def get_group_set_async(
+        self,
+        request: dingtalkcrm__1__0_models.GetGroupSetRequest,
+    ) -> dingtalkcrm__1__0_models.GetGroupSetResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.GetGroupSetHeaders()
+        return await self.get_group_set_with_options_async(request, headers, runtime)
+
+    def get_group_set_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.GetGroupSetRequest,
+        headers: dingtalkcrm__1__0_models.GetGroupSetHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.GetGroupSetResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.open_group_set_id):
+            query['openGroupSetId'] = request.open_group_set_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.GetGroupSetResponse(),
+            self.do_roarequest('GetGroupSet', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/groupSets', 'json', req, runtime)
+        )
+
+    async def get_group_set_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.GetGroupSetRequest,
+        headers: dingtalkcrm__1__0_models.GetGroupSetHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.GetGroupSetResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.open_group_set_id):
+            query['openGroupSetId'] = request.open_group_set_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.GetGroupSetResponse(),
+            await self.do_roarequest_async('GetGroupSet', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/groupSets', 'json', req, runtime)
+        )
+
     def create_relation_meta(
         self,
         request: dingtalkcrm__1__0_models.CreateRelationMetaRequest,
@@ -549,6 +689,82 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.UpdateRelationMetaFieldResponse(),
             await self.do_roarequest_async('UpdateRelationMetaField', 'crm_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/crm/relations/metas/fields', 'json', req, runtime)
+        )
+
+    def list_group_set(
+        self,
+        request: dingtalkcrm__1__0_models.ListGroupSetRequest,
+    ) -> dingtalkcrm__1__0_models.ListGroupSetResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.ListGroupSetHeaders()
+        return self.list_group_set_with_options(request, headers, runtime)
+
+    async def list_group_set_async(
+        self,
+        request: dingtalkcrm__1__0_models.ListGroupSetRequest,
+    ) -> dingtalkcrm__1__0_models.ListGroupSetResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.ListGroupSetHeaders()
+        return await self.list_group_set_with_options_async(request, headers, runtime)
+
+    def list_group_set_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.ListGroupSetRequest,
+        headers: dingtalkcrm__1__0_models.ListGroupSetHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.ListGroupSetResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.query_dsl):
+            query['queryDsl'] = request.query_dsl
+        if not UtilClient.is_unset(request.relation_type):
+            query['relationType'] = request.relation_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.ListGroupSetResponse(),
+            self.do_roarequest('ListGroupSet', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/groupSets/lists', 'json', req, runtime)
+        )
+
+    async def list_group_set_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.ListGroupSetRequest,
+        headers: dingtalkcrm__1__0_models.ListGroupSetHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.ListGroupSetResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.query_dsl):
+            query['queryDsl'] = request.query_dsl
+        if not UtilClient.is_unset(request.relation_type):
+            query['relationType'] = request.relation_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.ListGroupSetResponse(),
+            await self.do_roarequest_async('ListGroupSet', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/groupSets/lists', 'json', req, runtime)
         )
 
     def send_official_account_otomessage(
@@ -705,6 +921,60 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.GetOfficialAccountOTOMessageResultResponse(),
             await self.do_roarequest_async('GetOfficialAccountOTOMessageResult', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/officialAccounts/oToMessages/sendResults', 'json', req, runtime)
+        )
+
+    def get_crm_group_chat(
+        self,
+        open_conversation_id: str,
+    ) -> dingtalkcrm__1__0_models.GetCrmGroupChatResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.GetCrmGroupChatHeaders()
+        return self.get_crm_group_chat_with_options(open_conversation_id, headers, runtime)
+
+    async def get_crm_group_chat_async(
+        self,
+        open_conversation_id: str,
+    ) -> dingtalkcrm__1__0_models.GetCrmGroupChatResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.GetCrmGroupChatHeaders()
+        return await self.get_crm_group_chat_with_options_async(open_conversation_id, headers, runtime)
+
+    def get_crm_group_chat_with_options(
+        self,
+        open_conversation_id: str,
+        headers: dingtalkcrm__1__0_models.GetCrmGroupChatHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.GetCrmGroupChatResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.GetCrmGroupChatResponse(),
+            self.do_roarequest('GetCrmGroupChat', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/crmGroupChats/{open_conversation_id}', 'json', req, runtime)
+        )
+
+    async def get_crm_group_chat_with_options_async(
+        self,
+        open_conversation_id: str,
+        headers: dingtalkcrm__1__0_models.GetCrmGroupChatHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.GetCrmGroupChatResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.GetCrmGroupChatResponse(),
+            await self.do_roarequest_async('GetCrmGroupChat', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/crmGroupChats/{open_conversation_id}', 'json', req, runtime)
         )
 
     def delete_crm_personal_customer(
@@ -1177,6 +1447,102 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('DeleteRelationMetaField', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/relations/metas/fields/remove', 'json', req, runtime)
         )
 
+    def create_group_set(
+        self,
+        request: dingtalkcrm__1__0_models.CreateGroupSetRequest,
+    ) -> dingtalkcrm__1__0_models.CreateGroupSetResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.CreateGroupSetHeaders()
+        return self.create_group_set_with_options(request, headers, runtime)
+
+    async def create_group_set_async(
+        self,
+        request: dingtalkcrm__1__0_models.CreateGroupSetRequest,
+    ) -> dingtalkcrm__1__0_models.CreateGroupSetResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.CreateGroupSetHeaders()
+        return await self.create_group_set_with_options_async(request, headers, runtime)
+
+    def create_group_set_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.CreateGroupSetRequest,
+        headers: dingtalkcrm__1__0_models.CreateGroupSetHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.CreateGroupSetResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.owner_user_id):
+            body['ownerUserId'] = request.owner_user_id
+        if not UtilClient.is_unset(request.creator_user_id):
+            body['creatorUserId'] = request.creator_user_id
+        if not UtilClient.is_unset(request.template_id):
+            body['templateId'] = request.template_id
+        if not UtilClient.is_unset(request.member_quota):
+            body['memberQuota'] = request.member_quota
+        if not UtilClient.is_unset(request.manager_user_ids):
+            body['managerUserIds'] = request.manager_user_ids
+        if not UtilClient.is_unset(request.notice):
+            body['notice'] = request.notice
+        if not UtilClient.is_unset(request.notice_toped):
+            body['noticeToped'] = request.notice_toped
+        if not UtilClient.is_unset(request.relation_type):
+            body['relationType'] = request.relation_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.CreateGroupSetResponse(),
+            self.do_roarequest('CreateGroupSet', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/groupSets', 'json', req, runtime)
+        )
+
+    async def create_group_set_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.CreateGroupSetRequest,
+        headers: dingtalkcrm__1__0_models.CreateGroupSetHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.CreateGroupSetResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.owner_user_id):
+            body['ownerUserId'] = request.owner_user_id
+        if not UtilClient.is_unset(request.creator_user_id):
+            body['creatorUserId'] = request.creator_user_id
+        if not UtilClient.is_unset(request.template_id):
+            body['templateId'] = request.template_id
+        if not UtilClient.is_unset(request.member_quota):
+            body['memberQuota'] = request.member_quota
+        if not UtilClient.is_unset(request.manager_user_ids):
+            body['managerUserIds'] = request.manager_user_ids
+        if not UtilClient.is_unset(request.notice):
+            body['notice'] = request.notice
+        if not UtilClient.is_unset(request.notice_toped):
+            body['noticeToped'] = request.notice_toped
+        if not UtilClient.is_unset(request.relation_type):
+            body['relationType'] = request.relation_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.CreateGroupSetResponse(),
+            await self.do_roarequest_async('CreateGroupSet', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/groupSets', 'json', req, runtime)
+        )
+
     def add_relation_meta_field(
         self,
         request: dingtalkcrm__1__0_models.AddRelationMetaFieldRequest,
@@ -1509,6 +1875,8 @@ class Client(OpenApiClient):
             body['extendData'] = request.extend_data
         if not UtilClient.is_unset(request.permission):
             body['permission'] = request.permission
+        if not UtilClient.is_unset(request.relation_type):
+            body['relationType'] = request.relation_type
         if not UtilClient.is_unset(request.skip_duplicate_check):
             body['skipDuplicateCheck'] = request.skip_duplicate_check
         if not UtilClient.is_unset(request.action):
@@ -1545,6 +1913,8 @@ class Client(OpenApiClient):
             body['extendData'] = request.extend_data
         if not UtilClient.is_unset(request.permission):
             body['permission'] = request.permission
+        if not UtilClient.is_unset(request.relation_type):
+            body['relationType'] = request.relation_type
         if not UtilClient.is_unset(request.skip_duplicate_check):
             body['skipDuplicateCheck'] = request.skip_duplicate_check
         if not UtilClient.is_unset(request.action):
@@ -1767,6 +2137,98 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.AbandonCustomerResponse(),
             await self.do_roarequest_async('AbandonCustomer', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/customers/abandon', 'json', req, runtime)
+        )
+
+    def update_group_set(
+        self,
+        request: dingtalkcrm__1__0_models.UpdateGroupSetRequest,
+    ) -> dingtalkcrm__1__0_models.UpdateGroupSetResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.UpdateGroupSetHeaders()
+        return self.update_group_set_with_options(request, headers, runtime)
+
+    async def update_group_set_async(
+        self,
+        request: dingtalkcrm__1__0_models.UpdateGroupSetRequest,
+    ) -> dingtalkcrm__1__0_models.UpdateGroupSetResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.UpdateGroupSetHeaders()
+        return await self.update_group_set_with_options_async(request, headers, runtime)
+
+    def update_group_set_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.UpdateGroupSetRequest,
+        headers: dingtalkcrm__1__0_models.UpdateGroupSetHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.UpdateGroupSetResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_group_set_id):
+            body['openGroupSetId'] = request.open_group_set_id
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.member_quota):
+            body['memberQuota'] = request.member_quota
+        if not UtilClient.is_unset(request.owner_user_id):
+            body['ownerUserId'] = request.owner_user_id
+        if not UtilClient.is_unset(request.manager_user_ids):
+            body['managerUserIds'] = request.manager_user_ids
+        if not UtilClient.is_unset(request.notice):
+            body['notice'] = request.notice
+        if not UtilClient.is_unset(request.notice_toped):
+            body['noticeToped'] = request.notice_toped
+        if not UtilClient.is_unset(request.template_id):
+            body['templateId'] = request.template_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.UpdateGroupSetResponse(),
+            self.do_roarequest('UpdateGroupSet', 'crm_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/crm/groupSets/set', 'boolean', req, runtime)
+        )
+
+    async def update_group_set_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.UpdateGroupSetRequest,
+        headers: dingtalkcrm__1__0_models.UpdateGroupSetHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.UpdateGroupSetResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_group_set_id):
+            body['openGroupSetId'] = request.open_group_set_id
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.member_quota):
+            body['memberQuota'] = request.member_quota
+        if not UtilClient.is_unset(request.owner_user_id):
+            body['ownerUserId'] = request.owner_user_id
+        if not UtilClient.is_unset(request.manager_user_ids):
+            body['managerUserIds'] = request.manager_user_ids
+        if not UtilClient.is_unset(request.notice):
+            body['notice'] = request.notice
+        if not UtilClient.is_unset(request.notice_toped):
+            body['noticeToped'] = request.notice_toped
+        if not UtilClient.is_unset(request.template_id):
+            body['templateId'] = request.template_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.UpdateGroupSetResponse(),
+            await self.do_roarequest_async('UpdateGroupSet', 'crm_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/crm/groupSets/set', 'boolean', req, runtime)
         )
 
     def create_customer(

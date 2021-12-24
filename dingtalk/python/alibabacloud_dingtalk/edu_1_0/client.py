@@ -1936,7 +1936,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkedu__1__0_models.ReportDeviceLogResponse(),
-            self.do_roarequest('ReportDeviceLog', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/deviceLogs/report', 'boolean', req, runtime)
+            self.do_roarequest('ReportDeviceLog', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/deviceLogs/report', 'json', req, runtime)
         )
 
     async def report_device_log_with_options_async(
@@ -1964,7 +1964,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkedu__1__0_models.ReportDeviceLogResponse(),
-            await self.do_roarequest_async('ReportDeviceLog', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/deviceLogs/report', 'boolean', req, runtime)
+            await self.do_roarequest_async('ReportDeviceLog', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/deviceLogs/report', 'json', req, runtime)
         )
 
     def create_custom_class(
@@ -2828,7 +2828,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkedu__1__0_models.DeviceHeartbeatResponse(),
-            self.do_roarequest('DeviceHeartbeat', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/heartbeats/report', 'int32', req, runtime)
+            self.do_roarequest('DeviceHeartbeat', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/heartbeats/report', 'json', req, runtime)
         )
 
     async def device_heartbeat_with_options_async(
@@ -2852,7 +2852,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkedu__1__0_models.DeviceHeartbeatResponse(),
-            await self.do_roarequest_async('DeviceHeartbeat', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/heartbeats/report', 'int32', req, runtime)
+            await self.do_roarequest_async('DeviceHeartbeat', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/heartbeats/report', 'json', req, runtime)
         )
 
     def delete_dept(

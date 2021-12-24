@@ -2697,6 +2697,8 @@ class Client(OpenApiClient):
             query['openTeamId'] = request.open_team_id
         if not UtilClient.is_unset(request.open_conversation_id):
             query['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.top_n):
+            query['topN'] = request.top_n
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2723,6 +2725,8 @@ class Client(OpenApiClient):
             query['openTeamId'] = request.open_team_id
         if not UtilClient.is_unset(request.open_conversation_id):
             query['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.top_n):
+            query['topN'] = request.top_n
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

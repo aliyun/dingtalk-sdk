@@ -6931,11 +6931,39 @@ class ReportDeviceLogRequest(TeaModel):
         return self
 
 
+class ReportDeviceLogResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        # 上传成功
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
 class ReportDeviceLogResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
-        body: bool = None,
+        body: ReportDeviceLogResponseBody = None,
     ):
         self.headers = headers
         self.body = body
@@ -6943,6 +6971,8 @@ class ReportDeviceLogResponse(TeaModel):
     def validate(self):
         self.validate_required(self.headers, 'headers')
         self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -6953,7 +6983,7 @@ class ReportDeviceLogResponse(TeaModel):
         if self.headers is not None:
             result['headers'] = self.headers
         if self.body is not None:
-            result['body'] = self.body
+            result['body'] = self.body.to_map()
         return result
 
     def from_map(self, m: dict = None):
@@ -6961,7 +6991,8 @@ class ReportDeviceLogResponse(TeaModel):
         if m.get('headers') is not None:
             self.headers = m.get('headers')
         if m.get('body') is not None:
-            self.body = m.get('body')
+            temp_model = ReportDeviceLogResponseBody()
+            self.body = temp_model.from_map(m['body'])
         return self
 
 
@@ -9701,11 +9732,39 @@ class DeviceHeartbeatRequest(TeaModel):
         return self
 
 
+class DeviceHeartbeatResponseBody(TeaModel):
+    def __init__(
+        self,
+        code: int = None,
+    ):
+        # 指令
+        self.code = code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        return self
+
+
 class DeviceHeartbeatResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
-        body: int = None,
+        body: DeviceHeartbeatResponseBody = None,
     ):
         self.headers = headers
         self.body = body
@@ -9713,6 +9772,8 @@ class DeviceHeartbeatResponse(TeaModel):
     def validate(self):
         self.validate_required(self.headers, 'headers')
         self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -9723,7 +9784,7 @@ class DeviceHeartbeatResponse(TeaModel):
         if self.headers is not None:
             result['headers'] = self.headers
         if self.body is not None:
-            result['body'] = self.body
+            result['body'] = self.body.to_map()
         return result
 
     def from_map(self, m: dict = None):
@@ -9731,7 +9792,8 @@ class DeviceHeartbeatResponse(TeaModel):
         if m.get('headers') is not None:
             self.headers = m.get('headers')
         if m.get('body') is not None:
-            self.body = m.get('body')
+            temp_model = DeviceHeartbeatResponseBody()
+            self.body = temp_model.from_map(m['body'])
         return self
 
 

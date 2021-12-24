@@ -621,19 +621,16 @@ class ProcessForecastRequest(TeaModel):
         return self
 
 
-class ProcessForecastResponseBodyResultWorkflowActorsActivityActors(TeaModel):
+class ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRangeApprovals(TeaModel):
     def __init__(
         self,
-        user_id: str = None,
-        name: str = None,
-        avatar: str = None,
+        work_no: str = None,
+        user_name: str = None,
     ):
-        # 用户 id
-        self.user_id = user_id
-        # 用户名字
-        self.name = name
-        # 用户头像
-        self.avatar = avatar
+        # 员工 userId
+        self.work_no = work_no
+        # 员工姓名
+        self.user_name = user_name
 
     def validate(self):
         pass
@@ -644,53 +641,74 @@ class ProcessForecastResponseBodyResultWorkflowActorsActivityActors(TeaModel):
             return _map
 
         result = dict()
-        if self.user_id is not None:
-            result['userId'] = self.user_id
-        if self.name is not None:
-            result['name'] = self.name
-        if self.avatar is not None:
-            result['avatar'] = self.avatar
+        if self.work_no is not None:
+            result['workNo'] = self.work_no
+        if self.user_name is not None:
+            result['userName'] = self.user_name
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('userId') is not None:
-            self.user_id = m.get('userId')
-        if m.get('name') is not None:
-            self.name = m.get('name')
-        if m.get('avatar') is not None:
-            self.avatar = m.get('avatar')
+        if m.get('workNo') is not None:
+            self.work_no = m.get('workNo')
+        if m.get('userName') is not None:
+            self.user_name = m.get('userName')
         return self
 
 
-class ProcessForecastResponseBodyResultWorkflowActors(TeaModel):
+class ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRangeLabels(TeaModel):
     def __init__(
         self,
-        activity_id: str = None,
-        activity_name: str = None,
-        activity_type: str = None,
-        is_target_select: bool = None,
-        activity_actors: List[ProcessForecastResponseBodyResultWorkflowActorsActivityActors] = None,
-        is_target_form_component: bool = None,
-        node: str = None,
+        labels: str = None,
+        label_names: str = None,
     ):
-        # 节点 id
-        self.activity_id = activity_id
-        # 节点名称
-        self.activity_name = activity_name
-        # 规则类型
-        self.activity_type = activity_type
-        # 是否自选审批节点
-        self.is_target_select = is_target_select
-        self.activity_actors = activity_actors
-        # 是否联系人控件审批人节点
-        self.is_target_form_component = is_target_form_component
-        # 节点规则，当前是一个 JSONObject
-        self.node = node
+        # 角色 id
+        self.labels = labels
+        # 角色名字
+        self.label_names = label_names
 
     def validate(self):
-        if self.activity_actors:
-            for k in self.activity_actors:
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.labels is not None:
+            result['labels'] = self.labels
+        if self.label_names is not None:
+            result['labelNames'] = self.label_names
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('labels') is not None:
+            self.labels = m.get('labels')
+        if m.get('labelNames') is not None:
+            self.label_names = m.get('labelNames')
+        return self
+
+
+class ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRange(TeaModel):
+    def __init__(
+        self,
+        approvals: List[ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRangeApprovals] = None,
+        labels: List[ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRangeLabels] = None,
+    ):
+        # 审批指定成员
+        self.approvals = approvals
+        # 审批指定角色
+        self.labels = labels
+
+    def validate(self):
+        if self.approvals:
+            for k in self.approvals:
+                if k:
+                    k.validate()
+        if self.labels:
+            for k in self.labels:
                 if k:
                     k.validate()
 
@@ -700,43 +718,179 @@ class ProcessForecastResponseBodyResultWorkflowActors(TeaModel):
             return _map
 
         result = dict()
+        result['approvals'] = []
+        if self.approvals is not None:
+            for k in self.approvals:
+                result['approvals'].append(k.to_map() if k else None)
+        result['labels'] = []
+        if self.labels is not None:
+            for k in self.labels:
+                result['labels'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.approvals = []
+        if m.get('approvals') is not None:
+            for k in m.get('approvals'):
+                temp_model = ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRangeApprovals()
+                self.approvals.append(temp_model.from_map(k))
+        self.labels = []
+        if m.get('labels') is not None:
+            for k in m.get('labels'):
+                temp_model = ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRangeLabels()
+                self.labels.append(temp_model.from_map(k))
+        return self
+
+
+class ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActor(TeaModel):
+    def __init__(
+        self,
+        actor_key: str = None,
+        actor_type: str = None,
+        actor_selection_type: str = None,
+        actor_selection_range: ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRange = None,
+        allowed_multi: bool = None,
+        approval_type: str = None,
+        approval_method: str = None,
+        actor_activate_type: str = None,
+        required: bool = None,
+    ):
+        # 节点操作人 key
+        self.actor_key = actor_key
+        # 节点操作人类型
+        self.actor_type = actor_type
+        # 节点操作人选择范围类型
+        self.actor_selection_type = actor_selection_type
+        # 节点操作人选择范围
+        self.actor_selection_range = actor_selection_range
+        # 是否允许多选，还是仅允许选一人
+        self.allowed_multi = allowed_multi
+        # 节点审批类型
+        self.approval_type = approval_type
+        # 节点审批方式
+        self.approval_method = approval_method
+        # 节点激活类型
+        self.actor_activate_type = actor_activate_type
+        # 该审批人节点在发起审批时是否必填
+        self.required = required
+
+    def validate(self):
+        if self.actor_selection_range:
+            self.actor_selection_range.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.actor_key is not None:
+            result['actorKey'] = self.actor_key
+        if self.actor_type is not None:
+            result['actorType'] = self.actor_type
+        if self.actor_selection_type is not None:
+            result['actorSelectionType'] = self.actor_selection_type
+        if self.actor_selection_range is not None:
+            result['actorSelectionRange'] = self.actor_selection_range.to_map()
+        if self.allowed_multi is not None:
+            result['allowedMulti'] = self.allowed_multi
+        if self.approval_type is not None:
+            result['approvalType'] = self.approval_type
+        if self.approval_method is not None:
+            result['approvalMethod'] = self.approval_method
+        if self.actor_activate_type is not None:
+            result['actorActivateType'] = self.actor_activate_type
+        if self.required is not None:
+            result['required'] = self.required
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('actorKey') is not None:
+            self.actor_key = m.get('actorKey')
+        if m.get('actorType') is not None:
+            self.actor_type = m.get('actorType')
+        if m.get('actorSelectionType') is not None:
+            self.actor_selection_type = m.get('actorSelectionType')
+        if m.get('actorSelectionRange') is not None:
+            temp_model = ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRange()
+            self.actor_selection_range = temp_model.from_map(m['actorSelectionRange'])
+        if m.get('allowedMulti') is not None:
+            self.allowed_multi = m.get('allowedMulti')
+        if m.get('approvalType') is not None:
+            self.approval_type = m.get('approvalType')
+        if m.get('approvalMethod') is not None:
+            self.approval_method = m.get('approvalMethod')
+        if m.get('actorActivateType') is not None:
+            self.actor_activate_type = m.get('actorActivateType')
+        if m.get('required') is not None:
+            self.required = m.get('required')
+        return self
+
+
+class ProcessForecastResponseBodyResultWorkflowActivityRules(TeaModel):
+    def __init__(
+        self,
+        activity_id: str = None,
+        prev_activity_id: str = None,
+        activity_name: str = None,
+        activity_type: str = None,
+        is_target_select: bool = None,
+        workflow_actor: ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActor = None,
+    ):
+        # 节点 id
+        self.activity_id = activity_id
+        # 流程中前一个节点的 id
+        self.prev_activity_id = prev_activity_id
+        # 节点名称
+        self.activity_name = activity_name
+        # 规则类型
+        self.activity_type = activity_type
+        # 是否自选审批节点
+        self.is_target_select = is_target_select
+        # 节点操作人信息
+        self.workflow_actor = workflow_actor
+
+    def validate(self):
+        if self.workflow_actor:
+            self.workflow_actor.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
         if self.activity_id is not None:
             result['activityId'] = self.activity_id
+        if self.prev_activity_id is not None:
+            result['prevActivityId'] = self.prev_activity_id
         if self.activity_name is not None:
             result['activityName'] = self.activity_name
         if self.activity_type is not None:
             result['activityType'] = self.activity_type
         if self.is_target_select is not None:
             result['isTargetSelect'] = self.is_target_select
-        result['activityActors'] = []
-        if self.activity_actors is not None:
-            for k in self.activity_actors:
-                result['activityActors'].append(k.to_map() if k else None)
-        if self.is_target_form_component is not None:
-            result['isTargetFormComponent'] = self.is_target_form_component
-        if self.node is not None:
-            result['node'] = self.node
+        if self.workflow_actor is not None:
+            result['workflowActor'] = self.workflow_actor.to_map()
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('activityId') is not None:
             self.activity_id = m.get('activityId')
+        if m.get('prevActivityId') is not None:
+            self.prev_activity_id = m.get('prevActivityId')
         if m.get('activityName') is not None:
             self.activity_name = m.get('activityName')
         if m.get('activityType') is not None:
             self.activity_type = m.get('activityType')
         if m.get('isTargetSelect') is not None:
             self.is_target_select = m.get('isTargetSelect')
-        self.activity_actors = []
-        if m.get('activityActors') is not None:
-            for k in m.get('activityActors'):
-                temp_model = ProcessForecastResponseBodyResultWorkflowActorsActivityActors()
-                self.activity_actors.append(temp_model.from_map(k))
-        if m.get('isTargetFormComponent') is not None:
-            self.is_target_form_component = m.get('isTargetFormComponent')
-        if m.get('node') is not None:
-            self.node = m.get('node')
+        if m.get('workflowActor') is not None:
+            temp_model = ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActor()
+            self.workflow_actor = temp_model.from_map(m['workflowActor'])
         return self
 
 
@@ -783,7 +937,7 @@ class ProcessForecastResponseBodyResult(TeaModel):
         user_id: str = None,
         process_id: int = None,
         is_static_workflow: bool = None,
-        workflow_actors: List[ProcessForecastResponseBodyResultWorkflowActors] = None,
+        workflow_activity_rules: List[ProcessForecastResponseBodyResultWorkflowActivityRules] = None,
         workflow_forecast_nodes: List[ProcessForecastResponseBodyResultWorkflowForecastNodes] = None,
     ):
         # 是否预测成功
@@ -796,12 +950,12 @@ class ProcessForecastResponseBodyResult(TeaModel):
         self.process_id = process_id
         # 是否静态流程
         self.is_static_workflow = is_static_workflow
-        self.workflow_actors = workflow_actors
+        self.workflow_activity_rules = workflow_activity_rules
         self.workflow_forecast_nodes = workflow_forecast_nodes
 
     def validate(self):
-        if self.workflow_actors:
-            for k in self.workflow_actors:
+        if self.workflow_activity_rules:
+            for k in self.workflow_activity_rules:
                 if k:
                     k.validate()
         if self.workflow_forecast_nodes:
@@ -825,10 +979,10 @@ class ProcessForecastResponseBodyResult(TeaModel):
             result['processId'] = self.process_id
         if self.is_static_workflow is not None:
             result['isStaticWorkflow'] = self.is_static_workflow
-        result['workflowActors'] = []
-        if self.workflow_actors is not None:
-            for k in self.workflow_actors:
-                result['workflowActors'].append(k.to_map() if k else None)
+        result['workflowActivityRules'] = []
+        if self.workflow_activity_rules is not None:
+            for k in self.workflow_activity_rules:
+                result['workflowActivityRules'].append(k.to_map() if k else None)
         result['workflowForecastNodes'] = []
         if self.workflow_forecast_nodes is not None:
             for k in self.workflow_forecast_nodes:
@@ -847,11 +1001,11 @@ class ProcessForecastResponseBodyResult(TeaModel):
             self.process_id = m.get('processId')
         if m.get('isStaticWorkflow') is not None:
             self.is_static_workflow = m.get('isStaticWorkflow')
-        self.workflow_actors = []
-        if m.get('workflowActors') is not None:
-            for k in m.get('workflowActors'):
-                temp_model = ProcessForecastResponseBodyResultWorkflowActors()
-                self.workflow_actors.append(temp_model.from_map(k))
+        self.workflow_activity_rules = []
+        if m.get('workflowActivityRules') is not None:
+            for k in m.get('workflowActivityRules'):
+                temp_model = ProcessForecastResponseBodyResultWorkflowActivityRules()
+                self.workflow_activity_rules.append(temp_model.from_map(k))
         self.workflow_forecast_nodes = []
         if m.get('workflowForecastNodes') is not None:
             for k in m.get('workflowForecastNodes'):
@@ -1938,6 +2092,2344 @@ class QueryFormByBizTypeResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = QueryFormByBizTypeResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class FormCreateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class FormCreateRequestFormComponentsPropsOptions(TeaModel):
+    def __init__(
+        self,
+        value: str = None,
+        key: str = None,
+    ):
+        # 选项的显示内容
+        self.value = value
+        # 选项的唯一主键
+        self.key = key
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.value is not None:
+            result['value'] = self.value
+        if self.key is not None:
+            result['key'] = self.key
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        if m.get('key') is not None:
+            self.key = m.get('key')
+        return self
+
+
+class FormCreateRequestFormComponentsPropsStatField(TeaModel):
+    def __init__(
+        self,
+        component_id: str = None,
+        label: str = None,
+        upper: bool = None,
+        pay_enable: str = None,
+    ):
+        # 需要统计的明细控件内子控件id
+        self.component_id = component_id
+        # 子控件标题
+        self.label = label
+        # 金额控件是否需要大写
+        self.upper = upper
+        self.pay_enable = pay_enable
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.component_id is not None:
+            result['componentId'] = self.component_id
+        if self.label is not None:
+            result['label'] = self.label
+        if self.upper is not None:
+            result['upper'] = self.upper
+        if self.pay_enable is not None:
+            result['payEnable'] = self.pay_enable
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('componentId') is not None:
+            self.component_id = m.get('componentId')
+        if m.get('label') is not None:
+            self.label = m.get('label')
+        if m.get('upper') is not None:
+            self.upper = m.get('upper')
+        if m.get('payEnable') is not None:
+            self.pay_enable = m.get('payEnable')
+        return self
+
+
+class FormCreateRequestFormComponentsPropsDataSourceTarget(TeaModel):
+    def __init__(
+        self,
+        app_uuid: str = None,
+        app_type: int = None,
+        biz_type: str = None,
+        form_code: str = None,
+    ):
+        # 应用appUuid
+        self.app_uuid = app_uuid
+        # 表单类型，0流程表单
+        self.app_type = app_type
+        # 关联表单业务标识
+        self.biz_type = biz_type
+        # 关联表单的formCode
+        self.form_code = form_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_uuid is not None:
+            result['appUuid'] = self.app_uuid
+        if self.app_type is not None:
+            result['appType'] = self.app_type
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.form_code is not None:
+            result['formCode'] = self.form_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appUuid') is not None:
+            self.app_uuid = m.get('appUuid')
+        if m.get('appType') is not None:
+            self.app_type = m.get('appType')
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('formCode') is not None:
+            self.form_code = m.get('formCode')
+        return self
+
+
+class FormCreateRequestFormComponentsPropsDataSource(TeaModel):
+    def __init__(
+        self,
+        type: str = None,
+        target: FormCreateRequestFormComponentsPropsDataSourceTarget = None,
+    ):
+        # 关联类型，form关联表单
+        self.type = type
+        # 关联表单信息
+        self.target = target
+
+    def validate(self):
+        if self.target:
+            self.target.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.type is not None:
+            result['type'] = self.type
+        if self.target is not None:
+            result['target'] = self.target.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('target') is not None:
+            temp_model = FormCreateRequestFormComponentsPropsDataSourceTarget()
+            self.target = temp_model.from_map(m['target'])
+        return self
+
+
+class FormCreateRequestFormComponentsPropsFieldsPropsOptions(TeaModel):
+    def __init__(
+        self,
+        key: str = None,
+        value: str = None,
+    ):
+        # 每一个选项的唯一键
+        self.key = key
+        # 每一个选项的值
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.key is not None:
+            result['key'] = self.key
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('key') is not None:
+            self.key = m.get('key')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class FormCreateRequestFormComponentsPropsFieldsProps(TeaModel):
+    def __init__(
+        self,
+        component_id: str = None,
+        label: str = None,
+        label_editable_freeze: bool = None,
+        required: bool = None,
+        required_editable_freeze: bool = None,
+        print: str = None,
+        content: str = None,
+        format: str = None,
+        options: List[FormCreateRequestFormComponentsPropsFieldsPropsOptions] = None,
+        upper: str = None,
+        unit: str = None,
+        placeholder: str = None,
+        biz_alias: str = None,
+        biz_type: str = None,
+        duration: bool = None,
+        choice: str = None,
+        disabled: bool = None,
+        align: str = None,
+    ):
+        # 表单中控件的唯一id
+        self.component_id = component_id
+        # 控件标题
+        self.label = label
+        # label是否禁用修改
+        self.label_editable_freeze = label_editable_freeze
+        # 必填
+        self.required = required
+        # 必填是否可修改
+        self.required_editable_freeze = required_editable_freeze
+        # 是否可打印
+        self.print = print
+        # 说明文字控件内容
+        self.content = content
+        # 时间格式
+        self.format = format
+        # 选项内容
+        self.options = options
+        # 是否需要大写，1需要大写，0不需要
+        self.upper = upper
+        # 时间单位（天、小时）
+        self.unit = unit
+        # 输入提示
+        self.placeholder = placeholder
+        # 业务别名
+        self.biz_alias = biz_alias
+        # 套件的业务标识
+        self.biz_type = biz_type
+        # 是否自动计算时长
+        self.duration = duration
+        # 联系人控件是否支持多选，1多选，0单选
+        self.choice = choice
+        # 是否不可编辑
+        self.disabled = disabled
+        # 文字提示控件显示方式（top|middle|bottom）
+        self.align = align
+
+    def validate(self):
+        if self.options:
+            for k in self.options:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.component_id is not None:
+            result['componentId'] = self.component_id
+        if self.label is not None:
+            result['label'] = self.label
+        if self.label_editable_freeze is not None:
+            result['labelEditableFreeze'] = self.label_editable_freeze
+        if self.required is not None:
+            result['required'] = self.required
+        if self.required_editable_freeze is not None:
+            result['requiredEditableFreeze'] = self.required_editable_freeze
+        if self.print is not None:
+            result['print'] = self.print
+        if self.content is not None:
+            result['content'] = self.content
+        if self.format is not None:
+            result['format'] = self.format
+        result['options'] = []
+        if self.options is not None:
+            for k in self.options:
+                result['options'].append(k.to_map() if k else None)
+        if self.upper is not None:
+            result['upper'] = self.upper
+        if self.unit is not None:
+            result['unit'] = self.unit
+        if self.placeholder is not None:
+            result['placeholder'] = self.placeholder
+        if self.biz_alias is not None:
+            result['bizAlias'] = self.biz_alias
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.duration is not None:
+            result['duration'] = self.duration
+        if self.choice is not None:
+            result['choice'] = self.choice
+        if self.disabled is not None:
+            result['disabled'] = self.disabled
+        if self.align is not None:
+            result['align'] = self.align
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('componentId') is not None:
+            self.component_id = m.get('componentId')
+        if m.get('label') is not None:
+            self.label = m.get('label')
+        if m.get('labelEditableFreeze') is not None:
+            self.label_editable_freeze = m.get('labelEditableFreeze')
+        if m.get('required') is not None:
+            self.required = m.get('required')
+        if m.get('requiredEditableFreeze') is not None:
+            self.required_editable_freeze = m.get('requiredEditableFreeze')
+        if m.get('print') is not None:
+            self.print = m.get('print')
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('format') is not None:
+            self.format = m.get('format')
+        self.options = []
+        if m.get('options') is not None:
+            for k in m.get('options'):
+                temp_model = FormCreateRequestFormComponentsPropsFieldsPropsOptions()
+                self.options.append(temp_model.from_map(k))
+        if m.get('upper') is not None:
+            self.upper = m.get('upper')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        if m.get('placeholder') is not None:
+            self.placeholder = m.get('placeholder')
+        if m.get('bizAlias') is not None:
+            self.biz_alias = m.get('bizAlias')
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('duration') is not None:
+            self.duration = m.get('duration')
+        if m.get('choice') is not None:
+            self.choice = m.get('choice')
+        if m.get('disabled') is not None:
+            self.disabled = m.get('disabled')
+        if m.get('align') is not None:
+            self.align = m.get('align')
+        return self
+
+
+class FormCreateRequestFormComponentsPropsFields(TeaModel):
+    def __init__(
+        self,
+        component_type: str = None,
+        props: FormCreateRequestFormComponentsPropsFieldsProps = None,
+    ):
+        # 关联显示字段类型
+        self.component_type = component_type
+        # 关联显示字段属性
+        self.props = props
+
+    def validate(self):
+        if self.props:
+            self.props.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.component_type is not None:
+            result['componentType'] = self.component_type
+        if self.props is not None:
+            result['props'] = self.props.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('componentType') is not None:
+            self.component_type = m.get('componentType')
+        if m.get('props') is not None:
+            temp_model = FormCreateRequestFormComponentsPropsFieldsProps()
+            self.props = temp_model.from_map(m['props'])
+        return self
+
+
+class FormCreateRequestFormComponentsPropsAvailableTemplates(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        process_code: str = None,
+    ):
+        # 表单名称
+        self.name = name
+        # 表单模板processCode
+        self.process_code = process_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.process_code is not None:
+            result['processCode'] = self.process_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('processCode') is not None:
+            self.process_code = m.get('processCode')
+        return self
+
+
+class FormCreateRequestFormComponentsProps(TeaModel):
+    def __init__(
+        self,
+        component_id: str = None,
+        label: str = None,
+        async_condition: bool = None,
+        required: bool = None,
+        content: str = None,
+        format: str = None,
+        upper: str = None,
+        unit: str = None,
+        placeholder: str = None,
+        biz_alias: str = None,
+        biz_type: str = None,
+        duration: bool = None,
+        choice: str = None,
+        disabled: bool = None,
+        align: str = None,
+        invisible: bool = None,
+        link: str = None,
+        vertical_print: bool = None,
+        formula: str = None,
+        common_biz_type: str = None,
+        options: List[FormCreateRequestFormComponentsPropsOptions] = None,
+        print: str = None,
+        stat_field: List[FormCreateRequestFormComponentsPropsStatField] = None,
+        data_source: FormCreateRequestFormComponentsPropsDataSource = None,
+        fields: List[FormCreateRequestFormComponentsPropsFields] = None,
+        address_model: str = None,
+        multiple: bool = None,
+        limit: int = None,
+        available_templates: List[FormCreateRequestFormComponentsPropsAvailableTemplates] = None,
+        table_view_mode: str = None,
+    ):
+        # 控件表单内唯一id
+        self.component_id = component_id
+        # 控件标题
+        self.label = label
+        # 套件中控件是否可设置为分条件字段
+        self.async_condition = async_condition
+        # 是否必填
+        self.required = required
+        # 说明文字控件内容
+        self.content = content
+        # 时间格式
+        self.format = format
+        # 金额控件是否需要大写，1不需要大写，其他需要大写
+        self.upper = upper
+        # 时间单位（天、小时）
+        self.unit = unit
+        # 输入提示
+        self.placeholder = placeholder
+        # 业务别名
+        self.biz_alias = biz_alias
+        # 套件的业务标识
+        self.biz_type = biz_type
+        # 是否自动计算时长
+        self.duration = duration
+        # 联系人控件是否支持多选，1多选，0单选
+        self.choice = choice
+        # 是否不可编辑
+        self.disabled = disabled
+        # 文字提示控件显示方式:top|middle|bottom
+        self.align = align
+        # 是否隐藏字段
+        self.invisible = invisible
+        # 说明文字控件链接地址
+        self.link = link
+        # 明细打印方式false横向，true纵向
+        self.vertical_print = vertical_print
+        # 公式
+        self.formula = formula
+        # 自定义控件渲染标识
+        self.common_biz_type = common_biz_type
+        # 单选多选控件选项列表
+        self.options = options
+        # 字段是否可打印，1打印，0不打印，默认打印
+        self.print = print
+        # 明细控件数据汇总统计
+        self.stat_field = stat_field
+        # 关联审批单、关联表单数据源配置
+        self.data_source = data_source
+        # 关联显示字段
+        self.fields = fields
+        # 地址控件模式city省市,district省市区,street省市区街道
+        self.address_model = address_model
+        # 部门控件是否可多选
+        self.multiple = multiple
+        # 评分控件上限
+        self.limit = limit
+        # 关联审批单控件限定模板列表
+        self.available_templates = available_templates
+        # 明细填写方式，table（表格）、list（列表）
+        self.table_view_mode = table_view_mode
+
+    def validate(self):
+        if self.options:
+            for k in self.options:
+                if k:
+                    k.validate()
+        if self.stat_field:
+            for k in self.stat_field:
+                if k:
+                    k.validate()
+        if self.data_source:
+            self.data_source.validate()
+        if self.fields:
+            for k in self.fields:
+                if k:
+                    k.validate()
+        if self.available_templates:
+            for k in self.available_templates:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.component_id is not None:
+            result['componentId'] = self.component_id
+        if self.label is not None:
+            result['label'] = self.label
+        if self.async_condition is not None:
+            result['asyncCondition'] = self.async_condition
+        if self.required is not None:
+            result['required'] = self.required
+        if self.content is not None:
+            result['content'] = self.content
+        if self.format is not None:
+            result['format'] = self.format
+        if self.upper is not None:
+            result['upper'] = self.upper
+        if self.unit is not None:
+            result['unit'] = self.unit
+        if self.placeholder is not None:
+            result['placeholder'] = self.placeholder
+        if self.biz_alias is not None:
+            result['bizAlias'] = self.biz_alias
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.duration is not None:
+            result['duration'] = self.duration
+        if self.choice is not None:
+            result['choice'] = self.choice
+        if self.disabled is not None:
+            result['disabled'] = self.disabled
+        if self.align is not None:
+            result['align'] = self.align
+        if self.invisible is not None:
+            result['invisible'] = self.invisible
+        if self.link is not None:
+            result['link'] = self.link
+        if self.vertical_print is not None:
+            result['verticalPrint'] = self.vertical_print
+        if self.formula is not None:
+            result['formula'] = self.formula
+        if self.common_biz_type is not None:
+            result['commonBizType'] = self.common_biz_type
+        result['options'] = []
+        if self.options is not None:
+            for k in self.options:
+                result['options'].append(k.to_map() if k else None)
+        if self.print is not None:
+            result['print'] = self.print
+        result['statField'] = []
+        if self.stat_field is not None:
+            for k in self.stat_field:
+                result['statField'].append(k.to_map() if k else None)
+        if self.data_source is not None:
+            result['dataSource'] = self.data_source.to_map()
+        result['fields'] = []
+        if self.fields is not None:
+            for k in self.fields:
+                result['fields'].append(k.to_map() if k else None)
+        if self.address_model is not None:
+            result['addressModel'] = self.address_model
+        if self.multiple is not None:
+            result['multiple'] = self.multiple
+        if self.limit is not None:
+            result['limit'] = self.limit
+        result['availableTemplates'] = []
+        if self.available_templates is not None:
+            for k in self.available_templates:
+                result['availableTemplates'].append(k.to_map() if k else None)
+        if self.table_view_mode is not None:
+            result['tableViewMode'] = self.table_view_mode
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('componentId') is not None:
+            self.component_id = m.get('componentId')
+        if m.get('label') is not None:
+            self.label = m.get('label')
+        if m.get('asyncCondition') is not None:
+            self.async_condition = m.get('asyncCondition')
+        if m.get('required') is not None:
+            self.required = m.get('required')
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('format') is not None:
+            self.format = m.get('format')
+        if m.get('upper') is not None:
+            self.upper = m.get('upper')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        if m.get('placeholder') is not None:
+            self.placeholder = m.get('placeholder')
+        if m.get('bizAlias') is not None:
+            self.biz_alias = m.get('bizAlias')
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('duration') is not None:
+            self.duration = m.get('duration')
+        if m.get('choice') is not None:
+            self.choice = m.get('choice')
+        if m.get('disabled') is not None:
+            self.disabled = m.get('disabled')
+        if m.get('align') is not None:
+            self.align = m.get('align')
+        if m.get('invisible') is not None:
+            self.invisible = m.get('invisible')
+        if m.get('link') is not None:
+            self.link = m.get('link')
+        if m.get('verticalPrint') is not None:
+            self.vertical_print = m.get('verticalPrint')
+        if m.get('formula') is not None:
+            self.formula = m.get('formula')
+        if m.get('commonBizType') is not None:
+            self.common_biz_type = m.get('commonBizType')
+        self.options = []
+        if m.get('options') is not None:
+            for k in m.get('options'):
+                temp_model = FormCreateRequestFormComponentsPropsOptions()
+                self.options.append(temp_model.from_map(k))
+        if m.get('print') is not None:
+            self.print = m.get('print')
+        self.stat_field = []
+        if m.get('statField') is not None:
+            for k in m.get('statField'):
+                temp_model = FormCreateRequestFormComponentsPropsStatField()
+                self.stat_field.append(temp_model.from_map(k))
+        if m.get('dataSource') is not None:
+            temp_model = FormCreateRequestFormComponentsPropsDataSource()
+            self.data_source = temp_model.from_map(m['dataSource'])
+        self.fields = []
+        if m.get('fields') is not None:
+            for k in m.get('fields'):
+                temp_model = FormCreateRequestFormComponentsPropsFields()
+                self.fields.append(temp_model.from_map(k))
+        if m.get('addressModel') is not None:
+            self.address_model = m.get('addressModel')
+        if m.get('multiple') is not None:
+            self.multiple = m.get('multiple')
+        if m.get('limit') is not None:
+            self.limit = m.get('limit')
+        self.available_templates = []
+        if m.get('availableTemplates') is not None:
+            for k in m.get('availableTemplates'):
+                temp_model = FormCreateRequestFormComponentsPropsAvailableTemplates()
+                self.available_templates.append(temp_model.from_map(k))
+        if m.get('tableViewMode') is not None:
+            self.table_view_mode = m.get('tableViewMode')
+        return self
+
+
+class FormCreateRequestFormComponentsChildrenPropsOptions(TeaModel):
+    def __init__(
+        self,
+        value: str = None,
+        key: str = None,
+    ):
+        # 选项的显示内容
+        self.value = value
+        # 选项的唯一主键
+        self.key = key
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.value is not None:
+            result['value'] = self.value
+        if self.key is not None:
+            result['key'] = self.key
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        if m.get('key') is not None:
+            self.key = m.get('key')
+        return self
+
+
+class FormCreateRequestFormComponentsChildrenPropsStatField(TeaModel):
+    def __init__(
+        self,
+        component_id: str = None,
+        label: str = None,
+        upper: bool = None,
+        pay_enable: str = None,
+    ):
+        self.component_id = component_id
+        self.label = label
+        self.upper = upper
+        self.pay_enable = pay_enable
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.component_id is not None:
+            result['componentId'] = self.component_id
+        if self.label is not None:
+            result['label'] = self.label
+        if self.upper is not None:
+            result['upper'] = self.upper
+        if self.pay_enable is not None:
+            result['payEnable'] = self.pay_enable
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('componentId') is not None:
+            self.component_id = m.get('componentId')
+        if m.get('label') is not None:
+            self.label = m.get('label')
+        if m.get('upper') is not None:
+            self.upper = m.get('upper')
+        if m.get('payEnable') is not None:
+            self.pay_enable = m.get('payEnable')
+        return self
+
+
+class FormCreateRequestFormComponentsChildrenPropsDataSourceTarget(TeaModel):
+    def __init__(
+        self,
+        app_uuid: str = None,
+        app_type: int = None,
+        biz_type: str = None,
+        form_code: str = None,
+    ):
+        self.app_uuid = app_uuid
+        self.app_type = app_type
+        self.biz_type = biz_type
+        self.form_code = form_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_uuid is not None:
+            result['appUuid'] = self.app_uuid
+        if self.app_type is not None:
+            result['appType'] = self.app_type
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.form_code is not None:
+            result['formCode'] = self.form_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appUuid') is not None:
+            self.app_uuid = m.get('appUuid')
+        if m.get('appType') is not None:
+            self.app_type = m.get('appType')
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('formCode') is not None:
+            self.form_code = m.get('formCode')
+        return self
+
+
+class FormCreateRequestFormComponentsChildrenPropsDataSource(TeaModel):
+    def __init__(
+        self,
+        type: str = None,
+        target: FormCreateRequestFormComponentsChildrenPropsDataSourceTarget = None,
+    ):
+        self.type = type
+        self.target = target
+
+    def validate(self):
+        if self.target:
+            self.target.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.type is not None:
+            result['type'] = self.type
+        if self.target is not None:
+            result['target'] = self.target.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('target') is not None:
+            temp_model = FormCreateRequestFormComponentsChildrenPropsDataSourceTarget()
+            self.target = temp_model.from_map(m['target'])
+        return self
+
+
+class FormCreateRequestFormComponentsChildrenPropsFieldsPropsOptions(TeaModel):
+    def __init__(
+        self,
+        key: str = None,
+        value: str = None,
+    ):
+        # 每一个选项的唯一键
+        self.key = key
+        # 每一个选项的值
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.key is not None:
+            result['key'] = self.key
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('key') is not None:
+            self.key = m.get('key')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class FormCreateRequestFormComponentsChildrenPropsFieldsProps(TeaModel):
+    def __init__(
+        self,
+        component_id: str = None,
+        label: str = None,
+        label_editable_freeze: bool = None,
+        required: bool = None,
+        required_editable_freeze: bool = None,
+        print: str = None,
+        content: str = None,
+        format: str = None,
+        options: List[FormCreateRequestFormComponentsChildrenPropsFieldsPropsOptions] = None,
+        not_upper: str = None,
+        unit: str = None,
+        placeholder: str = None,
+        biz_alias: str = None,
+        biz_type: str = None,
+        duration: bool = None,
+        choice: str = None,
+        disabled: bool = None,
+        align: str = None,
+    ):
+        # 表单中控件的唯一id
+        self.component_id = component_id
+        # 控件标题
+        self.label = label
+        # label是否禁用修改
+        self.label_editable_freeze = label_editable_freeze
+        # 必填
+        self.required = required
+        # 必填是否可修改
+        self.required_editable_freeze = required_editable_freeze
+        self.print = print
+        # 说明文字控件内容
+        self.content = content
+        # 时间格式
+        self.format = format
+        # 选项内容
+        self.options = options
+        # 是否需要大写，1不需要大写，其他需要大写
+        self.not_upper = not_upper
+        # 时间单位（天、小时）
+        self.unit = unit
+        # 输入提示
+        self.placeholder = placeholder
+        # 业务别名
+        self.biz_alias = biz_alias
+        # 套件的业务标识
+        self.biz_type = biz_type
+        # 是否自动计算时长
+        self.duration = duration
+        # 联系人控件是否支持多选，1多选，0单选
+        self.choice = choice
+        # 是否不可编辑
+        self.disabled = disabled
+        # 文字提示控件显示方式（top|middle|bottom）
+        self.align = align
+
+    def validate(self):
+        if self.options:
+            for k in self.options:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.component_id is not None:
+            result['componentId'] = self.component_id
+        if self.label is not None:
+            result['label'] = self.label
+        if self.label_editable_freeze is not None:
+            result['labelEditableFreeze'] = self.label_editable_freeze
+        if self.required is not None:
+            result['required'] = self.required
+        if self.required_editable_freeze is not None:
+            result['requiredEditableFreeze'] = self.required_editable_freeze
+        if self.print is not None:
+            result['print'] = self.print
+        if self.content is not None:
+            result['content'] = self.content
+        if self.format is not None:
+            result['format'] = self.format
+        result['options'] = []
+        if self.options is not None:
+            for k in self.options:
+                result['options'].append(k.to_map() if k else None)
+        if self.not_upper is not None:
+            result['notUpper'] = self.not_upper
+        if self.unit is not None:
+            result['unit'] = self.unit
+        if self.placeholder is not None:
+            result['placeholder'] = self.placeholder
+        if self.biz_alias is not None:
+            result['bizAlias'] = self.biz_alias
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.duration is not None:
+            result['duration'] = self.duration
+        if self.choice is not None:
+            result['choice'] = self.choice
+        if self.disabled is not None:
+            result['disabled'] = self.disabled
+        if self.align is not None:
+            result['align'] = self.align
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('componentId') is not None:
+            self.component_id = m.get('componentId')
+        if m.get('label') is not None:
+            self.label = m.get('label')
+        if m.get('labelEditableFreeze') is not None:
+            self.label_editable_freeze = m.get('labelEditableFreeze')
+        if m.get('required') is not None:
+            self.required = m.get('required')
+        if m.get('requiredEditableFreeze') is not None:
+            self.required_editable_freeze = m.get('requiredEditableFreeze')
+        if m.get('print') is not None:
+            self.print = m.get('print')
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('format') is not None:
+            self.format = m.get('format')
+        self.options = []
+        if m.get('options') is not None:
+            for k in m.get('options'):
+                temp_model = FormCreateRequestFormComponentsChildrenPropsFieldsPropsOptions()
+                self.options.append(temp_model.from_map(k))
+        if m.get('notUpper') is not None:
+            self.not_upper = m.get('notUpper')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        if m.get('placeholder') is not None:
+            self.placeholder = m.get('placeholder')
+        if m.get('bizAlias') is not None:
+            self.biz_alias = m.get('bizAlias')
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('duration') is not None:
+            self.duration = m.get('duration')
+        if m.get('choice') is not None:
+            self.choice = m.get('choice')
+        if m.get('disabled') is not None:
+            self.disabled = m.get('disabled')
+        if m.get('align') is not None:
+            self.align = m.get('align')
+        return self
+
+
+class FormCreateRequestFormComponentsChildrenPropsFields(TeaModel):
+    def __init__(
+        self,
+        component_type: str = None,
+        props: FormCreateRequestFormComponentsChildrenPropsFieldsProps = None,
+    ):
+        self.component_type = component_type
+        self.props = props
+
+    def validate(self):
+        if self.props:
+            self.props.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.component_type is not None:
+            result['componentType'] = self.component_type
+        if self.props is not None:
+            result['props'] = self.props.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('componentType') is not None:
+            self.component_type = m.get('componentType')
+        if m.get('props') is not None:
+            temp_model = FormCreateRequestFormComponentsChildrenPropsFieldsProps()
+            self.props = temp_model.from_map(m['props'])
+        return self
+
+
+class FormCreateRequestFormComponentsChildrenPropsAvailableTemplates(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        process_code: str = None,
+    ):
+        # 模板名称
+        self.name = name
+        # 模板processCode
+        self.process_code = process_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.process_code is not None:
+            result['processCode'] = self.process_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('processCode') is not None:
+            self.process_code = m.get('processCode')
+        return self
+
+
+class FormCreateRequestFormComponentsChildrenProps(TeaModel):
+    def __init__(
+        self,
+        component_id: str = None,
+        label: str = None,
+        async_condition: bool = None,
+        required: bool = None,
+        content: str = None,
+        format: str = None,
+        upper: str = None,
+        unit: str = None,
+        placeholder: str = None,
+        biz_alias: str = None,
+        biz_type: str = None,
+        duration: bool = None,
+        choice: str = None,
+        disabled: bool = None,
+        align: str = None,
+        invisible: bool = None,
+        link: str = None,
+        vertical_print: bool = None,
+        formula: str = None,
+        common_biz_type: str = None,
+        options: List[FormCreateRequestFormComponentsChildrenPropsOptions] = None,
+        print: str = None,
+        stat_field: List[FormCreateRequestFormComponentsChildrenPropsStatField] = None,
+        data_source: FormCreateRequestFormComponentsChildrenPropsDataSource = None,
+        fields: List[FormCreateRequestFormComponentsChildrenPropsFields] = None,
+        address_model: str = None,
+        multiple: bool = None,
+        limit: int = None,
+        available_templates: List[FormCreateRequestFormComponentsChildrenPropsAvailableTemplates] = None,
+        table_view_mode: str = None,
+    ):
+        self.component_id = component_id
+        # 控件标题
+        self.label = label
+        # 套件中控件是否可设置为分条件字段
+        self.async_condition = async_condition
+        # 必填
+        self.required = required
+        # 说明文字控件内容
+        self.content = content
+        # 时间格式
+        self.format = format
+        # 金额是否需要大写，1不需要大写，其他需要大写
+        self.upper = upper
+        # 时间单位（天、小时）
+        self.unit = unit
+        # 输入提示
+        self.placeholder = placeholder
+        # 业务别名
+        self.biz_alias = biz_alias
+        # 套件的业务标识
+        self.biz_type = biz_type
+        # 是否自动计算时长
+        self.duration = duration
+        # 联系人控件是否支持多选，1多选，0单选
+        self.choice = choice
+        # 是否不可编辑
+        self.disabled = disabled
+        # 文字提示控件显示方式:top|middle|bottom
+        self.align = align
+        # 是否隐藏字段
+        self.invisible = invisible
+        # 说明文字控件链接地址
+        self.link = link
+        # 明细打印方式false横向，true纵向
+        self.vertical_print = vertical_print
+        # 公式
+        self.formula = formula
+        # 自定义控件渲染标识
+        self.common_biz_type = common_biz_type
+        # 单选多选控件选项列表
+        self.options = options
+        # 是否可被打印
+        self.print = print
+        # 明细汇总统计设置
+        self.stat_field = stat_field
+        # 数据源配置
+        self.data_source = data_source
+        # 关联显示字段配置
+        self.fields = fields
+        # 地址控件模式
+        self.address_model = address_model
+        # 部门控件是否支持多选
+        self.multiple = multiple
+        # 评分控件上限
+        self.limit = limit
+        # 关联审批单表单筛选列表
+        self.available_templates = available_templates
+        # 明细填写方式，table（表格）、list（列表）
+        self.table_view_mode = table_view_mode
+
+    def validate(self):
+        if self.options:
+            for k in self.options:
+                if k:
+                    k.validate()
+        if self.stat_field:
+            for k in self.stat_field:
+                if k:
+                    k.validate()
+        if self.data_source:
+            self.data_source.validate()
+        if self.fields:
+            for k in self.fields:
+                if k:
+                    k.validate()
+        if self.available_templates:
+            for k in self.available_templates:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.component_id is not None:
+            result['componentId'] = self.component_id
+        if self.label is not None:
+            result['label'] = self.label
+        if self.async_condition is not None:
+            result['asyncCondition'] = self.async_condition
+        if self.required is not None:
+            result['required'] = self.required
+        if self.content is not None:
+            result['content'] = self.content
+        if self.format is not None:
+            result['format'] = self.format
+        if self.upper is not None:
+            result['upper'] = self.upper
+        if self.unit is not None:
+            result['unit'] = self.unit
+        if self.placeholder is not None:
+            result['placeholder'] = self.placeholder
+        if self.biz_alias is not None:
+            result['bizAlias'] = self.biz_alias
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.duration is not None:
+            result['duration'] = self.duration
+        if self.choice is not None:
+            result['choice'] = self.choice
+        if self.disabled is not None:
+            result['disabled'] = self.disabled
+        if self.align is not None:
+            result['align'] = self.align
+        if self.invisible is not None:
+            result['invisible'] = self.invisible
+        if self.link is not None:
+            result['link'] = self.link
+        if self.vertical_print is not None:
+            result['verticalPrint'] = self.vertical_print
+        if self.formula is not None:
+            result['formula'] = self.formula
+        if self.common_biz_type is not None:
+            result['commonBizType'] = self.common_biz_type
+        result['options'] = []
+        if self.options is not None:
+            for k in self.options:
+                result['options'].append(k.to_map() if k else None)
+        if self.print is not None:
+            result['print'] = self.print
+        result['statField'] = []
+        if self.stat_field is not None:
+            for k in self.stat_field:
+                result['statField'].append(k.to_map() if k else None)
+        if self.data_source is not None:
+            result['dataSource'] = self.data_source.to_map()
+        result['fields'] = []
+        if self.fields is not None:
+            for k in self.fields:
+                result['fields'].append(k.to_map() if k else None)
+        if self.address_model is not None:
+            result['addressModel'] = self.address_model
+        if self.multiple is not None:
+            result['multiple'] = self.multiple
+        if self.limit is not None:
+            result['limit'] = self.limit
+        result['availableTemplates'] = []
+        if self.available_templates is not None:
+            for k in self.available_templates:
+                result['availableTemplates'].append(k.to_map() if k else None)
+        if self.table_view_mode is not None:
+            result['tableViewMode'] = self.table_view_mode
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('componentId') is not None:
+            self.component_id = m.get('componentId')
+        if m.get('label') is not None:
+            self.label = m.get('label')
+        if m.get('asyncCondition') is not None:
+            self.async_condition = m.get('asyncCondition')
+        if m.get('required') is not None:
+            self.required = m.get('required')
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('format') is not None:
+            self.format = m.get('format')
+        if m.get('upper') is not None:
+            self.upper = m.get('upper')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        if m.get('placeholder') is not None:
+            self.placeholder = m.get('placeholder')
+        if m.get('bizAlias') is not None:
+            self.biz_alias = m.get('bizAlias')
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('duration') is not None:
+            self.duration = m.get('duration')
+        if m.get('choice') is not None:
+            self.choice = m.get('choice')
+        if m.get('disabled') is not None:
+            self.disabled = m.get('disabled')
+        if m.get('align') is not None:
+            self.align = m.get('align')
+        if m.get('invisible') is not None:
+            self.invisible = m.get('invisible')
+        if m.get('link') is not None:
+            self.link = m.get('link')
+        if m.get('verticalPrint') is not None:
+            self.vertical_print = m.get('verticalPrint')
+        if m.get('formula') is not None:
+            self.formula = m.get('formula')
+        if m.get('commonBizType') is not None:
+            self.common_biz_type = m.get('commonBizType')
+        self.options = []
+        if m.get('options') is not None:
+            for k in m.get('options'):
+                temp_model = FormCreateRequestFormComponentsChildrenPropsOptions()
+                self.options.append(temp_model.from_map(k))
+        if m.get('print') is not None:
+            self.print = m.get('print')
+        self.stat_field = []
+        if m.get('statField') is not None:
+            for k in m.get('statField'):
+                temp_model = FormCreateRequestFormComponentsChildrenPropsStatField()
+                self.stat_field.append(temp_model.from_map(k))
+        if m.get('dataSource') is not None:
+            temp_model = FormCreateRequestFormComponentsChildrenPropsDataSource()
+            self.data_source = temp_model.from_map(m['dataSource'])
+        self.fields = []
+        if m.get('fields') is not None:
+            for k in m.get('fields'):
+                temp_model = FormCreateRequestFormComponentsChildrenPropsFields()
+                self.fields.append(temp_model.from_map(k))
+        if m.get('addressModel') is not None:
+            self.address_model = m.get('addressModel')
+        if m.get('multiple') is not None:
+            self.multiple = m.get('multiple')
+        if m.get('limit') is not None:
+            self.limit = m.get('limit')
+        self.available_templates = []
+        if m.get('availableTemplates') is not None:
+            for k in m.get('availableTemplates'):
+                temp_model = FormCreateRequestFormComponentsChildrenPropsAvailableTemplates()
+                self.available_templates.append(temp_model.from_map(k))
+        if m.get('tableViewMode') is not None:
+            self.table_view_mode = m.get('tableViewMode')
+        return self
+
+
+class FormCreateRequestFormComponentsChildrenChildrenPropsOptions(TeaModel):
+    def __init__(
+        self,
+        value: str = None,
+        key: str = None,
+    ):
+        # 选项的显示内容
+        self.value = value
+        # 选项的唯一主键
+        self.key = key
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.value is not None:
+            result['value'] = self.value
+        if self.key is not None:
+            result['key'] = self.key
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        if m.get('key') is not None:
+            self.key = m.get('key')
+        return self
+
+
+class FormCreateRequestFormComponentsChildrenChildrenPropsStatField(TeaModel):
+    def __init__(
+        self,
+        component_id: str = None,
+        label: str = None,
+        upper: bool = None,
+        pay_enable: str = None,
+    ):
+        self.component_id = component_id
+        self.label = label
+        self.upper = upper
+        self.pay_enable = pay_enable
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.component_id is not None:
+            result['componentId'] = self.component_id
+        if self.label is not None:
+            result['label'] = self.label
+        if self.upper is not None:
+            result['upper'] = self.upper
+        if self.pay_enable is not None:
+            result['payEnable'] = self.pay_enable
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('componentId') is not None:
+            self.component_id = m.get('componentId')
+        if m.get('label') is not None:
+            self.label = m.get('label')
+        if m.get('upper') is not None:
+            self.upper = m.get('upper')
+        if m.get('payEnable') is not None:
+            self.pay_enable = m.get('payEnable')
+        return self
+
+
+class FormCreateRequestFormComponentsChildrenChildrenPropsDataSourceTarget(TeaModel):
+    def __init__(
+        self,
+        app_uuid: str = None,
+        app_type: int = None,
+        biz_type: str = None,
+        form_code: str = None,
+    ):
+        self.app_uuid = app_uuid
+        self.app_type = app_type
+        self.biz_type = biz_type
+        self.form_code = form_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_uuid is not None:
+            result['appUuid'] = self.app_uuid
+        if self.app_type is not None:
+            result['appType'] = self.app_type
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.form_code is not None:
+            result['formCode'] = self.form_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appUuid') is not None:
+            self.app_uuid = m.get('appUuid')
+        if m.get('appType') is not None:
+            self.app_type = m.get('appType')
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('formCode') is not None:
+            self.form_code = m.get('formCode')
+        return self
+
+
+class FormCreateRequestFormComponentsChildrenChildrenPropsDataSource(TeaModel):
+    def __init__(
+        self,
+        type: str = None,
+        target: FormCreateRequestFormComponentsChildrenChildrenPropsDataSourceTarget = None,
+    ):
+        self.type = type
+        self.target = target
+
+    def validate(self):
+        if self.target:
+            self.target.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.type is not None:
+            result['type'] = self.type
+        if self.target is not None:
+            result['target'] = self.target.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('target') is not None:
+            temp_model = FormCreateRequestFormComponentsChildrenChildrenPropsDataSourceTarget()
+            self.target = temp_model.from_map(m['target'])
+        return self
+
+
+class FormCreateRequestFormComponentsChildrenChildrenPropsFieldsPropsOptions(TeaModel):
+    def __init__(
+        self,
+        key: str = None,
+        value: str = None,
+    ):
+        # 每一个选项的唯一键
+        self.key = key
+        # 每一个选项的值
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.key is not None:
+            result['key'] = self.key
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('key') is not None:
+            self.key = m.get('key')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class FormCreateRequestFormComponentsChildrenChildrenPropsFieldsProps(TeaModel):
+    def __init__(
+        self,
+        component_id: str = None,
+        label: str = None,
+        required: bool = None,
+        print: str = None,
+        content: str = None,
+        format: str = None,
+        options: List[FormCreateRequestFormComponentsChildrenChildrenPropsFieldsPropsOptions] = None,
+        upper: str = None,
+        unit: str = None,
+        placeholder: str = None,
+        biz_alias: str = None,
+        biz_type: str = None,
+        duration: bool = None,
+        choice: str = None,
+        disabled: bool = None,
+        align: str = None,
+    ):
+        # 表单中控件的唯一id
+        self.component_id = component_id
+        # 控件标题
+        self.label = label
+        # 必填
+        self.required = required
+        # 字段是否可被打印，1表示打印, 0表示打印，默认打印
+        self.print = print
+        # 说明文字控件内容
+        self.content = content
+        # 时间格式
+        self.format = format
+        # 选项内容
+        self.options = options
+        # 是否需要大写，1需要大写，0不需要，默认1
+        self.upper = upper
+        # 时间单位（天、小时）
+        self.unit = unit
+        # 输入提示
+        self.placeholder = placeholder
+        # 业务别名
+        self.biz_alias = biz_alias
+        # 套件的业务标识
+        self.biz_type = biz_type
+        # 是否自动计算时长
+        self.duration = duration
+        # 联系人控件是否支持多选，1多选，0单选
+        self.choice = choice
+        # 是否不可编辑
+        self.disabled = disabled
+        # 文字提示控件显示方式（top|middle|bottom）
+        self.align = align
+
+    def validate(self):
+        if self.options:
+            for k in self.options:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.component_id is not None:
+            result['componentId'] = self.component_id
+        if self.label is not None:
+            result['label'] = self.label
+        if self.required is not None:
+            result['required'] = self.required
+        if self.print is not None:
+            result['print'] = self.print
+        if self.content is not None:
+            result['content'] = self.content
+        if self.format is not None:
+            result['format'] = self.format
+        result['options'] = []
+        if self.options is not None:
+            for k in self.options:
+                result['options'].append(k.to_map() if k else None)
+        if self.upper is not None:
+            result['upper'] = self.upper
+        if self.unit is not None:
+            result['unit'] = self.unit
+        if self.placeholder is not None:
+            result['placeholder'] = self.placeholder
+        if self.biz_alias is not None:
+            result['bizAlias'] = self.biz_alias
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.duration is not None:
+            result['duration'] = self.duration
+        if self.choice is not None:
+            result['choice'] = self.choice
+        if self.disabled is not None:
+            result['disabled'] = self.disabled
+        if self.align is not None:
+            result['align'] = self.align
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('componentId') is not None:
+            self.component_id = m.get('componentId')
+        if m.get('label') is not None:
+            self.label = m.get('label')
+        if m.get('required') is not None:
+            self.required = m.get('required')
+        if m.get('print') is not None:
+            self.print = m.get('print')
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('format') is not None:
+            self.format = m.get('format')
+        self.options = []
+        if m.get('options') is not None:
+            for k in m.get('options'):
+                temp_model = FormCreateRequestFormComponentsChildrenChildrenPropsFieldsPropsOptions()
+                self.options.append(temp_model.from_map(k))
+        if m.get('upper') is not None:
+            self.upper = m.get('upper')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        if m.get('placeholder') is not None:
+            self.placeholder = m.get('placeholder')
+        if m.get('bizAlias') is not None:
+            self.biz_alias = m.get('bizAlias')
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('duration') is not None:
+            self.duration = m.get('duration')
+        if m.get('choice') is not None:
+            self.choice = m.get('choice')
+        if m.get('disabled') is not None:
+            self.disabled = m.get('disabled')
+        if m.get('align') is not None:
+            self.align = m.get('align')
+        return self
+
+
+class FormCreateRequestFormComponentsChildrenChildrenPropsFields(TeaModel):
+    def __init__(
+        self,
+        component_type: str = None,
+        props: FormCreateRequestFormComponentsChildrenChildrenPropsFieldsProps = None,
+    ):
+        self.component_type = component_type
+        self.props = props
+
+    def validate(self):
+        if self.props:
+            self.props.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.component_type is not None:
+            result['componentType'] = self.component_type
+        if self.props is not None:
+            result['props'] = self.props.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('componentType') is not None:
+            self.component_type = m.get('componentType')
+        if m.get('props') is not None:
+            temp_model = FormCreateRequestFormComponentsChildrenChildrenPropsFieldsProps()
+            self.props = temp_model.from_map(m['props'])
+        return self
+
+
+class FormCreateRequestFormComponentsChildrenChildrenProps(TeaModel):
+    def __init__(
+        self,
+        component_id: str = None,
+        label: str = None,
+        async_condition: bool = None,
+        required: bool = None,
+        content: str = None,
+        format: str = None,
+        upper: str = None,
+        unit: str = None,
+        placeholder: str = None,
+        biz_alias: str = None,
+        biz_type: str = None,
+        duration: bool = None,
+        choice: str = None,
+        disabled: bool = None,
+        align: str = None,
+        invisible: bool = None,
+        link: str = None,
+        vertical_print: bool = None,
+        formula: str = None,
+        common_biz_type: str = None,
+        options: List[FormCreateRequestFormComponentsChildrenChildrenPropsOptions] = None,
+        print: str = None,
+        stat_field: List[FormCreateRequestFormComponentsChildrenChildrenPropsStatField] = None,
+        data_source: FormCreateRequestFormComponentsChildrenChildrenPropsDataSource = None,
+        fields: List[FormCreateRequestFormComponentsChildrenChildrenPropsFields] = None,
+    ):
+        self.component_id = component_id
+        # 控件标题
+        self.label = label
+        # 套件中控件是否可设置为分条件字段
+        self.async_condition = async_condition
+        # 必填
+        self.required = required
+        # 说明文字控件内容
+        self.content = content
+        # 时间格式
+        self.format = format
+        # 是否需要大写，1需要大写，0不需要大写
+        self.upper = upper
+        # 时间单位（天、小时）
+        self.unit = unit
+        # 输入提示
+        self.placeholder = placeholder
+        # 业务别名
+        self.biz_alias = biz_alias
+        # 套件的业务标识
+        self.biz_type = biz_type
+        # 是否自动计算时长
+        self.duration = duration
+        # 联系人控件是否支持多选，1多选，0单选
+        self.choice = choice
+        # 是否不可编辑
+        self.disabled = disabled
+        # 文字提示控件显示方式:top|middle|bottom
+        self.align = align
+        # 是否隐藏字段
+        self.invisible = invisible
+        # 说明文字控件链接地址
+        self.link = link
+        # 明细排版方式false横向，true纵向
+        self.vertical_print = vertical_print
+        # 公式
+        self.formula = formula
+        # 自定义控件渲染标识
+        self.common_biz_type = common_biz_type
+        self.options = options
+        self.print = print
+        self.stat_field = stat_field
+        self.data_source = data_source
+        self.fields = fields
+
+    def validate(self):
+        if self.options:
+            for k in self.options:
+                if k:
+                    k.validate()
+        if self.stat_field:
+            for k in self.stat_field:
+                if k:
+                    k.validate()
+        if self.data_source:
+            self.data_source.validate()
+        if self.fields:
+            for k in self.fields:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.component_id is not None:
+            result['componentId'] = self.component_id
+        if self.label is not None:
+            result['label'] = self.label
+        if self.async_condition is not None:
+            result['asyncCondition'] = self.async_condition
+        if self.required is not None:
+            result['required'] = self.required
+        if self.content is not None:
+            result['content'] = self.content
+        if self.format is not None:
+            result['format'] = self.format
+        if self.upper is not None:
+            result['upper'] = self.upper
+        if self.unit is not None:
+            result['unit'] = self.unit
+        if self.placeholder is not None:
+            result['placeholder'] = self.placeholder
+        if self.biz_alias is not None:
+            result['bizAlias'] = self.biz_alias
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.duration is not None:
+            result['duration'] = self.duration
+        if self.choice is not None:
+            result['choice'] = self.choice
+        if self.disabled is not None:
+            result['disabled'] = self.disabled
+        if self.align is not None:
+            result['align'] = self.align
+        if self.invisible is not None:
+            result['invisible'] = self.invisible
+        if self.link is not None:
+            result['link'] = self.link
+        if self.vertical_print is not None:
+            result['verticalPrint'] = self.vertical_print
+        if self.formula is not None:
+            result['formula'] = self.formula
+        if self.common_biz_type is not None:
+            result['commonBizType'] = self.common_biz_type
+        result['options'] = []
+        if self.options is not None:
+            for k in self.options:
+                result['options'].append(k.to_map() if k else None)
+        if self.print is not None:
+            result['print'] = self.print
+        result['statField'] = []
+        if self.stat_field is not None:
+            for k in self.stat_field:
+                result['statField'].append(k.to_map() if k else None)
+        if self.data_source is not None:
+            result['dataSource'] = self.data_source.to_map()
+        result['fields'] = []
+        if self.fields is not None:
+            for k in self.fields:
+                result['fields'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('componentId') is not None:
+            self.component_id = m.get('componentId')
+        if m.get('label') is not None:
+            self.label = m.get('label')
+        if m.get('asyncCondition') is not None:
+            self.async_condition = m.get('asyncCondition')
+        if m.get('required') is not None:
+            self.required = m.get('required')
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('format') is not None:
+            self.format = m.get('format')
+        if m.get('upper') is not None:
+            self.upper = m.get('upper')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        if m.get('placeholder') is not None:
+            self.placeholder = m.get('placeholder')
+        if m.get('bizAlias') is not None:
+            self.biz_alias = m.get('bizAlias')
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('duration') is not None:
+            self.duration = m.get('duration')
+        if m.get('choice') is not None:
+            self.choice = m.get('choice')
+        if m.get('disabled') is not None:
+            self.disabled = m.get('disabled')
+        if m.get('align') is not None:
+            self.align = m.get('align')
+        if m.get('invisible') is not None:
+            self.invisible = m.get('invisible')
+        if m.get('link') is not None:
+            self.link = m.get('link')
+        if m.get('verticalPrint') is not None:
+            self.vertical_print = m.get('verticalPrint')
+        if m.get('formula') is not None:
+            self.formula = m.get('formula')
+        if m.get('commonBizType') is not None:
+            self.common_biz_type = m.get('commonBizType')
+        self.options = []
+        if m.get('options') is not None:
+            for k in m.get('options'):
+                temp_model = FormCreateRequestFormComponentsChildrenChildrenPropsOptions()
+                self.options.append(temp_model.from_map(k))
+        if m.get('print') is not None:
+            self.print = m.get('print')
+        self.stat_field = []
+        if m.get('statField') is not None:
+            for k in m.get('statField'):
+                temp_model = FormCreateRequestFormComponentsChildrenChildrenPropsStatField()
+                self.stat_field.append(temp_model.from_map(k))
+        if m.get('dataSource') is not None:
+            temp_model = FormCreateRequestFormComponentsChildrenChildrenPropsDataSource()
+            self.data_source = temp_model.from_map(m['dataSource'])
+        self.fields = []
+        if m.get('fields') is not None:
+            for k in m.get('fields'):
+                temp_model = FormCreateRequestFormComponentsChildrenChildrenPropsFields()
+                self.fields.append(temp_model.from_map(k))
+        return self
+
+
+class FormCreateRequestFormComponentsChildrenChildren(TeaModel):
+    def __init__(
+        self,
+        component_type: str = None,
+        props: FormCreateRequestFormComponentsChildrenChildrenProps = None,
+    ):
+        self.component_type = component_type
+        self.props = props
+
+    def validate(self):
+        if self.props:
+            self.props.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.component_type is not None:
+            result['componentType'] = self.component_type
+        if self.props is not None:
+            result['props'] = self.props.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('componentType') is not None:
+            self.component_type = m.get('componentType')
+        if m.get('props') is not None:
+            temp_model = FormCreateRequestFormComponentsChildrenChildrenProps()
+            self.props = temp_model.from_map(m['props'])
+        return self
+
+
+class FormCreateRequestFormComponentsChildren(TeaModel):
+    def __init__(
+        self,
+        component_type: str = None,
+        props: FormCreateRequestFormComponentsChildrenProps = None,
+        children: List[FormCreateRequestFormComponentsChildrenChildren] = None,
+    ):
+        # 控件类型
+        self.component_type = component_type
+        # 控件属性
+        self.props = props
+        # 子控件列表
+        self.children = children
+
+    def validate(self):
+        if self.props:
+            self.props.validate()
+        if self.children:
+            for k in self.children:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.component_type is not None:
+            result['componentType'] = self.component_type
+        if self.props is not None:
+            result['props'] = self.props.to_map()
+        result['children'] = []
+        if self.children is not None:
+            for k in self.children:
+                result['children'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('componentType') is not None:
+            self.component_type = m.get('componentType')
+        if m.get('props') is not None:
+            temp_model = FormCreateRequestFormComponentsChildrenProps()
+            self.props = temp_model.from_map(m['props'])
+        self.children = []
+        if m.get('children') is not None:
+            for k in m.get('children'):
+                temp_model = FormCreateRequestFormComponentsChildrenChildren()
+                self.children.append(temp_model.from_map(k))
+        return self
+
+
+class FormCreateRequestFormComponents(TeaModel):
+    def __init__(
+        self,
+        component_type: str = None,
+        props: FormCreateRequestFormComponentsProps = None,
+        children: List[FormCreateRequestFormComponentsChildren] = None,
+    ):
+        # 控件类型
+        self.component_type = component_type
+        # 控件属性
+        self.props = props
+        # 子控件列表
+        self.children = children
+
+    def validate(self):
+        if self.props:
+            self.props.validate()
+        if self.children:
+            for k in self.children:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.component_type is not None:
+            result['componentType'] = self.component_type
+        if self.props is not None:
+            result['props'] = self.props.to_map()
+        result['children'] = []
+        if self.children is not None:
+            for k in self.children:
+                result['children'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('componentType') is not None:
+            self.component_type = m.get('componentType')
+        if m.get('props') is not None:
+            temp_model = FormCreateRequestFormComponentsProps()
+            self.props = temp_model.from_map(m['props'])
+        self.children = []
+        if m.get('children') is not None:
+            for k in m.get('children'):
+                temp_model = FormCreateRequestFormComponentsChildren()
+                self.children.append(temp_model.from_map(k))
+        return self
+
+
+class FormCreateRequest(TeaModel):
+    def __init__(
+        self,
+        ding_corp_id: str = None,
+        ding_org_id: int = None,
+        ding_isv_org_id: int = None,
+        ding_suite_key: str = None,
+        ding_token_grant_type: int = None,
+        request_id: str = None,
+        process_code: str = None,
+        name: str = None,
+        description: str = None,
+        form_components: List[FormCreateRequestFormComponents] = None,
+    ):
+        self.ding_corp_id = ding_corp_id
+        self.ding_org_id = ding_org_id
+        self.ding_isv_org_id = ding_isv_org_id
+        self.ding_suite_key = ding_suite_key
+        self.ding_token_grant_type = ding_token_grant_type
+        self.request_id = request_id
+        self.process_code = process_code
+        # 表单模板名称
+        self.name = name
+        # 表单模板描述
+        self.description = description
+        # 表单控件列表
+        self.form_components = form_components
+
+    def validate(self):
+        if self.form_components:
+            for k in self.form_components:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_corp_id is not None:
+            result['dingCorpId'] = self.ding_corp_id
+        if self.ding_org_id is not None:
+            result['dingOrgId'] = self.ding_org_id
+        if self.ding_isv_org_id is not None:
+            result['dingIsvOrgId'] = self.ding_isv_org_id
+        if self.ding_suite_key is not None:
+            result['dingSuiteKey'] = self.ding_suite_key
+        if self.ding_token_grant_type is not None:
+            result['dingTokenGrantType'] = self.ding_token_grant_type
+        if self.request_id is not None:
+            result['RequestId'] = self.request_id
+        if self.process_code is not None:
+            result['processCode'] = self.process_code
+        if self.name is not None:
+            result['name'] = self.name
+        if self.description is not None:
+            result['description'] = self.description
+        result['formComponents'] = []
+        if self.form_components is not None:
+            for k in self.form_components:
+                result['formComponents'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingCorpId') is not None:
+            self.ding_corp_id = m.get('dingCorpId')
+        if m.get('dingOrgId') is not None:
+            self.ding_org_id = m.get('dingOrgId')
+        if m.get('dingIsvOrgId') is not None:
+            self.ding_isv_org_id = m.get('dingIsvOrgId')
+        if m.get('dingSuiteKey') is not None:
+            self.ding_suite_key = m.get('dingSuiteKey')
+        if m.get('dingTokenGrantType') is not None:
+            self.ding_token_grant_type = m.get('dingTokenGrantType')
+        if m.get('RequestId') is not None:
+            self.request_id = m.get('RequestId')
+        if m.get('processCode') is not None:
+            self.process_code = m.get('processCode')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        self.form_components = []
+        if m.get('formComponents') is not None:
+            for k in m.get('formComponents'):
+                temp_model = FormCreateRequestFormComponents()
+                self.form_components.append(temp_model.from_map(k))
+        return self
+
+
+class FormCreateResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        process_code: str = None,
+    ):
+        # 保存或更新的表单code
+        self.process_code = process_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.process_code is not None:
+            result['processCode'] = self.process_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('processCode') is not None:
+            self.process_code = m.get('processCode')
+        return self
+
+
+class FormCreateResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: FormCreateResponseBodyResult = None,
+    ):
+        # 表单模板信息
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = FormCreateResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class FormCreateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: FormCreateResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = FormCreateResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
