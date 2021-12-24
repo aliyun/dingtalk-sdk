@@ -2321,9 +2321,28 @@ export class ReportDeviceLogRequest extends $tea.Model {
   }
 }
 
+export class ReportDeviceLogResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ReportDeviceLogResponse extends $tea.Model {
   headers: { [key: string]: string };
-  body: boolean;
+  body: ReportDeviceLogResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -2334,7 +2353,7 @@ export class ReportDeviceLogResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: 'boolean',
+      body: ReportDeviceLogResponseBody,
     };
   }
 
@@ -3364,9 +3383,28 @@ export class DeviceHeartbeatRequest extends $tea.Model {
   }
 }
 
+export class DeviceHeartbeatResponseBody extends $tea.Model {
+  code?: number;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DeviceHeartbeatResponse extends $tea.Model {
   headers: { [key: string]: string };
-  body: number;
+  body: DeviceHeartbeatResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -3377,7 +3415,7 @@ export class DeviceHeartbeatResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: 'number',
+      body: DeviceHeartbeatResponseBody,
     };
   }
 
@@ -10196,7 +10234,7 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ReportDeviceLogResponse>(await this.doROARequest("ReportDeviceLog", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/deviceLogs/report`, "boolean", req, runtime), new ReportDeviceLogResponse({}));
+    return $tea.cast<ReportDeviceLogResponse>(await this.doROARequest("ReportDeviceLog", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/deviceLogs/report`, "json", req, runtime), new ReportDeviceLogResponse({}));
   }
 
   async createCustomClass(request: CreateCustomClassRequest): Promise<CreateCustomClassResponse> {
@@ -10689,7 +10727,7 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<DeviceHeartbeatResponse>(await this.doROARequest("DeviceHeartbeat", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/heartbeats/report`, "int32", req, runtime), new DeviceHeartbeatResponse({}));
+    return $tea.cast<DeviceHeartbeatResponse>(await this.doROARequest("DeviceHeartbeat", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/heartbeats/report`, "json", req, runtime), new DeviceHeartbeatResponse({}));
   }
 
   async deleteDept(deptId: string, request: DeleteDeptRequest): Promise<DeleteDeptResponse> {

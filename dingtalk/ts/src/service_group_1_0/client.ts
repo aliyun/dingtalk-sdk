@@ -2796,10 +2796,12 @@ export class QueryActiveUsersHeaders extends $tea.Model {
 export class QueryActiveUsersRequest extends $tea.Model {
   openTeamId?: string;
   openConversationId?: string;
+  topN?: number;
   static names(): { [key: string]: string } {
     return {
       openTeamId: 'openTeamId',
       openConversationId: 'openConversationId',
+      topN: 'topN',
     };
   }
 
@@ -2807,6 +2809,7 @@ export class QueryActiveUsersRequest extends $tea.Model {
     return {
       openTeamId: 'string',
       openConversationId: 'string',
+      topN: 'number',
     };
   }
 
@@ -6704,6 +6707,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.openConversationId)) {
       query["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.topN)) {
+      query["topN"] = request.topN;
     }
 
     let realHeaders : {[key: string ]: string} = { };

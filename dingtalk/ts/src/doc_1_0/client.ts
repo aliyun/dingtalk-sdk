@@ -253,11 +253,13 @@ export class CreateWorkspaceDocRequest extends $tea.Model {
   name?: string;
   docType?: string;
   operatorId?: string;
+  parentNodeId?: string;
   static names(): { [key: string]: string } {
     return {
       name: 'name',
       docType: 'docType',
       operatorId: 'operatorId',
+      parentNodeId: 'parentNodeId',
     };
   }
 
@@ -266,6 +268,7 @@ export class CreateWorkspaceDocRequest extends $tea.Model {
       name: 'string',
       docType: 'string',
       operatorId: 'string',
+      parentNodeId: 'string',
     };
   }
 
@@ -2316,6 +2319,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.operatorId)) {
       body["operatorId"] = request.operatorId;
+    }
+
+    if (!Util.isUnset(request.parentNodeId)) {
+      body["parentNodeId"] = request.parentNodeId;
     }
 
     let realHeaders : {[key: string ]: string} = { };

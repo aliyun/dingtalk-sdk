@@ -471,6 +471,233 @@ export class BatchSendOfficialAccountOTOMessageResponse extends $tea.Model {
   }
 }
 
+export class QueryCrmGroupChatsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCrmGroupChatsRequest extends $tea.Model {
+  relationType?: string;
+  nextToken?: string;
+  maxResults?: number;
+  queryDsl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      relationType: 'relationType',
+      nextToken: 'nextToken',
+      maxResults: 'maxResults',
+      queryDsl: 'queryDsl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      relationType: 'string',
+      nextToken: 'string',
+      maxResults: 'number',
+      queryDsl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCrmGroupChatsResponseBody extends $tea.Model {
+  resultList?: QueryCrmGroupChatsResponseBodyResultList[];
+  hasMore?: boolean;
+  nextToken?: string;
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      resultList: 'resultList',
+      hasMore: 'hasMore',
+      nextToken: 'nextToken',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      resultList: { 'type': 'array', 'itemType': QueryCrmGroupChatsResponseBodyResultList },
+      hasMore: 'boolean',
+      nextToken: 'string',
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCrmGroupChatsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryCrmGroupChatsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryCrmGroupChatsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetGroupSetHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetGroupSetRequest extends $tea.Model {
+  openGroupSetId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openGroupSetId: 'openGroupSetId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openGroupSetId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetGroupSetResponseBody extends $tea.Model {
+  name?: string;
+  openGroupSetId?: string;
+  relationType?: string;
+  memberQuota?: number;
+  corpId?: string;
+  memberCount?: number;
+  templateId?: string;
+  ownerUserId?: string;
+  managerUserIds?: string;
+  notice?: string;
+  noticeToped?: number;
+  owner?: GetGroupSetResponseBodyOwner;
+  manager?: GetGroupSetResponseBodyManager[];
+  lastOpenConversationId?: string;
+  gmtCreate?: string;
+  gmtModified?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      openGroupSetId: 'openGroupSetId',
+      relationType: 'relationType',
+      memberQuota: 'memberQuota',
+      corpId: 'corpId',
+      memberCount: 'memberCount',
+      templateId: 'templateId',
+      ownerUserId: 'ownerUserId',
+      managerUserIds: 'managerUserIds',
+      notice: 'notice',
+      noticeToped: 'noticeToped',
+      owner: 'owner',
+      manager: 'manager',
+      lastOpenConversationId: 'lastOpenConversationId',
+      gmtCreate: 'gmtCreate',
+      gmtModified: 'gmtModified',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      openGroupSetId: 'string',
+      relationType: 'string',
+      memberQuota: 'number',
+      corpId: 'string',
+      memberCount: 'number',
+      templateId: 'string',
+      ownerUserId: 'string',
+      managerUserIds: 'string',
+      notice: 'string',
+      noticeToped: 'number',
+      owner: GetGroupSetResponseBodyOwner,
+      manager: { 'type': 'array', 'itemType': GetGroupSetResponseBodyManager },
+      lastOpenConversationId: 'string',
+      gmtCreate: 'string',
+      gmtModified: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetGroupSetResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetGroupSetResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetGroupSetResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateRelationMetaHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -642,6 +869,106 @@ export class UpdateRelationMetaFieldResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: UpdateRelationMetaFieldResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListGroupSetHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListGroupSetRequest extends $tea.Model {
+  nextToken?: string;
+  maxResults?: number;
+  queryDsl?: string;
+  relationType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      nextToken: 'nextToken',
+      maxResults: 'maxResults',
+      queryDsl: 'queryDsl',
+      relationType: 'relationType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nextToken: 'string',
+      maxResults: 'number',
+      queryDsl: 'string',
+      relationType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListGroupSetResponseBody extends $tea.Model {
+  hasMore?: boolean;
+  nextToken?: string;
+  resultList?: ListGroupSetResponseBodyResultList[];
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      nextToken: 'nextToken',
+      resultList: 'resultList',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      nextToken: 'string',
+      resultList: { 'type': 'array', 'itemType': ListGroupSetResponseBodyResultList },
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListGroupSetResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ListGroupSetResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ListGroupSetResponseBody,
     };
   }
 
@@ -833,6 +1160,90 @@ export class GetOfficialAccountOTOMessageResultResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: GetOfficialAccountOTOMessageResultResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCrmGroupChatHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCrmGroupChatResponseBody extends $tea.Model {
+  chatId?: string;
+  openConversationId?: string;
+  openGroupSetId?: string;
+  ownerUserId?: string;
+  ownerUserName?: string;
+  name?: string;
+  memberCount?: number;
+  gmtCreate?: number;
+  static names(): { [key: string]: string } {
+    return {
+      chatId: 'chatId',
+      openConversationId: 'openConversationId',
+      openGroupSetId: 'openGroupSetId',
+      ownerUserId: 'ownerUserId',
+      ownerUserName: 'ownerUserName',
+      name: 'name',
+      memberCount: 'memberCount',
+      gmtCreate: 'gmtCreate',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      chatId: 'string',
+      openConversationId: 'string',
+      openGroupSetId: 'string',
+      ownerUserId: 'string',
+      ownerUserName: 'string',
+      name: 'string',
+      memberCount: 'number',
+      gmtCreate: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCrmGroupChatResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetCrmGroupChatResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetCrmGroupChatResponseBody,
     };
   }
 
@@ -1187,12 +1598,14 @@ export class QueryCrmPersonalCustomerResponseBody extends $tea.Model {
   hasMore?: boolean;
   nextToken?: string;
   maxResults?: number;
+  totalCount?: number;
   static names(): { [key: string]: string } {
     return {
       values: 'values',
       hasMore: 'hasMore',
       nextToken: 'nextToken',
       maxResults: 'maxResults',
+      totalCount: 'totalCount',
     };
   }
 
@@ -1202,6 +1615,7 @@ export class QueryCrmPersonalCustomerResponseBody extends $tea.Model {
       hasMore: 'boolean',
       nextToken: 'string',
       maxResults: 'number',
+      totalCount: 'number',
     };
   }
 
@@ -1400,6 +1814,157 @@ export class DeleteRelationMetaFieldResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: DeleteRelationMetaFieldResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateGroupSetHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateGroupSetRequest extends $tea.Model {
+  name?: string;
+  ownerUserId?: string;
+  creatorUserId?: string;
+  templateId?: string;
+  memberQuota?: number;
+  managerUserIds?: string;
+  notice?: string;
+  noticeToped?: number;
+  relationType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      ownerUserId: 'ownerUserId',
+      creatorUserId: 'creatorUserId',
+      templateId: 'templateId',
+      memberQuota: 'memberQuota',
+      managerUserIds: 'managerUserIds',
+      notice: 'notice',
+      noticeToped: 'noticeToped',
+      relationType: 'relationType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      ownerUserId: 'string',
+      creatorUserId: 'string',
+      templateId: 'string',
+      memberQuota: 'number',
+      managerUserIds: 'string',
+      notice: 'string',
+      noticeToped: 'number',
+      relationType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateGroupSetResponseBody extends $tea.Model {
+  name?: string;
+  openGroupSetId?: string;
+  relationType?: string;
+  memberQuota?: number;
+  corpId?: string;
+  memberCount?: number;
+  templateId?: string;
+  ownerUserId?: string;
+  managerUserIds?: string;
+  notice?: string;
+  noticeToped?: number;
+  owner?: CreateGroupSetResponseBodyOwner;
+  manager?: CreateGroupSetResponseBodyManager[];
+  lastOpenConversationId?: string;
+  gmtCreate?: string;
+  gmtModified?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      openGroupSetId: 'openGroupSetId',
+      relationType: 'relationType',
+      memberQuota: 'memberQuota',
+      corpId: 'corpId',
+      memberCount: 'memberCount',
+      templateId: 'templateId',
+      ownerUserId: 'ownerUserId',
+      managerUserIds: 'managerUserIds',
+      notice: 'notice',
+      noticeToped: 'noticeToped',
+      owner: 'owner',
+      manager: 'manager',
+      lastOpenConversationId: 'lastOpenConversationId',
+      gmtCreate: 'gmtCreate',
+      gmtModified: 'gmtModified',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      openGroupSetId: 'string',
+      relationType: 'string',
+      memberQuota: 'number',
+      corpId: 'string',
+      memberCount: 'number',
+      templateId: 'string',
+      ownerUserId: 'string',
+      managerUserIds: 'string',
+      notice: 'string',
+      noticeToped: 'number',
+      owner: CreateGroupSetResponseBodyOwner,
+      manager: { 'type': 'array', 'itemType': CreateGroupSetResponseBodyManager },
+      lastOpenConversationId: 'string',
+      gmtCreate: 'string',
+      gmtModified: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateGroupSetResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CreateGroupSetResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CreateGroupSetResponseBody,
     };
   }
 
@@ -1799,6 +2364,7 @@ export class AddCrmPersonalCustomerRequest extends $tea.Model {
   data?: { [key: string]: any };
   extendData?: { [key: string]: any };
   permission?: AddCrmPersonalCustomerRequestPermission;
+  relationType?: string;
   skipDuplicateCheck?: boolean;
   action?: string;
   static names(): { [key: string]: string } {
@@ -1808,6 +2374,7 @@ export class AddCrmPersonalCustomerRequest extends $tea.Model {
       data: 'data',
       extendData: 'extendData',
       permission: 'permission',
+      relationType: 'relationType',
       skipDuplicateCheck: 'skipDuplicateCheck',
       action: 'action',
     };
@@ -1820,6 +2387,7 @@ export class AddCrmPersonalCustomerRequest extends $tea.Model {
       data: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
       extendData: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
       permission: AddCrmPersonalCustomerRequestPermission,
+      relationType: 'string',
       skipDuplicateCheck: 'boolean',
       action: 'string',
     };
@@ -2126,6 +2694,90 @@ export class AbandonCustomerResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: AbandonCustomerResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateGroupSetHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateGroupSetRequest extends $tea.Model {
+  openGroupSetId?: string;
+  name?: string;
+  memberQuota?: number;
+  ownerUserId?: string;
+  managerUserIds?: string;
+  notice?: string;
+  noticeToped?: number;
+  templateId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openGroupSetId: 'openGroupSetId',
+      name: 'name',
+      memberQuota: 'memberQuota',
+      ownerUserId: 'ownerUserId',
+      managerUserIds: 'managerUserIds',
+      notice: 'notice',
+      noticeToped: 'noticeToped',
+      templateId: 'templateId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openGroupSetId: 'string',
+      name: 'string',
+      memberQuota: 'number',
+      ownerUserId: 'string',
+      managerUserIds: 'string',
+      notice: 'string',
+      noticeToped: 'number',
+      templateId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateGroupSetResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: 'boolean',
     };
   }
 
@@ -2995,6 +3647,90 @@ export class BatchSendOfficialAccountOTOMessageResponseBodyResult extends $tea.M
   }
 }
 
+export class QueryCrmGroupChatsResponseBodyResultList extends $tea.Model {
+  chatId?: string;
+  openConversationId?: string;
+  openGroupSetId?: string;
+  ownerUserId?: string;
+  ownerUserName?: string;
+  name?: string;
+  memberCount?: number;
+  gmtCreate?: number;
+  static names(): { [key: string]: string } {
+    return {
+      chatId: 'chatId',
+      openConversationId: 'openConversationId',
+      openGroupSetId: 'openGroupSetId',
+      ownerUserId: 'ownerUserId',
+      ownerUserName: 'ownerUserName',
+      name: 'name',
+      memberCount: 'memberCount',
+      gmtCreate: 'gmtCreate',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      chatId: 'string',
+      openConversationId: 'string',
+      openGroupSetId: 'string',
+      ownerUserId: 'string',
+      ownerUserName: 'string',
+      name: 'string',
+      memberCount: 'number',
+      gmtCreate: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetGroupSetResponseBodyOwner extends $tea.Model {
+  name?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetGroupSetResponseBodyManager extends $tea.Model {
+  name?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateRelationMetaRequestRelationMetaDTOItemsPropsOptions extends $tea.Model {
   key?: string;
   value?: string;
@@ -3267,6 +4003,114 @@ export class UpdateRelationMetaFieldRequestFieldDTOList extends $tea.Model {
     return {
       componentName: 'string',
       props: UpdateRelationMetaFieldRequestFieldDTOListProps,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListGroupSetResponseBodyResultListOwner extends $tea.Model {
+  name?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListGroupSetResponseBodyResultListManager extends $tea.Model {
+  name?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListGroupSetResponseBodyResultList extends $tea.Model {
+  name?: string;
+  openGroupSetId?: string;
+  relationType?: string;
+  memberQuota?: number;
+  corpId?: string;
+  memberCount?: number;
+  templateId?: string;
+  ownerUserId?: string;
+  managerUserIds?: string;
+  notice?: string;
+  noticeToped?: number;
+  owner?: ListGroupSetResponseBodyResultListOwner;
+  manager?: ListGroupSetResponseBodyResultListManager[];
+  lastOpenConversationId?: string;
+  gmtCreate?: string;
+  gmtModified?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      openGroupSetId: 'openGroupSetId',
+      relationType: 'relationType',
+      memberQuota: 'memberQuota',
+      corpId: 'corpId',
+      memberCount: 'memberCount',
+      templateId: 'templateId',
+      ownerUserId: 'ownerUserId',
+      managerUserIds: 'managerUserIds',
+      notice: 'notice',
+      noticeToped: 'noticeToped',
+      owner: 'owner',
+      manager: 'manager',
+      lastOpenConversationId: 'lastOpenConversationId',
+      gmtCreate: 'gmtCreate',
+      gmtModified: 'gmtModified',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      openGroupSetId: 'string',
+      relationType: 'string',
+      memberQuota: 'number',
+      corpId: 'string',
+      memberCount: 'number',
+      templateId: 'string',
+      ownerUserId: 'string',
+      managerUserIds: 'string',
+      notice: 'string',
+      noticeToped: 'number',
+      owner: ListGroupSetResponseBodyResultListOwner,
+      manager: { 'type': 'array', 'itemType': ListGroupSetResponseBodyResultListManager },
+      lastOpenConversationId: 'string',
+      gmtCreate: 'string',
+      gmtModified: 'string',
     };
   }
 
@@ -3862,6 +4706,50 @@ export class ListCrmPersonalCustomersResponseBodyResult extends $tea.Model {
       procInstStatus: 'string',
       gmtCreate: 'string',
       gmtModified: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateGroupSetResponseBodyOwner extends $tea.Model {
+  name?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateGroupSetResponseBodyManager extends $tea.Model {
+  name?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      userId: 'string',
     };
   }
 
@@ -6338,6 +7226,76 @@ export default class Client extends OpenApi {
     return $tea.cast<BatchSendOfficialAccountOTOMessageResponse>(await this.doROARequest("BatchSendOfficialAccountOTOMessage", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/officialAccounts/oToMessages/batchSend`, "json", req, runtime), new BatchSendOfficialAccountOTOMessageResponse({}));
   }
 
+  async queryCrmGroupChats(request: QueryCrmGroupChatsRequest): Promise<QueryCrmGroupChatsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryCrmGroupChatsHeaders({ });
+    return await this.queryCrmGroupChatsWithOptions(request, headers, runtime);
+  }
+
+  async queryCrmGroupChatsWithOptions(request: QueryCrmGroupChatsRequest, headers: QueryCrmGroupChatsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCrmGroupChatsResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.relationType)) {
+      query["relationType"] = request.relationType;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.queryDsl)) {
+      query["queryDsl"] = request.queryDsl;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryCrmGroupChatsResponse>(await this.doROARequest("QueryCrmGroupChats", "crm_1.0", "HTTP", "GET", "AK", `/v1.0/crm/crmGroupChats`, "json", req, runtime), new QueryCrmGroupChatsResponse({}));
+  }
+
+  async getGroupSet(request: GetGroupSetRequest): Promise<GetGroupSetResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetGroupSetHeaders({ });
+    return await this.getGroupSetWithOptions(request, headers, runtime);
+  }
+
+  async getGroupSetWithOptions(request: GetGroupSetRequest, headers: GetGroupSetHeaders, runtime: $Util.RuntimeOptions): Promise<GetGroupSetResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openGroupSetId)) {
+      query["openGroupSetId"] = request.openGroupSetId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetGroupSetResponse>(await this.doROARequest("GetGroupSet", "crm_1.0", "HTTP", "GET", "AK", `/v1.0/crm/groupSets`, "json", req, runtime), new GetGroupSetResponse({}));
+  }
+
   async createRelationMeta(request: CreateRelationMetaRequest): Promise<CreateRelationMetaResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateRelationMetaHeaders({ });
@@ -6414,6 +7372,47 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<UpdateRelationMetaFieldResponse>(await this.doROARequest("UpdateRelationMetaField", "crm_1.0", "HTTP", "PUT", "AK", `/v1.0/crm/relations/metas/fields`, "json", req, runtime), new UpdateRelationMetaFieldResponse({}));
+  }
+
+  async listGroupSet(request: ListGroupSetRequest): Promise<ListGroupSetResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListGroupSetHeaders({ });
+    return await this.listGroupSetWithOptions(request, headers, runtime);
+  }
+
+  async listGroupSetWithOptions(request: ListGroupSetRequest, headers: ListGroupSetHeaders, runtime: $Util.RuntimeOptions): Promise<ListGroupSetResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.queryDsl)) {
+      query["queryDsl"] = request.queryDsl;
+    }
+
+    if (!Util.isUnset(request.relationType)) {
+      query["relationType"] = request.relationType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<ListGroupSetResponse>(await this.doROARequest("ListGroupSet", "crm_1.0", "HTTP", "GET", "AK", `/v1.0/crm/groupSets/lists`, "json", req, runtime), new ListGroupSetResponse({}));
   }
 
   async sendOfficialAccountOTOMessage(request: SendOfficialAccountOTOMessageRequest): Promise<SendOfficialAccountOTOMessageResponse> {
@@ -6500,6 +7499,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<GetOfficialAccountOTOMessageResultResponse>(await this.doROARequest("GetOfficialAccountOTOMessageResult", "crm_1.0", "HTTP", "GET", "AK", `/v1.0/crm/officialAccounts/oToMessages/sendResults`, "json", req, runtime), new GetOfficialAccountOTOMessageResultResponse({}));
+  }
+
+  async getCrmGroupChat(openConversationId: string): Promise<GetCrmGroupChatResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetCrmGroupChatHeaders({ });
+    return await this.getCrmGroupChatWithOptions(openConversationId, headers, runtime);
+  }
+
+  async getCrmGroupChatWithOptions(openConversationId: string, headers: GetCrmGroupChatHeaders, runtime: $Util.RuntimeOptions): Promise<GetCrmGroupChatResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<GetCrmGroupChatResponse>(await this.doROARequest("GetCrmGroupChat", "crm_1.0", "HTTP", "GET", "AK", `/v1.0/crm/crmGroupChats/${openConversationId}`, "json", req, runtime), new GetCrmGroupChatResponse({}));
   }
 
   async deleteCrmPersonalCustomer(dataId: string, request: DeleteCrmPersonalCustomerRequest): Promise<DeleteCrmPersonalCustomerResponse> {
@@ -6757,6 +7778,67 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteRelationMetaFieldResponse>(await this.doROARequest("DeleteRelationMetaField", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/relations/metas/fields/remove`, "json", req, runtime), new DeleteRelationMetaFieldResponse({}));
   }
 
+  async createGroupSet(request: CreateGroupSetRequest): Promise<CreateGroupSetResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateGroupSetHeaders({ });
+    return await this.createGroupSetWithOptions(request, headers, runtime);
+  }
+
+  async createGroupSetWithOptions(request: CreateGroupSetRequest, headers: CreateGroupSetHeaders, runtime: $Util.RuntimeOptions): Promise<CreateGroupSetResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.ownerUserId)) {
+      body["ownerUserId"] = request.ownerUserId;
+    }
+
+    if (!Util.isUnset(request.creatorUserId)) {
+      body["creatorUserId"] = request.creatorUserId;
+    }
+
+    if (!Util.isUnset(request.templateId)) {
+      body["templateId"] = request.templateId;
+    }
+
+    if (!Util.isUnset(request.memberQuota)) {
+      body["memberQuota"] = request.memberQuota;
+    }
+
+    if (!Util.isUnset(request.managerUserIds)) {
+      body["managerUserIds"] = request.managerUserIds;
+    }
+
+    if (!Util.isUnset(request.notice)) {
+      body["notice"] = request.notice;
+    }
+
+    if (!Util.isUnset(request.noticeToped)) {
+      body["noticeToped"] = request.noticeToped;
+    }
+
+    if (!Util.isUnset(request.relationType)) {
+      body["relationType"] = request.relationType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreateGroupSetResponse>(await this.doROARequest("CreateGroupSet", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/groupSets`, "json", req, runtime), new CreateGroupSetResponse({}));
+  }
+
   async addRelationMetaField(request: AddRelationMetaFieldRequest): Promise<AddRelationMetaFieldResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddRelationMetaFieldHeaders({ });
@@ -6947,6 +8029,10 @@ export default class Client extends OpenApi {
       body["permission"] = request.permission;
     }
 
+    if (!Util.isUnset(request.relationType)) {
+      body["relationType"] = request.relationType;
+    }
+
     if (!Util.isUnset(request.skipDuplicateCheck)) {
       body["skipDuplicateCheck"] = request.skipDuplicateCheck;
     }
@@ -7081,6 +8167,63 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<AbandonCustomerResponse>(await this.doROARequest("AbandonCustomer", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/customers/abandon`, "json", req, runtime), new AbandonCustomerResponse({}));
+  }
+
+  async updateGroupSet(request: UpdateGroupSetRequest): Promise<UpdateGroupSetResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateGroupSetHeaders({ });
+    return await this.updateGroupSetWithOptions(request, headers, runtime);
+  }
+
+  async updateGroupSetWithOptions(request: UpdateGroupSetRequest, headers: UpdateGroupSetHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateGroupSetResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openGroupSetId)) {
+      body["openGroupSetId"] = request.openGroupSetId;
+    }
+
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.memberQuota)) {
+      body["memberQuota"] = request.memberQuota;
+    }
+
+    if (!Util.isUnset(request.ownerUserId)) {
+      body["ownerUserId"] = request.ownerUserId;
+    }
+
+    if (!Util.isUnset(request.managerUserIds)) {
+      body["managerUserIds"] = request.managerUserIds;
+    }
+
+    if (!Util.isUnset(request.notice)) {
+      body["notice"] = request.notice;
+    }
+
+    if (!Util.isUnset(request.noticeToped)) {
+      body["noticeToped"] = request.noticeToped;
+    }
+
+    if (!Util.isUnset(request.templateId)) {
+      body["templateId"] = request.templateId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateGroupSetResponse>(await this.doROARequest("UpdateGroupSet", "crm_1.0", "HTTP", "PUT", "AK", `/v1.0/crm/groupSets/set`, "boolean", req, runtime), new UpdateGroupSetResponse({}));
   }
 
   async createCustomer(request: CreateCustomerRequest): Promise<CreateCustomerResponse> {
