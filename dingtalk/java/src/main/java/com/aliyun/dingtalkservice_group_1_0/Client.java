@@ -1707,6 +1707,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("openConversationId", request.openConversationId);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.topN)) {
+            query.put("topN", request.topN);
+        }
+
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;

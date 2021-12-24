@@ -1,23 +1,23 @@
 // This file is auto-generated, don't edit it. Thanks.
-package com.aliyun.dingtalkedu_1_0.models;
+package com.aliyun.dingtalkcrm_1_0.models;
 
 import com.aliyun.tea.*;
 
-public class ReportDeviceLogResponse extends TeaModel {
+public class ListGroupSetResponse extends TeaModel {
     @NameInMap("headers")
     @Validation(required = true)
     public java.util.Map<String, String> headers;
 
     @NameInMap("body")
     @Validation(required = true)
-    public ReportDeviceLogResponseBody body;
+    public ListGroupSetResponseBody body;
 
-    public static ReportDeviceLogResponse build(java.util.Map<String, ?> map) throws Exception {
-        ReportDeviceLogResponse self = new ReportDeviceLogResponse();
+    public static ListGroupSetResponse build(java.util.Map<String, ?> map) throws Exception {
+        ListGroupSetResponse self = new ListGroupSetResponse();
         return TeaModel.build(map, self);
     }
 
-    public ReportDeviceLogResponse setHeaders(java.util.Map<String, String> headers) {
+    public ListGroupSetResponse setHeaders(java.util.Map<String, String> headers) {
         this.headers = headers;
         return this;
     }
@@ -25,11 +25,11 @@ public class ReportDeviceLogResponse extends TeaModel {
         return this.headers;
     }
 
-    public ReportDeviceLogResponse setBody(ReportDeviceLogResponseBody body) {
+    public ListGroupSetResponse setBody(ListGroupSetResponseBody body) {
         this.body = body;
         return this;
     }
-    public ReportDeviceLogResponseBody getBody() {
+    public ListGroupSetResponseBody getBody() {
         return this.body;
     }
 

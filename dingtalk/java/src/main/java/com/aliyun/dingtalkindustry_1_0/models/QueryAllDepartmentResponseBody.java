@@ -57,6 +57,26 @@ public class QueryAllDepartmentResponseBody extends TeaModel {
         return this.currentPage;
     }
 
+    public static class QueryAllDepartmentResponseBodyContentDeptAndExtDepartmentWardIdList extends TeaModel {
+        // 病区id
+        @NameInMap("id")
+        public Long id;
+
+        public static QueryAllDepartmentResponseBodyContentDeptAndExtDepartmentWardIdList build(java.util.Map<String, ?> map) throws Exception {
+            QueryAllDepartmentResponseBodyContentDeptAndExtDepartmentWardIdList self = new QueryAllDepartmentResponseBodyContentDeptAndExtDepartmentWardIdList();
+            return TeaModel.build(map, self);
+        }
+
+        public QueryAllDepartmentResponseBodyContentDeptAndExtDepartmentWardIdList setId(Long id) {
+            this.id = id;
+            return this;
+        }
+        public Long getId() {
+            return this.id;
+        }
+
+    }
+
     public static class QueryAllDepartmentResponseBodyContentDeptAndExtDepartment extends TeaModel {
         // 科室ID
         @NameInMap("id")
@@ -105,6 +125,10 @@ public class QueryAllDepartmentResponseBody extends TeaModel {
         // 科室名称，同deptName
         @NameInMap("name")
         public String name;
+
+        // 病区id列表
+        @NameInMap("wardIdList")
+        public java.util.List<QueryAllDepartmentResponseBodyContentDeptAndExtDepartmentWardIdList> wardIdList;
 
         public static QueryAllDepartmentResponseBodyContentDeptAndExtDepartment build(java.util.Map<String, ?> map) throws Exception {
             QueryAllDepartmentResponseBodyContentDeptAndExtDepartment self = new QueryAllDepartmentResponseBodyContentDeptAndExtDepartment();
@@ -205,6 +229,14 @@ public class QueryAllDepartmentResponseBody extends TeaModel {
         }
         public String getName() {
             return this.name;
+        }
+
+        public QueryAllDepartmentResponseBodyContentDeptAndExtDepartment setWardIdList(java.util.List<QueryAllDepartmentResponseBodyContentDeptAndExtDepartmentWardIdList> wardIdList) {
+            this.wardIdList = wardIdList;
+            return this;
+        }
+        public java.util.List<QueryAllDepartmentResponseBodyContentDeptAndExtDepartmentWardIdList> getWardIdList() {
+            return this.wardIdList;
         }
 
     }

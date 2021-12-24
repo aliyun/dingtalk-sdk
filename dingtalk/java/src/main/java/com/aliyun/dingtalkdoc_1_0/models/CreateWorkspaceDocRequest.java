@@ -16,6 +16,10 @@ public class CreateWorkspaceDocRequest extends TeaModel {
     @NameInMap("operatorId")
     public String operatorId;
 
+    // 父节点nodeId
+    @NameInMap("parentNodeId")
+    public String parentNodeId;
+
     public static CreateWorkspaceDocRequest build(java.util.Map<String, ?> map) throws Exception {
         CreateWorkspaceDocRequest self = new CreateWorkspaceDocRequest();
         return TeaModel.build(map, self);
@@ -43,6 +47,14 @@ public class CreateWorkspaceDocRequest extends TeaModel {
     }
     public String getOperatorId() {
         return this.operatorId;
+    }
+
+    public CreateWorkspaceDocRequest setParentNodeId(String parentNodeId) {
+        this.parentNodeId = parentNodeId;
+        return this;
+    }
+    public String getParentNodeId() {
+        return this.parentNodeId;
     }
 
 }

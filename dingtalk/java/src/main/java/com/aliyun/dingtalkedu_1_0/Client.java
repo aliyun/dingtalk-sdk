@@ -1057,7 +1057,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("ReportDeviceLog", "edu_1.0", "HTTP", "POST", "AK", "/v1.0/edu/deviceLogs/report", "boolean", req, runtime), new ReportDeviceLogResponse());
+        return TeaModel.toModel(this.doROARequest("ReportDeviceLog", "edu_1.0", "HTTP", "POST", "AK", "/v1.0/edu/deviceLogs/report", "json", req, runtime), new ReportDeviceLogResponse());
     }
 
     public CreateCustomClassResponse createCustomClass(CreateCustomClassRequest request) throws Exception {
@@ -1550,7 +1550,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("DeviceHeartbeat", "edu_1.0", "HTTP", "POST", "AK", "/v1.0/edu/heartbeats/report", "int32", req, runtime), new DeviceHeartbeatResponse());
+        return TeaModel.toModel(this.doROARequest("DeviceHeartbeat", "edu_1.0", "HTTP", "POST", "AK", "/v1.0/edu/heartbeats/report", "json", req, runtime), new DeviceHeartbeatResponse());
     }
 
     public DeleteDeptResponse deleteDept(String deptId, DeleteDeptRequest request) throws Exception {

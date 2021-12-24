@@ -12,6 +12,10 @@ public class QueryActiveUsersRequest extends TeaModel {
     @NameInMap("openConversationId")
     public String openConversationId;
 
+    // 查询topN的数据
+    @NameInMap("topN")
+    public Long topN;
+
     public static QueryActiveUsersRequest build(java.util.Map<String, ?> map) throws Exception {
         QueryActiveUsersRequest self = new QueryActiveUsersRequest();
         return TeaModel.build(map, self);
@@ -31,6 +35,14 @@ public class QueryActiveUsersRequest extends TeaModel {
     }
     public String getOpenConversationId() {
         return this.openConversationId;
+    }
+
+    public QueryActiveUsersRequest setTopN(Long topN) {
+        this.topN = topN;
+        return this;
+    }
+    public Long getTopN() {
+        return this.topN;
     }
 
 }

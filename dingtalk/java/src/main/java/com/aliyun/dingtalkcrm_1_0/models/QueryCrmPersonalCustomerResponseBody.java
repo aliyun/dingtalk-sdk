@@ -13,8 +13,13 @@ public class QueryCrmPersonalCustomerResponseBody extends TeaModel {
     @NameInMap("nextToken")
     public String nextToken;
 
+    // 当前分页条数
     @NameInMap("maxResults")
     public Integer maxResults;
+
+    // 总条数
+    @NameInMap("totalCount")
+    public Integer totalCount;
 
     public static QueryCrmPersonalCustomerResponseBody build(java.util.Map<String, ?> map) throws Exception {
         QueryCrmPersonalCustomerResponseBody self = new QueryCrmPersonalCustomerResponseBody();
@@ -51,6 +56,14 @@ public class QueryCrmPersonalCustomerResponseBody extends TeaModel {
     }
     public Integer getMaxResults() {
         return this.maxResults;
+    }
+
+    public QueryCrmPersonalCustomerResponseBody setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+        return this;
+    }
+    public Integer getTotalCount() {
+        return this.totalCount;
     }
 
     public static class QueryCrmPersonalCustomerResponseBodyValuesPermission extends TeaModel {
