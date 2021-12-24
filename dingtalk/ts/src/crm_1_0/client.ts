@@ -1252,6 +1252,88 @@ export class GetCrmGroupChatResponse extends $tea.Model {
   }
 }
 
+export class QueryRelationDatasByTargetIdHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryRelationDatasByTargetIdRequest extends $tea.Model {
+  relationType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      relationType: 'relationType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      relationType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryRelationDatasByTargetIdResponseBody extends $tea.Model {
+  relations?: QueryRelationDatasByTargetIdResponseBodyRelations[];
+  static names(): { [key: string]: string } {
+    return {
+      relations: 'relations',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      relations: { 'type': 'array', 'itemType': QueryRelationDatasByTargetIdResponseBodyRelations },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryRelationDatasByTargetIdResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryRelationDatasByTargetIdResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryRelationDatasByTargetIdResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DeleteCrmPersonalCustomerHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1638,6 +1720,97 @@ export class QueryCrmPersonalCustomerResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: QueryCrmPersonalCustomerResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class JoinGroupSetHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class JoinGroupSetRequest extends $tea.Model {
+  bizDataList?: JoinGroupSetRequestBizDataList[];
+  unionId?: string;
+  openGroupSetId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizDataList: 'bizDataList',
+      unionId: 'unionId',
+      openGroupSetId: 'openGroupSetId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizDataList: { 'type': 'array', 'itemType': JoinGroupSetRequestBizDataList },
+      unionId: 'string',
+      openGroupSetId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class JoinGroupSetResponseBody extends $tea.Model {
+  success?: boolean;
+  openConversationId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+      openConversationId: 'openConversationId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+      openConversationId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class JoinGroupSetResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: JoinGroupSetResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: JoinGroupSetResponseBody,
     };
   }
 
@@ -4344,6 +4517,56 @@ export class GetOfficialAccountOTOMessageResultResponseBodyResult extends $tea.M
   }
 }
 
+export class QueryRelationDatasByTargetIdResponseBodyRelationsBizDataList extends $tea.Model {
+  key?: string;
+  value?: string;
+  extendValue?: string;
+  static names(): { [key: string]: string } {
+    return {
+      key: 'key',
+      value: 'value',
+      extendValue: 'extendValue',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      key: 'string',
+      value: 'string',
+      extendValue: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryRelationDatasByTargetIdResponseBodyRelations extends $tea.Model {
+  relationId?: string;
+  relationType?: string;
+  bizDataList?: QueryRelationDatasByTargetIdResponseBodyRelationsBizDataList[];
+  static names(): { [key: string]: string } {
+    return {
+      relationId: 'relationId',
+      relationType: 'relationType',
+      bizDataList: 'bizDataList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      relationId: 'string',
+      relationType: 'string',
+      bizDataList: { 'type': 'array', 'itemType': QueryRelationDatasByTargetIdResponseBodyRelationsBizDataList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SendOfficialAccountSNSMessageRequestDetailMessageBodyText extends $tea.Model {
   content?: string;
   static names(): { [key: string]: string } {
@@ -4626,6 +4849,31 @@ export class QueryCrmPersonalCustomerResponseBodyValues extends $tea.Model {
       procInstStatus: 'string',
       gmtCreate: 'string',
       gmtModified: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class JoinGroupSetRequestBizDataList extends $tea.Model {
+  extendValue?: string;
+  key?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      extendValue: 'extendValue',
+      key: 'key',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      extendValue: 'string',
+      key: 'string',
+      value: 'string',
     };
   }
 
@@ -6638,7 +6886,7 @@ export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildren ex
 
 export class DescribeRelationMetaResponseBodyRelationMetaDTOListItems extends $tea.Model {
   componentName?: string;
-  props?: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps[];
+  props?: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps;
   children?: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildren[];
   static names(): { [key: string]: string } {
     return {
@@ -6651,7 +6899,7 @@ export class DescribeRelationMetaResponseBodyRelationMetaDTOListItems extends $t
   static types(): { [key: string]: any } {
     return {
       componentName: 'string',
-      props: { 'type': 'array', 'itemType': DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps },
+      props: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps,
       children: { 'type': 'array', 'itemType': DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildren },
     };
   }
@@ -7523,6 +7771,35 @@ export default class Client extends OpenApi {
     return $tea.cast<GetCrmGroupChatResponse>(await this.doROARequest("GetCrmGroupChat", "crm_1.0", "HTTP", "GET", "AK", `/v1.0/crm/crmGroupChats/${openConversationId}`, "json", req, runtime), new GetCrmGroupChatResponse({}));
   }
 
+  async queryRelationDatasByTargetId(targetId: string, request: QueryRelationDatasByTargetIdRequest): Promise<QueryRelationDatasByTargetIdResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryRelationDatasByTargetIdHeaders({ });
+    return await this.queryRelationDatasByTargetIdWithOptions(targetId, request, headers, runtime);
+  }
+
+  async queryRelationDatasByTargetIdWithOptions(targetId: string, request: QueryRelationDatasByTargetIdRequest, headers: QueryRelationDatasByTargetIdHeaders, runtime: $Util.RuntimeOptions): Promise<QueryRelationDatasByTargetIdResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.relationType)) {
+      query["relationType"] = request.relationType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryRelationDatasByTargetIdResponse>(await this.doROARequest("QueryRelationDatasByTargetId", "crm_1.0", "HTTP", "GET", "AK", `/v1.0/crm/relations/datas/targets/${targetId}`, "json", req, runtime), new QueryRelationDatasByTargetIdResponse({}));
+  }
+
   async deleteCrmPersonalCustomer(dataId: string, request: DeleteCrmPersonalCustomerRequest): Promise<DeleteCrmPersonalCustomerResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteCrmPersonalCustomerHeaders({ });
@@ -7705,6 +7982,43 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<QueryCrmPersonalCustomerResponse>(await this.doROARequest("QueryCrmPersonalCustomer", "crm_1.0", "HTTP", "GET", "AK", `/v1.0/crm/personalCustomers`, "json", req, runtime), new QueryCrmPersonalCustomerResponse({}));
+  }
+
+  async joinGroupSet(request: JoinGroupSetRequest): Promise<JoinGroupSetResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new JoinGroupSetHeaders({ });
+    return await this.joinGroupSetWithOptions(request, headers, runtime);
+  }
+
+  async joinGroupSetWithOptions(request: JoinGroupSetRequest, headers: JoinGroupSetHeaders, runtime: $Util.RuntimeOptions): Promise<JoinGroupSetResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizDataList)) {
+      body["bizDataList"] = request.bizDataList;
+    }
+
+    if (!Util.isUnset(request.unionId)) {
+      body["unionId"] = request.unionId;
+    }
+
+    if (!Util.isUnset(request.openGroupSetId)) {
+      body["openGroupSetId"] = request.openGroupSetId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<JoinGroupSetResponse>(await this.doROARequest("JoinGroupSet", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/groupSets/join`, "json", req, runtime), new JoinGroupSetResponse({}));
   }
 
   async listCrmPersonalCustomers(request: ListCrmPersonalCustomersRequest): Promise<ListCrmPersonalCustomersResponse> {
