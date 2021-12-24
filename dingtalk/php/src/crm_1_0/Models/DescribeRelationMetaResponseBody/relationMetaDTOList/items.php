@@ -20,7 +20,7 @@ class items extends Model
     /**
      * @description 字段属性
      *
-     * @var props[]
+     * @var props
      */
     public $props;
 
@@ -47,13 +47,7 @@ class items extends Model
             $res['componentName'] = $this->componentName;
         }
         if (null !== $this->props) {
-            $res['props'] = [];
-            if (null !== $this->props && \is_array($this->props)) {
-                $n = 0;
-                foreach ($this->props as $item) {
-                    $res['props'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
+            $res['props'] = null !== $this->props ? $this->props->toMap() : null;
         }
         if (null !== $this->children) {
             $res['children'] = [];
@@ -80,13 +74,7 @@ class items extends Model
             $model->componentName = $map['componentName'];
         }
         if (isset($map['props'])) {
-            if (!empty($map['props'])) {
-                $model->props = [];
-                $n            = 0;
-                foreach ($map['props'] as $item) {
-                    $model->props[$n++] = null !== $item ? props::fromMap($item) : $item;
-                }
-            }
+            $model->props = props::fromMap($map['props']);
         }
         if (isset($map['children'])) {
             if (!empty($map['children'])) {
