@@ -47,6 +47,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GetDownloadInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GetFileInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GetFileInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GetFileInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GetMySpaceInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GetMySpaceInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GetMySpaceInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GetPreviewInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GetPreviewInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GetPreviewInfoResponse;
@@ -1453,6 +1456,48 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetDownloadInfoResponse::fromMap($this->doROARequest('GetDownloadInfo', 'drive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/drive/spaces/' . $spaceId . '/files/' . $fileId . '/downloadInfos', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetMySpaceInfoRequest $request
+     *
+     * @return GetMySpaceInfoResponse
+     */
+    public function getMySpaceInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetMySpaceInfoHeaders([]);
+
+        return $this->getMySpaceInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetMySpaceInfoRequest $request
+     * @param GetMySpaceInfoHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return GetMySpaceInfoResponse
+     */
+    public function getMySpaceInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->unionId)) {
+            @$query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetMySpaceInfoResponse::fromMap($this->doROARequest('GetMySpaceInfo', 'drive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/drive/mySpaces', 'json', $req, $runtime));
     }
 
     /**

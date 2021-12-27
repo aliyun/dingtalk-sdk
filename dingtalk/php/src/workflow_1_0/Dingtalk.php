@@ -23,6 +23,9 @@ use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\QueryFormByBizTypeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\QueryFormInstanceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\QueryFormInstanceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\QueryFormInstanceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\QuerySchemaByProcessCodeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\QuerySchemaByProcessCodeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\QuerySchemaByProcessCodeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\StartProcessInstanceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\StartProcessInstanceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\StartProcessInstanceResponse;
@@ -379,6 +382,48 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return FormCreateResponse::fromMap($this->doROARequest('FormCreate', 'workflow_1.0', 'HTTP', 'POST', 'AK', '/v1.0/workflow/forms', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QuerySchemaByProcessCodeRequest $request
+     *
+     * @return QuerySchemaByProcessCodeResponse
+     */
+    public function querySchemaByProcessCode($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QuerySchemaByProcessCodeHeaders([]);
+
+        return $this->querySchemaByProcessCodeWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QuerySchemaByProcessCodeRequest $request
+     * @param QuerySchemaByProcessCodeHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return QuerySchemaByProcessCodeResponse
+     */
+    public function querySchemaByProcessCodeWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->processCode)) {
+            @$query['processCode'] = $request->processCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QuerySchemaByProcessCodeResponse::fromMap($this->doROARequest('QuerySchemaByProcessCode', 'workflow_1.0', 'HTTP', 'GET', 'AK', '/v1.0/workflow/forms/schemas/processCodes', 'json', $req, $runtime));
     }
 
     /**

@@ -23,6 +23,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryMembersOfGroupRoleResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendInteractiveCardHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendInteractiveCardRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendInteractiveCardResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendRobotInteractiveCardHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendRobotInteractiveCardRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendRobotInteractiveCardResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendTemplateInteractiveCardHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendTemplateInteractiveCardRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendTemplateInteractiveCardResponse;
@@ -1027,5 +1030,95 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return UpdateTheGroupRolesOfGroupMemberResponse::fromMap($this->doROARequest('UpdateTheGroupRolesOfGroupMember', 'im_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/im/sceneGroups/members/groupRoles', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param SendRobotInteractiveCardRequest $request
+     *
+     * @return SendRobotInteractiveCardResponse
+     */
+    public function sendRobotInteractiveCard($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SendRobotInteractiveCardHeaders([]);
+
+        return $this->sendRobotInteractiveCardWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SendRobotInteractiveCardRequest $request
+     * @param SendRobotInteractiveCardHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return SendRobotInteractiveCardResponse
+     */
+    public function sendRobotInteractiveCardWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->requestId)) {
+            @$body['RequestId'] = $request->requestId;
+        }
+        if (!Utils::isUnset($request->dingAccessTokenType)) {
+            @$body['dingAccessTokenType'] = $request->dingAccessTokenType;
+        }
+        if (!Utils::isUnset($request->dingClientId)) {
+            @$body['dingClientId'] = $request->dingClientId;
+        }
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->dingOpenAppId)) {
+            @$body['dingOpenAppId'] = $request->dingOpenAppId;
+        }
+        if (!Utils::isUnset($request->dingUid)) {
+            @$body['dingUid'] = $request->dingUid;
+        }
+        if (!Utils::isUnset($request->cardTemplateId)) {
+            @$body['cardTemplateId'] = $request->cardTemplateId;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->singleChatReceiver)) {
+            @$body['singleChatReceiver'] = $request->singleChatReceiver;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->cardBizId)) {
+            @$body['cardBizId'] = $request->cardBizId;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->robotCode)) {
+            @$body['robotCode'] = $request->robotCode;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->cardData)) {
+            @$body['cardData'] = $request->cardData;
+        }
+        if (!Utils::isUnset($request->dingOauthAppId)) {
+            @$body['dingOauthAppId'] = $request->dingOauthAppId;
+        }
+        if (!Utils::isUnset($request->sendOptions)) {
+            @$body['sendOptions'] = $request->sendOptions;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SendRobotInteractiveCardResponse::fromMap($this->doROARequest('SendRobotInteractiveCard', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/v1.0/robot/interactiveCards/send', 'json', $req, $runtime));
     }
 }
