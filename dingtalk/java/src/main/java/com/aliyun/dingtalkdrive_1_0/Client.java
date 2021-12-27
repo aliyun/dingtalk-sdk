@@ -1004,6 +1004,35 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("GetDownloadInfo", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/downloadInfos", "json", req, runtime), new GetDownloadInfoResponse());
     }
 
+    public GetMySpaceInfoResponse getMySpaceInfo(GetMySpaceInfoRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        GetMySpaceInfoHeaders headers = new GetMySpaceInfoHeaders();
+        return this.getMySpaceInfoWithOptions(request, headers, runtime);
+    }
+
+    public GetMySpaceInfoResponse getMySpaceInfoWithOptions(GetMySpaceInfoRequest request, GetMySpaceInfoHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            query.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("GetMySpaceInfo", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/mySpaces", "json", req, runtime), new GetMySpaceInfoResponse());
+    }
+
     public GetUploadInfoResponse getUploadInfo(String spaceId, String parentId, GetUploadInfoRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         GetUploadInfoHeaders headers = new GetUploadInfoHeaders();

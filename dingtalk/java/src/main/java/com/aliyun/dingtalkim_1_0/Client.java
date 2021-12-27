@@ -930,4 +930,97 @@ public class Client extends com.aliyun.teaopenapi.Client {
         ));
         return TeaModel.toModel(this.doROARequest("UpdateTheGroupRolesOfGroupMember", "im_1.0", "HTTP", "PUT", "AK", "/v1.0/im/sceneGroups/members/groupRoles", "json", req, runtime), new UpdateTheGroupRolesOfGroupMemberResponse());
     }
+
+    public SendRobotInteractiveCardResponse sendRobotInteractiveCard(SendRobotInteractiveCardRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        SendRobotInteractiveCardHeaders headers = new SendRobotInteractiveCardHeaders();
+        return this.sendRobotInteractiveCardWithOptions(request, headers, runtime);
+    }
+
+    public SendRobotInteractiveCardResponse sendRobotInteractiveCardWithOptions(SendRobotInteractiveCardRequest request, SendRobotInteractiveCardHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.requestId)) {
+            body.put("RequestId", request.requestId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dingAccessTokenType)) {
+            body.put("dingAccessTokenType", request.dingAccessTokenType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dingClientId)) {
+            body.put("dingClientId", request.dingClientId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dingIsvOrgId)) {
+            body.put("dingIsvOrgId", request.dingIsvOrgId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dingOpenAppId)) {
+            body.put("dingOpenAppId", request.dingOpenAppId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dingUid)) {
+            body.put("dingUid", request.dingUid);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.cardTemplateId)) {
+            body.put("cardTemplateId", request.cardTemplateId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
+            body.put("openConversationId", request.openConversationId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.singleChatReceiver)) {
+            body.put("singleChatReceiver", request.singleChatReceiver);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dingTokenGrantType)) {
+            body.put("dingTokenGrantType", request.dingTokenGrantType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.cardBizId)) {
+            body.put("cardBizId", request.cardBizId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dingSuiteKey)) {
+            body.put("dingSuiteKey", request.dingSuiteKey);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.robotCode)) {
+            body.put("robotCode", request.robotCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dingOrgId)) {
+            body.put("dingOrgId", request.dingOrgId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.cardData)) {
+            body.put("cardData", request.cardData);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dingOauthAppId)) {
+            body.put("dingOauthAppId", request.dingOauthAppId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.sendOptions))) {
+            body.put("sendOptions", request.sendOptions);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("SendRobotInteractiveCard", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/v1.0/robot/interactiveCards/send", "json", req, runtime), new SendRobotInteractiveCardResponse());
+    }
 }
