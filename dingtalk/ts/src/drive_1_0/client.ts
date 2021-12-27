@@ -2420,6 +2420,109 @@ export class GetDownloadInfoResponse extends $tea.Model {
   }
 }
 
+export class GetMySpaceInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMySpaceInfoRequest extends $tea.Model {
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMySpaceInfoResponseBody extends $tea.Model {
+  spaceId?: string;
+  spaceName?: string;
+  spaceType?: string;
+  quota?: number;
+  usedQuota?: number;
+  permissionMode?: string;
+  createTime?: string;
+  modifyTime?: string;
+  static names(): { [key: string]: string } {
+    return {
+      spaceId: 'spaceId',
+      spaceName: 'spaceName',
+      spaceType: 'spaceType',
+      quota: 'quota',
+      usedQuota: 'usedQuota',
+      permissionMode: 'permissionMode',
+      createTime: 'createTime',
+      modifyTime: 'modifyTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      spaceId: 'string',
+      spaceName: 'string',
+      spaceType: 'string',
+      quota: 'number',
+      usedQuota: 'number',
+      permissionMode: 'string',
+      createTime: 'string',
+      modifyTime: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMySpaceInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetMySpaceInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetMySpaceInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetUploadInfoHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4572,6 +4675,35 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<GetDownloadInfoResponse>(await this.doROARequest("GetDownloadInfo", "drive_1.0", "HTTP", "GET", "AK", `/v1.0/drive/spaces/${spaceId}/files/${fileId}/downloadInfos`, "json", req, runtime), new GetDownloadInfoResponse({}));
+  }
+
+  async getMySpaceInfo(request: GetMySpaceInfoRequest): Promise<GetMySpaceInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetMySpaceInfoHeaders({ });
+    return await this.getMySpaceInfoWithOptions(request, headers, runtime);
+  }
+
+  async getMySpaceInfoWithOptions(request: GetMySpaceInfoRequest, headers: GetMySpaceInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetMySpaceInfoResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetMySpaceInfoResponse>(await this.doROARequest("GetMySpaceInfo", "drive_1.0", "HTTP", "GET", "AK", `/v1.0/drive/mySpaces`, "json", req, runtime), new GetMySpaceInfoResponse({}));
   }
 
   async getUploadInfo(spaceId: string, parentId: string, request: GetUploadInfoRequest): Promise<GetUploadInfoResponse> {

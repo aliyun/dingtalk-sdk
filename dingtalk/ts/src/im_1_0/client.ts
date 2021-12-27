@@ -1519,6 +1519,136 @@ export class UpdateTheGroupRolesOfGroupMemberResponse extends $tea.Model {
   }
 }
 
+export class SendRobotInteractiveCardHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendRobotInteractiveCardRequest extends $tea.Model {
+  requestId?: string;
+  dingAccessTokenType?: string;
+  dingClientId?: string;
+  dingIsvOrgId?: number;
+  dingOpenAppId?: string;
+  dingUid?: number;
+  cardTemplateId?: string;
+  openConversationId?: string;
+  singleChatReceiver?: string;
+  dingTokenGrantType?: number;
+  cardBizId?: string;
+  dingSuiteKey?: string;
+  robotCode?: string;
+  dingOrgId?: number;
+  cardData?: string;
+  dingOauthAppId?: number;
+  sendOptions?: SendRobotInteractiveCardRequestSendOptions;
+  static names(): { [key: string]: string } {
+    return {
+      requestId: 'RequestId',
+      dingAccessTokenType: 'dingAccessTokenType',
+      dingClientId: 'dingClientId',
+      dingIsvOrgId: 'dingIsvOrgId',
+      dingOpenAppId: 'dingOpenAppId',
+      dingUid: 'dingUid',
+      cardTemplateId: 'cardTemplateId',
+      openConversationId: 'openConversationId',
+      singleChatReceiver: 'singleChatReceiver',
+      dingTokenGrantType: 'dingTokenGrantType',
+      cardBizId: 'cardBizId',
+      dingSuiteKey: 'dingSuiteKey',
+      robotCode: 'robotCode',
+      dingOrgId: 'dingOrgId',
+      cardData: 'cardData',
+      dingOauthAppId: 'dingOauthAppId',
+      sendOptions: 'sendOptions',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      requestId: 'string',
+      dingAccessTokenType: 'string',
+      dingClientId: 'string',
+      dingIsvOrgId: 'number',
+      dingOpenAppId: 'string',
+      dingUid: 'number',
+      cardTemplateId: 'string',
+      openConversationId: 'string',
+      singleChatReceiver: 'string',
+      dingTokenGrantType: 'number',
+      cardBizId: 'string',
+      dingSuiteKey: 'string',
+      robotCode: 'string',
+      dingOrgId: 'number',
+      cardData: 'string',
+      dingOauthAppId: 'number',
+      sendOptions: SendRobotInteractiveCardRequestSendOptions,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendRobotInteractiveCardResponseBody extends $tea.Model {
+  processQueryKey?: string;
+  static names(): { [key: string]: string } {
+    return {
+      processQueryKey: 'processQueryKey',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      processQueryKey: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendRobotInteractiveCardResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SendRobotInteractiveCardResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SendRobotInteractiveCardResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class PrivateDataValue extends $tea.Model {
   cardParamMap?: { [key: string]: string };
   cardMediaIdParamMap?: { [key: string]: string };
@@ -1668,6 +1798,34 @@ export class InteractiveCardCreateInstanceRequestCardData extends $tea.Model {
     return {
       cardParamMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       cardMediaIdParamMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendRobotInteractiveCardRequestSendOptions extends $tea.Model {
+  atUserListJson?: string;
+  atAll?: boolean;
+  receiverListJson?: string;
+  cardPropertyJson?: string;
+  static names(): { [key: string]: string } {
+    return {
+      atUserListJson: 'atUserListJson',
+      atAll: 'atAll',
+      receiverListJson: 'receiverListJson',
+      cardPropertyJson: 'cardPropertyJson',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      atUserListJson: 'string',
+      atAll: 'boolean',
+      receiverListJson: 'string',
+      cardPropertyJson: 'string',
     };
   }
 
@@ -2597,6 +2755,99 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<UpdateTheGroupRolesOfGroupMemberResponse>(await this.doROARequest("UpdateTheGroupRolesOfGroupMember", "im_1.0", "HTTP", "PUT", "AK", `/v1.0/im/sceneGroups/members/groupRoles`, "json", req, runtime), new UpdateTheGroupRolesOfGroupMemberResponse({}));
+  }
+
+  async sendRobotInteractiveCard(request: SendRobotInteractiveCardRequest): Promise<SendRobotInteractiveCardResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SendRobotInteractiveCardHeaders({ });
+    return await this.sendRobotInteractiveCardWithOptions(request, headers, runtime);
+  }
+
+  async sendRobotInteractiveCardWithOptions(request: SendRobotInteractiveCardRequest, headers: SendRobotInteractiveCardHeaders, runtime: $Util.RuntimeOptions): Promise<SendRobotInteractiveCardResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.requestId)) {
+      body["RequestId"] = request.requestId;
+    }
+
+    if (!Util.isUnset(request.dingAccessTokenType)) {
+      body["dingAccessTokenType"] = request.dingAccessTokenType;
+    }
+
+    if (!Util.isUnset(request.dingClientId)) {
+      body["dingClientId"] = request.dingClientId;
+    }
+
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    if (!Util.isUnset(request.dingOpenAppId)) {
+      body["dingOpenAppId"] = request.dingOpenAppId;
+    }
+
+    if (!Util.isUnset(request.dingUid)) {
+      body["dingUid"] = request.dingUid;
+    }
+
+    if (!Util.isUnset(request.cardTemplateId)) {
+      body["cardTemplateId"] = request.cardTemplateId;
+    }
+
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.singleChatReceiver)) {
+      body["singleChatReceiver"] = request.singleChatReceiver;
+    }
+
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    if (!Util.isUnset(request.cardBizId)) {
+      body["cardBizId"] = request.cardBizId;
+    }
+
+    if (!Util.isUnset(request.dingSuiteKey)) {
+      body["dingSuiteKey"] = request.dingSuiteKey;
+    }
+
+    if (!Util.isUnset(request.robotCode)) {
+      body["robotCode"] = request.robotCode;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.cardData)) {
+      body["cardData"] = request.cardData;
+    }
+
+    if (!Util.isUnset(request.dingOauthAppId)) {
+      body["dingOauthAppId"] = request.dingOauthAppId;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.sendOptions))) {
+      body["sendOptions"] = request.sendOptions;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SendRobotInteractiveCardResponse>(await this.doROARequest("SendRobotInteractiveCard", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/v1.0/robot/interactiveCards/send`, "json", req, runtime), new SendRobotInteractiveCardResponse({}));
   }
 
 }

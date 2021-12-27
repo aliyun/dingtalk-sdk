@@ -619,6 +619,88 @@ export class FormCreateResponse extends $tea.Model {
   }
 }
 
+export class QuerySchemaByProcessCodeHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QuerySchemaByProcessCodeRequest extends $tea.Model {
+  processCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      processCode: 'processCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      processCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QuerySchemaByProcessCodeResponseBody extends $tea.Model {
+  result?: QuerySchemaByProcessCodeResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: QuerySchemaByProcessCodeResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QuerySchemaByProcessCodeResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QuerySchemaByProcessCodeResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QuerySchemaByProcessCodeResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class StartProcessInstanceHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2435,6 +2517,399 @@ export class FormCreateResponseBodyResult extends $tea.Model {
   }
 }
 
+export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsStatField extends $tea.Model {
+  id?: string;
+  label?: string;
+  upper?: boolean;
+  unit?: string;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+      label: 'label',
+      upper: 'upper',
+      unit: 'unit',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'string',
+      label: 'string',
+      upper: 'boolean',
+      unit: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsObjOptions extends $tea.Model {
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsPush extends $tea.Model {
+  pushSwitch?: number;
+  pushTag?: string;
+  attendanceRule?: number;
+  static names(): { [key: string]: string } {
+    return {
+      pushSwitch: 'pushSwitch',
+      pushTag: 'pushTag',
+      attendanceRule: 'attendanceRule',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      pushSwitch: 'number',
+      pushTag: 'string',
+      attendanceRule: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsBehaviorLinkageTargets extends $tea.Model {
+  fieldId?: string;
+  behavior?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fieldId: 'fieldId',
+      behavior: 'behavior',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fieldId: 'string',
+      behavior: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsBehaviorLinkage extends $tea.Model {
+  value?: string;
+  targets?: QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsBehaviorLinkageTargets[];
+  static names(): { [key: string]: string } {
+    return {
+      value: 'value',
+      targets: 'targets',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      value: 'string',
+      targets: { 'type': 'array', 'itemType': QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsBehaviorLinkageTargets },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsProps extends $tea.Model {
+  id?: string;
+  label?: string;
+  bizAlias?: string;
+  required?: boolean;
+  placeholder?: string;
+  options?: string[];
+  appId?: number;
+  durationLabel?: string;
+  pushToCalendar?: number;
+  align?: string;
+  statField?: QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsStatField[];
+  hideLabel?: boolean;
+  objOptions?: QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsObjOptions[];
+  format?: string;
+  pushToAttendance?: boolean;
+  labelEditableFreeze?: boolean;
+  push?: QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsPush;
+  commonBizType?: string;
+  requiredEditableFreeze?: boolean;
+  unit?: string;
+  extract?: boolean;
+  link?: string;
+  payEnable?: boolean;
+  hidden?: boolean;
+  bizType?: string;
+  staffStatusEnabled?: boolean;
+  actionName?: string;
+  attendTypeLabel?: string;
+  childFieldVisible?: boolean;
+  notPrint?: string;
+  verticalPrint?: boolean;
+  duration?: boolean;
+  holidayOptions?: string;
+  useCalendar?: boolean;
+  hiddenInApprovalDetail?: boolean;
+  disabled?: boolean;
+  asyncCondition?: boolean;
+  behaviorLinkage?: QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsBehaviorLinkage[];
+  showAttendOptions?: boolean;
+  notUpper?: string;
+  fieldsInfo?: string;
+  eSign?: boolean;
+  mainTitle?: string;
+  formula?: string;
+  choice?: number;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+      label: 'label',
+      bizAlias: 'bizAlias',
+      required: 'required',
+      placeholder: 'placeholder',
+      options: 'options',
+      appId: 'appId',
+      durationLabel: 'durationLabel',
+      pushToCalendar: 'pushToCalendar',
+      align: 'align',
+      statField: 'statField',
+      hideLabel: 'hideLabel',
+      objOptions: 'objOptions',
+      format: 'format',
+      pushToAttendance: 'pushToAttendance',
+      labelEditableFreeze: 'labelEditableFreeze',
+      push: 'push',
+      commonBizType: 'commonBizType',
+      requiredEditableFreeze: 'requiredEditableFreeze',
+      unit: 'unit',
+      extract: 'extract',
+      link: 'link',
+      payEnable: 'payEnable',
+      hidden: 'hidden',
+      bizType: 'bizType',
+      staffStatusEnabled: 'staffStatusEnabled',
+      actionName: 'actionName',
+      attendTypeLabel: 'attendTypeLabel',
+      childFieldVisible: 'childFieldVisible',
+      notPrint: 'notPrint',
+      verticalPrint: 'verticalPrint',
+      duration: 'duration',
+      holidayOptions: 'holidayOptions',
+      useCalendar: 'useCalendar',
+      hiddenInApprovalDetail: 'hiddenInApprovalDetail',
+      disabled: 'disabled',
+      asyncCondition: 'asyncCondition',
+      behaviorLinkage: 'behaviorLinkage',
+      showAttendOptions: 'showAttendOptions',
+      notUpper: 'notUpper',
+      fieldsInfo: 'fieldsInfo',
+      eSign: 'eSign',
+      mainTitle: 'mainTitle',
+      formula: 'formula',
+      choice: 'choice',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'string',
+      label: 'string',
+      bizAlias: 'string',
+      required: 'boolean',
+      placeholder: 'string',
+      options: { 'type': 'array', 'itemType': 'string' },
+      appId: 'number',
+      durationLabel: 'string',
+      pushToCalendar: 'number',
+      align: 'string',
+      statField: { 'type': 'array', 'itemType': QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsStatField },
+      hideLabel: 'boolean',
+      objOptions: { 'type': 'array', 'itemType': QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsObjOptions },
+      format: 'string',
+      pushToAttendance: 'boolean',
+      labelEditableFreeze: 'boolean',
+      push: QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsPush,
+      commonBizType: 'string',
+      requiredEditableFreeze: 'boolean',
+      unit: 'string',
+      extract: 'boolean',
+      link: 'string',
+      payEnable: 'boolean',
+      hidden: 'boolean',
+      bizType: 'string',
+      staffStatusEnabled: 'boolean',
+      actionName: 'string',
+      attendTypeLabel: 'string',
+      childFieldVisible: 'boolean',
+      notPrint: 'string',
+      verticalPrint: 'boolean',
+      duration: 'boolean',
+      holidayOptions: 'string',
+      useCalendar: 'boolean',
+      hiddenInApprovalDetail: 'boolean',
+      disabled: 'boolean',
+      asyncCondition: 'boolean',
+      behaviorLinkage: { 'type': 'array', 'itemType': QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsBehaviorLinkage },
+      showAttendOptions: 'boolean',
+      notUpper: 'string',
+      fieldsInfo: 'string',
+      eSign: 'boolean',
+      mainTitle: 'string',
+      formula: 'string',
+      choice: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItems extends $tea.Model {
+  componentName?: string;
+  props?: QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsProps;
+  static names(): { [key: string]: string } {
+    return {
+      componentName: 'componentName',
+      props: 'props',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      componentName: 'string',
+      props: QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsProps,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QuerySchemaByProcessCodeResponseBodyResultSchemaContent extends $tea.Model {
+  title?: string;
+  icon?: string;
+  items?: QuerySchemaByProcessCodeResponseBodyResultSchemaContentItems[];
+  static names(): { [key: string]: string } {
+    return {
+      title: 'title',
+      icon: 'icon',
+      items: 'items',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      title: 'string',
+      icon: 'string',
+      items: { 'type': 'array', 'itemType': QuerySchemaByProcessCodeResponseBodyResultSchemaContentItems },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QuerySchemaByProcessCodeResponseBodyResult extends $tea.Model {
+  creatorUserId?: string;
+  creatorUid?: number;
+  appUuid?: string;
+  formCode?: string;
+  formUuid?: string;
+  name?: string;
+  memo?: string;
+  ownerId?: string;
+  ownerIdType?: string;
+  schemaContent?: QuerySchemaByProcessCodeResponseBodyResultSchemaContent;
+  icon?: string;
+  appType?: number;
+  bizType?: string;
+  engineType?: number;
+  status?: string;
+  listOrder?: number;
+  customSetting?: string;
+  procType?: string;
+  visibleRange?: string;
+  gmtCreate?: number;
+  gmtModified?: number;
+  static names(): { [key: string]: string } {
+    return {
+      creatorUserId: 'creatorUserId',
+      creatorUid: 'creatorUid',
+      appUuid: 'appUuid',
+      formCode: 'formCode',
+      formUuid: 'formUuid',
+      name: 'name',
+      memo: 'memo',
+      ownerId: 'ownerId',
+      ownerIdType: 'ownerIdType',
+      schemaContent: 'schemaContent',
+      icon: 'icon',
+      appType: 'appType',
+      bizType: 'bizType',
+      engineType: 'engineType',
+      status: 'status',
+      listOrder: 'listOrder',
+      customSetting: 'customSetting',
+      procType: 'procType',
+      visibleRange: 'visibleRange',
+      gmtCreate: 'gmtCreate',
+      gmtModified: 'gmtModified',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      creatorUserId: 'string',
+      creatorUid: 'number',
+      appUuid: 'string',
+      formCode: 'string',
+      formUuid: 'string',
+      name: 'string',
+      memo: 'string',
+      ownerId: 'string',
+      ownerIdType: 'string',
+      schemaContent: QuerySchemaByProcessCodeResponseBodyResultSchemaContent,
+      icon: 'string',
+      appType: 'number',
+      bizType: 'string',
+      engineType: 'number',
+      status: 'string',
+      listOrder: 'number',
+      customSetting: 'string',
+      procType: 'string',
+      visibleRange: 'string',
+      gmtCreate: 'number',
+      gmtModified: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class StartProcessInstanceRequestApprovers extends $tea.Model {
   actionType?: string;
   userIds?: string[];
@@ -2885,6 +3360,35 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<FormCreateResponse>(await this.doROARequest("FormCreate", "workflow_1.0", "HTTP", "POST", "AK", `/v1.0/workflow/forms`, "json", req, runtime), new FormCreateResponse({}));
+  }
+
+  async querySchemaByProcessCode(request: QuerySchemaByProcessCodeRequest): Promise<QuerySchemaByProcessCodeResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QuerySchemaByProcessCodeHeaders({ });
+    return await this.querySchemaByProcessCodeWithOptions(request, headers, runtime);
+  }
+
+  async querySchemaByProcessCodeWithOptions(request: QuerySchemaByProcessCodeRequest, headers: QuerySchemaByProcessCodeHeaders, runtime: $Util.RuntimeOptions): Promise<QuerySchemaByProcessCodeResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.processCode)) {
+      query["processCode"] = request.processCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QuerySchemaByProcessCodeResponse>(await this.doROARequest("QuerySchemaByProcessCode", "workflow_1.0", "HTTP", "GET", "AK", `/v1.0/workflow/forms/schemas/processCodes`, "json", req, runtime), new QuerySchemaByProcessCodeResponse({}));
   }
 
   async startProcessInstance(request: StartProcessInstanceRequest): Promise<StartProcessInstanceResponse> {
