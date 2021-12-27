@@ -1422,3 +1422,131 @@ class Client(OpenApiClient):
             dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberResponse(),
             await self.do_roarequest_async('UpdateTheGroupRolesOfGroupMember', 'im_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/im/sceneGroups/members/groupRoles', 'json', req, runtime)
         )
+
+    def send_robot_interactive_card(
+        self,
+        request: dingtalkim__1__0_models.SendRobotInteractiveCardRequest,
+    ) -> dingtalkim__1__0_models.SendRobotInteractiveCardResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.SendRobotInteractiveCardHeaders()
+        return self.send_robot_interactive_card_with_options(request, headers, runtime)
+
+    async def send_robot_interactive_card_async(
+        self,
+        request: dingtalkim__1__0_models.SendRobotInteractiveCardRequest,
+    ) -> dingtalkim__1__0_models.SendRobotInteractiveCardResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.SendRobotInteractiveCardHeaders()
+        return await self.send_robot_interactive_card_with_options_async(request, headers, runtime)
+
+    def send_robot_interactive_card_with_options(
+        self,
+        request: dingtalkim__1__0_models.SendRobotInteractiveCardRequest,
+        headers: dingtalkim__1__0_models.SendRobotInteractiveCardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.SendRobotInteractiveCardResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.request_id):
+            body['RequestId'] = request.request_id
+        if not UtilClient.is_unset(request.ding_access_token_type):
+            body['dingAccessTokenType'] = request.ding_access_token_type
+        if not UtilClient.is_unset(request.ding_client_id):
+            body['dingClientId'] = request.ding_client_id
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_open_app_id):
+            body['dingOpenAppId'] = request.ding_open_app_id
+        if not UtilClient.is_unset(request.ding_uid):
+            body['dingUid'] = request.ding_uid
+        if not UtilClient.is_unset(request.card_template_id):
+            body['cardTemplateId'] = request.card_template_id
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.single_chat_receiver):
+            body['singleChatReceiver'] = request.single_chat_receiver
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.card_biz_id):
+            body['cardBizId'] = request.card_biz_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.card_data):
+            body['cardData'] = request.card_data
+        if not UtilClient.is_unset(request.ding_oauth_app_id):
+            body['dingOauthAppId'] = request.ding_oauth_app_id
+        if not UtilClient.is_unset(request.send_options):
+            body['sendOptions'] = request.send_options
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.SendRobotInteractiveCardResponse(),
+            self.do_roarequest('SendRobotInteractiveCard', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/v1.0/robot/interactiveCards/send', 'json', req, runtime)
+        )
+
+    async def send_robot_interactive_card_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.SendRobotInteractiveCardRequest,
+        headers: dingtalkim__1__0_models.SendRobotInteractiveCardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.SendRobotInteractiveCardResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.request_id):
+            body['RequestId'] = request.request_id
+        if not UtilClient.is_unset(request.ding_access_token_type):
+            body['dingAccessTokenType'] = request.ding_access_token_type
+        if not UtilClient.is_unset(request.ding_client_id):
+            body['dingClientId'] = request.ding_client_id
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_open_app_id):
+            body['dingOpenAppId'] = request.ding_open_app_id
+        if not UtilClient.is_unset(request.ding_uid):
+            body['dingUid'] = request.ding_uid
+        if not UtilClient.is_unset(request.card_template_id):
+            body['cardTemplateId'] = request.card_template_id
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.single_chat_receiver):
+            body['singleChatReceiver'] = request.single_chat_receiver
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.card_biz_id):
+            body['cardBizId'] = request.card_biz_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.card_data):
+            body['cardData'] = request.card_data
+        if not UtilClient.is_unset(request.ding_oauth_app_id):
+            body['dingOauthAppId'] = request.ding_oauth_app_id
+        if not UtilClient.is_unset(request.send_options):
+            body['sendOptions'] = request.send_options
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.SendRobotInteractiveCardResponse(),
+            await self.do_roarequest_async('SendRobotInteractiveCard', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/v1.0/robot/interactiveCards/send', 'json', req, runtime)
+        )
