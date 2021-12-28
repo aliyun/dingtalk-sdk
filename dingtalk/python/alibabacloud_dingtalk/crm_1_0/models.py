@@ -4447,6 +4447,7 @@ class GetCrmGroupChatResponseBody(TeaModel):
         name: str = None,
         member_count: int = None,
         gmt_create: int = None,
+        icon_url: str = None,
     ):
         # 客户群chatId
         self.chat_id = chat_id
@@ -4464,6 +4465,8 @@ class GetCrmGroupChatResponseBody(TeaModel):
         self.member_count = member_count
         # 创建时间(时间戳)
         self.gmt_create = gmt_create
+        # 群头像地址
+        self.icon_url = icon_url
 
     def validate(self):
         pass
@@ -4490,6 +4493,8 @@ class GetCrmGroupChatResponseBody(TeaModel):
             result['memberCount'] = self.member_count
         if self.gmt_create is not None:
             result['gmtCreate'] = self.gmt_create
+        if self.icon_url is not None:
+            result['iconUrl'] = self.icon_url
         return result
 
     def from_map(self, m: dict = None):
@@ -4510,6 +4515,8 @@ class GetCrmGroupChatResponseBody(TeaModel):
             self.member_count = m.get('memberCount')
         if m.get('gmtCreate') is not None:
             self.gmt_create = m.get('gmtCreate')
+        if m.get('iconUrl') is not None:
+            self.icon_url = m.get('iconUrl')
         return self
 
 

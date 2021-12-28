@@ -467,6 +467,8 @@ class Client(OpenApiClient):
             body['description'] = request.description
         if not UtilClient.is_unset(request.form_components):
             body['formComponents'] = request.form_components
+        if not UtilClient.is_unset(request.template_config):
+            body['templateConfig'] = request.template_config
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -509,6 +511,8 @@ class Client(OpenApiClient):
             body['description'] = request.description
         if not UtilClient.is_unset(request.form_components):
             body['formComponents'] = request.form_components
+        if not UtilClient.is_unset(request.template_config):
+            body['templateConfig'] = request.template_config
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
