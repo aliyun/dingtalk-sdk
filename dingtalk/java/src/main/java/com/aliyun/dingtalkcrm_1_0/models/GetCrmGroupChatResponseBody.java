@@ -36,6 +36,10 @@ public class GetCrmGroupChatResponseBody extends TeaModel {
     @NameInMap("gmtCreate")
     public Long gmtCreate;
 
+    // 群头像地址
+    @NameInMap("iconUrl")
+    public String iconUrl;
+
     public static GetCrmGroupChatResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetCrmGroupChatResponseBody self = new GetCrmGroupChatResponseBody();
         return TeaModel.build(map, self);
@@ -103,6 +107,14 @@ public class GetCrmGroupChatResponseBody extends TeaModel {
     }
     public Long getGmtCreate() {
         return this.gmtCreate;
+    }
+
+    public GetCrmGroupChatResponseBody setIconUrl(String iconUrl) {
+        this.iconUrl = iconUrl;
+        return this;
+    }
+    public String getIconUrl() {
+        return this.iconUrl;
     }
 
 }
