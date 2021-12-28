@@ -24,6 +24,13 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         public long? GmtCreate { get; set; }
 
         /// <summary>
+        /// 群头像地址
+        /// </summary>
+        [NameInMap("iconUrl")]
+        [Validation(Required=false)]
+        public string IconUrl { get; set; }
+
+        /// <summary>
         /// 客户群成员数
         /// </summary>
         [NameInMap("memberCount")]

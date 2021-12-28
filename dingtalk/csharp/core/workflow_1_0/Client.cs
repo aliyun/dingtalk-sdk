@@ -84,6 +84,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
             {
                 body["processCode"] = request.ProcessCode;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateConfig.ToMap()))
+            {
+                body["templateConfig"] = request.TemplateConfig;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -144,6 +148,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessCode))
             {
                 body["processCode"] = request.ProcessCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateConfig.ToMap()))
+            {
+                body["templateConfig"] = request.TemplateConfig;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

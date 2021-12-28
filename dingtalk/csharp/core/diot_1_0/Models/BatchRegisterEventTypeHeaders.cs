@@ -6,9 +6,9 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkdiot_1_0.Models
 {
-    public class FormCreateHeaders : TeaModel {
+    public class BatchRegisterEventTypeHeaders : TeaModel {
         [NameInMap("commonHeaders")]
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }
