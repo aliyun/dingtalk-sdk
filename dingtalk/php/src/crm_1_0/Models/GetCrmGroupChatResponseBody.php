@@ -63,6 +63,13 @@ class GetCrmGroupChatResponseBody extends Model
      * @var int
      */
     public $gmtCreate;
+
+    /**
+     * @description 群头像地址
+     *
+     * @var string
+     */
+    public $iconUrl;
     protected $_name = [
         'chatId'             => 'chatId',
         'openConversationId' => 'openConversationId',
@@ -72,6 +79,7 @@ class GetCrmGroupChatResponseBody extends Model
         'name'               => 'name',
         'memberCount'        => 'memberCount',
         'gmtCreate'          => 'gmtCreate',
+        'iconUrl'            => 'iconUrl',
     ];
 
     public function validate()
@@ -104,6 +112,9 @@ class GetCrmGroupChatResponseBody extends Model
         }
         if (null !== $this->gmtCreate) {
             $res['gmtCreate'] = $this->gmtCreate;
+        }
+        if (null !== $this->iconUrl) {
+            $res['iconUrl'] = $this->iconUrl;
         }
 
         return $res;
@@ -140,6 +151,9 @@ class GetCrmGroupChatResponseBody extends Model
         }
         if (isset($map['gmtCreate'])) {
             $model->gmtCreate = $map['gmtCreate'];
+        }
+        if (isset($map['iconUrl'])) {
+            $model->iconUrl = $map['iconUrl'];
         }
 
         return $model;

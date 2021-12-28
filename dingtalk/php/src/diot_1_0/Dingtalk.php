@@ -5,6 +5,27 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vdiot_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\BatchDeleteDeviceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\BatchDeleteDeviceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\BatchDeleteDeviceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\BatchRegisterDeviceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\BatchRegisterDeviceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\BatchRegisterDeviceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\BatchRegisterEventTypeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\BatchRegisterEventTypeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\BatchRegisterEventTypeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\BatchUpdateDeviceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\BatchUpdateDeviceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\BatchUpdateDeviceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\BindSystemHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\BindSystemRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\BindSystemResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\DeviceConferenceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\DeviceConferenceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\DeviceConferenceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\PushEventHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\PushEventRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\PushEventResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\RegisterDeviceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\RegisterDeviceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\RegisterDeviceResponse;
@@ -22,6 +43,171 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param BatchDeleteDeviceRequest $request
+     *
+     * @return BatchDeleteDeviceResponse
+     */
+    public function batchDeleteDevice($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchDeleteDeviceHeaders([]);
+
+        return $this->batchDeleteDeviceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param BatchDeleteDeviceRequest $request
+     * @param BatchDeleteDeviceHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return BatchDeleteDeviceResponse
+     */
+    public function batchDeleteDeviceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->corpId)) {
+            @$body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->deviceIds)) {
+            @$body['deviceIds'] = $request->deviceIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return BatchDeleteDeviceResponse::fromMap($this->doROARequest('BatchDeleteDevice', 'diot_1.0', 'HTTP', 'POST', 'AK', '/v1.0/diot/devices/remove', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param PushEventRequest $request
+     *
+     * @return PushEventResponse
+     */
+    public function pushEvent($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PushEventHeaders([]);
+
+        return $this->pushEventWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param PushEventRequest $request
+     * @param PushEventHeaders $headers
+     * @param RuntimeOptions   $runtime
+     *
+     * @return PushEventResponse
+     */
+    public function pushEventWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->corpId)) {
+            @$body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->eventId)) {
+            @$body['eventId'] = $request->eventId;
+        }
+        if (!Utils::isUnset($request->eventType)) {
+            @$body['eventType'] = $request->eventType;
+        }
+        if (!Utils::isUnset($request->eventName)) {
+            @$body['eventName'] = $request->eventName;
+        }
+        if (!Utils::isUnset($request->occurrenceTime)) {
+            @$body['occurrenceTime'] = $request->occurrenceTime;
+        }
+        if (!Utils::isUnset($request->deviceId)) {
+            @$body['deviceId'] = $request->deviceId;
+        }
+        if (!Utils::isUnset($request->location)) {
+            @$body['location'] = $request->location;
+        }
+        if (!Utils::isUnset($request->msg)) {
+            @$body['msg'] = $request->msg;
+        }
+        if (!Utils::isUnset($request->picUrls)) {
+            @$body['picUrls'] = $request->picUrls;
+        }
+        if (!Utils::isUnset($request->extraData)) {
+            @$body['extraData'] = $request->extraData;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return PushEventResponse::fromMap($this->doROARequest('PushEvent', 'diot_1.0', 'HTTP', 'POST', 'AK', '/v1.0/diot/events/push', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param DeviceConferenceRequest $request
+     *
+     * @return DeviceConferenceResponse
+     */
+    public function deviceConference($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeviceConferenceHeaders([]);
+
+        return $this->deviceConferenceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param DeviceConferenceRequest $request
+     * @param DeviceConferenceHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return DeviceConferenceResponse
+     */
+    public function deviceConferenceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->confTitle)) {
+            @$body['confTitle'] = $request->confTitle;
+        }
+        if (!Utils::isUnset($request->conferenceId)) {
+            @$body['conferenceId'] = $request->conferenceId;
+        }
+        if (!Utils::isUnset($request->conferencePassword)) {
+            @$body['conferencePassword'] = $request->conferencePassword;
+        }
+        if (!Utils::isUnset($request->deviceIds)) {
+            @$body['deviceIds'] = $request->deviceIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return DeviceConferenceResponse::fromMap($this->doROARequest('DeviceConference', 'diot_1.0', 'HTTP', 'POST', 'AK', '/v1.0/diot/deviceConferences/initiate', 'json', $req, $runtime));
     }
 
     /**
@@ -94,5 +280,194 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return RegisterDeviceResponse::fromMap($this->doROARequest('RegisterDevice', 'diot_1.0', 'HTTP', 'POST', 'AK', '/v1.0/diot/devices/register', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param BatchRegisterDeviceRequest $request
+     *
+     * @return BatchRegisterDeviceResponse
+     */
+    public function batchRegisterDevice($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchRegisterDeviceHeaders([]);
+
+        return $this->batchRegisterDeviceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param BatchRegisterDeviceRequest $request
+     * @param BatchRegisterDeviceHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return BatchRegisterDeviceResponse
+     */
+    public function batchRegisterDeviceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->corpId)) {
+            @$body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->devices)) {
+            @$body['devices'] = $request->devices;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return BatchRegisterDeviceResponse::fromMap($this->doROARequest('BatchRegisterDevice', 'diot_1.0', 'HTTP', 'POST', 'AK', '/v1.0/diot/devices/registrations/batch', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param BatchRegisterEventTypeRequest $request
+     *
+     * @return BatchRegisterEventTypeResponse
+     */
+    public function batchRegisterEventType($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchRegisterEventTypeHeaders([]);
+
+        return $this->batchRegisterEventTypeWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param BatchRegisterEventTypeRequest $request
+     * @param BatchRegisterEventTypeHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return BatchRegisterEventTypeResponse
+     */
+    public function batchRegisterEventTypeWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->corpId)) {
+            @$body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->eventTypes)) {
+            @$body['eventTypes'] = $request->eventTypes;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return BatchRegisterEventTypeResponse::fromMap($this->doROARequest('BatchRegisterEventType', 'diot_1.0', 'HTTP', 'POST', 'AK', '/v1.0/diot/eventTypes/registrations/batch', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param BatchUpdateDeviceRequest $request
+     *
+     * @return BatchUpdateDeviceResponse
+     */
+    public function batchUpdateDevice($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchUpdateDeviceHeaders([]);
+
+        return $this->batchUpdateDeviceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param BatchUpdateDeviceRequest $request
+     * @param BatchUpdateDeviceHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return BatchUpdateDeviceResponse
+     */
+    public function batchUpdateDeviceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->corpId)) {
+            @$body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->devices)) {
+            @$body['devices'] = $request->devices;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return BatchUpdateDeviceResponse::fromMap($this->doROARequest('BatchUpdateDevice', 'diot_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/diot/devices/batch', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param BindSystemRequest $request
+     *
+     * @return BindSystemResponse
+     */
+    public function bindSystem($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BindSystemHeaders([]);
+
+        return $this->bindSystemWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param BindSystemRequest $request
+     * @param BindSystemHeaders $headers
+     * @param RuntimeOptions    $runtime
+     *
+     * @return BindSystemResponse
+     */
+    public function bindSystemWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->corpId)) {
+            @$body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->authCode)) {
+            @$body['authCode'] = $request->authCode;
+        }
+        if (!Utils::isUnset($request->clientId)) {
+            @$body['clientId'] = $request->clientId;
+        }
+        if (!Utils::isUnset($request->clientName)) {
+            @$body['clientName'] = $request->clientName;
+        }
+        if (!Utils::isUnset($request->extraData)) {
+            @$body['extraData'] = $request->extraData;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return BindSystemResponse::fromMap($this->doROARequest('BindSystem', 'diot_1.0', 'HTTP', 'POST', 'AK', '/v1.0/diot/systems/bind', 'json', $req, $runtime));
     }
 }

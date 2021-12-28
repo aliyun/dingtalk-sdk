@@ -4,7 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\FormCreateRequest\formComponents;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\FormCreateRequest\templateConfig;
 use AlibabaCloud\Tea\Model;
 
 class FormCreateRequest extends Model
@@ -61,9 +61,16 @@ class FormCreateRequest extends Model
     /**
      * @description 表单控件列表
      *
-     * @var formComponents[]
+     * @var FormComponent[]
      */
     public $formComponents;
+
+    /**
+     * @description 模板配置信息
+     *
+     * @var templateConfig
+     */
+    public $templateConfig;
     protected $_name = [
         'dingCorpId'         => 'dingCorpId',
         'dingOrgId'          => 'dingOrgId',
@@ -75,6 +82,7 @@ class FormCreateRequest extends Model
         'name'               => 'name',
         'description'        => 'description',
         'formComponents'     => 'formComponents',
+        'templateConfig'     => 'templateConfig',
     ];
 
     public function validate()
@@ -120,6 +128,9 @@ class FormCreateRequest extends Model
                 }
             }
         }
+        if (null !== $this->templateConfig) {
+            $res['templateConfig'] = null !== $this->templateConfig ? $this->templateConfig->toMap() : null;
+        }
 
         return $res;
     }
@@ -164,9 +175,12 @@ class FormCreateRequest extends Model
                 $model->formComponents = [];
                 $n                     = 0;
                 foreach ($map['formComponents'] as $item) {
-                    $model->formComponents[$n++] = null !== $item ? formComponents::fromMap($item) : $item;
+                    $model->formComponents[$n++] = null !== $item ? FormComponent::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['templateConfig'])) {
+            $model->templateConfig = templateConfig::fromMap($map['templateConfig']);
         }
 
         return $model;
