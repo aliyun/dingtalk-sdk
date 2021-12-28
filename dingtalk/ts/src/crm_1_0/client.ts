@@ -1199,6 +1199,7 @@ export class GetCrmGroupChatResponseBody extends $tea.Model {
   name?: string;
   memberCount?: number;
   gmtCreate?: number;
+  iconUrl?: string;
   static names(): { [key: string]: string } {
     return {
       chatId: 'chatId',
@@ -1209,6 +1210,7 @@ export class GetCrmGroupChatResponseBody extends $tea.Model {
       name: 'name',
       memberCount: 'memberCount',
       gmtCreate: 'gmtCreate',
+      iconUrl: 'iconUrl',
     };
   }
 
@@ -1222,6 +1224,7 @@ export class GetCrmGroupChatResponseBody extends $tea.Model {
       name: 'string',
       memberCount: 'number',
       gmtCreate: 'number',
+      iconUrl: 'string',
     };
   }
 

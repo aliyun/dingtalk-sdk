@@ -7,6 +7,200 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class FormComponent extends $tea.Model {
+  componentType?: string;
+  props?: FormComponentProps;
+  children?: FormComponent[];
+  static names(): { [key: string]: string } {
+    return {
+      componentType: 'componentType',
+      props: 'props',
+      children: 'children',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      componentType: 'string',
+      props: FormComponentProps,
+      children: { 'type': 'array', 'itemType': FormComponent },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AvaliableTemplate extends $tea.Model {
+  name?: string;
+  processCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      processCode: 'processCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      processCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FormComponentProps extends $tea.Model {
+  componentId?: string;
+  label?: string;
+  asyncCondition?: boolean;
+  required?: boolean;
+  content?: string;
+  format?: string;
+  upper?: string;
+  unit?: string;
+  placeholder?: string;
+  bizAlias?: string;
+  bizType?: string;
+  duration?: boolean;
+  choice?: string;
+  disabled?: boolean;
+  align?: string;
+  invisible?: boolean;
+  link?: string;
+  verticalPrint?: boolean;
+  formula?: string;
+  commonBizType?: string;
+  options?: SelectOption[];
+  print?: string;
+  statField?: FormComponentPropsStatField[];
+  dataSource?: FormDataSource;
+  addressModel?: string;
+  multiple?: boolean;
+  limit?: number;
+  availableTemplates?: AvaliableTemplate[];
+  tableViewMode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      componentId: 'componentId',
+      label: 'label',
+      asyncCondition: 'asyncCondition',
+      required: 'required',
+      content: 'content',
+      format: 'format',
+      upper: 'upper',
+      unit: 'unit',
+      placeholder: 'placeholder',
+      bizAlias: 'bizAlias',
+      bizType: 'bizType',
+      duration: 'duration',
+      choice: 'choice',
+      disabled: 'disabled',
+      align: 'align',
+      invisible: 'invisible',
+      link: 'link',
+      verticalPrint: 'verticalPrint',
+      formula: 'formula',
+      commonBizType: 'commonBizType',
+      options: 'options',
+      print: 'print',
+      statField: 'statField',
+      dataSource: 'dataSource',
+      addressModel: 'addressModel',
+      multiple: 'multiple',
+      limit: 'limit',
+      availableTemplates: 'availableTemplates',
+      tableViewMode: 'tableViewMode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      componentId: 'string',
+      label: 'string',
+      asyncCondition: 'boolean',
+      required: 'boolean',
+      content: 'string',
+      format: 'string',
+      upper: 'string',
+      unit: 'string',
+      placeholder: 'string',
+      bizAlias: 'string',
+      bizType: 'string',
+      duration: 'boolean',
+      choice: 'string',
+      disabled: 'boolean',
+      align: 'string',
+      invisible: 'boolean',
+      link: 'string',
+      verticalPrint: 'boolean',
+      formula: 'string',
+      commonBizType: 'string',
+      options: { 'type': 'array', 'itemType': SelectOption },
+      print: 'string',
+      statField: { 'type': 'array', 'itemType': FormComponentPropsStatField },
+      dataSource: FormDataSource,
+      addressModel: 'string',
+      multiple: 'boolean',
+      limit: 'number',
+      availableTemplates: { 'type': 'array', 'itemType': AvaliableTemplate },
+      tableViewMode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FormDataSource extends $tea.Model {
+  type?: string;
+  target?: FormDataSourceTarget;
+  static names(): { [key: string]: string } {
+    return {
+      type: 'type',
+      target: 'target',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      type: 'string',
+      target: FormDataSourceTarget,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SelectOption extends $tea.Model {
+  key?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      key: 'key',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      key: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryFormInstanceHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -542,7 +736,8 @@ export class FormCreateRequest extends $tea.Model {
   processCode?: string;
   name?: string;
   description?: string;
-  formComponents?: FormCreateRequestFormComponents[];
+  formComponents?: FormComponent[];
+  templateConfig?: FormCreateRequestTemplateConfig;
   static names(): { [key: string]: string } {
     return {
       dingCorpId: 'dingCorpId',
@@ -555,6 +750,7 @@ export class FormCreateRequest extends $tea.Model {
       name: 'name',
       description: 'description',
       formComponents: 'formComponents',
+      templateConfig: 'templateConfig',
     };
   }
 
@@ -569,7 +765,8 @@ export class FormCreateRequest extends $tea.Model {
       processCode: 'string',
       name: 'string',
       description: 'string',
-      formComponents: { 'type': 'array', 'itemType': FormCreateRequestFormComponents },
+      formComponents: { 'type': 'array', 'itemType': FormComponent },
+      templateConfig: FormCreateRequestTemplateConfig,
     };
   }
 
@@ -817,6 +1014,59 @@ export class StartProcessInstanceResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: StartProcessInstanceResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FormComponentPropsStatField extends $tea.Model {
+  componentId?: string;
+  label?: string;
+  upper?: string;
+  static names(): { [key: string]: string } {
+    return {
+      componentId: 'componentId',
+      label: 'label',
+      upper: 'upper',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      componentId: 'string',
+      label: 'string',
+      upper: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FormDataSourceTarget extends $tea.Model {
+  appUuid?: string;
+  appType?: number;
+  bizType?: string;
+  formCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appUuid: 'appUuid',
+      appType: 'appType',
+      bizType: 'bizType',
+      formCode: 'formCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appUuid: 'string',
+      appType: 'number',
+      bizType: 'string',
+      formCode: 'string',
     };
   }
 
@@ -1443,1053 +1693,38 @@ export class QueryFormByBizTypeResponseBodyResult extends $tea.Model {
   }
 }
 
-export class FormCreateRequestFormComponentsPropsOptions extends $tea.Model {
-  value?: string;
-  key?: string;
+export class FormCreateRequestTemplateConfig extends $tea.Model {
+  disableStopProcessButton?: boolean;
+  hidden?: boolean;
+  disableDeleteProcess?: boolean;
+  disableFormEdit?: boolean;
+  disableResubmit?: boolean;
+  disableHomepage?: boolean;
+  dirId?: string;
+  originDirId?: string;
   static names(): { [key: string]: string } {
     return {
-      value: 'value',
-      key: 'key',
+      disableStopProcessButton: 'disableStopProcessButton',
+      hidden: 'hidden',
+      disableDeleteProcess: 'disableDeleteProcess',
+      disableFormEdit: 'disableFormEdit',
+      disableResubmit: 'disableResubmit',
+      disableHomepage: 'disableHomepage',
+      dirId: 'dirId',
+      originDirId: 'originDirId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      value: 'string',
-      key: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class FormCreateRequestFormComponentsPropsStatField extends $tea.Model {
-  componentId?: string;
-  label?: string;
-  upper?: boolean;
-  payEnable?: string;
-  static names(): { [key: string]: string } {
-    return {
-      componentId: 'componentId',
-      label: 'label',
-      upper: 'upper',
-      payEnable: 'payEnable',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      componentId: 'string',
-      label: 'string',
-      upper: 'boolean',
-      payEnable: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class FormCreateRequestFormComponentsPropsDataSourceTarget extends $tea.Model {
-  appUuid?: string;
-  appType?: number;
-  bizType?: string;
-  formCode?: string;
-  static names(): { [key: string]: string } {
-    return {
-      appUuid: 'appUuid',
-      appType: 'appType',
-      bizType: 'bizType',
-      formCode: 'formCode',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      appUuid: 'string',
-      appType: 'number',
-      bizType: 'string',
-      formCode: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class FormCreateRequestFormComponentsPropsDataSource extends $tea.Model {
-  type?: string;
-  target?: FormCreateRequestFormComponentsPropsDataSourceTarget;
-  static names(): { [key: string]: string } {
-    return {
-      type: 'type',
-      target: 'target',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      type: 'string',
-      target: FormCreateRequestFormComponentsPropsDataSourceTarget,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class FormCreateRequestFormComponentsPropsFieldsPropsOptions extends $tea.Model {
-  key?: string;
-  value?: string;
-  static names(): { [key: string]: string } {
-    return {
-      key: 'key',
-      value: 'value',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      key: 'string',
-      value: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class FormCreateRequestFormComponentsPropsFieldsProps extends $tea.Model {
-  componentId?: string;
-  label?: string;
-  labelEditableFreeze?: boolean;
-  required?: boolean;
-  requiredEditableFreeze?: boolean;
-  print?: string;
-  content?: string;
-  format?: string;
-  options?: FormCreateRequestFormComponentsPropsFieldsPropsOptions[];
-  upper?: string;
-  unit?: string;
-  placeholder?: string;
-  bizAlias?: string;
-  bizType?: string;
-  duration?: boolean;
-  choice?: string;
-  disabled?: boolean;
-  align?: string;
-  static names(): { [key: string]: string } {
-    return {
-      componentId: 'componentId',
-      label: 'label',
-      labelEditableFreeze: 'labelEditableFreeze',
-      required: 'required',
-      requiredEditableFreeze: 'requiredEditableFreeze',
-      print: 'print',
-      content: 'content',
-      format: 'format',
-      options: 'options',
-      upper: 'upper',
-      unit: 'unit',
-      placeholder: 'placeholder',
-      bizAlias: 'bizAlias',
-      bizType: 'bizType',
-      duration: 'duration',
-      choice: 'choice',
-      disabled: 'disabled',
-      align: 'align',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      componentId: 'string',
-      label: 'string',
-      labelEditableFreeze: 'boolean',
-      required: 'boolean',
-      requiredEditableFreeze: 'boolean',
-      print: 'string',
-      content: 'string',
-      format: 'string',
-      options: { 'type': 'array', 'itemType': FormCreateRequestFormComponentsPropsFieldsPropsOptions },
-      upper: 'string',
-      unit: 'string',
-      placeholder: 'string',
-      bizAlias: 'string',
-      bizType: 'string',
-      duration: 'boolean',
-      choice: 'string',
-      disabled: 'boolean',
-      align: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class FormCreateRequestFormComponentsPropsFields extends $tea.Model {
-  componentType?: string;
-  props?: FormCreateRequestFormComponentsPropsFieldsProps;
-  static names(): { [key: string]: string } {
-    return {
-      componentType: 'componentType',
-      props: 'props',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      componentType: 'string',
-      props: FormCreateRequestFormComponentsPropsFieldsProps,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class FormCreateRequestFormComponentsPropsAvailableTemplates extends $tea.Model {
-  name?: string;
-  processCode?: string;
-  static names(): { [key: string]: string } {
-    return {
-      name: 'name',
-      processCode: 'processCode',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      name: 'string',
-      processCode: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class FormCreateRequestFormComponentsProps extends $tea.Model {
-  componentId?: string;
-  label?: string;
-  asyncCondition?: boolean;
-  required?: boolean;
-  content?: string;
-  format?: string;
-  upper?: string;
-  unit?: string;
-  placeholder?: string;
-  bizAlias?: string;
-  bizType?: string;
-  duration?: boolean;
-  choice?: string;
-  disabled?: boolean;
-  align?: string;
-  invisible?: boolean;
-  link?: string;
-  verticalPrint?: boolean;
-  formula?: string;
-  commonBizType?: string;
-  options?: FormCreateRequestFormComponentsPropsOptions[];
-  print?: string;
-  statField?: FormCreateRequestFormComponentsPropsStatField[];
-  dataSource?: FormCreateRequestFormComponentsPropsDataSource;
-  fields?: FormCreateRequestFormComponentsPropsFields[];
-  addressModel?: string;
-  multiple?: boolean;
-  limit?: number;
-  availableTemplates?: FormCreateRequestFormComponentsPropsAvailableTemplates[];
-  tableViewMode?: string;
-  static names(): { [key: string]: string } {
-    return {
-      componentId: 'componentId',
-      label: 'label',
-      asyncCondition: 'asyncCondition',
-      required: 'required',
-      content: 'content',
-      format: 'format',
-      upper: 'upper',
-      unit: 'unit',
-      placeholder: 'placeholder',
-      bizAlias: 'bizAlias',
-      bizType: 'bizType',
-      duration: 'duration',
-      choice: 'choice',
-      disabled: 'disabled',
-      align: 'align',
-      invisible: 'invisible',
-      link: 'link',
-      verticalPrint: 'verticalPrint',
-      formula: 'formula',
-      commonBizType: 'commonBizType',
-      options: 'options',
-      print: 'print',
-      statField: 'statField',
-      dataSource: 'dataSource',
-      fields: 'fields',
-      addressModel: 'addressModel',
-      multiple: 'multiple',
-      limit: 'limit',
-      availableTemplates: 'availableTemplates',
-      tableViewMode: 'tableViewMode',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      componentId: 'string',
-      label: 'string',
-      asyncCondition: 'boolean',
-      required: 'boolean',
-      content: 'string',
-      format: 'string',
-      upper: 'string',
-      unit: 'string',
-      placeholder: 'string',
-      bizAlias: 'string',
-      bizType: 'string',
-      duration: 'boolean',
-      choice: 'string',
-      disabled: 'boolean',
-      align: 'string',
-      invisible: 'boolean',
-      link: 'string',
-      verticalPrint: 'boolean',
-      formula: 'string',
-      commonBizType: 'string',
-      options: { 'type': 'array', 'itemType': FormCreateRequestFormComponentsPropsOptions },
-      print: 'string',
-      statField: { 'type': 'array', 'itemType': FormCreateRequestFormComponentsPropsStatField },
-      dataSource: FormCreateRequestFormComponentsPropsDataSource,
-      fields: { 'type': 'array', 'itemType': FormCreateRequestFormComponentsPropsFields },
-      addressModel: 'string',
-      multiple: 'boolean',
-      limit: 'number',
-      availableTemplates: { 'type': 'array', 'itemType': FormCreateRequestFormComponentsPropsAvailableTemplates },
-      tableViewMode: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class FormCreateRequestFormComponentsChildrenPropsOptions extends $tea.Model {
-  value?: string;
-  key?: string;
-  static names(): { [key: string]: string } {
-    return {
-      value: 'value',
-      key: 'key',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      value: 'string',
-      key: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class FormCreateRequestFormComponentsChildrenPropsStatField extends $tea.Model {
-  componentId?: string;
-  label?: string;
-  upper?: boolean;
-  payEnable?: string;
-  static names(): { [key: string]: string } {
-    return {
-      componentId: 'componentId',
-      label: 'label',
-      upper: 'upper',
-      payEnable: 'payEnable',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      componentId: 'string',
-      label: 'string',
-      upper: 'boolean',
-      payEnable: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class FormCreateRequestFormComponentsChildrenPropsDataSourceTarget extends $tea.Model {
-  appUuid?: string;
-  appType?: number;
-  bizType?: string;
-  formCode?: string;
-  static names(): { [key: string]: string } {
-    return {
-      appUuid: 'appUuid',
-      appType: 'appType',
-      bizType: 'bizType',
-      formCode: 'formCode',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      appUuid: 'string',
-      appType: 'number',
-      bizType: 'string',
-      formCode: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class FormCreateRequestFormComponentsChildrenPropsDataSource extends $tea.Model {
-  type?: string;
-  target?: FormCreateRequestFormComponentsChildrenPropsDataSourceTarget;
-  static names(): { [key: string]: string } {
-    return {
-      type: 'type',
-      target: 'target',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      type: 'string',
-      target: FormCreateRequestFormComponentsChildrenPropsDataSourceTarget,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class FormCreateRequestFormComponentsChildrenPropsFieldsPropsOptions extends $tea.Model {
-  key?: string;
-  value?: string;
-  static names(): { [key: string]: string } {
-    return {
-      key: 'key',
-      value: 'value',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      key: 'string',
-      value: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class FormCreateRequestFormComponentsChildrenPropsFieldsProps extends $tea.Model {
-  componentId?: string;
-  label?: string;
-  labelEditableFreeze?: boolean;
-  required?: boolean;
-  requiredEditableFreeze?: boolean;
-  print?: string;
-  content?: string;
-  format?: string;
-  options?: FormCreateRequestFormComponentsChildrenPropsFieldsPropsOptions[];
-  notUpper?: string;
-  unit?: string;
-  placeholder?: string;
-  bizAlias?: string;
-  bizType?: string;
-  duration?: boolean;
-  choice?: string;
-  disabled?: boolean;
-  align?: string;
-  static names(): { [key: string]: string } {
-    return {
-      componentId: 'componentId',
-      label: 'label',
-      labelEditableFreeze: 'labelEditableFreeze',
-      required: 'required',
-      requiredEditableFreeze: 'requiredEditableFreeze',
-      print: 'print',
-      content: 'content',
-      format: 'format',
-      options: 'options',
-      notUpper: 'notUpper',
-      unit: 'unit',
-      placeholder: 'placeholder',
-      bizAlias: 'bizAlias',
-      bizType: 'bizType',
-      duration: 'duration',
-      choice: 'choice',
-      disabled: 'disabled',
-      align: 'align',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      componentId: 'string',
-      label: 'string',
-      labelEditableFreeze: 'boolean',
-      required: 'boolean',
-      requiredEditableFreeze: 'boolean',
-      print: 'string',
-      content: 'string',
-      format: 'string',
-      options: { 'type': 'array', 'itemType': FormCreateRequestFormComponentsChildrenPropsFieldsPropsOptions },
-      notUpper: 'string',
-      unit: 'string',
-      placeholder: 'string',
-      bizAlias: 'string',
-      bizType: 'string',
-      duration: 'boolean',
-      choice: 'string',
-      disabled: 'boolean',
-      align: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class FormCreateRequestFormComponentsChildrenPropsFields extends $tea.Model {
-  componentType?: string;
-  props?: FormCreateRequestFormComponentsChildrenPropsFieldsProps;
-  static names(): { [key: string]: string } {
-    return {
-      componentType: 'componentType',
-      props: 'props',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      componentType: 'string',
-      props: FormCreateRequestFormComponentsChildrenPropsFieldsProps,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class FormCreateRequestFormComponentsChildrenPropsAvailableTemplates extends $tea.Model {
-  name?: string;
-  processCode?: string;
-  static names(): { [key: string]: string } {
-    return {
-      name: 'name',
-      processCode: 'processCode',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      name: 'string',
-      processCode: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class FormCreateRequestFormComponentsChildrenProps extends $tea.Model {
-  componentId?: string;
-  label?: string;
-  asyncCondition?: boolean;
-  required?: boolean;
-  content?: string;
-  format?: string;
-  upper?: string;
-  unit?: string;
-  placeholder?: string;
-  bizAlias?: string;
-  bizType?: string;
-  duration?: boolean;
-  choice?: string;
-  disabled?: boolean;
-  align?: string;
-  invisible?: boolean;
-  link?: string;
-  verticalPrint?: boolean;
-  formula?: string;
-  commonBizType?: string;
-  options?: FormCreateRequestFormComponentsChildrenPropsOptions[];
-  print?: string;
-  statField?: FormCreateRequestFormComponentsChildrenPropsStatField[];
-  dataSource?: FormCreateRequestFormComponentsChildrenPropsDataSource;
-  fields?: FormCreateRequestFormComponentsChildrenPropsFields[];
-  addressModel?: string;
-  multiple?: boolean;
-  limit?: number;
-  availableTemplates?: FormCreateRequestFormComponentsChildrenPropsAvailableTemplates[];
-  tableViewMode?: string;
-  static names(): { [key: string]: string } {
-    return {
-      componentId: 'componentId',
-      label: 'label',
-      asyncCondition: 'asyncCondition',
-      required: 'required',
-      content: 'content',
-      format: 'format',
-      upper: 'upper',
-      unit: 'unit',
-      placeholder: 'placeholder',
-      bizAlias: 'bizAlias',
-      bizType: 'bizType',
-      duration: 'duration',
-      choice: 'choice',
-      disabled: 'disabled',
-      align: 'align',
-      invisible: 'invisible',
-      link: 'link',
-      verticalPrint: 'verticalPrint',
-      formula: 'formula',
-      commonBizType: 'commonBizType',
-      options: 'options',
-      print: 'print',
-      statField: 'statField',
-      dataSource: 'dataSource',
-      fields: 'fields',
-      addressModel: 'addressModel',
-      multiple: 'multiple',
-      limit: 'limit',
-      availableTemplates: 'availableTemplates',
-      tableViewMode: 'tableViewMode',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      componentId: 'string',
-      label: 'string',
-      asyncCondition: 'boolean',
-      required: 'boolean',
-      content: 'string',
-      format: 'string',
-      upper: 'string',
-      unit: 'string',
-      placeholder: 'string',
-      bizAlias: 'string',
-      bizType: 'string',
-      duration: 'boolean',
-      choice: 'string',
-      disabled: 'boolean',
-      align: 'string',
-      invisible: 'boolean',
-      link: 'string',
-      verticalPrint: 'boolean',
-      formula: 'string',
-      commonBizType: 'string',
-      options: { 'type': 'array', 'itemType': FormCreateRequestFormComponentsChildrenPropsOptions },
-      print: 'string',
-      statField: { 'type': 'array', 'itemType': FormCreateRequestFormComponentsChildrenPropsStatField },
-      dataSource: FormCreateRequestFormComponentsChildrenPropsDataSource,
-      fields: { 'type': 'array', 'itemType': FormCreateRequestFormComponentsChildrenPropsFields },
-      addressModel: 'string',
-      multiple: 'boolean',
-      limit: 'number',
-      availableTemplates: { 'type': 'array', 'itemType': FormCreateRequestFormComponentsChildrenPropsAvailableTemplates },
-      tableViewMode: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class FormCreateRequestFormComponentsChildrenChildrenPropsOptions extends $tea.Model {
-  value?: string;
-  key?: string;
-  static names(): { [key: string]: string } {
-    return {
-      value: 'value',
-      key: 'key',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      value: 'string',
-      key: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class FormCreateRequestFormComponentsChildrenChildrenPropsStatField extends $tea.Model {
-  componentId?: string;
-  label?: string;
-  upper?: boolean;
-  payEnable?: string;
-  static names(): { [key: string]: string } {
-    return {
-      componentId: 'componentId',
-      label: 'label',
-      upper: 'upper',
-      payEnable: 'payEnable',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      componentId: 'string',
-      label: 'string',
-      upper: 'boolean',
-      payEnable: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class FormCreateRequestFormComponentsChildrenChildrenPropsDataSourceTarget extends $tea.Model {
-  appUuid?: string;
-  appType?: number;
-  bizType?: string;
-  formCode?: string;
-  static names(): { [key: string]: string } {
-    return {
-      appUuid: 'appUuid',
-      appType: 'appType',
-      bizType: 'bizType',
-      formCode: 'formCode',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      appUuid: 'string',
-      appType: 'number',
-      bizType: 'string',
-      formCode: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class FormCreateRequestFormComponentsChildrenChildrenPropsDataSource extends $tea.Model {
-  type?: string;
-  target?: FormCreateRequestFormComponentsChildrenChildrenPropsDataSourceTarget;
-  static names(): { [key: string]: string } {
-    return {
-      type: 'type',
-      target: 'target',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      type: 'string',
-      target: FormCreateRequestFormComponentsChildrenChildrenPropsDataSourceTarget,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class FormCreateRequestFormComponentsChildrenChildrenPropsFieldsPropsOptions extends $tea.Model {
-  key?: string;
-  value?: string;
-  static names(): { [key: string]: string } {
-    return {
-      key: 'key',
-      value: 'value',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      key: 'string',
-      value: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class FormCreateRequestFormComponentsChildrenChildrenPropsFieldsProps extends $tea.Model {
-  componentId?: string;
-  label?: string;
-  required?: boolean;
-  print?: string;
-  content?: string;
-  format?: string;
-  options?: FormCreateRequestFormComponentsChildrenChildrenPropsFieldsPropsOptions[];
-  upper?: string;
-  unit?: string;
-  placeholder?: string;
-  bizAlias?: string;
-  bizType?: string;
-  duration?: boolean;
-  choice?: string;
-  disabled?: boolean;
-  align?: string;
-  static names(): { [key: string]: string } {
-    return {
-      componentId: 'componentId',
-      label: 'label',
-      required: 'required',
-      print: 'print',
-      content: 'content',
-      format: 'format',
-      options: 'options',
-      upper: 'upper',
-      unit: 'unit',
-      placeholder: 'placeholder',
-      bizAlias: 'bizAlias',
-      bizType: 'bizType',
-      duration: 'duration',
-      choice: 'choice',
-      disabled: 'disabled',
-      align: 'align',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      componentId: 'string',
-      label: 'string',
-      required: 'boolean',
-      print: 'string',
-      content: 'string',
-      format: 'string',
-      options: { 'type': 'array', 'itemType': FormCreateRequestFormComponentsChildrenChildrenPropsFieldsPropsOptions },
-      upper: 'string',
-      unit: 'string',
-      placeholder: 'string',
-      bizAlias: 'string',
-      bizType: 'string',
-      duration: 'boolean',
-      choice: 'string',
-      disabled: 'boolean',
-      align: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class FormCreateRequestFormComponentsChildrenChildrenPropsFields extends $tea.Model {
-  componentType?: string;
-  props?: FormCreateRequestFormComponentsChildrenChildrenPropsFieldsProps;
-  static names(): { [key: string]: string } {
-    return {
-      componentType: 'componentType',
-      props: 'props',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      componentType: 'string',
-      props: FormCreateRequestFormComponentsChildrenChildrenPropsFieldsProps,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class FormCreateRequestFormComponentsChildrenChildrenProps extends $tea.Model {
-  componentId?: string;
-  label?: string;
-  asyncCondition?: boolean;
-  required?: boolean;
-  content?: string;
-  format?: string;
-  upper?: string;
-  unit?: string;
-  placeholder?: string;
-  bizAlias?: string;
-  bizType?: string;
-  duration?: boolean;
-  choice?: string;
-  disabled?: boolean;
-  align?: string;
-  invisible?: boolean;
-  link?: string;
-  verticalPrint?: boolean;
-  formula?: string;
-  commonBizType?: string;
-  options?: FormCreateRequestFormComponentsChildrenChildrenPropsOptions[];
-  print?: string;
-  statField?: FormCreateRequestFormComponentsChildrenChildrenPropsStatField[];
-  dataSource?: FormCreateRequestFormComponentsChildrenChildrenPropsDataSource;
-  fields?: FormCreateRequestFormComponentsChildrenChildrenPropsFields[];
-  static names(): { [key: string]: string } {
-    return {
-      componentId: 'componentId',
-      label: 'label',
-      asyncCondition: 'asyncCondition',
-      required: 'required',
-      content: 'content',
-      format: 'format',
-      upper: 'upper',
-      unit: 'unit',
-      placeholder: 'placeholder',
-      bizAlias: 'bizAlias',
-      bizType: 'bizType',
-      duration: 'duration',
-      choice: 'choice',
-      disabled: 'disabled',
-      align: 'align',
-      invisible: 'invisible',
-      link: 'link',
-      verticalPrint: 'verticalPrint',
-      formula: 'formula',
-      commonBizType: 'commonBizType',
-      options: 'options',
-      print: 'print',
-      statField: 'statField',
-      dataSource: 'dataSource',
-      fields: 'fields',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      componentId: 'string',
-      label: 'string',
-      asyncCondition: 'boolean',
-      required: 'boolean',
-      content: 'string',
-      format: 'string',
-      upper: 'string',
-      unit: 'string',
-      placeholder: 'string',
-      bizAlias: 'string',
-      bizType: 'string',
-      duration: 'boolean',
-      choice: 'string',
-      disabled: 'boolean',
-      align: 'string',
-      invisible: 'boolean',
-      link: 'string',
-      verticalPrint: 'boolean',
-      formula: 'string',
-      commonBizType: 'string',
-      options: { 'type': 'array', 'itemType': FormCreateRequestFormComponentsChildrenChildrenPropsOptions },
-      print: 'string',
-      statField: { 'type': 'array', 'itemType': FormCreateRequestFormComponentsChildrenChildrenPropsStatField },
-      dataSource: FormCreateRequestFormComponentsChildrenChildrenPropsDataSource,
-      fields: { 'type': 'array', 'itemType': FormCreateRequestFormComponentsChildrenChildrenPropsFields },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class FormCreateRequestFormComponentsChildrenChildren extends $tea.Model {
-  componentType?: string;
-  props?: FormCreateRequestFormComponentsChildrenChildrenProps;
-  static names(): { [key: string]: string } {
-    return {
-      componentType: 'componentType',
-      props: 'props',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      componentType: 'string',
-      props: FormCreateRequestFormComponentsChildrenChildrenProps,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class FormCreateRequestFormComponentsChildren extends $tea.Model {
-  componentType?: string;
-  props?: FormCreateRequestFormComponentsChildrenProps;
-  children?: FormCreateRequestFormComponentsChildrenChildren[];
-  static names(): { [key: string]: string } {
-    return {
-      componentType: 'componentType',
-      props: 'props',
-      children: 'children',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      componentType: 'string',
-      props: FormCreateRequestFormComponentsChildrenProps,
-      children: { 'type': 'array', 'itemType': FormCreateRequestFormComponentsChildrenChildren },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class FormCreateRequestFormComponents extends $tea.Model {
-  componentType?: string;
-  props?: FormCreateRequestFormComponentsProps;
-  children?: FormCreateRequestFormComponentsChildren[];
-  static names(): { [key: string]: string } {
-    return {
-      componentType: 'componentType',
-      props: 'props',
-      children: 'children',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      componentType: 'string',
-      props: FormCreateRequestFormComponentsProps,
-      children: { 'type': 'array', 'itemType': FormCreateRequestFormComponentsChildren },
+      disableStopProcessButton: 'boolean',
+      hidden: 'boolean',
+      disableDeleteProcess: 'boolean',
+      disableFormEdit: 'boolean',
+      disableResubmit: 'boolean',
+      disableHomepage: 'boolean',
+      dirId: 'string',
+      originDirId: 'string',
     };
   }
 
@@ -3344,6 +2579,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.formComponents)) {
       body["formComponents"] = request.formComponents;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.templateConfig))) {
+      body["templateConfig"] = request.templateConfig;
     }
 
     let realHeaders : {[key: string ]: string} = { };
