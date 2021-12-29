@@ -968,6 +968,88 @@ export class UpdateResidentUserResponse extends $tea.Model {
   }
 }
 
+export class DeleteResidentBlackBoardHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteResidentBlackBoardRequest extends $tea.Model {
+  blackboardId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      blackboardId: 'blackboardId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      blackboardId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteResidentBlackBoardResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteResidentBlackBoardResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: DeleteResidentBlackBoardResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: DeleteResidentBlackBoardResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AddPointHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1540,6 +1622,7 @@ export class CreateResidentBlackBoardRequest extends $tea.Model {
   title?: string;
   context?: string;
   mediaId?: string;
+  sendTime?: string;
   static names(): { [key: string]: string } {
     return {
       dingIsvOrgId: 'dingIsvOrgId',
@@ -1549,6 +1632,7 @@ export class CreateResidentBlackBoardRequest extends $tea.Model {
       title: 'title',
       context: 'context',
       mediaId: 'mediaId',
+      sendTime: 'sendTime',
     };
   }
 
@@ -1561,6 +1645,7 @@ export class CreateResidentBlackBoardRequest extends $tea.Model {
       title: 'string',
       context: 'string',
       mediaId: 'string',
+      sendTime: 'string',
     };
   }
 
@@ -1602,6 +1687,109 @@ export class CreateResidentBlackBoardResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: CreateResidentBlackBoardResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateResidentBlackBoardHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateResidentBlackBoardRequest extends $tea.Model {
+  dingIsvOrgId?: number;
+  dingCorpId?: string;
+  dingSuiteKey?: string;
+  dingTokenGrantType?: number;
+  title?: string;
+  context?: string;
+  mediaId?: string;
+  blackboardId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dingIsvOrgId: 'dingIsvOrgId',
+      dingCorpId: 'dingCorpId',
+      dingSuiteKey: 'dingSuiteKey',
+      dingTokenGrantType: 'dingTokenGrantType',
+      title: 'title',
+      context: 'context',
+      mediaId: 'mediaId',
+      blackboardId: 'blackboardId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingIsvOrgId: 'number',
+      dingCorpId: 'string',
+      dingSuiteKey: 'string',
+      dingTokenGrantType: 'number',
+      title: 'string',
+      context: 'string',
+      mediaId: 'string',
+      blackboardId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateResidentBlackBoardResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateResidentBlackBoardResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateResidentBlackBoardResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateResidentBlackBoardResponseBody,
     };
   }
 
@@ -2457,6 +2645,35 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateResidentUserResponse>(await this.doROARequest("UpdateResidentUser", "resident_1.0", "HTTP", "PUT", "AK", `/v1.0/resident/users`, "json", req, runtime), new UpdateResidentUserResponse({}));
   }
 
+  async deleteResidentBlackBoard(request: DeleteResidentBlackBoardRequest): Promise<DeleteResidentBlackBoardResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DeleteResidentBlackBoardHeaders({ });
+    return await this.deleteResidentBlackBoardWithOptions(request, headers, runtime);
+  }
+
+  async deleteResidentBlackBoardWithOptions(request: DeleteResidentBlackBoardRequest, headers: DeleteResidentBlackBoardHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteResidentBlackBoardResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.blackboardId)) {
+      query["blackboardId"] = request.blackboardId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<DeleteResidentBlackBoardResponse>(await this.doROARequest("DeleteResidentBlackBoard", "resident_1.0", "HTTP", "DELETE", "AK", `/v1.0/resident/blackboards`, "json", req, runtime), new DeleteResidentBlackBoardResponse({}));
+  }
+
   async addPoint(request: AddPointRequest): Promise<AddPointResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddPointHeaders({ });
@@ -2764,6 +2981,10 @@ export default class Client extends OpenApi {
       body["mediaId"] = request.mediaId;
     }
 
+    if (!Util.isUnset(request.sendTime)) {
+      body["sendTime"] = request.sendTime;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2778,6 +2999,63 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<CreateResidentBlackBoardResponse>(await this.doROARequest("CreateResidentBlackBoard", "resident_1.0", "HTTP", "POST", "AK", `/v1.0/resident/blackboards`, "json", req, runtime), new CreateResidentBlackBoardResponse({}));
+  }
+
+  async updateResidentBlackBoard(request: UpdateResidentBlackBoardRequest): Promise<UpdateResidentBlackBoardResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateResidentBlackBoardHeaders({ });
+    return await this.updateResidentBlackBoardWithOptions(request, headers, runtime);
+  }
+
+  async updateResidentBlackBoardWithOptions(request: UpdateResidentBlackBoardRequest, headers: UpdateResidentBlackBoardHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateResidentBlackBoardResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    if (!Util.isUnset(request.dingCorpId)) {
+      body["dingCorpId"] = request.dingCorpId;
+    }
+
+    if (!Util.isUnset(request.dingSuiteKey)) {
+      body["dingSuiteKey"] = request.dingSuiteKey;
+    }
+
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    if (!Util.isUnset(request.title)) {
+      body["title"] = request.title;
+    }
+
+    if (!Util.isUnset(request.context)) {
+      body["context"] = request.context;
+    }
+
+    if (!Util.isUnset(request.mediaId)) {
+      body["mediaId"] = request.mediaId;
+    }
+
+    if (!Util.isUnset(request.blackboardId)) {
+      body["blackboardId"] = request.blackboardId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateResidentBlackBoardResponse>(await this.doROARequest("UpdateResidentBlackBoard", "resident_1.0", "HTTP", "PUT", "AK", `/v1.0/resident/blackboards`, "json", req, runtime), new UpdateResidentBlackBoardResponse({}));
   }
 
   async listPointRules(request: ListPointRulesRequest): Promise<ListPointRulesResponse> {

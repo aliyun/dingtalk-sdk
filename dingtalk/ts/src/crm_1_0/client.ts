@@ -1779,18 +1779,15 @@ export class JoinGroupSetRequest extends $tea.Model {
 }
 
 export class JoinGroupSetResponseBody extends $tea.Model {
-  success?: boolean;
   openConversationId?: string;
   static names(): { [key: string]: string } {
     return {
-      success: 'success',
       openConversationId: 'openConversationId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      success: 'boolean',
       openConversationId: 'string',
     };
   }

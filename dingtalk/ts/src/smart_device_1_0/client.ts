@@ -7,72 +7,6 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
-export class QueryDeviceVideoConferenceBookHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryDeviceVideoConferenceBookResponseBody extends $tea.Model {
-  code?: string;
-  conferenceId?: string;
-  static names(): { [key: string]: string } {
-    return {
-      code: 'code',
-      conferenceId: 'conferenceId',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      code: 'string',
-      conferenceId: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryDeviceVideoConferenceBookResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: QueryDeviceVideoConferenceBookResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: QueryDeviceVideoConferenceBookResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class MachineUsersUpdateHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -302,6 +236,156 @@ export class CreateDeviceVideoConferenceResponse extends $tea.Model {
   }
 }
 
+export class QueryDeviceVideoConferenceBookHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryDeviceVideoConferenceBookResponseBody extends $tea.Model {
+  code?: string;
+  conferenceId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      conferenceId: 'conferenceId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      conferenceId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryDeviceVideoConferenceBookResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryDeviceVideoConferenceBookResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryDeviceVideoConferenceBookResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MachineManagerUpdateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MachineManagerUpdateRequest extends $tea.Model {
+  deviceId?: number;
+  userId?: string;
+  scopeDeptIds?: number[];
+  atmManagerRightMap?: { [key: string]: boolean };
+  dingTokenGrantType?: number;
+  dingSuiteKey?: string;
+  dingCorpId?: string;
+  dingOrgId?: number;
+  dingIsvOrgId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      deviceId: 'deviceId',
+      userId: 'userId',
+      scopeDeptIds: 'scopeDeptIds',
+      atmManagerRightMap: 'atmManagerRightMap',
+      dingTokenGrantType: 'dingTokenGrantType',
+      dingSuiteKey: 'dingSuiteKey',
+      dingCorpId: 'dingCorpId',
+      dingOrgId: 'dingOrgId',
+      dingIsvOrgId: 'dingIsvOrgId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deviceId: 'number',
+      userId: 'string',
+      scopeDeptIds: { 'type': 'array', 'itemType': 'number' },
+      atmManagerRightMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'boolean' },
+      dingTokenGrantType: 'number',
+      dingSuiteKey: 'string',
+      dingCorpId: 'string',
+      dingOrgId: 'number',
+      dingIsvOrgId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MachineManagerUpdateResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class KickDeviceVideoConferenceMembersHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -460,28 +544,6 @@ export default class Client extends OpenApi {
   }
 
 
-  async queryDeviceVideoConferenceBook(deviceId: string, bookId: string): Promise<QueryDeviceVideoConferenceBookResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryDeviceVideoConferenceBookHeaders({ });
-    return await this.queryDeviceVideoConferenceBookWithOptions(deviceId, bookId, headers, runtime);
-  }
-
-  async queryDeviceVideoConferenceBookWithOptions(deviceId: string, bookId: string, headers: QueryDeviceVideoConferenceBookHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDeviceVideoConferenceBookResponse> {
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-    });
-    return $tea.cast<QueryDeviceVideoConferenceBookResponse>(await this.doROARequest("QueryDeviceVideoConferenceBook", "smartDevice_1.0", "HTTP", "GET", "AK", `/v1.0/smartDevice/devices/${deviceId}/books/${bookId}`, "json", req, runtime), new QueryDeviceVideoConferenceBookResponse({}));
-  }
-
   async machineUsersUpdate(request: MachineUsersUpdateRequest): Promise<MachineUsersUpdateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new MachineUsersUpdateHeaders({ });
@@ -599,6 +661,89 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<CreateDeviceVideoConferenceResponse>(await this.doROARequest("CreateDeviceVideoConference", "smartDevice_1.0", "HTTP", "POST", "AK", `/v1.0/smartDevice/devices/${deviceId}/videoConferences`, "json", req, runtime), new CreateDeviceVideoConferenceResponse({}));
+  }
+
+  async queryDeviceVideoConferenceBook(deviceId: string, bookId: string): Promise<QueryDeviceVideoConferenceBookResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryDeviceVideoConferenceBookHeaders({ });
+    return await this.queryDeviceVideoConferenceBookWithOptions(deviceId, bookId, headers, runtime);
+  }
+
+  async queryDeviceVideoConferenceBookWithOptions(deviceId: string, bookId: string, headers: QueryDeviceVideoConferenceBookHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDeviceVideoConferenceBookResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<QueryDeviceVideoConferenceBookResponse>(await this.doROARequest("QueryDeviceVideoConferenceBook", "smartDevice_1.0", "HTTP", "GET", "AK", `/v1.0/smartDevice/devices/${deviceId}/books/${bookId}`, "json", req, runtime), new QueryDeviceVideoConferenceBookResponse({}));
+  }
+
+  async machineManagerUpdate(request: MachineManagerUpdateRequest): Promise<MachineManagerUpdateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new MachineManagerUpdateHeaders({ });
+    return await this.machineManagerUpdateWithOptions(request, headers, runtime);
+  }
+
+  async machineManagerUpdateWithOptions(request: MachineManagerUpdateRequest, headers: MachineManagerUpdateHeaders, runtime: $Util.RuntimeOptions): Promise<MachineManagerUpdateResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deviceId)) {
+      body["deviceId"] = request.deviceId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    if (!Util.isUnset(request.scopeDeptIds)) {
+      body["scopeDeptIds"] = request.scopeDeptIds;
+    }
+
+    if (!Util.isUnset(request.atmManagerRightMap)) {
+      body["atmManagerRightMap"] = request.atmManagerRightMap;
+    }
+
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    if (!Util.isUnset(request.dingSuiteKey)) {
+      body["dingSuiteKey"] = request.dingSuiteKey;
+    }
+
+    if (!Util.isUnset(request.dingCorpId)) {
+      body["dingCorpId"] = request.dingCorpId;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<MachineManagerUpdateResponse>(await this.doROARequest("MachineManagerUpdate", "smartDevice_1.0", "HTTP", "PUT", "AK", `/v1.0/smartDevice/atmachines/managers`, "none", req, runtime), new MachineManagerUpdateResponse({}));
   }
 
   async kickDeviceVideoConferenceMembers(deviceId: string, conferenceId: string, request: KickDeviceVideoConferenceMembersRequest): Promise<KickDeviceVideoConferenceMembersResponse> {
