@@ -1020,6 +1020,9 @@ class DecodePayCodeResponseBody(TeaModel):
         code_type: str = None,
         alipay_code: str = None,
         user_corp_relation_type: str = None,
+        code_identity: str = None,
+        code_id: str = None,
+        out_biz_id: str = None,
     ):
         # 企业id
         self.corp_id = corp_id
@@ -1033,6 +1036,12 @@ class DecodePayCodeResponseBody(TeaModel):
         self.alipay_code = alipay_code
         # 用户和企业关系
         self.user_corp_relation_type = user_corp_relation_type
+        # 工牌码：DT_IDENTITY，访客码：DT_VISITOR，会展码：DT_CONFERENCE
+        self.code_identity = code_identity
+        # 码ID，对于访客或会展码等静态码值返回
+        self.code_id = code_id
+        # 外部业务ID,其值为调用创建用户码接口传入的requestId
+        self.out_biz_id = out_biz_id
 
     def validate(self):
         pass
@@ -1055,6 +1064,12 @@ class DecodePayCodeResponseBody(TeaModel):
             result['alipayCode'] = self.alipay_code
         if self.user_corp_relation_type is not None:
             result['userCorpRelationType'] = self.user_corp_relation_type
+        if self.code_identity is not None:
+            result['codeIdentity'] = self.code_identity
+        if self.code_id is not None:
+            result['codeId'] = self.code_id
+        if self.out_biz_id is not None:
+            result['outBizId'] = self.out_biz_id
         return result
 
     def from_map(self, m: dict = None):
@@ -1071,6 +1086,12 @@ class DecodePayCodeResponseBody(TeaModel):
             self.alipay_code = m.get('alipayCode')
         if m.get('userCorpRelationType') is not None:
             self.user_corp_relation_type = m.get('userCorpRelationType')
+        if m.get('codeIdentity') is not None:
+            self.code_identity = m.get('codeIdentity')
+        if m.get('codeId') is not None:
+            self.code_id = m.get('codeId')
+        if m.get('outBizId') is not None:
+            self.out_biz_id = m.get('outBizId')
         return self
 
 
@@ -2064,6 +2085,7 @@ class CreateUserCodeInstanceRequest(TeaModel):
         request_id: str = None,
         code_identity: str = None,
         code_value: str = None,
+        code_value_type: str = None,
         status: str = None,
         corp_id: str = None,
         user_corp_relation_type: str = None,
@@ -2080,6 +2102,8 @@ class CreateUserCodeInstanceRequest(TeaModel):
         self.code_identity = code_identity
         # 码值
         self.code_value = code_value
+        # 码值类型，钉钉静态码值：DING_STATIC，访客码或会展码传入
+        self.code_value_type = code_value_type
         # 状态，传入关闭状态需要用户手动开启后才会渲染二维
         self.status = status
         # 企业ID
@@ -2115,6 +2139,8 @@ class CreateUserCodeInstanceRequest(TeaModel):
             result['codeIdentity'] = self.code_identity
         if self.code_value is not None:
             result['codeValue'] = self.code_value
+        if self.code_value_type is not None:
+            result['codeValueType'] = self.code_value_type
         if self.status is not None:
             result['status'] = self.status
         if self.corp_id is not None:
@@ -2145,6 +2171,8 @@ class CreateUserCodeInstanceRequest(TeaModel):
             self.code_identity = m.get('codeIdentity')
         if m.get('codeValue') is not None:
             self.code_value = m.get('codeValue')
+        if m.get('codeValueType') is not None:
+            self.code_value_type = m.get('codeValueType')
         if m.get('status') is not None:
             self.status = m.get('status')
         if m.get('corpId') is not None:
@@ -2173,9 +2201,12 @@ class CreateUserCodeInstanceResponseBody(TeaModel):
     def __init__(
         self,
         code_id: str = None,
+        code_detail_url: str = None,
     ):
         # 码ID
         self.code_id = code_id
+        # 码详情跳转地址
+        self.code_detail_url = code_detail_url
 
     def validate(self):
         pass
@@ -2188,12 +2219,16 @@ class CreateUserCodeInstanceResponseBody(TeaModel):
         result = dict()
         if self.code_id is not None:
             result['codeId'] = self.code_id
+        if self.code_detail_url is not None:
+            result['codeDetailUrl'] = self.code_detail_url
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('codeId') is not None:
             self.code_id = m.get('codeId')
+        if m.get('codeDetailUrl') is not None:
+            self.code_detail_url = m.get('codeDetailUrl')
         return self
 
 
@@ -2711,6 +2746,9 @@ class NotifyVerifyResultRequest(TeaModel):
         verify_time: str = None,
         verify_result: bool = None,
         verify_location: str = None,
+        verify_no: str = None,
+        verify_event: str = None,
+        remark: str = None,
         ding_org_id: int = None,
         ding_isv_org_id: int = None,
     ):
@@ -2726,8 +2764,14 @@ class NotifyVerifyResultRequest(TeaModel):
         self.verify_time = verify_time
         # 验证结果
         self.verify_result = verify_result
-        # 验证地点
+        # 验证地点，调用时请务必传入，以便生成工牌使用记录
         self.verify_location = verify_location
+        # 验证流水号，长度不超过32位，用户下唯一，调用时请务必传入，以便生成工牌使用记录
+        self.verify_no = verify_no
+        # 验证事件，长度不超过8个中文
+        self.verify_event = verify_event
+        # 备注信息
+        self.remark = remark
         self.ding_org_id = ding_org_id
         self.ding_isv_org_id = ding_isv_org_id
 
@@ -2754,6 +2798,12 @@ class NotifyVerifyResultRequest(TeaModel):
             result['verifyResult'] = self.verify_result
         if self.verify_location is not None:
             result['verifyLocation'] = self.verify_location
+        if self.verify_no is not None:
+            result['verifyNo'] = self.verify_no
+        if self.verify_event is not None:
+            result['verifyEvent'] = self.verify_event
+        if self.remark is not None:
+            result['remark'] = self.remark
         if self.ding_org_id is not None:
             result['dingOrgId'] = self.ding_org_id
         if self.ding_isv_org_id is not None:
@@ -2776,6 +2826,12 @@ class NotifyVerifyResultRequest(TeaModel):
             self.verify_result = m.get('verifyResult')
         if m.get('verifyLocation') is not None:
             self.verify_location = m.get('verifyLocation')
+        if m.get('verifyNo') is not None:
+            self.verify_no = m.get('verifyNo')
+        if m.get('verifyEvent') is not None:
+            self.verify_event = m.get('verifyEvent')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
         if m.get('dingOrgId') is not None:
             self.ding_org_id = m.get('dingOrgId')
         if m.get('dingIsvOrgId') is not None:

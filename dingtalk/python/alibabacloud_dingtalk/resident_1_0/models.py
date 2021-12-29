@@ -1986,6 +1986,130 @@ class UpdateResidentUserResponse(TeaModel):
         return self
 
 
+class DeleteResidentBlackBoardHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeleteResidentBlackBoardRequest(TeaModel):
+    def __init__(
+        self,
+        blackboard_id: str = None,
+    ):
+        self.blackboard_id = blackboard_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.blackboard_id is not None:
+            result['blackboardId'] = self.blackboard_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('blackboardId') is not None:
+            self.blackboard_id = m.get('blackboardId')
+        return self
+
+
+class DeleteResidentBlackBoardResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class DeleteResidentBlackBoardResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: DeleteResidentBlackBoardResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = DeleteResidentBlackBoardResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class AddPointHeaders(TeaModel):
     def __init__(
         self,
@@ -3015,6 +3139,7 @@ class CreateResidentBlackBoardRequest(TeaModel):
         title: str = None,
         context: str = None,
         media_id: str = None,
+        send_time: str = None,
     ):
         self.ding_isv_org_id = ding_isv_org_id
         self.ding_corp_id = ding_corp_id
@@ -3023,6 +3148,8 @@ class CreateResidentBlackBoardRequest(TeaModel):
         self.title = title
         self.context = context
         self.media_id = media_id
+        # 格式yyyy-MM-dd HH:mm:ss
+        self.send_time = send_time
 
     def validate(self):
         pass
@@ -3047,6 +3174,8 @@ class CreateResidentBlackBoardRequest(TeaModel):
             result['context'] = self.context
         if self.media_id is not None:
             result['mediaId'] = self.media_id
+        if self.send_time is not None:
+            result['sendTime'] = self.send_time
         return result
 
     def from_map(self, m: dict = None):
@@ -3065,6 +3194,8 @@ class CreateResidentBlackBoardRequest(TeaModel):
             self.context = m.get('context')
         if m.get('mediaId') is not None:
             self.media_id = m.get('mediaId')
+        if m.get('sendTime') is not None:
+            self.send_time = m.get('sendTime')
         return self
 
 
@@ -3128,6 +3259,172 @@ class CreateResidentBlackBoardResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = CreateResidentBlackBoardResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateResidentBlackBoardHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateResidentBlackBoardRequest(TeaModel):
+    def __init__(
+        self,
+        ding_isv_org_id: int = None,
+        ding_corp_id: str = None,
+        ding_suite_key: str = None,
+        ding_token_grant_type: int = None,
+        title: str = None,
+        context: str = None,
+        media_id: str = None,
+        blackboard_id: str = None,
+    ):
+        self.ding_isv_org_id = ding_isv_org_id
+        self.ding_corp_id = ding_corp_id
+        self.ding_suite_key = ding_suite_key
+        self.ding_token_grant_type = ding_token_grant_type
+        self.title = title
+        self.context = context
+        self.media_id = media_id
+        self.blackboard_id = blackboard_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_isv_org_id is not None:
+            result['dingIsvOrgId'] = self.ding_isv_org_id
+        if self.ding_corp_id is not None:
+            result['dingCorpId'] = self.ding_corp_id
+        if self.ding_suite_key is not None:
+            result['dingSuiteKey'] = self.ding_suite_key
+        if self.ding_token_grant_type is not None:
+            result['dingTokenGrantType'] = self.ding_token_grant_type
+        if self.title is not None:
+            result['title'] = self.title
+        if self.context is not None:
+            result['context'] = self.context
+        if self.media_id is not None:
+            result['mediaId'] = self.media_id
+        if self.blackboard_id is not None:
+            result['blackboardId'] = self.blackboard_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingIsvOrgId') is not None:
+            self.ding_isv_org_id = m.get('dingIsvOrgId')
+        if m.get('dingCorpId') is not None:
+            self.ding_corp_id = m.get('dingCorpId')
+        if m.get('dingSuiteKey') is not None:
+            self.ding_suite_key = m.get('dingSuiteKey')
+        if m.get('dingTokenGrantType') is not None:
+            self.ding_token_grant_type = m.get('dingTokenGrantType')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('context') is not None:
+            self.context = m.get('context')
+        if m.get('mediaId') is not None:
+            self.media_id = m.get('mediaId')
+        if m.get('blackboardId') is not None:
+            self.blackboard_id = m.get('blackboardId')
+        return self
+
+
+class UpdateResidentBlackBoardResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class UpdateResidentBlackBoardResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: UpdateResidentBlackBoardResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = UpdateResidentBlackBoardResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

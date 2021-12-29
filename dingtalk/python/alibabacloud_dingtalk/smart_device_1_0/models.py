@@ -4,111 +4,6 @@ from Tea.model import TeaModel
 from typing import Dict, List
 
 
-class QueryDeviceVideoConferenceBookHeaders(TeaModel):
-    def __init__(
-        self,
-        common_headers: Dict[str, str] = None,
-        x_acs_dingtalk_access_token: str = None,
-    ):
-        self.common_headers = common_headers
-        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.common_headers is not None:
-            result['commonHeaders'] = self.common_headers
-        if self.x_acs_dingtalk_access_token is not None:
-            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('commonHeaders') is not None:
-            self.common_headers = m.get('commonHeaders')
-        if m.get('x-acs-dingtalk-access-token') is not None:
-            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
-        return self
-
-
-class QueryDeviceVideoConferenceBookResponseBody(TeaModel):
-    def __init__(
-        self,
-        code: str = None,
-        conference_id: str = None,
-    ):
-        # 入会口令
-        self.code = code
-        # 会议id
-        self.conference_id = conference_id
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.code is not None:
-            result['code'] = self.code
-        if self.conference_id is not None:
-            result['conferenceId'] = self.conference_id
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('code') is not None:
-            self.code = m.get('code')
-        if m.get('conferenceId') is not None:
-            self.conference_id = m.get('conferenceId')
-        return self
-
-
-class QueryDeviceVideoConferenceBookResponse(TeaModel):
-    def __init__(
-        self,
-        headers: Dict[str, str] = None,
-        body: QueryDeviceVideoConferenceBookResponseBody = None,
-    ):
-        self.headers = headers
-        self.body = body
-
-    def validate(self):
-        self.validate_required(self.headers, 'headers')
-        self.validate_required(self.body, 'body')
-        if self.body:
-            self.body.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.headers is not None:
-            result['headers'] = self.headers
-        if self.body is not None:
-            result['body'] = self.body.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('headers') is not None:
-            self.headers = m.get('headers')
-        if m.get('body') is not None:
-            temp_model = QueryDeviceVideoConferenceBookResponseBody()
-            self.body = temp_model.from_map(m['body'])
-        return self
-
-
 class MachineUsersUpdateHeaders(TeaModel):
     def __init__(
         self,
@@ -464,6 +359,250 @@ class CreateDeviceVideoConferenceResponse(TeaModel):
         if m.get('body') is not None:
             temp_model = CreateDeviceVideoConferenceResponseBody()
             self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryDeviceVideoConferenceBookHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryDeviceVideoConferenceBookResponseBody(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        conference_id: str = None,
+    ):
+        # 入会口令
+        self.code = code
+        # 会议id
+        self.conference_id = conference_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.conference_id is not None:
+            result['conferenceId'] = self.conference_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('conferenceId') is not None:
+            self.conference_id = m.get('conferenceId')
+        return self
+
+
+class QueryDeviceVideoConferenceBookResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryDeviceVideoConferenceBookResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryDeviceVideoConferenceBookResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class MachineManagerUpdateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class MachineManagerUpdateRequest(TeaModel):
+    def __init__(
+        self,
+        device_id: int = None,
+        user_id: str = None,
+        scope_dept_ids: List[int] = None,
+        atm_manager_right_map: Dict[str, bool] = None,
+        ding_token_grant_type: int = None,
+        ding_suite_key: str = None,
+        ding_corp_id: str = None,
+        ding_org_id: int = None,
+        ding_isv_org_id: int = None,
+    ):
+        # 设备id
+        self.device_id = device_id
+        # 设备管理员的userId
+        self.user_id = user_id
+        # 权限范围：可管理的部门id列表
+        self.scope_dept_ids = scope_dept_ids
+        # 设备管理员权限点
+        self.atm_manager_right_map = atm_manager_right_map
+        self.ding_token_grant_type = ding_token_grant_type
+        self.ding_suite_key = ding_suite_key
+        self.ding_corp_id = ding_corp_id
+        self.ding_org_id = ding_org_id
+        self.ding_isv_org_id = ding_isv_org_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.device_id is not None:
+            result['deviceId'] = self.device_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.scope_dept_ids is not None:
+            result['scopeDeptIds'] = self.scope_dept_ids
+        if self.atm_manager_right_map is not None:
+            result['atmManagerRightMap'] = self.atm_manager_right_map
+        if self.ding_token_grant_type is not None:
+            result['dingTokenGrantType'] = self.ding_token_grant_type
+        if self.ding_suite_key is not None:
+            result['dingSuiteKey'] = self.ding_suite_key
+        if self.ding_corp_id is not None:
+            result['dingCorpId'] = self.ding_corp_id
+        if self.ding_org_id is not None:
+            result['dingOrgId'] = self.ding_org_id
+        if self.ding_isv_org_id is not None:
+            result['dingIsvOrgId'] = self.ding_isv_org_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deviceId') is not None:
+            self.device_id = m.get('deviceId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('scopeDeptIds') is not None:
+            self.scope_dept_ids = m.get('scopeDeptIds')
+        if m.get('atmManagerRightMap') is not None:
+            self.atm_manager_right_map = m.get('atmManagerRightMap')
+        if m.get('dingTokenGrantType') is not None:
+            self.ding_token_grant_type = m.get('dingTokenGrantType')
+        if m.get('dingSuiteKey') is not None:
+            self.ding_suite_key = m.get('dingSuiteKey')
+        if m.get('dingCorpId') is not None:
+            self.ding_corp_id = m.get('dingCorpId')
+        if m.get('dingOrgId') is not None:
+            self.ding_org_id = m.get('dingOrgId')
+        if m.get('dingIsvOrgId') is not None:
+            self.ding_isv_org_id = m.get('dingIsvOrgId')
+        return self
+
+
+class MachineManagerUpdateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+    ):
+        self.headers = headers
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
         return self
 
 

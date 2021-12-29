@@ -759,6 +759,70 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('UpdateResidentUser', 'resident_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/resident/users', 'json', req, runtime)
         )
 
+    def delete_resident_black_board(
+        self,
+        request: dingtalkresident__1__0_models.DeleteResidentBlackBoardRequest,
+    ) -> dingtalkresident__1__0_models.DeleteResidentBlackBoardResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkresident__1__0_models.DeleteResidentBlackBoardHeaders()
+        return self.delete_resident_black_board_with_options(request, headers, runtime)
+
+    async def delete_resident_black_board_async(
+        self,
+        request: dingtalkresident__1__0_models.DeleteResidentBlackBoardRequest,
+    ) -> dingtalkresident__1__0_models.DeleteResidentBlackBoardResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkresident__1__0_models.DeleteResidentBlackBoardHeaders()
+        return await self.delete_resident_black_board_with_options_async(request, headers, runtime)
+
+    def delete_resident_black_board_with_options(
+        self,
+        request: dingtalkresident__1__0_models.DeleteResidentBlackBoardRequest,
+        headers: dingtalkresident__1__0_models.DeleteResidentBlackBoardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkresident__1__0_models.DeleteResidentBlackBoardResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.blackboard_id):
+            query['blackboardId'] = request.blackboard_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkresident__1__0_models.DeleteResidentBlackBoardResponse(),
+            self.do_roarequest('DeleteResidentBlackBoard', 'resident_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/resident/blackboards', 'json', req, runtime)
+        )
+
+    async def delete_resident_black_board_with_options_async(
+        self,
+        request: dingtalkresident__1__0_models.DeleteResidentBlackBoardRequest,
+        headers: dingtalkresident__1__0_models.DeleteResidentBlackBoardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkresident__1__0_models.DeleteResidentBlackBoardResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.blackboard_id):
+            query['blackboardId'] = request.blackboard_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkresident__1__0_models.DeleteResidentBlackBoardResponse(),
+            await self.do_roarequest_async('DeleteResidentBlackBoard', 'resident_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/resident/blackboards', 'json', req, runtime)
+        )
+
     def add_point(
         self,
         request: dingtalkresident__1__0_models.AddPointRequest,
@@ -1277,6 +1341,8 @@ class Client(OpenApiClient):
             body['context'] = request.context
         if not UtilClient.is_unset(request.media_id):
             body['mediaId'] = request.media_id
+        if not UtilClient.is_unset(request.send_time):
+            body['sendTime'] = request.send_time
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1313,6 +1379,8 @@ class Client(OpenApiClient):
             body['context'] = request.context
         if not UtilClient.is_unset(request.media_id):
             body['mediaId'] = request.media_id
+        if not UtilClient.is_unset(request.send_time):
+            body['sendTime'] = request.send_time
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1325,6 +1393,98 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkresident__1__0_models.CreateResidentBlackBoardResponse(),
             await self.do_roarequest_async('CreateResidentBlackBoard', 'resident_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/resident/blackboards', 'json', req, runtime)
+        )
+
+    def update_resident_black_board(
+        self,
+        request: dingtalkresident__1__0_models.UpdateResidentBlackBoardRequest,
+    ) -> dingtalkresident__1__0_models.UpdateResidentBlackBoardResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkresident__1__0_models.UpdateResidentBlackBoardHeaders()
+        return self.update_resident_black_board_with_options(request, headers, runtime)
+
+    async def update_resident_black_board_async(
+        self,
+        request: dingtalkresident__1__0_models.UpdateResidentBlackBoardRequest,
+    ) -> dingtalkresident__1__0_models.UpdateResidentBlackBoardResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkresident__1__0_models.UpdateResidentBlackBoardHeaders()
+        return await self.update_resident_black_board_with_options_async(request, headers, runtime)
+
+    def update_resident_black_board_with_options(
+        self,
+        request: dingtalkresident__1__0_models.UpdateResidentBlackBoardRequest,
+        headers: dingtalkresident__1__0_models.UpdateResidentBlackBoardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkresident__1__0_models.UpdateResidentBlackBoardResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_corp_id):
+            body['dingCorpId'] = request.ding_corp_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.context):
+            body['context'] = request.context
+        if not UtilClient.is_unset(request.media_id):
+            body['mediaId'] = request.media_id
+        if not UtilClient.is_unset(request.blackboard_id):
+            body['blackboardId'] = request.blackboard_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkresident__1__0_models.UpdateResidentBlackBoardResponse(),
+            self.do_roarequest('UpdateResidentBlackBoard', 'resident_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/resident/blackboards', 'json', req, runtime)
+        )
+
+    async def update_resident_black_board_with_options_async(
+        self,
+        request: dingtalkresident__1__0_models.UpdateResidentBlackBoardRequest,
+        headers: dingtalkresident__1__0_models.UpdateResidentBlackBoardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkresident__1__0_models.UpdateResidentBlackBoardResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_corp_id):
+            body['dingCorpId'] = request.ding_corp_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.context):
+            body['context'] = request.context
+        if not UtilClient.is_unset(request.media_id):
+            body['mediaId'] = request.media_id
+        if not UtilClient.is_unset(request.blackboard_id):
+            body['blackboardId'] = request.blackboard_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkresident__1__0_models.UpdateResidentBlackBoardResponse(),
+            await self.do_roarequest_async('UpdateResidentBlackBoard', 'resident_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/resident/blackboards', 'json', req, runtime)
         )
 
     def list_point_rules(

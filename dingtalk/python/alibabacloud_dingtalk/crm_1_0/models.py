@@ -6085,11 +6085,8 @@ class JoinGroupSetRequest(TeaModel):
 class JoinGroupSetResponseBody(TeaModel):
     def __init__(
         self,
-        success: bool = None,
         open_conversation_id: str = None,
     ):
-        # 进群是否成功。
-        self.success = success
         # 加密群ID。
         self.open_conversation_id = open_conversation_id
 
@@ -6102,16 +6099,12 @@ class JoinGroupSetResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.success is not None:
-            result['success'] = self.success
         if self.open_conversation_id is not None:
             result['openConversationId'] = self.open_conversation_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('success') is not None:
-            self.success = m.get('success')
         if m.get('openConversationId') is not None:
             self.open_conversation_id = m.get('openConversationId')
         return self

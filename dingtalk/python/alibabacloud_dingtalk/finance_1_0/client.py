@@ -779,6 +779,8 @@ class Client(OpenApiClient):
             body['codeIdentity'] = request.code_identity
         if not UtilClient.is_unset(request.code_value):
             body['codeValue'] = request.code_value
+        if not UtilClient.is_unset(request.code_value_type):
+            body['codeValueType'] = request.code_value_type
         if not UtilClient.is_unset(request.status):
             body['status'] = request.status
         if not UtilClient.is_unset(request.corp_id):
@@ -825,6 +827,8 @@ class Client(OpenApiClient):
             body['codeIdentity'] = request.code_identity
         if not UtilClient.is_unset(request.code_value):
             body['codeValue'] = request.code_value
+        if not UtilClient.is_unset(request.code_value_type):
+            body['codeValueType'] = request.code_value_type
         if not UtilClient.is_unset(request.status):
             body['status'] = request.status
         if not UtilClient.is_unset(request.corp_id):
@@ -1043,6 +1047,12 @@ class Client(OpenApiClient):
             body['verifyResult'] = request.verify_result
         if not UtilClient.is_unset(request.verify_location):
             body['verifyLocation'] = request.verify_location
+        if not UtilClient.is_unset(request.verify_no):
+            body['verifyNo'] = request.verify_no
+        if not UtilClient.is_unset(request.verify_event):
+            body['verifyEvent'] = request.verify_event
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
         if not UtilClient.is_unset(request.ding_org_id):
             body['dingOrgId'] = request.ding_org_id
         if not UtilClient.is_unset(request.ding_isv_org_id):
@@ -1083,6 +1093,12 @@ class Client(OpenApiClient):
             body['verifyResult'] = request.verify_result
         if not UtilClient.is_unset(request.verify_location):
             body['verifyLocation'] = request.verify_location
+        if not UtilClient.is_unset(request.verify_no):
+            body['verifyNo'] = request.verify_no
+        if not UtilClient.is_unset(request.verify_event):
+            body['verifyEvent'] = request.verify_event
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
         if not UtilClient.is_unset(request.ding_org_id):
             body['dingOrgId'] = request.ding_org_id
         if not UtilClient.is_unset(request.ding_isv_org_id):

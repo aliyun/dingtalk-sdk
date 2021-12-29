@@ -749,6 +749,393 @@ class QueryUserInfoResponse(TeaModel):
         return self
 
 
+class IndustryManufactureCostRecordListGetHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class IndustryManufactureCostRecordListGetRequest(TeaModel):
+    def __init__(
+        self,
+        instance_id: str = None,
+        material_no: str = None,
+        order_no: str = None,
+        production_task_no: str = None,
+        start_time: int = None,
+        end_time: int = None,
+        cursor: int = None,
+        page_number: int = None,
+        page_size: int = None,
+        token_grant_type: int = None,
+        org_id: int = None,
+        corp_id: str = None,
+        isv_org_id: int = None,
+        suite_key: str = None,
+        microapp_agent_id: int = None,
+        app_ids: List[int] = None,
+        app_id: int = None,
+        app_name: str = None,
+    ):
+        self.instance_id = instance_id
+        self.material_no = material_no
+        self.order_no = order_no
+        self.production_task_no = production_task_no
+        self.start_time = start_time
+        self.end_time = end_time
+        self.cursor = cursor
+        self.page_number = page_number
+        self.page_size = page_size
+        self.token_grant_type = token_grant_type
+        self.org_id = org_id
+        self.corp_id = corp_id
+        self.isv_org_id = isv_org_id
+        self.suite_key = suite_key
+        self.microapp_agent_id = microapp_agent_id
+        self.app_ids = app_ids
+        self.app_id = app_id
+        self.app_name = app_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.instance_id is not None:
+            result['instanceId'] = self.instance_id
+        if self.material_no is not None:
+            result['materialNo'] = self.material_no
+        if self.order_no is not None:
+            result['orderNo'] = self.order_no
+        if self.production_task_no is not None:
+            result['productionTaskNo'] = self.production_task_no
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.cursor is not None:
+            result['cursor'] = self.cursor
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.token_grant_type is not None:
+            result['tokenGrantType'] = self.token_grant_type
+        if self.org_id is not None:
+            result['orgId'] = self.org_id
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.isv_org_id is not None:
+            result['isvOrgId'] = self.isv_org_id
+        if self.suite_key is not None:
+            result['suiteKey'] = self.suite_key
+        if self.microapp_agent_id is not None:
+            result['microappAgentId'] = self.microapp_agent_id
+        if self.app_ids is not None:
+            result['appIds'] = self.app_ids
+        if self.app_id is not None:
+            result['appId'] = self.app_id
+        if self.app_name is not None:
+            result['appName'] = self.app_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('instanceId') is not None:
+            self.instance_id = m.get('instanceId')
+        if m.get('materialNo') is not None:
+            self.material_no = m.get('materialNo')
+        if m.get('orderNo') is not None:
+            self.order_no = m.get('orderNo')
+        if m.get('productionTaskNo') is not None:
+            self.production_task_no = m.get('productionTaskNo')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('cursor') is not None:
+            self.cursor = m.get('cursor')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('tokenGrantType') is not None:
+            self.token_grant_type = m.get('tokenGrantType')
+        if m.get('orgId') is not None:
+            self.org_id = m.get('orgId')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('isvOrgId') is not None:
+            self.isv_org_id = m.get('isvOrgId')
+        if m.get('suiteKey') is not None:
+            self.suite_key = m.get('suiteKey')
+        if m.get('microappAgentId') is not None:
+            self.microapp_agent_id = m.get('microappAgentId')
+        if m.get('appIds') is not None:
+            self.app_ids = m.get('appIds')
+        if m.get('appId') is not None:
+            self.app_id = m.get('appId')
+        if m.get('appName') is not None:
+            self.app_name = m.get('appName')
+        return self
+
+
+class IndustryManufactureCostRecordListGetResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        gmt_create: int = None,
+        gmt_modified: int = None,
+        corp_id: str = None,
+        material_cost_record_no: str = None,
+        instance_id: str = None,
+        material_no: str = None,
+        material_name: str = None,
+        unit: str = None,
+        count: float = None,
+        type: str = None,
+        price: float = None,
+        order_no: str = None,
+        production_task_no: str = None,
+        is_deleted: str = None,
+        ext: str = None,
+        memo: str = None,
+        real_count: float = None,
+        real_price: float = None,
+        process_code: str = None,
+    ):
+        self.gmt_create = gmt_create
+        self.gmt_modified = gmt_modified
+        self.corp_id = corp_id
+        self.material_cost_record_no = material_cost_record_no
+        self.instance_id = instance_id
+        self.material_no = material_no
+        self.material_name = material_name
+        self.unit = unit
+        self.count = count
+        self.type = type
+        self.price = price
+        self.order_no = order_no
+        self.production_task_no = production_task_no
+        self.is_deleted = is_deleted
+        self.ext = ext
+        self.memo = memo
+        self.real_count = real_count
+        self.real_price = real_price
+        self.process_code = process_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.gmt_modified is not None:
+            result['gmtModified'] = self.gmt_modified
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.material_cost_record_no is not None:
+            result['materialCostRecordNo'] = self.material_cost_record_no
+        if self.instance_id is not None:
+            result['instanceId'] = self.instance_id
+        if self.material_no is not None:
+            result['materialNo'] = self.material_no
+        if self.material_name is not None:
+            result['materialName'] = self.material_name
+        if self.unit is not None:
+            result['unit'] = self.unit
+        if self.count is not None:
+            result['count'] = self.count
+        if self.type is not None:
+            result['type'] = self.type
+        if self.price is not None:
+            result['price'] = self.price
+        if self.order_no is not None:
+            result['orderNo'] = self.order_no
+        if self.production_task_no is not None:
+            result['productionTaskNo'] = self.production_task_no
+        if self.is_deleted is not None:
+            result['isDeleted'] = self.is_deleted
+        if self.ext is not None:
+            result['ext'] = self.ext
+        if self.memo is not None:
+            result['memo'] = self.memo
+        if self.real_count is not None:
+            result['realCount'] = self.real_count
+        if self.real_price is not None:
+            result['realPrice'] = self.real_price
+        if self.process_code is not None:
+            result['processCode'] = self.process_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('gmtModified') is not None:
+            self.gmt_modified = m.get('gmtModified')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('materialCostRecordNo') is not None:
+            self.material_cost_record_no = m.get('materialCostRecordNo')
+        if m.get('instanceId') is not None:
+            self.instance_id = m.get('instanceId')
+        if m.get('materialNo') is not None:
+            self.material_no = m.get('materialNo')
+        if m.get('materialName') is not None:
+            self.material_name = m.get('materialName')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        if m.get('count') is not None:
+            self.count = m.get('count')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('price') is not None:
+            self.price = m.get('price')
+        if m.get('orderNo') is not None:
+            self.order_no = m.get('orderNo')
+        if m.get('productionTaskNo') is not None:
+            self.production_task_no = m.get('productionTaskNo')
+        if m.get('isDeleted') is not None:
+            self.is_deleted = m.get('isDeleted')
+        if m.get('ext') is not None:
+            self.ext = m.get('ext')
+        if m.get('memo') is not None:
+            self.memo = m.get('memo')
+        if m.get('realCount') is not None:
+            self.real_count = m.get('realCount')
+        if m.get('realPrice') is not None:
+            self.real_price = m.get('realPrice')
+        if m.get('processCode') is not None:
+            self.process_code = m.get('processCode')
+        return self
+
+
+class IndustryManufactureCostRecordListGetResponseBody(TeaModel):
+    def __init__(
+        self,
+        list: List[IndustryManufactureCostRecordListGetResponseBodyList] = None,
+        next_cursor: int = None,
+        total_count: int = None,
+        has_more: bool = None,
+    ):
+        self.list = list
+        self.next_cursor = next_cursor
+        self.total_count = total_count
+        self.has_more = has_more
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        if self.next_cursor is not None:
+            result['nextCursor'] = self.next_cursor
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = IndustryManufactureCostRecordListGetResponseBodyList()
+                self.list.append(temp_model.from_map(k))
+        if m.get('nextCursor') is not None:
+            self.next_cursor = m.get('nextCursor')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        return self
+
+
+class IndustryManufactureCostRecordListGetResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: IndustryManufactureCostRecordListGetResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = IndustryManufactureCostRecordListGetResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryAllMemberByDeptHeaders(TeaModel):
     def __init__(
         self,
@@ -3059,6 +3446,339 @@ class QueryDepartmentInfoResponse(TeaModel):
         return self
 
 
+class IndustryManufactureMaterialListHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class IndustryManufactureMaterialListRequest(TeaModel):
+    def __init__(
+        self,
+        token_grant_type: int = None,
+        corp_id: str = None,
+        page_size: int = None,
+        end_time: int = None,
+        instance_id: str = None,
+        material_no: str = None,
+        start_time: int = None,
+        microapp_agent_id: int = None,
+        cursor: int = None,
+        app_name: str = None,
+        org_id: int = None,
+        app_id: int = None,
+        suite_key: str = None,
+        app_ids: List[int] = None,
+        current_page: int = None,
+        isv_org_id: int = None,
+    ):
+        self.token_grant_type = token_grant_type
+        self.corp_id = corp_id
+        self.page_size = page_size
+        self.end_time = end_time
+        self.instance_id = instance_id
+        self.material_no = material_no
+        self.start_time = start_time
+        self.microapp_agent_id = microapp_agent_id
+        self.cursor = cursor
+        self.app_name = app_name
+        self.org_id = org_id
+        self.app_id = app_id
+        self.suite_key = suite_key
+        self.app_ids = app_ids
+        self.current_page = current_page
+        self.isv_org_id = isv_org_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.token_grant_type is not None:
+            result['tokenGrantType'] = self.token_grant_type
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.instance_id is not None:
+            result['instanceId'] = self.instance_id
+        if self.material_no is not None:
+            result['materialNo'] = self.material_no
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.microapp_agent_id is not None:
+            result['microappAgentId'] = self.microapp_agent_id
+        if self.cursor is not None:
+            result['cursor'] = self.cursor
+        if self.app_name is not None:
+            result['appName'] = self.app_name
+        if self.org_id is not None:
+            result['orgId'] = self.org_id
+        if self.app_id is not None:
+            result['appId'] = self.app_id
+        if self.suite_key is not None:
+            result['suiteKey'] = self.suite_key
+        if self.app_ids is not None:
+            result['appIds'] = self.app_ids
+        if self.current_page is not None:
+            result['currentPage'] = self.current_page
+        if self.isv_org_id is not None:
+            result['isvOrgId'] = self.isv_org_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('tokenGrantType') is not None:
+            self.token_grant_type = m.get('tokenGrantType')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('instanceId') is not None:
+            self.instance_id = m.get('instanceId')
+        if m.get('materialNo') is not None:
+            self.material_no = m.get('materialNo')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('microappAgentId') is not None:
+            self.microapp_agent_id = m.get('microappAgentId')
+        if m.get('cursor') is not None:
+            self.cursor = m.get('cursor')
+        if m.get('appName') is not None:
+            self.app_name = m.get('appName')
+        if m.get('orgId') is not None:
+            self.org_id = m.get('orgId')
+        if m.get('appId') is not None:
+            self.app_id = m.get('appId')
+        if m.get('suiteKey') is not None:
+            self.suite_key = m.get('suiteKey')
+        if m.get('appIds') is not None:
+            self.app_ids = m.get('appIds')
+        if m.get('currentPage') is not None:
+            self.current_page = m.get('currentPage')
+        if m.get('isvOrgId') is not None:
+            self.isv_org_id = m.get('isvOrgId')
+        return self
+
+
+class IndustryManufactureMaterialListResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        instance_id: str = None,
+        material_no: str = None,
+        material_name: str = None,
+        specification: str = None,
+        type: str = None,
+        category: str = None,
+        unit: str = None,
+        ext: str = None,
+        process_code: str = None,
+        stock_max_warn: float = None,
+        stock_min_warn: float = None,
+    ):
+        self.corp_id = corp_id
+        self.instance_id = instance_id
+        self.material_no = material_no
+        self.material_name = material_name
+        self.specification = specification
+        self.type = type
+        self.category = category
+        self.unit = unit
+        self.ext = ext
+        self.process_code = process_code
+        self.stock_max_warn = stock_max_warn
+        self.stock_min_warn = stock_min_warn
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.instance_id is not None:
+            result['instanceId'] = self.instance_id
+        if self.material_no is not None:
+            result['materialNo'] = self.material_no
+        if self.material_name is not None:
+            result['materialName'] = self.material_name
+        if self.specification is not None:
+            result['specification'] = self.specification
+        if self.type is not None:
+            result['type'] = self.type
+        if self.category is not None:
+            result['category'] = self.category
+        if self.unit is not None:
+            result['unit'] = self.unit
+        if self.ext is not None:
+            result['ext'] = self.ext
+        if self.process_code is not None:
+            result['processCode'] = self.process_code
+        if self.stock_max_warn is not None:
+            result['stockMaxWarn'] = self.stock_max_warn
+        if self.stock_min_warn is not None:
+            result['stockMinWarn'] = self.stock_min_warn
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('instanceId') is not None:
+            self.instance_id = m.get('instanceId')
+        if m.get('materialNo') is not None:
+            self.material_no = m.get('materialNo')
+        if m.get('materialName') is not None:
+            self.material_name = m.get('materialName')
+        if m.get('specification') is not None:
+            self.specification = m.get('specification')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('category') is not None:
+            self.category = m.get('category')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        if m.get('ext') is not None:
+            self.ext = m.get('ext')
+        if m.get('processCode') is not None:
+            self.process_code = m.get('processCode')
+        if m.get('stockMaxWarn') is not None:
+            self.stock_max_warn = m.get('stockMaxWarn')
+        if m.get('stockMinWarn') is not None:
+            self.stock_min_warn = m.get('stockMinWarn')
+        return self
+
+
+class IndustryManufactureMaterialListResponseBody(TeaModel):
+    def __init__(
+        self,
+        list: List[IndustryManufactureMaterialListResponseBodyList] = None,
+        next_cursor: int = None,
+        total_count: int = None,
+        has_more: bool = None,
+    ):
+        self.list = list
+        self.next_cursor = next_cursor
+        self.total_count = total_count
+        self.has_more = has_more
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        if self.next_cursor is not None:
+            result['nextCursor'] = self.next_cursor
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = IndustryManufactureMaterialListResponseBodyList()
+                self.list.append(temp_model.from_map(k))
+        if m.get('nextCursor') is not None:
+            self.next_cursor = m.get('nextCursor')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        return self
+
+
+class IndustryManufactureMaterialListResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: IndustryManufactureMaterialListResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = IndustryManufactureMaterialListResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class UpdateUserExtendInfoHeaders(TeaModel):
     def __init__(
         self,
@@ -3165,6 +3885,720 @@ class UpdateUserExtendInfoResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        return self
+
+
+class IndustryMmanufactureMaterialCostGetHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class IndustryMmanufactureMaterialCostGetRequest(TeaModel):
+    def __init__(
+        self,
+        instance_id: str = None,
+        material_no: str = None,
+        start_time: int = None,
+        end_time: int = None,
+        cursor: int = None,
+        page_number: int = None,
+        page_size: int = None,
+        token_grant_type: int = None,
+        org_id: int = None,
+        corp_id: str = None,
+        isv_org_id: int = None,
+        suite_key: str = None,
+        microapp_agent_id: int = None,
+        app_ids: List[int] = None,
+        app_id: int = None,
+        app_name: str = None,
+    ):
+        self.instance_id = instance_id
+        self.material_no = material_no
+        self.start_time = start_time
+        self.end_time = end_time
+        self.cursor = cursor
+        self.page_number = page_number
+        self.page_size = page_size
+        self.token_grant_type = token_grant_type
+        self.org_id = org_id
+        self.corp_id = corp_id
+        self.isv_org_id = isv_org_id
+        self.suite_key = suite_key
+        self.microapp_agent_id = microapp_agent_id
+        self.app_ids = app_ids
+        self.app_id = app_id
+        self.app_name = app_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.instance_id is not None:
+            result['instanceId'] = self.instance_id
+        if self.material_no is not None:
+            result['materialNo'] = self.material_no
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.cursor is not None:
+            result['cursor'] = self.cursor
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.token_grant_type is not None:
+            result['tokenGrantType'] = self.token_grant_type
+        if self.org_id is not None:
+            result['orgId'] = self.org_id
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.isv_org_id is not None:
+            result['isvOrgId'] = self.isv_org_id
+        if self.suite_key is not None:
+            result['suiteKey'] = self.suite_key
+        if self.microapp_agent_id is not None:
+            result['microappAgentId'] = self.microapp_agent_id
+        if self.app_ids is not None:
+            result['appIds'] = self.app_ids
+        if self.app_id is not None:
+            result['appId'] = self.app_id
+        if self.app_name is not None:
+            result['appName'] = self.app_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('instanceId') is not None:
+            self.instance_id = m.get('instanceId')
+        if m.get('materialNo') is not None:
+            self.material_no = m.get('materialNo')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('cursor') is not None:
+            self.cursor = m.get('cursor')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('tokenGrantType') is not None:
+            self.token_grant_type = m.get('tokenGrantType')
+        if m.get('orgId') is not None:
+            self.org_id = m.get('orgId')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('isvOrgId') is not None:
+            self.isv_org_id = m.get('isvOrgId')
+        if m.get('suiteKey') is not None:
+            self.suite_key = m.get('suiteKey')
+        if m.get('microappAgentId') is not None:
+            self.microapp_agent_id = m.get('microappAgentId')
+        if m.get('appIds') is not None:
+            self.app_ids = m.get('appIds')
+        if m.get('appId') is not None:
+            self.app_id = m.get('appId')
+        if m.get('appName') is not None:
+            self.app_name = m.get('appName')
+        return self
+
+
+class IndustryMmanufactureMaterialCostGetResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        gmt_create: int = None,
+        gmt_modified: int = None,
+        corp_id: str = None,
+        material_cost_no: str = None,
+        instance_id: str = None,
+        material_no: str = None,
+        material_name: str = None,
+        unit: str = None,
+        count: float = None,
+        price: float = None,
+        act_price: float = None,
+        ext: str = None,
+        process_code: str = None,
+        memo: str = None,
+    ):
+        self.gmt_create = gmt_create
+        self.gmt_modified = gmt_modified
+        self.corp_id = corp_id
+        self.material_cost_no = material_cost_no
+        self.instance_id = instance_id
+        self.material_no = material_no
+        self.material_name = material_name
+        self.unit = unit
+        self.count = count
+        self.price = price
+        self.act_price = act_price
+        self.ext = ext
+        self.process_code = process_code
+        self.memo = memo
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.gmt_modified is not None:
+            result['gmtModified'] = self.gmt_modified
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.material_cost_no is not None:
+            result['materialCostNo'] = self.material_cost_no
+        if self.instance_id is not None:
+            result['instanceId'] = self.instance_id
+        if self.material_no is not None:
+            result['materialNo'] = self.material_no
+        if self.material_name is not None:
+            result['materialName'] = self.material_name
+        if self.unit is not None:
+            result['unit'] = self.unit
+        if self.count is not None:
+            result['count'] = self.count
+        if self.price is not None:
+            result['price'] = self.price
+        if self.act_price is not None:
+            result['actPrice'] = self.act_price
+        if self.ext is not None:
+            result['ext'] = self.ext
+        if self.process_code is not None:
+            result['processCode'] = self.process_code
+        if self.memo is not None:
+            result['memo'] = self.memo
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('gmtModified') is not None:
+            self.gmt_modified = m.get('gmtModified')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('materialCostNo') is not None:
+            self.material_cost_no = m.get('materialCostNo')
+        if m.get('instanceId') is not None:
+            self.instance_id = m.get('instanceId')
+        if m.get('materialNo') is not None:
+            self.material_no = m.get('materialNo')
+        if m.get('materialName') is not None:
+            self.material_name = m.get('materialName')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        if m.get('count') is not None:
+            self.count = m.get('count')
+        if m.get('price') is not None:
+            self.price = m.get('price')
+        if m.get('actPrice') is not None:
+            self.act_price = m.get('actPrice')
+        if m.get('ext') is not None:
+            self.ext = m.get('ext')
+        if m.get('processCode') is not None:
+            self.process_code = m.get('processCode')
+        if m.get('memo') is not None:
+            self.memo = m.get('memo')
+        return self
+
+
+class IndustryMmanufactureMaterialCostGetResponseBody(TeaModel):
+    def __init__(
+        self,
+        list: List[IndustryMmanufactureMaterialCostGetResponseBodyList] = None,
+        total_count: int = None,
+        next_cursor: int = None,
+        has_more: bool = None,
+    ):
+        self.list = list
+        self.total_count = total_count
+        self.next_cursor = next_cursor
+        self.has_more = has_more
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        if self.next_cursor is not None:
+            result['nextCursor'] = self.next_cursor
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = IndustryMmanufactureMaterialCostGetResponseBodyList()
+                self.list.append(temp_model.from_map(k))
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        if m.get('nextCursor') is not None:
+            self.next_cursor = m.get('nextCursor')
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        return self
+
+
+class IndustryMmanufactureMaterialCostGetResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: IndustryMmanufactureMaterialCostGetResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = IndustryMmanufactureMaterialCostGetResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class IndustryManufactureFeeListGetHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class IndustryManufactureFeeListGetRequest(TeaModel):
+    def __init__(
+        self,
+        production_task_no: str = None,
+        material_no: str = None,
+        type: str = None,
+        start_time: int = None,
+        end_time: int = None,
+        cursor: int = None,
+        page_number: int = None,
+        page_size: int = None,
+        token_grant_type: int = None,
+        org_id: int = None,
+        corp_id: str = None,
+        isv_org_id: int = None,
+        suite_key: str = None,
+        microapp_agent_id: int = None,
+        app_ids: List[int] = None,
+        app_id: int = None,
+        app_name: str = None,
+    ):
+        self.production_task_no = production_task_no
+        self.material_no = material_no
+        self.type = type
+        self.start_time = start_time
+        self.end_time = end_time
+        self.cursor = cursor
+        self.page_number = page_number
+        self.page_size = page_size
+        self.token_grant_type = token_grant_type
+        self.org_id = org_id
+        self.corp_id = corp_id
+        self.isv_org_id = isv_org_id
+        self.suite_key = suite_key
+        self.microapp_agent_id = microapp_agent_id
+        self.app_ids = app_ids
+        self.app_id = app_id
+        self.app_name = app_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.production_task_no is not None:
+            result['productionTaskNo'] = self.production_task_no
+        if self.material_no is not None:
+            result['materialNo'] = self.material_no
+        if self.type is not None:
+            result['type'] = self.type
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.cursor is not None:
+            result['cursor'] = self.cursor
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.token_grant_type is not None:
+            result['tokenGrantType'] = self.token_grant_type
+        if self.org_id is not None:
+            result['orgId'] = self.org_id
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.isv_org_id is not None:
+            result['isvOrgId'] = self.isv_org_id
+        if self.suite_key is not None:
+            result['suiteKey'] = self.suite_key
+        if self.microapp_agent_id is not None:
+            result['microappAgentId'] = self.microapp_agent_id
+        if self.app_ids is not None:
+            result['appIds'] = self.app_ids
+        if self.app_id is not None:
+            result['appId'] = self.app_id
+        if self.app_name is not None:
+            result['appName'] = self.app_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('productionTaskNo') is not None:
+            self.production_task_no = m.get('productionTaskNo')
+        if m.get('materialNo') is not None:
+            self.material_no = m.get('materialNo')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('cursor') is not None:
+            self.cursor = m.get('cursor')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('tokenGrantType') is not None:
+            self.token_grant_type = m.get('tokenGrantType')
+        if m.get('orgId') is not None:
+            self.org_id = m.get('orgId')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('isvOrgId') is not None:
+            self.isv_org_id = m.get('isvOrgId')
+        if m.get('suiteKey') is not None:
+            self.suite_key = m.get('suiteKey')
+        if m.get('microappAgentId') is not None:
+            self.microapp_agent_id = m.get('microappAgentId')
+        if m.get('appIds') is not None:
+            self.app_ids = m.get('appIds')
+        if m.get('appId') is not None:
+            self.app_id = m.get('appId')
+        if m.get('appName') is not None:
+            self.app_name = m.get('appName')
+        return self
+
+
+class IndustryManufactureFeeListGetResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        id: int = None,
+        gmt_create: int = None,
+        gmt_modified: int = None,
+        corp_id: str = None,
+        production_task_no: str = None,
+        material_no: str = None,
+        material_name: str = None,
+        count: float = None,
+        unit: str = None,
+        type: str = None,
+        amount: str = None,
+        per_amount: float = None,
+        is_deleted: str = None,
+        instance_id: str = None,
+        process_code: str = None,
+        ext: str = None,
+        title: str = None,
+    ):
+        self.id = id
+        self.gmt_create = gmt_create
+        self.gmt_modified = gmt_modified
+        self.corp_id = corp_id
+        self.production_task_no = production_task_no
+        self.material_no = material_no
+        self.material_name = material_name
+        self.count = count
+        self.unit = unit
+        self.type = type
+        self.amount = amount
+        self.per_amount = per_amount
+        self.is_deleted = is_deleted
+        self.instance_id = instance_id
+        self.process_code = process_code
+        self.ext = ext
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.gmt_modified is not None:
+            result['gmtModified'] = self.gmt_modified
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.production_task_no is not None:
+            result['productionTaskNo'] = self.production_task_no
+        if self.material_no is not None:
+            result['materialNo'] = self.material_no
+        if self.material_name is not None:
+            result['materialName'] = self.material_name
+        if self.count is not None:
+            result['count'] = self.count
+        if self.unit is not None:
+            result['unit'] = self.unit
+        if self.type is not None:
+            result['type'] = self.type
+        if self.amount is not None:
+            result['amount'] = self.amount
+        if self.per_amount is not None:
+            result['perAmount'] = self.per_amount
+        if self.is_deleted is not None:
+            result['isDeleted'] = self.is_deleted
+        if self.instance_id is not None:
+            result['instanceId'] = self.instance_id
+        if self.process_code is not None:
+            result['processCode'] = self.process_code
+        if self.ext is not None:
+            result['ext'] = self.ext
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('gmtModified') is not None:
+            self.gmt_modified = m.get('gmtModified')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('productionTaskNo') is not None:
+            self.production_task_no = m.get('productionTaskNo')
+        if m.get('materialNo') is not None:
+            self.material_no = m.get('materialNo')
+        if m.get('materialName') is not None:
+            self.material_name = m.get('materialName')
+        if m.get('count') is not None:
+            self.count = m.get('count')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('amount') is not None:
+            self.amount = m.get('amount')
+        if m.get('perAmount') is not None:
+            self.per_amount = m.get('perAmount')
+        if m.get('isDeleted') is not None:
+            self.is_deleted = m.get('isDeleted')
+        if m.get('instanceId') is not None:
+            self.instance_id = m.get('instanceId')
+        if m.get('processCode') is not None:
+            self.process_code = m.get('processCode')
+        if m.get('ext') is not None:
+            self.ext = m.get('ext')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class IndustryManufactureFeeListGetResponseBody(TeaModel):
+    def __init__(
+        self,
+        list: List[IndustryManufactureFeeListGetResponseBodyList] = None,
+        next_cursor: int = None,
+        total_count: int = None,
+        has_more: bool = None,
+    ):
+        self.list = list
+        self.next_cursor = next_cursor
+        self.total_count = total_count
+        self.has_more = has_more
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        if self.next_cursor is not None:
+            result['nextCursor'] = self.next_cursor
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = IndustryManufactureFeeListGetResponseBodyList()
+                self.list.append(temp_model.from_map(k))
+        if m.get('nextCursor') is not None:
+            self.next_cursor = m.get('nextCursor')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        return self
+
+
+class IndustryManufactureFeeListGetResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: IndustryManufactureFeeListGetResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = IndustryManufactureFeeListGetResponseBody()
+            self.body = temp_model.from_map(m['body'])
         return self
 
 
@@ -4534,6 +5968,375 @@ class QueryAllDepartmentResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = QueryAllDepartmentResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class IndustryManufactureLabourCostHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class IndustryManufactureLabourCostRequest(TeaModel):
+    def __init__(
+        self,
+        process_no: str = None,
+        material_no: str = None,
+        start_time: int = None,
+        end_time: int = None,
+        cursor: int = None,
+        page_number: int = None,
+        page_size: int = None,
+        token_grant_type: int = None,
+        org_id: int = None,
+        corp_id: str = None,
+        isv_org_id: str = None,
+        suite_key: str = None,
+        microapp_agent_id: int = None,
+        app_ids: List[int] = None,
+        app_id: int = None,
+        app_name: str = None,
+    ):
+        self.process_no = process_no
+        self.material_no = material_no
+        self.start_time = start_time
+        self.end_time = end_time
+        self.cursor = cursor
+        self.page_number = page_number
+        self.page_size = page_size
+        self.token_grant_type = token_grant_type
+        self.org_id = org_id
+        self.corp_id = corp_id
+        self.isv_org_id = isv_org_id
+        self.suite_key = suite_key
+        self.microapp_agent_id = microapp_agent_id
+        self.app_ids = app_ids
+        self.app_id = app_id
+        self.app_name = app_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.process_no is not None:
+            result['processNo'] = self.process_no
+        if self.material_no is not None:
+            result['materialNo'] = self.material_no
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.cursor is not None:
+            result['cursor'] = self.cursor
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.token_grant_type is not None:
+            result['tokenGrantType'] = self.token_grant_type
+        if self.org_id is not None:
+            result['orgId'] = self.org_id
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.isv_org_id is not None:
+            result['isvOrgId'] = self.isv_org_id
+        if self.suite_key is not None:
+            result['suiteKey'] = self.suite_key
+        if self.microapp_agent_id is not None:
+            result['microappAgentId'] = self.microapp_agent_id
+        if self.app_ids is not None:
+            result['appIds'] = self.app_ids
+        if self.app_id is not None:
+            result['appId'] = self.app_id
+        if self.app_name is not None:
+            result['appName'] = self.app_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('processNo') is not None:
+            self.process_no = m.get('processNo')
+        if m.get('materialNo') is not None:
+            self.material_no = m.get('materialNo')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('cursor') is not None:
+            self.cursor = m.get('cursor')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('tokenGrantType') is not None:
+            self.token_grant_type = m.get('tokenGrantType')
+        if m.get('orgId') is not None:
+            self.org_id = m.get('orgId')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('isvOrgId') is not None:
+            self.isv_org_id = m.get('isvOrgId')
+        if m.get('suiteKey') is not None:
+            self.suite_key = m.get('suiteKey')
+        if m.get('microappAgentId') is not None:
+            self.microapp_agent_id = m.get('microappAgentId')
+        if m.get('appIds') is not None:
+            self.app_ids = m.get('appIds')
+        if m.get('appId') is not None:
+            self.app_id = m.get('appId')
+        if m.get('appName') is not None:
+            self.app_name = m.get('appName')
+        return self
+
+
+class IndustryManufactureLabourCostResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        gmt_create: int = None,
+        gmt_modified: int = None,
+        corp_id: str = None,
+        labour_cost_no: str = None,
+        labour_cost_name: str = None,
+        process_no: str = None,
+        process_name: str = None,
+        material_no: str = None,
+        material_name: str = None,
+        qualified_price: float = None,
+        un_qualified_price_1: float = None,
+        un_qualified_reason_1: str = None,
+        instance_id: str = None,
+        process_code: str = None,
+        ext: str = None,
+        un_qualified_reason_2: str = None,
+        un_qualified_price_2: float = None,
+        un_qualified_info: str = None,
+    ):
+        self.gmt_create = gmt_create
+        self.gmt_modified = gmt_modified
+        self.corp_id = corp_id
+        self.labour_cost_no = labour_cost_no
+        self.labour_cost_name = labour_cost_name
+        self.process_no = process_no
+        self.process_name = process_name
+        self.material_no = material_no
+        self.material_name = material_name
+        self.qualified_price = qualified_price
+        self.un_qualified_price_1 = un_qualified_price_1
+        self.un_qualified_reason_1 = un_qualified_reason_1
+        self.instance_id = instance_id
+        self.process_code = process_code
+        self.ext = ext
+        self.un_qualified_reason_2 = un_qualified_reason_2
+        self.un_qualified_price_2 = un_qualified_price_2
+        self.un_qualified_info = un_qualified_info
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.gmt_modified is not None:
+            result['gmtModified'] = self.gmt_modified
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.labour_cost_no is not None:
+            result['labourCostNo'] = self.labour_cost_no
+        if self.labour_cost_name is not None:
+            result['labourCostName'] = self.labour_cost_name
+        if self.process_no is not None:
+            result['processNo'] = self.process_no
+        if self.process_name is not None:
+            result['processName'] = self.process_name
+        if self.material_no is not None:
+            result['materialNo'] = self.material_no
+        if self.material_name is not None:
+            result['materialName'] = self.material_name
+        if self.qualified_price is not None:
+            result['qualifiedPrice'] = self.qualified_price
+        if self.un_qualified_price_1 is not None:
+            result['unQualifiedPrice1'] = self.un_qualified_price_1
+        if self.un_qualified_reason_1 is not None:
+            result['unQualifiedReason1'] = self.un_qualified_reason_1
+        if self.instance_id is not None:
+            result['instanceId'] = self.instance_id
+        if self.process_code is not None:
+            result['processCode'] = self.process_code
+        if self.ext is not None:
+            result['ext'] = self.ext
+        if self.un_qualified_reason_2 is not None:
+            result['unQualifiedReason2'] = self.un_qualified_reason_2
+        if self.un_qualified_price_2 is not None:
+            result['unQualifiedPrice2'] = self.un_qualified_price_2
+        if self.un_qualified_info is not None:
+            result['unQualifiedInfo'] = self.un_qualified_info
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('gmtModified') is not None:
+            self.gmt_modified = m.get('gmtModified')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('labourCostNo') is not None:
+            self.labour_cost_no = m.get('labourCostNo')
+        if m.get('labourCostName') is not None:
+            self.labour_cost_name = m.get('labourCostName')
+        if m.get('processNo') is not None:
+            self.process_no = m.get('processNo')
+        if m.get('processName') is not None:
+            self.process_name = m.get('processName')
+        if m.get('materialNo') is not None:
+            self.material_no = m.get('materialNo')
+        if m.get('materialName') is not None:
+            self.material_name = m.get('materialName')
+        if m.get('qualifiedPrice') is not None:
+            self.qualified_price = m.get('qualifiedPrice')
+        if m.get('unQualifiedPrice1') is not None:
+            self.un_qualified_price_1 = m.get('unQualifiedPrice1')
+        if m.get('unQualifiedReason1') is not None:
+            self.un_qualified_reason_1 = m.get('unQualifiedReason1')
+        if m.get('instanceId') is not None:
+            self.instance_id = m.get('instanceId')
+        if m.get('processCode') is not None:
+            self.process_code = m.get('processCode')
+        if m.get('ext') is not None:
+            self.ext = m.get('ext')
+        if m.get('unQualifiedReason2') is not None:
+            self.un_qualified_reason_2 = m.get('unQualifiedReason2')
+        if m.get('unQualifiedPrice2') is not None:
+            self.un_qualified_price_2 = m.get('unQualifiedPrice2')
+        if m.get('unQualifiedInfo') is not None:
+            self.un_qualified_info = m.get('unQualifiedInfo')
+        return self
+
+
+class IndustryManufactureLabourCostResponseBody(TeaModel):
+    def __init__(
+        self,
+        list: List[IndustryManufactureLabourCostResponseBodyList] = None,
+        has_more: bool = None,
+        next_cursor: int = None,
+        total_count: int = None,
+    ):
+        self.list = list
+        self.has_more = has_more
+        self.next_cursor = next_cursor
+        self.total_count = total_count
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        if self.next_cursor is not None:
+            result['nextCursor'] = self.next_cursor
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = IndustryManufactureLabourCostResponseBodyList()
+                self.list.append(temp_model.from_map(k))
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        if m.get('nextCursor') is not None:
+            self.next_cursor = m.get('nextCursor')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class IndustryManufactureLabourCostResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: IndustryManufactureLabourCostResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = IndustryManufactureLabourCostResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

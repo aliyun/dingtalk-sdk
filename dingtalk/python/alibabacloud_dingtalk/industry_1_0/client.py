@@ -145,6 +145,138 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('QueryUserInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/users/{user_id}', 'json', req, runtime)
         )
 
+    def industry_manufacture_cost_record_list_get(
+        self,
+        request: dingtalkindustry__1__0_models.IndustryManufactureCostRecordListGetRequest,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureCostRecordListGetResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.IndustryManufactureCostRecordListGetHeaders()
+        return self.industry_manufacture_cost_record_list_get_with_options(request, headers, runtime)
+
+    async def industry_manufacture_cost_record_list_get_async(
+        self,
+        request: dingtalkindustry__1__0_models.IndustryManufactureCostRecordListGetRequest,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureCostRecordListGetResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.IndustryManufactureCostRecordListGetHeaders()
+        return await self.industry_manufacture_cost_record_list_get_with_options_async(request, headers, runtime)
+
+    def industry_manufacture_cost_record_list_get_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.IndustryManufactureCostRecordListGetRequest,
+        headers: dingtalkindustry__1__0_models.IndustryManufactureCostRecordListGetHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureCostRecordListGetResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.instance_id):
+            body['instanceId'] = request.instance_id
+        if not UtilClient.is_unset(request.material_no):
+            body['materialNo'] = request.material_no
+        if not UtilClient.is_unset(request.order_no):
+            body['orderNo'] = request.order_no
+        if not UtilClient.is_unset(request.production_task_no):
+            body['productionTaskNo'] = request.production_task_no
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.cursor):
+            body['cursor'] = request.cursor
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.token_grant_type):
+            body['tokenGrantType'] = request.token_grant_type
+        if not UtilClient.is_unset(request.org_id):
+            body['orgId'] = request.org_id
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.isv_org_id):
+            body['isvOrgId'] = request.isv_org_id
+        if not UtilClient.is_unset(request.suite_key):
+            body['suiteKey'] = request.suite_key
+        if not UtilClient.is_unset(request.microapp_agent_id):
+            body['microappAgentId'] = request.microapp_agent_id
+        if not UtilClient.is_unset(request.app_ids):
+            body['appIds'] = request.app_ids
+        if not UtilClient.is_unset(request.app_id):
+            body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.app_name):
+            body['appName'] = request.app_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.IndustryManufactureCostRecordListGetResponse(),
+            self.do_roarequest('IndustryManufactureCostRecordListGet', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/manufactures/materialCostRecords/query', 'json', req, runtime)
+        )
+
+    async def industry_manufacture_cost_record_list_get_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.IndustryManufactureCostRecordListGetRequest,
+        headers: dingtalkindustry__1__0_models.IndustryManufactureCostRecordListGetHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureCostRecordListGetResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.instance_id):
+            body['instanceId'] = request.instance_id
+        if not UtilClient.is_unset(request.material_no):
+            body['materialNo'] = request.material_no
+        if not UtilClient.is_unset(request.order_no):
+            body['orderNo'] = request.order_no
+        if not UtilClient.is_unset(request.production_task_no):
+            body['productionTaskNo'] = request.production_task_no
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.cursor):
+            body['cursor'] = request.cursor
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.token_grant_type):
+            body['tokenGrantType'] = request.token_grant_type
+        if not UtilClient.is_unset(request.org_id):
+            body['orgId'] = request.org_id
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.isv_org_id):
+            body['isvOrgId'] = request.isv_org_id
+        if not UtilClient.is_unset(request.suite_key):
+            body['suiteKey'] = request.suite_key
+        if not UtilClient.is_unset(request.microapp_agent_id):
+            body['microappAgentId'] = request.microapp_agent_id
+        if not UtilClient.is_unset(request.app_ids):
+            body['appIds'] = request.app_ids
+        if not UtilClient.is_unset(request.app_id):
+            body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.app_name):
+            body['appName'] = request.app_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.IndustryManufactureCostRecordListGetResponse(),
+            await self.do_roarequest_async('IndustryManufactureCostRecordListGet', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/manufactures/materialCostRecords/query', 'json', req, runtime)
+        )
+
     def query_all_member_by_dept(
         self,
         dept_id: str,
@@ -811,6 +943,130 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('QueryDepartmentInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/departments/{dept_id}', 'json', req, runtime)
         )
 
+    def industry_manufacture_material_list(
+        self,
+        request: dingtalkindustry__1__0_models.IndustryManufactureMaterialListRequest,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureMaterialListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.IndustryManufactureMaterialListHeaders()
+        return self.industry_manufacture_material_list_with_options(request, headers, runtime)
+
+    async def industry_manufacture_material_list_async(
+        self,
+        request: dingtalkindustry__1__0_models.IndustryManufactureMaterialListRequest,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureMaterialListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.IndustryManufactureMaterialListHeaders()
+        return await self.industry_manufacture_material_list_with_options_async(request, headers, runtime)
+
+    def industry_manufacture_material_list_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.IndustryManufactureMaterialListRequest,
+        headers: dingtalkindustry__1__0_models.IndustryManufactureMaterialListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureMaterialListResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.token_grant_type):
+            body['tokenGrantType'] = request.token_grant_type
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.instance_id):
+            body['instanceId'] = request.instance_id
+        if not UtilClient.is_unset(request.material_no):
+            body['materialNo'] = request.material_no
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.microapp_agent_id):
+            body['microappAgentId'] = request.microapp_agent_id
+        if not UtilClient.is_unset(request.cursor):
+            body['cursor'] = request.cursor
+        if not UtilClient.is_unset(request.app_name):
+            body['appName'] = request.app_name
+        if not UtilClient.is_unset(request.org_id):
+            body['orgId'] = request.org_id
+        if not UtilClient.is_unset(request.app_id):
+            body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.suite_key):
+            body['suiteKey'] = request.suite_key
+        if not UtilClient.is_unset(request.app_ids):
+            body['appIds'] = request.app_ids
+        if not UtilClient.is_unset(request.current_page):
+            body['currentPage'] = request.current_page
+        if not UtilClient.is_unset(request.isv_org_id):
+            body['isvOrgId'] = request.isv_org_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.IndustryManufactureMaterialListResponse(),
+            self.do_roarequest('IndustryManufactureMaterialList', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/manufactures/materials/query', 'json', req, runtime)
+        )
+
+    async def industry_manufacture_material_list_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.IndustryManufactureMaterialListRequest,
+        headers: dingtalkindustry__1__0_models.IndustryManufactureMaterialListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureMaterialListResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.token_grant_type):
+            body['tokenGrantType'] = request.token_grant_type
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.instance_id):
+            body['instanceId'] = request.instance_id
+        if not UtilClient.is_unset(request.material_no):
+            body['materialNo'] = request.material_no
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.microapp_agent_id):
+            body['microappAgentId'] = request.microapp_agent_id
+        if not UtilClient.is_unset(request.cursor):
+            body['cursor'] = request.cursor
+        if not UtilClient.is_unset(request.app_name):
+            body['appName'] = request.app_name
+        if not UtilClient.is_unset(request.org_id):
+            body['orgId'] = request.org_id
+        if not UtilClient.is_unset(request.app_id):
+            body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.suite_key):
+            body['suiteKey'] = request.suite_key
+        if not UtilClient.is_unset(request.app_ids):
+            body['appIds'] = request.app_ids
+        if not UtilClient.is_unset(request.current_page):
+            body['currentPage'] = request.current_page
+        if not UtilClient.is_unset(request.isv_org_id):
+            body['isvOrgId'] = request.isv_org_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.IndustryManufactureMaterialListResponse(),
+            await self.do_roarequest_async('IndustryManufactureMaterialList', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/manufactures/materials/query', 'json', req, runtime)
+        )
+
     def update_user_extend_info(
         self,
         user_id: str,
@@ -889,6 +1145,258 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.UpdateUserExtendInfoResponse(),
             await self.do_roarequest_async('UpdateUserExtendInfo', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/medicals/users/{user_id}/extInfos', 'none', req, runtime)
+        )
+
+    def industry_mmanufacture_material_cost_get(
+        self,
+        request: dingtalkindustry__1__0_models.IndustryMmanufactureMaterialCostGetRequest,
+    ) -> dingtalkindustry__1__0_models.IndustryMmanufactureMaterialCostGetResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.IndustryMmanufactureMaterialCostGetHeaders()
+        return self.industry_mmanufacture_material_cost_get_with_options(request, headers, runtime)
+
+    async def industry_mmanufacture_material_cost_get_async(
+        self,
+        request: dingtalkindustry__1__0_models.IndustryMmanufactureMaterialCostGetRequest,
+    ) -> dingtalkindustry__1__0_models.IndustryMmanufactureMaterialCostGetResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.IndustryMmanufactureMaterialCostGetHeaders()
+        return await self.industry_mmanufacture_material_cost_get_with_options_async(request, headers, runtime)
+
+    def industry_mmanufacture_material_cost_get_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.IndustryMmanufactureMaterialCostGetRequest,
+        headers: dingtalkindustry__1__0_models.IndustryMmanufactureMaterialCostGetHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.IndustryMmanufactureMaterialCostGetResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.instance_id):
+            body['instanceId'] = request.instance_id
+        if not UtilClient.is_unset(request.material_no):
+            body['materialNo'] = request.material_no
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.cursor):
+            body['cursor'] = request.cursor
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.token_grant_type):
+            body['tokenGrantType'] = request.token_grant_type
+        if not UtilClient.is_unset(request.org_id):
+            body['orgId'] = request.org_id
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.isv_org_id):
+            body['isvOrgId'] = request.isv_org_id
+        if not UtilClient.is_unset(request.suite_key):
+            body['suiteKey'] = request.suite_key
+        if not UtilClient.is_unset(request.microapp_agent_id):
+            body['microappAgentId'] = request.microapp_agent_id
+        if not UtilClient.is_unset(request.app_ids):
+            body['appIds'] = request.app_ids
+        if not UtilClient.is_unset(request.app_id):
+            body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.app_name):
+            body['appName'] = request.app_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.IndustryMmanufactureMaterialCostGetResponse(),
+            self.do_roarequest('IndustryMmanufactureMaterialCostGet', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/manufactures/base/materialCosts/query', 'json', req, runtime)
+        )
+
+    async def industry_mmanufacture_material_cost_get_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.IndustryMmanufactureMaterialCostGetRequest,
+        headers: dingtalkindustry__1__0_models.IndustryMmanufactureMaterialCostGetHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.IndustryMmanufactureMaterialCostGetResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.instance_id):
+            body['instanceId'] = request.instance_id
+        if not UtilClient.is_unset(request.material_no):
+            body['materialNo'] = request.material_no
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.cursor):
+            body['cursor'] = request.cursor
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.token_grant_type):
+            body['tokenGrantType'] = request.token_grant_type
+        if not UtilClient.is_unset(request.org_id):
+            body['orgId'] = request.org_id
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.isv_org_id):
+            body['isvOrgId'] = request.isv_org_id
+        if not UtilClient.is_unset(request.suite_key):
+            body['suiteKey'] = request.suite_key
+        if not UtilClient.is_unset(request.microapp_agent_id):
+            body['microappAgentId'] = request.microapp_agent_id
+        if not UtilClient.is_unset(request.app_ids):
+            body['appIds'] = request.app_ids
+        if not UtilClient.is_unset(request.app_id):
+            body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.app_name):
+            body['appName'] = request.app_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.IndustryMmanufactureMaterialCostGetResponse(),
+            await self.do_roarequest_async('IndustryMmanufactureMaterialCostGet', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/manufactures/base/materialCosts/query', 'json', req, runtime)
+        )
+
+    def industry_manufacture_fee_list_get(
+        self,
+        request: dingtalkindustry__1__0_models.IndustryManufactureFeeListGetRequest,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureFeeListGetResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.IndustryManufactureFeeListGetHeaders()
+        return self.industry_manufacture_fee_list_get_with_options(request, headers, runtime)
+
+    async def industry_manufacture_fee_list_get_async(
+        self,
+        request: dingtalkindustry__1__0_models.IndustryManufactureFeeListGetRequest,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureFeeListGetResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.IndustryManufactureFeeListGetHeaders()
+        return await self.industry_manufacture_fee_list_get_with_options_async(request, headers, runtime)
+
+    def industry_manufacture_fee_list_get_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.IndustryManufactureFeeListGetRequest,
+        headers: dingtalkindustry__1__0_models.IndustryManufactureFeeListGetHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureFeeListGetResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.production_task_no):
+            body['productionTaskNo'] = request.production_task_no
+        if not UtilClient.is_unset(request.material_no):
+            body['materialNo'] = request.material_no
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.cursor):
+            body['cursor'] = request.cursor
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.token_grant_type):
+            body['tokenGrantType'] = request.token_grant_type
+        if not UtilClient.is_unset(request.org_id):
+            body['orgId'] = request.org_id
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.isv_org_id):
+            body['isvOrgId'] = request.isv_org_id
+        if not UtilClient.is_unset(request.suite_key):
+            body['suiteKey'] = request.suite_key
+        if not UtilClient.is_unset(request.microapp_agent_id):
+            body['microappAgentId'] = request.microapp_agent_id
+        if not UtilClient.is_unset(request.app_ids):
+            body['appIds'] = request.app_ids
+        if not UtilClient.is_unset(request.app_id):
+            body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.app_name):
+            body['appName'] = request.app_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.IndustryManufactureFeeListGetResponse(),
+            self.do_roarequest('IndustryManufactureFeeListGet', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/manufactures/fees/query', 'json', req, runtime)
+        )
+
+    async def industry_manufacture_fee_list_get_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.IndustryManufactureFeeListGetRequest,
+        headers: dingtalkindustry__1__0_models.IndustryManufactureFeeListGetHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureFeeListGetResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.production_task_no):
+            body['productionTaskNo'] = request.production_task_no
+        if not UtilClient.is_unset(request.material_no):
+            body['materialNo'] = request.material_no
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.cursor):
+            body['cursor'] = request.cursor
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.token_grant_type):
+            body['tokenGrantType'] = request.token_grant_type
+        if not UtilClient.is_unset(request.org_id):
+            body['orgId'] = request.org_id
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.isv_org_id):
+            body['isvOrgId'] = request.isv_org_id
+        if not UtilClient.is_unset(request.suite_key):
+            body['suiteKey'] = request.suite_key
+        if not UtilClient.is_unset(request.microapp_agent_id):
+            body['microappAgentId'] = request.microapp_agent_id
+        if not UtilClient.is_unset(request.app_ids):
+            body['appIds'] = request.app_ids
+        if not UtilClient.is_unset(request.app_id):
+            body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.app_name):
+            body['appName'] = request.app_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.IndustryManufactureFeeListGetResponse(),
+            await self.do_roarequest_async('IndustryManufactureFeeListGet', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/manufactures/fees/query', 'json', req, runtime)
         )
 
     def query_all_doctors(
@@ -1125,6 +1633,130 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.QueryAllDepartmentResponse(),
             await self.do_roarequest_async('QueryAllDepartment', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/departments', 'json', req, runtime)
+        )
+
+    def industry_manufacture_labour_cost(
+        self,
+        request: dingtalkindustry__1__0_models.IndustryManufactureLabourCostRequest,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureLabourCostResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.IndustryManufactureLabourCostHeaders()
+        return self.industry_manufacture_labour_cost_with_options(request, headers, runtime)
+
+    async def industry_manufacture_labour_cost_async(
+        self,
+        request: dingtalkindustry__1__0_models.IndustryManufactureLabourCostRequest,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureLabourCostResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.IndustryManufactureLabourCostHeaders()
+        return await self.industry_manufacture_labour_cost_with_options_async(request, headers, runtime)
+
+    def industry_manufacture_labour_cost_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.IndustryManufactureLabourCostRequest,
+        headers: dingtalkindustry__1__0_models.IndustryManufactureLabourCostHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureLabourCostResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.process_no):
+            body['processNo'] = request.process_no
+        if not UtilClient.is_unset(request.material_no):
+            body['materialNo'] = request.material_no
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.cursor):
+            body['cursor'] = request.cursor
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.token_grant_type):
+            body['tokenGrantType'] = request.token_grant_type
+        if not UtilClient.is_unset(request.org_id):
+            body['orgId'] = request.org_id
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.isv_org_id):
+            body['isvOrgId'] = request.isv_org_id
+        if not UtilClient.is_unset(request.suite_key):
+            body['suiteKey'] = request.suite_key
+        if not UtilClient.is_unset(request.microapp_agent_id):
+            body['microappAgentId'] = request.microapp_agent_id
+        if not UtilClient.is_unset(request.app_ids):
+            body['appIds'] = request.app_ids
+        if not UtilClient.is_unset(request.app_id):
+            body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.app_name):
+            body['appName'] = request.app_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.IndustryManufactureLabourCostResponse(),
+            self.do_roarequest('IndustryManufactureLabourCost', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/manufactures/labourCosts/query', 'json', req, runtime)
+        )
+
+    async def industry_manufacture_labour_cost_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.IndustryManufactureLabourCostRequest,
+        headers: dingtalkindustry__1__0_models.IndustryManufactureLabourCostHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureLabourCostResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.process_no):
+            body['processNo'] = request.process_no
+        if not UtilClient.is_unset(request.material_no):
+            body['materialNo'] = request.material_no
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.cursor):
+            body['cursor'] = request.cursor
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.token_grant_type):
+            body['tokenGrantType'] = request.token_grant_type
+        if not UtilClient.is_unset(request.org_id):
+            body['orgId'] = request.org_id
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.isv_org_id):
+            body['isvOrgId'] = request.isv_org_id
+        if not UtilClient.is_unset(request.suite_key):
+            body['suiteKey'] = request.suite_key
+        if not UtilClient.is_unset(request.microapp_agent_id):
+            body['microappAgentId'] = request.microapp_agent_id
+        if not UtilClient.is_unset(request.app_ids):
+            body['appIds'] = request.app_ids
+        if not UtilClient.is_unset(request.app_id):
+            body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.app_name):
+            body['appName'] = request.app_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.IndustryManufactureLabourCostResponse(),
+            await self.do_roarequest_async('IndustryManufactureLabourCost', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/manufactures/labourCosts/query', 'json', req, runtime)
         )
 
     def query_group_info(
