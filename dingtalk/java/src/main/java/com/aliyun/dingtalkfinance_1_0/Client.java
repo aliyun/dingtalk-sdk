@@ -499,6 +499,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("codeValue", request.codeValue);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.codeValueType)) {
+            body.put("codeValueType", request.codeValueType);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.status)) {
             body.put("status", request.status);
         }
@@ -664,6 +668,18 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.verifyLocation)) {
             body.put("verifyLocation", request.verifyLocation);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.verifyNo)) {
+            body.put("verifyNo", request.verifyNo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.verifyEvent)) {
+            body.put("verifyEvent", request.verifyEvent);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.remark)) {
+            body.put("remark", request.remark);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.dingOrgId)) {

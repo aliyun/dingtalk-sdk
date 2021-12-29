@@ -8,6 +8,10 @@ public class CreateUserCodeInstanceResponseBody extends TeaModel {
     @NameInMap("codeId")
     public String codeId;
 
+    // 码详情跳转地址
+    @NameInMap("codeDetailUrl")
+    public String codeDetailUrl;
+
     public static CreateUserCodeInstanceResponseBody build(java.util.Map<String, ?> map) throws Exception {
         CreateUserCodeInstanceResponseBody self = new CreateUserCodeInstanceResponseBody();
         return TeaModel.build(map, self);
@@ -19,6 +23,14 @@ public class CreateUserCodeInstanceResponseBody extends TeaModel {
     }
     public String getCodeId() {
         return this.codeId;
+    }
+
+    public CreateUserCodeInstanceResponseBody setCodeDetailUrl(String codeDetailUrl) {
+        this.codeDetailUrl = codeDetailUrl;
+        return this;
+    }
+    public String getCodeDetailUrl() {
+        return this.codeDetailUrl;
     }
 
 }

@@ -3,7 +3,7 @@ package com.aliyun.dingtalkresident_1_0.models;
 
 import com.aliyun.tea.*;
 
-public class CreateResidentBlackBoardRequest extends TeaModel {
+public class UpdateResidentBlackBoardRequest extends TeaModel {
     @NameInMap("dingIsvOrgId")
     public Long dingIsvOrgId;
 
@@ -25,16 +25,15 @@ public class CreateResidentBlackBoardRequest extends TeaModel {
     @NameInMap("mediaId")
     public String mediaId;
 
-    // 格式yyyy-MM-dd HH:mm:ss
-    @NameInMap("sendTime")
-    public String sendTime;
+    @NameInMap("blackboardId")
+    public String blackboardId;
 
-    public static CreateResidentBlackBoardRequest build(java.util.Map<String, ?> map) throws Exception {
-        CreateResidentBlackBoardRequest self = new CreateResidentBlackBoardRequest();
+    public static UpdateResidentBlackBoardRequest build(java.util.Map<String, ?> map) throws Exception {
+        UpdateResidentBlackBoardRequest self = new UpdateResidentBlackBoardRequest();
         return TeaModel.build(map, self);
     }
 
-    public CreateResidentBlackBoardRequest setDingIsvOrgId(Long dingIsvOrgId) {
+    public UpdateResidentBlackBoardRequest setDingIsvOrgId(Long dingIsvOrgId) {
         this.dingIsvOrgId = dingIsvOrgId;
         return this;
     }
@@ -42,7 +41,7 @@ public class CreateResidentBlackBoardRequest extends TeaModel {
         return this.dingIsvOrgId;
     }
 
-    public CreateResidentBlackBoardRequest setDingCorpId(String dingCorpId) {
+    public UpdateResidentBlackBoardRequest setDingCorpId(String dingCorpId) {
         this.dingCorpId = dingCorpId;
         return this;
     }
@@ -50,7 +49,7 @@ public class CreateResidentBlackBoardRequest extends TeaModel {
         return this.dingCorpId;
     }
 
-    public CreateResidentBlackBoardRequest setDingSuiteKey(String dingSuiteKey) {
+    public UpdateResidentBlackBoardRequest setDingSuiteKey(String dingSuiteKey) {
         this.dingSuiteKey = dingSuiteKey;
         return this;
     }
@@ -58,7 +57,7 @@ public class CreateResidentBlackBoardRequest extends TeaModel {
         return this.dingSuiteKey;
     }
 
-    public CreateResidentBlackBoardRequest setDingTokenGrantType(Long dingTokenGrantType) {
+    public UpdateResidentBlackBoardRequest setDingTokenGrantType(Long dingTokenGrantType) {
         this.dingTokenGrantType = dingTokenGrantType;
         return this;
     }
@@ -66,7 +65,7 @@ public class CreateResidentBlackBoardRequest extends TeaModel {
         return this.dingTokenGrantType;
     }
 
-    public CreateResidentBlackBoardRequest setTitle(String title) {
+    public UpdateResidentBlackBoardRequest setTitle(String title) {
         this.title = title;
         return this;
     }
@@ -74,7 +73,7 @@ public class CreateResidentBlackBoardRequest extends TeaModel {
         return this.title;
     }
 
-    public CreateResidentBlackBoardRequest setContext(String context) {
+    public UpdateResidentBlackBoardRequest setContext(String context) {
         this.context = context;
         return this;
     }
@@ -82,7 +81,7 @@ public class CreateResidentBlackBoardRequest extends TeaModel {
         return this.context;
     }
 
-    public CreateResidentBlackBoardRequest setMediaId(String mediaId) {
+    public UpdateResidentBlackBoardRequest setMediaId(String mediaId) {
         this.mediaId = mediaId;
         return this;
     }
@@ -90,12 +89,12 @@ public class CreateResidentBlackBoardRequest extends TeaModel {
         return this.mediaId;
     }
 
-    public CreateResidentBlackBoardRequest setSendTime(String sendTime) {
-        this.sendTime = sendTime;
+    public UpdateResidentBlackBoardRequest setBlackboardId(String blackboardId) {
+        this.blackboardId = blackboardId;
         return this;
     }
-    public String getSendTime() {
-        return this.sendTime;
+    public String getBlackboardId() {
+        return this.blackboardId;
     }
 
 }

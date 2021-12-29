@@ -16,6 +16,10 @@ public class CreateUserCodeInstanceRequest extends TeaModel {
     @NameInMap("codeValue")
     public String codeValue;
 
+    // 码值类型，钉钉静态码值：DING_STATIC，访客码或会展码传入
+    @NameInMap("codeValueType")
+    public String codeValueType;
+
     // 状态，传入关闭状态需要用户手动开启后才会渲染二维
     @NameInMap("status")
     public String status;
@@ -77,6 +81,14 @@ public class CreateUserCodeInstanceRequest extends TeaModel {
     }
     public String getCodeValue() {
         return this.codeValue;
+    }
+
+    public CreateUserCodeInstanceRequest setCodeValueType(String codeValueType) {
+        this.codeValueType = codeValueType;
+        return this;
+    }
+    public String getCodeValueType() {
+        return this.codeValueType;
     }
 
     public CreateUserCodeInstanceRequest setStatus(String status) {
