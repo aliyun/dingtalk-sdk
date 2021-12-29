@@ -592,6 +592,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->codeValue)) {
             @$body['codeValue'] = $request->codeValue;
         }
+        if (!Utils::isUnset($request->codeValueType)) {
+            @$body['codeValueType'] = $request->codeValueType;
+        }
         if (!Utils::isUnset($request->status)) {
             @$body['status'] = $request->status;
         }
@@ -777,6 +780,15 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->verifyLocation)) {
             @$body['verifyLocation'] = $request->verifyLocation;
+        }
+        if (!Utils::isUnset($request->verifyNo)) {
+            @$body['verifyNo'] = $request->verifyNo;
+        }
+        if (!Utils::isUnset($request->verifyEvent)) {
+            @$body['verifyEvent'] = $request->verifyEvent;
+        }
+        if (!Utils::isUnset($request->remark)) {
+            @$body['remark'] = $request->remark;
         }
         if (!Utils::isUnset($request->dingOrgId)) {
             @$body['dingOrgId'] = $request->dingOrgId;

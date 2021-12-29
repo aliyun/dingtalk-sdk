@@ -17,6 +17,9 @@ use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\AddResidentUsersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\CreateResidentBlackBoardHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\CreateResidentBlackBoardRequest;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\CreateResidentBlackBoardResponse;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\DeleteResidentBlackBoardHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\DeleteResidentBlackBoardRequest;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\DeleteResidentBlackBoardResponse;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\DeleteResidentDepartmentHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\DeleteResidentDepartmentRequest;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\DeleteResidentDepartmentResponse;
@@ -58,6 +61,9 @@ use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\UpdateResideceGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\UpdateResidenceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\UpdateResidenceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\UpdateResidenceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\UpdateResidentBlackBoardHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\UpdateResidentBlackBoardRequest;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\UpdateResidentBlackBoardResponse;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\UpdateResidentUserHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\UpdateResidentUserRequest;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\UpdateResidentUserResponse;
@@ -570,6 +576,48 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param DeleteResidentBlackBoardRequest $request
+     *
+     * @return DeleteResidentBlackBoardResponse
+     */
+    public function deleteResidentBlackBoard($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteResidentBlackBoardHeaders([]);
+
+        return $this->deleteResidentBlackBoardWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param DeleteResidentBlackBoardRequest $request
+     * @param DeleteResidentBlackBoardHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return DeleteResidentBlackBoardResponse
+     */
+    public function deleteResidentBlackBoardWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->blackboardId)) {
+            @$query['blackboardId'] = $request->blackboardId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return DeleteResidentBlackBoardResponse::fromMap($this->doROARequest('DeleteResidentBlackBoard', 'resident_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/resident/blackboards', 'json', $req, $runtime));
+    }
+
+    /**
      * @param AddPointRequest $request
      *
      * @return AddPointResponse
@@ -938,6 +986,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->mediaId)) {
             @$body['mediaId'] = $request->mediaId;
         }
+        if (!Utils::isUnset($request->sendTime)) {
+            @$body['sendTime'] = $request->sendTime;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -951,6 +1002,69 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CreateResidentBlackBoardResponse::fromMap($this->doROARequest('CreateResidentBlackBoard', 'resident_1.0', 'HTTP', 'POST', 'AK', '/v1.0/resident/blackboards', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param UpdateResidentBlackBoardRequest $request
+     *
+     * @return UpdateResidentBlackBoardResponse
+     */
+    public function updateResidentBlackBoard($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateResidentBlackBoardHeaders([]);
+
+        return $this->updateResidentBlackBoardWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateResidentBlackBoardRequest $request
+     * @param UpdateResidentBlackBoardHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return UpdateResidentBlackBoardResponse
+     */
+    public function updateResidentBlackBoardWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->dingCorpId)) {
+            @$body['dingCorpId'] = $request->dingCorpId;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->title)) {
+            @$body['title'] = $request->title;
+        }
+        if (!Utils::isUnset($request->context)) {
+            @$body['context'] = $request->context;
+        }
+        if (!Utils::isUnset($request->mediaId)) {
+            @$body['mediaId'] = $request->mediaId;
+        }
+        if (!Utils::isUnset($request->blackboardId)) {
+            @$body['blackboardId'] = $request->blackboardId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateResidentBlackBoardResponse::fromMap($this->doROARequest('UpdateResidentBlackBoard', 'resident_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/resident/blackboards', 'json', $req, $runtime));
     }
 
     /**

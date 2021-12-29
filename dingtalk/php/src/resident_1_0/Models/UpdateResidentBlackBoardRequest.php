@@ -6,7 +6,7 @@ namespace AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class CreateResidentBlackBoardRequest extends Model
+class UpdateResidentBlackBoardRequest extends Model
 {
     /**
      * @var int
@@ -44,11 +44,9 @@ class CreateResidentBlackBoardRequest extends Model
     public $mediaId;
 
     /**
-     * @description 格式yyyy-MM-dd HH:mm:ss
-     *
      * @var string
      */
-    public $sendTime;
+    public $blackboardId;
     protected $_name = [
         'dingIsvOrgId'       => 'dingIsvOrgId',
         'dingCorpId'         => 'dingCorpId',
@@ -57,7 +55,7 @@ class CreateResidentBlackBoardRequest extends Model
         'title'              => 'title',
         'context'            => 'context',
         'mediaId'            => 'mediaId',
-        'sendTime'           => 'sendTime',
+        'blackboardId'       => 'blackboardId',
     ];
 
     public function validate()
@@ -88,8 +86,8 @@ class CreateResidentBlackBoardRequest extends Model
         if (null !== $this->mediaId) {
             $res['mediaId'] = $this->mediaId;
         }
-        if (null !== $this->sendTime) {
-            $res['sendTime'] = $this->sendTime;
+        if (null !== $this->blackboardId) {
+            $res['blackboardId'] = $this->blackboardId;
         }
 
         return $res;
@@ -98,7 +96,7 @@ class CreateResidentBlackBoardRequest extends Model
     /**
      * @param array $map
      *
-     * @return CreateResidentBlackBoardRequest
+     * @return UpdateResidentBlackBoardRequest
      */
     public static function fromMap($map = [])
     {
@@ -124,8 +122,8 @@ class CreateResidentBlackBoardRequest extends Model
         if (isset($map['mediaId'])) {
             $model->mediaId = $map['mediaId'];
         }
-        if (isset($map['sendTime'])) {
-            $model->sendTime = $map['sendTime'];
+        if (isset($map['blackboardId'])) {
+            $model->blackboardId = $map['blackboardId'];
         }
 
         return $model;

@@ -17,6 +17,9 @@ use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\ExtractFacialFeatureRespo
 use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\KickDeviceVideoConferenceMembersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\KickDeviceVideoConferenceMembersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\KickDeviceVideoConferenceMembersResponse;
+use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\MachineManagerUpdateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\MachineManagerUpdateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\MachineManagerUpdateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\MachineUsersUpdateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\MachineUsersUpdateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\MachineUsersUpdateResponse;
@@ -36,44 +39,6 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
-    }
-
-    /**
-     * @param string $deviceId
-     * @param string $bookId
-     *
-     * @return QueryDeviceVideoConferenceBookResponse
-     */
-    public function queryDeviceVideoConferenceBook($deviceId, $bookId)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryDeviceVideoConferenceBookHeaders([]);
-
-        return $this->queryDeviceVideoConferenceBookWithOptions($deviceId, $bookId, $headers, $runtime);
-    }
-
-    /**
-     * @param string                                $deviceId
-     * @param string                                $bookId
-     * @param QueryDeviceVideoConferenceBookHeaders $headers
-     * @param RuntimeOptions                        $runtime
-     *
-     * @return QueryDeviceVideoConferenceBookResponse
-     */
-    public function queryDeviceVideoConferenceBookWithOptions($deviceId, $bookId, $headers, $runtime)
-    {
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-        ]);
-
-        return QueryDeviceVideoConferenceBookResponse::fromMap($this->doROARequest('QueryDeviceVideoConferenceBook', 'smartDevice_1.0', 'HTTP', 'GET', 'AK', '/v1.0/smartDevice/devices/' . $deviceId . '/books/' . $bookId . '', 'json', $req, $runtime));
     }
 
     /**
@@ -230,6 +195,110 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CreateDeviceVideoConferenceResponse::fromMap($this->doROARequest('CreateDeviceVideoConference', 'smartDevice_1.0', 'HTTP', 'POST', 'AK', '/v1.0/smartDevice/devices/' . $deviceId . '/videoConferences', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $deviceId
+     * @param string $bookId
+     *
+     * @return QueryDeviceVideoConferenceBookResponse
+     */
+    public function queryDeviceVideoConferenceBook($deviceId, $bookId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryDeviceVideoConferenceBookHeaders([]);
+
+        return $this->queryDeviceVideoConferenceBookWithOptions($deviceId, $bookId, $headers, $runtime);
+    }
+
+    /**
+     * @param string                                $deviceId
+     * @param string                                $bookId
+     * @param QueryDeviceVideoConferenceBookHeaders $headers
+     * @param RuntimeOptions                        $runtime
+     *
+     * @return QueryDeviceVideoConferenceBookResponse
+     */
+    public function queryDeviceVideoConferenceBookWithOptions($deviceId, $bookId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return QueryDeviceVideoConferenceBookResponse::fromMap($this->doROARequest('QueryDeviceVideoConferenceBook', 'smartDevice_1.0', 'HTTP', 'GET', 'AK', '/v1.0/smartDevice/devices/' . $deviceId . '/books/' . $bookId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param MachineManagerUpdateRequest $request
+     *
+     * @return MachineManagerUpdateResponse
+     */
+    public function machineManagerUpdate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new MachineManagerUpdateHeaders([]);
+
+        return $this->machineManagerUpdateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param MachineManagerUpdateRequest $request
+     * @param MachineManagerUpdateHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return MachineManagerUpdateResponse
+     */
+    public function machineManagerUpdateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->deviceId)) {
+            @$body['deviceId'] = $request->deviceId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->scopeDeptIds)) {
+            @$body['scopeDeptIds'] = $request->scopeDeptIds;
+        }
+        if (!Utils::isUnset($request->atmManagerRightMap)) {
+            @$body['atmManagerRightMap'] = $request->atmManagerRightMap;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->dingCorpId)) {
+            @$body['dingCorpId'] = $request->dingCorpId;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return MachineManagerUpdateResponse::fromMap($this->doROARequest('MachineManagerUpdate', 'smartDevice_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/smartDevice/atmachines/managers', 'none', $req, $runtime));
     }
 
     /**

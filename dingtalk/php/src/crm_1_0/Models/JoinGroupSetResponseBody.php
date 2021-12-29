@@ -9,20 +9,12 @@ use AlibabaCloud\Tea\Model;
 class JoinGroupSetResponseBody extends Model
 {
     /**
-     * @description 进群是否成功。
-     *
-     * @var bool
-     */
-    public $success;
-
-    /**
      * @description 加密群ID。
      *
      * @var string
      */
     public $openConversationId;
     protected $_name = [
-        'success'            => 'success',
         'openConversationId' => 'openConversationId',
     ];
 
@@ -33,9 +25,6 @@ class JoinGroupSetResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->success) {
-            $res['success'] = $this->success;
-        }
         if (null !== $this->openConversationId) {
             $res['openConversationId'] = $this->openConversationId;
         }
@@ -51,9 +40,6 @@ class JoinGroupSetResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['success'])) {
-            $model->success = $map['success'];
-        }
         if (isset($map['openConversationId'])) {
             $model->openConversationId = $map['openConversationId'];
         }

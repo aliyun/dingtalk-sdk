@@ -5,6 +5,21 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vindustry_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureCostRecordListGetHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureCostRecordListGetRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureCostRecordListGetResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureFeeListGetHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureFeeListGetRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureFeeListGetResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureLabourCostHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureLabourCostRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureLabourCostResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMaterialListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMaterialListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMaterialListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryMmanufactureMaterialCostGetHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryMmanufactureMaterialCostGetRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryMmanufactureMaterialCostGetResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryAllDepartmentHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryAllDepartmentRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryAllDepartmentResponse;
@@ -148,6 +163,99 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryUserInfoResponse::fromMap($this->doROARequest('QueryUserInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/users/' . $userId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param IndustryManufactureCostRecordListGetRequest $request
+     *
+     * @return IndustryManufactureCostRecordListGetResponse
+     */
+    public function industryManufactureCostRecordListGet($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new IndustryManufactureCostRecordListGetHeaders([]);
+
+        return $this->industryManufactureCostRecordListGetWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param IndustryManufactureCostRecordListGetRequest $request
+     * @param IndustryManufactureCostRecordListGetHeaders $headers
+     * @param RuntimeOptions                              $runtime
+     *
+     * @return IndustryManufactureCostRecordListGetResponse
+     */
+    public function industryManufactureCostRecordListGetWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->instanceId)) {
+            @$body['instanceId'] = $request->instanceId;
+        }
+        if (!Utils::isUnset($request->materialNo)) {
+            @$body['materialNo'] = $request->materialNo;
+        }
+        if (!Utils::isUnset($request->orderNo)) {
+            @$body['orderNo'] = $request->orderNo;
+        }
+        if (!Utils::isUnset($request->productionTaskNo)) {
+            @$body['productionTaskNo'] = $request->productionTaskNo;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            @$body['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            @$body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->cursor)) {
+            @$body['cursor'] = $request->cursor;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$body['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->tokenGrantType)) {
+            @$body['tokenGrantType'] = $request->tokenGrantType;
+        }
+        if (!Utils::isUnset($request->orgId)) {
+            @$body['orgId'] = $request->orgId;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            @$body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->isvOrgId)) {
+            @$body['isvOrgId'] = $request->isvOrgId;
+        }
+        if (!Utils::isUnset($request->suiteKey)) {
+            @$body['suiteKey'] = $request->suiteKey;
+        }
+        if (!Utils::isUnset($request->microappAgentId)) {
+            @$body['microappAgentId'] = $request->microappAgentId;
+        }
+        if (!Utils::isUnset($request->appIds)) {
+            @$body['appIds'] = $request->appIds;
+        }
+        if (!Utils::isUnset($request->appId)) {
+            @$body['appId'] = $request->appId;
+        }
+        if (!Utils::isUnset($request->appName)) {
+            @$body['appName'] = $request->appName;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return IndustryManufactureCostRecordListGetResponse::fromMap($this->doROARequest('IndustryManufactureCostRecordListGet', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/manufactures/materialCostRecords/query', 'json', $req, $runtime));
     }
 
     /**
@@ -598,6 +706,93 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param IndustryManufactureMaterialListRequest $request
+     *
+     * @return IndustryManufactureMaterialListResponse
+     */
+    public function industryManufactureMaterialList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new IndustryManufactureMaterialListHeaders([]);
+
+        return $this->industryManufactureMaterialListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param IndustryManufactureMaterialListRequest $request
+     * @param IndustryManufactureMaterialListHeaders $headers
+     * @param RuntimeOptions                         $runtime
+     *
+     * @return IndustryManufactureMaterialListResponse
+     */
+    public function industryManufactureMaterialListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->tokenGrantType)) {
+            @$body['tokenGrantType'] = $request->tokenGrantType;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            @$body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            @$body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->instanceId)) {
+            @$body['instanceId'] = $request->instanceId;
+        }
+        if (!Utils::isUnset($request->materialNo)) {
+            @$body['materialNo'] = $request->materialNo;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            @$body['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->microappAgentId)) {
+            @$body['microappAgentId'] = $request->microappAgentId;
+        }
+        if (!Utils::isUnset($request->cursor)) {
+            @$body['cursor'] = $request->cursor;
+        }
+        if (!Utils::isUnset($request->appName)) {
+            @$body['appName'] = $request->appName;
+        }
+        if (!Utils::isUnset($request->orgId)) {
+            @$body['orgId'] = $request->orgId;
+        }
+        if (!Utils::isUnset($request->appId)) {
+            @$body['appId'] = $request->appId;
+        }
+        if (!Utils::isUnset($request->suiteKey)) {
+            @$body['suiteKey'] = $request->suiteKey;
+        }
+        if (!Utils::isUnset($request->appIds)) {
+            @$body['appIds'] = $request->appIds;
+        }
+        if (!Utils::isUnset($request->currentPage)) {
+            @$body['currentPage'] = $request->currentPage;
+        }
+        if (!Utils::isUnset($request->isvOrgId)) {
+            @$body['isvOrgId'] = $request->isvOrgId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return IndustryManufactureMaterialListResponse::fromMap($this->doROARequest('IndustryManufactureMaterialList', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/manufactures/materials/query', 'json', $req, $runtime));
+    }
+
+    /**
      * @param string                      $userId
      * @param UpdateUserExtendInfoRequest $request
      *
@@ -648,6 +843,183 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return UpdateUserExtendInfoResponse::fromMap($this->doROARequest('UpdateUserExtendInfo', 'industry_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/industry/medicals/users/' . $userId . '/extInfos', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param IndustryMmanufactureMaterialCostGetRequest $request
+     *
+     * @return IndustryMmanufactureMaterialCostGetResponse
+     */
+    public function industryMmanufactureMaterialCostGet($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new IndustryMmanufactureMaterialCostGetHeaders([]);
+
+        return $this->industryMmanufactureMaterialCostGetWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param IndustryMmanufactureMaterialCostGetRequest $request
+     * @param IndustryMmanufactureMaterialCostGetHeaders $headers
+     * @param RuntimeOptions                             $runtime
+     *
+     * @return IndustryMmanufactureMaterialCostGetResponse
+     */
+    public function industryMmanufactureMaterialCostGetWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->instanceId)) {
+            @$body['instanceId'] = $request->instanceId;
+        }
+        if (!Utils::isUnset($request->materialNo)) {
+            @$body['materialNo'] = $request->materialNo;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            @$body['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            @$body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->cursor)) {
+            @$body['cursor'] = $request->cursor;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$body['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->tokenGrantType)) {
+            @$body['tokenGrantType'] = $request->tokenGrantType;
+        }
+        if (!Utils::isUnset($request->orgId)) {
+            @$body['orgId'] = $request->orgId;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            @$body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->isvOrgId)) {
+            @$body['isvOrgId'] = $request->isvOrgId;
+        }
+        if (!Utils::isUnset($request->suiteKey)) {
+            @$body['suiteKey'] = $request->suiteKey;
+        }
+        if (!Utils::isUnset($request->microappAgentId)) {
+            @$body['microappAgentId'] = $request->microappAgentId;
+        }
+        if (!Utils::isUnset($request->appIds)) {
+            @$body['appIds'] = $request->appIds;
+        }
+        if (!Utils::isUnset($request->appId)) {
+            @$body['appId'] = $request->appId;
+        }
+        if (!Utils::isUnset($request->appName)) {
+            @$body['appName'] = $request->appName;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return IndustryMmanufactureMaterialCostGetResponse::fromMap($this->doROARequest('IndustryMmanufactureMaterialCostGet', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/manufactures/base/materialCosts/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param IndustryManufactureFeeListGetRequest $request
+     *
+     * @return IndustryManufactureFeeListGetResponse
+     */
+    public function industryManufactureFeeListGet($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new IndustryManufactureFeeListGetHeaders([]);
+
+        return $this->industryManufactureFeeListGetWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param IndustryManufactureFeeListGetRequest $request
+     * @param IndustryManufactureFeeListGetHeaders $headers
+     * @param RuntimeOptions                       $runtime
+     *
+     * @return IndustryManufactureFeeListGetResponse
+     */
+    public function industryManufactureFeeListGetWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->productionTaskNo)) {
+            @$body['productionTaskNo'] = $request->productionTaskNo;
+        }
+        if (!Utils::isUnset($request->materialNo)) {
+            @$body['materialNo'] = $request->materialNo;
+        }
+        if (!Utils::isUnset($request->type)) {
+            @$body['type'] = $request->type;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            @$body['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            @$body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->cursor)) {
+            @$body['cursor'] = $request->cursor;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$body['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->tokenGrantType)) {
+            @$body['tokenGrantType'] = $request->tokenGrantType;
+        }
+        if (!Utils::isUnset($request->orgId)) {
+            @$body['orgId'] = $request->orgId;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            @$body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->isvOrgId)) {
+            @$body['isvOrgId'] = $request->isvOrgId;
+        }
+        if (!Utils::isUnset($request->suiteKey)) {
+            @$body['suiteKey'] = $request->suiteKey;
+        }
+        if (!Utils::isUnset($request->microappAgentId)) {
+            @$body['microappAgentId'] = $request->microappAgentId;
+        }
+        if (!Utils::isUnset($request->appIds)) {
+            @$body['appIds'] = $request->appIds;
+        }
+        if (!Utils::isUnset($request->appId)) {
+            @$body['appId'] = $request->appId;
+        }
+        if (!Utils::isUnset($request->appName)) {
+            @$body['appName'] = $request->appName;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return IndustryManufactureFeeListGetResponse::fromMap($this->doROARequest('IndustryManufactureFeeListGet', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/manufactures/fees/query', 'json', $req, $runtime));
     }
 
     /**
@@ -807,6 +1179,93 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryAllDepartmentResponse::fromMap($this->doROARequest('QueryAllDepartment', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/departments', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param IndustryManufactureLabourCostRequest $request
+     *
+     * @return IndustryManufactureLabourCostResponse
+     */
+    public function industryManufactureLabourCost($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new IndustryManufactureLabourCostHeaders([]);
+
+        return $this->industryManufactureLabourCostWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param IndustryManufactureLabourCostRequest $request
+     * @param IndustryManufactureLabourCostHeaders $headers
+     * @param RuntimeOptions                       $runtime
+     *
+     * @return IndustryManufactureLabourCostResponse
+     */
+    public function industryManufactureLabourCostWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->processNo)) {
+            @$body['processNo'] = $request->processNo;
+        }
+        if (!Utils::isUnset($request->materialNo)) {
+            @$body['materialNo'] = $request->materialNo;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            @$body['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            @$body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->cursor)) {
+            @$body['cursor'] = $request->cursor;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$body['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->tokenGrantType)) {
+            @$body['tokenGrantType'] = $request->tokenGrantType;
+        }
+        if (!Utils::isUnset($request->orgId)) {
+            @$body['orgId'] = $request->orgId;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            @$body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->isvOrgId)) {
+            @$body['isvOrgId'] = $request->isvOrgId;
+        }
+        if (!Utils::isUnset($request->suiteKey)) {
+            @$body['suiteKey'] = $request->suiteKey;
+        }
+        if (!Utils::isUnset($request->microappAgentId)) {
+            @$body['microappAgentId'] = $request->microappAgentId;
+        }
+        if (!Utils::isUnset($request->appIds)) {
+            @$body['appIds'] = $request->appIds;
+        }
+        if (!Utils::isUnset($request->appId)) {
+            @$body['appId'] = $request->appId;
+        }
+        if (!Utils::isUnset($request->appName)) {
+            @$body['appName'] = $request->appName;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return IndustryManufactureLabourCostResponse::fromMap($this->doROARequest('IndustryManufactureLabourCost', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/manufactures/labourCosts/query', 'json', $req, $runtime));
     }
 
     /**

@@ -31,6 +31,13 @@ class CreateUserCodeInstanceRequest extends Model
     public $codeValue;
 
     /**
+     * @description 码值类型，钉钉静态码值：DING_STATIC，访客码或会展码传入
+     *
+     * @var string
+     */
+    public $codeValueType;
+
+    /**
      * @description 状态，传入关闭状态需要用户手动开启后才会渲染二维
      *
      * @var string
@@ -92,6 +99,7 @@ class CreateUserCodeInstanceRequest extends Model
         'requestId'            => 'requestId',
         'codeIdentity'         => 'codeIdentity',
         'codeValue'            => 'codeValue',
+        'codeValueType'        => 'codeValueType',
         'status'               => 'status',
         'corpId'               => 'corpId',
         'userCorpRelationType' => 'userCorpRelationType',
@@ -118,6 +126,9 @@ class CreateUserCodeInstanceRequest extends Model
         }
         if (null !== $this->codeValue) {
             $res['codeValue'] = $this->codeValue;
+        }
+        if (null !== $this->codeValueType) {
+            $res['codeValueType'] = $this->codeValueType;
         }
         if (null !== $this->status) {
             $res['status'] = $this->status;
@@ -172,6 +183,9 @@ class CreateUserCodeInstanceRequest extends Model
         }
         if (isset($map['codeValue'])) {
             $model->codeValue = $map['codeValue'];
+        }
+        if (isset($map['codeValueType'])) {
+            $model->codeValueType = $map['codeValueType'];
         }
         if (isset($map['status'])) {
             $model->status = $map['status'];
