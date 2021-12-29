@@ -8,7 +8,11 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
 {
-    public class CreateResidentBlackBoardRequest : TeaModel {
+    public class UpdateResidentBlackBoardRequest : TeaModel {
+        [NameInMap("blackboardId")]
+        [Validation(Required=false)]
+        public string BlackboardId { get; set; }
+
         [NameInMap("context")]
         [Validation(Required=false)]
         public string Context { get; set; }
@@ -32,13 +36,6 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
         [NameInMap("mediaId")]
         [Validation(Required=false)]
         public string MediaId { get; set; }
-
-        /// <summary>
-        /// 格式yyyy-MM-dd HH:mm:ss
-        /// </summary>
-        [NameInMap("sendTime")]
-        [Validation(Required=false)]
-        public string SendTime { get; set; }
 
         [NameInMap("title")]
         [Validation(Required=false)]
