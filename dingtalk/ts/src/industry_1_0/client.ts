@@ -7,100 +7,6 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
-export class QueryHospitalDistrictInfoHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryHospitalDistrictInfoRequest extends $tea.Model {
-  pageSize?: number;
-  pageNumber?: number;
-  static names(): { [key: string]: string } {
-    return {
-      pageSize: 'pageSize',
-      pageNumber: 'pageNumber',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      pageSize: 'number',
-      pageNumber: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryHospitalDistrictInfoResponseBody extends $tea.Model {
-  content?: QueryHospitalDistrictInfoResponseBodyContent[];
-  totalPages?: number;
-  totalCount?: number;
-  currentPage?: number;
-  static names(): { [key: string]: string } {
-    return {
-      content: 'content',
-      totalPages: 'totalPages',
-      totalCount: 'totalCount',
-      currentPage: 'currentPage',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      content: { 'type': 'array', 'itemType': QueryHospitalDistrictInfoResponseBodyContent },
-      totalPages: 'number',
-      totalCount: 'number',
-      currentPage: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryHospitalDistrictInfoResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: QueryHospitalDistrictInfoResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: QueryHospitalDistrictInfoResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class QueryUserInfoHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -156,148 +62,6 @@ export class QueryUserInfoResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: QueryUserInfoResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class IndustryManufactureCostRecordListGetHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class IndustryManufactureCostRecordListGetRequest extends $tea.Model {
-  instanceId?: string;
-  materialNo?: string;
-  orderNo?: string;
-  productionTaskNo?: string;
-  startTime?: number;
-  endTime?: number;
-  cursor?: number;
-  pageNumber?: number;
-  pageSize?: number;
-  tokenGrantType?: number;
-  orgId?: number;
-  corpId?: string;
-  isvOrgId?: number;
-  suiteKey?: string;
-  microappAgentId?: number;
-  appIds?: number[];
-  appId?: number;
-  appName?: string;
-  static names(): { [key: string]: string } {
-    return {
-      instanceId: 'instanceId',
-      materialNo: 'materialNo',
-      orderNo: 'orderNo',
-      productionTaskNo: 'productionTaskNo',
-      startTime: 'startTime',
-      endTime: 'endTime',
-      cursor: 'cursor',
-      pageNumber: 'pageNumber',
-      pageSize: 'pageSize',
-      tokenGrantType: 'tokenGrantType',
-      orgId: 'orgId',
-      corpId: 'corpId',
-      isvOrgId: 'isvOrgId',
-      suiteKey: 'suiteKey',
-      microappAgentId: 'microappAgentId',
-      appIds: 'appIds',
-      appId: 'appId',
-      appName: 'appName',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      instanceId: 'string',
-      materialNo: 'string',
-      orderNo: 'string',
-      productionTaskNo: 'string',
-      startTime: 'number',
-      endTime: 'number',
-      cursor: 'number',
-      pageNumber: 'number',
-      pageSize: 'number',
-      tokenGrantType: 'number',
-      orgId: 'number',
-      corpId: 'string',
-      isvOrgId: 'number',
-      suiteKey: 'string',
-      microappAgentId: 'number',
-      appIds: { 'type': 'array', 'itemType': 'number' },
-      appId: 'number',
-      appName: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class IndustryManufactureCostRecordListGetResponseBody extends $tea.Model {
-  list?: IndustryManufactureCostRecordListGetResponseBodyList[];
-  nextCursor?: number;
-  totalCount?: number;
-  hasMore?: boolean;
-  static names(): { [key: string]: string } {
-    return {
-      list: 'list',
-      nextCursor: 'nextCursor',
-      totalCount: 'totalCount',
-      hasMore: 'hasMore',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      list: { 'type': 'array', 'itemType': IndustryManufactureCostRecordListGetResponseBodyList },
-      nextCursor: 'number',
-      totalCount: 'number',
-      hasMore: 'boolean',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class IndustryManufactureCostRecordListGetResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: IndustryManufactureCostRecordListGetResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: IndustryManufactureCostRecordListGetResponseBody,
     };
   }
 
@@ -400,100 +164,6 @@ export class QueryAllMemberByDeptResponse extends $tea.Model {
   }
 }
 
-export class QueryAllMemberByGroupHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryAllMemberByGroupRequest extends $tea.Model {
-  pageSize?: number;
-  pageNumber?: number;
-  static names(): { [key: string]: string } {
-    return {
-      pageSize: 'pageSize',
-      pageNumber: 'pageNumber',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      pageSize: 'number',
-      pageNumber: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryAllMemberByGroupResponseBody extends $tea.Model {
-  content?: QueryAllMemberByGroupResponseBodyContent[];
-  totalPages?: number;
-  totalCount?: number;
-  currentPage?: number;
-  static names(): { [key: string]: string } {
-    return {
-      content: 'content',
-      totalPages: 'totalPages',
-      totalCount: 'totalCount',
-      currentPage: 'currentPage',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      content: { 'type': 'array', 'itemType': QueryAllMemberByGroupResponseBodyContent },
-      totalPages: 'number',
-      totalCount: 'number',
-      currentPage: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryAllMemberByGroupResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: QueryAllMemberByGroupResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: QueryAllMemberByGroupResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class QueryUserRolesHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -549,69 +219,6 @@ export class QueryUserRolesResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: QueryUserRolesResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryHospitalRolesHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryHospitalRolesResponseBody extends $tea.Model {
-  content?: QueryHospitalRolesResponseBodyContent[];
-  static names(): { [key: string]: string } {
-    return {
-      content: 'content',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      content: { 'type': 'array', 'itemType': QueryHospitalRolesResponseBodyContent },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryHospitalRolesResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: QueryHospitalRolesResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: QueryHospitalRolesResponseBody,
     };
   }
 
@@ -800,6 +407,887 @@ export class QueryAllGroupsInDeptResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: QueryAllGroupsInDeptResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserExtendValuesHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserExtendValuesRequest extends $tea.Model {
+  dingOrgId?: number;
+  userIds?: string[];
+  userExtendKey?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dingOrgId: 'dingOrgId',
+      userIds: 'userIds',
+      userExtendKey: 'userExtendKey',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingOrgId: 'number',
+      userIds: { 'type': 'array', 'itemType': 'string' },
+      userExtendKey: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserExtendValuesResponseBody extends $tea.Model {
+  content?: QueryUserExtendValuesResponseBodyContent[];
+  totalCount?: number;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+      totalCount: 'totalCount',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: { 'type': 'array', 'itemType': QueryUserExtendValuesResponseBodyContent },
+      totalCount: 'number',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserExtendValuesResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryUserExtendValuesResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryUserExtendValuesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryDepartmentInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryDepartmentInfoResponseBody extends $tea.Model {
+  content?: QueryDepartmentInfoResponseBodyContent;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: QueryDepartmentInfoResponseBodyContent,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryDepartmentInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryDepartmentInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryDepartmentInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateUserExtendInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateUserExtendInfoRequest extends $tea.Model {
+  jobCode?: string;
+  userProbCode?: string;
+  jobStatusCode?: string[];
+  comments?: string;
+  static names(): { [key: string]: string } {
+    return {
+      jobCode: 'jobCode',
+      userProbCode: 'userProbCode',
+      jobStatusCode: 'jobStatusCode',
+      comments: 'comments',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      jobCode: 'string',
+      userProbCode: 'string',
+      jobStatusCode: { 'type': 'array', 'itemType': 'string' },
+      comments: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateUserExtendInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserExtInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserExtInfoResponseBody extends $tea.Model {
+  content?: QueryUserExtInfoResponseBodyContent[];
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: { 'type': 'array', 'itemType': QueryUserExtInfoResponseBodyContent },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserExtInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryUserExtInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryUserExtInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryJobCodeDictionaryHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryJobCodeDictionaryResponseBody extends $tea.Model {
+  content?: QueryJobCodeDictionaryResponseBodyContent[];
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: { 'type': 'array', 'itemType': QueryJobCodeDictionaryResponseBodyContent },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryJobCodeDictionaryResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryJobCodeDictionaryResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryJobCodeDictionaryResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureLabourCostHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureLabourCostRequest extends $tea.Model {
+  processNo?: string;
+  materialNo?: string;
+  startTime?: number;
+  endTime?: number;
+  cursor?: number;
+  pageNumber?: number;
+  pageSize?: number;
+  tokenGrantType?: number;
+  orgId?: number;
+  corpId?: string;
+  isvOrgId?: string;
+  suiteKey?: string;
+  microappAgentId?: number;
+  appIds?: number[];
+  appId?: number;
+  appName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      processNo: 'processNo',
+      materialNo: 'materialNo',
+      startTime: 'startTime',
+      endTime: 'endTime',
+      cursor: 'cursor',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      tokenGrantType: 'tokenGrantType',
+      orgId: 'orgId',
+      corpId: 'corpId',
+      isvOrgId: 'isvOrgId',
+      suiteKey: 'suiteKey',
+      microappAgentId: 'microappAgentId',
+      appIds: 'appIds',
+      appId: 'appId',
+      appName: 'appName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      processNo: 'string',
+      materialNo: 'string',
+      startTime: 'number',
+      endTime: 'number',
+      cursor: 'number',
+      pageNumber: 'number',
+      pageSize: 'number',
+      tokenGrantType: 'number',
+      orgId: 'number',
+      corpId: 'string',
+      isvOrgId: 'string',
+      suiteKey: 'string',
+      microappAgentId: 'number',
+      appIds: { 'type': 'array', 'itemType': 'number' },
+      appId: 'number',
+      appName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureLabourCostResponseBody extends $tea.Model {
+  list?: IndustryManufactureLabourCostResponseBodyList[];
+  hasMore?: boolean;
+  nextCursor?: number;
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      list: 'list',
+      hasMore: 'hasMore',
+      nextCursor: 'nextCursor',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      list: { 'type': 'array', 'itemType': IndustryManufactureLabourCostResponseBodyList },
+      hasMore: 'boolean',
+      nextCursor: 'number',
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureLabourCostResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: IndustryManufactureLabourCostResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: IndustryManufactureLabourCostResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryHospitalDistrictInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryHospitalDistrictInfoRequest extends $tea.Model {
+  pageSize?: number;
+  pageNumber?: number;
+  static names(): { [key: string]: string } {
+    return {
+      pageSize: 'pageSize',
+      pageNumber: 'pageNumber',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      pageSize: 'number',
+      pageNumber: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryHospitalDistrictInfoResponseBody extends $tea.Model {
+  content?: QueryHospitalDistrictInfoResponseBodyContent[];
+  totalPages?: number;
+  totalCount?: number;
+  currentPage?: number;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+      totalPages: 'totalPages',
+      totalCount: 'totalCount',
+      currentPage: 'currentPage',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: { 'type': 'array', 'itemType': QueryHospitalDistrictInfoResponseBodyContent },
+      totalPages: 'number',
+      totalCount: 'number',
+      currentPage: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryHospitalDistrictInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryHospitalDistrictInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryHospitalDistrictInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureCostRecordListGetHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureCostRecordListGetRequest extends $tea.Model {
+  instanceId?: string;
+  materialNo?: string;
+  orderNo?: string;
+  productionTaskNo?: string;
+  startTime?: number;
+  endTime?: number;
+  cursor?: number;
+  pageNumber?: number;
+  pageSize?: number;
+  tokenGrantType?: number;
+  orgId?: number;
+  corpId?: string;
+  isvOrgId?: number;
+  suiteKey?: string;
+  microappAgentId?: number;
+  appIds?: number[];
+  appId?: number;
+  appName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      instanceId: 'instanceId',
+      materialNo: 'materialNo',
+      orderNo: 'orderNo',
+      productionTaskNo: 'productionTaskNo',
+      startTime: 'startTime',
+      endTime: 'endTime',
+      cursor: 'cursor',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      tokenGrantType: 'tokenGrantType',
+      orgId: 'orgId',
+      corpId: 'corpId',
+      isvOrgId: 'isvOrgId',
+      suiteKey: 'suiteKey',
+      microappAgentId: 'microappAgentId',
+      appIds: 'appIds',
+      appId: 'appId',
+      appName: 'appName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      instanceId: 'string',
+      materialNo: 'string',
+      orderNo: 'string',
+      productionTaskNo: 'string',
+      startTime: 'number',
+      endTime: 'number',
+      cursor: 'number',
+      pageNumber: 'number',
+      pageSize: 'number',
+      tokenGrantType: 'number',
+      orgId: 'number',
+      corpId: 'string',
+      isvOrgId: 'number',
+      suiteKey: 'string',
+      microappAgentId: 'number',
+      appIds: { 'type': 'array', 'itemType': 'number' },
+      appId: 'number',
+      appName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureCostRecordListGetResponseBody extends $tea.Model {
+  list?: IndustryManufactureCostRecordListGetResponseBodyList[];
+  nextCursor?: number;
+  totalCount?: number;
+  hasMore?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      list: 'list',
+      nextCursor: 'nextCursor',
+      totalCount: 'totalCount',
+      hasMore: 'hasMore',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      list: { 'type': 'array', 'itemType': IndustryManufactureCostRecordListGetResponseBodyList },
+      nextCursor: 'number',
+      totalCount: 'number',
+      hasMore: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureCostRecordListGetResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: IndustryManufactureCostRecordListGetResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: IndustryManufactureCostRecordListGetResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryAllMemberByGroupHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryAllMemberByGroupRequest extends $tea.Model {
+  pageSize?: number;
+  pageNumber?: number;
+  static names(): { [key: string]: string } {
+    return {
+      pageSize: 'pageSize',
+      pageNumber: 'pageNumber',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      pageSize: 'number',
+      pageNumber: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryAllMemberByGroupResponseBody extends $tea.Model {
+  content?: QueryAllMemberByGroupResponseBodyContent[];
+  totalPages?: number;
+  totalCount?: number;
+  currentPage?: number;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+      totalPages: 'totalPages',
+      totalCount: 'totalCount',
+      currentPage: 'currentPage',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: { 'type': 'array', 'itemType': QueryAllMemberByGroupResponseBodyContent },
+      totalPages: 'number',
+      totalCount: 'number',
+      currentPage: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryAllMemberByGroupResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryAllMemberByGroupResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryAllMemberByGroupResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryHospitalRolesHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryHospitalRolesResponseBody extends $tea.Model {
+  content?: QueryHospitalRolesResponseBodyContent[];
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: { 'type': 'array', 'itemType': QueryHospitalRolesResponseBodyContent },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryHospitalRolesResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryHospitalRolesResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryHospitalRolesResponseBody,
     };
   }
 
@@ -1116,69 +1604,6 @@ export class QueryJobStatusCodeDictionaryResponse extends $tea.Model {
   }
 }
 
-export class QueryDepartmentInfoHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryDepartmentInfoResponseBody extends $tea.Model {
-  content?: QueryDepartmentInfoResponseBodyContent;
-  static names(): { [key: string]: string } {
-    return {
-      content: 'content',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      content: QueryDepartmentInfoResponseBodyContent,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryDepartmentInfoResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: QueryDepartmentInfoResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: QueryDepartmentInfoResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class IndustryManufactureMaterialListHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1307,75 +1732,6 @@ export class IndustryManufactureMaterialListResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: IndustryManufactureMaterialListResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class UpdateUserExtendInfoHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class UpdateUserExtendInfoRequest extends $tea.Model {
-  jobCode?: string;
-  userProbCode?: string;
-  jobStatusCode?: string[];
-  comments?: string;
-  static names(): { [key: string]: string } {
-    return {
-      jobCode: 'jobCode',
-      userProbCode: 'userProbCode',
-      jobStatusCode: 'jobStatusCode',
-      comments: 'comments',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      jobCode: 'string',
-      userProbCode: 'string',
-      jobStatusCode: { 'type': 'array', 'itemType': 'string' },
-      comments: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class UpdateUserExtendInfoResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
     };
   }
 
@@ -1753,132 +2109,6 @@ export class QueryAllDoctorsResponse extends $tea.Model {
   }
 }
 
-export class QueryUserExtInfoHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryUserExtInfoResponseBody extends $tea.Model {
-  content?: QueryUserExtInfoResponseBodyContent[];
-  static names(): { [key: string]: string } {
-    return {
-      content: 'content',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      content: { 'type': 'array', 'itemType': QueryUserExtInfoResponseBodyContent },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryUserExtInfoResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: QueryUserExtInfoResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: QueryUserExtInfoResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryJobCodeDictionaryHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryJobCodeDictionaryResponseBody extends $tea.Model {
-  content?: QueryJobCodeDictionaryResponseBodyContent[];
-  static names(): { [key: string]: string } {
-    return {
-      content: 'content',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      content: { 'type': 'array', 'itemType': QueryJobCodeDictionaryResponseBodyContent },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryJobCodeDictionaryResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: QueryJobCodeDictionaryResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: QueryJobCodeDictionaryResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class QueryAllDepartmentHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1973,142 +2203,6 @@ export class QueryAllDepartmentResponse extends $tea.Model {
   }
 }
 
-export class IndustryManufactureLabourCostHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class IndustryManufactureLabourCostRequest extends $tea.Model {
-  processNo?: string;
-  materialNo?: string;
-  startTime?: number;
-  endTime?: number;
-  cursor?: number;
-  pageNumber?: number;
-  pageSize?: number;
-  tokenGrantType?: number;
-  orgId?: number;
-  corpId?: string;
-  isvOrgId?: string;
-  suiteKey?: string;
-  microappAgentId?: number;
-  appIds?: number[];
-  appId?: number;
-  appName?: string;
-  static names(): { [key: string]: string } {
-    return {
-      processNo: 'processNo',
-      materialNo: 'materialNo',
-      startTime: 'startTime',
-      endTime: 'endTime',
-      cursor: 'cursor',
-      pageNumber: 'pageNumber',
-      pageSize: 'pageSize',
-      tokenGrantType: 'tokenGrantType',
-      orgId: 'orgId',
-      corpId: 'corpId',
-      isvOrgId: 'isvOrgId',
-      suiteKey: 'suiteKey',
-      microappAgentId: 'microappAgentId',
-      appIds: 'appIds',
-      appId: 'appId',
-      appName: 'appName',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      processNo: 'string',
-      materialNo: 'string',
-      startTime: 'number',
-      endTime: 'number',
-      cursor: 'number',
-      pageNumber: 'number',
-      pageSize: 'number',
-      tokenGrantType: 'number',
-      orgId: 'number',
-      corpId: 'string',
-      isvOrgId: 'string',
-      suiteKey: 'string',
-      microappAgentId: 'number',
-      appIds: { 'type': 'array', 'itemType': 'number' },
-      appId: 'number',
-      appName: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class IndustryManufactureLabourCostResponseBody extends $tea.Model {
-  list?: IndustryManufactureLabourCostResponseBodyList[];
-  hasMore?: boolean;
-  nextCursor?: number;
-  totalCount?: number;
-  static names(): { [key: string]: string } {
-    return {
-      list: 'list',
-      hasMore: 'hasMore',
-      nextCursor: 'nextCursor',
-      totalCount: 'totalCount',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      list: { 'type': 'array', 'itemType': IndustryManufactureLabourCostResponseBodyList },
-      hasMore: 'boolean',
-      nextCursor: 'number',
-      totalCount: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class IndustryManufactureLabourCostResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: IndustryManufactureLabourCostResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: IndustryManufactureLabourCostResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class QueryGroupInfoHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2172,38 +2266,86 @@ export class QueryGroupInfoResponse extends $tea.Model {
   }
 }
 
-export class QueryHospitalDistrictInfoResponseBodyContent extends $tea.Model {
-  id?: number;
-  districtName?: string;
-  districtType?: number;
-  parentDistrictId?: number;
-  address?: string;
-  deleted?: number;
-  gmtCreate?: string;
-  gmtModified?: string;
+export class SaveUserExtendValuesHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
     return {
-      id: 'id',
-      districtName: 'districtName',
-      districtType: 'districtType',
-      parentDistrictId: 'parentDistrictId',
-      address: 'address',
-      deleted: 'deleted',
-      gmtCreate: 'gmtCreate',
-      gmtModified: 'gmtModified',
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      id: 'number',
-      districtName: 'string',
-      districtType: 'number',
-      parentDistrictId: 'number',
-      address: 'string',
-      deleted: 'number',
-      gmtCreate: 'string',
-      gmtModified: 'string',
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveUserExtendValuesRequest extends $tea.Model {
+  userExtendKey?: string;
+  userExtendValue?: string;
+  userDisplayName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      userExtendKey: 'userExtendKey',
+      userExtendValue: 'userExtendValue',
+      userDisplayName: 'userDisplayName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userExtendKey: 'string',
+      userExtendValue: 'string',
+      userDisplayName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveUserExtendValuesResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveUserExtendValuesResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SaveUserExtendValuesResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SaveUserExtendValuesResponseBody,
     };
   }
 
@@ -2420,6 +2562,449 @@ export class QueryUserInfoResponseBodyContent extends $tea.Model {
   }
 }
 
+export class QueryAllMemberByDeptResponseBodyContent extends $tea.Model {
+  uid?: string;
+  userName?: string;
+  jobNum?: string;
+  static names(): { [key: string]: string } {
+    return {
+      uid: 'uid',
+      userName: 'userName',
+      jobNum: 'jobNum',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      uid: 'string',
+      userName: 'string',
+      jobNum: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserRolesResponseBodyContent extends $tea.Model {
+  roleCode?: string;
+  roleName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      roleCode: 'roleCode',
+      roleName: 'roleName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      roleCode: 'string',
+      roleName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryAllGroupResponseBodyContent extends $tea.Model {
+  id?: number;
+  name?: string;
+  deptId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+      name: 'name',
+      deptId: 'deptId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'number',
+      name: 'string',
+      deptId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryAllGroupsInDeptResponseBodyContent extends $tea.Model {
+  id?: number;
+  name?: string;
+  deptId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+      name: 'name',
+      deptId: 'deptId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'number',
+      name: 'string',
+      deptId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserExtendValuesResponseBodyContent extends $tea.Model {
+  userExtendKey?: string;
+  userExtendValue?: string;
+  userExtendDisplayName?: string;
+  userCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      userExtendKey: 'userExtendKey',
+      userExtendValue: 'userExtendValue',
+      userExtendDisplayName: 'userExtendDisplayName',
+      userCode: 'userCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userExtendKey: 'string',
+      userExtendValue: 'string',
+      userExtendDisplayName: 'string',
+      userCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryDepartmentInfoResponseBodyContentLeaderJob extends $tea.Model {
+  code?: string;
+  bizType?: string;
+  category?: string;
+  displayName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      bizType: 'bizType',
+      category: 'category',
+      displayName: 'displayName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      bizType: 'string',
+      category: 'string',
+      displayName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryDepartmentInfoResponseBodyContentLeader extends $tea.Model {
+  name?: string;
+  userId?: string;
+  jobNumber?: string;
+  job?: QueryDepartmentInfoResponseBodyContentLeaderJob;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      userId: 'userId',
+      jobNumber: 'jobNumber',
+      job: 'job',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      userId: 'string',
+      jobNumber: 'string',
+      job: QueryDepartmentInfoResponseBodyContentLeaderJob,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryDepartmentInfoResponseBodyContentResidentLeaderJob extends $tea.Model {
+  code?: string;
+  bizType?: string;
+  category?: string;
+  displayName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      bizType: 'bizType',
+      category: 'category',
+      displayName: 'displayName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      bizType: 'string',
+      category: 'string',
+      displayName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryDepartmentInfoResponseBodyContentResidentLeader extends $tea.Model {
+  name?: string;
+  userId?: string;
+  jobNumber?: string;
+  job?: QueryDepartmentInfoResponseBodyContentResidentLeaderJob;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      userId: 'userId',
+      jobNumber: 'jobNumber',
+      job: 'job',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      userId: 'string',
+      jobNumber: 'string',
+      job: QueryDepartmentInfoResponseBodyContentResidentLeaderJob,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryDepartmentInfoResponseBodyContent extends $tea.Model {
+  id?: number;
+  name?: string;
+  leader?: QueryDepartmentInfoResponseBodyContentLeader;
+  residentLeader?: QueryDepartmentInfoResponseBodyContentResidentLeader;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+      name: 'name',
+      leader: 'leader',
+      residentLeader: 'residentLeader',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'number',
+      name: 'string',
+      leader: QueryDepartmentInfoResponseBodyContentLeader,
+      residentLeader: QueryDepartmentInfoResponseBodyContentResidentLeader,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserExtInfoResponseBodyContent extends $tea.Model {
+  userExtendKey?: string;
+  userExtendValue?: string;
+  userExtendDisplayName?: string;
+  orgId?: string;
+  status?: number;
+  userCode?: string;
+  gmtCreate?: string;
+  gmtModified?: string;
+  static names(): { [key: string]: string } {
+    return {
+      userExtendKey: 'userExtendKey',
+      userExtendValue: 'userExtendValue',
+      userExtendDisplayName: 'userExtendDisplayName',
+      orgId: 'orgId',
+      status: 'status',
+      userCode: 'userCode',
+      gmtCreate: 'gmtCreate',
+      gmtModified: 'gmtModified',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userExtendKey: 'string',
+      userExtendValue: 'string',
+      userExtendDisplayName: 'string',
+      orgId: 'string',
+      status: 'number',
+      userCode: 'string',
+      gmtCreate: 'string',
+      gmtModified: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryJobCodeDictionaryResponseBodyContent extends $tea.Model {
+  code?: string;
+  category?: string;
+  displayName?: string;
+  doctorType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      category: 'category',
+      displayName: 'displayName',
+      doctorType: 'doctorType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      category: 'string',
+      displayName: 'string',
+      doctorType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureLabourCostResponseBodyList extends $tea.Model {
+  gmtCreate?: number;
+  gmtModified?: number;
+  corpId?: string;
+  labourCostNo?: string;
+  labourCostName?: string;
+  processNo?: string;
+  processName?: string;
+  materialNo?: string;
+  materialName?: string;
+  qualifiedPrice?: number;
+  unQualifiedPrice1?: number;
+  unQualifiedReason1?: string;
+  instanceId?: string;
+  processCode?: string;
+  ext?: string;
+  unQualifiedReason2?: string;
+  unQualifiedPrice2?: number;
+  unQualifiedInfo?: string;
+  static names(): { [key: string]: string } {
+    return {
+      gmtCreate: 'gmtCreate',
+      gmtModified: 'gmtModified',
+      corpId: 'corpId',
+      labourCostNo: 'labourCostNo',
+      labourCostName: 'labourCostName',
+      processNo: 'processNo',
+      processName: 'processName',
+      materialNo: 'materialNo',
+      materialName: 'materialName',
+      qualifiedPrice: 'qualifiedPrice',
+      unQualifiedPrice1: 'unQualifiedPrice1',
+      unQualifiedReason1: 'unQualifiedReason1',
+      instanceId: 'instanceId',
+      processCode: 'processCode',
+      ext: 'ext',
+      unQualifiedReason2: 'unQualifiedReason2',
+      unQualifiedPrice2: 'unQualifiedPrice2',
+      unQualifiedInfo: 'unQualifiedInfo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      gmtCreate: 'number',
+      gmtModified: 'number',
+      corpId: 'string',
+      labourCostNo: 'string',
+      labourCostName: 'string',
+      processNo: 'string',
+      processName: 'string',
+      materialNo: 'string',
+      materialName: 'string',
+      qualifiedPrice: 'number',
+      unQualifiedPrice1: 'number',
+      unQualifiedReason1: 'string',
+      instanceId: 'string',
+      processCode: 'string',
+      ext: 'string',
+      unQualifiedReason2: 'string',
+      unQualifiedPrice2: 'number',
+      unQualifiedInfo: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryHospitalDistrictInfoResponseBodyContent extends $tea.Model {
+  id?: number;
+  districtName?: string;
+  districtType?: number;
+  parentDistrictId?: number;
+  address?: string;
+  deleted?: number;
+  gmtCreate?: string;
+  gmtModified?: string;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+      districtName: 'districtName',
+      districtType: 'districtType',
+      parentDistrictId: 'parentDistrictId',
+      address: 'address',
+      deleted: 'deleted',
+      gmtCreate: 'gmtCreate',
+      gmtModified: 'gmtModified',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'number',
+      districtName: 'string',
+      districtType: 'number',
+      parentDistrictId: 'number',
+      address: 'string',
+      deleted: 'number',
+      gmtCreate: 'string',
+      gmtModified: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class IndustryManufactureCostRecordListGetResponseBodyList extends $tea.Model {
   gmtCreate?: number;
   gmtModified?: number;
@@ -2493,31 +3078,6 @@ export class IndustryManufactureCostRecordListGetResponseBodyList extends $tea.M
   }
 }
 
-export class QueryAllMemberByDeptResponseBodyContent extends $tea.Model {
-  uid?: string;
-  userName?: string;
-  jobNum?: string;
-  static names(): { [key: string]: string } {
-    return {
-      uid: 'uid',
-      userName: 'userName',
-      jobNum: 'jobNum',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      uid: 'string',
-      userName: 'string',
-      jobNum: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class QueryAllMemberByGroupResponseBodyContent extends $tea.Model {
   uid?: string;
   userName?: string;
@@ -2535,28 +3095,6 @@ export class QueryAllMemberByGroupResponseBodyContent extends $tea.Model {
       uid: 'string',
       userName: 'string',
       jobNum: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryUserRolesResponseBodyContent extends $tea.Model {
-  roleCode?: string;
-  roleName?: string;
-  static names(): { [key: string]: string } {
-    return {
-      roleCode: 'roleCode',
-      roleName: 'roleName',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      roleCode: 'string',
-      roleName: 'string',
     };
   }
 
@@ -2597,56 +3135,6 @@ export class QueryHospitalRolesResponseBodyContent extends $tea.Model {
       remark: 'string',
       sort: 'number',
       readOnly: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryAllGroupResponseBodyContent extends $tea.Model {
-  id?: number;
-  name?: string;
-  deptId?: number;
-  static names(): { [key: string]: string } {
-    return {
-      id: 'id',
-      name: 'name',
-      deptId: 'deptId',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      id: 'number',
-      name: 'string',
-      deptId: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryAllGroupsInDeptResponseBodyContent extends $tea.Model {
-  id?: number;
-  name?: string;
-  deptId?: number;
-  static names(): { [key: string]: string } {
-    return {
-      id: 'id',
-      name: 'name',
-      deptId: 'deptId',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      id: 'number',
-      name: 'string',
-      deptId: 'number',
     };
   }
 
@@ -2801,146 +3289,6 @@ export class QueryJobStatusCodeDictionaryResponseBodyContent extends $tea.Model 
       code: 'string',
       category: 'string',
       displayName: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryDepartmentInfoResponseBodyContentLeaderJob extends $tea.Model {
-  code?: string;
-  bizType?: string;
-  category?: string;
-  displayName?: string;
-  static names(): { [key: string]: string } {
-    return {
-      code: 'code',
-      bizType: 'bizType',
-      category: 'category',
-      displayName: 'displayName',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      code: 'string',
-      bizType: 'string',
-      category: 'string',
-      displayName: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryDepartmentInfoResponseBodyContentLeader extends $tea.Model {
-  name?: string;
-  userId?: string;
-  jobNumber?: string;
-  job?: QueryDepartmentInfoResponseBodyContentLeaderJob;
-  static names(): { [key: string]: string } {
-    return {
-      name: 'name',
-      userId: 'userId',
-      jobNumber: 'jobNumber',
-      job: 'job',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      name: 'string',
-      userId: 'string',
-      jobNumber: 'string',
-      job: QueryDepartmentInfoResponseBodyContentLeaderJob,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryDepartmentInfoResponseBodyContentResidentLeaderJob extends $tea.Model {
-  code?: string;
-  bizType?: string;
-  category?: string;
-  displayName?: string;
-  static names(): { [key: string]: string } {
-    return {
-      code: 'code',
-      bizType: 'bizType',
-      category: 'category',
-      displayName: 'displayName',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      code: 'string',
-      bizType: 'string',
-      category: 'string',
-      displayName: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryDepartmentInfoResponseBodyContentResidentLeader extends $tea.Model {
-  name?: string;
-  userId?: string;
-  jobNumber?: string;
-  job?: QueryDepartmentInfoResponseBodyContentResidentLeaderJob;
-  static names(): { [key: string]: string } {
-    return {
-      name: 'name',
-      userId: 'userId',
-      jobNumber: 'jobNumber',
-      job: 'job',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      name: 'string',
-      userId: 'string',
-      jobNumber: 'string',
-      job: QueryDepartmentInfoResponseBodyContentResidentLeaderJob,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryDepartmentInfoResponseBodyContent extends $tea.Model {
-  id?: number;
-  name?: string;
-  leader?: QueryDepartmentInfoResponseBodyContentLeader;
-  residentLeader?: QueryDepartmentInfoResponseBodyContentResidentLeader;
-  static names(): { [key: string]: string } {
-    return {
-      id: 'id',
-      name: 'name',
-      leader: 'leader',
-      residentLeader: 'residentLeader',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      id: 'number',
-      name: 'string',
-      leader: QueryDepartmentInfoResponseBodyContentLeader,
-      residentLeader: QueryDepartmentInfoResponseBodyContentResidentLeader,
     };
   }
 
@@ -3170,74 +3518,6 @@ export class QueryAllDoctorsResponseBodyContent extends $tea.Model {
       status: 'number',
       assessGroupId: 'string',
       assessGroupName: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryUserExtInfoResponseBodyContent extends $tea.Model {
-  userExtendKey?: string;
-  userExtendValue?: string;
-  userExtendDisplayName?: string;
-  orgId?: string;
-  status?: number;
-  userCode?: string;
-  gmtCreate?: string;
-  gmtModified?: string;
-  static names(): { [key: string]: string } {
-    return {
-      userExtendKey: 'userExtendKey',
-      userExtendValue: 'userExtendValue',
-      userExtendDisplayName: 'userExtendDisplayName',
-      orgId: 'orgId',
-      status: 'status',
-      userCode: 'userCode',
-      gmtCreate: 'gmtCreate',
-      gmtModified: 'gmtModified',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      userExtendKey: 'string',
-      userExtendValue: 'string',
-      userExtendDisplayName: 'string',
-      orgId: 'string',
-      status: 'number',
-      userCode: 'string',
-      gmtCreate: 'string',
-      gmtModified: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryJobCodeDictionaryResponseBodyContent extends $tea.Model {
-  code?: string;
-  category?: string;
-  displayName?: string;
-  doctorType?: string;
-  static names(): { [key: string]: string } {
-    return {
-      code: 'code',
-      category: 'category',
-      displayName: 'displayName',
-      doctorType: 'doctorType',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      code: 'string',
-      category: 'string',
-      displayName: 'string',
-      doctorType: 'string',
     };
   }
 
@@ -3549,76 +3829,6 @@ export class QueryAllDepartmentResponseBodyContent extends $tea.Model {
   }
 }
 
-export class IndustryManufactureLabourCostResponseBodyList extends $tea.Model {
-  gmtCreate?: number;
-  gmtModified?: number;
-  corpId?: string;
-  labourCostNo?: string;
-  labourCostName?: string;
-  processNo?: string;
-  processName?: string;
-  materialNo?: string;
-  materialName?: string;
-  qualifiedPrice?: number;
-  unQualifiedPrice1?: number;
-  unQualifiedReason1?: string;
-  instanceId?: string;
-  processCode?: string;
-  ext?: string;
-  unQualifiedReason2?: string;
-  unQualifiedPrice2?: number;
-  unQualifiedInfo?: string;
-  static names(): { [key: string]: string } {
-    return {
-      gmtCreate: 'gmtCreate',
-      gmtModified: 'gmtModified',
-      corpId: 'corpId',
-      labourCostNo: 'labourCostNo',
-      labourCostName: 'labourCostName',
-      processNo: 'processNo',
-      processName: 'processName',
-      materialNo: 'materialNo',
-      materialName: 'materialName',
-      qualifiedPrice: 'qualifiedPrice',
-      unQualifiedPrice1: 'unQualifiedPrice1',
-      unQualifiedReason1: 'unQualifiedReason1',
-      instanceId: 'instanceId',
-      processCode: 'processCode',
-      ext: 'ext',
-      unQualifiedReason2: 'unQualifiedReason2',
-      unQualifiedPrice2: 'unQualifiedPrice2',
-      unQualifiedInfo: 'unQualifiedInfo',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      gmtCreate: 'number',
-      gmtModified: 'number',
-      corpId: 'string',
-      labourCostNo: 'string',
-      labourCostName: 'string',
-      processNo: 'string',
-      processName: 'string',
-      materialNo: 'string',
-      materialName: 'string',
-      qualifiedPrice: 'number',
-      unQualifiedPrice1: 'number',
-      unQualifiedReason1: 'string',
-      instanceId: 'string',
-      processCode: 'string',
-      ext: 'string',
-      unQualifiedReason2: 'string',
-      unQualifiedPrice2: 'number',
-      unQualifiedInfo: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class QueryGroupInfoResponseBodyContentLeaderJob extends $tea.Model {
   code?: string;
   bizType?: string;
@@ -3722,6 +3932,382 @@ export default class Client extends OpenApi {
   }
 
 
+  async queryUserInfo(userId: string): Promise<QueryUserInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryUserInfoHeaders({ });
+    return await this.queryUserInfoWithOptions(userId, headers, runtime);
+  }
+
+  async queryUserInfoWithOptions(userId: string, headers: QueryUserInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserInfoResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<QueryUserInfoResponse>(await this.doROARequest("QueryUserInfo", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/users/${userId}`, "json", req, runtime), new QueryUserInfoResponse({}));
+  }
+
+  async queryAllMemberByDept(deptId: string, request: QueryAllMemberByDeptRequest): Promise<QueryAllMemberByDeptResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryAllMemberByDeptHeaders({ });
+    return await this.queryAllMemberByDeptWithOptions(deptId, request, headers, runtime);
+  }
+
+  async queryAllMemberByDeptWithOptions(deptId: string, request: QueryAllMemberByDeptRequest, headers: QueryAllMemberByDeptHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAllMemberByDeptResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryAllMemberByDeptResponse>(await this.doROARequest("QueryAllMemberByDept", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/departments/${deptId}/members`, "json", req, runtime), new QueryAllMemberByDeptResponse({}));
+  }
+
+  async queryUserRoles(userId: string): Promise<QueryUserRolesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryUserRolesHeaders({ });
+    return await this.queryUserRolesWithOptions(userId, headers, runtime);
+  }
+
+  async queryUserRolesWithOptions(userId: string, headers: QueryUserRolesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserRolesResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<QueryUserRolesResponse>(await this.doROARequest("QueryUserRoles", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/users/${userId}/roles`, "json", req, runtime), new QueryUserRolesResponse({}));
+  }
+
+  async queryAllGroup(request: QueryAllGroupRequest): Promise<QueryAllGroupResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryAllGroupHeaders({ });
+    return await this.queryAllGroupWithOptions(request, headers, runtime);
+  }
+
+  async queryAllGroupWithOptions(request: QueryAllGroupRequest, headers: QueryAllGroupHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAllGroupResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryAllGroupResponse>(await this.doROARequest("QueryAllGroup", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/groups`, "json", req, runtime), new QueryAllGroupResponse({}));
+  }
+
+  async queryAllGroupsInDept(deptId: string, request: QueryAllGroupsInDeptRequest): Promise<QueryAllGroupsInDeptResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryAllGroupsInDeptHeaders({ });
+    return await this.queryAllGroupsInDeptWithOptions(deptId, request, headers, runtime);
+  }
+
+  async queryAllGroupsInDeptWithOptions(deptId: string, request: QueryAllGroupsInDeptRequest, headers: QueryAllGroupsInDeptHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAllGroupsInDeptResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryAllGroupsInDeptResponse>(await this.doROARequest("QueryAllGroupsInDept", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/departments/${deptId}/groups`, "json", req, runtime), new QueryAllGroupsInDeptResponse({}));
+  }
+
+  async queryUserExtendValues(request: QueryUserExtendValuesRequest): Promise<QueryUserExtendValuesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryUserExtendValuesHeaders({ });
+    return await this.queryUserExtendValuesWithOptions(request, headers, runtime);
+  }
+
+  async queryUserExtendValuesWithOptions(request: QueryUserExtendValuesRequest, headers: QueryUserExtendValuesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserExtendValuesResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.userIds)) {
+      body["userIds"] = request.userIds;
+    }
+
+    if (!Util.isUnset(request.userExtendKey)) {
+      body["userExtendKey"] = request.userExtendKey;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<QueryUserExtendValuesResponse>(await this.doROARequest("QueryUserExtendValues", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/medicals/users/extends/query`, "json", req, runtime), new QueryUserExtendValuesResponse({}));
+  }
+
+  async queryDepartmentInfo(deptId: string): Promise<QueryDepartmentInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryDepartmentInfoHeaders({ });
+    return await this.queryDepartmentInfoWithOptions(deptId, headers, runtime);
+  }
+
+  async queryDepartmentInfoWithOptions(deptId: string, headers: QueryDepartmentInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDepartmentInfoResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<QueryDepartmentInfoResponse>(await this.doROARequest("QueryDepartmentInfo", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/departments/${deptId}`, "json", req, runtime), new QueryDepartmentInfoResponse({}));
+  }
+
+  async updateUserExtendInfo(userId: string, request: UpdateUserExtendInfoRequest): Promise<UpdateUserExtendInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateUserExtendInfoHeaders({ });
+    return await this.updateUserExtendInfoWithOptions(userId, request, headers, runtime);
+  }
+
+  async updateUserExtendInfoWithOptions(userId: string, request: UpdateUserExtendInfoRequest, headers: UpdateUserExtendInfoHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateUserExtendInfoResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.jobCode)) {
+      body["jobCode"] = request.jobCode;
+    }
+
+    if (!Util.isUnset(request.userProbCode)) {
+      body["userProbCode"] = request.userProbCode;
+    }
+
+    if (!Util.isUnset(request.jobStatusCode)) {
+      body["jobStatusCode"] = request.jobStatusCode;
+    }
+
+    if (!Util.isUnset(request.comments)) {
+      body["comments"] = request.comments;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateUserExtendInfoResponse>(await this.doROARequest("UpdateUserExtendInfo", "industry_1.0", "HTTP", "PUT", "AK", `/v1.0/industry/medicals/users/${userId}/extInfos`, "none", req, runtime), new UpdateUserExtendInfoResponse({}));
+  }
+
+  async queryUserExtInfo(userId: string): Promise<QueryUserExtInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryUserExtInfoHeaders({ });
+    return await this.queryUserExtInfoWithOptions(userId, headers, runtime);
+  }
+
+  async queryUserExtInfoWithOptions(userId: string, headers: QueryUserExtInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserExtInfoResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<QueryUserExtInfoResponse>(await this.doROARequest("QueryUserExtInfo", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/users/${userId}/extInfos`, "json", req, runtime), new QueryUserExtInfoResponse({}));
+  }
+
+  async queryJobCodeDictionary(): Promise<QueryJobCodeDictionaryResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryJobCodeDictionaryHeaders({ });
+    return await this.queryJobCodeDictionaryWithOptions(headers, runtime);
+  }
+
+  async queryJobCodeDictionaryWithOptions(headers: QueryJobCodeDictionaryHeaders, runtime: $Util.RuntimeOptions): Promise<QueryJobCodeDictionaryResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<QueryJobCodeDictionaryResponse>(await this.doROARequest("QueryJobCodeDictionary", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/jobCodes`, "json", req, runtime), new QueryJobCodeDictionaryResponse({}));
+  }
+
+  async industryManufactureLabourCost(request: IndustryManufactureLabourCostRequest): Promise<IndustryManufactureLabourCostResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new IndustryManufactureLabourCostHeaders({ });
+    return await this.industryManufactureLabourCostWithOptions(request, headers, runtime);
+  }
+
+  async industryManufactureLabourCostWithOptions(request: IndustryManufactureLabourCostRequest, headers: IndustryManufactureLabourCostHeaders, runtime: $Util.RuntimeOptions): Promise<IndustryManufactureLabourCostResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.processNo)) {
+      body["processNo"] = request.processNo;
+    }
+
+    if (!Util.isUnset(request.materialNo)) {
+      body["materialNo"] = request.materialNo;
+    }
+
+    if (!Util.isUnset(request.startTime)) {
+      body["startTime"] = request.startTime;
+    }
+
+    if (!Util.isUnset(request.endTime)) {
+      body["endTime"] = request.endTime;
+    }
+
+    if (!Util.isUnset(request.cursor)) {
+      body["cursor"] = request.cursor;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      body["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      body["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.tokenGrantType)) {
+      body["tokenGrantType"] = request.tokenGrantType;
+    }
+
+    if (!Util.isUnset(request.orgId)) {
+      body["orgId"] = request.orgId;
+    }
+
+    if (!Util.isUnset(request.corpId)) {
+      body["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.isvOrgId)) {
+      body["isvOrgId"] = request.isvOrgId;
+    }
+
+    if (!Util.isUnset(request.suiteKey)) {
+      body["suiteKey"] = request.suiteKey;
+    }
+
+    if (!Util.isUnset(request.microappAgentId)) {
+      body["microappAgentId"] = request.microappAgentId;
+    }
+
+    if (!Util.isUnset(request.appIds)) {
+      body["appIds"] = request.appIds;
+    }
+
+    if (!Util.isUnset(request.appId)) {
+      body["appId"] = request.appId;
+    }
+
+    if (!Util.isUnset(request.appName)) {
+      body["appName"] = request.appName;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<IndustryManufactureLabourCostResponse>(await this.doROARequest("IndustryManufactureLabourCost", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/manufactures/labourCosts/query`, "json", req, runtime), new IndustryManufactureLabourCostResponse({}));
+  }
+
   async queryHospitalDistrictInfo(request: QueryHospitalDistrictInfoRequest): Promise<QueryHospitalDistrictInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryHospitalDistrictInfoHeaders({ });
@@ -3753,28 +4339,6 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<QueryHospitalDistrictInfoResponse>(await this.doROARequest("QueryHospitalDistrictInfo", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/districts`, "json", req, runtime), new QueryHospitalDistrictInfoResponse({}));
-  }
-
-  async queryUserInfo(userId: string): Promise<QueryUserInfoResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryUserInfoHeaders({ });
-    return await this.queryUserInfoWithOptions(userId, headers, runtime);
-  }
-
-  async queryUserInfoWithOptions(userId: string, headers: QueryUserInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserInfoResponse> {
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-    });
-    return $tea.cast<QueryUserInfoResponse>(await this.doROARequest("QueryUserInfo", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/users/${userId}`, "json", req, runtime), new QueryUserInfoResponse({}));
   }
 
   async industryManufactureCostRecordListGet(request: IndustryManufactureCostRecordListGetRequest): Promise<IndustryManufactureCostRecordListGetResponse> {
@@ -3874,39 +4438,6 @@ export default class Client extends OpenApi {
     return $tea.cast<IndustryManufactureCostRecordListGetResponse>(await this.doROARequest("IndustryManufactureCostRecordListGet", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/manufactures/materialCostRecords/query`, "json", req, runtime), new IndustryManufactureCostRecordListGetResponse({}));
   }
 
-  async queryAllMemberByDept(deptId: string, request: QueryAllMemberByDeptRequest): Promise<QueryAllMemberByDeptResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryAllMemberByDeptHeaders({ });
-    return await this.queryAllMemberByDeptWithOptions(deptId, request, headers, runtime);
-  }
-
-  async queryAllMemberByDeptWithOptions(deptId: string, request: QueryAllMemberByDeptRequest, headers: QueryAllMemberByDeptHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAllMemberByDeptResponse> {
-    Util.validateModel(request);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.pageSize)) {
-      query["pageSize"] = request.pageSize;
-    }
-
-    if (!Util.isUnset(request.pageNumber)) {
-      query["pageNumber"] = request.pageNumber;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      query: OpenApiUtil.query(query),
-    });
-    return $tea.cast<QueryAllMemberByDeptResponse>(await this.doROARequest("QueryAllMemberByDept", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/departments/${deptId}/members`, "json", req, runtime), new QueryAllMemberByDeptResponse({}));
-  }
-
   async queryAllMemberByGroup(groupId: string, request: QueryAllMemberByGroupRequest): Promise<QueryAllMemberByGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryAllMemberByGroupHeaders({ });
@@ -3940,28 +4471,6 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryAllMemberByGroupResponse>(await this.doROARequest("QueryAllMemberByGroup", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/groups/${groupId}/members`, "json", req, runtime), new QueryAllMemberByGroupResponse({}));
   }
 
-  async queryUserRoles(userId: string): Promise<QueryUserRolesResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryUserRolesHeaders({ });
-    return await this.queryUserRolesWithOptions(userId, headers, runtime);
-  }
-
-  async queryUserRolesWithOptions(userId: string, headers: QueryUserRolesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserRolesResponse> {
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-    });
-    return $tea.cast<QueryUserRolesResponse>(await this.doROARequest("QueryUserRoles", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/users/${userId}/roles`, "json", req, runtime), new QueryUserRolesResponse({}));
-  }
-
   async queryHospitalRoles(): Promise<QueryHospitalRolesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryHospitalRolesHeaders({ });
@@ -3982,72 +4491,6 @@ export default class Client extends OpenApi {
       headers: realHeaders,
     });
     return $tea.cast<QueryHospitalRolesResponse>(await this.doROARequest("QueryHospitalRoles", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/roles`, "json", req, runtime), new QueryHospitalRolesResponse({}));
-  }
-
-  async queryAllGroup(request: QueryAllGroupRequest): Promise<QueryAllGroupResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryAllGroupHeaders({ });
-    return await this.queryAllGroupWithOptions(request, headers, runtime);
-  }
-
-  async queryAllGroupWithOptions(request: QueryAllGroupRequest, headers: QueryAllGroupHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAllGroupResponse> {
-    Util.validateModel(request);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.pageSize)) {
-      query["pageSize"] = request.pageSize;
-    }
-
-    if (!Util.isUnset(request.pageNumber)) {
-      query["pageNumber"] = request.pageNumber;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      query: OpenApiUtil.query(query),
-    });
-    return $tea.cast<QueryAllGroupResponse>(await this.doROARequest("QueryAllGroup", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/groups`, "json", req, runtime), new QueryAllGroupResponse({}));
-  }
-
-  async queryAllGroupsInDept(deptId: string, request: QueryAllGroupsInDeptRequest): Promise<QueryAllGroupsInDeptResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryAllGroupsInDeptHeaders({ });
-    return await this.queryAllGroupsInDeptWithOptions(deptId, request, headers, runtime);
-  }
-
-  async queryAllGroupsInDeptWithOptions(deptId: string, request: QueryAllGroupsInDeptRequest, headers: QueryAllGroupsInDeptHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAllGroupsInDeptResponse> {
-    Util.validateModel(request);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.pageSize)) {
-      query["pageSize"] = request.pageSize;
-    }
-
-    if (!Util.isUnset(request.pageNumber)) {
-      query["pageNumber"] = request.pageNumber;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      query: OpenApiUtil.query(query),
-    });
-    return $tea.cast<QueryAllGroupsInDeptResponse>(await this.doROARequest("QueryAllGroupsInDept", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/departments/${deptId}/groups`, "json", req, runtime), new QueryAllGroupsInDeptResponse({}));
   }
 
   async queryBizOptLog(request: QueryBizOptLogRequest): Promise<QueryBizOptLogResponse> {
@@ -4160,28 +4603,6 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryJobStatusCodeDictionaryResponse>(await this.doROARequest("QueryJobStatusCodeDictionary", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/jobStatusCodes`, "json", req, runtime), new QueryJobStatusCodeDictionaryResponse({}));
   }
 
-  async queryDepartmentInfo(deptId: string): Promise<QueryDepartmentInfoResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryDepartmentInfoHeaders({ });
-    return await this.queryDepartmentInfoWithOptions(deptId, headers, runtime);
-  }
-
-  async queryDepartmentInfoWithOptions(deptId: string, headers: QueryDepartmentInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDepartmentInfoResponse> {
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-    });
-    return $tea.cast<QueryDepartmentInfoResponse>(await this.doROARequest("QueryDepartmentInfo", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/departments/${deptId}`, "json", req, runtime), new QueryDepartmentInfoResponse({}));
-  }
-
   async industryManufactureMaterialList(request: IndustryManufactureMaterialListRequest): Promise<IndustryManufactureMaterialListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new IndustryManufactureMaterialListHeaders({ });
@@ -4269,47 +4690,6 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<IndustryManufactureMaterialListResponse>(await this.doROARequest("IndustryManufactureMaterialList", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/manufactures/materials/query`, "json", req, runtime), new IndustryManufactureMaterialListResponse({}));
-  }
-
-  async updateUserExtendInfo(userId: string, request: UpdateUserExtendInfoRequest): Promise<UpdateUserExtendInfoResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateUserExtendInfoHeaders({ });
-    return await this.updateUserExtendInfoWithOptions(userId, request, headers, runtime);
-  }
-
-  async updateUserExtendInfoWithOptions(userId: string, request: UpdateUserExtendInfoRequest, headers: UpdateUserExtendInfoHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateUserExtendInfoResponse> {
-    Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.jobCode)) {
-      body["jobCode"] = request.jobCode;
-    }
-
-    if (!Util.isUnset(request.userProbCode)) {
-      body["userProbCode"] = request.userProbCode;
-    }
-
-    if (!Util.isUnset(request.jobStatusCode)) {
-      body["jobStatusCode"] = request.jobStatusCode;
-    }
-
-    if (!Util.isUnset(request.comments)) {
-      body["comments"] = request.comments;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<UpdateUserExtendInfoResponse>(await this.doROARequest("UpdateUserExtendInfo", "industry_1.0", "HTTP", "PUT", "AK", `/v1.0/industry/medicals/users/${userId}/extInfos`, "none", req, runtime), new UpdateUserExtendInfoResponse({}));
   }
 
   async industryMmanufactureMaterialCostGet(request: IndustryMmanufactureMaterialCostGetRequest): Promise<IndustryMmanufactureMaterialCostGetResponse> {
@@ -4527,50 +4907,6 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryAllDoctorsResponse>(await this.doROARequest("QueryAllDoctors", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/doctors`, "json", req, runtime), new QueryAllDoctorsResponse({}));
   }
 
-  async queryUserExtInfo(userId: string): Promise<QueryUserExtInfoResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryUserExtInfoHeaders({ });
-    return await this.queryUserExtInfoWithOptions(userId, headers, runtime);
-  }
-
-  async queryUserExtInfoWithOptions(userId: string, headers: QueryUserExtInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserExtInfoResponse> {
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-    });
-    return $tea.cast<QueryUserExtInfoResponse>(await this.doROARequest("QueryUserExtInfo", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/users/${userId}/extInfos`, "json", req, runtime), new QueryUserExtInfoResponse({}));
-  }
-
-  async queryJobCodeDictionary(): Promise<QueryJobCodeDictionaryResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryJobCodeDictionaryHeaders({ });
-    return await this.queryJobCodeDictionaryWithOptions(headers, runtime);
-  }
-
-  async queryJobCodeDictionaryWithOptions(headers: QueryJobCodeDictionaryHeaders, runtime: $Util.RuntimeOptions): Promise<QueryJobCodeDictionaryResponse> {
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-    });
-    return $tea.cast<QueryJobCodeDictionaryResponse>(await this.doROARequest("QueryJobCodeDictionary", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/jobCodes`, "json", req, runtime), new QueryJobCodeDictionaryResponse({}));
-  }
-
   async queryAllDepartment(request: QueryAllDepartmentRequest): Promise<QueryAllDepartmentResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryAllDepartmentHeaders({ });
@@ -4604,95 +4940,6 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryAllDepartmentResponse>(await this.doROARequest("QueryAllDepartment", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/departments`, "json", req, runtime), new QueryAllDepartmentResponse({}));
   }
 
-  async industryManufactureLabourCost(request: IndustryManufactureLabourCostRequest): Promise<IndustryManufactureLabourCostResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new IndustryManufactureLabourCostHeaders({ });
-    return await this.industryManufactureLabourCostWithOptions(request, headers, runtime);
-  }
-
-  async industryManufactureLabourCostWithOptions(request: IndustryManufactureLabourCostRequest, headers: IndustryManufactureLabourCostHeaders, runtime: $Util.RuntimeOptions): Promise<IndustryManufactureLabourCostResponse> {
-    Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.processNo)) {
-      body["processNo"] = request.processNo;
-    }
-
-    if (!Util.isUnset(request.materialNo)) {
-      body["materialNo"] = request.materialNo;
-    }
-
-    if (!Util.isUnset(request.startTime)) {
-      body["startTime"] = request.startTime;
-    }
-
-    if (!Util.isUnset(request.endTime)) {
-      body["endTime"] = request.endTime;
-    }
-
-    if (!Util.isUnset(request.cursor)) {
-      body["cursor"] = request.cursor;
-    }
-
-    if (!Util.isUnset(request.pageNumber)) {
-      body["pageNumber"] = request.pageNumber;
-    }
-
-    if (!Util.isUnset(request.pageSize)) {
-      body["pageSize"] = request.pageSize;
-    }
-
-    if (!Util.isUnset(request.tokenGrantType)) {
-      body["tokenGrantType"] = request.tokenGrantType;
-    }
-
-    if (!Util.isUnset(request.orgId)) {
-      body["orgId"] = request.orgId;
-    }
-
-    if (!Util.isUnset(request.corpId)) {
-      body["corpId"] = request.corpId;
-    }
-
-    if (!Util.isUnset(request.isvOrgId)) {
-      body["isvOrgId"] = request.isvOrgId;
-    }
-
-    if (!Util.isUnset(request.suiteKey)) {
-      body["suiteKey"] = request.suiteKey;
-    }
-
-    if (!Util.isUnset(request.microappAgentId)) {
-      body["microappAgentId"] = request.microappAgentId;
-    }
-
-    if (!Util.isUnset(request.appIds)) {
-      body["appIds"] = request.appIds;
-    }
-
-    if (!Util.isUnset(request.appId)) {
-      body["appId"] = request.appId;
-    }
-
-    if (!Util.isUnset(request.appName)) {
-      body["appName"] = request.appName;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<IndustryManufactureLabourCostResponse>(await this.doROARequest("IndustryManufactureLabourCost", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/manufactures/labourCosts/query`, "json", req, runtime), new IndustryManufactureLabourCostResponse({}));
-  }
-
   async queryGroupInfo(groupId: string): Promise<QueryGroupInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryGroupInfoHeaders({ });
@@ -4713,6 +4960,43 @@ export default class Client extends OpenApi {
       headers: realHeaders,
     });
     return $tea.cast<QueryGroupInfoResponse>(await this.doROARequest("QueryGroupInfo", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/groups/${groupId}`, "json", req, runtime), new QueryGroupInfoResponse({}));
+  }
+
+  async saveUserExtendValues(userId: string, request: SaveUserExtendValuesRequest): Promise<SaveUserExtendValuesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SaveUserExtendValuesHeaders({ });
+    return await this.saveUserExtendValuesWithOptions(userId, request, headers, runtime);
+  }
+
+  async saveUserExtendValuesWithOptions(userId: string, request: SaveUserExtendValuesRequest, headers: SaveUserExtendValuesHeaders, runtime: $Util.RuntimeOptions): Promise<SaveUserExtendValuesResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.userExtendKey)) {
+      query["userExtendKey"] = request.userExtendKey;
+    }
+
+    if (!Util.isUnset(request.userExtendValue)) {
+      query["userExtendValue"] = request.userExtendValue;
+    }
+
+    if (!Util.isUnset(request.userDisplayName)) {
+      query["userDisplayName"] = request.userDisplayName;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<SaveUserExtendValuesResponse>(await this.doROARequest("SaveUserExtendValues", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/medicals/users/${userId}/extends`, "json", req, runtime), new SaveUserExtendValuesResponse({}));
   }
 
 }

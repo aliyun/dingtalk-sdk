@@ -1551,6 +1551,7 @@ export class UpdateCrmPersonalCustomerRequest extends $tea.Model {
   data?: { [key: string]: any };
   extendData?: { [key: string]: any };
   permission?: UpdateCrmPersonalCustomerRequestPermission;
+  relationType?: string;
   skipDuplicateCheck?: boolean;
   action?: string;
   static names(): { [key: string]: string } {
@@ -1561,6 +1562,7 @@ export class UpdateCrmPersonalCustomerRequest extends $tea.Model {
       data: 'data',
       extendData: 'extendData',
       permission: 'permission',
+      relationType: 'relationType',
       skipDuplicateCheck: 'skipDuplicateCheck',
       action: 'action',
     };
@@ -1574,6 +1576,7 @@ export class UpdateCrmPersonalCustomerRequest extends $tea.Model {
       data: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
       extendData: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
       permission: UpdateCrmPersonalCustomerRequestPermission,
+      relationType: 'string',
       skipDuplicateCheck: 'boolean',
       action: 'string',
     };
@@ -1987,6 +1990,112 @@ export class DeleteRelationMetaFieldResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: DeleteRelationMetaFieldResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCrmGroupChatSingleHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCrmGroupChatSingleRequest extends $tea.Model {
+  openConversationId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openConversationId: 'openConversationId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openConversationId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCrmGroupChatSingleResponseBody extends $tea.Model {
+  chatId?: string;
+  openConversationId?: string;
+  openGroupSetId?: string;
+  ownerUserId?: string;
+  ownerUserName?: string;
+  name?: string;
+  memberCount?: number;
+  gmtCreate?: number;
+  iconUrl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      chatId: 'chatId',
+      openConversationId: 'openConversationId',
+      openGroupSetId: 'openGroupSetId',
+      ownerUserId: 'ownerUserId',
+      ownerUserName: 'ownerUserName',
+      name: 'name',
+      memberCount: 'memberCount',
+      gmtCreate: 'gmtCreate',
+      iconUrl: 'iconUrl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      chatId: 'string',
+      openConversationId: 'string',
+      openGroupSetId: 'string',
+      ownerUserId: 'string',
+      ownerUserName: 'string',
+      name: 'string',
+      memberCount: 'number',
+      gmtCreate: 'number',
+      iconUrl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCrmGroupChatSingleResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetCrmGroupChatSingleResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetCrmGroupChatSingleResponseBody,
     };
   }
 
@@ -7915,6 +8024,10 @@ export default class Client extends OpenApi {
       body["permission"] = request.permission;
     }
 
+    if (!Util.isUnset(request.relationType)) {
+      body["relationType"] = request.relationType;
+    }
+
     if (!Util.isUnset(request.skipDuplicateCheck)) {
       body["skipDuplicateCheck"] = request.skipDuplicateCheck;
     }
@@ -8090,6 +8203,35 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<DeleteRelationMetaFieldResponse>(await this.doROARequest("DeleteRelationMetaField", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/relations/metas/fields/remove`, "json", req, runtime), new DeleteRelationMetaFieldResponse({}));
+  }
+
+  async getCrmGroupChatSingle(request: GetCrmGroupChatSingleRequest): Promise<GetCrmGroupChatSingleResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetCrmGroupChatSingleHeaders({ });
+    return await this.getCrmGroupChatSingleWithOptions(request, headers, runtime);
+  }
+
+  async getCrmGroupChatSingleWithOptions(request: GetCrmGroupChatSingleRequest, headers: GetCrmGroupChatSingleHeaders, runtime: $Util.RuntimeOptions): Promise<GetCrmGroupChatSingleResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openConversationId)) {
+      query["openConversationId"] = request.openConversationId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetCrmGroupChatSingleResponse>(await this.doROARequest("GetCrmGroupChatSingle", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/crmGroupChats/query`, "json", req, runtime), new GetCrmGroupChatSingleResponse({}));
   }
 
   async createGroupSet(request: CreateGroupSetRequest): Promise<CreateGroupSetResponse> {
