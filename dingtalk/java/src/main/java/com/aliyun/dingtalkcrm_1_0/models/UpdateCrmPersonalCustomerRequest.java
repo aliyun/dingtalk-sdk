@@ -22,6 +22,9 @@ public class UpdateCrmPersonalCustomerRequest extends TeaModel {
     @NameInMap("permission")
     public UpdateCrmPersonalCustomerRequestPermission permission;
 
+    @NameInMap("relationType")
+    public String relationType;
+
     // 跳过uk查重
     @NameInMap("skipDuplicateCheck")
     public Boolean skipDuplicateCheck;
@@ -81,6 +84,14 @@ public class UpdateCrmPersonalCustomerRequest extends TeaModel {
     }
     public UpdateCrmPersonalCustomerRequestPermission getPermission() {
         return this.permission;
+    }
+
+    public UpdateCrmPersonalCustomerRequest setRelationType(String relationType) {
+        this.relationType = relationType;
+        return this;
+    }
+    public String getRelationType() {
+        return this.relationType;
     }
 
     public UpdateCrmPersonalCustomerRequest setSkipDuplicateCheck(Boolean skipDuplicateCheck) {

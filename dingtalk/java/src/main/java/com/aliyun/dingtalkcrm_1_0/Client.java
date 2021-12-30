@@ -663,6 +663,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("permission", request.permission);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.relationType)) {
+            body.put("relationType", request.relationType);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.skipDuplicateCheck)) {
             body.put("skipDuplicateCheck", request.skipDuplicateCheck);
         }
@@ -838,6 +842,35 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("DeleteRelationMetaField", "crm_1.0", "HTTP", "POST", "AK", "/v1.0/crm/relations/metas/fields/remove", "json", req, runtime), new DeleteRelationMetaFieldResponse());
+    }
+
+    public GetCrmGroupChatSingleResponse getCrmGroupChatSingle(GetCrmGroupChatSingleRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        GetCrmGroupChatSingleHeaders headers = new GetCrmGroupChatSingleHeaders();
+        return this.getCrmGroupChatSingleWithOptions(request, headers, runtime);
+    }
+
+    public GetCrmGroupChatSingleResponse getCrmGroupChatSingleWithOptions(GetCrmGroupChatSingleRequest request, GetCrmGroupChatSingleHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
+            query.put("openConversationId", request.openConversationId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("GetCrmGroupChatSingle", "crm_1.0", "HTTP", "POST", "AK", "/v1.0/crm/crmGroupChats/query", "json", req, runtime), new GetCrmGroupChatSingleResponse());
     }
 
     public CreateGroupSetResponse createGroupSet(CreateGroupSetRequest request) throws Exception {
