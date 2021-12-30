@@ -195,6 +195,102 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('ProcessForecast', 'workflow_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/workflow/processes/forecast', 'json', req, runtime)
         )
 
+    def grant_cspace_authorization(
+        self,
+        request: dingtalkworkflow__1__0_models.GrantCspaceAuthorizationRequest,
+    ) -> dingtalkworkflow__1__0_models.GrantCspaceAuthorizationResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.GrantCspaceAuthorizationHeaders()
+        return self.grant_cspace_authorization_with_options(request, headers, runtime)
+
+    async def grant_cspace_authorization_async(
+        self,
+        request: dingtalkworkflow__1__0_models.GrantCspaceAuthorizationRequest,
+    ) -> dingtalkworkflow__1__0_models.GrantCspaceAuthorizationResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.GrantCspaceAuthorizationHeaders()
+        return await self.grant_cspace_authorization_with_options_async(request, headers, runtime)
+
+    def grant_cspace_authorization_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.GrantCspaceAuthorizationRequest,
+        headers: dingtalkworkflow__1__0_models.GrantCspaceAuthorizationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.GrantCspaceAuthorizationResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.space_id):
+            body['spaceId'] = request.space_id
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.duration_seconds):
+            body['durationSeconds'] = request.duration_seconds
+        if not UtilClient.is_unset(request.ding_corp_id):
+            body['dingCorpId'] = request.ding_corp_id
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.GrantCspaceAuthorizationResponse(),
+            self.do_roarequest('GrantCspaceAuthorization', 'workflow_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/workflow/spaces/authorize', 'none', req, runtime)
+        )
+
+    async def grant_cspace_authorization_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.GrantCspaceAuthorizationRequest,
+        headers: dingtalkworkflow__1__0_models.GrantCspaceAuthorizationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.GrantCspaceAuthorizationResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.space_id):
+            body['spaceId'] = request.space_id
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.duration_seconds):
+            body['durationSeconds'] = request.duration_seconds
+        if not UtilClient.is_unset(request.ding_corp_id):
+            body['dingCorpId'] = request.ding_corp_id
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.GrantCspaceAuthorizationResponse(),
+            await self.do_roarequest_async('GrantCspaceAuthorization', 'workflow_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/workflow/spaces/authorize', 'none', req, runtime)
+        )
+
     def query_all_process_instances(
         self,
         request: dingtalkworkflow__1__0_models.QueryAllProcessInstancesRequest,

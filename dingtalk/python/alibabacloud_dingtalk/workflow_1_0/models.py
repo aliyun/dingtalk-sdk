@@ -1585,6 +1585,145 @@ class ProcessForecastResponse(TeaModel):
         return self
 
 
+class GrantCspaceAuthorizationHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GrantCspaceAuthorizationRequest(TeaModel):
+    def __init__(
+        self,
+        space_id: str = None,
+        type: str = None,
+        user_id: str = None,
+        duration_seconds: int = None,
+        ding_corp_id: str = None,
+        ding_org_id: int = None,
+        ding_isv_org_id: int = None,
+        ding_suite_key: str = None,
+        ding_token_grant_type: int = None,
+    ):
+        # 审批控件 id。
+        self.space_id = space_id
+        # 权限类型。
+        self.type = type
+        # 用户 id。
+        self.user_id = user_id
+        # 权限有效时间，单位为秒。
+        self.duration_seconds = duration_seconds
+        self.ding_corp_id = ding_corp_id
+        self.ding_org_id = ding_org_id
+        self.ding_isv_org_id = ding_isv_org_id
+        self.ding_suite_key = ding_suite_key
+        self.ding_token_grant_type = ding_token_grant_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        if self.type is not None:
+            result['type'] = self.type
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.duration_seconds is not None:
+            result['durationSeconds'] = self.duration_seconds
+        if self.ding_corp_id is not None:
+            result['dingCorpId'] = self.ding_corp_id
+        if self.ding_org_id is not None:
+            result['dingOrgId'] = self.ding_org_id
+        if self.ding_isv_org_id is not None:
+            result['dingIsvOrgId'] = self.ding_isv_org_id
+        if self.ding_suite_key is not None:
+            result['dingSuiteKey'] = self.ding_suite_key
+        if self.ding_token_grant_type is not None:
+            result['dingTokenGrantType'] = self.ding_token_grant_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('durationSeconds') is not None:
+            self.duration_seconds = m.get('durationSeconds')
+        if m.get('dingCorpId') is not None:
+            self.ding_corp_id = m.get('dingCorpId')
+        if m.get('dingOrgId') is not None:
+            self.ding_org_id = m.get('dingOrgId')
+        if m.get('dingIsvOrgId') is not None:
+            self.ding_isv_org_id = m.get('dingIsvOrgId')
+        if m.get('dingSuiteKey') is not None:
+            self.ding_suite_key = m.get('dingSuiteKey')
+        if m.get('dingTokenGrantType') is not None:
+            self.ding_token_grant_type = m.get('dingTokenGrantType')
+        return self
+
+
+class GrantCspaceAuthorizationResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+    ):
+        self.headers = headers
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        return self
+
+
 class QueryAllProcessInstancesHeaders(TeaModel):
     def __init__(
         self,

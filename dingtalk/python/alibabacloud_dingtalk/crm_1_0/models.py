@@ -5507,6 +5507,7 @@ class UpdateCrmPersonalCustomerRequest(TeaModel):
         data: Dict[str, Any] = None,
         extend_data: Dict[str, Any] = None,
         permission: UpdateCrmPersonalCustomerRequestPermission = None,
+        relation_type: str = None,
         skip_duplicate_check: bool = None,
         action: str = None,
     ):
@@ -5516,6 +5517,7 @@ class UpdateCrmPersonalCustomerRequest(TeaModel):
         self.data = data
         self.extend_data = extend_data
         self.permission = permission
+        self.relation_type = relation_type
         # 跳过uk查重
         self.skip_duplicate_check = skip_duplicate_check
         # 公海领取客户：publicDraw 公海分配客户：publicAssign 其余场景：（不用传）
@@ -5543,6 +5545,8 @@ class UpdateCrmPersonalCustomerRequest(TeaModel):
             result['extendData'] = self.extend_data
         if self.permission is not None:
             result['permission'] = self.permission.to_map()
+        if self.relation_type is not None:
+            result['relationType'] = self.relation_type
         if self.skip_duplicate_check is not None:
             result['skipDuplicateCheck'] = self.skip_duplicate_check
         if self.action is not None:
@@ -5564,6 +5568,8 @@ class UpdateCrmPersonalCustomerRequest(TeaModel):
         if m.get('permission') is not None:
             temp_model = UpdateCrmPersonalCustomerRequestPermission()
             self.permission = temp_model.from_map(m['permission'])
+        if m.get('relationType') is not None:
+            self.relation_type = m.get('relationType')
         if m.get('skipDuplicateCheck') is not None:
             self.skip_duplicate_check = m.get('skipDuplicateCheck')
         if m.get('action') is not None:
@@ -6565,6 +6571,188 @@ class DeleteRelationMetaFieldResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = DeleteRelationMetaFieldResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetCrmGroupChatSingleHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetCrmGroupChatSingleRequest(TeaModel):
+    def __init__(
+        self,
+        open_conversation_id: str = None,
+    ):
+        # 客户群openConversationId
+        self.open_conversation_id = open_conversation_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        return self
+
+
+class GetCrmGroupChatSingleResponseBody(TeaModel):
+    def __init__(
+        self,
+        chat_id: str = None,
+        open_conversation_id: str = None,
+        open_group_set_id: str = None,
+        owner_user_id: str = None,
+        owner_user_name: str = None,
+        name: str = None,
+        member_count: int = None,
+        gmt_create: int = None,
+        icon_url: str = None,
+    ):
+        # 客户群chatId
+        self.chat_id = chat_id
+        # 客户群openConversationId
+        self.open_conversation_id = open_conversation_id
+        # 群组openGroupSetId
+        self.open_group_set_id = open_group_set_id
+        # 群主userId
+        self.owner_user_id = owner_user_id
+        # 群主userName
+        self.owner_user_name = owner_user_name
+        # 客户群名
+        self.name = name
+        # 客户群成员数
+        self.member_count = member_count
+        # 创建时间(时间戳)
+        self.gmt_create = gmt_create
+        # 群头像地址
+        self.icon_url = icon_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.chat_id is not None:
+            result['chatId'] = self.chat_id
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.open_group_set_id is not None:
+            result['openGroupSetId'] = self.open_group_set_id
+        if self.owner_user_id is not None:
+            result['ownerUserId'] = self.owner_user_id
+        if self.owner_user_name is not None:
+            result['ownerUserName'] = self.owner_user_name
+        if self.name is not None:
+            result['name'] = self.name
+        if self.member_count is not None:
+            result['memberCount'] = self.member_count
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.icon_url is not None:
+            result['iconUrl'] = self.icon_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('chatId') is not None:
+            self.chat_id = m.get('chatId')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('openGroupSetId') is not None:
+            self.open_group_set_id = m.get('openGroupSetId')
+        if m.get('ownerUserId') is not None:
+            self.owner_user_id = m.get('ownerUserId')
+        if m.get('ownerUserName') is not None:
+            self.owner_user_name = m.get('ownerUserName')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('memberCount') is not None:
+            self.member_count = m.get('memberCount')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('iconUrl') is not None:
+            self.icon_url = m.get('iconUrl')
+        return self
+
+
+class GetCrmGroupChatSingleResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetCrmGroupChatSingleResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetCrmGroupChatSingleResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
