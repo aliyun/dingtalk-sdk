@@ -48,6 +48,10 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             public List<string> ParticipantStaffIds { get; set; }
         };
 
+        [NameInMap("relationType")]
+        [Validation(Required=false)]
+        public string RelationType { get; set; }
+
         /// <summary>
         /// 跳过uk查重
         /// </summary>
