@@ -42,6 +42,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetCrmGroupChatHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetCrmGroupChatResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetCrmGroupChatSingleHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetCrmGroupChatSingleRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetCrmGroupChatSingleResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetCrmRolePermissionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetCrmRolePermissionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetCrmRolePermissionResponse;
@@ -945,6 +948,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->permission)) {
             @$body['permission'] = $request->permission;
         }
+        if (!Utils::isUnset($request->relationType)) {
+            @$body['relationType'] = $request->relationType;
+        }
         if (!Utils::isUnset($request->skipDuplicateCheck)) {
             @$body['skipDuplicateCheck'] = $request->skipDuplicateCheck;
         }
@@ -1160,6 +1166,48 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return DeleteRelationMetaFieldResponse::fromMap($this->doROARequest('DeleteRelationMetaField', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/relations/metas/fields/remove', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetCrmGroupChatSingleRequest $request
+     *
+     * @return GetCrmGroupChatSingleResponse
+     */
+    public function getCrmGroupChatSingle($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetCrmGroupChatSingleHeaders([]);
+
+        return $this->getCrmGroupChatSingleWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetCrmGroupChatSingleRequest $request
+     * @param GetCrmGroupChatSingleHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return GetCrmGroupChatSingleResponse
+     */
+    public function getCrmGroupChatSingleWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$query['openConversationId'] = $request->openConversationId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetCrmGroupChatSingleResponse::fromMap($this->doROARequest('GetCrmGroupChatSingle', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/crmGroupChats/query', 'json', $req, $runtime));
     }
 
     /**
