@@ -1303,7 +1303,6 @@ class QueryUserExtendValuesRequest(TeaModel):
         user_ids: List[str] = None,
         user_extend_key: str = None,
     ):
-        # 组织id
         self.ding_org_id = ding_org_id
         # userId列表
         self.user_ids = user_ids

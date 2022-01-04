@@ -1895,6 +1895,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('CreateRemoteClassCourse', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/remoteClasses/courses', 'json', req, runtime)
         )
 
+    def update_remote_class_device(
+        self,
+        request: dingtalkedu__1__0_models.UpdateRemoteClassDeviceRequest,
+    ) -> dingtalkedu__1__0_models.UpdateRemoteClassDeviceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.UpdateRemoteClassDeviceHeaders()
+        return self.update_remote_class_device_with_options(request, headers, runtime)
+
+    async def update_remote_class_device_async(
+        self,
+        request: dingtalkedu__1__0_models.UpdateRemoteClassDeviceRequest,
+    ) -> dingtalkedu__1__0_models.UpdateRemoteClassDeviceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.UpdateRemoteClassDeviceHeaders()
+        return await self.update_remote_class_device_with_options_async(request, headers, runtime)
+
+    def update_remote_class_device_with_options(
+        self,
+        request: dingtalkedu__1__0_models.UpdateRemoteClassDeviceRequest,
+        headers: dingtalkedu__1__0_models.UpdateRemoteClassDeviceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.UpdateRemoteClassDeviceResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.device_code):
+            query['deviceCode'] = request.device_code
+        if not UtilClient.is_unset(request.auth_code):
+            query['authCode'] = request.auth_code
+        if not UtilClient.is_unset(request.device_name):
+            query['deviceName'] = request.device_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.UpdateRemoteClassDeviceResponse(),
+            self.do_roarequest('UpdateRemoteClassDevice', 'edu_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/edu/remoteClasses/deviceNames', 'json', req, runtime)
+        )
+
+    async def update_remote_class_device_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.UpdateRemoteClassDeviceRequest,
+        headers: dingtalkedu__1__0_models.UpdateRemoteClassDeviceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.UpdateRemoteClassDeviceResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.device_code):
+            query['deviceCode'] = request.device_code
+        if not UtilClient.is_unset(request.auth_code):
+            query['authCode'] = request.auth_code
+        if not UtilClient.is_unset(request.device_name):
+            query['deviceName'] = request.device_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.UpdateRemoteClassDeviceResponse(),
+            await self.do_roarequest_async('UpdateRemoteClassDevice', 'edu_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/edu/remoteClasses/deviceNames', 'json', req, runtime)
+        )
+
     def report_device_log(
         self,
         request: dingtalkedu__1__0_models.ReportDeviceLogRequest,

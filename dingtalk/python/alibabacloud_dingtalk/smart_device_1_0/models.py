@@ -500,26 +500,89 @@ class MachineManagerUpdateHeaders(TeaModel):
         return self
 
 
+class MachineManagerUpdateRequestAtmManagerRightMap(TeaModel):
+    def __init__(
+        self,
+        attendance_person_manage: bool = None,
+        finger_punch_manage: bool = None,
+        face_punch_manage: bool = None,
+        bluetooth_punch_manage: bool = None,
+        device_settings: bool = None,
+        device_reset: bool = None,
+    ):
+        # 添加/删除考勤人员。
+        self.attendance_person_manage = attendance_person_manage
+        # 指纹打卡管理。
+        self.finger_punch_manage = finger_punch_manage
+        # 人脸打卡管理。
+        self.face_punch_manage = face_punch_manage
+        # 蓝牙打卡管理。
+        self.bluetooth_punch_manage = bluetooth_punch_manage
+        # 设备设置。
+        self.device_settings = device_settings
+        # 设备解绑并重置。
+        self.device_reset = device_reset
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.attendance_person_manage is not None:
+            result['attendancePersonManage'] = self.attendance_person_manage
+        if self.finger_punch_manage is not None:
+            result['fingerPunchManage'] = self.finger_punch_manage
+        if self.face_punch_manage is not None:
+            result['facePunchManage'] = self.face_punch_manage
+        if self.bluetooth_punch_manage is not None:
+            result['bluetoothPunchManage'] = self.bluetooth_punch_manage
+        if self.device_settings is not None:
+            result['deviceSettings'] = self.device_settings
+        if self.device_reset is not None:
+            result['deviceReset'] = self.device_reset
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('attendancePersonManage') is not None:
+            self.attendance_person_manage = m.get('attendancePersonManage')
+        if m.get('fingerPunchManage') is not None:
+            self.finger_punch_manage = m.get('fingerPunchManage')
+        if m.get('facePunchManage') is not None:
+            self.face_punch_manage = m.get('facePunchManage')
+        if m.get('bluetoothPunchManage') is not None:
+            self.bluetooth_punch_manage = m.get('bluetoothPunchManage')
+        if m.get('deviceSettings') is not None:
+            self.device_settings = m.get('deviceSettings')
+        if m.get('deviceReset') is not None:
+            self.device_reset = m.get('deviceReset')
+        return self
+
+
 class MachineManagerUpdateRequest(TeaModel):
     def __init__(
         self,
         device_id: int = None,
         user_id: str = None,
         scope_dept_ids: List[int] = None,
-        atm_manager_right_map: Dict[str, bool] = None,
+        atm_manager_right_map: MachineManagerUpdateRequestAtmManagerRightMap = None,
         ding_token_grant_type: int = None,
         ding_suite_key: str = None,
         ding_corp_id: str = None,
         ding_org_id: int = None,
         ding_isv_org_id: int = None,
     ):
-        # 设备id
+        # 设备id。
         self.device_id = device_id
-        # 设备管理员的userId
+        # 设备管理员的userId。
         self.user_id = user_id
-        # 权限范围：可管理的部门id列表
+        # 权限范围：可管理的部门id列表，-1表示全公司
         self.scope_dept_ids = scope_dept_ids
-        # 设备管理员权限点
+        # 设备管理员权限点。
         self.atm_manager_right_map = atm_manager_right_map
         self.ding_token_grant_type = ding_token_grant_type
         self.ding_suite_key = ding_suite_key
@@ -528,7 +591,8 @@ class MachineManagerUpdateRequest(TeaModel):
         self.ding_isv_org_id = ding_isv_org_id
 
     def validate(self):
-        pass
+        if self.atm_manager_right_map:
+            self.atm_manager_right_map.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -543,7 +607,7 @@ class MachineManagerUpdateRequest(TeaModel):
         if self.scope_dept_ids is not None:
             result['scopeDeptIds'] = self.scope_dept_ids
         if self.atm_manager_right_map is not None:
-            result['atmManagerRightMap'] = self.atm_manager_right_map
+            result['atmManagerRightMap'] = self.atm_manager_right_map.to_map()
         if self.ding_token_grant_type is not None:
             result['dingTokenGrantType'] = self.ding_token_grant_type
         if self.ding_suite_key is not None:
@@ -565,7 +629,8 @@ class MachineManagerUpdateRequest(TeaModel):
         if m.get('scopeDeptIds') is not None:
             self.scope_dept_ids = m.get('scopeDeptIds')
         if m.get('atmManagerRightMap') is not None:
-            self.atm_manager_right_map = m.get('atmManagerRightMap')
+            temp_model = MachineManagerUpdateRequestAtmManagerRightMap()
+            self.atm_manager_right_map = temp_model.from_map(m['atmManagerRightMap'])
         if m.get('dingTokenGrantType') is not None:
             self.ding_token_grant_type = m.get('dingTokenGrantType')
         if m.get('dingSuiteKey') is not None:

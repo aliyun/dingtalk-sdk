@@ -5048,6 +5048,328 @@ class NotifyAuthorizationResultResponse(TeaModel):
         return self
 
 
+class GetRunningTaskListHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetRunningTaskListRequest(TeaModel):
+    def __init__(
+        self,
+        process_instance_id_list: str = None,
+        app_type: str = None,
+        system_token: str = None,
+        user_id: str = None,
+        user_corp_id: str = None,
+    ):
+        # 流程实例id列表, 逗号分隔
+        self.process_instance_id_list = process_instance_id_list
+        # appType
+        self.app_type = app_type
+        # systemToken
+        self.system_token = system_token
+        # userId
+        self.user_id = user_id
+        # 用户所属的企业id
+        self.user_corp_id = user_corp_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.process_instance_id_list is not None:
+            result['processInstanceIdList'] = self.process_instance_id_list
+        if self.app_type is not None:
+            result['appType'] = self.app_type
+        if self.system_token is not None:
+            result['systemToken'] = self.system_token
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.user_corp_id is not None:
+            result['userCorpId'] = self.user_corp_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('processInstanceIdList') is not None:
+            self.process_instance_id_list = m.get('processInstanceIdList')
+        if m.get('appType') is not None:
+            self.app_type = m.get('appType')
+        if m.get('systemToken') is not None:
+            self.system_token = m.get('systemToken')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('userCorpId') is not None:
+            self.user_corp_id = m.get('userCorpId')
+        return self
+
+
+class GetRunningTaskListResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        originator_nick_name: str = None,
+        process_instance_id: str = None,
+        originator_name: str = None,
+        title_in_english: str = None,
+        originator_nick_name_in_english: str = None,
+        originator_email: str = None,
+        title: str = None,
+        out_result_name: str = None,
+        actual_action_executor_id: str = None,
+        out_result: str = None,
+        create_time_gmt: str = None,
+        originator_photo: str = None,
+        task_type: str = None,
+        originator_name_in_english: str = None,
+        app_type: str = None,
+        active_time_gmt: str = None,
+        finish_time_gmt: str = None,
+        originator_id: str = None,
+        task_id: str = None,
+        status: str = None,
+    ):
+        # originatorNickName
+        self.originator_nick_name = originator_nick_name
+        # processInstanceId
+        self.process_instance_id = process_instance_id
+        # originatorName
+        self.originator_name = originator_name
+        # 标题英文
+        self.title_in_english = title_in_english
+        # originatorNickNameEn
+        self.originator_nick_name_in_english = originator_nick_name_in_english
+        # originatorEmail
+        self.originator_email = originator_email
+        # 标题
+        self.title = title
+        # outResultName
+        self.out_result_name = out_result_name
+        # 实际执行人id
+        self.actual_action_executor_id = actual_action_executor_id
+        # outResult
+        self.out_result = out_result
+        # 创建时间
+        self.create_time_gmt = create_time_gmt
+        # originatorPhoto
+        self.originator_photo = originator_photo
+        # 任务类型
+        self.task_type = task_type
+        # originatorNameEn
+        self.originator_name_in_english = originator_name_in_english
+        # appType
+        self.app_type = app_type
+        # 激活时间
+        self.active_time_gmt = active_time_gmt
+        # 结束时间
+        self.finish_time_gmt = finish_time_gmt
+        # originatorId
+        self.originator_id = originator_id
+        # 任务id
+        self.task_id = task_id
+        # 状态
+        self.status = status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.originator_nick_name is not None:
+            result['originatorNickName'] = self.originator_nick_name
+        if self.process_instance_id is not None:
+            result['processInstanceId'] = self.process_instance_id
+        if self.originator_name is not None:
+            result['originatorName'] = self.originator_name
+        if self.title_in_english is not None:
+            result['titleInEnglish'] = self.title_in_english
+        if self.originator_nick_name_in_english is not None:
+            result['originatorNickNameInEnglish'] = self.originator_nick_name_in_english
+        if self.originator_email is not None:
+            result['originatorEmail'] = self.originator_email
+        if self.title is not None:
+            result['title'] = self.title
+        if self.out_result_name is not None:
+            result['outResultName'] = self.out_result_name
+        if self.actual_action_executor_id is not None:
+            result['actualActionExecutorId'] = self.actual_action_executor_id
+        if self.out_result is not None:
+            result['outResult'] = self.out_result
+        if self.create_time_gmt is not None:
+            result['createTimeGMT'] = self.create_time_gmt
+        if self.originator_photo is not None:
+            result['originatorPhoto'] = self.originator_photo
+        if self.task_type is not None:
+            result['taskType'] = self.task_type
+        if self.originator_name_in_english is not None:
+            result['originatorNameInEnglish'] = self.originator_name_in_english
+        if self.app_type is not None:
+            result['appType'] = self.app_type
+        if self.active_time_gmt is not None:
+            result['activeTimeGMT'] = self.active_time_gmt
+        if self.finish_time_gmt is not None:
+            result['finishTimeGMT'] = self.finish_time_gmt
+        if self.originator_id is not None:
+            result['originatorId'] = self.originator_id
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('originatorNickName') is not None:
+            self.originator_nick_name = m.get('originatorNickName')
+        if m.get('processInstanceId') is not None:
+            self.process_instance_id = m.get('processInstanceId')
+        if m.get('originatorName') is not None:
+            self.originator_name = m.get('originatorName')
+        if m.get('titleInEnglish') is not None:
+            self.title_in_english = m.get('titleInEnglish')
+        if m.get('originatorNickNameInEnglish') is not None:
+            self.originator_nick_name_in_english = m.get('originatorNickNameInEnglish')
+        if m.get('originatorEmail') is not None:
+            self.originator_email = m.get('originatorEmail')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('outResultName') is not None:
+            self.out_result_name = m.get('outResultName')
+        if m.get('actualActionExecutorId') is not None:
+            self.actual_action_executor_id = m.get('actualActionExecutorId')
+        if m.get('outResult') is not None:
+            self.out_result = m.get('outResult')
+        if m.get('createTimeGMT') is not None:
+            self.create_time_gmt = m.get('createTimeGMT')
+        if m.get('originatorPhoto') is not None:
+            self.originator_photo = m.get('originatorPhoto')
+        if m.get('taskType') is not None:
+            self.task_type = m.get('taskType')
+        if m.get('originatorNameInEnglish') is not None:
+            self.originator_name_in_english = m.get('originatorNameInEnglish')
+        if m.get('appType') is not None:
+            self.app_type = m.get('appType')
+        if m.get('activeTimeGMT') is not None:
+            self.active_time_gmt = m.get('activeTimeGMT')
+        if m.get('finishTimeGMT') is not None:
+            self.finish_time_gmt = m.get('finishTimeGMT')
+        if m.get('originatorId') is not None:
+            self.originator_id = m.get('originatorId')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class GetRunningTaskListResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[GetRunningTaskListResponseBodyResult] = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = GetRunningTaskListResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class GetRunningTaskListResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetRunningTaskListResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetRunningTaskListResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class BuyFreshOrderHeaders(TeaModel):
     def __init__(
         self,

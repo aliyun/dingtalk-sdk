@@ -1847,6 +1847,86 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('NotifyAuthorizationResult', 'yida_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/yida/apps/authorizationResults/notify', 'json', req, runtime)
         )
 
+    def get_running_task_list(
+        self,
+        request: dingtalkyida__1__0_models.GetRunningTaskListRequest,
+    ) -> dingtalkyida__1__0_models.GetRunningTaskListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.GetRunningTaskListHeaders()
+        return self.get_running_task_list_with_options(request, headers, runtime)
+
+    async def get_running_task_list_async(
+        self,
+        request: dingtalkyida__1__0_models.GetRunningTaskListRequest,
+    ) -> dingtalkyida__1__0_models.GetRunningTaskListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.GetRunningTaskListHeaders()
+        return await self.get_running_task_list_with_options_async(request, headers, runtime)
+
+    def get_running_task_list_with_options(
+        self,
+        request: dingtalkyida__1__0_models.GetRunningTaskListRequest,
+        headers: dingtalkyida__1__0_models.GetRunningTaskListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.GetRunningTaskListResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.process_instance_id_list):
+            body['processInstanceIdList'] = request.process_instance_id_list
+        if not UtilClient.is_unset(request.app_type):
+            body['appType'] = request.app_type
+        if not UtilClient.is_unset(request.system_token):
+            body['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.user_corp_id):
+            body['userCorpId'] = request.user_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.GetRunningTaskListResponse(),
+            self.do_roarequest('GetRunningTaskList', 'yida_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/yida/tasks/runningTasks/query', 'json', req, runtime)
+        )
+
+    async def get_running_task_list_with_options_async(
+        self,
+        request: dingtalkyida__1__0_models.GetRunningTaskListRequest,
+        headers: dingtalkyida__1__0_models.GetRunningTaskListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.GetRunningTaskListResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.process_instance_id_list):
+            body['processInstanceIdList'] = request.process_instance_id_list
+        if not UtilClient.is_unset(request.app_type):
+            body['appType'] = request.app_type
+        if not UtilClient.is_unset(request.system_token):
+            body['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.user_corp_id):
+            body['userCorpId'] = request.user_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.GetRunningTaskListResponse(),
+            await self.do_roarequest_async('GetRunningTaskList', 'yida_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/yida/tasks/runningTasks/query', 'json', req, runtime)
+        )
+
     def buy_fresh_order(
         self,
         request: dingtalkyida__1__0_models.BuyFreshOrderRequest,

@@ -2353,6 +2353,7 @@ class GetGroupSetResponseBody(TeaModel):
         last_open_conversation_id: str = None,
         gmt_create: str = None,
         gmt_modified: str = None,
+        group_chat_count: int = None,
     ):
         self.name = name
         self.open_group_set_id = open_group_set_id
@@ -2370,6 +2371,8 @@ class GetGroupSetResponseBody(TeaModel):
         self.last_open_conversation_id = last_open_conversation_id
         self.gmt_create = gmt_create
         self.gmt_modified = gmt_modified
+        # 群组内群数量（不包含已解散的群）。
+        self.group_chat_count = group_chat_count
 
     def validate(self):
         if self.owner:
@@ -2419,6 +2422,8 @@ class GetGroupSetResponseBody(TeaModel):
             result['gmtCreate'] = self.gmt_create
         if self.gmt_modified is not None:
             result['gmtModified'] = self.gmt_modified
+        if self.group_chat_count is not None:
+            result['groupChatCount'] = self.group_chat_count
         return result
 
     def from_map(self, m: dict = None):
@@ -2459,6 +2464,8 @@ class GetGroupSetResponseBody(TeaModel):
             self.gmt_create = m.get('gmtCreate')
         if m.get('gmtModified') is not None:
             self.gmt_modified = m.get('gmtModified')
+        if m.get('groupChatCount') is not None:
+            self.group_chat_count = m.get('groupChatCount')
         return self
 
 
@@ -3469,6 +3476,7 @@ class ListGroupSetResponseBodyResultList(TeaModel):
         last_open_conversation_id: str = None,
         gmt_create: str = None,
         gmt_modified: str = None,
+        group_chat_count: int = None,
     ):
         # 群组名
         self.name = name
@@ -3502,6 +3510,8 @@ class ListGroupSetResponseBodyResultList(TeaModel):
         self.gmt_create = gmt_create
         # 修改时间
         self.gmt_modified = gmt_modified
+        # 群组内群数量（不包含已解散的群）。
+        self.group_chat_count = group_chat_count
 
     def validate(self):
         if self.owner:
@@ -3551,6 +3561,8 @@ class ListGroupSetResponseBodyResultList(TeaModel):
             result['gmtCreate'] = self.gmt_create
         if self.gmt_modified is not None:
             result['gmtModified'] = self.gmt_modified
+        if self.group_chat_count is not None:
+            result['groupChatCount'] = self.group_chat_count
         return result
 
     def from_map(self, m: dict = None):
@@ -3591,6 +3603,8 @@ class ListGroupSetResponseBodyResultList(TeaModel):
             self.gmt_create = m.get('gmtCreate')
         if m.get('gmtModified') is not None:
             self.gmt_modified = m.get('gmtModified')
+        if m.get('groupChatCount') is not None:
+            self.group_chat_count = m.get('groupChatCount')
         return self
 
 
