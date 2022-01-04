@@ -328,7 +328,7 @@ export class MachineManagerUpdateRequest extends $tea.Model {
   deviceId?: number;
   userId?: string;
   scopeDeptIds?: number[];
-  atmManagerRightMap?: { [key: string]: boolean };
+  atmManagerRightMap?: MachineManagerUpdateRequestAtmManagerRightMap;
   dingTokenGrantType?: number;
   dingSuiteKey?: string;
   dingCorpId?: string;
@@ -353,7 +353,7 @@ export class MachineManagerUpdateRequest extends $tea.Model {
       deviceId: 'number',
       userId: 'string',
       scopeDeptIds: { 'type': 'array', 'itemType': 'number' },
-      atmManagerRightMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'boolean' },
+      atmManagerRightMap: MachineManagerUpdateRequestAtmManagerRightMap,
       dingTokenGrantType: 'number',
       dingSuiteKey: 'string',
       dingCorpId: 'string',
@@ -523,6 +523,40 @@ export class ExtractFacialFeatureResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: ExtractFacialFeatureResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MachineManagerUpdateRequestAtmManagerRightMap extends $tea.Model {
+  attendancePersonManage?: boolean;
+  fingerPunchManage?: boolean;
+  facePunchManage?: boolean;
+  bluetoothPunchManage?: boolean;
+  deviceSettings?: boolean;
+  deviceReset?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      attendancePersonManage: 'attendancePersonManage',
+      fingerPunchManage: 'fingerPunchManage',
+      facePunchManage: 'facePunchManage',
+      bluetoothPunchManage: 'bluetoothPunchManage',
+      deviceSettings: 'deviceSettings',
+      deviceReset: 'deviceReset',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      attendancePersonManage: 'boolean',
+      fingerPunchManage: 'boolean',
+      facePunchManage: 'boolean',
+      bluetoothPunchManage: 'boolean',
+      deviceSettings: 'boolean',
+      deviceReset: 'boolean',
     };
   }
 
@@ -706,7 +740,7 @@ export default class Client extends OpenApi {
       body["scopeDeptIds"] = request.scopeDeptIds;
     }
 
-    if (!Util.isUnset(request.atmManagerRightMap)) {
+    if (!Util.isUnset($tea.toMap(request.atmManagerRightMap))) {
       body["atmManagerRightMap"] = request.atmManagerRightMap;
     }
 

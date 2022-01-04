@@ -2056,6 +2056,100 @@ export class NotifyAuthorizationResultResponse extends $tea.Model {
   }
 }
 
+export class GetRunningTaskListHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetRunningTaskListRequest extends $tea.Model {
+  processInstanceIdList?: string;
+  appType?: string;
+  systemToken?: string;
+  userId?: string;
+  userCorpId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      processInstanceIdList: 'processInstanceIdList',
+      appType: 'appType',
+      systemToken: 'systemToken',
+      userId: 'userId',
+      userCorpId: 'userCorpId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      processInstanceIdList: 'string',
+      appType: 'string',
+      systemToken: 'string',
+      userId: 'string',
+      userCorpId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetRunningTaskListResponseBody extends $tea.Model {
+  result?: GetRunningTaskListResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': GetRunningTaskListResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetRunningTaskListResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetRunningTaskListResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetRunningTaskListResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BuyFreshOrderHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -7756,6 +7850,82 @@ export class ListCommodityResponseBodyCommodityVOList extends $tea.Model {
   }
 }
 
+export class GetRunningTaskListResponseBodyResult extends $tea.Model {
+  originatorNickName?: string;
+  processInstanceId?: string;
+  originatorName?: string;
+  titleInEnglish?: string;
+  originatorNickNameInEnglish?: string;
+  originatorEmail?: string;
+  title?: string;
+  outResultName?: string;
+  actualActionExecutorId?: string;
+  outResult?: string;
+  createTimeGMT?: string;
+  originatorPhoto?: string;
+  taskType?: string;
+  originatorNameInEnglish?: string;
+  appType?: string;
+  activeTimeGMT?: string;
+  finishTimeGMT?: string;
+  originatorId?: string;
+  taskId?: string;
+  status?: string;
+  static names(): { [key: string]: string } {
+    return {
+      originatorNickName: 'originatorNickName',
+      processInstanceId: 'processInstanceId',
+      originatorName: 'originatorName',
+      titleInEnglish: 'titleInEnglish',
+      originatorNickNameInEnglish: 'originatorNickNameInEnglish',
+      originatorEmail: 'originatorEmail',
+      title: 'title',
+      outResultName: 'outResultName',
+      actualActionExecutorId: 'actualActionExecutorId',
+      outResult: 'outResult',
+      createTimeGMT: 'createTimeGMT',
+      originatorPhoto: 'originatorPhoto',
+      taskType: 'taskType',
+      originatorNameInEnglish: 'originatorNameInEnglish',
+      appType: 'appType',
+      activeTimeGMT: 'activeTimeGMT',
+      finishTimeGMT: 'finishTimeGMT',
+      originatorId: 'originatorId',
+      taskId: 'taskId',
+      status: 'status',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      originatorNickName: 'string',
+      processInstanceId: 'string',
+      originatorName: 'string',
+      titleInEnglish: 'string',
+      originatorNickNameInEnglish: 'string',
+      originatorEmail: 'string',
+      title: 'string',
+      outResultName: 'string',
+      actualActionExecutorId: 'string',
+      outResult: 'string',
+      createTimeGMT: 'string',
+      originatorPhoto: 'string',
+      taskType: 'string',
+      originatorNameInEnglish: 'string',
+      appType: 'string',
+      activeTimeGMT: 'string',
+      finishTimeGMT: 'string',
+      originatorId: 'string',
+      taskId: 'string',
+      status: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetProcessDefinitionResponseBodyOwnersMasterDataDepartments extends $tea.Model {
   humanSourceGroupOrderNumber?: string;
   deptPath?: string;
@@ -10043,6 +10213,51 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<NotifyAuthorizationResultResponse>(await this.doROARequest("NotifyAuthorizationResult", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/apps/authorizationResults/notify`, "json", req, runtime), new NotifyAuthorizationResultResponse({}));
+  }
+
+  async getRunningTaskList(request: GetRunningTaskListRequest): Promise<GetRunningTaskListResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetRunningTaskListHeaders({ });
+    return await this.getRunningTaskListWithOptions(request, headers, runtime);
+  }
+
+  async getRunningTaskListWithOptions(request: GetRunningTaskListRequest, headers: GetRunningTaskListHeaders, runtime: $Util.RuntimeOptions): Promise<GetRunningTaskListResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.processInstanceIdList)) {
+      body["processInstanceIdList"] = request.processInstanceIdList;
+    }
+
+    if (!Util.isUnset(request.appType)) {
+      body["appType"] = request.appType;
+    }
+
+    if (!Util.isUnset(request.systemToken)) {
+      body["systemToken"] = request.systemToken;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    if (!Util.isUnset(request.userCorpId)) {
+      body["userCorpId"] = request.userCorpId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<GetRunningTaskListResponse>(await this.doROARequest("GetRunningTaskList", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/tasks/runningTasks/query`, "json", req, runtime), new GetRunningTaskListResponse({}));
   }
 
   async buyFreshOrder(request: BuyFreshOrderRequest): Promise<BuyFreshOrderResponse> {

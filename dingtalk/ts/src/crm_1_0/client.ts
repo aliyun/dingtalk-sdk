@@ -629,6 +629,7 @@ export class GetGroupSetResponseBody extends $tea.Model {
   lastOpenConversationId?: string;
   gmtCreate?: string;
   gmtModified?: string;
+  groupChatCount?: number;
   static names(): { [key: string]: string } {
     return {
       name: 'name',
@@ -647,6 +648,7 @@ export class GetGroupSetResponseBody extends $tea.Model {
       lastOpenConversationId: 'lastOpenConversationId',
       gmtCreate: 'gmtCreate',
       gmtModified: 'gmtModified',
+      groupChatCount: 'groupChatCount',
     };
   }
 
@@ -668,6 +670,7 @@ export class GetGroupSetResponseBody extends $tea.Model {
       lastOpenConversationId: 'string',
       gmtCreate: 'string',
       gmtModified: 'string',
+      groupChatCount: 'number',
     };
   }
 
@@ -4354,6 +4357,7 @@ export class ListGroupSetResponseBodyResultList extends $tea.Model {
   lastOpenConversationId?: string;
   gmtCreate?: string;
   gmtModified?: string;
+  groupChatCount?: number;
   static names(): { [key: string]: string } {
     return {
       name: 'name',
@@ -4372,6 +4376,7 @@ export class ListGroupSetResponseBodyResultList extends $tea.Model {
       lastOpenConversationId: 'lastOpenConversationId',
       gmtCreate: 'gmtCreate',
       gmtModified: 'gmtModified',
+      groupChatCount: 'groupChatCount',
     };
   }
 
@@ -4393,6 +4398,7 @@ export class ListGroupSetResponseBodyResultList extends $tea.Model {
       lastOpenConversationId: 'string',
       gmtCreate: 'string',
       gmtModified: 'string',
+      groupChatCount: 'number',
     };
   }
 

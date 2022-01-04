@@ -2274,6 +2274,94 @@ export class CreateRemoteClassCourseResponse extends $tea.Model {
   }
 }
 
+export class UpdateRemoteClassDeviceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateRemoteClassDeviceRequest extends $tea.Model {
+  deviceCode?: string;
+  authCode?: string;
+  deviceName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deviceCode: 'deviceCode',
+      authCode: 'authCode',
+      deviceName: 'deviceName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deviceCode: 'string',
+      authCode: 'string',
+      deviceName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateRemoteClassDeviceResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateRemoteClassDeviceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateRemoteClassDeviceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateRemoteClassDeviceResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ReportDeviceLogHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -10198,6 +10286,43 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<CreateRemoteClassCourseResponse>(await this.doROARequest("CreateRemoteClassCourse", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/remoteClasses/courses`, "json", req, runtime), new CreateRemoteClassCourseResponse({}));
+  }
+
+  async updateRemoteClassDevice(request: UpdateRemoteClassDeviceRequest): Promise<UpdateRemoteClassDeviceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateRemoteClassDeviceHeaders({ });
+    return await this.updateRemoteClassDeviceWithOptions(request, headers, runtime);
+  }
+
+  async updateRemoteClassDeviceWithOptions(request: UpdateRemoteClassDeviceRequest, headers: UpdateRemoteClassDeviceHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateRemoteClassDeviceResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deviceCode)) {
+      query["deviceCode"] = request.deviceCode;
+    }
+
+    if (!Util.isUnset(request.authCode)) {
+      query["authCode"] = request.authCode;
+    }
+
+    if (!Util.isUnset(request.deviceName)) {
+      query["deviceName"] = request.deviceName;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<UpdateRemoteClassDeviceResponse>(await this.doROARequest("UpdateRemoteClassDevice", "edu_1.0", "HTTP", "PUT", "AK", `/v1.0/edu/remoteClasses/deviceNames`, "json", req, runtime), new UpdateRemoteClassDeviceResponse({}));
   }
 
   async reportDeviceLog(request: ReportDeviceLogRequest): Promise<ReportDeviceLogResponse> {

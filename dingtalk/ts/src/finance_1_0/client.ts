@@ -255,6 +255,160 @@ export class UpateUserCodeInstanceResponse extends $tea.Model {
   }
 }
 
+export class CreatWithholdingOrderAndPayHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreatWithholdingOrderAndPayRequest extends $tea.Model {
+  instId?: string;
+  subInstId?: string;
+  payerUserId?: string;
+  payChannel?: string;
+  amount?: string;
+  outTradeNo?: string;
+  title?: string;
+  remark?: string;
+  timeOutExpress?: string;
+  otherPayChannelDetailInfoList?: CreatWithholdingOrderAndPayRequestOtherPayChannelDetailInfoList[];
+  dingOrgId?: number;
+  dingIsvOrgId?: number;
+  dingClientId?: string;
+  dingTokenGrantType?: number;
+  static names(): { [key: string]: string } {
+    return {
+      instId: 'instId',
+      subInstId: 'subInstId',
+      payerUserId: 'payerUserId',
+      payChannel: 'payChannel',
+      amount: 'amount',
+      outTradeNo: 'outTradeNo',
+      title: 'title',
+      remark: 'remark',
+      timeOutExpress: 'timeOutExpress',
+      otherPayChannelDetailInfoList: 'otherPayChannelDetailInfoList',
+      dingOrgId: 'dingOrgId',
+      dingIsvOrgId: 'dingIsvOrgId',
+      dingClientId: 'dingClientId',
+      dingTokenGrantType: 'dingTokenGrantType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      instId: 'string',
+      subInstId: 'string',
+      payerUserId: 'string',
+      payChannel: 'string',
+      amount: 'string',
+      outTradeNo: 'string',
+      title: 'string',
+      remark: 'string',
+      timeOutExpress: 'string',
+      otherPayChannelDetailInfoList: { 'type': 'array', 'itemType': CreatWithholdingOrderAndPayRequestOtherPayChannelDetailInfoList },
+      dingOrgId: 'number',
+      dingIsvOrgId: 'number',
+      dingClientId: 'string',
+      dingTokenGrantType: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreatWithholdingOrderAndPayResponseBody extends $tea.Model {
+  instId?: string;
+  subInstId?: string;
+  payerStaffId?: string;
+  payChannel?: string;
+  amount?: string;
+  outTradeNo?: string;
+  title?: string;
+  remark?: string;
+  status?: string;
+  orderNo?: string;
+  gmtPay?: string;
+  payChannelAccountNo?: string;
+  static names(): { [key: string]: string } {
+    return {
+      instId: 'instId',
+      subInstId: 'subInstId',
+      payerStaffId: 'payerStaffId',
+      payChannel: 'payChannel',
+      amount: 'amount',
+      outTradeNo: 'outTradeNo',
+      title: 'title',
+      remark: 'remark',
+      status: 'status',
+      orderNo: 'orderNo',
+      gmtPay: 'gmtPay',
+      payChannelAccountNo: 'payChannelAccountNo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      instId: 'string',
+      subInstId: 'string',
+      payerStaffId: 'string',
+      payChannel: 'string',
+      amount: 'string',
+      outTradeNo: 'string',
+      title: 'string',
+      remark: 'string',
+      status: 'string',
+      orderNo: 'string',
+      gmtPay: 'string',
+      payChannelAccountNo: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreatWithholdingOrderAndPayResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CreatWithholdingOrderAndPayResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CreatWithholdingOrderAndPayResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ApplyBatchPayHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -353,6 +507,130 @@ export class ApplyBatchPayResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: ApplyBatchPayResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UserAgreementPageSignHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UserAgreementPageSignRequest extends $tea.Model {
+  instId?: string;
+  subInstId?: string;
+  userId?: string;
+  remark?: string;
+  payChannel?: string;
+  subMerchantServiceName?: string;
+  subMerchantServiceDesc?: string;
+  subMerchantName?: string;
+  bizCode?: string;
+  bizScene?: string;
+  signScene?: string;
+  dingOrgId?: number;
+  dingIsvOrgId?: number;
+  dingClientId?: string;
+  dingTokenGrantType?: number;
+  static names(): { [key: string]: string } {
+    return {
+      instId: 'instId',
+      subInstId: 'subInstId',
+      userId: 'userId',
+      remark: 'remark',
+      payChannel: 'payChannel',
+      subMerchantServiceName: 'subMerchantServiceName',
+      subMerchantServiceDesc: 'subMerchantServiceDesc',
+      subMerchantName: 'subMerchantName',
+      bizCode: 'bizCode',
+      bizScene: 'bizScene',
+      signScene: 'signScene',
+      dingOrgId: 'dingOrgId',
+      dingIsvOrgId: 'dingIsvOrgId',
+      dingClientId: 'dingClientId',
+      dingTokenGrantType: 'dingTokenGrantType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      instId: 'string',
+      subInstId: 'string',
+      userId: 'string',
+      remark: 'string',
+      payChannel: 'string',
+      subMerchantServiceName: 'string',
+      subMerchantServiceDesc: 'string',
+      subMerchantName: 'string',
+      bizCode: 'string',
+      bizScene: 'string',
+      signScene: 'string',
+      dingOrgId: 'number',
+      dingIsvOrgId: 'number',
+      dingClientId: 'string',
+      dingTokenGrantType: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UserAgreementPageSignResponseBody extends $tea.Model {
+  pageData?: string;
+  static names(): { [key: string]: string } {
+    return {
+      pageData: 'pageData',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      pageData: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UserAgreementPageSignResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UserAgreementPageSignResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UserAgreementPageSignResponseBody,
     };
   }
 
@@ -531,6 +809,118 @@ export class DecodePayCodeResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: DecodePayCodeResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryRegisterOrderHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryRegisterOrderRequest extends $tea.Model {
+  instId?: string;
+  subInstId?: string;
+  outTradeNo?: string;
+  orderId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      instId: 'instId',
+      subInstId: 'subInstId',
+      outTradeNo: 'outTradeNo',
+      orderId: 'orderId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      instId: 'string',
+      subInstId: 'string',
+      outTradeNo: 'string',
+      orderId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryRegisterOrderResponseBody extends $tea.Model {
+  instId?: string;
+  subInstId?: string;
+  outTradeNo?: string;
+  orderId?: string;
+  subInstName?: string;
+  status?: string;
+  gmtAudit?: string;
+  failReason?: string;
+  static names(): { [key: string]: string } {
+    return {
+      instId: 'instId',
+      subInstId: 'subInstId',
+      outTradeNo: 'outTradeNo',
+      orderId: 'orderId',
+      subInstName: 'subInstName',
+      status: 'status',
+      gmtAudit: 'gmtAudit',
+      failReason: 'failReason',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      instId: 'string',
+      subInstId: 'string',
+      outTradeNo: 'string',
+      orderId: 'string',
+      subInstName: 'string',
+      status: 'string',
+      gmtAudit: 'string',
+      failReason: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryRegisterOrderResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryRegisterOrderResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryRegisterOrderResponseBody,
     };
   }
 
@@ -863,6 +1253,133 @@ export class QueryBatchTradeDetailListResponse extends $tea.Model {
   }
 }
 
+export class QueryUserAgreementHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserAgreementRequest extends $tea.Model {
+  instId?: string;
+  subInstId?: string;
+  userId?: string;
+  bizCode?: string;
+  bizScene?: string;
+  static names(): { [key: string]: string } {
+    return {
+      instId: 'instId',
+      subInstId: 'subInstId',
+      userId: 'userId',
+      bizCode: 'bizCode',
+      bizScene: 'bizScene',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      instId: 'string',
+      subInstId: 'string',
+      userId: 'string',
+      bizCode: 'string',
+      bizScene: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserAgreementResponseBody extends $tea.Model {
+  staffId?: string;
+  corpId?: string;
+  instId?: string;
+  subInstId?: string;
+  payChannel?: string;
+  agreementNo?: string;
+  payChannelAccountNo?: string;
+  payChannelAccountName?: string;
+  gmtSign?: string;
+  status?: string;
+  gmtValid?: string;
+  gmtExpire?: string;
+  static names(): { [key: string]: string } {
+    return {
+      staffId: 'staffId',
+      corpId: 'corpId',
+      instId: 'instId',
+      subInstId: 'subInstId',
+      payChannel: 'payChannel',
+      agreementNo: 'agreementNo',
+      payChannelAccountNo: 'payChannelAccountNo',
+      payChannelAccountName: 'payChannelAccountName',
+      gmtSign: 'gmtSign',
+      status: 'status',
+      gmtValid: 'gmtValid',
+      gmtExpire: 'gmtExpire',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      staffId: 'string',
+      corpId: 'string',
+      instId: 'string',
+      subInstId: 'string',
+      payChannel: 'string',
+      agreementNo: 'string',
+      payChannelAccountNo: 'string',
+      payChannelAccountName: 'string',
+      gmtSign: 'string',
+      status: 'string',
+      gmtValid: 'string',
+      gmtExpire: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserAgreementResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryUserAgreementResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryUserAgreementResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateUserCodeInstanceHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1058,6 +1575,112 @@ export class QueryBatchTradeOrderResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: QueryBatchTradeOrderResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UploadRegisterImageHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UploadRegisterImageRequest extends $tea.Model {
+  instId?: string;
+  payChannel?: string;
+  imageType?: string;
+  imageName?: string;
+  imageContent?: string;
+  dingOrgId?: number;
+  dingIsvOrgId?: number;
+  dingClientId?: string;
+  dingTokenGrantType?: number;
+  static names(): { [key: string]: string } {
+    return {
+      instId: 'instId',
+      payChannel: 'payChannel',
+      imageType: 'imageType',
+      imageName: 'imageName',
+      imageContent: 'imageContent',
+      dingOrgId: 'dingOrgId',
+      dingIsvOrgId: 'dingIsvOrgId',
+      dingClientId: 'dingClientId',
+      dingTokenGrantType: 'dingTokenGrantType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      instId: 'string',
+      payChannel: 'string',
+      imageType: 'string',
+      imageName: 'string',
+      imageContent: 'string',
+      dingOrgId: 'number',
+      dingIsvOrgId: 'number',
+      dingClientId: 'string',
+      dingTokenGrantType: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UploadRegisterImageResponseBody extends $tea.Model {
+  ossUrl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      ossUrl: 'ossUrl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      ossUrl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UploadRegisterImageResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UploadRegisterImageResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UploadRegisterImageResponseBody,
     };
   }
 
@@ -1287,6 +1910,516 @@ export class NotifyVerifyResultResponse extends $tea.Model {
   }
 }
 
+export class UnsignUserAgreementHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UnsignUserAgreementRequest extends $tea.Model {
+  instId?: string;
+  subInstId?: string;
+  userId?: string;
+  bizCode?: string;
+  bizScene?: string;
+  agreementNo?: string;
+  dingOrgId?: number;
+  dingIsvOrgId?: number;
+  dingClientId?: string;
+  dingTokenGrantType?: number;
+  static names(): { [key: string]: string } {
+    return {
+      instId: 'instId',
+      subInstId: 'subInstId',
+      userId: 'userId',
+      bizCode: 'bizCode',
+      bizScene: 'bizScene',
+      agreementNo: 'agreementNo',
+      dingOrgId: 'dingOrgId',
+      dingIsvOrgId: 'dingIsvOrgId',
+      dingClientId: 'dingClientId',
+      dingTokenGrantType: 'dingTokenGrantType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      instId: 'string',
+      subInstId: 'string',
+      userId: 'string',
+      bizCode: 'string',
+      bizScene: 'string',
+      agreementNo: 'string',
+      dingOrgId: 'number',
+      dingIsvOrgId: 'number',
+      dingClientId: 'string',
+      dingTokenGrantType: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UnsignUserAgreementResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConsultCreateSubInstitutionHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConsultCreateSubInstitutionRequest extends $tea.Model {
+  instId?: string;
+  subInstId?: string;
+  outTradeNo?: string;
+  services?: string[];
+  solution?: string;
+  payChannel?: string;
+  subInstBasicInfo?: ConsultCreateSubInstitutionRequestSubInstBasicInfo;
+  subInstCertifyInfo?: ConsultCreateSubInstitutionRequestSubInstCertifyInfo;
+  legalPersonCertInfo?: ConsultCreateSubInstitutionRequestLegalPersonCertInfo;
+  settleInfo?: ConsultCreateSubInstitutionRequestSettleInfo;
+  contractInfo?: ConsultCreateSubInstitutionRequestContractInfo;
+  qualificationInfos?: ConsultCreateSubInstitutionRequestQualificationInfos[];
+  subInstAuthInfo?: ConsultCreateSubInstitutionRequestSubInstAuthInfo;
+  subInstAddressInfo?: ConsultCreateSubInstitutionRequestSubInstAddressInfo;
+  subInstShopInfo?: ConsultCreateSubInstitutionRequestSubInstShopInfo;
+  subInstInvoiceInfo?: ConsultCreateSubInstitutionRequestSubInstInvoiceInfo;
+  bindingAlipayLogonId?: string;
+  dingOrgId?: number;
+  dingIsvOrgId?: number;
+  dingClientId?: string;
+  dingTokenGrantType?: number;
+  static names(): { [key: string]: string } {
+    return {
+      instId: 'instId',
+      subInstId: 'subInstId',
+      outTradeNo: 'outTradeNo',
+      services: 'services',
+      solution: 'solution',
+      payChannel: 'payChannel',
+      subInstBasicInfo: 'subInstBasicInfo',
+      subInstCertifyInfo: 'subInstCertifyInfo',
+      legalPersonCertInfo: 'legalPersonCertInfo',
+      settleInfo: 'settleInfo',
+      contractInfo: 'contractInfo',
+      qualificationInfos: 'qualificationInfos',
+      subInstAuthInfo: 'subInstAuthInfo',
+      subInstAddressInfo: 'subInstAddressInfo',
+      subInstShopInfo: 'subInstShopInfo',
+      subInstInvoiceInfo: 'subInstInvoiceInfo',
+      bindingAlipayLogonId: 'bindingAlipayLogonId',
+      dingOrgId: 'dingOrgId',
+      dingIsvOrgId: 'dingIsvOrgId',
+      dingClientId: 'dingClientId',
+      dingTokenGrantType: 'dingTokenGrantType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      instId: 'string',
+      subInstId: 'string',
+      outTradeNo: 'string',
+      services: { 'type': 'array', 'itemType': 'string' },
+      solution: 'string',
+      payChannel: 'string',
+      subInstBasicInfo: ConsultCreateSubInstitutionRequestSubInstBasicInfo,
+      subInstCertifyInfo: ConsultCreateSubInstitutionRequestSubInstCertifyInfo,
+      legalPersonCertInfo: ConsultCreateSubInstitutionRequestLegalPersonCertInfo,
+      settleInfo: ConsultCreateSubInstitutionRequestSettleInfo,
+      contractInfo: ConsultCreateSubInstitutionRequestContractInfo,
+      qualificationInfos: { 'type': 'array', 'itemType': ConsultCreateSubInstitutionRequestQualificationInfos },
+      subInstAuthInfo: ConsultCreateSubInstitutionRequestSubInstAuthInfo,
+      subInstAddressInfo: ConsultCreateSubInstitutionRequestSubInstAddressInfo,
+      subInstShopInfo: ConsultCreateSubInstitutionRequestSubInstShopInfo,
+      subInstInvoiceInfo: ConsultCreateSubInstitutionRequestSubInstInvoiceInfo,
+      bindingAlipayLogonId: 'string',
+      dingOrgId: 'number',
+      dingIsvOrgId: 'number',
+      dingClientId: 'string',
+      dingTokenGrantType: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConsultCreateSubInstitutionResponseBody extends $tea.Model {
+  orderId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      orderId: 'orderId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      orderId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConsultCreateSubInstitutionResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ConsultCreateSubInstitutionResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ConsultCreateSubInstitutionResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ModifySubInstitutionHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ModifySubInstitutionRequest extends $tea.Model {
+  instId?: string;
+  subInstId?: string;
+  outTradeNo?: string;
+  services?: string[];
+  payChannel?: string;
+  subInstBasicInfo?: ModifySubInstitutionRequestSubInstBasicInfo;
+  subInstCertifyInfo?: ModifySubInstitutionRequestSubInstCertifyInfo;
+  legalPersonCertInfo?: ModifySubInstitutionRequestLegalPersonCertInfo;
+  settleInfo?: ModifySubInstitutionRequestSettleInfo;
+  contractInfo?: ModifySubInstitutionRequestContractInfo;
+  qualificationInfos?: ModifySubInstitutionRequestQualificationInfos[];
+  subInstAuthInfo?: ModifySubInstitutionRequestSubInstAuthInfo;
+  subInstAddressInfo?: ModifySubInstitutionRequestSubInstAddressInfo;
+  subInstShopInfo?: ModifySubInstitutionRequestSubInstShopInfo;
+  subInstInvoiceInfo?: ModifySubInstitutionRequestSubInstInvoiceInfo;
+  bindingAlipayLogonId?: string;
+  dingOrgId?: number;
+  dingIsvOrgId?: number;
+  dingClientId?: string;
+  dingTokenGrantType?: number;
+  static names(): { [key: string]: string } {
+    return {
+      instId: 'instId',
+      subInstId: 'subInstId',
+      outTradeNo: 'outTradeNo',
+      services: 'services',
+      payChannel: 'payChannel',
+      subInstBasicInfo: 'subInstBasicInfo',
+      subInstCertifyInfo: 'subInstCertifyInfo',
+      legalPersonCertInfo: 'legalPersonCertInfo',
+      settleInfo: 'settleInfo',
+      contractInfo: 'contractInfo',
+      qualificationInfos: 'qualificationInfos',
+      subInstAuthInfo: 'subInstAuthInfo',
+      subInstAddressInfo: 'subInstAddressInfo',
+      subInstShopInfo: 'subInstShopInfo',
+      subInstInvoiceInfo: 'subInstInvoiceInfo',
+      bindingAlipayLogonId: 'bindingAlipayLogonId',
+      dingOrgId: 'dingOrgId',
+      dingIsvOrgId: 'dingIsvOrgId',
+      dingClientId: 'dingClientId',
+      dingTokenGrantType: 'dingTokenGrantType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      instId: 'string',
+      subInstId: 'string',
+      outTradeNo: 'string',
+      services: { 'type': 'array', 'itemType': 'string' },
+      payChannel: 'string',
+      subInstBasicInfo: ModifySubInstitutionRequestSubInstBasicInfo,
+      subInstCertifyInfo: ModifySubInstitutionRequestSubInstCertifyInfo,
+      legalPersonCertInfo: ModifySubInstitutionRequestLegalPersonCertInfo,
+      settleInfo: ModifySubInstitutionRequestSettleInfo,
+      contractInfo: ModifySubInstitutionRequestContractInfo,
+      qualificationInfos: { 'type': 'array', 'itemType': ModifySubInstitutionRequestQualificationInfos },
+      subInstAuthInfo: ModifySubInstitutionRequestSubInstAuthInfo,
+      subInstAddressInfo: ModifySubInstitutionRequestSubInstAddressInfo,
+      subInstShopInfo: ModifySubInstitutionRequestSubInstShopInfo,
+      subInstInvoiceInfo: ModifySubInstitutionRequestSubInstInvoiceInfo,
+      bindingAlipayLogonId: 'string',
+      dingOrgId: 'number',
+      dingIsvOrgId: 'number',
+      dingClientId: 'string',
+      dingTokenGrantType: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ModifySubInstitutionResponseBody extends $tea.Model {
+  orderId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      orderId: 'orderId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      orderId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ModifySubInstitutionResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ModifySubInstitutionResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ModifySubInstitutionResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateSubInstitutionHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateSubInstitutionRequest extends $tea.Model {
+  instId?: string;
+  subInstId?: string;
+  outTradeNo?: string;
+  services?: string[];
+  solution?: string;
+  payChannel?: string;
+  subInstBasicInfo?: CreateSubInstitutionRequestSubInstBasicInfo;
+  subInstCertifyInfo?: CreateSubInstitutionRequestSubInstCertifyInfo;
+  legalPersonCertInfo?: CreateSubInstitutionRequestLegalPersonCertInfo;
+  settleInfo?: CreateSubInstitutionRequestSettleInfo;
+  contractInfo?: CreateSubInstitutionRequestContractInfo;
+  qualificationInfos?: CreateSubInstitutionRequestQualificationInfos[];
+  subInstAuthInfo?: CreateSubInstitutionRequestSubInstAuthInfo;
+  subInstAddressInfo?: CreateSubInstitutionRequestSubInstAddressInfo;
+  subInstShopInfo?: CreateSubInstitutionRequestSubInstShopInfo;
+  subInstInvoiceInfo?: CreateSubInstitutionRequestSubInstInvoiceInfo;
+  bindingAlipayLogonId?: string;
+  dingOrgId?: number;
+  dingIsvOrgId?: number;
+  dingClientId?: string;
+  dingTokenGrantType?: number;
+  static names(): { [key: string]: string } {
+    return {
+      instId: 'instId',
+      subInstId: 'subInstId',
+      outTradeNo: 'outTradeNo',
+      services: 'services',
+      solution: 'solution',
+      payChannel: 'payChannel',
+      subInstBasicInfo: 'subInstBasicInfo',
+      subInstCertifyInfo: 'subInstCertifyInfo',
+      legalPersonCertInfo: 'legalPersonCertInfo',
+      settleInfo: 'settleInfo',
+      contractInfo: 'contractInfo',
+      qualificationInfos: 'qualificationInfos',
+      subInstAuthInfo: 'subInstAuthInfo',
+      subInstAddressInfo: 'subInstAddressInfo',
+      subInstShopInfo: 'subInstShopInfo',
+      subInstInvoiceInfo: 'subInstInvoiceInfo',
+      bindingAlipayLogonId: 'bindingAlipayLogonId',
+      dingOrgId: 'dingOrgId',
+      dingIsvOrgId: 'dingIsvOrgId',
+      dingClientId: 'dingClientId',
+      dingTokenGrantType: 'dingTokenGrantType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      instId: 'string',
+      subInstId: 'string',
+      outTradeNo: 'string',
+      services: { 'type': 'array', 'itemType': 'string' },
+      solution: 'string',
+      payChannel: 'string',
+      subInstBasicInfo: CreateSubInstitutionRequestSubInstBasicInfo,
+      subInstCertifyInfo: CreateSubInstitutionRequestSubInstCertifyInfo,
+      legalPersonCertInfo: CreateSubInstitutionRequestLegalPersonCertInfo,
+      settleInfo: CreateSubInstitutionRequestSettleInfo,
+      contractInfo: CreateSubInstitutionRequestContractInfo,
+      qualificationInfos: { 'type': 'array', 'itemType': CreateSubInstitutionRequestQualificationInfos },
+      subInstAuthInfo: CreateSubInstitutionRequestSubInstAuthInfo,
+      subInstAddressInfo: CreateSubInstitutionRequestSubInstAddressInfo,
+      subInstShopInfo: CreateSubInstitutionRequestSubInstShopInfo,
+      subInstInvoiceInfo: CreateSubInstitutionRequestSubInstInvoiceInfo,
+      bindingAlipayLogonId: 'string',
+      dingOrgId: 'number',
+      dingIsvOrgId: 'number',
+      dingClientId: 'string',
+      dingTokenGrantType: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateSubInstitutionResponseBody extends $tea.Model {
+  orderId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      orderId: 'orderId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      orderId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateSubInstitutionResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CreateSubInstitutionResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CreateSubInstitutionResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryPayAccountListHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1342,6 +2475,124 @@ export class QueryPayAccountListResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: QueryPayAccountListResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryWithholdingOrderHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryWithholdingOrderRequest extends $tea.Model {
+  outTradeNo?: string;
+  static names(): { [key: string]: string } {
+    return {
+      outTradeNo: 'outTradeNo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      outTradeNo: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryWithholdingOrderResponseBody extends $tea.Model {
+  instId?: string;
+  subInstId?: string;
+  payerStaffId?: string;
+  payChannel?: string;
+  amount?: string;
+  outTradeNo?: string;
+  title?: string;
+  remark?: string;
+  status?: string;
+  orderNo?: string;
+  gmtPay?: string;
+  payChannelAccountNo?: string;
+  gmtCreate?: string;
+  static names(): { [key: string]: string } {
+    return {
+      instId: 'instId',
+      subInstId: 'subInstId',
+      payerStaffId: 'payerStaffId',
+      payChannel: 'payChannel',
+      amount: 'amount',
+      outTradeNo: 'outTradeNo',
+      title: 'title',
+      remark: 'remark',
+      status: 'status',
+      orderNo: 'orderNo',
+      gmtPay: 'gmtPay',
+      payChannelAccountNo: 'payChannelAccountNo',
+      gmtCreate: 'gmtCreate',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      instId: 'string',
+      subInstId: 'string',
+      payerStaffId: 'string',
+      payChannel: 'string',
+      amount: 'string',
+      outTradeNo: 'string',
+      title: 'string',
+      remark: 'string',
+      status: 'string',
+      orderNo: 'string',
+      gmtPay: 'string',
+      payChannelAccountNo: 'string',
+      gmtCreate: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryWithholdingOrderResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryWithholdingOrderResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryWithholdingOrderResponseBody,
     };
   }
 
@@ -1438,6 +2689,74 @@ export class UpateUserCodeInstanceRequestAvailableTimes extends $tea.Model {
     return {
       gmtStart: 'string',
       gmtEnd: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreatWithholdingOrderAndPayRequestOtherPayChannelDetailInfoListFundToolDetailInfoList extends $tea.Model {
+  fundToolName?: string;
+  amount?: string;
+  gmtCreate?: string;
+  gmtFinish?: string;
+  promotionFundTool?: boolean;
+  extInfo?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fundToolName: 'fundToolName',
+      amount: 'amount',
+      gmtCreate: 'gmtCreate',
+      gmtFinish: 'gmtFinish',
+      promotionFundTool: 'promotionFundTool',
+      extInfo: 'extInfo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fundToolName: 'string',
+      amount: 'string',
+      gmtCreate: 'string',
+      gmtFinish: 'string',
+      promotionFundTool: 'boolean',
+      extInfo: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreatWithholdingOrderAndPayRequestOtherPayChannelDetailInfoList extends $tea.Model {
+  payChannelName?: string;
+  payChannelType?: string;
+  amount?: string;
+  payChannelOrderNo?: string;
+  promotionAmount?: string;
+  fundToolDetailInfoList?: CreatWithholdingOrderAndPayRequestOtherPayChannelDetailInfoListFundToolDetailInfoList[];
+  static names(): { [key: string]: string } {
+    return {
+      payChannelName: 'payChannelName',
+      payChannelType: 'payChannelType',
+      amount: 'amount',
+      payChannelOrderNo: 'payChannelOrderNo',
+      promotionAmount: 'promotionAmount',
+      fundToolDetailInfoList: 'fundToolDetailInfoList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      payChannelName: 'string',
+      payChannelType: 'string',
+      amount: 'string',
+      payChannelOrderNo: 'string',
+      promotionAmount: 'string',
+      fundToolDetailInfoList: { 'type': 'array', 'itemType': CreatWithholdingOrderAndPayRequestOtherPayChannelDetailInfoListFundToolDetailInfoList },
     };
   }
 
@@ -1677,6 +2996,993 @@ export class QueryBatchTradeOrderResponseBodyBatchTradeOrderVOs extends $tea.Mod
   }
 }
 
+export class ConsultCreateSubInstitutionRequestSubInstBasicInfo extends $tea.Model {
+  subInstName?: string;
+  aliasName?: string;
+  type?: string;
+  mcc?: string;
+  static names(): { [key: string]: string } {
+    return {
+      subInstName: 'subInstName',
+      aliasName: 'aliasName',
+      type: 'type',
+      mcc: 'mcc',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      subInstName: 'string',
+      aliasName: 'string',
+      type: 'string',
+      mcc: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConsultCreateSubInstitutionRequestSubInstCertifyInfo extends $tea.Model {
+  certNo?: string;
+  certType?: string;
+  certImage?: string;
+  static names(): { [key: string]: string } {
+    return {
+      certNo: 'certNo',
+      certType: 'certType',
+      certImage: 'certImage',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      certNo: 'string',
+      certType: 'string',
+      certImage: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConsultCreateSubInstitutionRequestLegalPersonCertInfo extends $tea.Model {
+  certName?: string;
+  idCardNo?: string;
+  certFrontImage?: string;
+  certBackImage?: string;
+  certType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      certName: 'certName',
+      idCardNo: 'idCardNo',
+      certFrontImage: 'certFrontImage',
+      certBackImage: 'certBackImage',
+      certType: 'certType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      certName: 'string',
+      idCardNo: 'string',
+      certFrontImage: 'string',
+      certBackImage: 'string',
+      certType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConsultCreateSubInstitutionRequestSettleInfo extends $tea.Model {
+  type?: string;
+  accountName?: string;
+  accountId?: string;
+  bankName?: string;
+  bankBranchName?: string;
+  bankShortNameCode?: string;
+  bankCode?: string;
+  bankProvince?: string;
+  bankCity?: string;
+  accountType?: string;
+  usageType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      type: 'type',
+      accountName: 'accountName',
+      accountId: 'accountId',
+      bankName: 'bankName',
+      bankBranchName: 'bankBranchName',
+      bankShortNameCode: 'bankShortNameCode',
+      bankCode: 'bankCode',
+      bankProvince: 'bankProvince',
+      bankCity: 'bankCity',
+      accountType: 'accountType',
+      usageType: 'usageType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      type: 'string',
+      accountName: 'string',
+      accountId: 'string',
+      bankName: 'string',
+      bankBranchName: 'string',
+      bankShortNameCode: 'string',
+      bankCode: 'string',
+      bankProvince: 'string',
+      bankCity: 'string',
+      accountType: 'string',
+      usageType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConsultCreateSubInstitutionRequestContractInfo extends $tea.Model {
+  contractName?: string;
+  mobile?: string;
+  static names(): { [key: string]: string } {
+    return {
+      contractName: 'contractName',
+      mobile: 'mobile',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      contractName: 'string',
+      mobile: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConsultCreateSubInstitutionRequestQualificationInfos extends $tea.Model {
+  qualificationType?: string;
+  qualificationImage?: string;
+  static names(): { [key: string]: string } {
+    return {
+      qualificationType: 'qualificationType',
+      qualificationImage: 'qualificationImage',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      qualificationType: 'string',
+      qualificationImage: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConsultCreateSubInstitutionRequestSubInstAuthInfo extends $tea.Model {
+  authorizationLetterUrl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      authorizationLetterUrl: 'authorizationLetterUrl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      authorizationLetterUrl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConsultCreateSubInstitutionRequestSubInstAddressInfo extends $tea.Model {
+  provinceCode?: string;
+  cityCode?: string;
+  districtCode?: string;
+  address?: string;
+  static names(): { [key: string]: string } {
+    return {
+      provinceCode: 'provinceCode',
+      cityCode: 'cityCode',
+      districtCode: 'districtCode',
+      address: 'address',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      provinceCode: 'string',
+      cityCode: 'string',
+      districtCode: 'string',
+      address: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConsultCreateSubInstitutionRequestSubInstShopInfo extends $tea.Model {
+  inDoorImages?: string[];
+  outDoorImages?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      inDoorImages: 'inDoorImages',
+      outDoorImages: 'outDoorImages',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      inDoorImages: { 'type': 'array', 'itemType': 'string' },
+      outDoorImages: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConsultCreateSubInstitutionRequestSubInstInvoiceInfoMailAddress extends $tea.Model {
+  provinceCode?: string;
+  cityCode?: string;
+  districtCode?: string;
+  address?: string;
+  static names(): { [key: string]: string } {
+    return {
+      provinceCode: 'provinceCode',
+      cityCode: 'cityCode',
+      districtCode: 'districtCode',
+      address: 'address',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      provinceCode: 'string',
+      cityCode: 'string',
+      districtCode: 'string',
+      address: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConsultCreateSubInstitutionRequestSubInstInvoiceInfo extends $tea.Model {
+  autoInvoice?: boolean;
+  acceptElectronic?: boolean;
+  taxPayerQualification?: string;
+  title?: string;
+  taxNo?: string;
+  taxPayerValidDate?: string;
+  address?: string;
+  telephone?: string;
+  bankAccount?: string;
+  bankName?: string;
+  mailName?: string;
+  mailPhone?: string;
+  mailAddress?: ConsultCreateSubInstitutionRequestSubInstInvoiceInfoMailAddress;
+  static names(): { [key: string]: string } {
+    return {
+      autoInvoice: 'autoInvoice',
+      acceptElectronic: 'acceptElectronic',
+      taxPayerQualification: 'taxPayerQualification',
+      title: 'title',
+      taxNo: 'taxNo',
+      taxPayerValidDate: 'taxPayerValidDate',
+      address: 'address',
+      telephone: 'telephone',
+      bankAccount: 'bankAccount',
+      bankName: 'bankName',
+      mailName: 'mailName',
+      mailPhone: 'mailPhone',
+      mailAddress: 'mailAddress',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      autoInvoice: 'boolean',
+      acceptElectronic: 'boolean',
+      taxPayerQualification: 'string',
+      title: 'string',
+      taxNo: 'string',
+      taxPayerValidDate: 'string',
+      address: 'string',
+      telephone: 'string',
+      bankAccount: 'string',
+      bankName: 'string',
+      mailName: 'string',
+      mailPhone: 'string',
+      mailAddress: ConsultCreateSubInstitutionRequestSubInstInvoiceInfoMailAddress,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ModifySubInstitutionRequestSubInstBasicInfo extends $tea.Model {
+  subInstName?: string;
+  aliasName?: string;
+  type?: string;
+  mcc?: string;
+  static names(): { [key: string]: string } {
+    return {
+      subInstName: 'subInstName',
+      aliasName: 'aliasName',
+      type: 'type',
+      mcc: 'mcc',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      subInstName: 'string',
+      aliasName: 'string',
+      type: 'string',
+      mcc: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ModifySubInstitutionRequestSubInstCertifyInfo extends $tea.Model {
+  certNo?: string;
+  certType?: string;
+  certImage?: string;
+  static names(): { [key: string]: string } {
+    return {
+      certNo: 'certNo',
+      certType: 'certType',
+      certImage: 'certImage',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      certNo: 'string',
+      certType: 'string',
+      certImage: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ModifySubInstitutionRequestLegalPersonCertInfo extends $tea.Model {
+  certName?: string;
+  idCardNo?: string;
+  certFrontImage?: string;
+  certBackImage?: string;
+  certType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      certName: 'certName',
+      idCardNo: 'idCardNo',
+      certFrontImage: 'certFrontImage',
+      certBackImage: 'certBackImage',
+      certType: 'certType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      certName: 'string',
+      idCardNo: 'string',
+      certFrontImage: 'string',
+      certBackImage: 'string',
+      certType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ModifySubInstitutionRequestSettleInfo extends $tea.Model {
+  type?: string;
+  accountName?: string;
+  accountId?: string;
+  bankName?: string;
+  bankBranchName?: string;
+  bankShortNameCode?: string;
+  bankCode?: string;
+  bankProvince?: string;
+  bankCity?: string;
+  accountType?: string;
+  usageType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      type: 'type',
+      accountName: 'accountName',
+      accountId: 'accountId',
+      bankName: 'bankName',
+      bankBranchName: 'bankBranchName',
+      bankShortNameCode: 'bankShortNameCode',
+      bankCode: 'bankCode',
+      bankProvince: 'bankProvince',
+      bankCity: 'bankCity',
+      accountType: 'accountType',
+      usageType: 'usageType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      type: 'string',
+      accountName: 'string',
+      accountId: 'string',
+      bankName: 'string',
+      bankBranchName: 'string',
+      bankShortNameCode: 'string',
+      bankCode: 'string',
+      bankProvince: 'string',
+      bankCity: 'string',
+      accountType: 'string',
+      usageType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ModifySubInstitutionRequestContractInfo extends $tea.Model {
+  contractName?: string;
+  mobile?: string;
+  static names(): { [key: string]: string } {
+    return {
+      contractName: 'contractName',
+      mobile: 'mobile',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      contractName: 'string',
+      mobile: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ModifySubInstitutionRequestQualificationInfos extends $tea.Model {
+  qualificationType?: string;
+  qualificationImage?: string;
+  static names(): { [key: string]: string } {
+    return {
+      qualificationType: 'qualificationType',
+      qualificationImage: 'qualificationImage',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      qualificationType: 'string',
+      qualificationImage: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ModifySubInstitutionRequestSubInstAuthInfo extends $tea.Model {
+  authorizationLetterUrl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      authorizationLetterUrl: 'authorizationLetterUrl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      authorizationLetterUrl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ModifySubInstitutionRequestSubInstAddressInfo extends $tea.Model {
+  provinceCode?: string;
+  cityCode?: string;
+  districtCode?: string;
+  address?: string;
+  static names(): { [key: string]: string } {
+    return {
+      provinceCode: 'provinceCode',
+      cityCode: 'cityCode',
+      districtCode: 'districtCode',
+      address: 'address',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      provinceCode: 'string',
+      cityCode: 'string',
+      districtCode: 'string',
+      address: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ModifySubInstitutionRequestSubInstShopInfo extends $tea.Model {
+  inDoorImages?: string[];
+  outDoorImages?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      inDoorImages: 'inDoorImages',
+      outDoorImages: 'outDoorImages',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      inDoorImages: { 'type': 'array', 'itemType': 'string' },
+      outDoorImages: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ModifySubInstitutionRequestSubInstInvoiceInfoMailAddress extends $tea.Model {
+  provinceCode?: string;
+  cityCode?: string;
+  districtCode?: string;
+  address?: string;
+  static names(): { [key: string]: string } {
+    return {
+      provinceCode: 'provinceCode',
+      cityCode: 'cityCode',
+      districtCode: 'districtCode',
+      address: 'address',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      provinceCode: 'string',
+      cityCode: 'string',
+      districtCode: 'string',
+      address: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ModifySubInstitutionRequestSubInstInvoiceInfo extends $tea.Model {
+  autoInvoice?: boolean;
+  acceptElectronic?: boolean;
+  taxPayerQualification?: string;
+  title?: string;
+  taxNo?: string;
+  taxPayerValidDate?: string;
+  address?: string;
+  telephone?: string;
+  bankAccount?: string;
+  bankName?: string;
+  mailName?: string;
+  mailPhone?: string;
+  mailAddress?: ModifySubInstitutionRequestSubInstInvoiceInfoMailAddress;
+  static names(): { [key: string]: string } {
+    return {
+      autoInvoice: 'autoInvoice',
+      acceptElectronic: 'acceptElectronic',
+      taxPayerQualification: 'taxPayerQualification',
+      title: 'title',
+      taxNo: 'taxNo',
+      taxPayerValidDate: 'taxPayerValidDate',
+      address: 'address',
+      telephone: 'telephone',
+      bankAccount: 'bankAccount',
+      bankName: 'bankName',
+      mailName: 'mailName',
+      mailPhone: 'mailPhone',
+      mailAddress: 'mailAddress',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      autoInvoice: 'boolean',
+      acceptElectronic: 'boolean',
+      taxPayerQualification: 'string',
+      title: 'string',
+      taxNo: 'string',
+      taxPayerValidDate: 'string',
+      address: 'string',
+      telephone: 'string',
+      bankAccount: 'string',
+      bankName: 'string',
+      mailName: 'string',
+      mailPhone: 'string',
+      mailAddress: ModifySubInstitutionRequestSubInstInvoiceInfoMailAddress,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateSubInstitutionRequestSubInstBasicInfo extends $tea.Model {
+  subInstName?: string;
+  aliasName?: string;
+  type?: string;
+  mcc?: string;
+  static names(): { [key: string]: string } {
+    return {
+      subInstName: 'subInstName',
+      aliasName: 'aliasName',
+      type: 'type',
+      mcc: 'mcc',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      subInstName: 'string',
+      aliasName: 'string',
+      type: 'string',
+      mcc: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateSubInstitutionRequestSubInstCertifyInfo extends $tea.Model {
+  certNo?: string;
+  certType?: string;
+  certImage?: string;
+  static names(): { [key: string]: string } {
+    return {
+      certNo: 'certNo',
+      certType: 'certType',
+      certImage: 'certImage',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      certNo: 'string',
+      certType: 'string',
+      certImage: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateSubInstitutionRequestLegalPersonCertInfo extends $tea.Model {
+  certName?: string;
+  idCardNo?: string;
+  certFrontImage?: string;
+  certBackImage?: string;
+  certType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      certName: 'certName',
+      idCardNo: 'idCardNo',
+      certFrontImage: 'certFrontImage',
+      certBackImage: 'certBackImage',
+      certType: 'certType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      certName: 'string',
+      idCardNo: 'string',
+      certFrontImage: 'string',
+      certBackImage: 'string',
+      certType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateSubInstitutionRequestSettleInfo extends $tea.Model {
+  type?: string;
+  accountName?: string;
+  accountId?: string;
+  bankName?: string;
+  bankBranchName?: string;
+  bankShortNameCode?: string;
+  bankCode?: string;
+  bankProvince?: string;
+  bankCity?: string;
+  accountType?: string;
+  usageType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      type: 'type',
+      accountName: 'accountName',
+      accountId: 'accountId',
+      bankName: 'bankName',
+      bankBranchName: 'bankBranchName',
+      bankShortNameCode: 'bankShortNameCode',
+      bankCode: 'bankCode',
+      bankProvince: 'bankProvince',
+      bankCity: 'bankCity',
+      accountType: 'accountType',
+      usageType: 'usageType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      type: 'string',
+      accountName: 'string',
+      accountId: 'string',
+      bankName: 'string',
+      bankBranchName: 'string',
+      bankShortNameCode: 'string',
+      bankCode: 'string',
+      bankProvince: 'string',
+      bankCity: 'string',
+      accountType: 'string',
+      usageType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateSubInstitutionRequestContractInfo extends $tea.Model {
+  contractName?: string;
+  mobile?: string;
+  static names(): { [key: string]: string } {
+    return {
+      contractName: 'contractName',
+      mobile: 'mobile',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      contractName: 'string',
+      mobile: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateSubInstitutionRequestQualificationInfos extends $tea.Model {
+  qualificationType?: string;
+  qualificationImage?: string;
+  static names(): { [key: string]: string } {
+    return {
+      qualificationType: 'qualificationType',
+      qualificationImage: 'qualificationImage',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      qualificationType: 'string',
+      qualificationImage: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateSubInstitutionRequestSubInstAuthInfo extends $tea.Model {
+  authorizationLetterUrl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      authorizationLetterUrl: 'authorizationLetterUrl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      authorizationLetterUrl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateSubInstitutionRequestSubInstAddressInfo extends $tea.Model {
+  provinceCode?: string;
+  cityCode?: string;
+  districtCode?: string;
+  address?: string;
+  static names(): { [key: string]: string } {
+    return {
+      provinceCode: 'provinceCode',
+      cityCode: 'cityCode',
+      districtCode: 'districtCode',
+      address: 'address',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      provinceCode: 'string',
+      cityCode: 'string',
+      districtCode: 'string',
+      address: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateSubInstitutionRequestSubInstShopInfo extends $tea.Model {
+  inDoorImages?: string[];
+  outDoorImages?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      inDoorImages: 'inDoorImages',
+      outDoorImages: 'outDoorImages',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      inDoorImages: { 'type': 'array', 'itemType': 'string' },
+      outDoorImages: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateSubInstitutionRequestSubInstInvoiceInfoMailAddress extends $tea.Model {
+  provinceCode?: string;
+  cityCode?: string;
+  districtCode?: string;
+  address?: string;
+  static names(): { [key: string]: string } {
+    return {
+      provinceCode: 'provinceCode',
+      cityCode: 'cityCode',
+      districtCode: 'districtCode',
+      address: 'address',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      provinceCode: 'string',
+      cityCode: 'string',
+      districtCode: 'string',
+      address: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateSubInstitutionRequestSubInstInvoiceInfo extends $tea.Model {
+  autoInvoice?: boolean;
+  acceptElectronic?: boolean;
+  taxPayerQualification?: string;
+  title?: string;
+  taxNo?: string;
+  taxPayerValidDate?: string;
+  address?: string;
+  telephone?: string;
+  bankAccount?: string;
+  bankName?: string;
+  mailName?: string;
+  mailPhone?: string;
+  mailAddress?: CreateSubInstitutionRequestSubInstInvoiceInfoMailAddress;
+  static names(): { [key: string]: string } {
+    return {
+      autoInvoice: 'autoInvoice',
+      acceptElectronic: 'acceptElectronic',
+      taxPayerQualification: 'taxPayerQualification',
+      title: 'title',
+      taxNo: 'taxNo',
+      taxPayerValidDate: 'taxPayerValidDate',
+      address: 'address',
+      telephone: 'telephone',
+      bankAccount: 'bankAccount',
+      bankName: 'bankName',
+      mailName: 'mailName',
+      mailPhone: 'mailPhone',
+      mailAddress: 'mailAddress',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      autoInvoice: 'boolean',
+      acceptElectronic: 'boolean',
+      taxPayerQualification: 'string',
+      title: 'string',
+      taxNo: 'string',
+      taxPayerValidDate: 'string',
+      address: 'string',
+      telephone: 'string',
+      bankAccount: 'string',
+      bankName: 'string',
+      mailName: 'string',
+      mailPhone: 'string',
+      mailAddress: CreateSubInstitutionRequestSubInstInvoiceInfoMailAddress,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryPayAccountListResponseBodyPayAccountVOList extends $tea.Model {
   accountNo?: string;
   accountName?: string;
@@ -1894,6 +4200,87 @@ export default class Client extends OpenApi {
     return $tea.cast<UpateUserCodeInstanceResponse>(await this.doROARequest("UpateUserCodeInstance", "finance_1.0", "HTTP", "PUT", "AK", `/v1.0/finance/payCodes/userInstances`, "json", req, runtime), new UpateUserCodeInstanceResponse({}));
   }
 
+  async creatWithholdingOrderAndPay(request: CreatWithholdingOrderAndPayRequest): Promise<CreatWithholdingOrderAndPayResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreatWithholdingOrderAndPayHeaders({ });
+    return await this.creatWithholdingOrderAndPayWithOptions(request, headers, runtime);
+  }
+
+  async creatWithholdingOrderAndPayWithOptions(request: CreatWithholdingOrderAndPayRequest, headers: CreatWithholdingOrderAndPayHeaders, runtime: $Util.RuntimeOptions): Promise<CreatWithholdingOrderAndPayResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.instId)) {
+      body["instId"] = request.instId;
+    }
+
+    if (!Util.isUnset(request.subInstId)) {
+      body["subInstId"] = request.subInstId;
+    }
+
+    if (!Util.isUnset(request.payerUserId)) {
+      body["payerUserId"] = request.payerUserId;
+    }
+
+    if (!Util.isUnset(request.payChannel)) {
+      body["payChannel"] = request.payChannel;
+    }
+
+    if (!Util.isUnset(request.amount)) {
+      body["amount"] = request.amount;
+    }
+
+    if (!Util.isUnset(request.outTradeNo)) {
+      body["outTradeNo"] = request.outTradeNo;
+    }
+
+    if (!Util.isUnset(request.title)) {
+      body["title"] = request.title;
+    }
+
+    if (!Util.isUnset(request.remark)) {
+      body["remark"] = request.remark;
+    }
+
+    if (!Util.isUnset(request.timeOutExpress)) {
+      body["timeOutExpress"] = request.timeOutExpress;
+    }
+
+    if (!Util.isUnset(request.otherPayChannelDetailInfoList)) {
+      body["otherPayChannelDetailInfoList"] = request.otherPayChannelDetailInfoList;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    if (!Util.isUnset(request.dingClientId)) {
+      body["dingClientId"] = request.dingClientId;
+    }
+
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreatWithholdingOrderAndPayResponse>(await this.doROARequest("CreatWithholdingOrderAndPay", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/withholdingOrders`, "json", req, runtime), new CreatWithholdingOrderAndPayResponse({}));
+  }
+
   async applyBatchPay(request: ApplyBatchPayRequest): Promise<ApplyBatchPayResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ApplyBatchPayHeaders({ });
@@ -1949,6 +4336,91 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<ApplyBatchPayResponse>(await this.doROARequest("ApplyBatchPay", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/batchTrades/orders/pay`, "json", req, runtime), new ApplyBatchPayResponse({}));
+  }
+
+  async userAgreementPageSign(request: UserAgreementPageSignRequest): Promise<UserAgreementPageSignResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UserAgreementPageSignHeaders({ });
+    return await this.userAgreementPageSignWithOptions(request, headers, runtime);
+  }
+
+  async userAgreementPageSignWithOptions(request: UserAgreementPageSignRequest, headers: UserAgreementPageSignHeaders, runtime: $Util.RuntimeOptions): Promise<UserAgreementPageSignResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.instId)) {
+      body["instId"] = request.instId;
+    }
+
+    if (!Util.isUnset(request.subInstId)) {
+      body["subInstId"] = request.subInstId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    if (!Util.isUnset(request.remark)) {
+      body["remark"] = request.remark;
+    }
+
+    if (!Util.isUnset(request.payChannel)) {
+      body["payChannel"] = request.payChannel;
+    }
+
+    if (!Util.isUnset(request.subMerchantServiceName)) {
+      body["subMerchantServiceName"] = request.subMerchantServiceName;
+    }
+
+    if (!Util.isUnset(request.subMerchantServiceDesc)) {
+      body["subMerchantServiceDesc"] = request.subMerchantServiceDesc;
+    }
+
+    if (!Util.isUnset(request.subMerchantName)) {
+      body["subMerchantName"] = request.subMerchantName;
+    }
+
+    if (!Util.isUnset(request.bizCode)) {
+      body["bizCode"] = request.bizCode;
+    }
+
+    if (!Util.isUnset(request.bizScene)) {
+      body["bizScene"] = request.bizScene;
+    }
+
+    if (!Util.isUnset(request.signScene)) {
+      body["signScene"] = request.signScene;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    if (!Util.isUnset(request.dingClientId)) {
+      body["dingClientId"] = request.dingClientId;
+    }
+
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UserAgreementPageSignResponse>(await this.doROARequest("UserAgreementPageSign", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/userAgreements`, "json", req, runtime), new UserAgreementPageSignResponse({}));
   }
 
   async queryUserAlipayAccount(): Promise<QueryUserAlipayAccountResponse> {
@@ -2012,6 +4484,47 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<DecodePayCodeResponse>(await this.doROARequest("DecodePayCode", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/payCodes/decode`, "json", req, runtime), new DecodePayCodeResponse({}));
+  }
+
+  async queryRegisterOrder(request: QueryRegisterOrderRequest): Promise<QueryRegisterOrderResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryRegisterOrderHeaders({ });
+    return await this.queryRegisterOrderWithOptions(request, headers, runtime);
+  }
+
+  async queryRegisterOrderWithOptions(request: QueryRegisterOrderRequest, headers: QueryRegisterOrderHeaders, runtime: $Util.RuntimeOptions): Promise<QueryRegisterOrderResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.instId)) {
+      query["instId"] = request.instId;
+    }
+
+    if (!Util.isUnset(request.subInstId)) {
+      query["subInstId"] = request.subInstId;
+    }
+
+    if (!Util.isUnset(request.outTradeNo)) {
+      query["outTradeNo"] = request.outTradeNo;
+    }
+
+    if (!Util.isUnset(request.orderId)) {
+      query["orderId"] = request.orderId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryRegisterOrderResponse>(await this.doROARequest("QueryRegisterOrder", "finance_1.0", "HTTP", "GET", "AK", `/v1.0/finance/institutions/subInstitutions/orders`, "json", req, runtime), new QueryRegisterOrderResponse({}));
   }
 
   async createBatchTradeOrder(request: CreateBatchTradeOrderRequest): Promise<CreateBatchTradeOrderResponse> {
@@ -2181,6 +4694,51 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryBatchTradeDetailListResponse>(await this.doROARequest("QueryBatchTradeDetailList", "finance_1.0", "HTTP", "GET", "AK", `/v1.0/finance/batchTrades/details`, "json", req, runtime), new QueryBatchTradeDetailListResponse({}));
   }
 
+  async queryUserAgreement(request: QueryUserAgreementRequest): Promise<QueryUserAgreementResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryUserAgreementHeaders({ });
+    return await this.queryUserAgreementWithOptions(request, headers, runtime);
+  }
+
+  async queryUserAgreementWithOptions(request: QueryUserAgreementRequest, headers: QueryUserAgreementHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserAgreementResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.instId)) {
+      query["instId"] = request.instId;
+    }
+
+    if (!Util.isUnset(request.subInstId)) {
+      query["subInstId"] = request.subInstId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    if (!Util.isUnset(request.bizCode)) {
+      query["bizCode"] = request.bizCode;
+    }
+
+    if (!Util.isUnset(request.bizScene)) {
+      query["bizScene"] = request.bizScene;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryUserAgreementResponse>(await this.doROARequest("QueryUserAgreement", "finance_1.0", "HTTP", "GET", "AK", `/v1.0/finance/userAgreements`, "json", req, runtime), new QueryUserAgreementResponse({}));
+  }
+
   async createUserCodeInstance(request: CreateUserCodeInstanceRequest): Promise<CreateUserCodeInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateUserCodeInstanceHeaders({ });
@@ -2285,6 +4843,67 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<QueryBatchTradeOrderResponse>(await this.doROARequest("QueryBatchTradeOrder", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/batchTrades/orders/query`, "json", req, runtime), new QueryBatchTradeOrderResponse({}));
+  }
+
+  async uploadRegisterImage(request: UploadRegisterImageRequest): Promise<UploadRegisterImageResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UploadRegisterImageHeaders({ });
+    return await this.uploadRegisterImageWithOptions(request, headers, runtime);
+  }
+
+  async uploadRegisterImageWithOptions(request: UploadRegisterImageRequest, headers: UploadRegisterImageHeaders, runtime: $Util.RuntimeOptions): Promise<UploadRegisterImageResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.instId)) {
+      body["instId"] = request.instId;
+    }
+
+    if (!Util.isUnset(request.payChannel)) {
+      body["payChannel"] = request.payChannel;
+    }
+
+    if (!Util.isUnset(request.imageType)) {
+      body["imageType"] = request.imageType;
+    }
+
+    if (!Util.isUnset(request.imageName)) {
+      body["imageName"] = request.imageName;
+    }
+
+    if (!Util.isUnset(request.imageContent)) {
+      body["imageContent"] = request.imageContent;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    if (!Util.isUnset(request.dingClientId)) {
+      body["dingClientId"] = request.dingClientId;
+    }
+
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UploadRegisterImageResponse>(await this.doROARequest("UploadRegisterImage", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/instutions/images`, "json", req, runtime), new UploadRegisterImageResponse({}));
   }
 
   async saveCorpPayCode(request: SaveCorpPayCodeRequest): Promise<SaveCorpPayCodeResponse> {
@@ -2409,6 +5028,394 @@ export default class Client extends OpenApi {
     return $tea.cast<NotifyVerifyResultResponse>(await this.doROARequest("NotifyVerifyResult", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/payCodes/verifyResults/notify`, "json", req, runtime), new NotifyVerifyResultResponse({}));
   }
 
+  async unsignUserAgreement(request: UnsignUserAgreementRequest): Promise<UnsignUserAgreementResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UnsignUserAgreementHeaders({ });
+    return await this.unsignUserAgreementWithOptions(request, headers, runtime);
+  }
+
+  async unsignUserAgreementWithOptions(request: UnsignUserAgreementRequest, headers: UnsignUserAgreementHeaders, runtime: $Util.RuntimeOptions): Promise<UnsignUserAgreementResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.instId)) {
+      body["instId"] = request.instId;
+    }
+
+    if (!Util.isUnset(request.subInstId)) {
+      body["subInstId"] = request.subInstId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    if (!Util.isUnset(request.bizCode)) {
+      body["bizCode"] = request.bizCode;
+    }
+
+    if (!Util.isUnset(request.bizScene)) {
+      body["bizScene"] = request.bizScene;
+    }
+
+    if (!Util.isUnset(request.agreementNo)) {
+      body["agreementNo"] = request.agreementNo;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    if (!Util.isUnset(request.dingClientId)) {
+      body["dingClientId"] = request.dingClientId;
+    }
+
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UnsignUserAgreementResponse>(await this.doROARequest("UnsignUserAgreement", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/userAgreements/unsign`, "none", req, runtime), new UnsignUserAgreementResponse({}));
+  }
+
+  async consultCreateSubInstitution(request: ConsultCreateSubInstitutionRequest): Promise<ConsultCreateSubInstitutionResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ConsultCreateSubInstitutionHeaders({ });
+    return await this.consultCreateSubInstitutionWithOptions(request, headers, runtime);
+  }
+
+  async consultCreateSubInstitutionWithOptions(request: ConsultCreateSubInstitutionRequest, headers: ConsultCreateSubInstitutionHeaders, runtime: $Util.RuntimeOptions): Promise<ConsultCreateSubInstitutionResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.instId)) {
+      body["instId"] = request.instId;
+    }
+
+    if (!Util.isUnset(request.subInstId)) {
+      body["subInstId"] = request.subInstId;
+    }
+
+    if (!Util.isUnset(request.outTradeNo)) {
+      body["outTradeNo"] = request.outTradeNo;
+    }
+
+    if (!Util.isUnset(request.services)) {
+      body["services"] = request.services;
+    }
+
+    if (!Util.isUnset(request.solution)) {
+      body["solution"] = request.solution;
+    }
+
+    if (!Util.isUnset(request.payChannel)) {
+      body["payChannel"] = request.payChannel;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.subInstBasicInfo))) {
+      body["subInstBasicInfo"] = request.subInstBasicInfo;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.subInstCertifyInfo))) {
+      body["subInstCertifyInfo"] = request.subInstCertifyInfo;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.legalPersonCertInfo))) {
+      body["legalPersonCertInfo"] = request.legalPersonCertInfo;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.settleInfo))) {
+      body["settleInfo"] = request.settleInfo;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.contractInfo))) {
+      body["contractInfo"] = request.contractInfo;
+    }
+
+    if (!Util.isUnset(request.qualificationInfos)) {
+      body["qualificationInfos"] = request.qualificationInfos;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.subInstAuthInfo))) {
+      body["subInstAuthInfo"] = request.subInstAuthInfo;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.subInstAddressInfo))) {
+      body["subInstAddressInfo"] = request.subInstAddressInfo;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.subInstShopInfo))) {
+      body["subInstShopInfo"] = request.subInstShopInfo;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.subInstInvoiceInfo))) {
+      body["subInstInvoiceInfo"] = request.subInstInvoiceInfo;
+    }
+
+    if (!Util.isUnset(request.bindingAlipayLogonId)) {
+      body["bindingAlipayLogonId"] = request.bindingAlipayLogonId;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    if (!Util.isUnset(request.dingClientId)) {
+      body["dingClientId"] = request.dingClientId;
+    }
+
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<ConsultCreateSubInstitutionResponse>(await this.doROARequest("ConsultCreateSubInstitution", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/institutions/subInstitutions/consult`, "json", req, runtime), new ConsultCreateSubInstitutionResponse({}));
+  }
+
+  async modifySubInstitution(request: ModifySubInstitutionRequest): Promise<ModifySubInstitutionResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ModifySubInstitutionHeaders({ });
+    return await this.modifySubInstitutionWithOptions(request, headers, runtime);
+  }
+
+  async modifySubInstitutionWithOptions(request: ModifySubInstitutionRequest, headers: ModifySubInstitutionHeaders, runtime: $Util.RuntimeOptions): Promise<ModifySubInstitutionResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.instId)) {
+      body["instId"] = request.instId;
+    }
+
+    if (!Util.isUnset(request.subInstId)) {
+      body["subInstId"] = request.subInstId;
+    }
+
+    if (!Util.isUnset(request.outTradeNo)) {
+      body["outTradeNo"] = request.outTradeNo;
+    }
+
+    if (!Util.isUnset(request.services)) {
+      body["services"] = request.services;
+    }
+
+    if (!Util.isUnset(request.payChannel)) {
+      body["payChannel"] = request.payChannel;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.subInstBasicInfo))) {
+      body["subInstBasicInfo"] = request.subInstBasicInfo;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.subInstCertifyInfo))) {
+      body["subInstCertifyInfo"] = request.subInstCertifyInfo;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.legalPersonCertInfo))) {
+      body["legalPersonCertInfo"] = request.legalPersonCertInfo;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.settleInfo))) {
+      body["settleInfo"] = request.settleInfo;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.contractInfo))) {
+      body["contractInfo"] = request.contractInfo;
+    }
+
+    if (!Util.isUnset(request.qualificationInfos)) {
+      body["qualificationInfos"] = request.qualificationInfos;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.subInstAuthInfo))) {
+      body["subInstAuthInfo"] = request.subInstAuthInfo;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.subInstAddressInfo))) {
+      body["subInstAddressInfo"] = request.subInstAddressInfo;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.subInstShopInfo))) {
+      body["subInstShopInfo"] = request.subInstShopInfo;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.subInstInvoiceInfo))) {
+      body["subInstInvoiceInfo"] = request.subInstInvoiceInfo;
+    }
+
+    if (!Util.isUnset(request.bindingAlipayLogonId)) {
+      body["bindingAlipayLogonId"] = request.bindingAlipayLogonId;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    if (!Util.isUnset(request.dingClientId)) {
+      body["dingClientId"] = request.dingClientId;
+    }
+
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<ModifySubInstitutionResponse>(await this.doROARequest("ModifySubInstitution", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/institutions/subInstitutions/modify`, "json", req, runtime), new ModifySubInstitutionResponse({}));
+  }
+
+  async createSubInstitution(request: CreateSubInstitutionRequest): Promise<CreateSubInstitutionResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateSubInstitutionHeaders({ });
+    return await this.createSubInstitutionWithOptions(request, headers, runtime);
+  }
+
+  async createSubInstitutionWithOptions(request: CreateSubInstitutionRequest, headers: CreateSubInstitutionHeaders, runtime: $Util.RuntimeOptions): Promise<CreateSubInstitutionResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.instId)) {
+      body["instId"] = request.instId;
+    }
+
+    if (!Util.isUnset(request.subInstId)) {
+      body["subInstId"] = request.subInstId;
+    }
+
+    if (!Util.isUnset(request.outTradeNo)) {
+      body["outTradeNo"] = request.outTradeNo;
+    }
+
+    if (!Util.isUnset(request.services)) {
+      body["services"] = request.services;
+    }
+
+    if (!Util.isUnset(request.solution)) {
+      body["solution"] = request.solution;
+    }
+
+    if (!Util.isUnset(request.payChannel)) {
+      body["payChannel"] = request.payChannel;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.subInstBasicInfo))) {
+      body["subInstBasicInfo"] = request.subInstBasicInfo;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.subInstCertifyInfo))) {
+      body["subInstCertifyInfo"] = request.subInstCertifyInfo;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.legalPersonCertInfo))) {
+      body["legalPersonCertInfo"] = request.legalPersonCertInfo;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.settleInfo))) {
+      body["settleInfo"] = request.settleInfo;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.contractInfo))) {
+      body["contractInfo"] = request.contractInfo;
+    }
+
+    if (!Util.isUnset(request.qualificationInfos)) {
+      body["qualificationInfos"] = request.qualificationInfos;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.subInstAuthInfo))) {
+      body["subInstAuthInfo"] = request.subInstAuthInfo;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.subInstAddressInfo))) {
+      body["subInstAddressInfo"] = request.subInstAddressInfo;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.subInstShopInfo))) {
+      body["subInstShopInfo"] = request.subInstShopInfo;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.subInstInvoiceInfo))) {
+      body["subInstInvoiceInfo"] = request.subInstInvoiceInfo;
+    }
+
+    if (!Util.isUnset(request.bindingAlipayLogonId)) {
+      body["bindingAlipayLogonId"] = request.bindingAlipayLogonId;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    if (!Util.isUnset(request.dingClientId)) {
+      body["dingClientId"] = request.dingClientId;
+    }
+
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreateSubInstitutionResponse>(await this.doROARequest("CreateSubInstitution", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/institutions/subInstitutions`, "json", req, runtime), new CreateSubInstitutionResponse({}));
+  }
+
   async queryPayAccountList(): Promise<QueryPayAccountListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryPayAccountListHeaders({ });
@@ -2429,6 +5436,35 @@ export default class Client extends OpenApi {
       headers: realHeaders,
     });
     return $tea.cast<QueryPayAccountListResponse>(await this.doROARequest("QueryPayAccountList", "finance_1.0", "HTTP", "GET", "AK", `/v1.0/finance/payAccounts`, "json", req, runtime), new QueryPayAccountListResponse({}));
+  }
+
+  async queryWithholdingOrder(request: QueryWithholdingOrderRequest): Promise<QueryWithholdingOrderResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryWithholdingOrderHeaders({ });
+    return await this.queryWithholdingOrderWithOptions(request, headers, runtime);
+  }
+
+  async queryWithholdingOrderWithOptions(request: QueryWithholdingOrderRequest, headers: QueryWithholdingOrderHeaders, runtime: $Util.RuntimeOptions): Promise<QueryWithholdingOrderResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.outTradeNo)) {
+      query["outTradeNo"] = request.outTradeNo;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryWithholdingOrderResponse>(await this.doROARequest("QueryWithholdingOrder", "finance_1.0", "HTTP", "GET", "AK", `/v1.0/finance/withholdingOrders`, "json", req, runtime), new QueryWithholdingOrderResponse({}));
   }
 
 }
