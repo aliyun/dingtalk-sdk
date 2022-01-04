@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class QueryUserExtendValuesRequest : TeaModel {
-        /// <summary>
-        /// 组织id
-        /// </summary>
         [NameInMap("dingOrgId")]
         [Validation(Required=false)]
         public long? DingOrgId { get; set; }

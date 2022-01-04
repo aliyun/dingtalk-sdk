@@ -166,6 +166,13 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             [Validation(Required=false)]
             public string GmtModified { get; set; }
 
+            /// <summary>
+            /// 群组内群数量（不包含已解散的群）。
+            /// </summary>
+            [NameInMap("groupChatCount")]
+            [Validation(Required=false)]
+            public int? GroupChatCount { get; set; }
+
         }
 
         /// <summary>

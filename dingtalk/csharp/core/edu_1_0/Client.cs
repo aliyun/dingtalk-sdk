@@ -5778,6 +5778,86 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             return TeaModel.ToObject<UpdateRemoteClassCourseResponse>(await DoROARequestAsync("UpdateRemoteClassCourse", "edu_1.0", "HTTP", "PUT", "AK", "/v1.0/edu/remoteClasses/courses", "json", req, runtime));
         }
 
+        public UpdateRemoteClassDeviceResponse UpdateRemoteClassDevice(UpdateRemoteClassDeviceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateRemoteClassDeviceHeaders headers = new UpdateRemoteClassDeviceHeaders();
+            return UpdateRemoteClassDeviceWithOptions(request, headers, runtime);
+        }
+
+        public async Task<UpdateRemoteClassDeviceResponse> UpdateRemoteClassDeviceAsync(UpdateRemoteClassDeviceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateRemoteClassDeviceHeaders headers = new UpdateRemoteClassDeviceHeaders();
+            return await UpdateRemoteClassDeviceWithOptionsAsync(request, headers, runtime);
+        }
+
+        public UpdateRemoteClassDeviceResponse UpdateRemoteClassDeviceWithOptions(UpdateRemoteClassDeviceRequest request, UpdateRemoteClassDeviceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AuthCode))
+            {
+                query["authCode"] = request.AuthCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceCode))
+            {
+                query["deviceCode"] = request.DeviceCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceName))
+            {
+                query["deviceName"] = request.DeviceName;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<UpdateRemoteClassDeviceResponse>(DoROARequest("UpdateRemoteClassDevice", "edu_1.0", "HTTP", "PUT", "AK", "/v1.0/edu/remoteClasses/deviceNames", "json", req, runtime));
+        }
+
+        public async Task<UpdateRemoteClassDeviceResponse> UpdateRemoteClassDeviceWithOptionsAsync(UpdateRemoteClassDeviceRequest request, UpdateRemoteClassDeviceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AuthCode))
+            {
+                query["authCode"] = request.AuthCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceCode))
+            {
+                query["deviceCode"] = request.DeviceCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceName))
+            {
+                query["deviceName"] = request.DeviceName;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<UpdateRemoteClassDeviceResponse>(await DoROARequestAsync("UpdateRemoteClassDevice", "edu_1.0", "HTTP", "PUT", "AK", "/v1.0/edu/remoteClasses/deviceNames", "json", req, runtime));
+        }
+
         public UpdateUniversityCourseGroupResponse UpdateUniversityCourseGroup(UpdateUniversityCourseGroupRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
