@@ -89,6 +89,13 @@ class GetGroupSetResponseBody extends Model
      * @var string
      */
     public $gmtModified;
+
+    /**
+     * @description 群组内群数量（不包含已解散的群）。
+     *
+     * @var int
+     */
+    public $groupChatCount;
     protected $_name = [
         'name'                   => 'name',
         'openGroupSetId'         => 'openGroupSetId',
@@ -106,6 +113,7 @@ class GetGroupSetResponseBody extends Model
         'lastOpenConversationId' => 'lastOpenConversationId',
         'gmtCreate'              => 'gmtCreate',
         'gmtModified'            => 'gmtModified',
+        'groupChatCount'         => 'groupChatCount',
     ];
 
     public function validate()
@@ -168,6 +176,9 @@ class GetGroupSetResponseBody extends Model
         }
         if (null !== $this->gmtModified) {
             $res['gmtModified'] = $this->gmtModified;
+        }
+        if (null !== $this->groupChatCount) {
+            $res['groupChatCount'] = $this->groupChatCount;
         }
 
         return $res;
@@ -234,6 +245,9 @@ class GetGroupSetResponseBody extends Model
         }
         if (isset($map['gmtModified'])) {
             $model->gmtModified = $map['gmtModified'];
+        }
+        if (isset($map['groupChatCount'])) {
+            $model->groupChatCount = $map['groupChatCount'];
         }
 
         return $model;

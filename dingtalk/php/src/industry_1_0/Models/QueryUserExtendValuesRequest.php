@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class QueryUserExtendValuesRequest extends Model
 {
     /**
-     * @description 组织id
-     *
      * @var int
      */
     public $dingOrgId;

@@ -98,6 +98,9 @@ use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetPrintDictionaryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetProcessDefinitionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetProcessDefinitionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetProcessDefinitionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetRunningTaskListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetRunningTaskListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetRunningTaskListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetRunningTasksHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetRunningTasksRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetRunningTasksResponse;
@@ -1470,6 +1473,60 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return NotifyAuthorizationResultResponse::fromMap($this->doROARequest('NotifyAuthorizationResult', 'yida_1.0', 'HTTP', 'POST', 'AK', '/v1.0/yida/apps/authorizationResults/notify', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetRunningTaskListRequest $request
+     *
+     * @return GetRunningTaskListResponse
+     */
+    public function getRunningTaskList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetRunningTaskListHeaders([]);
+
+        return $this->getRunningTaskListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetRunningTaskListRequest $request
+     * @param GetRunningTaskListHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return GetRunningTaskListResponse
+     */
+    public function getRunningTaskListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->processInstanceIdList)) {
+            @$body['processInstanceIdList'] = $request->processInstanceIdList;
+        }
+        if (!Utils::isUnset($request->appType)) {
+            @$body['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->systemToken)) {
+            @$body['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->userCorpId)) {
+            @$body['userCorpId'] = $request->userCorpId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GetRunningTaskListResponse::fromMap($this->doROARequest('GetRunningTaskList', 'yida_1.0', 'HTTP', 'POST', 'AK', '/v1.0/yida/tasks/runningTasks/query', 'json', $req, $runtime));
     }
 
     /**

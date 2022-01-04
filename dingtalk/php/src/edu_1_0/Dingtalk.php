@@ -194,6 +194,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdatePhysicalClassroomResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateRemoteClassCourseHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateRemoteClassCourseRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateRemoteClassCourseResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateRemoteClassDeviceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateRemoteClassDeviceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateRemoteClassDeviceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateUniversityCourseGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateUniversityCourseGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateUniversityCourseGroupResponse;
@@ -1462,6 +1465,54 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CreateRemoteClassCourseResponse::fromMap($this->doROARequest('CreateRemoteClassCourse', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/remoteClasses/courses', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param UpdateRemoteClassDeviceRequest $request
+     *
+     * @return UpdateRemoteClassDeviceResponse
+     */
+    public function updateRemoteClassDevice($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateRemoteClassDeviceHeaders([]);
+
+        return $this->updateRemoteClassDeviceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateRemoteClassDeviceRequest $request
+     * @param UpdateRemoteClassDeviceHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return UpdateRemoteClassDeviceResponse
+     */
+    public function updateRemoteClassDeviceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->deviceCode)) {
+            @$query['deviceCode'] = $request->deviceCode;
+        }
+        if (!Utils::isUnset($request->authCode)) {
+            @$query['authCode'] = $request->authCode;
+        }
+        if (!Utils::isUnset($request->deviceName)) {
+            @$query['deviceName'] = $request->deviceName;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return UpdateRemoteClassDeviceResponse::fromMap($this->doROARequest('UpdateRemoteClassDevice', 'edu_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/edu/remoteClasses/deviceNames', 'json', $req, $runtime));
     }
 
     /**

@@ -4,35 +4,36 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\MachineManagerUpdateRequest\atmManagerRightMap;
 use AlibabaCloud\Tea\Model;
 
 class MachineManagerUpdateRequest extends Model
 {
     /**
-     * @description 设备id
+     * @description 设备id。
      *
      * @var int
      */
     public $deviceId;
 
     /**
-     * @description 设备管理员的userId
+     * @description 设备管理员的userId。
      *
      * @var string
      */
     public $userId;
 
     /**
-     * @description 权限范围：可管理的部门id列表
+     * @description 权限范围：可管理的部门id列表，-1表示全公司
      *
      * @var int[]
      */
     public $scopeDeptIds;
 
     /**
-     * @description 设备管理员权限点
+     * @description 设备管理员权限点。
      *
-     * @var bool[]
+     * @var atmManagerRightMap
      */
     public $atmManagerRightMap;
 
@@ -89,7 +90,7 @@ class MachineManagerUpdateRequest extends Model
             $res['scopeDeptIds'] = $this->scopeDeptIds;
         }
         if (null !== $this->atmManagerRightMap) {
-            $res['atmManagerRightMap'] = $this->atmManagerRightMap;
+            $res['atmManagerRightMap'] = null !== $this->atmManagerRightMap ? $this->atmManagerRightMap->toMap() : null;
         }
         if (null !== $this->dingTokenGrantType) {
             $res['dingTokenGrantType'] = $this->dingTokenGrantType;
@@ -130,7 +131,7 @@ class MachineManagerUpdateRequest extends Model
             }
         }
         if (isset($map['atmManagerRightMap'])) {
-            $model->atmManagerRightMap = $map['atmManagerRightMap'];
+            $model->atmManagerRightMap = atmManagerRightMap::fromMap($map['atmManagerRightMap']);
         }
         if (isset($map['dingTokenGrantType'])) {
             $model->dingTokenGrantType = $map['dingTokenGrantType'];
