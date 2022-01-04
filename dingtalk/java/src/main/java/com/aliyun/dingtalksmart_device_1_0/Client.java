@@ -183,7 +183,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("scopeDeptIds", request.scopeDeptIds);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.atmManagerRightMap)) {
+        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.atmManagerRightMap))) {
             body.put("atmManagerRightMap", request.atmManagerRightMap);
         }
 

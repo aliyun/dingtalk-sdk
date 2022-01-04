@@ -186,6 +186,10 @@ public class ListGroupSetResponseBody extends TeaModel {
         @NameInMap("gmtModified")
         public String gmtModified;
 
+        // 群组内群数量（不包含已解散的群）。
+        @NameInMap("groupChatCount")
+        public Integer groupChatCount;
+
         public static ListGroupSetResponseBodyResultList build(java.util.Map<String, ?> map) throws Exception {
             ListGroupSetResponseBodyResultList self = new ListGroupSetResponseBodyResultList();
             return TeaModel.build(map, self);
@@ -317,6 +321,14 @@ public class ListGroupSetResponseBody extends TeaModel {
         }
         public String getGmtModified() {
             return this.gmtModified;
+        }
+
+        public ListGroupSetResponseBodyResultList setGroupChatCount(Integer groupChatCount) {
+            this.groupChatCount = groupChatCount;
+            return this;
+        }
+        public Integer getGroupChatCount() {
+            return this.groupChatCount;
         }
 
     }

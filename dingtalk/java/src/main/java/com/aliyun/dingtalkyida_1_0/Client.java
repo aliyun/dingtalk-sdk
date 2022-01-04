@@ -1084,6 +1084,51 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("NotifyAuthorizationResult", "yida_1.0", "HTTP", "POST", "AK", "/v1.0/yida/apps/authorizationResults/notify", "json", req, runtime), new NotifyAuthorizationResultResponse());
     }
 
+    public GetRunningTaskListResponse getRunningTaskList(GetRunningTaskListRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        GetRunningTaskListHeaders headers = new GetRunningTaskListHeaders();
+        return this.getRunningTaskListWithOptions(request, headers, runtime);
+    }
+
+    public GetRunningTaskListResponse getRunningTaskListWithOptions(GetRunningTaskListRequest request, GetRunningTaskListHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.processInstanceIdList)) {
+            body.put("processInstanceIdList", request.processInstanceIdList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.appType)) {
+            body.put("appType", request.appType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.systemToken)) {
+            body.put("systemToken", request.systemToken);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userCorpId)) {
+            body.put("userCorpId", request.userCorpId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("GetRunningTaskList", "yida_1.0", "HTTP", "POST", "AK", "/v1.0/yida/tasks/runningTasks/query", "json", req, runtime), new GetRunningTaskListResponse());
+    }
+
     public BuyFreshOrderResponse buyFreshOrder(BuyFreshOrderRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         BuyFreshOrderHeaders headers = new BuyFreshOrderHeaders();

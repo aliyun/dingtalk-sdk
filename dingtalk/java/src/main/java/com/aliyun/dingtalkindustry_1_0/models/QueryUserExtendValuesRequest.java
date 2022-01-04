@@ -4,7 +4,6 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryUserExtendValuesRequest extends TeaModel {
-    // 组织id
     @NameInMap("dingOrgId")
     public Long dingOrgId;
 
