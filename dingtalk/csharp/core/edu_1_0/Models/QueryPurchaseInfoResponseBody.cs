@@ -24,6 +24,13 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public string MerchantId { get; set; }
 
         /// <summary>
+        /// 名字
+        /// </summary>
+        [NameInMap("name")]
+        [Validation(Required=false)]
+        public string Name { get; set; }
+
+        /// <summary>
         /// 场景id
         /// </summary>
         [NameInMap("scene")]

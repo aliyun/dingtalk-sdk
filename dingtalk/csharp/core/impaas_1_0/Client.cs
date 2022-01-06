@@ -228,6 +228,10 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0
             {
                 body["content"] = request.Content;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ConversationIds))
+            {
+                body["conversationIds"] = request.ConversationIds;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
                 body["userId"] = request.UserId;
@@ -260,6 +264,10 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Content))
             {
                 body["content"] = request.Content;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ConversationIds))
+            {
+                body["conversationIds"] = request.ConversationIds;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
@@ -680,6 +688,78 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             return TeaModel.ToObject<ListGroupStaffMembersResponse>(await DoROARequestAsync("ListGroupStaffMembers", "impaas_1.0", "HTTP", "POST", "AK", "/v1.0/impaas/interconnections/groups/staffMemers/query", "json", req, runtime));
+        }
+
+        public QueryBatchSendResultResponse QueryBatchSendResult(QueryBatchSendResultRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryBatchSendResultHeaders headers = new QueryBatchSendResultHeaders();
+            return QueryBatchSendResultWithOptions(request, headers, runtime);
+        }
+
+        public async Task<QueryBatchSendResultResponse> QueryBatchSendResultAsync(QueryBatchSendResultRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryBatchSendResultHeaders headers = new QueryBatchSendResultHeaders();
+            return await QueryBatchSendResultWithOptionsAsync(request, headers, runtime);
+        }
+
+        public QueryBatchSendResultResponse QueryBatchSendResultWithOptions(QueryBatchSendResultRequest request, QueryBatchSendResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SenderUserId))
+            {
+                query["senderUserId"] = request.SenderUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskId))
+            {
+                query["taskId"] = request.TaskId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<QueryBatchSendResultResponse>(DoROARequest("QueryBatchSendResult", "impaas_1.0", "HTTP", "GET", "AK", "/v1.0/impaas/interconnections/messages/batchSendResults", "json", req, runtime));
+        }
+
+        public async Task<QueryBatchSendResultResponse> QueryBatchSendResultWithOptionsAsync(QueryBatchSendResultRequest request, QueryBatchSendResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SenderUserId))
+            {
+                query["senderUserId"] = request.SenderUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskId))
+            {
+                query["taskId"] = request.TaskId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<QueryBatchSendResultResponse>(await DoROARequestAsync("QueryBatchSendResult", "impaas_1.0", "HTTP", "GET", "AK", "/v1.0/impaas/interconnections/messages/batchSendResults", "json", req, runtime));
         }
 
         public ReadMessageResponse ReadMessage(ReadMessageRequest request)

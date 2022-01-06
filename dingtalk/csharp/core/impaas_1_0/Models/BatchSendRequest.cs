@@ -24,6 +24,13 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
         public string Content { get; set; }
 
         /// <summary>
+        /// 接收消息的群聊列表
+        /// </summary>
+        [NameInMap("conversationIds")]
+        [Validation(Required=false)]
+        public List<string> ConversationIds { get; set; }
+
+        /// <summary>
         /// 发送者，企业员工账号
         /// </summary>
         [NameInMap("userId")]

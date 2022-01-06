@@ -12,9 +12,9 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         /// <summary>
         /// 指令
         /// </summary>
-        [NameInMap("code")]
+        [NameInMap("command")]
         [Validation(Required=false)]
-        public int? Code { get; set; }
+        public int? Command { get; set; }
 
     }
 
