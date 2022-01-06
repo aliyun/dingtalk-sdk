@@ -228,6 +228,355 @@ class ECertQueryResponse(TeaModel):
         return self
 
 
+class MasterDataSaveHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class MasterDataSaveRequestBodyScope(TeaModel):
+    def __init__(
+        self,
+        scope_code: str = None,
+        version: int = None,
+    ):
+        # 业务域code，如PERFORMANCE，系统分配
+        self.scope_code = scope_code
+        # 业务域版本，接入时系统分配，默认传1
+        self.version = version
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.scope_code is not None:
+            result['scopeCode'] = self.scope_code
+        if self.version is not None:
+            result['version'] = self.version
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('scopeCode') is not None:
+            self.scope_code = m.get('scopeCode')
+        if m.get('version') is not None:
+            self.version = m.get('version')
+        return self
+
+
+class MasterDataSaveRequestBodyFieldList(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        value_str: str = None,
+    ):
+        # 字段名
+        self.name = name
+        # 字段string值
+        self.value_str = value_str
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.value_str is not None:
+            result['valueStr'] = self.value_str
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('valueStr') is not None:
+            self.value_str = m.get('valueStr')
+        return self
+
+
+class MasterDataSaveRequestBody(TeaModel):
+    def __init__(
+        self,
+        user_id: str = None,
+        biz_uk: str = None,
+        biz_time: int = None,
+        scope: MasterDataSaveRequestBodyScope = None,
+        entity_code: str = None,
+        field_list: List[MasterDataSaveRequestBodyFieldList] = None,
+    ):
+        # 员工id
+        self.user_id = user_id
+        # 数据流水唯一标识，如流水号，用以唯一确认一条写入数据
+        self.biz_uk = biz_uk
+        # 数据变更时间戳，用以保证更新操作的顺序性
+        self.biz_time = biz_time
+        # 业务域描述，系统分配
+        self.scope = scope
+        # 业务域下的细分领域实体
+        self.entity_code = entity_code
+        # 数据字段列表
+        self.field_list = field_list
+
+    def validate(self):
+        if self.scope:
+            self.scope.validate()
+        if self.field_list:
+            for k in self.field_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.biz_uk is not None:
+            result['bizUk'] = self.biz_uk
+        if self.biz_time is not None:
+            result['bizTime'] = self.biz_time
+        if self.scope is not None:
+            result['scope'] = self.scope.to_map()
+        if self.entity_code is not None:
+            result['entityCode'] = self.entity_code
+        result['fieldList'] = []
+        if self.field_list is not None:
+            for k in self.field_list:
+                result['fieldList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('bizUk') is not None:
+            self.biz_uk = m.get('bizUk')
+        if m.get('bizTime') is not None:
+            self.biz_time = m.get('bizTime')
+        if m.get('scope') is not None:
+            temp_model = MasterDataSaveRequestBodyScope()
+            self.scope = temp_model.from_map(m['scope'])
+        if m.get('entityCode') is not None:
+            self.entity_code = m.get('entityCode')
+        self.field_list = []
+        if m.get('fieldList') is not None:
+            for k in m.get('fieldList'):
+                temp_model = MasterDataSaveRequestBodyFieldList()
+                self.field_list.append(temp_model.from_map(k))
+        return self
+
+
+class MasterDataSaveRequest(TeaModel):
+    def __init__(
+        self,
+        tenant_id: int = None,
+        body: List[MasterDataSaveRequestBody] = None,
+    ):
+        # 租户id
+        self.tenant_id = tenant_id
+        # 主数据
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            for k in self.body:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.tenant_id is not None:
+            result['tenantId'] = self.tenant_id
+        result['body'] = []
+        if self.body is not None:
+            for k in self.body:
+                result['body'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('tenantId') is not None:
+            self.tenant_id = m.get('tenantId')
+        self.body = []
+        if m.get('body') is not None:
+            for k in m.get('body'):
+                temp_model = MasterDataSaveRequestBody()
+                self.body.append(temp_model.from_map(k))
+        return self
+
+
+class MasterDataSaveResponseBodyFailResult(TeaModel):
+    def __init__(
+        self,
+        biz_uk: str = None,
+        success: bool = None,
+        error_code: str = None,
+        error_msg: str = None,
+    ):
+        # 业务流水唯一标识，和入参一致
+        self.biz_uk = biz_uk
+        # 是否成功
+        self.success = success
+        # 错误码
+        self.error_code = error_code
+        # 错误信息
+        self.error_msg = error_msg
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_uk is not None:
+            result['bizUk'] = self.biz_uk
+        if self.success is not None:
+            result['success'] = self.success
+        if self.error_code is not None:
+            result['errorCode'] = self.error_code
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizUk') is not None:
+            self.biz_uk = m.get('bizUk')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        if m.get('errorCode') is not None:
+            self.error_code = m.get('errorCode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        return self
+
+
+class MasterDataSaveResponseBody(TeaModel):
+    def __init__(
+        self,
+        all_success: bool = None,
+        fail_result: List[MasterDataSaveResponseBodyFailResult] = None,
+    ):
+        # 是否全部保存成功
+        self.all_success = all_success
+        # 保存失败的结果，全部保存成功时为空
+        self.fail_result = fail_result
+
+    def validate(self):
+        if self.fail_result:
+            for k in self.fail_result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.all_success is not None:
+            result['allSuccess'] = self.all_success
+        result['failResult'] = []
+        if self.fail_result is not None:
+            for k in self.fail_result:
+                result['failResult'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('allSuccess') is not None:
+            self.all_success = m.get('allSuccess')
+        self.fail_result = []
+        if m.get('failResult') is not None:
+            for k in m.get('failResult'):
+                temp_model = MasterDataSaveResponseBodyFailResult()
+                self.fail_result.append(temp_model.from_map(k))
+        return self
+
+
+class MasterDataSaveResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: MasterDataSaveResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = MasterDataSaveResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryJobRanksHeaders(TeaModel):
     def __init__(
         self,

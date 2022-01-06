@@ -847,6 +847,74 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('AddGroupMembers', 'impaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/impaas/interconnections/groups/members/batchAdd', 'json', req, runtime)
         )
 
+    def query_batch_send_result(
+        self,
+        request: dingtalkimpaas__1__0_models.QueryBatchSendResultRequest,
+    ) -> dingtalkimpaas__1__0_models.QueryBatchSendResultResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkimpaas__1__0_models.QueryBatchSendResultHeaders()
+        return self.query_batch_send_result_with_options(request, headers, runtime)
+
+    async def query_batch_send_result_async(
+        self,
+        request: dingtalkimpaas__1__0_models.QueryBatchSendResultRequest,
+    ) -> dingtalkimpaas__1__0_models.QueryBatchSendResultResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkimpaas__1__0_models.QueryBatchSendResultHeaders()
+        return await self.query_batch_send_result_with_options_async(request, headers, runtime)
+
+    def query_batch_send_result_with_options(
+        self,
+        request: dingtalkimpaas__1__0_models.QueryBatchSendResultRequest,
+        headers: dingtalkimpaas__1__0_models.QueryBatchSendResultHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkimpaas__1__0_models.QueryBatchSendResultResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.sender_user_id):
+            query['senderUserId'] = request.sender_user_id
+        if not UtilClient.is_unset(request.task_id):
+            query['taskId'] = request.task_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkimpaas__1__0_models.QueryBatchSendResultResponse(),
+            self.do_roarequest('QueryBatchSendResult', 'impaas_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/impaas/interconnections/messages/batchSendResults', 'json', req, runtime)
+        )
+
+    async def query_batch_send_result_with_options_async(
+        self,
+        request: dingtalkimpaas__1__0_models.QueryBatchSendResultRequest,
+        headers: dingtalkimpaas__1__0_models.QueryBatchSendResultHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkimpaas__1__0_models.QueryBatchSendResultResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.sender_user_id):
+            query['senderUserId'] = request.sender_user_id
+        if not UtilClient.is_unset(request.task_id):
+            query['taskId'] = request.task_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkimpaas__1__0_models.QueryBatchSendResultResponse(),
+            await self.do_roarequest_async('QueryBatchSendResult', 'impaas_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/impaas/interconnections/messages/batchSendResults', 'json', req, runtime)
+        )
+
     def batch_send(
         self,
         request: dingtalkimpaas__1__0_models.BatchSendRequest,
@@ -877,6 +945,8 @@ class Client(OpenApiClient):
             body['appUids'] = request.app_uids
         if not UtilClient.is_unset(request.content):
             body['content'] = request.content
+        if not UtilClient.is_unset(request.conversation_ids):
+            body['conversationIds'] = request.conversation_ids
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -905,6 +975,8 @@ class Client(OpenApiClient):
             body['appUids'] = request.app_uids
         if not UtilClient.is_unset(request.content):
             body['content'] = request.content
+        if not UtilClient.is_unset(request.conversation_ids):
+            body['conversationIds'] = request.conversation_ids
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

@@ -1350,6 +1350,204 @@ class AddGroupMembersResponse(TeaModel):
         return self
 
 
+class QueryBatchSendResultHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryBatchSendResultRequest(TeaModel):
+    def __init__(
+        self,
+        sender_user_id: str = None,
+        task_id: str = None,
+    ):
+        # 发送者，必须是B端用户
+        self.sender_user_id = sender_user_id
+        # batchSend返回的taskId
+        self.task_id = task_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.sender_user_id is not None:
+            result['senderUserId'] = self.sender_user_id
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('senderUserId') is not None:
+            self.sender_user_id = m.get('senderUserId')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        return self
+
+
+class QueryBatchSendResultResponseBodyResults(TeaModel):
+    def __init__(
+        self,
+        conversation_id: str = None,
+        app_uid: str = None,
+        msg_id: str = None,
+        error_code: str = None,
+        error_message: str = None,
+    ):
+        self.conversation_id = conversation_id
+        self.app_uid = app_uid
+        self.msg_id = msg_id
+        self.error_code = error_code
+        self.error_message = error_message
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.conversation_id is not None:
+            result['conversationId'] = self.conversation_id
+        if self.app_uid is not None:
+            result['appUid'] = self.app_uid
+        if self.msg_id is not None:
+            result['msgId'] = self.msg_id
+        if self.error_code is not None:
+            result['errorCode'] = self.error_code
+        if self.error_message is not None:
+            result['errorMessage'] = self.error_message
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('conversationId') is not None:
+            self.conversation_id = m.get('conversationId')
+        if m.get('appUid') is not None:
+            self.app_uid = m.get('appUid')
+        if m.get('msgId') is not None:
+            self.msg_id = m.get('msgId')
+        if m.get('errorCode') is not None:
+            self.error_code = m.get('errorCode')
+        if m.get('errorMessage') is not None:
+            self.error_message = m.get('errorMessage')
+        return self
+
+
+class QueryBatchSendResultResponseBody(TeaModel):
+    def __init__(
+        self,
+        status: int = None,
+        results: List[QueryBatchSendResultResponseBodyResults] = None,
+    ):
+        # status
+        self.status = status
+        self.results = results
+
+    def validate(self):
+        if self.results:
+            for k in self.results:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.status is not None:
+            result['status'] = self.status
+        result['results'] = []
+        if self.results is not None:
+            for k in self.results:
+                result['results'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        self.results = []
+        if m.get('results') is not None:
+            for k in m.get('results'):
+                temp_model = QueryBatchSendResultResponseBodyResults()
+                self.results.append(temp_model.from_map(k))
+        return self
+
+
+class QueryBatchSendResultResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryBatchSendResultResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryBatchSendResultResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class BatchSendHeaders(TeaModel):
     def __init__(
         self,
@@ -1389,6 +1587,7 @@ class BatchSendRequest(TeaModel):
         user_id: str = None,
         app_uids: List[str] = None,
         content: str = None,
+        conversation_ids: List[str] = None,
     ):
         # 发送者，企业员工账号
         self.user_id = user_id
@@ -1396,6 +1595,8 @@ class BatchSendRequest(TeaModel):
         self.app_uids = app_uids
         # 消息内容
         self.content = content
+        # 接收消息的群聊列表
+        self.conversation_ids = conversation_ids
 
     def validate(self):
         pass
@@ -1412,6 +1613,8 @@ class BatchSendRequest(TeaModel):
             result['appUids'] = self.app_uids
         if self.content is not None:
             result['content'] = self.content
+        if self.conversation_ids is not None:
+            result['conversationIds'] = self.conversation_ids
         return result
 
     def from_map(self, m: dict = None):
@@ -1422,6 +1625,8 @@ class BatchSendRequest(TeaModel):
             self.app_uids = m.get('appUids')
         if m.get('content') is not None:
             self.content = m.get('content')
+        if m.get('conversationIds') is not None:
+            self.conversation_ids = m.get('conversationIds')
         return self
 
 

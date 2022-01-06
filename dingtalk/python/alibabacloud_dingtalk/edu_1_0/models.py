@@ -3406,6 +3406,7 @@ class QueryPurchaseInfoResponseBody(TeaModel):
         merchant_id: str = None,
         scene: int = None,
         status: int = None,
+        name: str = None,
     ):
         # 组织id
         self.corp_id = corp_id
@@ -3417,6 +3418,8 @@ class QueryPurchaseInfoResponseBody(TeaModel):
         self.scene = scene
         # 状态
         self.status = status
+        # 名字
+        self.name = name
 
     def validate(self):
         pass
@@ -3437,6 +3440,8 @@ class QueryPurchaseInfoResponseBody(TeaModel):
             result['scene'] = self.scene
         if self.status is not None:
             result['status'] = self.status
+        if self.name is not None:
+            result['name'] = self.name
         return result
 
     def from_map(self, m: dict = None):
@@ -3451,6 +3456,8 @@ class QueryPurchaseInfoResponseBody(TeaModel):
             self.scene = m.get('scene')
         if m.get('status') is not None:
             self.status = m.get('status')
+        if m.get('name') is not None:
+            self.name = m.get('name')
         return self
 
 
@@ -9872,10 +9879,10 @@ class DeviceHeartbeatRequest(TeaModel):
 class DeviceHeartbeatResponseBody(TeaModel):
     def __init__(
         self,
-        code: int = None,
+        command: int = None,
     ):
         # 指令
-        self.code = code
+        self.command = command
 
     def validate(self):
         pass
@@ -9886,14 +9893,14 @@ class DeviceHeartbeatResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.code is not None:
-            result['code'] = self.code
+        if self.command is not None:
+            result['command'] = self.command
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('code') is not None:
-            self.code = m.get('code')
+        if m.get('command') is not None:
+            self.command = m.get('command')
         return self
 
 

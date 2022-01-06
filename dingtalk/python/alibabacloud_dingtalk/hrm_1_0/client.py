@@ -87,6 +87,72 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('ECertQuery', 'hrm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/hrm/eCerts', 'json', req, runtime)
         )
 
+    def master_data_save(
+        self,
+        request: dingtalkhrm__1__0_models.MasterDataSaveRequest,
+    ) -> dingtalkhrm__1__0_models.MasterDataSaveResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.MasterDataSaveHeaders()
+        return self.master_data_save_with_options(request, headers, runtime)
+
+    async def master_data_save_async(
+        self,
+        request: dingtalkhrm__1__0_models.MasterDataSaveRequest,
+    ) -> dingtalkhrm__1__0_models.MasterDataSaveResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.MasterDataSaveHeaders()
+        return await self.master_data_save_with_options_async(request, headers, runtime)
+
+    def master_data_save_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.MasterDataSaveRequest,
+        headers: dingtalkhrm__1__0_models.MasterDataSaveHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.MasterDataSaveResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.tenant_id):
+            query['tenantId'] = request.tenant_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=UtilClient.to_array(request.body)
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.MasterDataSaveResponse(),
+            self.do_roarequest('MasterDataSave', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/masters/datas/save', 'json', req, runtime)
+        )
+
+    async def master_data_save_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.MasterDataSaveRequest,
+        headers: dingtalkhrm__1__0_models.MasterDataSaveHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.MasterDataSaveResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.tenant_id):
+            query['tenantId'] = request.tenant_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=UtilClient.to_array(request.body)
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.MasterDataSaveResponse(),
+            await self.do_roarequest_async('MasterDataSave', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/masters/datas/save', 'json', req, runtime)
+        )
+
     def query_job_ranks(
         self,
         request: dingtalkhrm__1__0_models.QueryJobRanksRequest,
