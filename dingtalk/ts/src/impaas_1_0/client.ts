@@ -851,6 +851,94 @@ export class AddGroupMembersResponse extends $tea.Model {
   }
 }
 
+export class QueryBatchSendResultHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryBatchSendResultRequest extends $tea.Model {
+  senderUserId?: string;
+  taskId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      senderUserId: 'senderUserId',
+      taskId: 'taskId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      senderUserId: 'string',
+      taskId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryBatchSendResultResponseBody extends $tea.Model {
+  status?: number;
+  results?: QueryBatchSendResultResponseBodyResults[];
+  static names(): { [key: string]: string } {
+    return {
+      status: 'status',
+      results: 'results',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      status: 'number',
+      results: { 'type': 'array', 'itemType': QueryBatchSendResultResponseBodyResults },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryBatchSendResultResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryBatchSendResultResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryBatchSendResultResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BatchSendHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -877,11 +965,13 @@ export class BatchSendRequest extends $tea.Model {
   userId?: string;
   appUids?: string[];
   content?: string;
+  conversationIds?: string[];
   static names(): { [key: string]: string } {
     return {
       userId: 'userId',
       appUids: 'appUids',
       content: 'content',
+      conversationIds: 'conversationIds',
     };
   }
 
@@ -890,6 +980,7 @@ export class BatchSendRequest extends $tea.Model {
       userId: 'string',
       appUids: { 'type': 'array', 'itemType': 'string' },
       content: 'string',
+      conversationIds: { 'type': 'array', 'itemType': 'string' },
     };
   }
 
@@ -1141,6 +1232,37 @@ export class AddGroupMembersRequestMembers extends $tea.Model {
     return {
       nick: 'string',
       uid: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryBatchSendResultResponseBodyResults extends $tea.Model {
+  conversationId?: string;
+  appUid?: string;
+  msgId?: string;
+  errorCode?: string;
+  errorMessage?: string;
+  static names(): { [key: string]: string } {
+    return {
+      conversationId: 'conversationId',
+      appUid: 'appUid',
+      msgId: 'msgId',
+      errorCode: 'errorCode',
+      errorMessage: 'errorMessage',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      conversationId: 'string',
+      appUid: 'string',
+      msgId: 'string',
+      errorCode: 'string',
+      errorMessage: 'string',
     };
   }
 
@@ -1623,6 +1745,39 @@ export default class Client extends OpenApi {
     return $tea.cast<AddGroupMembersResponse>(await this.doROARequest("AddGroupMembers", "impaas_1.0", "HTTP", "POST", "AK", `/v1.0/impaas/interconnections/groups/members/batchAdd`, "json", req, runtime), new AddGroupMembersResponse({}));
   }
 
+  async queryBatchSendResult(request: QueryBatchSendResultRequest): Promise<QueryBatchSendResultResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryBatchSendResultHeaders({ });
+    return await this.queryBatchSendResultWithOptions(request, headers, runtime);
+  }
+
+  async queryBatchSendResultWithOptions(request: QueryBatchSendResultRequest, headers: QueryBatchSendResultHeaders, runtime: $Util.RuntimeOptions): Promise<QueryBatchSendResultResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.senderUserId)) {
+      query["senderUserId"] = request.senderUserId;
+    }
+
+    if (!Util.isUnset(request.taskId)) {
+      query["taskId"] = request.taskId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryBatchSendResultResponse>(await this.doROARequest("QueryBatchSendResult", "impaas_1.0", "HTTP", "GET", "AK", `/v1.0/impaas/interconnections/messages/batchSendResults`, "json", req, runtime), new QueryBatchSendResultResponse({}));
+  }
+
   async batchSend(request: BatchSendRequest): Promise<BatchSendResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new BatchSendHeaders({ });
@@ -1642,6 +1797,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.content)) {
       body["content"] = request.content;
+    }
+
+    if (!Util.isUnset(request.conversationIds)) {
+      body["conversationIds"] = request.conversationIds;
     }
 
     let realHeaders : {[key: string ]: string} = { };

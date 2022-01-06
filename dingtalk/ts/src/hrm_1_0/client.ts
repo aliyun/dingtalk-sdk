@@ -131,6 +131,94 @@ export class ECertQueryResponse extends $tea.Model {
   }
 }
 
+export class MasterDataSaveHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MasterDataSaveRequest extends $tea.Model {
+  tenantId?: number;
+  body?: MasterDataSaveRequestBody[];
+  static names(): { [key: string]: string } {
+    return {
+      tenantId: 'tenantId',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      tenantId: 'number',
+      body: { 'type': 'array', 'itemType': MasterDataSaveRequestBody },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MasterDataSaveResponseBody extends $tea.Model {
+  allSuccess?: boolean;
+  failResult?: MasterDataSaveResponseBodyFailResult[];
+  static names(): { [key: string]: string } {
+    return {
+      allSuccess: 'allSuccess',
+      failResult: 'failResult',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      allSuccess: 'boolean',
+      failResult: { 'type': 'array', 'itemType': MasterDataSaveResponseBodyFailResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MasterDataSaveResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: MasterDataSaveResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: MasterDataSaveResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryJobRanksHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -731,6 +819,112 @@ export class AddHrmPreentryResponse extends $tea.Model {
   }
 }
 
+export class MasterDataSaveRequestBodyScope extends $tea.Model {
+  scopeCode?: string;
+  version?: number;
+  static names(): { [key: string]: string } {
+    return {
+      scopeCode: 'scopeCode',
+      version: 'version',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      scopeCode: 'string',
+      version: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MasterDataSaveRequestBodyFieldList extends $tea.Model {
+  name?: string;
+  valueStr?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      valueStr: 'valueStr',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      valueStr: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MasterDataSaveRequestBody extends $tea.Model {
+  userId?: string;
+  bizUk?: string;
+  bizTime?: number;
+  scope?: MasterDataSaveRequestBodyScope;
+  entityCode?: string;
+  fieldList?: MasterDataSaveRequestBodyFieldList[];
+  static names(): { [key: string]: string } {
+    return {
+      userId: 'userId',
+      bizUk: 'bizUk',
+      bizTime: 'bizTime',
+      scope: 'scope',
+      entityCode: 'entityCode',
+      fieldList: 'fieldList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userId: 'string',
+      bizUk: 'string',
+      bizTime: 'number',
+      scope: MasterDataSaveRequestBodyScope,
+      entityCode: 'string',
+      fieldList: { 'type': 'array', 'itemType': MasterDataSaveRequestBodyFieldList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MasterDataSaveResponseBodyFailResult extends $tea.Model {
+  bizUk?: string;
+  success?: boolean;
+  errorCode?: string;
+  errorMsg?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizUk: 'bizUk',
+      success: 'success',
+      errorCode: 'errorCode',
+      errorMsg: 'errorMsg',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizUk: 'string',
+      success: 'boolean',
+      errorCode: 'string',
+      errorMsg: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryJobRanksResponseBodyList extends $tea.Model {
   rankId?: string;
   rankCategoryId?: string;
@@ -1092,6 +1286,36 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<ECertQueryResponse>(await this.doROARequest("ECertQuery", "hrm_1.0", "HTTP", "GET", "AK", `/v1.0/hrm/eCerts`, "json", req, runtime), new ECertQueryResponse({}));
+  }
+
+  async masterDataSave(request: MasterDataSaveRequest): Promise<MasterDataSaveResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new MasterDataSaveHeaders({ });
+    return await this.masterDataSaveWithOptions(request, headers, runtime);
+  }
+
+  async masterDataSaveWithOptions(request: MasterDataSaveRequest, headers: MasterDataSaveHeaders, runtime: $Util.RuntimeOptions): Promise<MasterDataSaveResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.tenantId)) {
+      query["tenantId"] = request.tenantId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: Util.toArray(request.body),
+    });
+    return $tea.cast<MasterDataSaveResponse>(await this.doROARequest("MasterDataSave", "hrm_1.0", "HTTP", "POST", "AK", `/v1.0/hrm/masters/datas/save`, "json", req, runtime), new MasterDataSaveResponse({}));
   }
 
   async queryJobRanks(request: QueryJobRanksRequest): Promise<QueryJobRanksResponse> {

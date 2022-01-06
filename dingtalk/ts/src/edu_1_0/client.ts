@@ -1215,6 +1215,7 @@ export class QueryPurchaseInfoResponseBody extends $tea.Model {
   merchantId?: string;
   scene?: number;
   status?: number;
+  name?: string;
   static names(): { [key: string]: string } {
     return {
       corpId: 'corpId',
@@ -1222,6 +1223,7 @@ export class QueryPurchaseInfoResponseBody extends $tea.Model {
       merchantId: 'merchantId',
       scene: 'scene',
       status: 'status',
+      name: 'name',
     };
   }
 
@@ -1232,6 +1234,7 @@ export class QueryPurchaseInfoResponseBody extends $tea.Model {
       merchantId: 'string',
       scene: 'number',
       status: 'number',
+      name: 'string',
     };
   }
 
@@ -3472,16 +3475,16 @@ export class DeviceHeartbeatRequest extends $tea.Model {
 }
 
 export class DeviceHeartbeatResponseBody extends $tea.Model {
-  code?: number;
+  command?: number;
   static names(): { [key: string]: string } {
     return {
-      code: 'code',
+      command: 'command',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      code: 'number',
+      command: 'number',
     };
   }
 
