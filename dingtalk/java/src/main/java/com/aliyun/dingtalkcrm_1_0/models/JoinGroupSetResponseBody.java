@@ -8,6 +8,10 @@ public class JoinGroupSetResponseBody extends TeaModel {
     @NameInMap("openConversationId")
     public String openConversationId;
 
+    // chatId
+    @NameInMap("chatId")
+    public String chatId;
+
     public static JoinGroupSetResponseBody build(java.util.Map<String, ?> map) throws Exception {
         JoinGroupSetResponseBody self = new JoinGroupSetResponseBody();
         return TeaModel.build(map, self);
@@ -19,6 +23,14 @@ public class JoinGroupSetResponseBody extends TeaModel {
     }
     public String getOpenConversationId() {
         return this.openConversationId;
+    }
+
+    public JoinGroupSetResponseBody setChatId(String chatId) {
+        this.chatId = chatId;
+        return this;
+    }
+    public String getChatId() {
+        return this.chatId;
     }
 
 }
