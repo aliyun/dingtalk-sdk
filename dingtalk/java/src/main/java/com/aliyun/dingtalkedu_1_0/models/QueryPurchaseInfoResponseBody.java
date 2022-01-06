@@ -24,6 +24,10 @@ public class QueryPurchaseInfoResponseBody extends TeaModel {
     @NameInMap("status")
     public Integer status;
 
+    // 名字
+    @NameInMap("name")
+    public String name;
+
     public static QueryPurchaseInfoResponseBody build(java.util.Map<String, ?> map) throws Exception {
         QueryPurchaseInfoResponseBody self = new QueryPurchaseInfoResponseBody();
         return TeaModel.build(map, self);
@@ -67,6 +71,14 @@ public class QueryPurchaseInfoResponseBody extends TeaModel {
     }
     public Integer getStatus() {
         return this.status;
+    }
+
+    public QueryPurchaseInfoResponseBody setName(String name) {
+        this.name = name;
+        return this;
+    }
+    public String getName() {
+        return this.name;
     }
 
 }

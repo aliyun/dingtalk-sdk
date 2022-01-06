@@ -460,6 +460,39 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("AddGroupMembers", "impaas_1.0", "HTTP", "POST", "AK", "/v1.0/impaas/interconnections/groups/members/batchAdd", "json", req, runtime), new AddGroupMembersResponse());
     }
 
+    public QueryBatchSendResultResponse queryBatchSendResult(QueryBatchSendResultRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        QueryBatchSendResultHeaders headers = new QueryBatchSendResultHeaders();
+        return this.queryBatchSendResultWithOptions(request, headers, runtime);
+    }
+
+    public QueryBatchSendResultResponse queryBatchSendResultWithOptions(QueryBatchSendResultRequest request, QueryBatchSendResultHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.senderUserId)) {
+            query.put("senderUserId", request.senderUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.taskId)) {
+            query.put("taskId", request.taskId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("QueryBatchSendResult", "impaas_1.0", "HTTP", "GET", "AK", "/v1.0/impaas/interconnections/messages/batchSendResults", "json", req, runtime), new QueryBatchSendResultResponse());
+    }
+
     public BatchSendResponse batchSend(BatchSendRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         BatchSendHeaders headers = new BatchSendHeaders();
@@ -479,6 +512,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.content)) {
             body.put("content", request.content);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.conversationIds)) {
+            body.put("conversationIds", request.conversationIds);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();

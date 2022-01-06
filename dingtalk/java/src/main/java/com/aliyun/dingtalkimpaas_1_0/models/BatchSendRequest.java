@@ -16,6 +16,10 @@ public class BatchSendRequest extends TeaModel {
     @NameInMap("content")
     public String content;
 
+    // 接收消息的群聊列表
+    @NameInMap("conversationIds")
+    public java.util.List<String> conversationIds;
+
     public static BatchSendRequest build(java.util.Map<String, ?> map) throws Exception {
         BatchSendRequest self = new BatchSendRequest();
         return TeaModel.build(map, self);
@@ -43,6 +47,14 @@ public class BatchSendRequest extends TeaModel {
     }
     public String getContent() {
         return this.content;
+    }
+
+    public BatchSendRequest setConversationIds(java.util.List<String> conversationIds) {
+        this.conversationIds = conversationIds;
+        return this;
+    }
+    public java.util.List<String> getConversationIds() {
+        return this.conversationIds;
     }
 
 }

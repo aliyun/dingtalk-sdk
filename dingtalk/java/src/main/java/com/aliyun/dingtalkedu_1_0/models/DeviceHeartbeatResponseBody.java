@@ -5,20 +5,20 @@ import com.aliyun.tea.*;
 
 public class DeviceHeartbeatResponseBody extends TeaModel {
     // 指令
-    @NameInMap("code")
-    public Integer code;
+    @NameInMap("command")
+    public Integer command;
 
     public static DeviceHeartbeatResponseBody build(java.util.Map<String, ?> map) throws Exception {
         DeviceHeartbeatResponseBody self = new DeviceHeartbeatResponseBody();
         return TeaModel.build(map, self);
     }
 
-    public DeviceHeartbeatResponseBody setCode(Integer code) {
-        this.code = code;
+    public DeviceHeartbeatResponseBody setCommand(Integer command) {
+        this.command = command;
         return this;
     }
-    public Integer getCode() {
-        return this.code;
+    public Integer getCommand() {
+        return this.command;
     }
 
 }
