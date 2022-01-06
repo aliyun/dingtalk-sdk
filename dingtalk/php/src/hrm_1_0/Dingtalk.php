@@ -14,6 +14,9 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\ECertQueryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataQueryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataQueryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataQueryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataSaveHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataSaveRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataSaveResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryCustomEntryProcessesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryCustomEntryProcessesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryCustomEntryProcessesResponse;
@@ -82,6 +85,49 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return ECertQueryResponse::fromMap($this->doROARequest('ECertQuery', 'hrm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/hrm/eCerts', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param MasterDataSaveRequest $request
+     *
+     * @return MasterDataSaveResponse
+     */
+    public function masterDataSave($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new MasterDataSaveHeaders([]);
+
+        return $this->masterDataSaveWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param MasterDataSaveRequest $request
+     * @param MasterDataSaveHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return MasterDataSaveResponse
+     */
+    public function masterDataSaveWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->tenantId)) {
+            @$query['tenantId'] = $request->tenantId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => Utils::toArray($request->body),
+        ]);
+
+        return MasterDataSaveResponse::fromMap($this->doROARequest('MasterDataSave', 'hrm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/hrm/masters/datas/save', 'json', $req, $runtime));
     }
 
     /**

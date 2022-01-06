@@ -42,12 +42,20 @@ class QueryPurchaseInfoResponseBody extends Model
      * @var int
      */
     public $status;
+
+    /**
+     * @description 名字
+     *
+     * @var string
+     */
+    public $name;
     protected $_name = [
         'corpId'     => 'corpId',
         'userId'     => 'userId',
         'merchantId' => 'merchantId',
         'scene'      => 'scene',
         'status'     => 'status',
+        'name'       => 'name',
     ];
 
     public function validate()
@@ -71,6 +79,9 @@ class QueryPurchaseInfoResponseBody extends Model
         }
         if (null !== $this->status) {
             $res['status'] = $this->status;
+        }
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
         }
 
         return $res;
@@ -98,6 +109,9 @@ class QueryPurchaseInfoResponseBody extends Model
         }
         if (isset($map['status'])) {
             $model->status = $map['status'];
+        }
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
         }
 
         return $model;

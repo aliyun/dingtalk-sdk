@@ -1,0 +1,133 @@
+<?php
+
+// This file is auto-generated, don't edit it. Thanks.
+
+namespace AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataSaveRequest;
+
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataSaveRequest\body\fieldList;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataSaveRequest\body\scope;
+use AlibabaCloud\Tea\Model;
+
+class body extends Model
+{
+    /**
+     * @description 员工id
+     *
+     * @var string
+     */
+    public $userId;
+
+    /**
+     * @description 数据流水唯一标识，如流水号，用以唯一确认一条写入数据
+     *
+     * @var string
+     */
+    public $bizUk;
+
+    /**
+     * @description 数据变更时间戳，用以保证更新操作的顺序性
+     *
+     * @var int
+     */
+    public $bizTime;
+
+    /**
+     * @description 业务域描述，系统分配
+     *
+     * @var scope
+     */
+    public $scope;
+
+    /**
+     * @description 业务域下的细分领域实体
+     *
+     * @var string
+     */
+    public $entityCode;
+
+    /**
+     * @description 数据字段列表
+     *
+     * @var fieldList[]
+     */
+    public $fieldList;
+    protected $_name = [
+        'userId'     => 'userId',
+        'bizUk'      => 'bizUk',
+        'bizTime'    => 'bizTime',
+        'scope'      => 'scope',
+        'entityCode' => 'entityCode',
+        'fieldList'  => 'fieldList',
+    ];
+
+    public function validate()
+    {
+    }
+
+    public function toMap()
+    {
+        $res = [];
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
+        }
+        if (null !== $this->bizUk) {
+            $res['bizUk'] = $this->bizUk;
+        }
+        if (null !== $this->bizTime) {
+            $res['bizTime'] = $this->bizTime;
+        }
+        if (null !== $this->scope) {
+            $res['scope'] = null !== $this->scope ? $this->scope->toMap() : null;
+        }
+        if (null !== $this->entityCode) {
+            $res['entityCode'] = $this->entityCode;
+        }
+        if (null !== $this->fieldList) {
+            $res['fieldList'] = [];
+            if (null !== $this->fieldList && \is_array($this->fieldList)) {
+                $n = 0;
+                foreach ($this->fieldList as $item) {
+                    $res['fieldList'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
+
+        return $res;
+    }
+
+    /**
+     * @param array $map
+     *
+     * @return body
+     */
+    public static function fromMap($map = [])
+    {
+        $model = new self();
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
+        }
+        if (isset($map['bizUk'])) {
+            $model->bizUk = $map['bizUk'];
+        }
+        if (isset($map['bizTime'])) {
+            $model->bizTime = $map['bizTime'];
+        }
+        if (isset($map['scope'])) {
+            $model->scope = scope::fromMap($map['scope']);
+        }
+        if (isset($map['entityCode'])) {
+            $model->entityCode = $map['entityCode'];
+        }
+        if (isset($map['fieldList'])) {
+            if (!empty($map['fieldList'])) {
+                $model->fieldList = [];
+                $n                = 0;
+                foreach ($map['fieldList'] as $item) {
+                    $model->fieldList[$n++] = null !== $item ? fieldList::fromMap($item) : $item;
+                }
+            }
+        }
+
+        return $model;
+    }
+}

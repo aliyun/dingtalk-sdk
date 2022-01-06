@@ -13,9 +13,9 @@ class DeviceHeartbeatResponseBody extends Model
      *
      * @var int
      */
-    public $code;
+    public $command;
     protected $_name = [
-        'code' => 'code',
+        'command' => 'command',
     ];
 
     public function validate()
@@ -25,8 +25,8 @@ class DeviceHeartbeatResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->code) {
-            $res['code'] = $this->code;
+        if (null !== $this->command) {
+            $res['command'] = $this->command;
         }
 
         return $res;
@@ -40,8 +40,8 @@ class DeviceHeartbeatResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['code'])) {
-            $model->code = $map['code'];
+        if (isset($map['command'])) {
+            $model->command = $map['command'];
         }
 
         return $model;

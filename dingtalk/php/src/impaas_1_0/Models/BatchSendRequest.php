@@ -28,10 +28,18 @@ class BatchSendRequest extends Model
      * @var string
      */
     public $content;
+
+    /**
+     * @description 接收消息的群聊列表
+     *
+     * @var string[]
+     */
+    public $conversationIds;
     protected $_name = [
-        'userId'  => 'userId',
-        'appUids' => 'appUids',
-        'content' => 'content',
+        'userId'          => 'userId',
+        'appUids'         => 'appUids',
+        'content'         => 'content',
+        'conversationIds' => 'conversationIds',
     ];
 
     public function validate()
@@ -49,6 +57,9 @@ class BatchSendRequest extends Model
         }
         if (null !== $this->content) {
             $res['content'] = $this->content;
+        }
+        if (null !== $this->conversationIds) {
+            $res['conversationIds'] = $this->conversationIds;
         }
 
         return $res;
@@ -72,6 +83,11 @@ class BatchSendRequest extends Model
         }
         if (isset($map['content'])) {
             $model->content = $map['content'];
+        }
+        if (isset($map['conversationIds'])) {
+            if (!empty($map['conversationIds'])) {
+                $model->conversationIds = $map['conversationIds'];
+            }
         }
 
         return $model;

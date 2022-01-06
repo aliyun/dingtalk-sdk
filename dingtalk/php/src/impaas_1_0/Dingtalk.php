@@ -29,6 +29,9 @@ use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\GetMediaUrlResponse;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\ListGroupStaffMembersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\ListGroupStaffMembersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\ListGroupStaffMembersResponse;
+use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\QueryBatchSendResultHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\QueryBatchSendResultRequest;
+use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\QueryBatchSendResultResponse;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\ReadMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\ReadMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\ReadMessageResponse;
@@ -616,6 +619,51 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param QueryBatchSendResultRequest $request
+     *
+     * @return QueryBatchSendResultResponse
+     */
+    public function queryBatchSendResult($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryBatchSendResultHeaders([]);
+
+        return $this->queryBatchSendResultWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryBatchSendResultRequest $request
+     * @param QueryBatchSendResultHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return QueryBatchSendResultResponse
+     */
+    public function queryBatchSendResultWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->senderUserId)) {
+            @$query['senderUserId'] = $request->senderUserId;
+        }
+        if (!Utils::isUnset($request->taskId)) {
+            @$query['taskId'] = $request->taskId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryBatchSendResultResponse::fromMap($this->doROARequest('QueryBatchSendResult', 'impaas_1.0', 'HTTP', 'GET', 'AK', '/v1.0/impaas/interconnections/messages/batchSendResults', 'json', $req, $runtime));
+    }
+
+    /**
      * @param BatchSendRequest $request
      *
      * @return BatchSendResponse
@@ -647,6 +695,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->content)) {
             @$body['content'] = $request->content;
+        }
+        if (!Utils::isUnset($request->conversationIds)) {
+            @$body['conversationIds'] = $request->conversationIds;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
