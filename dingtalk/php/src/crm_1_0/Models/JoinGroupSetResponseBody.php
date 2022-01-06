@@ -14,8 +14,16 @@ class JoinGroupSetResponseBody extends Model
      * @var string
      */
     public $openConversationId;
+
+    /**
+     * @description chatId
+     *
+     * @var string
+     */
+    public $chatId;
     protected $_name = [
         'openConversationId' => 'openConversationId',
+        'chatId'             => 'chatId',
     ];
 
     public function validate()
@@ -27,6 +35,9 @@ class JoinGroupSetResponseBody extends Model
         $res = [];
         if (null !== $this->openConversationId) {
             $res['openConversationId'] = $this->openConversationId;
+        }
+        if (null !== $this->chatId) {
+            $res['chatId'] = $this->chatId;
         }
 
         return $res;
@@ -42,6 +53,9 @@ class JoinGroupSetResponseBody extends Model
         $model = new self();
         if (isset($map['openConversationId'])) {
             $model->openConversationId = $map['openConversationId'];
+        }
+        if (isset($map['chatId'])) {
+            $model->chatId = $map['chatId'];
         }
 
         return $model;
