@@ -1786,15 +1786,18 @@ export class JoinGroupSetRequest extends $tea.Model {
 
 export class JoinGroupSetResponseBody extends $tea.Model {
   openConversationId?: string;
+  chatId?: string;
   static names(): { [key: string]: string } {
     return {
       openConversationId: 'openConversationId',
+      chatId: 'chatId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       openConversationId: 'string',
+      chatId: 'string',
     };
   }
 
