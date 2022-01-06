@@ -6106,9 +6106,12 @@ class JoinGroupSetResponseBody(TeaModel):
     def __init__(
         self,
         open_conversation_id: str = None,
+        chat_id: str = None,
     ):
         # 加密群ID。
         self.open_conversation_id = open_conversation_id
+        # chatId
+        self.chat_id = chat_id
 
     def validate(self):
         pass
@@ -6121,12 +6124,16 @@ class JoinGroupSetResponseBody(TeaModel):
         result = dict()
         if self.open_conversation_id is not None:
             result['openConversationId'] = self.open_conversation_id
+        if self.chat_id is not None:
+            result['chatId'] = self.chat_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('openConversationId') is not None:
             self.open_conversation_id = m.get('openConversationId')
+        if m.get('chatId') is not None:
+            self.chat_id = m.get('chatId')
         return self
 
 
