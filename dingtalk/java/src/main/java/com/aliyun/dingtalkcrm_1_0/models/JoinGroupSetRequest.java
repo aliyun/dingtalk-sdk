@@ -16,6 +16,10 @@ public class JoinGroupSetRequest extends TeaModel {
     @NameInMap("openGroupSetId")
     public String openGroupSetId;
 
+    // 组织id。
+    @NameInMap("corpId")
+    public String corpId;
+
     public static JoinGroupSetRequest build(java.util.Map<String, ?> map) throws Exception {
         JoinGroupSetRequest self = new JoinGroupSetRequest();
         return TeaModel.build(map, self);
@@ -43,6 +47,14 @@ public class JoinGroupSetRequest extends TeaModel {
     }
     public String getOpenGroupSetId() {
         return this.openGroupSetId;
+    }
+
+    public JoinGroupSetRequest setCorpId(String corpId) {
+        this.corpId = corpId;
+        return this;
+    }
+    public String getCorpId() {
+        return this.corpId;
     }
 
     public static class JoinGroupSetRequestBizDataList extends TeaModel {
