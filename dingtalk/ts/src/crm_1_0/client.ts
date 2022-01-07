@@ -1763,11 +1763,13 @@ export class JoinGroupSetRequest extends $tea.Model {
   bizDataList?: JoinGroupSetRequestBizDataList[];
   unionId?: string;
   openGroupSetId?: string;
+  corpId?: string;
   static names(): { [key: string]: string } {
     return {
       bizDataList: 'bizDataList',
       unionId: 'unionId',
       openGroupSetId: 'openGroupSetId',
+      corpId: 'corpId',
     };
   }
 
@@ -1776,6 +1778,7 @@ export class JoinGroupSetRequest extends $tea.Model {
       bizDataList: { 'type': 'array', 'itemType': JoinGroupSetRequestBizDataList },
       unionId: 'string',
       openGroupSetId: 'string',
+      corpId: 'string',
     };
   }
 
@@ -8125,6 +8128,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.openGroupSetId)) {
       body["openGroupSetId"] = request.openGroupSetId;
+    }
+
+    if (!Util.isUnset(request.corpId)) {
+      body["corpId"] = request.corpId;
     }
 
     let realHeaders : {[key: string ]: string} = { };
