@@ -29,10 +29,18 @@ class JoinGroupSetRequest extends Model
      * @var string
      */
     public $openGroupSetId;
+
+    /**
+     * @description 组织id。
+     *
+     * @var string
+     */
+    public $corpId;
     protected $_name = [
         'bizDataList'    => 'bizDataList',
         'unionId'        => 'unionId',
         'openGroupSetId' => 'openGroupSetId',
+        'corpId'         => 'corpId',
     ];
 
     public function validate()
@@ -56,6 +64,9 @@ class JoinGroupSetRequest extends Model
         }
         if (null !== $this->openGroupSetId) {
             $res['openGroupSetId'] = $this->openGroupSetId;
+        }
+        if (null !== $this->corpId) {
+            $res['corpId'] = $this->corpId;
         }
 
         return $res;
@@ -83,6 +94,9 @@ class JoinGroupSetRequest extends Model
         }
         if (isset($map['openGroupSetId'])) {
             $model->openGroupSetId = $map['openGroupSetId'];
+        }
+        if (isset($map['corpId'])) {
+            $model->corpId = $map['corpId'];
         }
 
         return $model;
