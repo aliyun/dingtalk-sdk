@@ -1590,6 +1590,10 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
             {
                 body["bizDataList"] = request.BizDataList;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                body["corpId"] = request.CorpId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenGroupSetId))
             {
                 body["openGroupSetId"] = request.OpenGroupSetId;
@@ -1622,6 +1626,10 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizDataList))
             {
                 body["bizDataList"] = request.BizDataList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                body["corpId"] = request.CorpId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenGroupSetId))
             {

@@ -40,6 +40,13 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         }
 
         /// <summary>
+        /// 组织id。
+        /// </summary>
+        [NameInMap("corpId")]
+        [Validation(Required=false)]
+        public string CorpId { get; set; }
+
+        /// <summary>
         /// 群组openGroupSetId。
         /// </summary>
         [NameInMap("openGroupSetId")]
