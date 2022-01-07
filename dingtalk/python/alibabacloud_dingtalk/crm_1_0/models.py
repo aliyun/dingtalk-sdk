@@ -6058,6 +6058,7 @@ class JoinGroupSetRequest(TeaModel):
         biz_data_list: List[JoinGroupSetRequestBizDataList] = None,
         union_id: str = None,
         open_group_set_id: str = None,
+        corp_id: str = None,
     ):
         # 关系模型数据。
         self.biz_data_list = biz_data_list
@@ -6065,6 +6066,8 @@ class JoinGroupSetRequest(TeaModel):
         self.union_id = union_id
         # 群组openGroupSetId。
         self.open_group_set_id = open_group_set_id
+        # 组织id。
+        self.corp_id = corp_id
 
     def validate(self):
         if self.biz_data_list:
@@ -6086,6 +6089,8 @@ class JoinGroupSetRequest(TeaModel):
             result['unionId'] = self.union_id
         if self.open_group_set_id is not None:
             result['openGroupSetId'] = self.open_group_set_id
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
         return result
 
     def from_map(self, m: dict = None):
@@ -6099,6 +6104,8 @@ class JoinGroupSetRequest(TeaModel):
             self.union_id = m.get('unionId')
         if m.get('openGroupSetId') is not None:
             self.open_group_set_id = m.get('openGroupSetId')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
         return self
 
 

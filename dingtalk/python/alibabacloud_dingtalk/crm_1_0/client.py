@@ -1407,6 +1407,8 @@ class Client(OpenApiClient):
             body['unionId'] = request.union_id
         if not UtilClient.is_unset(request.open_group_set_id):
             body['openGroupSetId'] = request.open_group_set_id
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1435,6 +1437,8 @@ class Client(OpenApiClient):
             body['unionId'] = request.union_id
         if not UtilClient.is_unset(request.open_group_set_id):
             body['openGroupSetId'] = request.open_group_set_id
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
