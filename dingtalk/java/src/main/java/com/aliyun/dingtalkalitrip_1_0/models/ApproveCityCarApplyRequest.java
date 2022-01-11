@@ -28,18 +28,6 @@ public class ApproveCityCarApplyRequest extends TeaModel {
     @NameInMap("userId")
     public String userId;
 
-    // suiteKey
-    @NameInMap("dingSuiteKey")
-    public String dingSuiteKey;
-
-    // account
-    @NameInMap("dingCorpId")
-    public String dingCorpId;
-
-    // tokenGrantType
-    @NameInMap("dingTokenGrantType")
-    public Long dingTokenGrantType;
-
     public static ApproveCityCarApplyRequest build(java.util.Map<String, ?> map) throws Exception {
         ApproveCityCarApplyRequest self = new ApproveCityCarApplyRequest();
         return TeaModel.build(map, self);
@@ -91,30 +79,6 @@ public class ApproveCityCarApplyRequest extends TeaModel {
     }
     public String getUserId() {
         return this.userId;
-    }
-
-    public ApproveCityCarApplyRequest setDingSuiteKey(String dingSuiteKey) {
-        this.dingSuiteKey = dingSuiteKey;
-        return this;
-    }
-    public String getDingSuiteKey() {
-        return this.dingSuiteKey;
-    }
-
-    public ApproveCityCarApplyRequest setDingCorpId(String dingCorpId) {
-        this.dingCorpId = dingCorpId;
-        return this;
-    }
-    public String getDingCorpId() {
-        return this.dingCorpId;
-    }
-
-    public ApproveCityCarApplyRequest setDingTokenGrantType(Long dingTokenGrantType) {
-        this.dingTokenGrantType = dingTokenGrantType;
-        return this;
-    }
-    public Long getDingTokenGrantType() {
-        return this.dingTokenGrantType;
     }
 
 }

@@ -4,25 +4,17 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCardInfoResponseBody extends TeaModel {
-    // 名片ID
-    @NameInMap("cardId")
-    public String cardId;
-
-    // 名字
-    @NameInMap("name")
-    public String name;
-
     // 头像
     @NameInMap("avatarUrl")
     public String avatarUrl;
 
-    // 组织名称
-    @NameInMap("orgName")
-    public String orgName;
+    // 名片ID
+    @NameInMap("cardId")
+    public String cardId;
 
-    // 职位
-    @NameInMap("title")
-    public String title;
+    // 扩展信息
+    @NameInMap("extension")
+    public GetCardInfoResponseBodyExtension extension;
 
     // 行业
     @NameInMap("industryName")
@@ -32,33 +24,25 @@ public class GetCardInfoResponseBody extends TeaModel {
     @NameInMap("introduce")
     public Boolean introduce;
 
+    // 名字
+    @NameInMap("name")
+    public String name;
+
+    // 组织名称
+    @NameInMap("orgName")
+    public String orgName;
+
     // 模板ID
     @NameInMap("templateId")
     public String templateId;
 
-    // 扩展信息
-    @NameInMap("extension")
-    public GetCardInfoResponseBodyExtension extension;
+    // 职位
+    @NameInMap("title")
+    public String title;
 
     public static GetCardInfoResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetCardInfoResponseBody self = new GetCardInfoResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public GetCardInfoResponseBody setCardId(String cardId) {
-        this.cardId = cardId;
-        return this;
-    }
-    public String getCardId() {
-        return this.cardId;
-    }
-
-    public GetCardInfoResponseBody setName(String name) {
-        this.name = name;
-        return this;
-    }
-    public String getName() {
-        return this.name;
     }
 
     public GetCardInfoResponseBody setAvatarUrl(String avatarUrl) {
@@ -69,20 +53,20 @@ public class GetCardInfoResponseBody extends TeaModel {
         return this.avatarUrl;
     }
 
-    public GetCardInfoResponseBody setOrgName(String orgName) {
-        this.orgName = orgName;
+    public GetCardInfoResponseBody setCardId(String cardId) {
+        this.cardId = cardId;
         return this;
     }
-    public String getOrgName() {
-        return this.orgName;
+    public String getCardId() {
+        return this.cardId;
     }
 
-    public GetCardInfoResponseBody setTitle(String title) {
-        this.title = title;
+    public GetCardInfoResponseBody setExtension(GetCardInfoResponseBodyExtension extension) {
+        this.extension = extension;
         return this;
     }
-    public String getTitle() {
-        return this.title;
+    public GetCardInfoResponseBodyExtension getExtension() {
+        return this.extension;
     }
 
     public GetCardInfoResponseBody setIndustryName(String industryName) {
@@ -101,6 +85,22 @@ public class GetCardInfoResponseBody extends TeaModel {
         return this.introduce;
     }
 
+    public GetCardInfoResponseBody setName(String name) {
+        this.name = name;
+        return this;
+    }
+    public String getName() {
+        return this.name;
+    }
+
+    public GetCardInfoResponseBody setOrgName(String orgName) {
+        this.orgName = orgName;
+        return this;
+    }
+    public String getOrgName() {
+        return this.orgName;
+    }
+
     public GetCardInfoResponseBody setTemplateId(String templateId) {
         this.templateId = templateId;
         return this;
@@ -109,102 +109,12 @@ public class GetCardInfoResponseBody extends TeaModel {
         return this.templateId;
     }
 
-    public GetCardInfoResponseBody setExtension(GetCardInfoResponseBodyExtension extension) {
-        this.extension = extension;
+    public GetCardInfoResponseBody setTitle(String title) {
+        this.title = title;
         return this;
     }
-    public GetCardInfoResponseBodyExtension getExtension() {
-        return this.extension;
-    }
-
-    public static class GetCardInfoResponseBodyExtensionCardContactInfoTelephone extends TeaModel {
-        @NameInMap("label")
-        public String label;
-
-        @NameInMap("value")
-        public String value;
-
-        public static GetCardInfoResponseBodyExtensionCardContactInfoTelephone build(java.util.Map<String, ?> map) throws Exception {
-            GetCardInfoResponseBodyExtensionCardContactInfoTelephone self = new GetCardInfoResponseBodyExtensionCardContactInfoTelephone();
-            return TeaModel.build(map, self);
-        }
-
-        public GetCardInfoResponseBodyExtensionCardContactInfoTelephone setLabel(String label) {
-            this.label = label;
-            return this;
-        }
-        public String getLabel() {
-            return this.label;
-        }
-
-        public GetCardInfoResponseBodyExtensionCardContactInfoTelephone setValue(String value) {
-            this.value = value;
-            return this;
-        }
-        public String getValue() {
-            return this.value;
-        }
-
-    }
-
-    public static class GetCardInfoResponseBodyExtensionCardContactInfoWechat extends TeaModel {
-        @NameInMap("label")
-        public String label;
-
-        @NameInMap("value")
-        public String value;
-
-        public static GetCardInfoResponseBodyExtensionCardContactInfoWechat build(java.util.Map<String, ?> map) throws Exception {
-            GetCardInfoResponseBodyExtensionCardContactInfoWechat self = new GetCardInfoResponseBodyExtensionCardContactInfoWechat();
-            return TeaModel.build(map, self);
-        }
-
-        public GetCardInfoResponseBodyExtensionCardContactInfoWechat setLabel(String label) {
-            this.label = label;
-            return this;
-        }
-        public String getLabel() {
-            return this.label;
-        }
-
-        public GetCardInfoResponseBodyExtensionCardContactInfoWechat setValue(String value) {
-            this.value = value;
-            return this;
-        }
-        public String getValue() {
-            return this.value;
-        }
-
-    }
-
-    public static class GetCardInfoResponseBodyExtensionCardContactInfoEmail extends TeaModel {
-        @NameInMap("label")
-        public String label;
-
-        @NameInMap("value")
-        public String value;
-
-        public static GetCardInfoResponseBodyExtensionCardContactInfoEmail build(java.util.Map<String, ?> map) throws Exception {
-            GetCardInfoResponseBodyExtensionCardContactInfoEmail self = new GetCardInfoResponseBodyExtensionCardContactInfoEmail();
-            return TeaModel.build(map, self);
-        }
-
-        public GetCardInfoResponseBodyExtensionCardContactInfoEmail setLabel(String label) {
-            this.label = label;
-            return this;
-        }
-        public String getLabel() {
-            return this.label;
-        }
-
-        public GetCardInfoResponseBodyExtensionCardContactInfoEmail setValue(String value) {
-            this.value = value;
-            return this;
-        }
-        public String getValue() {
-            return this.value;
-        }
-
+    public String getTitle() {
+        return this.title;
     }
 
     public static class GetCardInfoResponseBodyExtensionCardContactInfoAddressArea extends TeaModel {
@@ -271,7 +181,105 @@ public class GetCardInfoResponseBody extends TeaModel {
 
     }
 
+    public static class GetCardInfoResponseBodyExtensionCardContactInfoEmail extends TeaModel {
+        @NameInMap("label")
+        public String label;
+
+        @NameInMap("value")
+        public String value;
+
+        public static GetCardInfoResponseBodyExtensionCardContactInfoEmail build(java.util.Map<String, ?> map) throws Exception {
+            GetCardInfoResponseBodyExtensionCardContactInfoEmail self = new GetCardInfoResponseBodyExtensionCardContactInfoEmail();
+            return TeaModel.build(map, self);
+        }
+
+        public GetCardInfoResponseBodyExtensionCardContactInfoEmail setLabel(String label) {
+            this.label = label;
+            return this;
+        }
+        public String getLabel() {
+            return this.label;
+        }
+
+        public GetCardInfoResponseBodyExtensionCardContactInfoEmail setValue(String value) {
+            this.value = value;
+            return this;
+        }
+        public String getValue() {
+            return this.value;
+        }
+
+    }
+
+    public static class GetCardInfoResponseBodyExtensionCardContactInfoTelephone extends TeaModel {
+        @NameInMap("label")
+        public String label;
+
+        @NameInMap("value")
+        public String value;
+
+        public static GetCardInfoResponseBodyExtensionCardContactInfoTelephone build(java.util.Map<String, ?> map) throws Exception {
+            GetCardInfoResponseBodyExtensionCardContactInfoTelephone self = new GetCardInfoResponseBodyExtensionCardContactInfoTelephone();
+            return TeaModel.build(map, self);
+        }
+
+        public GetCardInfoResponseBodyExtensionCardContactInfoTelephone setLabel(String label) {
+            this.label = label;
+            return this;
+        }
+        public String getLabel() {
+            return this.label;
+        }
+
+        public GetCardInfoResponseBodyExtensionCardContactInfoTelephone setValue(String value) {
+            this.value = value;
+            return this;
+        }
+        public String getValue() {
+            return this.value;
+        }
+
+    }
+
+    public static class GetCardInfoResponseBodyExtensionCardContactInfoWechat extends TeaModel {
+        @NameInMap("label")
+        public String label;
+
+        @NameInMap("value")
+        public String value;
+
+        public static GetCardInfoResponseBodyExtensionCardContactInfoWechat build(java.util.Map<String, ?> map) throws Exception {
+            GetCardInfoResponseBodyExtensionCardContactInfoWechat self = new GetCardInfoResponseBodyExtensionCardContactInfoWechat();
+            return TeaModel.build(map, self);
+        }
+
+        public GetCardInfoResponseBodyExtensionCardContactInfoWechat setLabel(String label) {
+            this.label = label;
+            return this;
+        }
+        public String getLabel() {
+            return this.label;
+        }
+
+        public GetCardInfoResponseBodyExtensionCardContactInfoWechat setValue(String value) {
+            this.value = value;
+            return this;
+        }
+        public String getValue() {
+            return this.value;
+        }
+
+    }
+
     public static class GetCardInfoResponseBodyExtensionCardContactInfo extends TeaModel {
+        // 地址
+        @NameInMap("address")
+        public java.util.List<GetCardInfoResponseBodyExtensionCardContactInfoAddress> address;
+
+        // 邮箱
+        @NameInMap("email")
+        public java.util.List<GetCardInfoResponseBodyExtensionCardContactInfoEmail> email;
+
         // 电话
         @NameInMap("telephone")
         public java.util.List<GetCardInfoResponseBodyExtensionCardContactInfoTelephone> telephone;
@@ -280,17 +288,25 @@ public class GetCardInfoResponseBody extends TeaModel {
         @NameInMap("wechat")
         public java.util.List<GetCardInfoResponseBodyExtensionCardContactInfoWechat> wechat;
 
-        // 邮箱
-        @NameInMap("email")
-        public java.util.List<GetCardInfoResponseBodyExtensionCardContactInfoEmail> email;
-
-        // 地址
-        @NameInMap("address")
-        public java.util.List<GetCardInfoResponseBodyExtensionCardContactInfoAddress> address;
-
         public static GetCardInfoResponseBodyExtensionCardContactInfo build(java.util.Map<String, ?> map) throws Exception {
             GetCardInfoResponseBodyExtensionCardContactInfo self = new GetCardInfoResponseBodyExtensionCardContactInfo();
             return TeaModel.build(map, self);
+        }
+
+        public GetCardInfoResponseBodyExtensionCardContactInfo setAddress(java.util.List<GetCardInfoResponseBodyExtensionCardContactInfoAddress> address) {
+            this.address = address;
+            return this;
+        }
+        public java.util.List<GetCardInfoResponseBodyExtensionCardContactInfoAddress> getAddress() {
+            return this.address;
+        }
+
+        public GetCardInfoResponseBodyExtensionCardContactInfo setEmail(java.util.List<GetCardInfoResponseBodyExtensionCardContactInfoEmail> email) {
+            this.email = email;
+            return this;
+        }
+        public java.util.List<GetCardInfoResponseBodyExtensionCardContactInfoEmail> getEmail() {
+            return this.email;
         }
 
         public GetCardInfoResponseBodyExtensionCardContactInfo setTelephone(java.util.List<GetCardInfoResponseBodyExtensionCardContactInfoTelephone> telephone) {
@@ -309,36 +325,24 @@ public class GetCardInfoResponseBody extends TeaModel {
             return this.wechat;
         }
 
-        public GetCardInfoResponseBodyExtensionCardContactInfo setEmail(java.util.List<GetCardInfoResponseBodyExtensionCardContactInfoEmail> email) {
-            this.email = email;
-            return this;
-        }
-        public java.util.List<GetCardInfoResponseBodyExtensionCardContactInfoEmail> getEmail() {
-            return this.email;
-        }
-
-        public GetCardInfoResponseBodyExtensionCardContactInfo setAddress(java.util.List<GetCardInfoResponseBodyExtensionCardContactInfoAddress> address) {
-            this.address = address;
-            return this;
-        }
-        public java.util.List<GetCardInfoResponseBodyExtensionCardContactInfoAddress> getAddress() {
-            return this.address;
-        }
-
     }
 
     public static class GetCardInfoResponseBodyExtension extends TeaModel {
-        // 企业是否认证
-        @NameInMap("orgAuthed")
-        public Boolean orgAuthed;
+        // 联系信息
+        @NameInMap("cardContactInfo")
+        public GetCardInfoResponseBodyExtensionCardContactInfo cardContactInfo;
+
+        // 企业corpId
+        @NameInMap("corpId")
+        public String corpId;
 
         // 企业认证等级
         @NameInMap("orgAuthLevel")
         public Long orgAuthLevel;
 
-        // 企业corpId
-        @NameInMap("corpId")
-        public String corpId;
+        // 企业是否认证
+        @NameInMap("orgAuthed")
+        public Boolean orgAuthed;
 
         // 企业LOGO
         @NameInMap("orgLogo")
@@ -348,21 +352,25 @@ public class GetCardInfoResponseBody extends TeaModel {
         @NameInMap("videoMediaId")
         public String videoMediaId;
 
-        // 联系信息
-        @NameInMap("cardContactInfo")
-        public GetCardInfoResponseBodyExtensionCardContactInfo cardContactInfo;
-
         public static GetCardInfoResponseBodyExtension build(java.util.Map<String, ?> map) throws Exception {
             GetCardInfoResponseBodyExtension self = new GetCardInfoResponseBodyExtension();
             return TeaModel.build(map, self);
         }
 
-        public GetCardInfoResponseBodyExtension setOrgAuthed(Boolean orgAuthed) {
-            this.orgAuthed = orgAuthed;
+        public GetCardInfoResponseBodyExtension setCardContactInfo(GetCardInfoResponseBodyExtensionCardContactInfo cardContactInfo) {
+            this.cardContactInfo = cardContactInfo;
             return this;
         }
-        public Boolean getOrgAuthed() {
-            return this.orgAuthed;
+        public GetCardInfoResponseBodyExtensionCardContactInfo getCardContactInfo() {
+            return this.cardContactInfo;
+        }
+
+        public GetCardInfoResponseBodyExtension setCorpId(String corpId) {
+            this.corpId = corpId;
+            return this;
+        }
+        public String getCorpId() {
+            return this.corpId;
         }
 
         public GetCardInfoResponseBodyExtension setOrgAuthLevel(Long orgAuthLevel) {
@@ -373,12 +381,12 @@ public class GetCardInfoResponseBody extends TeaModel {
             return this.orgAuthLevel;
         }
 
-        public GetCardInfoResponseBodyExtension setCorpId(String corpId) {
-            this.corpId = corpId;
+        public GetCardInfoResponseBodyExtension setOrgAuthed(Boolean orgAuthed) {
+            this.orgAuthed = orgAuthed;
             return this;
         }
-        public String getCorpId() {
-            return this.corpId;
+        public Boolean getOrgAuthed() {
+            return this.orgAuthed;
         }
 
         public GetCardInfoResponseBodyExtension setOrgLogo(String orgLogo) {
@@ -395,14 +403,6 @@ public class GetCardInfoResponseBody extends TeaModel {
         }
         public String getVideoMediaId() {
             return this.videoMediaId;
-        }
-
-        public GetCardInfoResponseBodyExtension setCardContactInfo(GetCardInfoResponseBodyExtensionCardContactInfo cardContactInfo) {
-            this.cardContactInfo = cardContactInfo;
-            return this;
-        }
-        public GetCardInfoResponseBodyExtensionCardContactInfo getCardContactInfo() {
-            return this.cardContactInfo;
         }
 
     }

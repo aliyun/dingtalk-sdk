@@ -4,25 +4,17 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteWorkspaceMembersRequest extends TeaModel {
-    // 发起操作者unionId
-    @NameInMap("operatorId")
-    public String operatorId;
-
     // 被操作用户组
     @NameInMap("members")
     public java.util.List<DeleteWorkspaceMembersRequestMembers> members;
 
+    // 发起操作者unionId
+    @NameInMap("operatorId")
+    public String operatorId;
+
     public static DeleteWorkspaceMembersRequest build(java.util.Map<String, ?> map) throws Exception {
         DeleteWorkspaceMembersRequest self = new DeleteWorkspaceMembersRequest();
         return TeaModel.build(map, self);
-    }
-
-    public DeleteWorkspaceMembersRequest setOperatorId(String operatorId) {
-        this.operatorId = operatorId;
-        return this;
-    }
-    public String getOperatorId() {
-        return this.operatorId;
     }
 
     public DeleteWorkspaceMembersRequest setMembers(java.util.List<DeleteWorkspaceMembersRequestMembers> members) {
@@ -31,6 +23,14 @@ public class DeleteWorkspaceMembersRequest extends TeaModel {
     }
     public java.util.List<DeleteWorkspaceMembersRequestMembers> getMembers() {
         return this.members;
+    }
+
+    public DeleteWorkspaceMembersRequest setOperatorId(String operatorId) {
+        this.operatorId = operatorId;
+        return this;
+    }
+    public String getOperatorId() {
+        return this.operatorId;
     }
 
     public static class DeleteWorkspaceMembersRequestMembers extends TeaModel {

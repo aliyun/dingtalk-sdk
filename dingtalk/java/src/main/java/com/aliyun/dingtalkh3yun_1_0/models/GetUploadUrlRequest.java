@@ -4,10 +4,6 @@ package com.aliyun.dingtalkh3yun_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetUploadUrlRequest extends TeaModel {
-    // 表单编码
-    @NameInMap("schemaCode")
-    public String schemaCode;
-
     // 业务数据实例id
     @NameInMap("bizObjectId")
     public String bizObjectId;
@@ -20,17 +16,13 @@ public class GetUploadUrlRequest extends TeaModel {
     @NameInMap("isOverwrite")
     public Boolean isOverwrite;
 
+    // 表单编码
+    @NameInMap("schemaCode")
+    public String schemaCode;
+
     public static GetUploadUrlRequest build(java.util.Map<String, ?> map) throws Exception {
         GetUploadUrlRequest self = new GetUploadUrlRequest();
         return TeaModel.build(map, self);
-    }
-
-    public GetUploadUrlRequest setSchemaCode(String schemaCode) {
-        this.schemaCode = schemaCode;
-        return this;
-    }
-    public String getSchemaCode() {
-        return this.schemaCode;
     }
 
     public GetUploadUrlRequest setBizObjectId(String bizObjectId) {
@@ -55,6 +47,14 @@ public class GetUploadUrlRequest extends TeaModel {
     }
     public Boolean getIsOverwrite() {
         return this.isOverwrite;
+    }
+
+    public GetUploadUrlRequest setSchemaCode(String schemaCode) {
+        this.schemaCode = schemaCode;
+        return this;
+    }
+    public String getSchemaCode() {
+        return this.schemaCode;
     }
 
 }

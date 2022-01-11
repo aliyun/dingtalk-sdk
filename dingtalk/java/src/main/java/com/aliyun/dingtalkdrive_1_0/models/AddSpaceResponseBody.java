@@ -4,6 +4,22 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddSpaceResponseBody extends TeaModel {
+    // 创建时间
+    @NameInMap("createTime")
+    public String createTime;
+
+    // 修改时间
+    @NameInMap("modifyTime")
+    public String modifyTime;
+
+    // 授权模式
+    @NameInMap("permissionMode")
+    public String permissionMode;
+
+    // 空间总额度
+    @NameInMap("quota")
+    public Long quota;
+
     // 空间id
     @NameInMap("spaceId")
     public String spaceId;
@@ -16,29 +32,45 @@ public class AddSpaceResponseBody extends TeaModel {
     @NameInMap("spaceType")
     public String spaceType;
 
-    // 空间总额度
-    @NameInMap("quota")
-    public Long quota;
-
     // 空间已使用额度
     @NameInMap("usedQuota")
     public Long usedQuota;
 
-    // 授权模式
-    @NameInMap("permissionMode")
-    public String permissionMode;
-
-    // 创建时间
-    @NameInMap("createTime")
-    public String createTime;
-
-    // 修改时间
-    @NameInMap("modifyTime")
-    public String modifyTime;
-
     public static AddSpaceResponseBody build(java.util.Map<String, ?> map) throws Exception {
         AddSpaceResponseBody self = new AddSpaceResponseBody();
         return TeaModel.build(map, self);
+    }
+
+    public AddSpaceResponseBody setCreateTime(String createTime) {
+        this.createTime = createTime;
+        return this;
+    }
+    public String getCreateTime() {
+        return this.createTime;
+    }
+
+    public AddSpaceResponseBody setModifyTime(String modifyTime) {
+        this.modifyTime = modifyTime;
+        return this;
+    }
+    public String getModifyTime() {
+        return this.modifyTime;
+    }
+
+    public AddSpaceResponseBody setPermissionMode(String permissionMode) {
+        this.permissionMode = permissionMode;
+        return this;
+    }
+    public String getPermissionMode() {
+        return this.permissionMode;
+    }
+
+    public AddSpaceResponseBody setQuota(Long quota) {
+        this.quota = quota;
+        return this;
+    }
+    public Long getQuota() {
+        return this.quota;
     }
 
     public AddSpaceResponseBody setSpaceId(String spaceId) {
@@ -65,44 +97,12 @@ public class AddSpaceResponseBody extends TeaModel {
         return this.spaceType;
     }
 
-    public AddSpaceResponseBody setQuota(Long quota) {
-        this.quota = quota;
-        return this;
-    }
-    public Long getQuota() {
-        return this.quota;
-    }
-
     public AddSpaceResponseBody setUsedQuota(Long usedQuota) {
         this.usedQuota = usedQuota;
         return this;
     }
     public Long getUsedQuota() {
         return this.usedQuota;
-    }
-
-    public AddSpaceResponseBody setPermissionMode(String permissionMode) {
-        this.permissionMode = permissionMode;
-        return this;
-    }
-    public String getPermissionMode() {
-        return this.permissionMode;
-    }
-
-    public AddSpaceResponseBody setCreateTime(String createTime) {
-        this.createTime = createTime;
-        return this;
-    }
-    public String getCreateTime() {
-        return this.createTime;
-    }
-
-    public AddSpaceResponseBody setModifyTime(String modifyTime) {
-        this.modifyTime = modifyTime;
-        return this;
-    }
-    public String getModifyTime() {
-        return this.modifyTime;
     }
 
 }

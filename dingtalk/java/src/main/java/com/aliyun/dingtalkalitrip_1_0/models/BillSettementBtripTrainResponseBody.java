@@ -4,33 +4,25 @@ package com.aliyun.dingtalkalitrip_1_0.models;
 import com.aliyun.tea.*;
 
 public class BillSettementBtripTrainResponseBody extends TeaModel {
-    // 结果msg
-    @NameInMap("resultMsg")
-    public String resultMsg;
-
     // module
     @NameInMap("module")
     public BillSettementBtripTrainResponseBodyModule module;
-
-    // 是否成功
-    @NameInMap("success")
-    public Boolean success;
 
     // 结果code
     @NameInMap("resultCode")
     public Long resultCode;
 
+    // 结果msg
+    @NameInMap("resultMsg")
+    public String resultMsg;
+
+    // 是否成功
+    @NameInMap("success")
+    public Boolean success;
+
     public static BillSettementBtripTrainResponseBody build(java.util.Map<String, ?> map) throws Exception {
         BillSettementBtripTrainResponseBody self = new BillSettementBtripTrainResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public BillSettementBtripTrainResponseBody setResultMsg(String resultMsg) {
-        this.resultMsg = resultMsg;
-        return this;
-    }
-    public String getResultMsg() {
-        return this.resultMsg;
     }
 
     public BillSettementBtripTrainResponseBody setModule(BillSettementBtripTrainResponseBodyModule module) {
@@ -41,20 +33,28 @@ public class BillSettementBtripTrainResponseBody extends TeaModel {
         return this.module;
     }
 
-    public BillSettementBtripTrainResponseBody setSuccess(Boolean success) {
-        this.success = success;
-        return this;
-    }
-    public Boolean getSuccess() {
-        return this.success;
-    }
-
     public BillSettementBtripTrainResponseBody setResultCode(Long resultCode) {
         this.resultCode = resultCode;
         return this;
     }
     public Long getResultCode() {
         return this.resultCode;
+    }
+
+    public BillSettementBtripTrainResponseBody setResultMsg(String resultMsg) {
+        this.resultMsg = resultMsg;
+        return this;
+    }
+    public String getResultMsg() {
+        return this.resultMsg;
+    }
+
+    public BillSettementBtripTrainResponseBody setSuccess(Boolean success) {
+        this.success = success;
+        return this;
+    }
+    public Boolean getSuccess() {
+        return this.success;
     }
 
     public static class BillSettementBtripTrainResponseBodyModuleDataList extends TeaModel {
@@ -85,6 +85,10 @@ public class BillSettementBtripTrainResponseBody extends TeaModel {
         // 预定人use id
         @NameInMap("bookerId")
         public String bookerId;
+
+        // 预订人工号
+        @NameInMap("bookerJobNo")
+        public String bookerJobNo;
 
         // 预订人名称
         @NameInMap("bookerName")
@@ -226,17 +230,13 @@ public class BillSettementBtripTrainResponseBody extends TeaModel {
         @NameInMap("travelerId")
         public String travelerId;
 
-        // 出行人名称
-        @NameInMap("travelerName")
-        public String travelerName;
-
-        // 预订人工号
-        @NameInMap("bookerJobNo")
-        public String bookerJobNo;
-
         // 出行人工号
         @NameInMap("travelerJobNo")
         public String travelerJobNo;
+
+        // 出行人名称
+        @NameInMap("travelerName")
+        public String travelerName;
 
         // 发票类型
         @NameInMap("voucherType")
@@ -301,6 +301,14 @@ public class BillSettementBtripTrainResponseBody extends TeaModel {
         }
         public String getBookerId() {
             return this.bookerId;
+        }
+
+        public BillSettementBtripTrainResponseBodyModuleDataList setBookerJobNo(String bookerJobNo) {
+            this.bookerJobNo = bookerJobNo;
+            return this;
+        }
+        public String getBookerJobNo() {
+            return this.bookerJobNo;
         }
 
         public BillSettementBtripTrainResponseBodyModuleDataList setBookerName(String bookerName) {
@@ -583,28 +591,20 @@ public class BillSettementBtripTrainResponseBody extends TeaModel {
             return this.travelerId;
         }
 
-        public BillSettementBtripTrainResponseBodyModuleDataList setTravelerName(String travelerName) {
-            this.travelerName = travelerName;
-            return this;
-        }
-        public String getTravelerName() {
-            return this.travelerName;
-        }
-
-        public BillSettementBtripTrainResponseBodyModuleDataList setBookerJobNo(String bookerJobNo) {
-            this.bookerJobNo = bookerJobNo;
-            return this;
-        }
-        public String getBookerJobNo() {
-            return this.bookerJobNo;
-        }
-
         public BillSettementBtripTrainResponseBodyModuleDataList setTravelerJobNo(String travelerJobNo) {
             this.travelerJobNo = travelerJobNo;
             return this;
         }
         public String getTravelerJobNo() {
             return this.travelerJobNo;
+        }
+
+        public BillSettementBtripTrainResponseBodyModuleDataList setTravelerName(String travelerName) {
+            this.travelerName = travelerName;
+            return this;
+        }
+        public String getTravelerName() {
+            return this.travelerName;
         }
 
         public BillSettementBtripTrainResponseBodyModuleDataList setVoucherType(Long voucherType) {

@@ -4,37 +4,21 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCorpAccomplishmentTasksResponseBody extends TeaModel {
-    // 总数量
-    @NameInMap("totalCount")
-    public Long totalCount;
+    // data
+    @NameInMap("data")
+    public java.util.List<GetCorpAccomplishmentTasksResponseBodyData> data;
 
     // 当前第几页
     @NameInMap("pageNumber")
     public Long pageNumber;
 
-    // data
-    @NameInMap("data")
-    public java.util.List<GetCorpAccomplishmentTasksResponseBodyData> data;
+    // 总数量
+    @NameInMap("totalCount")
+    public Long totalCount;
 
     public static GetCorpAccomplishmentTasksResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetCorpAccomplishmentTasksResponseBody self = new GetCorpAccomplishmentTasksResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public GetCorpAccomplishmentTasksResponseBody setTotalCount(Long totalCount) {
-        this.totalCount = totalCount;
-        return this;
-    }
-    public Long getTotalCount() {
-        return this.totalCount;
-    }
-
-    public GetCorpAccomplishmentTasksResponseBody setPageNumber(Long pageNumber) {
-        this.pageNumber = pageNumber;
-        return this;
-    }
-    public Long getPageNumber() {
-        return this.pageNumber;
     }
 
     public GetCorpAccomplishmentTasksResponseBody setData(java.util.List<GetCorpAccomplishmentTasksResponseBodyData> data) {
@@ -45,23 +29,23 @@ public class GetCorpAccomplishmentTasksResponseBody extends TeaModel {
         return this.data;
     }
 
+    public GetCorpAccomplishmentTasksResponseBody setPageNumber(Long pageNumber) {
+        this.pageNumber = pageNumber;
+        return this;
+    }
+    public Long getPageNumber() {
+        return this.pageNumber;
+    }
+
+    public GetCorpAccomplishmentTasksResponseBody setTotalCount(Long totalCount) {
+        this.totalCount = totalCount;
+        return this;
+    }
+    public Long getTotalCount() {
+        return this.totalCount;
+    }
+
     public static class GetCorpAccomplishmentTasksResponseBodyData extends TeaModel {
-        // originatorNickName
-        @NameInMap("originatorNickName")
-        public String originatorNickName;
-
-        // processInstanceId
-        @NameInMap("processInstanceId")
-        public String processInstanceId;
-
-        // originatorName
-        @NameInMap("originatorName")
-        public String originatorName;
-
-        // finishTime
-        @NameInMap("finishTimeGMT")
-        public String finishTimeGMT;
-
         // activeTime
         @NameInMap("activeTimeGMT")
         public String activeTimeGMT;
@@ -70,97 +54,81 @@ public class GetCorpAccomplishmentTasksResponseBody extends TeaModel {
         @NameInMap("actualActionerId")
         public String actualActionerId;
 
-        // originatorEmail
-        @NameInMap("originatorEmail")
-        public String originatorEmail;
-
-        // title
-        @NameInMap("title")
-        public String title;
-
-        // outResultName
-        @NameInMap("outResultName")
-        public String outResultName;
-
-        // outResult
-        @NameInMap("outResult")
-        public String outResult;
-
-        // originatorPhoto
-        @NameInMap("originatorPhoto")
-        public String originatorPhoto;
-
-        // taskType
-        @NameInMap("taskType")
-        public String taskType;
-
-        // originatorNickNameEn
-        @NameInMap("originatorNickNameInEnglish")
-        public String originatorNickNameInEnglish;
+        // appType
+        @NameInMap("appType")
+        public String appType;
 
         // createTime
         @NameInMap("createTimeGMT")
         public String createTimeGMT;
 
-        // titleEn
-        @NameInMap("titleInEnglish")
-        public String titleInEnglish;
+        // finishTime
+        @NameInMap("finishTimeGMT")
+        public String finishTimeGMT;
 
-        // appType
-        @NameInMap("appType")
-        public String appType;
-
-        // originatorNameEn
-        @NameInMap("originatorNameInEnglish")
-        public String originatorNameInEnglish;
+        // originatorEmail
+        @NameInMap("originatorEmail")
+        public String originatorEmail;
 
         // originatorId
         @NameInMap("originatorId")
         public String originatorId;
 
-        // taskId
-        @NameInMap("taskId")
-        public String taskId;
+        // originatorName
+        @NameInMap("originatorName")
+        public String originatorName;
+
+        // originatorNameEn
+        @NameInMap("originatorNameInEnglish")
+        public String originatorNameInEnglish;
+
+        // originatorNickName
+        @NameInMap("originatorNickName")
+        public String originatorNickName;
+
+        // originatorNickNameEn
+        @NameInMap("originatorNickNameInEnglish")
+        public String originatorNickNameInEnglish;
+
+        // originatorPhoto
+        @NameInMap("originatorPhoto")
+        public String originatorPhoto;
+
+        // outResult
+        @NameInMap("outResult")
+        public String outResult;
+
+        // outResultName
+        @NameInMap("outResultName")
+        public String outResultName;
+
+        // processInstanceId
+        @NameInMap("processInstanceId")
+        public String processInstanceId;
 
         // status
         @NameInMap("status")
         public String status;
 
+        // taskId
+        @NameInMap("taskId")
+        public String taskId;
+
+        // taskType
+        @NameInMap("taskType")
+        public String taskType;
+
+        // title
+        @NameInMap("title")
+        public String title;
+
+        // titleEn
+        @NameInMap("titleInEnglish")
+        public String titleInEnglish;
+
         public static GetCorpAccomplishmentTasksResponseBodyData build(java.util.Map<String, ?> map) throws Exception {
             GetCorpAccomplishmentTasksResponseBodyData self = new GetCorpAccomplishmentTasksResponseBodyData();
             return TeaModel.build(map, self);
-        }
-
-        public GetCorpAccomplishmentTasksResponseBodyData setOriginatorNickName(String originatorNickName) {
-            this.originatorNickName = originatorNickName;
-            return this;
-        }
-        public String getOriginatorNickName() {
-            return this.originatorNickName;
-        }
-
-        public GetCorpAccomplishmentTasksResponseBodyData setProcessInstanceId(String processInstanceId) {
-            this.processInstanceId = processInstanceId;
-            return this;
-        }
-        public String getProcessInstanceId() {
-            return this.processInstanceId;
-        }
-
-        public GetCorpAccomplishmentTasksResponseBodyData setOriginatorName(String originatorName) {
-            this.originatorName = originatorName;
-            return this;
-        }
-        public String getOriginatorName() {
-            return this.originatorName;
-        }
-
-        public GetCorpAccomplishmentTasksResponseBodyData setFinishTimeGMT(String finishTimeGMT) {
-            this.finishTimeGMT = finishTimeGMT;
-            return this;
-        }
-        public String getFinishTimeGMT() {
-            return this.finishTimeGMT;
         }
 
         public GetCorpAccomplishmentTasksResponseBodyData setActiveTimeGMT(String activeTimeGMT) {
@@ -179,60 +147,12 @@ public class GetCorpAccomplishmentTasksResponseBody extends TeaModel {
             return this.actualActionerId;
         }
 
-        public GetCorpAccomplishmentTasksResponseBodyData setOriginatorEmail(String originatorEmail) {
-            this.originatorEmail = originatorEmail;
+        public GetCorpAccomplishmentTasksResponseBodyData setAppType(String appType) {
+            this.appType = appType;
             return this;
         }
-        public String getOriginatorEmail() {
-            return this.originatorEmail;
-        }
-
-        public GetCorpAccomplishmentTasksResponseBodyData setTitle(String title) {
-            this.title = title;
-            return this;
-        }
-        public String getTitle() {
-            return this.title;
-        }
-
-        public GetCorpAccomplishmentTasksResponseBodyData setOutResultName(String outResultName) {
-            this.outResultName = outResultName;
-            return this;
-        }
-        public String getOutResultName() {
-            return this.outResultName;
-        }
-
-        public GetCorpAccomplishmentTasksResponseBodyData setOutResult(String outResult) {
-            this.outResult = outResult;
-            return this;
-        }
-        public String getOutResult() {
-            return this.outResult;
-        }
-
-        public GetCorpAccomplishmentTasksResponseBodyData setOriginatorPhoto(String originatorPhoto) {
-            this.originatorPhoto = originatorPhoto;
-            return this;
-        }
-        public String getOriginatorPhoto() {
-            return this.originatorPhoto;
-        }
-
-        public GetCorpAccomplishmentTasksResponseBodyData setTaskType(String taskType) {
-            this.taskType = taskType;
-            return this;
-        }
-        public String getTaskType() {
-            return this.taskType;
-        }
-
-        public GetCorpAccomplishmentTasksResponseBodyData setOriginatorNickNameInEnglish(String originatorNickNameInEnglish) {
-            this.originatorNickNameInEnglish = originatorNickNameInEnglish;
-            return this;
-        }
-        public String getOriginatorNickNameInEnglish() {
-            return this.originatorNickNameInEnglish;
+        public String getAppType() {
+            return this.appType;
         }
 
         public GetCorpAccomplishmentTasksResponseBodyData setCreateTimeGMT(String createTimeGMT) {
@@ -243,28 +163,20 @@ public class GetCorpAccomplishmentTasksResponseBody extends TeaModel {
             return this.createTimeGMT;
         }
 
-        public GetCorpAccomplishmentTasksResponseBodyData setTitleInEnglish(String titleInEnglish) {
-            this.titleInEnglish = titleInEnglish;
+        public GetCorpAccomplishmentTasksResponseBodyData setFinishTimeGMT(String finishTimeGMT) {
+            this.finishTimeGMT = finishTimeGMT;
             return this;
         }
-        public String getTitleInEnglish() {
-            return this.titleInEnglish;
+        public String getFinishTimeGMT() {
+            return this.finishTimeGMT;
         }
 
-        public GetCorpAccomplishmentTasksResponseBodyData setAppType(String appType) {
-            this.appType = appType;
+        public GetCorpAccomplishmentTasksResponseBodyData setOriginatorEmail(String originatorEmail) {
+            this.originatorEmail = originatorEmail;
             return this;
         }
-        public String getAppType() {
-            return this.appType;
-        }
-
-        public GetCorpAccomplishmentTasksResponseBodyData setOriginatorNameInEnglish(String originatorNameInEnglish) {
-            this.originatorNameInEnglish = originatorNameInEnglish;
-            return this;
-        }
-        public String getOriginatorNameInEnglish() {
-            return this.originatorNameInEnglish;
+        public String getOriginatorEmail() {
+            return this.originatorEmail;
         }
 
         public GetCorpAccomplishmentTasksResponseBodyData setOriginatorId(String originatorId) {
@@ -275,12 +187,68 @@ public class GetCorpAccomplishmentTasksResponseBody extends TeaModel {
             return this.originatorId;
         }
 
-        public GetCorpAccomplishmentTasksResponseBodyData setTaskId(String taskId) {
-            this.taskId = taskId;
+        public GetCorpAccomplishmentTasksResponseBodyData setOriginatorName(String originatorName) {
+            this.originatorName = originatorName;
             return this;
         }
-        public String getTaskId() {
-            return this.taskId;
+        public String getOriginatorName() {
+            return this.originatorName;
+        }
+
+        public GetCorpAccomplishmentTasksResponseBodyData setOriginatorNameInEnglish(String originatorNameInEnglish) {
+            this.originatorNameInEnglish = originatorNameInEnglish;
+            return this;
+        }
+        public String getOriginatorNameInEnglish() {
+            return this.originatorNameInEnglish;
+        }
+
+        public GetCorpAccomplishmentTasksResponseBodyData setOriginatorNickName(String originatorNickName) {
+            this.originatorNickName = originatorNickName;
+            return this;
+        }
+        public String getOriginatorNickName() {
+            return this.originatorNickName;
+        }
+
+        public GetCorpAccomplishmentTasksResponseBodyData setOriginatorNickNameInEnglish(String originatorNickNameInEnglish) {
+            this.originatorNickNameInEnglish = originatorNickNameInEnglish;
+            return this;
+        }
+        public String getOriginatorNickNameInEnglish() {
+            return this.originatorNickNameInEnglish;
+        }
+
+        public GetCorpAccomplishmentTasksResponseBodyData setOriginatorPhoto(String originatorPhoto) {
+            this.originatorPhoto = originatorPhoto;
+            return this;
+        }
+        public String getOriginatorPhoto() {
+            return this.originatorPhoto;
+        }
+
+        public GetCorpAccomplishmentTasksResponseBodyData setOutResult(String outResult) {
+            this.outResult = outResult;
+            return this;
+        }
+        public String getOutResult() {
+            return this.outResult;
+        }
+
+        public GetCorpAccomplishmentTasksResponseBodyData setOutResultName(String outResultName) {
+            this.outResultName = outResultName;
+            return this;
+        }
+        public String getOutResultName() {
+            return this.outResultName;
+        }
+
+        public GetCorpAccomplishmentTasksResponseBodyData setProcessInstanceId(String processInstanceId) {
+            this.processInstanceId = processInstanceId;
+            return this;
+        }
+        public String getProcessInstanceId() {
+            return this.processInstanceId;
         }
 
         public GetCorpAccomplishmentTasksResponseBodyData setStatus(String status) {
@@ -289,6 +257,38 @@ public class GetCorpAccomplishmentTasksResponseBody extends TeaModel {
         }
         public String getStatus() {
             return this.status;
+        }
+
+        public GetCorpAccomplishmentTasksResponseBodyData setTaskId(String taskId) {
+            this.taskId = taskId;
+            return this;
+        }
+        public String getTaskId() {
+            return this.taskId;
+        }
+
+        public GetCorpAccomplishmentTasksResponseBodyData setTaskType(String taskType) {
+            this.taskType = taskType;
+            return this;
+        }
+        public String getTaskType() {
+            return this.taskType;
+        }
+
+        public GetCorpAccomplishmentTasksResponseBodyData setTitle(String title) {
+            this.title = title;
+            return this;
+        }
+        public String getTitle() {
+            return this.title;
+        }
+
+        public GetCorpAccomplishmentTasksResponseBodyData setTitleInEnglish(String titleInEnglish) {
+            this.titleInEnglish = titleInEnglish;
+            return this;
+        }
+        public String getTitleInEnglish() {
+            return this.titleInEnglish;
         }
 
     }

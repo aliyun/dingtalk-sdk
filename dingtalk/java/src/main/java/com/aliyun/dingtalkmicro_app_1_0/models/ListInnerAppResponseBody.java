@@ -26,29 +26,29 @@ public class ListInnerAppResponseBody extends TeaModel {
         @NameInMap("agentId")
         public Long agentId;
 
-        // 应用名称
-        @NameInMap("name")
-        public String name;
-
         // 应用描述
         @NameInMap("desc")
         public String desc;
-
-        // 应用图标
-        @NameInMap("icon")
-        public String icon;
 
         // 应用移动端首页地址
         @NameInMap("homepageLink")
         public String homepageLink;
 
-        // 应用PC端首页地址
-        @NameInMap("pcHomepageLink")
-        public String pcHomepageLink;
+        // 应用图标
+        @NameInMap("icon")
+        public String icon;
+
+        // 应用名称
+        @NameInMap("name")
+        public String name;
 
         // 应用管理后台地址
         @NameInMap("ompLink")
         public String ompLink;
+
+        // 应用PC端首页地址
+        @NameInMap("pcHomepageLink")
+        public String pcHomepageLink;
 
         public static ListInnerAppResponseBodyAppList build(java.util.Map<String, ?> map) throws Exception {
             ListInnerAppResponseBodyAppList self = new ListInnerAppResponseBodyAppList();
@@ -63,28 +63,12 @@ public class ListInnerAppResponseBody extends TeaModel {
             return this.agentId;
         }
 
-        public ListInnerAppResponseBodyAppList setName(String name) {
-            this.name = name;
-            return this;
-        }
-        public String getName() {
-            return this.name;
-        }
-
         public ListInnerAppResponseBodyAppList setDesc(String desc) {
             this.desc = desc;
             return this;
         }
         public String getDesc() {
             return this.desc;
-        }
-
-        public ListInnerAppResponseBodyAppList setIcon(String icon) {
-            this.icon = icon;
-            return this;
-        }
-        public String getIcon() {
-            return this.icon;
         }
 
         public ListInnerAppResponseBodyAppList setHomepageLink(String homepageLink) {
@@ -95,12 +79,20 @@ public class ListInnerAppResponseBody extends TeaModel {
             return this.homepageLink;
         }
 
-        public ListInnerAppResponseBodyAppList setPcHomepageLink(String pcHomepageLink) {
-            this.pcHomepageLink = pcHomepageLink;
+        public ListInnerAppResponseBodyAppList setIcon(String icon) {
+            this.icon = icon;
             return this;
         }
-        public String getPcHomepageLink() {
-            return this.pcHomepageLink;
+        public String getIcon() {
+            return this.icon;
+        }
+
+        public ListInnerAppResponseBodyAppList setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
         }
 
         public ListInnerAppResponseBodyAppList setOmpLink(String ompLink) {
@@ -109,6 +101,14 @@ public class ListInnerAppResponseBody extends TeaModel {
         }
         public String getOmpLink() {
             return this.ompLink;
+        }
+
+        public ListInnerAppResponseBodyAppList setPcHomepageLink(String pcHomepageLink) {
+            this.pcHomepageLink = pcHomepageLink;
+            return this;
+        }
+        public String getPcHomepageLink() {
+            return this.pcHomepageLink;
         }
 
     }

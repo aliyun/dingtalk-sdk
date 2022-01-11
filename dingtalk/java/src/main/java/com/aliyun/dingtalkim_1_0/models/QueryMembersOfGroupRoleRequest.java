@@ -16,21 +16,6 @@ public class QueryMembersOfGroupRoleRequest extends TeaModel {
     @NameInMap("timestamp")
     public Long timestamp;
 
-    @NameInMap("dingTokenGrantType")
-    public Long dingTokenGrantType;
-
-    @NameInMap("dingOrgId")
-    public Long dingOrgId;
-
-    @NameInMap("dingIsvOrgId")
-    public Long dingIsvOrgId;
-
-    @NameInMap("dingSuiteKey")
-    public String dingSuiteKey;
-
-    @NameInMap("dingOauthAppId")
-    public Long dingOauthAppId;
-
     public static QueryMembersOfGroupRoleRequest build(java.util.Map<String, ?> map) throws Exception {
         QueryMembersOfGroupRoleRequest self = new QueryMembersOfGroupRoleRequest();
         return TeaModel.build(map, self);
@@ -58,46 +43,6 @@ public class QueryMembersOfGroupRoleRequest extends TeaModel {
     }
     public Long getTimestamp() {
         return this.timestamp;
-    }
-
-    public QueryMembersOfGroupRoleRequest setDingTokenGrantType(Long dingTokenGrantType) {
-        this.dingTokenGrantType = dingTokenGrantType;
-        return this;
-    }
-    public Long getDingTokenGrantType() {
-        return this.dingTokenGrantType;
-    }
-
-    public QueryMembersOfGroupRoleRequest setDingOrgId(Long dingOrgId) {
-        this.dingOrgId = dingOrgId;
-        return this;
-    }
-    public Long getDingOrgId() {
-        return this.dingOrgId;
-    }
-
-    public QueryMembersOfGroupRoleRequest setDingIsvOrgId(Long dingIsvOrgId) {
-        this.dingIsvOrgId = dingIsvOrgId;
-        return this;
-    }
-    public Long getDingIsvOrgId() {
-        return this.dingIsvOrgId;
-    }
-
-    public QueryMembersOfGroupRoleRequest setDingSuiteKey(String dingSuiteKey) {
-        this.dingSuiteKey = dingSuiteKey;
-        return this;
-    }
-    public String getDingSuiteKey() {
-        return this.dingSuiteKey;
-    }
-
-    public QueryMembersOfGroupRoleRequest setDingOauthAppId(Long dingOauthAppId) {
-        this.dingOauthAppId = dingOauthAppId;
-        return this;
-    }
-    public Long getDingOauthAppId() {
-        return this.dingOauthAppId;
     }
 
 }

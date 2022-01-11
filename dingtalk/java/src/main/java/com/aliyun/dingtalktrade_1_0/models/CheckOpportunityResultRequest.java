@@ -4,10 +4,6 @@ package com.aliyun.dingtalktrade_1_0.models;
 import com.aliyun.tea.*;
 
 public class CheckOpportunityResultRequest extends TeaModel {
-    // corpId
-    @NameInMap("corpId")
-    public String corpId;
-
     // belongToPhoneNum
     @NameInMap("belongToPhoneNum")
     public String belongToPhoneNum;
@@ -15,6 +11,10 @@ public class CheckOpportunityResultRequest extends TeaModel {
     // contactPhoneNum
     @NameInMap("contactPhoneNum")
     public String contactPhoneNum;
+
+    // corpId
+    @NameInMap("corpId")
+    public String corpId;
 
     // deptId
     @NameInMap("deptId")
@@ -27,14 +27,6 @@ public class CheckOpportunityResultRequest extends TeaModel {
     public static CheckOpportunityResultRequest build(java.util.Map<String, ?> map) throws Exception {
         CheckOpportunityResultRequest self = new CheckOpportunityResultRequest();
         return TeaModel.build(map, self);
-    }
-
-    public CheckOpportunityResultRequest setCorpId(String corpId) {
-        this.corpId = corpId;
-        return this;
-    }
-    public String getCorpId() {
-        return this.corpId;
     }
 
     public CheckOpportunityResultRequest setBelongToPhoneNum(String belongToPhoneNum) {
@@ -51,6 +43,14 @@ public class CheckOpportunityResultRequest extends TeaModel {
     }
     public String getContactPhoneNum() {
         return this.contactPhoneNum;
+    }
+
+    public CheckOpportunityResultRequest setCorpId(String corpId) {
+        this.corpId = corpId;
+        return this;
+    }
+    public String getCorpId() {
+        return this.corpId;
     }
 
     public CheckOpportunityResultRequest setDeptId(Long deptId) {

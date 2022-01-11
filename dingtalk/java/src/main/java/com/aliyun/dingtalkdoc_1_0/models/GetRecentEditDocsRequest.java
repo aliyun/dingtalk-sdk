@@ -4,10 +4,6 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetRecentEditDocsRequest extends TeaModel {
-    // 发起操作用户unionId
-    @NameInMap("operatorId")
-    public String operatorId;
-
     // 查询size
     @NameInMap("maxResults")
     public Integer maxResults;
@@ -15,17 +11,13 @@ public class GetRecentEditDocsRequest extends TeaModel {
     @NameInMap("nextToken")
     public String nextToken;
 
+    // 发起操作用户unionId
+    @NameInMap("operatorId")
+    public String operatorId;
+
     public static GetRecentEditDocsRequest build(java.util.Map<String, ?> map) throws Exception {
         GetRecentEditDocsRequest self = new GetRecentEditDocsRequest();
         return TeaModel.build(map, self);
-    }
-
-    public GetRecentEditDocsRequest setOperatorId(String operatorId) {
-        this.operatorId = operatorId;
-        return this;
-    }
-    public String getOperatorId() {
-        return this.operatorId;
     }
 
     public GetRecentEditDocsRequest setMaxResults(Integer maxResults) {
@@ -42,6 +34,14 @@ public class GetRecentEditDocsRequest extends TeaModel {
     }
     public String getNextToken() {
         return this.nextToken;
+    }
+
+    public GetRecentEditDocsRequest setOperatorId(String operatorId) {
+        this.operatorId = operatorId;
+        return this;
+    }
+    public String getOperatorId() {
+        return this.operatorId;
     }
 
 }

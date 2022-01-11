@@ -26,30 +26,6 @@ public class ListAllAppResponseBody extends TeaModel {
         @NameInMap("agentId")
         public Long agentId;
 
-        // 应用名称
-        @NameInMap("name")
-        public String name;
-
-        // 应用描述
-        @NameInMap("desc")
-        public String desc;
-
-        // 应用图标
-        @NameInMap("icon")
-        public String icon;
-
-        // 应用移动端首页地址
-        @NameInMap("homepageLink")
-        public String homepageLink;
-
-        // 应用PC端首页地址
-        @NameInMap("pcHomepageLink")
-        public String pcHomepageLink;
-
-        // 应用管理后台地址
-        @NameInMap("ompLink")
-        public String ompLink;
-
         // 三方应用id，如果是企业内部应用，返回0
         @NameInMap("appId")
         public Long appId;
@@ -57,6 +33,30 @@ public class ListAllAppResponseBody extends TeaModel {
         // 应用状态，0：停用，1：启用 ，3：过期
         @NameInMap("appStatus")
         public Integer appStatus;
+
+        // 应用描述
+        @NameInMap("desc")
+        public String desc;
+
+        // 应用移动端首页地址
+        @NameInMap("homepageLink")
+        public String homepageLink;
+
+        // 应用图标
+        @NameInMap("icon")
+        public String icon;
+
+        // 应用名称
+        @NameInMap("name")
+        public String name;
+
+        // 应用管理后台地址
+        @NameInMap("ompLink")
+        public String ompLink;
+
+        // 应用PC端首页地址
+        @NameInMap("pcHomepageLink")
+        public String pcHomepageLink;
 
         public static ListAllAppResponseBodyAppList build(java.util.Map<String, ?> map) throws Exception {
             ListAllAppResponseBodyAppList self = new ListAllAppResponseBodyAppList();
@@ -69,54 +69,6 @@ public class ListAllAppResponseBody extends TeaModel {
         }
         public Long getAgentId() {
             return this.agentId;
-        }
-
-        public ListAllAppResponseBodyAppList setName(String name) {
-            this.name = name;
-            return this;
-        }
-        public String getName() {
-            return this.name;
-        }
-
-        public ListAllAppResponseBodyAppList setDesc(String desc) {
-            this.desc = desc;
-            return this;
-        }
-        public String getDesc() {
-            return this.desc;
-        }
-
-        public ListAllAppResponseBodyAppList setIcon(String icon) {
-            this.icon = icon;
-            return this;
-        }
-        public String getIcon() {
-            return this.icon;
-        }
-
-        public ListAllAppResponseBodyAppList setHomepageLink(String homepageLink) {
-            this.homepageLink = homepageLink;
-            return this;
-        }
-        public String getHomepageLink() {
-            return this.homepageLink;
-        }
-
-        public ListAllAppResponseBodyAppList setPcHomepageLink(String pcHomepageLink) {
-            this.pcHomepageLink = pcHomepageLink;
-            return this;
-        }
-        public String getPcHomepageLink() {
-            return this.pcHomepageLink;
-        }
-
-        public ListAllAppResponseBodyAppList setOmpLink(String ompLink) {
-            this.ompLink = ompLink;
-            return this;
-        }
-        public String getOmpLink() {
-            return this.ompLink;
         }
 
         public ListAllAppResponseBodyAppList setAppId(Long appId) {
@@ -133,6 +85,54 @@ public class ListAllAppResponseBody extends TeaModel {
         }
         public Integer getAppStatus() {
             return this.appStatus;
+        }
+
+        public ListAllAppResponseBodyAppList setDesc(String desc) {
+            this.desc = desc;
+            return this;
+        }
+        public String getDesc() {
+            return this.desc;
+        }
+
+        public ListAllAppResponseBodyAppList setHomepageLink(String homepageLink) {
+            this.homepageLink = homepageLink;
+            return this;
+        }
+        public String getHomepageLink() {
+            return this.homepageLink;
+        }
+
+        public ListAllAppResponseBodyAppList setIcon(String icon) {
+            this.icon = icon;
+            return this;
+        }
+        public String getIcon() {
+            return this.icon;
+        }
+
+        public ListAllAppResponseBodyAppList setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
+        public ListAllAppResponseBodyAppList setOmpLink(String ompLink) {
+            this.ompLink = ompLink;
+            return this;
+        }
+        public String getOmpLink() {
+            return this.ompLink;
+        }
+
+        public ListAllAppResponseBodyAppList setPcHomepageLink(String pcHomepageLink) {
+            this.pcHomepageLink = pcHomepageLink;
+            return this;
+        }
+        public String getPcHomepageLink() {
+            return this.pcHomepageLink;
         }
 
     }

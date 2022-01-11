@@ -8,6 +8,14 @@ public class DeleteFormDataRequest extends TeaModel {
     @NameInMap("appType")
     public String appType;
 
+    // 要删除的表单数据ID
+    @NameInMap("formInstanceId")
+    public String formInstanceId;
+
+    // 语言
+    @NameInMap("language")
+    public String language;
+
     // 应用秘钥
     @NameInMap("systemToken")
     public String systemToken;
@@ -15,14 +23,6 @@ public class DeleteFormDataRequest extends TeaModel {
     // 钉钉的userId
     @NameInMap("userId")
     public String userId;
-
-    // 语言
-    @NameInMap("language")
-    public String language;
-
-    // 要删除的表单数据ID
-    @NameInMap("formInstanceId")
-    public String formInstanceId;
 
     public static DeleteFormDataRequest build(java.util.Map<String, ?> map) throws Exception {
         DeleteFormDataRequest self = new DeleteFormDataRequest();
@@ -35,6 +35,22 @@ public class DeleteFormDataRequest extends TeaModel {
     }
     public String getAppType() {
         return this.appType;
+    }
+
+    public DeleteFormDataRequest setFormInstanceId(String formInstanceId) {
+        this.formInstanceId = formInstanceId;
+        return this;
+    }
+    public String getFormInstanceId() {
+        return this.formInstanceId;
+    }
+
+    public DeleteFormDataRequest setLanguage(String language) {
+        this.language = language;
+        return this;
+    }
+    public String getLanguage() {
+        return this.language;
     }
 
     public DeleteFormDataRequest setSystemToken(String systemToken) {
@@ -51,22 +67,6 @@ public class DeleteFormDataRequest extends TeaModel {
     }
     public String getUserId() {
         return this.userId;
-    }
-
-    public DeleteFormDataRequest setLanguage(String language) {
-        this.language = language;
-        return this;
-    }
-    public String getLanguage() {
-        return this.language;
-    }
-
-    public DeleteFormDataRequest setFormInstanceId(String formInstanceId) {
-        this.formInstanceId = formInstanceId;
-        return this;
-    }
-    public String getFormInstanceId() {
-        return this.formInstanceId;
     }
 
 }

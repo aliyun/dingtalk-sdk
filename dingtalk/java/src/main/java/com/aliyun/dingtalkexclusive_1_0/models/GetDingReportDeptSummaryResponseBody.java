@@ -8,13 +8,13 @@ public class GetDingReportDeptSummaryResponseBody extends TeaModel {
     @NameInMap("data")
     public java.util.List<GetDingReportDeptSummaryResponseBodyData> data;
 
-    // 下一次请求的分页游标
-    @NameInMap("nextToken")
-    public Long nextToken;
-
     // 是否有更多数据
     @NameInMap("hasMore")
     public Boolean hasMore;
+
+    // 下一次请求的分页游标
+    @NameInMap("nextToken")
+    public Long nextToken;
 
     public static GetDingReportDeptSummaryResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetDingReportDeptSummaryResponseBody self = new GetDingReportDeptSummaryResponseBody();
@@ -29,20 +29,20 @@ public class GetDingReportDeptSummaryResponseBody extends TeaModel {
         return this.data;
     }
 
-    public GetDingReportDeptSummaryResponseBody setNextToken(Long nextToken) {
-        this.nextToken = nextToken;
-        return this;
-    }
-    public Long getNextToken() {
-        return this.nextToken;
-    }
-
     public GetDingReportDeptSummaryResponseBody setHasMore(Boolean hasMore) {
         this.hasMore = hasMore;
         return this;
     }
     public Boolean getHasMore() {
         return this.hasMore;
+    }
+
+    public GetDingReportDeptSummaryResponseBody setNextToken(Long nextToken) {
+        this.nextToken = nextToken;
+        return this;
+    }
+    public Long getNextToken() {
+        return this.nextToken;
     }
 
     public static class GetDingReportDeptSummaryResponseBodyData extends TeaModel {
@@ -54,13 +54,13 @@ public class GetDingReportDeptSummaryResponseBody extends TeaModel {
         @NameInMap("deptName")
         public String deptName;
 
-        // 最近1天累计创建日志人数
-        @NameInMap("dingReportSendUsrCnt")
-        public String dingReportSendUsrCnt;
-
         // 最近1天累计创建日志数
         @NameInMap("dingReportSendCnt")
         public String dingReportSendCnt;
+
+        // 最近1天累计创建日志人数
+        @NameInMap("dingReportSendUsrCnt")
+        public String dingReportSendUsrCnt;
 
         public static GetDingReportDeptSummaryResponseBodyData build(java.util.Map<String, ?> map) throws Exception {
             GetDingReportDeptSummaryResponseBodyData self = new GetDingReportDeptSummaryResponseBodyData();
@@ -83,20 +83,20 @@ public class GetDingReportDeptSummaryResponseBody extends TeaModel {
             return this.deptName;
         }
 
-        public GetDingReportDeptSummaryResponseBodyData setDingReportSendUsrCnt(String dingReportSendUsrCnt) {
-            this.dingReportSendUsrCnt = dingReportSendUsrCnt;
-            return this;
-        }
-        public String getDingReportSendUsrCnt() {
-            return this.dingReportSendUsrCnt;
-        }
-
         public GetDingReportDeptSummaryResponseBodyData setDingReportSendCnt(String dingReportSendCnt) {
             this.dingReportSendCnt = dingReportSendCnt;
             return this;
         }
         public String getDingReportSendCnt() {
             return this.dingReportSendCnt;
+        }
+
+        public GetDingReportDeptSummaryResponseBodyData setDingReportSendUsrCnt(String dingReportSendUsrCnt) {
+            this.dingReportSendUsrCnt = dingReportSendUsrCnt;
+            return this;
+        }
+        public String getDingReportSendUsrCnt() {
+            return this.dingReportSendUsrCnt;
         }
 
     }

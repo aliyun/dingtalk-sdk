@@ -4,24 +4,16 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetRecentEditDocsResponseBody extends TeaModel {
+    @NameInMap("nextToken")
+    public String nextToken;
+
     // 查询结果
     @NameInMap("recentList")
     public java.util.List<GetRecentEditDocsResponseBodyRecentList> recentList;
 
-    @NameInMap("nextToken")
-    public String nextToken;
-
     public static GetRecentEditDocsResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetRecentEditDocsResponseBody self = new GetRecentEditDocsResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public GetRecentEditDocsResponseBody setRecentList(java.util.List<GetRecentEditDocsResponseBodyRecentList> recentList) {
-        this.recentList = recentList;
-        return this;
-    }
-    public java.util.List<GetRecentEditDocsResponseBodyRecentList> getRecentList() {
-        return this.recentList;
     }
 
     public GetRecentEditDocsResponseBody setNextToken(String nextToken) {
@@ -32,7 +24,23 @@ public class GetRecentEditDocsResponseBody extends TeaModel {
         return this.nextToken;
     }
 
+    public GetRecentEditDocsResponseBody setRecentList(java.util.List<GetRecentEditDocsResponseBodyRecentList> recentList) {
+        this.recentList = recentList;
+        return this;
+    }
+    public java.util.List<GetRecentEditDocsResponseBodyRecentList> getRecentList() {
+        return this.recentList;
+    }
+
     public static class GetRecentEditDocsResponseBodyRecentListNodeBO extends TeaModel {
+        // 是否被删除
+        @NameInMap("isDeleted")
+        public Boolean isDeleted;
+
+        // 最后编辑时间
+        @NameInMap("lastEditTime")
+        public Long lastEditTime;
+
         // 文档Id
         @NameInMap("nodeId")
         public String nodeId;
@@ -45,17 +53,25 @@ public class GetRecentEditDocsResponseBody extends TeaModel {
         @NameInMap("url")
         public String url;
 
-        // 最后编辑时间
-        @NameInMap("lastEditTime")
-        public Long lastEditTime;
-
-        // 是否被删除
-        @NameInMap("isDeleted")
-        public Boolean isDeleted;
-
         public static GetRecentEditDocsResponseBodyRecentListNodeBO build(java.util.Map<String, ?> map) throws Exception {
             GetRecentEditDocsResponseBodyRecentListNodeBO self = new GetRecentEditDocsResponseBodyRecentListNodeBO();
             return TeaModel.build(map, self);
+        }
+
+        public GetRecentEditDocsResponseBodyRecentListNodeBO setIsDeleted(Boolean isDeleted) {
+            this.isDeleted = isDeleted;
+            return this;
+        }
+        public Boolean getIsDeleted() {
+            return this.isDeleted;
+        }
+
+        public GetRecentEditDocsResponseBodyRecentListNodeBO setLastEditTime(Long lastEditTime) {
+            this.lastEditTime = lastEditTime;
+            return this;
+        }
+        public Long getLastEditTime() {
+            return this.lastEditTime;
         }
 
         public GetRecentEditDocsResponseBodyRecentListNodeBO setNodeId(String nodeId) {
@@ -80,22 +96,6 @@ public class GetRecentEditDocsResponseBody extends TeaModel {
         }
         public String getUrl() {
             return this.url;
-        }
-
-        public GetRecentEditDocsResponseBodyRecentListNodeBO setLastEditTime(Long lastEditTime) {
-            this.lastEditTime = lastEditTime;
-            return this;
-        }
-        public Long getLastEditTime() {
-            return this.lastEditTime;
-        }
-
-        public GetRecentEditDocsResponseBodyRecentListNodeBO setIsDeleted(Boolean isDeleted) {
-            this.isDeleted = isDeleted;
-            return this;
-        }
-        public Boolean getIsDeleted() {
-            return this.isDeleted;
         }
 
     }

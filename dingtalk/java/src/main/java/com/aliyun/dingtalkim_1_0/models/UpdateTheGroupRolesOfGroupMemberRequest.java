@@ -8,28 +8,13 @@ public class UpdateTheGroupRolesOfGroupMemberRequest extends TeaModel {
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    // 用户ID
-    @NameInMap("userId")
-    public String userId;
-
     // 群角色列表
     @NameInMap("openRoleIds")
     public java.util.List<String> openRoleIds;
 
-    @NameInMap("dingTokenGrantType")
-    public Long dingTokenGrantType;
-
-    @NameInMap("dingOrgId")
-    public Long dingOrgId;
-
-    @NameInMap("dingIsvOrgId")
-    public Long dingIsvOrgId;
-
-    @NameInMap("dingSuiteKey")
-    public String dingSuiteKey;
-
-    @NameInMap("dingOauthAppId")
-    public Long dingOauthAppId;
+    // 用户ID
+    @NameInMap("userId")
+    public String userId;
 
     public static UpdateTheGroupRolesOfGroupMemberRequest build(java.util.Map<String, ?> map) throws Exception {
         UpdateTheGroupRolesOfGroupMemberRequest self = new UpdateTheGroupRolesOfGroupMemberRequest();
@@ -44,14 +29,6 @@ public class UpdateTheGroupRolesOfGroupMemberRequest extends TeaModel {
         return this.openConversationId;
     }
 
-    public UpdateTheGroupRolesOfGroupMemberRequest setUserId(String userId) {
-        this.userId = userId;
-        return this;
-    }
-    public String getUserId() {
-        return this.userId;
-    }
-
     public UpdateTheGroupRolesOfGroupMemberRequest setOpenRoleIds(java.util.List<String> openRoleIds) {
         this.openRoleIds = openRoleIds;
         return this;
@@ -60,44 +37,12 @@ public class UpdateTheGroupRolesOfGroupMemberRequest extends TeaModel {
         return this.openRoleIds;
     }
 
-    public UpdateTheGroupRolesOfGroupMemberRequest setDingTokenGrantType(Long dingTokenGrantType) {
-        this.dingTokenGrantType = dingTokenGrantType;
+    public UpdateTheGroupRolesOfGroupMemberRequest setUserId(String userId) {
+        this.userId = userId;
         return this;
     }
-    public Long getDingTokenGrantType() {
-        return this.dingTokenGrantType;
-    }
-
-    public UpdateTheGroupRolesOfGroupMemberRequest setDingOrgId(Long dingOrgId) {
-        this.dingOrgId = dingOrgId;
-        return this;
-    }
-    public Long getDingOrgId() {
-        return this.dingOrgId;
-    }
-
-    public UpdateTheGroupRolesOfGroupMemberRequest setDingIsvOrgId(Long dingIsvOrgId) {
-        this.dingIsvOrgId = dingIsvOrgId;
-        return this;
-    }
-    public Long getDingIsvOrgId() {
-        return this.dingIsvOrgId;
-    }
-
-    public UpdateTheGroupRolesOfGroupMemberRequest setDingSuiteKey(String dingSuiteKey) {
-        this.dingSuiteKey = dingSuiteKey;
-        return this;
-    }
-    public String getDingSuiteKey() {
-        return this.dingSuiteKey;
-    }
-
-    public UpdateTheGroupRolesOfGroupMemberRequest setDingOauthAppId(Long dingOauthAppId) {
-        this.dingOauthAppId = dingOauthAppId;
-        return this;
-    }
-    public Long getDingOauthAppId() {
-        return this.dingOauthAppId;
+    public String getUserId() {
+        return this.userId;
     }
 
 }

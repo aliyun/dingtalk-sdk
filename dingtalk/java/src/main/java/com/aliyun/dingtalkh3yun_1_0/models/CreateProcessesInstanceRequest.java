@@ -4,10 +4,6 @@ package com.aliyun.dingtalkh3yun_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateProcessesInstanceRequest extends TeaModel {
-    // 表单编码
-    @NameInMap("schemaCode")
-    public String schemaCode;
-
     // 业务数据id
     @NameInMap("bizObjectId")
     public String bizObjectId;
@@ -16,17 +12,13 @@ public class CreateProcessesInstanceRequest extends TeaModel {
     @NameInMap("opUserId")
     public String opUserId;
 
+    // 表单编码
+    @NameInMap("schemaCode")
+    public String schemaCode;
+
     public static CreateProcessesInstanceRequest build(java.util.Map<String, ?> map) throws Exception {
         CreateProcessesInstanceRequest self = new CreateProcessesInstanceRequest();
         return TeaModel.build(map, self);
-    }
-
-    public CreateProcessesInstanceRequest setSchemaCode(String schemaCode) {
-        this.schemaCode = schemaCode;
-        return this;
-    }
-    public String getSchemaCode() {
-        return this.schemaCode;
     }
 
     public CreateProcessesInstanceRequest setBizObjectId(String bizObjectId) {
@@ -43,6 +35,14 @@ public class CreateProcessesInstanceRequest extends TeaModel {
     }
     public String getOpUserId() {
         return this.opUserId;
+    }
+
+    public CreateProcessesInstanceRequest setSchemaCode(String schemaCode) {
+        this.schemaCode = schemaCode;
+        return this;
+    }
+    public String getSchemaCode() {
+        return this.schemaCode;
     }
 
 }

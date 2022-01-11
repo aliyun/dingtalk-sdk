@@ -4,11 +4,11 @@ package com.aliyun.dingtalkesign_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCropStatusResponseBody extends TeaModel {
-    @NameInMap("data")
-    public GetCropStatusResponseBodyData data;
-
     @NameInMap("code")
     public Integer code;
+
+    @NameInMap("data")
+    public GetCropStatusResponseBodyData data;
 
     @NameInMap("message")
     public String message;
@@ -18,20 +18,20 @@ public class GetCropStatusResponseBody extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public GetCropStatusResponseBody setData(GetCropStatusResponseBodyData data) {
-        this.data = data;
-        return this;
-    }
-    public GetCropStatusResponseBodyData getData() {
-        return this.data;
-    }
-
     public GetCropStatusResponseBody setCode(Integer code) {
         this.code = code;
         return this;
     }
     public Integer getCode() {
         return this.code;
+    }
+
+    public GetCropStatusResponseBody setData(GetCropStatusResponseBodyData data) {
+        this.data = data;
+        return this;
+    }
+    public GetCropStatusResponseBodyData getData() {
+        return this.data;
     }
 
     public GetCropStatusResponseBody setMessage(String message) {

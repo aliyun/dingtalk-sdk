@@ -4,10 +4,6 @@ package com.aliyun.dingtalktrade_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateOpportunityRequest extends TeaModel {
-    // 企业CorpId
-    @NameInMap("corpId")
-    public String corpId;
-
     // 归属人电话号码
     @NameInMap("belongToPhoneNum")
     public String belongToPhoneNum;
@@ -15,6 +11,10 @@ public class CreateOpportunityRequest extends TeaModel {
     // 联系人电话
     @NameInMap("contactPhoneNum")
     public String contactPhoneNum;
+
+    // 企业CorpId
+    @NameInMap("corpId")
+    public String corpId;
 
     // 部门Id
     @NameInMap("deptId")
@@ -24,20 +24,9 @@ public class CreateOpportunityRequest extends TeaModel {
     @NameInMap("marketCode")
     public String marketCode;
 
-    @NameInMap("dingIsvOrgId")
-    public Long dingIsvOrgId;
-
     public static CreateOpportunityRequest build(java.util.Map<String, ?> map) throws Exception {
         CreateOpportunityRequest self = new CreateOpportunityRequest();
         return TeaModel.build(map, self);
-    }
-
-    public CreateOpportunityRequest setCorpId(String corpId) {
-        this.corpId = corpId;
-        return this;
-    }
-    public String getCorpId() {
-        return this.corpId;
     }
 
     public CreateOpportunityRequest setBelongToPhoneNum(String belongToPhoneNum) {
@@ -56,6 +45,14 @@ public class CreateOpportunityRequest extends TeaModel {
         return this.contactPhoneNum;
     }
 
+    public CreateOpportunityRequest setCorpId(String corpId) {
+        this.corpId = corpId;
+        return this;
+    }
+    public String getCorpId() {
+        return this.corpId;
+    }
+
     public CreateOpportunityRequest setDeptId(Long deptId) {
         this.deptId = deptId;
         return this;
@@ -70,14 +67,6 @@ public class CreateOpportunityRequest extends TeaModel {
     }
     public String getMarketCode() {
         return this.marketCode;
-    }
-
-    public CreateOpportunityRequest setDingIsvOrgId(Long dingIsvOrgId) {
-        this.dingIsvOrgId = dingIsvOrgId;
-        return this;
-    }
-    public Long getDingIsvOrgId() {
-        return this.dingIsvOrgId;
     }
 
 }

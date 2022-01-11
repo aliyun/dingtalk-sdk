@@ -8,13 +8,13 @@ public class DeleteUniversityStudentRequest extends TeaModel {
     @NameInMap("classId")
     public Long classId;
 
-    // 学生用户ID
-    @NameInMap("studentUserId")
-    public String studentUserId;
-
     // 操作人用户ID
     @NameInMap("opUserId")
     public String opUserId;
+
+    // 学生用户ID
+    @NameInMap("studentUserId")
+    public String studentUserId;
 
     public static DeleteUniversityStudentRequest build(java.util.Map<String, ?> map) throws Exception {
         DeleteUniversityStudentRequest self = new DeleteUniversityStudentRequest();
@@ -29,20 +29,20 @@ public class DeleteUniversityStudentRequest extends TeaModel {
         return this.classId;
     }
 
-    public DeleteUniversityStudentRequest setStudentUserId(String studentUserId) {
-        this.studentUserId = studentUserId;
-        return this;
-    }
-    public String getStudentUserId() {
-        return this.studentUserId;
-    }
-
     public DeleteUniversityStudentRequest setOpUserId(String opUserId) {
         this.opUserId = opUserId;
         return this;
     }
     public String getOpUserId() {
         return this.opUserId;
+    }
+
+    public DeleteUniversityStudentRequest setStudentUserId(String studentUserId) {
+        this.studentUserId = studentUserId;
+        return this;
+    }
+    public String getStudentUserId() {
+        return this.studentUserId;
     }
 
 }

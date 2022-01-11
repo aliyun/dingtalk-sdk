@@ -4,25 +4,17 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class AttendanceBleDevicesQueryRequest extends TeaModel {
-    // 操作人Id
-    @NameInMap("opUserId")
-    public String opUserId;
-
     // 考勤组Id
     @NameInMap("groupKey")
     public String groupKey;
 
+    // 操作人Id
+    @NameInMap("opUserId")
+    public String opUserId;
+
     public static AttendanceBleDevicesQueryRequest build(java.util.Map<String, ?> map) throws Exception {
         AttendanceBleDevicesQueryRequest self = new AttendanceBleDevicesQueryRequest();
         return TeaModel.build(map, self);
-    }
-
-    public AttendanceBleDevicesQueryRequest setOpUserId(String opUserId) {
-        this.opUserId = opUserId;
-        return this;
-    }
-    public String getOpUserId() {
-        return this.opUserId;
     }
 
     public AttendanceBleDevicesQueryRequest setGroupKey(String groupKey) {
@@ -31,6 +23,14 @@ public class AttendanceBleDevicesQueryRequest extends TeaModel {
     }
     public String getGroupKey() {
         return this.groupKey;
+    }
+
+    public AttendanceBleDevicesQueryRequest setOpUserId(String opUserId) {
+        this.opUserId = opUserId;
+        return this;
+    }
+    public String getOpUserId() {
+        return this.opUserId;
     }
 
 }

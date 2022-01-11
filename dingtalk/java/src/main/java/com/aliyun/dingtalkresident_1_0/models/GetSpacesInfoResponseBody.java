@@ -22,6 +22,25 @@ public class GetSpacesInfoResponseBody extends TeaModel {
     }
 
     public static class GetSpacesInfoResponseBodySpaceList extends TeaModel {
+        @NameInMap("billingArea")
+        public Float billingArea;
+
+        @NameInMap("buildingArea")
+        public Float buildingArea;
+
+        @NameInMap("floor")
+        public String floor;
+
+        // 房屋状态：0空置/1未领/2入住/3空关/4装修
+        @NameInMap("houseState")
+        public Integer houseState;
+
+        @NameInMap("isVirtual")
+        public Integer isVirtual;
+
+        @NameInMap("parentReferId")
+        public Long parentReferId;
+
         @NameInMap("referId")
         public Long referId;
 
@@ -35,28 +54,57 @@ public class GetSpacesInfoResponseBody extends TeaModel {
         @NameInMap("type")
         public String type;
 
-        @NameInMap("floor")
-        public String floor;
-
-        @NameInMap("isVirtual")
-        public Integer isVirtual;
-
-        @NameInMap("billingArea")
-        public Float billingArea;
-
-        @NameInMap("buildingArea")
-        public Float buildingArea;
-
-        // 房屋状态：0空置/1未领/2入住/3空关/4装修
-        @NameInMap("houseState")
-        public Integer houseState;
-
-        @NameInMap("parentReferId")
-        public Long parentReferId;
-
         public static GetSpacesInfoResponseBodySpaceList build(java.util.Map<String, ?> map) throws Exception {
             GetSpacesInfoResponseBodySpaceList self = new GetSpacesInfoResponseBodySpaceList();
             return TeaModel.build(map, self);
+        }
+
+        public GetSpacesInfoResponseBodySpaceList setBillingArea(Float billingArea) {
+            this.billingArea = billingArea;
+            return this;
+        }
+        public Float getBillingArea() {
+            return this.billingArea;
+        }
+
+        public GetSpacesInfoResponseBodySpaceList setBuildingArea(Float buildingArea) {
+            this.buildingArea = buildingArea;
+            return this;
+        }
+        public Float getBuildingArea() {
+            return this.buildingArea;
+        }
+
+        public GetSpacesInfoResponseBodySpaceList setFloor(String floor) {
+            this.floor = floor;
+            return this;
+        }
+        public String getFloor() {
+            return this.floor;
+        }
+
+        public GetSpacesInfoResponseBodySpaceList setHouseState(Integer houseState) {
+            this.houseState = houseState;
+            return this;
+        }
+        public Integer getHouseState() {
+            return this.houseState;
+        }
+
+        public GetSpacesInfoResponseBodySpaceList setIsVirtual(Integer isVirtual) {
+            this.isVirtual = isVirtual;
+            return this;
+        }
+        public Integer getIsVirtual() {
+            return this.isVirtual;
+        }
+
+        public GetSpacesInfoResponseBodySpaceList setParentReferId(Long parentReferId) {
+            this.parentReferId = parentReferId;
+            return this;
+        }
+        public Long getParentReferId() {
+            return this.parentReferId;
         }
 
         public GetSpacesInfoResponseBodySpaceList setReferId(Long referId) {
@@ -89,54 +137,6 @@ public class GetSpacesInfoResponseBody extends TeaModel {
         }
         public String getType() {
             return this.type;
-        }
-
-        public GetSpacesInfoResponseBodySpaceList setFloor(String floor) {
-            this.floor = floor;
-            return this;
-        }
-        public String getFloor() {
-            return this.floor;
-        }
-
-        public GetSpacesInfoResponseBodySpaceList setIsVirtual(Integer isVirtual) {
-            this.isVirtual = isVirtual;
-            return this;
-        }
-        public Integer getIsVirtual() {
-            return this.isVirtual;
-        }
-
-        public GetSpacesInfoResponseBodySpaceList setBillingArea(Float billingArea) {
-            this.billingArea = billingArea;
-            return this;
-        }
-        public Float getBillingArea() {
-            return this.billingArea;
-        }
-
-        public GetSpacesInfoResponseBodySpaceList setBuildingArea(Float buildingArea) {
-            this.buildingArea = buildingArea;
-            return this;
-        }
-        public Float getBuildingArea() {
-            return this.buildingArea;
-        }
-
-        public GetSpacesInfoResponseBodySpaceList setHouseState(Integer houseState) {
-            this.houseState = houseState;
-            return this;
-        }
-        public Integer getHouseState() {
-            return this.houseState;
-        }
-
-        public GetSpacesInfoResponseBodySpaceList setParentReferId(Long parentReferId) {
-            this.parentReferId = parentReferId;
-            return this;
-        }
-        public Long getParentReferId() {
-            return this.parentReferId;
         }
 
     }

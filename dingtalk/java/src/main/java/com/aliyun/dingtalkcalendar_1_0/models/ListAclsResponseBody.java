@@ -22,25 +22,17 @@ public class ListAclsResponseBody extends TeaModel {
     }
 
     public static class ListAclsResponseBodyAclsScope extends TeaModel {
-        // 用户id
-        @NameInMap("userId")
-        public String userId;
-
         // 权限类型
         @NameInMap("scopeType")
         public String scopeType;
 
+        // 用户id
+        @NameInMap("userId")
+        public String userId;
+
         public static ListAclsResponseBodyAclsScope build(java.util.Map<String, ?> map) throws Exception {
             ListAclsResponseBodyAclsScope self = new ListAclsResponseBodyAclsScope();
             return TeaModel.build(map, self);
-        }
-
-        public ListAclsResponseBodyAclsScope setUserId(String userId) {
-            this.userId = userId;
-            return this;
-        }
-        public String getUserId() {
-            return this.userId;
         }
 
         public ListAclsResponseBodyAclsScope setScopeType(String scopeType) {
@@ -51,16 +43,24 @@ public class ListAclsResponseBody extends TeaModel {
             return this.scopeType;
         }
 
+        public ListAclsResponseBodyAclsScope setUserId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+        public String getUserId() {
+            return this.userId;
+        }
+
     }
 
     public static class ListAclsResponseBodyAcls extends TeaModel {
-        // 权限信息
-        @NameInMap("privilege")
-        public String privilege;
-
         // acl资源ID
         @NameInMap("aclId")
         public String aclId;
+
+        // 权限信息
+        @NameInMap("privilege")
+        public String privilege;
 
         // 权限范围
         @NameInMap("scope")
@@ -71,20 +71,20 @@ public class ListAclsResponseBody extends TeaModel {
             return TeaModel.build(map, self);
         }
 
-        public ListAclsResponseBodyAcls setPrivilege(String privilege) {
-            this.privilege = privilege;
-            return this;
-        }
-        public String getPrivilege() {
-            return this.privilege;
-        }
-
         public ListAclsResponseBodyAcls setAclId(String aclId) {
             this.aclId = aclId;
             return this;
         }
         public String getAclId() {
             return this.aclId;
+        }
+
+        public ListAclsResponseBodyAcls setPrivilege(String privilege) {
+            this.privilege = privilege;
+            return this;
+        }
+        public String getPrivilege() {
+            return this.privilege;
         }
 
         public ListAclsResponseBodyAcls setScope(ListAclsResponseBodyAclsScope scope) {

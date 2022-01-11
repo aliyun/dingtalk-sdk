@@ -4,11 +4,11 @@ package com.aliyun.dingtalkesign_1_0.models;
 import com.aliyun.tea.*;
 
 public class CancelCorpAuthResponseBody extends TeaModel {
-    @NameInMap("data")
-    public CancelCorpAuthResponseBodyData data;
-
     @NameInMap("code")
     public Integer code;
+
+    @NameInMap("data")
+    public CancelCorpAuthResponseBodyData data;
 
     @NameInMap("message")
     public String message;
@@ -18,20 +18,20 @@ public class CancelCorpAuthResponseBody extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public CancelCorpAuthResponseBody setData(CancelCorpAuthResponseBodyData data) {
-        this.data = data;
-        return this;
-    }
-    public CancelCorpAuthResponseBodyData getData() {
-        return this.data;
-    }
-
     public CancelCorpAuthResponseBody setCode(Integer code) {
         this.code = code;
         return this;
     }
     public Integer getCode() {
         return this.code;
+    }
+
+    public CancelCorpAuthResponseBody setData(CancelCorpAuthResponseBodyData data) {
+        this.data = data;
+        return this;
+    }
+    public CancelCorpAuthResponseBodyData getData() {
+        return this.data;
     }
 
     public CancelCorpAuthResponseBody setMessage(String message) {

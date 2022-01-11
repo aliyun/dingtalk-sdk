@@ -4,6 +4,10 @@ package com.aliyun.dingtalkmicro_app_1_0.models;
 import com.aliyun.tea.*;
 
 public class RegisterCustomAppRoleRequest extends TeaModel {
+    // 是否拥有管理角色的权限，可不传，默认false
+    @NameInMap("canManageRole")
+    public Boolean canManageRole;
+
     // 执行用户userId
     @NameInMap("opUserId")
     public String opUserId;
@@ -12,13 +16,17 @@ public class RegisterCustomAppRoleRequest extends TeaModel {
     @NameInMap("roleName")
     public String roleName;
 
-    // 是否拥有管理角色的权限，可不传，默认false
-    @NameInMap("canManageRole")
-    public Boolean canManageRole;
-
     public static RegisterCustomAppRoleRequest build(java.util.Map<String, ?> map) throws Exception {
         RegisterCustomAppRoleRequest self = new RegisterCustomAppRoleRequest();
         return TeaModel.build(map, self);
+    }
+
+    public RegisterCustomAppRoleRequest setCanManageRole(Boolean canManageRole) {
+        this.canManageRole = canManageRole;
+        return this;
+    }
+    public Boolean getCanManageRole() {
+        return this.canManageRole;
     }
 
     public RegisterCustomAppRoleRequest setOpUserId(String opUserId) {
@@ -35,14 +43,6 @@ public class RegisterCustomAppRoleRequest extends TeaModel {
     }
     public String getRoleName() {
         return this.roleName;
-    }
-
-    public RegisterCustomAppRoleRequest setCanManageRole(Boolean canManageRole) {
-        this.canManageRole = canManageRole;
-        return this;
-    }
-    public Boolean getCanManageRole() {
-        return this.canManageRole;
     }
 
 }

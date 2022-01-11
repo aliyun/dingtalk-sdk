@@ -4,26 +4,18 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchOrgInnerGroupInfoResponseBody extends TeaModel {
-    @NameInMap("totalCount")
-    public Long totalCount;
-
     @NameInMap("itemCount")
     public Integer itemCount;
 
     @NameInMap("items")
     public java.util.List<SearchOrgInnerGroupInfoResponseBodyItems> items;
 
+    @NameInMap("totalCount")
+    public Long totalCount;
+
     public static SearchOrgInnerGroupInfoResponseBody build(java.util.Map<String, ?> map) throws Exception {
         SearchOrgInnerGroupInfoResponseBody self = new SearchOrgInnerGroupInfoResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public SearchOrgInnerGroupInfoResponseBody setTotalCount(Long totalCount) {
-        this.totalCount = totalCount;
-        return this;
-    }
-    public Long getTotalCount() {
-        return this.totalCount;
     }
 
     public SearchOrgInnerGroupInfoResponseBody setItemCount(Integer itemCount) {
@@ -42,21 +34,17 @@ public class SearchOrgInnerGroupInfoResponseBody extends TeaModel {
         return this.items;
     }
 
+    public SearchOrgInnerGroupInfoResponseBody setTotalCount(Long totalCount) {
+        this.totalCount = totalCount;
+        return this;
+    }
+    public Long getTotalCount() {
+        return this.totalCount;
+    }
+
     public static class SearchOrgInnerGroupInfoResponseBodyItems extends TeaModel {
-        @NameInMap("openConversationId")
-        public String openConversationId;
-
-        @NameInMap("groupOwner")
-        public String groupOwner;
-
-        @NameInMap("groupName")
-        public String groupName;
-
         @NameInMap("groupAdminsCount")
         public Integer groupAdminsCount;
-
-        @NameInMap("groupMembersCount")
-        public Integer groupMembersCount;
 
         @NameInMap("groupCreateTime")
         public Long groupCreateTime;
@@ -67,17 +55,26 @@ public class SearchOrgInnerGroupInfoResponseBody extends TeaModel {
         @NameInMap("groupLastActiveTimeShow")
         public String groupLastActiveTimeShow;
 
-        @NameInMap("syncToDingpan")
-        public Integer syncToDingpan;
+        @NameInMap("groupMembersCount")
+        public Integer groupMembersCount;
 
-        @NameInMap("usedQuota")
-        public Long usedQuota;
+        @NameInMap("groupName")
+        public String groupName;
+
+        @NameInMap("groupOwner")
+        public String groupOwner;
 
         @NameInMap("groupOwnerUserId")
         public String groupOwnerUserId;
 
+        @NameInMap("openConversationId")
+        public String openConversationId;
+
         @NameInMap("status")
         public Integer status;
+
+        @NameInMap("syncToDingpan")
+        public Integer syncToDingpan;
 
         @NameInMap("templateId")
         public String templateId;
@@ -85,33 +82,12 @@ public class SearchOrgInnerGroupInfoResponseBody extends TeaModel {
         @NameInMap("templateName")
         public String templateName;
 
+        @NameInMap("usedQuota")
+        public Long usedQuota;
+
         public static SearchOrgInnerGroupInfoResponseBodyItems build(java.util.Map<String, ?> map) throws Exception {
             SearchOrgInnerGroupInfoResponseBodyItems self = new SearchOrgInnerGroupInfoResponseBodyItems();
             return TeaModel.build(map, self);
-        }
-
-        public SearchOrgInnerGroupInfoResponseBodyItems setOpenConversationId(String openConversationId) {
-            this.openConversationId = openConversationId;
-            return this;
-        }
-        public String getOpenConversationId() {
-            return this.openConversationId;
-        }
-
-        public SearchOrgInnerGroupInfoResponseBodyItems setGroupOwner(String groupOwner) {
-            this.groupOwner = groupOwner;
-            return this;
-        }
-        public String getGroupOwner() {
-            return this.groupOwner;
-        }
-
-        public SearchOrgInnerGroupInfoResponseBodyItems setGroupName(String groupName) {
-            this.groupName = groupName;
-            return this;
-        }
-        public String getGroupName() {
-            return this.groupName;
         }
 
         public SearchOrgInnerGroupInfoResponseBodyItems setGroupAdminsCount(Integer groupAdminsCount) {
@@ -120,14 +96,6 @@ public class SearchOrgInnerGroupInfoResponseBody extends TeaModel {
         }
         public Integer getGroupAdminsCount() {
             return this.groupAdminsCount;
-        }
-
-        public SearchOrgInnerGroupInfoResponseBodyItems setGroupMembersCount(Integer groupMembersCount) {
-            this.groupMembersCount = groupMembersCount;
-            return this;
-        }
-        public Integer getGroupMembersCount() {
-            return this.groupMembersCount;
         }
 
         public SearchOrgInnerGroupInfoResponseBodyItems setGroupCreateTime(Long groupCreateTime) {
@@ -154,20 +122,28 @@ public class SearchOrgInnerGroupInfoResponseBody extends TeaModel {
             return this.groupLastActiveTimeShow;
         }
 
-        public SearchOrgInnerGroupInfoResponseBodyItems setSyncToDingpan(Integer syncToDingpan) {
-            this.syncToDingpan = syncToDingpan;
+        public SearchOrgInnerGroupInfoResponseBodyItems setGroupMembersCount(Integer groupMembersCount) {
+            this.groupMembersCount = groupMembersCount;
             return this;
         }
-        public Integer getSyncToDingpan() {
-            return this.syncToDingpan;
+        public Integer getGroupMembersCount() {
+            return this.groupMembersCount;
         }
 
-        public SearchOrgInnerGroupInfoResponseBodyItems setUsedQuota(Long usedQuota) {
-            this.usedQuota = usedQuota;
+        public SearchOrgInnerGroupInfoResponseBodyItems setGroupName(String groupName) {
+            this.groupName = groupName;
             return this;
         }
-        public Long getUsedQuota() {
-            return this.usedQuota;
+        public String getGroupName() {
+            return this.groupName;
+        }
+
+        public SearchOrgInnerGroupInfoResponseBodyItems setGroupOwner(String groupOwner) {
+            this.groupOwner = groupOwner;
+            return this;
+        }
+        public String getGroupOwner() {
+            return this.groupOwner;
         }
 
         public SearchOrgInnerGroupInfoResponseBodyItems setGroupOwnerUserId(String groupOwnerUserId) {
@@ -178,12 +154,28 @@ public class SearchOrgInnerGroupInfoResponseBody extends TeaModel {
             return this.groupOwnerUserId;
         }
 
+        public SearchOrgInnerGroupInfoResponseBodyItems setOpenConversationId(String openConversationId) {
+            this.openConversationId = openConversationId;
+            return this;
+        }
+        public String getOpenConversationId() {
+            return this.openConversationId;
+        }
+
         public SearchOrgInnerGroupInfoResponseBodyItems setStatus(Integer status) {
             this.status = status;
             return this;
         }
         public Integer getStatus() {
             return this.status;
+        }
+
+        public SearchOrgInnerGroupInfoResponseBodyItems setSyncToDingpan(Integer syncToDingpan) {
+            this.syncToDingpan = syncToDingpan;
+            return this;
+        }
+        public Integer getSyncToDingpan() {
+            return this.syncToDingpan;
         }
 
         public SearchOrgInnerGroupInfoResponseBodyItems setTemplateId(String templateId) {
@@ -200,6 +192,14 @@ public class SearchOrgInnerGroupInfoResponseBody extends TeaModel {
         }
         public String getTemplateName() {
             return this.templateName;
+        }
+
+        public SearchOrgInnerGroupInfoResponseBodyItems setUsedQuota(Long usedQuota) {
+            this.usedQuota = usedQuota;
+            return this;
+        }
+        public Long getUsedQuota() {
+            return this.usedQuota;
         }
 
     }

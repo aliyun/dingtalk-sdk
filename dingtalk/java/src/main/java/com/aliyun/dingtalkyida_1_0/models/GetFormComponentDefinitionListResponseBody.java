@@ -21,10 +21,6 @@ public class GetFormComponentDefinitionListResponseBody extends TeaModel {
     }
 
     public static class GetFormComponentDefinitionListResponseBodyResult extends TeaModel {
-        // label
-        @NameInMap("label")
-        public String label;
-
         // componentName
         @NameInMap("componentName")
         public String componentName;
@@ -33,6 +29,10 @@ public class GetFormComponentDefinitionListResponseBody extends TeaModel {
         @NameInMap("fieldId")
         public String fieldId;
 
+        // label
+        @NameInMap("label")
+        public String label;
+
         // parentId
         @NameInMap("parentId")
         public String parentId;
@@ -40,14 +40,6 @@ public class GetFormComponentDefinitionListResponseBody extends TeaModel {
         public static GetFormComponentDefinitionListResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             GetFormComponentDefinitionListResponseBodyResult self = new GetFormComponentDefinitionListResponseBodyResult();
             return TeaModel.build(map, self);
-        }
-
-        public GetFormComponentDefinitionListResponseBodyResult setLabel(String label) {
-            this.label = label;
-            return this;
-        }
-        public String getLabel() {
-            return this.label;
         }
 
         public GetFormComponentDefinitionListResponseBodyResult setComponentName(String componentName) {
@@ -64,6 +56,14 @@ public class GetFormComponentDefinitionListResponseBody extends TeaModel {
         }
         public String getFieldId() {
             return this.fieldId;
+        }
+
+        public GetFormComponentDefinitionListResponseBodyResult setLabel(String label) {
+            this.label = label;
+            return this;
+        }
+        public String getLabel() {
+            return this.label;
         }
 
         public GetFormComponentDefinitionListResponseBodyResult setParentId(String parentId) {

@@ -8,13 +8,13 @@ public class CreateAclsRequest extends TeaModel {
     @NameInMap("privilege")
     public String privilege;
 
-    // 是否向授权人发消息
-    @NameInMap("sendMsg")
-    public Boolean sendMsg;
-
     // 权限范围
     @NameInMap("scope")
     public CreateAclsRequestScope scope;
+
+    // 是否向授权人发消息
+    @NameInMap("sendMsg")
+    public Boolean sendMsg;
 
     public static CreateAclsRequest build(java.util.Map<String, ?> map) throws Exception {
         CreateAclsRequest self = new CreateAclsRequest();
@@ -29,20 +29,20 @@ public class CreateAclsRequest extends TeaModel {
         return this.privilege;
     }
 
-    public CreateAclsRequest setSendMsg(Boolean sendMsg) {
-        this.sendMsg = sendMsg;
-        return this;
-    }
-    public Boolean getSendMsg() {
-        return this.sendMsg;
-    }
-
     public CreateAclsRequest setScope(CreateAclsRequestScope scope) {
         this.scope = scope;
         return this;
     }
     public CreateAclsRequestScope getScope() {
         return this.scope;
+    }
+
+    public CreateAclsRequest setSendMsg(Boolean sendMsg) {
+        this.sendMsg = sendMsg;
+        return this;
+    }
+    public Boolean getSendMsg() {
+        return this.sendMsg;
     }
 
     public static class CreateAclsRequestScope extends TeaModel {

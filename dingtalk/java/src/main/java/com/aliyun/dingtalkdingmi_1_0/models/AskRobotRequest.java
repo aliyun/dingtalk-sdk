@@ -4,13 +4,12 @@ package com.aliyun.dingtalkdingmi_1_0.models;
 import com.aliyun.tea.*;
 
 public class AskRobotRequest extends TeaModel {
+    @NameInMap("dingUserId")
+    public String dingUserId;
+
     // 问题
     @NameInMap("question")
     public String question;
-
-    // 企业corpId
-    @NameInMap("dingCorpId")
-    public String dingCorpId;
 
     // 机器人id
     @NameInMap("robotAppKey")
@@ -20,16 +19,17 @@ public class AskRobotRequest extends TeaModel {
     @NameInMap("sessionUuid")
     public String sessionUuid;
 
-    // suiteKey
-    @NameInMap("dingSuiteKey")
-    public String dingSuiteKey;
-
-    @NameInMap("dingUserId")
-    public String dingUserId;
-
     public static AskRobotRequest build(java.util.Map<String, ?> map) throws Exception {
         AskRobotRequest self = new AskRobotRequest();
         return TeaModel.build(map, self);
+    }
+
+    public AskRobotRequest setDingUserId(String dingUserId) {
+        this.dingUserId = dingUserId;
+        return this;
+    }
+    public String getDingUserId() {
+        return this.dingUserId;
     }
 
     public AskRobotRequest setQuestion(String question) {
@@ -38,14 +38,6 @@ public class AskRobotRequest extends TeaModel {
     }
     public String getQuestion() {
         return this.question;
-    }
-
-    public AskRobotRequest setDingCorpId(String dingCorpId) {
-        this.dingCorpId = dingCorpId;
-        return this;
-    }
-    public String getDingCorpId() {
-        return this.dingCorpId;
     }
 
     public AskRobotRequest setRobotAppKey(String robotAppKey) {
@@ -62,22 +54,6 @@ public class AskRobotRequest extends TeaModel {
     }
     public String getSessionUuid() {
         return this.sessionUuid;
-    }
-
-    public AskRobotRequest setDingSuiteKey(String dingSuiteKey) {
-        this.dingSuiteKey = dingSuiteKey;
-        return this;
-    }
-    public String getDingSuiteKey() {
-        return this.dingSuiteKey;
-    }
-
-    public AskRobotRequest setDingUserId(String dingUserId) {
-        this.dingUserId = dingUserId;
-        return this;
-    }
-    public String getDingUserId() {
-        return this.dingUserId;
     }
 
 }

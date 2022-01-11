@@ -22,25 +22,17 @@ public class ListWorkBenchGroupResponseBody extends TeaModel {
     }
 
     public static class ListWorkBenchGroupResponseBodyGroupList extends TeaModel {
-        // 分组名称
-        @NameInMap("name")
-        public String name;
-
         // 分组id
         @NameInMap("componentId")
         public String componentId;
 
+        // 分组名称
+        @NameInMap("name")
+        public String name;
+
         public static ListWorkBenchGroupResponseBodyGroupList build(java.util.Map<String, ?> map) throws Exception {
             ListWorkBenchGroupResponseBodyGroupList self = new ListWorkBenchGroupResponseBodyGroupList();
             return TeaModel.build(map, self);
-        }
-
-        public ListWorkBenchGroupResponseBodyGroupList setName(String name) {
-            this.name = name;
-            return this;
-        }
-        public String getName() {
-            return this.name;
         }
 
         public ListWorkBenchGroupResponseBodyGroupList setComponentId(String componentId) {
@@ -49,6 +41,14 @@ public class ListWorkBenchGroupResponseBody extends TeaModel {
         }
         public String getComponentId() {
             return this.componentId;
+        }
+
+        public ListWorkBenchGroupResponseBodyGroupList setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
         }
 
     }

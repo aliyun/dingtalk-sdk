@@ -22,25 +22,17 @@ public class GetPersonalAuthRuleResponseBody extends TeaModel {
     }
 
     public static class GetPersonalAuthRuleResponseBodyResult extends TeaModel {
-        // resource
-        @NameInMap("resource")
-        public String resource;
-
         // authItems
         @NameInMap("authItems")
         public java.util.List<String> authItems;
 
+        // resource
+        @NameInMap("resource")
+        public String resource;
+
         public static GetPersonalAuthRuleResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             GetPersonalAuthRuleResponseBodyResult self = new GetPersonalAuthRuleResponseBodyResult();
             return TeaModel.build(map, self);
-        }
-
-        public GetPersonalAuthRuleResponseBodyResult setResource(String resource) {
-            this.resource = resource;
-            return this;
-        }
-        public String getResource() {
-            return this.resource;
         }
 
         public GetPersonalAuthRuleResponseBodyResult setAuthItems(java.util.List<String> authItems) {
@@ -49,6 +41,14 @@ public class GetPersonalAuthRuleResponseBody extends TeaModel {
         }
         public java.util.List<String> getAuthItems() {
             return this.authItems;
+        }
+
+        public GetPersonalAuthRuleResponseBodyResult setResource(String resource) {
+            this.resource = resource;
+            return this;
+        }
+        public String getResource() {
+            return this.resource;
         }
 
     }

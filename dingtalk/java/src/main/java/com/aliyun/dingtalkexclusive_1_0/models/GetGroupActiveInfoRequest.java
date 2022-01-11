@@ -4,10 +4,6 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetGroupActiveInfoRequest extends TeaModel {
-    // 统计日期
-    @NameInMap("statDate")
-    public String statDate;
-
     // 钉钉群组id
     @NameInMap("dingGroupId")
     public String dingGroupId;
@@ -20,17 +16,13 @@ public class GetGroupActiveInfoRequest extends TeaModel {
     @NameInMap("pageSize")
     public Long pageSize;
 
+    // 统计日期
+    @NameInMap("statDate")
+    public String statDate;
+
     public static GetGroupActiveInfoRequest build(java.util.Map<String, ?> map) throws Exception {
         GetGroupActiveInfoRequest self = new GetGroupActiveInfoRequest();
         return TeaModel.build(map, self);
-    }
-
-    public GetGroupActiveInfoRequest setStatDate(String statDate) {
-        this.statDate = statDate;
-        return this;
-    }
-    public String getStatDate() {
-        return this.statDate;
     }
 
     public GetGroupActiveInfoRequest setDingGroupId(String dingGroupId) {
@@ -55,6 +47,14 @@ public class GetGroupActiveInfoRequest extends TeaModel {
     }
     public Long getPageSize() {
         return this.pageSize;
+    }
+
+    public GetGroupActiveInfoRequest setStatDate(String statDate) {
+        this.statDate = statDate;
+        return this;
+    }
+    public String getStatDate() {
+        return this.statDate;
     }
 
 }

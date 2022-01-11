@@ -4,25 +4,17 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetUserAppVersionSummaryRequest extends TeaModel {
-    // 启始数据游标
-    @NameInMap("nextToken")
-    public Long nextToken;
-
     // 每页包含的数据条数
     @NameInMap("maxResults")
     public Long maxResults;
 
+    // 启始数据游标
+    @NameInMap("nextToken")
+    public Long nextToken;
+
     public static GetUserAppVersionSummaryRequest build(java.util.Map<String, ?> map) throws Exception {
         GetUserAppVersionSummaryRequest self = new GetUserAppVersionSummaryRequest();
         return TeaModel.build(map, self);
-    }
-
-    public GetUserAppVersionSummaryRequest setNextToken(Long nextToken) {
-        this.nextToken = nextToken;
-        return this;
-    }
-    public Long getNextToken() {
-        return this.nextToken;
     }
 
     public GetUserAppVersionSummaryRequest setMaxResults(Long maxResults) {
@@ -31,6 +23,14 @@ public class GetUserAppVersionSummaryRequest extends TeaModel {
     }
     public Long getMaxResults() {
         return this.maxResults;
+    }
+
+    public GetUserAppVersionSummaryRequest setNextToken(Long nextToken) {
+        this.nextToken = nextToken;
+        return this;
+    }
+    public Long getNextToken() {
+        return this.nextToken;
     }
 
 }

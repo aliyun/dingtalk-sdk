@@ -12,10 +12,6 @@ public class GetFinanceAccountResponseBody extends TeaModel {
     @NameInMap("accountId")
     public String accountId;
 
-    // 账户类型:ALIPAY, BANKCARD, CASH, WECHAT
-    @NameInMap("accountType")
-    public String accountType;
-
     // 账户名称
     @NameInMap("accountName")
     public String accountName;
@@ -24,17 +20,21 @@ public class GetFinanceAccountResponseBody extends TeaModel {
     @NameInMap("accountRemark")
     public String accountRemark;
 
+    // 账户类型:ALIPAY, BANKCARD, CASH, WECHAT
+    @NameInMap("accountType")
+    public String accountType;
+
     // 账户总额，保留2位小数
     @NameInMap("amount")
     public String amount;
 
-    // 创建人工号
-    @NameInMap("creator")
-    public String creator;
-
     // 创建时间
     @NameInMap("createTime")
     public Long createTime;
+
+    // 创建人工号
+    @NameInMap("creator")
+    public String creator;
 
     public static GetFinanceAccountResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetFinanceAccountResponseBody self = new GetFinanceAccountResponseBody();
@@ -57,14 +57,6 @@ public class GetFinanceAccountResponseBody extends TeaModel {
         return this.accountId;
     }
 
-    public GetFinanceAccountResponseBody setAccountType(String accountType) {
-        this.accountType = accountType;
-        return this;
-    }
-    public String getAccountType() {
-        return this.accountType;
-    }
-
     public GetFinanceAccountResponseBody setAccountName(String accountName) {
         this.accountName = accountName;
         return this;
@@ -81,6 +73,14 @@ public class GetFinanceAccountResponseBody extends TeaModel {
         return this.accountRemark;
     }
 
+    public GetFinanceAccountResponseBody setAccountType(String accountType) {
+        this.accountType = accountType;
+        return this;
+    }
+    public String getAccountType() {
+        return this.accountType;
+    }
+
     public GetFinanceAccountResponseBody setAmount(String amount) {
         this.amount = amount;
         return this;
@@ -89,20 +89,20 @@ public class GetFinanceAccountResponseBody extends TeaModel {
         return this.amount;
     }
 
-    public GetFinanceAccountResponseBody setCreator(String creator) {
-        this.creator = creator;
-        return this;
-    }
-    public String getCreator() {
-        return this.creator;
-    }
-
     public GetFinanceAccountResponseBody setCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
     }
     public Long getCreateTime() {
         return this.createTime;
+    }
+
+    public GetFinanceAccountResponseBody setCreator(String creator) {
+        this.creator = creator;
+        return this;
+    }
+    public String getCreator() {
+        return this.creator;
     }
 
 }

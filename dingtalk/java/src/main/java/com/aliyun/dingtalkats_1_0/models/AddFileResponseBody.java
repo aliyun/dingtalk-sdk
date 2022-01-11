@@ -4,10 +4,6 @@ package com.aliyun.dingtalkats_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddFileResponseBody extends TeaModel {
-    // 空间标识
-    @NameInMap("spaceId")
-    public Long spaceId;
-
     // 文件标识
     @NameInMap("fileId")
     public String fileId;
@@ -16,17 +12,13 @@ public class AddFileResponseBody extends TeaModel {
     @NameInMap("fileName")
     public String fileName;
 
+    // 空间标识
+    @NameInMap("spaceId")
+    public Long spaceId;
+
     public static AddFileResponseBody build(java.util.Map<String, ?> map) throws Exception {
         AddFileResponseBody self = new AddFileResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public AddFileResponseBody setSpaceId(Long spaceId) {
-        this.spaceId = spaceId;
-        return this;
-    }
-    public Long getSpaceId() {
-        return this.spaceId;
     }
 
     public AddFileResponseBody setFileId(String fileId) {
@@ -43,6 +35,14 @@ public class AddFileResponseBody extends TeaModel {
     }
     public String getFileName() {
         return this.fileName;
+    }
+
+    public AddFileResponseBody setSpaceId(Long spaceId) {
+        this.spaceId = spaceId;
+        return this;
+    }
+    public Long getSpaceId() {
+        return this.spaceId;
     }
 
 }

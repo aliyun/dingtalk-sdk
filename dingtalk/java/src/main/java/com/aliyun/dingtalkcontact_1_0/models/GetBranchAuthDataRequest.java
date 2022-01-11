@@ -4,6 +4,10 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetBranchAuthDataRequest extends TeaModel {
+    // 查询条件
+    @NameInMap("body")
+    public java.util.Map<String, String> body;
+
     // 分支组织corpId
     @NameInMap("branchCorpId")
     public String branchCorpId;
@@ -12,13 +16,17 @@ public class GetBranchAuthDataRequest extends TeaModel {
     @NameInMap("code")
     public String code;
 
-    // 查询条件
-    @NameInMap("body")
-    public java.util.Map<String, String> body;
-
     public static GetBranchAuthDataRequest build(java.util.Map<String, ?> map) throws Exception {
         GetBranchAuthDataRequest self = new GetBranchAuthDataRequest();
         return TeaModel.build(map, self);
+    }
+
+    public GetBranchAuthDataRequest setBody(java.util.Map<String, String> body) {
+        this.body = body;
+        return this;
+    }
+    public java.util.Map<String, String> getBody() {
+        return this.body;
     }
 
     public GetBranchAuthDataRequest setBranchCorpId(String branchCorpId) {
@@ -35,14 +43,6 @@ public class GetBranchAuthDataRequest extends TeaModel {
     }
     public String getCode() {
         return this.code;
-    }
-
-    public GetBranchAuthDataRequest setBody(java.util.Map<String, String> body) {
-        this.body = body;
-        return this;
-    }
-    public java.util.Map<String, String> getBody() {
-        return this.body;
     }
 
 }

@@ -4,6 +4,14 @@ package com.aliyun.dingtalkdatacenter_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryCompanyBasicInfoResponseBody extends TeaModel {
+    // code
+    @NameInMap("code")
+    public String code;
+
+    // data
+    @NameInMap("data")
+    public java.util.List<java.util.Map<String, String>> data;
+
     // message
     @NameInMap("message")
     public String message;
@@ -16,17 +24,25 @@ public class QueryCompanyBasicInfoResponseBody extends TeaModel {
     @NameInMap("total")
     public Integer total;
 
-    // data
-    @NameInMap("data")
-    public java.util.List<java.util.Map<String, String>> data;
-
-    // code
-    @NameInMap("code")
-    public String code;
-
     public static QueryCompanyBasicInfoResponseBody build(java.util.Map<String, ?> map) throws Exception {
         QueryCompanyBasicInfoResponseBody self = new QueryCompanyBasicInfoResponseBody();
         return TeaModel.build(map, self);
+    }
+
+    public QueryCompanyBasicInfoResponseBody setCode(String code) {
+        this.code = code;
+        return this;
+    }
+    public String getCode() {
+        return this.code;
+    }
+
+    public QueryCompanyBasicInfoResponseBody setData(java.util.List<java.util.Map<String, String>> data) {
+        this.data = data;
+        return this;
+    }
+    public java.util.List<java.util.Map<String, String>> getData() {
+        return this.data;
     }
 
     public QueryCompanyBasicInfoResponseBody setMessage(String message) {
@@ -51,22 +67,6 @@ public class QueryCompanyBasicInfoResponseBody extends TeaModel {
     }
     public Integer getTotal() {
         return this.total;
-    }
-
-    public QueryCompanyBasicInfoResponseBody setData(java.util.List<java.util.Map<String, String>> data) {
-        this.data = data;
-        return this;
-    }
-    public java.util.List<java.util.Map<String, String>> getData() {
-        return this.data;
-    }
-
-    public QueryCompanyBasicInfoResponseBody setCode(String code) {
-        this.code = code;
-        return this;
-    }
-    public String getCode() {
-        return this.code;
     }
 
 }

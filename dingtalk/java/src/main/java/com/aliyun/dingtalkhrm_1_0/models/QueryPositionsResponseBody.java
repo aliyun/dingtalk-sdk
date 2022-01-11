@@ -4,10 +4,6 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryPositionsResponseBody extends TeaModel {
-    // 表示当前调用返回读取到的位置，空代表数据已经读取完毕
-    @NameInMap("nextToken")
-    public Long nextToken;
-
     // 是否有更多数据
     @NameInMap("hasMore")
     public Boolean hasMore;
@@ -16,17 +12,13 @@ public class QueryPositionsResponseBody extends TeaModel {
     @NameInMap("list")
     public java.util.List<QueryPositionsResponseBodyList> list;
 
+    // 表示当前调用返回读取到的位置，空代表数据已经读取完毕
+    @NameInMap("nextToken")
+    public Long nextToken;
+
     public static QueryPositionsResponseBody build(java.util.Map<String, ?> map) throws Exception {
         QueryPositionsResponseBody self = new QueryPositionsResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public QueryPositionsResponseBody setNextToken(Long nextToken) {
-        this.nextToken = nextToken;
-        return this;
-    }
-    public Long getNextToken() {
-        return this.nextToken;
     }
 
     public QueryPositionsResponseBody setHasMore(Boolean hasMore) {
@@ -45,7 +37,27 @@ public class QueryPositionsResponseBody extends TeaModel {
         return this.list;
     }
 
+    public QueryPositionsResponseBody setNextToken(Long nextToken) {
+        this.nextToken = nextToken;
+        return this;
+    }
+    public Long getNextToken() {
+        return this.nextToken;
+    }
+
     public static class QueryPositionsResponseBodyList extends TeaModel {
+        // 所属职务ID
+        @NameInMap("jobId")
+        public String jobId;
+
+        // 职位类别ID
+        @NameInMap("positionCategoryId")
+        public String positionCategoryId;
+
+        // 职位描述
+        @NameInMap("positionDes")
+        public String positionDes;
+
         // 职位ID
         @NameInMap("positionId")
         public String positionId;
@@ -53,18 +65,6 @@ public class QueryPositionsResponseBody extends TeaModel {
         // 职位名称
         @NameInMap("positionName")
         public String positionName;
-
-        // 职位类别ID
-        @NameInMap("positionCategoryId")
-        public String positionCategoryId;
-
-        // 所属职务ID
-        @NameInMap("jobId")
-        public String jobId;
-
-        // 职位描述
-        @NameInMap("positionDes")
-        public String positionDes;
 
         // 职位对应职级列表
         @NameInMap("rankIdList")
@@ -77,6 +77,30 @@ public class QueryPositionsResponseBody extends TeaModel {
         public static QueryPositionsResponseBodyList build(java.util.Map<String, ?> map) throws Exception {
             QueryPositionsResponseBodyList self = new QueryPositionsResponseBodyList();
             return TeaModel.build(map, self);
+        }
+
+        public QueryPositionsResponseBodyList setJobId(String jobId) {
+            this.jobId = jobId;
+            return this;
+        }
+        public String getJobId() {
+            return this.jobId;
+        }
+
+        public QueryPositionsResponseBodyList setPositionCategoryId(String positionCategoryId) {
+            this.positionCategoryId = positionCategoryId;
+            return this;
+        }
+        public String getPositionCategoryId() {
+            return this.positionCategoryId;
+        }
+
+        public QueryPositionsResponseBodyList setPositionDes(String positionDes) {
+            this.positionDes = positionDes;
+            return this;
+        }
+        public String getPositionDes() {
+            return this.positionDes;
         }
 
         public QueryPositionsResponseBodyList setPositionId(String positionId) {
@@ -93,30 +117,6 @@ public class QueryPositionsResponseBody extends TeaModel {
         }
         public String getPositionName() {
             return this.positionName;
-        }
-
-        public QueryPositionsResponseBodyList setPositionCategoryId(String positionCategoryId) {
-            this.positionCategoryId = positionCategoryId;
-            return this;
-        }
-        public String getPositionCategoryId() {
-            return this.positionCategoryId;
-        }
-
-        public QueryPositionsResponseBodyList setJobId(String jobId) {
-            this.jobId = jobId;
-            return this;
-        }
-        public String getJobId() {
-            return this.jobId;
-        }
-
-        public QueryPositionsResponseBodyList setPositionDes(String positionDes) {
-            this.positionDes = positionDes;
-            return this;
-        }
-        public String getPositionDes() {
-            return this.positionDes;
         }
 
         public QueryPositionsResponseBodyList setRankIdList(java.util.List<String> rankIdList) {

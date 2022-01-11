@@ -45,6 +45,10 @@ public class UpdateCoursesOfClassRequest extends TeaModel {
     }
 
     public static class UpdateCoursesOfClassRequestCoursesDateModel extends TeaModel {
+        // dayOfMonth
+        @NameInMap("dayOfMonth")
+        public Integer dayOfMonth;
+
         // month
         @NameInMap("month")
         public Integer month;
@@ -53,13 +57,17 @@ public class UpdateCoursesOfClassRequest extends TeaModel {
         @NameInMap("year")
         public Integer year;
 
-        // dayOfMonth
-        @NameInMap("dayOfMonth")
-        public Integer dayOfMonth;
-
         public static UpdateCoursesOfClassRequestCoursesDateModel build(java.util.Map<String, ?> map) throws Exception {
             UpdateCoursesOfClassRequestCoursesDateModel self = new UpdateCoursesOfClassRequestCoursesDateModel();
             return TeaModel.build(map, self);
+        }
+
+        public UpdateCoursesOfClassRequestCoursesDateModel setDayOfMonth(Integer dayOfMonth) {
+            this.dayOfMonth = dayOfMonth;
+            return this;
+        }
+        public Integer getDayOfMonth() {
+            return this.dayOfMonth;
         }
 
         public UpdateCoursesOfClassRequestCoursesDateModel setMonth(Integer month) {
@@ -78,21 +86,9 @@ public class UpdateCoursesOfClassRequest extends TeaModel {
             return this.year;
         }
 
-        public UpdateCoursesOfClassRequestCoursesDateModel setDayOfMonth(Integer dayOfMonth) {
-            this.dayOfMonth = dayOfMonth;
-            return this;
-        }
-        public Integer getDayOfMonth() {
-            return this.dayOfMonth;
-        }
-
     }
 
     public static class UpdateCoursesOfClassRequestCoursesSectionModel extends TeaModel {
-        // sectionType
-        @NameInMap("sectionType")
-        public String sectionType;
-
         // 节次index
         @NameInMap("sectionIndex")
         public Integer sectionIndex;
@@ -101,17 +97,13 @@ public class UpdateCoursesOfClassRequest extends TeaModel {
         @NameInMap("sectionName")
         public String sectionName;
 
+        // sectionType
+        @NameInMap("sectionType")
+        public String sectionType;
+
         public static UpdateCoursesOfClassRequestCoursesSectionModel build(java.util.Map<String, ?> map) throws Exception {
             UpdateCoursesOfClassRequestCoursesSectionModel self = new UpdateCoursesOfClassRequestCoursesSectionModel();
             return TeaModel.build(map, self);
-        }
-
-        public UpdateCoursesOfClassRequestCoursesSectionModel setSectionType(String sectionType) {
-            this.sectionType = sectionType;
-            return this;
-        }
-        public String getSectionType() {
-            return this.sectionType;
         }
 
         public UpdateCoursesOfClassRequestCoursesSectionModel setSectionIndex(Integer sectionIndex) {
@@ -130,37 +122,17 @@ public class UpdateCoursesOfClassRequest extends TeaModel {
             return this.sectionName;
         }
 
+        public UpdateCoursesOfClassRequestCoursesSectionModel setSectionType(String sectionType) {
+            this.sectionType = sectionType;
+            return this;
+        }
+        public String getSectionType() {
+            return this.sectionType;
+        }
+
     }
 
     public static class UpdateCoursesOfClassRequestCourses extends TeaModel {
-        // 老师Staffid
-        @NameInMap("teacherStaffIds")
-        public java.util.List<String> teacherStaffIds;
-
-        // 课程名称
-        @NameInMap("courseName")
-        public String courseName;
-
-        // 上课日期
-        @NameInMap("dateModel")
-        public UpdateCoursesOfClassRequestCoursesDateModel dateModel;
-
-        // 节次模型
-        @NameInMap("sectionModel")
-        public UpdateCoursesOfClassRequestCoursesSectionModel sectionModel;
-
-        // 创建者名字
-        @NameInMap("creatorName")
-        public String creatorName;
-
-        // 上课地点
-        @NameInMap("location")
-        public String location;
-
-        // 删除标记：要删除为ture
-        @NameInMap("deleteTag")
-        public Boolean deleteTag;
-
         // 课程code：删除/更新必填
         @NameInMap("courseCode")
         public String courseCode;
@@ -169,65 +141,37 @@ public class UpdateCoursesOfClassRequest extends TeaModel {
         @NameInMap("courseGroupCode")
         public String courseGroupCode;
 
+        // 课程名称
+        @NameInMap("courseName")
+        public String courseName;
+
+        // 创建者名字
+        @NameInMap("creatorName")
+        public String creatorName;
+
+        // 上课日期
+        @NameInMap("dateModel")
+        public UpdateCoursesOfClassRequestCoursesDateModel dateModel;
+
+        // 删除标记：要删除为ture
+        @NameInMap("deleteTag")
+        public Boolean deleteTag;
+
+        // 上课地点
+        @NameInMap("location")
+        public String location;
+
+        // 节次模型
+        @NameInMap("sectionModel")
+        public UpdateCoursesOfClassRequestCoursesSectionModel sectionModel;
+
+        // 老师Staffid
+        @NameInMap("teacherStaffIds")
+        public java.util.List<String> teacherStaffIds;
+
         public static UpdateCoursesOfClassRequestCourses build(java.util.Map<String, ?> map) throws Exception {
             UpdateCoursesOfClassRequestCourses self = new UpdateCoursesOfClassRequestCourses();
             return TeaModel.build(map, self);
-        }
-
-        public UpdateCoursesOfClassRequestCourses setTeacherStaffIds(java.util.List<String> teacherStaffIds) {
-            this.teacherStaffIds = teacherStaffIds;
-            return this;
-        }
-        public java.util.List<String> getTeacherStaffIds() {
-            return this.teacherStaffIds;
-        }
-
-        public UpdateCoursesOfClassRequestCourses setCourseName(String courseName) {
-            this.courseName = courseName;
-            return this;
-        }
-        public String getCourseName() {
-            return this.courseName;
-        }
-
-        public UpdateCoursesOfClassRequestCourses setDateModel(UpdateCoursesOfClassRequestCoursesDateModel dateModel) {
-            this.dateModel = dateModel;
-            return this;
-        }
-        public UpdateCoursesOfClassRequestCoursesDateModel getDateModel() {
-            return this.dateModel;
-        }
-
-        public UpdateCoursesOfClassRequestCourses setSectionModel(UpdateCoursesOfClassRequestCoursesSectionModel sectionModel) {
-            this.sectionModel = sectionModel;
-            return this;
-        }
-        public UpdateCoursesOfClassRequestCoursesSectionModel getSectionModel() {
-            return this.sectionModel;
-        }
-
-        public UpdateCoursesOfClassRequestCourses setCreatorName(String creatorName) {
-            this.creatorName = creatorName;
-            return this;
-        }
-        public String getCreatorName() {
-            return this.creatorName;
-        }
-
-        public UpdateCoursesOfClassRequestCourses setLocation(String location) {
-            this.location = location;
-            return this;
-        }
-        public String getLocation() {
-            return this.location;
-        }
-
-        public UpdateCoursesOfClassRequestCourses setDeleteTag(Boolean deleteTag) {
-            this.deleteTag = deleteTag;
-            return this;
-        }
-        public Boolean getDeleteTag() {
-            return this.deleteTag;
         }
 
         public UpdateCoursesOfClassRequestCourses setCourseCode(String courseCode) {
@@ -246,60 +190,76 @@ public class UpdateCoursesOfClassRequest extends TeaModel {
             return this.courseGroupCode;
         }
 
-    }
-
-    public static class UpdateCoursesOfClassRequestSectionConfigSectionModelsStart extends TeaModel {
-        // 分钟
-        @NameInMap("min")
-        public Integer min;
-
-        // 小时
-        @NameInMap("hour")
-        public Integer hour;
-
-        public static UpdateCoursesOfClassRequestSectionConfigSectionModelsStart build(java.util.Map<String, ?> map) throws Exception {
-            UpdateCoursesOfClassRequestSectionConfigSectionModelsStart self = new UpdateCoursesOfClassRequestSectionConfigSectionModelsStart();
-            return TeaModel.build(map, self);
-        }
-
-        public UpdateCoursesOfClassRequestSectionConfigSectionModelsStart setMin(Integer min) {
-            this.min = min;
+        public UpdateCoursesOfClassRequestCourses setCourseName(String courseName) {
+            this.courseName = courseName;
             return this;
         }
-        public Integer getMin() {
-            return this.min;
+        public String getCourseName() {
+            return this.courseName;
         }
 
-        public UpdateCoursesOfClassRequestSectionConfigSectionModelsStart setHour(Integer hour) {
-            this.hour = hour;
+        public UpdateCoursesOfClassRequestCourses setCreatorName(String creatorName) {
+            this.creatorName = creatorName;
             return this;
         }
-        public Integer getHour() {
-            return this.hour;
+        public String getCreatorName() {
+            return this.creatorName;
+        }
+
+        public UpdateCoursesOfClassRequestCourses setDateModel(UpdateCoursesOfClassRequestCoursesDateModel dateModel) {
+            this.dateModel = dateModel;
+            return this;
+        }
+        public UpdateCoursesOfClassRequestCoursesDateModel getDateModel() {
+            return this.dateModel;
+        }
+
+        public UpdateCoursesOfClassRequestCourses setDeleteTag(Boolean deleteTag) {
+            this.deleteTag = deleteTag;
+            return this;
+        }
+        public Boolean getDeleteTag() {
+            return this.deleteTag;
+        }
+
+        public UpdateCoursesOfClassRequestCourses setLocation(String location) {
+            this.location = location;
+            return this;
+        }
+        public String getLocation() {
+            return this.location;
+        }
+
+        public UpdateCoursesOfClassRequestCourses setSectionModel(UpdateCoursesOfClassRequestCoursesSectionModel sectionModel) {
+            this.sectionModel = sectionModel;
+            return this;
+        }
+        public UpdateCoursesOfClassRequestCoursesSectionModel getSectionModel() {
+            return this.sectionModel;
+        }
+
+        public UpdateCoursesOfClassRequestCourses setTeacherStaffIds(java.util.List<String> teacherStaffIds) {
+            this.teacherStaffIds = teacherStaffIds;
+            return this;
+        }
+        public java.util.List<String> getTeacherStaffIds() {
+            return this.teacherStaffIds;
         }
 
     }
 
     public static class UpdateCoursesOfClassRequestSectionConfigSectionModelsEnd extends TeaModel {
-        // 分钟
-        @NameInMap("min")
-        public Integer min;
-
         // 小时
         @NameInMap("hour")
         public Integer hour;
 
+        // 分钟
+        @NameInMap("min")
+        public Integer min;
+
         public static UpdateCoursesOfClassRequestSectionConfigSectionModelsEnd build(java.util.Map<String, ?> map) throws Exception {
             UpdateCoursesOfClassRequestSectionConfigSectionModelsEnd self = new UpdateCoursesOfClassRequestSectionConfigSectionModelsEnd();
             return TeaModel.build(map, self);
-        }
-
-        public UpdateCoursesOfClassRequestSectionConfigSectionModelsEnd setMin(Integer min) {
-            this.min = min;
-            return this;
-        }
-        public Integer getMin() {
-            return this.min;
         }
 
         public UpdateCoursesOfClassRequestSectionConfigSectionModelsEnd setHour(Integer hour) {
@@ -310,9 +270,57 @@ public class UpdateCoursesOfClassRequest extends TeaModel {
             return this.hour;
         }
 
+        public UpdateCoursesOfClassRequestSectionConfigSectionModelsEnd setMin(Integer min) {
+            this.min = min;
+            return this;
+        }
+        public Integer getMin() {
+            return this.min;
+        }
+
+    }
+
+    public static class UpdateCoursesOfClassRequestSectionConfigSectionModelsStart extends TeaModel {
+        // 小时
+        @NameInMap("hour")
+        public Integer hour;
+
+        // 分钟
+        @NameInMap("min")
+        public Integer min;
+
+        public static UpdateCoursesOfClassRequestSectionConfigSectionModelsStart build(java.util.Map<String, ?> map) throws Exception {
+            UpdateCoursesOfClassRequestSectionConfigSectionModelsStart self = new UpdateCoursesOfClassRequestSectionConfigSectionModelsStart();
+            return TeaModel.build(map, self);
+        }
+
+        public UpdateCoursesOfClassRequestSectionConfigSectionModelsStart setHour(Integer hour) {
+            this.hour = hour;
+            return this;
+        }
+        public Integer getHour() {
+            return this.hour;
+        }
+
+        public UpdateCoursesOfClassRequestSectionConfigSectionModelsStart setMin(Integer min) {
+            this.min = min;
+            return this;
+        }
+        public Integer getMin() {
+            return this.min;
+        }
+
     }
 
     public static class UpdateCoursesOfClassRequestSectionConfigSectionModels extends TeaModel {
+        // 结束时间
+        @NameInMap("end")
+        public UpdateCoursesOfClassRequestSectionConfigSectionModelsEnd end;
+
+        // 第几节。
+        @NameInMap("sectionIndex")
+        public Integer sectionIndex;
+
         // 节次类型枚举：COURSE/REST
         @NameInMap("sectionType")
         public String sectionType;
@@ -321,17 +329,25 @@ public class UpdateCoursesOfClassRequest extends TeaModel {
         @NameInMap("start")
         public UpdateCoursesOfClassRequestSectionConfigSectionModelsStart start;
 
-        // 第几节。
-        @NameInMap("sectionIndex")
-        public Integer sectionIndex;
-
-        // 结束时间
-        @NameInMap("end")
-        public UpdateCoursesOfClassRequestSectionConfigSectionModelsEnd end;
-
         public static UpdateCoursesOfClassRequestSectionConfigSectionModels build(java.util.Map<String, ?> map) throws Exception {
             UpdateCoursesOfClassRequestSectionConfigSectionModels self = new UpdateCoursesOfClassRequestSectionConfigSectionModels();
             return TeaModel.build(map, self);
+        }
+
+        public UpdateCoursesOfClassRequestSectionConfigSectionModels setEnd(UpdateCoursesOfClassRequestSectionConfigSectionModelsEnd end) {
+            this.end = end;
+            return this;
+        }
+        public UpdateCoursesOfClassRequestSectionConfigSectionModelsEnd getEnd() {
+            return this.end;
+        }
+
+        public UpdateCoursesOfClassRequestSectionConfigSectionModels setSectionIndex(Integer sectionIndex) {
+            this.sectionIndex = sectionIndex;
+            return this;
+        }
+        public Integer getSectionIndex() {
+            return this.sectionIndex;
         }
 
         public UpdateCoursesOfClassRequestSectionConfigSectionModels setSectionType(String sectionType) {
@@ -348,22 +364,6 @@ public class UpdateCoursesOfClassRequest extends TeaModel {
         }
         public UpdateCoursesOfClassRequestSectionConfigSectionModelsStart getStart() {
             return this.start;
-        }
-
-        public UpdateCoursesOfClassRequestSectionConfigSectionModels setSectionIndex(Integer sectionIndex) {
-            this.sectionIndex = sectionIndex;
-            return this;
-        }
-        public Integer getSectionIndex() {
-            return this.sectionIndex;
-        }
-
-        public UpdateCoursesOfClassRequestSectionConfigSectionModels setEnd(UpdateCoursesOfClassRequestSectionConfigSectionModelsEnd end) {
-            this.end = end;
-            return this;
-        }
-        public UpdateCoursesOfClassRequestSectionConfigSectionModelsEnd getEnd() {
-            return this.end;
         }
 
     }

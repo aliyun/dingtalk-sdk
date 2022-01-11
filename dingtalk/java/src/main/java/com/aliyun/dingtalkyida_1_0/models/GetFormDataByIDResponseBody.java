@@ -4,53 +4,37 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetFormDataByIDResponseBody extends TeaModel {
-    // 发起人详情
-    @NameInMap("originator")
-    public GetFormDataByIDResponseBodyOriginator originator;
-
-    // 最后修改时间
-    @NameInMap("modifiedTimeGMT")
-    public String modifiedTimeGMT;
-
-    // 表单ID
-    @NameInMap("formUuid")
-    public String formUuid;
+    // 表单数据详情
+    @NameInMap("formData")
+    public java.util.Map<String, ?> formData;
 
     // 表单实例ID
     @NameInMap("formInstId")
     public String formInstId;
 
-    // 表单数据详情
-    @NameInMap("formData")
-    public java.util.Map<String, ?> formData;
+    // 表单ID
+    @NameInMap("formUuid")
+    public String formUuid;
+
+    // 最后修改时间
+    @NameInMap("modifiedTimeGMT")
+    public String modifiedTimeGMT;
+
+    // 发起人详情
+    @NameInMap("originator")
+    public GetFormDataByIDResponseBodyOriginator originator;
 
     public static GetFormDataByIDResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetFormDataByIDResponseBody self = new GetFormDataByIDResponseBody();
         return TeaModel.build(map, self);
     }
 
-    public GetFormDataByIDResponseBody setOriginator(GetFormDataByIDResponseBodyOriginator originator) {
-        this.originator = originator;
+    public GetFormDataByIDResponseBody setFormData(java.util.Map<String, ?> formData) {
+        this.formData = formData;
         return this;
     }
-    public GetFormDataByIDResponseBodyOriginator getOriginator() {
-        return this.originator;
-    }
-
-    public GetFormDataByIDResponseBody setModifiedTimeGMT(String modifiedTimeGMT) {
-        this.modifiedTimeGMT = modifiedTimeGMT;
-        return this;
-    }
-    public String getModifiedTimeGMT() {
-        return this.modifiedTimeGMT;
-    }
-
-    public GetFormDataByIDResponseBody setFormUuid(String formUuid) {
-        this.formUuid = formUuid;
-        return this;
-    }
-    public String getFormUuid() {
-        return this.formUuid;
+    public java.util.Map<String, ?> getFormData() {
+        return this.formData;
     }
 
     public GetFormDataByIDResponseBody setFormInstId(String formInstId) {
@@ -61,12 +45,28 @@ public class GetFormDataByIDResponseBody extends TeaModel {
         return this.formInstId;
     }
 
-    public GetFormDataByIDResponseBody setFormData(java.util.Map<String, ?> formData) {
-        this.formData = formData;
+    public GetFormDataByIDResponseBody setFormUuid(String formUuid) {
+        this.formUuid = formUuid;
         return this;
     }
-    public java.util.Map<String, ?> getFormData() {
-        return this.formData;
+    public String getFormUuid() {
+        return this.formUuid;
+    }
+
+    public GetFormDataByIDResponseBody setModifiedTimeGMT(String modifiedTimeGMT) {
+        this.modifiedTimeGMT = modifiedTimeGMT;
+        return this;
+    }
+    public String getModifiedTimeGMT() {
+        return this.modifiedTimeGMT;
+    }
+
+    public GetFormDataByIDResponseBody setOriginator(GetFormDataByIDResponseBodyOriginator originator) {
+        this.originator = originator;
+        return this;
+    }
+    public GetFormDataByIDResponseBodyOriginator getOriginator() {
+        return this.originator;
     }
 
     public static class GetFormDataByIDResponseBodyOriginatorName extends TeaModel {
@@ -114,14 +114,6 @@ public class GetFormDataByIDResponseBody extends TeaModel {
     }
 
     public static class GetFormDataByIDResponseBodyOriginator extends TeaModel {
-        // 用户工号
-        @NameInMap("userId")
-        public String userId;
-
-        // 用户名
-        @NameInMap("name")
-        public GetFormDataByIDResponseBodyOriginatorName name;
-
         // 部门名称
         @NameInMap("departmentName")
         public String departmentName;
@@ -130,25 +122,17 @@ public class GetFormDataByIDResponseBody extends TeaModel {
         @NameInMap("email")
         public String email;
 
+        // 用户名
+        @NameInMap("name")
+        public GetFormDataByIDResponseBodyOriginatorName name;
+
+        // 用户工号
+        @NameInMap("userId")
+        public String userId;
+
         public static GetFormDataByIDResponseBodyOriginator build(java.util.Map<String, ?> map) throws Exception {
             GetFormDataByIDResponseBodyOriginator self = new GetFormDataByIDResponseBodyOriginator();
             return TeaModel.build(map, self);
-        }
-
-        public GetFormDataByIDResponseBodyOriginator setUserId(String userId) {
-            this.userId = userId;
-            return this;
-        }
-        public String getUserId() {
-            return this.userId;
-        }
-
-        public GetFormDataByIDResponseBodyOriginator setName(GetFormDataByIDResponseBodyOriginatorName name) {
-            this.name = name;
-            return this;
-        }
-        public GetFormDataByIDResponseBodyOriginatorName getName() {
-            return this.name;
         }
 
         public GetFormDataByIDResponseBodyOriginator setDepartmentName(String departmentName) {
@@ -165,6 +149,22 @@ public class GetFormDataByIDResponseBody extends TeaModel {
         }
         public String getEmail() {
             return this.email;
+        }
+
+        public GetFormDataByIDResponseBodyOriginator setName(GetFormDataByIDResponseBodyOriginatorName name) {
+            this.name = name;
+            return this;
+        }
+        public GetFormDataByIDResponseBodyOriginatorName getName() {
+            return this.name;
+        }
+
+        public GetFormDataByIDResponseBodyOriginator setUserId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+        public String getUserId() {
+            return this.userId;
         }
 
     }

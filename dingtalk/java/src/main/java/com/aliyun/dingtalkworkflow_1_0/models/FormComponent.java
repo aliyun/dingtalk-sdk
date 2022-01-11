@@ -4,6 +4,10 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class FormComponent extends TeaModel {
+    // 子控件集合
+    @NameInMap("children")
+    public java.util.List<FormComponent> children;
+
     // 控件类型
     @NameInMap("componentType")
     public String componentType;
@@ -12,13 +16,17 @@ public class FormComponent extends TeaModel {
     @NameInMap("props")
     public FormComponentProps props;
 
-    // 子控件集合
-    @NameInMap("children")
-    public java.util.List<FormComponent> children;
-
     public static FormComponent build(java.util.Map<String, ?> map) throws Exception {
         FormComponent self = new FormComponent();
         return TeaModel.build(map, self);
+    }
+
+    public FormComponent setChildren(java.util.List<FormComponent> children) {
+        this.children = children;
+        return this;
+    }
+    public java.util.List<FormComponent> getChildren() {
+        return this.children;
     }
 
     public FormComponent setComponentType(String componentType) {
@@ -35,14 +43,6 @@ public class FormComponent extends TeaModel {
     }
     public FormComponentProps getProps() {
         return this.props;
-    }
-
-    public FormComponent setChildren(java.util.List<FormComponent> children) {
-        this.children = children;
-        return this;
-    }
-    public java.util.List<FormComponent> getChildren() {
-        return this.children;
     }
 
 }

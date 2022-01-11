@@ -12,13 +12,13 @@ public class QueryUserFaceResponseBody extends TeaModel {
     @NameInMap("faceId")
     public String faceId;
 
-    // 员工id
-    @NameInMap("userId")
-    public String userId;
-
     // 员工姓名
     @NameInMap("name")
     public String name;
+
+    // 员工id
+    @NameInMap("userId")
+    public String userId;
 
     public static QueryUserFaceResponseBody build(java.util.Map<String, ?> map) throws Exception {
         QueryUserFaceResponseBody self = new QueryUserFaceResponseBody();
@@ -41,20 +41,20 @@ public class QueryUserFaceResponseBody extends TeaModel {
         return this.faceId;
     }
 
-    public QueryUserFaceResponseBody setUserId(String userId) {
-        this.userId = userId;
-        return this;
-    }
-    public String getUserId() {
-        return this.userId;
-    }
-
     public QueryUserFaceResponseBody setName(String name) {
         this.name = name;
         return this;
     }
     public String getName() {
         return this.name;
+    }
+
+    public QueryUserFaceResponseBody setUserId(String userId) {
+        this.userId = userId;
+        return this;
+    }
+    public String getUserId() {
+        return this.userId;
     }
 
 }

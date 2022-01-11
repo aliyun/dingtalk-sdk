@@ -4,10 +4,6 @@ package com.aliyun.dingtalkdingmi_1_0.models;
 import com.aliyun.tea.*;
 
 public class PushCustomerGroupMessageRequest extends TeaModel {
-    // 企业corpId
-    @NameInMap("dingCorpId")
-    public String dingCorpId;
-
     // 客户群会话id
     @NameInMap("conversationId")
     public String conversationId;
@@ -23,14 +19,6 @@ public class PushCustomerGroupMessageRequest extends TeaModel {
     public static PushCustomerGroupMessageRequest build(java.util.Map<String, ?> map) throws Exception {
         PushCustomerGroupMessageRequest self = new PushCustomerGroupMessageRequest();
         return TeaModel.build(map, self);
-    }
-
-    public PushCustomerGroupMessageRequest setDingCorpId(String dingCorpId) {
-        this.dingCorpId = dingCorpId;
-        return this;
-    }
-    public String getDingCorpId() {
-        return this.dingCorpId;
     }
 
     public PushCustomerGroupMessageRequest setConversationId(String conversationId) {

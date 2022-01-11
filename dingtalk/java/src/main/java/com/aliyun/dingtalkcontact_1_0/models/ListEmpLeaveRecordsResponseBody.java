@@ -34,9 +34,17 @@ public class ListEmpLeaveRecordsResponseBody extends TeaModel {
     }
 
     public static class ListEmpLeaveRecordsResponseBodyRecords extends TeaModel {
-        // 员工userid
-        @NameInMap("userId")
-        public String userId;
+        // 离职原因(oapi-开放平台删除，cancel-注销，leave-主动离职，unknown-未知原因，delete-管理员删除）
+        @NameInMap("leaveReason")
+        public String leaveReason;
+
+        // 离职时间
+        @NameInMap("leaveTime")
+        public String leaveTime;
+
+        // 手机号码
+        @NameInMap("mobile")
+        public String mobile;
 
         // 员工名称
         @NameInMap("name")
@@ -46,29 +54,37 @@ public class ListEmpLeaveRecordsResponseBody extends TeaModel {
         @NameInMap("stateCode")
         public String stateCode;
 
-        // 手机号码
-        @NameInMap("mobile")
-        public String mobile;
-
-        // 离职时间
-        @NameInMap("leaveTime")
-        public String leaveTime;
-
-        // 离职原因(oapi-开放平台删除，cancel-注销，leave-主动离职，unknown-未知原因，delete-管理员删除）
-        @NameInMap("leaveReason")
-        public String leaveReason;
+        // 员工userid
+        @NameInMap("userId")
+        public String userId;
 
         public static ListEmpLeaveRecordsResponseBodyRecords build(java.util.Map<String, ?> map) throws Exception {
             ListEmpLeaveRecordsResponseBodyRecords self = new ListEmpLeaveRecordsResponseBodyRecords();
             return TeaModel.build(map, self);
         }
 
-        public ListEmpLeaveRecordsResponseBodyRecords setUserId(String userId) {
-            this.userId = userId;
+        public ListEmpLeaveRecordsResponseBodyRecords setLeaveReason(String leaveReason) {
+            this.leaveReason = leaveReason;
             return this;
         }
-        public String getUserId() {
-            return this.userId;
+        public String getLeaveReason() {
+            return this.leaveReason;
+        }
+
+        public ListEmpLeaveRecordsResponseBodyRecords setLeaveTime(String leaveTime) {
+            this.leaveTime = leaveTime;
+            return this;
+        }
+        public String getLeaveTime() {
+            return this.leaveTime;
+        }
+
+        public ListEmpLeaveRecordsResponseBodyRecords setMobile(String mobile) {
+            this.mobile = mobile;
+            return this;
+        }
+        public String getMobile() {
+            return this.mobile;
         }
 
         public ListEmpLeaveRecordsResponseBodyRecords setName(String name) {
@@ -87,28 +103,12 @@ public class ListEmpLeaveRecordsResponseBody extends TeaModel {
             return this.stateCode;
         }
 
-        public ListEmpLeaveRecordsResponseBodyRecords setMobile(String mobile) {
-            this.mobile = mobile;
+        public ListEmpLeaveRecordsResponseBodyRecords setUserId(String userId) {
+            this.userId = userId;
             return this;
         }
-        public String getMobile() {
-            return this.mobile;
-        }
-
-        public ListEmpLeaveRecordsResponseBodyRecords setLeaveTime(String leaveTime) {
-            this.leaveTime = leaveTime;
-            return this;
-        }
-        public String getLeaveTime() {
-            return this.leaveTime;
-        }
-
-        public ListEmpLeaveRecordsResponseBodyRecords setLeaveReason(String leaveReason) {
-            this.leaveReason = leaveReason;
-            return this;
-        }
-        public String getLeaveReason() {
-            return this.leaveReason;
+        public String getUserId() {
+            return this.userId;
         }
 
     }

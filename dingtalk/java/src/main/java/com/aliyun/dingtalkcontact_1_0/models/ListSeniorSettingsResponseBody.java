@@ -4,12 +4,12 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListSeniorSettingsResponseBody extends TeaModel {
+    @NameInMap("protectScenes")
+    public java.util.List<String> protectScenes;
+
     // Id of the request
     @NameInMap("seniorStaffId")
     public String seniorStaffId;
-
-    @NameInMap("protectScenes")
-    public java.util.List<String> protectScenes;
 
     @NameInMap("seniorWhiteList")
     public java.util.List<ListSeniorSettingsResponseBodySeniorWhiteList> seniorWhiteList;
@@ -19,20 +19,20 @@ public class ListSeniorSettingsResponseBody extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public ListSeniorSettingsResponseBody setSeniorStaffId(String seniorStaffId) {
-        this.seniorStaffId = seniorStaffId;
-        return this;
-    }
-    public String getSeniorStaffId() {
-        return this.seniorStaffId;
-    }
-
     public ListSeniorSettingsResponseBody setProtectScenes(java.util.List<String> protectScenes) {
         this.protectScenes = protectScenes;
         return this;
     }
     public java.util.List<String> getProtectScenes() {
         return this.protectScenes;
+    }
+
+    public ListSeniorSettingsResponseBody setSeniorStaffId(String seniorStaffId) {
+        this.seniorStaffId = seniorStaffId;
+        return this;
+    }
+    public String getSeniorStaffId() {
+        return this.seniorStaffId;
     }
 
     public ListSeniorSettingsResponseBody setSeniorWhiteList(java.util.List<ListSeniorSettingsResponseBodySeniorWhiteList> seniorWhiteList) {
@@ -47,11 +47,11 @@ public class ListSeniorSettingsResponseBody extends TeaModel {
         @NameInMap("id")
         public String id;
 
-        @NameInMap("type")
-        public Integer type;
-
         @NameInMap("name")
         public String name;
+
+        @NameInMap("type")
+        public Integer type;
 
         public static ListSeniorSettingsResponseBodySeniorWhiteList build(java.util.Map<String, ?> map) throws Exception {
             ListSeniorSettingsResponseBodySeniorWhiteList self = new ListSeniorSettingsResponseBodySeniorWhiteList();
@@ -66,20 +66,20 @@ public class ListSeniorSettingsResponseBody extends TeaModel {
             return this.id;
         }
 
-        public ListSeniorSettingsResponseBodySeniorWhiteList setType(Integer type) {
-            this.type = type;
-            return this;
-        }
-        public Integer getType() {
-            return this.type;
-        }
-
         public ListSeniorSettingsResponseBodySeniorWhiteList setName(String name) {
             this.name = name;
             return this;
         }
         public String getName() {
             return this.name;
+        }
+
+        public ListSeniorSettingsResponseBodySeniorWhiteList setType(Integer type) {
+            this.type = type;
+            return this;
+        }
+        public Integer getType() {
+            return this.type;
         }
 
     }

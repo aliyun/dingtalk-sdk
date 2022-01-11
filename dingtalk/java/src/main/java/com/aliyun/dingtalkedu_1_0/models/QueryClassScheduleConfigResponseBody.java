@@ -21,82 +21,22 @@ public class QueryClassScheduleConfigResponseBody extends TeaModel {
         return this.result;
     }
 
-    public static class QueryClassScheduleConfigResponseBodyResultStart extends TeaModel {
-        // 年份
-        @NameInMap("year")
-        public Integer year;
-
-        // 月份
-        @NameInMap("month")
-        public Integer month;
-
-        // 一个月中的第几天
-        @NameInMap("dayOfMonth")
-        public Integer dayOfMonth;
-
-        public static QueryClassScheduleConfigResponseBodyResultStart build(java.util.Map<String, ?> map) throws Exception {
-            QueryClassScheduleConfigResponseBodyResultStart self = new QueryClassScheduleConfigResponseBodyResultStart();
-            return TeaModel.build(map, self);
-        }
-
-        public QueryClassScheduleConfigResponseBodyResultStart setYear(Integer year) {
-            this.year = year;
-            return this;
-        }
-        public Integer getYear() {
-            return this.year;
-        }
-
-        public QueryClassScheduleConfigResponseBodyResultStart setMonth(Integer month) {
-            this.month = month;
-            return this;
-        }
-        public Integer getMonth() {
-            return this.month;
-        }
-
-        public QueryClassScheduleConfigResponseBodyResultStart setDayOfMonth(Integer dayOfMonth) {
-            this.dayOfMonth = dayOfMonth;
-            return this;
-        }
-        public Integer getDayOfMonth() {
-            return this.dayOfMonth;
-        }
-
-    }
-
     public static class QueryClassScheduleConfigResponseBodyResultEnd extends TeaModel {
-        // 年份
-        @NameInMap("year")
-        public Long year;
+        // 一个月中第几天
+        @NameInMap("dayOfMonth")
+        public Long dayOfMonth;
 
         // 月份
         @NameInMap("month")
         public Long month;
 
-        // 一个月中第几天
-        @NameInMap("dayOfMonth")
-        public Long dayOfMonth;
+        // 年份
+        @NameInMap("year")
+        public Long year;
 
         public static QueryClassScheduleConfigResponseBodyResultEnd build(java.util.Map<String, ?> map) throws Exception {
             QueryClassScheduleConfigResponseBodyResultEnd self = new QueryClassScheduleConfigResponseBodyResultEnd();
             return TeaModel.build(map, self);
-        }
-
-        public QueryClassScheduleConfigResponseBodyResultEnd setYear(Long year) {
-            this.year = year;
-            return this;
-        }
-        public Long getYear() {
-            return this.year;
-        }
-
-        public QueryClassScheduleConfigResponseBodyResultEnd setMonth(Long month) {
-            this.month = month;
-            return this;
-        }
-        public Long getMonth() {
-            return this.month;
         }
 
         public QueryClassScheduleConfigResponseBodyResultEnd setDayOfMonth(Long dayOfMonth) {
@@ -107,60 +47,36 @@ public class QueryClassScheduleConfigResponseBody extends TeaModel {
             return this.dayOfMonth;
         }
 
-    }
-
-    public static class QueryClassScheduleConfigResponseBodyResultSectionModelsStart extends TeaModel {
-        // 分钟
-        @NameInMap("min")
-        public Integer min;
-
-        // 小时
-        @NameInMap("hour")
-        public Integer hour;
-
-        public static QueryClassScheduleConfigResponseBodyResultSectionModelsStart build(java.util.Map<String, ?> map) throws Exception {
-            QueryClassScheduleConfigResponseBodyResultSectionModelsStart self = new QueryClassScheduleConfigResponseBodyResultSectionModelsStart();
-            return TeaModel.build(map, self);
-        }
-
-        public QueryClassScheduleConfigResponseBodyResultSectionModelsStart setMin(Integer min) {
-            this.min = min;
+        public QueryClassScheduleConfigResponseBodyResultEnd setMonth(Long month) {
+            this.month = month;
             return this;
         }
-        public Integer getMin() {
-            return this.min;
+        public Long getMonth() {
+            return this.month;
         }
 
-        public QueryClassScheduleConfigResponseBodyResultSectionModelsStart setHour(Integer hour) {
-            this.hour = hour;
+        public QueryClassScheduleConfigResponseBodyResultEnd setYear(Long year) {
+            this.year = year;
             return this;
         }
-        public Integer getHour() {
-            return this.hour;
+        public Long getYear() {
+            return this.year;
         }
 
     }
 
     public static class QueryClassScheduleConfigResponseBodyResultSectionModelsEnd extends TeaModel {
-        // 分钟
-        @NameInMap("min")
-        public Integer min;
-
         // 小时
         @NameInMap("hour")
         public Integer hour;
 
+        // 分钟
+        @NameInMap("min")
+        public Integer min;
+
         public static QueryClassScheduleConfigResponseBodyResultSectionModelsEnd build(java.util.Map<String, ?> map) throws Exception {
             QueryClassScheduleConfigResponseBodyResultSectionModelsEnd self = new QueryClassScheduleConfigResponseBodyResultSectionModelsEnd();
             return TeaModel.build(map, self);
-        }
-
-        public QueryClassScheduleConfigResponseBodyResultSectionModelsEnd setMin(Integer min) {
-            this.min = min;
-            return this;
-        }
-        public Integer getMin() {
-            return this.min;
         }
 
         public QueryClassScheduleConfigResponseBodyResultSectionModelsEnd setHour(Integer hour) {
@@ -171,9 +87,61 @@ public class QueryClassScheduleConfigResponseBody extends TeaModel {
             return this.hour;
         }
 
+        public QueryClassScheduleConfigResponseBodyResultSectionModelsEnd setMin(Integer min) {
+            this.min = min;
+            return this;
+        }
+        public Integer getMin() {
+            return this.min;
+        }
+
+    }
+
+    public static class QueryClassScheduleConfigResponseBodyResultSectionModelsStart extends TeaModel {
+        // 小时
+        @NameInMap("hour")
+        public Integer hour;
+
+        // 分钟
+        @NameInMap("min")
+        public Integer min;
+
+        public static QueryClassScheduleConfigResponseBodyResultSectionModelsStart build(java.util.Map<String, ?> map) throws Exception {
+            QueryClassScheduleConfigResponseBodyResultSectionModelsStart self = new QueryClassScheduleConfigResponseBodyResultSectionModelsStart();
+            return TeaModel.build(map, self);
+        }
+
+        public QueryClassScheduleConfigResponseBodyResultSectionModelsStart setHour(Integer hour) {
+            this.hour = hour;
+            return this;
+        }
+        public Integer getHour() {
+            return this.hour;
+        }
+
+        public QueryClassScheduleConfigResponseBodyResultSectionModelsStart setMin(Integer min) {
+            this.min = min;
+            return this;
+        }
+        public Integer getMin() {
+            return this.min;
+        }
+
     }
 
     public static class QueryClassScheduleConfigResponseBodyResultSectionModels extends TeaModel {
+        // 结束时间
+        @NameInMap("end")
+        public QueryClassScheduleConfigResponseBodyResultSectionModelsEnd end;
+
+        // 节次设置
+        @NameInMap("sectionIndex")
+        public Integer sectionIndex;
+
+        // 节次名称
+        @NameInMap("sectionName")
+        public String sectionName;
+
         // 节次类型：COURSE/REST
         @NameInMap("sectionType")
         public String sectionType;
@@ -182,21 +150,33 @@ public class QueryClassScheduleConfigResponseBody extends TeaModel {
         @NameInMap("start")
         public QueryClassScheduleConfigResponseBodyResultSectionModelsStart start;
 
-        // 节次设置
-        @NameInMap("sectionIndex")
-        public Integer sectionIndex;
-
-        // 结束时间
-        @NameInMap("end")
-        public QueryClassScheduleConfigResponseBodyResultSectionModelsEnd end;
-
-        // 节次名称
-        @NameInMap("sectionName")
-        public String sectionName;
-
         public static QueryClassScheduleConfigResponseBodyResultSectionModels build(java.util.Map<String, ?> map) throws Exception {
             QueryClassScheduleConfigResponseBodyResultSectionModels self = new QueryClassScheduleConfigResponseBodyResultSectionModels();
             return TeaModel.build(map, self);
+        }
+
+        public QueryClassScheduleConfigResponseBodyResultSectionModels setEnd(QueryClassScheduleConfigResponseBodyResultSectionModelsEnd end) {
+            this.end = end;
+            return this;
+        }
+        public QueryClassScheduleConfigResponseBodyResultSectionModelsEnd getEnd() {
+            return this.end;
+        }
+
+        public QueryClassScheduleConfigResponseBodyResultSectionModels setSectionIndex(Integer sectionIndex) {
+            this.sectionIndex = sectionIndex;
+            return this;
+        }
+        public Integer getSectionIndex() {
+            return this.sectionIndex;
+        }
+
+        public QueryClassScheduleConfigResponseBodyResultSectionModels setSectionName(String sectionName) {
+            this.sectionName = sectionName;
+            return this;
+        }
+        public String getSectionName() {
+            return this.sectionName;
         }
 
         public QueryClassScheduleConfigResponseBodyResultSectionModels setSectionType(String sectionType) {
@@ -215,28 +195,48 @@ public class QueryClassScheduleConfigResponseBody extends TeaModel {
             return this.start;
         }
 
-        public QueryClassScheduleConfigResponseBodyResultSectionModels setSectionIndex(Integer sectionIndex) {
-            this.sectionIndex = sectionIndex;
-            return this;
-        }
-        public Integer getSectionIndex() {
-            return this.sectionIndex;
+    }
+
+    public static class QueryClassScheduleConfigResponseBodyResultStart extends TeaModel {
+        // 一个月中的第几天
+        @NameInMap("dayOfMonth")
+        public Integer dayOfMonth;
+
+        // 月份
+        @NameInMap("month")
+        public Integer month;
+
+        // 年份
+        @NameInMap("year")
+        public Integer year;
+
+        public static QueryClassScheduleConfigResponseBodyResultStart build(java.util.Map<String, ?> map) throws Exception {
+            QueryClassScheduleConfigResponseBodyResultStart self = new QueryClassScheduleConfigResponseBodyResultStart();
+            return TeaModel.build(map, self);
         }
 
-        public QueryClassScheduleConfigResponseBodyResultSectionModels setEnd(QueryClassScheduleConfigResponseBodyResultSectionModelsEnd end) {
-            this.end = end;
+        public QueryClassScheduleConfigResponseBodyResultStart setDayOfMonth(Integer dayOfMonth) {
+            this.dayOfMonth = dayOfMonth;
             return this;
         }
-        public QueryClassScheduleConfigResponseBodyResultSectionModelsEnd getEnd() {
-            return this.end;
+        public Integer getDayOfMonth() {
+            return this.dayOfMonth;
         }
 
-        public QueryClassScheduleConfigResponseBodyResultSectionModels setSectionName(String sectionName) {
-            this.sectionName = sectionName;
+        public QueryClassScheduleConfigResponseBodyResultStart setMonth(Integer month) {
+            this.month = month;
             return this;
         }
-        public String getSectionName() {
-            return this.sectionName;
+        public Integer getMonth() {
+            return this.month;
+        }
+
+        public QueryClassScheduleConfigResponseBodyResultStart setYear(Integer year) {
+            this.year = year;
+            return this;
+        }
+        public Integer getYear() {
+            return this.year;
         }
 
     }
@@ -246,16 +246,16 @@ public class QueryClassScheduleConfigResponseBody extends TeaModel {
         @NameInMap("classId")
         public Long classId;
 
-        // 开始时间
-        @NameInMap("start")
-        public QueryClassScheduleConfigResponseBodyResultStart start;
-
         @NameInMap("end")
         public QueryClassScheduleConfigResponseBodyResultEnd end;
 
         // 节次模型。
         @NameInMap("sectionModels")
         public java.util.List<QueryClassScheduleConfigResponseBodyResultSectionModels> sectionModels;
+
+        // 开始时间
+        @NameInMap("start")
+        public QueryClassScheduleConfigResponseBodyResultStart start;
 
         public static QueryClassScheduleConfigResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             QueryClassScheduleConfigResponseBodyResult self = new QueryClassScheduleConfigResponseBodyResult();
@@ -268,14 +268,6 @@ public class QueryClassScheduleConfigResponseBody extends TeaModel {
         }
         public Long getClassId() {
             return this.classId;
-        }
-
-        public QueryClassScheduleConfigResponseBodyResult setStart(QueryClassScheduleConfigResponseBodyResultStart start) {
-            this.start = start;
-            return this;
-        }
-        public QueryClassScheduleConfigResponseBodyResultStart getStart() {
-            return this.start;
         }
 
         public QueryClassScheduleConfigResponseBodyResult setEnd(QueryClassScheduleConfigResponseBodyResultEnd end) {
@@ -292,6 +284,14 @@ public class QueryClassScheduleConfigResponseBody extends TeaModel {
         }
         public java.util.List<QueryClassScheduleConfigResponseBodyResultSectionModels> getSectionModels() {
             return this.sectionModels;
+        }
+
+        public QueryClassScheduleConfigResponseBodyResult setStart(QueryClassScheduleConfigResponseBodyResultStart start) {
+            this.start = start;
+            return this;
+        }
+        public QueryClassScheduleConfigResponseBodyResultStart getStart() {
+            return this.start;
         }
 
     }

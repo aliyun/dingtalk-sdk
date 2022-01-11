@@ -8,10 +8,6 @@ public class GetMediaCerficateResponseBody extends TeaModel {
     @NameInMap("mediaId")
     public String mediaId;
 
-    // OSS区域地址
-    @NameInMap("ossEndpoint")
-    public String ossEndpoint;
-
     // 上传授权密钥ID
     @NameInMap("ossAccessKeyId")
     public String ossAccessKeyId;
@@ -20,21 +16,25 @@ public class GetMediaCerficateResponseBody extends TeaModel {
     @NameInMap("ossAccessKeySecret")
     public String ossAccessKeySecret;
 
-    // 上传授权安全令牌
-    @NameInMap("ossSecurityToken")
-    public String ossSecurityToken;
-
     // OSS Bucket名称
     @NameInMap("ossBucketName")
     public String ossBucketName;
+
+    // OSS区域地址
+    @NameInMap("ossEndpoint")
+    public String ossEndpoint;
+
+    // 凭证有效时间(单位秒)，当上传凭证过期时，需要重新使用本次返回的videoId重新调用接口进行凭证刷新
+    @NameInMap("ossExpiration")
+    public String ossExpiration;
 
     // 分配的媒体文件名
     @NameInMap("ossFileName")
     public String ossFileName;
 
-    // 凭证有效时间(单位秒)，当上传凭证过期时，需要重新使用本次返回的videoId重新调用接口进行凭证刷新
-    @NameInMap("ossExpiration")
-    public String ossExpiration;
+    // 上传授权安全令牌
+    @NameInMap("ossSecurityToken")
+    public String ossSecurityToken;
 
     public static GetMediaCerficateResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetMediaCerficateResponseBody self = new GetMediaCerficateResponseBody();
@@ -47,14 +47,6 @@ public class GetMediaCerficateResponseBody extends TeaModel {
     }
     public String getMediaId() {
         return this.mediaId;
-    }
-
-    public GetMediaCerficateResponseBody setOssEndpoint(String ossEndpoint) {
-        this.ossEndpoint = ossEndpoint;
-        return this;
-    }
-    public String getOssEndpoint() {
-        return this.ossEndpoint;
     }
 
     public GetMediaCerficateResponseBody setOssAccessKeyId(String ossAccessKeyId) {
@@ -73,20 +65,28 @@ public class GetMediaCerficateResponseBody extends TeaModel {
         return this.ossAccessKeySecret;
     }
 
-    public GetMediaCerficateResponseBody setOssSecurityToken(String ossSecurityToken) {
-        this.ossSecurityToken = ossSecurityToken;
-        return this;
-    }
-    public String getOssSecurityToken() {
-        return this.ossSecurityToken;
-    }
-
     public GetMediaCerficateResponseBody setOssBucketName(String ossBucketName) {
         this.ossBucketName = ossBucketName;
         return this;
     }
     public String getOssBucketName() {
         return this.ossBucketName;
+    }
+
+    public GetMediaCerficateResponseBody setOssEndpoint(String ossEndpoint) {
+        this.ossEndpoint = ossEndpoint;
+        return this;
+    }
+    public String getOssEndpoint() {
+        return this.ossEndpoint;
+    }
+
+    public GetMediaCerficateResponseBody setOssExpiration(String ossExpiration) {
+        this.ossExpiration = ossExpiration;
+        return this;
+    }
+    public String getOssExpiration() {
+        return this.ossExpiration;
     }
 
     public GetMediaCerficateResponseBody setOssFileName(String ossFileName) {
@@ -97,12 +97,12 @@ public class GetMediaCerficateResponseBody extends TeaModel {
         return this.ossFileName;
     }
 
-    public GetMediaCerficateResponseBody setOssExpiration(String ossExpiration) {
-        this.ossExpiration = ossExpiration;
+    public GetMediaCerficateResponseBody setOssSecurityToken(String ossSecurityToken) {
+        this.ossSecurityToken = ossSecurityToken;
         return this;
     }
-    public String getOssExpiration() {
-        return this.ossExpiration;
+    public String getOssSecurityToken() {
+        return this.ossSecurityToken;
     }
 
 }

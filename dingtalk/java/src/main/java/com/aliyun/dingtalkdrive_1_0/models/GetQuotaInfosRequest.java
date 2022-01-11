@@ -4,13 +4,13 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetQuotaInfosRequest extends TeaModel {
-    // 容量类型
-    @NameInMap("type")
-    public String type;
-
     // 容量标识符列表
     @NameInMap("identifiers")
     public java.util.List<String> identifiers;
+
+    // 容量类型
+    @NameInMap("type")
+    public String type;
 
     // 用户id
     @NameInMap("unionId")
@@ -21,20 +21,20 @@ public class GetQuotaInfosRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public GetQuotaInfosRequest setType(String type) {
-        this.type = type;
-        return this;
-    }
-    public String getType() {
-        return this.type;
-    }
-
     public GetQuotaInfosRequest setIdentifiers(java.util.List<String> identifiers) {
         this.identifiers = identifiers;
         return this;
     }
     public java.util.List<String> getIdentifiers() {
         return this.identifiers;
+    }
+
+    public GetQuotaInfosRequest setType(String type) {
+        this.type = type;
+        return this;
+    }
+    public String getType() {
+        return this.type;
     }
 
     public GetQuotaInfosRequest setUnionId(String unionId) {

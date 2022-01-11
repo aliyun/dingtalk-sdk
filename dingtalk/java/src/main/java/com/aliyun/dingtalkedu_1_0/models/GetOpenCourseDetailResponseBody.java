@@ -8,21 +8,21 @@ public class GetOpenCourseDetailResponseBody extends TeaModel {
     @NameInMap("courseId")
     public String courseId;
 
-    // 课程标题
-    @NameInMap("title")
-    public String title;
-
     // 课程类型: 0-直播 2-视频内容
     @NameInMap("courseType")
     public Long courseType;
 
-    // 老师名称
-    @NameInMap("teacherName")
-    public String teacherName;
-
     // 封面图片地址
     @NameInMap("coverUrl")
     public String coverUrl;
+
+    // 课程介绍
+    @NameInMap("introduction")
+    public String introduction;
+
+    // 发布详情model
+    @NameInMap("pushModel")
+    public GetOpenCourseDetailResponseBodyPushModel pushModel;
 
     // 课程开始时间
     @NameInMap("startTime")
@@ -32,13 +32,13 @@ public class GetOpenCourseDetailResponseBody extends TeaModel {
     @NameInMap("teacherId")
     public String teacherId;
 
-    // 课程介绍
-    @NameInMap("introduction")
-    public String introduction;
+    // 老师名称
+    @NameInMap("teacherName")
+    public String teacherName;
 
-    // 发布详情model
-    @NameInMap("pushModel")
-    public GetOpenCourseDetailResponseBodyPushModel pushModel;
+    // 课程标题
+    @NameInMap("title")
+    public String title;
 
     public static GetOpenCourseDetailResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetOpenCourseDetailResponseBody self = new GetOpenCourseDetailResponseBody();
@@ -53,14 +53,6 @@ public class GetOpenCourseDetailResponseBody extends TeaModel {
         return this.courseId;
     }
 
-    public GetOpenCourseDetailResponseBody setTitle(String title) {
-        this.title = title;
-        return this;
-    }
-    public String getTitle() {
-        return this.title;
-    }
-
     public GetOpenCourseDetailResponseBody setCourseType(Long courseType) {
         this.courseType = courseType;
         return this;
@@ -69,20 +61,28 @@ public class GetOpenCourseDetailResponseBody extends TeaModel {
         return this.courseType;
     }
 
-    public GetOpenCourseDetailResponseBody setTeacherName(String teacherName) {
-        this.teacherName = teacherName;
-        return this;
-    }
-    public String getTeacherName() {
-        return this.teacherName;
-    }
-
     public GetOpenCourseDetailResponseBody setCoverUrl(String coverUrl) {
         this.coverUrl = coverUrl;
         return this;
     }
     public String getCoverUrl() {
         return this.coverUrl;
+    }
+
+    public GetOpenCourseDetailResponseBody setIntroduction(String introduction) {
+        this.introduction = introduction;
+        return this;
+    }
+    public String getIntroduction() {
+        return this.introduction;
+    }
+
+    public GetOpenCourseDetailResponseBody setPushModel(GetOpenCourseDetailResponseBodyPushModel pushModel) {
+        this.pushModel = pushModel;
+        return this;
+    }
+    public GetOpenCourseDetailResponseBodyPushModel getPushModel() {
+        return this.pushModel;
     }
 
     public GetOpenCourseDetailResponseBody setStartTime(Long startTime) {
@@ -101,20 +101,20 @@ public class GetOpenCourseDetailResponseBody extends TeaModel {
         return this.teacherId;
     }
 
-    public GetOpenCourseDetailResponseBody setIntroduction(String introduction) {
-        this.introduction = introduction;
+    public GetOpenCourseDetailResponseBody setTeacherName(String teacherName) {
+        this.teacherName = teacherName;
         return this;
     }
-    public String getIntroduction() {
-        return this.introduction;
+    public String getTeacherName() {
+        return this.teacherName;
     }
 
-    public GetOpenCourseDetailResponseBody setPushModel(GetOpenCourseDetailResponseBodyPushModel pushModel) {
-        this.pushModel = pushModel;
+    public GetOpenCourseDetailResponseBody setTitle(String title) {
+        this.title = title;
         return this;
     }
-    public GetOpenCourseDetailResponseBodyPushModel getPushModel() {
-        return this.pushModel;
+    public String getTitle() {
+        return this.title;
     }
 
     public static class GetOpenCourseDetailResponseBodyPushModel extends TeaModel {

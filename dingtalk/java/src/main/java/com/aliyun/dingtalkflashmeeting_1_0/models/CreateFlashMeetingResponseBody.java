@@ -8,6 +8,10 @@ public class CreateFlashMeetingResponseBody extends TeaModel {
     @NameInMap("endTime")
     public Long endTime;
 
+    // 闪会的key
+    @NameInMap("flashMeetingKey")
+    public String flashMeetingKey;
+
     // 闪会开始时间
     @NameInMap("startTime")
     public Long startTime;
@@ -20,10 +24,6 @@ public class CreateFlashMeetingResponseBody extends TeaModel {
     @NameInMap("url")
     public String url;
 
-    // 闪会的key
-    @NameInMap("flashMeetingKey")
-    public String flashMeetingKey;
-
     public static CreateFlashMeetingResponseBody build(java.util.Map<String, ?> map) throws Exception {
         CreateFlashMeetingResponseBody self = new CreateFlashMeetingResponseBody();
         return TeaModel.build(map, self);
@@ -35,6 +35,14 @@ public class CreateFlashMeetingResponseBody extends TeaModel {
     }
     public Long getEndTime() {
         return this.endTime;
+    }
+
+    public CreateFlashMeetingResponseBody setFlashMeetingKey(String flashMeetingKey) {
+        this.flashMeetingKey = flashMeetingKey;
+        return this;
+    }
+    public String getFlashMeetingKey() {
+        return this.flashMeetingKey;
     }
 
     public CreateFlashMeetingResponseBody setStartTime(Long startTime) {
@@ -59,14 +67,6 @@ public class CreateFlashMeetingResponseBody extends TeaModel {
     }
     public String getUrl() {
         return this.url;
-    }
-
-    public CreateFlashMeetingResponseBody setFlashMeetingKey(String flashMeetingKey) {
-        this.flashMeetingKey = flashMeetingKey;
-        return this;
-    }
-    public String getFlashMeetingKey() {
-        return this.flashMeetingKey;
     }
 
 }

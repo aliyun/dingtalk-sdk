@@ -4,10 +4,6 @@ package com.aliyun.dingtalkalitrip_1_0.models;
 import com.aliyun.tea.*;
 
 public class SyncExceedApplyRequest extends TeaModel {
-    // 审批意见
-    @NameInMap("remark")
-    public String remark;
-
     // 商旅超标审批单id
     @NameInMap("applyId")
     public String applyId;
@@ -15,6 +11,14 @@ public class SyncExceedApplyRequest extends TeaModel {
     // 企业id
     @NameInMap("corpId")
     public String corpId;
+
+    // 审批意见
+    @NameInMap("remark")
+    public String remark;
+
+    // 审批单状态 1同意2拒绝
+    @NameInMap("status")
+    public Integer status;
 
     // 第三方流程实例id
     @NameInMap("thirdpartyFlowId")
@@ -24,21 +28,9 @@ public class SyncExceedApplyRequest extends TeaModel {
     @NameInMap("userId")
     public String userId;
 
-    // 审批单状态 1同意2拒绝
-    @NameInMap("status")
-    public Integer status;
-
     public static SyncExceedApplyRequest build(java.util.Map<String, ?> map) throws Exception {
         SyncExceedApplyRequest self = new SyncExceedApplyRequest();
         return TeaModel.build(map, self);
-    }
-
-    public SyncExceedApplyRequest setRemark(String remark) {
-        this.remark = remark;
-        return this;
-    }
-    public String getRemark() {
-        return this.remark;
     }
 
     public SyncExceedApplyRequest setApplyId(String applyId) {
@@ -57,6 +49,22 @@ public class SyncExceedApplyRequest extends TeaModel {
         return this.corpId;
     }
 
+    public SyncExceedApplyRequest setRemark(String remark) {
+        this.remark = remark;
+        return this;
+    }
+    public String getRemark() {
+        return this.remark;
+    }
+
+    public SyncExceedApplyRequest setStatus(Integer status) {
+        this.status = status;
+        return this;
+    }
+    public Integer getStatus() {
+        return this.status;
+    }
+
     public SyncExceedApplyRequest setThirdpartyFlowId(String thirdpartyFlowId) {
         this.thirdpartyFlowId = thirdpartyFlowId;
         return this;
@@ -71,14 +79,6 @@ public class SyncExceedApplyRequest extends TeaModel {
     }
     public String getUserId() {
         return this.userId;
-    }
-
-    public SyncExceedApplyRequest setStatus(Integer status) {
-        this.status = status;
-        return this;
-    }
-    public Integer getStatus() {
-        return this.status;
     }
 
 }

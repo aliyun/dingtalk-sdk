@@ -4,29 +4,29 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListMiniAppHistoryVersionRequest extends TeaModel {
-    // 分页大小
-    @NameInMap("pageSize")
-    public Long pageSize;
+    // 小程序id
+    @NameInMap("miniAppId")
+    public String miniAppId;
 
     // 分页码
     @NameInMap("pageNumber")
     public Long pageNumber;
 
-    // 小程序id
-    @NameInMap("miniAppId")
-    public String miniAppId;
+    // 分页大小
+    @NameInMap("pageSize")
+    public Long pageSize;
 
     public static ListMiniAppHistoryVersionRequest build(java.util.Map<String, ?> map) throws Exception {
         ListMiniAppHistoryVersionRequest self = new ListMiniAppHistoryVersionRequest();
         return TeaModel.build(map, self);
     }
 
-    public ListMiniAppHistoryVersionRequest setPageSize(Long pageSize) {
-        this.pageSize = pageSize;
+    public ListMiniAppHistoryVersionRequest setMiniAppId(String miniAppId) {
+        this.miniAppId = miniAppId;
         return this;
     }
-    public Long getPageSize() {
-        return this.pageSize;
+    public String getMiniAppId() {
+        return this.miniAppId;
     }
 
     public ListMiniAppHistoryVersionRequest setPageNumber(Long pageNumber) {
@@ -37,12 +37,12 @@ public class ListMiniAppHistoryVersionRequest extends TeaModel {
         return this.pageNumber;
     }
 
-    public ListMiniAppHistoryVersionRequest setMiniAppId(String miniAppId) {
-        this.miniAppId = miniAppId;
+    public ListMiniAppHistoryVersionRequest setPageSize(Long pageSize) {
+        this.pageSize = pageSize;
         return this;
     }
-    public String getMiniAppId() {
-        return this.miniAppId;
+    public Long getPageSize() {
+        return this.pageSize;
     }
 
 }

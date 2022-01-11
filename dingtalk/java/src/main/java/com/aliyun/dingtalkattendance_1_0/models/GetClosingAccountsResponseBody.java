@@ -30,21 +30,21 @@ public class GetClosingAccountsResponseBody extends TeaModel {
         @NameInMap("closingHourMinutes")
         public Long closingHourMinutes;
 
-        // 封账范围-开始月
-        @NameInMap("startMonth")
-        public Integer startMonth;
-
-        // 封账范围-开始日
-        @NameInMap("startDay")
-        public Integer startDay;
+        // 封账范围-结束日
+        @NameInMap("endDay")
+        public Integer endDay;
 
         // 封账范围-结束月
         @NameInMap("endMonth")
         public Integer endMonth;
 
-        // 封账范围-结束日
-        @NameInMap("endDay")
-        public Integer endDay;
+        // 封账范围-开始日
+        @NameInMap("startDay")
+        public Integer startDay;
+
+        // 封账范围-开始月
+        @NameInMap("startMonth")
+        public Integer startMonth;
 
         public static GetClosingAccountsResponseBodyResultClosingAccountModel build(java.util.Map<String, ?> map) throws Exception {
             GetClosingAccountsResponseBodyResultClosingAccountModel self = new GetClosingAccountsResponseBodyResultClosingAccountModel();
@@ -67,20 +67,12 @@ public class GetClosingAccountsResponseBody extends TeaModel {
             return this.closingHourMinutes;
         }
 
-        public GetClosingAccountsResponseBodyResultClosingAccountModel setStartMonth(Integer startMonth) {
-            this.startMonth = startMonth;
+        public GetClosingAccountsResponseBodyResultClosingAccountModel setEndDay(Integer endDay) {
+            this.endDay = endDay;
             return this;
         }
-        public Integer getStartMonth() {
-            return this.startMonth;
-        }
-
-        public GetClosingAccountsResponseBodyResultClosingAccountModel setStartDay(Integer startDay) {
-            this.startDay = startDay;
-            return this;
-        }
-        public Integer getStartDay() {
-            return this.startDay;
+        public Integer getEndDay() {
+            return this.endDay;
         }
 
         public GetClosingAccountsResponseBodyResultClosingAccountModel setEndMonth(Integer endMonth) {
@@ -91,12 +83,20 @@ public class GetClosingAccountsResponseBody extends TeaModel {
             return this.endMonth;
         }
 
-        public GetClosingAccountsResponseBodyResultClosingAccountModel setEndDay(Integer endDay) {
-            this.endDay = endDay;
+        public GetClosingAccountsResponseBodyResultClosingAccountModel setStartDay(Integer startDay) {
+            this.startDay = startDay;
             return this;
         }
-        public Integer getEndDay() {
-            return this.endDay;
+        public Integer getStartDay() {
+            return this.startDay;
+        }
+
+        public GetClosingAccountsResponseBodyResultClosingAccountModel setStartMonth(Integer startMonth) {
+            this.startMonth = startMonth;
+            return this;
+        }
+        public Integer getStartMonth() {
+            return this.startMonth;
         }
 
     }
@@ -122,41 +122,25 @@ public class GetClosingAccountsResponseBody extends TeaModel {
     }
 
     public static class GetClosingAccountsResponseBodyResult extends TeaModel {
-        // 人员ID
-        @NameInMap("userId")
-        public String userId;
+        // 封账规则
+        @NameInMap("closingAccountModel")
+        public GetClosingAccountsResponseBodyResultClosingAccountModel closingAccountModel;
 
         // 开关
         @NameInMap("switchOn")
         public Boolean switchOn;
 
-        // 封账规则
-        @NameInMap("closingAccountModel")
-        public GetClosingAccountsResponseBodyResultClosingAccountModel closingAccountModel;
-
         // 解封规则
         @NameInMap("unsealClosingAccountModel")
         public GetClosingAccountsResponseBodyResultUnsealClosingAccountModel unsealClosingAccountModel;
 
+        // 人员ID
+        @NameInMap("userId")
+        public String userId;
+
         public static GetClosingAccountsResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             GetClosingAccountsResponseBodyResult self = new GetClosingAccountsResponseBodyResult();
             return TeaModel.build(map, self);
-        }
-
-        public GetClosingAccountsResponseBodyResult setUserId(String userId) {
-            this.userId = userId;
-            return this;
-        }
-        public String getUserId() {
-            return this.userId;
-        }
-
-        public GetClosingAccountsResponseBodyResult setSwitchOn(Boolean switchOn) {
-            this.switchOn = switchOn;
-            return this;
-        }
-        public Boolean getSwitchOn() {
-            return this.switchOn;
         }
 
         public GetClosingAccountsResponseBodyResult setClosingAccountModel(GetClosingAccountsResponseBodyResultClosingAccountModel closingAccountModel) {
@@ -167,12 +151,28 @@ public class GetClosingAccountsResponseBody extends TeaModel {
             return this.closingAccountModel;
         }
 
+        public GetClosingAccountsResponseBodyResult setSwitchOn(Boolean switchOn) {
+            this.switchOn = switchOn;
+            return this;
+        }
+        public Boolean getSwitchOn() {
+            return this.switchOn;
+        }
+
         public GetClosingAccountsResponseBodyResult setUnsealClosingAccountModel(GetClosingAccountsResponseBodyResultUnsealClosingAccountModel unsealClosingAccountModel) {
             this.unsealClosingAccountModel = unsealClosingAccountModel;
             return this;
         }
         public GetClosingAccountsResponseBodyResultUnsealClosingAccountModel getUnsealClosingAccountModel() {
             return this.unsealClosingAccountModel;
+        }
+
+        public GetClosingAccountsResponseBodyResult setUserId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+        public String getUserId() {
+            return this.userId;
         }
 
     }

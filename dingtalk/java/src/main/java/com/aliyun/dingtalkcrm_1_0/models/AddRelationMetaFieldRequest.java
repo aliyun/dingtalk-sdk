@@ -4,8 +4,8 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddRelationMetaFieldRequest extends TeaModel {
-    @NameInMap("tenant")
-    public String tenant;
+    @NameInMap("fieldDTOList")
+    public java.util.List<AddRelationMetaFieldRequestFieldDTOList> fieldDTOList;
 
     @NameInMap("operatorUserId")
     public String operatorUserId;
@@ -13,20 +13,20 @@ public class AddRelationMetaFieldRequest extends TeaModel {
     @NameInMap("relationType")
     public String relationType;
 
-    @NameInMap("fieldDTOList")
-    public java.util.List<AddRelationMetaFieldRequestFieldDTOList> fieldDTOList;
+    @NameInMap("tenant")
+    public String tenant;
 
     public static AddRelationMetaFieldRequest build(java.util.Map<String, ?> map) throws Exception {
         AddRelationMetaFieldRequest self = new AddRelationMetaFieldRequest();
         return TeaModel.build(map, self);
     }
 
-    public AddRelationMetaFieldRequest setTenant(String tenant) {
-        this.tenant = tenant;
+    public AddRelationMetaFieldRequest setFieldDTOList(java.util.List<AddRelationMetaFieldRequestFieldDTOList> fieldDTOList) {
+        this.fieldDTOList = fieldDTOList;
         return this;
     }
-    public String getTenant() {
-        return this.tenant;
+    public java.util.List<AddRelationMetaFieldRequestFieldDTOList> getFieldDTOList() {
+        return this.fieldDTOList;
     }
 
     public AddRelationMetaFieldRequest setOperatorUserId(String operatorUserId) {
@@ -45,12 +45,12 @@ public class AddRelationMetaFieldRequest extends TeaModel {
         return this.relationType;
     }
 
-    public AddRelationMetaFieldRequest setFieldDTOList(java.util.List<AddRelationMetaFieldRequestFieldDTOList> fieldDTOList) {
-        this.fieldDTOList = fieldDTOList;
+    public AddRelationMetaFieldRequest setTenant(String tenant) {
+        this.tenant = tenant;
         return this;
     }
-    public java.util.List<AddRelationMetaFieldRequestFieldDTOList> getFieldDTOList() {
-        return this.fieldDTOList;
+    public String getTenant() {
+        return this.tenant;
     }
 
     public static class AddRelationMetaFieldRequestFieldDTOListPropsOptions extends TeaModel {
@@ -84,17 +84,59 @@ public class AddRelationMetaFieldRequest extends TeaModel {
     }
 
     public static class AddRelationMetaFieldRequestFieldDTOListProps extends TeaModel {
+        @NameInMap("align")
+        public String align;
+
+        @NameInMap("bizAlias")
+        public String bizAlias;
+
+        @NameInMap("choice")
+        public Long choice;
+
+        @NameInMap("content")
+        public String content;
+
+        @NameInMap("disabled")
+        public Boolean disabled;
+
+        @NameInMap("duration")
+        public Boolean duration;
+
         @NameInMap("fieldId")
         public String fieldId;
+
+        @NameInMap("format")
+        public String format;
+
+        @NameInMap("invisible")
+        public Boolean invisible;
 
         @NameInMap("label")
         public String label;
 
-        @NameInMap("sortable")
-        public Boolean sortable;
-
         @NameInMap("labelEditableFreeze")
         public Boolean labelEditableFreeze;
+
+        @NameInMap("link")
+        public String link;
+
+        @NameInMap("needDetail")
+        public String needDetail;
+
+        @NameInMap("notPrint")
+        public String notPrint;
+
+        @NameInMap("notUpper")
+        public String notUpper;
+
+        @NameInMap("options")
+        public java.util.List<AddRelationMetaFieldRequestFieldDTOListPropsOptions> options;
+
+        @NameInMap("payEnable")
+        public Boolean payEnable;
+
+        @NameInMap("placeholder")
+        public String placeholder;
 
         @NameInMap("required")
         public Boolean required;
@@ -102,57 +144,63 @@ public class AddRelationMetaFieldRequest extends TeaModel {
         @NameInMap("requiredEditableFreeze")
         public Boolean requiredEditableFreeze;
 
-        @NameInMap("notPrint")
-        public String notPrint;
-
-        @NameInMap("content")
-        public String content;
-
-        @NameInMap("format")
-        public String format;
-
-        @NameInMap("options")
-        public java.util.List<AddRelationMetaFieldRequestFieldDTOListPropsOptions> options;
-
-        @NameInMap("notUpper")
-        public String notUpper;
+        @NameInMap("sortable")
+        public Boolean sortable;
 
         @NameInMap("unit")
         public String unit;
 
-        @NameInMap("needDetail")
-        public String needDetail;
-
-        @NameInMap("placeholder")
-        public String placeholder;
-
-        @NameInMap("bizAlias")
-        public String bizAlias;
-
-        @NameInMap("duration")
-        public Boolean duration;
-
-        @NameInMap("choice")
-        public Long choice;
-
-        @NameInMap("disabled")
-        public Boolean disabled;
-
-        @NameInMap("align")
-        public String align;
-
-        @NameInMap("invisible")
-        public Boolean invisible;
-
-        @NameInMap("payEnable")
-        public Boolean payEnable;
-
-        @NameInMap("link")
-        public String link;
-
         public static AddRelationMetaFieldRequestFieldDTOListProps build(java.util.Map<String, ?> map) throws Exception {
             AddRelationMetaFieldRequestFieldDTOListProps self = new AddRelationMetaFieldRequestFieldDTOListProps();
             return TeaModel.build(map, self);
+        }
+
+        public AddRelationMetaFieldRequestFieldDTOListProps setAlign(String align) {
+            this.align = align;
+            return this;
+        }
+        public String getAlign() {
+            return this.align;
+        }
+
+        public AddRelationMetaFieldRequestFieldDTOListProps setBizAlias(String bizAlias) {
+            this.bizAlias = bizAlias;
+            return this;
+        }
+        public String getBizAlias() {
+            return this.bizAlias;
+        }
+
+        public AddRelationMetaFieldRequestFieldDTOListProps setChoice(Long choice) {
+            this.choice = choice;
+            return this;
+        }
+        public Long getChoice() {
+            return this.choice;
+        }
+
+        public AddRelationMetaFieldRequestFieldDTOListProps setContent(String content) {
+            this.content = content;
+            return this;
+        }
+        public String getContent() {
+            return this.content;
+        }
+
+        public AddRelationMetaFieldRequestFieldDTOListProps setDisabled(Boolean disabled) {
+            this.disabled = disabled;
+            return this;
+        }
+        public Boolean getDisabled() {
+            return this.disabled;
+        }
+
+        public AddRelationMetaFieldRequestFieldDTOListProps setDuration(Boolean duration) {
+            this.duration = duration;
+            return this;
+        }
+        public Boolean getDuration() {
+            return this.duration;
         }
 
         public AddRelationMetaFieldRequestFieldDTOListProps setFieldId(String fieldId) {
@@ -163,6 +211,22 @@ public class AddRelationMetaFieldRequest extends TeaModel {
             return this.fieldId;
         }
 
+        public AddRelationMetaFieldRequestFieldDTOListProps setFormat(String format) {
+            this.format = format;
+            return this;
+        }
+        public String getFormat() {
+            return this.format;
+        }
+
+        public AddRelationMetaFieldRequestFieldDTOListProps setInvisible(Boolean invisible) {
+            this.invisible = invisible;
+            return this;
+        }
+        public Boolean getInvisible() {
+            return this.invisible;
+        }
+
         public AddRelationMetaFieldRequestFieldDTOListProps setLabel(String label) {
             this.label = label;
             return this;
@@ -171,20 +235,68 @@ public class AddRelationMetaFieldRequest extends TeaModel {
             return this.label;
         }
 
-        public AddRelationMetaFieldRequestFieldDTOListProps setSortable(Boolean sortable) {
-            this.sortable = sortable;
-            return this;
-        }
-        public Boolean getSortable() {
-            return this.sortable;
-        }
-
         public AddRelationMetaFieldRequestFieldDTOListProps setLabelEditableFreeze(Boolean labelEditableFreeze) {
             this.labelEditableFreeze = labelEditableFreeze;
             return this;
         }
         public Boolean getLabelEditableFreeze() {
             return this.labelEditableFreeze;
+        }
+
+        public AddRelationMetaFieldRequestFieldDTOListProps setLink(String link) {
+            this.link = link;
+            return this;
+        }
+        public String getLink() {
+            return this.link;
+        }
+
+        public AddRelationMetaFieldRequestFieldDTOListProps setNeedDetail(String needDetail) {
+            this.needDetail = needDetail;
+            return this;
+        }
+        public String getNeedDetail() {
+            return this.needDetail;
+        }
+
+        public AddRelationMetaFieldRequestFieldDTOListProps setNotPrint(String notPrint) {
+            this.notPrint = notPrint;
+            return this;
+        }
+        public String getNotPrint() {
+            return this.notPrint;
+        }
+
+        public AddRelationMetaFieldRequestFieldDTOListProps setNotUpper(String notUpper) {
+            this.notUpper = notUpper;
+            return this;
+        }
+        public String getNotUpper() {
+            return this.notUpper;
+        }
+
+        public AddRelationMetaFieldRequestFieldDTOListProps setOptions(java.util.List<AddRelationMetaFieldRequestFieldDTOListPropsOptions> options) {
+            this.options = options;
+            return this;
+        }
+        public java.util.List<AddRelationMetaFieldRequestFieldDTOListPropsOptions> getOptions() {
+            return this.options;
+        }
+
+        public AddRelationMetaFieldRequestFieldDTOListProps setPayEnable(Boolean payEnable) {
+            this.payEnable = payEnable;
+            return this;
+        }
+        public Boolean getPayEnable() {
+            return this.payEnable;
+        }
+
+        public AddRelationMetaFieldRequestFieldDTOListProps setPlaceholder(String placeholder) {
+            this.placeholder = placeholder;
+            return this;
+        }
+        public String getPlaceholder() {
+            return this.placeholder;
         }
 
         public AddRelationMetaFieldRequestFieldDTOListProps setRequired(Boolean required) {
@@ -203,44 +315,12 @@ public class AddRelationMetaFieldRequest extends TeaModel {
             return this.requiredEditableFreeze;
         }
 
-        public AddRelationMetaFieldRequestFieldDTOListProps setNotPrint(String notPrint) {
-            this.notPrint = notPrint;
+        public AddRelationMetaFieldRequestFieldDTOListProps setSortable(Boolean sortable) {
+            this.sortable = sortable;
             return this;
         }
-        public String getNotPrint() {
-            return this.notPrint;
-        }
-
-        public AddRelationMetaFieldRequestFieldDTOListProps setContent(String content) {
-            this.content = content;
-            return this;
-        }
-        public String getContent() {
-            return this.content;
-        }
-
-        public AddRelationMetaFieldRequestFieldDTOListProps setFormat(String format) {
-            this.format = format;
-            return this;
-        }
-        public String getFormat() {
-            return this.format;
-        }
-
-        public AddRelationMetaFieldRequestFieldDTOListProps setOptions(java.util.List<AddRelationMetaFieldRequestFieldDTOListPropsOptions> options) {
-            this.options = options;
-            return this;
-        }
-        public java.util.List<AddRelationMetaFieldRequestFieldDTOListPropsOptions> getOptions() {
-            return this.options;
-        }
-
-        public AddRelationMetaFieldRequestFieldDTOListProps setNotUpper(String notUpper) {
-            this.notUpper = notUpper;
-            return this;
-        }
-        public String getNotUpper() {
-            return this.notUpper;
+        public Boolean getSortable() {
+            return this.sortable;
         }
 
         public AddRelationMetaFieldRequestFieldDTOListProps setUnit(String unit) {
@@ -249,86 +329,6 @@ public class AddRelationMetaFieldRequest extends TeaModel {
         }
         public String getUnit() {
             return this.unit;
-        }
-
-        public AddRelationMetaFieldRequestFieldDTOListProps setNeedDetail(String needDetail) {
-            this.needDetail = needDetail;
-            return this;
-        }
-        public String getNeedDetail() {
-            return this.needDetail;
-        }
-
-        public AddRelationMetaFieldRequestFieldDTOListProps setPlaceholder(String placeholder) {
-            this.placeholder = placeholder;
-            return this;
-        }
-        public String getPlaceholder() {
-            return this.placeholder;
-        }
-
-        public AddRelationMetaFieldRequestFieldDTOListProps setBizAlias(String bizAlias) {
-            this.bizAlias = bizAlias;
-            return this;
-        }
-        public String getBizAlias() {
-            return this.bizAlias;
-        }
-
-        public AddRelationMetaFieldRequestFieldDTOListProps setDuration(Boolean duration) {
-            this.duration = duration;
-            return this;
-        }
-        public Boolean getDuration() {
-            return this.duration;
-        }
-
-        public AddRelationMetaFieldRequestFieldDTOListProps setChoice(Long choice) {
-            this.choice = choice;
-            return this;
-        }
-        public Long getChoice() {
-            return this.choice;
-        }
-
-        public AddRelationMetaFieldRequestFieldDTOListProps setDisabled(Boolean disabled) {
-            this.disabled = disabled;
-            return this;
-        }
-        public Boolean getDisabled() {
-            return this.disabled;
-        }
-
-        public AddRelationMetaFieldRequestFieldDTOListProps setAlign(String align) {
-            this.align = align;
-            return this;
-        }
-        public String getAlign() {
-            return this.align;
-        }
-
-        public AddRelationMetaFieldRequestFieldDTOListProps setInvisible(Boolean invisible) {
-            this.invisible = invisible;
-            return this;
-        }
-        public Boolean getInvisible() {
-            return this.invisible;
-        }
-
-        public AddRelationMetaFieldRequestFieldDTOListProps setPayEnable(Boolean payEnable) {
-            this.payEnable = payEnable;
-            return this;
-        }
-        public Boolean getPayEnable() {
-            return this.payEnable;
-        }
-
-        public AddRelationMetaFieldRequestFieldDTOListProps setLink(String link) {
-            this.link = link;
-            return this;
-        }
-        public String getLink() {
-            return this.link;
         }
 
     }

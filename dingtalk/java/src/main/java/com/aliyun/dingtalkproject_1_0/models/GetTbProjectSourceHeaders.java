@@ -7,20 +7,20 @@ public class GetTbProjectSourceHeaders extends TeaModel {
     @NameInMap("commonHeaders")
     public java.util.Map<String, String> commonHeaders;
 
-    @NameInMap("dingOrgId")
-    public String dingOrgId;
-
-    @NameInMap("dingIsvOrgId")
-    public String dingIsvOrgId;
+    @NameInMap("dingAccessTokenType")
+    public String dingAccessTokenType;
 
     @NameInMap("dingCorpId")
     public String dingCorpId;
 
+    @NameInMap("dingIsvOrgId")
+    public String dingIsvOrgId;
+
+    @NameInMap("dingOrgId")
+    public String dingOrgId;
+
     @NameInMap("dingSuiteKey")
     public String dingSuiteKey;
-
-    @NameInMap("dingAccessTokenType")
-    public String dingAccessTokenType;
 
     @NameInMap("x-acs-dingtalk-access-token")
     public String xAcsDingtalkAccessToken;
@@ -38,20 +38,12 @@ public class GetTbProjectSourceHeaders extends TeaModel {
         return this.commonHeaders;
     }
 
-    public GetTbProjectSourceHeaders setDingOrgId(String dingOrgId) {
-        this.dingOrgId = dingOrgId;
+    public GetTbProjectSourceHeaders setDingAccessTokenType(String dingAccessTokenType) {
+        this.dingAccessTokenType = dingAccessTokenType;
         return this;
     }
-    public String getDingOrgId() {
-        return this.dingOrgId;
-    }
-
-    public GetTbProjectSourceHeaders setDingIsvOrgId(String dingIsvOrgId) {
-        this.dingIsvOrgId = dingIsvOrgId;
-        return this;
-    }
-    public String getDingIsvOrgId() {
-        return this.dingIsvOrgId;
+    public String getDingAccessTokenType() {
+        return this.dingAccessTokenType;
     }
 
     public GetTbProjectSourceHeaders setDingCorpId(String dingCorpId) {
@@ -62,20 +54,28 @@ public class GetTbProjectSourceHeaders extends TeaModel {
         return this.dingCorpId;
     }
 
+    public GetTbProjectSourceHeaders setDingIsvOrgId(String dingIsvOrgId) {
+        this.dingIsvOrgId = dingIsvOrgId;
+        return this;
+    }
+    public String getDingIsvOrgId() {
+        return this.dingIsvOrgId;
+    }
+
+    public GetTbProjectSourceHeaders setDingOrgId(String dingOrgId) {
+        this.dingOrgId = dingOrgId;
+        return this;
+    }
+    public String getDingOrgId() {
+        return this.dingOrgId;
+    }
+
     public GetTbProjectSourceHeaders setDingSuiteKey(String dingSuiteKey) {
         this.dingSuiteKey = dingSuiteKey;
         return this;
     }
     public String getDingSuiteKey() {
         return this.dingSuiteKey;
-    }
-
-    public GetTbProjectSourceHeaders setDingAccessTokenType(String dingAccessTokenType) {
-        this.dingAccessTokenType = dingAccessTokenType;
-        return this;
-    }
-    public String getDingAccessTokenType() {
-        return this.dingAccessTokenType;
     }
 
     public GetTbProjectSourceHeaders setXAcsDingtalkAccessToken(String xAcsDingtalkAccessToken) {

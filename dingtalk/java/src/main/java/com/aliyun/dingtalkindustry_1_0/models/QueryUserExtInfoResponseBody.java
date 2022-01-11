@@ -22,17 +22,13 @@ public class QueryUserExtInfoResponseBody extends TeaModel {
     }
 
     public static class QueryUserExtInfoResponseBodyContent extends TeaModel {
-        // 扩展属性Key
-        @NameInMap("userExtendKey")
-        public String userExtendKey;
+        // 创建时间
+        @NameInMap("gmtCreate")
+        public String gmtCreate;
 
-        // 扩展属性值
-        @NameInMap("userExtendValue")
-        public String userExtendValue;
-
-        // 扩展属性描述
-        @NameInMap("userExtendDisplayName")
-        public String userExtendDisplayName;
+        // 修改时间
+        @NameInMap("gmtModified")
+        public String gmtModified;
 
         // 组织id
         @NameInMap("orgId")
@@ -46,41 +42,37 @@ public class QueryUserExtInfoResponseBody extends TeaModel {
         @NameInMap("userCode")
         public String userCode;
 
-        // 创建时间
-        @NameInMap("gmtCreate")
-        public String gmtCreate;
+        // 扩展属性描述
+        @NameInMap("userExtendDisplayName")
+        public String userExtendDisplayName;
 
-        // 修改时间
-        @NameInMap("gmtModified")
-        public String gmtModified;
+        // 扩展属性Key
+        @NameInMap("userExtendKey")
+        public String userExtendKey;
+
+        // 扩展属性值
+        @NameInMap("userExtendValue")
+        public String userExtendValue;
 
         public static QueryUserExtInfoResponseBodyContent build(java.util.Map<String, ?> map) throws Exception {
             QueryUserExtInfoResponseBodyContent self = new QueryUserExtInfoResponseBodyContent();
             return TeaModel.build(map, self);
         }
 
-        public QueryUserExtInfoResponseBodyContent setUserExtendKey(String userExtendKey) {
-            this.userExtendKey = userExtendKey;
+        public QueryUserExtInfoResponseBodyContent setGmtCreate(String gmtCreate) {
+            this.gmtCreate = gmtCreate;
             return this;
         }
-        public String getUserExtendKey() {
-            return this.userExtendKey;
+        public String getGmtCreate() {
+            return this.gmtCreate;
         }
 
-        public QueryUserExtInfoResponseBodyContent setUserExtendValue(String userExtendValue) {
-            this.userExtendValue = userExtendValue;
+        public QueryUserExtInfoResponseBodyContent setGmtModified(String gmtModified) {
+            this.gmtModified = gmtModified;
             return this;
         }
-        public String getUserExtendValue() {
-            return this.userExtendValue;
-        }
-
-        public QueryUserExtInfoResponseBodyContent setUserExtendDisplayName(String userExtendDisplayName) {
-            this.userExtendDisplayName = userExtendDisplayName;
-            return this;
-        }
-        public String getUserExtendDisplayName() {
-            return this.userExtendDisplayName;
+        public String getGmtModified() {
+            return this.gmtModified;
         }
 
         public QueryUserExtInfoResponseBodyContent setOrgId(String orgId) {
@@ -107,20 +99,28 @@ public class QueryUserExtInfoResponseBody extends TeaModel {
             return this.userCode;
         }
 
-        public QueryUserExtInfoResponseBodyContent setGmtCreate(String gmtCreate) {
-            this.gmtCreate = gmtCreate;
+        public QueryUserExtInfoResponseBodyContent setUserExtendDisplayName(String userExtendDisplayName) {
+            this.userExtendDisplayName = userExtendDisplayName;
             return this;
         }
-        public String getGmtCreate() {
-            return this.gmtCreate;
+        public String getUserExtendDisplayName() {
+            return this.userExtendDisplayName;
         }
 
-        public QueryUserExtInfoResponseBodyContent setGmtModified(String gmtModified) {
-            this.gmtModified = gmtModified;
+        public QueryUserExtInfoResponseBodyContent setUserExtendKey(String userExtendKey) {
+            this.userExtendKey = userExtendKey;
             return this;
         }
-        public String getGmtModified() {
-            return this.gmtModified;
+        public String getUserExtendKey() {
+            return this.userExtendKey;
+        }
+
+        public QueryUserExtInfoResponseBodyContent setUserExtendValue(String userExtendValue) {
+            this.userExtendValue = userExtendValue;
+            return this;
+        }
+        public String getUserExtendValue() {
+            return this.userExtendValue;
         }
 
     }

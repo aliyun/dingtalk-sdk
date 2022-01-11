@@ -51,20 +51,14 @@ public class ListCrmPersonalCustomersResponseBody extends TeaModel {
     }
 
     public static class ListCrmPersonalCustomersResponseBodyResult extends TeaModel {
-        @NameInMap("orgId")
-        public Long orgId;
-
-        @NameInMap("instanceId")
-        public String instanceId;
-
-        @NameInMap("objectType")
-        public String objectType;
-
-        @NameInMap("creatorUserId")
-        public String creatorUserId;
+        @NameInMap("appUuid")
+        public String appUuid;
 
         @NameInMap("creatorNick")
         public String creatorNick;
+
+        @NameInMap("creatorUserId")
+        public String creatorUserId;
 
         @NameInMap("data")
         public java.util.Map<String, ?> data;
@@ -72,20 +66,8 @@ public class ListCrmPersonalCustomersResponseBody extends TeaModel {
         @NameInMap("extendData")
         public java.util.Map<String, ?> extendData;
 
-        @NameInMap("permission")
-        public ListCrmPersonalCustomersResponseBodyResultPermission permission;
-
-        @NameInMap("appUuid")
-        public String appUuid;
-
         @NameInMap("formCode")
         public String formCode;
-
-        @NameInMap("procOutResult")
-        public String procOutResult;
-
-        @NameInMap("procInstStatus")
-        public String procInstStatus;
 
         @NameInMap("gmtCreate")
         public String gmtCreate;
@@ -93,41 +75,35 @@ public class ListCrmPersonalCustomersResponseBody extends TeaModel {
         @NameInMap("gmtModified")
         public String gmtModified;
 
+        @NameInMap("instanceId")
+        public String instanceId;
+
+        @NameInMap("objectType")
+        public String objectType;
+
+        @NameInMap("orgId")
+        public Long orgId;
+
+        @NameInMap("permission")
+        public ListCrmPersonalCustomersResponseBodyResultPermission permission;
+
+        @NameInMap("procInstStatus")
+        public String procInstStatus;
+
+        @NameInMap("procOutResult")
+        public String procOutResult;
+
         public static ListCrmPersonalCustomersResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             ListCrmPersonalCustomersResponseBodyResult self = new ListCrmPersonalCustomersResponseBodyResult();
             return TeaModel.build(map, self);
         }
 
-        public ListCrmPersonalCustomersResponseBodyResult setOrgId(Long orgId) {
-            this.orgId = orgId;
+        public ListCrmPersonalCustomersResponseBodyResult setAppUuid(String appUuid) {
+            this.appUuid = appUuid;
             return this;
         }
-        public Long getOrgId() {
-            return this.orgId;
-        }
-
-        public ListCrmPersonalCustomersResponseBodyResult setInstanceId(String instanceId) {
-            this.instanceId = instanceId;
-            return this;
-        }
-        public String getInstanceId() {
-            return this.instanceId;
-        }
-
-        public ListCrmPersonalCustomersResponseBodyResult setObjectType(String objectType) {
-            this.objectType = objectType;
-            return this;
-        }
-        public String getObjectType() {
-            return this.objectType;
-        }
-
-        public ListCrmPersonalCustomersResponseBodyResult setCreatorUserId(String creatorUserId) {
-            this.creatorUserId = creatorUserId;
-            return this;
-        }
-        public String getCreatorUserId() {
-            return this.creatorUserId;
+        public String getAppUuid() {
+            return this.appUuid;
         }
 
         public ListCrmPersonalCustomersResponseBodyResult setCreatorNick(String creatorNick) {
@@ -136,6 +112,14 @@ public class ListCrmPersonalCustomersResponseBody extends TeaModel {
         }
         public String getCreatorNick() {
             return this.creatorNick;
+        }
+
+        public ListCrmPersonalCustomersResponseBodyResult setCreatorUserId(String creatorUserId) {
+            this.creatorUserId = creatorUserId;
+            return this;
+        }
+        public String getCreatorUserId() {
+            return this.creatorUserId;
         }
 
         public ListCrmPersonalCustomersResponseBodyResult setData(java.util.Map<String, ?> data) {
@@ -154,44 +138,12 @@ public class ListCrmPersonalCustomersResponseBody extends TeaModel {
             return this.extendData;
         }
 
-        public ListCrmPersonalCustomersResponseBodyResult setPermission(ListCrmPersonalCustomersResponseBodyResultPermission permission) {
-            this.permission = permission;
-            return this;
-        }
-        public ListCrmPersonalCustomersResponseBodyResultPermission getPermission() {
-            return this.permission;
-        }
-
-        public ListCrmPersonalCustomersResponseBodyResult setAppUuid(String appUuid) {
-            this.appUuid = appUuid;
-            return this;
-        }
-        public String getAppUuid() {
-            return this.appUuid;
-        }
-
         public ListCrmPersonalCustomersResponseBodyResult setFormCode(String formCode) {
             this.formCode = formCode;
             return this;
         }
         public String getFormCode() {
             return this.formCode;
-        }
-
-        public ListCrmPersonalCustomersResponseBodyResult setProcOutResult(String procOutResult) {
-            this.procOutResult = procOutResult;
-            return this;
-        }
-        public String getProcOutResult() {
-            return this.procOutResult;
-        }
-
-        public ListCrmPersonalCustomersResponseBodyResult setProcInstStatus(String procInstStatus) {
-            this.procInstStatus = procInstStatus;
-            return this;
-        }
-        public String getProcInstStatus() {
-            return this.procInstStatus;
         }
 
         public ListCrmPersonalCustomersResponseBodyResult setGmtCreate(String gmtCreate) {
@@ -208,6 +160,54 @@ public class ListCrmPersonalCustomersResponseBody extends TeaModel {
         }
         public String getGmtModified() {
             return this.gmtModified;
+        }
+
+        public ListCrmPersonalCustomersResponseBodyResult setInstanceId(String instanceId) {
+            this.instanceId = instanceId;
+            return this;
+        }
+        public String getInstanceId() {
+            return this.instanceId;
+        }
+
+        public ListCrmPersonalCustomersResponseBodyResult setObjectType(String objectType) {
+            this.objectType = objectType;
+            return this;
+        }
+        public String getObjectType() {
+            return this.objectType;
+        }
+
+        public ListCrmPersonalCustomersResponseBodyResult setOrgId(Long orgId) {
+            this.orgId = orgId;
+            return this;
+        }
+        public Long getOrgId() {
+            return this.orgId;
+        }
+
+        public ListCrmPersonalCustomersResponseBodyResult setPermission(ListCrmPersonalCustomersResponseBodyResultPermission permission) {
+            this.permission = permission;
+            return this;
+        }
+        public ListCrmPersonalCustomersResponseBodyResultPermission getPermission() {
+            return this.permission;
+        }
+
+        public ListCrmPersonalCustomersResponseBodyResult setProcInstStatus(String procInstStatus) {
+            this.procInstStatus = procInstStatus;
+            return this;
+        }
+        public String getProcInstStatus() {
+            return this.procInstStatus;
+        }
+
+        public ListCrmPersonalCustomersResponseBodyResult setProcOutResult(String procOutResult) {
+            this.procOutResult = procOutResult;
+            return this;
+        }
+        public String getProcOutResult() {
+            return this.procOutResult;
         }
 
     }

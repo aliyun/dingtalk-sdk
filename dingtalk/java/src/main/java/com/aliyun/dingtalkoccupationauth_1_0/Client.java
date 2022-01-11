@@ -40,7 +40,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
-            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
         OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
@@ -69,7 +69,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
-            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
         OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(

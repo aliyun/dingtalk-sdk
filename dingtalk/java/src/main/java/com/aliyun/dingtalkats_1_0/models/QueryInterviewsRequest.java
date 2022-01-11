@@ -8,6 +8,10 @@ public class QueryInterviewsRequest extends TeaModel {
     @NameInMap("bizCode")
     public String bizCode;
 
+    // 候选人标识
+    @NameInMap("candidateId")
+    public String candidateId;
+
     // 面试开始时间的查询起始时间（单位：毫秒）
     @NameInMap("startTimeBeginMillis")
     public Long startTimeBeginMillis;
@@ -15,10 +19,6 @@ public class QueryInterviewsRequest extends TeaModel {
     // 面试开始时间的查询结束时间（单位：毫秒）
     @NameInMap("startTimeEndMillis")
     public Long startTimeEndMillis;
-
-    // 候选人标识
-    @NameInMap("candidateId")
-    public String candidateId;
 
     // 分页游标，首次调用传空
     @NameInMap("nextToken")
@@ -41,6 +41,14 @@ public class QueryInterviewsRequest extends TeaModel {
         return this.bizCode;
     }
 
+    public QueryInterviewsRequest setCandidateId(String candidateId) {
+        this.candidateId = candidateId;
+        return this;
+    }
+    public String getCandidateId() {
+        return this.candidateId;
+    }
+
     public QueryInterviewsRequest setStartTimeBeginMillis(Long startTimeBeginMillis) {
         this.startTimeBeginMillis = startTimeBeginMillis;
         return this;
@@ -55,14 +63,6 @@ public class QueryInterviewsRequest extends TeaModel {
     }
     public Long getStartTimeEndMillis() {
         return this.startTimeEndMillis;
-    }
-
-    public QueryInterviewsRequest setCandidateId(String candidateId) {
-        this.candidateId = candidateId;
-        return this;
-    }
-    public String getCandidateId() {
-        return this.candidateId;
     }
 
     public QueryInterviewsRequest setNextToken(String nextToken) {

@@ -4,13 +4,13 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class ReportDeviceLogRequest extends TeaModel {
-    // 设备序列号
-    @NameInMap("sn")
-    public String sn;
-
     // 文件id
     @NameInMap("mediaId")
     public String mediaId;
+
+    // 设备序列号
+    @NameInMap("sn")
+    public String sn;
 
     // 文件类型
     @NameInMap("type")
@@ -21,20 +21,20 @@ public class ReportDeviceLogRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public ReportDeviceLogRequest setSn(String sn) {
-        this.sn = sn;
-        return this;
-    }
-    public String getSn() {
-        return this.sn;
-    }
-
     public ReportDeviceLogRequest setMediaId(String mediaId) {
         this.mediaId = mediaId;
         return this;
     }
     public String getMediaId() {
         return this.mediaId;
+    }
+
+    public ReportDeviceLogRequest setSn(String sn) {
+        this.sn = sn;
+        return this;
+    }
+    public String getSn() {
+        return this.sn;
     }
 
     public ReportDeviceLogRequest setType(String type) {

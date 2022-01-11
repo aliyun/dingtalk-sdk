@@ -4,26 +4,18 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetEmpsByOrgIdRequest extends TeaModel {
-    @NameInMap("nextToken")
-    public Long nextToken;
-
     @NameInMap("maxResults")
     public Integer maxResults;
 
     @NameInMap("needDept")
     public Boolean needDept;
 
+    @NameInMap("nextToken")
+    public Long nextToken;
+
     public static GetEmpsByOrgIdRequest build(java.util.Map<String, ?> map) throws Exception {
         GetEmpsByOrgIdRequest self = new GetEmpsByOrgIdRequest();
         return TeaModel.build(map, self);
-    }
-
-    public GetEmpsByOrgIdRequest setNextToken(Long nextToken) {
-        this.nextToken = nextToken;
-        return this;
-    }
-    public Long getNextToken() {
-        return this.nextToken;
     }
 
     public GetEmpsByOrgIdRequest setMaxResults(Integer maxResults) {
@@ -40,6 +32,14 @@ public class GetEmpsByOrgIdRequest extends TeaModel {
     }
     public Boolean getNeedDept() {
         return this.needDept;
+    }
+
+    public GetEmpsByOrgIdRequest setNextToken(Long nextToken) {
+        this.nextToken = nextToken;
+        return this;
+    }
+    public Long getNextToken() {
+        return this.nextToken;
     }
 
 }

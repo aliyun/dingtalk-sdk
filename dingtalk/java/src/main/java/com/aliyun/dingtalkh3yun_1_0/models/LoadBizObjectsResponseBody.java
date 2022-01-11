@@ -8,13 +8,13 @@ public class LoadBizObjectsResponseBody extends TeaModel {
     @NameInMap("code")
     public String code;
 
-    // 提示信息
-    @NameInMap("message")
-    public String message;
-
     // 返回结果
     @NameInMap("data")
     public LoadBizObjectsResponseBodyData data;
+
+    // 提示信息
+    @NameInMap("message")
+    public String message;
 
     public static LoadBizObjectsResponseBody build(java.util.Map<String, ?> map) throws Exception {
         LoadBizObjectsResponseBody self = new LoadBizObjectsResponseBody();
@@ -29,14 +29,6 @@ public class LoadBizObjectsResponseBody extends TeaModel {
         return this.code;
     }
 
-    public LoadBizObjectsResponseBody setMessage(String message) {
-        this.message = message;
-        return this;
-    }
-    public String getMessage() {
-        return this.message;
-    }
-
     public LoadBizObjectsResponseBody setData(LoadBizObjectsResponseBodyData data) {
         this.data = data;
         return this;
@@ -45,7 +37,19 @@ public class LoadBizObjectsResponseBody extends TeaModel {
         return this.data;
     }
 
+    public LoadBizObjectsResponseBody setMessage(String message) {
+        this.message = message;
+        return this;
+    }
+    public String getMessage() {
+        return this.message;
+    }
+
     public static class LoadBizObjectsResponseBodyData extends TeaModel {
+        // 业务数据实例数组
+        @NameInMap("bizObjects")
+        public java.util.List<java.util.Map<String, ?>> bizObjects;
+
         // 页码
         @NameInMap("pageNumber")
         public Integer pageNumber;
@@ -58,13 +62,17 @@ public class LoadBizObjectsResponseBody extends TeaModel {
         @NameInMap("totalCount")
         public Integer totalCount;
 
-        // 业务数据实例数组
-        @NameInMap("bizObjects")
-        public java.util.List<java.util.Map<String, ?>> bizObjects;
-
         public static LoadBizObjectsResponseBodyData build(java.util.Map<String, ?> map) throws Exception {
             LoadBizObjectsResponseBodyData self = new LoadBizObjectsResponseBodyData();
             return TeaModel.build(map, self);
+        }
+
+        public LoadBizObjectsResponseBodyData setBizObjects(java.util.List<java.util.Map<String, ?>> bizObjects) {
+            this.bizObjects = bizObjects;
+            return this;
+        }
+        public java.util.List<java.util.Map<String, ?>> getBizObjects() {
+            return this.bizObjects;
         }
 
         public LoadBizObjectsResponseBodyData setPageNumber(Integer pageNumber) {
@@ -89,14 +97,6 @@ public class LoadBizObjectsResponseBody extends TeaModel {
         }
         public Integer getTotalCount() {
             return this.totalCount;
-        }
-
-        public LoadBizObjectsResponseBodyData setBizObjects(java.util.List<java.util.Map<String, ?>> bizObjects) {
-            this.bizObjects = bizObjects;
-            return this;
-        }
-        public java.util.List<java.util.Map<String, ?>> getBizObjects() {
-            return this.bizObjects;
         }
 
     }

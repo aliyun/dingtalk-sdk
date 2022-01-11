@@ -8,20 +8,20 @@ public class QueryCrmPersonalCustomerRequest extends TeaModel {
     @NameInMap("currentOperatorUserId")
     public String currentOperatorUserId;
 
-    @NameInMap("relationType")
-    public String relationType;
+    // 分页条数
+    @NameInMap("maxResults")
+    public Integer maxResults;
 
     // 分页页码
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 分页条数
-    @NameInMap("maxResults")
-    public Integer maxResults;
-
     // 查询条件
     @NameInMap("queryDsl")
     public String queryDsl;
+
+    @NameInMap("relationType")
+    public String relationType;
 
     public static QueryCrmPersonalCustomerRequest build(java.util.Map<String, ?> map) throws Exception {
         QueryCrmPersonalCustomerRequest self = new QueryCrmPersonalCustomerRequest();
@@ -36,12 +36,12 @@ public class QueryCrmPersonalCustomerRequest extends TeaModel {
         return this.currentOperatorUserId;
     }
 
-    public QueryCrmPersonalCustomerRequest setRelationType(String relationType) {
-        this.relationType = relationType;
+    public QueryCrmPersonalCustomerRequest setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
         return this;
     }
-    public String getRelationType() {
-        return this.relationType;
+    public Integer getMaxResults() {
+        return this.maxResults;
     }
 
     public QueryCrmPersonalCustomerRequest setNextToken(String nextToken) {
@@ -52,20 +52,20 @@ public class QueryCrmPersonalCustomerRequest extends TeaModel {
         return this.nextToken;
     }
 
-    public QueryCrmPersonalCustomerRequest setMaxResults(Integer maxResults) {
-        this.maxResults = maxResults;
-        return this;
-    }
-    public Integer getMaxResults() {
-        return this.maxResults;
-    }
-
     public QueryCrmPersonalCustomerRequest setQueryDsl(String queryDsl) {
         this.queryDsl = queryDsl;
         return this;
     }
     public String getQueryDsl() {
         return this.queryDsl;
+    }
+
+    public QueryCrmPersonalCustomerRequest setRelationType(String relationType) {
+        this.relationType = relationType;
+        return this;
+    }
+    public String getRelationType() {
+        return this.relationType;
     }
 
 }

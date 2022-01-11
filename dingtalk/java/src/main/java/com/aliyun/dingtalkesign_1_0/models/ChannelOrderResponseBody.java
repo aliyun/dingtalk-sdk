@@ -7,11 +7,11 @@ public class ChannelOrderResponseBody extends TeaModel {
     @NameInMap("code")
     public Integer code;
 
-    @NameInMap("message")
-    public String message;
-
     @NameInMap("data")
     public ChannelOrderResponseBodyData data;
+
+    @NameInMap("message")
+    public String message;
 
     public static ChannelOrderResponseBody build(java.util.Map<String, ?> map) throws Exception {
         ChannelOrderResponseBody self = new ChannelOrderResponseBody();
@@ -26,20 +26,20 @@ public class ChannelOrderResponseBody extends TeaModel {
         return this.code;
     }
 
-    public ChannelOrderResponseBody setMessage(String message) {
-        this.message = message;
-        return this;
-    }
-    public String getMessage() {
-        return this.message;
-    }
-
     public ChannelOrderResponseBody setData(ChannelOrderResponseBodyData data) {
         this.data = data;
         return this;
     }
     public ChannelOrderResponseBodyData getData() {
         return this.data;
+    }
+
+    public ChannelOrderResponseBody setMessage(String message) {
+        this.message = message;
+        return this;
+    }
+    public String getMessage() {
+        return this.message;
     }
 
     public static class ChannelOrderResponseBodyData extends TeaModel {

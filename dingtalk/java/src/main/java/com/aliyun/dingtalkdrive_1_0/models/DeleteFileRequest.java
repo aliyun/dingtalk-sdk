@@ -4,25 +4,17 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteFileRequest extends TeaModel {
-    // 用户id
-    @NameInMap("unionId")
-    public String unionId;
-
     // 删除策略
     @NameInMap("deletePolicy")
     public String deletePolicy;
 
+    // 用户id
+    @NameInMap("unionId")
+    public String unionId;
+
     public static DeleteFileRequest build(java.util.Map<String, ?> map) throws Exception {
         DeleteFileRequest self = new DeleteFileRequest();
         return TeaModel.build(map, self);
-    }
-
-    public DeleteFileRequest setUnionId(String unionId) {
-        this.unionId = unionId;
-        return this;
-    }
-    public String getUnionId() {
-        return this.unionId;
     }
 
     public DeleteFileRequest setDeletePolicy(String deletePolicy) {
@@ -31,6 +23,14 @@ public class DeleteFileRequest extends TeaModel {
     }
     public String getDeletePolicy() {
         return this.deletePolicy;
+    }
+
+    public DeleteFileRequest setUnionId(String unionId) {
+        this.unionId = unionId;
+        return this;
+    }
+    public String getUnionId() {
+        return this.unionId;
     }
 
 }

@@ -8,17 +8,17 @@ public class GetDingMeBaseDataRequest extends TeaModel {
     @NameInMap("appKey")
     public String appKey;
 
-    // 开始时间
-    @NameInMap("startDay")
-    public String startDay;
+    // 是否按天分组
+    @NameInMap("byDay")
+    public Boolean byDay;
 
     // 结束时间
     @NameInMap("endDay")
     public String endDay;
 
-    // 是否按天分组
-    @NameInMap("byDay")
-    public Boolean byDay;
+    // 开始时间
+    @NameInMap("startDay")
+    public String startDay;
 
     public static GetDingMeBaseDataRequest build(java.util.Map<String, ?> map) throws Exception {
         GetDingMeBaseDataRequest self = new GetDingMeBaseDataRequest();
@@ -33,12 +33,12 @@ public class GetDingMeBaseDataRequest extends TeaModel {
         return this.appKey;
     }
 
-    public GetDingMeBaseDataRequest setStartDay(String startDay) {
-        this.startDay = startDay;
+    public GetDingMeBaseDataRequest setByDay(Boolean byDay) {
+        this.byDay = byDay;
         return this;
     }
-    public String getStartDay() {
-        return this.startDay;
+    public Boolean getByDay() {
+        return this.byDay;
     }
 
     public GetDingMeBaseDataRequest setEndDay(String endDay) {
@@ -49,12 +49,12 @@ public class GetDingMeBaseDataRequest extends TeaModel {
         return this.endDay;
     }
 
-    public GetDingMeBaseDataRequest setByDay(Boolean byDay) {
-        this.byDay = byDay;
+    public GetDingMeBaseDataRequest setStartDay(String startDay) {
+        this.startDay = startDay;
         return this;
     }
-    public Boolean getByDay() {
-        return this.byDay;
+    public String getStartDay() {
+        return this.startDay;
     }
 
 }

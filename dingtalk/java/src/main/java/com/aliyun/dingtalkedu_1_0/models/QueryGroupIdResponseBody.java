@@ -4,13 +4,13 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryGroupIdResponseBody extends TeaModel {
-    // 开发者pid
-    @NameInMap("pid")
-    public String pid;
+    // 组织id
+    @NameInMap("corpId")
+    public String corpId;
 
-    // 开发者名称
-    @NameInMap("name")
-    public String name;
+    // 人脸库id
+    @NameInMap("groupId")
+    public String groupId;
 
     // 商户id
     @NameInMap("merchantId")
@@ -20,33 +20,33 @@ public class QueryGroupIdResponseBody extends TeaModel {
     @NameInMap("merchantName")
     public String merchantName;
 
-    // 组织id
-    @NameInMap("corpId")
-    public String corpId;
+    // 开发者名称
+    @NameInMap("name")
+    public String name;
 
-    // 人脸库id
-    @NameInMap("groupId")
-    public String groupId;
+    // 开发者pid
+    @NameInMap("pid")
+    public String pid;
 
     public static QueryGroupIdResponseBody build(java.util.Map<String, ?> map) throws Exception {
         QueryGroupIdResponseBody self = new QueryGroupIdResponseBody();
         return TeaModel.build(map, self);
     }
 
-    public QueryGroupIdResponseBody setPid(String pid) {
-        this.pid = pid;
+    public QueryGroupIdResponseBody setCorpId(String corpId) {
+        this.corpId = corpId;
         return this;
     }
-    public String getPid() {
-        return this.pid;
+    public String getCorpId() {
+        return this.corpId;
     }
 
-    public QueryGroupIdResponseBody setName(String name) {
-        this.name = name;
+    public QueryGroupIdResponseBody setGroupId(String groupId) {
+        this.groupId = groupId;
         return this;
     }
-    public String getName() {
-        return this.name;
+    public String getGroupId() {
+        return this.groupId;
     }
 
     public QueryGroupIdResponseBody setMerchantId(String merchantId) {
@@ -65,20 +65,20 @@ public class QueryGroupIdResponseBody extends TeaModel {
         return this.merchantName;
     }
 
-    public QueryGroupIdResponseBody setCorpId(String corpId) {
-        this.corpId = corpId;
+    public QueryGroupIdResponseBody setName(String name) {
+        this.name = name;
         return this;
     }
-    public String getCorpId() {
-        return this.corpId;
+    public String getName() {
+        return this.name;
     }
 
-    public QueryGroupIdResponseBody setGroupId(String groupId) {
-        this.groupId = groupId;
+    public QueryGroupIdResponseBody setPid(String pid) {
+        this.pid = pid;
         return this;
     }
-    public String getGroupId() {
-        return this.groupId;
+    public String getPid() {
+        return this.pid;
     }
 
 }

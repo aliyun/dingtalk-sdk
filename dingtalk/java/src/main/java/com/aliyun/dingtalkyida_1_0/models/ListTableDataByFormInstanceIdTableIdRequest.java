@@ -8,10 +8,6 @@ public class ListTableDataByFormInstanceIdTableIdRequest extends TeaModel {
     @NameInMap("formUuid")
     public String formUuid;
 
-    // 需要查找的子表单组件的唯一标识
-    @NameInMap("tableFieldId")
-    public String tableFieldId;
-
     // 当前页
     @NameInMap("pageNumber")
     public Integer pageNumber;
@@ -23,6 +19,10 @@ public class ListTableDataByFormInstanceIdTableIdRequest extends TeaModel {
     // 应用秘钥
     @NameInMap("systemToken")
     public String systemToken;
+
+    // 需要查找的子表单组件的唯一标识
+    @NameInMap("tableFieldId")
+    public String tableFieldId;
 
     // 钉钉的userId
     @NameInMap("userId")
@@ -39,14 +39,6 @@ public class ListTableDataByFormInstanceIdTableIdRequest extends TeaModel {
     }
     public String getFormUuid() {
         return this.formUuid;
-    }
-
-    public ListTableDataByFormInstanceIdTableIdRequest setTableFieldId(String tableFieldId) {
-        this.tableFieldId = tableFieldId;
-        return this;
-    }
-    public String getTableFieldId() {
-        return this.tableFieldId;
     }
 
     public ListTableDataByFormInstanceIdTableIdRequest setPageNumber(Integer pageNumber) {
@@ -71,6 +63,14 @@ public class ListTableDataByFormInstanceIdTableIdRequest extends TeaModel {
     }
     public String getSystemToken() {
         return this.systemToken;
+    }
+
+    public ListTableDataByFormInstanceIdTableIdRequest setTableFieldId(String tableFieldId) {
+        this.tableFieldId = tableFieldId;
+        return this;
+    }
+    public String getTableFieldId() {
+        return this.tableFieldId;
     }
 
     public ListTableDataByFormInstanceIdTableIdRequest setUserId(String userId) {

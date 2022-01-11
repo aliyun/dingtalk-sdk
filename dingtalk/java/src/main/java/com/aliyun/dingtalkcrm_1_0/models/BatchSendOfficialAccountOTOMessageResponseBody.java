@@ -4,25 +4,17 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchSendOfficialAccountOTOMessageResponseBody extends TeaModel {
-    // result
-    @NameInMap("result")
-    public BatchSendOfficialAccountOTOMessageResponseBodyResult result;
-
     // 开放API
     @NameInMap("requestId")
     public String requestId;
 
+    // result
+    @NameInMap("result")
+    public BatchSendOfficialAccountOTOMessageResponseBodyResult result;
+
     public static BatchSendOfficialAccountOTOMessageResponseBody build(java.util.Map<String, ?> map) throws Exception {
         BatchSendOfficialAccountOTOMessageResponseBody self = new BatchSendOfficialAccountOTOMessageResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public BatchSendOfficialAccountOTOMessageResponseBody setResult(BatchSendOfficialAccountOTOMessageResponseBodyResult result) {
-        this.result = result;
-        return this;
-    }
-    public BatchSendOfficialAccountOTOMessageResponseBodyResult getResult() {
-        return this.result;
     }
 
     public BatchSendOfficialAccountOTOMessageResponseBody setRequestId(String requestId) {
@@ -31,6 +23,14 @@ public class BatchSendOfficialAccountOTOMessageResponseBody extends TeaModel {
     }
     public String getRequestId() {
         return this.requestId;
+    }
+
+    public BatchSendOfficialAccountOTOMessageResponseBody setResult(BatchSendOfficialAccountOTOMessageResponseBodyResult result) {
+        this.result = result;
+        return this;
+    }
+    public BatchSendOfficialAccountOTOMessageResponseBodyResult getResult() {
+        return this.result;
     }
 
     public static class BatchSendOfficialAccountOTOMessageResponseBodyResult extends TeaModel {

@@ -8,17 +8,13 @@ public class GetCategoryResponseBody extends TeaModel {
     @NameInMap("code")
     public String code;
 
-    // 类型：income收入，expense支出
-    @NameInMap("type")
-    public String type;
+    // 是否为目录
+    @NameInMap("isDir")
+    public Boolean isDir;
 
     // 名称
     @NameInMap("name")
     public String name;
-
-    // 是否为目录
-    @NameInMap("isDir")
-    public Boolean isDir;
 
     // 父类别code
     @NameInMap("parentCode")
@@ -27,6 +23,10 @@ public class GetCategoryResponseBody extends TeaModel {
     // 状态:valid,invalid,deleted
     @NameInMap("status")
     public String status;
+
+    // 类型：income收入，expense支出
+    @NameInMap("type")
+    public String type;
 
     public static GetCategoryResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetCategoryResponseBody self = new GetCategoryResponseBody();
@@ -41,12 +41,12 @@ public class GetCategoryResponseBody extends TeaModel {
         return this.code;
     }
 
-    public GetCategoryResponseBody setType(String type) {
-        this.type = type;
+    public GetCategoryResponseBody setIsDir(Boolean isDir) {
+        this.isDir = isDir;
         return this;
     }
-    public String getType() {
-        return this.type;
+    public Boolean getIsDir() {
+        return this.isDir;
     }
 
     public GetCategoryResponseBody setName(String name) {
@@ -55,14 +55,6 @@ public class GetCategoryResponseBody extends TeaModel {
     }
     public String getName() {
         return this.name;
-    }
-
-    public GetCategoryResponseBody setIsDir(Boolean isDir) {
-        this.isDir = isDir;
-        return this;
-    }
-    public Boolean getIsDir() {
-        return this.isDir;
     }
 
     public GetCategoryResponseBody setParentCode(String parentCode) {
@@ -79,6 +71,14 @@ public class GetCategoryResponseBody extends TeaModel {
     }
     public String getStatus() {
         return this.status;
+    }
+
+    public GetCategoryResponseBody setType(String type) {
+        this.type = type;
+        return this;
+    }
+    public String getType() {
+        return this.type;
     }
 
 }

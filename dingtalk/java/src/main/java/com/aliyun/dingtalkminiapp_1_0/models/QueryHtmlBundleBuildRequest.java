@@ -4,13 +4,13 @@ package com.aliyun.dingtalkminiapp_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryHtmlBundleBuildRequest extends TeaModel {
-    // miniAppId
-    @NameInMap("miniAppId")
-    public String miniAppId;
-
     // bundleId
     @NameInMap("bundleId")
     public String bundleId;
+
+    // miniAppId
+    @NameInMap("miniAppId")
+    public String miniAppId;
 
     // version
     @NameInMap("version")
@@ -21,20 +21,20 @@ public class QueryHtmlBundleBuildRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public QueryHtmlBundleBuildRequest setMiniAppId(String miniAppId) {
-        this.miniAppId = miniAppId;
-        return this;
-    }
-    public String getMiniAppId() {
-        return this.miniAppId;
-    }
-
     public QueryHtmlBundleBuildRequest setBundleId(String bundleId) {
         this.bundleId = bundleId;
         return this;
     }
     public String getBundleId() {
         return this.bundleId;
+    }
+
+    public QueryHtmlBundleBuildRequest setMiniAppId(String miniAppId) {
+        this.miniAppId = miniAppId;
+        return this;
+    }
+    public String getMiniAppId() {
+        return this.miniAppId;
     }
 
     public QueryHtmlBundleBuildRequest setVersion(String version) {

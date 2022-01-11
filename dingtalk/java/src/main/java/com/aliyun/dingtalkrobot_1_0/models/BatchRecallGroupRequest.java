@@ -4,13 +4,13 @@ package com.aliyun.dingtalkrobot_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchRecallGroupRequest extends TeaModel {
-    // 开放的群id
-    @NameInMap("openConversationId")
-    public String openConversationId;
-
     // 机器人的robotCode
     @NameInMap("chatbotId")
     public String chatbotId;
+
+    // 开放的群id
+    @NameInMap("openConversationId")
+    public String openConversationId;
 
     // 消息id
     @NameInMap("processQueryKeys")
@@ -21,20 +21,20 @@ public class BatchRecallGroupRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public BatchRecallGroupRequest setOpenConversationId(String openConversationId) {
-        this.openConversationId = openConversationId;
-        return this;
-    }
-    public String getOpenConversationId() {
-        return this.openConversationId;
-    }
-
     public BatchRecallGroupRequest setChatbotId(String chatbotId) {
         this.chatbotId = chatbotId;
         return this;
     }
     public String getChatbotId() {
         return this.chatbotId;
+    }
+
+    public BatchRecallGroupRequest setOpenConversationId(String openConversationId) {
+        this.openConversationId = openConversationId;
+        return this;
+    }
+    public String getOpenConversationId() {
+        return this.openConversationId;
     }
 
     public BatchRecallGroupRequest setProcessQueryKeys(java.util.List<String> processQueryKeys) {

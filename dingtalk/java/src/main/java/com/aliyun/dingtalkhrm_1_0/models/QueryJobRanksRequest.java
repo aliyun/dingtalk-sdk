@@ -4,6 +4,14 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryJobRanksRequest extends TeaModel {
+    // 本次读取的最大数据记录数量
+    @NameInMap("maxResults")
+    public Integer maxResults;
+
+    // 标记当前开始读取的位置
+    @NameInMap("nextToken")
+    public Integer nextToken;
+
     // 职级序列
     @NameInMap("rankCategoryId")
     public String rankCategoryId;
@@ -16,17 +24,25 @@ public class QueryJobRanksRequest extends TeaModel {
     @NameInMap("rankName")
     public String rankName;
 
-    // 标记当前开始读取的位置
-    @NameInMap("nextToken")
-    public Integer nextToken;
-
-    // 本次读取的最大数据记录数量
-    @NameInMap("maxResults")
-    public Integer maxResults;
-
     public static QueryJobRanksRequest build(java.util.Map<String, ?> map) throws Exception {
         QueryJobRanksRequest self = new QueryJobRanksRequest();
         return TeaModel.build(map, self);
+    }
+
+    public QueryJobRanksRequest setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+        return this;
+    }
+    public Integer getMaxResults() {
+        return this.maxResults;
+    }
+
+    public QueryJobRanksRequest setNextToken(Integer nextToken) {
+        this.nextToken = nextToken;
+        return this;
+    }
+    public Integer getNextToken() {
+        return this.nextToken;
     }
 
     public QueryJobRanksRequest setRankCategoryId(String rankCategoryId) {
@@ -51,22 +67,6 @@ public class QueryJobRanksRequest extends TeaModel {
     }
     public String getRankName() {
         return this.rankName;
-    }
-
-    public QueryJobRanksRequest setNextToken(Integer nextToken) {
-        this.nextToken = nextToken;
-        return this;
-    }
-    public Integer getNextToken() {
-        return this.nextToken;
-    }
-
-    public QueryJobRanksRequest setMaxResults(Integer maxResults) {
-        this.maxResults = maxResults;
-        return this;
-    }
-    public Integer getMaxResults() {
-        return this.maxResults;
     }
 
 }

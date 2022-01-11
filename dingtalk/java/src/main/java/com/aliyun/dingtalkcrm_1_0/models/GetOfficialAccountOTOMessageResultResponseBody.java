@@ -34,25 +34,17 @@ public class GetOfficialAccountOTOMessageResultResponseBody extends TeaModel {
     }
 
     public static class GetOfficialAccountOTOMessageResultResponseBodyResult extends TeaModel {
-        // 执行状态： 0：未开始  1：处理中  2：处理完毕
-        @NameInMap("status")
-        public Long status;
-
         // 已读消息的userid列表
         @NameInMap("readUserIdList")
         public java.util.List<String> readUserIdList;
 
+        // 执行状态： 0：未开始  1：处理中  2：处理完毕
+        @NameInMap("status")
+        public Long status;
+
         public static GetOfficialAccountOTOMessageResultResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             GetOfficialAccountOTOMessageResultResponseBodyResult self = new GetOfficialAccountOTOMessageResultResponseBodyResult();
             return TeaModel.build(map, self);
-        }
-
-        public GetOfficialAccountOTOMessageResultResponseBodyResult setStatus(Long status) {
-            this.status = status;
-            return this;
-        }
-        public Long getStatus() {
-            return this.status;
         }
 
         public GetOfficialAccountOTOMessageResultResponseBodyResult setReadUserIdList(java.util.List<String> readUserIdList) {
@@ -61,6 +53,14 @@ public class GetOfficialAccountOTOMessageResultResponseBody extends TeaModel {
         }
         public java.util.List<String> getReadUserIdList() {
             return this.readUserIdList;
+        }
+
+        public GetOfficialAccountOTOMessageResultResponseBodyResult setStatus(Long status) {
+            this.status = status;
+            return this;
+        }
+        public Long getStatus() {
+            return this.status;
         }
 
     }

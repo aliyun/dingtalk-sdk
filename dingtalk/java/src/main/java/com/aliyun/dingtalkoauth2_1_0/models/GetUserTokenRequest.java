@@ -16,13 +16,13 @@ public class GetUserTokenRequest extends TeaModel {
     @NameInMap("code")
     public String code;
 
-    // OAuth 2.0 刷新令牌
-    @NameInMap("refreshToken")
-    public String refreshToken;
-
     // 分为authorization_code和refresh_token。使用授权码换token，传authorization_code；使用刷新token换用户token，传refresh_token
     @NameInMap("grantType")
     public String grantType;
+
+    // OAuth 2.0 刷新令牌
+    @NameInMap("refreshToken")
+    public String refreshToken;
 
     public static GetUserTokenRequest build(java.util.Map<String, ?> map) throws Exception {
         GetUserTokenRequest self = new GetUserTokenRequest();
@@ -53,20 +53,20 @@ public class GetUserTokenRequest extends TeaModel {
         return this.code;
     }
 
-    public GetUserTokenRequest setRefreshToken(String refreshToken) {
-        this.refreshToken = refreshToken;
-        return this;
-    }
-    public String getRefreshToken() {
-        return this.refreshToken;
-    }
-
     public GetUserTokenRequest setGrantType(String grantType) {
         this.grantType = grantType;
         return this;
     }
     public String getGrantType() {
         return this.grantType;
+    }
+
+    public GetUserTokenRequest setRefreshToken(String refreshToken) {
+        this.refreshToken = refreshToken;
+        return this;
+    }
+    public String getRefreshToken() {
+        return this.refreshToken;
     }
 
 }

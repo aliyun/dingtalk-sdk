@@ -4,9 +4,13 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryStatisticsDataRequest extends TeaModel {
-    // startTime
-    @NameInMap("startTime")
-    public Long startTime;
+    // 课程节次列表
+    @NameInMap("sectionIndexList")
+    public java.util.List<Long> sectionIndexList;
+
+    // 老师UserIds
+    @NameInMap("teacherUserIds")
+    public java.util.List<String> teacherUserIds;
 
     // endTime
     @NameInMap("endTime")
@@ -16,25 +20,29 @@ public class QueryStatisticsDataRequest extends TeaModel {
     @NameInMap("opUserId")
     public String opUserId;
 
-    // 课程节次列表
-    @NameInMap("sectionIndexList")
-    public java.util.List<Long> sectionIndexList;
-
-    // 老师UserIds
-    @NameInMap("teacherUserIds")
-    public java.util.List<String> teacherUserIds;
+    // startTime
+    @NameInMap("startTime")
+    public Long startTime;
 
     public static QueryStatisticsDataRequest build(java.util.Map<String, ?> map) throws Exception {
         QueryStatisticsDataRequest self = new QueryStatisticsDataRequest();
         return TeaModel.build(map, self);
     }
 
-    public QueryStatisticsDataRequest setStartTime(Long startTime) {
-        this.startTime = startTime;
+    public QueryStatisticsDataRequest setSectionIndexList(java.util.List<Long> sectionIndexList) {
+        this.sectionIndexList = sectionIndexList;
         return this;
     }
-    public Long getStartTime() {
-        return this.startTime;
+    public java.util.List<Long> getSectionIndexList() {
+        return this.sectionIndexList;
+    }
+
+    public QueryStatisticsDataRequest setTeacherUserIds(java.util.List<String> teacherUserIds) {
+        this.teacherUserIds = teacherUserIds;
+        return this;
+    }
+    public java.util.List<String> getTeacherUserIds() {
+        return this.teacherUserIds;
     }
 
     public QueryStatisticsDataRequest setEndTime(Long endTime) {
@@ -53,20 +61,12 @@ public class QueryStatisticsDataRequest extends TeaModel {
         return this.opUserId;
     }
 
-    public QueryStatisticsDataRequest setSectionIndexList(java.util.List<Long> sectionIndexList) {
-        this.sectionIndexList = sectionIndexList;
+    public QueryStatisticsDataRequest setStartTime(Long startTime) {
+        this.startTime = startTime;
         return this;
     }
-    public java.util.List<Long> getSectionIndexList() {
-        return this.sectionIndexList;
-    }
-
-    public QueryStatisticsDataRequest setTeacherUserIds(java.util.List<String> teacherUserIds) {
-        this.teacherUserIds = teacherUserIds;
-        return this;
-    }
-    public java.util.List<String> getTeacherUserIds() {
-        return this.teacherUserIds;
+    public Long getStartTime() {
+        return this.startTime;
     }
 
 }

@@ -8,10 +8,6 @@ public class QueryAppActiveUsersResponseBody extends TeaModel {
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    // 总数
-    @NameInMap("totalCount")
-    public Long totalCount;
-
     // 数据集合
     @NameInMap("list")
     public java.util.List<QueryAppActiveUsersResponseBodyList> list;
@@ -19,6 +15,10 @@ public class QueryAppActiveUsersResponseBody extends TeaModel {
     // 下一次获取开始位置
     @NameInMap("nextToken")
     public Long nextToken;
+
+    // 总数
+    @NameInMap("totalCount")
+    public Long totalCount;
 
     public static QueryAppActiveUsersResponseBody build(java.util.Map<String, ?> map) throws Exception {
         QueryAppActiveUsersResponseBody self = new QueryAppActiveUsersResponseBody();
@@ -31,14 +31,6 @@ public class QueryAppActiveUsersResponseBody extends TeaModel {
     }
     public Boolean getHasMore() {
         return this.hasMore;
-    }
-
-    public QueryAppActiveUsersResponseBody setTotalCount(Long totalCount) {
-        this.totalCount = totalCount;
-        return this;
-    }
-    public Long getTotalCount() {
-        return this.totalCount;
     }
 
     public QueryAppActiveUsersResponseBody setList(java.util.List<QueryAppActiveUsersResponseBodyList> list) {
@@ -57,26 +49,34 @@ public class QueryAppActiveUsersResponseBody extends TeaModel {
         return this.nextToken;
     }
 
-    public static class QueryAppActiveUsersResponseBodyList extends TeaModel {
-        // 轨迹采集开启时间
-        @NameInMap("startTime")
-        public Long startTime;
+    public QueryAppActiveUsersResponseBody setTotalCount(Long totalCount) {
+        this.totalCount = totalCount;
+        return this;
+    }
+    public Long getTotalCount() {
+        return this.totalCount;
+    }
 
+    public static class QueryAppActiveUsersResponseBodyList extends TeaModel {
         // 应用轨迹ID
         @NameInMap("appTraceId")
         public String appTraceId;
-
-        // 经度
-        @NameInMap("longitude")
-        public Float longitude;
 
         // 纬度
         @NameInMap("latitude")
         public Float latitude;
 
+        // 经度
+        @NameInMap("longitude")
+        public Float longitude;
+
         // 该位置采集时间
         @NameInMap("reportTime")
         public Long reportTime;
+
+        // 轨迹采集开启时间
+        @NameInMap("startTime")
+        public Long startTime;
 
         // 员工Id
         @NameInMap("userId")
@@ -87,28 +87,12 @@ public class QueryAppActiveUsersResponseBody extends TeaModel {
             return TeaModel.build(map, self);
         }
 
-        public QueryAppActiveUsersResponseBodyList setStartTime(Long startTime) {
-            this.startTime = startTime;
-            return this;
-        }
-        public Long getStartTime() {
-            return this.startTime;
-        }
-
         public QueryAppActiveUsersResponseBodyList setAppTraceId(String appTraceId) {
             this.appTraceId = appTraceId;
             return this;
         }
         public String getAppTraceId() {
             return this.appTraceId;
-        }
-
-        public QueryAppActiveUsersResponseBodyList setLongitude(Float longitude) {
-            this.longitude = longitude;
-            return this;
-        }
-        public Float getLongitude() {
-            return this.longitude;
         }
 
         public QueryAppActiveUsersResponseBodyList setLatitude(Float latitude) {
@@ -119,12 +103,28 @@ public class QueryAppActiveUsersResponseBody extends TeaModel {
             return this.latitude;
         }
 
+        public QueryAppActiveUsersResponseBodyList setLongitude(Float longitude) {
+            this.longitude = longitude;
+            return this;
+        }
+        public Float getLongitude() {
+            return this.longitude;
+        }
+
         public QueryAppActiveUsersResponseBodyList setReportTime(Long reportTime) {
             this.reportTime = reportTime;
             return this;
         }
         public Long getReportTime() {
             return this.reportTime;
+        }
+
+        public QueryAppActiveUsersResponseBodyList setStartTime(Long startTime) {
+            this.startTime = startTime;
+            return this;
+        }
+        public Long getStartTime() {
+            return this.startTime;
         }
 
         public QueryAppActiveUsersResponseBodyList setUserId(String userId) {

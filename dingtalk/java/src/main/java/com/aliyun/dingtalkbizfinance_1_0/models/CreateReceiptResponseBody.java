@@ -26,10 +26,6 @@ public class CreateReceiptResponseBody extends TeaModel {
         @NameInMap("code")
         public String code;
 
-        // 是否成功
-        @NameInMap("success")
-        public Boolean success;
-
         // 错误码
         @NameInMap("errorCode")
         public String errorCode;
@@ -37,6 +33,10 @@ public class CreateReceiptResponseBody extends TeaModel {
         // 错误信息
         @NameInMap("errorMsg")
         public String errorMsg;
+
+        // 是否成功
+        @NameInMap("success")
+        public Boolean success;
 
         public static CreateReceiptResponseBodyResults build(java.util.Map<String, ?> map) throws Exception {
             CreateReceiptResponseBodyResults self = new CreateReceiptResponseBodyResults();
@@ -49,14 +49,6 @@ public class CreateReceiptResponseBody extends TeaModel {
         }
         public String getCode() {
             return this.code;
-        }
-
-        public CreateReceiptResponseBodyResults setSuccess(Boolean success) {
-            this.success = success;
-            return this;
-        }
-        public Boolean getSuccess() {
-            return this.success;
         }
 
         public CreateReceiptResponseBodyResults setErrorCode(String errorCode) {
@@ -73,6 +65,14 @@ public class CreateReceiptResponseBody extends TeaModel {
         }
         public String getErrorMsg() {
             return this.errorMsg;
+        }
+
+        public CreateReceiptResponseBodyResults setSuccess(Boolean success) {
+            this.success = success;
+            return this;
+        }
+        public Boolean getSuccess() {
+            return this.success;
         }
 
     }

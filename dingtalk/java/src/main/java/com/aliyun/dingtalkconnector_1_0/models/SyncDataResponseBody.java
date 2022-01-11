@@ -22,14 +22,8 @@ public class SyncDataResponseBody extends TeaModel {
     }
 
     public static class SyncDataResponseBodyList extends TeaModel {
-        @NameInMap("triggerId")
-        public String triggerId;
-
         @NameInMap("bizPrimaryKey")
         public String bizPrimaryKey;
-
-        @NameInMap("success")
-        public Boolean success;
 
         @NameInMap("subErrCode")
         public String subErrCode;
@@ -37,17 +31,15 @@ public class SyncDataResponseBody extends TeaModel {
         @NameInMap("subErrMsg")
         public String subErrMsg;
 
+        @NameInMap("success")
+        public Boolean success;
+
+        @NameInMap("triggerId")
+        public String triggerId;
+
         public static SyncDataResponseBodyList build(java.util.Map<String, ?> map) throws Exception {
             SyncDataResponseBodyList self = new SyncDataResponseBodyList();
             return TeaModel.build(map, self);
-        }
-
-        public SyncDataResponseBodyList setTriggerId(String triggerId) {
-            this.triggerId = triggerId;
-            return this;
-        }
-        public String getTriggerId() {
-            return this.triggerId;
         }
 
         public SyncDataResponseBodyList setBizPrimaryKey(String bizPrimaryKey) {
@@ -56,14 +48,6 @@ public class SyncDataResponseBody extends TeaModel {
         }
         public String getBizPrimaryKey() {
             return this.bizPrimaryKey;
-        }
-
-        public SyncDataResponseBodyList setSuccess(Boolean success) {
-            this.success = success;
-            return this;
-        }
-        public Boolean getSuccess() {
-            return this.success;
         }
 
         public SyncDataResponseBodyList setSubErrCode(String subErrCode) {
@@ -80,6 +64,22 @@ public class SyncDataResponseBody extends TeaModel {
         }
         public String getSubErrMsg() {
             return this.subErrMsg;
+        }
+
+        public SyncDataResponseBodyList setSuccess(Boolean success) {
+            this.success = success;
+            return this;
+        }
+        public Boolean getSuccess() {
+            return this.success;
+        }
+
+        public SyncDataResponseBodyList setTriggerId(String triggerId) {
+            this.triggerId = triggerId;
+            return this;
+        }
+        public String getTriggerId() {
+            return this.triggerId;
         }
 
     }

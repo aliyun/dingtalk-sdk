@@ -4,10 +4,6 @@ package com.aliyun.dingtalkvillage_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetDeptResponseBody extends TeaModel {
-    // 在父部门中的次序值
-    @NameInMap("order")
-    public Long order;
-
     // 下属组织的部门ID
     @NameInMap("departmentId")
     public Long departmentId;
@@ -16,25 +12,21 @@ public class GetDeptResponseBody extends TeaModel {
     @NameInMap("departmentName")
     public String departmentName;
 
-    // 父部门id
-    @NameInMap("parentDepartmentId")
-    public Long parentDepartmentId;
-
     // 部门是否来自关联组织
     @NameInMap("fromUnionOrg")
     public Boolean fromUnionOrg;
 
+    // 在父部门中的次序值
+    @NameInMap("order")
+    public Long order;
+
+    // 父部门id
+    @NameInMap("parentDepartmentId")
+    public Long parentDepartmentId;
+
     public static GetDeptResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetDeptResponseBody self = new GetDeptResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public GetDeptResponseBody setOrder(Long order) {
-        this.order = order;
-        return this;
-    }
-    public Long getOrder() {
-        return this.order;
     }
 
     public GetDeptResponseBody setDepartmentId(Long departmentId) {
@@ -53,20 +45,28 @@ public class GetDeptResponseBody extends TeaModel {
         return this.departmentName;
     }
 
-    public GetDeptResponseBody setParentDepartmentId(Long parentDepartmentId) {
-        this.parentDepartmentId = parentDepartmentId;
-        return this;
-    }
-    public Long getParentDepartmentId() {
-        return this.parentDepartmentId;
-    }
-
     public GetDeptResponseBody setFromUnionOrg(Boolean fromUnionOrg) {
         this.fromUnionOrg = fromUnionOrg;
         return this;
     }
     public Boolean getFromUnionOrg() {
         return this.fromUnionOrg;
+    }
+
+    public GetDeptResponseBody setOrder(Long order) {
+        this.order = order;
+        return this;
+    }
+    public Long getOrder() {
+        return this.order;
+    }
+
+    public GetDeptResponseBody setParentDepartmentId(Long parentDepartmentId) {
+        this.parentDepartmentId = parentDepartmentId;
+        return this;
+    }
+    public Long getParentDepartmentId() {
+        return this.parentDepartmentId;
     }
 
 }

@@ -4,61 +4,53 @@ package com.aliyun.dingtalkalitrip_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetHotelExceedApplyResponseBody extends TeaModel {
-    // 第三方企业id
-    @NameInMap("corpId")
-    public String corpId;
-
     // 商旅超标审批单id
     @NameInMap("applyId")
     public Long applyId;
-
-    // 审批单状态 0:审批中 1:已同意 2:已拒绝
-    @NameInMap("status")
-    public Integer status;
-
-    // 出差原因
-    @NameInMap("btripCause")
-    public String btripCause;
-
-    // 超标类型，32：金额超标
-    @NameInMap("exceedType")
-    public Integer exceedType;
-
-    // 超标原因
-    @NameInMap("exceedReason")
-    public String exceedReason;
-
-    // 原差旅标准
-    @NameInMap("originStandard")
-    public String originStandard;
-
-    // 审批单提交时间
-    @NameInMap("submitTime")
-    public String submitTime;
-
-    // 第三方用户id
-    @NameInMap("userId")
-    public String userId;
 
     // 意向出行信息
     @NameInMap("applyIntentionInfoDO")
     public GetHotelExceedApplyResponseBodyApplyIntentionInfoDO applyIntentionInfoDO;
 
+    // 出差原因
+    @NameInMap("btripCause")
+    public String btripCause;
+
+    // 第三方企业id
+    @NameInMap("corpId")
+    public String corpId;
+
+    // 超标原因
+    @NameInMap("exceedReason")
+    public String exceedReason;
+
+    // 超标类型，32：金额超标
+    @NameInMap("exceedType")
+    public Integer exceedType;
+
+    // 原差旅标准
+    @NameInMap("originStandard")
+    public String originStandard;
+
+    // 审批单状态 0:审批中 1:已同意 2:已拒绝
+    @NameInMap("status")
+    public Integer status;
+
+    // 审批单提交时间
+    @NameInMap("submitTime")
+    public String submitTime;
+
     // 第三方出差审批单号
     @NameInMap("thirdpartApplyId")
     public String thirdpartApplyId;
 
+    // 第三方用户id
+    @NameInMap("userId")
+    public String userId;
+
     public static GetHotelExceedApplyResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetHotelExceedApplyResponseBody self = new GetHotelExceedApplyResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public GetHotelExceedApplyResponseBody setCorpId(String corpId) {
-        this.corpId = corpId;
-        return this;
-    }
-    public String getCorpId() {
-        return this.corpId;
     }
 
     public GetHotelExceedApplyResponseBody setApplyId(Long applyId) {
@@ -69,12 +61,12 @@ public class GetHotelExceedApplyResponseBody extends TeaModel {
         return this.applyId;
     }
 
-    public GetHotelExceedApplyResponseBody setStatus(Integer status) {
-        this.status = status;
+    public GetHotelExceedApplyResponseBody setApplyIntentionInfoDO(GetHotelExceedApplyResponseBodyApplyIntentionInfoDO applyIntentionInfoDO) {
+        this.applyIntentionInfoDO = applyIntentionInfoDO;
         return this;
     }
-    public Integer getStatus() {
-        return this.status;
+    public GetHotelExceedApplyResponseBodyApplyIntentionInfoDO getApplyIntentionInfoDO() {
+        return this.applyIntentionInfoDO;
     }
 
     public GetHotelExceedApplyResponseBody setBtripCause(String btripCause) {
@@ -85,12 +77,12 @@ public class GetHotelExceedApplyResponseBody extends TeaModel {
         return this.btripCause;
     }
 
-    public GetHotelExceedApplyResponseBody setExceedType(Integer exceedType) {
-        this.exceedType = exceedType;
+    public GetHotelExceedApplyResponseBody setCorpId(String corpId) {
+        this.corpId = corpId;
         return this;
     }
-    public Integer getExceedType() {
-        return this.exceedType;
+    public String getCorpId() {
+        return this.corpId;
     }
 
     public GetHotelExceedApplyResponseBody setExceedReason(String exceedReason) {
@@ -101,12 +93,28 @@ public class GetHotelExceedApplyResponseBody extends TeaModel {
         return this.exceedReason;
     }
 
+    public GetHotelExceedApplyResponseBody setExceedType(Integer exceedType) {
+        this.exceedType = exceedType;
+        return this;
+    }
+    public Integer getExceedType() {
+        return this.exceedType;
+    }
+
     public GetHotelExceedApplyResponseBody setOriginStandard(String originStandard) {
         this.originStandard = originStandard;
         return this;
     }
     public String getOriginStandard() {
         return this.originStandard;
+    }
+
+    public GetHotelExceedApplyResponseBody setStatus(Integer status) {
+        this.status = status;
+        return this;
+    }
+    public Integer getStatus() {
+        return this.status;
     }
 
     public GetHotelExceedApplyResponseBody setSubmitTime(String submitTime) {
@@ -117,28 +125,20 @@ public class GetHotelExceedApplyResponseBody extends TeaModel {
         return this.submitTime;
     }
 
-    public GetHotelExceedApplyResponseBody setUserId(String userId) {
-        this.userId = userId;
-        return this;
-    }
-    public String getUserId() {
-        return this.userId;
-    }
-
-    public GetHotelExceedApplyResponseBody setApplyIntentionInfoDO(GetHotelExceedApplyResponseBodyApplyIntentionInfoDO applyIntentionInfoDO) {
-        this.applyIntentionInfoDO = applyIntentionInfoDO;
-        return this;
-    }
-    public GetHotelExceedApplyResponseBodyApplyIntentionInfoDO getApplyIntentionInfoDO() {
-        return this.applyIntentionInfoDO;
-    }
-
     public GetHotelExceedApplyResponseBody setThirdpartApplyId(String thirdpartApplyId) {
         this.thirdpartApplyId = thirdpartApplyId;
         return this;
     }
     public String getThirdpartApplyId() {
         return this.thirdpartApplyId;
+    }
+
+    public GetHotelExceedApplyResponseBody setUserId(String userId) {
+        this.userId = userId;
+        return this;
+    }
+    public String getUserId() {
+        return this.userId;
     }
 
     public static class GetHotelExceedApplyResponseBodyApplyIntentionInfoDO extends TeaModel {

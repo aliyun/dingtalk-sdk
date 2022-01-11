@@ -30,6 +30,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public CreateFlashMeetingResponse createFlashMeetingWithOptions(CreateFlashMeetingRequest request, CreateFlashMeetingHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.creator)) {
+            body.put("creator", request.creator);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.eventId)) {
             body.put("eventId", request.eventId);
         }
@@ -38,17 +42,13 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("title", request.title);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.creator)) {
-            body.put("creator", request.creator);
-        }
-
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
         }
 
         if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
-            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
         OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(

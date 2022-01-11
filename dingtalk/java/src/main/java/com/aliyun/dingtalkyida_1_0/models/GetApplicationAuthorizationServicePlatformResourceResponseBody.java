@@ -4,9 +4,25 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetApplicationAuthorizationServicePlatformResourceResponseBody extends TeaModel {
+    // accountTotalAmount
+    @NameInMap("accountTotalAmount")
+    public Integer accountTotalAmount;
+
+    // accountUsageAmount
+    @NameInMap("accountUsageAmount")
+    public Integer accountUsageAmount;
+
     // appTotalAmount
     @NameInMap("appTotalAmount")
     public Integer appTotalAmount;
+
+    // attachmentTotalAmount
+    @NameInMap("attachmentTotalAmount")
+    public Long attachmentTotalAmount;
+
+    // attachmentUsageAmount
+    @NameInMap("attachmentUsageAmount")
+    public Long attachmentUsageAmount;
 
     // instanceId
     @NameInMap("instanceId")
@@ -20,29 +36,29 @@ public class GetApplicationAuthorizationServicePlatformResourceResponseBody exte
     @NameInMap("instanceUsageAmount")
     public Long instanceUsageAmount;
 
-    // accountUsageAmount
-    @NameInMap("accountUsageAmount")
-    public Integer accountUsageAmount;
-
-    // accountTotalAmount
-    @NameInMap("accountTotalAmount")
-    public Integer accountTotalAmount;
-
     // pluginUsageAmount
     @NameInMap("pluginUsageAmount")
     public Long pluginUsageAmount;
 
-    // attachmentTotalAmount
-    @NameInMap("attachmentTotalAmount")
-    public Long attachmentTotalAmount;
-
-    // attachmentUsageAmount
-    @NameInMap("attachmentUsageAmount")
-    public Long attachmentUsageAmount;
-
     public static GetApplicationAuthorizationServicePlatformResourceResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetApplicationAuthorizationServicePlatformResourceResponseBody self = new GetApplicationAuthorizationServicePlatformResourceResponseBody();
         return TeaModel.build(map, self);
+    }
+
+    public GetApplicationAuthorizationServicePlatformResourceResponseBody setAccountTotalAmount(Integer accountTotalAmount) {
+        this.accountTotalAmount = accountTotalAmount;
+        return this;
+    }
+    public Integer getAccountTotalAmount() {
+        return this.accountTotalAmount;
+    }
+
+    public GetApplicationAuthorizationServicePlatformResourceResponseBody setAccountUsageAmount(Integer accountUsageAmount) {
+        this.accountUsageAmount = accountUsageAmount;
+        return this;
+    }
+    public Integer getAccountUsageAmount() {
+        return this.accountUsageAmount;
     }
 
     public GetApplicationAuthorizationServicePlatformResourceResponseBody setAppTotalAmount(Integer appTotalAmount) {
@@ -51,6 +67,22 @@ public class GetApplicationAuthorizationServicePlatformResourceResponseBody exte
     }
     public Integer getAppTotalAmount() {
         return this.appTotalAmount;
+    }
+
+    public GetApplicationAuthorizationServicePlatformResourceResponseBody setAttachmentTotalAmount(Long attachmentTotalAmount) {
+        this.attachmentTotalAmount = attachmentTotalAmount;
+        return this;
+    }
+    public Long getAttachmentTotalAmount() {
+        return this.attachmentTotalAmount;
+    }
+
+    public GetApplicationAuthorizationServicePlatformResourceResponseBody setAttachmentUsageAmount(Long attachmentUsageAmount) {
+        this.attachmentUsageAmount = attachmentUsageAmount;
+        return this;
+    }
+    public Long getAttachmentUsageAmount() {
+        return this.attachmentUsageAmount;
     }
 
     public GetApplicationAuthorizationServicePlatformResourceResponseBody setInstanceId(String instanceId) {
@@ -77,44 +109,12 @@ public class GetApplicationAuthorizationServicePlatformResourceResponseBody exte
         return this.instanceUsageAmount;
     }
 
-    public GetApplicationAuthorizationServicePlatformResourceResponseBody setAccountUsageAmount(Integer accountUsageAmount) {
-        this.accountUsageAmount = accountUsageAmount;
-        return this;
-    }
-    public Integer getAccountUsageAmount() {
-        return this.accountUsageAmount;
-    }
-
-    public GetApplicationAuthorizationServicePlatformResourceResponseBody setAccountTotalAmount(Integer accountTotalAmount) {
-        this.accountTotalAmount = accountTotalAmount;
-        return this;
-    }
-    public Integer getAccountTotalAmount() {
-        return this.accountTotalAmount;
-    }
-
     public GetApplicationAuthorizationServicePlatformResourceResponseBody setPluginUsageAmount(Long pluginUsageAmount) {
         this.pluginUsageAmount = pluginUsageAmount;
         return this;
     }
     public Long getPluginUsageAmount() {
         return this.pluginUsageAmount;
-    }
-
-    public GetApplicationAuthorizationServicePlatformResourceResponseBody setAttachmentTotalAmount(Long attachmentTotalAmount) {
-        this.attachmentTotalAmount = attachmentTotalAmount;
-        return this;
-    }
-    public Long getAttachmentTotalAmount() {
-        return this.attachmentTotalAmount;
-    }
-
-    public GetApplicationAuthorizationServicePlatformResourceResponseBody setAttachmentUsageAmount(Long attachmentUsageAmount) {
-        this.attachmentUsageAmount = attachmentUsageAmount;
-        return this;
-    }
-    public Long getAttachmentUsageAmount() {
-        return this.attachmentUsageAmount;
     }
 
 }

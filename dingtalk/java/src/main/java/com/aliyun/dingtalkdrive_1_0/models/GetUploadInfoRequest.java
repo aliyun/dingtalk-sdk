@@ -4,9 +4,13 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetUploadInfoRequest extends TeaModel {
-    // 用户id
-    @NameInMap("unionId")
-    public String unionId;
+    // 文件名称冲突策略
+    @NameInMap("addConflictPolicy")
+    public String addConflictPolicy;
+
+    // 调用方所处区域
+    @NameInMap("callerRegion")
+    public String callerRegion;
 
     // 文件名
     @NameInMap("fileName")
@@ -20,37 +24,41 @@ public class GetUploadInfoRequest extends TeaModel {
     @NameInMap("md5")
     public String md5;
 
-    // 文件名称冲突策略
-    @NameInMap("addConflictPolicy")
-    public String addConflictPolicy;
-
     // mediaId
     @NameInMap("mediaId")
     public String mediaId;
 
-    // 是否返回区域
-    @NameInMap("withRegion")
-    public Boolean withRegion;
+    // 用户id
+    @NameInMap("unionId")
+    public String unionId;
 
     // 是否返回OSS内网访问域名
     @NameInMap("withInternalEndPoint")
     public Boolean withInternalEndPoint;
 
-    // 调用方所处区域
-    @NameInMap("callerRegion")
-    public String callerRegion;
+    // 是否返回区域
+    @NameInMap("withRegion")
+    public Boolean withRegion;
 
     public static GetUploadInfoRequest build(java.util.Map<String, ?> map) throws Exception {
         GetUploadInfoRequest self = new GetUploadInfoRequest();
         return TeaModel.build(map, self);
     }
 
-    public GetUploadInfoRequest setUnionId(String unionId) {
-        this.unionId = unionId;
+    public GetUploadInfoRequest setAddConflictPolicy(String addConflictPolicy) {
+        this.addConflictPolicy = addConflictPolicy;
         return this;
     }
-    public String getUnionId() {
-        return this.unionId;
+    public String getAddConflictPolicy() {
+        return this.addConflictPolicy;
+    }
+
+    public GetUploadInfoRequest setCallerRegion(String callerRegion) {
+        this.callerRegion = callerRegion;
+        return this;
+    }
+    public String getCallerRegion() {
+        return this.callerRegion;
     }
 
     public GetUploadInfoRequest setFileName(String fileName) {
@@ -77,14 +85,6 @@ public class GetUploadInfoRequest extends TeaModel {
         return this.md5;
     }
 
-    public GetUploadInfoRequest setAddConflictPolicy(String addConflictPolicy) {
-        this.addConflictPolicy = addConflictPolicy;
-        return this;
-    }
-    public String getAddConflictPolicy() {
-        return this.addConflictPolicy;
-    }
-
     public GetUploadInfoRequest setMediaId(String mediaId) {
         this.mediaId = mediaId;
         return this;
@@ -93,12 +93,12 @@ public class GetUploadInfoRequest extends TeaModel {
         return this.mediaId;
     }
 
-    public GetUploadInfoRequest setWithRegion(Boolean withRegion) {
-        this.withRegion = withRegion;
+    public GetUploadInfoRequest setUnionId(String unionId) {
+        this.unionId = unionId;
         return this;
     }
-    public Boolean getWithRegion() {
-        return this.withRegion;
+    public String getUnionId() {
+        return this.unionId;
     }
 
     public GetUploadInfoRequest setWithInternalEndPoint(Boolean withInternalEndPoint) {
@@ -109,12 +109,12 @@ public class GetUploadInfoRequest extends TeaModel {
         return this.withInternalEndPoint;
     }
 
-    public GetUploadInfoRequest setCallerRegion(String callerRegion) {
-        this.callerRegion = callerRegion;
+    public GetUploadInfoRequest setWithRegion(Boolean withRegion) {
+        this.withRegion = withRegion;
         return this;
     }
-    public String getCallerRegion() {
-        return this.callerRegion;
+    public Boolean getWithRegion() {
+        return this.withRegion;
     }
 
 }

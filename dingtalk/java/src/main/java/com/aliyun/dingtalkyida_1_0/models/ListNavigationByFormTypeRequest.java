@@ -8,6 +8,14 @@ public class ListNavigationByFormTypeRequest extends TeaModel {
     @NameInMap("appType")
     public String appType;
 
+    // 页面类型
+    @NameInMap("formType")
+    public String formType;
+
+    // 语言
+    @NameInMap("language")
+    public String language;
+
     // 应用秘钥
     @NameInMap("systemToken")
     public String systemToken;
@@ -15,14 +23,6 @@ public class ListNavigationByFormTypeRequest extends TeaModel {
     // 评论人钉钉的userId
     @NameInMap("userId")
     public String userId;
-
-    // 语言
-    @NameInMap("language")
-    public String language;
-
-    // 页面类型
-    @NameInMap("formType")
-    public String formType;
 
     public static ListNavigationByFormTypeRequest build(java.util.Map<String, ?> map) throws Exception {
         ListNavigationByFormTypeRequest self = new ListNavigationByFormTypeRequest();
@@ -35,6 +35,22 @@ public class ListNavigationByFormTypeRequest extends TeaModel {
     }
     public String getAppType() {
         return this.appType;
+    }
+
+    public ListNavigationByFormTypeRequest setFormType(String formType) {
+        this.formType = formType;
+        return this;
+    }
+    public String getFormType() {
+        return this.formType;
+    }
+
+    public ListNavigationByFormTypeRequest setLanguage(String language) {
+        this.language = language;
+        return this;
+    }
+    public String getLanguage() {
+        return this.language;
     }
 
     public ListNavigationByFormTypeRequest setSystemToken(String systemToken) {
@@ -51,22 +67,6 @@ public class ListNavigationByFormTypeRequest extends TeaModel {
     }
     public String getUserId() {
         return this.userId;
-    }
-
-    public ListNavigationByFormTypeRequest setLanguage(String language) {
-        this.language = language;
-        return this;
-    }
-    public String getLanguage() {
-        return this.language;
-    }
-
-    public ListNavigationByFormTypeRequest setFormType(String formType) {
-        this.formType = formType;
-        return this;
-    }
-    public String getFormType() {
-        return this.formType;
     }
 
 }

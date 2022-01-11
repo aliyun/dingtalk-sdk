@@ -8,13 +8,13 @@ public class BatchInsertBizObjectResponseBody extends TeaModel {
     @NameInMap("code")
     public String code;
 
-    // 提示信息
-    @NameInMap("message")
-    public String message;
-
     // 返回结果
     @NameInMap("data")
     public BatchInsertBizObjectResponseBodyData data;
+
+    // 提示信息
+    @NameInMap("message")
+    public String message;
 
     public static BatchInsertBizObjectResponseBody build(java.util.Map<String, ?> map) throws Exception {
         BatchInsertBizObjectResponseBody self = new BatchInsertBizObjectResponseBody();
@@ -29,14 +29,6 @@ public class BatchInsertBizObjectResponseBody extends TeaModel {
         return this.code;
     }
 
-    public BatchInsertBizObjectResponseBody setMessage(String message) {
-        this.message = message;
-        return this;
-    }
-    public String getMessage() {
-        return this.message;
-    }
-
     public BatchInsertBizObjectResponseBody setData(BatchInsertBizObjectResponseBodyData data) {
         this.data = data;
         return this;
@@ -45,14 +37,18 @@ public class BatchInsertBizObjectResponseBody extends TeaModel {
         return this.data;
     }
 
+    public BatchInsertBizObjectResponseBody setMessage(String message) {
+        this.message = message;
+        return this;
+    }
+    public String getMessage() {
+        return this.message;
+    }
+
     public static class BatchInsertBizObjectResponseBodyData extends TeaModel {
         // 成功新增的业务对象id数组
         @NameInMap("bizObjectIds")
         public java.util.List<String> bizObjectIds;
-
-        // 新增成功的流程实例id数组
-        @NameInMap("processIds")
-        public java.util.List<String> processIds;
 
         // 新增失败的数据数组
         @NameInMap("failedDatas")
@@ -61,6 +57,10 @@ public class BatchInsertBizObjectResponseBody extends TeaModel {
         // 失败的提示信息数组
         @NameInMap("failedMessages")
         public java.util.List<String> failedMessages;
+
+        // 新增成功的流程实例id数组
+        @NameInMap("processIds")
+        public java.util.List<String> processIds;
 
         public static BatchInsertBizObjectResponseBodyData build(java.util.Map<String, ?> map) throws Exception {
             BatchInsertBizObjectResponseBodyData self = new BatchInsertBizObjectResponseBodyData();
@@ -73,14 +73,6 @@ public class BatchInsertBizObjectResponseBody extends TeaModel {
         }
         public java.util.List<String> getBizObjectIds() {
             return this.bizObjectIds;
-        }
-
-        public BatchInsertBizObjectResponseBodyData setProcessIds(java.util.List<String> processIds) {
-            this.processIds = processIds;
-            return this;
-        }
-        public java.util.List<String> getProcessIds() {
-            return this.processIds;
         }
 
         public BatchInsertBizObjectResponseBodyData setFailedDatas(java.util.List<String> failedDatas) {
@@ -97,6 +89,14 @@ public class BatchInsertBizObjectResponseBody extends TeaModel {
         }
         public java.util.List<String> getFailedMessages() {
             return this.failedMessages;
+        }
+
+        public BatchInsertBizObjectResponseBodyData setProcessIds(java.util.List<String> processIds) {
+            this.processIds = processIds;
+            return this;
+        }
+        public java.util.List<String> getProcessIds() {
+            return this.processIds;
         }
 
     }

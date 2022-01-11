@@ -4,10 +4,6 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class RegisterAccountsRequest extends TeaModel {
-    // 组织id
-    @NameInMap("corpId")
-    public String corpId;
-
     // 访问秘钥
     @NameInMap("accessKey")
     public String accessKey;
@@ -16,17 +12,13 @@ public class RegisterAccountsRequest extends TeaModel {
     @NameInMap("activeCode")
     public String activeCode;
 
+    // 组织id
+    @NameInMap("corpId")
+    public String corpId;
+
     public static RegisterAccountsRequest build(java.util.Map<String, ?> map) throws Exception {
         RegisterAccountsRequest self = new RegisterAccountsRequest();
         return TeaModel.build(map, self);
-    }
-
-    public RegisterAccountsRequest setCorpId(String corpId) {
-        this.corpId = corpId;
-        return this;
-    }
-    public String getCorpId() {
-        return this.corpId;
     }
 
     public RegisterAccountsRequest setAccessKey(String accessKey) {
@@ -43,6 +35,14 @@ public class RegisterAccountsRequest extends TeaModel {
     }
     public String getActiveCode() {
         return this.activeCode;
+    }
+
+    public RegisterAccountsRequest setCorpId(String corpId) {
+        this.corpId = corpId;
+        return this;
+    }
+    public String getCorpId() {
+        return this.corpId;
     }
 
 }

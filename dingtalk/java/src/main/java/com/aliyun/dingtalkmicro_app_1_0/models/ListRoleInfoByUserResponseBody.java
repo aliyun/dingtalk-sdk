@@ -21,29 +21,29 @@ public class ListRoleInfoByUserResponseBody extends TeaModel {
     }
 
     public static class ListRoleInfoByUserResponseBodyResult extends TeaModel {
-        // 角色名称
-        @NameInMap("roleName")
-        public String roleName;
+        // 是否拥有角色管理权限，默认false
+        @NameInMap("canManageRole")
+        public Boolean canManageRole;
 
         // 角色id
         @NameInMap("roleId")
         public Long roleId;
 
-        // 是否拥有角色管理权限，默认false
-        @NameInMap("canManageRole")
-        public Boolean canManageRole;
+        // 角色名称
+        @NameInMap("roleName")
+        public String roleName;
 
         public static ListRoleInfoByUserResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             ListRoleInfoByUserResponseBodyResult self = new ListRoleInfoByUserResponseBodyResult();
             return TeaModel.build(map, self);
         }
 
-        public ListRoleInfoByUserResponseBodyResult setRoleName(String roleName) {
-            this.roleName = roleName;
+        public ListRoleInfoByUserResponseBodyResult setCanManageRole(Boolean canManageRole) {
+            this.canManageRole = canManageRole;
             return this;
         }
-        public String getRoleName() {
-            return this.roleName;
+        public Boolean getCanManageRole() {
+            return this.canManageRole;
         }
 
         public ListRoleInfoByUserResponseBodyResult setRoleId(Long roleId) {
@@ -54,12 +54,12 @@ public class ListRoleInfoByUserResponseBody extends TeaModel {
             return this.roleId;
         }
 
-        public ListRoleInfoByUserResponseBodyResult setCanManageRole(Boolean canManageRole) {
-            this.canManageRole = canManageRole;
+        public ListRoleInfoByUserResponseBodyResult setRoleName(String roleName) {
+            this.roleName = roleName;
             return this;
         }
-        public Boolean getCanManageRole() {
-            return this.canManageRole;
+        public String getRoleName() {
+            return this.roleName;
         }
 
     }

@@ -4,14 +4,6 @@ package com.aliyun.dingtalkats_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetFileUploadInfoResponseBody extends TeaModel {
-    // OSS上传所需信息：bucket
-    @NameInMap("bucket")
-    public String bucket;
-
-    // OSS上传所需信息：endPoint
-    @NameInMap("endPoint")
-    public String endPoint;
-
     // OSS上传所需信息：accessKeyId
     @NameInMap("accessKeyId")
     public String accessKeyId;
@@ -28,6 +20,14 @@ public class GetFileUploadInfoResponseBody extends TeaModel {
     @NameInMap("accessTokenExpirationMillis")
     public Long accessTokenExpirationMillis;
 
+    // OSS上传所需信息：bucket
+    @NameInMap("bucket")
+    public String bucket;
+
+    // OSS上传所需信息：endPoint
+    @NameInMap("endPoint")
+    public String endPoint;
+
     // 文件mediaId
     @NameInMap("mediaId")
     public String mediaId;
@@ -35,22 +35,6 @@ public class GetFileUploadInfoResponseBody extends TeaModel {
     public static GetFileUploadInfoResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetFileUploadInfoResponseBody self = new GetFileUploadInfoResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public GetFileUploadInfoResponseBody setBucket(String bucket) {
-        this.bucket = bucket;
-        return this;
-    }
-    public String getBucket() {
-        return this.bucket;
-    }
-
-    public GetFileUploadInfoResponseBody setEndPoint(String endPoint) {
-        this.endPoint = endPoint;
-        return this;
-    }
-    public String getEndPoint() {
-        return this.endPoint;
     }
 
     public GetFileUploadInfoResponseBody setAccessKeyId(String accessKeyId) {
@@ -83,6 +67,22 @@ public class GetFileUploadInfoResponseBody extends TeaModel {
     }
     public Long getAccessTokenExpirationMillis() {
         return this.accessTokenExpirationMillis;
+    }
+
+    public GetFileUploadInfoResponseBody setBucket(String bucket) {
+        this.bucket = bucket;
+        return this;
+    }
+    public String getBucket() {
+        return this.bucket;
+    }
+
+    public GetFileUploadInfoResponseBody setEndPoint(String endPoint) {
+        this.endPoint = endPoint;
+        return this;
+    }
+    public String getEndPoint() {
+        return this.endPoint;
     }
 
     public GetFileUploadInfoResponseBody setMediaId(String mediaId) {

@@ -4,10 +4,6 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryJobsResponseBody extends TeaModel {
-    // 下次获取数据的起始游标
-    @NameInMap("nextToken")
-    public Long nextToken;
-
     // 是否有更多数据
     @NameInMap("hasMore")
     public Boolean hasMore;
@@ -16,17 +12,13 @@ public class QueryJobsResponseBody extends TeaModel {
     @NameInMap("list")
     public java.util.List<QueryJobsResponseBodyList> list;
 
+    // 下次获取数据的起始游标
+    @NameInMap("nextToken")
+    public Long nextToken;
+
     public static QueryJobsResponseBody build(java.util.Map<String, ?> map) throws Exception {
         QueryJobsResponseBody self = new QueryJobsResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public QueryJobsResponseBody setNextToken(Long nextToken) {
-        this.nextToken = nextToken;
-        return this;
-    }
-    public Long getNextToken() {
-        return this.nextToken;
     }
 
     public QueryJobsResponseBody setHasMore(Boolean hasMore) {
@@ -45,7 +37,19 @@ public class QueryJobsResponseBody extends TeaModel {
         return this.list;
     }
 
+    public QueryJobsResponseBody setNextToken(Long nextToken) {
+        this.nextToken = nextToken;
+        return this;
+    }
+    public Long getNextToken() {
+        return this.nextToken;
+    }
+
     public static class QueryJobsResponseBodyList extends TeaModel {
+        // 职务描述
+        @NameInMap("jobDescription")
+        public String jobDescription;
+
         // 职务ID
         @NameInMap("jobId")
         public String jobId;
@@ -54,13 +58,17 @@ public class QueryJobsResponseBody extends TeaModel {
         @NameInMap("jobName")
         public String jobName;
 
-        // 职务描述
-        @NameInMap("jobDescription")
-        public String jobDescription;
-
         public static QueryJobsResponseBodyList build(java.util.Map<String, ?> map) throws Exception {
             QueryJobsResponseBodyList self = new QueryJobsResponseBodyList();
             return TeaModel.build(map, self);
+        }
+
+        public QueryJobsResponseBodyList setJobDescription(String jobDescription) {
+            this.jobDescription = jobDescription;
+            return this;
+        }
+        public String getJobDescription() {
+            return this.jobDescription;
         }
 
         public QueryJobsResponseBodyList setJobId(String jobId) {
@@ -77,14 +85,6 @@ public class QueryJobsResponseBody extends TeaModel {
         }
         public String getJobName() {
             return this.jobName;
-        }
-
-        public QueryJobsResponseBodyList setJobDescription(String jobDescription) {
-            this.jobDescription = jobDescription;
-            return this;
-        }
-        public String getJobDescription() {
-            return this.jobDescription;
         }
 
     }

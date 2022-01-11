@@ -34,14 +34,6 @@ public class GetDownloadInfoResponseBody extends TeaModel {
     }
 
     public static class GetDownloadInfoResponseBodyDownloadInfo extends TeaModel {
-        // 加签url
-        @NameInMap("resourceUrl")
-        public String resourceUrl;
-
-        // 内网加签url
-        @NameInMap("internalResourceUrl")
-        public String internalResourceUrl;
-
         // 加签url过期时间
         @NameInMap("expirationSeconds")
         public Integer expirationSeconds;
@@ -50,25 +42,17 @@ public class GetDownloadInfoResponseBody extends TeaModel {
         @NameInMap("headers")
         public java.util.Map<String, ?> headers;
 
+        // 内网加签url
+        @NameInMap("internalResourceUrl")
+        public String internalResourceUrl;
+
+        // 加签url
+        @NameInMap("resourceUrl")
+        public String resourceUrl;
+
         public static GetDownloadInfoResponseBodyDownloadInfo build(java.util.Map<String, ?> map) throws Exception {
             GetDownloadInfoResponseBodyDownloadInfo self = new GetDownloadInfoResponseBodyDownloadInfo();
             return TeaModel.build(map, self);
-        }
-
-        public GetDownloadInfoResponseBodyDownloadInfo setResourceUrl(String resourceUrl) {
-            this.resourceUrl = resourceUrl;
-            return this;
-        }
-        public String getResourceUrl() {
-            return this.resourceUrl;
-        }
-
-        public GetDownloadInfoResponseBodyDownloadInfo setInternalResourceUrl(String internalResourceUrl) {
-            this.internalResourceUrl = internalResourceUrl;
-            return this;
-        }
-        public String getInternalResourceUrl() {
-            return this.internalResourceUrl;
         }
 
         public GetDownloadInfoResponseBodyDownloadInfo setExpirationSeconds(Integer expirationSeconds) {
@@ -85,6 +69,22 @@ public class GetDownloadInfoResponseBody extends TeaModel {
         }
         public java.util.Map<String, ?> getHeaders() {
             return this.headers;
+        }
+
+        public GetDownloadInfoResponseBodyDownloadInfo setInternalResourceUrl(String internalResourceUrl) {
+            this.internalResourceUrl = internalResourceUrl;
+            return this;
+        }
+        public String getInternalResourceUrl() {
+            return this.internalResourceUrl;
+        }
+
+        public GetDownloadInfoResponseBodyDownloadInfo setResourceUrl(String resourceUrl) {
+            this.resourceUrl = resourceUrl;
+            return this;
+        }
+        public String getResourceUrl() {
+            return this.resourceUrl;
         }
 
     }

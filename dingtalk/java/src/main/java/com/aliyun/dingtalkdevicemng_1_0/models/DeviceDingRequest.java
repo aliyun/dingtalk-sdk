@@ -4,17 +4,13 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeviceDingRequest extends TeaModel {
-    // 钉钉组织id
-    @NameInMap("dingCorpId")
-    public String dingCorpId;
+    // 设备标识
+    @NameInMap("deviceKey")
+    public String deviceKey;
 
     // 消息体动态参数
     @NameInMap("paramsJson")
     public String paramsJson;
-
-    // 设备标识
-    @NameInMap("deviceKey")
-    public String deviceKey;
 
     // staffId列表
     @NameInMap("receiverUserIdList")
@@ -25,12 +21,12 @@ public class DeviceDingRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public DeviceDingRequest setDingCorpId(String dingCorpId) {
-        this.dingCorpId = dingCorpId;
+    public DeviceDingRequest setDeviceKey(String deviceKey) {
+        this.deviceKey = deviceKey;
         return this;
     }
-    public String getDingCorpId() {
-        return this.dingCorpId;
+    public String getDeviceKey() {
+        return this.deviceKey;
     }
 
     public DeviceDingRequest setParamsJson(String paramsJson) {
@@ -39,14 +35,6 @@ public class DeviceDingRequest extends TeaModel {
     }
     public String getParamsJson() {
         return this.paramsJson;
-    }
-
-    public DeviceDingRequest setDeviceKey(String deviceKey) {
-        this.deviceKey = deviceKey;
-        return this;
-    }
-    public String getDeviceKey() {
-        return this.deviceKey;
     }
 
     public DeviceDingRequest setReceiverUserIdList(java.util.List<String> receiverUserIdList) {

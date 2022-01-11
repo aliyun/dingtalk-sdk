@@ -4,21 +4,9 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class ECertQueryResponseBody extends TeaModel {
-    // 身份证姓名
-    @NameInMap("realName")
-    public String realName;
-
     // 身份证号码
     @NameInMap("certNO")
     public String certNO;
-
-    // 主部门ID
-    @NameInMap("mainDeptId")
-    public Long mainDeptId;
-
-    // 主部门
-    @NameInMap("mainDeptName")
-    public String mainDeptName;
 
     // 职务ID
     @NameInMap("employJobId")
@@ -52,29 +40,33 @@ public class ECertQueryResponseBody extends TeaModel {
     @NameInMap("lastWorkDay")
     public String lastWorkDay;
 
-    // 主动离职原因
-    @NameInMap("terminationReasonVoluntary")
-    public java.util.List<String> terminationReasonVoluntary;
+    // 主部门ID
+    @NameInMap("mainDeptId")
+    public Long mainDeptId;
 
-    // 被动离职原因
-    @NameInMap("terminationReasonPassive")
-    public java.util.List<String> terminationReasonPassive;
+    // 主部门
+    @NameInMap("mainDeptName")
+    public String mainDeptName;
 
     // 姓名
     @NameInMap("name")
     public String name;
 
+    // 身份证姓名
+    @NameInMap("realName")
+    public String realName;
+
+    // 被动离职原因
+    @NameInMap("terminationReasonPassive")
+    public java.util.List<String> terminationReasonPassive;
+
+    // 主动离职原因
+    @NameInMap("terminationReasonVoluntary")
+    public java.util.List<String> terminationReasonVoluntary;
+
     public static ECertQueryResponseBody build(java.util.Map<String, ?> map) throws Exception {
         ECertQueryResponseBody self = new ECertQueryResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public ECertQueryResponseBody setRealName(String realName) {
-        this.realName = realName;
-        return this;
-    }
-    public String getRealName() {
-        return this.realName;
     }
 
     public ECertQueryResponseBody setCertNO(String certNO) {
@@ -83,22 +75,6 @@ public class ECertQueryResponseBody extends TeaModel {
     }
     public String getCertNO() {
         return this.certNO;
-    }
-
-    public ECertQueryResponseBody setMainDeptId(Long mainDeptId) {
-        this.mainDeptId = mainDeptId;
-        return this;
-    }
-    public Long getMainDeptId() {
-        return this.mainDeptId;
-    }
-
-    public ECertQueryResponseBody setMainDeptName(String mainDeptName) {
-        this.mainDeptName = mainDeptName;
-        return this;
-    }
-    public String getMainDeptName() {
-        return this.mainDeptName;
     }
 
     public ECertQueryResponseBody setEmployJobId(String employJobId) {
@@ -165,12 +141,36 @@ public class ECertQueryResponseBody extends TeaModel {
         return this.lastWorkDay;
     }
 
-    public ECertQueryResponseBody setTerminationReasonVoluntary(java.util.List<String> terminationReasonVoluntary) {
-        this.terminationReasonVoluntary = terminationReasonVoluntary;
+    public ECertQueryResponseBody setMainDeptId(Long mainDeptId) {
+        this.mainDeptId = mainDeptId;
         return this;
     }
-    public java.util.List<String> getTerminationReasonVoluntary() {
-        return this.terminationReasonVoluntary;
+    public Long getMainDeptId() {
+        return this.mainDeptId;
+    }
+
+    public ECertQueryResponseBody setMainDeptName(String mainDeptName) {
+        this.mainDeptName = mainDeptName;
+        return this;
+    }
+    public String getMainDeptName() {
+        return this.mainDeptName;
+    }
+
+    public ECertQueryResponseBody setName(String name) {
+        this.name = name;
+        return this;
+    }
+    public String getName() {
+        return this.name;
+    }
+
+    public ECertQueryResponseBody setRealName(String realName) {
+        this.realName = realName;
+        return this;
+    }
+    public String getRealName() {
+        return this.realName;
     }
 
     public ECertQueryResponseBody setTerminationReasonPassive(java.util.List<String> terminationReasonPassive) {
@@ -181,12 +181,12 @@ public class ECertQueryResponseBody extends TeaModel {
         return this.terminationReasonPassive;
     }
 
-    public ECertQueryResponseBody setName(String name) {
-        this.name = name;
+    public ECertQueryResponseBody setTerminationReasonVoluntary(java.util.List<String> terminationReasonVoluntary) {
+        this.terminationReasonVoluntary = terminationReasonVoluntary;
         return this;
     }
-    public String getName() {
-        return this.name;
+    public java.util.List<String> getTerminationReasonVoluntary() {
+        return this.terminationReasonVoluntary;
     }
 
 }

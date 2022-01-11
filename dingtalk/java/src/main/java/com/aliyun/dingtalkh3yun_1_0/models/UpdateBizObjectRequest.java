@@ -4,10 +4,6 @@ package com.aliyun.dingtalkh3yun_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateBizObjectRequest extends TeaModel {
-    // 表单编码
-    @NameInMap("schemaCode")
-    public String schemaCode;
-
     // 业务数据id
     @NameInMap("bizObjectId")
     public String bizObjectId;
@@ -16,17 +12,13 @@ public class UpdateBizObjectRequest extends TeaModel {
     @NameInMap("bizObjectJson")
     public String bizObjectJson;
 
+    // 表单编码
+    @NameInMap("schemaCode")
+    public String schemaCode;
+
     public static UpdateBizObjectRequest build(java.util.Map<String, ?> map) throws Exception {
         UpdateBizObjectRequest self = new UpdateBizObjectRequest();
         return TeaModel.build(map, self);
-    }
-
-    public UpdateBizObjectRequest setSchemaCode(String schemaCode) {
-        this.schemaCode = schemaCode;
-        return this;
-    }
-    public String getSchemaCode() {
-        return this.schemaCode;
     }
 
     public UpdateBizObjectRequest setBizObjectId(String bizObjectId) {
@@ -43,6 +35,14 @@ public class UpdateBizObjectRequest extends TeaModel {
     }
     public String getBizObjectJson() {
         return this.bizObjectJson;
+    }
+
+    public UpdateBizObjectRequest setSchemaCode(String schemaCode) {
+        this.schemaCode = schemaCode;
+        return this;
+    }
+    public String getSchemaCode() {
+        return this.schemaCode;
     }
 
 }

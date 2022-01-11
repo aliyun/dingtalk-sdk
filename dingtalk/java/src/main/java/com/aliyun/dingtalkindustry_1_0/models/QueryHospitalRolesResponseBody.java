@@ -22,17 +22,25 @@ public class QueryHospitalRolesResponseBody extends TeaModel {
     }
 
     public static class QueryHospitalRolesResponseBodyContent extends TeaModel {
-        // 主键
-        @NameInMap("id")
-        public Long id;
-
         // 修改时间
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
+        // 主键
+        @NameInMap("id")
+        public Long id;
+
         // 是否已删除，默认0未删除，1已删除
         @NameInMap("isDeleted")
         public Long isDeleted;
+
+        // 角色关联权限点是否只读
+        @NameInMap("readOnly")
+        public Long readOnly;
+
+        // 备注
+        @NameInMap("remark")
+        public String remark;
 
         // 角色编码
         @NameInMap("roleCode")
@@ -42,29 +50,13 @@ public class QueryHospitalRolesResponseBody extends TeaModel {
         @NameInMap("roleName")
         public String roleName;
 
-        // 备注
-        @NameInMap("remark")
-        public String remark;
-
         // 排序，数字越小越靠前，默认0
         @NameInMap("sort")
         public Long sort;
 
-        // 角色关联权限点是否只读
-        @NameInMap("readOnly")
-        public Long readOnly;
-
         public static QueryHospitalRolesResponseBodyContent build(java.util.Map<String, ?> map) throws Exception {
             QueryHospitalRolesResponseBodyContent self = new QueryHospitalRolesResponseBodyContent();
             return TeaModel.build(map, self);
-        }
-
-        public QueryHospitalRolesResponseBodyContent setId(Long id) {
-            this.id = id;
-            return this;
-        }
-        public Long getId() {
-            return this.id;
         }
 
         public QueryHospitalRolesResponseBodyContent setGmtCreate(String gmtCreate) {
@@ -75,12 +67,36 @@ public class QueryHospitalRolesResponseBody extends TeaModel {
             return this.gmtCreate;
         }
 
+        public QueryHospitalRolesResponseBodyContent setId(Long id) {
+            this.id = id;
+            return this;
+        }
+        public Long getId() {
+            return this.id;
+        }
+
         public QueryHospitalRolesResponseBodyContent setIsDeleted(Long isDeleted) {
             this.isDeleted = isDeleted;
             return this;
         }
         public Long getIsDeleted() {
             return this.isDeleted;
+        }
+
+        public QueryHospitalRolesResponseBodyContent setReadOnly(Long readOnly) {
+            this.readOnly = readOnly;
+            return this;
+        }
+        public Long getReadOnly() {
+            return this.readOnly;
+        }
+
+        public QueryHospitalRolesResponseBodyContent setRemark(String remark) {
+            this.remark = remark;
+            return this;
+        }
+        public String getRemark() {
+            return this.remark;
         }
 
         public QueryHospitalRolesResponseBodyContent setRoleCode(String roleCode) {
@@ -99,28 +115,12 @@ public class QueryHospitalRolesResponseBody extends TeaModel {
             return this.roleName;
         }
 
-        public QueryHospitalRolesResponseBodyContent setRemark(String remark) {
-            this.remark = remark;
-            return this;
-        }
-        public String getRemark() {
-            return this.remark;
-        }
-
         public QueryHospitalRolesResponseBodyContent setSort(Long sort) {
             this.sort = sort;
             return this;
         }
         public Long getSort() {
             return this.sort;
-        }
-
-        public QueryHospitalRolesResponseBodyContent setReadOnly(Long readOnly) {
-            this.readOnly = readOnly;
-            return this;
-        }
-        public Long getReadOnly() {
-            return this.readOnly;
         }
 
     }

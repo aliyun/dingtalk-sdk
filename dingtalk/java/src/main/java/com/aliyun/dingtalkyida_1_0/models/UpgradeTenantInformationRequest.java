@@ -8,13 +8,13 @@ public class UpgradeTenantInformationRequest extends TeaModel {
     @NameInMap("accessKey")
     public String accessKey;
 
-    // 调用者unionId
-    @NameInMap("callerUnionId")
-    public String callerUnionId;
-
     // 账户号
     @NameInMap("accountNumber")
     public String accountNumber;
+
+    // 调用者unionId
+    @NameInMap("callerUnionId")
+    public String callerUnionId;
 
     // 商品类型
     @NameInMap("commodityType")
@@ -33,20 +33,20 @@ public class UpgradeTenantInformationRequest extends TeaModel {
         return this.accessKey;
     }
 
-    public UpgradeTenantInformationRequest setCallerUnionId(String callerUnionId) {
-        this.callerUnionId = callerUnionId;
-        return this;
-    }
-    public String getCallerUnionId() {
-        return this.callerUnionId;
-    }
-
     public UpgradeTenantInformationRequest setAccountNumber(String accountNumber) {
         this.accountNumber = accountNumber;
         return this;
     }
     public String getAccountNumber() {
         return this.accountNumber;
+    }
+
+    public UpgradeTenantInformationRequest setCallerUnionId(String callerUnionId) {
+        this.callerUnionId = callerUnionId;
+        return this;
+    }
+    public String getCallerUnionId() {
+        return this.callerUnionId;
     }
 
     public UpgradeTenantInformationRequest setCommodityType(String commodityType) {

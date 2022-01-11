@@ -63,18 +63,26 @@ public class GetAttachsApprovalResponseBody extends TeaModel {
     }
 
     public static class GetAttachsApprovalResponseBodyData extends TeaModel {
+        @NameInMap("files")
+        public java.util.List<GetAttachsApprovalResponseBodyDataFiles> files;
+
         @NameInMap("flowId")
         public String flowId;
 
         @NameInMap("status")
         public String status;
 
-        @NameInMap("files")
-        public java.util.List<GetAttachsApprovalResponseBodyDataFiles> files;
-
         public static GetAttachsApprovalResponseBodyData build(java.util.Map<String, ?> map) throws Exception {
             GetAttachsApprovalResponseBodyData self = new GetAttachsApprovalResponseBodyData();
             return TeaModel.build(map, self);
+        }
+
+        public GetAttachsApprovalResponseBodyData setFiles(java.util.List<GetAttachsApprovalResponseBodyDataFiles> files) {
+            this.files = files;
+            return this;
+        }
+        public java.util.List<GetAttachsApprovalResponseBodyDataFiles> getFiles() {
+            return this.files;
         }
 
         public GetAttachsApprovalResponseBodyData setFlowId(String flowId) {
@@ -91,14 +99,6 @@ public class GetAttachsApprovalResponseBody extends TeaModel {
         }
         public String getStatus() {
             return this.status;
-        }
-
-        public GetAttachsApprovalResponseBodyData setFiles(java.util.List<GetAttachsApprovalResponseBodyDataFiles> files) {
-            this.files = files;
-            return this;
-        }
-        public java.util.List<GetAttachsApprovalResponseBodyDataFiles> getFiles() {
-            return this.files;
         }
 
     }

@@ -8,13 +8,13 @@ public class CreateProcessesInstanceResponseBody extends TeaModel {
     @NameInMap("code")
     public String code;
 
-    // 提示信息
-    @NameInMap("message")
-    public String message;
-
     // 业务响应结果
     @NameInMap("data")
     public CreateProcessesInstanceResponseBodyData data;
+
+    // 提示信息
+    @NameInMap("message")
+    public String message;
 
     public static CreateProcessesInstanceResponseBody build(java.util.Map<String, ?> map) throws Exception {
         CreateProcessesInstanceResponseBody self = new CreateProcessesInstanceResponseBody();
@@ -29,20 +29,20 @@ public class CreateProcessesInstanceResponseBody extends TeaModel {
         return this.code;
     }
 
-    public CreateProcessesInstanceResponseBody setMessage(String message) {
-        this.message = message;
-        return this;
-    }
-    public String getMessage() {
-        return this.message;
-    }
-
     public CreateProcessesInstanceResponseBody setData(CreateProcessesInstanceResponseBodyData data) {
         this.data = data;
         return this;
     }
     public CreateProcessesInstanceResponseBodyData getData() {
         return this.data;
+    }
+
+    public CreateProcessesInstanceResponseBody setMessage(String message) {
+        this.message = message;
+        return this;
+    }
+    public String getMessage() {
+        return this.message;
     }
 
     public static class CreateProcessesInstanceResponseBodyData extends TeaModel {

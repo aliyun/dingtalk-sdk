@@ -4,25 +4,17 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateCustomDeptResponseBody extends TeaModel {
-    // success
-    @NameInMap("success")
-    public Boolean success;
-
     // result
     @NameInMap("result")
     public CreateCustomDeptResponseBodyResult result;
 
+    // success
+    @NameInMap("success")
+    public Boolean success;
+
     public static CreateCustomDeptResponseBody build(java.util.Map<String, ?> map) throws Exception {
         CreateCustomDeptResponseBody self = new CreateCustomDeptResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public CreateCustomDeptResponseBody setSuccess(Boolean success) {
-        this.success = success;
-        return this;
-    }
-    public Boolean getSuccess() {
-        return this.success;
     }
 
     public CreateCustomDeptResponseBody setResult(CreateCustomDeptResponseBodyResult result) {
@@ -31,6 +23,14 @@ public class CreateCustomDeptResponseBody extends TeaModel {
     }
     public CreateCustomDeptResponseBodyResult getResult() {
         return this.result;
+    }
+
+    public CreateCustomDeptResponseBody setSuccess(Boolean success) {
+        this.success = success;
+        return this;
+    }
+    public Boolean getSuccess() {
+        return this.success;
     }
 
     public static class CreateCustomDeptResponseBodyResult extends TeaModel {

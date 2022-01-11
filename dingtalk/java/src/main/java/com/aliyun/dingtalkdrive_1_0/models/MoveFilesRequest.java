@@ -4,21 +4,21 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class MoveFilesRequest extends TeaModel {
+    // 文件名冲突策略
+    @NameInMap("addConflictPolicy")
+    public String addConflictPolicy;
+
     // 文件id列表
     @NameInMap("fileIds")
     public java.util.List<String> fileIds;
-
-    // 目标空间id
-    @NameInMap("targetSpaceId")
-    public String targetSpaceId;
 
     // 目标父目录id
     @NameInMap("targetParentId")
     public String targetParentId;
 
-    // 文件名冲突策略
-    @NameInMap("addConflictPolicy")
-    public String addConflictPolicy;
+    // 目标空间id
+    @NameInMap("targetSpaceId")
+    public String targetSpaceId;
 
     // 用户id
     @NameInMap("unionId")
@@ -29,20 +29,20 @@ public class MoveFilesRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
+    public MoveFilesRequest setAddConflictPolicy(String addConflictPolicy) {
+        this.addConflictPolicy = addConflictPolicy;
+        return this;
+    }
+    public String getAddConflictPolicy() {
+        return this.addConflictPolicy;
+    }
+
     public MoveFilesRequest setFileIds(java.util.List<String> fileIds) {
         this.fileIds = fileIds;
         return this;
     }
     public java.util.List<String> getFileIds() {
         return this.fileIds;
-    }
-
-    public MoveFilesRequest setTargetSpaceId(String targetSpaceId) {
-        this.targetSpaceId = targetSpaceId;
-        return this;
-    }
-    public String getTargetSpaceId() {
-        return this.targetSpaceId;
     }
 
     public MoveFilesRequest setTargetParentId(String targetParentId) {
@@ -53,12 +53,12 @@ public class MoveFilesRequest extends TeaModel {
         return this.targetParentId;
     }
 
-    public MoveFilesRequest setAddConflictPolicy(String addConflictPolicy) {
-        this.addConflictPolicy = addConflictPolicy;
+    public MoveFilesRequest setTargetSpaceId(String targetSpaceId) {
+        this.targetSpaceId = targetSpaceId;
         return this;
     }
-    public String getAddConflictPolicy() {
-        return this.addConflictPolicy;
+    public String getTargetSpaceId() {
+        return this.targetSpaceId;
     }
 
     public MoveFilesRequest setUnionId(String unionId) {

@@ -4,17 +4,14 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateSeniorSettingRequest extends TeaModel {
-    @NameInMap("seniorStaffId")
-    public String seniorStaffId;
-
     @NameInMap("open")
     public Boolean open;
 
-    @NameInMap("permitStaffIds")
-    public java.util.List<String> permitStaffIds;
-
     @NameInMap("permitDeptIds")
     public java.util.List<Long> permitDeptIds;
+
+    @NameInMap("permitStaffIds")
+    public java.util.List<String> permitStaffIds;
 
     @NameInMap("permitTagIds")
     public java.util.List<Long> permitTagIds;
@@ -22,17 +19,12 @@ public class UpdateSeniorSettingRequest extends TeaModel {
     @NameInMap("protectScenes")
     public java.util.List<String> protectScenes;
 
+    @NameInMap("seniorStaffId")
+    public String seniorStaffId;
+
     public static UpdateSeniorSettingRequest build(java.util.Map<String, ?> map) throws Exception {
         UpdateSeniorSettingRequest self = new UpdateSeniorSettingRequest();
         return TeaModel.build(map, self);
-    }
-
-    public UpdateSeniorSettingRequest setSeniorStaffId(String seniorStaffId) {
-        this.seniorStaffId = seniorStaffId;
-        return this;
-    }
-    public String getSeniorStaffId() {
-        return this.seniorStaffId;
     }
 
     public UpdateSeniorSettingRequest setOpen(Boolean open) {
@@ -43,20 +35,20 @@ public class UpdateSeniorSettingRequest extends TeaModel {
         return this.open;
     }
 
-    public UpdateSeniorSettingRequest setPermitStaffIds(java.util.List<String> permitStaffIds) {
-        this.permitStaffIds = permitStaffIds;
-        return this;
-    }
-    public java.util.List<String> getPermitStaffIds() {
-        return this.permitStaffIds;
-    }
-
     public UpdateSeniorSettingRequest setPermitDeptIds(java.util.List<Long> permitDeptIds) {
         this.permitDeptIds = permitDeptIds;
         return this;
     }
     public java.util.List<Long> getPermitDeptIds() {
         return this.permitDeptIds;
+    }
+
+    public UpdateSeniorSettingRequest setPermitStaffIds(java.util.List<String> permitStaffIds) {
+        this.permitStaffIds = permitStaffIds;
+        return this;
+    }
+    public java.util.List<String> getPermitStaffIds() {
+        return this.permitStaffIds;
     }
 
     public UpdateSeniorSettingRequest setPermitTagIds(java.util.List<Long> permitTagIds) {
@@ -73,6 +65,14 @@ public class UpdateSeniorSettingRequest extends TeaModel {
     }
     public java.util.List<String> getProtectScenes() {
         return this.protectScenes;
+    }
+
+    public UpdateSeniorSettingRequest setSeniorStaffId(String seniorStaffId) {
+        this.seniorStaffId = seniorStaffId;
+        return this;
+    }
+    public String getSeniorStaffId() {
+        return this.seniorStaffId;
     }
 
 }

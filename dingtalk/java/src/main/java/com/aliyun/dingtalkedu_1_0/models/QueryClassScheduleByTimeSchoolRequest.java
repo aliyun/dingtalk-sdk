@@ -4,10 +4,6 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryClassScheduleByTimeSchoolRequest extends TeaModel {
-    // 开始时间
-    @NameInMap("startTime")
-    public Long startTime;
-
     // 1621676000000
     @NameInMap("endTime")
     public Long endTime;
@@ -16,17 +12,13 @@ public class QueryClassScheduleByTimeSchoolRequest extends TeaModel {
     @NameInMap("opUserId")
     public String opUserId;
 
+    // 开始时间
+    @NameInMap("startTime")
+    public Long startTime;
+
     public static QueryClassScheduleByTimeSchoolRequest build(java.util.Map<String, ?> map) throws Exception {
         QueryClassScheduleByTimeSchoolRequest self = new QueryClassScheduleByTimeSchoolRequest();
         return TeaModel.build(map, self);
-    }
-
-    public QueryClassScheduleByTimeSchoolRequest setStartTime(Long startTime) {
-        this.startTime = startTime;
-        return this;
-    }
-    public Long getStartTime() {
-        return this.startTime;
     }
 
     public QueryClassScheduleByTimeSchoolRequest setEndTime(Long endTime) {
@@ -43,6 +35,14 @@ public class QueryClassScheduleByTimeSchoolRequest extends TeaModel {
     }
     public String getOpUserId() {
         return this.opUserId;
+    }
+
+    public QueryClassScheduleByTimeSchoolRequest setStartTime(Long startTime) {
+        this.startTime = startTime;
+        return this;
+    }
+    public Long getStartTime() {
+        return this.startTime;
     }
 
 }

@@ -8,17 +8,17 @@ public class QueryAllMemberByGroupResponseBody extends TeaModel {
     @NameInMap("content")
     public java.util.List<QueryAllMemberByGroupResponseBodyContent> content;
 
-    // 总页数
-    @NameInMap("totalPages")
-    public Integer totalPages;
+    // 当前页码
+    @NameInMap("currentPage")
+    public Integer currentPage;
 
     // 数据总量
     @NameInMap("totalCount")
     public Long totalCount;
 
-    // 当前页码
-    @NameInMap("currentPage")
-    public Integer currentPage;
+    // 总页数
+    @NameInMap("totalPages")
+    public Integer totalPages;
 
     public static QueryAllMemberByGroupResponseBody build(java.util.Map<String, ?> map) throws Exception {
         QueryAllMemberByGroupResponseBody self = new QueryAllMemberByGroupResponseBody();
@@ -33,12 +33,12 @@ public class QueryAllMemberByGroupResponseBody extends TeaModel {
         return this.content;
     }
 
-    public QueryAllMemberByGroupResponseBody setTotalPages(Integer totalPages) {
-        this.totalPages = totalPages;
+    public QueryAllMemberByGroupResponseBody setCurrentPage(Integer currentPage) {
+        this.currentPage = currentPage;
         return this;
     }
-    public Integer getTotalPages() {
-        return this.totalPages;
+    public Integer getCurrentPage() {
+        return this.currentPage;
     }
 
     public QueryAllMemberByGroupResponseBody setTotalCount(Long totalCount) {
@@ -49,15 +49,19 @@ public class QueryAllMemberByGroupResponseBody extends TeaModel {
         return this.totalCount;
     }
 
-    public QueryAllMemberByGroupResponseBody setCurrentPage(Integer currentPage) {
-        this.currentPage = currentPage;
+    public QueryAllMemberByGroupResponseBody setTotalPages(Integer totalPages) {
+        this.totalPages = totalPages;
         return this;
     }
-    public Integer getCurrentPage() {
-        return this.currentPage;
+    public Integer getTotalPages() {
+        return this.totalPages;
     }
 
     public static class QueryAllMemberByGroupResponseBodyContent extends TeaModel {
+        // 工号
+        @NameInMap("jobNum")
+        public String jobNum;
+
         // 用户Id
         @NameInMap("uid")
         public String uid;
@@ -66,13 +70,17 @@ public class QueryAllMemberByGroupResponseBody extends TeaModel {
         @NameInMap("userName")
         public String userName;
 
-        // 工号
-        @NameInMap("jobNum")
-        public String jobNum;
-
         public static QueryAllMemberByGroupResponseBodyContent build(java.util.Map<String, ?> map) throws Exception {
             QueryAllMemberByGroupResponseBodyContent self = new QueryAllMemberByGroupResponseBodyContent();
             return TeaModel.build(map, self);
+        }
+
+        public QueryAllMemberByGroupResponseBodyContent setJobNum(String jobNum) {
+            this.jobNum = jobNum;
+            return this;
+        }
+        public String getJobNum() {
+            return this.jobNum;
         }
 
         public QueryAllMemberByGroupResponseBodyContent setUid(String uid) {
@@ -89,14 +97,6 @@ public class QueryAllMemberByGroupResponseBody extends TeaModel {
         }
         public String getUserName() {
             return this.userName;
-        }
-
-        public QueryAllMemberByGroupResponseBodyContent setJobNum(String jobNum) {
-            this.jobNum = jobNum;
-            return this;
-        }
-        public String getJobNum() {
-            return this.jobNum;
         }
 
     }

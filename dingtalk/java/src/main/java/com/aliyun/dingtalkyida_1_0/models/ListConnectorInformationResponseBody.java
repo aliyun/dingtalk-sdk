@@ -4,33 +4,25 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListConnectorInformationResponseBody extends TeaModel {
-    // 分页大小
-    @NameInMap("pageSize")
-    public Integer pageSize;
-
     // 当前第几页
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
-    // 总数量
-    @NameInMap("totalCount")
-    public Long totalCount;
+    // 分页大小
+    @NameInMap("pageSize")
+    public Integer pageSize;
 
     // pluginInfos
     @NameInMap("pluginInfos")
     public java.util.List<ListConnectorInformationResponseBodyPluginInfos> pluginInfos;
 
+    // 总数量
+    @NameInMap("totalCount")
+    public Long totalCount;
+
     public static ListConnectorInformationResponseBody build(java.util.Map<String, ?> map) throws Exception {
         ListConnectorInformationResponseBody self = new ListConnectorInformationResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public ListConnectorInformationResponseBody setPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
-        return this;
-    }
-    public Integer getPageSize() {
-        return this.pageSize;
     }
 
     public ListConnectorInformationResponseBody setPageNumber(Integer pageNumber) {
@@ -41,12 +33,12 @@ public class ListConnectorInformationResponseBody extends TeaModel {
         return this.pageNumber;
     }
 
-    public ListConnectorInformationResponseBody setTotalCount(Long totalCount) {
-        this.totalCount = totalCount;
+    public ListConnectorInformationResponseBody setPageSize(Integer pageSize) {
+        this.pageSize = pageSize;
         return this;
     }
-    public Long getTotalCount() {
-        return this.totalCount;
+    public Integer getPageSize() {
+        return this.pageSize;
     }
 
     public ListConnectorInformationResponseBody setPluginInfos(java.util.List<ListConnectorInformationResponseBodyPluginInfos> pluginInfos) {
@@ -55,6 +47,14 @@ public class ListConnectorInformationResponseBody extends TeaModel {
     }
     public java.util.List<ListConnectorInformationResponseBodyPluginInfos> getPluginInfos() {
         return this.pluginInfos;
+    }
+
+    public ListConnectorInformationResponseBody setTotalCount(Long totalCount) {
+        this.totalCount = totalCount;
+        return this;
+    }
+    public Long getTotalCount() {
+        return this.totalCount;
     }
 
     public static class ListConnectorInformationResponseBodyPluginInfosApps extends TeaModel {
@@ -78,65 +78,49 @@ public class ListConnectorInformationResponseBody extends TeaModel {
     }
 
     public static class ListConnectorInformationResponseBodyPluginInfos extends TeaModel {
-        // pluginUuid
-        @NameInMap("pluginUuid")
-        public String pluginUuid;
-
-        // pluginTotalAmount
-        @NameInMap("pluginTotalAmount")
-        public Long pluginTotalAmount;
-
-        // pluginName
-        @NameInMap("pluginName")
-        public String pluginName;
+        // apps
+        @NameInMap("apps")
+        public java.util.List<ListConnectorInformationResponseBodyPluginInfosApps> apps;
 
         // iconUrl
         @NameInMap("iconUrl")
         public String iconUrl;
 
+        // pluginName
+        @NameInMap("pluginName")
+        public String pluginName;
+
         // pluginPayType
         @NameInMap("pluginPayType")
         public Integer pluginPayType;
-
-        // pluginUsageAmount
-        @NameInMap("pluginUsageAmount")
-        public Long pluginUsageAmount;
 
         // pluginStatus
         @NameInMap("pluginStatus")
         public Integer pluginStatus;
 
-        // apps
-        @NameInMap("apps")
-        public java.util.List<ListConnectorInformationResponseBodyPluginInfosApps> apps;
+        // pluginTotalAmount
+        @NameInMap("pluginTotalAmount")
+        public Long pluginTotalAmount;
+
+        // pluginUsageAmount
+        @NameInMap("pluginUsageAmount")
+        public Long pluginUsageAmount;
+
+        // pluginUuid
+        @NameInMap("pluginUuid")
+        public String pluginUuid;
 
         public static ListConnectorInformationResponseBodyPluginInfos build(java.util.Map<String, ?> map) throws Exception {
             ListConnectorInformationResponseBodyPluginInfos self = new ListConnectorInformationResponseBodyPluginInfos();
             return TeaModel.build(map, self);
         }
 
-        public ListConnectorInformationResponseBodyPluginInfos setPluginUuid(String pluginUuid) {
-            this.pluginUuid = pluginUuid;
+        public ListConnectorInformationResponseBodyPluginInfos setApps(java.util.List<ListConnectorInformationResponseBodyPluginInfosApps> apps) {
+            this.apps = apps;
             return this;
         }
-        public String getPluginUuid() {
-            return this.pluginUuid;
-        }
-
-        public ListConnectorInformationResponseBodyPluginInfos setPluginTotalAmount(Long pluginTotalAmount) {
-            this.pluginTotalAmount = pluginTotalAmount;
-            return this;
-        }
-        public Long getPluginTotalAmount() {
-            return this.pluginTotalAmount;
-        }
-
-        public ListConnectorInformationResponseBodyPluginInfos setPluginName(String pluginName) {
-            this.pluginName = pluginName;
-            return this;
-        }
-        public String getPluginName() {
-            return this.pluginName;
+        public java.util.List<ListConnectorInformationResponseBodyPluginInfosApps> getApps() {
+            return this.apps;
         }
 
         public ListConnectorInformationResponseBodyPluginInfos setIconUrl(String iconUrl) {
@@ -147,20 +131,20 @@ public class ListConnectorInformationResponseBody extends TeaModel {
             return this.iconUrl;
         }
 
+        public ListConnectorInformationResponseBodyPluginInfos setPluginName(String pluginName) {
+            this.pluginName = pluginName;
+            return this;
+        }
+        public String getPluginName() {
+            return this.pluginName;
+        }
+
         public ListConnectorInformationResponseBodyPluginInfos setPluginPayType(Integer pluginPayType) {
             this.pluginPayType = pluginPayType;
             return this;
         }
         public Integer getPluginPayType() {
             return this.pluginPayType;
-        }
-
-        public ListConnectorInformationResponseBodyPluginInfos setPluginUsageAmount(Long pluginUsageAmount) {
-            this.pluginUsageAmount = pluginUsageAmount;
-            return this;
-        }
-        public Long getPluginUsageAmount() {
-            return this.pluginUsageAmount;
         }
 
         public ListConnectorInformationResponseBodyPluginInfos setPluginStatus(Integer pluginStatus) {
@@ -171,12 +155,28 @@ public class ListConnectorInformationResponseBody extends TeaModel {
             return this.pluginStatus;
         }
 
-        public ListConnectorInformationResponseBodyPluginInfos setApps(java.util.List<ListConnectorInformationResponseBodyPluginInfosApps> apps) {
-            this.apps = apps;
+        public ListConnectorInformationResponseBodyPluginInfos setPluginTotalAmount(Long pluginTotalAmount) {
+            this.pluginTotalAmount = pluginTotalAmount;
             return this;
         }
-        public java.util.List<ListConnectorInformationResponseBodyPluginInfosApps> getApps() {
-            return this.apps;
+        public Long getPluginTotalAmount() {
+            return this.pluginTotalAmount;
+        }
+
+        public ListConnectorInformationResponseBodyPluginInfos setPluginUsageAmount(Long pluginUsageAmount) {
+            this.pluginUsageAmount = pluginUsageAmount;
+            return this;
+        }
+        public Long getPluginUsageAmount() {
+            return this.pluginUsageAmount;
+        }
+
+        public ListConnectorInformationResponseBodyPluginInfos setPluginUuid(String pluginUuid) {
+            this.pluginUuid = pluginUuid;
+            return this;
+        }
+        public String getPluginUuid() {
+            return this.pluginUuid;
         }
 
     }

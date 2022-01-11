@@ -4,11 +4,11 @@ package com.aliyun.dingtalkesign_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetFlowSignDetailResponseBody extends TeaModel {
-    @NameInMap("data")
-    public GetFlowSignDetailResponseBodyData data;
-
     @NameInMap("code")
     public Integer code;
+
+    @NameInMap("data")
+    public GetFlowSignDetailResponseBodyData data;
 
     @NameInMap("message")
     public String message;
@@ -18,20 +18,20 @@ public class GetFlowSignDetailResponseBody extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public GetFlowSignDetailResponseBody setData(GetFlowSignDetailResponseBodyData data) {
-        this.data = data;
-        return this;
-    }
-    public GetFlowSignDetailResponseBodyData getData() {
-        return this.data;
-    }
-
     public GetFlowSignDetailResponseBody setCode(Integer code) {
         this.code = code;
         return this;
     }
     public Integer getCode() {
         return this.code;
+    }
+
+    public GetFlowSignDetailResponseBody setData(GetFlowSignDetailResponseBodyData data) {
+        this.data = data;
+        return this;
+    }
+    public GetFlowSignDetailResponseBodyData getData() {
+        return this.data;
     }
 
     public GetFlowSignDetailResponseBody setMessage(String message) {
@@ -43,23 +43,15 @@ public class GetFlowSignDetailResponseBody extends TeaModel {
     }
 
     public static class GetFlowSignDetailResponseBodyDataSigners extends TeaModel {
-        @NameInMap("signerName")
-        public String signerName;
-
         @NameInMap("signStatus")
         public Integer signStatus;
+
+        @NameInMap("signerName")
+        public String signerName;
 
         public static GetFlowSignDetailResponseBodyDataSigners build(java.util.Map<String, ?> map) throws Exception {
             GetFlowSignDetailResponseBodyDataSigners self = new GetFlowSignDetailResponseBodyDataSigners();
             return TeaModel.build(map, self);
-        }
-
-        public GetFlowSignDetailResponseBodyDataSigners setSignerName(String signerName) {
-            this.signerName = signerName;
-            return this;
-        }
-        public String getSignerName() {
-            return this.signerName;
         }
 
         public GetFlowSignDetailResponseBodyDataSigners setSignStatus(Integer signStatus) {
@@ -68,6 +60,14 @@ public class GetFlowSignDetailResponseBody extends TeaModel {
         }
         public Integer getSignStatus() {
             return this.signStatus;
+        }
+
+        public GetFlowSignDetailResponseBodyDataSigners setSignerName(String signerName) {
+            this.signerName = signerName;
+            return this;
+        }
+        public String getSignerName() {
+            return this.signerName;
         }
 
     }

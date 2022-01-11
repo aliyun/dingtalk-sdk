@@ -4,23 +4,17 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateGroupSetRequest extends TeaModel {
-    @NameInMap("name")
-    public String name;
-
-    @NameInMap("ownerUserId")
-    public String ownerUserId;
-
     @NameInMap("creatorUserId")
     public String creatorUserId;
 
-    @NameInMap("templateId")
-    public String templateId;
+    @NameInMap("managerUserIds")
+    public String managerUserIds;
 
     @NameInMap("memberQuota")
     public Long memberQuota;
 
-    @NameInMap("managerUserIds")
-    public String managerUserIds;
+    @NameInMap("name")
+    public String name;
 
     @NameInMap("notice")
     public String notice;
@@ -28,28 +22,18 @@ public class CreateGroupSetRequest extends TeaModel {
     @NameInMap("noticeToped")
     public Integer noticeToped;
 
+    @NameInMap("ownerUserId")
+    public String ownerUserId;
+
     @NameInMap("relationType")
     public String relationType;
+
+    @NameInMap("templateId")
+    public String templateId;
 
     public static CreateGroupSetRequest build(java.util.Map<String, ?> map) throws Exception {
         CreateGroupSetRequest self = new CreateGroupSetRequest();
         return TeaModel.build(map, self);
-    }
-
-    public CreateGroupSetRequest setName(String name) {
-        this.name = name;
-        return this;
-    }
-    public String getName() {
-        return this.name;
-    }
-
-    public CreateGroupSetRequest setOwnerUserId(String ownerUserId) {
-        this.ownerUserId = ownerUserId;
-        return this;
-    }
-    public String getOwnerUserId() {
-        return this.ownerUserId;
     }
 
     public CreateGroupSetRequest setCreatorUserId(String creatorUserId) {
@@ -60,12 +44,12 @@ public class CreateGroupSetRequest extends TeaModel {
         return this.creatorUserId;
     }
 
-    public CreateGroupSetRequest setTemplateId(String templateId) {
-        this.templateId = templateId;
+    public CreateGroupSetRequest setManagerUserIds(String managerUserIds) {
+        this.managerUserIds = managerUserIds;
         return this;
     }
-    public String getTemplateId() {
-        return this.templateId;
+    public String getManagerUserIds() {
+        return this.managerUserIds;
     }
 
     public CreateGroupSetRequest setMemberQuota(Long memberQuota) {
@@ -76,12 +60,12 @@ public class CreateGroupSetRequest extends TeaModel {
         return this.memberQuota;
     }
 
-    public CreateGroupSetRequest setManagerUserIds(String managerUserIds) {
-        this.managerUserIds = managerUserIds;
+    public CreateGroupSetRequest setName(String name) {
+        this.name = name;
         return this;
     }
-    public String getManagerUserIds() {
-        return this.managerUserIds;
+    public String getName() {
+        return this.name;
     }
 
     public CreateGroupSetRequest setNotice(String notice) {
@@ -100,12 +84,28 @@ public class CreateGroupSetRequest extends TeaModel {
         return this.noticeToped;
     }
 
+    public CreateGroupSetRequest setOwnerUserId(String ownerUserId) {
+        this.ownerUserId = ownerUserId;
+        return this;
+    }
+    public String getOwnerUserId() {
+        return this.ownerUserId;
+    }
+
     public CreateGroupSetRequest setRelationType(String relationType) {
         this.relationType = relationType;
         return this;
     }
     public String getRelationType() {
         return this.relationType;
+    }
+
+    public CreateGroupSetRequest setTemplateId(String templateId) {
+        this.templateId = templateId;
+        return this;
+    }
+    public String getTemplateId() {
+        return this.templateId;
     }
 
 }

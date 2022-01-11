@@ -77,6 +77,58 @@ public class QueryTodoTasksResponseBody extends TeaModel {
 
     }
 
+    public static class QueryTodoTasksResponseBodyTodoCardsOrgInfo extends TeaModel {
+        // 组织corpId
+        @NameInMap("corpId")
+        public String corpId;
+
+        // 组织名称
+        @NameInMap("name")
+        public String name;
+
+        public static QueryTodoTasksResponseBodyTodoCardsOrgInfo build(java.util.Map<String, ?> map) throws Exception {
+            QueryTodoTasksResponseBodyTodoCardsOrgInfo self = new QueryTodoTasksResponseBodyTodoCardsOrgInfo();
+            return TeaModel.build(map, self);
+        }
+
+        public QueryTodoTasksResponseBodyTodoCardsOrgInfo setCorpId(String corpId) {
+            this.corpId = corpId;
+            return this;
+        }
+        public String getCorpId() {
+            return this.corpId;
+        }
+
+        public QueryTodoTasksResponseBodyTodoCardsOrgInfo setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
+    }
+
+    public static class QueryTodoTasksResponseBodyTodoCardsOriginalSource extends TeaModel {
+        // 业务来源展示名称
+        @NameInMap("sourceTitle")
+        public String sourceTitle;
+
+        public static QueryTodoTasksResponseBodyTodoCardsOriginalSource build(java.util.Map<String, ?> map) throws Exception {
+            QueryTodoTasksResponseBodyTodoCardsOriginalSource self = new QueryTodoTasksResponseBodyTodoCardsOriginalSource();
+            return TeaModel.build(map, self);
+        }
+
+        public QueryTodoTasksResponseBodyTodoCardsOriginalSource setSourceTitle(String sourceTitle) {
+            this.sourceTitle = sourceTitle;
+            return this;
+        }
+        public String getSourceTitle() {
+            return this.sourceTitle;
+        }
+
+    }
+
     public static class QueryTodoTasksResponseBodyTodoCardsTodoCardViewTodoCardContentList extends TeaModel {
         // 自定义表单内容名字
         @NameInMap("name")
@@ -110,6 +162,10 @@ public class QueryTodoTasksResponseBody extends TeaModel {
     }
 
     public static class QueryTodoTasksResponseBodyTodoCardsTodoCardView extends TeaModel {
+        // link, button, 操作区类型，是链接类型，或者按钮类型
+        @NameInMap("actionType")
+        public String actionType;
+
         // 卡片类型
         @NameInMap("cardType")
         public String cardType;
@@ -122,24 +178,28 @@ public class QueryTodoTasksResponseBody extends TeaModel {
         @NameInMap("contentType")
         public String contentType;
 
-        // link, button, 操作区类型，是链接类型，或者按钮类型
-        @NameInMap("actionType")
-        public String actionType;
-
         // 卡片icon
         @NameInMap("icon")
         public String icon;
+
+        @NameInMap("todoCardContentList")
+        public java.util.List<QueryTodoTasksResponseBodyTodoCardsTodoCardViewTodoCardContentList> todoCardContentList;
 
         // 卡片标题
         @NameInMap("todoCardTitle")
         public String todoCardTitle;
 
-        @NameInMap("todoCardContentList")
-        public java.util.List<QueryTodoTasksResponseBodyTodoCardsTodoCardViewTodoCardContentList> todoCardContentList;
-
         public static QueryTodoTasksResponseBodyTodoCardsTodoCardView build(java.util.Map<String, ?> map) throws Exception {
             QueryTodoTasksResponseBodyTodoCardsTodoCardView self = new QueryTodoTasksResponseBodyTodoCardsTodoCardView();
             return TeaModel.build(map, self);
+        }
+
+        public QueryTodoTasksResponseBodyTodoCardsTodoCardView setActionType(String actionType) {
+            this.actionType = actionType;
+            return this;
+        }
+        public String getActionType() {
+            return this.actionType;
         }
 
         public QueryTodoTasksResponseBodyTodoCardsTodoCardView setCardType(String cardType) {
@@ -166,28 +226,12 @@ public class QueryTodoTasksResponseBody extends TeaModel {
             return this.contentType;
         }
 
-        public QueryTodoTasksResponseBodyTodoCardsTodoCardView setActionType(String actionType) {
-            this.actionType = actionType;
-            return this;
-        }
-        public String getActionType() {
-            return this.actionType;
-        }
-
         public QueryTodoTasksResponseBodyTodoCardsTodoCardView setIcon(String icon) {
             this.icon = icon;
             return this;
         }
         public String getIcon() {
             return this.icon;
-        }
-
-        public QueryTodoTasksResponseBodyTodoCardsTodoCardView setTodoCardTitle(String todoCardTitle) {
-            this.todoCardTitle = todoCardTitle;
-            return this;
-        }
-        public String getTodoCardTitle() {
-            return this.todoCardTitle;
         }
 
         public QueryTodoTasksResponseBodyTodoCardsTodoCardView setTodoCardContentList(java.util.List<QueryTodoTasksResponseBodyTodoCardsTodoCardViewTodoCardContentList> todoCardContentList) {
@@ -198,224 +242,84 @@ public class QueryTodoTasksResponseBody extends TeaModel {
             return this.todoCardContentList;
         }
 
-    }
-
-    public static class QueryTodoTasksResponseBodyTodoCardsOriginalSource extends TeaModel {
-        // 业务来源展示名称
-        @NameInMap("sourceTitle")
-        public String sourceTitle;
-
-        public static QueryTodoTasksResponseBodyTodoCardsOriginalSource build(java.util.Map<String, ?> map) throws Exception {
-            QueryTodoTasksResponseBodyTodoCardsOriginalSource self = new QueryTodoTasksResponseBodyTodoCardsOriginalSource();
-            return TeaModel.build(map, self);
-        }
-
-        public QueryTodoTasksResponseBodyTodoCardsOriginalSource setSourceTitle(String sourceTitle) {
-            this.sourceTitle = sourceTitle;
+        public QueryTodoTasksResponseBodyTodoCardsTodoCardView setTodoCardTitle(String todoCardTitle) {
+            this.todoCardTitle = todoCardTitle;
             return this;
         }
-        public String getSourceTitle() {
-            return this.sourceTitle;
-        }
-
-    }
-
-    public static class QueryTodoTasksResponseBodyTodoCardsOrgInfo extends TeaModel {
-        // 组织corpId
-        @NameInMap("corpId")
-        public String corpId;
-
-        // 组织名称
-        @NameInMap("name")
-        public String name;
-
-        public static QueryTodoTasksResponseBodyTodoCardsOrgInfo build(java.util.Map<String, ?> map) throws Exception {
-            QueryTodoTasksResponseBodyTodoCardsOrgInfo self = new QueryTodoTasksResponseBodyTodoCardsOrgInfo();
-            return TeaModel.build(map, self);
-        }
-
-        public QueryTodoTasksResponseBodyTodoCardsOrgInfo setCorpId(String corpId) {
-            this.corpId = corpId;
-            return this;
-        }
-        public String getCorpId() {
-            return this.corpId;
-        }
-
-        public QueryTodoTasksResponseBodyTodoCardsOrgInfo setName(String name) {
-            this.name = name;
-            return this;
-        }
-        public String getName() {
-            return this.name;
+        public String getTodoCardTitle() {
+            return this.todoCardTitle;
         }
 
     }
 
     public static class QueryTodoTasksResponseBodyTodoCards extends TeaModel {
-        // 待办id
-        @NameInMap("taskId")
-        public String taskId;
-
-        // 待办标题
-        @NameInMap("subject")
-        public String subject;
-
-        // 待办截止时间
-        @NameInMap("dueTime")
-        public Long dueTime;
-
-        // 详情页链接
-        @NameInMap("detailUrl")
-        public QueryTodoTasksResponseBodyTodoCardsDetailUrl detailUrl;
-
-        // 待办卡片视图模型
-        @NameInMap("todoCardView")
-        public QueryTodoTasksResponseBodyTodoCardsTodoCardView todoCardView;
-
-        // 优先级
-        @NameInMap("priority")
-        public Integer priority;
-
-        // 创建时间
-        @NameInMap("createdTime")
-        public Long createdTime;
-
-        // 更新时间
-        @NameInMap("modifiedTime")
-        public Long modifiedTime;
-
-        // 待办状态
-        @NameInMap("todoStatus")
-        public String todoStatus;
-
-        // 创建者id
-        @NameInMap("creatorId")
-        public String creatorId;
-
-        // 来源id
-        @NameInMap("sourceId")
-        public String sourceId;
+        // 所属应用
+        @NameInMap("bizTag")
+        public String bizTag;
 
         // 所属分类
         @NameInMap("category")
         public String category;
 
-        // 所属应用
-        @NameInMap("bizTag")
-        public String bizTag;
+        // 创建时间
+        @NameInMap("createdTime")
+        public Long createdTime;
 
-        // 业务来源信息
-        @NameInMap("originalSource")
-        public QueryTodoTasksResponseBodyTodoCardsOriginalSource originalSource;
+        // 创建者id
+        @NameInMap("creatorId")
+        public String creatorId;
+
+        // 详情页链接
+        @NameInMap("detailUrl")
+        public QueryTodoTasksResponseBodyTodoCardsDetailUrl detailUrl;
+
+        // 待办截止时间
+        @NameInMap("dueTime")
+        public Long dueTime;
 
         // 待办完成状态
         @NameInMap("isDone")
         public Boolean isDone;
 
+        // 更新时间
+        @NameInMap("modifiedTime")
+        public Long modifiedTime;
+
         // 所属组织信息
         @NameInMap("orgInfo")
         public QueryTodoTasksResponseBodyTodoCardsOrgInfo orgInfo;
 
+        // 业务来源信息
+        @NameInMap("originalSource")
+        public QueryTodoTasksResponseBodyTodoCardsOriginalSource originalSource;
+
+        // 优先级
+        @NameInMap("priority")
+        public Integer priority;
+
+        // 来源id
+        @NameInMap("sourceId")
+        public String sourceId;
+
+        // 待办标题
+        @NameInMap("subject")
+        public String subject;
+
+        // 待办id
+        @NameInMap("taskId")
+        public String taskId;
+
+        // 待办卡片视图模型
+        @NameInMap("todoCardView")
+        public QueryTodoTasksResponseBodyTodoCardsTodoCardView todoCardView;
+
+        // 待办状态
+        @NameInMap("todoStatus")
+        public String todoStatus;
+
         public static QueryTodoTasksResponseBodyTodoCards build(java.util.Map<String, ?> map) throws Exception {
             QueryTodoTasksResponseBodyTodoCards self = new QueryTodoTasksResponseBodyTodoCards();
             return TeaModel.build(map, self);
-        }
-
-        public QueryTodoTasksResponseBodyTodoCards setTaskId(String taskId) {
-            this.taskId = taskId;
-            return this;
-        }
-        public String getTaskId() {
-            return this.taskId;
-        }
-
-        public QueryTodoTasksResponseBodyTodoCards setSubject(String subject) {
-            this.subject = subject;
-            return this;
-        }
-        public String getSubject() {
-            return this.subject;
-        }
-
-        public QueryTodoTasksResponseBodyTodoCards setDueTime(Long dueTime) {
-            this.dueTime = dueTime;
-            return this;
-        }
-        public Long getDueTime() {
-            return this.dueTime;
-        }
-
-        public QueryTodoTasksResponseBodyTodoCards setDetailUrl(QueryTodoTasksResponseBodyTodoCardsDetailUrl detailUrl) {
-            this.detailUrl = detailUrl;
-            return this;
-        }
-        public QueryTodoTasksResponseBodyTodoCardsDetailUrl getDetailUrl() {
-            return this.detailUrl;
-        }
-
-        public QueryTodoTasksResponseBodyTodoCards setTodoCardView(QueryTodoTasksResponseBodyTodoCardsTodoCardView todoCardView) {
-            this.todoCardView = todoCardView;
-            return this;
-        }
-        public QueryTodoTasksResponseBodyTodoCardsTodoCardView getTodoCardView() {
-            return this.todoCardView;
-        }
-
-        public QueryTodoTasksResponseBodyTodoCards setPriority(Integer priority) {
-            this.priority = priority;
-            return this;
-        }
-        public Integer getPriority() {
-            return this.priority;
-        }
-
-        public QueryTodoTasksResponseBodyTodoCards setCreatedTime(Long createdTime) {
-            this.createdTime = createdTime;
-            return this;
-        }
-        public Long getCreatedTime() {
-            return this.createdTime;
-        }
-
-        public QueryTodoTasksResponseBodyTodoCards setModifiedTime(Long modifiedTime) {
-            this.modifiedTime = modifiedTime;
-            return this;
-        }
-        public Long getModifiedTime() {
-            return this.modifiedTime;
-        }
-
-        public QueryTodoTasksResponseBodyTodoCards setTodoStatus(String todoStatus) {
-            this.todoStatus = todoStatus;
-            return this;
-        }
-        public String getTodoStatus() {
-            return this.todoStatus;
-        }
-
-        public QueryTodoTasksResponseBodyTodoCards setCreatorId(String creatorId) {
-            this.creatorId = creatorId;
-            return this;
-        }
-        public String getCreatorId() {
-            return this.creatorId;
-        }
-
-        public QueryTodoTasksResponseBodyTodoCards setSourceId(String sourceId) {
-            this.sourceId = sourceId;
-            return this;
-        }
-        public String getSourceId() {
-            return this.sourceId;
-        }
-
-        public QueryTodoTasksResponseBodyTodoCards setCategory(String category) {
-            this.category = category;
-            return this;
-        }
-        public String getCategory() {
-            return this.category;
         }
 
         public QueryTodoTasksResponseBodyTodoCards setBizTag(String bizTag) {
@@ -426,12 +330,44 @@ public class QueryTodoTasksResponseBody extends TeaModel {
             return this.bizTag;
         }
 
-        public QueryTodoTasksResponseBodyTodoCards setOriginalSource(QueryTodoTasksResponseBodyTodoCardsOriginalSource originalSource) {
-            this.originalSource = originalSource;
+        public QueryTodoTasksResponseBodyTodoCards setCategory(String category) {
+            this.category = category;
             return this;
         }
-        public QueryTodoTasksResponseBodyTodoCardsOriginalSource getOriginalSource() {
-            return this.originalSource;
+        public String getCategory() {
+            return this.category;
+        }
+
+        public QueryTodoTasksResponseBodyTodoCards setCreatedTime(Long createdTime) {
+            this.createdTime = createdTime;
+            return this;
+        }
+        public Long getCreatedTime() {
+            return this.createdTime;
+        }
+
+        public QueryTodoTasksResponseBodyTodoCards setCreatorId(String creatorId) {
+            this.creatorId = creatorId;
+            return this;
+        }
+        public String getCreatorId() {
+            return this.creatorId;
+        }
+
+        public QueryTodoTasksResponseBodyTodoCards setDetailUrl(QueryTodoTasksResponseBodyTodoCardsDetailUrl detailUrl) {
+            this.detailUrl = detailUrl;
+            return this;
+        }
+        public QueryTodoTasksResponseBodyTodoCardsDetailUrl getDetailUrl() {
+            return this.detailUrl;
+        }
+
+        public QueryTodoTasksResponseBodyTodoCards setDueTime(Long dueTime) {
+            this.dueTime = dueTime;
+            return this;
+        }
+        public Long getDueTime() {
+            return this.dueTime;
         }
 
         public QueryTodoTasksResponseBodyTodoCards setIsDone(Boolean isDone) {
@@ -442,12 +378,76 @@ public class QueryTodoTasksResponseBody extends TeaModel {
             return this.isDone;
         }
 
+        public QueryTodoTasksResponseBodyTodoCards setModifiedTime(Long modifiedTime) {
+            this.modifiedTime = modifiedTime;
+            return this;
+        }
+        public Long getModifiedTime() {
+            return this.modifiedTime;
+        }
+
         public QueryTodoTasksResponseBodyTodoCards setOrgInfo(QueryTodoTasksResponseBodyTodoCardsOrgInfo orgInfo) {
             this.orgInfo = orgInfo;
             return this;
         }
         public QueryTodoTasksResponseBodyTodoCardsOrgInfo getOrgInfo() {
             return this.orgInfo;
+        }
+
+        public QueryTodoTasksResponseBodyTodoCards setOriginalSource(QueryTodoTasksResponseBodyTodoCardsOriginalSource originalSource) {
+            this.originalSource = originalSource;
+            return this;
+        }
+        public QueryTodoTasksResponseBodyTodoCardsOriginalSource getOriginalSource() {
+            return this.originalSource;
+        }
+
+        public QueryTodoTasksResponseBodyTodoCards setPriority(Integer priority) {
+            this.priority = priority;
+            return this;
+        }
+        public Integer getPriority() {
+            return this.priority;
+        }
+
+        public QueryTodoTasksResponseBodyTodoCards setSourceId(String sourceId) {
+            this.sourceId = sourceId;
+            return this;
+        }
+        public String getSourceId() {
+            return this.sourceId;
+        }
+
+        public QueryTodoTasksResponseBodyTodoCards setSubject(String subject) {
+            this.subject = subject;
+            return this;
+        }
+        public String getSubject() {
+            return this.subject;
+        }
+
+        public QueryTodoTasksResponseBodyTodoCards setTaskId(String taskId) {
+            this.taskId = taskId;
+            return this;
+        }
+        public String getTaskId() {
+            return this.taskId;
+        }
+
+        public QueryTodoTasksResponseBodyTodoCards setTodoCardView(QueryTodoTasksResponseBodyTodoCardsTodoCardView todoCardView) {
+            this.todoCardView = todoCardView;
+            return this;
+        }
+        public QueryTodoTasksResponseBodyTodoCardsTodoCardView getTodoCardView() {
+            return this.todoCardView;
+        }
+
+        public QueryTodoTasksResponseBodyTodoCards setTodoStatus(String todoStatus) {
+            this.todoStatus = todoStatus;
+            return this;
+        }
+        public String getTodoStatus() {
+            return this.todoStatus;
         }
 
     }

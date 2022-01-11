@@ -4,6 +4,10 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetActivityButtonListRequest extends TeaModel {
+    // 语言环境
+    @NameInMap("language")
+    public String language;
+
     // 应用秘钥
     @NameInMap("systemToken")
     public String systemToken;
@@ -12,13 +16,17 @@ public class GetActivityButtonListRequest extends TeaModel {
     @NameInMap("userId")
     public String userId;
 
-    // 语言环境
-    @NameInMap("language")
-    public String language;
-
     public static GetActivityButtonListRequest build(java.util.Map<String, ?> map) throws Exception {
         GetActivityButtonListRequest self = new GetActivityButtonListRequest();
         return TeaModel.build(map, self);
+    }
+
+    public GetActivityButtonListRequest setLanguage(String language) {
+        this.language = language;
+        return this;
+    }
+    public String getLanguage() {
+        return this.language;
     }
 
     public GetActivityButtonListRequest setSystemToken(String systemToken) {
@@ -35,14 +43,6 @@ public class GetActivityButtonListRequest extends TeaModel {
     }
     public String getUserId() {
         return this.userId;
-    }
-
-    public GetActivityButtonListRequest setLanguage(String language) {
-        this.language = language;
-        return this;
-    }
-    public String getLanguage() {
-        return this.language;
     }
 
 }

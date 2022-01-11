@@ -4,6 +4,10 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class PollingConfirmStatusRequest extends TeaModel {
+    // courseCode
+    @NameInMap("courseCode")
+    public String courseCode;
+
     // ext
     @NameInMap("ext")
     public String ext;
@@ -12,10 +16,6 @@ public class PollingConfirmStatusRequest extends TeaModel {
     @NameInMap("isvCode")
     public String isvCode;
 
-    // courseCode
-    @NameInMap("courseCode")
-    public String courseCode;
-
     // opUserId
     @NameInMap("opUserId")
     public String opUserId;
@@ -23,6 +23,14 @@ public class PollingConfirmStatusRequest extends TeaModel {
     public static PollingConfirmStatusRequest build(java.util.Map<String, ?> map) throws Exception {
         PollingConfirmStatusRequest self = new PollingConfirmStatusRequest();
         return TeaModel.build(map, self);
+    }
+
+    public PollingConfirmStatusRequest setCourseCode(String courseCode) {
+        this.courseCode = courseCode;
+        return this;
+    }
+    public String getCourseCode() {
+        return this.courseCode;
     }
 
     public PollingConfirmStatusRequest setExt(String ext) {
@@ -39,14 +47,6 @@ public class PollingConfirmStatusRequest extends TeaModel {
     }
     public String getIsvCode() {
         return this.isvCode;
-    }
-
-    public PollingConfirmStatusRequest setCourseCode(String courseCode) {
-        this.courseCode = courseCode;
-        return this;
-    }
-    public String getCourseCode() {
-        return this.courseCode;
     }
 
     public PollingConfirmStatusRequest setOpUserId(String opUserId) {

@@ -4,14 +4,23 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class IndustryManufactureMaterialListRequest extends TeaModel {
-    @NameInMap("tokenGrantType")
-    public Long tokenGrantType;
+    @NameInMap("appId")
+    public Long appId;
+
+    @NameInMap("appIds")
+    public java.util.List<Long> appIds;
+
+    @NameInMap("appName")
+    public String appName;
 
     @NameInMap("corpId")
     public String corpId;
 
-    @NameInMap("pageSize")
-    public Integer pageSize;
+    @NameInMap("currentPage")
+    public Long currentPage;
+
+    @NameInMap("cursor")
+    public Long cursor;
 
     @NameInMap("endTime")
     public Long endTime;
@@ -19,50 +28,57 @@ public class IndustryManufactureMaterialListRequest extends TeaModel {
     @NameInMap("instanceId")
     public String instanceId;
 
+    @NameInMap("isvOrgId")
+    public Long isvOrgId;
+
     @NameInMap("materialNo")
     public String materialNo;
-
-    @NameInMap("startTime")
-    public Long startTime;
 
     @NameInMap("microappAgentId")
     public Long microappAgentId;
 
-    @NameInMap("cursor")
-    public Long cursor;
-
-    @NameInMap("appName")
-    public String appName;
-
     @NameInMap("orgId")
     public Long orgId;
 
-    @NameInMap("appId")
-    public Long appId;
+    @NameInMap("pageSize")
+    public Integer pageSize;
+
+    @NameInMap("startTime")
+    public Long startTime;
 
     @NameInMap("suiteKey")
     public String suiteKey;
 
-    @NameInMap("appIds")
-    public java.util.List<Long> appIds;
-
-    @NameInMap("currentPage")
-    public Long currentPage;
-
-    @NameInMap("isvOrgId")
-    public Long isvOrgId;
+    @NameInMap("tokenGrantType")
+    public Long tokenGrantType;
 
     public static IndustryManufactureMaterialListRequest build(java.util.Map<String, ?> map) throws Exception {
         IndustryManufactureMaterialListRequest self = new IndustryManufactureMaterialListRequest();
         return TeaModel.build(map, self);
     }
 
-    public IndustryManufactureMaterialListRequest setTokenGrantType(Long tokenGrantType) {
-        this.tokenGrantType = tokenGrantType;
+    public IndustryManufactureMaterialListRequest setAppId(Long appId) {
+        this.appId = appId;
         return this;
     }
-    public Long getTokenGrantType() {
-        return this.tokenGrantType;
+    public Long getAppId() {
+        return this.appId;
+    }
+
+    public IndustryManufactureMaterialListRequest setAppIds(java.util.List<Long> appIds) {
+        this.appIds = appIds;
+        return this;
+    }
+    public java.util.List<Long> getAppIds() {
+        return this.appIds;
+    }
+
+    public IndustryManufactureMaterialListRequest setAppName(String appName) {
+        this.appName = appName;
+        return this;
+    }
+    public String getAppName() {
+        return this.appName;
     }
 
     public IndustryManufactureMaterialListRequest setCorpId(String corpId) {
@@ -73,12 +89,20 @@ public class IndustryManufactureMaterialListRequest extends TeaModel {
         return this.corpId;
     }
 
-    public IndustryManufactureMaterialListRequest setPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
+    public IndustryManufactureMaterialListRequest setCurrentPage(Long currentPage) {
+        this.currentPage = currentPage;
         return this;
     }
-    public Integer getPageSize() {
-        return this.pageSize;
+    public Long getCurrentPage() {
+        return this.currentPage;
+    }
+
+    public IndustryManufactureMaterialListRequest setCursor(Long cursor) {
+        this.cursor = cursor;
+        return this;
+    }
+    public Long getCursor() {
+        return this.cursor;
     }
 
     public IndustryManufactureMaterialListRequest setEndTime(Long endTime) {
@@ -97,20 +121,20 @@ public class IndustryManufactureMaterialListRequest extends TeaModel {
         return this.instanceId;
     }
 
+    public IndustryManufactureMaterialListRequest setIsvOrgId(Long isvOrgId) {
+        this.isvOrgId = isvOrgId;
+        return this;
+    }
+    public Long getIsvOrgId() {
+        return this.isvOrgId;
+    }
+
     public IndustryManufactureMaterialListRequest setMaterialNo(String materialNo) {
         this.materialNo = materialNo;
         return this;
     }
     public String getMaterialNo() {
         return this.materialNo;
-    }
-
-    public IndustryManufactureMaterialListRequest setStartTime(Long startTime) {
-        this.startTime = startTime;
-        return this;
-    }
-    public Long getStartTime() {
-        return this.startTime;
     }
 
     public IndustryManufactureMaterialListRequest setMicroappAgentId(Long microappAgentId) {
@@ -121,22 +145,6 @@ public class IndustryManufactureMaterialListRequest extends TeaModel {
         return this.microappAgentId;
     }
 
-    public IndustryManufactureMaterialListRequest setCursor(Long cursor) {
-        this.cursor = cursor;
-        return this;
-    }
-    public Long getCursor() {
-        return this.cursor;
-    }
-
-    public IndustryManufactureMaterialListRequest setAppName(String appName) {
-        this.appName = appName;
-        return this;
-    }
-    public String getAppName() {
-        return this.appName;
-    }
-
     public IndustryManufactureMaterialListRequest setOrgId(Long orgId) {
         this.orgId = orgId;
         return this;
@@ -145,12 +153,20 @@ public class IndustryManufactureMaterialListRequest extends TeaModel {
         return this.orgId;
     }
 
-    public IndustryManufactureMaterialListRequest setAppId(Long appId) {
-        this.appId = appId;
+    public IndustryManufactureMaterialListRequest setPageSize(Integer pageSize) {
+        this.pageSize = pageSize;
         return this;
     }
-    public Long getAppId() {
-        return this.appId;
+    public Integer getPageSize() {
+        return this.pageSize;
+    }
+
+    public IndustryManufactureMaterialListRequest setStartTime(Long startTime) {
+        this.startTime = startTime;
+        return this;
+    }
+    public Long getStartTime() {
+        return this.startTime;
     }
 
     public IndustryManufactureMaterialListRequest setSuiteKey(String suiteKey) {
@@ -161,28 +177,12 @@ public class IndustryManufactureMaterialListRequest extends TeaModel {
         return this.suiteKey;
     }
 
-    public IndustryManufactureMaterialListRequest setAppIds(java.util.List<Long> appIds) {
-        this.appIds = appIds;
+    public IndustryManufactureMaterialListRequest setTokenGrantType(Long tokenGrantType) {
+        this.tokenGrantType = tokenGrantType;
         return this;
     }
-    public java.util.List<Long> getAppIds() {
-        return this.appIds;
-    }
-
-    public IndustryManufactureMaterialListRequest setCurrentPage(Long currentPage) {
-        this.currentPage = currentPage;
-        return this;
-    }
-    public Long getCurrentPage() {
-        return this.currentPage;
-    }
-
-    public IndustryManufactureMaterialListRequest setIsvOrgId(Long isvOrgId) {
-        this.isvOrgId = isvOrgId;
-        return this;
-    }
-    public Long getIsvOrgId() {
-        return this.isvOrgId;
+    public Long getTokenGrantType() {
+        return this.tokenGrantType;
     }
 
 }

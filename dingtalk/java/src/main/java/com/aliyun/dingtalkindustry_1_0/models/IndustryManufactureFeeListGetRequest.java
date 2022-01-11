@@ -4,23 +4,35 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class IndustryManufactureFeeListGetRequest extends TeaModel {
-    @NameInMap("productionTaskNo")
-    public String productionTaskNo;
+    @NameInMap("appId")
+    public Long appId;
 
-    @NameInMap("materialNo")
-    public String materialNo;
+    @NameInMap("appIds")
+    public java.util.List<Long> appIds;
 
-    @NameInMap("type")
-    public String type;
+    @NameInMap("appName")
+    public String appName;
 
-    @NameInMap("startTime")
-    public Long startTime;
+    @NameInMap("corpId")
+    public String corpId;
+
+    @NameInMap("cursor")
+    public Long cursor;
 
     @NameInMap("endTime")
     public Long endTime;
 
-    @NameInMap("cursor")
-    public Long cursor;
+    @NameInMap("isvOrgId")
+    public Long isvOrgId;
+
+    @NameInMap("materialNo")
+    public String materialNo;
+
+    @NameInMap("microappAgentId")
+    public Long microappAgentId;
+
+    @NameInMap("orgId")
+    public Long orgId;
 
     @NameInMap("pageNumber")
     public Long pageNumber;
@@ -28,68 +40,64 @@ public class IndustryManufactureFeeListGetRequest extends TeaModel {
     @NameInMap("pageSize")
     public Integer pageSize;
 
-    @NameInMap("tokenGrantType")
-    public Integer tokenGrantType;
+    @NameInMap("productionTaskNo")
+    public String productionTaskNo;
 
-    @NameInMap("orgId")
-    public Long orgId;
-
-    @NameInMap("corpId")
-    public String corpId;
-
-    @NameInMap("isvOrgId")
-    public Long isvOrgId;
+    @NameInMap("startTime")
+    public Long startTime;
 
     @NameInMap("suiteKey")
     public String suiteKey;
 
-    @NameInMap("microappAgentId")
-    public Long microappAgentId;
+    @NameInMap("tokenGrantType")
+    public Integer tokenGrantType;
 
-    @NameInMap("appIds")
-    public java.util.List<Long> appIds;
-
-    @NameInMap("appId")
-    public Long appId;
-
-    @NameInMap("appName")
-    public String appName;
+    @NameInMap("type")
+    public String type;
 
     public static IndustryManufactureFeeListGetRequest build(java.util.Map<String, ?> map) throws Exception {
         IndustryManufactureFeeListGetRequest self = new IndustryManufactureFeeListGetRequest();
         return TeaModel.build(map, self);
     }
 
-    public IndustryManufactureFeeListGetRequest setProductionTaskNo(String productionTaskNo) {
-        this.productionTaskNo = productionTaskNo;
+    public IndustryManufactureFeeListGetRequest setAppId(Long appId) {
+        this.appId = appId;
         return this;
     }
-    public String getProductionTaskNo() {
-        return this.productionTaskNo;
+    public Long getAppId() {
+        return this.appId;
     }
 
-    public IndustryManufactureFeeListGetRequest setMaterialNo(String materialNo) {
-        this.materialNo = materialNo;
+    public IndustryManufactureFeeListGetRequest setAppIds(java.util.List<Long> appIds) {
+        this.appIds = appIds;
         return this;
     }
-    public String getMaterialNo() {
-        return this.materialNo;
+    public java.util.List<Long> getAppIds() {
+        return this.appIds;
     }
 
-    public IndustryManufactureFeeListGetRequest setType(String type) {
-        this.type = type;
+    public IndustryManufactureFeeListGetRequest setAppName(String appName) {
+        this.appName = appName;
         return this;
     }
-    public String getType() {
-        return this.type;
+    public String getAppName() {
+        return this.appName;
     }
 
-    public IndustryManufactureFeeListGetRequest setStartTime(Long startTime) {
-        this.startTime = startTime;
+    public IndustryManufactureFeeListGetRequest setCorpId(String corpId) {
+        this.corpId = corpId;
         return this;
     }
-    public Long getStartTime() {
-        return this.startTime;
+    public String getCorpId() {
+        return this.corpId;
+    }
+
+    public IndustryManufactureFeeListGetRequest setCursor(Long cursor) {
+        this.cursor = cursor;
+        return this;
+    }
+    public Long getCursor() {
+        return this.cursor;
     }
 
     public IndustryManufactureFeeListGetRequest setEndTime(Long endTime) {
@@ -100,12 +108,36 @@ public class IndustryManufactureFeeListGetRequest extends TeaModel {
         return this.endTime;
     }
 
-    public IndustryManufactureFeeListGetRequest setCursor(Long cursor) {
-        this.cursor = cursor;
+    public IndustryManufactureFeeListGetRequest setIsvOrgId(Long isvOrgId) {
+        this.isvOrgId = isvOrgId;
         return this;
     }
-    public Long getCursor() {
-        return this.cursor;
+    public Long getIsvOrgId() {
+        return this.isvOrgId;
+    }
+
+    public IndustryManufactureFeeListGetRequest setMaterialNo(String materialNo) {
+        this.materialNo = materialNo;
+        return this;
+    }
+    public String getMaterialNo() {
+        return this.materialNo;
+    }
+
+    public IndustryManufactureFeeListGetRequest setMicroappAgentId(Long microappAgentId) {
+        this.microappAgentId = microappAgentId;
+        return this;
+    }
+    public Long getMicroappAgentId() {
+        return this.microappAgentId;
+    }
+
+    public IndustryManufactureFeeListGetRequest setOrgId(Long orgId) {
+        this.orgId = orgId;
+        return this;
+    }
+    public Long getOrgId() {
+        return this.orgId;
     }
 
     public IndustryManufactureFeeListGetRequest setPageNumber(Long pageNumber) {
@@ -124,36 +156,20 @@ public class IndustryManufactureFeeListGetRequest extends TeaModel {
         return this.pageSize;
     }
 
-    public IndustryManufactureFeeListGetRequest setTokenGrantType(Integer tokenGrantType) {
-        this.tokenGrantType = tokenGrantType;
+    public IndustryManufactureFeeListGetRequest setProductionTaskNo(String productionTaskNo) {
+        this.productionTaskNo = productionTaskNo;
         return this;
     }
-    public Integer getTokenGrantType() {
-        return this.tokenGrantType;
+    public String getProductionTaskNo() {
+        return this.productionTaskNo;
     }
 
-    public IndustryManufactureFeeListGetRequest setOrgId(Long orgId) {
-        this.orgId = orgId;
+    public IndustryManufactureFeeListGetRequest setStartTime(Long startTime) {
+        this.startTime = startTime;
         return this;
     }
-    public Long getOrgId() {
-        return this.orgId;
-    }
-
-    public IndustryManufactureFeeListGetRequest setCorpId(String corpId) {
-        this.corpId = corpId;
-        return this;
-    }
-    public String getCorpId() {
-        return this.corpId;
-    }
-
-    public IndustryManufactureFeeListGetRequest setIsvOrgId(Long isvOrgId) {
-        this.isvOrgId = isvOrgId;
-        return this;
-    }
-    public Long getIsvOrgId() {
-        return this.isvOrgId;
+    public Long getStartTime() {
+        return this.startTime;
     }
 
     public IndustryManufactureFeeListGetRequest setSuiteKey(String suiteKey) {
@@ -164,36 +180,20 @@ public class IndustryManufactureFeeListGetRequest extends TeaModel {
         return this.suiteKey;
     }
 
-    public IndustryManufactureFeeListGetRequest setMicroappAgentId(Long microappAgentId) {
-        this.microappAgentId = microappAgentId;
+    public IndustryManufactureFeeListGetRequest setTokenGrantType(Integer tokenGrantType) {
+        this.tokenGrantType = tokenGrantType;
         return this;
     }
-    public Long getMicroappAgentId() {
-        return this.microappAgentId;
+    public Integer getTokenGrantType() {
+        return this.tokenGrantType;
     }
 
-    public IndustryManufactureFeeListGetRequest setAppIds(java.util.List<Long> appIds) {
-        this.appIds = appIds;
+    public IndustryManufactureFeeListGetRequest setType(String type) {
+        this.type = type;
         return this;
     }
-    public java.util.List<Long> getAppIds() {
-        return this.appIds;
-    }
-
-    public IndustryManufactureFeeListGetRequest setAppId(Long appId) {
-        this.appId = appId;
-        return this;
-    }
-    public Long getAppId() {
-        return this.appId;
-    }
-
-    public IndustryManufactureFeeListGetRequest setAppName(String appName) {
-        this.appName = appName;
-        return this;
-    }
-    public String getAppName() {
-        return this.appName;
+    public String getType() {
+        return this.type;
     }
 
 }

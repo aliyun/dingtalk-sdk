@@ -8,13 +8,13 @@ public class QueryJobsRequest extends TeaModel {
     @NameInMap("jobName")
     public String jobName;
 
-    // 偏移量
-    @NameInMap("nextToken")
-    public Integer nextToken;
-
     // 最大值
     @NameInMap("maxResults")
     public Integer maxResults;
+
+    // 偏移量
+    @NameInMap("nextToken")
+    public Integer nextToken;
 
     public static QueryJobsRequest build(java.util.Map<String, ?> map) throws Exception {
         QueryJobsRequest self = new QueryJobsRequest();
@@ -29,20 +29,20 @@ public class QueryJobsRequest extends TeaModel {
         return this.jobName;
     }
 
-    public QueryJobsRequest setNextToken(Integer nextToken) {
-        this.nextToken = nextToken;
-        return this;
-    }
-    public Integer getNextToken() {
-        return this.nextToken;
-    }
-
     public QueryJobsRequest setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
         return this;
     }
     public Integer getMaxResults() {
         return this.maxResults;
+    }
+
+    public QueryJobsRequest setNextToken(Integer nextToken) {
+        this.nextToken = nextToken;
+        return this;
+    }
+    public Integer getNextToken() {
+        return this.nextToken;
     }
 
 }

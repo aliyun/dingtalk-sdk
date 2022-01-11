@@ -4,17 +4,21 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class NotifyPayCodePayResultRequest extends TeaModel {
-    // 付款码值
-    @NameInMap("payCode")
-    public String payCode;
+    // 订单金额
+    @NameInMap("amount")
+    public String amount;
+
+    // 收费金额
+    @NameInMap("chargeAmount")
+    public String chargeAmount;
 
     // 企业id
     @NameInMap("corpId")
     public String corpId;
 
-    // 用户id
-    @NameInMap("userId")
-    public String userId;
+    // 扩展信息
+    @NameInMap("extInfo")
+    public String extInfo;
 
     // 交易开始时间
     @NameInMap("gmtTradeCreate")
@@ -24,37 +28,29 @@ public class NotifyPayCodePayResultRequest extends TeaModel {
     @NameInMap("gmtTradeFinish")
     public String gmtTradeFinish;
 
-    // 交易号
-    @NameInMap("tradeNo")
-    public String tradeNo;
+    // merchantName
+    @NameInMap("merchantName")
+    public String merchantName;
 
-    // 交易状态
-    @NameInMap("tradeStatus")
-    public String tradeStatus;
+    // 支付渠道明细信息
+    @NameInMap("payChannelDetailList")
+    public java.util.List<NotifyPayCodePayResultRequestPayChannelDetailList> payChannelDetailList;
 
-    // 订单标题
-    @NameInMap("title")
-    public String title;
-
-    // 备注
-    @NameInMap("remark")
-    public String remark;
-
-    // 订单金额
-    @NameInMap("amount")
-    public String amount;
+    // 付款码值
+    @NameInMap("payCode")
+    public String payCode;
 
     // 订单优惠金额
     @NameInMap("promotionAmount")
     public String promotionAmount;
 
-    // 收费金额
-    @NameInMap("chargeAmount")
-    public String chargeAmount;
+    // 备注
+    @NameInMap("remark")
+    public String remark;
 
-    // 支付渠道明细信息
-    @NameInMap("payChannelDetailList")
-    public java.util.List<NotifyPayCodePayResultRequestPayChannelDetailList> payChannelDetailList;
+    // 订单标题
+    @NameInMap("title")
+    public String title;
 
     // 支付失败错误码
     @NameInMap("tradeErrorCode")
@@ -64,29 +60,37 @@ public class NotifyPayCodePayResultRequest extends TeaModel {
     @NameInMap("tradeErrorMsg")
     public String tradeErrorMsg;
 
-    // 扩展信息
-    @NameInMap("extInfo")
-    public String extInfo;
+    // 交易号
+    @NameInMap("tradeNo")
+    public String tradeNo;
 
-    // isvOrgId
-    @NameInMap("dingIsvOrgId")
-    public Long dingIsvOrgId;
+    // 交易状态
+    @NameInMap("tradeStatus")
+    public String tradeStatus;
 
-    // merchantName
-    @NameInMap("merchantName")
-    public String merchantName;
+    // 用户id
+    @NameInMap("userId")
+    public String userId;
 
     public static NotifyPayCodePayResultRequest build(java.util.Map<String, ?> map) throws Exception {
         NotifyPayCodePayResultRequest self = new NotifyPayCodePayResultRequest();
         return TeaModel.build(map, self);
     }
 
-    public NotifyPayCodePayResultRequest setPayCode(String payCode) {
-        this.payCode = payCode;
+    public NotifyPayCodePayResultRequest setAmount(String amount) {
+        this.amount = amount;
         return this;
     }
-    public String getPayCode() {
-        return this.payCode;
+    public String getAmount() {
+        return this.amount;
+    }
+
+    public NotifyPayCodePayResultRequest setChargeAmount(String chargeAmount) {
+        this.chargeAmount = chargeAmount;
+        return this;
+    }
+    public String getChargeAmount() {
+        return this.chargeAmount;
     }
 
     public NotifyPayCodePayResultRequest setCorpId(String corpId) {
@@ -97,12 +101,12 @@ public class NotifyPayCodePayResultRequest extends TeaModel {
         return this.corpId;
     }
 
-    public NotifyPayCodePayResultRequest setUserId(String userId) {
-        this.userId = userId;
+    public NotifyPayCodePayResultRequest setExtInfo(String extInfo) {
+        this.extInfo = extInfo;
         return this;
     }
-    public String getUserId() {
-        return this.userId;
+    public String getExtInfo() {
+        return this.extInfo;
     }
 
     public NotifyPayCodePayResultRequest setGmtTradeCreate(String gmtTradeCreate) {
@@ -121,44 +125,28 @@ public class NotifyPayCodePayResultRequest extends TeaModel {
         return this.gmtTradeFinish;
     }
 
-    public NotifyPayCodePayResultRequest setTradeNo(String tradeNo) {
-        this.tradeNo = tradeNo;
+    public NotifyPayCodePayResultRequest setMerchantName(String merchantName) {
+        this.merchantName = merchantName;
         return this;
     }
-    public String getTradeNo() {
-        return this.tradeNo;
+    public String getMerchantName() {
+        return this.merchantName;
     }
 
-    public NotifyPayCodePayResultRequest setTradeStatus(String tradeStatus) {
-        this.tradeStatus = tradeStatus;
+    public NotifyPayCodePayResultRequest setPayChannelDetailList(java.util.List<NotifyPayCodePayResultRequestPayChannelDetailList> payChannelDetailList) {
+        this.payChannelDetailList = payChannelDetailList;
         return this;
     }
-    public String getTradeStatus() {
-        return this.tradeStatus;
+    public java.util.List<NotifyPayCodePayResultRequestPayChannelDetailList> getPayChannelDetailList() {
+        return this.payChannelDetailList;
     }
 
-    public NotifyPayCodePayResultRequest setTitle(String title) {
-        this.title = title;
+    public NotifyPayCodePayResultRequest setPayCode(String payCode) {
+        this.payCode = payCode;
         return this;
     }
-    public String getTitle() {
-        return this.title;
-    }
-
-    public NotifyPayCodePayResultRequest setRemark(String remark) {
-        this.remark = remark;
-        return this;
-    }
-    public String getRemark() {
-        return this.remark;
-    }
-
-    public NotifyPayCodePayResultRequest setAmount(String amount) {
-        this.amount = amount;
-        return this;
-    }
-    public String getAmount() {
-        return this.amount;
+    public String getPayCode() {
+        return this.payCode;
     }
 
     public NotifyPayCodePayResultRequest setPromotionAmount(String promotionAmount) {
@@ -169,20 +157,20 @@ public class NotifyPayCodePayResultRequest extends TeaModel {
         return this.promotionAmount;
     }
 
-    public NotifyPayCodePayResultRequest setChargeAmount(String chargeAmount) {
-        this.chargeAmount = chargeAmount;
+    public NotifyPayCodePayResultRequest setRemark(String remark) {
+        this.remark = remark;
         return this;
     }
-    public String getChargeAmount() {
-        return this.chargeAmount;
+    public String getRemark() {
+        return this.remark;
     }
 
-    public NotifyPayCodePayResultRequest setPayChannelDetailList(java.util.List<NotifyPayCodePayResultRequestPayChannelDetailList> payChannelDetailList) {
-        this.payChannelDetailList = payChannelDetailList;
+    public NotifyPayCodePayResultRequest setTitle(String title) {
+        this.title = title;
         return this;
     }
-    public java.util.List<NotifyPayCodePayResultRequestPayChannelDetailList> getPayChannelDetailList() {
-        return this.payChannelDetailList;
+    public String getTitle() {
+        return this.title;
     }
 
     public NotifyPayCodePayResultRequest setTradeErrorCode(String tradeErrorCode) {
@@ -201,38 +189,42 @@ public class NotifyPayCodePayResultRequest extends TeaModel {
         return this.tradeErrorMsg;
     }
 
-    public NotifyPayCodePayResultRequest setExtInfo(String extInfo) {
-        this.extInfo = extInfo;
+    public NotifyPayCodePayResultRequest setTradeNo(String tradeNo) {
+        this.tradeNo = tradeNo;
         return this;
     }
-    public String getExtInfo() {
-        return this.extInfo;
+    public String getTradeNo() {
+        return this.tradeNo;
     }
 
-    public NotifyPayCodePayResultRequest setDingIsvOrgId(Long dingIsvOrgId) {
-        this.dingIsvOrgId = dingIsvOrgId;
+    public NotifyPayCodePayResultRequest setTradeStatus(String tradeStatus) {
+        this.tradeStatus = tradeStatus;
         return this;
     }
-    public Long getDingIsvOrgId() {
-        return this.dingIsvOrgId;
+    public String getTradeStatus() {
+        return this.tradeStatus;
     }
 
-    public NotifyPayCodePayResultRequest setMerchantName(String merchantName) {
-        this.merchantName = merchantName;
+    public NotifyPayCodePayResultRequest setUserId(String userId) {
+        this.userId = userId;
         return this;
     }
-    public String getMerchantName() {
-        return this.merchantName;
+    public String getUserId() {
+        return this.userId;
     }
 
     public static class NotifyPayCodePayResultRequestPayChannelDetailListFundToolDetailList extends TeaModel {
-        // 资金渠道名称
-        @NameInMap("fundToolName")
-        public String fundToolName;
-
         // 1.00
         @NameInMap("amount")
         public String amount;
+
+        // 扩展信息
+        @NameInMap("extInfo")
+        public String extInfo;
+
+        // 资金渠道名称
+        @NameInMap("fundToolName")
+        public String fundToolName;
 
         // 开始时间
         @NameInMap("gmtCreate")
@@ -246,21 +238,9 @@ public class NotifyPayCodePayResultRequest extends TeaModel {
         @NameInMap("promotionFundTool")
         public Boolean promotionFundTool;
 
-        // 扩展信息
-        @NameInMap("extInfo")
-        public String extInfo;
-
         public static NotifyPayCodePayResultRequestPayChannelDetailListFundToolDetailList build(java.util.Map<String, ?> map) throws Exception {
             NotifyPayCodePayResultRequestPayChannelDetailListFundToolDetailList self = new NotifyPayCodePayResultRequestPayChannelDetailListFundToolDetailList();
             return TeaModel.build(map, self);
-        }
-
-        public NotifyPayCodePayResultRequestPayChannelDetailListFundToolDetailList setFundToolName(String fundToolName) {
-            this.fundToolName = fundToolName;
-            return this;
-        }
-        public String getFundToolName() {
-            return this.fundToolName;
         }
 
         public NotifyPayCodePayResultRequestPayChannelDetailListFundToolDetailList setAmount(String amount) {
@@ -269,6 +249,22 @@ public class NotifyPayCodePayResultRequest extends TeaModel {
         }
         public String getAmount() {
             return this.amount;
+        }
+
+        public NotifyPayCodePayResultRequestPayChannelDetailListFundToolDetailList setExtInfo(String extInfo) {
+            this.extInfo = extInfo;
+            return this;
+        }
+        public String getExtInfo() {
+            return this.extInfo;
+        }
+
+        public NotifyPayCodePayResultRequestPayChannelDetailListFundToolDetailList setFundToolName(String fundToolName) {
+            this.fundToolName = fundToolName;
+            return this;
+        }
+        public String getFundToolName() {
+            return this.fundToolName;
         }
 
         public NotifyPayCodePayResultRequestPayChannelDetailListFundToolDetailList setGmtCreate(String gmtCreate) {
@@ -295,20 +291,16 @@ public class NotifyPayCodePayResultRequest extends TeaModel {
             return this.promotionFundTool;
         }
 
-        public NotifyPayCodePayResultRequestPayChannelDetailListFundToolDetailList setExtInfo(String extInfo) {
-            this.extInfo = extInfo;
-            return this;
-        }
-        public String getExtInfo() {
-            return this.extInfo;
-        }
-
     }
 
     public static class NotifyPayCodePayResultRequestPayChannelDetailList extends TeaModel {
-        // 支付渠道名称
-        @NameInMap("payChannelName")
-        public String payChannelName;
+        // 支付金额
+        @NameInMap("amount")
+        public String amount;
+
+        // 资金工具明细
+        @NameInMap("fundToolDetailList")
+        public java.util.List<NotifyPayCodePayResultRequestPayChannelDetailListFundToolDetailList> fundToolDetailList;
 
         // 开始时间
         @NameInMap("gmtCreate")
@@ -318,37 +310,41 @@ public class NotifyPayCodePayResultRequest extends TeaModel {
         @NameInMap("gmtFinish")
         public String gmtFinish;
 
-        // 支付渠道类型
-        @NameInMap("payChannelType")
-        public String payChannelType;
-
-        // 支付金额
-        @NameInMap("amount")
-        public String amount;
+        // 支付渠道名称
+        @NameInMap("payChannelName")
+        public String payChannelName;
 
         // 支付渠道单号
         @NameInMap("payChannelOrderNo")
         public String payChannelOrderNo;
 
+        // 支付渠道类型
+        @NameInMap("payChannelType")
+        public String payChannelType;
+
         // 优惠金额
         @NameInMap("promotionAmount")
         public String promotionAmount;
-
-        // 资金工具明细
-        @NameInMap("fundToolDetailList")
-        public java.util.List<NotifyPayCodePayResultRequestPayChannelDetailListFundToolDetailList> fundToolDetailList;
 
         public static NotifyPayCodePayResultRequestPayChannelDetailList build(java.util.Map<String, ?> map) throws Exception {
             NotifyPayCodePayResultRequestPayChannelDetailList self = new NotifyPayCodePayResultRequestPayChannelDetailList();
             return TeaModel.build(map, self);
         }
 
-        public NotifyPayCodePayResultRequestPayChannelDetailList setPayChannelName(String payChannelName) {
-            this.payChannelName = payChannelName;
+        public NotifyPayCodePayResultRequestPayChannelDetailList setAmount(String amount) {
+            this.amount = amount;
             return this;
         }
-        public String getPayChannelName() {
-            return this.payChannelName;
+        public String getAmount() {
+            return this.amount;
+        }
+
+        public NotifyPayCodePayResultRequestPayChannelDetailList setFundToolDetailList(java.util.List<NotifyPayCodePayResultRequestPayChannelDetailListFundToolDetailList> fundToolDetailList) {
+            this.fundToolDetailList = fundToolDetailList;
+            return this;
+        }
+        public java.util.List<NotifyPayCodePayResultRequestPayChannelDetailListFundToolDetailList> getFundToolDetailList() {
+            return this.fundToolDetailList;
         }
 
         public NotifyPayCodePayResultRequestPayChannelDetailList setGmtCreate(String gmtCreate) {
@@ -367,20 +363,12 @@ public class NotifyPayCodePayResultRequest extends TeaModel {
             return this.gmtFinish;
         }
 
-        public NotifyPayCodePayResultRequestPayChannelDetailList setPayChannelType(String payChannelType) {
-            this.payChannelType = payChannelType;
+        public NotifyPayCodePayResultRequestPayChannelDetailList setPayChannelName(String payChannelName) {
+            this.payChannelName = payChannelName;
             return this;
         }
-        public String getPayChannelType() {
-            return this.payChannelType;
-        }
-
-        public NotifyPayCodePayResultRequestPayChannelDetailList setAmount(String amount) {
-            this.amount = amount;
-            return this;
-        }
-        public String getAmount() {
-            return this.amount;
+        public String getPayChannelName() {
+            return this.payChannelName;
         }
 
         public NotifyPayCodePayResultRequestPayChannelDetailList setPayChannelOrderNo(String payChannelOrderNo) {
@@ -391,20 +379,20 @@ public class NotifyPayCodePayResultRequest extends TeaModel {
             return this.payChannelOrderNo;
         }
 
+        public NotifyPayCodePayResultRequestPayChannelDetailList setPayChannelType(String payChannelType) {
+            this.payChannelType = payChannelType;
+            return this;
+        }
+        public String getPayChannelType() {
+            return this.payChannelType;
+        }
+
         public NotifyPayCodePayResultRequestPayChannelDetailList setPromotionAmount(String promotionAmount) {
             this.promotionAmount = promotionAmount;
             return this;
         }
         public String getPromotionAmount() {
             return this.promotionAmount;
-        }
-
-        public NotifyPayCodePayResultRequestPayChannelDetailList setFundToolDetailList(java.util.List<NotifyPayCodePayResultRequestPayChannelDetailListFundToolDetailList> fundToolDetailList) {
-            this.fundToolDetailList = fundToolDetailList;
-            return this;
-        }
-        public java.util.List<NotifyPayCodePayResultRequestPayChannelDetailListFundToolDetailList> getFundToolDetailList() {
-            return this.fundToolDetailList;
         }
 
     }

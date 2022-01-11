@@ -34,6 +34,10 @@ public class QueryHealthStatisticalDataResponseBody extends TeaModel {
     }
 
     public static class QueryHealthStatisticalDataResponseBodyMetaList extends TeaModel {
+        // 指标口径
+        @NameInMap("kpiCaliber")
+        public String kpiCaliber;
+
         // 指标ID
         @NameInMap("kpiId")
         public String kpiId;
@@ -42,21 +46,25 @@ public class QueryHealthStatisticalDataResponseBody extends TeaModel {
         @NameInMap("kpiName")
         public String kpiName;
 
-        // 指标单位
-        @NameInMap("unit")
-        public String unit;
-
-        // 指标口径
-        @NameInMap("kpiCaliber")
-        public String kpiCaliber;
-
         // 指标周期
         @NameInMap("period")
         public String period;
 
+        // 指标单位
+        @NameInMap("unit")
+        public String unit;
+
         public static QueryHealthStatisticalDataResponseBodyMetaList build(java.util.Map<String, ?> map) throws Exception {
             QueryHealthStatisticalDataResponseBodyMetaList self = new QueryHealthStatisticalDataResponseBodyMetaList();
             return TeaModel.build(map, self);
+        }
+
+        public QueryHealthStatisticalDataResponseBodyMetaList setKpiCaliber(String kpiCaliber) {
+            this.kpiCaliber = kpiCaliber;
+            return this;
+        }
+        public String getKpiCaliber() {
+            return this.kpiCaliber;
         }
 
         public QueryHealthStatisticalDataResponseBodyMetaList setKpiId(String kpiId) {
@@ -75,28 +83,20 @@ public class QueryHealthStatisticalDataResponseBody extends TeaModel {
             return this.kpiName;
         }
 
-        public QueryHealthStatisticalDataResponseBodyMetaList setUnit(String unit) {
-            this.unit = unit;
-            return this;
-        }
-        public String getUnit() {
-            return this.unit;
-        }
-
-        public QueryHealthStatisticalDataResponseBodyMetaList setKpiCaliber(String kpiCaliber) {
-            this.kpiCaliber = kpiCaliber;
-            return this;
-        }
-        public String getKpiCaliber() {
-            return this.kpiCaliber;
-        }
-
         public QueryHealthStatisticalDataResponseBodyMetaList setPeriod(String period) {
             this.period = period;
             return this;
         }
         public String getPeriod() {
             return this.period;
+        }
+
+        public QueryHealthStatisticalDataResponseBodyMetaList setUnit(String unit) {
+            this.unit = unit;
+            return this;
+        }
+        public String getUnit() {
+            return this.unit;
         }
 
     }

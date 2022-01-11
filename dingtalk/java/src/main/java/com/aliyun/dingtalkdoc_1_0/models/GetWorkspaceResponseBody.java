@@ -4,8 +4,9 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetWorkspaceResponseBody extends TeaModel {
-    @NameInMap("url")
-    public String url;
+    // 团队空间所属企业id
+    @NameInMap("corpId")
+    public String corpId;
 
     @NameInMap("isDeleted")
     public Boolean isDeleted;
@@ -13,21 +14,20 @@ public class GetWorkspaceResponseBody extends TeaModel {
     @NameInMap("owner")
     public String owner;
 
-    // 团队空间所属企业id
-    @NameInMap("corpId")
-    public String corpId;
+    @NameInMap("url")
+    public String url;
 
     public static GetWorkspaceResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetWorkspaceResponseBody self = new GetWorkspaceResponseBody();
         return TeaModel.build(map, self);
     }
 
-    public GetWorkspaceResponseBody setUrl(String url) {
-        this.url = url;
+    public GetWorkspaceResponseBody setCorpId(String corpId) {
+        this.corpId = corpId;
         return this;
     }
-    public String getUrl() {
-        return this.url;
+    public String getCorpId() {
+        return this.corpId;
     }
 
     public GetWorkspaceResponseBody setIsDeleted(Boolean isDeleted) {
@@ -46,12 +46,12 @@ public class GetWorkspaceResponseBody extends TeaModel {
         return this.owner;
     }
 
-    public GetWorkspaceResponseBody setCorpId(String corpId) {
-        this.corpId = corpId;
+    public GetWorkspaceResponseBody setUrl(String url) {
+        this.url = url;
         return this;
     }
-    public String getCorpId() {
-        return this.corpId;
+    public String getUrl() {
+        return this.url;
     }
 
 }

@@ -4,11 +4,11 @@ package com.aliyun.dingtalkesign_1_0.models;
 import com.aliyun.tea.*;
 
 public class ContractMarginResponseBody extends TeaModel {
-    @NameInMap("data")
-    public ContractMarginResponseBodyData data;
-
     @NameInMap("code")
     public Integer code;
+
+    @NameInMap("data")
+    public ContractMarginResponseBodyData data;
 
     @NameInMap("message")
     public String message;
@@ -18,20 +18,20 @@ public class ContractMarginResponseBody extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public ContractMarginResponseBody setData(ContractMarginResponseBodyData data) {
-        this.data = data;
-        return this;
-    }
-    public ContractMarginResponseBodyData getData() {
-        return this.data;
-    }
-
     public ContractMarginResponseBody setCode(Integer code) {
         this.code = code;
         return this;
     }
     public Integer getCode() {
         return this.code;
+    }
+
+    public ContractMarginResponseBody setData(ContractMarginResponseBodyData data) {
+        this.data = data;
+        return this;
+    }
+    public ContractMarginResponseBodyData getData() {
+        return this.data;
     }
 
     public ContractMarginResponseBody setMessage(String message) {

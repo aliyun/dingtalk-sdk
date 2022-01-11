@@ -22,6 +22,10 @@ public class ListResidentUserInfosResponseBody extends TeaModel {
     }
 
     public static class ListResidentUserInfosResponseBodyUserListRoles extends TeaModel {
+        // 标签名称 tagCode
+        @NameInMap("tagCode")
+        public String tagCode;
+
         // 标签id
         @NameInMap("tagId")
         public Long tagId;
@@ -30,13 +34,17 @@ public class ListResidentUserInfosResponseBody extends TeaModel {
         @NameInMap("tagName")
         public String tagName;
 
-        // 标签名称 tagCode
-        @NameInMap("tagCode")
-        public String tagCode;
-
         public static ListResidentUserInfosResponseBodyUserListRoles build(java.util.Map<String, ?> map) throws Exception {
             ListResidentUserInfosResponseBodyUserListRoles self = new ListResidentUserInfosResponseBodyUserListRoles();
             return TeaModel.build(map, self);
+        }
+
+        public ListResidentUserInfosResponseBodyUserListRoles setTagCode(String tagCode) {
+            this.tagCode = tagCode;
+            return this;
+        }
+        public String getTagCode() {
+            return this.tagCode;
         }
 
         public ListResidentUserInfosResponseBodyUserListRoles setTagId(Long tagId) {
@@ -55,17 +63,21 @@ public class ListResidentUserInfosResponseBody extends TeaModel {
             return this.tagName;
         }
 
-        public ListResidentUserInfosResponseBodyUserListRoles setTagCode(String tagCode) {
-            this.tagCode = tagCode;
-            return this;
-        }
-        public String getTagCode() {
-            return this.tagCode;
-        }
-
     }
 
     public static class ListResidentUserInfosResponseBodyUserList extends TeaModel {
+        // 员工特征
+        @NameInMap("feature")
+        public String feature;
+
+        // 标签列表
+        @NameInMap("roles")
+        public java.util.List<ListResidentUserInfosResponseBodyUserListRoles> roles;
+
+        // 钉钉唯一标识
+        @NameInMap("unionId")
+        public String unionId;
+
         // 员工 ID
         @NameInMap("userId")
         public String userId;
@@ -74,21 +86,33 @@ public class ListResidentUserInfosResponseBody extends TeaModel {
         @NameInMap("userName")
         public String userName;
 
-        // 标签列表
-        @NameInMap("roles")
-        public java.util.List<ListResidentUserInfosResponseBodyUserListRoles> roles;
-
-        // 员工特征
-        @NameInMap("feature")
-        public String feature;
-
-        // 钉钉唯一标识
-        @NameInMap("unionId")
-        public String unionId;
-
         public static ListResidentUserInfosResponseBodyUserList build(java.util.Map<String, ?> map) throws Exception {
             ListResidentUserInfosResponseBodyUserList self = new ListResidentUserInfosResponseBodyUserList();
             return TeaModel.build(map, self);
+        }
+
+        public ListResidentUserInfosResponseBodyUserList setFeature(String feature) {
+            this.feature = feature;
+            return this;
+        }
+        public String getFeature() {
+            return this.feature;
+        }
+
+        public ListResidentUserInfosResponseBodyUserList setRoles(java.util.List<ListResidentUserInfosResponseBodyUserListRoles> roles) {
+            this.roles = roles;
+            return this;
+        }
+        public java.util.List<ListResidentUserInfosResponseBodyUserListRoles> getRoles() {
+            return this.roles;
+        }
+
+        public ListResidentUserInfosResponseBodyUserList setUnionId(String unionId) {
+            this.unionId = unionId;
+            return this;
+        }
+        public String getUnionId() {
+            return this.unionId;
         }
 
         public ListResidentUserInfosResponseBodyUserList setUserId(String userId) {
@@ -105,30 +129,6 @@ public class ListResidentUserInfosResponseBody extends TeaModel {
         }
         public String getUserName() {
             return this.userName;
-        }
-
-        public ListResidentUserInfosResponseBodyUserList setRoles(java.util.List<ListResidentUserInfosResponseBodyUserListRoles> roles) {
-            this.roles = roles;
-            return this;
-        }
-        public java.util.List<ListResidentUserInfosResponseBodyUserListRoles> getRoles() {
-            return this.roles;
-        }
-
-        public ListResidentUserInfosResponseBodyUserList setFeature(String feature) {
-            this.feature = feature;
-            return this;
-        }
-        public String getFeature() {
-            return this.feature;
-        }
-
-        public ListResidentUserInfosResponseBodyUserList setUnionId(String unionId) {
-            this.unionId = unionId;
-            return this;
-        }
-        public String getUnionId() {
-            return this.unionId;
         }
 
     }

@@ -8,13 +8,13 @@ public class ListResidentSubDeptsResponseBody extends TeaModel {
     @NameInMap("departmentList")
     public java.util.List<ListResidentSubDeptsResponseBodyDepartmentList> departmentList;
 
-    // 游标
-    @NameInMap("nextCursor")
-    public Long nextCursor;
-
     // 是否还有记录
     @NameInMap("hasMore")
     public Boolean hasMore;
+
+    // 游标
+    @NameInMap("nextCursor")
+    public Long nextCursor;
 
     // 总数
     @NameInMap("total")
@@ -33,20 +33,20 @@ public class ListResidentSubDeptsResponseBody extends TeaModel {
         return this.departmentList;
     }
 
-    public ListResidentSubDeptsResponseBody setNextCursor(Long nextCursor) {
-        this.nextCursor = nextCursor;
-        return this;
-    }
-    public Long getNextCursor() {
-        return this.nextCursor;
-    }
-
     public ListResidentSubDeptsResponseBody setHasMore(Boolean hasMore) {
         this.hasMore = hasMore;
         return this;
     }
     public Boolean getHasMore() {
         return this.hasMore;
+    }
+
+    public ListResidentSubDeptsResponseBody setNextCursor(Long nextCursor) {
+        this.nextCursor = nextCursor;
+        return this;
+    }
+    public Long getNextCursor() {
+        return this.nextCursor;
     }
 
     public ListResidentSubDeptsResponseBody setTotal(Long total) {

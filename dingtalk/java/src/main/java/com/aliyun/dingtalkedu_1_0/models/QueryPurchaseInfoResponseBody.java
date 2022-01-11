@@ -8,13 +8,13 @@ public class QueryPurchaseInfoResponseBody extends TeaModel {
     @NameInMap("corpId")
     public String corpId;
 
-    // 员工id
-    @NameInMap("userId")
-    public String userId;
-
     // 商户id
     @NameInMap("merchantId")
     public String merchantId;
+
+    // 名字
+    @NameInMap("name")
+    public String name;
 
     // 场景id
     @NameInMap("scene")
@@ -24,9 +24,9 @@ public class QueryPurchaseInfoResponseBody extends TeaModel {
     @NameInMap("status")
     public Integer status;
 
-    // 名字
-    @NameInMap("name")
-    public String name;
+    // 员工id
+    @NameInMap("userId")
+    public String userId;
 
     public static QueryPurchaseInfoResponseBody build(java.util.Map<String, ?> map) throws Exception {
         QueryPurchaseInfoResponseBody self = new QueryPurchaseInfoResponseBody();
@@ -41,20 +41,20 @@ public class QueryPurchaseInfoResponseBody extends TeaModel {
         return this.corpId;
     }
 
-    public QueryPurchaseInfoResponseBody setUserId(String userId) {
-        this.userId = userId;
-        return this;
-    }
-    public String getUserId() {
-        return this.userId;
-    }
-
     public QueryPurchaseInfoResponseBody setMerchantId(String merchantId) {
         this.merchantId = merchantId;
         return this;
     }
     public String getMerchantId() {
         return this.merchantId;
+    }
+
+    public QueryPurchaseInfoResponseBody setName(String name) {
+        this.name = name;
+        return this;
+    }
+    public String getName() {
+        return this.name;
     }
 
     public QueryPurchaseInfoResponseBody setScene(Integer scene) {
@@ -73,12 +73,12 @@ public class QueryPurchaseInfoResponseBody extends TeaModel {
         return this.status;
     }
 
-    public QueryPurchaseInfoResponseBody setName(String name) {
-        this.name = name;
+    public QueryPurchaseInfoResponseBody setUserId(String userId) {
+        this.userId = userId;
         return this;
     }
-    public String getName() {
-        return this.name;
+    public String getUserId() {
+        return this.userId;
     }
 
 }

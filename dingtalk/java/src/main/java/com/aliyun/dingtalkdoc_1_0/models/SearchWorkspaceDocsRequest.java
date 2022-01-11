@@ -4,14 +4,6 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchWorkspaceDocsRequest extends TeaModel {
-    // 团队空间Id
-    @NameInMap("workspaceId")
-    public String workspaceId;
-
-    // 发起操作用户unionId
-    @NameInMap("operatorId")
-    public String operatorId;
-
     // 搜索关键字
     @NameInMap("keyword")
     public String keyword;
@@ -24,25 +16,17 @@ public class SearchWorkspaceDocsRequest extends TeaModel {
     @NameInMap("nextToken")
     public String nextToken;
 
+    // 发起操作用户unionId
+    @NameInMap("operatorId")
+    public String operatorId;
+
+    // 团队空间Id
+    @NameInMap("workspaceId")
+    public String workspaceId;
+
     public static SearchWorkspaceDocsRequest build(java.util.Map<String, ?> map) throws Exception {
         SearchWorkspaceDocsRequest self = new SearchWorkspaceDocsRequest();
         return TeaModel.build(map, self);
-    }
-
-    public SearchWorkspaceDocsRequest setWorkspaceId(String workspaceId) {
-        this.workspaceId = workspaceId;
-        return this;
-    }
-    public String getWorkspaceId() {
-        return this.workspaceId;
-    }
-
-    public SearchWorkspaceDocsRequest setOperatorId(String operatorId) {
-        this.operatorId = operatorId;
-        return this;
-    }
-    public String getOperatorId() {
-        return this.operatorId;
     }
 
     public SearchWorkspaceDocsRequest setKeyword(String keyword) {
@@ -67,6 +51,22 @@ public class SearchWorkspaceDocsRequest extends TeaModel {
     }
     public String getNextToken() {
         return this.nextToken;
+    }
+
+    public SearchWorkspaceDocsRequest setOperatorId(String operatorId) {
+        this.operatorId = operatorId;
+        return this;
+    }
+    public String getOperatorId() {
+        return this.operatorId;
+    }
+
+    public SearchWorkspaceDocsRequest setWorkspaceId(String workspaceId) {
+        this.workspaceId = workspaceId;
+        return this;
+    }
+    public String getWorkspaceId() {
+        return this.workspaceId;
     }
 
 }

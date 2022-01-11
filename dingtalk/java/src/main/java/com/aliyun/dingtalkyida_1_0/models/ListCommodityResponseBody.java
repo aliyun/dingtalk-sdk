@@ -4,10 +4,6 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListCommodityResponseBody extends TeaModel {
-    // 分页大小
-    @NameInMap("pageSize")
-    public Integer pageSize;
-
     // commodityVOList
     @NameInMap("commodityVOList")
     public java.util.List<ListCommodityResponseBodyCommodityVOList> commodityVOList;
@@ -16,6 +12,10 @@ public class ListCommodityResponseBody extends TeaModel {
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
+    // 分页大小
+    @NameInMap("pageSize")
+    public Integer pageSize;
+
     // 总数量
     @NameInMap("totalCount")
     public Integer totalCount;
@@ -23,14 +23,6 @@ public class ListCommodityResponseBody extends TeaModel {
     public static ListCommodityResponseBody build(java.util.Map<String, ?> map) throws Exception {
         ListCommodityResponseBody self = new ListCommodityResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public ListCommodityResponseBody setPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
-        return this;
-    }
-    public Integer getPageSize() {
-        return this.pageSize;
     }
 
     public ListCommodityResponseBody setCommodityVOList(java.util.List<ListCommodityResponseBodyCommodityVOList> commodityVOList) {
@@ -49,6 +41,14 @@ public class ListCommodityResponseBody extends TeaModel {
         return this.pageNumber;
     }
 
+    public ListCommodityResponseBody setPageSize(Integer pageSize) {
+        this.pageSize = pageSize;
+        return this;
+    }
+    public Integer getPageSize() {
+        return this.pageSize;
+    }
+
     public ListCommodityResponseBody setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
@@ -58,9 +58,17 @@ public class ListCommodityResponseBody extends TeaModel {
     }
 
     public static class ListCommodityResponseBodyCommodityVOList extends TeaModel {
-        // instanceId
-        @NameInMap("instanceId")
-        public String instanceId;
+        // accountDistributionNumber
+        @NameInMap("accountDistributionNumber")
+        public Integer accountDistributionNumber;
+
+        // accountNum
+        @NameInMap("accountNumber")
+        public Integer accountNumber;
+
+        // activationCode
+        @NameInMap("activationCode")
+        public String activationCode;
 
         // buyDate
         @NameInMap("buyDateGMT")
@@ -70,37 +78,45 @@ public class ListCommodityResponseBody extends TeaModel {
         @NameInMap("expireDateGMT")
         public String expireDateGMT;
 
-        // activationCode
-        @NameInMap("activationCode")
-        public String activationCode;
-
-        // accountNum
-        @NameInMap("accountNumber")
-        public Integer accountNumber;
-
-        // accountDistributionNumber
-        @NameInMap("accountDistributionNumber")
-        public Integer accountDistributionNumber;
-
-        // version
-        @NameInMap("version")
-        public Integer version;
+        // instanceId
+        @NameInMap("instanceId")
+        public String instanceId;
 
         // status
         @NameInMap("status")
         public String status;
+
+        // version
+        @NameInMap("version")
+        public Integer version;
 
         public static ListCommodityResponseBodyCommodityVOList build(java.util.Map<String, ?> map) throws Exception {
             ListCommodityResponseBodyCommodityVOList self = new ListCommodityResponseBodyCommodityVOList();
             return TeaModel.build(map, self);
         }
 
-        public ListCommodityResponseBodyCommodityVOList setInstanceId(String instanceId) {
-            this.instanceId = instanceId;
+        public ListCommodityResponseBodyCommodityVOList setAccountDistributionNumber(Integer accountDistributionNumber) {
+            this.accountDistributionNumber = accountDistributionNumber;
             return this;
         }
-        public String getInstanceId() {
-            return this.instanceId;
+        public Integer getAccountDistributionNumber() {
+            return this.accountDistributionNumber;
+        }
+
+        public ListCommodityResponseBodyCommodityVOList setAccountNumber(Integer accountNumber) {
+            this.accountNumber = accountNumber;
+            return this;
+        }
+        public Integer getAccountNumber() {
+            return this.accountNumber;
+        }
+
+        public ListCommodityResponseBodyCommodityVOList setActivationCode(String activationCode) {
+            this.activationCode = activationCode;
+            return this;
+        }
+        public String getActivationCode() {
+            return this.activationCode;
         }
 
         public ListCommodityResponseBodyCommodityVOList setBuyDateGMT(String buyDateGMT) {
@@ -119,36 +135,12 @@ public class ListCommodityResponseBody extends TeaModel {
             return this.expireDateGMT;
         }
 
-        public ListCommodityResponseBodyCommodityVOList setActivationCode(String activationCode) {
-            this.activationCode = activationCode;
+        public ListCommodityResponseBodyCommodityVOList setInstanceId(String instanceId) {
+            this.instanceId = instanceId;
             return this;
         }
-        public String getActivationCode() {
-            return this.activationCode;
-        }
-
-        public ListCommodityResponseBodyCommodityVOList setAccountNumber(Integer accountNumber) {
-            this.accountNumber = accountNumber;
-            return this;
-        }
-        public Integer getAccountNumber() {
-            return this.accountNumber;
-        }
-
-        public ListCommodityResponseBodyCommodityVOList setAccountDistributionNumber(Integer accountDistributionNumber) {
-            this.accountDistributionNumber = accountDistributionNumber;
-            return this;
-        }
-        public Integer getAccountDistributionNumber() {
-            return this.accountDistributionNumber;
-        }
-
-        public ListCommodityResponseBodyCommodityVOList setVersion(Integer version) {
-            this.version = version;
-            return this;
-        }
-        public Integer getVersion() {
-            return this.version;
+        public String getInstanceId() {
+            return this.instanceId;
         }
 
         public ListCommodityResponseBodyCommodityVOList setStatus(String status) {
@@ -157,6 +149,14 @@ public class ListCommodityResponseBody extends TeaModel {
         }
         public String getStatus() {
             return this.status;
+        }
+
+        public ListCommodityResponseBodyCommodityVOList setVersion(Integer version) {
+            this.version = version;
+            return this;
+        }
+        public Integer getVersion() {
+            return this.version;
         }
 
     }

@@ -11,13 +11,13 @@ public class CreateManagementGroupRequest extends TeaModel {
     @NameInMap("members")
     public java.util.List<CreateManagementGroupRequestMembers> members;
 
-    // 管理范围
-    @NameInMap("scope")
-    public CreateManagementGroupRequestScope scope;
-
     // 资源列表
     @NameInMap("resourceIds")
     public java.util.List<String> resourceIds;
+
+    // 管理范围
+    @NameInMap("scope")
+    public CreateManagementGroupRequestScope scope;
 
     public static CreateManagementGroupRequest build(java.util.Map<String, ?> map) throws Exception {
         CreateManagementGroupRequest self = new CreateManagementGroupRequest();
@@ -40,14 +40,6 @@ public class CreateManagementGroupRequest extends TeaModel {
         return this.members;
     }
 
-    public CreateManagementGroupRequest setScope(CreateManagementGroupRequestScope scope) {
-        this.scope = scope;
-        return this;
-    }
-    public CreateManagementGroupRequestScope getScope() {
-        return this.scope;
-    }
-
     public CreateManagementGroupRequest setResourceIds(java.util.List<String> resourceIds) {
         this.resourceIds = resourceIds;
         return this;
@@ -56,26 +48,26 @@ public class CreateManagementGroupRequest extends TeaModel {
         return this.resourceIds;
     }
 
-    public static class CreateManagementGroupRequestMembers extends TeaModel {
-        // 成员类型
-        @NameInMap("memberType")
-        public String memberType;
+    public CreateManagementGroupRequest setScope(CreateManagementGroupRequestScope scope) {
+        this.scope = scope;
+        return this;
+    }
+    public CreateManagementGroupRequestScope getScope() {
+        return this.scope;
+    }
 
+    public static class CreateManagementGroupRequestMembers extends TeaModel {
         // 成员id
         @NameInMap("memberId")
         public String memberId;
 
+        // 成员类型
+        @NameInMap("memberType")
+        public String memberType;
+
         public static CreateManagementGroupRequestMembers build(java.util.Map<String, ?> map) throws Exception {
             CreateManagementGroupRequestMembers self = new CreateManagementGroupRequestMembers();
             return TeaModel.build(map, self);
-        }
-
-        public CreateManagementGroupRequestMembers setMemberType(String memberType) {
-            this.memberType = memberType;
-            return this;
-        }
-        public String getMemberType() {
-            return this.memberType;
         }
 
         public CreateManagementGroupRequestMembers setMemberId(String memberId) {
@@ -86,28 +78,28 @@ public class CreateManagementGroupRequest extends TeaModel {
             return this.memberId;
         }
 
+        public CreateManagementGroupRequestMembers setMemberType(String memberType) {
+            this.memberType = memberType;
+            return this;
+        }
+        public String getMemberType() {
+            return this.memberType;
+        }
+
     }
 
     public static class CreateManagementGroupRequestScope extends TeaModel {
-        // 范围类型
-        @NameInMap("scopeType")
-        public Integer scopeType;
-
         // 部门列表，只在scopeType=3 生效
         @NameInMap("deptIds")
         public java.util.List<Long> deptIds;
 
+        // 范围类型
+        @NameInMap("scopeType")
+        public Integer scopeType;
+
         public static CreateManagementGroupRequestScope build(java.util.Map<String, ?> map) throws Exception {
             CreateManagementGroupRequestScope self = new CreateManagementGroupRequestScope();
             return TeaModel.build(map, self);
-        }
-
-        public CreateManagementGroupRequestScope setScopeType(Integer scopeType) {
-            this.scopeType = scopeType;
-            return this;
-        }
-        public Integer getScopeType() {
-            return this.scopeType;
         }
 
         public CreateManagementGroupRequestScope setDeptIds(java.util.List<Long> deptIds) {
@@ -116,6 +108,14 @@ public class CreateManagementGroupRequest extends TeaModel {
         }
         public java.util.List<Long> getDeptIds() {
             return this.deptIds;
+        }
+
+        public CreateManagementGroupRequestScope setScopeType(Integer scopeType) {
+            this.scopeType = scopeType;
+            return this;
+        }
+        public Integer getScopeType() {
+            return this.scopeType;
         }
 
     }

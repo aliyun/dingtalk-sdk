@@ -4,11 +4,11 @@ package com.aliyun.dingtalkesign_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetFileResponseBody extends TeaModel {
-    @NameInMap("data")
-    public GetFileResponseBodyData data;
-
     @NameInMap("code")
     public Integer code;
+
+    @NameInMap("data")
+    public GetFileResponseBodyData data;
 
     @NameInMap("message")
     public String message;
@@ -18,20 +18,20 @@ public class GetFileResponseBody extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public GetFileResponseBody setData(GetFileResponseBodyData data) {
-        this.data = data;
-        return this;
-    }
-    public GetFileResponseBodyData getData() {
-        return this.data;
-    }
-
     public GetFileResponseBody setCode(Integer code) {
         this.code = code;
         return this;
     }
     public Integer getCode() {
         return this.code;
+    }
+
+    public GetFileResponseBody setData(GetFileResponseBodyData data) {
+        this.data = data;
+        return this;
+    }
+    public GetFileResponseBodyData getData() {
+        return this.data;
     }
 
     public GetFileResponseBody setMessage(String message) {
@@ -43,14 +43,17 @@ public class GetFileResponseBody extends TeaModel {
     }
 
     public static class GetFileResponseBodyData extends TeaModel {
+        @NameInMap("downloadUrl")
+        public String downloadUrl;
+
         @NameInMap("fileId")
         public String fileId;
 
         @NameInMap("name")
         public String name;
 
-        @NameInMap("downloadUrl")
-        public String downloadUrl;
+        @NameInMap("pdfTotalPages")
+        public Integer pdfTotalPages;
 
         @NameInMap("size")
         public Long size;
@@ -58,12 +61,17 @@ public class GetFileResponseBody extends TeaModel {
         @NameInMap("status")
         public Integer status;
 
-        @NameInMap("pdfTotalPages")
-        public Integer pdfTotalPages;
-
         public static GetFileResponseBodyData build(java.util.Map<String, ?> map) throws Exception {
             GetFileResponseBodyData self = new GetFileResponseBodyData();
             return TeaModel.build(map, self);
+        }
+
+        public GetFileResponseBodyData setDownloadUrl(String downloadUrl) {
+            this.downloadUrl = downloadUrl;
+            return this;
+        }
+        public String getDownloadUrl() {
+            return this.downloadUrl;
         }
 
         public GetFileResponseBodyData setFileId(String fileId) {
@@ -82,12 +90,12 @@ public class GetFileResponseBody extends TeaModel {
             return this.name;
         }
 
-        public GetFileResponseBodyData setDownloadUrl(String downloadUrl) {
-            this.downloadUrl = downloadUrl;
+        public GetFileResponseBodyData setPdfTotalPages(Integer pdfTotalPages) {
+            this.pdfTotalPages = pdfTotalPages;
             return this;
         }
-        public String getDownloadUrl() {
-            return this.downloadUrl;
+        public Integer getPdfTotalPages() {
+            return this.pdfTotalPages;
         }
 
         public GetFileResponseBodyData setSize(Long size) {
@@ -104,14 +112,6 @@ public class GetFileResponseBody extends TeaModel {
         }
         public Integer getStatus() {
             return this.status;
-        }
-
-        public GetFileResponseBodyData setPdfTotalPages(Integer pdfTotalPages) {
-            this.pdfTotalPages = pdfTotalPages;
-            return this;
-        }
-        public Integer getPdfTotalPages() {
-            return this.pdfTotalPages;
         }
 
     }

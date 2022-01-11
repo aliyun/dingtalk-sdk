@@ -21,6 +21,51 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    public AddHrmPreentryResponse addHrmPreentry(AddHrmPreentryRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        AddHrmPreentryHeaders headers = new AddHrmPreentryHeaders();
+        return this.addHrmPreentryWithOptions(request, headers, runtime);
+    }
+
+    public AddHrmPreentryResponse addHrmPreentryWithOptions(AddHrmPreentryRequest request, AddHrmPreentryHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.agentId)) {
+            body.put("agentId", request.agentId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.groups)) {
+            body.put("groups", request.groups);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.mobile)) {
+            body.put("mobile", request.mobile);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
+            body.put("name", request.name);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.preEntryTime)) {
+            body.put("preEntryTime", request.preEntryTime);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("AddHrmPreentry", "hrm_1.0", "HTTP", "POST", "AK", "/v1.0/hrm/preentries", "json", req, runtime), new AddHrmPreentryResponse());
+    }
+
     public ECertQueryResponse eCertQuery(ECertQueryRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         ECertQueryHeaders headers = new ECertQueryHeaders();
@@ -40,7 +85,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
-            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
         OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
@@ -48,6 +93,67 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
         return TeaModel.toModel(this.doROARequest("ECertQuery", "hrm_1.0", "HTTP", "GET", "AK", "/v1.0/hrm/eCerts", "json", req, runtime), new ECertQueryResponse());
+    }
+
+    public MasterDataQueryResponse masterDataQuery(MasterDataQueryRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        MasterDataQueryHeaders headers = new MasterDataQueryHeaders();
+        return this.masterDataQueryWithOptions(request, headers, runtime);
+    }
+
+    public MasterDataQueryResponse masterDataQueryWithOptions(MasterDataQueryRequest request, MasterDataQueryHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizUK)) {
+            body.put("bizUK", request.bizUK);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
+            body.put("maxResults", request.maxResults);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
+            body.put("nextToken", request.nextToken);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.optUserId)) {
+            body.put("optUserId", request.optUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.queryParams)) {
+            body.put("queryParams", request.queryParams);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.relationIds)) {
+            body.put("relationIds", request.relationIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.scopeCode)) {
+            body.put("scopeCode", request.scopeCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.tenantId)) {
+            body.put("tenantId", request.tenantId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.viewEntityCode)) {
+            body.put("viewEntityCode", request.viewEntityCode);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("MasterDataQuery", "hrm_1.0", "HTTP", "POST", "AK", "/v1.0/hrm/masters/datas/query", "json", req, runtime), new MasterDataQueryResponse());
     }
 
     public MasterDataSaveResponse masterDataSave(MasterDataSaveRequest request) throws Exception {
@@ -69,7 +175,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
-            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
         OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
@@ -78,6 +184,43 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("body", com.aliyun.teautil.Common.toArray(request.body))
         ));
         return TeaModel.toModel(this.doROARequest("MasterDataSave", "hrm_1.0", "HTTP", "POST", "AK", "/v1.0/hrm/masters/datas/save", "json", req, runtime), new MasterDataSaveResponse());
+    }
+
+    public QueryCustomEntryProcessesResponse queryCustomEntryProcesses(QueryCustomEntryProcessesRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        QueryCustomEntryProcessesHeaders headers = new QueryCustomEntryProcessesHeaders();
+        return this.queryCustomEntryProcessesWithOptions(request, headers, runtime);
+    }
+
+    public QueryCustomEntryProcessesResponse queryCustomEntryProcessesWithOptions(QueryCustomEntryProcessesRequest request, QueryCustomEntryProcessesHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
+            query.put("maxResults", request.maxResults);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
+            query.put("nextToken", request.nextToken);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operateUserId)) {
+            query.put("operateUserId", request.operateUserId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("QueryCustomEntryProcesses", "hrm_1.0", "HTTP", "GET", "AK", "/v1.0/hrm/customEntryProcesses", "json", req, runtime), new QueryCustomEntryProcessesResponse());
     }
 
     public QueryJobRanksResponse queryJobRanks(QueryJobRanksRequest request) throws Exception {
@@ -89,6 +232,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public QueryJobRanksResponse queryJobRanksWithOptions(QueryJobRanksRequest request, QueryJobRanksHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
+            query.put("maxResults", request.maxResults);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
+            query.put("nextToken", request.nextToken);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.rankCategoryId)) {
             query.put("rankCategoryId", request.rankCategoryId);
         }
@@ -101,21 +252,13 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("rankName", request.rankName);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
-            query.put("nextToken", request.nextToken);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
-            query.put("maxResults", request.maxResults);
-        }
-
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
         }
 
         if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
-            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
         OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
@@ -138,12 +281,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("jobName", request.jobName);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
-            query.put("nextToken", request.nextToken);
-        }
-
         if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
             query.put("maxResults", request.maxResults);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
+            query.put("nextToken", request.nextToken);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -152,7 +295,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
-            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
         OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
@@ -160,43 +303,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
         return TeaModel.toModel(this.doROARequest("QueryJobs", "hrm_1.0", "HTTP", "GET", "AK", "/v1.0/hrm/jobs", "json", req, runtime), new QueryJobsResponse());
-    }
-
-    public QueryCustomEntryProcessesResponse queryCustomEntryProcesses(QueryCustomEntryProcessesRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
-        QueryCustomEntryProcessesHeaders headers = new QueryCustomEntryProcessesHeaders();
-        return this.queryCustomEntryProcessesWithOptions(request, headers, runtime);
-    }
-
-    public QueryCustomEntryProcessesResponse queryCustomEntryProcessesWithOptions(QueryCustomEntryProcessesRequest request, QueryCustomEntryProcessesHeaders headers, RuntimeOptions runtime) throws Exception {
-        com.aliyun.teautil.Common.validateModel(request);
-        java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.operateUserId)) {
-            query.put("operateUserId", request.operateUserId);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
-            query.put("nextToken", request.nextToken);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
-            query.put("maxResults", request.maxResults);
-        }
-
-        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
-            realHeaders = headers.commonHeaders;
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
-            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
-        }
-
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
-            new TeaPair("headers", realHeaders),
-            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
-        ));
-        return TeaModel.toModel(this.doROARequest("QueryCustomEntryProcesses", "hrm_1.0", "HTTP", "GET", "AK", "/v1.0/hrm/customEntryProcesses", "json", req, runtime), new QueryCustomEntryProcessesResponse());
     }
 
     public QueryPositionsResponse queryPositions(QueryPositionsRequest request) throws Exception {
@@ -208,19 +314,15 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public QueryPositionsResponse queryPositionsWithOptions(QueryPositionsRequest request, QueryPositionsHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
-            query.put("nextToken", request.nextToken);
-        }
-
         if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
             query.put("maxResults", request.maxResults);
         }
 
-        java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.positionName)) {
-            body.put("positionName", request.positionName);
+        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
+            query.put("nextToken", request.nextToken);
         }
 
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.inCategoryIds)) {
             body.put("inCategoryIds", request.inCategoryIds);
         }
@@ -229,13 +331,17 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("inPositionIds", request.inPositionIds);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.positionName)) {
+            body.put("positionName", request.positionName);
+        }
+
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
         }
 
         if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
-            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
         OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
@@ -244,111 +350,5 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("QueryPositions", "hrm_1.0", "HTTP", "POST", "AK", "/v1.0/hrm/positions/query", "json", req, runtime), new QueryPositionsResponse());
-    }
-
-    public MasterDataQueryResponse masterDataQuery(MasterDataQueryRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
-        MasterDataQueryHeaders headers = new MasterDataQueryHeaders();
-        return this.masterDataQueryWithOptions(request, headers, runtime);
-    }
-
-    public MasterDataQueryResponse masterDataQueryWithOptions(MasterDataQueryRequest request, MasterDataQueryHeaders headers, RuntimeOptions runtime) throws Exception {
-        com.aliyun.teautil.Common.validateModel(request);
-        java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.scopeCode)) {
-            body.put("scopeCode", request.scopeCode);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.viewEntityCode)) {
-            body.put("viewEntityCode", request.viewEntityCode);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.tenantId)) {
-            body.put("tenantId", request.tenantId);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.bizUK)) {
-            body.put("bizUK", request.bizUK);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.relationIds)) {
-            body.put("relationIds", request.relationIds);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.optUserId)) {
-            body.put("optUserId", request.optUserId);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
-            body.put("nextToken", request.nextToken);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
-            body.put("maxResults", request.maxResults);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.queryParams)) {
-            body.put("queryParams", request.queryParams);
-        }
-
-        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
-            realHeaders = headers.commonHeaders;
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
-            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
-        }
-
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
-            new TeaPair("headers", realHeaders),
-            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
-        ));
-        return TeaModel.toModel(this.doROARequest("MasterDataQuery", "hrm_1.0", "HTTP", "POST", "AK", "/v1.0/hrm/masters/datas/query", "json", req, runtime), new MasterDataQueryResponse());
-    }
-
-    public AddHrmPreentryResponse addHrmPreentry(AddHrmPreentryRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
-        AddHrmPreentryHeaders headers = new AddHrmPreentryHeaders();
-        return this.addHrmPreentryWithOptions(request, headers, runtime);
-    }
-
-    public AddHrmPreentryResponse addHrmPreentryWithOptions(AddHrmPreentryRequest request, AddHrmPreentryHeaders headers, RuntimeOptions runtime) throws Exception {
-        com.aliyun.teautil.Common.validateModel(request);
-        java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.preEntryTime)) {
-            body.put("preEntryTime", request.preEntryTime);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
-            body.put("name", request.name);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.mobile)) {
-            body.put("mobile", request.mobile);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.agentId)) {
-            body.put("agentId", request.agentId);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.groups)) {
-            body.put("groups", request.groups);
-        }
-
-        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
-            realHeaders = headers.commonHeaders;
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
-            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
-        }
-
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
-            new TeaPair("headers", realHeaders),
-            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
-        ));
-        return TeaModel.toModel(this.doROARequest("AddHrmPreentry", "hrm_1.0", "HTTP", "POST", "AK", "/v1.0/hrm/preentries", "json", req, runtime), new AddHrmPreentryResponse());
     }
 }

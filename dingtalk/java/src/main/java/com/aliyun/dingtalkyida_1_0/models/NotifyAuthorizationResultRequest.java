@@ -4,23 +4,11 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class NotifyAuthorizationResultRequest extends TeaModel {
-    @NameInMap("instanceId")
-    public String instanceId;
-
-    @NameInMap("accountNumber")
-    public String accountNumber;
-
-    @NameInMap("instanceName")
-    public String instanceName;
-
     @NameInMap("accessKey")
     public String accessKey;
 
-    @NameInMap("chargeType")
-    public String chargeType;
-
-    @NameInMap("endTimeGMT")
-    public Long endTimeGMT;
+    @NameInMap("accountNumber")
+    public String accountNumber;
 
     @NameInMap("beginTimeGMT")
     public Long beginTimeGMT;
@@ -28,11 +16,23 @@ public class NotifyAuthorizationResultRequest extends TeaModel {
     @NameInMap("callerUid")
     public String callerUid;
 
+    @NameInMap("chargeType")
+    public String chargeType;
+
     @NameInMap("commerceType")
     public String commerceType;
 
     @NameInMap("commodityType")
     public String commodityType;
+
+    @NameInMap("endTimeGMT")
+    public Long endTimeGMT;
+
+    @NameInMap("instanceId")
+    public String instanceId;
+
+    @NameInMap("instanceName")
+    public String instanceName;
 
     // 阿里云产品code
     @NameInMap("produceCode")
@@ -43,30 +43,6 @@ public class NotifyAuthorizationResultRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public NotifyAuthorizationResultRequest setInstanceId(String instanceId) {
-        this.instanceId = instanceId;
-        return this;
-    }
-    public String getInstanceId() {
-        return this.instanceId;
-    }
-
-    public NotifyAuthorizationResultRequest setAccountNumber(String accountNumber) {
-        this.accountNumber = accountNumber;
-        return this;
-    }
-    public String getAccountNumber() {
-        return this.accountNumber;
-    }
-
-    public NotifyAuthorizationResultRequest setInstanceName(String instanceName) {
-        this.instanceName = instanceName;
-        return this;
-    }
-    public String getInstanceName() {
-        return this.instanceName;
-    }
-
     public NotifyAuthorizationResultRequest setAccessKey(String accessKey) {
         this.accessKey = accessKey;
         return this;
@@ -75,20 +51,12 @@ public class NotifyAuthorizationResultRequest extends TeaModel {
         return this.accessKey;
     }
 
-    public NotifyAuthorizationResultRequest setChargeType(String chargeType) {
-        this.chargeType = chargeType;
+    public NotifyAuthorizationResultRequest setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
         return this;
     }
-    public String getChargeType() {
-        return this.chargeType;
-    }
-
-    public NotifyAuthorizationResultRequest setEndTimeGMT(Long endTimeGMT) {
-        this.endTimeGMT = endTimeGMT;
-        return this;
-    }
-    public Long getEndTimeGMT() {
-        return this.endTimeGMT;
+    public String getAccountNumber() {
+        return this.accountNumber;
     }
 
     public NotifyAuthorizationResultRequest setBeginTimeGMT(Long beginTimeGMT) {
@@ -107,6 +75,14 @@ public class NotifyAuthorizationResultRequest extends TeaModel {
         return this.callerUid;
     }
 
+    public NotifyAuthorizationResultRequest setChargeType(String chargeType) {
+        this.chargeType = chargeType;
+        return this;
+    }
+    public String getChargeType() {
+        return this.chargeType;
+    }
+
     public NotifyAuthorizationResultRequest setCommerceType(String commerceType) {
         this.commerceType = commerceType;
         return this;
@@ -121,6 +97,30 @@ public class NotifyAuthorizationResultRequest extends TeaModel {
     }
     public String getCommodityType() {
         return this.commodityType;
+    }
+
+    public NotifyAuthorizationResultRequest setEndTimeGMT(Long endTimeGMT) {
+        this.endTimeGMT = endTimeGMT;
+        return this;
+    }
+    public Long getEndTimeGMT() {
+        return this.endTimeGMT;
+    }
+
+    public NotifyAuthorizationResultRequest setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+    public String getInstanceId() {
+        return this.instanceId;
+    }
+
+    public NotifyAuthorizationResultRequest setInstanceName(String instanceName) {
+        this.instanceName = instanceName;
+        return this;
+    }
+    public String getInstanceName() {
+        return this.instanceName;
     }
 
     public NotifyAuthorizationResultRequest setProduceCode(String produceCode) {

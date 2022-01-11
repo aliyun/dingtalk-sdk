@@ -12,21 +12,13 @@ public class SaveBadgeCodeCorpInstanceRequest extends TeaModel {
     @NameInMap("corpId")
     public String corpId;
 
-    // 状态，OPEN或CLOSED
-    @NameInMap("status")
-    public String status;
-
     // 扩展参数
     @NameInMap("extInfo")
     public java.util.Map<String, String> extInfo;
 
-    // 组织ID
-    @NameInMap("dingOrgId")
-    public Long dingOrgId;
-
-    // ISV组织ID
-    @NameInMap("dingIsvOrgId")
-    public Long dingIsvOrgId;
+    // 状态，OPEN或CLOSED
+    @NameInMap("status")
+    public String status;
 
     public static SaveBadgeCodeCorpInstanceRequest build(java.util.Map<String, ?> map) throws Exception {
         SaveBadgeCodeCorpInstanceRequest self = new SaveBadgeCodeCorpInstanceRequest();
@@ -49,14 +41,6 @@ public class SaveBadgeCodeCorpInstanceRequest extends TeaModel {
         return this.corpId;
     }
 
-    public SaveBadgeCodeCorpInstanceRequest setStatus(String status) {
-        this.status = status;
-        return this;
-    }
-    public String getStatus() {
-        return this.status;
-    }
-
     public SaveBadgeCodeCorpInstanceRequest setExtInfo(java.util.Map<String, String> extInfo) {
         this.extInfo = extInfo;
         return this;
@@ -65,20 +49,12 @@ public class SaveBadgeCodeCorpInstanceRequest extends TeaModel {
         return this.extInfo;
     }
 
-    public SaveBadgeCodeCorpInstanceRequest setDingOrgId(Long dingOrgId) {
-        this.dingOrgId = dingOrgId;
+    public SaveBadgeCodeCorpInstanceRequest setStatus(String status) {
+        this.status = status;
         return this;
     }
-    public Long getDingOrgId() {
-        return this.dingOrgId;
-    }
-
-    public SaveBadgeCodeCorpInstanceRequest setDingIsvOrgId(Long dingIsvOrgId) {
-        this.dingIsvOrgId = dingIsvOrgId;
-        return this;
-    }
-    public Long getDingIsvOrgId() {
-        return this.dingIsvOrgId;
+    public String getStatus() {
+        return this.status;
     }
 
 }

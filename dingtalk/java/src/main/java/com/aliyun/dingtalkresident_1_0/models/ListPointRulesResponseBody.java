@@ -26,25 +26,9 @@ public class ListPointRulesResponseBody extends TeaModel {
         @NameInMap("corpId")
         public String corpId;
 
-        // 增加或减少的分数（增加为正数，减少为负数）
-        @NameInMap("score")
-        public Integer score;
-
         // 单日计次上限，0表示无上限
         @NameInMap("dayLimitTimes")
         public Integer dayLimitTimes;
-
-        // 生效状态 0：不生效，1：生效
-        @NameInMap("status")
-        public Integer status;
-
-        // 对应的行为代码（可空）
-        @NameInMap("ruleCode")
-        public String ruleCode;
-
-        // 对应的行为名字
-        @NameInMap("ruleName")
-        public String ruleName;
 
         // 扩展字段
         @NameInMap("extension")
@@ -57,6 +41,22 @@ public class ListPointRulesResponseBody extends TeaModel {
         // 排序ID
         @NameInMap("orderId")
         public Integer orderId;
+
+        // 对应的行为代码（可空）
+        @NameInMap("ruleCode")
+        public String ruleCode;
+
+        // 对应的行为名字
+        @NameInMap("ruleName")
+        public String ruleName;
+
+        // 增加或减少的分数（增加为正数，减少为负数）
+        @NameInMap("score")
+        public Integer score;
+
+        // 生效状态 0：不生效，1：生效
+        @NameInMap("status")
+        public Integer status;
 
         public static ListPointRulesResponseBodyPointRuleList build(java.util.Map<String, ?> map) throws Exception {
             ListPointRulesResponseBodyPointRuleList self = new ListPointRulesResponseBodyPointRuleList();
@@ -71,44 +71,12 @@ public class ListPointRulesResponseBody extends TeaModel {
             return this.corpId;
         }
 
-        public ListPointRulesResponseBodyPointRuleList setScore(Integer score) {
-            this.score = score;
-            return this;
-        }
-        public Integer getScore() {
-            return this.score;
-        }
-
         public ListPointRulesResponseBodyPointRuleList setDayLimitTimes(Integer dayLimitTimes) {
             this.dayLimitTimes = dayLimitTimes;
             return this;
         }
         public Integer getDayLimitTimes() {
             return this.dayLimitTimes;
-        }
-
-        public ListPointRulesResponseBodyPointRuleList setStatus(Integer status) {
-            this.status = status;
-            return this;
-        }
-        public Integer getStatus() {
-            return this.status;
-        }
-
-        public ListPointRulesResponseBodyPointRuleList setRuleCode(String ruleCode) {
-            this.ruleCode = ruleCode;
-            return this;
-        }
-        public String getRuleCode() {
-            return this.ruleCode;
-        }
-
-        public ListPointRulesResponseBodyPointRuleList setRuleName(String ruleName) {
-            this.ruleName = ruleName;
-            return this;
-        }
-        public String getRuleName() {
-            return this.ruleName;
         }
 
         public ListPointRulesResponseBodyPointRuleList setExtension(String extension) {
@@ -133,6 +101,38 @@ public class ListPointRulesResponseBody extends TeaModel {
         }
         public Integer getOrderId() {
             return this.orderId;
+        }
+
+        public ListPointRulesResponseBodyPointRuleList setRuleCode(String ruleCode) {
+            this.ruleCode = ruleCode;
+            return this;
+        }
+        public String getRuleCode() {
+            return this.ruleCode;
+        }
+
+        public ListPointRulesResponseBodyPointRuleList setRuleName(String ruleName) {
+            this.ruleName = ruleName;
+            return this;
+        }
+        public String getRuleName() {
+            return this.ruleName;
+        }
+
+        public ListPointRulesResponseBodyPointRuleList setScore(Integer score) {
+            this.score = score;
+            return this;
+        }
+        public Integer getScore() {
+            return this.score;
+        }
+
+        public ListPointRulesResponseBodyPointRuleList setStatus(Integer status) {
+            this.status = status;
+            return this;
+        }
+        public Integer getStatus() {
+            return this.status;
         }
 
     }

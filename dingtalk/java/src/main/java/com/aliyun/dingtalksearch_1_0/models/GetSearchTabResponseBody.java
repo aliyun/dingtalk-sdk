@@ -12,10 +12,6 @@ public class GetSearchTabResponseBody extends TeaModel {
     @NameInMap("gmtModified")
     public String gmtModified;
 
-    // 数据源的id,范围为3000-4000
-    @NameInMap("tabId")
-    public Integer tabId;
-
     // 数据源名称
     @NameInMap("name")
     public String name;
@@ -27,6 +23,10 @@ public class GetSearchTabResponseBody extends TeaModel {
     // 数据源状态，1表示上线，0表示下线
     @NameInMap("status")
     public Integer status;
+
+    // 数据源的id,范围为3000-4000
+    @NameInMap("tabId")
+    public Integer tabId;
 
     public static GetSearchTabResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetSearchTabResponseBody self = new GetSearchTabResponseBody();
@@ -47,14 +47,6 @@ public class GetSearchTabResponseBody extends TeaModel {
     }
     public String getGmtModified() {
         return this.gmtModified;
-    }
-
-    public GetSearchTabResponseBody setTabId(Integer tabId) {
-        this.tabId = tabId;
-        return this;
-    }
-    public Integer getTabId() {
-        return this.tabId;
     }
 
     public GetSearchTabResponseBody setName(String name) {
@@ -79,6 +71,14 @@ public class GetSearchTabResponseBody extends TeaModel {
     }
     public Integer getStatus() {
         return this.status;
+    }
+
+    public GetSearchTabResponseBody setTabId(Integer tabId) {
+        this.tabId = tabId;
+        return this;
+    }
+    public Integer getTabId() {
+        return this.tabId;
     }
 
 }

@@ -4,29 +4,26 @@ package com.aliyun.dingtalkesign_2_0.models;
 import com.aliyun.tea.*;
 
 public class GetExecuteUrlRequest extends TeaModel {
-    @NameInMap("taskId")
-    public String taskId;
+    @NameInMap("account")
+    public String account;
 
     @NameInMap("signContainer")
     public Integer signContainer;
 
-    @NameInMap("dingCorpId")
-    public String dingCorpId;
-
-    @NameInMap("account")
-    public String account;
+    @NameInMap("taskId")
+    public String taskId;
 
     public static GetExecuteUrlRequest build(java.util.Map<String, ?> map) throws Exception {
         GetExecuteUrlRequest self = new GetExecuteUrlRequest();
         return TeaModel.build(map, self);
     }
 
-    public GetExecuteUrlRequest setTaskId(String taskId) {
-        this.taskId = taskId;
+    public GetExecuteUrlRequest setAccount(String account) {
+        this.account = account;
         return this;
     }
-    public String getTaskId() {
-        return this.taskId;
+    public String getAccount() {
+        return this.account;
     }
 
     public GetExecuteUrlRequest setSignContainer(Integer signContainer) {
@@ -37,20 +34,12 @@ public class GetExecuteUrlRequest extends TeaModel {
         return this.signContainer;
     }
 
-    public GetExecuteUrlRequest setDingCorpId(String dingCorpId) {
-        this.dingCorpId = dingCorpId;
+    public GetExecuteUrlRequest setTaskId(String taskId) {
+        this.taskId = taskId;
         return this;
     }
-    public String getDingCorpId() {
-        return this.dingCorpId;
-    }
-
-    public GetExecuteUrlRequest setAccount(String account) {
-        this.account = account;
-        return this;
-    }
-    public String getAccount() {
-        return this.account;
+    public String getTaskId() {
+        return this.taskId;
     }
 
 }

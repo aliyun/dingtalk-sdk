@@ -4,6 +4,14 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryUserAgreementRequest extends TeaModel {
+    // 业务编码
+    @NameInMap("bizCode")
+    public String bizCode;
+
+    // 业务场景
+    @NameInMap("bizScene")
+    public String bizScene;
+
     // 主机构编号
     @NameInMap("instId")
     public String instId;
@@ -16,17 +24,25 @@ public class QueryUserAgreementRequest extends TeaModel {
     @NameInMap("userId")
     public String userId;
 
-    // 业务编码
-    @NameInMap("bizCode")
-    public String bizCode;
-
-    // 业务场景
-    @NameInMap("bizScene")
-    public String bizScene;
-
     public static QueryUserAgreementRequest build(java.util.Map<String, ?> map) throws Exception {
         QueryUserAgreementRequest self = new QueryUserAgreementRequest();
         return TeaModel.build(map, self);
+    }
+
+    public QueryUserAgreementRequest setBizCode(String bizCode) {
+        this.bizCode = bizCode;
+        return this;
+    }
+    public String getBizCode() {
+        return this.bizCode;
+    }
+
+    public QueryUserAgreementRequest setBizScene(String bizScene) {
+        this.bizScene = bizScene;
+        return this;
+    }
+    public String getBizScene() {
+        return this.bizScene;
     }
 
     public QueryUserAgreementRequest setInstId(String instId) {
@@ -51,22 +67,6 @@ public class QueryUserAgreementRequest extends TeaModel {
     }
     public String getUserId() {
         return this.userId;
-    }
-
-    public QueryUserAgreementRequest setBizCode(String bizCode) {
-        this.bizCode = bizCode;
-        return this;
-    }
-    public String getBizCode() {
-        return this.bizCode;
-    }
-
-    public QueryUserAgreementRequest setBizScene(String bizScene) {
-        this.bizScene = bizScene;
-        return this;
-    }
-    public String getBizScene() {
-        return this.bizScene;
     }
 
 }

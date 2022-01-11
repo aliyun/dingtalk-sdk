@@ -21,25 +21,17 @@ public class GetActivityButtonListResponseBody extends TeaModel {
     }
 
     public static class GetActivityButtonListResponseBodyResult extends TeaModel {
-        // aliasEn
-        @NameInMap("aliasInEnglish")
-        public String aliasInEnglish;
-
         // alias
         @NameInMap("aliasInChinese")
         public String aliasInChinese;
 
+        // aliasEn
+        @NameInMap("aliasInEnglish")
+        public String aliasInEnglish;
+
         public static GetActivityButtonListResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             GetActivityButtonListResponseBodyResult self = new GetActivityButtonListResponseBodyResult();
             return TeaModel.build(map, self);
-        }
-
-        public GetActivityButtonListResponseBodyResult setAliasInEnglish(String aliasInEnglish) {
-            this.aliasInEnglish = aliasInEnglish;
-            return this;
-        }
-        public String getAliasInEnglish() {
-            return this.aliasInEnglish;
         }
 
         public GetActivityButtonListResponseBodyResult setAliasInChinese(String aliasInChinese) {
@@ -48,6 +40,14 @@ public class GetActivityButtonListResponseBody extends TeaModel {
         }
         public String getAliasInChinese() {
             return this.aliasInChinese;
+        }
+
+        public GetActivityButtonListResponseBodyResult setAliasInEnglish(String aliasInEnglish) {
+            this.aliasInEnglish = aliasInEnglish;
+            return this;
+        }
+        public String getAliasInEnglish() {
+            return this.aliasInEnglish;
         }
 
     }

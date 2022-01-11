@@ -4,10 +4,6 @@ package com.aliyun.dingtalkvillage_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListResidentSubDeptsRequest extends TeaModel {
-    // 下属组织的组织ID，比如下属镇、村的corpId
-    @NameInMap("subCorpId")
-    public String subCorpId;
-
     // 游标，不传默认1
     @NameInMap("cursor")
     public Long cursor;
@@ -16,17 +12,13 @@ public class ListResidentSubDeptsRequest extends TeaModel {
     @NameInMap("size")
     public Integer size;
 
+    // 下属组织的组织ID，比如下属镇、村的corpId
+    @NameInMap("subCorpId")
+    public String subCorpId;
+
     public static ListResidentSubDeptsRequest build(java.util.Map<String, ?> map) throws Exception {
         ListResidentSubDeptsRequest self = new ListResidentSubDeptsRequest();
         return TeaModel.build(map, self);
-    }
-
-    public ListResidentSubDeptsRequest setSubCorpId(String subCorpId) {
-        this.subCorpId = subCorpId;
-        return this;
-    }
-    public String getSubCorpId() {
-        return this.subCorpId;
     }
 
     public ListResidentSubDeptsRequest setCursor(Long cursor) {
@@ -43,6 +35,14 @@ public class ListResidentSubDeptsRequest extends TeaModel {
     }
     public Integer getSize() {
         return this.size;
+    }
+
+    public ListResidentSubDeptsRequest setSubCorpId(String subCorpId) {
+        this.subCorpId = subCorpId;
+        return this;
+    }
+    public String getSubCorpId() {
+        return this.subCorpId;
     }
 
 }

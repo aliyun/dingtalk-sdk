@@ -8,41 +8,29 @@ public class CreateGroupRequest extends TeaModel {
     @NameInMap("groupBizId")
     public String groupBizId;
 
-    // 开放团队ID
-    @NameInMap("openTeamId")
-    public String openTeamId;
-
-    // 开放群组ID
-    @NameInMap("openGroupSetId")
-    public String openGroupSetId;
-
     // 群名称
     @NameInMap("groupName")
     public String groupName;
-
-    // 群主员工ID
-    @NameInMap("ownerStaffId")
-    public String ownerStaffId;
-
-    // 群成员员工ID列表
-    @NameInMap("memberStaffIds")
-    public java.util.List<String> memberStaffIds;
 
     // 群标签
     @NameInMap("groupTagNames")
     public java.util.List<String> groupTagNames;
 
-    @NameInMap("dingIsvOrgId")
-    public Long dingIsvOrgId;
+    // 群成员员工ID列表
+    @NameInMap("memberStaffIds")
+    public java.util.List<String> memberStaffIds;
 
-    @NameInMap("dingOrgId")
-    public Long dingOrgId;
+    // 开放群组ID
+    @NameInMap("openGroupSetId")
+    public String openGroupSetId;
 
-    @NameInMap("dingSuiteKey")
-    public String dingSuiteKey;
+    // 开放团队ID
+    @NameInMap("openTeamId")
+    public String openTeamId;
 
-    @NameInMap("dingTokenGrantType")
-    public Long dingTokenGrantType;
+    // 群主员工ID
+    @NameInMap("ownerStaffId")
+    public String ownerStaffId;
 
     public static CreateGroupRequest build(java.util.Map<String, ?> map) throws Exception {
         CreateGroupRequest self = new CreateGroupRequest();
@@ -57,44 +45,12 @@ public class CreateGroupRequest extends TeaModel {
         return this.groupBizId;
     }
 
-    public CreateGroupRequest setOpenTeamId(String openTeamId) {
-        this.openTeamId = openTeamId;
-        return this;
-    }
-    public String getOpenTeamId() {
-        return this.openTeamId;
-    }
-
-    public CreateGroupRequest setOpenGroupSetId(String openGroupSetId) {
-        this.openGroupSetId = openGroupSetId;
-        return this;
-    }
-    public String getOpenGroupSetId() {
-        return this.openGroupSetId;
-    }
-
     public CreateGroupRequest setGroupName(String groupName) {
         this.groupName = groupName;
         return this;
     }
     public String getGroupName() {
         return this.groupName;
-    }
-
-    public CreateGroupRequest setOwnerStaffId(String ownerStaffId) {
-        this.ownerStaffId = ownerStaffId;
-        return this;
-    }
-    public String getOwnerStaffId() {
-        return this.ownerStaffId;
-    }
-
-    public CreateGroupRequest setMemberStaffIds(java.util.List<String> memberStaffIds) {
-        this.memberStaffIds = memberStaffIds;
-        return this;
-    }
-    public java.util.List<String> getMemberStaffIds() {
-        return this.memberStaffIds;
     }
 
     public CreateGroupRequest setGroupTagNames(java.util.List<String> groupTagNames) {
@@ -105,36 +61,36 @@ public class CreateGroupRequest extends TeaModel {
         return this.groupTagNames;
     }
 
-    public CreateGroupRequest setDingIsvOrgId(Long dingIsvOrgId) {
-        this.dingIsvOrgId = dingIsvOrgId;
+    public CreateGroupRequest setMemberStaffIds(java.util.List<String> memberStaffIds) {
+        this.memberStaffIds = memberStaffIds;
         return this;
     }
-    public Long getDingIsvOrgId() {
-        return this.dingIsvOrgId;
+    public java.util.List<String> getMemberStaffIds() {
+        return this.memberStaffIds;
     }
 
-    public CreateGroupRequest setDingOrgId(Long dingOrgId) {
-        this.dingOrgId = dingOrgId;
+    public CreateGroupRequest setOpenGroupSetId(String openGroupSetId) {
+        this.openGroupSetId = openGroupSetId;
         return this;
     }
-    public Long getDingOrgId() {
-        return this.dingOrgId;
+    public String getOpenGroupSetId() {
+        return this.openGroupSetId;
     }
 
-    public CreateGroupRequest setDingSuiteKey(String dingSuiteKey) {
-        this.dingSuiteKey = dingSuiteKey;
+    public CreateGroupRequest setOpenTeamId(String openTeamId) {
+        this.openTeamId = openTeamId;
         return this;
     }
-    public String getDingSuiteKey() {
-        return this.dingSuiteKey;
+    public String getOpenTeamId() {
+        return this.openTeamId;
     }
 
-    public CreateGroupRequest setDingTokenGrantType(Long dingTokenGrantType) {
-        this.dingTokenGrantType = dingTokenGrantType;
+    public CreateGroupRequest setOwnerStaffId(String ownerStaffId) {
+        this.ownerStaffId = ownerStaffId;
         return this;
     }
-    public Long getDingTokenGrantType() {
-        return this.dingTokenGrantType;
+    public String getOwnerStaffId() {
+        return this.ownerStaffId;
     }
 
 }

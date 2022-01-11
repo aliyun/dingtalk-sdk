@@ -4,21 +4,21 @@ package com.aliyun.dingtalkmicro_app_1_0.models;
 import com.aliyun.tea.*;
 
 public class RebuildRoleScopeForAppRoleRequest extends TeaModel {
+    // 部门id列表
+    @NameInMap("deptIdList")
+    public java.util.List<Long> deptIdList;
+
     // 执行用户userId
     @NameInMap("opUserId")
     public String opUserId;
-
-    // 角色范围最新版本号
-    @NameInMap("scopeVersion")
-    public Long scopeVersion;
 
     // 角色范围类型，“ALL_VISIBLE”表示全员，“PART_VISIBLE”表示部分
     @NameInMap("scopeType")
     public String scopeType;
 
-    // 部门id列表
-    @NameInMap("deptIdList")
-    public java.util.List<Long> deptIdList;
+    // 角色范围最新版本号
+    @NameInMap("scopeVersion")
+    public Long scopeVersion;
 
     // 员工userId列表
     @NameInMap("userIdList")
@@ -29,20 +29,20 @@ public class RebuildRoleScopeForAppRoleRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
+    public RebuildRoleScopeForAppRoleRequest setDeptIdList(java.util.List<Long> deptIdList) {
+        this.deptIdList = deptIdList;
+        return this;
+    }
+    public java.util.List<Long> getDeptIdList() {
+        return this.deptIdList;
+    }
+
     public RebuildRoleScopeForAppRoleRequest setOpUserId(String opUserId) {
         this.opUserId = opUserId;
         return this;
     }
     public String getOpUserId() {
         return this.opUserId;
-    }
-
-    public RebuildRoleScopeForAppRoleRequest setScopeVersion(Long scopeVersion) {
-        this.scopeVersion = scopeVersion;
-        return this;
-    }
-    public Long getScopeVersion() {
-        return this.scopeVersion;
     }
 
     public RebuildRoleScopeForAppRoleRequest setScopeType(String scopeType) {
@@ -53,12 +53,12 @@ public class RebuildRoleScopeForAppRoleRequest extends TeaModel {
         return this.scopeType;
     }
 
-    public RebuildRoleScopeForAppRoleRequest setDeptIdList(java.util.List<Long> deptIdList) {
-        this.deptIdList = deptIdList;
+    public RebuildRoleScopeForAppRoleRequest setScopeVersion(Long scopeVersion) {
+        this.scopeVersion = scopeVersion;
         return this;
     }
-    public java.util.List<Long> getDeptIdList() {
-        return this.deptIdList;
+    public Long getScopeVersion() {
+        return this.scopeVersion;
     }
 
     public RebuildRoleScopeForAppRoleRequest setUserIdList(java.util.List<String> userIdList) {

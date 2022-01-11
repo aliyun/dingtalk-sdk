@@ -4,17 +4,17 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class AbandonCustomerRequest extends TeaModel {
-    // 操作人staffId，一般为企业员工
-    @NameInMap("operatorUserId")
-    public String operatorUserId;
+    // 自定义动态描述
+    @NameInMap("customTrackDesc")
+    public String customTrackDesc;
 
     // 客户实例 id 数组
     @NameInMap("instanceIdList")
     public java.util.List<String> instanceIdList;
 
-    // 自定义动态描述
-    @NameInMap("customTrackDesc")
-    public String customTrackDesc;
+    // 操作人staffId，一般为企业员工
+    @NameInMap("operatorUserId")
+    public String operatorUserId;
 
     // 释放类型：returnPool-退回公海（默认），innerAbandon-仅清除负责人
     @NameInMap("optType")
@@ -25,12 +25,12 @@ public class AbandonCustomerRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public AbandonCustomerRequest setOperatorUserId(String operatorUserId) {
-        this.operatorUserId = operatorUserId;
+    public AbandonCustomerRequest setCustomTrackDesc(String customTrackDesc) {
+        this.customTrackDesc = customTrackDesc;
         return this;
     }
-    public String getOperatorUserId() {
-        return this.operatorUserId;
+    public String getCustomTrackDesc() {
+        return this.customTrackDesc;
     }
 
     public AbandonCustomerRequest setInstanceIdList(java.util.List<String> instanceIdList) {
@@ -41,12 +41,12 @@ public class AbandonCustomerRequest extends TeaModel {
         return this.instanceIdList;
     }
 
-    public AbandonCustomerRequest setCustomTrackDesc(String customTrackDesc) {
-        this.customTrackDesc = customTrackDesc;
+    public AbandonCustomerRequest setOperatorUserId(String operatorUserId) {
+        this.operatorUserId = operatorUserId;
         return this;
     }
-    public String getCustomTrackDesc() {
-        return this.customTrackDesc;
+    public String getOperatorUserId() {
+        return this.operatorUserId;
     }
 
     public AbandonCustomerRequest setOptType(String optType) {

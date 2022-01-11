@@ -8,13 +8,13 @@ public class GetUsersResponseBody extends TeaModel {
     @NameInMap("code")
     public String code;
 
-    // 提示信息
-    @NameInMap("message")
-    public String message;
-
     // 返回结果
     @NameInMap("data")
     public java.util.List<GetUsersResponseBodyData> data;
+
+    // 提示信息
+    @NameInMap("message")
+    public String message;
 
     public static GetUsersResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetUsersResponseBody self = new GetUsersResponseBody();
@@ -29,14 +29,6 @@ public class GetUsersResponseBody extends TeaModel {
         return this.code;
     }
 
-    public GetUsersResponseBody setMessage(String message) {
-        this.message = message;
-        return this;
-    }
-    public String getMessage() {
-        return this.message;
-    }
-
     public GetUsersResponseBody setData(java.util.List<GetUsersResponseBodyData> data) {
         this.data = data;
         return this;
@@ -45,34 +37,18 @@ public class GetUsersResponseBody extends TeaModel {
         return this.data;
     }
 
+    public GetUsersResponseBody setMessage(String message) {
+        this.message = message;
+        return this;
+    }
+    public String getMessage() {
+        return this.message;
+    }
+
     public static class GetUsersResponseBodyData extends TeaModel {
-        // 用户id
-        @NameInMap("id")
-        public String id;
-
-        // 用户姓名
-        @NameInMap("name")
-        public String name;
-
         // 用户编码
         @NameInMap("code")
         public String code;
-
-        // 性别.None=未指定，Man=男性，Female=女性
-        @NameInMap("sex")
-        public String sex;
-
-        // 描述
-        @NameInMap("description")
-        public String description;
-
-        // 电话
-        @NameInMap("mobile")
-        public String mobile;
-
-        // 邮箱
-        @NameInMap("email")
-        public String email;
 
         // 直属组织id
         @NameInMap("departmentId")
@@ -82,13 +58,37 @@ public class GetUsersResponseBody extends TeaModel {
         @NameInMap("departmentName")
         public String departmentName;
 
+        // 描述
+        @NameInMap("description")
+        public String description;
+
         // 作用域类型。Unspecified=未指定、Internal=内部组织机构、External=外部组织机构
         @NameInMap("domainType")
         public String domainType;
 
+        // 邮箱
+        @NameInMap("email")
+        public String email;
+
+        // 用户id
+        @NameInMap("id")
+        public String id;
+
+        // 电话
+        @NameInMap("mobile")
+        public String mobile;
+
+        // 用户姓名
+        @NameInMap("name")
+        public String name;
+
         // 兼职部门id
         @NameInMap("partDepartmentIds")
         public java.util.List<String> partDepartmentIds;
+
+        // 性别.None=未指定，Man=男性，Female=女性
+        @NameInMap("sex")
+        public String sex;
 
         // 排序号
         @NameInMap("sortKey")
@@ -99,60 +99,12 @@ public class GetUsersResponseBody extends TeaModel {
             return TeaModel.build(map, self);
         }
 
-        public GetUsersResponseBodyData setId(String id) {
-            this.id = id;
-            return this;
-        }
-        public String getId() {
-            return this.id;
-        }
-
-        public GetUsersResponseBodyData setName(String name) {
-            this.name = name;
-            return this;
-        }
-        public String getName() {
-            return this.name;
-        }
-
         public GetUsersResponseBodyData setCode(String code) {
             this.code = code;
             return this;
         }
         public String getCode() {
             return this.code;
-        }
-
-        public GetUsersResponseBodyData setSex(String sex) {
-            this.sex = sex;
-            return this;
-        }
-        public String getSex() {
-            return this.sex;
-        }
-
-        public GetUsersResponseBodyData setDescription(String description) {
-            this.description = description;
-            return this;
-        }
-        public String getDescription() {
-            return this.description;
-        }
-
-        public GetUsersResponseBodyData setMobile(String mobile) {
-            this.mobile = mobile;
-            return this;
-        }
-        public String getMobile() {
-            return this.mobile;
-        }
-
-        public GetUsersResponseBodyData setEmail(String email) {
-            this.email = email;
-            return this;
-        }
-        public String getEmail() {
-            return this.email;
         }
 
         public GetUsersResponseBodyData setDepartmentId(String departmentId) {
@@ -171,6 +123,14 @@ public class GetUsersResponseBody extends TeaModel {
             return this.departmentName;
         }
 
+        public GetUsersResponseBodyData setDescription(String description) {
+            this.description = description;
+            return this;
+        }
+        public String getDescription() {
+            return this.description;
+        }
+
         public GetUsersResponseBodyData setDomainType(String domainType) {
             this.domainType = domainType;
             return this;
@@ -179,12 +139,52 @@ public class GetUsersResponseBody extends TeaModel {
             return this.domainType;
         }
 
+        public GetUsersResponseBodyData setEmail(String email) {
+            this.email = email;
+            return this;
+        }
+        public String getEmail() {
+            return this.email;
+        }
+
+        public GetUsersResponseBodyData setId(String id) {
+            this.id = id;
+            return this;
+        }
+        public String getId() {
+            return this.id;
+        }
+
+        public GetUsersResponseBodyData setMobile(String mobile) {
+            this.mobile = mobile;
+            return this;
+        }
+        public String getMobile() {
+            return this.mobile;
+        }
+
+        public GetUsersResponseBodyData setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
         public GetUsersResponseBodyData setPartDepartmentIds(java.util.List<String> partDepartmentIds) {
             this.partDepartmentIds = partDepartmentIds;
             return this;
         }
         public java.util.List<String> getPartDepartmentIds() {
             return this.partDepartmentIds;
+        }
+
+        public GetUsersResponseBodyData setSex(String sex) {
+            this.sex = sex;
+            return this;
+        }
+        public String getSex() {
+            return this.sex;
         }
 
         public GetUsersResponseBodyData setSortKey(Long sortKey) {

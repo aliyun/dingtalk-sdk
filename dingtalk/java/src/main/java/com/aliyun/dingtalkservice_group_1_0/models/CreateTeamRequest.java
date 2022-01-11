@@ -12,18 +12,6 @@ public class CreateTeamRequest extends TeaModel {
     @NameInMap("teamName")
     public String teamName;
 
-    @NameInMap("dingIsvOrgId")
-    public Long dingIsvOrgId;
-
-    @NameInMap("dingOrgId")
-    public Long dingOrgId;
-
-    @NameInMap("dingSuiteKey")
-    public String dingSuiteKey;
-
-    @NameInMap("dingTokenGrantType")
-    public Long dingTokenGrantType;
-
     public static CreateTeamRequest build(java.util.Map<String, ?> map) throws Exception {
         CreateTeamRequest self = new CreateTeamRequest();
         return TeaModel.build(map, self);
@@ -43,38 +31,6 @@ public class CreateTeamRequest extends TeaModel {
     }
     public String getTeamName() {
         return this.teamName;
-    }
-
-    public CreateTeamRequest setDingIsvOrgId(Long dingIsvOrgId) {
-        this.dingIsvOrgId = dingIsvOrgId;
-        return this;
-    }
-    public Long getDingIsvOrgId() {
-        return this.dingIsvOrgId;
-    }
-
-    public CreateTeamRequest setDingOrgId(Long dingOrgId) {
-        this.dingOrgId = dingOrgId;
-        return this;
-    }
-    public Long getDingOrgId() {
-        return this.dingOrgId;
-    }
-
-    public CreateTeamRequest setDingSuiteKey(String dingSuiteKey) {
-        this.dingSuiteKey = dingSuiteKey;
-        return this;
-    }
-    public String getDingSuiteKey() {
-        return this.dingSuiteKey;
-    }
-
-    public CreateTeamRequest setDingTokenGrantType(Long dingTokenGrantType) {
-        this.dingTokenGrantType = dingTokenGrantType;
-        return this;
-    }
-    public Long getDingTokenGrantType() {
-        return this.dingTokenGrantType;
     }
 
 }

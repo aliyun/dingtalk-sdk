@@ -4,25 +4,17 @@ package com.aliyun.dingtalkrobot_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchRecallOTORequest extends TeaModel {
-    // 机器人的robotCode
-    @NameInMap("robotCode")
-    public String robotCode;
-
     // 消息id
     @NameInMap("processQueryKeys")
     public java.util.List<String> processQueryKeys;
 
+    // 机器人的robotCode
+    @NameInMap("robotCode")
+    public String robotCode;
+
     public static BatchRecallOTORequest build(java.util.Map<String, ?> map) throws Exception {
         BatchRecallOTORequest self = new BatchRecallOTORequest();
         return TeaModel.build(map, self);
-    }
-
-    public BatchRecallOTORequest setRobotCode(String robotCode) {
-        this.robotCode = robotCode;
-        return this;
-    }
-    public String getRobotCode() {
-        return this.robotCode;
     }
 
     public BatchRecallOTORequest setProcessQueryKeys(java.util.List<String> processQueryKeys) {
@@ -31,6 +23,14 @@ public class BatchRecallOTORequest extends TeaModel {
     }
     public java.util.List<String> getProcessQueryKeys() {
         return this.processQueryKeys;
+    }
+
+    public BatchRecallOTORequest setRobotCode(String robotCode) {
+        this.robotCode = robotCode;
+        return this;
+    }
+    public String getRobotCode() {
+        return this.robotCode;
     }
 
 }

@@ -7,11 +7,11 @@ public class OrderResaleResponseBody extends TeaModel {
     @NameInMap("code")
     public Integer code;
 
-    @NameInMap("message")
-    public String message;
-
     @NameInMap("data")
     public OrderResaleResponseBodyData data;
+
+    @NameInMap("message")
+    public String message;
 
     public static OrderResaleResponseBody build(java.util.Map<String, ?> map) throws Exception {
         OrderResaleResponseBody self = new OrderResaleResponseBody();
@@ -26,20 +26,20 @@ public class OrderResaleResponseBody extends TeaModel {
         return this.code;
     }
 
-    public OrderResaleResponseBody setMessage(String message) {
-        this.message = message;
-        return this;
-    }
-    public String getMessage() {
-        return this.message;
-    }
-
     public OrderResaleResponseBody setData(OrderResaleResponseBodyData data) {
         this.data = data;
         return this;
     }
     public OrderResaleResponseBodyData getData() {
         return this.data;
+    }
+
+    public OrderResaleResponseBody setMessage(String message) {
+        this.message = message;
+        return this;
+    }
+    public String getMessage() {
+        return this.message;
     }
 
     public static class OrderResaleResponseBodyData extends TeaModel {

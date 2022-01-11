@@ -21,97 +21,57 @@ public class GetRunningTasksResponseBody extends TeaModel {
     }
 
     public static class GetRunningTasksResponseBodyResult extends TeaModel {
-        // createTime
-        @NameInMap("createTimeGMT")
-        public String createTimeGMT;
+        // activeTime
+        @NameInMap("activeTimeGMT")
+        public String activeTimeGMT;
 
         // activityId
         @NameInMap("activityId")
         public String activityId;
 
-        // processInstanceId
-        @NameInMap("processInstanceId")
-        public String processInstanceId;
-
-        // taskType
-        @NameInMap("taskType")
-        public String taskType;
-
-        // titleEn
-        @NameInMap("titleInEnglish")
-        public String titleInEnglish;
-
-        // activeTime
-        @NameInMap("activeTimeGMT")
-        public String activeTimeGMT;
-
         // actualActionerId
         @NameInMap("actualActionerId")
         public String actualActionerId;
 
-        // originatorId
-        @NameInMap("originatorId")
-        public String originatorId;
+        // createTime
+        @NameInMap("createTimeGMT")
+        public String createTimeGMT;
 
         // finishTime
         @NameInMap("finishTimeGMT")
         public String finishTimeGMT;
 
-        // title
-        @NameInMap("title")
-        public String title;
+        // originatorId
+        @NameInMap("originatorId")
+        public String originatorId;
 
-        // taskId
-        @NameInMap("taskId")
-        public String taskId;
+        // processInstanceId
+        @NameInMap("processInstanceId")
+        public String processInstanceId;
 
         // status
         @NameInMap("status")
         public String status;
 
+        // taskId
+        @NameInMap("taskId")
+        public String taskId;
+
+        // taskType
+        @NameInMap("taskType")
+        public String taskType;
+
+        // title
+        @NameInMap("title")
+        public String title;
+
+        // titleEn
+        @NameInMap("titleInEnglish")
+        public String titleInEnglish;
+
         public static GetRunningTasksResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             GetRunningTasksResponseBodyResult self = new GetRunningTasksResponseBodyResult();
             return TeaModel.build(map, self);
-        }
-
-        public GetRunningTasksResponseBodyResult setCreateTimeGMT(String createTimeGMT) {
-            this.createTimeGMT = createTimeGMT;
-            return this;
-        }
-        public String getCreateTimeGMT() {
-            return this.createTimeGMT;
-        }
-
-        public GetRunningTasksResponseBodyResult setActivityId(String activityId) {
-            this.activityId = activityId;
-            return this;
-        }
-        public String getActivityId() {
-            return this.activityId;
-        }
-
-        public GetRunningTasksResponseBodyResult setProcessInstanceId(String processInstanceId) {
-            this.processInstanceId = processInstanceId;
-            return this;
-        }
-        public String getProcessInstanceId() {
-            return this.processInstanceId;
-        }
-
-        public GetRunningTasksResponseBodyResult setTaskType(String taskType) {
-            this.taskType = taskType;
-            return this;
-        }
-        public String getTaskType() {
-            return this.taskType;
-        }
-
-        public GetRunningTasksResponseBodyResult setTitleInEnglish(String titleInEnglish) {
-            this.titleInEnglish = titleInEnglish;
-            return this;
-        }
-        public String getTitleInEnglish() {
-            return this.titleInEnglish;
         }
 
         public GetRunningTasksResponseBodyResult setActiveTimeGMT(String activeTimeGMT) {
@@ -122,6 +82,14 @@ public class GetRunningTasksResponseBody extends TeaModel {
             return this.activeTimeGMT;
         }
 
+        public GetRunningTasksResponseBodyResult setActivityId(String activityId) {
+            this.activityId = activityId;
+            return this;
+        }
+        public String getActivityId() {
+            return this.activityId;
+        }
+
         public GetRunningTasksResponseBodyResult setActualActionerId(String actualActionerId) {
             this.actualActionerId = actualActionerId;
             return this;
@@ -130,12 +98,12 @@ public class GetRunningTasksResponseBody extends TeaModel {
             return this.actualActionerId;
         }
 
-        public GetRunningTasksResponseBodyResult setOriginatorId(String originatorId) {
-            this.originatorId = originatorId;
+        public GetRunningTasksResponseBodyResult setCreateTimeGMT(String createTimeGMT) {
+            this.createTimeGMT = createTimeGMT;
             return this;
         }
-        public String getOriginatorId() {
-            return this.originatorId;
+        public String getCreateTimeGMT() {
+            return this.createTimeGMT;
         }
 
         public GetRunningTasksResponseBodyResult setFinishTimeGMT(String finishTimeGMT) {
@@ -146,12 +114,28 @@ public class GetRunningTasksResponseBody extends TeaModel {
             return this.finishTimeGMT;
         }
 
-        public GetRunningTasksResponseBodyResult setTitle(String title) {
-            this.title = title;
+        public GetRunningTasksResponseBodyResult setOriginatorId(String originatorId) {
+            this.originatorId = originatorId;
             return this;
         }
-        public String getTitle() {
-            return this.title;
+        public String getOriginatorId() {
+            return this.originatorId;
+        }
+
+        public GetRunningTasksResponseBodyResult setProcessInstanceId(String processInstanceId) {
+            this.processInstanceId = processInstanceId;
+            return this;
+        }
+        public String getProcessInstanceId() {
+            return this.processInstanceId;
+        }
+
+        public GetRunningTasksResponseBodyResult setStatus(String status) {
+            this.status = status;
+            return this;
+        }
+        public String getStatus() {
+            return this.status;
         }
 
         public GetRunningTasksResponseBodyResult setTaskId(String taskId) {
@@ -162,12 +146,28 @@ public class GetRunningTasksResponseBody extends TeaModel {
             return this.taskId;
         }
 
-        public GetRunningTasksResponseBodyResult setStatus(String status) {
-            this.status = status;
+        public GetRunningTasksResponseBodyResult setTaskType(String taskType) {
+            this.taskType = taskType;
             return this;
         }
-        public String getStatus() {
-            return this.status;
+        public String getTaskType() {
+            return this.taskType;
+        }
+
+        public GetRunningTasksResponseBodyResult setTitle(String title) {
+            this.title = title;
+            return this;
+        }
+        public String getTitle() {
+            return this.title;
+        }
+
+        public GetRunningTasksResponseBodyResult setTitleInEnglish(String titleInEnglish) {
+            this.titleInEnglish = titleInEnglish;
+            return this;
+        }
+        public String getTitleInEnglish() {
+            return this.titleInEnglish;
         }
 
     }

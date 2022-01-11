@@ -4,17 +4,17 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateResidenceRequest extends TeaModel {
-    // 家庭管理员用户id
-    @NameInMap("managerUserId")
-    public String managerUserId;
+    // 组id
+    @NameInMap("departmentId")
+    public Long departmentId;
 
     // 户名字
     @NameInMap("departmentName")
     public String departmentName;
 
-    // 组id
-    @NameInMap("departmentId")
-    public Long departmentId;
+    // 是否是贫困户
+    @NameInMap("destitute")
+    public Boolean destitute;
 
     // 所属网格
     @NameInMap("grid")
@@ -24,9 +24,9 @@ public class UpdateResidenceRequest extends TeaModel {
     @NameInMap("homeTel")
     public String homeTel;
 
-    // 是否是贫困户
-    @NameInMap("destitute")
-    public Boolean destitute;
+    // 家庭管理员用户id
+    @NameInMap("managerUserId")
+    public String managerUserId;
 
     // 组id
     @NameInMap("parentDepartmentId")
@@ -37,12 +37,12 @@ public class UpdateResidenceRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public UpdateResidenceRequest setManagerUserId(String managerUserId) {
-        this.managerUserId = managerUserId;
+    public UpdateResidenceRequest setDepartmentId(Long departmentId) {
+        this.departmentId = departmentId;
         return this;
     }
-    public String getManagerUserId() {
-        return this.managerUserId;
+    public Long getDepartmentId() {
+        return this.departmentId;
     }
 
     public UpdateResidenceRequest setDepartmentName(String departmentName) {
@@ -53,12 +53,12 @@ public class UpdateResidenceRequest extends TeaModel {
         return this.departmentName;
     }
 
-    public UpdateResidenceRequest setDepartmentId(Long departmentId) {
-        this.departmentId = departmentId;
+    public UpdateResidenceRequest setDestitute(Boolean destitute) {
+        this.destitute = destitute;
         return this;
     }
-    public Long getDepartmentId() {
-        return this.departmentId;
+    public Boolean getDestitute() {
+        return this.destitute;
     }
 
     public UpdateResidenceRequest setGrid(String grid) {
@@ -77,12 +77,12 @@ public class UpdateResidenceRequest extends TeaModel {
         return this.homeTel;
     }
 
-    public UpdateResidenceRequest setDestitute(Boolean destitute) {
-        this.destitute = destitute;
+    public UpdateResidenceRequest setManagerUserId(String managerUserId) {
+        this.managerUserId = managerUserId;
         return this;
     }
-    public Boolean getDestitute() {
-        return this.destitute;
+    public String getManagerUserId() {
+        return this.managerUserId;
     }
 
     public UpdateResidenceRequest setParentDepartmentId(Long parentDepartmentId) {

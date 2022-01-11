@@ -8,17 +8,17 @@ public class GetUserTokenResponseBody extends TeaModel {
     @NameInMap("accessToken")
     public String accessToken;
 
-    // refreshToken
-    @NameInMap("refreshToken")
-    public String refreshToken;
+    // 所选企业corpId
+    @NameInMap("corpId")
+    public String corpId;
 
     // 超时时间
     @NameInMap("expireIn")
     public Long expireIn;
 
-    // 所选企业corpId
-    @NameInMap("corpId")
-    public String corpId;
+    // refreshToken
+    @NameInMap("refreshToken")
+    public String refreshToken;
 
     public static GetUserTokenResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetUserTokenResponseBody self = new GetUserTokenResponseBody();
@@ -33,12 +33,12 @@ public class GetUserTokenResponseBody extends TeaModel {
         return this.accessToken;
     }
 
-    public GetUserTokenResponseBody setRefreshToken(String refreshToken) {
-        this.refreshToken = refreshToken;
+    public GetUserTokenResponseBody setCorpId(String corpId) {
+        this.corpId = corpId;
         return this;
     }
-    public String getRefreshToken() {
-        return this.refreshToken;
+    public String getCorpId() {
+        return this.corpId;
     }
 
     public GetUserTokenResponseBody setExpireIn(Long expireIn) {
@@ -49,12 +49,12 @@ public class GetUserTokenResponseBody extends TeaModel {
         return this.expireIn;
     }
 
-    public GetUserTokenResponseBody setCorpId(String corpId) {
-        this.corpId = corpId;
+    public GetUserTokenResponseBody setRefreshToken(String refreshToken) {
+        this.refreshToken = refreshToken;
         return this;
     }
-    public String getCorpId() {
-        return this.corpId;
+    public String getRefreshToken() {
+        return this.refreshToken;
     }
 
 }

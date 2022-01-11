@@ -4,13 +4,17 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddCrmPersonalCustomerRequest extends TeaModel {
-    // 记录创建人的用户ID
-    @NameInMap("creatorUserId")
-    public String creatorUserId;
+    // 公海领取客户：publicDraw 公海分配客户：publicAssign 其余场景：（不用传）
+    @NameInMap("action")
+    public String action;
 
     // 记录创建人的昵称
     @NameInMap("creatorNick")
     public String creatorNick;
+
+    // 记录创建人的用户ID
+    @NameInMap("creatorUserId")
+    public String creatorUserId;
 
     // 数据内容
     @NameInMap("data")
@@ -32,21 +36,17 @@ public class AddCrmPersonalCustomerRequest extends TeaModel {
     @NameInMap("skipDuplicateCheck")
     public Boolean skipDuplicateCheck;
 
-    // 公海领取客户：publicDraw 公海分配客户：publicAssign 其余场景：（不用传）
-    @NameInMap("action")
-    public String action;
-
     public static AddCrmPersonalCustomerRequest build(java.util.Map<String, ?> map) throws Exception {
         AddCrmPersonalCustomerRequest self = new AddCrmPersonalCustomerRequest();
         return TeaModel.build(map, self);
     }
 
-    public AddCrmPersonalCustomerRequest setCreatorUserId(String creatorUserId) {
-        this.creatorUserId = creatorUserId;
+    public AddCrmPersonalCustomerRequest setAction(String action) {
+        this.action = action;
         return this;
     }
-    public String getCreatorUserId() {
-        return this.creatorUserId;
+    public String getAction() {
+        return this.action;
     }
 
     public AddCrmPersonalCustomerRequest setCreatorNick(String creatorNick) {
@@ -55,6 +55,14 @@ public class AddCrmPersonalCustomerRequest extends TeaModel {
     }
     public String getCreatorNick() {
         return this.creatorNick;
+    }
+
+    public AddCrmPersonalCustomerRequest setCreatorUserId(String creatorUserId) {
+        this.creatorUserId = creatorUserId;
+        return this;
+    }
+    public String getCreatorUserId() {
+        return this.creatorUserId;
     }
 
     public AddCrmPersonalCustomerRequest setData(java.util.Map<String, ?> data) {
@@ -95,14 +103,6 @@ public class AddCrmPersonalCustomerRequest extends TeaModel {
     }
     public Boolean getSkipDuplicateCheck() {
         return this.skipDuplicateCheck;
-    }
-
-    public AddCrmPersonalCustomerRequest setAction(String action) {
-        this.action = action;
-        return this;
-    }
-    public String getAction() {
-        return this.action;
     }
 
     public static class AddCrmPersonalCustomerRequestPermission extends TeaModel {

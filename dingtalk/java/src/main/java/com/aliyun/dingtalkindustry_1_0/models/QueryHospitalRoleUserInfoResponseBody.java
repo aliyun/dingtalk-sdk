@@ -8,17 +8,17 @@ public class QueryHospitalRoleUserInfoResponseBody extends TeaModel {
     @NameInMap("content")
     public java.util.List<QueryHospitalRoleUserInfoResponseBodyContent> content;
 
-    // 总页数
-    @NameInMap("totalPages")
-    public Integer totalPages;
+    // 当前页码
+    @NameInMap("currentPage")
+    public Integer currentPage;
 
     // 总数量
     @NameInMap("totalCount")
     public Long totalCount;
 
-    // 当前页码
-    @NameInMap("currentPage")
-    public Integer currentPage;
+    // 总页数
+    @NameInMap("totalPages")
+    public Integer totalPages;
 
     public static QueryHospitalRoleUserInfoResponseBody build(java.util.Map<String, ?> map) throws Exception {
         QueryHospitalRoleUserInfoResponseBody self = new QueryHospitalRoleUserInfoResponseBody();
@@ -33,12 +33,12 @@ public class QueryHospitalRoleUserInfoResponseBody extends TeaModel {
         return this.content;
     }
 
-    public QueryHospitalRoleUserInfoResponseBody setTotalPages(Integer totalPages) {
-        this.totalPages = totalPages;
+    public QueryHospitalRoleUserInfoResponseBody setCurrentPage(Integer currentPage) {
+        this.currentPage = currentPage;
         return this;
     }
-    public Integer getTotalPages() {
-        return this.totalPages;
+    public Integer getCurrentPage() {
+        return this.currentPage;
     }
 
     public QueryHospitalRoleUserInfoResponseBody setTotalCount(Long totalCount) {
@@ -49,22 +49,22 @@ public class QueryHospitalRoleUserInfoResponseBody extends TeaModel {
         return this.totalCount;
     }
 
-    public QueryHospitalRoleUserInfoResponseBody setCurrentPage(Integer currentPage) {
-        this.currentPage = currentPage;
+    public QueryHospitalRoleUserInfoResponseBody setTotalPages(Integer totalPages) {
+        this.totalPages = totalPages;
         return this;
     }
-    public Integer getCurrentPage() {
-        return this.currentPage;
+    public Integer getTotalPages() {
+        return this.totalPages;
     }
 
     public static class QueryHospitalRoleUserInfoResponseBodyContent extends TeaModel {
-        // 用户编码
-        @NameInMap("userCode")
-        public String userCode;
+        // gmtCreate
+        @NameInMap("gmtCreate")
+        public String gmtCreate;
 
-        // 用户名称
-        @NameInMap("userName")
-        public String userName;
+        // 修改时间
+        @NameInMap("gmtModified")
+        public String gmtModified;
 
         // 用户工号
         @NameInMap("jobNumber")
@@ -78,33 +78,33 @@ public class QueryHospitalRoleUserInfoResponseBody extends TeaModel {
         @NameInMap("roleName")
         public String roleName;
 
-        // gmtCreate
-        @NameInMap("gmtCreate")
-        public String gmtCreate;
+        // 用户编码
+        @NameInMap("userCode")
+        public String userCode;
 
-        // 修改时间
-        @NameInMap("gmtModified")
-        public String gmtModified;
+        // 用户名称
+        @NameInMap("userName")
+        public String userName;
 
         public static QueryHospitalRoleUserInfoResponseBodyContent build(java.util.Map<String, ?> map) throws Exception {
             QueryHospitalRoleUserInfoResponseBodyContent self = new QueryHospitalRoleUserInfoResponseBodyContent();
             return TeaModel.build(map, self);
         }
 
-        public QueryHospitalRoleUserInfoResponseBodyContent setUserCode(String userCode) {
-            this.userCode = userCode;
+        public QueryHospitalRoleUserInfoResponseBodyContent setGmtCreate(String gmtCreate) {
+            this.gmtCreate = gmtCreate;
             return this;
         }
-        public String getUserCode() {
-            return this.userCode;
+        public String getGmtCreate() {
+            return this.gmtCreate;
         }
 
-        public QueryHospitalRoleUserInfoResponseBodyContent setUserName(String userName) {
-            this.userName = userName;
+        public QueryHospitalRoleUserInfoResponseBodyContent setGmtModified(String gmtModified) {
+            this.gmtModified = gmtModified;
             return this;
         }
-        public String getUserName() {
-            return this.userName;
+        public String getGmtModified() {
+            return this.gmtModified;
         }
 
         public QueryHospitalRoleUserInfoResponseBodyContent setJobNumber(String jobNumber) {
@@ -131,20 +131,20 @@ public class QueryHospitalRoleUserInfoResponseBody extends TeaModel {
             return this.roleName;
         }
 
-        public QueryHospitalRoleUserInfoResponseBodyContent setGmtCreate(String gmtCreate) {
-            this.gmtCreate = gmtCreate;
+        public QueryHospitalRoleUserInfoResponseBodyContent setUserCode(String userCode) {
+            this.userCode = userCode;
             return this;
         }
-        public String getGmtCreate() {
-            return this.gmtCreate;
+        public String getUserCode() {
+            return this.userCode;
         }
 
-        public QueryHospitalRoleUserInfoResponseBodyContent setGmtModified(String gmtModified) {
-            this.gmtModified = gmtModified;
+        public QueryHospitalRoleUserInfoResponseBodyContent setUserName(String userName) {
+            this.userName = userName;
             return this;
         }
-        public String getGmtModified() {
-            return this.gmtModified;
+        public String getUserName() {
+            return this.userName;
         }
 
     }

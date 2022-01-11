@@ -4,13 +4,25 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetSceneGroupInfoResponseBody extends TeaModel {
-    // result
-    @NameInMap("success")
-    public Boolean success;
+    // 群url
+    @NameInMap("groupUrl")
+    public String groupUrl;
+
+    // 群头像mediaId
+    @NameInMap("icon")
+    public String icon;
 
     // 开放群id
     @NameInMap("openConversationId")
     public String openConversationId;
+
+    // 群主员工id
+    @NameInMap("ownerUserId")
+    public String ownerUserId;
+
+    // result
+    @NameInMap("success")
+    public Boolean success;
 
     // 场景群模板ID
     @NameInMap("templateId")
@@ -20,29 +32,25 @@ public class GetSceneGroupInfoResponseBody extends TeaModel {
     @NameInMap("title")
     public String title;
 
-    // 群主员工id
-    @NameInMap("ownerUserId")
-    public String ownerUserId;
-
-    // 群头像mediaId
-    @NameInMap("icon")
-    public String icon;
-
-    // 群url
-    @NameInMap("groupUrl")
-    public String groupUrl;
-
     public static GetSceneGroupInfoResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetSceneGroupInfoResponseBody self = new GetSceneGroupInfoResponseBody();
         return TeaModel.build(map, self);
     }
 
-    public GetSceneGroupInfoResponseBody setSuccess(Boolean success) {
-        this.success = success;
+    public GetSceneGroupInfoResponseBody setGroupUrl(String groupUrl) {
+        this.groupUrl = groupUrl;
         return this;
     }
-    public Boolean getSuccess() {
-        return this.success;
+    public String getGroupUrl() {
+        return this.groupUrl;
+    }
+
+    public GetSceneGroupInfoResponseBody setIcon(String icon) {
+        this.icon = icon;
+        return this;
+    }
+    public String getIcon() {
+        return this.icon;
     }
 
     public GetSceneGroupInfoResponseBody setOpenConversationId(String openConversationId) {
@@ -51,6 +59,22 @@ public class GetSceneGroupInfoResponseBody extends TeaModel {
     }
     public String getOpenConversationId() {
         return this.openConversationId;
+    }
+
+    public GetSceneGroupInfoResponseBody setOwnerUserId(String ownerUserId) {
+        this.ownerUserId = ownerUserId;
+        return this;
+    }
+    public String getOwnerUserId() {
+        return this.ownerUserId;
+    }
+
+    public GetSceneGroupInfoResponseBody setSuccess(Boolean success) {
+        this.success = success;
+        return this;
+    }
+    public Boolean getSuccess() {
+        return this.success;
     }
 
     public GetSceneGroupInfoResponseBody setTemplateId(String templateId) {
@@ -67,30 +91,6 @@ public class GetSceneGroupInfoResponseBody extends TeaModel {
     }
     public String getTitle() {
         return this.title;
-    }
-
-    public GetSceneGroupInfoResponseBody setOwnerUserId(String ownerUserId) {
-        this.ownerUserId = ownerUserId;
-        return this;
-    }
-    public String getOwnerUserId() {
-        return this.ownerUserId;
-    }
-
-    public GetSceneGroupInfoResponseBody setIcon(String icon) {
-        this.icon = icon;
-        return this;
-    }
-    public String getIcon() {
-        return this.icon;
-    }
-
-    public GetSceneGroupInfoResponseBody setGroupUrl(String groupUrl) {
-        this.groupUrl = groupUrl;
-        return this;
-    }
-    public String getGroupUrl() {
-        return this.groupUrl;
     }
 
 }

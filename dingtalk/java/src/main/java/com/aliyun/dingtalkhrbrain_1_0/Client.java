@@ -30,6 +30,18 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public SyncDataResponse syncDataWithOptions(SyncDataRequest request, SyncDataHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.content)) {
+            body.put("content", request.content);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dataId)) {
+            body.put("dataId", request.dataId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.etlTime)) {
+            body.put("etlTime", request.etlTime);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.projectId)) {
             body.put("projectId", request.projectId);
         }
@@ -38,25 +50,13 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("schemaId", request.schemaId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.dataId)) {
-            body.put("dataId", request.dataId);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.content)) {
-            body.put("content", request.content);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.etlTime)) {
-            body.put("etlTime", request.etlTime);
-        }
-
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
         }
 
         if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
-            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
         OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(

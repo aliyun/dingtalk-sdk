@@ -66,14 +66,6 @@ public class GetInstancesByIdListResponseBody extends TeaModel {
     }
 
     public static class GetInstancesByIdListResponseBodyResultActionExecutor extends TeaModel {
-        // 用户工号
-        @NameInMap("userId")
-        public String userId;
-
-        // 用户名
-        @NameInMap("name")
-        public GetInstancesByIdListResponseBodyResultActionExecutorName name;
-
         // 部门名称
         @NameInMap("departmentName")
         public String departmentName;
@@ -82,25 +74,17 @@ public class GetInstancesByIdListResponseBody extends TeaModel {
         @NameInMap("email")
         public String email;
 
+        // 用户名
+        @NameInMap("name")
+        public GetInstancesByIdListResponseBodyResultActionExecutorName name;
+
+        // 用户工号
+        @NameInMap("userId")
+        public String userId;
+
         public static GetInstancesByIdListResponseBodyResultActionExecutor build(java.util.Map<String, ?> map) throws Exception {
             GetInstancesByIdListResponseBodyResultActionExecutor self = new GetInstancesByIdListResponseBodyResultActionExecutor();
             return TeaModel.build(map, self);
-        }
-
-        public GetInstancesByIdListResponseBodyResultActionExecutor setUserId(String userId) {
-            this.userId = userId;
-            return this;
-        }
-        public String getUserId() {
-            return this.userId;
-        }
-
-        public GetInstancesByIdListResponseBodyResultActionExecutor setName(GetInstancesByIdListResponseBodyResultActionExecutorName name) {
-            this.name = name;
-            return this;
-        }
-        public GetInstancesByIdListResponseBodyResultActionExecutorName getName() {
-            return this.name;
         }
 
         public GetInstancesByIdListResponseBodyResultActionExecutor setDepartmentName(String departmentName) {
@@ -117,6 +101,22 @@ public class GetInstancesByIdListResponseBody extends TeaModel {
         }
         public String getEmail() {
             return this.email;
+        }
+
+        public GetInstancesByIdListResponseBodyResultActionExecutor setName(GetInstancesByIdListResponseBodyResultActionExecutorName name) {
+            this.name = name;
+            return this;
+        }
+        public GetInstancesByIdListResponseBodyResultActionExecutorName getName() {
+            return this.name;
+        }
+
+        public GetInstancesByIdListResponseBodyResultActionExecutor setUserId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+        public String getUserId() {
+            return this.userId;
         }
 
     }
@@ -166,14 +166,6 @@ public class GetInstancesByIdListResponseBody extends TeaModel {
     }
 
     public static class GetInstancesByIdListResponseBodyResultOriginator extends TeaModel {
-        // 用户工号
-        @NameInMap("userId")
-        public String userId;
-
-        // 用户名
-        @NameInMap("name")
-        public GetInstancesByIdListResponseBodyResultOriginatorName name;
-
         // 部门名称
         @NameInMap("departmentName")
         public String departmentName;
@@ -182,25 +174,17 @@ public class GetInstancesByIdListResponseBody extends TeaModel {
         @NameInMap("email")
         public String email;
 
+        // 用户名
+        @NameInMap("name")
+        public GetInstancesByIdListResponseBodyResultOriginatorName name;
+
+        // 用户工号
+        @NameInMap("userId")
+        public String userId;
+
         public static GetInstancesByIdListResponseBodyResultOriginator build(java.util.Map<String, ?> map) throws Exception {
             GetInstancesByIdListResponseBodyResultOriginator self = new GetInstancesByIdListResponseBodyResultOriginator();
             return TeaModel.build(map, self);
-        }
-
-        public GetInstancesByIdListResponseBodyResultOriginator setUserId(String userId) {
-            this.userId = userId;
-            return this;
-        }
-        public String getUserId() {
-            return this.userId;
-        }
-
-        public GetInstancesByIdListResponseBodyResultOriginator setName(GetInstancesByIdListResponseBodyResultOriginatorName name) {
-            this.name = name;
-            return this;
-        }
-        public GetInstancesByIdListResponseBodyResultOriginatorName getName() {
-            return this.name;
         }
 
         public GetInstancesByIdListResponseBodyResultOriginator setDepartmentName(String departmentName) {
@@ -219,6 +203,22 @@ public class GetInstancesByIdListResponseBody extends TeaModel {
             return this.email;
         }
 
+        public GetInstancesByIdListResponseBodyResultOriginator setName(GetInstancesByIdListResponseBodyResultOriginatorName name) {
+            this.name = name;
+            return this;
+        }
+        public GetInstancesByIdListResponseBodyResultOriginatorName getName() {
+            return this.name;
+        }
+
+        public GetInstancesByIdListResponseBodyResultOriginator setUserId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+        public String getUserId() {
+            return this.userId;
+        }
+
     }
 
     public static class GetInstancesByIdListResponseBodyResult extends TeaModel {
@@ -226,37 +226,37 @@ public class GetInstancesByIdListResponseBody extends TeaModel {
         @NameInMap("actionExecutor")
         public java.util.List<GetInstancesByIdListResponseBodyResultActionExecutor> actionExecutor;
 
-        // 实例ID
-        @NameInMap("processInstanceId")
-        public String processInstanceId;
+        // 流程结束时的审批结论
+        @NameInMap("approvedResult")
+        public String approvedResult;
+
+        // 表单数据
+        @NameInMap("data")
+        public java.util.Map<String, ?> data;
 
         // 流程表单ID
         @NameInMap("formUuid")
         public String formUuid;
 
-        // 流程Code
-        @NameInMap("processCode")
-        public String processCode;
-
-        // 实例标题
-        @NameInMap("title")
-        public String title;
-
         // 实例状态
         @NameInMap("instanceStatus")
         public String instanceStatus;
-
-        // 流程结束时的审批结论
-        @NameInMap("approvedResult")
-        public String approvedResult;
 
         // 发起人信息
         @NameInMap("originator")
         public GetInstancesByIdListResponseBodyResultOriginator originator;
 
-        // 表单数据
-        @NameInMap("data")
-        public java.util.Map<String, ?> data;
+        // 流程Code
+        @NameInMap("processCode")
+        public String processCode;
+
+        // 实例ID
+        @NameInMap("processInstanceId")
+        public String processInstanceId;
+
+        // 实例标题
+        @NameInMap("title")
+        public String title;
 
         public static GetInstancesByIdListResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             GetInstancesByIdListResponseBodyResult self = new GetInstancesByIdListResponseBodyResult();
@@ -271,12 +271,20 @@ public class GetInstancesByIdListResponseBody extends TeaModel {
             return this.actionExecutor;
         }
 
-        public GetInstancesByIdListResponseBodyResult setProcessInstanceId(String processInstanceId) {
-            this.processInstanceId = processInstanceId;
+        public GetInstancesByIdListResponseBodyResult setApprovedResult(String approvedResult) {
+            this.approvedResult = approvedResult;
             return this;
         }
-        public String getProcessInstanceId() {
-            return this.processInstanceId;
+        public String getApprovedResult() {
+            return this.approvedResult;
+        }
+
+        public GetInstancesByIdListResponseBodyResult setData(java.util.Map<String, ?> data) {
+            this.data = data;
+            return this;
+        }
+        public java.util.Map<String, ?> getData() {
+            return this.data;
         }
 
         public GetInstancesByIdListResponseBodyResult setFormUuid(String formUuid) {
@@ -287,36 +295,12 @@ public class GetInstancesByIdListResponseBody extends TeaModel {
             return this.formUuid;
         }
 
-        public GetInstancesByIdListResponseBodyResult setProcessCode(String processCode) {
-            this.processCode = processCode;
-            return this;
-        }
-        public String getProcessCode() {
-            return this.processCode;
-        }
-
-        public GetInstancesByIdListResponseBodyResult setTitle(String title) {
-            this.title = title;
-            return this;
-        }
-        public String getTitle() {
-            return this.title;
-        }
-
         public GetInstancesByIdListResponseBodyResult setInstanceStatus(String instanceStatus) {
             this.instanceStatus = instanceStatus;
             return this;
         }
         public String getInstanceStatus() {
             return this.instanceStatus;
-        }
-
-        public GetInstancesByIdListResponseBodyResult setApprovedResult(String approvedResult) {
-            this.approvedResult = approvedResult;
-            return this;
-        }
-        public String getApprovedResult() {
-            return this.approvedResult;
         }
 
         public GetInstancesByIdListResponseBodyResult setOriginator(GetInstancesByIdListResponseBodyResultOriginator originator) {
@@ -327,12 +311,28 @@ public class GetInstancesByIdListResponseBody extends TeaModel {
             return this.originator;
         }
 
-        public GetInstancesByIdListResponseBodyResult setData(java.util.Map<String, ?> data) {
-            this.data = data;
+        public GetInstancesByIdListResponseBodyResult setProcessCode(String processCode) {
+            this.processCode = processCode;
             return this;
         }
-        public java.util.Map<String, ?> getData() {
-            return this.data;
+        public String getProcessCode() {
+            return this.processCode;
+        }
+
+        public GetInstancesByIdListResponseBodyResult setProcessInstanceId(String processInstanceId) {
+            this.processInstanceId = processInstanceId;
+            return this;
+        }
+        public String getProcessInstanceId() {
+            return this.processInstanceId;
+        }
+
+        public GetInstancesByIdListResponseBodyResult setTitle(String title) {
+            this.title = title;
+            return this;
+        }
+        public String getTitle() {
+            return this.title;
         }
 
     }

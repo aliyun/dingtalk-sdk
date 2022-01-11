@@ -8,21 +8,21 @@ public class SendInvitationRequest extends TeaModel {
     @NameInMap("deptId")
     public String deptId;
 
-    // 伙伴编码
-    @NameInMap("partnerNum")
-    public String partnerNum;
+    // 组织别名
+    @NameInMap("orgAlias")
+    public String orgAlias;
 
     // 伙伴标签id
     @NameInMap("partnerLabelId")
     public Long partnerLabelId;
 
+    // 伙伴编码
+    @NameInMap("partnerNum")
+    public String partnerNum;
+
     // 手机号
     @NameInMap("phone")
     public String phone;
-
-    // 组织别名
-    @NameInMap("orgAlias")
-    public String orgAlias;
 
     public static SendInvitationRequest build(java.util.Map<String, ?> map) throws Exception {
         SendInvitationRequest self = new SendInvitationRequest();
@@ -37,12 +37,12 @@ public class SendInvitationRequest extends TeaModel {
         return this.deptId;
     }
 
-    public SendInvitationRequest setPartnerNum(String partnerNum) {
-        this.partnerNum = partnerNum;
+    public SendInvitationRequest setOrgAlias(String orgAlias) {
+        this.orgAlias = orgAlias;
         return this;
     }
-    public String getPartnerNum() {
-        return this.partnerNum;
+    public String getOrgAlias() {
+        return this.orgAlias;
     }
 
     public SendInvitationRequest setPartnerLabelId(Long partnerLabelId) {
@@ -53,20 +53,20 @@ public class SendInvitationRequest extends TeaModel {
         return this.partnerLabelId;
     }
 
+    public SendInvitationRequest setPartnerNum(String partnerNum) {
+        this.partnerNum = partnerNum;
+        return this;
+    }
+    public String getPartnerNum() {
+        return this.partnerNum;
+    }
+
     public SendInvitationRequest setPhone(String phone) {
         this.phone = phone;
         return this;
     }
     public String getPhone() {
         return this.phone;
-    }
-
-    public SendInvitationRequest setOrgAlias(String orgAlias) {
-        this.orgAlias = orgAlias;
-        return this;
-    }
-    public String getOrgAlias() {
-        return this.orgAlias;
     }
 
 }

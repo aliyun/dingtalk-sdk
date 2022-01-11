@@ -22,13 +22,13 @@ public class QueryUserProbCodeDictionaryResponseBody extends TeaModel {
     }
 
     public static class QueryUserProbCodeDictionaryResponseBodyContent extends TeaModel {
-        // 固定字段标识
-        @NameInMap("code")
-        public String code;
-
         // 分类
         @NameInMap("category")
         public String category;
+
+        // 固定字段标识
+        @NameInMap("code")
+        public String code;
 
         // 展示名字
         @NameInMap("displayName")
@@ -39,20 +39,20 @@ public class QueryUserProbCodeDictionaryResponseBody extends TeaModel {
             return TeaModel.build(map, self);
         }
 
-        public QueryUserProbCodeDictionaryResponseBodyContent setCode(String code) {
-            this.code = code;
-            return this;
-        }
-        public String getCode() {
-            return this.code;
-        }
-
         public QueryUserProbCodeDictionaryResponseBodyContent setCategory(String category) {
             this.category = category;
             return this;
         }
         public String getCategory() {
             return this.category;
+        }
+
+        public QueryUserProbCodeDictionaryResponseBodyContent setCode(String code) {
+            this.code = code;
+            return this;
+        }
+        public String getCode() {
+            return this.code;
         }
 
         public QueryUserProbCodeDictionaryResponseBodyContent setDisplayName(String displayName) {

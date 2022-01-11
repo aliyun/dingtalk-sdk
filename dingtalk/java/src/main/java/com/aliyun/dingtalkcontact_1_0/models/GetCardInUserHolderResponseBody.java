@@ -4,25 +4,17 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCardInUserHolderResponseBody extends TeaModel {
-    // 名片ID
-    @NameInMap("cardId")
-    public String cardId;
-
-    // 名字
-    @NameInMap("name")
-    public String name;
-
     // 头像
     @NameInMap("avatarUrl")
     public String avatarUrl;
 
-    // 组织名称
-    @NameInMap("orgName")
-    public String orgName;
+    // 名片ID
+    @NameInMap("cardId")
+    public String cardId;
 
-    // 职位
-    @NameInMap("title")
-    public String title;
+    // 扩展信息
+    @NameInMap("extension")
+    public java.util.Map<String, ?> extension;
 
     // 行业
     @NameInMap("industryName")
@@ -32,33 +24,25 @@ public class GetCardInUserHolderResponseBody extends TeaModel {
     @NameInMap("introduce")
     public String introduce;
 
+    // 名字
+    @NameInMap("name")
+    public String name;
+
+    // 组织名称
+    @NameInMap("orgName")
+    public String orgName;
+
     // 模板ID
     @NameInMap("templateId")
     public String templateId;
 
-    // 扩展信息
-    @NameInMap("extension")
-    public java.util.Map<String, ?> extension;
+    // 职位
+    @NameInMap("title")
+    public String title;
 
     public static GetCardInUserHolderResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetCardInUserHolderResponseBody self = new GetCardInUserHolderResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public GetCardInUserHolderResponseBody setCardId(String cardId) {
-        this.cardId = cardId;
-        return this;
-    }
-    public String getCardId() {
-        return this.cardId;
-    }
-
-    public GetCardInUserHolderResponseBody setName(String name) {
-        this.name = name;
-        return this;
-    }
-    public String getName() {
-        return this.name;
     }
 
     public GetCardInUserHolderResponseBody setAvatarUrl(String avatarUrl) {
@@ -69,20 +53,20 @@ public class GetCardInUserHolderResponseBody extends TeaModel {
         return this.avatarUrl;
     }
 
-    public GetCardInUserHolderResponseBody setOrgName(String orgName) {
-        this.orgName = orgName;
+    public GetCardInUserHolderResponseBody setCardId(String cardId) {
+        this.cardId = cardId;
         return this;
     }
-    public String getOrgName() {
-        return this.orgName;
+    public String getCardId() {
+        return this.cardId;
     }
 
-    public GetCardInUserHolderResponseBody setTitle(String title) {
-        this.title = title;
+    public GetCardInUserHolderResponseBody setExtension(java.util.Map<String, ?> extension) {
+        this.extension = extension;
         return this;
     }
-    public String getTitle() {
-        return this.title;
+    public java.util.Map<String, ?> getExtension() {
+        return this.extension;
     }
 
     public GetCardInUserHolderResponseBody setIndustryName(String industryName) {
@@ -101,6 +85,22 @@ public class GetCardInUserHolderResponseBody extends TeaModel {
         return this.introduce;
     }
 
+    public GetCardInUserHolderResponseBody setName(String name) {
+        this.name = name;
+        return this;
+    }
+    public String getName() {
+        return this.name;
+    }
+
+    public GetCardInUserHolderResponseBody setOrgName(String orgName) {
+        this.orgName = orgName;
+        return this;
+    }
+    public String getOrgName() {
+        return this.orgName;
+    }
+
     public GetCardInUserHolderResponseBody setTemplateId(String templateId) {
         this.templateId = templateId;
         return this;
@@ -109,12 +109,12 @@ public class GetCardInUserHolderResponseBody extends TeaModel {
         return this.templateId;
     }
 
-    public GetCardInUserHolderResponseBody setExtension(java.util.Map<String, ?> extension) {
-        this.extension = extension;
+    public GetCardInUserHolderResponseBody setTitle(String title) {
+        this.title = title;
         return this;
     }
-    public java.util.Map<String, ?> getExtension() {
-        return this.extension;
+    public String getTitle() {
+        return this.title;
     }
 
 }

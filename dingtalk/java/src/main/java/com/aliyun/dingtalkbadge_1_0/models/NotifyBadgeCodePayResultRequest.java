@@ -4,17 +4,21 @@ package com.aliyun.dingtalkbadge_1_0.models;
 import com.aliyun.tea.*;
 
 public class NotifyBadgeCodePayResultRequest extends TeaModel {
-    // 付款码值
-    @NameInMap("payCode")
-    public String payCode;
+    // 订单金额
+    @NameInMap("amount")
+    public String amount;
+
+    // 收费金额
+    @NameInMap("chargeAmount")
+    public String chargeAmount;
 
     // 企业id
     @NameInMap("corpId")
     public String corpId;
 
-    // 用户id
-    @NameInMap("userId")
-    public String userId;
+    // 扩展信息
+    @NameInMap("extInfo")
+    public String extInfo;
 
     // 交易开始时间
     @NameInMap("gmtTradeCreate")
@@ -24,37 +28,29 @@ public class NotifyBadgeCodePayResultRequest extends TeaModel {
     @NameInMap("gmtTradeFinish")
     public String gmtTradeFinish;
 
-    // 交易号
-    @NameInMap("tradeNo")
-    public String tradeNo;
+    // merchantName
+    @NameInMap("merchantName")
+    public String merchantName;
 
-    // 交易状态
-    @NameInMap("tradeStatus")
-    public String tradeStatus;
+    // 支付渠道明细信息
+    @NameInMap("payChannelDetailList")
+    public java.util.List<NotifyBadgeCodePayResultRequestPayChannelDetailList> payChannelDetailList;
 
-    // 订单标题
-    @NameInMap("title")
-    public String title;
-
-    // 备注
-    @NameInMap("remark")
-    public String remark;
-
-    // 订单金额
-    @NameInMap("amount")
-    public String amount;
+    // 付款码值
+    @NameInMap("payCode")
+    public String payCode;
 
     // 订单优惠金额
     @NameInMap("promotionAmount")
     public String promotionAmount;
 
-    // 收费金额
-    @NameInMap("chargeAmount")
-    public String chargeAmount;
+    // 备注
+    @NameInMap("remark")
+    public String remark;
 
-    // 支付渠道明细信息
-    @NameInMap("payChannelDetailList")
-    public java.util.List<NotifyBadgeCodePayResultRequestPayChannelDetailList> payChannelDetailList;
+    // 订单标题
+    @NameInMap("title")
+    public String title;
 
     // 支付失败错误码
     @NameInMap("tradeErrorCode")
@@ -64,33 +60,37 @@ public class NotifyBadgeCodePayResultRequest extends TeaModel {
     @NameInMap("tradeErrorMsg")
     public String tradeErrorMsg;
 
-    // 扩展信息
-    @NameInMap("extInfo")
-    public String extInfo;
+    // 交易号
+    @NameInMap("tradeNo")
+    public String tradeNo;
 
-    // ISV组织ID
-    @NameInMap("dingIsvOrgId")
-    public Long dingIsvOrgId;
+    // 交易状态
+    @NameInMap("tradeStatus")
+    public String tradeStatus;
 
-    // 组织ID
-    @NameInMap("dingOrgId")
-    public Long dingOrgId;
-
-    // merchantName
-    @NameInMap("merchantName")
-    public String merchantName;
+    // 用户id
+    @NameInMap("userId")
+    public String userId;
 
     public static NotifyBadgeCodePayResultRequest build(java.util.Map<String, ?> map) throws Exception {
         NotifyBadgeCodePayResultRequest self = new NotifyBadgeCodePayResultRequest();
         return TeaModel.build(map, self);
     }
 
-    public NotifyBadgeCodePayResultRequest setPayCode(String payCode) {
-        this.payCode = payCode;
+    public NotifyBadgeCodePayResultRequest setAmount(String amount) {
+        this.amount = amount;
         return this;
     }
-    public String getPayCode() {
-        return this.payCode;
+    public String getAmount() {
+        return this.amount;
+    }
+
+    public NotifyBadgeCodePayResultRequest setChargeAmount(String chargeAmount) {
+        this.chargeAmount = chargeAmount;
+        return this;
+    }
+    public String getChargeAmount() {
+        return this.chargeAmount;
     }
 
     public NotifyBadgeCodePayResultRequest setCorpId(String corpId) {
@@ -101,12 +101,12 @@ public class NotifyBadgeCodePayResultRequest extends TeaModel {
         return this.corpId;
     }
 
-    public NotifyBadgeCodePayResultRequest setUserId(String userId) {
-        this.userId = userId;
+    public NotifyBadgeCodePayResultRequest setExtInfo(String extInfo) {
+        this.extInfo = extInfo;
         return this;
     }
-    public String getUserId() {
-        return this.userId;
+    public String getExtInfo() {
+        return this.extInfo;
     }
 
     public NotifyBadgeCodePayResultRequest setGmtTradeCreate(String gmtTradeCreate) {
@@ -125,44 +125,28 @@ public class NotifyBadgeCodePayResultRequest extends TeaModel {
         return this.gmtTradeFinish;
     }
 
-    public NotifyBadgeCodePayResultRequest setTradeNo(String tradeNo) {
-        this.tradeNo = tradeNo;
+    public NotifyBadgeCodePayResultRequest setMerchantName(String merchantName) {
+        this.merchantName = merchantName;
         return this;
     }
-    public String getTradeNo() {
-        return this.tradeNo;
+    public String getMerchantName() {
+        return this.merchantName;
     }
 
-    public NotifyBadgeCodePayResultRequest setTradeStatus(String tradeStatus) {
-        this.tradeStatus = tradeStatus;
+    public NotifyBadgeCodePayResultRequest setPayChannelDetailList(java.util.List<NotifyBadgeCodePayResultRequestPayChannelDetailList> payChannelDetailList) {
+        this.payChannelDetailList = payChannelDetailList;
         return this;
     }
-    public String getTradeStatus() {
-        return this.tradeStatus;
+    public java.util.List<NotifyBadgeCodePayResultRequestPayChannelDetailList> getPayChannelDetailList() {
+        return this.payChannelDetailList;
     }
 
-    public NotifyBadgeCodePayResultRequest setTitle(String title) {
-        this.title = title;
+    public NotifyBadgeCodePayResultRequest setPayCode(String payCode) {
+        this.payCode = payCode;
         return this;
     }
-    public String getTitle() {
-        return this.title;
-    }
-
-    public NotifyBadgeCodePayResultRequest setRemark(String remark) {
-        this.remark = remark;
-        return this;
-    }
-    public String getRemark() {
-        return this.remark;
-    }
-
-    public NotifyBadgeCodePayResultRequest setAmount(String amount) {
-        this.amount = amount;
-        return this;
-    }
-    public String getAmount() {
-        return this.amount;
+    public String getPayCode() {
+        return this.payCode;
     }
 
     public NotifyBadgeCodePayResultRequest setPromotionAmount(String promotionAmount) {
@@ -173,20 +157,20 @@ public class NotifyBadgeCodePayResultRequest extends TeaModel {
         return this.promotionAmount;
     }
 
-    public NotifyBadgeCodePayResultRequest setChargeAmount(String chargeAmount) {
-        this.chargeAmount = chargeAmount;
+    public NotifyBadgeCodePayResultRequest setRemark(String remark) {
+        this.remark = remark;
         return this;
     }
-    public String getChargeAmount() {
-        return this.chargeAmount;
+    public String getRemark() {
+        return this.remark;
     }
 
-    public NotifyBadgeCodePayResultRequest setPayChannelDetailList(java.util.List<NotifyBadgeCodePayResultRequestPayChannelDetailList> payChannelDetailList) {
-        this.payChannelDetailList = payChannelDetailList;
+    public NotifyBadgeCodePayResultRequest setTitle(String title) {
+        this.title = title;
         return this;
     }
-    public java.util.List<NotifyBadgeCodePayResultRequestPayChannelDetailList> getPayChannelDetailList() {
-        return this.payChannelDetailList;
+    public String getTitle() {
+        return this.title;
     }
 
     public NotifyBadgeCodePayResultRequest setTradeErrorCode(String tradeErrorCode) {
@@ -205,46 +189,42 @@ public class NotifyBadgeCodePayResultRequest extends TeaModel {
         return this.tradeErrorMsg;
     }
 
-    public NotifyBadgeCodePayResultRequest setExtInfo(String extInfo) {
-        this.extInfo = extInfo;
+    public NotifyBadgeCodePayResultRequest setTradeNo(String tradeNo) {
+        this.tradeNo = tradeNo;
         return this;
     }
-    public String getExtInfo() {
-        return this.extInfo;
+    public String getTradeNo() {
+        return this.tradeNo;
     }
 
-    public NotifyBadgeCodePayResultRequest setDingIsvOrgId(Long dingIsvOrgId) {
-        this.dingIsvOrgId = dingIsvOrgId;
+    public NotifyBadgeCodePayResultRequest setTradeStatus(String tradeStatus) {
+        this.tradeStatus = tradeStatus;
         return this;
     }
-    public Long getDingIsvOrgId() {
-        return this.dingIsvOrgId;
+    public String getTradeStatus() {
+        return this.tradeStatus;
     }
 
-    public NotifyBadgeCodePayResultRequest setDingOrgId(Long dingOrgId) {
-        this.dingOrgId = dingOrgId;
+    public NotifyBadgeCodePayResultRequest setUserId(String userId) {
+        this.userId = userId;
         return this;
     }
-    public Long getDingOrgId() {
-        return this.dingOrgId;
-    }
-
-    public NotifyBadgeCodePayResultRequest setMerchantName(String merchantName) {
-        this.merchantName = merchantName;
-        return this;
-    }
-    public String getMerchantName() {
-        return this.merchantName;
+    public String getUserId() {
+        return this.userId;
     }
 
     public static class NotifyBadgeCodePayResultRequestPayChannelDetailListFundToolDetailList extends TeaModel {
-        // 资金渠道名称
-        @NameInMap("fundToolName")
-        public String fundToolName;
-
         // 1.00
         @NameInMap("amount")
         public String amount;
+
+        // 扩展信息
+        @NameInMap("extInfo")
+        public String extInfo;
+
+        // 资金渠道名称
+        @NameInMap("fundToolName")
+        public String fundToolName;
 
         // 开始时间
         @NameInMap("gmtCreate")
@@ -258,21 +238,9 @@ public class NotifyBadgeCodePayResultRequest extends TeaModel {
         @NameInMap("promotionFundTool")
         public Boolean promotionFundTool;
 
-        // 扩展信息
-        @NameInMap("extInfo")
-        public String extInfo;
-
         public static NotifyBadgeCodePayResultRequestPayChannelDetailListFundToolDetailList build(java.util.Map<String, ?> map) throws Exception {
             NotifyBadgeCodePayResultRequestPayChannelDetailListFundToolDetailList self = new NotifyBadgeCodePayResultRequestPayChannelDetailListFundToolDetailList();
             return TeaModel.build(map, self);
-        }
-
-        public NotifyBadgeCodePayResultRequestPayChannelDetailListFundToolDetailList setFundToolName(String fundToolName) {
-            this.fundToolName = fundToolName;
-            return this;
-        }
-        public String getFundToolName() {
-            return this.fundToolName;
         }
 
         public NotifyBadgeCodePayResultRequestPayChannelDetailListFundToolDetailList setAmount(String amount) {
@@ -281,6 +249,22 @@ public class NotifyBadgeCodePayResultRequest extends TeaModel {
         }
         public String getAmount() {
             return this.amount;
+        }
+
+        public NotifyBadgeCodePayResultRequestPayChannelDetailListFundToolDetailList setExtInfo(String extInfo) {
+            this.extInfo = extInfo;
+            return this;
+        }
+        public String getExtInfo() {
+            return this.extInfo;
+        }
+
+        public NotifyBadgeCodePayResultRequestPayChannelDetailListFundToolDetailList setFundToolName(String fundToolName) {
+            this.fundToolName = fundToolName;
+            return this;
+        }
+        public String getFundToolName() {
+            return this.fundToolName;
         }
 
         public NotifyBadgeCodePayResultRequestPayChannelDetailListFundToolDetailList setGmtCreate(String gmtCreate) {
@@ -307,20 +291,16 @@ public class NotifyBadgeCodePayResultRequest extends TeaModel {
             return this.promotionFundTool;
         }
 
-        public NotifyBadgeCodePayResultRequestPayChannelDetailListFundToolDetailList setExtInfo(String extInfo) {
-            this.extInfo = extInfo;
-            return this;
-        }
-        public String getExtInfo() {
-            return this.extInfo;
-        }
-
     }
 
     public static class NotifyBadgeCodePayResultRequestPayChannelDetailList extends TeaModel {
-        // 支付渠道名称
-        @NameInMap("payChannelName")
-        public String payChannelName;
+        // 支付金额
+        @NameInMap("amount")
+        public String amount;
+
+        // 资金工具明细
+        @NameInMap("fundToolDetailList")
+        public java.util.List<NotifyBadgeCodePayResultRequestPayChannelDetailListFundToolDetailList> fundToolDetailList;
 
         // 开始时间
         @NameInMap("gmtCreate")
@@ -330,37 +310,41 @@ public class NotifyBadgeCodePayResultRequest extends TeaModel {
         @NameInMap("gmtFinish")
         public String gmtFinish;
 
-        // 支付渠道类型
-        @NameInMap("payChannelType")
-        public String payChannelType;
-
-        // 支付金额
-        @NameInMap("amount")
-        public String amount;
+        // 支付渠道名称
+        @NameInMap("payChannelName")
+        public String payChannelName;
 
         // 支付渠道单号
         @NameInMap("payChannelOrderNo")
         public String payChannelOrderNo;
 
+        // 支付渠道类型
+        @NameInMap("payChannelType")
+        public String payChannelType;
+
         // 优惠金额
         @NameInMap("promotionAmount")
         public String promotionAmount;
-
-        // 资金工具明细
-        @NameInMap("fundToolDetailList")
-        public java.util.List<NotifyBadgeCodePayResultRequestPayChannelDetailListFundToolDetailList> fundToolDetailList;
 
         public static NotifyBadgeCodePayResultRequestPayChannelDetailList build(java.util.Map<String, ?> map) throws Exception {
             NotifyBadgeCodePayResultRequestPayChannelDetailList self = new NotifyBadgeCodePayResultRequestPayChannelDetailList();
             return TeaModel.build(map, self);
         }
 
-        public NotifyBadgeCodePayResultRequestPayChannelDetailList setPayChannelName(String payChannelName) {
-            this.payChannelName = payChannelName;
+        public NotifyBadgeCodePayResultRequestPayChannelDetailList setAmount(String amount) {
+            this.amount = amount;
             return this;
         }
-        public String getPayChannelName() {
-            return this.payChannelName;
+        public String getAmount() {
+            return this.amount;
+        }
+
+        public NotifyBadgeCodePayResultRequestPayChannelDetailList setFundToolDetailList(java.util.List<NotifyBadgeCodePayResultRequestPayChannelDetailListFundToolDetailList> fundToolDetailList) {
+            this.fundToolDetailList = fundToolDetailList;
+            return this;
+        }
+        public java.util.List<NotifyBadgeCodePayResultRequestPayChannelDetailListFundToolDetailList> getFundToolDetailList() {
+            return this.fundToolDetailList;
         }
 
         public NotifyBadgeCodePayResultRequestPayChannelDetailList setGmtCreate(String gmtCreate) {
@@ -379,20 +363,12 @@ public class NotifyBadgeCodePayResultRequest extends TeaModel {
             return this.gmtFinish;
         }
 
-        public NotifyBadgeCodePayResultRequestPayChannelDetailList setPayChannelType(String payChannelType) {
-            this.payChannelType = payChannelType;
+        public NotifyBadgeCodePayResultRequestPayChannelDetailList setPayChannelName(String payChannelName) {
+            this.payChannelName = payChannelName;
             return this;
         }
-        public String getPayChannelType() {
-            return this.payChannelType;
-        }
-
-        public NotifyBadgeCodePayResultRequestPayChannelDetailList setAmount(String amount) {
-            this.amount = amount;
-            return this;
-        }
-        public String getAmount() {
-            return this.amount;
+        public String getPayChannelName() {
+            return this.payChannelName;
         }
 
         public NotifyBadgeCodePayResultRequestPayChannelDetailList setPayChannelOrderNo(String payChannelOrderNo) {
@@ -403,20 +379,20 @@ public class NotifyBadgeCodePayResultRequest extends TeaModel {
             return this.payChannelOrderNo;
         }
 
+        public NotifyBadgeCodePayResultRequestPayChannelDetailList setPayChannelType(String payChannelType) {
+            this.payChannelType = payChannelType;
+            return this;
+        }
+        public String getPayChannelType() {
+            return this.payChannelType;
+        }
+
         public NotifyBadgeCodePayResultRequestPayChannelDetailList setPromotionAmount(String promotionAmount) {
             this.promotionAmount = promotionAmount;
             return this;
         }
         public String getPromotionAmount() {
             return this.promotionAmount;
-        }
-
-        public NotifyBadgeCodePayResultRequestPayChannelDetailList setFundToolDetailList(java.util.List<NotifyBadgeCodePayResultRequestPayChannelDetailListFundToolDetailList> fundToolDetailList) {
-            this.fundToolDetailList = fundToolDetailList;
-            return this;
-        }
-        public java.util.List<NotifyBadgeCodePayResultRequestPayChannelDetailListFundToolDetailList> getFundToolDetailList() {
-            return this.fundToolDetailList;
         }
 
     }

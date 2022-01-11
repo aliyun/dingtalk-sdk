@@ -4,8 +4,9 @@ package com.aliyun.dingtalkesign_2_0.models;
 import com.aliyun.tea.*;
 
 public class ResaleOrderRequest extends TeaModel {
-    @NameInMap("dingCorpId")
-    public String dingCorpId;
+    // 下单时间
+    @NameInMap("orderCreateTime")
+    public Float orderCreateTime;
 
     // isv方的订单Id（用于幂等，请保证唯一性）
     @NameInMap("orderId")
@@ -14,10 +15,6 @@ public class ResaleOrderRequest extends TeaModel {
     // 购买数量（电子合同份数）
     @NameInMap("quantity")
     public Float quantity;
-
-    // 下单时间
-    @NameInMap("orderCreateTime")
-    public Float orderCreateTime;
 
     // 合同生效起始时间
     @NameInMap("serviceStartTime")
@@ -32,12 +29,12 @@ public class ResaleOrderRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public ResaleOrderRequest setDingCorpId(String dingCorpId) {
-        this.dingCorpId = dingCorpId;
+    public ResaleOrderRequest setOrderCreateTime(Float orderCreateTime) {
+        this.orderCreateTime = orderCreateTime;
         return this;
     }
-    public String getDingCorpId() {
-        return this.dingCorpId;
+    public Float getOrderCreateTime() {
+        return this.orderCreateTime;
     }
 
     public ResaleOrderRequest setOrderId(String orderId) {
@@ -54,14 +51,6 @@ public class ResaleOrderRequest extends TeaModel {
     }
     public Float getQuantity() {
         return this.quantity;
-    }
-
-    public ResaleOrderRequest setOrderCreateTime(Float orderCreateTime) {
-        this.orderCreateTime = orderCreateTime;
-        return this;
-    }
-    public Float getOrderCreateTime() {
-        return this.orderCreateTime;
     }
 
     public ResaleOrderRequest setServiceStartTime(Float serviceStartTime) {

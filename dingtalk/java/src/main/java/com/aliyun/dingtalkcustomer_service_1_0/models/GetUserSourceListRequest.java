@@ -4,20 +4,20 @@ package com.aliyun.dingtalkcustomer_service_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetUserSourceListRequest extends TeaModel {
-    @NameInMap("openInstanceId")
-    public String openInstanceId;
+    @NameInMap("corpId")
+    public String corpId;
 
     @NameInMap("description")
     public String description;
 
-    @NameInMap("orgName")
-    public String orgName;
+    @NameInMap("openInstanceId")
+    public String openInstanceId;
 
     @NameInMap("orgId")
     public Long orgId;
 
-    @NameInMap("corpId")
-    public String corpId;
+    @NameInMap("orgName")
+    public String orgName;
 
     @NameInMap("productionType")
     public Integer productionType;
@@ -27,12 +27,12 @@ public class GetUserSourceListRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public GetUserSourceListRequest setOpenInstanceId(String openInstanceId) {
-        this.openInstanceId = openInstanceId;
+    public GetUserSourceListRequest setCorpId(String corpId) {
+        this.corpId = corpId;
         return this;
     }
-    public String getOpenInstanceId() {
-        return this.openInstanceId;
+    public String getCorpId() {
+        return this.corpId;
     }
 
     public GetUserSourceListRequest setDescription(String description) {
@@ -43,12 +43,12 @@ public class GetUserSourceListRequest extends TeaModel {
         return this.description;
     }
 
-    public GetUserSourceListRequest setOrgName(String orgName) {
-        this.orgName = orgName;
+    public GetUserSourceListRequest setOpenInstanceId(String openInstanceId) {
+        this.openInstanceId = openInstanceId;
         return this;
     }
-    public String getOrgName() {
-        return this.orgName;
+    public String getOpenInstanceId() {
+        return this.openInstanceId;
     }
 
     public GetUserSourceListRequest setOrgId(Long orgId) {
@@ -59,12 +59,12 @@ public class GetUserSourceListRequest extends TeaModel {
         return this.orgId;
     }
 
-    public GetUserSourceListRequest setCorpId(String corpId) {
-        this.corpId = corpId;
+    public GetUserSourceListRequest setOrgName(String orgName) {
+        this.orgName = orgName;
         return this;
     }
-    public String getCorpId() {
-        return this.corpId;
+    public String getOrgName() {
+        return this.orgName;
     }
 
     public GetUserSourceListRequest setProductionType(Integer productionType) {

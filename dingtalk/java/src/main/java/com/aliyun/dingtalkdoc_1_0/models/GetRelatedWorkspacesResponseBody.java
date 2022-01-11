@@ -22,49 +22,25 @@ public class GetRelatedWorkspacesResponseBody extends TeaModel {
     }
 
     public static class GetRelatedWorkspacesResponseBodyWorkspacesRecentList extends TeaModel {
-        // 文档id
-        @NameInMap("nodeId")
-        public String nodeId;
+        // 文档最后编辑时间
+        @NameInMap("lastEditTime")
+        public Long lastEditTime;
 
         // 文档名称
         @NameInMap("name")
         public String name;
 
+        // 文档id
+        @NameInMap("nodeId")
+        public String nodeId;
+
         // 文档打开url
         @NameInMap("url")
         public String url;
 
-        // 文档最后编辑时间
-        @NameInMap("lastEditTime")
-        public Long lastEditTime;
-
         public static GetRelatedWorkspacesResponseBodyWorkspacesRecentList build(java.util.Map<String, ?> map) throws Exception {
             GetRelatedWorkspacesResponseBodyWorkspacesRecentList self = new GetRelatedWorkspacesResponseBodyWorkspacesRecentList();
             return TeaModel.build(map, self);
-        }
-
-        public GetRelatedWorkspacesResponseBodyWorkspacesRecentList setNodeId(String nodeId) {
-            this.nodeId = nodeId;
-            return this;
-        }
-        public String getNodeId() {
-            return this.nodeId;
-        }
-
-        public GetRelatedWorkspacesResponseBodyWorkspacesRecentList setName(String name) {
-            this.name = name;
-            return this;
-        }
-        public String getName() {
-            return this.name;
-        }
-
-        public GetRelatedWorkspacesResponseBodyWorkspacesRecentList setUrl(String url) {
-            this.url = url;
-            return this;
-        }
-        public String getUrl() {
-            return this.url;
         }
 
         public GetRelatedWorkspacesResponseBodyWorkspacesRecentList setLastEditTime(Long lastEditTime) {
@@ -75,59 +51,75 @@ public class GetRelatedWorkspacesResponseBody extends TeaModel {
             return this.lastEditTime;
         }
 
+        public GetRelatedWorkspacesResponseBodyWorkspacesRecentList setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
+        public GetRelatedWorkspacesResponseBodyWorkspacesRecentList setNodeId(String nodeId) {
+            this.nodeId = nodeId;
+            return this;
+        }
+        public String getNodeId() {
+            return this.nodeId;
+        }
+
+        public GetRelatedWorkspacesResponseBodyWorkspacesRecentList setUrl(String url) {
+            this.url = url;
+            return this;
+        }
+        public String getUrl() {
+            return this.url;
+        }
+
     }
 
     public static class GetRelatedWorkspacesResponseBodyWorkspaces extends TeaModel {
-        // 团队空间Id
-        @NameInMap("workspaceId")
-        public String workspaceId;
-
-        // 团队空间打开url
-        @NameInMap("url")
-        public String url;
+        // 团队空间创建时间
+        @NameInMap("createTime")
+        public Long createTime;
 
         // 团队空间是否被删除
         @NameInMap("deleted")
         public Boolean deleted;
 
-        @NameInMap("owner")
-        public String owner;
-
-        // 用户的角色
-        @NameInMap("role")
-        public String role;
-
         // 团队空间名称
         @NameInMap("name")
         public String name;
+
+        @NameInMap("owner")
+        public String owner;
 
         // 团队空间最近访问文档列表
         @NameInMap("recentList")
         public java.util.List<GetRelatedWorkspacesResponseBodyWorkspacesRecentList> recentList;
 
-        // 团队空间创建时间
-        @NameInMap("createTime")
-        public Long createTime;
+        // 用户的角色
+        @NameInMap("role")
+        public String role;
+
+        // 团队空间打开url
+        @NameInMap("url")
+        public String url;
+
+        // 团队空间Id
+        @NameInMap("workspaceId")
+        public String workspaceId;
 
         public static GetRelatedWorkspacesResponseBodyWorkspaces build(java.util.Map<String, ?> map) throws Exception {
             GetRelatedWorkspacesResponseBodyWorkspaces self = new GetRelatedWorkspacesResponseBodyWorkspaces();
             return TeaModel.build(map, self);
         }
 
-        public GetRelatedWorkspacesResponseBodyWorkspaces setWorkspaceId(String workspaceId) {
-            this.workspaceId = workspaceId;
+        public GetRelatedWorkspacesResponseBodyWorkspaces setCreateTime(Long createTime) {
+            this.createTime = createTime;
             return this;
         }
-        public String getWorkspaceId() {
-            return this.workspaceId;
-        }
-
-        public GetRelatedWorkspacesResponseBodyWorkspaces setUrl(String url) {
-            this.url = url;
-            return this;
-        }
-        public String getUrl() {
-            return this.url;
+        public Long getCreateTime() {
+            return this.createTime;
         }
 
         public GetRelatedWorkspacesResponseBodyWorkspaces setDeleted(Boolean deleted) {
@@ -138,28 +130,20 @@ public class GetRelatedWorkspacesResponseBody extends TeaModel {
             return this.deleted;
         }
 
-        public GetRelatedWorkspacesResponseBodyWorkspaces setOwner(String owner) {
-            this.owner = owner;
-            return this;
-        }
-        public String getOwner() {
-            return this.owner;
-        }
-
-        public GetRelatedWorkspacesResponseBodyWorkspaces setRole(String role) {
-            this.role = role;
-            return this;
-        }
-        public String getRole() {
-            return this.role;
-        }
-
         public GetRelatedWorkspacesResponseBodyWorkspaces setName(String name) {
             this.name = name;
             return this;
         }
         public String getName() {
             return this.name;
+        }
+
+        public GetRelatedWorkspacesResponseBodyWorkspaces setOwner(String owner) {
+            this.owner = owner;
+            return this;
+        }
+        public String getOwner() {
+            return this.owner;
         }
 
         public GetRelatedWorkspacesResponseBodyWorkspaces setRecentList(java.util.List<GetRelatedWorkspacesResponseBodyWorkspacesRecentList> recentList) {
@@ -170,12 +154,28 @@ public class GetRelatedWorkspacesResponseBody extends TeaModel {
             return this.recentList;
         }
 
-        public GetRelatedWorkspacesResponseBodyWorkspaces setCreateTime(Long createTime) {
-            this.createTime = createTime;
+        public GetRelatedWorkspacesResponseBodyWorkspaces setRole(String role) {
+            this.role = role;
             return this;
         }
-        public Long getCreateTime() {
-            return this.createTime;
+        public String getRole() {
+            return this.role;
+        }
+
+        public GetRelatedWorkspacesResponseBodyWorkspaces setUrl(String url) {
+            this.url = url;
+            return this;
+        }
+        public String getUrl() {
+            return this.url;
+        }
+
+        public GetRelatedWorkspacesResponseBodyWorkspaces setWorkspaceId(String workspaceId) {
+            this.workspaceId = workspaceId;
+            return this;
+        }
+        public String getWorkspaceId() {
+            return this.workspaceId;
         }
 
     }

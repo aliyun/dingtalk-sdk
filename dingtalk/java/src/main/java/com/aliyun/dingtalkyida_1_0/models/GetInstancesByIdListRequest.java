@@ -8,14 +8,6 @@ public class GetInstancesByIdListRequest extends TeaModel {
     @NameInMap("appType")
     public String appType;
 
-    // 应用秘钥
-    @NameInMap("systemToken")
-    public String systemToken;
-
-    // 钉钉的userId
-    @NameInMap("userId")
-    public String userId;
-
     // 语言
     @NameInMap("language")
     public String language;
@@ -23,6 +15,14 @@ public class GetInstancesByIdListRequest extends TeaModel {
     // 流程实例ID列表，多个用,分割
     @NameInMap("processInstanceIds")
     public String processInstanceIds;
+
+    // 应用秘钥
+    @NameInMap("systemToken")
+    public String systemToken;
+
+    // 钉钉的userId
+    @NameInMap("userId")
+    public String userId;
 
     public static GetInstancesByIdListRequest build(java.util.Map<String, ?> map) throws Exception {
         GetInstancesByIdListRequest self = new GetInstancesByIdListRequest();
@@ -35,22 +35,6 @@ public class GetInstancesByIdListRequest extends TeaModel {
     }
     public String getAppType() {
         return this.appType;
-    }
-
-    public GetInstancesByIdListRequest setSystemToken(String systemToken) {
-        this.systemToken = systemToken;
-        return this;
-    }
-    public String getSystemToken() {
-        return this.systemToken;
-    }
-
-    public GetInstancesByIdListRequest setUserId(String userId) {
-        this.userId = userId;
-        return this;
-    }
-    public String getUserId() {
-        return this.userId;
     }
 
     public GetInstancesByIdListRequest setLanguage(String language) {
@@ -67,6 +51,22 @@ public class GetInstancesByIdListRequest extends TeaModel {
     }
     public String getProcessInstanceIds() {
         return this.processInstanceIds;
+    }
+
+    public GetInstancesByIdListRequest setSystemToken(String systemToken) {
+        this.systemToken = systemToken;
+        return this;
+    }
+    public String getSystemToken() {
+        return this.systemToken;
+    }
+
+    public GetInstancesByIdListRequest setUserId(String userId) {
+        this.userId = userId;
+        return this;
+    }
+    public String getUserId() {
+        return this.userId;
     }
 
 }

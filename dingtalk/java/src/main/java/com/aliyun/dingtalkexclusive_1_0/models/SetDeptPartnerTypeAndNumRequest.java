@@ -8,13 +8,13 @@ public class SetDeptPartnerTypeAndNumRequest extends TeaModel {
     @NameInMap("deptId")
     public String deptId;
 
-    // 伙伴编码
-    @NameInMap("partnerNum")
-    public String partnerNum;
-
     // 伙伴类型id列表
     @NameInMap("labelIds")
     public java.util.List<String> labelIds;
+
+    // 伙伴编码
+    @NameInMap("partnerNum")
+    public String partnerNum;
 
     public static SetDeptPartnerTypeAndNumRequest build(java.util.Map<String, ?> map) throws Exception {
         SetDeptPartnerTypeAndNumRequest self = new SetDeptPartnerTypeAndNumRequest();
@@ -29,20 +29,20 @@ public class SetDeptPartnerTypeAndNumRequest extends TeaModel {
         return this.deptId;
     }
 
-    public SetDeptPartnerTypeAndNumRequest setPartnerNum(String partnerNum) {
-        this.partnerNum = partnerNum;
-        return this;
-    }
-    public String getPartnerNum() {
-        return this.partnerNum;
-    }
-
     public SetDeptPartnerTypeAndNumRequest setLabelIds(java.util.List<String> labelIds) {
         this.labelIds = labelIds;
         return this;
     }
     public java.util.List<String> getLabelIds() {
         return this.labelIds;
+    }
+
+    public SetDeptPartnerTypeAndNumRequest setPartnerNum(String partnerNum) {
+        this.partnerNum = partnerNum;
+        return this;
+    }
+    public String getPartnerNum() {
+        return this.partnerNum;
     }
 
 }

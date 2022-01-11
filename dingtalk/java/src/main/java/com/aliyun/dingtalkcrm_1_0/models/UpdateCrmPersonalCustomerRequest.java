@@ -4,20 +4,24 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateCrmPersonalCustomerRequest extends TeaModel {
-    @NameInMap("instanceId")
-    public String instanceId;
-
-    @NameInMap("modifierUserId")
-    public String modifierUserId;
-
-    @NameInMap("modifierNick")
-    public String modifierNick;
+    // 公海领取客户：publicDraw 公海分配客户：publicAssign 其余场景：（不用传）
+    @NameInMap("action")
+    public String action;
 
     @NameInMap("data")
     public java.util.Map<String, ?> data;
 
     @NameInMap("extendData")
     public java.util.Map<String, ?> extendData;
+
+    @NameInMap("instanceId")
+    public String instanceId;
+
+    @NameInMap("modifierNick")
+    public String modifierNick;
+
+    @NameInMap("modifierUserId")
+    public String modifierUserId;
 
     @NameInMap("permission")
     public UpdateCrmPersonalCustomerRequestPermission permission;
@@ -29,37 +33,17 @@ public class UpdateCrmPersonalCustomerRequest extends TeaModel {
     @NameInMap("skipDuplicateCheck")
     public Boolean skipDuplicateCheck;
 
-    // 公海领取客户：publicDraw 公海分配客户：publicAssign 其余场景：（不用传）
-    @NameInMap("action")
-    public String action;
-
     public static UpdateCrmPersonalCustomerRequest build(java.util.Map<String, ?> map) throws Exception {
         UpdateCrmPersonalCustomerRequest self = new UpdateCrmPersonalCustomerRequest();
         return TeaModel.build(map, self);
     }
 
-    public UpdateCrmPersonalCustomerRequest setInstanceId(String instanceId) {
-        this.instanceId = instanceId;
+    public UpdateCrmPersonalCustomerRequest setAction(String action) {
+        this.action = action;
         return this;
     }
-    public String getInstanceId() {
-        return this.instanceId;
-    }
-
-    public UpdateCrmPersonalCustomerRequest setModifierUserId(String modifierUserId) {
-        this.modifierUserId = modifierUserId;
-        return this;
-    }
-    public String getModifierUserId() {
-        return this.modifierUserId;
-    }
-
-    public UpdateCrmPersonalCustomerRequest setModifierNick(String modifierNick) {
-        this.modifierNick = modifierNick;
-        return this;
-    }
-    public String getModifierNick() {
-        return this.modifierNick;
+    public String getAction() {
+        return this.action;
     }
 
     public UpdateCrmPersonalCustomerRequest setData(java.util.Map<String, ?> data) {
@@ -76,6 +60,30 @@ public class UpdateCrmPersonalCustomerRequest extends TeaModel {
     }
     public java.util.Map<String, ?> getExtendData() {
         return this.extendData;
+    }
+
+    public UpdateCrmPersonalCustomerRequest setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+    public String getInstanceId() {
+        return this.instanceId;
+    }
+
+    public UpdateCrmPersonalCustomerRequest setModifierNick(String modifierNick) {
+        this.modifierNick = modifierNick;
+        return this;
+    }
+    public String getModifierNick() {
+        return this.modifierNick;
+    }
+
+    public UpdateCrmPersonalCustomerRequest setModifierUserId(String modifierUserId) {
+        this.modifierUserId = modifierUserId;
+        return this;
+    }
+    public String getModifierUserId() {
+        return this.modifierUserId;
     }
 
     public UpdateCrmPersonalCustomerRequest setPermission(UpdateCrmPersonalCustomerRequestPermission permission) {
@@ -100,14 +108,6 @@ public class UpdateCrmPersonalCustomerRequest extends TeaModel {
     }
     public Boolean getSkipDuplicateCheck() {
         return this.skipDuplicateCheck;
-    }
-
-    public UpdateCrmPersonalCustomerRequest setAction(String action) {
-        this.action = action;
-        return this;
-    }
-    public String getAction() {
-        return this.action;
     }
 
     public static class UpdateCrmPersonalCustomerRequestPermission extends TeaModel {

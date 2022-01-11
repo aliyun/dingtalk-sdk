@@ -4,24 +4,16 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryDeviceListByCorpIdResponseBody extends TeaModel {
+    @NameInMap("result")
+    public QueryDeviceListByCorpIdResponseBodyResult result;
+
     // Id of the request
     @NameInMap("success")
     public Boolean success;
 
-    @NameInMap("result")
-    public QueryDeviceListByCorpIdResponseBodyResult result;
-
     public static QueryDeviceListByCorpIdResponseBody build(java.util.Map<String, ?> map) throws Exception {
         QueryDeviceListByCorpIdResponseBody self = new QueryDeviceListByCorpIdResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public QueryDeviceListByCorpIdResponseBody setSuccess(Boolean success) {
-        this.success = success;
-        return this;
-    }
-    public Boolean getSuccess() {
-        return this.success;
     }
 
     public QueryDeviceListByCorpIdResponseBody setResult(QueryDeviceListByCorpIdResponseBodyResult result) {
@@ -30,6 +22,14 @@ public class QueryDeviceListByCorpIdResponseBody extends TeaModel {
     }
     public QueryDeviceListByCorpIdResponseBodyResult getResult() {
         return this.result;
+    }
+
+    public QueryDeviceListByCorpIdResponseBody setSuccess(Boolean success) {
+        this.success = success;
+        return this;
+    }
+    public Boolean getSuccess() {
+        return this.success;
     }
 
     public static class QueryDeviceListByCorpIdResponseBodyResultList extends TeaModel {

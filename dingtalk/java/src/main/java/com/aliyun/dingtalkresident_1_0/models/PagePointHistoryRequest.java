@@ -4,33 +4,41 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class PagePointHistoryRequest extends TeaModel {
+    // 结束时间Unix时间戳（不包含），可空
+    @NameInMap("endTime")
+    public Long endTime;
+
     // 是否查询全员圈积分
     @NameInMap("isCircle")
     public Boolean isCircle;
-
-    // 用户userid，可空，不传表示查询组织内所有用户的流水数据
-    @NameInMap("userId")
-    public String userId;
-
-    // 用来标记当前开始读取的位置
-    @NameInMap("nextToken")
-    public Long nextToken;
 
     // 本次读取的最大数据记录数量，最大20
     @NameInMap("maxResults")
     public Integer maxResults;
 
+    // 用来标记当前开始读取的位置
+    @NameInMap("nextToken")
+    public Long nextToken;
+
     // 起始时间Unix时间戳，可空
     @NameInMap("startTime")
     public Long startTime;
 
-    // 结束时间Unix时间戳（不包含），可空
-    @NameInMap("endTime")
-    public Long endTime;
+    // 用户userid，可空，不传表示查询组织内所有用户的流水数据
+    @NameInMap("userId")
+    public String userId;
 
     public static PagePointHistoryRequest build(java.util.Map<String, ?> map) throws Exception {
         PagePointHistoryRequest self = new PagePointHistoryRequest();
         return TeaModel.build(map, self);
+    }
+
+    public PagePointHistoryRequest setEndTime(Long endTime) {
+        this.endTime = endTime;
+        return this;
+    }
+    public Long getEndTime() {
+        return this.endTime;
     }
 
     public PagePointHistoryRequest setIsCircle(Boolean isCircle) {
@@ -41,12 +49,12 @@ public class PagePointHistoryRequest extends TeaModel {
         return this.isCircle;
     }
 
-    public PagePointHistoryRequest setUserId(String userId) {
-        this.userId = userId;
+    public PagePointHistoryRequest setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
         return this;
     }
-    public String getUserId() {
-        return this.userId;
+    public Integer getMaxResults() {
+        return this.maxResults;
     }
 
     public PagePointHistoryRequest setNextToken(Long nextToken) {
@@ -57,14 +65,6 @@ public class PagePointHistoryRequest extends TeaModel {
         return this.nextToken;
     }
 
-    public PagePointHistoryRequest setMaxResults(Integer maxResults) {
-        this.maxResults = maxResults;
-        return this;
-    }
-    public Integer getMaxResults() {
-        return this.maxResults;
-    }
-
     public PagePointHistoryRequest setStartTime(Long startTime) {
         this.startTime = startTime;
         return this;
@@ -73,12 +73,12 @@ public class PagePointHistoryRequest extends TeaModel {
         return this.startTime;
     }
 
-    public PagePointHistoryRequest setEndTime(Long endTime) {
-        this.endTime = endTime;
+    public PagePointHistoryRequest setUserId(String userId) {
+        this.userId = userId;
         return this;
     }
-    public Long getEndTime() {
-        return this.endTime;
+    public String getUserId() {
+        return this.userId;
     }
 
 }

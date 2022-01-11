@@ -4,14 +4,6 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class ExecutePlatformTaskRequest extends TeaModel {
-    // 审批结果
-    @NameInMap("outResult")
-    public String outResult;
-
-    // 是否不执行校验&关联操作
-    @NameInMap("noExecuteExpressions")
-    public String noExecuteExpressions;
-
     // 应用ID
     @NameInMap("appType")
     public String appType;
@@ -20,21 +12,29 @@ public class ExecutePlatformTaskRequest extends TeaModel {
     @NameInMap("formDataJson")
     public String formDataJson;
 
-    // 应用秘钥
-    @NameInMap("systemToken")
-    public String systemToken;
-
     // 语言
     @NameInMap("language")
     public String language;
+
+    // 是否不执行校验&关联操作
+    @NameInMap("noExecuteExpressions")
+    public String noExecuteExpressions;
+
+    // 审批结果
+    @NameInMap("outResult")
+    public String outResult;
+
+    // 流程实例ID
+    @NameInMap("processInstanceId")
+    public String processInstanceId;
 
     // 审批意见
     @NameInMap("remark")
     public String remark;
 
-    // 流程实例ID
-    @NameInMap("processInstanceId")
-    public String processInstanceId;
+    // 应用秘钥
+    @NameInMap("systemToken")
+    public String systemToken;
 
     // 钉钉的userId
     @NameInMap("userId")
@@ -43,22 +43,6 @@ public class ExecutePlatformTaskRequest extends TeaModel {
     public static ExecutePlatformTaskRequest build(java.util.Map<String, ?> map) throws Exception {
         ExecutePlatformTaskRequest self = new ExecutePlatformTaskRequest();
         return TeaModel.build(map, self);
-    }
-
-    public ExecutePlatformTaskRequest setOutResult(String outResult) {
-        this.outResult = outResult;
-        return this;
-    }
-    public String getOutResult() {
-        return this.outResult;
-    }
-
-    public ExecutePlatformTaskRequest setNoExecuteExpressions(String noExecuteExpressions) {
-        this.noExecuteExpressions = noExecuteExpressions;
-        return this;
-    }
-    public String getNoExecuteExpressions() {
-        return this.noExecuteExpressions;
     }
 
     public ExecutePlatformTaskRequest setAppType(String appType) {
@@ -77,20 +61,36 @@ public class ExecutePlatformTaskRequest extends TeaModel {
         return this.formDataJson;
     }
 
-    public ExecutePlatformTaskRequest setSystemToken(String systemToken) {
-        this.systemToken = systemToken;
-        return this;
-    }
-    public String getSystemToken() {
-        return this.systemToken;
-    }
-
     public ExecutePlatformTaskRequest setLanguage(String language) {
         this.language = language;
         return this;
     }
     public String getLanguage() {
         return this.language;
+    }
+
+    public ExecutePlatformTaskRequest setNoExecuteExpressions(String noExecuteExpressions) {
+        this.noExecuteExpressions = noExecuteExpressions;
+        return this;
+    }
+    public String getNoExecuteExpressions() {
+        return this.noExecuteExpressions;
+    }
+
+    public ExecutePlatformTaskRequest setOutResult(String outResult) {
+        this.outResult = outResult;
+        return this;
+    }
+    public String getOutResult() {
+        return this.outResult;
+    }
+
+    public ExecutePlatformTaskRequest setProcessInstanceId(String processInstanceId) {
+        this.processInstanceId = processInstanceId;
+        return this;
+    }
+    public String getProcessInstanceId() {
+        return this.processInstanceId;
     }
 
     public ExecutePlatformTaskRequest setRemark(String remark) {
@@ -101,12 +101,12 @@ public class ExecutePlatformTaskRequest extends TeaModel {
         return this.remark;
     }
 
-    public ExecutePlatformTaskRequest setProcessInstanceId(String processInstanceId) {
-        this.processInstanceId = processInstanceId;
+    public ExecutePlatformTaskRequest setSystemToken(String systemToken) {
+        this.systemToken = systemToken;
         return this;
     }
-    public String getProcessInstanceId() {
-        return this.processInstanceId;
+    public String getSystemToken() {
+        return this.systemToken;
     }
 
     public ExecutePlatformTaskRequest setUserId(String userId) {

@@ -4,13 +4,21 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddFileResponseBody extends TeaModel {
-    // 空间id
-    @NameInMap("spaceId")
-    public String spaceId;
+    // 文件内容类型
+    @NameInMap("contentType")
+    public String contentType;
 
-    // 父目录id
-    @NameInMap("parentId")
-    public String parentId;
+    // 创建时间
+    @NameInMap("createTime")
+    public String createTime;
+
+    // 创建者
+    @NameInMap("creator")
+    public String creator;
+
+    // 文件后缀
+    @NameInMap("fileExtension")
+    public String fileExtension;
 
     // 文件id
     @NameInMap("fileId")
@@ -24,57 +32,65 @@ public class AddFileResponseBody extends TeaModel {
     @NameInMap("filePath")
     public String filePath;
 
-    // 文件类型
-    @NameInMap("fileType")
-    public String fileType;
-
-    // 文件内容类型
-    @NameInMap("contentType")
-    public String contentType;
-
-    // 文件后缀
-    @NameInMap("fileExtension")
-    public String fileExtension;
-
     // 文件大小
     @NameInMap("fileSize")
     public Long fileSize;
 
-    // 创建时间
-    @NameInMap("createTime")
-    public String createTime;
+    // 文件类型
+    @NameInMap("fileType")
+    public String fileType;
+
+    // 修改者
+    @NameInMap("modifier")
+    public String modifier;
 
     // 修改时间
     @NameInMap("modifyTime")
     public String modifyTime;
 
-    // 创建者
-    @NameInMap("creator")
-    public String creator;
+    // 父目录id
+    @NameInMap("parentId")
+    public String parentId;
 
-    // 修改者
-    @NameInMap("modifier")
-    public String modifier;
+    // 空间id
+    @NameInMap("spaceId")
+    public String spaceId;
 
     public static AddFileResponseBody build(java.util.Map<String, ?> map) throws Exception {
         AddFileResponseBody self = new AddFileResponseBody();
         return TeaModel.build(map, self);
     }
 
-    public AddFileResponseBody setSpaceId(String spaceId) {
-        this.spaceId = spaceId;
+    public AddFileResponseBody setContentType(String contentType) {
+        this.contentType = contentType;
         return this;
     }
-    public String getSpaceId() {
-        return this.spaceId;
+    public String getContentType() {
+        return this.contentType;
     }
 
-    public AddFileResponseBody setParentId(String parentId) {
-        this.parentId = parentId;
+    public AddFileResponseBody setCreateTime(String createTime) {
+        this.createTime = createTime;
         return this;
     }
-    public String getParentId() {
-        return this.parentId;
+    public String getCreateTime() {
+        return this.createTime;
+    }
+
+    public AddFileResponseBody setCreator(String creator) {
+        this.creator = creator;
+        return this;
+    }
+    public String getCreator() {
+        return this.creator;
+    }
+
+    public AddFileResponseBody setFileExtension(String fileExtension) {
+        this.fileExtension = fileExtension;
+        return this;
+    }
+    public String getFileExtension() {
+        return this.fileExtension;
     }
 
     public AddFileResponseBody setFileId(String fileId) {
@@ -101,30 +117,6 @@ public class AddFileResponseBody extends TeaModel {
         return this.filePath;
     }
 
-    public AddFileResponseBody setFileType(String fileType) {
-        this.fileType = fileType;
-        return this;
-    }
-    public String getFileType() {
-        return this.fileType;
-    }
-
-    public AddFileResponseBody setContentType(String contentType) {
-        this.contentType = contentType;
-        return this;
-    }
-    public String getContentType() {
-        return this.contentType;
-    }
-
-    public AddFileResponseBody setFileExtension(String fileExtension) {
-        this.fileExtension = fileExtension;
-        return this;
-    }
-    public String getFileExtension() {
-        return this.fileExtension;
-    }
-
     public AddFileResponseBody setFileSize(Long fileSize) {
         this.fileSize = fileSize;
         return this;
@@ -133,12 +125,20 @@ public class AddFileResponseBody extends TeaModel {
         return this.fileSize;
     }
 
-    public AddFileResponseBody setCreateTime(String createTime) {
-        this.createTime = createTime;
+    public AddFileResponseBody setFileType(String fileType) {
+        this.fileType = fileType;
         return this;
     }
-    public String getCreateTime() {
-        return this.createTime;
+    public String getFileType() {
+        return this.fileType;
+    }
+
+    public AddFileResponseBody setModifier(String modifier) {
+        this.modifier = modifier;
+        return this;
+    }
+    public String getModifier() {
+        return this.modifier;
     }
 
     public AddFileResponseBody setModifyTime(String modifyTime) {
@@ -149,20 +149,20 @@ public class AddFileResponseBody extends TeaModel {
         return this.modifyTime;
     }
 
-    public AddFileResponseBody setCreator(String creator) {
-        this.creator = creator;
+    public AddFileResponseBody setParentId(String parentId) {
+        this.parentId = parentId;
         return this;
     }
-    public String getCreator() {
-        return this.creator;
+    public String getParentId() {
+        return this.parentId;
     }
 
-    public AddFileResponseBody setModifier(String modifier) {
-        this.modifier = modifier;
+    public AddFileResponseBody setSpaceId(String spaceId) {
+        this.spaceId = spaceId;
         return this;
     }
-    public String getModifier() {
-        return this.modifier;
+    public String getSpaceId() {
+        return this.spaceId;
     }
 
 }

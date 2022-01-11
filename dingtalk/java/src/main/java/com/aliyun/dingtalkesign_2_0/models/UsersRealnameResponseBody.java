@@ -4,26 +4,26 @@ package com.aliyun.dingtalkesign_2_0.models;
 import com.aliyun.tea.*;
 
 public class UsersRealnameResponseBody extends TeaModel {
-    @NameInMap("taskId")
-    public String taskId;
+    @NameInMap("mobileUrl")
+    public String mobileUrl;
 
     @NameInMap("pcUrl")
     public String pcUrl;
 
-    @NameInMap("mobileUrl")
-    public String mobileUrl;
+    @NameInMap("taskId")
+    public String taskId;
 
     public static UsersRealnameResponseBody build(java.util.Map<String, ?> map) throws Exception {
         UsersRealnameResponseBody self = new UsersRealnameResponseBody();
         return TeaModel.build(map, self);
     }
 
-    public UsersRealnameResponseBody setTaskId(String taskId) {
-        this.taskId = taskId;
+    public UsersRealnameResponseBody setMobileUrl(String mobileUrl) {
+        this.mobileUrl = mobileUrl;
         return this;
     }
-    public String getTaskId() {
-        return this.taskId;
+    public String getMobileUrl() {
+        return this.mobileUrl;
     }
 
     public UsersRealnameResponseBody setPcUrl(String pcUrl) {
@@ -34,12 +34,12 @@ public class UsersRealnameResponseBody extends TeaModel {
         return this.pcUrl;
     }
 
-    public UsersRealnameResponseBody setMobileUrl(String mobileUrl) {
-        this.mobileUrl = mobileUrl;
+    public UsersRealnameResponseBody setTaskId(String taskId) {
+        this.taskId = taskId;
         return this;
     }
-    public String getMobileUrl() {
-        return this.mobileUrl;
+    public String getTaskId() {
+        return this.taskId;
     }
 
 }

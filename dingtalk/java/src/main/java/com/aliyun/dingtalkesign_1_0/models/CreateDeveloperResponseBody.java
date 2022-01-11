@@ -7,11 +7,11 @@ public class CreateDeveloperResponseBody extends TeaModel {
     @NameInMap("code")
     public Integer code;
 
-    @NameInMap("message")
-    public String message;
-
     @NameInMap("data")
     public Boolean data;
+
+    @NameInMap("message")
+    public String message;
 
     public static CreateDeveloperResponseBody build(java.util.Map<String, ?> map) throws Exception {
         CreateDeveloperResponseBody self = new CreateDeveloperResponseBody();
@@ -26,20 +26,20 @@ public class CreateDeveloperResponseBody extends TeaModel {
         return this.code;
     }
 
-    public CreateDeveloperResponseBody setMessage(String message) {
-        this.message = message;
-        return this;
-    }
-    public String getMessage() {
-        return this.message;
-    }
-
     public CreateDeveloperResponseBody setData(Boolean data) {
         this.data = data;
         return this;
     }
     public Boolean getData() {
         return this.data;
+    }
+
+    public CreateDeveloperResponseBody setMessage(String message) {
+        this.message = message;
+        return this;
+    }
+    public String getMessage() {
+        return this.message;
     }
 
 }

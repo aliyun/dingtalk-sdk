@@ -4,13 +4,13 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class ManagementModifySpaceRequest extends TeaModel {
-    // 空间id列表
-    @NameInMap("spaceIds")
-    public java.util.List<String> spaceIds;
-
     // 容量
     @NameInMap("quota")
     public Long quota;
+
+    // 空间id列表
+    @NameInMap("spaceIds")
+    public java.util.List<String> spaceIds;
 
     // 用户id
     @NameInMap("unionId")
@@ -21,20 +21,20 @@ public class ManagementModifySpaceRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public ManagementModifySpaceRequest setSpaceIds(java.util.List<String> spaceIds) {
-        this.spaceIds = spaceIds;
-        return this;
-    }
-    public java.util.List<String> getSpaceIds() {
-        return this.spaceIds;
-    }
-
     public ManagementModifySpaceRequest setQuota(Long quota) {
         this.quota = quota;
         return this;
     }
     public Long getQuota() {
         return this.quota;
+    }
+
+    public ManagementModifySpaceRequest setSpaceIds(java.util.List<String> spaceIds) {
+        this.spaceIds = spaceIds;
+        return this;
+    }
+    public java.util.List<String> getSpaceIds() {
+        return this.spaceIds;
     }
 
     public ManagementModifySpaceRequest setUnionId(String unionId) {

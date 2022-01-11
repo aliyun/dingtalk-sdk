@@ -4,6 +4,10 @@ package com.aliyun.dingtalkcustomer_service_1_0.models;
 import com.aliyun.tea.*;
 
 public class PageListTicketResponseBody extends TeaModel {
+    // list
+    @NameInMap("list")
+    public java.util.List<PageListTicketResponseBodyList> list;
+
     // nextCursor
     @NameInMap("nextCursor")
     public Long nextCursor;
@@ -12,13 +16,17 @@ public class PageListTicketResponseBody extends TeaModel {
     @NameInMap("total")
     public Long total;
 
-    // list
-    @NameInMap("list")
-    public java.util.List<PageListTicketResponseBodyList> list;
-
     public static PageListTicketResponseBody build(java.util.Map<String, ?> map) throws Exception {
         PageListTicketResponseBody self = new PageListTicketResponseBody();
         return TeaModel.build(map, self);
+    }
+
+    public PageListTicketResponseBody setList(java.util.List<PageListTicketResponseBodyList> list) {
+        this.list = list;
+        return this;
+    }
+    public java.util.List<PageListTicketResponseBodyList> getList() {
+        return this.list;
     }
 
     public PageListTicketResponseBody setNextCursor(Long nextCursor) {
@@ -37,50 +45,18 @@ public class PageListTicketResponseBody extends TeaModel {
         return this.total;
     }
 
-    public PageListTicketResponseBody setList(java.util.List<PageListTicketResponseBodyList> list) {
-        this.list = list;
-        return this;
-    }
-    public java.util.List<PageListTicketResponseBodyList> getList() {
-        return this.list;
-    }
-
     public static class PageListTicketResponseBodyList extends TeaModel {
+        // bizDataMap
+        @NameInMap("bizDataMap")
+        public java.util.Map<String, ?> bizDataMap;
+
         // foreignId
         @NameInMap("foreignId")
         public String foreignId;
 
-        // sourceId
-        @NameInMap("sourceId")
-        public String sourceId;
-
         // foreignName
         @NameInMap("foreignName")
         public String foreignName;
-
-        // templateId
-        @NameInMap("templateId")
-        public String templateId;
-
-        // title
-        @NameInMap("title")
-        public String title;
-
-        // ticketId
-        @NameInMap("ticketId")
-        public String ticketId;
-
-        // ticketStatus
-        @NameInMap("ticketStatus")
-        public String ticketStatus;
-
-        // openInstanceId
-        @NameInMap("openInstanceId")
-        public String openInstanceId;
-
-        // productionType
-        @NameInMap("productionType")
-        public Integer productionType;
 
         // gmtCreate
         @NameInMap("gmtCreate")
@@ -90,13 +66,45 @@ public class PageListTicketResponseBody extends TeaModel {
         @NameInMap("gmtModified")
         public String gmtModified;
 
-        // bizDataMap
-        @NameInMap("bizDataMap")
-        public java.util.Map<String, ?> bizDataMap;
+        // openInstanceId
+        @NameInMap("openInstanceId")
+        public String openInstanceId;
+
+        // productionType
+        @NameInMap("productionType")
+        public Integer productionType;
+
+        // sourceId
+        @NameInMap("sourceId")
+        public String sourceId;
+
+        // templateId
+        @NameInMap("templateId")
+        public String templateId;
+
+        // ticketId
+        @NameInMap("ticketId")
+        public String ticketId;
+
+        // ticketStatus
+        @NameInMap("ticketStatus")
+        public String ticketStatus;
+
+        // title
+        @NameInMap("title")
+        public String title;
 
         public static PageListTicketResponseBodyList build(java.util.Map<String, ?> map) throws Exception {
             PageListTicketResponseBodyList self = new PageListTicketResponseBodyList();
             return TeaModel.build(map, self);
+        }
+
+        public PageListTicketResponseBodyList setBizDataMap(java.util.Map<String, ?> bizDataMap) {
+            this.bizDataMap = bizDataMap;
+            return this;
+        }
+        public java.util.Map<String, ?> getBizDataMap() {
+            return this.bizDataMap;
         }
 
         public PageListTicketResponseBodyList setForeignId(String foreignId) {
@@ -107,68 +115,12 @@ public class PageListTicketResponseBody extends TeaModel {
             return this.foreignId;
         }
 
-        public PageListTicketResponseBodyList setSourceId(String sourceId) {
-            this.sourceId = sourceId;
-            return this;
-        }
-        public String getSourceId() {
-            return this.sourceId;
-        }
-
         public PageListTicketResponseBodyList setForeignName(String foreignName) {
             this.foreignName = foreignName;
             return this;
         }
         public String getForeignName() {
             return this.foreignName;
-        }
-
-        public PageListTicketResponseBodyList setTemplateId(String templateId) {
-            this.templateId = templateId;
-            return this;
-        }
-        public String getTemplateId() {
-            return this.templateId;
-        }
-
-        public PageListTicketResponseBodyList setTitle(String title) {
-            this.title = title;
-            return this;
-        }
-        public String getTitle() {
-            return this.title;
-        }
-
-        public PageListTicketResponseBodyList setTicketId(String ticketId) {
-            this.ticketId = ticketId;
-            return this;
-        }
-        public String getTicketId() {
-            return this.ticketId;
-        }
-
-        public PageListTicketResponseBodyList setTicketStatus(String ticketStatus) {
-            this.ticketStatus = ticketStatus;
-            return this;
-        }
-        public String getTicketStatus() {
-            return this.ticketStatus;
-        }
-
-        public PageListTicketResponseBodyList setOpenInstanceId(String openInstanceId) {
-            this.openInstanceId = openInstanceId;
-            return this;
-        }
-        public String getOpenInstanceId() {
-            return this.openInstanceId;
-        }
-
-        public PageListTicketResponseBodyList setProductionType(Integer productionType) {
-            this.productionType = productionType;
-            return this;
-        }
-        public Integer getProductionType() {
-            return this.productionType;
         }
 
         public PageListTicketResponseBodyList setGmtCreate(String gmtCreate) {
@@ -187,12 +139,60 @@ public class PageListTicketResponseBody extends TeaModel {
             return this.gmtModified;
         }
 
-        public PageListTicketResponseBodyList setBizDataMap(java.util.Map<String, ?> bizDataMap) {
-            this.bizDataMap = bizDataMap;
+        public PageListTicketResponseBodyList setOpenInstanceId(String openInstanceId) {
+            this.openInstanceId = openInstanceId;
             return this;
         }
-        public java.util.Map<String, ?> getBizDataMap() {
-            return this.bizDataMap;
+        public String getOpenInstanceId() {
+            return this.openInstanceId;
+        }
+
+        public PageListTicketResponseBodyList setProductionType(Integer productionType) {
+            this.productionType = productionType;
+            return this;
+        }
+        public Integer getProductionType() {
+            return this.productionType;
+        }
+
+        public PageListTicketResponseBodyList setSourceId(String sourceId) {
+            this.sourceId = sourceId;
+            return this;
+        }
+        public String getSourceId() {
+            return this.sourceId;
+        }
+
+        public PageListTicketResponseBodyList setTemplateId(String templateId) {
+            this.templateId = templateId;
+            return this;
+        }
+        public String getTemplateId() {
+            return this.templateId;
+        }
+
+        public PageListTicketResponseBodyList setTicketId(String ticketId) {
+            this.ticketId = ticketId;
+            return this;
+        }
+        public String getTicketId() {
+            return this.ticketId;
+        }
+
+        public PageListTicketResponseBodyList setTicketStatus(String ticketStatus) {
+            this.ticketStatus = ticketStatus;
+            return this;
+        }
+        public String getTicketStatus() {
+            return this.ticketStatus;
+        }
+
+        public PageListTicketResponseBodyList setTitle(String title) {
+            this.title = title;
+            return this;
+        }
+        public String getTitle() {
+            return this.title;
         }
 
     }

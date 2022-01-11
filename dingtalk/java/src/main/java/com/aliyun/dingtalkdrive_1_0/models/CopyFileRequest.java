@@ -4,17 +4,17 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class CopyFileRequest extends TeaModel {
-    // 目标空间id
-    @NameInMap("targetSpaceId")
-    public String targetSpaceId;
+    // 文件名冲突策略
+    @NameInMap("addConflictPolicy")
+    public String addConflictPolicy;
 
     // 目标父目录id
     @NameInMap("targetParentId")
     public String targetParentId;
 
-    // 文件名冲突策略
-    @NameInMap("addConflictPolicy")
-    public String addConflictPolicy;
+    // 目标空间id
+    @NameInMap("targetSpaceId")
+    public String targetSpaceId;
 
     // 用户id
     @NameInMap("unionId")
@@ -25,12 +25,12 @@ public class CopyFileRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public CopyFileRequest setTargetSpaceId(String targetSpaceId) {
-        this.targetSpaceId = targetSpaceId;
+    public CopyFileRequest setAddConflictPolicy(String addConflictPolicy) {
+        this.addConflictPolicy = addConflictPolicy;
         return this;
     }
-    public String getTargetSpaceId() {
-        return this.targetSpaceId;
+    public String getAddConflictPolicy() {
+        return this.addConflictPolicy;
     }
 
     public CopyFileRequest setTargetParentId(String targetParentId) {
@@ -41,12 +41,12 @@ public class CopyFileRequest extends TeaModel {
         return this.targetParentId;
     }
 
-    public CopyFileRequest setAddConflictPolicy(String addConflictPolicy) {
-        this.addConflictPolicy = addConflictPolicy;
+    public CopyFileRequest setTargetSpaceId(String targetSpaceId) {
+        this.targetSpaceId = targetSpaceId;
         return this;
     }
-    public String getAddConflictPolicy() {
-        return this.addConflictPolicy;
+    public String getTargetSpaceId() {
+        return this.targetSpaceId;
     }
 
     public CopyFileRequest setUnionId(String unionId) {

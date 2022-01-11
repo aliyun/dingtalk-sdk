@@ -4,29 +4,17 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddTicketMemoRequest extends TeaModel {
-    @NameInMap("dingIsvOrgId")
-    public Long dingIsvOrgId;
-
-    @NameInMap("dingOrgId")
-    public Long dingOrgId;
-
-    @NameInMap("dingSuiteKey")
-    public String dingSuiteKey;
-
-    @NameInMap("dingTokenGrantType")
-    public Long dingTokenGrantType;
-
     // 开放团队ID
     @NameInMap("openTeamId")
     public String openTeamId;
 
-    // 当前工单处理人
-    @NameInMap("processorUnionId")
-    public String processorUnionId;
-
     // 工单开放ID
     @NameInMap("openTicketId")
     public String openTicketId;
+
+    // 当前工单处理人
+    @NameInMap("processorUnionId")
+    public String processorUnionId;
 
     // 备注
     @NameInMap("ticketMemo")
@@ -37,38 +25,6 @@ public class AddTicketMemoRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public AddTicketMemoRequest setDingIsvOrgId(Long dingIsvOrgId) {
-        this.dingIsvOrgId = dingIsvOrgId;
-        return this;
-    }
-    public Long getDingIsvOrgId() {
-        return this.dingIsvOrgId;
-    }
-
-    public AddTicketMemoRequest setDingOrgId(Long dingOrgId) {
-        this.dingOrgId = dingOrgId;
-        return this;
-    }
-    public Long getDingOrgId() {
-        return this.dingOrgId;
-    }
-
-    public AddTicketMemoRequest setDingSuiteKey(String dingSuiteKey) {
-        this.dingSuiteKey = dingSuiteKey;
-        return this;
-    }
-    public String getDingSuiteKey() {
-        return this.dingSuiteKey;
-    }
-
-    public AddTicketMemoRequest setDingTokenGrantType(Long dingTokenGrantType) {
-        this.dingTokenGrantType = dingTokenGrantType;
-        return this;
-    }
-    public Long getDingTokenGrantType() {
-        return this.dingTokenGrantType;
-    }
-
     public AddTicketMemoRequest setOpenTeamId(String openTeamId) {
         this.openTeamId = openTeamId;
         return this;
@@ -77,20 +33,20 @@ public class AddTicketMemoRequest extends TeaModel {
         return this.openTeamId;
     }
 
-    public AddTicketMemoRequest setProcessorUnionId(String processorUnionId) {
-        this.processorUnionId = processorUnionId;
-        return this;
-    }
-    public String getProcessorUnionId() {
-        return this.processorUnionId;
-    }
-
     public AddTicketMemoRequest setOpenTicketId(String openTicketId) {
         this.openTicketId = openTicketId;
         return this;
     }
     public String getOpenTicketId() {
         return this.openTicketId;
+    }
+
+    public AddTicketMemoRequest setProcessorUnionId(String processorUnionId) {
+        this.processorUnionId = processorUnionId;
+        return this;
+    }
+    public String getProcessorUnionId() {
+        return this.processorUnionId;
     }
 
     public AddTicketMemoRequest setTicketMemo(AddTicketMemoRequestTicketMemo ticketMemo) {
@@ -134,25 +90,17 @@ public class AddTicketMemoRequest extends TeaModel {
     }
 
     public static class AddTicketMemoRequestTicketMemo extends TeaModel {
-        // 文字备注
-        @NameInMap("memo")
-        public String memo;
-
         // 备注相关的附件
         @NameInMap("attachments")
         public java.util.List<AddTicketMemoRequestTicketMemoAttachments> attachments;
 
+        // 文字备注
+        @NameInMap("memo")
+        public String memo;
+
         public static AddTicketMemoRequestTicketMemo build(java.util.Map<String, ?> map) throws Exception {
             AddTicketMemoRequestTicketMemo self = new AddTicketMemoRequestTicketMemo();
             return TeaModel.build(map, self);
-        }
-
-        public AddTicketMemoRequestTicketMemo setMemo(String memo) {
-            this.memo = memo;
-            return this;
-        }
-        public String getMemo() {
-            return this.memo;
         }
 
         public AddTicketMemoRequestTicketMemo setAttachments(java.util.List<AddTicketMemoRequestTicketMemoAttachments> attachments) {
@@ -161,6 +109,14 @@ public class AddTicketMemoRequest extends TeaModel {
         }
         public java.util.List<AddTicketMemoRequestTicketMemoAttachments> getAttachments() {
             return this.attachments;
+        }
+
+        public AddTicketMemoRequestTicketMemo setMemo(String memo) {
+            this.memo = memo;
+            return this;
+        }
+        public String getMemo() {
+            return this.memo;
         }
 
     }

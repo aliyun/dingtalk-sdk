@@ -4,21 +4,13 @@ package com.aliyun.dingtalkvillage_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListDeptUsersRequest extends TeaModel {
-    // cursor
-    @NameInMap("cursor")
-    public Long cursor;
-
-    // size
-    @NameInMap("size")
-    public Integer size;
-
     // containAccessLimit
     @NameInMap("containAccessLimit")
     public Boolean containAccessLimit;
 
-    // 下属组织的组织ID，比如下属镇、村的corpId
-    @NameInMap("subCorpId")
-    public String subCorpId;
+    // cursor
+    @NameInMap("cursor")
+    public Long cursor;
 
     // language
     @NameInMap("language")
@@ -28,25 +20,17 @@ public class ListDeptUsersRequest extends TeaModel {
     @NameInMap("orderField")
     public String orderField;
 
+    // size
+    @NameInMap("size")
+    public Integer size;
+
+    // 下属组织的组织ID，比如下属镇、村的corpId
+    @NameInMap("subCorpId")
+    public String subCorpId;
+
     public static ListDeptUsersRequest build(java.util.Map<String, ?> map) throws Exception {
         ListDeptUsersRequest self = new ListDeptUsersRequest();
         return TeaModel.build(map, self);
-    }
-
-    public ListDeptUsersRequest setCursor(Long cursor) {
-        this.cursor = cursor;
-        return this;
-    }
-    public Long getCursor() {
-        return this.cursor;
-    }
-
-    public ListDeptUsersRequest setSize(Integer size) {
-        this.size = size;
-        return this;
-    }
-    public Integer getSize() {
-        return this.size;
     }
 
     public ListDeptUsersRequest setContainAccessLimit(Boolean containAccessLimit) {
@@ -57,12 +41,12 @@ public class ListDeptUsersRequest extends TeaModel {
         return this.containAccessLimit;
     }
 
-    public ListDeptUsersRequest setSubCorpId(String subCorpId) {
-        this.subCorpId = subCorpId;
+    public ListDeptUsersRequest setCursor(Long cursor) {
+        this.cursor = cursor;
         return this;
     }
-    public String getSubCorpId() {
-        return this.subCorpId;
+    public Long getCursor() {
+        return this.cursor;
     }
 
     public ListDeptUsersRequest setLanguage(String language) {
@@ -79,6 +63,22 @@ public class ListDeptUsersRequest extends TeaModel {
     }
     public String getOrderField() {
         return this.orderField;
+    }
+
+    public ListDeptUsersRequest setSize(Integer size) {
+        this.size = size;
+        return this;
+    }
+    public Integer getSize() {
+        return this.size;
+    }
+
+    public ListDeptUsersRequest setSubCorpId(String subCorpId) {
+        this.subCorpId = subCorpId;
+        return this;
+    }
+    public String getSubCorpId() {
+        return this.subCorpId;
     }
 
 }

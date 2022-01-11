@@ -7,14 +7,14 @@ public class ListApplicationInformationRequest extends TeaModel {
     @NameInMap("accessKey")
     public String accessKey;
 
-    @NameInMap("pageSize")
-    public Integer pageSize;
-
     @NameInMap("callerUid")
     public String callerUid;
 
     @NameInMap("pageNumber")
     public Integer pageNumber;
+
+    @NameInMap("pageSize")
+    public Integer pageSize;
 
     public static ListApplicationInformationRequest build(java.util.Map<String, ?> map) throws Exception {
         ListApplicationInformationRequest self = new ListApplicationInformationRequest();
@@ -27,14 +27,6 @@ public class ListApplicationInformationRequest extends TeaModel {
     }
     public String getAccessKey() {
         return this.accessKey;
-    }
-
-    public ListApplicationInformationRequest setPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
-        return this;
-    }
-    public Integer getPageSize() {
-        return this.pageSize;
     }
 
     public ListApplicationInformationRequest setCallerUid(String callerUid) {
@@ -51,6 +43,14 @@ public class ListApplicationInformationRequest extends TeaModel {
     }
     public Integer getPageNumber() {
         return this.pageNumber;
+    }
+
+    public ListApplicationInformationRequest setPageSize(Integer pageSize) {
+        this.pageSize = pageSize;
+        return this;
+    }
+    public Integer getPageSize() {
+        return this.pageSize;
     }
 
 }

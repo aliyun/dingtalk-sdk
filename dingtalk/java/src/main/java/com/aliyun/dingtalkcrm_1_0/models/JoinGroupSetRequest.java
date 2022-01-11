@@ -8,17 +8,17 @@ public class JoinGroupSetRequest extends TeaModel {
     @NameInMap("bizDataList")
     public java.util.List<JoinGroupSetRequestBizDataList> bizDataList;
 
-    // unionId。
-    @NameInMap("unionId")
-    public String unionId;
+    // 组织id。
+    @NameInMap("corpId")
+    public String corpId;
 
     // 群组openGroupSetId。
     @NameInMap("openGroupSetId")
     public String openGroupSetId;
 
-    // 组织id。
-    @NameInMap("corpId")
-    public String corpId;
+    // unionId。
+    @NameInMap("unionId")
+    public String unionId;
 
     public static JoinGroupSetRequest build(java.util.Map<String, ?> map) throws Exception {
         JoinGroupSetRequest self = new JoinGroupSetRequest();
@@ -33,12 +33,12 @@ public class JoinGroupSetRequest extends TeaModel {
         return this.bizDataList;
     }
 
-    public JoinGroupSetRequest setUnionId(String unionId) {
-        this.unionId = unionId;
+    public JoinGroupSetRequest setCorpId(String corpId) {
+        this.corpId = corpId;
         return this;
     }
-    public String getUnionId() {
-        return this.unionId;
+    public String getCorpId() {
+        return this.corpId;
     }
 
     public JoinGroupSetRequest setOpenGroupSetId(String openGroupSetId) {
@@ -49,12 +49,12 @@ public class JoinGroupSetRequest extends TeaModel {
         return this.openGroupSetId;
     }
 
-    public JoinGroupSetRequest setCorpId(String corpId) {
-        this.corpId = corpId;
+    public JoinGroupSetRequest setUnionId(String unionId) {
+        this.unionId = unionId;
         return this;
     }
-    public String getCorpId() {
-        return this.corpId;
+    public String getUnionId() {
+        return this.unionId;
     }
 
     public static class JoinGroupSetRequestBizDataList extends TeaModel {

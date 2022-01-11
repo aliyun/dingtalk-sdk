@@ -4,6 +4,14 @@ package com.aliyun.dingtalkats_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateApplicationRegFormResponseBody extends TeaModel {
+    // 邀填人员工标识
+    @NameInMap("creatorUserId")
+    public String creatorUserId;
+
+    // 表单标识
+    @NameInMap("formId")
+    public String formId;
+
     // 创建时间（邀填时间，单位：毫秒）
     @NameInMap("gmtCreateMillis")
     public Long gmtCreateMillis;
@@ -11,6 +19,10 @@ public class UpdateApplicationRegFormResponseBody extends TeaModel {
     // 更新时间（填写时间，单位：毫秒），仅当表单状态为已填写时有效
     @NameInMap("gmtModifiedMillis")
     public Long gmtModifiedMillis;
+
+    // 表单状态（0表示未填写，1表示已填写）
+    @NameInMap("status")
+    public Integer status;
 
     // 模板标识
     @NameInMap("templateId")
@@ -20,21 +32,25 @@ public class UpdateApplicationRegFormResponseBody extends TeaModel {
     @NameInMap("templateVersion")
     public Integer templateVersion;
 
-    // 表单标识
-    @NameInMap("formId")
-    public String formId;
-
-    // 表单状态（0表示未填写，1表示已填写）
-    @NameInMap("status")
-    public Integer status;
-
-    // 邀填人员工标识
-    @NameInMap("creatorUserId")
-    public String creatorUserId;
-
     public static UpdateApplicationRegFormResponseBody build(java.util.Map<String, ?> map) throws Exception {
         UpdateApplicationRegFormResponseBody self = new UpdateApplicationRegFormResponseBody();
         return TeaModel.build(map, self);
+    }
+
+    public UpdateApplicationRegFormResponseBody setCreatorUserId(String creatorUserId) {
+        this.creatorUserId = creatorUserId;
+        return this;
+    }
+    public String getCreatorUserId() {
+        return this.creatorUserId;
+    }
+
+    public UpdateApplicationRegFormResponseBody setFormId(String formId) {
+        this.formId = formId;
+        return this;
+    }
+    public String getFormId() {
+        return this.formId;
     }
 
     public UpdateApplicationRegFormResponseBody setGmtCreateMillis(Long gmtCreateMillis) {
@@ -53,6 +69,14 @@ public class UpdateApplicationRegFormResponseBody extends TeaModel {
         return this.gmtModifiedMillis;
     }
 
+    public UpdateApplicationRegFormResponseBody setStatus(Integer status) {
+        this.status = status;
+        return this;
+    }
+    public Integer getStatus() {
+        return this.status;
+    }
+
     public UpdateApplicationRegFormResponseBody setTemplateId(String templateId) {
         this.templateId = templateId;
         return this;
@@ -67,30 +91,6 @@ public class UpdateApplicationRegFormResponseBody extends TeaModel {
     }
     public Integer getTemplateVersion() {
         return this.templateVersion;
-    }
-
-    public UpdateApplicationRegFormResponseBody setFormId(String formId) {
-        this.formId = formId;
-        return this;
-    }
-    public String getFormId() {
-        return this.formId;
-    }
-
-    public UpdateApplicationRegFormResponseBody setStatus(Integer status) {
-        this.status = status;
-        return this;
-    }
-    public Integer getStatus() {
-        return this.status;
-    }
-
-    public UpdateApplicationRegFormResponseBody setCreatorUserId(String creatorUserId) {
-        this.creatorUserId = creatorUserId;
-        return this;
-    }
-    public String getCreatorUserId() {
-        return this.creatorUserId;
     }
 
 }

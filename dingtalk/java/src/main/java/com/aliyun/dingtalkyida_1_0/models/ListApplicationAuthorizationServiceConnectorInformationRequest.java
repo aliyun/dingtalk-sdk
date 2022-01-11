@@ -7,14 +7,14 @@ public class ListApplicationAuthorizationServiceConnectorInformationRequest exte
     @NameInMap("accessKey")
     public String accessKey;
 
-    @NameInMap("pageSize")
-    public Integer pageSize;
-
     @NameInMap("callerUid")
     public String callerUid;
 
     @NameInMap("pageNumber")
     public Integer pageNumber;
+
+    @NameInMap("pageSize")
+    public Integer pageSize;
 
     public static ListApplicationAuthorizationServiceConnectorInformationRequest build(java.util.Map<String, ?> map) throws Exception {
         ListApplicationAuthorizationServiceConnectorInformationRequest self = new ListApplicationAuthorizationServiceConnectorInformationRequest();
@@ -27,14 +27,6 @@ public class ListApplicationAuthorizationServiceConnectorInformationRequest exte
     }
     public String getAccessKey() {
         return this.accessKey;
-    }
-
-    public ListApplicationAuthorizationServiceConnectorInformationRequest setPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
-        return this;
-    }
-    public Integer getPageSize() {
-        return this.pageSize;
     }
 
     public ListApplicationAuthorizationServiceConnectorInformationRequest setCallerUid(String callerUid) {
@@ -51,6 +43,14 @@ public class ListApplicationAuthorizationServiceConnectorInformationRequest exte
     }
     public Integer getPageNumber() {
         return this.pageNumber;
+    }
+
+    public ListApplicationAuthorizationServiceConnectorInformationRequest setPageSize(Integer pageSize) {
+        this.pageSize = pageSize;
+        return this;
+    }
+    public Integer getPageSize() {
+        return this.pageSize;
     }
 
 }

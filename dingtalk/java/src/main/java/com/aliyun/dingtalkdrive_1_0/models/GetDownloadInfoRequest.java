@@ -8,13 +8,13 @@ public class GetDownloadInfoRequest extends TeaModel {
     @NameInMap("unionId")
     public String unionId;
 
-    // 是否返回区域信息
-    @NameInMap("withRegion")
-    public Boolean withRegion;
-
     // 是否返回内网加签url
     @NameInMap("withInternalResourceUrl")
     public Boolean withInternalResourceUrl;
+
+    // 是否返回区域信息
+    @NameInMap("withRegion")
+    public Boolean withRegion;
 
     public static GetDownloadInfoRequest build(java.util.Map<String, ?> map) throws Exception {
         GetDownloadInfoRequest self = new GetDownloadInfoRequest();
@@ -29,20 +29,20 @@ public class GetDownloadInfoRequest extends TeaModel {
         return this.unionId;
     }
 
-    public GetDownloadInfoRequest setWithRegion(Boolean withRegion) {
-        this.withRegion = withRegion;
-        return this;
-    }
-    public Boolean getWithRegion() {
-        return this.withRegion;
-    }
-
     public GetDownloadInfoRequest setWithInternalResourceUrl(Boolean withInternalResourceUrl) {
         this.withInternalResourceUrl = withInternalResourceUrl;
         return this;
     }
     public Boolean getWithInternalResourceUrl() {
         return this.withInternalResourceUrl;
+    }
+
+    public GetDownloadInfoRequest setWithRegion(Boolean withRegion) {
+        this.withRegion = withRegion;
+        return this;
+    }
+    public Boolean getWithRegion() {
+        return this.withRegion;
     }
 
 }

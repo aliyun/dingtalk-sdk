@@ -42,21 +42,21 @@ public class BatchUpdateDeviceRequest extends TeaModel {
         @NameInMap("deviceName")
         public String deviceName;
 
-        // 设备地址。
-        @NameInMap("location")
-        public String location;
-
         // 设备状态 0:在线 1:离线
         @NameInMap("deviceStatus")
         public Integer deviceStatus;
+
+        // 第三方平台定制参数，企业内部系统忽略。
+        @NameInMap("extraData")
+        public java.util.Map<String, ?> extraData;
 
         // 视频流地址直播流地址，支持rtmp、flv、hls等格式，需要https协议。
         @NameInMap("liveUrl")
         public String liveUrl;
 
-        // 第三方平台定制参数，企业内部系统忽略。
-        @NameInMap("extraData")
-        public java.util.Map<String, ?> extraData;
+        // 设备地址。
+        @NameInMap("location")
+        public String location;
 
         public static BatchUpdateDeviceRequestDevices build(java.util.Map<String, ?> map) throws Exception {
             BatchUpdateDeviceRequestDevices self = new BatchUpdateDeviceRequestDevices();
@@ -79,20 +79,20 @@ public class BatchUpdateDeviceRequest extends TeaModel {
             return this.deviceName;
         }
 
-        public BatchUpdateDeviceRequestDevices setLocation(String location) {
-            this.location = location;
-            return this;
-        }
-        public String getLocation() {
-            return this.location;
-        }
-
         public BatchUpdateDeviceRequestDevices setDeviceStatus(Integer deviceStatus) {
             this.deviceStatus = deviceStatus;
             return this;
         }
         public Integer getDeviceStatus() {
             return this.deviceStatus;
+        }
+
+        public BatchUpdateDeviceRequestDevices setExtraData(java.util.Map<String, ?> extraData) {
+            this.extraData = extraData;
+            return this;
+        }
+        public java.util.Map<String, ?> getExtraData() {
+            return this.extraData;
         }
 
         public BatchUpdateDeviceRequestDevices setLiveUrl(String liveUrl) {
@@ -103,12 +103,12 @@ public class BatchUpdateDeviceRequest extends TeaModel {
             return this.liveUrl;
         }
 
-        public BatchUpdateDeviceRequestDevices setExtraData(java.util.Map<String, ?> extraData) {
-            this.extraData = extraData;
+        public BatchUpdateDeviceRequestDevices setLocation(String location) {
+            this.location = location;
             return this;
         }
-        public java.util.Map<String, ?> getExtraData() {
-            return this.extraData;
+        public String getLocation() {
+            return this.location;
         }
 
     }

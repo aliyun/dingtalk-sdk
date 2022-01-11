@@ -54,25 +54,25 @@ public class BatchRegisterDeviceRequest extends TeaModel {
         @NameInMap("deviceTypeName")
         public String deviceTypeName;
 
-        // 产品类型 CAMERA：摄像头，可看直播 OTHERS：非摄像头
-        @NameInMap("productType")
-        public String productType;
+        // 第三方平台定制参数，企业内部系统忽略。
+        @NameInMap("extraData")
+        public java.util.Map<String, ?> extraData;
 
         // 视频流地址直播流地址，支持rtmp、flv、hls等格式，需要https协议。
         @NameInMap("liveUrl")
         public String liveUrl;
 
-        // 父设备ID。
-        @NameInMap("parentId")
-        public String parentId;
-
         // 设备地址。
         @NameInMap("location")
         public String location;
 
-        // 第三方平台定制参数，企业内部系统忽略。
-        @NameInMap("extraData")
-        public java.util.Map<String, ?> extraData;
+        // 父设备ID。
+        @NameInMap("parentId")
+        public String parentId;
+
+        // 产品类型 CAMERA：摄像头，可看直播 OTHERS：非摄像头
+        @NameInMap("productType")
+        public String productType;
 
         public static BatchRegisterDeviceRequestDevices build(java.util.Map<String, ?> map) throws Exception {
             BatchRegisterDeviceRequestDevices self = new BatchRegisterDeviceRequestDevices();
@@ -119,12 +119,12 @@ public class BatchRegisterDeviceRequest extends TeaModel {
             return this.deviceTypeName;
         }
 
-        public BatchRegisterDeviceRequestDevices setProductType(String productType) {
-            this.productType = productType;
+        public BatchRegisterDeviceRequestDevices setExtraData(java.util.Map<String, ?> extraData) {
+            this.extraData = extraData;
             return this;
         }
-        public String getProductType() {
-            return this.productType;
+        public java.util.Map<String, ?> getExtraData() {
+            return this.extraData;
         }
 
         public BatchRegisterDeviceRequestDevices setLiveUrl(String liveUrl) {
@@ -135,14 +135,6 @@ public class BatchRegisterDeviceRequest extends TeaModel {
             return this.liveUrl;
         }
 
-        public BatchRegisterDeviceRequestDevices setParentId(String parentId) {
-            this.parentId = parentId;
-            return this;
-        }
-        public String getParentId() {
-            return this.parentId;
-        }
-
         public BatchRegisterDeviceRequestDevices setLocation(String location) {
             this.location = location;
             return this;
@@ -151,12 +143,20 @@ public class BatchRegisterDeviceRequest extends TeaModel {
             return this.location;
         }
 
-        public BatchRegisterDeviceRequestDevices setExtraData(java.util.Map<String, ?> extraData) {
-            this.extraData = extraData;
+        public BatchRegisterDeviceRequestDevices setParentId(String parentId) {
+            this.parentId = parentId;
             return this;
         }
-        public java.util.Map<String, ?> getExtraData() {
-            return this.extraData;
+        public String getParentId() {
+            return this.parentId;
+        }
+
+        public BatchRegisterDeviceRequestDevices setProductType(String productType) {
+            this.productType = productType;
+            return this;
+        }
+        public String getProductType() {
+            return this.productType;
         }
 
     }

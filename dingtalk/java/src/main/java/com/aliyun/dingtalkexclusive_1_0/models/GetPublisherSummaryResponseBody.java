@@ -8,9 +8,13 @@ public class GetPublisherSummaryResponseBody extends TeaModel {
     @NameInMap("data")
     public java.util.List<GetPublisherSummaryResponseBodyData> data;
 
-    // 历史截至当日服务窗数
-    @NameInMap("publisherCntStd")
-    public String publisherCntStd;
+    // 是否有更多数据
+    @NameInMap("hasMore")
+    public Boolean hasMore;
+
+    // 下一次请求的分页游标
+    @NameInMap("nextToken")
+    public Long nextToken;
 
     // 历史截至当日服务窗文章数
     @NameInMap("publisherArticleCntStd")
@@ -24,13 +28,9 @@ public class GetPublisherSummaryResponseBody extends TeaModel {
     @NameInMap("publisherArticlePvTop5")
     public java.util.List<GetPublisherSummaryResponseBodyPublisherArticlePvTop5> publisherArticlePvTop5;
 
-    // 下一次请求的分页游标
-    @NameInMap("nextToken")
-    public Long nextToken;
-
-    // 是否有更多数据
-    @NameInMap("hasMore")
-    public Boolean hasMore;
+    // 历史截至当日服务窗数
+    @NameInMap("publisherCntStd")
+    public String publisherCntStd;
 
     public static GetPublisherSummaryResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetPublisherSummaryResponseBody self = new GetPublisherSummaryResponseBody();
@@ -45,12 +45,20 @@ public class GetPublisherSummaryResponseBody extends TeaModel {
         return this.data;
     }
 
-    public GetPublisherSummaryResponseBody setPublisherCntStd(String publisherCntStd) {
-        this.publisherCntStd = publisherCntStd;
+    public GetPublisherSummaryResponseBody setHasMore(Boolean hasMore) {
+        this.hasMore = hasMore;
         return this;
     }
-    public String getPublisherCntStd() {
-        return this.publisherCntStd;
+    public Boolean getHasMore() {
+        return this.hasMore;
+    }
+
+    public GetPublisherSummaryResponseBody setNextToken(Long nextToken) {
+        this.nextToken = nextToken;
+        return this;
+    }
+    public Long getNextToken() {
+        return this.nextToken;
     }
 
     public GetPublisherSummaryResponseBody setPublisherArticleCntStd(String publisherArticleCntStd) {
@@ -77,31 +85,15 @@ public class GetPublisherSummaryResponseBody extends TeaModel {
         return this.publisherArticlePvTop5;
     }
 
-    public GetPublisherSummaryResponseBody setNextToken(Long nextToken) {
-        this.nextToken = nextToken;
+    public GetPublisherSummaryResponseBody setPublisherCntStd(String publisherCntStd) {
+        this.publisherCntStd = publisherCntStd;
         return this;
     }
-    public Long getNextToken() {
-        return this.nextToken;
-    }
-
-    public GetPublisherSummaryResponseBody setHasMore(Boolean hasMore) {
-        this.hasMore = hasMore;
-        return this;
-    }
-    public Boolean getHasMore() {
-        return this.hasMore;
+    public String getPublisherCntStd() {
+        return this.publisherCntStd;
     }
 
     public static class GetPublisherSummaryResponseBodyData extends TeaModel {
-        // 服务窗unionId
-        @NameInMap("unionId")
-        public String unionId;
-
-        // 服务窗名称
-        @NameInMap("publisherName")
-        public String publisherName;
-
         // 历史截至当日服务窗文章数
         @NameInMap("publisherArticleCntStd")
         public String publisherArticleCntStd;
@@ -110,25 +102,17 @@ public class GetPublisherSummaryResponseBody extends TeaModel {
         @NameInMap("publisherArticlePvCntStd")
         public String publisherArticlePvCntStd;
 
+        // 服务窗名称
+        @NameInMap("publisherName")
+        public String publisherName;
+
+        // 服务窗unionId
+        @NameInMap("unionId")
+        public String unionId;
+
         public static GetPublisherSummaryResponseBodyData build(java.util.Map<String, ?> map) throws Exception {
             GetPublisherSummaryResponseBodyData self = new GetPublisherSummaryResponseBodyData();
             return TeaModel.build(map, self);
-        }
-
-        public GetPublisherSummaryResponseBodyData setUnionId(String unionId) {
-            this.unionId = unionId;
-            return this;
-        }
-        public String getUnionId() {
-            return this.unionId;
-        }
-
-        public GetPublisherSummaryResponseBodyData setPublisherName(String publisherName) {
-            this.publisherName = publisherName;
-            return this;
-        }
-        public String getPublisherName() {
-            return this.publisherName;
         }
 
         public GetPublisherSummaryResponseBodyData setPublisherArticleCntStd(String publisherArticleCntStd) {
@@ -145,6 +129,22 @@ public class GetPublisherSummaryResponseBody extends TeaModel {
         }
         public String getPublisherArticlePvCntStd() {
             return this.publisherArticlePvCntStd;
+        }
+
+        public GetPublisherSummaryResponseBodyData setPublisherName(String publisherName) {
+            this.publisherName = publisherName;
+            return this;
+        }
+        public String getPublisherName() {
+            return this.publisherName;
+        }
+
+        public GetPublisherSummaryResponseBodyData setUnionId(String unionId) {
+            this.unionId = unionId;
+            return this;
+        }
+        public String getUnionId() {
+            return this.unionId;
         }
 
     }

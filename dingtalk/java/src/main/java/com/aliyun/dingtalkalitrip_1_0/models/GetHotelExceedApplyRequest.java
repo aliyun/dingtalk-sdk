@@ -4,25 +4,17 @@ package com.aliyun.dingtalkalitrip_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetHotelExceedApplyRequest extends TeaModel {
-    // 第三方企业id
-    @NameInMap("corpId")
-    public String corpId;
-
     // 商旅超标审批单id
     @NameInMap("applyId")
     public String applyId;
 
+    // 第三方企业id
+    @NameInMap("corpId")
+    public String corpId;
+
     public static GetHotelExceedApplyRequest build(java.util.Map<String, ?> map) throws Exception {
         GetHotelExceedApplyRequest self = new GetHotelExceedApplyRequest();
         return TeaModel.build(map, self);
-    }
-
-    public GetHotelExceedApplyRequest setCorpId(String corpId) {
-        this.corpId = corpId;
-        return this;
-    }
-    public String getCorpId() {
-        return this.corpId;
     }
 
     public GetHotelExceedApplyRequest setApplyId(String applyId) {
@@ -31,6 +23,14 @@ public class GetHotelExceedApplyRequest extends TeaModel {
     }
     public String getApplyId() {
         return this.applyId;
+    }
+
+    public GetHotelExceedApplyRequest setCorpId(String corpId) {
+        this.corpId = corpId;
+        return this;
+    }
+    public String getCorpId() {
+        return this.corpId;
     }
 
 }

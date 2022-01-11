@@ -22,6 +22,10 @@ public class GetActivityListResponseBody extends TeaModel {
     }
 
     public static class GetActivityListResponseBodyResult extends TeaModel {
+        // activityId
+        @NameInMap("activityId")
+        public String activityId;
+
         // activityName
         @NameInMap("activityName")
         public String activityName;
@@ -30,13 +34,17 @@ public class GetActivityListResponseBody extends TeaModel {
         @NameInMap("activityNameInEnglish")
         public String activityNameInEnglish;
 
-        // activityId
-        @NameInMap("activityId")
-        public String activityId;
-
         public static GetActivityListResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             GetActivityListResponseBodyResult self = new GetActivityListResponseBodyResult();
             return TeaModel.build(map, self);
+        }
+
+        public GetActivityListResponseBodyResult setActivityId(String activityId) {
+            this.activityId = activityId;
+            return this;
+        }
+        public String getActivityId() {
+            return this.activityId;
         }
 
         public GetActivityListResponseBodyResult setActivityName(String activityName) {
@@ -53,14 +61,6 @@ public class GetActivityListResponseBody extends TeaModel {
         }
         public String getActivityNameInEnglish() {
             return this.activityNameInEnglish;
-        }
-
-        public GetActivityListResponseBodyResult setActivityId(String activityId) {
-            this.activityId = activityId;
-            return this;
-        }
-        public String getActivityId() {
-            return this.activityId;
         }
 
     }

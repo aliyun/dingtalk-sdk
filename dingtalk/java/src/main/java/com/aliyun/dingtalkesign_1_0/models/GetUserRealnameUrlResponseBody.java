@@ -7,11 +7,11 @@ public class GetUserRealnameUrlResponseBody extends TeaModel {
     @NameInMap("code")
     public Integer code;
 
-    @NameInMap("message")
-    public String message;
-
     @NameInMap("data")
     public GetUserRealnameUrlResponseBodyData data;
+
+    @NameInMap("message")
+    public String message;
 
     public static GetUserRealnameUrlResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetUserRealnameUrlResponseBody self = new GetUserRealnameUrlResponseBody();
@@ -26,14 +26,6 @@ public class GetUserRealnameUrlResponseBody extends TeaModel {
         return this.code;
     }
 
-    public GetUserRealnameUrlResponseBody setMessage(String message) {
-        this.message = message;
-        return this;
-    }
-    public String getMessage() {
-        return this.message;
-    }
-
     public GetUserRealnameUrlResponseBody setData(GetUserRealnameUrlResponseBodyData data) {
         this.data = data;
         return this;
@@ -42,27 +34,35 @@ public class GetUserRealnameUrlResponseBody extends TeaModel {
         return this.data;
     }
 
+    public GetUserRealnameUrlResponseBody setMessage(String message) {
+        this.message = message;
+        return this;
+    }
+    public String getMessage() {
+        return this.message;
+    }
+
     public static class GetUserRealnameUrlResponseBodyData extends TeaModel {
-        @NameInMap("taskId")
-        public String taskId;
+        @NameInMap("mobileUrl")
+        public String mobileUrl;
 
         @NameInMap("pcUrl")
         public String pcUrl;
 
-        @NameInMap("mobileUrl")
-        public String mobileUrl;
+        @NameInMap("taskId")
+        public String taskId;
 
         public static GetUserRealnameUrlResponseBodyData build(java.util.Map<String, ?> map) throws Exception {
             GetUserRealnameUrlResponseBodyData self = new GetUserRealnameUrlResponseBodyData();
             return TeaModel.build(map, self);
         }
 
-        public GetUserRealnameUrlResponseBodyData setTaskId(String taskId) {
-            this.taskId = taskId;
+        public GetUserRealnameUrlResponseBodyData setMobileUrl(String mobileUrl) {
+            this.mobileUrl = mobileUrl;
             return this;
         }
-        public String getTaskId() {
-            return this.taskId;
+        public String getMobileUrl() {
+            return this.mobileUrl;
         }
 
         public GetUserRealnameUrlResponseBodyData setPcUrl(String pcUrl) {
@@ -73,12 +73,12 @@ public class GetUserRealnameUrlResponseBody extends TeaModel {
             return this.pcUrl;
         }
 
-        public GetUserRealnameUrlResponseBodyData setMobileUrl(String mobileUrl) {
-            this.mobileUrl = mobileUrl;
+        public GetUserRealnameUrlResponseBodyData setTaskId(String taskId) {
+            this.taskId = taskId;
             return this;
         }
-        public String getMobileUrl() {
-            return this.mobileUrl;
+        public String getTaskId() {
+            return this.taskId;
         }
 
     }

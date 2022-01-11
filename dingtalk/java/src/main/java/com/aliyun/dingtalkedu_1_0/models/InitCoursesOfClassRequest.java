@@ -46,6 +46,10 @@ public class InitCoursesOfClassRequest extends TeaModel {
     }
 
     public static class InitCoursesOfClassRequestCoursesDateModel extends TeaModel {
+        // 每个月的第几天。
+        @NameInMap("dayOfMonth")
+        public Integer dayOfMonth;
+
         // 月份。
         @NameInMap("month")
         public Integer month;
@@ -54,13 +58,17 @@ public class InitCoursesOfClassRequest extends TeaModel {
         @NameInMap("year")
         public Integer year;
 
-        // 每个月的第几天。
-        @NameInMap("dayOfMonth")
-        public Integer dayOfMonth;
-
         public static InitCoursesOfClassRequestCoursesDateModel build(java.util.Map<String, ?> map) throws Exception {
             InitCoursesOfClassRequestCoursesDateModel self = new InitCoursesOfClassRequestCoursesDateModel();
             return TeaModel.build(map, self);
+        }
+
+        public InitCoursesOfClassRequestCoursesDateModel setDayOfMonth(Integer dayOfMonth) {
+            this.dayOfMonth = dayOfMonth;
+            return this;
+        }
+        public Integer getDayOfMonth() {
+            return this.dayOfMonth;
         }
 
         public InitCoursesOfClassRequestCoursesDateModel setMonth(Integer month) {
@@ -77,14 +85,6 @@ public class InitCoursesOfClassRequest extends TeaModel {
         }
         public Integer getYear() {
             return this.year;
-        }
-
-        public InitCoursesOfClassRequestCoursesDateModel setDayOfMonth(Integer dayOfMonth) {
-            this.dayOfMonth = dayOfMonth;
-            return this;
-        }
-        public Integer getDayOfMonth() {
-            return this.dayOfMonth;
         }
 
     }
@@ -122,41 +122,33 @@ public class InitCoursesOfClassRequest extends TeaModel {
     }
 
     public static class InitCoursesOfClassRequestCourses extends TeaModel {
-        // 老师的staffId。
-        @NameInMap("teacherStaffIds")
-        public java.util.List<String> teacherStaffIds;
-
         // 课程名称。
         @NameInMap("courseName")
         public String courseName;
-
-        // 上课时间。
-        @NameInMap("dateModel")
-        public InitCoursesOfClassRequestCoursesDateModel dateModel;
-
-        // 课程节次。
-        @NameInMap("sectionModel")
-        public InitCoursesOfClassRequestCoursesSectionModel sectionModel;
 
         // 创建者名称。
         @NameInMap("creatorName")
         public String creatorName;
 
+        // 上课时间。
+        @NameInMap("dateModel")
+        public InitCoursesOfClassRequestCoursesDateModel dateModel;
+
         // 上课地点
         @NameInMap("location")
         public String location;
 
+        // 课程节次。
+        @NameInMap("sectionModel")
+        public InitCoursesOfClassRequestCoursesSectionModel sectionModel;
+
+        // 老师的staffId。
+        @NameInMap("teacherStaffIds")
+        public java.util.List<String> teacherStaffIds;
+
         public static InitCoursesOfClassRequestCourses build(java.util.Map<String, ?> map) throws Exception {
             InitCoursesOfClassRequestCourses self = new InitCoursesOfClassRequestCourses();
             return TeaModel.build(map, self);
-        }
-
-        public InitCoursesOfClassRequestCourses setTeacherStaffIds(java.util.List<String> teacherStaffIds) {
-            this.teacherStaffIds = teacherStaffIds;
-            return this;
-        }
-        public java.util.List<String> getTeacherStaffIds() {
-            return this.teacherStaffIds;
         }
 
         public InitCoursesOfClassRequestCourses setCourseName(String courseName) {
@@ -167,28 +159,20 @@ public class InitCoursesOfClassRequest extends TeaModel {
             return this.courseName;
         }
 
-        public InitCoursesOfClassRequestCourses setDateModel(InitCoursesOfClassRequestCoursesDateModel dateModel) {
-            this.dateModel = dateModel;
-            return this;
-        }
-        public InitCoursesOfClassRequestCoursesDateModel getDateModel() {
-            return this.dateModel;
-        }
-
-        public InitCoursesOfClassRequestCourses setSectionModel(InitCoursesOfClassRequestCoursesSectionModel sectionModel) {
-            this.sectionModel = sectionModel;
-            return this;
-        }
-        public InitCoursesOfClassRequestCoursesSectionModel getSectionModel() {
-            return this.sectionModel;
-        }
-
         public InitCoursesOfClassRequestCourses setCreatorName(String creatorName) {
             this.creatorName = creatorName;
             return this;
         }
         public String getCreatorName() {
             return this.creatorName;
+        }
+
+        public InitCoursesOfClassRequestCourses setDateModel(InitCoursesOfClassRequestCoursesDateModel dateModel) {
+            this.dateModel = dateModel;
+            return this;
+        }
+        public InitCoursesOfClassRequestCoursesDateModel getDateModel() {
+            return this.dateModel;
         }
 
         public InitCoursesOfClassRequestCourses setLocation(String location) {
@@ -199,173 +183,29 @@ public class InitCoursesOfClassRequest extends TeaModel {
             return this.location;
         }
 
-    }
-
-    public static class InitCoursesOfClassRequestSectionConfigSectionModelsStart extends TeaModel {
-        // 分钟
-        @NameInMap("min")
-        public Integer min;
-
-        // 小时
-        @NameInMap("hour")
-        public Integer hour;
-
-        public static InitCoursesOfClassRequestSectionConfigSectionModelsStart build(java.util.Map<String, ?> map) throws Exception {
-            InitCoursesOfClassRequestSectionConfigSectionModelsStart self = new InitCoursesOfClassRequestSectionConfigSectionModelsStart();
-            return TeaModel.build(map, self);
-        }
-
-        public InitCoursesOfClassRequestSectionConfigSectionModelsStart setMin(Integer min) {
-            this.min = min;
+        public InitCoursesOfClassRequestCourses setSectionModel(InitCoursesOfClassRequestCoursesSectionModel sectionModel) {
+            this.sectionModel = sectionModel;
             return this;
         }
-        public Integer getMin() {
-            return this.min;
+        public InitCoursesOfClassRequestCoursesSectionModel getSectionModel() {
+            return this.sectionModel;
         }
 
-        public InitCoursesOfClassRequestSectionConfigSectionModelsStart setHour(Integer hour) {
-            this.hour = hour;
+        public InitCoursesOfClassRequestCourses setTeacherStaffIds(java.util.List<String> teacherStaffIds) {
+            this.teacherStaffIds = teacherStaffIds;
             return this;
         }
-        public Integer getHour() {
-            return this.hour;
-        }
-
-    }
-
-    public static class InitCoursesOfClassRequestSectionConfigSectionModelsEnd extends TeaModel {
-        // 分钟
-        @NameInMap("min")
-        public Integer min;
-
-        // 小时
-        @NameInMap("hour")
-        public Integer hour;
-
-        public static InitCoursesOfClassRequestSectionConfigSectionModelsEnd build(java.util.Map<String, ?> map) throws Exception {
-            InitCoursesOfClassRequestSectionConfigSectionModelsEnd self = new InitCoursesOfClassRequestSectionConfigSectionModelsEnd();
-            return TeaModel.build(map, self);
-        }
-
-        public InitCoursesOfClassRequestSectionConfigSectionModelsEnd setMin(Integer min) {
-            this.min = min;
-            return this;
-        }
-        public Integer getMin() {
-            return this.min;
-        }
-
-        public InitCoursesOfClassRequestSectionConfigSectionModelsEnd setHour(Integer hour) {
-            this.hour = hour;
-            return this;
-        }
-        public Integer getHour() {
-            return this.hour;
-        }
-
-    }
-
-    public static class InitCoursesOfClassRequestSectionConfigSectionModels extends TeaModel {
-        // 节次类型枚举：COURSE/REST
-        @NameInMap("sectionType")
-        public String sectionType;
-
-        // 开始时间
-        @NameInMap("start")
-        public InitCoursesOfClassRequestSectionConfigSectionModelsStart start;
-
-        // 第几节。
-        @NameInMap("sectionIndex")
-        public Integer sectionIndex;
-
-        // 结束时间
-        @NameInMap("end")
-        public InitCoursesOfClassRequestSectionConfigSectionModelsEnd end;
-
-        public static InitCoursesOfClassRequestSectionConfigSectionModels build(java.util.Map<String, ?> map) throws Exception {
-            InitCoursesOfClassRequestSectionConfigSectionModels self = new InitCoursesOfClassRequestSectionConfigSectionModels();
-            return TeaModel.build(map, self);
-        }
-
-        public InitCoursesOfClassRequestSectionConfigSectionModels setSectionType(String sectionType) {
-            this.sectionType = sectionType;
-            return this;
-        }
-        public String getSectionType() {
-            return this.sectionType;
-        }
-
-        public InitCoursesOfClassRequestSectionConfigSectionModels setStart(InitCoursesOfClassRequestSectionConfigSectionModelsStart start) {
-            this.start = start;
-            return this;
-        }
-        public InitCoursesOfClassRequestSectionConfigSectionModelsStart getStart() {
-            return this.start;
-        }
-
-        public InitCoursesOfClassRequestSectionConfigSectionModels setSectionIndex(Integer sectionIndex) {
-            this.sectionIndex = sectionIndex;
-            return this;
-        }
-        public Integer getSectionIndex() {
-            return this.sectionIndex;
-        }
-
-        public InitCoursesOfClassRequestSectionConfigSectionModels setEnd(InitCoursesOfClassRequestSectionConfigSectionModelsEnd end) {
-            this.end = end;
-            return this;
-        }
-        public InitCoursesOfClassRequestSectionConfigSectionModelsEnd getEnd() {
-            return this.end;
-        }
-
-    }
-
-    public static class InitCoursesOfClassRequestSectionConfigStart extends TeaModel {
-        // 月份。
-        @NameInMap("month")
-        public Integer month;
-
-        // 年份。
-        @NameInMap("year")
-        public Integer year;
-
-        // 每个月的第几天。
-        @NameInMap("dayOfMonth")
-        public Integer dayOfMonth;
-
-        public static InitCoursesOfClassRequestSectionConfigStart build(java.util.Map<String, ?> map) throws Exception {
-            InitCoursesOfClassRequestSectionConfigStart self = new InitCoursesOfClassRequestSectionConfigStart();
-            return TeaModel.build(map, self);
-        }
-
-        public InitCoursesOfClassRequestSectionConfigStart setMonth(Integer month) {
-            this.month = month;
-            return this;
-        }
-        public Integer getMonth() {
-            return this.month;
-        }
-
-        public InitCoursesOfClassRequestSectionConfigStart setYear(Integer year) {
-            this.year = year;
-            return this;
-        }
-        public Integer getYear() {
-            return this.year;
-        }
-
-        public InitCoursesOfClassRequestSectionConfigStart setDayOfMonth(Integer dayOfMonth) {
-            this.dayOfMonth = dayOfMonth;
-            return this;
-        }
-        public Integer getDayOfMonth() {
-            return this.dayOfMonth;
+        public java.util.List<String> getTeacherStaffIds() {
+            return this.teacherStaffIds;
         }
 
     }
 
     public static class InitCoursesOfClassRequestSectionConfigEnd extends TeaModel {
+        // 每个月的第几天。
+        @NameInMap("dayOfMonth")
+        public Integer dayOfMonth;
+
         // 月份。
         @NameInMap("month")
         public Integer month;
@@ -374,13 +214,17 @@ public class InitCoursesOfClassRequest extends TeaModel {
         @NameInMap("year")
         public Integer year;
 
-        // 每个月的第几天。
-        @NameInMap("dayOfMonth")
-        public Integer dayOfMonth;
-
         public static InitCoursesOfClassRequestSectionConfigEnd build(java.util.Map<String, ?> map) throws Exception {
             InitCoursesOfClassRequestSectionConfigEnd self = new InitCoursesOfClassRequestSectionConfigEnd();
             return TeaModel.build(map, self);
+        }
+
+        public InitCoursesOfClassRequestSectionConfigEnd setDayOfMonth(Integer dayOfMonth) {
+            this.dayOfMonth = dayOfMonth;
+            return this;
+        }
+        public Integer getDayOfMonth() {
+            return this.dayOfMonth;
         }
 
         public InitCoursesOfClassRequestSectionConfigEnd setMonth(Integer month) {
@@ -399,7 +243,147 @@ public class InitCoursesOfClassRequest extends TeaModel {
             return this.year;
         }
 
-        public InitCoursesOfClassRequestSectionConfigEnd setDayOfMonth(Integer dayOfMonth) {
+    }
+
+    public static class InitCoursesOfClassRequestSectionConfigSectionModelsEnd extends TeaModel {
+        // 小时
+        @NameInMap("hour")
+        public Integer hour;
+
+        // 分钟
+        @NameInMap("min")
+        public Integer min;
+
+        public static InitCoursesOfClassRequestSectionConfigSectionModelsEnd build(java.util.Map<String, ?> map) throws Exception {
+            InitCoursesOfClassRequestSectionConfigSectionModelsEnd self = new InitCoursesOfClassRequestSectionConfigSectionModelsEnd();
+            return TeaModel.build(map, self);
+        }
+
+        public InitCoursesOfClassRequestSectionConfigSectionModelsEnd setHour(Integer hour) {
+            this.hour = hour;
+            return this;
+        }
+        public Integer getHour() {
+            return this.hour;
+        }
+
+        public InitCoursesOfClassRequestSectionConfigSectionModelsEnd setMin(Integer min) {
+            this.min = min;
+            return this;
+        }
+        public Integer getMin() {
+            return this.min;
+        }
+
+    }
+
+    public static class InitCoursesOfClassRequestSectionConfigSectionModelsStart extends TeaModel {
+        // 小时
+        @NameInMap("hour")
+        public Integer hour;
+
+        // 分钟
+        @NameInMap("min")
+        public Integer min;
+
+        public static InitCoursesOfClassRequestSectionConfigSectionModelsStart build(java.util.Map<String, ?> map) throws Exception {
+            InitCoursesOfClassRequestSectionConfigSectionModelsStart self = new InitCoursesOfClassRequestSectionConfigSectionModelsStart();
+            return TeaModel.build(map, self);
+        }
+
+        public InitCoursesOfClassRequestSectionConfigSectionModelsStart setHour(Integer hour) {
+            this.hour = hour;
+            return this;
+        }
+        public Integer getHour() {
+            return this.hour;
+        }
+
+        public InitCoursesOfClassRequestSectionConfigSectionModelsStart setMin(Integer min) {
+            this.min = min;
+            return this;
+        }
+        public Integer getMin() {
+            return this.min;
+        }
+
+    }
+
+    public static class InitCoursesOfClassRequestSectionConfigSectionModels extends TeaModel {
+        // 结束时间
+        @NameInMap("end")
+        public InitCoursesOfClassRequestSectionConfigSectionModelsEnd end;
+
+        // 第几节。
+        @NameInMap("sectionIndex")
+        public Integer sectionIndex;
+
+        // 节次类型枚举：COURSE/REST
+        @NameInMap("sectionType")
+        public String sectionType;
+
+        // 开始时间
+        @NameInMap("start")
+        public InitCoursesOfClassRequestSectionConfigSectionModelsStart start;
+
+        public static InitCoursesOfClassRequestSectionConfigSectionModels build(java.util.Map<String, ?> map) throws Exception {
+            InitCoursesOfClassRequestSectionConfigSectionModels self = new InitCoursesOfClassRequestSectionConfigSectionModels();
+            return TeaModel.build(map, self);
+        }
+
+        public InitCoursesOfClassRequestSectionConfigSectionModels setEnd(InitCoursesOfClassRequestSectionConfigSectionModelsEnd end) {
+            this.end = end;
+            return this;
+        }
+        public InitCoursesOfClassRequestSectionConfigSectionModelsEnd getEnd() {
+            return this.end;
+        }
+
+        public InitCoursesOfClassRequestSectionConfigSectionModels setSectionIndex(Integer sectionIndex) {
+            this.sectionIndex = sectionIndex;
+            return this;
+        }
+        public Integer getSectionIndex() {
+            return this.sectionIndex;
+        }
+
+        public InitCoursesOfClassRequestSectionConfigSectionModels setSectionType(String sectionType) {
+            this.sectionType = sectionType;
+            return this;
+        }
+        public String getSectionType() {
+            return this.sectionType;
+        }
+
+        public InitCoursesOfClassRequestSectionConfigSectionModels setStart(InitCoursesOfClassRequestSectionConfigSectionModelsStart start) {
+            this.start = start;
+            return this;
+        }
+        public InitCoursesOfClassRequestSectionConfigSectionModelsStart getStart() {
+            return this.start;
+        }
+
+    }
+
+    public static class InitCoursesOfClassRequestSectionConfigStart extends TeaModel {
+        // 每个月的第几天。
+        @NameInMap("dayOfMonth")
+        public Integer dayOfMonth;
+
+        // 月份。
+        @NameInMap("month")
+        public Integer month;
+
+        // 年份。
+        @NameInMap("year")
+        public Integer year;
+
+        public static InitCoursesOfClassRequestSectionConfigStart build(java.util.Map<String, ?> map) throws Exception {
+            InitCoursesOfClassRequestSectionConfigStart self = new InitCoursesOfClassRequestSectionConfigStart();
+            return TeaModel.build(map, self);
+        }
+
+        public InitCoursesOfClassRequestSectionConfigStart setDayOfMonth(Integer dayOfMonth) {
             this.dayOfMonth = dayOfMonth;
             return this;
         }
@@ -407,9 +391,29 @@ public class InitCoursesOfClassRequest extends TeaModel {
             return this.dayOfMonth;
         }
 
+        public InitCoursesOfClassRequestSectionConfigStart setMonth(Integer month) {
+            this.month = month;
+            return this;
+        }
+        public Integer getMonth() {
+            return this.month;
+        }
+
+        public InitCoursesOfClassRequestSectionConfigStart setYear(Integer year) {
+            this.year = year;
+            return this;
+        }
+        public Integer getYear() {
+            return this.year;
+        }
+
     }
 
     public static class InitCoursesOfClassRequestSectionConfig extends TeaModel {
+        // 课程表结束开始时间（精确到日）
+        @NameInMap("end")
+        public InitCoursesOfClassRequestSectionConfigEnd end;
+
         // 节次模型
         @NameInMap("sectionModels")
         public java.util.List<InitCoursesOfClassRequestSectionConfigSectionModels> sectionModels;
@@ -418,13 +422,17 @@ public class InitCoursesOfClassRequest extends TeaModel {
         @NameInMap("start")
         public InitCoursesOfClassRequestSectionConfigStart start;
 
-        // 课程表结束开始时间（精确到日）
-        @NameInMap("end")
-        public InitCoursesOfClassRequestSectionConfigEnd end;
-
         public static InitCoursesOfClassRequestSectionConfig build(java.util.Map<String, ?> map) throws Exception {
             InitCoursesOfClassRequestSectionConfig self = new InitCoursesOfClassRequestSectionConfig();
             return TeaModel.build(map, self);
+        }
+
+        public InitCoursesOfClassRequestSectionConfig setEnd(InitCoursesOfClassRequestSectionConfigEnd end) {
+            this.end = end;
+            return this;
+        }
+        public InitCoursesOfClassRequestSectionConfigEnd getEnd() {
+            return this.end;
         }
 
         public InitCoursesOfClassRequestSectionConfig setSectionModels(java.util.List<InitCoursesOfClassRequestSectionConfigSectionModels> sectionModels) {
@@ -441,14 +449,6 @@ public class InitCoursesOfClassRequest extends TeaModel {
         }
         public InitCoursesOfClassRequestSectionConfigStart getStart() {
             return this.start;
-        }
-
-        public InitCoursesOfClassRequestSectionConfig setEnd(InitCoursesOfClassRequestSectionConfigEnd end) {
-            this.end = end;
-            return this;
-        }
-        public InitCoursesOfClassRequestSectionConfigEnd getEnd() {
-            return this.end;
         }
 
     }

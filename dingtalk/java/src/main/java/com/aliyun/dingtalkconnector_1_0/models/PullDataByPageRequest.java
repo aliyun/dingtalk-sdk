@@ -4,6 +4,10 @@ package com.aliyun.dingtalkconnector_1_0.models;
 import com.aliyun.tea.*;
 
 public class PullDataByPageRequest extends TeaModel {
+    // 同步数据的应用id，isv应用传isv应用id，企业自建应用传agentId。
+    @NameInMap("appId")
+    public String appId;
+
     // 要拉取的主数据模型id。
     @NameInMap("dataModelId")
     public String dataModelId;
@@ -12,29 +16,33 @@ public class PullDataByPageRequest extends TeaModel {
     @NameInMap("datetimeFilterField")
     public String datetimeFilterField;
 
-    // 当配置了datetimeFilterField字段后，数据的时间起点，如果不传则将最早一条数据作为起点。
-    @NameInMap("minDatetime")
-    public Long minDatetime;
-
     // 当配置了datetimeFilterField字段后，数据的时间终点，如果不传则按最新一条数据作为终点。
     @NameInMap("maxDatetime")
     public Long maxDatetime;
-
-    // 用于翻页的游标，如果为空则从第一条数据开始查询。
-    @NameInMap("nextToken")
-    public String nextToken;
 
     // 单次获取的最大记录条数，最大限制100条。
     @NameInMap("maxResults")
     public Long maxResults;
 
-    // 同步数据的应用id，isv应用传isv应用id，企业自建应用传agentId。
-    @NameInMap("appId")
-    public String appId;
+    // 当配置了datetimeFilterField字段后，数据的时间起点，如果不传则将最早一条数据作为起点。
+    @NameInMap("minDatetime")
+    public Long minDatetime;
+
+    // 用于翻页的游标，如果为空则从第一条数据开始查询。
+    @NameInMap("nextToken")
+    public String nextToken;
 
     public static PullDataByPageRequest build(java.util.Map<String, ?> map) throws Exception {
         PullDataByPageRequest self = new PullDataByPageRequest();
         return TeaModel.build(map, self);
+    }
+
+    public PullDataByPageRequest setAppId(String appId) {
+        this.appId = appId;
+        return this;
+    }
+    public String getAppId() {
+        return this.appId;
     }
 
     public PullDataByPageRequest setDataModelId(String dataModelId) {
@@ -53,28 +61,12 @@ public class PullDataByPageRequest extends TeaModel {
         return this.datetimeFilterField;
     }
 
-    public PullDataByPageRequest setMinDatetime(Long minDatetime) {
-        this.minDatetime = minDatetime;
-        return this;
-    }
-    public Long getMinDatetime() {
-        return this.minDatetime;
-    }
-
     public PullDataByPageRequest setMaxDatetime(Long maxDatetime) {
         this.maxDatetime = maxDatetime;
         return this;
     }
     public Long getMaxDatetime() {
         return this.maxDatetime;
-    }
-
-    public PullDataByPageRequest setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-        return this;
-    }
-    public String getNextToken() {
-        return this.nextToken;
     }
 
     public PullDataByPageRequest setMaxResults(Long maxResults) {
@@ -85,12 +77,20 @@ public class PullDataByPageRequest extends TeaModel {
         return this.maxResults;
     }
 
-    public PullDataByPageRequest setAppId(String appId) {
-        this.appId = appId;
+    public PullDataByPageRequest setMinDatetime(Long minDatetime) {
+        this.minDatetime = minDatetime;
         return this;
     }
-    public String getAppId() {
-        return this.appId;
+    public Long getMinDatetime() {
+        return this.minDatetime;
+    }
+
+    public PullDataByPageRequest setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+        return this;
+    }
+    public String getNextToken() {
+        return this.nextToken;
     }
 
 }

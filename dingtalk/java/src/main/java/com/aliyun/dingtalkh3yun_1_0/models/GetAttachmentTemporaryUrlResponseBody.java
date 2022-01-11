@@ -8,13 +8,13 @@ public class GetAttachmentTemporaryUrlResponseBody extends TeaModel {
     @NameInMap("code")
     public String code;
 
-    // 提示信息
-    @NameInMap("message")
-    public String message;
-
     // 业务响应结果
     @NameInMap("data")
     public GetAttachmentTemporaryUrlResponseBodyData data;
+
+    // 提示信息
+    @NameInMap("message")
+    public String message;
 
     public static GetAttachmentTemporaryUrlResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetAttachmentTemporaryUrlResponseBody self = new GetAttachmentTemporaryUrlResponseBody();
@@ -29,20 +29,20 @@ public class GetAttachmentTemporaryUrlResponseBody extends TeaModel {
         return this.code;
     }
 
-    public GetAttachmentTemporaryUrlResponseBody setMessage(String message) {
-        this.message = message;
-        return this;
-    }
-    public String getMessage() {
-        return this.message;
-    }
-
     public GetAttachmentTemporaryUrlResponseBody setData(GetAttachmentTemporaryUrlResponseBodyData data) {
         this.data = data;
         return this;
     }
     public GetAttachmentTemporaryUrlResponseBodyData getData() {
         return this.data;
+    }
+
+    public GetAttachmentTemporaryUrlResponseBody setMessage(String message) {
+        this.message = message;
+        return this;
+    }
+    public String getMessage() {
+        return this.message;
     }
 
     public static class GetAttachmentTemporaryUrlResponseBodyData extends TeaModel {

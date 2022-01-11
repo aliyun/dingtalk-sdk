@@ -4,29 +4,29 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class AttendanceBleDevicesRemoveRequest extends TeaModel {
-    // 操作人id
-    @NameInMap("opUserId")
-    public String opUserId;
+    // 蓝牙设备Id列表
+    @NameInMap("deviceIdList")
+    public java.util.List<Long> deviceIdList;
 
     // 考勤组Id
     @NameInMap("groupKey")
     public String groupKey;
 
-    // 蓝牙设备Id列表
-    @NameInMap("deviceIdList")
-    public java.util.List<Long> deviceIdList;
+    // 操作人id
+    @NameInMap("opUserId")
+    public String opUserId;
 
     public static AttendanceBleDevicesRemoveRequest build(java.util.Map<String, ?> map) throws Exception {
         AttendanceBleDevicesRemoveRequest self = new AttendanceBleDevicesRemoveRequest();
         return TeaModel.build(map, self);
     }
 
-    public AttendanceBleDevicesRemoveRequest setOpUserId(String opUserId) {
-        this.opUserId = opUserId;
+    public AttendanceBleDevicesRemoveRequest setDeviceIdList(java.util.List<Long> deviceIdList) {
+        this.deviceIdList = deviceIdList;
         return this;
     }
-    public String getOpUserId() {
-        return this.opUserId;
+    public java.util.List<Long> getDeviceIdList() {
+        return this.deviceIdList;
     }
 
     public AttendanceBleDevicesRemoveRequest setGroupKey(String groupKey) {
@@ -37,12 +37,12 @@ public class AttendanceBleDevicesRemoveRequest extends TeaModel {
         return this.groupKey;
     }
 
-    public AttendanceBleDevicesRemoveRequest setDeviceIdList(java.util.List<Long> deviceIdList) {
-        this.deviceIdList = deviceIdList;
+    public AttendanceBleDevicesRemoveRequest setOpUserId(String opUserId) {
+        this.opUserId = opUserId;
         return this;
     }
-    public java.util.List<Long> getDeviceIdList() {
-        return this.deviceIdList;
+    public String getOpUserId() {
+        return this.opUserId;
     }
 
 }

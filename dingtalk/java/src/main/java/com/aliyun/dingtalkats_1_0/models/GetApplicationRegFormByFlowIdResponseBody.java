@@ -4,17 +4,21 @@ package com.aliyun.dingtalkats_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetApplicationRegFormByFlowIdResponseBody extends TeaModel {
-    // 招聘流程标识
-    @NameInMap("flowId")
-    public String flowId;
-
     // 候选人标识
     @NameInMap("candidateId")
     public String candidateId;
 
-    // 职位标识
-    @NameInMap("jobId")
-    public String jobId;
+    // 邀填人员工标识
+    @NameInMap("creatorUserId")
+    public String creatorUserId;
+
+    // 招聘流程标识
+    @NameInMap("flowId")
+    public String flowId;
+
+    // 表单标识
+    @NameInMap("formId")
+    public String formId;
 
     // 创建时间（邀填时间，单位：毫秒）
     @NameInMap("gmtCreateMillis")
@@ -24,6 +28,14 @@ public class GetApplicationRegFormByFlowIdResponseBody extends TeaModel {
     @NameInMap("gmtModifiedMillis")
     public Long gmtModifiedMillis;
 
+    // 职位标识
+    @NameInMap("jobId")
+    public String jobId;
+
+    // 表单状态（0表示未填写，1表示已填写）
+    @NameInMap("status")
+    public Integer status;
+
     // 模板标识
     @NameInMap("templateId")
     public String templateId;
@@ -32,29 +44,9 @@ public class GetApplicationRegFormByFlowIdResponseBody extends TeaModel {
     @NameInMap("templateVersion")
     public Integer templateVersion;
 
-    // 表单标识
-    @NameInMap("formId")
-    public String formId;
-
-    // 表单状态（0表示未填写，1表示已填写）
-    @NameInMap("status")
-    public Integer status;
-
-    // 邀填人员工标识
-    @NameInMap("creatorUserId")
-    public String creatorUserId;
-
     public static GetApplicationRegFormByFlowIdResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetApplicationRegFormByFlowIdResponseBody self = new GetApplicationRegFormByFlowIdResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public GetApplicationRegFormByFlowIdResponseBody setFlowId(String flowId) {
-        this.flowId = flowId;
-        return this;
-    }
-    public String getFlowId() {
-        return this.flowId;
     }
 
     public GetApplicationRegFormByFlowIdResponseBody setCandidateId(String candidateId) {
@@ -65,12 +57,28 @@ public class GetApplicationRegFormByFlowIdResponseBody extends TeaModel {
         return this.candidateId;
     }
 
-    public GetApplicationRegFormByFlowIdResponseBody setJobId(String jobId) {
-        this.jobId = jobId;
+    public GetApplicationRegFormByFlowIdResponseBody setCreatorUserId(String creatorUserId) {
+        this.creatorUserId = creatorUserId;
         return this;
     }
-    public String getJobId() {
-        return this.jobId;
+    public String getCreatorUserId() {
+        return this.creatorUserId;
+    }
+
+    public GetApplicationRegFormByFlowIdResponseBody setFlowId(String flowId) {
+        this.flowId = flowId;
+        return this;
+    }
+    public String getFlowId() {
+        return this.flowId;
+    }
+
+    public GetApplicationRegFormByFlowIdResponseBody setFormId(String formId) {
+        this.formId = formId;
+        return this;
+    }
+    public String getFormId() {
+        return this.formId;
     }
 
     public GetApplicationRegFormByFlowIdResponseBody setGmtCreateMillis(Long gmtCreateMillis) {
@@ -89,6 +97,22 @@ public class GetApplicationRegFormByFlowIdResponseBody extends TeaModel {
         return this.gmtModifiedMillis;
     }
 
+    public GetApplicationRegFormByFlowIdResponseBody setJobId(String jobId) {
+        this.jobId = jobId;
+        return this;
+    }
+    public String getJobId() {
+        return this.jobId;
+    }
+
+    public GetApplicationRegFormByFlowIdResponseBody setStatus(Integer status) {
+        this.status = status;
+        return this;
+    }
+    public Integer getStatus() {
+        return this.status;
+    }
+
     public GetApplicationRegFormByFlowIdResponseBody setTemplateId(String templateId) {
         this.templateId = templateId;
         return this;
@@ -103,30 +127,6 @@ public class GetApplicationRegFormByFlowIdResponseBody extends TeaModel {
     }
     public Integer getTemplateVersion() {
         return this.templateVersion;
-    }
-
-    public GetApplicationRegFormByFlowIdResponseBody setFormId(String formId) {
-        this.formId = formId;
-        return this;
-    }
-    public String getFormId() {
-        return this.formId;
-    }
-
-    public GetApplicationRegFormByFlowIdResponseBody setStatus(Integer status) {
-        this.status = status;
-        return this;
-    }
-    public Integer getStatus() {
-        return this.status;
-    }
-
-    public GetApplicationRegFormByFlowIdResponseBody setCreatorUserId(String creatorUserId) {
-        this.creatorUserId = creatorUserId;
-        return this;
-    }
-    public String getCreatorUserId() {
-        return this.creatorUserId;
     }
 
 }

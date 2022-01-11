@@ -12,13 +12,6 @@ public class DecodeBadgeCodeRequest extends TeaModel {
     @NameInMap("requestId")
     public String requestId;
 
-    // 组织ID
-    @NameInMap("dingOrgId")
-    public Long dingOrgId;
-
-    @NameInMap("dingIsvOrgId")
-    public Long dingIsvOrgId;
-
     public static DecodeBadgeCodeRequest build(java.util.Map<String, ?> map) throws Exception {
         DecodeBadgeCodeRequest self = new DecodeBadgeCodeRequest();
         return TeaModel.build(map, self);
@@ -38,22 +31,6 @@ public class DecodeBadgeCodeRequest extends TeaModel {
     }
     public String getRequestId() {
         return this.requestId;
-    }
-
-    public DecodeBadgeCodeRequest setDingOrgId(Long dingOrgId) {
-        this.dingOrgId = dingOrgId;
-        return this;
-    }
-    public Long getDingOrgId() {
-        return this.dingOrgId;
-    }
-
-    public DecodeBadgeCodeRequest setDingIsvOrgId(Long dingIsvOrgId) {
-        this.dingIsvOrgId = dingIsvOrgId;
-        return this;
-    }
-    public Long getDingIsvOrgId() {
-        return this.dingIsvOrgId;
     }
 
 }

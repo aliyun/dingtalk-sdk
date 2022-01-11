@@ -38,10 +38,6 @@ public class MasterDataSaveResponseBody extends TeaModel {
         @NameInMap("bizUk")
         public String bizUk;
 
-        // 是否成功
-        @NameInMap("success")
-        public Boolean success;
-
         // 错误码
         @NameInMap("errorCode")
         public String errorCode;
@@ -49,6 +45,10 @@ public class MasterDataSaveResponseBody extends TeaModel {
         // 错误信息
         @NameInMap("errorMsg")
         public String errorMsg;
+
+        // 是否成功
+        @NameInMap("success")
+        public Boolean success;
 
         public static MasterDataSaveResponseBodyFailResult build(java.util.Map<String, ?> map) throws Exception {
             MasterDataSaveResponseBodyFailResult self = new MasterDataSaveResponseBodyFailResult();
@@ -61,14 +61,6 @@ public class MasterDataSaveResponseBody extends TeaModel {
         }
         public String getBizUk() {
             return this.bizUk;
-        }
-
-        public MasterDataSaveResponseBodyFailResult setSuccess(Boolean success) {
-            this.success = success;
-            return this;
-        }
-        public Boolean getSuccess() {
-            return this.success;
         }
 
         public MasterDataSaveResponseBodyFailResult setErrorCode(String errorCode) {
@@ -85,6 +77,14 @@ public class MasterDataSaveResponseBody extends TeaModel {
         }
         public String getErrorMsg() {
             return this.errorMsg;
+        }
+
+        public MasterDataSaveResponseBodyFailResult setSuccess(Boolean success) {
+            this.success = success;
+            return this;
+        }
+        public Boolean getSuccess() {
+            return this.success;
         }
 
     }

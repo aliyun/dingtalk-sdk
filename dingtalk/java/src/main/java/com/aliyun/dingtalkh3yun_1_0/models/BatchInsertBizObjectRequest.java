@@ -4,14 +4,6 @@ package com.aliyun.dingtalkh3yun_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchInsertBizObjectRequest extends TeaModel {
-    // 表单编码
-    @NameInMap("schemaCode")
-    public String schemaCode;
-
-    // 操作用户id
-    @NameInMap("opUserId")
-    public String opUserId;
-
     // 待新增的业对象json数组
     @NameInMap("bizObjectJsonArray")
     public java.util.List<String> bizObjectJsonArray;
@@ -20,25 +12,17 @@ public class BatchInsertBizObjectRequest extends TeaModel {
     @NameInMap("isDraft")
     public Boolean isDraft;
 
+    // 操作用户id
+    @NameInMap("opUserId")
+    public String opUserId;
+
+    // 表单编码
+    @NameInMap("schemaCode")
+    public String schemaCode;
+
     public static BatchInsertBizObjectRequest build(java.util.Map<String, ?> map) throws Exception {
         BatchInsertBizObjectRequest self = new BatchInsertBizObjectRequest();
         return TeaModel.build(map, self);
-    }
-
-    public BatchInsertBizObjectRequest setSchemaCode(String schemaCode) {
-        this.schemaCode = schemaCode;
-        return this;
-    }
-    public String getSchemaCode() {
-        return this.schemaCode;
-    }
-
-    public BatchInsertBizObjectRequest setOpUserId(String opUserId) {
-        this.opUserId = opUserId;
-        return this;
-    }
-    public String getOpUserId() {
-        return this.opUserId;
     }
 
     public BatchInsertBizObjectRequest setBizObjectJsonArray(java.util.List<String> bizObjectJsonArray) {
@@ -55,6 +39,22 @@ public class BatchInsertBizObjectRequest extends TeaModel {
     }
     public Boolean getIsDraft() {
         return this.isDraft;
+    }
+
+    public BatchInsertBizObjectRequest setOpUserId(String opUserId) {
+        this.opUserId = opUserId;
+        return this;
+    }
+    public String getOpUserId() {
+        return this.opUserId;
+    }
+
+    public BatchInsertBizObjectRequest setSchemaCode(String schemaCode) {
+        this.schemaCode = schemaCode;
+        return this;
+    }
+    public String getSchemaCode() {
+        return this.schemaCode;
     }
 
 }

@@ -4,26 +4,26 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListActivateDevicesResponseBody extends TeaModel {
-    @NameInMap("totalCount")
-    public Long totalCount;
+    @NameInMap("result")
+    public java.util.List<ListActivateDevicesResponseBodyResult> result;
 
     @NameInMap("success")
     public Boolean success;
 
-    @NameInMap("result")
-    public java.util.List<ListActivateDevicesResponseBodyResult> result;
+    @NameInMap("totalCount")
+    public Long totalCount;
 
     public static ListActivateDevicesResponseBody build(java.util.Map<String, ?> map) throws Exception {
         ListActivateDevicesResponseBody self = new ListActivateDevicesResponseBody();
         return TeaModel.build(map, self);
     }
 
-    public ListActivateDevicesResponseBody setTotalCount(Long totalCount) {
-        this.totalCount = totalCount;
+    public ListActivateDevicesResponseBody setResult(java.util.List<ListActivateDevicesResponseBodyResult> result) {
+        this.result = result;
         return this;
     }
-    public Long getTotalCount() {
-        return this.totalCount;
+    public java.util.List<ListActivateDevicesResponseBodyResult> getResult() {
+        return this.result;
     }
 
     public ListActivateDevicesResponseBody setSuccess(Boolean success) {
@@ -34,12 +34,12 @@ public class ListActivateDevicesResponseBody extends TeaModel {
         return this.success;
     }
 
-    public ListActivateDevicesResponseBody setResult(java.util.List<ListActivateDevicesResponseBodyResult> result) {
-        this.result = result;
+    public ListActivateDevicesResponseBody setTotalCount(Long totalCount) {
+        this.totalCount = totalCount;
         return this;
     }
-    public java.util.List<ListActivateDevicesResponseBodyResult> getResult() {
-        return this.result;
+    public Long getTotalCount() {
+        return this.totalCount;
     }
 
     public static class ListActivateDevicesResponseBodyResult extends TeaModel {

@@ -4,8 +4,11 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteSequenceRequest extends TeaModel {
-    @NameInMap("userId")
-    public String userId;
+    @NameInMap("appType")
+    public String appType;
+
+    @NameInMap("language")
+    public String language;
 
     @NameInMap("sequence")
     public String sequence;
@@ -13,23 +16,28 @@ public class DeleteSequenceRequest extends TeaModel {
     @NameInMap("systemToken")
     public String systemToken;
 
-    @NameInMap("language")
-    public String language;
-
-    @NameInMap("appType")
-    public String appType;
+    @NameInMap("userId")
+    public String userId;
 
     public static DeleteSequenceRequest build(java.util.Map<String, ?> map) throws Exception {
         DeleteSequenceRequest self = new DeleteSequenceRequest();
         return TeaModel.build(map, self);
     }
 
-    public DeleteSequenceRequest setUserId(String userId) {
-        this.userId = userId;
+    public DeleteSequenceRequest setAppType(String appType) {
+        this.appType = appType;
         return this;
     }
-    public String getUserId() {
-        return this.userId;
+    public String getAppType() {
+        return this.appType;
+    }
+
+    public DeleteSequenceRequest setLanguage(String language) {
+        this.language = language;
+        return this;
+    }
+    public String getLanguage() {
+        return this.language;
     }
 
     public DeleteSequenceRequest setSequence(String sequence) {
@@ -48,20 +56,12 @@ public class DeleteSequenceRequest extends TeaModel {
         return this.systemToken;
     }
 
-    public DeleteSequenceRequest setLanguage(String language) {
-        this.language = language;
+    public DeleteSequenceRequest setUserId(String userId) {
+        this.userId = userId;
         return this;
     }
-    public String getLanguage() {
-        return this.language;
-    }
-
-    public DeleteSequenceRequest setAppType(String appType) {
-        this.appType = appType;
-        return this;
-    }
-    public String getAppType() {
-        return this.appType;
+    public String getUserId() {
+        return this.userId;
     }
 
 }

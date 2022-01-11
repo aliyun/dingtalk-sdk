@@ -22,48 +22,24 @@ public class QueryGroupSetResponseBody extends TeaModel {
     }
 
     public static class QueryGroupSetResponseBodyRecords extends TeaModel {
-        @NameInMap("openGroupSetId")
-        public String openGroupSetId;
-
-        @NameInMap("groupSetName")
-        public String groupSetName;
-
-        @NameInMap("templateId")
-        public String templateId;
-
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
         @NameInMap("gmtModified")
         public String gmtModified;
 
+        @NameInMap("groupSetName")
+        public String groupSetName;
+
+        @NameInMap("openGroupSetId")
+        public String openGroupSetId;
+
+        @NameInMap("templateId")
+        public String templateId;
+
         public static QueryGroupSetResponseBodyRecords build(java.util.Map<String, ?> map) throws Exception {
             QueryGroupSetResponseBodyRecords self = new QueryGroupSetResponseBodyRecords();
             return TeaModel.build(map, self);
-        }
-
-        public QueryGroupSetResponseBodyRecords setOpenGroupSetId(String openGroupSetId) {
-            this.openGroupSetId = openGroupSetId;
-            return this;
-        }
-        public String getOpenGroupSetId() {
-            return this.openGroupSetId;
-        }
-
-        public QueryGroupSetResponseBodyRecords setGroupSetName(String groupSetName) {
-            this.groupSetName = groupSetName;
-            return this;
-        }
-        public String getGroupSetName() {
-            return this.groupSetName;
-        }
-
-        public QueryGroupSetResponseBodyRecords setTemplateId(String templateId) {
-            this.templateId = templateId;
-            return this;
-        }
-        public String getTemplateId() {
-            return this.templateId;
         }
 
         public QueryGroupSetResponseBodyRecords setGmtCreate(String gmtCreate) {
@@ -80,6 +56,30 @@ public class QueryGroupSetResponseBody extends TeaModel {
         }
         public String getGmtModified() {
             return this.gmtModified;
+        }
+
+        public QueryGroupSetResponseBodyRecords setGroupSetName(String groupSetName) {
+            this.groupSetName = groupSetName;
+            return this;
+        }
+        public String getGroupSetName() {
+            return this.groupSetName;
+        }
+
+        public QueryGroupSetResponseBodyRecords setOpenGroupSetId(String openGroupSetId) {
+            this.openGroupSetId = openGroupSetId;
+            return this;
+        }
+        public String getOpenGroupSetId() {
+            return this.openGroupSetId;
+        }
+
+        public QueryGroupSetResponseBodyRecords setTemplateId(String templateId) {
+            this.templateId = templateId;
+            return this;
+        }
+        public String getTemplateId() {
+            return this.templateId;
         }
 
     }

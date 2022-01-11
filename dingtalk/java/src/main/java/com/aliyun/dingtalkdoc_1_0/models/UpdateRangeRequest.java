@@ -4,29 +4,29 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateRangeRequest extends TeaModel {
-    // 操作人unionId
-    @NameInMap("operatorId")
-    public String operatorId;
+    // 背景色
+    @NameInMap("backgroundColors")
+    public java.util.List<java.util.List<String>> backgroundColors;
 
     // 值
     @NameInMap("values")
     public java.util.List<java.util.List<String>> values;
 
-    // 背景色
-    @NameInMap("backgroundColors")
-    public java.util.List<java.util.List<String>> backgroundColors;
+    // 操作人unionId
+    @NameInMap("operatorId")
+    public String operatorId;
 
     public static UpdateRangeRequest build(java.util.Map<String, ?> map) throws Exception {
         UpdateRangeRequest self = new UpdateRangeRequest();
         return TeaModel.build(map, self);
     }
 
-    public UpdateRangeRequest setOperatorId(String operatorId) {
-        this.operatorId = operatorId;
+    public UpdateRangeRequest setBackgroundColors(java.util.List<java.util.List<String>> backgroundColors) {
+        this.backgroundColors = backgroundColors;
         return this;
     }
-    public String getOperatorId() {
-        return this.operatorId;
+    public java.util.List<java.util.List<String>> getBackgroundColors() {
+        return this.backgroundColors;
     }
 
     public UpdateRangeRequest setValues(java.util.List<java.util.List<String>> values) {
@@ -37,12 +37,12 @@ public class UpdateRangeRequest extends TeaModel {
         return this.values;
     }
 
-    public UpdateRangeRequest setBackgroundColors(java.util.List<java.util.List<String>> backgroundColors) {
-        this.backgroundColors = backgroundColors;
+    public UpdateRangeRequest setOperatorId(String operatorId) {
+        this.operatorId = operatorId;
         return this;
     }
-    public java.util.List<java.util.List<String>> getBackgroundColors() {
-        return this.backgroundColors;
+    public String getOperatorId() {
+        return this.operatorId;
     }
 
 }

@@ -8,13 +8,13 @@ public class PullDataByPageResponseBody extends TeaModel {
     @NameInMap("list")
     public java.util.List<PullDataByPageResponseBodyList> list;
 
-    // 用于查看下一页数据的游标，如果为空则说明没有更多数据了。
-    @NameInMap("nextToken")
-    public String nextToken;
-
     // 单次获取的最大记录条数。
     @NameInMap("maxResults")
     public Long maxResults;
+
+    // 用于查看下一页数据的游标，如果为空则说明没有更多数据了。
+    @NameInMap("nextToken")
+    public String nextToken;
 
     public static PullDataByPageResponseBody build(java.util.Map<String, ?> map) throws Exception {
         PullDataByPageResponseBody self = new PullDataByPageResponseBody();
@@ -29,14 +29,6 @@ public class PullDataByPageResponseBody extends TeaModel {
         return this.list;
     }
 
-    public PullDataByPageResponseBody setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-        return this;
-    }
-    public String getNextToken() {
-        return this.nextToken;
-    }
-
     public PullDataByPageResponseBody setMaxResults(Long maxResults) {
         this.maxResults = maxResults;
         return this;
@@ -45,7 +37,23 @@ public class PullDataByPageResponseBody extends TeaModel {
         return this.maxResults;
     }
 
+    public PullDataByPageResponseBody setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+        return this;
+    }
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
     public static class PullDataByPageResponseBodyList extends TeaModel {
+        // 创建数据的应用id。
+        @NameInMap("dataCreateAppId")
+        public String dataCreateAppId;
+
+        // 创建数据的应用类型，isv应用为premium_microapp。
+        @NameInMap("dataCreateAppType")
+        public String dataCreateAppType;
+
         // 数据创建时间。
         @NameInMap("dataGmtCreate")
         public Long dataGmtCreate;
@@ -54,21 +62,13 @@ public class PullDataByPageResponseBody extends TeaModel {
         @NameInMap("dataGmtModified")
         public Long dataGmtModified;
 
-        // 创建数据的应用类型，isv应用为premium_microapp。
-        @NameInMap("dataCreateAppType")
-        public String dataCreateAppType;
-
-        // 创建数据的应用id。
-        @NameInMap("dataCreateAppId")
-        public String dataCreateAppId;
+        // 最后修改数据的应用id。
+        @NameInMap("dataModifiedAppId")
+        public String dataModifiedAppId;
 
         // 最后修改数据的应用类型，取值同dataCreateAppType。
         @NameInMap("dataModifiedAppType")
         public String dataModifiedAppType;
-
-        // 最后修改数据的应用id。
-        @NameInMap("dataModifiedAppId")
-        public String dataModifiedAppId;
 
         // 数据完整内容。
         @NameInMap("jsonData")
@@ -77,6 +77,22 @@ public class PullDataByPageResponseBody extends TeaModel {
         public static PullDataByPageResponseBodyList build(java.util.Map<String, ?> map) throws Exception {
             PullDataByPageResponseBodyList self = new PullDataByPageResponseBodyList();
             return TeaModel.build(map, self);
+        }
+
+        public PullDataByPageResponseBodyList setDataCreateAppId(String dataCreateAppId) {
+            this.dataCreateAppId = dataCreateAppId;
+            return this;
+        }
+        public String getDataCreateAppId() {
+            return this.dataCreateAppId;
+        }
+
+        public PullDataByPageResponseBodyList setDataCreateAppType(String dataCreateAppType) {
+            this.dataCreateAppType = dataCreateAppType;
+            return this;
+        }
+        public String getDataCreateAppType() {
+            return this.dataCreateAppType;
         }
 
         public PullDataByPageResponseBodyList setDataGmtCreate(Long dataGmtCreate) {
@@ -95,20 +111,12 @@ public class PullDataByPageResponseBody extends TeaModel {
             return this.dataGmtModified;
         }
 
-        public PullDataByPageResponseBodyList setDataCreateAppType(String dataCreateAppType) {
-            this.dataCreateAppType = dataCreateAppType;
+        public PullDataByPageResponseBodyList setDataModifiedAppId(String dataModifiedAppId) {
+            this.dataModifiedAppId = dataModifiedAppId;
             return this;
         }
-        public String getDataCreateAppType() {
-            return this.dataCreateAppType;
-        }
-
-        public PullDataByPageResponseBodyList setDataCreateAppId(String dataCreateAppId) {
-            this.dataCreateAppId = dataCreateAppId;
-            return this;
-        }
-        public String getDataCreateAppId() {
-            return this.dataCreateAppId;
+        public String getDataModifiedAppId() {
+            return this.dataModifiedAppId;
         }
 
         public PullDataByPageResponseBodyList setDataModifiedAppType(String dataModifiedAppType) {
@@ -117,14 +125,6 @@ public class PullDataByPageResponseBody extends TeaModel {
         }
         public String getDataModifiedAppType() {
             return this.dataModifiedAppType;
-        }
-
-        public PullDataByPageResponseBodyList setDataModifiedAppId(String dataModifiedAppId) {
-            this.dataModifiedAppId = dataModifiedAppId;
-            return this;
-        }
-        public String getDataModifiedAppId() {
-            return this.dataModifiedAppId;
         }
 
         public PullDataByPageResponseBodyList setJsonData(String jsonData) {

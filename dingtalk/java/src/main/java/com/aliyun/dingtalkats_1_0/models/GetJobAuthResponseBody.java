@@ -34,25 +34,17 @@ public class GetJobAuthResponseBody extends TeaModel {
     }
 
     public static class GetJobAuthResponseBodyJobOwners extends TeaModel {
-        // 员工标识
-        @NameInMap("userId")
-        public String userId;
-
         // 员工姓名
         @NameInMap("name")
         public String name;
 
+        // 员工标识
+        @NameInMap("userId")
+        public String userId;
+
         public static GetJobAuthResponseBodyJobOwners build(java.util.Map<String, ?> map) throws Exception {
             GetJobAuthResponseBodyJobOwners self = new GetJobAuthResponseBodyJobOwners();
             return TeaModel.build(map, self);
-        }
-
-        public GetJobAuthResponseBodyJobOwners setUserId(String userId) {
-            this.userId = userId;
-            return this;
-        }
-        public String getUserId() {
-            return this.userId;
         }
 
         public GetJobAuthResponseBodyJobOwners setName(String name) {
@@ -61,6 +53,14 @@ public class GetJobAuthResponseBody extends TeaModel {
         }
         public String getName() {
             return this.name;
+        }
+
+        public GetJobAuthResponseBodyJobOwners setUserId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+        public String getUserId() {
+            return this.userId;
         }
 
     }

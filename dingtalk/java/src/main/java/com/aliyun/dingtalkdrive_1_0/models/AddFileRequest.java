@@ -4,25 +4,25 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddFileRequest extends TeaModel {
-    // 父目录id
-    @NameInMap("parentId")
-    public String parentId;
-
-    // 文件类型
-    @NameInMap("fileType")
-    public String fileType;
+    // 文件名冲突策略
+    @NameInMap("addConflictPolicy")
+    public String addConflictPolicy;
 
     // 文件名
     @NameInMap("fileName")
     public String fileName;
 
+    // 文件类型
+    @NameInMap("fileType")
+    public String fileType;
+
     // mediaId
     @NameInMap("mediaId")
     public String mediaId;
 
-    // 文件名冲突策略
-    @NameInMap("addConflictPolicy")
-    public String addConflictPolicy;
+    // 父目录id
+    @NameInMap("parentId")
+    public String parentId;
 
     // 用户id
     @NameInMap("unionId")
@@ -33,20 +33,12 @@ public class AddFileRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public AddFileRequest setParentId(String parentId) {
-        this.parentId = parentId;
+    public AddFileRequest setAddConflictPolicy(String addConflictPolicy) {
+        this.addConflictPolicy = addConflictPolicy;
         return this;
     }
-    public String getParentId() {
-        return this.parentId;
-    }
-
-    public AddFileRequest setFileType(String fileType) {
-        this.fileType = fileType;
-        return this;
-    }
-    public String getFileType() {
-        return this.fileType;
+    public String getAddConflictPolicy() {
+        return this.addConflictPolicy;
     }
 
     public AddFileRequest setFileName(String fileName) {
@@ -57,6 +49,14 @@ public class AddFileRequest extends TeaModel {
         return this.fileName;
     }
 
+    public AddFileRequest setFileType(String fileType) {
+        this.fileType = fileType;
+        return this;
+    }
+    public String getFileType() {
+        return this.fileType;
+    }
+
     public AddFileRequest setMediaId(String mediaId) {
         this.mediaId = mediaId;
         return this;
@@ -65,12 +65,12 @@ public class AddFileRequest extends TeaModel {
         return this.mediaId;
     }
 
-    public AddFileRequest setAddConflictPolicy(String addConflictPolicy) {
-        this.addConflictPolicy = addConflictPolicy;
+    public AddFileRequest setParentId(String parentId) {
+        this.parentId = parentId;
         return this;
     }
-    public String getAddConflictPolicy() {
-        return this.addConflictPolicy;
+    public String getParentId() {
+        return this.parentId;
     }
 
     public AddFileRequest setUnionId(String unionId) {

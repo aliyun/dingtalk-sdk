@@ -22,13 +22,13 @@ public class DeleteReceiptRequest extends TeaModel {
     }
 
     public static class DeleteReceiptRequestReceipts extends TeaModel {
-        // 修改者工号
-        @NameInMap("deleteUserId")
-        public String deleteUserId;
-
         // 单据唯一编号
         @NameInMap("code")
         public String code;
+
+        // 修改者工号
+        @NameInMap("deleteUserId")
+        public String deleteUserId;
 
         // 单据类型：1付款单，2收款单
         @NameInMap("receiptType")
@@ -39,20 +39,20 @@ public class DeleteReceiptRequest extends TeaModel {
             return TeaModel.build(map, self);
         }
 
-        public DeleteReceiptRequestReceipts setDeleteUserId(String deleteUserId) {
-            this.deleteUserId = deleteUserId;
-            return this;
-        }
-        public String getDeleteUserId() {
-            return this.deleteUserId;
-        }
-
         public DeleteReceiptRequestReceipts setCode(String code) {
             this.code = code;
             return this;
         }
         public String getCode() {
             return this.code;
+        }
+
+        public DeleteReceiptRequestReceipts setDeleteUserId(String deleteUserId) {
+            this.deleteUserId = deleteUserId;
+            return this;
+        }
+        public String getDeleteUserId() {
+            return this.deleteUserId;
         }
 
         public DeleteReceiptRequestReceipts setReceiptType(Long receiptType) {

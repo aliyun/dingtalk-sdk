@@ -8,30 +8,6 @@ public class GetInnerAppResponseBody extends TeaModel {
     @NameInMap("agentId")
     public Long agentId;
 
-    // 应用名称
-    @NameInMap("name")
-    public String name;
-
-    // 应用描述
-    @NameInMap("desc")
-    public String desc;
-
-    // 应用图标
-    @NameInMap("icon")
-    public String icon;
-
-    // 应用移动端首页地址
-    @NameInMap("homepageLink")
-    public String homepageLink;
-
-    // 应用PC端首页地址
-    @NameInMap("pcHomepageLink")
-    public String pcHomepageLink;
-
-    // 应用管理后台地址
-    @NameInMap("ompLink")
-    public String ompLink;
-
     // 应用的appkey
     @NameInMap("appKey")
     public String appKey;
@@ -40,9 +16,33 @@ public class GetInnerAppResponseBody extends TeaModel {
     @NameInMap("appSecret")
     public String appSecret;
 
+    // 应用描述
+    @NameInMap("desc")
+    public String desc;
+
+    // 应用移动端首页地址
+    @NameInMap("homepageLink")
+    public String homepageLink;
+
+    // 应用图标
+    @NameInMap("icon")
+    public String icon;
+
     // 服务器出口ip
     @NameInMap("ipWhiteList")
     public java.util.List<String> ipWhiteList;
+
+    // 应用名称
+    @NameInMap("name")
+    public String name;
+
+    // 应用管理后台地址
+    @NameInMap("ompLink")
+    public String ompLink;
+
+    // 应用PC端首页地址
+    @NameInMap("pcHomepageLink")
+    public String pcHomepageLink;
 
     public static GetInnerAppResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetInnerAppResponseBody self = new GetInnerAppResponseBody();
@@ -55,54 +55,6 @@ public class GetInnerAppResponseBody extends TeaModel {
     }
     public Long getAgentId() {
         return this.agentId;
-    }
-
-    public GetInnerAppResponseBody setName(String name) {
-        this.name = name;
-        return this;
-    }
-    public String getName() {
-        return this.name;
-    }
-
-    public GetInnerAppResponseBody setDesc(String desc) {
-        this.desc = desc;
-        return this;
-    }
-    public String getDesc() {
-        return this.desc;
-    }
-
-    public GetInnerAppResponseBody setIcon(String icon) {
-        this.icon = icon;
-        return this;
-    }
-    public String getIcon() {
-        return this.icon;
-    }
-
-    public GetInnerAppResponseBody setHomepageLink(String homepageLink) {
-        this.homepageLink = homepageLink;
-        return this;
-    }
-    public String getHomepageLink() {
-        return this.homepageLink;
-    }
-
-    public GetInnerAppResponseBody setPcHomepageLink(String pcHomepageLink) {
-        this.pcHomepageLink = pcHomepageLink;
-        return this;
-    }
-    public String getPcHomepageLink() {
-        return this.pcHomepageLink;
-    }
-
-    public GetInnerAppResponseBody setOmpLink(String ompLink) {
-        this.ompLink = ompLink;
-        return this;
-    }
-    public String getOmpLink() {
-        return this.ompLink;
     }
 
     public GetInnerAppResponseBody setAppKey(String appKey) {
@@ -121,12 +73,60 @@ public class GetInnerAppResponseBody extends TeaModel {
         return this.appSecret;
     }
 
+    public GetInnerAppResponseBody setDesc(String desc) {
+        this.desc = desc;
+        return this;
+    }
+    public String getDesc() {
+        return this.desc;
+    }
+
+    public GetInnerAppResponseBody setHomepageLink(String homepageLink) {
+        this.homepageLink = homepageLink;
+        return this;
+    }
+    public String getHomepageLink() {
+        return this.homepageLink;
+    }
+
+    public GetInnerAppResponseBody setIcon(String icon) {
+        this.icon = icon;
+        return this;
+    }
+    public String getIcon() {
+        return this.icon;
+    }
+
     public GetInnerAppResponseBody setIpWhiteList(java.util.List<String> ipWhiteList) {
         this.ipWhiteList = ipWhiteList;
         return this;
     }
     public java.util.List<String> getIpWhiteList() {
         return this.ipWhiteList;
+    }
+
+    public GetInnerAppResponseBody setName(String name) {
+        this.name = name;
+        return this;
+    }
+    public String getName() {
+        return this.name;
+    }
+
+    public GetInnerAppResponseBody setOmpLink(String ompLink) {
+        this.ompLink = ompLink;
+        return this;
+    }
+    public String getOmpLink() {
+        return this.ompLink;
+    }
+
+    public GetInnerAppResponseBody setPcHomepageLink(String pcHomepageLink) {
+        this.pcHomepageLink = pcHomepageLink;
+        return this;
+    }
+    public String getPcHomepageLink() {
+        return this.pcHomepageLink;
     }
 
 }

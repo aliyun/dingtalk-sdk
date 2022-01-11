@@ -4,17 +4,17 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetPropertyInfoResponseBody extends TeaModel {
-    @NameInMap("name")
-    public String name;
-
-    @NameInMap("orgId")
-    public Long orgId;
-
     @NameInMap("adminName")
     public String adminName;
 
     @NameInMap("adminUserId")
     public String adminUserId;
+
+    @NameInMap("name")
+    public String name;
+
+    @NameInMap("orgId")
+    public Long orgId;
 
     @NameInMap("unifiedSocialCredit")
     public String unifiedSocialCredit;
@@ -22,22 +22,6 @@ public class GetPropertyInfoResponseBody extends TeaModel {
     public static GetPropertyInfoResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetPropertyInfoResponseBody self = new GetPropertyInfoResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public GetPropertyInfoResponseBody setName(String name) {
-        this.name = name;
-        return this;
-    }
-    public String getName() {
-        return this.name;
-    }
-
-    public GetPropertyInfoResponseBody setOrgId(Long orgId) {
-        this.orgId = orgId;
-        return this;
-    }
-    public Long getOrgId() {
-        return this.orgId;
     }
 
     public GetPropertyInfoResponseBody setAdminName(String adminName) {
@@ -54,6 +38,22 @@ public class GetPropertyInfoResponseBody extends TeaModel {
     }
     public String getAdminUserId() {
         return this.adminUserId;
+    }
+
+    public GetPropertyInfoResponseBody setName(String name) {
+        this.name = name;
+        return this;
+    }
+    public String getName() {
+        return this.name;
+    }
+
+    public GetPropertyInfoResponseBody setOrgId(Long orgId) {
+        this.orgId = orgId;
+        return this;
+    }
+    public Long getOrgId() {
+        return this.orgId;
     }
 
     public GetPropertyInfoResponseBody setUnifiedSocialCredit(String unifiedSocialCredit) {

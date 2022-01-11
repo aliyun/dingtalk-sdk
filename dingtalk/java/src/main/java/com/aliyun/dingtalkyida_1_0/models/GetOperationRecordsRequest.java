@@ -8,14 +8,6 @@ public class GetOperationRecordsRequest extends TeaModel {
     @NameInMap("appType")
     public String appType;
 
-    // 应用秘钥
-    @NameInMap("systemToken")
-    public String systemToken;
-
-    // 钉钉的userId
-    @NameInMap("userId")
-    public String userId;
-
     // 语言
     @NameInMap("language")
     public String language;
@@ -23,6 +15,14 @@ public class GetOperationRecordsRequest extends TeaModel {
     // 流程实例ID
     @NameInMap("processInstanceId")
     public String processInstanceId;
+
+    // 应用秘钥
+    @NameInMap("systemToken")
+    public String systemToken;
+
+    // 钉钉的userId
+    @NameInMap("userId")
+    public String userId;
 
     public static GetOperationRecordsRequest build(java.util.Map<String, ?> map) throws Exception {
         GetOperationRecordsRequest self = new GetOperationRecordsRequest();
@@ -35,22 +35,6 @@ public class GetOperationRecordsRequest extends TeaModel {
     }
     public String getAppType() {
         return this.appType;
-    }
-
-    public GetOperationRecordsRequest setSystemToken(String systemToken) {
-        this.systemToken = systemToken;
-        return this;
-    }
-    public String getSystemToken() {
-        return this.systemToken;
-    }
-
-    public GetOperationRecordsRequest setUserId(String userId) {
-        this.userId = userId;
-        return this;
-    }
-    public String getUserId() {
-        return this.userId;
     }
 
     public GetOperationRecordsRequest setLanguage(String language) {
@@ -67,6 +51,22 @@ public class GetOperationRecordsRequest extends TeaModel {
     }
     public String getProcessInstanceId() {
         return this.processInstanceId;
+    }
+
+    public GetOperationRecordsRequest setSystemToken(String systemToken) {
+        this.systemToken = systemToken;
+        return this;
+    }
+    public String getSystemToken() {
+        return this.systemToken;
+    }
+
+    public GetOperationRecordsRequest setUserId(String userId) {
+        this.userId = userId;
+        return this;
+    }
+    public String getUserId() {
+        return this.userId;
     }
 
 }

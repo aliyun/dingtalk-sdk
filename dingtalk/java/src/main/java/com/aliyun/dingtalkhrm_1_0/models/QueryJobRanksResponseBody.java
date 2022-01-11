@@ -4,10 +4,6 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryJobRanksResponseBody extends TeaModel {
-    // 表示当前调用返回读取到的位置，空代表数据已经读取完毕
-    @NameInMap("nextToken")
-    public Long nextToken;
-
     // 是否有更多数据
     @NameInMap("hasMore")
     public Boolean hasMore;
@@ -16,17 +12,13 @@ public class QueryJobRanksResponseBody extends TeaModel {
     @NameInMap("list")
     public java.util.List<QueryJobRanksResponseBodyList> list;
 
+    // 表示当前调用返回读取到的位置，空代表数据已经读取完毕
+    @NameInMap("nextToken")
+    public Long nextToken;
+
     public static QueryJobRanksResponseBody build(java.util.Map<String, ?> map) throws Exception {
         QueryJobRanksResponseBody self = new QueryJobRanksResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public QueryJobRanksResponseBody setNextToken(Long nextToken) {
-        this.nextToken = nextToken;
-        return this;
-    }
-    public Long getNextToken() {
-        return this.nextToken;
     }
 
     public QueryJobRanksResponseBody setHasMore(Boolean hasMore) {
@@ -45,10 +37,22 @@ public class QueryJobRanksResponseBody extends TeaModel {
         return this.list;
     }
 
+    public QueryJobRanksResponseBody setNextToken(Long nextToken) {
+        this.nextToken = nextToken;
+        return this;
+    }
+    public Long getNextToken() {
+        return this.nextToken;
+    }
+
     public static class QueryJobRanksResponseBodyList extends TeaModel {
-        // 职级ID
-        @NameInMap("rankId")
-        public String rankId;
+        // 最大等级
+        @NameInMap("maxJobGrade")
+        public Integer maxJobGrade;
+
+        // 最小等级
+        @NameInMap("minJobGrade")
+        public Integer minJobGrade;
 
         // 职级序列ID
         @NameInMap("rankCategoryId")
@@ -58,33 +62,37 @@ public class QueryJobRanksResponseBody extends TeaModel {
         @NameInMap("rankCode")
         public String rankCode;
 
-        // 职级名称
-        @NameInMap("rankName")
-        public String rankName;
-
-        // 最小等级
-        @NameInMap("minJobGrade")
-        public Integer minJobGrade;
-
-        // 最大等级
-        @NameInMap("maxJobGrade")
-        public Integer maxJobGrade;
-
         // 职级描述
         @NameInMap("rankDescription")
         public String rankDescription;
+
+        // 职级ID
+        @NameInMap("rankId")
+        public String rankId;
+
+        // 职级名称
+        @NameInMap("rankName")
+        public String rankName;
 
         public static QueryJobRanksResponseBodyList build(java.util.Map<String, ?> map) throws Exception {
             QueryJobRanksResponseBodyList self = new QueryJobRanksResponseBodyList();
             return TeaModel.build(map, self);
         }
 
-        public QueryJobRanksResponseBodyList setRankId(String rankId) {
-            this.rankId = rankId;
+        public QueryJobRanksResponseBodyList setMaxJobGrade(Integer maxJobGrade) {
+            this.maxJobGrade = maxJobGrade;
             return this;
         }
-        public String getRankId() {
-            return this.rankId;
+        public Integer getMaxJobGrade() {
+            return this.maxJobGrade;
+        }
+
+        public QueryJobRanksResponseBodyList setMinJobGrade(Integer minJobGrade) {
+            this.minJobGrade = minJobGrade;
+            return this;
+        }
+        public Integer getMinJobGrade() {
+            return this.minJobGrade;
         }
 
         public QueryJobRanksResponseBodyList setRankCategoryId(String rankCategoryId) {
@@ -103,36 +111,28 @@ public class QueryJobRanksResponseBody extends TeaModel {
             return this.rankCode;
         }
 
-        public QueryJobRanksResponseBodyList setRankName(String rankName) {
-            this.rankName = rankName;
-            return this;
-        }
-        public String getRankName() {
-            return this.rankName;
-        }
-
-        public QueryJobRanksResponseBodyList setMinJobGrade(Integer minJobGrade) {
-            this.minJobGrade = minJobGrade;
-            return this;
-        }
-        public Integer getMinJobGrade() {
-            return this.minJobGrade;
-        }
-
-        public QueryJobRanksResponseBodyList setMaxJobGrade(Integer maxJobGrade) {
-            this.maxJobGrade = maxJobGrade;
-            return this;
-        }
-        public Integer getMaxJobGrade() {
-            return this.maxJobGrade;
-        }
-
         public QueryJobRanksResponseBodyList setRankDescription(String rankDescription) {
             this.rankDescription = rankDescription;
             return this;
         }
         public String getRankDescription() {
             return this.rankDescription;
+        }
+
+        public QueryJobRanksResponseBodyList setRankId(String rankId) {
+            this.rankId = rankId;
+            return this;
+        }
+        public String getRankId() {
+            return this.rankId;
+        }
+
+        public QueryJobRanksResponseBodyList setRankName(String rankName) {
+            this.rankName = rankName;
+            return this;
+        }
+        public String getRankName() {
+            return this.rankName;
         }
 
     }

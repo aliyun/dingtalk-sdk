@@ -4,10 +4,6 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchActivationCodeResponseBody extends TeaModel {
-    // instanceId
-    @NameInMap("instanceId")
-    public String instanceId;
-
     // activationCode
     @NameInMap("activationCode")
     public String activationCode;
@@ -20,6 +16,10 @@ public class SearchActivationCodeResponseBody extends TeaModel {
     @NameInMap("expireTimeGMT")
     public String expireTimeGMT;
 
+    // instanceId
+    @NameInMap("instanceId")
+    public String instanceId;
+
     // status
     @NameInMap("status")
     public Integer status;
@@ -27,14 +27,6 @@ public class SearchActivationCodeResponseBody extends TeaModel {
     public static SearchActivationCodeResponseBody build(java.util.Map<String, ?> map) throws Exception {
         SearchActivationCodeResponseBody self = new SearchActivationCodeResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public SearchActivationCodeResponseBody setInstanceId(String instanceId) {
-        this.instanceId = instanceId;
-        return this;
-    }
-    public String getInstanceId() {
-        return this.instanceId;
     }
 
     public SearchActivationCodeResponseBody setActivationCode(String activationCode) {
@@ -59,6 +51,14 @@ public class SearchActivationCodeResponseBody extends TeaModel {
     }
     public String getExpireTimeGMT() {
         return this.expireTimeGMT;
+    }
+
+    public SearchActivationCodeResponseBody setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+    public String getInstanceId() {
+        return this.instanceId;
     }
 
     public SearchActivationCodeResponseBody setStatus(Integer status) {

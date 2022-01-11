@@ -4,25 +4,17 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddOpenKnowledgeResponseBody extends TeaModel {
-    // 请求是否成功
-    @NameInMap("success")
-    public Boolean success;
-
     // 返回结果
     @NameInMap("result")
     public AddOpenKnowledgeResponseBodyResult result;
 
+    // 请求是否成功
+    @NameInMap("success")
+    public Boolean success;
+
     public static AddOpenKnowledgeResponseBody build(java.util.Map<String, ?> map) throws Exception {
         AddOpenKnowledgeResponseBody self = new AddOpenKnowledgeResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public AddOpenKnowledgeResponseBody setSuccess(Boolean success) {
-        this.success = success;
-        return this;
-    }
-    public Boolean getSuccess() {
-        return this.success;
     }
 
     public AddOpenKnowledgeResponseBody setResult(AddOpenKnowledgeResponseBodyResult result) {
@@ -33,11 +25,15 @@ public class AddOpenKnowledgeResponseBody extends TeaModel {
         return this.result;
     }
 
-    public static class AddOpenKnowledgeResponseBodyResult extends TeaModel {
-        // 操作是否成功标识
-        @NameInMap("success")
-        public Boolean success;
+    public AddOpenKnowledgeResponseBody setSuccess(Boolean success) {
+        this.success = success;
+        return this;
+    }
+    public Boolean getSuccess() {
+        return this.success;
+    }
 
+    public static class AddOpenKnowledgeResponseBodyResult extends TeaModel {
         // 知识点ID
         @NameInMap("id")
         public Long id;
@@ -46,17 +42,13 @@ public class AddOpenKnowledgeResponseBody extends TeaModel {
         @NameInMap("message")
         public String message;
 
+        // 操作是否成功标识
+        @NameInMap("success")
+        public Boolean success;
+
         public static AddOpenKnowledgeResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             AddOpenKnowledgeResponseBodyResult self = new AddOpenKnowledgeResponseBodyResult();
             return TeaModel.build(map, self);
-        }
-
-        public AddOpenKnowledgeResponseBodyResult setSuccess(Boolean success) {
-            this.success = success;
-            return this;
-        }
-        public Boolean getSuccess() {
-            return this.success;
         }
 
         public AddOpenKnowledgeResponseBodyResult setId(Long id) {
@@ -73,6 +65,14 @@ public class AddOpenKnowledgeResponseBody extends TeaModel {
         }
         public String getMessage() {
             return this.message;
+        }
+
+        public AddOpenKnowledgeResponseBodyResult setSuccess(Boolean success) {
+            this.success = success;
+            return this;
+        }
+        public Boolean getSuccess() {
+            return this.success;
         }
 
     }

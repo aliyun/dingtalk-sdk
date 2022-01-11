@@ -4,6 +4,10 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryReceiptsByPageRequest extends TeaModel {
+    // 检索结束时间，默认当前时间，离开始时间最长不超过180天
+    @NameInMap("endTime")
+    public Long endTime;
+
     // 数据模型id
     @NameInMap("modelId")
     public String modelId;
@@ -20,10 +24,6 @@ public class QueryReceiptsByPageRequest extends TeaModel {
     @NameInMap("startTime")
     public Long startTime;
 
-    // 检索结束时间，默认当前时间，离开始时间最长不超过180天
-    @NameInMap("endTime")
-    public Long endTime;
-
     // 检索排序时间类型：创建时间(gmt_create)，更新时间(gmt_modified)
     @NameInMap("timeFilterField")
     public String timeFilterField;
@@ -31,6 +31,14 @@ public class QueryReceiptsByPageRequest extends TeaModel {
     public static QueryReceiptsByPageRequest build(java.util.Map<String, ?> map) throws Exception {
         QueryReceiptsByPageRequest self = new QueryReceiptsByPageRequest();
         return TeaModel.build(map, self);
+    }
+
+    public QueryReceiptsByPageRequest setEndTime(Long endTime) {
+        this.endTime = endTime;
+        return this;
+    }
+    public Long getEndTime() {
+        return this.endTime;
     }
 
     public QueryReceiptsByPageRequest setModelId(String modelId) {
@@ -63,14 +71,6 @@ public class QueryReceiptsByPageRequest extends TeaModel {
     }
     public Long getStartTime() {
         return this.startTime;
-    }
-
-    public QueryReceiptsByPageRequest setEndTime(Long endTime) {
-        this.endTime = endTime;
-        return this;
-    }
-    public Long getEndTime() {
-        return this.endTime;
     }
 
     public QueryReceiptsByPageRequest setTimeFilterField(String timeFilterField) {

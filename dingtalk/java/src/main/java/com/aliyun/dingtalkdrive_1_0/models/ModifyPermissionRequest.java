@@ -4,12 +4,12 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class ModifyPermissionRequest extends TeaModel {
+    @NameInMap("members")
+    public java.util.List<ModifyPermissionRequestMembers> members;
+
     // 权限角色
     @NameInMap("role")
     public String role;
-
-    @NameInMap("members")
-    public java.util.List<ModifyPermissionRequestMembers> members;
 
     // 用户id
     @NameInMap("unionId")
@@ -20,20 +20,20 @@ public class ModifyPermissionRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public ModifyPermissionRequest setRole(String role) {
-        this.role = role;
-        return this;
-    }
-    public String getRole() {
-        return this.role;
-    }
-
     public ModifyPermissionRequest setMembers(java.util.List<ModifyPermissionRequestMembers> members) {
         this.members = members;
         return this;
     }
     public java.util.List<ModifyPermissionRequestMembers> getMembers() {
         return this.members;
+    }
+
+    public ModifyPermissionRequest setRole(String role) {
+        this.role = role;
+        return this;
+    }
+    public String getRole() {
+        return this.role;
     }
 
     public ModifyPermissionRequest setUnionId(String unionId) {
@@ -49,13 +49,13 @@ public class ModifyPermissionRequest extends TeaModel {
         @NameInMap("corpId")
         public String corpId;
 
-        // 成员类型
-        @NameInMap("memberType")
-        public String memberType;
-
         // 成员id
         @NameInMap("memberId")
         public String memberId;
+
+        // 成员类型
+        @NameInMap("memberType")
+        public String memberType;
 
         public static ModifyPermissionRequestMembers build(java.util.Map<String, ?> map) throws Exception {
             ModifyPermissionRequestMembers self = new ModifyPermissionRequestMembers();
@@ -70,20 +70,20 @@ public class ModifyPermissionRequest extends TeaModel {
             return this.corpId;
         }
 
-        public ModifyPermissionRequestMembers setMemberType(String memberType) {
-            this.memberType = memberType;
-            return this;
-        }
-        public String getMemberType() {
-            return this.memberType;
-        }
-
         public ModifyPermissionRequestMembers setMemberId(String memberId) {
             this.memberId = memberId;
             return this;
         }
         public String getMemberId() {
             return this.memberId;
+        }
+
+        public ModifyPermissionRequestMembers setMemberType(String memberType) {
+            this.memberType = memberType;
+            return this;
+        }
+        public String getMemberType() {
+            return this.memberType;
         }
 
     }

@@ -4,25 +4,17 @@ package com.aliyun.dingtalkrobot_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchOTOQueryResponseBody extends TeaModel {
-    // 消息发送状态
-    @NameInMap("sendStatus")
-    public String sendStatus;
-
     // 消息已读情况
     @NameInMap("messageReadInfoList")
     public java.util.List<BatchOTOQueryResponseBodyMessageReadInfoList> messageReadInfoList;
 
+    // 消息发送状态
+    @NameInMap("sendStatus")
+    public String sendStatus;
+
     public static BatchOTOQueryResponseBody build(java.util.Map<String, ?> map) throws Exception {
         BatchOTOQueryResponseBody self = new BatchOTOQueryResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public BatchOTOQueryResponseBody setSendStatus(String sendStatus) {
-        this.sendStatus = sendStatus;
-        return this;
-    }
-    public String getSendStatus() {
-        return this.sendStatus;
     }
 
     public BatchOTOQueryResponseBody setMessageReadInfoList(java.util.List<BatchOTOQueryResponseBodyMessageReadInfoList> messageReadInfoList) {
@@ -33,14 +25,18 @@ public class BatchOTOQueryResponseBody extends TeaModel {
         return this.messageReadInfoList;
     }
 
+    public BatchOTOQueryResponseBody setSendStatus(String sendStatus) {
+        this.sendStatus = sendStatus;
+        return this;
+    }
+    public String getSendStatus() {
+        return this.sendStatus;
+    }
+
     public static class BatchOTOQueryResponseBodyMessageReadInfoList extends TeaModel {
         // 姓名
         @NameInMap("name")
         public String name;
-
-        // 工号
-        @NameInMap("userId")
-        public String userId;
 
         // 已读状态
         @NameInMap("readStatus")
@@ -49,6 +45,10 @@ public class BatchOTOQueryResponseBody extends TeaModel {
         // 已读时间
         @NameInMap("readTimestamp")
         public Long readTimestamp;
+
+        // 工号
+        @NameInMap("userId")
+        public String userId;
 
         public static BatchOTOQueryResponseBodyMessageReadInfoList build(java.util.Map<String, ?> map) throws Exception {
             BatchOTOQueryResponseBodyMessageReadInfoList self = new BatchOTOQueryResponseBodyMessageReadInfoList();
@@ -61,14 +61,6 @@ public class BatchOTOQueryResponseBody extends TeaModel {
         }
         public String getName() {
             return this.name;
-        }
-
-        public BatchOTOQueryResponseBodyMessageReadInfoList setUserId(String userId) {
-            this.userId = userId;
-            return this;
-        }
-        public String getUserId() {
-            return this.userId;
         }
 
         public BatchOTOQueryResponseBodyMessageReadInfoList setReadStatus(String readStatus) {
@@ -85,6 +77,14 @@ public class BatchOTOQueryResponseBody extends TeaModel {
         }
         public Long getReadTimestamp() {
             return this.readTimestamp;
+        }
+
+        public BatchOTOQueryResponseBodyMessageReadInfoList setUserId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+        public String getUserId() {
+            return this.userId;
         }
 
     }

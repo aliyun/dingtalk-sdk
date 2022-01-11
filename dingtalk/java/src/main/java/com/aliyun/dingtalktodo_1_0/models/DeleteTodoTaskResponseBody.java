@@ -4,25 +4,17 @@ package com.aliyun.dingtalktodo_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteTodoTaskResponseBody extends TeaModel {
-    // 删除结果
-    @NameInMap("result")
-    public Boolean result;
-
     // requestId
     @NameInMap("requestId")
     public String requestId;
 
+    // 删除结果
+    @NameInMap("result")
+    public Boolean result;
+
     public static DeleteTodoTaskResponseBody build(java.util.Map<String, ?> map) throws Exception {
         DeleteTodoTaskResponseBody self = new DeleteTodoTaskResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public DeleteTodoTaskResponseBody setResult(Boolean result) {
-        this.result = result;
-        return this;
-    }
-    public Boolean getResult() {
-        return this.result;
     }
 
     public DeleteTodoTaskResponseBody setRequestId(String requestId) {
@@ -31,6 +23,14 @@ public class DeleteTodoTaskResponseBody extends TeaModel {
     }
     public String getRequestId() {
         return this.requestId;
+    }
+
+    public DeleteTodoTaskResponseBody setResult(Boolean result) {
+        this.result = result;
+        return this;
+    }
+    public Boolean getResult() {
+        return this.result;
     }
 
 }

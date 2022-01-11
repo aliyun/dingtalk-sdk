@@ -8,13 +8,13 @@ public class CreateBatchTradeOrderResponseBody extends TeaModel {
     @NameInMap("orderNo")
     public String orderNo;
 
-    // 商户批次号
-    @NameInMap("outBatchNo")
-    public String outBatchNo;
-
     // 批次订单状态
     @NameInMap("orderStatus")
     public String orderStatus;
+
+    // 商户批次号
+    @NameInMap("outBatchNo")
+    public String outBatchNo;
 
     public static CreateBatchTradeOrderResponseBody build(java.util.Map<String, ?> map) throws Exception {
         CreateBatchTradeOrderResponseBody self = new CreateBatchTradeOrderResponseBody();
@@ -29,20 +29,20 @@ public class CreateBatchTradeOrderResponseBody extends TeaModel {
         return this.orderNo;
     }
 
-    public CreateBatchTradeOrderResponseBody setOutBatchNo(String outBatchNo) {
-        this.outBatchNo = outBatchNo;
-        return this;
-    }
-    public String getOutBatchNo() {
-        return this.outBatchNo;
-    }
-
     public CreateBatchTradeOrderResponseBody setOrderStatus(String orderStatus) {
         this.orderStatus = orderStatus;
         return this;
     }
     public String getOrderStatus() {
         return this.orderStatus;
+    }
+
+    public CreateBatchTradeOrderResponseBody setOutBatchNo(String outBatchNo) {
+        this.outBatchNo = outBatchNo;
+        return this;
+    }
+    public String getOutBatchNo() {
+        return this.outBatchNo;
     }
 
 }

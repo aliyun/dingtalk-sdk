@@ -46,6 +46,10 @@ public class GetAuthInfoResponseBody extends TeaModel {
     }
 
     public static class GetAuthInfoResponseBodyAuthAppInfoAgentList extends TeaModel {
+        // 对此微应用有管理权限的管理员列表
+        @NameInMap("adminList")
+        public java.util.List<String> adminList;
+
         // 应用id
         @NameInMap("agentId")
         public Long agentId;
@@ -58,13 +62,17 @@ public class GetAuthInfoResponseBody extends TeaModel {
         @NameInMap("appId")
         public Long appId;
 
-        // 对此微应用有管理权限的管理员列表
-        @NameInMap("adminList")
-        public java.util.List<String> adminList;
-
         public static GetAuthInfoResponseBodyAuthAppInfoAgentList build(java.util.Map<String, ?> map) throws Exception {
             GetAuthInfoResponseBodyAuthAppInfoAgentList self = new GetAuthInfoResponseBodyAuthAppInfoAgentList();
             return TeaModel.build(map, self);
+        }
+
+        public GetAuthInfoResponseBodyAuthAppInfoAgentList setAdminList(java.util.List<String> adminList) {
+            this.adminList = adminList;
+            return this;
+        }
+        public java.util.List<String> getAdminList() {
+            return this.adminList;
         }
 
         public GetAuthInfoResponseBodyAuthAppInfoAgentList setAgentId(Long agentId) {
@@ -91,14 +99,6 @@ public class GetAuthInfoResponseBody extends TeaModel {
             return this.appId;
         }
 
-        public GetAuthInfoResponseBodyAuthAppInfoAgentList setAdminList(java.util.List<String> adminList) {
-            this.adminList = adminList;
-            return this;
-        }
-        public java.util.List<String> getAdminList() {
-            return this.adminList;
-        }
-
     }
 
     public static class GetAuthInfoResponseBodyAuthAppInfo extends TeaModel {
@@ -121,22 +121,6 @@ public class GetAuthInfoResponseBody extends TeaModel {
     }
 
     public static class GetAuthInfoResponseBodyAuthCorpInfo extends TeaModel {
-        // 邀请码，只有自己邀请的企业才会返回邀请码，可用该邀请码统计不同渠道的拉新，否则值为空字符串。
-        @NameInMap("inviteCode")
-        public String inviteCode;
-
-        // 企业所属行业。
-        @NameInMap("industry")
-        public String industry;
-
-        // 授权方企业名称。
-        @NameInMap("corpName")
-        public String corpName;
-
-        // 序列号。
-        @NameInMap("licenseCode")
-        public String licenseCode;
-
         // 渠道码。
         @NameInMap("authChannel")
         public String authChannel;
@@ -149,49 +133,33 @@ public class GetAuthInfoResponseBody extends TeaModel {
         @NameInMap("authLevel")
         public Long authLevel;
 
-        // 企业邀请链接。
-        @NameInMap("inviteUrl")
-        public String inviteUrl;
-
         // 企业logo。
         @NameInMap("corpLogoUrl")
         public String corpLogoUrl;
 
+        // 授权方企业名称。
+        @NameInMap("corpName")
+        public String corpName;
+
+        // 企业所属行业。
+        @NameInMap("industry")
+        public String industry;
+
+        // 邀请码，只有自己邀请的企业才会返回邀请码，可用该邀请码统计不同渠道的拉新，否则值为空字符串。
+        @NameInMap("inviteCode")
+        public String inviteCode;
+
+        // 企业邀请链接。
+        @NameInMap("inviteUrl")
+        public String inviteUrl;
+
+        // 序列号。
+        @NameInMap("licenseCode")
+        public String licenseCode;
+
         public static GetAuthInfoResponseBodyAuthCorpInfo build(java.util.Map<String, ?> map) throws Exception {
             GetAuthInfoResponseBodyAuthCorpInfo self = new GetAuthInfoResponseBodyAuthCorpInfo();
             return TeaModel.build(map, self);
-        }
-
-        public GetAuthInfoResponseBodyAuthCorpInfo setInviteCode(String inviteCode) {
-            this.inviteCode = inviteCode;
-            return this;
-        }
-        public String getInviteCode() {
-            return this.inviteCode;
-        }
-
-        public GetAuthInfoResponseBodyAuthCorpInfo setIndustry(String industry) {
-            this.industry = industry;
-            return this;
-        }
-        public String getIndustry() {
-            return this.industry;
-        }
-
-        public GetAuthInfoResponseBodyAuthCorpInfo setCorpName(String corpName) {
-            this.corpName = corpName;
-            return this;
-        }
-        public String getCorpName() {
-            return this.corpName;
-        }
-
-        public GetAuthInfoResponseBodyAuthCorpInfo setLicenseCode(String licenseCode) {
-            this.licenseCode = licenseCode;
-            return this;
-        }
-        public String getLicenseCode() {
-            return this.licenseCode;
         }
 
         public GetAuthInfoResponseBodyAuthCorpInfo setAuthChannel(String authChannel) {
@@ -218,6 +186,38 @@ public class GetAuthInfoResponseBody extends TeaModel {
             return this.authLevel;
         }
 
+        public GetAuthInfoResponseBodyAuthCorpInfo setCorpLogoUrl(String corpLogoUrl) {
+            this.corpLogoUrl = corpLogoUrl;
+            return this;
+        }
+        public String getCorpLogoUrl() {
+            return this.corpLogoUrl;
+        }
+
+        public GetAuthInfoResponseBodyAuthCorpInfo setCorpName(String corpName) {
+            this.corpName = corpName;
+            return this;
+        }
+        public String getCorpName() {
+            return this.corpName;
+        }
+
+        public GetAuthInfoResponseBodyAuthCorpInfo setIndustry(String industry) {
+            this.industry = industry;
+            return this;
+        }
+        public String getIndustry() {
+            return this.industry;
+        }
+
+        public GetAuthInfoResponseBodyAuthCorpInfo setInviteCode(String inviteCode) {
+            this.inviteCode = inviteCode;
+            return this;
+        }
+        public String getInviteCode() {
+            return this.inviteCode;
+        }
+
         public GetAuthInfoResponseBodyAuthCorpInfo setInviteUrl(String inviteUrl) {
             this.inviteUrl = inviteUrl;
             return this;
@@ -226,12 +226,12 @@ public class GetAuthInfoResponseBody extends TeaModel {
             return this.inviteUrl;
         }
 
-        public GetAuthInfoResponseBodyAuthCorpInfo setCorpLogoUrl(String corpLogoUrl) {
-            this.corpLogoUrl = corpLogoUrl;
+        public GetAuthInfoResponseBodyAuthCorpInfo setLicenseCode(String licenseCode) {
+            this.licenseCode = licenseCode;
             return this;
         }
-        public String getCorpLogoUrl() {
-            return this.corpLogoUrl;
+        public String getLicenseCode() {
+            return this.licenseCode;
         }
 
     }

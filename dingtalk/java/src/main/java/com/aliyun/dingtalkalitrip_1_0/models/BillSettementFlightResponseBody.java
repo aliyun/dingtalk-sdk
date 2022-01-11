@@ -4,33 +4,25 @@ package com.aliyun.dingtalkalitrip_1_0.models;
 import com.aliyun.tea.*;
 
 public class BillSettementFlightResponseBody extends TeaModel {
-    // 结果msg
-    @NameInMap("resultMsg")
-    public String resultMsg;
-
     // module
     @NameInMap("module")
     public BillSettementFlightResponseBodyModule module;
-
-    // 是否成功
-    @NameInMap("success")
-    public Boolean success;
 
     // 结果code
     @NameInMap("resultCode")
     public Long resultCode;
 
+    // 结果msg
+    @NameInMap("resultMsg")
+    public String resultMsg;
+
+    // 是否成功
+    @NameInMap("success")
+    public Boolean success;
+
     public static BillSettementFlightResponseBody build(java.util.Map<String, ?> map) throws Exception {
         BillSettementFlightResponseBody self = new BillSettementFlightResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public BillSettementFlightResponseBody setResultMsg(String resultMsg) {
-        this.resultMsg = resultMsg;
-        return this;
-    }
-    public String getResultMsg() {
-        return this.resultMsg;
     }
 
     public BillSettementFlightResponseBody setModule(BillSettementFlightResponseBodyModule module) {
@@ -41,20 +33,28 @@ public class BillSettementFlightResponseBody extends TeaModel {
         return this.module;
     }
 
-    public BillSettementFlightResponseBody setSuccess(Boolean success) {
-        this.success = success;
-        return this;
-    }
-    public Boolean getSuccess() {
-        return this.success;
-    }
-
     public BillSettementFlightResponseBody setResultCode(Long resultCode) {
         this.resultCode = resultCode;
         return this;
     }
     public Long getResultCode() {
         return this.resultCode;
+    }
+
+    public BillSettementFlightResponseBody setResultMsg(String resultMsg) {
+        this.resultMsg = resultMsg;
+        return this;
+    }
+    public String getResultMsg() {
+        return this.resultMsg;
+    }
+
+    public BillSettementFlightResponseBody setSuccess(Boolean success) {
+        this.success = success;
+        return this;
+    }
+    public Boolean getSuccess() {
+        return this.success;
     }
 
     public static class BillSettementFlightResponseBodyModuleDataList extends TeaModel {
@@ -105,6 +105,10 @@ public class BillSettementFlightResponseBody extends TeaModel {
         // 预订人use id
         @NameInMap("bookerId")
         public String bookerId;
+
+        // 预订人工号
+        @NameInMap("bookerJobNo")
+        public String bookerJobNo;
 
         // 预订人名称
         @NameInMap("bookerName")
@@ -310,6 +314,10 @@ public class BillSettementFlightResponseBody extends TeaModel {
         @NameInMap("travelerId")
         public String travelerId;
 
+        // 出行人工号
+        @NameInMap("travelerJobNo")
+        public String travelerJobNo;
+
         // 出行人名称
         @NameInMap("travelerName")
         public String travelerName;
@@ -317,14 +325,6 @@ public class BillSettementFlightResponseBody extends TeaModel {
         // 改签差价
         @NameInMap("upgradeCost")
         public Double upgradeCost;
-
-        // 预订人工号
-        @NameInMap("bookerJobNo")
-        public String bookerJobNo;
-
-        // 出行人工号
-        @NameInMap("travelerJobNo")
-        public String travelerJobNo;
 
         public static BillSettementFlightResponseBodyModuleDataList build(java.util.Map<String, ?> map) throws Exception {
             BillSettementFlightResponseBodyModuleDataList self = new BillSettementFlightResponseBodyModuleDataList();
@@ -425,6 +425,14 @@ public class BillSettementFlightResponseBody extends TeaModel {
         }
         public String getBookerId() {
             return this.bookerId;
+        }
+
+        public BillSettementFlightResponseBodyModuleDataList setBookerJobNo(String bookerJobNo) {
+            this.bookerJobNo = bookerJobNo;
+            return this;
+        }
+        public String getBookerJobNo() {
+            return this.bookerJobNo;
         }
 
         public BillSettementFlightResponseBodyModuleDataList setBookerName(String bookerName) {
@@ -835,6 +843,14 @@ public class BillSettementFlightResponseBody extends TeaModel {
             return this.travelerId;
         }
 
+        public BillSettementFlightResponseBodyModuleDataList setTravelerJobNo(String travelerJobNo) {
+            this.travelerJobNo = travelerJobNo;
+            return this;
+        }
+        public String getTravelerJobNo() {
+            return this.travelerJobNo;
+        }
+
         public BillSettementFlightResponseBodyModuleDataList setTravelerName(String travelerName) {
             this.travelerName = travelerName;
             return this;
@@ -849,22 +865,6 @@ public class BillSettementFlightResponseBody extends TeaModel {
         }
         public Double getUpgradeCost() {
             return this.upgradeCost;
-        }
-
-        public BillSettementFlightResponseBodyModuleDataList setBookerJobNo(String bookerJobNo) {
-            this.bookerJobNo = bookerJobNo;
-            return this;
-        }
-        public String getBookerJobNo() {
-            return this.bookerJobNo;
-        }
-
-        public BillSettementFlightResponseBodyModuleDataList setTravelerJobNo(String travelerJobNo) {
-            this.travelerJobNo = travelerJobNo;
-            return this;
-        }
-        public String getTravelerJobNo() {
-            return this.travelerJobNo;
         }
 
     }

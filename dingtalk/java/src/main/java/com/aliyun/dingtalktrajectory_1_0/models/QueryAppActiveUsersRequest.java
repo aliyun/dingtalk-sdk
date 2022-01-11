@@ -4,6 +4,10 @@ package com.aliyun.dingtalktrajectory_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryAppActiveUsersRequest extends TeaModel {
+    // 本次读取的最大数据记录数量
+    @NameInMap("maxResults")
+    public Long maxResults;
+
     // 是否需要返回位置信息
     @NameInMap("needPositionInfo")
     public Boolean needPositionInfo;
@@ -12,13 +16,17 @@ public class QueryAppActiveUsersRequest extends TeaModel {
     @NameInMap("nextToken")
     public Long nextToken;
 
-    // 本次读取的最大数据记录数量
-    @NameInMap("maxResults")
-    public Long maxResults;
-
     public static QueryAppActiveUsersRequest build(java.util.Map<String, ?> map) throws Exception {
         QueryAppActiveUsersRequest self = new QueryAppActiveUsersRequest();
         return TeaModel.build(map, self);
+    }
+
+    public QueryAppActiveUsersRequest setMaxResults(Long maxResults) {
+        this.maxResults = maxResults;
+        return this;
+    }
+    public Long getMaxResults() {
+        return this.maxResults;
     }
 
     public QueryAppActiveUsersRequest setNeedPositionInfo(Boolean needPositionInfo) {
@@ -35,14 +43,6 @@ public class QueryAppActiveUsersRequest extends TeaModel {
     }
     public Long getNextToken() {
         return this.nextToken;
-    }
-
-    public QueryAppActiveUsersRequest setMaxResults(Long maxResults) {
-        this.maxResults = maxResults;
-        return this;
-    }
-    public Long getMaxResults() {
-        return this.maxResults;
     }
 
 }

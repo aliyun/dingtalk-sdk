@@ -32,6 +32,14 @@ public class GetCommentListResponseBody extends TeaModel {
     }
 
     public static class GetCommentListResponseBodyData extends TeaModel {
+        // 评论ID
+        @NameInMap("commentId")
+        public String commentId;
+
+        // 评论时间
+        @NameInMap("commentTime")
+        public Float commentTime;
+
         // 评论者姓名
         @NameInMap("commentUserName")
         public String commentUserName;
@@ -40,17 +48,25 @@ public class GetCommentListResponseBody extends TeaModel {
         @NameInMap("content")
         public String content;
 
-        // 评论时间
-        @NameInMap("commentTime")
-        public Float commentTime;
-
-        // 评论ID
-        @NameInMap("commentId")
-        public String commentId;
-
         public static GetCommentListResponseBodyData build(java.util.Map<String, ?> map) throws Exception {
             GetCommentListResponseBodyData self = new GetCommentListResponseBodyData();
             return TeaModel.build(map, self);
+        }
+
+        public GetCommentListResponseBodyData setCommentId(String commentId) {
+            this.commentId = commentId;
+            return this;
+        }
+        public String getCommentId() {
+            return this.commentId;
+        }
+
+        public GetCommentListResponseBodyData setCommentTime(Float commentTime) {
+            this.commentTime = commentTime;
+            return this;
+        }
+        public Float getCommentTime() {
+            return this.commentTime;
         }
 
         public GetCommentListResponseBodyData setCommentUserName(String commentUserName) {
@@ -67,22 +83,6 @@ public class GetCommentListResponseBody extends TeaModel {
         }
         public String getContent() {
             return this.content;
-        }
-
-        public GetCommentListResponseBodyData setCommentTime(Float commentTime) {
-            this.commentTime = commentTime;
-            return this;
-        }
-        public Float getCommentTime() {
-            return this.commentTime;
-        }
-
-        public GetCommentListResponseBodyData setCommentId(String commentId) {
-            this.commentId = commentId;
-            return this;
-        }
-        public String getCommentId() {
-            return this.commentId;
         }
 
     }

@@ -4,20 +4,8 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateResidentBlackBoardRequest extends TeaModel {
-    @NameInMap("dingIsvOrgId")
-    public Long dingIsvOrgId;
-
-    @NameInMap("dingCorpId")
-    public String dingCorpId;
-
-    @NameInMap("dingSuiteKey")
-    public String dingSuiteKey;
-
-    @NameInMap("dingTokenGrantType")
-    public Long dingTokenGrantType;
-
-    @NameInMap("title")
-    public String title;
+    @NameInMap("blackboardId")
+    public String blackboardId;
 
     @NameInMap("context")
     public String context;
@@ -25,52 +13,20 @@ public class UpdateResidentBlackBoardRequest extends TeaModel {
     @NameInMap("mediaId")
     public String mediaId;
 
-    @NameInMap("blackboardId")
-    public String blackboardId;
+    @NameInMap("title")
+    public String title;
 
     public static UpdateResidentBlackBoardRequest build(java.util.Map<String, ?> map) throws Exception {
         UpdateResidentBlackBoardRequest self = new UpdateResidentBlackBoardRequest();
         return TeaModel.build(map, self);
     }
 
-    public UpdateResidentBlackBoardRequest setDingIsvOrgId(Long dingIsvOrgId) {
-        this.dingIsvOrgId = dingIsvOrgId;
+    public UpdateResidentBlackBoardRequest setBlackboardId(String blackboardId) {
+        this.blackboardId = blackboardId;
         return this;
     }
-    public Long getDingIsvOrgId() {
-        return this.dingIsvOrgId;
-    }
-
-    public UpdateResidentBlackBoardRequest setDingCorpId(String dingCorpId) {
-        this.dingCorpId = dingCorpId;
-        return this;
-    }
-    public String getDingCorpId() {
-        return this.dingCorpId;
-    }
-
-    public UpdateResidentBlackBoardRequest setDingSuiteKey(String dingSuiteKey) {
-        this.dingSuiteKey = dingSuiteKey;
-        return this;
-    }
-    public String getDingSuiteKey() {
-        return this.dingSuiteKey;
-    }
-
-    public UpdateResidentBlackBoardRequest setDingTokenGrantType(Long dingTokenGrantType) {
-        this.dingTokenGrantType = dingTokenGrantType;
-        return this;
-    }
-    public Long getDingTokenGrantType() {
-        return this.dingTokenGrantType;
-    }
-
-    public UpdateResidentBlackBoardRequest setTitle(String title) {
-        this.title = title;
-        return this;
-    }
-    public String getTitle() {
-        return this.title;
+    public String getBlackboardId() {
+        return this.blackboardId;
     }
 
     public UpdateResidentBlackBoardRequest setContext(String context) {
@@ -89,12 +45,12 @@ public class UpdateResidentBlackBoardRequest extends TeaModel {
         return this.mediaId;
     }
 
-    public UpdateResidentBlackBoardRequest setBlackboardId(String blackboardId) {
-        this.blackboardId = blackboardId;
+    public UpdateResidentBlackBoardRequest setTitle(String title) {
+        this.title = title;
         return this;
     }
-    public String getBlackboardId() {
-        return this.blackboardId;
+    public String getTitle() {
+        return this.title;
     }
 
 }

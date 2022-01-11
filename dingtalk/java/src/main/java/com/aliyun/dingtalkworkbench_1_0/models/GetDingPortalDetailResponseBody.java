@@ -46,57 +46,41 @@ public class GetDingPortalDetailResponseBody extends TeaModel {
     }
 
     public static class GetDingPortalDetailResponseBodyPages extends TeaModel {
-        // 页面ID
-        @NameInMap("pageUuid")
-        public String pageUuid;
-
-        // 页面名称
-        @NameInMap("pageName")
-        public String pageName;
-
-        // 可见员工 ID 列表
-        @NameInMap("userids")
-        public java.util.List<String> userids;
+        // 是否全公司可见
+        @NameInMap("allVisible")
+        public Boolean allVisible;
 
         // 可见部门 ID 铺
         @NameInMap("deptIds")
         public java.util.List<Long> deptIds;
 
+        // 页面名称
+        @NameInMap("pageName")
+        public String pageName;
+
+        // 页面ID
+        @NameInMap("pageUuid")
+        public String pageUuid;
+
         // 可见角色列表
         @NameInMap("roleIds")
         public java.util.List<Long> roleIds;
 
-        // 是否全公司可见
-        @NameInMap("allVisible")
-        public Boolean allVisible;
+        // 可见员工 ID 列表
+        @NameInMap("userids")
+        public java.util.List<String> userids;
 
         public static GetDingPortalDetailResponseBodyPages build(java.util.Map<String, ?> map) throws Exception {
             GetDingPortalDetailResponseBodyPages self = new GetDingPortalDetailResponseBodyPages();
             return TeaModel.build(map, self);
         }
 
-        public GetDingPortalDetailResponseBodyPages setPageUuid(String pageUuid) {
-            this.pageUuid = pageUuid;
+        public GetDingPortalDetailResponseBodyPages setAllVisible(Boolean allVisible) {
+            this.allVisible = allVisible;
             return this;
         }
-        public String getPageUuid() {
-            return this.pageUuid;
-        }
-
-        public GetDingPortalDetailResponseBodyPages setPageName(String pageName) {
-            this.pageName = pageName;
-            return this;
-        }
-        public String getPageName() {
-            return this.pageName;
-        }
-
-        public GetDingPortalDetailResponseBodyPages setUserids(java.util.List<String> userids) {
-            this.userids = userids;
-            return this;
-        }
-        public java.util.List<String> getUserids() {
-            return this.userids;
+        public Boolean getAllVisible() {
+            return this.allVisible;
         }
 
         public GetDingPortalDetailResponseBodyPages setDeptIds(java.util.List<Long> deptIds) {
@@ -107,6 +91,22 @@ public class GetDingPortalDetailResponseBody extends TeaModel {
             return this.deptIds;
         }
 
+        public GetDingPortalDetailResponseBodyPages setPageName(String pageName) {
+            this.pageName = pageName;
+            return this;
+        }
+        public String getPageName() {
+            return this.pageName;
+        }
+
+        public GetDingPortalDetailResponseBodyPages setPageUuid(String pageUuid) {
+            this.pageUuid = pageUuid;
+            return this;
+        }
+        public String getPageUuid() {
+            return this.pageUuid;
+        }
+
         public GetDingPortalDetailResponseBodyPages setRoleIds(java.util.List<Long> roleIds) {
             this.roleIds = roleIds;
             return this;
@@ -115,12 +115,12 @@ public class GetDingPortalDetailResponseBody extends TeaModel {
             return this.roleIds;
         }
 
-        public GetDingPortalDetailResponseBodyPages setAllVisible(Boolean allVisible) {
-            this.allVisible = allVisible;
+        public GetDingPortalDetailResponseBodyPages setUserids(java.util.List<String> userids) {
+            this.userids = userids;
             return this;
         }
-        public Boolean getAllVisible() {
-            return this.allVisible;
+        public java.util.List<String> getUserids() {
+            return this.userids;
         }
 
     }

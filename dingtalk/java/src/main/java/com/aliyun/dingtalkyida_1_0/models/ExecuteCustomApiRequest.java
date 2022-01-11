@@ -4,14 +4,11 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class ExecuteCustomApiRequest extends TeaModel {
-    @NameInMap("data")
-    public String data;
-
     @NameInMap("appType")
     public String appType;
 
-    @NameInMap("systemToken")
-    public String systemToken;
+    @NameInMap("data")
+    public String data;
 
     @NameInMap("language")
     public String language;
@@ -19,20 +16,15 @@ public class ExecuteCustomApiRequest extends TeaModel {
     @NameInMap("serviceId")
     public String serviceId;
 
+    @NameInMap("systemToken")
+    public String systemToken;
+
     @NameInMap("userId")
     public String userId;
 
     public static ExecuteCustomApiRequest build(java.util.Map<String, ?> map) throws Exception {
         ExecuteCustomApiRequest self = new ExecuteCustomApiRequest();
         return TeaModel.build(map, self);
-    }
-
-    public ExecuteCustomApiRequest setData(String data) {
-        this.data = data;
-        return this;
-    }
-    public String getData() {
-        return this.data;
     }
 
     public ExecuteCustomApiRequest setAppType(String appType) {
@@ -43,12 +35,12 @@ public class ExecuteCustomApiRequest extends TeaModel {
         return this.appType;
     }
 
-    public ExecuteCustomApiRequest setSystemToken(String systemToken) {
-        this.systemToken = systemToken;
+    public ExecuteCustomApiRequest setData(String data) {
+        this.data = data;
         return this;
     }
-    public String getSystemToken() {
-        return this.systemToken;
+    public String getData() {
+        return this.data;
     }
 
     public ExecuteCustomApiRequest setLanguage(String language) {
@@ -65,6 +57,14 @@ public class ExecuteCustomApiRequest extends TeaModel {
     }
     public String getServiceId() {
         return this.serviceId;
+    }
+
+    public ExecuteCustomApiRequest setSystemToken(String systemToken) {
+        this.systemToken = systemToken;
+        return this;
+    }
+    public String getSystemToken() {
+        return this.systemToken;
     }
 
     public ExecuteCustomApiRequest setUserId(String userId) {

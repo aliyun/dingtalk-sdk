@@ -65,9 +65,6 @@ public class GetFlowDetailResponseBody extends TeaModel {
     }
 
     public static class GetFlowDetailResponseBodyLogs extends TeaModel {
-        @NameInMap("operatorAccountName")
-        public String operatorAccountName;
-
         @NameInMap("logType")
         public String logType;
 
@@ -77,17 +74,12 @@ public class GetFlowDetailResponseBody extends TeaModel {
         @NameInMap("operateTime")
         public Float operateTime;
 
+        @NameInMap("operatorAccountName")
+        public String operatorAccountName;
+
         public static GetFlowDetailResponseBodyLogs build(java.util.Map<String, ?> map) throws Exception {
             GetFlowDetailResponseBodyLogs self = new GetFlowDetailResponseBodyLogs();
             return TeaModel.build(map, self);
-        }
-
-        public GetFlowDetailResponseBodyLogs setOperatorAccountName(String operatorAccountName) {
-            this.operatorAccountName = operatorAccountName;
-            return this;
-        }
-        public String getOperatorAccountName() {
-            return this.operatorAccountName;
         }
 
         public GetFlowDetailResponseBodyLogs setLogType(String logType) {
@@ -112,6 +104,14 @@ public class GetFlowDetailResponseBody extends TeaModel {
         }
         public Float getOperateTime() {
             return this.operateTime;
+        }
+
+        public GetFlowDetailResponseBodyLogs setOperatorAccountName(String operatorAccountName) {
+            this.operatorAccountName = operatorAccountName;
+            return this;
+        }
+        public String getOperatorAccountName() {
+            return this.operatorAccountName;
         }
 
     }

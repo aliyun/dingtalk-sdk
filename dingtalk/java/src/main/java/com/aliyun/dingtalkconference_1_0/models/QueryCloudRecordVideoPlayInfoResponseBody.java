@@ -4,21 +4,21 @@ package com.aliyun.dingtalkconference_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryCloudRecordVideoPlayInfoResponseBody extends TeaModel {
-    // 在线播放链接
-    @NameInMap("playUrl")
-    public String playUrl;
-
-    // MP4格式下载链接
-    @NameInMap("mp4FileUrl")
-    public String mp4FileUrl;
+    // 时长
+    @NameInMap("duration")
+    public Long duration;
 
     // 大小
     @NameInMap("fileSize")
     public Long fileSize;
 
-    // 时长
-    @NameInMap("duration")
-    public Long duration;
+    // MP4格式下载链接
+    @NameInMap("mp4FileUrl")
+    public String mp4FileUrl;
+
+    // 在线播放链接
+    @NameInMap("playUrl")
+    public String playUrl;
 
     // 状态
     @NameInMap("status")
@@ -29,20 +29,12 @@ public class QueryCloudRecordVideoPlayInfoResponseBody extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public QueryCloudRecordVideoPlayInfoResponseBody setPlayUrl(String playUrl) {
-        this.playUrl = playUrl;
+    public QueryCloudRecordVideoPlayInfoResponseBody setDuration(Long duration) {
+        this.duration = duration;
         return this;
     }
-    public String getPlayUrl() {
-        return this.playUrl;
-    }
-
-    public QueryCloudRecordVideoPlayInfoResponseBody setMp4FileUrl(String mp4FileUrl) {
-        this.mp4FileUrl = mp4FileUrl;
-        return this;
-    }
-    public String getMp4FileUrl() {
-        return this.mp4FileUrl;
+    public Long getDuration() {
+        return this.duration;
     }
 
     public QueryCloudRecordVideoPlayInfoResponseBody setFileSize(Long fileSize) {
@@ -53,12 +45,20 @@ public class QueryCloudRecordVideoPlayInfoResponseBody extends TeaModel {
         return this.fileSize;
     }
 
-    public QueryCloudRecordVideoPlayInfoResponseBody setDuration(Long duration) {
-        this.duration = duration;
+    public QueryCloudRecordVideoPlayInfoResponseBody setMp4FileUrl(String mp4FileUrl) {
+        this.mp4FileUrl = mp4FileUrl;
         return this;
     }
-    public Long getDuration() {
-        return this.duration;
+    public String getMp4FileUrl() {
+        return this.mp4FileUrl;
+    }
+
+    public QueryCloudRecordVideoPlayInfoResponseBody setPlayUrl(String playUrl) {
+        this.playUrl = playUrl;
+        return this;
+    }
+    public String getPlayUrl() {
+        return this.playUrl;
     }
 
     public QueryCloudRecordVideoPlayInfoResponseBody setStatus(Long status) {

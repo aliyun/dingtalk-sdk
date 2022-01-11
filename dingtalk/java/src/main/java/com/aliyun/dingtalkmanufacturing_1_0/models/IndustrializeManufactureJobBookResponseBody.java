@@ -4,53 +4,37 @@ package com.aliyun.dingtalkmanufacturing_1_0.models;
 import com.aliyun.tea.*;
 
 public class IndustrializeManufactureJobBookResponseBody extends TeaModel {
-    // httpCode
-    @NameInMap("httpCode")
-    public String httpCode;
-
-    // 此次报工记录的唯一标识
-    @NameInMap("uuid")
-    public String uuid;
-
     // content
     @NameInMap("content")
     public String content;
-
-    // errorMsg
-    @NameInMap("errorMsg")
-    public String errorMsg;
-
-    // errorLevel
-    @NameInMap("errorLevel")
-    public Integer errorLevel;
 
     // errorCode
     @NameInMap("errorCode")
     public String errorCode;
 
+    // errorLevel
+    @NameInMap("errorLevel")
+    public Integer errorLevel;
+
+    // errorMsg
+    @NameInMap("errorMsg")
+    public String errorMsg;
+
+    // httpCode
+    @NameInMap("httpCode")
+    public String httpCode;
+
     // success
     @NameInMap("success")
     public Boolean success;
 
+    // 此次报工记录的唯一标识
+    @NameInMap("uuid")
+    public String uuid;
+
     public static IndustrializeManufactureJobBookResponseBody build(java.util.Map<String, ?> map) throws Exception {
         IndustrializeManufactureJobBookResponseBody self = new IndustrializeManufactureJobBookResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public IndustrializeManufactureJobBookResponseBody setHttpCode(String httpCode) {
-        this.httpCode = httpCode;
-        return this;
-    }
-    public String getHttpCode() {
-        return this.httpCode;
-    }
-
-    public IndustrializeManufactureJobBookResponseBody setUuid(String uuid) {
-        this.uuid = uuid;
-        return this;
-    }
-    public String getUuid() {
-        return this.uuid;
     }
 
     public IndustrializeManufactureJobBookResponseBody setContent(String content) {
@@ -61,12 +45,12 @@ public class IndustrializeManufactureJobBookResponseBody extends TeaModel {
         return this.content;
     }
 
-    public IndustrializeManufactureJobBookResponseBody setErrorMsg(String errorMsg) {
-        this.errorMsg = errorMsg;
+    public IndustrializeManufactureJobBookResponseBody setErrorCode(String errorCode) {
+        this.errorCode = errorCode;
         return this;
     }
-    public String getErrorMsg() {
-        return this.errorMsg;
+    public String getErrorCode() {
+        return this.errorCode;
     }
 
     public IndustrializeManufactureJobBookResponseBody setErrorLevel(Integer errorLevel) {
@@ -77,12 +61,20 @@ public class IndustrializeManufactureJobBookResponseBody extends TeaModel {
         return this.errorLevel;
     }
 
-    public IndustrializeManufactureJobBookResponseBody setErrorCode(String errorCode) {
-        this.errorCode = errorCode;
+    public IndustrializeManufactureJobBookResponseBody setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
         return this;
     }
-    public String getErrorCode() {
-        return this.errorCode;
+    public String getErrorMsg() {
+        return this.errorMsg;
+    }
+
+    public IndustrializeManufactureJobBookResponseBody setHttpCode(String httpCode) {
+        this.httpCode = httpCode;
+        return this;
+    }
+    public String getHttpCode() {
+        return this.httpCode;
     }
 
     public IndustrializeManufactureJobBookResponseBody setSuccess(Boolean success) {
@@ -91,6 +83,14 @@ public class IndustrializeManufactureJobBookResponseBody extends TeaModel {
     }
     public Boolean getSuccess() {
         return this.success;
+    }
+
+    public IndustrializeManufactureJobBookResponseBody setUuid(String uuid) {
+        this.uuid = uuid;
+        return this;
+    }
+    public String getUuid() {
+        return this.uuid;
     }
 
 }

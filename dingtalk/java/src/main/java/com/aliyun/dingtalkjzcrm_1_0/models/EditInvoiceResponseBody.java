@@ -4,25 +4,17 @@ package com.aliyun.dingtalkjzcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class EditInvoiceResponseBody extends TeaModel {
-    // 响应时间
-    @NameInMap("time")
-    public String time;
-
     // 编辑数据的id
     @NameInMap("msgid")
     public Long msgid;
 
+    // 响应时间
+    @NameInMap("time")
+    public String time;
+
     public static EditInvoiceResponseBody build(java.util.Map<String, ?> map) throws Exception {
         EditInvoiceResponseBody self = new EditInvoiceResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public EditInvoiceResponseBody setTime(String time) {
-        this.time = time;
-        return this;
-    }
-    public String getTime() {
-        return this.time;
     }
 
     public EditInvoiceResponseBody setMsgid(Long msgid) {
@@ -31,6 +23,14 @@ public class EditInvoiceResponseBody extends TeaModel {
     }
     public Long getMsgid() {
         return this.msgid;
+    }
+
+    public EditInvoiceResponseBody setTime(String time) {
+        this.time = time;
+        return this;
+    }
+    public String getTime() {
+        return this.time;
     }
 
 }

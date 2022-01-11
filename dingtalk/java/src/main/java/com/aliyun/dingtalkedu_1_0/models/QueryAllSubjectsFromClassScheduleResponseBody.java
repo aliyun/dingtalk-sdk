@@ -22,41 +22,25 @@ public class QueryAllSubjectsFromClassScheduleResponseBody extends TeaModel {
     }
 
     public static class QueryAllSubjectsFromClassScheduleResponseBodyResultExtTeacherList extends TeaModel {
-        // 老师的userid。
-        @NameInMap("userId")
-        public String userId;
+        // 老师的头像url
+        @NameInMap("avator")
+        public String avator;
 
         // 老师名称。
         @NameInMap("name")
         public String name;
 
-        // 老师的头像url
-        @NameInMap("avator")
-        public String avator;
-
         // 老师的uid。
         @NameInMap("uid")
         public Long uid;
 
+        // 老师的userid。
+        @NameInMap("userId")
+        public String userId;
+
         public static QueryAllSubjectsFromClassScheduleResponseBodyResultExtTeacherList build(java.util.Map<String, ?> map) throws Exception {
             QueryAllSubjectsFromClassScheduleResponseBodyResultExtTeacherList self = new QueryAllSubjectsFromClassScheduleResponseBodyResultExtTeacherList();
             return TeaModel.build(map, self);
-        }
-
-        public QueryAllSubjectsFromClassScheduleResponseBodyResultExtTeacherList setUserId(String userId) {
-            this.userId = userId;
-            return this;
-        }
-        public String getUserId() {
-            return this.userId;
-        }
-
-        public QueryAllSubjectsFromClassScheduleResponseBodyResultExtTeacherList setName(String name) {
-            this.name = name;
-            return this;
-        }
-        public String getName() {
-            return this.name;
         }
 
         public QueryAllSubjectsFromClassScheduleResponseBodyResultExtTeacherList setAvator(String avator) {
@@ -67,6 +51,14 @@ public class QueryAllSubjectsFromClassScheduleResponseBody extends TeaModel {
             return this.avator;
         }
 
+        public QueryAllSubjectsFromClassScheduleResponseBodyResultExtTeacherList setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
         public QueryAllSubjectsFromClassScheduleResponseBodyResultExtTeacherList setUid(Long uid) {
             this.uid = uid;
             return this;
@@ -75,13 +67,17 @@ public class QueryAllSubjectsFromClassScheduleResponseBody extends TeaModel {
             return this.uid;
         }
 
+        public QueryAllSubjectsFromClassScheduleResponseBodyResultExtTeacherList setUserId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+        public String getUserId() {
+            return this.userId;
+        }
+
     }
 
     public static class QueryAllSubjectsFromClassScheduleResponseBodyResultExt extends TeaModel {
-        // 学科字体颜色
-        @NameInMap("fontColor")
-        public String fontColor;
-
         // 学科背景颜色
         @NameInMap("backgroundColor")
         public String backgroundColor;
@@ -90,6 +86,10 @@ public class QueryAllSubjectsFromClassScheduleResponseBody extends TeaModel {
         @NameInMap("classId")
         public Long classId;
 
+        // 学科字体颜色
+        @NameInMap("fontColor")
+        public String fontColor;
+
         // 老师列表
         @NameInMap("teacherList")
         public java.util.List<QueryAllSubjectsFromClassScheduleResponseBodyResultExtTeacherList> teacherList;
@@ -97,14 +97,6 @@ public class QueryAllSubjectsFromClassScheduleResponseBody extends TeaModel {
         public static QueryAllSubjectsFromClassScheduleResponseBodyResultExt build(java.util.Map<String, ?> map) throws Exception {
             QueryAllSubjectsFromClassScheduleResponseBodyResultExt self = new QueryAllSubjectsFromClassScheduleResponseBodyResultExt();
             return TeaModel.build(map, self);
-        }
-
-        public QueryAllSubjectsFromClassScheduleResponseBodyResultExt setFontColor(String fontColor) {
-            this.fontColor = fontColor;
-            return this;
-        }
-        public String getFontColor() {
-            return this.fontColor;
         }
 
         public QueryAllSubjectsFromClassScheduleResponseBodyResultExt setBackgroundColor(String backgroundColor) {
@@ -123,6 +115,14 @@ public class QueryAllSubjectsFromClassScheduleResponseBody extends TeaModel {
             return this.classId;
         }
 
+        public QueryAllSubjectsFromClassScheduleResponseBodyResultExt setFontColor(String fontColor) {
+            this.fontColor = fontColor;
+            return this;
+        }
+        public String getFontColor() {
+            return this.fontColor;
+        }
+
         public QueryAllSubjectsFromClassScheduleResponseBodyResultExt setTeacherList(java.util.List<QueryAllSubjectsFromClassScheduleResponseBodyResultExtTeacherList> teacherList) {
             this.teacherList = teacherList;
             return this;
@@ -134,18 +134,6 @@ public class QueryAllSubjectsFromClassScheduleResponseBody extends TeaModel {
     }
 
     public static class QueryAllSubjectsFromClassScheduleResponseBodyResult extends TeaModel {
-        // 学科名称。
-        @NameInMap("subjectName")
-        public String subjectName;
-
-        // 学科code。
-        @NameInMap("subjectCode")
-        public String subjectCode;
-
-        // 学段编码：  KINDERGARTEN：小学 PRIMARY_SCHOOL：小学 MODDLE_SCHOOL： 初中 HIGH_SCHOOL： 高中 UNIVERSITY：大学 NOT_SCHOOL：无学段
-        @NameInMap("periodCode")
-        public String periodCode;
-
         // creatorOrgId
         @NameInMap("creatorOrgId")
         public Long creatorOrgId;
@@ -154,33 +142,21 @@ public class QueryAllSubjectsFromClassScheduleResponseBody extends TeaModel {
         @NameInMap("ext")
         public QueryAllSubjectsFromClassScheduleResponseBodyResultExt ext;
 
+        // 学段编码：  KINDERGARTEN：小学 PRIMARY_SCHOOL：小学 MODDLE_SCHOOL： 初中 HIGH_SCHOOL： 高中 UNIVERSITY：大学 NOT_SCHOOL：无学段
+        @NameInMap("periodCode")
+        public String periodCode;
+
+        // 学科code。
+        @NameInMap("subjectCode")
+        public String subjectCode;
+
+        // 学科名称。
+        @NameInMap("subjectName")
+        public String subjectName;
+
         public static QueryAllSubjectsFromClassScheduleResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             QueryAllSubjectsFromClassScheduleResponseBodyResult self = new QueryAllSubjectsFromClassScheduleResponseBodyResult();
             return TeaModel.build(map, self);
-        }
-
-        public QueryAllSubjectsFromClassScheduleResponseBodyResult setSubjectName(String subjectName) {
-            this.subjectName = subjectName;
-            return this;
-        }
-        public String getSubjectName() {
-            return this.subjectName;
-        }
-
-        public QueryAllSubjectsFromClassScheduleResponseBodyResult setSubjectCode(String subjectCode) {
-            this.subjectCode = subjectCode;
-            return this;
-        }
-        public String getSubjectCode() {
-            return this.subjectCode;
-        }
-
-        public QueryAllSubjectsFromClassScheduleResponseBodyResult setPeriodCode(String periodCode) {
-            this.periodCode = periodCode;
-            return this;
-        }
-        public String getPeriodCode() {
-            return this.periodCode;
         }
 
         public QueryAllSubjectsFromClassScheduleResponseBodyResult setCreatorOrgId(Long creatorOrgId) {
@@ -197,6 +173,30 @@ public class QueryAllSubjectsFromClassScheduleResponseBody extends TeaModel {
         }
         public QueryAllSubjectsFromClassScheduleResponseBodyResultExt getExt() {
             return this.ext;
+        }
+
+        public QueryAllSubjectsFromClassScheduleResponseBodyResult setPeriodCode(String periodCode) {
+            this.periodCode = periodCode;
+            return this;
+        }
+        public String getPeriodCode() {
+            return this.periodCode;
+        }
+
+        public QueryAllSubjectsFromClassScheduleResponseBodyResult setSubjectCode(String subjectCode) {
+            this.subjectCode = subjectCode;
+            return this;
+        }
+        public String getSubjectCode() {
+            return this.subjectCode;
+        }
+
+        public QueryAllSubjectsFromClassScheduleResponseBodyResult setSubjectName(String subjectName) {
+            this.subjectName = subjectName;
+            return this;
+        }
+        public String getSubjectName() {
+            return this.subjectName;
         }
 
     }

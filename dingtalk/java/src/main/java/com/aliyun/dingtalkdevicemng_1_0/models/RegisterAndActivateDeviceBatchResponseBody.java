@@ -4,34 +4,18 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class RegisterAndActivateDeviceBatchResponseBody extends TeaModel {
-    @NameInMap("successItems")
-    public java.util.List<RegisterAndActivateDeviceBatchResponseBodySuccessItems> successItems;
+    @NameInMap("failItems")
+    public java.util.List<RegisterAndActivateDeviceBatchResponseBodyFailItems> failItems;
 
     @NameInMap("success")
     public Boolean success;
 
-    @NameInMap("failItems")
-    public java.util.List<RegisterAndActivateDeviceBatchResponseBodyFailItems> failItems;
+    @NameInMap("successItems")
+    public java.util.List<RegisterAndActivateDeviceBatchResponseBodySuccessItems> successItems;
 
     public static RegisterAndActivateDeviceBatchResponseBody build(java.util.Map<String, ?> map) throws Exception {
         RegisterAndActivateDeviceBatchResponseBody self = new RegisterAndActivateDeviceBatchResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public RegisterAndActivateDeviceBatchResponseBody setSuccessItems(java.util.List<RegisterAndActivateDeviceBatchResponseBodySuccessItems> successItems) {
-        this.successItems = successItems;
-        return this;
-    }
-    public java.util.List<RegisterAndActivateDeviceBatchResponseBodySuccessItems> getSuccessItems() {
-        return this.successItems;
-    }
-
-    public RegisterAndActivateDeviceBatchResponseBody setSuccess(Boolean success) {
-        this.success = success;
-        return this;
-    }
-    public Boolean getSuccess() {
-        return this.success;
     }
 
     public RegisterAndActivateDeviceBatchResponseBody setFailItems(java.util.List<RegisterAndActivateDeviceBatchResponseBodyFailItems> failItems) {
@@ -42,207 +26,20 @@ public class RegisterAndActivateDeviceBatchResponseBody extends TeaModel {
         return this.failItems;
     }
 
-    public static class RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult extends TeaModel {
-        @NameInMap("corpId")
-        public String corpId;
-
-        @NameInMap("deviceCallbackUrl")
-        public String deviceCallbackUrl;
-
-        @NameInMap("deviceCode")
-        public String deviceCode;
-
-        @NameInMap("deviceDetailUrl")
-        public String deviceDetailUrl;
-
-        @NameInMap("deviceName")
-        public String deviceName;
-
-        @NameInMap("groupUuid")
-        public String groupUuid;
-
-        @NameInMap("icon")
-        public String icon;
-
-        @NameInMap("introduction")
-        public String introduction;
-
-        @NameInMap("roleUuid")
-        public String roleUuid;
-
-        @NameInMap("userIds")
-        public java.util.List<String> userIds;
-
-        @NameInMap("status")
-        public Long status;
-
-        @NameInMap("typeUuid")
-        public String typeUuid;
-
-        @NameInMap("uuid")
-        public String uuid;
-
-        public static RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult build(java.util.Map<String, ?> map) throws Exception {
-            RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult self = new RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult();
-            return TeaModel.build(map, self);
-        }
-
-        public RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult setCorpId(String corpId) {
-            this.corpId = corpId;
-            return this;
-        }
-        public String getCorpId() {
-            return this.corpId;
-        }
-
-        public RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult setDeviceCallbackUrl(String deviceCallbackUrl) {
-            this.deviceCallbackUrl = deviceCallbackUrl;
-            return this;
-        }
-        public String getDeviceCallbackUrl() {
-            return this.deviceCallbackUrl;
-        }
-
-        public RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult setDeviceCode(String deviceCode) {
-            this.deviceCode = deviceCode;
-            return this;
-        }
-        public String getDeviceCode() {
-            return this.deviceCode;
-        }
-
-        public RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult setDeviceDetailUrl(String deviceDetailUrl) {
-            this.deviceDetailUrl = deviceDetailUrl;
-            return this;
-        }
-        public String getDeviceDetailUrl() {
-            return this.deviceDetailUrl;
-        }
-
-        public RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult setDeviceName(String deviceName) {
-            this.deviceName = deviceName;
-            return this;
-        }
-        public String getDeviceName() {
-            return this.deviceName;
-        }
-
-        public RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult setGroupUuid(String groupUuid) {
-            this.groupUuid = groupUuid;
-            return this;
-        }
-        public String getGroupUuid() {
-            return this.groupUuid;
-        }
-
-        public RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult setIcon(String icon) {
-            this.icon = icon;
-            return this;
-        }
-        public String getIcon() {
-            return this.icon;
-        }
-
-        public RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult setIntroduction(String introduction) {
-            this.introduction = introduction;
-            return this;
-        }
-        public String getIntroduction() {
-            return this.introduction;
-        }
-
-        public RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult setRoleUuid(String roleUuid) {
-            this.roleUuid = roleUuid;
-            return this;
-        }
-        public String getRoleUuid() {
-            return this.roleUuid;
-        }
-
-        public RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult setUserIds(java.util.List<String> userIds) {
-            this.userIds = userIds;
-            return this;
-        }
-        public java.util.List<String> getUserIds() {
-            return this.userIds;
-        }
-
-        public RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult setStatus(Long status) {
-            this.status = status;
-            return this;
-        }
-        public Long getStatus() {
-            return this.status;
-        }
-
-        public RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult setTypeUuid(String typeUuid) {
-            this.typeUuid = typeUuid;
-            return this;
-        }
-        public String getTypeUuid() {
-            return this.typeUuid;
-        }
-
-        public RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult setUuid(String uuid) {
-            this.uuid = uuid;
-            return this;
-        }
-        public String getUuid() {
-            return this.uuid;
-        }
-
+    public RegisterAndActivateDeviceBatchResponseBody setSuccess(Boolean success) {
+        this.success = success;
+        return this;
+    }
+    public Boolean getSuccess() {
+        return this.success;
     }
 
-    public static class RegisterAndActivateDeviceBatchResponseBodySuccessItems extends TeaModel {
-        @NameInMap("errorCode")
-        public String errorCode;
-
-        @NameInMap("errorMsg")
-        public String errorMsg;
-
-        @NameInMap("result")
-        public RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult result;
-
-        @NameInMap("success")
-        public Boolean success;
-
-        public static RegisterAndActivateDeviceBatchResponseBodySuccessItems build(java.util.Map<String, ?> map) throws Exception {
-            RegisterAndActivateDeviceBatchResponseBodySuccessItems self = new RegisterAndActivateDeviceBatchResponseBodySuccessItems();
-            return TeaModel.build(map, self);
-        }
-
-        public RegisterAndActivateDeviceBatchResponseBodySuccessItems setErrorCode(String errorCode) {
-            this.errorCode = errorCode;
-            return this;
-        }
-        public String getErrorCode() {
-            return this.errorCode;
-        }
-
-        public RegisterAndActivateDeviceBatchResponseBodySuccessItems setErrorMsg(String errorMsg) {
-            this.errorMsg = errorMsg;
-            return this;
-        }
-        public String getErrorMsg() {
-            return this.errorMsg;
-        }
-
-        public RegisterAndActivateDeviceBatchResponseBodySuccessItems setResult(RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult result) {
-            this.result = result;
-            return this;
-        }
-        public RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult getResult() {
-            return this.result;
-        }
-
-        public RegisterAndActivateDeviceBatchResponseBodySuccessItems setSuccess(Boolean success) {
-            this.success = success;
-            return this;
-        }
-        public Boolean getSuccess() {
-            return this.success;
-        }
-
+    public RegisterAndActivateDeviceBatchResponseBody setSuccessItems(java.util.List<RegisterAndActivateDeviceBatchResponseBodySuccessItems> successItems) {
+        this.successItems = successItems;
+        return this;
+    }
+    public java.util.List<RegisterAndActivateDeviceBatchResponseBodySuccessItems> getSuccessItems() {
+        return this.successItems;
     }
 
     public static class RegisterAndActivateDeviceBatchResponseBodyFailItemsResult extends TeaModel {
@@ -273,14 +70,14 @@ public class RegisterAndActivateDeviceBatchResponseBody extends TeaModel {
         @NameInMap("roleUuid")
         public String roleUuid;
 
-        @NameInMap("userIds")
-        public java.util.List<String> userIds;
-
         @NameInMap("status")
         public Long status;
 
         @NameInMap("typeUuid")
         public String typeUuid;
+
+        @NameInMap("userIds")
+        public java.util.List<String> userIds;
 
         @NameInMap("uuid")
         public String uuid;
@@ -362,14 +159,6 @@ public class RegisterAndActivateDeviceBatchResponseBody extends TeaModel {
             return this.roleUuid;
         }
 
-        public RegisterAndActivateDeviceBatchResponseBodyFailItemsResult setUserIds(java.util.List<String> userIds) {
-            this.userIds = userIds;
-            return this;
-        }
-        public java.util.List<String> getUserIds() {
-            return this.userIds;
-        }
-
         public RegisterAndActivateDeviceBatchResponseBodyFailItemsResult setStatus(Long status) {
             this.status = status;
             return this;
@@ -384,6 +173,14 @@ public class RegisterAndActivateDeviceBatchResponseBody extends TeaModel {
         }
         public String getTypeUuid() {
             return this.typeUuid;
+        }
+
+        public RegisterAndActivateDeviceBatchResponseBodyFailItemsResult setUserIds(java.util.List<String> userIds) {
+            this.userIds = userIds;
+            return this;
+        }
+        public java.util.List<String> getUserIds() {
+            return this.userIds;
         }
 
         public RegisterAndActivateDeviceBatchResponseBodyFailItemsResult setUuid(String uuid) {
@@ -439,6 +236,209 @@ public class RegisterAndActivateDeviceBatchResponseBody extends TeaModel {
         }
 
         public RegisterAndActivateDeviceBatchResponseBodyFailItems setSuccess(Boolean success) {
+            this.success = success;
+            return this;
+        }
+        public Boolean getSuccess() {
+            return this.success;
+        }
+
+    }
+
+    public static class RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult extends TeaModel {
+        @NameInMap("corpId")
+        public String corpId;
+
+        @NameInMap("deviceCallbackUrl")
+        public String deviceCallbackUrl;
+
+        @NameInMap("deviceCode")
+        public String deviceCode;
+
+        @NameInMap("deviceDetailUrl")
+        public String deviceDetailUrl;
+
+        @NameInMap("deviceName")
+        public String deviceName;
+
+        @NameInMap("groupUuid")
+        public String groupUuid;
+
+        @NameInMap("icon")
+        public String icon;
+
+        @NameInMap("introduction")
+        public String introduction;
+
+        @NameInMap("roleUuid")
+        public String roleUuid;
+
+        @NameInMap("status")
+        public Long status;
+
+        @NameInMap("typeUuid")
+        public String typeUuid;
+
+        @NameInMap("userIds")
+        public java.util.List<String> userIds;
+
+        @NameInMap("uuid")
+        public String uuid;
+
+        public static RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult build(java.util.Map<String, ?> map) throws Exception {
+            RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult self = new RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult();
+            return TeaModel.build(map, self);
+        }
+
+        public RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult setCorpId(String corpId) {
+            this.corpId = corpId;
+            return this;
+        }
+        public String getCorpId() {
+            return this.corpId;
+        }
+
+        public RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult setDeviceCallbackUrl(String deviceCallbackUrl) {
+            this.deviceCallbackUrl = deviceCallbackUrl;
+            return this;
+        }
+        public String getDeviceCallbackUrl() {
+            return this.deviceCallbackUrl;
+        }
+
+        public RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult setDeviceCode(String deviceCode) {
+            this.deviceCode = deviceCode;
+            return this;
+        }
+        public String getDeviceCode() {
+            return this.deviceCode;
+        }
+
+        public RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult setDeviceDetailUrl(String deviceDetailUrl) {
+            this.deviceDetailUrl = deviceDetailUrl;
+            return this;
+        }
+        public String getDeviceDetailUrl() {
+            return this.deviceDetailUrl;
+        }
+
+        public RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult setDeviceName(String deviceName) {
+            this.deviceName = deviceName;
+            return this;
+        }
+        public String getDeviceName() {
+            return this.deviceName;
+        }
+
+        public RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult setGroupUuid(String groupUuid) {
+            this.groupUuid = groupUuid;
+            return this;
+        }
+        public String getGroupUuid() {
+            return this.groupUuid;
+        }
+
+        public RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult setIcon(String icon) {
+            this.icon = icon;
+            return this;
+        }
+        public String getIcon() {
+            return this.icon;
+        }
+
+        public RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult setIntroduction(String introduction) {
+            this.introduction = introduction;
+            return this;
+        }
+        public String getIntroduction() {
+            return this.introduction;
+        }
+
+        public RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult setRoleUuid(String roleUuid) {
+            this.roleUuid = roleUuid;
+            return this;
+        }
+        public String getRoleUuid() {
+            return this.roleUuid;
+        }
+
+        public RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult setStatus(Long status) {
+            this.status = status;
+            return this;
+        }
+        public Long getStatus() {
+            return this.status;
+        }
+
+        public RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult setTypeUuid(String typeUuid) {
+            this.typeUuid = typeUuid;
+            return this;
+        }
+        public String getTypeUuid() {
+            return this.typeUuid;
+        }
+
+        public RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult setUserIds(java.util.List<String> userIds) {
+            this.userIds = userIds;
+            return this;
+        }
+        public java.util.List<String> getUserIds() {
+            return this.userIds;
+        }
+
+        public RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult setUuid(String uuid) {
+            this.uuid = uuid;
+            return this;
+        }
+        public String getUuid() {
+            return this.uuid;
+        }
+
+    }
+
+    public static class RegisterAndActivateDeviceBatchResponseBodySuccessItems extends TeaModel {
+        @NameInMap("errorCode")
+        public String errorCode;
+
+        @NameInMap("errorMsg")
+        public String errorMsg;
+
+        @NameInMap("result")
+        public RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult result;
+
+        @NameInMap("success")
+        public Boolean success;
+
+        public static RegisterAndActivateDeviceBatchResponseBodySuccessItems build(java.util.Map<String, ?> map) throws Exception {
+            RegisterAndActivateDeviceBatchResponseBodySuccessItems self = new RegisterAndActivateDeviceBatchResponseBodySuccessItems();
+            return TeaModel.build(map, self);
+        }
+
+        public RegisterAndActivateDeviceBatchResponseBodySuccessItems setErrorCode(String errorCode) {
+            this.errorCode = errorCode;
+            return this;
+        }
+        public String getErrorCode() {
+            return this.errorCode;
+        }
+
+        public RegisterAndActivateDeviceBatchResponseBodySuccessItems setErrorMsg(String errorMsg) {
+            this.errorMsg = errorMsg;
+            return this;
+        }
+        public String getErrorMsg() {
+            return this.errorMsg;
+        }
+
+        public RegisterAndActivateDeviceBatchResponseBodySuccessItems setResult(RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult result) {
+            this.result = result;
+            return this;
+        }
+        public RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult getResult() {
+            return this.result;
+        }
+
+        public RegisterAndActivateDeviceBatchResponseBodySuccessItems setSuccess(Boolean success) {
             this.success = success;
             return this;
         }

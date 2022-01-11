@@ -4,10 +4,6 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryCrmGroupChatsResponseBody extends TeaModel {
-    // 数据列表
-    @NameInMap("resultList")
-    public java.util.List<QueryCrmGroupChatsResponseBodyResultList> resultList;
-
     // 是否还有下一页
     @NameInMap("hasMore")
     public Boolean hasMore;
@@ -16,6 +12,10 @@ public class QueryCrmGroupChatsResponseBody extends TeaModel {
     @NameInMap("nextToken")
     public String nextToken;
 
+    // 数据列表
+    @NameInMap("resultList")
+    public java.util.List<QueryCrmGroupChatsResponseBodyResultList> resultList;
+
     // 总条数，queryDsl入参为空时才会返回
     @NameInMap("totalCount")
     public Integer totalCount;
@@ -23,14 +23,6 @@ public class QueryCrmGroupChatsResponseBody extends TeaModel {
     public static QueryCrmGroupChatsResponseBody build(java.util.Map<String, ?> map) throws Exception {
         QueryCrmGroupChatsResponseBody self = new QueryCrmGroupChatsResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public QueryCrmGroupChatsResponseBody setResultList(java.util.List<QueryCrmGroupChatsResponseBodyResultList> resultList) {
-        this.resultList = resultList;
-        return this;
-    }
-    public java.util.List<QueryCrmGroupChatsResponseBodyResultList> getResultList() {
-        return this.resultList;
     }
 
     public QueryCrmGroupChatsResponseBody setHasMore(Boolean hasMore) {
@@ -49,6 +41,14 @@ public class QueryCrmGroupChatsResponseBody extends TeaModel {
         return this.nextToken;
     }
 
+    public QueryCrmGroupChatsResponseBody setResultList(java.util.List<QueryCrmGroupChatsResponseBodyResultList> resultList) {
+        this.resultList = resultList;
+        return this;
+    }
+    public java.util.List<QueryCrmGroupChatsResponseBodyResultList> getResultList() {
+        return this.resultList;
+    }
+
     public QueryCrmGroupChatsResponseBody setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
@@ -61,6 +61,18 @@ public class QueryCrmGroupChatsResponseBody extends TeaModel {
         // 客户群chatId
         @NameInMap("chatId")
         public String chatId;
+
+        // 创建时间(时间戳)
+        @NameInMap("gmtCreate")
+        public Long gmtCreate;
+
+        // 客户群成员数
+        @NameInMap("memberCount")
+        public Integer memberCount;
+
+        // 客户群名
+        @NameInMap("name")
+        public String name;
 
         // 客户群openConversationId
         @NameInMap("openConversationId")
@@ -78,18 +90,6 @@ public class QueryCrmGroupChatsResponseBody extends TeaModel {
         @NameInMap("ownerUserName")
         public String ownerUserName;
 
-        // 客户群名
-        @NameInMap("name")
-        public String name;
-
-        // 客户群成员数
-        @NameInMap("memberCount")
-        public Integer memberCount;
-
-        // 创建时间(时间戳)
-        @NameInMap("gmtCreate")
-        public Long gmtCreate;
-
         public static QueryCrmGroupChatsResponseBodyResultList build(java.util.Map<String, ?> map) throws Exception {
             QueryCrmGroupChatsResponseBodyResultList self = new QueryCrmGroupChatsResponseBodyResultList();
             return TeaModel.build(map, self);
@@ -101,6 +101,30 @@ public class QueryCrmGroupChatsResponseBody extends TeaModel {
         }
         public String getChatId() {
             return this.chatId;
+        }
+
+        public QueryCrmGroupChatsResponseBodyResultList setGmtCreate(Long gmtCreate) {
+            this.gmtCreate = gmtCreate;
+            return this;
+        }
+        public Long getGmtCreate() {
+            return this.gmtCreate;
+        }
+
+        public QueryCrmGroupChatsResponseBodyResultList setMemberCount(Integer memberCount) {
+            this.memberCount = memberCount;
+            return this;
+        }
+        public Integer getMemberCount() {
+            return this.memberCount;
+        }
+
+        public QueryCrmGroupChatsResponseBodyResultList setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
         }
 
         public QueryCrmGroupChatsResponseBodyResultList setOpenConversationId(String openConversationId) {
@@ -133,30 +157,6 @@ public class QueryCrmGroupChatsResponseBody extends TeaModel {
         }
         public String getOwnerUserName() {
             return this.ownerUserName;
-        }
-
-        public QueryCrmGroupChatsResponseBodyResultList setName(String name) {
-            this.name = name;
-            return this;
-        }
-        public String getName() {
-            return this.name;
-        }
-
-        public QueryCrmGroupChatsResponseBodyResultList setMemberCount(Integer memberCount) {
-            this.memberCount = memberCount;
-            return this;
-        }
-        public Integer getMemberCount() {
-            return this.memberCount;
-        }
-
-        public QueryCrmGroupChatsResponseBodyResultList setGmtCreate(Long gmtCreate) {
-            this.gmtCreate = gmtCreate;
-            return this;
-        }
-        public Long getGmtCreate() {
-            return this.gmtCreate;
         }
 
     }

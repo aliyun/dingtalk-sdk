@@ -22,25 +22,17 @@ public class ProcessForecastResponseBody extends TeaModel {
     }
 
     public static class ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRangeApprovals extends TeaModel {
-        // 员工 userId
-        @NameInMap("workNo")
-        public String workNo;
-
         // 员工姓名
         @NameInMap("userName")
         public String userName;
 
+        // 员工 userId
+        @NameInMap("workNo")
+        public String workNo;
+
         public static ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRangeApprovals build(java.util.Map<String, ?> map) throws Exception {
             ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRangeApprovals self = new ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRangeApprovals();
             return TeaModel.build(map, self);
-        }
-
-        public ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRangeApprovals setWorkNo(String workNo) {
-            this.workNo = workNo;
-            return this;
-        }
-        public String getWorkNo() {
-            return this.workNo;
         }
 
         public ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRangeApprovals setUserName(String userName) {
@@ -51,28 +43,28 @@ public class ProcessForecastResponseBody extends TeaModel {
             return this.userName;
         }
 
+        public ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRangeApprovals setWorkNo(String workNo) {
+            this.workNo = workNo;
+            return this;
+        }
+        public String getWorkNo() {
+            return this.workNo;
+        }
+
     }
 
     public static class ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRangeLabels extends TeaModel {
-        // 角色 id
-        @NameInMap("labels")
-        public String labels;
-
         // 角色名字
         @NameInMap("labelNames")
         public String labelNames;
 
+        // 角色 id
+        @NameInMap("labels")
+        public String labels;
+
         public static ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRangeLabels build(java.util.Map<String, ?> map) throws Exception {
             ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRangeLabels self = new ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRangeLabels();
             return TeaModel.build(map, self);
-        }
-
-        public ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRangeLabels setLabels(String labels) {
-            this.labels = labels;
-            return this;
-        }
-        public String getLabels() {
-            return this.labels;
         }
 
         public ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRangeLabels setLabelNames(String labelNames) {
@@ -81,6 +73,14 @@ public class ProcessForecastResponseBody extends TeaModel {
         }
         public String getLabelNames() {
             return this.labelNames;
+        }
+
+        public ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRangeLabels setLabels(String labels) {
+            this.labels = labels;
+            return this;
+        }
+        public String getLabels() {
+            return this.labels;
         }
 
     }
@@ -118,37 +118,37 @@ public class ProcessForecastResponseBody extends TeaModel {
     }
 
     public static class ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActor extends TeaModel {
+        // 节点激活类型
+        @NameInMap("actorActivateType")
+        public String actorActivateType;
+
         // 节点操作人 key
         @NameInMap("actorKey")
         public String actorKey;
-
-        // 节点操作人类型
-        @NameInMap("actorType")
-        public String actorType;
-
-        // 节点操作人选择范围类型
-        @NameInMap("actorSelectionType")
-        public String actorSelectionType;
 
         // 节点操作人选择范围
         @NameInMap("actorSelectionRange")
         public ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRange actorSelectionRange;
 
+        // 节点操作人选择范围类型
+        @NameInMap("actorSelectionType")
+        public String actorSelectionType;
+
+        // 节点操作人类型
+        @NameInMap("actorType")
+        public String actorType;
+
         // 是否允许多选，还是仅允许选一人
         @NameInMap("allowedMulti")
         public Boolean allowedMulti;
-
-        // 节点审批类型
-        @NameInMap("approvalType")
-        public String approvalType;
 
         // 节点审批方式
         @NameInMap("approvalMethod")
         public String approvalMethod;
 
-        // 节点激活类型
-        @NameInMap("actorActivateType")
-        public String actorActivateType;
+        // 节点审批类型
+        @NameInMap("approvalType")
+        public String approvalType;
 
         // 该审批人节点在发起审批时是否必填
         @NameInMap("required")
@@ -159,28 +159,20 @@ public class ProcessForecastResponseBody extends TeaModel {
             return TeaModel.build(map, self);
         }
 
+        public ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActor setActorActivateType(String actorActivateType) {
+            this.actorActivateType = actorActivateType;
+            return this;
+        }
+        public String getActorActivateType() {
+            return this.actorActivateType;
+        }
+
         public ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActor setActorKey(String actorKey) {
             this.actorKey = actorKey;
             return this;
         }
         public String getActorKey() {
             return this.actorKey;
-        }
-
-        public ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActor setActorType(String actorType) {
-            this.actorType = actorType;
-            return this;
-        }
-        public String getActorType() {
-            return this.actorType;
-        }
-
-        public ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActor setActorSelectionType(String actorSelectionType) {
-            this.actorSelectionType = actorSelectionType;
-            return this;
-        }
-        public String getActorSelectionType() {
-            return this.actorSelectionType;
         }
 
         public ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActor setActorSelectionRange(ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRange actorSelectionRange) {
@@ -191,20 +183,28 @@ public class ProcessForecastResponseBody extends TeaModel {
             return this.actorSelectionRange;
         }
 
+        public ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActor setActorSelectionType(String actorSelectionType) {
+            this.actorSelectionType = actorSelectionType;
+            return this;
+        }
+        public String getActorSelectionType() {
+            return this.actorSelectionType;
+        }
+
+        public ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActor setActorType(String actorType) {
+            this.actorType = actorType;
+            return this;
+        }
+        public String getActorType() {
+            return this.actorType;
+        }
+
         public ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActor setAllowedMulti(Boolean allowedMulti) {
             this.allowedMulti = allowedMulti;
             return this;
         }
         public Boolean getAllowedMulti() {
             return this.allowedMulti;
-        }
-
-        public ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActor setApprovalType(String approvalType) {
-            this.approvalType = approvalType;
-            return this;
-        }
-        public String getApprovalType() {
-            return this.approvalType;
         }
 
         public ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActor setApprovalMethod(String approvalMethod) {
@@ -215,12 +215,12 @@ public class ProcessForecastResponseBody extends TeaModel {
             return this.approvalMethod;
         }
 
-        public ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActor setActorActivateType(String actorActivateType) {
-            this.actorActivateType = actorActivateType;
+        public ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActor setApprovalType(String approvalType) {
+            this.approvalType = approvalType;
             return this;
         }
-        public String getActorActivateType() {
-            return this.actorActivateType;
+        public String getApprovalType() {
+            return this.approvalType;
         }
 
         public ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActor setRequired(Boolean required) {
@@ -238,10 +238,6 @@ public class ProcessForecastResponseBody extends TeaModel {
         @NameInMap("activityId")
         public String activityId;
 
-        // 流程中前一个节点的 id
-        @NameInMap("prevActivityId")
-        public String prevActivityId;
-
         // 节点名称
         @NameInMap("activityName")
         public String activityName;
@@ -253,6 +249,10 @@ public class ProcessForecastResponseBody extends TeaModel {
         // 是否自选审批节点
         @NameInMap("isTargetSelect")
         public Boolean isTargetSelect;
+
+        // 流程中前一个节点的 id
+        @NameInMap("prevActivityId")
+        public String prevActivityId;
 
         // 节点操作人信息
         @NameInMap("workflowActor")
@@ -269,14 +269,6 @@ public class ProcessForecastResponseBody extends TeaModel {
         }
         public String getActivityId() {
             return this.activityId;
-        }
-
-        public ProcessForecastResponseBodyResultWorkflowActivityRules setPrevActivityId(String prevActivityId) {
-            this.prevActivityId = prevActivityId;
-            return this;
-        }
-        public String getPrevActivityId() {
-            return this.prevActivityId;
         }
 
         public ProcessForecastResponseBodyResultWorkflowActivityRules setActivityName(String activityName) {
@@ -301,6 +293,14 @@ public class ProcessForecastResponseBody extends TeaModel {
         }
         public Boolean getIsTargetSelect() {
             return this.isTargetSelect;
+        }
+
+        public ProcessForecastResponseBodyResultWorkflowActivityRules setPrevActivityId(String prevActivityId) {
+            this.prevActivityId = prevActivityId;
+            return this;
+        }
+        public String getPrevActivityId() {
+            return this.prevActivityId;
         }
 
         public ProcessForecastResponseBodyResultWorkflowActivityRules setWorkflowActor(ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActor workflowActor) {
@@ -350,21 +350,21 @@ public class ProcessForecastResponseBody extends TeaModel {
         @NameInMap("isForecastSuccess")
         public Boolean isForecastSuccess;
 
+        // 是否静态流程
+        @NameInMap("isStaticWorkflow")
+        public Boolean isStaticWorkflow;
+
         // 流程 code
         @NameInMap("processCode")
         public String processCode;
-
-        // 用户 id
-        @NameInMap("userId")
-        public String userId;
 
         // 流程 id
         @NameInMap("processId")
         public Long processId;
 
-        // 是否静态流程
-        @NameInMap("isStaticWorkflow")
-        public Boolean isStaticWorkflow;
+        // 用户 id
+        @NameInMap("userId")
+        public String userId;
 
         @NameInMap("workflowActivityRules")
         public java.util.List<ProcessForecastResponseBodyResultWorkflowActivityRules> workflowActivityRules;
@@ -385,20 +385,20 @@ public class ProcessForecastResponseBody extends TeaModel {
             return this.isForecastSuccess;
         }
 
+        public ProcessForecastResponseBodyResult setIsStaticWorkflow(Boolean isStaticWorkflow) {
+            this.isStaticWorkflow = isStaticWorkflow;
+            return this;
+        }
+        public Boolean getIsStaticWorkflow() {
+            return this.isStaticWorkflow;
+        }
+
         public ProcessForecastResponseBodyResult setProcessCode(String processCode) {
             this.processCode = processCode;
             return this;
         }
         public String getProcessCode() {
             return this.processCode;
-        }
-
-        public ProcessForecastResponseBodyResult setUserId(String userId) {
-            this.userId = userId;
-            return this;
-        }
-        public String getUserId() {
-            return this.userId;
         }
 
         public ProcessForecastResponseBodyResult setProcessId(Long processId) {
@@ -409,12 +409,12 @@ public class ProcessForecastResponseBody extends TeaModel {
             return this.processId;
         }
 
-        public ProcessForecastResponseBodyResult setIsStaticWorkflow(Boolean isStaticWorkflow) {
-            this.isStaticWorkflow = isStaticWorkflow;
+        public ProcessForecastResponseBodyResult setUserId(String userId) {
+            this.userId = userId;
             return this;
         }
-        public Boolean getIsStaticWorkflow() {
-            return this.isStaticWorkflow;
+        public String getUserId() {
+            return this.userId;
         }
 
         public ProcessForecastResponseBodyResult setWorkflowActivityRules(java.util.List<ProcessForecastResponseBodyResultWorkflowActivityRules> workflowActivityRules) {

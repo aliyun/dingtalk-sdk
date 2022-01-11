@@ -22,10 +22,6 @@ public class QueryDepartmentInfoResponseBody extends TeaModel {
     }
 
     public static class QueryDepartmentInfoResponseBodyContentLeaderJob extends TeaModel {
-        // 标签Code
-        @NameInMap("code")
-        public String code;
-
         // 业务类型
         @NameInMap("bizType")
         public String bizType;
@@ -34,6 +30,10 @@ public class QueryDepartmentInfoResponseBody extends TeaModel {
         @NameInMap("category")
         public String category;
 
+        // 标签Code
+        @NameInMap("code")
+        public String code;
+
         // 展示名称
         @NameInMap("displayName")
         public String displayName;
@@ -41,14 +41,6 @@ public class QueryDepartmentInfoResponseBody extends TeaModel {
         public static QueryDepartmentInfoResponseBodyContentLeaderJob build(java.util.Map<String, ?> map) throws Exception {
             QueryDepartmentInfoResponseBodyContentLeaderJob self = new QueryDepartmentInfoResponseBodyContentLeaderJob();
             return TeaModel.build(map, self);
-        }
-
-        public QueryDepartmentInfoResponseBodyContentLeaderJob setCode(String code) {
-            this.code = code;
-            return this;
-        }
-        public String getCode() {
-            return this.code;
         }
 
         public QueryDepartmentInfoResponseBodyContentLeaderJob setBizType(String bizType) {
@@ -67,6 +59,14 @@ public class QueryDepartmentInfoResponseBody extends TeaModel {
             return this.category;
         }
 
+        public QueryDepartmentInfoResponseBodyContentLeaderJob setCode(String code) {
+            this.code = code;
+            return this;
+        }
+        public String getCode() {
+            return this.code;
+        }
+
         public QueryDepartmentInfoResponseBodyContentLeaderJob setDisplayName(String displayName) {
             this.displayName = displayName;
             return this;
@@ -78,6 +78,14 @@ public class QueryDepartmentInfoResponseBody extends TeaModel {
     }
 
     public static class QueryDepartmentInfoResponseBodyContentLeader extends TeaModel {
+        // 工作标签
+        @NameInMap("job")
+        public QueryDepartmentInfoResponseBodyContentLeaderJob job;
+
+        // 工号
+        @NameInMap("jobNumber")
+        public String jobNumber;
+
         // 姓名
         @NameInMap("name")
         public String name;
@@ -86,17 +94,25 @@ public class QueryDepartmentInfoResponseBody extends TeaModel {
         @NameInMap("userId")
         public String userId;
 
-        // 工号
-        @NameInMap("jobNumber")
-        public String jobNumber;
-
-        // 工作标签
-        @NameInMap("job")
-        public QueryDepartmentInfoResponseBodyContentLeaderJob job;
-
         public static QueryDepartmentInfoResponseBodyContentLeader build(java.util.Map<String, ?> map) throws Exception {
             QueryDepartmentInfoResponseBodyContentLeader self = new QueryDepartmentInfoResponseBodyContentLeader();
             return TeaModel.build(map, self);
+        }
+
+        public QueryDepartmentInfoResponseBodyContentLeader setJob(QueryDepartmentInfoResponseBodyContentLeaderJob job) {
+            this.job = job;
+            return this;
+        }
+        public QueryDepartmentInfoResponseBodyContentLeaderJob getJob() {
+            return this.job;
+        }
+
+        public QueryDepartmentInfoResponseBodyContentLeader setJobNumber(String jobNumber) {
+            this.jobNumber = jobNumber;
+            return this;
+        }
+        public String getJobNumber() {
+            return this.jobNumber;
         }
 
         public QueryDepartmentInfoResponseBodyContentLeader setName(String name) {
@@ -115,29 +131,9 @@ public class QueryDepartmentInfoResponseBody extends TeaModel {
             return this.userId;
         }
 
-        public QueryDepartmentInfoResponseBodyContentLeader setJobNumber(String jobNumber) {
-            this.jobNumber = jobNumber;
-            return this;
-        }
-        public String getJobNumber() {
-            return this.jobNumber;
-        }
-
-        public QueryDepartmentInfoResponseBodyContentLeader setJob(QueryDepartmentInfoResponseBodyContentLeaderJob job) {
-            this.job = job;
-            return this;
-        }
-        public QueryDepartmentInfoResponseBodyContentLeaderJob getJob() {
-            return this.job;
-        }
-
     }
 
     public static class QueryDepartmentInfoResponseBodyContentResidentLeaderJob extends TeaModel {
-        // 标签Code
-        @NameInMap("code")
-        public String code;
-
         // 业务类型
         @NameInMap("bizType")
         public String bizType;
@@ -146,6 +142,10 @@ public class QueryDepartmentInfoResponseBody extends TeaModel {
         @NameInMap("category")
         public String category;
 
+        // 标签Code
+        @NameInMap("code")
+        public String code;
+
         // 展示名称
         @NameInMap("displayName")
         public String displayName;
@@ -153,14 +153,6 @@ public class QueryDepartmentInfoResponseBody extends TeaModel {
         public static QueryDepartmentInfoResponseBodyContentResidentLeaderJob build(java.util.Map<String, ?> map) throws Exception {
             QueryDepartmentInfoResponseBodyContentResidentLeaderJob self = new QueryDepartmentInfoResponseBodyContentResidentLeaderJob();
             return TeaModel.build(map, self);
-        }
-
-        public QueryDepartmentInfoResponseBodyContentResidentLeaderJob setCode(String code) {
-            this.code = code;
-            return this;
-        }
-        public String getCode() {
-            return this.code;
         }
 
         public QueryDepartmentInfoResponseBodyContentResidentLeaderJob setBizType(String bizType) {
@@ -179,6 +171,14 @@ public class QueryDepartmentInfoResponseBody extends TeaModel {
             return this.category;
         }
 
+        public QueryDepartmentInfoResponseBodyContentResidentLeaderJob setCode(String code) {
+            this.code = code;
+            return this;
+        }
+        public String getCode() {
+            return this.code;
+        }
+
         public QueryDepartmentInfoResponseBodyContentResidentLeaderJob setDisplayName(String displayName) {
             this.displayName = displayName;
             return this;
@@ -190,6 +190,14 @@ public class QueryDepartmentInfoResponseBody extends TeaModel {
     }
 
     public static class QueryDepartmentInfoResponseBodyContentResidentLeader extends TeaModel {
+        // 工作标签
+        @NameInMap("job")
+        public QueryDepartmentInfoResponseBodyContentResidentLeaderJob job;
+
+        // 工号
+        @NameInMap("jobNumber")
+        public String jobNumber;
+
         // 姓名
         @NameInMap("name")
         public String name;
@@ -198,17 +206,25 @@ public class QueryDepartmentInfoResponseBody extends TeaModel {
         @NameInMap("userId")
         public String userId;
 
-        // 工号
-        @NameInMap("jobNumber")
-        public String jobNumber;
-
-        // 工作标签
-        @NameInMap("job")
-        public QueryDepartmentInfoResponseBodyContentResidentLeaderJob job;
-
         public static QueryDepartmentInfoResponseBodyContentResidentLeader build(java.util.Map<String, ?> map) throws Exception {
             QueryDepartmentInfoResponseBodyContentResidentLeader self = new QueryDepartmentInfoResponseBodyContentResidentLeader();
             return TeaModel.build(map, self);
+        }
+
+        public QueryDepartmentInfoResponseBodyContentResidentLeader setJob(QueryDepartmentInfoResponseBodyContentResidentLeaderJob job) {
+            this.job = job;
+            return this;
+        }
+        public QueryDepartmentInfoResponseBodyContentResidentLeaderJob getJob() {
+            return this.job;
+        }
+
+        public QueryDepartmentInfoResponseBodyContentResidentLeader setJobNumber(String jobNumber) {
+            this.jobNumber = jobNumber;
+            return this;
+        }
+        public String getJobNumber() {
+            return this.jobNumber;
         }
 
         public QueryDepartmentInfoResponseBodyContentResidentLeader setName(String name) {
@@ -227,22 +243,6 @@ public class QueryDepartmentInfoResponseBody extends TeaModel {
             return this.userId;
         }
 
-        public QueryDepartmentInfoResponseBodyContentResidentLeader setJobNumber(String jobNumber) {
-            this.jobNumber = jobNumber;
-            return this;
-        }
-        public String getJobNumber() {
-            return this.jobNumber;
-        }
-
-        public QueryDepartmentInfoResponseBodyContentResidentLeader setJob(QueryDepartmentInfoResponseBodyContentResidentLeaderJob job) {
-            this.job = job;
-            return this;
-        }
-        public QueryDepartmentInfoResponseBodyContentResidentLeaderJob getJob() {
-            return this.job;
-        }
-
     }
 
     public static class QueryDepartmentInfoResponseBodyContent extends TeaModel {
@@ -250,13 +250,13 @@ public class QueryDepartmentInfoResponseBody extends TeaModel {
         @NameInMap("id")
         public Long id;
 
-        // 科室名称
-        @NameInMap("name")
-        public String name;
-
         // 科室主任
         @NameInMap("leader")
         public QueryDepartmentInfoResponseBodyContentLeader leader;
+
+        // 科室名称
+        @NameInMap("name")
+        public String name;
 
         // 住院总医师
         @NameInMap("residentLeader")
@@ -275,20 +275,20 @@ public class QueryDepartmentInfoResponseBody extends TeaModel {
             return this.id;
         }
 
-        public QueryDepartmentInfoResponseBodyContent setName(String name) {
-            this.name = name;
-            return this;
-        }
-        public String getName() {
-            return this.name;
-        }
-
         public QueryDepartmentInfoResponseBodyContent setLeader(QueryDepartmentInfoResponseBodyContentLeader leader) {
             this.leader = leader;
             return this;
         }
         public QueryDepartmentInfoResponseBodyContentLeader getLeader() {
             return this.leader;
+        }
+
+        public QueryDepartmentInfoResponseBodyContent setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
         }
 
         public QueryDepartmentInfoResponseBodyContent setResidentLeader(QueryDepartmentInfoResponseBodyContentResidentLeader residentLeader) {

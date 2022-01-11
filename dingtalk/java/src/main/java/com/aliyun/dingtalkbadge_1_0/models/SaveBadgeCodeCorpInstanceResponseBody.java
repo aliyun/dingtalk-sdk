@@ -12,13 +12,13 @@ public class SaveBadgeCodeCorpInstanceResponseBody extends TeaModel {
     @NameInMap("corpId")
     public String corpId;
 
-    // 状态
-    @NameInMap("status")
-    public String status;
-
     // 扩展参数
     @NameInMap("extInfo")
     public java.util.Map<String, String> extInfo;
+
+    // 状态
+    @NameInMap("status")
+    public String status;
 
     public static SaveBadgeCodeCorpInstanceResponseBody build(java.util.Map<String, ?> map) throws Exception {
         SaveBadgeCodeCorpInstanceResponseBody self = new SaveBadgeCodeCorpInstanceResponseBody();
@@ -41,20 +41,20 @@ public class SaveBadgeCodeCorpInstanceResponseBody extends TeaModel {
         return this.corpId;
     }
 
-    public SaveBadgeCodeCorpInstanceResponseBody setStatus(String status) {
-        this.status = status;
-        return this;
-    }
-    public String getStatus() {
-        return this.status;
-    }
-
     public SaveBadgeCodeCorpInstanceResponseBody setExtInfo(java.util.Map<String, String> extInfo) {
         this.extInfo = extInfo;
         return this;
     }
     public java.util.Map<String, String> getExtInfo() {
         return this.extInfo;
+    }
+
+    public SaveBadgeCodeCorpInstanceResponseBody setStatus(String status) {
+        this.status = status;
+        return this;
+    }
+    public String getStatus() {
+        return this.status;
     }
 
 }

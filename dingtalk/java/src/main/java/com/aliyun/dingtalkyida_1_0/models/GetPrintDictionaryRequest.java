@@ -4,33 +4,25 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetPrintDictionaryRequest extends TeaModel {
-    // 表单id
-    @NameInMap("formUuid")
-    public String formUuid;
-
     // 应用代码
     @NameInMap("appType")
     public String appType;
 
-    // 版本
-    @NameInMap("version")
-    public Long version;
+    // 表单id
+    @NameInMap("formUuid")
+    public String formUuid;
 
     // 用户id
     @NameInMap("userId")
     public String userId;
 
+    // 版本
+    @NameInMap("version")
+    public Long version;
+
     public static GetPrintDictionaryRequest build(java.util.Map<String, ?> map) throws Exception {
         GetPrintDictionaryRequest self = new GetPrintDictionaryRequest();
         return TeaModel.build(map, self);
-    }
-
-    public GetPrintDictionaryRequest setFormUuid(String formUuid) {
-        this.formUuid = formUuid;
-        return this;
-    }
-    public String getFormUuid() {
-        return this.formUuid;
     }
 
     public GetPrintDictionaryRequest setAppType(String appType) {
@@ -41,12 +33,12 @@ public class GetPrintDictionaryRequest extends TeaModel {
         return this.appType;
     }
 
-    public GetPrintDictionaryRequest setVersion(Long version) {
-        this.version = version;
+    public GetPrintDictionaryRequest setFormUuid(String formUuid) {
+        this.formUuid = formUuid;
         return this;
     }
-    public Long getVersion() {
-        return this.version;
+    public String getFormUuid() {
+        return this.formUuid;
     }
 
     public GetPrintDictionaryRequest setUserId(String userId) {
@@ -55,6 +47,14 @@ public class GetPrintDictionaryRequest extends TeaModel {
     }
     public String getUserId() {
         return this.userId;
+    }
+
+    public GetPrintDictionaryRequest setVersion(Long version) {
+        this.version = version;
+        return this;
+    }
+    public Long getVersion() {
+        return this.version;
     }
 
 }

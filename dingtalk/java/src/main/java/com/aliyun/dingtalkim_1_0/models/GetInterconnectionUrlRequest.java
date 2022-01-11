@@ -4,14 +4,6 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetInterconnectionUrlRequest extends TeaModel {
-    // appUserId
-    @NameInMap("appUserId")
-    public String appUserId;
-
-    // appUserName
-    @NameInMap("appUserName")
-    public String appUserName;
-
     // appUserAvatar
     @NameInMap("appUserAvatar")
     public String appUserAvatar;
@@ -20,9 +12,17 @@ public class GetInterconnectionUrlRequest extends TeaModel {
     @NameInMap("appUserAvatarType")
     public Integer appUserAvatarType;
 
+    // appUserId
+    @NameInMap("appUserId")
+    public String appUserId;
+
     // appUserMobileNumber
     @NameInMap("appUserMobileNumber")
     public String appUserMobileNumber;
+
+    // appUserName
+    @NameInMap("appUserName")
+    public String appUserName;
 
     // dingCorpId
     @NameInMap("dingCorpId")
@@ -41,22 +41,6 @@ public class GetInterconnectionUrlRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public GetInterconnectionUrlRequest setAppUserId(String appUserId) {
-        this.appUserId = appUserId;
-        return this;
-    }
-    public String getAppUserId() {
-        return this.appUserId;
-    }
-
-    public GetInterconnectionUrlRequest setAppUserName(String appUserName) {
-        this.appUserName = appUserName;
-        return this;
-    }
-    public String getAppUserName() {
-        return this.appUserName;
-    }
-
     public GetInterconnectionUrlRequest setAppUserAvatar(String appUserAvatar) {
         this.appUserAvatar = appUserAvatar;
         return this;
@@ -73,12 +57,28 @@ public class GetInterconnectionUrlRequest extends TeaModel {
         return this.appUserAvatarType;
     }
 
+    public GetInterconnectionUrlRequest setAppUserId(String appUserId) {
+        this.appUserId = appUserId;
+        return this;
+    }
+    public String getAppUserId() {
+        return this.appUserId;
+    }
+
     public GetInterconnectionUrlRequest setAppUserMobileNumber(String appUserMobileNumber) {
         this.appUserMobileNumber = appUserMobileNumber;
         return this;
     }
     public String getAppUserMobileNumber() {
         return this.appUserMobileNumber;
+    }
+
+    public GetInterconnectionUrlRequest setAppUserName(String appUserName) {
+        this.appUserName = appUserName;
+        return this;
+    }
+    public String getAppUserName() {
+        return this.appUserName;
     }
 
     public GetInterconnectionUrlRequest setDingCorpId(String dingCorpId) {

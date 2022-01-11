@@ -4,29 +4,17 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetPlatformResourceResponseBody extends TeaModel {
-    // appTotalAmount
-    @NameInMap("appTotalAmount")
-    public Integer appTotalAmount;
-
-    // instanceTotalAmount
-    @NameInMap("instanceTotalAmount")
-    public Long instanceTotalAmount;
-
-    // instanceUsageAmount
-    @NameInMap("instanceUsageAmount")
-    public Long instanceUsageAmount;
+    // accountTotalAmount
+    @NameInMap("accountTotalAmount")
+    public Integer accountTotalAmount;
 
     // accountUsageAmount
     @NameInMap("accountUsageAmount")
     public Integer accountUsageAmount;
 
-    // accountTotalAmount
-    @NameInMap("accountTotalAmount")
-    public Integer accountTotalAmount;
-
-    // pluginUsageAmount
-    @NameInMap("pluginUsageAmount")
-    public Long pluginUsageAmount;
+    // appTotalAmount
+    @NameInMap("appTotalAmount")
+    public Integer appTotalAmount;
 
     // attachmentTotalAmount
     @NameInMap("attachmentTotalAmount")
@@ -36,9 +24,37 @@ public class GetPlatformResourceResponseBody extends TeaModel {
     @NameInMap("attachmentUsageAmount")
     public Long attachmentUsageAmount;
 
+    // instanceTotalAmount
+    @NameInMap("instanceTotalAmount")
+    public Long instanceTotalAmount;
+
+    // instanceUsageAmount
+    @NameInMap("instanceUsageAmount")
+    public Long instanceUsageAmount;
+
+    // pluginUsageAmount
+    @NameInMap("pluginUsageAmount")
+    public Long pluginUsageAmount;
+
     public static GetPlatformResourceResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetPlatformResourceResponseBody self = new GetPlatformResourceResponseBody();
         return TeaModel.build(map, self);
+    }
+
+    public GetPlatformResourceResponseBody setAccountTotalAmount(Integer accountTotalAmount) {
+        this.accountTotalAmount = accountTotalAmount;
+        return this;
+    }
+    public Integer getAccountTotalAmount() {
+        return this.accountTotalAmount;
+    }
+
+    public GetPlatformResourceResponseBody setAccountUsageAmount(Integer accountUsageAmount) {
+        this.accountUsageAmount = accountUsageAmount;
+        return this;
+    }
+    public Integer getAccountUsageAmount() {
+        return this.accountUsageAmount;
     }
 
     public GetPlatformResourceResponseBody setAppTotalAmount(Integer appTotalAmount) {
@@ -47,6 +63,22 @@ public class GetPlatformResourceResponseBody extends TeaModel {
     }
     public Integer getAppTotalAmount() {
         return this.appTotalAmount;
+    }
+
+    public GetPlatformResourceResponseBody setAttachmentTotalAmount(Long attachmentTotalAmount) {
+        this.attachmentTotalAmount = attachmentTotalAmount;
+        return this;
+    }
+    public Long getAttachmentTotalAmount() {
+        return this.attachmentTotalAmount;
+    }
+
+    public GetPlatformResourceResponseBody setAttachmentUsageAmount(Long attachmentUsageAmount) {
+        this.attachmentUsageAmount = attachmentUsageAmount;
+        return this;
+    }
+    public Long getAttachmentUsageAmount() {
+        return this.attachmentUsageAmount;
     }
 
     public GetPlatformResourceResponseBody setInstanceTotalAmount(Long instanceTotalAmount) {
@@ -65,44 +97,12 @@ public class GetPlatformResourceResponseBody extends TeaModel {
         return this.instanceUsageAmount;
     }
 
-    public GetPlatformResourceResponseBody setAccountUsageAmount(Integer accountUsageAmount) {
-        this.accountUsageAmount = accountUsageAmount;
-        return this;
-    }
-    public Integer getAccountUsageAmount() {
-        return this.accountUsageAmount;
-    }
-
-    public GetPlatformResourceResponseBody setAccountTotalAmount(Integer accountTotalAmount) {
-        this.accountTotalAmount = accountTotalAmount;
-        return this;
-    }
-    public Integer getAccountTotalAmount() {
-        return this.accountTotalAmount;
-    }
-
     public GetPlatformResourceResponseBody setPluginUsageAmount(Long pluginUsageAmount) {
         this.pluginUsageAmount = pluginUsageAmount;
         return this;
     }
     public Long getPluginUsageAmount() {
         return this.pluginUsageAmount;
-    }
-
-    public GetPlatformResourceResponseBody setAttachmentTotalAmount(Long attachmentTotalAmount) {
-        this.attachmentTotalAmount = attachmentTotalAmount;
-        return this;
-    }
-    public Long getAttachmentTotalAmount() {
-        return this.attachmentTotalAmount;
-    }
-
-    public GetPlatformResourceResponseBody setAttachmentUsageAmount(Long attachmentUsageAmount) {
-        this.attachmentUsageAmount = attachmentUsageAmount;
-        return this;
-    }
-    public Long getAttachmentUsageAmount() {
-        return this.attachmentUsageAmount;
     }
 
 }

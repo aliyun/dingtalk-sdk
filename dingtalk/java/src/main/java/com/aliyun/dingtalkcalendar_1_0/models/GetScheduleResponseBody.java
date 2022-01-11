@@ -21,50 +21,6 @@ public class GetScheduleResponseBody extends TeaModel {
         return this.scheduleInformation;
     }
 
-    public static class GetScheduleResponseBodyScheduleInformationScheduleItemsStart extends TeaModel {
-        // 开始日期
-        @NameInMap("date")
-        public String date;
-
-        // 开始时间戳，按照ISO 8601格式
-        @NameInMap("dateTime")
-        public String dateTime;
-
-        // 所属时区
-        @NameInMap("timeZone")
-        public String timeZone;
-
-        public static GetScheduleResponseBodyScheduleInformationScheduleItemsStart build(java.util.Map<String, ?> map) throws Exception {
-            GetScheduleResponseBodyScheduleInformationScheduleItemsStart self = new GetScheduleResponseBodyScheduleInformationScheduleItemsStart();
-            return TeaModel.build(map, self);
-        }
-
-        public GetScheduleResponseBodyScheduleInformationScheduleItemsStart setDate(String date) {
-            this.date = date;
-            return this;
-        }
-        public String getDate() {
-            return this.date;
-        }
-
-        public GetScheduleResponseBodyScheduleInformationScheduleItemsStart setDateTime(String dateTime) {
-            this.dateTime = dateTime;
-            return this;
-        }
-        public String getDateTime() {
-            return this.dateTime;
-        }
-
-        public GetScheduleResponseBodyScheduleInformationScheduleItemsStart setTimeZone(String timeZone) {
-            this.timeZone = timeZone;
-            return this;
-        }
-        public String getTimeZone() {
-            return this.timeZone;
-        }
-
-    }
-
     public static class GetScheduleResponseBodyScheduleInformationScheduleItemsEnd extends TeaModel {
         // 结束日期
         @NameInMap("date")
@@ -109,38 +65,66 @@ public class GetScheduleResponseBody extends TeaModel {
 
     }
 
+    public static class GetScheduleResponseBodyScheduleInformationScheduleItemsStart extends TeaModel {
+        // 开始日期
+        @NameInMap("date")
+        public String date;
+
+        // 开始时间戳，按照ISO 8601格式
+        @NameInMap("dateTime")
+        public String dateTime;
+
+        // 所属时区
+        @NameInMap("timeZone")
+        public String timeZone;
+
+        public static GetScheduleResponseBodyScheduleInformationScheduleItemsStart build(java.util.Map<String, ?> map) throws Exception {
+            GetScheduleResponseBodyScheduleInformationScheduleItemsStart self = new GetScheduleResponseBodyScheduleInformationScheduleItemsStart();
+            return TeaModel.build(map, self);
+        }
+
+        public GetScheduleResponseBodyScheduleInformationScheduleItemsStart setDate(String date) {
+            this.date = date;
+            return this;
+        }
+        public String getDate() {
+            return this.date;
+        }
+
+        public GetScheduleResponseBodyScheduleInformationScheduleItemsStart setDateTime(String dateTime) {
+            this.dateTime = dateTime;
+            return this;
+        }
+        public String getDateTime() {
+            return this.dateTime;
+        }
+
+        public GetScheduleResponseBodyScheduleInformationScheduleItemsStart setTimeZone(String timeZone) {
+            this.timeZone = timeZone;
+            return this;
+        }
+        public String getTimeZone() {
+            return this.timeZone;
+        }
+
+    }
+
     public static class GetScheduleResponseBodyScheduleInformationScheduleItems extends TeaModel {
-        // 状态: - BUSY：繁忙, - TENTATIVE：暂定繁忙
-        @NameInMap("status")
-        public String status;
+        // 结束时间，表示一个日期，或者一个带时区的时间戳
+        @NameInMap("end")
+        public GetScheduleResponseBodyScheduleInformationScheduleItemsEnd end;
 
         // 开始时间，表示一个日期，或者一个带时区的时间戳
         @NameInMap("start")
         public GetScheduleResponseBodyScheduleInformationScheduleItemsStart start;
 
-        // 结束时间，表示一个日期，或者一个带时区的时间戳
-        @NameInMap("end")
-        public GetScheduleResponseBodyScheduleInformationScheduleItemsEnd end;
+        // 状态: - BUSY：繁忙, - TENTATIVE：暂定繁忙
+        @NameInMap("status")
+        public String status;
 
         public static GetScheduleResponseBodyScheduleInformationScheduleItems build(java.util.Map<String, ?> map) throws Exception {
             GetScheduleResponseBodyScheduleInformationScheduleItems self = new GetScheduleResponseBodyScheduleInformationScheduleItems();
             return TeaModel.build(map, self);
-        }
-
-        public GetScheduleResponseBodyScheduleInformationScheduleItems setStatus(String status) {
-            this.status = status;
-            return this;
-        }
-        public String getStatus() {
-            return this.status;
-        }
-
-        public GetScheduleResponseBodyScheduleInformationScheduleItems setStart(GetScheduleResponseBodyScheduleInformationScheduleItemsStart start) {
-            this.start = start;
-            return this;
-        }
-        public GetScheduleResponseBodyScheduleInformationScheduleItemsStart getStart() {
-            return this.start;
         }
 
         public GetScheduleResponseBodyScheduleInformationScheduleItems setEnd(GetScheduleResponseBodyScheduleInformationScheduleItemsEnd end) {
@@ -151,13 +135,25 @@ public class GetScheduleResponseBody extends TeaModel {
             return this.end;
         }
 
+        public GetScheduleResponseBodyScheduleInformationScheduleItems setStart(GetScheduleResponseBodyScheduleInformationScheduleItemsStart start) {
+            this.start = start;
+            return this;
+        }
+        public GetScheduleResponseBodyScheduleInformationScheduleItemsStart getStart() {
+            return this.start;
+        }
+
+        public GetScheduleResponseBodyScheduleInformationScheduleItems setStatus(String status) {
+            this.status = status;
+            return this;
+        }
+        public String getStatus() {
+            return this.status;
+        }
+
     }
 
     public static class GetScheduleResponseBodyScheduleInformation extends TeaModel {
-        // 用户userId
-        @NameInMap("userId")
-        public String userId;
-
         // 异常描述
         @NameInMap("error")
         public String error;
@@ -165,17 +161,13 @@ public class GetScheduleResponseBody extends TeaModel {
         @NameInMap("scheduleItems")
         public java.util.List<GetScheduleResponseBodyScheduleInformationScheduleItems> scheduleItems;
 
+        // 用户userId
+        @NameInMap("userId")
+        public String userId;
+
         public static GetScheduleResponseBodyScheduleInformation build(java.util.Map<String, ?> map) throws Exception {
             GetScheduleResponseBodyScheduleInformation self = new GetScheduleResponseBodyScheduleInformation();
             return TeaModel.build(map, self);
-        }
-
-        public GetScheduleResponseBodyScheduleInformation setUserId(String userId) {
-            this.userId = userId;
-            return this;
-        }
-        public String getUserId() {
-            return this.userId;
         }
 
         public GetScheduleResponseBodyScheduleInformation setError(String error) {
@@ -192,6 +184,14 @@ public class GetScheduleResponseBody extends TeaModel {
         }
         public java.util.List<GetScheduleResponseBodyScheduleInformationScheduleItems> getScheduleItems() {
             return this.scheduleItems;
+        }
+
+        public GetScheduleResponseBodyScheduleInformation setUserId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+        public String getUserId() {
+            return this.userId;
         }
 
     }

@@ -4,13 +4,13 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddCustomSpaceRequest extends TeaModel {
-    // 空间标识
-    @NameInMap("identifier")
-    public String identifier;
-
     // 业务类型
     @NameInMap("bizType")
     public String bizType;
+
+    // 空间标识
+    @NameInMap("identifier")
+    public String identifier;
 
     // 授权模式
     @NameInMap("permissionMode")
@@ -25,20 +25,20 @@ public class AddCustomSpaceRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public AddCustomSpaceRequest setIdentifier(String identifier) {
-        this.identifier = identifier;
-        return this;
-    }
-    public String getIdentifier() {
-        return this.identifier;
-    }
-
     public AddCustomSpaceRequest setBizType(String bizType) {
         this.bizType = bizType;
         return this;
     }
     public String getBizType() {
         return this.bizType;
+    }
+
+    public AddCustomSpaceRequest setIdentifier(String identifier) {
+        this.identifier = identifier;
+        return this;
+    }
+    public String getIdentifier() {
+        return this.identifier;
     }
 
     public AddCustomSpaceRequest setPermissionMode(String permissionMode) {

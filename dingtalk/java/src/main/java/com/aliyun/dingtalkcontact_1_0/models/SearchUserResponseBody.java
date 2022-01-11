@@ -8,11 +8,11 @@ public class SearchUserResponseBody extends TeaModel {
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    @NameInMap("totalCount")
-    public Long totalCount;
-
     @NameInMap("list")
     public java.util.List<String> list;
+
+    @NameInMap("totalCount")
+    public Long totalCount;
 
     public static SearchUserResponseBody build(java.util.Map<String, ?> map) throws Exception {
         SearchUserResponseBody self = new SearchUserResponseBody();
@@ -27,20 +27,20 @@ public class SearchUserResponseBody extends TeaModel {
         return this.hasMore;
     }
 
-    public SearchUserResponseBody setTotalCount(Long totalCount) {
-        this.totalCount = totalCount;
-        return this;
-    }
-    public Long getTotalCount() {
-        return this.totalCount;
-    }
-
     public SearchUserResponseBody setList(java.util.List<String> list) {
         this.list = list;
         return this;
     }
     public java.util.List<String> getList() {
         return this.list;
+    }
+
+    public SearchUserResponseBody setTotalCount(Long totalCount) {
+        this.totalCount = totalCount;
+        return this;
+    }
+    public Long getTotalCount() {
+        return this.totalCount;
     }
 
 }

@@ -4,6 +4,10 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryRemoteClassCourseRequest extends TeaModel {
+    // 结束时间
+    @NameInMap("endTime")
+    public Long endTime;
+
     // 操作者用户ID
     @NameInMap("operator")
     public String operator;
@@ -12,13 +16,17 @@ public class QueryRemoteClassCourseRequest extends TeaModel {
     @NameInMap("startTime")
     public Long startTime;
 
-    // 结束时间
-    @NameInMap("endTime")
-    public Long endTime;
-
     public static QueryRemoteClassCourseRequest build(java.util.Map<String, ?> map) throws Exception {
         QueryRemoteClassCourseRequest self = new QueryRemoteClassCourseRequest();
         return TeaModel.build(map, self);
+    }
+
+    public QueryRemoteClassCourseRequest setEndTime(Long endTime) {
+        this.endTime = endTime;
+        return this;
+    }
+    public Long getEndTime() {
+        return this.endTime;
     }
 
     public QueryRemoteClassCourseRequest setOperator(String operator) {
@@ -35,14 +43,6 @@ public class QueryRemoteClassCourseRequest extends TeaModel {
     }
     public Long getStartTime() {
         return this.startTime;
-    }
-
-    public QueryRemoteClassCourseRequest setEndTime(Long endTime) {
-        this.endTime = endTime;
-        return this;
-    }
-    public Long getEndTime() {
-        return this.endTime;
     }
 
 }

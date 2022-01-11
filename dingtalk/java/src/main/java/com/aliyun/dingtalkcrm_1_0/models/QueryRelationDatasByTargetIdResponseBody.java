@@ -22,6 +22,10 @@ public class QueryRelationDatasByTargetIdResponseBody extends TeaModel {
     }
 
     public static class QueryRelationDatasByTargetIdResponseBodyRelationsBizDataList extends TeaModel {
+        // 关系模型数据字段扩展值。
+        @NameInMap("extendValue")
+        public String extendValue;
+
         // 关系模型数据字段名。
         @NameInMap("key")
         public String key;
@@ -30,13 +34,17 @@ public class QueryRelationDatasByTargetIdResponseBody extends TeaModel {
         @NameInMap("value")
         public String value;
 
-        // 关系模型数据字段扩展值。
-        @NameInMap("extendValue")
-        public String extendValue;
-
         public static QueryRelationDatasByTargetIdResponseBodyRelationsBizDataList build(java.util.Map<String, ?> map) throws Exception {
             QueryRelationDatasByTargetIdResponseBodyRelationsBizDataList self = new QueryRelationDatasByTargetIdResponseBodyRelationsBizDataList();
             return TeaModel.build(map, self);
+        }
+
+        public QueryRelationDatasByTargetIdResponseBodyRelationsBizDataList setExtendValue(String extendValue) {
+            this.extendValue = extendValue;
+            return this;
+        }
+        public String getExtendValue() {
+            return this.extendValue;
         }
 
         public QueryRelationDatasByTargetIdResponseBodyRelationsBizDataList setKey(String key) {
@@ -55,17 +63,12 @@ public class QueryRelationDatasByTargetIdResponseBody extends TeaModel {
             return this.value;
         }
 
-        public QueryRelationDatasByTargetIdResponseBodyRelationsBizDataList setExtendValue(String extendValue) {
-            this.extendValue = extendValue;
-            return this;
-        }
-        public String getExtendValue() {
-            return this.extendValue;
-        }
-
     }
 
     public static class QueryRelationDatasByTargetIdResponseBodyRelations extends TeaModel {
+        @NameInMap("bizDataList")
+        public java.util.List<QueryRelationDatasByTargetIdResponseBodyRelationsBizDataList> bizDataList;
+
         // 关系实例ID。
         @NameInMap("relationId")
         public String relationId;
@@ -74,12 +77,17 @@ public class QueryRelationDatasByTargetIdResponseBody extends TeaModel {
         @NameInMap("relationType")
         public String relationType;
 
-        @NameInMap("bizDataList")
-        public java.util.List<QueryRelationDatasByTargetIdResponseBodyRelationsBizDataList> bizDataList;
-
         public static QueryRelationDatasByTargetIdResponseBodyRelations build(java.util.Map<String, ?> map) throws Exception {
             QueryRelationDatasByTargetIdResponseBodyRelations self = new QueryRelationDatasByTargetIdResponseBodyRelations();
             return TeaModel.build(map, self);
+        }
+
+        public QueryRelationDatasByTargetIdResponseBodyRelations setBizDataList(java.util.List<QueryRelationDatasByTargetIdResponseBodyRelationsBizDataList> bizDataList) {
+            this.bizDataList = bizDataList;
+            return this;
+        }
+        public java.util.List<QueryRelationDatasByTargetIdResponseBodyRelationsBizDataList> getBizDataList() {
+            return this.bizDataList;
         }
 
         public QueryRelationDatasByTargetIdResponseBodyRelations setRelationId(String relationId) {
@@ -96,14 +104,6 @@ public class QueryRelationDatasByTargetIdResponseBody extends TeaModel {
         }
         public String getRelationType() {
             return this.relationType;
-        }
-
-        public QueryRelationDatasByTargetIdResponseBodyRelations setBizDataList(java.util.List<QueryRelationDatasByTargetIdResponseBodyRelationsBizDataList> bizDataList) {
-            this.bizDataList = bizDataList;
-            return this;
-        }
-        public java.util.List<QueryRelationDatasByTargetIdResponseBodyRelationsBizDataList> getBizDataList() {
-            return this.bizDataList;
         }
 
     }

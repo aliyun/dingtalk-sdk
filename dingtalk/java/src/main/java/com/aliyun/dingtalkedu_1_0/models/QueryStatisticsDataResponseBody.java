@@ -22,6 +22,26 @@ public class QueryStatisticsDataResponseBody extends TeaModel {
     }
 
     public static class QueryStatisticsDataResponseBodyResult extends TeaModel {
+        // 班级id
+        @NameInMap("classId")
+        public Long classId;
+
+        // 总课程数
+        @NameInMap("courseCount")
+        public Long courseCount;
+
+        // 总学时
+        @NameInMap("courseHours")
+        public Float courseHours;
+
+        // 学科code
+        @NameInMap("subjectCode")
+        public String subjectCode;
+
+        // 学科名称
+        @NameInMap("subjectName")
+        public Long subjectName;
+
         // 用户id
         @NameInMap("userId")
         public String userId;
@@ -30,29 +50,49 @@ public class QueryStatisticsDataResponseBody extends TeaModel {
         @NameInMap("userName")
         public String userName;
 
-        // 班级id
-        @NameInMap("classId")
-        public Long classId;
-
-        // 学科名称
-        @NameInMap("subjectName")
-        public Long subjectName;
-
-        // 学科code
-        @NameInMap("subjectCode")
-        public String subjectCode;
-
-        // 总学时
-        @NameInMap("courseHours")
-        public Float courseHours;
-
-        // 总课程数
-        @NameInMap("courseCount")
-        public Long courseCount;
-
         public static QueryStatisticsDataResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             QueryStatisticsDataResponseBodyResult self = new QueryStatisticsDataResponseBodyResult();
             return TeaModel.build(map, self);
+        }
+
+        public QueryStatisticsDataResponseBodyResult setClassId(Long classId) {
+            this.classId = classId;
+            return this;
+        }
+        public Long getClassId() {
+            return this.classId;
+        }
+
+        public QueryStatisticsDataResponseBodyResult setCourseCount(Long courseCount) {
+            this.courseCount = courseCount;
+            return this;
+        }
+        public Long getCourseCount() {
+            return this.courseCount;
+        }
+
+        public QueryStatisticsDataResponseBodyResult setCourseHours(Float courseHours) {
+            this.courseHours = courseHours;
+            return this;
+        }
+        public Float getCourseHours() {
+            return this.courseHours;
+        }
+
+        public QueryStatisticsDataResponseBodyResult setSubjectCode(String subjectCode) {
+            this.subjectCode = subjectCode;
+            return this;
+        }
+        public String getSubjectCode() {
+            return this.subjectCode;
+        }
+
+        public QueryStatisticsDataResponseBodyResult setSubjectName(Long subjectName) {
+            this.subjectName = subjectName;
+            return this;
+        }
+        public Long getSubjectName() {
+            return this.subjectName;
         }
 
         public QueryStatisticsDataResponseBodyResult setUserId(String userId) {
@@ -69,46 +109,6 @@ public class QueryStatisticsDataResponseBody extends TeaModel {
         }
         public String getUserName() {
             return this.userName;
-        }
-
-        public QueryStatisticsDataResponseBodyResult setClassId(Long classId) {
-            this.classId = classId;
-            return this;
-        }
-        public Long getClassId() {
-            return this.classId;
-        }
-
-        public QueryStatisticsDataResponseBodyResult setSubjectName(Long subjectName) {
-            this.subjectName = subjectName;
-            return this;
-        }
-        public Long getSubjectName() {
-            return this.subjectName;
-        }
-
-        public QueryStatisticsDataResponseBodyResult setSubjectCode(String subjectCode) {
-            this.subjectCode = subjectCode;
-            return this;
-        }
-        public String getSubjectCode() {
-            return this.subjectCode;
-        }
-
-        public QueryStatisticsDataResponseBodyResult setCourseHours(Float courseHours) {
-            this.courseHours = courseHours;
-            return this;
-        }
-        public Float getCourseHours() {
-            return this.courseHours;
-        }
-
-        public QueryStatisticsDataResponseBodyResult setCourseCount(Long courseCount) {
-            this.courseCount = courseCount;
-            return this;
-        }
-        public Long getCourseCount() {
-            return this.courseCount;
         }
 
     }

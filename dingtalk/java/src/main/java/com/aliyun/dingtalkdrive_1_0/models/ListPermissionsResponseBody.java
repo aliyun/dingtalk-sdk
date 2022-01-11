@@ -38,10 +38,6 @@ public class ListPermissionsResponseBody extends TeaModel {
         @NameInMap("corpId")
         public String corpId;
 
-        // 成员类型
-        @NameInMap("memberType")
-        public String memberType;
-
         // 成员id
         @NameInMap("memberId")
         public String memberId;
@@ -49,6 +45,10 @@ public class ListPermissionsResponseBody extends TeaModel {
         // 成员名称
         @NameInMap("memberName")
         public String memberName;
+
+        // 成员类型
+        @NameInMap("memberType")
+        public String memberType;
 
         public static ListPermissionsResponseBodyMembersMember build(java.util.Map<String, ?> map) throws Exception {
             ListPermissionsResponseBodyMembersMember self = new ListPermissionsResponseBodyMembersMember();
@@ -61,14 +61,6 @@ public class ListPermissionsResponseBody extends TeaModel {
         }
         public String getCorpId() {
             return this.corpId;
-        }
-
-        public ListPermissionsResponseBodyMembersMember setMemberType(String memberType) {
-            this.memberType = memberType;
-            return this;
-        }
-        public String getMemberType() {
-            return this.memberType;
         }
 
         public ListPermissionsResponseBodyMembersMember setMemberId(String memberId) {
@@ -87,40 +79,32 @@ public class ListPermissionsResponseBody extends TeaModel {
             return this.memberName;
         }
 
+        public ListPermissionsResponseBodyMembersMember setMemberType(String memberType) {
+            this.memberType = memberType;
+            return this;
+        }
+        public String getMemberType() {
+            return this.memberType;
+        }
+
     }
 
     public static class ListPermissionsResponseBodyMembers extends TeaModel {
-        // 权限角色
-        @NameInMap("role")
-        public String role;
+        // 是否是继承的权限
+        @NameInMap("extend")
+        public Boolean extend;
 
         // 成员信息
         @NameInMap("member")
         public ListPermissionsResponseBodyMembersMember member;
 
-        // 是否是继承的权限
-        @NameInMap("extend")
-        public Boolean extend;
+        // 权限角色
+        @NameInMap("role")
+        public String role;
 
         public static ListPermissionsResponseBodyMembers build(java.util.Map<String, ?> map) throws Exception {
             ListPermissionsResponseBodyMembers self = new ListPermissionsResponseBodyMembers();
             return TeaModel.build(map, self);
-        }
-
-        public ListPermissionsResponseBodyMembers setRole(String role) {
-            this.role = role;
-            return this;
-        }
-        public String getRole() {
-            return this.role;
-        }
-
-        public ListPermissionsResponseBodyMembers setMember(ListPermissionsResponseBodyMembersMember member) {
-            this.member = member;
-            return this;
-        }
-        public ListPermissionsResponseBodyMembersMember getMember() {
-            return this.member;
         }
 
         public ListPermissionsResponseBodyMembers setExtend(Boolean extend) {
@@ -131,16 +115,28 @@ public class ListPermissionsResponseBody extends TeaModel {
             return this.extend;
         }
 
+        public ListPermissionsResponseBodyMembers setMember(ListPermissionsResponseBodyMembersMember member) {
+            this.member = member;
+            return this;
+        }
+        public ListPermissionsResponseBodyMembersMember getMember() {
+            return this.member;
+        }
+
+        public ListPermissionsResponseBodyMembers setRole(String role) {
+            this.role = role;
+            return this;
+        }
+        public String getRole() {
+            return this.role;
+        }
+
     }
 
     public static class ListPermissionsResponseBodyOutMembersMember extends TeaModel {
         // 企业corpId
         @NameInMap("corpId")
         public String corpId;
-
-        // 成员类型
-        @NameInMap("memberType")
-        public String memberType;
 
         // 成员id
         @NameInMap("memberId")
@@ -149,6 +145,10 @@ public class ListPermissionsResponseBody extends TeaModel {
         // 成员名称
         @NameInMap("memberName")
         public String memberName;
+
+        // 成员类型
+        @NameInMap("memberType")
+        public String memberType;
 
         public static ListPermissionsResponseBodyOutMembersMember build(java.util.Map<String, ?> map) throws Exception {
             ListPermissionsResponseBodyOutMembersMember self = new ListPermissionsResponseBodyOutMembersMember();
@@ -161,14 +161,6 @@ public class ListPermissionsResponseBody extends TeaModel {
         }
         public String getCorpId() {
             return this.corpId;
-        }
-
-        public ListPermissionsResponseBodyOutMembersMember setMemberType(String memberType) {
-            this.memberType = memberType;
-            return this;
-        }
-        public String getMemberType() {
-            return this.memberType;
         }
 
         public ListPermissionsResponseBodyOutMembersMember setMemberId(String memberId) {
@@ -187,32 +179,40 @@ public class ListPermissionsResponseBody extends TeaModel {
             return this.memberName;
         }
 
+        public ListPermissionsResponseBodyOutMembersMember setMemberType(String memberType) {
+            this.memberType = memberType;
+            return this;
+        }
+        public String getMemberType() {
+            return this.memberType;
+        }
+
     }
 
     public static class ListPermissionsResponseBodyOutMembers extends TeaModel {
-        // 权限角色
-        @NameInMap("role")
-        public String role;
+        // 是否是继承的权限
+        @NameInMap("extend")
+        public Boolean extend;
 
         // 成员信息
         @NameInMap("member")
         public ListPermissionsResponseBodyOutMembersMember member;
 
-        // 是否是继承的权限
-        @NameInMap("extend")
-        public Boolean extend;
+        // 权限角色
+        @NameInMap("role")
+        public String role;
 
         public static ListPermissionsResponseBodyOutMembers build(java.util.Map<String, ?> map) throws Exception {
             ListPermissionsResponseBodyOutMembers self = new ListPermissionsResponseBodyOutMembers();
             return TeaModel.build(map, self);
         }
 
-        public ListPermissionsResponseBodyOutMembers setRole(String role) {
-            this.role = role;
+        public ListPermissionsResponseBodyOutMembers setExtend(Boolean extend) {
+            this.extend = extend;
             return this;
         }
-        public String getRole() {
-            return this.role;
+        public Boolean getExtend() {
+            return this.extend;
         }
 
         public ListPermissionsResponseBodyOutMembers setMember(ListPermissionsResponseBodyOutMembersMember member) {
@@ -223,12 +223,12 @@ public class ListPermissionsResponseBody extends TeaModel {
             return this.member;
         }
 
-        public ListPermissionsResponseBodyOutMembers setExtend(Boolean extend) {
-            this.extend = extend;
+        public ListPermissionsResponseBodyOutMembers setRole(String role) {
+            this.role = role;
             return this;
         }
-        public Boolean getExtend() {
-            return this.extend;
+        public String getRole() {
+            return this.role;
         }
 
     }

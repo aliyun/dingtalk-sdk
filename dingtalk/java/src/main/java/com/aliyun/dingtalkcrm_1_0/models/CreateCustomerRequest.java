@@ -4,13 +4,9 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateCustomerRequest extends TeaModel {
-    // 写入客户类型：个人客户crm_customer_personal; 企业客户crm_customer
-    @NameInMap("objectType")
-    public String objectType;
-
-    // 已存在客户时，添加联系人，可以传入客户的instanceId用作关联绑定
-    @NameInMap("instanceId")
-    public String instanceId;
+    // 关联联系人数据
+    @NameInMap("contacts")
+    public java.util.List<CreateCustomerRequestContacts> contacts;
 
     // 创建人的userId
     @NameInMap("creatorUserId")
@@ -24,9 +20,13 @@ public class CreateCustomerRequest extends TeaModel {
     @NameInMap("extendData")
     public java.util.Map<String, ?> extendData;
 
-    // 关联联系人数据
-    @NameInMap("contacts")
-    public java.util.List<CreateCustomerRequestContacts> contacts;
+    // 已存在客户时，添加联系人，可以传入客户的instanceId用作关联绑定
+    @NameInMap("instanceId")
+    public String instanceId;
+
+    // 写入客户类型：个人客户crm_customer_personal; 企业客户crm_customer
+    @NameInMap("objectType")
+    public String objectType;
 
     // 权限
     @NameInMap("permission")
@@ -41,20 +41,12 @@ public class CreateCustomerRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public CreateCustomerRequest setObjectType(String objectType) {
-        this.objectType = objectType;
+    public CreateCustomerRequest setContacts(java.util.List<CreateCustomerRequestContacts> contacts) {
+        this.contacts = contacts;
         return this;
     }
-    public String getObjectType() {
-        return this.objectType;
-    }
-
-    public CreateCustomerRequest setInstanceId(String instanceId) {
-        this.instanceId = instanceId;
-        return this;
-    }
-    public String getInstanceId() {
-        return this.instanceId;
+    public java.util.List<CreateCustomerRequestContacts> getContacts() {
+        return this.contacts;
     }
 
     public CreateCustomerRequest setCreatorUserId(String creatorUserId) {
@@ -81,12 +73,20 @@ public class CreateCustomerRequest extends TeaModel {
         return this.extendData;
     }
 
-    public CreateCustomerRequest setContacts(java.util.List<CreateCustomerRequestContacts> contacts) {
-        this.contacts = contacts;
+    public CreateCustomerRequest setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
         return this;
     }
-    public java.util.List<CreateCustomerRequestContacts> getContacts() {
-        return this.contacts;
+    public String getInstanceId() {
+        return this.instanceId;
+    }
+
+    public CreateCustomerRequest setObjectType(String objectType) {
+        this.objectType = objectType;
+        return this;
+    }
+    public String getObjectType() {
+        return this.objectType;
     }
 
     public CreateCustomerRequest setPermission(CreateCustomerRequestPermission permission) {
@@ -170,14 +170,6 @@ public class CreateCustomerRequest extends TeaModel {
     }
 
     public static class CreateCustomerRequestSaveOption extends TeaModel {
-        // 关注配置：0 不处理， 1 自动关注（需要单独申请白名单）
-        @NameInMap("subscribePolicy")
-        public Long subscribePolicy;
-
-        // 保存联系人失败时是否阻断
-        @NameInMap("throwExceptionWhileSavingContactFailed")
-        public Boolean throwExceptionWhileSavingContactFailed;
-
         // 客户已存在时的处理策略：APPEND_CONTACT_FORCE 直接追加联系人； REJECT 返回失败
         @NameInMap("customerExistedPolicy")
         public String customerExistedPolicy;
@@ -186,25 +178,17 @@ public class CreateCustomerRequest extends TeaModel {
         @NameInMap("skipDuplicateCheck")
         public Boolean skipDuplicateCheck;
 
+        // 关注配置：0 不处理， 1 自动关注（需要单独申请白名单）
+        @NameInMap("subscribePolicy")
+        public Long subscribePolicy;
+
+        // 保存联系人失败时是否阻断
+        @NameInMap("throwExceptionWhileSavingContactFailed")
+        public Boolean throwExceptionWhileSavingContactFailed;
+
         public static CreateCustomerRequestSaveOption build(java.util.Map<String, ?> map) throws Exception {
             CreateCustomerRequestSaveOption self = new CreateCustomerRequestSaveOption();
             return TeaModel.build(map, self);
-        }
-
-        public CreateCustomerRequestSaveOption setSubscribePolicy(Long subscribePolicy) {
-            this.subscribePolicy = subscribePolicy;
-            return this;
-        }
-        public Long getSubscribePolicy() {
-            return this.subscribePolicy;
-        }
-
-        public CreateCustomerRequestSaveOption setThrowExceptionWhileSavingContactFailed(Boolean throwExceptionWhileSavingContactFailed) {
-            this.throwExceptionWhileSavingContactFailed = throwExceptionWhileSavingContactFailed;
-            return this;
-        }
-        public Boolean getThrowExceptionWhileSavingContactFailed() {
-            return this.throwExceptionWhileSavingContactFailed;
         }
 
         public CreateCustomerRequestSaveOption setCustomerExistedPolicy(String customerExistedPolicy) {
@@ -221,6 +205,22 @@ public class CreateCustomerRequest extends TeaModel {
         }
         public Boolean getSkipDuplicateCheck() {
             return this.skipDuplicateCheck;
+        }
+
+        public CreateCustomerRequestSaveOption setSubscribePolicy(Long subscribePolicy) {
+            this.subscribePolicy = subscribePolicy;
+            return this;
+        }
+        public Long getSubscribePolicy() {
+            return this.subscribePolicy;
+        }
+
+        public CreateCustomerRequestSaveOption setThrowExceptionWhileSavingContactFailed(Boolean throwExceptionWhileSavingContactFailed) {
+            this.throwExceptionWhileSavingContactFailed = throwExceptionWhileSavingContactFailed;
+            return this;
+        }
+        public Boolean getThrowExceptionWhileSavingContactFailed() {
+            return this.throwExceptionWhileSavingContactFailed;
         }
 
     }

@@ -8,17 +8,17 @@ public class GetSupplierResponseBody extends TeaModel {
     @NameInMap("code")
     public String code;
 
-    // 供应商名称
-    @NameInMap("name")
-    public String name;
+    // 创建时间(单位MS)
+    @NameInMap("createTime")
+    public Long createTime;
 
     // 供应商描述
     @NameInMap("description")
     public String description;
 
-    // 创建时间(单位MS)
-    @NameInMap("createTime")
-    public Long createTime;
+    // 供应商名称
+    @NameInMap("name")
+    public String name;
 
     // 状态：启用(valid), 停用(invalid), 删除(deleted)
     @NameInMap("status")
@@ -37,12 +37,12 @@ public class GetSupplierResponseBody extends TeaModel {
         return this.code;
     }
 
-    public GetSupplierResponseBody setName(String name) {
-        this.name = name;
+    public GetSupplierResponseBody setCreateTime(Long createTime) {
+        this.createTime = createTime;
         return this;
     }
-    public String getName() {
-        return this.name;
+    public Long getCreateTime() {
+        return this.createTime;
     }
 
     public GetSupplierResponseBody setDescription(String description) {
@@ -53,12 +53,12 @@ public class GetSupplierResponseBody extends TeaModel {
         return this.description;
     }
 
-    public GetSupplierResponseBody setCreateTime(Long createTime) {
-        this.createTime = createTime;
+    public GetSupplierResponseBody setName(String name) {
+        this.name = name;
         return this;
     }
-    public Long getCreateTime() {
-        return this.createTime;
+    public String getName() {
+        return this.name;
     }
 
     public GetSupplierResponseBody setStatus(String status) {

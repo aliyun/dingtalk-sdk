@@ -4,6 +4,10 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetOfficialAccountContactInfoResponseBody extends TeaModel {
+    // 已授权的字段
+    @NameInMap("authItems")
+    public java.util.List<String> authItems;
+
     // 联系人主企业名称
     @NameInMap("corpName")
     public String corpName;
@@ -21,16 +25,20 @@ public class GetOfficialAccountContactInfoResponseBody extends TeaModel {
     public String unionId;
 
     // 已授权的字段
-    @NameInMap("authItems")
-    public java.util.List<String> authItems;
-
-    // 已授权的字段
     @NameInMap("userInfos")
     public java.util.List<String> userInfos;
 
     public static GetOfficialAccountContactInfoResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetOfficialAccountContactInfoResponseBody self = new GetOfficialAccountContactInfoResponseBody();
         return TeaModel.build(map, self);
+    }
+
+    public GetOfficialAccountContactInfoResponseBody setAuthItems(java.util.List<String> authItems) {
+        this.authItems = authItems;
+        return this;
+    }
+    public java.util.List<String> getAuthItems() {
+        return this.authItems;
     }
 
     public GetOfficialAccountContactInfoResponseBody setCorpName(String corpName) {
@@ -63,14 +71,6 @@ public class GetOfficialAccountContactInfoResponseBody extends TeaModel {
     }
     public String getUnionId() {
         return this.unionId;
-    }
-
-    public GetOfficialAccountContactInfoResponseBody setAuthItems(java.util.List<String> authItems) {
-        this.authItems = authItems;
-        return this;
-    }
-    public java.util.List<String> getAuthItems() {
-        return this.authItems;
     }
 
     public GetOfficialAccountContactInfoResponseBody setUserInfos(java.util.List<String> userInfos) {

@@ -4,23 +4,15 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateRemoteClassCourseResponseBody extends TeaModel {
-    @NameInMap("success")
-    public Boolean success;
-
     @NameInMap("result")
     public CreateRemoteClassCourseResponseBodyResult result;
+
+    @NameInMap("success")
+    public Boolean success;
 
     public static CreateRemoteClassCourseResponseBody build(java.util.Map<String, ?> map) throws Exception {
         CreateRemoteClassCourseResponseBody self = new CreateRemoteClassCourseResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public CreateRemoteClassCourseResponseBody setSuccess(Boolean success) {
-        this.success = success;
-        return this;
-    }
-    public Boolean getSuccess() {
-        return this.success;
     }
 
     public CreateRemoteClassCourseResponseBody setResult(CreateRemoteClassCourseResponseBodyResult result) {
@@ -29,6 +21,14 @@ public class CreateRemoteClassCourseResponseBody extends TeaModel {
     }
     public CreateRemoteClassCourseResponseBodyResult getResult() {
         return this.result;
+    }
+
+    public CreateRemoteClassCourseResponseBody setSuccess(Boolean success) {
+        this.success = success;
+        return this;
+    }
+    public Boolean getSuccess() {
+        return this.success;
     }
 
     public static class CreateRemoteClassCourseResponseBodyResult extends TeaModel {

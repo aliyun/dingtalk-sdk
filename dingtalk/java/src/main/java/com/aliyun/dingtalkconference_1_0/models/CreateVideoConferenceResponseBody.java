@@ -12,13 +12,13 @@ public class CreateVideoConferenceResponseBody extends TeaModel {
     @NameInMap("conferencePassword")
     public String conferencePassword;
 
-    // 主持人密码
-    @NameInMap("hostPassword")
-    public String hostPassword;
-
     // 入会链接
     @NameInMap("externalLinkUrl")
     public String externalLinkUrl;
+
+    // 主持人密码
+    @NameInMap("hostPassword")
+    public String hostPassword;
 
     // 电话入会号码
     @NameInMap("phoneNumbers")
@@ -45,20 +45,20 @@ public class CreateVideoConferenceResponseBody extends TeaModel {
         return this.conferencePassword;
     }
 
-    public CreateVideoConferenceResponseBody setHostPassword(String hostPassword) {
-        this.hostPassword = hostPassword;
-        return this;
-    }
-    public String getHostPassword() {
-        return this.hostPassword;
-    }
-
     public CreateVideoConferenceResponseBody setExternalLinkUrl(String externalLinkUrl) {
         this.externalLinkUrl = externalLinkUrl;
         return this;
     }
     public String getExternalLinkUrl() {
         return this.externalLinkUrl;
+    }
+
+    public CreateVideoConferenceResponseBody setHostPassword(String hostPassword) {
+        this.hostPassword = hostPassword;
+        return this;
+    }
+    public String getHostPassword() {
+        return this.hostPassword;
     }
 
     public CreateVideoConferenceResponseBody setPhoneNumbers(java.util.List<String> phoneNumbers) {

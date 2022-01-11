@@ -8,17 +8,17 @@ public class PublishFileChangeNoticeRequest extends TeaModel {
     @NameInMap("fileId")
     public String fileId;
 
-    // 钉盘spaceId
-    @NameInMap("spaceId")
-    public String spaceId;
+    // 操作类型: 1-添加 2-修改
+    @NameInMap("operateType")
+    public String operateType;
 
     // 操作人unionId
     @NameInMap("operatorUnionId")
     public String operatorUnionId;
 
-    // 操作类型: 1-添加 2-修改
-    @NameInMap("operateType")
-    public String operateType;
+    // 钉盘spaceId
+    @NameInMap("spaceId")
+    public String spaceId;
 
     public static PublishFileChangeNoticeRequest build(java.util.Map<String, ?> map) throws Exception {
         PublishFileChangeNoticeRequest self = new PublishFileChangeNoticeRequest();
@@ -33,12 +33,12 @@ public class PublishFileChangeNoticeRequest extends TeaModel {
         return this.fileId;
     }
 
-    public PublishFileChangeNoticeRequest setSpaceId(String spaceId) {
-        this.spaceId = spaceId;
+    public PublishFileChangeNoticeRequest setOperateType(String operateType) {
+        this.operateType = operateType;
         return this;
     }
-    public String getSpaceId() {
-        return this.spaceId;
+    public String getOperateType() {
+        return this.operateType;
     }
 
     public PublishFileChangeNoticeRequest setOperatorUnionId(String operatorUnionId) {
@@ -49,12 +49,12 @@ public class PublishFileChangeNoticeRequest extends TeaModel {
         return this.operatorUnionId;
     }
 
-    public PublishFileChangeNoticeRequest setOperateType(String operateType) {
-        this.operateType = operateType;
+    public PublishFileChangeNoticeRequest setSpaceId(String spaceId) {
+        this.spaceId = spaceId;
         return this;
     }
-    public String getOperateType() {
-        return this.operateType;
+    public String getSpaceId() {
+        return this.spaceId;
     }
 
 }

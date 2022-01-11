@@ -46,10 +46,6 @@ public class UpdateApplicationRegFormRequest extends TeaModel {
     }
 
     public static class UpdateApplicationRegFormRequestDingPanFile extends TeaModel {
-        // 钉盘空间标识
-        @NameInMap("spaceId")
-        public Long spaceId;
-
         // 钉盘文件标识
         @NameInMap("fileId")
         public String fileId;
@@ -66,17 +62,13 @@ public class UpdateApplicationRegFormRequest extends TeaModel {
         @NameInMap("fileType")
         public String fileType;
 
+        // 钉盘空间标识
+        @NameInMap("spaceId")
+        public Long spaceId;
+
         public static UpdateApplicationRegFormRequestDingPanFile build(java.util.Map<String, ?> map) throws Exception {
             UpdateApplicationRegFormRequestDingPanFile self = new UpdateApplicationRegFormRequestDingPanFile();
             return TeaModel.build(map, self);
-        }
-
-        public UpdateApplicationRegFormRequestDingPanFile setSpaceId(Long spaceId) {
-            this.spaceId = spaceId;
-            return this;
-        }
-        public Long getSpaceId() {
-            return this.spaceId;
         }
 
         public UpdateApplicationRegFormRequestDingPanFile setFileId(String fileId) {
@@ -109,6 +101,14 @@ public class UpdateApplicationRegFormRequest extends TeaModel {
         }
         public String getFileType() {
             return this.fileType;
+        }
+
+        public UpdateApplicationRegFormRequestDingPanFile setSpaceId(Long spaceId) {
+            this.spaceId = spaceId;
+            return this;
+        }
+        public Long getSpaceId() {
+            return this.spaceId;
         }
 
     }

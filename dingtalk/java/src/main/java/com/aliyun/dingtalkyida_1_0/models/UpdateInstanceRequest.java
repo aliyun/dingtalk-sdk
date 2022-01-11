@@ -4,25 +4,25 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateInstanceRequest extends TeaModel {
-    // 实例ID
-    @NameInMap("processInstanceId")
-    public String processInstanceId;
-
     // 应用ID
     @NameInMap("appType")
     public String appType;
 
-    // 更新的表单数据
-    @NameInMap("updateFormDataJson")
-    public String updateFormDataJson;
+    // 语言环境
+    @NameInMap("language")
+    public String language;
+
+    // 实例ID
+    @NameInMap("processInstanceId")
+    public String processInstanceId;
 
     // 应用秘钥
     @NameInMap("systemToken")
     public String systemToken;
 
-    // 语言环境
-    @NameInMap("language")
-    public String language;
+    // 更新的表单数据
+    @NameInMap("updateFormDataJson")
+    public String updateFormDataJson;
 
     // 钉钉的userId
     @NameInMap("userId")
@@ -33,14 +33,6 @@ public class UpdateInstanceRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public UpdateInstanceRequest setProcessInstanceId(String processInstanceId) {
-        this.processInstanceId = processInstanceId;
-        return this;
-    }
-    public String getProcessInstanceId() {
-        return this.processInstanceId;
-    }
-
     public UpdateInstanceRequest setAppType(String appType) {
         this.appType = appType;
         return this;
@@ -49,12 +41,20 @@ public class UpdateInstanceRequest extends TeaModel {
         return this.appType;
     }
 
-    public UpdateInstanceRequest setUpdateFormDataJson(String updateFormDataJson) {
-        this.updateFormDataJson = updateFormDataJson;
+    public UpdateInstanceRequest setLanguage(String language) {
+        this.language = language;
         return this;
     }
-    public String getUpdateFormDataJson() {
-        return this.updateFormDataJson;
+    public String getLanguage() {
+        return this.language;
+    }
+
+    public UpdateInstanceRequest setProcessInstanceId(String processInstanceId) {
+        this.processInstanceId = processInstanceId;
+        return this;
+    }
+    public String getProcessInstanceId() {
+        return this.processInstanceId;
     }
 
     public UpdateInstanceRequest setSystemToken(String systemToken) {
@@ -65,12 +65,12 @@ public class UpdateInstanceRequest extends TeaModel {
         return this.systemToken;
     }
 
-    public UpdateInstanceRequest setLanguage(String language) {
-        this.language = language;
+    public UpdateInstanceRequest setUpdateFormDataJson(String updateFormDataJson) {
+        this.updateFormDataJson = updateFormDataJson;
         return this;
     }
-    public String getLanguage() {
-        return this.language;
+    public String getUpdateFormDataJson() {
+        return this.updateFormDataJson;
     }
 
     public UpdateInstanceRequest setUserId(String userId) {

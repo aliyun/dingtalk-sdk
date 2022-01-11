@@ -22,13 +22,29 @@ public class QueryFormByBizTypeResponseBody extends TeaModel {
     }
 
     public static class QueryFormByBizTypeResponseBodyResult extends TeaModel {
-        // 创建人
-        @NameInMap("creator")
-        public String creator;
+        // 表单类型，0为流程表单，1为数据表单
+        @NameInMap("appType")
+        public Integer appType;
 
         // 应用搭建id
         @NameInMap("appUuid")
         public String appUuid;
+
+        // 业务标识
+        @NameInMap("bizType")
+        public String bizType;
+
+        // 表单控件描述
+        @NameInMap("content")
+        public String content;
+
+        // 创建时间
+        @NameInMap("createTime")
+        public Long createTime;
+
+        // 创建人
+        @NameInMap("creator")
+        public String creator;
 
         // 模板code
         @NameInMap("formCode")
@@ -38,53 +54,37 @@ public class QueryFormByBizTypeResponseBody extends TeaModel {
         @NameInMap("formUuid")
         public String formUuid;
 
-        // 模板名称
-        @NameInMap("name")
-        public String name;
-
         // 模板描述
         @NameInMap("memo")
         public String memo;
-
-        // 数据归属id
-        @NameInMap("ownerId")
-        public String ownerId;
-
-        // 表单类型，0为流程表单，1为数据表单
-        @NameInMap("appType")
-        public Integer appType;
-
-        // 业务标识
-        @NameInMap("bizType")
-        public String bizType;
-
-        // 模板状态
-        @NameInMap("status")
-        public String status;
-
-        // 创建时间
-        @NameInMap("createTime")
-        public Long createTime;
 
         // 修改时间
         @NameInMap("modifedTime")
         public Long modifedTime;
 
-        // 表单控件描述
-        @NameInMap("content")
-        public String content;
+        // 模板名称
+        @NameInMap("name")
+        public String name;
+
+        // 数据归属id
+        @NameInMap("ownerId")
+        public String ownerId;
+
+        // 模板状态
+        @NameInMap("status")
+        public String status;
 
         public static QueryFormByBizTypeResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             QueryFormByBizTypeResponseBodyResult self = new QueryFormByBizTypeResponseBodyResult();
             return TeaModel.build(map, self);
         }
 
-        public QueryFormByBizTypeResponseBodyResult setCreator(String creator) {
-            this.creator = creator;
+        public QueryFormByBizTypeResponseBodyResult setAppType(Integer appType) {
+            this.appType = appType;
             return this;
         }
-        public String getCreator() {
-            return this.creator;
+        public Integer getAppType() {
+            return this.appType;
         }
 
         public QueryFormByBizTypeResponseBodyResult setAppUuid(String appUuid) {
@@ -93,6 +93,38 @@ public class QueryFormByBizTypeResponseBody extends TeaModel {
         }
         public String getAppUuid() {
             return this.appUuid;
+        }
+
+        public QueryFormByBizTypeResponseBodyResult setBizType(String bizType) {
+            this.bizType = bizType;
+            return this;
+        }
+        public String getBizType() {
+            return this.bizType;
+        }
+
+        public QueryFormByBizTypeResponseBodyResult setContent(String content) {
+            this.content = content;
+            return this;
+        }
+        public String getContent() {
+            return this.content;
+        }
+
+        public QueryFormByBizTypeResponseBodyResult setCreateTime(Long createTime) {
+            this.createTime = createTime;
+            return this;
+        }
+        public Long getCreateTime() {
+            return this.createTime;
+        }
+
+        public QueryFormByBizTypeResponseBodyResult setCreator(String creator) {
+            this.creator = creator;
+            return this;
+        }
+        public String getCreator() {
+            return this.creator;
         }
 
         public QueryFormByBizTypeResponseBodyResult setFormCode(String formCode) {
@@ -111,60 +143,12 @@ public class QueryFormByBizTypeResponseBody extends TeaModel {
             return this.formUuid;
         }
 
-        public QueryFormByBizTypeResponseBodyResult setName(String name) {
-            this.name = name;
-            return this;
-        }
-        public String getName() {
-            return this.name;
-        }
-
         public QueryFormByBizTypeResponseBodyResult setMemo(String memo) {
             this.memo = memo;
             return this;
         }
         public String getMemo() {
             return this.memo;
-        }
-
-        public QueryFormByBizTypeResponseBodyResult setOwnerId(String ownerId) {
-            this.ownerId = ownerId;
-            return this;
-        }
-        public String getOwnerId() {
-            return this.ownerId;
-        }
-
-        public QueryFormByBizTypeResponseBodyResult setAppType(Integer appType) {
-            this.appType = appType;
-            return this;
-        }
-        public Integer getAppType() {
-            return this.appType;
-        }
-
-        public QueryFormByBizTypeResponseBodyResult setBizType(String bizType) {
-            this.bizType = bizType;
-            return this;
-        }
-        public String getBizType() {
-            return this.bizType;
-        }
-
-        public QueryFormByBizTypeResponseBodyResult setStatus(String status) {
-            this.status = status;
-            return this;
-        }
-        public String getStatus() {
-            return this.status;
-        }
-
-        public QueryFormByBizTypeResponseBodyResult setCreateTime(Long createTime) {
-            this.createTime = createTime;
-            return this;
-        }
-        public Long getCreateTime() {
-            return this.createTime;
         }
 
         public QueryFormByBizTypeResponseBodyResult setModifedTime(Long modifedTime) {
@@ -175,12 +159,28 @@ public class QueryFormByBizTypeResponseBody extends TeaModel {
             return this.modifedTime;
         }
 
-        public QueryFormByBizTypeResponseBodyResult setContent(String content) {
-            this.content = content;
+        public QueryFormByBizTypeResponseBodyResult setName(String name) {
+            this.name = name;
             return this;
         }
-        public String getContent() {
-            return this.content;
+        public String getName() {
+            return this.name;
+        }
+
+        public QueryFormByBizTypeResponseBodyResult setOwnerId(String ownerId) {
+            this.ownerId = ownerId;
+            return this;
+        }
+        public String getOwnerId() {
+            return this.ownerId;
+        }
+
+        public QueryFormByBizTypeResponseBodyResult setStatus(String status) {
+            this.status = status;
+            return this;
+        }
+        public String getStatus() {
+            return this.status;
         }
 
     }

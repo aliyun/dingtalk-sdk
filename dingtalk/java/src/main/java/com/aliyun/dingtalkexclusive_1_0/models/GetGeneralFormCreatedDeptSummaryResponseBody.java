@@ -8,13 +8,13 @@ public class GetGeneralFormCreatedDeptSummaryResponseBody extends TeaModel {
     @NameInMap("data")
     public java.util.List<GetGeneralFormCreatedDeptSummaryResponseBodyData> data;
 
-    // 下一次请 求的分页游标
-    @NameInMap("nextToken")
-    public Long nextToken;
-
     // 是否有更多数据
     @NameInMap("hasMore")
     public Boolean hasMore;
+
+    // 下一次请 求的分页游标
+    @NameInMap("nextToken")
+    public Long nextToken;
 
     public static GetGeneralFormCreatedDeptSummaryResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetGeneralFormCreatedDeptSummaryResponseBody self = new GetGeneralFormCreatedDeptSummaryResponseBody();
@@ -29,20 +29,20 @@ public class GetGeneralFormCreatedDeptSummaryResponseBody extends TeaModel {
         return this.data;
     }
 
-    public GetGeneralFormCreatedDeptSummaryResponseBody setNextToken(Long nextToken) {
-        this.nextToken = nextToken;
-        return this;
-    }
-    public Long getNextToken() {
-        return this.nextToken;
-    }
-
     public GetGeneralFormCreatedDeptSummaryResponseBody setHasMore(Boolean hasMore) {
         this.hasMore = hasMore;
         return this;
     }
     public Boolean getHasMore() {
         return this.hasMore;
+    }
+
+    public GetGeneralFormCreatedDeptSummaryResponseBody setNextToken(Long nextToken) {
+        this.nextToken = nextToken;
+        return this;
+    }
+    public Long getNextToken() {
+        return this.nextToken;
     }
 
     public static class GetGeneralFormCreatedDeptSummaryResponseBodyData extends TeaModel {

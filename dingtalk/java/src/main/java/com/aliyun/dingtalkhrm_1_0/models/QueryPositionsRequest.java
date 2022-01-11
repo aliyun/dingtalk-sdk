@@ -4,10 +4,6 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryPositionsRequest extends TeaModel {
-    // 职位名称
-    @NameInMap("positionName")
-    public String positionName;
-
     // 职位类别列表
     @NameInMap("inCategoryIds")
     public java.util.List<String> inCategoryIds;
@@ -16,25 +12,21 @@ public class QueryPositionsRequest extends TeaModel {
     @NameInMap("inPositionIds")
     public java.util.List<String> inPositionIds;
 
-    // 偏移量
-    @NameInMap("nextToken")
-    public Integer nextToken;
+    // 职位名称
+    @NameInMap("positionName")
+    public String positionName;
 
     // 一次查询获取记录数
     @NameInMap("maxResults")
     public Integer maxResults;
 
+    // 偏移量
+    @NameInMap("nextToken")
+    public Integer nextToken;
+
     public static QueryPositionsRequest build(java.util.Map<String, ?> map) throws Exception {
         QueryPositionsRequest self = new QueryPositionsRequest();
         return TeaModel.build(map, self);
-    }
-
-    public QueryPositionsRequest setPositionName(String positionName) {
-        this.positionName = positionName;
-        return this;
-    }
-    public String getPositionName() {
-        return this.positionName;
     }
 
     public QueryPositionsRequest setInCategoryIds(java.util.List<String> inCategoryIds) {
@@ -53,12 +45,12 @@ public class QueryPositionsRequest extends TeaModel {
         return this.inPositionIds;
     }
 
-    public QueryPositionsRequest setNextToken(Integer nextToken) {
-        this.nextToken = nextToken;
+    public QueryPositionsRequest setPositionName(String positionName) {
+        this.positionName = positionName;
         return this;
     }
-    public Integer getNextToken() {
-        return this.nextToken;
+    public String getPositionName() {
+        return this.positionName;
     }
 
     public QueryPositionsRequest setMaxResults(Integer maxResults) {
@@ -67,6 +59,14 @@ public class QueryPositionsRequest extends TeaModel {
     }
     public Integer getMaxResults() {
         return this.maxResults;
+    }
+
+    public QueryPositionsRequest setNextToken(Integer nextToken) {
+        this.nextToken = nextToken;
+        return this;
+    }
+    public Integer getNextToken() {
+        return this.nextToken;
     }
 
 }

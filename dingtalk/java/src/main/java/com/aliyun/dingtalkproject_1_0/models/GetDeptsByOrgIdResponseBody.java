@@ -12,12 +12,12 @@ public class GetDeptsByOrgIdResponseBody extends TeaModel {
     @NameInMap("hasMore")
     public Boolean hasMore;
 
+    @NameInMap("maxResults")
+    public Integer maxResults;
+
     // nextCursor
     @NameInMap("nextToken")
     public Long nextToken;
-
-    @NameInMap("maxResults")
-    public Integer maxResults;
 
     public static GetDeptsByOrgIdResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetDeptsByOrgIdResponseBody self = new GetDeptsByOrgIdResponseBody();
@@ -40,14 +40,6 @@ public class GetDeptsByOrgIdResponseBody extends TeaModel {
         return this.hasMore;
     }
 
-    public GetDeptsByOrgIdResponseBody setNextToken(Long nextToken) {
-        this.nextToken = nextToken;
-        return this;
-    }
-    public Long getNextToken() {
-        return this.nextToken;
-    }
-
     public GetDeptsByOrgIdResponseBody setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
         return this;
@@ -56,18 +48,26 @@ public class GetDeptsByOrgIdResponseBody extends TeaModel {
         return this.maxResults;
     }
 
+    public GetDeptsByOrgIdResponseBody setNextToken(Long nextToken) {
+        this.nextToken = nextToken;
+        return this;
+    }
+    public Long getNextToken() {
+        return this.nextToken;
+    }
+
     public static class GetDeptsByOrgIdResponseBodyDeptList extends TeaModel {
         // id
         @NameInMap("dept_id")
         public Long deptId;
 
-        // parentId
-        @NameInMap("parent_id")
-        public Long parentId;
-
         // name
         @NameInMap("name")
         public String name;
+
+        // parentId
+        @NameInMap("parent_id")
+        public Long parentId;
 
         public static GetDeptsByOrgIdResponseBodyDeptList build(java.util.Map<String, ?> map) throws Exception {
             GetDeptsByOrgIdResponseBodyDeptList self = new GetDeptsByOrgIdResponseBodyDeptList();
@@ -82,20 +82,20 @@ public class GetDeptsByOrgIdResponseBody extends TeaModel {
             return this.deptId;
         }
 
-        public GetDeptsByOrgIdResponseBodyDeptList setParentId(Long parentId) {
-            this.parentId = parentId;
-            return this;
-        }
-        public Long getParentId() {
-            return this.parentId;
-        }
-
         public GetDeptsByOrgIdResponseBodyDeptList setName(String name) {
             this.name = name;
             return this;
         }
         public String getName() {
             return this.name;
+        }
+
+        public GetDeptsByOrgIdResponseBodyDeptList setParentId(Long parentId) {
+            this.parentId = parentId;
+            return this;
+        }
+        public Long getParentId() {
+            return this.parentId;
         }
 
     }

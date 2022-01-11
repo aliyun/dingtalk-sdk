@@ -7,14 +7,14 @@ public class CreateChatRoomRequest extends TeaModel {
     @NameInMap("chatGroupName")
     public String chatGroupName;
 
-    @NameInMap("dingCorpId")
-    public String dingCorpId;
-
     @NameInMap("deviceCodes")
     public java.util.List<String> deviceCodes;
 
     @NameInMap("deviceTypeId")
     public String deviceTypeId;
+
+    @NameInMap("ownerUserId")
+    public String ownerUserId;
 
     @NameInMap("roleList")
     public java.util.List<String> roleList;
@@ -32,14 +32,6 @@ public class CreateChatRoomRequest extends TeaModel {
         return this.chatGroupName;
     }
 
-    public CreateChatRoomRequest setDingCorpId(String dingCorpId) {
-        this.dingCorpId = dingCorpId;
-        return this;
-    }
-    public String getDingCorpId() {
-        return this.dingCorpId;
-    }
-
     public CreateChatRoomRequest setDeviceCodes(java.util.List<String> deviceCodes) {
         this.deviceCodes = deviceCodes;
         return this;
@@ -54,6 +46,14 @@ public class CreateChatRoomRequest extends TeaModel {
     }
     public String getDeviceTypeId() {
         return this.deviceTypeId;
+    }
+
+    public CreateChatRoomRequest setOwnerUserId(String ownerUserId) {
+        this.ownerUserId = ownerUserId;
+        return this;
+    }
+    public String getOwnerUserId() {
+        return this.ownerUserId;
     }
 
     public CreateChatRoomRequest setRoleList(java.util.List<String> roleList) {

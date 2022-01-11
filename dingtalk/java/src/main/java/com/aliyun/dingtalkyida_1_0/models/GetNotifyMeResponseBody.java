@@ -4,37 +4,21 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetNotifyMeResponseBody extends TeaModel {
-    // 总数量
-    @NameInMap("totalCount")
-    public Long totalCount;
+    // data
+    @NameInMap("data")
+    public java.util.List<GetNotifyMeResponseBodyData> data;
 
     // 当前第几页
     @NameInMap("pageNumber")
     public Long pageNumber;
 
-    // data
-    @NameInMap("data")
-    public java.util.List<GetNotifyMeResponseBodyData> data;
+    // 总数量
+    @NameInMap("totalCount")
+    public Long totalCount;
 
     public static GetNotifyMeResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetNotifyMeResponseBody self = new GetNotifyMeResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public GetNotifyMeResponseBody setTotalCount(Long totalCount) {
-        this.totalCount = totalCount;
-        return this;
-    }
-    public Long getTotalCount() {
-        return this.totalCount;
-    }
-
-    public GetNotifyMeResponseBody setPageNumber(Long pageNumber) {
-        this.pageNumber = pageNumber;
-        return this;
-    }
-    public Long getPageNumber() {
-        return this.pageNumber;
     }
 
     public GetNotifyMeResponseBody setData(java.util.List<GetNotifyMeResponseBodyData> data) {
@@ -45,42 +29,42 @@ public class GetNotifyMeResponseBody extends TeaModel {
         return this.data;
     }
 
-    public static class GetNotifyMeResponseBodyData extends TeaModel {
-        // 创建时间
-        @NameInMap("createTimeGMT")
-        public String createTimeGMT;
+    public GetNotifyMeResponseBody setPageNumber(Long pageNumber) {
+        this.pageNumber = pageNumber;
+        return this;
+    }
+    public Long getPageNumber() {
+        return this.pageNumber;
+    }
 
+    public GetNotifyMeResponseBody setTotalCount(Long totalCount) {
+        this.totalCount = totalCount;
+        return this;
+    }
+    public Long getTotalCount() {
+        return this.totalCount;
+    }
+
+    public static class GetNotifyMeResponseBodyData extends TeaModel {
         // activityId
         @NameInMap("activityId")
         public String activityId;
-
-        // 创建者的userId
-        @NameInMap("creatorUserId")
-        public String creatorUserId;
-
-        // corpId
-        @NameInMap("corpId")
-        public String corpId;
-
-        // titleEn
-        @NameInMap("titleInEnglish")
-        public String titleInEnglish;
-
-        // 修改时间
-        @NameInMap("modifiedTimeGMT")
-        public String modifiedTimeGMT;
 
         // appType
         @NameInMap("appType")
         public String appType;
 
-        // processCode
-        @NameInMap("processCode")
-        public String processCode;
+        // corpId
+        @NameInMap("corpId")
+        public String corpId;
 
-        // mobileUrl
-        @NameInMap("mobileUrl")
-        public String mobileUrl;
+        // 创建时间
+        @NameInMap("createTimeGMT")
+        public String createTimeGMT;
+
+        // 创建者的userId
+        @NameInMap("creatorUserId")
+        public String creatorUserId;
 
         // 流程实例id
         @NameInMap("formInstanceId")
@@ -90,9 +74,25 @@ public class GetNotifyMeResponseBody extends TeaModel {
         @NameInMap("instStatus")
         public String instStatus;
 
+        // mobileUrl
+        @NameInMap("mobileUrl")
+        public String mobileUrl;
+
+        // 修改时间
+        @NameInMap("modifiedTimeGMT")
+        public String modifiedTimeGMT;
+
+        // processCode
+        @NameInMap("processCode")
+        public String processCode;
+
         // title
         @NameInMap("title")
         public String title;
+
+        // titleEn
+        @NameInMap("titleInEnglish")
+        public String titleInEnglish;
 
         // url
         @NameInMap("url")
@@ -103,52 +103,12 @@ public class GetNotifyMeResponseBody extends TeaModel {
             return TeaModel.build(map, self);
         }
 
-        public GetNotifyMeResponseBodyData setCreateTimeGMT(String createTimeGMT) {
-            this.createTimeGMT = createTimeGMT;
-            return this;
-        }
-        public String getCreateTimeGMT() {
-            return this.createTimeGMT;
-        }
-
         public GetNotifyMeResponseBodyData setActivityId(String activityId) {
             this.activityId = activityId;
             return this;
         }
         public String getActivityId() {
             return this.activityId;
-        }
-
-        public GetNotifyMeResponseBodyData setCreatorUserId(String creatorUserId) {
-            this.creatorUserId = creatorUserId;
-            return this;
-        }
-        public String getCreatorUserId() {
-            return this.creatorUserId;
-        }
-
-        public GetNotifyMeResponseBodyData setCorpId(String corpId) {
-            this.corpId = corpId;
-            return this;
-        }
-        public String getCorpId() {
-            return this.corpId;
-        }
-
-        public GetNotifyMeResponseBodyData setTitleInEnglish(String titleInEnglish) {
-            this.titleInEnglish = titleInEnglish;
-            return this;
-        }
-        public String getTitleInEnglish() {
-            return this.titleInEnglish;
-        }
-
-        public GetNotifyMeResponseBodyData setModifiedTimeGMT(String modifiedTimeGMT) {
-            this.modifiedTimeGMT = modifiedTimeGMT;
-            return this;
-        }
-        public String getModifiedTimeGMT() {
-            return this.modifiedTimeGMT;
         }
 
         public GetNotifyMeResponseBodyData setAppType(String appType) {
@@ -159,20 +119,28 @@ public class GetNotifyMeResponseBody extends TeaModel {
             return this.appType;
         }
 
-        public GetNotifyMeResponseBodyData setProcessCode(String processCode) {
-            this.processCode = processCode;
+        public GetNotifyMeResponseBodyData setCorpId(String corpId) {
+            this.corpId = corpId;
             return this;
         }
-        public String getProcessCode() {
-            return this.processCode;
+        public String getCorpId() {
+            return this.corpId;
         }
 
-        public GetNotifyMeResponseBodyData setMobileUrl(String mobileUrl) {
-            this.mobileUrl = mobileUrl;
+        public GetNotifyMeResponseBodyData setCreateTimeGMT(String createTimeGMT) {
+            this.createTimeGMT = createTimeGMT;
             return this;
         }
-        public String getMobileUrl() {
-            return this.mobileUrl;
+        public String getCreateTimeGMT() {
+            return this.createTimeGMT;
+        }
+
+        public GetNotifyMeResponseBodyData setCreatorUserId(String creatorUserId) {
+            this.creatorUserId = creatorUserId;
+            return this;
+        }
+        public String getCreatorUserId() {
+            return this.creatorUserId;
         }
 
         public GetNotifyMeResponseBodyData setFormInstanceId(String formInstanceId) {
@@ -191,12 +159,44 @@ public class GetNotifyMeResponseBody extends TeaModel {
             return this.instStatus;
         }
 
+        public GetNotifyMeResponseBodyData setMobileUrl(String mobileUrl) {
+            this.mobileUrl = mobileUrl;
+            return this;
+        }
+        public String getMobileUrl() {
+            return this.mobileUrl;
+        }
+
+        public GetNotifyMeResponseBodyData setModifiedTimeGMT(String modifiedTimeGMT) {
+            this.modifiedTimeGMT = modifiedTimeGMT;
+            return this;
+        }
+        public String getModifiedTimeGMT() {
+            return this.modifiedTimeGMT;
+        }
+
+        public GetNotifyMeResponseBodyData setProcessCode(String processCode) {
+            this.processCode = processCode;
+            return this;
+        }
+        public String getProcessCode() {
+            return this.processCode;
+        }
+
         public GetNotifyMeResponseBodyData setTitle(String title) {
             this.title = title;
             return this;
         }
         public String getTitle() {
             return this.title;
+        }
+
+        public GetNotifyMeResponseBodyData setTitleInEnglish(String titleInEnglish) {
+            this.titleInEnglish = titleInEnglish;
+            return this;
+        }
+        public String getTitleInEnglish() {
+            return this.titleInEnglish;
         }
 
         public GetNotifyMeResponseBodyData setUrl(String url) {

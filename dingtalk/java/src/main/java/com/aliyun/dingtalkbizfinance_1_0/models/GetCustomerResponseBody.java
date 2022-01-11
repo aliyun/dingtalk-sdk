@@ -8,17 +8,17 @@ public class GetCustomerResponseBody extends TeaModel {
     @NameInMap("code")
     public String code;
 
-    // 客户名称
-    @NameInMap("name")
-    public String name;
+    // 创建时间(单位MS)
+    @NameInMap("createTime")
+    public Long createTime;
 
     // 客户描述
     @NameInMap("description")
     public String description;
 
-    // 创建时间(单位MS)
-    @NameInMap("createTime")
-    public Long createTime;
+    // 客户名称
+    @NameInMap("name")
+    public String name;
 
     // 状态：启用(valid), 停用(invalid), 删除(deleted)
     @NameInMap("status")
@@ -37,12 +37,12 @@ public class GetCustomerResponseBody extends TeaModel {
         return this.code;
     }
 
-    public GetCustomerResponseBody setName(String name) {
-        this.name = name;
+    public GetCustomerResponseBody setCreateTime(Long createTime) {
+        this.createTime = createTime;
         return this;
     }
-    public String getName() {
-        return this.name;
+    public Long getCreateTime() {
+        return this.createTime;
     }
 
     public GetCustomerResponseBody setDescription(String description) {
@@ -53,12 +53,12 @@ public class GetCustomerResponseBody extends TeaModel {
         return this.description;
     }
 
-    public GetCustomerResponseBody setCreateTime(Long createTime) {
-        this.createTime = createTime;
+    public GetCustomerResponseBody setName(String name) {
+        this.name = name;
         return this;
     }
-    public Long getCreateTime() {
-        return this.createTime;
+    public String getName() {
+        return this.name;
     }
 
     public GetCustomerResponseBody setStatus(String status) {

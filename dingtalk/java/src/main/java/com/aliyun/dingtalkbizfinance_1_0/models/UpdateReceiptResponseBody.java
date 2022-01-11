@@ -26,10 +26,6 @@ public class UpdateReceiptResponseBody extends TeaModel {
         @NameInMap("code")
         public String code;
 
-        // 是否成功
-        @NameInMap("success")
-        public Boolean success;
-
         // 错误码
         @NameInMap("errorCode")
         public String errorCode;
@@ -37,6 +33,10 @@ public class UpdateReceiptResponseBody extends TeaModel {
         // 错误信息
         @NameInMap("errorMsg")
         public String errorMsg;
+
+        // 是否成功
+        @NameInMap("success")
+        public Boolean success;
 
         public static UpdateReceiptResponseBodyResults build(java.util.Map<String, ?> map) throws Exception {
             UpdateReceiptResponseBodyResults self = new UpdateReceiptResponseBodyResults();
@@ -49,14 +49,6 @@ public class UpdateReceiptResponseBody extends TeaModel {
         }
         public String getCode() {
             return this.code;
-        }
-
-        public UpdateReceiptResponseBodyResults setSuccess(Boolean success) {
-            this.success = success;
-            return this;
-        }
-        public Boolean getSuccess() {
-            return this.success;
         }
 
         public UpdateReceiptResponseBodyResults setErrorCode(String errorCode) {
@@ -73,6 +65,14 @@ public class UpdateReceiptResponseBody extends TeaModel {
         }
         public String getErrorMsg() {
             return this.errorMsg;
+        }
+
+        public UpdateReceiptResponseBodyResults setSuccess(Boolean success) {
+            this.success = success;
+            return this;
+        }
+        public Boolean getSuccess() {
+            return this.success;
         }
 
     }

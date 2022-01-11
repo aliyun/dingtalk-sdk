@@ -22,17 +22,6 @@ public class SearchResidentResponseBody extends TeaModel {
     }
 
     public static class SearchResidentResponseBodyResidenceList extends TeaModel {
-        @NameInMap("name")
-        public String name;
-
-        // 业主/租客/亲友等
-        @NameInMap("relateType")
-        public String relateType;
-
-        // 是否是产权人
-        @NameInMap("isPropertyOwner")
-        public Boolean isPropertyOwner;
-
         // 是否激活
         @NameInMap("active")
         public Boolean active;
@@ -41,33 +30,20 @@ public class SearchResidentResponseBody extends TeaModel {
         @NameInMap("extField")
         public String extField;
 
+        // 是否是产权人
+        @NameInMap("isPropertyOwner")
+        public Boolean isPropertyOwner;
+
+        @NameInMap("name")
+        public String name;
+
+        // 业主/租客/亲友等
+        @NameInMap("relateType")
+        public String relateType;
+
         public static SearchResidentResponseBodyResidenceList build(java.util.Map<String, ?> map) throws Exception {
             SearchResidentResponseBodyResidenceList self = new SearchResidentResponseBodyResidenceList();
             return TeaModel.build(map, self);
-        }
-
-        public SearchResidentResponseBodyResidenceList setName(String name) {
-            this.name = name;
-            return this;
-        }
-        public String getName() {
-            return this.name;
-        }
-
-        public SearchResidentResponseBodyResidenceList setRelateType(String relateType) {
-            this.relateType = relateType;
-            return this;
-        }
-        public String getRelateType() {
-            return this.relateType;
-        }
-
-        public SearchResidentResponseBodyResidenceList setIsPropertyOwner(Boolean isPropertyOwner) {
-            this.isPropertyOwner = isPropertyOwner;
-            return this;
-        }
-        public Boolean getIsPropertyOwner() {
-            return this.isPropertyOwner;
         }
 
         public SearchResidentResponseBodyResidenceList setActive(Boolean active) {
@@ -84,6 +60,30 @@ public class SearchResidentResponseBody extends TeaModel {
         }
         public String getExtField() {
             return this.extField;
+        }
+
+        public SearchResidentResponseBodyResidenceList setIsPropertyOwner(Boolean isPropertyOwner) {
+            this.isPropertyOwner = isPropertyOwner;
+            return this;
+        }
+        public Boolean getIsPropertyOwner() {
+            return this.isPropertyOwner;
+        }
+
+        public SearchResidentResponseBodyResidenceList setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
+        public SearchResidentResponseBodyResidenceList setRelateType(String relateType) {
+            this.relateType = relateType;
+            return this;
+        }
+        public String getRelateType() {
+            return this.relateType;
         }
 
     }

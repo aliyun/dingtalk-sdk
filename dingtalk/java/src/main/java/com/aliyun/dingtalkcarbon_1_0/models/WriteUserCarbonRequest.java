@@ -22,21 +22,17 @@ public class WriteUserCarbonRequest extends TeaModel {
     }
 
     public static class WriteUserCarbonRequestUserDetailsList extends TeaModel {
+        // 行为结束时间
+        @NameInMap("actionEndTime")
+        public String actionEndTime;
+
         // 系统唯一id，生成格式：userId+日期20211126
         @NameInMap("actionId")
         public String actionId;
 
-        // 钉钉用户id
-        @NameInMap("userId")
-        public String userId;
-
-        // 钉钉组织id
-        @NameInMap("corpId")
-        public String corpId;
-
-        // 钉钉部门id
-        @NameInMap("deptId")
-        public Long deptId;
+        // 行为起始时间
+        @NameInMap("actionStartTime")
+        public String actionStartTime;
 
         // 碳能量行为类型，需要联系管理员添加
         @NameInMap("actionType")
@@ -46,13 +42,17 @@ public class WriteUserCarbonRequest extends TeaModel {
         @NameInMap("carbonAmount")
         public String carbonAmount;
 
-        // 行为起始时间
-        @NameInMap("actionStartTime")
-        public String actionStartTime;
+        // 钉钉组织id
+        @NameInMap("corpId")
+        public String corpId;
 
-        // 行为结束时间
-        @NameInMap("actionEndTime")
-        public String actionEndTime;
+        // 钉钉部门id
+        @NameInMap("deptId")
+        public Long deptId;
+
+        // 钉钉用户id
+        @NameInMap("userId")
+        public String userId;
 
         // 版本，默认为1
         @NameInMap("version")
@@ -63,6 +63,14 @@ public class WriteUserCarbonRequest extends TeaModel {
             return TeaModel.build(map, self);
         }
 
+        public WriteUserCarbonRequestUserDetailsList setActionEndTime(String actionEndTime) {
+            this.actionEndTime = actionEndTime;
+            return this;
+        }
+        public String getActionEndTime() {
+            return this.actionEndTime;
+        }
+
         public WriteUserCarbonRequestUserDetailsList setActionId(String actionId) {
             this.actionId = actionId;
             return this;
@@ -71,28 +79,12 @@ public class WriteUserCarbonRequest extends TeaModel {
             return this.actionId;
         }
 
-        public WriteUserCarbonRequestUserDetailsList setUserId(String userId) {
-            this.userId = userId;
+        public WriteUserCarbonRequestUserDetailsList setActionStartTime(String actionStartTime) {
+            this.actionStartTime = actionStartTime;
             return this;
         }
-        public String getUserId() {
-            return this.userId;
-        }
-
-        public WriteUserCarbonRequestUserDetailsList setCorpId(String corpId) {
-            this.corpId = corpId;
-            return this;
-        }
-        public String getCorpId() {
-            return this.corpId;
-        }
-
-        public WriteUserCarbonRequestUserDetailsList setDeptId(Long deptId) {
-            this.deptId = deptId;
-            return this;
-        }
-        public Long getDeptId() {
-            return this.deptId;
+        public String getActionStartTime() {
+            return this.actionStartTime;
         }
 
         public WriteUserCarbonRequestUserDetailsList setActionType(String actionType) {
@@ -111,20 +103,28 @@ public class WriteUserCarbonRequest extends TeaModel {
             return this.carbonAmount;
         }
 
-        public WriteUserCarbonRequestUserDetailsList setActionStartTime(String actionStartTime) {
-            this.actionStartTime = actionStartTime;
+        public WriteUserCarbonRequestUserDetailsList setCorpId(String corpId) {
+            this.corpId = corpId;
             return this;
         }
-        public String getActionStartTime() {
-            return this.actionStartTime;
+        public String getCorpId() {
+            return this.corpId;
         }
 
-        public WriteUserCarbonRequestUserDetailsList setActionEndTime(String actionEndTime) {
-            this.actionEndTime = actionEndTime;
+        public WriteUserCarbonRequestUserDetailsList setDeptId(Long deptId) {
+            this.deptId = deptId;
             return this;
         }
-        public String getActionEndTime() {
-            return this.actionEndTime;
+        public Long getDeptId() {
+            return this.deptId;
+        }
+
+        public WriteUserCarbonRequestUserDetailsList setUserId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+        public String getUserId() {
+            return this.userId;
         }
 
         public WriteUserCarbonRequestUserDetailsList setVersion(Integer version) {

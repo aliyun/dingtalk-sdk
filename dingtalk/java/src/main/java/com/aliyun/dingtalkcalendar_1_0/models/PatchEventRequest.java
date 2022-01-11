@@ -4,102 +4,46 @@ package com.aliyun.dingtalkcalendar_1_0.models;
 import com.aliyun.tea.*;
 
 public class PatchEventRequest extends TeaModel {
-    // 日程标题
-    @NameInMap("summary")
-    public String summary;
-
-    // 日程id
-    @NameInMap("id")
-    public String id;
+    @NameInMap("attendees")
+    public java.util.List<PatchEventRequestAttendees> attendees;
 
     @NameInMap("description")
     public String description;
 
-    // 日程开始时间
-    @NameInMap("start")
-    public PatchEventRequestStart start;
-
     @NameInMap("end")
     public PatchEventRequestEnd end;
-
-    @NameInMap("isAllDay")
-    public Boolean isAllDay;
-
-    @NameInMap("recurrence")
-    public PatchEventRequestRecurrence recurrence;
-
-    @NameInMap("attendees")
-    public java.util.List<PatchEventRequestAttendees> attendees;
-
-    @NameInMap("location")
-    public PatchEventRequestLocation location;
 
     // 扩展信息
     @NameInMap("extra")
     public java.util.Map<String, String> extra;
 
+    // 日程id
+    @NameInMap("id")
+    public String id;
+
+    @NameInMap("isAllDay")
+    public Boolean isAllDay;
+
+    @NameInMap("location")
+    public PatchEventRequestLocation location;
+
+    @NameInMap("recurrence")
+    public PatchEventRequestRecurrence recurrence;
+
     @NameInMap("reminders")
     public java.util.List<PatchEventRequestReminders> reminders;
+
+    // 日程开始时间
+    @NameInMap("start")
+    public PatchEventRequestStart start;
+
+    // 日程标题
+    @NameInMap("summary")
+    public String summary;
 
     public static PatchEventRequest build(java.util.Map<String, ?> map) throws Exception {
         PatchEventRequest self = new PatchEventRequest();
         return TeaModel.build(map, self);
-    }
-
-    public PatchEventRequest setSummary(String summary) {
-        this.summary = summary;
-        return this;
-    }
-    public String getSummary() {
-        return this.summary;
-    }
-
-    public PatchEventRequest setId(String id) {
-        this.id = id;
-        return this;
-    }
-    public String getId() {
-        return this.id;
-    }
-
-    public PatchEventRequest setDescription(String description) {
-        this.description = description;
-        return this;
-    }
-    public String getDescription() {
-        return this.description;
-    }
-
-    public PatchEventRequest setStart(PatchEventRequestStart start) {
-        this.start = start;
-        return this;
-    }
-    public PatchEventRequestStart getStart() {
-        return this.start;
-    }
-
-    public PatchEventRequest setEnd(PatchEventRequestEnd end) {
-        this.end = end;
-        return this;
-    }
-    public PatchEventRequestEnd getEnd() {
-        return this.end;
-    }
-
-    public PatchEventRequest setIsAllDay(Boolean isAllDay) {
-        this.isAllDay = isAllDay;
-        return this;
-    }
-    public Boolean getIsAllDay() {
-        return this.isAllDay;
-    }
-
-    public PatchEventRequest setRecurrence(PatchEventRequestRecurrence recurrence) {
-        this.recurrence = recurrence;
-        return this;
-    }
-    public PatchEventRequestRecurrence getRecurrence() {
-        return this.recurrence;
     }
 
     public PatchEventRequest setAttendees(java.util.List<PatchEventRequestAttendees> attendees) {
@@ -110,12 +54,20 @@ public class PatchEventRequest extends TeaModel {
         return this.attendees;
     }
 
-    public PatchEventRequest setLocation(PatchEventRequestLocation location) {
-        this.location = location;
+    public PatchEventRequest setDescription(String description) {
+        this.description = description;
         return this;
     }
-    public PatchEventRequestLocation getLocation() {
-        return this.location;
+    public String getDescription() {
+        return this.description;
+    }
+
+    public PatchEventRequest setEnd(PatchEventRequestEnd end) {
+        this.end = end;
+        return this;
+    }
+    public PatchEventRequestEnd getEnd() {
+        return this.end;
     }
 
     public PatchEventRequest setExtra(java.util.Map<String, String> extra) {
@@ -126,6 +78,38 @@ public class PatchEventRequest extends TeaModel {
         return this.extra;
     }
 
+    public PatchEventRequest setId(String id) {
+        this.id = id;
+        return this;
+    }
+    public String getId() {
+        return this.id;
+    }
+
+    public PatchEventRequest setIsAllDay(Boolean isAllDay) {
+        this.isAllDay = isAllDay;
+        return this;
+    }
+    public Boolean getIsAllDay() {
+        return this.isAllDay;
+    }
+
+    public PatchEventRequest setLocation(PatchEventRequestLocation location) {
+        this.location = location;
+        return this;
+    }
+    public PatchEventRequestLocation getLocation() {
+        return this.location;
+    }
+
+    public PatchEventRequest setRecurrence(PatchEventRequestRecurrence recurrence) {
+        this.recurrence = recurrence;
+        return this;
+    }
+    public PatchEventRequestRecurrence getRecurrence() {
+        return this.recurrence;
+    }
+
     public PatchEventRequest setReminders(java.util.List<PatchEventRequestReminders> reminders) {
         this.reminders = reminders;
         return this;
@@ -134,43 +118,37 @@ public class PatchEventRequest extends TeaModel {
         return this.reminders;
     }
 
-    public static class PatchEventRequestStart extends TeaModel {
-        @NameInMap("date")
-        public String date;
+    public PatchEventRequest setStart(PatchEventRequestStart start) {
+        this.start = start;
+        return this;
+    }
+    public PatchEventRequestStart getStart() {
+        return this.start;
+    }
 
-        @NameInMap("dateTime")
-        public String dateTime;
+    public PatchEventRequest setSummary(String summary) {
+        this.summary = summary;
+        return this;
+    }
+    public String getSummary() {
+        return this.summary;
+    }
 
-        @NameInMap("timeZone")
-        public String timeZone;
+    public static class PatchEventRequestAttendees extends TeaModel {
+        @NameInMap("id")
+        public String id;
 
-        public static PatchEventRequestStart build(java.util.Map<String, ?> map) throws Exception {
-            PatchEventRequestStart self = new PatchEventRequestStart();
+        public static PatchEventRequestAttendees build(java.util.Map<String, ?> map) throws Exception {
+            PatchEventRequestAttendees self = new PatchEventRequestAttendees();
             return TeaModel.build(map, self);
         }
 
-        public PatchEventRequestStart setDate(String date) {
-            this.date = date;
+        public PatchEventRequestAttendees setId(String id) {
+            this.id = id;
             return this;
         }
-        public String getDate() {
-            return this.date;
-        }
-
-        public PatchEventRequestStart setDateTime(String dateTime) {
-            this.dateTime = dateTime;
-            return this;
-        }
-        public String getDateTime() {
-            return this.dateTime;
-        }
-
-        public PatchEventRequestStart setTimeZone(String timeZone) {
-            this.timeZone = timeZone;
-            return this;
-        }
-        public String getTimeZone() {
-            return this.timeZone;
+        public String getId() {
+            return this.id;
         }
 
     }
@@ -216,10 +194,26 @@ public class PatchEventRequest extends TeaModel {
 
     }
 
-    public static class PatchEventRequestRecurrencePattern extends TeaModel {
-        @NameInMap("type")
-        public String type;
+    public static class PatchEventRequestLocation extends TeaModel {
+        @NameInMap("displayName")
+        public String displayName;
 
+        public static PatchEventRequestLocation build(java.util.Map<String, ?> map) throws Exception {
+            PatchEventRequestLocation self = new PatchEventRequestLocation();
+            return TeaModel.build(map, self);
+        }
+
+        public PatchEventRequestLocation setDisplayName(String displayName) {
+            this.displayName = displayName;
+            return this;
+        }
+        public String getDisplayName() {
+            return this.displayName;
+        }
+
+    }
+
+    public static class PatchEventRequestRecurrencePattern extends TeaModel {
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
@@ -232,17 +226,12 @@ public class PatchEventRequest extends TeaModel {
         @NameInMap("interval")
         public Integer interval;
 
+        @NameInMap("type")
+        public String type;
+
         public static PatchEventRequestRecurrencePattern build(java.util.Map<String, ?> map) throws Exception {
             PatchEventRequestRecurrencePattern self = new PatchEventRequestRecurrencePattern();
             return TeaModel.build(map, self);
-        }
-
-        public PatchEventRequestRecurrencePattern setType(String type) {
-            this.type = type;
-            return this;
-        }
-        public String getType() {
-            return this.type;
         }
 
         public PatchEventRequestRecurrencePattern setDayOfMonth(Integer dayOfMonth) {
@@ -277,29 +266,29 @@ public class PatchEventRequest extends TeaModel {
             return this.interval;
         }
 
+        public PatchEventRequestRecurrencePattern setType(String type) {
+            this.type = type;
+            return this;
+        }
+        public String getType() {
+            return this.type;
+        }
+
     }
 
     public static class PatchEventRequestRecurrenceRange extends TeaModel {
-        @NameInMap("type")
-        public String type;
-
         @NameInMap("endDate")
         public String endDate;
 
         @NameInMap("numberOfOccurrences")
         public Integer numberOfOccurrences;
 
+        @NameInMap("type")
+        public String type;
+
         public static PatchEventRequestRecurrenceRange build(java.util.Map<String, ?> map) throws Exception {
             PatchEventRequestRecurrenceRange self = new PatchEventRequestRecurrenceRange();
             return TeaModel.build(map, self);
-        }
-
-        public PatchEventRequestRecurrenceRange setType(String type) {
-            this.type = type;
-            return this;
-        }
-        public String getType() {
-            return this.type;
         }
 
         public PatchEventRequestRecurrenceRange setEndDate(String endDate) {
@@ -316,6 +305,14 @@ public class PatchEventRequest extends TeaModel {
         }
         public Integer getNumberOfOccurrences() {
             return this.numberOfOccurrences;
+        }
+
+        public PatchEventRequestRecurrenceRange setType(String type) {
+            this.type = type;
+            return this;
+        }
+        public String getType() {
+            return this.type;
         }
 
     }
@@ -350,44 +347,6 @@ public class PatchEventRequest extends TeaModel {
 
     }
 
-    public static class PatchEventRequestAttendees extends TeaModel {
-        @NameInMap("id")
-        public String id;
-
-        public static PatchEventRequestAttendees build(java.util.Map<String, ?> map) throws Exception {
-            PatchEventRequestAttendees self = new PatchEventRequestAttendees();
-            return TeaModel.build(map, self);
-        }
-
-        public PatchEventRequestAttendees setId(String id) {
-            this.id = id;
-            return this;
-        }
-        public String getId() {
-            return this.id;
-        }
-
-    }
-
-    public static class PatchEventRequestLocation extends TeaModel {
-        @NameInMap("displayName")
-        public String displayName;
-
-        public static PatchEventRequestLocation build(java.util.Map<String, ?> map) throws Exception {
-            PatchEventRequestLocation self = new PatchEventRequestLocation();
-            return TeaModel.build(map, self);
-        }
-
-        public PatchEventRequestLocation setDisplayName(String displayName) {
-            this.displayName = displayName;
-            return this;
-        }
-        public String getDisplayName() {
-            return this.displayName;
-        }
-
-    }
-
     public static class PatchEventRequestReminders extends TeaModel {
         @NameInMap("method")
         public String method;
@@ -414,6 +373,47 @@ public class PatchEventRequest extends TeaModel {
         }
         public Integer getMinutes() {
             return this.minutes;
+        }
+
+    }
+
+    public static class PatchEventRequestStart extends TeaModel {
+        @NameInMap("date")
+        public String date;
+
+        @NameInMap("dateTime")
+        public String dateTime;
+
+        @NameInMap("timeZone")
+        public String timeZone;
+
+        public static PatchEventRequestStart build(java.util.Map<String, ?> map) throws Exception {
+            PatchEventRequestStart self = new PatchEventRequestStart();
+            return TeaModel.build(map, self);
+        }
+
+        public PatchEventRequestStart setDate(String date) {
+            this.date = date;
+            return this;
+        }
+        public String getDate() {
+            return this.date;
+        }
+
+        public PatchEventRequestStart setDateTime(String dateTime) {
+            this.dateTime = dateTime;
+            return this;
+        }
+        public String getDateTime() {
+            return this.dateTime;
+        }
+
+        public PatchEventRequestStart setTimeZone(String timeZone) {
+            this.timeZone = timeZone;
+            return this;
+        }
+        public String getTimeZone() {
+            return this.timeZone;
         }
 
     }

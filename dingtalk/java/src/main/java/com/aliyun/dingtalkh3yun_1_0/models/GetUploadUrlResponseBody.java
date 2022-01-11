@@ -8,13 +8,13 @@ public class GetUploadUrlResponseBody extends TeaModel {
     @NameInMap("code")
     public String code;
 
-    // 提示信息
-    @NameInMap("message")
-    public String message;
-
     // 返回结果
     @NameInMap("data")
     public GetUploadUrlResponseBodyData data;
+
+    // 提示信息
+    @NameInMap("message")
+    public String message;
 
     public static GetUploadUrlResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetUploadUrlResponseBody self = new GetUploadUrlResponseBody();
@@ -29,20 +29,20 @@ public class GetUploadUrlResponseBody extends TeaModel {
         return this.code;
     }
 
-    public GetUploadUrlResponseBody setMessage(String message) {
-        this.message = message;
-        return this;
-    }
-    public String getMessage() {
-        return this.message;
-    }
-
     public GetUploadUrlResponseBody setData(GetUploadUrlResponseBodyData data) {
         this.data = data;
         return this;
     }
     public GetUploadUrlResponseBodyData getData() {
         return this.data;
+    }
+
+    public GetUploadUrlResponseBody setMessage(String message) {
+        this.message = message;
+        return this;
+    }
+    public String getMessage() {
+        return this.message;
     }
 
     public static class GetUploadUrlResponseBodyData extends TeaModel {

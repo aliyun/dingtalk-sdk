@@ -4,6 +4,10 @@ package com.aliyun.dingtalkcustomer_service_1_0.models;
 import com.aliyun.tea.*;
 
 public class PageListActionResponseBody extends TeaModel {
+    // list
+    @NameInMap("list")
+    public java.util.List<PageListActionResponseBodyList> list;
+
     // nextCursor
     @NameInMap("nextCursor")
     public Long nextCursor;
@@ -12,13 +16,17 @@ public class PageListActionResponseBody extends TeaModel {
     @NameInMap("total")
     public Long total;
 
-    // list
-    @NameInMap("list")
-    public java.util.List<PageListActionResponseBodyList> list;
-
     public static PageListActionResponseBody build(java.util.Map<String, ?> map) throws Exception {
         PageListActionResponseBody self = new PageListActionResponseBody();
         return TeaModel.build(map, self);
+    }
+
+    public PageListActionResponseBody setList(java.util.List<PageListActionResponseBodyList> list) {
+        this.list = list;
+        return this;
+    }
+    public java.util.List<PageListActionResponseBodyList> getList() {
+        return this.list;
     }
 
     public PageListActionResponseBody setNextCursor(Long nextCursor) {
@@ -37,22 +45,14 @@ public class PageListActionResponseBody extends TeaModel {
         return this.total;
     }
 
-    public PageListActionResponseBody setList(java.util.List<PageListActionResponseBodyList> list) {
-        this.list = list;
-        return this;
-    }
-    public java.util.List<PageListActionResponseBodyList> getList() {
-        return this.list;
-    }
-
     public static class PageListActionResponseBodyListActionContent extends TeaModel {
-        // displayValue
-        @NameInMap("displayValue")
-        public String displayValue;
-
         // displayName
         @NameInMap("displayName")
         public String displayName;
+
+        // displayValue
+        @NameInMap("displayValue")
+        public String displayValue;
 
         // name
         @NameInMap("name")
@@ -71,20 +71,20 @@ public class PageListActionResponseBody extends TeaModel {
             return TeaModel.build(map, self);
         }
 
-        public PageListActionResponseBodyListActionContent setDisplayValue(String displayValue) {
-            this.displayValue = displayValue;
-            return this;
-        }
-        public String getDisplayValue() {
-            return this.displayValue;
-        }
-
         public PageListActionResponseBodyListActionContent setDisplayName(String displayName) {
             this.displayName = displayName;
             return this;
         }
         public String getDisplayName() {
             return this.displayName;
+        }
+
+        public PageListActionResponseBodyListActionContent setDisplayValue(String displayValue) {
+            this.displayValue = displayValue;
+            return this;
+        }
+        public String getDisplayValue() {
+            return this.displayValue;
         }
 
         public PageListActionResponseBodyListActionContent setName(String name) {
@@ -114,18 +114,6 @@ public class PageListActionResponseBody extends TeaModel {
     }
 
     public static class PageListActionResponseBodyList extends TeaModel {
-        // operatorId
-        @NameInMap("operatorId")
-        public String operatorId;
-
-        // operator
-        @NameInMap("operator")
-        public String operator;
-
-        // operatorRole
-        @NameInMap("operatorRole")
-        public String operatorRole;
-
         // actionCode
         @NameInMap("actionCode")
         public String actionCode;
@@ -134,33 +122,21 @@ public class PageListActionResponseBody extends TeaModel {
         @NameInMap("actionContent")
         public java.util.List<PageListActionResponseBodyListActionContent> actionContent;
 
+        // operator
+        @NameInMap("operator")
+        public String operator;
+
+        // operatorId
+        @NameInMap("operatorId")
+        public String operatorId;
+
+        // operatorRole
+        @NameInMap("operatorRole")
+        public String operatorRole;
+
         public static PageListActionResponseBodyList build(java.util.Map<String, ?> map) throws Exception {
             PageListActionResponseBodyList self = new PageListActionResponseBodyList();
             return TeaModel.build(map, self);
-        }
-
-        public PageListActionResponseBodyList setOperatorId(String operatorId) {
-            this.operatorId = operatorId;
-            return this;
-        }
-        public String getOperatorId() {
-            return this.operatorId;
-        }
-
-        public PageListActionResponseBodyList setOperator(String operator) {
-            this.operator = operator;
-            return this;
-        }
-        public String getOperator() {
-            return this.operator;
-        }
-
-        public PageListActionResponseBodyList setOperatorRole(String operatorRole) {
-            this.operatorRole = operatorRole;
-            return this;
-        }
-        public String getOperatorRole() {
-            return this.operatorRole;
         }
 
         public PageListActionResponseBodyList setActionCode(String actionCode) {
@@ -177,6 +153,30 @@ public class PageListActionResponseBody extends TeaModel {
         }
         public java.util.List<PageListActionResponseBodyListActionContent> getActionContent() {
             return this.actionContent;
+        }
+
+        public PageListActionResponseBodyList setOperator(String operator) {
+            this.operator = operator;
+            return this;
+        }
+        public String getOperator() {
+            return this.operator;
+        }
+
+        public PageListActionResponseBodyList setOperatorId(String operatorId) {
+            this.operatorId = operatorId;
+            return this;
+        }
+        public String getOperatorId() {
+            return this.operatorId;
+        }
+
+        public PageListActionResponseBodyList setOperatorRole(String operatorRole) {
+            this.operatorRole = operatorRole;
+            return this;
+        }
+        public String getOperatorRole() {
+            return this.operatorRole;
         }
 
     }

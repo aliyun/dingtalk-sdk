@@ -4,14 +4,6 @@ package com.aliyun.dingtalkh3yun_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateBizObjectRequest extends TeaModel {
-    // 表单编码
-    @NameInMap("schemaCode")
-    public String schemaCode;
-
-    // 操作用户id。可从“获取用户信息”API获取
-    @NameInMap("opUserId")
-    public String opUserId;
-
     // json格式的业务数据
     @NameInMap("bizObjectJson")
     public String bizObjectJson;
@@ -20,25 +12,17 @@ public class CreateBizObjectRequest extends TeaModel {
     @NameInMap("isDraft")
     public Boolean isDraft;
 
+    // 操作用户id。可从“获取用户信息”API获取
+    @NameInMap("opUserId")
+    public String opUserId;
+
+    // 表单编码
+    @NameInMap("schemaCode")
+    public String schemaCode;
+
     public static CreateBizObjectRequest build(java.util.Map<String, ?> map) throws Exception {
         CreateBizObjectRequest self = new CreateBizObjectRequest();
         return TeaModel.build(map, self);
-    }
-
-    public CreateBizObjectRequest setSchemaCode(String schemaCode) {
-        this.schemaCode = schemaCode;
-        return this;
-    }
-    public String getSchemaCode() {
-        return this.schemaCode;
-    }
-
-    public CreateBizObjectRequest setOpUserId(String opUserId) {
-        this.opUserId = opUserId;
-        return this;
-    }
-    public String getOpUserId() {
-        return this.opUserId;
     }
 
     public CreateBizObjectRequest setBizObjectJson(String bizObjectJson) {
@@ -55,6 +39,22 @@ public class CreateBizObjectRequest extends TeaModel {
     }
     public Boolean getIsDraft() {
         return this.isDraft;
+    }
+
+    public CreateBizObjectRequest setOpUserId(String opUserId) {
+        this.opUserId = opUserId;
+        return this;
+    }
+    public String getOpUserId() {
+        return this.opUserId;
+    }
+
+    public CreateBizObjectRequest setSchemaCode(String schemaCode) {
+        this.schemaCode = schemaCode;
+        return this;
+    }
+    public String getSchemaCode() {
+        return this.schemaCode;
     }
 
 }

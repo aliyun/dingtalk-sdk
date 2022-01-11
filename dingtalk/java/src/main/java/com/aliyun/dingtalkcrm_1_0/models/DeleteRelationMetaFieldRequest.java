@@ -4,8 +4,8 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteRelationMetaFieldRequest extends TeaModel {
-    @NameInMap("tenant")
-    public String tenant;
+    @NameInMap("fieldIdList")
+    public java.util.List<String> fieldIdList;
 
     @NameInMap("operatorUserId")
     public String operatorUserId;
@@ -13,20 +13,20 @@ public class DeleteRelationMetaFieldRequest extends TeaModel {
     @NameInMap("relationType")
     public String relationType;
 
-    @NameInMap("fieldIdList")
-    public java.util.List<String> fieldIdList;
+    @NameInMap("tenant")
+    public String tenant;
 
     public static DeleteRelationMetaFieldRequest build(java.util.Map<String, ?> map) throws Exception {
         DeleteRelationMetaFieldRequest self = new DeleteRelationMetaFieldRequest();
         return TeaModel.build(map, self);
     }
 
-    public DeleteRelationMetaFieldRequest setTenant(String tenant) {
-        this.tenant = tenant;
+    public DeleteRelationMetaFieldRequest setFieldIdList(java.util.List<String> fieldIdList) {
+        this.fieldIdList = fieldIdList;
         return this;
     }
-    public String getTenant() {
-        return this.tenant;
+    public java.util.List<String> getFieldIdList() {
+        return this.fieldIdList;
     }
 
     public DeleteRelationMetaFieldRequest setOperatorUserId(String operatorUserId) {
@@ -45,12 +45,12 @@ public class DeleteRelationMetaFieldRequest extends TeaModel {
         return this.relationType;
     }
 
-    public DeleteRelationMetaFieldRequest setFieldIdList(java.util.List<String> fieldIdList) {
-        this.fieldIdList = fieldIdList;
+    public DeleteRelationMetaFieldRequest setTenant(String tenant) {
+        this.tenant = tenant;
         return this;
     }
-    public java.util.List<String> getFieldIdList() {
-        return this.fieldIdList;
+    public String getTenant() {
+        return this.tenant;
     }
 
 }

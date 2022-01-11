@@ -4,6 +4,10 @@ package com.aliyun.dingtalkmicro_app_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListAppRoleScopesResponseBody extends TeaModel {
+    // 数据列表
+    @NameInMap("dataList")
+    public java.util.List<ListAppRoleScopesResponseBodyDataList> dataList;
+
     // 是否还有数据，true: 还有；false: 已经全部拉取完成
     @NameInMap("hasMore")
     public Boolean hasMore;
@@ -12,13 +16,17 @@ public class ListAppRoleScopesResponseBody extends TeaModel {
     @NameInMap("nextToken")
     public Long nextToken;
 
-    // 数据列表
-    @NameInMap("dataList")
-    public java.util.List<ListAppRoleScopesResponseBodyDataList> dataList;
-
     public static ListAppRoleScopesResponseBody build(java.util.Map<String, ?> map) throws Exception {
         ListAppRoleScopesResponseBody self = new ListAppRoleScopesResponseBody();
         return TeaModel.build(map, self);
+    }
+
+    public ListAppRoleScopesResponseBody setDataList(java.util.List<ListAppRoleScopesResponseBodyDataList> dataList) {
+        this.dataList = dataList;
+        return this;
+    }
+    public java.util.List<ListAppRoleScopesResponseBodyDataList> getDataList() {
+        return this.dataList;
     }
 
     public ListAppRoleScopesResponseBody setHasMore(Boolean hasMore) {
@@ -37,70 +45,46 @@ public class ListAppRoleScopesResponseBody extends TeaModel {
         return this.nextToken;
     }
 
-    public ListAppRoleScopesResponseBody setDataList(java.util.List<ListAppRoleScopesResponseBodyDataList> dataList) {
-        this.dataList = dataList;
-        return this;
-    }
-    public java.util.List<ListAppRoleScopesResponseBodyDataList> getDataList() {
-        return this.dataList;
-    }
-
     public static class ListAppRoleScopesResponseBodyDataList extends TeaModel {
-        // 角色名称
-        @NameInMap("roleName")
-        public String roleName;
-
-        // 角色Id
-        @NameInMap("roleId")
-        public Long roleId;
-
-        // 角色范围类型，“ALL_VISIBLE”表示全员，“PART_VISIBLE”表示部分
-        @NameInMap("scopeType")
-        public String scopeType;
+        // 是否拥有角色管理权限，默认false
+        @NameInMap("canManageRole")
+        public Boolean canManageRole;
 
         // 部门id列表
         @NameInMap("deptIdList")
         public java.util.List<Long> deptIdList;
 
-        // 员工userId列表
-        @NameInMap("userIdList")
-        public java.util.List<String> userIdList;
+        // 角色Id
+        @NameInMap("roleId")
+        public Long roleId;
+
+        // 角色名称
+        @NameInMap("roleName")
+        public String roleName;
+
+        // 角色范围类型，“ALL_VISIBLE”表示全员，“PART_VISIBLE”表示部分
+        @NameInMap("scopeType")
+        public String scopeType;
 
         // 角色范围最新版本号
         @NameInMap("scopeVersion")
         public Long scopeVersion;
 
-        // 是否拥有角色管理权限，默认false
-        @NameInMap("canManageRole")
-        public Boolean canManageRole;
+        // 员工userId列表
+        @NameInMap("userIdList")
+        public java.util.List<String> userIdList;
 
         public static ListAppRoleScopesResponseBodyDataList build(java.util.Map<String, ?> map) throws Exception {
             ListAppRoleScopesResponseBodyDataList self = new ListAppRoleScopesResponseBodyDataList();
             return TeaModel.build(map, self);
         }
 
-        public ListAppRoleScopesResponseBodyDataList setRoleName(String roleName) {
-            this.roleName = roleName;
+        public ListAppRoleScopesResponseBodyDataList setCanManageRole(Boolean canManageRole) {
+            this.canManageRole = canManageRole;
             return this;
         }
-        public String getRoleName() {
-            return this.roleName;
-        }
-
-        public ListAppRoleScopesResponseBodyDataList setRoleId(Long roleId) {
-            this.roleId = roleId;
-            return this;
-        }
-        public Long getRoleId() {
-            return this.roleId;
-        }
-
-        public ListAppRoleScopesResponseBodyDataList setScopeType(String scopeType) {
-            this.scopeType = scopeType;
-            return this;
-        }
-        public String getScopeType() {
-            return this.scopeType;
+        public Boolean getCanManageRole() {
+            return this.canManageRole;
         }
 
         public ListAppRoleScopesResponseBodyDataList setDeptIdList(java.util.List<Long> deptIdList) {
@@ -111,12 +95,28 @@ public class ListAppRoleScopesResponseBody extends TeaModel {
             return this.deptIdList;
         }
 
-        public ListAppRoleScopesResponseBodyDataList setUserIdList(java.util.List<String> userIdList) {
-            this.userIdList = userIdList;
+        public ListAppRoleScopesResponseBodyDataList setRoleId(Long roleId) {
+            this.roleId = roleId;
             return this;
         }
-        public java.util.List<String> getUserIdList() {
-            return this.userIdList;
+        public Long getRoleId() {
+            return this.roleId;
+        }
+
+        public ListAppRoleScopesResponseBodyDataList setRoleName(String roleName) {
+            this.roleName = roleName;
+            return this;
+        }
+        public String getRoleName() {
+            return this.roleName;
+        }
+
+        public ListAppRoleScopesResponseBodyDataList setScopeType(String scopeType) {
+            this.scopeType = scopeType;
+            return this;
+        }
+        public String getScopeType() {
+            return this.scopeType;
         }
 
         public ListAppRoleScopesResponseBodyDataList setScopeVersion(Long scopeVersion) {
@@ -127,12 +127,12 @@ public class ListAppRoleScopesResponseBody extends TeaModel {
             return this.scopeVersion;
         }
 
-        public ListAppRoleScopesResponseBodyDataList setCanManageRole(Boolean canManageRole) {
-            this.canManageRole = canManageRole;
+        public ListAppRoleScopesResponseBodyDataList setUserIdList(java.util.List<String> userIdList) {
+            this.userIdList = userIdList;
             return this;
         }
-        public Boolean getCanManageRole() {
-            return this.canManageRole;
+        public java.util.List<String> getUserIdList() {
+            return this.userIdList;
         }
 
     }

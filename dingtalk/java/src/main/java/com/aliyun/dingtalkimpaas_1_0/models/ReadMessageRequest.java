@@ -4,23 +4,15 @@ package com.aliyun.dingtalkimpaas_1_0.models;
 import com.aliyun.tea.*;
 
 public class ReadMessageRequest extends TeaModel {
-    @NameInMap("operatorUid")
-    public String operatorUid;
-
     @NameInMap("messageId")
     public String messageId;
+
+    @NameInMap("operatorUid")
+    public String operatorUid;
 
     public static ReadMessageRequest build(java.util.Map<String, ?> map) throws Exception {
         ReadMessageRequest self = new ReadMessageRequest();
         return TeaModel.build(map, self);
-    }
-
-    public ReadMessageRequest setOperatorUid(String operatorUid) {
-        this.operatorUid = operatorUid;
-        return this;
-    }
-    public String getOperatorUid() {
-        return this.operatorUid;
     }
 
     public ReadMessageRequest setMessageId(String messageId) {
@@ -29,6 +21,14 @@ public class ReadMessageRequest extends TeaModel {
     }
     public String getMessageId() {
         return this.messageId;
+    }
+
+    public ReadMessageRequest setOperatorUid(String operatorUid) {
+        this.operatorUid = operatorUid;
+        return this;
+    }
+    public String getOperatorUid() {
+        return this.operatorUid;
     }
 
 }

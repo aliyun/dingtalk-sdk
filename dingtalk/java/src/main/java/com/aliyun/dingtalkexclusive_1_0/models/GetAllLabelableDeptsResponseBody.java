@@ -246,10 +246,6 @@ public class GetAllLabelableDeptsResponseBody extends TeaModel {
         @NameInMap("deptId")
         public String deptId;
 
-        // 父部门id
-        @NameInMap("superDeptId")
-        public String superDeptId;
-
         // 部门名称
         @NameInMap("deptName")
         public String deptName;
@@ -257,10 +253,6 @@ public class GetAllLabelableDeptsResponseBody extends TeaModel {
         // 部门人数
         @NameInMap("memberCount")
         public Long memberCount;
-
-        // 部门伙伴编码
-        @NameInMap("partnerNum")
-        public String partnerNum;
 
         // 部门一级伙伴类型
         @NameInMap("partnerLabelVOLevel1")
@@ -282,6 +274,14 @@ public class GetAllLabelableDeptsResponseBody extends TeaModel {
         @NameInMap("partnerLabelVOLevel5")
         public GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel5 partnerLabelVOLevel5;
 
+        // 部门伙伴编码
+        @NameInMap("partnerNum")
+        public String partnerNum;
+
+        // 父部门id
+        @NameInMap("superDeptId")
+        public String superDeptId;
+
         public static GetAllLabelableDeptsResponseBodyData build(java.util.Map<String, ?> map) throws Exception {
             GetAllLabelableDeptsResponseBodyData self = new GetAllLabelableDeptsResponseBodyData();
             return TeaModel.build(map, self);
@@ -293,14 +293,6 @@ public class GetAllLabelableDeptsResponseBody extends TeaModel {
         }
         public String getDeptId() {
             return this.deptId;
-        }
-
-        public GetAllLabelableDeptsResponseBodyData setSuperDeptId(String superDeptId) {
-            this.superDeptId = superDeptId;
-            return this;
-        }
-        public String getSuperDeptId() {
-            return this.superDeptId;
         }
 
         public GetAllLabelableDeptsResponseBodyData setDeptName(String deptName) {
@@ -317,14 +309,6 @@ public class GetAllLabelableDeptsResponseBody extends TeaModel {
         }
         public Long getMemberCount() {
             return this.memberCount;
-        }
-
-        public GetAllLabelableDeptsResponseBodyData setPartnerNum(String partnerNum) {
-            this.partnerNum = partnerNum;
-            return this;
-        }
-        public String getPartnerNum() {
-            return this.partnerNum;
         }
 
         public GetAllLabelableDeptsResponseBodyData setPartnerLabelVOLevel1(GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel1 partnerLabelVOLevel1) {
@@ -365,6 +349,22 @@ public class GetAllLabelableDeptsResponseBody extends TeaModel {
         }
         public GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel5 getPartnerLabelVOLevel5() {
             return this.partnerLabelVOLevel5;
+        }
+
+        public GetAllLabelableDeptsResponseBodyData setPartnerNum(String partnerNum) {
+            this.partnerNum = partnerNum;
+            return this;
+        }
+        public String getPartnerNum() {
+            return this.partnerNum;
+        }
+
+        public GetAllLabelableDeptsResponseBodyData setSuperDeptId(String superDeptId) {
+            this.superDeptId = superDeptId;
+            return this;
+        }
+        public String getSuperDeptId() {
+            return this.superDeptId;
         }
 
     }

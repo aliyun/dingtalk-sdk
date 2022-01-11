@@ -4,97 +4,49 @@ package com.aliyun.dingtalkcalendar_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateEventRequest extends TeaModel {
-    // 日程标题
-    @NameInMap("summary")
-    public String summary;
+    @NameInMap("attendees")
+    public java.util.List<CreateEventRequestAttendees> attendees;
 
     // 日程描述
     @NameInMap("description")
     public String description;
 
-    // 日程开始时间
-    @NameInMap("start")
-    public CreateEventRequestStart start;
-
     // 日程结束时间
     @NameInMap("end")
     public CreateEventRequestEnd end;
-
-    // 是否为全天日程
-    @NameInMap("isAllDay")
-    public Boolean isAllDay;
-
-    // 日程循环规则
-    @NameInMap("recurrence")
-    public CreateEventRequestRecurrence recurrence;
-
-    @NameInMap("attendees")
-    public java.util.List<CreateEventRequestAttendees> attendees;
-
-    @NameInMap("location")
-    public CreateEventRequestLocation location;
-
-    @NameInMap("reminders")
-    public java.util.List<CreateEventRequestReminders> reminders;
-
-    @NameInMap("onlineMeetingInfo")
-    public CreateEventRequestOnlineMeetingInfo onlineMeetingInfo;
 
     // 扩展信息
     @NameInMap("extra")
     public java.util.Map<String, String> extra;
 
+    // 是否为全天日程
+    @NameInMap("isAllDay")
+    public Boolean isAllDay;
+
+    @NameInMap("location")
+    public CreateEventRequestLocation location;
+
+    @NameInMap("onlineMeetingInfo")
+    public CreateEventRequestOnlineMeetingInfo onlineMeetingInfo;
+
+    // 日程循环规则
+    @NameInMap("recurrence")
+    public CreateEventRequestRecurrence recurrence;
+
+    @NameInMap("reminders")
+    public java.util.List<CreateEventRequestReminders> reminders;
+
+    // 日程开始时间
+    @NameInMap("start")
+    public CreateEventRequestStart start;
+
+    // 日程标题
+    @NameInMap("summary")
+    public String summary;
+
     public static CreateEventRequest build(java.util.Map<String, ?> map) throws Exception {
         CreateEventRequest self = new CreateEventRequest();
         return TeaModel.build(map, self);
-    }
-
-    public CreateEventRequest setSummary(String summary) {
-        this.summary = summary;
-        return this;
-    }
-    public String getSummary() {
-        return this.summary;
-    }
-
-    public CreateEventRequest setDescription(String description) {
-        this.description = description;
-        return this;
-    }
-    public String getDescription() {
-        return this.description;
-    }
-
-    public CreateEventRequest setStart(CreateEventRequestStart start) {
-        this.start = start;
-        return this;
-    }
-    public CreateEventRequestStart getStart() {
-        return this.start;
-    }
-
-    public CreateEventRequest setEnd(CreateEventRequestEnd end) {
-        this.end = end;
-        return this;
-    }
-    public CreateEventRequestEnd getEnd() {
-        return this.end;
-    }
-
-    public CreateEventRequest setIsAllDay(Boolean isAllDay) {
-        this.isAllDay = isAllDay;
-        return this;
-    }
-    public Boolean getIsAllDay() {
-        return this.isAllDay;
-    }
-
-    public CreateEventRequest setRecurrence(CreateEventRequestRecurrence recurrence) {
-        this.recurrence = recurrence;
-        return this;
-    }
-    public CreateEventRequestRecurrence getRecurrence() {
-        return this.recurrence;
     }
 
     public CreateEventRequest setAttendees(java.util.List<CreateEventRequestAttendees> attendees) {
@@ -105,28 +57,20 @@ public class CreateEventRequest extends TeaModel {
         return this.attendees;
     }
 
-    public CreateEventRequest setLocation(CreateEventRequestLocation location) {
-        this.location = location;
+    public CreateEventRequest setDescription(String description) {
+        this.description = description;
         return this;
     }
-    public CreateEventRequestLocation getLocation() {
-        return this.location;
+    public String getDescription() {
+        return this.description;
     }
 
-    public CreateEventRequest setReminders(java.util.List<CreateEventRequestReminders> reminders) {
-        this.reminders = reminders;
+    public CreateEventRequest setEnd(CreateEventRequestEnd end) {
+        this.end = end;
         return this;
     }
-    public java.util.List<CreateEventRequestReminders> getReminders() {
-        return this.reminders;
-    }
-
-    public CreateEventRequest setOnlineMeetingInfo(CreateEventRequestOnlineMeetingInfo onlineMeetingInfo) {
-        this.onlineMeetingInfo = onlineMeetingInfo;
-        return this;
-    }
-    public CreateEventRequestOnlineMeetingInfo getOnlineMeetingInfo() {
-        return this.onlineMeetingInfo;
+    public CreateEventRequestEnd getEnd() {
+        return this.end;
     }
 
     public CreateEventRequest setExtra(java.util.Map<String, String> extra) {
@@ -137,46 +81,77 @@ public class CreateEventRequest extends TeaModel {
         return this.extra;
     }
 
-    public static class CreateEventRequestStart extends TeaModel {
-        // 日程开始日期，如果是全天日程必须有值，非全天日程必须留空，格式：yyyy-MM-dd
-        @NameInMap("date")
-        public String date;
+    public CreateEventRequest setIsAllDay(Boolean isAllDay) {
+        this.isAllDay = isAllDay;
+        return this;
+    }
+    public Boolean getIsAllDay() {
+        return this.isAllDay;
+    }
 
-        // 日程开始时间，非全天日程必须有值，全天日程必须留空，格式为ISO-8601的date-time格式
-        @NameInMap("dateTime")
-        public String dateTime;
+    public CreateEventRequest setLocation(CreateEventRequestLocation location) {
+        this.location = location;
+        return this;
+    }
+    public CreateEventRequestLocation getLocation() {
+        return this.location;
+    }
 
-        // 日程开始时间所属时区，非全天日程必须有值，全天日程必须留空，tz database name格式，参考：https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-        @NameInMap("timeZone")
-        public String timeZone;
+    public CreateEventRequest setOnlineMeetingInfo(CreateEventRequestOnlineMeetingInfo onlineMeetingInfo) {
+        this.onlineMeetingInfo = onlineMeetingInfo;
+        return this;
+    }
+    public CreateEventRequestOnlineMeetingInfo getOnlineMeetingInfo() {
+        return this.onlineMeetingInfo;
+    }
 
-        public static CreateEventRequestStart build(java.util.Map<String, ?> map) throws Exception {
-            CreateEventRequestStart self = new CreateEventRequestStart();
+    public CreateEventRequest setRecurrence(CreateEventRequestRecurrence recurrence) {
+        this.recurrence = recurrence;
+        return this;
+    }
+    public CreateEventRequestRecurrence getRecurrence() {
+        return this.recurrence;
+    }
+
+    public CreateEventRequest setReminders(java.util.List<CreateEventRequestReminders> reminders) {
+        this.reminders = reminders;
+        return this;
+    }
+    public java.util.List<CreateEventRequestReminders> getReminders() {
+        return this.reminders;
+    }
+
+    public CreateEventRequest setStart(CreateEventRequestStart start) {
+        this.start = start;
+        return this;
+    }
+    public CreateEventRequestStart getStart() {
+        return this.start;
+    }
+
+    public CreateEventRequest setSummary(String summary) {
+        this.summary = summary;
+        return this;
+    }
+    public String getSummary() {
+        return this.summary;
+    }
+
+    public static class CreateEventRequestAttendees extends TeaModel {
+        @NameInMap("id")
+        public String id;
+
+        public static CreateEventRequestAttendees build(java.util.Map<String, ?> map) throws Exception {
+            CreateEventRequestAttendees self = new CreateEventRequestAttendees();
             return TeaModel.build(map, self);
         }
 
-        public CreateEventRequestStart setDate(String date) {
-            this.date = date;
+        public CreateEventRequestAttendees setId(String id) {
+            this.id = id;
             return this;
         }
-        public String getDate() {
-            return this.date;
-        }
-
-        public CreateEventRequestStart setDateTime(String dateTime) {
-            this.dateTime = dateTime;
-            return this;
-        }
-        public String getDateTime() {
-            return this.dateTime;
-        }
-
-        public CreateEventRequestStart setTimeZone(String timeZone) {
-            this.timeZone = timeZone;
-            return this;
-        }
-        public String getTimeZone() {
-            return this.timeZone;
+        public String getId() {
+            return this.id;
         }
 
     }
@@ -225,12 +200,45 @@ public class CreateEventRequest extends TeaModel {
 
     }
 
-    public static class CreateEventRequestRecurrencePattern extends TeaModel {
-        // 循环规则类型：  daily：每interval天 weekly：每interval周的第daysOfWeek天 absoluteMonthly：每interval月的第dayOfMonth天 relativeMonthly：每interval月的第index周的第daysOfWeek天 absoluteYearly：每interval年
-        // 
+    public static class CreateEventRequestLocation extends TeaModel {
+        @NameInMap("displayName")
+        public String displayName;
+
+        public static CreateEventRequestLocation build(java.util.Map<String, ?> map) throws Exception {
+            CreateEventRequestLocation self = new CreateEventRequestLocation();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateEventRequestLocation setDisplayName(String displayName) {
+            this.displayName = displayName;
+            return this;
+        }
+        public String getDisplayName() {
+            return this.displayName;
+        }
+
+    }
+
+    public static class CreateEventRequestOnlineMeetingInfo extends TeaModel {
         @NameInMap("type")
         public String type;
 
+        public static CreateEventRequestOnlineMeetingInfo build(java.util.Map<String, ?> map) throws Exception {
+            CreateEventRequestOnlineMeetingInfo self = new CreateEventRequestOnlineMeetingInfo();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateEventRequestOnlineMeetingInfo setType(String type) {
+            this.type = type;
+            return this;
+        }
+        public String getType() {
+            return this.type;
+        }
+
+    }
+
+    public static class CreateEventRequestRecurrencePattern extends TeaModel {
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
@@ -243,17 +251,14 @@ public class CreateEventRequest extends TeaModel {
         @NameInMap("interval")
         public Integer interval;
 
+        // 循环规则类型：  daily：每interval天 weekly：每interval周的第daysOfWeek天 absoluteMonthly：每interval月的第dayOfMonth天 relativeMonthly：每interval月的第index周的第daysOfWeek天 absoluteYearly：每interval年
+        // 
+        @NameInMap("type")
+        public String type;
+
         public static CreateEventRequestRecurrencePattern build(java.util.Map<String, ?> map) throws Exception {
             CreateEventRequestRecurrencePattern self = new CreateEventRequestRecurrencePattern();
             return TeaModel.build(map, self);
-        }
-
-        public CreateEventRequestRecurrencePattern setType(String type) {
-            this.type = type;
-            return this;
-        }
-        public String getType() {
-            return this.type;
         }
 
         public CreateEventRequestRecurrencePattern setDayOfMonth(Integer dayOfMonth) {
@@ -288,29 +293,29 @@ public class CreateEventRequest extends TeaModel {
             return this.interval;
         }
 
+        public CreateEventRequestRecurrencePattern setType(String type) {
+            this.type = type;
+            return this;
+        }
+        public String getType() {
+            return this.type;
+        }
+
     }
 
     public static class CreateEventRequestRecurrenceRange extends TeaModel {
-        @NameInMap("type")
-        public String type;
-
         @NameInMap("endDate")
         public String endDate;
 
         @NameInMap("numberOfOccurrences")
         public Integer numberOfOccurrences;
 
+        @NameInMap("type")
+        public String type;
+
         public static CreateEventRequestRecurrenceRange build(java.util.Map<String, ?> map) throws Exception {
             CreateEventRequestRecurrenceRange self = new CreateEventRequestRecurrenceRange();
             return TeaModel.build(map, self);
-        }
-
-        public CreateEventRequestRecurrenceRange setType(String type) {
-            this.type = type;
-            return this;
-        }
-        public String getType() {
-            return this.type;
         }
 
         public CreateEventRequestRecurrenceRange setEndDate(String endDate) {
@@ -327,6 +332,14 @@ public class CreateEventRequest extends TeaModel {
         }
         public Integer getNumberOfOccurrences() {
             return this.numberOfOccurrences;
+        }
+
+        public CreateEventRequestRecurrenceRange setType(String type) {
+            this.type = type;
+            return this;
+        }
+        public String getType() {
+            return this.type;
         }
 
     }
@@ -362,44 +375,6 @@ public class CreateEventRequest extends TeaModel {
 
     }
 
-    public static class CreateEventRequestAttendees extends TeaModel {
-        @NameInMap("id")
-        public String id;
-
-        public static CreateEventRequestAttendees build(java.util.Map<String, ?> map) throws Exception {
-            CreateEventRequestAttendees self = new CreateEventRequestAttendees();
-            return TeaModel.build(map, self);
-        }
-
-        public CreateEventRequestAttendees setId(String id) {
-            this.id = id;
-            return this;
-        }
-        public String getId() {
-            return this.id;
-        }
-
-    }
-
-    public static class CreateEventRequestLocation extends TeaModel {
-        @NameInMap("displayName")
-        public String displayName;
-
-        public static CreateEventRequestLocation build(java.util.Map<String, ?> map) throws Exception {
-            CreateEventRequestLocation self = new CreateEventRequestLocation();
-            return TeaModel.build(map, self);
-        }
-
-        public CreateEventRequestLocation setDisplayName(String displayName) {
-            this.displayName = displayName;
-            return this;
-        }
-        public String getDisplayName() {
-            return this.displayName;
-        }
-
-    }
-
     public static class CreateEventRequestReminders extends TeaModel {
         @NameInMap("method")
         public String method;
@@ -430,21 +405,46 @@ public class CreateEventRequest extends TeaModel {
 
     }
 
-    public static class CreateEventRequestOnlineMeetingInfo extends TeaModel {
-        @NameInMap("type")
-        public String type;
+    public static class CreateEventRequestStart extends TeaModel {
+        // 日程开始日期，如果是全天日程必须有值，非全天日程必须留空，格式：yyyy-MM-dd
+        @NameInMap("date")
+        public String date;
 
-        public static CreateEventRequestOnlineMeetingInfo build(java.util.Map<String, ?> map) throws Exception {
-            CreateEventRequestOnlineMeetingInfo self = new CreateEventRequestOnlineMeetingInfo();
+        // 日程开始时间，非全天日程必须有值，全天日程必须留空，格式为ISO-8601的date-time格式
+        @NameInMap("dateTime")
+        public String dateTime;
+
+        // 日程开始时间所属时区，非全天日程必须有值，全天日程必须留空，tz database name格式，参考：https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+        @NameInMap("timeZone")
+        public String timeZone;
+
+        public static CreateEventRequestStart build(java.util.Map<String, ?> map) throws Exception {
+            CreateEventRequestStart self = new CreateEventRequestStart();
             return TeaModel.build(map, self);
         }
 
-        public CreateEventRequestOnlineMeetingInfo setType(String type) {
-            this.type = type;
+        public CreateEventRequestStart setDate(String date) {
+            this.date = date;
             return this;
         }
-        public String getType() {
-            return this.type;
+        public String getDate() {
+            return this.date;
+        }
+
+        public CreateEventRequestStart setDateTime(String dateTime) {
+            this.dateTime = dateTime;
+            return this;
+        }
+        public String getDateTime() {
+            return this.dateTime;
+        }
+
+        public CreateEventRequestStart setTimeZone(String timeZone) {
+            this.timeZone = timeZone;
+            return this;
+        }
+        public String getTimeZone() {
+            return this.timeZone;
         }
 
     }

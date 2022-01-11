@@ -4,9 +4,9 @@ package com.aliyun.dingtalkworkbench_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateDingPortalPageScopeRequest extends TeaModel {
-    // 可见用户列表
-    @NameInMap("userids")
-    public java.util.List<String> userids;
+    // 是否全员可见
+    @NameInMap("allVisible")
+    public Boolean allVisible;
 
     // 可见部门列表
     @NameInMap("deptIds")
@@ -16,21 +16,21 @@ public class UpdateDingPortalPageScopeRequest extends TeaModel {
     @NameInMap("roleIds")
     public java.util.List<Long> roleIds;
 
-    // 是否全员可见
-    @NameInMap("allVisible")
-    public Boolean allVisible;
+    // 可见用户列表
+    @NameInMap("userids")
+    public java.util.List<String> userids;
 
     public static UpdateDingPortalPageScopeRequest build(java.util.Map<String, ?> map) throws Exception {
         UpdateDingPortalPageScopeRequest self = new UpdateDingPortalPageScopeRequest();
         return TeaModel.build(map, self);
     }
 
-    public UpdateDingPortalPageScopeRequest setUserids(java.util.List<String> userids) {
-        this.userids = userids;
+    public UpdateDingPortalPageScopeRequest setAllVisible(Boolean allVisible) {
+        this.allVisible = allVisible;
         return this;
     }
-    public java.util.List<String> getUserids() {
-        return this.userids;
+    public Boolean getAllVisible() {
+        return this.allVisible;
     }
 
     public UpdateDingPortalPageScopeRequest setDeptIds(java.util.List<Long> deptIds) {
@@ -49,12 +49,12 @@ public class UpdateDingPortalPageScopeRequest extends TeaModel {
         return this.roleIds;
     }
 
-    public UpdateDingPortalPageScopeRequest setAllVisible(Boolean allVisible) {
-        this.allVisible = allVisible;
+    public UpdateDingPortalPageScopeRequest setUserids(java.util.List<String> userids) {
+        this.userids = userids;
         return this;
     }
-    public Boolean getAllVisible() {
-        return this.allVisible;
+    public java.util.List<String> getUserids() {
+        return this.userids;
     }
 
 }

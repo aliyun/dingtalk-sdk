@@ -34,21 +34,61 @@ public class QueryBizOptLogResponseBody extends TeaModel {
     }
 
     public static class QueryBizOptLogResponseBodyContent extends TeaModel {
-        // 日志ID
-        @NameInMap("id")
-        public Long id;
+        // 业务类型
+        @NameInMap("bizType")
+        public Integer bizType;
 
         // 数据类型
         @NameInMap("dataType")
         public Integer dataType;
 
-        // 业务类型
-        @NameInMap("bizType")
-        public Integer bizType;
+        // 日志ID
+        @NameInMap("id")
+        public Long id;
+
+        // 操作后对象数据快照，json格式
+        @NameInMap("optAfterData")
+        public String optAfterData;
+
+        // 操作前对象数据快照，json格式
+        @NameInMap("optBeforeData")
+        public String optBeforeData;
+
+        // 操作业务类型
+        @NameInMap("optBizType")
+        public Integer optBizType;
+
+        // 扩展信息，map json格式
+        @NameInMap("optExtend")
+        public String optExtend;
+
+        // 操作者工号
+        @NameInMap("optJobNumber")
+        public String optJobNumber;
+
+        // 操作对象code，人员code，或者部门code
+        @NameInMap("optObjectCode")
+        public String optObjectCode;
+
+        // 操作对象名称
+        @NameInMap("optObjectName")
+        public String optObjectName;
+
+        // 操作对象人员工号
+        @NameInMap("optObjectUserJobNo")
+        public String optObjectUserJobNo;
+
+        // 操作是否成功
+        @NameInMap("optSuccess")
+        public Integer optSuccess;
 
         // 操作时间 时间戳
         @NameInMap("optTime")
         public Long optTime;
+
+        // 操作类型
+        @NameInMap("optType")
+        public Integer optType;
 
         // 操作用户code
         @NameInMap("optUserCode")
@@ -58,69 +98,13 @@ public class QueryBizOptLogResponseBody extends TeaModel {
         @NameInMap("optUserName")
         public String optUserName;
 
-        // 操作者工号
-        @NameInMap("optJobNumber")
-        public String optJobNumber;
-
-        // 操作类型
-        @NameInMap("optType")
-        public Integer optType;
-
-        // 操作业务类型
-        @NameInMap("optBizType")
-        public Integer optBizType;
-
-        // 操作对象code，人员code，或者部门code
-        @NameInMap("optObjectCode")
-        public String optObjectCode;
-
-        // 操作对象人员工号
-        @NameInMap("optObjectUserJobNo")
-        public String optObjectUserJobNo;
-
-        // 操作对象名称
-        @NameInMap("optObjectName")
-        public String optObjectName;
-
-        // 操作是否成功
-        @NameInMap("optSuccess")
-        public Integer optSuccess;
-
         // 备注
         @NameInMap("remark")
         public String remark;
 
-        // 操作前对象数据快照，json格式
-        @NameInMap("optBeforeData")
-        public String optBeforeData;
-
-        // 操作后对象数据快照，json格式
-        @NameInMap("optAfterData")
-        public String optAfterData;
-
-        // 扩展信息，map json格式
-        @NameInMap("optExtend")
-        public String optExtend;
-
         public static QueryBizOptLogResponseBodyContent build(java.util.Map<String, ?> map) throws Exception {
             QueryBizOptLogResponseBodyContent self = new QueryBizOptLogResponseBodyContent();
             return TeaModel.build(map, self);
-        }
-
-        public QueryBizOptLogResponseBodyContent setId(Long id) {
-            this.id = id;
-            return this;
-        }
-        public Long getId() {
-            return this.id;
-        }
-
-        public QueryBizOptLogResponseBodyContent setDataType(Integer dataType) {
-            this.dataType = dataType;
-            return this;
-        }
-        public Integer getDataType() {
-            return this.dataType;
         }
 
         public QueryBizOptLogResponseBodyContent setBizType(Integer bizType) {
@@ -131,12 +115,108 @@ public class QueryBizOptLogResponseBody extends TeaModel {
             return this.bizType;
         }
 
+        public QueryBizOptLogResponseBodyContent setDataType(Integer dataType) {
+            this.dataType = dataType;
+            return this;
+        }
+        public Integer getDataType() {
+            return this.dataType;
+        }
+
+        public QueryBizOptLogResponseBodyContent setId(Long id) {
+            this.id = id;
+            return this;
+        }
+        public Long getId() {
+            return this.id;
+        }
+
+        public QueryBizOptLogResponseBodyContent setOptAfterData(String optAfterData) {
+            this.optAfterData = optAfterData;
+            return this;
+        }
+        public String getOptAfterData() {
+            return this.optAfterData;
+        }
+
+        public QueryBizOptLogResponseBodyContent setOptBeforeData(String optBeforeData) {
+            this.optBeforeData = optBeforeData;
+            return this;
+        }
+        public String getOptBeforeData() {
+            return this.optBeforeData;
+        }
+
+        public QueryBizOptLogResponseBodyContent setOptBizType(Integer optBizType) {
+            this.optBizType = optBizType;
+            return this;
+        }
+        public Integer getOptBizType() {
+            return this.optBizType;
+        }
+
+        public QueryBizOptLogResponseBodyContent setOptExtend(String optExtend) {
+            this.optExtend = optExtend;
+            return this;
+        }
+        public String getOptExtend() {
+            return this.optExtend;
+        }
+
+        public QueryBizOptLogResponseBodyContent setOptJobNumber(String optJobNumber) {
+            this.optJobNumber = optJobNumber;
+            return this;
+        }
+        public String getOptJobNumber() {
+            return this.optJobNumber;
+        }
+
+        public QueryBizOptLogResponseBodyContent setOptObjectCode(String optObjectCode) {
+            this.optObjectCode = optObjectCode;
+            return this;
+        }
+        public String getOptObjectCode() {
+            return this.optObjectCode;
+        }
+
+        public QueryBizOptLogResponseBodyContent setOptObjectName(String optObjectName) {
+            this.optObjectName = optObjectName;
+            return this;
+        }
+        public String getOptObjectName() {
+            return this.optObjectName;
+        }
+
+        public QueryBizOptLogResponseBodyContent setOptObjectUserJobNo(String optObjectUserJobNo) {
+            this.optObjectUserJobNo = optObjectUserJobNo;
+            return this;
+        }
+        public String getOptObjectUserJobNo() {
+            return this.optObjectUserJobNo;
+        }
+
+        public QueryBizOptLogResponseBodyContent setOptSuccess(Integer optSuccess) {
+            this.optSuccess = optSuccess;
+            return this;
+        }
+        public Integer getOptSuccess() {
+            return this.optSuccess;
+        }
+
         public QueryBizOptLogResponseBodyContent setOptTime(Long optTime) {
             this.optTime = optTime;
             return this;
         }
         public Long getOptTime() {
             return this.optTime;
+        }
+
+        public QueryBizOptLogResponseBodyContent setOptType(Integer optType) {
+            this.optType = optType;
+            return this;
+        }
+        public Integer getOptType() {
+            return this.optType;
         }
 
         public QueryBizOptLogResponseBodyContent setOptUserCode(String optUserCode) {
@@ -155,92 +235,12 @@ public class QueryBizOptLogResponseBody extends TeaModel {
             return this.optUserName;
         }
 
-        public QueryBizOptLogResponseBodyContent setOptJobNumber(String optJobNumber) {
-            this.optJobNumber = optJobNumber;
-            return this;
-        }
-        public String getOptJobNumber() {
-            return this.optJobNumber;
-        }
-
-        public QueryBizOptLogResponseBodyContent setOptType(Integer optType) {
-            this.optType = optType;
-            return this;
-        }
-        public Integer getOptType() {
-            return this.optType;
-        }
-
-        public QueryBizOptLogResponseBodyContent setOptBizType(Integer optBizType) {
-            this.optBizType = optBizType;
-            return this;
-        }
-        public Integer getOptBizType() {
-            return this.optBizType;
-        }
-
-        public QueryBizOptLogResponseBodyContent setOptObjectCode(String optObjectCode) {
-            this.optObjectCode = optObjectCode;
-            return this;
-        }
-        public String getOptObjectCode() {
-            return this.optObjectCode;
-        }
-
-        public QueryBizOptLogResponseBodyContent setOptObjectUserJobNo(String optObjectUserJobNo) {
-            this.optObjectUserJobNo = optObjectUserJobNo;
-            return this;
-        }
-        public String getOptObjectUserJobNo() {
-            return this.optObjectUserJobNo;
-        }
-
-        public QueryBizOptLogResponseBodyContent setOptObjectName(String optObjectName) {
-            this.optObjectName = optObjectName;
-            return this;
-        }
-        public String getOptObjectName() {
-            return this.optObjectName;
-        }
-
-        public QueryBizOptLogResponseBodyContent setOptSuccess(Integer optSuccess) {
-            this.optSuccess = optSuccess;
-            return this;
-        }
-        public Integer getOptSuccess() {
-            return this.optSuccess;
-        }
-
         public QueryBizOptLogResponseBodyContent setRemark(String remark) {
             this.remark = remark;
             return this;
         }
         public String getRemark() {
             return this.remark;
-        }
-
-        public QueryBizOptLogResponseBodyContent setOptBeforeData(String optBeforeData) {
-            this.optBeforeData = optBeforeData;
-            return this;
-        }
-        public String getOptBeforeData() {
-            return this.optBeforeData;
-        }
-
-        public QueryBizOptLogResponseBodyContent setOptAfterData(String optAfterData) {
-            this.optAfterData = optAfterData;
-            return this;
-        }
-        public String getOptAfterData() {
-            return this.optAfterData;
-        }
-
-        public QueryBizOptLogResponseBodyContent setOptExtend(String optExtend) {
-            this.optExtend = optExtend;
-            return this;
-        }
-        public String getOptExtend() {
-            return this.optExtend;
         }
 
     }

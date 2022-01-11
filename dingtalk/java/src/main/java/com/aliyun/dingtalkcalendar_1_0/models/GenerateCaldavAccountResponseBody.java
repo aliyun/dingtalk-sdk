@@ -4,18 +4,26 @@ package com.aliyun.dingtalkcalendar_1_0.models;
 import com.aliyun.tea.*;
 
 public class GenerateCaldavAccountResponseBody extends TeaModel {
+    @NameInMap("password")
+    public String password;
+
     @NameInMap("serverAddress")
     public String serverAddress;
 
     @NameInMap("username")
     public String username;
 
-    @NameInMap("password")
-    public String password;
-
     public static GenerateCaldavAccountResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GenerateCaldavAccountResponseBody self = new GenerateCaldavAccountResponseBody();
         return TeaModel.build(map, self);
+    }
+
+    public GenerateCaldavAccountResponseBody setPassword(String password) {
+        this.password = password;
+        return this;
+    }
+    public String getPassword() {
+        return this.password;
     }
 
     public GenerateCaldavAccountResponseBody setServerAddress(String serverAddress) {
@@ -32,14 +40,6 @@ public class GenerateCaldavAccountResponseBody extends TeaModel {
     }
     public String getUsername() {
         return this.username;
-    }
-
-    public GenerateCaldavAccountResponseBody setPassword(String password) {
-        this.password = password;
-        return this;
-    }
-    public String getPassword() {
-        return this.password;
     }
 
 }

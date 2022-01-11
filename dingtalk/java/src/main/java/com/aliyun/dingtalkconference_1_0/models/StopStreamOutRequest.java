@@ -4,13 +4,13 @@ package com.aliyun.dingtalkconference_1_0.models;
 import com.aliyun.tea.*;
 
 public class StopStreamOutRequest extends TeaModel {
-    // 流id
-    @NameInMap("streamId")
-    public String streamId;
-
     // 是否停止所有流，为true时，则不理会streamId字段
     @NameInMap("stopAllStream")
     public Boolean stopAllStream;
+
+    // 流id
+    @NameInMap("streamId")
+    public String streamId;
 
     // 用户id
     @NameInMap("unionId")
@@ -21,20 +21,20 @@ public class StopStreamOutRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public StopStreamOutRequest setStreamId(String streamId) {
-        this.streamId = streamId;
-        return this;
-    }
-    public String getStreamId() {
-        return this.streamId;
-    }
-
     public StopStreamOutRequest setStopAllStream(Boolean stopAllStream) {
         this.stopAllStream = stopAllStream;
         return this;
     }
     public Boolean getStopAllStream() {
         return this.stopAllStream;
+    }
+
+    public StopStreamOutRequest setStreamId(String streamId) {
+        this.streamId = streamId;
+        return this;
+    }
+    public String getStreamId() {
+        return this.streamId;
     }
 
     public StopStreamOutRequest setUnionId(String unionId) {

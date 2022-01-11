@@ -4,10 +4,6 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListApplicationInformationResponseBody extends TeaModel {
-    // 分页大小
-    @NameInMap("pageSize")
-    public Integer pageSize;
-
     // applicationInformation
     @NameInMap("applicationInformation")
     public java.util.List<ListApplicationInformationResponseBodyApplicationInformation> applicationInformation;
@@ -16,6 +12,10 @@ public class ListApplicationInformationResponseBody extends TeaModel {
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
+    // 分页大小
+    @NameInMap("pageSize")
+    public Integer pageSize;
+
     // 总数量
     @NameInMap("totalCount")
     public Integer totalCount;
@@ -23,14 +23,6 @@ public class ListApplicationInformationResponseBody extends TeaModel {
     public static ListApplicationInformationResponseBody build(java.util.Map<String, ?> map) throws Exception {
         ListApplicationInformationResponseBody self = new ListApplicationInformationResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public ListApplicationInformationResponseBody setPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
-        return this;
-    }
-    public Integer getPageSize() {
-        return this.pageSize;
     }
 
     public ListApplicationInformationResponseBody setApplicationInformation(java.util.List<ListApplicationInformationResponseBodyApplicationInformation> applicationInformation) {
@@ -49,6 +41,14 @@ public class ListApplicationInformationResponseBody extends TeaModel {
         return this.pageNumber;
     }
 
+    public ListApplicationInformationResponseBody setPageSize(Integer pageSize) {
+        this.pageSize = pageSize;
+        return this;
+    }
+    public Integer getPageSize() {
+        return this.pageSize;
+    }
+
     public ListApplicationInformationResponseBody setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
@@ -58,25 +58,17 @@ public class ListApplicationInformationResponseBody extends TeaModel {
     }
 
     public static class ListApplicationInformationResponseBodyApplicationInformationUsagePlugins extends TeaModel {
-        // pluginName
-        @NameInMap("pluginName")
-        public String pluginName;
-
         // iconUrl
         @NameInMap("iconUrl")
         public String iconUrl;
 
+        // pluginName
+        @NameInMap("pluginName")
+        public String pluginName;
+
         public static ListApplicationInformationResponseBodyApplicationInformationUsagePlugins build(java.util.Map<String, ?> map) throws Exception {
             ListApplicationInformationResponseBodyApplicationInformationUsagePlugins self = new ListApplicationInformationResponseBodyApplicationInformationUsagePlugins();
             return TeaModel.build(map, self);
-        }
-
-        public ListApplicationInformationResponseBodyApplicationInformationUsagePlugins setPluginName(String pluginName) {
-            this.pluginName = pluginName;
-            return this;
-        }
-        public String getPluginName() {
-            return this.pluginName;
         }
 
         public ListApplicationInformationResponseBodyApplicationInformationUsagePlugins setIconUrl(String iconUrl) {
@@ -87,13 +79,17 @@ public class ListApplicationInformationResponseBody extends TeaModel {
             return this.iconUrl;
         }
 
+        public ListApplicationInformationResponseBodyApplicationInformationUsagePlugins setPluginName(String pluginName) {
+            this.pluginName = pluginName;
+            return this;
+        }
+        public String getPluginName() {
+            return this.pluginName;
+        }
+
     }
 
     public static class ListApplicationInformationResponseBodyApplicationInformation extends TeaModel {
-        // usagePlugins
-        @NameInMap("usagePlugins")
-        public java.util.List<ListApplicationInformationResponseBodyApplicationInformationUsagePlugins> usagePlugins;
-
         // appName
         @NameInMap("appName")
         public String appName;
@@ -102,25 +98,21 @@ public class ListApplicationInformationResponseBody extends TeaModel {
         @NameInMap("appType")
         public String appType;
 
-        // instanceUsageAmount
-        @NameInMap("instanceUsageAmount")
-        public Long instanceUsageAmount;
-
         // attachmentUsageAmount
         @NameInMap("attachmentUsageAmount")
         public Long attachmentUsageAmount;
 
+        // instanceUsageAmount
+        @NameInMap("instanceUsageAmount")
+        public Long instanceUsageAmount;
+
+        // usagePlugins
+        @NameInMap("usagePlugins")
+        public java.util.List<ListApplicationInformationResponseBodyApplicationInformationUsagePlugins> usagePlugins;
+
         public static ListApplicationInformationResponseBodyApplicationInformation build(java.util.Map<String, ?> map) throws Exception {
             ListApplicationInformationResponseBodyApplicationInformation self = new ListApplicationInformationResponseBodyApplicationInformation();
             return TeaModel.build(map, self);
-        }
-
-        public ListApplicationInformationResponseBodyApplicationInformation setUsagePlugins(java.util.List<ListApplicationInformationResponseBodyApplicationInformationUsagePlugins> usagePlugins) {
-            this.usagePlugins = usagePlugins;
-            return this;
-        }
-        public java.util.List<ListApplicationInformationResponseBodyApplicationInformationUsagePlugins> getUsagePlugins() {
-            return this.usagePlugins;
         }
 
         public ListApplicationInformationResponseBodyApplicationInformation setAppName(String appName) {
@@ -139,6 +131,14 @@ public class ListApplicationInformationResponseBody extends TeaModel {
             return this.appType;
         }
 
+        public ListApplicationInformationResponseBodyApplicationInformation setAttachmentUsageAmount(Long attachmentUsageAmount) {
+            this.attachmentUsageAmount = attachmentUsageAmount;
+            return this;
+        }
+        public Long getAttachmentUsageAmount() {
+            return this.attachmentUsageAmount;
+        }
+
         public ListApplicationInformationResponseBodyApplicationInformation setInstanceUsageAmount(Long instanceUsageAmount) {
             this.instanceUsageAmount = instanceUsageAmount;
             return this;
@@ -147,12 +147,12 @@ public class ListApplicationInformationResponseBody extends TeaModel {
             return this.instanceUsageAmount;
         }
 
-        public ListApplicationInformationResponseBodyApplicationInformation setAttachmentUsageAmount(Long attachmentUsageAmount) {
-            this.attachmentUsageAmount = attachmentUsageAmount;
+        public ListApplicationInformationResponseBodyApplicationInformation setUsagePlugins(java.util.List<ListApplicationInformationResponseBodyApplicationInformationUsagePlugins> usagePlugins) {
+            this.usagePlugins = usagePlugins;
             return this;
         }
-        public Long getAttachmentUsageAmount() {
-            return this.attachmentUsageAmount;
+        public java.util.List<ListApplicationInformationResponseBodyApplicationInformationUsagePlugins> getUsagePlugins() {
+            return this.usagePlugins;
         }
 
     }

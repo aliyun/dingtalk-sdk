@@ -4,13 +4,13 @@ package com.aliyun.dingtalkcalendar_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateAclsResponseBody extends TeaModel {
-    // 对日历的访问权限
-    @NameInMap("privilege")
-    public String privilege;
-
     // acl资源ID
     @NameInMap("aclId")
     public String aclId;
+
+    // 对日历的访问权限
+    @NameInMap("privilege")
+    public String privilege;
 
     // 权限范围
     @NameInMap("scope")
@@ -21,20 +21,20 @@ public class CreateAclsResponseBody extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public CreateAclsResponseBody setPrivilege(String privilege) {
-        this.privilege = privilege;
-        return this;
-    }
-    public String getPrivilege() {
-        return this.privilege;
-    }
-
     public CreateAclsResponseBody setAclId(String aclId) {
         this.aclId = aclId;
         return this;
     }
     public String getAclId() {
         return this.aclId;
+    }
+
+    public CreateAclsResponseBody setPrivilege(String privilege) {
+        this.privilege = privilege;
+        return this;
+    }
+    public String getPrivilege() {
+        return this.privilege;
     }
 
     public CreateAclsResponseBody setScope(CreateAclsResponseBodyScope scope) {

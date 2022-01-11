@@ -20,13 +20,13 @@ public class GetDataListResponseBody extends TeaModel {
     @NameInMap("pageSize")
     public Long pageSize;
 
-    // 总条数
-    @NameInMap("totalCount")
-    public Long totalCount;
-
     // 响应时间
     @NameInMap("time")
     public String time;
+
+    // 总条数
+    @NameInMap("totalCount")
+    public Long totalCount;
 
     public static GetDataListResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetDataListResponseBody self = new GetDataListResponseBody();
@@ -65,20 +65,20 @@ public class GetDataListResponseBody extends TeaModel {
         return this.pageSize;
     }
 
-    public GetDataListResponseBody setTotalCount(Long totalCount) {
-        this.totalCount = totalCount;
-        return this;
-    }
-    public Long getTotalCount() {
-        return this.totalCount;
-    }
-
     public GetDataListResponseBody setTime(String time) {
         this.time = time;
         return this;
     }
     public String getTime() {
         return this.time;
+    }
+
+    public GetDataListResponseBody setTotalCount(Long totalCount) {
+        this.totalCount = totalCount;
+        return this;
+    }
+    public Long getTotalCount() {
+        return this.totalCount;
     }
 
     public static class GetDataListResponseBodyData extends TeaModel {

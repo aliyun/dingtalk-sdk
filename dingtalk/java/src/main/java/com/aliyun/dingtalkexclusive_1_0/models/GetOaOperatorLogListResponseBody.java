@@ -33,18 +33,6 @@ public class GetOaOperatorLogListResponseBody extends TeaModel {
     }
 
     public static class GetOaOperatorLogListResponseBodyData extends TeaModel {
-        // 操作员userId
-        @NameInMap("opUserId")
-        public String opUserId;
-
-        // 操作员名字
-        @NameInMap("opName")
-        public String opName;
-
-        // 操作时间
-        @NameInMap("opTime")
-        public Long opTime;
-
         // 操作分类（一级）
         @NameInMap("category1Name")
         public String category1Name;
@@ -57,33 +45,21 @@ public class GetOaOperatorLogListResponseBody extends TeaModel {
         @NameInMap("content")
         public String content;
 
+        // 操作员名字
+        @NameInMap("opName")
+        public String opName;
+
+        // 操作时间
+        @NameInMap("opTime")
+        public Long opTime;
+
+        // 操作员userId
+        @NameInMap("opUserId")
+        public String opUserId;
+
         public static GetOaOperatorLogListResponseBodyData build(java.util.Map<String, ?> map) throws Exception {
             GetOaOperatorLogListResponseBodyData self = new GetOaOperatorLogListResponseBodyData();
             return TeaModel.build(map, self);
-        }
-
-        public GetOaOperatorLogListResponseBodyData setOpUserId(String opUserId) {
-            this.opUserId = opUserId;
-            return this;
-        }
-        public String getOpUserId() {
-            return this.opUserId;
-        }
-
-        public GetOaOperatorLogListResponseBodyData setOpName(String opName) {
-            this.opName = opName;
-            return this;
-        }
-        public String getOpName() {
-            return this.opName;
-        }
-
-        public GetOaOperatorLogListResponseBodyData setOpTime(Long opTime) {
-            this.opTime = opTime;
-            return this;
-        }
-        public Long getOpTime() {
-            return this.opTime;
         }
 
         public GetOaOperatorLogListResponseBodyData setCategory1Name(String category1Name) {
@@ -108,6 +84,30 @@ public class GetOaOperatorLogListResponseBody extends TeaModel {
         }
         public String getContent() {
             return this.content;
+        }
+
+        public GetOaOperatorLogListResponseBodyData setOpName(String opName) {
+            this.opName = opName;
+            return this;
+        }
+        public String getOpName() {
+            return this.opName;
+        }
+
+        public GetOaOperatorLogListResponseBodyData setOpTime(Long opTime) {
+            this.opTime = opTime;
+            return this;
+        }
+        public Long getOpTime() {
+            return this.opTime;
+        }
+
+        public GetOaOperatorLogListResponseBodyData setOpUserId(String opUserId) {
+            this.opUserId = opUserId;
+            return this;
+        }
+        public String getOpUserId() {
+            return this.opUserId;
         }
 
     }

@@ -4,10 +4,6 @@ package com.aliyun.dingtalkcustomer_service_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateTicketRequest extends TeaModel {
-    // 会员来源
-    @NameInMap("sourceId")
-    public String sourceId;
-
     // 第三方会员ID
     @NameInMap("foreignId")
     public String foreignId;
@@ -24,6 +20,14 @@ public class CreateTicketRequest extends TeaModel {
     @NameInMap("productionType")
     public Integer productionType;
 
+    // 工单表单
+    @NameInMap("properties")
+    public java.util.List<CreateTicketRequestProperties> properties;
+
+    // 会员来源
+    @NameInMap("sourceId")
+    public String sourceId;
+
     // 工单模板ID
     @NameInMap("templateId")
     public String templateId;
@@ -32,21 +36,9 @@ public class CreateTicketRequest extends TeaModel {
     @NameInMap("title")
     public String title;
 
-    // 工单表单
-    @NameInMap("properties")
-    public java.util.List<CreateTicketRequestProperties> properties;
-
     public static CreateTicketRequest build(java.util.Map<String, ?> map) throws Exception {
         CreateTicketRequest self = new CreateTicketRequest();
         return TeaModel.build(map, self);
-    }
-
-    public CreateTicketRequest setSourceId(String sourceId) {
-        this.sourceId = sourceId;
-        return this;
-    }
-    public String getSourceId() {
-        return this.sourceId;
     }
 
     public CreateTicketRequest setForeignId(String foreignId) {
@@ -81,6 +73,22 @@ public class CreateTicketRequest extends TeaModel {
         return this.productionType;
     }
 
+    public CreateTicketRequest setProperties(java.util.List<CreateTicketRequestProperties> properties) {
+        this.properties = properties;
+        return this;
+    }
+    public java.util.List<CreateTicketRequestProperties> getProperties() {
+        return this.properties;
+    }
+
+    public CreateTicketRequest setSourceId(String sourceId) {
+        this.sourceId = sourceId;
+        return this;
+    }
+    public String getSourceId() {
+        return this.sourceId;
+    }
+
     public CreateTicketRequest setTemplateId(String templateId) {
         this.templateId = templateId;
         return this;
@@ -95,14 +103,6 @@ public class CreateTicketRequest extends TeaModel {
     }
     public String getTitle() {
         return this.title;
-    }
-
-    public CreateTicketRequest setProperties(java.util.List<CreateTicketRequestProperties> properties) {
-        this.properties = properties;
-        return this;
-    }
-    public java.util.List<CreateTicketRequestProperties> getProperties() {
-        return this.properties;
     }
 
     public static class CreateTicketRequestProperties extends TeaModel {

@@ -4,26 +4,26 @@ package com.aliyun.dingtalkesign_2_0.models;
 import com.aliyun.tea.*;
 
 public class GetAuthUrlResponseBody extends TeaModel {
-    @NameInMap("taskId")
-    public String taskId;
+    @NameInMap("mobileUrl")
+    public String mobileUrl;
 
     @NameInMap("pcUrl")
     public String pcUrl;
 
-    @NameInMap("mobileUrl")
-    public String mobileUrl;
+    @NameInMap("taskId")
+    public String taskId;
 
     public static GetAuthUrlResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetAuthUrlResponseBody self = new GetAuthUrlResponseBody();
         return TeaModel.build(map, self);
     }
 
-    public GetAuthUrlResponseBody setTaskId(String taskId) {
-        this.taskId = taskId;
+    public GetAuthUrlResponseBody setMobileUrl(String mobileUrl) {
+        this.mobileUrl = mobileUrl;
         return this;
     }
-    public String getTaskId() {
-        return this.taskId;
+    public String getMobileUrl() {
+        return this.mobileUrl;
     }
 
     public GetAuthUrlResponseBody setPcUrl(String pcUrl) {
@@ -34,12 +34,12 @@ public class GetAuthUrlResponseBody extends TeaModel {
         return this.pcUrl;
     }
 
-    public GetAuthUrlResponseBody setMobileUrl(String mobileUrl) {
-        this.mobileUrl = mobileUrl;
+    public GetAuthUrlResponseBody setTaskId(String taskId) {
+        this.taskId = taskId;
         return this;
     }
-    public String getMobileUrl() {
-        return this.mobileUrl;
+    public String getTaskId() {
+        return this.taskId;
     }
 
 }

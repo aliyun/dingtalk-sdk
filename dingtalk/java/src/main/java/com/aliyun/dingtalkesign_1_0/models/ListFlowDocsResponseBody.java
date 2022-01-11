@@ -4,11 +4,11 @@ package com.aliyun.dingtalkesign_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListFlowDocsResponseBody extends TeaModel {
-    @NameInMap("data")
-    public java.util.List<ListFlowDocsResponseBodyData> data;
-
     @NameInMap("code")
     public Integer code;
+
+    @NameInMap("data")
+    public java.util.List<ListFlowDocsResponseBodyData> data;
 
     @NameInMap("message")
     public String message;
@@ -18,20 +18,20 @@ public class ListFlowDocsResponseBody extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public ListFlowDocsResponseBody setData(java.util.List<ListFlowDocsResponseBodyData> data) {
-        this.data = data;
-        return this;
-    }
-    public java.util.List<ListFlowDocsResponseBodyData> getData() {
-        return this.data;
-    }
-
     public ListFlowDocsResponseBody setCode(Integer code) {
         this.code = code;
         return this;
     }
     public Integer getCode() {
         return this.code;
+    }
+
+    public ListFlowDocsResponseBody setData(java.util.List<ListFlowDocsResponseBodyData> data) {
+        this.data = data;
+        return this;
+    }
+    public java.util.List<ListFlowDocsResponseBodyData> getData() {
+        return this.data;
     }
 
     public ListFlowDocsResponseBody setMessage(String message) {

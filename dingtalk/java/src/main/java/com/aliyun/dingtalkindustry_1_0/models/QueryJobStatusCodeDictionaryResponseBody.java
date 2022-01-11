@@ -22,13 +22,13 @@ public class QueryJobStatusCodeDictionaryResponseBody extends TeaModel {
     }
 
     public static class QueryJobStatusCodeDictionaryResponseBodyContent extends TeaModel {
-        // 固定字段标识
-        @NameInMap("code")
-        public String code;
-
         // 分类
         @NameInMap("category")
         public String category;
+
+        // 固定字段标识
+        @NameInMap("code")
+        public String code;
 
         // 展示名字
         @NameInMap("displayName")
@@ -39,20 +39,20 @@ public class QueryJobStatusCodeDictionaryResponseBody extends TeaModel {
             return TeaModel.build(map, self);
         }
 
-        public QueryJobStatusCodeDictionaryResponseBodyContent setCode(String code) {
-            this.code = code;
-            return this;
-        }
-        public String getCode() {
-            return this.code;
-        }
-
         public QueryJobStatusCodeDictionaryResponseBodyContent setCategory(String category) {
             this.category = category;
             return this;
         }
         public String getCategory() {
             return this.category;
+        }
+
+        public QueryJobStatusCodeDictionaryResponseBodyContent setCode(String code) {
+            this.code = code;
+            return this;
+        }
+        public String getCode() {
+            return this.code;
         }
 
         public QueryJobStatusCodeDictionaryResponseBodyContent setDisplayName(String displayName) {

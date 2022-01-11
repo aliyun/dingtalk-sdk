@@ -22,10 +22,6 @@ public class GetQuotaInfosResponseBody extends TeaModel {
     }
 
     public static class GetQuotaInfosResponseBodyQuotas extends TeaModel {
-        // 容量类型
-        @NameInMap("type")
-        public String type;
-
         // 容量标识符
         @NameInMap("identifier")
         public String identifier;
@@ -34,6 +30,10 @@ public class GetQuotaInfosResponseBody extends TeaModel {
         @NameInMap("quota")
         public Long quota;
 
+        // 容量类型
+        @NameInMap("type")
+        public String type;
+
         // 已使用容量
         @NameInMap("usedQuota")
         public Long usedQuota;
@@ -41,14 +41,6 @@ public class GetQuotaInfosResponseBody extends TeaModel {
         public static GetQuotaInfosResponseBodyQuotas build(java.util.Map<String, ?> map) throws Exception {
             GetQuotaInfosResponseBodyQuotas self = new GetQuotaInfosResponseBodyQuotas();
             return TeaModel.build(map, self);
-        }
-
-        public GetQuotaInfosResponseBodyQuotas setType(String type) {
-            this.type = type;
-            return this;
-        }
-        public String getType() {
-            return this.type;
         }
 
         public GetQuotaInfosResponseBodyQuotas setIdentifier(String identifier) {
@@ -65,6 +57,14 @@ public class GetQuotaInfosResponseBody extends TeaModel {
         }
         public Long getQuota() {
             return this.quota;
+        }
+
+        public GetQuotaInfosResponseBodyQuotas setType(String type) {
+            this.type = type;
+            return this;
+        }
+        public String getType() {
+            return this.type;
         }
 
         public GetQuotaInfosResponseBodyQuotas setUsedQuota(Long usedQuota) {

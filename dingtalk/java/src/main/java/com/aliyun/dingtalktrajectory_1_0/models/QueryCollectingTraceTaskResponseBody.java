@@ -26,24 +26,24 @@ public class QueryCollectingTraceTaskResponseBody extends TeaModel {
         @NameInMap("appTraceId")
         public String appTraceId;
 
-        // 组织下员工Id
-        @NameInMap("userId")
-        public String userId;
-
-        @NameInMap("geoReportStatus")
-        public Long geoReportStatus;
+        @NameInMap("geoCollectPeriod")
+        public Long geoCollectPeriod;
 
         @NameInMap("geoReportPeriod")
         public Long geoReportPeriod;
 
-        @NameInMap("geoCollectPeriod")
-        public Long geoCollectPeriod;
+        @NameInMap("geoReportStatus")
+        public Long geoReportStatus;
+
+        @NameInMap("reportEndTime")
+        public Long reportEndTime;
 
         @NameInMap("reportStartTime")
         public Long reportStartTime;
 
-        @NameInMap("reportEndTime")
-        public Long reportEndTime;
+        // 组织下员工Id
+        @NameInMap("userId")
+        public String userId;
 
         public static QueryCollectingTraceTaskResponseBodyList build(java.util.Map<String, ?> map) throws Exception {
             QueryCollectingTraceTaskResponseBodyList self = new QueryCollectingTraceTaskResponseBodyList();
@@ -58,20 +58,12 @@ public class QueryCollectingTraceTaskResponseBody extends TeaModel {
             return this.appTraceId;
         }
 
-        public QueryCollectingTraceTaskResponseBodyList setUserId(String userId) {
-            this.userId = userId;
+        public QueryCollectingTraceTaskResponseBodyList setGeoCollectPeriod(Long geoCollectPeriod) {
+            this.geoCollectPeriod = geoCollectPeriod;
             return this;
         }
-        public String getUserId() {
-            return this.userId;
-        }
-
-        public QueryCollectingTraceTaskResponseBodyList setGeoReportStatus(Long geoReportStatus) {
-            this.geoReportStatus = geoReportStatus;
-            return this;
-        }
-        public Long getGeoReportStatus() {
-            return this.geoReportStatus;
+        public Long getGeoCollectPeriod() {
+            return this.geoCollectPeriod;
         }
 
         public QueryCollectingTraceTaskResponseBodyList setGeoReportPeriod(Long geoReportPeriod) {
@@ -82,12 +74,20 @@ public class QueryCollectingTraceTaskResponseBody extends TeaModel {
             return this.geoReportPeriod;
         }
 
-        public QueryCollectingTraceTaskResponseBodyList setGeoCollectPeriod(Long geoCollectPeriod) {
-            this.geoCollectPeriod = geoCollectPeriod;
+        public QueryCollectingTraceTaskResponseBodyList setGeoReportStatus(Long geoReportStatus) {
+            this.geoReportStatus = geoReportStatus;
             return this;
         }
-        public Long getGeoCollectPeriod() {
-            return this.geoCollectPeriod;
+        public Long getGeoReportStatus() {
+            return this.geoReportStatus;
+        }
+
+        public QueryCollectingTraceTaskResponseBodyList setReportEndTime(Long reportEndTime) {
+            this.reportEndTime = reportEndTime;
+            return this;
+        }
+        public Long getReportEndTime() {
+            return this.reportEndTime;
         }
 
         public QueryCollectingTraceTaskResponseBodyList setReportStartTime(Long reportStartTime) {
@@ -98,12 +98,12 @@ public class QueryCollectingTraceTaskResponseBody extends TeaModel {
             return this.reportStartTime;
         }
 
-        public QueryCollectingTraceTaskResponseBodyList setReportEndTime(Long reportEndTime) {
-            this.reportEndTime = reportEndTime;
+        public QueryCollectingTraceTaskResponseBodyList setUserId(String userId) {
+            this.userId = userId;
             return this;
         }
-        public Long getReportEndTime() {
-            return this.reportEndTime;
+        public String getUserId() {
+            return this.userId;
         }
 
     }

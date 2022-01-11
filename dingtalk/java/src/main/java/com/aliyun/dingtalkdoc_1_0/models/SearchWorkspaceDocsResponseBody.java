@@ -4,6 +4,9 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchWorkspaceDocsResponseBody extends TeaModel {
+    @NameInMap("docs")
+    public java.util.List<SearchWorkspaceDocsResponseBodyDocs> docs;
+
     // 是否还有可搜索内容
     @NameInMap("hasMore")
     public Boolean hasMore;
@@ -11,12 +14,17 @@ public class SearchWorkspaceDocsResponseBody extends TeaModel {
     @NameInMap("nextToken")
     public String nextToken;
 
-    @NameInMap("docs")
-    public java.util.List<SearchWorkspaceDocsResponseBodyDocs> docs;
-
     public static SearchWorkspaceDocsResponseBody build(java.util.Map<String, ?> map) throws Exception {
         SearchWorkspaceDocsResponseBody self = new SearchWorkspaceDocsResponseBody();
         return TeaModel.build(map, self);
+    }
+
+    public SearchWorkspaceDocsResponseBody setDocs(java.util.List<SearchWorkspaceDocsResponseBodyDocs> docs) {
+        this.docs = docs;
+        return this;
+    }
+    public java.util.List<SearchWorkspaceDocsResponseBodyDocs> getDocs() {
+        return this.docs;
     }
 
     public SearchWorkspaceDocsResponseBody setHasMore(Boolean hasMore) {
@@ -35,15 +43,11 @@ public class SearchWorkspaceDocsResponseBody extends TeaModel {
         return this.nextToken;
     }
 
-    public SearchWorkspaceDocsResponseBody setDocs(java.util.List<SearchWorkspaceDocsResponseBodyDocs> docs) {
-        this.docs = docs;
-        return this;
-    }
-    public java.util.List<SearchWorkspaceDocsResponseBodyDocs> getDocs() {
-        return this.docs;
-    }
-
     public static class SearchWorkspaceDocsResponseBodyDocsNodeBO extends TeaModel {
+        // 最近编辑时间
+        @NameInMap("lastEditTime")
+        public Long lastEditTime;
+
         // 节点名称
         @NameInMap("name")
         public String name;
@@ -56,13 +60,17 @@ public class SearchWorkspaceDocsResponseBody extends TeaModel {
         @NameInMap("url")
         public String url;
 
-        // 最近编辑时间
-        @NameInMap("lastEditTime")
-        public Long lastEditTime;
-
         public static SearchWorkspaceDocsResponseBodyDocsNodeBO build(java.util.Map<String, ?> map) throws Exception {
             SearchWorkspaceDocsResponseBodyDocsNodeBO self = new SearchWorkspaceDocsResponseBodyDocsNodeBO();
             return TeaModel.build(map, self);
+        }
+
+        public SearchWorkspaceDocsResponseBodyDocsNodeBO setLastEditTime(Long lastEditTime) {
+            this.lastEditTime = lastEditTime;
+            return this;
+        }
+        public Long getLastEditTime() {
+            return this.lastEditTime;
         }
 
         public SearchWorkspaceDocsResponseBodyDocsNodeBO setName(String name) {
@@ -89,36 +97,20 @@ public class SearchWorkspaceDocsResponseBody extends TeaModel {
             return this.url;
         }
 
-        public SearchWorkspaceDocsResponseBodyDocsNodeBO setLastEditTime(Long lastEditTime) {
-            this.lastEditTime = lastEditTime;
-            return this;
-        }
-        public Long getLastEditTime() {
-            return this.lastEditTime;
-        }
-
     }
 
     public static class SearchWorkspaceDocsResponseBodyDocsWorkspaceBO extends TeaModel {
-        // 团队空间Id
-        @NameInMap("workspaceId")
-        public String workspaceId;
-
         // 团队空间名称
         @NameInMap("name")
         public String name;
 
+        // 团队空间Id
+        @NameInMap("workspaceId")
+        public String workspaceId;
+
         public static SearchWorkspaceDocsResponseBodyDocsWorkspaceBO build(java.util.Map<String, ?> map) throws Exception {
             SearchWorkspaceDocsResponseBodyDocsWorkspaceBO self = new SearchWorkspaceDocsResponseBodyDocsWorkspaceBO();
             return TeaModel.build(map, self);
-        }
-
-        public SearchWorkspaceDocsResponseBodyDocsWorkspaceBO setWorkspaceId(String workspaceId) {
-            this.workspaceId = workspaceId;
-            return this;
-        }
-        public String getWorkspaceId() {
-            return this.workspaceId;
         }
 
         public SearchWorkspaceDocsResponseBodyDocsWorkspaceBO setName(String name) {
@@ -127,6 +119,14 @@ public class SearchWorkspaceDocsResponseBody extends TeaModel {
         }
         public String getName() {
             return this.name;
+        }
+
+        public SearchWorkspaceDocsResponseBodyDocsWorkspaceBO setWorkspaceId(String workspaceId) {
+            this.workspaceId = workspaceId;
+            return this;
+        }
+        public String getWorkspaceId() {
+            return this.workspaceId;
         }
 
     }

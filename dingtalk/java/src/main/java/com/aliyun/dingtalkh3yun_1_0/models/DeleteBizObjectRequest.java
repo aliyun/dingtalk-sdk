@@ -4,25 +4,17 @@ package com.aliyun.dingtalkh3yun_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteBizObjectRequest extends TeaModel {
-    // 表单编码
-    @NameInMap("schemaCode")
-    public String schemaCode;
-
     // 业务数据id
     @NameInMap("bizObjectId")
     public String bizObjectId;
 
+    // 表单编码
+    @NameInMap("schemaCode")
+    public String schemaCode;
+
     public static DeleteBizObjectRequest build(java.util.Map<String, ?> map) throws Exception {
         DeleteBizObjectRequest self = new DeleteBizObjectRequest();
         return TeaModel.build(map, self);
-    }
-
-    public DeleteBizObjectRequest setSchemaCode(String schemaCode) {
-        this.schemaCode = schemaCode;
-        return this;
-    }
-    public String getSchemaCode() {
-        return this.schemaCode;
     }
 
     public DeleteBizObjectRequest setBizObjectId(String bizObjectId) {
@@ -31,6 +23,14 @@ public class DeleteBizObjectRequest extends TeaModel {
     }
     public String getBizObjectId() {
         return this.bizObjectId;
+    }
+
+    public DeleteBizObjectRequest setSchemaCode(String schemaCode) {
+        this.schemaCode = schemaCode;
+        return this;
+    }
+    public String getSchemaCode() {
+        return this.schemaCode;
     }
 
 }

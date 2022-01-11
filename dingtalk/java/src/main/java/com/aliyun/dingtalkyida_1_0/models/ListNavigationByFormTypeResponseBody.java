@@ -21,6 +21,10 @@ public class ListNavigationByFormTypeResponseBody extends TeaModel {
     }
 
     public static class ListNavigationByFormTypeResponseBodyResultTitle extends TeaModel {
+        // 中文名称
+        @NameInMap("nameInChinese")
+        public String nameInChinese;
+
         // 英文名称
         @NameInMap("nameInEnglish")
         public String nameInEnglish;
@@ -29,13 +33,17 @@ public class ListNavigationByFormTypeResponseBody extends TeaModel {
         @NameInMap("type")
         public String type;
 
-        // 中文名称
-        @NameInMap("nameInChinese")
-        public String nameInChinese;
-
         public static ListNavigationByFormTypeResponseBodyResultTitle build(java.util.Map<String, ?> map) throws Exception {
             ListNavigationByFormTypeResponseBodyResultTitle self = new ListNavigationByFormTypeResponseBodyResultTitle();
             return TeaModel.build(map, self);
+        }
+
+        public ListNavigationByFormTypeResponseBodyResultTitle setNameInChinese(String nameInChinese) {
+            this.nameInChinese = nameInChinese;
+            return this;
+        }
+        public String getNameInChinese() {
+            return this.nameInChinese;
         }
 
         public ListNavigationByFormTypeResponseBodyResultTitle setNameInEnglish(String nameInEnglish) {
@@ -54,40 +62,32 @@ public class ListNavigationByFormTypeResponseBody extends TeaModel {
             return this.type;
         }
 
-        public ListNavigationByFormTypeResponseBodyResultTitle setNameInChinese(String nameInChinese) {
-            this.nameInChinese = nameInChinese;
-            return this;
-        }
-        public String getNameInChinese() {
-            return this.nameInChinese;
-        }
-
     }
 
     public static class ListNavigationByFormTypeResponseBodyResult extends TeaModel {
-        // title
-        @NameInMap("title")
-        public ListNavigationByFormTypeResponseBodyResultTitle title;
+        // formUuid
+        @NameInMap("formUuid")
+        public String formUuid;
 
         // processCode
         @NameInMap("processCode")
         public String processCode;
 
-        // formUuid
-        @NameInMap("formUuid")
-        public String formUuid;
+        // title
+        @NameInMap("title")
+        public ListNavigationByFormTypeResponseBodyResultTitle title;
 
         public static ListNavigationByFormTypeResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             ListNavigationByFormTypeResponseBodyResult self = new ListNavigationByFormTypeResponseBodyResult();
             return TeaModel.build(map, self);
         }
 
-        public ListNavigationByFormTypeResponseBodyResult setTitle(ListNavigationByFormTypeResponseBodyResultTitle title) {
-            this.title = title;
+        public ListNavigationByFormTypeResponseBodyResult setFormUuid(String formUuid) {
+            this.formUuid = formUuid;
             return this;
         }
-        public ListNavigationByFormTypeResponseBodyResultTitle getTitle() {
-            return this.title;
+        public String getFormUuid() {
+            return this.formUuid;
         }
 
         public ListNavigationByFormTypeResponseBodyResult setProcessCode(String processCode) {
@@ -98,12 +98,12 @@ public class ListNavigationByFormTypeResponseBody extends TeaModel {
             return this.processCode;
         }
 
-        public ListNavigationByFormTypeResponseBodyResult setFormUuid(String formUuid) {
-            this.formUuid = formUuid;
+        public ListNavigationByFormTypeResponseBodyResult setTitle(ListNavigationByFormTypeResponseBodyResultTitle title) {
+            this.title = title;
             return this;
         }
-        public String getFormUuid() {
-            return this.formUuid;
+        public ListNavigationByFormTypeResponseBodyResultTitle getTitle() {
+            return this.title;
         }
 
     }

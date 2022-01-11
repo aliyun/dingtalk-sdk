@@ -4,9 +4,6 @@ package com.aliyun.dingtalkesign_1_0.models;
 import com.aliyun.tea.*;
 
 public class ChannelOrderRequest extends TeaModel {
-    @NameInMap("dingCorpId")
-    public String dingCorpId;
-
     @NameInMap("itemCode")
     public String itemCode;
 
@@ -25,23 +22,9 @@ public class ChannelOrderRequest extends TeaModel {
     @NameInMap("quantity")
     public Long quantity;
 
-    @NameInMap("dingIsvAccessToken")
-    public String dingIsvAccessToken;
-
-    @NameInMap("dingSuiteKey")
-    public String dingSuiteKey;
-
     public static ChannelOrderRequest build(java.util.Map<String, ?> map) throws Exception {
         ChannelOrderRequest self = new ChannelOrderRequest();
         return TeaModel.build(map, self);
-    }
-
-    public ChannelOrderRequest setDingCorpId(String dingCorpId) {
-        this.dingCorpId = dingCorpId;
-        return this;
-    }
-    public String getDingCorpId() {
-        return this.dingCorpId;
     }
 
     public ChannelOrderRequest setItemCode(String itemCode) {
@@ -90,22 +73,6 @@ public class ChannelOrderRequest extends TeaModel {
     }
     public Long getQuantity() {
         return this.quantity;
-    }
-
-    public ChannelOrderRequest setDingIsvAccessToken(String dingIsvAccessToken) {
-        this.dingIsvAccessToken = dingIsvAccessToken;
-        return this;
-    }
-    public String getDingIsvAccessToken() {
-        return this.dingIsvAccessToken;
-    }
-
-    public ChannelOrderRequest setDingSuiteKey(String dingSuiteKey) {
-        this.dingSuiteKey = dingSuiteKey;
-        return this;
-    }
-    public String getDingSuiteKey() {
-        return this.dingSuiteKey;
     }
 
 }

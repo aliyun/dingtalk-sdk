@@ -4,21 +4,21 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class TransformToExclusiveAccountRequest extends TeaModel {
-    // transformType
-    @NameInMap("transformType")
-    public String transformType;
-
     // idpDingTalk
     @NameInMap("idpDingTalk")
     public Boolean idpDingTalk;
+
+    // initPassword
+    @NameInMap("initPassword")
+    public String initPassword;
 
     // loginId
     @NameInMap("loginId")
     public String loginId;
 
-    // initPassword
-    @NameInMap("initPassword")
-    public String initPassword;
+    // transformType
+    @NameInMap("transformType")
+    public String transformType;
 
     // userId
     @NameInMap("userId")
@@ -29,20 +29,20 @@ public class TransformToExclusiveAccountRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public TransformToExclusiveAccountRequest setTransformType(String transformType) {
-        this.transformType = transformType;
-        return this;
-    }
-    public String getTransformType() {
-        return this.transformType;
-    }
-
     public TransformToExclusiveAccountRequest setIdpDingTalk(Boolean idpDingTalk) {
         this.idpDingTalk = idpDingTalk;
         return this;
     }
     public Boolean getIdpDingTalk() {
         return this.idpDingTalk;
+    }
+
+    public TransformToExclusiveAccountRequest setInitPassword(String initPassword) {
+        this.initPassword = initPassword;
+        return this;
+    }
+    public String getInitPassword() {
+        return this.initPassword;
     }
 
     public TransformToExclusiveAccountRequest setLoginId(String loginId) {
@@ -53,12 +53,12 @@ public class TransformToExclusiveAccountRequest extends TeaModel {
         return this.loginId;
     }
 
-    public TransformToExclusiveAccountRequest setInitPassword(String initPassword) {
-        this.initPassword = initPassword;
+    public TransformToExclusiveAccountRequest setTransformType(String transformType) {
+        this.transformType = transformType;
         return this;
     }
-    public String getInitPassword() {
-        return this.initPassword;
+    public String getTransformType() {
+        return this.transformType;
     }
 
     public TransformToExclusiveAccountRequest setUserId(String userId) {

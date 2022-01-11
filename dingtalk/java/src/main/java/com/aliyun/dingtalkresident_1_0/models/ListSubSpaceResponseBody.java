@@ -22,6 +22,25 @@ public class ListSubSpaceResponseBody extends TeaModel {
     }
 
     public static class ListSubSpaceResponseBodySpaceList extends TeaModel {
+        @NameInMap("billingArea")
+        public Float billingArea;
+
+        @NameInMap("buildingArea")
+        public Float buildingArea;
+
+        @NameInMap("floor")
+        public String floor;
+
+        // 房屋状态：0空置/1未领/2入住/3空关/4装修
+        @NameInMap("houseState")
+        public Integer houseState;
+
+        @NameInMap("isVirtual")
+        public Integer isVirtual;
+
+        @NameInMap("parentReferId")
+        public Long parentReferId;
+
         @NameInMap("referId")
         public Long referId;
 
@@ -35,28 +54,57 @@ public class ListSubSpaceResponseBody extends TeaModel {
         @NameInMap("type")
         public String type;
 
-        @NameInMap("floor")
-        public String floor;
-
-        @NameInMap("isVirtual")
-        public Integer isVirtual;
-
-        @NameInMap("billingArea")
-        public Float billingArea;
-
-        @NameInMap("buildingArea")
-        public Float buildingArea;
-
-        // 房屋状态：0空置/1未领/2入住/3空关/4装修
-        @NameInMap("houseState")
-        public Integer houseState;
-
-        @NameInMap("parentReferId")
-        public Long parentReferId;
-
         public static ListSubSpaceResponseBodySpaceList build(java.util.Map<String, ?> map) throws Exception {
             ListSubSpaceResponseBodySpaceList self = new ListSubSpaceResponseBodySpaceList();
             return TeaModel.build(map, self);
+        }
+
+        public ListSubSpaceResponseBodySpaceList setBillingArea(Float billingArea) {
+            this.billingArea = billingArea;
+            return this;
+        }
+        public Float getBillingArea() {
+            return this.billingArea;
+        }
+
+        public ListSubSpaceResponseBodySpaceList setBuildingArea(Float buildingArea) {
+            this.buildingArea = buildingArea;
+            return this;
+        }
+        public Float getBuildingArea() {
+            return this.buildingArea;
+        }
+
+        public ListSubSpaceResponseBodySpaceList setFloor(String floor) {
+            this.floor = floor;
+            return this;
+        }
+        public String getFloor() {
+            return this.floor;
+        }
+
+        public ListSubSpaceResponseBodySpaceList setHouseState(Integer houseState) {
+            this.houseState = houseState;
+            return this;
+        }
+        public Integer getHouseState() {
+            return this.houseState;
+        }
+
+        public ListSubSpaceResponseBodySpaceList setIsVirtual(Integer isVirtual) {
+            this.isVirtual = isVirtual;
+            return this;
+        }
+        public Integer getIsVirtual() {
+            return this.isVirtual;
+        }
+
+        public ListSubSpaceResponseBodySpaceList setParentReferId(Long parentReferId) {
+            this.parentReferId = parentReferId;
+            return this;
+        }
+        public Long getParentReferId() {
+            return this.parentReferId;
         }
 
         public ListSubSpaceResponseBodySpaceList setReferId(Long referId) {
@@ -89,54 +137,6 @@ public class ListSubSpaceResponseBody extends TeaModel {
         }
         public String getType() {
             return this.type;
-        }
-
-        public ListSubSpaceResponseBodySpaceList setFloor(String floor) {
-            this.floor = floor;
-            return this;
-        }
-        public String getFloor() {
-            return this.floor;
-        }
-
-        public ListSubSpaceResponseBodySpaceList setIsVirtual(Integer isVirtual) {
-            this.isVirtual = isVirtual;
-            return this;
-        }
-        public Integer getIsVirtual() {
-            return this.isVirtual;
-        }
-
-        public ListSubSpaceResponseBodySpaceList setBillingArea(Float billingArea) {
-            this.billingArea = billingArea;
-            return this;
-        }
-        public Float getBillingArea() {
-            return this.billingArea;
-        }
-
-        public ListSubSpaceResponseBodySpaceList setBuildingArea(Float buildingArea) {
-            this.buildingArea = buildingArea;
-            return this;
-        }
-        public Float getBuildingArea() {
-            return this.buildingArea;
-        }
-
-        public ListSubSpaceResponseBodySpaceList setHouseState(Integer houseState) {
-            this.houseState = houseState;
-            return this;
-        }
-        public Integer getHouseState() {
-            return this.houseState;
-        }
-
-        public ListSubSpaceResponseBodySpaceList setParentReferId(Long parentReferId) {
-            this.parentReferId = parentReferId;
-            return this;
-        }
-        public Long getParentReferId() {
-            return this.parentReferId;
         }
 
     }

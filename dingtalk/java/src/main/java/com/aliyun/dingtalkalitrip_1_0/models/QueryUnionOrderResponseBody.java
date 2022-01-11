@@ -4,21 +4,21 @@ package com.aliyun.dingtalkalitrip_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryUnionOrderResponseBody extends TeaModel {
-    // 飞机订单信息
-    @NameInMap("flightList")
-    public java.util.List<QueryUnionOrderResponseBodyFlightList> flightList;
-
     // 企业id
     @NameInMap("corpId")
     public String corpId;
 
-    // 火车订单信息
-    @NameInMap("trainList")
-    public java.util.List<QueryUnionOrderResponseBodyTrainList> trainList;
+    // 飞机订单信息
+    @NameInMap("flightList")
+    public java.util.List<QueryUnionOrderResponseBodyFlightList> flightList;
 
     // 酒店订单信息
     @NameInMap("hotelList")
     public java.util.List<QueryUnionOrderResponseBodyHotelList> hotelList;
+
+    // 火车订单信息
+    @NameInMap("trainList")
+    public java.util.List<QueryUnionOrderResponseBodyTrainList> trainList;
 
     // 用车订单信息
     @NameInMap("vehicleList")
@@ -29,14 +29,6 @@ public class QueryUnionOrderResponseBody extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public QueryUnionOrderResponseBody setFlightList(java.util.List<QueryUnionOrderResponseBodyFlightList> flightList) {
-        this.flightList = flightList;
-        return this;
-    }
-    public java.util.List<QueryUnionOrderResponseBodyFlightList> getFlightList() {
-        return this.flightList;
-    }
-
     public QueryUnionOrderResponseBody setCorpId(String corpId) {
         this.corpId = corpId;
         return this;
@@ -45,12 +37,12 @@ public class QueryUnionOrderResponseBody extends TeaModel {
         return this.corpId;
     }
 
-    public QueryUnionOrderResponseBody setTrainList(java.util.List<QueryUnionOrderResponseBodyTrainList> trainList) {
-        this.trainList = trainList;
+    public QueryUnionOrderResponseBody setFlightList(java.util.List<QueryUnionOrderResponseBodyFlightList> flightList) {
+        this.flightList = flightList;
         return this;
     }
-    public java.util.List<QueryUnionOrderResponseBodyTrainList> getTrainList() {
-        return this.trainList;
+    public java.util.List<QueryUnionOrderResponseBodyFlightList> getFlightList() {
+        return this.flightList;
     }
 
     public QueryUnionOrderResponseBody setHotelList(java.util.List<QueryUnionOrderResponseBodyHotelList> hotelList) {
@@ -59,6 +51,14 @@ public class QueryUnionOrderResponseBody extends TeaModel {
     }
     public java.util.List<QueryUnionOrderResponseBodyHotelList> getHotelList() {
         return this.hotelList;
+    }
+
+    public QueryUnionOrderResponseBody setTrainList(java.util.List<QueryUnionOrderResponseBodyTrainList> trainList) {
+        this.trainList = trainList;
+        return this;
+    }
+    public java.util.List<QueryUnionOrderResponseBodyTrainList> getTrainList() {
+        return this.trainList;
     }
 
     public QueryUnionOrderResponseBody setVehicleList(java.util.List<QueryUnionOrderResponseBodyVehicleList> vehicleList) {
@@ -101,38 +101,6 @@ public class QueryUnionOrderResponseBody extends TeaModel {
 
     }
 
-    public static class QueryUnionOrderResponseBodyTrainList extends TeaModel {
-        // 火车订单号
-        @NameInMap("trainOrderId")
-        public Long trainOrderId;
-
-        // 订单状态：0待支付,1出票中,2已关闭,3,改签成功,4退票成功,5出票完成,6退票申请中,7改签申请中,8已出票,已发货,9出票失败,10改签失败,11退票失败
-        @NameInMap("trainOrderstatus")
-        public Long trainOrderstatus;
-
-        public static QueryUnionOrderResponseBodyTrainList build(java.util.Map<String, ?> map) throws Exception {
-            QueryUnionOrderResponseBodyTrainList self = new QueryUnionOrderResponseBodyTrainList();
-            return TeaModel.build(map, self);
-        }
-
-        public QueryUnionOrderResponseBodyTrainList setTrainOrderId(Long trainOrderId) {
-            this.trainOrderId = trainOrderId;
-            return this;
-        }
-        public Long getTrainOrderId() {
-            return this.trainOrderId;
-        }
-
-        public QueryUnionOrderResponseBodyTrainList setTrainOrderstatus(Long trainOrderstatus) {
-            this.trainOrderstatus = trainOrderstatus;
-            return this;
-        }
-        public Long getTrainOrderstatus() {
-            return this.trainOrderstatus;
-        }
-
-    }
-
     public static class QueryUnionOrderResponseBodyHotelList extends TeaModel {
         // 酒店订单号
         @NameInMap("hotelOrderId")
@@ -161,6 +129,38 @@ public class QueryUnionOrderResponseBody extends TeaModel {
         }
         public Long getHotelOrderStatus() {
             return this.hotelOrderStatus;
+        }
+
+    }
+
+    public static class QueryUnionOrderResponseBodyTrainList extends TeaModel {
+        // 火车订单号
+        @NameInMap("trainOrderId")
+        public Long trainOrderId;
+
+        // 订单状态：0待支付,1出票中,2已关闭,3,改签成功,4退票成功,5出票完成,6退票申请中,7改签申请中,8已出票,已发货,9出票失败,10改签失败,11退票失败
+        @NameInMap("trainOrderstatus")
+        public Long trainOrderstatus;
+
+        public static QueryUnionOrderResponseBodyTrainList build(java.util.Map<String, ?> map) throws Exception {
+            QueryUnionOrderResponseBodyTrainList self = new QueryUnionOrderResponseBodyTrainList();
+            return TeaModel.build(map, self);
+        }
+
+        public QueryUnionOrderResponseBodyTrainList setTrainOrderId(Long trainOrderId) {
+            this.trainOrderId = trainOrderId;
+            return this;
+        }
+        public Long getTrainOrderId() {
+            return this.trainOrderId;
+        }
+
+        public QueryUnionOrderResponseBodyTrainList setTrainOrderstatus(Long trainOrderstatus) {
+            this.trainOrderstatus = trainOrderstatus;
+            return this;
+        }
+        public Long getTrainOrderstatus() {
+            return this.trainOrderstatus;
         }
 
     }

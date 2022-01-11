@@ -34,17 +34,17 @@ public class QueryCloudRecordTextResponseBody extends TeaModel {
     }
 
     public static class QueryCloudRecordTextResponseBodyParagraphListSentenceListWordList extends TeaModel {
-        // 单词
-        @NameInMap("word")
-        public String word;
+        // 结束时间
+        @NameInMap("endTime")
+        public Long endTime;
 
         // 开始时间
         @NameInMap("startTime")
         public Long startTime;
 
-        // 结束时间
-        @NameInMap("endTime")
-        public Long endTime;
+        // 单词
+        @NameInMap("word")
+        public String word;
 
         // 单词id
         @NameInMap("wordId")
@@ -55,12 +55,12 @@ public class QueryCloudRecordTextResponseBody extends TeaModel {
             return TeaModel.build(map, self);
         }
 
-        public QueryCloudRecordTextResponseBodyParagraphListSentenceListWordList setWord(String word) {
-            this.word = word;
+        public QueryCloudRecordTextResponseBodyParagraphListSentenceListWordList setEndTime(Long endTime) {
+            this.endTime = endTime;
             return this;
         }
-        public String getWord() {
-            return this.word;
+        public Long getEndTime() {
+            return this.endTime;
         }
 
         public QueryCloudRecordTextResponseBodyParagraphListSentenceListWordList setStartTime(Long startTime) {
@@ -71,12 +71,12 @@ public class QueryCloudRecordTextResponseBody extends TeaModel {
             return this.startTime;
         }
 
-        public QueryCloudRecordTextResponseBodyParagraphListSentenceListWordList setEndTime(Long endTime) {
-            this.endTime = endTime;
+        public QueryCloudRecordTextResponseBodyParagraphListSentenceListWordList setWord(String word) {
+            this.word = word;
             return this;
         }
-        public Long getEndTime() {
-            return this.endTime;
+        public String getWord() {
+            return this.word;
         }
 
         public QueryCloudRecordTextResponseBodyParagraphListSentenceListWordList setWordId(String wordId) {
@@ -90,9 +90,9 @@ public class QueryCloudRecordTextResponseBody extends TeaModel {
     }
 
     public static class QueryCloudRecordTextResponseBodyParagraphListSentenceList extends TeaModel {
-        // 用户unionId
-        @NameInMap("unionId")
-        public String unionId;
+        // 结束时间
+        @NameInMap("endTime")
+        public Long endTime;
 
         // 句子
         @NameInMap("sentence")
@@ -102,9 +102,9 @@ public class QueryCloudRecordTextResponseBody extends TeaModel {
         @NameInMap("startTime")
         public Long startTime;
 
-        // 结束时间
-        @NameInMap("endTime")
-        public Long endTime;
+        // 用户unionId
+        @NameInMap("unionId")
+        public String unionId;
 
         // 单词列表
         @NameInMap("wordList")
@@ -115,12 +115,12 @@ public class QueryCloudRecordTextResponseBody extends TeaModel {
             return TeaModel.build(map, self);
         }
 
-        public QueryCloudRecordTextResponseBodyParagraphListSentenceList setUnionId(String unionId) {
-            this.unionId = unionId;
+        public QueryCloudRecordTextResponseBodyParagraphListSentenceList setEndTime(Long endTime) {
+            this.endTime = endTime;
             return this;
         }
-        public String getUnionId() {
-            return this.unionId;
+        public Long getEndTime() {
+            return this.endTime;
         }
 
         public QueryCloudRecordTextResponseBodyParagraphListSentenceList setSentence(String sentence) {
@@ -139,12 +139,12 @@ public class QueryCloudRecordTextResponseBody extends TeaModel {
             return this.startTime;
         }
 
-        public QueryCloudRecordTextResponseBodyParagraphListSentenceList setEndTime(Long endTime) {
-            this.endTime = endTime;
+        public QueryCloudRecordTextResponseBodyParagraphListSentenceList setUnionId(String unionId) {
+            this.unionId = unionId;
             return this;
         }
-        public Long getEndTime() {
-            return this.endTime;
+        public String getUnionId() {
+            return this.unionId;
         }
 
         public QueryCloudRecordTextResponseBodyParagraphListSentenceList setWordList(java.util.List<QueryCloudRecordTextResponseBodyParagraphListSentenceListWordList> wordList) {
@@ -158,9 +158,33 @@ public class QueryCloudRecordTextResponseBody extends TeaModel {
     }
 
     public static class QueryCloudRecordTextResponseBodyParagraphList extends TeaModel {
+        // 结束时间，毫秒
+        @NameInMap("endTime")
+        public Long endTime;
+
         // 游标，下次查询时使用
         @NameInMap("nextTtoken")
         public Long nextTtoken;
+
+        // 发言人昵称
+        @NameInMap("nickName")
+        public String nickName;
+
+        // 段落内容
+        @NameInMap("paragraph")
+        public String paragraph;
+
+        // 云录制id
+        @NameInMap("recordId")
+        public Long recordId;
+
+        // 句子列表
+        @NameInMap("sentenceList")
+        public java.util.List<QueryCloudRecordTextResponseBodyParagraphListSentenceList> sentenceList;
+
+        // 开始时间，毫秒
+        @NameInMap("startTime")
+        public Long startTime;
 
         // 状态，暂不解析
         @NameInMap("status")
@@ -170,33 +194,17 @@ public class QueryCloudRecordTextResponseBody extends TeaModel {
         @NameInMap("unionId")
         public String unionId;
 
-        // 发言人昵称
-        @NameInMap("nickName")
-        public String nickName;
-
-        // 云录制id
-        @NameInMap("recordId")
-        public Long recordId;
-
-        // 开始时间，毫秒
-        @NameInMap("startTime")
-        public Long startTime;
-
-        // 结束时间，毫秒
-        @NameInMap("endTime")
-        public Long endTime;
-
-        // 段落内容
-        @NameInMap("paragraph")
-        public String paragraph;
-
-        // 句子列表
-        @NameInMap("sentenceList")
-        public java.util.List<QueryCloudRecordTextResponseBodyParagraphListSentenceList> sentenceList;
-
         public static QueryCloudRecordTextResponseBodyParagraphList build(java.util.Map<String, ?> map) throws Exception {
             QueryCloudRecordTextResponseBodyParagraphList self = new QueryCloudRecordTextResponseBodyParagraphList();
             return TeaModel.build(map, self);
+        }
+
+        public QueryCloudRecordTextResponseBodyParagraphList setEndTime(Long endTime) {
+            this.endTime = endTime;
+            return this;
+        }
+        public Long getEndTime() {
+            return this.endTime;
         }
 
         public QueryCloudRecordTextResponseBodyParagraphList setNextTtoken(Long nextTtoken) {
@@ -205,6 +213,46 @@ public class QueryCloudRecordTextResponseBody extends TeaModel {
         }
         public Long getNextTtoken() {
             return this.nextTtoken;
+        }
+
+        public QueryCloudRecordTextResponseBodyParagraphList setNickName(String nickName) {
+            this.nickName = nickName;
+            return this;
+        }
+        public String getNickName() {
+            return this.nickName;
+        }
+
+        public QueryCloudRecordTextResponseBodyParagraphList setParagraph(String paragraph) {
+            this.paragraph = paragraph;
+            return this;
+        }
+        public String getParagraph() {
+            return this.paragraph;
+        }
+
+        public QueryCloudRecordTextResponseBodyParagraphList setRecordId(Long recordId) {
+            this.recordId = recordId;
+            return this;
+        }
+        public Long getRecordId() {
+            return this.recordId;
+        }
+
+        public QueryCloudRecordTextResponseBodyParagraphList setSentenceList(java.util.List<QueryCloudRecordTextResponseBodyParagraphListSentenceList> sentenceList) {
+            this.sentenceList = sentenceList;
+            return this;
+        }
+        public java.util.List<QueryCloudRecordTextResponseBodyParagraphListSentenceList> getSentenceList() {
+            return this.sentenceList;
+        }
+
+        public QueryCloudRecordTextResponseBodyParagraphList setStartTime(Long startTime) {
+            this.startTime = startTime;
+            return this;
+        }
+        public Long getStartTime() {
+            return this.startTime;
         }
 
         public QueryCloudRecordTextResponseBodyParagraphList setStatus(Long status) {
@@ -221,54 +269,6 @@ public class QueryCloudRecordTextResponseBody extends TeaModel {
         }
         public String getUnionId() {
             return this.unionId;
-        }
-
-        public QueryCloudRecordTextResponseBodyParagraphList setNickName(String nickName) {
-            this.nickName = nickName;
-            return this;
-        }
-        public String getNickName() {
-            return this.nickName;
-        }
-
-        public QueryCloudRecordTextResponseBodyParagraphList setRecordId(Long recordId) {
-            this.recordId = recordId;
-            return this;
-        }
-        public Long getRecordId() {
-            return this.recordId;
-        }
-
-        public QueryCloudRecordTextResponseBodyParagraphList setStartTime(Long startTime) {
-            this.startTime = startTime;
-            return this;
-        }
-        public Long getStartTime() {
-            return this.startTime;
-        }
-
-        public QueryCloudRecordTextResponseBodyParagraphList setEndTime(Long endTime) {
-            this.endTime = endTime;
-            return this;
-        }
-        public Long getEndTime() {
-            return this.endTime;
-        }
-
-        public QueryCloudRecordTextResponseBodyParagraphList setParagraph(String paragraph) {
-            this.paragraph = paragraph;
-            return this;
-        }
-        public String getParagraph() {
-            return this.paragraph;
-        }
-
-        public QueryCloudRecordTextResponseBodyParagraphList setSentenceList(java.util.List<QueryCloudRecordTextResponseBodyParagraphListSentenceList> sentenceList) {
-            this.sentenceList = sentenceList;
-            return this;
-        }
-        public java.util.List<QueryCloudRecordTextResponseBodyParagraphListSentenceList> getSentenceList() {
-            return this.sentenceList;
         }
 
     }

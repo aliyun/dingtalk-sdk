@@ -32,10 +32,6 @@ public class GetGroupActiveInfoResponseBody extends TeaModel {
     }
 
     public static class GetGroupActiveInfoResponseBodyData extends TeaModel {
-        // 统计时间
-        @NameInMap("statDate")
-        public String statDate;
-
         // 群组id
         @NameInMap("dingGroupId")
         public String dingGroupId;
@@ -64,29 +60,25 @@ public class GetGroupActiveInfoResponseBody extends TeaModel {
         @NameInMap("groupUserCnt1d")
         public Integer groupUserCnt1d;
 
-        // 最近1天发消息人数
-        @NameInMap("sendMessageUserCnt1d")
-        public Long sendMessageUserCnt1d;
+        // 最近1天打开群人数
+        @NameInMap("openConvUv1d")
+        public Integer openConvUv1d;
 
         // 最近1天发消息次数
         @NameInMap("sendMessageCnt1d")
         public Long sendMessageCnt1d;
 
-        // 最近1天打开群人数
-        @NameInMap("openConvUv1d")
-        public Integer openConvUv1d;
+        // 最近1天发消息人数
+        @NameInMap("sendMessageUserCnt1d")
+        public Long sendMessageUserCnt1d;
+
+        // 统计时间
+        @NameInMap("statDate")
+        public String statDate;
 
         public static GetGroupActiveInfoResponseBodyData build(java.util.Map<String, ?> map) throws Exception {
             GetGroupActiveInfoResponseBodyData self = new GetGroupActiveInfoResponseBodyData();
             return TeaModel.build(map, self);
-        }
-
-        public GetGroupActiveInfoResponseBodyData setStatDate(String statDate) {
-            this.statDate = statDate;
-            return this;
-        }
-        public String getStatDate() {
-            return this.statDate;
         }
 
         public GetGroupActiveInfoResponseBodyData setDingGroupId(String dingGroupId) {
@@ -145,12 +137,12 @@ public class GetGroupActiveInfoResponseBody extends TeaModel {
             return this.groupUserCnt1d;
         }
 
-        public GetGroupActiveInfoResponseBodyData setSendMessageUserCnt1d(Long sendMessageUserCnt1d) {
-            this.sendMessageUserCnt1d = sendMessageUserCnt1d;
+        public GetGroupActiveInfoResponseBodyData setOpenConvUv1d(Integer openConvUv1d) {
+            this.openConvUv1d = openConvUv1d;
             return this;
         }
-        public Long getSendMessageUserCnt1d() {
-            return this.sendMessageUserCnt1d;
+        public Integer getOpenConvUv1d() {
+            return this.openConvUv1d;
         }
 
         public GetGroupActiveInfoResponseBodyData setSendMessageCnt1d(Long sendMessageCnt1d) {
@@ -161,12 +153,20 @@ public class GetGroupActiveInfoResponseBody extends TeaModel {
             return this.sendMessageCnt1d;
         }
 
-        public GetGroupActiveInfoResponseBodyData setOpenConvUv1d(Integer openConvUv1d) {
-            this.openConvUv1d = openConvUv1d;
+        public GetGroupActiveInfoResponseBodyData setSendMessageUserCnt1d(Long sendMessageUserCnt1d) {
+            this.sendMessageUserCnt1d = sendMessageUserCnt1d;
             return this;
         }
-        public Integer getOpenConvUv1d() {
-            return this.openConvUv1d;
+        public Long getSendMessageUserCnt1d() {
+            return this.sendMessageUserCnt1d;
+        }
+
+        public GetGroupActiveInfoResponseBodyData setStatDate(String statDate) {
+            this.statDate = statDate;
+            return this;
+        }
+        public String getStatDate() {
+            return this.statDate;
         }
 
     }

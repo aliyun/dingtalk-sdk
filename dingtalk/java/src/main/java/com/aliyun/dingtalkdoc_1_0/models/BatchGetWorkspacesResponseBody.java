@@ -22,49 +22,25 @@ public class BatchGetWorkspacesResponseBody extends TeaModel {
     }
 
     public static class BatchGetWorkspacesResponseBodyWorkspacesWorkspaceRecentList extends TeaModel {
-        // 文档Id
-        @NameInMap("nodeId")
-        public String nodeId;
+        // 最近编辑时间
+        @NameInMap("lastEditTime")
+        public String lastEditTime;
 
         // 文档名称
         @NameInMap("name")
         public String name;
 
+        // 文档Id
+        @NameInMap("nodeId")
+        public String nodeId;
+
         // 文档打开url
         @NameInMap("url")
         public String url;
 
-        // 最近编辑时间
-        @NameInMap("lastEditTime")
-        public String lastEditTime;
-
         public static BatchGetWorkspacesResponseBodyWorkspacesWorkspaceRecentList build(java.util.Map<String, ?> map) throws Exception {
             BatchGetWorkspacesResponseBodyWorkspacesWorkspaceRecentList self = new BatchGetWorkspacesResponseBodyWorkspacesWorkspaceRecentList();
             return TeaModel.build(map, self);
-        }
-
-        public BatchGetWorkspacesResponseBodyWorkspacesWorkspaceRecentList setNodeId(String nodeId) {
-            this.nodeId = nodeId;
-            return this;
-        }
-        public String getNodeId() {
-            return this.nodeId;
-        }
-
-        public BatchGetWorkspacesResponseBodyWorkspacesWorkspaceRecentList setName(String name) {
-            this.name = name;
-            return this;
-        }
-        public String getName() {
-            return this.name;
-        }
-
-        public BatchGetWorkspacesResponseBodyWorkspacesWorkspaceRecentList setUrl(String url) {
-            this.url = url;
-            return this;
-        }
-        public String getUrl() {
-            return this.url;
         }
 
         public BatchGetWorkspacesResponseBodyWorkspacesWorkspaceRecentList setLastEditTime(String lastEditTime) {
@@ -75,44 +51,68 @@ public class BatchGetWorkspacesResponseBody extends TeaModel {
             return this.lastEditTime;
         }
 
+        public BatchGetWorkspacesResponseBodyWorkspacesWorkspaceRecentList setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
+        public BatchGetWorkspacesResponseBodyWorkspacesWorkspaceRecentList setNodeId(String nodeId) {
+            this.nodeId = nodeId;
+            return this;
+        }
+        public String getNodeId() {
+            return this.nodeId;
+        }
+
+        public BatchGetWorkspacesResponseBodyWorkspacesWorkspaceRecentList setUrl(String url) {
+            this.url = url;
+            return this;
+        }
+        public String getUrl() {
+            return this.url;
+        }
+
     }
 
     public static class BatchGetWorkspacesResponseBodyWorkspacesWorkspace extends TeaModel {
-        // 团队空间Id
-        @NameInMap("workspaceId")
-        public String workspaceId;
+        // 团队空间创建时间
+        @NameInMap("createTime")
+        public Long createTime;
 
         // 团队空间名称
         @NameInMap("name")
         public String name;
 
-        // 团队空间打开url
-        @NameInMap("url")
-        public String url;
+        // 是否全员公开
+        @NameInMap("orgPublished")
+        public Boolean orgPublished;
 
         // 最近访问列表
         @NameInMap("recentList")
         public java.util.List<BatchGetWorkspacesResponseBodyWorkspacesWorkspaceRecentList> recentList;
 
-        // 是否全员公开
-        @NameInMap("orgPublished")
-        public Boolean orgPublished;
+        // 团队空间打开url
+        @NameInMap("url")
+        public String url;
 
-        // 团队空间创建时间
-        @NameInMap("createTime")
-        public Long createTime;
+        // 团队空间Id
+        @NameInMap("workspaceId")
+        public String workspaceId;
 
         public static BatchGetWorkspacesResponseBodyWorkspacesWorkspace build(java.util.Map<String, ?> map) throws Exception {
             BatchGetWorkspacesResponseBodyWorkspacesWorkspace self = new BatchGetWorkspacesResponseBodyWorkspacesWorkspace();
             return TeaModel.build(map, self);
         }
 
-        public BatchGetWorkspacesResponseBodyWorkspacesWorkspace setWorkspaceId(String workspaceId) {
-            this.workspaceId = workspaceId;
+        public BatchGetWorkspacesResponseBodyWorkspacesWorkspace setCreateTime(Long createTime) {
+            this.createTime = createTime;
             return this;
         }
-        public String getWorkspaceId() {
-            return this.workspaceId;
+        public Long getCreateTime() {
+            return this.createTime;
         }
 
         public BatchGetWorkspacesResponseBodyWorkspacesWorkspace setName(String name) {
@@ -123,12 +123,12 @@ public class BatchGetWorkspacesResponseBody extends TeaModel {
             return this.name;
         }
 
-        public BatchGetWorkspacesResponseBodyWorkspacesWorkspace setUrl(String url) {
-            this.url = url;
+        public BatchGetWorkspacesResponseBodyWorkspacesWorkspace setOrgPublished(Boolean orgPublished) {
+            this.orgPublished = orgPublished;
             return this;
         }
-        public String getUrl() {
-            return this.url;
+        public Boolean getOrgPublished() {
+            return this.orgPublished;
         }
 
         public BatchGetWorkspacesResponseBodyWorkspacesWorkspace setRecentList(java.util.List<BatchGetWorkspacesResponseBodyWorkspacesWorkspaceRecentList> recentList) {
@@ -139,20 +139,20 @@ public class BatchGetWorkspacesResponseBody extends TeaModel {
             return this.recentList;
         }
 
-        public BatchGetWorkspacesResponseBodyWorkspacesWorkspace setOrgPublished(Boolean orgPublished) {
-            this.orgPublished = orgPublished;
+        public BatchGetWorkspacesResponseBodyWorkspacesWorkspace setUrl(String url) {
+            this.url = url;
             return this;
         }
-        public Boolean getOrgPublished() {
-            return this.orgPublished;
+        public String getUrl() {
+            return this.url;
         }
 
-        public BatchGetWorkspacesResponseBodyWorkspacesWorkspace setCreateTime(Long createTime) {
-            this.createTime = createTime;
+        public BatchGetWorkspacesResponseBodyWorkspacesWorkspace setWorkspaceId(String workspaceId) {
+            this.workspaceId = workspaceId;
             return this;
         }
-        public Long getCreateTime() {
-            return this.createTime;
+        public String getWorkspaceId() {
+            return this.workspaceId;
         }
 
     }

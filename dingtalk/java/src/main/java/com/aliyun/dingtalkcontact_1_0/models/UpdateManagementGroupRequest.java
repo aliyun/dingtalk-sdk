@@ -12,12 +12,12 @@ public class UpdateManagementGroupRequest extends TeaModel {
     @NameInMap("members")
     public java.util.List<UpdateManagementGroupRequestMembers> members;
 
-    @NameInMap("scope")
-    public UpdateManagementGroupRequestScope scope;
-
     // 资源列表
     @NameInMap("resourceIds")
     public java.util.List<String> resourceIds;
+
+    @NameInMap("scope")
+    public UpdateManagementGroupRequestScope scope;
 
     public static UpdateManagementGroupRequest build(java.util.Map<String, ?> map) throws Exception {
         UpdateManagementGroupRequest self = new UpdateManagementGroupRequest();
@@ -40,14 +40,6 @@ public class UpdateManagementGroupRequest extends TeaModel {
         return this.members;
     }
 
-    public UpdateManagementGroupRequest setScope(UpdateManagementGroupRequestScope scope) {
-        this.scope = scope;
-        return this;
-    }
-    public UpdateManagementGroupRequestScope getScope() {
-        return this.scope;
-    }
-
     public UpdateManagementGroupRequest setResourceIds(java.util.List<String> resourceIds) {
         this.resourceIds = resourceIds;
         return this;
@@ -56,26 +48,26 @@ public class UpdateManagementGroupRequest extends TeaModel {
         return this.resourceIds;
     }
 
-    public static class UpdateManagementGroupRequestMembers extends TeaModel {
-        // 成员类型
-        @NameInMap("memberType")
-        public String memberType;
+    public UpdateManagementGroupRequest setScope(UpdateManagementGroupRequestScope scope) {
+        this.scope = scope;
+        return this;
+    }
+    public UpdateManagementGroupRequestScope getScope() {
+        return this.scope;
+    }
 
+    public static class UpdateManagementGroupRequestMembers extends TeaModel {
         // 成员id
         @NameInMap("memberId")
         public String memberId;
 
+        // 成员类型
+        @NameInMap("memberType")
+        public String memberType;
+
         public static UpdateManagementGroupRequestMembers build(java.util.Map<String, ?> map) throws Exception {
             UpdateManagementGroupRequestMembers self = new UpdateManagementGroupRequestMembers();
             return TeaModel.build(map, self);
-        }
-
-        public UpdateManagementGroupRequestMembers setMemberType(String memberType) {
-            this.memberType = memberType;
-            return this;
-        }
-        public String getMemberType() {
-            return this.memberType;
         }
 
         public UpdateManagementGroupRequestMembers setMemberId(String memberId) {
@@ -86,28 +78,28 @@ public class UpdateManagementGroupRequest extends TeaModel {
             return this.memberId;
         }
 
+        public UpdateManagementGroupRequestMembers setMemberType(String memberType) {
+            this.memberType = memberType;
+            return this;
+        }
+        public String getMemberType() {
+            return this.memberType;
+        }
+
     }
 
     public static class UpdateManagementGroupRequestScope extends TeaModel {
-        // 范围类型
-        @NameInMap("scopeType")
-        public Integer scopeType;
-
         // 部门列表，只在scopeType=3 生效
         @NameInMap("deptIds")
         public java.util.List<Long> deptIds;
 
+        // 范围类型
+        @NameInMap("scopeType")
+        public Integer scopeType;
+
         public static UpdateManagementGroupRequestScope build(java.util.Map<String, ?> map) throws Exception {
             UpdateManagementGroupRequestScope self = new UpdateManagementGroupRequestScope();
             return TeaModel.build(map, self);
-        }
-
-        public UpdateManagementGroupRequestScope setScopeType(Integer scopeType) {
-            this.scopeType = scopeType;
-            return this;
-        }
-        public Integer getScopeType() {
-            return this.scopeType;
         }
 
         public UpdateManagementGroupRequestScope setDeptIds(java.util.List<Long> deptIds) {
@@ -116,6 +108,14 @@ public class UpdateManagementGroupRequest extends TeaModel {
         }
         public java.util.List<Long> getDeptIds() {
             return this.deptIds;
+        }
+
+        public UpdateManagementGroupRequestScope setScopeType(Integer scopeType) {
+            this.scopeType = scopeType;
+            return this;
+        }
+        public Integer getScopeType() {
+            return this.scopeType;
         }
 
     }

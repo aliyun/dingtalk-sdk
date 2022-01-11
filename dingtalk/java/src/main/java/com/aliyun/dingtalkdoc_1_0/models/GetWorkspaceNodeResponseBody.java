@@ -4,6 +4,10 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetWorkspaceNodeResponseBody extends TeaModel {
+    // 是否有权限
+    @NameInMap("hasPermission")
+    public Boolean hasPermission;
+
     // 节点信息
     @NameInMap("nodeBO")
     public GetWorkspaceNodeResponseBodyNodeBO nodeBO;
@@ -12,13 +16,17 @@ public class GetWorkspaceNodeResponseBody extends TeaModel {
     @NameInMap("workspaceBO")
     public GetWorkspaceNodeResponseBodyWorkspaceBO workspaceBO;
 
-    // 是否有权限
-    @NameInMap("hasPermission")
-    public Boolean hasPermission;
-
     public static GetWorkspaceNodeResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetWorkspaceNodeResponseBody self = new GetWorkspaceNodeResponseBody();
         return TeaModel.build(map, self);
+    }
+
+    public GetWorkspaceNodeResponseBody setHasPermission(Boolean hasPermission) {
+        this.hasPermission = hasPermission;
+        return this;
+    }
+    public Boolean getHasPermission() {
+        return this.hasPermission;
     }
 
     public GetWorkspaceNodeResponseBody setNodeBO(GetWorkspaceNodeResponseBodyNodeBO nodeBO) {
@@ -35,14 +43,6 @@ public class GetWorkspaceNodeResponseBody extends TeaModel {
     }
     public GetWorkspaceNodeResponseBodyWorkspaceBO getWorkspaceBO() {
         return this.workspaceBO;
-    }
-
-    public GetWorkspaceNodeResponseBody setHasPermission(Boolean hasPermission) {
-        this.hasPermission = hasPermission;
-        return this;
-    }
-    public Boolean getHasPermission() {
-        return this.hasPermission;
     }
 
     public static class GetWorkspaceNodeResponseBodyNodeBO extends TeaModel {
@@ -90,25 +90,17 @@ public class GetWorkspaceNodeResponseBody extends TeaModel {
     }
 
     public static class GetWorkspaceNodeResponseBodyWorkspaceBO extends TeaModel {
-        // 团队空间Id
-        @NameInMap("workspaceId")
-        public String workspaceId;
-
         // 团队空间名称
         @NameInMap("name")
         public String name;
 
+        // 团队空间Id
+        @NameInMap("workspaceId")
+        public String workspaceId;
+
         public static GetWorkspaceNodeResponseBodyWorkspaceBO build(java.util.Map<String, ?> map) throws Exception {
             GetWorkspaceNodeResponseBodyWorkspaceBO self = new GetWorkspaceNodeResponseBodyWorkspaceBO();
             return TeaModel.build(map, self);
-        }
-
-        public GetWorkspaceNodeResponseBodyWorkspaceBO setWorkspaceId(String workspaceId) {
-            this.workspaceId = workspaceId;
-            return this;
-        }
-        public String getWorkspaceId() {
-            return this.workspaceId;
         }
 
         public GetWorkspaceNodeResponseBodyWorkspaceBO setName(String name) {
@@ -117,6 +109,14 @@ public class GetWorkspaceNodeResponseBody extends TeaModel {
         }
         public String getName() {
             return this.name;
+        }
+
+        public GetWorkspaceNodeResponseBodyWorkspaceBO setWorkspaceId(String workspaceId) {
+            this.workspaceId = workspaceId;
+            return this;
+        }
+        public String getWorkspaceId() {
+            return this.workspaceId;
         }
 
     }

@@ -22,53 +22,37 @@ public class ListCalendarsResponseBody extends TeaModel {
     }
 
     public static class ListCalendarsResponseBodyResponseCalendars extends TeaModel {
-        // 日历id
-        @NameInMap("id")
-        public String id;
-
-        // 日历标题
-        @NameInMap("summary")
-        public String summary;
-
         // 日历描述
         @NameInMap("description")
         public String description;
-
-        // 时区
-        @NameInMap("timeZone")
-        public String timeZone;
 
         // Calendar资源的ETag，用于检测该Calendar以及内部的Event是否有被更新
         @NameInMap("eTag")
         public String eTag;
 
-        // 日历类型
-        @NameInMap("type")
-        public String type;
+        // 日历id
+        @NameInMap("id")
+        public String id;
 
         // 权限信息
         @NameInMap("privilege")
         public String privilege;
 
+        // 日历标题
+        @NameInMap("summary")
+        public String summary;
+
+        // 时区
+        @NameInMap("timeZone")
+        public String timeZone;
+
+        // 日历类型
+        @NameInMap("type")
+        public String type;
+
         public static ListCalendarsResponseBodyResponseCalendars build(java.util.Map<String, ?> map) throws Exception {
             ListCalendarsResponseBodyResponseCalendars self = new ListCalendarsResponseBodyResponseCalendars();
             return TeaModel.build(map, self);
-        }
-
-        public ListCalendarsResponseBodyResponseCalendars setId(String id) {
-            this.id = id;
-            return this;
-        }
-        public String getId() {
-            return this.id;
-        }
-
-        public ListCalendarsResponseBodyResponseCalendars setSummary(String summary) {
-            this.summary = summary;
-            return this;
-        }
-        public String getSummary() {
-            return this.summary;
         }
 
         public ListCalendarsResponseBodyResponseCalendars setDescription(String description) {
@@ -79,14 +63,6 @@ public class ListCalendarsResponseBody extends TeaModel {
             return this.description;
         }
 
-        public ListCalendarsResponseBodyResponseCalendars setTimeZone(String timeZone) {
-            this.timeZone = timeZone;
-            return this;
-        }
-        public String getTimeZone() {
-            return this.timeZone;
-        }
-
         public ListCalendarsResponseBodyResponseCalendars setETag(String eTag) {
             this.eTag = eTag;
             return this;
@@ -95,12 +71,12 @@ public class ListCalendarsResponseBody extends TeaModel {
             return this.eTag;
         }
 
-        public ListCalendarsResponseBodyResponseCalendars setType(String type) {
-            this.type = type;
+        public ListCalendarsResponseBodyResponseCalendars setId(String id) {
+            this.id = id;
             return this;
         }
-        public String getType() {
-            return this.type;
+        public String getId() {
+            return this.id;
         }
 
         public ListCalendarsResponseBodyResponseCalendars setPrivilege(String privilege) {
@@ -109,6 +85,30 @@ public class ListCalendarsResponseBody extends TeaModel {
         }
         public String getPrivilege() {
             return this.privilege;
+        }
+
+        public ListCalendarsResponseBodyResponseCalendars setSummary(String summary) {
+            this.summary = summary;
+            return this;
+        }
+        public String getSummary() {
+            return this.summary;
+        }
+
+        public ListCalendarsResponseBodyResponseCalendars setTimeZone(String timeZone) {
+            this.timeZone = timeZone;
+            return this;
+        }
+        public String getTimeZone() {
+            return this.timeZone;
+        }
+
+        public ListCalendarsResponseBodyResponseCalendars setType(String type) {
+            this.type = type;
+            return this;
+        }
+        public String getType() {
+            return this.type;
         }
 
     }

@@ -4,26 +4,18 @@ package com.aliyun.dingtalkimpaas_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddGroupMembersRequest extends TeaModel {
-    @NameInMap("operatorUid")
-    public String operatorUid;
-
     @NameInMap("conversationId")
     public String conversationId;
 
     @NameInMap("members")
     public java.util.List<AddGroupMembersRequestMembers> members;
 
+    @NameInMap("operatorUid")
+    public String operatorUid;
+
     public static AddGroupMembersRequest build(java.util.Map<String, ?> map) throws Exception {
         AddGroupMembersRequest self = new AddGroupMembersRequest();
         return TeaModel.build(map, self);
-    }
-
-    public AddGroupMembersRequest setOperatorUid(String operatorUid) {
-        this.operatorUid = operatorUid;
-        return this;
-    }
-    public String getOperatorUid() {
-        return this.operatorUid;
     }
 
     public AddGroupMembersRequest setConversationId(String conversationId) {
@@ -40,6 +32,14 @@ public class AddGroupMembersRequest extends TeaModel {
     }
     public java.util.List<AddGroupMembersRequestMembers> getMembers() {
         return this.members;
+    }
+
+    public AddGroupMembersRequest setOperatorUid(String operatorUid) {
+        this.operatorUid = operatorUid;
+        return this;
+    }
+    public String getOperatorUid() {
+        return this.operatorUid;
     }
 
     public static class AddGroupMembersRequestMembers extends TeaModel {

@@ -22,14 +22,6 @@ public class QueryConferenceInfoBatchResponseBody extends TeaModel {
     }
 
     public static class QueryConferenceInfoBatchResponseBodyInfosUserList extends TeaModel {
-        // 用户id
-        @NameInMap("userId")
-        public String userId;
-
-        // 名称
-        @NameInMap("nick")
-        public String nick;
-
         // 在会状态
         @NameInMap("attendStatus")
         public Long attendStatus;
@@ -42,29 +34,21 @@ public class QueryConferenceInfoBatchResponseBody extends TeaModel {
         @NameInMap("micStatus")
         public Long micStatus;
 
+        // 名称
+        @NameInMap("nick")
+        public String nick;
+
         // 拒绝原因
         @NameInMap("rejectDescription")
         public String rejectDescription;
 
+        // 用户id
+        @NameInMap("userId")
+        public String userId;
+
         public static QueryConferenceInfoBatchResponseBodyInfosUserList build(java.util.Map<String, ?> map) throws Exception {
             QueryConferenceInfoBatchResponseBodyInfosUserList self = new QueryConferenceInfoBatchResponseBodyInfosUserList();
             return TeaModel.build(map, self);
-        }
-
-        public QueryConferenceInfoBatchResponseBodyInfosUserList setUserId(String userId) {
-            this.userId = userId;
-            return this;
-        }
-        public String getUserId() {
-            return this.userId;
-        }
-
-        public QueryConferenceInfoBatchResponseBodyInfosUserList setNick(String nick) {
-            this.nick = nick;
-            return this;
-        }
-        public String getNick() {
-            return this.nick;
         }
 
         public QueryConferenceInfoBatchResponseBodyInfosUserList setAttendStatus(Long attendStatus) {
@@ -91,12 +75,28 @@ public class QueryConferenceInfoBatchResponseBody extends TeaModel {
             return this.micStatus;
         }
 
+        public QueryConferenceInfoBatchResponseBodyInfosUserList setNick(String nick) {
+            this.nick = nick;
+            return this;
+        }
+        public String getNick() {
+            return this.nick;
+        }
+
         public QueryConferenceInfoBatchResponseBodyInfosUserList setRejectDescription(String rejectDescription) {
             this.rejectDescription = rejectDescription;
             return this;
         }
         public String getRejectDescription() {
             return this.rejectDescription;
+        }
+
+        public QueryConferenceInfoBatchResponseBodyInfosUserList setUserId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+        public String getUserId() {
+            return this.userId;
         }
 
     }
@@ -106,9 +106,9 @@ public class QueryConferenceInfoBatchResponseBody extends TeaModel {
         @NameInMap("conferenceId")
         public String conferenceId;
 
-        // 会议名称
-        @NameInMap("title")
-        public String title;
+        // 媒体状态
+        @NameInMap("mediaStatus")
+        public Long mediaStatus;
 
         // 会议开始时间
         @NameInMap("startTime")
@@ -118,9 +118,9 @@ public class QueryConferenceInfoBatchResponseBody extends TeaModel {
         @NameInMap("status")
         public Long status;
 
-        // 媒体状态
-        @NameInMap("mediaStatus")
-        public Long mediaStatus;
+        // 会议名称
+        @NameInMap("title")
+        public String title;
 
         // 参会用户列表
         @NameInMap("userList")
@@ -139,12 +139,12 @@ public class QueryConferenceInfoBatchResponseBody extends TeaModel {
             return this.conferenceId;
         }
 
-        public QueryConferenceInfoBatchResponseBodyInfos setTitle(String title) {
-            this.title = title;
+        public QueryConferenceInfoBatchResponseBodyInfos setMediaStatus(Long mediaStatus) {
+            this.mediaStatus = mediaStatus;
             return this;
         }
-        public String getTitle() {
-            return this.title;
+        public Long getMediaStatus() {
+            return this.mediaStatus;
         }
 
         public QueryConferenceInfoBatchResponseBodyInfos setStartTime(Long startTime) {
@@ -163,12 +163,12 @@ public class QueryConferenceInfoBatchResponseBody extends TeaModel {
             return this.status;
         }
 
-        public QueryConferenceInfoBatchResponseBodyInfos setMediaStatus(Long mediaStatus) {
-            this.mediaStatus = mediaStatus;
+        public QueryConferenceInfoBatchResponseBodyInfos setTitle(String title) {
+            this.title = title;
             return this;
         }
-        public Long getMediaStatus() {
-            return this.mediaStatus;
+        public String getTitle() {
+            return this.title;
         }
 
         public QueryConferenceInfoBatchResponseBodyInfos setUserList(java.util.List<QueryConferenceInfoBatchResponseBodyInfosUserList> userList) {

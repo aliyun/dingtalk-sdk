@@ -4,9 +4,9 @@ package com.aliyun.dingtalkcustomer_service_1_0.models;
 import com.aliyun.tea.*;
 
 public class ExecuteActivityRequest extends TeaModel {
-    // 来源ID
-    @NameInMap("sourceId")
-    public String sourceId;
+    // 动作编码
+    @NameInMap("activityCode")
+    public String activityCode;
 
     // 会员ID
     @NameInMap("foreignId")
@@ -15,10 +15,6 @@ public class ExecuteActivityRequest extends TeaModel {
     // 会员名称
     @NameInMap("foreignName")
     public String foreignName;
-
-    // 动作编码
-    @NameInMap("activityCode")
-    public String activityCode;
 
     // 实例id
     @NameInMap("openInstanceId")
@@ -32,17 +28,21 @@ public class ExecuteActivityRequest extends TeaModel {
     @NameInMap("properties")
     public java.util.List<ExecuteActivityRequestProperties> properties;
 
+    // 来源ID
+    @NameInMap("sourceId")
+    public String sourceId;
+
     public static ExecuteActivityRequest build(java.util.Map<String, ?> map) throws Exception {
         ExecuteActivityRequest self = new ExecuteActivityRequest();
         return TeaModel.build(map, self);
     }
 
-    public ExecuteActivityRequest setSourceId(String sourceId) {
-        this.sourceId = sourceId;
+    public ExecuteActivityRequest setActivityCode(String activityCode) {
+        this.activityCode = activityCode;
         return this;
     }
-    public String getSourceId() {
-        return this.sourceId;
+    public String getActivityCode() {
+        return this.activityCode;
     }
 
     public ExecuteActivityRequest setForeignId(String foreignId) {
@@ -59,14 +59,6 @@ public class ExecuteActivityRequest extends TeaModel {
     }
     public String getForeignName() {
         return this.foreignName;
-    }
-
-    public ExecuteActivityRequest setActivityCode(String activityCode) {
-        this.activityCode = activityCode;
-        return this;
-    }
-    public String getActivityCode() {
-        return this.activityCode;
     }
 
     public ExecuteActivityRequest setOpenInstanceId(String openInstanceId) {
@@ -91,6 +83,14 @@ public class ExecuteActivityRequest extends TeaModel {
     }
     public java.util.List<ExecuteActivityRequestProperties> getProperties() {
         return this.properties;
+    }
+
+    public ExecuteActivityRequest setSourceId(String sourceId) {
+        this.sourceId = sourceId;
+        return this;
+    }
+    public String getSourceId() {
+        return this.sourceId;
     }
 
     public static class ExecuteActivityRequestProperties extends TeaModel {

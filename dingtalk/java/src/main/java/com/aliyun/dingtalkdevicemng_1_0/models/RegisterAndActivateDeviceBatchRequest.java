@@ -4,23 +4,12 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class RegisterAndActivateDeviceBatchRequest extends TeaModel {
-    @NameInMap("dingCorpId")
-    public String dingCorpId;
-
     @NameInMap("registerAndActivateVOS")
     public java.util.List<RegisterAndActivateDeviceBatchRequestRegisterAndActivateVOS> registerAndActivateVOS;
 
     public static RegisterAndActivateDeviceBatchRequest build(java.util.Map<String, ?> map) throws Exception {
         RegisterAndActivateDeviceBatchRequest self = new RegisterAndActivateDeviceBatchRequest();
         return TeaModel.build(map, self);
-    }
-
-    public RegisterAndActivateDeviceBatchRequest setDingCorpId(String dingCorpId) {
-        this.dingCorpId = dingCorpId;
-        return this;
-    }
-    public String getDingCorpId() {
-        return this.dingCorpId;
     }
 
     public RegisterAndActivateDeviceBatchRequest setRegisterAndActivateVOS(java.util.List<RegisterAndActivateDeviceBatchRequestRegisterAndActivateVOS> registerAndActivateVOS) {
@@ -32,14 +21,14 @@ public class RegisterAndActivateDeviceBatchRequest extends TeaModel {
     }
 
     public static class RegisterAndActivateDeviceBatchRequestRegisterAndActivateVOS extends TeaModel {
+        @NameInMap("deviceCallbackUrl")
+        public String deviceCallbackUrl;
+
         @NameInMap("deviceCode")
         public String deviceCode;
 
         @NameInMap("deviceDetailUrl")
         public String deviceDetailUrl;
-
-        @NameInMap("deviceCallbackUrl")
-        public String deviceCallbackUrl;
 
         @NameInMap("deviceName")
         public String deviceName;
@@ -64,6 +53,14 @@ public class RegisterAndActivateDeviceBatchRequest extends TeaModel {
             return TeaModel.build(map, self);
         }
 
+        public RegisterAndActivateDeviceBatchRequestRegisterAndActivateVOS setDeviceCallbackUrl(String deviceCallbackUrl) {
+            this.deviceCallbackUrl = deviceCallbackUrl;
+            return this;
+        }
+        public String getDeviceCallbackUrl() {
+            return this.deviceCallbackUrl;
+        }
+
         public RegisterAndActivateDeviceBatchRequestRegisterAndActivateVOS setDeviceCode(String deviceCode) {
             this.deviceCode = deviceCode;
             return this;
@@ -78,14 +75,6 @@ public class RegisterAndActivateDeviceBatchRequest extends TeaModel {
         }
         public String getDeviceDetailUrl() {
             return this.deviceDetailUrl;
-        }
-
-        public RegisterAndActivateDeviceBatchRequestRegisterAndActivateVOS setDeviceCallbackUrl(String deviceCallbackUrl) {
-            this.deviceCallbackUrl = deviceCallbackUrl;
-            return this;
-        }
-        public String getDeviceCallbackUrl() {
-            return this.deviceCallbackUrl;
         }
 
         public RegisterAndActivateDeviceBatchRequestRegisterAndActivateVOS setDeviceName(String deviceName) {

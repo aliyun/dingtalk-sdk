@@ -4,9 +4,9 @@ package com.aliyun.dingtalkbadge_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateBadgeCodeUserInstanceRequest extends TeaModel {
-    // 业务幂等ID
-    @NameInMap("requestId")
-    public String requestId;
+    // 有效时间列表，对于连续时间段，只需传入一个对象即可，注意过期时间必须晚于最晚结束时间
+    @NameInMap("availableTimes")
+    public java.util.List<CreateBadgeCodeUserInstanceRequestAvailableTimes> availableTimes;
 
     // 码标识，由钉钉颁发
     @NameInMap("codeIdentity")
@@ -20,13 +20,25 @@ public class CreateBadgeCodeUserInstanceRequest extends TeaModel {
     @NameInMap("codeValueType")
     public String codeValueType;
 
-    // 状态，传入关闭状态需要用户手动开启后才会渲染二维
-    @NameInMap("status")
-    public String status;
-
     // 企业ID
     @NameInMap("corpId")
     public String corpId;
+
+    // 扩展参数
+    @NameInMap("extInfo")
+    public java.util.Map<String, ?> extInfo;
+
+    // 临时码，传入过期时间
+    @NameInMap("gmtExpired")
+    public String gmtExpired;
+
+    // 业务幂等ID
+    @NameInMap("requestId")
+    public String requestId;
+
+    // 状态，传入关闭状态需要用户手动开启后才会渲染二维
+    @NameInMap("status")
+    public String status;
 
     // 用户和企业的关系类型，区分内部员工，外部联系人，无关系普通用户
     @NameInMap("userCorpRelationType")
@@ -36,35 +48,17 @@ public class CreateBadgeCodeUserInstanceRequest extends TeaModel {
     @NameInMap("userIdentity")
     public String userIdentity;
 
-    // 临时码，传入过期时间
-    @NameInMap("gmtExpired")
-    public String gmtExpired;
-
-    // 有效时间列表，对于连续时间段，只需传入一个对象即可，注意过期时间必须晚于最晚结束时间
-    @NameInMap("availableTimes")
-    public java.util.List<CreateBadgeCodeUserInstanceRequestAvailableTimes> availableTimes;
-
-    // 扩展参数
-    @NameInMap("extInfo")
-    public java.util.Map<String, ?> extInfo;
-
-    @NameInMap("dingOrgId")
-    public Long dingOrgId;
-
-    @NameInMap("dingIsvOrgId")
-    public Long dingIsvOrgId;
-
     public static CreateBadgeCodeUserInstanceRequest build(java.util.Map<String, ?> map) throws Exception {
         CreateBadgeCodeUserInstanceRequest self = new CreateBadgeCodeUserInstanceRequest();
         return TeaModel.build(map, self);
     }
 
-    public CreateBadgeCodeUserInstanceRequest setRequestId(String requestId) {
-        this.requestId = requestId;
+    public CreateBadgeCodeUserInstanceRequest setAvailableTimes(java.util.List<CreateBadgeCodeUserInstanceRequestAvailableTimes> availableTimes) {
+        this.availableTimes = availableTimes;
         return this;
     }
-    public String getRequestId() {
-        return this.requestId;
+    public java.util.List<CreateBadgeCodeUserInstanceRequestAvailableTimes> getAvailableTimes() {
+        return this.availableTimes;
     }
 
     public CreateBadgeCodeUserInstanceRequest setCodeIdentity(String codeIdentity) {
@@ -91,20 +85,44 @@ public class CreateBadgeCodeUserInstanceRequest extends TeaModel {
         return this.codeValueType;
     }
 
-    public CreateBadgeCodeUserInstanceRequest setStatus(String status) {
-        this.status = status;
-        return this;
-    }
-    public String getStatus() {
-        return this.status;
-    }
-
     public CreateBadgeCodeUserInstanceRequest setCorpId(String corpId) {
         this.corpId = corpId;
         return this;
     }
     public String getCorpId() {
         return this.corpId;
+    }
+
+    public CreateBadgeCodeUserInstanceRequest setExtInfo(java.util.Map<String, ?> extInfo) {
+        this.extInfo = extInfo;
+        return this;
+    }
+    public java.util.Map<String, ?> getExtInfo() {
+        return this.extInfo;
+    }
+
+    public CreateBadgeCodeUserInstanceRequest setGmtExpired(String gmtExpired) {
+        this.gmtExpired = gmtExpired;
+        return this;
+    }
+    public String getGmtExpired() {
+        return this.gmtExpired;
+    }
+
+    public CreateBadgeCodeUserInstanceRequest setRequestId(String requestId) {
+        this.requestId = requestId;
+        return this;
+    }
+    public String getRequestId() {
+        return this.requestId;
+    }
+
+    public CreateBadgeCodeUserInstanceRequest setStatus(String status) {
+        this.status = status;
+        return this;
+    }
+    public String getStatus() {
+        return this.status;
     }
 
     public CreateBadgeCodeUserInstanceRequest setUserCorpRelationType(String userCorpRelationType) {
@@ -123,66 +141,18 @@ public class CreateBadgeCodeUserInstanceRequest extends TeaModel {
         return this.userIdentity;
     }
 
-    public CreateBadgeCodeUserInstanceRequest setGmtExpired(String gmtExpired) {
-        this.gmtExpired = gmtExpired;
-        return this;
-    }
-    public String getGmtExpired() {
-        return this.gmtExpired;
-    }
-
-    public CreateBadgeCodeUserInstanceRequest setAvailableTimes(java.util.List<CreateBadgeCodeUserInstanceRequestAvailableTimes> availableTimes) {
-        this.availableTimes = availableTimes;
-        return this;
-    }
-    public java.util.List<CreateBadgeCodeUserInstanceRequestAvailableTimes> getAvailableTimes() {
-        return this.availableTimes;
-    }
-
-    public CreateBadgeCodeUserInstanceRequest setExtInfo(java.util.Map<String, ?> extInfo) {
-        this.extInfo = extInfo;
-        return this;
-    }
-    public java.util.Map<String, ?> getExtInfo() {
-        return this.extInfo;
-    }
-
-    public CreateBadgeCodeUserInstanceRequest setDingOrgId(Long dingOrgId) {
-        this.dingOrgId = dingOrgId;
-        return this;
-    }
-    public Long getDingOrgId() {
-        return this.dingOrgId;
-    }
-
-    public CreateBadgeCodeUserInstanceRequest setDingIsvOrgId(Long dingIsvOrgId) {
-        this.dingIsvOrgId = dingIsvOrgId;
-        return this;
-    }
-    public Long getDingIsvOrgId() {
-        return this.dingIsvOrgId;
-    }
-
     public static class CreateBadgeCodeUserInstanceRequestAvailableTimes extends TeaModel {
-        // 开始时间
-        @NameInMap("gmtStart")
-        public String gmtStart;
-
         // 结束时间
         @NameInMap("gmtEnd")
         public String gmtEnd;
 
+        // 开始时间
+        @NameInMap("gmtStart")
+        public String gmtStart;
+
         public static CreateBadgeCodeUserInstanceRequestAvailableTimes build(java.util.Map<String, ?> map) throws Exception {
             CreateBadgeCodeUserInstanceRequestAvailableTimes self = new CreateBadgeCodeUserInstanceRequestAvailableTimes();
             return TeaModel.build(map, self);
-        }
-
-        public CreateBadgeCodeUserInstanceRequestAvailableTimes setGmtStart(String gmtStart) {
-            this.gmtStart = gmtStart;
-            return this;
-        }
-        public String getGmtStart() {
-            return this.gmtStart;
         }
 
         public CreateBadgeCodeUserInstanceRequestAvailableTimes setGmtEnd(String gmtEnd) {
@@ -191,6 +161,14 @@ public class CreateBadgeCodeUserInstanceRequest extends TeaModel {
         }
         public String getGmtEnd() {
             return this.gmtEnd;
+        }
+
+        public CreateBadgeCodeUserInstanceRequestAvailableTimes setGmtStart(String gmtStart) {
+            this.gmtStart = gmtStart;
+            return this;
+        }
+        public String getGmtStart() {
+            return this.gmtStart;
         }
 
     }

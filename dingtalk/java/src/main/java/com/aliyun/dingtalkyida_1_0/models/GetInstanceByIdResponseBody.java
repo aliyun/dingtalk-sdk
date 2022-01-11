@@ -4,14 +4,6 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetInstanceByIdResponseBody extends TeaModel {
-    // 创建时间
-    @NameInMap("createTimeGMT")
-    public String createTimeGMT;
-
-    // processInstanceId
-    @NameInMap("processInstanceId")
-    public String processInstanceId;
-
     // actionExecutor
     @NameInMap("actionExecutor")
     public java.util.List<GetInstanceByIdResponseBodyActionExecutor> actionExecutor;
@@ -20,33 +12,41 @@ public class GetInstanceByIdResponseBody extends TeaModel {
     @NameInMap("approvedResult")
     public String approvedResult;
 
-    // formUuid
-    @NameInMap("formUuid")
-    public String formUuid;
+    // 创建时间
+    @NameInMap("createTimeGMT")
+    public String createTimeGMT;
 
     // data
     @NameInMap("data")
     public java.util.Map<String, ?> data;
 
+    // formUuid
+    @NameInMap("formUuid")
+    public String formUuid;
+
+    // instanceStatus
+    @NameInMap("instanceStatus")
+    public String instanceStatus;
+
     // 修改时间
     @NameInMap("modifiedTimeGMT")
     public String modifiedTimeGMT;
-
-    // processCode
-    @NameInMap("processCode")
-    public String processCode;
 
     // originator
     @NameInMap("originator")
     public GetInstanceByIdResponseBodyOriginator originator;
 
+    // processCode
+    @NameInMap("processCode")
+    public String processCode;
+
+    // processInstanceId
+    @NameInMap("processInstanceId")
+    public String processInstanceId;
+
     // title
     @NameInMap("title")
     public String title;
-
-    // instanceStatus
-    @NameInMap("instanceStatus")
-    public String instanceStatus;
 
     // version
     @NameInMap("version")
@@ -55,22 +55,6 @@ public class GetInstanceByIdResponseBody extends TeaModel {
     public static GetInstanceByIdResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetInstanceByIdResponseBody self = new GetInstanceByIdResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public GetInstanceByIdResponseBody setCreateTimeGMT(String createTimeGMT) {
-        this.createTimeGMT = createTimeGMT;
-        return this;
-    }
-    public String getCreateTimeGMT() {
-        return this.createTimeGMT;
-    }
-
-    public GetInstanceByIdResponseBody setProcessInstanceId(String processInstanceId) {
-        this.processInstanceId = processInstanceId;
-        return this;
-    }
-    public String getProcessInstanceId() {
-        return this.processInstanceId;
     }
 
     public GetInstanceByIdResponseBody setActionExecutor(java.util.List<GetInstanceByIdResponseBodyActionExecutor> actionExecutor) {
@@ -89,12 +73,12 @@ public class GetInstanceByIdResponseBody extends TeaModel {
         return this.approvedResult;
     }
 
-    public GetInstanceByIdResponseBody setFormUuid(String formUuid) {
-        this.formUuid = formUuid;
+    public GetInstanceByIdResponseBody setCreateTimeGMT(String createTimeGMT) {
+        this.createTimeGMT = createTimeGMT;
         return this;
     }
-    public String getFormUuid() {
-        return this.formUuid;
+    public String getCreateTimeGMT() {
+        return this.createTimeGMT;
     }
 
     public GetInstanceByIdResponseBody setData(java.util.Map<String, ?> data) {
@@ -105,20 +89,28 @@ public class GetInstanceByIdResponseBody extends TeaModel {
         return this.data;
     }
 
+    public GetInstanceByIdResponseBody setFormUuid(String formUuid) {
+        this.formUuid = formUuid;
+        return this;
+    }
+    public String getFormUuid() {
+        return this.formUuid;
+    }
+
+    public GetInstanceByIdResponseBody setInstanceStatus(String instanceStatus) {
+        this.instanceStatus = instanceStatus;
+        return this;
+    }
+    public String getInstanceStatus() {
+        return this.instanceStatus;
+    }
+
     public GetInstanceByIdResponseBody setModifiedTimeGMT(String modifiedTimeGMT) {
         this.modifiedTimeGMT = modifiedTimeGMT;
         return this;
     }
     public String getModifiedTimeGMT() {
         return this.modifiedTimeGMT;
-    }
-
-    public GetInstanceByIdResponseBody setProcessCode(String processCode) {
-        this.processCode = processCode;
-        return this;
-    }
-    public String getProcessCode() {
-        return this.processCode;
     }
 
     public GetInstanceByIdResponseBody setOriginator(GetInstanceByIdResponseBodyOriginator originator) {
@@ -129,20 +121,28 @@ public class GetInstanceByIdResponseBody extends TeaModel {
         return this.originator;
     }
 
+    public GetInstanceByIdResponseBody setProcessCode(String processCode) {
+        this.processCode = processCode;
+        return this;
+    }
+    public String getProcessCode() {
+        return this.processCode;
+    }
+
+    public GetInstanceByIdResponseBody setProcessInstanceId(String processInstanceId) {
+        this.processInstanceId = processInstanceId;
+        return this;
+    }
+    public String getProcessInstanceId() {
+        return this.processInstanceId;
+    }
+
     public GetInstanceByIdResponseBody setTitle(String title) {
         this.title = title;
         return this;
     }
     public String getTitle() {
         return this.title;
-    }
-
-    public GetInstanceByIdResponseBody setInstanceStatus(String instanceStatus) {
-        this.instanceStatus = instanceStatus;
-        return this;
-    }
-    public String getInstanceStatus() {
-        return this.instanceStatus;
     }
 
     public GetInstanceByIdResponseBody setVersion(Long version) {
@@ -154,6 +154,10 @@ public class GetInstanceByIdResponseBody extends TeaModel {
     }
 
     public static class GetInstanceByIdResponseBodyActionExecutorName extends TeaModel {
+        // 中文名称
+        @NameInMap("nameInChinese")
+        public String nameInChinese;
+
         // 英文名称
         @NameInMap("nameInEnglish")
         public String nameInEnglish;
@@ -162,13 +166,17 @@ public class GetInstanceByIdResponseBody extends TeaModel {
         @NameInMap("type")
         public String type;
 
-        // 中文名称
-        @NameInMap("nameInChinese")
-        public String nameInChinese;
-
         public static GetInstanceByIdResponseBodyActionExecutorName build(java.util.Map<String, ?> map) throws Exception {
             GetInstanceByIdResponseBodyActionExecutorName self = new GetInstanceByIdResponseBodyActionExecutorName();
             return TeaModel.build(map, self);
+        }
+
+        public GetInstanceByIdResponseBodyActionExecutorName setNameInChinese(String nameInChinese) {
+            this.nameInChinese = nameInChinese;
+            return this;
+        }
+        public String getNameInChinese() {
+            return this.nameInChinese;
         }
 
         public GetInstanceByIdResponseBodyActionExecutorName setNameInEnglish(String nameInEnglish) {
@@ -187,44 +195,28 @@ public class GetInstanceByIdResponseBody extends TeaModel {
             return this.type;
         }
 
-        public GetInstanceByIdResponseBodyActionExecutorName setNameInChinese(String nameInChinese) {
-            this.nameInChinese = nameInChinese;
-            return this;
-        }
-        public String getNameInChinese() {
-            return this.nameInChinese;
-        }
-
     }
 
     public static class GetInstanceByIdResponseBodyActionExecutor extends TeaModel {
-        // name
-        @NameInMap("name")
-        public GetInstanceByIdResponseBodyActionExecutorName name;
-
         // deptName
         @NameInMap("deptName")
         public String deptName;
-
-        // userId
-        @NameInMap("userId")
-        public String userId;
 
         // email
         @NameInMap("email")
         public String email;
 
+        // name
+        @NameInMap("name")
+        public GetInstanceByIdResponseBodyActionExecutorName name;
+
+        // userId
+        @NameInMap("userId")
+        public String userId;
+
         public static GetInstanceByIdResponseBodyActionExecutor build(java.util.Map<String, ?> map) throws Exception {
             GetInstanceByIdResponseBodyActionExecutor self = new GetInstanceByIdResponseBodyActionExecutor();
             return TeaModel.build(map, self);
-        }
-
-        public GetInstanceByIdResponseBodyActionExecutor setName(GetInstanceByIdResponseBodyActionExecutorName name) {
-            this.name = name;
-            return this;
-        }
-        public GetInstanceByIdResponseBodyActionExecutorName getName() {
-            return this.name;
         }
 
         public GetInstanceByIdResponseBodyActionExecutor setDeptName(String deptName) {
@@ -235,14 +227,6 @@ public class GetInstanceByIdResponseBody extends TeaModel {
             return this.deptName;
         }
 
-        public GetInstanceByIdResponseBodyActionExecutor setUserId(String userId) {
-            this.userId = userId;
-            return this;
-        }
-        public String getUserId() {
-            return this.userId;
-        }
-
         public GetInstanceByIdResponseBodyActionExecutor setEmail(String email) {
             this.email = email;
             return this;
@@ -251,9 +235,29 @@ public class GetInstanceByIdResponseBody extends TeaModel {
             return this.email;
         }
 
+        public GetInstanceByIdResponseBodyActionExecutor setName(GetInstanceByIdResponseBodyActionExecutorName name) {
+            this.name = name;
+            return this;
+        }
+        public GetInstanceByIdResponseBodyActionExecutorName getName() {
+            return this.name;
+        }
+
+        public GetInstanceByIdResponseBodyActionExecutor setUserId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+        public String getUserId() {
+            return this.userId;
+        }
+
     }
 
     public static class GetInstanceByIdResponseBodyOriginatorName extends TeaModel {
+        // 中文名称
+        @NameInMap("nameInChinese")
+        public String nameInChinese;
+
         // 英文名称
         @NameInMap("nameInEnglish")
         public String nameInEnglish;
@@ -262,13 +266,17 @@ public class GetInstanceByIdResponseBody extends TeaModel {
         @NameInMap("type")
         public String type;
 
-        // 中文名称
-        @NameInMap("nameInChinese")
-        public String nameInChinese;
-
         public static GetInstanceByIdResponseBodyOriginatorName build(java.util.Map<String, ?> map) throws Exception {
             GetInstanceByIdResponseBodyOriginatorName self = new GetInstanceByIdResponseBodyOriginatorName();
             return TeaModel.build(map, self);
+        }
+
+        public GetInstanceByIdResponseBodyOriginatorName setNameInChinese(String nameInChinese) {
+            this.nameInChinese = nameInChinese;
+            return this;
+        }
+        public String getNameInChinese() {
+            return this.nameInChinese;
         }
 
         public GetInstanceByIdResponseBodyOriginatorName setNameInEnglish(String nameInEnglish) {
@@ -287,44 +295,28 @@ public class GetInstanceByIdResponseBody extends TeaModel {
             return this.type;
         }
 
-        public GetInstanceByIdResponseBodyOriginatorName setNameInChinese(String nameInChinese) {
-            this.nameInChinese = nameInChinese;
-            return this;
-        }
-        public String getNameInChinese() {
-            return this.nameInChinese;
-        }
-
     }
 
     public static class GetInstanceByIdResponseBodyOriginator extends TeaModel {
-        // name
-        @NameInMap("name")
-        public GetInstanceByIdResponseBodyOriginatorName name;
-
         // deptName
         @NameInMap("deptName")
         public String deptName;
-
-        // userId
-        @NameInMap("userId")
-        public String userId;
 
         // email
         @NameInMap("email")
         public String email;
 
+        // name
+        @NameInMap("name")
+        public GetInstanceByIdResponseBodyOriginatorName name;
+
+        // userId
+        @NameInMap("userId")
+        public String userId;
+
         public static GetInstanceByIdResponseBodyOriginator build(java.util.Map<String, ?> map) throws Exception {
             GetInstanceByIdResponseBodyOriginator self = new GetInstanceByIdResponseBodyOriginator();
             return TeaModel.build(map, self);
-        }
-
-        public GetInstanceByIdResponseBodyOriginator setName(GetInstanceByIdResponseBodyOriginatorName name) {
-            this.name = name;
-            return this;
-        }
-        public GetInstanceByIdResponseBodyOriginatorName getName() {
-            return this.name;
         }
 
         public GetInstanceByIdResponseBodyOriginator setDeptName(String deptName) {
@@ -335,20 +327,28 @@ public class GetInstanceByIdResponseBody extends TeaModel {
             return this.deptName;
         }
 
-        public GetInstanceByIdResponseBodyOriginator setUserId(String userId) {
-            this.userId = userId;
-            return this;
-        }
-        public String getUserId() {
-            return this.userId;
-        }
-
         public GetInstanceByIdResponseBodyOriginator setEmail(String email) {
             this.email = email;
             return this;
         }
         public String getEmail() {
             return this.email;
+        }
+
+        public GetInstanceByIdResponseBodyOriginator setName(GetInstanceByIdResponseBodyOriginatorName name) {
+            this.name = name;
+            return this;
+        }
+        public GetInstanceByIdResponseBodyOriginatorName getName() {
+            return this.name;
+        }
+
+        public GetInstanceByIdResponseBodyOriginator setUserId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+        public String getUserId() {
+            return this.userId;
         }
 
     }

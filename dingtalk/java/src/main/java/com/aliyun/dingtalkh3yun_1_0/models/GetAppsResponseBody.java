@@ -8,13 +8,13 @@ public class GetAppsResponseBody extends TeaModel {
     @NameInMap("code")
     public String code;
 
-    // 提示信息
-    @NameInMap("message")
-    public String message;
-
     // 返回结果
     @NameInMap("data")
     public java.util.List<GetAppsResponseBodyData> data;
+
+    // 提示信息
+    @NameInMap("message")
+    public String message;
 
     public static GetAppsResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetAppsResponseBody self = new GetAppsResponseBody();
@@ -29,14 +29,6 @@ public class GetAppsResponseBody extends TeaModel {
         return this.code;
     }
 
-    public GetAppsResponseBody setMessage(String message) {
-        this.message = message;
-        return this;
-    }
-    public String getMessage() {
-        return this.message;
-    }
-
     public GetAppsResponseBody setData(java.util.List<GetAppsResponseBodyData> data) {
         this.data = data;
         return this;
@@ -45,14 +37,18 @@ public class GetAppsResponseBody extends TeaModel {
         return this.data;
     }
 
+    public GetAppsResponseBody setMessage(String message) {
+        this.message = message;
+        return this;
+    }
+    public String getMessage() {
+        return this.message;
+    }
+
     public static class GetAppsResponseBodyData extends TeaModel {
         // 应用编码
         @NameInMap("appCode")
         public String appCode;
-
-        // 应用显示名称
-        @NameInMap("displayName")
-        public String displayName;
 
         // 应用的来源类型。Custom=自开发的、Installed=安装的
         @NameInMap("appSource")
@@ -61,6 +57,10 @@ public class GetAppsResponseBody extends TeaModel {
         // 应用状态。Enable=启用、Forbidden=禁用、Warring=预警
         @NameInMap("appState")
         public String appState;
+
+        // 应用显示名称
+        @NameInMap("displayName")
+        public String displayName;
 
         // 应用所属的解决方案名称
         @NameInMap("solution")
@@ -79,14 +79,6 @@ public class GetAppsResponseBody extends TeaModel {
             return this.appCode;
         }
 
-        public GetAppsResponseBodyData setDisplayName(String displayName) {
-            this.displayName = displayName;
-            return this;
-        }
-        public String getDisplayName() {
-            return this.displayName;
-        }
-
         public GetAppsResponseBodyData setAppSource(String appSource) {
             this.appSource = appSource;
             return this;
@@ -101,6 +93,14 @@ public class GetAppsResponseBody extends TeaModel {
         }
         public String getAppState() {
             return this.appState;
+        }
+
+        public GetAppsResponseBodyData setDisplayName(String displayName) {
+            this.displayName = displayName;
+            return this;
+        }
+        public String getDisplayName() {
+            return this.displayName;
         }
 
         public GetAppsResponseBodyData setSolution(String solution) {

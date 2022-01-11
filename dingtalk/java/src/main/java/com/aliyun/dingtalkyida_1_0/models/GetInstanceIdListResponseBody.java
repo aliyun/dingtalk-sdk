@@ -4,29 +4,29 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetInstanceIdListResponseBody extends TeaModel {
-    // 总数量
-    @NameInMap("totalCount")
-    public Long totalCount;
+    // data
+    @NameInMap("data")
+    public java.util.List<String> data;
 
     // 当前第几页
     @NameInMap("pageNumber")
     public Long pageNumber;
 
-    // data
-    @NameInMap("data")
-    public java.util.List<String> data;
+    // 总数量
+    @NameInMap("totalCount")
+    public Long totalCount;
 
     public static GetInstanceIdListResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetInstanceIdListResponseBody self = new GetInstanceIdListResponseBody();
         return TeaModel.build(map, self);
     }
 
-    public GetInstanceIdListResponseBody setTotalCount(Long totalCount) {
-        this.totalCount = totalCount;
+    public GetInstanceIdListResponseBody setData(java.util.List<String> data) {
+        this.data = data;
         return this;
     }
-    public Long getTotalCount() {
-        return this.totalCount;
+    public java.util.List<String> getData() {
+        return this.data;
     }
 
     public GetInstanceIdListResponseBody setPageNumber(Long pageNumber) {
@@ -37,12 +37,12 @@ public class GetInstanceIdListResponseBody extends TeaModel {
         return this.pageNumber;
     }
 
-    public GetInstanceIdListResponseBody setData(java.util.List<String> data) {
-        this.data = data;
+    public GetInstanceIdListResponseBody setTotalCount(Long totalCount) {
+        this.totalCount = totalCount;
         return this;
     }
-    public java.util.List<String> getData() {
-        return this.data;
+    public Long getTotalCount() {
+        return this.totalCount;
     }
 
 }

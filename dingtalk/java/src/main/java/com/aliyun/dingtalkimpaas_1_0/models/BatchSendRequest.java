@@ -4,10 +4,6 @@ package com.aliyun.dingtalkimpaas_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchSendRequest extends TeaModel {
-    // 发送者，企业员工账号
-    @NameInMap("userId")
-    public String userId;
-
     // 接受者列表，外部用户
     @NameInMap("appUids")
     public java.util.List<String> appUids;
@@ -20,17 +16,13 @@ public class BatchSendRequest extends TeaModel {
     @NameInMap("conversationIds")
     public java.util.List<String> conversationIds;
 
+    // 发送者，企业员工账号
+    @NameInMap("userId")
+    public String userId;
+
     public static BatchSendRequest build(java.util.Map<String, ?> map) throws Exception {
         BatchSendRequest self = new BatchSendRequest();
         return TeaModel.build(map, self);
-    }
-
-    public BatchSendRequest setUserId(String userId) {
-        this.userId = userId;
-        return this;
-    }
-    public String getUserId() {
-        return this.userId;
     }
 
     public BatchSendRequest setAppUids(java.util.List<String> appUids) {
@@ -55,6 +47,14 @@ public class BatchSendRequest extends TeaModel {
     }
     public java.util.List<String> getConversationIds() {
         return this.conversationIds;
+    }
+
+    public BatchSendRequest setUserId(String userId) {
+        this.userId = userId;
+        return this;
+    }
+    public String getUserId() {
+        return this.userId;
     }
 
 }

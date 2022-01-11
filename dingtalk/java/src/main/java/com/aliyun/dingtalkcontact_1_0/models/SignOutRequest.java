@@ -4,23 +4,15 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class SignOutRequest extends TeaModel {
-    @NameInMap("userId")
-    public String userId;
-
     @NameInMap("reason")
     public String reason;
+
+    @NameInMap("userId")
+    public String userId;
 
     public static SignOutRequest build(java.util.Map<String, ?> map) throws Exception {
         SignOutRequest self = new SignOutRequest();
         return TeaModel.build(map, self);
-    }
-
-    public SignOutRequest setUserId(String userId) {
-        this.userId = userId;
-        return this;
-    }
-    public String getUserId() {
-        return this.userId;
     }
 
     public SignOutRequest setReason(String reason) {
@@ -29,6 +21,14 @@ public class SignOutRequest extends TeaModel {
     }
     public String getReason() {
         return this.reason;
+    }
+
+    public SignOutRequest setUserId(String userId) {
+        this.userId = userId;
+        return this;
+    }
+    public String getUserId() {
+        return this.userId;
     }
 
 }

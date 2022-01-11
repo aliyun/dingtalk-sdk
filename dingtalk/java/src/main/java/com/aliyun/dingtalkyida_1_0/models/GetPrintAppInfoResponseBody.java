@@ -21,25 +21,17 @@ public class GetPrintAppInfoResponseBody extends TeaModel {
     }
 
     public static class GetPrintAppInfoResponseBodyResultFormInfoList extends TeaModel {
-        // formUuid
-        @NameInMap("formUuid")
-        public String formUuid;
-
         // formName
         @NameInMap("formName")
         public String formName;
 
+        // formUuid
+        @NameInMap("formUuid")
+        public String formUuid;
+
         public static GetPrintAppInfoResponseBodyResultFormInfoList build(java.util.Map<String, ?> map) throws Exception {
             GetPrintAppInfoResponseBodyResultFormInfoList self = new GetPrintAppInfoResponseBodyResultFormInfoList();
             return TeaModel.build(map, self);
-        }
-
-        public GetPrintAppInfoResponseBodyResultFormInfoList setFormUuid(String formUuid) {
-            this.formUuid = formUuid;
-            return this;
-        }
-        public String getFormUuid() {
-            return this.formUuid;
         }
 
         public GetPrintAppInfoResponseBodyResultFormInfoList setFormName(String formName) {
@@ -50,20 +42,28 @@ public class GetPrintAppInfoResponseBody extends TeaModel {
             return this.formName;
         }
 
+        public GetPrintAppInfoResponseBodyResultFormInfoList setFormUuid(String formUuid) {
+            this.formUuid = formUuid;
+            return this;
+        }
+        public String getFormUuid() {
+            return this.formUuid;
+        }
+
     }
 
     public static class GetPrintAppInfoResponseBodyResult extends TeaModel {
-        // formInfoList
-        @NameInMap("formInfoList")
-        public java.util.List<GetPrintAppInfoResponseBodyResultFormInfoList> formInfoList;
+        // 应用名称
+        @NameInMap("appName")
+        public String appName;
 
         // appType
         @NameInMap("appType")
         public String appType;
 
-        // 应用名称
-        @NameInMap("appName")
-        public String appName;
+        // formInfoList
+        @NameInMap("formInfoList")
+        public java.util.List<GetPrintAppInfoResponseBodyResultFormInfoList> formInfoList;
 
         // 图标链接
         @NameInMap("iconUrl")
@@ -74,12 +74,12 @@ public class GetPrintAppInfoResponseBody extends TeaModel {
             return TeaModel.build(map, self);
         }
 
-        public GetPrintAppInfoResponseBodyResult setFormInfoList(java.util.List<GetPrintAppInfoResponseBodyResultFormInfoList> formInfoList) {
-            this.formInfoList = formInfoList;
+        public GetPrintAppInfoResponseBodyResult setAppName(String appName) {
+            this.appName = appName;
             return this;
         }
-        public java.util.List<GetPrintAppInfoResponseBodyResultFormInfoList> getFormInfoList() {
-            return this.formInfoList;
+        public String getAppName() {
+            return this.appName;
         }
 
         public GetPrintAppInfoResponseBodyResult setAppType(String appType) {
@@ -90,12 +90,12 @@ public class GetPrintAppInfoResponseBody extends TeaModel {
             return this.appType;
         }
 
-        public GetPrintAppInfoResponseBodyResult setAppName(String appName) {
-            this.appName = appName;
+        public GetPrintAppInfoResponseBodyResult setFormInfoList(java.util.List<GetPrintAppInfoResponseBodyResultFormInfoList> formInfoList) {
+            this.formInfoList = formInfoList;
             return this;
         }
-        public String getAppName() {
-            return this.appName;
+        public java.util.List<GetPrintAppInfoResponseBodyResultFormInfoList> getFormInfoList() {
+            return this.formInfoList;
         }
 
         public GetPrintAppInfoResponseBodyResult setIconUrl(String iconUrl) {

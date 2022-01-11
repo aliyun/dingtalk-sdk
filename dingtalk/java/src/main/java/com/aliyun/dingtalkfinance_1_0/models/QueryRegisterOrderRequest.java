@@ -8,17 +8,17 @@ public class QueryRegisterOrderRequest extends TeaModel {
     @NameInMap("instId")
     public String instId;
 
-    // 子机构编号
-    @NameInMap("subInstId")
-    public String subInstId;
+    // 申请单号，和外部流水号至少一个必填
+    @NameInMap("orderId")
+    public String orderId;
 
     // 外部流水号，和申请单编号至少一个必填
     @NameInMap("outTradeNo")
     public String outTradeNo;
 
-    // 申请单号，和外部流水号至少一个必填
-    @NameInMap("orderId")
-    public String orderId;
+    // 子机构编号
+    @NameInMap("subInstId")
+    public String subInstId;
 
     public static QueryRegisterOrderRequest build(java.util.Map<String, ?> map) throws Exception {
         QueryRegisterOrderRequest self = new QueryRegisterOrderRequest();
@@ -33,12 +33,12 @@ public class QueryRegisterOrderRequest extends TeaModel {
         return this.instId;
     }
 
-    public QueryRegisterOrderRequest setSubInstId(String subInstId) {
-        this.subInstId = subInstId;
+    public QueryRegisterOrderRequest setOrderId(String orderId) {
+        this.orderId = orderId;
         return this;
     }
-    public String getSubInstId() {
-        return this.subInstId;
+    public String getOrderId() {
+        return this.orderId;
     }
 
     public QueryRegisterOrderRequest setOutTradeNo(String outTradeNo) {
@@ -49,12 +49,12 @@ public class QueryRegisterOrderRequest extends TeaModel {
         return this.outTradeNo;
     }
 
-    public QueryRegisterOrderRequest setOrderId(String orderId) {
-        this.orderId = orderId;
+    public QueryRegisterOrderRequest setSubInstId(String subInstId) {
+        this.subInstId = subInstId;
         return this;
     }
-    public String getOrderId() {
-        return this.orderId;
+    public String getSubInstId() {
+        return this.subInstId;
     }
 
 }

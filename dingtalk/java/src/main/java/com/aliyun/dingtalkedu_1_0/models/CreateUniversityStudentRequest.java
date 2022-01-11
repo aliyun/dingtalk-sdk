@@ -4,10 +4,6 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateUniversityStudentRequest extends TeaModel {
-    // 学号
-    @NameInMap("studentNumber")
-    public String studentNumber;
-
     // 班级id
     @NameInMap("classId")
     public Long classId;
@@ -15,6 +11,10 @@ public class CreateUniversityStudentRequest extends TeaModel {
     // 性别
     @NameInMap("gender")
     public String gender;
+
+    // 身份证号
+    @NameInMap("identityNumber")
+    public String identityNumber;
 
     // 电话
     @NameInMap("mobile")
@@ -24,9 +24,9 @@ public class CreateUniversityStudentRequest extends TeaModel {
     @NameInMap("name")
     public String name;
 
-    // 身份证号
-    @NameInMap("identityNumber")
-    public String identityNumber;
+    // 学号
+    @NameInMap("studentNumber")
+    public String studentNumber;
 
     // opUserId
     @NameInMap("opUserId")
@@ -35,14 +35,6 @@ public class CreateUniversityStudentRequest extends TeaModel {
     public static CreateUniversityStudentRequest build(java.util.Map<String, ?> map) throws Exception {
         CreateUniversityStudentRequest self = new CreateUniversityStudentRequest();
         return TeaModel.build(map, self);
-    }
-
-    public CreateUniversityStudentRequest setStudentNumber(String studentNumber) {
-        this.studentNumber = studentNumber;
-        return this;
-    }
-    public String getStudentNumber() {
-        return this.studentNumber;
     }
 
     public CreateUniversityStudentRequest setClassId(Long classId) {
@@ -61,6 +53,14 @@ public class CreateUniversityStudentRequest extends TeaModel {
         return this.gender;
     }
 
+    public CreateUniversityStudentRequest setIdentityNumber(String identityNumber) {
+        this.identityNumber = identityNumber;
+        return this;
+    }
+    public String getIdentityNumber() {
+        return this.identityNumber;
+    }
+
     public CreateUniversityStudentRequest setMobile(String mobile) {
         this.mobile = mobile;
         return this;
@@ -77,12 +77,12 @@ public class CreateUniversityStudentRequest extends TeaModel {
         return this.name;
     }
 
-    public CreateUniversityStudentRequest setIdentityNumber(String identityNumber) {
-        this.identityNumber = identityNumber;
+    public CreateUniversityStudentRequest setStudentNumber(String studentNumber) {
+        this.studentNumber = studentNumber;
         return this;
     }
-    public String getIdentityNumber() {
-        return this.identityNumber;
+    public String getStudentNumber() {
+        return this.studentNumber;
     }
 
     public CreateUniversityStudentRequest setOpUserId(String opUserId) {

@@ -4,13 +4,17 @@ package com.aliyun.dingtalkrobot_1_0.models;
 import com.aliyun.tea.*;
 
 public class OrgGroupSendRequest extends TeaModel {
-    // 消息体
-    @NameInMap("msgParam")
-    public String msgParam;
+    // 酷应用的code
+    @NameInMap("coolAppCode")
+    public String coolAppCode;
 
     // 消息类型的key
     @NameInMap("msgKey")
     public String msgKey;
+
+    // 消息体
+    @NameInMap("msgParam")
+    public String msgParam;
 
     // 开放的群id
     @NameInMap("openConversationId")
@@ -24,39 +28,17 @@ public class OrgGroupSendRequest extends TeaModel {
     @NameInMap("token")
     public String token;
 
-    // 酷应用的code
-    @NameInMap("coolAppCode")
-    public String coolAppCode;
-
-    @NameInMap("dingTokenGrantType")
-    public Long dingTokenGrantType;
-
-    @NameInMap("dingOrgId")
-    public Long dingOrgId;
-
-    @NameInMap("dingCorpId")
-    public String dingCorpId;
-
-    @NameInMap("dingIsvOrgId")
-    public Long dingIsvOrgId;
-
-    @NameInMap("dingSuiteKey")
-    public String dingSuiteKey;
-
-    @NameInMap("dingClientId")
-    public String dingClientId;
-
     public static OrgGroupSendRequest build(java.util.Map<String, ?> map) throws Exception {
         OrgGroupSendRequest self = new OrgGroupSendRequest();
         return TeaModel.build(map, self);
     }
 
-    public OrgGroupSendRequest setMsgParam(String msgParam) {
-        this.msgParam = msgParam;
+    public OrgGroupSendRequest setCoolAppCode(String coolAppCode) {
+        this.coolAppCode = coolAppCode;
         return this;
     }
-    public String getMsgParam() {
-        return this.msgParam;
+    public String getCoolAppCode() {
+        return this.coolAppCode;
     }
 
     public OrgGroupSendRequest setMsgKey(String msgKey) {
@@ -65,6 +47,14 @@ public class OrgGroupSendRequest extends TeaModel {
     }
     public String getMsgKey() {
         return this.msgKey;
+    }
+
+    public OrgGroupSendRequest setMsgParam(String msgParam) {
+        this.msgParam = msgParam;
+        return this;
+    }
+    public String getMsgParam() {
+        return this.msgParam;
     }
 
     public OrgGroupSendRequest setOpenConversationId(String openConversationId) {
@@ -89,62 +79,6 @@ public class OrgGroupSendRequest extends TeaModel {
     }
     public String getToken() {
         return this.token;
-    }
-
-    public OrgGroupSendRequest setCoolAppCode(String coolAppCode) {
-        this.coolAppCode = coolAppCode;
-        return this;
-    }
-    public String getCoolAppCode() {
-        return this.coolAppCode;
-    }
-
-    public OrgGroupSendRequest setDingTokenGrantType(Long dingTokenGrantType) {
-        this.dingTokenGrantType = dingTokenGrantType;
-        return this;
-    }
-    public Long getDingTokenGrantType() {
-        return this.dingTokenGrantType;
-    }
-
-    public OrgGroupSendRequest setDingOrgId(Long dingOrgId) {
-        this.dingOrgId = dingOrgId;
-        return this;
-    }
-    public Long getDingOrgId() {
-        return this.dingOrgId;
-    }
-
-    public OrgGroupSendRequest setDingCorpId(String dingCorpId) {
-        this.dingCorpId = dingCorpId;
-        return this;
-    }
-    public String getDingCorpId() {
-        return this.dingCorpId;
-    }
-
-    public OrgGroupSendRequest setDingIsvOrgId(Long dingIsvOrgId) {
-        this.dingIsvOrgId = dingIsvOrgId;
-        return this;
-    }
-    public Long getDingIsvOrgId() {
-        return this.dingIsvOrgId;
-    }
-
-    public OrgGroupSendRequest setDingSuiteKey(String dingSuiteKey) {
-        this.dingSuiteKey = dingSuiteKey;
-        return this;
-    }
-    public String getDingSuiteKey() {
-        return this.dingSuiteKey;
-    }
-
-    public OrgGroupSendRequest setDingClientId(String dingClientId) {
-        this.dingClientId = dingClientId;
-        return this;
-    }
-    public String getDingClientId() {
-        return this.dingClientId;
     }
 
 }

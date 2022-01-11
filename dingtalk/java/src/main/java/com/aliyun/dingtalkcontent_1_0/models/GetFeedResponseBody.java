@@ -34,6 +34,14 @@ public class GetFeedResponseBody extends TeaModel {
     }
 
     public static class GetFeedResponseBodyFeedItem extends TeaModel {
+        // 子内容的持续时长，单位为毫秒
+        @NameInMap("durationMillis")
+        public Long durationMillis;
+
+        // 内容类型，0表示直播，1表示图文，2表示视频，3表示音频
+        @NameInMap("feedContentType")
+        public Integer feedContentType;
+
         // 子内容Id
         @NameInMap("itemId")
         public String itemId;
@@ -42,14 +50,6 @@ public class GetFeedResponseBody extends TeaModel {
         @NameInMap("title")
         public String title;
 
-        // 内容类型，0表示直播，1表示图文，2表示视频，3表示音频
-        @NameInMap("feedContentType")
-        public Integer feedContentType;
-
-        // 子内容的持续时长，单位为毫秒
-        @NameInMap("durationMillis")
-        public Long durationMillis;
-
         // 子内容的跳转链接
         @NameInMap("url")
         public String url;
@@ -57,6 +57,22 @@ public class GetFeedResponseBody extends TeaModel {
         public static GetFeedResponseBodyFeedItem build(java.util.Map<String, ?> map) throws Exception {
             GetFeedResponseBodyFeedItem self = new GetFeedResponseBodyFeedItem();
             return TeaModel.build(map, self);
+        }
+
+        public GetFeedResponseBodyFeedItem setDurationMillis(Long durationMillis) {
+            this.durationMillis = durationMillis;
+            return this;
+        }
+        public Long getDurationMillis() {
+            return this.durationMillis;
+        }
+
+        public GetFeedResponseBodyFeedItem setFeedContentType(Integer feedContentType) {
+            this.feedContentType = feedContentType;
+            return this;
+        }
+        public Integer getFeedContentType() {
+            return this.feedContentType;
         }
 
         public GetFeedResponseBodyFeedItem setItemId(String itemId) {
@@ -73,22 +89,6 @@ public class GetFeedResponseBody extends TeaModel {
         }
         public String getTitle() {
             return this.title;
-        }
-
-        public GetFeedResponseBodyFeedItem setFeedContentType(Integer feedContentType) {
-            this.feedContentType = feedContentType;
-            return this;
-        }
-        public Integer getFeedContentType() {
-            return this.feedContentType;
-        }
-
-        public GetFeedResponseBodyFeedItem setDurationMillis(Long durationMillis) {
-            this.durationMillis = durationMillis;
-            return this;
-        }
-        public Long getDurationMillis() {
-            return this.durationMillis;
         }
 
         public GetFeedResponseBodyFeedItem setUrl(String url) {

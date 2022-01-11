@@ -20,6 +20,10 @@ public class AddCityCarApplyRequest extends TeaModel {
     @NameInMap("date")
     public String date;
 
+    // 用车截止时间，按天管控，比如date传值2021-03-18 20:26:56、finished_date传值2021-03-30 20:26:56表示2021-03-18(含)到2021-03-30(含)之间可用车，该参数不传值情况使用date作为用车截止时间；
+    @NameInMap("finishedDate")
+    public String finishedDate;
+
     // 审批单关联的项目code
     @NameInMap("projectCode")
     public String projectCode;
@@ -64,22 +68,6 @@ public class AddCityCarApplyRequest extends TeaModel {
     @NameInMap("userId")
     public String userId;
 
-    // suiteKey
-    @NameInMap("dingSuiteKey")
-    public String dingSuiteKey;
-
-    // account
-    @NameInMap("dingCorpId")
-    public String dingCorpId;
-
-    // tokenGrantType
-    @NameInMap("dingTokenGrantType")
-    public Long dingTokenGrantType;
-
-    // 用车截止时间，按天管控，比如date传值2021-03-18 20:26:56、finished_date传值2021-03-30 20:26:56表示2021-03-18(含)到2021-03-30(含)之间可用车，该参数不传值情况使用date作为用车截止时间；
-    @NameInMap("finishedDate")
-    public String finishedDate;
-
     public static AddCityCarApplyRequest build(java.util.Map<String, ?> map) throws Exception {
         AddCityCarApplyRequest self = new AddCityCarApplyRequest();
         return TeaModel.build(map, self);
@@ -115,6 +103,14 @@ public class AddCityCarApplyRequest extends TeaModel {
     }
     public String getDate() {
         return this.date;
+    }
+
+    public AddCityCarApplyRequest setFinishedDate(String finishedDate) {
+        this.finishedDate = finishedDate;
+        return this;
+    }
+    public String getFinishedDate() {
+        return this.finishedDate;
     }
 
     public AddCityCarApplyRequest setProjectCode(String projectCode) {
@@ -203,38 +199,6 @@ public class AddCityCarApplyRequest extends TeaModel {
     }
     public String getUserId() {
         return this.userId;
-    }
-
-    public AddCityCarApplyRequest setDingSuiteKey(String dingSuiteKey) {
-        this.dingSuiteKey = dingSuiteKey;
-        return this;
-    }
-    public String getDingSuiteKey() {
-        return this.dingSuiteKey;
-    }
-
-    public AddCityCarApplyRequest setDingCorpId(String dingCorpId) {
-        this.dingCorpId = dingCorpId;
-        return this;
-    }
-    public String getDingCorpId() {
-        return this.dingCorpId;
-    }
-
-    public AddCityCarApplyRequest setDingTokenGrantType(Long dingTokenGrantType) {
-        this.dingTokenGrantType = dingTokenGrantType;
-        return this;
-    }
-    public Long getDingTokenGrantType() {
-        return this.dingTokenGrantType;
-    }
-
-    public AddCityCarApplyRequest setFinishedDate(String finishedDate) {
-        this.finishedDate = finishedDate;
-        return this;
-    }
-    public String getFinishedDate() {
-        return this.finishedDate;
     }
 
 }

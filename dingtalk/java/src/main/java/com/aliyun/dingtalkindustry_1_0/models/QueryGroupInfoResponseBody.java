@@ -22,10 +22,6 @@ public class QueryGroupInfoResponseBody extends TeaModel {
     }
 
     public static class QueryGroupInfoResponseBodyContentLeaderJob extends TeaModel {
-        // 标签Code
-        @NameInMap("code")
-        public String code;
-
         // 业务类型
         @NameInMap("bizType")
         public String bizType;
@@ -34,6 +30,10 @@ public class QueryGroupInfoResponseBody extends TeaModel {
         @NameInMap("category")
         public String category;
 
+        // 标签Code
+        @NameInMap("code")
+        public String code;
+
         // 展示名称
         @NameInMap("displayName")
         public String displayName;
@@ -41,14 +41,6 @@ public class QueryGroupInfoResponseBody extends TeaModel {
         public static QueryGroupInfoResponseBodyContentLeaderJob build(java.util.Map<String, ?> map) throws Exception {
             QueryGroupInfoResponseBodyContentLeaderJob self = new QueryGroupInfoResponseBodyContentLeaderJob();
             return TeaModel.build(map, self);
-        }
-
-        public QueryGroupInfoResponseBodyContentLeaderJob setCode(String code) {
-            this.code = code;
-            return this;
-        }
-        public String getCode() {
-            return this.code;
         }
 
         public QueryGroupInfoResponseBodyContentLeaderJob setBizType(String bizType) {
@@ -67,6 +59,14 @@ public class QueryGroupInfoResponseBody extends TeaModel {
             return this.category;
         }
 
+        public QueryGroupInfoResponseBodyContentLeaderJob setCode(String code) {
+            this.code = code;
+            return this;
+        }
+        public String getCode() {
+            return this.code;
+        }
+
         public QueryGroupInfoResponseBodyContentLeaderJob setDisplayName(String displayName) {
             this.displayName = displayName;
             return this;
@@ -78,6 +78,14 @@ public class QueryGroupInfoResponseBody extends TeaModel {
     }
 
     public static class QueryGroupInfoResponseBodyContentLeader extends TeaModel {
+        // 工作标签
+        @NameInMap("job")
+        public QueryGroupInfoResponseBodyContentLeaderJob job;
+
+        // 工号
+        @NameInMap("jobNumber")
+        public String jobNumber;
+
         // 姓名
         @NameInMap("name")
         public String name;
@@ -86,17 +94,25 @@ public class QueryGroupInfoResponseBody extends TeaModel {
         @NameInMap("userId")
         public String userId;
 
-        // 工号
-        @NameInMap("jobNumber")
-        public String jobNumber;
-
-        // 工作标签
-        @NameInMap("job")
-        public QueryGroupInfoResponseBodyContentLeaderJob job;
-
         public static QueryGroupInfoResponseBodyContentLeader build(java.util.Map<String, ?> map) throws Exception {
             QueryGroupInfoResponseBodyContentLeader self = new QueryGroupInfoResponseBodyContentLeader();
             return TeaModel.build(map, self);
+        }
+
+        public QueryGroupInfoResponseBodyContentLeader setJob(QueryGroupInfoResponseBodyContentLeaderJob job) {
+            this.job = job;
+            return this;
+        }
+        public QueryGroupInfoResponseBodyContentLeaderJob getJob() {
+            return this.job;
+        }
+
+        public QueryGroupInfoResponseBodyContentLeader setJobNumber(String jobNumber) {
+            this.jobNumber = jobNumber;
+            return this;
+        }
+        public String getJobNumber() {
+            return this.jobNumber;
         }
 
         public QueryGroupInfoResponseBodyContentLeader setName(String name) {
@@ -115,68 +131,36 @@ public class QueryGroupInfoResponseBody extends TeaModel {
             return this.userId;
         }
 
-        public QueryGroupInfoResponseBodyContentLeader setJobNumber(String jobNumber) {
-            this.jobNumber = jobNumber;
-            return this;
-        }
-        public String getJobNumber() {
-            return this.jobNumber;
-        }
-
-        public QueryGroupInfoResponseBodyContentLeader setJob(QueryGroupInfoResponseBodyContentLeaderJob job) {
-            this.job = job;
-            return this;
-        }
-        public QueryGroupInfoResponseBodyContentLeaderJob getJob() {
-            return this.job;
-        }
-
     }
 
     public static class QueryGroupInfoResponseBodyContent extends TeaModel {
-        // 医疗组Id
-        @NameInMap("id")
-        public Long id;
-
-        // 医疗组名称
-        @NameInMap("name")
-        public String name;
-
         // 科室Id
         @NameInMap("deptId")
         public Long deptId;
-
-        // 医疗组组长
-        @NameInMap("leader")
-        public QueryGroupInfoResponseBodyContentLeader leader;
-
-        // 有效期开始时间
-        @NameInMap("startTime")
-        public Long startTime;
 
         // 有效期结束时间
         @NameInMap("endTime")
         public Long endTime;
 
+        // 医疗组Id
+        @NameInMap("id")
+        public Long id;
+
+        // 医疗组组长
+        @NameInMap("leader")
+        public QueryGroupInfoResponseBodyContentLeader leader;
+
+        // 医疗组名称
+        @NameInMap("name")
+        public String name;
+
+        // 有效期开始时间
+        @NameInMap("startTime")
+        public Long startTime;
+
         public static QueryGroupInfoResponseBodyContent build(java.util.Map<String, ?> map) throws Exception {
             QueryGroupInfoResponseBodyContent self = new QueryGroupInfoResponseBodyContent();
             return TeaModel.build(map, self);
-        }
-
-        public QueryGroupInfoResponseBodyContent setId(Long id) {
-            this.id = id;
-            return this;
-        }
-        public Long getId() {
-            return this.id;
-        }
-
-        public QueryGroupInfoResponseBodyContent setName(String name) {
-            this.name = name;
-            return this;
-        }
-        public String getName() {
-            return this.name;
         }
 
         public QueryGroupInfoResponseBodyContent setDeptId(Long deptId) {
@@ -187,6 +171,22 @@ public class QueryGroupInfoResponseBody extends TeaModel {
             return this.deptId;
         }
 
+        public QueryGroupInfoResponseBodyContent setEndTime(Long endTime) {
+            this.endTime = endTime;
+            return this;
+        }
+        public Long getEndTime() {
+            return this.endTime;
+        }
+
+        public QueryGroupInfoResponseBodyContent setId(Long id) {
+            this.id = id;
+            return this;
+        }
+        public Long getId() {
+            return this.id;
+        }
+
         public QueryGroupInfoResponseBodyContent setLeader(QueryGroupInfoResponseBodyContentLeader leader) {
             this.leader = leader;
             return this;
@@ -195,20 +195,20 @@ public class QueryGroupInfoResponseBody extends TeaModel {
             return this.leader;
         }
 
+        public QueryGroupInfoResponseBodyContent setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
         public QueryGroupInfoResponseBodyContent setStartTime(Long startTime) {
             this.startTime = startTime;
             return this;
         }
         public Long getStartTime() {
             return this.startTime;
-        }
-
-        public QueryGroupInfoResponseBodyContent setEndTime(Long endTime) {
-            this.endTime = endTime;
-            return this;
-        }
-        public Long getEndTime() {
-            return this.endTime;
         }
 
     }

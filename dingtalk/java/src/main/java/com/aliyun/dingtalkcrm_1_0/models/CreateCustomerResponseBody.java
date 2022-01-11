@@ -4,6 +4,10 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateCustomerResponseBody extends TeaModel {
+    // 联系人保存结果
+    @NameInMap("contacts")
+    public java.util.List<CreateCustomerResponseBodyContacts> contacts;
+
     // 客户实例id
     @NameInMap("customerInstanceId")
     public String customerInstanceId;
@@ -12,13 +16,17 @@ public class CreateCustomerResponseBody extends TeaModel {
     @NameInMap("objectType")
     public String objectType;
 
-    // 联系人保存结果
-    @NameInMap("contacts")
-    public java.util.List<CreateCustomerResponseBodyContacts> contacts;
-
     public static CreateCustomerResponseBody build(java.util.Map<String, ?> map) throws Exception {
         CreateCustomerResponseBody self = new CreateCustomerResponseBody();
         return TeaModel.build(map, self);
+    }
+
+    public CreateCustomerResponseBody setContacts(java.util.List<CreateCustomerResponseBodyContacts> contacts) {
+        this.contacts = contacts;
+        return this;
+    }
+    public java.util.List<CreateCustomerResponseBodyContacts> getContacts() {
+        return this.contacts;
     }
 
     public CreateCustomerResponseBody setCustomerInstanceId(String customerInstanceId) {
@@ -35,14 +43,6 @@ public class CreateCustomerResponseBody extends TeaModel {
     }
     public String getObjectType() {
         return this.objectType;
-    }
-
-    public CreateCustomerResponseBody setContacts(java.util.List<CreateCustomerResponseBodyContacts> contacts) {
-        this.contacts = contacts;
-        return this;
-    }
-    public java.util.List<CreateCustomerResponseBodyContacts> getContacts() {
-        return this.contacts;
     }
 
     public static class CreateCustomerResponseBodyContacts extends TeaModel {

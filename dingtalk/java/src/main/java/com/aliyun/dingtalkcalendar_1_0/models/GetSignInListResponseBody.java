@@ -34,28 +34,28 @@ public class GetSignInListResponseBody extends TeaModel {
     }
 
     public static class GetSignInListResponseBodyUsers extends TeaModel {
-        @NameInMap("userId")
-        public String userId;
+        // 签到时间
+        @NameInMap("checkInTime")
+        public Long checkInTime;
 
         // 用户名
         @NameInMap("displayName")
         public String displayName;
 
-        // 签到时间
-        @NameInMap("checkInTime")
-        public Long checkInTime;
+        @NameInMap("userId")
+        public String userId;
 
         public static GetSignInListResponseBodyUsers build(java.util.Map<String, ?> map) throws Exception {
             GetSignInListResponseBodyUsers self = new GetSignInListResponseBodyUsers();
             return TeaModel.build(map, self);
         }
 
-        public GetSignInListResponseBodyUsers setUserId(String userId) {
-            this.userId = userId;
+        public GetSignInListResponseBodyUsers setCheckInTime(Long checkInTime) {
+            this.checkInTime = checkInTime;
             return this;
         }
-        public String getUserId() {
-            return this.userId;
+        public Long getCheckInTime() {
+            return this.checkInTime;
         }
 
         public GetSignInListResponseBodyUsers setDisplayName(String displayName) {
@@ -66,12 +66,12 @@ public class GetSignInListResponseBody extends TeaModel {
             return this.displayName;
         }
 
-        public GetSignInListResponseBodyUsers setCheckInTime(Long checkInTime) {
-            this.checkInTime = checkInTime;
+        public GetSignInListResponseBodyUsers setUserId(String userId) {
+            this.userId = userId;
             return this;
         }
-        public Long getCheckInTime() {
-            return this.checkInTime;
+        public String getUserId() {
+            return this.userId;
         }
 
     }

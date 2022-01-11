@@ -4,6 +4,10 @@ package com.aliyun.dingtalkmicro_app_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddMemberToAppRoleRequest extends TeaModel {
+    // 部门id列表
+    @NameInMap("deptIdList")
+    public java.util.List<Long> deptIdList;
+
     // 执行用户userId
     @NameInMap("opUserId")
     public String opUserId;
@@ -12,10 +16,6 @@ public class AddMemberToAppRoleRequest extends TeaModel {
     @NameInMap("scopeVersion")
     public Long scopeVersion;
 
-    // 部门id列表
-    @NameInMap("deptIdList")
-    public java.util.List<Long> deptIdList;
-
     // 员工userId列表
     @NameInMap("userIdList")
     public java.util.List<String> userIdList;
@@ -23,6 +23,14 @@ public class AddMemberToAppRoleRequest extends TeaModel {
     public static AddMemberToAppRoleRequest build(java.util.Map<String, ?> map) throws Exception {
         AddMemberToAppRoleRequest self = new AddMemberToAppRoleRequest();
         return TeaModel.build(map, self);
+    }
+
+    public AddMemberToAppRoleRequest setDeptIdList(java.util.List<Long> deptIdList) {
+        this.deptIdList = deptIdList;
+        return this;
+    }
+    public java.util.List<Long> getDeptIdList() {
+        return this.deptIdList;
     }
 
     public AddMemberToAppRoleRequest setOpUserId(String opUserId) {
@@ -39,14 +47,6 @@ public class AddMemberToAppRoleRequest extends TeaModel {
     }
     public Long getScopeVersion() {
         return this.scopeVersion;
-    }
-
-    public AddMemberToAppRoleRequest setDeptIdList(java.util.List<Long> deptIdList) {
-        this.deptIdList = deptIdList;
-        return this;
-    }
-    public java.util.List<Long> getDeptIdList() {
-        return this.deptIdList;
     }
 
     public AddMemberToAppRoleRequest setUserIdList(java.util.List<String> userIdList) {

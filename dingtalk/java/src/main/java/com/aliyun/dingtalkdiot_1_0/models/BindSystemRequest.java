@@ -4,10 +4,6 @@ package com.aliyun.dingtalkdiot_1_0.models;
 import com.aliyun.tea.*;
 
 public class BindSystemRequest extends TeaModel {
-    // 三方平台的用户的钉钉物联组织ID。
-    @NameInMap("corpId")
-    public String corpId;
-
     // 与三方平台绑定验证的临时授权码。
     @NameInMap("authCode")
     public String authCode;
@@ -20,6 +16,10 @@ public class BindSystemRequest extends TeaModel {
     @NameInMap("clientName")
     public String clientName;
 
+    // 三方平台的用户的钉钉物联组织ID。
+    @NameInMap("corpId")
+    public String corpId;
+
     // 三方平台协定的其它参数。
     @NameInMap("extraData")
     public java.util.Map<String, ?> extraData;
@@ -27,14 +27,6 @@ public class BindSystemRequest extends TeaModel {
     public static BindSystemRequest build(java.util.Map<String, ?> map) throws Exception {
         BindSystemRequest self = new BindSystemRequest();
         return TeaModel.build(map, self);
-    }
-
-    public BindSystemRequest setCorpId(String corpId) {
-        this.corpId = corpId;
-        return this;
-    }
-    public String getCorpId() {
-        return this.corpId;
     }
 
     public BindSystemRequest setAuthCode(String authCode) {
@@ -59,6 +51,14 @@ public class BindSystemRequest extends TeaModel {
     }
     public String getClientName() {
         return this.clientName;
+    }
+
+    public BindSystemRequest setCorpId(String corpId) {
+        this.corpId = corpId;
+        return this;
+    }
+    public String getCorpId() {
+        return this.corpId;
     }
 
     public BindSystemRequest setExtraData(java.util.Map<String, ?> extraData) {

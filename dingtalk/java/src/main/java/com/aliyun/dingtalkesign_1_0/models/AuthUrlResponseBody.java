@@ -4,11 +4,11 @@ package com.aliyun.dingtalkesign_1_0.models;
 import com.aliyun.tea.*;
 
 public class AuthUrlResponseBody extends TeaModel {
-    @NameInMap("data")
-    public AuthUrlResponseBodyData data;
-
     @NameInMap("code")
     public Integer code;
+
+    @NameInMap("data")
+    public AuthUrlResponseBodyData data;
 
     @NameInMap("message")
     public String message;
@@ -18,20 +18,20 @@ public class AuthUrlResponseBody extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public AuthUrlResponseBody setData(AuthUrlResponseBodyData data) {
-        this.data = data;
-        return this;
-    }
-    public AuthUrlResponseBodyData getData() {
-        return this.data;
-    }
-
     public AuthUrlResponseBody setCode(Integer code) {
         this.code = code;
         return this;
     }
     public Integer getCode() {
         return this.code;
+    }
+
+    public AuthUrlResponseBody setData(AuthUrlResponseBodyData data) {
+        this.data = data;
+        return this;
+    }
+    public AuthUrlResponseBodyData getData() {
+        return this.data;
     }
 
     public AuthUrlResponseBody setMessage(String message) {
@@ -43,26 +43,18 @@ public class AuthUrlResponseBody extends TeaModel {
     }
 
     public static class AuthUrlResponseBodyData extends TeaModel {
-        @NameInMap("taskId")
-        public String taskId;
-
         @NameInMap("mobileUrl")
         public String mobileUrl;
 
         @NameInMap("pcUrl")
         public String pcUrl;
 
+        @NameInMap("taskId")
+        public String taskId;
+
         public static AuthUrlResponseBodyData build(java.util.Map<String, ?> map) throws Exception {
             AuthUrlResponseBodyData self = new AuthUrlResponseBodyData();
             return TeaModel.build(map, self);
-        }
-
-        public AuthUrlResponseBodyData setTaskId(String taskId) {
-            this.taskId = taskId;
-            return this;
-        }
-        public String getTaskId() {
-            return this.taskId;
         }
 
         public AuthUrlResponseBodyData setMobileUrl(String mobileUrl) {
@@ -79,6 +71,14 @@ public class AuthUrlResponseBody extends TeaModel {
         }
         public String getPcUrl() {
             return this.pcUrl;
+        }
+
+        public AuthUrlResponseBodyData setTaskId(String taskId) {
+            this.taskId = taskId;
+            return this;
+        }
+        public String getTaskId() {
+            return this.taskId;
         }
 
     }

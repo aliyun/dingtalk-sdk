@@ -22,10 +22,6 @@ public class GetUserHolidaysResponseBody extends TeaModel {
     }
 
     public static class GetUserHolidaysResponseBodyResultHolidays extends TeaModel {
-        // 日期
-        @NameInMap("workDate")
-        public Long workDate;
-
         // 假期名称
         @NameInMap("holidayName")
         public String holidayName;
@@ -38,17 +34,13 @@ public class GetUserHolidaysResponseBody extends TeaModel {
         @NameInMap("realWorkDate")
         public Long realWorkDate;
 
+        // 日期
+        @NameInMap("workDate")
+        public Long workDate;
+
         public static GetUserHolidaysResponseBodyResultHolidays build(java.util.Map<String, ?> map) throws Exception {
             GetUserHolidaysResponseBodyResultHolidays self = new GetUserHolidaysResponseBodyResultHolidays();
             return TeaModel.build(map, self);
-        }
-
-        public GetUserHolidaysResponseBodyResultHolidays setWorkDate(Long workDate) {
-            this.workDate = workDate;
-            return this;
-        }
-        public Long getWorkDate() {
-            return this.workDate;
         }
 
         public GetUserHolidaysResponseBodyResultHolidays setHolidayName(String holidayName) {
@@ -75,28 +67,28 @@ public class GetUserHolidaysResponseBody extends TeaModel {
             return this.realWorkDate;
         }
 
+        public GetUserHolidaysResponseBodyResultHolidays setWorkDate(Long workDate) {
+            this.workDate = workDate;
+            return this;
+        }
+        public Long getWorkDate() {
+            return this.workDate;
+        }
+
     }
 
     public static class GetUserHolidaysResponseBodyResult extends TeaModel {
-        // 员工id
-        @NameInMap("userId")
-        public String userId;
-
         // 假期列表
         @NameInMap("holidays")
         public java.util.List<GetUserHolidaysResponseBodyResultHolidays> holidays;
 
+        // 员工id
+        @NameInMap("userId")
+        public String userId;
+
         public static GetUserHolidaysResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             GetUserHolidaysResponseBodyResult self = new GetUserHolidaysResponseBodyResult();
             return TeaModel.build(map, self);
-        }
-
-        public GetUserHolidaysResponseBodyResult setUserId(String userId) {
-            this.userId = userId;
-            return this;
-        }
-        public String getUserId() {
-            return this.userId;
         }
 
         public GetUserHolidaysResponseBodyResult setHolidays(java.util.List<GetUserHolidaysResponseBodyResultHolidays> holidays) {
@@ -105,6 +97,14 @@ public class GetUserHolidaysResponseBody extends TeaModel {
         }
         public java.util.List<GetUserHolidaysResponseBodyResultHolidays> getHolidays() {
             return this.holidays;
+        }
+
+        public GetUserHolidaysResponseBodyResult setUserId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+        public String getUserId() {
+            return this.userId;
         }
 
     }

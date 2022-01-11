@@ -16,6 +16,10 @@ public class BatchCreateRequest extends TeaModel {
     @NameInMap("identifier")
     public String identifier;
 
+    // 小程序版本号
+    @NameInMap("jsVersion")
+    public Integer jsVersion;
+
     // isv业务类型
     @NameInMap("sourceType")
     public String sourceType;
@@ -23,14 +27,6 @@ public class BatchCreateRequest extends TeaModel {
     // 老师用户id
     @NameInMap("userid")
     public String userid;
-
-    // 老师corpId
-    @NameInMap("dingCorpId")
-    public String dingCorpId;
-
-    // 小程序版本号
-    @NameInMap("jsVersion")
-    public Integer jsVersion;
 
     public static BatchCreateRequest build(java.util.Map<String, ?> map) throws Exception {
         BatchCreateRequest self = new BatchCreateRequest();
@@ -61,6 +57,14 @@ public class BatchCreateRequest extends TeaModel {
         return this.identifier;
     }
 
+    public BatchCreateRequest setJsVersion(Integer jsVersion) {
+        this.jsVersion = jsVersion;
+        return this;
+    }
+    public Integer getJsVersion() {
+        return this.jsVersion;
+    }
+
     public BatchCreateRequest setSourceType(String sourceType) {
         this.sourceType = sourceType;
         return this;
@@ -77,38 +81,22 @@ public class BatchCreateRequest extends TeaModel {
         return this.userid;
     }
 
-    public BatchCreateRequest setDingCorpId(String dingCorpId) {
-        this.dingCorpId = dingCorpId;
-        return this;
-    }
-    public String getDingCorpId() {
-        return this.dingCorpId;
-    }
-
-    public BatchCreateRequest setJsVersion(Integer jsVersion) {
-        this.jsVersion = jsVersion;
-        return this;
-    }
-    public Integer getJsVersion() {
-        return this.jsVersion;
-    }
-
     public static class BatchCreateRequestDataCardRuleItemParamList extends TeaModel {
-        // 卡片taskCode
-        @NameInMap("cardTaskCode")
-        public String cardTaskCode;
-
-        // 关联的外部Id
-        @NameInMap("relationId")
-        public String relationId;
-
         // 扩展属性，存放配音难度、每日配音视频的url等
         @NameInMap("cardRuleAttr")
         public String cardRuleAttr;
 
+        // 卡片taskCode
+        @NameInMap("cardTaskCode")
+        public String cardTaskCode;
+
         // 每日配音数
         @NameInMap("dailyDubbing")
         public Integer dailyDubbing;
+
+        // 关联的外部Id
+        @NameInMap("relationId")
+        public String relationId;
 
         // 关联内容标题（会在打卡详页页展示）
         @NameInMap("relationTitle")
@@ -123,22 +111,6 @@ public class BatchCreateRequest extends TeaModel {
             return TeaModel.build(map, self);
         }
 
-        public BatchCreateRequestDataCardRuleItemParamList setCardTaskCode(String cardTaskCode) {
-            this.cardTaskCode = cardTaskCode;
-            return this;
-        }
-        public String getCardTaskCode() {
-            return this.cardTaskCode;
-        }
-
-        public BatchCreateRequestDataCardRuleItemParamList setRelationId(String relationId) {
-            this.relationId = relationId;
-            return this;
-        }
-        public String getRelationId() {
-            return this.relationId;
-        }
-
         public BatchCreateRequestDataCardRuleItemParamList setCardRuleAttr(String cardRuleAttr) {
             this.cardRuleAttr = cardRuleAttr;
             return this;
@@ -147,12 +119,28 @@ public class BatchCreateRequest extends TeaModel {
             return this.cardRuleAttr;
         }
 
+        public BatchCreateRequestDataCardRuleItemParamList setCardTaskCode(String cardTaskCode) {
+            this.cardTaskCode = cardTaskCode;
+            return this;
+        }
+        public String getCardTaskCode() {
+            return this.cardTaskCode;
+        }
+
         public BatchCreateRequestDataCardRuleItemParamList setDailyDubbing(Integer dailyDubbing) {
             this.dailyDubbing = dailyDubbing;
             return this;
         }
         public Integer getDailyDubbing() {
             return this.dailyDubbing;
+        }
+
+        public BatchCreateRequestDataCardRuleItemParamList setRelationId(String relationId) {
+            this.relationId = relationId;
+            return this;
+        }
+        public String getRelationId() {
+            return this.relationId;
         }
 
         public BatchCreateRequestDataCardRuleItemParamList setRelationTitle(String relationTitle) {
@@ -250,25 +238,17 @@ public class BatchCreateRequest extends TeaModel {
     }
 
     public static class BatchCreateRequestDataOrgClassStudentGroupList extends TeaModel {
-        // 组织id
-        @NameInMap("corpId")
-        public String corpId;
-
         // 班级列表
         @NameInMap("classList")
         public java.util.List<BatchCreateRequestDataOrgClassStudentGroupListClassList> classList;
 
+        // 组织id
+        @NameInMap("corpId")
+        public String corpId;
+
         public static BatchCreateRequestDataOrgClassStudentGroupList build(java.util.Map<String, ?> map) throws Exception {
             BatchCreateRequestDataOrgClassStudentGroupList self = new BatchCreateRequestDataOrgClassStudentGroupList();
             return TeaModel.build(map, self);
-        }
-
-        public BatchCreateRequestDataOrgClassStudentGroupList setCorpId(String corpId) {
-            this.corpId = corpId;
-            return this;
-        }
-        public String getCorpId() {
-            return this.corpId;
         }
 
         public BatchCreateRequestDataOrgClassStudentGroupList setClassList(java.util.List<BatchCreateRequestDataOrgClassStudentGroupListClassList> classList) {
@@ -277,6 +257,14 @@ public class BatchCreateRequest extends TeaModel {
         }
         public java.util.List<BatchCreateRequestDataOrgClassStudentGroupListClassList> getClassList() {
             return this.classList;
+        }
+
+        public BatchCreateRequestDataOrgClassStudentGroupList setCorpId(String corpId) {
+            this.corpId = corpId;
+            return this;
+        }
+        public String getCorpId() {
+            return this.corpId;
         }
 
     }

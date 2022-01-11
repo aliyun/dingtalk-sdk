@@ -21,23 +21,15 @@ public class ListGroupStaffMembersResponseBody extends TeaModel {
     }
 
     public static class ListGroupStaffMembersResponseBodyMembers extends TeaModel {
-        @NameInMap("uid")
-        public String uid;
-
         @NameInMap("nick")
         public String nick;
+
+        @NameInMap("uid")
+        public String uid;
 
         public static ListGroupStaffMembersResponseBodyMembers build(java.util.Map<String, ?> map) throws Exception {
             ListGroupStaffMembersResponseBodyMembers self = new ListGroupStaffMembersResponseBodyMembers();
             return TeaModel.build(map, self);
-        }
-
-        public ListGroupStaffMembersResponseBodyMembers setUid(String uid) {
-            this.uid = uid;
-            return this;
-        }
-        public String getUid() {
-            return this.uid;
         }
 
         public ListGroupStaffMembersResponseBodyMembers setNick(String nick) {
@@ -46,6 +38,14 @@ public class ListGroupStaffMembersResponseBody extends TeaModel {
         }
         public String getNick() {
             return this.nick;
+        }
+
+        public ListGroupStaffMembersResponseBodyMembers setUid(String uid) {
+            this.uid = uid;
+            return this;
+        }
+        public String getUid() {
+            return this.uid;
         }
 
     }

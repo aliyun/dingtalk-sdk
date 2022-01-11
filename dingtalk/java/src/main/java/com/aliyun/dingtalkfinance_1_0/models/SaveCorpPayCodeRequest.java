@@ -12,20 +12,13 @@ public class SaveCorpPayCodeRequest extends TeaModel {
     @NameInMap("corpId")
     public String corpId;
 
-    // 状态，OPEN或CLOSED
-    @NameInMap("status")
-    public String status;
-
     // 扩展参数
     @NameInMap("extInfo")
     public java.util.Map<String, String> extInfo;
 
-    // 企业orgId
-    @NameInMap("dingOrgId")
-    public Long dingOrgId;
-
-    @NameInMap("dingIsvOrgId")
-    public Long dingIsvOrgId;
+    // 状态，OPEN或CLOSED
+    @NameInMap("status")
+    public String status;
 
     public static SaveCorpPayCodeRequest build(java.util.Map<String, ?> map) throws Exception {
         SaveCorpPayCodeRequest self = new SaveCorpPayCodeRequest();
@@ -48,14 +41,6 @@ public class SaveCorpPayCodeRequest extends TeaModel {
         return this.corpId;
     }
 
-    public SaveCorpPayCodeRequest setStatus(String status) {
-        this.status = status;
-        return this;
-    }
-    public String getStatus() {
-        return this.status;
-    }
-
     public SaveCorpPayCodeRequest setExtInfo(java.util.Map<String, String> extInfo) {
         this.extInfo = extInfo;
         return this;
@@ -64,20 +49,12 @@ public class SaveCorpPayCodeRequest extends TeaModel {
         return this.extInfo;
     }
 
-    public SaveCorpPayCodeRequest setDingOrgId(Long dingOrgId) {
-        this.dingOrgId = dingOrgId;
+    public SaveCorpPayCodeRequest setStatus(String status) {
+        this.status = status;
         return this;
     }
-    public Long getDingOrgId() {
-        return this.dingOrgId;
-    }
-
-    public SaveCorpPayCodeRequest setDingIsvOrgId(Long dingIsvOrgId) {
-        this.dingIsvOrgId = dingIsvOrgId;
-        return this;
-    }
-    public Long getDingIsvOrgId() {
-        return this.dingIsvOrgId;
+    public String getStatus() {
+        return this.status;
     }
 
 }

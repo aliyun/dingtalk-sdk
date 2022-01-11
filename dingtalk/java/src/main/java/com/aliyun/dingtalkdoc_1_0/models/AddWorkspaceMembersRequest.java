@@ -4,25 +4,17 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddWorkspaceMembersRequest extends TeaModel {
-    // 发起操作者unionId
-    @NameInMap("operatorId")
-    public String operatorId;
-
     // 被操作用户组
     @NameInMap("members")
     public java.util.List<AddWorkspaceMembersRequestMembers> members;
 
+    // 发起操作者unionId
+    @NameInMap("operatorId")
+    public String operatorId;
+
     public static AddWorkspaceMembersRequest build(java.util.Map<String, ?> map) throws Exception {
         AddWorkspaceMembersRequest self = new AddWorkspaceMembersRequest();
         return TeaModel.build(map, self);
-    }
-
-    public AddWorkspaceMembersRequest setOperatorId(String operatorId) {
-        this.operatorId = operatorId;
-        return this;
-    }
-    public String getOperatorId() {
-        return this.operatorId;
     }
 
     public AddWorkspaceMembersRequest setMembers(java.util.List<AddWorkspaceMembersRequestMembers> members) {
@@ -31,6 +23,14 @@ public class AddWorkspaceMembersRequest extends TeaModel {
     }
     public java.util.List<AddWorkspaceMembersRequestMembers> getMembers() {
         return this.members;
+    }
+
+    public AddWorkspaceMembersRequest setOperatorId(String operatorId) {
+        this.operatorId = operatorId;
+        return this;
+    }
+    public String getOperatorId() {
+        return this.operatorId;
     }
 
     public static class AddWorkspaceMembersRequestMembers extends TeaModel {

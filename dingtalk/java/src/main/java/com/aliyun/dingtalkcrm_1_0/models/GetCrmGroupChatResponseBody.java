@@ -8,6 +8,22 @@ public class GetCrmGroupChatResponseBody extends TeaModel {
     @NameInMap("chatId")
     public String chatId;
 
+    // 创建时间(时间戳)
+    @NameInMap("gmtCreate")
+    public Long gmtCreate;
+
+    // 群头像地址
+    @NameInMap("iconUrl")
+    public String iconUrl;
+
+    // 客户群成员数
+    @NameInMap("memberCount")
+    public Integer memberCount;
+
+    // 客户群名
+    @NameInMap("name")
+    public String name;
+
     // 客户群openConversationId
     @NameInMap("openConversationId")
     public String openConversationId;
@@ -24,22 +40,6 @@ public class GetCrmGroupChatResponseBody extends TeaModel {
     @NameInMap("ownerUserName")
     public String ownerUserName;
 
-    // 客户群名
-    @NameInMap("name")
-    public String name;
-
-    // 客户群成员数
-    @NameInMap("memberCount")
-    public Integer memberCount;
-
-    // 创建时间(时间戳)
-    @NameInMap("gmtCreate")
-    public Long gmtCreate;
-
-    // 群头像地址
-    @NameInMap("iconUrl")
-    public String iconUrl;
-
     public static GetCrmGroupChatResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetCrmGroupChatResponseBody self = new GetCrmGroupChatResponseBody();
         return TeaModel.build(map, self);
@@ -51,6 +51,38 @@ public class GetCrmGroupChatResponseBody extends TeaModel {
     }
     public String getChatId() {
         return this.chatId;
+    }
+
+    public GetCrmGroupChatResponseBody setGmtCreate(Long gmtCreate) {
+        this.gmtCreate = gmtCreate;
+        return this;
+    }
+    public Long getGmtCreate() {
+        return this.gmtCreate;
+    }
+
+    public GetCrmGroupChatResponseBody setIconUrl(String iconUrl) {
+        this.iconUrl = iconUrl;
+        return this;
+    }
+    public String getIconUrl() {
+        return this.iconUrl;
+    }
+
+    public GetCrmGroupChatResponseBody setMemberCount(Integer memberCount) {
+        this.memberCount = memberCount;
+        return this;
+    }
+    public Integer getMemberCount() {
+        return this.memberCount;
+    }
+
+    public GetCrmGroupChatResponseBody setName(String name) {
+        this.name = name;
+        return this;
+    }
+    public String getName() {
+        return this.name;
     }
 
     public GetCrmGroupChatResponseBody setOpenConversationId(String openConversationId) {
@@ -83,38 +115,6 @@ public class GetCrmGroupChatResponseBody extends TeaModel {
     }
     public String getOwnerUserName() {
         return this.ownerUserName;
-    }
-
-    public GetCrmGroupChatResponseBody setName(String name) {
-        this.name = name;
-        return this;
-    }
-    public String getName() {
-        return this.name;
-    }
-
-    public GetCrmGroupChatResponseBody setMemberCount(Integer memberCount) {
-        this.memberCount = memberCount;
-        return this;
-    }
-    public Integer getMemberCount() {
-        return this.memberCount;
-    }
-
-    public GetCrmGroupChatResponseBody setGmtCreate(Long gmtCreate) {
-        this.gmtCreate = gmtCreate;
-        return this;
-    }
-    public Long getGmtCreate() {
-        return this.gmtCreate;
-    }
-
-    public GetCrmGroupChatResponseBody setIconUrl(String iconUrl) {
-        this.iconUrl = iconUrl;
-        return this;
-    }
-    public String getIconUrl() {
-        return this.iconUrl;
     }
 
 }

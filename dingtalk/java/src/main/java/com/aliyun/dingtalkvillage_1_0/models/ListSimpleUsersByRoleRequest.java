@@ -8,13 +8,13 @@ public class ListSimpleUsersByRoleRequest extends TeaModel {
     @NameInMap("offset")
     public Long offset;
 
-    // 查询数量
-    @NameInMap("size")
-    public Integer size;
-
     // 角色ID
     @NameInMap("roleId")
     public Long roleId;
+
+    // 查询数量
+    @NameInMap("size")
+    public Integer size;
 
     // 下属组织的组织ID，比如下属镇、村的corpId
     @NameInMap("subCorpId")
@@ -33,20 +33,20 @@ public class ListSimpleUsersByRoleRequest extends TeaModel {
         return this.offset;
     }
 
-    public ListSimpleUsersByRoleRequest setSize(Integer size) {
-        this.size = size;
-        return this;
-    }
-    public Integer getSize() {
-        return this.size;
-    }
-
     public ListSimpleUsersByRoleRequest setRoleId(Long roleId) {
         this.roleId = roleId;
         return this;
     }
     public Long getRoleId() {
         return this.roleId;
+    }
+
+    public ListSimpleUsersByRoleRequest setSize(Integer size) {
+        this.size = size;
+        return this;
+    }
+    public Integer getSize() {
+        return this.size;
     }
 
     public ListSimpleUsersByRoleRequest setSubCorpId(String subCorpId) {

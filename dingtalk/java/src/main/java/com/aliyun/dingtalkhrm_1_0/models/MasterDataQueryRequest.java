@@ -4,69 +4,45 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class MasterDataQueryRequest extends TeaModel {
-    // 领域code 由钉钉分配
-    @NameInMap("scopeCode")
-    public String scopeCode;
-
-    // 实体code
-    @NameInMap("viewEntityCode")
-    public String viewEntityCode;
-
-    // 数据生产方的租户id，由钉钉分配
-    @NameInMap("tenantId")
-    public Long tenantId;
-
     // 数据唯一键
     @NameInMap("bizUK")
     public String bizUK;
-
-    // 关联id列表，一般为userId
-    @NameInMap("relationIds")
-    public java.util.List<String> relationIds;
-
-    // 当前操作人userId
-    @NameInMap("optUserId")
-    public String optUserId;
-
-    // 分页查询的游标
-    @NameInMap("nextToken")
-    public Integer nextToken;
 
     // 分页查询每页数据条数
     @NameInMap("maxResults")
     public Integer maxResults;
 
+    // 分页查询的游标
+    @NameInMap("nextToken")
+    public Integer nextToken;
+
+    // 当前操作人userId
+    @NameInMap("optUserId")
+    public String optUserId;
+
     // 其他查询条件
     @NameInMap("queryParams")
     public java.util.List<MasterDataQueryRequestQueryParams> queryParams;
 
+    // 关联id列表，一般为userId
+    @NameInMap("relationIds")
+    public java.util.List<String> relationIds;
+
+    // 领域code 由钉钉分配
+    @NameInMap("scopeCode")
+    public String scopeCode;
+
+    // 数据生产方的租户id，由钉钉分配
+    @NameInMap("tenantId")
+    public Long tenantId;
+
+    // 实体code
+    @NameInMap("viewEntityCode")
+    public String viewEntityCode;
+
     public static MasterDataQueryRequest build(java.util.Map<String, ?> map) throws Exception {
         MasterDataQueryRequest self = new MasterDataQueryRequest();
         return TeaModel.build(map, self);
-    }
-
-    public MasterDataQueryRequest setScopeCode(String scopeCode) {
-        this.scopeCode = scopeCode;
-        return this;
-    }
-    public String getScopeCode() {
-        return this.scopeCode;
-    }
-
-    public MasterDataQueryRequest setViewEntityCode(String viewEntityCode) {
-        this.viewEntityCode = viewEntityCode;
-        return this;
-    }
-    public String getViewEntityCode() {
-        return this.viewEntityCode;
-    }
-
-    public MasterDataQueryRequest setTenantId(Long tenantId) {
-        this.tenantId = tenantId;
-        return this;
-    }
-    public Long getTenantId() {
-        return this.tenantId;
     }
 
     public MasterDataQueryRequest setBizUK(String bizUK) {
@@ -77,20 +53,12 @@ public class MasterDataQueryRequest extends TeaModel {
         return this.bizUK;
     }
 
-    public MasterDataQueryRequest setRelationIds(java.util.List<String> relationIds) {
-        this.relationIds = relationIds;
+    public MasterDataQueryRequest setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
         return this;
     }
-    public java.util.List<String> getRelationIds() {
-        return this.relationIds;
-    }
-
-    public MasterDataQueryRequest setOptUserId(String optUserId) {
-        this.optUserId = optUserId;
-        return this;
-    }
-    public String getOptUserId() {
-        return this.optUserId;
+    public Integer getMaxResults() {
+        return this.maxResults;
     }
 
     public MasterDataQueryRequest setNextToken(Integer nextToken) {
@@ -101,12 +69,12 @@ public class MasterDataQueryRequest extends TeaModel {
         return this.nextToken;
     }
 
-    public MasterDataQueryRequest setMaxResults(Integer maxResults) {
-        this.maxResults = maxResults;
+    public MasterDataQueryRequest setOptUserId(String optUserId) {
+        this.optUserId = optUserId;
         return this;
     }
-    public Integer getMaxResults() {
-        return this.maxResults;
+    public String getOptUserId() {
+        return this.optUserId;
     }
 
     public MasterDataQueryRequest setQueryParams(java.util.List<MasterDataQueryRequestQueryParams> queryParams) {
@@ -115,6 +83,38 @@ public class MasterDataQueryRequest extends TeaModel {
     }
     public java.util.List<MasterDataQueryRequestQueryParams> getQueryParams() {
         return this.queryParams;
+    }
+
+    public MasterDataQueryRequest setRelationIds(java.util.List<String> relationIds) {
+        this.relationIds = relationIds;
+        return this;
+    }
+    public java.util.List<String> getRelationIds() {
+        return this.relationIds;
+    }
+
+    public MasterDataQueryRequest setScopeCode(String scopeCode) {
+        this.scopeCode = scopeCode;
+        return this;
+    }
+    public String getScopeCode() {
+        return this.scopeCode;
+    }
+
+    public MasterDataQueryRequest setTenantId(Long tenantId) {
+        this.tenantId = tenantId;
+        return this;
+    }
+    public Long getTenantId() {
+        return this.tenantId;
+    }
+
+    public MasterDataQueryRequest setViewEntityCode(String viewEntityCode) {
+        this.viewEntityCode = viewEntityCode;
+        return this;
+    }
+    public String getViewEntityCode() {
+        return this.viewEntityCode;
     }
 
     public static class MasterDataQueryRequestQueryParamsConditionList extends TeaModel {
@@ -150,6 +150,10 @@ public class MasterDataQueryRequest extends TeaModel {
     }
 
     public static class MasterDataQueryRequestQueryParams extends TeaModel {
+        // 筛选条件
+        @NameInMap("conditionList")
+        public java.util.List<MasterDataQueryRequestQueryParamsConditionList> conditionList;
+
         // 需要筛选的字段
         @NameInMap("fieldCode")
         public String fieldCode;
@@ -158,13 +162,17 @@ public class MasterDataQueryRequest extends TeaModel {
         @NameInMap("joinType")
         public String joinType;
 
-        // 筛选条件
-        @NameInMap("conditionList")
-        public java.util.List<MasterDataQueryRequestQueryParamsConditionList> conditionList;
-
         public static MasterDataQueryRequestQueryParams build(java.util.Map<String, ?> map) throws Exception {
             MasterDataQueryRequestQueryParams self = new MasterDataQueryRequestQueryParams();
             return TeaModel.build(map, self);
+        }
+
+        public MasterDataQueryRequestQueryParams setConditionList(java.util.List<MasterDataQueryRequestQueryParamsConditionList> conditionList) {
+            this.conditionList = conditionList;
+            return this;
+        }
+        public java.util.List<MasterDataQueryRequestQueryParamsConditionList> getConditionList() {
+            return this.conditionList;
         }
 
         public MasterDataQueryRequestQueryParams setFieldCode(String fieldCode) {
@@ -181,14 +189,6 @@ public class MasterDataQueryRequest extends TeaModel {
         }
         public String getJoinType() {
             return this.joinType;
-        }
-
-        public MasterDataQueryRequestQueryParams setConditionList(java.util.List<MasterDataQueryRequestQueryParamsConditionList> conditionList) {
-            this.conditionList = conditionList;
-            return this;
-        }
-        public java.util.List<MasterDataQueryRequestQueryParamsConditionList> getConditionList() {
-            return this.conditionList;
         }
 
     }

@@ -8,29 +8,29 @@ public class UpdateFormDataRequest extends TeaModel {
     @NameInMap("appType")
     public String appType;
 
-    // 应用秘钥。在应用数据中获取。
-    @NameInMap("systemToken")
-    public String systemToken;
-
-    // 钉钉userId
-    @NameInMap("userId")
-    public String userId;
+    // 要更新的表单数据ID
+    @NameInMap("formInstanceId")
+    public String formInstanceId;
 
     // 语言。可选值：zh_CN/en_US 默认：zh_CN
     @NameInMap("language")
     public String language;
 
-    // 要更新的表单数据ID
-    @NameInMap("formInstanceId")
-    public String formInstanceId;
+    // 应用秘钥。在应用数据中获取。
+    @NameInMap("systemToken")
+    public String systemToken;
+
+    // 要更新的表单组件值。参数有的组件更新，没有的组件保持不变。 明细的值只能统一更新，无法只更新明细下某个组件的值
+    @NameInMap("updateFormDataJson")
+    public String updateFormDataJson;
 
     // 使用最新的表单版本进行更新。默认为false
     @NameInMap("useLatestVersion")
     public Boolean useLatestVersion;
 
-    // 要更新的表单组件值。参数有的组件更新，没有的组件保持不变。 明细的值只能统一更新，无法只更新明细下某个组件的值
-    @NameInMap("updateFormDataJson")
-    public String updateFormDataJson;
+    // 钉钉userId
+    @NameInMap("userId")
+    public String userId;
 
     public static UpdateFormDataRequest build(java.util.Map<String, ?> map) throws Exception {
         UpdateFormDataRequest self = new UpdateFormDataRequest();
@@ -45,20 +45,12 @@ public class UpdateFormDataRequest extends TeaModel {
         return this.appType;
     }
 
-    public UpdateFormDataRequest setSystemToken(String systemToken) {
-        this.systemToken = systemToken;
+    public UpdateFormDataRequest setFormInstanceId(String formInstanceId) {
+        this.formInstanceId = formInstanceId;
         return this;
     }
-    public String getSystemToken() {
-        return this.systemToken;
-    }
-
-    public UpdateFormDataRequest setUserId(String userId) {
-        this.userId = userId;
-        return this;
-    }
-    public String getUserId() {
-        return this.userId;
+    public String getFormInstanceId() {
+        return this.formInstanceId;
     }
 
     public UpdateFormDataRequest setLanguage(String language) {
@@ -69,12 +61,20 @@ public class UpdateFormDataRequest extends TeaModel {
         return this.language;
     }
 
-    public UpdateFormDataRequest setFormInstanceId(String formInstanceId) {
-        this.formInstanceId = formInstanceId;
+    public UpdateFormDataRequest setSystemToken(String systemToken) {
+        this.systemToken = systemToken;
         return this;
     }
-    public String getFormInstanceId() {
-        return this.formInstanceId;
+    public String getSystemToken() {
+        return this.systemToken;
+    }
+
+    public UpdateFormDataRequest setUpdateFormDataJson(String updateFormDataJson) {
+        this.updateFormDataJson = updateFormDataJson;
+        return this;
+    }
+    public String getUpdateFormDataJson() {
+        return this.updateFormDataJson;
     }
 
     public UpdateFormDataRequest setUseLatestVersion(Boolean useLatestVersion) {
@@ -85,12 +85,12 @@ public class UpdateFormDataRequest extends TeaModel {
         return this.useLatestVersion;
     }
 
-    public UpdateFormDataRequest setUpdateFormDataJson(String updateFormDataJson) {
-        this.updateFormDataJson = updateFormDataJson;
+    public UpdateFormDataRequest setUserId(String userId) {
+        this.userId = userId;
         return this;
     }
-    public String getUpdateFormDataJson() {
-        return this.updateFormDataJson;
+    public String getUserId() {
+        return this.userId;
     }
 
 }

@@ -25,13 +25,13 @@ public class UpdateBranchAttributesInCooperateRequest extends TeaModel {
         @NameInMap("branchCorpId")
         public String branchCorpId;
 
-        // （分支/合作伙伴）在（集团/合作空间）的别名
-        @NameInMap("unionRootName")
-        public String unionRootName;
-
         // 挂载节点部门ID
         @NameInMap("linkDeptId")
         public Long linkDeptId;
+
+        // （分支/合作伙伴）在（集团/合作空间）的别名
+        @NameInMap("unionRootName")
+        public String unionRootName;
 
         public static UpdateBranchAttributesInCooperateRequestBody build(java.util.Map<String, ?> map) throws Exception {
             UpdateBranchAttributesInCooperateRequestBody self = new UpdateBranchAttributesInCooperateRequestBody();
@@ -46,20 +46,20 @@ public class UpdateBranchAttributesInCooperateRequest extends TeaModel {
             return this.branchCorpId;
         }
 
-        public UpdateBranchAttributesInCooperateRequestBody setUnionRootName(String unionRootName) {
-            this.unionRootName = unionRootName;
-            return this;
-        }
-        public String getUnionRootName() {
-            return this.unionRootName;
-        }
-
         public UpdateBranchAttributesInCooperateRequestBody setLinkDeptId(Long linkDeptId) {
             this.linkDeptId = linkDeptId;
             return this;
         }
         public Long getLinkDeptId() {
             return this.linkDeptId;
+        }
+
+        public UpdateBranchAttributesInCooperateRequestBody setUnionRootName(String unionRootName) {
+            this.unionRootName = unionRootName;
+            return this;
+        }
+        public String getUnionRootName() {
+            return this.unionRootName;
         }
 
     }

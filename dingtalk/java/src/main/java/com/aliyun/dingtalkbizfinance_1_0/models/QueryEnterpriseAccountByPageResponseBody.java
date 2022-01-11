@@ -4,25 +4,17 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryEnterpriseAccountByPageResponseBody extends TeaModel {
-    // resultList
-    @NameInMap("list")
-    public java.util.List<QueryEnterpriseAccountByPageResponseBodyList> list;
-
     // 是否还有更多数据
     @NameInMap("hasMore")
     public Boolean hasMore;
 
+    // resultList
+    @NameInMap("list")
+    public java.util.List<QueryEnterpriseAccountByPageResponseBodyList> list;
+
     public static QueryEnterpriseAccountByPageResponseBody build(java.util.Map<String, ?> map) throws Exception {
         QueryEnterpriseAccountByPageResponseBody self = new QueryEnterpriseAccountByPageResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public QueryEnterpriseAccountByPageResponseBody setList(java.util.List<QueryEnterpriseAccountByPageResponseBodyList> list) {
-        this.list = list;
-        return this;
-    }
-    public java.util.List<QueryEnterpriseAccountByPageResponseBodyList> getList() {
-        return this.list;
     }
 
     public QueryEnterpriseAccountByPageResponseBody setHasMore(Boolean hasMore) {
@@ -31,6 +23,14 @@ public class QueryEnterpriseAccountByPageResponseBody extends TeaModel {
     }
     public Boolean getHasMore() {
         return this.hasMore;
+    }
+
+    public QueryEnterpriseAccountByPageResponseBody setList(java.util.List<QueryEnterpriseAccountByPageResponseBodyList> list) {
+        this.list = list;
+        return this;
+    }
+    public java.util.List<QueryEnterpriseAccountByPageResponseBodyList> getList() {
+        return this.list;
     }
 
     public static class QueryEnterpriseAccountByPageResponseBodyList extends TeaModel {
@@ -42,10 +42,6 @@ public class QueryEnterpriseAccountByPageResponseBody extends TeaModel {
         @NameInMap("accountId")
         public String accountId;
 
-        // 账户类型:ALIPAY, BANKCARD, CASH, WECHAT
-        @NameInMap("accountType")
-        public String accountType;
-
         // 账户名称
         @NameInMap("accountName")
         public String accountName;
@@ -54,17 +50,21 @@ public class QueryEnterpriseAccountByPageResponseBody extends TeaModel {
         @NameInMap("accountRemark")
         public String accountRemark;
 
+        // 账户类型:ALIPAY, BANKCARD, CASH, WECHAT
+        @NameInMap("accountType")
+        public String accountType;
+
         // 账户总额，保留2位小数
         @NameInMap("amount")
         public String amount;
 
-        // 创建人工号
-        @NameInMap("creator")
-        public String creator;
-
         // 创建时间
         @NameInMap("createTime")
         public Long createTime;
+
+        // 创建人工号
+        @NameInMap("creator")
+        public String creator;
 
         public static QueryEnterpriseAccountByPageResponseBodyList build(java.util.Map<String, ?> map) throws Exception {
             QueryEnterpriseAccountByPageResponseBodyList self = new QueryEnterpriseAccountByPageResponseBodyList();
@@ -87,14 +87,6 @@ public class QueryEnterpriseAccountByPageResponseBody extends TeaModel {
             return this.accountId;
         }
 
-        public QueryEnterpriseAccountByPageResponseBodyList setAccountType(String accountType) {
-            this.accountType = accountType;
-            return this;
-        }
-        public String getAccountType() {
-            return this.accountType;
-        }
-
         public QueryEnterpriseAccountByPageResponseBodyList setAccountName(String accountName) {
             this.accountName = accountName;
             return this;
@@ -111,6 +103,14 @@ public class QueryEnterpriseAccountByPageResponseBody extends TeaModel {
             return this.accountRemark;
         }
 
+        public QueryEnterpriseAccountByPageResponseBodyList setAccountType(String accountType) {
+            this.accountType = accountType;
+            return this;
+        }
+        public String getAccountType() {
+            return this.accountType;
+        }
+
         public QueryEnterpriseAccountByPageResponseBodyList setAmount(String amount) {
             this.amount = amount;
             return this;
@@ -119,20 +119,20 @@ public class QueryEnterpriseAccountByPageResponseBody extends TeaModel {
             return this.amount;
         }
 
-        public QueryEnterpriseAccountByPageResponseBodyList setCreator(String creator) {
-            this.creator = creator;
-            return this;
-        }
-        public String getCreator() {
-            return this.creator;
-        }
-
         public QueryEnterpriseAccountByPageResponseBodyList setCreateTime(Long createTime) {
             this.createTime = createTime;
             return this;
         }
         public Long getCreateTime() {
             return this.createTime;
+        }
+
+        public QueryEnterpriseAccountByPageResponseBodyList setCreator(String creator) {
+            this.creator = creator;
+            return this;
+        }
+        public String getCreator() {
+            return this.creator;
         }
 
     }

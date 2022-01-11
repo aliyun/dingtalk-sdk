@@ -4,10 +4,6 @@ package com.aliyun.dingtalkdingmi_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddRobotInstanceToGroupRequest extends TeaModel {
-    // 企业id
-    @NameInMap("dingCorpId")
-    public String dingCorpId;
-
     // 机器人id
     @NameInMap("chatbotId")
     public String chatbotId;
@@ -19,14 +15,6 @@ public class AddRobotInstanceToGroupRequest extends TeaModel {
     public static AddRobotInstanceToGroupRequest build(java.util.Map<String, ?> map) throws Exception {
         AddRobotInstanceToGroupRequest self = new AddRobotInstanceToGroupRequest();
         return TeaModel.build(map, self);
-    }
-
-    public AddRobotInstanceToGroupRequest setDingCorpId(String dingCorpId) {
-        this.dingCorpId = dingCorpId;
-        return this;
-    }
-    public String getDingCorpId() {
-        return this.dingCorpId;
     }
 
     public AddRobotInstanceToGroupRequest setChatbotId(String chatbotId) {

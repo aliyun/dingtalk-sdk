@@ -4,6 +4,10 @@ package com.aliyun.dingtalkvillage_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetResidentDeptResponseBody extends TeaModel {
+    // 通讯录架构类型
+    @NameInMap("contactType")
+    public String contactType;
+
     // 下属组织的部门ID
     @NameInMap("departmentId")
     public Long departmentId;
@@ -16,10 +20,6 @@ public class GetResidentDeptResponseBody extends TeaModel {
     @NameInMap("deptType")
     public String deptType;
 
-    // 通讯录架构类型
-    @NameInMap("contactType")
-    public String contactType;
-
     // 部门属性
     @NameInMap("feature")
     public String feature;
@@ -27,6 +27,14 @@ public class GetResidentDeptResponseBody extends TeaModel {
     public static GetResidentDeptResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetResidentDeptResponseBody self = new GetResidentDeptResponseBody();
         return TeaModel.build(map, self);
+    }
+
+    public GetResidentDeptResponseBody setContactType(String contactType) {
+        this.contactType = contactType;
+        return this;
+    }
+    public String getContactType() {
+        return this.contactType;
     }
 
     public GetResidentDeptResponseBody setDepartmentId(Long departmentId) {
@@ -51,14 +59,6 @@ public class GetResidentDeptResponseBody extends TeaModel {
     }
     public String getDeptType() {
         return this.deptType;
-    }
-
-    public GetResidentDeptResponseBody setContactType(String contactType) {
-        this.contactType = contactType;
-        return this;
-    }
-    public String getContactType() {
-        return this.contactType;
     }
 
     public GetResidentDeptResponseBody setFeature(String feature) {

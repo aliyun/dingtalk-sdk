@@ -22,6 +22,22 @@ public class ManagementModifySpaceResponseBody extends TeaModel {
     }
 
     public static class ManagementModifySpaceResponseBodySpaces extends TeaModel {
+        // 创建时间
+        @NameInMap("createTime")
+        public String createTime;
+
+        // 修改时间
+        @NameInMap("modifyTime")
+        public String modifyTime;
+
+        // 授权模式
+        @NameInMap("permissionMode")
+        public String permissionMode;
+
+        // 空间总额度
+        @NameInMap("quota")
+        public Long quota;
+
         // 空间id
         @NameInMap("spaceId")
         public String spaceId;
@@ -34,29 +50,45 @@ public class ManagementModifySpaceResponseBody extends TeaModel {
         @NameInMap("spaceType")
         public String spaceType;
 
-        // 空间总额度
-        @NameInMap("quota")
-        public Long quota;
-
         // 空间已使用额度
         @NameInMap("usedQuota")
         public Long usedQuota;
 
-        // 授权模式
-        @NameInMap("permissionMode")
-        public String permissionMode;
-
-        // 创建时间
-        @NameInMap("createTime")
-        public String createTime;
-
-        // 修改时间
-        @NameInMap("modifyTime")
-        public String modifyTime;
-
         public static ManagementModifySpaceResponseBodySpaces build(java.util.Map<String, ?> map) throws Exception {
             ManagementModifySpaceResponseBodySpaces self = new ManagementModifySpaceResponseBodySpaces();
             return TeaModel.build(map, self);
+        }
+
+        public ManagementModifySpaceResponseBodySpaces setCreateTime(String createTime) {
+            this.createTime = createTime;
+            return this;
+        }
+        public String getCreateTime() {
+            return this.createTime;
+        }
+
+        public ManagementModifySpaceResponseBodySpaces setModifyTime(String modifyTime) {
+            this.modifyTime = modifyTime;
+            return this;
+        }
+        public String getModifyTime() {
+            return this.modifyTime;
+        }
+
+        public ManagementModifySpaceResponseBodySpaces setPermissionMode(String permissionMode) {
+            this.permissionMode = permissionMode;
+            return this;
+        }
+        public String getPermissionMode() {
+            return this.permissionMode;
+        }
+
+        public ManagementModifySpaceResponseBodySpaces setQuota(Long quota) {
+            this.quota = quota;
+            return this;
+        }
+        public Long getQuota() {
+            return this.quota;
         }
 
         public ManagementModifySpaceResponseBodySpaces setSpaceId(String spaceId) {
@@ -83,44 +115,12 @@ public class ManagementModifySpaceResponseBody extends TeaModel {
             return this.spaceType;
         }
 
-        public ManagementModifySpaceResponseBodySpaces setQuota(Long quota) {
-            this.quota = quota;
-            return this;
-        }
-        public Long getQuota() {
-            return this.quota;
-        }
-
         public ManagementModifySpaceResponseBodySpaces setUsedQuota(Long usedQuota) {
             this.usedQuota = usedQuota;
             return this;
         }
         public Long getUsedQuota() {
             return this.usedQuota;
-        }
-
-        public ManagementModifySpaceResponseBodySpaces setPermissionMode(String permissionMode) {
-            this.permissionMode = permissionMode;
-            return this;
-        }
-        public String getPermissionMode() {
-            return this.permissionMode;
-        }
-
-        public ManagementModifySpaceResponseBodySpaces setCreateTime(String createTime) {
-            this.createTime = createTime;
-            return this;
-        }
-        public String getCreateTime() {
-            return this.createTime;
-        }
-
-        public ManagementModifySpaceResponseBodySpaces setModifyTime(String modifyTime) {
-            this.modifyTime = modifyTime;
-            return this;
-        }
-        public String getModifyTime() {
-            return this.modifyTime;
         }
 
     }

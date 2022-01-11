@@ -4,14 +4,6 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetReceiptResponseBody extends TeaModel {
-    // 数据模型id
-    @NameInMap("modelId")
-    public String modelId;
-
-    // 数据来源：审批(approval)，开放接口(openapi)
-    @NameInMap("source")
-    public String source;
-
     // 数据来源于开放时，对应的微应用id
     @NameInMap("appId")
     public String appId;
@@ -20,25 +12,17 @@ public class GetReceiptResponseBody extends TeaModel {
     @NameInMap("data")
     public String data;
 
+    // 数据模型id
+    @NameInMap("modelId")
+    public String modelId;
+
+    // 数据来源：审批(approval)，开放接口(openapi)
+    @NameInMap("source")
+    public String source;
+
     public static GetReceiptResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetReceiptResponseBody self = new GetReceiptResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public GetReceiptResponseBody setModelId(String modelId) {
-        this.modelId = modelId;
-        return this;
-    }
-    public String getModelId() {
-        return this.modelId;
-    }
-
-    public GetReceiptResponseBody setSource(String source) {
-        this.source = source;
-        return this;
-    }
-    public String getSource() {
-        return this.source;
     }
 
     public GetReceiptResponseBody setAppId(String appId) {
@@ -55,6 +39,22 @@ public class GetReceiptResponseBody extends TeaModel {
     }
     public String getData() {
         return this.data;
+    }
+
+    public GetReceiptResponseBody setModelId(String modelId) {
+        this.modelId = modelId;
+        return this;
+    }
+    public String getModelId() {
+        return this.modelId;
+    }
+
+    public GetReceiptResponseBody setSource(String source) {
+        this.source = source;
+        return this;
+    }
+    public String getSource() {
+        return this.source;
     }
 
 }

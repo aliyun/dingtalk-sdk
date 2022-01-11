@@ -4,10 +4,6 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class RenewApplicationAuthorizationServiceOrderRequest extends TeaModel {
-    // 实例id
-    @NameInMap("instanceId")
-    public String instanceId;
-
     // 访问秘钥
     @NameInMap("accessKey")
     public String accessKey;
@@ -20,17 +16,13 @@ public class RenewApplicationAuthorizationServiceOrderRequest extends TeaModel {
     @NameInMap("endTimeGMT")
     public Long endTimeGMT;
 
+    // 实例id
+    @NameInMap("instanceId")
+    public String instanceId;
+
     public static RenewApplicationAuthorizationServiceOrderRequest build(java.util.Map<String, ?> map) throws Exception {
         RenewApplicationAuthorizationServiceOrderRequest self = new RenewApplicationAuthorizationServiceOrderRequest();
         return TeaModel.build(map, self);
-    }
-
-    public RenewApplicationAuthorizationServiceOrderRequest setInstanceId(String instanceId) {
-        this.instanceId = instanceId;
-        return this;
-    }
-    public String getInstanceId() {
-        return this.instanceId;
     }
 
     public RenewApplicationAuthorizationServiceOrderRequest setAccessKey(String accessKey) {
@@ -55,6 +47,14 @@ public class RenewApplicationAuthorizationServiceOrderRequest extends TeaModel {
     }
     public Long getEndTimeGMT() {
         return this.endTimeGMT;
+    }
+
+    public RenewApplicationAuthorizationServiceOrderRequest setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+    public String getInstanceId() {
+        return this.instanceId;
     }
 
 }

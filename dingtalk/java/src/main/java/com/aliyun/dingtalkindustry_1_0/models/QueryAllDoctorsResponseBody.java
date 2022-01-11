@@ -8,17 +8,17 @@ public class QueryAllDoctorsResponseBody extends TeaModel {
     @NameInMap("content")
     public java.util.List<QueryAllDoctorsResponseBodyContent> content;
 
-    // 总页数
-    @NameInMap("totalPages")
-    public Integer totalPages;
+    // 当前页码
+    @NameInMap("currentPage")
+    public Integer currentPage;
 
     // 数据总量
     @NameInMap("totalCount")
     public Long totalCount;
 
-    // 当前页码
-    @NameInMap("currentPage")
-    public Integer currentPage;
+    // 总页数
+    @NameInMap("totalPages")
+    public Integer totalPages;
 
     public static QueryAllDoctorsResponseBody build(java.util.Map<String, ?> map) throws Exception {
         QueryAllDoctorsResponseBody self = new QueryAllDoctorsResponseBody();
@@ -33,12 +33,12 @@ public class QueryAllDoctorsResponseBody extends TeaModel {
         return this.content;
     }
 
-    public QueryAllDoctorsResponseBody setTotalPages(Integer totalPages) {
-        this.totalPages = totalPages;
+    public QueryAllDoctorsResponseBody setCurrentPage(Integer currentPage) {
+        this.currentPage = currentPage;
         return this;
     }
-    public Integer getTotalPages() {
-        return this.totalPages;
+    public Integer getCurrentPage() {
+        return this.currentPage;
     }
 
     public QueryAllDoctorsResponseBody setTotalCount(Long totalCount) {
@@ -49,30 +49,30 @@ public class QueryAllDoctorsResponseBody extends TeaModel {
         return this.totalCount;
     }
 
-    public QueryAllDoctorsResponseBody setCurrentPage(Integer currentPage) {
-        this.currentPage = currentPage;
+    public QueryAllDoctorsResponseBody setTotalPages(Integer totalPages) {
+        this.totalPages = totalPages;
         return this;
     }
-    public Integer getCurrentPage() {
-        return this.currentPage;
+    public Integer getTotalPages() {
+        return this.totalPages;
     }
 
     public static class QueryAllDoctorsResponseBodyContent extends TeaModel {
-        // 租户下staffId
-        @NameInMap("uid")
-        public String uid;
+        // 考核医疗组id
+        @NameInMap("assessGroupId")
+        public String assessGroupId;
 
-        // 用户名称
-        @NameInMap("userName")
-        public String userName;
+        // 考核医疗组名称
+        @NameInMap("assessGroupName")
+        public String assessGroupName;
 
-        // 工号
-        @NameInMap("jobNum")
-        public String jobNum;
+        // 租户CorpId
+        @NameInMap("corpId")
+        public String corpId;
 
-        // 用户id
-        @NameInMap("id")
-        public Long id;
+        // 关联的部门id
+        @NameInMap("deptCode")
+        public String deptCode;
 
         // 用户创建时间
         @NameInMap("gmtCreateStr")
@@ -82,65 +82,65 @@ public class QueryAllDoctorsResponseBody extends TeaModel {
         @NameInMap("gmtModifiedStr")
         public String gmtModifiedStr;
 
-        // 租户CorpId
-        @NameInMap("corpId")
-        public String corpId;
+        // 用户id
+        @NameInMap("id")
+        public Long id;
 
-        // 租户内staffId
-        @NameInMap("userCode")
-        public String userCode;
-
-        // 关联的部门id
-        @NameInMap("deptCode")
-        public String deptCode;
+        // 工号
+        @NameInMap("jobNum")
+        public String jobNum;
 
         // 状态0-有效，1-删除
         @NameInMap("status")
         public Integer status;
 
-        // 考核医疗组id
-        @NameInMap("assessGroupId")
-        public String assessGroupId;
+        // 租户下staffId
+        @NameInMap("uid")
+        public String uid;
 
-        // 考核医疗组名称
-        @NameInMap("assessGroupName")
-        public String assessGroupName;
+        // 租户内staffId
+        @NameInMap("userCode")
+        public String userCode;
+
+        // 用户名称
+        @NameInMap("userName")
+        public String userName;
 
         public static QueryAllDoctorsResponseBodyContent build(java.util.Map<String, ?> map) throws Exception {
             QueryAllDoctorsResponseBodyContent self = new QueryAllDoctorsResponseBodyContent();
             return TeaModel.build(map, self);
         }
 
-        public QueryAllDoctorsResponseBodyContent setUid(String uid) {
-            this.uid = uid;
+        public QueryAllDoctorsResponseBodyContent setAssessGroupId(String assessGroupId) {
+            this.assessGroupId = assessGroupId;
             return this;
         }
-        public String getUid() {
-            return this.uid;
+        public String getAssessGroupId() {
+            return this.assessGroupId;
         }
 
-        public QueryAllDoctorsResponseBodyContent setUserName(String userName) {
-            this.userName = userName;
+        public QueryAllDoctorsResponseBodyContent setAssessGroupName(String assessGroupName) {
+            this.assessGroupName = assessGroupName;
             return this;
         }
-        public String getUserName() {
-            return this.userName;
+        public String getAssessGroupName() {
+            return this.assessGroupName;
         }
 
-        public QueryAllDoctorsResponseBodyContent setJobNum(String jobNum) {
-            this.jobNum = jobNum;
+        public QueryAllDoctorsResponseBodyContent setCorpId(String corpId) {
+            this.corpId = corpId;
             return this;
         }
-        public String getJobNum() {
-            return this.jobNum;
+        public String getCorpId() {
+            return this.corpId;
         }
 
-        public QueryAllDoctorsResponseBodyContent setId(Long id) {
-            this.id = id;
+        public QueryAllDoctorsResponseBodyContent setDeptCode(String deptCode) {
+            this.deptCode = deptCode;
             return this;
         }
-        public Long getId() {
-            return this.id;
+        public String getDeptCode() {
+            return this.deptCode;
         }
 
         public QueryAllDoctorsResponseBodyContent setGmtCreateStr(String gmtCreateStr) {
@@ -159,28 +159,20 @@ public class QueryAllDoctorsResponseBody extends TeaModel {
             return this.gmtModifiedStr;
         }
 
-        public QueryAllDoctorsResponseBodyContent setCorpId(String corpId) {
-            this.corpId = corpId;
+        public QueryAllDoctorsResponseBodyContent setId(Long id) {
+            this.id = id;
             return this;
         }
-        public String getCorpId() {
-            return this.corpId;
+        public Long getId() {
+            return this.id;
         }
 
-        public QueryAllDoctorsResponseBodyContent setUserCode(String userCode) {
-            this.userCode = userCode;
+        public QueryAllDoctorsResponseBodyContent setJobNum(String jobNum) {
+            this.jobNum = jobNum;
             return this;
         }
-        public String getUserCode() {
-            return this.userCode;
-        }
-
-        public QueryAllDoctorsResponseBodyContent setDeptCode(String deptCode) {
-            this.deptCode = deptCode;
-            return this;
-        }
-        public String getDeptCode() {
-            return this.deptCode;
+        public String getJobNum() {
+            return this.jobNum;
         }
 
         public QueryAllDoctorsResponseBodyContent setStatus(Integer status) {
@@ -191,20 +183,28 @@ public class QueryAllDoctorsResponseBody extends TeaModel {
             return this.status;
         }
 
-        public QueryAllDoctorsResponseBodyContent setAssessGroupId(String assessGroupId) {
-            this.assessGroupId = assessGroupId;
+        public QueryAllDoctorsResponseBodyContent setUid(String uid) {
+            this.uid = uid;
             return this;
         }
-        public String getAssessGroupId() {
-            return this.assessGroupId;
+        public String getUid() {
+            return this.uid;
         }
 
-        public QueryAllDoctorsResponseBodyContent setAssessGroupName(String assessGroupName) {
-            this.assessGroupName = assessGroupName;
+        public QueryAllDoctorsResponseBodyContent setUserCode(String userCode) {
+            this.userCode = userCode;
             return this;
         }
-        public String getAssessGroupName() {
-            return this.assessGroupName;
+        public String getUserCode() {
+            return this.userCode;
+        }
+
+        public QueryAllDoctorsResponseBodyContent setUserName(String userName) {
+            this.userName = userName;
+            return this;
+        }
+        public String getUserName() {
+            return this.userName;
         }
 
     }

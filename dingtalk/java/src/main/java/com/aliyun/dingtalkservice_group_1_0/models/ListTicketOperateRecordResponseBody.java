@@ -22,23 +22,15 @@ public class ListTicketOperateRecordResponseBody extends TeaModel {
     }
 
     public static class ListTicketOperateRecordResponseBodyRecordsOperator extends TeaModel {
-        @NameInMap("unionId")
-        public String unionId;
-
         @NameInMap("nickName")
         public String nickName;
+
+        @NameInMap("unionId")
+        public String unionId;
 
         public static ListTicketOperateRecordResponseBodyRecordsOperator build(java.util.Map<String, ?> map) throws Exception {
             ListTicketOperateRecordResponseBodyRecordsOperator self = new ListTicketOperateRecordResponseBodyRecordsOperator();
             return TeaModel.build(map, self);
-        }
-
-        public ListTicketOperateRecordResponseBodyRecordsOperator setUnionId(String unionId) {
-            this.unionId = unionId;
-            return this;
-        }
-        public String getUnionId() {
-            return this.unionId;
         }
 
         public ListTicketOperateRecordResponseBodyRecordsOperator setNickName(String nickName) {
@@ -47,6 +39,14 @@ public class ListTicketOperateRecordResponseBody extends TeaModel {
         }
         public String getNickName() {
             return this.nickName;
+        }
+
+        public ListTicketOperateRecordResponseBodyRecordsOperator setUnionId(String unionId) {
+            this.unionId = unionId;
+            return this;
+        }
+        public String getUnionId() {
+            return this.unionId;
         }
 
     }
@@ -82,23 +82,15 @@ public class ListTicketOperateRecordResponseBody extends TeaModel {
     }
 
     public static class ListTicketOperateRecordResponseBodyRecordsTicketMemo extends TeaModel {
-        @NameInMap("memo")
-        public String memo;
-
         @NameInMap("attachments")
         public java.util.List<ListTicketOperateRecordResponseBodyRecordsTicketMemoAttachments> attachments;
+
+        @NameInMap("memo")
+        public String memo;
 
         public static ListTicketOperateRecordResponseBodyRecordsTicketMemo build(java.util.Map<String, ?> map) throws Exception {
             ListTicketOperateRecordResponseBodyRecordsTicketMemo self = new ListTicketOperateRecordResponseBodyRecordsTicketMemo();
             return TeaModel.build(map, self);
-        }
-
-        public ListTicketOperateRecordResponseBodyRecordsTicketMemo setMemo(String memo) {
-            this.memo = memo;
-            return this;
-        }
-        public String getMemo() {
-            return this.memo;
         }
 
         public ListTicketOperateRecordResponseBodyRecordsTicketMemo setAttachments(java.util.List<ListTicketOperateRecordResponseBodyRecordsTicketMemoAttachments> attachments) {
@@ -109,12 +101,23 @@ public class ListTicketOperateRecordResponseBody extends TeaModel {
             return this.attachments;
         }
 
+        public ListTicketOperateRecordResponseBodyRecordsTicketMemo setMemo(String memo) {
+            this.memo = memo;
+            return this;
+        }
+        public String getMemo() {
+            return this.memo;
+        }
+
     }
 
     public static class ListTicketOperateRecordResponseBodyRecords extends TeaModel {
         // 工单开放ID
         @NameInMap("openTicketId")
         public String openTicketId;
+
+        @NameInMap("operateData")
+        public String operateData;
 
         // 操作时间
         @NameInMap("operateTime")
@@ -134,9 +137,6 @@ public class ListTicketOperateRecordResponseBody extends TeaModel {
         @NameInMap("ticketMemo")
         public ListTicketOperateRecordResponseBodyRecordsTicketMemo ticketMemo;
 
-        @NameInMap("operateData")
-        public String operateData;
-
         public static ListTicketOperateRecordResponseBodyRecords build(java.util.Map<String, ?> map) throws Exception {
             ListTicketOperateRecordResponseBodyRecords self = new ListTicketOperateRecordResponseBodyRecords();
             return TeaModel.build(map, self);
@@ -148,6 +148,14 @@ public class ListTicketOperateRecordResponseBody extends TeaModel {
         }
         public String getOpenTicketId() {
             return this.openTicketId;
+        }
+
+        public ListTicketOperateRecordResponseBodyRecords setOperateData(String operateData) {
+            this.operateData = operateData;
+            return this;
+        }
+        public String getOperateData() {
+            return this.operateData;
         }
 
         public ListTicketOperateRecordResponseBodyRecords setOperateTime(String operateTime) {
@@ -188,14 +196,6 @@ public class ListTicketOperateRecordResponseBody extends TeaModel {
         }
         public ListTicketOperateRecordResponseBodyRecordsTicketMemo getTicketMemo() {
             return this.ticketMemo;
-        }
-
-        public ListTicketOperateRecordResponseBodyRecords setOperateData(String operateData) {
-            this.operateData = operateData;
-            return this;
-        }
-        public String getOperateData() {
-            return this.operateData;
         }
 
     }

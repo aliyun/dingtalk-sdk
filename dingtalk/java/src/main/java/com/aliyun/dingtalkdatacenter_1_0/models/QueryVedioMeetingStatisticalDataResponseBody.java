@@ -34,6 +34,10 @@ public class QueryVedioMeetingStatisticalDataResponseBody extends TeaModel {
     }
 
     public static class QueryVedioMeetingStatisticalDataResponseBodyMetaList extends TeaModel {
+        // 指标口径
+        @NameInMap("kpiCaliber")
+        public String kpiCaliber;
+
         // 指标ID
         @NameInMap("kpiId")
         public String kpiId;
@@ -42,21 +46,25 @@ public class QueryVedioMeetingStatisticalDataResponseBody extends TeaModel {
         @NameInMap("kpiName")
         public String kpiName;
 
-        // 指标单位
-        @NameInMap("unit")
-        public String unit;
-
-        // 指标口径
-        @NameInMap("kpiCaliber")
-        public String kpiCaliber;
-
         // 指标周期
         @NameInMap("period")
         public String period;
 
+        // 指标单位
+        @NameInMap("unit")
+        public String unit;
+
         public static QueryVedioMeetingStatisticalDataResponseBodyMetaList build(java.util.Map<String, ?> map) throws Exception {
             QueryVedioMeetingStatisticalDataResponseBodyMetaList self = new QueryVedioMeetingStatisticalDataResponseBodyMetaList();
             return TeaModel.build(map, self);
+        }
+
+        public QueryVedioMeetingStatisticalDataResponseBodyMetaList setKpiCaliber(String kpiCaliber) {
+            this.kpiCaliber = kpiCaliber;
+            return this;
+        }
+        public String getKpiCaliber() {
+            return this.kpiCaliber;
         }
 
         public QueryVedioMeetingStatisticalDataResponseBodyMetaList setKpiId(String kpiId) {
@@ -75,28 +83,20 @@ public class QueryVedioMeetingStatisticalDataResponseBody extends TeaModel {
             return this.kpiName;
         }
 
-        public QueryVedioMeetingStatisticalDataResponseBodyMetaList setUnit(String unit) {
-            this.unit = unit;
-            return this;
-        }
-        public String getUnit() {
-            return this.unit;
-        }
-
-        public QueryVedioMeetingStatisticalDataResponseBodyMetaList setKpiCaliber(String kpiCaliber) {
-            this.kpiCaliber = kpiCaliber;
-            return this;
-        }
-        public String getKpiCaliber() {
-            return this.kpiCaliber;
-        }
-
         public QueryVedioMeetingStatisticalDataResponseBodyMetaList setPeriod(String period) {
             this.period = period;
             return this;
         }
         public String getPeriod() {
             return this.period;
+        }
+
+        public QueryVedioMeetingStatisticalDataResponseBodyMetaList setUnit(String unit) {
+            this.unit = unit;
+            return this;
+        }
+        public String getUnit() {
+            return this.unit;
         }
 
     }

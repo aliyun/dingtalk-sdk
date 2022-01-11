@@ -4,6 +4,10 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpateUserCodeInstanceRequest extends TeaModel {
+    // 有效时间列表，对于连续时间段，只需传入一个对象即可，注意过期时间必须晚于最晚结束时间
+    @NameInMap("availableTimes")
+    public java.util.List<UpateUserCodeInstanceRequestAvailableTimes> availableTimes;
+
     // 用户码ID
     @NameInMap("codeId")
     public String codeId;
@@ -16,13 +20,21 @@ public class UpateUserCodeInstanceRequest extends TeaModel {
     @NameInMap("codeValue")
     public String codeValue;
 
-    // 状态
-    @NameInMap("status")
-    public String status;
-
     // 企业ID
     @NameInMap("corpId")
     public String corpId;
+
+    // 扩展参数
+    @NameInMap("extInfo")
+    public java.util.Map<String, ?> extInfo;
+
+    // 临时码，传入过期时间
+    @NameInMap("gmtExpired")
+    public String gmtExpired;
+
+    // 状态
+    @NameInMap("status")
+    public String status;
 
     // 用户和企业的关系类型，区分内部员工，外部联系人，无关系普通用户
     @NameInMap("userCorpRelationType")
@@ -32,27 +44,17 @@ public class UpateUserCodeInstanceRequest extends TeaModel {
     @NameInMap("userIdentity")
     public String userIdentity;
 
-    // 临时码，传入过期时间
-    @NameInMap("gmtExpired")
-    public String gmtExpired;
-
-    // 有效时间列表，对于连续时间段，只需传入一个对象即可，注意过期时间必须晚于最晚结束时间
-    @NameInMap("availableTimes")
-    public java.util.List<UpateUserCodeInstanceRequestAvailableTimes> availableTimes;
-
-    // 扩展参数
-    @NameInMap("extInfo")
-    public java.util.Map<String, ?> extInfo;
-
-    @NameInMap("dingOrgId")
-    public Long dingOrgId;
-
-    @NameInMap("dingIsvOrgId")
-    public Long dingIsvOrgId;
-
     public static UpateUserCodeInstanceRequest build(java.util.Map<String, ?> map) throws Exception {
         UpateUserCodeInstanceRequest self = new UpateUserCodeInstanceRequest();
         return TeaModel.build(map, self);
+    }
+
+    public UpateUserCodeInstanceRequest setAvailableTimes(java.util.List<UpateUserCodeInstanceRequestAvailableTimes> availableTimes) {
+        this.availableTimes = availableTimes;
+        return this;
+    }
+    public java.util.List<UpateUserCodeInstanceRequestAvailableTimes> getAvailableTimes() {
+        return this.availableTimes;
     }
 
     public UpateUserCodeInstanceRequest setCodeId(String codeId) {
@@ -79,20 +81,36 @@ public class UpateUserCodeInstanceRequest extends TeaModel {
         return this.codeValue;
     }
 
-    public UpateUserCodeInstanceRequest setStatus(String status) {
-        this.status = status;
-        return this;
-    }
-    public String getStatus() {
-        return this.status;
-    }
-
     public UpateUserCodeInstanceRequest setCorpId(String corpId) {
         this.corpId = corpId;
         return this;
     }
     public String getCorpId() {
         return this.corpId;
+    }
+
+    public UpateUserCodeInstanceRequest setExtInfo(java.util.Map<String, ?> extInfo) {
+        this.extInfo = extInfo;
+        return this;
+    }
+    public java.util.Map<String, ?> getExtInfo() {
+        return this.extInfo;
+    }
+
+    public UpateUserCodeInstanceRequest setGmtExpired(String gmtExpired) {
+        this.gmtExpired = gmtExpired;
+        return this;
+    }
+    public String getGmtExpired() {
+        return this.gmtExpired;
+    }
+
+    public UpateUserCodeInstanceRequest setStatus(String status) {
+        this.status = status;
+        return this;
+    }
+    public String getStatus() {
+        return this.status;
     }
 
     public UpateUserCodeInstanceRequest setUserCorpRelationType(String userCorpRelationType) {
@@ -111,66 +129,18 @@ public class UpateUserCodeInstanceRequest extends TeaModel {
         return this.userIdentity;
     }
 
-    public UpateUserCodeInstanceRequest setGmtExpired(String gmtExpired) {
-        this.gmtExpired = gmtExpired;
-        return this;
-    }
-    public String getGmtExpired() {
-        return this.gmtExpired;
-    }
-
-    public UpateUserCodeInstanceRequest setAvailableTimes(java.util.List<UpateUserCodeInstanceRequestAvailableTimes> availableTimes) {
-        this.availableTimes = availableTimes;
-        return this;
-    }
-    public java.util.List<UpateUserCodeInstanceRequestAvailableTimes> getAvailableTimes() {
-        return this.availableTimes;
-    }
-
-    public UpateUserCodeInstanceRequest setExtInfo(java.util.Map<String, ?> extInfo) {
-        this.extInfo = extInfo;
-        return this;
-    }
-    public java.util.Map<String, ?> getExtInfo() {
-        return this.extInfo;
-    }
-
-    public UpateUserCodeInstanceRequest setDingOrgId(Long dingOrgId) {
-        this.dingOrgId = dingOrgId;
-        return this;
-    }
-    public Long getDingOrgId() {
-        return this.dingOrgId;
-    }
-
-    public UpateUserCodeInstanceRequest setDingIsvOrgId(Long dingIsvOrgId) {
-        this.dingIsvOrgId = dingIsvOrgId;
-        return this;
-    }
-    public Long getDingIsvOrgId() {
-        return this.dingIsvOrgId;
-    }
-
     public static class UpateUserCodeInstanceRequestAvailableTimes extends TeaModel {
-        // 开始时间
-        @NameInMap("gmtStart")
-        public String gmtStart;
-
         // 结束时间
         @NameInMap("gmtEnd")
         public String gmtEnd;
 
+        // 开始时间
+        @NameInMap("gmtStart")
+        public String gmtStart;
+
         public static UpateUserCodeInstanceRequestAvailableTimes build(java.util.Map<String, ?> map) throws Exception {
             UpateUserCodeInstanceRequestAvailableTimes self = new UpateUserCodeInstanceRequestAvailableTimes();
             return TeaModel.build(map, self);
-        }
-
-        public UpateUserCodeInstanceRequestAvailableTimes setGmtStart(String gmtStart) {
-            this.gmtStart = gmtStart;
-            return this;
-        }
-        public String getGmtStart() {
-            return this.gmtStart;
         }
 
         public UpateUserCodeInstanceRequestAvailableTimes setGmtEnd(String gmtEnd) {
@@ -179,6 +149,14 @@ public class UpateUserCodeInstanceRequest extends TeaModel {
         }
         public String getGmtEnd() {
             return this.gmtEnd;
+        }
+
+        public UpateUserCodeInstanceRequestAvailableTimes setGmtStart(String gmtStart) {
+            this.gmtStart = gmtStart;
+            return this;
+        }
+        public String getGmtStart() {
+            return this.gmtStart;
         }
 
     }

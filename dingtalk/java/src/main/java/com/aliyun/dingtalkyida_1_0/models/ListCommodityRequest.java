@@ -8,10 +8,6 @@ public class ListCommodityRequest extends TeaModel {
     @NameInMap("accessKey")
     public String accessKey;
 
-    // pageSize
-    @NameInMap("pageSize")
-    public Integer pageSize;
-
     // callerUid
     @NameInMap("callerUid")
     public String callerUid;
@@ -19,6 +15,10 @@ public class ListCommodityRequest extends TeaModel {
     // currentPage
     @NameInMap("pageNumber")
     public Integer pageNumber;
+
+    // pageSize
+    @NameInMap("pageSize")
+    public Integer pageSize;
 
     public static ListCommodityRequest build(java.util.Map<String, ?> map) throws Exception {
         ListCommodityRequest self = new ListCommodityRequest();
@@ -31,14 +31,6 @@ public class ListCommodityRequest extends TeaModel {
     }
     public String getAccessKey() {
         return this.accessKey;
-    }
-
-    public ListCommodityRequest setPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
-        return this;
-    }
-    public Integer getPageSize() {
-        return this.pageSize;
     }
 
     public ListCommodityRequest setCallerUid(String callerUid) {
@@ -55,6 +47,14 @@ public class ListCommodityRequest extends TeaModel {
     }
     public Integer getPageNumber() {
         return this.pageNumber;
+    }
+
+    public ListCommodityRequest setPageSize(Integer pageSize) {
+        this.pageSize = pageSize;
+        return this;
+    }
+    public Integer getPageSize() {
+        return this.pageSize;
     }
 
 }

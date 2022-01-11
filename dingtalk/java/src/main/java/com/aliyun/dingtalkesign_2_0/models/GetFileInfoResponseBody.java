@@ -4,14 +4,17 @@ package com.aliyun.dingtalkesign_2_0.models;
 import com.aliyun.tea.*;
 
 public class GetFileInfoResponseBody extends TeaModel {
+    @NameInMap("downloadUrl")
+    public String downloadUrl;
+
     @NameInMap("fileId")
     public String fileId;
 
     @NameInMap("name")
     public String name;
 
-    @NameInMap("downloadUrl")
-    public String downloadUrl;
+    @NameInMap("pdfTotalPages")
+    public Long pdfTotalPages;
 
     @NameInMap("size")
     public Long size;
@@ -19,12 +22,17 @@ public class GetFileInfoResponseBody extends TeaModel {
     @NameInMap("status")
     public Long status;
 
-    @NameInMap("pdfTotalPages")
-    public Long pdfTotalPages;
-
     public static GetFileInfoResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetFileInfoResponseBody self = new GetFileInfoResponseBody();
         return TeaModel.build(map, self);
+    }
+
+    public GetFileInfoResponseBody setDownloadUrl(String downloadUrl) {
+        this.downloadUrl = downloadUrl;
+        return this;
+    }
+    public String getDownloadUrl() {
+        return this.downloadUrl;
     }
 
     public GetFileInfoResponseBody setFileId(String fileId) {
@@ -43,12 +51,12 @@ public class GetFileInfoResponseBody extends TeaModel {
         return this.name;
     }
 
-    public GetFileInfoResponseBody setDownloadUrl(String downloadUrl) {
-        this.downloadUrl = downloadUrl;
+    public GetFileInfoResponseBody setPdfTotalPages(Long pdfTotalPages) {
+        this.pdfTotalPages = pdfTotalPages;
         return this;
     }
-    public String getDownloadUrl() {
-        return this.downloadUrl;
+    public Long getPdfTotalPages() {
+        return this.pdfTotalPages;
     }
 
     public GetFileInfoResponseBody setSize(Long size) {
@@ -65,14 +73,6 @@ public class GetFileInfoResponseBody extends TeaModel {
     }
     public Long getStatus() {
         return this.status;
-    }
-
-    public GetFileInfoResponseBody setPdfTotalPages(Long pdfTotalPages) {
-        this.pdfTotalPages = pdfTotalPages;
-        return this;
-    }
-    public Long getPdfTotalPages() {
-        return this.pdfTotalPages;
     }
 
 }

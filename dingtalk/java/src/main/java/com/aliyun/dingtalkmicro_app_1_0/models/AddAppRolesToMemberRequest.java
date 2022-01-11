@@ -4,10 +4,6 @@ package com.aliyun.dingtalkmicro_app_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddAppRolesToMemberRequest extends TeaModel {
-    // 执行用户userId
-    @NameInMap("opUserId")
-    public String opUserId;
-
     // 人员id
     @NameInMap("memberId")
     public String memberId;
@@ -16,6 +12,10 @@ public class AddAppRolesToMemberRequest extends TeaModel {
     @NameInMap("memberType")
     public String memberType;
 
+    // 执行用户userId
+    @NameInMap("opUserId")
+    public String opUserId;
+
     // 角色Id列表
     @NameInMap("roleList")
     public java.util.List<AddAppRolesToMemberRequestRoleList> roleList;
@@ -23,14 +23,6 @@ public class AddAppRolesToMemberRequest extends TeaModel {
     public static AddAppRolesToMemberRequest build(java.util.Map<String, ?> map) throws Exception {
         AddAppRolesToMemberRequest self = new AddAppRolesToMemberRequest();
         return TeaModel.build(map, self);
-    }
-
-    public AddAppRolesToMemberRequest setOpUserId(String opUserId) {
-        this.opUserId = opUserId;
-        return this;
-    }
-    public String getOpUserId() {
-        return this.opUserId;
     }
 
     public AddAppRolesToMemberRequest setMemberId(String memberId) {
@@ -47,6 +39,14 @@ public class AddAppRolesToMemberRequest extends TeaModel {
     }
     public String getMemberType() {
         return this.memberType;
+    }
+
+    public AddAppRolesToMemberRequest setOpUserId(String opUserId) {
+        this.opUserId = opUserId;
+        return this;
+    }
+    public String getOpUserId() {
+        return this.opUserId;
     }
 
     public AddAppRolesToMemberRequest setRoleList(java.util.List<AddAppRolesToMemberRequestRoleList> roleList) {

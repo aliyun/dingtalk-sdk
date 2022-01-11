@@ -4,20 +4,14 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class UploadEventRequest extends TeaModel {
-    @NameInMap("deviceUuid")
-    public String deviceUuid;
-
     @NameInMap("content")
     public String content;
-
-    @NameInMap("dingCorpId")
-    public String dingCorpId;
 
     @NameInMap("deviceCode")
     public String deviceCode;
 
-    @NameInMap("level")
-    public String level;
+    @NameInMap("deviceUuid")
+    public String deviceUuid;
 
     @NameInMap("eventTime")
     public String eventTime;
@@ -25,17 +19,12 @@ public class UploadEventRequest extends TeaModel {
     @NameInMap("eventType")
     public String eventType;
 
+    @NameInMap("level")
+    public String level;
+
     public static UploadEventRequest build(java.util.Map<String, ?> map) throws Exception {
         UploadEventRequest self = new UploadEventRequest();
         return TeaModel.build(map, self);
-    }
-
-    public UploadEventRequest setDeviceUuid(String deviceUuid) {
-        this.deviceUuid = deviceUuid;
-        return this;
-    }
-    public String getDeviceUuid() {
-        return this.deviceUuid;
     }
 
     public UploadEventRequest setContent(String content) {
@@ -46,14 +35,6 @@ public class UploadEventRequest extends TeaModel {
         return this.content;
     }
 
-    public UploadEventRequest setDingCorpId(String dingCorpId) {
-        this.dingCorpId = dingCorpId;
-        return this;
-    }
-    public String getDingCorpId() {
-        return this.dingCorpId;
-    }
-
     public UploadEventRequest setDeviceCode(String deviceCode) {
         this.deviceCode = deviceCode;
         return this;
@@ -62,12 +43,12 @@ public class UploadEventRequest extends TeaModel {
         return this.deviceCode;
     }
 
-    public UploadEventRequest setLevel(String level) {
-        this.level = level;
+    public UploadEventRequest setDeviceUuid(String deviceUuid) {
+        this.deviceUuid = deviceUuid;
         return this;
     }
-    public String getLevel() {
-        return this.level;
+    public String getDeviceUuid() {
+        return this.deviceUuid;
     }
 
     public UploadEventRequest setEventTime(String eventTime) {
@@ -84,6 +65,14 @@ public class UploadEventRequest extends TeaModel {
     }
     public String getEventType() {
         return this.eventType;
+    }
+
+    public UploadEventRequest setLevel(String level) {
+        this.level = level;
+        return this;
+    }
+    public String getLevel() {
+        return this.level;
     }
 
 }

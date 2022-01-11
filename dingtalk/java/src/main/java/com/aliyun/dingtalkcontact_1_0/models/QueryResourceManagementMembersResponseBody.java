@@ -22,25 +22,17 @@ public class QueryResourceManagementMembersResponseBody extends TeaModel {
     }
 
     public static class QueryResourceManagementMembersResponseBodyMembers extends TeaModel {
-        // 成员类型
-        @NameInMap("memberType")
-        public String memberType;
-
         // 成员id
         @NameInMap("memberId")
         public String memberId;
 
+        // 成员类型
+        @NameInMap("memberType")
+        public String memberType;
+
         public static QueryResourceManagementMembersResponseBodyMembers build(java.util.Map<String, ?> map) throws Exception {
             QueryResourceManagementMembersResponseBodyMembers self = new QueryResourceManagementMembersResponseBodyMembers();
             return TeaModel.build(map, self);
-        }
-
-        public QueryResourceManagementMembersResponseBodyMembers setMemberType(String memberType) {
-            this.memberType = memberType;
-            return this;
-        }
-        public String getMemberType() {
-            return this.memberType;
         }
 
         public QueryResourceManagementMembersResponseBodyMembers setMemberId(String memberId) {
@@ -49,6 +41,14 @@ public class QueryResourceManagementMembersResponseBody extends TeaModel {
         }
         public String getMemberId() {
             return this.memberId;
+        }
+
+        public QueryResourceManagementMembersResponseBodyMembers setMemberType(String memberType) {
+            this.memberType = memberType;
+            return this;
+        }
+        public String getMemberType() {
+            return this.memberType;
         }
 
     }

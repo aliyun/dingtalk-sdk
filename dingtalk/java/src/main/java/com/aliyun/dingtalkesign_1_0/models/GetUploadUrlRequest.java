@@ -4,20 +4,11 @@ package com.aliyun.dingtalkesign_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetUploadUrlRequest extends TeaModel {
-    @NameInMap("dingCorpId")
-    public String dingCorpId;
-
-    @NameInMap("dingIsvAccessToken")
-    public String dingIsvAccessToken;
-
-    @NameInMap("dingSuiteKey")
-    public String dingSuiteKey;
+    @NameInMap("contentMd5")
+    public String contentMd5;
 
     @NameInMap("contentType")
     public String contentType;
-
-    @NameInMap("contentMd5")
-    public String contentMd5;
 
     @NameInMap("convert2Pdf")
     public Boolean convert2Pdf;
@@ -33,28 +24,12 @@ public class GetUploadUrlRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public GetUploadUrlRequest setDingCorpId(String dingCorpId) {
-        this.dingCorpId = dingCorpId;
+    public GetUploadUrlRequest setContentMd5(String contentMd5) {
+        this.contentMd5 = contentMd5;
         return this;
     }
-    public String getDingCorpId() {
-        return this.dingCorpId;
-    }
-
-    public GetUploadUrlRequest setDingIsvAccessToken(String dingIsvAccessToken) {
-        this.dingIsvAccessToken = dingIsvAccessToken;
-        return this;
-    }
-    public String getDingIsvAccessToken() {
-        return this.dingIsvAccessToken;
-    }
-
-    public GetUploadUrlRequest setDingSuiteKey(String dingSuiteKey) {
-        this.dingSuiteKey = dingSuiteKey;
-        return this;
-    }
-    public String getDingSuiteKey() {
-        return this.dingSuiteKey;
+    public String getContentMd5() {
+        return this.contentMd5;
     }
 
     public GetUploadUrlRequest setContentType(String contentType) {
@@ -63,14 +38,6 @@ public class GetUploadUrlRequest extends TeaModel {
     }
     public String getContentType() {
         return this.contentType;
-    }
-
-    public GetUploadUrlRequest setContentMd5(String contentMd5) {
-        this.contentMd5 = contentMd5;
-        return this;
-    }
-    public String getContentMd5() {
-        return this.contentMd5;
     }
 
     public GetUploadUrlRequest setConvert2Pdf(Boolean convert2Pdf) {

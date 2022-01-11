@@ -4,25 +4,17 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendInteractiveCardResponseBody extends TeaModel {
-    // success
-    @NameInMap("success")
-    public Boolean success;
-
     // 创建卡片结果
     @NameInMap("result")
     public SendInteractiveCardResponseBodyResult result;
 
+    // success
+    @NameInMap("success")
+    public Boolean success;
+
     public static SendInteractiveCardResponseBody build(java.util.Map<String, ?> map) throws Exception {
         SendInteractiveCardResponseBody self = new SendInteractiveCardResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public SendInteractiveCardResponseBody setSuccess(Boolean success) {
-        this.success = success;
-        return this;
-    }
-    public Boolean getSuccess() {
-        return this.success;
     }
 
     public SendInteractiveCardResponseBody setResult(SendInteractiveCardResponseBodyResult result) {
@@ -31,6 +23,14 @@ public class SendInteractiveCardResponseBody extends TeaModel {
     }
     public SendInteractiveCardResponseBodyResult getResult() {
         return this.result;
+    }
+
+    public SendInteractiveCardResponseBody setSuccess(Boolean success) {
+        this.success = success;
+        return this;
+    }
+    public Boolean getSuccess() {
+        return this.success;
     }
 
     public static class SendInteractiveCardResponseBodyResult extends TeaModel {

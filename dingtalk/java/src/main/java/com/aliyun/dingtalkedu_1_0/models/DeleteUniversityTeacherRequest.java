@@ -8,6 +8,10 @@ public class DeleteUniversityTeacherRequest extends TeaModel {
     @NameInMap("classId")
     public Long classId;
 
+    // opUserId
+    @NameInMap("opUserId")
+    public String opUserId;
+
     // 角色
     @NameInMap("role")
     public String role;
@@ -15,10 +19,6 @@ public class DeleteUniversityTeacherRequest extends TeaModel {
     // 教师用户ID
     @NameInMap("teacherUserId")
     public String teacherUserId;
-
-    // opUserId
-    @NameInMap("opUserId")
-    public String opUserId;
 
     public static DeleteUniversityTeacherRequest build(java.util.Map<String, ?> map) throws Exception {
         DeleteUniversityTeacherRequest self = new DeleteUniversityTeacherRequest();
@@ -31,6 +31,14 @@ public class DeleteUniversityTeacherRequest extends TeaModel {
     }
     public Long getClassId() {
         return this.classId;
+    }
+
+    public DeleteUniversityTeacherRequest setOpUserId(String opUserId) {
+        this.opUserId = opUserId;
+        return this;
+    }
+    public String getOpUserId() {
+        return this.opUserId;
     }
 
     public DeleteUniversityTeacherRequest setRole(String role) {
@@ -47,14 +55,6 @@ public class DeleteUniversityTeacherRequest extends TeaModel {
     }
     public String getTeacherUserId() {
         return this.teacherUserId;
-    }
-
-    public DeleteUniversityTeacherRequest setOpUserId(String opUserId) {
-        this.opUserId = opUserId;
-        return this;
-    }
-    public String getOpUserId() {
-        return this.opUserId;
     }
 
 }

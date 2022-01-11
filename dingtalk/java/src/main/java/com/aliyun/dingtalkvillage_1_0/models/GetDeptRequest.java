@@ -4,25 +4,17 @@ package com.aliyun.dingtalkvillage_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetDeptRequest extends TeaModel {
-    // 下属组织的组织ID，比如下属镇、村的corpId
-    @NameInMap("subCorpId")
-    public String subCorpId;
-
     // 通讯录语言(默认zh_CN另外支持en_US)
     @NameInMap("language")
     public String language;
 
+    // 下属组织的组织ID，比如下属镇、村的corpId
+    @NameInMap("subCorpId")
+    public String subCorpId;
+
     public static GetDeptRequest build(java.util.Map<String, ?> map) throws Exception {
         GetDeptRequest self = new GetDeptRequest();
         return TeaModel.build(map, self);
-    }
-
-    public GetDeptRequest setSubCorpId(String subCorpId) {
-        this.subCorpId = subCorpId;
-        return this;
-    }
-    public String getSubCorpId() {
-        return this.subCorpId;
     }
 
     public GetDeptRequest setLanguage(String language) {
@@ -31,6 +23,14 @@ public class GetDeptRequest extends TeaModel {
     }
     public String getLanguage() {
         return this.language;
+    }
+
+    public GetDeptRequest setSubCorpId(String subCorpId) {
+        this.subCorpId = subCorpId;
+        return this;
+    }
+    public String getSubCorpId() {
+        return this.subCorpId;
     }
 
 }

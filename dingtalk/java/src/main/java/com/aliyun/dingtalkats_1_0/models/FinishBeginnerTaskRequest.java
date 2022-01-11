@@ -4,25 +4,17 @@ package com.aliyun.dingtalkats_1_0.models;
 import com.aliyun.tea.*;
 
 public class FinishBeginnerTaskRequest extends TeaModel {
-    // 员工标识
-    @NameInMap("userId")
-    public String userId;
-
     // 任务范围
     @NameInMap("scope")
     public String scope;
 
+    // 员工标识
+    @NameInMap("userId")
+    public String userId;
+
     public static FinishBeginnerTaskRequest build(java.util.Map<String, ?> map) throws Exception {
         FinishBeginnerTaskRequest self = new FinishBeginnerTaskRequest();
         return TeaModel.build(map, self);
-    }
-
-    public FinishBeginnerTaskRequest setUserId(String userId) {
-        this.userId = userId;
-        return this;
-    }
-    public String getUserId() {
-        return this.userId;
     }
 
     public FinishBeginnerTaskRequest setScope(String scope) {
@@ -31,6 +23,14 @@ public class FinishBeginnerTaskRequest extends TeaModel {
     }
     public String getScope() {
         return this.scope;
+    }
+
+    public FinishBeginnerTaskRequest setUserId(String userId) {
+        this.userId = userId;
+        return this;
+    }
+    public String getUserId() {
+        return this.userId;
     }
 
 }

@@ -4,20 +4,35 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class IndustryManufactureLabourCostRequest extends TeaModel {
-    @NameInMap("processNo")
-    public String processNo;
+    @NameInMap("appId")
+    public Long appId;
 
-    @NameInMap("materialNo")
-    public String materialNo;
+    @NameInMap("appIds")
+    public java.util.List<Long> appIds;
 
-    @NameInMap("startTime")
-    public Long startTime;
+    @NameInMap("appName")
+    public String appName;
+
+    @NameInMap("corpId")
+    public String corpId;
+
+    @NameInMap("cursor")
+    public Long cursor;
 
     @NameInMap("endTime")
     public Long endTime;
 
-    @NameInMap("cursor")
-    public Long cursor;
+    @NameInMap("isvOrgId")
+    public String isvOrgId;
+
+    @NameInMap("materialNo")
+    public String materialNo;
+
+    @NameInMap("microappAgentId")
+    public Long microappAgentId;
+
+    @NameInMap("orgId")
+    public Long orgId;
 
     @NameInMap("pageNumber")
     public Long pageNumber;
@@ -25,60 +40,61 @@ public class IndustryManufactureLabourCostRequest extends TeaModel {
     @NameInMap("pageSize")
     public Integer pageSize;
 
-    @NameInMap("tokenGrantType")
-    public Integer tokenGrantType;
+    @NameInMap("processNo")
+    public String processNo;
 
-    @NameInMap("orgId")
-    public Long orgId;
-
-    @NameInMap("corpId")
-    public String corpId;
-
-    @NameInMap("isvOrgId")
-    public String isvOrgId;
+    @NameInMap("startTime")
+    public Long startTime;
 
     @NameInMap("suiteKey")
     public String suiteKey;
 
-    @NameInMap("microappAgentId")
-    public Long microappAgentId;
-
-    @NameInMap("appIds")
-    public java.util.List<Long> appIds;
-
-    @NameInMap("appId")
-    public Long appId;
-
-    @NameInMap("appName")
-    public String appName;
+    @NameInMap("tokenGrantType")
+    public Integer tokenGrantType;
 
     public static IndustryManufactureLabourCostRequest build(java.util.Map<String, ?> map) throws Exception {
         IndustryManufactureLabourCostRequest self = new IndustryManufactureLabourCostRequest();
         return TeaModel.build(map, self);
     }
 
-    public IndustryManufactureLabourCostRequest setProcessNo(String processNo) {
-        this.processNo = processNo;
+    public IndustryManufactureLabourCostRequest setAppId(Long appId) {
+        this.appId = appId;
         return this;
     }
-    public String getProcessNo() {
-        return this.processNo;
+    public Long getAppId() {
+        return this.appId;
     }
 
-    public IndustryManufactureLabourCostRequest setMaterialNo(String materialNo) {
-        this.materialNo = materialNo;
+    public IndustryManufactureLabourCostRequest setAppIds(java.util.List<Long> appIds) {
+        this.appIds = appIds;
         return this;
     }
-    public String getMaterialNo() {
-        return this.materialNo;
+    public java.util.List<Long> getAppIds() {
+        return this.appIds;
     }
 
-    public IndustryManufactureLabourCostRequest setStartTime(Long startTime) {
-        this.startTime = startTime;
+    public IndustryManufactureLabourCostRequest setAppName(String appName) {
+        this.appName = appName;
         return this;
     }
-    public Long getStartTime() {
-        return this.startTime;
+    public String getAppName() {
+        return this.appName;
+    }
+
+    public IndustryManufactureLabourCostRequest setCorpId(String corpId) {
+        this.corpId = corpId;
+        return this;
+    }
+    public String getCorpId() {
+        return this.corpId;
+    }
+
+    public IndustryManufactureLabourCostRequest setCursor(Long cursor) {
+        this.cursor = cursor;
+        return this;
+    }
+    public Long getCursor() {
+        return this.cursor;
     }
 
     public IndustryManufactureLabourCostRequest setEndTime(Long endTime) {
@@ -89,12 +105,36 @@ public class IndustryManufactureLabourCostRequest extends TeaModel {
         return this.endTime;
     }
 
-    public IndustryManufactureLabourCostRequest setCursor(Long cursor) {
-        this.cursor = cursor;
+    public IndustryManufactureLabourCostRequest setIsvOrgId(String isvOrgId) {
+        this.isvOrgId = isvOrgId;
         return this;
     }
-    public Long getCursor() {
-        return this.cursor;
+    public String getIsvOrgId() {
+        return this.isvOrgId;
+    }
+
+    public IndustryManufactureLabourCostRequest setMaterialNo(String materialNo) {
+        this.materialNo = materialNo;
+        return this;
+    }
+    public String getMaterialNo() {
+        return this.materialNo;
+    }
+
+    public IndustryManufactureLabourCostRequest setMicroappAgentId(Long microappAgentId) {
+        this.microappAgentId = microappAgentId;
+        return this;
+    }
+    public Long getMicroappAgentId() {
+        return this.microappAgentId;
+    }
+
+    public IndustryManufactureLabourCostRequest setOrgId(Long orgId) {
+        this.orgId = orgId;
+        return this;
+    }
+    public Long getOrgId() {
+        return this.orgId;
     }
 
     public IndustryManufactureLabourCostRequest setPageNumber(Long pageNumber) {
@@ -113,36 +153,20 @@ public class IndustryManufactureLabourCostRequest extends TeaModel {
         return this.pageSize;
     }
 
-    public IndustryManufactureLabourCostRequest setTokenGrantType(Integer tokenGrantType) {
-        this.tokenGrantType = tokenGrantType;
+    public IndustryManufactureLabourCostRequest setProcessNo(String processNo) {
+        this.processNo = processNo;
         return this;
     }
-    public Integer getTokenGrantType() {
-        return this.tokenGrantType;
+    public String getProcessNo() {
+        return this.processNo;
     }
 
-    public IndustryManufactureLabourCostRequest setOrgId(Long orgId) {
-        this.orgId = orgId;
+    public IndustryManufactureLabourCostRequest setStartTime(Long startTime) {
+        this.startTime = startTime;
         return this;
     }
-    public Long getOrgId() {
-        return this.orgId;
-    }
-
-    public IndustryManufactureLabourCostRequest setCorpId(String corpId) {
-        this.corpId = corpId;
-        return this;
-    }
-    public String getCorpId() {
-        return this.corpId;
-    }
-
-    public IndustryManufactureLabourCostRequest setIsvOrgId(String isvOrgId) {
-        this.isvOrgId = isvOrgId;
-        return this;
-    }
-    public String getIsvOrgId() {
-        return this.isvOrgId;
+    public Long getStartTime() {
+        return this.startTime;
     }
 
     public IndustryManufactureLabourCostRequest setSuiteKey(String suiteKey) {
@@ -153,36 +177,12 @@ public class IndustryManufactureLabourCostRequest extends TeaModel {
         return this.suiteKey;
     }
 
-    public IndustryManufactureLabourCostRequest setMicroappAgentId(Long microappAgentId) {
-        this.microappAgentId = microappAgentId;
+    public IndustryManufactureLabourCostRequest setTokenGrantType(Integer tokenGrantType) {
+        this.tokenGrantType = tokenGrantType;
         return this;
     }
-    public Long getMicroappAgentId() {
-        return this.microappAgentId;
-    }
-
-    public IndustryManufactureLabourCostRequest setAppIds(java.util.List<Long> appIds) {
-        this.appIds = appIds;
-        return this;
-    }
-    public java.util.List<Long> getAppIds() {
-        return this.appIds;
-    }
-
-    public IndustryManufactureLabourCostRequest setAppId(Long appId) {
-        this.appId = appId;
-        return this;
-    }
-    public Long getAppId() {
-        return this.appId;
-    }
-
-    public IndustryManufactureLabourCostRequest setAppName(String appName) {
-        this.appName = appName;
-        return this;
-    }
-    public String getAppName() {
-        return this.appName;
+    public Integer getTokenGrantType() {
+        return this.tokenGrantType;
     }
 
 }

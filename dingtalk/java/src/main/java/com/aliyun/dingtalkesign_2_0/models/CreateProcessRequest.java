@@ -4,92 +4,33 @@ package com.aliyun.dingtalkesign_2_0.models;
 import com.aliyun.tea.*;
 
 public class CreateProcessRequest extends TeaModel {
-    @NameInMap("dingCorpId")
-    public String dingCorpId;
-
-    @NameInMap("initiatorUserId")
-    public String initiatorUserId;
-
-    @NameInMap("taskName")
-    public String taskName;
-
-    @NameInMap("signEndTime")
-    public Long signEndTime;
-
-    @NameInMap("redirectUrl")
-    public String redirectUrl;
+    @NameInMap("ccs")
+    public java.util.List<CreateProcessRequestCcs> ccs;
 
     @NameInMap("files")
     public java.util.List<CreateProcessRequestFiles> files;
 
+    @NameInMap("initiatorUserId")
+    public String initiatorUserId;
+
     @NameInMap("participants")
     public java.util.List<CreateProcessRequestParticipants> participants;
 
-    @NameInMap("ccs")
-    public java.util.List<CreateProcessRequestCcs> ccs;
+    @NameInMap("redirectUrl")
+    public String redirectUrl;
+
+    @NameInMap("signEndTime")
+    public Long signEndTime;
 
     @NameInMap("sourceInfo")
     public CreateProcessRequestSourceInfo sourceInfo;
 
+    @NameInMap("taskName")
+    public String taskName;
+
     public static CreateProcessRequest build(java.util.Map<String, ?> map) throws Exception {
         CreateProcessRequest self = new CreateProcessRequest();
         return TeaModel.build(map, self);
-    }
-
-    public CreateProcessRequest setDingCorpId(String dingCorpId) {
-        this.dingCorpId = dingCorpId;
-        return this;
-    }
-    public String getDingCorpId() {
-        return this.dingCorpId;
-    }
-
-    public CreateProcessRequest setInitiatorUserId(String initiatorUserId) {
-        this.initiatorUserId = initiatorUserId;
-        return this;
-    }
-    public String getInitiatorUserId() {
-        return this.initiatorUserId;
-    }
-
-    public CreateProcessRequest setTaskName(String taskName) {
-        this.taskName = taskName;
-        return this;
-    }
-    public String getTaskName() {
-        return this.taskName;
-    }
-
-    public CreateProcessRequest setSignEndTime(Long signEndTime) {
-        this.signEndTime = signEndTime;
-        return this;
-    }
-    public Long getSignEndTime() {
-        return this.signEndTime;
-    }
-
-    public CreateProcessRequest setRedirectUrl(String redirectUrl) {
-        this.redirectUrl = redirectUrl;
-        return this;
-    }
-    public String getRedirectUrl() {
-        return this.redirectUrl;
-    }
-
-    public CreateProcessRequest setFiles(java.util.List<CreateProcessRequestFiles> files) {
-        this.files = files;
-        return this;
-    }
-    public java.util.List<CreateProcessRequestFiles> getFiles() {
-        return this.files;
-    }
-
-    public CreateProcessRequest setParticipants(java.util.List<CreateProcessRequestParticipants> participants) {
-        this.participants = participants;
-        return this;
-    }
-    public java.util.List<CreateProcessRequestParticipants> getParticipants() {
-        return this.participants;
     }
 
     public CreateProcessRequest setCcs(java.util.List<CreateProcessRequestCcs> ccs) {
@@ -100,6 +41,46 @@ public class CreateProcessRequest extends TeaModel {
         return this.ccs;
     }
 
+    public CreateProcessRequest setFiles(java.util.List<CreateProcessRequestFiles> files) {
+        this.files = files;
+        return this;
+    }
+    public java.util.List<CreateProcessRequestFiles> getFiles() {
+        return this.files;
+    }
+
+    public CreateProcessRequest setInitiatorUserId(String initiatorUserId) {
+        this.initiatorUserId = initiatorUserId;
+        return this;
+    }
+    public String getInitiatorUserId() {
+        return this.initiatorUserId;
+    }
+
+    public CreateProcessRequest setParticipants(java.util.List<CreateProcessRequestParticipants> participants) {
+        this.participants = participants;
+        return this;
+    }
+    public java.util.List<CreateProcessRequestParticipants> getParticipants() {
+        return this.participants;
+    }
+
+    public CreateProcessRequest setRedirectUrl(String redirectUrl) {
+        this.redirectUrl = redirectUrl;
+        return this;
+    }
+    public String getRedirectUrl() {
+        return this.redirectUrl;
+    }
+
+    public CreateProcessRequest setSignEndTime(Long signEndTime) {
+        this.signEndTime = signEndTime;
+        return this;
+    }
+    public Long getSignEndTime() {
+        return this.signEndTime;
+    }
+
     public CreateProcessRequest setSourceInfo(CreateProcessRequestSourceInfo sourceInfo) {
         this.sourceInfo = sourceInfo;
         return this;
@@ -108,15 +89,86 @@ public class CreateProcessRequest extends TeaModel {
         return this.sourceInfo;
     }
 
+    public CreateProcessRequest setTaskName(String taskName) {
+        this.taskName = taskName;
+        return this;
+    }
+    public String getTaskName() {
+        return this.taskName;
+    }
+
+    public static class CreateProcessRequestCcs extends TeaModel {
+        @NameInMap("account")
+        public String account;
+
+        @NameInMap("accountName")
+        public String accountName;
+
+        @NameInMap("accountType")
+        public String accountType;
+
+        @NameInMap("orgName")
+        public String orgName;
+
+        @NameInMap("userId")
+        public String userId;
+
+        public static CreateProcessRequestCcs build(java.util.Map<String, ?> map) throws Exception {
+            CreateProcessRequestCcs self = new CreateProcessRequestCcs();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateProcessRequestCcs setAccount(String account) {
+            this.account = account;
+            return this;
+        }
+        public String getAccount() {
+            return this.account;
+        }
+
+        public CreateProcessRequestCcs setAccountName(String accountName) {
+            this.accountName = accountName;
+            return this;
+        }
+        public String getAccountName() {
+            return this.accountName;
+        }
+
+        public CreateProcessRequestCcs setAccountType(String accountType) {
+            this.accountType = accountType;
+            return this;
+        }
+        public String getAccountType() {
+            return this.accountType;
+        }
+
+        public CreateProcessRequestCcs setOrgName(String orgName) {
+            this.orgName = orgName;
+            return this;
+        }
+        public String getOrgName() {
+            return this.orgName;
+        }
+
+        public CreateProcessRequestCcs setUserId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+        public String getUserId() {
+            return this.userId;
+        }
+
+    }
+
     public static class CreateProcessRequestFiles extends TeaModel {
         @NameInMap("fileId")
         public String fileId;
 
-        @NameInMap("fileType")
-        public Integer fileType;
-
         @NameInMap("fileName")
         public String fileName;
+
+        @NameInMap("fileType")
+        public Integer fileType;
 
         public static CreateProcessRequestFiles build(java.util.Map<String, ?> map) throws Exception {
             CreateProcessRequestFiles self = new CreateProcessRequestFiles();
@@ -131,20 +183,20 @@ public class CreateProcessRequest extends TeaModel {
             return this.fileId;
         }
 
-        public CreateProcessRequestFiles setFileType(Integer fileType) {
-            this.fileType = fileType;
-            return this;
-        }
-        public Integer getFileType() {
-            return this.fileType;
-        }
-
         public CreateProcessRequestFiles setFileName(String fileName) {
             this.fileName = fileName;
             return this;
         }
         public String getFileName() {
             return this.fileName;
+        }
+
+        public CreateProcessRequestFiles setFileType(Integer fileType) {
+            this.fileType = fileType;
+            return this;
+        }
+        public Integer getFileType() {
+            return this.fileType;
         }
 
     }
@@ -273,61 +325,34 @@ public class CreateProcessRequest extends TeaModel {
     }
 
     public static class CreateProcessRequestParticipants extends TeaModel {
-        @NameInMap("signRequirements")
-        public String signRequirements;
-
-        @NameInMap("signOrder")
-        public Integer signOrder;
-
-        @NameInMap("accountType")
-        public String accountType;
-
         @NameInMap("account")
         public String account;
-
-        @NameInMap("dingCorpId")
-        public String dingCorpId;
-
-        @NameInMap("userId")
-        public String userId;
 
         @NameInMap("accountName")
         public String accountName;
 
+        @NameInMap("accountType")
+        public String accountType;
+
         @NameInMap("orgName")
         public String orgName;
+
+        @NameInMap("signOrder")
+        public Integer signOrder;
 
         // 参与方签署位置信息列表
         @NameInMap("signPosList")
         public java.util.List<CreateProcessRequestParticipantsSignPosList> signPosList;
 
+        @NameInMap("signRequirements")
+        public String signRequirements;
+
+        @NameInMap("userId")
+        public String userId;
+
         public static CreateProcessRequestParticipants build(java.util.Map<String, ?> map) throws Exception {
             CreateProcessRequestParticipants self = new CreateProcessRequestParticipants();
             return TeaModel.build(map, self);
-        }
-
-        public CreateProcessRequestParticipants setSignRequirements(String signRequirements) {
-            this.signRequirements = signRequirements;
-            return this;
-        }
-        public String getSignRequirements() {
-            return this.signRequirements;
-        }
-
-        public CreateProcessRequestParticipants setSignOrder(Integer signOrder) {
-            this.signOrder = signOrder;
-            return this;
-        }
-        public Integer getSignOrder() {
-            return this.signOrder;
-        }
-
-        public CreateProcessRequestParticipants setAccountType(String accountType) {
-            this.accountType = accountType;
-            return this;
-        }
-        public String getAccountType() {
-            return this.accountType;
         }
 
         public CreateProcessRequestParticipants setAccount(String account) {
@@ -338,28 +363,20 @@ public class CreateProcessRequest extends TeaModel {
             return this.account;
         }
 
-        public CreateProcessRequestParticipants setDingCorpId(String dingCorpId) {
-            this.dingCorpId = dingCorpId;
-            return this;
-        }
-        public String getDingCorpId() {
-            return this.dingCorpId;
-        }
-
-        public CreateProcessRequestParticipants setUserId(String userId) {
-            this.userId = userId;
-            return this;
-        }
-        public String getUserId() {
-            return this.userId;
-        }
-
         public CreateProcessRequestParticipants setAccountName(String accountName) {
             this.accountName = accountName;
             return this;
         }
         public String getAccountName() {
             return this.accountName;
+        }
+
+        public CreateProcessRequestParticipants setAccountType(String accountType) {
+            this.accountType = accountType;
+            return this;
+        }
+        public String getAccountType() {
+            return this.accountType;
         }
 
         public CreateProcessRequestParticipants setOrgName(String orgName) {
@@ -370,6 +387,14 @@ public class CreateProcessRequest extends TeaModel {
             return this.orgName;
         }
 
+        public CreateProcessRequestParticipants setSignOrder(Integer signOrder) {
+            this.signOrder = signOrder;
+            return this;
+        }
+        public Integer getSignOrder() {
+            return this.signOrder;
+        }
+
         public CreateProcessRequestParticipants setSignPosList(java.util.List<CreateProcessRequestParticipantsSignPosList> signPosList) {
             this.signPosList = signPosList;
             return this;
@@ -378,57 +403,15 @@ public class CreateProcessRequest extends TeaModel {
             return this.signPosList;
         }
 
-    }
-
-    public static class CreateProcessRequestCcs extends TeaModel {
-        @NameInMap("accountType")
-        public String accountType;
-
-        @NameInMap("account")
-        public String account;
-
-        @NameInMap("dingCorpId")
-        public String dingCorpId;
-
-        @NameInMap("userId")
-        public String userId;
-
-        @NameInMap("accountName")
-        public String accountName;
-
-        @NameInMap("orgName")
-        public String orgName;
-
-        public static CreateProcessRequestCcs build(java.util.Map<String, ?> map) throws Exception {
-            CreateProcessRequestCcs self = new CreateProcessRequestCcs();
-            return TeaModel.build(map, self);
-        }
-
-        public CreateProcessRequestCcs setAccountType(String accountType) {
-            this.accountType = accountType;
+        public CreateProcessRequestParticipants setSignRequirements(String signRequirements) {
+            this.signRequirements = signRequirements;
             return this;
         }
-        public String getAccountType() {
-            return this.accountType;
+        public String getSignRequirements() {
+            return this.signRequirements;
         }
 
-        public CreateProcessRequestCcs setAccount(String account) {
-            this.account = account;
-            return this;
-        }
-        public String getAccount() {
-            return this.account;
-        }
-
-        public CreateProcessRequestCcs setDingCorpId(String dingCorpId) {
-            this.dingCorpId = dingCorpId;
-            return this;
-        }
-        public String getDingCorpId() {
-            return this.dingCorpId;
-        }
-
-        public CreateProcessRequestCcs setUserId(String userId) {
+        public CreateProcessRequestParticipants setUserId(String userId) {
             this.userId = userId;
             return this;
         }
@@ -436,45 +419,29 @@ public class CreateProcessRequest extends TeaModel {
             return this.userId;
         }
 
-        public CreateProcessRequestCcs setAccountName(String accountName) {
-            this.accountName = accountName;
-            return this;
-        }
-        public String getAccountName() {
-            return this.accountName;
-        }
-
-        public CreateProcessRequestCcs setOrgName(String orgName) {
-            this.orgName = orgName;
-            return this;
-        }
-        public String getOrgName() {
-            return this.orgName;
-        }
-
     }
 
     public static class CreateProcessRequestSourceInfo extends TeaModel {
-        @NameInMap("showText")
-        public String showText;
+        @NameInMap("mobileUrl")
+        public String mobileUrl;
 
         @NameInMap("pcUrl")
         public String pcUrl;
 
-        @NameInMap("mobileUrl")
-        public String mobileUrl;
+        @NameInMap("showText")
+        public String showText;
 
         public static CreateProcessRequestSourceInfo build(java.util.Map<String, ?> map) throws Exception {
             CreateProcessRequestSourceInfo self = new CreateProcessRequestSourceInfo();
             return TeaModel.build(map, self);
         }
 
-        public CreateProcessRequestSourceInfo setShowText(String showText) {
-            this.showText = showText;
+        public CreateProcessRequestSourceInfo setMobileUrl(String mobileUrl) {
+            this.mobileUrl = mobileUrl;
             return this;
         }
-        public String getShowText() {
-            return this.showText;
+        public String getMobileUrl() {
+            return this.mobileUrl;
         }
 
         public CreateProcessRequestSourceInfo setPcUrl(String pcUrl) {
@@ -485,12 +452,12 @@ public class CreateProcessRequest extends TeaModel {
             return this.pcUrl;
         }
 
-        public CreateProcessRequestSourceInfo setMobileUrl(String mobileUrl) {
-            this.mobileUrl = mobileUrl;
+        public CreateProcessRequestSourceInfo setShowText(String showText) {
+            this.showText = showText;
             return this;
         }
-        public String getMobileUrl() {
-            return this.mobileUrl;
+        public String getShowText() {
+            return this.showText;
         }
 
     }

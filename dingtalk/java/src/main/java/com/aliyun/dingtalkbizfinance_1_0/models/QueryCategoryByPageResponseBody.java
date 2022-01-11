@@ -4,25 +4,17 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryCategoryByPageResponseBody extends TeaModel {
-    // resultList
-    @NameInMap("list")
-    public java.util.List<QueryCategoryByPageResponseBodyList> list;
-
     // 是否还有更多数据
     @NameInMap("hasMore")
     public Boolean hasMore;
 
+    // resultList
+    @NameInMap("list")
+    public java.util.List<QueryCategoryByPageResponseBodyList> list;
+
     public static QueryCategoryByPageResponseBody build(java.util.Map<String, ?> map) throws Exception {
         QueryCategoryByPageResponseBody self = new QueryCategoryByPageResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public QueryCategoryByPageResponseBody setList(java.util.List<QueryCategoryByPageResponseBodyList> list) {
-        this.list = list;
-        return this;
-    }
-    public java.util.List<QueryCategoryByPageResponseBodyList> getList() {
-        return this.list;
     }
 
     public QueryCategoryByPageResponseBody setHasMore(Boolean hasMore) {
@@ -33,22 +25,26 @@ public class QueryCategoryByPageResponseBody extends TeaModel {
         return this.hasMore;
     }
 
+    public QueryCategoryByPageResponseBody setList(java.util.List<QueryCategoryByPageResponseBodyList> list) {
+        this.list = list;
+        return this;
+    }
+    public java.util.List<QueryCategoryByPageResponseBodyList> getList() {
+        return this.list;
+    }
+
     public static class QueryCategoryByPageResponseBodyList extends TeaModel {
         // 类别code
         @NameInMap("code")
         public String code;
 
-        // 类型:income收入，expense支出
-        @NameInMap("type")
-        public String type;
+        // 是否为目录
+        @NameInMap("isDir")
+        public Boolean isDir;
 
         // 名字
         @NameInMap("name")
         public String name;
-
-        // 是否为目录
-        @NameInMap("isDir")
-        public Boolean isDir;
 
         // 父类别code
         @NameInMap("parentCode")
@@ -57,6 +53,10 @@ public class QueryCategoryByPageResponseBody extends TeaModel {
         // 状态:valid,invalid,deleted
         @NameInMap("status")
         public String status;
+
+        // 类型:income收入，expense支出
+        @NameInMap("type")
+        public String type;
 
         public static QueryCategoryByPageResponseBodyList build(java.util.Map<String, ?> map) throws Exception {
             QueryCategoryByPageResponseBodyList self = new QueryCategoryByPageResponseBodyList();
@@ -71,12 +71,12 @@ public class QueryCategoryByPageResponseBody extends TeaModel {
             return this.code;
         }
 
-        public QueryCategoryByPageResponseBodyList setType(String type) {
-            this.type = type;
+        public QueryCategoryByPageResponseBodyList setIsDir(Boolean isDir) {
+            this.isDir = isDir;
             return this;
         }
-        public String getType() {
-            return this.type;
+        public Boolean getIsDir() {
+            return this.isDir;
         }
 
         public QueryCategoryByPageResponseBodyList setName(String name) {
@@ -85,14 +85,6 @@ public class QueryCategoryByPageResponseBody extends TeaModel {
         }
         public String getName() {
             return this.name;
-        }
-
-        public QueryCategoryByPageResponseBodyList setIsDir(Boolean isDir) {
-            this.isDir = isDir;
-            return this;
-        }
-        public Boolean getIsDir() {
-            return this.isDir;
         }
 
         public QueryCategoryByPageResponseBodyList setParentCode(String parentCode) {
@@ -109,6 +101,14 @@ public class QueryCategoryByPageResponseBody extends TeaModel {
         }
         public String getStatus() {
             return this.status;
+        }
+
+        public QueryCategoryByPageResponseBodyList setType(String type) {
+            this.type = type;
+            return this;
+        }
+        public String getType() {
+            return this.type;
         }
 
     }

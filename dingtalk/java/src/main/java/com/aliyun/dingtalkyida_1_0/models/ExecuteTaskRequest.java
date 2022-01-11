@@ -4,65 +4,53 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class ExecuteTaskRequest extends TeaModel {
-    // 审批结果
-    @NameInMap("outResult")
-    public String outResult;
-
-    // 是否不执行校验&关联操作
-    @NameInMap("noExecuteExpressions")
-    public String noExecuteExpressions;
-
     // 应用ID
     @NameInMap("appType")
     public String appType;
+
+    // 电子签名
+    @NameInMap("digitalSignUrl")
+    public String digitalSignUrl;
 
     // 更新的表单值
     @NameInMap("formDataJson")
     public String formDataJson;
 
-    // 应用秘钥
-    @NameInMap("systemToken")
-    public String systemToken;
-
     // 语言
     @NameInMap("language")
     public String language;
 
-    // 审批意见
-    @NameInMap("remark")
-    public String remark;
+    // 是否不执行校验&关联操作
+    @NameInMap("noExecuteExpressions")
+    public String noExecuteExpressions;
+
+    // 审批结果
+    @NameInMap("outResult")
+    public String outResult;
 
     // 实例ID
     @NameInMap("processInstanceId")
     public String processInstanceId;
 
-    // 钉钉的userId
-    @NameInMap("userId")
-    public String userId;
+    // 审批意见
+    @NameInMap("remark")
+    public String remark;
+
+    // 应用秘钥
+    @NameInMap("systemToken")
+    public String systemToken;
 
     // 任务ID
     @NameInMap("taskId")
     public Long taskId;
 
+    // 钉钉的userId
+    @NameInMap("userId")
+    public String userId;
+
     public static ExecuteTaskRequest build(java.util.Map<String, ?> map) throws Exception {
         ExecuteTaskRequest self = new ExecuteTaskRequest();
         return TeaModel.build(map, self);
-    }
-
-    public ExecuteTaskRequest setOutResult(String outResult) {
-        this.outResult = outResult;
-        return this;
-    }
-    public String getOutResult() {
-        return this.outResult;
-    }
-
-    public ExecuteTaskRequest setNoExecuteExpressions(String noExecuteExpressions) {
-        this.noExecuteExpressions = noExecuteExpressions;
-        return this;
-    }
-    public String getNoExecuteExpressions() {
-        return this.noExecuteExpressions;
     }
 
     public ExecuteTaskRequest setAppType(String appType) {
@@ -73,20 +61,20 @@ public class ExecuteTaskRequest extends TeaModel {
         return this.appType;
     }
 
+    public ExecuteTaskRequest setDigitalSignUrl(String digitalSignUrl) {
+        this.digitalSignUrl = digitalSignUrl;
+        return this;
+    }
+    public String getDigitalSignUrl() {
+        return this.digitalSignUrl;
+    }
+
     public ExecuteTaskRequest setFormDataJson(String formDataJson) {
         this.formDataJson = formDataJson;
         return this;
     }
     public String getFormDataJson() {
         return this.formDataJson;
-    }
-
-    public ExecuteTaskRequest setSystemToken(String systemToken) {
-        this.systemToken = systemToken;
-        return this;
-    }
-    public String getSystemToken() {
-        return this.systemToken;
     }
 
     public ExecuteTaskRequest setLanguage(String language) {
@@ -97,12 +85,20 @@ public class ExecuteTaskRequest extends TeaModel {
         return this.language;
     }
 
-    public ExecuteTaskRequest setRemark(String remark) {
-        this.remark = remark;
+    public ExecuteTaskRequest setNoExecuteExpressions(String noExecuteExpressions) {
+        this.noExecuteExpressions = noExecuteExpressions;
         return this;
     }
-    public String getRemark() {
-        return this.remark;
+    public String getNoExecuteExpressions() {
+        return this.noExecuteExpressions;
+    }
+
+    public ExecuteTaskRequest setOutResult(String outResult) {
+        this.outResult = outResult;
+        return this;
+    }
+    public String getOutResult() {
+        return this.outResult;
     }
 
     public ExecuteTaskRequest setProcessInstanceId(String processInstanceId) {
@@ -113,12 +109,20 @@ public class ExecuteTaskRequest extends TeaModel {
         return this.processInstanceId;
     }
 
-    public ExecuteTaskRequest setUserId(String userId) {
-        this.userId = userId;
+    public ExecuteTaskRequest setRemark(String remark) {
+        this.remark = remark;
         return this;
     }
-    public String getUserId() {
-        return this.userId;
+    public String getRemark() {
+        return this.remark;
+    }
+
+    public ExecuteTaskRequest setSystemToken(String systemToken) {
+        this.systemToken = systemToken;
+        return this;
+    }
+    public String getSystemToken() {
+        return this.systemToken;
     }
 
     public ExecuteTaskRequest setTaskId(Long taskId) {
@@ -127,6 +131,14 @@ public class ExecuteTaskRequest extends TeaModel {
     }
     public Long getTaskId() {
         return this.taskId;
+    }
+
+    public ExecuteTaskRequest setUserId(String userId) {
+        this.userId = userId;
+        return this;
+    }
+    public String getUserId() {
+        return this.userId;
     }
 
 }

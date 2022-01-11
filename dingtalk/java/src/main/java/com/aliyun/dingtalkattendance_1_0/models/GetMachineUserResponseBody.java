@@ -21,34 +21,18 @@ public class GetMachineUserResponseBody extends TeaModel {
     }
 
     public static class GetMachineUserResponseBodyResultUserList extends TeaModel {
-        @NameInMap("userId")
-        public String userId;
+        @NameInMap("hasFace")
+        public Boolean hasFace;
 
         @NameInMap("name")
         public String name;
 
-        @NameInMap("hasFace")
-        public Boolean hasFace;
+        @NameInMap("userId")
+        public String userId;
 
         public static GetMachineUserResponseBodyResultUserList build(java.util.Map<String, ?> map) throws Exception {
             GetMachineUserResponseBodyResultUserList self = new GetMachineUserResponseBodyResultUserList();
             return TeaModel.build(map, self);
-        }
-
-        public GetMachineUserResponseBodyResultUserList setUserId(String userId) {
-            this.userId = userId;
-            return this;
-        }
-        public String getUserId() {
-            return this.userId;
-        }
-
-        public GetMachineUserResponseBodyResultUserList setName(String name) {
-            this.name = name;
-            return this;
-        }
-        public String getName() {
-            return this.name;
         }
 
         public GetMachineUserResponseBodyResultUserList setHasFace(Boolean hasFace) {
@@ -59,29 +43,37 @@ public class GetMachineUserResponseBody extends TeaModel {
             return this.hasFace;
         }
 
+        public GetMachineUserResponseBodyResultUserList setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
+        public GetMachineUserResponseBodyResultUserList setUserId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+        public String getUserId() {
+            return this.userId;
+        }
+
     }
 
     public static class GetMachineUserResponseBodyResult extends TeaModel {
-        @NameInMap("userList")
-        public java.util.List<GetMachineUserResponseBodyResultUserList> userList;
-
         @NameInMap("hasMore")
         public Boolean hasMore;
 
         @NameInMap("nextToken")
         public String nextToken;
 
+        @NameInMap("userList")
+        public java.util.List<GetMachineUserResponseBodyResultUserList> userList;
+
         public static GetMachineUserResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             GetMachineUserResponseBodyResult self = new GetMachineUserResponseBodyResult();
             return TeaModel.build(map, self);
-        }
-
-        public GetMachineUserResponseBodyResult setUserList(java.util.List<GetMachineUserResponseBodyResultUserList> userList) {
-            this.userList = userList;
-            return this;
-        }
-        public java.util.List<GetMachineUserResponseBodyResultUserList> getUserList() {
-            return this.userList;
         }
 
         public GetMachineUserResponseBodyResult setHasMore(Boolean hasMore) {
@@ -98,6 +90,14 @@ public class GetMachineUserResponseBody extends TeaModel {
         }
         public String getNextToken() {
             return this.nextToken;
+        }
+
+        public GetMachineUserResponseBodyResult setUserList(java.util.List<GetMachineUserResponseBodyResultUserList> userList) {
+            this.userList = userList;
+            return this;
+        }
+        public java.util.List<GetMachineUserResponseBodyResultUserList> getUserList() {
+            return this.userList;
         }
 
     }

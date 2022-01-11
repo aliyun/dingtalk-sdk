@@ -4,25 +4,17 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class FormDataSource extends TeaModel {
-    // 关联类型，form关联表单
-    @NameInMap("type")
-    public String type;
-
     // 关联表单信息
     @NameInMap("target")
     public FormDataSourceTarget target;
 
+    // 关联类型，form关联表单
+    @NameInMap("type")
+    public String type;
+
     public static FormDataSource build(java.util.Map<String, ?> map) throws Exception {
         FormDataSource self = new FormDataSource();
         return TeaModel.build(map, self);
-    }
-
-    public FormDataSource setType(String type) {
-        this.type = type;
-        return this;
-    }
-    public String getType() {
-        return this.type;
     }
 
     public FormDataSource setTarget(FormDataSourceTarget target) {
@@ -33,14 +25,22 @@ public class FormDataSource extends TeaModel {
         return this.target;
     }
 
-    public static class FormDataSourceTarget extends TeaModel {
-        // 应用appUuid
-        @NameInMap("appUuid")
-        public String appUuid;
+    public FormDataSource setType(String type) {
+        this.type = type;
+        return this;
+    }
+    public String getType() {
+        return this.type;
+    }
 
+    public static class FormDataSourceTarget extends TeaModel {
         // 表单类型，0流程表单
         @NameInMap("appType")
         public Integer appType;
+
+        // 应用appUuid
+        @NameInMap("appUuid")
+        public String appUuid;
 
         // 关联表单业务标识
         @NameInMap("bizType")
@@ -55,20 +55,20 @@ public class FormDataSource extends TeaModel {
             return TeaModel.build(map, self);
         }
 
-        public FormDataSourceTarget setAppUuid(String appUuid) {
-            this.appUuid = appUuid;
-            return this;
-        }
-        public String getAppUuid() {
-            return this.appUuid;
-        }
-
         public FormDataSourceTarget setAppType(Integer appType) {
             this.appType = appType;
             return this;
         }
         public Integer getAppType() {
             return this.appType;
+        }
+
+        public FormDataSourceTarget setAppUuid(String appUuid) {
+            this.appUuid = appUuid;
+            return this;
+        }
+        public String getAppUuid() {
+            return this.appUuid;
         }
 
         public FormDataSourceTarget setBizType(String bizType) {

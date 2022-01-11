@@ -4,45 +4,29 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class StartCourseRequest extends TeaModel {
-    // opUserId
-    @NameInMap("opUserId")
-    public String opUserId;
+    // 课程编码
+    @NameInMap("courseCode")
+    public String courseCode;
 
     // 拓展字段
     @NameInMap("ext")
     public String ext;
 
-    // 课程编码
-    @NameInMap("courseCode")
-    public String courseCode;
+    // isvCode
+    @NameInMap("isvCode")
+    public String isvCode;
 
     // livePlayInfoList
     @NameInMap("livePlayInfoList")
     public java.util.List<StartCourseRequestLivePlayInfoList> livePlayInfoList;
 
-    // isvCode
-    @NameInMap("isvCode")
-    public String isvCode;
+    // opUserId
+    @NameInMap("opUserId")
+    public String opUserId;
 
     public static StartCourseRequest build(java.util.Map<String, ?> map) throws Exception {
         StartCourseRequest self = new StartCourseRequest();
         return TeaModel.build(map, self);
-    }
-
-    public StartCourseRequest setOpUserId(String opUserId) {
-        this.opUserId = opUserId;
-        return this;
-    }
-    public String getOpUserId() {
-        return this.opUserId;
-    }
-
-    public StartCourseRequest setExt(String ext) {
-        this.ext = ext;
-        return this;
-    }
-    public String getExt() {
-        return this.ext;
     }
 
     public StartCourseRequest setCourseCode(String courseCode) {
@@ -53,12 +37,12 @@ public class StartCourseRequest extends TeaModel {
         return this.courseCode;
     }
 
-    public StartCourseRequest setLivePlayInfoList(java.util.List<StartCourseRequestLivePlayInfoList> livePlayInfoList) {
-        this.livePlayInfoList = livePlayInfoList;
+    public StartCourseRequest setExt(String ext) {
+        this.ext = ext;
         return this;
     }
-    public java.util.List<StartCourseRequestLivePlayInfoList> getLivePlayInfoList() {
-        return this.livePlayInfoList;
+    public String getExt() {
+        return this.ext;
     }
 
     public StartCourseRequest setIsvCode(String isvCode) {
@@ -69,7 +53,27 @@ public class StartCourseRequest extends TeaModel {
         return this.isvCode;
     }
 
+    public StartCourseRequest setLivePlayInfoList(java.util.List<StartCourseRequestLivePlayInfoList> livePlayInfoList) {
+        this.livePlayInfoList = livePlayInfoList;
+        return this;
+    }
+    public java.util.List<StartCourseRequestLivePlayInfoList> getLivePlayInfoList() {
+        return this.livePlayInfoList;
+    }
+
+    public StartCourseRequest setOpUserId(String opUserId) {
+        this.opUserId = opUserId;
+        return this;
+    }
+    public String getOpUserId() {
+        return this.opUserId;
+    }
+
     public static class StartCourseRequestLivePlayInfoList extends TeaModel {
+        // 直播推流地址
+        @NameInMap("liveInputUrl")
+        public String liveInputUrl;
+
         // 直播拉流地址
         @NameInMap("liveOutputUrl")
         public String liveOutputUrl;
@@ -78,10 +82,6 @@ public class StartCourseRequest extends TeaModel {
         @NameInMap("liveType")
         public Integer liveType;
 
-        // 直播推流地址
-        @NameInMap("liveInputUrl")
-        public String liveInputUrl;
-
         // 视频回放地址
         @NameInMap("replayUrl")
         public String replayUrl;
@@ -89,6 +89,14 @@ public class StartCourseRequest extends TeaModel {
         public static StartCourseRequestLivePlayInfoList build(java.util.Map<String, ?> map) throws Exception {
             StartCourseRequestLivePlayInfoList self = new StartCourseRequestLivePlayInfoList();
             return TeaModel.build(map, self);
+        }
+
+        public StartCourseRequestLivePlayInfoList setLiveInputUrl(String liveInputUrl) {
+            this.liveInputUrl = liveInputUrl;
+            return this;
+        }
+        public String getLiveInputUrl() {
+            return this.liveInputUrl;
         }
 
         public StartCourseRequestLivePlayInfoList setLiveOutputUrl(String liveOutputUrl) {
@@ -105,14 +113,6 @@ public class StartCourseRequest extends TeaModel {
         }
         public Integer getLiveType() {
             return this.liveType;
-        }
-
-        public StartCourseRequestLivePlayInfoList setLiveInputUrl(String liveInputUrl) {
-            this.liveInputUrl = liveInputUrl;
-            return this;
-        }
-        public String getLiveInputUrl() {
-            return this.liveInputUrl;
         }
 
         public StartCourseRequestLivePlayInfoList setReplayUrl(String replayUrl) {

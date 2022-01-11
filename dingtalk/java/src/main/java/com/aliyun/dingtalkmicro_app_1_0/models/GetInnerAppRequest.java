@@ -4,25 +4,17 @@ package com.aliyun.dingtalkmicro_app_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetInnerAppRequest extends TeaModel {
-    // 操作人unionId
-    @NameInMap("opUnionId")
-    public String opUnionId;
-
     // 关联组织corpId
     @NameInMap("ecologicalCorpId")
     public String ecologicalCorpId;
 
+    // 操作人unionId
+    @NameInMap("opUnionId")
+    public String opUnionId;
+
     public static GetInnerAppRequest build(java.util.Map<String, ?> map) throws Exception {
         GetInnerAppRequest self = new GetInnerAppRequest();
         return TeaModel.build(map, self);
-    }
-
-    public GetInnerAppRequest setOpUnionId(String opUnionId) {
-        this.opUnionId = opUnionId;
-        return this;
-    }
-    public String getOpUnionId() {
-        return this.opUnionId;
     }
 
     public GetInnerAppRequest setEcologicalCorpId(String ecologicalCorpId) {
@@ -31,6 +23,14 @@ public class GetInnerAppRequest extends TeaModel {
     }
     public String getEcologicalCorpId() {
         return this.ecologicalCorpId;
+    }
+
+    public GetInnerAppRequest setOpUnionId(String opUnionId) {
+        this.opUnionId = opUnionId;
+        return this;
+    }
+    public String getOpUnionId() {
+        return this.opUnionId;
     }
 
 }

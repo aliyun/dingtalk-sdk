@@ -4,10 +4,6 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class PagePointHistoryResponseBody extends TeaModel {
-    // 查询所得积分流水集合
-    @NameInMap("pointRecordList")
-    public java.util.List<PagePointHistoryResponseBodyPointRecordList> pointRecordList;
-
     // 是否有下一页
     @NameInMap("hasMore")
     public Boolean hasMore;
@@ -16,6 +12,10 @@ public class PagePointHistoryResponseBody extends TeaModel {
     @NameInMap("nextToken")
     public Long nextToken;
 
+    // 查询所得积分流水集合
+    @NameInMap("pointRecordList")
+    public java.util.List<PagePointHistoryResponseBodyPointRecordList> pointRecordList;
+
     // 总数，如果为-1则不计算总数
     @NameInMap("totalCount")
     public Long totalCount;
@@ -23,14 +23,6 @@ public class PagePointHistoryResponseBody extends TeaModel {
     public static PagePointHistoryResponseBody build(java.util.Map<String, ?> map) throws Exception {
         PagePointHistoryResponseBody self = new PagePointHistoryResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public PagePointHistoryResponseBody setPointRecordList(java.util.List<PagePointHistoryResponseBodyPointRecordList> pointRecordList) {
-        this.pointRecordList = pointRecordList;
-        return this;
-    }
-    public java.util.List<PagePointHistoryResponseBodyPointRecordList> getPointRecordList() {
-        return this.pointRecordList;
     }
 
     public PagePointHistoryResponseBody setHasMore(Boolean hasMore) {
@@ -49,6 +41,14 @@ public class PagePointHistoryResponseBody extends TeaModel {
         return this.nextToken;
     }
 
+    public PagePointHistoryResponseBody setPointRecordList(java.util.List<PagePointHistoryResponseBodyPointRecordList> pointRecordList) {
+        this.pointRecordList = pointRecordList;
+        return this;
+    }
+    public java.util.List<PagePointHistoryResponseBodyPointRecordList> getPointRecordList() {
+        return this.pointRecordList;
+    }
+
     public PagePointHistoryResponseBody setTotalCount(Long totalCount) {
         this.totalCount = totalCount;
         return this;
@@ -62,21 +62,9 @@ public class PagePointHistoryResponseBody extends TeaModel {
         @NameInMap("corpId")
         public String corpId;
 
-        // 成员id
-        @NameInMap("userId")
-        public String userId;
-
-        // 增加或减少的分数（增加为正数，减少为负数）
-        @NameInMap("score")
-        public Integer score;
-
         // 创建时间（精确到毫秒数）
         @NameInMap("createAt")
         public Long createAt;
-
-        // 幂等键
-        @NameInMap("uuid")
-        public String uuid;
 
         // 对应的行为代码（可空）
         @NameInMap("ruleCode")
@@ -85,6 +73,18 @@ public class PagePointHistoryResponseBody extends TeaModel {
         // 对应的行为名字
         @NameInMap("ruleName")
         public String ruleName;
+
+        // 增加或减少的分数（增加为正数，减少为负数）
+        @NameInMap("score")
+        public Integer score;
+
+        // 成员id
+        @NameInMap("userId")
+        public String userId;
+
+        // 幂等键
+        @NameInMap("uuid")
+        public String uuid;
 
         public static PagePointHistoryResponseBodyPointRecordList build(java.util.Map<String, ?> map) throws Exception {
             PagePointHistoryResponseBodyPointRecordList self = new PagePointHistoryResponseBodyPointRecordList();
@@ -99,36 +99,12 @@ public class PagePointHistoryResponseBody extends TeaModel {
             return this.corpId;
         }
 
-        public PagePointHistoryResponseBodyPointRecordList setUserId(String userId) {
-            this.userId = userId;
-            return this;
-        }
-        public String getUserId() {
-            return this.userId;
-        }
-
-        public PagePointHistoryResponseBodyPointRecordList setScore(Integer score) {
-            this.score = score;
-            return this;
-        }
-        public Integer getScore() {
-            return this.score;
-        }
-
         public PagePointHistoryResponseBodyPointRecordList setCreateAt(Long createAt) {
             this.createAt = createAt;
             return this;
         }
         public Long getCreateAt() {
             return this.createAt;
-        }
-
-        public PagePointHistoryResponseBodyPointRecordList setUuid(String uuid) {
-            this.uuid = uuid;
-            return this;
-        }
-        public String getUuid() {
-            return this.uuid;
         }
 
         public PagePointHistoryResponseBodyPointRecordList setRuleCode(String ruleCode) {
@@ -145,6 +121,30 @@ public class PagePointHistoryResponseBody extends TeaModel {
         }
         public String getRuleName() {
             return this.ruleName;
+        }
+
+        public PagePointHistoryResponseBodyPointRecordList setScore(Integer score) {
+            this.score = score;
+            return this;
+        }
+        public Integer getScore() {
+            return this.score;
+        }
+
+        public PagePointHistoryResponseBodyPointRecordList setUserId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+        public String getUserId() {
+            return this.userId;
+        }
+
+        public PagePointHistoryResponseBodyPointRecordList setUuid(String uuid) {
+            this.uuid = uuid;
+            return this;
+        }
+        public String getUuid() {
+            return this.uuid;
         }
 
     }

@@ -8,13 +8,13 @@ public class GetDocCreatedDeptSummaryResponseBody extends TeaModel {
     @NameInMap("data")
     public java.util.List<GetDocCreatedDeptSummaryResponseBodyData> data;
 
-    // 下一次请求的分页游标
-    @NameInMap("nextToken")
-    public Long nextToken;
-
     // 是否有更多数据
     @NameInMap("hasMore")
     public Boolean hasMore;
+
+    // 下一次请求的分页游标
+    @NameInMap("nextToken")
+    public Long nextToken;
 
     public static GetDocCreatedDeptSummaryResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetDocCreatedDeptSummaryResponseBody self = new GetDocCreatedDeptSummaryResponseBody();
@@ -29,20 +29,20 @@ public class GetDocCreatedDeptSummaryResponseBody extends TeaModel {
         return this.data;
     }
 
-    public GetDocCreatedDeptSummaryResponseBody setNextToken(Long nextToken) {
-        this.nextToken = nextToken;
-        return this;
-    }
-    public Long getNextToken() {
-        return this.nextToken;
-    }
-
     public GetDocCreatedDeptSummaryResponseBody setHasMore(Boolean hasMore) {
         this.hasMore = hasMore;
         return this;
     }
     public Boolean getHasMore() {
         return this.hasMore;
+    }
+
+    public GetDocCreatedDeptSummaryResponseBody setNextToken(Long nextToken) {
+        this.nextToken = nextToken;
+        return this;
+    }
+    public Long getNextToken() {
+        return this.nextToken;
     }
 
     public static class GetDocCreatedDeptSummaryResponseBodyData extends TeaModel {

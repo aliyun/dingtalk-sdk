@@ -8,6 +8,10 @@ public class GetFormDataByIDRequest extends TeaModel {
     @NameInMap("appType")
     public String appType;
 
+    // 语言。可选值：zh_CN/en_US 默认：zh_CN
+    @NameInMap("language")
+    public String language;
+
     // 应用秘钥。在应用数据中获取。
     @NameInMap("systemToken")
     public String systemToken;
@@ -15,10 +19,6 @@ public class GetFormDataByIDRequest extends TeaModel {
     // 钉钉userId
     @NameInMap("userId")
     public String userId;
-
-    // 语言。可选值：zh_CN/en_US 默认：zh_CN
-    @NameInMap("language")
-    public String language;
 
     public static GetFormDataByIDRequest build(java.util.Map<String, ?> map) throws Exception {
         GetFormDataByIDRequest self = new GetFormDataByIDRequest();
@@ -31,6 +31,14 @@ public class GetFormDataByIDRequest extends TeaModel {
     }
     public String getAppType() {
         return this.appType;
+    }
+
+    public GetFormDataByIDRequest setLanguage(String language) {
+        this.language = language;
+        return this;
+    }
+    public String getLanguage() {
+        return this.language;
     }
 
     public GetFormDataByIDRequest setSystemToken(String systemToken) {
@@ -47,14 +55,6 @@ public class GetFormDataByIDRequest extends TeaModel {
     }
     public String getUserId() {
         return this.userId;
-    }
-
-    public GetFormDataByIDRequest setLanguage(String language) {
-        this.language = language;
-        return this;
-    }
-    public String getLanguage() {
-        return this.language;
     }
 
 }

@@ -4,8 +4,14 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class RegisterAndActivateDeviceRequest extends TeaModel {
+    @NameInMap("deviceCallbackUrl")
+    public String deviceCallbackUrl;
+
     @NameInMap("deviceCode")
     public String deviceCode;
+
+    @NameInMap("deviceDetailUrl")
+    public String deviceDetailUrl;
 
     @NameInMap("deviceName")
     public String deviceName;
@@ -13,27 +19,26 @@ public class RegisterAndActivateDeviceRequest extends TeaModel {
     @NameInMap("introduction")
     public String introduction;
 
+    @NameInMap("roleUuid")
+    public String roleUuid;
+
     @NameInMap("typeUuid")
     public String typeUuid;
-
-    @NameInMap("dingCorpId")
-    public String dingCorpId;
 
     @NameInMap("userIds")
     public java.util.List<String> userIds;
 
-    @NameInMap("roleUuid")
-    public String roleUuid;
-
-    @NameInMap("deviceDetailUrl")
-    public String deviceDetailUrl;
-
-    @NameInMap("deviceCallbackUrl")
-    public String deviceCallbackUrl;
-
     public static RegisterAndActivateDeviceRequest build(java.util.Map<String, ?> map) throws Exception {
         RegisterAndActivateDeviceRequest self = new RegisterAndActivateDeviceRequest();
         return TeaModel.build(map, self);
+    }
+
+    public RegisterAndActivateDeviceRequest setDeviceCallbackUrl(String deviceCallbackUrl) {
+        this.deviceCallbackUrl = deviceCallbackUrl;
+        return this;
+    }
+    public String getDeviceCallbackUrl() {
+        return this.deviceCallbackUrl;
     }
 
     public RegisterAndActivateDeviceRequest setDeviceCode(String deviceCode) {
@@ -42,6 +47,14 @@ public class RegisterAndActivateDeviceRequest extends TeaModel {
     }
     public String getDeviceCode() {
         return this.deviceCode;
+    }
+
+    public RegisterAndActivateDeviceRequest setDeviceDetailUrl(String deviceDetailUrl) {
+        this.deviceDetailUrl = deviceDetailUrl;
+        return this;
+    }
+    public String getDeviceDetailUrl() {
+        return this.deviceDetailUrl;
     }
 
     public RegisterAndActivateDeviceRequest setDeviceName(String deviceName) {
@@ -60,30 +73,6 @@ public class RegisterAndActivateDeviceRequest extends TeaModel {
         return this.introduction;
     }
 
-    public RegisterAndActivateDeviceRequest setTypeUuid(String typeUuid) {
-        this.typeUuid = typeUuid;
-        return this;
-    }
-    public String getTypeUuid() {
-        return this.typeUuid;
-    }
-
-    public RegisterAndActivateDeviceRequest setDingCorpId(String dingCorpId) {
-        this.dingCorpId = dingCorpId;
-        return this;
-    }
-    public String getDingCorpId() {
-        return this.dingCorpId;
-    }
-
-    public RegisterAndActivateDeviceRequest setUserIds(java.util.List<String> userIds) {
-        this.userIds = userIds;
-        return this;
-    }
-    public java.util.List<String> getUserIds() {
-        return this.userIds;
-    }
-
     public RegisterAndActivateDeviceRequest setRoleUuid(String roleUuid) {
         this.roleUuid = roleUuid;
         return this;
@@ -92,20 +81,20 @@ public class RegisterAndActivateDeviceRequest extends TeaModel {
         return this.roleUuid;
     }
 
-    public RegisterAndActivateDeviceRequest setDeviceDetailUrl(String deviceDetailUrl) {
-        this.deviceDetailUrl = deviceDetailUrl;
+    public RegisterAndActivateDeviceRequest setTypeUuid(String typeUuid) {
+        this.typeUuid = typeUuid;
         return this;
     }
-    public String getDeviceDetailUrl() {
-        return this.deviceDetailUrl;
+    public String getTypeUuid() {
+        return this.typeUuid;
     }
 
-    public RegisterAndActivateDeviceRequest setDeviceCallbackUrl(String deviceCallbackUrl) {
-        this.deviceCallbackUrl = deviceCallbackUrl;
+    public RegisterAndActivateDeviceRequest setUserIds(java.util.List<String> userIds) {
+        this.userIds = userIds;
         return this;
     }
-    public String getDeviceCallbackUrl() {
-        return this.deviceCallbackUrl;
+    public java.util.List<String> getUserIds() {
+        return this.userIds;
     }
 
 }

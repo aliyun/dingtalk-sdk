@@ -8,18 +8,6 @@ public class AddResidentUsersRequest extends TeaModel {
     @NameInMap("address")
     public String address;
 
-    // 是否是租客
-    @NameInMap("isLeaseholder")
-    public Boolean isLeaseholder;
-
-    // 居民名字
-    @NameInMap("userName")
-    public String userName;
-
-    // 手机号码
-    @NameInMap("mobile")
-    public String mobile;
-
     // 户/租户部门id
     @NameInMap("departmentId")
     public Long departmentId;
@@ -28,9 +16,21 @@ public class AddResidentUsersRequest extends TeaModel {
     @NameInMap("extField")
     public java.util.List<AddResidentUsersRequestExtField> extField;
 
+    // 是否是租客
+    @NameInMap("isLeaseholder")
+    public Boolean isLeaseholder;
+
+    // 手机号码
+    @NameInMap("mobile")
+    public String mobile;
+
     // 与户主的关系
     @NameInMap("relateType")
     public String relateType;
+
+    // 居民名字
+    @NameInMap("userName")
+    public String userName;
 
     public static AddResidentUsersRequest build(java.util.Map<String, ?> map) throws Exception {
         AddResidentUsersRequest self = new AddResidentUsersRequest();
@@ -43,30 +43,6 @@ public class AddResidentUsersRequest extends TeaModel {
     }
     public String getAddress() {
         return this.address;
-    }
-
-    public AddResidentUsersRequest setIsLeaseholder(Boolean isLeaseholder) {
-        this.isLeaseholder = isLeaseholder;
-        return this;
-    }
-    public Boolean getIsLeaseholder() {
-        return this.isLeaseholder;
-    }
-
-    public AddResidentUsersRequest setUserName(String userName) {
-        this.userName = userName;
-        return this;
-    }
-    public String getUserName() {
-        return this.userName;
-    }
-
-    public AddResidentUsersRequest setMobile(String mobile) {
-        this.mobile = mobile;
-        return this;
-    }
-    public String getMobile() {
-        return this.mobile;
     }
 
     public AddResidentUsersRequest setDepartmentId(Long departmentId) {
@@ -85,6 +61,22 @@ public class AddResidentUsersRequest extends TeaModel {
         return this.extField;
     }
 
+    public AddResidentUsersRequest setIsLeaseholder(Boolean isLeaseholder) {
+        this.isLeaseholder = isLeaseholder;
+        return this;
+    }
+    public Boolean getIsLeaseholder() {
+        return this.isLeaseholder;
+    }
+
+    public AddResidentUsersRequest setMobile(String mobile) {
+        this.mobile = mobile;
+        return this;
+    }
+    public String getMobile() {
+        return this.mobile;
+    }
+
     public AddResidentUsersRequest setRelateType(String relateType) {
         this.relateType = relateType;
         return this;
@@ -93,26 +85,26 @@ public class AddResidentUsersRequest extends TeaModel {
         return this.relateType;
     }
 
-    public static class AddResidentUsersRequestExtField extends TeaModel {
-        // 扩展字段值
-        @NameInMap("itemValue")
-        public String itemValue;
+    public AddResidentUsersRequest setUserName(String userName) {
+        this.userName = userName;
+        return this;
+    }
+    public String getUserName() {
+        return this.userName;
+    }
 
+    public static class AddResidentUsersRequestExtField extends TeaModel {
         // 扩展字段名字
         @NameInMap("itemName")
         public String itemName;
 
+        // 扩展字段值
+        @NameInMap("itemValue")
+        public String itemValue;
+
         public static AddResidentUsersRequestExtField build(java.util.Map<String, ?> map) throws Exception {
             AddResidentUsersRequestExtField self = new AddResidentUsersRequestExtField();
             return TeaModel.build(map, self);
-        }
-
-        public AddResidentUsersRequestExtField setItemValue(String itemValue) {
-            this.itemValue = itemValue;
-            return this;
-        }
-        public String getItemValue() {
-            return this.itemValue;
         }
 
         public AddResidentUsersRequestExtField setItemName(String itemName) {
@@ -121,6 +113,14 @@ public class AddResidentUsersRequest extends TeaModel {
         }
         public String getItemName() {
             return this.itemName;
+        }
+
+        public AddResidentUsersRequestExtField setItemValue(String itemValue) {
+            this.itemValue = itemValue;
+            return this;
+        }
+        public String getItemValue() {
+            return this.itemValue;
         }
 
     }

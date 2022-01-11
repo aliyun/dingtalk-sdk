@@ -4,23 +4,15 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateChatRoomResponseBody extends TeaModel {
-    @NameInMap("success")
-    public Boolean success;
-
     @NameInMap("result")
     public String result;
+
+    @NameInMap("success")
+    public Boolean success;
 
     public static CreateChatRoomResponseBody build(java.util.Map<String, ?> map) throws Exception {
         CreateChatRoomResponseBody self = new CreateChatRoomResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public CreateChatRoomResponseBody setSuccess(Boolean success) {
-        this.success = success;
-        return this;
-    }
-    public Boolean getSuccess() {
-        return this.success;
     }
 
     public CreateChatRoomResponseBody setResult(String result) {
@@ -29,6 +21,14 @@ public class CreateChatRoomResponseBody extends TeaModel {
     }
     public String getResult() {
         return this.result;
+    }
+
+    public CreateChatRoomResponseBody setSuccess(Boolean success) {
+        this.success = success;
+        return this;
+    }
+    public Boolean getSuccess() {
+        return this.success;
     }
 
 }

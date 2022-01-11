@@ -4,9 +4,9 @@ package com.aliyun.dingtalkbadge_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateBadgeNotifyRequest extends TeaModel {
-    // 员工ID
-    @NameInMap("userId")
-    public String userId;
+    // 通知内容
+    @NameInMap("content")
+    public String content;
 
     // 消息ID
     @NameInMap("msgId")
@@ -16,27 +16,21 @@ public class CreateBadgeNotifyRequest extends TeaModel {
     @NameInMap("msgType")
     public String msgType;
 
-    // 通知内容
-    @NameInMap("content")
-    public String content;
-
-    @NameInMap("dingOrgId")
-    public Long dingOrgId;
-
-    @NameInMap("dingIsvOrgId")
-    public Long dingIsvOrgId;
+    // 员工ID
+    @NameInMap("userId")
+    public String userId;
 
     public static CreateBadgeNotifyRequest build(java.util.Map<String, ?> map) throws Exception {
         CreateBadgeNotifyRequest self = new CreateBadgeNotifyRequest();
         return TeaModel.build(map, self);
     }
 
-    public CreateBadgeNotifyRequest setUserId(String userId) {
-        this.userId = userId;
+    public CreateBadgeNotifyRequest setContent(String content) {
+        this.content = content;
         return this;
     }
-    public String getUserId() {
-        return this.userId;
+    public String getContent() {
+        return this.content;
     }
 
     public CreateBadgeNotifyRequest setMsgId(String msgId) {
@@ -55,28 +49,12 @@ public class CreateBadgeNotifyRequest extends TeaModel {
         return this.msgType;
     }
 
-    public CreateBadgeNotifyRequest setContent(String content) {
-        this.content = content;
+    public CreateBadgeNotifyRequest setUserId(String userId) {
+        this.userId = userId;
         return this;
     }
-    public String getContent() {
-        return this.content;
-    }
-
-    public CreateBadgeNotifyRequest setDingOrgId(Long dingOrgId) {
-        this.dingOrgId = dingOrgId;
-        return this;
-    }
-    public Long getDingOrgId() {
-        return this.dingOrgId;
-    }
-
-    public CreateBadgeNotifyRequest setDingIsvOrgId(Long dingIsvOrgId) {
-        this.dingIsvOrgId = dingIsvOrgId;
-        return this;
-    }
-    public Long getDingIsvOrgId() {
-        return this.dingIsvOrgId;
+    public String getUserId() {
+        return this.userId;
     }
 
 }

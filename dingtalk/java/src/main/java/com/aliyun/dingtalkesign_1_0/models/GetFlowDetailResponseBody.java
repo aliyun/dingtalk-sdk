@@ -4,11 +4,11 @@ package com.aliyun.dingtalkesign_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetFlowDetailResponseBody extends TeaModel {
-    @NameInMap("data")
-    public GetFlowDetailResponseBodyData data;
-
     @NameInMap("code")
     public Integer code;
+
+    @NameInMap("data")
+    public GetFlowDetailResponseBodyData data;
 
     @NameInMap("message")
     public String message;
@@ -18,20 +18,20 @@ public class GetFlowDetailResponseBody extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public GetFlowDetailResponseBody setData(GetFlowDetailResponseBodyData data) {
-        this.data = data;
-        return this;
-    }
-    public GetFlowDetailResponseBodyData getData() {
-        return this.data;
-    }
-
     public GetFlowDetailResponseBody setCode(Integer code) {
         this.code = code;
         return this;
     }
     public Integer getCode() {
         return this.code;
+    }
+
+    public GetFlowDetailResponseBody setData(GetFlowDetailResponseBodyData data) {
+        this.data = data;
+        return this;
+    }
+    public GetFlowDetailResponseBodyData getData() {
+        return this.data;
     }
 
     public GetFlowDetailResponseBody setMessage(String message) {
@@ -43,9 +43,6 @@ public class GetFlowDetailResponseBody extends TeaModel {
     }
 
     public static class GetFlowDetailResponseBodyDataLogs extends TeaModel {
-        @NameInMap("operatorAccountName")
-        public String operatorAccountName;
-
         @NameInMap("logType")
         public String logType;
 
@@ -55,17 +52,12 @@ public class GetFlowDetailResponseBody extends TeaModel {
         @NameInMap("operateTime")
         public Long operateTime;
 
+        @NameInMap("operatorAccountName")
+        public String operatorAccountName;
+
         public static GetFlowDetailResponseBodyDataLogs build(java.util.Map<String, ?> map) throws Exception {
             GetFlowDetailResponseBodyDataLogs self = new GetFlowDetailResponseBodyDataLogs();
             return TeaModel.build(map, self);
-        }
-
-        public GetFlowDetailResponseBodyDataLogs setOperatorAccountName(String operatorAccountName) {
-            this.operatorAccountName = operatorAccountName;
-            return this;
-        }
-        public String getOperatorAccountName() {
-            return this.operatorAccountName;
         }
 
         public GetFlowDetailResponseBodyDataLogs setLogType(String logType) {
@@ -90,6 +82,14 @@ public class GetFlowDetailResponseBody extends TeaModel {
         }
         public Long getOperateTime() {
             return this.operateTime;
+        }
+
+        public GetFlowDetailResponseBodyDataLogs setOperatorAccountName(String operatorAccountName) {
+            this.operatorAccountName = operatorAccountName;
+            return this;
+        }
+        public String getOperatorAccountName() {
+            return this.operatorAccountName;
         }
 
     }

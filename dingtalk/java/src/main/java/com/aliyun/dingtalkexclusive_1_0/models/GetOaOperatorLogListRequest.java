@@ -4,17 +4,17 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetOaOperatorLogListRequest extends TeaModel {
-    // 操作员userId
-    @NameInMap("opUserId")
-    public String opUserId;
-
-    // 起始时间
-    @NameInMap("startTime")
-    public Long startTime;
+    // 操作分类（一级目录）
+    @NameInMap("categoryList")
+    public java.util.List<String> categoryList;
 
     // 结束时间
     @NameInMap("endTime")
     public Long endTime;
+
+    // 操作员userId
+    @NameInMap("opUserId")
+    public String opUserId;
 
     // 分页起始页
     @NameInMap("pageNumber")
@@ -24,29 +24,21 @@ public class GetOaOperatorLogListRequest extends TeaModel {
     @NameInMap("pageSize")
     public Integer pageSize;
 
-    // 操作分类（一级目录）
-    @NameInMap("categoryList")
-    public java.util.List<String> categoryList;
+    // 起始时间
+    @NameInMap("startTime")
+    public Long startTime;
 
     public static GetOaOperatorLogListRequest build(java.util.Map<String, ?> map) throws Exception {
         GetOaOperatorLogListRequest self = new GetOaOperatorLogListRequest();
         return TeaModel.build(map, self);
     }
 
-    public GetOaOperatorLogListRequest setOpUserId(String opUserId) {
-        this.opUserId = opUserId;
+    public GetOaOperatorLogListRequest setCategoryList(java.util.List<String> categoryList) {
+        this.categoryList = categoryList;
         return this;
     }
-    public String getOpUserId() {
-        return this.opUserId;
-    }
-
-    public GetOaOperatorLogListRequest setStartTime(Long startTime) {
-        this.startTime = startTime;
-        return this;
-    }
-    public Long getStartTime() {
-        return this.startTime;
+    public java.util.List<String> getCategoryList() {
+        return this.categoryList;
     }
 
     public GetOaOperatorLogListRequest setEndTime(Long endTime) {
@@ -55,6 +47,14 @@ public class GetOaOperatorLogListRequest extends TeaModel {
     }
     public Long getEndTime() {
         return this.endTime;
+    }
+
+    public GetOaOperatorLogListRequest setOpUserId(String opUserId) {
+        this.opUserId = opUserId;
+        return this;
+    }
+    public String getOpUserId() {
+        return this.opUserId;
     }
 
     public GetOaOperatorLogListRequest setPageNumber(Long pageNumber) {
@@ -73,12 +73,12 @@ public class GetOaOperatorLogListRequest extends TeaModel {
         return this.pageSize;
     }
 
-    public GetOaOperatorLogListRequest setCategoryList(java.util.List<String> categoryList) {
-        this.categoryList = categoryList;
+    public GetOaOperatorLogListRequest setStartTime(Long startTime) {
+        this.startTime = startTime;
         return this;
     }
-    public java.util.List<String> getCategoryList() {
-        return this.categoryList;
+    public Long getStartTime() {
+        return this.startTime;
     }
 
 }

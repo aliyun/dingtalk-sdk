@@ -21,51 +21,27 @@ public class GetUserSourceListResponseBody extends TeaModel {
     }
 
     public static class GetUserSourceListResponseBodyResult extends TeaModel {
-        @NameInMap("id")
-        public Long id;
-
-        @NameInMap("status")
-        public Integer status;
+        @NameInMap("config")
+        public String config;
 
         @NameInMap("description")
         public String description;
 
-        @NameInMap("config")
-        public String config;
-
-        @NameInMap("vendor")
-        public String vendor;
+        @NameInMap("id")
+        public Long id;
 
         @NameInMap("name")
         public String name;
 
+        @NameInMap("status")
+        public Integer status;
+
+        @NameInMap("vendor")
+        public String vendor;
+
         public static GetUserSourceListResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             GetUserSourceListResponseBodyResult self = new GetUserSourceListResponseBodyResult();
             return TeaModel.build(map, self);
-        }
-
-        public GetUserSourceListResponseBodyResult setId(Long id) {
-            this.id = id;
-            return this;
-        }
-        public Long getId() {
-            return this.id;
-        }
-
-        public GetUserSourceListResponseBodyResult setStatus(Integer status) {
-            this.status = status;
-            return this;
-        }
-        public Integer getStatus() {
-            return this.status;
-        }
-
-        public GetUserSourceListResponseBodyResult setDescription(String description) {
-            this.description = description;
-            return this;
-        }
-        public String getDescription() {
-            return this.description;
         }
 
         public GetUserSourceListResponseBodyResult setConfig(String config) {
@@ -76,12 +52,20 @@ public class GetUserSourceListResponseBody extends TeaModel {
             return this.config;
         }
 
-        public GetUserSourceListResponseBodyResult setVendor(String vendor) {
-            this.vendor = vendor;
+        public GetUserSourceListResponseBodyResult setDescription(String description) {
+            this.description = description;
             return this;
         }
-        public String getVendor() {
-            return this.vendor;
+        public String getDescription() {
+            return this.description;
+        }
+
+        public GetUserSourceListResponseBodyResult setId(Long id) {
+            this.id = id;
+            return this;
+        }
+        public Long getId() {
+            return this.id;
         }
 
         public GetUserSourceListResponseBodyResult setName(String name) {
@@ -90,6 +74,22 @@ public class GetUserSourceListResponseBody extends TeaModel {
         }
         public String getName() {
             return this.name;
+        }
+
+        public GetUserSourceListResponseBodyResult setStatus(Integer status) {
+            this.status = status;
+            return this;
+        }
+        public Integer getStatus() {
+            return this.status;
+        }
+
+        public GetUserSourceListResponseBodyResult setVendor(String vendor) {
+            this.vendor = vendor;
+            return this;
+        }
+        public String getVendor() {
+            return this.vendor;
         }
 
     }

@@ -8,17 +8,17 @@ public class QueryAllGroupsInDeptResponseBody extends TeaModel {
     @NameInMap("content")
     public java.util.List<QueryAllGroupsInDeptResponseBodyContent> content;
 
-    // 总页数
-    @NameInMap("totalPages")
-    public Long totalPages;
+    // 当前页码
+    @NameInMap("currentPage")
+    public Long currentPage;
 
     // 数据总量
     @NameInMap("totalCount")
     public Long totalCount;
 
-    // 当前页码
-    @NameInMap("currentPage")
-    public Long currentPage;
+    // 总页数
+    @NameInMap("totalPages")
+    public Long totalPages;
 
     public static QueryAllGroupsInDeptResponseBody build(java.util.Map<String, ?> map) throws Exception {
         QueryAllGroupsInDeptResponseBody self = new QueryAllGroupsInDeptResponseBody();
@@ -33,12 +33,12 @@ public class QueryAllGroupsInDeptResponseBody extends TeaModel {
         return this.content;
     }
 
-    public QueryAllGroupsInDeptResponseBody setTotalPages(Long totalPages) {
-        this.totalPages = totalPages;
+    public QueryAllGroupsInDeptResponseBody setCurrentPage(Long currentPage) {
+        this.currentPage = currentPage;
         return this;
     }
-    public Long getTotalPages() {
-        return this.totalPages;
+    public Long getCurrentPage() {
+        return this.currentPage;
     }
 
     public QueryAllGroupsInDeptResponseBody setTotalCount(Long totalCount) {
@@ -49,15 +49,19 @@ public class QueryAllGroupsInDeptResponseBody extends TeaModel {
         return this.totalCount;
     }
 
-    public QueryAllGroupsInDeptResponseBody setCurrentPage(Long currentPage) {
-        this.currentPage = currentPage;
+    public QueryAllGroupsInDeptResponseBody setTotalPages(Long totalPages) {
+        this.totalPages = totalPages;
         return this;
     }
-    public Long getCurrentPage() {
-        return this.currentPage;
+    public Long getTotalPages() {
+        return this.totalPages;
     }
 
     public static class QueryAllGroupsInDeptResponseBodyContent extends TeaModel {
+        // 所在科室Id
+        @NameInMap("deptId")
+        public Long deptId;
+
         // 医疗组Id
         @NameInMap("id")
         public Long id;
@@ -66,13 +70,17 @@ public class QueryAllGroupsInDeptResponseBody extends TeaModel {
         @NameInMap("name")
         public String name;
 
-        // 所在科室Id
-        @NameInMap("deptId")
-        public Long deptId;
-
         public static QueryAllGroupsInDeptResponseBodyContent build(java.util.Map<String, ?> map) throws Exception {
             QueryAllGroupsInDeptResponseBodyContent self = new QueryAllGroupsInDeptResponseBodyContent();
             return TeaModel.build(map, self);
+        }
+
+        public QueryAllGroupsInDeptResponseBodyContent setDeptId(Long deptId) {
+            this.deptId = deptId;
+            return this;
+        }
+        public Long getDeptId() {
+            return this.deptId;
         }
 
         public QueryAllGroupsInDeptResponseBodyContent setId(Long id) {
@@ -89,14 +97,6 @@ public class QueryAllGroupsInDeptResponseBody extends TeaModel {
         }
         public String getName() {
             return this.name;
-        }
-
-        public QueryAllGroupsInDeptResponseBodyContent setDeptId(Long deptId) {
-            this.deptId = deptId;
-            return this;
-        }
-        public Long getDeptId() {
-            return this.deptId;
         }
 
     }

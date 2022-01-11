@@ -8,13 +8,13 @@ public class AddApplicationRegFormTemplateRequest extends TeaModel {
     @NameInMap("bizCode")
     public String bizCode;
 
-    // 模板名称
-    @NameInMap("name")
-    public String name;
-
     // 模板内容
     @NameInMap("content")
     public String content;
+
+    // 模板名称
+    @NameInMap("name")
+    public String name;
 
     // 外部唯一标识
     @NameInMap("outerId")
@@ -37,20 +37,20 @@ public class AddApplicationRegFormTemplateRequest extends TeaModel {
         return this.bizCode;
     }
 
-    public AddApplicationRegFormTemplateRequest setName(String name) {
-        this.name = name;
-        return this;
-    }
-    public String getName() {
-        return this.name;
-    }
-
     public AddApplicationRegFormTemplateRequest setContent(String content) {
         this.content = content;
         return this;
     }
     public String getContent() {
         return this.content;
+    }
+
+    public AddApplicationRegFormTemplateRequest setName(String name) {
+        this.name = name;
+        return this;
+    }
+    public String getName() {
+        return this.name;
     }
 
     public AddApplicationRegFormTemplateRequest setOuterId(String outerId) {

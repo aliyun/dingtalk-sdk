@@ -4,25 +4,17 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class MasterDataSaveRequest extends TeaModel {
-    // 租户id
-    @NameInMap("tenantId")
-    public Long tenantId;
-
     // 主数据
     @NameInMap("body")
     public java.util.List<MasterDataSaveRequestBody> body;
 
+    // 租户id
+    @NameInMap("tenantId")
+    public Long tenantId;
+
     public static MasterDataSaveRequest build(java.util.Map<String, ?> map) throws Exception {
         MasterDataSaveRequest self = new MasterDataSaveRequest();
         return TeaModel.build(map, self);
-    }
-
-    public MasterDataSaveRequest setTenantId(Long tenantId) {
-        this.tenantId = tenantId;
-        return this;
-    }
-    public Long getTenantId() {
-        return this.tenantId;
     }
 
     public MasterDataSaveRequest setBody(java.util.List<MasterDataSaveRequestBody> body) {
@@ -33,36 +25,12 @@ public class MasterDataSaveRequest extends TeaModel {
         return this.body;
     }
 
-    public static class MasterDataSaveRequestBodyScope extends TeaModel {
-        // 业务域code，如PERFORMANCE，系统分配
-        @NameInMap("scopeCode")
-        public String scopeCode;
-
-        // 业务域版本，接入时系统分配，默认传1
-        @NameInMap("version")
-        public Integer version;
-
-        public static MasterDataSaveRequestBodyScope build(java.util.Map<String, ?> map) throws Exception {
-            MasterDataSaveRequestBodyScope self = new MasterDataSaveRequestBodyScope();
-            return TeaModel.build(map, self);
-        }
-
-        public MasterDataSaveRequestBodyScope setScopeCode(String scopeCode) {
-            this.scopeCode = scopeCode;
-            return this;
-        }
-        public String getScopeCode() {
-            return this.scopeCode;
-        }
-
-        public MasterDataSaveRequestBodyScope setVersion(Integer version) {
-            this.version = version;
-            return this;
-        }
-        public Integer getVersion() {
-            return this.version;
-        }
-
+    public MasterDataSaveRequest setTenantId(Long tenantId) {
+        this.tenantId = tenantId;
+        return this;
+    }
+    public Long getTenantId() {
+        return this.tenantId;
     }
 
     public static class MasterDataSaveRequestBodyFieldList extends TeaModel {
@@ -97,22 +65,46 @@ public class MasterDataSaveRequest extends TeaModel {
 
     }
 
+    public static class MasterDataSaveRequestBodyScope extends TeaModel {
+        // 业务域code，如PERFORMANCE，系统分配
+        @NameInMap("scopeCode")
+        public String scopeCode;
+
+        // 业务域版本，接入时系统分配，默认传1
+        @NameInMap("version")
+        public Integer version;
+
+        public static MasterDataSaveRequestBodyScope build(java.util.Map<String, ?> map) throws Exception {
+            MasterDataSaveRequestBodyScope self = new MasterDataSaveRequestBodyScope();
+            return TeaModel.build(map, self);
+        }
+
+        public MasterDataSaveRequestBodyScope setScopeCode(String scopeCode) {
+            this.scopeCode = scopeCode;
+            return this;
+        }
+        public String getScopeCode() {
+            return this.scopeCode;
+        }
+
+        public MasterDataSaveRequestBodyScope setVersion(Integer version) {
+            this.version = version;
+            return this;
+        }
+        public Integer getVersion() {
+            return this.version;
+        }
+
+    }
+
     public static class MasterDataSaveRequestBody extends TeaModel {
-        // 员工id
-        @NameInMap("userId")
-        public String userId;
-
-        // 数据流水唯一标识，如流水号，用以唯一确认一条写入数据
-        @NameInMap("bizUk")
-        public String bizUk;
-
         // 数据变更时间戳，用以保证更新操作的顺序性
         @NameInMap("bizTime")
         public Long bizTime;
 
-        // 业务域描述，系统分配
-        @NameInMap("scope")
-        public MasterDataSaveRequestBodyScope scope;
+        // 数据流水唯一标识，如流水号，用以唯一确认一条写入数据
+        @NameInMap("bizUk")
+        public String bizUk;
 
         // 业务域下的细分领域实体
         @NameInMap("entityCode")
@@ -122,25 +114,17 @@ public class MasterDataSaveRequest extends TeaModel {
         @NameInMap("fieldList")
         public java.util.List<MasterDataSaveRequestBodyFieldList> fieldList;
 
+        // 业务域描述，系统分配
+        @NameInMap("scope")
+        public MasterDataSaveRequestBodyScope scope;
+
+        // 员工id
+        @NameInMap("userId")
+        public String userId;
+
         public static MasterDataSaveRequestBody build(java.util.Map<String, ?> map) throws Exception {
             MasterDataSaveRequestBody self = new MasterDataSaveRequestBody();
             return TeaModel.build(map, self);
-        }
-
-        public MasterDataSaveRequestBody setUserId(String userId) {
-            this.userId = userId;
-            return this;
-        }
-        public String getUserId() {
-            return this.userId;
-        }
-
-        public MasterDataSaveRequestBody setBizUk(String bizUk) {
-            this.bizUk = bizUk;
-            return this;
-        }
-        public String getBizUk() {
-            return this.bizUk;
         }
 
         public MasterDataSaveRequestBody setBizTime(Long bizTime) {
@@ -151,12 +135,12 @@ public class MasterDataSaveRequest extends TeaModel {
             return this.bizTime;
         }
 
-        public MasterDataSaveRequestBody setScope(MasterDataSaveRequestBodyScope scope) {
-            this.scope = scope;
+        public MasterDataSaveRequestBody setBizUk(String bizUk) {
+            this.bizUk = bizUk;
             return this;
         }
-        public MasterDataSaveRequestBodyScope getScope() {
-            return this.scope;
+        public String getBizUk() {
+            return this.bizUk;
         }
 
         public MasterDataSaveRequestBody setEntityCode(String entityCode) {
@@ -173,6 +157,22 @@ public class MasterDataSaveRequest extends TeaModel {
         }
         public java.util.List<MasterDataSaveRequestBodyFieldList> getFieldList() {
             return this.fieldList;
+        }
+
+        public MasterDataSaveRequestBody setScope(MasterDataSaveRequestBodyScope scope) {
+            this.scope = scope;
+            return this;
+        }
+        public MasterDataSaveRequestBodyScope getScope() {
+            return this.scope;
+        }
+
+        public MasterDataSaveRequestBody setUserId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+        public String getUserId() {
+            return this.userId;
         }
 
     }

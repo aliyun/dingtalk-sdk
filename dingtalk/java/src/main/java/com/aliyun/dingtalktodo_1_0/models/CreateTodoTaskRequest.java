@@ -4,14 +4,6 @@ package com.aliyun.dingtalktodo_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateTodoTaskRequest extends TeaModel {
-    // 来源id，接入业务系统侧的唯一标识id
-    @NameInMap("sourceId")
-    public String sourceId;
-
-    // 待办标题
-    @NameInMap("subject")
-    public String subject;
-
     // 创建者id，需传用户的unionId
     @NameInMap("creatorId")
     public String creatorId;
@@ -19,6 +11,10 @@ public class CreateTodoTaskRequest extends TeaModel {
     // 待办备注描述
     @NameInMap("description")
     public String description;
+
+    // 详情页url跳转地址
+    @NameInMap("detailUrl")
+    public CreateTodoTaskRequestDetailUrl detailUrl;
 
     // 截止时间
     @NameInMap("dueTime")
@@ -28,25 +24,29 @@ public class CreateTodoTaskRequest extends TeaModel {
     @NameInMap("executorIds")
     public java.util.List<String> executorIds;
 
-    // 参与者列表，需传用户的unionId
-    @NameInMap("participantIds")
-    public java.util.List<String> participantIds;
-
-    // 详情页url跳转地址
-    @NameInMap("detailUrl")
-    public CreateTodoTaskRequestDetailUrl detailUrl;
-
     // 生成的待办是否仅展示在执行者的待办列表中
     @NameInMap("isOnlyShowExecutor")
     public Boolean isOnlyShowExecutor;
+
+    // 通知提醒配置
+    @NameInMap("notifyConfigs")
+    public CreateTodoTaskRequestNotifyConfigs notifyConfigs;
+
+    // 参与者列表，需传用户的unionId
+    @NameInMap("participantIds")
+    public java.util.List<String> participantIds;
 
     // 优先级
     @NameInMap("priority")
     public Integer priority;
 
-    // 通知提醒配置
-    @NameInMap("notifyConfigs")
-    public CreateTodoTaskRequestNotifyConfigs notifyConfigs;
+    // 来源id，接入业务系统侧的唯一标识id
+    @NameInMap("sourceId")
+    public String sourceId;
+
+    // 待办标题
+    @NameInMap("subject")
+    public String subject;
 
     // 当前操作者id，需传用户的unionId
     @NameInMap("operatorId")
@@ -55,22 +55,6 @@ public class CreateTodoTaskRequest extends TeaModel {
     public static CreateTodoTaskRequest build(java.util.Map<String, ?> map) throws Exception {
         CreateTodoTaskRequest self = new CreateTodoTaskRequest();
         return TeaModel.build(map, self);
-    }
-
-    public CreateTodoTaskRequest setSourceId(String sourceId) {
-        this.sourceId = sourceId;
-        return this;
-    }
-    public String getSourceId() {
-        return this.sourceId;
-    }
-
-    public CreateTodoTaskRequest setSubject(String subject) {
-        this.subject = subject;
-        return this;
-    }
-    public String getSubject() {
-        return this.subject;
     }
 
     public CreateTodoTaskRequest setCreatorId(String creatorId) {
@@ -89,6 +73,14 @@ public class CreateTodoTaskRequest extends TeaModel {
         return this.description;
     }
 
+    public CreateTodoTaskRequest setDetailUrl(CreateTodoTaskRequestDetailUrl detailUrl) {
+        this.detailUrl = detailUrl;
+        return this;
+    }
+    public CreateTodoTaskRequestDetailUrl getDetailUrl() {
+        return this.detailUrl;
+    }
+
     public CreateTodoTaskRequest setDueTime(Long dueTime) {
         this.dueTime = dueTime;
         return this;
@@ -105,28 +97,28 @@ public class CreateTodoTaskRequest extends TeaModel {
         return this.executorIds;
     }
 
-    public CreateTodoTaskRequest setParticipantIds(java.util.List<String> participantIds) {
-        this.participantIds = participantIds;
-        return this;
-    }
-    public java.util.List<String> getParticipantIds() {
-        return this.participantIds;
-    }
-
-    public CreateTodoTaskRequest setDetailUrl(CreateTodoTaskRequestDetailUrl detailUrl) {
-        this.detailUrl = detailUrl;
-        return this;
-    }
-    public CreateTodoTaskRequestDetailUrl getDetailUrl() {
-        return this.detailUrl;
-    }
-
     public CreateTodoTaskRequest setIsOnlyShowExecutor(Boolean isOnlyShowExecutor) {
         this.isOnlyShowExecutor = isOnlyShowExecutor;
         return this;
     }
     public Boolean getIsOnlyShowExecutor() {
         return this.isOnlyShowExecutor;
+    }
+
+    public CreateTodoTaskRequest setNotifyConfigs(CreateTodoTaskRequestNotifyConfigs notifyConfigs) {
+        this.notifyConfigs = notifyConfigs;
+        return this;
+    }
+    public CreateTodoTaskRequestNotifyConfigs getNotifyConfigs() {
+        return this.notifyConfigs;
+    }
+
+    public CreateTodoTaskRequest setParticipantIds(java.util.List<String> participantIds) {
+        this.participantIds = participantIds;
+        return this;
+    }
+    public java.util.List<String> getParticipantIds() {
+        return this.participantIds;
     }
 
     public CreateTodoTaskRequest setPriority(Integer priority) {
@@ -137,12 +129,20 @@ public class CreateTodoTaskRequest extends TeaModel {
         return this.priority;
     }
 
-    public CreateTodoTaskRequest setNotifyConfigs(CreateTodoTaskRequestNotifyConfigs notifyConfigs) {
-        this.notifyConfigs = notifyConfigs;
+    public CreateTodoTaskRequest setSourceId(String sourceId) {
+        this.sourceId = sourceId;
         return this;
     }
-    public CreateTodoTaskRequestNotifyConfigs getNotifyConfigs() {
-        return this.notifyConfigs;
+    public String getSourceId() {
+        return this.sourceId;
+    }
+
+    public CreateTodoTaskRequest setSubject(String subject) {
+        this.subject = subject;
+        return this;
+    }
+    public String getSubject() {
+        return this.subject;
     }
 
     public CreateTodoTaskRequest setOperatorId(String operatorId) {

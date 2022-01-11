@@ -4,13 +4,13 @@ package com.aliyun.dingtalktrajectory_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryPageTraceDataResponseBody extends TeaModel {
-    // 轨迹点列表
-    @NameInMap("list")
-    public java.util.List<QueryPageTraceDataResponseBodyList> list;
-
     // 是否结束
     @NameInMap("hasMore")
     public Boolean hasMore;
+
+    // 轨迹点列表
+    @NameInMap("list")
+    public java.util.List<QueryPageTraceDataResponseBodyList> list;
 
     // 下一个开始位置
     @NameInMap("nextToken")
@@ -21,20 +21,20 @@ public class QueryPageTraceDataResponseBody extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public QueryPageTraceDataResponseBody setList(java.util.List<QueryPageTraceDataResponseBodyList> list) {
-        this.list = list;
-        return this;
-    }
-    public java.util.List<QueryPageTraceDataResponseBodyList> getList() {
-        return this.list;
-    }
-
     public QueryPageTraceDataResponseBody setHasMore(Boolean hasMore) {
         this.hasMore = hasMore;
         return this;
     }
     public Boolean getHasMore() {
         return this.hasMore;
+    }
+
+    public QueryPageTraceDataResponseBody setList(java.util.List<QueryPageTraceDataResponseBodyList> list) {
+        this.list = list;
+        return this;
+    }
+    public java.util.List<QueryPageTraceDataResponseBodyList> getList() {
+        return this.list;
     }
 
     public QueryPageTraceDataResponseBody setNextToken(Long nextToken) {
@@ -46,25 +46,17 @@ public class QueryPageTraceDataResponseBody extends TeaModel {
     }
 
     public static class QueryPageTraceDataResponseBodyListCoordinates extends TeaModel {
-        // 经度
-        @NameInMap("longitude")
-        public Float longitude;
-
         // 纬度
         @NameInMap("latitude")
         public Float latitude;
 
+        // 经度
+        @NameInMap("longitude")
+        public Float longitude;
+
         public static QueryPageTraceDataResponseBodyListCoordinates build(java.util.Map<String, ?> map) throws Exception {
             QueryPageTraceDataResponseBodyListCoordinates self = new QueryPageTraceDataResponseBodyListCoordinates();
             return TeaModel.build(map, self);
-        }
-
-        public QueryPageTraceDataResponseBodyListCoordinates setLongitude(Float longitude) {
-            this.longitude = longitude;
-            return this;
-        }
-        public Float getLongitude() {
-            return this.longitude;
         }
 
         public QueryPageTraceDataResponseBodyListCoordinates setLatitude(Float latitude) {
@@ -73,6 +65,14 @@ public class QueryPageTraceDataResponseBody extends TeaModel {
         }
         public Float getLatitude() {
             return this.latitude;
+        }
+
+        public QueryPageTraceDataResponseBodyListCoordinates setLongitude(Float longitude) {
+            this.longitude = longitude;
+            return this;
+        }
+        public Float getLongitude() {
+            return this.longitude;
         }
 
     }

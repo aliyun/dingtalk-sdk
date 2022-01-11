@@ -4,10 +4,6 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class MasterDataQueryResponseBody extends TeaModel {
-    // 总条目数
-    @NameInMap("total")
-    public Long total;
-
     // 是否还有更多
     @NameInMap("hasMore")
     public Boolean hasMore;
@@ -16,25 +12,21 @@ public class MasterDataQueryResponseBody extends TeaModel {
     @NameInMap("nextToken")
     public Long nextToken;
 
-    // 是否成功
-    @NameInMap("success")
-    public Boolean success;
-
     // 结果
     @NameInMap("result")
     public java.util.List<MasterDataQueryResponseBodyResult> result;
 
+    // 是否成功
+    @NameInMap("success")
+    public Boolean success;
+
+    // 总条目数
+    @NameInMap("total")
+    public Long total;
+
     public static MasterDataQueryResponseBody build(java.util.Map<String, ?> map) throws Exception {
         MasterDataQueryResponseBody self = new MasterDataQueryResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public MasterDataQueryResponseBody setTotal(Long total) {
-        this.total = total;
-        return this;
-    }
-    public Long getTotal() {
-        return this.total;
     }
 
     public MasterDataQueryResponseBody setHasMore(Boolean hasMore) {
@@ -53,6 +45,14 @@ public class MasterDataQueryResponseBody extends TeaModel {
         return this.nextToken;
     }
 
+    public MasterDataQueryResponseBody setResult(java.util.List<MasterDataQueryResponseBodyResult> result) {
+        this.result = result;
+        return this;
+    }
+    public java.util.List<MasterDataQueryResponseBodyResult> getResult() {
+        return this.result;
+    }
+
     public MasterDataQueryResponseBody setSuccess(Boolean success) {
         this.success = success;
         return this;
@@ -61,12 +61,12 @@ public class MasterDataQueryResponseBody extends TeaModel {
         return this.success;
     }
 
-    public MasterDataQueryResponseBody setResult(java.util.List<MasterDataQueryResponseBodyResult> result) {
-        this.result = result;
+    public MasterDataQueryResponseBody setTotal(Long total) {
+        this.total = total;
         return this;
     }
-    public java.util.List<MasterDataQueryResponseBodyResult> getResult() {
-        return this.result;
+    public Long getTotal() {
+        return this.total;
     }
 
     public static class MasterDataQueryResponseBodyResultViewEntityFieldVOListFieldDataVO extends TeaModel {
@@ -162,6 +162,10 @@ public class MasterDataQueryResponseBody extends TeaModel {
         @NameInMap("outerId")
         public String outerId;
 
+        // 关联id列表，一般为userId
+        @NameInMap("relationId")
+        public String relationId;
+
         // 领域
         @NameInMap("scopeCode")
         public String scopeCode;
@@ -174,10 +178,6 @@ public class MasterDataQueryResponseBody extends TeaModel {
         @NameInMap("viewEntityFieldVOList")
         public java.util.List<MasterDataQueryResponseBodyResultViewEntityFieldVOList> viewEntityFieldVOList;
 
-        // 关联id列表，一般为userId
-        @NameInMap("relationId")
-        public String relationId;
-
         public static MasterDataQueryResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             MasterDataQueryResponseBodyResult self = new MasterDataQueryResponseBodyResult();
             return TeaModel.build(map, self);
@@ -189,6 +189,14 @@ public class MasterDataQueryResponseBody extends TeaModel {
         }
         public String getOuterId() {
             return this.outerId;
+        }
+
+        public MasterDataQueryResponseBodyResult setRelationId(String relationId) {
+            this.relationId = relationId;
+            return this;
+        }
+        public String getRelationId() {
+            return this.relationId;
         }
 
         public MasterDataQueryResponseBodyResult setScopeCode(String scopeCode) {
@@ -213,14 +221,6 @@ public class MasterDataQueryResponseBody extends TeaModel {
         }
         public java.util.List<MasterDataQueryResponseBodyResultViewEntityFieldVOList> getViewEntityFieldVOList() {
             return this.viewEntityFieldVOList;
-        }
-
-        public MasterDataQueryResponseBodyResult setRelationId(String relationId) {
-            this.relationId = relationId;
-            return this;
-        }
-        public String getRelationId() {
-            return this.relationId;
         }
 
     }

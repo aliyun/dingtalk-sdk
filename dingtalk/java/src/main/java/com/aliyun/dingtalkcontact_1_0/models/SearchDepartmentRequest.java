@@ -4,16 +4,13 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchDepartmentRequest extends TeaModel {
-    @NameInMap("dingOrgId")
-    public Long dingOrgId;
+    // 分页查询锚点
+    @NameInMap("offset")
+    public Integer offset;
 
     // 部门名称或者部门名称拼音
     @NameInMap("queryWord")
     public String queryWord;
-
-    // 分页查询锚点
-    @NameInMap("offset")
-    public Integer offset;
 
     // 分页长度
     @NameInMap("size")
@@ -24,12 +21,12 @@ public class SearchDepartmentRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public SearchDepartmentRequest setDingOrgId(Long dingOrgId) {
-        this.dingOrgId = dingOrgId;
+    public SearchDepartmentRequest setOffset(Integer offset) {
+        this.offset = offset;
         return this;
     }
-    public Long getDingOrgId() {
-        return this.dingOrgId;
+    public Integer getOffset() {
+        return this.offset;
     }
 
     public SearchDepartmentRequest setQueryWord(String queryWord) {
@@ -38,14 +35,6 @@ public class SearchDepartmentRequest extends TeaModel {
     }
     public String getQueryWord() {
         return this.queryWord;
-    }
-
-    public SearchDepartmentRequest setOffset(Integer offset) {
-        this.offset = offset;
-        return this;
-    }
-    public Integer getOffset() {
-        return this.offset;
     }
 
     public SearchDepartmentRequest setSize(Integer size) {

@@ -4,26 +4,18 @@ package com.aliyun.dingtalkesign_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetProcessStartUrlResponseBody extends TeaModel {
-    @NameInMap("message")
-    public String message;
-
     @NameInMap("code")
     public Integer code;
 
     @NameInMap("data")
     public GetProcessStartUrlResponseBodyData data;
 
+    @NameInMap("message")
+    public String message;
+
     public static GetProcessStartUrlResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetProcessStartUrlResponseBody self = new GetProcessStartUrlResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public GetProcessStartUrlResponseBody setMessage(String message) {
-        this.message = message;
-        return this;
-    }
-    public String getMessage() {
-        return this.message;
     }
 
     public GetProcessStartUrlResponseBody setCode(Integer code) {
@@ -42,27 +34,35 @@ public class GetProcessStartUrlResponseBody extends TeaModel {
         return this.data;
     }
 
+    public GetProcessStartUrlResponseBody setMessage(String message) {
+        this.message = message;
+        return this;
+    }
+    public String getMessage() {
+        return this.message;
+    }
+
     public static class GetProcessStartUrlResponseBodyData extends TeaModel {
-        @NameInMap("taskId")
-        public String taskId;
+        @NameInMap("mobileUrl")
+        public String mobileUrl;
 
         @NameInMap("pcUrl")
         public String pcUrl;
 
-        @NameInMap("mobileUrl")
-        public String mobileUrl;
+        @NameInMap("taskId")
+        public String taskId;
 
         public static GetProcessStartUrlResponseBodyData build(java.util.Map<String, ?> map) throws Exception {
             GetProcessStartUrlResponseBodyData self = new GetProcessStartUrlResponseBodyData();
             return TeaModel.build(map, self);
         }
 
-        public GetProcessStartUrlResponseBodyData setTaskId(String taskId) {
-            this.taskId = taskId;
+        public GetProcessStartUrlResponseBodyData setMobileUrl(String mobileUrl) {
+            this.mobileUrl = mobileUrl;
             return this;
         }
-        public String getTaskId() {
-            return this.taskId;
+        public String getMobileUrl() {
+            return this.mobileUrl;
         }
 
         public GetProcessStartUrlResponseBodyData setPcUrl(String pcUrl) {
@@ -73,12 +73,12 @@ public class GetProcessStartUrlResponseBody extends TeaModel {
             return this.pcUrl;
         }
 
-        public GetProcessStartUrlResponseBodyData setMobileUrl(String mobileUrl) {
-            this.mobileUrl = mobileUrl;
+        public GetProcessStartUrlResponseBodyData setTaskId(String taskId) {
+            this.taskId = taskId;
             return this;
         }
-        public String getMobileUrl() {
-            return this.mobileUrl;
+        public String getTaskId() {
+            return this.taskId;
         }
 
     }

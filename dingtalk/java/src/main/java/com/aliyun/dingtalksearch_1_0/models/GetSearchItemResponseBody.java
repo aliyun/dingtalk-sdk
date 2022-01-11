@@ -4,6 +4,10 @@ package com.aliyun.dingtalksearch_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetSearchItemResponseBody extends TeaModel {
+    // 数据项的脚注
+    @NameInMap("footer")
+    public String footer;
+
     // 创建时间
     @NameInMap("gmtCreate")
     public String gmtCreate;
@@ -12,25 +16,21 @@ public class GetSearchItemResponseBody extends TeaModel {
     @NameInMap("gmtModified")
     public String gmtModified;
 
+    // 数据项的头像
+    @NameInMap("icon")
+    public String icon;
+
     // 数据项的id,tabId和orgId相同的情况下，itemId唯一标识一条数据项
     @NameInMap("itemId")
     public String itemId;
-
-    // 数据项的标题
-    @NameInMap("title")
-    public String title;
-
-    // 数据项的脚注
-    @NameInMap("footer")
-    public String footer;
 
     // 数据项的摘要
     @NameInMap("summary")
     public String summary;
 
-    // 数据项的头像
-    @NameInMap("icon")
-    public String icon;
+    // 数据项的标题
+    @NameInMap("title")
+    public String title;
 
     // 数据项的跳转url地址
     @NameInMap("url")
@@ -39,6 +39,14 @@ public class GetSearchItemResponseBody extends TeaModel {
     public static GetSearchItemResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetSearchItemResponseBody self = new GetSearchItemResponseBody();
         return TeaModel.build(map, self);
+    }
+
+    public GetSearchItemResponseBody setFooter(String footer) {
+        this.footer = footer;
+        return this;
+    }
+    public String getFooter() {
+        return this.footer;
     }
 
     public GetSearchItemResponseBody setGmtCreate(String gmtCreate) {
@@ -57,28 +65,20 @@ public class GetSearchItemResponseBody extends TeaModel {
         return this.gmtModified;
     }
 
+    public GetSearchItemResponseBody setIcon(String icon) {
+        this.icon = icon;
+        return this;
+    }
+    public String getIcon() {
+        return this.icon;
+    }
+
     public GetSearchItemResponseBody setItemId(String itemId) {
         this.itemId = itemId;
         return this;
     }
     public String getItemId() {
         return this.itemId;
-    }
-
-    public GetSearchItemResponseBody setTitle(String title) {
-        this.title = title;
-        return this;
-    }
-    public String getTitle() {
-        return this.title;
-    }
-
-    public GetSearchItemResponseBody setFooter(String footer) {
-        this.footer = footer;
-        return this;
-    }
-    public String getFooter() {
-        return this.footer;
     }
 
     public GetSearchItemResponseBody setSummary(String summary) {
@@ -89,12 +89,12 @@ public class GetSearchItemResponseBody extends TeaModel {
         return this.summary;
     }
 
-    public GetSearchItemResponseBody setIcon(String icon) {
-        this.icon = icon;
+    public GetSearchItemResponseBody setTitle(String title) {
+        this.title = title;
         return this;
     }
-    public String getIcon() {
-        return this.icon;
+    public String getTitle() {
+        return this.title;
     }
 
     public GetSearchItemResponseBody setUrl(String url) {

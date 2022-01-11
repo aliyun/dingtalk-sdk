@@ -50,10 +50,6 @@ public class QuerySchoolUserFaceResponseBody extends TeaModel {
         @NameInMap("faceId")
         public String faceId;
 
-        // 员工id
-        @NameInMap("userId")
-        public String userId;
-
         // 员工名字
         @NameInMap("name")
         public String name;
@@ -61,6 +57,10 @@ public class QuerySchoolUserFaceResponseBody extends TeaModel {
         // 员工状态
         @NameInMap("status")
         public Integer status;
+
+        // 员工id
+        @NameInMap("userId")
+        public String userId;
 
         public static QuerySchoolUserFaceResponseBodyUserFaceList build(java.util.Map<String, ?> map) throws Exception {
             QuerySchoolUserFaceResponseBodyUserFaceList self = new QuerySchoolUserFaceResponseBodyUserFaceList();
@@ -73,14 +73,6 @@ public class QuerySchoolUserFaceResponseBody extends TeaModel {
         }
         public String getFaceId() {
             return this.faceId;
-        }
-
-        public QuerySchoolUserFaceResponseBodyUserFaceList setUserId(String userId) {
-            this.userId = userId;
-            return this;
-        }
-        public String getUserId() {
-            return this.userId;
         }
 
         public QuerySchoolUserFaceResponseBodyUserFaceList setName(String name) {
@@ -97,6 +89,14 @@ public class QuerySchoolUserFaceResponseBody extends TeaModel {
         }
         public Integer getStatus() {
             return this.status;
+        }
+
+        public QuerySchoolUserFaceResponseBodyUserFaceList setUserId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+        public String getUserId() {
+            return this.userId;
         }
 
     }

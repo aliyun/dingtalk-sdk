@@ -4,6 +4,10 @@ package com.aliyun.dingtalkflashmeeting_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateFlashMeetingRequest extends TeaModel {
+    // 创建人union id
+    @NameInMap("creator")
+    public String creator;
+
     // 日程id
     @NameInMap("eventId")
     public String eventId;
@@ -12,13 +16,17 @@ public class CreateFlashMeetingRequest extends TeaModel {
     @NameInMap("title")
     public String title;
 
-    // 创建人union id
-    @NameInMap("creator")
-    public String creator;
-
     public static CreateFlashMeetingRequest build(java.util.Map<String, ?> map) throws Exception {
         CreateFlashMeetingRequest self = new CreateFlashMeetingRequest();
         return TeaModel.build(map, self);
+    }
+
+    public CreateFlashMeetingRequest setCreator(String creator) {
+        this.creator = creator;
+        return this;
+    }
+    public String getCreator() {
+        return this.creator;
     }
 
     public CreateFlashMeetingRequest setEventId(String eventId) {
@@ -35,14 +43,6 @@ public class CreateFlashMeetingRequest extends TeaModel {
     }
     public String getTitle() {
         return this.title;
-    }
-
-    public CreateFlashMeetingRequest setCreator(String creator) {
-        this.creator = creator;
-        return this;
-    }
-    public String getCreator() {
-        return this.creator;
     }
 
 }

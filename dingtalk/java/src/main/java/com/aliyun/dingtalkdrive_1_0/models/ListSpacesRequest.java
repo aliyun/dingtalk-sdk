@@ -4,41 +4,33 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListSpacesRequest extends TeaModel {
-    // 用户id
-    @NameInMap("unionId")
-    public String unionId;
-
-    // 空间类型
-    @NameInMap("spaceType")
-    public String spaceType;
+    // 分页大小
+    @NameInMap("maxResults")
+    public Integer maxResults;
 
     // 分页加载锚点
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 分页大小
-    @NameInMap("maxResults")
-    public Integer maxResults;
+    // 空间类型
+    @NameInMap("spaceType")
+    public String spaceType;
+
+    // 用户id
+    @NameInMap("unionId")
+    public String unionId;
 
     public static ListSpacesRequest build(java.util.Map<String, ?> map) throws Exception {
         ListSpacesRequest self = new ListSpacesRequest();
         return TeaModel.build(map, self);
     }
 
-    public ListSpacesRequest setUnionId(String unionId) {
-        this.unionId = unionId;
+    public ListSpacesRequest setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
         return this;
     }
-    public String getUnionId() {
-        return this.unionId;
-    }
-
-    public ListSpacesRequest setSpaceType(String spaceType) {
-        this.spaceType = spaceType;
-        return this;
-    }
-    public String getSpaceType() {
-        return this.spaceType;
+    public Integer getMaxResults() {
+        return this.maxResults;
     }
 
     public ListSpacesRequest setNextToken(String nextToken) {
@@ -49,12 +41,20 @@ public class ListSpacesRequest extends TeaModel {
         return this.nextToken;
     }
 
-    public ListSpacesRequest setMaxResults(Integer maxResults) {
-        this.maxResults = maxResults;
+    public ListSpacesRequest setSpaceType(String spaceType) {
+        this.spaceType = spaceType;
         return this;
     }
-    public Integer getMaxResults() {
-        return this.maxResults;
+    public String getSpaceType() {
+        return this.spaceType;
+    }
+
+    public ListSpacesRequest setUnionId(String unionId) {
+        this.unionId = unionId;
+        return this;
+    }
+    public String getUnionId() {
+        return this.unionId;
     }
 
 }

@@ -4,46 +4,22 @@ package com.aliyun.dingtalkvillage_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListDeptSimpleUsersResponseBody extends TeaModel {
-    // 用户列表
-    @NameInMap("userList")
-    public java.util.List<ListDeptSimpleUsersResponseBodyUserList> userList;
-
-    @NameInMap("totalCount")
-    public Long totalCount;
+    @NameInMap("hasMore")
+    public Boolean hasMore;
 
     @NameInMap("nextCursor")
     public Long nextCursor;
 
-    @NameInMap("hasMore")
-    public Boolean hasMore;
+    @NameInMap("totalCount")
+    public Long totalCount;
+
+    // 用户列表
+    @NameInMap("userList")
+    public java.util.List<ListDeptSimpleUsersResponseBodyUserList> userList;
 
     public static ListDeptSimpleUsersResponseBody build(java.util.Map<String, ?> map) throws Exception {
         ListDeptSimpleUsersResponseBody self = new ListDeptSimpleUsersResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public ListDeptSimpleUsersResponseBody setUserList(java.util.List<ListDeptSimpleUsersResponseBodyUserList> userList) {
-        this.userList = userList;
-        return this;
-    }
-    public java.util.List<ListDeptSimpleUsersResponseBodyUserList> getUserList() {
-        return this.userList;
-    }
-
-    public ListDeptSimpleUsersResponseBody setTotalCount(Long totalCount) {
-        this.totalCount = totalCount;
-        return this;
-    }
-    public Long getTotalCount() {
-        return this.totalCount;
-    }
-
-    public ListDeptSimpleUsersResponseBody setNextCursor(Long nextCursor) {
-        this.nextCursor = nextCursor;
-        return this;
-    }
-    public Long getNextCursor() {
-        return this.nextCursor;
     }
 
     public ListDeptSimpleUsersResponseBody setHasMore(Boolean hasMore) {
@@ -54,26 +30,42 @@ public class ListDeptSimpleUsersResponseBody extends TeaModel {
         return this.hasMore;
     }
 
-    public static class ListDeptSimpleUsersResponseBodyUserList extends TeaModel {
-        // 用户ID
-        @NameInMap("userId")
-        public String userId;
+    public ListDeptSimpleUsersResponseBody setNextCursor(Long nextCursor) {
+        this.nextCursor = nextCursor;
+        return this;
+    }
+    public Long getNextCursor() {
+        return this.nextCursor;
+    }
 
+    public ListDeptSimpleUsersResponseBody setTotalCount(Long totalCount) {
+        this.totalCount = totalCount;
+        return this;
+    }
+    public Long getTotalCount() {
+        return this.totalCount;
+    }
+
+    public ListDeptSimpleUsersResponseBody setUserList(java.util.List<ListDeptSimpleUsersResponseBodyUserList> userList) {
+        this.userList = userList;
+        return this;
+    }
+    public java.util.List<ListDeptSimpleUsersResponseBodyUserList> getUserList() {
+        return this.userList;
+    }
+
+    public static class ListDeptSimpleUsersResponseBodyUserList extends TeaModel {
         // 用户姓名
         @NameInMap("name")
         public String name;
 
+        // 用户ID
+        @NameInMap("userId")
+        public String userId;
+
         public static ListDeptSimpleUsersResponseBodyUserList build(java.util.Map<String, ?> map) throws Exception {
             ListDeptSimpleUsersResponseBodyUserList self = new ListDeptSimpleUsersResponseBodyUserList();
             return TeaModel.build(map, self);
-        }
-
-        public ListDeptSimpleUsersResponseBodyUserList setUserId(String userId) {
-            this.userId = userId;
-            return this;
-        }
-        public String getUserId() {
-            return this.userId;
         }
 
         public ListDeptSimpleUsersResponseBodyUserList setName(String name) {
@@ -82,6 +74,14 @@ public class ListDeptSimpleUsersResponseBody extends TeaModel {
         }
         public String getName() {
             return this.name;
+        }
+
+        public ListDeptSimpleUsersResponseBodyUserList setUserId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+        public String getUserId() {
+            return this.userId;
         }
 
     }

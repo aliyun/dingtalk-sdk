@@ -8,25 +8,25 @@ public class PushEventRequest extends TeaModel {
     @NameInMap("corpId")
     public String corpId;
 
+    // 触发事件设备ID。
+    @NameInMap("deviceId")
+    public String deviceId;
+
     // 事件ID。
     @NameInMap("eventId")
     public String eventId;
-
-    // 事件类型，最长20个字符。
-    @NameInMap("eventType")
-    public String eventType;
 
     // 事件名称，长度4-20个字符，一个中文汉字算2个字符。
     @NameInMap("eventName")
     public String eventName;
 
-    // 事件发生事件，Unix时间戳，单位毫秒。
-    @NameInMap("occurrenceTime")
-    public Long occurrenceTime;
+    // 事件类型，最长20个字符。
+    @NameInMap("eventType")
+    public String eventType;
 
-    // 触发事件设备ID。
-    @NameInMap("deviceId")
-    public String deviceId;
+    // 第三方平台定制参数，企业内部系统忽略。
+    @NameInMap("extraData")
+    public java.util.Map<String, ?> extraData;
 
     // 事件发生地点。
     @NameInMap("location")
@@ -36,13 +36,13 @@ public class PushEventRequest extends TeaModel {
     @NameInMap("msg")
     public String msg;
 
+    // 事件发生事件，Unix时间戳，单位毫秒。
+    @NameInMap("occurrenceTime")
+    public Long occurrenceTime;
+
     // 事件图片地址列表。
     @NameInMap("picUrls")
     public java.util.List<String> picUrls;
-
-    // 第三方平台定制参数，企业内部系统忽略。
-    @NameInMap("extraData")
-    public java.util.Map<String, ?> extraData;
 
     public static PushEventRequest build(java.util.Map<String, ?> map) throws Exception {
         PushEventRequest self = new PushEventRequest();
@@ -57,20 +57,20 @@ public class PushEventRequest extends TeaModel {
         return this.corpId;
     }
 
+    public PushEventRequest setDeviceId(String deviceId) {
+        this.deviceId = deviceId;
+        return this;
+    }
+    public String getDeviceId() {
+        return this.deviceId;
+    }
+
     public PushEventRequest setEventId(String eventId) {
         this.eventId = eventId;
         return this;
     }
     public String getEventId() {
         return this.eventId;
-    }
-
-    public PushEventRequest setEventType(String eventType) {
-        this.eventType = eventType;
-        return this;
-    }
-    public String getEventType() {
-        return this.eventType;
     }
 
     public PushEventRequest setEventName(String eventName) {
@@ -81,20 +81,20 @@ public class PushEventRequest extends TeaModel {
         return this.eventName;
     }
 
-    public PushEventRequest setOccurrenceTime(Long occurrenceTime) {
-        this.occurrenceTime = occurrenceTime;
+    public PushEventRequest setEventType(String eventType) {
+        this.eventType = eventType;
         return this;
     }
-    public Long getOccurrenceTime() {
-        return this.occurrenceTime;
+    public String getEventType() {
+        return this.eventType;
     }
 
-    public PushEventRequest setDeviceId(String deviceId) {
-        this.deviceId = deviceId;
+    public PushEventRequest setExtraData(java.util.Map<String, ?> extraData) {
+        this.extraData = extraData;
         return this;
     }
-    public String getDeviceId() {
-        return this.deviceId;
+    public java.util.Map<String, ?> getExtraData() {
+        return this.extraData;
     }
 
     public PushEventRequest setLocation(String location) {
@@ -113,20 +113,20 @@ public class PushEventRequest extends TeaModel {
         return this.msg;
     }
 
+    public PushEventRequest setOccurrenceTime(Long occurrenceTime) {
+        this.occurrenceTime = occurrenceTime;
+        return this;
+    }
+    public Long getOccurrenceTime() {
+        return this.occurrenceTime;
+    }
+
     public PushEventRequest setPicUrls(java.util.List<String> picUrls) {
         this.picUrls = picUrls;
         return this;
     }
     public java.util.List<String> getPicUrls() {
         return this.picUrls;
-    }
-
-    public PushEventRequest setExtraData(java.util.Map<String, ?> extraData) {
-        this.extraData = extraData;
-        return this;
-    }
-    public java.util.Map<String, ?> getExtraData() {
-        return this.extraData;
     }
 
 }

@@ -4,11 +4,11 @@ package com.aliyun.dingtalkimpaas_1_0.models;
 import com.aliyun.tea.*;
 
 public class RecallMessageRequest extends TeaModel {
-    @NameInMap("operatorUid")
-    public String operatorUid;
-
     @NameInMap("messageId")
     public String messageId;
+
+    @NameInMap("operatorUid")
+    public String operatorUid;
 
     @NameInMap("type")
     public Integer type;
@@ -18,20 +18,20 @@ public class RecallMessageRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public RecallMessageRequest setOperatorUid(String operatorUid) {
-        this.operatorUid = operatorUid;
-        return this;
-    }
-    public String getOperatorUid() {
-        return this.operatorUid;
-    }
-
     public RecallMessageRequest setMessageId(String messageId) {
         this.messageId = messageId;
         return this;
     }
     public String getMessageId() {
         return this.messageId;
+    }
+
+    public RecallMessageRequest setOperatorUid(String operatorUid) {
+        this.operatorUid = operatorUid;
+        return this;
+    }
+    public String getOperatorUid() {
+        return this.operatorUid;
     }
 
     public RecallMessageRequest setType(Integer type) {

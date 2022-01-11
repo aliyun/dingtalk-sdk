@@ -4,29 +4,29 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateResideceGroupRequest extends TeaModel {
-    // 组长userid
-    @NameInMap("managerUserId")
-    public String managerUserId;
+    // 组id
+    @NameInMap("departmentId")
+    public Long departmentId;
 
     // 组名字
     @NameInMap("departmentName")
     public String departmentName;
 
-    // 组id
-    @NameInMap("departmentId")
-    public Long departmentId;
+    // 组长userid
+    @NameInMap("managerUserId")
+    public String managerUserId;
 
     public static UpdateResideceGroupRequest build(java.util.Map<String, ?> map) throws Exception {
         UpdateResideceGroupRequest self = new UpdateResideceGroupRequest();
         return TeaModel.build(map, self);
     }
 
-    public UpdateResideceGroupRequest setManagerUserId(String managerUserId) {
-        this.managerUserId = managerUserId;
+    public UpdateResideceGroupRequest setDepartmentId(Long departmentId) {
+        this.departmentId = departmentId;
         return this;
     }
-    public String getManagerUserId() {
-        return this.managerUserId;
+    public Long getDepartmentId() {
+        return this.departmentId;
     }
 
     public UpdateResideceGroupRequest setDepartmentName(String departmentName) {
@@ -37,12 +37,12 @@ public class UpdateResideceGroupRequest extends TeaModel {
         return this.departmentName;
     }
 
-    public UpdateResideceGroupRequest setDepartmentId(Long departmentId) {
-        this.departmentId = departmentId;
+    public UpdateResideceGroupRequest setManagerUserId(String managerUserId) {
+        this.managerUserId = managerUserId;
         return this;
     }
-    public Long getDepartmentId() {
-        return this.departmentId;
+    public String getManagerUserId() {
+        return this.managerUserId;
     }
 
 }

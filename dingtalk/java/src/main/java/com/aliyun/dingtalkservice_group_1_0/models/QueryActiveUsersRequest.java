@@ -4,13 +4,13 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryActiveUsersRequest extends TeaModel {
-    // 开放团队ID
-    @NameInMap("openTeamId")
-    public String openTeamId;
-
     // 开放群ID
     @NameInMap("openConversationId")
     public String openConversationId;
+
+    // 开放团队ID
+    @NameInMap("openTeamId")
+    public String openTeamId;
 
     // 查询topN的数据
     @NameInMap("topN")
@@ -21,20 +21,20 @@ public class QueryActiveUsersRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public QueryActiveUsersRequest setOpenTeamId(String openTeamId) {
-        this.openTeamId = openTeamId;
-        return this;
-    }
-    public String getOpenTeamId() {
-        return this.openTeamId;
-    }
-
     public QueryActiveUsersRequest setOpenConversationId(String openConversationId) {
         this.openConversationId = openConversationId;
         return this;
     }
     public String getOpenConversationId() {
         return this.openConversationId;
+    }
+
+    public QueryActiveUsersRequest setOpenTeamId(String openTeamId) {
+        this.openTeamId = openTeamId;
+        return this;
+    }
+    public String getOpenTeamId() {
+        return this.openTeamId;
     }
 
     public QueryActiveUsersRequest setTopN(Long topN) {

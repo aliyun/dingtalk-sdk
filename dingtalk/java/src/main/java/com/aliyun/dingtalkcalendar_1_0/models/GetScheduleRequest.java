@@ -4,29 +4,29 @@ package com.aliyun.dingtalkcalendar_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetScheduleRequest extends TeaModel {
-    // 待查询的用户列表
-    @NameInMap("userIds")
-    public java.util.List<String> userIds;
+    // 查询结束时间
+    @NameInMap("endTime")
+    public String endTime;
 
     // 查询开始时间
     @NameInMap("startTime")
     public String startTime;
 
-    // 查询结束时间
-    @NameInMap("endTime")
-    public String endTime;
+    // 待查询的用户列表
+    @NameInMap("userIds")
+    public java.util.List<String> userIds;
 
     public static GetScheduleRequest build(java.util.Map<String, ?> map) throws Exception {
         GetScheduleRequest self = new GetScheduleRequest();
         return TeaModel.build(map, self);
     }
 
-    public GetScheduleRequest setUserIds(java.util.List<String> userIds) {
-        this.userIds = userIds;
+    public GetScheduleRequest setEndTime(String endTime) {
+        this.endTime = endTime;
         return this;
     }
-    public java.util.List<String> getUserIds() {
-        return this.userIds;
+    public String getEndTime() {
+        return this.endTime;
     }
 
     public GetScheduleRequest setStartTime(String startTime) {
@@ -37,12 +37,12 @@ public class GetScheduleRequest extends TeaModel {
         return this.startTime;
     }
 
-    public GetScheduleRequest setEndTime(String endTime) {
-        this.endTime = endTime;
+    public GetScheduleRequest setUserIds(java.util.List<String> userIds) {
+        this.userIds = userIds;
         return this;
     }
-    public String getEndTime() {
-        return this.endTime;
+    public java.util.List<String> getUserIds() {
+        return this.userIds;
     }
 
 }

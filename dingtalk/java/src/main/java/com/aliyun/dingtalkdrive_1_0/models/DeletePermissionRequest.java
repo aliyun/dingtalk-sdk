@@ -4,12 +4,12 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeletePermissionRequest extends TeaModel {
+    @NameInMap("members")
+    public java.util.List<DeletePermissionRequestMembers> members;
+
     // 权限角色
     @NameInMap("role")
     public String role;
-
-    @NameInMap("members")
-    public java.util.List<DeletePermissionRequestMembers> members;
 
     // 用户id
     @NameInMap("unionId")
@@ -20,20 +20,20 @@ public class DeletePermissionRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public DeletePermissionRequest setRole(String role) {
-        this.role = role;
-        return this;
-    }
-    public String getRole() {
-        return this.role;
-    }
-
     public DeletePermissionRequest setMembers(java.util.List<DeletePermissionRequestMembers> members) {
         this.members = members;
         return this;
     }
     public java.util.List<DeletePermissionRequestMembers> getMembers() {
         return this.members;
+    }
+
+    public DeletePermissionRequest setRole(String role) {
+        this.role = role;
+        return this;
+    }
+    public String getRole() {
+        return this.role;
     }
 
     public DeletePermissionRequest setUnionId(String unionId) {
@@ -49,13 +49,13 @@ public class DeletePermissionRequest extends TeaModel {
         @NameInMap("corpId")
         public String corpId;
 
-        // 成员类型
-        @NameInMap("memberType")
-        public String memberType;
-
         // 成员id
         @NameInMap("memberId")
         public String memberId;
+
+        // 成员类型
+        @NameInMap("memberType")
+        public String memberType;
 
         public static DeletePermissionRequestMembers build(java.util.Map<String, ?> map) throws Exception {
             DeletePermissionRequestMembers self = new DeletePermissionRequestMembers();
@@ -70,20 +70,20 @@ public class DeletePermissionRequest extends TeaModel {
             return this.corpId;
         }
 
-        public DeletePermissionRequestMembers setMemberType(String memberType) {
-            this.memberType = memberType;
-            return this;
-        }
-        public String getMemberType() {
-            return this.memberType;
-        }
-
         public DeletePermissionRequestMembers setMemberId(String memberId) {
             this.memberId = memberId;
             return this;
         }
         public String getMemberId() {
             return this.memberId;
+        }
+
+        public DeletePermissionRequestMembers setMemberType(String memberType) {
+            this.memberType = memberType;
+            return this;
+        }
+        public String getMemberType() {
+            return this.memberType;
         }
 
     }

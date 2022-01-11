@@ -4,22 +4,6 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateRemoteClassCourseRequest extends TeaModel {
-    // 课程名称
-    @NameInMap("courseName")
-    public String courseName;
-
-    // 开始时间
-    @NameInMap("startTime")
-    public Long startTime;
-
-    // 结束时间
-    @NameInMap("endTime")
-    public Long endTime;
-
-    // 授课设备
-    @NameInMap("teachingParticipant")
-    public CreateRemoteClassCourseRequestTeachingParticipant teachingParticipant;
-
     // 听课设备列表
     @NameInMap("attendParticipants")
     public java.util.List<CreateRemoteClassCourseRequestAttendParticipants> attendParticipants;
@@ -28,59 +12,25 @@ public class CreateRemoteClassCourseRequest extends TeaModel {
     @NameInMap("authCode")
     public String authCode;
 
-    @NameInMap("dingClientId")
-    public String dingClientId;
+    // 课程名称
+    @NameInMap("courseName")
+    public String courseName;
 
-    @NameInMap("dingSuiteKey")
-    public String dingSuiteKey;
+    // 结束时间
+    @NameInMap("endTime")
+    public Long endTime;
 
-    @NameInMap("dingTokenGrantType")
-    public Integer dingTokenGrantType;
+    // 开始时间
+    @NameInMap("startTime")
+    public Long startTime;
 
-    @NameInMap("dingOauthAppId")
-    public Long dingOauthAppId;
-
-    @NameInMap("dingIsvOrgId")
-    public Long dingIsvOrgId;
-
-    @NameInMap("dingCorpId")
-    public String dingCorpId;
+    // 授课设备
+    @NameInMap("teachingParticipant")
+    public CreateRemoteClassCourseRequestTeachingParticipant teachingParticipant;
 
     public static CreateRemoteClassCourseRequest build(java.util.Map<String, ?> map) throws Exception {
         CreateRemoteClassCourseRequest self = new CreateRemoteClassCourseRequest();
         return TeaModel.build(map, self);
-    }
-
-    public CreateRemoteClassCourseRequest setCourseName(String courseName) {
-        this.courseName = courseName;
-        return this;
-    }
-    public String getCourseName() {
-        return this.courseName;
-    }
-
-    public CreateRemoteClassCourseRequest setStartTime(Long startTime) {
-        this.startTime = startTime;
-        return this;
-    }
-    public Long getStartTime() {
-        return this.startTime;
-    }
-
-    public CreateRemoteClassCourseRequest setEndTime(Long endTime) {
-        this.endTime = endTime;
-        return this;
-    }
-    public Long getEndTime() {
-        return this.endTime;
-    }
-
-    public CreateRemoteClassCourseRequest setTeachingParticipant(CreateRemoteClassCourseRequestTeachingParticipant teachingParticipant) {
-        this.teachingParticipant = teachingParticipant;
-        return this;
-    }
-    public CreateRemoteClassCourseRequestTeachingParticipant getTeachingParticipant() {
-        return this.teachingParticipant;
     }
 
     public CreateRemoteClassCourseRequest setAttendParticipants(java.util.List<CreateRemoteClassCourseRequestAttendParticipants> attendParticipants) {
@@ -99,98 +49,58 @@ public class CreateRemoteClassCourseRequest extends TeaModel {
         return this.authCode;
     }
 
-    public CreateRemoteClassCourseRequest setDingClientId(String dingClientId) {
-        this.dingClientId = dingClientId;
+    public CreateRemoteClassCourseRequest setCourseName(String courseName) {
+        this.courseName = courseName;
         return this;
     }
-    public String getDingClientId() {
-        return this.dingClientId;
+    public String getCourseName() {
+        return this.courseName;
     }
 
-    public CreateRemoteClassCourseRequest setDingSuiteKey(String dingSuiteKey) {
-        this.dingSuiteKey = dingSuiteKey;
+    public CreateRemoteClassCourseRequest setEndTime(Long endTime) {
+        this.endTime = endTime;
         return this;
     }
-    public String getDingSuiteKey() {
-        return this.dingSuiteKey;
+    public Long getEndTime() {
+        return this.endTime;
     }
 
-    public CreateRemoteClassCourseRequest setDingTokenGrantType(Integer dingTokenGrantType) {
-        this.dingTokenGrantType = dingTokenGrantType;
+    public CreateRemoteClassCourseRequest setStartTime(Long startTime) {
+        this.startTime = startTime;
         return this;
     }
-    public Integer getDingTokenGrantType() {
-        return this.dingTokenGrantType;
+    public Long getStartTime() {
+        return this.startTime;
     }
 
-    public CreateRemoteClassCourseRequest setDingOauthAppId(Long dingOauthAppId) {
-        this.dingOauthAppId = dingOauthAppId;
+    public CreateRemoteClassCourseRequest setTeachingParticipant(CreateRemoteClassCourseRequestTeachingParticipant teachingParticipant) {
+        this.teachingParticipant = teachingParticipant;
         return this;
     }
-    public Long getDingOauthAppId() {
-        return this.dingOauthAppId;
+    public CreateRemoteClassCourseRequestTeachingParticipant getTeachingParticipant() {
+        return this.teachingParticipant;
     }
 
-    public CreateRemoteClassCourseRequest setDingIsvOrgId(Long dingIsvOrgId) {
-        this.dingIsvOrgId = dingIsvOrgId;
-        return this;
-    }
-    public Long getDingIsvOrgId() {
-        return this.dingIsvOrgId;
-    }
-
-    public CreateRemoteClassCourseRequest setDingCorpId(String dingCorpId) {
-        this.dingCorpId = dingCorpId;
-        return this;
-    }
-    public String getDingCorpId() {
-        return this.dingCorpId;
-    }
-
-    public static class CreateRemoteClassCourseRequestTeachingParticipant extends TeaModel {
-        // 参与方ID
-        @NameInMap("participantId")
-        public String participantId;
-
+    public static class CreateRemoteClassCourseRequestAttendParticipants extends TeaModel {
         // 组织ID
         @NameInMap("corpId")
         public String corpId;
 
-        public static CreateRemoteClassCourseRequestTeachingParticipant build(java.util.Map<String, ?> map) throws Exception {
-            CreateRemoteClassCourseRequestTeachingParticipant self = new CreateRemoteClassCourseRequestTeachingParticipant();
+        // 参与方ID
+        @NameInMap("participantId")
+        public String participantId;
+
+        public static CreateRemoteClassCourseRequestAttendParticipants build(java.util.Map<String, ?> map) throws Exception {
+            CreateRemoteClassCourseRequestAttendParticipants self = new CreateRemoteClassCourseRequestAttendParticipants();
             return TeaModel.build(map, self);
         }
 
-        public CreateRemoteClassCourseRequestTeachingParticipant setParticipantId(String participantId) {
-            this.participantId = participantId;
-            return this;
-        }
-        public String getParticipantId() {
-            return this.participantId;
-        }
-
-        public CreateRemoteClassCourseRequestTeachingParticipant setCorpId(String corpId) {
+        public CreateRemoteClassCourseRequestAttendParticipants setCorpId(String corpId) {
             this.corpId = corpId;
             return this;
         }
         public String getCorpId() {
             return this.corpId;
-        }
-
-    }
-
-    public static class CreateRemoteClassCourseRequestAttendParticipants extends TeaModel {
-        // 参与方ID
-        @NameInMap("participantId")
-        public String participantId;
-
-        // 组织ID
-        @NameInMap("corpId")
-        public String corpId;
-
-        public static CreateRemoteClassCourseRequestAttendParticipants build(java.util.Map<String, ?> map) throws Exception {
-            CreateRemoteClassCourseRequestAttendParticipants self = new CreateRemoteClassCourseRequestAttendParticipants();
-            return TeaModel.build(map, self);
         }
 
         public CreateRemoteClassCourseRequestAttendParticipants setParticipantId(String participantId) {
@@ -201,12 +111,36 @@ public class CreateRemoteClassCourseRequest extends TeaModel {
             return this.participantId;
         }
 
-        public CreateRemoteClassCourseRequestAttendParticipants setCorpId(String corpId) {
+    }
+
+    public static class CreateRemoteClassCourseRequestTeachingParticipant extends TeaModel {
+        // 组织ID
+        @NameInMap("corpId")
+        public String corpId;
+
+        // 参与方ID
+        @NameInMap("participantId")
+        public String participantId;
+
+        public static CreateRemoteClassCourseRequestTeachingParticipant build(java.util.Map<String, ?> map) throws Exception {
+            CreateRemoteClassCourseRequestTeachingParticipant self = new CreateRemoteClassCourseRequestTeachingParticipant();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateRemoteClassCourseRequestTeachingParticipant setCorpId(String corpId) {
             this.corpId = corpId;
             return this;
         }
         public String getCorpId() {
             return this.corpId;
+        }
+
+        public CreateRemoteClassCourseRequestTeachingParticipant setParticipantId(String participantId) {
+            this.participantId = participantId;
+            return this;
+        }
+        public String getParticipantId() {
+            return this.participantId;
         }
 
     }

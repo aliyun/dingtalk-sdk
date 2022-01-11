@@ -21,25 +21,17 @@ public class StartCoursePrepareResponseBody extends TeaModel {
     }
 
     public static class StartCoursePrepareResponseBodyUniversityCourseCommonResponse extends TeaModel {
-        // 调用是否成功
-        @NameInMap("success")
-        public Boolean success;
-
         // 课程编码
         @NameInMap("courseCode")
         public String courseCode;
 
+        // 调用是否成功
+        @NameInMap("success")
+        public Boolean success;
+
         public static StartCoursePrepareResponseBodyUniversityCourseCommonResponse build(java.util.Map<String, ?> map) throws Exception {
             StartCoursePrepareResponseBodyUniversityCourseCommonResponse self = new StartCoursePrepareResponseBodyUniversityCourseCommonResponse();
             return TeaModel.build(map, self);
-        }
-
-        public StartCoursePrepareResponseBodyUniversityCourseCommonResponse setSuccess(Boolean success) {
-            this.success = success;
-            return this;
-        }
-        public Boolean getSuccess() {
-            return this.success;
         }
 
         public StartCoursePrepareResponseBodyUniversityCourseCommonResponse setCourseCode(String courseCode) {
@@ -48,6 +40,14 @@ public class StartCoursePrepareResponseBody extends TeaModel {
         }
         public String getCourseCode() {
             return this.courseCode;
+        }
+
+        public StartCoursePrepareResponseBodyUniversityCourseCommonResponse setSuccess(Boolean success) {
+            this.success = success;
+            return this;
+        }
+        public Boolean getSuccess() {
+            return this.success;
         }
 
     }

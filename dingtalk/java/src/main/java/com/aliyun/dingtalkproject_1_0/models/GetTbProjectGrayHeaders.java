@@ -10,8 +10,8 @@ public class GetTbProjectGrayHeaders extends TeaModel {
     @NameInMap("dingAccessTokenType")
     public String dingAccessTokenType;
 
-    @NameInMap("dingSuiteKey")
-    public String dingSuiteKey;
+    @NameInMap("dingCorpId")
+    public String dingCorpId;
 
     @NameInMap("dingIsvOrgId")
     public String dingIsvOrgId;
@@ -19,8 +19,8 @@ public class GetTbProjectGrayHeaders extends TeaModel {
     @NameInMap("dingOrgId")
     public String dingOrgId;
 
-    @NameInMap("dingCorpId")
-    public String dingCorpId;
+    @NameInMap("dingSuiteKey")
+    public String dingSuiteKey;
 
     @NameInMap("x-acs-dingtalk-access-token")
     public String xAcsDingtalkAccessToken;
@@ -46,12 +46,12 @@ public class GetTbProjectGrayHeaders extends TeaModel {
         return this.dingAccessTokenType;
     }
 
-    public GetTbProjectGrayHeaders setDingSuiteKey(String dingSuiteKey) {
-        this.dingSuiteKey = dingSuiteKey;
+    public GetTbProjectGrayHeaders setDingCorpId(String dingCorpId) {
+        this.dingCorpId = dingCorpId;
         return this;
     }
-    public String getDingSuiteKey() {
-        return this.dingSuiteKey;
+    public String getDingCorpId() {
+        return this.dingCorpId;
     }
 
     public GetTbProjectGrayHeaders setDingIsvOrgId(String dingIsvOrgId) {
@@ -70,12 +70,12 @@ public class GetTbProjectGrayHeaders extends TeaModel {
         return this.dingOrgId;
     }
 
-    public GetTbProjectGrayHeaders setDingCorpId(String dingCorpId) {
-        this.dingCorpId = dingCorpId;
+    public GetTbProjectGrayHeaders setDingSuiteKey(String dingSuiteKey) {
+        this.dingSuiteKey = dingSuiteKey;
         return this;
     }
-    public String getDingCorpId() {
-        return this.dingCorpId;
+    public String getDingSuiteKey() {
+        return this.dingSuiteKey;
     }
 
     public GetTbProjectGrayHeaders setXAcsDingtalkAccessToken(String xAcsDingtalkAccessToken) {

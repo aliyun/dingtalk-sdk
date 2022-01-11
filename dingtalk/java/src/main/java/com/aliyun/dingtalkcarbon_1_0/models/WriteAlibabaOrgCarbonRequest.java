@@ -26,13 +26,9 @@ public class WriteAlibabaOrgCarbonRequest extends TeaModel {
         @NameInMap("actionId")
         public String actionId;
 
-        // 钉钉组织id
-        @NameInMap("corpId")
-        public String corpId;
-
-        // 钉钉部门id
-        @NameInMap("deptId")
-        public Long deptId;
+        // 行为发生时间
+        @NameInMap("actionTime")
+        public String actionTime;
 
         // 碳能量行为类型，需要联系管理员添加
         @NameInMap("actionType")
@@ -42,9 +38,13 @@ public class WriteAlibabaOrgCarbonRequest extends TeaModel {
         @NameInMap("carbonAmount")
         public String carbonAmount;
 
-        // 行为发生时间
-        @NameInMap("actionTime")
-        public String actionTime;
+        // 钉钉组织id
+        @NameInMap("corpId")
+        public String corpId;
+
+        // 钉钉部门id
+        @NameInMap("deptId")
+        public Long deptId;
 
         // 版本，默认为1
         @NameInMap("version")
@@ -63,20 +63,12 @@ public class WriteAlibabaOrgCarbonRequest extends TeaModel {
             return this.actionId;
         }
 
-        public WriteAlibabaOrgCarbonRequestOrgDetailsList setCorpId(String corpId) {
-            this.corpId = corpId;
+        public WriteAlibabaOrgCarbonRequestOrgDetailsList setActionTime(String actionTime) {
+            this.actionTime = actionTime;
             return this;
         }
-        public String getCorpId() {
-            return this.corpId;
-        }
-
-        public WriteAlibabaOrgCarbonRequestOrgDetailsList setDeptId(Long deptId) {
-            this.deptId = deptId;
-            return this;
-        }
-        public Long getDeptId() {
-            return this.deptId;
+        public String getActionTime() {
+            return this.actionTime;
         }
 
         public WriteAlibabaOrgCarbonRequestOrgDetailsList setActionType(String actionType) {
@@ -95,12 +87,20 @@ public class WriteAlibabaOrgCarbonRequest extends TeaModel {
             return this.carbonAmount;
         }
 
-        public WriteAlibabaOrgCarbonRequestOrgDetailsList setActionTime(String actionTime) {
-            this.actionTime = actionTime;
+        public WriteAlibabaOrgCarbonRequestOrgDetailsList setCorpId(String corpId) {
+            this.corpId = corpId;
             return this;
         }
-        public String getActionTime() {
-            return this.actionTime;
+        public String getCorpId() {
+            return this.corpId;
+        }
+
+        public WriteAlibabaOrgCarbonRequestOrgDetailsList setDeptId(Long deptId) {
+            this.deptId = deptId;
+            return this;
+        }
+        public Long getDeptId() {
+            return this.deptId;
         }
 
         public WriteAlibabaOrgCarbonRequestOrgDetailsList setVersion(Integer version) {
