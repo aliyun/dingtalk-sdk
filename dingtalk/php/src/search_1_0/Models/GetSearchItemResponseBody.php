@@ -23,6 +23,13 @@ class GetSearchItemResponseBody extends Model
     public $gmtModified;
 
     /**
+     * @description 数据源id
+     *
+     * @var int
+     */
+    public $tabId;
+
+    /**
      * @description 数据项的id,tabId和orgId相同的情况下，itemId唯一标识一条数据项
      *
      * @var string
@@ -58,20 +65,37 @@ class GetSearchItemResponseBody extends Model
     public $icon;
 
     /**
-     * @description 数据项的跳转url地址
+     * @description 数据项的默认url地址，若mobileUrl或pcUrl没有配置，则使用该url地址，默认url和mobileUrl、pcUrl至少配置其中一个
      *
      * @var string
      */
     public $url;
+
+    /**
+     * @description 数据项的移动端跳转url地址，若同时配置默认url和mobileUrl，移动端跳转链接优先使用mobileUrl
+     *
+     * @var string
+     */
+    public $mobileUrl;
+
+    /**
+     * @description 数据项的PC端跳转url地址，若同时配置默认url和pcUrl，PC端跳转链接优先使用pcUrl
+     *
+     * @var string
+     */
+    public $pcUrl;
     protected $_name = [
         'gmtCreate'   => 'gmtCreate',
         'gmtModified' => 'gmtModified',
+        'tabId'       => 'tabId',
         'itemId'      => 'itemId',
         'title'       => 'title',
         'footer'      => 'footer',
         'summary'     => 'summary',
         'icon'        => 'icon',
         'url'         => 'url',
+        'mobileUrl'   => 'mobileUrl',
+        'pcUrl'       => 'pcUrl',
     ];
 
     public function validate()
@@ -86,6 +110,9 @@ class GetSearchItemResponseBody extends Model
         }
         if (null !== $this->gmtModified) {
             $res['gmtModified'] = $this->gmtModified;
+        }
+        if (null !== $this->tabId) {
+            $res['tabId'] = $this->tabId;
         }
         if (null !== $this->itemId) {
             $res['itemId'] = $this->itemId;
@@ -105,6 +132,12 @@ class GetSearchItemResponseBody extends Model
         if (null !== $this->url) {
             $res['url'] = $this->url;
         }
+        if (null !== $this->mobileUrl) {
+            $res['mobileUrl'] = $this->mobileUrl;
+        }
+        if (null !== $this->pcUrl) {
+            $res['pcUrl'] = $this->pcUrl;
+        }
 
         return $res;
     }
@@ -123,6 +156,9 @@ class GetSearchItemResponseBody extends Model
         if (isset($map['gmtModified'])) {
             $model->gmtModified = $map['gmtModified'];
         }
+        if (isset($map['tabId'])) {
+            $model->tabId = $map['tabId'];
+        }
         if (isset($map['itemId'])) {
             $model->itemId = $map['itemId'];
         }
@@ -140,6 +176,12 @@ class GetSearchItemResponseBody extends Model
         }
         if (isset($map['url'])) {
             $model->url = $map['url'];
+        }
+        if (isset($map['mobileUrl'])) {
+            $model->mobileUrl = $map['mobileUrl'];
+        }
+        if (isset($map['pcUrl'])) {
+            $model->pcUrl = $map['pcUrl'];
         }
 
         return $model;

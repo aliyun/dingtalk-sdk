@@ -2,11 +2,11 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vsearch_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vsearch_1_0\Models\BatchInsertSearchItemRequest;
 
 use AlibabaCloud\Tea\Model;
 
-class InsertSearchItemRequest extends Model
+class searchItemModels extends Model
 {
     /**
      * @description 数据项的id，tabId和orgId相同的情况下，itemId唯一标识一条数据项，长度不能超过128
@@ -112,7 +112,7 @@ class InsertSearchItemRequest extends Model
     /**
      * @param array $map
      *
-     * @return InsertSearchItemRequest
+     * @return searchItemModels
      */
     public static function fromMap($map = [])
     {

@@ -2,42 +2,63 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vsearch_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vsearch_1_0\Models\GetSearchItemsByKeyWordResponseBody;
 
 use AlibabaCloud\Tea\Model;
 
-class InsertSearchItemRequest extends Model
+class value extends Model
 {
     /**
-     * @description 数据项的id，tabId和orgId相同的情况下，itemId唯一标识一条数据项，长度不能超过128
+     * @description 创建时间
+     *
+     * @var string
+     */
+    public $gmtCreate;
+
+    /**
+     * @description 修改时间
+     *
+     * @var string
+     */
+    public $gmtModified;
+
+    /**
+     * @description 数据源id
+     *
+     * @var int
+     */
+    public $tabId;
+
+    /**
+     * @description 数据项的id,tabId和orgId相同的情况下，itemId唯一标识一条数据项
      *
      * @var string
      */
     public $itemId;
 
     /**
-     * @description 数据项的标题，长度不能超过16
+     * @description 数据项的标题
      *
      * @var string
      */
     public $title;
 
     /**
-     * @description 数据项的脚注，长度不能超过64
+     * @description 数据项的脚注
      *
      * @var string
      */
     public $footer;
 
     /**
-     * @description 数据项的摘要，长度不能超过64
+     * @description 数据项的摘要
      *
      * @var string
      */
     public $summary;
 
     /**
-     * @description 数据项的头像，长度不能超过512
+     * @description 数据项的头像
      *
      * @var string
      */
@@ -64,14 +85,17 @@ class InsertSearchItemRequest extends Model
      */
     public $pcUrl;
     protected $_name = [
-        'itemId'    => 'itemId',
-        'title'     => 'title',
-        'footer'    => 'footer',
-        'summary'   => 'summary',
-        'icon'      => 'icon',
-        'url'       => 'url',
-        'mobileUrl' => 'mobileUrl',
-        'pcUrl'     => 'pcUrl',
+        'gmtCreate'   => 'gmtCreate',
+        'gmtModified' => 'gmtModified',
+        'tabId'       => 'tabId',
+        'itemId'      => 'itemId',
+        'title'       => 'title',
+        'footer'      => 'footer',
+        'summary'     => 'summary',
+        'icon'        => 'icon',
+        'url'         => 'url',
+        'mobileUrl'   => 'mobileUrl',
+        'pcUrl'       => 'pcUrl',
     ];
 
     public function validate()
@@ -81,6 +105,15 @@ class InsertSearchItemRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->gmtCreate) {
+            $res['gmtCreate'] = $this->gmtCreate;
+        }
+        if (null !== $this->gmtModified) {
+            $res['gmtModified'] = $this->gmtModified;
+        }
+        if (null !== $this->tabId) {
+            $res['tabId'] = $this->tabId;
+        }
         if (null !== $this->itemId) {
             $res['itemId'] = $this->itemId;
         }
@@ -112,11 +145,20 @@ class InsertSearchItemRequest extends Model
     /**
      * @param array $map
      *
-     * @return InsertSearchItemRequest
+     * @return value
      */
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['gmtCreate'])) {
+            $model->gmtCreate = $map['gmtCreate'];
+        }
+        if (isset($map['gmtModified'])) {
+            $model->gmtModified = $map['gmtModified'];
+        }
+        if (isset($map['tabId'])) {
+            $model->tabId = $map['tabId'];
+        }
         if (isset($map['itemId'])) {
             $model->itemId = $map['itemId'];
         }

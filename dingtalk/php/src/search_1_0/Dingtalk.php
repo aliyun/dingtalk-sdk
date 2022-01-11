@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vsearch_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vsearch_1_0\Models\BatchInsertSearchItemHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vsearch_1_0\Models\BatchInsertSearchItemRequest;
+use AlibabaCloud\SDK\Dingtalk\Vsearch_1_0\Models\BatchInsertSearchItemResponse;
 use AlibabaCloud\SDK\Dingtalk\Vsearch_1_0\Models\CreateSearchTabHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vsearch_1_0\Models\CreateSearchTabRequest;
 use AlibabaCloud\SDK\Dingtalk\Vsearch_1_0\Models\CreateSearchTabResponse;
@@ -14,11 +17,16 @@ use AlibabaCloud\SDK\Dingtalk\Vsearch_1_0\Models\DeleteSearchTabHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vsearch_1_0\Models\DeleteSearchTabResponse;
 use AlibabaCloud\SDK\Dingtalk\Vsearch_1_0\Models\GetSearchItemHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vsearch_1_0\Models\GetSearchItemResponse;
+use AlibabaCloud\SDK\Dingtalk\Vsearch_1_0\Models\GetSearchItemsByKeyWordHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vsearch_1_0\Models\GetSearchItemsByKeyWordRequest;
+use AlibabaCloud\SDK\Dingtalk\Vsearch_1_0\Models\GetSearchItemsByKeyWordResponse;
 use AlibabaCloud\SDK\Dingtalk\Vsearch_1_0\Models\GetSearchTabHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vsearch_1_0\Models\GetSearchTabResponse;
 use AlibabaCloud\SDK\Dingtalk\Vsearch_1_0\Models\InsertSearchItemHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vsearch_1_0\Models\InsertSearchItemRequest;
 use AlibabaCloud\SDK\Dingtalk\Vsearch_1_0\Models\InsertSearchItemResponse;
+use AlibabaCloud\SDK\Dingtalk\Vsearch_1_0\Models\ListSearchTabsByOrgIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vsearch_1_0\Models\ListSearchTabsByOrgIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vsearch_1_0\Models\UpdateSearchTabHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vsearch_1_0\Models\UpdateSearchTabRequest;
 use AlibabaCloud\SDK\Dingtalk\Vsearch_1_0\Models\UpdateSearchTabResponse;
@@ -113,6 +121,39 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @return ListSearchTabsByOrgIdResponse
+     */
+    public function listSearchTabsByOrgId()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListSearchTabsByOrgIdHeaders([]);
+
+        return $this->listSearchTabsByOrgIdWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param ListSearchTabsByOrgIdHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return ListSearchTabsByOrgIdResponse
+     */
+    public function listSearchTabsByOrgIdWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return ListSearchTabsByOrgIdResponse::fromMap($this->doROARequest('ListSearchTabsByOrgId', 'search_1.0', 'HTTP', 'GET', 'AK', '/v1.0/search/tabs', 'json', $req, $runtime));
+    }
+
+    /**
      * @param string $tabId
      * @param string $itemId
      *
@@ -194,6 +235,12 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->url)) {
             @$body['url'] = $request->url;
         }
+        if (!Utils::isUnset($request->mobileUrl)) {
+            @$body['mobileUrl'] = $request->mobileUrl;
+        }
+        if (!Utils::isUnset($request->pcUrl)) {
+            @$body['pcUrl'] = $request->pcUrl;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -207,6 +254,50 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return InsertSearchItemResponse::fromMap($this->doROARequest('InsertSearchItem', 'search_1.0', 'HTTP', 'POST', 'AK', '/v1.0/search/tabs/' . $tabId . '/items', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param string                       $tabId
+     * @param BatchInsertSearchItemRequest $request
+     *
+     * @return BatchInsertSearchItemResponse
+     */
+    public function batchInsertSearchItem($tabId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchInsertSearchItemHeaders([]);
+
+        return $this->batchInsertSearchItemWithOptions($tabId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                       $tabId
+     * @param BatchInsertSearchItemRequest $request
+     * @param BatchInsertSearchItemHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return BatchInsertSearchItemResponse
+     */
+    public function batchInsertSearchItemWithOptions($tabId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->searchItemModels)) {
+            @$body['searchItemModels'] = $request->searchItemModels;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return BatchInsertSearchItemResponse::fromMap($this->doROARequest('BatchInsertSearchItem', 'search_1.0', 'HTTP', 'POST', 'AK', '/v1.0/search/tabs/' . $tabId . '/items/batch', 'none', $req, $runtime));
     }
 
     /**
@@ -341,5 +432,55 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return UpdateSearchTabResponse::fromMap($this->doROARequest('UpdateSearchTab', 'search_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/search/tabs/' . $tabId . '', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param string                         $tabId
+     * @param GetSearchItemsByKeyWordRequest $request
+     *
+     * @return GetSearchItemsByKeyWordResponse
+     */
+    public function getSearchItemsByKeyWord($tabId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetSearchItemsByKeyWordHeaders([]);
+
+        return $this->getSearchItemsByKeyWordWithOptions($tabId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                         $tabId
+     * @param GetSearchItemsByKeyWordRequest $request
+     * @param GetSearchItemsByKeyWordHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return GetSearchItemsByKeyWordResponse
+     */
+    public function getSearchItemsByKeyWordWithOptions($tabId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->keyWord)) {
+            @$query['keyWord'] = $request->keyWord;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetSearchItemsByKeyWordResponse::fromMap($this->doROARequest('GetSearchItemsByKeyWord', 'search_1.0', 'HTTP', 'GET', 'AK', '/v1.0/search/tabs/' . $tabId . '/items', 'json', $req, $runtime));
     }
 }
