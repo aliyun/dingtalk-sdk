@@ -4903,7 +4903,7 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UploadRegisterImageResponse>(await this.doROARequest("UploadRegisterImage", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/instutions/images`, "json", req, runtime), new UploadRegisterImageResponse({}));
+    return $tea.cast<UploadRegisterImageResponse>(await this.doROARequest("UploadRegisterImage", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/institutions/images`, "json", req, runtime), new UploadRegisterImageResponse({}));
   }
 
   async saveCorpPayCode(request: SaveCorpPayCodeRequest): Promise<SaveCorpPayCodeResponse> {

@@ -183,6 +183,88 @@ export class GetSpaceIdByTypeResponse extends $tea.Model {
   }
 }
 
+export class GetConversationIdHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetConversationIdRequest extends $tea.Model {
+  chatId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      chatId: 'chatId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      chatId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetConversationIdResponseBody extends $tea.Model {
+  openConversationId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openConversationId: 'openConversationId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openConversationId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetConversationIdResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetConversationIdResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetConversationIdResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListSubSpaceHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2315,6 +2397,35 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<GetSpaceIdByTypeResponse>(await this.doROARequest("GetSpaceIdByType", "resident_1.0", "HTTP", "GET", "AK", `/v1.0/resident/spaces/types`, "json", req, runtime), new GetSpaceIdByTypeResponse({}));
+  }
+
+  async getConversationId(request: GetConversationIdRequest): Promise<GetConversationIdResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetConversationIdHeaders({ });
+    return await this.getConversationIdWithOptions(request, headers, runtime);
+  }
+
+  async getConversationIdWithOptions(request: GetConversationIdRequest, headers: GetConversationIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetConversationIdResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.chatId)) {
+      query["chatId"] = request.chatId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetConversationIdResponse>(await this.doROARequest("GetConversationId", "resident_1.0", "HTTP", "GET", "AK", `/v1.0/resident/conversations`, "json", req, runtime), new GetConversationIdResponse({}));
   }
 
   async listSubSpace(request: ListSubSpaceRequest): Promise<ListSubSpaceResponse> {

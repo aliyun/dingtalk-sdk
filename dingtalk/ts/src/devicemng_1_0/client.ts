@@ -826,6 +826,7 @@ export class CreateChatRoomRequest extends $tea.Model {
   deviceCodes?: string[];
   deviceTypeId?: string;
   roleList?: string[];
+  ownerUserId?: string;
   static names(): { [key: string]: string } {
     return {
       chatGroupName: 'chatGroupName',
@@ -833,6 +834,7 @@ export class CreateChatRoomRequest extends $tea.Model {
       deviceCodes: 'deviceCodes',
       deviceTypeId: 'deviceTypeId',
       roleList: 'roleList',
+      ownerUserId: 'ownerUserId',
     };
   }
 
@@ -843,6 +845,7 @@ export class CreateChatRoomRequest extends $tea.Model {
       deviceCodes: { 'type': 'array', 'itemType': 'string' },
       deviceTypeId: 'string',
       roleList: { 'type': 'array', 'itemType': 'string' },
+      ownerUserId: 'string',
     };
   }
 
@@ -1658,6 +1661,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.roleList)) {
       body["roleList"] = request.roleList;
+    }
+
+    if (!Util.isUnset(request.ownerUserId)) {
+      body["ownerUserId"] = request.ownerUserId;
     }
 
     let realHeaders : {[key: string ]: string} = { };

@@ -3147,6 +3147,103 @@ export class ExecuteCustomApiResponse extends $tea.Model {
   }
 }
 
+export class DeployFunctionCallbackHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeployFunctionCallbackRequest extends $tea.Model {
+  gateWayAppKey?: string;
+  gateWayAppSecret?: string;
+  deployStage?: string;
+  appId?: string;
+  customDomain?: string;
+  gateWayDomain?: string;
+  static names(): { [key: string]: string } {
+    return {
+      gateWayAppKey: 'gateWayAppKey',
+      gateWayAppSecret: 'gateWayAppSecret',
+      deployStage: 'deployStage',
+      appId: 'appId',
+      customDomain: 'customDomain',
+      gateWayDomain: 'gateWayDomain',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      gateWayAppKey: 'string',
+      gateWayAppSecret: 'string',
+      deployStage: 'string',
+      appId: 'string',
+      customDomain: 'string',
+      gateWayDomain: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeployFunctionCallbackResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeployFunctionCallbackResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: DeployFunctionCallbackResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: DeployFunctionCallbackResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class LoginCodeGenHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -6936,6 +7033,7 @@ export class ExecuteTaskRequest extends $tea.Model {
   processInstanceId?: string;
   userId?: string;
   taskId?: number;
+  digitalSignUrl?: string;
   static names(): { [key: string]: string } {
     return {
       outResult: 'outResult',
@@ -6948,6 +7046,7 @@ export class ExecuteTaskRequest extends $tea.Model {
       processInstanceId: 'processInstanceId',
       userId: 'userId',
       taskId: 'taskId',
+      digitalSignUrl: 'digitalSignUrl',
     };
   }
 
@@ -6963,6 +7062,7 @@ export class ExecuteTaskRequest extends $tea.Model {
       processInstanceId: 'string',
       userId: 'string',
       taskId: 'number',
+      digitalSignUrl: 'string',
     };
   }
 
@@ -10702,6 +10802,55 @@ export default class Client extends OpenApi {
     return $tea.cast<ExecuteCustomApiResponse>(await this.doROARequest("ExecuteCustomApi", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/apps/customApi/execute`, "json", req, runtime), new ExecuteCustomApiResponse({}));
   }
 
+  async deployFunctionCallback(request: DeployFunctionCallbackRequest): Promise<DeployFunctionCallbackResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DeployFunctionCallbackHeaders({ });
+    return await this.deployFunctionCallbackWithOptions(request, headers, runtime);
+  }
+
+  async deployFunctionCallbackWithOptions(request: DeployFunctionCallbackRequest, headers: DeployFunctionCallbackHeaders, runtime: $Util.RuntimeOptions): Promise<DeployFunctionCallbackResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.gateWayAppKey)) {
+      body["gateWayAppKey"] = request.gateWayAppKey;
+    }
+
+    if (!Util.isUnset(request.gateWayAppSecret)) {
+      body["gateWayAppSecret"] = request.gateWayAppSecret;
+    }
+
+    if (!Util.isUnset(request.deployStage)) {
+      body["deployStage"] = request.deployStage;
+    }
+
+    if (!Util.isUnset(request.appId)) {
+      body["appId"] = request.appId;
+    }
+
+    if (!Util.isUnset(request.customDomain)) {
+      body["customDomain"] = request.customDomain;
+    }
+
+    if (!Util.isUnset(request.gateWayDomain)) {
+      body["gateWayDomain"] = request.gateWayDomain;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<DeployFunctionCallbackResponse>(await this.doROARequest("DeployFunctionCallback", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/functionComputeConnectors/completeDeployments/notify`, "json", req, runtime), new DeployFunctionCallbackResponse({}));
+  }
+
   async loginCodeGen(request: LoginCodeGenRequest): Promise<LoginCodeGenResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new LoginCodeGenHeaders({ });
@@ -12600,6 +12749,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.taskId)) {
       body["taskId"] = request.taskId;
+    }
+
+    if (!Util.isUnset(request.digitalSignUrl)) {
+      body["digitalSignUrl"] = request.digitalSignUrl;
     }
 
     let realHeaders : {[key: string ]: string} = { };
