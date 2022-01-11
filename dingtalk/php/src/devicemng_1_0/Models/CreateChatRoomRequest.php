@@ -32,12 +32,18 @@ class CreateChatRoomRequest extends Model
      * @var string[]
      */
     public $roleList;
+
+    /**
+     * @var string
+     */
+    public $ownerUserId;
     protected $_name = [
         'chatGroupName' => 'chatGroupName',
         'dingCorpId'    => 'dingCorpId',
         'deviceCodes'   => 'deviceCodes',
         'deviceTypeId'  => 'deviceTypeId',
         'roleList'      => 'roleList',
+        'ownerUserId'   => 'ownerUserId',
     ];
 
     public function validate()
@@ -61,6 +67,9 @@ class CreateChatRoomRequest extends Model
         }
         if (null !== $this->roleList) {
             $res['roleList'] = $this->roleList;
+        }
+        if (null !== $this->ownerUserId) {
+            $res['ownerUserId'] = $this->ownerUserId;
         }
 
         return $res;
@@ -92,6 +101,9 @@ class CreateChatRoomRequest extends Model
             if (!empty($map['roleList'])) {
                 $model->roleList = $map['roleList'];
             }
+        }
+        if (isset($map['ownerUserId'])) {
+            $model->ownerUserId = $map['ownerUserId'];
         }
 
         return $model;

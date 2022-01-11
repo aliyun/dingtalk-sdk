@@ -23,6 +23,9 @@ use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\DeleteResidentBlackBoardRespo
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\DeleteResidentDepartmentHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\DeleteResidentDepartmentRequest;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\DeleteResidentDepartmentResponse;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\GetConversationIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\GetConversationIdRequest;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\GetConversationIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\GetIndustryTypeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\GetIndustryTypeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\GetPropertyInfoHeaders;
@@ -165,6 +168,48 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetSpaceIdByTypeResponse::fromMap($this->doROARequest('GetSpaceIdByType', 'resident_1.0', 'HTTP', 'GET', 'AK', '/v1.0/resident/spaces/types', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetConversationIdRequest $request
+     *
+     * @return GetConversationIdResponse
+     */
+    public function getConversationId($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetConversationIdHeaders([]);
+
+        return $this->getConversationIdWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetConversationIdRequest $request
+     * @param GetConversationIdHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return GetConversationIdResponse
+     */
+    public function getConversationIdWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->chatId)) {
+            @$query['chatId'] = $request->chatId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetConversationIdResponse::fromMap($this->doROARequest('GetConversationId', 'resident_1.0', 'HTTP', 'GET', 'AK', '/v1.0/resident/conversations', 'json', $req, $runtime));
     }
 
     /**

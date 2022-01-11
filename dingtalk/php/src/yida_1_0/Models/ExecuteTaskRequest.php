@@ -77,6 +77,13 @@ class ExecuteTaskRequest extends Model
      * @var int
      */
     public $taskId;
+
+    /**
+     * @description 电子签名
+     *
+     * @var string
+     */
+    public $digitalSignUrl;
     protected $_name = [
         'outResult'            => 'outResult',
         'noExecuteExpressions' => 'noExecuteExpressions',
@@ -88,6 +95,7 @@ class ExecuteTaskRequest extends Model
         'processInstanceId'    => 'processInstanceId',
         'userId'               => 'userId',
         'taskId'               => 'taskId',
+        'digitalSignUrl'       => 'digitalSignUrl',
     ];
 
     public function validate()
@@ -126,6 +134,9 @@ class ExecuteTaskRequest extends Model
         }
         if (null !== $this->taskId) {
             $res['taskId'] = $this->taskId;
+        }
+        if (null !== $this->digitalSignUrl) {
+            $res['digitalSignUrl'] = $this->digitalSignUrl;
         }
 
         return $res;
@@ -168,6 +179,9 @@ class ExecuteTaskRequest extends Model
         }
         if (isset($map['taskId'])) {
             $model->taskId = $map['taskId'];
+        }
+        if (isset($map['digitalSignUrl'])) {
+            $model->digitalSignUrl = $map['digitalSignUrl'];
         }
 
         return $model;

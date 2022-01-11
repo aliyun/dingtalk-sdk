@@ -540,6 +540,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->roleList)) {
             @$body['roleList'] = $request->roleList;
         }
+        if (!Utils::isUnset($request->ownerUserId)) {
+            @$body['ownerUserId'] = $request->ownerUserId;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;

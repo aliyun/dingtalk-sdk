@@ -1042,7 +1042,7 @@ class Dingtalk extends OpenApiClient
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return UploadRegisterImageResponse::fromMap($this->doROARequest('UploadRegisterImage', 'finance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/finance/instutions/images', 'json', $req, $runtime));
+        return UploadRegisterImageResponse::fromMap($this->doROARequest('UploadRegisterImage', 'finance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/finance/institutions/images', 'json', $req, $runtime));
     }
 
     /**

@@ -57,6 +57,8 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryJobCodeDictionaryHeaders
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryJobCodeDictionaryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryJobStatusCodeDictionaryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryJobStatusCodeDictionaryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryMedicalEventsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryMedicalEventsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryUserExtendValuesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryUserExtendValuesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryUserExtendValuesResponse;
@@ -966,6 +968,39 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryJobStatusCodeDictionaryResponse::fromMap($this->doROARequest('QueryJobStatusCodeDictionary', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/jobStatusCodes', 'json', $req, $runtime));
+    }
+
+    /**
+     * @return QueryMedicalEventsResponse
+     */
+    public function queryMedicalEvents()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryMedicalEventsHeaders([]);
+
+        return $this->queryMedicalEventsWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param QueryMedicalEventsHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return QueryMedicalEventsResponse
+     */
+    public function queryMedicalEventsWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return QueryMedicalEventsResponse::fromMap($this->doROARequest('QueryMedicalEvents', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/events', 'json', $req, $runtime));
     }
 
     /**

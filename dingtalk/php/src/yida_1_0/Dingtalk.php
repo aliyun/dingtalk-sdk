@@ -23,6 +23,9 @@ use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\DeleteInstanceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\DeleteSequenceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\DeleteSequenceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\DeleteSequenceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\DeployFunctionCallbackHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\DeployFunctionCallbackRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\DeployFunctionCallbackResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ExecuteCustomApiHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ExecuteCustomApiRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ExecuteCustomApiResponse;
@@ -2069,6 +2072,63 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return ExecuteCustomApiResponse::fromMap($this->doROARequest('ExecuteCustomApi', 'yida_1.0', 'HTTP', 'POST', 'AK', '/v1.0/yida/apps/customApi/execute', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param DeployFunctionCallbackRequest $request
+     *
+     * @return DeployFunctionCallbackResponse
+     */
+    public function deployFunctionCallback($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeployFunctionCallbackHeaders([]);
+
+        return $this->deployFunctionCallbackWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param DeployFunctionCallbackRequest $request
+     * @param DeployFunctionCallbackHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return DeployFunctionCallbackResponse
+     */
+    public function deployFunctionCallbackWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->gateWayAppKey)) {
+            @$body['gateWayAppKey'] = $request->gateWayAppKey;
+        }
+        if (!Utils::isUnset($request->gateWayAppSecret)) {
+            @$body['gateWayAppSecret'] = $request->gateWayAppSecret;
+        }
+        if (!Utils::isUnset($request->deployStage)) {
+            @$body['deployStage'] = $request->deployStage;
+        }
+        if (!Utils::isUnset($request->appId)) {
+            @$body['appId'] = $request->appId;
+        }
+        if (!Utils::isUnset($request->customDomain)) {
+            @$body['customDomain'] = $request->customDomain;
+        }
+        if (!Utils::isUnset($request->gateWayDomain)) {
+            @$body['gateWayDomain'] = $request->gateWayDomain;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return DeployFunctionCallbackResponse::fromMap($this->doROARequest('DeployFunctionCallback', 'yida_1.0', 'HTTP', 'POST', 'AK', '/v1.0/yida/functionComputeConnectors/completeDeployments/notify', 'json', $req, $runtime));
     }
 
     /**
@@ -4337,6 +4397,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->taskId)) {
             @$body['taskId'] = $request->taskId;
+        }
+        if (!Utils::isUnset($request->digitalSignUrl)) {
+            @$body['digitalSignUrl'] = $request->digitalSignUrl;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
