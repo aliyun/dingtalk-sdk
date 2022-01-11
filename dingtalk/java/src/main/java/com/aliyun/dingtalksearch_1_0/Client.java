@@ -21,6 +21,36 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    public BatchInsertSearchItemResponse batchInsertSearchItem(String tabId, BatchInsertSearchItemRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        BatchInsertSearchItemHeaders headers = new BatchInsertSearchItemHeaders();
+        return this.batchInsertSearchItemWithOptions(tabId, request, headers, runtime);
+    }
+
+    public BatchInsertSearchItemResponse batchInsertSearchItemWithOptions(String tabId, BatchInsertSearchItemRequest request, BatchInsertSearchItemHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        tabId = com.aliyun.openapiutil.Client.getEncodeParam(tabId);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.searchItemModels)) {
+            body.put("searchItemModels", request.searchItemModels);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("BatchInsertSearchItem", "search_1.0", "HTTP", "POST", "AK", "/v1.0/search/tabs/" + tabId + "/items/batch", "none", req, runtime), new BatchInsertSearchItemResponse());
+    }
+
     public CreateSearchTabResponse createSearchTab(CreateSearchTabRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         CreateSearchTabHeaders headers = new CreateSearchTabHeaders();
@@ -129,6 +159,44 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("GetSearchItem", "search_1.0", "HTTP", "GET", "AK", "/v1.0/search/tabs/" + tabId + "/items/" + itemId + "", "json", req, runtime), new GetSearchItemResponse());
     }
 
+    public GetSearchItemsByKeyWordResponse getSearchItemsByKeyWord(String tabId, GetSearchItemsByKeyWordRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        GetSearchItemsByKeyWordHeaders headers = new GetSearchItemsByKeyWordHeaders();
+        return this.getSearchItemsByKeyWordWithOptions(tabId, request, headers, runtime);
+    }
+
+    public GetSearchItemsByKeyWordResponse getSearchItemsByKeyWordWithOptions(String tabId, GetSearchItemsByKeyWordRequest request, GetSearchItemsByKeyWordHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        tabId = com.aliyun.openapiutil.Client.getEncodeParam(tabId);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.keyWord)) {
+            query.put("keyWord", request.keyWord);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
+            query.put("maxResults", request.maxResults);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
+            query.put("nextToken", request.nextToken);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("GetSearchItemsByKeyWord", "search_1.0", "HTTP", "GET", "AK", "/v1.0/search/tabs/" + tabId + "/items", "json", req, runtime), new GetSearchItemsByKeyWordResponse());
+    }
+
     public GetSearchTabResponse getSearchTab(String tabId) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         GetSearchTabHeaders headers = new GetSearchTabHeaders();
@@ -174,6 +242,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("itemId", request.itemId);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.mobileUrl)) {
+            body.put("mobileUrl", request.mobileUrl);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pcUrl)) {
+            body.put("pcUrl", request.pcUrl);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.summary)) {
             body.put("summary", request.summary);
         }
@@ -200,6 +276,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("InsertSearchItem", "search_1.0", "HTTP", "POST", "AK", "/v1.0/search/tabs/" + tabId + "/items", "none", req, runtime), new InsertSearchItemResponse());
+    }
+
+    public ListSearchTabsByOrgIdResponse listSearchTabsByOrgId() throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        ListSearchTabsByOrgIdHeaders headers = new ListSearchTabsByOrgIdHeaders();
+        return this.listSearchTabsByOrgIdWithOptions(headers, runtime);
+    }
+
+    public ListSearchTabsByOrgIdResponse listSearchTabsByOrgIdWithOptions(ListSearchTabsByOrgIdHeaders headers, RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        return TeaModel.toModel(this.doROARequest("ListSearchTabsByOrgId", "search_1.0", "HTTP", "GET", "AK", "/v1.0/search/tabs", "json", req, runtime), new ListSearchTabsByOrgIdResponse());
     }
 
     public UpdateSearchTabResponse updateSearchTab(String tabId, UpdateSearchTabRequest request) throws Exception {

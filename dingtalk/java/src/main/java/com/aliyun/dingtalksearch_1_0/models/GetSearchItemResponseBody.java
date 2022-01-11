@@ -24,15 +24,27 @@ public class GetSearchItemResponseBody extends TeaModel {
     @NameInMap("itemId")
     public String itemId;
 
+    // 数据项的移动端跳转url地址，若同时配置默认url和mobileUrl，移动端跳转链接优先使用mobileUrl
+    @NameInMap("mobileUrl")
+    public String mobileUrl;
+
+    // 数据项的PC端跳转url地址，若同时配置默认url和pcUrl，PC端跳转链接优先使用pcUrl
+    @NameInMap("pcUrl")
+    public String pcUrl;
+
     // 数据项的摘要
     @NameInMap("summary")
     public String summary;
+
+    // 数据源id
+    @NameInMap("tabId")
+    public Integer tabId;
 
     // 数据项的标题
     @NameInMap("title")
     public String title;
 
-    // 数据项的跳转url地址
+    // 数据项的默认url地址，若mobileUrl或pcUrl没有配置，则使用该url地址，默认url和mobileUrl、pcUrl至少配置其中一个
     @NameInMap("url")
     public String url;
 
@@ -81,12 +93,36 @@ public class GetSearchItemResponseBody extends TeaModel {
         return this.itemId;
     }
 
+    public GetSearchItemResponseBody setMobileUrl(String mobileUrl) {
+        this.mobileUrl = mobileUrl;
+        return this;
+    }
+    public String getMobileUrl() {
+        return this.mobileUrl;
+    }
+
+    public GetSearchItemResponseBody setPcUrl(String pcUrl) {
+        this.pcUrl = pcUrl;
+        return this;
+    }
+    public String getPcUrl() {
+        return this.pcUrl;
+    }
+
     public GetSearchItemResponseBody setSummary(String summary) {
         this.summary = summary;
         return this;
     }
     public String getSummary() {
         return this.summary;
+    }
+
+    public GetSearchItemResponseBody setTabId(Integer tabId) {
+        this.tabId = tabId;
+        return this;
+    }
+    public Integer getTabId() {
+        return this.tabId;
     }
 
     public GetSearchItemResponseBody setTitle(String title) {

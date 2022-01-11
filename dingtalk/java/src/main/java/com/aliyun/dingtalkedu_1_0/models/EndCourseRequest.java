@@ -74,9 +74,13 @@ public class EndCourseRequest extends TeaModel {
         @NameInMap("liveInputUrl")
         public String liveInputUrl;
 
-        // 直播拉流地址
-        @NameInMap("liveOutputUrl")
-        public String liveOutputUrl;
+        // Flv直播拉回地址
+        @NameInMap("liveOutputFlvUrl")
+        public String liveOutputFlvUrl;
+
+        // Hls直播拉流地址
+        @NameInMap("liveOutputHlsUrl")
+        public String liveOutputHlsUrl;
 
         // 直播流类型
         @NameInMap("liveType")
@@ -99,12 +103,20 @@ public class EndCourseRequest extends TeaModel {
             return this.liveInputUrl;
         }
 
-        public EndCourseRequestLivePlayInfoList setLiveOutputUrl(String liveOutputUrl) {
-            this.liveOutputUrl = liveOutputUrl;
+        public EndCourseRequestLivePlayInfoList setLiveOutputFlvUrl(String liveOutputFlvUrl) {
+            this.liveOutputFlvUrl = liveOutputFlvUrl;
             return this;
         }
-        public String getLiveOutputUrl() {
-            return this.liveOutputUrl;
+        public String getLiveOutputFlvUrl() {
+            return this.liveOutputFlvUrl;
+        }
+
+        public EndCourseRequestLivePlayInfoList setLiveOutputHlsUrl(String liveOutputHlsUrl) {
+            this.liveOutputHlsUrl = liveOutputHlsUrl;
+            return this;
+        }
+        public String getLiveOutputHlsUrl() {
+            return this.liveOutputHlsUrl;
         }
 
         public EndCourseRequestLivePlayInfoList setLiveType(Integer liveType) {
