@@ -31,6 +31,20 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0.Models
         public string ItemId { get; set; }
 
         /// <summary>
+        /// 数据项的移动端跳转url地址，若同时配置默认url和mobileUrl，移动端跳转链接优先使用mobileUrl
+        /// </summary>
+        [NameInMap("mobileUrl")]
+        [Validation(Required=false)]
+        public string MobileUrl { get; set; }
+
+        /// <summary>
+        /// 数据项的PC端跳转url地址，若同时配置默认url和pcUrl，PC端跳转链接优先使用pcUrl
+        /// </summary>
+        [NameInMap("pcUrl")]
+        [Validation(Required=false)]
+        public string PcUrl { get; set; }
+
+        /// <summary>
         /// 数据项的摘要，长度不能超过64
         /// </summary>
         [NameInMap("summary")]
@@ -45,7 +59,7 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0.Models
         public string Title { get; set; }
 
         /// <summary>
-        /// 数据项的跳转url地址
+        /// 数据项的默认url地址，若mobileUrl或pcUrl没有配置，则使用该url地址，默认url和mobileUrl、pcUrl至少配置其中一个
         /// </summary>
         [NameInMap("url")]
         [Validation(Required=false)]

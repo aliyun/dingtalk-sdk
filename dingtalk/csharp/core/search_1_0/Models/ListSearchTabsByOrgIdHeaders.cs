@@ -8,7 +8,7 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalksearch_1_0.Models
 {
-    public class CreateSearchTabHeaders : TeaModel {
+    public class ListSearchTabsByOrgIdHeaders : TeaModel {
         [NameInMap("commonHeaders")]
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }

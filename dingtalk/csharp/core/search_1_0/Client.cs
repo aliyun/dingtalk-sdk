@@ -26,6 +26,72 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
         }
 
 
+        public BatchInsertSearchItemResponse BatchInsertSearchItem(string tabId, BatchInsertSearchItemRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            BatchInsertSearchItemHeaders headers = new BatchInsertSearchItemHeaders();
+            return BatchInsertSearchItemWithOptions(tabId, request, headers, runtime);
+        }
+
+        public async Task<BatchInsertSearchItemResponse> BatchInsertSearchItemAsync(string tabId, BatchInsertSearchItemRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            BatchInsertSearchItemHeaders headers = new BatchInsertSearchItemHeaders();
+            return await BatchInsertSearchItemWithOptionsAsync(tabId, request, headers, runtime);
+        }
+
+        public BatchInsertSearchItemResponse BatchInsertSearchItemWithOptions(string tabId, BatchInsertSearchItemRequest request, BatchInsertSearchItemHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            tabId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(tabId);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SearchItemModels))
+            {
+                body["searchItemModels"] = request.SearchItemModels;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<BatchInsertSearchItemResponse>(DoROARequest("BatchInsertSearchItem", "search_1.0", "HTTP", "POST", "AK", "/v1.0/search/tabs/" + tabId + "/items/batch", "none", req, runtime));
+        }
+
+        public async Task<BatchInsertSearchItemResponse> BatchInsertSearchItemWithOptionsAsync(string tabId, BatchInsertSearchItemRequest request, BatchInsertSearchItemHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            tabId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(tabId);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SearchItemModels))
+            {
+                body["searchItemModels"] = request.SearchItemModels;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<BatchInsertSearchItemResponse>(await DoROARequestAsync("BatchInsertSearchItem", "search_1.0", "HTTP", "POST", "AK", "/v1.0/search/tabs/" + tabId + "/items/batch", "none", req, runtime));
+        }
+
         public CreateSearchTabResponse CreateSearchTab(CreateSearchTabRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -266,6 +332,88 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
             return TeaModel.ToObject<GetSearchItemResponse>(await DoROARequestAsync("GetSearchItem", "search_1.0", "HTTP", "GET", "AK", "/v1.0/search/tabs/" + tabId + "/items/" + itemId, "json", req, runtime));
         }
 
+        public GetSearchItemsByKeyWordResponse GetSearchItemsByKeyWord(string tabId, GetSearchItemsByKeyWordRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetSearchItemsByKeyWordHeaders headers = new GetSearchItemsByKeyWordHeaders();
+            return GetSearchItemsByKeyWordWithOptions(tabId, request, headers, runtime);
+        }
+
+        public async Task<GetSearchItemsByKeyWordResponse> GetSearchItemsByKeyWordAsync(string tabId, GetSearchItemsByKeyWordRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetSearchItemsByKeyWordHeaders headers = new GetSearchItemsByKeyWordHeaders();
+            return await GetSearchItemsByKeyWordWithOptionsAsync(tabId, request, headers, runtime);
+        }
+
+        public GetSearchItemsByKeyWordResponse GetSearchItemsByKeyWordWithOptions(string tabId, GetSearchItemsByKeyWordRequest request, GetSearchItemsByKeyWordHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            tabId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(tabId);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.KeyWord))
+            {
+                query["keyWord"] = request.KeyWord;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<GetSearchItemsByKeyWordResponse>(DoROARequest("GetSearchItemsByKeyWord", "search_1.0", "HTTP", "GET", "AK", "/v1.0/search/tabs/" + tabId + "/items", "json", req, runtime));
+        }
+
+        public async Task<GetSearchItemsByKeyWordResponse> GetSearchItemsByKeyWordWithOptionsAsync(string tabId, GetSearchItemsByKeyWordRequest request, GetSearchItemsByKeyWordHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            tabId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(tabId);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.KeyWord))
+            {
+                query["keyWord"] = request.KeyWord;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<GetSearchItemsByKeyWordResponse>(await DoROARequestAsync("GetSearchItemsByKeyWord", "search_1.0", "HTTP", "GET", "AK", "/v1.0/search/tabs/" + tabId + "/items", "json", req, runtime));
+        }
+
         public GetSearchTabResponse GetSearchTab(string tabId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -349,6 +497,14 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
             {
                 body["itemId"] = request.ItemId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MobileUrl))
+            {
+                body["mobileUrl"] = request.MobileUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PcUrl))
+            {
+                body["pcUrl"] = request.PcUrl;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Summary))
             {
                 body["summary"] = request.Summary;
@@ -395,6 +551,14 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
             {
                 body["itemId"] = request.ItemId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MobileUrl))
+            {
+                body["mobileUrl"] = request.MobileUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PcUrl))
+            {
+                body["pcUrl"] = request.PcUrl;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Summary))
             {
                 body["summary"] = request.Summary;
@@ -422,6 +586,56 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             return TeaModel.ToObject<InsertSearchItemResponse>(await DoROARequestAsync("InsertSearchItem", "search_1.0", "HTTP", "POST", "AK", "/v1.0/search/tabs/" + tabId + "/items", "none", req, runtime));
+        }
+
+        public ListSearchTabsByOrgIdResponse ListSearchTabsByOrgId()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListSearchTabsByOrgIdHeaders headers = new ListSearchTabsByOrgIdHeaders();
+            return ListSearchTabsByOrgIdWithOptions(headers, runtime);
+        }
+
+        public async Task<ListSearchTabsByOrgIdResponse> ListSearchTabsByOrgIdAsync()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListSearchTabsByOrgIdHeaders headers = new ListSearchTabsByOrgIdHeaders();
+            return await ListSearchTabsByOrgIdWithOptionsAsync(headers, runtime);
+        }
+
+        public ListSearchTabsByOrgIdResponse ListSearchTabsByOrgIdWithOptions(ListSearchTabsByOrgIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<ListSearchTabsByOrgIdResponse>(DoROARequest("ListSearchTabsByOrgId", "search_1.0", "HTTP", "GET", "AK", "/v1.0/search/tabs", "json", req, runtime));
+        }
+
+        public async Task<ListSearchTabsByOrgIdResponse> ListSearchTabsByOrgIdWithOptionsAsync(ListSearchTabsByOrgIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<ListSearchTabsByOrgIdResponse>(await DoROARequestAsync("ListSearchTabsByOrgId", "search_1.0", "HTTP", "GET", "AK", "/v1.0/search/tabs", "json", req, runtime));
         }
 
         public UpdateSearchTabResponse UpdateSearchTab(string tabId, UpdateSearchTabRequest request)
