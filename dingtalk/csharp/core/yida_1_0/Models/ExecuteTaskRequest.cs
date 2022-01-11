@@ -17,6 +17,13 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public string AppType { get; set; }
 
         /// <summary>
+        /// 电子签名
+        /// </summary>
+        [NameInMap("digitalSignUrl")]
+        [Validation(Required=false)]
+        public string DigitalSignUrl { get; set; }
+
+        /// <summary>
         /// 更新的表单值
         /// </summary>
         [NameInMap("formDataJson")]

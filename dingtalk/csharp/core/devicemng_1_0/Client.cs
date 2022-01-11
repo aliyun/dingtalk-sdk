@@ -140,6 +140,10 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0
             {
                 body["dingCorpId"] = request.DingCorpId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OwnerUserId))
+            {
+                body["ownerUserId"] = request.OwnerUserId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoleList))
             {
                 body["roleList"] = request.RoleList;
@@ -180,6 +184,10 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingCorpId))
             {
                 body["dingCorpId"] = request.DingCorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OwnerUserId))
+            {
+                body["ownerUserId"] = request.OwnerUserId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoleList))
             {

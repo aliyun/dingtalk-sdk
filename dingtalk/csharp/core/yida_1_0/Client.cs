@@ -668,6 +668,110 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0
             return TeaModel.ToObject<DeleteSequenceResponse>(await DoROARequestAsync("DeleteSequence", "yida_1.0", "HTTP", "DELETE", "AK", "/v1.0/yida/forms/deleteSequence", "none", req, runtime));
         }
 
+        public DeployFunctionCallbackResponse DeployFunctionCallback(DeployFunctionCallbackRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeployFunctionCallbackHeaders headers = new DeployFunctionCallbackHeaders();
+            return DeployFunctionCallbackWithOptions(request, headers, runtime);
+        }
+
+        public async Task<DeployFunctionCallbackResponse> DeployFunctionCallbackAsync(DeployFunctionCallbackRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeployFunctionCallbackHeaders headers = new DeployFunctionCallbackHeaders();
+            return await DeployFunctionCallbackWithOptionsAsync(request, headers, runtime);
+        }
+
+        public DeployFunctionCallbackResponse DeployFunctionCallbackWithOptions(DeployFunctionCallbackRequest request, DeployFunctionCallbackHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
+            {
+                body["appId"] = request.AppId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CustomDomain))
+            {
+                body["customDomain"] = request.CustomDomain;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeployStage))
+            {
+                body["deployStage"] = request.DeployStage;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GateWayAppKey))
+            {
+                body["gateWayAppKey"] = request.GateWayAppKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GateWayAppSecret))
+            {
+                body["gateWayAppSecret"] = request.GateWayAppSecret;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GateWayDomain))
+            {
+                body["gateWayDomain"] = request.GateWayDomain;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<DeployFunctionCallbackResponse>(DoROARequest("DeployFunctionCallback", "yida_1.0", "HTTP", "POST", "AK", "/v1.0/yida/functionComputeConnectors/completeDeployments/notify", "json", req, runtime));
+        }
+
+        public async Task<DeployFunctionCallbackResponse> DeployFunctionCallbackWithOptionsAsync(DeployFunctionCallbackRequest request, DeployFunctionCallbackHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
+            {
+                body["appId"] = request.AppId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CustomDomain))
+            {
+                body["customDomain"] = request.CustomDomain;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeployStage))
+            {
+                body["deployStage"] = request.DeployStage;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GateWayAppKey))
+            {
+                body["gateWayAppKey"] = request.GateWayAppKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GateWayAppSecret))
+            {
+                body["gateWayAppSecret"] = request.GateWayAppSecret;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GateWayDomain))
+            {
+                body["gateWayDomain"] = request.GateWayDomain;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<DeployFunctionCallbackResponse>(await DoROARequestAsync("DeployFunctionCallback", "yida_1.0", "HTTP", "POST", "AK", "/v1.0/yida/functionComputeConnectors/completeDeployments/notify", "json", req, runtime));
+        }
+
         public ExecuteCustomApiResponse ExecuteCustomApi(ExecuteCustomApiRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -922,6 +1026,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0
             {
                 body["appType"] = request.AppType;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DigitalSignUrl))
+            {
+                body["digitalSignUrl"] = request.DigitalSignUrl;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormDataJson))
             {
                 body["formDataJson"] = request.FormDataJson;
@@ -982,6 +1090,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppType))
             {
                 body["appType"] = request.AppType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DigitalSignUrl))
+            {
+                body["digitalSignUrl"] = request.DigitalSignUrl;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormDataJson))
             {

@@ -25,6 +25,10 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0.Models
         [Validation(Required=false)]
         public string DingCorpId { get; set; }
 
+        [NameInMap("ownerUserId")]
+        [Validation(Required=false)]
+        public string OwnerUserId { get; set; }
+
         [NameInMap("roleList")]
         [Validation(Required=false)]
         public List<string> RoleList { get; set; }
