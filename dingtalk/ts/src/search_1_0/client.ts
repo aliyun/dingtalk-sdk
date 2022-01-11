@@ -110,22 +110,28 @@ export class GetSearchItemHeaders extends $tea.Model {
 export class GetSearchItemResponseBody extends $tea.Model {
   gmtCreate?: string;
   gmtModified?: string;
+  tabId?: number;
   itemId?: string;
   title?: string;
   footer?: string;
   summary?: string;
   icon?: string;
   url?: string;
+  mobileUrl?: string;
+  pcUrl?: string;
   static names(): { [key: string]: string } {
     return {
       gmtCreate: 'gmtCreate',
       gmtModified: 'gmtModified',
+      tabId: 'tabId',
       itemId: 'itemId',
       title: 'title',
       footer: 'footer',
       summary: 'summary',
       icon: 'icon',
       url: 'url',
+      mobileUrl: 'mobileUrl',
+      pcUrl: 'pcUrl',
     };
   }
 
@@ -133,12 +139,15 @@ export class GetSearchItemResponseBody extends $tea.Model {
     return {
       gmtCreate: 'string',
       gmtModified: 'string',
+      tabId: 'number',
       itemId: 'string',
       title: 'string',
       footer: 'string',
       summary: 'string',
       icon: 'string',
       url: 'string',
+      mobileUrl: 'string',
+      pcUrl: 'string',
     };
   }
 
@@ -161,6 +170,69 @@ export class GetSearchItemResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: GetSearchItemResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListSearchTabsByOrgIdHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListSearchTabsByOrgIdResponseBody extends $tea.Model {
+  searchTabResult?: ListSearchTabsByOrgIdResponseBodySearchTabResult[];
+  static names(): { [key: string]: string } {
+    return {
+      searchTabResult: 'searchTabResult',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      searchTabResult: { 'type': 'array', 'itemType': ListSearchTabsByOrgIdResponseBodySearchTabResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListSearchTabsByOrgIdResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ListSearchTabsByOrgIdResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ListSearchTabsByOrgIdResponseBody,
     };
   }
 
@@ -239,6 +311,8 @@ export class InsertSearchItemRequest extends $tea.Model {
   summary?: string;
   icon?: string;
   url?: string;
+  mobileUrl?: string;
+  pcUrl?: string;
   static names(): { [key: string]: string } {
     return {
       itemId: 'itemId',
@@ -247,6 +321,8 @@ export class InsertSearchItemRequest extends $tea.Model {
       summary: 'summary',
       icon: 'icon',
       url: 'url',
+      mobileUrl: 'mobileUrl',
+      pcUrl: 'pcUrl',
     };
   }
 
@@ -258,6 +334,8 @@ export class InsertSearchItemRequest extends $tea.Model {
       summary: 'string',
       icon: 'string',
       url: 'string',
+      mobileUrl: 'string',
+      pcUrl: 'string',
     };
   }
 
@@ -267,6 +345,66 @@ export class InsertSearchItemRequest extends $tea.Model {
 }
 
 export class InsertSearchItemResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchInsertSearchItemHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchInsertSearchItemRequest extends $tea.Model {
+  searchItemModels?: BatchInsertSearchItemRequestSearchItemModels[];
+  static names(): { [key: string]: string } {
+    return {
+      searchItemModels: 'searchItemModels',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      searchItemModels: { 'type': 'array', 'itemType': BatchInsertSearchItemRequestSearchItemModels },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchInsertSearchItemResponse extends $tea.Model {
   headers: { [key: string]: string };
   static names(): { [key: string]: string } {
     return {
@@ -480,6 +618,223 @@ export class UpdateSearchTabResponse extends $tea.Model {
   }
 }
 
+export class GetSearchItemsByKeyWordHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSearchItemsByKeyWordRequest extends $tea.Model {
+  keyWord?: string;
+  nextToken?: string;
+  maxResults?: number;
+  static names(): { [key: string]: string } {
+    return {
+      keyWord: 'keyWord',
+      nextToken: 'nextToken',
+      maxResults: 'maxResults',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      keyWord: 'string',
+      nextToken: 'string',
+      maxResults: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSearchItemsByKeyWordResponseBody extends $tea.Model {
+  value?: GetSearchItemsByKeyWordResponseBodyValue[];
+  nextToken?: string;
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      value: 'value',
+      nextToken: 'nextToken',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      value: { 'type': 'array', 'itemType': GetSearchItemsByKeyWordResponseBodyValue },
+      nextToken: 'string',
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSearchItemsByKeyWordResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetSearchItemsByKeyWordResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetSearchItemsByKeyWordResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListSearchTabsByOrgIdResponseBodySearchTabResult extends $tea.Model {
+  gmtCreate?: string;
+  gmtModified?: string;
+  tabId?: number;
+  name?: string;
+  priority?: number;
+  status?: number;
+  static names(): { [key: string]: string } {
+    return {
+      gmtCreate: 'gmtCreate',
+      gmtModified: 'gmtModified',
+      tabId: 'tabId',
+      name: 'name',
+      priority: 'priority',
+      status: 'status',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      gmtCreate: 'string',
+      gmtModified: 'string',
+      tabId: 'number',
+      name: 'string',
+      priority: 'number',
+      status: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchInsertSearchItemRequestSearchItemModels extends $tea.Model {
+  itemId?: string;
+  title?: string;
+  footer?: string;
+  summary?: string;
+  icon?: string;
+  url?: string;
+  mobileUrl?: string;
+  pcUrl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      itemId: 'itemId',
+      title: 'title',
+      footer: 'footer',
+      summary: 'summary',
+      icon: 'icon',
+      url: 'url',
+      mobileUrl: 'mobileUrl',
+      pcUrl: 'pcUrl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      itemId: 'string',
+      title: 'string',
+      footer: 'string',
+      summary: 'string',
+      icon: 'string',
+      url: 'string',
+      mobileUrl: 'string',
+      pcUrl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSearchItemsByKeyWordResponseBodyValue extends $tea.Model {
+  gmtCreate?: string;
+  gmtModified?: string;
+  tabId?: number;
+  itemId?: string;
+  title?: string;
+  footer?: string;
+  summary?: string;
+  icon?: string;
+  url?: string;
+  mobileUrl?: string;
+  pcUrl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      gmtCreate: 'gmtCreate',
+      gmtModified: 'gmtModified',
+      tabId: 'tabId',
+      itemId: 'itemId',
+      title: 'title',
+      footer: 'footer',
+      summary: 'summary',
+      icon: 'icon',
+      url: 'url',
+      mobileUrl: 'mobileUrl',
+      pcUrl: 'pcUrl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      gmtCreate: 'string',
+      gmtModified: 'string',
+      tabId: 'number',
+      itemId: 'string',
+      title: 'string',
+      footer: 'string',
+      summary: 'string',
+      icon: 'string',
+      url: 'string',
+      mobileUrl: 'string',
+      pcUrl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
 
@@ -537,6 +892,28 @@ export default class Client extends OpenApi {
     return $tea.cast<GetSearchItemResponse>(await this.doROARequest("GetSearchItem", "search_1.0", "HTTP", "GET", "AK", `/v1.0/search/tabs/${tabId}/items/${itemId}`, "json", req, runtime), new GetSearchItemResponse({}));
   }
 
+  async listSearchTabsByOrgId(): Promise<ListSearchTabsByOrgIdResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListSearchTabsByOrgIdHeaders({ });
+    return await this.listSearchTabsByOrgIdWithOptions(headers, runtime);
+  }
+
+  async listSearchTabsByOrgIdWithOptions(headers: ListSearchTabsByOrgIdHeaders, runtime: $Util.RuntimeOptions): Promise<ListSearchTabsByOrgIdResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<ListSearchTabsByOrgIdResponse>(await this.doROARequest("ListSearchTabsByOrgId", "search_1.0", "HTTP", "GET", "AK", `/v1.0/search/tabs`, "json", req, runtime), new ListSearchTabsByOrgIdResponse({}));
+  }
+
   async deleteSearchItem(tabId: string, itemId: string): Promise<DeleteSearchItemResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteSearchItemHeaders({ });
@@ -592,6 +969,14 @@ export default class Client extends OpenApi {
       body["url"] = request.url;
     }
 
+    if (!Util.isUnset(request.mobileUrl)) {
+      body["mobileUrl"] = request.mobileUrl;
+    }
+
+    if (!Util.isUnset(request.pcUrl)) {
+      body["pcUrl"] = request.pcUrl;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -606,6 +991,35 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<InsertSearchItemResponse>(await this.doROARequest("InsertSearchItem", "search_1.0", "HTTP", "POST", "AK", `/v1.0/search/tabs/${tabId}/items`, "none", req, runtime), new InsertSearchItemResponse({}));
+  }
+
+  async batchInsertSearchItem(tabId: string, request: BatchInsertSearchItemRequest): Promise<BatchInsertSearchItemResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BatchInsertSearchItemHeaders({ });
+    return await this.batchInsertSearchItemWithOptions(tabId, request, headers, runtime);
+  }
+
+  async batchInsertSearchItemWithOptions(tabId: string, request: BatchInsertSearchItemRequest, headers: BatchInsertSearchItemHeaders, runtime: $Util.RuntimeOptions): Promise<BatchInsertSearchItemResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.searchItemModels)) {
+      body["searchItemModels"] = request.searchItemModels;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<BatchInsertSearchItemResponse>(await this.doROARequest("BatchInsertSearchItem", "search_1.0", "HTTP", "POST", "AK", `/v1.0/search/tabs/${tabId}/items/batch`, "none", req, runtime), new BatchInsertSearchItemResponse({}));
   }
 
   async createSearchTab(request: CreateSearchTabRequest): Promise<CreateSearchTabResponse> {
@@ -702,6 +1116,43 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<UpdateSearchTabResponse>(await this.doROARequest("UpdateSearchTab", "search_1.0", "HTTP", "PUT", "AK", `/v1.0/search/tabs/${tabId}`, "none", req, runtime), new UpdateSearchTabResponse({}));
+  }
+
+  async getSearchItemsByKeyWord(tabId: string, request: GetSearchItemsByKeyWordRequest): Promise<GetSearchItemsByKeyWordResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetSearchItemsByKeyWordHeaders({ });
+    return await this.getSearchItemsByKeyWordWithOptions(tabId, request, headers, runtime);
+  }
+
+  async getSearchItemsByKeyWordWithOptions(tabId: string, request: GetSearchItemsByKeyWordRequest, headers: GetSearchItemsByKeyWordHeaders, runtime: $Util.RuntimeOptions): Promise<GetSearchItemsByKeyWordResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.keyWord)) {
+      query["keyWord"] = request.keyWord;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetSearchItemsByKeyWordResponse>(await this.doROARequest("GetSearchItemsByKeyWord", "search_1.0", "HTTP", "GET", "AK", `/v1.0/search/tabs/${tabId}/items`, "json", req, runtime), new GetSearchItemsByKeyWordResponse({}));
   }
 
 }

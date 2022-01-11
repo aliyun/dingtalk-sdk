@@ -8974,25 +8974,28 @@ export class GetShareRolesResponseBodyResult extends $tea.Model {
 }
 
 export class StartCourseRequestLivePlayInfoList extends $tea.Model {
-  liveOutputUrl?: string;
+  liveOutputHlsUrl?: string;
   liveType?: number;
   liveInputUrl?: string;
   replayUrl?: string;
+  liveOutputFlvUrl?: string;
   static names(): { [key: string]: string } {
     return {
-      liveOutputUrl: 'liveOutputUrl',
+      liveOutputHlsUrl: 'liveOutputHlsUrl',
       liveType: 'liveType',
       liveInputUrl: 'liveInputUrl',
       replayUrl: 'replayUrl',
+      liveOutputFlvUrl: 'liveOutputFlvUrl',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      liveOutputUrl: 'string',
+      liveOutputHlsUrl: 'string',
       liveType: 'number',
       liveInputUrl: 'string',
       replayUrl: 'string',
+      liveOutputFlvUrl: 'string',
     };
   }
 
@@ -9205,25 +9208,28 @@ export class QuerySchoolUserFaceResponseBodyUserFaceList extends $tea.Model {
 }
 
 export class EndCourseRequestLivePlayInfoList extends $tea.Model {
-  liveOutputUrl?: string;
+  liveOutputHlsUrl?: string;
   liveType?: number;
   liveInputUrl?: string;
   replayUrl?: string;
+  liveOutputFlvUrl?: string;
   static names(): { [key: string]: string } {
     return {
-      liveOutputUrl: 'liveOutputUrl',
+      liveOutputHlsUrl: 'liveOutputHlsUrl',
       liveType: 'liveType',
       liveInputUrl: 'liveInputUrl',
       replayUrl: 'replayUrl',
+      liveOutputFlvUrl: 'liveOutputFlvUrl',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      liveOutputUrl: 'string',
+      liveOutputHlsUrl: 'string',
       liveType: 'number',
       liveInputUrl: 'string',
       replayUrl: 'string',
+      liveOutputFlvUrl: 'string',
     };
   }
 
