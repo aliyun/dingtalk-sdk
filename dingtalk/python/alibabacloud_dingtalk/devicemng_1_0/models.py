@@ -1974,12 +1974,14 @@ class CreateChatRoomRequest(TeaModel):
         device_codes: List[str] = None,
         device_type_id: str = None,
         role_list: List[str] = None,
+        owner_user_id: str = None,
     ):
         self.chat_group_name = chat_group_name
         self.ding_corp_id = ding_corp_id
         self.device_codes = device_codes
         self.device_type_id = device_type_id
         self.role_list = role_list
+        self.owner_user_id = owner_user_id
 
     def validate(self):
         pass
@@ -2000,6 +2002,8 @@ class CreateChatRoomRequest(TeaModel):
             result['deviceTypeId'] = self.device_type_id
         if self.role_list is not None:
             result['roleList'] = self.role_list
+        if self.owner_user_id is not None:
+            result['ownerUserId'] = self.owner_user_id
         return result
 
     def from_map(self, m: dict = None):
@@ -2014,6 +2018,8 @@ class CreateChatRoomRequest(TeaModel):
             self.device_type_id = m.get('deviceTypeId')
         if m.get('roleList') is not None:
             self.role_list = m.get('roleList')
+        if m.get('ownerUserId') is not None:
+            self.owner_user_id = m.get('ownerUserId')
         return self
 
 

@@ -2735,6 +2735,90 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('ExecuteCustomApi', 'yida_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/yida/apps/customApi/execute', 'json', req, runtime)
         )
 
+    def deploy_function_callback(
+        self,
+        request: dingtalkyida__1__0_models.DeployFunctionCallbackRequest,
+    ) -> dingtalkyida__1__0_models.DeployFunctionCallbackResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.DeployFunctionCallbackHeaders()
+        return self.deploy_function_callback_with_options(request, headers, runtime)
+
+    async def deploy_function_callback_async(
+        self,
+        request: dingtalkyida__1__0_models.DeployFunctionCallbackRequest,
+    ) -> dingtalkyida__1__0_models.DeployFunctionCallbackResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.DeployFunctionCallbackHeaders()
+        return await self.deploy_function_callback_with_options_async(request, headers, runtime)
+
+    def deploy_function_callback_with_options(
+        self,
+        request: dingtalkyida__1__0_models.DeployFunctionCallbackRequest,
+        headers: dingtalkyida__1__0_models.DeployFunctionCallbackHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.DeployFunctionCallbackResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.gate_way_app_key):
+            body['gateWayAppKey'] = request.gate_way_app_key
+        if not UtilClient.is_unset(request.gate_way_app_secret):
+            body['gateWayAppSecret'] = request.gate_way_app_secret
+        if not UtilClient.is_unset(request.deploy_stage):
+            body['deployStage'] = request.deploy_stage
+        if not UtilClient.is_unset(request.app_id):
+            body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.custom_domain):
+            body['customDomain'] = request.custom_domain
+        if not UtilClient.is_unset(request.gate_way_domain):
+            body['gateWayDomain'] = request.gate_way_domain
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.DeployFunctionCallbackResponse(),
+            self.do_roarequest('DeployFunctionCallback', 'yida_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/yida/functionComputeConnectors/completeDeployments/notify', 'json', req, runtime)
+        )
+
+    async def deploy_function_callback_with_options_async(
+        self,
+        request: dingtalkyida__1__0_models.DeployFunctionCallbackRequest,
+        headers: dingtalkyida__1__0_models.DeployFunctionCallbackHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.DeployFunctionCallbackResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.gate_way_app_key):
+            body['gateWayAppKey'] = request.gate_way_app_key
+        if not UtilClient.is_unset(request.gate_way_app_secret):
+            body['gateWayAppSecret'] = request.gate_way_app_secret
+        if not UtilClient.is_unset(request.deploy_stage):
+            body['deployStage'] = request.deploy_stage
+        if not UtilClient.is_unset(request.app_id):
+            body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.custom_domain):
+            body['customDomain'] = request.custom_domain
+        if not UtilClient.is_unset(request.gate_way_domain):
+            body['gateWayDomain'] = request.gate_way_domain
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.DeployFunctionCallbackResponse(),
+            await self.do_roarequest_async('DeployFunctionCallback', 'yida_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/yida/functionComputeConnectors/completeDeployments/notify', 'json', req, runtime)
+        )
+
     def login_code_gen(
         self,
         request: dingtalkyida__1__0_models.LoginCodeGenRequest,
@@ -6067,6 +6151,8 @@ class Client(OpenApiClient):
             body['userId'] = request.user_id
         if not UtilClient.is_unset(request.task_id):
             body['taskId'] = request.task_id
+        if not UtilClient.is_unset(request.digital_sign_url):
+            body['digitalSignUrl'] = request.digital_sign_url
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -6109,6 +6195,8 @@ class Client(OpenApiClient):
             body['userId'] = request.user_id
         if not UtilClient.is_unset(request.task_id):
             body['taskId'] = request.task_id
+        if not UtilClient.is_unset(request.digital_sign_url):
+            body['digitalSignUrl'] = request.digital_sign_url
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

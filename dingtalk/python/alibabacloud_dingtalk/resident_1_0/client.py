@@ -151,6 +151,70 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetSpaceIdByType', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/spaces/types', 'json', req, runtime)
         )
 
+    def get_conversation_id(
+        self,
+        request: dingtalkresident__1__0_models.GetConversationIdRequest,
+    ) -> dingtalkresident__1__0_models.GetConversationIdResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkresident__1__0_models.GetConversationIdHeaders()
+        return self.get_conversation_id_with_options(request, headers, runtime)
+
+    async def get_conversation_id_async(
+        self,
+        request: dingtalkresident__1__0_models.GetConversationIdRequest,
+    ) -> dingtalkresident__1__0_models.GetConversationIdResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkresident__1__0_models.GetConversationIdHeaders()
+        return await self.get_conversation_id_with_options_async(request, headers, runtime)
+
+    def get_conversation_id_with_options(
+        self,
+        request: dingtalkresident__1__0_models.GetConversationIdRequest,
+        headers: dingtalkresident__1__0_models.GetConversationIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkresident__1__0_models.GetConversationIdResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.chat_id):
+            query['chatId'] = request.chat_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkresident__1__0_models.GetConversationIdResponse(),
+            self.do_roarequest('GetConversationId', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/conversations', 'json', req, runtime)
+        )
+
+    async def get_conversation_id_with_options_async(
+        self,
+        request: dingtalkresident__1__0_models.GetConversationIdRequest,
+        headers: dingtalkresident__1__0_models.GetConversationIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkresident__1__0_models.GetConversationIdResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.chat_id):
+            query['chatId'] = request.chat_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkresident__1__0_models.GetConversationIdResponse(),
+            await self.do_roarequest_async('GetConversationId', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/conversations', 'json', req, runtime)
+        )
+
     def list_sub_space(
         self,
         request: dingtalkresident__1__0_models.ListSubSpaceRequest,

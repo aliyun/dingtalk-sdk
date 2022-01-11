@@ -725,6 +725,8 @@ class Client(OpenApiClient):
             body['deviceTypeId'] = request.device_type_id
         if not UtilClient.is_unset(request.role_list):
             body['roleList'] = request.role_list
+        if not UtilClient.is_unset(request.owner_user_id):
+            body['ownerUserId'] = request.owner_user_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -757,6 +759,8 @@ class Client(OpenApiClient):
             body['deviceTypeId'] = request.device_type_id
         if not UtilClient.is_unset(request.role_list):
             body['roleList'] = request.role_list
+        if not UtilClient.is_unset(request.owner_user_id):
+            body['ownerUserId'] = request.owner_user_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

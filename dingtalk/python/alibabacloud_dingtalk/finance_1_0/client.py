@@ -1370,7 +1370,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.UploadRegisterImageResponse(),
-            self.do_roarequest('UploadRegisterImage', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/instutions/images', 'json', req, runtime)
+            self.do_roarequest('UploadRegisterImage', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/institutions/images', 'json', req, runtime)
         )
 
     async def upload_register_image_with_options_async(
@@ -1410,7 +1410,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.UploadRegisterImageResponse(),
-            await self.do_roarequest_async('UploadRegisterImage', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/instutions/images', 'json', req, runtime)
+            await self.do_roarequest_async('UploadRegisterImage', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/institutions/images', 'json', req, runtime)
         )
 
     def save_corp_pay_code(

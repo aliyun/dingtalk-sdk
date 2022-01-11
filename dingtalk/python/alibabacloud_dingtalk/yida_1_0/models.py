@@ -7646,6 +7646,167 @@ class ExecuteCustomApiResponse(TeaModel):
         return self
 
 
+class DeployFunctionCallbackHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeployFunctionCallbackRequest(TeaModel):
+    def __init__(
+        self,
+        gate_way_app_key: str = None,
+        gate_way_app_secret: str = None,
+        deploy_stage: str = None,
+        app_id: str = None,
+        custom_domain: str = None,
+        gate_way_domain: str = None,
+    ):
+        # api网关实例的AppKey
+        self.gate_way_app_key = gate_way_app_key
+        # api网关实例的APPSecret
+        self.gate_way_app_secret = gate_way_app_secret
+        # 部署阶段
+        self.deploy_stage = deploy_stage
+        # 云应用id
+        self.app_id = app_id
+        # 自定义域名
+        self.custom_domain = custom_domain
+        # api网关二级域名
+        self.gate_way_domain = gate_way_domain
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.gate_way_app_key is not None:
+            result['gateWayAppKey'] = self.gate_way_app_key
+        if self.gate_way_app_secret is not None:
+            result['gateWayAppSecret'] = self.gate_way_app_secret
+        if self.deploy_stage is not None:
+            result['deployStage'] = self.deploy_stage
+        if self.app_id is not None:
+            result['appId'] = self.app_id
+        if self.custom_domain is not None:
+            result['customDomain'] = self.custom_domain
+        if self.gate_way_domain is not None:
+            result['gateWayDomain'] = self.gate_way_domain
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('gateWayAppKey') is not None:
+            self.gate_way_app_key = m.get('gateWayAppKey')
+        if m.get('gateWayAppSecret') is not None:
+            self.gate_way_app_secret = m.get('gateWayAppSecret')
+        if m.get('deployStage') is not None:
+            self.deploy_stage = m.get('deployStage')
+        if m.get('appId') is not None:
+            self.app_id = m.get('appId')
+        if m.get('customDomain') is not None:
+            self.custom_domain = m.get('customDomain')
+        if m.get('gateWayDomain') is not None:
+            self.gate_way_domain = m.get('gateWayDomain')
+        return self
+
+
+class DeployFunctionCallbackResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        # 是否处理成功
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class DeployFunctionCallbackResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: DeployFunctionCallbackResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = DeployFunctionCallbackResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class LoginCodeGenHeaders(TeaModel):
     def __init__(
         self,
@@ -15784,6 +15945,7 @@ class ExecuteTaskRequest(TeaModel):
         process_instance_id: str = None,
         user_id: str = None,
         task_id: int = None,
+        digital_sign_url: str = None,
     ):
         # 审批结果
         self.out_result = out_result
@@ -15805,6 +15967,8 @@ class ExecuteTaskRequest(TeaModel):
         self.user_id = user_id
         # 任务ID
         self.task_id = task_id
+        # 电子签名
+        self.digital_sign_url = digital_sign_url
 
     def validate(self):
         pass
@@ -15835,6 +15999,8 @@ class ExecuteTaskRequest(TeaModel):
             result['userId'] = self.user_id
         if self.task_id is not None:
             result['taskId'] = self.task_id
+        if self.digital_sign_url is not None:
+            result['digitalSignUrl'] = self.digital_sign_url
         return result
 
     def from_map(self, m: dict = None):
@@ -15859,6 +16025,8 @@ class ExecuteTaskRequest(TeaModel):
             self.user_id = m.get('userId')
         if m.get('taskId') is not None:
             self.task_id = m.get('taskId')
+        if m.get('digitalSignUrl') is not None:
+            self.digital_sign_url = m.get('digitalSignUrl')
         return self
 
 
