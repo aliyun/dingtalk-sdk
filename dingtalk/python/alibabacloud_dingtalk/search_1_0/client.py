@@ -135,6 +135,52 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetSearchItem', 'search_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/search/tabs/{tab_id}/items/{item_id}', 'json', req, runtime)
         )
 
+    def list_search_tabs_by_org_id(self) -> dingtalksearch__1__0_models.ListSearchTabsByOrgIdResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalksearch__1__0_models.ListSearchTabsByOrgIdHeaders()
+        return self.list_search_tabs_by_org_id_with_options(headers, runtime)
+
+    async def list_search_tabs_by_org_id_async(self) -> dingtalksearch__1__0_models.ListSearchTabsByOrgIdResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalksearch__1__0_models.ListSearchTabsByOrgIdHeaders()
+        return await self.list_search_tabs_by_org_id_with_options_async(headers, runtime)
+
+    def list_search_tabs_by_org_id_with_options(
+        self,
+        headers: dingtalksearch__1__0_models.ListSearchTabsByOrgIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalksearch__1__0_models.ListSearchTabsByOrgIdResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalksearch__1__0_models.ListSearchTabsByOrgIdResponse(),
+            self.do_roarequest('ListSearchTabsByOrgId', 'search_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/search/tabs', 'json', req, runtime)
+        )
+
+    async def list_search_tabs_by_org_id_with_options_async(
+        self,
+        headers: dingtalksearch__1__0_models.ListSearchTabsByOrgIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalksearch__1__0_models.ListSearchTabsByOrgIdResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalksearch__1__0_models.ListSearchTabsByOrgIdResponse(),
+            await self.do_roarequest_async('ListSearchTabsByOrgId', 'search_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/search/tabs', 'json', req, runtime)
+        )
+
     def delete_search_item(
         self,
         tab_id: str,
@@ -232,6 +278,10 @@ class Client(OpenApiClient):
             body['icon'] = request.icon
         if not UtilClient.is_unset(request.url):
             body['url'] = request.url
+        if not UtilClient.is_unset(request.mobile_url):
+            body['mobileUrl'] = request.mobile_url
+        if not UtilClient.is_unset(request.pc_url):
+            body['pcUrl'] = request.pc_url
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -267,6 +317,10 @@ class Client(OpenApiClient):
             body['icon'] = request.icon
         if not UtilClient.is_unset(request.url):
             body['url'] = request.url
+        if not UtilClient.is_unset(request.mobile_url):
+            body['mobileUrl'] = request.mobile_url
+        if not UtilClient.is_unset(request.pc_url):
+            body['pcUrl'] = request.pc_url
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -279,6 +333,74 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalksearch__1__0_models.InsertSearchItemResponse(),
             await self.do_roarequest_async('InsertSearchItem', 'search_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/search/tabs/{tab_id}/items', 'none', req, runtime)
+        )
+
+    def batch_insert_search_item(
+        self,
+        tab_id: str,
+        request: dingtalksearch__1__0_models.BatchInsertSearchItemRequest,
+    ) -> dingtalksearch__1__0_models.BatchInsertSearchItemResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalksearch__1__0_models.BatchInsertSearchItemHeaders()
+        return self.batch_insert_search_item_with_options(tab_id, request, headers, runtime)
+
+    async def batch_insert_search_item_async(
+        self,
+        tab_id: str,
+        request: dingtalksearch__1__0_models.BatchInsertSearchItemRequest,
+    ) -> dingtalksearch__1__0_models.BatchInsertSearchItemResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalksearch__1__0_models.BatchInsertSearchItemHeaders()
+        return await self.batch_insert_search_item_with_options_async(tab_id, request, headers, runtime)
+
+    def batch_insert_search_item_with_options(
+        self,
+        tab_id: str,
+        request: dingtalksearch__1__0_models.BatchInsertSearchItemRequest,
+        headers: dingtalksearch__1__0_models.BatchInsertSearchItemHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalksearch__1__0_models.BatchInsertSearchItemResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.search_item_models):
+            body['searchItemModels'] = request.search_item_models
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalksearch__1__0_models.BatchInsertSearchItemResponse(),
+            self.do_roarequest('BatchInsertSearchItem', 'search_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/search/tabs/{tab_id}/items/batch', 'none', req, runtime)
+        )
+
+    async def batch_insert_search_item_with_options_async(
+        self,
+        tab_id: str,
+        request: dingtalksearch__1__0_models.BatchInsertSearchItemRequest,
+        headers: dingtalksearch__1__0_models.BatchInsertSearchItemHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalksearch__1__0_models.BatchInsertSearchItemResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.search_item_models):
+            body['searchItemModels'] = request.search_item_models
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalksearch__1__0_models.BatchInsertSearchItemResponse(),
+            await self.do_roarequest_async('BatchInsertSearchItem', 'search_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/search/tabs/{tab_id}/items/batch', 'none', req, runtime)
         )
 
     def create_search_tab(
@@ -481,4 +603,80 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalksearch__1__0_models.UpdateSearchTabResponse(),
             await self.do_roarequest_async('UpdateSearchTab', 'search_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/search/tabs/{tab_id}', 'none', req, runtime)
+        )
+
+    def get_search_items_by_key_word(
+        self,
+        tab_id: str,
+        request: dingtalksearch__1__0_models.GetSearchItemsByKeyWordRequest,
+    ) -> dingtalksearch__1__0_models.GetSearchItemsByKeyWordResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalksearch__1__0_models.GetSearchItemsByKeyWordHeaders()
+        return self.get_search_items_by_key_word_with_options(tab_id, request, headers, runtime)
+
+    async def get_search_items_by_key_word_async(
+        self,
+        tab_id: str,
+        request: dingtalksearch__1__0_models.GetSearchItemsByKeyWordRequest,
+    ) -> dingtalksearch__1__0_models.GetSearchItemsByKeyWordResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalksearch__1__0_models.GetSearchItemsByKeyWordHeaders()
+        return await self.get_search_items_by_key_word_with_options_async(tab_id, request, headers, runtime)
+
+    def get_search_items_by_key_word_with_options(
+        self,
+        tab_id: str,
+        request: dingtalksearch__1__0_models.GetSearchItemsByKeyWordRequest,
+        headers: dingtalksearch__1__0_models.GetSearchItemsByKeyWordHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalksearch__1__0_models.GetSearchItemsByKeyWordResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.key_word):
+            query['keyWord'] = request.key_word
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalksearch__1__0_models.GetSearchItemsByKeyWordResponse(),
+            self.do_roarequest('GetSearchItemsByKeyWord', 'search_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/search/tabs/{tab_id}/items', 'json', req, runtime)
+        )
+
+    async def get_search_items_by_key_word_with_options_async(
+        self,
+        tab_id: str,
+        request: dingtalksearch__1__0_models.GetSearchItemsByKeyWordRequest,
+        headers: dingtalksearch__1__0_models.GetSearchItemsByKeyWordHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalksearch__1__0_models.GetSearchItemsByKeyWordResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.key_word):
+            query['keyWord'] = request.key_word
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalksearch__1__0_models.GetSearchItemsByKeyWordResponse(),
+            await self.do_roarequest_async('GetSearchItemsByKeyWord', 'search_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/search/tabs/{tab_id}/items', 'json', req, runtime)
         )

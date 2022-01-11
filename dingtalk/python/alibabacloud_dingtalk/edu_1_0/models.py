@@ -13468,19 +13468,22 @@ class StartCourseHeaders(TeaModel):
 class StartCourseRequestLivePlayInfoList(TeaModel):
     def __init__(
         self,
-        live_output_url: str = None,
+        live_output_hls_url: str = None,
         live_type: int = None,
         live_input_url: str = None,
         replay_url: str = None,
+        live_output_flv_url: str = None,
     ):
-        # 直播拉流地址
-        self.live_output_url = live_output_url
+        # Hls格式直播拉流地址
+        self.live_output_hls_url = live_output_hls_url
         # 直播流类型
         self.live_type = live_type
         # 直播推流地址
         self.live_input_url = live_input_url
         # 视频回放地址
         self.replay_url = replay_url
+        # Flv格式直播地址
+        self.live_output_flv_url = live_output_flv_url
 
     def validate(self):
         pass
@@ -13491,26 +13494,30 @@ class StartCourseRequestLivePlayInfoList(TeaModel):
             return _map
 
         result = dict()
-        if self.live_output_url is not None:
-            result['liveOutputUrl'] = self.live_output_url
+        if self.live_output_hls_url is not None:
+            result['liveOutputHlsUrl'] = self.live_output_hls_url
         if self.live_type is not None:
             result['liveType'] = self.live_type
         if self.live_input_url is not None:
             result['liveInputUrl'] = self.live_input_url
         if self.replay_url is not None:
             result['replayUrl'] = self.replay_url
+        if self.live_output_flv_url is not None:
+            result['liveOutputFlvUrl'] = self.live_output_flv_url
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('liveOutputUrl') is not None:
-            self.live_output_url = m.get('liveOutputUrl')
+        if m.get('liveOutputHlsUrl') is not None:
+            self.live_output_hls_url = m.get('liveOutputHlsUrl')
         if m.get('liveType') is not None:
             self.live_type = m.get('liveType')
         if m.get('liveInputUrl') is not None:
             self.live_input_url = m.get('liveInputUrl')
         if m.get('replayUrl') is not None:
             self.replay_url = m.get('replayUrl')
+        if m.get('liveOutputFlvUrl') is not None:
+            self.live_output_flv_url = m.get('liveOutputFlvUrl')
         return self
 
 
@@ -15469,19 +15476,22 @@ class EndCourseHeaders(TeaModel):
 class EndCourseRequestLivePlayInfoList(TeaModel):
     def __init__(
         self,
-        live_output_url: str = None,
+        live_output_hls_url: str = None,
         live_type: int = None,
         live_input_url: str = None,
         replay_url: str = None,
+        live_output_flv_url: str = None,
     ):
-        # 直播拉流地址
-        self.live_output_url = live_output_url
+        # Hls直播拉流地址
+        self.live_output_hls_url = live_output_hls_url
         # 直播流类型
         self.live_type = live_type
         # 直播推流地址
         self.live_input_url = live_input_url
         # 回放视频地址
         self.replay_url = replay_url
+        # Flv直播拉回地址
+        self.live_output_flv_url = live_output_flv_url
 
     def validate(self):
         pass
@@ -15492,26 +15502,30 @@ class EndCourseRequestLivePlayInfoList(TeaModel):
             return _map
 
         result = dict()
-        if self.live_output_url is not None:
-            result['liveOutputUrl'] = self.live_output_url
+        if self.live_output_hls_url is not None:
+            result['liveOutputHlsUrl'] = self.live_output_hls_url
         if self.live_type is not None:
             result['liveType'] = self.live_type
         if self.live_input_url is not None:
             result['liveInputUrl'] = self.live_input_url
         if self.replay_url is not None:
             result['replayUrl'] = self.replay_url
+        if self.live_output_flv_url is not None:
+            result['liveOutputFlvUrl'] = self.live_output_flv_url
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('liveOutputUrl') is not None:
-            self.live_output_url = m.get('liveOutputUrl')
+        if m.get('liveOutputHlsUrl') is not None:
+            self.live_output_hls_url = m.get('liveOutputHlsUrl')
         if m.get('liveType') is not None:
             self.live_type = m.get('liveType')
         if m.get('liveInputUrl') is not None:
             self.live_input_url = m.get('liveInputUrl')
         if m.get('replayUrl') is not None:
             self.replay_url = m.get('replayUrl')
+        if m.get('liveOutputFlvUrl') is not None:
+            self.live_output_flv_url = m.get('liveOutputFlvUrl')
         return self
 
 
