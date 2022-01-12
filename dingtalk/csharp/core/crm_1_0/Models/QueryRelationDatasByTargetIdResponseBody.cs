@@ -30,6 +30,9 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             [Validation(Required=false)]
             public string RelationType { get; set; }
 
+            /// <summary>
+            /// 关系模型。
+            /// </summary>
             [NameInMap("bizDataList")]
             [Validation(Required=false)]
             public List<QueryRelationDatasByTargetIdResponseBodyRelationsBizDataList> BizDataList { get; set; }
@@ -56,6 +59,13 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                 public string ExtendValue { get; set; }
 
             }
+
+            /// <summary>
+            /// 关系所在的群ID，加密形式。
+            /// </summary>
+            [NameInMap("openConversationIds")]
+            [Validation(Required=false)]
+            public List<string> OpenConversationIds { get; set; }
 
         }
 
