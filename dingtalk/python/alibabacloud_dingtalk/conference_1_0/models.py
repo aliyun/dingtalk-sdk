@@ -417,6 +417,7 @@ class CreateVideoConferenceRequest(TeaModel):
         user_id: str = None,
         conf_title: str = None,
         invite_user_ids: List[str] = None,
+        invite_caller: bool = None,
     ):
         # 会议发起人UID
         self.user_id = user_id
@@ -424,6 +425,8 @@ class CreateVideoConferenceRequest(TeaModel):
         self.conf_title = conf_title
         # 邀请参会人员UID列表（必须好友或同事）
         self.invite_user_ids = invite_user_ids
+        # 是否邀请主叫
+        self.invite_caller = invite_caller
 
     def validate(self):
         pass
@@ -440,6 +443,8 @@ class CreateVideoConferenceRequest(TeaModel):
             result['confTitle'] = self.conf_title
         if self.invite_user_ids is not None:
             result['inviteUserIds'] = self.invite_user_ids
+        if self.invite_caller is not None:
+            result['inviteCaller'] = self.invite_caller
         return result
 
     def from_map(self, m: dict = None):
@@ -450,6 +455,8 @@ class CreateVideoConferenceRequest(TeaModel):
             self.conf_title = m.get('confTitle')
         if m.get('inviteUserIds') is not None:
             self.invite_user_ids = m.get('inviteUserIds')
+        if m.get('inviteCaller') is not None:
+            self.invite_caller = m.get('inviteCaller')
         return self
 
 

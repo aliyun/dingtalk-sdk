@@ -137,6 +137,8 @@ class Client(OpenApiClient):
             body['confTitle'] = request.conf_title
         if not UtilClient.is_unset(request.invite_user_ids):
             body['inviteUserIds'] = request.invite_user_ids
+        if not UtilClient.is_unset(request.invite_caller):
+            body['inviteCaller'] = request.invite_caller
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -165,6 +167,8 @@ class Client(OpenApiClient):
             body['confTitle'] = request.conf_title
         if not UtilClient.is_unset(request.invite_user_ids):
             body['inviteUserIds'] = request.invite_user_ids
+        if not UtilClient.is_unset(request.invite_caller):
+            body['inviteCaller'] = request.invite_caller
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

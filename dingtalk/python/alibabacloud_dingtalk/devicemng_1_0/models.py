@@ -1810,6 +1810,7 @@ class UploadEventRequest(TeaModel):
         level: str = None,
         event_time: str = None,
         event_type: str = None,
+        cover_url: str = None,
     ):
         self.device_uuid = device_uuid
         self.content = content
@@ -1818,6 +1819,7 @@ class UploadEventRequest(TeaModel):
         self.level = level
         self.event_time = event_time
         self.event_type = event_type
+        self.cover_url = cover_url
 
     def validate(self):
         pass
@@ -1842,6 +1844,8 @@ class UploadEventRequest(TeaModel):
             result['eventTime'] = self.event_time
         if self.event_type is not None:
             result['eventType'] = self.event_type
+        if self.cover_url is not None:
+            result['coverUrl'] = self.cover_url
         return result
 
     def from_map(self, m: dict = None):
@@ -1860,6 +1864,8 @@ class UploadEventRequest(TeaModel):
             self.event_time = m.get('eventTime')
         if m.get('eventType') is not None:
             self.event_type = m.get('eventType')
+        if m.get('coverUrl') is not None:
+            self.cover_url = m.get('coverUrl')
         return self
 
 

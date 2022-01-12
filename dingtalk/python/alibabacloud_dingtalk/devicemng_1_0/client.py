@@ -641,6 +641,8 @@ class Client(OpenApiClient):
             body['eventTime'] = request.event_time
         if not UtilClient.is_unset(request.event_type):
             body['eventType'] = request.event_type
+        if not UtilClient.is_unset(request.cover_url):
+            body['coverUrl'] = request.cover_url
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -677,6 +679,8 @@ class Client(OpenApiClient):
             body['eventTime'] = request.event_time
         if not UtilClient.is_unset(request.event_type):
             body['eventType'] = request.event_type
+        if not UtilClient.is_unset(request.cover_url):
+            body['coverUrl'] = request.cover_url
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
