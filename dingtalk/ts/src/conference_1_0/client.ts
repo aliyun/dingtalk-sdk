@@ -116,11 +116,13 @@ export class CreateVideoConferenceHeaders extends $tea.Model {
 
 export class CreateVideoConferenceRequest extends $tea.Model {
   confTitle?: string;
+  inviteCaller?: boolean;
   inviteUserIds?: string[];
   userId?: string;
   static names(): { [key: string]: string } {
     return {
       confTitle: 'confTitle',
+      inviteCaller: 'inviteCaller',
       inviteUserIds: 'inviteUserIds',
       userId: 'userId',
     };
@@ -129,6 +131,7 @@ export class CreateVideoConferenceRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       confTitle: 'string',
+      inviteCaller: 'boolean',
       inviteUserIds: { 'type': 'array', 'itemType': 'string' },
       userId: 'string',
     };
@@ -1253,6 +1256,10 @@ export default class Client extends OpenApi {
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.confTitle)) {
       body["confTitle"] = request.confTitle;
+    }
+
+    if (!Util.isUnset(request.inviteCaller)) {
+      body["inviteCaller"] = request.inviteCaller;
     }
 
     if (!Util.isUnset(request.inviteUserIds)) {

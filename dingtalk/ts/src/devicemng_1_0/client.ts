@@ -798,6 +798,7 @@ export class UploadEventHeaders extends $tea.Model {
 
 export class UploadEventRequest extends $tea.Model {
   content?: string;
+  coverUrl?: string;
   deviceCode?: string;
   deviceUuid?: string;
   eventTime?: string;
@@ -806,6 +807,7 @@ export class UploadEventRequest extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       content: 'content',
+      coverUrl: 'coverUrl',
       deviceCode: 'deviceCode',
       deviceUuid: 'deviceUuid',
       eventTime: 'eventTime',
@@ -817,6 +819,7 @@ export class UploadEventRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       content: 'string',
+      coverUrl: 'string',
       deviceCode: 'string',
       deviceUuid: 'string',
       eventTime: 'string',
@@ -1589,6 +1592,10 @@ export default class Client extends OpenApi {
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.content)) {
       body["content"] = request.content;
+    }
+
+    if (!Util.isUnset(request.coverUrl)) {
+      body["coverUrl"] = request.coverUrl;
     }
 
     if (!Util.isUnset(request.deviceCode)) {
