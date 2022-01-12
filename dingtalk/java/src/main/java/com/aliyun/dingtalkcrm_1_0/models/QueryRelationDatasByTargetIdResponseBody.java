@@ -66,8 +66,13 @@ public class QueryRelationDatasByTargetIdResponseBody extends TeaModel {
     }
 
     public static class QueryRelationDatasByTargetIdResponseBodyRelations extends TeaModel {
+        // 关系模型。
         @NameInMap("bizDataList")
         public java.util.List<QueryRelationDatasByTargetIdResponseBodyRelationsBizDataList> bizDataList;
+
+        // 关系所在的群ID，加密形式。
+        @NameInMap("openConversationIds")
+        public java.util.List<String> openConversationIds;
 
         // 关系实例ID。
         @NameInMap("relationId")
@@ -88,6 +93,14 @@ public class QueryRelationDatasByTargetIdResponseBody extends TeaModel {
         }
         public java.util.List<QueryRelationDatasByTargetIdResponseBodyRelationsBizDataList> getBizDataList() {
             return this.bizDataList;
+        }
+
+        public QueryRelationDatasByTargetIdResponseBodyRelations setOpenConversationIds(java.util.List<String> openConversationIds) {
+            this.openConversationIds = openConversationIds;
+            return this;
+        }
+        public java.util.List<String> getOpenConversationIds() {
+            return this.openConversationIds;
         }
 
         public QueryRelationDatasByTargetIdResponseBodyRelations setRelationId(String relationId) {
