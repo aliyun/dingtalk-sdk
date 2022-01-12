@@ -24,13 +24,23 @@ class relations extends Model
     public $relationType;
 
     /**
+     * @description 关系模型。
+     *
      * @var bizDataList[]
      */
     public $bizDataList;
+
+    /**
+     * @description 关系所在的群ID，加密形式。
+     *
+     * @var string[]
+     */
+    public $openConversationIds;
     protected $_name = [
-        'relationId'   => 'relationId',
-        'relationType' => 'relationType',
-        'bizDataList'  => 'bizDataList',
+        'relationId'          => 'relationId',
+        'relationType'        => 'relationType',
+        'bizDataList'         => 'bizDataList',
+        'openConversationIds' => 'openConversationIds',
     ];
 
     public function validate()
@@ -54,6 +64,9 @@ class relations extends Model
                     $res['bizDataList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->openConversationIds) {
+            $res['openConversationIds'] = $this->openConversationIds;
         }
 
         return $res;
@@ -80,6 +93,11 @@ class relations extends Model
                 foreach ($map['bizDataList'] as $item) {
                     $model->bizDataList[$n++] = null !== $item ? bizDataList::fromMap($item) : $item;
                 }
+            }
+        }
+        if (isset($map['openConversationIds'])) {
+            if (!empty($map['openConversationIds'])) {
+                $model->openConversationIds = $map['openConversationIds'];
             }
         }
 
