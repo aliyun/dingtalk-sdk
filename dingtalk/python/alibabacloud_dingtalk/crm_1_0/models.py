@@ -4680,12 +4680,16 @@ class QueryRelationDatasByTargetIdResponseBodyRelations(TeaModel):
         relation_id: str = None,
         relation_type: str = None,
         biz_data_list: List[QueryRelationDatasByTargetIdResponseBodyRelationsBizDataList] = None,
+        open_conversation_ids: List[str] = None,
     ):
         # 关系实例ID。
         self.relation_id = relation_id
         # 关系类型。
         self.relation_type = relation_type
+        # 关系模型。
         self.biz_data_list = biz_data_list
+        # 关系所在的群ID，加密形式。
+        self.open_conversation_ids = open_conversation_ids
 
     def validate(self):
         if self.biz_data_list:
@@ -4707,6 +4711,8 @@ class QueryRelationDatasByTargetIdResponseBodyRelations(TeaModel):
         if self.biz_data_list is not None:
             for k in self.biz_data_list:
                 result['bizDataList'].append(k.to_map() if k else None)
+        if self.open_conversation_ids is not None:
+            result['openConversationIds'] = self.open_conversation_ids
         return result
 
     def from_map(self, m: dict = None):
@@ -4720,6 +4726,8 @@ class QueryRelationDatasByTargetIdResponseBodyRelations(TeaModel):
             for k in m.get('bizDataList'):
                 temp_model = QueryRelationDatasByTargetIdResponseBodyRelationsBizDataList()
                 self.biz_data_list.append(temp_model.from_map(k))
+        if m.get('openConversationIds') is not None:
+            self.open_conversation_ids = m.get('openConversationIds')
         return self
 
 
