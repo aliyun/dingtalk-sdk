@@ -390,6 +390,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("content", request.content);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.coverUrl)) {
+            body.put("coverUrl", request.coverUrl);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.deviceCode)) {
             body.put("deviceCode", request.deviceCode);
         }

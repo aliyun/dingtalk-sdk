@@ -8,6 +8,10 @@ public class CreateVideoConferenceRequest extends TeaModel {
     @NameInMap("confTitle")
     public String confTitle;
 
+    // 是否邀请主叫
+    @NameInMap("inviteCaller")
+    public Boolean inviteCaller;
+
     // 邀请参会人员UID列表（必须好友或同事）
     @NameInMap("inviteUserIds")
     public java.util.List<String> inviteUserIds;
@@ -27,6 +31,14 @@ public class CreateVideoConferenceRequest extends TeaModel {
     }
     public String getConfTitle() {
         return this.confTitle;
+    }
+
+    public CreateVideoConferenceRequest setInviteCaller(Boolean inviteCaller) {
+        this.inviteCaller = inviteCaller;
+        return this;
+    }
+    public Boolean getInviteCaller() {
+        return this.inviteCaller;
     }
 
     public CreateVideoConferenceRequest setInviteUserIds(java.util.List<String> inviteUserIds) {

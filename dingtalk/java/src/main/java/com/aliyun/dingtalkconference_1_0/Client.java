@@ -64,6 +64,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("confTitle", request.confTitle);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.inviteCaller)) {
+            body.put("inviteCaller", request.inviteCaller);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.inviteUserIds)) {
             body.put("inviteUserIds", request.inviteUserIds);
         }

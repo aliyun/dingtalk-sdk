@@ -7,6 +7,9 @@ public class UploadEventRequest extends TeaModel {
     @NameInMap("content")
     public String content;
 
+    @NameInMap("coverUrl")
+    public String coverUrl;
+
     @NameInMap("deviceCode")
     public String deviceCode;
 
@@ -33,6 +36,14 @@ public class UploadEventRequest extends TeaModel {
     }
     public String getContent() {
         return this.content;
+    }
+
+    public UploadEventRequest setCoverUrl(String coverUrl) {
+        this.coverUrl = coverUrl;
+        return this;
+    }
+    public String getCoverUrl() {
+        return this.coverUrl;
     }
 
     public UploadEventRequest setDeviceCode(String deviceCode) {
