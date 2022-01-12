@@ -7,7 +7,7 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
-export class GetMediaCerficateHeaders extends $tea.Model {
+export class CreateFeedHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
@@ -29,35 +29,23 @@ export class GetMediaCerficateHeaders extends $tea.Model {
   }
 }
 
-export class GetMediaCerficateRequest extends $tea.Model {
-  thumbUrl?: string;
-  fileName?: string;
-  mediaId?: string;
-  mediaTitle?: string;
-  mcnId?: string;
-  userId?: string;
-  mediaIntroduction?: string;
+export class CreateFeedRequest extends $tea.Model {
+  courseInfo?: CreateFeedRequestCourseInfo;
+  createUserId?: string;
+  feedInfo?: CreateFeedRequestFeedInfo;
   static names(): { [key: string]: string } {
     return {
-      thumbUrl: 'thumbUrl',
-      fileName: 'fileName',
-      mediaId: 'mediaId',
-      mediaTitle: 'mediaTitle',
-      mcnId: 'mcnId',
-      userId: 'userId',
-      mediaIntroduction: 'mediaIntroduction',
+      courseInfo: 'courseInfo',
+      createUserId: 'createUserId',
+      feedInfo: 'feedInfo',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      thumbUrl: 'string',
-      fileName: 'string',
-      mediaId: 'string',
-      mediaTitle: 'string',
-      mcnId: 'string',
-      userId: 'string',
-      mediaIntroduction: 'string',
+      courseInfo: CreateFeedRequestCourseInfo,
+      createUserId: 'string',
+      feedInfo: CreateFeedRequestFeedInfo,
     };
   }
 
@@ -66,38 +54,17 @@ export class GetMediaCerficateRequest extends $tea.Model {
   }
 }
 
-export class GetMediaCerficateResponseBody extends $tea.Model {
-  mediaId?: string;
-  ossEndpoint?: string;
-  ossAccessKeyId?: string;
-  ossAccessKeySecret?: string;
-  ossSecurityToken?: string;
-  ossBucketName?: string;
-  ossFileName?: string;
-  ossExpiration?: string;
+export class CreateFeedResponseBody extends $tea.Model {
+  feedId?: string;
   static names(): { [key: string]: string } {
     return {
-      mediaId: 'mediaId',
-      ossEndpoint: 'ossEndpoint',
-      ossAccessKeyId: 'ossAccessKeyId',
-      ossAccessKeySecret: 'ossAccessKeySecret',
-      ossSecurityToken: 'ossSecurityToken',
-      ossBucketName: 'ossBucketName',
-      ossFileName: 'ossFileName',
-      ossExpiration: 'ossExpiration',
+      feedId: 'feedId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      mediaId: 'string',
-      ossEndpoint: 'string',
-      ossAccessKeyId: 'string',
-      ossAccessKeySecret: 'string',
-      ossSecurityToken: 'string',
-      ossBucketName: 'string',
-      ossFileName: 'string',
-      ossExpiration: 'string',
+      feedId: 'string',
     };
   }
 
@@ -106,9 +73,9 @@ export class GetMediaCerficateResponseBody extends $tea.Model {
   }
 }
 
-export class GetMediaCerficateResponse extends $tea.Model {
+export class CreateFeedResponse extends $tea.Model {
   headers: { [key: string]: string };
-  body: GetMediaCerficateResponseBody;
+  body: CreateFeedResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -119,7 +86,7 @@ export class GetMediaCerficateResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: GetMediaCerficateResponseBody,
+      body: CreateFeedResponseBody,
     };
   }
 
@@ -213,7 +180,7 @@ export class GetFeedResponse extends $tea.Model {
   }
 }
 
-export class PageFeedHeaders extends $tea.Model {
+export class GetMediaCerficateHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
@@ -235,26 +202,35 @@ export class PageFeedHeaders extends $tea.Model {
   }
 }
 
-export class PageFeedRequest extends $tea.Model {
-  nextToken?: number;
-  maxResults?: number;
-  body?: string[];
+export class GetMediaCerficateRequest extends $tea.Model {
+  fileName?: string;
   mcnId?: string;
+  mediaId?: string;
+  mediaIntroduction?: string;
+  mediaTitle?: string;
+  thumbUrl?: string;
+  userId?: string;
   static names(): { [key: string]: string } {
     return {
-      nextToken: 'nextToken',
-      maxResults: 'maxResults',
-      body: 'body',
+      fileName: 'fileName',
       mcnId: 'mcnId',
+      mediaId: 'mediaId',
+      mediaIntroduction: 'mediaIntroduction',
+      mediaTitle: 'mediaTitle',
+      thumbUrl: 'thumbUrl',
+      userId: 'userId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      nextToken: 'number',
-      maxResults: 'number',
-      body: { 'type': 'array', 'itemType': 'string' },
+      fileName: 'string',
       mcnId: 'string',
+      mediaId: 'string',
+      mediaIntroduction: 'string',
+      mediaTitle: 'string',
+      thumbUrl: 'string',
+      userId: 'string',
     };
   }
 
@@ -263,23 +239,38 @@ export class PageFeedRequest extends $tea.Model {
   }
 }
 
-export class PageFeedResponseBody extends $tea.Model {
-  feedList?: PageFeedResponseBodyFeedList[];
-  nextCursor?: number;
-  hasNext?: boolean;
+export class GetMediaCerficateResponseBody extends $tea.Model {
+  mediaId?: string;
+  ossAccessKeyId?: string;
+  ossAccessKeySecret?: string;
+  ossBucketName?: string;
+  ossEndpoint?: string;
+  ossExpiration?: string;
+  ossFileName?: string;
+  ossSecurityToken?: string;
   static names(): { [key: string]: string } {
     return {
-      feedList: 'feedList',
-      nextCursor: 'nextCursor',
-      hasNext: 'hasNext',
+      mediaId: 'mediaId',
+      ossAccessKeyId: 'ossAccessKeyId',
+      ossAccessKeySecret: 'ossAccessKeySecret',
+      ossBucketName: 'ossBucketName',
+      ossEndpoint: 'ossEndpoint',
+      ossExpiration: 'ossExpiration',
+      ossFileName: 'ossFileName',
+      ossSecurityToken: 'ossSecurityToken',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      feedList: { 'type': 'array', 'itemType': PageFeedResponseBodyFeedList },
-      nextCursor: 'number',
-      hasNext: 'boolean',
+      mediaId: 'string',
+      ossAccessKeyId: 'string',
+      ossAccessKeySecret: 'string',
+      ossBucketName: 'string',
+      ossEndpoint: 'string',
+      ossExpiration: 'string',
+      ossFileName: 'string',
+      ossSecurityToken: 'string',
     };
   }
 
@@ -288,9 +279,9 @@ export class PageFeedResponseBody extends $tea.Model {
   }
 }
 
-export class PageFeedResponse extends $tea.Model {
+export class GetMediaCerficateResponse extends $tea.Model {
   headers: { [key: string]: string };
-  body: PageFeedResponseBody;
+  body: GetMediaCerficateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -301,95 +292,7 @@ export class PageFeedResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: PageFeedResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class CreateFeedHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class CreateFeedRequest extends $tea.Model {
-  courseInfo?: CreateFeedRequestCourseInfo;
-  feedInfo?: CreateFeedRequestFeedInfo;
-  createUserId?: string;
-  static names(): { [key: string]: string } {
-    return {
-      courseInfo: 'courseInfo',
-      feedInfo: 'feedInfo',
-      createUserId: 'createUserId',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      courseInfo: CreateFeedRequestCourseInfo,
-      feedInfo: CreateFeedRequestFeedInfo,
-      createUserId: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class CreateFeedResponseBody extends $tea.Model {
-  feedId?: string;
-  static names(): { [key: string]: string } {
-    return {
-      feedId: 'feedId',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      feedId: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class CreateFeedResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: CreateFeedResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: CreateFeedResponseBody,
+      body: GetMediaCerficateResponseBody,
     };
   }
 
@@ -480,29 +383,20 @@ export class ListItemUserDataResponse extends $tea.Model {
   }
 }
 
-export class GetFeedResponseBodyFeedItem extends $tea.Model {
-  itemId?: string;
-  title?: string;
-  feedContentType?: number;
-  durationMillis?: number;
-  url?: string;
+export class PageFeedHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
     return {
-      itemId: 'itemId',
-      title: 'title',
-      feedContentType: 'feedContentType',
-      durationMillis: 'durationMillis',
-      url: 'url',
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      itemId: 'string',
-      title: 'string',
-      feedContentType: 'number',
-      durationMillis: 'number',
-      url: 'string',
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
     };
   }
 
@@ -511,32 +405,73 @@ export class GetFeedResponseBodyFeedItem extends $tea.Model {
   }
 }
 
-export class PageFeedResponseBodyFeedList extends $tea.Model {
-  feedId?: string;
-  name?: string;
-  url?: string;
-  feedType?: number;
-  thumbUrl?: string;
-  feedCategory?: string;
+export class PageFeedRequest extends $tea.Model {
+  body?: string[];
+  maxResults?: number;
+  mcnId?: string;
+  nextToken?: number;
   static names(): { [key: string]: string } {
     return {
-      feedId: 'feedId',
-      name: 'name',
-      url: 'url',
-      feedType: 'feedType',
-      thumbUrl: 'thumbUrl',
-      feedCategory: 'feedCategory',
+      body: 'body',
+      maxResults: 'maxResults',
+      mcnId: 'mcnId',
+      nextToken: 'nextToken',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      feedId: 'string',
-      name: 'string',
-      url: 'string',
-      feedType: 'number',
-      thumbUrl: 'string',
-      feedCategory: 'string',
+      body: { 'type': 'array', 'itemType': 'string' },
+      maxResults: 'number',
+      mcnId: 'string',
+      nextToken: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PageFeedResponseBody extends $tea.Model {
+  feedList?: PageFeedResponseBodyFeedList[];
+  hasNext?: boolean;
+  nextCursor?: number;
+  static names(): { [key: string]: string } {
+    return {
+      feedList: 'feedList',
+      hasNext: 'hasNext',
+      nextCursor: 'nextCursor',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      feedList: { 'type': 'array', 'itemType': PageFeedResponseBodyFeedList },
+      hasNext: 'boolean',
+      nextCursor: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PageFeedResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: PageFeedResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: PageFeedResponseBody,
     };
   }
 
@@ -547,21 +482,21 @@ export class PageFeedResponseBodyFeedList extends $tea.Model {
 
 export class CreateFeedRequestCourseInfoLectorUserInfo extends $tea.Model {
   avatar?: string;
-  userId?: string;
   name?: string;
+  userId?: string;
   static names(): { [key: string]: string } {
     return {
       avatar: 'avatar',
-      userId: 'userId',
       name: 'name',
+      userId: 'userId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       avatar: 'string',
-      userId: 'string',
       name: 'string',
+      userId: 'string',
     };
   }
 
@@ -572,21 +507,21 @@ export class CreateFeedRequestCourseInfoLectorUserInfo extends $tea.Model {
 
 export class CreateFeedRequestCourseInfoPayInfoCsUserInfo extends $tea.Model {
   avatar?: string;
-  userId?: string;
   name?: string;
+  userId?: string;
   static names(): { [key: string]: string } {
     return {
       avatar: 'avatar',
-      userId: 'userId',
       name: 'name',
+      userId: 'userId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       avatar: 'string',
-      userId: 'string',
       name: 'string',
+      userId: 'string',
     };
   }
 
@@ -596,22 +531,22 @@ export class CreateFeedRequestCourseInfoPayInfoCsUserInfo extends $tea.Model {
 }
 
 export class CreateFeedRequestCourseInfoPayInfoDiscountInfo extends $tea.Model {
-  startTimeMillis?: number;
-  price?: number;
   endTimeMillis?: number;
+  price?: number;
+  startTimeMillis?: number;
   static names(): { [key: string]: string } {
     return {
-      startTimeMillis: 'startTimeMillis',
-      price: 'price',
       endTimeMillis: 'endTimeMillis',
+      price: 'price',
+      startTimeMillis: 'startTimeMillis',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      startTimeMillis: 'number',
-      price: 'number',
       endTimeMillis: 'number',
+      price: 'number',
+      startTimeMillis: 'number',
     };
   }
 
@@ -622,21 +557,21 @@ export class CreateFeedRequestCourseInfoPayInfoDiscountInfo extends $tea.Model {
 
 export class CreateFeedRequestCourseInfoPayInfo extends $tea.Model {
   csUserInfo?: CreateFeedRequestCourseInfoPayInfoCsUserInfo;
-  price?: number;
   discountInfo?: CreateFeedRequestCourseInfoPayInfoDiscountInfo;
+  price?: number;
   static names(): { [key: string]: string } {
     return {
       csUserInfo: 'csUserInfo',
-      price: 'price',
       discountInfo: 'discountInfo',
+      price: 'price',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       csUserInfo: CreateFeedRequestCourseInfoPayInfoCsUserInfo,
-      price: 'number',
       discountInfo: CreateFeedRequestCourseInfoPayInfoDiscountInfo,
+      price: 'number',
     };
   }
 
@@ -646,22 +581,22 @@ export class CreateFeedRequestCourseInfoPayInfo extends $tea.Model {
 }
 
 export class CreateFeedRequestCourseInfo extends $tea.Model {
-  studyGroupName?: string;
   lectorUserInfo?: CreateFeedRequestCourseInfoLectorUserInfo;
   payInfo?: CreateFeedRequestCourseInfoPayInfo;
+  studyGroupName?: string;
   static names(): { [key: string]: string } {
     return {
-      studyGroupName: 'studyGroupName',
       lectorUserInfo: 'lectorUserInfo',
       payInfo: 'payInfo',
+      studyGroupName: 'studyGroupName',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      studyGroupName: 'string',
       lectorUserInfo: CreateFeedRequestCourseInfoLectorUserInfo,
       payInfo: CreateFeedRequestCourseInfoPayInfo,
+      studyGroupName: 'string',
     };
   }
 
@@ -671,22 +606,22 @@ export class CreateFeedRequestCourseInfo extends $tea.Model {
 }
 
 export class CreateFeedRequestFeedInfoMediaContents extends $tea.Model {
-  type?: number;
   mediaId?: string;
   title?: string;
+  type?: number;
   static names(): { [key: string]: string } {
     return {
-      type: 'type',
       mediaId: 'mediaId',
       title: 'title',
+      type: 'type',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      type: 'number',
       mediaId: 'string',
       title: 'string',
+      type: 'number',
     };
   }
 
@@ -696,19 +631,19 @@ export class CreateFeedRequestFeedInfoMediaContents extends $tea.Model {
 }
 
 export class CreateFeedRequestFeedInfoRecommends extends $tea.Model {
-  type?: number;
   objectId?: string;
+  type?: number;
   static names(): { [key: string]: string } {
     return {
-      type: 'type',
       objectId: 'objectId',
+      type: 'type',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      type: 'number',
       objectId: 'string',
+      type: 'number',
     };
   }
 
@@ -719,54 +654,85 @@ export class CreateFeedRequestFeedInfoRecommends extends $tea.Model {
 
 export class CreateFeedRequestFeedInfo extends $tea.Model {
   actionType?: number;
-  mediaContents?: CreateFeedRequestFeedInfoMediaContents[];
-  feedCategory?: number;
   belongsTo?: number;
-  industryId?: number;
-  thumbUrl?: string;
-  recommends?: CreateFeedRequestFeedInfoRecommends[];
+  feedCategory?: number;
   feedId?: string;
-  title?: string;
-  feedType?: number;
-  introduction?: string;
   feedTag?: string;
-  mcnId?: string;
+  feedType?: number;
+  industryId?: number;
+  introduction?: string;
   introductionPicUrl?: string;
+  mcnId?: string;
+  mediaContents?: CreateFeedRequestFeedInfoMediaContents[];
+  recommends?: CreateFeedRequestFeedInfoRecommends[];
+  thumbUrl?: string;
+  title?: string;
   static names(): { [key: string]: string } {
     return {
       actionType: 'actionType',
-      mediaContents: 'mediaContents',
-      feedCategory: 'feedCategory',
       belongsTo: 'belongsTo',
-      industryId: 'industryId',
-      thumbUrl: 'thumbUrl',
-      recommends: 'recommends',
+      feedCategory: 'feedCategory',
       feedId: 'feedId',
-      title: 'title',
-      feedType: 'feedType',
-      introduction: 'introduction',
       feedTag: 'feedTag',
-      mcnId: 'mcnId',
+      feedType: 'feedType',
+      industryId: 'industryId',
+      introduction: 'introduction',
       introductionPicUrl: 'introductionPicUrl',
+      mcnId: 'mcnId',
+      mediaContents: 'mediaContents',
+      recommends: 'recommends',
+      thumbUrl: 'thumbUrl',
+      title: 'title',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       actionType: 'number',
-      mediaContents: { 'type': 'array', 'itemType': CreateFeedRequestFeedInfoMediaContents },
-      feedCategory: 'number',
       belongsTo: 'number',
-      industryId: 'number',
-      thumbUrl: 'string',
-      recommends: { 'type': 'array', 'itemType': CreateFeedRequestFeedInfoRecommends },
+      feedCategory: 'number',
       feedId: 'string',
-      title: 'string',
-      feedType: 'number',
-      introduction: 'string',
       feedTag: 'string',
-      mcnId: 'string',
+      feedType: 'number',
+      industryId: 'number',
+      introduction: 'string',
       introductionPicUrl: 'string',
+      mcnId: 'string',
+      mediaContents: { 'type': 'array', 'itemType': CreateFeedRequestFeedInfoMediaContents },
+      recommends: { 'type': 'array', 'itemType': CreateFeedRequestFeedInfoRecommends },
+      thumbUrl: 'string',
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFeedResponseBodyFeedItem extends $tea.Model {
+  durationMillis?: number;
+  feedContentType?: number;
+  itemId?: string;
+  title?: string;
+  url?: string;
+  static names(): { [key: string]: string } {
+    return {
+      durationMillis: 'durationMillis',
+      feedContentType: 'feedContentType',
+      itemId: 'itemId',
+      title: 'title',
+      url: 'url',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      durationMillis: 'number',
+      feedContentType: 'number',
+      itemId: 'string',
+      title: 'string',
+      url: 'string',
     };
   }
 
@@ -776,19 +742,53 @@ export class CreateFeedRequestFeedInfo extends $tea.Model {
 }
 
 export class ListItemUserDataResponseBodyStudyInfos extends $tea.Model {
-  uid?: string;
   durationMillis?: number;
+  uid?: string;
   static names(): { [key: string]: string } {
     return {
-      uid: 'uid',
       durationMillis: 'durationMillis',
+      uid: 'uid',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      uid: 'string',
       durationMillis: 'number',
+      uid: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PageFeedResponseBodyFeedList extends $tea.Model {
+  feedCategory?: string;
+  feedId?: string;
+  feedType?: number;
+  name?: string;
+  thumbUrl?: string;
+  url?: string;
+  static names(): { [key: string]: string } {
+    return {
+      feedCategory: 'feedCategory',
+      feedId: 'feedId',
+      feedType: 'feedType',
+      name: 'name',
+      thumbUrl: 'thumbUrl',
+      url: 'url',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      feedCategory: 'string',
+      feedId: 'string',
+      feedType: 'number',
+      name: 'string',
+      thumbUrl: 'string',
+      url: 'string',
     };
   }
 
@@ -810,126 +810,6 @@ export default class Client extends OpenApi {
   }
 
 
-  async getMediaCerficate(request: GetMediaCerficateRequest): Promise<GetMediaCerficateResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetMediaCerficateHeaders({ });
-    return await this.getMediaCerficateWithOptions(request, headers, runtime);
-  }
-
-  async getMediaCerficateWithOptions(request: GetMediaCerficateRequest, headers: GetMediaCerficateHeaders, runtime: $Util.RuntimeOptions): Promise<GetMediaCerficateResponse> {
-    Util.validateModel(request);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.thumbUrl)) {
-      query["thumbUrl"] = request.thumbUrl;
-    }
-
-    if (!Util.isUnset(request.fileName)) {
-      query["fileName"] = request.fileName;
-    }
-
-    if (!Util.isUnset(request.mediaId)) {
-      query["mediaId"] = request.mediaId;
-    }
-
-    if (!Util.isUnset(request.mediaTitle)) {
-      query["mediaTitle"] = request.mediaTitle;
-    }
-
-    if (!Util.isUnset(request.mcnId)) {
-      query["mcnId"] = request.mcnId;
-    }
-
-    if (!Util.isUnset(request.userId)) {
-      query["userId"] = request.userId;
-    }
-
-    if (!Util.isUnset(request.mediaIntroduction)) {
-      query["mediaIntroduction"] = request.mediaIntroduction;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      query: OpenApiUtil.query(query),
-    });
-    return $tea.cast<GetMediaCerficateResponse>(await this.doROARequest("GetMediaCerficate", "content_1.0", "HTTP", "GET", "AK", `/v1.0/content/media/cerficates`, "json", req, runtime), new GetMediaCerficateResponse({}));
-  }
-
-  async getFeed(feedId: string, request: GetFeedRequest): Promise<GetFeedResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetFeedHeaders({ });
-    return await this.getFeedWithOptions(feedId, request, headers, runtime);
-  }
-
-  async getFeedWithOptions(feedId: string, request: GetFeedRequest, headers: GetFeedHeaders, runtime: $Util.RuntimeOptions): Promise<GetFeedResponse> {
-    Util.validateModel(request);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.mcnId)) {
-      query["mcnId"] = request.mcnId;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      query: OpenApiUtil.query(query),
-    });
-    return $tea.cast<GetFeedResponse>(await this.doROARequest("GetFeed", "content_1.0", "HTTP", "GET", "AK", `/v1.0/content/feeds/${feedId}`, "json", req, runtime), new GetFeedResponse({}));
-  }
-
-  async pageFeed(request: PageFeedRequest): Promise<PageFeedResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new PageFeedHeaders({ });
-    return await this.pageFeedWithOptions(request, headers, runtime);
-  }
-
-  async pageFeedWithOptions(request: PageFeedRequest, headers: PageFeedHeaders, runtime: $Util.RuntimeOptions): Promise<PageFeedResponse> {
-    Util.validateModel(request);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.nextToken)) {
-      query["nextToken"] = request.nextToken;
-    }
-
-    if (!Util.isUnset(request.maxResults)) {
-      query["maxResults"] = request.maxResults;
-    }
-
-    if (!Util.isUnset(request.mcnId)) {
-      query["mcnId"] = request.mcnId;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      query: OpenApiUtil.query(query),
-      body: request.body,
-    });
-    return $tea.cast<PageFeedResponse>(await this.doROARequest("PageFeed", "content_1.0", "HTTP", "POST", "AK", `/v1.0/content/feeds/query`, "json", req, runtime), new PageFeedResponse({}));
-  }
-
   async createFeed(request: CreateFeedRequest): Promise<CreateFeedResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateFeedHeaders({ });
@@ -943,12 +823,12 @@ export default class Client extends OpenApi {
       body["courseInfo"] = request.courseInfo;
     }
 
-    if (!Util.isUnset($tea.toMap(request.feedInfo))) {
-      body["feedInfo"] = request.feedInfo;
-    }
-
     if (!Util.isUnset(request.createUserId)) {
       body["createUserId"] = request.createUserId;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.feedInfo))) {
+      body["feedInfo"] = request.feedInfo;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -957,7 +837,7 @@ export default class Client extends OpenApi {
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({
@@ -965,6 +845,89 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<CreateFeedResponse>(await this.doROARequest("CreateFeed", "content_1.0", "HTTP", "POST", "AK", `/v1.0/content/feeds`, "json", req, runtime), new CreateFeedResponse({}));
+  }
+
+  async getFeed(feedId: string, request: GetFeedRequest): Promise<GetFeedResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetFeedHeaders({ });
+    return await this.getFeedWithOptions(feedId, request, headers, runtime);
+  }
+
+  async getFeedWithOptions(feedId: string, request: GetFeedRequest, headers: GetFeedHeaders, runtime: $Util.RuntimeOptions): Promise<GetFeedResponse> {
+    Util.validateModel(request);
+    feedId = OpenApiUtil.getEncodeParam(feedId);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.mcnId)) {
+      query["mcnId"] = request.mcnId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetFeedResponse>(await this.doROARequest("GetFeed", "content_1.0", "HTTP", "GET", "AK", `/v1.0/content/feeds/${feedId}`, "json", req, runtime), new GetFeedResponse({}));
+  }
+
+  async getMediaCerficate(request: GetMediaCerficateRequest): Promise<GetMediaCerficateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetMediaCerficateHeaders({ });
+    return await this.getMediaCerficateWithOptions(request, headers, runtime);
+  }
+
+  async getMediaCerficateWithOptions(request: GetMediaCerficateRequest, headers: GetMediaCerficateHeaders, runtime: $Util.RuntimeOptions): Promise<GetMediaCerficateResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.fileName)) {
+      query["fileName"] = request.fileName;
+    }
+
+    if (!Util.isUnset(request.mcnId)) {
+      query["mcnId"] = request.mcnId;
+    }
+
+    if (!Util.isUnset(request.mediaId)) {
+      query["mediaId"] = request.mediaId;
+    }
+
+    if (!Util.isUnset(request.mediaIntroduction)) {
+      query["mediaIntroduction"] = request.mediaIntroduction;
+    }
+
+    if (!Util.isUnset(request.mediaTitle)) {
+      query["mediaTitle"] = request.mediaTitle;
+    }
+
+    if (!Util.isUnset(request.thumbUrl)) {
+      query["thumbUrl"] = request.thumbUrl;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetMediaCerficateResponse>(await this.doROARequest("GetMediaCerficate", "content_1.0", "HTTP", "GET", "AK", `/v1.0/content/media/cerficates`, "json", req, runtime), new GetMediaCerficateResponse({}));
   }
 
   async listItemUserData(itemId: string, request: ListItemUserDataRequest): Promise<ListItemUserDataResponse> {
@@ -975,13 +938,14 @@ export default class Client extends OpenApi {
 
   async listItemUserDataWithOptions(itemId: string, request: ListItemUserDataRequest, headers: ListItemUserDataHeaders, runtime: $Util.RuntimeOptions): Promise<ListItemUserDataResponse> {
     Util.validateModel(request);
+    itemId = OpenApiUtil.getEncodeParam(itemId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({
@@ -989,6 +953,44 @@ export default class Client extends OpenApi {
       body: request.body,
     });
     return $tea.cast<ListItemUserDataResponse>(await this.doROARequest("ListItemUserData", "content_1.0", "HTTP", "POST", "AK", `/v1.0/content/feeds/items/${itemId}/userStatistics/query`, "json", req, runtime), new ListItemUserDataResponse({}));
+  }
+
+  async pageFeed(request: PageFeedRequest): Promise<PageFeedResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PageFeedHeaders({ });
+    return await this.pageFeedWithOptions(request, headers, runtime);
+  }
+
+  async pageFeedWithOptions(request: PageFeedRequest, headers: PageFeedHeaders, runtime: $Util.RuntimeOptions): Promise<PageFeedResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.mcnId)) {
+      query["mcnId"] = request.mcnId;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: request.body,
+    });
+    return $tea.cast<PageFeedResponse>(await this.doROARequest("PageFeed", "content_1.0", "HTTP", "POST", "AK", `/v1.0/content/feeds/query`, "json", req, runtime), new PageFeedResponse({}));
   }
 
 }

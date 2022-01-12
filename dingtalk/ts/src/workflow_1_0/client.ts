@@ -7,31 +7,6 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
-export class FormComponent extends $tea.Model {
-  componentType?: string;
-  props?: FormComponentProps;
-  children?: FormComponent[];
-  static names(): { [key: string]: string } {
-    return {
-      componentType: 'componentType',
-      props: 'props',
-      children: 'children',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      componentType: 'string',
-      props: FormComponentProps,
-      children: { 'type': 'array', 'itemType': FormComponent },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class AvaliableTemplate extends $tea.Model {
   name?: string;
   processCode?: string;
@@ -54,101 +29,126 @@ export class AvaliableTemplate extends $tea.Model {
   }
 }
 
-export class FormComponentProps extends $tea.Model {
-  componentId?: string;
-  label?: string;
-  asyncCondition?: boolean;
-  required?: boolean;
-  content?: string;
-  format?: string;
-  upper?: string;
-  unit?: string;
-  placeholder?: string;
-  bizAlias?: string;
-  bizType?: string;
-  duration?: boolean;
-  choice?: string;
-  disabled?: boolean;
-  align?: string;
-  invisible?: boolean;
-  link?: string;
-  verticalPrint?: boolean;
-  formula?: string;
-  commonBizType?: string;
-  options?: SelectOption[];
-  print?: string;
-  statField?: FormComponentPropsStatField[];
-  dataSource?: FormDataSource;
-  addressModel?: string;
-  multiple?: boolean;
-  limit?: number;
-  availableTemplates?: AvaliableTemplate[];
-  tableViewMode?: string;
+export class FormComponent extends $tea.Model {
+  children?: FormComponent[];
+  componentType?: string;
+  props?: FormComponentProps;
   static names(): { [key: string]: string } {
     return {
-      componentId: 'componentId',
-      label: 'label',
-      asyncCondition: 'asyncCondition',
-      required: 'required',
-      content: 'content',
-      format: 'format',
-      upper: 'upper',
-      unit: 'unit',
-      placeholder: 'placeholder',
-      bizAlias: 'bizAlias',
-      bizType: 'bizType',
-      duration: 'duration',
-      choice: 'choice',
-      disabled: 'disabled',
-      align: 'align',
-      invisible: 'invisible',
-      link: 'link',
-      verticalPrint: 'verticalPrint',
-      formula: 'formula',
-      commonBizType: 'commonBizType',
-      options: 'options',
-      print: 'print',
-      statField: 'statField',
-      dataSource: 'dataSource',
-      addressModel: 'addressModel',
-      multiple: 'multiple',
-      limit: 'limit',
-      availableTemplates: 'availableTemplates',
-      tableViewMode: 'tableViewMode',
+      children: 'children',
+      componentType: 'componentType',
+      props: 'props',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      componentId: 'string',
-      label: 'string',
+      children: { 'type': 'array', 'itemType': FormComponent },
+      componentType: 'string',
+      props: FormComponentProps,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FormComponentProps extends $tea.Model {
+  addressModel?: string;
+  align?: string;
+  asyncCondition?: boolean;
+  availableTemplates?: AvaliableTemplate[];
+  bizAlias?: string;
+  bizType?: string;
+  choice?: string;
+  commonBizType?: string;
+  componentId?: string;
+  content?: string;
+  dataSource?: FormDataSource;
+  disabled?: boolean;
+  duration?: boolean;
+  format?: string;
+  formula?: string;
+  invisible?: boolean;
+  label?: string;
+  limit?: number;
+  link?: string;
+  multiple?: boolean;
+  options?: SelectOption[];
+  placeholder?: string;
+  print?: string;
+  required?: boolean;
+  statField?: FormComponentPropsStatField[];
+  tableViewMode?: string;
+  unit?: string;
+  upper?: string;
+  verticalPrint?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      addressModel: 'addressModel',
+      align: 'align',
+      asyncCondition: 'asyncCondition',
+      availableTemplates: 'availableTemplates',
+      bizAlias: 'bizAlias',
+      bizType: 'bizType',
+      choice: 'choice',
+      commonBizType: 'commonBizType',
+      componentId: 'componentId',
+      content: 'content',
+      dataSource: 'dataSource',
+      disabled: 'disabled',
+      duration: 'duration',
+      format: 'format',
+      formula: 'formula',
+      invisible: 'invisible',
+      label: 'label',
+      limit: 'limit',
+      link: 'link',
+      multiple: 'multiple',
+      options: 'options',
+      placeholder: 'placeholder',
+      print: 'print',
+      required: 'required',
+      statField: 'statField',
+      tableViewMode: 'tableViewMode',
+      unit: 'unit',
+      upper: 'upper',
+      verticalPrint: 'verticalPrint',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      addressModel: 'string',
+      align: 'string',
       asyncCondition: 'boolean',
-      required: 'boolean',
-      content: 'string',
-      format: 'string',
-      upper: 'string',
-      unit: 'string',
-      placeholder: 'string',
+      availableTemplates: { 'type': 'array', 'itemType': AvaliableTemplate },
       bizAlias: 'string',
       bizType: 'string',
-      duration: 'boolean',
       choice: 'string',
-      disabled: 'boolean',
-      align: 'string',
-      invisible: 'boolean',
-      link: 'string',
-      verticalPrint: 'boolean',
-      formula: 'string',
       commonBizType: 'string',
-      options: { 'type': 'array', 'itemType': SelectOption },
-      print: 'string',
-      statField: { 'type': 'array', 'itemType': FormComponentPropsStatField },
+      componentId: 'string',
+      content: 'string',
       dataSource: FormDataSource,
-      addressModel: 'string',
-      multiple: 'boolean',
+      disabled: 'boolean',
+      duration: 'boolean',
+      format: 'string',
+      formula: 'string',
+      invisible: 'boolean',
+      label: 'string',
       limit: 'number',
-      availableTemplates: { 'type': 'array', 'itemType': AvaliableTemplate },
+      link: 'string',
+      multiple: 'boolean',
+      options: { 'type': 'array', 'itemType': SelectOption },
+      placeholder: 'string',
+      print: 'string',
+      required: 'boolean',
+      statField: { 'type': 'array', 'itemType': FormComponentPropsStatField },
       tableViewMode: 'string',
+      unit: 'string',
+      upper: 'string',
+      verticalPrint: 'boolean',
     };
   }
 
@@ -158,19 +158,19 @@ export class FormComponentProps extends $tea.Model {
 }
 
 export class FormDataSource extends $tea.Model {
-  type?: string;
   target?: FormDataSourceTarget;
+  type?: string;
   static names(): { [key: string]: string } {
     return {
-      type: 'type',
       target: 'target',
+      type: 'type',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      type: 'string',
       target: FormDataSourceTarget,
+      type: 'string',
     };
   }
 
@@ -201,7 +201,7 @@ export class SelectOption extends $tea.Model {
   }
 }
 
-export class QueryFormInstanceHeaders extends $tea.Model {
+export class FormCreateHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
@@ -223,23 +223,29 @@ export class QueryFormInstanceHeaders extends $tea.Model {
   }
 }
 
-export class QueryFormInstanceRequest extends $tea.Model {
-  formInstanceId?: string;
-  formCode?: string;
-  appUuid?: string;
+export class FormCreateRequest extends $tea.Model {
+  description?: string;
+  formComponents?: FormComponent[];
+  name?: string;
+  processCode?: string;
+  templateConfig?: FormCreateRequestTemplateConfig;
   static names(): { [key: string]: string } {
     return {
-      formInstanceId: 'formInstanceId',
-      formCode: 'formCode',
-      appUuid: 'appUuid',
+      description: 'description',
+      formComponents: 'formComponents',
+      name: 'name',
+      processCode: 'processCode',
+      templateConfig: 'templateConfig',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      formInstanceId: 'string',
-      formCode: 'string',
-      appUuid: 'string',
+      description: 'string',
+      formComponents: { 'type': 'array', 'itemType': FormComponent },
+      name: 'string',
+      processCode: 'string',
+      templateConfig: FormCreateRequestTemplateConfig,
     };
   }
 
@@ -248,50 +254,17 @@ export class QueryFormInstanceRequest extends $tea.Model {
   }
 }
 
-export class QueryFormInstanceResponseBody extends $tea.Model {
-  formInstanceId?: string;
-  formInstDataList?: QueryFormInstanceResponseBodyFormInstDataList[];
-  appUuid?: string;
-  formCode?: string;
-  title?: string;
-  creator?: string;
-  modifier?: string;
-  createTimestamp?: number;
-  modifyTimestamp?: number;
-  outInstanceId?: string;
-  outBizCode?: string;
-  attributes?: { [key: string]: any };
+export class FormCreateResponseBody extends $tea.Model {
+  result?: FormCreateResponseBodyResult;
   static names(): { [key: string]: string } {
     return {
-      formInstanceId: 'formInstanceId',
-      formInstDataList: 'formInstDataList',
-      appUuid: 'appUuid',
-      formCode: 'formCode',
-      title: 'title',
-      creator: 'creator',
-      modifier: 'modifier',
-      createTimestamp: 'createTimestamp',
-      modifyTimestamp: 'modifyTimestamp',
-      outInstanceId: 'outInstanceId',
-      outBizCode: 'outBizCode',
-      attributes: 'attributes',
+      result: 'result',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      formInstanceId: 'string',
-      formInstDataList: { 'type': 'array', 'itemType': QueryFormInstanceResponseBodyFormInstDataList },
-      appUuid: 'string',
-      formCode: 'string',
-      title: 'string',
-      creator: 'string',
-      modifier: 'string',
-      createTimestamp: 'number',
-      modifyTimestamp: 'number',
-      outInstanceId: 'string',
-      outBizCode: 'string',
-      attributes: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      result: FormCreateResponseBodyResult,
     };
   }
 
@@ -300,9 +273,9 @@ export class QueryFormInstanceResponseBody extends $tea.Model {
   }
 }
 
-export class QueryFormInstanceResponse extends $tea.Model {
+export class FormCreateResponse extends $tea.Model {
   headers: { [key: string]: string };
-  body: QueryFormInstanceResponseBody;
+  body: FormCreateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -313,7 +286,76 @@ export class QueryFormInstanceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: QueryFormInstanceResponseBody,
+      body: FormCreateResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GrantCspaceAuthorizationHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GrantCspaceAuthorizationRequest extends $tea.Model {
+  durationSeconds?: number;
+  spaceId?: string;
+  type?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      durationSeconds: 'durationSeconds',
+      spaceId: 'spaceId',
+      type: 'type',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      durationSeconds: 'number',
+      spaceId: 'string',
+      type: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GrantCspaceAuthorizationResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
     };
   }
 
@@ -345,43 +387,25 @@ export class ProcessForecastHeaders extends $tea.Model {
 }
 
 export class ProcessForecastRequest extends $tea.Model {
-  dingCorpId?: string;
-  dingOrgId?: number;
-  dingIsvOrgId?: number;
-  dingSuiteKey?: string;
-  dingTokenGrantType?: number;
-  requestId?: string;
-  processCode?: string;
   deptId?: number;
-  userId?: string;
   formComponentValues?: ProcessForecastRequestFormComponentValues[];
+  processCode?: string;
+  userId?: string;
   static names(): { [key: string]: string } {
     return {
-      dingCorpId: 'dingCorpId',
-      dingOrgId: 'dingOrgId',
-      dingIsvOrgId: 'dingIsvOrgId',
-      dingSuiteKey: 'dingSuiteKey',
-      dingTokenGrantType: 'dingTokenGrantType',
-      requestId: 'RequestId',
-      processCode: 'processCode',
       deptId: 'deptId',
-      userId: 'userId',
       formComponentValues: 'formComponentValues',
+      processCode: 'processCode',
+      userId: 'userId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      dingCorpId: 'string',
-      dingOrgId: 'number',
-      dingIsvOrgId: 'number',
-      dingSuiteKey: 'string',
-      dingTokenGrantType: 'number',
-      requestId: 'string',
-      processCode: 'string',
       deptId: 'number',
-      userId: 'string',
       formComponentValues: { 'type': 'array', 'itemType': ProcessForecastRequestFormComponentValues },
+      processCode: 'string',
+      userId: 'string',
     };
   }
 
@@ -431,187 +455,6 @@ export class ProcessForecastResponse extends $tea.Model {
   }
 }
 
-export class GrantCspaceAuthorizationHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GrantCspaceAuthorizationRequest extends $tea.Model {
-  spaceId?: string;
-  type?: string;
-  userId?: string;
-  durationSeconds?: number;
-  dingCorpId?: string;
-  dingOrgId?: number;
-  dingIsvOrgId?: number;
-  dingSuiteKey?: string;
-  dingTokenGrantType?: number;
-  static names(): { [key: string]: string } {
-    return {
-      spaceId: 'spaceId',
-      type: 'type',
-      userId: 'userId',
-      durationSeconds: 'durationSeconds',
-      dingCorpId: 'dingCorpId',
-      dingOrgId: 'dingOrgId',
-      dingIsvOrgId: 'dingIsvOrgId',
-      dingSuiteKey: 'dingSuiteKey',
-      dingTokenGrantType: 'dingTokenGrantType',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      spaceId: 'string',
-      type: 'string',
-      userId: 'string',
-      durationSeconds: 'number',
-      dingCorpId: 'string',
-      dingOrgId: 'number',
-      dingIsvOrgId: 'number',
-      dingSuiteKey: 'string',
-      dingTokenGrantType: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GrantCspaceAuthorizationResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryAllProcessInstancesHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryAllProcessInstancesRequest extends $tea.Model {
-  nextToken?: string;
-  maxResults?: number;
-  startTimeInMills?: number;
-  endTimeInMills?: number;
-  processCode?: string;
-  appUuid?: string;
-  static names(): { [key: string]: string } {
-    return {
-      nextToken: 'nextToken',
-      maxResults: 'maxResults',
-      startTimeInMills: 'startTimeInMills',
-      endTimeInMills: 'endTimeInMills',
-      processCode: 'processCode',
-      appUuid: 'appUuid',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      nextToken: 'string',
-      maxResults: 'number',
-      startTimeInMills: 'number',
-      endTimeInMills: 'number',
-      processCode: 'string',
-      appUuid: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryAllProcessInstancesResponseBody extends $tea.Model {
-  result?: QueryAllProcessInstancesResponseBodyResult;
-  static names(): { [key: string]: string } {
-    return {
-      result: 'result',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      result: QueryAllProcessInstancesResponseBodyResult,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryAllProcessInstancesResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: QueryAllProcessInstancesResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: QueryAllProcessInstancesResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class QueryAllFormInstancesHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -635,25 +478,25 @@ export class QueryAllFormInstancesHeaders extends $tea.Model {
 }
 
 export class QueryAllFormInstancesRequest extends $tea.Model {
-  nextToken?: string;
-  maxResults?: number;
   appUuid?: string;
   formCode?: string;
+  maxResults?: number;
+  nextToken?: string;
   static names(): { [key: string]: string } {
     return {
-      nextToken: 'nextToken',
-      maxResults: 'maxResults',
       appUuid: 'appUuid',
       formCode: 'formCode',
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      nextToken: 'string',
-      maxResults: 'number',
       appUuid: 'string',
       formCode: 'string',
+      maxResults: 'number',
+      nextToken: 'string',
     };
   }
 
@@ -695,6 +538,103 @@ export class QueryAllFormInstancesResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: QueryAllFormInstancesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryAllProcessInstancesHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryAllProcessInstancesRequest extends $tea.Model {
+  appUuid?: string;
+  endTimeInMills?: number;
+  maxResults?: number;
+  nextToken?: string;
+  processCode?: string;
+  startTimeInMills?: number;
+  static names(): { [key: string]: string } {
+    return {
+      appUuid: 'appUuid',
+      endTimeInMills: 'endTimeInMills',
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      processCode: 'processCode',
+      startTimeInMills: 'startTimeInMills',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appUuid: 'string',
+      endTimeInMills: 'number',
+      maxResults: 'number',
+      nextToken: 'string',
+      processCode: 'string',
+      startTimeInMills: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryAllProcessInstancesResponseBody extends $tea.Model {
+  result?: QueryAllProcessInstancesResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: QueryAllProcessInstancesResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryAllProcessInstancesResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryAllProcessInstancesResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryAllProcessInstancesResponseBody,
     };
   }
 
@@ -788,7 +728,7 @@ export class QueryFormByBizTypeResponse extends $tea.Model {
   }
 }
 
-export class FormCreateHeaders extends $tea.Model {
+export class QueryFormInstanceHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
@@ -810,47 +750,23 @@ export class FormCreateHeaders extends $tea.Model {
   }
 }
 
-export class FormCreateRequest extends $tea.Model {
-  dingCorpId?: string;
-  dingOrgId?: number;
-  dingIsvOrgId?: number;
-  dingSuiteKey?: string;
-  dingTokenGrantType?: number;
-  requestId?: string;
-  processCode?: string;
-  name?: string;
-  description?: string;
-  formComponents?: FormComponent[];
-  templateConfig?: FormCreateRequestTemplateConfig;
+export class QueryFormInstanceRequest extends $tea.Model {
+  appUuid?: string;
+  formCode?: string;
+  formInstanceId?: string;
   static names(): { [key: string]: string } {
     return {
-      dingCorpId: 'dingCorpId',
-      dingOrgId: 'dingOrgId',
-      dingIsvOrgId: 'dingIsvOrgId',
-      dingSuiteKey: 'dingSuiteKey',
-      dingTokenGrantType: 'dingTokenGrantType',
-      requestId: 'RequestId',
-      processCode: 'processCode',
-      name: 'name',
-      description: 'description',
-      formComponents: 'formComponents',
-      templateConfig: 'templateConfig',
+      appUuid: 'appUuid',
+      formCode: 'formCode',
+      formInstanceId: 'formInstanceId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      dingCorpId: 'string',
-      dingOrgId: 'number',
-      dingIsvOrgId: 'number',
-      dingSuiteKey: 'string',
-      dingTokenGrantType: 'number',
-      requestId: 'string',
-      processCode: 'string',
-      name: 'string',
-      description: 'string',
-      formComponents: { 'type': 'array', 'itemType': FormComponent },
-      templateConfig: FormCreateRequestTemplateConfig,
+      appUuid: 'string',
+      formCode: 'string',
+      formInstanceId: 'string',
     };
   }
 
@@ -859,17 +775,50 @@ export class FormCreateRequest extends $tea.Model {
   }
 }
 
-export class FormCreateResponseBody extends $tea.Model {
-  result?: FormCreateResponseBodyResult;
+export class QueryFormInstanceResponseBody extends $tea.Model {
+  appUuid?: string;
+  attributes?: { [key: string]: any };
+  createTimestamp?: number;
+  creator?: string;
+  formCode?: string;
+  formInstDataList?: QueryFormInstanceResponseBodyFormInstDataList[];
+  formInstanceId?: string;
+  modifier?: string;
+  modifyTimestamp?: number;
+  outBizCode?: string;
+  outInstanceId?: string;
+  title?: string;
   static names(): { [key: string]: string } {
     return {
-      result: 'result',
+      appUuid: 'appUuid',
+      attributes: 'attributes',
+      createTimestamp: 'createTimestamp',
+      creator: 'creator',
+      formCode: 'formCode',
+      formInstDataList: 'formInstDataList',
+      formInstanceId: 'formInstanceId',
+      modifier: 'modifier',
+      modifyTimestamp: 'modifyTimestamp',
+      outBizCode: 'outBizCode',
+      outInstanceId: 'outInstanceId',
+      title: 'title',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      result: FormCreateResponseBodyResult,
+      appUuid: 'string',
+      attributes: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      createTimestamp: 'number',
+      creator: 'string',
+      formCode: 'string',
+      formInstDataList: { 'type': 'array', 'itemType': QueryFormInstanceResponseBodyFormInstDataList },
+      formInstanceId: 'string',
+      modifier: 'string',
+      modifyTimestamp: 'number',
+      outBizCode: 'string',
+      outInstanceId: 'string',
+      title: 'string',
     };
   }
 
@@ -878,9 +827,9 @@ export class FormCreateResponseBody extends $tea.Model {
   }
 }
 
-export class FormCreateResponse extends $tea.Model {
+export class QueryFormInstanceResponse extends $tea.Model {
   headers: { [key: string]: string };
-  body: FormCreateResponseBody;
+  body: QueryFormInstanceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -891,7 +840,7 @@ export class FormCreateResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: FormCreateResponseBody,
+      body: QueryFormInstanceResponseBody,
     };
   }
 
@@ -1005,58 +954,40 @@ export class StartProcessInstanceHeaders extends $tea.Model {
 }
 
 export class StartProcessInstanceRequest extends $tea.Model {
-  originatorUserId?: string;
-  processCode?: string;
-  deptId?: number;
-  microappAgentId?: number;
   approvers?: StartProcessInstanceRequestApprovers[];
   ccList?: string[];
   ccPosition?: string;
-  targetSelectActioners?: StartProcessInstanceRequestTargetSelectActioners[];
+  deptId?: number;
   formComponentValues?: StartProcessInstanceRequestFormComponentValues[];
-  requestId?: string;
-  dingCorpId?: string;
-  dingOrgId?: number;
-  dingIsvOrgId?: number;
-  dingSuiteKey?: string;
-  dingTokenGrantType?: number;
+  microappAgentId?: number;
+  originatorUserId?: string;
+  processCode?: string;
+  targetSelectActioners?: StartProcessInstanceRequestTargetSelectActioners[];
   static names(): { [key: string]: string } {
     return {
-      originatorUserId: 'originatorUserId',
-      processCode: 'processCode',
-      deptId: 'deptId',
-      microappAgentId: 'microappAgentId',
       approvers: 'approvers',
       ccList: 'ccList',
       ccPosition: 'ccPosition',
-      targetSelectActioners: 'targetSelectActioners',
+      deptId: 'deptId',
       formComponentValues: 'formComponentValues',
-      requestId: 'RequestId',
-      dingCorpId: 'dingCorpId',
-      dingOrgId: 'dingOrgId',
-      dingIsvOrgId: 'dingIsvOrgId',
-      dingSuiteKey: 'dingSuiteKey',
-      dingTokenGrantType: 'dingTokenGrantType',
+      microappAgentId: 'microappAgentId',
+      originatorUserId: 'originatorUserId',
+      processCode: 'processCode',
+      targetSelectActioners: 'targetSelectActioners',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      originatorUserId: 'string',
-      processCode: 'string',
-      deptId: 'number',
-      microappAgentId: 'number',
       approvers: { 'type': 'array', 'itemType': StartProcessInstanceRequestApprovers },
       ccList: { 'type': 'array', 'itemType': 'string' },
       ccPosition: 'string',
-      targetSelectActioners: { 'type': 'array', 'itemType': StartProcessInstanceRequestTargetSelectActioners },
+      deptId: 'number',
       formComponentValues: { 'type': 'array', 'itemType': StartProcessInstanceRequestFormComponentValues },
-      requestId: 'string',
-      dingCorpId: 'string',
-      dingOrgId: 'number',
-      dingIsvOrgId: 'number',
-      dingSuiteKey: 'string',
-      dingTokenGrantType: 'number',
+      microappAgentId: 'number',
+      originatorUserId: 'string',
+      processCode: 'string',
+      targetSelectActioners: { 'type': 'array', 'itemType': StartProcessInstanceRequestTargetSelectActioners },
     };
   }
 
@@ -1132,14 +1063,14 @@ export class FormComponentPropsStatField extends $tea.Model {
 }
 
 export class FormDataSourceTarget extends $tea.Model {
-  appUuid?: string;
   appType?: number;
+  appUuid?: string;
   bizType?: string;
   formCode?: string;
   static names(): { [key: string]: string } {
     return {
-      appUuid: 'appUuid',
       appType: 'appType',
+      appUuid: 'appUuid',
       bizType: 'bizType',
       formCode: 'formCode',
     };
@@ -1147,8 +1078,8 @@ export class FormDataSourceTarget extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      appUuid: 'string',
       appType: 'number',
+      appUuid: 'string',
       bizType: 'string',
       formCode: 'string',
     };
@@ -1159,32 +1090,57 @@ export class FormDataSourceTarget extends $tea.Model {
   }
 }
 
-export class QueryFormInstanceResponseBodyFormInstDataList extends $tea.Model {
-  componentType?: string;
-  bizAlias?: string;
-  extendValue?: string;
-  label?: string;
-  value?: string;
-  key?: string;
+export class FormCreateRequestTemplateConfig extends $tea.Model {
+  dirId?: string;
+  disableDeleteProcess?: boolean;
+  disableFormEdit?: boolean;
+  disableHomepage?: boolean;
+  disableResubmit?: boolean;
+  disableStopProcessButton?: boolean;
+  hidden?: boolean;
+  originDirId?: string;
   static names(): { [key: string]: string } {
     return {
-      componentType: 'componentType',
-      bizAlias: 'bizAlias',
-      extendValue: 'extendValue',
-      label: 'label',
-      value: 'value',
-      key: 'key',
+      dirId: 'dirId',
+      disableDeleteProcess: 'disableDeleteProcess',
+      disableFormEdit: 'disableFormEdit',
+      disableHomepage: 'disableHomepage',
+      disableResubmit: 'disableResubmit',
+      disableStopProcessButton: 'disableStopProcessButton',
+      hidden: 'hidden',
+      originDirId: 'originDirId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      componentType: 'string',
-      bizAlias: 'string',
-      extendValue: 'string',
-      label: 'string',
-      value: 'string',
-      key: 'string',
+      dirId: 'string',
+      disableDeleteProcess: 'boolean',
+      disableFormEdit: 'boolean',
+      disableHomepage: 'boolean',
+      disableResubmit: 'boolean',
+      disableStopProcessButton: 'boolean',
+      hidden: 'boolean',
+      originDirId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FormCreateResponseBodyResult extends $tea.Model {
+  processCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      processCode: 'processCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      processCode: 'string',
     };
   }
 
@@ -1194,31 +1150,31 @@ export class QueryFormInstanceResponseBodyFormInstDataList extends $tea.Model {
 }
 
 export class ProcessForecastRequestFormComponentValuesDetailsDetails extends $tea.Model {
-  id?: string;
   bizAlias?: string;
+  componentType?: string;
+  extValue?: string;
+  id?: string;
   name?: string;
   value?: string;
-  extValue?: string;
-  componentType?: string;
   static names(): { [key: string]: string } {
     return {
-      id: 'id',
       bizAlias: 'bizAlias',
+      componentType: 'componentType',
+      extValue: 'extValue',
+      id: 'id',
       name: 'name',
       value: 'value',
-      extValue: 'extValue',
-      componentType: 'componentType',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      id: 'string',
       bizAlias: 'string',
+      componentType: 'string',
+      extValue: 'string',
+      id: 'string',
       name: 'string',
       value: 'string',
-      extValue: 'string',
-      componentType: 'string',
     };
   }
 
@@ -1228,31 +1184,31 @@ export class ProcessForecastRequestFormComponentValuesDetailsDetails extends $te
 }
 
 export class ProcessForecastRequestFormComponentValuesDetails extends $tea.Model {
-  id?: string;
   bizAlias?: string;
+  details?: ProcessForecastRequestFormComponentValuesDetailsDetails[];
+  extValue?: string;
+  id?: string;
   name?: string;
   value?: string;
-  extValue?: string;
-  details?: ProcessForecastRequestFormComponentValuesDetailsDetails[];
   static names(): { [key: string]: string } {
     return {
-      id: 'id',
       bizAlias: 'bizAlias',
+      details: 'details',
+      extValue: 'extValue',
+      id: 'id',
       name: 'name',
       value: 'value',
-      extValue: 'extValue',
-      details: 'details',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      id: 'string',
       bizAlias: 'string',
+      details: { 'type': 'array', 'itemType': ProcessForecastRequestFormComponentValuesDetailsDetails },
+      extValue: 'string',
+      id: 'string',
       name: 'string',
       value: 'string',
-      extValue: 'string',
-      details: { 'type': 'array', 'itemType': ProcessForecastRequestFormComponentValuesDetailsDetails },
     };
   }
 
@@ -1262,34 +1218,34 @@ export class ProcessForecastRequestFormComponentValuesDetails extends $tea.Model
 }
 
 export class ProcessForecastRequestFormComponentValues extends $tea.Model {
-  id?: string;
   bizAlias?: string;
-  name?: string;
-  value?: string;
-  extValue?: string;
   componentType?: string;
   details?: ProcessForecastRequestFormComponentValuesDetails[];
+  extValue?: string;
+  id?: string;
+  name?: string;
+  value?: string;
   static names(): { [key: string]: string } {
     return {
-      id: 'id',
       bizAlias: 'bizAlias',
-      name: 'name',
-      value: 'value',
-      extValue: 'extValue',
       componentType: 'componentType',
       details: 'details',
+      extValue: 'extValue',
+      id: 'id',
+      name: 'name',
+      value: 'value',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      id: 'string',
       bizAlias: 'string',
-      name: 'string',
-      value: 'string',
-      extValue: 'string',
       componentType: 'string',
       details: { 'type': 'array', 'itemType': ProcessForecastRequestFormComponentValuesDetails },
+      extValue: 'string',
+      id: 'string',
+      name: 'string',
+      value: 'string',
     };
   }
 
@@ -1299,19 +1255,19 @@ export class ProcessForecastRequestFormComponentValues extends $tea.Model {
 }
 
 export class ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRangeApprovals extends $tea.Model {
-  workNo?: string;
   userName?: string;
+  workNo?: string;
   static names(): { [key: string]: string } {
     return {
-      workNo: 'workNo',
       userName: 'userName',
+      workNo: 'workNo',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      workNo: 'string',
       userName: 'string',
+      workNo: 'string',
     };
   }
 
@@ -1321,19 +1277,19 @@ export class ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActor
 }
 
 export class ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRangeLabels extends $tea.Model {
-  labels?: string;
   labelNames?: string;
+  labels?: string;
   static names(): { [key: string]: string } {
     return {
-      labels: 'labels',
       labelNames: 'labelNames',
+      labels: 'labels',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      labels: 'string',
       labelNames: 'string',
+      labels: 'string',
     };
   }
 
@@ -1365,39 +1321,39 @@ export class ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActor
 }
 
 export class ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActor extends $tea.Model {
-  actorKey?: string;
-  actorType?: string;
-  actorSelectionType?: string;
-  actorSelectionRange?: ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRange;
-  allowedMulti?: boolean;
-  approvalType?: string;
-  approvalMethod?: string;
   actorActivateType?: string;
+  actorKey?: string;
+  actorSelectionRange?: ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRange;
+  actorSelectionType?: string;
+  actorType?: string;
+  allowedMulti?: boolean;
+  approvalMethod?: string;
+  approvalType?: string;
   required?: boolean;
   static names(): { [key: string]: string } {
     return {
-      actorKey: 'actorKey',
-      actorType: 'actorType',
-      actorSelectionType: 'actorSelectionType',
-      actorSelectionRange: 'actorSelectionRange',
-      allowedMulti: 'allowedMulti',
-      approvalType: 'approvalType',
-      approvalMethod: 'approvalMethod',
       actorActivateType: 'actorActivateType',
+      actorKey: 'actorKey',
+      actorSelectionRange: 'actorSelectionRange',
+      actorSelectionType: 'actorSelectionType',
+      actorType: 'actorType',
+      allowedMulti: 'allowedMulti',
+      approvalMethod: 'approvalMethod',
+      approvalType: 'approvalType',
       required: 'required',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      actorKey: 'string',
-      actorType: 'string',
-      actorSelectionType: 'string',
-      actorSelectionRange: ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRange,
-      allowedMulti: 'boolean',
-      approvalType: 'string',
-      approvalMethod: 'string',
       actorActivateType: 'string',
+      actorKey: 'string',
+      actorSelectionRange: ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRange,
+      actorSelectionType: 'string',
+      actorType: 'string',
+      allowedMulti: 'boolean',
+      approvalMethod: 'string',
+      approvalType: 'string',
       required: 'boolean',
     };
   }
@@ -1409,18 +1365,18 @@ export class ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActor
 
 export class ProcessForecastResponseBodyResultWorkflowActivityRules extends $tea.Model {
   activityId?: string;
-  prevActivityId?: string;
   activityName?: string;
   activityType?: string;
   isTargetSelect?: boolean;
+  prevActivityId?: string;
   workflowActor?: ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActor;
   static names(): { [key: string]: string } {
     return {
       activityId: 'activityId',
-      prevActivityId: 'prevActivityId',
       activityName: 'activityName',
       activityType: 'activityType',
       isTargetSelect: 'isTargetSelect',
+      prevActivityId: 'prevActivityId',
       workflowActor: 'workflowActor',
     };
   }
@@ -1428,10 +1384,10 @@ export class ProcessForecastResponseBodyResultWorkflowActivityRules extends $tea
   static types(): { [key: string]: any } {
     return {
       activityId: 'string',
-      prevActivityId: 'string',
       activityName: 'string',
       activityType: 'string',
       isTargetSelect: 'boolean',
+      prevActivityId: 'string',
       workflowActor: ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActor,
     };
   }
@@ -1465,19 +1421,19 @@ export class ProcessForecastResponseBodyResultWorkflowForecastNodes extends $tea
 
 export class ProcessForecastResponseBodyResult extends $tea.Model {
   isForecastSuccess?: boolean;
-  processCode?: string;
-  userId?: string;
-  processId?: number;
   isStaticWorkflow?: boolean;
+  processCode?: string;
+  processId?: number;
+  userId?: string;
   workflowActivityRules?: ProcessForecastResponseBodyResultWorkflowActivityRules[];
   workflowForecastNodes?: ProcessForecastResponseBodyResultWorkflowForecastNodes[];
   static names(): { [key: string]: string } {
     return {
       isForecastSuccess: 'isForecastSuccess',
-      processCode: 'processCode',
-      userId: 'userId',
-      processId: 'processId',
       isStaticWorkflow: 'isStaticWorkflow',
+      processCode: 'processCode',
+      processId: 'processId',
+      userId: 'userId',
       workflowActivityRules: 'workflowActivityRules',
       workflowForecastNodes: 'workflowForecastNodes',
     };
@@ -1486,10 +1442,10 @@ export class ProcessForecastResponseBodyResult extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       isForecastSuccess: 'boolean',
-      processCode: 'string',
-      userId: 'string',
-      processId: 'number',
       isStaticWorkflow: 'boolean',
+      processCode: 'string',
+      processId: 'number',
+      userId: 'string',
       workflowActivityRules: { 'type': 'array', 'itemType': ProcessForecastResponseBodyResultWorkflowActivityRules },
       workflowForecastNodes: { 'type': 'array', 'itemType': ProcessForecastResponseBodyResultWorkflowForecastNodes },
     };
@@ -1500,140 +1456,32 @@ export class ProcessForecastResponseBodyResult extends $tea.Model {
   }
 }
 
-export class QueryAllProcessInstancesResponseBodyResultListFormComponentValues extends $tea.Model {
-  name?: string;
-  id?: string;
-  value?: string;
-  extValue?: string;
-  static names(): { [key: string]: string } {
-    return {
-      name: 'name',
-      id: 'id',
-      value: 'value',
-      extValue: 'extValue',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      name: 'string',
-      id: 'string',
-      value: 'string',
-      extValue: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryAllProcessInstancesResponseBodyResultList extends $tea.Model {
-  processInstanceId?: string;
-  mainProcessInstanceId?: string;
-  finishTime?: number;
-  attachedProcessInstanceIds?: string;
-  businessId?: string;
-  title?: string;
-  originatorDeptId?: string;
-  result?: string;
-  createTime?: number;
-  originatorUserid?: string;
-  status?: string;
-  formComponentValues?: QueryAllProcessInstancesResponseBodyResultListFormComponentValues[];
-  static names(): { [key: string]: string } {
-    return {
-      processInstanceId: 'processInstanceId',
-      mainProcessInstanceId: 'mainProcessInstanceId',
-      finishTime: 'finishTime',
-      attachedProcessInstanceIds: 'attachedProcessInstanceIds',
-      businessId: 'businessId',
-      title: 'title',
-      originatorDeptId: 'originatorDeptId',
-      result: 'result',
-      createTime: 'createTime',
-      originatorUserid: 'originatorUserid',
-      status: 'status',
-      formComponentValues: 'formComponentValues',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      processInstanceId: 'string',
-      mainProcessInstanceId: 'string',
-      finishTime: 'number',
-      attachedProcessInstanceIds: 'string',
-      businessId: 'string',
-      title: 'string',
-      originatorDeptId: 'string',
-      result: 'string',
-      createTime: 'number',
-      originatorUserid: 'string',
-      status: 'string',
-      formComponentValues: { 'type': 'array', 'itemType': QueryAllProcessInstancesResponseBodyResultListFormComponentValues },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryAllProcessInstancesResponseBodyResult extends $tea.Model {
-  nextToken?: string;
-  hasMore?: boolean;
-  maxResults?: number;
-  list?: QueryAllProcessInstancesResponseBodyResultList[];
-  static names(): { [key: string]: string } {
-    return {
-      nextToken: 'nextToken',
-      hasMore: 'hasMore',
-      maxResults: 'maxResults',
-      list: 'list',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      nextToken: 'string',
-      hasMore: 'boolean',
-      maxResults: 'number',
-      list: { 'type': 'array', 'itemType': QueryAllProcessInstancesResponseBodyResultList },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class QueryAllFormInstancesResponseBodyResultValuesFormInstDataList extends $tea.Model {
-  componentType?: string;
   bizAlias?: string;
+  componentType?: string;
   extendValue?: string;
+  key?: string;
   label?: string;
   value?: string;
-  key?: string;
   static names(): { [key: string]: string } {
     return {
-      componentType: 'componentType',
       bizAlias: 'bizAlias',
+      componentType: 'componentType',
       extendValue: 'extendValue',
+      key: 'key',
       label: 'label',
       value: 'value',
-      key: 'key',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      componentType: 'string',
       bizAlias: 'string',
+      componentType: 'string',
       extendValue: 'string',
+      key: 'string',
       label: 'string',
       value: 'string',
-      key: 'string',
     };
   }
 
@@ -1643,49 +1491,49 @@ export class QueryAllFormInstancesResponseBodyResultValuesFormInstDataList exten
 }
 
 export class QueryAllFormInstancesResponseBodyResultValues extends $tea.Model {
-  formInstanceId?: string;
   appUuid?: string;
-  formCode?: string;
-  title?: string;
-  creator?: string;
-  modifier?: string;
-  createTimestamp?: number;
-  modifyTimestamp?: number;
-  outInstanceId?: string;
-  outBizCode?: string;
   attributes?: { [key: string]: any };
+  createTimestamp?: number;
+  creator?: string;
+  formCode?: string;
   formInstDataList?: QueryAllFormInstancesResponseBodyResultValuesFormInstDataList[];
+  formInstanceId?: string;
+  modifier?: string;
+  modifyTimestamp?: number;
+  outBizCode?: string;
+  outInstanceId?: string;
+  title?: string;
   static names(): { [key: string]: string } {
     return {
-      formInstanceId: 'formInstanceId',
       appUuid: 'appUuid',
-      formCode: 'formCode',
-      title: 'title',
-      creator: 'creator',
-      modifier: 'modifier',
-      createTimestamp: 'createTimestamp',
-      modifyTimestamp: 'modifyTimestamp',
-      outInstanceId: 'outInstanceId',
-      outBizCode: 'outBizCode',
       attributes: 'attributes',
+      createTimestamp: 'createTimestamp',
+      creator: 'creator',
+      formCode: 'formCode',
       formInstDataList: 'formInstDataList',
+      formInstanceId: 'formInstanceId',
+      modifier: 'modifier',
+      modifyTimestamp: 'modifyTimestamp',
+      outBizCode: 'outBizCode',
+      outInstanceId: 'outInstanceId',
+      title: 'title',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      formInstanceId: 'string',
       appUuid: 'string',
-      formCode: 'string',
-      title: 'string',
-      creator: 'string',
-      modifier: 'string',
-      createTimestamp: 'number',
-      modifyTimestamp: 'number',
-      outInstanceId: 'string',
-      outBizCode: 'string',
       attributes: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      createTimestamp: 'number',
+      creator: 'string',
+      formCode: 'string',
       formInstDataList: { 'type': 'array', 'itemType': QueryAllFormInstancesResponseBodyResultValuesFormInstDataList },
+      formInstanceId: 'string',
+      modifier: 'string',
+      modifyTimestamp: 'number',
+      outBizCode: 'string',
+      outInstanceId: 'string',
+      title: 'string',
     };
   }
 
@@ -1695,24 +1543,24 @@ export class QueryAllFormInstancesResponseBodyResultValues extends $tea.Model {
 }
 
 export class QueryAllFormInstancesResponseBodyResult extends $tea.Model {
-  nextToken?: string;
   hasMore?: boolean;
   maxResults?: number;
+  nextToken?: string;
   values?: QueryAllFormInstancesResponseBodyResultValues[];
   static names(): { [key: string]: string } {
     return {
-      nextToken: 'nextToken',
       hasMore: 'hasMore',
       maxResults: 'maxResults',
+      nextToken: 'nextToken',
       values: 'values',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      nextToken: 'string',
       hasMore: 'boolean',
       maxResults: 'number',
+      nextToken: 'string',
       values: { 'type': 'array', 'itemType': QueryAllFormInstancesResponseBodyResultValues },
     };
   }
@@ -1722,53 +1570,161 @@ export class QueryAllFormInstancesResponseBodyResult extends $tea.Model {
   }
 }
 
+export class QueryAllProcessInstancesResponseBodyResultListFormComponentValues extends $tea.Model {
+  extValue?: string;
+  id?: string;
+  name?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      extValue: 'extValue',
+      id: 'id',
+      name: 'name',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      extValue: 'string',
+      id: 'string',
+      name: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryAllProcessInstancesResponseBodyResultList extends $tea.Model {
+  attachedProcessInstanceIds?: string;
+  businessId?: string;
+  createTime?: number;
+  finishTime?: number;
+  formComponentValues?: QueryAllProcessInstancesResponseBodyResultListFormComponentValues[];
+  mainProcessInstanceId?: string;
+  originatorDeptId?: string;
+  originatorUserid?: string;
+  processInstanceId?: string;
+  result?: string;
+  status?: string;
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      attachedProcessInstanceIds: 'attachedProcessInstanceIds',
+      businessId: 'businessId',
+      createTime: 'createTime',
+      finishTime: 'finishTime',
+      formComponentValues: 'formComponentValues',
+      mainProcessInstanceId: 'mainProcessInstanceId',
+      originatorDeptId: 'originatorDeptId',
+      originatorUserid: 'originatorUserid',
+      processInstanceId: 'processInstanceId',
+      result: 'result',
+      status: 'status',
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      attachedProcessInstanceIds: 'string',
+      businessId: 'string',
+      createTime: 'number',
+      finishTime: 'number',
+      formComponentValues: { 'type': 'array', 'itemType': QueryAllProcessInstancesResponseBodyResultListFormComponentValues },
+      mainProcessInstanceId: 'string',
+      originatorDeptId: 'string',
+      originatorUserid: 'string',
+      processInstanceId: 'string',
+      result: 'string',
+      status: 'string',
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryAllProcessInstancesResponseBodyResult extends $tea.Model {
+  hasMore?: boolean;
+  list?: QueryAllProcessInstancesResponseBodyResultList[];
+  maxResults?: number;
+  nextToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      list: 'list',
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      list: { 'type': 'array', 'itemType': QueryAllProcessInstancesResponseBodyResultList },
+      maxResults: 'number',
+      nextToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryFormByBizTypeResponseBodyResult extends $tea.Model {
-  creator?: string;
+  appType?: number;
   appUuid?: string;
+  bizType?: string;
+  content?: string;
+  createTime?: number;
+  creator?: string;
   formCode?: string;
   formUuid?: string;
-  name?: string;
   memo?: string;
-  ownerId?: string;
-  appType?: number;
-  bizType?: string;
-  status?: string;
-  createTime?: number;
   modifedTime?: number;
-  content?: string;
+  name?: string;
+  ownerId?: string;
+  status?: string;
   static names(): { [key: string]: string } {
     return {
-      creator: 'creator',
+      appType: 'appType',
       appUuid: 'appUuid',
+      bizType: 'bizType',
+      content: 'content',
+      createTime: 'createTime',
+      creator: 'creator',
       formCode: 'formCode',
       formUuid: 'formUuid',
-      name: 'name',
       memo: 'memo',
-      ownerId: 'ownerId',
-      appType: 'appType',
-      bizType: 'bizType',
-      status: 'status',
-      createTime: 'createTime',
       modifedTime: 'modifedTime',
-      content: 'content',
+      name: 'name',
+      ownerId: 'ownerId',
+      status: 'status',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      creator: 'string',
+      appType: 'number',
       appUuid: 'string',
+      bizType: 'string',
+      content: 'string',
+      createTime: 'number',
+      creator: 'string',
       formCode: 'string',
       formUuid: 'string',
-      name: 'string',
       memo: 'string',
-      ownerId: 'string',
-      appType: 'number',
-      bizType: 'string',
-      status: 'string',
-      createTime: 'number',
       modifedTime: 'number',
-      content: 'string',
+      name: 'string',
+      ownerId: 'string',
+      status: 'string',
     };
   }
 
@@ -1777,85 +1733,76 @@ export class QueryFormByBizTypeResponseBodyResult extends $tea.Model {
   }
 }
 
-export class FormCreateRequestTemplateConfig extends $tea.Model {
-  disableStopProcessButton?: boolean;
-  hidden?: boolean;
-  disableDeleteProcess?: boolean;
-  disableFormEdit?: boolean;
-  disableResubmit?: boolean;
-  disableHomepage?: boolean;
-  dirId?: string;
-  originDirId?: string;
-  static names(): { [key: string]: string } {
-    return {
-      disableStopProcessButton: 'disableStopProcessButton',
-      hidden: 'hidden',
-      disableDeleteProcess: 'disableDeleteProcess',
-      disableFormEdit: 'disableFormEdit',
-      disableResubmit: 'disableResubmit',
-      disableHomepage: 'disableHomepage',
-      dirId: 'dirId',
-      originDirId: 'originDirId',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      disableStopProcessButton: 'boolean',
-      hidden: 'boolean',
-      disableDeleteProcess: 'boolean',
-      disableFormEdit: 'boolean',
-      disableResubmit: 'boolean',
-      disableHomepage: 'boolean',
-      dirId: 'string',
-      originDirId: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class FormCreateResponseBodyResult extends $tea.Model {
-  processCode?: string;
-  static names(): { [key: string]: string } {
-    return {
-      processCode: 'processCode',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      processCode: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsStatField extends $tea.Model {
-  id?: string;
+export class QueryFormInstanceResponseBodyFormInstDataList extends $tea.Model {
+  bizAlias?: string;
+  componentType?: string;
+  extendValue?: string;
+  key?: string;
   label?: string;
-  upper?: boolean;
-  unit?: string;
+  value?: string;
   static names(): { [key: string]: string } {
     return {
-      id: 'id',
+      bizAlias: 'bizAlias',
+      componentType: 'componentType',
+      extendValue: 'extendValue',
+      key: 'key',
       label: 'label',
-      upper: 'upper',
-      unit: 'unit',
+      value: 'value',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      id: 'string',
+      bizAlias: 'string',
+      componentType: 'string',
+      extendValue: 'string',
+      key: 'string',
       label: 'string',
-      upper: 'boolean',
-      unit: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsBehaviorLinkageTargets extends $tea.Model {
+  behavior?: string;
+  fieldId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      behavior: 'behavior',
+      fieldId: 'fieldId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      behavior: 'string',
+      fieldId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsBehaviorLinkage extends $tea.Model {
+  targets?: QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsBehaviorLinkageTargets[];
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      targets: 'targets',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      targets: { 'type': 'array', 'itemType': QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsBehaviorLinkageTargets },
+      value: 'string',
     };
   }
 
@@ -1884,22 +1831,22 @@ export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsOb
 }
 
 export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsPush extends $tea.Model {
+  attendanceRule?: number;
   pushSwitch?: number;
   pushTag?: string;
-  attendanceRule?: number;
   static names(): { [key: string]: string } {
     return {
+      attendanceRule: 'attendanceRule',
       pushSwitch: 'pushSwitch',
       pushTag: 'pushTag',
-      attendanceRule: 'attendanceRule',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      attendanceRule: 'number',
       pushSwitch: 'number',
       pushTag: 'string',
-      attendanceRule: 'number',
     };
   }
 
@@ -1908,42 +1855,26 @@ export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsPu
   }
 }
 
-export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsBehaviorLinkageTargets extends $tea.Model {
-  fieldId?: string;
-  behavior?: string;
+export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsStatField extends $tea.Model {
+  id?: string;
+  label?: string;
+  unit?: string;
+  upper?: boolean;
   static names(): { [key: string]: string } {
     return {
-      fieldId: 'fieldId',
-      behavior: 'behavior',
+      id: 'id',
+      label: 'label',
+      unit: 'unit',
+      upper: 'upper',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      fieldId: 'string',
-      behavior: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsBehaviorLinkage extends $tea.Model {
-  value?: string;
-  targets?: QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsBehaviorLinkageTargets[];
-  static names(): { [key: string]: string } {
-    return {
-      value: 'value',
-      targets: 'targets',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      value: 'string',
-      targets: { 'type': 'array', 'itemType': QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsBehaviorLinkageTargets },
+      id: 'string',
+      label: 'string',
+      unit: 'string',
+      upper: 'boolean',
     };
   }
 
@@ -1953,148 +1884,148 @@ export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsBe
 }
 
 export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsProps extends $tea.Model {
+  actionName?: string;
+  align?: string;
+  appId?: number;
+  asyncCondition?: boolean;
+  attendTypeLabel?: string;
+  behaviorLinkage?: QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsBehaviorLinkage[];
+  bizAlias?: string;
+  bizType?: string;
+  childFieldVisible?: boolean;
+  choice?: number;
+  commonBizType?: string;
+  disabled?: boolean;
+  duration?: boolean;
+  durationLabel?: string;
+  eSign?: boolean;
+  extract?: boolean;
+  fieldsInfo?: string;
+  format?: string;
+  formula?: string;
+  hidden?: boolean;
+  hiddenInApprovalDetail?: boolean;
+  hideLabel?: boolean;
+  holidayOptions?: string;
   id?: string;
   label?: string;
-  bizAlias?: string;
-  required?: boolean;
-  placeholder?: string;
-  options?: string[];
-  appId?: number;
-  durationLabel?: string;
-  pushToCalendar?: number;
-  align?: string;
-  statField?: QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsStatField[];
-  hideLabel?: boolean;
-  objOptions?: QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsObjOptions[];
-  format?: string;
-  pushToAttendance?: boolean;
   labelEditableFreeze?: boolean;
-  push?: QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsPush;
-  commonBizType?: string;
-  requiredEditableFreeze?: boolean;
-  unit?: string;
-  extract?: boolean;
   link?: string;
-  payEnable?: boolean;
-  hidden?: boolean;
-  bizType?: string;
-  staffStatusEnabled?: boolean;
-  actionName?: string;
-  attendTypeLabel?: string;
-  childFieldVisible?: boolean;
-  notPrint?: string;
-  verticalPrint?: boolean;
-  duration?: boolean;
-  holidayOptions?: string;
-  useCalendar?: boolean;
-  hiddenInApprovalDetail?: boolean;
-  disabled?: boolean;
-  asyncCondition?: boolean;
-  behaviorLinkage?: QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsBehaviorLinkage[];
-  showAttendOptions?: boolean;
-  notUpper?: string;
-  fieldsInfo?: string;
-  eSign?: boolean;
   mainTitle?: string;
-  formula?: string;
-  choice?: number;
+  notPrint?: string;
+  notUpper?: string;
+  objOptions?: QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsObjOptions[];
+  options?: string[];
+  payEnable?: boolean;
+  placeholder?: string;
+  push?: QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsPush;
+  pushToAttendance?: boolean;
+  pushToCalendar?: number;
+  required?: boolean;
+  requiredEditableFreeze?: boolean;
+  showAttendOptions?: boolean;
+  staffStatusEnabled?: boolean;
+  statField?: QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsStatField[];
+  unit?: string;
+  useCalendar?: boolean;
+  verticalPrint?: boolean;
   static names(): { [key: string]: string } {
     return {
+      actionName: 'actionName',
+      align: 'align',
+      appId: 'appId',
+      asyncCondition: 'asyncCondition',
+      attendTypeLabel: 'attendTypeLabel',
+      behaviorLinkage: 'behaviorLinkage',
+      bizAlias: 'bizAlias',
+      bizType: 'bizType',
+      childFieldVisible: 'childFieldVisible',
+      choice: 'choice',
+      commonBizType: 'commonBizType',
+      disabled: 'disabled',
+      duration: 'duration',
+      durationLabel: 'durationLabel',
+      eSign: 'eSign',
+      extract: 'extract',
+      fieldsInfo: 'fieldsInfo',
+      format: 'format',
+      formula: 'formula',
+      hidden: 'hidden',
+      hiddenInApprovalDetail: 'hiddenInApprovalDetail',
+      hideLabel: 'hideLabel',
+      holidayOptions: 'holidayOptions',
       id: 'id',
       label: 'label',
-      bizAlias: 'bizAlias',
-      required: 'required',
-      placeholder: 'placeholder',
-      options: 'options',
-      appId: 'appId',
-      durationLabel: 'durationLabel',
-      pushToCalendar: 'pushToCalendar',
-      align: 'align',
-      statField: 'statField',
-      hideLabel: 'hideLabel',
-      objOptions: 'objOptions',
-      format: 'format',
-      pushToAttendance: 'pushToAttendance',
       labelEditableFreeze: 'labelEditableFreeze',
-      push: 'push',
-      commonBizType: 'commonBizType',
-      requiredEditableFreeze: 'requiredEditableFreeze',
-      unit: 'unit',
-      extract: 'extract',
       link: 'link',
-      payEnable: 'payEnable',
-      hidden: 'hidden',
-      bizType: 'bizType',
-      staffStatusEnabled: 'staffStatusEnabled',
-      actionName: 'actionName',
-      attendTypeLabel: 'attendTypeLabel',
-      childFieldVisible: 'childFieldVisible',
-      notPrint: 'notPrint',
-      verticalPrint: 'verticalPrint',
-      duration: 'duration',
-      holidayOptions: 'holidayOptions',
-      useCalendar: 'useCalendar',
-      hiddenInApprovalDetail: 'hiddenInApprovalDetail',
-      disabled: 'disabled',
-      asyncCondition: 'asyncCondition',
-      behaviorLinkage: 'behaviorLinkage',
-      showAttendOptions: 'showAttendOptions',
-      notUpper: 'notUpper',
-      fieldsInfo: 'fieldsInfo',
-      eSign: 'eSign',
       mainTitle: 'mainTitle',
-      formula: 'formula',
-      choice: 'choice',
+      notPrint: 'notPrint',
+      notUpper: 'notUpper',
+      objOptions: 'objOptions',
+      options: 'options',
+      payEnable: 'payEnable',
+      placeholder: 'placeholder',
+      push: 'push',
+      pushToAttendance: 'pushToAttendance',
+      pushToCalendar: 'pushToCalendar',
+      required: 'required',
+      requiredEditableFreeze: 'requiredEditableFreeze',
+      showAttendOptions: 'showAttendOptions',
+      staffStatusEnabled: 'staffStatusEnabled',
+      statField: 'statField',
+      unit: 'unit',
+      useCalendar: 'useCalendar',
+      verticalPrint: 'verticalPrint',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      actionName: 'string',
+      align: 'string',
+      appId: 'number',
+      asyncCondition: 'boolean',
+      attendTypeLabel: 'string',
+      behaviorLinkage: { 'type': 'array', 'itemType': QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsBehaviorLinkage },
+      bizAlias: 'string',
+      bizType: 'string',
+      childFieldVisible: 'boolean',
+      choice: 'number',
+      commonBizType: 'string',
+      disabled: 'boolean',
+      duration: 'boolean',
+      durationLabel: 'string',
+      eSign: 'boolean',
+      extract: 'boolean',
+      fieldsInfo: 'string',
+      format: 'string',
+      formula: 'string',
+      hidden: 'boolean',
+      hiddenInApprovalDetail: 'boolean',
+      hideLabel: 'boolean',
+      holidayOptions: 'string',
       id: 'string',
       label: 'string',
-      bizAlias: 'string',
-      required: 'boolean',
-      placeholder: 'string',
-      options: { 'type': 'array', 'itemType': 'string' },
-      appId: 'number',
-      durationLabel: 'string',
-      pushToCalendar: 'number',
-      align: 'string',
-      statField: { 'type': 'array', 'itemType': QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsStatField },
-      hideLabel: 'boolean',
-      objOptions: { 'type': 'array', 'itemType': QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsObjOptions },
-      format: 'string',
-      pushToAttendance: 'boolean',
       labelEditableFreeze: 'boolean',
-      push: QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsPush,
-      commonBizType: 'string',
-      requiredEditableFreeze: 'boolean',
-      unit: 'string',
-      extract: 'boolean',
       link: 'string',
-      payEnable: 'boolean',
-      hidden: 'boolean',
-      bizType: 'string',
-      staffStatusEnabled: 'boolean',
-      actionName: 'string',
-      attendTypeLabel: 'string',
-      childFieldVisible: 'boolean',
-      notPrint: 'string',
-      verticalPrint: 'boolean',
-      duration: 'boolean',
-      holidayOptions: 'string',
-      useCalendar: 'boolean',
-      hiddenInApprovalDetail: 'boolean',
-      disabled: 'boolean',
-      asyncCondition: 'boolean',
-      behaviorLinkage: { 'type': 'array', 'itemType': QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsBehaviorLinkage },
-      showAttendOptions: 'boolean',
-      notUpper: 'string',
-      fieldsInfo: 'string',
-      eSign: 'boolean',
       mainTitle: 'string',
-      formula: 'string',
-      choice: 'number',
+      notPrint: 'string',
+      notUpper: 'string',
+      objOptions: { 'type': 'array', 'itemType': QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsObjOptions },
+      options: { 'type': 'array', 'itemType': 'string' },
+      payEnable: 'boolean',
+      placeholder: 'string',
+      push: QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsPush,
+      pushToAttendance: 'boolean',
+      pushToCalendar: 'number',
+      required: 'boolean',
+      requiredEditableFreeze: 'boolean',
+      showAttendOptions: 'boolean',
+      staffStatusEnabled: 'boolean',
+      statField: { 'type': 'array', 'itemType': QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsStatField },
+      unit: 'string',
+      useCalendar: 'boolean',
+      verticalPrint: 'boolean',
     };
   }
 
@@ -2126,22 +2057,22 @@ export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItems extend
 }
 
 export class QuerySchemaByProcessCodeResponseBodyResultSchemaContent extends $tea.Model {
-  title?: string;
   icon?: string;
   items?: QuerySchemaByProcessCodeResponseBodyResultSchemaContentItems[];
+  title?: string;
   static names(): { [key: string]: string } {
     return {
-      title: 'title',
       icon: 'icon',
       items: 'items',
+      title: 'title',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      title: 'string',
       icon: 'string',
       items: { 'type': 'array', 'itemType': QuerySchemaByProcessCodeResponseBodyResultSchemaContentItems },
+      title: 'string',
     };
   }
 
@@ -2151,76 +2082,76 @@ export class QuerySchemaByProcessCodeResponseBodyResultSchemaContent extends $te
 }
 
 export class QuerySchemaByProcessCodeResponseBodyResult extends $tea.Model {
-  creatorUserId?: string;
-  creatorUid?: number;
+  appType?: number;
   appUuid?: string;
+  bizType?: string;
+  creatorUid?: number;
+  creatorUserId?: string;
+  customSetting?: string;
+  engineType?: number;
   formCode?: string;
   formUuid?: string;
-  name?: string;
-  memo?: string;
-  ownerId?: string;
-  ownerIdType?: string;
-  schemaContent?: QuerySchemaByProcessCodeResponseBodyResultSchemaContent;
-  icon?: string;
-  appType?: number;
-  bizType?: string;
-  engineType?: number;
-  status?: string;
-  listOrder?: number;
-  customSetting?: string;
-  procType?: string;
-  visibleRange?: string;
   gmtCreate?: number;
   gmtModified?: number;
+  icon?: string;
+  listOrder?: number;
+  memo?: string;
+  name?: string;
+  ownerId?: string;
+  ownerIdType?: string;
+  procType?: string;
+  schemaContent?: QuerySchemaByProcessCodeResponseBodyResultSchemaContent;
+  status?: string;
+  visibleRange?: string;
   static names(): { [key: string]: string } {
     return {
-      creatorUserId: 'creatorUserId',
-      creatorUid: 'creatorUid',
+      appType: 'appType',
       appUuid: 'appUuid',
+      bizType: 'bizType',
+      creatorUid: 'creatorUid',
+      creatorUserId: 'creatorUserId',
+      customSetting: 'customSetting',
+      engineType: 'engineType',
       formCode: 'formCode',
       formUuid: 'formUuid',
-      name: 'name',
-      memo: 'memo',
-      ownerId: 'ownerId',
-      ownerIdType: 'ownerIdType',
-      schemaContent: 'schemaContent',
-      icon: 'icon',
-      appType: 'appType',
-      bizType: 'bizType',
-      engineType: 'engineType',
-      status: 'status',
-      listOrder: 'listOrder',
-      customSetting: 'customSetting',
-      procType: 'procType',
-      visibleRange: 'visibleRange',
       gmtCreate: 'gmtCreate',
       gmtModified: 'gmtModified',
+      icon: 'icon',
+      listOrder: 'listOrder',
+      memo: 'memo',
+      name: 'name',
+      ownerId: 'ownerId',
+      ownerIdType: 'ownerIdType',
+      procType: 'procType',
+      schemaContent: 'schemaContent',
+      status: 'status',
+      visibleRange: 'visibleRange',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      creatorUserId: 'string',
-      creatorUid: 'number',
+      appType: 'number',
       appUuid: 'string',
+      bizType: 'string',
+      creatorUid: 'number',
+      creatorUserId: 'string',
+      customSetting: 'string',
+      engineType: 'number',
       formCode: 'string',
       formUuid: 'string',
-      name: 'string',
-      memo: 'string',
-      ownerId: 'string',
-      ownerIdType: 'string',
-      schemaContent: QuerySchemaByProcessCodeResponseBodyResultSchemaContent,
-      icon: 'string',
-      appType: 'number',
-      bizType: 'string',
-      engineType: 'number',
-      status: 'string',
-      listOrder: 'number',
-      customSetting: 'string',
-      procType: 'string',
-      visibleRange: 'string',
       gmtCreate: 'number',
       gmtModified: 'number',
+      icon: 'string',
+      listOrder: 'number',
+      memo: 'string',
+      name: 'string',
+      ownerId: 'string',
+      ownerIdType: 'string',
+      procType: 'string',
+      schemaContent: QuerySchemaByProcessCodeResponseBodyResultSchemaContent,
+      status: 'string',
+      visibleRange: 'string',
     };
   }
 
@@ -2251,6 +2182,111 @@ export class StartProcessInstanceRequestApprovers extends $tea.Model {
   }
 }
 
+export class StartProcessInstanceRequestFormComponentValuesDetailsDetails extends $tea.Model {
+  bizAlias?: string;
+  componentType?: string;
+  extValue?: string;
+  id?: string;
+  name?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizAlias: 'bizAlias',
+      componentType: 'componentType',
+      extValue: 'extValue',
+      id: 'id',
+      name: 'name',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizAlias: 'string',
+      componentType: 'string',
+      extValue: 'string',
+      id: 'string',
+      name: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class StartProcessInstanceRequestFormComponentValuesDetails extends $tea.Model {
+  bizAlias?: string;
+  details?: StartProcessInstanceRequestFormComponentValuesDetailsDetails[];
+  extValue?: string;
+  id?: string;
+  name?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizAlias: 'bizAlias',
+      details: 'details',
+      extValue: 'extValue',
+      id: 'id',
+      name: 'name',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizAlias: 'string',
+      details: { 'type': 'array', 'itemType': StartProcessInstanceRequestFormComponentValuesDetailsDetails },
+      extValue: 'string',
+      id: 'string',
+      name: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class StartProcessInstanceRequestFormComponentValues extends $tea.Model {
+  bizAlias?: string;
+  componentType?: string;
+  details?: StartProcessInstanceRequestFormComponentValuesDetails[];
+  extValue?: string;
+  id?: string;
+  name?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizAlias: 'bizAlias',
+      componentType: 'componentType',
+      details: 'details',
+      extValue: 'extValue',
+      id: 'id',
+      name: 'name',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizAlias: 'string',
+      componentType: 'string',
+      details: { 'type': 'array', 'itemType': StartProcessInstanceRequestFormComponentValuesDetails },
+      extValue: 'string',
+      id: 'string',
+      name: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class StartProcessInstanceRequestTargetSelectActioners extends $tea.Model {
   actionerKey?: string;
   actionerUserIds?: string[];
@@ -2273,111 +2309,6 @@ export class StartProcessInstanceRequestTargetSelectActioners extends $tea.Model
   }
 }
 
-export class StartProcessInstanceRequestFormComponentValuesDetailsDetails extends $tea.Model {
-  id?: string;
-  bizAlias?: string;
-  name?: string;
-  value?: string;
-  extValue?: string;
-  componentType?: string;
-  static names(): { [key: string]: string } {
-    return {
-      id: 'id',
-      bizAlias: 'bizAlias',
-      name: 'name',
-      value: 'value',
-      extValue: 'extValue',
-      componentType: 'componentType',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      id: 'string',
-      bizAlias: 'string',
-      name: 'string',
-      value: 'string',
-      extValue: 'string',
-      componentType: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class StartProcessInstanceRequestFormComponentValuesDetails extends $tea.Model {
-  id?: string;
-  bizAlias?: string;
-  name?: string;
-  value?: string;
-  extValue?: string;
-  details?: StartProcessInstanceRequestFormComponentValuesDetailsDetails[];
-  static names(): { [key: string]: string } {
-    return {
-      id: 'id',
-      bizAlias: 'bizAlias',
-      name: 'name',
-      value: 'value',
-      extValue: 'extValue',
-      details: 'details',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      id: 'string',
-      bizAlias: 'string',
-      name: 'string',
-      value: 'string',
-      extValue: 'string',
-      details: { 'type': 'array', 'itemType': StartProcessInstanceRequestFormComponentValuesDetailsDetails },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class StartProcessInstanceRequestFormComponentValues extends $tea.Model {
-  id?: string;
-  bizAlias?: string;
-  name?: string;
-  value?: string;
-  extValue?: string;
-  componentType?: string;
-  details?: StartProcessInstanceRequestFormComponentValuesDetails[];
-  static names(): { [key: string]: string } {
-    return {
-      id: 'id',
-      bizAlias: 'bizAlias',
-      name: 'name',
-      value: 'value',
-      extValue: 'extValue',
-      componentType: 'componentType',
-      details: 'details',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      id: 'string',
-      bizAlias: 'string',
-      name: 'string',
-      value: 'string',
-      extValue: 'string',
-      componentType: 'string',
-      details: { 'type': 'array', 'itemType': StartProcessInstanceRequestFormComponentValuesDetails },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 
 export default class Client extends OpenApi {
 
@@ -2391,90 +2322,33 @@ export default class Client extends OpenApi {
   }
 
 
-  async queryFormInstance(request: QueryFormInstanceRequest): Promise<QueryFormInstanceResponse> {
+  async formCreate(request: FormCreateRequest): Promise<FormCreateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryFormInstanceHeaders({ });
-    return await this.queryFormInstanceWithOptions(request, headers, runtime);
+    let headers = new FormCreateHeaders({ });
+    return await this.formCreateWithOptions(request, headers, runtime);
   }
 
-  async queryFormInstanceWithOptions(request: QueryFormInstanceRequest, headers: QueryFormInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<QueryFormInstanceResponse> {
-    Util.validateModel(request);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.formInstanceId)) {
-      query["formInstanceId"] = request.formInstanceId;
-    }
-
-    if (!Util.isUnset(request.formCode)) {
-      query["formCode"] = request.formCode;
-    }
-
-    if (!Util.isUnset(request.appUuid)) {
-      query["appUuid"] = request.appUuid;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      query: OpenApiUtil.query(query),
-    });
-    return $tea.cast<QueryFormInstanceResponse>(await this.doROARequest("QueryFormInstance", "workflow_1.0", "HTTP", "GET", "AK", `/v1.0/workflow/forms/instances`, "json", req, runtime), new QueryFormInstanceResponse({}));
-  }
-
-  async processForecast(request: ProcessForecastRequest): Promise<ProcessForecastResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ProcessForecastHeaders({ });
-    return await this.processForecastWithOptions(request, headers, runtime);
-  }
-
-  async processForecastWithOptions(request: ProcessForecastRequest, headers: ProcessForecastHeaders, runtime: $Util.RuntimeOptions): Promise<ProcessForecastResponse> {
+  async formCreateWithOptions(request: FormCreateRequest, headers: FormCreateHeaders, runtime: $Util.RuntimeOptions): Promise<FormCreateResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.dingCorpId)) {
-      body["dingCorpId"] = request.dingCorpId;
+    if (!Util.isUnset(request.description)) {
+      body["description"] = request.description;
     }
 
-    if (!Util.isUnset(request.dingOrgId)) {
-      body["dingOrgId"] = request.dingOrgId;
+    if (!Util.isUnset(request.formComponents)) {
+      body["formComponents"] = request.formComponents;
     }
 
-    if (!Util.isUnset(request.dingIsvOrgId)) {
-      body["dingIsvOrgId"] = request.dingIsvOrgId;
-    }
-
-    if (!Util.isUnset(request.dingSuiteKey)) {
-      body["dingSuiteKey"] = request.dingSuiteKey;
-    }
-
-    if (!Util.isUnset(request.dingTokenGrantType)) {
-      body["dingTokenGrantType"] = request.dingTokenGrantType;
-    }
-
-    if (!Util.isUnset(request.requestId)) {
-      body["RequestId"] = request.requestId;
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
     }
 
     if (!Util.isUnset(request.processCode)) {
       body["processCode"] = request.processCode;
     }
 
-    if (!Util.isUnset(request.deptId)) {
-      body["deptId"] = request.deptId;
-    }
-
-    if (!Util.isUnset(request.userId)) {
-      body["userId"] = request.userId;
-    }
-
-    if (!Util.isUnset(request.formComponentValues)) {
-      body["formComponentValues"] = request.formComponentValues;
+    if (!Util.isUnset($tea.toMap(request.templateConfig))) {
+      body["templateConfig"] = request.templateConfig;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -2483,14 +2357,14 @@ export default class Client extends OpenApi {
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<ProcessForecastResponse>(await this.doROARequest("ProcessForecast", "workflow_1.0", "HTTP", "POST", "AK", `/v1.0/workflow/processes/forecast`, "json", req, runtime), new ProcessForecastResponse({}));
+    return $tea.cast<FormCreateResponse>(await this.doROARequest("FormCreate", "workflow_1.0", "HTTP", "POST", "AK", `/v1.0/workflow/forms`, "json", req, runtime), new FormCreateResponse({}));
   }
 
   async grantCspaceAuthorization(request: GrantCspaceAuthorizationRequest): Promise<GrantCspaceAuthorizationResponse> {
@@ -2502,6 +2376,10 @@ export default class Client extends OpenApi {
   async grantCspaceAuthorizationWithOptions(request: GrantCspaceAuthorizationRequest, headers: GrantCspaceAuthorizationHeaders, runtime: $Util.RuntimeOptions): Promise<GrantCspaceAuthorizationResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.durationSeconds)) {
+      body["durationSeconds"] = request.durationSeconds;
+    }
+
     if (!Util.isUnset(request.spaceId)) {
       body["spaceId"] = request.spaceId;
     }
@@ -2514,37 +2392,13 @@ export default class Client extends OpenApi {
       body["userId"] = request.userId;
     }
 
-    if (!Util.isUnset(request.durationSeconds)) {
-      body["durationSeconds"] = request.durationSeconds;
-    }
-
-    if (!Util.isUnset(request.dingCorpId)) {
-      body["dingCorpId"] = request.dingCorpId;
-    }
-
-    if (!Util.isUnset(request.dingOrgId)) {
-      body["dingOrgId"] = request.dingOrgId;
-    }
-
-    if (!Util.isUnset(request.dingIsvOrgId)) {
-      body["dingIsvOrgId"] = request.dingIsvOrgId;
-    }
-
-    if (!Util.isUnset(request.dingSuiteKey)) {
-      body["dingSuiteKey"] = request.dingSuiteKey;
-    }
-
-    if (!Util.isUnset(request.dingTokenGrantType)) {
-      body["dingTokenGrantType"] = request.dingTokenGrantType;
-    }
-
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({
@@ -2554,37 +2408,29 @@ export default class Client extends OpenApi {
     return $tea.cast<GrantCspaceAuthorizationResponse>(await this.doROARequest("GrantCspaceAuthorization", "workflow_1.0", "HTTP", "POST", "AK", `/v1.0/workflow/spaces/authorize`, "none", req, runtime), new GrantCspaceAuthorizationResponse({}));
   }
 
-  async queryAllProcessInstances(request: QueryAllProcessInstancesRequest): Promise<QueryAllProcessInstancesResponse> {
+  async processForecast(request: ProcessForecastRequest): Promise<ProcessForecastResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryAllProcessInstancesHeaders({ });
-    return await this.queryAllProcessInstancesWithOptions(request, headers, runtime);
+    let headers = new ProcessForecastHeaders({ });
+    return await this.processForecastWithOptions(request, headers, runtime);
   }
 
-  async queryAllProcessInstancesWithOptions(request: QueryAllProcessInstancesRequest, headers: QueryAllProcessInstancesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAllProcessInstancesResponse> {
+  async processForecastWithOptions(request: ProcessForecastRequest, headers: ProcessForecastHeaders, runtime: $Util.RuntimeOptions): Promise<ProcessForecastResponse> {
     Util.validateModel(request);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.nextToken)) {
-      query["nextToken"] = request.nextToken;
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deptId)) {
+      body["deptId"] = request.deptId;
     }
 
-    if (!Util.isUnset(request.maxResults)) {
-      query["maxResults"] = request.maxResults;
-    }
-
-    if (!Util.isUnset(request.startTimeInMills)) {
-      query["startTimeInMills"] = request.startTimeInMills;
-    }
-
-    if (!Util.isUnset(request.endTimeInMills)) {
-      query["endTimeInMills"] = request.endTimeInMills;
+    if (!Util.isUnset(request.formComponentValues)) {
+      body["formComponentValues"] = request.formComponentValues;
     }
 
     if (!Util.isUnset(request.processCode)) {
-      query["processCode"] = request.processCode;
+      body["processCode"] = request.processCode;
     }
 
-    if (!Util.isUnset(request.appUuid)) {
-      query["appUuid"] = request.appUuid;
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -2593,14 +2439,14 @@ export default class Client extends OpenApi {
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
-      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<QueryAllProcessInstancesResponse>(await this.doROARequest("QueryAllProcessInstances", "workflow_1.0", "HTTP", "GET", "AK", `/v1.0/workflow/processes/pages/instances`, "json", req, runtime), new QueryAllProcessInstancesResponse({}));
+    return $tea.cast<ProcessForecastResponse>(await this.doROARequest("ProcessForecast", "workflow_1.0", "HTTP", "POST", "AK", `/v1.0/workflow/processes/forecast`, "json", req, runtime), new ProcessForecastResponse({}));
   }
 
   async queryAllFormInstances(request: QueryAllFormInstancesRequest): Promise<QueryAllFormInstancesResponse> {
@@ -2612,14 +2458,6 @@ export default class Client extends OpenApi {
   async queryAllFormInstancesWithOptions(request: QueryAllFormInstancesRequest, headers: QueryAllFormInstancesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAllFormInstancesResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.nextToken)) {
-      query["nextToken"] = request.nextToken;
-    }
-
-    if (!Util.isUnset(request.maxResults)) {
-      query["maxResults"] = request.maxResults;
-    }
-
     if (!Util.isUnset(request.appUuid)) {
       query["appUuid"] = request.appUuid;
     }
@@ -2628,13 +2466,21 @@ export default class Client extends OpenApi {
       query["formCode"] = request.formCode;
     }
 
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({
@@ -2642,6 +2488,55 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<QueryAllFormInstancesResponse>(await this.doROARequest("QueryAllFormInstances", "workflow_1.0", "HTTP", "GET", "AK", `/v1.0/workflow/forms/pages/instances`, "json", req, runtime), new QueryAllFormInstancesResponse({}));
+  }
+
+  async queryAllProcessInstances(request: QueryAllProcessInstancesRequest): Promise<QueryAllProcessInstancesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryAllProcessInstancesHeaders({ });
+    return await this.queryAllProcessInstancesWithOptions(request, headers, runtime);
+  }
+
+  async queryAllProcessInstancesWithOptions(request: QueryAllProcessInstancesRequest, headers: QueryAllProcessInstancesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAllProcessInstancesResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appUuid)) {
+      query["appUuid"] = request.appUuid;
+    }
+
+    if (!Util.isUnset(request.endTimeInMills)) {
+      query["endTimeInMills"] = request.endTimeInMills;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.processCode)) {
+      query["processCode"] = request.processCode;
+    }
+
+    if (!Util.isUnset(request.startTimeInMills)) {
+      query["startTimeInMills"] = request.startTimeInMills;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryAllProcessInstancesResponse>(await this.doROARequest("QueryAllProcessInstances", "workflow_1.0", "HTTP", "GET", "AK", `/v1.0/workflow/processes/pages/instances`, "json", req, runtime), new QueryAllProcessInstancesResponse({}));
   }
 
   async queryFormByBizType(request: QueryFormByBizTypeRequest): Promise<QueryFormByBizTypeResponse> {
@@ -2667,7 +2562,7 @@ export default class Client extends OpenApi {
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({
@@ -2677,57 +2572,25 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryFormByBizTypeResponse>(await this.doROARequest("QueryFormByBizType", "workflow_1.0", "HTTP", "POST", "AK", `/v1.0/workflow/forms/forminfos/query`, "json", req, runtime), new QueryFormByBizTypeResponse({}));
   }
 
-  async formCreate(request: FormCreateRequest): Promise<FormCreateResponse> {
+  async queryFormInstance(request: QueryFormInstanceRequest): Promise<QueryFormInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new FormCreateHeaders({ });
-    return await this.formCreateWithOptions(request, headers, runtime);
+    let headers = new QueryFormInstanceHeaders({ });
+    return await this.queryFormInstanceWithOptions(request, headers, runtime);
   }
 
-  async formCreateWithOptions(request: FormCreateRequest, headers: FormCreateHeaders, runtime: $Util.RuntimeOptions): Promise<FormCreateResponse> {
+  async queryFormInstanceWithOptions(request: QueryFormInstanceRequest, headers: QueryFormInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<QueryFormInstanceResponse> {
     Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.dingCorpId)) {
-      body["dingCorpId"] = request.dingCorpId;
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appUuid)) {
+      query["appUuid"] = request.appUuid;
     }
 
-    if (!Util.isUnset(request.dingOrgId)) {
-      body["dingOrgId"] = request.dingOrgId;
+    if (!Util.isUnset(request.formCode)) {
+      query["formCode"] = request.formCode;
     }
 
-    if (!Util.isUnset(request.dingIsvOrgId)) {
-      body["dingIsvOrgId"] = request.dingIsvOrgId;
-    }
-
-    if (!Util.isUnset(request.dingSuiteKey)) {
-      body["dingSuiteKey"] = request.dingSuiteKey;
-    }
-
-    if (!Util.isUnset(request.dingTokenGrantType)) {
-      body["dingTokenGrantType"] = request.dingTokenGrantType;
-    }
-
-    if (!Util.isUnset(request.requestId)) {
-      body["RequestId"] = request.requestId;
-    }
-
-    if (!Util.isUnset(request.processCode)) {
-      body["processCode"] = request.processCode;
-    }
-
-    if (!Util.isUnset(request.name)) {
-      body["name"] = request.name;
-    }
-
-    if (!Util.isUnset(request.description)) {
-      body["description"] = request.description;
-    }
-
-    if (!Util.isUnset(request.formComponents)) {
-      body["formComponents"] = request.formComponents;
-    }
-
-    if (!Util.isUnset($tea.toMap(request.templateConfig))) {
-      body["templateConfig"] = request.templateConfig;
+    if (!Util.isUnset(request.formInstanceId)) {
+      query["formInstanceId"] = request.formInstanceId;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -2736,14 +2599,14 @@ export default class Client extends OpenApi {
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
+      query: OpenApiUtil.query(query),
     });
-    return $tea.cast<FormCreateResponse>(await this.doROARequest("FormCreate", "workflow_1.0", "HTTP", "POST", "AK", `/v1.0/workflow/forms`, "json", req, runtime), new FormCreateResponse({}));
+    return $tea.cast<QueryFormInstanceResponse>(await this.doROARequest("QueryFormInstance", "workflow_1.0", "HTTP", "GET", "AK", `/v1.0/workflow/forms/instances`, "json", req, runtime), new QueryFormInstanceResponse({}));
   }
 
   async querySchemaByProcessCode(request: QuerySchemaByProcessCodeRequest): Promise<QuerySchemaByProcessCodeResponse> {
@@ -2765,7 +2628,7 @@ export default class Client extends OpenApi {
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({
@@ -2784,22 +2647,6 @@ export default class Client extends OpenApi {
   async startProcessInstanceWithOptions(request: StartProcessInstanceRequest, headers: StartProcessInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<StartProcessInstanceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.originatorUserId)) {
-      body["originatorUserId"] = request.originatorUserId;
-    }
-
-    if (!Util.isUnset(request.processCode)) {
-      body["processCode"] = request.processCode;
-    }
-
-    if (!Util.isUnset(request.deptId)) {
-      body["deptId"] = request.deptId;
-    }
-
-    if (!Util.isUnset(request.microappAgentId)) {
-      body["microappAgentId"] = request.microappAgentId;
-    }
-
     if (!Util.isUnset(request.approvers)) {
       body["approvers"] = request.approvers;
     }
@@ -2812,36 +2659,28 @@ export default class Client extends OpenApi {
       body["ccPosition"] = request.ccPosition;
     }
 
-    if (!Util.isUnset(request.targetSelectActioners)) {
-      body["targetSelectActioners"] = request.targetSelectActioners;
+    if (!Util.isUnset(request.deptId)) {
+      body["deptId"] = request.deptId;
     }
 
     if (!Util.isUnset(request.formComponentValues)) {
       body["formComponentValues"] = request.formComponentValues;
     }
 
-    if (!Util.isUnset(request.requestId)) {
-      body["RequestId"] = request.requestId;
+    if (!Util.isUnset(request.microappAgentId)) {
+      body["microappAgentId"] = request.microappAgentId;
     }
 
-    if (!Util.isUnset(request.dingCorpId)) {
-      body["dingCorpId"] = request.dingCorpId;
+    if (!Util.isUnset(request.originatorUserId)) {
+      body["originatorUserId"] = request.originatorUserId;
     }
 
-    if (!Util.isUnset(request.dingOrgId)) {
-      body["dingOrgId"] = request.dingOrgId;
+    if (!Util.isUnset(request.processCode)) {
+      body["processCode"] = request.processCode;
     }
 
-    if (!Util.isUnset(request.dingIsvOrgId)) {
-      body["dingIsvOrgId"] = request.dingIsvOrgId;
-    }
-
-    if (!Util.isUnset(request.dingSuiteKey)) {
-      body["dingSuiteKey"] = request.dingSuiteKey;
-    }
-
-    if (!Util.isUnset(request.dingTokenGrantType)) {
-      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    if (!Util.isUnset(request.targetSelectActioners)) {
+      body["targetSelectActioners"] = request.targetSelectActioners;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -2850,7 +2689,7 @@ export default class Client extends OpenApi {
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({

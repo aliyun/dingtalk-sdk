@@ -7,6 +7,461 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class AttendanceBleDevicesAddHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AttendanceBleDevicesAddRequest extends $tea.Model {
+  deviceIdList?: number[];
+  groupKey?: string;
+  opUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deviceIdList: 'deviceIdList',
+      groupKey: 'groupKey',
+      opUserId: 'opUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deviceIdList: { 'type': 'array', 'itemType': 'number' },
+      groupKey: 'string',
+      opUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AttendanceBleDevicesAddResponseBody extends $tea.Model {
+  errorList?: AttendanceBleDevicesAddResponseBodyErrorList[];
+  successList?: AttendanceBleDevicesAddResponseBodySuccessList[];
+  static names(): { [key: string]: string } {
+    return {
+      errorList: 'errorList',
+      successList: 'successList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      errorList: { 'type': 'array', 'itemType': AttendanceBleDevicesAddResponseBodyErrorList },
+      successList: { 'type': 'array', 'itemType': AttendanceBleDevicesAddResponseBodySuccessList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AttendanceBleDevicesAddResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: AttendanceBleDevicesAddResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: AttendanceBleDevicesAddResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AttendanceBleDevicesQueryHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AttendanceBleDevicesQueryRequest extends $tea.Model {
+  groupKey?: string;
+  opUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      groupKey: 'groupKey',
+      opUserId: 'opUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      groupKey: 'string',
+      opUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AttendanceBleDevicesQueryResponseBody extends $tea.Model {
+  result?: AttendanceBleDevicesQueryResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': AttendanceBleDevicesQueryResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AttendanceBleDevicesQueryResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: AttendanceBleDevicesQueryResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: AttendanceBleDevicesQueryResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AttendanceBleDevicesRemoveHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AttendanceBleDevicesRemoveRequest extends $tea.Model {
+  deviceIdList?: number[];
+  groupKey?: string;
+  opUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deviceIdList: 'deviceIdList',
+      groupKey: 'groupKey',
+      opUserId: 'opUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deviceIdList: { 'type': 'array', 'itemType': 'number' },
+      groupKey: 'string',
+      opUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AttendanceBleDevicesRemoveResponseBody extends $tea.Model {
+  errorList?: AttendanceBleDevicesRemoveResponseBodyErrorList[];
+  successList?: number[];
+  static names(): { [key: string]: string } {
+    return {
+      errorList: 'errorList',
+      successList: 'successList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      errorList: { 'type': 'array', 'itemType': AttendanceBleDevicesRemoveResponseBodyErrorList },
+      successList: { 'type': 'array', 'itemType': 'number' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AttendanceBleDevicesRemoveResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: AttendanceBleDevicesRemoveResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: AttendanceBleDevicesRemoveResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CheckClosingAccountHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CheckClosingAccountRequest extends $tea.Model {
+  bizCode?: string;
+  userIds?: string[];
+  userTimeRange?: CheckClosingAccountRequestUserTimeRange[];
+  static names(): { [key: string]: string } {
+    return {
+      bizCode: 'bizCode',
+      userIds: 'userIds',
+      userTimeRange: 'userTimeRange',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizCode: 'string',
+      userIds: { 'type': 'array', 'itemType': 'string' },
+      userTimeRange: { 'type': 'array', 'itemType': CheckClosingAccountRequestUserTimeRange },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CheckClosingAccountResponseBody extends $tea.Model {
+  code?: string;
+  mesage?: string;
+  pass?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      mesage: 'mesage',
+      pass: 'pass',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      mesage: 'string',
+      pass: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CheckClosingAccountResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CheckClosingAccountResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CheckClosingAccountResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CheckWritePermissionHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CheckWritePermissionRequest extends $tea.Model {
+  category?: string;
+  entityIds?: number[];
+  opUserId?: string;
+  resourceKey?: string;
+  corpId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      category: 'category',
+      entityIds: 'entityIds',
+      opUserId: 'opUserId',
+      resourceKey: 'resourceKey',
+      corpId: 'corpId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      category: 'string',
+      entityIds: { 'type': 'array', 'itemType': 'number' },
+      opUserId: 'string',
+      resourceKey: 'string',
+      corpId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CheckWritePermissionResponseBody extends $tea.Model {
+  entityPermissionMap?: { [key: string]: boolean };
+  static names(): { [key: string]: string } {
+    return {
+      entityPermissionMap: 'entityPermissionMap',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      entityPermissionMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'boolean' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CheckWritePermissionResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CheckWritePermissionResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CheckWritePermissionResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateApproveHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -30,31 +485,31 @@ export class CreateApproveHeaders extends $tea.Model {
 }
 
 export class CreateApproveRequest extends $tea.Model {
-  userid?: string;
-  tagName?: string;
-  subType?: string;
-  punchParam?: CreateApproveRequestPunchParam;
   approveId?: string;
   opUserid?: string;
+  punchParam?: CreateApproveRequestPunchParam;
+  subType?: string;
+  tagName?: string;
+  userid?: string;
   static names(): { [key: string]: string } {
     return {
-      userid: 'userid',
-      tagName: 'tagName',
-      subType: 'subType',
-      punchParam: 'punchParam',
       approveId: 'approveId',
       opUserid: 'opUserid',
+      punchParam: 'punchParam',
+      subType: 'subType',
+      tagName: 'tagName',
+      userid: 'userid',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      userid: 'string',
-      tagName: 'string',
-      subType: 'string',
-      punchParam: CreateApproveRequestPunchParam,
       approveId: 'string',
       opUserid: 'string',
+      punchParam: CreateApproveRequestPunchParam,
+      subType: 'string',
+      tagName: 'string',
+      userid: 'string',
     };
   }
 
@@ -104,7 +559,7 @@ export class CreateApproveResponse extends $tea.Model {
   }
 }
 
-export class CheckClosingAccountHeaders extends $tea.Model {
+export class GetClosingAccountsHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
@@ -126,23 +581,17 @@ export class CheckClosingAccountHeaders extends $tea.Model {
   }
 }
 
-export class CheckClosingAccountRequest extends $tea.Model {
+export class GetClosingAccountsRequest extends $tea.Model {
   userIds?: string[];
-  userTimeRange?: CheckClosingAccountRequestUserTimeRange[];
-  bizCode?: string;
   static names(): { [key: string]: string } {
     return {
       userIds: 'userIds',
-      userTimeRange: 'userTimeRange',
-      bizCode: 'bizCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       userIds: { 'type': 'array', 'itemType': 'string' },
-      userTimeRange: { 'type': 'array', 'itemType': CheckClosingAccountRequestUserTimeRange },
-      bizCode: 'string',
     };
   }
 
@@ -151,23 +600,17 @@ export class CheckClosingAccountRequest extends $tea.Model {
   }
 }
 
-export class CheckClosingAccountResponseBody extends $tea.Model {
-  mesage?: string;
-  code?: string;
-  pass?: boolean;
+export class GetClosingAccountsResponseBody extends $tea.Model {
+  result?: GetClosingAccountsResponseBodyResult[];
   static names(): { [key: string]: string } {
     return {
-      mesage: 'mesage',
-      code: 'code',
-      pass: 'pass',
+      result: 'result',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      mesage: 'string',
-      code: 'string',
-      pass: 'boolean',
+      result: { 'type': 'array', 'itemType': GetClosingAccountsResponseBodyResult },
     };
   }
 
@@ -176,9 +619,9 @@ export class CheckClosingAccountResponseBody extends $tea.Model {
   }
 }
 
-export class CheckClosingAccountResponse extends $tea.Model {
+export class GetClosingAccountsResponse extends $tea.Model {
   headers: { [key: string]: string };
-  body: CheckClosingAccountResponseBody;
+  body: GetClosingAccountsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -189,7 +632,7 @@ export class CheckClosingAccountResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: CheckClosingAccountResponseBody,
+      body: GetClosingAccountsResponseBody,
     };
   }
 
@@ -284,19 +727,19 @@ export class GetMachineUserHeaders extends $tea.Model {
 }
 
 export class GetMachineUserRequest extends $tea.Model {
-  nextToken?: string;
   maxResults?: number;
+  nextToken?: string;
   static names(): { [key: string]: string } {
     return {
-      nextToken: 'nextToken',
       maxResults: 'maxResults',
+      nextToken: 'nextToken',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      nextToken: 'string',
       maxResults: 'number',
+      nextToken: 'string',
     };
   }
 
@@ -434,91 +877,6 @@ export class GetUserHolidaysResponse extends $tea.Model {
   }
 }
 
-export class AttendanceBleDevicesQueryHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class AttendanceBleDevicesQueryRequest extends $tea.Model {
-  opUserId?: string;
-  groupKey?: string;
-  static names(): { [key: string]: string } {
-    return {
-      opUserId: 'opUserId',
-      groupKey: 'groupKey',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      opUserId: 'string',
-      groupKey: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class AttendanceBleDevicesQueryResponseBody extends $tea.Model {
-  result?: AttendanceBleDevicesQueryResponseBodyResult[];
-  static names(): { [key: string]: string } {
-    return {
-      result: 'result',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      result: { 'type': 'array', 'itemType': AttendanceBleDevicesQueryResponseBodyResult },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class AttendanceBleDevicesQueryResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: AttendanceBleDevicesQueryResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: AttendanceBleDevicesQueryResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class SyncScheduleInfoHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -542,19 +900,19 @@ export class SyncScheduleInfoHeaders extends $tea.Model {
 }
 
 export class SyncScheduleInfoRequest extends $tea.Model {
-  scheduleInfos?: SyncScheduleInfoRequestScheduleInfos[];
   opUserId?: string;
+  scheduleInfos?: SyncScheduleInfoRequestScheduleInfos[];
   static names(): { [key: string]: string } {
     return {
-      scheduleInfos: 'scheduleInfos',
       opUserId: 'opUserId',
+      scheduleInfos: 'scheduleInfos',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      scheduleInfos: { 'type': 'array', 'itemType': SyncScheduleInfoRequestScheduleInfos },
       opUserId: 'string',
+      scheduleInfos: { 'type': 'array', 'itemType': SyncScheduleInfoRequestScheduleInfos },
     };
   }
 
@@ -574,662 +932,6 @@ export class SyncScheduleInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class AttendanceBleDevicesAddHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class AttendanceBleDevicesAddRequest extends $tea.Model {
-  opUserId?: string;
-  groupKey?: string;
-  deviceIdList?: number[];
-  static names(): { [key: string]: string } {
-    return {
-      opUserId: 'opUserId',
-      groupKey: 'groupKey',
-      deviceIdList: 'deviceIdList',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      opUserId: 'string',
-      groupKey: 'string',
-      deviceIdList: { 'type': 'array', 'itemType': 'number' },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class AttendanceBleDevicesAddResponseBody extends $tea.Model {
-  errorList?: AttendanceBleDevicesAddResponseBodyErrorList[];
-  successList?: AttendanceBleDevicesAddResponseBodySuccessList[];
-  static names(): { [key: string]: string } {
-    return {
-      errorList: 'errorList',
-      successList: 'successList',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      errorList: { 'type': 'array', 'itemType': AttendanceBleDevicesAddResponseBodyErrorList },
-      successList: { 'type': 'array', 'itemType': AttendanceBleDevicesAddResponseBodySuccessList },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class AttendanceBleDevicesAddResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: AttendanceBleDevicesAddResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: AttendanceBleDevicesAddResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class AttendanceBleDevicesRemoveHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class AttendanceBleDevicesRemoveRequest extends $tea.Model {
-  opUserId?: string;
-  groupKey?: string;
-  deviceIdList?: number[];
-  static names(): { [key: string]: string } {
-    return {
-      opUserId: 'opUserId',
-      groupKey: 'groupKey',
-      deviceIdList: 'deviceIdList',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      opUserId: 'string',
-      groupKey: 'string',
-      deviceIdList: { 'type': 'array', 'itemType': 'number' },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class AttendanceBleDevicesRemoveResponseBody extends $tea.Model {
-  errorList?: AttendanceBleDevicesRemoveResponseBodyErrorList[];
-  successList?: number[];
-  static names(): { [key: string]: string } {
-    return {
-      errorList: 'errorList',
-      successList: 'successList',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      errorList: { 'type': 'array', 'itemType': AttendanceBleDevicesRemoveResponseBodyErrorList },
-      successList: { 'type': 'array', 'itemType': 'number' },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class AttendanceBleDevicesRemoveResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: AttendanceBleDevicesRemoveResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: AttendanceBleDevicesRemoveResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class CheckWritePermissionHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class CheckWritePermissionRequest extends $tea.Model {
-  corpId?: string;
-  opUserId?: string;
-  category?: string;
-  resourceKey?: string;
-  entityIds?: number[];
-  static names(): { [key: string]: string } {
-    return {
-      corpId: 'corpId',
-      opUserId: 'opUserId',
-      category: 'category',
-      resourceKey: 'resourceKey',
-      entityIds: 'entityIds',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      corpId: 'string',
-      opUserId: 'string',
-      category: 'string',
-      resourceKey: 'string',
-      entityIds: { 'type': 'array', 'itemType': 'number' },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class CheckWritePermissionResponseBody extends $tea.Model {
-  entityPermissionMap?: { [key: string]: boolean };
-  static names(): { [key: string]: string } {
-    return {
-      entityPermissionMap: 'entityPermissionMap',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      entityPermissionMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'boolean' },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class CheckWritePermissionResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: CheckWritePermissionResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: CheckWritePermissionResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetClosingAccountsHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetClosingAccountsRequest extends $tea.Model {
-  userIds?: string[];
-  static names(): { [key: string]: string } {
-    return {
-      userIds: 'userIds',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      userIds: { 'type': 'array', 'itemType': 'string' },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetClosingAccountsResponseBody extends $tea.Model {
-  result?: GetClosingAccountsResponseBodyResult[];
-  static names(): { [key: string]: string } {
-    return {
-      result: 'result',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      result: { 'type': 'array', 'itemType': GetClosingAccountsResponseBodyResult },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetClosingAccountsResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: GetClosingAccountsResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: GetClosingAccountsResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class CreateApproveRequestPunchParam extends $tea.Model {
-  punchTime?: number;
-  positionId?: string;
-  positionType?: string;
-  positionName?: string;
-  static names(): { [key: string]: string } {
-    return {
-      punchTime: 'punchTime',
-      positionId: 'positionId',
-      positionType: 'positionType',
-      positionName: 'positionName',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      punchTime: 'number',
-      positionId: 'string',
-      positionType: 'string',
-      positionName: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class CheckClosingAccountRequestUserTimeRange extends $tea.Model {
-  startTime?: number;
-  endTime?: number;
-  static names(): { [key: string]: string } {
-    return {
-      startTime: 'startTime',
-      endTime: 'endTime',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      startTime: 'number',
-      endTime: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetMachineResponseBodyResultMachineBluetoothVO extends $tea.Model {
-  bluetoothValue?: boolean;
-  bluetoothCheckWithFace?: boolean;
-  bluetoothDistanceMode?: string;
-  bluetoothDistanceModeDesc?: string;
-  monitorLocationAbnormal?: boolean;
-  address?: string;
-  longitude?: number;
-  latitude?: number;
-  limitUserDeviceCount?: boolean;
-  userDeviceCount?: number;
-  static names(): { [key: string]: string } {
-    return {
-      bluetoothValue: 'bluetoothValue',
-      bluetoothCheckWithFace: 'bluetoothCheckWithFace',
-      bluetoothDistanceMode: 'bluetoothDistanceMode',
-      bluetoothDistanceModeDesc: 'bluetoothDistanceModeDesc',
-      monitorLocationAbnormal: 'monitorLocationAbnormal',
-      address: 'address',
-      longitude: 'longitude',
-      latitude: 'latitude',
-      limitUserDeviceCount: 'limitUserDeviceCount',
-      userDeviceCount: 'userDeviceCount',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      bluetoothValue: 'boolean',
-      bluetoothCheckWithFace: 'boolean',
-      bluetoothDistanceMode: 'string',
-      bluetoothDistanceModeDesc: 'string',
-      monitorLocationAbnormal: 'boolean',
-      address: 'string',
-      longitude: 'number',
-      latitude: 'number',
-      limitUserDeviceCount: 'boolean',
-      userDeviceCount: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetMachineResponseBodyResult extends $tea.Model {
-  deviceId?: string;
-  devId?: number;
-  deviceName?: string;
-  productName?: string;
-  netStatus?: string;
-  productVersion?: string;
-  deviceSn?: string;
-  maxFace?: number;
-  voiceMode?: number;
-  atmManagerList?: string[];
-  machineBluetoothVO?: GetMachineResponseBodyResultMachineBluetoothVO;
-  static names(): { [key: string]: string } {
-    return {
-      deviceId: 'deviceId',
-      devId: 'devId',
-      deviceName: 'deviceName',
-      productName: 'productName',
-      netStatus: 'netStatus',
-      productVersion: 'productVersion',
-      deviceSn: 'deviceSn',
-      maxFace: 'maxFace',
-      voiceMode: 'voiceMode',
-      atmManagerList: 'atmManagerList',
-      machineBluetoothVO: 'machineBluetoothVO',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      deviceId: 'string',
-      devId: 'number',
-      deviceName: 'string',
-      productName: 'string',
-      netStatus: 'string',
-      productVersion: 'string',
-      deviceSn: 'string',
-      maxFace: 'number',
-      voiceMode: 'number',
-      atmManagerList: { 'type': 'array', 'itemType': 'string' },
-      machineBluetoothVO: GetMachineResponseBodyResultMachineBluetoothVO,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetMachineUserResponseBodyResultUserList extends $tea.Model {
-  userId?: string;
-  name?: string;
-  hasFace?: boolean;
-  static names(): { [key: string]: string } {
-    return {
-      userId: 'userId',
-      name: 'name',
-      hasFace: 'hasFace',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      userId: 'string',
-      name: 'string',
-      hasFace: 'boolean',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetMachineUserResponseBodyResult extends $tea.Model {
-  userList?: GetMachineUserResponseBodyResultUserList[];
-  hasMore?: boolean;
-  nextToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      userList: 'userList',
-      hasMore: 'hasMore',
-      nextToken: 'nextToken',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      userList: { 'type': 'array', 'itemType': GetMachineUserResponseBodyResultUserList },
-      hasMore: 'boolean',
-      nextToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetUserHolidaysResponseBodyResultHolidays extends $tea.Model {
-  workDate?: number;
-  holidayName?: string;
-  holidayType?: string;
-  realWorkDate?: number;
-  static names(): { [key: string]: string } {
-    return {
-      workDate: 'workDate',
-      holidayName: 'holidayName',
-      holidayType: 'holidayType',
-      realWorkDate: 'realWorkDate',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      workDate: 'number',
-      holidayName: 'string',
-      holidayType: 'string',
-      realWorkDate: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetUserHolidaysResponseBodyResult extends $tea.Model {
-  userId?: string;
-  holidays?: GetUserHolidaysResponseBodyResultHolidays[];
-  static names(): { [key: string]: string } {
-    return {
-      userId: 'userId',
-      holidays: 'holidays',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      userId: 'string',
-      holidays: { 'type': 'array', 'itemType': GetUserHolidaysResponseBodyResultHolidays },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class AttendanceBleDevicesQueryResponseBodyResult extends $tea.Model {
-  deviceId?: number;
-  deviceName?: string;
-  sn?: string;
-  static names(): { [key: string]: string } {
-    return {
-      deviceId: 'deviceId',
-      deviceName: 'deviceName',
-      sn: 'sn',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      deviceId: 'number',
-      deviceName: 'string',
-      sn: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class SyncScheduleInfoRequestScheduleInfos extends $tea.Model {
-  planId?: number;
-  wifiKeys?: string[];
-  positionKeys?: string[];
-  retainAttendanceCheck?: boolean;
-  static names(): { [key: string]: string } {
-    return {
-      planId: 'planId',
-      wifiKeys: 'wifiKeys',
-      positionKeys: 'positionKeys',
-      retainAttendanceCheck: 'retainAttendanceCheck',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      planId: 'number',
-      wifiKeys: { 'type': 'array', 'itemType': 'string' },
-      positionKeys: { 'type': 'array', 'itemType': 'string' },
-      retainAttendanceCheck: 'boolean',
     };
   }
 
@@ -1313,6 +1015,31 @@ export class AttendanceBleDevicesAddResponseBodySuccessList extends $tea.Model {
   }
 }
 
+export class AttendanceBleDevicesQueryResponseBodyResult extends $tea.Model {
+  deviceId?: number;
+  deviceName?: string;
+  sn?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deviceId: 'deviceId',
+      deviceName: 'deviceName',
+      sn: 'sn',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deviceId: 'number',
+      deviceName: 'string',
+      sn: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AttendanceBleDevicesRemoveResponseBodyErrorList extends $tea.Model {
   code?: string;
   failureList?: number[];
@@ -1338,21 +1065,71 @@ export class AttendanceBleDevicesRemoveResponseBodyErrorList extends $tea.Model 
   }
 }
 
+export class CheckClosingAccountRequestUserTimeRange extends $tea.Model {
+  endTime?: number;
+  startTime?: number;
+  static names(): { [key: string]: string } {
+    return {
+      endTime: 'endTime',
+      startTime: 'startTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      endTime: 'number',
+      startTime: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateApproveRequestPunchParam extends $tea.Model {
+  positionId?: string;
+  positionName?: string;
+  positionType?: string;
+  punchTime?: number;
+  static names(): { [key: string]: string } {
+    return {
+      positionId: 'positionId',
+      positionName: 'positionName',
+      positionType: 'positionType',
+      punchTime: 'punchTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      positionId: 'string',
+      positionName: 'string',
+      positionType: 'string',
+      punchTime: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetClosingAccountsResponseBodyResultClosingAccountModel extends $tea.Model {
   closingDay?: number;
   closingHourMinutes?: number;
-  startMonth?: number;
-  startDay?: number;
-  endMonth?: number;
   endDay?: number;
+  endMonth?: number;
+  startDay?: number;
+  startMonth?: number;
   static names(): { [key: string]: string } {
     return {
       closingDay: 'closingDay',
       closingHourMinutes: 'closingHourMinutes',
-      startMonth: 'startMonth',
-      startDay: 'startDay',
-      endMonth: 'endMonth',
       endDay: 'endDay',
+      endMonth: 'endMonth',
+      startDay: 'startDay',
+      startMonth: 'startMonth',
     };
   }
 
@@ -1360,10 +1137,10 @@ export class GetClosingAccountsResponseBodyResultClosingAccountModel extends $te
     return {
       closingDay: 'number',
       closingHourMinutes: 'number',
-      startMonth: 'number',
-      startDay: 'number',
-      endMonth: 'number',
       endDay: 'number',
+      endMonth: 'number',
+      startDay: 'number',
+      startMonth: 'number',
     };
   }
 
@@ -1392,25 +1169,248 @@ export class GetClosingAccountsResponseBodyResultUnsealClosingAccountModel exten
 }
 
 export class GetClosingAccountsResponseBodyResult extends $tea.Model {
-  userId?: string;
-  switchOn?: boolean;
   closingAccountModel?: GetClosingAccountsResponseBodyResultClosingAccountModel;
+  switchOn?: boolean;
   unsealClosingAccountModel?: GetClosingAccountsResponseBodyResultUnsealClosingAccountModel;
+  userId?: string;
   static names(): { [key: string]: string } {
     return {
-      userId: 'userId',
-      switchOn: 'switchOn',
       closingAccountModel: 'closingAccountModel',
+      switchOn: 'switchOn',
       unsealClosingAccountModel: 'unsealClosingAccountModel',
+      userId: 'userId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      userId: 'string',
-      switchOn: 'boolean',
       closingAccountModel: GetClosingAccountsResponseBodyResultClosingAccountModel,
+      switchOn: 'boolean',
       unsealClosingAccountModel: GetClosingAccountsResponseBodyResultUnsealClosingAccountModel,
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMachineResponseBodyResultMachineBluetoothVO extends $tea.Model {
+  address?: string;
+  bluetoothCheckWithFace?: boolean;
+  bluetoothDistanceMode?: string;
+  bluetoothDistanceModeDesc?: string;
+  bluetoothValue?: boolean;
+  latitude?: number;
+  limitUserDeviceCount?: boolean;
+  longitude?: number;
+  monitorLocationAbnormal?: boolean;
+  userDeviceCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      address: 'address',
+      bluetoothCheckWithFace: 'bluetoothCheckWithFace',
+      bluetoothDistanceMode: 'bluetoothDistanceMode',
+      bluetoothDistanceModeDesc: 'bluetoothDistanceModeDesc',
+      bluetoothValue: 'bluetoothValue',
+      latitude: 'latitude',
+      limitUserDeviceCount: 'limitUserDeviceCount',
+      longitude: 'longitude',
+      monitorLocationAbnormal: 'monitorLocationAbnormal',
+      userDeviceCount: 'userDeviceCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      address: 'string',
+      bluetoothCheckWithFace: 'boolean',
+      bluetoothDistanceMode: 'string',
+      bluetoothDistanceModeDesc: 'string',
+      bluetoothValue: 'boolean',
+      latitude: 'number',
+      limitUserDeviceCount: 'boolean',
+      longitude: 'number',
+      monitorLocationAbnormal: 'boolean',
+      userDeviceCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMachineResponseBodyResult extends $tea.Model {
+  atmManagerList?: string[];
+  devId?: number;
+  deviceId?: string;
+  deviceName?: string;
+  deviceSn?: string;
+  machineBluetoothVO?: GetMachineResponseBodyResultMachineBluetoothVO;
+  maxFace?: number;
+  netStatus?: string;
+  productName?: string;
+  productVersion?: string;
+  voiceMode?: number;
+  static names(): { [key: string]: string } {
+    return {
+      atmManagerList: 'atmManagerList',
+      devId: 'devId',
+      deviceId: 'deviceId',
+      deviceName: 'deviceName',
+      deviceSn: 'deviceSn',
+      machineBluetoothVO: 'machineBluetoothVO',
+      maxFace: 'maxFace',
+      netStatus: 'netStatus',
+      productName: 'productName',
+      productVersion: 'productVersion',
+      voiceMode: 'voiceMode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      atmManagerList: { 'type': 'array', 'itemType': 'string' },
+      devId: 'number',
+      deviceId: 'string',
+      deviceName: 'string',
+      deviceSn: 'string',
+      machineBluetoothVO: GetMachineResponseBodyResultMachineBluetoothVO,
+      maxFace: 'number',
+      netStatus: 'string',
+      productName: 'string',
+      productVersion: 'string',
+      voiceMode: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMachineUserResponseBodyResultUserList extends $tea.Model {
+  hasFace?: boolean;
+  name?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      hasFace: 'hasFace',
+      name: 'name',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasFace: 'boolean',
+      name: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMachineUserResponseBodyResult extends $tea.Model {
+  hasMore?: boolean;
+  nextToken?: string;
+  userList?: GetMachineUserResponseBodyResultUserList[];
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      nextToken: 'nextToken',
+      userList: 'userList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      nextToken: 'string',
+      userList: { 'type': 'array', 'itemType': GetMachineUserResponseBodyResultUserList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetUserHolidaysResponseBodyResultHolidays extends $tea.Model {
+  holidayName?: string;
+  holidayType?: string;
+  realWorkDate?: number;
+  workDate?: number;
+  static names(): { [key: string]: string } {
+    return {
+      holidayName: 'holidayName',
+      holidayType: 'holidayType',
+      realWorkDate: 'realWorkDate',
+      workDate: 'workDate',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      holidayName: 'string',
+      holidayType: 'string',
+      realWorkDate: 'number',
+      workDate: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetUserHolidaysResponseBodyResult extends $tea.Model {
+  holidays?: GetUserHolidaysResponseBodyResultHolidays[];
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      holidays: 'holidays',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      holidays: { 'type': 'array', 'itemType': GetUserHolidaysResponseBodyResultHolidays },
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncScheduleInfoRequestScheduleInfos extends $tea.Model {
+  planId?: number;
+  positionKeys?: string[];
+  retainAttendanceCheck?: boolean;
+  wifiKeys?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      planId: 'planId',
+      positionKeys: 'positionKeys',
+      retainAttendanceCheck: 'retainAttendanceCheck',
+      wifiKeys: 'wifiKeys',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      planId: 'number',
+      positionKeys: { 'type': 'array', 'itemType': 'string' },
+      retainAttendanceCheck: 'boolean',
+      wifiKeys: { 'type': 'array', 'itemType': 'string' },
     };
   }
 
@@ -1432,37 +1432,25 @@ export default class Client extends OpenApi {
   }
 
 
-  async createApprove(request: CreateApproveRequest): Promise<CreateApproveResponse> {
+  async attendanceBleDevicesAdd(request: AttendanceBleDevicesAddRequest): Promise<AttendanceBleDevicesAddResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateApproveHeaders({ });
-    return await this.createApproveWithOptions(request, headers, runtime);
+    let headers = new AttendanceBleDevicesAddHeaders({ });
+    return await this.attendanceBleDevicesAddWithOptions(request, headers, runtime);
   }
 
-  async createApproveWithOptions(request: CreateApproveRequest, headers: CreateApproveHeaders, runtime: $Util.RuntimeOptions): Promise<CreateApproveResponse> {
+  async attendanceBleDevicesAddWithOptions(request: AttendanceBleDevicesAddRequest, headers: AttendanceBleDevicesAddHeaders, runtime: $Util.RuntimeOptions): Promise<AttendanceBleDevicesAddResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.userid)) {
-      body["userid"] = request.userid;
+    if (!Util.isUnset(request.deviceIdList)) {
+      body["deviceIdList"] = request.deviceIdList;
     }
 
-    if (!Util.isUnset(request.tagName)) {
-      body["tagName"] = request.tagName;
+    if (!Util.isUnset(request.groupKey)) {
+      body["groupKey"] = request.groupKey;
     }
 
-    if (!Util.isUnset(request.subType)) {
-      body["subType"] = request.subType;
-    }
-
-    if (!Util.isUnset($tea.toMap(request.punchParam))) {
-      body["punchParam"] = request.punchParam;
-    }
-
-    if (!Util.isUnset(request.approveId)) {
-      body["approveId"] = request.approveId;
-    }
-
-    if (!Util.isUnset(request.opUserid)) {
-      body["opUserid"] = request.opUserid;
+    if (!Util.isUnset(request.opUserId)) {
+      body["opUserId"] = request.opUserId;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -1471,14 +1459,84 @@ export default class Client extends OpenApi {
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateApproveResponse>(await this.doROARequest("CreateApprove", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/approves`, "json", req, runtime), new CreateApproveResponse({}));
+    return $tea.cast<AttendanceBleDevicesAddResponse>(await this.doROARequest("AttendanceBleDevicesAdd", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/group/bledevices`, "json", req, runtime), new AttendanceBleDevicesAddResponse({}));
+  }
+
+  async attendanceBleDevicesQuery(request: AttendanceBleDevicesQueryRequest): Promise<AttendanceBleDevicesQueryResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AttendanceBleDevicesQueryHeaders({ });
+    return await this.attendanceBleDevicesQueryWithOptions(request, headers, runtime);
+  }
+
+  async attendanceBleDevicesQueryWithOptions(request: AttendanceBleDevicesQueryRequest, headers: AttendanceBleDevicesQueryHeaders, runtime: $Util.RuntimeOptions): Promise<AttendanceBleDevicesQueryResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.groupKey)) {
+      body["groupKey"] = request.groupKey;
+    }
+
+    if (!Util.isUnset(request.opUserId)) {
+      body["opUserId"] = request.opUserId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<AttendanceBleDevicesQueryResponse>(await this.doROARequestWithForm("AttendanceBleDevicesQuery", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/group/bledevices/query`, "json", req, runtime), new AttendanceBleDevicesQueryResponse({}));
+  }
+
+  async attendanceBleDevicesRemove(request: AttendanceBleDevicesRemoveRequest): Promise<AttendanceBleDevicesRemoveResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AttendanceBleDevicesRemoveHeaders({ });
+    return await this.attendanceBleDevicesRemoveWithOptions(request, headers, runtime);
+  }
+
+  async attendanceBleDevicesRemoveWithOptions(request: AttendanceBleDevicesRemoveRequest, headers: AttendanceBleDevicesRemoveHeaders, runtime: $Util.RuntimeOptions): Promise<AttendanceBleDevicesRemoveResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deviceIdList)) {
+      body["deviceIdList"] = request.deviceIdList;
+    }
+
+    if (!Util.isUnset(request.groupKey)) {
+      body["groupKey"] = request.groupKey;
+    }
+
+    if (!Util.isUnset(request.opUserId)) {
+      body["opUserId"] = request.opUserId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<AttendanceBleDevicesRemoveResponse>(await this.doROARequest("AttendanceBleDevicesRemove", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/group/bledevices/remove`, "json", req, runtime), new AttendanceBleDevicesRemoveResponse({}));
   }
 
   async checkClosingAccount(request: CheckClosingAccountRequest): Promise<CheckClosingAccountResponse> {
@@ -1490,6 +1548,10 @@ export default class Client extends OpenApi {
   async checkClosingAccountWithOptions(request: CheckClosingAccountRequest, headers: CheckClosingAccountHeaders, runtime: $Util.RuntimeOptions): Promise<CheckClosingAccountResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizCode)) {
+      body["bizCode"] = request.bizCode;
+    }
+
     if (!Util.isUnset(request.userIds)) {
       body["userIds"] = request.userIds;
     }
@@ -1498,17 +1560,13 @@ export default class Client extends OpenApi {
       body["userTimeRange"] = request.userTimeRange;
     }
 
-    if (!Util.isUnset(request.bizCode)) {
-      body["bizCode"] = request.bizCode;
-    }
-
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({
@@ -1518,6 +1576,131 @@ export default class Client extends OpenApi {
     return $tea.cast<CheckClosingAccountResponse>(await this.doROARequest("CheckClosingAccount", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/closingAccounts/status/query`, "json", req, runtime), new CheckClosingAccountResponse({}));
   }
 
+  async checkWritePermission(request: CheckWritePermissionRequest): Promise<CheckWritePermissionResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CheckWritePermissionHeaders({ });
+    return await this.checkWritePermissionWithOptions(request, headers, runtime);
+  }
+
+  async checkWritePermissionWithOptions(request: CheckWritePermissionRequest, headers: CheckWritePermissionHeaders, runtime: $Util.RuntimeOptions): Promise<CheckWritePermissionResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.corpId)) {
+      query["corpId"] = request.corpId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.category)) {
+      body["category"] = request.category;
+    }
+
+    if (!Util.isUnset(request.entityIds)) {
+      body["entityIds"] = request.entityIds;
+    }
+
+    if (!Util.isUnset(request.opUserId)) {
+      body["opUserId"] = request.opUserId;
+    }
+
+    if (!Util.isUnset(request.resourceKey)) {
+      body["resourceKey"] = request.resourceKey;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CheckWritePermissionResponse>(await this.doROARequest("CheckWritePermission", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/writePermissions/query`, "json", req, runtime), new CheckWritePermissionResponse({}));
+  }
+
+  async createApprove(request: CreateApproveRequest): Promise<CreateApproveResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateApproveHeaders({ });
+    return await this.createApproveWithOptions(request, headers, runtime);
+  }
+
+  async createApproveWithOptions(request: CreateApproveRequest, headers: CreateApproveHeaders, runtime: $Util.RuntimeOptions): Promise<CreateApproveResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.approveId)) {
+      body["approveId"] = request.approveId;
+    }
+
+    if (!Util.isUnset(request.opUserid)) {
+      body["opUserid"] = request.opUserid;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.punchParam))) {
+      body["punchParam"] = request.punchParam;
+    }
+
+    if (!Util.isUnset(request.subType)) {
+      body["subType"] = request.subType;
+    }
+
+    if (!Util.isUnset(request.tagName)) {
+      body["tagName"] = request.tagName;
+    }
+
+    if (!Util.isUnset(request.userid)) {
+      body["userid"] = request.userid;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreateApproveResponse>(await this.doROARequest("CreateApprove", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/approves`, "json", req, runtime), new CreateApproveResponse({}));
+  }
+
+  async getClosingAccounts(request: GetClosingAccountsRequest): Promise<GetClosingAccountsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetClosingAccountsHeaders({ });
+    return await this.getClosingAccountsWithOptions(request, headers, runtime);
+  }
+
+  async getClosingAccountsWithOptions(request: GetClosingAccountsRequest, headers: GetClosingAccountsHeaders, runtime: $Util.RuntimeOptions): Promise<GetClosingAccountsResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.userIds)) {
+      body["userIds"] = request.userIds;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<GetClosingAccountsResponse>(await this.doROARequest("GetClosingAccounts", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/closingAccounts/rules/query`, "json", req, runtime), new GetClosingAccountsResponse({}));
+  }
+
   async getMachine(devId: string): Promise<GetMachineResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetMachineHeaders({ });
@@ -1525,13 +1708,14 @@ export default class Client extends OpenApi {
   }
 
   async getMachineWithOptions(devId: string, headers: GetMachineHeaders, runtime: $Util.RuntimeOptions): Promise<GetMachineResponse> {
+    devId = OpenApiUtil.getEncodeParam(devId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({
@@ -1548,13 +1732,14 @@ export default class Client extends OpenApi {
 
   async getMachineUserWithOptions(devId: string, request: GetMachineUserRequest, headers: GetMachineUserHeaders, runtime: $Util.RuntimeOptions): Promise<GetMachineUserResponse> {
     Util.validateModel(request);
+    devId = OpenApiUtil.getEncodeParam(devId);
     let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.nextToken)) {
-      query["nextToken"] = request.nextToken;
-    }
-
     if (!Util.isUnset(request.maxResults)) {
       query["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -1563,7 +1748,7 @@ export default class Client extends OpenApi {
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({
@@ -1600,7 +1785,7 @@ export default class Client extends OpenApi {
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({
@@ -1608,39 +1793,6 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<GetUserHolidaysResponse>(await this.doROARequest("GetUserHolidays", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/holidays`, "json", req, runtime), new GetUserHolidaysResponse({}));
-  }
-
-  async attendanceBleDevicesQuery(request: AttendanceBleDevicesQueryRequest): Promise<AttendanceBleDevicesQueryResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AttendanceBleDevicesQueryHeaders({ });
-    return await this.attendanceBleDevicesQueryWithOptions(request, headers, runtime);
-  }
-
-  async attendanceBleDevicesQueryWithOptions(request: AttendanceBleDevicesQueryRequest, headers: AttendanceBleDevicesQueryHeaders, runtime: $Util.RuntimeOptions): Promise<AttendanceBleDevicesQueryResponse> {
-    Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.opUserId)) {
-      body["opUserId"] = request.opUserId;
-    }
-
-    if (!Util.isUnset(request.groupKey)) {
-      body["groupKey"] = request.groupKey;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<AttendanceBleDevicesQueryResponse>(await this.doROARequestWithForm("AttendanceBleDevicesQuery", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/group/bledevices/query`, "json", req, runtime), new AttendanceBleDevicesQueryResponse({}));
   }
 
   async syncScheduleInfo(request: SyncScheduleInfoRequest): Promise<SyncScheduleInfoResponse> {
@@ -1652,12 +1804,12 @@ export default class Client extends OpenApi {
   async syncScheduleInfoWithOptions(request: SyncScheduleInfoRequest, headers: SyncScheduleInfoHeaders, runtime: $Util.RuntimeOptions): Promise<SyncScheduleInfoResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.scheduleInfos)) {
-      body["scheduleInfos"] = request.scheduleInfos;
-    }
-
     if (!Util.isUnset(request.opUserId)) {
       body["opUserId"] = request.opUserId;
+    }
+
+    if (!Util.isUnset(request.scheduleInfos)) {
+      body["scheduleInfos"] = request.scheduleInfos;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -1666,7 +1818,7 @@ export default class Client extends OpenApi {
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({
@@ -1674,156 +1826,6 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<SyncScheduleInfoResponse>(await this.doROARequest("SyncScheduleInfo", "attendance_1.0", "HTTP", "PUT", "AK", `/v1.0/attendance/schedules/additionalInfo`, "none", req, runtime), new SyncScheduleInfoResponse({}));
-  }
-
-  async attendanceBleDevicesAdd(request: AttendanceBleDevicesAddRequest): Promise<AttendanceBleDevicesAddResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AttendanceBleDevicesAddHeaders({ });
-    return await this.attendanceBleDevicesAddWithOptions(request, headers, runtime);
-  }
-
-  async attendanceBleDevicesAddWithOptions(request: AttendanceBleDevicesAddRequest, headers: AttendanceBleDevicesAddHeaders, runtime: $Util.RuntimeOptions): Promise<AttendanceBleDevicesAddResponse> {
-    Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.opUserId)) {
-      body["opUserId"] = request.opUserId;
-    }
-
-    if (!Util.isUnset(request.groupKey)) {
-      body["groupKey"] = request.groupKey;
-    }
-
-    if (!Util.isUnset(request.deviceIdList)) {
-      body["deviceIdList"] = request.deviceIdList;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<AttendanceBleDevicesAddResponse>(await this.doROARequest("AttendanceBleDevicesAdd", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/group/bledevices`, "json", req, runtime), new AttendanceBleDevicesAddResponse({}));
-  }
-
-  async attendanceBleDevicesRemove(request: AttendanceBleDevicesRemoveRequest): Promise<AttendanceBleDevicesRemoveResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AttendanceBleDevicesRemoveHeaders({ });
-    return await this.attendanceBleDevicesRemoveWithOptions(request, headers, runtime);
-  }
-
-  async attendanceBleDevicesRemoveWithOptions(request: AttendanceBleDevicesRemoveRequest, headers: AttendanceBleDevicesRemoveHeaders, runtime: $Util.RuntimeOptions): Promise<AttendanceBleDevicesRemoveResponse> {
-    Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.opUserId)) {
-      body["opUserId"] = request.opUserId;
-    }
-
-    if (!Util.isUnset(request.groupKey)) {
-      body["groupKey"] = request.groupKey;
-    }
-
-    if (!Util.isUnset(request.deviceIdList)) {
-      body["deviceIdList"] = request.deviceIdList;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<AttendanceBleDevicesRemoveResponse>(await this.doROARequest("AttendanceBleDevicesRemove", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/group/bledevices/remove`, "json", req, runtime), new AttendanceBleDevicesRemoveResponse({}));
-  }
-
-  async checkWritePermission(request: CheckWritePermissionRequest): Promise<CheckWritePermissionResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CheckWritePermissionHeaders({ });
-    return await this.checkWritePermissionWithOptions(request, headers, runtime);
-  }
-
-  async checkWritePermissionWithOptions(request: CheckWritePermissionRequest, headers: CheckWritePermissionHeaders, runtime: $Util.RuntimeOptions): Promise<CheckWritePermissionResponse> {
-    Util.validateModel(request);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.corpId)) {
-      query["corpId"] = request.corpId;
-    }
-
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.opUserId)) {
-      body["opUserId"] = request.opUserId;
-    }
-
-    if (!Util.isUnset(request.category)) {
-      body["category"] = request.category;
-    }
-
-    if (!Util.isUnset(request.resourceKey)) {
-      body["resourceKey"] = request.resourceKey;
-    }
-
-    if (!Util.isUnset(request.entityIds)) {
-      body["entityIds"] = request.entityIds;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      query: OpenApiUtil.query(query),
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<CheckWritePermissionResponse>(await this.doROARequest("CheckWritePermission", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/writePermissions/query`, "json", req, runtime), new CheckWritePermissionResponse({}));
-  }
-
-  async getClosingAccounts(request: GetClosingAccountsRequest): Promise<GetClosingAccountsResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetClosingAccountsHeaders({ });
-    return await this.getClosingAccountsWithOptions(request, headers, runtime);
-  }
-
-  async getClosingAccountsWithOptions(request: GetClosingAccountsRequest, headers: GetClosingAccountsHeaders, runtime: $Util.RuntimeOptions): Promise<GetClosingAccountsResponse> {
-    Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.userIds)) {
-      body["userIds"] = request.userIds;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<GetClosingAccountsResponse>(await this.doROARequest("GetClosingAccounts", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/closingAccounts/rules/query`, "json", req, runtime), new GetClosingAccountsResponse({}));
   }
 
 }

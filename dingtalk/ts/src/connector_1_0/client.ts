@@ -30,34 +30,34 @@ export class PullDataByPageHeaders extends $tea.Model {
 }
 
 export class PullDataByPageRequest extends $tea.Model {
+  appId?: string;
   dataModelId?: string;
   datetimeFilterField?: string;
-  minDatetime?: number;
   maxDatetime?: number;
-  nextToken?: string;
   maxResults?: number;
-  appId?: string;
+  minDatetime?: number;
+  nextToken?: string;
   static names(): { [key: string]: string } {
     return {
+      appId: 'appId',
       dataModelId: 'dataModelId',
       datetimeFilterField: 'datetimeFilterField',
-      minDatetime: 'minDatetime',
       maxDatetime: 'maxDatetime',
-      nextToken: 'nextToken',
       maxResults: 'maxResults',
-      appId: 'appId',
+      minDatetime: 'minDatetime',
+      nextToken: 'nextToken',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      appId: 'string',
       dataModelId: 'string',
       datetimeFilterField: 'string',
-      minDatetime: 'number',
       maxDatetime: 'number',
-      nextToken: 'string',
       maxResults: 'number',
-      appId: 'string',
+      minDatetime: 'number',
+      nextToken: 'string',
     };
   }
 
@@ -68,21 +68,21 @@ export class PullDataByPageRequest extends $tea.Model {
 
 export class PullDataByPageResponseBody extends $tea.Model {
   list?: PullDataByPageResponseBodyList[];
-  nextToken?: string;
   maxResults?: number;
+  nextToken?: string;
   static names(): { [key: string]: string } {
     return {
       list: 'list',
-      nextToken: 'nextToken',
       maxResults: 'maxResults',
+      nextToken: 'nextToken',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       list: { 'type': 'array', 'itemType': PullDataByPageResponseBodyList },
-      nextToken: 'string',
       maxResults: 'number',
+      nextToken: 'string',
     };
   }
 
@@ -136,19 +136,19 @@ export class PullDataByPkHeaders extends $tea.Model {
 }
 
 export class PullDataByPkRequest extends $tea.Model {
-  primaryKey?: string;
   appId?: string;
+  primaryKey?: string;
   static names(): { [key: string]: string } {
     return {
-      primaryKey: 'primaryKey',
       appId: 'appId',
+      primaryKey: 'primaryKey',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      primaryKey: 'string',
       appId: 'string',
+      primaryKey: 'string',
     };
   }
 
@@ -158,33 +158,33 @@ export class PullDataByPkRequest extends $tea.Model {
 }
 
 export class PullDataByPkResponseBody extends $tea.Model {
+  dataCreateAppId?: string;
+  dataCreateAppType?: string;
   dataGmtCreate?: number;
   dataGmtModified?: number;
-  dataCreateAppType?: string;
-  dataCreateAppId?: string;
-  dataModifiedAppType?: string;
   dataModifiedAppId?: string;
+  dataModifiedAppType?: string;
   jsonData?: string;
   static names(): { [key: string]: string } {
     return {
+      dataCreateAppId: 'dataCreateAppId',
+      dataCreateAppType: 'dataCreateAppType',
       dataGmtCreate: 'dataGmtCreate',
       dataGmtModified: 'dataGmtModified',
-      dataCreateAppType: 'dataCreateAppType',
-      dataCreateAppId: 'dataCreateAppId',
-      dataModifiedAppType: 'dataModifiedAppType',
       dataModifiedAppId: 'dataModifiedAppId',
+      dataModifiedAppType: 'dataModifiedAppType',
       jsonData: 'jsonData',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      dataCreateAppId: 'string',
+      dataCreateAppType: 'string',
       dataGmtCreate: 'number',
       dataGmtModified: 'number',
-      dataCreateAppType: 'string',
-      dataCreateAppId: 'string',
-      dataModifiedAppType: 'string',
       dataModifiedAppId: 'string',
+      dataModifiedAppType: 'string',
       jsonData: 'string',
     };
   }
@@ -239,19 +239,19 @@ export class SyncDataHeaders extends $tea.Model {
 }
 
 export class SyncDataRequest extends $tea.Model {
-  triggerDataList?: SyncDataRequestTriggerDataList[];
   appId?: string;
+  triggerDataList?: SyncDataRequestTriggerDataList[];
   static names(): { [key: string]: string } {
     return {
-      triggerDataList: 'triggerDataList',
       appId: 'appId',
+      triggerDataList: 'triggerDataList',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      triggerDataList: { 'type': 'array', 'itemType': SyncDataRequestTriggerDataList },
       appId: 'string',
+      triggerDataList: { 'type': 'array', 'itemType': SyncDataRequestTriggerDataList },
     };
   }
 
@@ -302,33 +302,33 @@ export class SyncDataResponse extends $tea.Model {
 }
 
 export class PullDataByPageResponseBodyList extends $tea.Model {
+  dataCreateAppId?: string;
+  dataCreateAppType?: string;
   dataGmtCreate?: number;
   dataGmtModified?: number;
-  dataCreateAppType?: string;
-  dataCreateAppId?: string;
-  dataModifiedAppType?: string;
   dataModifiedAppId?: string;
+  dataModifiedAppType?: string;
   jsonData?: string;
   static names(): { [key: string]: string } {
     return {
+      dataCreateAppId: 'dataCreateAppId',
+      dataCreateAppType: 'dataCreateAppType',
       dataGmtCreate: 'dataGmtCreate',
       dataGmtModified: 'dataGmtModified',
-      dataCreateAppType: 'dataCreateAppType',
-      dataCreateAppId: 'dataCreateAppId',
-      dataModifiedAppType: 'dataModifiedAppType',
       dataModifiedAppId: 'dataModifiedAppId',
+      dataModifiedAppType: 'dataModifiedAppType',
       jsonData: 'jsonData',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      dataCreateAppId: 'string',
+      dataCreateAppType: 'string',
       dataGmtCreate: 'number',
       dataGmtModified: 'number',
-      dataCreateAppType: 'string',
-      dataCreateAppId: 'string',
-      dataModifiedAppType: 'string',
       dataModifiedAppId: 'string',
+      dataModifiedAppType: 'string',
       jsonData: 'string',
     };
   }
@@ -339,31 +339,31 @@ export class PullDataByPageResponseBodyList extends $tea.Model {
 }
 
 export class SyncDataRequestTriggerDataList extends $tea.Model {
-  triggerId?: string;
+  action?: string;
   customTriggerId?: string;
-  jsonData?: string;
   dataGmtCreate?: number;
   dataGmtModified?: number;
-  action?: string;
+  jsonData?: string;
+  triggerId?: string;
   static names(): { [key: string]: string } {
     return {
-      triggerId: 'triggerId',
+      action: 'action',
       customTriggerId: 'customTriggerId',
-      jsonData: 'jsonData',
       dataGmtCreate: 'dataGmtCreate',
       dataGmtModified: 'dataGmtModified',
-      action: 'action',
+      jsonData: 'jsonData',
+      triggerId: 'triggerId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      triggerId: 'string',
+      action: 'string',
       customTriggerId: 'string',
-      jsonData: 'string',
       dataGmtCreate: 'number',
       dataGmtModified: 'number',
-      action: 'string',
+      jsonData: 'string',
+      triggerId: 'string',
     };
   }
 
@@ -373,28 +373,28 @@ export class SyncDataRequestTriggerDataList extends $tea.Model {
 }
 
 export class SyncDataResponseBodyList extends $tea.Model {
-  triggerId?: string;
   bizPrimaryKey?: string;
-  success?: boolean;
   subErrCode?: string;
   subErrMsg?: string;
+  success?: boolean;
+  triggerId?: string;
   static names(): { [key: string]: string } {
     return {
-      triggerId: 'triggerId',
       bizPrimaryKey: 'bizPrimaryKey',
-      success: 'success',
       subErrCode: 'subErrCode',
       subErrMsg: 'subErrMsg',
+      success: 'success',
+      triggerId: 'triggerId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      triggerId: 'string',
       bizPrimaryKey: 'string',
-      success: 'boolean',
       subErrCode: 'string',
       subErrMsg: 'string',
+      success: 'boolean',
+      triggerId: 'string',
     };
   }
 
@@ -425,6 +425,10 @@ export default class Client extends OpenApi {
   async pullDataByPageWithOptions(request: PullDataByPageRequest, headers: PullDataByPageHeaders, runtime: $Util.RuntimeOptions): Promise<PullDataByPageResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appId)) {
+      query["appId"] = request.appId;
+    }
+
     if (!Util.isUnset(request.dataModelId)) {
       query["dataModelId"] = request.dataModelId;
     }
@@ -433,24 +437,20 @@ export default class Client extends OpenApi {
       query["datetimeFilterField"] = request.datetimeFilterField;
     }
 
-    if (!Util.isUnset(request.minDatetime)) {
-      query["minDatetime"] = request.minDatetime;
-    }
-
     if (!Util.isUnset(request.maxDatetime)) {
       query["maxDatetime"] = request.maxDatetime;
-    }
-
-    if (!Util.isUnset(request.nextToken)) {
-      query["nextToken"] = request.nextToken;
     }
 
     if (!Util.isUnset(request.maxResults)) {
       query["maxResults"] = request.maxResults;
     }
 
-    if (!Util.isUnset(request.appId)) {
-      query["appId"] = request.appId;
+    if (!Util.isUnset(request.minDatetime)) {
+      query["minDatetime"] = request.minDatetime;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -459,7 +459,7 @@ export default class Client extends OpenApi {
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({
@@ -477,13 +477,14 @@ export default class Client extends OpenApi {
 
   async pullDataByPkWithOptions(dataModelId: string, request: PullDataByPkRequest, headers: PullDataByPkHeaders, runtime: $Util.RuntimeOptions): Promise<PullDataByPkResponse> {
     Util.validateModel(request);
+    dataModelId = OpenApiUtil.getEncodeParam(dataModelId);
     let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.primaryKey)) {
-      query["primaryKey"] = request.primaryKey;
-    }
-
     if (!Util.isUnset(request.appId)) {
       query["appId"] = request.appId;
+    }
+
+    if (!Util.isUnset(request.primaryKey)) {
+      query["primaryKey"] = request.primaryKey;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -492,7 +493,7 @@ export default class Client extends OpenApi {
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({
@@ -511,12 +512,12 @@ export default class Client extends OpenApi {
   async syncDataWithOptions(request: SyncDataRequest, headers: SyncDataHeaders, runtime: $Util.RuntimeOptions): Promise<SyncDataResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.triggerDataList)) {
-      body["triggerDataList"] = request.triggerDataList;
-    }
-
     if (!Util.isUnset(request.appId)) {
       body["appId"] = request.appId;
+    }
+
+    if (!Util.isUnset(request.triggerDataList)) {
+      body["triggerDataList"] = request.triggerDataList;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -525,7 +526,7 @@ export default class Client extends OpenApi {
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({

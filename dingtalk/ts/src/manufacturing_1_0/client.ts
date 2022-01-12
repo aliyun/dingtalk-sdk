@@ -8,73 +8,73 @@ import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
 export class IndustrializeManufactureJobBookRequest extends $tea.Model {
-  scrappedQuantity?: string;
+  dingCorpId?: string;
+  extend?: string;
+  instNo?: string;
+  isBatchJob?: string;
+  manufactureDate?: string;
+  mesAppKey?: string;
+  processEnName?: string;
+  processName?: string;
+  productCode?: string;
+  productEnName?: string;
+  productName?: string;
   productSpecification?: string;
   qualifiedQuantity?: string;
   reworkableQuantity?: string;
-  userName?: string;
-  uuid?: string;
-  productName?: string;
-  productEnName?: string;
-  extend?: string;
-  productCode?: string;
-  processName?: string;
-  processEnName?: string;
-  mesAppKey?: string;
-  instNo?: string;
-  manufactureDate?: string;
-  dingCorpId?: string;
-  isBatchJob?: string;
-  userNameList?: string;
-  userIdList?: string;
+  scrappedQuantity?: string;
   unitPrice?: string;
+  userIdList?: string;
+  userName?: string;
+  userNameList?: string;
+  uuid?: string;
   static names(): { [key: string]: string } {
     return {
-      scrappedQuantity: 'scrappedQuantity',
+      dingCorpId: 'dingCorpId',
+      extend: 'extend',
+      instNo: 'instNo',
+      isBatchJob: 'isBatchJob',
+      manufactureDate: 'manufactureDate',
+      mesAppKey: 'mesAppKey',
+      processEnName: 'processEnName',
+      processName: 'processName',
+      productCode: 'productCode',
+      productEnName: 'productEnName',
+      productName: 'productName',
       productSpecification: 'productSpecification',
       qualifiedQuantity: 'qualifiedQuantity',
       reworkableQuantity: 'reworkableQuantity',
-      userName: 'userName',
-      uuid: 'uuid',
-      productName: 'productName',
-      productEnName: 'productEnName',
-      extend: 'extend',
-      productCode: 'productCode',
-      processName: 'processName',
-      processEnName: 'processEnName',
-      mesAppKey: 'mesAppKey',
-      instNo: 'instNo',
-      manufactureDate: 'manufactureDate',
-      dingCorpId: 'dingCorpId',
-      isBatchJob: 'isBatchJob',
-      userNameList: 'userNameList',
-      userIdList: 'userIdList',
+      scrappedQuantity: 'scrappedQuantity',
       unitPrice: 'unitPrice',
+      userIdList: 'userIdList',
+      userName: 'userName',
+      userNameList: 'userNameList',
+      uuid: 'uuid',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      scrappedQuantity: 'string',
+      dingCorpId: 'string',
+      extend: 'string',
+      instNo: 'string',
+      isBatchJob: 'string',
+      manufactureDate: 'string',
+      mesAppKey: 'string',
+      processEnName: 'string',
+      processName: 'string',
+      productCode: 'string',
+      productEnName: 'string',
+      productName: 'string',
       productSpecification: 'string',
       qualifiedQuantity: 'string',
       reworkableQuantity: 'string',
-      userName: 'string',
-      uuid: 'string',
-      productName: 'string',
-      productEnName: 'string',
-      extend: 'string',
-      productCode: 'string',
-      processName: 'string',
-      processEnName: 'string',
-      mesAppKey: 'string',
-      instNo: 'string',
-      manufactureDate: 'string',
-      dingCorpId: 'string',
-      isBatchJob: 'string',
-      userNameList: 'string',
-      userIdList: 'string',
+      scrappedQuantity: 'string',
       unitPrice: 'string',
+      userIdList: 'string',
+      userName: 'string',
+      userNameList: 'string',
+      uuid: 'string',
     };
   }
 
@@ -84,34 +84,34 @@ export class IndustrializeManufactureJobBookRequest extends $tea.Model {
 }
 
 export class IndustrializeManufactureJobBookResponseBody extends $tea.Model {
-  httpCode?: string;
-  uuid?: string;
   content?: string;
-  errorMsg?: string;
-  errorLevel?: number;
   errorCode?: string;
+  errorLevel?: number;
+  errorMsg?: string;
+  httpCode?: string;
   success?: boolean;
+  uuid?: string;
   static names(): { [key: string]: string } {
     return {
-      httpCode: 'httpCode',
-      uuid: 'uuid',
       content: 'content',
-      errorMsg: 'errorMsg',
-      errorLevel: 'errorLevel',
       errorCode: 'errorCode',
+      errorLevel: 'errorLevel',
+      errorMsg: 'errorMsg',
+      httpCode: 'httpCode',
       success: 'success',
+      uuid: 'uuid',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      httpCode: 'string',
-      uuid: 'string',
       content: 'string',
-      errorMsg: 'string',
-      errorLevel: 'number',
       errorCode: 'string',
+      errorLevel: 'number',
+      errorMsg: 'string',
+      httpCode: 'string',
       success: 'boolean',
+      uuid: 'string',
     };
   }
 
@@ -165,52 +165,52 @@ export class IndustrializeManufactureQueryJobsHeaders extends $tea.Model {
 }
 
 export class IndustrializeManufactureQueryJobsRequest extends $tea.Model {
-  productName?: string;
-  pageSize?: number;
-  qualifiedQuantity?: string;
-  manufactureDay?: string;
-  instNo?: string;
-  userName?: string;
-  productCode?: string;
-  productSpecification?: string;
-  unitPrice?: string;
-  uuid?: string;
   currentPage?: number;
-  userId?: string;
+  instNo?: string;
+  manufactureDay?: string;
   mesAppKey?: string;
+  pageSize?: number;
+  productCode?: string;
+  productName?: string;
+  productSpecification?: string;
+  qualifiedQuantity?: string;
+  unitPrice?: string;
+  userId?: string;
+  userName?: string;
+  uuid?: string;
   static names(): { [key: string]: string } {
     return {
-      productName: 'productName',
-      pageSize: 'pageSize',
-      qualifiedQuantity: 'qualifiedQuantity',
-      manufactureDay: 'manufactureDay',
-      instNo: 'instNo',
-      userName: 'userName',
-      productCode: 'productCode',
-      productSpecification: 'productSpecification',
-      unitPrice: 'unitPrice',
-      uuid: 'uuid',
       currentPage: 'currentPage',
-      userId: 'userId',
+      instNo: 'instNo',
+      manufactureDay: 'manufactureDay',
       mesAppKey: 'mesAppKey',
+      pageSize: 'pageSize',
+      productCode: 'productCode',
+      productName: 'productName',
+      productSpecification: 'productSpecification',
+      qualifiedQuantity: 'qualifiedQuantity',
+      unitPrice: 'unitPrice',
+      userId: 'userId',
+      userName: 'userName',
+      uuid: 'uuid',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      productName: 'string',
-      pageSize: 'number',
-      qualifiedQuantity: 'string',
-      manufactureDay: 'string',
-      instNo: 'string',
-      userName: 'string',
-      productCode: 'string',
-      productSpecification: 'string',
-      unitPrice: 'string',
-      uuid: 'string',
       currentPage: 'number',
-      userId: 'string',
+      instNo: 'string',
+      manufactureDay: 'string',
       mesAppKey: 'string',
+      pageSize: 'number',
+      productCode: 'string',
+      productName: 'string',
+      productSpecification: 'string',
+      qualifiedQuantity: 'string',
+      unitPrice: 'string',
+      userId: 'string',
+      userName: 'string',
+      uuid: 'string',
     };
   }
 
@@ -220,19 +220,19 @@ export class IndustrializeManufactureQueryJobsRequest extends $tea.Model {
 }
 
 export class IndustrializeManufactureQueryJobsResponseBody extends $tea.Model {
-  httpCode?: string;
   content?: string;
+  httpCode?: string;
   static names(): { [key: string]: string } {
     return {
-      httpCode: 'httpCode',
       content: 'content',
+      httpCode: 'httpCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      httpCode: 'string',
       content: 'string',
+      httpCode: 'string',
     };
   }
 
@@ -284,9 +284,50 @@ export default class Client extends OpenApi {
 
   async industrializeManufactureJobBookWithOptions(userId: string, request: IndustrializeManufactureJobBookRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<IndustrializeManufactureJobBookResponse> {
     Util.validateModel(request);
+    userId = OpenApiUtil.getEncodeParam(userId);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.scrappedQuantity)) {
-      body["scrappedQuantity"] = request.scrappedQuantity;
+    if (!Util.isUnset(request.dingCorpId)) {
+      body["dingCorpId"] = request.dingCorpId;
+    }
+
+    if (!Util.isUnset(request.extend)) {
+      body["extend"] = request.extend;
+    }
+
+    if (!Util.isUnset(request.instNo)) {
+      body["instNo"] = request.instNo;
+    }
+
+    if (!Util.isUnset(request.isBatchJob)) {
+      body["isBatchJob"] = request.isBatchJob;
+    }
+
+    if (!Util.isUnset(request.manufactureDate)) {
+      body["manufactureDate"] = request.manufactureDate;
+    }
+
+    if (!Util.isUnset(request.mesAppKey)) {
+      body["mesAppKey"] = request.mesAppKey;
+    }
+
+    if (!Util.isUnset(request.processEnName)) {
+      body["processEnName"] = request.processEnName;
+    }
+
+    if (!Util.isUnset(request.processName)) {
+      body["processName"] = request.processName;
+    }
+
+    if (!Util.isUnset(request.productCode)) {
+      body["productCode"] = request.productCode;
+    }
+
+    if (!Util.isUnset(request.productEnName)) {
+      body["productEnName"] = request.productEnName;
+    }
+
+    if (!Util.isUnset(request.productName)) {
+      body["productName"] = request.productName;
     }
 
     if (!Util.isUnset(request.productSpecification)) {
@@ -301,68 +342,28 @@ export default class Client extends OpenApi {
       body["reworkableQuantity"] = request.reworkableQuantity;
     }
 
-    if (!Util.isUnset(request.userName)) {
-      body["userName"] = request.userName;
+    if (!Util.isUnset(request.scrappedQuantity)) {
+      body["scrappedQuantity"] = request.scrappedQuantity;
     }
 
-    if (!Util.isUnset(request.uuid)) {
-      body["uuid"] = request.uuid;
-    }
-
-    if (!Util.isUnset(request.productName)) {
-      body["productName"] = request.productName;
-    }
-
-    if (!Util.isUnset(request.productEnName)) {
-      body["productEnName"] = request.productEnName;
-    }
-
-    if (!Util.isUnset(request.extend)) {
-      body["extend"] = request.extend;
-    }
-
-    if (!Util.isUnset(request.productCode)) {
-      body["productCode"] = request.productCode;
-    }
-
-    if (!Util.isUnset(request.processName)) {
-      body["processName"] = request.processName;
-    }
-
-    if (!Util.isUnset(request.processEnName)) {
-      body["processEnName"] = request.processEnName;
-    }
-
-    if (!Util.isUnset(request.mesAppKey)) {
-      body["mesAppKey"] = request.mesAppKey;
-    }
-
-    if (!Util.isUnset(request.instNo)) {
-      body["instNo"] = request.instNo;
-    }
-
-    if (!Util.isUnset(request.manufactureDate)) {
-      body["manufactureDate"] = request.manufactureDate;
-    }
-
-    if (!Util.isUnset(request.dingCorpId)) {
-      body["dingCorpId"] = request.dingCorpId;
-    }
-
-    if (!Util.isUnset(request.isBatchJob)) {
-      body["isBatchJob"] = request.isBatchJob;
-    }
-
-    if (!Util.isUnset(request.userNameList)) {
-      body["userNameList"] = request.userNameList;
+    if (!Util.isUnset(request.unitPrice)) {
+      body["unitPrice"] = request.unitPrice;
     }
 
     if (!Util.isUnset(request.userIdList)) {
       body["userIdList"] = request.userIdList;
     }
 
-    if (!Util.isUnset(request.unitPrice)) {
-      body["unitPrice"] = request.unitPrice;
+    if (!Util.isUnset(request.userName)) {
+      body["userName"] = request.userName;
+    }
+
+    if (!Util.isUnset(request.userNameList)) {
+      body["userNameList"] = request.userNameList;
+    }
+
+    if (!Util.isUnset(request.uuid)) {
+      body["uuid"] = request.uuid;
     }
 
     let req = new $OpenApi.OpenApiRequest({
@@ -381,56 +382,56 @@ export default class Client extends OpenApi {
   async industrializeManufactureQueryJobsWithOptions(request: IndustrializeManufactureQueryJobsRequest, headers: IndustrializeManufactureQueryJobsHeaders, runtime: $Util.RuntimeOptions): Promise<IndustrializeManufactureQueryJobsResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.productName)) {
-      body["productName"] = request.productName;
-    }
-
-    if (!Util.isUnset(request.pageSize)) {
-      body["pageSize"] = request.pageSize;
-    }
-
-    if (!Util.isUnset(request.qualifiedQuantity)) {
-      body["qualifiedQuantity"] = request.qualifiedQuantity;
-    }
-
-    if (!Util.isUnset(request.manufactureDay)) {
-      body["manufactureDay"] = request.manufactureDay;
+    if (!Util.isUnset(request.currentPage)) {
+      body["currentPage"] = request.currentPage;
     }
 
     if (!Util.isUnset(request.instNo)) {
       body["instNo"] = request.instNo;
     }
 
-    if (!Util.isUnset(request.userName)) {
-      body["userName"] = request.userName;
+    if (!Util.isUnset(request.manufactureDay)) {
+      body["manufactureDay"] = request.manufactureDay;
+    }
+
+    if (!Util.isUnset(request.mesAppKey)) {
+      body["mesAppKey"] = request.mesAppKey;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      body["pageSize"] = request.pageSize;
     }
 
     if (!Util.isUnset(request.productCode)) {
       body["productCode"] = request.productCode;
     }
 
+    if (!Util.isUnset(request.productName)) {
+      body["productName"] = request.productName;
+    }
+
     if (!Util.isUnset(request.productSpecification)) {
       body["productSpecification"] = request.productSpecification;
+    }
+
+    if (!Util.isUnset(request.qualifiedQuantity)) {
+      body["qualifiedQuantity"] = request.qualifiedQuantity;
     }
 
     if (!Util.isUnset(request.unitPrice)) {
       body["unitPrice"] = request.unitPrice;
     }
 
-    if (!Util.isUnset(request.uuid)) {
-      body["uuid"] = request.uuid;
-    }
-
-    if (!Util.isUnset(request.currentPage)) {
-      body["currentPage"] = request.currentPage;
-    }
-
     if (!Util.isUnset(request.userId)) {
       body["userId"] = request.userId;
     }
 
-    if (!Util.isUnset(request.mesAppKey)) {
-      body["mesAppKey"] = request.mesAppKey;
+    if (!Util.isUnset(request.userName)) {
+      body["userName"] = request.userName;
+    }
+
+    if (!Util.isUnset(request.uuid)) {
+      body["uuid"] = request.uuid;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -439,7 +440,7 @@ export default class Client extends OpenApi {
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({

@@ -92,318 +92,6 @@ export class BatchDeleteDeviceResponse extends $tea.Model {
   }
 }
 
-export class PushEventHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class PushEventRequest extends $tea.Model {
-  corpId?: string;
-  eventId?: string;
-  eventType?: string;
-  eventName?: string;
-  occurrenceTime?: number;
-  deviceId?: string;
-  location?: string;
-  msg?: string;
-  picUrls?: string[];
-  extraData?: { [key: string]: any };
-  static names(): { [key: string]: string } {
-    return {
-      corpId: 'corpId',
-      eventId: 'eventId',
-      eventType: 'eventType',
-      eventName: 'eventName',
-      occurrenceTime: 'occurrenceTime',
-      deviceId: 'deviceId',
-      location: 'location',
-      msg: 'msg',
-      picUrls: 'picUrls',
-      extraData: 'extraData',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      corpId: 'string',
-      eventId: 'string',
-      eventType: 'string',
-      eventName: 'string',
-      occurrenceTime: 'number',
-      deviceId: 'string',
-      location: 'string',
-      msg: 'string',
-      picUrls: { 'type': 'array', 'itemType': 'string' },
-      extraData: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class PushEventResponseBody extends $tea.Model {
-  eventId?: string;
-  static names(): { [key: string]: string } {
-    return {
-      eventId: 'eventId',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      eventId: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class PushEventResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: PushEventResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: PushEventResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class DeviceConferenceHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class DeviceConferenceRequest extends $tea.Model {
-  confTitle?: string;
-  conferenceId?: string;
-  conferencePassword?: string;
-  deviceIds?: string[];
-  static names(): { [key: string]: string } {
-    return {
-      confTitle: 'confTitle',
-      conferenceId: 'conferenceId',
-      conferencePassword: 'conferencePassword',
-      deviceIds: 'deviceIds',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      confTitle: 'string',
-      conferenceId: 'string',
-      conferencePassword: 'string',
-      deviceIds: { 'type': 'array', 'itemType': 'string' },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class DeviceConferenceResponseBody extends $tea.Model {
-  conferenceId?: string;
-  static names(): { [key: string]: string } {
-    return {
-      conferenceId: 'conferenceId',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      conferenceId: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class DeviceConferenceResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: DeviceConferenceResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: DeviceConferenceResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class RegisterDeviceHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class RegisterDeviceRequest extends $tea.Model {
-  corpId?: string;
-  id?: string;
-  deviceName?: string;
-  nickName?: string;
-  location?: string;
-  deviceStatus?: number;
-  deviceType?: string;
-  deviceTypeName?: string;
-  parentId?: string;
-  productType?: string;
-  liveUrl?: string;
-  static names(): { [key: string]: string } {
-    return {
-      corpId: 'corpId',
-      id: 'id',
-      deviceName: 'deviceName',
-      nickName: 'nickName',
-      location: 'location',
-      deviceStatus: 'deviceStatus',
-      deviceType: 'deviceType',
-      deviceTypeName: 'deviceTypeName',
-      parentId: 'parentId',
-      productType: 'productType',
-      liveUrl: 'liveUrl',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      corpId: 'string',
-      id: 'string',
-      deviceName: 'string',
-      nickName: 'string',
-      location: 'string',
-      deviceStatus: 'number',
-      deviceType: 'string',
-      deviceTypeName: 'string',
-      parentId: 'string',
-      productType: 'string',
-      liveUrl: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class RegisterDeviceResponseBody extends $tea.Model {
-  deviceId?: string;
-  static names(): { [key: string]: string } {
-    return {
-      deviceId: 'deviceId',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      deviceId: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class RegisterDeviceResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: RegisterDeviceResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: RegisterDeviceResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class BatchRegisterDeviceHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -682,27 +370,27 @@ export class BindSystemHeaders extends $tea.Model {
 }
 
 export class BindSystemRequest extends $tea.Model {
-  corpId?: string;
   authCode?: string;
   clientId?: string;
   clientName?: string;
+  corpId?: string;
   extraData?: { [key: string]: any };
   static names(): { [key: string]: string } {
     return {
-      corpId: 'corpId',
       authCode: 'authCode',
       clientId: 'clientId',
       clientName: 'clientName',
+      corpId: 'corpId',
       extraData: 'extraData',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      corpId: 'string',
       authCode: 'string',
       clientId: 'string',
       clientName: 'string',
+      corpId: 'string',
       extraData: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
     };
   }
@@ -713,19 +401,19 @@ export class BindSystemRequest extends $tea.Model {
 }
 
 export class BindSystemResponseBody extends $tea.Model {
-  corpId?: string;
   clientId?: string;
+  corpId?: string;
   static names(): { [key: string]: string } {
     return {
-      corpId: 'corpId',
       clientId: 'clientId',
+      corpId: 'corpId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      corpId: 'string',
       clientId: 'string',
+      corpId: 'string',
     };
   }
 
@@ -756,17 +444,329 @@ export class BindSystemResponse extends $tea.Model {
   }
 }
 
+export class DeviceConferenceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeviceConferenceRequest extends $tea.Model {
+  confTitle?: string;
+  conferenceId?: string;
+  conferencePassword?: string;
+  deviceIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      confTitle: 'confTitle',
+      conferenceId: 'conferenceId',
+      conferencePassword: 'conferencePassword',
+      deviceIds: 'deviceIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      confTitle: 'string',
+      conferenceId: 'string',
+      conferencePassword: 'string',
+      deviceIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeviceConferenceResponseBody extends $tea.Model {
+  conferenceId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      conferenceId: 'conferenceId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      conferenceId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeviceConferenceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: DeviceConferenceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: DeviceConferenceResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PushEventHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PushEventRequest extends $tea.Model {
+  corpId?: string;
+  deviceId?: string;
+  eventId?: string;
+  eventName?: string;
+  eventType?: string;
+  extraData?: { [key: string]: any };
+  location?: string;
+  msg?: string;
+  occurrenceTime?: number;
+  picUrls?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      deviceId: 'deviceId',
+      eventId: 'eventId',
+      eventName: 'eventName',
+      eventType: 'eventType',
+      extraData: 'extraData',
+      location: 'location',
+      msg: 'msg',
+      occurrenceTime: 'occurrenceTime',
+      picUrls: 'picUrls',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      deviceId: 'string',
+      eventId: 'string',
+      eventName: 'string',
+      eventType: 'string',
+      extraData: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      location: 'string',
+      msg: 'string',
+      occurrenceTime: 'number',
+      picUrls: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PushEventResponseBody extends $tea.Model {
+  eventId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      eventId: 'eventId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      eventId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PushEventResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: PushEventResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: PushEventResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RegisterDeviceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RegisterDeviceRequest extends $tea.Model {
+  corpId?: string;
+  deviceName?: string;
+  deviceStatus?: number;
+  deviceType?: string;
+  deviceTypeName?: string;
+  id?: string;
+  liveUrl?: string;
+  location?: string;
+  nickName?: string;
+  parentId?: string;
+  productType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      deviceName: 'deviceName',
+      deviceStatus: 'deviceStatus',
+      deviceType: 'deviceType',
+      deviceTypeName: 'deviceTypeName',
+      id: 'id',
+      liveUrl: 'liveUrl',
+      location: 'location',
+      nickName: 'nickName',
+      parentId: 'parentId',
+      productType: 'productType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      deviceName: 'string',
+      deviceStatus: 'number',
+      deviceType: 'string',
+      deviceTypeName: 'string',
+      id: 'string',
+      liveUrl: 'string',
+      location: 'string',
+      nickName: 'string',
+      parentId: 'string',
+      productType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RegisterDeviceResponseBody extends $tea.Model {
+  deviceId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deviceId: 'deviceId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deviceId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RegisterDeviceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: RegisterDeviceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: RegisterDeviceResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BatchRegisterDeviceRequestDevices extends $tea.Model {
   deviceId?: string;
   deviceName?: string;
   deviceStatus?: number;
   deviceType?: string;
   deviceTypeName?: string;
-  productType?: string;
-  liveUrl?: string;
-  parentId?: string;
-  location?: string;
   extraData?: { [key: string]: any };
+  liveUrl?: string;
+  location?: string;
+  parentId?: string;
+  productType?: string;
   static names(): { [key: string]: string } {
     return {
       deviceId: 'deviceId',
@@ -774,11 +774,11 @@ export class BatchRegisterDeviceRequestDevices extends $tea.Model {
       deviceStatus: 'deviceStatus',
       deviceType: 'deviceType',
       deviceTypeName: 'deviceTypeName',
-      productType: 'productType',
-      liveUrl: 'liveUrl',
-      parentId: 'parentId',
-      location: 'location',
       extraData: 'extraData',
+      liveUrl: 'liveUrl',
+      location: 'location',
+      parentId: 'parentId',
+      productType: 'productType',
     };
   }
 
@@ -789,11 +789,11 @@ export class BatchRegisterDeviceRequestDevices extends $tea.Model {
       deviceStatus: 'number',
       deviceType: 'string',
       deviceTypeName: 'string',
-      productType: 'string',
-      liveUrl: 'string',
-      parentId: 'string',
-      location: 'string',
       extraData: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      liveUrl: 'string',
+      location: 'string',
+      parentId: 'string',
+      productType: 'string',
     };
   }
 
@@ -827,18 +827,18 @@ export class BatchRegisterEventTypeRequestEventTypes extends $tea.Model {
 export class BatchUpdateDeviceRequestDevices extends $tea.Model {
   deviceId?: string;
   deviceName?: string;
-  location?: string;
   deviceStatus?: number;
-  liveUrl?: string;
   extraData?: { [key: string]: any };
+  liveUrl?: string;
+  location?: string;
   static names(): { [key: string]: string } {
     return {
       deviceId: 'deviceId',
       deviceName: 'deviceName',
-      location: 'location',
       deviceStatus: 'deviceStatus',
-      liveUrl: 'liveUrl',
       extraData: 'extraData',
+      liveUrl: 'liveUrl',
+      location: 'location',
     };
   }
 
@@ -846,10 +846,10 @@ export class BatchUpdateDeviceRequestDevices extends $tea.Model {
     return {
       deviceId: 'string',
       deviceName: 'string',
-      location: 'string',
       deviceStatus: 'number',
-      liveUrl: 'string',
       extraData: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      liveUrl: 'string',
+      location: 'string',
     };
   }
 
@@ -894,7 +894,7 @@ export default class Client extends OpenApi {
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({
@@ -904,49 +904,128 @@ export default class Client extends OpenApi {
     return $tea.cast<BatchDeleteDeviceResponse>(await this.doROARequest("BatchDeleteDevice", "diot_1.0", "HTTP", "POST", "AK", `/v1.0/diot/devices/remove`, "json", req, runtime), new BatchDeleteDeviceResponse({}));
   }
 
-  async pushEvent(request: PushEventRequest): Promise<PushEventResponse> {
+  async batchRegisterDevice(request: BatchRegisterDeviceRequest): Promise<BatchRegisterDeviceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new PushEventHeaders({ });
-    return await this.pushEventWithOptions(request, headers, runtime);
+    let headers = new BatchRegisterDeviceHeaders({ });
+    return await this.batchRegisterDeviceWithOptions(request, headers, runtime);
   }
 
-  async pushEventWithOptions(request: PushEventRequest, headers: PushEventHeaders, runtime: $Util.RuntimeOptions): Promise<PushEventResponse> {
+  async batchRegisterDeviceWithOptions(request: BatchRegisterDeviceRequest, headers: BatchRegisterDeviceHeaders, runtime: $Util.RuntimeOptions): Promise<BatchRegisterDeviceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.corpId)) {
       body["corpId"] = request.corpId;
     }
 
-    if (!Util.isUnset(request.eventId)) {
-      body["eventId"] = request.eventId;
+    if (!Util.isUnset(request.devices)) {
+      body["devices"] = request.devices;
     }
 
-    if (!Util.isUnset(request.eventType)) {
-      body["eventType"] = request.eventType;
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
     }
 
-    if (!Util.isUnset(request.eventName)) {
-      body["eventName"] = request.eventName;
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
-    if (!Util.isUnset(request.occurrenceTime)) {
-      body["occurrenceTime"] = request.occurrenceTime;
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<BatchRegisterDeviceResponse>(await this.doROARequest("BatchRegisterDevice", "diot_1.0", "HTTP", "POST", "AK", `/v1.0/diot/devices/registrations/batch`, "json", req, runtime), new BatchRegisterDeviceResponse({}));
+  }
+
+  async batchRegisterEventType(request: BatchRegisterEventTypeRequest): Promise<BatchRegisterEventTypeResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BatchRegisterEventTypeHeaders({ });
+    return await this.batchRegisterEventTypeWithOptions(request, headers, runtime);
+  }
+
+  async batchRegisterEventTypeWithOptions(request: BatchRegisterEventTypeRequest, headers: BatchRegisterEventTypeHeaders, runtime: $Util.RuntimeOptions): Promise<BatchRegisterEventTypeResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.corpId)) {
+      body["corpId"] = request.corpId;
     }
 
-    if (!Util.isUnset(request.deviceId)) {
-      body["deviceId"] = request.deviceId;
+    if (!Util.isUnset(request.eventTypes)) {
+      body["eventTypes"] = request.eventTypes;
     }
 
-    if (!Util.isUnset(request.location)) {
-      body["location"] = request.location;
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
     }
 
-    if (!Util.isUnset(request.msg)) {
-      body["msg"] = request.msg;
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
-    if (!Util.isUnset(request.picUrls)) {
-      body["picUrls"] = request.picUrls;
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<BatchRegisterEventTypeResponse>(await this.doROARequest("BatchRegisterEventType", "diot_1.0", "HTTP", "POST", "AK", `/v1.0/diot/eventTypes/registrations/batch`, "json", req, runtime), new BatchRegisterEventTypeResponse({}));
+  }
+
+  async batchUpdateDevice(request: BatchUpdateDeviceRequest): Promise<BatchUpdateDeviceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BatchUpdateDeviceHeaders({ });
+    return await this.batchUpdateDeviceWithOptions(request, headers, runtime);
+  }
+
+  async batchUpdateDeviceWithOptions(request: BatchUpdateDeviceRequest, headers: BatchUpdateDeviceHeaders, runtime: $Util.RuntimeOptions): Promise<BatchUpdateDeviceResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.corpId)) {
+      body["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.devices)) {
+      body["devices"] = request.devices;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<BatchUpdateDeviceResponse>(await this.doROARequest("BatchUpdateDevice", "diot_1.0", "HTTP", "PUT", "AK", `/v1.0/diot/devices/batch`, "json", req, runtime), new BatchUpdateDeviceResponse({}));
+  }
+
+  async bindSystem(request: BindSystemRequest): Promise<BindSystemResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BindSystemHeaders({ });
+    return await this.bindSystemWithOptions(request, headers, runtime);
+  }
+
+  async bindSystemWithOptions(request: BindSystemRequest, headers: BindSystemHeaders, runtime: $Util.RuntimeOptions): Promise<BindSystemResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.authCode)) {
+      body["authCode"] = request.authCode;
+    }
+
+    if (!Util.isUnset(request.clientId)) {
+      body["clientId"] = request.clientId;
+    }
+
+    if (!Util.isUnset(request.clientName)) {
+      body["clientName"] = request.clientName;
+    }
+
+    if (!Util.isUnset(request.corpId)) {
+      body["corpId"] = request.corpId;
     }
 
     if (!Util.isUnset(request.extraData)) {
@@ -959,14 +1038,14 @@ export default class Client extends OpenApi {
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<PushEventResponse>(await this.doROARequest("PushEvent", "diot_1.0", "HTTP", "POST", "AK", `/v1.0/diot/events/push`, "json", req, runtime), new PushEventResponse({}));
+    return $tea.cast<BindSystemResponse>(await this.doROARequest("BindSystem", "diot_1.0", "HTTP", "POST", "AK", `/v1.0/diot/systems/bind`, "json", req, runtime), new BindSystemResponse({}));
   }
 
   async deviceConference(request: DeviceConferenceRequest): Promise<DeviceConferenceResponse> {
@@ -1000,7 +1079,7 @@ export default class Client extends OpenApi {
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({
@@ -1008,6 +1087,71 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<DeviceConferenceResponse>(await this.doROARequest("DeviceConference", "diot_1.0", "HTTP", "POST", "AK", `/v1.0/diot/deviceConferences/initiate`, "json", req, runtime), new DeviceConferenceResponse({}));
+  }
+
+  async pushEvent(request: PushEventRequest): Promise<PushEventResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PushEventHeaders({ });
+    return await this.pushEventWithOptions(request, headers, runtime);
+  }
+
+  async pushEventWithOptions(request: PushEventRequest, headers: PushEventHeaders, runtime: $Util.RuntimeOptions): Promise<PushEventResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.corpId)) {
+      body["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.deviceId)) {
+      body["deviceId"] = request.deviceId;
+    }
+
+    if (!Util.isUnset(request.eventId)) {
+      body["eventId"] = request.eventId;
+    }
+
+    if (!Util.isUnset(request.eventName)) {
+      body["eventName"] = request.eventName;
+    }
+
+    if (!Util.isUnset(request.eventType)) {
+      body["eventType"] = request.eventType;
+    }
+
+    if (!Util.isUnset(request.extraData)) {
+      body["extraData"] = request.extraData;
+    }
+
+    if (!Util.isUnset(request.location)) {
+      body["location"] = request.location;
+    }
+
+    if (!Util.isUnset(request.msg)) {
+      body["msg"] = request.msg;
+    }
+
+    if (!Util.isUnset(request.occurrenceTime)) {
+      body["occurrenceTime"] = request.occurrenceTime;
+    }
+
+    if (!Util.isUnset(request.picUrls)) {
+      body["picUrls"] = request.picUrls;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<PushEventResponse>(await this.doROARequest("PushEvent", "diot_1.0", "HTTP", "POST", "AK", `/v1.0/diot/events/push`, "json", req, runtime), new PushEventResponse({}));
   }
 
   async registerDevice(request: RegisterDeviceRequest): Promise<RegisterDeviceResponse> {
@@ -1023,20 +1167,8 @@ export default class Client extends OpenApi {
       body["corpId"] = request.corpId;
     }
 
-    if (!Util.isUnset(request.id)) {
-      body["id"] = request.id;
-    }
-
     if (!Util.isUnset(request.deviceName)) {
       body["deviceName"] = request.deviceName;
-    }
-
-    if (!Util.isUnset(request.nickName)) {
-      body["nickName"] = request.nickName;
-    }
-
-    if (!Util.isUnset(request.location)) {
-      body["location"] = request.location;
     }
 
     if (!Util.isUnset(request.deviceStatus)) {
@@ -1051,6 +1183,22 @@ export default class Client extends OpenApi {
       body["deviceTypeName"] = request.deviceTypeName;
     }
 
+    if (!Util.isUnset(request.id)) {
+      body["id"] = request.id;
+    }
+
+    if (!Util.isUnset(request.liveUrl)) {
+      body["liveUrl"] = request.liveUrl;
+    }
+
+    if (!Util.isUnset(request.location)) {
+      body["location"] = request.location;
+    }
+
+    if (!Util.isUnset(request.nickName)) {
+      body["nickName"] = request.nickName;
+    }
+
     if (!Util.isUnset(request.parentId)) {
       body["parentId"] = request.parentId;
     }
@@ -1059,17 +1207,13 @@ export default class Client extends OpenApi {
       body["productType"] = request.productType;
     }
 
-    if (!Util.isUnset(request.liveUrl)) {
-      body["liveUrl"] = request.liveUrl;
-    }
-
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({
@@ -1077,150 +1221,6 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<RegisterDeviceResponse>(await this.doROARequest("RegisterDevice", "diot_1.0", "HTTP", "POST", "AK", `/v1.0/diot/devices/register`, "json", req, runtime), new RegisterDeviceResponse({}));
-  }
-
-  async batchRegisterDevice(request: BatchRegisterDeviceRequest): Promise<BatchRegisterDeviceResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BatchRegisterDeviceHeaders({ });
-    return await this.batchRegisterDeviceWithOptions(request, headers, runtime);
-  }
-
-  async batchRegisterDeviceWithOptions(request: BatchRegisterDeviceRequest, headers: BatchRegisterDeviceHeaders, runtime: $Util.RuntimeOptions): Promise<BatchRegisterDeviceResponse> {
-    Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.corpId)) {
-      body["corpId"] = request.corpId;
-    }
-
-    if (!Util.isUnset(request.devices)) {
-      body["devices"] = request.devices;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<BatchRegisterDeviceResponse>(await this.doROARequest("BatchRegisterDevice", "diot_1.0", "HTTP", "POST", "AK", `/v1.0/diot/devices/registrations/batch`, "json", req, runtime), new BatchRegisterDeviceResponse({}));
-  }
-
-  async batchRegisterEventType(request: BatchRegisterEventTypeRequest): Promise<BatchRegisterEventTypeResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BatchRegisterEventTypeHeaders({ });
-    return await this.batchRegisterEventTypeWithOptions(request, headers, runtime);
-  }
-
-  async batchRegisterEventTypeWithOptions(request: BatchRegisterEventTypeRequest, headers: BatchRegisterEventTypeHeaders, runtime: $Util.RuntimeOptions): Promise<BatchRegisterEventTypeResponse> {
-    Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.corpId)) {
-      body["corpId"] = request.corpId;
-    }
-
-    if (!Util.isUnset(request.eventTypes)) {
-      body["eventTypes"] = request.eventTypes;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<BatchRegisterEventTypeResponse>(await this.doROARequest("BatchRegisterEventType", "diot_1.0", "HTTP", "POST", "AK", `/v1.0/diot/eventTypes/registrations/batch`, "json", req, runtime), new BatchRegisterEventTypeResponse({}));
-  }
-
-  async batchUpdateDevice(request: BatchUpdateDeviceRequest): Promise<BatchUpdateDeviceResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BatchUpdateDeviceHeaders({ });
-    return await this.batchUpdateDeviceWithOptions(request, headers, runtime);
-  }
-
-  async batchUpdateDeviceWithOptions(request: BatchUpdateDeviceRequest, headers: BatchUpdateDeviceHeaders, runtime: $Util.RuntimeOptions): Promise<BatchUpdateDeviceResponse> {
-    Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.corpId)) {
-      body["corpId"] = request.corpId;
-    }
-
-    if (!Util.isUnset(request.devices)) {
-      body["devices"] = request.devices;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<BatchUpdateDeviceResponse>(await this.doROARequest("BatchUpdateDevice", "diot_1.0", "HTTP", "PUT", "AK", `/v1.0/diot/devices/batch`, "json", req, runtime), new BatchUpdateDeviceResponse({}));
-  }
-
-  async bindSystem(request: BindSystemRequest): Promise<BindSystemResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BindSystemHeaders({ });
-    return await this.bindSystemWithOptions(request, headers, runtime);
-  }
-
-  async bindSystemWithOptions(request: BindSystemRequest, headers: BindSystemHeaders, runtime: $Util.RuntimeOptions): Promise<BindSystemResponse> {
-    Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.corpId)) {
-      body["corpId"] = request.corpId;
-    }
-
-    if (!Util.isUnset(request.authCode)) {
-      body["authCode"] = request.authCode;
-    }
-
-    if (!Util.isUnset(request.clientId)) {
-      body["clientId"] = request.clientId;
-    }
-
-    if (!Util.isUnset(request.clientName)) {
-      body["clientName"] = request.clientName;
-    }
-
-    if (!Util.isUnset(request.extraData)) {
-      body["extraData"] = request.extraData;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<BindSystemResponse>(await this.doROARequest("BindSystem", "diot_1.0", "HTTP", "POST", "AK", `/v1.0/diot/systems/bind`, "json", req, runtime), new BindSystemResponse({}));
   }
 
 }

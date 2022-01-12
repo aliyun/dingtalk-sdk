@@ -7,106 +7,6 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
-export class GetTbProjectGrayHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  dingAccessTokenType?: string;
-  dingSuiteKey?: string;
-  dingIsvOrgId?: string;
-  dingOrgId?: string;
-  dingCorpId?: string;
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      dingAccessTokenType: 'dingAccessTokenType',
-      dingSuiteKey: 'dingSuiteKey',
-      dingIsvOrgId: 'dingIsvOrgId',
-      dingOrgId: 'dingOrgId',
-      dingCorpId: 'dingCorpId',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      dingAccessTokenType: 'string',
-      dingSuiteKey: 'string',
-      dingIsvOrgId: 'string',
-      dingOrgId: 'string',
-      dingCorpId: 'string',
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetTbProjectGrayRequest extends $tea.Model {
-  label?: string;
-  static names(): { [key: string]: string } {
-    return {
-      label: 'label',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      label: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetTbProjectGrayResponseBody extends $tea.Model {
-  result?: boolean;
-  requestId?: string;
-  static names(): { [key: string]: string } {
-    return {
-      result: 'result',
-      requestId: 'requestId',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      result: 'boolean',
-      requestId: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetTbProjectGrayResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: GetTbProjectGrayResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: GetTbProjectGrayResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class GetDeptsByOrgIdHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   dingAccessTokenType?: string;
@@ -160,14 +60,14 @@ export class GetDeptsByOrgIdRequest extends $tea.Model {
 export class GetDeptsByOrgIdResponseBody extends $tea.Model {
   deptList?: GetDeptsByOrgIdResponseBodyDeptList[];
   hasMore?: boolean;
-  nextToken?: number;
   maxResults?: number;
+  nextToken?: number;
   static names(): { [key: string]: string } {
     return {
       deptList: 'deptList',
       hasMore: 'hasMore',
-      nextToken: 'nextToken',
       maxResults: 'maxResults',
+      nextToken: 'nextToken',
     };
   }
 
@@ -175,8 +75,8 @@ export class GetDeptsByOrgIdResponseBody extends $tea.Model {
     return {
       deptList: { 'type': 'array', 'itemType': GetDeptsByOrgIdResponseBodyDeptList },
       hasMore: 'boolean',
-      nextToken: 'number',
       maxResults: 'number',
+      nextToken: 'number',
     };
   }
 
@@ -199,84 +99,6 @@ export class GetDeptsByOrgIdResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: GetDeptsByOrgIdResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetTbProjectSourceHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  dingOrgId?: string;
-  dingIsvOrgId?: string;
-  dingCorpId?: string;
-  dingSuiteKey?: string;
-  dingAccessTokenType?: string;
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      dingOrgId: 'dingOrgId',
-      dingIsvOrgId: 'dingIsvOrgId',
-      dingCorpId: 'dingCorpId',
-      dingSuiteKey: 'dingSuiteKey',
-      dingAccessTokenType: 'dingAccessTokenType',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      dingOrgId: 'string',
-      dingIsvOrgId: 'string',
-      dingCorpId: 'string',
-      dingSuiteKey: 'string',
-      dingAccessTokenType: 'string',
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetTbProjectSourceResponseBody extends $tea.Model {
-  installSource?: string;
-  static names(): { [key: string]: string } {
-    return {
-      installSource: 'installSource',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      installSource: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetTbProjectSourceResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: GetTbProjectSourceResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: GetTbProjectSourceResponseBody,
     };
   }
 
@@ -314,22 +136,22 @@ export class GetEmpsByOrgIdHeaders extends $tea.Model {
 }
 
 export class GetEmpsByOrgIdRequest extends $tea.Model {
-  nextToken?: number;
   maxResults?: number;
   needDept?: boolean;
+  nextToken?: number;
   static names(): { [key: string]: string } {
     return {
-      nextToken: 'nextToken',
       maxResults: 'maxResults',
       needDept: 'needDept',
+      nextToken: 'nextToken',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      nextToken: 'number',
       maxResults: 'number',
       needDept: 'boolean',
+      nextToken: 'number',
     };
   }
 
@@ -385,23 +207,201 @@ export class GetEmpsByOrgIdResponse extends $tea.Model {
   }
 }
 
+export class GetTbProjectGrayHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  dingAccessTokenType?: string;
+  dingCorpId?: string;
+  dingIsvOrgId?: string;
+  dingOrgId?: string;
+  dingSuiteKey?: string;
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      dingAccessTokenType: 'dingAccessTokenType',
+      dingCorpId: 'dingCorpId',
+      dingIsvOrgId: 'dingIsvOrgId',
+      dingOrgId: 'dingOrgId',
+      dingSuiteKey: 'dingSuiteKey',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      dingAccessTokenType: 'string',
+      dingCorpId: 'string',
+      dingIsvOrgId: 'string',
+      dingOrgId: 'string',
+      dingSuiteKey: 'string',
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTbProjectGrayRequest extends $tea.Model {
+  label?: string;
+  static names(): { [key: string]: string } {
+    return {
+      label: 'label',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      label: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTbProjectGrayResponseBody extends $tea.Model {
+  requestId?: string;
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      requestId: 'requestId',
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      requestId: 'string',
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTbProjectGrayResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetTbProjectGrayResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetTbProjectGrayResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTbProjectSourceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  dingAccessTokenType?: string;
+  dingCorpId?: string;
+  dingIsvOrgId?: string;
+  dingOrgId?: string;
+  dingSuiteKey?: string;
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      dingAccessTokenType: 'dingAccessTokenType',
+      dingCorpId: 'dingCorpId',
+      dingIsvOrgId: 'dingIsvOrgId',
+      dingOrgId: 'dingOrgId',
+      dingSuiteKey: 'dingSuiteKey',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      dingAccessTokenType: 'string',
+      dingCorpId: 'string',
+      dingIsvOrgId: 'string',
+      dingOrgId: 'string',
+      dingSuiteKey: 'string',
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTbProjectSourceResponseBody extends $tea.Model {
+  installSource?: string;
+  static names(): { [key: string]: string } {
+    return {
+      installSource: 'installSource',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      installSource: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTbProjectSourceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetTbProjectSourceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetTbProjectSourceResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetDeptsByOrgIdResponseBodyDeptList extends $tea.Model {
   deptId?: number;
-  parentId?: number;
   name?: string;
+  parentId?: number;
   static names(): { [key: string]: string } {
     return {
       deptId: 'dept_id',
-      parentId: 'parent_id',
       name: 'name',
+      parentId: 'parent_id',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       deptId: 'number',
-      parentId: 'number',
       name: 'string',
+      parentId: 'number',
     };
   }
 
@@ -411,40 +411,40 @@ export class GetDeptsByOrgIdResponseBodyDeptList extends $tea.Model {
 }
 
 export class GetEmpsByOrgIdResponseBodyEmpList extends $tea.Model {
-  dingId?: string;
-  unionid?: string;
-  name?: string;
-  nick?: string;
-  userid?: string;
-  orgId?: number;
   avatar?: string;
   deptIdList?: number[];
+  dingId?: string;
+  name?: string;
+  nick?: string;
+  orgId?: number;
   position?: string;
+  unionid?: string;
+  userid?: string;
   static names(): { [key: string]: string } {
     return {
-      dingId: 'dingId',
-      unionid: 'unionid',
-      name: 'name',
-      nick: 'nick',
-      userid: 'userid',
-      orgId: 'orgId',
       avatar: 'avatar',
       deptIdList: 'dept_id_list',
+      dingId: 'dingId',
+      name: 'name',
+      nick: 'nick',
+      orgId: 'orgId',
       position: 'position',
+      unionid: 'unionid',
+      userid: 'userid',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      dingId: 'string',
-      unionid: 'string',
-      name: 'string',
-      nick: 'string',
-      userid: 'string',
-      orgId: 'number',
       avatar: 'string',
       deptIdList: { 'type': 'array', 'itemType': 'number' },
+      dingId: 'string',
+      name: 'string',
+      nick: 'string',
+      orgId: 'number',
       position: 'string',
+      unionid: 'string',
+      userid: 'string',
     };
   }
 
@@ -465,55 +465,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async getTbProjectGray(request: GetTbProjectGrayRequest): Promise<GetTbProjectGrayResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetTbProjectGrayHeaders({ });
-    return await this.getTbProjectGrayWithOptions(request, headers, runtime);
-  }
-
-  async getTbProjectGrayWithOptions(request: GetTbProjectGrayRequest, headers: GetTbProjectGrayHeaders, runtime: $Util.RuntimeOptions): Promise<GetTbProjectGrayResponse> {
-    Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.label)) {
-      body["label"] = request.label;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.dingAccessTokenType)) {
-      realHeaders["dingAccessTokenType"] = headers.dingAccessTokenType;
-    }
-
-    if (!Util.isUnset(headers.dingSuiteKey)) {
-      realHeaders["dingSuiteKey"] = headers.dingSuiteKey;
-    }
-
-    if (!Util.isUnset(headers.dingIsvOrgId)) {
-      realHeaders["dingIsvOrgId"] = headers.dingIsvOrgId;
-    }
-
-    if (!Util.isUnset(headers.dingOrgId)) {
-      realHeaders["dingOrgId"] = headers.dingOrgId;
-    }
-
-    if (!Util.isUnset(headers.dingCorpId)) {
-      realHeaders["dingCorpId"] = headers.dingCorpId;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<GetTbProjectGrayResponse>(await this.doROARequest("GetTbProjectGray", "project_1.0", "HTTP", "POST", "AK", `/v1.0/project/projects/gray`, "json", req, runtime), new GetTbProjectGrayResponse({}));
-  }
 
   async getDeptsByOrgId(request: GetDeptsByOrgIdRequest): Promise<GetDeptsByOrgIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -538,15 +489,15 @@ export default class Client extends OpenApi {
     }
 
     if (!Util.isUnset(headers.dingAccessTokenType)) {
-      realHeaders["dingAccessTokenType"] = headers.dingAccessTokenType;
+      realHeaders["dingAccessTokenType"] = Util.toJSONString(headers.dingAccessTokenType);
     }
 
     if (!Util.isUnset(headers.dingOrgId)) {
-      realHeaders["dingOrgId"] = headers.dingOrgId;
+      realHeaders["dingOrgId"] = Util.toJSONString(headers.dingOrgId);
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({
@@ -554,6 +505,100 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<GetDeptsByOrgIdResponse>(await this.doROARequest("GetDeptsByOrgId", "project_1.0", "HTTP", "GET", "AK", `/v1.0/project/orgs/depts`, "json", req, runtime), new GetDeptsByOrgIdResponse({}));
+  }
+
+  async getEmpsByOrgId(request: GetEmpsByOrgIdRequest): Promise<GetEmpsByOrgIdResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetEmpsByOrgIdHeaders({ });
+    return await this.getEmpsByOrgIdWithOptions(request, headers, runtime);
+  }
+
+  async getEmpsByOrgIdWithOptions(request: GetEmpsByOrgIdRequest, headers: GetEmpsByOrgIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetEmpsByOrgIdResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.needDept)) {
+      query["needDept"] = request.needDept;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.dingAccessTokenType)) {
+      realHeaders["dingAccessTokenType"] = Util.toJSONString(headers.dingAccessTokenType);
+    }
+
+    if (!Util.isUnset(headers.dingOrgId)) {
+      realHeaders["dingOrgId"] = Util.toJSONString(headers.dingOrgId);
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetEmpsByOrgIdResponse>(await this.doROARequest("GetEmpsByOrgId", "project_1.0", "HTTP", "GET", "AK", `/v1.0/project/orgs/employees`, "json", req, runtime), new GetEmpsByOrgIdResponse({}));
+  }
+
+  async getTbProjectGray(request: GetTbProjectGrayRequest): Promise<GetTbProjectGrayResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetTbProjectGrayHeaders({ });
+    return await this.getTbProjectGrayWithOptions(request, headers, runtime);
+  }
+
+  async getTbProjectGrayWithOptions(request: GetTbProjectGrayRequest, headers: GetTbProjectGrayHeaders, runtime: $Util.RuntimeOptions): Promise<GetTbProjectGrayResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.label)) {
+      body["label"] = request.label;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.dingAccessTokenType)) {
+      realHeaders["dingAccessTokenType"] = Util.toJSONString(headers.dingAccessTokenType);
+    }
+
+    if (!Util.isUnset(headers.dingCorpId)) {
+      realHeaders["dingCorpId"] = Util.toJSONString(headers.dingCorpId);
+    }
+
+    if (!Util.isUnset(headers.dingIsvOrgId)) {
+      realHeaders["dingIsvOrgId"] = Util.toJSONString(headers.dingIsvOrgId);
+    }
+
+    if (!Util.isUnset(headers.dingOrgId)) {
+      realHeaders["dingOrgId"] = Util.toJSONString(headers.dingOrgId);
+    }
+
+    if (!Util.isUnset(headers.dingSuiteKey)) {
+      realHeaders["dingSuiteKey"] = Util.toJSONString(headers.dingSuiteKey);
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<GetTbProjectGrayResponse>(await this.doROARequest("GetTbProjectGray", "project_1.0", "HTTP", "POST", "AK", `/v1.0/project/projects/gray`, "json", req, runtime), new GetTbProjectGrayResponse({}));
   }
 
   async getTbProjectSource(): Promise<GetTbProjectSourceResponse> {
@@ -568,79 +613,34 @@ export default class Client extends OpenApi {
       realHeaders = headers.commonHeaders;
     }
 
-    if (!Util.isUnset(headers.dingOrgId)) {
-      realHeaders["dingOrgId"] = headers.dingOrgId;
-    }
-
-    if (!Util.isUnset(headers.dingIsvOrgId)) {
-      realHeaders["dingIsvOrgId"] = headers.dingIsvOrgId;
+    if (!Util.isUnset(headers.dingAccessTokenType)) {
+      realHeaders["dingAccessTokenType"] = Util.toJSONString(headers.dingAccessTokenType);
     }
 
     if (!Util.isUnset(headers.dingCorpId)) {
-      realHeaders["dingCorpId"] = headers.dingCorpId;
+      realHeaders["dingCorpId"] = Util.toJSONString(headers.dingCorpId);
+    }
+
+    if (!Util.isUnset(headers.dingIsvOrgId)) {
+      realHeaders["dingIsvOrgId"] = Util.toJSONString(headers.dingIsvOrgId);
+    }
+
+    if (!Util.isUnset(headers.dingOrgId)) {
+      realHeaders["dingOrgId"] = Util.toJSONString(headers.dingOrgId);
     }
 
     if (!Util.isUnset(headers.dingSuiteKey)) {
-      realHeaders["dingSuiteKey"] = headers.dingSuiteKey;
-    }
-
-    if (!Util.isUnset(headers.dingAccessTokenType)) {
-      realHeaders["dingAccessTokenType"] = headers.dingAccessTokenType;
+      realHeaders["dingSuiteKey"] = Util.toJSONString(headers.dingSuiteKey);
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
     return $tea.cast<GetTbProjectSourceResponse>(await this.doROARequest("GetTbProjectSource", "project_1.0", "HTTP", "POST", "AK", `/v1.0/project/projects/source`, "json", req, runtime), new GetTbProjectSourceResponse({}));
-  }
-
-  async getEmpsByOrgId(request: GetEmpsByOrgIdRequest): Promise<GetEmpsByOrgIdResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetEmpsByOrgIdHeaders({ });
-    return await this.getEmpsByOrgIdWithOptions(request, headers, runtime);
-  }
-
-  async getEmpsByOrgIdWithOptions(request: GetEmpsByOrgIdRequest, headers: GetEmpsByOrgIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetEmpsByOrgIdResponse> {
-    Util.validateModel(request);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.nextToken)) {
-      query["nextToken"] = request.nextToken;
-    }
-
-    if (!Util.isUnset(request.maxResults)) {
-      query["maxResults"] = request.maxResults;
-    }
-
-    if (!Util.isUnset(request.needDept)) {
-      query["needDept"] = request.needDept;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.dingAccessTokenType)) {
-      realHeaders["dingAccessTokenType"] = headers.dingAccessTokenType;
-    }
-
-    if (!Util.isUnset(headers.dingOrgId)) {
-      realHeaders["dingOrgId"] = headers.dingOrgId;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      query: OpenApiUtil.query(query),
-    });
-    return $tea.cast<GetEmpsByOrgIdResponse>(await this.doROARequest("GetEmpsByOrgId", "project_1.0", "HTTP", "GET", "AK", `/v1.0/project/orgs/employees`, "json", req, runtime), new GetEmpsByOrgIdResponse({}));
   }
 
 }

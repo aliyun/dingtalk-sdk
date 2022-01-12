@@ -30,22 +30,22 @@ export class QueryAppActiveUsersHeaders extends $tea.Model {
 }
 
 export class QueryAppActiveUsersRequest extends $tea.Model {
+  maxResults?: number;
   needPositionInfo?: boolean;
   nextToken?: number;
-  maxResults?: number;
   static names(): { [key: string]: string } {
     return {
+      maxResults: 'maxResults',
       needPositionInfo: 'needPositionInfo',
       nextToken: 'nextToken',
-      maxResults: 'maxResults',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      maxResults: 'number',
       needPositionInfo: 'boolean',
       nextToken: 'number',
-      maxResults: 'number',
     };
   }
 
@@ -56,24 +56,24 @@ export class QueryAppActiveUsersRequest extends $tea.Model {
 
 export class QueryAppActiveUsersResponseBody extends $tea.Model {
   hasMore?: boolean;
-  totalCount?: number;
   list?: QueryAppActiveUsersResponseBodyList[];
   nextToken?: number;
+  totalCount?: number;
   static names(): { [key: string]: string } {
     return {
       hasMore: 'hasMore',
-      totalCount: 'totalCount',
       list: 'list',
       nextToken: 'nextToken',
+      totalCount: 'totalCount',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       hasMore: 'boolean',
-      totalCount: 'number',
       list: { 'type': 'array', 'itemType': QueryAppActiveUsersResponseBodyList },
       nextToken: 'number',
+      totalCount: 'number',
     };
   }
 
@@ -128,30 +128,15 @@ export class QueryCollectingTraceTaskHeaders extends $tea.Model {
 
 export class QueryCollectingTraceTaskRequest extends $tea.Model {
   userIds?: string[];
-  dingIsvOrgId?: number;
-  dingTokenGrantType?: number;
-  dingClientId?: string;
-  dingOrgId?: number;
-  dingOauthAppId?: number;
   static names(): { [key: string]: string } {
     return {
       userIds: 'userIds',
-      dingIsvOrgId: 'dingIsvOrgId',
-      dingTokenGrantType: 'dingTokenGrantType',
-      dingClientId: 'dingClientId',
-      dingOrgId: 'dingOrgId',
-      dingOauthAppId: 'dingOauthAppId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       userIds: { 'type': 'array', 'itemType': 'string' },
-      dingIsvOrgId: 'number',
-      dingTokenGrantType: 'number',
-      dingClientId: 'string',
-      dingOrgId: 'number',
-      dingOauthAppId: 'number',
     };
   }
 
@@ -224,31 +209,31 @@ export class QueryPageTraceDataHeaders extends $tea.Model {
 }
 
 export class QueryPageTraceDataRequest extends $tea.Model {
-  traceId?: string;
-  nextToken?: number;
-  maxResults?: number;
-  startTime?: number;
   endTime?: number;
+  maxResults?: number;
+  nextToken?: number;
   staffId?: string;
+  startTime?: number;
+  traceId?: string;
   static names(): { [key: string]: string } {
     return {
-      traceId: 'traceId',
-      nextToken: 'nextToken',
-      maxResults: 'maxResults',
-      startTime: 'startTime',
       endTime: 'endTime',
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
       staffId: 'staffId',
+      startTime: 'startTime',
+      traceId: 'traceId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      traceId: 'string',
-      nextToken: 'number',
-      maxResults: 'number',
-      startTime: 'number',
       endTime: 'number',
+      maxResults: 'number',
+      nextToken: 'number',
       staffId: 'string',
+      startTime: 'number',
+      traceId: 'string',
     };
   }
 
@@ -258,21 +243,21 @@ export class QueryPageTraceDataRequest extends $tea.Model {
 }
 
 export class QueryPageTraceDataResponseBody extends $tea.Model {
-  list?: QueryPageTraceDataResponseBodyList[];
   hasMore?: boolean;
+  list?: QueryPageTraceDataResponseBodyList[];
   nextToken?: number;
   static names(): { [key: string]: string } {
     return {
-      list: 'list',
       hasMore: 'hasMore',
+      list: 'list',
       nextToken: 'nextToken',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      list: { 'type': 'array', 'itemType': QueryPageTraceDataResponseBodyList },
       hasMore: 'boolean',
+      list: { 'type': 'array', 'itemType': QueryPageTraceDataResponseBodyList },
       nextToken: 'number',
     };
   }
@@ -305,30 +290,30 @@ export class QueryPageTraceDataResponse extends $tea.Model {
 }
 
 export class QueryAppActiveUsersResponseBodyList extends $tea.Model {
-  startTime?: number;
   appTraceId?: string;
-  longitude?: number;
   latitude?: number;
+  longitude?: number;
   reportTime?: number;
+  startTime?: number;
   userId?: string;
   static names(): { [key: string]: string } {
     return {
-      startTime: 'startTime',
       appTraceId: 'appTraceId',
-      longitude: 'longitude',
       latitude: 'latitude',
+      longitude: 'longitude',
       reportTime: 'reportTime',
+      startTime: 'startTime',
       userId: 'userId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      startTime: 'number',
       appTraceId: 'string',
-      longitude: 'number',
       latitude: 'number',
+      longitude: 'number',
       reportTime: 'number',
+      startTime: 'number',
       userId: 'string',
     };
   }
@@ -340,33 +325,33 @@ export class QueryAppActiveUsersResponseBodyList extends $tea.Model {
 
 export class QueryCollectingTraceTaskResponseBodyList extends $tea.Model {
   appTraceId?: string;
-  userId?: string;
-  geoReportStatus?: number;
-  geoReportPeriod?: number;
   geoCollectPeriod?: number;
-  reportStartTime?: number;
+  geoReportPeriod?: number;
+  geoReportStatus?: number;
   reportEndTime?: number;
+  reportStartTime?: number;
+  userId?: string;
   static names(): { [key: string]: string } {
     return {
       appTraceId: 'appTraceId',
-      userId: 'userId',
-      geoReportStatus: 'geoReportStatus',
-      geoReportPeriod: 'geoReportPeriod',
       geoCollectPeriod: 'geoCollectPeriod',
-      reportStartTime: 'reportStartTime',
+      geoReportPeriod: 'geoReportPeriod',
+      geoReportStatus: 'geoReportStatus',
       reportEndTime: 'reportEndTime',
+      reportStartTime: 'reportStartTime',
+      userId: 'userId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       appTraceId: 'string',
-      userId: 'string',
-      geoReportStatus: 'number',
-      geoReportPeriod: 'number',
       geoCollectPeriod: 'number',
-      reportStartTime: 'number',
+      geoReportPeriod: 'number',
+      geoReportStatus: 'number',
       reportEndTime: 'number',
+      reportStartTime: 'number',
+      userId: 'string',
     };
   }
 
@@ -376,19 +361,19 @@ export class QueryCollectingTraceTaskResponseBodyList extends $tea.Model {
 }
 
 export class QueryPageTraceDataResponseBodyListCoordinates extends $tea.Model {
-  longitude?: number;
   latitude?: number;
+  longitude?: number;
   static names(): { [key: string]: string } {
     return {
-      longitude: 'longitude',
       latitude: 'latitude',
+      longitude: 'longitude',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      longitude: 'number',
       latitude: 'number',
+      longitude: 'number',
     };
   }
 
@@ -444,6 +429,10 @@ export default class Client extends OpenApi {
   async queryAppActiveUsersWithOptions(request: QueryAppActiveUsersRequest, headers: QueryAppActiveUsersHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAppActiveUsersResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
     if (!Util.isUnset(request.needPositionInfo)) {
       query["needPositionInfo"] = request.needPositionInfo;
     }
@@ -452,17 +441,13 @@ export default class Client extends OpenApi {
       query["nextToken"] = request.nextToken;
     }
 
-    if (!Util.isUnset(request.maxResults)) {
-      query["maxResults"] = request.maxResults;
-    }
-
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({
@@ -485,33 +470,13 @@ export default class Client extends OpenApi {
       body["userIds"] = request.userIds;
     }
 
-    if (!Util.isUnset(request.dingIsvOrgId)) {
-      body["dingIsvOrgId"] = request.dingIsvOrgId;
-    }
-
-    if (!Util.isUnset(request.dingTokenGrantType)) {
-      body["dingTokenGrantType"] = request.dingTokenGrantType;
-    }
-
-    if (!Util.isUnset(request.dingClientId)) {
-      body["dingClientId"] = request.dingClientId;
-    }
-
-    if (!Util.isUnset(request.dingOrgId)) {
-      body["dingOrgId"] = request.dingOrgId;
-    }
-
-    if (!Util.isUnset(request.dingOauthAppId)) {
-      body["dingOauthAppId"] = request.dingOauthAppId;
-    }
-
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({
@@ -530,28 +495,28 @@ export default class Client extends OpenApi {
   async queryPageTraceDataWithOptions(request: QueryPageTraceDataRequest, headers: QueryPageTraceDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryPageTraceDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.traceId)) {
-      query["traceId"] = request.traceId;
-    }
-
-    if (!Util.isUnset(request.nextToken)) {
-      query["nextToken"] = request.nextToken;
+    if (!Util.isUnset(request.endTime)) {
+      query["endTime"] = request.endTime;
     }
 
     if (!Util.isUnset(request.maxResults)) {
       query["maxResults"] = request.maxResults;
     }
 
-    if (!Util.isUnset(request.startTime)) {
-      query["startTime"] = request.startTime;
-    }
-
-    if (!Util.isUnset(request.endTime)) {
-      query["endTime"] = request.endTime;
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
     }
 
     if (!Util.isUnset(request.staffId)) {
       query["staffId"] = request.staffId;
+    }
+
+    if (!Util.isUnset(request.startTime)) {
+      query["startTime"] = request.startTime;
+    }
+
+    if (!Util.isUnset(request.traceId)) {
+      query["traceId"] = request.traceId;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -560,7 +525,7 @@ export default class Client extends OpenApi {
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({

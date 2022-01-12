@@ -30,25 +30,25 @@ export class QueryGoodsListHeaders extends $tea.Model {
 }
 
 export class QueryGoodsListRequest extends $tea.Model {
-  nextToken?: number;
-  maxResults?: number;
-  startTimeInMills?: number;
   endTimeInMills?: number;
+  maxResults?: number;
+  nextToken?: number;
+  startTimeInMills?: number;
   static names(): { [key: string]: string } {
     return {
-      nextToken: 'nextToken',
-      maxResults: 'maxResults',
-      startTimeInMills: 'startTimeInMills',
       endTimeInMills: 'endTimeInMills',
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      startTimeInMills: 'startTimeInMills',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      nextToken: 'number',
-      maxResults: 'number',
-      startTimeInMills: 'number',
       endTimeInMills: 'number',
+      maxResults: 'number',
+      nextToken: 'number',
+      startTimeInMills: 'number',
     };
   }
 
@@ -58,19 +58,19 @@ export class QueryGoodsListRequest extends $tea.Model {
 }
 
 export class QueryGoodsListResponseBody extends $tea.Model {
-  success?: boolean;
   result?: QueryGoodsListResponseBodyResult;
+  success?: boolean;
   static names(): { [key: string]: string } {
     return {
-      success: 'success',
       result: 'result',
+      success: 'success',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      success: 'boolean',
       result: QueryGoodsListResponseBodyResult,
+      success: 'boolean',
     };
   }
 
@@ -102,28 +102,28 @@ export class QueryGoodsListResponse extends $tea.Model {
 }
 
 export class QueryGoodsListResponseBodyResultList extends $tea.Model {
-  instanceId?: string;
-  goodsNo?: string;
   goodsName?: string;
-  unit?: string;
+  goodsNo?: string;
+  instanceId?: string;
   productSpecs?: string;
+  unit?: string;
   static names(): { [key: string]: string } {
     return {
-      instanceId: 'instanceId',
-      goodsNo: 'goodsNo',
       goodsName: 'goodsName',
-      unit: 'unit',
+      goodsNo: 'goodsNo',
+      instanceId: 'instanceId',
       productSpecs: 'productSpecs',
+      unit: 'unit',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      instanceId: 'string',
-      goodsNo: 'string',
       goodsName: 'string',
-      unit: 'string',
+      goodsNo: 'string',
+      instanceId: 'string',
       productSpecs: 'string',
+      unit: 'string',
     };
   }
 
@@ -133,25 +133,25 @@ export class QueryGoodsListResponseBodyResultList extends $tea.Model {
 }
 
 export class QueryGoodsListResponseBodyResult extends $tea.Model {
-  nextToken?: string;
   hasMore?: boolean;
-  maxResults?: number;
   list?: QueryGoodsListResponseBodyResultList[];
+  maxResults?: number;
+  nextToken?: string;
   static names(): { [key: string]: string } {
     return {
-      nextToken: 'nextToken',
       hasMore: 'hasMore',
-      maxResults: 'maxResults',
       list: 'list',
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      nextToken: 'string',
       hasMore: 'boolean',
-      maxResults: 'number',
       list: { 'type': 'array', 'itemType': QueryGoodsListResponseBodyResultList },
+      maxResults: 'number',
+      nextToken: 'string',
     };
   }
 
@@ -182,20 +182,20 @@ export default class Client extends OpenApi {
   async queryGoodsListWithOptions(request: QueryGoodsListRequest, headers: QueryGoodsListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryGoodsListResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.nextToken)) {
-      query["nextToken"] = request.nextToken;
+    if (!Util.isUnset(request.endTimeInMills)) {
+      query["endTimeInMills"] = request.endTimeInMills;
     }
 
     if (!Util.isUnset(request.maxResults)) {
       query["maxResults"] = request.maxResults;
     }
 
-    if (!Util.isUnset(request.startTimeInMills)) {
-      query["startTimeInMills"] = request.startTimeInMills;
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
     }
 
-    if (!Util.isUnset(request.endTimeInMills)) {
-      query["endTimeInMills"] = request.endTimeInMills;
+    if (!Util.isUnset(request.startTimeInMills)) {
+      query["startTimeInMills"] = request.startTimeInMills;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -204,7 +204,7 @@ export default class Client extends OpenApi {
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({

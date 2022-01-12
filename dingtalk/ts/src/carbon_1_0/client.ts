@@ -49,19 +49,19 @@ export class WriteAlibabaOrgCarbonRequest extends $tea.Model {
 }
 
 export class WriteAlibabaOrgCarbonResponseBody extends $tea.Model {
-  success?: boolean;
   result?: number;
+  success?: boolean;
   static names(): { [key: string]: string } {
     return {
-      success: 'success',
       result: 'result',
+      success: 'success',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      success: 'boolean',
       result: 'number',
+      success: 'boolean',
     };
   }
 
@@ -84,6 +84,91 @@ export class WriteAlibabaOrgCarbonResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: WriteAlibabaOrgCarbonResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class WriteAlibabaUserCarbonHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class WriteAlibabaUserCarbonRequest extends $tea.Model {
+  userDetailsList?: WriteAlibabaUserCarbonRequestUserDetailsList[];
+  static names(): { [key: string]: string } {
+    return {
+      userDetailsList: 'userDetailsList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userDetailsList: { 'type': 'array', 'itemType': WriteAlibabaUserCarbonRequestUserDetailsList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class WriteAlibabaUserCarbonResponseBody extends $tea.Model {
+  result?: number;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'number',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class WriteAlibabaUserCarbonResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: WriteAlibabaUserCarbonResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: WriteAlibabaUserCarbonResponseBody,
     };
   }
 
@@ -134,19 +219,19 @@ export class WriteOrgCarbonRequest extends $tea.Model {
 }
 
 export class WriteOrgCarbonResponseBody extends $tea.Model {
-  success?: boolean;
   result?: number;
+  success?: boolean;
   static names(): { [key: string]: string } {
     return {
-      success: 'success',
       result: 'result',
+      success: 'success',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      success: 'boolean',
       result: 'number',
+      success: 'boolean',
     };
   }
 
@@ -219,19 +304,19 @@ export class WriteUserCarbonRequest extends $tea.Model {
 }
 
 export class WriteUserCarbonResponseBody extends $tea.Model {
-  success?: boolean;
   result?: number;
+  success?: boolean;
   static names(): { [key: string]: string } {
     return {
-      success: 'success',
       result: 'result',
+      success: 'success',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      success: 'boolean',
       result: 'number',
+      success: 'boolean',
     };
   }
 
@@ -262,107 +347,22 @@ export class WriteUserCarbonResponse extends $tea.Model {
   }
 }
 
-export class WriteAlibabaUserCarbonHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class WriteAlibabaUserCarbonRequest extends $tea.Model {
-  userDetailsList?: WriteAlibabaUserCarbonRequestUserDetailsList[];
-  static names(): { [key: string]: string } {
-    return {
-      userDetailsList: 'userDetailsList',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      userDetailsList: { 'type': 'array', 'itemType': WriteAlibabaUserCarbonRequestUserDetailsList },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class WriteAlibabaUserCarbonResponseBody extends $tea.Model {
-  success?: boolean;
-  result?: number;
-  static names(): { [key: string]: string } {
-    return {
-      success: 'success',
-      result: 'result',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      success: 'boolean',
-      result: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class WriteAlibabaUserCarbonResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: WriteAlibabaUserCarbonResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: WriteAlibabaUserCarbonResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class WriteAlibabaOrgCarbonRequestOrgDetailsList extends $tea.Model {
   actionId?: string;
-  corpId?: string;
-  deptId?: number;
+  actionTime?: string;
   actionType?: string;
   carbonAmount?: string;
-  actionTime?: string;
+  corpId?: string;
+  deptId?: number;
   version?: number;
   static names(): { [key: string]: string } {
     return {
       actionId: 'actionId',
-      corpId: 'corpId',
-      deptId: 'deptId',
+      actionTime: 'actionTime',
       actionType: 'actionType',
       carbonAmount: 'carbonAmount',
-      actionTime: 'actionTime',
+      corpId: 'corpId',
+      deptId: 'deptId',
       version: 'version',
     };
   }
@@ -370,11 +370,54 @@ export class WriteAlibabaOrgCarbonRequestOrgDetailsList extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       actionId: 'string',
-      corpId: 'string',
-      deptId: 'number',
+      actionTime: 'string',
       actionType: 'string',
       carbonAmount: 'string',
-      actionTime: 'string',
+      corpId: 'string',
+      deptId: 'number',
+      version: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class WriteAlibabaUserCarbonRequestUserDetailsList extends $tea.Model {
+  actionEndTime?: string;
+  actionId?: string;
+  actionStartTime?: string;
+  actionType?: string;
+  carbonAmount?: string;
+  corpId?: string;
+  deptId?: number;
+  userId?: string;
+  version?: number;
+  static names(): { [key: string]: string } {
+    return {
+      actionEndTime: 'actionEndTime',
+      actionId: 'actionId',
+      actionStartTime: 'actionStartTime',
+      actionType: 'actionType',
+      carbonAmount: 'carbonAmount',
+      corpId: 'corpId',
+      deptId: 'deptId',
+      userId: 'userId',
+      version: 'version',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      actionEndTime: 'string',
+      actionId: 'string',
+      actionStartTime: 'string',
+      actionType: 'string',
+      carbonAmount: 'string',
+      corpId: 'string',
+      deptId: 'number',
+      userId: 'string',
       version: 'number',
     };
   }
@@ -386,20 +429,20 @@ export class WriteAlibabaOrgCarbonRequestOrgDetailsList extends $tea.Model {
 
 export class WriteOrgCarbonRequestOrgDetailsList extends $tea.Model {
   actionId?: string;
-  corpId?: string;
-  deptId?: number;
+  actionTime?: string;
   actionType?: string;
   carbonAmount?: string;
-  actionTime?: string;
+  corpId?: string;
+  deptId?: number;
   version?: number;
   static names(): { [key: string]: string } {
     return {
       actionId: 'actionId',
-      corpId: 'corpId',
-      deptId: 'deptId',
+      actionTime: 'actionTime',
       actionType: 'actionType',
       carbonAmount: 'carbonAmount',
-      actionTime: 'actionTime',
+      corpId: 'corpId',
+      deptId: 'deptId',
       version: 'version',
     };
   }
@@ -407,11 +450,11 @@ export class WriteOrgCarbonRequestOrgDetailsList extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       actionId: 'string',
-      corpId: 'string',
-      deptId: 'number',
+      actionTime: 'string',
       actionType: 'string',
       carbonAmount: 'string',
-      actionTime: 'string',
+      corpId: 'string',
+      deptId: 'number',
       version: 'number',
     };
   }
@@ -422,82 +465,39 @@ export class WriteOrgCarbonRequestOrgDetailsList extends $tea.Model {
 }
 
 export class WriteUserCarbonRequestUserDetailsList extends $tea.Model {
+  actionEndTime?: string;
   actionId?: string;
-  userId?: string;
-  corpId?: string;
-  deptId?: number;
+  actionStartTime?: string;
   actionType?: string;
   carbonAmount?: string;
-  actionStartTime?: string;
-  actionEndTime?: string;
+  corpId?: string;
+  deptId?: number;
+  userId?: string;
   version?: number;
   static names(): { [key: string]: string } {
     return {
+      actionEndTime: 'actionEndTime',
       actionId: 'actionId',
-      userId: 'userId',
-      corpId: 'corpId',
-      deptId: 'deptId',
+      actionStartTime: 'actionStartTime',
       actionType: 'actionType',
       carbonAmount: 'carbonAmount',
-      actionStartTime: 'actionStartTime',
-      actionEndTime: 'actionEndTime',
+      corpId: 'corpId',
+      deptId: 'deptId',
+      userId: 'userId',
       version: 'version',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      actionEndTime: 'string',
       actionId: 'string',
-      userId: 'string',
-      corpId: 'string',
-      deptId: 'number',
+      actionStartTime: 'string',
       actionType: 'string',
       carbonAmount: 'string',
-      actionStartTime: 'string',
-      actionEndTime: 'string',
-      version: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class WriteAlibabaUserCarbonRequestUserDetailsList extends $tea.Model {
-  actionId?: string;
-  userId?: string;
-  corpId?: string;
-  deptId?: number;
-  actionType?: string;
-  carbonAmount?: string;
-  actionStartTime?: string;
-  actionEndTime?: string;
-  version?: number;
-  static names(): { [key: string]: string } {
-    return {
-      actionId: 'actionId',
-      userId: 'userId',
-      corpId: 'corpId',
-      deptId: 'deptId',
-      actionType: 'actionType',
-      carbonAmount: 'carbonAmount',
-      actionStartTime: 'actionStartTime',
-      actionEndTime: 'actionEndTime',
-      version: 'version',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      actionId: 'string',
-      userId: 'string',
       corpId: 'string',
       deptId: 'number',
-      actionType: 'string',
-      carbonAmount: 'string',
-      actionStartTime: 'string',
-      actionEndTime: 'string',
+      userId: 'string',
       version: 'number',
     };
   }
@@ -539,7 +539,7 @@ export default class Client extends OpenApi {
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({
@@ -547,6 +547,35 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<WriteAlibabaOrgCarbonResponse>(await this.doROARequest("WriteAlibabaOrgCarbon", "carbon_1.0", "HTTP", "POST", "AK", `/v1.0/carbon/alibabaOrgDetails/write`, "json", req, runtime), new WriteAlibabaOrgCarbonResponse({}));
+  }
+
+  async writeAlibabaUserCarbon(request: WriteAlibabaUserCarbonRequest): Promise<WriteAlibabaUserCarbonResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new WriteAlibabaUserCarbonHeaders({ });
+    return await this.writeAlibabaUserCarbonWithOptions(request, headers, runtime);
+  }
+
+  async writeAlibabaUserCarbonWithOptions(request: WriteAlibabaUserCarbonRequest, headers: WriteAlibabaUserCarbonHeaders, runtime: $Util.RuntimeOptions): Promise<WriteAlibabaUserCarbonResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.userDetailsList)) {
+      body["userDetailsList"] = request.userDetailsList;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<WriteAlibabaUserCarbonResponse>(await this.doROARequest("WriteAlibabaUserCarbon", "carbon_1.0", "HTTP", "POST", "AK", `/v1.0/carbon/alibabaUserDetails/write`, "json", req, runtime), new WriteAlibabaUserCarbonResponse({}));
   }
 
   async writeOrgCarbon(request: WriteOrgCarbonRequest): Promise<WriteOrgCarbonResponse> {
@@ -568,7 +597,7 @@ export default class Client extends OpenApi {
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({
@@ -597,7 +626,7 @@ export default class Client extends OpenApi {
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({
@@ -605,35 +634,6 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<WriteUserCarbonResponse>(await this.doROARequest("WriteUserCarbon", "carbon_1.0", "HTTP", "POST", "AK", `/v1.0/carbon/userDetails/write`, "json", req, runtime), new WriteUserCarbonResponse({}));
-  }
-
-  async writeAlibabaUserCarbon(request: WriteAlibabaUserCarbonRequest): Promise<WriteAlibabaUserCarbonResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new WriteAlibabaUserCarbonHeaders({ });
-    return await this.writeAlibabaUserCarbonWithOptions(request, headers, runtime);
-  }
-
-  async writeAlibabaUserCarbonWithOptions(request: WriteAlibabaUserCarbonRequest, headers: WriteAlibabaUserCarbonHeaders, runtime: $Util.RuntimeOptions): Promise<WriteAlibabaUserCarbonResponse> {
-    Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.userDetailsList)) {
-      body["userDetailsList"] = request.userDetailsList;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<WriteAlibabaUserCarbonResponse>(await this.doROARequest("WriteAlibabaUserCarbon", "carbon_1.0", "HTTP", "POST", "AK", `/v1.0/carbon/alibabaUserDetails/write`, "json", req, runtime), new WriteAlibabaUserCarbonResponse({}));
   }
 
 }

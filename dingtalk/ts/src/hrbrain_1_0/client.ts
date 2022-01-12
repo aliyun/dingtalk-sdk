@@ -30,28 +30,28 @@ export class SyncDataHeaders extends $tea.Model {
 }
 
 export class SyncDataRequest extends $tea.Model {
+  content?: string;
+  dataId?: string;
+  etlTime?: string;
   projectId?: string;
   schemaId?: string;
-  dataId?: string;
-  content?: string;
-  etlTime?: string;
   static names(): { [key: string]: string } {
     return {
+      content: 'content',
+      dataId: 'dataId',
+      etlTime: 'etlTime',
       projectId: 'projectId',
       schemaId: 'schemaId',
-      dataId: 'dataId',
-      content: 'content',
-      etlTime: 'etlTime',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      content: 'string',
+      dataId: 'string',
+      etlTime: 'string',
       projectId: 'string',
       schemaId: 'string',
-      dataId: 'string',
-      content: 'string',
-      etlTime: 'string',
     };
   }
 
@@ -123,6 +123,18 @@ export default class Client extends OpenApi {
   async syncDataWithOptions(request: SyncDataRequest, headers: SyncDataHeaders, runtime: $Util.RuntimeOptions): Promise<SyncDataResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.content)) {
+      body["content"] = request.content;
+    }
+
+    if (!Util.isUnset(request.dataId)) {
+      body["dataId"] = request.dataId;
+    }
+
+    if (!Util.isUnset(request.etlTime)) {
+      body["etlTime"] = request.etlTime;
+    }
+
     if (!Util.isUnset(request.projectId)) {
       body["projectId"] = request.projectId;
     }
@@ -131,25 +143,13 @@ export default class Client extends OpenApi {
       body["schemaId"] = request.schemaId;
     }
 
-    if (!Util.isUnset(request.dataId)) {
-      body["dataId"] = request.dataId;
-    }
-
-    if (!Util.isUnset(request.content)) {
-      body["content"] = request.content;
-    }
-
-    if (!Util.isUnset(request.etlTime)) {
-      body["etlTime"] = request.etlTime;
-    }
-
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({

@@ -7,6 +7,133 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class AddCityCarApplyHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddCityCarApplyRequest extends $tea.Model {
+  cause?: string;
+  city?: string;
+  corpId?: string;
+  date?: string;
+  finishedDate?: string;
+  projectCode?: string;
+  projectName?: string;
+  status?: number;
+  thirdPartApplyId?: string;
+  thirdPartCostCenterId?: string;
+  thirdPartInvoiceId?: string;
+  timesTotal?: number;
+  timesType?: number;
+  timesUsed?: number;
+  title?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      cause: 'cause',
+      city: 'city',
+      corpId: 'corpId',
+      date: 'date',
+      finishedDate: 'finishedDate',
+      projectCode: 'projectCode',
+      projectName: 'projectName',
+      status: 'status',
+      thirdPartApplyId: 'thirdPartApplyId',
+      thirdPartCostCenterId: 'thirdPartCostCenterId',
+      thirdPartInvoiceId: 'thirdPartInvoiceId',
+      timesTotal: 'timesTotal',
+      timesType: 'timesType',
+      timesUsed: 'timesUsed',
+      title: 'title',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cause: 'string',
+      city: 'string',
+      corpId: 'string',
+      date: 'string',
+      finishedDate: 'string',
+      projectCode: 'string',
+      projectName: 'string',
+      status: 'number',
+      thirdPartApplyId: 'string',
+      thirdPartCostCenterId: 'string',
+      thirdPartInvoiceId: 'string',
+      timesTotal: 'number',
+      timesType: 'number',
+      timesUsed: 'number',
+      title: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddCityCarApplyResponseBody extends $tea.Model {
+  applyId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      applyId: 'applyId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      applyId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddCityCarApplyResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: AddCityCarApplyResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: AddCityCarApplyResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ApproveCityCarApplyHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -36,9 +163,6 @@ export class ApproveCityCarApplyRequest extends $tea.Model {
   status?: number;
   thirdPartApplyId?: string;
   userId?: string;
-  dingSuiteKey?: string;
-  dingCorpId?: string;
-  dingTokenGrantType?: number;
   static names(): { [key: string]: string } {
     return {
       corpId: 'corpId',
@@ -47,9 +171,6 @@ export class ApproveCityCarApplyRequest extends $tea.Model {
       status: 'status',
       thirdPartApplyId: 'thirdPartApplyId',
       userId: 'userId',
-      dingSuiteKey: 'dingSuiteKey',
-      dingCorpId: 'dingCorpId',
-      dingTokenGrantType: 'dingTokenGrantType',
     };
   }
 
@@ -61,9 +182,6 @@ export class ApproveCityCarApplyRequest extends $tea.Model {
       status: 'number',
       thirdPartApplyId: 'string',
       userId: 'string',
-      dingSuiteKey: 'string',
-      dingCorpId: 'string',
-      dingTokenGrantType: 'number',
     };
   }
 
@@ -113,6 +231,324 @@ export class ApproveCityCarApplyResponse extends $tea.Model {
   }
 }
 
+export class BillSettementBtripTrainHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BillSettementBtripTrainRequest extends $tea.Model {
+  category?: number;
+  corpId?: string;
+  pageNumber?: number;
+  pageSize?: number;
+  periodEnd?: string;
+  periodStart?: string;
+  static names(): { [key: string]: string } {
+    return {
+      category: 'category',
+      corpId: 'corpId',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      periodEnd: 'periodEnd',
+      periodStart: 'periodStart',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      category: 'number',
+      corpId: 'string',
+      pageNumber: 'number',
+      pageSize: 'number',
+      periodEnd: 'string',
+      periodStart: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BillSettementBtripTrainResponseBody extends $tea.Model {
+  module?: BillSettementBtripTrainResponseBodyModule;
+  resultCode?: number;
+  resultMsg?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      module: 'module',
+      resultCode: 'resultCode',
+      resultMsg: 'resultMsg',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      module: BillSettementBtripTrainResponseBodyModule,
+      resultCode: 'number',
+      resultMsg: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BillSettementBtripTrainResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: BillSettementBtripTrainResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: BillSettementBtripTrainResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BillSettementCarHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BillSettementCarRequest extends $tea.Model {
+  category?: number;
+  corpId?: string;
+  pageNumber?: number;
+  pageSize?: number;
+  periodEnd?: string;
+  periodStart?: string;
+  static names(): { [key: string]: string } {
+    return {
+      category: 'category',
+      corpId: 'corpId',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      periodEnd: 'periodEnd',
+      periodStart: 'periodStart',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      category: 'number',
+      corpId: 'string',
+      pageNumber: 'number',
+      pageSize: 'number',
+      periodEnd: 'string',
+      periodStart: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BillSettementCarResponseBody extends $tea.Model {
+  module?: BillSettementCarResponseBodyModule;
+  resultCode?: number;
+  resultMsg?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      module: 'module',
+      resultCode: 'resultCode',
+      resultMsg: 'resultMsg',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      module: BillSettementCarResponseBodyModule,
+      resultCode: 'number',
+      resultMsg: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BillSettementCarResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: BillSettementCarResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: BillSettementCarResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BillSettementFlightHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BillSettementFlightRequest extends $tea.Model {
+  category?: number;
+  corpId?: string;
+  pageNumber?: number;
+  pageSize?: number;
+  periodEnd?: string;
+  periodStart?: string;
+  static names(): { [key: string]: string } {
+    return {
+      category: 'category',
+      corpId: 'corpId',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      periodEnd: 'periodEnd',
+      periodStart: 'periodStart',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      category: 'number',
+      corpId: 'string',
+      pageNumber: 'number',
+      pageSize: 'number',
+      periodEnd: 'string',
+      periodStart: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BillSettementFlightResponseBody extends $tea.Model {
+  module?: BillSettementFlightResponseBodyModule;
+  resultCode?: number;
+  resultMsg?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      module: 'module',
+      resultCode: 'resultCode',
+      resultMsg: 'resultMsg',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      module: BillSettementFlightResponseBodyModule,
+      resultCode: 'number',
+      resultMsg: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BillSettementFlightResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: BillSettementFlightResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: BillSettementFlightResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BillSettementHotelHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -136,31 +572,31 @@ export class BillSettementHotelHeaders extends $tea.Model {
 }
 
 export class BillSettementHotelRequest extends $tea.Model {
-  corpId?: string;
   category?: number;
-  pageSize?: number;
-  periodStart?: string;
+  corpId?: string;
   pageNumber?: number;
+  pageSize?: number;
   periodEnd?: string;
+  periodStart?: string;
   static names(): { [key: string]: string } {
     return {
-      corpId: 'corpId',
       category: 'category',
-      pageSize: 'pageSize',
-      periodStart: 'periodStart',
+      corpId: 'corpId',
       pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
       periodEnd: 'periodEnd',
+      periodStart: 'periodStart',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      corpId: 'string',
       category: 'number',
-      pageSize: 'number',
-      periodStart: 'string',
+      corpId: 'string',
       pageNumber: 'number',
+      pageSize: 'number',
       periodEnd: 'string',
+      periodStart: 'string',
     };
   }
 
@@ -170,25 +606,25 @@ export class BillSettementHotelRequest extends $tea.Model {
 }
 
 export class BillSettementHotelResponseBody extends $tea.Model {
-  resultMsg?: string;
   module?: BillSettementHotelResponseBodyModule;
-  success?: boolean;
   resultCode?: number;
+  resultMsg?: string;
+  success?: boolean;
   static names(): { [key: string]: string } {
     return {
-      resultMsg: 'resultMsg',
       module: 'module',
-      success: 'success',
       resultCode: 'resultCode',
+      resultMsg: 'resultMsg',
+      success: 'success',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      resultMsg: 'string',
       module: BillSettementHotelResponseBodyModule,
-      success: 'boolean',
       resultCode: 'number',
+      resultMsg: 'string',
+      success: 'boolean',
     };
   }
 
@@ -242,19 +678,19 @@ export class GetFlightExceedApplyHeaders extends $tea.Model {
 }
 
 export class GetFlightExceedApplyRequest extends $tea.Model {
-  corpId?: string;
   applyId?: string;
+  corpId?: string;
   static names(): { [key: string]: string } {
     return {
-      corpId: 'corpId',
       applyId: 'applyId',
+      corpId: 'corpId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      corpId: 'string',
       applyId: 'string',
+      corpId: 'string',
     };
   }
 
@@ -264,46 +700,46 @@ export class GetFlightExceedApplyRequest extends $tea.Model {
 }
 
 export class GetFlightExceedApplyResponseBody extends $tea.Model {
-  corpId?: string;
   applyId?: number;
-  status?: number;
-  btripCause?: string;
-  exceedType?: number;
-  exceedReason?: string;
-  originStandard?: string;
-  submitTime?: string;
-  userId?: string;
   applyIntentionInfoDO?: GetFlightExceedApplyResponseBodyApplyIntentionInfoDO;
+  btripCause?: string;
+  corpId?: string;
+  exceedReason?: string;
+  exceedType?: number;
+  originStandard?: string;
+  status?: number;
+  submitTime?: string;
   thirdpartApplyId?: string;
+  userId?: string;
   static names(): { [key: string]: string } {
     return {
-      corpId: 'corpId',
       applyId: 'applyId',
-      status: 'status',
-      btripCause: 'btripCause',
-      exceedType: 'exceedType',
-      exceedReason: 'exceedReason',
-      originStandard: 'originStandard',
-      submitTime: 'submitTime',
-      userId: 'userId',
       applyIntentionInfoDO: 'applyIntentionInfoDO',
+      btripCause: 'btripCause',
+      corpId: 'corpId',
+      exceedReason: 'exceedReason',
+      exceedType: 'exceedType',
+      originStandard: 'originStandard',
+      status: 'status',
+      submitTime: 'submitTime',
       thirdpartApplyId: 'thirdpartApplyId',
+      userId: 'userId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      corpId: 'string',
       applyId: 'number',
-      status: 'number',
-      btripCause: 'string',
-      exceedType: 'number',
-      exceedReason: 'string',
-      originStandard: 'string',
-      submitTime: 'string',
-      userId: 'string',
       applyIntentionInfoDO: GetFlightExceedApplyResponseBodyApplyIntentionInfoDO,
+      btripCause: 'string',
+      corpId: 'string',
+      exceedReason: 'string',
+      exceedType: 'number',
+      originStandard: 'string',
+      status: 'number',
+      submitTime: 'string',
       thirdpartApplyId: 'string',
+      userId: 'string',
     };
   }
 
@@ -326,557 +762,6 @@ export class GetFlightExceedApplyResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: GetFlightExceedApplyResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class BillSettementCarHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class BillSettementCarRequest extends $tea.Model {
-  corpId?: string;
-  category?: number;
-  pageSize?: number;
-  periodStart?: string;
-  periodEnd?: string;
-  pageNumber?: number;
-  static names(): { [key: string]: string } {
-    return {
-      corpId: 'corpId',
-      category: 'category',
-      pageSize: 'pageSize',
-      periodStart: 'periodStart',
-      periodEnd: 'periodEnd',
-      pageNumber: 'pageNumber',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      corpId: 'string',
-      category: 'number',
-      pageSize: 'number',
-      periodStart: 'string',
-      periodEnd: 'string',
-      pageNumber: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class BillSettementCarResponseBody extends $tea.Model {
-  resultMsg?: string;
-  module?: BillSettementCarResponseBodyModule;
-  success?: boolean;
-  resultCode?: number;
-  static names(): { [key: string]: string } {
-    return {
-      resultMsg: 'resultMsg',
-      module: 'module',
-      success: 'success',
-      resultCode: 'resultCode',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      resultMsg: 'string',
-      module: BillSettementCarResponseBodyModule,
-      success: 'boolean',
-      resultCode: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class BillSettementCarResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: BillSettementCarResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: BillSettementCarResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class BillSettementBtripTrainHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class BillSettementBtripTrainRequest extends $tea.Model {
-  corpId?: string;
-  category?: number;
-  pageSize?: number;
-  periodStart?: string;
-  pageNumber?: number;
-  periodEnd?: string;
-  static names(): { [key: string]: string } {
-    return {
-      corpId: 'corpId',
-      category: 'category',
-      pageSize: 'pageSize',
-      periodStart: 'periodStart',
-      pageNumber: 'pageNumber',
-      periodEnd: 'periodEnd',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      corpId: 'string',
-      category: 'number',
-      pageSize: 'number',
-      periodStart: 'string',
-      pageNumber: 'number',
-      periodEnd: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class BillSettementBtripTrainResponseBody extends $tea.Model {
-  resultMsg?: string;
-  module?: BillSettementBtripTrainResponseBodyModule;
-  success?: boolean;
-  resultCode?: number;
-  static names(): { [key: string]: string } {
-    return {
-      resultMsg: 'resultMsg',
-      module: 'module',
-      success: 'success',
-      resultCode: 'resultCode',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      resultMsg: 'string',
-      module: BillSettementBtripTrainResponseBodyModule,
-      success: 'boolean',
-      resultCode: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class BillSettementBtripTrainResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: BillSettementBtripTrainResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: BillSettementBtripTrainResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class SyncExceedApplyHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class SyncExceedApplyRequest extends $tea.Model {
-  remark?: string;
-  applyId?: string;
-  corpId?: string;
-  thirdpartyFlowId?: string;
-  userId?: string;
-  status?: number;
-  static names(): { [key: string]: string } {
-    return {
-      remark: 'remark',
-      applyId: 'applyId',
-      corpId: 'corpId',
-      thirdpartyFlowId: 'thirdpartyFlowId',
-      userId: 'userId',
-      status: 'status',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      remark: 'string',
-      applyId: 'string',
-      corpId: 'string',
-      thirdpartyFlowId: 'string',
-      userId: 'string',
-      status: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class SyncExceedApplyResponseBody extends $tea.Model {
-  module?: boolean;
-  static names(): { [key: string]: string } {
-    return {
-      module: 'module',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      module: 'boolean',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class SyncExceedApplyResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: SyncExceedApplyResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: SyncExceedApplyResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class AddCityCarApplyHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class AddCityCarApplyRequest extends $tea.Model {
-  cause?: string;
-  city?: string;
-  corpId?: string;
-  date?: string;
-  projectCode?: string;
-  projectName?: string;
-  status?: number;
-  thirdPartApplyId?: string;
-  thirdPartCostCenterId?: string;
-  thirdPartInvoiceId?: string;
-  timesTotal?: number;
-  timesType?: number;
-  timesUsed?: number;
-  title?: string;
-  userId?: string;
-  dingSuiteKey?: string;
-  dingCorpId?: string;
-  dingTokenGrantType?: number;
-  finishedDate?: string;
-  static names(): { [key: string]: string } {
-    return {
-      cause: 'cause',
-      city: 'city',
-      corpId: 'corpId',
-      date: 'date',
-      projectCode: 'projectCode',
-      projectName: 'projectName',
-      status: 'status',
-      thirdPartApplyId: 'thirdPartApplyId',
-      thirdPartCostCenterId: 'thirdPartCostCenterId',
-      thirdPartInvoiceId: 'thirdPartInvoiceId',
-      timesTotal: 'timesTotal',
-      timesType: 'timesType',
-      timesUsed: 'timesUsed',
-      title: 'title',
-      userId: 'userId',
-      dingSuiteKey: 'dingSuiteKey',
-      dingCorpId: 'dingCorpId',
-      dingTokenGrantType: 'dingTokenGrantType',
-      finishedDate: 'finishedDate',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      cause: 'string',
-      city: 'string',
-      corpId: 'string',
-      date: 'string',
-      projectCode: 'string',
-      projectName: 'string',
-      status: 'number',
-      thirdPartApplyId: 'string',
-      thirdPartCostCenterId: 'string',
-      thirdPartInvoiceId: 'string',
-      timesTotal: 'number',
-      timesType: 'number',
-      timesUsed: 'number',
-      title: 'string',
-      userId: 'string',
-      dingSuiteKey: 'string',
-      dingCorpId: 'string',
-      dingTokenGrantType: 'number',
-      finishedDate: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class AddCityCarApplyResponseBody extends $tea.Model {
-  applyId?: number;
-  static names(): { [key: string]: string } {
-    return {
-      applyId: 'applyId',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      applyId: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class AddCityCarApplyResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: AddCityCarApplyResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: AddCityCarApplyResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class BillSettementFlightHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class BillSettementFlightRequest extends $tea.Model {
-  corpId?: string;
-  category?: number;
-  pageSize?: number;
-  periodStart?: string;
-  pageNumber?: number;
-  periodEnd?: string;
-  static names(): { [key: string]: string } {
-    return {
-      corpId: 'corpId',
-      category: 'category',
-      pageSize: 'pageSize',
-      periodStart: 'periodStart',
-      pageNumber: 'pageNumber',
-      periodEnd: 'periodEnd',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      corpId: 'string',
-      category: 'number',
-      pageSize: 'number',
-      periodStart: 'string',
-      pageNumber: 'number',
-      periodEnd: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class BillSettementFlightResponseBody extends $tea.Model {
-  resultMsg?: string;
-  module?: BillSettementFlightResponseBodyModule;
-  success?: boolean;
-  resultCode?: number;
-  static names(): { [key: string]: string } {
-    return {
-      resultMsg: 'resultMsg',
-      module: 'module',
-      success: 'success',
-      resultCode: 'resultCode',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      resultMsg: 'string',
-      module: BillSettementFlightResponseBodyModule,
-      success: 'boolean',
-      resultCode: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class BillSettementFlightResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: BillSettementFlightResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: BillSettementFlightResponseBody,
     };
   }
 
@@ -908,19 +793,19 @@ export class GetHotelExceedApplyHeaders extends $tea.Model {
 }
 
 export class GetHotelExceedApplyRequest extends $tea.Model {
-  corpId?: string;
   applyId?: string;
+  corpId?: string;
   static names(): { [key: string]: string } {
     return {
-      corpId: 'corpId',
       applyId: 'applyId',
+      corpId: 'corpId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      corpId: 'string',
       applyId: 'string',
+      corpId: 'string',
     };
   }
 
@@ -930,46 +815,46 @@ export class GetHotelExceedApplyRequest extends $tea.Model {
 }
 
 export class GetHotelExceedApplyResponseBody extends $tea.Model {
-  corpId?: string;
   applyId?: number;
-  status?: number;
-  btripCause?: string;
-  exceedType?: number;
-  exceedReason?: string;
-  originStandard?: string;
-  submitTime?: string;
-  userId?: string;
   applyIntentionInfoDO?: GetHotelExceedApplyResponseBodyApplyIntentionInfoDO;
+  btripCause?: string;
+  corpId?: string;
+  exceedReason?: string;
+  exceedType?: number;
+  originStandard?: string;
+  status?: number;
+  submitTime?: string;
   thirdpartApplyId?: string;
+  userId?: string;
   static names(): { [key: string]: string } {
     return {
-      corpId: 'corpId',
       applyId: 'applyId',
-      status: 'status',
-      btripCause: 'btripCause',
-      exceedType: 'exceedType',
-      exceedReason: 'exceedReason',
-      originStandard: 'originStandard',
-      submitTime: 'submitTime',
-      userId: 'userId',
       applyIntentionInfoDO: 'applyIntentionInfoDO',
+      btripCause: 'btripCause',
+      corpId: 'corpId',
+      exceedReason: 'exceedReason',
+      exceedType: 'exceedType',
+      originStandard: 'originStandard',
+      status: 'status',
+      submitTime: 'submitTime',
       thirdpartApplyId: 'thirdpartApplyId',
+      userId: 'userId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      corpId: 'string',
       applyId: 'number',
-      status: 'number',
-      btripCause: 'string',
-      exceedType: 'number',
-      exceedReason: 'string',
-      originStandard: 'string',
-      submitTime: 'string',
-      userId: 'string',
       applyIntentionInfoDO: GetHotelExceedApplyResponseBodyApplyIntentionInfoDO,
+      btripCause: 'string',
+      corpId: 'string',
+      exceedReason: 'string',
+      exceedType: 'number',
+      originStandard: 'string',
+      status: 'number',
+      submitTime: 'string',
       thirdpartApplyId: 'string',
+      userId: 'string',
     };
   }
 
@@ -1000,7 +885,7 @@ export class GetHotelExceedApplyResponse extends $tea.Model {
   }
 }
 
-export class QueryUnionOrderHeaders extends $tea.Model {
+export class GetTrainExceedApplyHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
@@ -1022,23 +907,20 @@ export class QueryUnionOrderHeaders extends $tea.Model {
   }
 }
 
-export class QueryUnionOrderRequest extends $tea.Model {
+export class GetTrainExceedApplyRequest extends $tea.Model {
+  applyId?: string;
   corpId?: string;
-  thirdPartApplyId?: string;
-  unionNo?: string;
   static names(): { [key: string]: string } {
     return {
+      applyId: 'applyId',
       corpId: 'corpId',
-      thirdPartApplyId: 'thirdPartApplyId',
-      unionNo: 'unionNo',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      applyId: 'string',
       corpId: 'string',
-      thirdPartApplyId: 'string',
-      unionNo: 'string',
     };
   }
 
@@ -1047,29 +929,47 @@ export class QueryUnionOrderRequest extends $tea.Model {
   }
 }
 
-export class QueryUnionOrderResponseBody extends $tea.Model {
-  flightList?: QueryUnionOrderResponseBodyFlightList[];
+export class GetTrainExceedApplyResponseBody extends $tea.Model {
+  applyId?: number;
+  applyIntentionInfoDO?: GetTrainExceedApplyResponseBodyApplyIntentionInfoDO;
+  btripCause?: string;
   corpId?: string;
-  trainList?: QueryUnionOrderResponseBodyTrainList[];
-  hotelList?: QueryUnionOrderResponseBodyHotelList[];
-  vehicleList?: QueryUnionOrderResponseBodyVehicleList[];
+  exceedReason?: string;
+  exceedType?: number;
+  originStandard?: string;
+  status?: number;
+  submitTime?: string;
+  thirdpartApplyId?: string;
+  userId?: string;
   static names(): { [key: string]: string } {
     return {
-      flightList: 'flightList',
+      applyId: 'applyId',
+      applyIntentionInfoDO: 'applyIntentionInfoDO',
+      btripCause: 'btripCause',
       corpId: 'corpId',
-      trainList: 'trainList',
-      hotelList: 'hotelList',
-      vehicleList: 'vehicleList',
+      exceedReason: 'exceedReason',
+      exceedType: 'exceedType',
+      originStandard: 'originStandard',
+      status: 'status',
+      submitTime: 'submitTime',
+      thirdpartApplyId: 'thirdpartApplyId',
+      userId: 'userId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      flightList: { 'type': 'array', 'itemType': QueryUnionOrderResponseBodyFlightList },
+      applyId: 'number',
+      applyIntentionInfoDO: GetTrainExceedApplyResponseBodyApplyIntentionInfoDO,
+      btripCause: 'string',
       corpId: 'string',
-      trainList: { 'type': 'array', 'itemType': QueryUnionOrderResponseBodyTrainList },
-      hotelList: { 'type': 'array', 'itemType': QueryUnionOrderResponseBodyHotelList },
-      vehicleList: { 'type': 'array', 'itemType': QueryUnionOrderResponseBodyVehicleList },
+      exceedReason: 'string',
+      exceedType: 'number',
+      originStandard: 'string',
+      status: 'number',
+      submitTime: 'string',
+      thirdpartApplyId: 'string',
+      userId: 'string',
     };
   }
 
@@ -1078,9 +978,9 @@ export class QueryUnionOrderResponseBody extends $tea.Model {
   }
 }
 
-export class QueryUnionOrderResponse extends $tea.Model {
+export class GetTrainExceedApplyResponse extends $tea.Model {
   headers: { [key: string]: string };
-  body: QueryUnionOrderResponseBody;
+  body: GetTrainExceedApplyResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1091,7 +991,7 @@ export class QueryUnionOrderResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: QueryUnionOrderResponseBody,
+      body: GetTrainExceedApplyResponseBody,
     };
   }
 
@@ -1203,7 +1103,7 @@ export class QueryCityCarApplyResponse extends $tea.Model {
   }
 }
 
-export class GetTrainExceedApplyHeaders extends $tea.Model {
+export class QueryUnionOrderHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
@@ -1225,20 +1125,23 @@ export class GetTrainExceedApplyHeaders extends $tea.Model {
   }
 }
 
-export class GetTrainExceedApplyRequest extends $tea.Model {
+export class QueryUnionOrderRequest extends $tea.Model {
   corpId?: string;
-  applyId?: string;
+  thirdPartApplyId?: string;
+  unionNo?: string;
   static names(): { [key: string]: string } {
     return {
       corpId: 'corpId',
-      applyId: 'applyId',
+      thirdPartApplyId: 'thirdPartApplyId',
+      unionNo: 'unionNo',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       corpId: 'string',
-      applyId: 'string',
+      thirdPartApplyId: 'string',
+      unionNo: 'string',
     };
   }
 
@@ -1247,47 +1150,29 @@ export class GetTrainExceedApplyRequest extends $tea.Model {
   }
 }
 
-export class GetTrainExceedApplyResponseBody extends $tea.Model {
+export class QueryUnionOrderResponseBody extends $tea.Model {
   corpId?: string;
-  applyId?: number;
-  status?: number;
-  btripCause?: string;
-  exceedType?: number;
-  exceedReason?: string;
-  originStandard?: string;
-  submitTime?: string;
-  userId?: string;
-  applyIntentionInfoDO?: GetTrainExceedApplyResponseBodyApplyIntentionInfoDO;
-  thirdpartApplyId?: string;
+  flightList?: QueryUnionOrderResponseBodyFlightList[];
+  hotelList?: QueryUnionOrderResponseBodyHotelList[];
+  trainList?: QueryUnionOrderResponseBodyTrainList[];
+  vehicleList?: QueryUnionOrderResponseBodyVehicleList[];
   static names(): { [key: string]: string } {
     return {
       corpId: 'corpId',
-      applyId: 'applyId',
-      status: 'status',
-      btripCause: 'btripCause',
-      exceedType: 'exceedType',
-      exceedReason: 'exceedReason',
-      originStandard: 'originStandard',
-      submitTime: 'submitTime',
-      userId: 'userId',
-      applyIntentionInfoDO: 'applyIntentionInfoDO',
-      thirdpartApplyId: 'thirdpartApplyId',
+      flightList: 'flightList',
+      hotelList: 'hotelList',
+      trainList: 'trainList',
+      vehicleList: 'vehicleList',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       corpId: 'string',
-      applyId: 'number',
-      status: 'number',
-      btripCause: 'string',
-      exceedType: 'number',
-      exceedReason: 'string',
-      originStandard: 'string',
-      submitTime: 'string',
-      userId: 'string',
-      applyIntentionInfoDO: GetTrainExceedApplyResponseBodyApplyIntentionInfoDO,
-      thirdpartApplyId: 'string',
+      flightList: { 'type': 'array', 'itemType': QueryUnionOrderResponseBodyFlightList },
+      hotelList: { 'type': 'array', 'itemType': QueryUnionOrderResponseBodyHotelList },
+      trainList: { 'type': 'array', 'itemType': QueryUnionOrderResponseBodyTrainList },
+      vehicleList: { 'type': 'array', 'itemType': QueryUnionOrderResponseBodyVehicleList },
     };
   }
 
@@ -1296,9 +1181,9 @@ export class GetTrainExceedApplyResponseBody extends $tea.Model {
   }
 }
 
-export class GetTrainExceedApplyResponse extends $tea.Model {
+export class QueryUnionOrderResponse extends $tea.Model {
   headers: { [key: string]: string };
-  body: GetTrainExceedApplyResponseBody;
+  body: QueryUnionOrderResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1309,7 +1194,749 @@ export class GetTrainExceedApplyResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: GetTrainExceedApplyResponseBody,
+      body: QueryUnionOrderResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncExceedApplyHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncExceedApplyRequest extends $tea.Model {
+  applyId?: string;
+  corpId?: string;
+  remark?: string;
+  status?: number;
+  thirdpartyFlowId?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      applyId: 'applyId',
+      corpId: 'corpId',
+      remark: 'remark',
+      status: 'status',
+      thirdpartyFlowId: 'thirdpartyFlowId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      applyId: 'string',
+      corpId: 'string',
+      remark: 'string',
+      status: 'number',
+      thirdpartyFlowId: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncExceedApplyResponseBody extends $tea.Model {
+  module?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      module: 'module',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      module: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncExceedApplyResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SyncExceedApplyResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SyncExceedApplyResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BillSettementBtripTrainResponseBodyModuleDataList extends $tea.Model {
+  alipayTradeNo?: string;
+  applyId?: string;
+  arrDate?: string;
+  arrStation?: string;
+  arrTime?: string;
+  bookTime?: string;
+  bookerId?: string;
+  bookerJobNo?: string;
+  bookerName?: string;
+  capitalDirection?: string;
+  cascadeDepartment?: string;
+  changeFee?: number;
+  costCenter?: string;
+  costCenterNumber?: string;
+  coupon?: number;
+  department?: string;
+  departmentId?: string;
+  deptDate?: string;
+  deptStation?: string;
+  deptTime?: string;
+  feeType?: string;
+  index?: string;
+  invoiceTitle?: string;
+  orderId?: string;
+  orderPrice?: number;
+  overApplyId?: string;
+  primaryId?: number;
+  projectCode?: string;
+  projectName?: string;
+  refundFee?: number;
+  runTime?: string;
+  seatNo?: string;
+  seatType?: string;
+  serviceFee?: number;
+  settlementFee?: number;
+  settlementTime?: string;
+  settlementType?: string;
+  status?: number;
+  ticketNo?: string;
+  ticketPrice?: number;
+  trainNo?: string;
+  trainType?: string;
+  travelerId?: string;
+  travelerJobNo?: string;
+  travelerName?: string;
+  voucherType?: number;
+  static names(): { [key: string]: string } {
+    return {
+      alipayTradeNo: 'alipayTradeNo',
+      applyId: 'applyId',
+      arrDate: 'arrDate',
+      arrStation: 'arrStation',
+      arrTime: 'arrTime',
+      bookTime: 'bookTime',
+      bookerId: 'bookerId',
+      bookerJobNo: 'bookerJobNo',
+      bookerName: 'bookerName',
+      capitalDirection: 'capitalDirection',
+      cascadeDepartment: 'cascadeDepartment',
+      changeFee: 'changeFee',
+      costCenter: 'costCenter',
+      costCenterNumber: 'costCenterNumber',
+      coupon: 'coupon',
+      department: 'department',
+      departmentId: 'departmentId',
+      deptDate: 'deptDate',
+      deptStation: 'deptStation',
+      deptTime: 'deptTime',
+      feeType: 'feeType',
+      index: 'index',
+      invoiceTitle: 'invoiceTitle',
+      orderId: 'orderId',
+      orderPrice: 'orderPrice',
+      overApplyId: 'overApplyId',
+      primaryId: 'primaryId',
+      projectCode: 'projectCode',
+      projectName: 'projectName',
+      refundFee: 'refundFee',
+      runTime: 'runTime',
+      seatNo: 'seatNo',
+      seatType: 'seatType',
+      serviceFee: 'serviceFee',
+      settlementFee: 'settlementFee',
+      settlementTime: 'settlementTime',
+      settlementType: 'settlementType',
+      status: 'status',
+      ticketNo: 'ticketNo',
+      ticketPrice: 'ticketPrice',
+      trainNo: 'trainNo',
+      trainType: 'trainType',
+      travelerId: 'travelerId',
+      travelerJobNo: 'travelerJobNo',
+      travelerName: 'travelerName',
+      voucherType: 'voucherType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      alipayTradeNo: 'string',
+      applyId: 'string',
+      arrDate: 'string',
+      arrStation: 'string',
+      arrTime: 'string',
+      bookTime: 'string',
+      bookerId: 'string',
+      bookerJobNo: 'string',
+      bookerName: 'string',
+      capitalDirection: 'string',
+      cascadeDepartment: 'string',
+      changeFee: 'number',
+      costCenter: 'string',
+      costCenterNumber: 'string',
+      coupon: 'number',
+      department: 'string',
+      departmentId: 'string',
+      deptDate: 'string',
+      deptStation: 'string',
+      deptTime: 'string',
+      feeType: 'string',
+      index: 'string',
+      invoiceTitle: 'string',
+      orderId: 'string',
+      orderPrice: 'number',
+      overApplyId: 'string',
+      primaryId: 'number',
+      projectCode: 'string',
+      projectName: 'string',
+      refundFee: 'number',
+      runTime: 'string',
+      seatNo: 'string',
+      seatType: 'string',
+      serviceFee: 'number',
+      settlementFee: 'number',
+      settlementTime: 'string',
+      settlementType: 'string',
+      status: 'number',
+      ticketNo: 'string',
+      ticketPrice: 'number',
+      trainNo: 'string',
+      trainType: 'string',
+      travelerId: 'string',
+      travelerJobNo: 'string',
+      travelerName: 'string',
+      voucherType: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BillSettementBtripTrainResponseBodyModule extends $tea.Model {
+  category?: number;
+  corpId?: string;
+  dataList?: BillSettementBtripTrainResponseBodyModuleDataList[];
+  periodEnd?: string;
+  periodStart?: string;
+  totalNum?: number;
+  static names(): { [key: string]: string } {
+    return {
+      category: 'category',
+      corpId: 'corpId',
+      dataList: 'dataList',
+      periodEnd: 'periodEnd',
+      periodStart: 'periodStart',
+      totalNum: 'totalNum',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      category: 'number',
+      corpId: 'string',
+      dataList: { 'type': 'array', 'itemType': BillSettementBtripTrainResponseBodyModuleDataList },
+      periodEnd: 'string',
+      periodStart: 'string',
+      totalNum: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BillSettementCarResponseBodyModuleDataList extends $tea.Model {
+  alipayTradeNo?: string;
+  applyId?: string;
+  arrCity?: string;
+  arrDate?: string;
+  arrLocation?: string;
+  arrTime?: string;
+  bookTime?: string;
+  bookerId?: string;
+  bookerJobNo?: string;
+  bookerName?: string;
+  businessCategory?: string;
+  capitalDirection?: string;
+  carLevel?: string;
+  cascadeDepartment?: string;
+  costCenter?: string;
+  costCenterNumber?: string;
+  coupon?: number;
+  couponPrice?: number;
+  department?: string;
+  departmentId?: string;
+  deptCity?: string;
+  deptDate?: string;
+  deptLocation?: string;
+  deptTime?: string;
+  estimateDriveDistance?: string;
+  estimatePrice?: number;
+  feeType?: string;
+  index?: string;
+  invoiceTitle?: string;
+  memo?: string;
+  orderId?: string;
+  orderPrice?: number;
+  overApplyId?: string;
+  personSettleFee?: number;
+  primaryId?: string;
+  projectCode?: string;
+  projectName?: string;
+  providerName?: string;
+  realDriveDistance?: string;
+  realFromAddr?: string;
+  realToAddr?: string;
+  serviceFee?: string;
+  settlementFee?: number;
+  settlementTime?: string;
+  settlementType?: string;
+  specialOrder?: string;
+  specialReason?: string;
+  status?: number;
+  travelerId?: string;
+  travelerJobNo?: string;
+  travelerName?: string;
+  userConfirmDesc?: string;
+  static names(): { [key: string]: string } {
+    return {
+      alipayTradeNo: 'alipayTradeNo',
+      applyId: 'applyId',
+      arrCity: 'arrCity',
+      arrDate: 'arrDate',
+      arrLocation: 'arrLocation',
+      arrTime: 'arrTime',
+      bookTime: 'bookTime',
+      bookerId: 'bookerId',
+      bookerJobNo: 'bookerJobNo',
+      bookerName: 'bookerName',
+      businessCategory: 'businessCategory',
+      capitalDirection: 'capitalDirection',
+      carLevel: 'carLevel',
+      cascadeDepartment: 'cascadeDepartment',
+      costCenter: 'costCenter',
+      costCenterNumber: 'costCenterNumber',
+      coupon: 'coupon',
+      couponPrice: 'couponPrice',
+      department: 'department',
+      departmentId: 'departmentId',
+      deptCity: 'deptCity',
+      deptDate: 'deptDate',
+      deptLocation: 'deptLocation',
+      deptTime: 'deptTime',
+      estimateDriveDistance: 'estimateDriveDistance',
+      estimatePrice: 'estimatePrice',
+      feeType: 'feeType',
+      index: 'index',
+      invoiceTitle: 'invoiceTitle',
+      memo: 'memo',
+      orderId: 'orderId',
+      orderPrice: 'orderPrice',
+      overApplyId: 'overApplyId',
+      personSettleFee: 'personSettleFee',
+      primaryId: 'primaryId',
+      projectCode: 'projectCode',
+      projectName: 'projectName',
+      providerName: 'providerName',
+      realDriveDistance: 'realDriveDistance',
+      realFromAddr: 'realFromAddr',
+      realToAddr: 'realToAddr',
+      serviceFee: 'serviceFee',
+      settlementFee: 'settlementFee',
+      settlementTime: 'settlementTime',
+      settlementType: 'settlementType',
+      specialOrder: 'specialOrder',
+      specialReason: 'specialReason',
+      status: 'status',
+      travelerId: 'travelerId',
+      travelerJobNo: 'travelerJobNo',
+      travelerName: 'travelerName',
+      userConfirmDesc: 'userConfirmDesc',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      alipayTradeNo: 'string',
+      applyId: 'string',
+      arrCity: 'string',
+      arrDate: 'string',
+      arrLocation: 'string',
+      arrTime: 'string',
+      bookTime: 'string',
+      bookerId: 'string',
+      bookerJobNo: 'string',
+      bookerName: 'string',
+      businessCategory: 'string',
+      capitalDirection: 'string',
+      carLevel: 'string',
+      cascadeDepartment: 'string',
+      costCenter: 'string',
+      costCenterNumber: 'string',
+      coupon: 'number',
+      couponPrice: 'number',
+      department: 'string',
+      departmentId: 'string',
+      deptCity: 'string',
+      deptDate: 'string',
+      deptLocation: 'string',
+      deptTime: 'string',
+      estimateDriveDistance: 'string',
+      estimatePrice: 'number',
+      feeType: 'string',
+      index: 'string',
+      invoiceTitle: 'string',
+      memo: 'string',
+      orderId: 'string',
+      orderPrice: 'number',
+      overApplyId: 'string',
+      personSettleFee: 'number',
+      primaryId: 'string',
+      projectCode: 'string',
+      projectName: 'string',
+      providerName: 'string',
+      realDriveDistance: 'string',
+      realFromAddr: 'string',
+      realToAddr: 'string',
+      serviceFee: 'string',
+      settlementFee: 'number',
+      settlementTime: 'string',
+      settlementType: 'string',
+      specialOrder: 'string',
+      specialReason: 'string',
+      status: 'number',
+      travelerId: 'string',
+      travelerJobNo: 'string',
+      travelerName: 'string',
+      userConfirmDesc: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BillSettementCarResponseBodyModule extends $tea.Model {
+  category?: number;
+  corpId?: string;
+  dataList?: BillSettementCarResponseBodyModuleDataList[];
+  periodEnd?: string;
+  periodStart?: string;
+  totalNum?: number;
+  static names(): { [key: string]: string } {
+    return {
+      category: 'category',
+      corpId: 'corpId',
+      dataList: 'dataList',
+      periodEnd: 'periodEnd',
+      periodStart: 'periodStart',
+      totalNum: 'totalNum',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      category: 'number',
+      corpId: 'string',
+      dataList: { 'type': 'array', 'itemType': BillSettementCarResponseBodyModuleDataList },
+      periodEnd: 'string',
+      periodStart: 'string',
+      totalNum: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BillSettementFlightResponseBodyModuleDataList extends $tea.Model {
+  advanceDay?: number;
+  airlineCorpCode?: string;
+  airlineCorpName?: string;
+  alipayTradeNo?: string;
+  applyId?: string;
+  arrAirportCode?: string;
+  arrCity?: string;
+  arrDate?: string;
+  arrStation?: string;
+  arrTime?: string;
+  bookTime?: string;
+  bookerId?: string;
+  bookerJobNo?: string;
+  bookerName?: string;
+  btripCouponFee?: number;
+  buildFee?: number;
+  cabin?: string;
+  cabinClass?: string;
+  capitalDirection?: string;
+  cascadeDepartment?: string;
+  changeFee?: number;
+  corpPayOrderFee?: number;
+  costCenter?: string;
+  costCenterNumber?: string;
+  coupon?: number;
+  depAirportCode?: string;
+  department?: string;
+  departmentId?: string;
+  deptCity?: string;
+  deptDate?: string;
+  deptStation?: string;
+  deptTime?: string;
+  discount?: string;
+  feeType?: string;
+  flightNo?: string;
+  index?: string;
+  insuranceFee?: number;
+  invoiceTitle?: string;
+  itineraryNum?: string;
+  itineraryPrice?: number;
+  mostDifferenceDeptTime?: string;
+  mostDifferenceDiscount?: number;
+  mostDifferenceFlightNo?: string;
+  mostDifferencePrice?: number;
+  mostDifferenceReason?: string;
+  mostPrice?: number;
+  negotiationCouponFee?: number;
+  oilFee?: number;
+  orderId?: string;
+  overApplyId?: string;
+  primaryId?: number;
+  projectCode?: string;
+  projectName?: string;
+  refundFee?: number;
+  refundUpgradeCost?: number;
+  repeatRefund?: string;
+  sealPrice?: number;
+  serviceFee?: number;
+  settlementFee?: number;
+  settlementTime?: string;
+  settlementType?: string;
+  status?: number;
+  ticketId?: string;
+  travelerId?: string;
+  travelerJobNo?: string;
+  travelerName?: string;
+  upgradeCost?: number;
+  static names(): { [key: string]: string } {
+    return {
+      advanceDay: 'advanceDay',
+      airlineCorpCode: 'airlineCorpCode',
+      airlineCorpName: 'airlineCorpName',
+      alipayTradeNo: 'alipayTradeNo',
+      applyId: 'applyId',
+      arrAirportCode: 'arrAirportCode',
+      arrCity: 'arrCity',
+      arrDate: 'arrDate',
+      arrStation: 'arrStation',
+      arrTime: 'arrTime',
+      bookTime: 'bookTime',
+      bookerId: 'bookerId',
+      bookerJobNo: 'bookerJobNo',
+      bookerName: 'bookerName',
+      btripCouponFee: 'btripCouponFee',
+      buildFee: 'buildFee',
+      cabin: 'cabin',
+      cabinClass: 'cabinClass',
+      capitalDirection: 'capitalDirection',
+      cascadeDepartment: 'cascadeDepartment',
+      changeFee: 'changeFee',
+      corpPayOrderFee: 'corpPayOrderFee',
+      costCenter: 'costCenter',
+      costCenterNumber: 'costCenterNumber',
+      coupon: 'coupon',
+      depAirportCode: 'depAirportCode',
+      department: 'department',
+      departmentId: 'departmentId',
+      deptCity: 'deptCity',
+      deptDate: 'deptDate',
+      deptStation: 'deptStation',
+      deptTime: 'deptTime',
+      discount: 'discount',
+      feeType: 'feeType',
+      flightNo: 'flightNo',
+      index: 'index',
+      insuranceFee: 'insuranceFee',
+      invoiceTitle: 'invoiceTitle',
+      itineraryNum: 'itineraryNum',
+      itineraryPrice: 'itineraryPrice',
+      mostDifferenceDeptTime: 'mostDifferenceDeptTime',
+      mostDifferenceDiscount: 'mostDifferenceDiscount',
+      mostDifferenceFlightNo: 'mostDifferenceFlightNo',
+      mostDifferencePrice: 'mostDifferencePrice',
+      mostDifferenceReason: 'mostDifferenceReason',
+      mostPrice: 'mostPrice',
+      negotiationCouponFee: 'negotiationCouponFee',
+      oilFee: 'oilFee',
+      orderId: 'orderId',
+      overApplyId: 'overApplyId',
+      primaryId: 'primaryId',
+      projectCode: 'projectCode',
+      projectName: 'projectName',
+      refundFee: 'refundFee',
+      refundUpgradeCost: 'refundUpgradeCost',
+      repeatRefund: 'repeatRefund',
+      sealPrice: 'sealPrice',
+      serviceFee: 'serviceFee',
+      settlementFee: 'settlementFee',
+      settlementTime: 'settlementTime',
+      settlementType: 'settlementType',
+      status: 'status',
+      ticketId: 'ticketId',
+      travelerId: 'travelerId',
+      travelerJobNo: 'travelerJobNo',
+      travelerName: 'travelerName',
+      upgradeCost: 'upgradeCost',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      advanceDay: 'number',
+      airlineCorpCode: 'string',
+      airlineCorpName: 'string',
+      alipayTradeNo: 'string',
+      applyId: 'string',
+      arrAirportCode: 'string',
+      arrCity: 'string',
+      arrDate: 'string',
+      arrStation: 'string',
+      arrTime: 'string',
+      bookTime: 'string',
+      bookerId: 'string',
+      bookerJobNo: 'string',
+      bookerName: 'string',
+      btripCouponFee: 'number',
+      buildFee: 'number',
+      cabin: 'string',
+      cabinClass: 'string',
+      capitalDirection: 'string',
+      cascadeDepartment: 'string',
+      changeFee: 'number',
+      corpPayOrderFee: 'number',
+      costCenter: 'string',
+      costCenterNumber: 'string',
+      coupon: 'number',
+      depAirportCode: 'string',
+      department: 'string',
+      departmentId: 'string',
+      deptCity: 'string',
+      deptDate: 'string',
+      deptStation: 'string',
+      deptTime: 'string',
+      discount: 'string',
+      feeType: 'string',
+      flightNo: 'string',
+      index: 'string',
+      insuranceFee: 'number',
+      invoiceTitle: 'string',
+      itineraryNum: 'string',
+      itineraryPrice: 'number',
+      mostDifferenceDeptTime: 'string',
+      mostDifferenceDiscount: 'number',
+      mostDifferenceFlightNo: 'string',
+      mostDifferencePrice: 'number',
+      mostDifferenceReason: 'string',
+      mostPrice: 'number',
+      negotiationCouponFee: 'number',
+      oilFee: 'number',
+      orderId: 'string',
+      overApplyId: 'string',
+      primaryId: 'number',
+      projectCode: 'string',
+      projectName: 'string',
+      refundFee: 'number',
+      refundUpgradeCost: 'number',
+      repeatRefund: 'string',
+      sealPrice: 'number',
+      serviceFee: 'number',
+      settlementFee: 'number',
+      settlementTime: 'string',
+      settlementType: 'string',
+      status: 'number',
+      ticketId: 'string',
+      travelerId: 'string',
+      travelerJobNo: 'string',
+      travelerName: 'string',
+      upgradeCost: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BillSettementFlightResponseBodyModule extends $tea.Model {
+  category?: number;
+  corpId?: string;
+  dataList?: BillSettementFlightResponseBodyModuleDataList[];
+  periodEnd?: string;
+  periodStart?: string;
+  totalNum?: number;
+  static names(): { [key: string]: string } {
+    return {
+      category: 'category',
+      corpId: 'corpId',
+      dataList: 'dataList',
+      periodEnd: 'periodEnd',
+      periodStart: 'periodStart',
+      totalNum: 'totalNum',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      category: 'number',
+      corpId: 'string',
+      dataList: { 'type': 'array', 'itemType': BillSettementFlightResponseBodyModuleDataList },
+      periodEnd: 'string',
+      periodStart: 'string',
+      totalNum: 'number',
     };
   }
 
@@ -1323,6 +1950,7 @@ export class BillSettementHotelResponseBodyModuleDataList extends $tea.Model {
   applyId?: string;
   bookTime?: string;
   bookerId?: string;
+  bookerJobNo?: string;
   bookerName?: string;
   capitalDirection?: string;
   cascadeDepartment?: string;
@@ -1365,15 +1993,15 @@ export class BillSettementHotelResponseBodyModuleDataList extends $tea.Model {
   status?: number;
   totalNights?: number;
   travelerId?: string;
-  travelerName?: string;
-  bookerJobNo?: string;
   travelerJobNo?: string;
+  travelerName?: string;
   static names(): { [key: string]: string } {
     return {
       alipayTradeNo: 'alipayTradeNo',
       applyId: 'applyId',
       bookTime: 'bookTime',
       bookerId: 'bookerId',
+      bookerJobNo: 'bookerJobNo',
       bookerName: 'bookerName',
       capitalDirection: 'capitalDirection',
       cascadeDepartment: 'cascadeDepartment',
@@ -1416,9 +2044,8 @@ export class BillSettementHotelResponseBodyModuleDataList extends $tea.Model {
       status: 'status',
       totalNights: 'totalNights',
       travelerId: 'travelerId',
-      travelerName: 'travelerName',
-      bookerJobNo: 'bookerJobNo',
       travelerJobNo: 'travelerJobNo',
+      travelerName: 'travelerName',
     };
   }
 
@@ -1428,6 +2055,7 @@ export class BillSettementHotelResponseBodyModuleDataList extends $tea.Model {
       applyId: 'string',
       bookTime: 'string',
       bookerId: 'string',
+      bookerJobNo: 'string',
       bookerName: 'string',
       capitalDirection: 'string',
       cascadeDepartment: 'string',
@@ -1470,9 +2098,8 @@ export class BillSettementHotelResponseBodyModuleDataList extends $tea.Model {
       status: 'number',
       totalNights: 'number',
       travelerId: 'string',
-      travelerName: 'string',
-      bookerJobNo: 'string',
       travelerJobNo: 'string',
+      travelerName: 'string',
     };
   }
 
@@ -1570,651 +2197,6 @@ export class GetFlightExceedApplyResponseBodyApplyIntentionInfoDO extends $tea.M
   }
 }
 
-export class BillSettementCarResponseBodyModuleDataList extends $tea.Model {
-  alipayTradeNo?: string;
-  applyId?: string;
-  arrCity?: string;
-  arrDate?: string;
-  arrLocation?: string;
-  arrTime?: string;
-  bookTime?: string;
-  bookerId?: string;
-  bookerName?: string;
-  businessCategory?: string;
-  capitalDirection?: string;
-  carLevel?: string;
-  cascadeDepartment?: string;
-  costCenter?: string;
-  costCenterNumber?: string;
-  coupon?: number;
-  couponPrice?: number;
-  department?: string;
-  departmentId?: string;
-  deptCity?: string;
-  deptDate?: string;
-  deptLocation?: string;
-  deptTime?: string;
-  estimateDriveDistance?: string;
-  estimatePrice?: number;
-  feeType?: string;
-  index?: string;
-  invoiceTitle?: string;
-  memo?: string;
-  orderId?: string;
-  orderPrice?: number;
-  overApplyId?: string;
-  personSettleFee?: number;
-  primaryId?: string;
-  projectCode?: string;
-  projectName?: string;
-  providerName?: string;
-  realDriveDistance?: string;
-  realFromAddr?: string;
-  realToAddr?: string;
-  serviceFee?: string;
-  settlementFee?: number;
-  settlementTime?: string;
-  settlementType?: string;
-  specialOrder?: string;
-  specialReason?: string;
-  status?: number;
-  travelerId?: string;
-  travelerName?: string;
-  userConfirmDesc?: string;
-  bookerJobNo?: string;
-  travelerJobNo?: string;
-  static names(): { [key: string]: string } {
-    return {
-      alipayTradeNo: 'alipayTradeNo',
-      applyId: 'applyId',
-      arrCity: 'arrCity',
-      arrDate: 'arrDate',
-      arrLocation: 'arrLocation',
-      arrTime: 'arrTime',
-      bookTime: 'bookTime',
-      bookerId: 'bookerId',
-      bookerName: 'bookerName',
-      businessCategory: 'businessCategory',
-      capitalDirection: 'capitalDirection',
-      carLevel: 'carLevel',
-      cascadeDepartment: 'cascadeDepartment',
-      costCenter: 'costCenter',
-      costCenterNumber: 'costCenterNumber',
-      coupon: 'coupon',
-      couponPrice: 'couponPrice',
-      department: 'department',
-      departmentId: 'departmentId',
-      deptCity: 'deptCity',
-      deptDate: 'deptDate',
-      deptLocation: 'deptLocation',
-      deptTime: 'deptTime',
-      estimateDriveDistance: 'estimateDriveDistance',
-      estimatePrice: 'estimatePrice',
-      feeType: 'feeType',
-      index: 'index',
-      invoiceTitle: 'invoiceTitle',
-      memo: 'memo',
-      orderId: 'orderId',
-      orderPrice: 'orderPrice',
-      overApplyId: 'overApplyId',
-      personSettleFee: 'personSettleFee',
-      primaryId: 'primaryId',
-      projectCode: 'projectCode',
-      projectName: 'projectName',
-      providerName: 'providerName',
-      realDriveDistance: 'realDriveDistance',
-      realFromAddr: 'realFromAddr',
-      realToAddr: 'realToAddr',
-      serviceFee: 'serviceFee',
-      settlementFee: 'settlementFee',
-      settlementTime: 'settlementTime',
-      settlementType: 'settlementType',
-      specialOrder: 'specialOrder',
-      specialReason: 'specialReason',
-      status: 'status',
-      travelerId: 'travelerId',
-      travelerName: 'travelerName',
-      userConfirmDesc: 'userConfirmDesc',
-      bookerJobNo: 'bookerJobNo',
-      travelerJobNo: 'travelerJobNo',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      alipayTradeNo: 'string',
-      applyId: 'string',
-      arrCity: 'string',
-      arrDate: 'string',
-      arrLocation: 'string',
-      arrTime: 'string',
-      bookTime: 'string',
-      bookerId: 'string',
-      bookerName: 'string',
-      businessCategory: 'string',
-      capitalDirection: 'string',
-      carLevel: 'string',
-      cascadeDepartment: 'string',
-      costCenter: 'string',
-      costCenterNumber: 'string',
-      coupon: 'number',
-      couponPrice: 'number',
-      department: 'string',
-      departmentId: 'string',
-      deptCity: 'string',
-      deptDate: 'string',
-      deptLocation: 'string',
-      deptTime: 'string',
-      estimateDriveDistance: 'string',
-      estimatePrice: 'number',
-      feeType: 'string',
-      index: 'string',
-      invoiceTitle: 'string',
-      memo: 'string',
-      orderId: 'string',
-      orderPrice: 'number',
-      overApplyId: 'string',
-      personSettleFee: 'number',
-      primaryId: 'string',
-      projectCode: 'string',
-      projectName: 'string',
-      providerName: 'string',
-      realDriveDistance: 'string',
-      realFromAddr: 'string',
-      realToAddr: 'string',
-      serviceFee: 'string',
-      settlementFee: 'number',
-      settlementTime: 'string',
-      settlementType: 'string',
-      specialOrder: 'string',
-      specialReason: 'string',
-      status: 'number',
-      travelerId: 'string',
-      travelerName: 'string',
-      userConfirmDesc: 'string',
-      bookerJobNo: 'string',
-      travelerJobNo: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class BillSettementCarResponseBodyModule extends $tea.Model {
-  category?: number;
-  corpId?: string;
-  dataList?: BillSettementCarResponseBodyModuleDataList[];
-  periodEnd?: string;
-  periodStart?: string;
-  totalNum?: number;
-  static names(): { [key: string]: string } {
-    return {
-      category: 'category',
-      corpId: 'corpId',
-      dataList: 'dataList',
-      periodEnd: 'periodEnd',
-      periodStart: 'periodStart',
-      totalNum: 'totalNum',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      category: 'number',
-      corpId: 'string',
-      dataList: { 'type': 'array', 'itemType': BillSettementCarResponseBodyModuleDataList },
-      periodEnd: 'string',
-      periodStart: 'string',
-      totalNum: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class BillSettementBtripTrainResponseBodyModuleDataList extends $tea.Model {
-  alipayTradeNo?: string;
-  applyId?: string;
-  arrDate?: string;
-  arrStation?: string;
-  arrTime?: string;
-  bookTime?: string;
-  bookerId?: string;
-  bookerName?: string;
-  capitalDirection?: string;
-  cascadeDepartment?: string;
-  changeFee?: number;
-  costCenter?: string;
-  costCenterNumber?: string;
-  coupon?: number;
-  department?: string;
-  departmentId?: string;
-  deptDate?: string;
-  deptStation?: string;
-  deptTime?: string;
-  feeType?: string;
-  index?: string;
-  invoiceTitle?: string;
-  orderId?: string;
-  orderPrice?: number;
-  overApplyId?: string;
-  primaryId?: number;
-  projectCode?: string;
-  projectName?: string;
-  refundFee?: number;
-  runTime?: string;
-  seatNo?: string;
-  seatType?: string;
-  serviceFee?: number;
-  settlementFee?: number;
-  settlementTime?: string;
-  settlementType?: string;
-  status?: number;
-  ticketNo?: string;
-  ticketPrice?: number;
-  trainNo?: string;
-  trainType?: string;
-  travelerId?: string;
-  travelerName?: string;
-  bookerJobNo?: string;
-  travelerJobNo?: string;
-  voucherType?: number;
-  static names(): { [key: string]: string } {
-    return {
-      alipayTradeNo: 'alipayTradeNo',
-      applyId: 'applyId',
-      arrDate: 'arrDate',
-      arrStation: 'arrStation',
-      arrTime: 'arrTime',
-      bookTime: 'bookTime',
-      bookerId: 'bookerId',
-      bookerName: 'bookerName',
-      capitalDirection: 'capitalDirection',
-      cascadeDepartment: 'cascadeDepartment',
-      changeFee: 'changeFee',
-      costCenter: 'costCenter',
-      costCenterNumber: 'costCenterNumber',
-      coupon: 'coupon',
-      department: 'department',
-      departmentId: 'departmentId',
-      deptDate: 'deptDate',
-      deptStation: 'deptStation',
-      deptTime: 'deptTime',
-      feeType: 'feeType',
-      index: 'index',
-      invoiceTitle: 'invoiceTitle',
-      orderId: 'orderId',
-      orderPrice: 'orderPrice',
-      overApplyId: 'overApplyId',
-      primaryId: 'primaryId',
-      projectCode: 'projectCode',
-      projectName: 'projectName',
-      refundFee: 'refundFee',
-      runTime: 'runTime',
-      seatNo: 'seatNo',
-      seatType: 'seatType',
-      serviceFee: 'serviceFee',
-      settlementFee: 'settlementFee',
-      settlementTime: 'settlementTime',
-      settlementType: 'settlementType',
-      status: 'status',
-      ticketNo: 'ticketNo',
-      ticketPrice: 'ticketPrice',
-      trainNo: 'trainNo',
-      trainType: 'trainType',
-      travelerId: 'travelerId',
-      travelerName: 'travelerName',
-      bookerJobNo: 'bookerJobNo',
-      travelerJobNo: 'travelerJobNo',
-      voucherType: 'voucherType',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      alipayTradeNo: 'string',
-      applyId: 'string',
-      arrDate: 'string',
-      arrStation: 'string',
-      arrTime: 'string',
-      bookTime: 'string',
-      bookerId: 'string',
-      bookerName: 'string',
-      capitalDirection: 'string',
-      cascadeDepartment: 'string',
-      changeFee: 'number',
-      costCenter: 'string',
-      costCenterNumber: 'string',
-      coupon: 'number',
-      department: 'string',
-      departmentId: 'string',
-      deptDate: 'string',
-      deptStation: 'string',
-      deptTime: 'string',
-      feeType: 'string',
-      index: 'string',
-      invoiceTitle: 'string',
-      orderId: 'string',
-      orderPrice: 'number',
-      overApplyId: 'string',
-      primaryId: 'number',
-      projectCode: 'string',
-      projectName: 'string',
-      refundFee: 'number',
-      runTime: 'string',
-      seatNo: 'string',
-      seatType: 'string',
-      serviceFee: 'number',
-      settlementFee: 'number',
-      settlementTime: 'string',
-      settlementType: 'string',
-      status: 'number',
-      ticketNo: 'string',
-      ticketPrice: 'number',
-      trainNo: 'string',
-      trainType: 'string',
-      travelerId: 'string',
-      travelerName: 'string',
-      bookerJobNo: 'string',
-      travelerJobNo: 'string',
-      voucherType: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class BillSettementBtripTrainResponseBodyModule extends $tea.Model {
-  category?: number;
-  corpId?: string;
-  dataList?: BillSettementBtripTrainResponseBodyModuleDataList[];
-  periodEnd?: string;
-  periodStart?: string;
-  totalNum?: number;
-  static names(): { [key: string]: string } {
-    return {
-      category: 'category',
-      corpId: 'corpId',
-      dataList: 'dataList',
-      periodEnd: 'periodEnd',
-      periodStart: 'periodStart',
-      totalNum: 'totalNum',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      category: 'number',
-      corpId: 'string',
-      dataList: { 'type': 'array', 'itemType': BillSettementBtripTrainResponseBodyModuleDataList },
-      periodEnd: 'string',
-      periodStart: 'string',
-      totalNum: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class BillSettementFlightResponseBodyModuleDataList extends $tea.Model {
-  advanceDay?: number;
-  airlineCorpCode?: string;
-  airlineCorpName?: string;
-  alipayTradeNo?: string;
-  applyId?: string;
-  arrAirportCode?: string;
-  arrCity?: string;
-  arrDate?: string;
-  arrStation?: string;
-  arrTime?: string;
-  bookTime?: string;
-  bookerId?: string;
-  bookerName?: string;
-  btripCouponFee?: number;
-  buildFee?: number;
-  cabin?: string;
-  cabinClass?: string;
-  capitalDirection?: string;
-  cascadeDepartment?: string;
-  changeFee?: number;
-  corpPayOrderFee?: number;
-  costCenter?: string;
-  costCenterNumber?: string;
-  coupon?: number;
-  depAirportCode?: string;
-  department?: string;
-  departmentId?: string;
-  deptCity?: string;
-  deptDate?: string;
-  deptStation?: string;
-  deptTime?: string;
-  discount?: string;
-  feeType?: string;
-  flightNo?: string;
-  index?: string;
-  insuranceFee?: number;
-  invoiceTitle?: string;
-  itineraryNum?: string;
-  itineraryPrice?: number;
-  mostDifferenceDeptTime?: string;
-  mostDifferenceDiscount?: number;
-  mostDifferenceFlightNo?: string;
-  mostDifferencePrice?: number;
-  mostDifferenceReason?: string;
-  mostPrice?: number;
-  negotiationCouponFee?: number;
-  oilFee?: number;
-  orderId?: string;
-  overApplyId?: string;
-  primaryId?: number;
-  projectCode?: string;
-  projectName?: string;
-  refundFee?: number;
-  refundUpgradeCost?: number;
-  repeatRefund?: string;
-  sealPrice?: number;
-  serviceFee?: number;
-  settlementFee?: number;
-  settlementTime?: string;
-  settlementType?: string;
-  status?: number;
-  ticketId?: string;
-  travelerId?: string;
-  travelerName?: string;
-  upgradeCost?: number;
-  bookerJobNo?: string;
-  travelerJobNo?: string;
-  static names(): { [key: string]: string } {
-    return {
-      advanceDay: 'advanceDay',
-      airlineCorpCode: 'airlineCorpCode',
-      airlineCorpName: 'airlineCorpName',
-      alipayTradeNo: 'alipayTradeNo',
-      applyId: 'applyId',
-      arrAirportCode: 'arrAirportCode',
-      arrCity: 'arrCity',
-      arrDate: 'arrDate',
-      arrStation: 'arrStation',
-      arrTime: 'arrTime',
-      bookTime: 'bookTime',
-      bookerId: 'bookerId',
-      bookerName: 'bookerName',
-      btripCouponFee: 'btripCouponFee',
-      buildFee: 'buildFee',
-      cabin: 'cabin',
-      cabinClass: 'cabinClass',
-      capitalDirection: 'capitalDirection',
-      cascadeDepartment: 'cascadeDepartment',
-      changeFee: 'changeFee',
-      corpPayOrderFee: 'corpPayOrderFee',
-      costCenter: 'costCenter',
-      costCenterNumber: 'costCenterNumber',
-      coupon: 'coupon',
-      depAirportCode: 'depAirportCode',
-      department: 'department',
-      departmentId: 'departmentId',
-      deptCity: 'deptCity',
-      deptDate: 'deptDate',
-      deptStation: 'deptStation',
-      deptTime: 'deptTime',
-      discount: 'discount',
-      feeType: 'feeType',
-      flightNo: 'flightNo',
-      index: 'index',
-      insuranceFee: 'insuranceFee',
-      invoiceTitle: 'invoiceTitle',
-      itineraryNum: 'itineraryNum',
-      itineraryPrice: 'itineraryPrice',
-      mostDifferenceDeptTime: 'mostDifferenceDeptTime',
-      mostDifferenceDiscount: 'mostDifferenceDiscount',
-      mostDifferenceFlightNo: 'mostDifferenceFlightNo',
-      mostDifferencePrice: 'mostDifferencePrice',
-      mostDifferenceReason: 'mostDifferenceReason',
-      mostPrice: 'mostPrice',
-      negotiationCouponFee: 'negotiationCouponFee',
-      oilFee: 'oilFee',
-      orderId: 'orderId',
-      overApplyId: 'overApplyId',
-      primaryId: 'primaryId',
-      projectCode: 'projectCode',
-      projectName: 'projectName',
-      refundFee: 'refundFee',
-      refundUpgradeCost: 'refundUpgradeCost',
-      repeatRefund: 'repeatRefund',
-      sealPrice: 'sealPrice',
-      serviceFee: 'serviceFee',
-      settlementFee: 'settlementFee',
-      settlementTime: 'settlementTime',
-      settlementType: 'settlementType',
-      status: 'status',
-      ticketId: 'ticketId',
-      travelerId: 'travelerId',
-      travelerName: 'travelerName',
-      upgradeCost: 'upgradeCost',
-      bookerJobNo: 'bookerJobNo',
-      travelerJobNo: 'travelerJobNo',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      advanceDay: 'number',
-      airlineCorpCode: 'string',
-      airlineCorpName: 'string',
-      alipayTradeNo: 'string',
-      applyId: 'string',
-      arrAirportCode: 'string',
-      arrCity: 'string',
-      arrDate: 'string',
-      arrStation: 'string',
-      arrTime: 'string',
-      bookTime: 'string',
-      bookerId: 'string',
-      bookerName: 'string',
-      btripCouponFee: 'number',
-      buildFee: 'number',
-      cabin: 'string',
-      cabinClass: 'string',
-      capitalDirection: 'string',
-      cascadeDepartment: 'string',
-      changeFee: 'number',
-      corpPayOrderFee: 'number',
-      costCenter: 'string',
-      costCenterNumber: 'string',
-      coupon: 'number',
-      depAirportCode: 'string',
-      department: 'string',
-      departmentId: 'string',
-      deptCity: 'string',
-      deptDate: 'string',
-      deptStation: 'string',
-      deptTime: 'string',
-      discount: 'string',
-      feeType: 'string',
-      flightNo: 'string',
-      index: 'string',
-      insuranceFee: 'number',
-      invoiceTitle: 'string',
-      itineraryNum: 'string',
-      itineraryPrice: 'number',
-      mostDifferenceDeptTime: 'string',
-      mostDifferenceDiscount: 'number',
-      mostDifferenceFlightNo: 'string',
-      mostDifferencePrice: 'number',
-      mostDifferenceReason: 'string',
-      mostPrice: 'number',
-      negotiationCouponFee: 'number',
-      oilFee: 'number',
-      orderId: 'string',
-      overApplyId: 'string',
-      primaryId: 'number',
-      projectCode: 'string',
-      projectName: 'string',
-      refundFee: 'number',
-      refundUpgradeCost: 'number',
-      repeatRefund: 'string',
-      sealPrice: 'number',
-      serviceFee: 'number',
-      settlementFee: 'number',
-      settlementTime: 'string',
-      settlementType: 'string',
-      status: 'number',
-      ticketId: 'string',
-      travelerId: 'string',
-      travelerName: 'string',
-      upgradeCost: 'number',
-      bookerJobNo: 'string',
-      travelerJobNo: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class BillSettementFlightResponseBodyModule extends $tea.Model {
-  category?: number;
-  corpId?: string;
-  dataList?: BillSettementFlightResponseBodyModuleDataList[];
-  periodEnd?: string;
-  periodStart?: string;
-  totalNum?: number;
-  static names(): { [key: string]: string } {
-    return {
-      category: 'category',
-      corpId: 'corpId',
-      dataList: 'dataList',
-      periodEnd: 'periodEnd',
-      periodStart: 'periodStart',
-      totalNum: 'totalNum',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      category: 'number',
-      corpId: 'string',
-      dataList: { 'type': 'array', 'itemType': BillSettementFlightResponseBodyModuleDataList },
-      periodEnd: 'string',
-      periodStart: 'string',
-      totalNum: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class GetHotelExceedApplyResponseBodyApplyIntentionInfoDO extends $tea.Model {
   checkIn?: string;
   checkOut?: string;
@@ -2252,86 +2234,50 @@ export class GetHotelExceedApplyResponseBodyApplyIntentionInfoDO extends $tea.Mo
   }
 }
 
-export class QueryUnionOrderResponseBodyFlightList extends $tea.Model {
-  flightOrderId?: number;
-  flightOrderStatus?: number;
+export class GetTrainExceedApplyResponseBodyApplyIntentionInfoDO extends $tea.Model {
+  arrCity?: string;
+  arrCityName?: string;
+  arrStation?: string;
+  arrTime?: string;
+  depCity?: string;
+  depCityName?: string;
+  depStation?: string;
+  depTime?: string;
+  price?: number;
+  seatName?: string;
+  trainNo?: string;
+  trainTypeDesc?: string;
   static names(): { [key: string]: string } {
     return {
-      flightOrderId: 'flightOrderId',
-      flightOrderStatus: 'flightOrderStatus',
+      arrCity: 'arrCity',
+      arrCityName: 'arrCityName',
+      arrStation: 'arrStation',
+      arrTime: 'arrTime',
+      depCity: 'depCity',
+      depCityName: 'depCityName',
+      depStation: 'depStation',
+      depTime: 'depTime',
+      price: 'price',
+      seatName: 'seatName',
+      trainNo: 'trainNo',
+      trainTypeDesc: 'trainTypeDesc',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      flightOrderId: 'number',
-      flightOrderStatus: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryUnionOrderResponseBodyTrainList extends $tea.Model {
-  trainOrderId?: number;
-  trainOrderstatus?: number;
-  static names(): { [key: string]: string } {
-    return {
-      trainOrderId: 'trainOrderId',
-      trainOrderstatus: 'trainOrderstatus',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      trainOrderId: 'number',
-      trainOrderstatus: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryUnionOrderResponseBodyHotelList extends $tea.Model {
-  hotelOrderId?: number;
-  hotelOrderStatus?: number;
-  static names(): { [key: string]: string } {
-    return {
-      hotelOrderId: 'hotelOrderId',
-      hotelOrderStatus: 'hotelOrderStatus',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      hotelOrderId: 'number',
-      hotelOrderStatus: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryUnionOrderResponseBodyVehicleList extends $tea.Model {
-  vehicleOrderId?: number;
-  vehicleOrderStatus?: number;
-  static names(): { [key: string]: string } {
-    return {
-      vehicleOrderId: 'vehicleOrderId',
-      vehicleOrderStatus: 'vehicleOrderStatus',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      vehicleOrderId: 'number',
-      vehicleOrderStatus: 'number',
+      arrCity: 'string',
+      arrCityName: 'string',
+      arrStation: 'string',
+      arrTime: 'string',
+      depCity: 'string',
+      depCityName: 'string',
+      depStation: 'string',
+      depTime: 'string',
+      price: 'number',
+      seatName: 'string',
+      trainNo: 'string',
+      trainTypeDesc: 'string',
     };
   }
 
@@ -2490,50 +2436,86 @@ export class QueryCityCarApplyResponseBodyApplyList extends $tea.Model {
   }
 }
 
-export class GetTrainExceedApplyResponseBodyApplyIntentionInfoDO extends $tea.Model {
-  price?: number;
-  depCityName?: string;
-  arrCityName?: string;
-  depCity?: string;
-  arrCity?: string;
-  depTime?: string;
-  arrTime?: string;
-  arrStation?: string;
-  depStation?: string;
-  trainNo?: string;
-  trainTypeDesc?: string;
-  seatName?: string;
+export class QueryUnionOrderResponseBodyFlightList extends $tea.Model {
+  flightOrderId?: number;
+  flightOrderStatus?: number;
   static names(): { [key: string]: string } {
     return {
-      price: 'price',
-      depCityName: 'depCityName',
-      arrCityName: 'arrCityName',
-      depCity: 'depCity',
-      arrCity: 'arrCity',
-      depTime: 'depTime',
-      arrTime: 'arrTime',
-      arrStation: 'arrStation',
-      depStation: 'depStation',
-      trainNo: 'trainNo',
-      trainTypeDesc: 'trainTypeDesc',
-      seatName: 'seatName',
+      flightOrderId: 'flightOrderId',
+      flightOrderStatus: 'flightOrderStatus',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      price: 'number',
-      depCityName: 'string',
-      arrCityName: 'string',
-      depCity: 'string',
-      arrCity: 'string',
-      depTime: 'string',
-      arrTime: 'string',
-      arrStation: 'string',
-      depStation: 'string',
-      trainNo: 'string',
-      trainTypeDesc: 'string',
-      seatName: 'string',
+      flightOrderId: 'number',
+      flightOrderStatus: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUnionOrderResponseBodyHotelList extends $tea.Model {
+  hotelOrderId?: number;
+  hotelOrderStatus?: number;
+  static names(): { [key: string]: string } {
+    return {
+      hotelOrderId: 'hotelOrderId',
+      hotelOrderStatus: 'hotelOrderStatus',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hotelOrderId: 'number',
+      hotelOrderStatus: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUnionOrderResponseBodyTrainList extends $tea.Model {
+  trainOrderId?: number;
+  trainOrderstatus?: number;
+  static names(): { [key: string]: string } {
+    return {
+      trainOrderId: 'trainOrderId',
+      trainOrderstatus: 'trainOrderstatus',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      trainOrderId: 'number',
+      trainOrderstatus: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUnionOrderResponseBodyVehicleList extends $tea.Model {
+  vehicleOrderId?: number;
+  vehicleOrderStatus?: number;
+  static names(): { [key: string]: string } {
+    return {
+      vehicleOrderId: 'vehicleOrderId',
+      vehicleOrderStatus: 'vehicleOrderStatus',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      vehicleOrderId: 'number',
+      vehicleOrderStatus: 'number',
     };
   }
 
@@ -2554,296 +2536,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async approveCityCarApply(request: ApproveCityCarApplyRequest): Promise<ApproveCityCarApplyResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ApproveCityCarApplyHeaders({ });
-    return await this.approveCityCarApplyWithOptions(request, headers, runtime);
-  }
-
-  async approveCityCarApplyWithOptions(request: ApproveCityCarApplyRequest, headers: ApproveCityCarApplyHeaders, runtime: $Util.RuntimeOptions): Promise<ApproveCityCarApplyResponse> {
-    Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.corpId)) {
-      body["corpId"] = request.corpId;
-    }
-
-    if (!Util.isUnset(request.operateTime)) {
-      body["operateTime"] = request.operateTime;
-    }
-
-    if (!Util.isUnset(request.remark)) {
-      body["remark"] = request.remark;
-    }
-
-    if (!Util.isUnset(request.status)) {
-      body["status"] = request.status;
-    }
-
-    if (!Util.isUnset(request.thirdPartApplyId)) {
-      body["thirdPartApplyId"] = request.thirdPartApplyId;
-    }
-
-    if (!Util.isUnset(request.userId)) {
-      body["userId"] = request.userId;
-    }
-
-    if (!Util.isUnset(request.dingSuiteKey)) {
-      body["dingSuiteKey"] = request.dingSuiteKey;
-    }
-
-    if (!Util.isUnset(request.dingCorpId)) {
-      body["dingCorpId"] = request.dingCorpId;
-    }
-
-    if (!Util.isUnset(request.dingTokenGrantType)) {
-      body["dingTokenGrantType"] = request.dingTokenGrantType;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<ApproveCityCarApplyResponse>(await this.doROARequest("ApproveCityCarApply", "alitrip_1.0", "HTTP", "PUT", "AK", `/v1.0/alitrip/cityCarApprovals`, "json", req, runtime), new ApproveCityCarApplyResponse({}));
-  }
-
-  async billSettementHotel(request: BillSettementHotelRequest): Promise<BillSettementHotelResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BillSettementHotelHeaders({ });
-    return await this.billSettementHotelWithOptions(request, headers, runtime);
-  }
-
-  async billSettementHotelWithOptions(request: BillSettementHotelRequest, headers: BillSettementHotelHeaders, runtime: $Util.RuntimeOptions): Promise<BillSettementHotelResponse> {
-    Util.validateModel(request);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.corpId)) {
-      query["corpId"] = request.corpId;
-    }
-
-    if (!Util.isUnset(request.category)) {
-      query["category"] = request.category;
-    }
-
-    if (!Util.isUnset(request.pageSize)) {
-      query["pageSize"] = request.pageSize;
-    }
-
-    if (!Util.isUnset(request.periodStart)) {
-      query["periodStart"] = request.periodStart;
-    }
-
-    if (!Util.isUnset(request.pageNumber)) {
-      query["pageNumber"] = request.pageNumber;
-    }
-
-    if (!Util.isUnset(request.periodEnd)) {
-      query["periodEnd"] = request.periodEnd;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      query: OpenApiUtil.query(query),
-    });
-    return $tea.cast<BillSettementHotelResponse>(await this.doROARequest("BillSettementHotel", "alitrip_1.0", "HTTP", "GET", "AK", `/v1.0/alitrip/billSettlements/hotels`, "json", req, runtime), new BillSettementHotelResponse({}));
-  }
-
-  async getFlightExceedApply(request: GetFlightExceedApplyRequest): Promise<GetFlightExceedApplyResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetFlightExceedApplyHeaders({ });
-    return await this.getFlightExceedApplyWithOptions(request, headers, runtime);
-  }
-
-  async getFlightExceedApplyWithOptions(request: GetFlightExceedApplyRequest, headers: GetFlightExceedApplyHeaders, runtime: $Util.RuntimeOptions): Promise<GetFlightExceedApplyResponse> {
-    Util.validateModel(request);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.corpId)) {
-      query["corpId"] = request.corpId;
-    }
-
-    if (!Util.isUnset(request.applyId)) {
-      query["applyId"] = request.applyId;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      query: OpenApiUtil.query(query),
-    });
-    return $tea.cast<GetFlightExceedApplyResponse>(await this.doROARequest("GetFlightExceedApply", "alitrip_1.0", "HTTP", "GET", "AK", `/v1.0/alitrip/exceedapply/getFlight`, "json", req, runtime), new GetFlightExceedApplyResponse({}));
-  }
-
-  async billSettementCar(request: BillSettementCarRequest): Promise<BillSettementCarResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BillSettementCarHeaders({ });
-    return await this.billSettementCarWithOptions(request, headers, runtime);
-  }
-
-  async billSettementCarWithOptions(request: BillSettementCarRequest, headers: BillSettementCarHeaders, runtime: $Util.RuntimeOptions): Promise<BillSettementCarResponse> {
-    Util.validateModel(request);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.corpId)) {
-      query["corpId"] = request.corpId;
-    }
-
-    if (!Util.isUnset(request.category)) {
-      query["category"] = request.category;
-    }
-
-    if (!Util.isUnset(request.pageSize)) {
-      query["pageSize"] = request.pageSize;
-    }
-
-    if (!Util.isUnset(request.periodStart)) {
-      query["periodStart"] = request.periodStart;
-    }
-
-    if (!Util.isUnset(request.periodEnd)) {
-      query["periodEnd"] = request.periodEnd;
-    }
-
-    if (!Util.isUnset(request.pageNumber)) {
-      query["pageNumber"] = request.pageNumber;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      query: OpenApiUtil.query(query),
-    });
-    return $tea.cast<BillSettementCarResponse>(await this.doROARequest("BillSettementCar", "alitrip_1.0", "HTTP", "GET", "AK", `/v1.0/alitrip/billSettlements/cars`, "json", req, runtime), new BillSettementCarResponse({}));
-  }
-
-  async billSettementBtripTrain(request: BillSettementBtripTrainRequest): Promise<BillSettementBtripTrainResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BillSettementBtripTrainHeaders({ });
-    return await this.billSettementBtripTrainWithOptions(request, headers, runtime);
-  }
-
-  async billSettementBtripTrainWithOptions(request: BillSettementBtripTrainRequest, headers: BillSettementBtripTrainHeaders, runtime: $Util.RuntimeOptions): Promise<BillSettementBtripTrainResponse> {
-    Util.validateModel(request);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.corpId)) {
-      query["corpId"] = request.corpId;
-    }
-
-    if (!Util.isUnset(request.category)) {
-      query["category"] = request.category;
-    }
-
-    if (!Util.isUnset(request.pageSize)) {
-      query["pageSize"] = request.pageSize;
-    }
-
-    if (!Util.isUnset(request.periodStart)) {
-      query["periodStart"] = request.periodStart;
-    }
-
-    if (!Util.isUnset(request.pageNumber)) {
-      query["pageNumber"] = request.pageNumber;
-    }
-
-    if (!Util.isUnset(request.periodEnd)) {
-      query["periodEnd"] = request.periodEnd;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      query: OpenApiUtil.query(query),
-    });
-    return $tea.cast<BillSettementBtripTrainResponse>(await this.doROARequest("BillSettementBtripTrain", "alitrip_1.0", "HTTP", "GET", "AK", `/v1.0/alitrip/billSettlements/btripTrains`, "json", req, runtime), new BillSettementBtripTrainResponse({}));
-  }
-
-  async syncExceedApply(request: SyncExceedApplyRequest): Promise<SyncExceedApplyResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SyncExceedApplyHeaders({ });
-    return await this.syncExceedApplyWithOptions(request, headers, runtime);
-  }
-
-  async syncExceedApplyWithOptions(request: SyncExceedApplyRequest, headers: SyncExceedApplyHeaders, runtime: $Util.RuntimeOptions): Promise<SyncExceedApplyResponse> {
-    Util.validateModel(request);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.remark)) {
-      query["remark"] = request.remark;
-    }
-
-    if (!Util.isUnset(request.applyId)) {
-      query["applyId"] = request.applyId;
-    }
-
-    if (!Util.isUnset(request.corpId)) {
-      query["corpId"] = request.corpId;
-    }
-
-    if (!Util.isUnset(request.thirdpartyFlowId)) {
-      query["thirdpartyFlowId"] = request.thirdpartyFlowId;
-    }
-
-    if (!Util.isUnset(request.userId)) {
-      query["userId"] = request.userId;
-    }
-
-    if (!Util.isUnset(request.status)) {
-      query["status"] = request.status;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      query: OpenApiUtil.query(query),
-    });
-    return $tea.cast<SyncExceedApplyResponse>(await this.doROARequest("SyncExceedApply", "alitrip_1.0", "HTTP", "POST", "AK", `/v1.0/alitrip/exceedapply/sync`, "json", req, runtime), new SyncExceedApplyResponse({}));
-  }
 
   async addCityCarApply(request: AddCityCarApplyRequest): Promise<AddCityCarApplyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2868,6 +2560,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.date)) {
       body["date"] = request.date;
+    }
+
+    if (!Util.isUnset(request.finishedDate)) {
+      body["finishedDate"] = request.finishedDate;
     }
 
     if (!Util.isUnset(request.projectCode)) {
@@ -2914,20 +2610,53 @@ export default class Client extends OpenApi {
       body["userId"] = request.userId;
     }
 
-    if (!Util.isUnset(request.dingSuiteKey)) {
-      body["dingSuiteKey"] = request.dingSuiteKey;
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
     }
 
-    if (!Util.isUnset(request.dingCorpId)) {
-      body["dingCorpId"] = request.dingCorpId;
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
-    if (!Util.isUnset(request.dingTokenGrantType)) {
-      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<AddCityCarApplyResponse>(await this.doROARequest("AddCityCarApply", "alitrip_1.0", "HTTP", "POST", "AK", `/v1.0/alitrip/cityCarApprovals`, "json", req, runtime), new AddCityCarApplyResponse({}));
+  }
+
+  async approveCityCarApply(request: ApproveCityCarApplyRequest): Promise<ApproveCityCarApplyResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ApproveCityCarApplyHeaders({ });
+    return await this.approveCityCarApplyWithOptions(request, headers, runtime);
+  }
+
+  async approveCityCarApplyWithOptions(request: ApproveCityCarApplyRequest, headers: ApproveCityCarApplyHeaders, runtime: $Util.RuntimeOptions): Promise<ApproveCityCarApplyResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.corpId)) {
+      body["corpId"] = request.corpId;
     }
 
-    if (!Util.isUnset(request.finishedDate)) {
-      body["finishedDate"] = request.finishedDate;
+    if (!Util.isUnset(request.operateTime)) {
+      body["operateTime"] = request.operateTime;
+    }
+
+    if (!Util.isUnset(request.remark)) {
+      body["remark"] = request.remark;
+    }
+
+    if (!Util.isUnset(request.status)) {
+      body["status"] = request.status;
+    }
+
+    if (!Util.isUnset(request.thirdPartApplyId)) {
+      body["thirdPartApplyId"] = request.thirdPartApplyId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -2936,14 +2665,112 @@ export default class Client extends OpenApi {
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<AddCityCarApplyResponse>(await this.doROARequest("AddCityCarApply", "alitrip_1.0", "HTTP", "POST", "AK", `/v1.0/alitrip/cityCarApprovals`, "json", req, runtime), new AddCityCarApplyResponse({}));
+    return $tea.cast<ApproveCityCarApplyResponse>(await this.doROARequest("ApproveCityCarApply", "alitrip_1.0", "HTTP", "PUT", "AK", `/v1.0/alitrip/cityCarApprovals`, "json", req, runtime), new ApproveCityCarApplyResponse({}));
+  }
+
+  async billSettementBtripTrain(request: BillSettementBtripTrainRequest): Promise<BillSettementBtripTrainResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BillSettementBtripTrainHeaders({ });
+    return await this.billSettementBtripTrainWithOptions(request, headers, runtime);
+  }
+
+  async billSettementBtripTrainWithOptions(request: BillSettementBtripTrainRequest, headers: BillSettementBtripTrainHeaders, runtime: $Util.RuntimeOptions): Promise<BillSettementBtripTrainResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.category)) {
+      query["category"] = request.category;
+    }
+
+    if (!Util.isUnset(request.corpId)) {
+      query["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.periodEnd)) {
+      query["periodEnd"] = request.periodEnd;
+    }
+
+    if (!Util.isUnset(request.periodStart)) {
+      query["periodStart"] = request.periodStart;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<BillSettementBtripTrainResponse>(await this.doROARequest("BillSettementBtripTrain", "alitrip_1.0", "HTTP", "GET", "AK", `/v1.0/alitrip/billSettlements/btripTrains`, "json", req, runtime), new BillSettementBtripTrainResponse({}));
+  }
+
+  async billSettementCar(request: BillSettementCarRequest): Promise<BillSettementCarResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BillSettementCarHeaders({ });
+    return await this.billSettementCarWithOptions(request, headers, runtime);
+  }
+
+  async billSettementCarWithOptions(request: BillSettementCarRequest, headers: BillSettementCarHeaders, runtime: $Util.RuntimeOptions): Promise<BillSettementCarResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.category)) {
+      query["category"] = request.category;
+    }
+
+    if (!Util.isUnset(request.corpId)) {
+      query["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.periodEnd)) {
+      query["periodEnd"] = request.periodEnd;
+    }
+
+    if (!Util.isUnset(request.periodStart)) {
+      query["periodStart"] = request.periodStart;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<BillSettementCarResponse>(await this.doROARequest("BillSettementCar", "alitrip_1.0", "HTTP", "GET", "AK", `/v1.0/alitrip/billSettlements/cars`, "json", req, runtime), new BillSettementCarResponse({}));
   }
 
   async billSettementFlight(request: BillSettementFlightRequest): Promise<BillSettementFlightResponse> {
@@ -2955,28 +2782,28 @@ export default class Client extends OpenApi {
   async billSettementFlightWithOptions(request: BillSettementFlightRequest, headers: BillSettementFlightHeaders, runtime: $Util.RuntimeOptions): Promise<BillSettementFlightResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.corpId)) {
-      query["corpId"] = request.corpId;
-    }
-
     if (!Util.isUnset(request.category)) {
       query["category"] = request.category;
     }
 
-    if (!Util.isUnset(request.pageSize)) {
-      query["pageSize"] = request.pageSize;
-    }
-
-    if (!Util.isUnset(request.periodStart)) {
-      query["periodStart"] = request.periodStart;
+    if (!Util.isUnset(request.corpId)) {
+      query["corpId"] = request.corpId;
     }
 
     if (!Util.isUnset(request.pageNumber)) {
       query["pageNumber"] = request.pageNumber;
     }
 
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
     if (!Util.isUnset(request.periodEnd)) {
       query["periodEnd"] = request.periodEnd;
+    }
+
+    if (!Util.isUnset(request.periodStart)) {
+      query["periodStart"] = request.periodStart;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -2985,7 +2812,7 @@ export default class Client extends OpenApi {
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({
@@ -2993,6 +2820,88 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<BillSettementFlightResponse>(await this.doROARequest("BillSettementFlight", "alitrip_1.0", "HTTP", "GET", "AK", `/v1.0/alitrip/billSettlements/flights`, "json", req, runtime), new BillSettementFlightResponse({}));
+  }
+
+  async billSettementHotel(request: BillSettementHotelRequest): Promise<BillSettementHotelResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BillSettementHotelHeaders({ });
+    return await this.billSettementHotelWithOptions(request, headers, runtime);
+  }
+
+  async billSettementHotelWithOptions(request: BillSettementHotelRequest, headers: BillSettementHotelHeaders, runtime: $Util.RuntimeOptions): Promise<BillSettementHotelResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.category)) {
+      query["category"] = request.category;
+    }
+
+    if (!Util.isUnset(request.corpId)) {
+      query["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.periodEnd)) {
+      query["periodEnd"] = request.periodEnd;
+    }
+
+    if (!Util.isUnset(request.periodStart)) {
+      query["periodStart"] = request.periodStart;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<BillSettementHotelResponse>(await this.doROARequest("BillSettementHotel", "alitrip_1.0", "HTTP", "GET", "AK", `/v1.0/alitrip/billSettlements/hotels`, "json", req, runtime), new BillSettementHotelResponse({}));
+  }
+
+  async getFlightExceedApply(request: GetFlightExceedApplyRequest): Promise<GetFlightExceedApplyResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetFlightExceedApplyHeaders({ });
+    return await this.getFlightExceedApplyWithOptions(request, headers, runtime);
+  }
+
+  async getFlightExceedApplyWithOptions(request: GetFlightExceedApplyRequest, headers: GetFlightExceedApplyHeaders, runtime: $Util.RuntimeOptions): Promise<GetFlightExceedApplyResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.applyId)) {
+      query["applyId"] = request.applyId;
+    }
+
+    if (!Util.isUnset(request.corpId)) {
+      query["corpId"] = request.corpId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetFlightExceedApplyResponse>(await this.doROARequest("GetFlightExceedApply", "alitrip_1.0", "HTTP", "GET", "AK", `/v1.0/alitrip/exceedapply/getFlight`, "json", req, runtime), new GetFlightExceedApplyResponse({}));
   }
 
   async getHotelExceedApply(request: GetHotelExceedApplyRequest): Promise<GetHotelExceedApplyResponse> {
@@ -3004,12 +2913,12 @@ export default class Client extends OpenApi {
   async getHotelExceedApplyWithOptions(request: GetHotelExceedApplyRequest, headers: GetHotelExceedApplyHeaders, runtime: $Util.RuntimeOptions): Promise<GetHotelExceedApplyResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.corpId)) {
-      query["corpId"] = request.corpId;
-    }
-
     if (!Util.isUnset(request.applyId)) {
       query["applyId"] = request.applyId;
+    }
+
+    if (!Util.isUnset(request.corpId)) {
+      query["corpId"] = request.corpId;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -3018,7 +2927,7 @@ export default class Client extends OpenApi {
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({
@@ -3028,25 +2937,21 @@ export default class Client extends OpenApi {
     return $tea.cast<GetHotelExceedApplyResponse>(await this.doROARequest("GetHotelExceedApply", "alitrip_1.0", "HTTP", "GET", "AK", `/v1.0/alitrip/exceedapply/getHotel`, "json", req, runtime), new GetHotelExceedApplyResponse({}));
   }
 
-  async queryUnionOrder(request: QueryUnionOrderRequest): Promise<QueryUnionOrderResponse> {
+  async getTrainExceedApply(request: GetTrainExceedApplyRequest): Promise<GetTrainExceedApplyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryUnionOrderHeaders({ });
-    return await this.queryUnionOrderWithOptions(request, headers, runtime);
+    let headers = new GetTrainExceedApplyHeaders({ });
+    return await this.getTrainExceedApplyWithOptions(request, headers, runtime);
   }
 
-  async queryUnionOrderWithOptions(request: QueryUnionOrderRequest, headers: QueryUnionOrderHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUnionOrderResponse> {
+  async getTrainExceedApplyWithOptions(request: GetTrainExceedApplyRequest, headers: GetTrainExceedApplyHeaders, runtime: $Util.RuntimeOptions): Promise<GetTrainExceedApplyResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.applyId)) {
+      query["applyId"] = request.applyId;
+    }
+
     if (!Util.isUnset(request.corpId)) {
       query["corpId"] = request.corpId;
-    }
-
-    if (!Util.isUnset(request.thirdPartApplyId)) {
-      query["thirdPartApplyId"] = request.thirdPartApplyId;
-    }
-
-    if (!Util.isUnset(request.unionNo)) {
-      query["unionNo"] = request.unionNo;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -3055,14 +2960,14 @@ export default class Client extends OpenApi {
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryUnionOrderResponse>(await this.doROARequest("QueryUnionOrder", "alitrip_1.0", "HTTP", "GET", "AK", `/v1.0/alitrip/unionOrders`, "json", req, runtime), new QueryUnionOrderResponse({}));
+    return $tea.cast<GetTrainExceedApplyResponse>(await this.doROARequest("GetTrainExceedApply", "alitrip_1.0", "HTTP", "GET", "AK", `/v1.0/alitrip/exceedapply/getTrain`, "json", req, runtime), new GetTrainExceedApplyResponse({}));
   }
 
   async queryCityCarApply(request: QueryCityCarApplyRequest): Promise<QueryCityCarApplyResponse> {
@@ -3108,7 +3013,7 @@ export default class Client extends OpenApi {
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({
@@ -3118,21 +3023,25 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryCityCarApplyResponse>(await this.doROARequest("QueryCityCarApply", "alitrip_1.0", "HTTP", "GET", "AK", `/v1.0/alitrip/cityCarApprovals`, "json", req, runtime), new QueryCityCarApplyResponse({}));
   }
 
-  async getTrainExceedApply(request: GetTrainExceedApplyRequest): Promise<GetTrainExceedApplyResponse> {
+  async queryUnionOrder(request: QueryUnionOrderRequest): Promise<QueryUnionOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetTrainExceedApplyHeaders({ });
-    return await this.getTrainExceedApplyWithOptions(request, headers, runtime);
+    let headers = new QueryUnionOrderHeaders({ });
+    return await this.queryUnionOrderWithOptions(request, headers, runtime);
   }
 
-  async getTrainExceedApplyWithOptions(request: GetTrainExceedApplyRequest, headers: GetTrainExceedApplyHeaders, runtime: $Util.RuntimeOptions): Promise<GetTrainExceedApplyResponse> {
+  async queryUnionOrderWithOptions(request: QueryUnionOrderRequest, headers: QueryUnionOrderHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUnionOrderResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.corpId)) {
       query["corpId"] = request.corpId;
     }
 
-    if (!Util.isUnset(request.applyId)) {
-      query["applyId"] = request.applyId;
+    if (!Util.isUnset(request.thirdPartApplyId)) {
+      query["thirdPartApplyId"] = request.thirdPartApplyId;
+    }
+
+    if (!Util.isUnset(request.unionNo)) {
+      query["unionNo"] = request.unionNo;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -3141,14 +3050,63 @@ export default class Client extends OpenApi {
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetTrainExceedApplyResponse>(await this.doROARequest("GetTrainExceedApply", "alitrip_1.0", "HTTP", "GET", "AK", `/v1.0/alitrip/exceedapply/getTrain`, "json", req, runtime), new GetTrainExceedApplyResponse({}));
+    return $tea.cast<QueryUnionOrderResponse>(await this.doROARequest("QueryUnionOrder", "alitrip_1.0", "HTTP", "GET", "AK", `/v1.0/alitrip/unionOrders`, "json", req, runtime), new QueryUnionOrderResponse({}));
+  }
+
+  async syncExceedApply(request: SyncExceedApplyRequest): Promise<SyncExceedApplyResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SyncExceedApplyHeaders({ });
+    return await this.syncExceedApplyWithOptions(request, headers, runtime);
+  }
+
+  async syncExceedApplyWithOptions(request: SyncExceedApplyRequest, headers: SyncExceedApplyHeaders, runtime: $Util.RuntimeOptions): Promise<SyncExceedApplyResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.applyId)) {
+      query["applyId"] = request.applyId;
+    }
+
+    if (!Util.isUnset(request.corpId)) {
+      query["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.remark)) {
+      query["remark"] = request.remark;
+    }
+
+    if (!Util.isUnset(request.status)) {
+      query["status"] = request.status;
+    }
+
+    if (!Util.isUnset(request.thirdpartyFlowId)) {
+      query["thirdpartyFlowId"] = request.thirdpartyFlowId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<SyncExceedApplyResponse>(await this.doROARequest("SyncExceedApply", "alitrip_1.0", "HTTP", "POST", "AK", `/v1.0/alitrip/exceedapply/sync`, "json", req, runtime), new SyncExceedApplyResponse({}));
   }
 
 }

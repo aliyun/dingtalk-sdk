@@ -7,6 +7,273 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class BatchOTOQueryHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchOTOQueryRequest extends $tea.Model {
+  processQueryKey?: string;
+  robotCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      processQueryKey: 'processQueryKey',
+      robotCode: 'robotCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      processQueryKey: 'string',
+      robotCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchOTOQueryResponseBody extends $tea.Model {
+  messageReadInfoList?: BatchOTOQueryResponseBodyMessageReadInfoList[];
+  sendStatus?: string;
+  static names(): { [key: string]: string } {
+    return {
+      messageReadInfoList: 'messageReadInfoList',
+      sendStatus: 'sendStatus',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      messageReadInfoList: { 'type': 'array', 'itemType': BatchOTOQueryResponseBodyMessageReadInfoList },
+      sendStatus: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchOTOQueryResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: BatchOTOQueryResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: BatchOTOQueryResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchRecallGroupHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchRecallGroupRequest extends $tea.Model {
+  chatbotId?: string;
+  openConversationId?: string;
+  processQueryKeys?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      chatbotId: 'chatbotId',
+      openConversationId: 'openConversationId',
+      processQueryKeys: 'processQueryKeys',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      chatbotId: 'string',
+      openConversationId: 'string',
+      processQueryKeys: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchRecallGroupResponseBody extends $tea.Model {
+  failedResult?: { [key: string]: string };
+  successResult?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      failedResult: 'failedResult',
+      successResult: 'successResult',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      failedResult: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      successResult: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchRecallGroupResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: BatchRecallGroupResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: BatchRecallGroupResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchRecallOTOHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchRecallOTORequest extends $tea.Model {
+  processQueryKeys?: string[];
+  robotCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      processQueryKeys: 'processQueryKeys',
+      robotCode: 'robotCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      processQueryKeys: { 'type': 'array', 'itemType': 'string' },
+      robotCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchRecallOTOResponseBody extends $tea.Model {
+  failedResult?: { [key: string]: string };
+  successResult?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      failedResult: 'failedResult',
+      successResult: 'successResult',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      failedResult: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      successResult: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchRecallOTOResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: BatchRecallOTOResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: BatchRecallOTOResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BatchSendOTOHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -30,25 +297,25 @@ export class BatchSendOTOHeaders extends $tea.Model {
 }
 
 export class BatchSendOTORequest extends $tea.Model {
-  robotCode?: string;
-  userIds?: string[];
   msgKey?: string;
   msgParam?: string;
+  robotCode?: string;
+  userIds?: string[];
   static names(): { [key: string]: string } {
     return {
-      robotCode: 'robotCode',
-      userIds: 'userIds',
       msgKey: 'msgKey',
       msgParam: 'msgParam',
+      robotCode: 'robotCode',
+      userIds: 'userIds',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      robotCode: 'string',
-      userIds: { 'type': 'array', 'itemType': 'string' },
       msgKey: 'string',
       msgParam: 'string',
+      robotCode: 'string',
+      userIds: { 'type': 'array', 'itemType': 'string' },
     };
   }
 
@@ -58,22 +325,22 @@ export class BatchSendOTORequest extends $tea.Model {
 }
 
 export class BatchSendOTOResponseBody extends $tea.Model {
-  processQueryKey?: string;
-  invalidStaffIdList?: string[];
   flowControlledStaffIdList?: string[];
+  invalidStaffIdList?: string[];
+  processQueryKey?: string;
   static names(): { [key: string]: string } {
     return {
-      processQueryKey: 'processQueryKey',
-      invalidStaffIdList: 'invalidStaffIdList',
       flowControlledStaffIdList: 'flowControlledStaffIdList',
+      invalidStaffIdList: 'invalidStaffIdList',
+      processQueryKey: 'processQueryKey',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      processQueryKey: 'string',
-      invalidStaffIdList: { 'type': 'array', 'itemType': 'string' },
       flowControlledStaffIdList: { 'type': 'array', 'itemType': 'string' },
+      invalidStaffIdList: { 'type': 'array', 'itemType': 'string' },
+      processQueryKey: 'string',
     };
   }
 
@@ -127,49 +394,31 @@ export class OrgGroupSendHeaders extends $tea.Model {
 }
 
 export class OrgGroupSendRequest extends $tea.Model {
-  msgParam?: string;
+  coolAppCode?: string;
   msgKey?: string;
+  msgParam?: string;
   openConversationId?: string;
   robotCode?: string;
   token?: string;
-  coolAppCode?: string;
-  dingTokenGrantType?: number;
-  dingOrgId?: number;
-  dingCorpId?: string;
-  dingIsvOrgId?: number;
-  dingSuiteKey?: string;
-  dingClientId?: string;
   static names(): { [key: string]: string } {
     return {
-      msgParam: 'msgParam',
+      coolAppCode: 'coolAppCode',
       msgKey: 'msgKey',
+      msgParam: 'msgParam',
       openConversationId: 'openConversationId',
       robotCode: 'robotCode',
       token: 'token',
-      coolAppCode: 'coolAppCode',
-      dingTokenGrantType: 'dingTokenGrantType',
-      dingOrgId: 'dingOrgId',
-      dingCorpId: 'dingCorpId',
-      dingIsvOrgId: 'dingIsvOrgId',
-      dingSuiteKey: 'dingSuiteKey',
-      dingClientId: 'dingClientId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      msgParam: 'string',
+      coolAppCode: 'string',
       msgKey: 'string',
+      msgParam: 'string',
       openConversationId: 'string',
       robotCode: 'string',
       token: 'string',
-      coolAppCode: 'string',
-      dingTokenGrantType: 'number',
-      dingOrgId: 'number',
-      dingCorpId: 'string',
-      dingIsvOrgId: 'number',
-      dingSuiteKey: 'string',
-      dingClientId: 'string',
     };
   }
 
@@ -219,273 +468,6 @@ export class OrgGroupSendResponse extends $tea.Model {
   }
 }
 
-export class BatchRecallOTOHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class BatchRecallOTORequest extends $tea.Model {
-  robotCode?: string;
-  processQueryKeys?: string[];
-  static names(): { [key: string]: string } {
-    return {
-      robotCode: 'robotCode',
-      processQueryKeys: 'processQueryKeys',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      robotCode: 'string',
-      processQueryKeys: { 'type': 'array', 'itemType': 'string' },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class BatchRecallOTOResponseBody extends $tea.Model {
-  successResult?: string[];
-  failedResult?: { [key: string]: string };
-  static names(): { [key: string]: string } {
-    return {
-      successResult: 'successResult',
-      failedResult: 'failedResult',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      successResult: { 'type': 'array', 'itemType': 'string' },
-      failedResult: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class BatchRecallOTOResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: BatchRecallOTOResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: BatchRecallOTOResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class BatchRecallGroupHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class BatchRecallGroupRequest extends $tea.Model {
-  openConversationId?: string;
-  chatbotId?: string;
-  processQueryKeys?: string[];
-  static names(): { [key: string]: string } {
-    return {
-      openConversationId: 'openConversationId',
-      chatbotId: 'chatbotId',
-      processQueryKeys: 'processQueryKeys',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      openConversationId: 'string',
-      chatbotId: 'string',
-      processQueryKeys: { 'type': 'array', 'itemType': 'string' },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class BatchRecallGroupResponseBody extends $tea.Model {
-  successResult?: string[];
-  failedResult?: { [key: string]: string };
-  static names(): { [key: string]: string } {
-    return {
-      successResult: 'successResult',
-      failedResult: 'failedResult',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      successResult: { 'type': 'array', 'itemType': 'string' },
-      failedResult: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class BatchRecallGroupResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: BatchRecallGroupResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: BatchRecallGroupResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class BatchOTOQueryHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class BatchOTOQueryRequest extends $tea.Model {
-  robotCode?: string;
-  processQueryKey?: string;
-  static names(): { [key: string]: string } {
-    return {
-      robotCode: 'robotCode',
-      processQueryKey: 'processQueryKey',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      robotCode: 'string',
-      processQueryKey: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class BatchOTOQueryResponseBody extends $tea.Model {
-  sendStatus?: string;
-  messageReadInfoList?: BatchOTOQueryResponseBodyMessageReadInfoList[];
-  static names(): { [key: string]: string } {
-    return {
-      sendStatus: 'sendStatus',
-      messageReadInfoList: 'messageReadInfoList',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      sendStatus: 'string',
-      messageReadInfoList: { 'type': 'array', 'itemType': BatchOTOQueryResponseBodyMessageReadInfoList },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class BatchOTOQueryResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: BatchOTOQueryResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: BatchOTOQueryResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class SendRobotDingMessageHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -509,28 +491,28 @@ export class SendRobotDingMessageHeaders extends $tea.Model {
 }
 
 export class SendRobotDingMessageRequest extends $tea.Model {
-  robotCode?: string;
+  contentParams?: { [key: string]: string };
+  dingTemplateId?: string;
   openConversationId?: string;
   receiverUserIdList?: string[];
-  dingTemplateId?: string;
-  contentParams?: { [key: string]: string };
+  robotCode?: string;
   static names(): { [key: string]: string } {
     return {
-      robotCode: 'robotCode',
+      contentParams: 'contentParams',
+      dingTemplateId: 'dingTemplateId',
       openConversationId: 'openConversationId',
       receiverUserIdList: 'receiverUserIdList',
-      dingTemplateId: 'dingTemplateId',
-      contentParams: 'contentParams',
+      robotCode: 'robotCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      robotCode: 'string',
+      contentParams: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      dingTemplateId: 'string',
       openConversationId: 'string',
       receiverUserIdList: { 'type': 'array', 'itemType': 'string' },
-      dingTemplateId: 'string',
-      contentParams: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      robotCode: 'string',
     };
   }
 
@@ -582,24 +564,24 @@ export class SendRobotDingMessageResponse extends $tea.Model {
 
 export class BatchOTOQueryResponseBodyMessageReadInfoList extends $tea.Model {
   name?: string;
-  userId?: string;
   readStatus?: string;
   readTimestamp?: number;
+  userId?: string;
   static names(): { [key: string]: string } {
     return {
       name: 'name',
-      userId: 'userId',
       readStatus: 'readStatus',
       readTimestamp: 'readTimestamp',
+      userId: 'userId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       name: 'string',
-      userId: 'string',
       readStatus: 'string',
       readTimestamp: 'number',
+      userId: 'string',
     };
   }
 
@@ -621,6 +603,109 @@ export default class Client extends OpenApi {
   }
 
 
+  async batchOTOQuery(request: BatchOTOQueryRequest): Promise<BatchOTOQueryResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BatchOTOQueryHeaders({ });
+    return await this.batchOTOQueryWithOptions(request, headers, runtime);
+  }
+
+  async batchOTOQueryWithOptions(request: BatchOTOQueryRequest, headers: BatchOTOQueryHeaders, runtime: $Util.RuntimeOptions): Promise<BatchOTOQueryResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.processQueryKey)) {
+      query["processQueryKey"] = request.processQueryKey;
+    }
+
+    if (!Util.isUnset(request.robotCode)) {
+      query["robotCode"] = request.robotCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<BatchOTOQueryResponse>(await this.doROARequest("BatchOTOQuery", "robot_1.0", "HTTP", "GET", "AK", `/v1.0/robot/oToMessages/readStatus`, "json", req, runtime), new BatchOTOQueryResponse({}));
+  }
+
+  async batchRecallGroup(request: BatchRecallGroupRequest): Promise<BatchRecallGroupResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BatchRecallGroupHeaders({ });
+    return await this.batchRecallGroupWithOptions(request, headers, runtime);
+  }
+
+  async batchRecallGroupWithOptions(request: BatchRecallGroupRequest, headers: BatchRecallGroupHeaders, runtime: $Util.RuntimeOptions): Promise<BatchRecallGroupResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.chatbotId)) {
+      body["chatbotId"] = request.chatbotId;
+    }
+
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.processQueryKeys)) {
+      body["processQueryKeys"] = request.processQueryKeys;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<BatchRecallGroupResponse>(await this.doROARequest("BatchRecallGroup", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/groupMessages/batchRecall`, "json", req, runtime), new BatchRecallGroupResponse({}));
+  }
+
+  async batchRecallOTO(request: BatchRecallOTORequest): Promise<BatchRecallOTOResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BatchRecallOTOHeaders({ });
+    return await this.batchRecallOTOWithOptions(request, headers, runtime);
+  }
+
+  async batchRecallOTOWithOptions(request: BatchRecallOTORequest, headers: BatchRecallOTOHeaders, runtime: $Util.RuntimeOptions): Promise<BatchRecallOTOResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.processQueryKeys)) {
+      body["processQueryKeys"] = request.processQueryKeys;
+    }
+
+    if (!Util.isUnset(request.robotCode)) {
+      body["robotCode"] = request.robotCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<BatchRecallOTOResponse>(await this.doROARequest("BatchRecallOTO", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/otoMessages/batchRecall`, "json", req, runtime), new BatchRecallOTOResponse({}));
+  }
+
   async batchSendOTO(request: BatchSendOTORequest): Promise<BatchSendOTOResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new BatchSendOTOHeaders({ });
@@ -630,14 +715,6 @@ export default class Client extends OpenApi {
   async batchSendOTOWithOptions(request: BatchSendOTORequest, headers: BatchSendOTOHeaders, runtime: $Util.RuntimeOptions): Promise<BatchSendOTOResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.robotCode)) {
-      body["robotCode"] = request.robotCode;
-    }
-
-    if (!Util.isUnset(request.userIds)) {
-      body["userIds"] = request.userIds;
-    }
-
     if (!Util.isUnset(request.msgKey)) {
       body["msgKey"] = request.msgKey;
     }
@@ -646,13 +723,21 @@ export default class Client extends OpenApi {
       body["msgParam"] = request.msgParam;
     }
 
+    if (!Util.isUnset(request.robotCode)) {
+      body["robotCode"] = request.robotCode;
+    }
+
+    if (!Util.isUnset(request.userIds)) {
+      body["userIds"] = request.userIds;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({
@@ -671,12 +756,16 @@ export default class Client extends OpenApi {
   async orgGroupSendWithOptions(request: OrgGroupSendRequest, headers: OrgGroupSendHeaders, runtime: $Util.RuntimeOptions): Promise<OrgGroupSendResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.msgParam)) {
-      body["msgParam"] = request.msgParam;
+    if (!Util.isUnset(request.coolAppCode)) {
+      body["coolAppCode"] = request.coolAppCode;
     }
 
     if (!Util.isUnset(request.msgKey)) {
       body["msgKey"] = request.msgKey;
+    }
+
+    if (!Util.isUnset(request.msgParam)) {
+      body["msgParam"] = request.msgParam;
     }
 
     if (!Util.isUnset(request.openConversationId)) {
@@ -691,41 +780,13 @@ export default class Client extends OpenApi {
       body["token"] = request.token;
     }
 
-    if (!Util.isUnset(request.coolAppCode)) {
-      body["coolAppCode"] = request.coolAppCode;
-    }
-
-    if (!Util.isUnset(request.dingTokenGrantType)) {
-      body["dingTokenGrantType"] = request.dingTokenGrantType;
-    }
-
-    if (!Util.isUnset(request.dingOrgId)) {
-      body["dingOrgId"] = request.dingOrgId;
-    }
-
-    if (!Util.isUnset(request.dingCorpId)) {
-      body["dingCorpId"] = request.dingCorpId;
-    }
-
-    if (!Util.isUnset(request.dingIsvOrgId)) {
-      body["dingIsvOrgId"] = request.dingIsvOrgId;
-    }
-
-    if (!Util.isUnset(request.dingSuiteKey)) {
-      body["dingSuiteKey"] = request.dingSuiteKey;
-    }
-
-    if (!Util.isUnset(request.dingClientId)) {
-      body["dingClientId"] = request.dingClientId;
-    }
-
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({
@@ -733,109 +794,6 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<OrgGroupSendResponse>(await this.doROARequest("OrgGroupSend", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/groupMessages/send`, "json", req, runtime), new OrgGroupSendResponse({}));
-  }
-
-  async batchRecallOTO(request: BatchRecallOTORequest): Promise<BatchRecallOTOResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BatchRecallOTOHeaders({ });
-    return await this.batchRecallOTOWithOptions(request, headers, runtime);
-  }
-
-  async batchRecallOTOWithOptions(request: BatchRecallOTORequest, headers: BatchRecallOTOHeaders, runtime: $Util.RuntimeOptions): Promise<BatchRecallOTOResponse> {
-    Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.robotCode)) {
-      body["robotCode"] = request.robotCode;
-    }
-
-    if (!Util.isUnset(request.processQueryKeys)) {
-      body["processQueryKeys"] = request.processQueryKeys;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<BatchRecallOTOResponse>(await this.doROARequest("BatchRecallOTO", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/otoMessages/batchRecall`, "json", req, runtime), new BatchRecallOTOResponse({}));
-  }
-
-  async batchRecallGroup(request: BatchRecallGroupRequest): Promise<BatchRecallGroupResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BatchRecallGroupHeaders({ });
-    return await this.batchRecallGroupWithOptions(request, headers, runtime);
-  }
-
-  async batchRecallGroupWithOptions(request: BatchRecallGroupRequest, headers: BatchRecallGroupHeaders, runtime: $Util.RuntimeOptions): Promise<BatchRecallGroupResponse> {
-    Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.openConversationId)) {
-      body["openConversationId"] = request.openConversationId;
-    }
-
-    if (!Util.isUnset(request.chatbotId)) {
-      body["chatbotId"] = request.chatbotId;
-    }
-
-    if (!Util.isUnset(request.processQueryKeys)) {
-      body["processQueryKeys"] = request.processQueryKeys;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<BatchRecallGroupResponse>(await this.doROARequest("BatchRecallGroup", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/groupMessages/batchRecall`, "json", req, runtime), new BatchRecallGroupResponse({}));
-  }
-
-  async batchOTOQuery(request: BatchOTOQueryRequest): Promise<BatchOTOQueryResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BatchOTOQueryHeaders({ });
-    return await this.batchOTOQueryWithOptions(request, headers, runtime);
-  }
-
-  async batchOTOQueryWithOptions(request: BatchOTOQueryRequest, headers: BatchOTOQueryHeaders, runtime: $Util.RuntimeOptions): Promise<BatchOTOQueryResponse> {
-    Util.validateModel(request);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.robotCode)) {
-      query["robotCode"] = request.robotCode;
-    }
-
-    if (!Util.isUnset(request.processQueryKey)) {
-      query["processQueryKey"] = request.processQueryKey;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      query: OpenApiUtil.query(query),
-    });
-    return $tea.cast<BatchOTOQueryResponse>(await this.doROARequest("BatchOTOQuery", "robot_1.0", "HTTP", "GET", "AK", `/v1.0/robot/oToMessages/readStatus`, "json", req, runtime), new BatchOTOQueryResponse({}));
   }
 
   async sendRobotDingMessage(request: SendRobotDingMessageRequest): Promise<SendRobotDingMessageResponse> {
@@ -847,8 +805,12 @@ export default class Client extends OpenApi {
   async sendRobotDingMessageWithOptions(request: SendRobotDingMessageRequest, headers: SendRobotDingMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SendRobotDingMessageResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.robotCode)) {
-      body["robotCode"] = request.robotCode;
+    if (!Util.isUnset(request.contentParams)) {
+      body["contentParams"] = request.contentParams;
+    }
+
+    if (!Util.isUnset(request.dingTemplateId)) {
+      body["dingTemplateId"] = request.dingTemplateId;
     }
 
     if (!Util.isUnset(request.openConversationId)) {
@@ -859,12 +821,8 @@ export default class Client extends OpenApi {
       body["receiverUserIdList"] = request.receiverUserIdList;
     }
 
-    if (!Util.isUnset(request.dingTemplateId)) {
-      body["dingTemplateId"] = request.dingTemplateId;
-    }
-
-    if (!Util.isUnset(request.contentParams)) {
-      body["contentParams"] = request.contentParams;
+    if (!Util.isUnset(request.robotCode)) {
+      body["robotCode"] = request.robotCode;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -873,7 +831,7 @@ export default class Client extends OpenApi {
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({

@@ -30,22 +30,22 @@ export class CreateFlashMeetingHeaders extends $tea.Model {
 }
 
 export class CreateFlashMeetingRequest extends $tea.Model {
+  creator?: string;
   eventId?: string;
   title?: string;
-  creator?: string;
   static names(): { [key: string]: string } {
     return {
+      creator: 'creator',
       eventId: 'eventId',
       title: 'title',
-      creator: 'creator',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      creator: 'string',
       eventId: 'string',
       title: 'string',
-      creator: 'string',
     };
   }
 
@@ -56,27 +56,27 @@ export class CreateFlashMeetingRequest extends $tea.Model {
 
 export class CreateFlashMeetingResponseBody extends $tea.Model {
   endTime?: number;
+  flashMeetingKey?: string;
   startTime?: number;
   title?: string;
   url?: string;
-  flashMeetingKey?: string;
   static names(): { [key: string]: string } {
     return {
       endTime: 'endTime',
+      flashMeetingKey: 'flashMeetingKey',
       startTime: 'startTime',
       title: 'title',
       url: 'url',
-      flashMeetingKey: 'flashMeetingKey',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       endTime: 'number',
+      flashMeetingKey: 'string',
       startTime: 'number',
       title: 'string',
       url: 'string',
-      flashMeetingKey: 'string',
     };
   }
 
@@ -129,6 +129,10 @@ export default class Client extends OpenApi {
   async createFlashMeetingWithOptions(request: CreateFlashMeetingRequest, headers: CreateFlashMeetingHeaders, runtime: $Util.RuntimeOptions): Promise<CreateFlashMeetingResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.creator)) {
+      body["creator"] = request.creator;
+    }
+
     if (!Util.isUnset(request.eventId)) {
       body["eventId"] = request.eventId;
     }
@@ -137,17 +141,13 @@ export default class Client extends OpenApi {
       body["title"] = request.title;
     }
 
-    if (!Util.isUnset(request.creator)) {
-      body["creator"] = request.creator;
-    }
-
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({

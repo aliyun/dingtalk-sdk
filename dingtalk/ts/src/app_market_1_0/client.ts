@@ -30,19 +30,19 @@ export class CreateAppGoodsServiceConversationHeaders extends $tea.Model {
 }
 
 export class CreateAppGoodsServiceConversationRequest extends $tea.Model {
-  orderId?: number;
   isvUserId?: string;
+  orderId?: number;
   static names(): { [key: string]: string } {
     return {
-      orderId: 'orderId',
       isvUserId: 'isvUserId',
+      orderId: 'orderId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      orderId: 'number',
       isvUserId: 'string',
+      orderId: 'number',
     };
   }
 
@@ -87,183 +87,6 @@ export class CreateAppGoodsServiceConversationResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: CreateAppGoodsServiceConversationResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryMarketOrderHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryMarketOrderResponseBody extends $tea.Model {
-  bizOrderId?: number;
-  corpId?: string;
-  itemCode?: string;
-  itemName?: string;
-  goodsCode?: string;
-  goodsName?: string;
-  totalActualPayFee?: number;
-  status?: number;
-  quantity?: number;
-  paidTimestamp?: number;
-  createTimestamp?: number;
-  startTimestamp?: number;
-  endTimestamp?: number;
-  inAppOrder?: boolean;
-  static names(): { [key: string]: string } {
-    return {
-      bizOrderId: 'bizOrderId',
-      corpId: 'corpId',
-      itemCode: 'itemCode',
-      itemName: 'itemName',
-      goodsCode: 'goodsCode',
-      goodsName: 'goodsName',
-      totalActualPayFee: 'totalActualPayFee',
-      status: 'status',
-      quantity: 'quantity',
-      paidTimestamp: 'paidTimestamp',
-      createTimestamp: 'createTimestamp',
-      startTimestamp: 'startTimestamp',
-      endTimestamp: 'endTimestamp',
-      inAppOrder: 'inAppOrder',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      bizOrderId: 'number',
-      corpId: 'string',
-      itemCode: 'string',
-      itemName: 'string',
-      goodsCode: 'string',
-      goodsName: 'string',
-      totalActualPayFee: 'number',
-      status: 'number',
-      quantity: 'number',
-      paidTimestamp: 'number',
-      createTimestamp: 'number',
-      startTimestamp: 'number',
-      endTimestamp: 'number',
-      inAppOrder: 'boolean',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryMarketOrderResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: QueryMarketOrderResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: QueryMarketOrderResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class UserTaskReportHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class UserTaskReportRequest extends $tea.Model {
-  dingCorpId?: string;
-  taskTag?: string;
-  operateDate?: string;
-  userid?: string;
-  bizNo?: string;
-  static names(): { [key: string]: string } {
-    return {
-      dingCorpId: 'dingCorpId',
-      taskTag: 'taskTag',
-      operateDate: 'operateDate',
-      userid: 'userid',
-      bizNo: 'bizNo',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      dingCorpId: 'string',
-      taskTag: 'string',
-      operateDate: 'string',
-      userid: 'string',
-      bizNo: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class UserTaskReportResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: boolean;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: 'boolean',
     };
   }
 
@@ -354,6 +177,180 @@ export class GetPersonalExperienceInfoResponse extends $tea.Model {
   }
 }
 
+export class QueryMarketOrderHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMarketOrderResponseBody extends $tea.Model {
+  bizOrderId?: number;
+  corpId?: string;
+  createTimestamp?: number;
+  endTimestamp?: number;
+  goodsCode?: string;
+  goodsName?: string;
+  inAppOrder?: boolean;
+  itemCode?: string;
+  itemName?: string;
+  paidTimestamp?: number;
+  quantity?: number;
+  startTimestamp?: number;
+  status?: number;
+  totalActualPayFee?: number;
+  static names(): { [key: string]: string } {
+    return {
+      bizOrderId: 'bizOrderId',
+      corpId: 'corpId',
+      createTimestamp: 'createTimestamp',
+      endTimestamp: 'endTimestamp',
+      goodsCode: 'goodsCode',
+      goodsName: 'goodsName',
+      inAppOrder: 'inAppOrder',
+      itemCode: 'itemCode',
+      itemName: 'itemName',
+      paidTimestamp: 'paidTimestamp',
+      quantity: 'quantity',
+      startTimestamp: 'startTimestamp',
+      status: 'status',
+      totalActualPayFee: 'totalActualPayFee',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizOrderId: 'number',
+      corpId: 'string',
+      createTimestamp: 'number',
+      endTimestamp: 'number',
+      goodsCode: 'string',
+      goodsName: 'string',
+      inAppOrder: 'boolean',
+      itemCode: 'string',
+      itemName: 'string',
+      paidTimestamp: 'number',
+      quantity: 'number',
+      startTimestamp: 'number',
+      status: 'number',
+      totalActualPayFee: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMarketOrderResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryMarketOrderResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryMarketOrderResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UserTaskReportHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UserTaskReportRequest extends $tea.Model {
+  bizNo?: string;
+  operateDate?: string;
+  taskTag?: string;
+  userid?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizNo: 'bizNo',
+      operateDate: 'operateDate',
+      taskTag: 'taskTag',
+      userid: 'userid',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizNo: 'string',
+      operateDate: 'string',
+      taskTag: 'string',
+      userid: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UserTaskReportResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetPersonalExperienceInfoResponseBodyResult extends $tea.Model {
   mainCorpId?: string;
   static names(): { [key: string]: string } {
@@ -395,12 +392,12 @@ export default class Client extends OpenApi {
   async createAppGoodsServiceConversationWithOptions(request: CreateAppGoodsServiceConversationRequest, headers: CreateAppGoodsServiceConversationHeaders, runtime: $Util.RuntimeOptions): Promise<CreateAppGoodsServiceConversationResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.orderId)) {
-      body["orderId"] = request.orderId;
-    }
-
     if (!Util.isUnset(request.isvUserId)) {
       body["isvUserId"] = request.isvUserId;
+    }
+
+    if (!Util.isUnset(request.orderId)) {
+      body["orderId"] = request.orderId;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -409,7 +406,7 @@ export default class Client extends OpenApi {
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({
@@ -417,73 +414,6 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<CreateAppGoodsServiceConversationResponse>(await this.doROARequest("CreateAppGoodsServiceConversation", "appMarket_1.0", "HTTP", "POST", "AK", `/v1.0/appMarket/orders/serviceGroups`, "json", req, runtime), new CreateAppGoodsServiceConversationResponse({}));
-  }
-
-  async queryMarketOrder(orderId: string): Promise<QueryMarketOrderResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryMarketOrderHeaders({ });
-    return await this.queryMarketOrderWithOptions(orderId, headers, runtime);
-  }
-
-  async queryMarketOrderWithOptions(orderId: string, headers: QueryMarketOrderHeaders, runtime: $Util.RuntimeOptions): Promise<QueryMarketOrderResponse> {
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-    });
-    return $tea.cast<QueryMarketOrderResponse>(await this.doROARequest("QueryMarketOrder", "appMarket_1.0", "HTTP", "GET", "AK", `/v1.0/appMarket/orders/${orderId}`, "json", req, runtime), new QueryMarketOrderResponse({}));
-  }
-
-  async userTaskReport(request: UserTaskReportRequest): Promise<UserTaskReportResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UserTaskReportHeaders({ });
-    return await this.userTaskReportWithOptions(request, headers, runtime);
-  }
-
-  async userTaskReportWithOptions(request: UserTaskReportRequest, headers: UserTaskReportHeaders, runtime: $Util.RuntimeOptions): Promise<UserTaskReportResponse> {
-    Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.dingCorpId)) {
-      body["dingCorpId"] = request.dingCorpId;
-    }
-
-    if (!Util.isUnset(request.taskTag)) {
-      body["taskTag"] = request.taskTag;
-    }
-
-    if (!Util.isUnset(request.operateDate)) {
-      body["operateDate"] = request.operateDate;
-    }
-
-    if (!Util.isUnset(request.userid)) {
-      body["userid"] = request.userid;
-    }
-
-    if (!Util.isUnset(request.bizNo)) {
-      body["bizNo"] = request.bizNo;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<UserTaskReportResponse>(await this.doROARequest("UserTaskReport", "appMarket_1.0", "HTTP", "POST", "AK", `/v1.0/appMarket/tasks`, "boolean", req, runtime), new UserTaskReportResponse({}));
   }
 
   async getPersonalExperienceInfo(request: GetPersonalExperienceInfoRequest): Promise<GetPersonalExperienceInfoResponse> {
@@ -505,7 +435,7 @@ export default class Client extends OpenApi {
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({
@@ -513,6 +443,70 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<GetPersonalExperienceInfoResponse>(await this.doROARequest("GetPersonalExperienceInfo", "appMarket_1.0", "HTTP", "GET", "AK", `/v1.0/appMarket/personalExperiences`, "json", req, runtime), new GetPersonalExperienceInfoResponse({}));
+  }
+
+  async queryMarketOrder(orderId: string): Promise<QueryMarketOrderResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryMarketOrderHeaders({ });
+    return await this.queryMarketOrderWithOptions(orderId, headers, runtime);
+  }
+
+  async queryMarketOrderWithOptions(orderId: string, headers: QueryMarketOrderHeaders, runtime: $Util.RuntimeOptions): Promise<QueryMarketOrderResponse> {
+    orderId = OpenApiUtil.getEncodeParam(orderId);
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<QueryMarketOrderResponse>(await this.doROARequest("QueryMarketOrder", "appMarket_1.0", "HTTP", "GET", "AK", `/v1.0/appMarket/orders/${orderId}`, "json", req, runtime), new QueryMarketOrderResponse({}));
+  }
+
+  async userTaskReport(request: UserTaskReportRequest): Promise<UserTaskReportResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UserTaskReportHeaders({ });
+    return await this.userTaskReportWithOptions(request, headers, runtime);
+  }
+
+  async userTaskReportWithOptions(request: UserTaskReportRequest, headers: UserTaskReportHeaders, runtime: $Util.RuntimeOptions): Promise<UserTaskReportResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizNo)) {
+      body["bizNo"] = request.bizNo;
+    }
+
+    if (!Util.isUnset(request.operateDate)) {
+      body["operateDate"] = request.operateDate;
+    }
+
+    if (!Util.isUnset(request.taskTag)) {
+      body["taskTag"] = request.taskTag;
+    }
+
+    if (!Util.isUnset(request.userid)) {
+      body["userid"] = request.userid;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UserTaskReportResponse>(await this.doROARequest("UserTaskReport", "appMarket_1.0", "HTTP", "POST", "AK", `/v1.0/appMarket/tasks`, "boolean", req, runtime), new UserTaskReportResponse({}));
   }
 
 }

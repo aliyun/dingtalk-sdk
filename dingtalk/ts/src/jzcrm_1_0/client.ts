@@ -7,6 +7,288 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class EditContactHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditContactRequest extends $tea.Model {
+  data?: EditContactRequestData;
+  datatype?: number;
+  msgid?: number;
+  stamp?: number;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      datatype: 'datatype',
+      msgid: 'msgid',
+      stamp: 'stamp',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: EditContactRequestData,
+      datatype: 'number',
+      msgid: 'number',
+      stamp: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditContactResponseBody extends $tea.Model {
+  msgid?: number;
+  time?: string;
+  static names(): { [key: string]: string } {
+    return {
+      msgid: 'msgid',
+      time: 'time',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      msgid: 'number',
+      time: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditContactResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: EditContactResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: EditContactResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditCustomerHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditCustomerRequest extends $tea.Model {
+  data?: EditCustomerRequestData;
+  datatype?: number;
+  msgid?: number;
+  stamp?: number;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      datatype: 'datatype',
+      msgid: 'msgid',
+      stamp: 'stamp',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: EditCustomerRequestData,
+      datatype: 'number',
+      msgid: 'number',
+      stamp: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditCustomerResponseBody extends $tea.Model {
+  msgid?: number;
+  time?: string;
+  static names(): { [key: string]: string } {
+    return {
+      msgid: 'msgid',
+      time: 'time',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      msgid: 'number',
+      time: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditCustomerResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: EditCustomerResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: EditCustomerResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditCustomerPoolHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditCustomerPoolRequest extends $tea.Model {
+  data?: EditCustomerPoolRequestData;
+  datatype?: number;
+  msgid?: number;
+  stamp?: number;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      datatype: 'datatype',
+      msgid: 'msgid',
+      stamp: 'stamp',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: EditCustomerPoolRequestData,
+      datatype: 'number',
+      msgid: 'number',
+      stamp: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditCustomerPoolResponseBody extends $tea.Model {
+  msgid?: number;
+  time?: string;
+  static names(): { [key: string]: string } {
+    return {
+      msgid: 'msgid',
+      time: 'time',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      msgid: 'number',
+      time: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditCustomerPoolResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: EditCustomerPoolResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: EditCustomerPoolResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class EditExchangeHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -30,25 +312,25 @@ export class EditExchangeHeaders extends $tea.Model {
 }
 
 export class EditExchangeRequest extends $tea.Model {
-  datatype?: number;
-  stamp?: number;
-  msgid?: number;
   data?: EditExchangeRequestData;
+  datatype?: number;
+  msgid?: number;
+  stamp?: number;
   static names(): { [key: string]: string } {
     return {
-      datatype: 'datatype',
-      stamp: 'stamp',
-      msgid: 'msgid',
       data: 'data',
+      datatype: 'datatype',
+      msgid: 'msgid',
+      stamp: 'stamp',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      datatype: 'number',
-      stamp: 'number',
-      msgid: 'number',
       data: EditExchangeRequestData,
+      datatype: 'number',
+      msgid: 'number',
+      stamp: 'number',
     };
   }
 
@@ -58,19 +340,19 @@ export class EditExchangeRequest extends $tea.Model {
 }
 
 export class EditExchangeResponseBody extends $tea.Model {
-  time?: string;
   msgid?: number;
+  time?: string;
   static names(): { [key: string]: string } {
     return {
-      time: 'time',
       msgid: 'msgid',
+      time: 'time',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      time: 'string',
       msgid: 'number',
+      time: 'string',
     };
   }
 
@@ -93,6 +375,476 @@ export class EditExchangeResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: EditExchangeResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditGoodsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditGoodsRequest extends $tea.Model {
+  data?: EditGoodsRequestData;
+  datatype?: number;
+  msgid?: number;
+  stamp?: number;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      datatype: 'datatype',
+      msgid: 'msgid',
+      stamp: 'stamp',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: EditGoodsRequestData,
+      datatype: 'number',
+      msgid: 'number',
+      stamp: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditGoodsResponseBody extends $tea.Model {
+  msgid?: number;
+  time?: string;
+  static names(): { [key: string]: string } {
+    return {
+      msgid: 'msgid',
+      time: 'time',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      msgid: 'number',
+      time: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditGoodsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: EditGoodsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: EditGoodsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditIntostockHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditIntostockRequest extends $tea.Model {
+  data?: EditIntostockRequestData;
+  datatype?: number;
+  msgid?: number;
+  stamp?: number;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      datatype: 'datatype',
+      msgid: 'msgid',
+      stamp: 'stamp',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: EditIntostockRequestData,
+      datatype: 'number',
+      msgid: 'number',
+      stamp: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditIntostockResponseBody extends $tea.Model {
+  msgid?: number;
+  time?: string;
+  static names(): { [key: string]: string } {
+    return {
+      msgid: 'msgid',
+      time: 'time',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      msgid: 'number',
+      time: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditIntostockResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: EditIntostockResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: EditIntostockResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditInvoiceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditInvoiceRequest extends $tea.Model {
+  data?: EditInvoiceRequestData;
+  datatype?: number;
+  msgid?: number;
+  stamp?: number;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      datatype: 'datatype',
+      msgid: 'msgid',
+      stamp: 'stamp',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: EditInvoiceRequestData,
+      datatype: 'number',
+      msgid: 'number',
+      stamp: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditInvoiceResponseBody extends $tea.Model {
+  msgid?: number;
+  time?: string;
+  static names(): { [key: string]: string } {
+    return {
+      msgid: 'msgid',
+      time: 'time',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      msgid: 'number',
+      time: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditInvoiceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: EditInvoiceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: EditInvoiceResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditOrderHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditOrderRequest extends $tea.Model {
+  data?: EditOrderRequestData;
+  datatype?: number;
+  msgid?: number;
+  stamp?: number;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      datatype: 'datatype',
+      msgid: 'msgid',
+      stamp: 'stamp',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: EditOrderRequestData,
+      datatype: 'number',
+      msgid: 'number',
+      stamp: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditOrderResponseBody extends $tea.Model {
+  msgid?: number;
+  time?: string;
+  static names(): { [key: string]: string } {
+    return {
+      msgid: 'msgid',
+      time: 'time',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      msgid: 'number',
+      time: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditOrderResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: EditOrderResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: EditOrderResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditOutstockHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditOutstockRequest extends $tea.Model {
+  data?: EditOutstockRequestData;
+  datatype?: number;
+  msgid?: number;
+  stamp?: number;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      datatype: 'datatype',
+      msgid: 'msgid',
+      stamp: 'stamp',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: EditOutstockRequestData,
+      datatype: 'number',
+      msgid: 'number',
+      stamp: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditOutstockResponseBody extends $tea.Model {
+  msgid?: number;
+  time?: string;
+  static names(): { [key: string]: string } {
+    return {
+      msgid: 'msgid',
+      time: 'time',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      msgid: 'number',
+      time: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditOutstockResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: EditOutstockResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: EditOutstockResponseBody,
     };
   }
 
@@ -124,25 +876,25 @@ export class EditProductionHeaders extends $tea.Model {
 }
 
 export class EditProductionRequest extends $tea.Model {
-  datatype?: number;
-  stamp?: number;
-  msgid?: number;
   data?: EditProductionRequestData;
+  datatype?: number;
+  msgid?: number;
+  stamp?: number;
   static names(): { [key: string]: string } {
     return {
-      datatype: 'datatype',
-      stamp: 'stamp',
-      msgid: 'msgid',
       data: 'data',
+      datatype: 'datatype',
+      msgid: 'msgid',
+      stamp: 'stamp',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      datatype: 'number',
-      stamp: 'number',
-      msgid: 'number',
       data: EditProductionRequestData,
+      datatype: 'number',
+      msgid: 'number',
+      stamp: 'number',
     };
   }
 
@@ -152,19 +904,19 @@ export class EditProductionRequest extends $tea.Model {
 }
 
 export class EditProductionResponseBody extends $tea.Model {
-  time?: string;
   msgid?: number;
+  time?: string;
   static names(): { [key: string]: string } {
     return {
-      time: 'time',
       msgid: 'msgid',
+      time: 'time',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      time: 'string',
       msgid: 'number',
+      time: 'string',
     };
   }
 
@@ -187,6 +939,391 @@ export class EditProductionResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: EditProductionResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditPurchaseHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditPurchaseRequest extends $tea.Model {
+  data?: EditPurchaseRequestData;
+  datatype?: number;
+  msgid?: number;
+  stamp?: number;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      datatype: 'datatype',
+      msgid: 'msgid',
+      stamp: 'stamp',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: EditPurchaseRequestData,
+      datatype: 'number',
+      msgid: 'number',
+      stamp: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditPurchaseResponseBody extends $tea.Model {
+  msgid?: number;
+  time?: string;
+  static names(): { [key: string]: string } {
+    return {
+      msgid: 'msgid',
+      time: 'time',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      msgid: 'number',
+      time: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditPurchaseResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: EditPurchaseResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: EditPurchaseResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditQuotationRecordHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditQuotationRecordRequest extends $tea.Model {
+  data?: EditQuotationRecordRequestData;
+  datatype?: number;
+  msgid?: number;
+  stamp?: number;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      datatype: 'datatype',
+      msgid: 'msgid',
+      stamp: 'stamp',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: EditQuotationRecordRequestData,
+      datatype: 'number',
+      msgid: 'number',
+      stamp: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditQuotationRecordResponseBody extends $tea.Model {
+  msgid?: number;
+  time?: string;
+  static names(): { [key: string]: string } {
+    return {
+      msgid: 'msgid',
+      time: 'time',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      msgid: 'number',
+      time: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditQuotationRecordResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: EditQuotationRecordResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: EditQuotationRecordResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditSalesHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditSalesRequest extends $tea.Model {
+  data?: EditSalesRequestData;
+  datatype?: number;
+  msgid?: number;
+  stamp?: number;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      datatype: 'datatype',
+      msgid: 'msgid',
+      stamp: 'stamp',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: EditSalesRequestData,
+      datatype: 'number',
+      msgid: 'number',
+      stamp: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditSalesResponseBody extends $tea.Model {
+  msgid?: number;
+  time?: string;
+  static names(): { [key: string]: string } {
+    return {
+      msgid: 'msgid',
+      time: 'time',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      msgid: 'number',
+      time: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditSalesResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: EditSalesResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: EditSalesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDataListHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDataListRequest extends $tea.Model {
+  datatype?: string;
+  page?: number;
+  pagesize?: number;
+  static names(): { [key: string]: string } {
+    return {
+      datatype: 'datatype',
+      page: 'page',
+      pagesize: 'pagesize',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      datatype: 'string',
+      page: 'number',
+      pagesize: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDataListResponseBody extends $tea.Model {
+  data?: GetDataListResponseBodyData[];
+  dataname?: { [key: string]: string };
+  page?: number;
+  pageSize?: number;
+  time?: string;
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      dataname: 'dataname',
+      page: 'page',
+      pageSize: 'pageSize',
+      time: 'time',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: { 'type': 'array', 'itemType': GetDataListResponseBodyData },
+      dataname: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      page: 'number',
+      pageSize: 'number',
+      time: 'string',
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDataListResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetDataListResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetDataListResponseBody,
     };
   }
 
@@ -286,20 +1423,98 @@ export class GetDataViewResponse extends $tea.Model {
   }
 }
 
-export class EditSalesHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
+export class EditContactRequestData extends $tea.Model {
+  dataUserid?: string;
+  lxrAddress?: string;
+  lxrBirthday?: string;
+  lxrChengwei?: string;
+  lxrCtnumber?: string;
+  lxrCttype?: string;
+  lxrCustomerid?: string;
+  lxrDepartment?: string;
+  lxrDingtalk?: string;
+  lxrEmail?: string;
+  lxrFax?: string;
+  lxrGroup?: string;
+  lxrHandset?: string;
+  lxrHeadship?: string;
+  lxrLike?: string;
+  lxrName?: string;
+  lxrPhoto?: string;
+  lxrPreside?: string;
+  lxrPst?: string;
+  lxrQq?: string;
+  lxrRemark?: string;
+  lxrSex?: string;
+  lxrSkype?: string;
+  lxrTel?: string;
+  lxrType?: string;
+  lxrWangwang?: string;
+  lxrWeixin?: string;
+  lxrWorktel?: string;
   static names(): { [key: string]: string } {
     return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+      dataUserid: 'data_userid',
+      lxrAddress: 'lxr_address',
+      lxrBirthday: 'lxr_birthday',
+      lxrChengwei: 'lxr_chengwei',
+      lxrCtnumber: 'lxr_ctnumber',
+      lxrCttype: 'lxr_cttype',
+      lxrCustomerid: 'lxr_customerid',
+      lxrDepartment: 'lxr_department',
+      lxrDingtalk: 'lxr_dingtalk',
+      lxrEmail: 'lxr_email',
+      lxrFax: 'lxr_fax',
+      lxrGroup: 'lxr_group',
+      lxrHandset: 'lxr_handset',
+      lxrHeadship: 'lxr_headship',
+      lxrLike: 'lxr_like',
+      lxrName: 'lxr_name',
+      lxrPhoto: 'lxr_photo',
+      lxrPreside: 'lxr_preside',
+      lxrPst: 'lxr_pst',
+      lxrQq: 'lxr_qq',
+      lxrRemark: 'lxr_remark',
+      lxrSex: 'lxr_sex',
+      lxrSkype: 'lxr_skype',
+      lxrTel: 'lxr_tel',
+      lxrType: 'lxr_type',
+      lxrWangwang: 'lxr_wangwang',
+      lxrWeixin: 'lxr_weixin',
+      lxrWorktel: 'lxr_worktel',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
+      dataUserid: 'string',
+      lxrAddress: 'string',
+      lxrBirthday: 'string',
+      lxrChengwei: 'string',
+      lxrCtnumber: 'string',
+      lxrCttype: 'string',
+      lxrCustomerid: 'string',
+      lxrDepartment: 'string',
+      lxrDingtalk: 'string',
+      lxrEmail: 'string',
+      lxrFax: 'string',
+      lxrGroup: 'string',
+      lxrHandset: 'string',
+      lxrHeadship: 'string',
+      lxrLike: 'string',
+      lxrName: 'string',
+      lxrPhoto: 'string',
+      lxrPreside: 'string',
+      lxrPst: 'string',
+      lxrQq: 'string',
+      lxrRemark: 'string',
+      lxrSex: 'string',
+      lxrSkype: 'string',
+      lxrTel: 'string',
+      lxrType: 'string',
+      lxrWangwang: 'string',
+      lxrWeixin: 'string',
+      lxrWorktel: 'string',
     };
   }
 
@@ -308,26 +1523,158 @@ export class EditSalesHeaders extends $tea.Model {
   }
 }
 
-export class EditSalesRequest extends $tea.Model {
-  datatype?: number;
-  stamp?: number;
-  msgid?: number;
-  data?: EditSalesRequestData;
+export class EditCustomerRequestData extends $tea.Model {
+  dataUserid?: string;
+  khAddress?: string;
+  khAppellation?: string;
+  khBefontof?: string;
+  khBillinfo?: string;
+  khCity?: string;
+  khClass?: string;
+  khCoaddress?: string;
+  khContype?: string;
+  khCountry?: string;
+  khCreditgrade?: string;
+  khCtnumber?: string;
+  khCttype?: string;
+  khDepartment?: string;
+  khDingtalk?: string;
+  khEmail?: string;
+  khEmployees?: string;
+  khFax?: string;
+  khFrom?: string;
+  khHandset?: string;
+  khHeadship?: string;
+  khHotfl?: string;
+  khHotlevel?: string;
+  khHotmemo?: string;
+  khHottype?: string;
+  khIndustry?: string;
+  khInfo?: string;
+  khJibie?: string;
+  khName?: string;
+  khPkhid?: string;
+  khPreside?: string;
+  khProvince?: string;
+  khPst?: string;
+  khQq?: string;
+  khRalagrade?: string;
+  khRemark?: string;
+  khSex?: string;
+  khShortname?: string;
+  khSkype?: string;
+  khSn?: string;
+  khStatus?: string;
+  khTel?: string;
+  khType?: string;
+  khValrating?: string;
+  khWangwang?: string;
+  khWeb?: string;
+  khWeixin?: string;
+  khWorktel?: string;
   static names(): { [key: string]: string } {
     return {
-      datatype: 'datatype',
-      stamp: 'stamp',
-      msgid: 'msgid',
-      data: 'data',
+      dataUserid: 'data_userid',
+      khAddress: 'kh_address',
+      khAppellation: 'kh_appellation',
+      khBefontof: 'kh_befontof',
+      khBillinfo: 'kh_billinfo',
+      khCity: 'kh_city',
+      khClass: 'kh_class',
+      khCoaddress: 'kh_coaddress',
+      khContype: 'kh_contype',
+      khCountry: 'kh_country',
+      khCreditgrade: 'kh_creditgrade',
+      khCtnumber: 'kh_ctnumber',
+      khCttype: 'kh_cttype',
+      khDepartment: 'kh_department',
+      khDingtalk: 'kh_dingtalk',
+      khEmail: 'kh_email',
+      khEmployees: 'kh_employees',
+      khFax: 'kh_fax',
+      khFrom: 'kh_from',
+      khHandset: 'kh_handset',
+      khHeadship: 'kh_headship',
+      khHotfl: 'kh_hotfl',
+      khHotlevel: 'kh_hotlevel',
+      khHotmemo: 'kh_hotmemo',
+      khHottype: 'kh_hottype',
+      khIndustry: 'kh_industry',
+      khInfo: 'kh_info',
+      khJibie: 'kh_jibie',
+      khName: 'kh_name',
+      khPkhid: 'kh_pkhid',
+      khPreside: 'kh_preside',
+      khProvince: 'kh_province',
+      khPst: 'kh_pst',
+      khQq: 'kh_qq',
+      khRalagrade: 'kh_ralagrade',
+      khRemark: 'kh_remark',
+      khSex: 'kh_sex',
+      khShortname: 'kh_shortname',
+      khSkype: 'kh_skype',
+      khSn: 'kh_sn',
+      khStatus: 'kh_status',
+      khTel: 'kh_tel',
+      khType: 'kh_type',
+      khValrating: 'kh_valrating',
+      khWangwang: 'kh_wangwang',
+      khWeb: 'kh_web',
+      khWeixin: 'kh_weixin',
+      khWorktel: 'kh_worktel',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      datatype: 'number',
-      stamp: 'number',
-      msgid: 'number',
-      data: EditSalesRequestData,
+      dataUserid: 'string',
+      khAddress: 'string',
+      khAppellation: 'string',
+      khBefontof: 'string',
+      khBillinfo: 'string',
+      khCity: 'string',
+      khClass: 'string',
+      khCoaddress: 'string',
+      khContype: 'string',
+      khCountry: 'string',
+      khCreditgrade: 'string',
+      khCtnumber: 'string',
+      khCttype: 'string',
+      khDepartment: 'string',
+      khDingtalk: 'string',
+      khEmail: 'string',
+      khEmployees: 'string',
+      khFax: 'string',
+      khFrom: 'string',
+      khHandset: 'string',
+      khHeadship: 'string',
+      khHotfl: 'string',
+      khHotlevel: 'string',
+      khHotmemo: 'string',
+      khHottype: 'string',
+      khIndustry: 'string',
+      khInfo: 'string',
+      khJibie: 'string',
+      khName: 'string',
+      khPkhid: 'string',
+      khPreside: 'string',
+      khProvince: 'string',
+      khPst: 'string',
+      khQq: 'string',
+      khRalagrade: 'string',
+      khRemark: 'string',
+      khSex: 'string',
+      khShortname: 'string',
+      khSkype: 'string',
+      khSn: 'string',
+      khStatus: 'string',
+      khTel: 'string',
+      khType: 'string',
+      khValrating: 'string',
+      khWangwang: 'string',
+      khWeb: 'string',
+      khWeixin: 'string',
+      khWorktel: 'string',
     };
   }
 
@@ -336,1085 +1683,161 @@ export class EditSalesRequest extends $tea.Model {
   }
 }
 
-export class EditSalesResponseBody extends $tea.Model {
-  time?: string;
-  msgid?: number;
+export class EditCustomerPoolRequestData extends $tea.Model {
+  dataUserid?: string;
+  khAddress?: string;
+  khAppellation?: string;
+  khBefontof?: string;
+  khBillinfo?: string;
+  khCity?: string;
+  khClass?: string;
+  khCoaddress?: string;
+  khContype?: string;
+  khCountry?: string;
+  khCreditgrade?: string;
+  khCtnumber?: string;
+  khCttype?: string;
+  khDepartment?: string;
+  khDingtalk?: string;
+  khEmail?: string;
+  khEmployees?: string;
+  khFax?: string;
+  khFrom?: string;
+  khGenzongtime?: string;
+  khHandset?: string;
+  khHeadship?: string;
+  khHotfl?: string;
+  khHotlevel?: string;
+  khHotmemo?: string;
+  khHottype?: string;
+  khIndustry?: string;
+  khInfo?: string;
+  khJibie?: string;
+  khName?: string;
+  khPkhid?: string;
+  khPreside?: string;
+  khProvince?: string;
+  khPst?: string;
+  khQq?: string;
+  khRalagrade?: string;
+  khRemark?: string;
+  khSex?: string;
+  khShortname?: string;
+  khSkype?: string;
+  khSn?: string;
+  khStatus?: string;
+  khTel?: string;
+  khType?: string;
+  khValrating?: string;
+  khWangwang?: string;
+  khWeb?: string;
+  khWeixin?: string;
+  khWorktel?: string;
   static names(): { [key: string]: string } {
     return {
-      time: 'time',
-      msgid: 'msgid',
+      dataUserid: 'data_userid',
+      khAddress: 'kh_address',
+      khAppellation: 'kh_appellation',
+      khBefontof: 'kh_befontof',
+      khBillinfo: 'kh_billinfo',
+      khCity: 'kh_city',
+      khClass: 'kh_class',
+      khCoaddress: 'kh_coaddress',
+      khContype: 'kh_contype',
+      khCountry: 'kh_country',
+      khCreditgrade: 'kh_creditgrade',
+      khCtnumber: 'kh_ctnumber',
+      khCttype: 'kh_cttype',
+      khDepartment: 'kh_department',
+      khDingtalk: 'kh_dingtalk',
+      khEmail: 'kh_email',
+      khEmployees: 'kh_employees',
+      khFax: 'kh_fax',
+      khFrom: 'kh_from',
+      khGenzongtime: 'kh_genzongtime',
+      khHandset: 'kh_handset',
+      khHeadship: 'kh_headship',
+      khHotfl: 'kh_hotfl',
+      khHotlevel: 'kh_hotlevel',
+      khHotmemo: 'kh_hotmemo',
+      khHottype: 'kh_hottype',
+      khIndustry: 'kh_industry',
+      khInfo: 'kh_info',
+      khJibie: 'kh_jibie',
+      khName: 'kh_name',
+      khPkhid: 'kh_pkhid',
+      khPreside: 'kh_preside',
+      khProvince: 'kh_province',
+      khPst: 'kh_pst',
+      khQq: 'kh_qq',
+      khRalagrade: 'kh_ralagrade',
+      khRemark: 'kh_remark',
+      khSex: 'kh_sex',
+      khShortname: 'kh_shortname',
+      khSkype: 'kh_skype',
+      khSn: 'kh_sn',
+      khStatus: 'kh_status',
+      khTel: 'kh_tel',
+      khType: 'kh_type',
+      khValrating: 'kh_valrating',
+      khWangwang: 'kh_wangwang',
+      khWeb: 'kh_web',
+      khWeixin: 'kh_weixin',
+      khWorktel: 'kh_worktel',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      time: 'string',
-      msgid: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditSalesResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: EditSalesResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: EditSalesResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditGoodsHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditGoodsRequest extends $tea.Model {
-  datatype?: number;
-  stamp?: number;
-  msgid?: number;
-  data?: EditGoodsRequestData;
-  static names(): { [key: string]: string } {
-    return {
-      datatype: 'datatype',
-      stamp: 'stamp',
-      msgid: 'msgid',
-      data: 'data',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      datatype: 'number',
-      stamp: 'number',
-      msgid: 'number',
-      data: EditGoodsRequestData,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditGoodsResponseBody extends $tea.Model {
-  time?: string;
-  msgid?: number;
-  static names(): { [key: string]: string } {
-    return {
-      time: 'time',
-      msgid: 'msgid',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      time: 'string',
-      msgid: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditGoodsResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: EditGoodsResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: EditGoodsResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditContactHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditContactRequest extends $tea.Model {
-  datatype?: number;
-  stamp?: number;
-  msgid?: number;
-  data?: EditContactRequestData;
-  static names(): { [key: string]: string } {
-    return {
-      datatype: 'datatype',
-      stamp: 'stamp',
-      msgid: 'msgid',
-      data: 'data',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      datatype: 'number',
-      stamp: 'number',
-      msgid: 'number',
-      data: EditContactRequestData,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditContactResponseBody extends $tea.Model {
-  time?: string;
-  msgid?: number;
-  static names(): { [key: string]: string } {
-    return {
-      time: 'time',
-      msgid: 'msgid',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      time: 'string',
-      msgid: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditContactResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: EditContactResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: EditContactResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditOrderHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditOrderRequest extends $tea.Model {
-  datatype?: number;
-  stamp?: number;
-  msgid?: number;
-  data?: EditOrderRequestData;
-  static names(): { [key: string]: string } {
-    return {
-      datatype: 'datatype',
-      stamp: 'stamp',
-      msgid: 'msgid',
-      data: 'data',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      datatype: 'number',
-      stamp: 'number',
-      msgid: 'number',
-      data: EditOrderRequestData,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditOrderResponseBody extends $tea.Model {
-  time?: string;
-  msgid?: number;
-  static names(): { [key: string]: string } {
-    return {
-      time: 'time',
-      msgid: 'msgid',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      time: 'string',
-      msgid: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditOrderResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: EditOrderResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: EditOrderResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditQuotationRecordHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditQuotationRecordRequest extends $tea.Model {
-  datatype?: number;
-  stamp?: number;
-  msgid?: number;
-  data?: EditQuotationRecordRequestData;
-  static names(): { [key: string]: string } {
-    return {
-      datatype: 'datatype',
-      stamp: 'stamp',
-      msgid: 'msgid',
-      data: 'data',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      datatype: 'number',
-      stamp: 'number',
-      msgid: 'number',
-      data: EditQuotationRecordRequestData,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditQuotationRecordResponseBody extends $tea.Model {
-  time?: string;
-  msgid?: number;
-  static names(): { [key: string]: string } {
-    return {
-      time: 'time',
-      msgid: 'msgid',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      time: 'string',
-      msgid: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditQuotationRecordResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: EditQuotationRecordResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: EditQuotationRecordResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditCustomerPoolHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditCustomerPoolRequest extends $tea.Model {
-  datatype?: number;
-  stamp?: number;
-  msgid?: number;
-  data?: EditCustomerPoolRequestData;
-  static names(): { [key: string]: string } {
-    return {
-      datatype: 'datatype',
-      stamp: 'stamp',
-      msgid: 'msgid',
-      data: 'data',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      datatype: 'number',
-      stamp: 'number',
-      msgid: 'number',
-      data: EditCustomerPoolRequestData,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditCustomerPoolResponseBody extends $tea.Model {
-  time?: string;
-  msgid?: number;
-  static names(): { [key: string]: string } {
-    return {
-      time: 'time',
-      msgid: 'msgid',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      time: 'string',
-      msgid: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditCustomerPoolResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: EditCustomerPoolResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: EditCustomerPoolResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditPurchaseHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditPurchaseRequest extends $tea.Model {
-  datatype?: number;
-  stamp?: number;
-  msgid?: number;
-  data?: EditPurchaseRequestData;
-  static names(): { [key: string]: string } {
-    return {
-      datatype: 'datatype',
-      stamp: 'stamp',
-      msgid: 'msgid',
-      data: 'data',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      datatype: 'number',
-      stamp: 'number',
-      msgid: 'number',
-      data: EditPurchaseRequestData,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditPurchaseResponseBody extends $tea.Model {
-  time?: string;
-  msgid?: number;
-  static names(): { [key: string]: string } {
-    return {
-      time: 'time',
-      msgid: 'msgid',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      time: 'string',
-      msgid: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditPurchaseResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: EditPurchaseResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: EditPurchaseResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditIntostockHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditIntostockRequest extends $tea.Model {
-  datatype?: number;
-  stamp?: number;
-  msgid?: number;
-  data?: EditIntostockRequestData;
-  static names(): { [key: string]: string } {
-    return {
-      datatype: 'datatype',
-      stamp: 'stamp',
-      msgid: 'msgid',
-      data: 'data',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      datatype: 'number',
-      stamp: 'number',
-      msgid: 'number',
-      data: EditIntostockRequestData,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditIntostockResponseBody extends $tea.Model {
-  time?: string;
-  msgid?: number;
-  static names(): { [key: string]: string } {
-    return {
-      time: 'time',
-      msgid: 'msgid',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      time: 'string',
-      msgid: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditIntostockResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: EditIntostockResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: EditIntostockResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditCustomerHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditCustomerRequest extends $tea.Model {
-  datatype?: number;
-  stamp?: number;
-  msgid?: number;
-  data?: EditCustomerRequestData;
-  static names(): { [key: string]: string } {
-    return {
-      datatype: 'datatype',
-      stamp: 'stamp',
-      msgid: 'msgid',
-      data: 'data',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      datatype: 'number',
-      stamp: 'number',
-      msgid: 'number',
-      data: EditCustomerRequestData,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditCustomerResponseBody extends $tea.Model {
-  time?: string;
-  msgid?: number;
-  static names(): { [key: string]: string } {
-    return {
-      time: 'time',
-      msgid: 'msgid',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      time: 'string',
-      msgid: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditCustomerResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: EditCustomerResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: EditCustomerResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetDataListHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetDataListRequest extends $tea.Model {
-  datatype?: string;
-  page?: number;
-  pagesize?: number;
-  static names(): { [key: string]: string } {
-    return {
-      datatype: 'datatype',
-      page: 'page',
-      pagesize: 'pagesize',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      datatype: 'string',
-      page: 'number',
-      pagesize: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetDataListResponseBody extends $tea.Model {
-  data?: GetDataListResponseBodyData[];
-  dataname?: { [key: string]: string };
-  page?: number;
-  pageSize?: number;
-  totalCount?: number;
-  time?: string;
-  static names(): { [key: string]: string } {
-    return {
-      data: 'data',
-      dataname: 'dataname',
-      page: 'page',
-      pageSize: 'pageSize',
-      totalCount: 'totalCount',
-      time: 'time',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      data: { 'type': 'array', 'itemType': GetDataListResponseBodyData },
-      dataname: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      page: 'number',
-      pageSize: 'number',
-      totalCount: 'number',
-      time: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetDataListResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: GetDataListResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: GetDataListResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditInvoiceHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditInvoiceRequest extends $tea.Model {
-  datatype?: number;
-  stamp?: number;
-  msgid?: number;
-  data?: EditInvoiceRequestData;
-  static names(): { [key: string]: string } {
-    return {
-      datatype: 'datatype',
-      stamp: 'stamp',
-      msgid: 'msgid',
-      data: 'data',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      datatype: 'number',
-      stamp: 'number',
-      msgid: 'number',
-      data: EditInvoiceRequestData,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditInvoiceResponseBody extends $tea.Model {
-  time?: string;
-  msgid?: number;
-  static names(): { [key: string]: string } {
-    return {
-      time: 'time',
-      msgid: 'msgid',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      time: 'string',
-      msgid: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditInvoiceResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: EditInvoiceResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: EditInvoiceResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditOutstockHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditOutstockRequest extends $tea.Model {
-  datatype?: number;
-  stamp?: number;
-  msgid?: number;
-  data?: EditOutstockRequestData;
-  static names(): { [key: string]: string } {
-    return {
-      datatype: 'datatype',
-      stamp: 'stamp',
-      msgid: 'msgid',
-      data: 'data',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      datatype: 'number',
-      stamp: 'number',
-      msgid: 'number',
-      data: EditOutstockRequestData,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditOutstockResponseBody extends $tea.Model {
-  time?: string;
-  msgid?: number;
-  static names(): { [key: string]: string } {
-    return {
-      time: 'time',
-      msgid: 'msgid',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      time: 'string',
-      msgid: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditOutstockResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: EditOutstockResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: EditOutstockResponseBody,
+      dataUserid: 'string',
+      khAddress: 'string',
+      khAppellation: 'string',
+      khBefontof: 'string',
+      khBillinfo: 'string',
+      khCity: 'string',
+      khClass: 'string',
+      khCoaddress: 'string',
+      khContype: 'string',
+      khCountry: 'string',
+      khCreditgrade: 'string',
+      khCtnumber: 'string',
+      khCttype: 'string',
+      khDepartment: 'string',
+      khDingtalk: 'string',
+      khEmail: 'string',
+      khEmployees: 'string',
+      khFax: 'string',
+      khFrom: 'string',
+      khGenzongtime: 'string',
+      khHandset: 'string',
+      khHeadship: 'string',
+      khHotfl: 'string',
+      khHotlevel: 'string',
+      khHotmemo: 'string',
+      khHottype: 'string',
+      khIndustry: 'string',
+      khInfo: 'string',
+      khJibie: 'string',
+      khName: 'string',
+      khPkhid: 'string',
+      khPreside: 'string',
+      khProvince: 'string',
+      khPst: 'string',
+      khQq: 'string',
+      khRalagrade: 'string',
+      khRemark: 'string',
+      khSex: 'string',
+      khShortname: 'string',
+      khSkype: 'string',
+      khSn: 'string',
+      khStatus: 'string',
+      khTel: 'string',
+      khType: 'string',
+      khValrating: 'string',
+      khWangwang: 'string',
+      khWeb: 'string',
+      khWeixin: 'string',
+      khWorktel: 'string',
     };
   }
 
@@ -1424,61 +1847,471 @@ export class EditOutstockResponse extends $tea.Model {
 }
 
 export class EditExchangeRequestData extends $tea.Model {
+  childMx?: string;
   dataUserid?: string;
-  hhInlibid?: string;
-  hhOutlibid?: string;
-  hhTitle?: string;
-  hhNumber?: string;
   hhCustomerid?: string;
-  hhOrderid?: string;
-  hhType?: string;
   hhDate?: string;
   hhInempid?: string;
+  hhInlibid?: string;
   hhIntime?: string;
+  hhNumber?: string;
+  hhOrderid?: string;
   hhOutempid?: string;
+  hhOutlibid?: string;
   hhOuttime?: string;
   hhRemark?: string;
   hhState?: string;
-  childMx?: string;
+  hhTitle?: string;
+  hhType?: string;
   static names(): { [key: string]: string } {
     return {
+      childMx: 'child_mx',
       dataUserid: 'data_userid',
-      hhInlibid: 'hh_inlibid',
-      hhOutlibid: 'hh_outlibid',
-      hhTitle: 'hh_title',
-      hhNumber: 'hh_number',
       hhCustomerid: 'hh_customerid',
-      hhOrderid: 'hh_orderid',
-      hhType: 'hh_type',
       hhDate: 'hh_date',
       hhInempid: 'hh_inempid',
+      hhInlibid: 'hh_inlibid',
       hhIntime: 'hh_intime',
+      hhNumber: 'hh_number',
+      hhOrderid: 'hh_orderid',
       hhOutempid: 'hh_outempid',
+      hhOutlibid: 'hh_outlibid',
       hhOuttime: 'hh_outtime',
       hhRemark: 'hh_remark',
       hhState: 'hh_state',
-      childMx: 'child_mx',
+      hhTitle: 'hh_title',
+      hhType: 'hh_type',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      childMx: 'string',
       dataUserid: 'string',
-      hhInlibid: 'string',
-      hhOutlibid: 'string',
-      hhTitle: 'string',
-      hhNumber: 'string',
       hhCustomerid: 'string',
-      hhOrderid: 'string',
-      hhType: 'string',
       hhDate: 'string',
       hhInempid: 'string',
+      hhInlibid: 'string',
       hhIntime: 'string',
+      hhNumber: 'string',
+      hhOrderid: 'string',
       hhOutempid: 'string',
+      hhOutlibid: 'string',
       hhOuttime: 'string',
       hhRemark: 'string',
       hhState: 'string',
+      hhTitle: 'string',
+      hhType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditGoodsRequestData extends $tea.Model {
+  addedtime?: string;
+  cbprice?: string;
+  cpParentid?: string;
+  cparea?: string;
+  cpbarcode?: string;
+  cpbrand?: string;
+  cpcontent?: string;
+  cpguige?: string;
+  cpimg?: string;
+  cpname?: string;
+  cpno?: string;
+  cpremark?: string;
+  cptype?: string;
+  cpunit?: string;
+  cpweight?: string;
+  dataUserid?: string;
+  gysid?: string;
+  ispicimanage?: string;
+  issnmanage?: string;
+  isstock?: string;
+  isstop?: string;
+  preprice1?: string;
+  preprice2?: string;
+  preprice3?: string;
+  preprice4?: string;
+  stockdown?: string;
+  stockup?: string;
+  typeid?: string;
+  unitrate?: string;
+  static names(): { [key: string]: string } {
+    return {
+      addedtime: 'addedtime',
+      cbprice: 'cbprice',
+      cpParentid: 'cp_parentid',
+      cparea: 'cparea',
+      cpbarcode: 'cpbarcode',
+      cpbrand: 'cpbrand',
+      cpcontent: 'cpcontent',
+      cpguige: 'cpguige',
+      cpimg: 'cpimg',
+      cpname: 'cpname',
+      cpno: 'cpno',
+      cpremark: 'cpremark',
+      cptype: 'cptype',
+      cpunit: 'cpunit',
+      cpweight: 'cpweight',
+      dataUserid: 'data_userid',
+      gysid: 'gysid',
+      ispicimanage: 'ispicimanage',
+      issnmanage: 'issnmanage',
+      isstock: 'isstock',
+      isstop: 'isstop',
+      preprice1: 'preprice1',
+      preprice2: 'preprice2',
+      preprice3: 'preprice3',
+      preprice4: 'preprice4',
+      stockdown: 'stockdown',
+      stockup: 'stockup',
+      typeid: 'typeid',
+      unitrate: 'unitrate',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      addedtime: 'string',
+      cbprice: 'string',
+      cpParentid: 'string',
+      cparea: 'string',
+      cpbarcode: 'string',
+      cpbrand: 'string',
+      cpcontent: 'string',
+      cpguige: 'string',
+      cpimg: 'string',
+      cpname: 'string',
+      cpno: 'string',
+      cpremark: 'string',
+      cptype: 'string',
+      cpunit: 'string',
+      cpweight: 'string',
+      dataUserid: 'string',
+      gysid: 'string',
+      ispicimanage: 'string',
+      issnmanage: 'string',
+      isstock: 'string',
+      isstop: 'string',
+      preprice1: 'string',
+      preprice2: 'string',
+      preprice3: 'string',
+      preprice4: 'string',
+      stockdown: 'string',
+      stockup: 'string',
+      typeid: 'string',
+      unitrate: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditIntostockRequestData extends $tea.Model {
+  askempid?: string;
+  auditreson?: string;
+  billno?: string;
+  childMx?: string;
+  customerid?: string;
+  dataUserid?: string;
+  empid?: string;
+  inorout?: string;
+  libiodate?: string;
+  libioname?: string;
+  libiostate?: string;
+  orderid?: string;
+  remark?: string;
+  stocklibid?: string;
+  static names(): { [key: string]: string } {
+    return {
+      askempid: 'askempid',
+      auditreson: 'auditreson',
+      billno: 'billno',
+      childMx: 'child_mx',
+      customerid: 'customerid',
+      dataUserid: 'data_userid',
+      empid: 'empid',
+      inorout: 'inorout',
+      libiodate: 'libiodate',
+      libioname: 'libioname',
+      libiostate: 'libiostate',
+      orderid: 'orderid',
+      remark: 'remark',
+      stocklibid: 'stocklibid',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      askempid: 'string',
+      auditreson: 'string',
+      billno: 'string',
       childMx: 'string',
+      customerid: 'string',
+      dataUserid: 'string',
+      empid: 'string',
+      inorout: 'string',
+      libiodate: 'string',
+      libioname: 'string',
+      libiostate: 'string',
+      orderid: 'string',
+      remark: 'string',
+      stocklibid: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditInvoiceRequestData extends $tea.Model {
+  childMx?: string;
+  dataUserid?: string;
+  fhAddress?: string;
+  fhCustomerid?: string;
+  fhDate?: string;
+  fhEmail?: string;
+  fhHandset?: string;
+  fhHtorder?: string;
+  fhJianshu?: string;
+  fhKg?: string;
+  fhLinkman?: string;
+  fhLxrid?: string;
+  fhMode?: string;
+  fhMsn?: string;
+  fhNumber?: string;
+  fhPost?: string;
+  fhPreside?: string;
+  fhRemark?: string;
+  fhShipper?: string;
+  fhState?: string;
+  fhTel?: string;
+  fhTitle?: string;
+  fhYunfei?: string;
+  static names(): { [key: string]: string } {
+    return {
+      childMx: 'child_mx',
+      dataUserid: 'data_userid',
+      fhAddress: 'fh_address',
+      fhCustomerid: 'fh_customerid',
+      fhDate: 'fh_date',
+      fhEmail: 'fh_email',
+      fhHandset: 'fh_handset',
+      fhHtorder: 'fh_htorder',
+      fhJianshu: 'fh_jianshu',
+      fhKg: 'fh_kg',
+      fhLinkman: 'fh_linkman',
+      fhLxrid: 'fh_lxrid',
+      fhMode: 'fh_mode',
+      fhMsn: 'fh_msn',
+      fhNumber: 'fh_number',
+      fhPost: 'fh_post',
+      fhPreside: 'fh_preside',
+      fhRemark: 'fh_remark',
+      fhShipper: 'fh_shipper',
+      fhState: 'fh_state',
+      fhTel: 'fh_tel',
+      fhTitle: 'fh_title',
+      fhYunfei: 'fh_yunfei',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      childMx: 'string',
+      dataUserid: 'string',
+      fhAddress: 'string',
+      fhCustomerid: 'string',
+      fhDate: 'string',
+      fhEmail: 'string',
+      fhHandset: 'string',
+      fhHtorder: 'string',
+      fhJianshu: 'string',
+      fhKg: 'string',
+      fhLinkman: 'string',
+      fhLxrid: 'string',
+      fhMode: 'string',
+      fhMsn: 'string',
+      fhNumber: 'string',
+      fhPost: 'string',
+      fhPreside: 'string',
+      fhRemark: 'string',
+      fhShipper: 'string',
+      fhState: 'string',
+      fhTel: 'string',
+      fhTitle: 'string',
+      fhYunfei: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditOrderRequestData extends $tea.Model {
+  childMx?: string;
+  dataUserid?: string;
+  fahuoaddressid?: string;
+  htBegindate?: string;
+  htContract?: string;
+  htCustomerid?: string;
+  htCusub?: string;
+  htDate?: string;
+  htDeliplace?: string;
+  htEnddate?: string;
+  htFjmoney?: string;
+  htFjmoneylx?: string;
+  htKjmoney?: string;
+  htLxrid?: string;
+  htLxrinfo?: string;
+  htMoneyzhekou?: string;
+  htNumber?: string;
+  htOrder?: string;
+  htPaymode?: string;
+  htPreside?: string;
+  htRemark?: string;
+  htState?: string;
+  htSummemo?: string;
+  htSummoney?: string;
+  htTitle?: string;
+  htType?: string;
+  htWesub?: string;
+  htWuliutype?: string;
+  htXshid?: string;
+  htYunfeimoney?: string;
+  static names(): { [key: string]: string } {
+    return {
+      childMx: 'child_mx',
+      dataUserid: 'data_userid',
+      fahuoaddressid: 'fahuoaddressid',
+      htBegindate: 'ht_begindate',
+      htContract: 'ht_contract',
+      htCustomerid: 'ht_customerid',
+      htCusub: 'ht_cusub',
+      htDate: 'ht_date',
+      htDeliplace: 'ht_deliplace',
+      htEnddate: 'ht_enddate',
+      htFjmoney: 'ht_fjmoney',
+      htFjmoneylx: 'ht_fjmoneylx',
+      htKjmoney: 'ht_kjmoney',
+      htLxrid: 'ht_lxrid',
+      htLxrinfo: 'ht_lxrinfo',
+      htMoneyzhekou: 'ht_moneyzhekou',
+      htNumber: 'ht_number',
+      htOrder: 'ht_order',
+      htPaymode: 'ht_paymode',
+      htPreside: 'ht_preside',
+      htRemark: 'ht_remark',
+      htState: 'ht_state',
+      htSummemo: 'ht_summemo',
+      htSummoney: 'ht_summoney',
+      htTitle: 'ht_title',
+      htType: 'ht_type',
+      htWesub: 'ht_wesub',
+      htWuliutype: 'ht_wuliutype',
+      htXshid: 'ht_xshid',
+      htYunfeimoney: 'ht_yunfeimoney',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      childMx: 'string',
+      dataUserid: 'string',
+      fahuoaddressid: 'string',
+      htBegindate: 'string',
+      htContract: 'string',
+      htCustomerid: 'string',
+      htCusub: 'string',
+      htDate: 'string',
+      htDeliplace: 'string',
+      htEnddate: 'string',
+      htFjmoney: 'string',
+      htFjmoneylx: 'string',
+      htKjmoney: 'string',
+      htLxrid: 'string',
+      htLxrinfo: 'string',
+      htMoneyzhekou: 'string',
+      htNumber: 'string',
+      htOrder: 'string',
+      htPaymode: 'string',
+      htPreside: 'string',
+      htRemark: 'string',
+      htState: 'string',
+      htSummemo: 'string',
+      htSummoney: 'string',
+      htTitle: 'string',
+      htType: 'string',
+      htWesub: 'string',
+      htWuliutype: 'string',
+      htXshid: 'string',
+      htYunfeimoney: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditOutstockRequestData extends $tea.Model {
+  askempid?: string;
+  auditreson?: string;
+  billno?: string;
+  childMx?: string;
+  customerid?: string;
+  dataUserid?: string;
+  empid?: string;
+  inorout?: string;
+  libiodate?: string;
+  libioname?: string;
+  libiostate?: string;
+  orderid?: string;
+  remark?: string;
+  stocklibid?: string;
+  static names(): { [key: string]: string } {
+    return {
+      askempid: 'askempid',
+      auditreson: 'auditreson',
+      billno: 'billno',
+      childMx: 'child_mx',
+      customerid: 'customerid',
+      dataUserid: 'data_userid',
+      empid: 'empid',
+      inorout: 'inorout',
+      libiodate: 'libiodate',
+      libioname: 'libioname',
+      libiostate: 'libiostate',
+      orderid: 'orderid',
+      remark: 'remark',
+      stocklibid: 'stocklibid',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      askempid: 'string',
+      auditreson: 'string',
+      billno: 'string',
+      childMx: 'string',
+      customerid: 'string',
+      dataUserid: 'string',
+      empid: 'string',
+      inorout: 'string',
+      libiodate: 'string',
+      libioname: 'string',
+      libiostate: 'string',
+      orderid: 'string',
+      remark: 'string',
+      stocklibid: 'string',
     };
   }
 
@@ -1489,51 +2322,51 @@ export class EditExchangeRequestData extends $tea.Model {
 
 export class EditProductionRequestData extends $tea.Model {
   dataUserid?: string;
-  schTitle?: string;
-  schNumber?: string;
-  schStarttime?: string;
-  schPlanendtime?: string;
   schCustomerid?: string;
-  schHtid?: string;
   schEndtime?: string;
-  schPrincipal?: string;
-  schMakeemp?: string;
-  schRemark?: string;
-  schStatesstr?: string;
   schFinished?: string;
+  schHtid?: string;
+  schMakeemp?: string;
+  schNumber?: string;
+  schPlanendtime?: string;
+  schPrincipal?: string;
+  schRemark?: string;
+  schStarttime?: string;
+  schStatesstr?: string;
+  schTitle?: string;
   static names(): { [key: string]: string } {
     return {
       dataUserid: 'data_userid',
-      schTitle: 'sch_title',
-      schNumber: 'sch_number',
-      schStarttime: 'sch_starttime',
-      schPlanendtime: 'sch_planendtime',
       schCustomerid: 'sch_customerid',
-      schHtid: 'sch_htid',
       schEndtime: 'sch_endtime',
-      schPrincipal: 'sch_principal',
-      schMakeemp: 'sch_makeemp',
-      schRemark: 'sch_remark',
-      schStatesstr: 'sch_statesstr',
       schFinished: 'sch_finished',
+      schHtid: 'sch_htid',
+      schMakeemp: 'sch_makeemp',
+      schNumber: 'sch_number',
+      schPlanendtime: 'sch_planendtime',
+      schPrincipal: 'sch_principal',
+      schRemark: 'sch_remark',
+      schStarttime: 'sch_starttime',
+      schStatesstr: 'sch_statesstr',
+      schTitle: 'sch_title',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       dataUserid: 'string',
-      schTitle: 'string',
-      schNumber: 'string',
-      schStarttime: 'string',
-      schPlanendtime: 'string',
       schCustomerid: 'string',
-      schHtid: 'string',
       schEndtime: 'string',
-      schPrincipal: 'string',
-      schMakeemp: 'string',
-      schRemark: 'string',
-      schStatesstr: 'string',
       schFinished: 'string',
+      schHtid: 'string',
+      schMakeemp: 'string',
+      schNumber: 'string',
+      schPlanendtime: 'string',
+      schPrincipal: 'string',
+      schRemark: 'string',
+      schStarttime: 'string',
+      schStatesstr: 'string',
+      schTitle: 'string',
     };
   }
 
@@ -1542,17 +2375,150 @@ export class EditProductionRequestData extends $tea.Model {
   }
 }
 
-export class GetDataViewResponseBodyData extends $tea.Model {
-  detail?: { [key: string]: string };
+export class EditPurchaseRequestData extends $tea.Model {
+  cgFjmoney?: string;
+  cgFjmoneylx?: string;
+  cgKjmoney?: string;
+  cgMoneyzhekou?: string;
+  cgZxstate?: string;
+  cgdate?: string;
+  cgname?: string;
+  cgno?: string;
+  cgremark?: string;
+  cgtype?: string;
+  childMx?: string;
+  dataUserid?: string;
+  empid?: string;
+  gysLxrid?: string;
+  gysLxrinfo?: string;
+  gysid?: string;
+  gysjingban?: string;
+  orderHtid?: string;
+  orderKhid?: string;
+  summoney?: string;
   static names(): { [key: string]: string } {
     return {
-      detail: 'detail',
+      cgFjmoney: 'cg_fjmoney',
+      cgFjmoneylx: 'cg_fjmoneylx',
+      cgKjmoney: 'cg_kjmoney',
+      cgMoneyzhekou: 'cg_moneyzhekou',
+      cgZxstate: 'cg_zxstate',
+      cgdate: 'cgdate',
+      cgname: 'cgname',
+      cgno: 'cgno',
+      cgremark: 'cgremark',
+      cgtype: 'cgtype',
+      childMx: 'child_mx',
+      dataUserid: 'data_userid',
+      empid: 'empid',
+      gysLxrid: 'gys_lxrid',
+      gysLxrinfo: 'gys_lxrinfo',
+      gysid: 'gysid',
+      gysjingban: 'gysjingban',
+      orderHtid: 'order_htid',
+      orderKhid: 'order_khid',
+      summoney: 'summoney',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      detail: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      cgFjmoney: 'string',
+      cgFjmoneylx: 'string',
+      cgKjmoney: 'string',
+      cgMoneyzhekou: 'string',
+      cgZxstate: 'string',
+      cgdate: 'string',
+      cgname: 'string',
+      cgno: 'string',
+      cgremark: 'string',
+      cgtype: 'string',
+      childMx: 'string',
+      dataUserid: 'string',
+      empid: 'string',
+      gysLxrid: 'string',
+      gysLxrinfo: 'string',
+      gysid: 'string',
+      gysjingban: 'string',
+      orderHtid: 'string',
+      orderKhid: 'string',
+      summoney: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditQuotationRecordRequestData extends $tea.Model {
+  bjBjren?: string;
+  bjBzremark?: string;
+  bjCustomerid?: string;
+  bjDate?: string;
+  bjFjmoney?: string;
+  bjFjmoneylx?: string;
+  bjFkremark?: string;
+  bjJfremark?: string;
+  bjJshren?: string;
+  bjKjmoney?: string;
+  bjLianxi?: string;
+  bjMoneyzhekou?: string;
+  bjNumber?: string;
+  bjPrice?: string;
+  bjRemark?: string;
+  bjState?: string;
+  bjTitle?: string;
+  bjXshid?: string;
+  childMx?: string;
+  dataUserid?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bjBjren: 'bj_bjren',
+      bjBzremark: 'bj_bzremark',
+      bjCustomerid: 'bj_customerid',
+      bjDate: 'bj_date',
+      bjFjmoney: 'bj_fjmoney',
+      bjFjmoneylx: 'bj_fjmoneylx',
+      bjFkremark: 'bj_fkremark',
+      bjJfremark: 'bj_jfremark',
+      bjJshren: 'bj_jshren',
+      bjKjmoney: 'bj_kjmoney',
+      bjLianxi: 'bj_lianxi',
+      bjMoneyzhekou: 'bj_moneyzhekou',
+      bjNumber: 'bj_number',
+      bjPrice: 'bj_price',
+      bjRemark: 'bj_remark',
+      bjState: 'bj_state',
+      bjTitle: 'bj_title',
+      bjXshid: 'bj_xshid',
+      childMx: 'child_mx',
+      dataUserid: 'data_userid',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bjBjren: 'string',
+      bjBzremark: 'string',
+      bjCustomerid: 'string',
+      bjDate: 'string',
+      bjFjmoney: 'string',
+      bjFjmoneylx: 'string',
+      bjFkremark: 'string',
+      bjJfremark: 'string',
+      bjJshren: 'string',
+      bjKjmoney: 'string',
+      bjLianxi: 'string',
+      bjMoneyzhekou: 'string',
+      bjNumber: 'string',
+      bjPrice: 'string',
+      bjRemark: 'string',
+      bjState: 'string',
+      bjTitle: 'string',
+      bjXshid: 'string',
+      childMx: 'string',
+      dataUserid: 'string',
     };
   }
 
@@ -1564,44 +2530,44 @@ export class GetDataViewResponseBodyData extends $tea.Model {
 export class EditSalesRequestData extends $tea.Model {
   dataUserid?: string;
   xshCustomerid?: string;
-  xshTitle?: string;
   xshDate?: string;
-  xshNumber?: string;
-  xshLxrid?: string;
-  xshLianxi?: string;
-  xshType?: string;
+  xshExpdate?: string;
+  xshExpmoney?: string;
   xshFrom?: string;
+  xshKnx?: string;
+  xshLianxi?: string;
+  xshLxrid?: string;
+  xshMoneynote?: string;
+  xshNumber?: string;
+  xshPhase?: string;
+  xshPhasenote?: string;
   xshPreside?: string;
   xshProvider?: string;
   xshRequire?: string;
-  xshExpdate?: string;
-  xshExpmoney?: string;
-  xshMoneynote?: string;
-  xshPhase?: string;
-  xshKnx?: string;
   xshState?: string;
-  xshPhasenote?: string;
+  xshTitle?: string;
+  xshType?: string;
   static names(): { [key: string]: string } {
     return {
       dataUserid: 'data_userid',
       xshCustomerid: 'xsh_customerid',
-      xshTitle: 'xsh_title',
       xshDate: 'xsh_date',
-      xshNumber: 'xsh_number',
-      xshLxrid: 'xsh_lxrid',
-      xshLianxi: 'xsh_lianxi',
-      xshType: 'xsh_type',
+      xshExpdate: 'xsh_expdate',
+      xshExpmoney: 'xsh_expmoney',
       xshFrom: 'xsh_from',
+      xshKnx: 'xsh_knx',
+      xshLianxi: 'xsh_lianxi',
+      xshLxrid: 'xsh_lxrid',
+      xshMoneynote: 'xsh_moneynote',
+      xshNumber: 'xsh_number',
+      xshPhase: 'xsh_phase',
+      xshPhasenote: 'xsh_phasenote',
       xshPreside: 'xsh_preside',
       xshProvider: 'xsh_provider',
       xshRequire: 'xsh_require',
-      xshExpdate: 'xsh_expdate',
-      xshExpmoney: 'xsh_expmoney',
-      xshMoneynote: 'xsh_moneynote',
-      xshPhase: 'xsh_phase',
-      xshKnx: 'xsh_knx',
       xshState: 'xsh_state',
-      xshPhasenote: 'xsh_phasenote',
+      xshTitle: 'xsh_title',
+      xshType: 'xsh_type',
     };
   }
 
@@ -1609,865 +2575,23 @@ export class EditSalesRequestData extends $tea.Model {
     return {
       dataUserid: 'string',
       xshCustomerid: 'string',
-      xshTitle: 'string',
       xshDate: 'string',
-      xshNumber: 'string',
-      xshLxrid: 'string',
-      xshLianxi: 'string',
-      xshType: 'string',
+      xshExpdate: 'string',
+      xshExpmoney: 'string',
       xshFrom: 'string',
+      xshKnx: 'string',
+      xshLianxi: 'string',
+      xshLxrid: 'string',
+      xshMoneynote: 'string',
+      xshNumber: 'string',
+      xshPhase: 'string',
+      xshPhasenote: 'string',
       xshPreside: 'string',
       xshProvider: 'string',
       xshRequire: 'string',
-      xshExpdate: 'string',
-      xshExpmoney: 'string',
-      xshMoneynote: 'string',
-      xshPhase: 'string',
-      xshKnx: 'string',
       xshState: 'string',
-      xshPhasenote: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditGoodsRequestData extends $tea.Model {
-  dataUserid?: string;
-  cpname?: string;
-  cpunit?: string;
-  unitrate?: string;
-  cpParentid?: string;
-  cptype?: string;
-  cpguige?: string;
-  typeid?: string;
-  cpno?: string;
-  isstop?: string;
-  addedtime?: string;
-  cparea?: string;
-  cpbrand?: string;
-  cbprice?: string;
-  issnmanage?: string;
-  ispicimanage?: string;
-  gysid?: string;
-  cpimg?: string;
-  cpbarcode?: string;
-  cpweight?: string;
-  preprice1?: string;
-  preprice2?: string;
-  preprice3?: string;
-  preprice4?: string;
-  isstock?: string;
-  stockup?: string;
-  stockdown?: string;
-  cpcontent?: string;
-  cpremark?: string;
-  static names(): { [key: string]: string } {
-    return {
-      dataUserid: 'data_userid',
-      cpname: 'cpname',
-      cpunit: 'cpunit',
-      unitrate: 'unitrate',
-      cpParentid: 'cp_parentid',
-      cptype: 'cptype',
-      cpguige: 'cpguige',
-      typeid: 'typeid',
-      cpno: 'cpno',
-      isstop: 'isstop',
-      addedtime: 'addedtime',
-      cparea: 'cparea',
-      cpbrand: 'cpbrand',
-      cbprice: 'cbprice',
-      issnmanage: 'issnmanage',
-      ispicimanage: 'ispicimanage',
-      gysid: 'gysid',
-      cpimg: 'cpimg',
-      cpbarcode: 'cpbarcode',
-      cpweight: 'cpweight',
-      preprice1: 'preprice1',
-      preprice2: 'preprice2',
-      preprice3: 'preprice3',
-      preprice4: 'preprice4',
-      isstock: 'isstock',
-      stockup: 'stockup',
-      stockdown: 'stockdown',
-      cpcontent: 'cpcontent',
-      cpremark: 'cpremark',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      dataUserid: 'string',
-      cpname: 'string',
-      cpunit: 'string',
-      unitrate: 'string',
-      cpParentid: 'string',
-      cptype: 'string',
-      cpguige: 'string',
-      typeid: 'string',
-      cpno: 'string',
-      isstop: 'string',
-      addedtime: 'string',
-      cparea: 'string',
-      cpbrand: 'string',
-      cbprice: 'string',
-      issnmanage: 'string',
-      ispicimanage: 'string',
-      gysid: 'string',
-      cpimg: 'string',
-      cpbarcode: 'string',
-      cpweight: 'string',
-      preprice1: 'string',
-      preprice2: 'string',
-      preprice3: 'string',
-      preprice4: 'string',
-      isstock: 'string',
-      stockup: 'string',
-      stockdown: 'string',
-      cpcontent: 'string',
-      cpremark: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditContactRequestData extends $tea.Model {
-  dataUserid?: string;
-  lxrCustomerid?: string;
-  lxrName?: string;
-  lxrHandset?: string;
-  lxrWorktel?: string;
-  lxrSex?: string;
-  lxrGroup?: string;
-  lxrPreside?: string;
-  lxrCttype?: string;
-  lxrCtnumber?: string;
-  lxrChengwei?: string;
-  lxrType?: string;
-  lxrDepartment?: string;
-  lxrHeadship?: string;
-  lxrDingtalk?: string;
-  lxrFax?: string;
-  lxrWangwang?: string;
-  lxrEmail?: string;
-  lxrWeixin?: string;
-  lxrQq?: string;
-  lxrTel?: string;
-  lxrPst?: string;
-  lxrSkype?: string;
-  lxrAddress?: string;
-  lxrBirthday?: string;
-  lxrLike?: string;
-  lxrRemark?: string;
-  lxrPhoto?: string;
-  static names(): { [key: string]: string } {
-    return {
-      dataUserid: 'data_userid',
-      lxrCustomerid: 'lxr_customerid',
-      lxrName: 'lxr_name',
-      lxrHandset: 'lxr_handset',
-      lxrWorktel: 'lxr_worktel',
-      lxrSex: 'lxr_sex',
-      lxrGroup: 'lxr_group',
-      lxrPreside: 'lxr_preside',
-      lxrCttype: 'lxr_cttype',
-      lxrCtnumber: 'lxr_ctnumber',
-      lxrChengwei: 'lxr_chengwei',
-      lxrType: 'lxr_type',
-      lxrDepartment: 'lxr_department',
-      lxrHeadship: 'lxr_headship',
-      lxrDingtalk: 'lxr_dingtalk',
-      lxrFax: 'lxr_fax',
-      lxrWangwang: 'lxr_wangwang',
-      lxrEmail: 'lxr_email',
-      lxrWeixin: 'lxr_weixin',
-      lxrQq: 'lxr_qq',
-      lxrTel: 'lxr_tel',
-      lxrPst: 'lxr_pst',
-      lxrSkype: 'lxr_skype',
-      lxrAddress: 'lxr_address',
-      lxrBirthday: 'lxr_birthday',
-      lxrLike: 'lxr_like',
-      lxrRemark: 'lxr_remark',
-      lxrPhoto: 'lxr_photo',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      dataUserid: 'string',
-      lxrCustomerid: 'string',
-      lxrName: 'string',
-      lxrHandset: 'string',
-      lxrWorktel: 'string',
-      lxrSex: 'string',
-      lxrGroup: 'string',
-      lxrPreside: 'string',
-      lxrCttype: 'string',
-      lxrCtnumber: 'string',
-      lxrChengwei: 'string',
-      lxrType: 'string',
-      lxrDepartment: 'string',
-      lxrHeadship: 'string',
-      lxrDingtalk: 'string',
-      lxrFax: 'string',
-      lxrWangwang: 'string',
-      lxrEmail: 'string',
-      lxrWeixin: 'string',
-      lxrQq: 'string',
-      lxrTel: 'string',
-      lxrPst: 'string',
-      lxrSkype: 'string',
-      lxrAddress: 'string',
-      lxrBirthday: 'string',
-      lxrLike: 'string',
-      lxrRemark: 'string',
-      lxrPhoto: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditOrderRequestData extends $tea.Model {
-  dataUserid?: string;
-  htCustomerid?: string;
-  htDate?: string;
-  htPreside?: string;
-  htState?: string;
-  htSummoney?: string;
-  htOrder?: string;
-  htTitle?: string;
-  htNumber?: string;
-  htLxrid?: string;
-  htLxrinfo?: string;
-  htXshid?: string;
-  htType?: string;
-  htPaymode?: string;
-  htBegindate?: string;
-  htCusub?: string;
-  htWesub?: string;
-  htMoneyzhekou?: string;
-  htKjmoney?: string;
-  htFjmoneylx?: string;
-  htFjmoney?: string;
-  htSummemo?: string;
-  htDeliplace?: string;
-  htEnddate?: string;
-  htWuliutype?: string;
-  htYunfeimoney?: string;
-  fahuoaddressid?: string;
-  htContract?: string;
-  htRemark?: string;
-  childMx?: string;
-  static names(): { [key: string]: string } {
-    return {
-      dataUserid: 'data_userid',
-      htCustomerid: 'ht_customerid',
-      htDate: 'ht_date',
-      htPreside: 'ht_preside',
-      htState: 'ht_state',
-      htSummoney: 'ht_summoney',
-      htOrder: 'ht_order',
-      htTitle: 'ht_title',
-      htNumber: 'ht_number',
-      htLxrid: 'ht_lxrid',
-      htLxrinfo: 'ht_lxrinfo',
-      htXshid: 'ht_xshid',
-      htType: 'ht_type',
-      htPaymode: 'ht_paymode',
-      htBegindate: 'ht_begindate',
-      htCusub: 'ht_cusub',
-      htWesub: 'ht_wesub',
-      htMoneyzhekou: 'ht_moneyzhekou',
-      htKjmoney: 'ht_kjmoney',
-      htFjmoneylx: 'ht_fjmoneylx',
-      htFjmoney: 'ht_fjmoney',
-      htSummemo: 'ht_summemo',
-      htDeliplace: 'ht_deliplace',
-      htEnddate: 'ht_enddate',
-      htWuliutype: 'ht_wuliutype',
-      htYunfeimoney: 'ht_yunfeimoney',
-      fahuoaddressid: 'fahuoaddressid',
-      htContract: 'ht_contract',
-      htRemark: 'ht_remark',
-      childMx: 'child_mx',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      dataUserid: 'string',
-      htCustomerid: 'string',
-      htDate: 'string',
-      htPreside: 'string',
-      htState: 'string',
-      htSummoney: 'string',
-      htOrder: 'string',
-      htTitle: 'string',
-      htNumber: 'string',
-      htLxrid: 'string',
-      htLxrinfo: 'string',
-      htXshid: 'string',
-      htType: 'string',
-      htPaymode: 'string',
-      htBegindate: 'string',
-      htCusub: 'string',
-      htWesub: 'string',
-      htMoneyzhekou: 'string',
-      htKjmoney: 'string',
-      htFjmoneylx: 'string',
-      htFjmoney: 'string',
-      htSummemo: 'string',
-      htDeliplace: 'string',
-      htEnddate: 'string',
-      htWuliutype: 'string',
-      htYunfeimoney: 'string',
-      fahuoaddressid: 'string',
-      htContract: 'string',
-      htRemark: 'string',
-      childMx: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditQuotationRecordRequestData extends $tea.Model {
-  dataUserid?: string;
-  bjCustomerid?: string;
-  bjBjren?: string;
-  bjDate?: string;
-  bjPrice?: string;
-  bjTitle?: string;
-  bjNumber?: string;
-  bjState?: string;
-  bjJshren?: string;
-  bjLianxi?: string;
-  bjXshid?: string;
-  bjMoneyzhekou?: string;
-  bjKjmoney?: string;
-  bjFjmoneylx?: string;
-  bjFjmoney?: string;
-  bjJfremark?: string;
-  bjFkremark?: string;
-  bjBzremark?: string;
-  bjRemark?: string;
-  childMx?: string;
-  static names(): { [key: string]: string } {
-    return {
-      dataUserid: 'data_userid',
-      bjCustomerid: 'bj_customerid',
-      bjBjren: 'bj_bjren',
-      bjDate: 'bj_date',
-      bjPrice: 'bj_price',
-      bjTitle: 'bj_title',
-      bjNumber: 'bj_number',
-      bjState: 'bj_state',
-      bjJshren: 'bj_jshren',
-      bjLianxi: 'bj_lianxi',
-      bjXshid: 'bj_xshid',
-      bjMoneyzhekou: 'bj_moneyzhekou',
-      bjKjmoney: 'bj_kjmoney',
-      bjFjmoneylx: 'bj_fjmoneylx',
-      bjFjmoney: 'bj_fjmoney',
-      bjJfremark: 'bj_jfremark',
-      bjFkremark: 'bj_fkremark',
-      bjBzremark: 'bj_bzremark',
-      bjRemark: 'bj_remark',
-      childMx: 'child_mx',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      dataUserid: 'string',
-      bjCustomerid: 'string',
-      bjBjren: 'string',
-      bjDate: 'string',
-      bjPrice: 'string',
-      bjTitle: 'string',
-      bjNumber: 'string',
-      bjState: 'string',
-      bjJshren: 'string',
-      bjLianxi: 'string',
-      bjXshid: 'string',
-      bjMoneyzhekou: 'string',
-      bjKjmoney: 'string',
-      bjFjmoneylx: 'string',
-      bjFjmoney: 'string',
-      bjJfremark: 'string',
-      bjFkremark: 'string',
-      bjBzremark: 'string',
-      bjRemark: 'string',
-      childMx: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditCustomerPoolRequestData extends $tea.Model {
-  dataUserid?: string;
-  khPkhid?: string;
-  khClass?: string;
-  khName?: string;
-  khSex?: string;
-  khShortname?: string;
-  khIndustry?: string;
-  khEmployees?: string;
-  khAddress?: string;
-  khCountry?: string;
-  khProvince?: string;
-  khCity?: string;
-  khCoaddress?: string;
-  khHottype?: string;
-  khHotlevel?: string;
-  khHotfl?: string;
-  khHotmemo?: string;
-  khType?: string;
-  khStatus?: string;
-  khSn?: string;
-  khHandset?: string;
-  khEmail?: string;
-  khDingtalk?: string;
-  khTel?: string;
-  khWeixin?: string;
-  khQq?: string;
-  khSkype?: string;
-  khWangwang?: string;
-  khWorktel?: string;
-  khFax?: string;
-  khPst?: string;
-  khDepartment?: string;
-  khAppellation?: string;
-  khPreside?: string;
-  khHeadship?: string;
-  khWeb?: string;
-  khBefontof?: string;
-  khFrom?: string;
-  khBillinfo?: string;
-  khInfo?: string;
-  khRalagrade?: string;
-  khCreditgrade?: string;
-  khValrating?: string;
-  khCttype?: string;
-  khCtnumber?: string;
-  khContype?: string;
-  khRemark?: string;
-  khJibie?: string;
-  khGenzongtime?: string;
-  static names(): { [key: string]: string } {
-    return {
-      dataUserid: 'data_userid',
-      khPkhid: 'kh_pkhid',
-      khClass: 'kh_class',
-      khName: 'kh_name',
-      khSex: 'kh_sex',
-      khShortname: 'kh_shortname',
-      khIndustry: 'kh_industry',
-      khEmployees: 'kh_employees',
-      khAddress: 'kh_address',
-      khCountry: 'kh_country',
-      khProvince: 'kh_province',
-      khCity: 'kh_city',
-      khCoaddress: 'kh_coaddress',
-      khHottype: 'kh_hottype',
-      khHotlevel: 'kh_hotlevel',
-      khHotfl: 'kh_hotfl',
-      khHotmemo: 'kh_hotmemo',
-      khType: 'kh_type',
-      khStatus: 'kh_status',
-      khSn: 'kh_sn',
-      khHandset: 'kh_handset',
-      khEmail: 'kh_email',
-      khDingtalk: 'kh_dingtalk',
-      khTel: 'kh_tel',
-      khWeixin: 'kh_weixin',
-      khQq: 'kh_qq',
-      khSkype: 'kh_skype',
-      khWangwang: 'kh_wangwang',
-      khWorktel: 'kh_worktel',
-      khFax: 'kh_fax',
-      khPst: 'kh_pst',
-      khDepartment: 'kh_department',
-      khAppellation: 'kh_appellation',
-      khPreside: 'kh_preside',
-      khHeadship: 'kh_headship',
-      khWeb: 'kh_web',
-      khBefontof: 'kh_befontof',
-      khFrom: 'kh_from',
-      khBillinfo: 'kh_billinfo',
-      khInfo: 'kh_info',
-      khRalagrade: 'kh_ralagrade',
-      khCreditgrade: 'kh_creditgrade',
-      khValrating: 'kh_valrating',
-      khCttype: 'kh_cttype',
-      khCtnumber: 'kh_ctnumber',
-      khContype: 'kh_contype',
-      khRemark: 'kh_remark',
-      khJibie: 'kh_jibie',
-      khGenzongtime: 'kh_genzongtime',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      dataUserid: 'string',
-      khPkhid: 'string',
-      khClass: 'string',
-      khName: 'string',
-      khSex: 'string',
-      khShortname: 'string',
-      khIndustry: 'string',
-      khEmployees: 'string',
-      khAddress: 'string',
-      khCountry: 'string',
-      khProvince: 'string',
-      khCity: 'string',
-      khCoaddress: 'string',
-      khHottype: 'string',
-      khHotlevel: 'string',
-      khHotfl: 'string',
-      khHotmemo: 'string',
-      khType: 'string',
-      khStatus: 'string',
-      khSn: 'string',
-      khHandset: 'string',
-      khEmail: 'string',
-      khDingtalk: 'string',
-      khTel: 'string',
-      khWeixin: 'string',
-      khQq: 'string',
-      khSkype: 'string',
-      khWangwang: 'string',
-      khWorktel: 'string',
-      khFax: 'string',
-      khPst: 'string',
-      khDepartment: 'string',
-      khAppellation: 'string',
-      khPreside: 'string',
-      khHeadship: 'string',
-      khWeb: 'string',
-      khBefontof: 'string',
-      khFrom: 'string',
-      khBillinfo: 'string',
-      khInfo: 'string',
-      khRalagrade: 'string',
-      khCreditgrade: 'string',
-      khValrating: 'string',
-      khCttype: 'string',
-      khCtnumber: 'string',
-      khContype: 'string',
-      khRemark: 'string',
-      khJibie: 'string',
-      khGenzongtime: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditPurchaseRequestData extends $tea.Model {
-  dataUserid?: string;
-  gysid?: string;
-  cgno?: string;
-  summoney?: string;
-  cgdate?: string;
-  cgZxstate?: string;
-  orderKhid?: string;
-  cgname?: string;
-  gysLxrid?: string;
-  gysLxrinfo?: string;
-  cgtype?: string;
-  gysjingban?: string;
-  empid?: string;
-  cgMoneyzhekou?: string;
-  cgKjmoney?: string;
-  cgFjmoneylx?: string;
-  cgFjmoney?: string;
-  orderHtid?: string;
-  cgremark?: string;
-  childMx?: string;
-  static names(): { [key: string]: string } {
-    return {
-      dataUserid: 'data_userid',
-      gysid: 'gysid',
-      cgno: 'cgno',
-      summoney: 'summoney',
-      cgdate: 'cgdate',
-      cgZxstate: 'cg_zxstate',
-      orderKhid: 'order_khid',
-      cgname: 'cgname',
-      gysLxrid: 'gys_lxrid',
-      gysLxrinfo: 'gys_lxrinfo',
-      cgtype: 'cgtype',
-      gysjingban: 'gysjingban',
-      empid: 'empid',
-      cgMoneyzhekou: 'cg_moneyzhekou',
-      cgKjmoney: 'cg_kjmoney',
-      cgFjmoneylx: 'cg_fjmoneylx',
-      cgFjmoney: 'cg_fjmoney',
-      orderHtid: 'order_htid',
-      cgremark: 'cgremark',
-      childMx: 'child_mx',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      dataUserid: 'string',
-      gysid: 'string',
-      cgno: 'string',
-      summoney: 'string',
-      cgdate: 'string',
-      cgZxstate: 'string',
-      orderKhid: 'string',
-      cgname: 'string',
-      gysLxrid: 'string',
-      gysLxrinfo: 'string',
-      cgtype: 'string',
-      gysjingban: 'string',
-      empid: 'string',
-      cgMoneyzhekou: 'string',
-      cgKjmoney: 'string',
-      cgFjmoneylx: 'string',
-      cgFjmoney: 'string',
-      orderHtid: 'string',
-      cgremark: 'string',
-      childMx: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditIntostockRequestData extends $tea.Model {
-  dataUserid?: string;
-  libiodate?: string;
-  stocklibid?: string;
-  libiostate?: string;
-  billno?: string;
-  customerid?: string;
-  empid?: string;
-  inorout?: string;
-  libioname?: string;
-  orderid?: string;
-  askempid?: string;
-  remark?: string;
-  auditreson?: string;
-  childMx?: string;
-  static names(): { [key: string]: string } {
-    return {
-      dataUserid: 'data_userid',
-      libiodate: 'libiodate',
-      stocklibid: 'stocklibid',
-      libiostate: 'libiostate',
-      billno: 'billno',
-      customerid: 'customerid',
-      empid: 'empid',
-      inorout: 'inorout',
-      libioname: 'libioname',
-      orderid: 'orderid',
-      askempid: 'askempid',
-      remark: 'remark',
-      auditreson: 'auditreson',
-      childMx: 'child_mx',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      dataUserid: 'string',
-      libiodate: 'string',
-      stocklibid: 'string',
-      libiostate: 'string',
-      billno: 'string',
-      customerid: 'string',
-      empid: 'string',
-      inorout: 'string',
-      libioname: 'string',
-      orderid: 'string',
-      askempid: 'string',
-      remark: 'string',
-      auditreson: 'string',
-      childMx: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditCustomerRequestData extends $tea.Model {
-  dataUserid?: string;
-  khPkhid?: string;
-  khClass?: string;
-  khName?: string;
-  khSex?: string;
-  khShortname?: string;
-  khIndustry?: string;
-  khEmployees?: string;
-  khAddress?: string;
-  khCountry?: string;
-  khProvince?: string;
-  khCity?: string;
-  khCoaddress?: string;
-  khHottype?: string;
-  khHotlevel?: string;
-  khHotfl?: string;
-  khHotmemo?: string;
-  khType?: string;
-  khStatus?: string;
-  khSn?: string;
-  khHandset?: string;
-  khEmail?: string;
-  khDingtalk?: string;
-  khTel?: string;
-  khWeixin?: string;
-  khQq?: string;
-  khSkype?: string;
-  khWangwang?: string;
-  khWorktel?: string;
-  khFax?: string;
-  khPst?: string;
-  khDepartment?: string;
-  khAppellation?: string;
-  khPreside?: string;
-  khHeadship?: string;
-  khWeb?: string;
-  khBefontof?: string;
-  khFrom?: string;
-  khBillinfo?: string;
-  khInfo?: string;
-  khRalagrade?: string;
-  khCreditgrade?: string;
-  khValrating?: string;
-  khCttype?: string;
-  khCtnumber?: string;
-  khContype?: string;
-  khRemark?: string;
-  khJibie?: string;
-  static names(): { [key: string]: string } {
-    return {
-      dataUserid: 'data_userid',
-      khPkhid: 'kh_pkhid',
-      khClass: 'kh_class',
-      khName: 'kh_name',
-      khSex: 'kh_sex',
-      khShortname: 'kh_shortname',
-      khIndustry: 'kh_industry',
-      khEmployees: 'kh_employees',
-      khAddress: 'kh_address',
-      khCountry: 'kh_country',
-      khProvince: 'kh_province',
-      khCity: 'kh_city',
-      khCoaddress: 'kh_coaddress',
-      khHottype: 'kh_hottype',
-      khHotlevel: 'kh_hotlevel',
-      khHotfl: 'kh_hotfl',
-      khHotmemo: 'kh_hotmemo',
-      khType: 'kh_type',
-      khStatus: 'kh_status',
-      khSn: 'kh_sn',
-      khHandset: 'kh_handset',
-      khEmail: 'kh_email',
-      khDingtalk: 'kh_dingtalk',
-      khTel: 'kh_tel',
-      khWeixin: 'kh_weixin',
-      khQq: 'kh_qq',
-      khSkype: 'kh_skype',
-      khWangwang: 'kh_wangwang',
-      khWorktel: 'kh_worktel',
-      khFax: 'kh_fax',
-      khPst: 'kh_pst',
-      khDepartment: 'kh_department',
-      khAppellation: 'kh_appellation',
-      khPreside: 'kh_preside',
-      khHeadship: 'kh_headship',
-      khWeb: 'kh_web',
-      khBefontof: 'kh_befontof',
-      khFrom: 'kh_from',
-      khBillinfo: 'kh_billinfo',
-      khInfo: 'kh_info',
-      khRalagrade: 'kh_ralagrade',
-      khCreditgrade: 'kh_creditgrade',
-      khValrating: 'kh_valrating',
-      khCttype: 'kh_cttype',
-      khCtnumber: 'kh_ctnumber',
-      khContype: 'kh_contype',
-      khRemark: 'kh_remark',
-      khJibie: 'kh_jibie',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      dataUserid: 'string',
-      khPkhid: 'string',
-      khClass: 'string',
-      khName: 'string',
-      khSex: 'string',
-      khShortname: 'string',
-      khIndustry: 'string',
-      khEmployees: 'string',
-      khAddress: 'string',
-      khCountry: 'string',
-      khProvince: 'string',
-      khCity: 'string',
-      khCoaddress: 'string',
-      khHottype: 'string',
-      khHotlevel: 'string',
-      khHotfl: 'string',
-      khHotmemo: 'string',
-      khType: 'string',
-      khStatus: 'string',
-      khSn: 'string',
-      khHandset: 'string',
-      khEmail: 'string',
-      khDingtalk: 'string',
-      khTel: 'string',
-      khWeixin: 'string',
-      khQq: 'string',
-      khSkype: 'string',
-      khWangwang: 'string',
-      khWorktel: 'string',
-      khFax: 'string',
-      khPst: 'string',
-      khDepartment: 'string',
-      khAppellation: 'string',
-      khPreside: 'string',
-      khHeadship: 'string',
-      khWeb: 'string',
-      khBefontof: 'string',
-      khFrom: 'string',
-      khBillinfo: 'string',
-      khInfo: 'string',
-      khRalagrade: 'string',
-      khCreditgrade: 'string',
-      khValrating: 'string',
-      khCttype: 'string',
-      khCtnumber: 'string',
-      khContype: 'string',
-      khRemark: 'string',
-      khJibie: 'string',
+      xshTitle: 'string',
+      xshType: 'string',
     };
   }
 
@@ -2495,141 +2619,17 @@ export class GetDataListResponseBodyData extends $tea.Model {
   }
 }
 
-export class EditInvoiceRequestData extends $tea.Model {
-  dataUserid?: string;
-  fhCustomerid?: string;
-  fhDate?: string;
-  fhNumber?: string;
-  fhMode?: string;
-  fhHtorder?: string;
-  fhTitle?: string;
-  fhYunfei?: string;
-  fhJianshu?: string;
-  fhKg?: string;
-  fhShipper?: string;
-  fhPreside?: string;
-  fhLxrid?: string;
-  fhLinkman?: string;
-  fhTel?: string;
-  fhHandset?: string;
-  fhPost?: string;
-  fhAddress?: string;
-  fhEmail?: string;
-  fhMsn?: string;
-  fhRemark?: string;
-  fhState?: string;
-  childMx?: string;
+export class GetDataViewResponseBodyData extends $tea.Model {
+  detail?: { [key: string]: string };
   static names(): { [key: string]: string } {
     return {
-      dataUserid: 'data_userid',
-      fhCustomerid: 'fh_customerid',
-      fhDate: 'fh_date',
-      fhNumber: 'fh_number',
-      fhMode: 'fh_mode',
-      fhHtorder: 'fh_htorder',
-      fhTitle: 'fh_title',
-      fhYunfei: 'fh_yunfei',
-      fhJianshu: 'fh_jianshu',
-      fhKg: 'fh_kg',
-      fhShipper: 'fh_shipper',
-      fhPreside: 'fh_preside',
-      fhLxrid: 'fh_lxrid',
-      fhLinkman: 'fh_linkman',
-      fhTel: 'fh_tel',
-      fhHandset: 'fh_handset',
-      fhPost: 'fh_post',
-      fhAddress: 'fh_address',
-      fhEmail: 'fh_email',
-      fhMsn: 'fh_msn',
-      fhRemark: 'fh_remark',
-      fhState: 'fh_state',
-      childMx: 'child_mx',
+      detail: 'detail',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      dataUserid: 'string',
-      fhCustomerid: 'string',
-      fhDate: 'string',
-      fhNumber: 'string',
-      fhMode: 'string',
-      fhHtorder: 'string',
-      fhTitle: 'string',
-      fhYunfei: 'string',
-      fhJianshu: 'string',
-      fhKg: 'string',
-      fhShipper: 'string',
-      fhPreside: 'string',
-      fhLxrid: 'string',
-      fhLinkman: 'string',
-      fhTel: 'string',
-      fhHandset: 'string',
-      fhPost: 'string',
-      fhAddress: 'string',
-      fhEmail: 'string',
-      fhMsn: 'string',
-      fhRemark: 'string',
-      fhState: 'string',
-      childMx: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class EditOutstockRequestData extends $tea.Model {
-  dataUserid?: string;
-  libiodate?: string;
-  stocklibid?: string;
-  libiostate?: string;
-  billno?: string;
-  customerid?: string;
-  empid?: string;
-  inorout?: string;
-  libioname?: string;
-  orderid?: string;
-  askempid?: string;
-  remark?: string;
-  auditreson?: string;
-  childMx?: string;
-  static names(): { [key: string]: string } {
-    return {
-      dataUserid: 'data_userid',
-      libiodate: 'libiodate',
-      stocklibid: 'stocklibid',
-      libiostate: 'libiostate',
-      billno: 'billno',
-      customerid: 'customerid',
-      empid: 'empid',
-      inorout: 'inorout',
-      libioname: 'libioname',
-      orderid: 'orderid',
-      askempid: 'askempid',
-      remark: 'remark',
-      auditreson: 'auditreson',
-      childMx: 'child_mx',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      dataUserid: 'string',
-      libiodate: 'string',
-      stocklibid: 'string',
-      libiostate: 'string',
-      billno: 'string',
-      customerid: 'string',
-      empid: 'string',
-      inorout: 'string',
-      libioname: 'string',
-      orderid: 'string',
-      askempid: 'string',
-      remark: 'string',
-      auditreson: 'string',
-      childMx: 'string',
+      detail: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
     };
   }
 
@@ -2651,203 +2651,6 @@ export default class Client extends OpenApi {
   }
 
 
-  async editExchange(request: EditExchangeRequest): Promise<EditExchangeResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new EditExchangeHeaders({ });
-    return await this.editExchangeWithOptions(request, headers, runtime);
-  }
-
-  async editExchangeWithOptions(request: EditExchangeRequest, headers: EditExchangeHeaders, runtime: $Util.RuntimeOptions): Promise<EditExchangeResponse> {
-    Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.datatype)) {
-      body["datatype"] = request.datatype;
-    }
-
-    if (!Util.isUnset(request.stamp)) {
-      body["stamp"] = request.stamp;
-    }
-
-    if (!Util.isUnset(request.msgid)) {
-      body["msgid"] = request.msgid;
-    }
-
-    if (!Util.isUnset($tea.toMap(request.data))) {
-      body["data"] = request.data;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<EditExchangeResponse>(await this.doROARequest("EditExchange", "jzcrm_1.0", "HTTP", "POST", "AK", `/v1.0/jzcrm/exchanges`, "json", req, runtime), new EditExchangeResponse({}));
-  }
-
-  async editProduction(request: EditProductionRequest): Promise<EditProductionResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new EditProductionHeaders({ });
-    return await this.editProductionWithOptions(request, headers, runtime);
-  }
-
-  async editProductionWithOptions(request: EditProductionRequest, headers: EditProductionHeaders, runtime: $Util.RuntimeOptions): Promise<EditProductionResponse> {
-    Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.datatype)) {
-      body["datatype"] = request.datatype;
-    }
-
-    if (!Util.isUnset(request.stamp)) {
-      body["stamp"] = request.stamp;
-    }
-
-    if (!Util.isUnset(request.msgid)) {
-      body["msgid"] = request.msgid;
-    }
-
-    if (!Util.isUnset($tea.toMap(request.data))) {
-      body["data"] = request.data;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<EditProductionResponse>(await this.doROARequest("EditProduction", "jzcrm_1.0", "HTTP", "POST", "AK", `/v1.0/jzcrm/productions`, "json", req, runtime), new EditProductionResponse({}));
-  }
-
-  async getDataView(request: GetDataViewRequest): Promise<GetDataViewResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetDataViewHeaders({ });
-    return await this.getDataViewWithOptions(request, headers, runtime);
-  }
-
-  async getDataViewWithOptions(request: GetDataViewRequest, headers: GetDataViewHeaders, runtime: $Util.RuntimeOptions): Promise<GetDataViewResponse> {
-    Util.validateModel(request);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.datatype)) {
-      query["datatype"] = request.datatype;
-    }
-
-    if (!Util.isUnset(request.msgid)) {
-      query["msgid"] = request.msgid;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      query: OpenApiUtil.query(query),
-    });
-    return $tea.cast<GetDataViewResponse>(await this.doROARequest("GetDataView", "jzcrm_1.0", "HTTP", "GET", "AK", `/v1.0/jzcrm/dataView`, "json", req, runtime), new GetDataViewResponse({}));
-  }
-
-  async editSales(request: EditSalesRequest): Promise<EditSalesResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new EditSalesHeaders({ });
-    return await this.editSalesWithOptions(request, headers, runtime);
-  }
-
-  async editSalesWithOptions(request: EditSalesRequest, headers: EditSalesHeaders, runtime: $Util.RuntimeOptions): Promise<EditSalesResponse> {
-    Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.datatype)) {
-      body["datatype"] = request.datatype;
-    }
-
-    if (!Util.isUnset(request.stamp)) {
-      body["stamp"] = request.stamp;
-    }
-
-    if (!Util.isUnset(request.msgid)) {
-      body["msgid"] = request.msgid;
-    }
-
-    if (!Util.isUnset($tea.toMap(request.data))) {
-      body["data"] = request.data;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<EditSalesResponse>(await this.doROARequest("EditSales", "jzcrm_1.0", "HTTP", "POST", "AK", `/v1.0/jzcrm/sales`, "json", req, runtime), new EditSalesResponse({}));
-  }
-
-  async editGoods(request: EditGoodsRequest): Promise<EditGoodsResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new EditGoodsHeaders({ });
-    return await this.editGoodsWithOptions(request, headers, runtime);
-  }
-
-  async editGoodsWithOptions(request: EditGoodsRequest, headers: EditGoodsHeaders, runtime: $Util.RuntimeOptions): Promise<EditGoodsResponse> {
-    Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.datatype)) {
-      body["datatype"] = request.datatype;
-    }
-
-    if (!Util.isUnset(request.stamp)) {
-      body["stamp"] = request.stamp;
-    }
-
-    if (!Util.isUnset(request.msgid)) {
-      body["msgid"] = request.msgid;
-    }
-
-    if (!Util.isUnset($tea.toMap(request.data))) {
-      body["data"] = request.data;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<EditGoodsResponse>(await this.doROARequest("EditGoods", "jzcrm_1.0", "HTTP", "POST", "AK", `/v1.0/jzcrm/goods`, "json", req, runtime), new EditGoodsResponse({}));
-  }
-
   async editContact(request: EditContactRequest): Promise<EditContactResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new EditContactHeaders({ });
@@ -2857,20 +2660,20 @@ export default class Client extends OpenApi {
   async editContactWithOptions(request: EditContactRequest, headers: EditContactHeaders, runtime: $Util.RuntimeOptions): Promise<EditContactResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.datatype)) {
-      body["datatype"] = request.datatype;
+    if (!Util.isUnset($tea.toMap(request.data))) {
+      body["data"] = request.data;
     }
 
-    if (!Util.isUnset(request.stamp)) {
-      body["stamp"] = request.stamp;
+    if (!Util.isUnset(request.datatype)) {
+      body["datatype"] = request.datatype;
     }
 
     if (!Util.isUnset(request.msgid)) {
       body["msgid"] = request.msgid;
     }
 
-    if (!Util.isUnset($tea.toMap(request.data))) {
-      body["data"] = request.data;
+    if (!Util.isUnset(request.stamp)) {
+      body["stamp"] = request.stamp;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -2879,7 +2682,7 @@ export default class Client extends OpenApi {
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({
@@ -2887,211 +2690,6 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<EditContactResponse>(await this.doROARequest("EditContact", "jzcrm_1.0", "HTTP", "POST", "AK", `/v1.0/jzcrm/contacts`, "json", req, runtime), new EditContactResponse({}));
-  }
-
-  async editOrder(request: EditOrderRequest): Promise<EditOrderResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new EditOrderHeaders({ });
-    return await this.editOrderWithOptions(request, headers, runtime);
-  }
-
-  async editOrderWithOptions(request: EditOrderRequest, headers: EditOrderHeaders, runtime: $Util.RuntimeOptions): Promise<EditOrderResponse> {
-    Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.datatype)) {
-      body["datatype"] = request.datatype;
-    }
-
-    if (!Util.isUnset(request.stamp)) {
-      body["stamp"] = request.stamp;
-    }
-
-    if (!Util.isUnset(request.msgid)) {
-      body["msgid"] = request.msgid;
-    }
-
-    if (!Util.isUnset($tea.toMap(request.data))) {
-      body["data"] = request.data;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<EditOrderResponse>(await this.doROARequest("EditOrder", "jzcrm_1.0", "HTTP", "POST", "AK", `/v1.0/jzcrm/orders`, "json", req, runtime), new EditOrderResponse({}));
-  }
-
-  async editQuotationRecord(request: EditQuotationRecordRequest): Promise<EditQuotationRecordResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new EditQuotationRecordHeaders({ });
-    return await this.editQuotationRecordWithOptions(request, headers, runtime);
-  }
-
-  async editQuotationRecordWithOptions(request: EditQuotationRecordRequest, headers: EditQuotationRecordHeaders, runtime: $Util.RuntimeOptions): Promise<EditQuotationRecordResponse> {
-    Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.datatype)) {
-      body["datatype"] = request.datatype;
-    }
-
-    if (!Util.isUnset(request.stamp)) {
-      body["stamp"] = request.stamp;
-    }
-
-    if (!Util.isUnset(request.msgid)) {
-      body["msgid"] = request.msgid;
-    }
-
-    if (!Util.isUnset($tea.toMap(request.data))) {
-      body["data"] = request.data;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<EditQuotationRecordResponse>(await this.doROARequest("EditQuotationRecord", "jzcrm_1.0", "HTTP", "POST", "AK", `/v1.0/jzcrm/quotationRecords`, "json", req, runtime), new EditQuotationRecordResponse({}));
-  }
-
-  async editCustomerPool(request: EditCustomerPoolRequest): Promise<EditCustomerPoolResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new EditCustomerPoolHeaders({ });
-    return await this.editCustomerPoolWithOptions(request, headers, runtime);
-  }
-
-  async editCustomerPoolWithOptions(request: EditCustomerPoolRequest, headers: EditCustomerPoolHeaders, runtime: $Util.RuntimeOptions): Promise<EditCustomerPoolResponse> {
-    Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.datatype)) {
-      body["datatype"] = request.datatype;
-    }
-
-    if (!Util.isUnset(request.stamp)) {
-      body["stamp"] = request.stamp;
-    }
-
-    if (!Util.isUnset(request.msgid)) {
-      body["msgid"] = request.msgid;
-    }
-
-    if (!Util.isUnset($tea.toMap(request.data))) {
-      body["data"] = request.data;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<EditCustomerPoolResponse>(await this.doROARequest("EditCustomerPool", "jzcrm_1.0", "HTTP", "POST", "AK", `/v1.0/jzcrm/customerPools`, "json", req, runtime), new EditCustomerPoolResponse({}));
-  }
-
-  async editPurchase(request: EditPurchaseRequest): Promise<EditPurchaseResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new EditPurchaseHeaders({ });
-    return await this.editPurchaseWithOptions(request, headers, runtime);
-  }
-
-  async editPurchaseWithOptions(request: EditPurchaseRequest, headers: EditPurchaseHeaders, runtime: $Util.RuntimeOptions): Promise<EditPurchaseResponse> {
-    Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.datatype)) {
-      body["datatype"] = request.datatype;
-    }
-
-    if (!Util.isUnset(request.stamp)) {
-      body["stamp"] = request.stamp;
-    }
-
-    if (!Util.isUnset(request.msgid)) {
-      body["msgid"] = request.msgid;
-    }
-
-    if (!Util.isUnset($tea.toMap(request.data))) {
-      body["data"] = request.data;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<EditPurchaseResponse>(await this.doROARequest("EditPurchase", "jzcrm_1.0", "HTTP", "POST", "AK", `/v1.0/jzcrm/purchases`, "json", req, runtime), new EditPurchaseResponse({}));
-  }
-
-  async editIntostock(request: EditIntostockRequest): Promise<EditIntostockResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new EditIntostockHeaders({ });
-    return await this.editIntostockWithOptions(request, headers, runtime);
-  }
-
-  async editIntostockWithOptions(request: EditIntostockRequest, headers: EditIntostockHeaders, runtime: $Util.RuntimeOptions): Promise<EditIntostockResponse> {
-    Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.datatype)) {
-      body["datatype"] = request.datatype;
-    }
-
-    if (!Util.isUnset(request.stamp)) {
-      body["stamp"] = request.stamp;
-    }
-
-    if (!Util.isUnset(request.msgid)) {
-      body["msgid"] = request.msgid;
-    }
-
-    if (!Util.isUnset($tea.toMap(request.data))) {
-      body["data"] = request.data;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<EditIntostockResponse>(await this.doROARequest("EditIntostock", "jzcrm_1.0", "HTTP", "POST", "AK", `/v1.0/jzcrm/intostocks`, "json", req, runtime), new EditIntostockResponse({}));
   }
 
   async editCustomer(request: EditCustomerRequest): Promise<EditCustomerResponse> {
@@ -3103,20 +2701,20 @@ export default class Client extends OpenApi {
   async editCustomerWithOptions(request: EditCustomerRequest, headers: EditCustomerHeaders, runtime: $Util.RuntimeOptions): Promise<EditCustomerResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.datatype)) {
-      body["datatype"] = request.datatype;
+    if (!Util.isUnset($tea.toMap(request.data))) {
+      body["data"] = request.data;
     }
 
-    if (!Util.isUnset(request.stamp)) {
-      body["stamp"] = request.stamp;
+    if (!Util.isUnset(request.datatype)) {
+      body["datatype"] = request.datatype;
     }
 
     if (!Util.isUnset(request.msgid)) {
       body["msgid"] = request.msgid;
     }
 
-    if (!Util.isUnset($tea.toMap(request.data))) {
-      body["data"] = request.data;
+    if (!Util.isUnset(request.stamp)) {
+      body["stamp"] = request.stamp;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -3125,7 +2723,7 @@ export default class Client extends OpenApi {
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({
@@ -3133,6 +2731,457 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<EditCustomerResponse>(await this.doROARequest("EditCustomer", "jzcrm_1.0", "HTTP", "POST", "AK", `/v1.0/jzcrm/customers`, "json", req, runtime), new EditCustomerResponse({}));
+  }
+
+  async editCustomerPool(request: EditCustomerPoolRequest): Promise<EditCustomerPoolResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new EditCustomerPoolHeaders({ });
+    return await this.editCustomerPoolWithOptions(request, headers, runtime);
+  }
+
+  async editCustomerPoolWithOptions(request: EditCustomerPoolRequest, headers: EditCustomerPoolHeaders, runtime: $Util.RuntimeOptions): Promise<EditCustomerPoolResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset($tea.toMap(request.data))) {
+      body["data"] = request.data;
+    }
+
+    if (!Util.isUnset(request.datatype)) {
+      body["datatype"] = request.datatype;
+    }
+
+    if (!Util.isUnset(request.msgid)) {
+      body["msgid"] = request.msgid;
+    }
+
+    if (!Util.isUnset(request.stamp)) {
+      body["stamp"] = request.stamp;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<EditCustomerPoolResponse>(await this.doROARequest("EditCustomerPool", "jzcrm_1.0", "HTTP", "POST", "AK", `/v1.0/jzcrm/customerPools`, "json", req, runtime), new EditCustomerPoolResponse({}));
+  }
+
+  async editExchange(request: EditExchangeRequest): Promise<EditExchangeResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new EditExchangeHeaders({ });
+    return await this.editExchangeWithOptions(request, headers, runtime);
+  }
+
+  async editExchangeWithOptions(request: EditExchangeRequest, headers: EditExchangeHeaders, runtime: $Util.RuntimeOptions): Promise<EditExchangeResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset($tea.toMap(request.data))) {
+      body["data"] = request.data;
+    }
+
+    if (!Util.isUnset(request.datatype)) {
+      body["datatype"] = request.datatype;
+    }
+
+    if (!Util.isUnset(request.msgid)) {
+      body["msgid"] = request.msgid;
+    }
+
+    if (!Util.isUnset(request.stamp)) {
+      body["stamp"] = request.stamp;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<EditExchangeResponse>(await this.doROARequest("EditExchange", "jzcrm_1.0", "HTTP", "POST", "AK", `/v1.0/jzcrm/exchanges`, "json", req, runtime), new EditExchangeResponse({}));
+  }
+
+  async editGoods(request: EditGoodsRequest): Promise<EditGoodsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new EditGoodsHeaders({ });
+    return await this.editGoodsWithOptions(request, headers, runtime);
+  }
+
+  async editGoodsWithOptions(request: EditGoodsRequest, headers: EditGoodsHeaders, runtime: $Util.RuntimeOptions): Promise<EditGoodsResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset($tea.toMap(request.data))) {
+      body["data"] = request.data;
+    }
+
+    if (!Util.isUnset(request.datatype)) {
+      body["datatype"] = request.datatype;
+    }
+
+    if (!Util.isUnset(request.msgid)) {
+      body["msgid"] = request.msgid;
+    }
+
+    if (!Util.isUnset(request.stamp)) {
+      body["stamp"] = request.stamp;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<EditGoodsResponse>(await this.doROARequest("EditGoods", "jzcrm_1.0", "HTTP", "POST", "AK", `/v1.0/jzcrm/goods`, "json", req, runtime), new EditGoodsResponse({}));
+  }
+
+  async editIntostock(request: EditIntostockRequest): Promise<EditIntostockResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new EditIntostockHeaders({ });
+    return await this.editIntostockWithOptions(request, headers, runtime);
+  }
+
+  async editIntostockWithOptions(request: EditIntostockRequest, headers: EditIntostockHeaders, runtime: $Util.RuntimeOptions): Promise<EditIntostockResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset($tea.toMap(request.data))) {
+      body["data"] = request.data;
+    }
+
+    if (!Util.isUnset(request.datatype)) {
+      body["datatype"] = request.datatype;
+    }
+
+    if (!Util.isUnset(request.msgid)) {
+      body["msgid"] = request.msgid;
+    }
+
+    if (!Util.isUnset(request.stamp)) {
+      body["stamp"] = request.stamp;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<EditIntostockResponse>(await this.doROARequest("EditIntostock", "jzcrm_1.0", "HTTP", "POST", "AK", `/v1.0/jzcrm/intostocks`, "json", req, runtime), new EditIntostockResponse({}));
+  }
+
+  async editInvoice(request: EditInvoiceRequest): Promise<EditInvoiceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new EditInvoiceHeaders({ });
+    return await this.editInvoiceWithOptions(request, headers, runtime);
+  }
+
+  async editInvoiceWithOptions(request: EditInvoiceRequest, headers: EditInvoiceHeaders, runtime: $Util.RuntimeOptions): Promise<EditInvoiceResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset($tea.toMap(request.data))) {
+      body["data"] = request.data;
+    }
+
+    if (!Util.isUnset(request.datatype)) {
+      body["datatype"] = request.datatype;
+    }
+
+    if (!Util.isUnset(request.msgid)) {
+      body["msgid"] = request.msgid;
+    }
+
+    if (!Util.isUnset(request.stamp)) {
+      body["stamp"] = request.stamp;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<EditInvoiceResponse>(await this.doROARequest("EditInvoice", "jzcrm_1.0", "HTTP", "POST", "AK", `/v1.0/jzcrm/invoices`, "json", req, runtime), new EditInvoiceResponse({}));
+  }
+
+  async editOrder(request: EditOrderRequest): Promise<EditOrderResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new EditOrderHeaders({ });
+    return await this.editOrderWithOptions(request, headers, runtime);
+  }
+
+  async editOrderWithOptions(request: EditOrderRequest, headers: EditOrderHeaders, runtime: $Util.RuntimeOptions): Promise<EditOrderResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset($tea.toMap(request.data))) {
+      body["data"] = request.data;
+    }
+
+    if (!Util.isUnset(request.datatype)) {
+      body["datatype"] = request.datatype;
+    }
+
+    if (!Util.isUnset(request.msgid)) {
+      body["msgid"] = request.msgid;
+    }
+
+    if (!Util.isUnset(request.stamp)) {
+      body["stamp"] = request.stamp;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<EditOrderResponse>(await this.doROARequest("EditOrder", "jzcrm_1.0", "HTTP", "POST", "AK", `/v1.0/jzcrm/orders`, "json", req, runtime), new EditOrderResponse({}));
+  }
+
+  async editOutstock(request: EditOutstockRequest): Promise<EditOutstockResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new EditOutstockHeaders({ });
+    return await this.editOutstockWithOptions(request, headers, runtime);
+  }
+
+  async editOutstockWithOptions(request: EditOutstockRequest, headers: EditOutstockHeaders, runtime: $Util.RuntimeOptions): Promise<EditOutstockResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset($tea.toMap(request.data))) {
+      body["data"] = request.data;
+    }
+
+    if (!Util.isUnset(request.datatype)) {
+      body["datatype"] = request.datatype;
+    }
+
+    if (!Util.isUnset(request.msgid)) {
+      body["msgid"] = request.msgid;
+    }
+
+    if (!Util.isUnset(request.stamp)) {
+      body["stamp"] = request.stamp;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<EditOutstockResponse>(await this.doROARequest("EditOutstock", "jzcrm_1.0", "HTTP", "POST", "AK", `/v1.0/jzcrm/outstocks`, "json", req, runtime), new EditOutstockResponse({}));
+  }
+
+  async editProduction(request: EditProductionRequest): Promise<EditProductionResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new EditProductionHeaders({ });
+    return await this.editProductionWithOptions(request, headers, runtime);
+  }
+
+  async editProductionWithOptions(request: EditProductionRequest, headers: EditProductionHeaders, runtime: $Util.RuntimeOptions): Promise<EditProductionResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset($tea.toMap(request.data))) {
+      body["data"] = request.data;
+    }
+
+    if (!Util.isUnset(request.datatype)) {
+      body["datatype"] = request.datatype;
+    }
+
+    if (!Util.isUnset(request.msgid)) {
+      body["msgid"] = request.msgid;
+    }
+
+    if (!Util.isUnset(request.stamp)) {
+      body["stamp"] = request.stamp;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<EditProductionResponse>(await this.doROARequest("EditProduction", "jzcrm_1.0", "HTTP", "POST", "AK", `/v1.0/jzcrm/productions`, "json", req, runtime), new EditProductionResponse({}));
+  }
+
+  async editPurchase(request: EditPurchaseRequest): Promise<EditPurchaseResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new EditPurchaseHeaders({ });
+    return await this.editPurchaseWithOptions(request, headers, runtime);
+  }
+
+  async editPurchaseWithOptions(request: EditPurchaseRequest, headers: EditPurchaseHeaders, runtime: $Util.RuntimeOptions): Promise<EditPurchaseResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset($tea.toMap(request.data))) {
+      body["data"] = request.data;
+    }
+
+    if (!Util.isUnset(request.datatype)) {
+      body["datatype"] = request.datatype;
+    }
+
+    if (!Util.isUnset(request.msgid)) {
+      body["msgid"] = request.msgid;
+    }
+
+    if (!Util.isUnset(request.stamp)) {
+      body["stamp"] = request.stamp;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<EditPurchaseResponse>(await this.doROARequest("EditPurchase", "jzcrm_1.0", "HTTP", "POST", "AK", `/v1.0/jzcrm/purchases`, "json", req, runtime), new EditPurchaseResponse({}));
+  }
+
+  async editQuotationRecord(request: EditQuotationRecordRequest): Promise<EditQuotationRecordResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new EditQuotationRecordHeaders({ });
+    return await this.editQuotationRecordWithOptions(request, headers, runtime);
+  }
+
+  async editQuotationRecordWithOptions(request: EditQuotationRecordRequest, headers: EditQuotationRecordHeaders, runtime: $Util.RuntimeOptions): Promise<EditQuotationRecordResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset($tea.toMap(request.data))) {
+      body["data"] = request.data;
+    }
+
+    if (!Util.isUnset(request.datatype)) {
+      body["datatype"] = request.datatype;
+    }
+
+    if (!Util.isUnset(request.msgid)) {
+      body["msgid"] = request.msgid;
+    }
+
+    if (!Util.isUnset(request.stamp)) {
+      body["stamp"] = request.stamp;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<EditQuotationRecordResponse>(await this.doROARequest("EditQuotationRecord", "jzcrm_1.0", "HTTP", "POST", "AK", `/v1.0/jzcrm/quotationRecords`, "json", req, runtime), new EditQuotationRecordResponse({}));
+  }
+
+  async editSales(request: EditSalesRequest): Promise<EditSalesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new EditSalesHeaders({ });
+    return await this.editSalesWithOptions(request, headers, runtime);
+  }
+
+  async editSalesWithOptions(request: EditSalesRequest, headers: EditSalesHeaders, runtime: $Util.RuntimeOptions): Promise<EditSalesResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset($tea.toMap(request.data))) {
+      body["data"] = request.data;
+    }
+
+    if (!Util.isUnset(request.datatype)) {
+      body["datatype"] = request.datatype;
+    }
+
+    if (!Util.isUnset(request.msgid)) {
+      body["msgid"] = request.msgid;
+    }
+
+    if (!Util.isUnset(request.stamp)) {
+      body["stamp"] = request.stamp;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<EditSalesResponse>(await this.doROARequest("EditSales", "jzcrm_1.0", "HTTP", "POST", "AK", `/v1.0/jzcrm/sales`, "json", req, runtime), new EditSalesResponse({}));
   }
 
   async getDataList(request: GetDataListRequest): Promise<GetDataListResponse> {
@@ -3162,7 +3211,7 @@ export default class Client extends OpenApi {
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({
@@ -3172,29 +3221,21 @@ export default class Client extends OpenApi {
     return $tea.cast<GetDataListResponse>(await this.doROARequest("GetDataList", "jzcrm_1.0", "HTTP", "GET", "AK", `/v1.0/jzcrm/data`, "json", req, runtime), new GetDataListResponse({}));
   }
 
-  async editInvoice(request: EditInvoiceRequest): Promise<EditInvoiceResponse> {
+  async getDataView(request: GetDataViewRequest): Promise<GetDataViewResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new EditInvoiceHeaders({ });
-    return await this.editInvoiceWithOptions(request, headers, runtime);
+    let headers = new GetDataViewHeaders({ });
+    return await this.getDataViewWithOptions(request, headers, runtime);
   }
 
-  async editInvoiceWithOptions(request: EditInvoiceRequest, headers: EditInvoiceHeaders, runtime: $Util.RuntimeOptions): Promise<EditInvoiceResponse> {
+  async getDataViewWithOptions(request: GetDataViewRequest, headers: GetDataViewHeaders, runtime: $Util.RuntimeOptions): Promise<GetDataViewResponse> {
     Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
+    let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.datatype)) {
-      body["datatype"] = request.datatype;
-    }
-
-    if (!Util.isUnset(request.stamp)) {
-      body["stamp"] = request.stamp;
+      query["datatype"] = request.datatype;
     }
 
     if (!Util.isUnset(request.msgid)) {
-      body["msgid"] = request.msgid;
-    }
-
-    if (!Util.isUnset($tea.toMap(request.data))) {
-      body["data"] = request.data;
+      query["msgid"] = request.msgid;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -3203,55 +3244,14 @@ export default class Client extends OpenApi {
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
+      query: OpenApiUtil.query(query),
     });
-    return $tea.cast<EditInvoiceResponse>(await this.doROARequest("EditInvoice", "jzcrm_1.0", "HTTP", "POST", "AK", `/v1.0/jzcrm/invoices`, "json", req, runtime), new EditInvoiceResponse({}));
-  }
-
-  async editOutstock(request: EditOutstockRequest): Promise<EditOutstockResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new EditOutstockHeaders({ });
-    return await this.editOutstockWithOptions(request, headers, runtime);
-  }
-
-  async editOutstockWithOptions(request: EditOutstockRequest, headers: EditOutstockHeaders, runtime: $Util.RuntimeOptions): Promise<EditOutstockResponse> {
-    Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.datatype)) {
-      body["datatype"] = request.datatype;
-    }
-
-    if (!Util.isUnset(request.stamp)) {
-      body["stamp"] = request.stamp;
-    }
-
-    if (!Util.isUnset(request.msgid)) {
-      body["msgid"] = request.msgid;
-    }
-
-    if (!Util.isUnset($tea.toMap(request.data))) {
-      body["data"] = request.data;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<EditOutstockResponse>(await this.doROARequest("EditOutstock", "jzcrm_1.0", "HTTP", "POST", "AK", `/v1.0/jzcrm/outstocks`, "json", req, runtime), new EditOutstockResponse({}));
+    return $tea.cast<GetDataViewResponse>(await this.doROARequest("GetDataView", "jzcrm_1.0", "HTTP", "GET", "AK", `/v1.0/jzcrm/dataView`, "json", req, runtime), new GetDataViewResponse({}));
   }
 
 }
