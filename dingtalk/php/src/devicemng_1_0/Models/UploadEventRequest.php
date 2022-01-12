@@ -42,6 +42,11 @@ class UploadEventRequest extends Model
      * @var string
      */
     public $eventType;
+
+    /**
+     * @var string
+     */
+    public $coverUrl;
     protected $_name = [
         'deviceUuid' => 'deviceUuid',
         'content'    => 'content',
@@ -50,6 +55,7 @@ class UploadEventRequest extends Model
         'level'      => 'level',
         'eventTime'  => 'eventTime',
         'eventType'  => 'eventType',
+        'coverUrl'   => 'coverUrl',
     ];
 
     public function validate()
@@ -79,6 +85,9 @@ class UploadEventRequest extends Model
         }
         if (null !== $this->eventType) {
             $res['eventType'] = $this->eventType;
+        }
+        if (null !== $this->coverUrl) {
+            $res['coverUrl'] = $this->coverUrl;
         }
 
         return $res;
@@ -112,6 +121,9 @@ class UploadEventRequest extends Model
         }
         if (isset($map['eventType'])) {
             $model->eventType = $map['eventType'];
+        }
+        if (isset($map['coverUrl'])) {
+            $model->coverUrl = $map['coverUrl'];
         }
 
         return $model;

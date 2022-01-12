@@ -28,10 +28,18 @@ class CreateVideoConferenceRequest extends Model
      * @var string[]
      */
     public $inviteUserIds;
+
+    /**
+     * @description 是否邀请主叫
+     *
+     * @var bool
+     */
+    public $inviteCaller;
     protected $_name = [
         'userId'        => 'userId',
         'confTitle'     => 'confTitle',
         'inviteUserIds' => 'inviteUserIds',
+        'inviteCaller'  => 'inviteCaller',
     ];
 
     public function validate()
@@ -49,6 +57,9 @@ class CreateVideoConferenceRequest extends Model
         }
         if (null !== $this->inviteUserIds) {
             $res['inviteUserIds'] = $this->inviteUserIds;
+        }
+        if (null !== $this->inviteCaller) {
+            $res['inviteCaller'] = $this->inviteCaller;
         }
 
         return $res;
@@ -72,6 +83,9 @@ class CreateVideoConferenceRequest extends Model
             if (!empty($map['inviteUserIds'])) {
                 $model->inviteUserIds = $map['inviteUserIds'];
             }
+        }
+        if (isset($map['inviteCaller'])) {
+            $model->inviteCaller = $map['inviteCaller'];
         }
 
         return $model;

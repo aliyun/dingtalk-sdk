@@ -486,6 +486,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->eventType)) {
             @$body['eventType'] = $request->eventType;
         }
+        if (!Utils::isUnset($request->coverUrl)) {
+            @$body['coverUrl'] = $request->coverUrl;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
