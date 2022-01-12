@@ -17,6 +17,13 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
         public string ConfTitle { get; set; }
 
         /// <summary>
+        /// 是否邀请主叫
+        /// </summary>
+        [NameInMap("inviteCaller")]
+        [Validation(Required=false)]
+        public bool? InviteCaller { get; set; }
+
+        /// <summary>
         /// 邀请参会人员UID列表（必须好友或同事）
         /// </summary>
         [NameInMap("inviteUserIds")]

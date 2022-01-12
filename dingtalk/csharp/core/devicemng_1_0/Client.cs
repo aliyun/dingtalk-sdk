@@ -864,6 +864,10 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0
             {
                 body["content"] = request.Content;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CoverUrl))
+            {
+                body["coverUrl"] = request.CoverUrl;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceCode))
             {
                 body["deviceCode"] = request.DeviceCode;
@@ -912,6 +916,10 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Content))
             {
                 body["content"] = request.Content;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CoverUrl))
+            {
+                body["coverUrl"] = request.CoverUrl;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceCode))
             {

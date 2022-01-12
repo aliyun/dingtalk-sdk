@@ -114,6 +114,10 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             {
                 body["confTitle"] = request.ConfTitle;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InviteCaller))
+            {
+                body["inviteCaller"] = request.InviteCaller;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InviteUserIds))
             {
                 body["inviteUserIds"] = request.InviteUserIds;
@@ -146,6 +150,10 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ConfTitle))
             {
                 body["confTitle"] = request.ConfTitle;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InviteCaller))
+            {
+                body["inviteCaller"] = request.InviteCaller;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InviteUserIds))
             {

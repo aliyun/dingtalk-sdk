@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0.Models
         [Validation(Required=false)]
         public string Content { get; set; }
 
+        [NameInMap("coverUrl")]
+        [Validation(Required=false)]
+        public string CoverUrl { get; set; }
+
         [NameInMap("deviceCode")]
         [Validation(Required=false)]
         public string DeviceCode { get; set; }
