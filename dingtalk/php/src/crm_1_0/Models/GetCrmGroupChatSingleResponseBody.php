@@ -70,6 +70,13 @@ class GetCrmGroupChatSingleResponseBody extends Model
      * @var string
      */
     public $iconUrl;
+
+    /**
+     * @description corpId。
+     *
+     * @var string
+     */
+    public $corpId;
     protected $_name = [
         'chatId'             => 'chatId',
         'openConversationId' => 'openConversationId',
@@ -80,6 +87,7 @@ class GetCrmGroupChatSingleResponseBody extends Model
         'memberCount'        => 'memberCount',
         'gmtCreate'          => 'gmtCreate',
         'iconUrl'            => 'iconUrl',
+        'corpId'             => 'corpId',
     ];
 
     public function validate()
@@ -115,6 +123,9 @@ class GetCrmGroupChatSingleResponseBody extends Model
         }
         if (null !== $this->iconUrl) {
             $res['iconUrl'] = $this->iconUrl;
+        }
+        if (null !== $this->corpId) {
+            $res['corpId'] = $this->corpId;
         }
 
         return $res;
@@ -154,6 +165,9 @@ class GetCrmGroupChatSingleResponseBody extends Model
         }
         if (isset($map['iconUrl'])) {
             $model->iconUrl = $map['iconUrl'];
+        }
+        if (isset($map['corpId'])) {
+            $model->corpId = $map['corpId'];
         }
 
         return $model;

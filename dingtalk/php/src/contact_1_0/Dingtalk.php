@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vcontact_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\BatchApproveUnionApplyHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\BatchApproveUnionApplyRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\BatchApproveUnionApplyResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateCooperateOrgHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateCooperateOrgRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateCooperateOrgResponse;
@@ -1196,6 +1199,44 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetDingIdByMigrationDingIdResponse::fromMap($this->doROARequest('GetDingIdByMigrationDingId', 'contact_1.0', 'HTTP', 'GET', 'AK', '/v1.0/contact/orgAccount/getDingIdByMigrationDingIds', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param BatchApproveUnionApplyRequest $request
+     *
+     * @return BatchApproveUnionApplyResponse
+     */
+    public function batchApproveUnionApply($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchApproveUnionApplyHeaders([]);
+
+        return $this->batchApproveUnionApplyWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param BatchApproveUnionApplyRequest $request
+     * @param BatchApproveUnionApplyHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return BatchApproveUnionApplyResponse
+     */
+    public function batchApproveUnionApplyWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => Utils::toArray($request->body),
+        ]);
+
+        return BatchApproveUnionApplyResponse::fromMap($this->doROARequest('BatchApproveUnionApply', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/cooperateCorps/unionApplications/approve', 'none', $req, $runtime));
     }
 
     /**

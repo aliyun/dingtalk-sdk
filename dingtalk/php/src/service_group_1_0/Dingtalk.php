@@ -91,6 +91,9 @@ use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\RetractTicketResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\SearchGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\SearchGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\SearchGroupResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\SendMsgByTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\SendMsgByTaskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\SendMsgByTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\SendServiceGroupMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\SendServiceGroupMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\SendServiceGroupMessageResponse;
@@ -132,6 +135,72 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param SendMsgByTaskRequest $request
+     *
+     * @return SendMsgByTaskResponse
+     */
+    public function sendMsgByTask($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SendMsgByTaskHeaders([]);
+
+        return $this->sendMsgByTaskWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SendMsgByTaskRequest $request
+     * @param SendMsgByTaskHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return SendMsgByTaskResponse
+     */
+    public function sendMsgByTaskWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$body['openTeamId'] = $request->openTeamId;
+        }
+        if (!Utils::isUnset($request->taskName)) {
+            @$body['taskName'] = $request->taskName;
+        }
+        if (!Utils::isUnset($request->messageContent)) {
+            @$body['messageContent'] = $request->messageContent;
+        }
+        if (!Utils::isUnset($request->queryGroup)) {
+            @$body['queryGroup'] = $request->queryGroup;
+        }
+        if (!Utils::isUnset($request->sendConfig)) {
+            @$body['sendConfig'] = $request->sendConfig;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SendMsgByTaskResponse::fromMap($this->doROARequest('SendMsgByTask', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/messages/tasks/send', 'json', $req, $runtime));
     }
 
     /**
