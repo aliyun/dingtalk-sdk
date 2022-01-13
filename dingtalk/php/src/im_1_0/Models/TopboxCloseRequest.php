@@ -46,6 +46,13 @@ class TopboxCloseRequest extends Model
      * @var int
      */
     public $dingOauthAppId;
+
+    /**
+     * @description 酷应用编码
+     *
+     * @var string
+     */
+    public $coolAppCode;
     protected $_name = [
         'dingIsvOrgId'       => 'dingIsvOrgId',
         'openConversationId' => 'openConversationId',
@@ -54,6 +61,7 @@ class TopboxCloseRequest extends Model
         'dingSuiteKey'       => 'dingSuiteKey',
         'dingOrgId'          => 'dingOrgId',
         'dingOauthAppId'     => 'dingOauthAppId',
+        'coolAppCode'        => 'coolAppCode',
     ];
 
     public function validate()
@@ -83,6 +91,9 @@ class TopboxCloseRequest extends Model
         }
         if (null !== $this->dingOauthAppId) {
             $res['dingOauthAppId'] = $this->dingOauthAppId;
+        }
+        if (null !== $this->coolAppCode) {
+            $res['coolAppCode'] = $this->coolAppCode;
         }
 
         return $res;
@@ -116,6 +127,9 @@ class TopboxCloseRequest extends Model
         }
         if (isset($map['dingOauthAppId'])) {
             $model->dingOauthAppId = $map['dingOauthAppId'];
+        }
+        if (isset($map['coolAppCode'])) {
+            $model->coolAppCode = $map['coolAppCode'];
         }
 
         return $model;

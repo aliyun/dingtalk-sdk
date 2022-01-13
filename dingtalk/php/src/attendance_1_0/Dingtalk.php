@@ -31,6 +31,9 @@ use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetMachineResponse;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetMachineUserHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetMachineUserRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetMachineUserResponse;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetOvertimeSettingHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetOvertimeSettingRequest;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetOvertimeSettingResponse;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetUserHolidaysHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetUserHolidaysRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetUserHolidaysResponse;
@@ -529,6 +532,48 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CheckWritePermissionResponse::fromMap($this->doROARequest('CheckWritePermission', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/writePermissions/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetOvertimeSettingRequest $request
+     *
+     * @return GetOvertimeSettingResponse
+     */
+    public function getOvertimeSetting($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetOvertimeSettingHeaders([]);
+
+        return $this->getOvertimeSettingWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetOvertimeSettingRequest $request
+     * @param GetOvertimeSettingHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return GetOvertimeSettingResponse
+     */
+    public function getOvertimeSettingWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->overtimeSettingIds)) {
+            @$body['overtimeSettingIds'] = $request->overtimeSettingIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GetOvertimeSettingResponse::fromMap($this->doROARequest('GetOvertimeSetting', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/overtimeSettings/query', 'json', $req, $runtime));
     }
 
     /**

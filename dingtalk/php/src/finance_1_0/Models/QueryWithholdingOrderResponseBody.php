@@ -23,11 +23,11 @@ class QueryWithholdingOrderResponseBody extends Model
     public $subInstId;
 
     /**
-     * @description 付款人staffId
+     * @description 付款人userId
      *
      * @var string
      */
-    public $payerStaffId;
+    public $payerUserId;
 
     /**
      * @description 支付渠道
@@ -101,7 +101,7 @@ class QueryWithholdingOrderResponseBody extends Model
     protected $_name = [
         'instId'              => 'instId',
         'subInstId'           => 'subInstId',
-        'payerStaffId'        => 'payerStaffId',
+        'payerUserId'         => 'payerUserId',
         'payChannel'          => 'payChannel',
         'amount'              => 'amount',
         'outTradeNo'          => 'outTradeNo',
@@ -127,8 +127,8 @@ class QueryWithholdingOrderResponseBody extends Model
         if (null !== $this->subInstId) {
             $res['subInstId'] = $this->subInstId;
         }
-        if (null !== $this->payerStaffId) {
-            $res['payerStaffId'] = $this->payerStaffId;
+        if (null !== $this->payerUserId) {
+            $res['payerUserId'] = $this->payerUserId;
         }
         if (null !== $this->payChannel) {
             $res['payChannel'] = $this->payChannel;
@@ -178,8 +178,8 @@ class QueryWithholdingOrderResponseBody extends Model
         if (isset($map['subInstId'])) {
             $model->subInstId = $map['subInstId'];
         }
-        if (isset($map['payerStaffId'])) {
-            $model->payerStaffId = $map['payerStaffId'];
+        if (isset($map['payerUserId'])) {
+            $model->payerUserId = $map['payerUserId'];
         }
         if (isset($map['payChannel'])) {
             $model->payChannel = $map['payChannel'];

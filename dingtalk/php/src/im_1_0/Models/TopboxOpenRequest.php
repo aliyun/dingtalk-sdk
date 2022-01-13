@@ -60,6 +60,13 @@ class TopboxOpenRequest extends Model
      * @var string
      */
     public $platforms;
+
+    /**
+     * @description 酷应用编码
+     *
+     * @var string
+     */
+    public $coolAppCode;
     protected $_name = [
         'dingIsvOrgId'       => 'dingIsvOrgId',
         'openConversationId' => 'openConversationId',
@@ -70,6 +77,7 @@ class TopboxOpenRequest extends Model
         'dingOauthAppId'     => 'dingOauthAppId',
         'expiredTime'        => 'expiredTime',
         'platforms'          => 'platforms',
+        'coolAppCode'        => 'coolAppCode',
     ];
 
     public function validate()
@@ -105,6 +113,9 @@ class TopboxOpenRequest extends Model
         }
         if (null !== $this->platforms) {
             $res['platforms'] = $this->platforms;
+        }
+        if (null !== $this->coolAppCode) {
+            $res['coolAppCode'] = $this->coolAppCode;
         }
 
         return $res;
@@ -144,6 +155,9 @@ class TopboxOpenRequest extends Model
         }
         if (isset($map['platforms'])) {
             $model->platforms = $map['platforms'];
+        }
+        if (isset($map['coolAppCode'])) {
+            $model->coolAppCode = $map['coolAppCode'];
         }
 
         return $model;

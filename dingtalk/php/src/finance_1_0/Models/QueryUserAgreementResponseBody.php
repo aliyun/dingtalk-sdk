@@ -13,7 +13,7 @@ class QueryUserAgreementResponseBody extends Model
      *
      * @var string
      */
-    public $staffId;
+    public $userId;
 
     /**
      * @description 组织id
@@ -92,7 +92,7 @@ class QueryUserAgreementResponseBody extends Model
      */
     public $gmtExpire;
     protected $_name = [
-        'staffId'               => 'staffId',
+        'userId'                => 'userId',
         'corpId'                => 'corpId',
         'instId'                => 'instId',
         'subInstId'             => 'subInstId',
@@ -113,8 +113,8 @@ class QueryUserAgreementResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->staffId) {
-            $res['staffId'] = $this->staffId;
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
         if (null !== $this->corpId) {
             $res['corpId'] = $this->corpId;
@@ -161,8 +161,8 @@ class QueryUserAgreementResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['staffId'])) {
-            $model->staffId = $map['staffId'];
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
         if (isset($map['corpId'])) {
             $model->corpId = $map['corpId'];
