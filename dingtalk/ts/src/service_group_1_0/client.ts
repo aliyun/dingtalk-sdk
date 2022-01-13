@@ -2699,6 +2699,100 @@ export class SearchGroupResponse extends $tea.Model {
   }
 }
 
+export class SendMsgByTaskHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendMsgByTaskRequest extends $tea.Model {
+  messageContent?: SendMsgByTaskRequestMessageContent;
+  openTeamId?: string;
+  queryGroup?: SendMsgByTaskRequestQueryGroup;
+  sendConfig?: SendMsgByTaskRequestSendConfig;
+  taskName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      messageContent: 'messageContent',
+      openTeamId: 'openTeamId',
+      queryGroup: 'queryGroup',
+      sendConfig: 'sendConfig',
+      taskName: 'taskName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      messageContent: SendMsgByTaskRequestMessageContent,
+      openTeamId: 'string',
+      queryGroup: SendMsgByTaskRequestQueryGroup,
+      sendConfig: SendMsgByTaskRequestSendConfig,
+      taskName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendMsgByTaskResponseBody extends $tea.Model {
+  openBatchTaskId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openBatchTaskId: 'openBatchTaskId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openBatchTaskId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendMsgByTaskResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SendMsgByTaskResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SendMsgByTaskResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SendServiceGroupMessageHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4434,6 +4528,158 @@ export class SearchGroupResponseBodyRecords extends $tea.Model {
   }
 }
 
+export class SendMsgByTaskRequestMessageContentBtns extends $tea.Model {
+  actionURL?: string;
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      actionURL: 'actionURL',
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      actionURL: 'string',
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendMsgByTaskRequestMessageContent extends $tea.Model {
+  atActiveMemberNum?: number;
+  atActiveUser?: boolean;
+  atAll?: boolean;
+  btns?: SendMsgByTaskRequestMessageContentBtns[];
+  content?: string;
+  images?: string[];
+  messageType?: string;
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      atActiveMemberNum: 'atActiveMemberNum',
+      atActiveUser: 'atActiveUser',
+      atAll: 'atAll',
+      btns: 'btns',
+      content: 'content',
+      images: 'images',
+      messageType: 'messageType',
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      atActiveMemberNum: 'number',
+      atActiveUser: 'boolean',
+      atAll: 'boolean',
+      btns: { 'type': 'array', 'itemType': SendMsgByTaskRequestMessageContentBtns },
+      content: 'string',
+      images: { 'type': 'array', 'itemType': 'string' },
+      messageType: 'string',
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendMsgByTaskRequestQueryGroup extends $tea.Model {
+  groupTagNames?: string[];
+  lastActiveDateFilterType?: string;
+  lastActiveTimeEnd?: string;
+  lastActiveTimeStart?: string;
+  openConversationIds?: string[];
+  openGroupSetId?: string;
+  queryType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      groupTagNames: 'groupTagNames',
+      lastActiveDateFilterType: 'lastActiveDateFilterType',
+      lastActiveTimeEnd: 'lastActiveTimeEnd',
+      lastActiveTimeStart: 'lastActiveTimeStart',
+      openConversationIds: 'openConversationIds',
+      openGroupSetId: 'openGroupSetId',
+      queryType: 'queryType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      groupTagNames: { 'type': 'array', 'itemType': 'string' },
+      lastActiveDateFilterType: 'string',
+      lastActiveTimeEnd: 'string',
+      lastActiveTimeStart: 'string',
+      openConversationIds: { 'type': 'array', 'itemType': 'string' },
+      openGroupSetId: 'string',
+      queryType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendMsgByTaskRequestSendConfigUrlTrackConfig extends $tea.Model {
+  title?: string;
+  trackId?: string;
+  trackUrl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      title: 'title',
+      trackId: 'trackId',
+      trackUrl: 'trackUrl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      title: 'string',
+      trackId: 'string',
+      trackUrl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendMsgByTaskRequestSendConfig extends $tea.Model {
+  needUrlTrack?: boolean;
+  sendTime?: string;
+  sendType?: string;
+  urlTrackConfig?: SendMsgByTaskRequestSendConfigUrlTrackConfig[];
+  static names(): { [key: string]: string } {
+    return {
+      needUrlTrack: 'needUrlTrack',
+      sendTime: 'sendTime',
+      sendType: 'sendType',
+      urlTrackConfig: 'urlTrackConfig',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      needUrlTrack: 'boolean',
+      sendTime: 'string',
+      sendType: 'string',
+      urlTrackConfig: { 'type': 'array', 'itemType': SendMsgByTaskRequestSendConfigUrlTrackConfig },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SendServiceGroupMessageRequestBtns extends $tea.Model {
   actionURL?: string;
   title?: string;
@@ -5969,6 +6215,51 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<SearchGroupResponse>(await this.doROARequest("SearchGroup", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/groups/search`, "json", req, runtime), new SearchGroupResponse({}));
+  }
+
+  async sendMsgByTask(request: SendMsgByTaskRequest): Promise<SendMsgByTaskResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SendMsgByTaskHeaders({ });
+    return await this.sendMsgByTaskWithOptions(request, headers, runtime);
+  }
+
+  async sendMsgByTaskWithOptions(request: SendMsgByTaskRequest, headers: SendMsgByTaskHeaders, runtime: $Util.RuntimeOptions): Promise<SendMsgByTaskResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset($tea.toMap(request.messageContent))) {
+      body["messageContent"] = request.messageContent;
+    }
+
+    if (!Util.isUnset(request.openTeamId)) {
+      body["openTeamId"] = request.openTeamId;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.queryGroup))) {
+      body["queryGroup"] = request.queryGroup;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.sendConfig))) {
+      body["sendConfig"] = request.sendConfig;
+    }
+
+    if (!Util.isUnset(request.taskName)) {
+      body["taskName"] = request.taskName;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SendMsgByTaskResponse>(await this.doROARequest("SendMsgByTask", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/messages/tasks/send`, "json", req, runtime), new SendMsgByTaskResponse({}));
   }
 
   async sendServiceGroupMessage(request: SendServiceGroupMessageRequest): Promise<SendServiceGroupMessageResponse> {

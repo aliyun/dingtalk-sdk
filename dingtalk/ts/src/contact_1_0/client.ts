@@ -7,6 +7,66 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class BatchApproveUnionApplyHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchApproveUnionApplyRequest extends $tea.Model {
+  body?: BatchApproveUnionApplyRequestBody[];
+  static names(): { [key: string]: string } {
+    return {
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      body: { 'type': 'array', 'itemType': BatchApproveUnionApplyRequestBody },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchApproveUnionApplyResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateCooperateOrgHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3541,6 +3601,31 @@ export class UpdateUserOwnnessResponse extends $tea.Model {
   }
 }
 
+export class BatchApproveUnionApplyRequestBody extends $tea.Model {
+  branchCorpId?: string;
+  linkDeptId?: number;
+  unionRootName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      branchCorpId: 'branchCorpId',
+      linkDeptId: 'linkDeptId',
+      unionRootName: 'unionRootName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      branchCorpId: 'string',
+      linkDeptId: 'number',
+      unionRootName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateManagementGroupRequestMembers extends $tea.Model {
   memberId?: string;
   memberType?: string;
@@ -4194,6 +4279,30 @@ export default class Client extends OpenApi {
 
   }
 
+
+  async batchApproveUnionApply(request: BatchApproveUnionApplyRequest): Promise<BatchApproveUnionApplyResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BatchApproveUnionApplyHeaders({ });
+    return await this.batchApproveUnionApplyWithOptions(request, headers, runtime);
+  }
+
+  async batchApproveUnionApplyWithOptions(request: BatchApproveUnionApplyRequest, headers: BatchApproveUnionApplyHeaders, runtime: $Util.RuntimeOptions): Promise<BatchApproveUnionApplyResponse> {
+    Util.validateModel(request);
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: Util.toArray(request.body),
+    });
+    return $tea.cast<BatchApproveUnionApplyResponse>(await this.doROARequest("BatchApproveUnionApply", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/cooperateCorps/unionApplications/approve`, "none", req, runtime), new BatchApproveUnionApplyResponse({}));
+  }
 
   async createCooperateOrg(request: CreateCooperateOrgRequest): Promise<CreateCooperateOrgResponse> {
     let runtime = new $Util.RuntimeOptions({ });
