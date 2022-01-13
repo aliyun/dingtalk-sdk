@@ -2959,7 +2959,7 @@ class QueryUserAgreementRequest(TeaModel):
 class QueryUserAgreementResponseBody(TeaModel):
     def __init__(
         self,
-        staff_id: str = None,
+        user_id: str = None,
         corp_id: str = None,
         inst_id: str = None,
         sub_inst_id: str = None,
@@ -2973,7 +2973,7 @@ class QueryUserAgreementResponseBody(TeaModel):
         gmt_expire: str = None,
     ):
         # 用户id
-        self.staff_id = staff_id
+        self.user_id = user_id
         # 组织id
         self.corp_id = corp_id
         # 主机构id
@@ -3006,8 +3006,8 @@ class QueryUserAgreementResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.staff_id is not None:
-            result['staffId'] = self.staff_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
         if self.corp_id is not None:
             result['corpId'] = self.corp_id
         if self.inst_id is not None:
@@ -3034,8 +3034,8 @@ class QueryUserAgreementResponseBody(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('staffId') is not None:
-            self.staff_id = m.get('staffId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
         if m.get('corpId') is not None:
             self.corp_id = m.get('corpId')
         if m.get('instId') is not None:
@@ -7222,7 +7222,7 @@ class QueryWithholdingOrderResponseBody(TeaModel):
         self,
         inst_id: str = None,
         sub_inst_id: str = None,
-        payer_staff_id: str = None,
+        payer_user_id: str = None,
         pay_channel: str = None,
         amount: str = None,
         out_trade_no: str = None,
@@ -7238,8 +7238,8 @@ class QueryWithholdingOrderResponseBody(TeaModel):
         self.inst_id = inst_id
         # 子机构编号
         self.sub_inst_id = sub_inst_id
-        # 付款人staffId
-        self.payer_staff_id = payer_staff_id
+        # 付款人userId
+        self.payer_user_id = payer_user_id
         # 支付渠道
         self.pay_channel = pay_channel
         # 代扣金额（元）
@@ -7274,8 +7274,8 @@ class QueryWithholdingOrderResponseBody(TeaModel):
             result['instId'] = self.inst_id
         if self.sub_inst_id is not None:
             result['subInstId'] = self.sub_inst_id
-        if self.payer_staff_id is not None:
-            result['payerStaffId'] = self.payer_staff_id
+        if self.payer_user_id is not None:
+            result['payerUserId'] = self.payer_user_id
         if self.pay_channel is not None:
             result['payChannel'] = self.pay_channel
         if self.amount is not None:
@@ -7304,8 +7304,8 @@ class QueryWithholdingOrderResponseBody(TeaModel):
             self.inst_id = m.get('instId')
         if m.get('subInstId') is not None:
             self.sub_inst_id = m.get('subInstId')
-        if m.get('payerStaffId') is not None:
-            self.payer_staff_id = m.get('payerStaffId')
+        if m.get('payerUserId') is not None:
+            self.payer_user_id = m.get('payerUserId')
         if m.get('payChannel') is not None:
             self.pay_channel = m.get('payChannel')
         if m.get('amount') is not None:

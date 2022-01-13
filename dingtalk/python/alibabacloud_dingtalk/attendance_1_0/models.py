@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.model import TeaModel
-from typing import Dict, List
+from typing import Dict, List, Any
 
 
 class CreateApproveHeaders(TeaModel):
@@ -2131,6 +2131,534 @@ class CheckWritePermissionResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = CheckWritePermissionResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetOvertimeSettingHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetOvertimeSettingRequest(TeaModel):
+    def __init__(
+        self,
+        overtime_setting_ids: List[int] = None,
+    ):
+        self.overtime_setting_ids = overtime_setting_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.overtime_setting_ids is not None:
+            result['overtimeSettingIds'] = self.overtime_setting_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('overtimeSettingIds') is not None:
+            self.overtime_setting_ids = m.get('overtimeSettingIds')
+        return self
+
+
+class GetOvertimeSettingResponseBodyResultWarningSettings(TeaModel):
+    def __init__(
+        self,
+        time: str = None,
+        threshold: int = None,
+        action: str = None,
+    ):
+        # 预警类型
+        self.time = time
+        # 提醒阈值
+        self.threshold = threshold
+        # 风险预警 或 最大加班时间
+        self.action = action
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.time is not None:
+            result['time'] = self.time
+        if self.threshold is not None:
+            result['threshold'] = self.threshold
+        if self.action is not None:
+            result['action'] = self.action
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('time') is not None:
+            self.time = m.get('time')
+        if m.get('threshold') is not None:
+            self.threshold = m.get('threshold')
+        if m.get('action') is not None:
+            self.action = m.get('action')
+        return self
+
+
+class GetOvertimeSettingResponseBodyResultOvertimeDivisions(TeaModel):
+    def __init__(
+        self,
+        previous_day_type: str = None,
+        next_day_type: str = None,
+        time_split_point: str = None,
+    ):
+        # 前一日类型
+        self.previous_day_type = previous_day_type
+        # 后一日类型
+        self.next_day_type = next_day_type
+        # 分割时间点
+        self.time_split_point = time_split_point
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.previous_day_type is not None:
+            result['previousDayType'] = self.previous_day_type
+        if self.next_day_type is not None:
+            result['nextDayType'] = self.next_day_type
+        if self.time_split_point is not None:
+            result['timeSplitPoint'] = self.time_split_point
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('previousDayType') is not None:
+            self.previous_day_type = m.get('previousDayType')
+        if m.get('nextDayType') is not None:
+            self.next_day_type = m.get('nextDayType')
+        if m.get('timeSplitPoint') is not None:
+            self.time_split_point = m.get('timeSplitPoint')
+        return self
+
+
+class ResultDurationSettingsValueSkipTimeByFrames(TeaModel):
+    def __init__(
+        self,
+        start_time: str = None,
+        end_time: str = None,
+        valid: bool = None,
+    ):
+        # 开始时间，格式为"HH:mm"
+        self.start_time = start_time
+        # 结束时间，格式为"HH:mm"
+        self.end_time = end_time
+        # 是否生效
+        self.valid = valid
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.valid is not None:
+            result['valid'] = self.valid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('valid') is not None:
+            self.valid = m.get('valid')
+        return self
+
+
+class ResultDurationSettingsValueSkipTimeByDurations(TeaModel):
+    def __init__(
+        self,
+        duration: int = None,
+        minus: int = None,
+    ):
+        # 每天加班满 x小时，单位 秒
+        self.duration = duration
+        # 扣除 x小时，单位 秒
+        self.minus = minus
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.duration is not None:
+            result['duration'] = self.duration
+        if self.minus is not None:
+            result['minus'] = self.minus
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('duration') is not None:
+            self.duration = m.get('duration')
+        if m.get('minus') is not None:
+            self.minus = m.get('minus')
+        return self
+
+
+class ResultDurationSettingsValue(TeaModel):
+    def __init__(
+        self,
+        calc_type: int = None,
+        duration_type: int = None,
+        overtime_redress: bool = None,
+        settings: Dict[str, Any] = None,
+        overtime_redress_by: str = None,
+        vacation_rate: float = None,
+        skip_time: str = None,
+        skip_time_by_frames: List[ResultDurationSettingsValueSkipTimeByFrames] = None,
+        skip_time_by_durations: List[ResultDurationSettingsValueSkipTimeByDurations] = None,
+        holiday_plan_overtime_redress: bool = None,
+        holiday_plan_overtime_redress_by: str = None,
+        holiday_plan_vacation_rate: float = None,
+    ):
+        self.calc_type = calc_type
+        self.duration_type = duration_type
+        # 加班时长计为调休或加班费开关
+        self.overtime_redress = overtime_redress
+        # 加班开始时间 或 最小加班时间
+        self.settings = settings
+        # 加班时长计为方式
+        self.overtime_redress_by = overtime_redress_by
+        # 调休时长计算
+        self.vacation_rate = vacation_rate
+        # 扣除休息时间
+        self.skip_time = skip_time
+        # 休息时段
+        self.skip_time_by_frames = skip_time_by_frames
+        # 加班时长
+        self.skip_time_by_durations = skip_time_by_durations
+        # 休息日或节假日排班加班时长计为调休或加班费开关
+        self.holiday_plan_overtime_redress = holiday_plan_overtime_redress
+        # 休息日或节假日排班加班时长计为方式
+        self.holiday_plan_overtime_redress_by = holiday_plan_overtime_redress_by
+        # 休息日或节假日排班调休时长计算
+        self.holiday_plan_vacation_rate = holiday_plan_vacation_rate
+
+    def validate(self):
+        if self.skip_time_by_frames:
+            for k in self.skip_time_by_frames:
+                if k:
+                    k.validate()
+        if self.skip_time_by_durations:
+            for k in self.skip_time_by_durations:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.calc_type is not None:
+            result['calcType'] = self.calc_type
+        if self.duration_type is not None:
+            result['durationType'] = self.duration_type
+        if self.overtime_redress is not None:
+            result['overtimeRedress'] = self.overtime_redress
+        if self.settings is not None:
+            result['settings'] = self.settings
+        if self.overtime_redress_by is not None:
+            result['overtimeRedressBy'] = self.overtime_redress_by
+        if self.vacation_rate is not None:
+            result['vacationRate'] = self.vacation_rate
+        if self.skip_time is not None:
+            result['skipTime'] = self.skip_time
+        result['skipTimeByFrames'] = []
+        if self.skip_time_by_frames is not None:
+            for k in self.skip_time_by_frames:
+                result['skipTimeByFrames'].append(k.to_map() if k else None)
+        result['skipTimeByDurations'] = []
+        if self.skip_time_by_durations is not None:
+            for k in self.skip_time_by_durations:
+                result['skipTimeByDurations'].append(k.to_map() if k else None)
+        if self.holiday_plan_overtime_redress is not None:
+            result['holidayPlanOvertimeRedress'] = self.holiday_plan_overtime_redress
+        if self.holiday_plan_overtime_redress_by is not None:
+            result['holidayPlanOvertimeRedressBy'] = self.holiday_plan_overtime_redress_by
+        if self.holiday_plan_vacation_rate is not None:
+            result['holidayPlanVacationRate'] = self.holiday_plan_vacation_rate
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('calcType') is not None:
+            self.calc_type = m.get('calcType')
+        if m.get('durationType') is not None:
+            self.duration_type = m.get('durationType')
+        if m.get('overtimeRedress') is not None:
+            self.overtime_redress = m.get('overtimeRedress')
+        if m.get('settings') is not None:
+            self.settings = m.get('settings')
+        if m.get('overtimeRedressBy') is not None:
+            self.overtime_redress_by = m.get('overtimeRedressBy')
+        if m.get('vacationRate') is not None:
+            self.vacation_rate = m.get('vacationRate')
+        if m.get('skipTime') is not None:
+            self.skip_time = m.get('skipTime')
+        self.skip_time_by_frames = []
+        if m.get('skipTimeByFrames') is not None:
+            for k in m.get('skipTimeByFrames'):
+                temp_model = ResultDurationSettingsValueSkipTimeByFrames()
+                self.skip_time_by_frames.append(temp_model.from_map(k))
+        self.skip_time_by_durations = []
+        if m.get('skipTimeByDurations') is not None:
+            for k in m.get('skipTimeByDurations'):
+                temp_model = ResultDurationSettingsValueSkipTimeByDurations()
+                self.skip_time_by_durations.append(temp_model.from_map(k))
+        if m.get('holidayPlanOvertimeRedress') is not None:
+            self.holiday_plan_overtime_redress = m.get('holidayPlanOvertimeRedress')
+        if m.get('holidayPlanOvertimeRedressBy') is not None:
+            self.holiday_plan_overtime_redress_by = m.get('holidayPlanOvertimeRedressBy')
+        if m.get('holidayPlanVacationRate') is not None:
+            self.holiday_plan_vacation_rate = m.get('holidayPlanVacationRate')
+        return self
+
+
+class GetOvertimeSettingResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        setting_id: int = None,
+        name: str = None,
+        default: bool = None,
+        duration_settings: Dict[str, ResultDurationSettingsValue] = None,
+        warning_settings: List[GetOvertimeSettingResponseBodyResultWarningSettings] = None,
+        step_type: int = None,
+        step_value: float = None,
+        work_minutes_per_day: int = None,
+        overtime_divisions: List[GetOvertimeSettingResponseBodyResultOvertimeDivisions] = None,
+        id: int = None,
+    ):
+        # 设置id
+        self.setting_id = setting_id
+        # 规则名称
+        self.name = name
+        # 是否默认
+        self.default = default
+        self.duration_settings = duration_settings
+        self.warning_settings = warning_settings
+        # 加班时长单位
+        self.step_type = step_type
+        # 加班时长是否取整 单位 小时
+        self.step_value = step_value
+        # 日折算时长 单位：分钟
+        self.work_minutes_per_day = work_minutes_per_day
+        # 时间分割规则
+        self.overtime_divisions = overtime_divisions
+        # 历史加班规则设置id
+        self.id = id
+
+    def validate(self):
+        if self.duration_settings:
+            for v in self.duration_settings.values():
+                if v:
+                    v.validate()
+        if self.warning_settings:
+            for k in self.warning_settings:
+                if k:
+                    k.validate()
+        if self.overtime_divisions:
+            for k in self.overtime_divisions:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.setting_id is not None:
+            result['settingId'] = self.setting_id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.default is not None:
+            result['default'] = self.default
+        result['durationSettings'] = {}
+        if self.duration_settings is not None:
+            for k, v in self.duration_settings.items():
+                result['durationSettings'][k] = v.to_map()
+        result['warningSettings'] = []
+        if self.warning_settings is not None:
+            for k in self.warning_settings:
+                result['warningSettings'].append(k.to_map() if k else None)
+        if self.step_type is not None:
+            result['stepType'] = self.step_type
+        if self.step_value is not None:
+            result['stepValue'] = self.step_value
+        if self.work_minutes_per_day is not None:
+            result['workMinutesPerDay'] = self.work_minutes_per_day
+        result['overtimeDivisions'] = []
+        if self.overtime_divisions is not None:
+            for k in self.overtime_divisions:
+                result['overtimeDivisions'].append(k.to_map() if k else None)
+        if self.id is not None:
+            result['id'] = self.id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('settingId') is not None:
+            self.setting_id = m.get('settingId')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('default') is not None:
+            self.default = m.get('default')
+        self.duration_settings = {}
+        if m.get('durationSettings') is not None:
+            for k, v in m.get('durationSettings').items():
+                temp_model = ResultDurationSettingsValue()
+                self.duration_settings[k] = temp_model.from_map(v)
+        self.warning_settings = []
+        if m.get('warningSettings') is not None:
+            for k in m.get('warningSettings'):
+                temp_model = GetOvertimeSettingResponseBodyResultWarningSettings()
+                self.warning_settings.append(temp_model.from_map(k))
+        if m.get('stepType') is not None:
+            self.step_type = m.get('stepType')
+        if m.get('stepValue') is not None:
+            self.step_value = m.get('stepValue')
+        if m.get('workMinutesPerDay') is not None:
+            self.work_minutes_per_day = m.get('workMinutesPerDay')
+        self.overtime_divisions = []
+        if m.get('overtimeDivisions') is not None:
+            for k in m.get('overtimeDivisions'):
+                temp_model = GetOvertimeSettingResponseBodyResultOvertimeDivisions()
+                self.overtime_divisions.append(temp_model.from_map(k))
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        return self
+
+
+class GetOvertimeSettingResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[GetOvertimeSettingResponseBodyResult] = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = GetOvertimeSettingResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class GetOvertimeSettingResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetOvertimeSettingResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetOvertimeSettingResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

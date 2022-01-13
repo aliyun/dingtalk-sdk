@@ -741,6 +741,70 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('CheckWritePermission', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/writePermissions/query', 'json', req, runtime)
         )
 
+    def get_overtime_setting(
+        self,
+        request: dingtalkattendance__1__0_models.GetOvertimeSettingRequest,
+    ) -> dingtalkattendance__1__0_models.GetOvertimeSettingResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.GetOvertimeSettingHeaders()
+        return self.get_overtime_setting_with_options(request, headers, runtime)
+
+    async def get_overtime_setting_async(
+        self,
+        request: dingtalkattendance__1__0_models.GetOvertimeSettingRequest,
+    ) -> dingtalkattendance__1__0_models.GetOvertimeSettingResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.GetOvertimeSettingHeaders()
+        return await self.get_overtime_setting_with_options_async(request, headers, runtime)
+
+    def get_overtime_setting_with_options(
+        self,
+        request: dingtalkattendance__1__0_models.GetOvertimeSettingRequest,
+        headers: dingtalkattendance__1__0_models.GetOvertimeSettingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.GetOvertimeSettingResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.overtime_setting_ids):
+            body['overtimeSettingIds'] = request.overtime_setting_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.GetOvertimeSettingResponse(),
+            self.do_roarequest('GetOvertimeSetting', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/overtimeSettings/query', 'json', req, runtime)
+        )
+
+    async def get_overtime_setting_with_options_async(
+        self,
+        request: dingtalkattendance__1__0_models.GetOvertimeSettingRequest,
+        headers: dingtalkattendance__1__0_models.GetOvertimeSettingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.GetOvertimeSettingResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.overtime_setting_ids):
+            body['overtimeSettingIds'] = request.overtime_setting_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.GetOvertimeSettingResponse(),
+            await self.do_roarequest_async('GetOvertimeSetting', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/overtimeSettings/query', 'json', req, runtime)
+        )
+
     def get_closing_accounts(
         self,
         request: dingtalkattendance__1__0_models.GetClosingAccountsRequest,

@@ -61,6 +61,8 @@ class Client(OpenApiClient):
             body['dingOrgId'] = request.ding_org_id
         if not UtilClient.is_unset(request.ding_oauth_app_id):
             body['dingOauthAppId'] = request.ding_oauth_app_id
+        if not UtilClient.is_unset(request.cool_app_code):
+            body['coolAppCode'] = request.cool_app_code
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -97,6 +99,8 @@ class Client(OpenApiClient):
             body['dingOrgId'] = request.ding_org_id
         if not UtilClient.is_unset(request.ding_oauth_app_id):
             body['dingOauthAppId'] = request.ding_oauth_app_id
+        if not UtilClient.is_unset(request.cool_app_code):
+            body['coolAppCode'] = request.cool_app_code
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1177,6 +1181,8 @@ class Client(OpenApiClient):
             body['expiredTime'] = request.expired_time
         if not UtilClient.is_unset(request.platforms):
             body['platforms'] = request.platforms
+        if not UtilClient.is_unset(request.cool_app_code):
+            body['coolAppCode'] = request.cool_app_code
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1217,6 +1223,8 @@ class Client(OpenApiClient):
             body['expiredTime'] = request.expired_time
         if not UtilClient.is_unset(request.platforms):
             body['platforms'] = request.platforms
+        if not UtilClient.is_unset(request.cool_app_code):
+            body['coolAppCode'] = request.cool_app_code
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

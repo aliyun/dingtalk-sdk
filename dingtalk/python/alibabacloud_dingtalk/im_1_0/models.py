@@ -47,6 +47,7 @@ class TopboxCloseRequest(TeaModel):
         ding_suite_key: str = None,
         ding_org_id: int = None,
         ding_oauth_app_id: int = None,
+        cool_app_code: str = None,
     ):
         self.ding_isv_org_id = ding_isv_org_id
         # 接收卡片的群的openConversationId
@@ -57,6 +58,8 @@ class TopboxCloseRequest(TeaModel):
         self.ding_suite_key = ding_suite_key
         self.ding_org_id = ding_org_id
         self.ding_oauth_app_id = ding_oauth_app_id
+        # 酷应用编码
+        self.cool_app_code = cool_app_code
 
     def validate(self):
         pass
@@ -81,6 +84,8 @@ class TopboxCloseRequest(TeaModel):
             result['dingOrgId'] = self.ding_org_id
         if self.ding_oauth_app_id is not None:
             result['dingOauthAppId'] = self.ding_oauth_app_id
+        if self.cool_app_code is not None:
+            result['coolAppCode'] = self.cool_app_code
         return result
 
     def from_map(self, m: dict = None):
@@ -99,6 +104,8 @@ class TopboxCloseRequest(TeaModel):
             self.ding_org_id = m.get('dingOrgId')
         if m.get('dingOauthAppId') is not None:
             self.ding_oauth_app_id = m.get('dingOauthAppId')
+        if m.get('coolAppCode') is not None:
+            self.cool_app_code = m.get('coolAppCode')
         return self
 
 
@@ -2398,6 +2405,7 @@ class TopboxOpenRequest(TeaModel):
         ding_oauth_app_id: int = None,
         expired_time: int = None,
         platforms: str = None,
+        cool_app_code: str = None,
     ):
         self.ding_isv_org_id = ding_isv_org_id
         # 接收卡片的群的openConversationId
@@ -2412,6 +2420,8 @@ class TopboxOpenRequest(TeaModel):
         self.expired_time = expired_time
         # 期望吊顶的端（多个'|'隔开，如："ios|win|"）
         self.platforms = platforms
+        # 酷应用编码
+        self.cool_app_code = cool_app_code
 
     def validate(self):
         pass
@@ -2440,6 +2450,8 @@ class TopboxOpenRequest(TeaModel):
             result['expiredTime'] = self.expired_time
         if self.platforms is not None:
             result['platforms'] = self.platforms
+        if self.cool_app_code is not None:
+            result['coolAppCode'] = self.cool_app_code
         return result
 
     def from_map(self, m: dict = None):
@@ -2462,6 +2474,8 @@ class TopboxOpenRequest(TeaModel):
             self.expired_time = m.get('expiredTime')
         if m.get('platforms') is not None:
             self.platforms = m.get('platforms')
+        if m.get('coolAppCode') is not None:
+            self.cool_app_code = m.get('coolAppCode')
         return self
 
 
