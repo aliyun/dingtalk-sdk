@@ -4,6 +4,477 @@ from Tea.model import TeaModel
 from typing import Dict, List
 
 
+class SendMsgByTaskHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SendMsgByTaskRequestMessageContentBtns(TeaModel):
+    def __init__(
+        self,
+        action_url: str = None,
+        title: str = None,
+    ):
+        self.action_url = action_url
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action_url is not None:
+            result['actionURL'] = self.action_url
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('actionURL') is not None:
+            self.action_url = m.get('actionURL')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class SendMsgByTaskRequestMessageContent(TeaModel):
+    def __init__(
+        self,
+        at_all: bool = None,
+        at_active_user: bool = None,
+        message_type: str = None,
+        title: str = None,
+        content: str = None,
+        images: List[str] = None,
+        btns: List[SendMsgByTaskRequestMessageContentBtns] = None,
+        at_active_member_num: int = None,
+    ):
+        # 是否At全部人员
+        self.at_all = at_all
+        # 是否At活跃成员
+        self.at_active_user = at_active_user
+        # 消息类型
+        self.message_type = message_type
+        # 标题
+        self.title = title
+        # 内容
+        self.content = content
+        # 图片列表
+        self.images = images
+        self.btns = btns
+        # at活跃成员数量
+        self.at_active_member_num = at_active_member_num
+
+    def validate(self):
+        if self.btns:
+            for k in self.btns:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.at_all is not None:
+            result['atAll'] = self.at_all
+        if self.at_active_user is not None:
+            result['atActiveUser'] = self.at_active_user
+        if self.message_type is not None:
+            result['messageType'] = self.message_type
+        if self.title is not None:
+            result['title'] = self.title
+        if self.content is not None:
+            result['content'] = self.content
+        if self.images is not None:
+            result['images'] = self.images
+        result['btns'] = []
+        if self.btns is not None:
+            for k in self.btns:
+                result['btns'].append(k.to_map() if k else None)
+        if self.at_active_member_num is not None:
+            result['atActiveMemberNum'] = self.at_active_member_num
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('atAll') is not None:
+            self.at_all = m.get('atAll')
+        if m.get('atActiveUser') is not None:
+            self.at_active_user = m.get('atActiveUser')
+        if m.get('messageType') is not None:
+            self.message_type = m.get('messageType')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('images') is not None:
+            self.images = m.get('images')
+        self.btns = []
+        if m.get('btns') is not None:
+            for k in m.get('btns'):
+                temp_model = SendMsgByTaskRequestMessageContentBtns()
+                self.btns.append(temp_model.from_map(k))
+        if m.get('atActiveMemberNum') is not None:
+            self.at_active_member_num = m.get('atActiveMemberNum')
+        return self
+
+
+class SendMsgByTaskRequestQueryGroup(TeaModel):
+    def __init__(
+        self,
+        query_type: str = None,
+        open_conversation_ids: List[str] = None,
+        last_active_time_start: str = None,
+        last_active_time_end: str = None,
+        last_active_date_filter_type: str = None,
+        group_tag_names: List[str] = None,
+        open_group_set_id: str = None,
+    ):
+        # 群发圈选类型 1. AIMED 精准圈选 2. MULTI_CONDITIONS 多条件圈选
+        self.query_type = query_type
+        # 精准圈选-群ID集合
+        self.open_conversation_ids = open_conversation_ids
+        # 最近活跃时间的开始时间
+        self.last_active_time_start = last_active_time_start
+        # 最近活跃时间的结束时间
+        self.last_active_time_end = last_active_time_end
+        # 活跃日期筛选类型，ACTIVE=活跃      NOTACTIVE=不活跃
+        self.last_active_date_filter_type = last_active_date_filter_type
+        # 群标签
+        self.group_tag_names = group_tag_names
+        # 开放群组ID
+        self.open_group_set_id = open_group_set_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.query_type is not None:
+            result['queryType'] = self.query_type
+        if self.open_conversation_ids is not None:
+            result['openConversationIds'] = self.open_conversation_ids
+        if self.last_active_time_start is not None:
+            result['lastActiveTimeStart'] = self.last_active_time_start
+        if self.last_active_time_end is not None:
+            result['lastActiveTimeEnd'] = self.last_active_time_end
+        if self.last_active_date_filter_type is not None:
+            result['lastActiveDateFilterType'] = self.last_active_date_filter_type
+        if self.group_tag_names is not None:
+            result['groupTagNames'] = self.group_tag_names
+        if self.open_group_set_id is not None:
+            result['openGroupSetId'] = self.open_group_set_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('queryType') is not None:
+            self.query_type = m.get('queryType')
+        if m.get('openConversationIds') is not None:
+            self.open_conversation_ids = m.get('openConversationIds')
+        if m.get('lastActiveTimeStart') is not None:
+            self.last_active_time_start = m.get('lastActiveTimeStart')
+        if m.get('lastActiveTimeEnd') is not None:
+            self.last_active_time_end = m.get('lastActiveTimeEnd')
+        if m.get('lastActiveDateFilterType') is not None:
+            self.last_active_date_filter_type = m.get('lastActiveDateFilterType')
+        if m.get('groupTagNames') is not None:
+            self.group_tag_names = m.get('groupTagNames')
+        if m.get('openGroupSetId') is not None:
+            self.open_group_set_id = m.get('openGroupSetId')
+        return self
+
+
+class SendMsgByTaskRequestSendConfigUrlTrackConfig(TeaModel):
+    def __init__(
+        self,
+        track_url: str = None,
+        title: str = None,
+        track_id: str = None,
+    ):
+        # 跟踪链接URL
+        self.track_url = track_url
+        # 跟踪链接的标题
+        self.title = title
+        # 跟踪链接的坑位ID（sg开头）
+        self.track_id = track_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.track_url is not None:
+            result['trackUrl'] = self.track_url
+        if self.title is not None:
+            result['title'] = self.title
+        if self.track_id is not None:
+            result['trackId'] = self.track_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('trackUrl') is not None:
+            self.track_url = m.get('trackUrl')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('trackId') is not None:
+            self.track_id = m.get('trackId')
+        return self
+
+
+class SendMsgByTaskRequestSendConfig(TeaModel):
+    def __init__(
+        self,
+        send_type: str = None,
+        send_time: str = None,
+        need_url_track: bool = None,
+        url_track_config: List[SendMsgByTaskRequestSendConfigUrlTrackConfig] = None,
+    ):
+        # 发送类型      * TIMING=定时执行      * INSTANT=立即执行
+        self.send_type = send_type
+        # 执行时间（sendType=TIMING时传入）
+        self.send_time = send_time
+        # 是否链接追踪
+        self.need_url_track = need_url_track
+        # 链接跟踪配置
+        self.url_track_config = url_track_config
+
+    def validate(self):
+        if self.url_track_config:
+            for k in self.url_track_config:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.send_type is not None:
+            result['sendType'] = self.send_type
+        if self.send_time is not None:
+            result['sendTime'] = self.send_time
+        if self.need_url_track is not None:
+            result['needUrlTrack'] = self.need_url_track
+        result['urlTrackConfig'] = []
+        if self.url_track_config is not None:
+            for k in self.url_track_config:
+                result['urlTrackConfig'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('sendType') is not None:
+            self.send_type = m.get('sendType')
+        if m.get('sendTime') is not None:
+            self.send_time = m.get('sendTime')
+        if m.get('needUrlTrack') is not None:
+            self.need_url_track = m.get('needUrlTrack')
+        self.url_track_config = []
+        if m.get('urlTrackConfig') is not None:
+            for k in m.get('urlTrackConfig'):
+                temp_model = SendMsgByTaskRequestSendConfigUrlTrackConfig()
+                self.url_track_config.append(temp_model.from_map(k))
+        return self
+
+
+class SendMsgByTaskRequest(TeaModel):
+    def __init__(
+        self,
+        ding_isv_org_id: int = None,
+        ding_org_id: int = None,
+        ding_suite_key: str = None,
+        ding_token_grant_type: int = None,
+        open_team_id: str = None,
+        task_name: str = None,
+        message_content: SendMsgByTaskRequestMessageContent = None,
+        query_group: SendMsgByTaskRequestQueryGroup = None,
+        send_config: SendMsgByTaskRequestSendConfig = None,
+    ):
+        self.ding_isv_org_id = ding_isv_org_id
+        self.ding_org_id = ding_org_id
+        self.ding_suite_key = ding_suite_key
+        self.ding_token_grant_type = ding_token_grant_type
+        # 开放团队ID
+        self.open_team_id = open_team_id
+        # 群发任务名称
+        self.task_name = task_name
+        # 群发内容
+        self.message_content = message_content
+        self.query_group = query_group
+        # 发送配置
+        self.send_config = send_config
+
+    def validate(self):
+        if self.message_content:
+            self.message_content.validate()
+        if self.query_group:
+            self.query_group.validate()
+        if self.send_config:
+            self.send_config.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_isv_org_id is not None:
+            result['dingIsvOrgId'] = self.ding_isv_org_id
+        if self.ding_org_id is not None:
+            result['dingOrgId'] = self.ding_org_id
+        if self.ding_suite_key is not None:
+            result['dingSuiteKey'] = self.ding_suite_key
+        if self.ding_token_grant_type is not None:
+            result['dingTokenGrantType'] = self.ding_token_grant_type
+        if self.open_team_id is not None:
+            result['openTeamId'] = self.open_team_id
+        if self.task_name is not None:
+            result['taskName'] = self.task_name
+        if self.message_content is not None:
+            result['messageContent'] = self.message_content.to_map()
+        if self.query_group is not None:
+            result['queryGroup'] = self.query_group.to_map()
+        if self.send_config is not None:
+            result['sendConfig'] = self.send_config.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingIsvOrgId') is not None:
+            self.ding_isv_org_id = m.get('dingIsvOrgId')
+        if m.get('dingOrgId') is not None:
+            self.ding_org_id = m.get('dingOrgId')
+        if m.get('dingSuiteKey') is not None:
+            self.ding_suite_key = m.get('dingSuiteKey')
+        if m.get('dingTokenGrantType') is not None:
+            self.ding_token_grant_type = m.get('dingTokenGrantType')
+        if m.get('openTeamId') is not None:
+            self.open_team_id = m.get('openTeamId')
+        if m.get('taskName') is not None:
+            self.task_name = m.get('taskName')
+        if m.get('messageContent') is not None:
+            temp_model = SendMsgByTaskRequestMessageContent()
+            self.message_content = temp_model.from_map(m['messageContent'])
+        if m.get('queryGroup') is not None:
+            temp_model = SendMsgByTaskRequestQueryGroup()
+            self.query_group = temp_model.from_map(m['queryGroup'])
+        if m.get('sendConfig') is not None:
+            temp_model = SendMsgByTaskRequestSendConfig()
+            self.send_config = temp_model.from_map(m['sendConfig'])
+        return self
+
+
+class SendMsgByTaskResponseBody(TeaModel):
+    def __init__(
+        self,
+        open_batch_task_id: str = None,
+    ):
+        # Id of the request
+        self.open_batch_task_id = open_batch_task_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_batch_task_id is not None:
+            result['openBatchTaskId'] = self.open_batch_task_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openBatchTaskId') is not None:
+            self.open_batch_task_id = m.get('openBatchTaskId')
+        return self
+
+
+class SendMsgByTaskResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SendMsgByTaskResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SendMsgByTaskResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class AssignTicketHeaders(TeaModel):
     def __init__(
         self,

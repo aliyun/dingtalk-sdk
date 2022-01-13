@@ -23,6 +23,102 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def send_msg_by_task(
+        self,
+        request: dingtalkservice_group__1__0_models.SendMsgByTaskRequest,
+    ) -> dingtalkservice_group__1__0_models.SendMsgByTaskResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.SendMsgByTaskHeaders()
+        return self.send_msg_by_task_with_options(request, headers, runtime)
+
+    async def send_msg_by_task_async(
+        self,
+        request: dingtalkservice_group__1__0_models.SendMsgByTaskRequest,
+    ) -> dingtalkservice_group__1__0_models.SendMsgByTaskResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.SendMsgByTaskHeaders()
+        return await self.send_msg_by_task_with_options_async(request, headers, runtime)
+
+    def send_msg_by_task_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.SendMsgByTaskRequest,
+        headers: dingtalkservice_group__1__0_models.SendMsgByTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.SendMsgByTaskResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.task_name):
+            body['taskName'] = request.task_name
+        if not UtilClient.is_unset(request.message_content):
+            body['messageContent'] = request.message_content
+        if not UtilClient.is_unset(request.query_group):
+            body['queryGroup'] = request.query_group
+        if not UtilClient.is_unset(request.send_config):
+            body['sendConfig'] = request.send_config
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.SendMsgByTaskResponse(),
+            self.do_roarequest('SendMsgByTask', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/messages/tasks/send', 'json', req, runtime)
+        )
+
+    async def send_msg_by_task_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.SendMsgByTaskRequest,
+        headers: dingtalkservice_group__1__0_models.SendMsgByTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.SendMsgByTaskResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.task_name):
+            body['taskName'] = request.task_name
+        if not UtilClient.is_unset(request.message_content):
+            body['messageContent'] = request.message_content
+        if not UtilClient.is_unset(request.query_group):
+            body['queryGroup'] = request.query_group
+        if not UtilClient.is_unset(request.send_config):
+            body['sendConfig'] = request.send_config
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.SendMsgByTaskResponse(),
+            await self.do_roarequest_async('SendMsgByTask', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/messages/tasks/send', 'json', req, runtime)
+        )
+
     def assign_ticket(
         self,
         request: dingtalkservice_group__1__0_models.AssignTicketRequest,

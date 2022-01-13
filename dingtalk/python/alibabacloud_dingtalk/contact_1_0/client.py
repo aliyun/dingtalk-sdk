@@ -1599,6 +1599,64 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetDingIdByMigrationDingId', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/orgAccount/getDingIdByMigrationDingIds', 'json', req, runtime)
         )
 
+    def batch_approve_union_apply(
+        self,
+        request: dingtalkcontact__1__0_models.BatchApproveUnionApplyRequest,
+    ) -> dingtalkcontact__1__0_models.BatchApproveUnionApplyResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.BatchApproveUnionApplyHeaders()
+        return self.batch_approve_union_apply_with_options(request, headers, runtime)
+
+    async def batch_approve_union_apply_async(
+        self,
+        request: dingtalkcontact__1__0_models.BatchApproveUnionApplyRequest,
+    ) -> dingtalkcontact__1__0_models.BatchApproveUnionApplyResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.BatchApproveUnionApplyHeaders()
+        return await self.batch_approve_union_apply_with_options_async(request, headers, runtime)
+
+    def batch_approve_union_apply_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.BatchApproveUnionApplyRequest,
+        headers: dingtalkcontact__1__0_models.BatchApproveUnionApplyHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.BatchApproveUnionApplyResponse:
+        UtilClient.validate_model(request)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=UtilClient.to_array(request.body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.BatchApproveUnionApplyResponse(),
+            self.do_roarequest('BatchApproveUnionApply', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/cooperateCorps/unionApplications/approve', 'none', req, runtime)
+        )
+
+    async def batch_approve_union_apply_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.BatchApproveUnionApplyRequest,
+        headers: dingtalkcontact__1__0_models.BatchApproveUnionApplyHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.BatchApproveUnionApplyResponse:
+        UtilClient.validate_model(request)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=UtilClient.to_array(request.body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.BatchApproveUnionApplyResponse(),
+            await self.do_roarequest_async('BatchApproveUnionApply', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/cooperateCorps/unionApplications/approve', 'none', req, runtime)
+        )
+
     def get_cooperate_org_invite_info(
         self,
         cooperate_corp_id: str,
