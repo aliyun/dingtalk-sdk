@@ -450,6 +450,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public TopboxCloseResponse topboxCloseWithOptions(TopboxCloseRequest request, TopboxCloseHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.coolAppCode)) {
+            body.put("coolAppCode", request.coolAppCode);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
             body.put("openConversationId", request.openConversationId);
         }
@@ -483,6 +487,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public TopboxOpenResponse topboxOpenWithOptions(TopboxOpenRequest request, TopboxOpenHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.coolAppCode)) {
+            body.put("coolAppCode", request.coolAppCode);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.expiredTime)) {
             body.put("expiredTime", request.expiredTime);
         }

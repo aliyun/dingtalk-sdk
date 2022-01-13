@@ -347,6 +347,35 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("GetMachineUser", "attendance_1.0", "HTTP", "GET", "AK", "/v1.0/attendance/machines/getUser/" + devId + "", "json", req, runtime), new GetMachineUserResponse());
     }
 
+    public GetOvertimeSettingResponse getOvertimeSetting(GetOvertimeSettingRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        GetOvertimeSettingHeaders headers = new GetOvertimeSettingHeaders();
+        return this.getOvertimeSettingWithOptions(request, headers, runtime);
+    }
+
+    public GetOvertimeSettingResponse getOvertimeSettingWithOptions(GetOvertimeSettingRequest request, GetOvertimeSettingHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.overtimeSettingIds)) {
+            body.put("overtimeSettingIds", request.overtimeSettingIds);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("GetOvertimeSetting", "attendance_1.0", "HTTP", "POST", "AK", "/v1.0/attendance/overtimeSettings/query", "json", req, runtime), new GetOvertimeSettingResponse());
+    }
+
     public GetUserHolidaysResponse getUserHolidays(GetUserHolidaysRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         GetUserHolidaysHeaders headers = new GetUserHolidaysHeaders();

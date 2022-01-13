@@ -36,9 +36,9 @@ public class QueryWithholdingOrderResponseBody extends TeaModel {
     @NameInMap("payChannelAccountNo")
     public String payChannelAccountNo;
 
-    // 付款人staffId
-    @NameInMap("payerStaffId")
-    public String payerStaffId;
+    // 付款人userId
+    @NameInMap("payerUserId")
+    public String payerUserId;
 
     // 代扣备注
     @NameInMap("remark")
@@ -125,12 +125,12 @@ public class QueryWithholdingOrderResponseBody extends TeaModel {
         return this.payChannelAccountNo;
     }
 
-    public QueryWithholdingOrderResponseBody setPayerStaffId(String payerStaffId) {
-        this.payerStaffId = payerStaffId;
+    public QueryWithholdingOrderResponseBody setPayerUserId(String payerUserId) {
+        this.payerUserId = payerUserId;
         return this;
     }
-    public String getPayerStaffId() {
-        return this.payerStaffId;
+    public String getPayerUserId() {
+        return this.payerUserId;
     }
 
     public QueryWithholdingOrderResponseBody setRemark(String remark) {

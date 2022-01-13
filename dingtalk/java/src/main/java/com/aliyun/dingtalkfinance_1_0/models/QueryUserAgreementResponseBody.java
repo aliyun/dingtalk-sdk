@@ -40,10 +40,6 @@ public class QueryUserAgreementResponseBody extends TeaModel {
     @NameInMap("payChannelAccountNo")
     public String payChannelAccountNo;
 
-    // 用户id
-    @NameInMap("staffId")
-    public String staffId;
-
     // 签约状态
     @NameInMap("status")
     public String status;
@@ -51,6 +47,10 @@ public class QueryUserAgreementResponseBody extends TeaModel {
     // 子机构id
     @NameInMap("subInstId")
     public String subInstId;
+
+    // 用户id
+    @NameInMap("userId")
+    public String userId;
 
     public static QueryUserAgreementResponseBody build(java.util.Map<String, ?> map) throws Exception {
         QueryUserAgreementResponseBody self = new QueryUserAgreementResponseBody();
@@ -129,14 +129,6 @@ public class QueryUserAgreementResponseBody extends TeaModel {
         return this.payChannelAccountNo;
     }
 
-    public QueryUserAgreementResponseBody setStaffId(String staffId) {
-        this.staffId = staffId;
-        return this;
-    }
-    public String getStaffId() {
-        return this.staffId;
-    }
-
     public QueryUserAgreementResponseBody setStatus(String status) {
         this.status = status;
         return this;
@@ -151,6 +143,14 @@ public class QueryUserAgreementResponseBody extends TeaModel {
     }
     public String getSubInstId() {
         return this.subInstId;
+    }
+
+    public QueryUserAgreementResponseBody setUserId(String userId) {
+        this.userId = userId;
+        return this;
+    }
+    public String getUserId() {
+        return this.userId;
     }
 
 }

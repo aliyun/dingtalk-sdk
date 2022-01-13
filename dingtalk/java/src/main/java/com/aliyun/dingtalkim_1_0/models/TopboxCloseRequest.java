@@ -4,6 +4,10 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class TopboxCloseRequest extends TeaModel {
+    // 酷应用编码
+    @NameInMap("coolAppCode")
+    public String coolAppCode;
+
     // 接收卡片的群的openConversationId
     @NameInMap("openConversationId")
     public String openConversationId;
@@ -15,6 +19,14 @@ public class TopboxCloseRequest extends TeaModel {
     public static TopboxCloseRequest build(java.util.Map<String, ?> map) throws Exception {
         TopboxCloseRequest self = new TopboxCloseRequest();
         return TeaModel.build(map, self);
+    }
+
+    public TopboxCloseRequest setCoolAppCode(String coolAppCode) {
+        this.coolAppCode = coolAppCode;
+        return this;
+    }
+    public String getCoolAppCode() {
+        return this.coolAppCode;
     }
 
     public TopboxCloseRequest setOpenConversationId(String openConversationId) {
