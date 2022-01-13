@@ -9,6 +9,13 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class TopboxCloseRequest : TeaModel {
+        /// <summary>
+        /// 酷应用编码
+        /// </summary>
+        [NameInMap("coolAppCode")]
+        [Validation(Required=false)]
+        public string CoolAppCode { get; set; }
+
         [NameInMap("dingIsvOrgId")]
         [Validation(Required=false)]
         public long? DingIsvOrgId { get; set; }

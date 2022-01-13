@@ -66,11 +66,11 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         public string PayChannelAccountNo { get; set; }
 
         /// <summary>
-        /// 付款人staffId
+        /// 付款人userId
         /// </summary>
-        [NameInMap("payerStaffId")]
+        [NameInMap("payerUserId")]
         [Validation(Required=false)]
-        public string PayerStaffId { get; set; }
+        public string PayerUserId { get; set; }
 
         /// <summary>
         /// 代扣备注

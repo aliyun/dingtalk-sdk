@@ -73,13 +73,6 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         public string PayChannelAccountNo { get; set; }
 
         /// <summary>
-        /// 用户id
-        /// </summary>
-        [NameInMap("staffId")]
-        [Validation(Required=false)]
-        public string StaffId { get; set; }
-
-        /// <summary>
         /// 签约状态
         /// </summary>
         [NameInMap("status")]
@@ -92,6 +85,13 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         [NameInMap("subInstId")]
         [Validation(Required=false)]
         public string SubInstId { get; set; }
+
+        /// <summary>
+        /// 用户id
+        /// </summary>
+        [NameInMap("userId")]
+        [Validation(Required=false)]
+        public string UserId { get; set; }
 
     }
 

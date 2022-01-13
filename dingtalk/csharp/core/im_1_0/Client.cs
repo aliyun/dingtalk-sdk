@@ -1268,6 +1268,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CoolAppCode))
+            {
+                body["coolAppCode"] = request.CoolAppCode;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingIsvOrgId))
             {
                 body["dingIsvOrgId"] = request.DingIsvOrgId;
@@ -1317,6 +1321,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CoolAppCode))
+            {
+                body["coolAppCode"] = request.CoolAppCode;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingIsvOrgId))
             {
                 body["dingIsvOrgId"] = request.DingIsvOrgId;
@@ -1380,6 +1388,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CoolAppCode))
+            {
+                body["coolAppCode"] = request.CoolAppCode;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingIsvOrgId))
             {
                 body["dingIsvOrgId"] = request.DingIsvOrgId;
@@ -1437,6 +1449,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CoolAppCode))
+            {
+                body["coolAppCode"] = request.CoolAppCode;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingIsvOrgId))
             {
                 body["dingIsvOrgId"] = request.DingIsvOrgId;
