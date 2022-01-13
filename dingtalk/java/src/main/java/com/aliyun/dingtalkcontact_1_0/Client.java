@@ -21,6 +21,30 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    public BatchApproveUnionApplyResponse batchApproveUnionApply(BatchApproveUnionApplyRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        BatchApproveUnionApplyHeaders headers = new BatchApproveUnionApplyHeaders();
+        return this.batchApproveUnionApplyWithOptions(request, headers, runtime);
+    }
+
+    public BatchApproveUnionApplyResponse batchApproveUnionApplyWithOptions(BatchApproveUnionApplyRequest request, BatchApproveUnionApplyHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.teautil.Common.toArray(request.body))
+        ));
+        return TeaModel.toModel(this.doROARequest("BatchApproveUnionApply", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/cooperateCorps/unionApplications/approve", "none", req, runtime), new BatchApproveUnionApplyResponse());
+    }
+
     public CreateCooperateOrgResponse createCooperateOrg(CreateCooperateOrgRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         CreateCooperateOrgHeaders headers = new CreateCooperateOrgHeaders();
