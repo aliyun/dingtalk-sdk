@@ -857,10 +857,12 @@ export class TopboxCloseHeaders extends $tea.Model {
 }
 
 export class TopboxCloseRequest extends $tea.Model {
+  coolAppCode?: string;
   openConversationId?: string;
   outTrackId?: string;
   static names(): { [key: string]: string } {
     return {
+      coolAppCode: 'coolAppCode',
       openConversationId: 'openConversationId',
       outTrackId: 'outTrackId',
     };
@@ -868,6 +870,7 @@ export class TopboxCloseRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      coolAppCode: 'string',
       openConversationId: 'string',
       outTrackId: 'string',
     };
@@ -920,12 +923,14 @@ export class TopboxOpenHeaders extends $tea.Model {
 }
 
 export class TopboxOpenRequest extends $tea.Model {
+  coolAppCode?: string;
   expiredTime?: number;
   openConversationId?: string;
   outTrackId?: string;
   platforms?: string;
   static names(): { [key: string]: string } {
     return {
+      coolAppCode: 'coolAppCode',
       expiredTime: 'expiredTime',
       openConversationId: 'openConversationId',
       outTrackId: 'outTrackId',
@@ -935,6 +940,7 @@ export class TopboxOpenRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      coolAppCode: 'string',
       expiredTime: 'number',
       openConversationId: 'string',
       outTrackId: 'string',
@@ -2039,6 +2045,10 @@ export default class Client extends OpenApi {
   async topboxCloseWithOptions(request: TopboxCloseRequest, headers: TopboxCloseHeaders, runtime: $Util.RuntimeOptions): Promise<TopboxCloseResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.coolAppCode)) {
+      body["coolAppCode"] = request.coolAppCode;
+    }
+
     if (!Util.isUnset(request.openConversationId)) {
       body["openConversationId"] = request.openConversationId;
     }
@@ -2072,6 +2082,10 @@ export default class Client extends OpenApi {
   async topboxOpenWithOptions(request: TopboxOpenRequest, headers: TopboxOpenHeaders, runtime: $Util.RuntimeOptions): Promise<TopboxOpenResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.coolAppCode)) {
+      body["coolAppCode"] = request.coolAppCode;
+    }
+
     if (!Util.isUnset(request.expiredTime)) {
       body["expiredTime"] = request.expiredTime;
     }

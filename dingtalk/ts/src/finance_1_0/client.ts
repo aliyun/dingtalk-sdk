@@ -1746,9 +1746,9 @@ export class QueryUserAgreementResponseBody extends $tea.Model {
   payChannel?: string;
   payChannelAccountName?: string;
   payChannelAccountNo?: string;
-  staffId?: string;
   status?: string;
   subInstId?: string;
+  userId?: string;
   static names(): { [key: string]: string } {
     return {
       agreementNo: 'agreementNo',
@@ -1760,9 +1760,9 @@ export class QueryUserAgreementResponseBody extends $tea.Model {
       payChannel: 'payChannel',
       payChannelAccountName: 'payChannelAccountName',
       payChannelAccountNo: 'payChannelAccountNo',
-      staffId: 'staffId',
       status: 'status',
       subInstId: 'subInstId',
+      userId: 'userId',
     };
   }
 
@@ -1777,9 +1777,9 @@ export class QueryUserAgreementResponseBody extends $tea.Model {
       payChannel: 'string',
       payChannelAccountName: 'string',
       payChannelAccountNo: 'string',
-      staffId: 'string',
       status: 'string',
       subInstId: 'string',
+      userId: 'string',
     };
   }
 
@@ -1923,7 +1923,7 @@ export class QueryWithholdingOrderResponseBody extends $tea.Model {
   outTradeNo?: string;
   payChannel?: string;
   payChannelAccountNo?: string;
-  payerStaffId?: string;
+  payerUserId?: string;
   remark?: string;
   status?: string;
   subInstId?: string;
@@ -1938,7 +1938,7 @@ export class QueryWithholdingOrderResponseBody extends $tea.Model {
       outTradeNo: 'outTradeNo',
       payChannel: 'payChannel',
       payChannelAccountNo: 'payChannelAccountNo',
-      payerStaffId: 'payerStaffId',
+      payerUserId: 'payerUserId',
       remark: 'remark',
       status: 'status',
       subInstId: 'subInstId',
@@ -1956,7 +1956,7 @@ export class QueryWithholdingOrderResponseBody extends $tea.Model {
       outTradeNo: 'string',
       payChannel: 'string',
       payChannelAccountNo: 'string',
-      payerStaffId: 'string',
+      payerUserId: 'string',
       remark: 'string',
       status: 'string',
       subInstId: 'string',

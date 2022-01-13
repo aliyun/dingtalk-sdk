@@ -789,6 +789,88 @@ export class GetMachineUserResponse extends $tea.Model {
   }
 }
 
+export class GetOvertimeSettingHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOvertimeSettingRequest extends $tea.Model {
+  overtimeSettingIds?: number[];
+  static names(): { [key: string]: string } {
+    return {
+      overtimeSettingIds: 'overtimeSettingIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      overtimeSettingIds: { 'type': 'array', 'itemType': 'number' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOvertimeSettingResponseBody extends $tea.Model {
+  result?: GetOvertimeSettingResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': GetOvertimeSettingResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOvertimeSettingResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetOvertimeSettingResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetOvertimeSettingResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetUserHolidaysHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -932,6 +1014,58 @@ export class SyncScheduleInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ResultDurationSettingsValue extends $tea.Model {
+  calcType?: number;
+  durationType?: number;
+  overtimeRedress?: boolean;
+  settings?: { [key: string]: any };
+  overtimeRedressBy?: string;
+  vacationRate?: number;
+  skipTime?: string;
+  skipTimeByFrames?: ResultDurationSettingsValueSkipTimeByFrames[];
+  skipTimeByDurations?: ResultDurationSettingsValueSkipTimeByDurations[];
+  holidayPlanOvertimeRedress?: boolean;
+  holidayPlanOvertimeRedressBy?: string;
+  holidayPlanVacationRate?: number;
+  static names(): { [key: string]: string } {
+    return {
+      calcType: 'calcType',
+      durationType: 'durationType',
+      overtimeRedress: 'overtimeRedress',
+      settings: 'settings',
+      overtimeRedressBy: 'overtimeRedressBy',
+      vacationRate: 'vacationRate',
+      skipTime: 'skipTime',
+      skipTimeByFrames: 'skipTimeByFrames',
+      skipTimeByDurations: 'skipTimeByDurations',
+      holidayPlanOvertimeRedress: 'holidayPlanOvertimeRedress',
+      holidayPlanOvertimeRedressBy: 'holidayPlanOvertimeRedressBy',
+      holidayPlanVacationRate: 'holidayPlanVacationRate',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      calcType: 'number',
+      durationType: 'number',
+      overtimeRedress: 'boolean',
+      settings: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      overtimeRedressBy: 'string',
+      vacationRate: 'number',
+      skipTime: 'string',
+      skipTimeByFrames: { 'type': 'array', 'itemType': ResultDurationSettingsValueSkipTimeByFrames },
+      skipTimeByDurations: { 'type': 'array', 'itemType': ResultDurationSettingsValueSkipTimeByDurations },
+      holidayPlanOvertimeRedress: 'boolean',
+      holidayPlanOvertimeRedressBy: 'string',
+      holidayPlanVacationRate: 'number',
     };
   }
 
@@ -1341,6 +1475,102 @@ export class GetMachineUserResponseBodyResult extends $tea.Model {
   }
 }
 
+export class GetOvertimeSettingResponseBodyResultOvertimeDivisions extends $tea.Model {
+  nextDayType?: string;
+  previousDayType?: string;
+  timeSplitPoint?: string;
+  static names(): { [key: string]: string } {
+    return {
+      nextDayType: 'nextDayType',
+      previousDayType: 'previousDayType',
+      timeSplitPoint: 'timeSplitPoint',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nextDayType: 'string',
+      previousDayType: 'string',
+      timeSplitPoint: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOvertimeSettingResponseBodyResultWarningSettings extends $tea.Model {
+  action?: string;
+  threshold?: number;
+  time?: string;
+  static names(): { [key: string]: string } {
+    return {
+      action: 'action',
+      threshold: 'threshold',
+      time: 'time',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      action: 'string',
+      threshold: 'number',
+      time: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOvertimeSettingResponseBodyResult extends $tea.Model {
+  default?: boolean;
+  durationSettings?: { [key: string]: ResultDurationSettingsValue };
+  id?: number;
+  name?: string;
+  overtimeDivisions?: GetOvertimeSettingResponseBodyResultOvertimeDivisions[];
+  settingId?: number;
+  stepType?: number;
+  stepValue?: number;
+  warningSettings?: GetOvertimeSettingResponseBodyResultWarningSettings[];
+  workMinutesPerDay?: number;
+  static names(): { [key: string]: string } {
+    return {
+      default: 'default',
+      durationSettings: 'durationSettings',
+      id: 'id',
+      name: 'name',
+      overtimeDivisions: 'overtimeDivisions',
+      settingId: 'settingId',
+      stepType: 'stepType',
+      stepValue: 'stepValue',
+      warningSettings: 'warningSettings',
+      workMinutesPerDay: 'workMinutesPerDay',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      default: 'boolean',
+      durationSettings: { 'type': 'map', 'keyType': 'string', 'valueType': ResultDurationSettingsValue },
+      id: 'number',
+      name: 'string',
+      overtimeDivisions: { 'type': 'array', 'itemType': GetOvertimeSettingResponseBodyResultOvertimeDivisions },
+      settingId: 'number',
+      stepType: 'number',
+      stepValue: 'number',
+      warningSettings: { 'type': 'array', 'itemType': GetOvertimeSettingResponseBodyResultWarningSettings },
+      workMinutesPerDay: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetUserHolidaysResponseBodyResultHolidays extends $tea.Model {
   holidayName?: string;
   holidayType?: string;
@@ -1411,6 +1641,53 @@ export class SyncScheduleInfoRequestScheduleInfos extends $tea.Model {
       positionKeys: { 'type': 'array', 'itemType': 'string' },
       retainAttendanceCheck: 'boolean',
       wifiKeys: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ResultDurationSettingsValueSkipTimeByFrames extends $tea.Model {
+  startTime?: string;
+  endTime?: string;
+  valid?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      startTime: 'startTime',
+      endTime: 'endTime',
+      valid: 'valid',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      startTime: 'string',
+      endTime: 'string',
+      valid: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ResultDurationSettingsValueSkipTimeByDurations extends $tea.Model {
+  duration?: number;
+  minus?: number;
+  static names(): { [key: string]: string } {
+    return {
+      duration: 'duration',
+      minus: 'minus',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      duration: 'number',
+      minus: 'number',
     };
   }
 
@@ -1756,6 +2033,35 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<GetMachineUserResponse>(await this.doROARequest("GetMachineUser", "attendance_1.0", "HTTP", "GET", "AK", `/v1.0/attendance/machines/getUser/${devId}`, "json", req, runtime), new GetMachineUserResponse({}));
+  }
+
+  async getOvertimeSetting(request: GetOvertimeSettingRequest): Promise<GetOvertimeSettingResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetOvertimeSettingHeaders({ });
+    return await this.getOvertimeSettingWithOptions(request, headers, runtime);
+  }
+
+  async getOvertimeSettingWithOptions(request: GetOvertimeSettingRequest, headers: GetOvertimeSettingHeaders, runtime: $Util.RuntimeOptions): Promise<GetOvertimeSettingResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.overtimeSettingIds)) {
+      body["overtimeSettingIds"] = request.overtimeSettingIds;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<GetOvertimeSettingResponse>(await this.doROARequest("GetOvertimeSetting", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/overtimeSettings/query`, "json", req, runtime), new GetOvertimeSettingResponse({}));
   }
 
   async getUserHolidays(request: GetUserHolidaysRequest): Promise<GetUserHolidaysResponse> {
