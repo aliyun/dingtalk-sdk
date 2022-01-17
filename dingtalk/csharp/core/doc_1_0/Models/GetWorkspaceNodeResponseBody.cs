@@ -23,6 +23,12 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         [Validation(Required=false)]
         public GetWorkspaceNodeResponseBodyNodeBO NodeBO { get; set; }
         public class GetWorkspaceNodeResponseBodyNodeBO : TeaModel {
+            [NameInMap("docType")]
+            [Validation(Required=false)]
+            public string DocType { get; set; }
+            [NameInMap("lastEditTime")]
+            [Validation(Required=false)]
+            public long? LastEditTime { get; set; }
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }

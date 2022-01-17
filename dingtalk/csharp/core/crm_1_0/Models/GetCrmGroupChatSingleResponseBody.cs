@@ -17,13 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         public string ChatId { get; set; }
 
         /// <summary>
-        /// corpId。
-        /// </summary>
-        [NameInMap("corpId")]
-        [Validation(Required=false)]
-        public string CorpId { get; set; }
-
-        /// <summary>
         /// 创建时间(时间戳)
         /// </summary>
         [NameInMap("gmtCreate")]

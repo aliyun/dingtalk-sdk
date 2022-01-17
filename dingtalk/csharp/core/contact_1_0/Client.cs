@@ -80,6 +80,86 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
             return TeaModel.ToObject<BatchApproveUnionApplyResponse>(await DoROARequestAsync("BatchApproveUnionApply", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/cooperateCorps/unionApplications/approve", "none", req, runtime));
         }
 
+        public ChangeMainAdminResponse ChangeMainAdmin(ChangeMainAdminRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ChangeMainAdminHeaders headers = new ChangeMainAdminHeaders();
+            return ChangeMainAdminWithOptions(request, headers, runtime);
+        }
+
+        public async Task<ChangeMainAdminResponse> ChangeMainAdminAsync(ChangeMainAdminRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ChangeMainAdminHeaders headers = new ChangeMainAdminHeaders();
+            return await ChangeMainAdminWithOptionsAsync(request, headers, runtime);
+        }
+
+        public ChangeMainAdminResponse ChangeMainAdminWithOptions(ChangeMainAdminRequest request, ChangeMainAdminHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EffectCorpId))
+            {
+                body["effectCorpId"] = request.EffectCorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceUserId))
+            {
+                body["sourceUserId"] = request.SourceUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetUserId))
+            {
+                body["targetUserId"] = request.TargetUserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<ChangeMainAdminResponse>(DoROARequest("ChangeMainAdmin", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/orgAccounts/mainAdministrators/change", "none", req, runtime));
+        }
+
+        public async Task<ChangeMainAdminResponse> ChangeMainAdminWithOptionsAsync(ChangeMainAdminRequest request, ChangeMainAdminHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EffectCorpId))
+            {
+                body["effectCorpId"] = request.EffectCorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceUserId))
+            {
+                body["sourceUserId"] = request.SourceUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetUserId))
+            {
+                body["targetUserId"] = request.TargetUserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<ChangeMainAdminResponse>(await DoROARequestAsync("ChangeMainAdmin", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/orgAccounts/mainAdministrators/change", "none", req, runtime));
+        }
+
         public CreateCooperateOrgResponse CreateCooperateOrg(CreateCooperateOrgRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1662,6 +1742,70 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
             return TeaModel.ToObject<ListManagementGroupsResponse>(await DoROARequestAsync("ListManagementGroups", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/managementGroups", "json", req, runtime));
+        }
+
+        public ListOwnedOrgByStaffIdResponse ListOwnedOrgByStaffId(ListOwnedOrgByStaffIdRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListOwnedOrgByStaffIdHeaders headers = new ListOwnedOrgByStaffIdHeaders();
+            return ListOwnedOrgByStaffIdWithOptions(request, headers, runtime);
+        }
+
+        public async Task<ListOwnedOrgByStaffIdResponse> ListOwnedOrgByStaffIdAsync(ListOwnedOrgByStaffIdRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListOwnedOrgByStaffIdHeaders headers = new ListOwnedOrgByStaffIdHeaders();
+            return await ListOwnedOrgByStaffIdWithOptionsAsync(request, headers, runtime);
+        }
+
+        public ListOwnedOrgByStaffIdResponse ListOwnedOrgByStaffIdWithOptions(ListOwnedOrgByStaffIdRequest request, ListOwnedOrgByStaffIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<ListOwnedOrgByStaffIdResponse>(DoROARequest("ListOwnedOrgByStaffId", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/orgAccounts/ownedOrganizations", "json", req, runtime));
+        }
+
+        public async Task<ListOwnedOrgByStaffIdResponse> ListOwnedOrgByStaffIdWithOptionsAsync(ListOwnedOrgByStaffIdRequest request, ListOwnedOrgByStaffIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<ListOwnedOrgByStaffIdResponse>(await DoROARequestAsync("ListOwnedOrgByStaffId", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/orgAccounts/ownedOrganizations", "json", req, runtime));
         }
 
         public ListSeniorSettingsResponse ListSeniorSettings(ListSeniorSettingsRequest request)

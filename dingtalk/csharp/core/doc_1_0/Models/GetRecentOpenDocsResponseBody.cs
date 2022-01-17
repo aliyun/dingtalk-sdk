@@ -8,7 +8,7 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
-    public class GetRecentEditDocsResponseBody : TeaModel {
+    public class GetRecentOpenDocsResponseBody : TeaModel {
         [NameInMap("nextToken")]
         [Validation(Required=false)]
         public string NextToken { get; set; }
@@ -18,15 +18,15 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         /// </summary>
         [NameInMap("recentList")]
         [Validation(Required=false)]
-        public List<GetRecentEditDocsResponseBodyRecentList> RecentList { get; set; }
-        public class GetRecentEditDocsResponseBodyRecentList : TeaModel {
+        public List<GetRecentOpenDocsResponseBodyRecentList> RecentList { get; set; }
+        public class GetRecentOpenDocsResponseBodyRecentList : TeaModel {
             /// <summary>
             /// 文档信息
             /// </summary>
             [NameInMap("nodeBO")]
             [Validation(Required=false)]
-            public GetRecentEditDocsResponseBodyRecentListNodeBO NodeBO { get; set; }
-            public class GetRecentEditDocsResponseBodyRecentListNodeBO : TeaModel {
+            public GetRecentOpenDocsResponseBodyRecentListNodeBO NodeBO { get; set; }
+            public class GetRecentOpenDocsResponseBodyRecentListNodeBO : TeaModel {
                 [NameInMap("nodeId")]
                 [Validation(Required=false)]
                 public string NodeId { get; set; }
@@ -36,9 +36,9 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
                 [NameInMap("url")]
                 [Validation(Required=false)]
                 public string Url { get; set; }
-                [NameInMap("lastEditTime")]
+                [NameInMap("lastOpenTime")]
                 [Validation(Required=false)]
-                public long? LastEditTime { get; set; }
+                public long? LastOpenTime { get; set; }
                 [NameInMap("isDeleted")]
                 [Validation(Required=false)]
                 public bool? IsDeleted { get; set; }
@@ -52,8 +52,8 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
             /// </summary>
             [NameInMap("workspaceBO")]
             [Validation(Required=false)]
-            public GetRecentEditDocsResponseBodyRecentListWorkspaceBO WorkspaceBO { get; set; }
-            public class GetRecentEditDocsResponseBodyRecentListWorkspaceBO : TeaModel {
+            public GetRecentOpenDocsResponseBodyRecentListWorkspaceBO WorkspaceBO { get; set; }
+            public class GetRecentOpenDocsResponseBodyRecentListWorkspaceBO : TeaModel {
                 [NameInMap("workspaceId")]
                 [Validation(Required=false)]
                 public string WorkspaceId { get; set; }

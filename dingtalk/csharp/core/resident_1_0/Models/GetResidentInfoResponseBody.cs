@@ -16,6 +16,20 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
         [Validation(Required=false)]
         public string Address { get; set; }
 
+        /// <summary>
+        /// 全员群opencid
+        /// </summary>
+        [NameInMap("allUserGroupOpenConversationId")]
+        [Validation(Required=false)]
+        public string AllUserGroupOpenConversationId { get; set; }
+
+        /// <summary>
+        /// 全员群群主 userid
+        /// </summary>
+        [NameInMap("allUserGroupOwnerUserId")]
+        [Validation(Required=false)]
+        public string AllUserGroupOwnerUserId { get; set; }
+
         [NameInMap("buildingArea")]
         [Validation(Required=false)]
         public float? BuildingArea { get; set; }
@@ -76,6 +90,20 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
             [Validation(Required=false)]
             public string UserName { get; set; }
         };
+
+        /// <summary>
+        /// 物业部门群cid
+        /// </summary>
+        [NameInMap("propertyDeptGroupOpenConversationId")]
+        [Validation(Required=false)]
+        public string PropertyDeptGroupOpenConversationId { get; set; }
+
+        /// <summary>
+        /// 物业部门群主userid
+        /// </summary>
+        [NameInMap("propertyDeptGroupOwnerUserId")]
+        [Validation(Required=false)]
+        public string PropertyDeptGroupOwnerUserId { get; set; }
 
         /// <summary>
         /// 小区归属的省的id

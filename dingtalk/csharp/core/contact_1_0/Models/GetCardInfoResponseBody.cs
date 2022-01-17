@@ -120,6 +120,9 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
             [NameInMap("corpId")]
             [Validation(Required=false)]
             public string CorpId { get; set; }
+            [NameInMap("department")]
+            [Validation(Required=false)]
+            public string Department { get; set; }
             [NameInMap("orgAuthLevel")]
             [Validation(Required=false)]
             public long? OrgAuthLevel { get; set; }
@@ -129,9 +132,24 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
             [NameInMap("orgLogo")]
             [Validation(Required=false)]
             public string OrgLogo { get; set; }
-            [NameInMap("videoMediaId")]
+            [NameInMap("originCardUrl")]
             [Validation(Required=false)]
-            public string VideoMediaId { get; set; }
+            public string OriginCardUrl { get; set; }
+            [NameInMap("shareContent")]
+            [Validation(Required=false)]
+            public string ShareContent { get; set; }
+            [NameInMap("thumbnailUrl")]
+            [Validation(Required=false)]
+            public string ThumbnailUrl { get; set; }
+            [NameInMap("videoFileName")]
+            [Validation(Required=false)]
+            public string VideoFileName { get; set; }
+            [NameInMap("videoTitle")]
+            [Validation(Required=false)]
+            public string VideoTitle { get; set; }
+            [NameInMap("videoUrl")]
+            [Validation(Required=false)]
+            public string VideoUrl { get; set; }
         };
 
         /// <summary>

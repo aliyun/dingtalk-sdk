@@ -1172,6 +1172,70 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
             return TeaModel.ToObject<GetCrmGroupChatResponse>(await DoROARequestAsync("GetCrmGroupChat", "crm_1.0", "HTTP", "GET", "AK", "/v1.0/crm/crmGroupChats/" + openConversationId, "json", req, runtime));
         }
 
+        public GetCrmGroupChatMultiResponse GetCrmGroupChatMulti(GetCrmGroupChatMultiRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetCrmGroupChatMultiHeaders headers = new GetCrmGroupChatMultiHeaders();
+            return GetCrmGroupChatMultiWithOptions(request, headers, runtime);
+        }
+
+        public async Task<GetCrmGroupChatMultiResponse> GetCrmGroupChatMultiAsync(GetCrmGroupChatMultiRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetCrmGroupChatMultiHeaders headers = new GetCrmGroupChatMultiHeaders();
+            return await GetCrmGroupChatMultiWithOptionsAsync(request, headers, runtime);
+        }
+
+        public GetCrmGroupChatMultiResponse GetCrmGroupChatMultiWithOptions(GetCrmGroupChatMultiRequest request, GetCrmGroupChatMultiHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationIds))
+            {
+                body["openConversationIds"] = request.OpenConversationIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<GetCrmGroupChatMultiResponse>(DoROARequest("GetCrmGroupChatMulti", "crm_1.0", "HTTP", "POST", "AK", "/v1.0/crm/crmGroupChats/batchQuery", "json", req, runtime));
+        }
+
+        public async Task<GetCrmGroupChatMultiResponse> GetCrmGroupChatMultiWithOptionsAsync(GetCrmGroupChatMultiRequest request, GetCrmGroupChatMultiHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationIds))
+            {
+                body["openConversationIds"] = request.OpenConversationIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<GetCrmGroupChatMultiResponse>(await DoROARequestAsync("GetCrmGroupChatMulti", "crm_1.0", "HTTP", "POST", "AK", "/v1.0/crm/crmGroupChats/batchQuery", "json", req, runtime));
+        }
+
         public GetCrmGroupChatSingleResponse GetCrmGroupChatSingle(GetCrmGroupChatSingleRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

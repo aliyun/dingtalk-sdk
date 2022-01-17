@@ -26,9 +26,15 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
                 [NameInMap("url")]
                 [Validation(Required=false)]
                 public string Url { get; set; }
+                [NameInMap("lastEditTime")]
+                [Validation(Required=false)]
+                public long? LastEditTime { get; set; }
                 [NameInMap("deleted")]
                 [Validation(Required=false)]
                 public bool? Deleted { get; set; }
+                [NameInMap("docType")]
+                [Validation(Required=false)]
+                public string DocType { get; set; }
             };
 
             [NameInMap("workspaceBO")]
