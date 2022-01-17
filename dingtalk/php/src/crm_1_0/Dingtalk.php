@@ -41,6 +41,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetCrmGroupChatHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetCrmGroupChatMultiHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetCrmGroupChatMultiRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetCrmGroupChatMultiResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetCrmGroupChatResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetCrmGroupChatSingleHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetCrmGroupChatSingleRequest;
@@ -1430,6 +1433,48 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryAllCustomerResponse::fromMap($this->doROARequest('QueryAllCustomer', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/customerInstances', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetCrmGroupChatMultiRequest $request
+     *
+     * @return GetCrmGroupChatMultiResponse
+     */
+    public function getCrmGroupChatMulti($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetCrmGroupChatMultiHeaders([]);
+
+        return $this->getCrmGroupChatMultiWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetCrmGroupChatMultiRequest $request
+     * @param GetCrmGroupChatMultiHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return GetCrmGroupChatMultiResponse
+     */
+    public function getCrmGroupChatMultiWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationIds)) {
+            @$body['openConversationIds'] = $request->openConversationIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GetCrmGroupChatMultiResponse::fromMap($this->doROARequest('GetCrmGroupChatMulti', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/crmGroupChats/batchQuery', 'json', $req, $runtime));
     }
 
     /**

@@ -2,42 +2,35 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetCrmGroupChatMultiResponseBody;
 
 use AlibabaCloud\Tea\Model;
 
-class GetCrmGroupChatSingleResponseBody extends Model
+class result extends Model
 {
     /**
-     * @description 客户群chatId
-     *
-     * @var string
-     */
-    public $chatId;
-
-    /**
-     * @description 客户群openConversationId
+     * @description 客户群openConversationId。
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 群组openGroupSetId
+     * @description 群组openGroupSetId。
      *
      * @var string
      */
     public $openGroupSetId;
 
     /**
-     * @description 群主userId
+     * @description 群主userId。
      *
      * @var string
      */
     public $ownerUserId;
 
     /**
-     * @description 群主userName
+     * @description 群主userName。
      *
      * @var string
      */
@@ -51,27 +44,26 @@ class GetCrmGroupChatSingleResponseBody extends Model
     public $name;
 
     /**
-     * @description 客户群成员数
+     * @description 客户群成员数。
      *
      * @var int
      */
     public $memberCount;
 
     /**
-     * @description 创建时间(时间戳)
+     * @description 创建时间(时间戳)。
      *
      * @var int
      */
     public $gmtCreate;
 
     /**
-     * @description 群头像地址
+     * @description 群头像地址。
      *
      * @var string
      */
     public $iconUrl;
     protected $_name = [
-        'chatId'             => 'chatId',
         'openConversationId' => 'openConversationId',
         'openGroupSetId'     => 'openGroupSetId',
         'ownerUserId'        => 'ownerUserId',
@@ -89,9 +81,6 @@ class GetCrmGroupChatSingleResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->chatId) {
-            $res['chatId'] = $this->chatId;
-        }
         if (null !== $this->openConversationId) {
             $res['openConversationId'] = $this->openConversationId;
         }
@@ -123,14 +112,11 @@ class GetCrmGroupChatSingleResponseBody extends Model
     /**
      * @param array $map
      *
-     * @return GetCrmGroupChatSingleResponseBody
+     * @return result
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['chatId'])) {
-            $model->chatId = $map['chatId'];
-        }
         if (isset($map['openConversationId'])) {
             $model->openConversationId = $map['openConversationId'];
         }

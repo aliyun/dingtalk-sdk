@@ -32,15 +32,21 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateWorkspaceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteSheetHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteSheetRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteSheetResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteWorkspaceDocHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteWorkspaceDocMembersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteWorkspaceDocMembersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteWorkspaceDocMembersResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteWorkspaceDocRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteWorkspaceDocResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteWorkspaceMembersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteWorkspaceMembersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteWorkspaceMembersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetRecentEditDocsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetRecentEditDocsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetRecentEditDocsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetRecentOpenDocsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetRecentOpenDocsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetRecentOpenDocsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetRelatedWorkspacesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetRelatedWorkspacesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetRelatedWorkspacesResponse;
@@ -932,6 +938,54 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param GetRecentOpenDocsRequest $request
+     *
+     * @return GetRecentOpenDocsResponse
+     */
+    public function getRecentOpenDocs($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetRecentOpenDocsHeaders([]);
+
+        return $this->getRecentOpenDocsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetRecentOpenDocsRequest $request
+     * @param GetRecentOpenDocsHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return GetRecentOpenDocsResponse
+     */
+    public function getRecentOpenDocsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetRecentOpenDocsResponse::fromMap($this->doROARequest('GetRecentOpenDocs', 'doc_1.0', 'HTTP', 'GET', 'AK', '/v1.0/doc/workspaces/docs/recentOpenDocs', 'json', $req, $runtime));
+    }
+
+    /**
      * @param string                     $workspaceId
      * @param AddWorkspaceMembersRequest $request
      *
@@ -976,6 +1030,52 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return AddWorkspaceMembersResponse::fromMap($this->doROARequest('AddWorkspaceMembers', 'doc_1.0', 'HTTP', 'POST', 'AK', '/v1.0/doc/workspaces/' . $workspaceId . '/members', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                    $workspaceId
+     * @param string                    $nodeId
+     * @param DeleteWorkspaceDocRequest $request
+     *
+     * @return DeleteWorkspaceDocResponse
+     */
+    public function deleteWorkspaceDoc($workspaceId, $nodeId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteWorkspaceDocHeaders([]);
+
+        return $this->deleteWorkspaceDocWithOptions($workspaceId, $nodeId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                    $workspaceId
+     * @param string                    $nodeId
+     * @param DeleteWorkspaceDocRequest $request
+     * @param DeleteWorkspaceDocHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return DeleteWorkspaceDocResponse
+     */
+    public function deleteWorkspaceDocWithOptions($workspaceId, $nodeId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return DeleteWorkspaceDocResponse::fromMap($this->doROARequest('DeleteWorkspaceDoc', 'doc_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/doc/workspaces/' . $workspaceId . '/docs/' . $nodeId . '', 'none', $req, $runtime));
     }
 
     /**

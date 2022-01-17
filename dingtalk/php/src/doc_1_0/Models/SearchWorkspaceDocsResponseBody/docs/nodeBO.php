@@ -35,11 +35,19 @@ class nodeBO extends Model
      * @var int
      */
     public $lastEditTime;
+
+    /**
+     * @description 节点类型
+     *
+     * @var string
+     */
+    public $docType;
     protected $_name = [
         'name'         => 'name',
         'nodeId'       => 'nodeId',
         'url'          => 'url',
         'lastEditTime' => 'lastEditTime',
+        'docType'      => 'docType',
     ];
 
     public function validate()
@@ -60,6 +68,9 @@ class nodeBO extends Model
         }
         if (null !== $this->lastEditTime) {
             $res['lastEditTime'] = $this->lastEditTime;
+        }
+        if (null !== $this->docType) {
+            $res['docType'] = $this->docType;
         }
 
         return $res;
@@ -84,6 +95,9 @@ class nodeBO extends Model
         }
         if (isset($map['lastEditTime'])) {
             $model->lastEditTime = $map['lastEditTime'];
+        }
+        if (isset($map['docType'])) {
+            $model->docType = $map['docType'];
         }
 
         return $model;

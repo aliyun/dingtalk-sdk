@@ -2,23 +2,29 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\BatchGetWorkspaceDocsResponseBody\result;
+namespace AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetRecentOpenDocsResponseBody\recentList;
 
 use AlibabaCloud\Tea\Model;
 
 class nodeBO extends Model
 {
     /**
-     * @var string
-     */
-    public $name;
-
-    /**
+     * @description 文档Id
+     *
      * @var string
      */
     public $nodeId;
 
     /**
+     * @description 文档名称
+     *
+     * @var string
+     */
+    public $nodeName;
+
+    /**
+     * @description 文档打开url
+     *
      * @var string
      */
     public $url;
@@ -28,12 +34,14 @@ class nodeBO extends Model
      *
      * @var int
      */
-    public $lastEditTime;
+    public $lastOpenTime;
 
     /**
+     * @description 是否被删除
+     *
      * @var bool
      */
-    public $deleted;
+    public $isDeleted;
 
     /**
      * @description 节点类型
@@ -42,11 +50,11 @@ class nodeBO extends Model
      */
     public $docType;
     protected $_name = [
-        'name'         => 'name',
         'nodeId'       => 'nodeId',
+        'nodeName'     => 'nodeName',
         'url'          => 'url',
-        'lastEditTime' => 'lastEditTime',
-        'deleted'      => 'deleted',
+        'lastOpenTime' => 'lastOpenTime',
+        'isDeleted'    => 'isDeleted',
         'docType'      => 'docType',
     ];
 
@@ -57,20 +65,20 @@ class nodeBO extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
-        }
         if (null !== $this->nodeId) {
             $res['nodeId'] = $this->nodeId;
+        }
+        if (null !== $this->nodeName) {
+            $res['nodeName'] = $this->nodeName;
         }
         if (null !== $this->url) {
             $res['url'] = $this->url;
         }
-        if (null !== $this->lastEditTime) {
-            $res['lastEditTime'] = $this->lastEditTime;
+        if (null !== $this->lastOpenTime) {
+            $res['lastOpenTime'] = $this->lastOpenTime;
         }
-        if (null !== $this->deleted) {
-            $res['deleted'] = $this->deleted;
+        if (null !== $this->isDeleted) {
+            $res['isDeleted'] = $this->isDeleted;
         }
         if (null !== $this->docType) {
             $res['docType'] = $this->docType;
@@ -87,20 +95,20 @@ class nodeBO extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
-        }
         if (isset($map['nodeId'])) {
             $model->nodeId = $map['nodeId'];
+        }
+        if (isset($map['nodeName'])) {
+            $model->nodeName = $map['nodeName'];
         }
         if (isset($map['url'])) {
             $model->url = $map['url'];
         }
-        if (isset($map['lastEditTime'])) {
-            $model->lastEditTime = $map['lastEditTime'];
+        if (isset($map['lastOpenTime'])) {
+            $model->lastOpenTime = $map['lastOpenTime'];
         }
-        if (isset($map['deleted'])) {
-            $model->deleted = $map['deleted'];
+        if (isset($map['isDeleted'])) {
+            $model->isDeleted = $map['isDeleted'];
         }
         if (isset($map['docType'])) {
             $model->docType = $map['docType'];

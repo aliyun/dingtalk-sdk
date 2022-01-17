@@ -8,6 +8,9 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\BatchApproveUnionApplyHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\BatchApproveUnionApplyRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\BatchApproveUnionApplyResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ChangeMainAdminHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ChangeMainAdminRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ChangeMainAdminResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateCooperateOrgHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateCooperateOrgRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateCooperateOrgResponse;
@@ -71,6 +74,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListEmpLeaveRecordsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListManagementGroupsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListManagementGroupsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListManagementGroupsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListOwnedOrgByStaffIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListOwnedOrgByStaffIdRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListOwnedOrgByStaffIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListSeniorSettingsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListSeniorSettingsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListSeniorSettingsResponse;
@@ -1489,6 +1495,48 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param ListOwnedOrgByStaffIdRequest $request
+     *
+     * @return ListOwnedOrgByStaffIdResponse
+     */
+    public function listOwnedOrgByStaffId($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListOwnedOrgByStaffIdHeaders([]);
+
+        return $this->listOwnedOrgByStaffIdWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ListOwnedOrgByStaffIdRequest $request
+     * @param ListOwnedOrgByStaffIdHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return ListOwnedOrgByStaffIdResponse
+     */
+    public function listOwnedOrgByStaffIdWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ListOwnedOrgByStaffIdResponse::fromMap($this->doROARequest('ListOwnedOrgByStaffId', 'contact_1.0', 'HTTP', 'GET', 'AK', '/v1.0/contact/orgAccounts/ownedOrganizations', 'json', $req, $runtime));
+    }
+
+    /**
      * @param TranslateFileRequest $request
      *
      * @return TranslateFileResponse
@@ -1654,6 +1702,54 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return SetDisableResponse::fromMap($this->doROARequest('SetDisable', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/orgAccounts/disable', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param ChangeMainAdminRequest $request
+     *
+     * @return ChangeMainAdminResponse
+     */
+    public function changeMainAdmin($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ChangeMainAdminHeaders([]);
+
+        return $this->changeMainAdminWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ChangeMainAdminRequest $request
+     * @param ChangeMainAdminHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return ChangeMainAdminResponse
+     */
+    public function changeMainAdminWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->sourceUserId)) {
+            @$body['sourceUserId'] = $request->sourceUserId;
+        }
+        if (!Utils::isUnset($request->targetUserId)) {
+            @$body['targetUserId'] = $request->targetUserId;
+        }
+        if (!Utils::isUnset($request->effectCorpId)) {
+            @$body['effectCorpId'] = $request->effectCorpId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return ChangeMainAdminResponse::fromMap($this->doROARequest('ChangeMainAdmin', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/orgAccounts/mainAdministrators/change', 'none', $req, $runtime));
     }
 
     /**

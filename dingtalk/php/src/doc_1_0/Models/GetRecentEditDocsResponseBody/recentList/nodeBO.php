@@ -42,12 +42,20 @@ class nodeBO extends Model
      * @var bool
      */
     public $isDeleted;
+
+    /**
+     * @description 节点类型
+     *
+     * @var string
+     */
+    public $docType;
     protected $_name = [
         'nodeId'       => 'nodeId',
         'nodeName'     => 'nodeName',
         'url'          => 'url',
         'lastEditTime' => 'lastEditTime',
         'isDeleted'    => 'isDeleted',
+        'docType'      => 'docType',
     ];
 
     public function validate()
@@ -71,6 +79,9 @@ class nodeBO extends Model
         }
         if (null !== $this->isDeleted) {
             $res['isDeleted'] = $this->isDeleted;
+        }
+        if (null !== $this->docType) {
+            $res['docType'] = $this->docType;
         }
 
         return $res;
@@ -98,6 +109,9 @@ class nodeBO extends Model
         }
         if (isset($map['isDeleted'])) {
             $model->isDeleted = $map['isDeleted'];
+        }
+        if (isset($map['docType'])) {
+            $model->docType = $map['docType'];
         }
 
         return $model;

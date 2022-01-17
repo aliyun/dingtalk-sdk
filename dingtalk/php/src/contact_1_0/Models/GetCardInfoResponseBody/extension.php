@@ -38,11 +38,53 @@ class extension extends Model
     public $orgLogo;
 
     /**
-     * @description 视频信息
+     * @description 视频链接
      *
      * @var string
      */
-    public $videoMediaId;
+    public $videoUrl;
+
+    /**
+     * @description 视频标题
+     *
+     * @var string
+     */
+    public $videoTitle;
+
+    /**
+     * @description 视频缩略图
+     *
+     * @var string
+     */
+    public $thumbnailUrl;
+
+    /**
+     * @description 视频文件名称
+     *
+     * @var string
+     */
+    public $videoFileName;
+
+    /**
+     * @description 拍名片图片链接
+     *
+     * @var string
+     */
+    public $originCardUrl;
+
+    /**
+     * @description 分享文案
+     *
+     * @var string
+     */
+    public $shareContent;
+
+    /**
+     * @description 拍名片部门
+     *
+     * @var string
+     */
+    public $department;
 
     /**
      * @description 联系信息
@@ -55,7 +97,13 @@ class extension extends Model
         'orgAuthLevel'    => 'orgAuthLevel',
         'corpId'          => 'corpId',
         'orgLogo'         => 'orgLogo',
-        'videoMediaId'    => 'videoMediaId',
+        'videoUrl'        => 'videoUrl',
+        'videoTitle'      => 'videoTitle',
+        'thumbnailUrl'    => 'thumbnailUrl',
+        'videoFileName'   => 'videoFileName',
+        'originCardUrl'   => 'originCardUrl',
+        'shareContent'    => 'shareContent',
+        'department'      => 'department',
         'cardContactInfo' => 'cardContactInfo',
     ];
 
@@ -78,8 +126,26 @@ class extension extends Model
         if (null !== $this->orgLogo) {
             $res['orgLogo'] = $this->orgLogo;
         }
-        if (null !== $this->videoMediaId) {
-            $res['videoMediaId'] = $this->videoMediaId;
+        if (null !== $this->videoUrl) {
+            $res['videoUrl'] = $this->videoUrl;
+        }
+        if (null !== $this->videoTitle) {
+            $res['videoTitle'] = $this->videoTitle;
+        }
+        if (null !== $this->thumbnailUrl) {
+            $res['thumbnailUrl'] = $this->thumbnailUrl;
+        }
+        if (null !== $this->videoFileName) {
+            $res['videoFileName'] = $this->videoFileName;
+        }
+        if (null !== $this->originCardUrl) {
+            $res['originCardUrl'] = $this->originCardUrl;
+        }
+        if (null !== $this->shareContent) {
+            $res['shareContent'] = $this->shareContent;
+        }
+        if (null !== $this->department) {
+            $res['department'] = $this->department;
         }
         if (null !== $this->cardContactInfo) {
             $res['cardContactInfo'] = null !== $this->cardContactInfo ? $this->cardContactInfo->toMap() : null;
@@ -108,8 +174,26 @@ class extension extends Model
         if (isset($map['orgLogo'])) {
             $model->orgLogo = $map['orgLogo'];
         }
-        if (isset($map['videoMediaId'])) {
-            $model->videoMediaId = $map['videoMediaId'];
+        if (isset($map['videoUrl'])) {
+            $model->videoUrl = $map['videoUrl'];
+        }
+        if (isset($map['videoTitle'])) {
+            $model->videoTitle = $map['videoTitle'];
+        }
+        if (isset($map['thumbnailUrl'])) {
+            $model->thumbnailUrl = $map['thumbnailUrl'];
+        }
+        if (isset($map['videoFileName'])) {
+            $model->videoFileName = $map['videoFileName'];
+        }
+        if (isset($map['originCardUrl'])) {
+            $model->originCardUrl = $map['originCardUrl'];
+        }
+        if (isset($map['shareContent'])) {
+            $model->shareContent = $map['shareContent'];
+        }
+        if (isset($map['department'])) {
+            $model->department = $map['department'];
         }
         if (isset($map['cardContactInfo'])) {
             $model->cardContactInfo = cardContactInfo::fromMap($map['cardContactInfo']);

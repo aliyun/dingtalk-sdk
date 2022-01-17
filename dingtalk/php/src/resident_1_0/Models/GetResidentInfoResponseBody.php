@@ -123,24 +123,56 @@ class GetResidentInfoResponseBody extends Model
      * @var projectManager
      */
     public $projectManager;
+
+    /**
+     * @description 全员群群主 userid
+     *
+     * @var string
+     */
+    public $allUserGroupOwnerUserId;
+
+    /**
+     * @description 全员群opencid
+     *
+     * @var string
+     */
+    public $allUserGroupOpenConversationId;
+
+    /**
+     * @description 物业部门群cid
+     *
+     * @var string
+     */
+    public $propertyDeptGroupOpenConversationId;
+
+    /**
+     * @description 物业部门群主userid
+     *
+     * @var string
+     */
+    public $propertyDeptGroupOwnerUserId;
     protected $_name = [
-        'type'           => 'type',
-        'location'       => 'location',
-        'address'        => 'address',
-        'provId'         => 'provId',
-        'buildingArea'   => 'buildingArea',
-        'name'           => 'name',
-        'telephone'      => 'telephone',
-        'deliveryTime'   => 'deliveryTime',
-        'contactMode'    => 'contactMode',
-        'scopeEast'      => 'scopeEast',
-        'scopeWest'      => 'scopeWest',
-        'scopeSouth'     => 'scopeSouth',
-        'scopeNorth'     => 'scopeNorth',
-        'cityId'         => 'cityId',
-        'countyId'       => 'countyId',
-        'townId'         => 'townId',
-        'projectManager' => 'projectManager',
+        'type'                                => 'type',
+        'location'                            => 'location',
+        'address'                             => 'address',
+        'provId'                              => 'provId',
+        'buildingArea'                        => 'buildingArea',
+        'name'                                => 'name',
+        'telephone'                           => 'telephone',
+        'deliveryTime'                        => 'deliveryTime',
+        'contactMode'                         => 'contactMode',
+        'scopeEast'                           => 'scopeEast',
+        'scopeWest'                           => 'scopeWest',
+        'scopeSouth'                          => 'scopeSouth',
+        'scopeNorth'                          => 'scopeNorth',
+        'cityId'                              => 'cityId',
+        'countyId'                            => 'countyId',
+        'townId'                              => 'townId',
+        'projectManager'                      => 'projectManager',
+        'allUserGroupOwnerUserId'             => 'allUserGroupOwnerUserId',
+        'allUserGroupOpenConversationId'      => 'allUserGroupOpenConversationId',
+        'propertyDeptGroupOpenConversationId' => 'propertyDeptGroupOpenConversationId',
+        'propertyDeptGroupOwnerUserId'        => 'propertyDeptGroupOwnerUserId',
     ];
 
     public function validate()
@@ -200,6 +232,18 @@ class GetResidentInfoResponseBody extends Model
         }
         if (null !== $this->projectManager) {
             $res['projectManager'] = null !== $this->projectManager ? $this->projectManager->toMap() : null;
+        }
+        if (null !== $this->allUserGroupOwnerUserId) {
+            $res['allUserGroupOwnerUserId'] = $this->allUserGroupOwnerUserId;
+        }
+        if (null !== $this->allUserGroupOpenConversationId) {
+            $res['allUserGroupOpenConversationId'] = $this->allUserGroupOpenConversationId;
+        }
+        if (null !== $this->propertyDeptGroupOpenConversationId) {
+            $res['propertyDeptGroupOpenConversationId'] = $this->propertyDeptGroupOpenConversationId;
+        }
+        if (null !== $this->propertyDeptGroupOwnerUserId) {
+            $res['propertyDeptGroupOwnerUserId'] = $this->propertyDeptGroupOwnerUserId;
         }
 
         return $res;
@@ -263,6 +307,18 @@ class GetResidentInfoResponseBody extends Model
         }
         if (isset($map['projectManager'])) {
             $model->projectManager = projectManager::fromMap($map['projectManager']);
+        }
+        if (isset($map['allUserGroupOwnerUserId'])) {
+            $model->allUserGroupOwnerUserId = $map['allUserGroupOwnerUserId'];
+        }
+        if (isset($map['allUserGroupOpenConversationId'])) {
+            $model->allUserGroupOpenConversationId = $map['allUserGroupOpenConversationId'];
+        }
+        if (isset($map['propertyDeptGroupOpenConversationId'])) {
+            $model->propertyDeptGroupOpenConversationId = $map['propertyDeptGroupOpenConversationId'];
+        }
+        if (isset($map['propertyDeptGroupOwnerUserId'])) {
+            $model->propertyDeptGroupOwnerUserId = $map['propertyDeptGroupOwnerUserId'];
         }
 
         return $model;
