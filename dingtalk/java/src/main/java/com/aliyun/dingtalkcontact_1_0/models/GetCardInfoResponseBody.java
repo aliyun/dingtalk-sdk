@@ -336,6 +336,10 @@ public class GetCardInfoResponseBody extends TeaModel {
         @NameInMap("corpId")
         public String corpId;
 
+        // 拍名片部门
+        @NameInMap("department")
+        public String department;
+
         // 企业认证等级
         @NameInMap("orgAuthLevel")
         public Long orgAuthLevel;
@@ -348,9 +352,29 @@ public class GetCardInfoResponseBody extends TeaModel {
         @NameInMap("orgLogo")
         public String orgLogo;
 
-        // 视频信息
-        @NameInMap("videoMediaId")
-        public String videoMediaId;
+        // 拍名片图片链接
+        @NameInMap("originCardUrl")
+        public String originCardUrl;
+
+        // 分享文案
+        @NameInMap("shareContent")
+        public String shareContent;
+
+        // 视频缩略图
+        @NameInMap("thumbnailUrl")
+        public String thumbnailUrl;
+
+        // 视频文件名称
+        @NameInMap("videoFileName")
+        public String videoFileName;
+
+        // 视频标题
+        @NameInMap("videoTitle")
+        public String videoTitle;
+
+        // 视频链接
+        @NameInMap("videoUrl")
+        public String videoUrl;
 
         public static GetCardInfoResponseBodyExtension build(java.util.Map<String, ?> map) throws Exception {
             GetCardInfoResponseBodyExtension self = new GetCardInfoResponseBodyExtension();
@@ -371,6 +395,14 @@ public class GetCardInfoResponseBody extends TeaModel {
         }
         public String getCorpId() {
             return this.corpId;
+        }
+
+        public GetCardInfoResponseBodyExtension setDepartment(String department) {
+            this.department = department;
+            return this;
+        }
+        public String getDepartment() {
+            return this.department;
         }
 
         public GetCardInfoResponseBodyExtension setOrgAuthLevel(Long orgAuthLevel) {
@@ -397,12 +429,52 @@ public class GetCardInfoResponseBody extends TeaModel {
             return this.orgLogo;
         }
 
-        public GetCardInfoResponseBodyExtension setVideoMediaId(String videoMediaId) {
-            this.videoMediaId = videoMediaId;
+        public GetCardInfoResponseBodyExtension setOriginCardUrl(String originCardUrl) {
+            this.originCardUrl = originCardUrl;
             return this;
         }
-        public String getVideoMediaId() {
-            return this.videoMediaId;
+        public String getOriginCardUrl() {
+            return this.originCardUrl;
+        }
+
+        public GetCardInfoResponseBodyExtension setShareContent(String shareContent) {
+            this.shareContent = shareContent;
+            return this;
+        }
+        public String getShareContent() {
+            return this.shareContent;
+        }
+
+        public GetCardInfoResponseBodyExtension setThumbnailUrl(String thumbnailUrl) {
+            this.thumbnailUrl = thumbnailUrl;
+            return this;
+        }
+        public String getThumbnailUrl() {
+            return this.thumbnailUrl;
+        }
+
+        public GetCardInfoResponseBodyExtension setVideoFileName(String videoFileName) {
+            this.videoFileName = videoFileName;
+            return this;
+        }
+        public String getVideoFileName() {
+            return this.videoFileName;
+        }
+
+        public GetCardInfoResponseBodyExtension setVideoTitle(String videoTitle) {
+            this.videoTitle = videoTitle;
+            return this;
+        }
+        public String getVideoTitle() {
+            return this.videoTitle;
+        }
+
+        public GetCardInfoResponseBodyExtension setVideoUrl(String videoUrl) {
+            this.videoUrl = videoUrl;
+            return this;
+        }
+        public String getVideoUrl() {
+            return this.videoUrl;
         }
 
     }

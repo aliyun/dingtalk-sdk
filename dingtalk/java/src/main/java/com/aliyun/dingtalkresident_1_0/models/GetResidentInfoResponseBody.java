@@ -8,6 +8,14 @@ public class GetResidentInfoResponseBody extends TeaModel {
     @NameInMap("address")
     public String address;
 
+    // 全员群opencid
+    @NameInMap("allUserGroupOpenConversationId")
+    public String allUserGroupOpenConversationId;
+
+    // 全员群群主 userid
+    @NameInMap("allUserGroupOwnerUserId")
+    public String allUserGroupOwnerUserId;
+
     @NameInMap("buildingArea")
     public Float buildingArea;
 
@@ -37,6 +45,14 @@ public class GetResidentInfoResponseBody extends TeaModel {
 
     @NameInMap("projectManager")
     public GetResidentInfoResponseBodyProjectManager projectManager;
+
+    // 物业部门群cid
+    @NameInMap("propertyDeptGroupOpenConversationId")
+    public String propertyDeptGroupOpenConversationId;
+
+    // 物业部门群主userid
+    @NameInMap("propertyDeptGroupOwnerUserId")
+    public String propertyDeptGroupOwnerUserId;
 
     // 小区归属的省的id
     @NameInMap("provId")
@@ -81,6 +97,22 @@ public class GetResidentInfoResponseBody extends TeaModel {
     }
     public String getAddress() {
         return this.address;
+    }
+
+    public GetResidentInfoResponseBody setAllUserGroupOpenConversationId(String allUserGroupOpenConversationId) {
+        this.allUserGroupOpenConversationId = allUserGroupOpenConversationId;
+        return this;
+    }
+    public String getAllUserGroupOpenConversationId() {
+        return this.allUserGroupOpenConversationId;
+    }
+
+    public GetResidentInfoResponseBody setAllUserGroupOwnerUserId(String allUserGroupOwnerUserId) {
+        this.allUserGroupOwnerUserId = allUserGroupOwnerUserId;
+        return this;
+    }
+    public String getAllUserGroupOwnerUserId() {
+        return this.allUserGroupOwnerUserId;
     }
 
     public GetResidentInfoResponseBody setBuildingArea(Float buildingArea) {
@@ -145,6 +177,22 @@ public class GetResidentInfoResponseBody extends TeaModel {
     }
     public GetResidentInfoResponseBodyProjectManager getProjectManager() {
         return this.projectManager;
+    }
+
+    public GetResidentInfoResponseBody setPropertyDeptGroupOpenConversationId(String propertyDeptGroupOpenConversationId) {
+        this.propertyDeptGroupOpenConversationId = propertyDeptGroupOpenConversationId;
+        return this;
+    }
+    public String getPropertyDeptGroupOpenConversationId() {
+        return this.propertyDeptGroupOpenConversationId;
+    }
+
+    public GetResidentInfoResponseBody setPropertyDeptGroupOwnerUserId(String propertyDeptGroupOwnerUserId) {
+        this.propertyDeptGroupOwnerUserId = propertyDeptGroupOwnerUserId;
+        return this;
+    }
+    public String getPropertyDeptGroupOwnerUserId() {
+        return this.propertyDeptGroupOwnerUserId;
     }
 
     public GetResidentInfoResponseBody setProvId(Long provId) {

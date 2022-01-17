@@ -44,6 +44,10 @@ public class SearchWorkspaceDocsResponseBody extends TeaModel {
     }
 
     public static class SearchWorkspaceDocsResponseBodyDocsNodeBO extends TeaModel {
+        // 节点类型
+        @NameInMap("docType")
+        public String docType;
+
         // 最近编辑时间
         @NameInMap("lastEditTime")
         public Long lastEditTime;
@@ -63,6 +67,14 @@ public class SearchWorkspaceDocsResponseBody extends TeaModel {
         public static SearchWorkspaceDocsResponseBodyDocsNodeBO build(java.util.Map<String, ?> map) throws Exception {
             SearchWorkspaceDocsResponseBodyDocsNodeBO self = new SearchWorkspaceDocsResponseBodyDocsNodeBO();
             return TeaModel.build(map, self);
+        }
+
+        public SearchWorkspaceDocsResponseBodyDocsNodeBO setDocType(String docType) {
+            this.docType = docType;
+            return this;
+        }
+        public String getDocType() {
+            return this.docType;
         }
 
         public SearchWorkspaceDocsResponseBodyDocsNodeBO setLastEditTime(Long lastEditTime) {

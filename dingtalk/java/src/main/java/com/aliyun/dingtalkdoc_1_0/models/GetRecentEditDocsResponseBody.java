@@ -33,6 +33,10 @@ public class GetRecentEditDocsResponseBody extends TeaModel {
     }
 
     public static class GetRecentEditDocsResponseBodyRecentListNodeBO extends TeaModel {
+        // 节点类型
+        @NameInMap("docType")
+        public String docType;
+
         // 是否被删除
         @NameInMap("isDeleted")
         public Boolean isDeleted;
@@ -56,6 +60,14 @@ public class GetRecentEditDocsResponseBody extends TeaModel {
         public static GetRecentEditDocsResponseBodyRecentListNodeBO build(java.util.Map<String, ?> map) throws Exception {
             GetRecentEditDocsResponseBodyRecentListNodeBO self = new GetRecentEditDocsResponseBodyRecentListNodeBO();
             return TeaModel.build(map, self);
+        }
+
+        public GetRecentEditDocsResponseBodyRecentListNodeBO setDocType(String docType) {
+            this.docType = docType;
+            return this;
+        }
+        public String getDocType() {
+            return this.docType;
         }
 
         public GetRecentEditDocsResponseBodyRecentListNodeBO setIsDeleted(Boolean isDeleted) {

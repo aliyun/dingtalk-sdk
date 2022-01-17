@@ -24,6 +24,14 @@ public class BatchGetWorkspaceDocsResponseBody extends TeaModel {
         @NameInMap("deleted")
         public Boolean deleted;
 
+        // 节点类型
+        @NameInMap("docType")
+        public String docType;
+
+        // 最后编辑时间
+        @NameInMap("lastEditTime")
+        public Long lastEditTime;
+
         @NameInMap("name")
         public String name;
 
@@ -44,6 +52,22 @@ public class BatchGetWorkspaceDocsResponseBody extends TeaModel {
         }
         public Boolean getDeleted() {
             return this.deleted;
+        }
+
+        public BatchGetWorkspaceDocsResponseBodyResultNodeBO setDocType(String docType) {
+            this.docType = docType;
+            return this;
+        }
+        public String getDocType() {
+            return this.docType;
+        }
+
+        public BatchGetWorkspaceDocsResponseBodyResultNodeBO setLastEditTime(Long lastEditTime) {
+            this.lastEditTime = lastEditTime;
+            return this;
+        }
+        public Long getLastEditTime() {
+            return this.lastEditTime;
         }
 
         public BatchGetWorkspaceDocsResponseBodyResultNodeBO setName(String name) {

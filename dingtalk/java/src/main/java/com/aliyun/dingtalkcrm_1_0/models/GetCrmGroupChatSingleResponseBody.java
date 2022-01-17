@@ -8,10 +8,6 @@ public class GetCrmGroupChatSingleResponseBody extends TeaModel {
     @NameInMap("chatId")
     public String chatId;
 
-    // corpId。
-    @NameInMap("corpId")
-    public String corpId;
-
     // 创建时间(时间戳)
     @NameInMap("gmtCreate")
     public Long gmtCreate;
@@ -55,14 +51,6 @@ public class GetCrmGroupChatSingleResponseBody extends TeaModel {
     }
     public String getChatId() {
         return this.chatId;
-    }
-
-    public GetCrmGroupChatSingleResponseBody setCorpId(String corpId) {
-        this.corpId = corpId;
-        return this;
-    }
-    public String getCorpId() {
-        return this.corpId;
     }
 
     public GetCrmGroupChatSingleResponseBody setGmtCreate(Long gmtCreate) {
