@@ -6684,7 +6684,6 @@ class GetCrmGroupChatSingleResponseBody(TeaModel):
         member_count: int = None,
         gmt_create: int = None,
         icon_url: str = None,
-        corp_id: str = None,
     ):
         # 客户群chatId
         self.chat_id = chat_id
@@ -6704,8 +6703,6 @@ class GetCrmGroupChatSingleResponseBody(TeaModel):
         self.gmt_create = gmt_create
         # 群头像地址
         self.icon_url = icon_url
-        # corpId。
-        self.corp_id = corp_id
 
     def validate(self):
         pass
@@ -6734,8 +6731,6 @@ class GetCrmGroupChatSingleResponseBody(TeaModel):
             result['gmtCreate'] = self.gmt_create
         if self.icon_url is not None:
             result['iconUrl'] = self.icon_url
-        if self.corp_id is not None:
-            result['corpId'] = self.corp_id
         return result
 
     def from_map(self, m: dict = None):
@@ -6758,8 +6753,6 @@ class GetCrmGroupChatSingleResponseBody(TeaModel):
             self.gmt_create = m.get('gmtCreate')
         if m.get('iconUrl') is not None:
             self.icon_url = m.get('iconUrl')
-        if m.get('corpId') is not None:
-            self.corp_id = m.get('corpId')
         return self
 
 
@@ -8018,6 +8011,217 @@ class QueryAllCustomerResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = QueryAllCustomerResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetCrmGroupChatMultiHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetCrmGroupChatMultiRequest(TeaModel):
+    def __init__(
+        self,
+        open_conversation_ids: List[str] = None,
+    ):
+        # 群openConversationId列表。
+        self.open_conversation_ids = open_conversation_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_conversation_ids is not None:
+            result['openConversationIds'] = self.open_conversation_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openConversationIds') is not None:
+            self.open_conversation_ids = m.get('openConversationIds')
+        return self
+
+
+class GetCrmGroupChatMultiResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        open_conversation_id: str = None,
+        open_group_set_id: str = None,
+        owner_user_id: str = None,
+        owner_user_name: str = None,
+        name: str = None,
+        member_count: int = None,
+        gmt_create: int = None,
+        icon_url: str = None,
+    ):
+        # 客户群openConversationId。
+        self.open_conversation_id = open_conversation_id
+        # 群组openGroupSetId。
+        self.open_group_set_id = open_group_set_id
+        # 群主userId。
+        self.owner_user_id = owner_user_id
+        # 群主userName。
+        self.owner_user_name = owner_user_name
+        # 客户群名
+        self.name = name
+        # 客户群成员数。
+        self.member_count = member_count
+        # 创建时间(时间戳)。
+        self.gmt_create = gmt_create
+        # 群头像地址。
+        self.icon_url = icon_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.open_group_set_id is not None:
+            result['openGroupSetId'] = self.open_group_set_id
+        if self.owner_user_id is not None:
+            result['ownerUserId'] = self.owner_user_id
+        if self.owner_user_name is not None:
+            result['ownerUserName'] = self.owner_user_name
+        if self.name is not None:
+            result['name'] = self.name
+        if self.member_count is not None:
+            result['memberCount'] = self.member_count
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.icon_url is not None:
+            result['iconUrl'] = self.icon_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('openGroupSetId') is not None:
+            self.open_group_set_id = m.get('openGroupSetId')
+        if m.get('ownerUserId') is not None:
+            self.owner_user_id = m.get('ownerUserId')
+        if m.get('ownerUserName') is not None:
+            self.owner_user_name = m.get('ownerUserName')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('memberCount') is not None:
+            self.member_count = m.get('memberCount')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('iconUrl') is not None:
+            self.icon_url = m.get('iconUrl')
+        return self
+
+
+class GetCrmGroupChatMultiResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[GetCrmGroupChatMultiResponseBodyResult] = None,
+    ):
+        # 客户群列表。
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = GetCrmGroupChatMultiResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class GetCrmGroupChatMultiResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetCrmGroupChatMultiResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetCrmGroupChatMultiResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

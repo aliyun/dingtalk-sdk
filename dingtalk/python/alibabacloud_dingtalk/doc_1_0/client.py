@@ -1317,6 +1317,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetRecentEditDocs', 'doc_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/doc/workspaces/docs/recentEditDocs', 'json', req, runtime)
         )
 
+    def get_recent_open_docs(
+        self,
+        request: dingtalkdoc__1__0_models.GetRecentOpenDocsRequest,
+    ) -> dingtalkdoc__1__0_models.GetRecentOpenDocsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.GetRecentOpenDocsHeaders()
+        return self.get_recent_open_docs_with_options(request, headers, runtime)
+
+    async def get_recent_open_docs_async(
+        self,
+        request: dingtalkdoc__1__0_models.GetRecentOpenDocsRequest,
+    ) -> dingtalkdoc__1__0_models.GetRecentOpenDocsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.GetRecentOpenDocsHeaders()
+        return await self.get_recent_open_docs_with_options_async(request, headers, runtime)
+
+    def get_recent_open_docs_with_options(
+        self,
+        request: dingtalkdoc__1__0_models.GetRecentOpenDocsRequest,
+        headers: dingtalkdoc__1__0_models.GetRecentOpenDocsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.GetRecentOpenDocsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.GetRecentOpenDocsResponse(),
+            self.do_roarequest('GetRecentOpenDocs', 'doc_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/doc/workspaces/docs/recentOpenDocs', 'json', req, runtime)
+        )
+
+    async def get_recent_open_docs_with_options_async(
+        self,
+        request: dingtalkdoc__1__0_models.GetRecentOpenDocsRequest,
+        headers: dingtalkdoc__1__0_models.GetRecentOpenDocsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.GetRecentOpenDocsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.GetRecentOpenDocsResponse(),
+            await self.do_roarequest_async('GetRecentOpenDocs', 'doc_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/doc/workspaces/docs/recentOpenDocs', 'json', req, runtime)
+        )
+
     def add_workspace_members(
         self,
         workspace_id: str,
@@ -1387,6 +1459,78 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkdoc__1__0_models.AddWorkspaceMembersResponse(),
             await self.do_roarequest_async('AddWorkspaceMembers', 'doc_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/doc/workspaces/{workspace_id}/members', 'json', req, runtime)
+        )
+
+    def delete_workspace_doc(
+        self,
+        workspace_id: str,
+        node_id: str,
+        request: dingtalkdoc__1__0_models.DeleteWorkspaceDocRequest,
+    ) -> dingtalkdoc__1__0_models.DeleteWorkspaceDocResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.DeleteWorkspaceDocHeaders()
+        return self.delete_workspace_doc_with_options(workspace_id, node_id, request, headers, runtime)
+
+    async def delete_workspace_doc_async(
+        self,
+        workspace_id: str,
+        node_id: str,
+        request: dingtalkdoc__1__0_models.DeleteWorkspaceDocRequest,
+    ) -> dingtalkdoc__1__0_models.DeleteWorkspaceDocResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.DeleteWorkspaceDocHeaders()
+        return await self.delete_workspace_doc_with_options_async(workspace_id, node_id, request, headers, runtime)
+
+    def delete_workspace_doc_with_options(
+        self,
+        workspace_id: str,
+        node_id: str,
+        request: dingtalkdoc__1__0_models.DeleteWorkspaceDocRequest,
+        headers: dingtalkdoc__1__0_models.DeleteWorkspaceDocHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.DeleteWorkspaceDocResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.DeleteWorkspaceDocResponse(),
+            self.do_roarequest('DeleteWorkspaceDoc', 'doc_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/doc/workspaces/{workspace_id}/docs/{node_id}', 'none', req, runtime)
+        )
+
+    async def delete_workspace_doc_with_options_async(
+        self,
+        workspace_id: str,
+        node_id: str,
+        request: dingtalkdoc__1__0_models.DeleteWorkspaceDocRequest,
+        headers: dingtalkdoc__1__0_models.DeleteWorkspaceDocHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.DeleteWorkspaceDocResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.DeleteWorkspaceDocResponse(),
+            await self.do_roarequest_async('DeleteWorkspaceDoc', 'doc_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/doc/workspaces/{workspace_id}/docs/{node_id}', 'none', req, runtime)
         )
 
     def get_workspace_node(

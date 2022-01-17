@@ -888,6 +888,10 @@ class GetResidentInfoResponseBody(TeaModel):
         county_id: int = None,
         town_id: int = None,
         project_manager: GetResidentInfoResponseBodyProjectManager = None,
+        all_user_group_owner_user_id: str = None,
+        all_user_group_open_conversation_id: str = None,
+        property_dept_group_open_conversation_id: str = None,
+        property_dept_group_owner_user_id: str = None,
     ):
         # 1纯住宅；2:商住混合；3:办公；4:办公商业混合；5:商业；6:公共场所；7:其他
         self.type = type
@@ -921,6 +925,14 @@ class GetResidentInfoResponseBody(TeaModel):
         # 小区归属的街道/镇的id
         self.town_id = town_id
         self.project_manager = project_manager
+        # 全员群群主 userid
+        self.all_user_group_owner_user_id = all_user_group_owner_user_id
+        # 全员群opencid
+        self.all_user_group_open_conversation_id = all_user_group_open_conversation_id
+        # 物业部门群cid
+        self.property_dept_group_open_conversation_id = property_dept_group_open_conversation_id
+        # 物业部门群主userid
+        self.property_dept_group_owner_user_id = property_dept_group_owner_user_id
 
     def validate(self):
         if self.project_manager:
@@ -966,6 +978,14 @@ class GetResidentInfoResponseBody(TeaModel):
             result['townId'] = self.town_id
         if self.project_manager is not None:
             result['projectManager'] = self.project_manager.to_map()
+        if self.all_user_group_owner_user_id is not None:
+            result['allUserGroupOwnerUserId'] = self.all_user_group_owner_user_id
+        if self.all_user_group_open_conversation_id is not None:
+            result['allUserGroupOpenConversationId'] = self.all_user_group_open_conversation_id
+        if self.property_dept_group_open_conversation_id is not None:
+            result['propertyDeptGroupOpenConversationId'] = self.property_dept_group_open_conversation_id
+        if self.property_dept_group_owner_user_id is not None:
+            result['propertyDeptGroupOwnerUserId'] = self.property_dept_group_owner_user_id
         return result
 
     def from_map(self, m: dict = None):
@@ -1005,6 +1025,14 @@ class GetResidentInfoResponseBody(TeaModel):
         if m.get('projectManager') is not None:
             temp_model = GetResidentInfoResponseBodyProjectManager()
             self.project_manager = temp_model.from_map(m['projectManager'])
+        if m.get('allUserGroupOwnerUserId') is not None:
+            self.all_user_group_owner_user_id = m.get('allUserGroupOwnerUserId')
+        if m.get('allUserGroupOpenConversationId') is not None:
+            self.all_user_group_open_conversation_id = m.get('allUserGroupOpenConversationId')
+        if m.get('propertyDeptGroupOpenConversationId') is not None:
+            self.property_dept_group_open_conversation_id = m.get('propertyDeptGroupOpenConversationId')
+        if m.get('propertyDeptGroupOwnerUserId') is not None:
+            self.property_dept_group_owner_user_id = m.get('propertyDeptGroupOwnerUserId')
         return self
 
 

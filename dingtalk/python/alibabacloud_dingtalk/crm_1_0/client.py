@@ -1981,6 +1981,70 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('QueryAllCustomer', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/customerInstances', 'json', req, runtime)
         )
 
+    def get_crm_group_chat_multi(
+        self,
+        request: dingtalkcrm__1__0_models.GetCrmGroupChatMultiRequest,
+    ) -> dingtalkcrm__1__0_models.GetCrmGroupChatMultiResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.GetCrmGroupChatMultiHeaders()
+        return self.get_crm_group_chat_multi_with_options(request, headers, runtime)
+
+    async def get_crm_group_chat_multi_async(
+        self,
+        request: dingtalkcrm__1__0_models.GetCrmGroupChatMultiRequest,
+    ) -> dingtalkcrm__1__0_models.GetCrmGroupChatMultiResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.GetCrmGroupChatMultiHeaders()
+        return await self.get_crm_group_chat_multi_with_options_async(request, headers, runtime)
+
+    def get_crm_group_chat_multi_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.GetCrmGroupChatMultiRequest,
+        headers: dingtalkcrm__1__0_models.GetCrmGroupChatMultiHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.GetCrmGroupChatMultiResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_ids):
+            body['openConversationIds'] = request.open_conversation_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.GetCrmGroupChatMultiResponse(),
+            self.do_roarequest('GetCrmGroupChatMulti', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/crmGroupChats/batchQuery', 'json', req, runtime)
+        )
+
+    async def get_crm_group_chat_multi_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.GetCrmGroupChatMultiRequest,
+        headers: dingtalkcrm__1__0_models.GetCrmGroupChatMultiHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.GetCrmGroupChatMultiResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_ids):
+            body['openConversationIds'] = request.open_conversation_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.GetCrmGroupChatMultiResponse(),
+            await self.do_roarequest_async('GetCrmGroupChatMulti', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/crmGroupChats/batchQuery', 'json', req, runtime)
+        )
+
     def describe_relation_meta(
         self,
         request: dingtalkcrm__1__0_models.DescribeRelationMetaRequest,

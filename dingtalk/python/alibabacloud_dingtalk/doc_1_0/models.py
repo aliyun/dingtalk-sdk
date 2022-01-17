@@ -102,12 +102,18 @@ class BatchGetWorkspaceDocsResponseBodyResultNodeBO(TeaModel):
         name: str = None,
         node_id: str = None,
         url: str = None,
+        last_edit_time: int = None,
         deleted: bool = None,
+        doc_type: str = None,
     ):
         self.name = name
         self.node_id = node_id
         self.url = url
+        # 最后编辑时间
+        self.last_edit_time = last_edit_time
         self.deleted = deleted
+        # 节点类型
+        self.doc_type = doc_type
 
     def validate(self):
         pass
@@ -124,8 +130,12 @@ class BatchGetWorkspaceDocsResponseBodyResultNodeBO(TeaModel):
             result['nodeId'] = self.node_id
         if self.url is not None:
             result['url'] = self.url
+        if self.last_edit_time is not None:
+            result['lastEditTime'] = self.last_edit_time
         if self.deleted is not None:
             result['deleted'] = self.deleted
+        if self.doc_type is not None:
+            result['docType'] = self.doc_type
         return result
 
     def from_map(self, m: dict = None):
@@ -136,8 +146,12 @@ class BatchGetWorkspaceDocsResponseBodyResultNodeBO(TeaModel):
             self.node_id = m.get('nodeId')
         if m.get('url') is not None:
             self.url = m.get('url')
+        if m.get('lastEditTime') is not None:
+            self.last_edit_time = m.get('lastEditTime')
         if m.get('deleted') is not None:
             self.deleted = m.get('deleted')
+        if m.get('docType') is not None:
+            self.doc_type = m.get('docType')
         return self
 
 
@@ -1366,6 +1380,7 @@ class SearchWorkspaceDocsResponseBodyDocsNodeBO(TeaModel):
         node_id: str = None,
         url: str = None,
         last_edit_time: int = None,
+        doc_type: str = None,
     ):
         # 节点名称
         self.name = name
@@ -1375,6 +1390,8 @@ class SearchWorkspaceDocsResponseBodyDocsNodeBO(TeaModel):
         self.url = url
         # 最近编辑时间
         self.last_edit_time = last_edit_time
+        # 节点类型
+        self.doc_type = doc_type
 
     def validate(self):
         pass
@@ -1393,6 +1410,8 @@ class SearchWorkspaceDocsResponseBodyDocsNodeBO(TeaModel):
             result['url'] = self.url
         if self.last_edit_time is not None:
             result['lastEditTime'] = self.last_edit_time
+        if self.doc_type is not None:
+            result['docType'] = self.doc_type
         return result
 
     def from_map(self, m: dict = None):
@@ -1405,6 +1424,8 @@ class SearchWorkspaceDocsResponseBodyDocsNodeBO(TeaModel):
             self.url = m.get('url')
         if m.get('lastEditTime') is not None:
             self.last_edit_time = m.get('lastEditTime')
+        if m.get('docType') is not None:
+            self.doc_type = m.get('docType')
         return self
 
 
@@ -2914,6 +2935,7 @@ class GetRecentEditDocsResponseBodyRecentListNodeBO(TeaModel):
         url: str = None,
         last_edit_time: int = None,
         is_deleted: bool = None,
+        doc_type: str = None,
     ):
         # 文档Id
         self.node_id = node_id
@@ -2925,6 +2947,8 @@ class GetRecentEditDocsResponseBodyRecentListNodeBO(TeaModel):
         self.last_edit_time = last_edit_time
         # 是否被删除
         self.is_deleted = is_deleted
+        # 节点类型
+        self.doc_type = doc_type
 
     def validate(self):
         pass
@@ -2945,6 +2969,8 @@ class GetRecentEditDocsResponseBodyRecentListNodeBO(TeaModel):
             result['lastEditTime'] = self.last_edit_time
         if self.is_deleted is not None:
             result['isDeleted'] = self.is_deleted
+        if self.doc_type is not None:
+            result['docType'] = self.doc_type
         return result
 
     def from_map(self, m: dict = None):
@@ -2959,6 +2985,8 @@ class GetRecentEditDocsResponseBodyRecentListNodeBO(TeaModel):
             self.last_edit_time = m.get('lastEditTime')
         if m.get('isDeleted') is not None:
             self.is_deleted = m.get('isDeleted')
+        if m.get('docType') is not None:
+            self.doc_type = m.get('docType')
         return self
 
 
@@ -3112,6 +3140,297 @@ class GetRecentEditDocsResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = GetRecentEditDocsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetRecentOpenDocsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetRecentOpenDocsRequest(TeaModel):
+    def __init__(
+        self,
+        operator_id: str = None,
+        max_results: int = None,
+        next_token: str = None,
+    ):
+        # 发起操作用户unionId
+        self.operator_id = operator_id
+        # 查询size
+        self.max_results = max_results
+        self.next_token = next_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        return self
+
+
+class GetRecentOpenDocsResponseBodyRecentListNodeBO(TeaModel):
+    def __init__(
+        self,
+        node_id: str = None,
+        node_name: str = None,
+        url: str = None,
+        last_open_time: int = None,
+        is_deleted: bool = None,
+        doc_type: str = None,
+    ):
+        # 文档Id
+        self.node_id = node_id
+        # 文档名称
+        self.node_name = node_name
+        # 文档打开url
+        self.url = url
+        # 最后编辑时间
+        self.last_open_time = last_open_time
+        # 是否被删除
+        self.is_deleted = is_deleted
+        # 节点类型
+        self.doc_type = doc_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.node_id is not None:
+            result['nodeId'] = self.node_id
+        if self.node_name is not None:
+            result['nodeName'] = self.node_name
+        if self.url is not None:
+            result['url'] = self.url
+        if self.last_open_time is not None:
+            result['lastOpenTime'] = self.last_open_time
+        if self.is_deleted is not None:
+            result['isDeleted'] = self.is_deleted
+        if self.doc_type is not None:
+            result['docType'] = self.doc_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nodeId') is not None:
+            self.node_id = m.get('nodeId')
+        if m.get('nodeName') is not None:
+            self.node_name = m.get('nodeName')
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        if m.get('lastOpenTime') is not None:
+            self.last_open_time = m.get('lastOpenTime')
+        if m.get('isDeleted') is not None:
+            self.is_deleted = m.get('isDeleted')
+        if m.get('docType') is not None:
+            self.doc_type = m.get('docType')
+        return self
+
+
+class GetRecentOpenDocsResponseBodyRecentListWorkspaceBO(TeaModel):
+    def __init__(
+        self,
+        workspace_id: str = None,
+        workspace_name: str = None,
+    ):
+        # 团队空间Id
+        self.workspace_id = workspace_id
+        # 团队空间名称
+        self.workspace_name = workspace_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.workspace_id is not None:
+            result['workspaceId'] = self.workspace_id
+        if self.workspace_name is not None:
+            result['workspaceName'] = self.workspace_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('workspaceId') is not None:
+            self.workspace_id = m.get('workspaceId')
+        if m.get('workspaceName') is not None:
+            self.workspace_name = m.get('workspaceName')
+        return self
+
+
+class GetRecentOpenDocsResponseBodyRecentList(TeaModel):
+    def __init__(
+        self,
+        node_bo: GetRecentOpenDocsResponseBodyRecentListNodeBO = None,
+        workspace_bo: GetRecentOpenDocsResponseBodyRecentListWorkspaceBO = None,
+    ):
+        # 文档信息
+        self.node_bo = node_bo
+        # 团队空间信息
+        self.workspace_bo = workspace_bo
+
+    def validate(self):
+        if self.node_bo:
+            self.node_bo.validate()
+        if self.workspace_bo:
+            self.workspace_bo.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.node_bo is not None:
+            result['nodeBO'] = self.node_bo.to_map()
+        if self.workspace_bo is not None:
+            result['workspaceBO'] = self.workspace_bo.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nodeBO') is not None:
+            temp_model = GetRecentOpenDocsResponseBodyRecentListNodeBO()
+            self.node_bo = temp_model.from_map(m['nodeBO'])
+        if m.get('workspaceBO') is not None:
+            temp_model = GetRecentOpenDocsResponseBodyRecentListWorkspaceBO()
+            self.workspace_bo = temp_model.from_map(m['workspaceBO'])
+        return self
+
+
+class GetRecentOpenDocsResponseBody(TeaModel):
+    def __init__(
+        self,
+        recent_list: List[GetRecentOpenDocsResponseBodyRecentList] = None,
+        next_token: str = None,
+    ):
+        # 查询结果
+        self.recent_list = recent_list
+        self.next_token = next_token
+
+    def validate(self):
+        if self.recent_list:
+            for k in self.recent_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['recentList'] = []
+        if self.recent_list is not None:
+            for k in self.recent_list:
+                result['recentList'].append(k.to_map() if k else None)
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.recent_list = []
+        if m.get('recentList') is not None:
+            for k in m.get('recentList'):
+                temp_model = GetRecentOpenDocsResponseBodyRecentList()
+                self.recent_list.append(temp_model.from_map(k))
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        return self
+
+
+class GetRecentOpenDocsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetRecentOpenDocsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetRecentOpenDocsResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -3298,6 +3617,94 @@ class AddWorkspaceMembersResponse(TeaModel):
         return self
 
 
+class DeleteWorkspaceDocHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeleteWorkspaceDocRequest(TeaModel):
+    def __init__(
+        self,
+        operator_id: str = None,
+    ):
+        # 发起删除请求的用户用户的unionId
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class DeleteWorkspaceDocResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+    ):
+        self.headers = headers
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        return self
+
+
 class GetWorkspaceNodeHeaders(TeaModel):
     def __init__(
         self,
@@ -3365,6 +3772,8 @@ class GetWorkspaceNodeResponseBodyNodeBO(TeaModel):
         name: str = None,
         node_id: str = None,
         url: str = None,
+        last_edit_time: int = None,
+        doc_type: str = None,
     ):
         # 节点名称
         self.name = name
@@ -3372,6 +3781,10 @@ class GetWorkspaceNodeResponseBodyNodeBO(TeaModel):
         self.node_id = node_id
         # 节点打开url
         self.url = url
+        # 最后编辑时间
+        self.last_edit_time = last_edit_time
+        # 节点类型
+        self.doc_type = doc_type
 
     def validate(self):
         pass
@@ -3388,6 +3801,10 @@ class GetWorkspaceNodeResponseBodyNodeBO(TeaModel):
             result['nodeId'] = self.node_id
         if self.url is not None:
             result['url'] = self.url
+        if self.last_edit_time is not None:
+            result['lastEditTime'] = self.last_edit_time
+        if self.doc_type is not None:
+            result['docType'] = self.doc_type
         return result
 
     def from_map(self, m: dict = None):
@@ -3398,6 +3815,10 @@ class GetWorkspaceNodeResponseBodyNodeBO(TeaModel):
             self.node_id = m.get('nodeId')
         if m.get('url') is not None:
             self.url = m.get('url')
+        if m.get('lastEditTime') is not None:
+            self.last_edit_time = m.get('lastEditTime')
+        if m.get('docType') is not None:
+            self.doc_type = m.get('docType')
         return self
 
 
