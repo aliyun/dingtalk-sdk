@@ -736,6 +736,66 @@ export class DeleteSheetResponse extends $tea.Model {
   }
 }
 
+export class DeleteWorkspaceDocHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteWorkspaceDocRequest extends $tea.Model {
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteWorkspaceDocResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DeleteWorkspaceDocMembersHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -945,6 +1005,97 @@ export class GetRecentEditDocsResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: GetRecentEditDocsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetRecentOpenDocsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetRecentOpenDocsRequest extends $tea.Model {
+  maxResults?: number;
+  nextToken?: string;
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxResults: 'number',
+      nextToken: 'string',
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetRecentOpenDocsResponseBody extends $tea.Model {
+  nextToken?: string;
+  recentList?: GetRecentOpenDocsResponseBodyRecentList[];
+  static names(): { [key: string]: string } {
+    return {
+      nextToken: 'nextToken',
+      recentList: 'recentList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nextToken: 'string',
+      recentList: { 'type': 'array', 'itemType': GetRecentOpenDocsResponseBodyRecentList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetRecentOpenDocsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetRecentOpenDocsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetRecentOpenDocsResponseBody,
     };
   }
 
@@ -1627,12 +1778,16 @@ export class AddWorkspaceMembersRequestMembers extends $tea.Model {
 
 export class BatchGetWorkspaceDocsResponseBodyResultNodeBO extends $tea.Model {
   deleted?: boolean;
+  docType?: string;
+  lastEditTime?: number;
   name?: string;
   nodeId?: string;
   url?: string;
   static names(): { [key: string]: string } {
     return {
       deleted: 'deleted',
+      docType: 'docType',
+      lastEditTime: 'lastEditTime',
       name: 'name',
       nodeId: 'nodeId',
       url: 'url',
@@ -1642,6 +1797,8 @@ export class BatchGetWorkspaceDocsResponseBodyResultNodeBO extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       deleted: 'boolean',
+      docType: 'string',
+      lastEditTime: 'number',
       name: 'string',
       nodeId: 'string',
       url: 'string',
@@ -1829,6 +1986,7 @@ export class DeleteWorkspaceMembersRequestMembers extends $tea.Model {
 }
 
 export class GetRecentEditDocsResponseBodyRecentListNodeBO extends $tea.Model {
+  docType?: string;
   isDeleted?: boolean;
   lastEditTime?: number;
   nodeId?: string;
@@ -1836,6 +1994,7 @@ export class GetRecentEditDocsResponseBodyRecentListNodeBO extends $tea.Model {
   url?: string;
   static names(): { [key: string]: string } {
     return {
+      docType: 'docType',
       isDeleted: 'isDeleted',
       lastEditTime: 'lastEditTime',
       nodeId: 'nodeId',
@@ -1846,6 +2005,7 @@ export class GetRecentEditDocsResponseBodyRecentListNodeBO extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      docType: 'string',
       isDeleted: 'boolean',
       lastEditTime: 'number',
       nodeId: 'string',
@@ -1895,6 +2055,84 @@ export class GetRecentEditDocsResponseBodyRecentList extends $tea.Model {
     return {
       nodeBO: GetRecentEditDocsResponseBodyRecentListNodeBO,
       workspaceBO: GetRecentEditDocsResponseBodyRecentListWorkspaceBO,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetRecentOpenDocsResponseBodyRecentListNodeBO extends $tea.Model {
+  docType?: string;
+  isDeleted?: boolean;
+  lastOpenTime?: number;
+  nodeId?: string;
+  nodeName?: string;
+  url?: string;
+  static names(): { [key: string]: string } {
+    return {
+      docType: 'docType',
+      isDeleted: 'isDeleted',
+      lastOpenTime: 'lastOpenTime',
+      nodeId: 'nodeId',
+      nodeName: 'nodeName',
+      url: 'url',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      docType: 'string',
+      isDeleted: 'boolean',
+      lastOpenTime: 'number',
+      nodeId: 'string',
+      nodeName: 'string',
+      url: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetRecentOpenDocsResponseBodyRecentListWorkspaceBO extends $tea.Model {
+  workspaceId?: string;
+  workspaceName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      workspaceId: 'workspaceId',
+      workspaceName: 'workspaceName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      workspaceId: 'string',
+      workspaceName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetRecentOpenDocsResponseBodyRecentList extends $tea.Model {
+  nodeBO?: GetRecentOpenDocsResponseBodyRecentListNodeBO;
+  workspaceBO?: GetRecentOpenDocsResponseBodyRecentListWorkspaceBO;
+  static names(): { [key: string]: string } {
+    return {
+      nodeBO: 'nodeBO',
+      workspaceBO: 'workspaceBO',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nodeBO: GetRecentOpenDocsResponseBodyRecentListNodeBO,
+      workspaceBO: GetRecentOpenDocsResponseBodyRecentListWorkspaceBO,
     };
   }
 
@@ -1972,11 +2210,15 @@ export class GetRelatedWorkspacesResponseBodyWorkspaces extends $tea.Model {
 }
 
 export class GetWorkspaceNodeResponseBodyNodeBO extends $tea.Model {
+  docType?: string;
+  lastEditTime?: number;
   name?: string;
   nodeId?: string;
   url?: string;
   static names(): { [key: string]: string } {
     return {
+      docType: 'docType',
+      lastEditTime: 'lastEditTime',
       name: 'name',
       nodeId: 'nodeId',
       url: 'url',
@@ -1985,6 +2227,8 @@ export class GetWorkspaceNodeResponseBodyNodeBO extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      docType: 'string',
+      lastEditTime: 'number',
       name: 'string',
       nodeId: 'string',
       url: 'string',
@@ -2019,12 +2263,14 @@ export class GetWorkspaceNodeResponseBodyWorkspaceBO extends $tea.Model {
 }
 
 export class SearchWorkspaceDocsResponseBodyDocsNodeBO extends $tea.Model {
+  docType?: string;
   lastEditTime?: number;
   name?: string;
   nodeId?: string;
   url?: string;
   static names(): { [key: string]: string } {
     return {
+      docType: 'docType',
       lastEditTime: 'lastEditTime',
       name: 'name',
       nodeId: 'nodeId',
@@ -2034,6 +2280,7 @@ export class SearchWorkspaceDocsResponseBodyDocsNodeBO extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      docType: 'string',
       lastEditTime: 'number',
       name: 'string',
       nodeId: 'string',
@@ -2475,6 +2722,37 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteSheetResponse>(await this.doROARequest("DeleteSheet", "doc_1.0", "HTTP", "DELETE", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}`, "none", req, runtime), new DeleteSheetResponse({}));
   }
 
+  async deleteWorkspaceDoc(workspaceId: string, nodeId: string, request: DeleteWorkspaceDocRequest): Promise<DeleteWorkspaceDocResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DeleteWorkspaceDocHeaders({ });
+    return await this.deleteWorkspaceDocWithOptions(workspaceId, nodeId, request, headers, runtime);
+  }
+
+  async deleteWorkspaceDocWithOptions(workspaceId: string, nodeId: string, request: DeleteWorkspaceDocRequest, headers: DeleteWorkspaceDocHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteWorkspaceDocResponse> {
+    Util.validateModel(request);
+    workspaceId = OpenApiUtil.getEncodeParam(workspaceId);
+    nodeId = OpenApiUtil.getEncodeParam(nodeId);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<DeleteWorkspaceDocResponse>(await this.doROARequest("DeleteWorkspaceDoc", "doc_1.0", "HTTP", "DELETE", "AK", `/v1.0/doc/workspaces/${workspaceId}/docs/${nodeId}`, "none", req, runtime), new DeleteWorkspaceDocResponse({}));
+  }
+
   async deleteWorkspaceDocMembers(workspaceId: string, nodeId: string, request: DeleteWorkspaceDocMembersRequest): Promise<DeleteWorkspaceDocMembersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteWorkspaceDocMembersHeaders({ });
@@ -2579,6 +2857,43 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<GetRecentEditDocsResponse>(await this.doROARequest("GetRecentEditDocs", "doc_1.0", "HTTP", "GET", "AK", `/v1.0/doc/workspaces/docs/recentEditDocs`, "json", req, runtime), new GetRecentEditDocsResponse({}));
+  }
+
+  async getRecentOpenDocs(request: GetRecentOpenDocsRequest): Promise<GetRecentOpenDocsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetRecentOpenDocsHeaders({ });
+    return await this.getRecentOpenDocsWithOptions(request, headers, runtime);
+  }
+
+  async getRecentOpenDocsWithOptions(request: GetRecentOpenDocsRequest, headers: GetRecentOpenDocsHeaders, runtime: $Util.RuntimeOptions): Promise<GetRecentOpenDocsResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetRecentOpenDocsResponse>(await this.doROARequest("GetRecentOpenDocs", "doc_1.0", "HTTP", "GET", "AK", `/v1.0/doc/workspaces/docs/recentOpenDocs`, "json", req, runtime), new GetRecentOpenDocsResponse({}));
   }
 
   async getRelatedWorkspaces(request: GetRelatedWorkspacesRequest): Promise<GetRelatedWorkspacesResponse> {

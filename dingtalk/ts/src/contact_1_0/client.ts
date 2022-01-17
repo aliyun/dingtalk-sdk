@@ -67,6 +67,72 @@ export class BatchApproveUnionApplyResponse extends $tea.Model {
   }
 }
 
+export class ChangeMainAdminHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChangeMainAdminRequest extends $tea.Model {
+  effectCorpId?: string;
+  sourceUserId?: string;
+  targetUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      effectCorpId: 'effectCorpId',
+      sourceUserId: 'sourceUserId',
+      targetUserId: 'targetUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      effectCorpId: 'string',
+      sourceUserId: 'string',
+      targetUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChangeMainAdminResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateCooperateOrgHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1984,6 +2050,88 @@ export class ListManagementGroupsResponse extends $tea.Model {
   }
 }
 
+export class ListOwnedOrgByStaffIdHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListOwnedOrgByStaffIdRequest extends $tea.Model {
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListOwnedOrgByStaffIdResponseBody extends $tea.Model {
+  orgList?: ListOwnedOrgByStaffIdResponseBodyOrgList[];
+  static names(): { [key: string]: string } {
+    return {
+      orgList: 'orgList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      orgList: { 'type': 'array', 'itemType': ListOwnedOrgByStaffIdResponseBodyOrgList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListOwnedOrgByStaffIdResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ListOwnedOrgByStaffIdResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ListOwnedOrgByStaffIdResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListSeniorSettingsHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3836,18 +3984,30 @@ export class GetCardInfoResponseBodyExtensionCardContactInfo extends $tea.Model 
 export class GetCardInfoResponseBodyExtension extends $tea.Model {
   cardContactInfo?: GetCardInfoResponseBodyExtensionCardContactInfo;
   corpId?: string;
+  department?: string;
   orgAuthLevel?: number;
   orgAuthed?: boolean;
   orgLogo?: string;
-  videoMediaId?: string;
+  originCardUrl?: string;
+  shareContent?: string;
+  thumbnailUrl?: string;
+  videoFileName?: string;
+  videoTitle?: string;
+  videoUrl?: string;
   static names(): { [key: string]: string } {
     return {
       cardContactInfo: 'cardContactInfo',
       corpId: 'corpId',
+      department: 'department',
       orgAuthLevel: 'orgAuthLevel',
       orgAuthed: 'orgAuthed',
       orgLogo: 'orgLogo',
-      videoMediaId: 'videoMediaId',
+      originCardUrl: 'originCardUrl',
+      shareContent: 'shareContent',
+      thumbnailUrl: 'thumbnailUrl',
+      videoFileName: 'videoFileName',
+      videoTitle: 'videoTitle',
+      videoUrl: 'videoUrl',
     };
   }
 
@@ -3855,10 +4015,16 @@ export class GetCardInfoResponseBodyExtension extends $tea.Model {
     return {
       cardContactInfo: GetCardInfoResponseBodyExtensionCardContactInfo,
       corpId: 'string',
+      department: 'string',
       orgAuthLevel: 'number',
       orgAuthed: 'boolean',
       orgLogo: 'string',
-      videoMediaId: 'string',
+      originCardUrl: 'string',
+      shareContent: 'string',
+      thumbnailUrl: 'string',
+      videoFileName: 'string',
+      videoTitle: 'string',
+      videoUrl: 'string',
     };
   }
 
@@ -4120,6 +4286,28 @@ export class ListManagementGroupsResponseBodyGroups extends $tea.Model {
   }
 }
 
+export class ListOwnedOrgByStaffIdResponseBodyOrgList extends $tea.Model {
+  corpId?: string;
+  corpName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      corpName: 'corpName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      corpName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListSeniorSettingsResponseBodySeniorWhiteList extends $tea.Model {
   id?: string;
   name?: string;
@@ -4302,6 +4490,43 @@ export default class Client extends OpenApi {
       body: Util.toArray(request.body),
     });
     return $tea.cast<BatchApproveUnionApplyResponse>(await this.doROARequest("BatchApproveUnionApply", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/cooperateCorps/unionApplications/approve`, "none", req, runtime), new BatchApproveUnionApplyResponse({}));
+  }
+
+  async changeMainAdmin(request: ChangeMainAdminRequest): Promise<ChangeMainAdminResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ChangeMainAdminHeaders({ });
+    return await this.changeMainAdminWithOptions(request, headers, runtime);
+  }
+
+  async changeMainAdminWithOptions(request: ChangeMainAdminRequest, headers: ChangeMainAdminHeaders, runtime: $Util.RuntimeOptions): Promise<ChangeMainAdminResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.effectCorpId)) {
+      body["effectCorpId"] = request.effectCorpId;
+    }
+
+    if (!Util.isUnset(request.sourceUserId)) {
+      body["sourceUserId"] = request.sourceUserId;
+    }
+
+    if (!Util.isUnset(request.targetUserId)) {
+      body["targetUserId"] = request.targetUserId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<ChangeMainAdminResponse>(await this.doROARequest("ChangeMainAdmin", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/orgAccounts/mainAdministrators/change`, "none", req, runtime), new ChangeMainAdminResponse({}));
   }
 
   async createCooperateOrg(request: CreateCooperateOrgRequest): Promise<CreateCooperateOrgResponse> {
@@ -5022,6 +5247,35 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<ListManagementGroupsResponse>(await this.doROARequest("ListManagementGroups", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/managementGroups`, "json", req, runtime), new ListManagementGroupsResponse({}));
+  }
+
+  async listOwnedOrgByStaffId(request: ListOwnedOrgByStaffIdRequest): Promise<ListOwnedOrgByStaffIdResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListOwnedOrgByStaffIdHeaders({ });
+    return await this.listOwnedOrgByStaffIdWithOptions(request, headers, runtime);
+  }
+
+  async listOwnedOrgByStaffIdWithOptions(request: ListOwnedOrgByStaffIdRequest, headers: ListOwnedOrgByStaffIdHeaders, runtime: $Util.RuntimeOptions): Promise<ListOwnedOrgByStaffIdResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<ListOwnedOrgByStaffIdResponse>(await this.doROARequest("ListOwnedOrgByStaffId", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/orgAccounts/ownedOrganizations`, "json", req, runtime), new ListOwnedOrgByStaffIdResponse({}));
   }
 
   async listSeniorSettings(request: ListSeniorSettingsRequest): Promise<ListSeniorSettingsResponse> {

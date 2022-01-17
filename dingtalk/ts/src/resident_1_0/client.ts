@@ -810,6 +810,8 @@ export class GetResidentInfoRequest extends $tea.Model {
 
 export class GetResidentInfoResponseBody extends $tea.Model {
   address?: string;
+  allUserGroupOpenConversationId?: string;
+  allUserGroupOwnerUserId?: string;
   buildingArea?: number;
   cityId?: number;
   contactMode?: number;
@@ -818,6 +820,8 @@ export class GetResidentInfoResponseBody extends $tea.Model {
   location?: string;
   name?: string;
   projectManager?: GetResidentInfoResponseBodyProjectManager;
+  propertyDeptGroupOpenConversationId?: string;
+  propertyDeptGroupOwnerUserId?: string;
   provId?: number;
   scopeEast?: string;
   scopeNorth?: string;
@@ -829,6 +833,8 @@ export class GetResidentInfoResponseBody extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       address: 'address',
+      allUserGroupOpenConversationId: 'allUserGroupOpenConversationId',
+      allUserGroupOwnerUserId: 'allUserGroupOwnerUserId',
       buildingArea: 'buildingArea',
       cityId: 'cityId',
       contactMode: 'contactMode',
@@ -837,6 +843,8 @@ export class GetResidentInfoResponseBody extends $tea.Model {
       location: 'location',
       name: 'name',
       projectManager: 'projectManager',
+      propertyDeptGroupOpenConversationId: 'propertyDeptGroupOpenConversationId',
+      propertyDeptGroupOwnerUserId: 'propertyDeptGroupOwnerUserId',
       provId: 'provId',
       scopeEast: 'scopeEast',
       scopeNorth: 'scopeNorth',
@@ -851,6 +859,8 @@ export class GetResidentInfoResponseBody extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       address: 'string',
+      allUserGroupOpenConversationId: 'string',
+      allUserGroupOwnerUserId: 'string',
       buildingArea: 'number',
       cityId: 'number',
       contactMode: 'number',
@@ -859,6 +869,8 @@ export class GetResidentInfoResponseBody extends $tea.Model {
       location: 'string',
       name: 'string',
       projectManager: GetResidentInfoResponseBodyProjectManager,
+      propertyDeptGroupOpenConversationId: 'string',
+      propertyDeptGroupOwnerUserId: 'string',
       provId: 'number',
       scopeEast: 'string',
       scopeNorth: 'string',
