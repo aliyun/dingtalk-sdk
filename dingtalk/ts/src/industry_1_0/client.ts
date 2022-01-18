@@ -2740,25 +2740,6 @@ export class IndustryMmanufactureMaterialCostGetResponseBodyList extends $tea.Mo
   }
 }
 
-export class QueryAllDepartmentResponseBodyContentDeptAndExtDepartmentWardIdList extends $tea.Model {
-  id?: number;
-  static names(): { [key: string]: string } {
-    return {
-      id: 'id',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      id: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class QueryAllDepartmentResponseBodyContentDeptAndExtDepartment extends $tea.Model {
   corpId?: string;
   deptCode?: string;
@@ -2772,7 +2753,7 @@ export class QueryAllDepartmentResponseBodyContentDeptAndExtDepartment extends $
   name?: string;
   parentDeptCode?: string;
   remark?: string;
-  wardIdList?: QueryAllDepartmentResponseBodyContentDeptAndExtDepartmentWardIdList[];
+  wardIdList?: number[];
   static names(): { [key: string]: string } {
     return {
       corpId: 'corpId',
@@ -2805,7 +2786,7 @@ export class QueryAllDepartmentResponseBodyContentDeptAndExtDepartment extends $
       name: 'string',
       parentDeptCode: 'string',
       remark: 'string',
-      wardIdList: { 'type': 'array', 'itemType': QueryAllDepartmentResponseBodyContentDeptAndExtDepartmentWardIdList },
+      wardIdList: { 'type': 'array', 'itemType': 'number' },
     };
   }
 

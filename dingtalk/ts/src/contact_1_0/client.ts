@@ -1247,6 +1247,109 @@ export class GetMigrationUnionIdByUnionIdResponse extends $tea.Model {
   }
 }
 
+export class GetOrgAuthInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOrgAuthInfoRequest extends $tea.Model {
+  targetCorpId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      targetCorpId: 'targetCorpId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      targetCorpId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOrgAuthInfoResponseBody extends $tea.Model {
+  authLevel?: number;
+  legalPerson?: string;
+  licenseOrgName?: string;
+  licenseUrl?: string;
+  orgName?: string;
+  organizationCode?: string;
+  registrationNum?: string;
+  unifiedSocialCredit?: string;
+  static names(): { [key: string]: string } {
+    return {
+      authLevel: 'authLevel',
+      legalPerson: 'legalPerson',
+      licenseOrgName: 'licenseOrgName',
+      licenseUrl: 'licenseUrl',
+      orgName: 'orgName',
+      organizationCode: 'organizationCode',
+      registrationNum: 'registrationNum',
+      unifiedSocialCredit: 'unifiedSocialCredit',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      authLevel: 'number',
+      legalPerson: 'string',
+      licenseOrgName: 'string',
+      licenseUrl: 'string',
+      orgName: 'string',
+      organizationCode: 'string',
+      registrationNum: 'string',
+      unifiedSocialCredit: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOrgAuthInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetOrgAuthInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetOrgAuthInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetTranslateFileJobResultHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4946,6 +5049,35 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<GetMigrationUnionIdByUnionIdResponse>(await this.doROARequest("GetMigrationUnionIdByUnionId", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/orgAccount/getMigrationUnionIdByUnionIds`, "json", req, runtime), new GetMigrationUnionIdByUnionIdResponse({}));
+  }
+
+  async getOrgAuthInfo(request: GetOrgAuthInfoRequest): Promise<GetOrgAuthInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetOrgAuthInfoHeaders({ });
+    return await this.getOrgAuthInfoWithOptions(request, headers, runtime);
+  }
+
+  async getOrgAuthInfoWithOptions(request: GetOrgAuthInfoRequest, headers: GetOrgAuthInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetOrgAuthInfoResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.targetCorpId)) {
+      query["targetCorpId"] = request.targetCorpId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetOrgAuthInfoResponse>(await this.doROARequest("GetOrgAuthInfo", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/organizations/authInfos`, "json", req, runtime), new GetOrgAuthInfoResponse({}));
   }
 
   async getTranslateFileJobResult(request: GetTranslateFileJobResultRequest): Promise<GetTranslateFileJobResultResponse> {
