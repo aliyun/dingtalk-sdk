@@ -130,16 +130,7 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
                     /// </summary>
                     [NameInMap("wardIdList")]
                     [Validation(Required=false)]
-                    public List<QueryAllDepartmentResponseBodyContentDeptAndExtDepartmentWardIdList> WardIdList { get; set; }
-                    public class QueryAllDepartmentResponseBodyContentDeptAndExtDepartmentWardIdList : TeaModel {
-                        /// <summary>
-                        /// 病区id
-                        /// </summary>
-                        [NameInMap("id")]
-                        [Validation(Required=false)]
-                        public long? Id { get; set; }
-
-                    }
+                    public List<long?> WardIdList { get; set; }
 
                 }
                 [NameInMap("extendInfos")]
