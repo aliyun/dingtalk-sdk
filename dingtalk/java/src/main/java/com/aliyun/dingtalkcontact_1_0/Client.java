@@ -501,6 +501,35 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("GetMigrationUnionIdByUnionId", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/orgAccount/getMigrationUnionIdByUnionIds", "json", req, runtime), new GetMigrationUnionIdByUnionIdResponse());
     }
 
+    public GetOrgAuthInfoResponse getOrgAuthInfo(GetOrgAuthInfoRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        GetOrgAuthInfoHeaders headers = new GetOrgAuthInfoHeaders();
+        return this.getOrgAuthInfoWithOptions(request, headers, runtime);
+    }
+
+    public GetOrgAuthInfoResponse getOrgAuthInfoWithOptions(GetOrgAuthInfoRequest request, GetOrgAuthInfoHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.targetCorpId)) {
+            query.put("targetCorpId", request.targetCorpId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("GetOrgAuthInfo", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/organizations/authInfos", "json", req, runtime), new GetOrgAuthInfoResponse());
+    }
+
     public GetTranslateFileJobResultResponse getTranslateFileJobResult(GetTranslateFileJobResultRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         GetTranslateFileJobResultHeaders headers = new GetTranslateFileJobResultHeaders();
