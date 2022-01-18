@@ -6016,34 +6016,6 @@ class QueryAllDepartmentRequest(TeaModel):
         return self
 
 
-class QueryAllDepartmentResponseBodyContentDeptAndExtDepartmentWardIdList(TeaModel):
-    def __init__(
-        self,
-        id: int = None,
-    ):
-        # 病区id
-        self.id = id
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.id is not None:
-            result['id'] = self.id
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('id') is not None:
-            self.id = m.get('id')
-        return self
-
-
 class QueryAllDepartmentResponseBodyContentDeptAndExtDepartment(TeaModel):
     def __init__(
         self,
@@ -6059,7 +6031,7 @@ class QueryAllDepartmentResponseBodyContentDeptAndExtDepartment(TeaModel):
         remark: str = None,
         dept_name: str = None,
         name: str = None,
-        ward_id_list: List[QueryAllDepartmentResponseBodyContentDeptAndExtDepartmentWardIdList] = None,
+        ward_id_list: List[int] = None,
     ):
         # 科室ID
         self.id = id
@@ -6089,10 +6061,7 @@ class QueryAllDepartmentResponseBodyContentDeptAndExtDepartment(TeaModel):
         self.ward_id_list = ward_id_list
 
     def validate(self):
-        if self.ward_id_list:
-            for k in self.ward_id_list:
-                if k:
-                    k.validate()
+        pass
 
     def to_map(self):
         _map = super().to_map()
@@ -6124,10 +6093,8 @@ class QueryAllDepartmentResponseBodyContentDeptAndExtDepartment(TeaModel):
             result['deptName'] = self.dept_name
         if self.name is not None:
             result['name'] = self.name
-        result['wardIdList'] = []
         if self.ward_id_list is not None:
-            for k in self.ward_id_list:
-                result['wardIdList'].append(k.to_map() if k else None)
+            result['wardIdList'] = self.ward_id_list
         return result
 
     def from_map(self, m: dict = None):
@@ -6156,11 +6123,8 @@ class QueryAllDepartmentResponseBodyContentDeptAndExtDepartment(TeaModel):
             self.dept_name = m.get('deptName')
         if m.get('name') is not None:
             self.name = m.get('name')
-        self.ward_id_list = []
         if m.get('wardIdList') is not None:
-            for k in m.get('wardIdList'):
-                temp_model = QueryAllDepartmentResponseBodyContentDeptAndExtDepartmentWardIdList()
-                self.ward_id_list.append(temp_model.from_map(k))
+            self.ward_id_list = m.get('wardIdList')
         return self
 
 
