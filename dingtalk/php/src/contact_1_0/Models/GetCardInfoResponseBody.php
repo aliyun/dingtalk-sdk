@@ -52,11 +52,18 @@ class GetCardInfoResponseBody extends Model
     public $industryName;
 
     /**
-     * @description 是否主名片
+     * @description 个人介绍
      *
-     * @var bool
+     * @var mixed[]
      */
     public $introduce;
+
+    /**
+     * @description 用户角色
+     *
+     * @var int
+     */
+    public $adminRole;
 
     /**
      * @description 模板ID
@@ -79,6 +86,7 @@ class GetCardInfoResponseBody extends Model
         'title'        => 'title',
         'industryName' => 'industryName',
         'introduce'    => 'introduce',
+        'adminRole'    => 'adminRole',
         'templateId'   => 'templateId',
         'extension'    => 'extension',
     ];
@@ -110,6 +118,9 @@ class GetCardInfoResponseBody extends Model
         }
         if (null !== $this->introduce) {
             $res['introduce'] = $this->introduce;
+        }
+        if (null !== $this->adminRole) {
+            $res['adminRole'] = $this->adminRole;
         }
         if (null !== $this->templateId) {
             $res['templateId'] = $this->templateId;
@@ -149,6 +160,9 @@ class GetCardInfoResponseBody extends Model
         }
         if (isset($map['introduce'])) {
             $model->introduce = $map['introduce'];
+        }
+        if (isset($map['adminRole'])) {
+            $model->adminRole = $map['adminRole'];
         }
         if (isset($map['templateId'])) {
             $model->templateId = $map['templateId'];

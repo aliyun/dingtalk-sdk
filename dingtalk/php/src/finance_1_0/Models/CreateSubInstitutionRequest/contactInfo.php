@@ -2,18 +2,18 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\ModifySubInstitutionRequest;
+namespace AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\CreateSubInstitutionRequest;
 
 use AlibabaCloud\Tea\Model;
 
-class contractInfo extends Model
+class contactInfo extends Model
 {
     /**
      * @description 联系人姓名
      *
      * @var string
      */
-    public $contractName;
+    public $contactName;
 
     /**
      * @description 联系人手机号
@@ -22,8 +22,8 @@ class contractInfo extends Model
      */
     public $mobile;
     protected $_name = [
-        'contractName' => 'contractName',
-        'mobile'       => 'mobile',
+        'contactName' => 'contactName',
+        'mobile'      => 'mobile',
     ];
 
     public function validate()
@@ -33,8 +33,8 @@ class contractInfo extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->contractName) {
-            $res['contractName'] = $this->contractName;
+        if (null !== $this->contactName) {
+            $res['contactName'] = $this->contactName;
         }
         if (null !== $this->mobile) {
             $res['mobile'] = $this->mobile;
@@ -46,13 +46,13 @@ class contractInfo extends Model
     /**
      * @param array $map
      *
-     * @return contractInfo
+     * @return contactInfo
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['contractName'])) {
-            $model->contractName = $map['contractName'];
+        if (isset($map['contactName'])) {
+            $model->contactName = $map['contactName'];
         }
         if (isset($map['mobile'])) {
             $model->mobile = $map['mobile'];

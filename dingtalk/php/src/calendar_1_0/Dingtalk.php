@@ -37,6 +37,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetSignInListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetSignInListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListAclsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListAclsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListAttendeesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListAttendeesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListAttendeesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListCalendarsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListCalendarsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsHeaders;
@@ -208,6 +211,57 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return RespondEventResponse::fromMap($this->doROARequest('RespondEvent', 'calendar_1.0', 'HTTP', 'POST', 'AK', '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/respond', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param string               $userId
+     * @param string               $calendarId
+     * @param string               $eventId
+     * @param ListAttendeesRequest $request
+     *
+     * @return ListAttendeesResponse
+     */
+    public function listAttendees($userId, $calendarId, $eventId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListAttendeesHeaders([]);
+
+        return $this->listAttendeesWithOptions($userId, $calendarId, $eventId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string               $userId
+     * @param string               $calendarId
+     * @param string               $eventId
+     * @param ListAttendeesRequest $request
+     * @param ListAttendeesHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return ListAttendeesResponse
+     */
+    public function listAttendeesWithOptions($userId, $calendarId, $eventId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ListAttendeesResponse::fromMap($this->doROARequest('ListAttendees', 'calendar_1.0', 'HTTP', 'GET', 'AK', '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/attendees', 'json', $req, $runtime));
     }
 
     /**

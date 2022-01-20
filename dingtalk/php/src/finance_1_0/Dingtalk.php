@@ -1300,8 +1300,8 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->settleInfo)) {
             @$body['settleInfo'] = $request->settleInfo;
         }
-        if (!Utils::isUnset($request->contractInfo)) {
-            @$body['contractInfo'] = $request->contractInfo;
+        if (!Utils::isUnset($request->contactInfo)) {
+            @$body['contactInfo'] = $request->contactInfo;
         }
         if (!Utils::isUnset($request->qualificationInfos)) {
             @$body['qualificationInfos'] = $request->qualificationInfos;
@@ -1399,8 +1399,8 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->settleInfo)) {
             @$body['settleInfo'] = $request->settleInfo;
         }
-        if (!Utils::isUnset($request->contractInfo)) {
-            @$body['contractInfo'] = $request->contractInfo;
+        if (!Utils::isUnset($request->contactInfo)) {
+            @$body['contactInfo'] = $request->contactInfo;
         }
         if (!Utils::isUnset($request->qualificationInfos)) {
             @$body['qualificationInfos'] = $request->qualificationInfos;
@@ -1501,8 +1501,8 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->settleInfo)) {
             @$body['settleInfo'] = $request->settleInfo;
         }
-        if (!Utils::isUnset($request->contractInfo)) {
-            @$body['contractInfo'] = $request->contractInfo;
+        if (!Utils::isUnset($request->contactInfo)) {
+            @$body['contactInfo'] = $request->contactInfo;
         }
         if (!Utils::isUnset($request->qualificationInfos)) {
             @$body['qualificationInfos'] = $request->qualificationInfos;

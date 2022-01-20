@@ -4,7 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\ConsultCreateSubInstitutionRequest\contractInfo;
+use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\ConsultCreateSubInstitutionRequest\contactInfo;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\ConsultCreateSubInstitutionRequest\legalPersonCertInfo;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\ConsultCreateSubInstitutionRequest\qualificationInfos;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\ConsultCreateSubInstitutionRequest\settleInfo;
@@ -89,9 +89,9 @@ class ConsultCreateSubInstitutionRequest extends Model
     /**
      * @description 联系人
      *
-     * @var contractInfo
+     * @var contactInfo
      */
-    public $contractInfo;
+    public $contactInfo;
 
     /**
      * @description 资质信息
@@ -173,7 +173,7 @@ class ConsultCreateSubInstitutionRequest extends Model
         'subInstCertifyInfo'   => 'subInstCertifyInfo',
         'legalPersonCertInfo'  => 'legalPersonCertInfo',
         'settleInfo'           => 'settleInfo',
-        'contractInfo'         => 'contractInfo',
+        'contactInfo'          => 'contactInfo',
         'qualificationInfos'   => 'qualificationInfos',
         'subInstAuthInfo'      => 'subInstAuthInfo',
         'subInstAddressInfo'   => 'subInstAddressInfo',
@@ -223,8 +223,8 @@ class ConsultCreateSubInstitutionRequest extends Model
         if (null !== $this->settleInfo) {
             $res['settleInfo'] = null !== $this->settleInfo ? $this->settleInfo->toMap() : null;
         }
-        if (null !== $this->contractInfo) {
-            $res['contractInfo'] = null !== $this->contractInfo ? $this->contractInfo->toMap() : null;
+        if (null !== $this->contactInfo) {
+            $res['contactInfo'] = null !== $this->contactInfo ? $this->contactInfo->toMap() : null;
         }
         if (null !== $this->qualificationInfos) {
             $res['qualificationInfos'] = [];
@@ -306,8 +306,8 @@ class ConsultCreateSubInstitutionRequest extends Model
         if (isset($map['settleInfo'])) {
             $model->settleInfo = settleInfo::fromMap($map['settleInfo']);
         }
-        if (isset($map['contractInfo'])) {
-            $model->contractInfo = contractInfo::fromMap($map['contractInfo']);
+        if (isset($map['contactInfo'])) {
+            $model->contactInfo = contactInfo::fromMap($map['contactInfo']);
         }
         if (isset($map['qualificationInfos'])) {
             if (!empty($map['qualificationInfos'])) {

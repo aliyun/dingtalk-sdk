@@ -60,6 +60,20 @@ class MachineUsersUpdateRequest extends Model
      * @var int
      */
     public $dingIsvOrgId;
+
+    /**
+     * @description 移除的部门id列表
+     *
+     * @var int[]
+     */
+    public $delDeptIds;
+
+    /**
+     * @description 新增的部门id列表
+     *
+     * @var int[]
+     */
+    public $addDeptIds;
     protected $_name = [
         'delUserIds'         => 'delUserIds',
         'deviceIds'          => 'deviceIds',
@@ -70,6 +84,8 @@ class MachineUsersUpdateRequest extends Model
         'dingCorpId'         => 'dingCorpId',
         'dingOrgId'          => 'dingOrgId',
         'dingIsvOrgId'       => 'dingIsvOrgId',
+        'delDeptIds'         => 'delDeptIds',
+        'addDeptIds'         => 'addDeptIds',
     ];
 
     public function validate()
@@ -105,6 +121,12 @@ class MachineUsersUpdateRequest extends Model
         }
         if (null !== $this->dingIsvOrgId) {
             $res['dingIsvOrgId'] = $this->dingIsvOrgId;
+        }
+        if (null !== $this->delDeptIds) {
+            $res['delDeptIds'] = $this->delDeptIds;
+        }
+        if (null !== $this->addDeptIds) {
+            $res['addDeptIds'] = $this->addDeptIds;
         }
 
         return $res;
@@ -152,6 +174,16 @@ class MachineUsersUpdateRequest extends Model
         }
         if (isset($map['dingIsvOrgId'])) {
             $model->dingIsvOrgId = $map['dingIsvOrgId'];
+        }
+        if (isset($map['delDeptIds'])) {
+            if (!empty($map['delDeptIds'])) {
+                $model->delDeptIds = $map['delDeptIds'];
+            }
+        }
+        if (isset($map['addDeptIds'])) {
+            if (!empty($map['addDeptIds'])) {
+                $model->addDeptIds = $map['addDeptIds'];
+            }
         }
 
         return $model;
