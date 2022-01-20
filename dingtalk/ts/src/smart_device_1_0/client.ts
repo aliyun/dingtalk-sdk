@@ -389,13 +389,17 @@ export class MachineUsersUpdateHeaders extends $tea.Model {
 }
 
 export class MachineUsersUpdateRequest extends $tea.Model {
+  addDeptIds?: number[];
   addUserIds?: string[];
+  delDeptIds?: number[];
   delUserIds?: string[];
   devIds?: number[];
   deviceIds?: string[];
   static names(): { [key: string]: string } {
     return {
+      addDeptIds: 'addDeptIds',
       addUserIds: 'addUserIds',
+      delDeptIds: 'delDeptIds',
       delUserIds: 'delUserIds',
       devIds: 'devIds',
       deviceIds: 'deviceIds',
@@ -404,7 +408,9 @@ export class MachineUsersUpdateRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      addDeptIds: { 'type': 'array', 'itemType': 'number' },
       addUserIds: { 'type': 'array', 'itemType': 'string' },
+      delDeptIds: { 'type': 'array', 'itemType': 'number' },
       delUserIds: { 'type': 'array', 'itemType': 'string' },
       devIds: { 'type': 'array', 'itemType': 'number' },
       deviceIds: { 'type': 'array', 'itemType': 'string' },
@@ -723,8 +729,16 @@ export default class Client extends OpenApi {
   async machineUsersUpdateWithOptions(request: MachineUsersUpdateRequest, headers: MachineUsersUpdateHeaders, runtime: $Util.RuntimeOptions): Promise<MachineUsersUpdateResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.addDeptIds)) {
+      body["addDeptIds"] = request.addDeptIds;
+    }
+
     if (!Util.isUnset(request.addUserIds)) {
       body["addUserIds"] = request.addUserIds;
+    }
+
+    if (!Util.isUnset(request.delDeptIds)) {
+      body["delDeptIds"] = request.delDeptIds;
     }
 
     if (!Util.isUnset(request.delUserIds)) {

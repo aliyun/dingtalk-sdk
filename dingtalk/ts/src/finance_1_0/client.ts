@@ -137,7 +137,7 @@ export class ConsultCreateSubInstitutionHeaders extends $tea.Model {
 
 export class ConsultCreateSubInstitutionRequest extends $tea.Model {
   bindingAlipayLogonId?: string;
-  contractInfo?: ConsultCreateSubInstitutionRequestContractInfo;
+  contactInfo?: ConsultCreateSubInstitutionRequestContactInfo;
   instId?: string;
   legalPersonCertInfo?: ConsultCreateSubInstitutionRequestLegalPersonCertInfo;
   outTradeNo?: string;
@@ -156,7 +156,7 @@ export class ConsultCreateSubInstitutionRequest extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       bindingAlipayLogonId: 'bindingAlipayLogonId',
-      contractInfo: 'contractInfo',
+      contactInfo: 'contactInfo',
       instId: 'instId',
       legalPersonCertInfo: 'legalPersonCertInfo',
       outTradeNo: 'outTradeNo',
@@ -178,7 +178,7 @@ export class ConsultCreateSubInstitutionRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       bindingAlipayLogonId: 'string',
-      contractInfo: ConsultCreateSubInstitutionRequestContractInfo,
+      contactInfo: ConsultCreateSubInstitutionRequestContactInfo,
       instId: 'string',
       legalPersonCertInfo: ConsultCreateSubInstitutionRequestLegalPersonCertInfo,
       outTradeNo: 'string',
@@ -521,7 +521,7 @@ export class CreateSubInstitutionHeaders extends $tea.Model {
 
 export class CreateSubInstitutionRequest extends $tea.Model {
   bindingAlipayLogonId?: string;
-  contractInfo?: CreateSubInstitutionRequestContractInfo;
+  contactInfo?: CreateSubInstitutionRequestContactInfo;
   instId?: string;
   legalPersonCertInfo?: CreateSubInstitutionRequestLegalPersonCertInfo;
   outTradeNo?: string;
@@ -540,7 +540,7 @@ export class CreateSubInstitutionRequest extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       bindingAlipayLogonId: 'bindingAlipayLogonId',
-      contractInfo: 'contractInfo',
+      contactInfo: 'contactInfo',
       instId: 'instId',
       legalPersonCertInfo: 'legalPersonCertInfo',
       outTradeNo: 'outTradeNo',
@@ -562,7 +562,7 @@ export class CreateSubInstitutionRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       bindingAlipayLogonId: 'string',
-      contractInfo: CreateSubInstitutionRequestContractInfo,
+      contactInfo: CreateSubInstitutionRequestContactInfo,
       instId: 'string',
       legalPersonCertInfo: CreateSubInstitutionRequestLegalPersonCertInfo,
       outTradeNo: 'string',
@@ -875,7 +875,7 @@ export class ModifySubInstitutionHeaders extends $tea.Model {
 
 export class ModifySubInstitutionRequest extends $tea.Model {
   bindingAlipayLogonId?: string;
-  contractInfo?: ModifySubInstitutionRequestContractInfo;
+  contactInfo?: ModifySubInstitutionRequestContactInfo;
   instId?: string;
   legalPersonCertInfo?: ModifySubInstitutionRequestLegalPersonCertInfo;
   outTradeNo?: string;
@@ -893,7 +893,7 @@ export class ModifySubInstitutionRequest extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       bindingAlipayLogonId: 'bindingAlipayLogonId',
-      contractInfo: 'contractInfo',
+      contactInfo: 'contactInfo',
       instId: 'instId',
       legalPersonCertInfo: 'legalPersonCertInfo',
       outTradeNo: 'outTradeNo',
@@ -914,7 +914,7 @@ export class ModifySubInstitutionRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       bindingAlipayLogonId: 'string',
-      contractInfo: ModifySubInstitutionRequestContractInfo,
+      contactInfo: ModifySubInstitutionRequestContactInfo,
       instId: 'string',
       legalPersonCertInfo: ModifySubInstitutionRequestLegalPersonCertInfo,
       outTradeNo: 'string',
@@ -2481,19 +2481,19 @@ export class UserAgreementPageSignResponse extends $tea.Model {
   }
 }
 
-export class ConsultCreateSubInstitutionRequestContractInfo extends $tea.Model {
-  contractName?: string;
+export class ConsultCreateSubInstitutionRequestContactInfo extends $tea.Model {
+  contactName?: string;
   mobile?: string;
   static names(): { [key: string]: string } {
     return {
-      contractName: 'contractName',
+      contactName: 'contactName',
       mobile: 'mobile',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      contractName: 'string',
+      contactName: 'string',
       mobile: 'string',
     };
   }
@@ -2912,19 +2912,19 @@ export class CreateBatchTradeOrderRequestBatchTradeDetails extends $tea.Model {
   }
 }
 
-export class CreateSubInstitutionRequestContractInfo extends $tea.Model {
-  contractName?: string;
+export class CreateSubInstitutionRequestContactInfo extends $tea.Model {
+  contactName?: string;
   mobile?: string;
   static names(): { [key: string]: string } {
     return {
-      contractName: 'contractName',
+      contactName: 'contactName',
       mobile: 'mobile',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      contractName: 'string',
+      contactName: 'string',
       mobile: 'string',
     };
   }
@@ -3263,19 +3263,19 @@ export class CreateUserCodeInstanceRequestAvailableTimes extends $tea.Model {
   }
 }
 
-export class ModifySubInstitutionRequestContractInfo extends $tea.Model {
-  contractName?: string;
+export class ModifySubInstitutionRequestContactInfo extends $tea.Model {
+  contactName?: string;
   mobile?: string;
   static names(): { [key: string]: string } {
     return {
-      contractName: 'contractName',
+      contactName: 'contactName',
       mobile: 'mobile',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      contractName: 'string',
+      contactName: 'string',
       mobile: 'string',
     };
   }
@@ -3980,8 +3980,8 @@ export default class Client extends OpenApi {
       body["bindingAlipayLogonId"] = request.bindingAlipayLogonId;
     }
 
-    if (!Util.isUnset($tea.toMap(request.contractInfo))) {
-      body["contractInfo"] = request.contractInfo;
+    if (!Util.isUnset($tea.toMap(request.contactInfo))) {
+      body["contactInfo"] = request.contactInfo;
     }
 
     if (!Util.isUnset(request.instId)) {
@@ -4199,8 +4199,8 @@ export default class Client extends OpenApi {
       body["bindingAlipayLogonId"] = request.bindingAlipayLogonId;
     }
 
-    if (!Util.isUnset($tea.toMap(request.contractInfo))) {
-      body["contractInfo"] = request.contractInfo;
+    if (!Util.isUnset($tea.toMap(request.contactInfo))) {
+      body["contactInfo"] = request.contactInfo;
     }
 
     if (!Util.isUnset(request.instId)) {
@@ -4394,8 +4394,8 @@ export default class Client extends OpenApi {
       body["bindingAlipayLogonId"] = request.bindingAlipayLogonId;
     }
 
-    if (!Util.isUnset($tea.toMap(request.contractInfo))) {
-      body["contractInfo"] = request.contractInfo;
+    if (!Util.isUnset($tea.toMap(request.contactInfo))) {
+      body["contactInfo"] = request.contactInfo;
     }
 
     if (!Util.isUnset(request.instId)) {

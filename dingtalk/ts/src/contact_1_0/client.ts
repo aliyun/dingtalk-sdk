@@ -736,17 +736,19 @@ export class GetCardInfoHeaders extends $tea.Model {
 }
 
 export class GetCardInfoResponseBody extends $tea.Model {
+  adminRole?: number;
   avatarUrl?: string;
   cardId?: string;
   extension?: GetCardInfoResponseBodyExtension;
   industryName?: string;
-  introduce?: boolean;
+  introduce?: { [key: string]: any };
   name?: string;
   orgName?: string;
   templateId?: string;
   title?: string;
   static names(): { [key: string]: string } {
     return {
+      adminRole: 'adminRole',
       avatarUrl: 'avatarUrl',
       cardId: 'cardId',
       extension: 'extension',
@@ -761,11 +763,12 @@ export class GetCardInfoResponseBody extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      adminRole: 'number',
       avatarUrl: 'string',
       cardId: 'string',
       extension: GetCardInfoResponseBodyExtension,
       industryName: 'string',
-      introduce: 'boolean',
+      introduce: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
       name: 'string',
       orgName: 'string',
       templateId: 'string',
