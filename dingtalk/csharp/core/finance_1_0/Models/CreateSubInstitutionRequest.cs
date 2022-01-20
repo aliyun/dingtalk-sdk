@@ -19,13 +19,13 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         /// <summary>
         /// 联系人
         /// </summary>
-        [NameInMap("contractInfo")]
+        [NameInMap("contactInfo")]
         [Validation(Required=false)]
-        public CreateSubInstitutionRequestContractInfo ContractInfo { get; set; }
-        public class CreateSubInstitutionRequestContractInfo : TeaModel {
-            [NameInMap("contractName")]
+        public CreateSubInstitutionRequestContactInfo ContactInfo { get; set; }
+        public class CreateSubInstitutionRequestContactInfo : TeaModel {
+            [NameInMap("contactName")]
             [Validation(Required=false)]
-            public string ContractName { get; set; }
+            public string ContactName { get; set; }
             [NameInMap("mobile")]
             [Validation(Required=false)]
             public string Mobile { get; set; }

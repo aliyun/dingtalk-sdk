@@ -168,9 +168,9 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             {
                 body["bindingAlipayLogonId"] = request.BindingAlipayLogonId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContractInfo.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContactInfo.ToMap()))
             {
-                body["contractInfo"] = request.ContractInfo;
+                body["contactInfo"] = request.ContactInfo;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingClientId))
             {
@@ -273,9 +273,9 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             {
                 body["bindingAlipayLogonId"] = request.BindingAlipayLogonId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContractInfo.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContactInfo.ToMap()))
             {
-                body["contractInfo"] = request.ContractInfo;
+                body["contactInfo"] = request.ContactInfo;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingClientId))
             {
@@ -688,9 +688,9 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             {
                 body["bindingAlipayLogonId"] = request.BindingAlipayLogonId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContractInfo.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContactInfo.ToMap()))
             {
-                body["contractInfo"] = request.ContractInfo;
+                body["contactInfo"] = request.ContactInfo;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingClientId))
             {
@@ -793,9 +793,9 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             {
                 body["bindingAlipayLogonId"] = request.BindingAlipayLogonId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContractInfo.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContactInfo.ToMap()))
             {
-                body["contractInfo"] = request.ContractInfo;
+                body["contactInfo"] = request.ContactInfo;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingClientId))
             {
@@ -1160,9 +1160,9 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             {
                 body["bindingAlipayLogonId"] = request.BindingAlipayLogonId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContractInfo.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContactInfo.ToMap()))
             {
-                body["contractInfo"] = request.ContractInfo;
+                body["contactInfo"] = request.ContactInfo;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingClientId))
             {
@@ -1261,9 +1261,9 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             {
                 body["bindingAlipayLogonId"] = request.BindingAlipayLogonId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContractInfo.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContactInfo.ToMap()))
             {
-                body["contractInfo"] = request.ContractInfo;
+                body["contactInfo"] = request.ContactInfo;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingClientId))
             {

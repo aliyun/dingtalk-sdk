@@ -10,6 +10,13 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class GetCardInfoResponseBody : TeaModel {
         /// <summary>
+        /// 用户角色
+        /// </summary>
+        [NameInMap("adminRole")]
+        [Validation(Required=false)]
+        public long? AdminRole { get; set; }
+
+        /// <summary>
         /// 头像
         /// </summary>
         [NameInMap("avatarUrl")]
@@ -160,11 +167,11 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         public string IndustryName { get; set; }
 
         /// <summary>
-        /// 是否主名片
+        /// 个人介绍
         /// </summary>
         [NameInMap("introduce")]
         [Validation(Required=false)]
-        public bool? Introduce { get; set; }
+        public Dictionary<string, object> Introduce { get; set; }
 
         /// <summary>
         /// 名字

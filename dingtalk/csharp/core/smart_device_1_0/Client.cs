@@ -446,9 +446,17 @@ namespace AlibabaCloud.SDK.Dingtalksmart_device_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AddDeptIds))
+            {
+                body["addDeptIds"] = request.AddDeptIds;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AddUserIds))
             {
                 body["addUserIds"] = request.AddUserIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DelDeptIds))
+            {
+                body["delDeptIds"] = request.DelDeptIds;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DelUserIds))
             {
@@ -503,9 +511,17 @@ namespace AlibabaCloud.SDK.Dingtalksmart_device_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AddDeptIds))
+            {
+                body["addDeptIds"] = request.AddDeptIds;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AddUserIds))
             {
                 body["addUserIds"] = request.AddUserIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DelDeptIds))
+            {
+                body["delDeptIds"] = request.DelDeptIds;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DelUserIds))
             {
