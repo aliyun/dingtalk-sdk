@@ -4,6 +4,10 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCardInfoResponseBody extends TeaModel {
+    // 用户角色
+    @NameInMap("adminRole")
+    public Long adminRole;
+
     // 头像
     @NameInMap("avatarUrl")
     public String avatarUrl;
@@ -20,9 +24,9 @@ public class GetCardInfoResponseBody extends TeaModel {
     @NameInMap("industryName")
     public String industryName;
 
-    // 是否主名片
+    // 个人介绍
     @NameInMap("introduce")
-    public Boolean introduce;
+    public java.util.Map<String, ?> introduce;
 
     // 名字
     @NameInMap("name")
@@ -43,6 +47,14 @@ public class GetCardInfoResponseBody extends TeaModel {
     public static GetCardInfoResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetCardInfoResponseBody self = new GetCardInfoResponseBody();
         return TeaModel.build(map, self);
+    }
+
+    public GetCardInfoResponseBody setAdminRole(Long adminRole) {
+        this.adminRole = adminRole;
+        return this;
+    }
+    public Long getAdminRole() {
+        return this.adminRole;
     }
 
     public GetCardInfoResponseBody setAvatarUrl(String avatarUrl) {
@@ -77,11 +89,11 @@ public class GetCardInfoResponseBody extends TeaModel {
         return this.industryName;
     }
 
-    public GetCardInfoResponseBody setIntroduce(Boolean introduce) {
+    public GetCardInfoResponseBody setIntroduce(java.util.Map<String, ?> introduce) {
         this.introduce = introduce;
         return this;
     }
-    public Boolean getIntroduce() {
+    public java.util.Map<String, ?> getIntroduce() {
         return this.introduce;
     }
 

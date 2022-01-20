@@ -9,8 +9,8 @@ public class ConsultCreateSubInstitutionRequest extends TeaModel {
     public String bindingAlipayLogonId;
 
     // 联系人
-    @NameInMap("contractInfo")
-    public ConsultCreateSubInstitutionRequestContractInfo contractInfo;
+    @NameInMap("contactInfo")
+    public ConsultCreateSubInstitutionRequestContactInfo contactInfo;
 
     // 主机构编号
     @NameInMap("instId")
@@ -84,12 +84,12 @@ public class ConsultCreateSubInstitutionRequest extends TeaModel {
         return this.bindingAlipayLogonId;
     }
 
-    public ConsultCreateSubInstitutionRequest setContractInfo(ConsultCreateSubInstitutionRequestContractInfo contractInfo) {
-        this.contractInfo = contractInfo;
+    public ConsultCreateSubInstitutionRequest setContactInfo(ConsultCreateSubInstitutionRequestContactInfo contactInfo) {
+        this.contactInfo = contactInfo;
         return this;
     }
-    public ConsultCreateSubInstitutionRequestContractInfo getContractInfo() {
-        return this.contractInfo;
+    public ConsultCreateSubInstitutionRequestContactInfo getContactInfo() {
+        return this.contactInfo;
     }
 
     public ConsultCreateSubInstitutionRequest setInstId(String instId) {
@@ -212,29 +212,29 @@ public class ConsultCreateSubInstitutionRequest extends TeaModel {
         return this.subInstShopInfo;
     }
 
-    public static class ConsultCreateSubInstitutionRequestContractInfo extends TeaModel {
+    public static class ConsultCreateSubInstitutionRequestContactInfo extends TeaModel {
         // 联系人姓名
-        @NameInMap("contractName")
-        public String contractName;
+        @NameInMap("contactName")
+        public String contactName;
 
         // 联系人手机号
         @NameInMap("mobile")
         public String mobile;
 
-        public static ConsultCreateSubInstitutionRequestContractInfo build(java.util.Map<String, ?> map) throws Exception {
-            ConsultCreateSubInstitutionRequestContractInfo self = new ConsultCreateSubInstitutionRequestContractInfo();
+        public static ConsultCreateSubInstitutionRequestContactInfo build(java.util.Map<String, ?> map) throws Exception {
+            ConsultCreateSubInstitutionRequestContactInfo self = new ConsultCreateSubInstitutionRequestContactInfo();
             return TeaModel.build(map, self);
         }
 
-        public ConsultCreateSubInstitutionRequestContractInfo setContractName(String contractName) {
-            this.contractName = contractName;
+        public ConsultCreateSubInstitutionRequestContactInfo setContactName(String contactName) {
+            this.contactName = contactName;
             return this;
         }
-        public String getContractName() {
-            return this.contractName;
+        public String getContactName() {
+            return this.contactName;
         }
 
-        public ConsultCreateSubInstitutionRequestContractInfo setMobile(String mobile) {
+        public ConsultCreateSubInstitutionRequestContactInfo setMobile(String mobile) {
             this.mobile = mobile;
             return this;
         }

@@ -9,8 +9,8 @@ public class ModifySubInstitutionRequest extends TeaModel {
     public String bindingAlipayLogonId;
 
     // 联系人
-    @NameInMap("contractInfo")
-    public ModifySubInstitutionRequestContractInfo contractInfo;
+    @NameInMap("contactInfo")
+    public ModifySubInstitutionRequestContactInfo contactInfo;
 
     // 主机构编号
     @NameInMap("instId")
@@ -80,12 +80,12 @@ public class ModifySubInstitutionRequest extends TeaModel {
         return this.bindingAlipayLogonId;
     }
 
-    public ModifySubInstitutionRequest setContractInfo(ModifySubInstitutionRequestContractInfo contractInfo) {
-        this.contractInfo = contractInfo;
+    public ModifySubInstitutionRequest setContactInfo(ModifySubInstitutionRequestContactInfo contactInfo) {
+        this.contactInfo = contactInfo;
         return this;
     }
-    public ModifySubInstitutionRequestContractInfo getContractInfo() {
-        return this.contractInfo;
+    public ModifySubInstitutionRequestContactInfo getContactInfo() {
+        return this.contactInfo;
     }
 
     public ModifySubInstitutionRequest setInstId(String instId) {
@@ -200,29 +200,29 @@ public class ModifySubInstitutionRequest extends TeaModel {
         return this.subInstShopInfo;
     }
 
-    public static class ModifySubInstitutionRequestContractInfo extends TeaModel {
+    public static class ModifySubInstitutionRequestContactInfo extends TeaModel {
         // 联系人姓名
-        @NameInMap("contractName")
-        public String contractName;
+        @NameInMap("contactName")
+        public String contactName;
 
         // 联系人手机号
         @NameInMap("mobile")
         public String mobile;
 
-        public static ModifySubInstitutionRequestContractInfo build(java.util.Map<String, ?> map) throws Exception {
-            ModifySubInstitutionRequestContractInfo self = new ModifySubInstitutionRequestContractInfo();
+        public static ModifySubInstitutionRequestContactInfo build(java.util.Map<String, ?> map) throws Exception {
+            ModifySubInstitutionRequestContactInfo self = new ModifySubInstitutionRequestContactInfo();
             return TeaModel.build(map, self);
         }
 
-        public ModifySubInstitutionRequestContractInfo setContractName(String contractName) {
-            this.contractName = contractName;
+        public ModifySubInstitutionRequestContactInfo setContactName(String contactName) {
+            this.contactName = contactName;
             return this;
         }
-        public String getContractName() {
-            return this.contractName;
+        public String getContactName() {
+            return this.contactName;
         }
 
-        public ModifySubInstitutionRequestContractInfo setMobile(String mobile) {
+        public ModifySubInstitutionRequestContactInfo setMobile(String mobile) {
             this.mobile = mobile;
             return this;
         }

@@ -4,9 +4,17 @@ package com.aliyun.dingtalksmart_device_1_0.models;
 import com.aliyun.tea.*;
 
 public class MachineUsersUpdateRequest extends TeaModel {
+    // 新增的部门id列表
+    @NameInMap("addDeptIds")
+    public java.util.List<Long> addDeptIds;
+
     // 新增的员工id列表
     @NameInMap("addUserIds")
     public java.util.List<String> addUserIds;
+
+    // 移除的部门id列表
+    @NameInMap("delDeptIds")
+    public java.util.List<Long> delDeptIds;
 
     // 移除的员工id列表
     @NameInMap("delUserIds")
@@ -25,12 +33,28 @@ public class MachineUsersUpdateRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
+    public MachineUsersUpdateRequest setAddDeptIds(java.util.List<Long> addDeptIds) {
+        this.addDeptIds = addDeptIds;
+        return this;
+    }
+    public java.util.List<Long> getAddDeptIds() {
+        return this.addDeptIds;
+    }
+
     public MachineUsersUpdateRequest setAddUserIds(java.util.List<String> addUserIds) {
         this.addUserIds = addUserIds;
         return this;
     }
     public java.util.List<String> getAddUserIds() {
         return this.addUserIds;
+    }
+
+    public MachineUsersUpdateRequest setDelDeptIds(java.util.List<Long> delDeptIds) {
+        this.delDeptIds = delDeptIds;
+        return this;
+    }
+    public java.util.List<Long> getDelDeptIds() {
+        return this.delDeptIds;
     }
 
     public MachineUsersUpdateRequest setDelUserIds(java.util.List<String> delUserIds) {

@@ -196,8 +196,16 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public MachineUsersUpdateResponse machineUsersUpdateWithOptions(MachineUsersUpdateRequest request, MachineUsersUpdateHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.addDeptIds)) {
+            body.put("addDeptIds", request.addDeptIds);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.addUserIds)) {
             body.put("addUserIds", request.addUserIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.delDeptIds)) {
+            body.put("delDeptIds", request.delDeptIds);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.delUserIds)) {
