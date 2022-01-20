@@ -49,6 +49,8 @@ class MachineUsersUpdateRequest(TeaModel):
         ding_corp_id: str = None,
         ding_org_id: int = None,
         ding_isv_org_id: int = None,
+        del_dept_ids: List[int] = None,
+        add_dept_ids: List[int] = None,
     ):
         # 移除的员工id列表
         self.del_user_ids = del_user_ids
@@ -63,6 +65,10 @@ class MachineUsersUpdateRequest(TeaModel):
         self.ding_corp_id = ding_corp_id
         self.ding_org_id = ding_org_id
         self.ding_isv_org_id = ding_isv_org_id
+        # 移除的部门id列表
+        self.del_dept_ids = del_dept_ids
+        # 新增的部门id列表
+        self.add_dept_ids = add_dept_ids
 
     def validate(self):
         pass
@@ -91,6 +97,10 @@ class MachineUsersUpdateRequest(TeaModel):
             result['dingOrgId'] = self.ding_org_id
         if self.ding_isv_org_id is not None:
             result['dingIsvOrgId'] = self.ding_isv_org_id
+        if self.del_dept_ids is not None:
+            result['delDeptIds'] = self.del_dept_ids
+        if self.add_dept_ids is not None:
+            result['addDeptIds'] = self.add_dept_ids
         return result
 
     def from_map(self, m: dict = None):
@@ -113,6 +123,10 @@ class MachineUsersUpdateRequest(TeaModel):
             self.ding_org_id = m.get('dingOrgId')
         if m.get('dingIsvOrgId') is not None:
             self.ding_isv_org_id = m.get('dingIsvOrgId')
+        if m.get('delDeptIds') is not None:
+            self.del_dept_ids = m.get('delDeptIds')
+        if m.get('addDeptIds') is not None:
+            self.add_dept_ids = m.get('addDeptIds')
         return self
 
 

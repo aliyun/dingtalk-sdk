@@ -65,6 +65,10 @@ class Client(OpenApiClient):
             body['dingOrgId'] = request.ding_org_id
         if not UtilClient.is_unset(request.ding_isv_org_id):
             body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.del_dept_ids):
+            body['delDeptIds'] = request.del_dept_ids
+        if not UtilClient.is_unset(request.add_dept_ids):
+            body['addDeptIds'] = request.add_dept_ids
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -105,6 +109,10 @@ class Client(OpenApiClient):
             body['dingOrgId'] = request.ding_org_id
         if not UtilClient.is_unset(request.ding_isv_org_id):
             body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.del_dept_ids):
+            body['delDeptIds'] = request.del_dept_ids
+        if not UtilClient.is_unset(request.add_dept_ids):
+            body['addDeptIds'] = request.add_dept_ids
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

@@ -1749,8 +1749,8 @@ class Client(OpenApiClient):
             body['legalPersonCertInfo'] = request.legal_person_cert_info
         if not UtilClient.is_unset(request.settle_info):
             body['settleInfo'] = request.settle_info
-        if not UtilClient.is_unset(request.contract_info):
-            body['contractInfo'] = request.contract_info
+        if not UtilClient.is_unset(request.contact_info):
+            body['contactInfo'] = request.contact_info
         if not UtilClient.is_unset(request.qualification_infos):
             body['qualificationInfos'] = request.qualification_infos
         if not UtilClient.is_unset(request.sub_inst_auth_info):
@@ -1813,8 +1813,8 @@ class Client(OpenApiClient):
             body['legalPersonCertInfo'] = request.legal_person_cert_info
         if not UtilClient.is_unset(request.settle_info):
             body['settleInfo'] = request.settle_info
-        if not UtilClient.is_unset(request.contract_info):
-            body['contractInfo'] = request.contract_info
+        if not UtilClient.is_unset(request.contact_info):
+            body['contactInfo'] = request.contact_info
         if not UtilClient.is_unset(request.qualification_infos):
             body['qualificationInfos'] = request.qualification_infos
         if not UtilClient.is_unset(request.sub_inst_auth_info):
@@ -1891,8 +1891,8 @@ class Client(OpenApiClient):
             body['legalPersonCertInfo'] = request.legal_person_cert_info
         if not UtilClient.is_unset(request.settle_info):
             body['settleInfo'] = request.settle_info
-        if not UtilClient.is_unset(request.contract_info):
-            body['contractInfo'] = request.contract_info
+        if not UtilClient.is_unset(request.contact_info):
+            body['contactInfo'] = request.contact_info
         if not UtilClient.is_unset(request.qualification_infos):
             body['qualificationInfos'] = request.qualification_infos
         if not UtilClient.is_unset(request.sub_inst_auth_info):
@@ -1953,8 +1953,8 @@ class Client(OpenApiClient):
             body['legalPersonCertInfo'] = request.legal_person_cert_info
         if not UtilClient.is_unset(request.settle_info):
             body['settleInfo'] = request.settle_info
-        if not UtilClient.is_unset(request.contract_info):
-            body['contractInfo'] = request.contract_info
+        if not UtilClient.is_unset(request.contact_info):
+            body['contactInfo'] = request.contact_info
         if not UtilClient.is_unset(request.qualification_infos):
             body['qualificationInfos'] = request.qualification_infos
         if not UtilClient.is_unset(request.sub_inst_auth_info):
@@ -2033,8 +2033,8 @@ class Client(OpenApiClient):
             body['legalPersonCertInfo'] = request.legal_person_cert_info
         if not UtilClient.is_unset(request.settle_info):
             body['settleInfo'] = request.settle_info
-        if not UtilClient.is_unset(request.contract_info):
-            body['contractInfo'] = request.contract_info
+        if not UtilClient.is_unset(request.contact_info):
+            body['contactInfo'] = request.contact_info
         if not UtilClient.is_unset(request.qualification_infos):
             body['qualificationInfos'] = request.qualification_infos
         if not UtilClient.is_unset(request.sub_inst_auth_info):
@@ -2097,8 +2097,8 @@ class Client(OpenApiClient):
             body['legalPersonCertInfo'] = request.legal_person_cert_info
         if not UtilClient.is_unset(request.settle_info):
             body['settleInfo'] = request.settle_info
-        if not UtilClient.is_unset(request.contract_info):
-            body['contractInfo'] = request.contract_info
+        if not UtilClient.is_unset(request.contact_info):
+            body['contactInfo'] = request.contact_info
         if not UtilClient.is_unset(request.qualification_infos):
             body['qualificationInfos'] = request.qualification_infos
         if not UtilClient.is_unset(request.sub_inst_auth_info):

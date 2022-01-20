@@ -4602,14 +4602,14 @@ class ConsultCreateSubInstitutionRequestSettleInfo(TeaModel):
         return self
 
 
-class ConsultCreateSubInstitutionRequestContractInfo(TeaModel):
+class ConsultCreateSubInstitutionRequestContactInfo(TeaModel):
     def __init__(
         self,
-        contract_name: str = None,
+        contact_name: str = None,
         mobile: str = None,
     ):
         # 联系人姓名
-        self.contract_name = contract_name
+        self.contact_name = contact_name
         # 联系人手机号
         self.mobile = mobile
 
@@ -4622,16 +4622,16 @@ class ConsultCreateSubInstitutionRequestContractInfo(TeaModel):
             return _map
 
         result = dict()
-        if self.contract_name is not None:
-            result['contractName'] = self.contract_name
+        if self.contact_name is not None:
+            result['contactName'] = self.contact_name
         if self.mobile is not None:
             result['mobile'] = self.mobile
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('contractName') is not None:
-            self.contract_name = m.get('contractName')
+        if m.get('contactName') is not None:
+            self.contact_name = m.get('contactName')
         if m.get('mobile') is not None:
             self.mobile = m.get('mobile')
         return self
@@ -4960,7 +4960,7 @@ class ConsultCreateSubInstitutionRequest(TeaModel):
         sub_inst_certify_info: ConsultCreateSubInstitutionRequestSubInstCertifyInfo = None,
         legal_person_cert_info: ConsultCreateSubInstitutionRequestLegalPersonCertInfo = None,
         settle_info: ConsultCreateSubInstitutionRequestSettleInfo = None,
-        contract_info: ConsultCreateSubInstitutionRequestContractInfo = None,
+        contact_info: ConsultCreateSubInstitutionRequestContactInfo = None,
         qualification_infos: List[ConsultCreateSubInstitutionRequestQualificationInfos] = None,
         sub_inst_auth_info: ConsultCreateSubInstitutionRequestSubInstAuthInfo = None,
         sub_inst_address_info: ConsultCreateSubInstitutionRequestSubInstAddressInfo = None,
@@ -4992,7 +4992,7 @@ class ConsultCreateSubInstitutionRequest(TeaModel):
         # 资金账户信息
         self.settle_info = settle_info
         # 联系人
-        self.contract_info = contract_info
+        self.contact_info = contact_info
         # 资质信息
         self.qualification_infos = qualification_infos
         # 授权信息
@@ -5023,8 +5023,8 @@ class ConsultCreateSubInstitutionRequest(TeaModel):
             self.legal_person_cert_info.validate()
         if self.settle_info:
             self.settle_info.validate()
-        if self.contract_info:
-            self.contract_info.validate()
+        if self.contact_info:
+            self.contact_info.validate()
         if self.qualification_infos:
             for k in self.qualification_infos:
                 if k:
@@ -5064,8 +5064,8 @@ class ConsultCreateSubInstitutionRequest(TeaModel):
             result['legalPersonCertInfo'] = self.legal_person_cert_info.to_map()
         if self.settle_info is not None:
             result['settleInfo'] = self.settle_info.to_map()
-        if self.contract_info is not None:
-            result['contractInfo'] = self.contract_info.to_map()
+        if self.contact_info is not None:
+            result['contactInfo'] = self.contact_info.to_map()
         result['qualificationInfos'] = []
         if self.qualification_infos is not None:
             for k in self.qualification_infos:
@@ -5116,9 +5116,9 @@ class ConsultCreateSubInstitutionRequest(TeaModel):
         if m.get('settleInfo') is not None:
             temp_model = ConsultCreateSubInstitutionRequestSettleInfo()
             self.settle_info = temp_model.from_map(m['settleInfo'])
-        if m.get('contractInfo') is not None:
-            temp_model = ConsultCreateSubInstitutionRequestContractInfo()
-            self.contract_info = temp_model.from_map(m['contractInfo'])
+        if m.get('contactInfo') is not None:
+            temp_model = ConsultCreateSubInstitutionRequestContactInfo()
+            self.contact_info = temp_model.from_map(m['contactInfo'])
         self.qualification_infos = []
         if m.get('qualificationInfos') is not None:
             for k in m.get('qualificationInfos'):
@@ -5492,14 +5492,14 @@ class ModifySubInstitutionRequestSettleInfo(TeaModel):
         return self
 
 
-class ModifySubInstitutionRequestContractInfo(TeaModel):
+class ModifySubInstitutionRequestContactInfo(TeaModel):
     def __init__(
         self,
-        contract_name: str = None,
+        contact_name: str = None,
         mobile: str = None,
     ):
         # 联系人姓名
-        self.contract_name = contract_name
+        self.contact_name = contact_name
         # 联系人手机号
         self.mobile = mobile
 
@@ -5512,16 +5512,16 @@ class ModifySubInstitutionRequestContractInfo(TeaModel):
             return _map
 
         result = dict()
-        if self.contract_name is not None:
-            result['contractName'] = self.contract_name
+        if self.contact_name is not None:
+            result['contactName'] = self.contact_name
         if self.mobile is not None:
             result['mobile'] = self.mobile
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('contractName') is not None:
-            self.contract_name = m.get('contractName')
+        if m.get('contactName') is not None:
+            self.contact_name = m.get('contactName')
         if m.get('mobile') is not None:
             self.mobile = m.get('mobile')
         return self
@@ -5849,7 +5849,7 @@ class ModifySubInstitutionRequest(TeaModel):
         sub_inst_certify_info: ModifySubInstitutionRequestSubInstCertifyInfo = None,
         legal_person_cert_info: ModifySubInstitutionRequestLegalPersonCertInfo = None,
         settle_info: ModifySubInstitutionRequestSettleInfo = None,
-        contract_info: ModifySubInstitutionRequestContractInfo = None,
+        contact_info: ModifySubInstitutionRequestContactInfo = None,
         qualification_infos: List[ModifySubInstitutionRequestQualificationInfos] = None,
         sub_inst_auth_info: ModifySubInstitutionRequestSubInstAuthInfo = None,
         sub_inst_address_info: ModifySubInstitutionRequestSubInstAddressInfo = None,
@@ -5879,7 +5879,7 @@ class ModifySubInstitutionRequest(TeaModel):
         # 资金账户信息
         self.settle_info = settle_info
         # 联系人
-        self.contract_info = contract_info
+        self.contact_info = contact_info
         # 资质信息
         self.qualification_infos = qualification_infos
         # 授权信息
@@ -5910,8 +5910,8 @@ class ModifySubInstitutionRequest(TeaModel):
             self.legal_person_cert_info.validate()
         if self.settle_info:
             self.settle_info.validate()
-        if self.contract_info:
-            self.contract_info.validate()
+        if self.contact_info:
+            self.contact_info.validate()
         if self.qualification_infos:
             for k in self.qualification_infos:
                 if k:
@@ -5949,8 +5949,8 @@ class ModifySubInstitutionRequest(TeaModel):
             result['legalPersonCertInfo'] = self.legal_person_cert_info.to_map()
         if self.settle_info is not None:
             result['settleInfo'] = self.settle_info.to_map()
-        if self.contract_info is not None:
-            result['contractInfo'] = self.contract_info.to_map()
+        if self.contact_info is not None:
+            result['contactInfo'] = self.contact_info.to_map()
         result['qualificationInfos'] = []
         if self.qualification_infos is not None:
             for k in self.qualification_infos:
@@ -5999,9 +5999,9 @@ class ModifySubInstitutionRequest(TeaModel):
         if m.get('settleInfo') is not None:
             temp_model = ModifySubInstitutionRequestSettleInfo()
             self.settle_info = temp_model.from_map(m['settleInfo'])
-        if m.get('contractInfo') is not None:
-            temp_model = ModifySubInstitutionRequestContractInfo()
-            self.contract_info = temp_model.from_map(m['contractInfo'])
+        if m.get('contactInfo') is not None:
+            temp_model = ModifySubInstitutionRequestContactInfo()
+            self.contact_info = temp_model.from_map(m['contactInfo'])
         self.qualification_infos = []
         if m.get('qualificationInfos') is not None:
             for k in m.get('qualificationInfos'):
@@ -6375,14 +6375,14 @@ class CreateSubInstitutionRequestSettleInfo(TeaModel):
         return self
 
 
-class CreateSubInstitutionRequestContractInfo(TeaModel):
+class CreateSubInstitutionRequestContactInfo(TeaModel):
     def __init__(
         self,
-        contract_name: str = None,
+        contact_name: str = None,
         mobile: str = None,
     ):
         # 联系人姓名
-        self.contract_name = contract_name
+        self.contact_name = contact_name
         # 联系人手机号
         self.mobile = mobile
 
@@ -6395,16 +6395,16 @@ class CreateSubInstitutionRequestContractInfo(TeaModel):
             return _map
 
         result = dict()
-        if self.contract_name is not None:
-            result['contractName'] = self.contract_name
+        if self.contact_name is not None:
+            result['contactName'] = self.contact_name
         if self.mobile is not None:
             result['mobile'] = self.mobile
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('contractName') is not None:
-            self.contract_name = m.get('contractName')
+        if m.get('contactName') is not None:
+            self.contact_name = m.get('contactName')
         if m.get('mobile') is not None:
             self.mobile = m.get('mobile')
         return self
@@ -6733,7 +6733,7 @@ class CreateSubInstitutionRequest(TeaModel):
         sub_inst_certify_info: CreateSubInstitutionRequestSubInstCertifyInfo = None,
         legal_person_cert_info: CreateSubInstitutionRequestLegalPersonCertInfo = None,
         settle_info: CreateSubInstitutionRequestSettleInfo = None,
-        contract_info: CreateSubInstitutionRequestContractInfo = None,
+        contact_info: CreateSubInstitutionRequestContactInfo = None,
         qualification_infos: List[CreateSubInstitutionRequestQualificationInfos] = None,
         sub_inst_auth_info: CreateSubInstitutionRequestSubInstAuthInfo = None,
         sub_inst_address_info: CreateSubInstitutionRequestSubInstAddressInfo = None,
@@ -6765,7 +6765,7 @@ class CreateSubInstitutionRequest(TeaModel):
         # 资金账户信息
         self.settle_info = settle_info
         # 联系人
-        self.contract_info = contract_info
+        self.contact_info = contact_info
         # 资质信息
         self.qualification_infos = qualification_infos
         # 授权信息
@@ -6796,8 +6796,8 @@ class CreateSubInstitutionRequest(TeaModel):
             self.legal_person_cert_info.validate()
         if self.settle_info:
             self.settle_info.validate()
-        if self.contract_info:
-            self.contract_info.validate()
+        if self.contact_info:
+            self.contact_info.validate()
         if self.qualification_infos:
             for k in self.qualification_infos:
                 if k:
@@ -6837,8 +6837,8 @@ class CreateSubInstitutionRequest(TeaModel):
             result['legalPersonCertInfo'] = self.legal_person_cert_info.to_map()
         if self.settle_info is not None:
             result['settleInfo'] = self.settle_info.to_map()
-        if self.contract_info is not None:
-            result['contractInfo'] = self.contract_info.to_map()
+        if self.contact_info is not None:
+            result['contactInfo'] = self.contact_info.to_map()
         result['qualificationInfos'] = []
         if self.qualification_infos is not None:
             for k in self.qualification_infos:
@@ -6889,9 +6889,9 @@ class CreateSubInstitutionRequest(TeaModel):
         if m.get('settleInfo') is not None:
             temp_model = CreateSubInstitutionRequestSettleInfo()
             self.settle_info = temp_model.from_map(m['settleInfo'])
-        if m.get('contractInfo') is not None:
-            temp_model = CreateSubInstitutionRequestContractInfo()
-            self.contract_info = temp_model.from_map(m['contractInfo'])
+        if m.get('contactInfo') is not None:
+            temp_model = CreateSubInstitutionRequestContactInfo()
+            self.contact_info = temp_model.from_map(m['contactInfo'])
         self.qualification_infos = []
         if m.get('qualificationInfos') is not None:
             for k in m.get('qualificationInfos'):

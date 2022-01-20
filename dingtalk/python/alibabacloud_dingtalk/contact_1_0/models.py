@@ -7114,7 +7114,8 @@ class GetCardInfoResponseBody(TeaModel):
         org_name: str = None,
         title: str = None,
         industry_name: str = None,
-        introduce: bool = None,
+        introduce: Dict[str, Any] = None,
+        admin_role: int = None,
         template_id: str = None,
         extension: GetCardInfoResponseBodyExtension = None,
     ):
@@ -7130,8 +7131,10 @@ class GetCardInfoResponseBody(TeaModel):
         self.title = title
         # 行业
         self.industry_name = industry_name
-        # 是否主名片
+        # 个人介绍
         self.introduce = introduce
+        # 用户角色
+        self.admin_role = admin_role
         # 模板ID
         self.template_id = template_id
         # 扩展信息
@@ -7161,6 +7164,8 @@ class GetCardInfoResponseBody(TeaModel):
             result['industryName'] = self.industry_name
         if self.introduce is not None:
             result['introduce'] = self.introduce
+        if self.admin_role is not None:
+            result['adminRole'] = self.admin_role
         if self.template_id is not None:
             result['templateId'] = self.template_id
         if self.extension is not None:
@@ -7183,6 +7188,8 @@ class GetCardInfoResponseBody(TeaModel):
             self.industry_name = m.get('industryName')
         if m.get('introduce') is not None:
             self.introduce = m.get('introduce')
+        if m.get('adminRole') is not None:
+            self.admin_role = m.get('adminRole')
         if m.get('templateId') is not None:
             self.template_id = m.get('templateId')
         if m.get('extension') is not None:
