@@ -66,7 +66,7 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0.Models
                 public double? RoomPrice { get; set; }
                 public string RoomType { get; set; }
                 public double? ServiceFee { get; set; }
-                public long? SettlementFee { get; set; }
+                public double? SettlementFee { get; set; }
                 public string SettlementTime { get; set; }
                 public string SettlementType { get; set; }
                 public long? Status { get; set; }
