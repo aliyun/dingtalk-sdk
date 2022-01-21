@@ -291,7 +291,7 @@ class dataList extends Model
     /**
      * @description 结算金额
      *
-     * @var int
+     * @var float
      */
     public $settlementFee;
 
