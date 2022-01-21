@@ -325,7 +325,7 @@ class BillSettementHotelResponseBodyModuleDataList(TeaModel):
         room_price: float = None,
         room_type: str = None,
         service_fee: float = None,
-        settlement_fee: int = None,
+        settlement_fee: float = None,
         settlement_time: str = None,
         settlement_type: str = None,
         status: int = None,
