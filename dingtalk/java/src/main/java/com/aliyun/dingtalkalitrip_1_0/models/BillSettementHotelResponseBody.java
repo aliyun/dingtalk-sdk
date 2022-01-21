@@ -224,7 +224,7 @@ public class BillSettementHotelResponseBody extends TeaModel {
 
         // 结算金额
         @NameInMap("settlementFee")
-        public Long settlementFee;
+        public Double settlementFee;
 
         // 结算时间
         @NameInMap("settlementTime")
@@ -587,11 +587,11 @@ public class BillSettementHotelResponseBody extends TeaModel {
             return this.serviceFee;
         }
 
-        public BillSettementHotelResponseBodyModuleDataList setSettlementFee(Long settlementFee) {
+        public BillSettementHotelResponseBodyModuleDataList setSettlementFee(Double settlementFee) {
             this.settlementFee = settlementFee;
             return this;
         }
-        public Long getSettlementFee() {
+        public Double getSettlementFee() {
             return this.settlementFee;
         }
 
