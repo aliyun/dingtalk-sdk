@@ -265,6 +265,10 @@ public class BillSettementCarResponseBody extends TeaModel {
         @NameInMap("userConfirmDesc")
         public String userConfirmDesc;
 
+        // 发票类型
+        @NameInMap("voucherType")
+        public Long voucherType;
+
         public static BillSettementCarResponseBodyModuleDataList build(java.util.Map<String, ?> map) throws Exception {
             BillSettementCarResponseBodyModuleDataList self = new BillSettementCarResponseBodyModuleDataList();
             return TeaModel.build(map, self);
@@ -684,6 +688,14 @@ public class BillSettementCarResponseBody extends TeaModel {
         }
         public String getUserConfirmDesc() {
             return this.userConfirmDesc;
+        }
+
+        public BillSettementCarResponseBodyModuleDataList setVoucherType(Long voucherType) {
+            this.voucherType = voucherType;
+            return this;
+        }
+        public Long getVoucherType() {
+            return this.voucherType;
         }
 
     }

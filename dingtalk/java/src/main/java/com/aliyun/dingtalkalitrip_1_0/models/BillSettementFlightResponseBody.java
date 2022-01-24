@@ -326,6 +326,10 @@ public class BillSettementFlightResponseBody extends TeaModel {
         @NameInMap("upgradeCost")
         public Double upgradeCost;
 
+        // 发票类型
+        @NameInMap("voucherType")
+        public Long voucherType;
+
         public static BillSettementFlightResponseBodyModuleDataList build(java.util.Map<String, ?> map) throws Exception {
             BillSettementFlightResponseBodyModuleDataList self = new BillSettementFlightResponseBodyModuleDataList();
             return TeaModel.build(map, self);
@@ -865,6 +869,14 @@ public class BillSettementFlightResponseBody extends TeaModel {
         }
         public Double getUpgradeCost() {
             return this.upgradeCost;
+        }
+
+        public BillSettementFlightResponseBodyModuleDataList setVoucherType(Long voucherType) {
+            this.voucherType = voucherType;
+            return this;
+        }
+        public Long getVoucherType() {
+            return this.voucherType;
         }
 
     }
