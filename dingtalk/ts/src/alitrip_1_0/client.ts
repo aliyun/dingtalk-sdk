@@ -1541,6 +1541,7 @@ export class BillSettementCarResponseBodyModuleDataList extends $tea.Model {
   travelerJobNo?: string;
   travelerName?: string;
   userConfirmDesc?: string;
+  voucherType?: number;
   static names(): { [key: string]: string } {
     return {
       alipayTradeNo: 'alipayTradeNo',
@@ -1595,6 +1596,7 @@ export class BillSettementCarResponseBodyModuleDataList extends $tea.Model {
       travelerJobNo: 'travelerJobNo',
       travelerName: 'travelerName',
       userConfirmDesc: 'userConfirmDesc',
+      voucherType: 'voucherType',
     };
   }
 
@@ -1652,6 +1654,7 @@ export class BillSettementCarResponseBodyModuleDataList extends $tea.Model {
       travelerJobNo: 'string',
       travelerName: 'string',
       userConfirmDesc: 'string',
+      voucherType: 'number',
     };
   }
 
@@ -1762,6 +1765,7 @@ export class BillSettementFlightResponseBodyModuleDataList extends $tea.Model {
   travelerJobNo?: string;
   travelerName?: string;
   upgradeCost?: number;
+  voucherType?: number;
   static names(): { [key: string]: string } {
     return {
       advanceDay: 'advanceDay',
@@ -1831,6 +1835,7 @@ export class BillSettementFlightResponseBodyModuleDataList extends $tea.Model {
       travelerJobNo: 'travelerJobNo',
       travelerName: 'travelerName',
       upgradeCost: 'upgradeCost',
+      voucherType: 'voucherType',
     };
   }
 
@@ -1903,6 +1908,7 @@ export class BillSettementFlightResponseBodyModuleDataList extends $tea.Model {
       travelerJobNo: 'string',
       travelerName: 'string',
       upgradeCost: 'number',
+      voucherType: 'number',
     };
   }
 
@@ -1995,6 +2001,7 @@ export class BillSettementHotelResponseBodyModuleDataList extends $tea.Model {
   travelerId?: string;
   travelerJobNo?: string;
   travelerName?: string;
+  voucherType?: number;
   static names(): { [key: string]: string } {
     return {
       alipayTradeNo: 'alipayTradeNo',
@@ -2046,6 +2053,7 @@ export class BillSettementHotelResponseBodyModuleDataList extends $tea.Model {
       travelerId: 'travelerId',
       travelerJobNo: 'travelerJobNo',
       travelerName: 'travelerName',
+      voucherType: 'voucherType',
     };
   }
 
@@ -2100,6 +2108,7 @@ export class BillSettementHotelResponseBodyModuleDataList extends $tea.Model {
       travelerId: 'string',
       travelerJobNo: 'string',
       travelerName: 'string',
+      voucherType: 'number',
     };
   }
 
