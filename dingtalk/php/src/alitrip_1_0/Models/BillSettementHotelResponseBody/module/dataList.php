@@ -350,6 +350,13 @@ class dataList extends Model
      * @var string
      */
     public $travelerJobNo;
+
+    /**
+     * @description 发票类型
+     *
+     * @var int
+     */
+    public $voucherType;
     protected $_name = [
         'alipayTradeNo'     => 'alipayTradeNo',
         'applyId'           => 'applyId',
@@ -400,6 +407,7 @@ class dataList extends Model
         'travelerName'      => 'travelerName',
         'bookerJobNo'       => 'bookerJobNo',
         'travelerJobNo'     => 'travelerJobNo',
+        'voucherType'       => 'voucherType',
     ];
 
     public function validate()
@@ -555,6 +563,9 @@ class dataList extends Model
         }
         if (null !== $this->travelerJobNo) {
             $res['travelerJobNo'] = $this->travelerJobNo;
+        }
+        if (null !== $this->voucherType) {
+            $res['voucherType'] = $this->voucherType;
         }
 
         return $res;
@@ -714,6 +725,9 @@ class dataList extends Model
         }
         if (isset($map['travelerJobNo'])) {
             $model->travelerJobNo = $map['travelerJobNo'];
+        }
+        if (isset($map['voucherType'])) {
+            $model->voucherType = $map['voucherType'];
         }
 
         return $model;
