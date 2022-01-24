@@ -334,6 +334,7 @@ class BillSettementHotelResponseBodyModuleDataList(TeaModel):
         traveler_name: str = None,
         booker_job_no: str = None,
         traveler_job_no: str = None,
+        voucher_type: int = None,
     ):
         # 交易流水号
         self.alipay_trade_no = alipay_trade_no
@@ -433,6 +434,8 @@ class BillSettementHotelResponseBodyModuleDataList(TeaModel):
         self.booker_job_no = booker_job_no
         # 出行人工号
         self.traveler_job_no = traveler_job_no
+        # 发票类型
+        self.voucher_type = voucher_type
 
     def validate(self):
         pass
@@ -541,6 +544,8 @@ class BillSettementHotelResponseBodyModuleDataList(TeaModel):
             result['bookerJobNo'] = self.booker_job_no
         if self.traveler_job_no is not None:
             result['travelerJobNo'] = self.traveler_job_no
+        if self.voucher_type is not None:
+            result['voucherType'] = self.voucher_type
         return result
 
     def from_map(self, m: dict = None):
@@ -643,6 +648,8 @@ class BillSettementHotelResponseBodyModuleDataList(TeaModel):
             self.booker_job_no = m.get('bookerJobNo')
         if m.get('travelerJobNo') is not None:
             self.traveler_job_no = m.get('travelerJobNo')
+        if m.get('voucherType') is not None:
+            self.voucher_type = m.get('voucherType')
         return self
 
 
@@ -1267,6 +1274,7 @@ class BillSettementCarResponseBodyModuleDataList(TeaModel):
         user_confirm_desc: str = None,
         booker_job_no: str = None,
         traveler_job_no: str = None,
+        voucher_type: int = None,
     ):
         # 支付交易流水号
         self.alipay_trade_no = alipay_trade_no
@@ -1371,6 +1379,8 @@ class BillSettementCarResponseBodyModuleDataList(TeaModel):
         self.booker_job_no = booker_job_no
         # 出行人工号
         self.traveler_job_no = traveler_job_no
+        # 发票类型
+        self.voucher_type = voucher_type
 
     def validate(self):
         pass
@@ -1485,6 +1495,8 @@ class BillSettementCarResponseBodyModuleDataList(TeaModel):
             result['bookerJobNo'] = self.booker_job_no
         if self.traveler_job_no is not None:
             result['travelerJobNo'] = self.traveler_job_no
+        if self.voucher_type is not None:
+            result['voucherType'] = self.voucher_type
         return result
 
     def from_map(self, m: dict = None):
@@ -1593,6 +1605,8 @@ class BillSettementCarResponseBodyModuleDataList(TeaModel):
             self.booker_job_no = m.get('bookerJobNo')
         if m.get('travelerJobNo') is not None:
             self.traveler_job_no = m.get('travelerJobNo')
+        if m.get('voucherType') is not None:
+            self.voucher_type = m.get('voucherType')
         return self
 
 
@@ -2926,6 +2940,7 @@ class BillSettementFlightResponseBodyModuleDataList(TeaModel):
         upgrade_cost: float = None,
         booker_job_no: str = None,
         traveler_job_no: str = None,
+        voucher_type: int = None,
     ):
         # 提前预定天数
         self.advance_day = advance_day
@@ -3061,6 +3076,8 @@ class BillSettementFlightResponseBodyModuleDataList(TeaModel):
         self.booker_job_no = booker_job_no
         # 出行人工号
         self.traveler_job_no = traveler_job_no
+        # 发票类型
+        self.voucher_type = voucher_type
 
     def validate(self):
         pass
@@ -3205,6 +3222,8 @@ class BillSettementFlightResponseBodyModuleDataList(TeaModel):
             result['bookerJobNo'] = self.booker_job_no
         if self.traveler_job_no is not None:
             result['travelerJobNo'] = self.traveler_job_no
+        if self.voucher_type is not None:
+            result['voucherType'] = self.voucher_type
         return result
 
     def from_map(self, m: dict = None):
@@ -3343,6 +3362,8 @@ class BillSettementFlightResponseBodyModuleDataList(TeaModel):
             self.booker_job_no = m.get('bookerJobNo')
         if m.get('travelerJobNo') is not None:
             self.traveler_job_no = m.get('travelerJobNo')
+        if m.get('voucherType') is not None:
+            self.voucher_type = m.get('voucherType')
         return self
 
 
