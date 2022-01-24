@@ -93,6 +93,7 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0.Models
                 public double? UpgradeCost { get; set; }
                 public string BookerJobNo { get; set; }
                 public string TravelerJobNo { get; set; }
+                public long? VoucherType { get; set; }
             }
             [NameInMap("periodEnd")]
             [Validation(Required=false)]
