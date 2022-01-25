@@ -2819,6 +2819,146 @@ class PollingConfirmStatusResponse(TeaModel):
         return self
 
 
+class PayOrderHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class PayOrderRequest(TeaModel):
+    def __init__(
+        self,
+        sn: str = None,
+        order_no: str = None,
+        user_id: str = None,
+    ):
+        # 设备序列号
+        self.sn = sn
+        # 订单号
+        self.order_no = order_no
+        # 员工id
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.sn is not None:
+            result['sn'] = self.sn
+        if self.order_no is not None:
+            result['orderNo'] = self.order_no
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('sn') is not None:
+            self.sn = m.get('sn')
+        if m.get('orderNo') is not None:
+            self.order_no = m.get('orderNo')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class PayOrderResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        # 返回结果
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class PayOrderResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: PayOrderResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = PayOrderResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateEduAssetSpaceHeaders(TeaModel):
     def __init__(
         self,
@@ -3032,6 +3172,301 @@ class CreateEduAssetSpaceResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = CreateEduAssetSpaceResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CreateOrderHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateOrderRequestDetailList(TeaModel):
+    def __init__(
+        self,
+        item_name: str = None,
+        scene: int = None,
+        item_amount: int = None,
+        actual_amount: int = None,
+    ):
+        # 商品名。
+        self.item_name = item_name
+        # 场景。
+        self.scene = scene
+        # 应付金额，单位为分。
+        self.item_amount = item_amount
+        # 计算优惠后的实付金额，单位为分。
+        self.actual_amount = actual_amount
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.item_name is not None:
+            result['itemName'] = self.item_name
+        if self.scene is not None:
+            result['scene'] = self.scene
+        if self.item_amount is not None:
+            result['itemAmount'] = self.item_amount
+        if self.actual_amount is not None:
+            result['actualAmount'] = self.actual_amount
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('itemName') is not None:
+            self.item_name = m.get('itemName')
+        if m.get('scene') is not None:
+            self.scene = m.get('scene')
+        if m.get('itemAmount') is not None:
+            self.item_amount = m.get('itemAmount')
+        if m.get('actualAmount') is not None:
+            self.actual_amount = m.get('actualAmount')
+        return self
+
+
+class CreateOrderRequest(TeaModel):
+    def __init__(
+        self,
+        sn: str = None,
+        user_id: str = None,
+        ftoken: str = None,
+        terminal_params: str = None,
+        total_amount: int = None,
+        actual_amount: int = None,
+        detail_list: List[CreateOrderRequestDetailList] = None,
+    ):
+        # 设备序列号
+        self.sn = sn
+        # 员工id
+        self.user_id = user_id
+        # 录脸token
+        self.ftoken = ftoken
+        # 交易加签
+        self.terminal_params = terminal_params
+        # 应付价格
+        self.total_amount = total_amount
+        # 实付金额（优惠计算后）
+        self.actual_amount = actual_amount
+        # 订单明细信息，来源于商户系统或APP的商品信息。
+        self.detail_list = detail_list
+
+    def validate(self):
+        if self.detail_list:
+            for k in self.detail_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.sn is not None:
+            result['sn'] = self.sn
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.ftoken is not None:
+            result['ftoken'] = self.ftoken
+        if self.terminal_params is not None:
+            result['terminalParams'] = self.terminal_params
+        if self.total_amount is not None:
+            result['totalAmount'] = self.total_amount
+        if self.actual_amount is not None:
+            result['actualAmount'] = self.actual_amount
+        result['detailList'] = []
+        if self.detail_list is not None:
+            for k in self.detail_list:
+                result['detailList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('sn') is not None:
+            self.sn = m.get('sn')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('ftoken') is not None:
+            self.ftoken = m.get('ftoken')
+        if m.get('terminalParams') is not None:
+            self.terminal_params = m.get('terminalParams')
+        if m.get('totalAmount') is not None:
+            self.total_amount = m.get('totalAmount')
+        if m.get('actualAmount') is not None:
+            self.actual_amount = m.get('actualAmount')
+        self.detail_list = []
+        if m.get('detailList') is not None:
+            for k in m.get('detailList'):
+                temp_model = CreateOrderRequestDetailList()
+                self.detail_list.append(temp_model.from_map(k))
+        return self
+
+
+class CreateOrderShrinkRequest(TeaModel):
+    def __init__(
+        self,
+        sn: str = None,
+        user_id: str = None,
+        ftoken: str = None,
+        terminal_params: str = None,
+        total_amount: int = None,
+        actual_amount: int = None,
+        detail_list_shrink: str = None,
+    ):
+        # 设备序列号
+        self.sn = sn
+        # 员工id
+        self.user_id = user_id
+        # 录脸token
+        self.ftoken = ftoken
+        # 交易加签
+        self.terminal_params = terminal_params
+        # 应付价格
+        self.total_amount = total_amount
+        # 实付金额（优惠计算后）
+        self.actual_amount = actual_amount
+        # 订单明细信息，来源于商户系统或APP的商品信息。
+        self.detail_list_shrink = detail_list_shrink
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.sn is not None:
+            result['sn'] = self.sn
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.ftoken is not None:
+            result['ftoken'] = self.ftoken
+        if self.terminal_params is not None:
+            result['terminalParams'] = self.terminal_params
+        if self.total_amount is not None:
+            result['totalAmount'] = self.total_amount
+        if self.actual_amount is not None:
+            result['actualAmount'] = self.actual_amount
+        if self.detail_list_shrink is not None:
+            result['detailList'] = self.detail_list_shrink
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('sn') is not None:
+            self.sn = m.get('sn')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('ftoken') is not None:
+            self.ftoken = m.get('ftoken')
+        if m.get('terminalParams') is not None:
+            self.terminal_params = m.get('terminalParams')
+        if m.get('totalAmount') is not None:
+            self.total_amount = m.get('totalAmount')
+        if m.get('actualAmount') is not None:
+            self.actual_amount = m.get('actualAmount')
+        if m.get('detailList') is not None:
+            self.detail_list_shrink = m.get('detailList')
+        return self
+
+
+class CreateOrderResponseBody(TeaModel):
+    def __init__(
+        self,
+        order_no: str = None,
+    ):
+        # 订单号
+        self.order_no = order_no
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.order_no is not None:
+            result['orderNo'] = self.order_no
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('orderNo') is not None:
+            self.order_no = m.get('orderNo')
+        return self
+
+
+class CreateOrderResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CreateOrderResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CreateOrderResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -15198,6 +15633,146 @@ class QuerySchoolUserFaceResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = QuerySchoolUserFaceResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryPayResultHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryPayResultRequest(TeaModel):
+    def __init__(
+        self,
+        sn: str = None,
+        order_no: str = None,
+        user_id: str = None,
+    ):
+        # 设备序列号
+        self.sn = sn
+        # 订单号
+        self.order_no = order_no
+        # 用户id
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.sn is not None:
+            result['sn'] = self.sn
+        if self.order_no is not None:
+            result['orderNo'] = self.order_no
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('sn') is not None:
+            self.sn = m.get('sn')
+        if m.get('orderNo') is not None:
+            self.order_no = m.get('orderNo')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class QueryPayResultResponseBody(TeaModel):
+    def __init__(
+        self,
+        status: int = None,
+    ):
+        # 状态
+        self.status = status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class QueryPayResultResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryPayResultResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryPayResultResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

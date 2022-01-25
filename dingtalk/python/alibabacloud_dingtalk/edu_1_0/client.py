@@ -725,6 +725,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('PollingConfirmStatus', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/universities/courses/pollingConfirmStatus', 'json', req, runtime)
         )
 
+    def pay_order(
+        self,
+        request: dingtalkedu__1__0_models.PayOrderRequest,
+    ) -> dingtalkedu__1__0_models.PayOrderResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.PayOrderHeaders()
+        return self.pay_order_with_options(request, headers, runtime)
+
+    async def pay_order_async(
+        self,
+        request: dingtalkedu__1__0_models.PayOrderRequest,
+    ) -> dingtalkedu__1__0_models.PayOrderResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.PayOrderHeaders()
+        return await self.pay_order_with_options_async(request, headers, runtime)
+
+    def pay_order_with_options(
+        self,
+        request: dingtalkedu__1__0_models.PayOrderRequest,
+        headers: dingtalkedu__1__0_models.PayOrderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.PayOrderResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.sn):
+            query['sn'] = request.sn
+        if not UtilClient.is_unset(request.order_no):
+            query['orderNo'] = request.order_no
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.PayOrderResponse(),
+            self.do_roarequest('PayOrder', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/orders/pay', 'json', req, runtime)
+        )
+
+    async def pay_order_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.PayOrderRequest,
+        headers: dingtalkedu__1__0_models.PayOrderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.PayOrderResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.sn):
+            query['sn'] = request.sn
+        if not UtilClient.is_unset(request.order_no):
+            query['orderNo'] = request.order_no
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.PayOrderResponse(),
+            await self.do_roarequest_async('PayOrder', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/orders/pay', 'json', req, runtime)
+        )
+
     def create_edu_asset_space(
         self,
         request: dingtalkedu__1__0_models.CreateEduAssetSpaceRequest,
@@ -811,6 +883,102 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkedu__1__0_models.CreateEduAssetSpaceResponse(),
             await self.do_roarequest_async('CreateEduAssetSpace', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/assets/spaces', 'json', req, runtime)
+        )
+
+    def create_order(
+        self,
+        request: dingtalkedu__1__0_models.CreateOrderRequest,
+    ) -> dingtalkedu__1__0_models.CreateOrderResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CreateOrderHeaders()
+        return self.create_order_with_options(request, headers, runtime)
+
+    async def create_order_async(
+        self,
+        request: dingtalkedu__1__0_models.CreateOrderRequest,
+    ) -> dingtalkedu__1__0_models.CreateOrderResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CreateOrderHeaders()
+        return await self.create_order_with_options_async(request, headers, runtime)
+
+    def create_order_with_options(
+        self,
+        tmp_req: dingtalkedu__1__0_models.CreateOrderRequest,
+        headers: dingtalkedu__1__0_models.CreateOrderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CreateOrderResponse:
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkedu__1__0_models.CreateOrderShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.detail_list):
+            request.detail_list_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.detail_list, 'detailList', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.sn):
+            query['sn'] = request.sn
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        if not UtilClient.is_unset(request.ftoken):
+            query['ftoken'] = request.ftoken
+        if not UtilClient.is_unset(request.terminal_params):
+            query['terminalParams'] = request.terminal_params
+        if not UtilClient.is_unset(request.total_amount):
+            query['totalAmount'] = request.total_amount
+        if not UtilClient.is_unset(request.actual_amount):
+            query['actualAmount'] = request.actual_amount
+        if not UtilClient.is_unset(request.detail_list_shrink):
+            query['detailList'] = request.detail_list_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CreateOrderResponse(),
+            self.do_roarequest('CreateOrder', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/orders', 'json', req, runtime)
+        )
+
+    async def create_order_with_options_async(
+        self,
+        tmp_req: dingtalkedu__1__0_models.CreateOrderRequest,
+        headers: dingtalkedu__1__0_models.CreateOrderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CreateOrderResponse:
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkedu__1__0_models.CreateOrderShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.detail_list):
+            request.detail_list_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.detail_list, 'detailList', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.sn):
+            query['sn'] = request.sn
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        if not UtilClient.is_unset(request.ftoken):
+            query['ftoken'] = request.ftoken
+        if not UtilClient.is_unset(request.terminal_params):
+            query['terminalParams'] = request.terminal_params
+        if not UtilClient.is_unset(request.total_amount):
+            query['totalAmount'] = request.total_amount
+        if not UtilClient.is_unset(request.actual_amount):
+            query['actualAmount'] = request.actual_amount
+        if not UtilClient.is_unset(request.detail_list_shrink):
+            query['detailList'] = request.detail_list_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CreateOrderResponse(),
+            await self.do_roarequest_async('CreateOrder', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/orders', 'json', req, runtime)
         )
 
     def delete_teacher(
@@ -4787,6 +4955,78 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkedu__1__0_models.QuerySchoolUserFaceResponse(),
             await self.do_roarequest_async('QuerySchoolUserFace', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/schools/faces', 'json', req, runtime)
+        )
+
+    def query_pay_result(
+        self,
+        request: dingtalkedu__1__0_models.QueryPayResultRequest,
+    ) -> dingtalkedu__1__0_models.QueryPayResultResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QueryPayResultHeaders()
+        return self.query_pay_result_with_options(request, headers, runtime)
+
+    async def query_pay_result_async(
+        self,
+        request: dingtalkedu__1__0_models.QueryPayResultRequest,
+    ) -> dingtalkedu__1__0_models.QueryPayResultResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QueryPayResultHeaders()
+        return await self.query_pay_result_with_options_async(request, headers, runtime)
+
+    def query_pay_result_with_options(
+        self,
+        request: dingtalkedu__1__0_models.QueryPayResultRequest,
+        headers: dingtalkedu__1__0_models.QueryPayResultHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QueryPayResultResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.sn):
+            query['sn'] = request.sn
+        if not UtilClient.is_unset(request.order_no):
+            query['orderNo'] = request.order_no
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QueryPayResultResponse(),
+            self.do_roarequest('QueryPayResult', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/orders/results', 'json', req, runtime)
+        )
+
+    async def query_pay_result_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.QueryPayResultRequest,
+        headers: dingtalkedu__1__0_models.QueryPayResultHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QueryPayResultResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.sn):
+            query['sn'] = request.sn
+        if not UtilClient.is_unset(request.order_no):
+            query['orderNo'] = request.order_no
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QueryPayResultResponse(),
+            await self.do_roarequest_async('QueryPayResult', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/orders/results', 'json', req, runtime)
         )
 
     def query_org_type(self) -> dingtalkedu__1__0_models.QueryOrgTypeResponse:
