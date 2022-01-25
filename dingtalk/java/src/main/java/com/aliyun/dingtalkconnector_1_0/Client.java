@@ -21,6 +21,93 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    public CreateActionResponse createAction(CreateActionRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        CreateActionHeaders headers = new CreateActionHeaders();
+        return this.createActionWithOptions(request, headers, runtime);
+    }
+
+    public CreateActionResponse createActionWithOptions(CreateActionRequest request, CreateActionHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.actionInfo)) {
+            body.put("actionInfo", request.actionInfo);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("CreateAction", "connector_1.0", "HTTP", "POST", "AK", "/v1.0/connector/actions", "json", req, runtime), new CreateActionResponse());
+    }
+
+    public CreateConnectorResponse createConnector(CreateConnectorRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        CreateConnectorHeaders headers = new CreateConnectorHeaders();
+        return this.createConnectorWithOptions(request, headers, runtime);
+    }
+
+    public CreateConnectorResponse createConnectorWithOptions(CreateConnectorRequest request, CreateConnectorHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.connectorInfo)) {
+            body.put("connectorInfo", request.connectorInfo);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("CreateConnector", "connector_1.0", "HTTP", "POST", "AK", "/v1.0/connector/connectors", "json", req, runtime), new CreateConnectorResponse());
+    }
+
+    public CreateTriggerResponse createTrigger(CreateTriggerRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        CreateTriggerHeaders headers = new CreateTriggerHeaders();
+        return this.createTriggerWithOptions(request, headers, runtime);
+    }
+
+    public CreateTriggerResponse createTriggerWithOptions(CreateTriggerRequest request, CreateTriggerHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.triggerInfo)) {
+            body.put("triggerInfo", request.triggerInfo);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("CreateTrigger", "connector_1.0", "HTTP", "POST", "AK", "/v1.0/connector/triggers", "json", req, runtime), new CreateTriggerResponse());
+    }
+
     public PullDataByPageResponse pullDataByPage(PullDataByPageRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         PullDataByPageHeaders headers = new PullDataByPageHeaders();

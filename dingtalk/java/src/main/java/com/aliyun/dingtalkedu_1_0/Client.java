@@ -356,6 +356,65 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("CreateInviteUrl", "edu_1.0", "HTTP", "POST", "AK", "/v1.0/edu/remoteClasses/orgRelations/inviteUrls", "json", req, runtime), new CreateInviteUrlResponse());
     }
 
+    public CreateOrderResponse createOrder(CreateOrderRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        CreateOrderHeaders headers = new CreateOrderHeaders();
+        return this.createOrderWithOptions(request, headers, runtime);
+    }
+
+    public CreateOrderResponse createOrderWithOptions(CreateOrderRequest tmpReq, CreateOrderHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(tmpReq);
+        CreateOrderShrinkRequest request = new CreateOrderShrinkRequest();
+        com.aliyun.openapiutil.Client.convert(tmpReq, request);
+        if (!com.aliyun.teautil.Common.isUnset(tmpReq.detailList)) {
+            request.detailListShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(tmpReq.detailList, "detailList", "json");
+        }
+
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.actualAmount)) {
+            query.put("actualAmount", request.actualAmount);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.detailListShrink)) {
+            query.put("detailList", request.detailListShrink);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.ftoken)) {
+            query.put("ftoken", request.ftoken);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sn)) {
+            query.put("sn", request.sn);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.terminalParams)) {
+            query.put("terminalParams", request.terminalParams);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.totalAmount)) {
+            query.put("totalAmount", request.totalAmount);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("CreateOrder", "edu_1.0", "HTTP", "POST", "AK", "/v1.0/edu/orders", "json", req, runtime), new CreateOrderResponse());
+    }
+
     public CreatePhysicalClassroomResponse createPhysicalClassroom(CreatePhysicalClassroomRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         CreatePhysicalClassroomHeaders headers = new CreatePhysicalClassroomHeaders();
@@ -1398,6 +1457,43 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("MoveStudent", "edu_1.0", "HTTP", "POST", "AK", "/v1.0/edu/students/move", "json", req, runtime), new MoveStudentResponse());
     }
 
+    public PayOrderResponse payOrder(PayOrderRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        PayOrderHeaders headers = new PayOrderHeaders();
+        return this.payOrderWithOptions(request, headers, runtime);
+    }
+
+    public PayOrderResponse payOrderWithOptions(PayOrderRequest request, PayOrderHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.orderNo)) {
+            query.put("orderNo", request.orderNo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sn)) {
+            query.put("sn", request.sn);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("PayOrder", "edu_1.0", "HTTP", "POST", "AK", "/v1.0/edu/orders/pay", "json", req, runtime), new PayOrderResponse());
+    }
+
     public PollingConfirmStatusResponse pollingConfirmStatus(PollingConfirmStatusRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         PollingConfirmStatusHeaders headers = new PollingConfirmStatusHeaders();
@@ -1794,6 +1890,43 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders)
         ));
         return TeaModel.toModel(this.doROARequest("QueryOrgType", "edu_1.0", "HTTP", "GET", "AK", "/v1.0/edu/orgTypes", "json", req, runtime), new QueryOrgTypeResponse());
+    }
+
+    public QueryPayResultResponse queryPayResult(QueryPayResultRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        QueryPayResultHeaders headers = new QueryPayResultHeaders();
+        return this.queryPayResultWithOptions(request, headers, runtime);
+    }
+
+    public QueryPayResultResponse queryPayResultWithOptions(QueryPayResultRequest request, QueryPayResultHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.orderNo)) {
+            query.put("orderNo", request.orderNo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sn)) {
+            query.put("sn", request.sn);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("QueryPayResult", "edu_1.0", "HTTP", "GET", "AK", "/v1.0/edu/orders/results", "json", req, runtime), new QueryPayResultResponse());
     }
 
     public QueryPhysicalClassroomResponse queryPhysicalClassroom(QueryPhysicalClassroomRequest request) throws Exception {
