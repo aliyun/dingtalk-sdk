@@ -6,9 +6,9 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
-    public class PullDataByPageHeaders : TeaModel {
+    public class GetRangeHeaders : TeaModel {
         [NameInMap("commonHeaders")]
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }
