@@ -9,11 +9,18 @@ use AlibabaCloud\Tea\Model;
 class nodeBO extends Model
 {
     /**
-     * @description 节点名称
+     * @description 节点名称，如果命中了搜索关键词会包含高亮标签
      *
      * @var string
      */
     public $name;
+
+    /**
+     * @description 节点原始名称
+     *
+     * @var string
+     */
+    public $originName;
 
     /**
      * @description 节点Id
@@ -44,6 +51,7 @@ class nodeBO extends Model
     public $docType;
     protected $_name = [
         'name'         => 'name',
+        'originName'   => 'originName',
         'nodeId'       => 'nodeId',
         'url'          => 'url',
         'lastEditTime' => 'lastEditTime',
@@ -59,6 +67,9 @@ class nodeBO extends Model
         $res = [];
         if (null !== $this->name) {
             $res['name'] = $this->name;
+        }
+        if (null !== $this->originName) {
+            $res['originName'] = $this->originName;
         }
         if (null !== $this->nodeId) {
             $res['nodeId'] = $this->nodeId;
@@ -86,6 +97,9 @@ class nodeBO extends Model
         $model = new self();
         if (isset($map['name'])) {
             $model->name = $map['name'];
+        }
+        if (isset($map['originName'])) {
+            $model->originName = $map['originName'];
         }
         if (isset($map['nodeId'])) {
             $model->nodeId = $map['nodeId'];

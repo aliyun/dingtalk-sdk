@@ -35,11 +35,19 @@ class CreateWorkspaceDocRequest extends Model
      * @var string
      */
     public $parentNodeId;
+
+    /**
+     * @description 文档模板id
+     *
+     * @var string
+     */
+    public $templateId;
     protected $_name = [
         'name'         => 'name',
         'docType'      => 'docType',
         'operatorId'   => 'operatorId',
         'parentNodeId' => 'parentNodeId',
+        'templateId'   => 'templateId',
     ];
 
     public function validate()
@@ -60,6 +68,9 @@ class CreateWorkspaceDocRequest extends Model
         }
         if (null !== $this->parentNodeId) {
             $res['parentNodeId'] = $this->parentNodeId;
+        }
+        if (null !== $this->templateId) {
+            $res['templateId'] = $this->templateId;
         }
 
         return $res;
@@ -84,6 +95,9 @@ class CreateWorkspaceDocRequest extends Model
         }
         if (isset($map['parentNodeId'])) {
             $model->parentNodeId = $map['parentNodeId'];
+        }
+        if (isset($map['templateId'])) {
+            $model->templateId = $map['templateId'];
         }
 
         return $model;

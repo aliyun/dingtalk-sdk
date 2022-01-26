@@ -279,6 +279,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->parentNodeId)) {
             @$body['parentNodeId'] = $request->parentNodeId;
         }
+        if (!Utils::isUnset($request->templateId)) {
+            @$body['templateId'] = $request->templateId;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
