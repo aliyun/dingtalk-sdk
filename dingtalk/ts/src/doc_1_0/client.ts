@@ -603,12 +603,14 @@ export class CreateWorkspaceDocRequest extends $tea.Model {
   name?: string;
   operatorId?: string;
   parentNodeId?: string;
+  templateId?: string;
   static names(): { [key: string]: string } {
     return {
       docType: 'docType',
       name: 'name',
       operatorId: 'operatorId',
       parentNodeId: 'parentNodeId',
+      templateId: 'templateId',
     };
   }
 
@@ -618,6 +620,7 @@ export class CreateWorkspaceDocRequest extends $tea.Model {
       name: 'string',
       operatorId: 'string',
       parentNodeId: 'string',
+      templateId: 'string',
     };
   }
 
@@ -2349,6 +2352,7 @@ export class SearchWorkspaceDocsResponseBodyDocsNodeBO extends $tea.Model {
   lastEditTime?: number;
   name?: string;
   nodeId?: string;
+  originName?: string;
   url?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2356,6 +2360,7 @@ export class SearchWorkspaceDocsResponseBodyDocsNodeBO extends $tea.Model {
       lastEditTime: 'lastEditTime',
       name: 'name',
       nodeId: 'nodeId',
+      originName: 'originName',
       url: 'url',
     };
   }
@@ -2366,6 +2371,7 @@ export class SearchWorkspaceDocsResponseBodyDocsNodeBO extends $tea.Model {
       lastEditTime: 'number',
       name: 'string',
       nodeId: 'string',
+      originName: 'string',
       url: 'string',
     };
   }
@@ -2755,6 +2761,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.parentNodeId)) {
       body["parentNodeId"] = request.parentNodeId;
+    }
+
+    if (!Util.isUnset(request.templateId)) {
+      body["templateId"] = request.templateId;
     }
 
     let realHeaders : {[key: string ]: string} = { };
