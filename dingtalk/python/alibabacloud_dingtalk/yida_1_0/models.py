@@ -782,6 +782,7 @@ class ListTableDataByFormInstanceIdTableIdRequest(TeaModel):
     def __init__(
         self,
         form_uuid: str = None,
+        app_type: str = None,
         table_field_id: str = None,
         page_number: int = None,
         page_size: int = None,
@@ -790,6 +791,8 @@ class ListTableDataByFormInstanceIdTableIdRequest(TeaModel):
     ):
         # 表单ID
         self.form_uuid = form_uuid
+        # 应用编码
+        self.app_type = app_type
         # 需要查找的子表单组件的唯一标识
         self.table_field_id = table_field_id
         # 当前页
@@ -812,6 +815,8 @@ class ListTableDataByFormInstanceIdTableIdRequest(TeaModel):
         result = dict()
         if self.form_uuid is not None:
             result['formUuid'] = self.form_uuid
+        if self.app_type is not None:
+            result['appType'] = self.app_type
         if self.table_field_id is not None:
             result['tableFieldId'] = self.table_field_id
         if self.page_number is not None:
@@ -828,6 +833,8 @@ class ListTableDataByFormInstanceIdTableIdRequest(TeaModel):
         m = m or dict()
         if m.get('formUuid') is not None:
             self.form_uuid = m.get('formUuid')
+        if m.get('appType') is not None:
+            self.app_type = m.get('appType')
         if m.get('tableFieldId') is not None:
             self.table_field_id = m.get('tableFieldId')
         if m.get('pageNumber') is not None:

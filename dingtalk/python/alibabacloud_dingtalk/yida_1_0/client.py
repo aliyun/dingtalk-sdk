@@ -312,6 +312,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.form_uuid):
             query['formUuid'] = request.form_uuid
+        if not UtilClient.is_unset(request.app_type):
+            query['appType'] = request.app_type
         if not UtilClient.is_unset(request.table_field_id):
             query['tableFieldId'] = request.table_field_id
         if not UtilClient.is_unset(request.page_number):
@@ -347,6 +349,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.form_uuid):
             query['formUuid'] = request.form_uuid
+        if not UtilClient.is_unset(request.app_type):
+            query['appType'] = request.app_type
         if not UtilClient.is_unset(request.table_field_id):
             query['tableFieldId'] = request.table_field_id
         if not UtilClient.is_unset(request.page_number):
