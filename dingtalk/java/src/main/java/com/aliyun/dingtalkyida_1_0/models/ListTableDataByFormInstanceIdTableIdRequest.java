@@ -4,6 +4,10 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListTableDataByFormInstanceIdTableIdRequest extends TeaModel {
+    // 应用编码
+    @NameInMap("appType")
+    public String appType;
+
     // 表单ID
     @NameInMap("formUuid")
     public String formUuid;
@@ -31,6 +35,14 @@ public class ListTableDataByFormInstanceIdTableIdRequest extends TeaModel {
     public static ListTableDataByFormInstanceIdTableIdRequest build(java.util.Map<String, ?> map) throws Exception {
         ListTableDataByFormInstanceIdTableIdRequest self = new ListTableDataByFormInstanceIdTableIdRequest();
         return TeaModel.build(map, self);
+    }
+
+    public ListTableDataByFormInstanceIdTableIdRequest setAppType(String appType) {
+        this.appType = appType;
+        return this;
+    }
+    public String getAppType() {
+        return this.appType;
     }
 
     public ListTableDataByFormInstanceIdTableIdRequest setFormUuid(String formUuid) {
