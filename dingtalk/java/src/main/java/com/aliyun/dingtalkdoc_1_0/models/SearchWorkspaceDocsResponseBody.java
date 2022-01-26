@@ -52,13 +52,17 @@ public class SearchWorkspaceDocsResponseBody extends TeaModel {
         @NameInMap("lastEditTime")
         public Long lastEditTime;
 
-        // 节点名称
+        // 节点名称，如果命中了搜索关键词会包含高亮标签
         @NameInMap("name")
         public String name;
 
         // 节点Id
         @NameInMap("nodeId")
         public String nodeId;
+
+        // 节点原始名称
+        @NameInMap("originName")
+        public String originName;
 
         // 节点打开url
         @NameInMap("url")
@@ -99,6 +103,14 @@ public class SearchWorkspaceDocsResponseBody extends TeaModel {
         }
         public String getNodeId() {
             return this.nodeId;
+        }
+
+        public SearchWorkspaceDocsResponseBodyDocsNodeBO setOriginName(String originName) {
+            this.originName = originName;
+            return this;
+        }
+        public String getOriginName() {
+            return this.originName;
         }
 
         public SearchWorkspaceDocsResponseBodyDocsNodeBO setUrl(String url) {
