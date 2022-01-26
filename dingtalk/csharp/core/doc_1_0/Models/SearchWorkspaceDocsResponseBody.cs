@@ -20,6 +20,9 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public string Name { get; set; }
+                [NameInMap("originName")]
+                [Validation(Required=false)]
+                public string OriginName { get; set; }
                 [NameInMap("nodeId")]
                 [Validation(Required=false)]
                 public string NodeId { get; set; }

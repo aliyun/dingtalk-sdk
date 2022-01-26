@@ -37,6 +37,13 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         [Validation(Required=false)]
         public string ParentNodeId { get; set; }
 
+        /// <summary>
+        /// 文档模板id
+        /// </summary>
+        [NameInMap("templateId")]
+        [Validation(Required=false)]
+        public string TemplateId { get; set; }
+
     }
 
 }
