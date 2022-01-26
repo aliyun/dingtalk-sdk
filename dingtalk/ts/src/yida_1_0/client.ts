@@ -4213,6 +4213,7 @@ export class ListTableDataByFormInstanceIdTableIdHeaders extends $tea.Model {
 }
 
 export class ListTableDataByFormInstanceIdTableIdRequest extends $tea.Model {
+  appType?: string;
   formUuid?: string;
   pageNumber?: number;
   pageSize?: number;
@@ -4221,6 +4222,7 @@ export class ListTableDataByFormInstanceIdTableIdRequest extends $tea.Model {
   userId?: string;
   static names(): { [key: string]: string } {
     return {
+      appType: 'appType',
       formUuid: 'formUuid',
       pageNumber: 'pageNumber',
       pageSize: 'pageSize',
@@ -4232,6 +4234,7 @@ export class ListTableDataByFormInstanceIdTableIdRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      appType: 'string',
       formUuid: 'string',
       pageNumber: 'number',
       pageSize: 'number',
@@ -11347,6 +11350,10 @@ export default class Client extends OpenApi {
     Util.validateModel(request);
     formInstanceId = OpenApiUtil.getEncodeParam(formInstanceId);
     let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appType)) {
+      query["appType"] = request.appType;
+    }
+
     if (!Util.isUnset(request.formUuid)) {
       query["formUuid"] = request.formUuid;
     }
