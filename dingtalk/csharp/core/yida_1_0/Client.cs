@@ -4467,6 +4467,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             formInstanceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(formInstanceId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppType))
+            {
+                query["appType"] = request.AppType;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormUuid))
             {
                 query["formUuid"] = request.FormUuid;
@@ -4513,6 +4517,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             formInstanceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(formInstanceId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppType))
+            {
+                query["appType"] = request.AppType;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormUuid))
             {
                 query["formUuid"] = request.FormUuid;

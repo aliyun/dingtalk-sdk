@@ -10,6 +10,13 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 {
     public class ListTableDataByFormInstanceIdTableIdRequest : TeaModel {
         /// <summary>
+        /// 应用编码
+        /// </summary>
+        [NameInMap("appType")]
+        [Validation(Required=false)]
+        public string AppType { get; set; }
+
+        /// <summary>
         /// 表单ID
         /// </summary>
         [NameInMap("formUuid")]
