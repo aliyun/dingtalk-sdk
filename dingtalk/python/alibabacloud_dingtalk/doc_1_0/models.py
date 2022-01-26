@@ -577,6 +577,7 @@ class CreateWorkspaceDocRequest(TeaModel):
         doc_type: str = None,
         operator_id: str = None,
         parent_node_id: str = None,
+        template_id: str = None,
     ):
         # 文档名
         self.name = name
@@ -586,6 +587,8 @@ class CreateWorkspaceDocRequest(TeaModel):
         self.operator_id = operator_id
         # 父节点nodeId
         self.parent_node_id = parent_node_id
+        # 文档模板id
+        self.template_id = template_id
 
     def validate(self):
         pass
@@ -604,6 +607,8 @@ class CreateWorkspaceDocRequest(TeaModel):
             result['operatorId'] = self.operator_id
         if self.parent_node_id is not None:
             result['parentNodeId'] = self.parent_node_id
+        if self.template_id is not None:
+            result['templateId'] = self.template_id
         return result
 
     def from_map(self, m: dict = None):
@@ -616,6 +621,8 @@ class CreateWorkspaceDocRequest(TeaModel):
             self.operator_id = m.get('operatorId')
         if m.get('parentNodeId') is not None:
             self.parent_node_id = m.get('parentNodeId')
+        if m.get('templateId') is not None:
+            self.template_id = m.get('templateId')
         return self
 
 
@@ -1503,13 +1510,16 @@ class SearchWorkspaceDocsResponseBodyDocsNodeBO(TeaModel):
     def __init__(
         self,
         name: str = None,
+        origin_name: str = None,
         node_id: str = None,
         url: str = None,
         last_edit_time: int = None,
         doc_type: str = None,
     ):
-        # 节点名称
+        # 节点名称，如果命中了搜索关键词会包含高亮标签
         self.name = name
+        # 节点原始名称
+        self.origin_name = origin_name
         # 节点Id
         self.node_id = node_id
         # 节点打开url
@@ -1530,6 +1540,8 @@ class SearchWorkspaceDocsResponseBodyDocsNodeBO(TeaModel):
         result = dict()
         if self.name is not None:
             result['name'] = self.name
+        if self.origin_name is not None:
+            result['originName'] = self.origin_name
         if self.node_id is not None:
             result['nodeId'] = self.node_id
         if self.url is not None:
@@ -1544,6 +1556,8 @@ class SearchWorkspaceDocsResponseBodyDocsNodeBO(TeaModel):
         m = m or dict()
         if m.get('name') is not None:
             self.name = m.get('name')
+        if m.get('originName') is not None:
+            self.origin_name = m.get('originName')
         if m.get('nodeId') is not None:
             self.node_id = m.get('nodeId')
         if m.get('url') is not None:

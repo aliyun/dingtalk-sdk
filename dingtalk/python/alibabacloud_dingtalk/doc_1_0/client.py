@@ -290,6 +290,8 @@ class Client(OpenApiClient):
             body['operatorId'] = request.operator_id
         if not UtilClient.is_unset(request.parent_node_id):
             body['parentNodeId'] = request.parent_node_id
+        if not UtilClient.is_unset(request.template_id):
+            body['templateId'] = request.template_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -321,6 +323,8 @@ class Client(OpenApiClient):
             body['operatorId'] = request.operator_id
         if not UtilClient.is_unset(request.parent_node_id):
             body['parentNodeId'] = request.parent_node_id
+        if not UtilClient.is_unset(request.template_id):
+            body['templateId'] = request.template_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
