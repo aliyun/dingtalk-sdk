@@ -449,6 +449,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->formUuid)) {
             @$query['formUuid'] = $request->formUuid;
         }
+        if (!Utils::isUnset($request->appType)) {
+            @$query['appType'] = $request->appType;
+        }
         if (!Utils::isUnset($request->tableFieldId)) {
             @$query['tableFieldId'] = $request->tableFieldId;
         }

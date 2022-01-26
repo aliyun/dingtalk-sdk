@@ -16,6 +16,13 @@ class ListTableDataByFormInstanceIdTableIdRequest extends Model
     public $formUuid;
 
     /**
+     * @description 应用编码
+     *
+     * @var string
+     */
+    public $appType;
+
+    /**
      * @description 需要查找的子表单组件的唯一标识
      *
      * @var string
@@ -51,6 +58,7 @@ class ListTableDataByFormInstanceIdTableIdRequest extends Model
     public $userId;
     protected $_name = [
         'formUuid'     => 'formUuid',
+        'appType'      => 'appType',
         'tableFieldId' => 'tableFieldId',
         'pageNumber'   => 'pageNumber',
         'pageSize'     => 'pageSize',
@@ -67,6 +75,9 @@ class ListTableDataByFormInstanceIdTableIdRequest extends Model
         $res = [];
         if (null !== $this->formUuid) {
             $res['formUuid'] = $this->formUuid;
+        }
+        if (null !== $this->appType) {
+            $res['appType'] = $this->appType;
         }
         if (null !== $this->tableFieldId) {
             $res['tableFieldId'] = $this->tableFieldId;
@@ -97,6 +108,9 @@ class ListTableDataByFormInstanceIdTableIdRequest extends Model
         $model = new self();
         if (isset($map['formUuid'])) {
             $model->formUuid = $map['formUuid'];
+        }
+        if (isset($map['appType'])) {
+            $model->appType = $map['appType'];
         }
         if (isset($map['tableFieldId'])) {
             $model->tableFieldId = $map['tableFieldId'];
