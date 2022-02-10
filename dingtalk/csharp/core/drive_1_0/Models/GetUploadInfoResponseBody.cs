@@ -22,6 +22,9 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
             [NameInMap("internalResourceUrl")]
             [Validation(Required=false)]
             public string InternalResourceUrl { get; set; }
+            [NameInMap("mediaId")]
+            [Validation(Required=false)]
+            public string MediaId { get; set; }
             [NameInMap("resourceUrl")]
             [Validation(Required=false)]
             public string ResourceUrl { get; set; }

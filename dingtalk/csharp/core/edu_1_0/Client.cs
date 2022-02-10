@@ -2638,6 +2638,78 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             return TeaModel.ToObject<DeviceHeartbeatResponse>(await DoROARequestAsync("DeviceHeartbeat", "edu_1.0", "HTTP", "POST", "AK", "/v1.0/edu/heartbeats/report", "json", req, runtime));
         }
 
+        public EduTeacherListResponse EduTeacherList(EduTeacherListRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            EduTeacherListHeaders headers = new EduTeacherListHeaders();
+            return EduTeacherListWithOptions(request, headers, runtime);
+        }
+
+        public async Task<EduTeacherListResponse> EduTeacherListAsync(EduTeacherListRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            EduTeacherListHeaders headers = new EduTeacherListHeaders();
+            return await EduTeacherListWithOptionsAsync(request, headers, runtime);
+        }
+
+        public EduTeacherListResponse EduTeacherListWithOptions(EduTeacherListRequest request, EduTeacherListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
+            {
+                query["pageNumber"] = request.PageNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                query["pageSize"] = request.PageSize;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<EduTeacherListResponse>(DoROARequest("EduTeacherList", "edu_1.0", "HTTP", "GET", "AK", "/v1.0/edu/teachers", "json", req, runtime));
+        }
+
+        public async Task<EduTeacherListResponse> EduTeacherListWithOptionsAsync(EduTeacherListRequest request, EduTeacherListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
+            {
+                query["pageNumber"] = request.PageNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                query["pageSize"] = request.PageSize;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<EduTeacherListResponse>(await DoROARequestAsync("EduTeacherList", "edu_1.0", "HTTP", "GET", "AK", "/v1.0/edu/teachers", "json", req, runtime));
+        }
+
         public EndCourseResponse EndCourse(EndCourseRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
