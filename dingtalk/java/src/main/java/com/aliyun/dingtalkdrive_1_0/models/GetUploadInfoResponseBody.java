@@ -56,6 +56,10 @@ public class GetUploadInfoResponseBody extends TeaModel {
         @NameInMap("internalResourceUrl")
         public String internalResourceUrl;
 
+        // mediaId
+        @NameInMap("mediaId")
+        public String mediaId;
+
         // 上传地址
         @NameInMap("resourceUrl")
         public String resourceUrl;
@@ -87,6 +91,14 @@ public class GetUploadInfoResponseBody extends TeaModel {
         }
         public String getInternalResourceUrl() {
             return this.internalResourceUrl;
+        }
+
+        public GetUploadInfoResponseBodyHeaderSignatureUploadInfo setMediaId(String mediaId) {
+            this.mediaId = mediaId;
+            return this;
+        }
+        public String getMediaId() {
+            return this.mediaId;
         }
 
         public GetUploadInfoResponseBodyHeaderSignatureUploadInfo setResourceUrl(String resourceUrl) {
