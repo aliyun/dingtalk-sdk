@@ -84,6 +84,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteUniversityTeacherResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeviceHeartbeatHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeviceHeartbeatRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeviceHeartbeatResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EduTeacherListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EduTeacherListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EduTeacherListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EndCourseHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EndCourseRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EndCourseResponse;
@@ -2581,6 +2584,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return UpdateUniversityCourseGroupResponse::fromMap($this->doROARequest('UpdateUniversityCourseGroup', 'edu_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/edu/universities/courseGroups', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param EduTeacherListRequest $request
+     *
+     * @return EduTeacherListResponse
+     */
+    public function eduTeacherList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new EduTeacherListHeaders([]);
+
+        return $this->eduTeacherListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param EduTeacherListRequest $request
+     * @param EduTeacherListHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return EduTeacherListResponse
+     */
+    public function eduTeacherListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return EduTeacherListResponse::fromMap($this->doROARequest('EduTeacherList', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/teachers', 'json', $req, $runtime));
     }
 
     /**

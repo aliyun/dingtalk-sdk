@@ -35,11 +35,19 @@ class headerSignatureUploadInfo extends Model
      * @var mixed[]
      */
     public $headers;
+
+    /**
+     * @description mediaId
+     *
+     * @var string
+     */
+    public $mediaId;
     protected $_name = [
         'resourceUrl'         => 'resourceUrl',
         'internalResourceUrl' => 'internalResourceUrl',
         'expirationSeconds'   => 'expirationSeconds',
         'headers'             => 'headers',
+        'mediaId'             => 'mediaId',
     ];
 
     public function validate()
@@ -60,6 +68,9 @@ class headerSignatureUploadInfo extends Model
         }
         if (null !== $this->headers) {
             $res['headers'] = $this->headers;
+        }
+        if (null !== $this->mediaId) {
+            $res['mediaId'] = $this->mediaId;
         }
 
         return $res;
@@ -84,6 +95,9 @@ class headerSignatureUploadInfo extends Model
         }
         if (isset($map['headers'])) {
             $model->headers = $map['headers'];
+        }
+        if (isset($map['mediaId'])) {
+            $model->mediaId = $map['mediaId'];
         }
 
         return $model;
