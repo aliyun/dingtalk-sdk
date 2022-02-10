@@ -3551,6 +3551,74 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('UpdateUniversityCourseGroup', 'edu_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/edu/universities/courseGroups', 'json', req, runtime)
         )
 
+    def edu_teacher_list(
+        self,
+        request: dingtalkedu__1__0_models.EduTeacherListRequest,
+    ) -> dingtalkedu__1__0_models.EduTeacherListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.EduTeacherListHeaders()
+        return self.edu_teacher_list_with_options(request, headers, runtime)
+
+    async def edu_teacher_list_async(
+        self,
+        request: dingtalkedu__1__0_models.EduTeacherListRequest,
+    ) -> dingtalkedu__1__0_models.EduTeacherListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.EduTeacherListHeaders()
+        return await self.edu_teacher_list_with_options_async(request, headers, runtime)
+
+    def edu_teacher_list_with_options(
+        self,
+        request: dingtalkedu__1__0_models.EduTeacherListRequest,
+        headers: dingtalkedu__1__0_models.EduTeacherListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.EduTeacherListResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.EduTeacherListResponse(),
+            self.do_roarequest('EduTeacherList', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/teachers', 'json', req, runtime)
+        )
+
+    async def edu_teacher_list_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.EduTeacherListRequest,
+        headers: dingtalkedu__1__0_models.EduTeacherListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.EduTeacherListResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.EduTeacherListResponse(),
+            await self.do_roarequest_async('EduTeacherList', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/teachers', 'json', req, runtime)
+        )
+
     def batch_org_create_hw(
         self,
         request: dingtalkedu__1__0_models.BatchOrgCreateHWRequest,

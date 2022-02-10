@@ -11725,6 +11725,233 @@ class UpdateUniversityCourseGroupResponse(TeaModel):
         return self
 
 
+class EduTeacherListHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class EduTeacherListRequest(TeaModel):
+    def __init__(
+        self,
+        page_number: int = None,
+        page_size: int = None,
+    ):
+        # 页码
+        self.page_number = page_number
+        # 分页大小
+        self.page_size = page_size
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        return self
+
+
+class EduTeacherListResponseBodyResultTeacherDetails(TeaModel):
+    def __init__(
+        self,
+        user_id: str = None,
+        name: str = None,
+        role: str = None,
+        union_id: str = None,
+    ):
+        # 用户ID
+        self.user_id = user_id
+        # 用户名称
+        self.name = name
+        # 角色
+        self.role = role
+        # PiiiPyQqBxxx
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.role is not None:
+            result['role'] = self.role
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('role') is not None:
+            self.role = m.get('role')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class EduTeacherListResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        teacher_details: List[EduTeacherListResponseBodyResultTeacherDetails] = None,
+    ):
+        # 是否还有下一页
+        self.has_more = has_more
+        # 教师信息
+        self.teacher_details = teacher_details
+
+    def validate(self):
+        if self.teacher_details:
+            for k in self.teacher_details:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['teacherDetails'] = []
+        if self.teacher_details is not None:
+            for k in self.teacher_details:
+                result['teacherDetails'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.teacher_details = []
+        if m.get('teacherDetails') is not None:
+            for k in m.get('teacherDetails'):
+                temp_model = EduTeacherListResponseBodyResultTeacherDetails()
+                self.teacher_details.append(temp_model.from_map(k))
+        return self
+
+
+class EduTeacherListResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: EduTeacherListResponseBodyResult = None,
+    ):
+        # 返回结果
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = EduTeacherListResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class EduTeacherListResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: EduTeacherListResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = EduTeacherListResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class BatchOrgCreateHWHeaders(TeaModel):
     def __init__(
         self,

@@ -5443,6 +5443,7 @@ class GetUploadInfoResponseBodyHeaderSignatureUploadInfo(TeaModel):
         internal_resource_url: str = None,
         expiration_seconds: int = None,
         headers: Dict[str, Any] = None,
+        media_id: str = None,
     ):
         # 上传地址
         self.resource_url = resource_url
@@ -5452,6 +5453,8 @@ class GetUploadInfoResponseBodyHeaderSignatureUploadInfo(TeaModel):
         self.expiration_seconds = expiration_seconds
         # header加签信息
         self.headers = headers
+        # mediaId
+        self.media_id = media_id
 
     def validate(self):
         pass
@@ -5470,6 +5473,8 @@ class GetUploadInfoResponseBodyHeaderSignatureUploadInfo(TeaModel):
             result['expirationSeconds'] = self.expiration_seconds
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.media_id is not None:
+            result['mediaId'] = self.media_id
         return result
 
     def from_map(self, m: dict = None):
@@ -5482,6 +5487,8 @@ class GetUploadInfoResponseBodyHeaderSignatureUploadInfo(TeaModel):
             self.expiration_seconds = m.get('expirationSeconds')
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('mediaId') is not None:
+            self.media_id = m.get('mediaId')
         return self
 
 
