@@ -689,6 +689,289 @@ class QueryClassScheduleConfigResponse(TeaModel):
         return self
 
 
+class CreateOrderFlowHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateOrderFlowRequestDetailList(TeaModel):
+    def __init__(
+        self,
+        item_name: str = None,
+        scene: int = None,
+        item_amount: int = None,
+        actual_amount: int = None,
+    ):
+        # 商品名
+        self.item_name = item_name
+        # 场景
+        self.scene = scene
+        # 应付金额，单位为分
+        self.item_amount = item_amount
+        # 计算优惠后的实付金额，单位为分
+        self.actual_amount = actual_amount
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.item_name is not None:
+            result['itemName'] = self.item_name
+        if self.scene is not None:
+            result['scene'] = self.scene
+        if self.item_amount is not None:
+            result['itemAmount'] = self.item_amount
+        if self.actual_amount is not None:
+            result['actualAmount'] = self.actual_amount
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('itemName') is not None:
+            self.item_name = m.get('itemName')
+        if m.get('scene') is not None:
+            self.scene = m.get('scene')
+        if m.get('itemAmount') is not None:
+            self.item_amount = m.get('itemAmount')
+        if m.get('actualAmount') is not None:
+            self.actual_amount = m.get('actualAmount')
+        return self
+
+
+class CreateOrderFlowRequest(TeaModel):
+    def __init__(
+        self,
+        sn: str = None,
+        order_no: str = None,
+        user_id: str = None,
+        alipay_uid: str = None,
+        merchant_id: str = None,
+        total_amount: int = None,
+        actual_amount: int = None,
+        detail_list: List[CreateOrderFlowRequestDetailList] = None,
+        ding_isv_org_id: int = None,
+        ding_org_id: int = None,
+        ding_open_app_id: int = None,
+        ding_suite_key: str = None,
+        ding_token_grant_type: int = None,
+        timestamp: int = None,
+        signature: str = None,
+        face_id: str = None,
+    ):
+        # 设备号
+        self.sn = sn
+        # 订单号
+        self.order_no = order_no
+        # 员工id
+        self.user_id = user_id
+        # 支付宝用户id
+        self.alipay_uid = alipay_uid
+        # 商户id
+        self.merchant_id = merchant_id
+        # 应付价格，单位分
+        self.total_amount = total_amount
+        # 实付金额，单位分（优惠计算后）
+        self.actual_amount = actual_amount
+        # 订单明细信息，来源于商户系统或APP的商品信息。
+        self.detail_list = detail_list
+        self.ding_isv_org_id = ding_isv_org_id
+        self.ding_org_id = ding_org_id
+        self.ding_open_app_id = ding_open_app_id
+        self.ding_suite_key = ding_suite_key
+        self.ding_token_grant_type = ding_token_grant_type
+        # utc时间戳
+        self.timestamp = timestamp
+        # 签名
+        self.signature = signature
+        # 人脸id
+        self.face_id = face_id
+
+    def validate(self):
+        if self.detail_list:
+            for k in self.detail_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.sn is not None:
+            result['sn'] = self.sn
+        if self.order_no is not None:
+            result['orderNo'] = self.order_no
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.alipay_uid is not None:
+            result['alipayUid'] = self.alipay_uid
+        if self.merchant_id is not None:
+            result['merchantId'] = self.merchant_id
+        if self.total_amount is not None:
+            result['totalAmount'] = self.total_amount
+        if self.actual_amount is not None:
+            result['actualAmount'] = self.actual_amount
+        result['detailList'] = []
+        if self.detail_list is not None:
+            for k in self.detail_list:
+                result['detailList'].append(k.to_map() if k else None)
+        if self.ding_isv_org_id is not None:
+            result['dingIsvOrgId'] = self.ding_isv_org_id
+        if self.ding_org_id is not None:
+            result['dingOrgId'] = self.ding_org_id
+        if self.ding_open_app_id is not None:
+            result['dingOpenAppId'] = self.ding_open_app_id
+        if self.ding_suite_key is not None:
+            result['dingSuiteKey'] = self.ding_suite_key
+        if self.ding_token_grant_type is not None:
+            result['dingTokenGrantType'] = self.ding_token_grant_type
+        if self.timestamp is not None:
+            result['timestamp'] = self.timestamp
+        if self.signature is not None:
+            result['signature'] = self.signature
+        if self.face_id is not None:
+            result['faceId'] = self.face_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('sn') is not None:
+            self.sn = m.get('sn')
+        if m.get('orderNo') is not None:
+            self.order_no = m.get('orderNo')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('alipayUid') is not None:
+            self.alipay_uid = m.get('alipayUid')
+        if m.get('merchantId') is not None:
+            self.merchant_id = m.get('merchantId')
+        if m.get('totalAmount') is not None:
+            self.total_amount = m.get('totalAmount')
+        if m.get('actualAmount') is not None:
+            self.actual_amount = m.get('actualAmount')
+        self.detail_list = []
+        if m.get('detailList') is not None:
+            for k in m.get('detailList'):
+                temp_model = CreateOrderFlowRequestDetailList()
+                self.detail_list.append(temp_model.from_map(k))
+        if m.get('dingIsvOrgId') is not None:
+            self.ding_isv_org_id = m.get('dingIsvOrgId')
+        if m.get('dingOrgId') is not None:
+            self.ding_org_id = m.get('dingOrgId')
+        if m.get('dingOpenAppId') is not None:
+            self.ding_open_app_id = m.get('dingOpenAppId')
+        if m.get('dingSuiteKey') is not None:
+            self.ding_suite_key = m.get('dingSuiteKey')
+        if m.get('dingTokenGrantType') is not None:
+            self.ding_token_grant_type = m.get('dingTokenGrantType')
+        if m.get('timestamp') is not None:
+            self.timestamp = m.get('timestamp')
+        if m.get('signature') is not None:
+            self.signature = m.get('signature')
+        if m.get('faceId') is not None:
+            self.face_id = m.get('faceId')
+        return self
+
+
+class CreateOrderFlowResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        # 返回结果
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class CreateOrderFlowResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CreateOrderFlowResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CreateOrderFlowResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetDefaultChildHeaders(TeaModel):
     def __init__(
         self,
@@ -1263,6 +1546,183 @@ class CreateUniversityStudentResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = CreateUniversityStudentResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ReportDeviceUseLogHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ReportDeviceUseLogRequest(TeaModel):
+    def __init__(
+        self,
+        ding_isv_org_id: int = None,
+        ding_org_id: int = None,
+        ding_oauth_app_id: int = None,
+        ding_suite_key: str = None,
+        ding_token_grant_type: int = None,
+        sn: str = None,
+        order_no: str = None,
+        user_id: str = None,
+        action: str = None,
+    ):
+        self.ding_isv_org_id = ding_isv_org_id
+        self.ding_org_id = ding_org_id
+        self.ding_oauth_app_id = ding_oauth_app_id
+        self.ding_suite_key = ding_suite_key
+        self.ding_token_grant_type = ding_token_grant_type
+        # 设备序列号
+        self.sn = sn
+        # 订单号
+        self.order_no = order_no
+        # 员工id
+        self.user_id = user_id
+        # 操作
+        self.action = action
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_isv_org_id is not None:
+            result['dingIsvOrgId'] = self.ding_isv_org_id
+        if self.ding_org_id is not None:
+            result['dingOrgId'] = self.ding_org_id
+        if self.ding_oauth_app_id is not None:
+            result['dingOauthAppId'] = self.ding_oauth_app_id
+        if self.ding_suite_key is not None:
+            result['dingSuiteKey'] = self.ding_suite_key
+        if self.ding_token_grant_type is not None:
+            result['dingTokenGrantType'] = self.ding_token_grant_type
+        if self.sn is not None:
+            result['sn'] = self.sn
+        if self.order_no is not None:
+            result['orderNo'] = self.order_no
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.action is not None:
+            result['action'] = self.action
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingIsvOrgId') is not None:
+            self.ding_isv_org_id = m.get('dingIsvOrgId')
+        if m.get('dingOrgId') is not None:
+            self.ding_org_id = m.get('dingOrgId')
+        if m.get('dingOauthAppId') is not None:
+            self.ding_oauth_app_id = m.get('dingOauthAppId')
+        if m.get('dingSuiteKey') is not None:
+            self.ding_suite_key = m.get('dingSuiteKey')
+        if m.get('dingTokenGrantType') is not None:
+            self.ding_token_grant_type = m.get('dingTokenGrantType')
+        if m.get('sn') is not None:
+            self.sn = m.get('sn')
+        if m.get('orderNo') is not None:
+            self.order_no = m.get('orderNo')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('action') is not None:
+            self.action = m.get('action')
+        return self
+
+
+class ReportDeviceUseLogResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        # 返回结果
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class ReportDeviceUseLogResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ReportDeviceUseLogResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ReportDeviceUseLogResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -2855,16 +3315,35 @@ class PayOrderHeaders(TeaModel):
 class PayOrderRequest(TeaModel):
     def __init__(
         self,
+        ding_isv_org_id: int = None,
+        ding_org_id: int = None,
+        ding_open_app_id: str = None,
+        ding_suite_key: str = None,
+        ding_token_grant_type: int = None,
         sn: str = None,
         order_no: str = None,
         user_id: str = None,
+        face_id: str = None,
+        timestamp: int = None,
+        signature: str = None,
     ):
+        self.ding_isv_org_id = ding_isv_org_id
+        self.ding_org_id = ding_org_id
+        self.ding_open_app_id = ding_open_app_id
+        self.ding_suite_key = ding_suite_key
+        self.ding_token_grant_type = ding_token_grant_type
         # 设备序列号
         self.sn = sn
         # 订单号
         self.order_no = order_no
         # 员工id
         self.user_id = user_id
+        # 人脸id
+        self.face_id = face_id
+        # utc时间戳
+        self.timestamp = timestamp
+        # 签名
+        self.signature = signature
 
     def validate(self):
         pass
@@ -2875,22 +3354,54 @@ class PayOrderRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.ding_isv_org_id is not None:
+            result['dingIsvOrgId'] = self.ding_isv_org_id
+        if self.ding_org_id is not None:
+            result['dingOrgId'] = self.ding_org_id
+        if self.ding_open_app_id is not None:
+            result['dingOpenAppId'] = self.ding_open_app_id
+        if self.ding_suite_key is not None:
+            result['dingSuiteKey'] = self.ding_suite_key
+        if self.ding_token_grant_type is not None:
+            result['dingTokenGrantType'] = self.ding_token_grant_type
         if self.sn is not None:
             result['sn'] = self.sn
         if self.order_no is not None:
             result['orderNo'] = self.order_no
         if self.user_id is not None:
             result['userId'] = self.user_id
+        if self.face_id is not None:
+            result['faceId'] = self.face_id
+        if self.timestamp is not None:
+            result['timestamp'] = self.timestamp
+        if self.signature is not None:
+            result['signature'] = self.signature
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('dingIsvOrgId') is not None:
+            self.ding_isv_org_id = m.get('dingIsvOrgId')
+        if m.get('dingOrgId') is not None:
+            self.ding_org_id = m.get('dingOrgId')
+        if m.get('dingOpenAppId') is not None:
+            self.ding_open_app_id = m.get('dingOpenAppId')
+        if m.get('dingSuiteKey') is not None:
+            self.ding_suite_key = m.get('dingSuiteKey')
+        if m.get('dingTokenGrantType') is not None:
+            self.ding_token_grant_type = m.get('dingTokenGrantType')
         if m.get('sn') is not None:
             self.sn = m.get('sn')
         if m.get('orderNo') is not None:
             self.order_no = m.get('orderNo')
         if m.get('userId') is not None:
             self.user_id = m.get('userId')
+        if m.get('faceId') is not None:
+            self.face_id = m.get('faceId')
+        if m.get('timestamp') is not None:
+            self.timestamp = m.get('timestamp')
+        if m.get('signature') is not None:
+            self.signature = m.get('signature')
         return self
 
 
@@ -3217,13 +3728,13 @@ class CreateOrderRequestDetailList(TeaModel):
         item_amount: int = None,
         actual_amount: int = None,
     ):
-        # 商品名。
+        # 商品名
         self.item_name = item_name
-        # 场景。
+        # 场景
         self.scene = scene
-        # 应付金额，单位为分。
+        # 应付金额，单位为分
         self.item_amount = item_amount
-        # 计算优惠后的实付金额，单位为分。
+        # 计算优惠后的实付金额，单位为分
         self.actual_amount = actual_amount
 
     def validate(self):
@@ -3268,21 +3779,40 @@ class CreateOrderRequest(TeaModel):
         total_amount: int = None,
         actual_amount: int = None,
         detail_list: List[CreateOrderRequestDetailList] = None,
+        timestamp: int = None,
+        signature: str = None,
+        ding_isv_org_id: int = None,
+        ding_org_id: int = None,
+        ding_oauth_app_id: int = None,
+        ding_suite_key: str = None,
+        ding_token_grant_type: int = None,
+        face_id: str = None,
     ):
-        # 设备序列号
+        # 设备号
         self.sn = sn
         # 员工id
         self.user_id = user_id
-        # 录脸token
+        # 刷脸token
         self.ftoken = ftoken
         # 交易加签
         self.terminal_params = terminal_params
-        # 应付价格
+        # 应付价格，单位分
         self.total_amount = total_amount
-        # 实付金额（优惠计算后）
+        # 实付金额，单位分（优惠计算后）
         self.actual_amount = actual_amount
-        # 订单明细信息，来源于商户系统或APP的商品信息。
+        # 订单明细信息
         self.detail_list = detail_list
+        # utc时间戳
+        self.timestamp = timestamp
+        # 签名
+        self.signature = signature
+        self.ding_isv_org_id = ding_isv_org_id
+        self.ding_org_id = ding_org_id
+        self.ding_oauth_app_id = ding_oauth_app_id
+        self.ding_suite_key = ding_suite_key
+        self.ding_token_grant_type = ding_token_grant_type
+        # 人脸id
+        self.face_id = face_id
 
     def validate(self):
         if self.detail_list:
@@ -3312,6 +3842,22 @@ class CreateOrderRequest(TeaModel):
         if self.detail_list is not None:
             for k in self.detail_list:
                 result['detailList'].append(k.to_map() if k else None)
+        if self.timestamp is not None:
+            result['timestamp'] = self.timestamp
+        if self.signature is not None:
+            result['signature'] = self.signature
+        if self.ding_isv_org_id is not None:
+            result['dingIsvOrgId'] = self.ding_isv_org_id
+        if self.ding_org_id is not None:
+            result['dingOrgId'] = self.ding_org_id
+        if self.ding_oauth_app_id is not None:
+            result['dingOauthAppId'] = self.ding_oauth_app_id
+        if self.ding_suite_key is not None:
+            result['dingSuiteKey'] = self.ding_suite_key
+        if self.ding_token_grant_type is not None:
+            result['dingTokenGrantType'] = self.ding_token_grant_type
+        if self.face_id is not None:
+            result['faceId'] = self.face_id
         return result
 
     def from_map(self, m: dict = None):
@@ -3333,76 +3879,22 @@ class CreateOrderRequest(TeaModel):
             for k in m.get('detailList'):
                 temp_model = CreateOrderRequestDetailList()
                 self.detail_list.append(temp_model.from_map(k))
-        return self
-
-
-class CreateOrderShrinkRequest(TeaModel):
-    def __init__(
-        self,
-        sn: str = None,
-        user_id: str = None,
-        ftoken: str = None,
-        terminal_params: str = None,
-        total_amount: int = None,
-        actual_amount: int = None,
-        detail_list_shrink: str = None,
-    ):
-        # 设备序列号
-        self.sn = sn
-        # 员工id
-        self.user_id = user_id
-        # 录脸token
-        self.ftoken = ftoken
-        # 交易加签
-        self.terminal_params = terminal_params
-        # 应付价格
-        self.total_amount = total_amount
-        # 实付金额（优惠计算后）
-        self.actual_amount = actual_amount
-        # 订单明细信息，来源于商户系统或APP的商品信息。
-        self.detail_list_shrink = detail_list_shrink
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.sn is not None:
-            result['sn'] = self.sn
-        if self.user_id is not None:
-            result['userId'] = self.user_id
-        if self.ftoken is not None:
-            result['ftoken'] = self.ftoken
-        if self.terminal_params is not None:
-            result['terminalParams'] = self.terminal_params
-        if self.total_amount is not None:
-            result['totalAmount'] = self.total_amount
-        if self.actual_amount is not None:
-            result['actualAmount'] = self.actual_amount
-        if self.detail_list_shrink is not None:
-            result['detailList'] = self.detail_list_shrink
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('sn') is not None:
-            self.sn = m.get('sn')
-        if m.get('userId') is not None:
-            self.user_id = m.get('userId')
-        if m.get('ftoken') is not None:
-            self.ftoken = m.get('ftoken')
-        if m.get('terminalParams') is not None:
-            self.terminal_params = m.get('terminalParams')
-        if m.get('totalAmount') is not None:
-            self.total_amount = m.get('totalAmount')
-        if m.get('actualAmount') is not None:
-            self.actual_amount = m.get('actualAmount')
-        if m.get('detailList') is not None:
-            self.detail_list_shrink = m.get('detailList')
+        if m.get('timestamp') is not None:
+            self.timestamp = m.get('timestamp')
+        if m.get('signature') is not None:
+            self.signature = m.get('signature')
+        if m.get('dingIsvOrgId') is not None:
+            self.ding_isv_org_id = m.get('dingIsvOrgId')
+        if m.get('dingOrgId') is not None:
+            self.ding_org_id = m.get('dingOrgId')
+        if m.get('dingOauthAppId') is not None:
+            self.ding_oauth_app_id = m.get('dingOauthAppId')
+        if m.get('dingSuiteKey') is not None:
+            self.ding_suite_key = m.get('dingSuiteKey')
+        if m.get('dingTokenGrantType') is not None:
+            self.ding_token_grant_type = m.get('dingTokenGrantType')
+        if m.get('faceId') is not None:
+            self.face_id = m.get('faceId')
         return self
 
 
@@ -3751,6 +4243,204 @@ class DeleteUniversityTeacherResponse(TeaModel):
         return self
 
 
+class CancelOrderHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CancelOrderRequest(TeaModel):
+    def __init__(
+        self,
+        ding_isv_org_id: int = None,
+        ding_org_id: int = None,
+        ding_oauth_app_id: int = None,
+        ding_suite_key: str = None,
+        ding_token_grant_type: int = None,
+        order_no: str = None,
+        sn: str = None,
+        user_id: str = None,
+        face_id: str = None,
+        timestamp: int = None,
+        signature: str = None,
+    ):
+        self.ding_isv_org_id = ding_isv_org_id
+        self.ding_org_id = ding_org_id
+        self.ding_oauth_app_id = ding_oauth_app_id
+        self.ding_suite_key = ding_suite_key
+        self.ding_token_grant_type = ding_token_grant_type
+        # 订单号
+        self.order_no = order_no
+        # 设备号
+        self.sn = sn
+        # 员工id
+        self.user_id = user_id
+        # 人脸id
+        self.face_id = face_id
+        # utc时间戳
+        self.timestamp = timestamp
+        # 签名
+        self.signature = signature
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_isv_org_id is not None:
+            result['dingIsvOrgId'] = self.ding_isv_org_id
+        if self.ding_org_id is not None:
+            result['dingOrgId'] = self.ding_org_id
+        if self.ding_oauth_app_id is not None:
+            result['dingOauthAppId'] = self.ding_oauth_app_id
+        if self.ding_suite_key is not None:
+            result['dingSuiteKey'] = self.ding_suite_key
+        if self.ding_token_grant_type is not None:
+            result['dingTokenGrantType'] = self.ding_token_grant_type
+        if self.order_no is not None:
+            result['orderNo'] = self.order_no
+        if self.sn is not None:
+            result['sn'] = self.sn
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.face_id is not None:
+            result['faceId'] = self.face_id
+        if self.timestamp is not None:
+            result['timestamp'] = self.timestamp
+        if self.signature is not None:
+            result['signature'] = self.signature
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingIsvOrgId') is not None:
+            self.ding_isv_org_id = m.get('dingIsvOrgId')
+        if m.get('dingOrgId') is not None:
+            self.ding_org_id = m.get('dingOrgId')
+        if m.get('dingOauthAppId') is not None:
+            self.ding_oauth_app_id = m.get('dingOauthAppId')
+        if m.get('dingSuiteKey') is not None:
+            self.ding_suite_key = m.get('dingSuiteKey')
+        if m.get('dingTokenGrantType') is not None:
+            self.ding_token_grant_type = m.get('dingTokenGrantType')
+        if m.get('orderNo') is not None:
+            self.order_no = m.get('orderNo')
+        if m.get('sn') is not None:
+            self.sn = m.get('sn')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('faceId') is not None:
+            self.face_id = m.get('faceId')
+        if m.get('timestamp') is not None:
+            self.timestamp = m.get('timestamp')
+        if m.get('signature') is not None:
+            self.signature = m.get('signature')
+        return self
+
+
+class CancelOrderResponseBody(TeaModel):
+    def __init__(
+        self,
+        need_retry: bool = None,
+        trade_action: str = None,
+    ):
+        # 是否需要重试
+        self.need_retry = need_retry
+        # 交易动作
+        self.trade_action = trade_action
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.need_retry is not None:
+            result['needRetry'] = self.need_retry
+        if self.trade_action is not None:
+            result['tradeAction'] = self.trade_action
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('needRetry') is not None:
+            self.need_retry = m.get('needRetry')
+        if m.get('tradeAction') is not None:
+            self.trade_action = m.get('tradeAction')
+        return self
+
+
+class CancelOrderResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CancelOrderResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CancelOrderResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryPurchaseInfoHeaders(TeaModel):
     def __init__(
         self,
@@ -4060,6 +4750,211 @@ class DeleteDeviceOrgResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = DeleteDeviceOrgResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CreateRefundFlowHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateRefundFlowRequest(TeaModel):
+    def __init__(
+        self,
+        sn: str = None,
+        order_no: str = None,
+        user_id: str = None,
+        operator_id: str = None,
+        operator_name: str = None,
+        ding_isv_org_id: int = None,
+        ding_org_id: int = None,
+        ding_oauth_app_id: int = None,
+        ding_suite_key: str = None,
+        ding_token_grant_type: int = None,
+        timestamp: int = None,
+        signature: str = None,
+        face_id: str = None,
+    ):
+        # 设备号
+        self.sn = sn
+        # 订单号
+        self.order_no = order_no
+        # 员工id
+        self.user_id = user_id
+        # 操作人id
+        self.operator_id = operator_id
+        # 操作人名称
+        self.operator_name = operator_name
+        self.ding_isv_org_id = ding_isv_org_id
+        self.ding_org_id = ding_org_id
+        self.ding_oauth_app_id = ding_oauth_app_id
+        self.ding_suite_key = ding_suite_key
+        self.ding_token_grant_type = ding_token_grant_type
+        # utc时间戳
+        self.timestamp = timestamp
+        # 签名
+        self.signature = signature
+        # 人脸id
+        self.face_id = face_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.sn is not None:
+            result['sn'] = self.sn
+        if self.order_no is not None:
+            result['orderNo'] = self.order_no
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        if self.operator_name is not None:
+            result['operatorName'] = self.operator_name
+        if self.ding_isv_org_id is not None:
+            result['dingIsvOrgId'] = self.ding_isv_org_id
+        if self.ding_org_id is not None:
+            result['dingOrgId'] = self.ding_org_id
+        if self.ding_oauth_app_id is not None:
+            result['dingOauthAppId'] = self.ding_oauth_app_id
+        if self.ding_suite_key is not None:
+            result['dingSuiteKey'] = self.ding_suite_key
+        if self.ding_token_grant_type is not None:
+            result['dingTokenGrantType'] = self.ding_token_grant_type
+        if self.timestamp is not None:
+            result['timestamp'] = self.timestamp
+        if self.signature is not None:
+            result['signature'] = self.signature
+        if self.face_id is not None:
+            result['faceId'] = self.face_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('sn') is not None:
+            self.sn = m.get('sn')
+        if m.get('orderNo') is not None:
+            self.order_no = m.get('orderNo')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        if m.get('operatorName') is not None:
+            self.operator_name = m.get('operatorName')
+        if m.get('dingIsvOrgId') is not None:
+            self.ding_isv_org_id = m.get('dingIsvOrgId')
+        if m.get('dingOrgId') is not None:
+            self.ding_org_id = m.get('dingOrgId')
+        if m.get('dingOauthAppId') is not None:
+            self.ding_oauth_app_id = m.get('dingOauthAppId')
+        if m.get('dingSuiteKey') is not None:
+            self.ding_suite_key = m.get('dingSuiteKey')
+        if m.get('dingTokenGrantType') is not None:
+            self.ding_token_grant_type = m.get('dingTokenGrantType')
+        if m.get('timestamp') is not None:
+            self.timestamp = m.get('timestamp')
+        if m.get('signature') is not None:
+            self.signature = m.get('signature')
+        if m.get('faceId') is not None:
+            self.face_id = m.get('faceId')
+        return self
+
+
+class CreateRefundFlowResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        # 返回结果
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class CreateRefundFlowResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CreateRefundFlowResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CreateRefundFlowResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -4377,6 +5272,139 @@ class GetOpenCourseDetailResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = GetOpenCourseDetailResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class RemoveDeviceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class RemoveDeviceRequest(TeaModel):
+    def __init__(
+        self,
+        sn: str = None,
+        merchant_id: str = None,
+    ):
+        # 设备sn
+        self.sn = sn
+        # 商户id
+        self.merchant_id = merchant_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.sn is not None:
+            result['sn'] = self.sn
+        if self.merchant_id is not None:
+            result['merchantId'] = self.merchant_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('sn') is not None:
+            self.sn = m.get('sn')
+        if m.get('merchantId') is not None:
+            self.merchant_id = m.get('merchantId')
+        return self
+
+
+class RemoveDeviceResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: str = None,
+    ):
+        # 返回结果
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class RemoveDeviceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: RemoveDeviceResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = RemoveDeviceResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -6270,6 +7298,232 @@ class CreatePhysicalClassroomResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = CreatePhysicalClassroomResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class AddDeviceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AddDeviceRequest(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        type: int = None,
+        scene: int = None,
+        sn: str = None,
+        model: str = None,
+        status: int = None,
+        merchant_id: str = None,
+        ding_isv_org_id: int = None,
+        ding_org_id: int = None,
+        ding_oauth_app_id: int = None,
+        ding_suite_key: str = None,
+        ding_token_grant_type: int = None,
+    ):
+        # 设备名称
+        self.name = name
+        # 设备类型
+        self.type = type
+        # 消费场景
+        self.scene = scene
+        # sn码
+        self.sn = sn
+        # 设备型号
+        self.model = model
+        # 设备状态
+        self.status = status
+        # 商户id
+        self.merchant_id = merchant_id
+        self.ding_isv_org_id = ding_isv_org_id
+        self.ding_org_id = ding_org_id
+        self.ding_oauth_app_id = ding_oauth_app_id
+        self.ding_suite_key = ding_suite_key
+        self.ding_token_grant_type = ding_token_grant_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.type is not None:
+            result['type'] = self.type
+        if self.scene is not None:
+            result['scene'] = self.scene
+        if self.sn is not None:
+            result['sn'] = self.sn
+        if self.model is not None:
+            result['model'] = self.model
+        if self.status is not None:
+            result['status'] = self.status
+        if self.merchant_id is not None:
+            result['merchantId'] = self.merchant_id
+        if self.ding_isv_org_id is not None:
+            result['dingIsvOrgId'] = self.ding_isv_org_id
+        if self.ding_org_id is not None:
+            result['dingOrgId'] = self.ding_org_id
+        if self.ding_oauth_app_id is not None:
+            result['dingOauthAppId'] = self.ding_oauth_app_id
+        if self.ding_suite_key is not None:
+            result['dingSuiteKey'] = self.ding_suite_key
+        if self.ding_token_grant_type is not None:
+            result['dingTokenGrantType'] = self.ding_token_grant_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('scene') is not None:
+            self.scene = m.get('scene')
+        if m.get('sn') is not None:
+            self.sn = m.get('sn')
+        if m.get('model') is not None:
+            self.model = m.get('model')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('merchantId') is not None:
+            self.merchant_id = m.get('merchantId')
+        if m.get('dingIsvOrgId') is not None:
+            self.ding_isv_org_id = m.get('dingIsvOrgId')
+        if m.get('dingOrgId') is not None:
+            self.ding_org_id = m.get('dingOrgId')
+        if m.get('dingOauthAppId') is not None:
+            self.ding_oauth_app_id = m.get('dingOauthAppId')
+        if m.get('dingSuiteKey') is not None:
+            self.ding_suite_key = m.get('dingSuiteKey')
+        if m.get('dingTokenGrantType') is not None:
+            self.ding_token_grant_type = m.get('dingTokenGrantType')
+        return self
+
+
+class AddDeviceResponseBody(TeaModel):
+    def __init__(
+        self,
+        id: int = None,
+        corp_id: str = None,
+        sn: str = None,
+        merchant_id: str = None,
+        status: int = None,
+    ):
+        # 设备id
+        self.id = id
+        # 组织id
+        self.corp_id = corp_id
+        # 设备sn码
+        self.sn = sn
+        # 商户id
+        self.merchant_id = merchant_id
+        # 状态
+        self.status = status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.sn is not None:
+            result['sn'] = self.sn
+        if self.merchant_id is not None:
+            result['merchantId'] = self.merchant_id
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('sn') is not None:
+            self.sn = m.get('sn')
+        if m.get('merchantId') is not None:
+            self.merchant_id = m.get('merchantId')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class AddDeviceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: AddDeviceResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = AddDeviceResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -12437,6 +13691,146 @@ class BatchOrgCreateHWResponse(TeaModel):
         return self
 
 
+class QueryUserPayInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryUserPayInfoRequest(TeaModel):
+    def __init__(
+        self,
+        user_id: str = None,
+        sn: str = None,
+        face_id: str = None,
+    ):
+        # 员工id
+        self.user_id = user_id
+        # 设备id
+        self.sn = sn
+        # 人脸id
+        self.face_id = face_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.sn is not None:
+            result['sn'] = self.sn
+        if self.face_id is not None:
+            result['faceId'] = self.face_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('sn') is not None:
+            self.sn = m.get('sn')
+        if m.get('faceId') is not None:
+            self.face_id = m.get('faceId')
+        return self
+
+
+class QueryUserPayInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        sign_no: str = None,
+    ):
+        # 签约单号
+        self.sign_no = sign_no
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.sign_no is not None:
+            result['signNo'] = self.sign_no
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('signNo') is not None:
+            self.sign_no = m.get('signNo')
+        return self
+
+
+class QueryUserPayInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryUserPayInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryUserPayInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateCustomDeptHeaders(TeaModel):
     def __init__(
         self,
@@ -13308,6 +14702,190 @@ class QueryClassScheduleByTimeSchoolResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = QueryClassScheduleByTimeSchoolResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CheckRestrictionHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CheckRestrictionRequest(TeaModel):
+    def __init__(
+        self,
+        ding_isv_org_id: int = None,
+        ding_org_id: int = None,
+        ding_open_app_id: int = None,
+        ding_suite_key: str = None,
+        ding_token_grant_type: int = None,
+        sn: str = None,
+        user_id: str = None,
+        face_id: str = None,
+        scene: int = None,
+        actual_amount: int = None,
+    ):
+        self.ding_isv_org_id = ding_isv_org_id
+        self.ding_org_id = ding_org_id
+        self.ding_open_app_id = ding_open_app_id
+        self.ding_suite_key = ding_suite_key
+        self.ding_token_grant_type = ding_token_grant_type
+        # 设备号
+        self.sn = sn
+        # 员工id
+        self.user_id = user_id
+        # 人脸id
+        self.face_id = face_id
+        # 场景
+        self.scene = scene
+        # 实付金额，单位分
+        self.actual_amount = actual_amount
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_isv_org_id is not None:
+            result['dingIsvOrgId'] = self.ding_isv_org_id
+        if self.ding_org_id is not None:
+            result['dingOrgId'] = self.ding_org_id
+        if self.ding_open_app_id is not None:
+            result['dingOpenAppId'] = self.ding_open_app_id
+        if self.ding_suite_key is not None:
+            result['dingSuiteKey'] = self.ding_suite_key
+        if self.ding_token_grant_type is not None:
+            result['dingTokenGrantType'] = self.ding_token_grant_type
+        if self.sn is not None:
+            result['sn'] = self.sn
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.face_id is not None:
+            result['faceId'] = self.face_id
+        if self.scene is not None:
+            result['scene'] = self.scene
+        if self.actual_amount is not None:
+            result['actualAmount'] = self.actual_amount
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingIsvOrgId') is not None:
+            self.ding_isv_org_id = m.get('dingIsvOrgId')
+        if m.get('dingOrgId') is not None:
+            self.ding_org_id = m.get('dingOrgId')
+        if m.get('dingOpenAppId') is not None:
+            self.ding_open_app_id = m.get('dingOpenAppId')
+        if m.get('dingSuiteKey') is not None:
+            self.ding_suite_key = m.get('dingSuiteKey')
+        if m.get('dingTokenGrantType') is not None:
+            self.ding_token_grant_type = m.get('dingTokenGrantType')
+        if m.get('sn') is not None:
+            self.sn = m.get('sn')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('faceId') is not None:
+            self.face_id = m.get('faceId')
+        if m.get('scene') is not None:
+            self.scene = m.get('scene')
+        if m.get('actualAmount') is not None:
+            self.actual_amount = m.get('actualAmount')
+        return self
+
+
+class CheckRestrictionResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        # 返回结果
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class CheckRestrictionResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CheckRestrictionResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CheckRestrictionResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -15900,16 +17478,35 @@ class QueryPayResultHeaders(TeaModel):
 class QueryPayResultRequest(TeaModel):
     def __init__(
         self,
+        ding_isv_org_id: int = None,
+        ding_org_id: int = None,
+        ding_oauth_app_id: int = None,
+        ding_suite_key: str = None,
+        ding_token_grant_type: int = None,
         sn: str = None,
         order_no: str = None,
         user_id: str = None,
+        face_id: str = None,
+        timestamp: int = None,
+        signature: str = None,
     ):
+        self.ding_isv_org_id = ding_isv_org_id
+        self.ding_org_id = ding_org_id
+        self.ding_oauth_app_id = ding_oauth_app_id
+        self.ding_suite_key = ding_suite_key
+        self.ding_token_grant_type = ding_token_grant_type
         # 设备序列号
         self.sn = sn
         # 订单号
         self.order_no = order_no
         # 用户id
         self.user_id = user_id
+        # 人脸id
+        self.face_id = face_id
+        # utc时间戳
+        self.timestamp = timestamp
+        # 签名
+        self.signature = signature
 
     def validate(self):
         pass
@@ -15920,22 +17517,54 @@ class QueryPayResultRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.ding_isv_org_id is not None:
+            result['dingIsvOrgId'] = self.ding_isv_org_id
+        if self.ding_org_id is not None:
+            result['dingOrgId'] = self.ding_org_id
+        if self.ding_oauth_app_id is not None:
+            result['dingOauthAppId'] = self.ding_oauth_app_id
+        if self.ding_suite_key is not None:
+            result['dingSuiteKey'] = self.ding_suite_key
+        if self.ding_token_grant_type is not None:
+            result['dingTokenGrantType'] = self.ding_token_grant_type
         if self.sn is not None:
             result['sn'] = self.sn
         if self.order_no is not None:
             result['orderNo'] = self.order_no
         if self.user_id is not None:
             result['userId'] = self.user_id
+        if self.face_id is not None:
+            result['faceId'] = self.face_id
+        if self.timestamp is not None:
+            result['timestamp'] = self.timestamp
+        if self.signature is not None:
+            result['signature'] = self.signature
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('dingIsvOrgId') is not None:
+            self.ding_isv_org_id = m.get('dingIsvOrgId')
+        if m.get('dingOrgId') is not None:
+            self.ding_org_id = m.get('dingOrgId')
+        if m.get('dingOauthAppId') is not None:
+            self.ding_oauth_app_id = m.get('dingOauthAppId')
+        if m.get('dingSuiteKey') is not None:
+            self.ding_suite_key = m.get('dingSuiteKey')
+        if m.get('dingTokenGrantType') is not None:
+            self.ding_token_grant_type = m.get('dingTokenGrantType')
         if m.get('sn') is not None:
             self.sn = m.get('sn')
         if m.get('orderNo') is not None:
             self.order_no = m.get('orderNo')
         if m.get('userId') is not None:
             self.user_id = m.get('userId')
+        if m.get('faceId') is not None:
+            self.face_id = m.get('faceId')
+        if m.get('timestamp') is not None:
+            self.timestamp = m.get('timestamp')
+        if m.get('signature') is not None:
+            self.signature = m.get('signature')
         return self
 
 
