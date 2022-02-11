@@ -3,22 +3,30 @@ package com.aliyun.dingtalkedu_1_0.models;
 
 import com.aliyun.tea.*;
 
-public class CreateOrderRequest extends TeaModel {
+public class CreateOrderFlowRequest extends TeaModel {
     // 实付金额，单位分（优惠计算后）
     @NameInMap("actualAmount")
     public Long actualAmount;
 
-    // 订单明细信息
+    // 支付宝用户id
+    @NameInMap("alipayUid")
+    public String alipayUid;
+
+    // 订单明细信息，来源于商户系统或APP的商品信息。
     @NameInMap("detailList")
-    public java.util.List<CreateOrderRequestDetailList> detailList;
+    public java.util.List<CreateOrderFlowRequestDetailList> detailList;
 
     // 人脸id
     @NameInMap("faceId")
     public String faceId;
 
-    // 刷脸token
-    @NameInMap("ftoken")
-    public String ftoken;
+    // 商户id
+    @NameInMap("merchantId")
+    public String merchantId;
+
+    // 订单号
+    @NameInMap("orderNo")
+    public String orderNo;
 
     // 签名
     @NameInMap("signature")
@@ -27,10 +35,6 @@ public class CreateOrderRequest extends TeaModel {
     // 设备号
     @NameInMap("sn")
     public String sn;
-
-    // 交易加签
-    @NameInMap("terminalParams")
-    public String terminalParams;
 
     // utc时间戳
     @NameInMap("timestamp")
@@ -44,12 +48,12 @@ public class CreateOrderRequest extends TeaModel {
     @NameInMap("userId")
     public String userId;
 
-    public static CreateOrderRequest build(java.util.Map<String, ?> map) throws Exception {
-        CreateOrderRequest self = new CreateOrderRequest();
+    public static CreateOrderFlowRequest build(java.util.Map<String, ?> map) throws Exception {
+        CreateOrderFlowRequest self = new CreateOrderFlowRequest();
         return TeaModel.build(map, self);
     }
 
-    public CreateOrderRequest setActualAmount(Long actualAmount) {
+    public CreateOrderFlowRequest setActualAmount(Long actualAmount) {
         this.actualAmount = actualAmount;
         return this;
     }
@@ -57,15 +61,23 @@ public class CreateOrderRequest extends TeaModel {
         return this.actualAmount;
     }
 
-    public CreateOrderRequest setDetailList(java.util.List<CreateOrderRequestDetailList> detailList) {
+    public CreateOrderFlowRequest setAlipayUid(String alipayUid) {
+        this.alipayUid = alipayUid;
+        return this;
+    }
+    public String getAlipayUid() {
+        return this.alipayUid;
+    }
+
+    public CreateOrderFlowRequest setDetailList(java.util.List<CreateOrderFlowRequestDetailList> detailList) {
         this.detailList = detailList;
         return this;
     }
-    public java.util.List<CreateOrderRequestDetailList> getDetailList() {
+    public java.util.List<CreateOrderFlowRequestDetailList> getDetailList() {
         return this.detailList;
     }
 
-    public CreateOrderRequest setFaceId(String faceId) {
+    public CreateOrderFlowRequest setFaceId(String faceId) {
         this.faceId = faceId;
         return this;
     }
@@ -73,15 +85,23 @@ public class CreateOrderRequest extends TeaModel {
         return this.faceId;
     }
 
-    public CreateOrderRequest setFtoken(String ftoken) {
-        this.ftoken = ftoken;
+    public CreateOrderFlowRequest setMerchantId(String merchantId) {
+        this.merchantId = merchantId;
         return this;
     }
-    public String getFtoken() {
-        return this.ftoken;
+    public String getMerchantId() {
+        return this.merchantId;
     }
 
-    public CreateOrderRequest setSignature(String signature) {
+    public CreateOrderFlowRequest setOrderNo(String orderNo) {
+        this.orderNo = orderNo;
+        return this;
+    }
+    public String getOrderNo() {
+        return this.orderNo;
+    }
+
+    public CreateOrderFlowRequest setSignature(String signature) {
         this.signature = signature;
         return this;
     }
@@ -89,7 +109,7 @@ public class CreateOrderRequest extends TeaModel {
         return this.signature;
     }
 
-    public CreateOrderRequest setSn(String sn) {
+    public CreateOrderFlowRequest setSn(String sn) {
         this.sn = sn;
         return this;
     }
@@ -97,15 +117,7 @@ public class CreateOrderRequest extends TeaModel {
         return this.sn;
     }
 
-    public CreateOrderRequest setTerminalParams(String terminalParams) {
-        this.terminalParams = terminalParams;
-        return this;
-    }
-    public String getTerminalParams() {
-        return this.terminalParams;
-    }
-
-    public CreateOrderRequest setTimestamp(Long timestamp) {
+    public CreateOrderFlowRequest setTimestamp(Long timestamp) {
         this.timestamp = timestamp;
         return this;
     }
@@ -113,7 +125,7 @@ public class CreateOrderRequest extends TeaModel {
         return this.timestamp;
     }
 
-    public CreateOrderRequest setTotalAmount(Long totalAmount) {
+    public CreateOrderFlowRequest setTotalAmount(Long totalAmount) {
         this.totalAmount = totalAmount;
         return this;
     }
@@ -121,7 +133,7 @@ public class CreateOrderRequest extends TeaModel {
         return this.totalAmount;
     }
 
-    public CreateOrderRequest setUserId(String userId) {
+    public CreateOrderFlowRequest setUserId(String userId) {
         this.userId = userId;
         return this;
     }
@@ -129,7 +141,7 @@ public class CreateOrderRequest extends TeaModel {
         return this.userId;
     }
 
-    public static class CreateOrderRequestDetailList extends TeaModel {
+    public static class CreateOrderFlowRequestDetailList extends TeaModel {
         // 计算优惠后的实付金额，单位为分
         @NameInMap("actualAmount")
         public Long actualAmount;
@@ -146,12 +158,12 @@ public class CreateOrderRequest extends TeaModel {
         @NameInMap("scene")
         public Long scene;
 
-        public static CreateOrderRequestDetailList build(java.util.Map<String, ?> map) throws Exception {
-            CreateOrderRequestDetailList self = new CreateOrderRequestDetailList();
+        public static CreateOrderFlowRequestDetailList build(java.util.Map<String, ?> map) throws Exception {
+            CreateOrderFlowRequestDetailList self = new CreateOrderFlowRequestDetailList();
             return TeaModel.build(map, self);
         }
 
-        public CreateOrderRequestDetailList setActualAmount(Long actualAmount) {
+        public CreateOrderFlowRequestDetailList setActualAmount(Long actualAmount) {
             this.actualAmount = actualAmount;
             return this;
         }
@@ -159,7 +171,7 @@ public class CreateOrderRequest extends TeaModel {
             return this.actualAmount;
         }
 
-        public CreateOrderRequestDetailList setItemAmount(Long itemAmount) {
+        public CreateOrderFlowRequestDetailList setItemAmount(Long itemAmount) {
             this.itemAmount = itemAmount;
             return this;
         }
@@ -167,7 +179,7 @@ public class CreateOrderRequest extends TeaModel {
             return this.itemAmount;
         }
 
-        public CreateOrderRequestDetailList setItemName(String itemName) {
+        public CreateOrderFlowRequestDetailList setItemName(String itemName) {
             this.itemName = itemName;
             return this;
         }
@@ -175,7 +187,7 @@ public class CreateOrderRequest extends TeaModel {
             return this.itemName;
         }
 
-        public CreateOrderRequestDetailList setScene(Long scene) {
+        public CreateOrderFlowRequestDetailList setScene(Long scene) {
             this.scene = scene;
             return this;
         }

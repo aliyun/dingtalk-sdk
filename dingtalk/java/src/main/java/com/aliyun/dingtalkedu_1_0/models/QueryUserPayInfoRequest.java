@@ -1,0 +1,48 @@
+// This file is auto-generated, don't edit it. Thanks.
+package com.aliyun.dingtalkedu_1_0.models;
+
+import com.aliyun.tea.*;
+
+public class QueryUserPayInfoRequest extends TeaModel {
+    // 人脸id
+    @NameInMap("faceId")
+    public String faceId;
+
+    // 设备id
+    @NameInMap("sn")
+    public String sn;
+
+    // 员工id
+    @NameInMap("userId")
+    public String userId;
+
+    public static QueryUserPayInfoRequest build(java.util.Map<String, ?> map) throws Exception {
+        QueryUserPayInfoRequest self = new QueryUserPayInfoRequest();
+        return TeaModel.build(map, self);
+    }
+
+    public QueryUserPayInfoRequest setFaceId(String faceId) {
+        this.faceId = faceId;
+        return this;
+    }
+    public String getFaceId() {
+        return this.faceId;
+    }
+
+    public QueryUserPayInfoRequest setSn(String sn) {
+        this.sn = sn;
+        return this;
+    }
+    public String getSn() {
+        return this.sn;
+    }
+
+    public QueryUserPayInfoRequest setUserId(String userId) {
+        this.userId = userId;
+        return this;
+    }
+    public String getUserId() {
+        return this.userId;
+    }
+
+}

@@ -3,7 +3,7 @@ package com.aliyun.dingtalkedu_1_0.models;
 
 import com.aliyun.tea.*;
 
-public class QueryPayResultRequest extends TeaModel {
+public class CancelOrderRequest extends TeaModel {
     // 人脸id
     @NameInMap("faceId")
     public String faceId;
@@ -16,7 +16,7 @@ public class QueryPayResultRequest extends TeaModel {
     @NameInMap("signature")
     public String signature;
 
-    // 设备序列号
+    // 设备号
     @NameInMap("sn")
     public String sn;
 
@@ -24,16 +24,16 @@ public class QueryPayResultRequest extends TeaModel {
     @NameInMap("timestamp")
     public Long timestamp;
 
-    // 用户id
+    // 员工id
     @NameInMap("userId")
     public String userId;
 
-    public static QueryPayResultRequest build(java.util.Map<String, ?> map) throws Exception {
-        QueryPayResultRequest self = new QueryPayResultRequest();
+    public static CancelOrderRequest build(java.util.Map<String, ?> map) throws Exception {
+        CancelOrderRequest self = new CancelOrderRequest();
         return TeaModel.build(map, self);
     }
 
-    public QueryPayResultRequest setFaceId(String faceId) {
+    public CancelOrderRequest setFaceId(String faceId) {
         this.faceId = faceId;
         return this;
     }
@@ -41,7 +41,7 @@ public class QueryPayResultRequest extends TeaModel {
         return this.faceId;
     }
 
-    public QueryPayResultRequest setOrderNo(String orderNo) {
+    public CancelOrderRequest setOrderNo(String orderNo) {
         this.orderNo = orderNo;
         return this;
     }
@@ -49,7 +49,7 @@ public class QueryPayResultRequest extends TeaModel {
         return this.orderNo;
     }
 
-    public QueryPayResultRequest setSignature(String signature) {
+    public CancelOrderRequest setSignature(String signature) {
         this.signature = signature;
         return this;
     }
@@ -57,7 +57,7 @@ public class QueryPayResultRequest extends TeaModel {
         return this.signature;
     }
 
-    public QueryPayResultRequest setSn(String sn) {
+    public CancelOrderRequest setSn(String sn) {
         this.sn = sn;
         return this;
     }
@@ -65,7 +65,7 @@ public class QueryPayResultRequest extends TeaModel {
         return this.sn;
     }
 
-    public QueryPayResultRequest setTimestamp(Long timestamp) {
+    public CancelOrderRequest setTimestamp(Long timestamp) {
         this.timestamp = timestamp;
         return this;
     }
@@ -73,7 +73,7 @@ public class QueryPayResultRequest extends TeaModel {
         return this.timestamp;
     }
 
-    public QueryPayResultRequest setUserId(String userId) {
+    public CancelOrderRequest setUserId(String userId) {
         this.userId = userId;
         return this;
     }
