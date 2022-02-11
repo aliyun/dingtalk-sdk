@@ -6,35 +6,10 @@ namespace AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class PayOrderRequest extends Model
+class CreateRefundFlowRequest extends Model
 {
     /**
-     * @var int
-     */
-    public $dingIsvOrgId;
-
-    /**
-     * @var int
-     */
-    public $dingOrgId;
-
-    /**
-     * @var string
-     */
-    public $dingOpenAppId;
-
-    /**
-     * @var string
-     */
-    public $dingSuiteKey;
-
-    /**
-     * @var int
-     */
-    public $dingTokenGrantType;
-
-    /**
-     * @description 设备序列号
+     * @description 设备号
      *
      * @var string
      */
@@ -55,11 +30,43 @@ class PayOrderRequest extends Model
     public $userId;
 
     /**
-     * @description 人脸id
+     * @description 操作人id
      *
      * @var string
      */
-    public $faceId;
+    public $operatorId;
+
+    /**
+     * @description 操作人名称
+     *
+     * @var string
+     */
+    public $operatorName;
+
+    /**
+     * @var int
+     */
+    public $dingIsvOrgId;
+
+    /**
+     * @var int
+     */
+    public $dingOrgId;
+
+    /**
+     * @var int
+     */
+    public $dingOauthAppId;
+
+    /**
+     * @var string
+     */
+    public $dingSuiteKey;
+
+    /**
+     * @var int
+     */
+    public $dingTokenGrantType;
 
     /**
      * @description utc时间戳
@@ -74,18 +81,27 @@ class PayOrderRequest extends Model
      * @var string
      */
     public $signature;
+
+    /**
+     * @description 人脸id
+     *
+     * @var string
+     */
+    public $faceId;
     protected $_name = [
-        'dingIsvOrgId'       => 'dingIsvOrgId',
-        'dingOrgId'          => 'dingOrgId',
-        'dingOpenAppId'      => 'dingOpenAppId',
-        'dingSuiteKey'       => 'dingSuiteKey',
-        'dingTokenGrantType' => 'dingTokenGrantType',
         'sn'                 => 'sn',
         'orderNo'            => 'orderNo',
         'userId'             => 'userId',
-        'faceId'             => 'faceId',
+        'operatorId'         => 'operatorId',
+        'operatorName'       => 'operatorName',
+        'dingIsvOrgId'       => 'dingIsvOrgId',
+        'dingOrgId'          => 'dingOrgId',
+        'dingOauthAppId'     => 'dingOauthAppId',
+        'dingSuiteKey'       => 'dingSuiteKey',
+        'dingTokenGrantType' => 'dingTokenGrantType',
         'timestamp'          => 'timestamp',
         'signature'          => 'signature',
+        'faceId'             => 'faceId',
     ];
 
     public function validate()
@@ -95,21 +111,6 @@ class PayOrderRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->dingIsvOrgId) {
-            $res['dingIsvOrgId'] = $this->dingIsvOrgId;
-        }
-        if (null !== $this->dingOrgId) {
-            $res['dingOrgId'] = $this->dingOrgId;
-        }
-        if (null !== $this->dingOpenAppId) {
-            $res['dingOpenAppId'] = $this->dingOpenAppId;
-        }
-        if (null !== $this->dingSuiteKey) {
-            $res['dingSuiteKey'] = $this->dingSuiteKey;
-        }
-        if (null !== $this->dingTokenGrantType) {
-            $res['dingTokenGrantType'] = $this->dingTokenGrantType;
-        }
         if (null !== $this->sn) {
             $res['sn'] = $this->sn;
         }
@@ -119,14 +120,35 @@ class PayOrderRequest extends Model
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
         }
-        if (null !== $this->faceId) {
-            $res['faceId'] = $this->faceId;
+        if (null !== $this->operatorId) {
+            $res['operatorId'] = $this->operatorId;
+        }
+        if (null !== $this->operatorName) {
+            $res['operatorName'] = $this->operatorName;
+        }
+        if (null !== $this->dingIsvOrgId) {
+            $res['dingIsvOrgId'] = $this->dingIsvOrgId;
+        }
+        if (null !== $this->dingOrgId) {
+            $res['dingOrgId'] = $this->dingOrgId;
+        }
+        if (null !== $this->dingOauthAppId) {
+            $res['dingOauthAppId'] = $this->dingOauthAppId;
+        }
+        if (null !== $this->dingSuiteKey) {
+            $res['dingSuiteKey'] = $this->dingSuiteKey;
+        }
+        if (null !== $this->dingTokenGrantType) {
+            $res['dingTokenGrantType'] = $this->dingTokenGrantType;
         }
         if (null !== $this->timestamp) {
             $res['timestamp'] = $this->timestamp;
         }
         if (null !== $this->signature) {
             $res['signature'] = $this->signature;
+        }
+        if (null !== $this->faceId) {
+            $res['faceId'] = $this->faceId;
         }
 
         return $res;
@@ -135,26 +157,11 @@ class PayOrderRequest extends Model
     /**
      * @param array $map
      *
-     * @return PayOrderRequest
+     * @return CreateRefundFlowRequest
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['dingIsvOrgId'])) {
-            $model->dingIsvOrgId = $map['dingIsvOrgId'];
-        }
-        if (isset($map['dingOrgId'])) {
-            $model->dingOrgId = $map['dingOrgId'];
-        }
-        if (isset($map['dingOpenAppId'])) {
-            $model->dingOpenAppId = $map['dingOpenAppId'];
-        }
-        if (isset($map['dingSuiteKey'])) {
-            $model->dingSuiteKey = $map['dingSuiteKey'];
-        }
-        if (isset($map['dingTokenGrantType'])) {
-            $model->dingTokenGrantType = $map['dingTokenGrantType'];
-        }
         if (isset($map['sn'])) {
             $model->sn = $map['sn'];
         }
@@ -164,14 +171,35 @@ class PayOrderRequest extends Model
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];
         }
-        if (isset($map['faceId'])) {
-            $model->faceId = $map['faceId'];
+        if (isset($map['operatorId'])) {
+            $model->operatorId = $map['operatorId'];
+        }
+        if (isset($map['operatorName'])) {
+            $model->operatorName = $map['operatorName'];
+        }
+        if (isset($map['dingIsvOrgId'])) {
+            $model->dingIsvOrgId = $map['dingIsvOrgId'];
+        }
+        if (isset($map['dingOrgId'])) {
+            $model->dingOrgId = $map['dingOrgId'];
+        }
+        if (isset($map['dingOauthAppId'])) {
+            $model->dingOauthAppId = $map['dingOauthAppId'];
+        }
+        if (isset($map['dingSuiteKey'])) {
+            $model->dingSuiteKey = $map['dingSuiteKey'];
+        }
+        if (isset($map['dingTokenGrantType'])) {
+            $model->dingTokenGrantType = $map['dingTokenGrantType'];
         }
         if (isset($map['timestamp'])) {
             $model->timestamp = $map['timestamp'];
         }
         if (isset($map['signature'])) {
             $model->signature = $map['signature'];
+        }
+        if (isset($map['faceId'])) {
+            $model->faceId = $map['faceId'];
         }
 
         return $model;

@@ -6,7 +6,7 @@ namespace AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class PayOrderRequest extends Model
+class CancelOrderRequest extends Model
 {
     /**
      * @var int
@@ -19,9 +19,9 @@ class PayOrderRequest extends Model
     public $dingOrgId;
 
     /**
-     * @var string
+     * @var int
      */
-    public $dingOpenAppId;
+    public $dingOauthAppId;
 
     /**
      * @var string
@@ -34,18 +34,18 @@ class PayOrderRequest extends Model
     public $dingTokenGrantType;
 
     /**
-     * @description 设备序列号
-     *
-     * @var string
-     */
-    public $sn;
-
-    /**
      * @description 订单号
      *
      * @var string
      */
     public $orderNo;
+
+    /**
+     * @description 设备号
+     *
+     * @var string
+     */
+    public $sn;
 
     /**
      * @description 员工id
@@ -77,11 +77,11 @@ class PayOrderRequest extends Model
     protected $_name = [
         'dingIsvOrgId'       => 'dingIsvOrgId',
         'dingOrgId'          => 'dingOrgId',
-        'dingOpenAppId'      => 'dingOpenAppId',
+        'dingOauthAppId'     => 'dingOauthAppId',
         'dingSuiteKey'       => 'dingSuiteKey',
         'dingTokenGrantType' => 'dingTokenGrantType',
-        'sn'                 => 'sn',
         'orderNo'            => 'orderNo',
+        'sn'                 => 'sn',
         'userId'             => 'userId',
         'faceId'             => 'faceId',
         'timestamp'          => 'timestamp',
@@ -101,8 +101,8 @@ class PayOrderRequest extends Model
         if (null !== $this->dingOrgId) {
             $res['dingOrgId'] = $this->dingOrgId;
         }
-        if (null !== $this->dingOpenAppId) {
-            $res['dingOpenAppId'] = $this->dingOpenAppId;
+        if (null !== $this->dingOauthAppId) {
+            $res['dingOauthAppId'] = $this->dingOauthAppId;
         }
         if (null !== $this->dingSuiteKey) {
             $res['dingSuiteKey'] = $this->dingSuiteKey;
@@ -110,11 +110,11 @@ class PayOrderRequest extends Model
         if (null !== $this->dingTokenGrantType) {
             $res['dingTokenGrantType'] = $this->dingTokenGrantType;
         }
-        if (null !== $this->sn) {
-            $res['sn'] = $this->sn;
-        }
         if (null !== $this->orderNo) {
             $res['orderNo'] = $this->orderNo;
+        }
+        if (null !== $this->sn) {
+            $res['sn'] = $this->sn;
         }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
@@ -135,7 +135,7 @@ class PayOrderRequest extends Model
     /**
      * @param array $map
      *
-     * @return PayOrderRequest
+     * @return CancelOrderRequest
      */
     public static function fromMap($map = [])
     {
@@ -146,8 +146,8 @@ class PayOrderRequest extends Model
         if (isset($map['dingOrgId'])) {
             $model->dingOrgId = $map['dingOrgId'];
         }
-        if (isset($map['dingOpenAppId'])) {
-            $model->dingOpenAppId = $map['dingOpenAppId'];
+        if (isset($map['dingOauthAppId'])) {
+            $model->dingOauthAppId = $map['dingOauthAppId'];
         }
         if (isset($map['dingSuiteKey'])) {
             $model->dingSuiteKey = $map['dingSuiteKey'];
@@ -155,11 +155,11 @@ class PayOrderRequest extends Model
         if (isset($map['dingTokenGrantType'])) {
             $model->dingTokenGrantType = $map['dingTokenGrantType'];
         }
-        if (isset($map['sn'])) {
-            $model->sn = $map['sn'];
-        }
         if (isset($map['orderNo'])) {
             $model->orderNo = $map['orderNo'];
+        }
+        if (isset($map['sn'])) {
+            $model->sn = $map['sn'];
         }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];

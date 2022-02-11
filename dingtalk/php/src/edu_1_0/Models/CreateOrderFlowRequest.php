@@ -4,10 +4,10 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateOrderRequest\detailList;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateOrderFlowRequest\detailList;
 use AlibabaCloud\Tea\Model;
 
-class CreateOrderRequest extends Model
+class CreateOrderFlowRequest extends Model
 {
     /**
      * @description 设备号
@@ -17,6 +17,13 @@ class CreateOrderRequest extends Model
     public $sn;
 
     /**
+     * @description 订单号
+     *
+     * @var string
+     */
+    public $orderNo;
+
+    /**
      * @description 员工id
      *
      * @var string
@@ -24,18 +31,18 @@ class CreateOrderRequest extends Model
     public $userId;
 
     /**
-     * @description 刷脸token
+     * @description 支付宝用户id
      *
      * @var string
      */
-    public $ftoken;
+    public $alipayUid;
 
     /**
-     * @description 交易加签
+     * @description 商户id
      *
      * @var string
      */
-    public $terminalParams;
+    public $merchantId;
 
     /**
      * @description 应付价格，单位分
@@ -52,11 +59,36 @@ class CreateOrderRequest extends Model
     public $actualAmount;
 
     /**
-     * @description 订单明细信息
+     * @description 订单明细信息，来源于商户系统或APP的商品信息。
      *
      * @var detailList[]
      */
     public $detailList;
+
+    /**
+     * @var int
+     */
+    public $dingIsvOrgId;
+
+    /**
+     * @var int
+     */
+    public $dingOrgId;
+
+    /**
+     * @var int
+     */
+    public $dingOpenAppId;
+
+    /**
+     * @var string
+     */
+    public $dingSuiteKey;
+
+    /**
+     * @var int
+     */
+    public $dingTokenGrantType;
 
     /**
      * @description utc时间戳
@@ -73,31 +105,6 @@ class CreateOrderRequest extends Model
     public $signature;
 
     /**
-     * @var int
-     */
-    public $dingIsvOrgId;
-
-    /**
-     * @var int
-     */
-    public $dingOrgId;
-
-    /**
-     * @var int
-     */
-    public $dingOauthAppId;
-
-    /**
-     * @var string
-     */
-    public $dingSuiteKey;
-
-    /**
-     * @var int
-     */
-    public $dingTokenGrantType;
-
-    /**
      * @description 人脸id
      *
      * @var string
@@ -105,19 +112,20 @@ class CreateOrderRequest extends Model
     public $faceId;
     protected $_name = [
         'sn'                 => 'sn',
+        'orderNo'            => 'orderNo',
         'userId'             => 'userId',
-        'ftoken'             => 'ftoken',
-        'terminalParams'     => 'terminalParams',
+        'alipayUid'          => 'alipayUid',
+        'merchantId'         => 'merchantId',
         'totalAmount'        => 'totalAmount',
         'actualAmount'       => 'actualAmount',
         'detailList'         => 'detailList',
-        'timestamp'          => 'timestamp',
-        'signature'          => 'signature',
         'dingIsvOrgId'       => 'dingIsvOrgId',
         'dingOrgId'          => 'dingOrgId',
-        'dingOauthAppId'     => 'dingOauthAppId',
+        'dingOpenAppId'      => 'dingOpenAppId',
         'dingSuiteKey'       => 'dingSuiteKey',
         'dingTokenGrantType' => 'dingTokenGrantType',
+        'timestamp'          => 'timestamp',
+        'signature'          => 'signature',
         'faceId'             => 'faceId',
     ];
 
@@ -131,14 +139,17 @@ class CreateOrderRequest extends Model
         if (null !== $this->sn) {
             $res['sn'] = $this->sn;
         }
+        if (null !== $this->orderNo) {
+            $res['orderNo'] = $this->orderNo;
+        }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
         }
-        if (null !== $this->ftoken) {
-            $res['ftoken'] = $this->ftoken;
+        if (null !== $this->alipayUid) {
+            $res['alipayUid'] = $this->alipayUid;
         }
-        if (null !== $this->terminalParams) {
-            $res['terminalParams'] = $this->terminalParams;
+        if (null !== $this->merchantId) {
+            $res['merchantId'] = $this->merchantId;
         }
         if (null !== $this->totalAmount) {
             $res['totalAmount'] = $this->totalAmount;
@@ -155,26 +166,26 @@ class CreateOrderRequest extends Model
                 }
             }
         }
-        if (null !== $this->timestamp) {
-            $res['timestamp'] = $this->timestamp;
-        }
-        if (null !== $this->signature) {
-            $res['signature'] = $this->signature;
-        }
         if (null !== $this->dingIsvOrgId) {
             $res['dingIsvOrgId'] = $this->dingIsvOrgId;
         }
         if (null !== $this->dingOrgId) {
             $res['dingOrgId'] = $this->dingOrgId;
         }
-        if (null !== $this->dingOauthAppId) {
-            $res['dingOauthAppId'] = $this->dingOauthAppId;
+        if (null !== $this->dingOpenAppId) {
+            $res['dingOpenAppId'] = $this->dingOpenAppId;
         }
         if (null !== $this->dingSuiteKey) {
             $res['dingSuiteKey'] = $this->dingSuiteKey;
         }
         if (null !== $this->dingTokenGrantType) {
             $res['dingTokenGrantType'] = $this->dingTokenGrantType;
+        }
+        if (null !== $this->timestamp) {
+            $res['timestamp'] = $this->timestamp;
+        }
+        if (null !== $this->signature) {
+            $res['signature'] = $this->signature;
         }
         if (null !== $this->faceId) {
             $res['faceId'] = $this->faceId;
@@ -186,7 +197,7 @@ class CreateOrderRequest extends Model
     /**
      * @param array $map
      *
-     * @return CreateOrderRequest
+     * @return CreateOrderFlowRequest
      */
     public static function fromMap($map = [])
     {
@@ -194,14 +205,17 @@ class CreateOrderRequest extends Model
         if (isset($map['sn'])) {
             $model->sn = $map['sn'];
         }
+        if (isset($map['orderNo'])) {
+            $model->orderNo = $map['orderNo'];
+        }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];
         }
-        if (isset($map['ftoken'])) {
-            $model->ftoken = $map['ftoken'];
+        if (isset($map['alipayUid'])) {
+            $model->alipayUid = $map['alipayUid'];
         }
-        if (isset($map['terminalParams'])) {
-            $model->terminalParams = $map['terminalParams'];
+        if (isset($map['merchantId'])) {
+            $model->merchantId = $map['merchantId'];
         }
         if (isset($map['totalAmount'])) {
             $model->totalAmount = $map['totalAmount'];
@@ -218,26 +232,26 @@ class CreateOrderRequest extends Model
                 }
             }
         }
-        if (isset($map['timestamp'])) {
-            $model->timestamp = $map['timestamp'];
-        }
-        if (isset($map['signature'])) {
-            $model->signature = $map['signature'];
-        }
         if (isset($map['dingIsvOrgId'])) {
             $model->dingIsvOrgId = $map['dingIsvOrgId'];
         }
         if (isset($map['dingOrgId'])) {
             $model->dingOrgId = $map['dingOrgId'];
         }
-        if (isset($map['dingOauthAppId'])) {
-            $model->dingOauthAppId = $map['dingOauthAppId'];
+        if (isset($map['dingOpenAppId'])) {
+            $model->dingOpenAppId = $map['dingOpenAppId'];
         }
         if (isset($map['dingSuiteKey'])) {
             $model->dingSuiteKey = $map['dingSuiteKey'];
         }
         if (isset($map['dingTokenGrantType'])) {
             $model->dingTokenGrantType = $map['dingTokenGrantType'];
+        }
+        if (isset($map['timestamp'])) {
+            $model->timestamp = $map['timestamp'];
+        }
+        if (isset($map['signature'])) {
+            $model->signature = $map['signature'];
         }
         if (isset($map['faceId'])) {
             $model->faceId = $map['faceId'];

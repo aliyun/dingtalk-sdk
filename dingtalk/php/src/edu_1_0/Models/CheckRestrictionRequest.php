@@ -6,7 +6,7 @@ namespace AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class PayOrderRequest extends Model
+class CheckRestrictionRequest extends Model
 {
     /**
      * @var int
@@ -19,7 +19,7 @@ class PayOrderRequest extends Model
     public $dingOrgId;
 
     /**
-     * @var string
+     * @var int
      */
     public $dingOpenAppId;
 
@@ -34,18 +34,11 @@ class PayOrderRequest extends Model
     public $dingTokenGrantType;
 
     /**
-     * @description 设备序列号
+     * @description 设备号
      *
      * @var string
      */
     public $sn;
-
-    /**
-     * @description 订单号
-     *
-     * @var string
-     */
-    public $orderNo;
 
     /**
      * @description 员工id
@@ -62,18 +55,18 @@ class PayOrderRequest extends Model
     public $faceId;
 
     /**
-     * @description utc时间戳
+     * @description 场景
      *
      * @var int
      */
-    public $timestamp;
+    public $scene;
 
     /**
-     * @description 签名
+     * @description 实付金额，单位分
      *
-     * @var string
+     * @var int
      */
-    public $signature;
+    public $actualAmount;
     protected $_name = [
         'dingIsvOrgId'       => 'dingIsvOrgId',
         'dingOrgId'          => 'dingOrgId',
@@ -81,11 +74,10 @@ class PayOrderRequest extends Model
         'dingSuiteKey'       => 'dingSuiteKey',
         'dingTokenGrantType' => 'dingTokenGrantType',
         'sn'                 => 'sn',
-        'orderNo'            => 'orderNo',
         'userId'             => 'userId',
         'faceId'             => 'faceId',
-        'timestamp'          => 'timestamp',
-        'signature'          => 'signature',
+        'scene'              => 'scene',
+        'actualAmount'       => 'actualAmount',
     ];
 
     public function validate()
@@ -113,20 +105,17 @@ class PayOrderRequest extends Model
         if (null !== $this->sn) {
             $res['sn'] = $this->sn;
         }
-        if (null !== $this->orderNo) {
-            $res['orderNo'] = $this->orderNo;
-        }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
         }
         if (null !== $this->faceId) {
             $res['faceId'] = $this->faceId;
         }
-        if (null !== $this->timestamp) {
-            $res['timestamp'] = $this->timestamp;
+        if (null !== $this->scene) {
+            $res['scene'] = $this->scene;
         }
-        if (null !== $this->signature) {
-            $res['signature'] = $this->signature;
+        if (null !== $this->actualAmount) {
+            $res['actualAmount'] = $this->actualAmount;
         }
 
         return $res;
@@ -135,7 +124,7 @@ class PayOrderRequest extends Model
     /**
      * @param array $map
      *
-     * @return PayOrderRequest
+     * @return CheckRestrictionRequest
      */
     public static function fromMap($map = [])
     {
@@ -158,20 +147,17 @@ class PayOrderRequest extends Model
         if (isset($map['sn'])) {
             $model->sn = $map['sn'];
         }
-        if (isset($map['orderNo'])) {
-            $model->orderNo = $map['orderNo'];
-        }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];
         }
         if (isset($map['faceId'])) {
             $model->faceId = $map['faceId'];
         }
-        if (isset($map['timestamp'])) {
-            $model->timestamp = $map['timestamp'];
+        if (isset($map['scene'])) {
+            $model->scene = $map['scene'];
         }
-        if (isset($map['signature'])) {
-            $model->signature = $map['signature'];
+        if (isset($map['actualAmount'])) {
+            $model->actualAmount = $map['actualAmount'];
         }
 
         return $model;
