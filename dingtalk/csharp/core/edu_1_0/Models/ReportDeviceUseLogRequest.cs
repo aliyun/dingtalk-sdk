@@ -8,7 +8,14 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
-    public class QueryPayResultRequest : TeaModel {
+    public class ReportDeviceUseLogRequest : TeaModel {
+        /// <summary>
+        /// 操作
+        /// </summary>
+        [NameInMap("action")]
+        [Validation(Required=false)]
+        public string Action { get; set; }
+
         [NameInMap("dingIsvOrgId")]
         [Validation(Required=false)]
         public long? DingIsvOrgId { get; set; }
@@ -30,25 +37,11 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public long? DingTokenGrantType { get; set; }
 
         /// <summary>
-        /// 人脸id
-        /// </summary>
-        [NameInMap("faceId")]
-        [Validation(Required=false)]
-        public string FaceId { get; set; }
-
-        /// <summary>
         /// 订单号
         /// </summary>
         [NameInMap("orderNo")]
         [Validation(Required=false)]
         public string OrderNo { get; set; }
-
-        /// <summary>
-        /// 签名
-        /// </summary>
-        [NameInMap("signature")]
-        [Validation(Required=false)]
-        public string Signature { get; set; }
 
         /// <summary>
         /// 设备序列号
@@ -58,14 +51,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public string Sn { get; set; }
 
         /// <summary>
-        /// utc时间戳
-        /// </summary>
-        [NameInMap("timestamp")]
-        [Validation(Required=false)]
-        public long? Timestamp { get; set; }
-
-        /// <summary>
-        /// 用户id
+        /// 员工id
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

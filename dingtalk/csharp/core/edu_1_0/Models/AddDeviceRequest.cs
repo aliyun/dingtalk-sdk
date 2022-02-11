@@ -8,7 +8,7 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
-    public class QueryPayResultRequest : TeaModel {
+    public class AddDeviceRequest : TeaModel {
         [NameInMap("dingIsvOrgId")]
         [Validation(Required=false)]
         public long? DingIsvOrgId { get; set; }
@@ -30,46 +30,53 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public long? DingTokenGrantType { get; set; }
 
         /// <summary>
-        /// 人脸id
+        /// 商户id
         /// </summary>
-        [NameInMap("faceId")]
+        [NameInMap("merchantId")]
         [Validation(Required=false)]
-        public string FaceId { get; set; }
+        public string MerchantId { get; set; }
 
         /// <summary>
-        /// 订单号
+        /// 设备型号
         /// </summary>
-        [NameInMap("orderNo")]
+        [NameInMap("model")]
         [Validation(Required=false)]
-        public string OrderNo { get; set; }
+        public string Model { get; set; }
 
         /// <summary>
-        /// 签名
+        /// 设备名称
         /// </summary>
-        [NameInMap("signature")]
+        [NameInMap("name")]
         [Validation(Required=false)]
-        public string Signature { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
-        /// 设备序列号
+        /// 消费场景
+        /// </summary>
+        [NameInMap("scene")]
+        [Validation(Required=false)]
+        public long? Scene { get; set; }
+
+        /// <summary>
+        /// sn码
         /// </summary>
         [NameInMap("sn")]
         [Validation(Required=false)]
         public string Sn { get; set; }
 
         /// <summary>
-        /// utc时间戳
+        /// 设备状态
         /// </summary>
-        [NameInMap("timestamp")]
+        [NameInMap("status")]
         [Validation(Required=false)]
-        public long? Timestamp { get; set; }
+        public long? Status { get; set; }
 
         /// <summary>
-        /// 用户id
+        /// 设备类型
         /// </summary>
-        [NameInMap("userId")]
+        [NameInMap("type")]
         [Validation(Required=false)]
-        public string UserId { get; set; }
+        public long? Type { get; set; }
 
     }
 

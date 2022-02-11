@@ -8,14 +8,21 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
-    public class QueryPayResultRequest : TeaModel {
+    public class CheckRestrictionRequest : TeaModel {
+        /// <summary>
+        /// 实付金额，单位分
+        /// </summary>
+        [NameInMap("actualAmount")]
+        [Validation(Required=false)]
+        public long? ActualAmount { get; set; }
+
         [NameInMap("dingIsvOrgId")]
         [Validation(Required=false)]
         public long? DingIsvOrgId { get; set; }
 
-        [NameInMap("dingOauthAppId")]
+        [NameInMap("dingOpenAppId")]
         [Validation(Required=false)]
-        public long? DingOauthAppId { get; set; }
+        public long? DingOpenAppId { get; set; }
 
         [NameInMap("dingOrgId")]
         [Validation(Required=false)]
@@ -37,35 +44,21 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public string FaceId { get; set; }
 
         /// <summary>
-        /// 订单号
+        /// 场景
         /// </summary>
-        [NameInMap("orderNo")]
+        [NameInMap("scene")]
         [Validation(Required=false)]
-        public string OrderNo { get; set; }
+        public long? Scene { get; set; }
 
         /// <summary>
-        /// 签名
-        /// </summary>
-        [NameInMap("signature")]
-        [Validation(Required=false)]
-        public string Signature { get; set; }
-
-        /// <summary>
-        /// 设备序列号
+        /// 设备号
         /// </summary>
         [NameInMap("sn")]
         [Validation(Required=false)]
         public string Sn { get; set; }
 
         /// <summary>
-        /// utc时间戳
-        /// </summary>
-        [NameInMap("timestamp")]
-        [Validation(Required=false)]
-        public long? Timestamp { get; set; }
-
-        /// <summary>
-        /// 用户id
+        /// 员工id
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

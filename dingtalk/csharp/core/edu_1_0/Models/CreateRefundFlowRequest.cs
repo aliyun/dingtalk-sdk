@@ -8,7 +8,7 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
-    public class QueryPayResultRequest : TeaModel {
+    public class CreateRefundFlowRequest : TeaModel {
         [NameInMap("dingIsvOrgId")]
         [Validation(Required=false)]
         public long? DingIsvOrgId { get; set; }
@@ -37,6 +37,20 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public string FaceId { get; set; }
 
         /// <summary>
+        /// 操作人id
+        /// </summary>
+        [NameInMap("operatorId")]
+        [Validation(Required=false)]
+        public string OperatorId { get; set; }
+
+        /// <summary>
+        /// 操作人名称
+        /// </summary>
+        [NameInMap("operatorName")]
+        [Validation(Required=false)]
+        public string OperatorName { get; set; }
+
+        /// <summary>
         /// 订单号
         /// </summary>
         [NameInMap("orderNo")]
@@ -51,7 +65,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public string Signature { get; set; }
 
         /// <summary>
-        /// 设备序列号
+        /// 设备号
         /// </summary>
         [NameInMap("sn")]
         [Validation(Required=false)]
@@ -65,7 +79,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public long? Timestamp { get; set; }
 
         /// <summary>
-        /// 用户id
+        /// 员工id
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

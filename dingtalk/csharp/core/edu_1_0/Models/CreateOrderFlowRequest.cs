@@ -8,7 +8,7 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
-    public class CreateOrderRequest : TeaModel {
+    public class CreateOrderFlowRequest : TeaModel {
         /// <summary>
         /// 实付金额，单位分（优惠计算后）
         /// </summary>
@@ -17,12 +17,19 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public long? ActualAmount { get; set; }
 
         /// <summary>
-        /// 订单明细信息
+        /// 支付宝用户id
+        /// </summary>
+        [NameInMap("alipayUid")]
+        [Validation(Required=false)]
+        public string AlipayUid { get; set; }
+
+        /// <summary>
+        /// 订单明细信息，来源于商户系统或APP的商品信息。
         /// </summary>
         [NameInMap("detailList")]
         [Validation(Required=false)]
-        public List<CreateOrderRequestDetailList> DetailList { get; set; }
-        public class CreateOrderRequestDetailList : TeaModel {
+        public List<CreateOrderFlowRequestDetailList> DetailList { get; set; }
+        public class CreateOrderFlowRequestDetailList : TeaModel {
             /// <summary>
             /// 商品名
             /// </summary>
@@ -57,9 +64,9 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         [Validation(Required=false)]
         public long? DingIsvOrgId { get; set; }
 
-        [NameInMap("dingOauthAppId")]
+        [NameInMap("dingOpenAppId")]
         [Validation(Required=false)]
-        public long? DingOauthAppId { get; set; }
+        public long? DingOpenAppId { get; set; }
 
         [NameInMap("dingOrgId")]
         [Validation(Required=false)]
@@ -81,11 +88,18 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public string FaceId { get; set; }
 
         /// <summary>
-        /// 刷脸token
+        /// 商户id
         /// </summary>
-        [NameInMap("ftoken")]
+        [NameInMap("merchantId")]
         [Validation(Required=false)]
-        public string Ftoken { get; set; }
+        public string MerchantId { get; set; }
+
+        /// <summary>
+        /// 订单号
+        /// </summary>
+        [NameInMap("orderNo")]
+        [Validation(Required=false)]
+        public string OrderNo { get; set; }
 
         /// <summary>
         /// 签名
@@ -100,13 +114,6 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         [NameInMap("sn")]
         [Validation(Required=false)]
         public string Sn { get; set; }
-
-        /// <summary>
-        /// 交易加签
-        /// </summary>
-        [NameInMap("terminalParams")]
-        [Validation(Required=false)]
-        public string TerminalParams { get; set; }
 
         /// <summary>
         /// utc时间戳
