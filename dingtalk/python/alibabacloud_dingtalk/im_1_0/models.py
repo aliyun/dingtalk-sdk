@@ -439,6 +439,104 @@ class UpdateInteractiveCardResponse(TeaModel):
         return self
 
 
+class ChatIdToOpenConversationIdHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ChatIdToOpenConversationIdResponseBody(TeaModel):
+    def __init__(
+        self,
+        open_conversation_id: str = None,
+    ):
+        # openConversationId
+        self.open_conversation_id = open_conversation_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        return self
+
+
+class ChatIdToOpenConversationIdResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ChatIdToOpenConversationIdResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ChatIdToOpenConversationIdResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class UpdateGroupSubAdminHeaders(TeaModel):
     def __init__(
         self,
@@ -1002,9 +1100,11 @@ class GetInterconnectionUrlRequest(TeaModel):
         app_user_avatar: str = None,
         app_user_avatar_type: int = None,
         app_user_mobile_number: str = None,
-        ding_corp_id: str = None,
-        ding_user_id: str = None,
-        msg_page_setting_id: int = None,
+        qr_code: str = None,
+        user_id: str = None,
+        msg_page_type: int = None,
+        source_type: int = None,
+        signature: str = None,
     ):
         # appUserId
         self.app_user_id = app_user_id
@@ -1016,12 +1116,16 @@ class GetInterconnectionUrlRequest(TeaModel):
         self.app_user_avatar_type = app_user_avatar_type
         # appUserMobileNumber
         self.app_user_mobile_number = app_user_mobile_number
-        # dingCorpId
-        self.ding_corp_id = ding_corp_id
-        # dingUserId
-        self.ding_user_id = ding_user_id
-        # msgPageSettingId
-        self.msg_page_setting_id = msg_page_setting_id
+        # qrCode
+        self.qr_code = qr_code
+        # userId
+        self.user_id = user_id
+        # msgPageType
+        self.msg_page_type = msg_page_type
+        # sourceType
+        self.source_type = source_type
+        # signature
+        self.signature = signature
 
     def validate(self):
         pass
@@ -1042,12 +1146,16 @@ class GetInterconnectionUrlRequest(TeaModel):
             result['appUserAvatarType'] = self.app_user_avatar_type
         if self.app_user_mobile_number is not None:
             result['appUserMobileNumber'] = self.app_user_mobile_number
-        if self.ding_corp_id is not None:
-            result['dingCorpId'] = self.ding_corp_id
-        if self.ding_user_id is not None:
-            result['dingUserId'] = self.ding_user_id
-        if self.msg_page_setting_id is not None:
-            result['msgPageSettingId'] = self.msg_page_setting_id
+        if self.qr_code is not None:
+            result['qrCode'] = self.qr_code
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.msg_page_type is not None:
+            result['msgPageType'] = self.msg_page_type
+        if self.source_type is not None:
+            result['sourceType'] = self.source_type
+        if self.signature is not None:
+            result['signature'] = self.signature
         return result
 
     def from_map(self, m: dict = None):
@@ -1062,12 +1170,16 @@ class GetInterconnectionUrlRequest(TeaModel):
             self.app_user_avatar_type = m.get('appUserAvatarType')
         if m.get('appUserMobileNumber') is not None:
             self.app_user_mobile_number = m.get('appUserMobileNumber')
-        if m.get('dingCorpId') is not None:
-            self.ding_corp_id = m.get('dingCorpId')
-        if m.get('dingUserId') is not None:
-            self.ding_user_id = m.get('dingUserId')
-        if m.get('msgPageSettingId') is not None:
-            self.msg_page_setting_id = m.get('msgPageSettingId')
+        if m.get('qrCode') is not None:
+            self.qr_code = m.get('qrCode')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('msgPageType') is not None:
+            self.msg_page_type = m.get('msgPageType')
+        if m.get('sourceType') is not None:
+            self.source_type = m.get('sourceType')
+        if m.get('signature') is not None:
+            self.signature = m.get('signature')
         return self
 
 
@@ -2876,6 +2988,169 @@ class UpdateTheGroupRolesOfGroupMemberResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = UpdateTheGroupRolesOfGroupMemberResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CardTemplateBuildActionHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CardTemplateBuildActionRequest(TeaModel):
+    def __init__(
+        self,
+        ding_isv_org_id: int = None,
+        ding_token_grant_type: int = None,
+        ding_suite_key: str = None,
+        ding_org_id: int = None,
+        ding_oauth_app_id: int = None,
+        action: str = None,
+        card_template_json: str = None,
+    ):
+        self.ding_isv_org_id = ding_isv_org_id
+        self.ding_token_grant_type = ding_token_grant_type
+        self.ding_suite_key = ding_suite_key
+        self.ding_org_id = ding_org_id
+        self.ding_oauth_app_id = ding_oauth_app_id
+        # 模板构建的action：含create、save、deploy
+        self.action = action
+        # 模板构建的dto对象
+        self.card_template_json = card_template_json
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_isv_org_id is not None:
+            result['dingIsvOrgId'] = self.ding_isv_org_id
+        if self.ding_token_grant_type is not None:
+            result['dingTokenGrantType'] = self.ding_token_grant_type
+        if self.ding_suite_key is not None:
+            result['dingSuiteKey'] = self.ding_suite_key
+        if self.ding_org_id is not None:
+            result['dingOrgId'] = self.ding_org_id
+        if self.ding_oauth_app_id is not None:
+            result['dingOauthAppId'] = self.ding_oauth_app_id
+        if self.action is not None:
+            result['action'] = self.action
+        if self.card_template_json is not None:
+            result['cardTemplateJson'] = self.card_template_json
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingIsvOrgId') is not None:
+            self.ding_isv_org_id = m.get('dingIsvOrgId')
+        if m.get('dingTokenGrantType') is not None:
+            self.ding_token_grant_type = m.get('dingTokenGrantType')
+        if m.get('dingSuiteKey') is not None:
+            self.ding_suite_key = m.get('dingSuiteKey')
+        if m.get('dingOrgId') is not None:
+            self.ding_org_id = m.get('dingOrgId')
+        if m.get('dingOauthAppId') is not None:
+            self.ding_oauth_app_id = m.get('dingOauthAppId')
+        if m.get('action') is not None:
+            self.action = m.get('action')
+        if m.get('cardTemplateJson') is not None:
+            self.card_template_json = m.get('cardTemplateJson')
+        return self
+
+
+class CardTemplateBuildActionResponseBody(TeaModel):
+    def __init__(
+        self,
+        card_template_json: str = None,
+    ):
+        # 模板构建的dto对象
+        self.card_template_json = card_template_json
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.card_template_json is not None:
+            result['cardTemplateJson'] = self.card_template_json
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cardTemplateJson') is not None:
+            self.card_template_json = m.get('cardTemplateJson')
+        return self
+
+
+class CardTemplateBuildActionResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CardTemplateBuildActionResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CardTemplateBuildActionResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

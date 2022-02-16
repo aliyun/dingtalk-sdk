@@ -23,138 +23,6 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
-    def notify_pay_code_pay_result(
-        self,
-        request: dingtalkfinance__1__0_models.NotifyPayCodePayResultRequest,
-    ) -> dingtalkfinance__1__0_models.NotifyPayCodePayResultResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.NotifyPayCodePayResultHeaders()
-        return self.notify_pay_code_pay_result_with_options(request, headers, runtime)
-
-    async def notify_pay_code_pay_result_async(
-        self,
-        request: dingtalkfinance__1__0_models.NotifyPayCodePayResultRequest,
-    ) -> dingtalkfinance__1__0_models.NotifyPayCodePayResultResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.NotifyPayCodePayResultHeaders()
-        return await self.notify_pay_code_pay_result_with_options_async(request, headers, runtime)
-
-    def notify_pay_code_pay_result_with_options(
-        self,
-        request: dingtalkfinance__1__0_models.NotifyPayCodePayResultRequest,
-        headers: dingtalkfinance__1__0_models.NotifyPayCodePayResultHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkfinance__1__0_models.NotifyPayCodePayResultResponse:
-        UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.pay_code):
-            body['payCode'] = request.pay_code
-        if not UtilClient.is_unset(request.corp_id):
-            body['corpId'] = request.corp_id
-        if not UtilClient.is_unset(request.user_id):
-            body['userId'] = request.user_id
-        if not UtilClient.is_unset(request.gmt_trade_create):
-            body['gmtTradeCreate'] = request.gmt_trade_create
-        if not UtilClient.is_unset(request.gmt_trade_finish):
-            body['gmtTradeFinish'] = request.gmt_trade_finish
-        if not UtilClient.is_unset(request.trade_no):
-            body['tradeNo'] = request.trade_no
-        if not UtilClient.is_unset(request.trade_status):
-            body['tradeStatus'] = request.trade_status
-        if not UtilClient.is_unset(request.title):
-            body['title'] = request.title
-        if not UtilClient.is_unset(request.remark):
-            body['remark'] = request.remark
-        if not UtilClient.is_unset(request.amount):
-            body['amount'] = request.amount
-        if not UtilClient.is_unset(request.promotion_amount):
-            body['promotionAmount'] = request.promotion_amount
-        if not UtilClient.is_unset(request.charge_amount):
-            body['chargeAmount'] = request.charge_amount
-        if not UtilClient.is_unset(request.pay_channel_detail_list):
-            body['payChannelDetailList'] = request.pay_channel_detail_list
-        if not UtilClient.is_unset(request.trade_error_code):
-            body['tradeErrorCode'] = request.trade_error_code
-        if not UtilClient.is_unset(request.trade_error_msg):
-            body['tradeErrorMsg'] = request.trade_error_msg
-        if not UtilClient.is_unset(request.ext_info):
-            body['extInfo'] = request.ext_info
-        if not UtilClient.is_unset(request.ding_isv_org_id):
-            body['dingIsvOrgId'] = request.ding_isv_org_id
-        if not UtilClient.is_unset(request.merchant_name):
-            body['merchantName'] = request.merchant_name
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
-        )
-        return TeaCore.from_map(
-            dingtalkfinance__1__0_models.NotifyPayCodePayResultResponse(),
-            self.do_roarequest('NotifyPayCodePayResult', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/payCodes/payResults/notify', 'json', req, runtime)
-        )
-
-    async def notify_pay_code_pay_result_with_options_async(
-        self,
-        request: dingtalkfinance__1__0_models.NotifyPayCodePayResultRequest,
-        headers: dingtalkfinance__1__0_models.NotifyPayCodePayResultHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkfinance__1__0_models.NotifyPayCodePayResultResponse:
-        UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.pay_code):
-            body['payCode'] = request.pay_code
-        if not UtilClient.is_unset(request.corp_id):
-            body['corpId'] = request.corp_id
-        if not UtilClient.is_unset(request.user_id):
-            body['userId'] = request.user_id
-        if not UtilClient.is_unset(request.gmt_trade_create):
-            body['gmtTradeCreate'] = request.gmt_trade_create
-        if not UtilClient.is_unset(request.gmt_trade_finish):
-            body['gmtTradeFinish'] = request.gmt_trade_finish
-        if not UtilClient.is_unset(request.trade_no):
-            body['tradeNo'] = request.trade_no
-        if not UtilClient.is_unset(request.trade_status):
-            body['tradeStatus'] = request.trade_status
-        if not UtilClient.is_unset(request.title):
-            body['title'] = request.title
-        if not UtilClient.is_unset(request.remark):
-            body['remark'] = request.remark
-        if not UtilClient.is_unset(request.amount):
-            body['amount'] = request.amount
-        if not UtilClient.is_unset(request.promotion_amount):
-            body['promotionAmount'] = request.promotion_amount
-        if not UtilClient.is_unset(request.charge_amount):
-            body['chargeAmount'] = request.charge_amount
-        if not UtilClient.is_unset(request.pay_channel_detail_list):
-            body['payChannelDetailList'] = request.pay_channel_detail_list
-        if not UtilClient.is_unset(request.trade_error_code):
-            body['tradeErrorCode'] = request.trade_error_code
-        if not UtilClient.is_unset(request.trade_error_msg):
-            body['tradeErrorMsg'] = request.trade_error_msg
-        if not UtilClient.is_unset(request.ext_info):
-            body['extInfo'] = request.ext_info
-        if not UtilClient.is_unset(request.ding_isv_org_id):
-            body['dingIsvOrgId'] = request.ding_isv_org_id
-        if not UtilClient.is_unset(request.merchant_name):
-            body['merchantName'] = request.merchant_name
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
-        )
-        return TeaCore.from_map(
-            dingtalkfinance__1__0_models.NotifyPayCodePayResultResponse(),
-            await self.do_roarequest_async('NotifyPayCodePayResult', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/payCodes/payResults/notify', 'json', req, runtime)
-        )
-
     def upate_user_code_instance(
         self,
         request: dingtalkfinance__1__0_models.UpateUserCodeInstanceRequest,
@@ -713,82 +581,6 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('DecodePayCode', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/payCodes/decode', 'json', req, runtime)
         )
 
-    def query_register_order(
-        self,
-        request: dingtalkfinance__1__0_models.QueryRegisterOrderRequest,
-    ) -> dingtalkfinance__1__0_models.QueryRegisterOrderResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.QueryRegisterOrderHeaders()
-        return self.query_register_order_with_options(request, headers, runtime)
-
-    async def query_register_order_async(
-        self,
-        request: dingtalkfinance__1__0_models.QueryRegisterOrderRequest,
-    ) -> dingtalkfinance__1__0_models.QueryRegisterOrderResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.QueryRegisterOrderHeaders()
-        return await self.query_register_order_with_options_async(request, headers, runtime)
-
-    def query_register_order_with_options(
-        self,
-        request: dingtalkfinance__1__0_models.QueryRegisterOrderRequest,
-        headers: dingtalkfinance__1__0_models.QueryRegisterOrderHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkfinance__1__0_models.QueryRegisterOrderResponse:
-        UtilClient.validate_model(request)
-        query = {}
-        if not UtilClient.is_unset(request.inst_id):
-            query['instId'] = request.inst_id
-        if not UtilClient.is_unset(request.sub_inst_id):
-            query['subInstId'] = request.sub_inst_id
-        if not UtilClient.is_unset(request.out_trade_no):
-            query['outTradeNo'] = request.out_trade_no
-        if not UtilClient.is_unset(request.order_id):
-            query['orderId'] = request.order_id
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
-        )
-        return TeaCore.from_map(
-            dingtalkfinance__1__0_models.QueryRegisterOrderResponse(),
-            self.do_roarequest('QueryRegisterOrder', 'finance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/finance/institutions/subInstitutions/orders', 'json', req, runtime)
-        )
-
-    async def query_register_order_with_options_async(
-        self,
-        request: dingtalkfinance__1__0_models.QueryRegisterOrderRequest,
-        headers: dingtalkfinance__1__0_models.QueryRegisterOrderHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkfinance__1__0_models.QueryRegisterOrderResponse:
-        UtilClient.validate_model(request)
-        query = {}
-        if not UtilClient.is_unset(request.inst_id):
-            query['instId'] = request.inst_id
-        if not UtilClient.is_unset(request.sub_inst_id):
-            query['subInstId'] = request.sub_inst_id
-        if not UtilClient.is_unset(request.out_trade_no):
-            query['outTradeNo'] = request.out_trade_no
-        if not UtilClient.is_unset(request.order_id):
-            query['orderId'] = request.order_id
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
-        )
-        return TeaCore.from_map(
-            dingtalkfinance__1__0_models.QueryRegisterOrderResponse(),
-            await self.do_roarequest_async('QueryRegisterOrder', 'finance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/finance/institutions/subInstitutions/orders', 'json', req, runtime)
-        )
-
     def create_batch_trade_order(
         self,
         request: dingtalkfinance__1__0_models.CreateBatchTradeOrderRequest,
@@ -1253,6 +1045,70 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('CreateUserCodeInstance', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/payCodes/userInstances', 'json', req, runtime)
         )
 
+    def query_acquire_refund_order(
+        self,
+        request: dingtalkfinance__1__0_models.QueryAcquireRefundOrderRequest,
+    ) -> dingtalkfinance__1__0_models.QueryAcquireRefundOrderResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.QueryAcquireRefundOrderHeaders()
+        return self.query_acquire_refund_order_with_options(request, headers, runtime)
+
+    async def query_acquire_refund_order_async(
+        self,
+        request: dingtalkfinance__1__0_models.QueryAcquireRefundOrderRequest,
+    ) -> dingtalkfinance__1__0_models.QueryAcquireRefundOrderResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.QueryAcquireRefundOrderHeaders()
+        return await self.query_acquire_refund_order_with_options_async(request, headers, runtime)
+
+    def query_acquire_refund_order_with_options(
+        self,
+        request: dingtalkfinance__1__0_models.QueryAcquireRefundOrderRequest,
+        headers: dingtalkfinance__1__0_models.QueryAcquireRefundOrderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkfinance__1__0_models.QueryAcquireRefundOrderResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.out_refund_no):
+            query['outRefundNo'] = request.out_refund_no
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkfinance__1__0_models.QueryAcquireRefundOrderResponse(),
+            self.do_roarequest('QueryAcquireRefundOrder', 'finance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/finance/acquireOrders/refunds', 'json', req, runtime)
+        )
+
+    async def query_acquire_refund_order_with_options_async(
+        self,
+        request: dingtalkfinance__1__0_models.QueryAcquireRefundOrderRequest,
+        headers: dingtalkfinance__1__0_models.QueryAcquireRefundOrderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkfinance__1__0_models.QueryAcquireRefundOrderResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.out_refund_no):
+            query['outRefundNo'] = request.out_refund_no
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkfinance__1__0_models.QueryAcquireRefundOrderResponse(),
+            await self.do_roarequest_async('QueryAcquireRefundOrder', 'finance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/finance/acquireOrders/refunds', 'json', req, runtime)
+        )
+
     def query_batch_trade_order(
         self,
         request: dingtalkfinance__1__0_models.QueryBatchTradeOrderRequest,
@@ -1315,102 +1171,6 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.QueryBatchTradeOrderResponse(),
             await self.do_roarequest_async('QueryBatchTradeOrder', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/batchTrades/orders/query', 'json', req, runtime)
-        )
-
-    def upload_register_image(
-        self,
-        request: dingtalkfinance__1__0_models.UploadRegisterImageRequest,
-    ) -> dingtalkfinance__1__0_models.UploadRegisterImageResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.UploadRegisterImageHeaders()
-        return self.upload_register_image_with_options(request, headers, runtime)
-
-    async def upload_register_image_async(
-        self,
-        request: dingtalkfinance__1__0_models.UploadRegisterImageRequest,
-    ) -> dingtalkfinance__1__0_models.UploadRegisterImageResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.UploadRegisterImageHeaders()
-        return await self.upload_register_image_with_options_async(request, headers, runtime)
-
-    def upload_register_image_with_options(
-        self,
-        request: dingtalkfinance__1__0_models.UploadRegisterImageRequest,
-        headers: dingtalkfinance__1__0_models.UploadRegisterImageHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkfinance__1__0_models.UploadRegisterImageResponse:
-        UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.inst_id):
-            body['instId'] = request.inst_id
-        if not UtilClient.is_unset(request.pay_channel):
-            body['payChannel'] = request.pay_channel
-        if not UtilClient.is_unset(request.image_type):
-            body['imageType'] = request.image_type
-        if not UtilClient.is_unset(request.image_name):
-            body['imageName'] = request.image_name
-        if not UtilClient.is_unset(request.image_content):
-            body['imageContent'] = request.image_content
-        if not UtilClient.is_unset(request.ding_org_id):
-            body['dingOrgId'] = request.ding_org_id
-        if not UtilClient.is_unset(request.ding_isv_org_id):
-            body['dingIsvOrgId'] = request.ding_isv_org_id
-        if not UtilClient.is_unset(request.ding_client_id):
-            body['dingClientId'] = request.ding_client_id
-        if not UtilClient.is_unset(request.ding_token_grant_type):
-            body['dingTokenGrantType'] = request.ding_token_grant_type
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
-        )
-        return TeaCore.from_map(
-            dingtalkfinance__1__0_models.UploadRegisterImageResponse(),
-            self.do_roarequest('UploadRegisterImage', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/institutions/images', 'json', req, runtime)
-        )
-
-    async def upload_register_image_with_options_async(
-        self,
-        request: dingtalkfinance__1__0_models.UploadRegisterImageRequest,
-        headers: dingtalkfinance__1__0_models.UploadRegisterImageHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkfinance__1__0_models.UploadRegisterImageResponse:
-        UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.inst_id):
-            body['instId'] = request.inst_id
-        if not UtilClient.is_unset(request.pay_channel):
-            body['payChannel'] = request.pay_channel
-        if not UtilClient.is_unset(request.image_type):
-            body['imageType'] = request.image_type
-        if not UtilClient.is_unset(request.image_name):
-            body['imageName'] = request.image_name
-        if not UtilClient.is_unset(request.image_content):
-            body['imageContent'] = request.image_content
-        if not UtilClient.is_unset(request.ding_org_id):
-            body['dingOrgId'] = request.ding_org_id
-        if not UtilClient.is_unset(request.ding_isv_org_id):
-            body['dingIsvOrgId'] = request.ding_isv_org_id
-        if not UtilClient.is_unset(request.ding_client_id):
-            body['dingClientId'] = request.ding_client_id
-        if not UtilClient.is_unset(request.ding_token_grant_type):
-            body['dingTokenGrantType'] = request.ding_token_grant_type
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
-        )
-        return TeaCore.from_map(
-            dingtalkfinance__1__0_models.UploadRegisterImageResponse(),
-            await self.do_roarequest_async('UploadRegisterImage', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/institutions/images', 'json', req, runtime)
         )
 
     def save_corp_pay_code(
@@ -1605,106 +1365,6 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('NotifyVerifyResult', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/payCodes/verifyResults/notify', 'json', req, runtime)
         )
 
-    def unsign_user_agreement(
-        self,
-        request: dingtalkfinance__1__0_models.UnsignUserAgreementRequest,
-    ) -> dingtalkfinance__1__0_models.UnsignUserAgreementResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.UnsignUserAgreementHeaders()
-        return self.unsign_user_agreement_with_options(request, headers, runtime)
-
-    async def unsign_user_agreement_async(
-        self,
-        request: dingtalkfinance__1__0_models.UnsignUserAgreementRequest,
-    ) -> dingtalkfinance__1__0_models.UnsignUserAgreementResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.UnsignUserAgreementHeaders()
-        return await self.unsign_user_agreement_with_options_async(request, headers, runtime)
-
-    def unsign_user_agreement_with_options(
-        self,
-        request: dingtalkfinance__1__0_models.UnsignUserAgreementRequest,
-        headers: dingtalkfinance__1__0_models.UnsignUserAgreementHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkfinance__1__0_models.UnsignUserAgreementResponse:
-        UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.inst_id):
-            body['instId'] = request.inst_id
-        if not UtilClient.is_unset(request.sub_inst_id):
-            body['subInstId'] = request.sub_inst_id
-        if not UtilClient.is_unset(request.user_id):
-            body['userId'] = request.user_id
-        if not UtilClient.is_unset(request.biz_code):
-            body['bizCode'] = request.biz_code
-        if not UtilClient.is_unset(request.biz_scene):
-            body['bizScene'] = request.biz_scene
-        if not UtilClient.is_unset(request.agreement_no):
-            body['agreementNo'] = request.agreement_no
-        if not UtilClient.is_unset(request.ding_org_id):
-            body['dingOrgId'] = request.ding_org_id
-        if not UtilClient.is_unset(request.ding_isv_org_id):
-            body['dingIsvOrgId'] = request.ding_isv_org_id
-        if not UtilClient.is_unset(request.ding_client_id):
-            body['dingClientId'] = request.ding_client_id
-        if not UtilClient.is_unset(request.ding_token_grant_type):
-            body['dingTokenGrantType'] = request.ding_token_grant_type
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
-        )
-        return TeaCore.from_map(
-            dingtalkfinance__1__0_models.UnsignUserAgreementResponse(),
-            self.do_roarequest('UnsignUserAgreement', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/userAgreements/unsign', 'none', req, runtime)
-        )
-
-    async def unsign_user_agreement_with_options_async(
-        self,
-        request: dingtalkfinance__1__0_models.UnsignUserAgreementRequest,
-        headers: dingtalkfinance__1__0_models.UnsignUserAgreementHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkfinance__1__0_models.UnsignUserAgreementResponse:
-        UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.inst_id):
-            body['instId'] = request.inst_id
-        if not UtilClient.is_unset(request.sub_inst_id):
-            body['subInstId'] = request.sub_inst_id
-        if not UtilClient.is_unset(request.user_id):
-            body['userId'] = request.user_id
-        if not UtilClient.is_unset(request.biz_code):
-            body['bizCode'] = request.biz_code
-        if not UtilClient.is_unset(request.biz_scene):
-            body['bizScene'] = request.biz_scene
-        if not UtilClient.is_unset(request.agreement_no):
-            body['agreementNo'] = request.agreement_no
-        if not UtilClient.is_unset(request.ding_org_id):
-            body['dingOrgId'] = request.ding_org_id
-        if not UtilClient.is_unset(request.ding_isv_org_id):
-            body['dingIsvOrgId'] = request.ding_isv_org_id
-        if not UtilClient.is_unset(request.ding_client_id):
-            body['dingClientId'] = request.ding_client_id
-        if not UtilClient.is_unset(request.ding_token_grant_type):
-            body['dingTokenGrantType'] = request.ding_token_grant_type
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
-        )
-        return TeaCore.from_map(
-            dingtalkfinance__1__0_models.UnsignUserAgreementResponse(),
-            await self.do_roarequest_async('UnsignUserAgreement', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/userAgreements/unsign', 'none', req, runtime)
-        )
-
     def consult_create_sub_institution(
         self,
         request: dingtalkfinance__1__0_models.ConsultCreateSubInstitutionRequest,
@@ -1847,6 +1507,632 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.ConsultCreateSubInstitutionResponse(),
             await self.do_roarequest_async('ConsultCreateSubInstitution', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/institutions/subInstitutions/consult', 'json', req, runtime)
+        )
+
+    def query_pay_account_list(self) -> dingtalkfinance__1__0_models.QueryPayAccountListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.QueryPayAccountListHeaders()
+        return self.query_pay_account_list_with_options(headers, runtime)
+
+    async def query_pay_account_list_async(self) -> dingtalkfinance__1__0_models.QueryPayAccountListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.QueryPayAccountListHeaders()
+        return await self.query_pay_account_list_with_options_async(headers, runtime)
+
+    def query_pay_account_list_with_options(
+        self,
+        headers: dingtalkfinance__1__0_models.QueryPayAccountListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkfinance__1__0_models.QueryPayAccountListResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkfinance__1__0_models.QueryPayAccountListResponse(),
+            self.do_roarequest('QueryPayAccountList', 'finance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/finance/payAccounts', 'json', req, runtime)
+        )
+
+    async def query_pay_account_list_with_options_async(
+        self,
+        headers: dingtalkfinance__1__0_models.QueryPayAccountListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkfinance__1__0_models.QueryPayAccountListResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkfinance__1__0_models.QueryPayAccountListResponse(),
+            await self.do_roarequest_async('QueryPayAccountList', 'finance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/finance/payAccounts', 'json', req, runtime)
+        )
+
+    def query_withholding_order(
+        self,
+        request: dingtalkfinance__1__0_models.QueryWithholdingOrderRequest,
+    ) -> dingtalkfinance__1__0_models.QueryWithholdingOrderResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.QueryWithholdingOrderHeaders()
+        return self.query_withholding_order_with_options(request, headers, runtime)
+
+    async def query_withholding_order_async(
+        self,
+        request: dingtalkfinance__1__0_models.QueryWithholdingOrderRequest,
+    ) -> dingtalkfinance__1__0_models.QueryWithholdingOrderResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.QueryWithholdingOrderHeaders()
+        return await self.query_withholding_order_with_options_async(request, headers, runtime)
+
+    def query_withholding_order_with_options(
+        self,
+        request: dingtalkfinance__1__0_models.QueryWithholdingOrderRequest,
+        headers: dingtalkfinance__1__0_models.QueryWithholdingOrderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkfinance__1__0_models.QueryWithholdingOrderResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.out_trade_no):
+            query['outTradeNo'] = request.out_trade_no
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkfinance__1__0_models.QueryWithholdingOrderResponse(),
+            self.do_roarequest('QueryWithholdingOrder', 'finance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/finance/withholdingOrders', 'json', req, runtime)
+        )
+
+    async def query_withholding_order_with_options_async(
+        self,
+        request: dingtalkfinance__1__0_models.QueryWithholdingOrderRequest,
+        headers: dingtalkfinance__1__0_models.QueryWithholdingOrderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkfinance__1__0_models.QueryWithholdingOrderResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.out_trade_no):
+            query['outTradeNo'] = request.out_trade_no
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkfinance__1__0_models.QueryWithholdingOrderResponse(),
+            await self.do_roarequest_async('QueryWithholdingOrder', 'finance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/finance/withholdingOrders', 'json', req, runtime)
+        )
+
+    def notify_pay_code_pay_result(
+        self,
+        request: dingtalkfinance__1__0_models.NotifyPayCodePayResultRequest,
+    ) -> dingtalkfinance__1__0_models.NotifyPayCodePayResultResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.NotifyPayCodePayResultHeaders()
+        return self.notify_pay_code_pay_result_with_options(request, headers, runtime)
+
+    async def notify_pay_code_pay_result_async(
+        self,
+        request: dingtalkfinance__1__0_models.NotifyPayCodePayResultRequest,
+    ) -> dingtalkfinance__1__0_models.NotifyPayCodePayResultResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.NotifyPayCodePayResultHeaders()
+        return await self.notify_pay_code_pay_result_with_options_async(request, headers, runtime)
+
+    def notify_pay_code_pay_result_with_options(
+        self,
+        request: dingtalkfinance__1__0_models.NotifyPayCodePayResultRequest,
+        headers: dingtalkfinance__1__0_models.NotifyPayCodePayResultHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkfinance__1__0_models.NotifyPayCodePayResultResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.pay_code):
+            body['payCode'] = request.pay_code
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.gmt_trade_create):
+            body['gmtTradeCreate'] = request.gmt_trade_create
+        if not UtilClient.is_unset(request.gmt_trade_finish):
+            body['gmtTradeFinish'] = request.gmt_trade_finish
+        if not UtilClient.is_unset(request.trade_no):
+            body['tradeNo'] = request.trade_no
+        if not UtilClient.is_unset(request.trade_status):
+            body['tradeStatus'] = request.trade_status
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
+        if not UtilClient.is_unset(request.amount):
+            body['amount'] = request.amount
+        if not UtilClient.is_unset(request.promotion_amount):
+            body['promotionAmount'] = request.promotion_amount
+        if not UtilClient.is_unset(request.charge_amount):
+            body['chargeAmount'] = request.charge_amount
+        if not UtilClient.is_unset(request.pay_channel_detail_list):
+            body['payChannelDetailList'] = request.pay_channel_detail_list
+        if not UtilClient.is_unset(request.trade_error_code):
+            body['tradeErrorCode'] = request.trade_error_code
+        if not UtilClient.is_unset(request.trade_error_msg):
+            body['tradeErrorMsg'] = request.trade_error_msg
+        if not UtilClient.is_unset(request.ext_info):
+            body['extInfo'] = request.ext_info
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.merchant_name):
+            body['merchantName'] = request.merchant_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkfinance__1__0_models.NotifyPayCodePayResultResponse(),
+            self.do_roarequest('NotifyPayCodePayResult', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/payCodes/payResults/notify', 'json', req, runtime)
+        )
+
+    async def notify_pay_code_pay_result_with_options_async(
+        self,
+        request: dingtalkfinance__1__0_models.NotifyPayCodePayResultRequest,
+        headers: dingtalkfinance__1__0_models.NotifyPayCodePayResultHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkfinance__1__0_models.NotifyPayCodePayResultResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.pay_code):
+            body['payCode'] = request.pay_code
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.gmt_trade_create):
+            body['gmtTradeCreate'] = request.gmt_trade_create
+        if not UtilClient.is_unset(request.gmt_trade_finish):
+            body['gmtTradeFinish'] = request.gmt_trade_finish
+        if not UtilClient.is_unset(request.trade_no):
+            body['tradeNo'] = request.trade_no
+        if not UtilClient.is_unset(request.trade_status):
+            body['tradeStatus'] = request.trade_status
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
+        if not UtilClient.is_unset(request.amount):
+            body['amount'] = request.amount
+        if not UtilClient.is_unset(request.promotion_amount):
+            body['promotionAmount'] = request.promotion_amount
+        if not UtilClient.is_unset(request.charge_amount):
+            body['chargeAmount'] = request.charge_amount
+        if not UtilClient.is_unset(request.pay_channel_detail_list):
+            body['payChannelDetailList'] = request.pay_channel_detail_list
+        if not UtilClient.is_unset(request.trade_error_code):
+            body['tradeErrorCode'] = request.trade_error_code
+        if not UtilClient.is_unset(request.trade_error_msg):
+            body['tradeErrorMsg'] = request.trade_error_msg
+        if not UtilClient.is_unset(request.ext_info):
+            body['extInfo'] = request.ext_info
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.merchant_name):
+            body['merchantName'] = request.merchant_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkfinance__1__0_models.NotifyPayCodePayResultResponse(),
+            await self.do_roarequest_async('NotifyPayCodePayResult', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/payCodes/payResults/notify', 'json', req, runtime)
+        )
+
+    def create_acquire_refund_order(
+        self,
+        request: dingtalkfinance__1__0_models.CreateAcquireRefundOrderRequest,
+    ) -> dingtalkfinance__1__0_models.CreateAcquireRefundOrderResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.CreateAcquireRefundOrderHeaders()
+        return self.create_acquire_refund_order_with_options(request, headers, runtime)
+
+    async def create_acquire_refund_order_async(
+        self,
+        request: dingtalkfinance__1__0_models.CreateAcquireRefundOrderRequest,
+    ) -> dingtalkfinance__1__0_models.CreateAcquireRefundOrderResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.CreateAcquireRefundOrderHeaders()
+        return await self.create_acquire_refund_order_with_options_async(request, headers, runtime)
+
+    def create_acquire_refund_order_with_options(
+        self,
+        request: dingtalkfinance__1__0_models.CreateAcquireRefundOrderRequest,
+        headers: dingtalkfinance__1__0_models.CreateAcquireRefundOrderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkfinance__1__0_models.CreateAcquireRefundOrderResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.inst_id):
+            body['instId'] = request.inst_id
+        if not UtilClient.is_unset(request.sub_inst_id):
+            body['subInstId'] = request.sub_inst_id
+        if not UtilClient.is_unset(request.operator_user_id):
+            body['operatorUserId'] = request.operator_user_id
+        if not UtilClient.is_unset(request.refund_amount):
+            body['refundAmount'] = request.refund_amount
+        if not UtilClient.is_unset(request.out_refund_no):
+            body['outRefundNo'] = request.out_refund_no
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
+        if not UtilClient.is_unset(request.origin_out_trade_no):
+            body['originOutTradeNo'] = request.origin_out_trade_no
+        if not UtilClient.is_unset(request.other_pay_channel_detail_info_list):
+            body['otherPayChannelDetailInfoList'] = request.other_pay_channel_detail_info_list
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_client_id):
+            body['dingClientId'] = request.ding_client_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkfinance__1__0_models.CreateAcquireRefundOrderResponse(),
+            self.do_roarequest('CreateAcquireRefundOrder', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/acquireOrders/refund', 'json', req, runtime)
+        )
+
+    async def create_acquire_refund_order_with_options_async(
+        self,
+        request: dingtalkfinance__1__0_models.CreateAcquireRefundOrderRequest,
+        headers: dingtalkfinance__1__0_models.CreateAcquireRefundOrderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkfinance__1__0_models.CreateAcquireRefundOrderResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.inst_id):
+            body['instId'] = request.inst_id
+        if not UtilClient.is_unset(request.sub_inst_id):
+            body['subInstId'] = request.sub_inst_id
+        if not UtilClient.is_unset(request.operator_user_id):
+            body['operatorUserId'] = request.operator_user_id
+        if not UtilClient.is_unset(request.refund_amount):
+            body['refundAmount'] = request.refund_amount
+        if not UtilClient.is_unset(request.out_refund_no):
+            body['outRefundNo'] = request.out_refund_no
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
+        if not UtilClient.is_unset(request.origin_out_trade_no):
+            body['originOutTradeNo'] = request.origin_out_trade_no
+        if not UtilClient.is_unset(request.other_pay_channel_detail_info_list):
+            body['otherPayChannelDetailInfoList'] = request.other_pay_channel_detail_info_list
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_client_id):
+            body['dingClientId'] = request.ding_client_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkfinance__1__0_models.CreateAcquireRefundOrderResponse(),
+            await self.do_roarequest_async('CreateAcquireRefundOrder', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/acquireOrders/refund', 'json', req, runtime)
+        )
+
+    def query_register_order(
+        self,
+        request: dingtalkfinance__1__0_models.QueryRegisterOrderRequest,
+    ) -> dingtalkfinance__1__0_models.QueryRegisterOrderResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.QueryRegisterOrderHeaders()
+        return self.query_register_order_with_options(request, headers, runtime)
+
+    async def query_register_order_async(
+        self,
+        request: dingtalkfinance__1__0_models.QueryRegisterOrderRequest,
+    ) -> dingtalkfinance__1__0_models.QueryRegisterOrderResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.QueryRegisterOrderHeaders()
+        return await self.query_register_order_with_options_async(request, headers, runtime)
+
+    def query_register_order_with_options(
+        self,
+        request: dingtalkfinance__1__0_models.QueryRegisterOrderRequest,
+        headers: dingtalkfinance__1__0_models.QueryRegisterOrderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkfinance__1__0_models.QueryRegisterOrderResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.inst_id):
+            query['instId'] = request.inst_id
+        if not UtilClient.is_unset(request.sub_inst_id):
+            query['subInstId'] = request.sub_inst_id
+        if not UtilClient.is_unset(request.out_trade_no):
+            query['outTradeNo'] = request.out_trade_no
+        if not UtilClient.is_unset(request.order_id):
+            query['orderId'] = request.order_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkfinance__1__0_models.QueryRegisterOrderResponse(),
+            self.do_roarequest('QueryRegisterOrder', 'finance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/finance/institutions/subInstitutions/orders', 'json', req, runtime)
+        )
+
+    async def query_register_order_with_options_async(
+        self,
+        request: dingtalkfinance__1__0_models.QueryRegisterOrderRequest,
+        headers: dingtalkfinance__1__0_models.QueryRegisterOrderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkfinance__1__0_models.QueryRegisterOrderResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.inst_id):
+            query['instId'] = request.inst_id
+        if not UtilClient.is_unset(request.sub_inst_id):
+            query['subInstId'] = request.sub_inst_id
+        if not UtilClient.is_unset(request.out_trade_no):
+            query['outTradeNo'] = request.out_trade_no
+        if not UtilClient.is_unset(request.order_id):
+            query['orderId'] = request.order_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkfinance__1__0_models.QueryRegisterOrderResponse(),
+            await self.do_roarequest_async('QueryRegisterOrder', 'finance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/finance/institutions/subInstitutions/orders', 'json', req, runtime)
+        )
+
+    def upload_register_image(
+        self,
+        request: dingtalkfinance__1__0_models.UploadRegisterImageRequest,
+    ) -> dingtalkfinance__1__0_models.UploadRegisterImageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.UploadRegisterImageHeaders()
+        return self.upload_register_image_with_options(request, headers, runtime)
+
+    async def upload_register_image_async(
+        self,
+        request: dingtalkfinance__1__0_models.UploadRegisterImageRequest,
+    ) -> dingtalkfinance__1__0_models.UploadRegisterImageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.UploadRegisterImageHeaders()
+        return await self.upload_register_image_with_options_async(request, headers, runtime)
+
+    def upload_register_image_with_options(
+        self,
+        request: dingtalkfinance__1__0_models.UploadRegisterImageRequest,
+        headers: dingtalkfinance__1__0_models.UploadRegisterImageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkfinance__1__0_models.UploadRegisterImageResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.inst_id):
+            body['instId'] = request.inst_id
+        if not UtilClient.is_unset(request.pay_channel):
+            body['payChannel'] = request.pay_channel
+        if not UtilClient.is_unset(request.image_type):
+            body['imageType'] = request.image_type
+        if not UtilClient.is_unset(request.image_name):
+            body['imageName'] = request.image_name
+        if not UtilClient.is_unset(request.image_content):
+            body['imageContent'] = request.image_content
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_client_id):
+            body['dingClientId'] = request.ding_client_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkfinance__1__0_models.UploadRegisterImageResponse(),
+            self.do_roarequest('UploadRegisterImage', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/institutions/images', 'json', req, runtime)
+        )
+
+    async def upload_register_image_with_options_async(
+        self,
+        request: dingtalkfinance__1__0_models.UploadRegisterImageRequest,
+        headers: dingtalkfinance__1__0_models.UploadRegisterImageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkfinance__1__0_models.UploadRegisterImageResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.inst_id):
+            body['instId'] = request.inst_id
+        if not UtilClient.is_unset(request.pay_channel):
+            body['payChannel'] = request.pay_channel
+        if not UtilClient.is_unset(request.image_type):
+            body['imageType'] = request.image_type
+        if not UtilClient.is_unset(request.image_name):
+            body['imageName'] = request.image_name
+        if not UtilClient.is_unset(request.image_content):
+            body['imageContent'] = request.image_content
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_client_id):
+            body['dingClientId'] = request.ding_client_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkfinance__1__0_models.UploadRegisterImageResponse(),
+            await self.do_roarequest_async('UploadRegisterImage', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/institutions/images', 'json', req, runtime)
+        )
+
+    def unsign_user_agreement(
+        self,
+        request: dingtalkfinance__1__0_models.UnsignUserAgreementRequest,
+    ) -> dingtalkfinance__1__0_models.UnsignUserAgreementResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.UnsignUserAgreementHeaders()
+        return self.unsign_user_agreement_with_options(request, headers, runtime)
+
+    async def unsign_user_agreement_async(
+        self,
+        request: dingtalkfinance__1__0_models.UnsignUserAgreementRequest,
+    ) -> dingtalkfinance__1__0_models.UnsignUserAgreementResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.UnsignUserAgreementHeaders()
+        return await self.unsign_user_agreement_with_options_async(request, headers, runtime)
+
+    def unsign_user_agreement_with_options(
+        self,
+        request: dingtalkfinance__1__0_models.UnsignUserAgreementRequest,
+        headers: dingtalkfinance__1__0_models.UnsignUserAgreementHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkfinance__1__0_models.UnsignUserAgreementResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.inst_id):
+            body['instId'] = request.inst_id
+        if not UtilClient.is_unset(request.sub_inst_id):
+            body['subInstId'] = request.sub_inst_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.biz_code):
+            body['bizCode'] = request.biz_code
+        if not UtilClient.is_unset(request.biz_scene):
+            body['bizScene'] = request.biz_scene
+        if not UtilClient.is_unset(request.agreement_no):
+            body['agreementNo'] = request.agreement_no
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_client_id):
+            body['dingClientId'] = request.ding_client_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkfinance__1__0_models.UnsignUserAgreementResponse(),
+            self.do_roarequest('UnsignUserAgreement', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/userAgreements/unsign', 'none', req, runtime)
+        )
+
+    async def unsign_user_agreement_with_options_async(
+        self,
+        request: dingtalkfinance__1__0_models.UnsignUserAgreementRequest,
+        headers: dingtalkfinance__1__0_models.UnsignUserAgreementHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkfinance__1__0_models.UnsignUserAgreementResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.inst_id):
+            body['instId'] = request.inst_id
+        if not UtilClient.is_unset(request.sub_inst_id):
+            body['subInstId'] = request.sub_inst_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.biz_code):
+            body['bizCode'] = request.biz_code
+        if not UtilClient.is_unset(request.biz_scene):
+            body['bizScene'] = request.biz_scene
+        if not UtilClient.is_unset(request.agreement_no):
+            body['agreementNo'] = request.agreement_no
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_client_id):
+            body['dingClientId'] = request.ding_client_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkfinance__1__0_models.UnsignUserAgreementResponse(),
+            await self.do_roarequest_async('UnsignUserAgreement', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/userAgreements/unsign', 'none', req, runtime)
         )
 
     def modify_sub_institution(
@@ -2131,114 +2417,4 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.CreateSubInstitutionResponse(),
             await self.do_roarequest_async('CreateSubInstitution', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/institutions/subInstitutions', 'json', req, runtime)
-        )
-
-    def query_pay_account_list(self) -> dingtalkfinance__1__0_models.QueryPayAccountListResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.QueryPayAccountListHeaders()
-        return self.query_pay_account_list_with_options(headers, runtime)
-
-    async def query_pay_account_list_async(self) -> dingtalkfinance__1__0_models.QueryPayAccountListResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.QueryPayAccountListHeaders()
-        return await self.query_pay_account_list_with_options_async(headers, runtime)
-
-    def query_pay_account_list_with_options(
-        self,
-        headers: dingtalkfinance__1__0_models.QueryPayAccountListHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkfinance__1__0_models.QueryPayAccountListResponse:
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers
-        )
-        return TeaCore.from_map(
-            dingtalkfinance__1__0_models.QueryPayAccountListResponse(),
-            self.do_roarequest('QueryPayAccountList', 'finance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/finance/payAccounts', 'json', req, runtime)
-        )
-
-    async def query_pay_account_list_with_options_async(
-        self,
-        headers: dingtalkfinance__1__0_models.QueryPayAccountListHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkfinance__1__0_models.QueryPayAccountListResponse:
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers
-        )
-        return TeaCore.from_map(
-            dingtalkfinance__1__0_models.QueryPayAccountListResponse(),
-            await self.do_roarequest_async('QueryPayAccountList', 'finance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/finance/payAccounts', 'json', req, runtime)
-        )
-
-    def query_withholding_order(
-        self,
-        request: dingtalkfinance__1__0_models.QueryWithholdingOrderRequest,
-    ) -> dingtalkfinance__1__0_models.QueryWithholdingOrderResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.QueryWithholdingOrderHeaders()
-        return self.query_withholding_order_with_options(request, headers, runtime)
-
-    async def query_withholding_order_async(
-        self,
-        request: dingtalkfinance__1__0_models.QueryWithholdingOrderRequest,
-    ) -> dingtalkfinance__1__0_models.QueryWithholdingOrderResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.QueryWithholdingOrderHeaders()
-        return await self.query_withholding_order_with_options_async(request, headers, runtime)
-
-    def query_withholding_order_with_options(
-        self,
-        request: dingtalkfinance__1__0_models.QueryWithholdingOrderRequest,
-        headers: dingtalkfinance__1__0_models.QueryWithholdingOrderHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkfinance__1__0_models.QueryWithholdingOrderResponse:
-        UtilClient.validate_model(request)
-        query = {}
-        if not UtilClient.is_unset(request.out_trade_no):
-            query['outTradeNo'] = request.out_trade_no
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
-        )
-        return TeaCore.from_map(
-            dingtalkfinance__1__0_models.QueryWithholdingOrderResponse(),
-            self.do_roarequest('QueryWithholdingOrder', 'finance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/finance/withholdingOrders', 'json', req, runtime)
-        )
-
-    async def query_withholding_order_with_options_async(
-        self,
-        request: dingtalkfinance__1__0_models.QueryWithholdingOrderRequest,
-        headers: dingtalkfinance__1__0_models.QueryWithholdingOrderHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkfinance__1__0_models.QueryWithholdingOrderResponse:
-        UtilClient.validate_model(request)
-        query = {}
-        if not UtilClient.is_unset(request.out_trade_no):
-            query['outTradeNo'] = request.out_trade_no
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
-        )
-        return TeaCore.from_map(
-            dingtalkfinance__1__0_models.QueryWithholdingOrderResponse(),
-            await self.do_roarequest_async('QueryWithholdingOrder', 'finance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/finance/withholdingOrders', 'json', req, runtime)
         )

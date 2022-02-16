@@ -511,6 +511,52 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetProject', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/projects/get', 'json', req, runtime)
         )
 
+    def get_bookkeeping_user_list(self) -> dingtalkbizfinance__1__0_models.GetBookkeepingUserListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.GetBookkeepingUserListHeaders()
+        return self.get_bookkeeping_user_list_with_options(headers, runtime)
+
+    async def get_bookkeeping_user_list_async(self) -> dingtalkbizfinance__1__0_models.GetBookkeepingUserListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.GetBookkeepingUserListHeaders()
+        return await self.get_bookkeeping_user_list_with_options_async(headers, runtime)
+
+    def get_bookkeeping_user_list_with_options(
+        self,
+        headers: dingtalkbizfinance__1__0_models.GetBookkeepingUserListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.GetBookkeepingUserListResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.GetBookkeepingUserListResponse(),
+            self.do_roarequest('GetBookkeepingUserList', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/bookkeeping/users', 'json', req, runtime)
+        )
+
+    async def get_bookkeeping_user_list_with_options_async(
+        self,
+        headers: dingtalkbizfinance__1__0_models.GetBookkeepingUserListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.GetBookkeepingUserListResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.GetBookkeepingUserListResponse(),
+            await self.do_roarequest_async('GetBookkeepingUserList', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/bookkeeping/users', 'json', req, runtime)
+        )
+
     def get_customer(
         self,
         request: dingtalkbizfinance__1__0_models.GetCustomerRequest,

@@ -2650,13 +2650,19 @@ class GetSheetRequest(TeaModel):
 class GetSheetResponseBody(TeaModel):
     def __init__(
         self,
-        name: List[str] = None,
-        visibility: List[str] = None,
+        name: str = None,
+        visibility: str = None,
+        last_non_empty_row: int = None,
+        last_non_empty_column: int = None,
     ):
         # 工作表名称
         self.name = name
         # 工作表可见性
         self.visibility = visibility
+        # 最后一行非空行的位置，从0开始。表为空时返回-1。
+        self.last_non_empty_row = last_non_empty_row
+        # 最后一列非空列的位置，从0开始。表为空时返回-1。
+        self.last_non_empty_column = last_non_empty_column
 
     def validate(self):
         pass
@@ -2671,6 +2677,10 @@ class GetSheetResponseBody(TeaModel):
             result['name'] = self.name
         if self.visibility is not None:
             result['visibility'] = self.visibility
+        if self.last_non_empty_row is not None:
+            result['lastNonEmptyRow'] = self.last_non_empty_row
+        if self.last_non_empty_column is not None:
+            result['lastNonEmptyColumn'] = self.last_non_empty_column
         return result
 
     def from_map(self, m: dict = None):
@@ -2679,6 +2689,10 @@ class GetSheetResponseBody(TeaModel):
             self.name = m.get('name')
         if m.get('visibility') is not None:
             self.visibility = m.get('visibility')
+        if m.get('lastNonEmptyRow') is not None:
+            self.last_non_empty_row = m.get('lastNonEmptyRow')
+        if m.get('lastNonEmptyColumn') is not None:
+            self.last_non_empty_column = m.get('lastNonEmptyColumn')
         return self
 
 

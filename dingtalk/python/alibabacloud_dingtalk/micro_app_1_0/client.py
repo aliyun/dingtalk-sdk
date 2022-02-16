@@ -23,6 +23,798 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def get_inner_app(
+        self,
+        agent_id: str,
+        request: dingtalkmicro_app__1__0_models.GetInnerAppRequest,
+    ) -> dingtalkmicro_app__1__0_models.GetInnerAppResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.GetInnerAppHeaders()
+        return self.get_inner_app_with_options(agent_id, request, headers, runtime)
+
+    async def get_inner_app_async(
+        self,
+        agent_id: str,
+        request: dingtalkmicro_app__1__0_models.GetInnerAppRequest,
+    ) -> dingtalkmicro_app__1__0_models.GetInnerAppResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.GetInnerAppHeaders()
+        return await self.get_inner_app_with_options_async(agent_id, request, headers, runtime)
+
+    def get_inner_app_with_options(
+        self,
+        agent_id: str,
+        request: dingtalkmicro_app__1__0_models.GetInnerAppRequest,
+        headers: dingtalkmicro_app__1__0_models.GetInnerAppHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.GetInnerAppResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.op_union_id):
+            query['opUnionId'] = request.op_union_id
+        if not UtilClient.is_unset(request.ecological_corp_id):
+            query['ecologicalCorpId'] = request.ecological_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.GetInnerAppResponse(),
+            self.do_roarequest('GetInnerApp', 'microApp_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/microApp/apps/{agent_id}', 'json', req, runtime)
+        )
+
+    async def get_inner_app_with_options_async(
+        self,
+        agent_id: str,
+        request: dingtalkmicro_app__1__0_models.GetInnerAppRequest,
+        headers: dingtalkmicro_app__1__0_models.GetInnerAppHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.GetInnerAppResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.op_union_id):
+            query['opUnionId'] = request.op_union_id
+        if not UtilClient.is_unset(request.ecological_corp_id):
+            query['ecologicalCorpId'] = request.ecological_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.GetInnerAppResponse(),
+            await self.do_roarequest_async('GetInnerApp', 'microApp_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/microApp/apps/{agent_id}', 'json', req, runtime)
+        )
+
+    def update_apaas_app(
+        self,
+        request: dingtalkmicro_app__1__0_models.UpdateApaasAppRequest,
+    ) -> dingtalkmicro_app__1__0_models.UpdateApaasAppResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.UpdateApaasAppHeaders()
+        return self.update_apaas_app_with_options(request, headers, runtime)
+
+    async def update_apaas_app_async(
+        self,
+        request: dingtalkmicro_app__1__0_models.UpdateApaasAppRequest,
+    ) -> dingtalkmicro_app__1__0_models.UpdateApaasAppResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.UpdateApaasAppHeaders()
+        return await self.update_apaas_app_with_options_async(request, headers, runtime)
+
+    def update_apaas_app_with_options(
+        self,
+        request: dingtalkmicro_app__1__0_models.UpdateApaasAppRequest,
+        headers: dingtalkmicro_app__1__0_models.UpdateApaasAppHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.UpdateApaasAppResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_name):
+            body['appName'] = request.app_name
+        if not UtilClient.is_unset(request.app_icon):
+            body['appIcon'] = request.app_icon
+        if not UtilClient.is_unset(request.app_status):
+            body['appStatus'] = request.app_status
+        if not UtilClient.is_unset(request.op_user_id):
+            body['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.biz_app_id):
+            body['bizAppId'] = request.biz_app_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.UpdateApaasAppResponse(),
+            self.do_roarequest('UpdateApaasApp', 'microApp_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/microApp/apaasApps', 'json', req, runtime)
+        )
+
+    async def update_apaas_app_with_options_async(
+        self,
+        request: dingtalkmicro_app__1__0_models.UpdateApaasAppRequest,
+        headers: dingtalkmicro_app__1__0_models.UpdateApaasAppHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.UpdateApaasAppResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_name):
+            body['appName'] = request.app_name
+        if not UtilClient.is_unset(request.app_icon):
+            body['appIcon'] = request.app_icon
+        if not UtilClient.is_unset(request.app_status):
+            body['appStatus'] = request.app_status
+        if not UtilClient.is_unset(request.op_user_id):
+            body['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.biz_app_id):
+            body['bizAppId'] = request.biz_app_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.UpdateApaasAppResponse(),
+            await self.do_roarequest_async('UpdateApaasApp', 'microApp_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/microApp/apaasApps', 'json', req, runtime)
+        )
+
+    def set_micro_app_scope(
+        self,
+        agent_id: str,
+        request: dingtalkmicro_app__1__0_models.SetMicroAppScopeRequest,
+    ) -> dingtalkmicro_app__1__0_models.SetMicroAppScopeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.SetMicroAppScopeHeaders()
+        return self.set_micro_app_scope_with_options(agent_id, request, headers, runtime)
+
+    async def set_micro_app_scope_async(
+        self,
+        agent_id: str,
+        request: dingtalkmicro_app__1__0_models.SetMicroAppScopeRequest,
+    ) -> dingtalkmicro_app__1__0_models.SetMicroAppScopeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.SetMicroAppScopeHeaders()
+        return await self.set_micro_app_scope_with_options_async(agent_id, request, headers, runtime)
+
+    def set_micro_app_scope_with_options(
+        self,
+        agent_id: str,
+        request: dingtalkmicro_app__1__0_models.SetMicroAppScopeRequest,
+        headers: dingtalkmicro_app__1__0_models.SetMicroAppScopeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.SetMicroAppScopeResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.add_user_ids):
+            body['addUserIds'] = request.add_user_ids
+        if not UtilClient.is_unset(request.del_user_ids):
+            body['delUserIds'] = request.del_user_ids
+        if not UtilClient.is_unset(request.add_dept_ids):
+            body['addDeptIds'] = request.add_dept_ids
+        if not UtilClient.is_unset(request.del_dept_ids):
+            body['delDeptIds'] = request.del_dept_ids
+        if not UtilClient.is_unset(request.add_role_ids):
+            body['addRoleIds'] = request.add_role_ids
+        if not UtilClient.is_unset(request.dd_user_ids):
+            body['ddUserIds'] = request.dd_user_ids
+        if not UtilClient.is_unset(request.only_admin_visible):
+            body['onlyAdminVisible'] = request.only_admin_visible
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.SetMicroAppScopeResponse(),
+            self.do_roarequest('SetMicroAppScope', 'microApp_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/microApp/apps/{agent_id}/scopes', 'json', req, runtime)
+        )
+
+    async def set_micro_app_scope_with_options_async(
+        self,
+        agent_id: str,
+        request: dingtalkmicro_app__1__0_models.SetMicroAppScopeRequest,
+        headers: dingtalkmicro_app__1__0_models.SetMicroAppScopeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.SetMicroAppScopeResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.add_user_ids):
+            body['addUserIds'] = request.add_user_ids
+        if not UtilClient.is_unset(request.del_user_ids):
+            body['delUserIds'] = request.del_user_ids
+        if not UtilClient.is_unset(request.add_dept_ids):
+            body['addDeptIds'] = request.add_dept_ids
+        if not UtilClient.is_unset(request.del_dept_ids):
+            body['delDeptIds'] = request.del_dept_ids
+        if not UtilClient.is_unset(request.add_role_ids):
+            body['addRoleIds'] = request.add_role_ids
+        if not UtilClient.is_unset(request.dd_user_ids):
+            body['ddUserIds'] = request.dd_user_ids
+        if not UtilClient.is_unset(request.only_admin_visible):
+            body['onlyAdminVisible'] = request.only_admin_visible
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.SetMicroAppScopeResponse(),
+            await self.do_roarequest_async('SetMicroAppScope', 'microApp_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/microApp/apps/{agent_id}/scopes', 'json', req, runtime)
+        )
+
+    def list_role_info_by_user(
+        self,
+        agent_id: str,
+        user_id: str,
+    ) -> dingtalkmicro_app__1__0_models.ListRoleInfoByUserResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.ListRoleInfoByUserHeaders()
+        return self.list_role_info_by_user_with_options(agent_id, user_id, headers, runtime)
+
+    async def list_role_info_by_user_async(
+        self,
+        agent_id: str,
+        user_id: str,
+    ) -> dingtalkmicro_app__1__0_models.ListRoleInfoByUserResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.ListRoleInfoByUserHeaders()
+        return await self.list_role_info_by_user_with_options_async(agent_id, user_id, headers, runtime)
+
+    def list_role_info_by_user_with_options(
+        self,
+        agent_id: str,
+        user_id: str,
+        headers: dingtalkmicro_app__1__0_models.ListRoleInfoByUserHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.ListRoleInfoByUserResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.ListRoleInfoByUserResponse(),
+            self.do_roarequest('ListRoleInfoByUser', 'microApp_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/microApp/apps/{agent_id}/users/{user_id}/roles', 'json', req, runtime)
+        )
+
+    async def list_role_info_by_user_with_options_async(
+        self,
+        agent_id: str,
+        user_id: str,
+        headers: dingtalkmicro_app__1__0_models.ListRoleInfoByUserHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.ListRoleInfoByUserResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.ListRoleInfoByUserResponse(),
+            await self.do_roarequest_async('ListRoleInfoByUser', 'microApp_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/microApp/apps/{agent_id}/users/{user_id}/roles', 'json', req, runtime)
+        )
+
+    def update_inner_app(
+        self,
+        agent_id: str,
+        request: dingtalkmicro_app__1__0_models.UpdateInnerAppRequest,
+    ) -> dingtalkmicro_app__1__0_models.UpdateInnerAppResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.UpdateInnerAppHeaders()
+        return self.update_inner_app_with_options(agent_id, request, headers, runtime)
+
+    async def update_inner_app_async(
+        self,
+        agent_id: str,
+        request: dingtalkmicro_app__1__0_models.UpdateInnerAppRequest,
+    ) -> dingtalkmicro_app__1__0_models.UpdateInnerAppResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.UpdateInnerAppHeaders()
+        return await self.update_inner_app_with_options_async(agent_id, request, headers, runtime)
+
+    def update_inner_app_with_options(
+        self,
+        agent_id: str,
+        request: dingtalkmicro_app__1__0_models.UpdateInnerAppRequest,
+        headers: dingtalkmicro_app__1__0_models.UpdateInnerAppHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.UpdateInnerAppResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.op_union_id):
+            body['opUnionId'] = request.op_union_id
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.desc):
+            body['desc'] = request.desc
+        if not UtilClient.is_unset(request.icon):
+            body['icon'] = request.icon
+        if not UtilClient.is_unset(request.homepage_link):
+            body['homepageLink'] = request.homepage_link
+        if not UtilClient.is_unset(request.pc_homepage_link):
+            body['pcHomepageLink'] = request.pc_homepage_link
+        if not UtilClient.is_unset(request.omp_link):
+            body['ompLink'] = request.omp_link
+        if not UtilClient.is_unset(request.ip_white_list):
+            body['ipWhiteList'] = request.ip_white_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.UpdateInnerAppResponse(),
+            self.do_roarequest('UpdateInnerApp', 'microApp_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/microApp/apps/{agent_id}', 'json', req, runtime)
+        )
+
+    async def update_inner_app_with_options_async(
+        self,
+        agent_id: str,
+        request: dingtalkmicro_app__1__0_models.UpdateInnerAppRequest,
+        headers: dingtalkmicro_app__1__0_models.UpdateInnerAppHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.UpdateInnerAppResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.op_union_id):
+            body['opUnionId'] = request.op_union_id
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.desc):
+            body['desc'] = request.desc
+        if not UtilClient.is_unset(request.icon):
+            body['icon'] = request.icon
+        if not UtilClient.is_unset(request.homepage_link):
+            body['homepageLink'] = request.homepage_link
+        if not UtilClient.is_unset(request.pc_homepage_link):
+            body['pcHomepageLink'] = request.pc_homepage_link
+        if not UtilClient.is_unset(request.omp_link):
+            body['ompLink'] = request.omp_link
+        if not UtilClient.is_unset(request.ip_white_list):
+            body['ipWhiteList'] = request.ip_white_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.UpdateInnerAppResponse(),
+            await self.do_roarequest_async('UpdateInnerApp', 'microApp_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/microApp/apps/{agent_id}', 'json', req, runtime)
+        )
+
+    def add_member_to_app_role(
+        self,
+        agent_id: str,
+        role_id: str,
+        request: dingtalkmicro_app__1__0_models.AddMemberToAppRoleRequest,
+    ) -> dingtalkmicro_app__1__0_models.AddMemberToAppRoleResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.AddMemberToAppRoleHeaders()
+        return self.add_member_to_app_role_with_options(agent_id, role_id, request, headers, runtime)
+
+    async def add_member_to_app_role_async(
+        self,
+        agent_id: str,
+        role_id: str,
+        request: dingtalkmicro_app__1__0_models.AddMemberToAppRoleRequest,
+    ) -> dingtalkmicro_app__1__0_models.AddMemberToAppRoleResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.AddMemberToAppRoleHeaders()
+        return await self.add_member_to_app_role_with_options_async(agent_id, role_id, request, headers, runtime)
+
+    def add_member_to_app_role_with_options(
+        self,
+        agent_id: str,
+        role_id: str,
+        request: dingtalkmicro_app__1__0_models.AddMemberToAppRoleRequest,
+        headers: dingtalkmicro_app__1__0_models.AddMemberToAppRoleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.AddMemberToAppRoleResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            body['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.scope_version):
+            body['scopeVersion'] = request.scope_version
+        if not UtilClient.is_unset(request.dept_id_list):
+            body['deptIdList'] = request.dept_id_list
+        if not UtilClient.is_unset(request.user_id_list):
+            body['userIdList'] = request.user_id_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.AddMemberToAppRoleResponse(),
+            self.do_roarequest('AddMemberToAppRole', 'microApp_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/microApp/apps/{agent_id}/roles/{role_id}/members', 'json', req, runtime)
+        )
+
+    async def add_member_to_app_role_with_options_async(
+        self,
+        agent_id: str,
+        role_id: str,
+        request: dingtalkmicro_app__1__0_models.AddMemberToAppRoleRequest,
+        headers: dingtalkmicro_app__1__0_models.AddMemberToAppRoleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.AddMemberToAppRoleResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            body['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.scope_version):
+            body['scopeVersion'] = request.scope_version
+        if not UtilClient.is_unset(request.dept_id_list):
+            body['deptIdList'] = request.dept_id_list
+        if not UtilClient.is_unset(request.user_id_list):
+            body['userIdList'] = request.user_id_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.AddMemberToAppRoleResponse(),
+            await self.do_roarequest_async('AddMemberToAppRole', 'microApp_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/microApp/apps/{agent_id}/roles/{role_id}/members', 'json', req, runtime)
+        )
+
+    def remove_apaas_app(
+        self,
+        request: dingtalkmicro_app__1__0_models.RemoveApaasAppRequest,
+    ) -> dingtalkmicro_app__1__0_models.RemoveApaasAppResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.RemoveApaasAppHeaders()
+        return self.remove_apaas_app_with_options(request, headers, runtime)
+
+    async def remove_apaas_app_async(
+        self,
+        request: dingtalkmicro_app__1__0_models.RemoveApaasAppRequest,
+    ) -> dingtalkmicro_app__1__0_models.RemoveApaasAppResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.RemoveApaasAppHeaders()
+        return await self.remove_apaas_app_with_options_async(request, headers, runtime)
+
+    def remove_apaas_app_with_options(
+        self,
+        request: dingtalkmicro_app__1__0_models.RemoveApaasAppRequest,
+        headers: dingtalkmicro_app__1__0_models.RemoveApaasAppHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.RemoveApaasAppResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            body['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.biz_app_id):
+            body['bizAppId'] = request.biz_app_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.RemoveApaasAppResponse(),
+            self.do_roarequest('RemoveApaasApp', 'microApp_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/microApp/apaasApps/remove', 'json', req, runtime)
+        )
+
+    async def remove_apaas_app_with_options_async(
+        self,
+        request: dingtalkmicro_app__1__0_models.RemoveApaasAppRequest,
+        headers: dingtalkmicro_app__1__0_models.RemoveApaasAppHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.RemoveApaasAppResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            body['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.biz_app_id):
+            body['bizAppId'] = request.biz_app_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.RemoveApaasAppResponse(),
+            await self.do_roarequest_async('RemoveApaasApp', 'microApp_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/microApp/apaasApps/remove', 'json', req, runtime)
+        )
+
+    def create_apaas_app(
+        self,
+        request: dingtalkmicro_app__1__0_models.CreateApaasAppRequest,
+    ) -> dingtalkmicro_app__1__0_models.CreateApaasAppResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.CreateApaasAppHeaders()
+        return self.create_apaas_app_with_options(request, headers, runtime)
+
+    async def create_apaas_app_async(
+        self,
+        request: dingtalkmicro_app__1__0_models.CreateApaasAppRequest,
+    ) -> dingtalkmicro_app__1__0_models.CreateApaasAppResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.CreateApaasAppHeaders()
+        return await self.create_apaas_app_with_options_async(request, headers, runtime)
+
+    def create_apaas_app_with_options(
+        self,
+        request: dingtalkmicro_app__1__0_models.CreateApaasAppRequest,
+        headers: dingtalkmicro_app__1__0_models.CreateApaasAppHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.CreateApaasAppResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_name):
+            body['appName'] = request.app_name
+        if not UtilClient.is_unset(request.app_desc):
+            body['appDesc'] = request.app_desc
+        if not UtilClient.is_unset(request.app_icon):
+            body['appIcon'] = request.app_icon
+        if not UtilClient.is_unset(request.homepage_link):
+            body['homepageLink'] = request.homepage_link
+        if not UtilClient.is_unset(request.pc_homepage_link):
+            body['pcHomepageLink'] = request.pc_homepage_link
+        if not UtilClient.is_unset(request.omp_link):
+            body['ompLink'] = request.omp_link
+        if not UtilClient.is_unset(request.homepage_edit_link):
+            body['homepageEditLink'] = request.homepage_edit_link
+        if not UtilClient.is_unset(request.pc_homepage_edit_link):
+            body['pcHomepageEditLink'] = request.pc_homepage_edit_link
+        if not UtilClient.is_unset(request.op_user_id):
+            body['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.biz_app_id):
+            body['bizAppId'] = request.biz_app_id
+        if not UtilClient.is_unset(request.template_key):
+            body['templateKey'] = request.template_key
+        if not UtilClient.is_unset(request.is_short_cut):
+            body['isShortCut'] = request.is_short_cut
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.CreateApaasAppResponse(),
+            self.do_roarequest('CreateApaasApp', 'microApp_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/microApp/apaasApps', 'json', req, runtime)
+        )
+
+    async def create_apaas_app_with_options_async(
+        self,
+        request: dingtalkmicro_app__1__0_models.CreateApaasAppRequest,
+        headers: dingtalkmicro_app__1__0_models.CreateApaasAppHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.CreateApaasAppResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_name):
+            body['appName'] = request.app_name
+        if not UtilClient.is_unset(request.app_desc):
+            body['appDesc'] = request.app_desc
+        if not UtilClient.is_unset(request.app_icon):
+            body['appIcon'] = request.app_icon
+        if not UtilClient.is_unset(request.homepage_link):
+            body['homepageLink'] = request.homepage_link
+        if not UtilClient.is_unset(request.pc_homepage_link):
+            body['pcHomepageLink'] = request.pc_homepage_link
+        if not UtilClient.is_unset(request.omp_link):
+            body['ompLink'] = request.omp_link
+        if not UtilClient.is_unset(request.homepage_edit_link):
+            body['homepageEditLink'] = request.homepage_edit_link
+        if not UtilClient.is_unset(request.pc_homepage_edit_link):
+            body['pcHomepageEditLink'] = request.pc_homepage_edit_link
+        if not UtilClient.is_unset(request.op_user_id):
+            body['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.biz_app_id):
+            body['bizAppId'] = request.biz_app_id
+        if not UtilClient.is_unset(request.template_key):
+            body['templateKey'] = request.template_key
+        if not UtilClient.is_unset(request.is_short_cut):
+            body['isShortCut'] = request.is_short_cut
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.CreateApaasAppResponse(),
+            await self.do_roarequest_async('CreateApaasApp', 'microApp_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/microApp/apaasApps', 'json', req, runtime)
+        )
+
+    def update_app_role_info(
+        self,
+        agent_id: str,
+        role_id: str,
+        request: dingtalkmicro_app__1__0_models.UpdateAppRoleInfoRequest,
+    ) -> dingtalkmicro_app__1__0_models.UpdateAppRoleInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.UpdateAppRoleInfoHeaders()
+        return self.update_app_role_info_with_options(agent_id, role_id, request, headers, runtime)
+
+    async def update_app_role_info_async(
+        self,
+        agent_id: str,
+        role_id: str,
+        request: dingtalkmicro_app__1__0_models.UpdateAppRoleInfoRequest,
+    ) -> dingtalkmicro_app__1__0_models.UpdateAppRoleInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.UpdateAppRoleInfoHeaders()
+        return await self.update_app_role_info_with_options_async(agent_id, role_id, request, headers, runtime)
+
+    def update_app_role_info_with_options(
+        self,
+        agent_id: str,
+        role_id: str,
+        request: dingtalkmicro_app__1__0_models.UpdateAppRoleInfoRequest,
+        headers: dingtalkmicro_app__1__0_models.UpdateAppRoleInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.UpdateAppRoleInfoResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            body['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.new_role_name):
+            body['newRoleName'] = request.new_role_name
+        if not UtilClient.is_unset(request.can_manage_role):
+            body['canManageRole'] = request.can_manage_role
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.UpdateAppRoleInfoResponse(),
+            self.do_roarequest('UpdateAppRoleInfo', 'microApp_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/microApp/apps/{agent_id}/roles/{role_id}', 'json', req, runtime)
+        )
+
+    async def update_app_role_info_with_options_async(
+        self,
+        agent_id: str,
+        role_id: str,
+        request: dingtalkmicro_app__1__0_models.UpdateAppRoleInfoRequest,
+        headers: dingtalkmicro_app__1__0_models.UpdateAppRoleInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.UpdateAppRoleInfoResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            body['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.new_role_name):
+            body['newRoleName'] = request.new_role_name
+        if not UtilClient.is_unset(request.can_manage_role):
+            body['canManageRole'] = request.can_manage_role
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.UpdateAppRoleInfoResponse(),
+            await self.do_roarequest_async('UpdateAppRoleInfo', 'microApp_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/microApp/apps/{agent_id}/roles/{role_id}', 'json', req, runtime)
+        )
+
+    def get_micro_app_scope(
+        self,
+        agent_id: str,
+    ) -> dingtalkmicro_app__1__0_models.GetMicroAppScopeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.GetMicroAppScopeHeaders()
+        return self.get_micro_app_scope_with_options(agent_id, headers, runtime)
+
+    async def get_micro_app_scope_async(
+        self,
+        agent_id: str,
+    ) -> dingtalkmicro_app__1__0_models.GetMicroAppScopeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.GetMicroAppScopeHeaders()
+        return await self.get_micro_app_scope_with_options_async(agent_id, headers, runtime)
+
+    def get_micro_app_scope_with_options(
+        self,
+        agent_id: str,
+        headers: dingtalkmicro_app__1__0_models.GetMicroAppScopeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.GetMicroAppScopeResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.GetMicroAppScopeResponse(),
+            self.do_roarequest('GetMicroAppScope', 'microApp_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/microApp/apps/{agent_id}/scopes', 'json', req, runtime)
+        )
+
+    async def get_micro_app_scope_with_options_async(
+        self,
+        agent_id: str,
+        headers: dingtalkmicro_app__1__0_models.GetMicroAppScopeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.GetMicroAppScopeResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.GetMicroAppScopeResponse(),
+            await self.do_roarequest_async('GetMicroAppScope', 'microApp_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/microApp/apps/{agent_id}/scopes', 'json', req, runtime)
+        )
+
     def create_inner_app(
         self,
         request: dingtalkmicro_app__1__0_models.CreateInnerAppRequest,
@@ -119,78 +911,6 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('CreateInnerApp', 'microApp_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/microApp/apps', 'json', req, runtime)
         )
 
-    def get_inner_app(
-        self,
-        agent_id: str,
-        request: dingtalkmicro_app__1__0_models.GetInnerAppRequest,
-    ) -> dingtalkmicro_app__1__0_models.GetInnerAppResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkmicro_app__1__0_models.GetInnerAppHeaders()
-        return self.get_inner_app_with_options(agent_id, request, headers, runtime)
-
-    async def get_inner_app_async(
-        self,
-        agent_id: str,
-        request: dingtalkmicro_app__1__0_models.GetInnerAppRequest,
-    ) -> dingtalkmicro_app__1__0_models.GetInnerAppResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkmicro_app__1__0_models.GetInnerAppHeaders()
-        return await self.get_inner_app_with_options_async(agent_id, request, headers, runtime)
-
-    def get_inner_app_with_options(
-        self,
-        agent_id: str,
-        request: dingtalkmicro_app__1__0_models.GetInnerAppRequest,
-        headers: dingtalkmicro_app__1__0_models.GetInnerAppHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkmicro_app__1__0_models.GetInnerAppResponse:
-        UtilClient.validate_model(request)
-        query = {}
-        if not UtilClient.is_unset(request.op_union_id):
-            query['opUnionId'] = request.op_union_id
-        if not UtilClient.is_unset(request.ecological_corp_id):
-            query['ecologicalCorpId'] = request.ecological_corp_id
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
-        )
-        return TeaCore.from_map(
-            dingtalkmicro_app__1__0_models.GetInnerAppResponse(),
-            self.do_roarequest('GetInnerApp', 'microApp_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/microApp/apps/{agent_id}', 'json', req, runtime)
-        )
-
-    async def get_inner_app_with_options_async(
-        self,
-        agent_id: str,
-        request: dingtalkmicro_app__1__0_models.GetInnerAppRequest,
-        headers: dingtalkmicro_app__1__0_models.GetInnerAppHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkmicro_app__1__0_models.GetInnerAppResponse:
-        UtilClient.validate_model(request)
-        query = {}
-        if not UtilClient.is_unset(request.op_union_id):
-            query['opUnionId'] = request.op_union_id
-        if not UtilClient.is_unset(request.ecological_corp_id):
-            query['ecologicalCorpId'] = request.ecological_corp_id
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
-        )
-        return TeaCore.from_map(
-            dingtalkmicro_app__1__0_models.GetInnerAppResponse(),
-            await self.do_roarequest_async('GetInnerApp', 'microApp_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/microApp/apps/{agent_id}', 'json', req, runtime)
-        )
-
     def register_custom_app_role(
         self,
         agent_id: str,
@@ -267,84 +987,62 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('RegisterCustomAppRole', 'microApp_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/microApp/apps/{agent_id}/roles', 'json', req, runtime)
         )
 
-    def update_apaas_app(
+    def get_micro_app_user_access(
         self,
-        request: dingtalkmicro_app__1__0_models.UpdateApaasAppRequest,
-    ) -> dingtalkmicro_app__1__0_models.UpdateApaasAppResponse:
+        agent_id: str,
+        user_id: str,
+    ) -> dingtalkmicro_app__1__0_models.GetMicroAppUserAccessResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkmicro_app__1__0_models.UpdateApaasAppHeaders()
-        return self.update_apaas_app_with_options(request, headers, runtime)
+        headers = dingtalkmicro_app__1__0_models.GetMicroAppUserAccessHeaders()
+        return self.get_micro_app_user_access_with_options(agent_id, user_id, headers, runtime)
 
-    async def update_apaas_app_async(
+    async def get_micro_app_user_access_async(
         self,
-        request: dingtalkmicro_app__1__0_models.UpdateApaasAppRequest,
-    ) -> dingtalkmicro_app__1__0_models.UpdateApaasAppResponse:
+        agent_id: str,
+        user_id: str,
+    ) -> dingtalkmicro_app__1__0_models.GetMicroAppUserAccessResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkmicro_app__1__0_models.UpdateApaasAppHeaders()
-        return await self.update_apaas_app_with_options_async(request, headers, runtime)
+        headers = dingtalkmicro_app__1__0_models.GetMicroAppUserAccessHeaders()
+        return await self.get_micro_app_user_access_with_options_async(agent_id, user_id, headers, runtime)
 
-    def update_apaas_app_with_options(
+    def get_micro_app_user_access_with_options(
         self,
-        request: dingtalkmicro_app__1__0_models.UpdateApaasAppRequest,
-        headers: dingtalkmicro_app__1__0_models.UpdateApaasAppHeaders,
+        agent_id: str,
+        user_id: str,
+        headers: dingtalkmicro_app__1__0_models.GetMicroAppUserAccessHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkmicro_app__1__0_models.UpdateApaasAppResponse:
-        UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.app_name):
-            body['appName'] = request.app_name
-        if not UtilClient.is_unset(request.app_icon):
-            body['appIcon'] = request.app_icon
-        if not UtilClient.is_unset(request.app_status):
-            body['appStatus'] = request.app_status
-        if not UtilClient.is_unset(request.op_user_id):
-            body['opUserId'] = request.op_user_id
-        if not UtilClient.is_unset(request.biz_app_id):
-            body['bizAppId'] = request.biz_app_id
+    ) -> dingtalkmicro_app__1__0_models.GetMicroAppUserAccessResponse:
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
+            headers=real_headers
         )
         return TeaCore.from_map(
-            dingtalkmicro_app__1__0_models.UpdateApaasAppResponse(),
-            self.do_roarequest('UpdateApaasApp', 'microApp_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/microApp/apaasApps', 'json', req, runtime)
+            dingtalkmicro_app__1__0_models.GetMicroAppUserAccessResponse(),
+            self.do_roarequest('GetMicroAppUserAccess', 'microApp_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/microApp/apps/{agent_id}/users/{user_id}/adminAccess', 'json', req, runtime)
         )
 
-    async def update_apaas_app_with_options_async(
+    async def get_micro_app_user_access_with_options_async(
         self,
-        request: dingtalkmicro_app__1__0_models.UpdateApaasAppRequest,
-        headers: dingtalkmicro_app__1__0_models.UpdateApaasAppHeaders,
+        agent_id: str,
+        user_id: str,
+        headers: dingtalkmicro_app__1__0_models.GetMicroAppUserAccessHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkmicro_app__1__0_models.UpdateApaasAppResponse:
-        UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.app_name):
-            body['appName'] = request.app_name
-        if not UtilClient.is_unset(request.app_icon):
-            body['appIcon'] = request.app_icon
-        if not UtilClient.is_unset(request.app_status):
-            body['appStatus'] = request.app_status
-        if not UtilClient.is_unset(request.op_user_id):
-            body['opUserId'] = request.op_user_id
-        if not UtilClient.is_unset(request.biz_app_id):
-            body['bizAppId'] = request.biz_app_id
+    ) -> dingtalkmicro_app__1__0_models.GetMicroAppUserAccessResponse:
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
+            headers=real_headers
         )
         return TeaCore.from_map(
-            dingtalkmicro_app__1__0_models.UpdateApaasAppResponse(),
-            await self.do_roarequest_async('UpdateApaasApp', 'microApp_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/microApp/apaasApps', 'json', req, runtime)
+            dingtalkmicro_app__1__0_models.GetMicroAppUserAccessResponse(),
+            await self.do_roarequest_async('GetMicroAppUserAccess', 'microApp_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/microApp/apps/{agent_id}/users/{user_id}/adminAccess', 'json', req, runtime)
         )
 
     def add_app_roles_to_member(
@@ -483,64 +1181,6 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkmicro_app__1__0_models.GetAppRoleScopeByRoleIdResponse(),
             await self.do_roarequest_async('GetAppRoleScopeByRoleId', 'microApp_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/microApp/apps/{agent_id}/roles/{role_id}/scopes', 'json', req, runtime)
-        )
-
-    def list_role_info_by_user(
-        self,
-        agent_id: str,
-        user_id: str,
-    ) -> dingtalkmicro_app__1__0_models.ListRoleInfoByUserResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkmicro_app__1__0_models.ListRoleInfoByUserHeaders()
-        return self.list_role_info_by_user_with_options(agent_id, user_id, headers, runtime)
-
-    async def list_role_info_by_user_async(
-        self,
-        agent_id: str,
-        user_id: str,
-    ) -> dingtalkmicro_app__1__0_models.ListRoleInfoByUserResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkmicro_app__1__0_models.ListRoleInfoByUserHeaders()
-        return await self.list_role_info_by_user_with_options_async(agent_id, user_id, headers, runtime)
-
-    def list_role_info_by_user_with_options(
-        self,
-        agent_id: str,
-        user_id: str,
-        headers: dingtalkmicro_app__1__0_models.ListRoleInfoByUserHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkmicro_app__1__0_models.ListRoleInfoByUserResponse:
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers
-        )
-        return TeaCore.from_map(
-            dingtalkmicro_app__1__0_models.ListRoleInfoByUserResponse(),
-            self.do_roarequest('ListRoleInfoByUser', 'microApp_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/microApp/apps/{agent_id}/users/{user_id}/roles', 'json', req, runtime)
-        )
-
-    async def list_role_info_by_user_with_options_async(
-        self,
-        agent_id: str,
-        user_id: str,
-        headers: dingtalkmicro_app__1__0_models.ListRoleInfoByUserHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkmicro_app__1__0_models.ListRoleInfoByUserResponse:
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers
-        )
-        return TeaCore.from_map(
-            dingtalkmicro_app__1__0_models.ListRoleInfoByUserResponse(),
-            await self.do_roarequest_async('ListRoleInfoByUser', 'microApp_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/microApp/apps/{agent_id}/users/{user_id}/roles', 'json', req, runtime)
         )
 
     def list_inner_app(
@@ -745,102 +1385,6 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetApaasApp', 'microApp_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/microApp/apaasApps/{biz_app_id}', 'json', req, runtime)
         )
 
-    def update_inner_app(
-        self,
-        agent_id: str,
-        request: dingtalkmicro_app__1__0_models.UpdateInnerAppRequest,
-    ) -> dingtalkmicro_app__1__0_models.UpdateInnerAppResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkmicro_app__1__0_models.UpdateInnerAppHeaders()
-        return self.update_inner_app_with_options(agent_id, request, headers, runtime)
-
-    async def update_inner_app_async(
-        self,
-        agent_id: str,
-        request: dingtalkmicro_app__1__0_models.UpdateInnerAppRequest,
-    ) -> dingtalkmicro_app__1__0_models.UpdateInnerAppResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkmicro_app__1__0_models.UpdateInnerAppHeaders()
-        return await self.update_inner_app_with_options_async(agent_id, request, headers, runtime)
-
-    def update_inner_app_with_options(
-        self,
-        agent_id: str,
-        request: dingtalkmicro_app__1__0_models.UpdateInnerAppRequest,
-        headers: dingtalkmicro_app__1__0_models.UpdateInnerAppHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkmicro_app__1__0_models.UpdateInnerAppResponse:
-        UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.op_union_id):
-            body['opUnionId'] = request.op_union_id
-        if not UtilClient.is_unset(request.name):
-            body['name'] = request.name
-        if not UtilClient.is_unset(request.desc):
-            body['desc'] = request.desc
-        if not UtilClient.is_unset(request.icon):
-            body['icon'] = request.icon
-        if not UtilClient.is_unset(request.homepage_link):
-            body['homepageLink'] = request.homepage_link
-        if not UtilClient.is_unset(request.pc_homepage_link):
-            body['pcHomepageLink'] = request.pc_homepage_link
-        if not UtilClient.is_unset(request.omp_link):
-            body['ompLink'] = request.omp_link
-        if not UtilClient.is_unset(request.ip_white_list):
-            body['ipWhiteList'] = request.ip_white_list
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
-        )
-        return TeaCore.from_map(
-            dingtalkmicro_app__1__0_models.UpdateInnerAppResponse(),
-            self.do_roarequest('UpdateInnerApp', 'microApp_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/microApp/apps/{agent_id}', 'json', req, runtime)
-        )
-
-    async def update_inner_app_with_options_async(
-        self,
-        agent_id: str,
-        request: dingtalkmicro_app__1__0_models.UpdateInnerAppRequest,
-        headers: dingtalkmicro_app__1__0_models.UpdateInnerAppHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkmicro_app__1__0_models.UpdateInnerAppResponse:
-        UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.op_union_id):
-            body['opUnionId'] = request.op_union_id
-        if not UtilClient.is_unset(request.name):
-            body['name'] = request.name
-        if not UtilClient.is_unset(request.desc):
-            body['desc'] = request.desc
-        if not UtilClient.is_unset(request.icon):
-            body['icon'] = request.icon
-        if not UtilClient.is_unset(request.homepage_link):
-            body['homepageLink'] = request.homepage_link
-        if not UtilClient.is_unset(request.pc_homepage_link):
-            body['pcHomepageLink'] = request.pc_homepage_link
-        if not UtilClient.is_unset(request.omp_link):
-            body['ompLink'] = request.omp_link
-        if not UtilClient.is_unset(request.ip_white_list):
-            body['ipWhiteList'] = request.ip_white_list
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
-        )
-        return TeaCore.from_map(
-            dingtalkmicro_app__1__0_models.UpdateInnerAppResponse(),
-            await self.do_roarequest_async('UpdateInnerApp', 'microApp_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/microApp/apps/{agent_id}', 'json', req, runtime)
-        )
-
     def list_user_vileble_app(
         self,
         user_id: str,
@@ -893,90 +1437,6 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkmicro_app__1__0_models.ListUserVilebleAppResponse(),
             await self.do_roarequest_async('ListUserVilebleApp', 'microApp_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/microApp/users/{user_id}/apps', 'json', req, runtime)
-        )
-
-    def add_member_to_app_role(
-        self,
-        agent_id: str,
-        role_id: str,
-        request: dingtalkmicro_app__1__0_models.AddMemberToAppRoleRequest,
-    ) -> dingtalkmicro_app__1__0_models.AddMemberToAppRoleResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkmicro_app__1__0_models.AddMemberToAppRoleHeaders()
-        return self.add_member_to_app_role_with_options(agent_id, role_id, request, headers, runtime)
-
-    async def add_member_to_app_role_async(
-        self,
-        agent_id: str,
-        role_id: str,
-        request: dingtalkmicro_app__1__0_models.AddMemberToAppRoleRequest,
-    ) -> dingtalkmicro_app__1__0_models.AddMemberToAppRoleResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkmicro_app__1__0_models.AddMemberToAppRoleHeaders()
-        return await self.add_member_to_app_role_with_options_async(agent_id, role_id, request, headers, runtime)
-
-    def add_member_to_app_role_with_options(
-        self,
-        agent_id: str,
-        role_id: str,
-        request: dingtalkmicro_app__1__0_models.AddMemberToAppRoleRequest,
-        headers: dingtalkmicro_app__1__0_models.AddMemberToAppRoleHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkmicro_app__1__0_models.AddMemberToAppRoleResponse:
-        UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.op_user_id):
-            body['opUserId'] = request.op_user_id
-        if not UtilClient.is_unset(request.scope_version):
-            body['scopeVersion'] = request.scope_version
-        if not UtilClient.is_unset(request.dept_id_list):
-            body['deptIdList'] = request.dept_id_list
-        if not UtilClient.is_unset(request.user_id_list):
-            body['userIdList'] = request.user_id_list
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
-        )
-        return TeaCore.from_map(
-            dingtalkmicro_app__1__0_models.AddMemberToAppRoleResponse(),
-            self.do_roarequest('AddMemberToAppRole', 'microApp_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/microApp/apps/{agent_id}/roles/{role_id}/members', 'json', req, runtime)
-        )
-
-    async def add_member_to_app_role_with_options_async(
-        self,
-        agent_id: str,
-        role_id: str,
-        request: dingtalkmicro_app__1__0_models.AddMemberToAppRoleRequest,
-        headers: dingtalkmicro_app__1__0_models.AddMemberToAppRoleHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkmicro_app__1__0_models.AddMemberToAppRoleResponse:
-        UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.op_user_id):
-            body['opUserId'] = request.op_user_id
-        if not UtilClient.is_unset(request.scope_version):
-            body['scopeVersion'] = request.scope_version
-        if not UtilClient.is_unset(request.dept_id_list):
-            body['deptIdList'] = request.dept_id_list
-        if not UtilClient.is_unset(request.user_id_list):
-            body['userIdList'] = request.user_id_list
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
-        )
-        return TeaCore.from_map(
-            dingtalkmicro_app__1__0_models.AddMemberToAppRoleResponse(),
-            await self.do_roarequest_async('AddMemberToAppRole', 'microApp_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/microApp/apps/{agent_id}/roles/{role_id}/members', 'json', req, runtime)
         )
 
     def list_app_role_scopes(
@@ -1261,74 +1721,6 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('RebuildRoleScopeForAppRole', 'microApp_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/microApp/apps/{agent_id}/roles/{role_id}/scopes/rebuild', 'json', req, runtime)
         )
 
-    def remove_apaas_app(
-        self,
-        request: dingtalkmicro_app__1__0_models.RemoveApaasAppRequest,
-    ) -> dingtalkmicro_app__1__0_models.RemoveApaasAppResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkmicro_app__1__0_models.RemoveApaasAppHeaders()
-        return self.remove_apaas_app_with_options(request, headers, runtime)
-
-    async def remove_apaas_app_async(
-        self,
-        request: dingtalkmicro_app__1__0_models.RemoveApaasAppRequest,
-    ) -> dingtalkmicro_app__1__0_models.RemoveApaasAppResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkmicro_app__1__0_models.RemoveApaasAppHeaders()
-        return await self.remove_apaas_app_with_options_async(request, headers, runtime)
-
-    def remove_apaas_app_with_options(
-        self,
-        request: dingtalkmicro_app__1__0_models.RemoveApaasAppRequest,
-        headers: dingtalkmicro_app__1__0_models.RemoveApaasAppHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkmicro_app__1__0_models.RemoveApaasAppResponse:
-        UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.op_user_id):
-            body['opUserId'] = request.op_user_id
-        if not UtilClient.is_unset(request.biz_app_id):
-            body['bizAppId'] = request.biz_app_id
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
-        )
-        return TeaCore.from_map(
-            dingtalkmicro_app__1__0_models.RemoveApaasAppResponse(),
-            self.do_roarequest('RemoveApaasApp', 'microApp_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/microApp/apaasApps/remove', 'json', req, runtime)
-        )
-
-    async def remove_apaas_app_with_options_async(
-        self,
-        request: dingtalkmicro_app__1__0_models.RemoveApaasAppRequest,
-        headers: dingtalkmicro_app__1__0_models.RemoveApaasAppHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkmicro_app__1__0_models.RemoveApaasAppResponse:
-        UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.op_user_id):
-            body['opUserId'] = request.op_user_id
-        if not UtilClient.is_unset(request.biz_app_id):
-            body['bizAppId'] = request.biz_app_id
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
-        )
-        return TeaCore.from_map(
-            dingtalkmicro_app__1__0_models.RemoveApaasAppResponse(),
-            await self.do_roarequest_async('RemoveApaasApp', 'microApp_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/microApp/apaasApps/remove', 'json', req, runtime)
-        )
-
     def delete_app_role(
         self,
         agent_id: str,
@@ -1401,114 +1793,6 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('DeleteAppRole', 'microApp_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/microApp/apps/{agent_id}/roles/{role_id}', 'json', req, runtime)
         )
 
-    def create_apaas_app(
-        self,
-        request: dingtalkmicro_app__1__0_models.CreateApaasAppRequest,
-    ) -> dingtalkmicro_app__1__0_models.CreateApaasAppResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkmicro_app__1__0_models.CreateApaasAppHeaders()
-        return self.create_apaas_app_with_options(request, headers, runtime)
-
-    async def create_apaas_app_async(
-        self,
-        request: dingtalkmicro_app__1__0_models.CreateApaasAppRequest,
-    ) -> dingtalkmicro_app__1__0_models.CreateApaasAppResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkmicro_app__1__0_models.CreateApaasAppHeaders()
-        return await self.create_apaas_app_with_options_async(request, headers, runtime)
-
-    def create_apaas_app_with_options(
-        self,
-        request: dingtalkmicro_app__1__0_models.CreateApaasAppRequest,
-        headers: dingtalkmicro_app__1__0_models.CreateApaasAppHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkmicro_app__1__0_models.CreateApaasAppResponse:
-        UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.app_name):
-            body['appName'] = request.app_name
-        if not UtilClient.is_unset(request.app_desc):
-            body['appDesc'] = request.app_desc
-        if not UtilClient.is_unset(request.app_icon):
-            body['appIcon'] = request.app_icon
-        if not UtilClient.is_unset(request.homepage_link):
-            body['homepageLink'] = request.homepage_link
-        if not UtilClient.is_unset(request.pc_homepage_link):
-            body['pcHomepageLink'] = request.pc_homepage_link
-        if not UtilClient.is_unset(request.omp_link):
-            body['ompLink'] = request.omp_link
-        if not UtilClient.is_unset(request.homepage_edit_link):
-            body['homepageEditLink'] = request.homepage_edit_link
-        if not UtilClient.is_unset(request.pc_homepage_edit_link):
-            body['pcHomepageEditLink'] = request.pc_homepage_edit_link
-        if not UtilClient.is_unset(request.op_user_id):
-            body['opUserId'] = request.op_user_id
-        if not UtilClient.is_unset(request.biz_app_id):
-            body['bizAppId'] = request.biz_app_id
-        if not UtilClient.is_unset(request.template_key):
-            body['templateKey'] = request.template_key
-        if not UtilClient.is_unset(request.is_short_cut):
-            body['isShortCut'] = request.is_short_cut
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
-        )
-        return TeaCore.from_map(
-            dingtalkmicro_app__1__0_models.CreateApaasAppResponse(),
-            self.do_roarequest('CreateApaasApp', 'microApp_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/microApp/apaasApps', 'json', req, runtime)
-        )
-
-    async def create_apaas_app_with_options_async(
-        self,
-        request: dingtalkmicro_app__1__0_models.CreateApaasAppRequest,
-        headers: dingtalkmicro_app__1__0_models.CreateApaasAppHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkmicro_app__1__0_models.CreateApaasAppResponse:
-        UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.app_name):
-            body['appName'] = request.app_name
-        if not UtilClient.is_unset(request.app_desc):
-            body['appDesc'] = request.app_desc
-        if not UtilClient.is_unset(request.app_icon):
-            body['appIcon'] = request.app_icon
-        if not UtilClient.is_unset(request.homepage_link):
-            body['homepageLink'] = request.homepage_link
-        if not UtilClient.is_unset(request.pc_homepage_link):
-            body['pcHomepageLink'] = request.pc_homepage_link
-        if not UtilClient.is_unset(request.omp_link):
-            body['ompLink'] = request.omp_link
-        if not UtilClient.is_unset(request.homepage_edit_link):
-            body['homepageEditLink'] = request.homepage_edit_link
-        if not UtilClient.is_unset(request.pc_homepage_edit_link):
-            body['pcHomepageEditLink'] = request.pc_homepage_edit_link
-        if not UtilClient.is_unset(request.op_user_id):
-            body['opUserId'] = request.op_user_id
-        if not UtilClient.is_unset(request.biz_app_id):
-            body['bizAppId'] = request.biz_app_id
-        if not UtilClient.is_unset(request.template_key):
-            body['templateKey'] = request.template_key
-        if not UtilClient.is_unset(request.is_short_cut):
-            body['isShortCut'] = request.is_short_cut
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
-        )
-        return TeaCore.from_map(
-            dingtalkmicro_app__1__0_models.CreateApaasAppResponse(),
-            await self.do_roarequest_async('CreateApaasApp', 'microApp_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/microApp/apaasApps', 'json', req, runtime)
-        )
-
     def delete_inner_app(
         self,
         agent_id: str,
@@ -1575,84 +1859,4 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkmicro_app__1__0_models.DeleteInnerAppResponse(),
             await self.do_roarequest_async('DeleteInnerApp', 'microApp_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/microApp/apps/{agent_id}', 'json', req, runtime)
-        )
-
-    def update_app_role_info(
-        self,
-        agent_id: str,
-        role_id: str,
-        request: dingtalkmicro_app__1__0_models.UpdateAppRoleInfoRequest,
-    ) -> dingtalkmicro_app__1__0_models.UpdateAppRoleInfoResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkmicro_app__1__0_models.UpdateAppRoleInfoHeaders()
-        return self.update_app_role_info_with_options(agent_id, role_id, request, headers, runtime)
-
-    async def update_app_role_info_async(
-        self,
-        agent_id: str,
-        role_id: str,
-        request: dingtalkmicro_app__1__0_models.UpdateAppRoleInfoRequest,
-    ) -> dingtalkmicro_app__1__0_models.UpdateAppRoleInfoResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkmicro_app__1__0_models.UpdateAppRoleInfoHeaders()
-        return await self.update_app_role_info_with_options_async(agent_id, role_id, request, headers, runtime)
-
-    def update_app_role_info_with_options(
-        self,
-        agent_id: str,
-        role_id: str,
-        request: dingtalkmicro_app__1__0_models.UpdateAppRoleInfoRequest,
-        headers: dingtalkmicro_app__1__0_models.UpdateAppRoleInfoHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkmicro_app__1__0_models.UpdateAppRoleInfoResponse:
-        UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.op_user_id):
-            body['opUserId'] = request.op_user_id
-        if not UtilClient.is_unset(request.new_role_name):
-            body['newRoleName'] = request.new_role_name
-        if not UtilClient.is_unset(request.can_manage_role):
-            body['canManageRole'] = request.can_manage_role
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
-        )
-        return TeaCore.from_map(
-            dingtalkmicro_app__1__0_models.UpdateAppRoleInfoResponse(),
-            self.do_roarequest('UpdateAppRoleInfo', 'microApp_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/microApp/apps/{agent_id}/roles/{role_id}', 'json', req, runtime)
-        )
-
-    async def update_app_role_info_with_options_async(
-        self,
-        agent_id: str,
-        role_id: str,
-        request: dingtalkmicro_app__1__0_models.UpdateAppRoleInfoRequest,
-        headers: dingtalkmicro_app__1__0_models.UpdateAppRoleInfoHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkmicro_app__1__0_models.UpdateAppRoleInfoResponse:
-        UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.op_user_id):
-            body['opUserId'] = request.op_user_id
-        if not UtilClient.is_unset(request.new_role_name):
-            body['newRoleName'] = request.new_role_name
-        if not UtilClient.is_unset(request.can_manage_role):
-            body['canManageRole'] = request.can_manage_role
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
-        )
-        return TeaCore.from_map(
-            dingtalkmicro_app__1__0_models.UpdateAppRoleInfoResponse(),
-            await self.do_roarequest_async('UpdateAppRoleInfo', 'microApp_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/microApp/apps/{agent_id}/roles/{role_id}', 'json', req, runtime)
         )

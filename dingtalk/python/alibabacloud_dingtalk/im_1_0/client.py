@@ -215,6 +215,60 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('UpdateInteractiveCard', 'im_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/im/interactiveCards', 'json', req, runtime)
         )
 
+    def chat_id_to_open_conversation_id(
+        self,
+        chat_id: str,
+    ) -> dingtalkim__1__0_models.ChatIdToOpenConversationIdResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.ChatIdToOpenConversationIdHeaders()
+        return self.chat_id_to_open_conversation_id_with_options(chat_id, headers, runtime)
+
+    async def chat_id_to_open_conversation_id_async(
+        self,
+        chat_id: str,
+    ) -> dingtalkim__1__0_models.ChatIdToOpenConversationIdResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.ChatIdToOpenConversationIdHeaders()
+        return await self.chat_id_to_open_conversation_id_with_options_async(chat_id, headers, runtime)
+
+    def chat_id_to_open_conversation_id_with_options(
+        self,
+        chat_id: str,
+        headers: dingtalkim__1__0_models.ChatIdToOpenConversationIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.ChatIdToOpenConversationIdResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.ChatIdToOpenConversationIdResponse(),
+            self.do_roarequest('ChatIdToOpenConversationId', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/chat/{chat_id}/convertToOpenConversationId', 'json', req, runtime)
+        )
+
+    async def chat_id_to_open_conversation_id_with_options_async(
+        self,
+        chat_id: str,
+        headers: dingtalkim__1__0_models.ChatIdToOpenConversationIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.ChatIdToOpenConversationIdResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.ChatIdToOpenConversationIdResponse(),
+            await self.do_roarequest_async('ChatIdToOpenConversationId', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/chat/{chat_id}/convertToOpenConversationId', 'json', req, runtime)
+        )
+
     def update_group_sub_admin(
         self,
         request: dingtalkim__1__0_models.UpdateGroupSubAdminRequest,
@@ -533,12 +587,16 @@ class Client(OpenApiClient):
             body['appUserAvatarType'] = request.app_user_avatar_type
         if not UtilClient.is_unset(request.app_user_mobile_number):
             body['appUserMobileNumber'] = request.app_user_mobile_number
-        if not UtilClient.is_unset(request.ding_corp_id):
-            body['dingCorpId'] = request.ding_corp_id
-        if not UtilClient.is_unset(request.ding_user_id):
-            body['dingUserId'] = request.ding_user_id
-        if not UtilClient.is_unset(request.msg_page_setting_id):
-            body['msgPageSettingId'] = request.msg_page_setting_id
+        if not UtilClient.is_unset(request.qr_code):
+            body['qrCode'] = request.qr_code
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.msg_page_type):
+            body['msgPageType'] = request.msg_page_type
+        if not UtilClient.is_unset(request.source_type):
+            body['sourceType'] = request.source_type
+        if not UtilClient.is_unset(request.signature):
+            body['signature'] = request.signature
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -571,12 +629,16 @@ class Client(OpenApiClient):
             body['appUserAvatarType'] = request.app_user_avatar_type
         if not UtilClient.is_unset(request.app_user_mobile_number):
             body['appUserMobileNumber'] = request.app_user_mobile_number
-        if not UtilClient.is_unset(request.ding_corp_id):
-            body['dingCorpId'] = request.ding_corp_id
-        if not UtilClient.is_unset(request.ding_user_id):
-            body['dingUserId'] = request.ding_user_id
-        if not UtilClient.is_unset(request.msg_page_setting_id):
-            body['msgPageSettingId'] = request.msg_page_setting_id
+        if not UtilClient.is_unset(request.qr_code):
+            body['qrCode'] = request.qr_code
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.msg_page_type):
+            body['msgPageType'] = request.msg_page_type
+        if not UtilClient.is_unset(request.source_type):
+            body['sourceType'] = request.source_type
+        if not UtilClient.is_unset(request.signature):
+            body['signature'] = request.signature
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1429,6 +1491,94 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberResponse(),
             await self.do_roarequest_async('UpdateTheGroupRolesOfGroupMember', 'im_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/im/sceneGroups/members/groupRoles', 'json', req, runtime)
+        )
+
+    def card_template_build_action(
+        self,
+        request: dingtalkim__1__0_models.CardTemplateBuildActionRequest,
+    ) -> dingtalkim__1__0_models.CardTemplateBuildActionResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.CardTemplateBuildActionHeaders()
+        return self.card_template_build_action_with_options(request, headers, runtime)
+
+    async def card_template_build_action_async(
+        self,
+        request: dingtalkim__1__0_models.CardTemplateBuildActionRequest,
+    ) -> dingtalkim__1__0_models.CardTemplateBuildActionResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.CardTemplateBuildActionHeaders()
+        return await self.card_template_build_action_with_options_async(request, headers, runtime)
+
+    def card_template_build_action_with_options(
+        self,
+        request: dingtalkim__1__0_models.CardTemplateBuildActionRequest,
+        headers: dingtalkim__1__0_models.CardTemplateBuildActionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.CardTemplateBuildActionResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_oauth_app_id):
+            body['dingOauthAppId'] = request.ding_oauth_app_id
+        if not UtilClient.is_unset(request.action):
+            body['action'] = request.action
+        if not UtilClient.is_unset(request.card_template_json):
+            body['cardTemplateJson'] = request.card_template_json
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.CardTemplateBuildActionResponse(),
+            self.do_roarequest('CardTemplateBuildAction', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interactiveCards/templates/buildAction', 'json', req, runtime)
+        )
+
+    async def card_template_build_action_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.CardTemplateBuildActionRequest,
+        headers: dingtalkim__1__0_models.CardTemplateBuildActionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.CardTemplateBuildActionResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_oauth_app_id):
+            body['dingOauthAppId'] = request.ding_oauth_app_id
+        if not UtilClient.is_unset(request.action):
+            body['action'] = request.action
+        if not UtilClient.is_unset(request.card_template_json):
+            body['cardTemplateJson'] = request.card_template_json
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.CardTemplateBuildActionResponse(),
+            await self.do_roarequest_async('CardTemplateBuildAction', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interactiveCards/templates/buildAction', 'json', req, runtime)
         )
 
     def send_robot_interactive_card(
