@@ -11,6 +11,9 @@ use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\ApplyBatchPayResponse;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\ConsultCreateSubInstitutionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\ConsultCreateSubInstitutionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\ConsultCreateSubInstitutionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\CreateAcquireRefundOrderHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\CreateAcquireRefundOrderRequest;
+use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\CreateAcquireRefundOrderResponse;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\CreateBatchTradeOrderHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\CreateBatchTradeOrderRequest;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\CreateBatchTradeOrderResponse;
@@ -38,6 +41,9 @@ use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\NotifyPayCodeRefundResultRespo
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\NotifyVerifyResultHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\NotifyVerifyResultRequest;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\NotifyVerifyResultResponse;
+use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\QueryAcquireRefundOrderHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\QueryAcquireRefundOrderRequest;
+use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\QueryAcquireRefundOrderResponse;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\QueryBatchTradeDetailListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\QueryBatchTradeDetailListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\QueryBatchTradeDetailListResponse;
@@ -86,99 +92,6 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
-    }
-
-    /**
-     * @param NotifyPayCodePayResultRequest $request
-     *
-     * @return NotifyPayCodePayResultResponse
-     */
-    public function notifyPayCodePayResult($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new NotifyPayCodePayResultHeaders([]);
-
-        return $this->notifyPayCodePayResultWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param NotifyPayCodePayResultRequest $request
-     * @param NotifyPayCodePayResultHeaders $headers
-     * @param RuntimeOptions                $runtime
-     *
-     * @return NotifyPayCodePayResultResponse
-     */
-    public function notifyPayCodePayResultWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->payCode)) {
-            @$body['payCode'] = $request->payCode;
-        }
-        if (!Utils::isUnset($request->corpId)) {
-            @$body['corpId'] = $request->corpId;
-        }
-        if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
-        }
-        if (!Utils::isUnset($request->gmtTradeCreate)) {
-            @$body['gmtTradeCreate'] = $request->gmtTradeCreate;
-        }
-        if (!Utils::isUnset($request->gmtTradeFinish)) {
-            @$body['gmtTradeFinish'] = $request->gmtTradeFinish;
-        }
-        if (!Utils::isUnset($request->tradeNo)) {
-            @$body['tradeNo'] = $request->tradeNo;
-        }
-        if (!Utils::isUnset($request->tradeStatus)) {
-            @$body['tradeStatus'] = $request->tradeStatus;
-        }
-        if (!Utils::isUnset($request->title)) {
-            @$body['title'] = $request->title;
-        }
-        if (!Utils::isUnset($request->remark)) {
-            @$body['remark'] = $request->remark;
-        }
-        if (!Utils::isUnset($request->amount)) {
-            @$body['amount'] = $request->amount;
-        }
-        if (!Utils::isUnset($request->promotionAmount)) {
-            @$body['promotionAmount'] = $request->promotionAmount;
-        }
-        if (!Utils::isUnset($request->chargeAmount)) {
-            @$body['chargeAmount'] = $request->chargeAmount;
-        }
-        if (!Utils::isUnset($request->payChannelDetailList)) {
-            @$body['payChannelDetailList'] = $request->payChannelDetailList;
-        }
-        if (!Utils::isUnset($request->tradeErrorCode)) {
-            @$body['tradeErrorCode'] = $request->tradeErrorCode;
-        }
-        if (!Utils::isUnset($request->tradeErrorMsg)) {
-            @$body['tradeErrorMsg'] = $request->tradeErrorMsg;
-        }
-        if (!Utils::isUnset($request->extInfo)) {
-            @$body['extInfo'] = $request->extInfo;
-        }
-        if (!Utils::isUnset($request->dingIsvOrgId)) {
-            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
-        }
-        if (!Utils::isUnset($request->merchantName)) {
-            @$body['merchantName'] = $request->merchantName;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return NotifyPayCodePayResultResponse::fromMap($this->doROARequest('NotifyPayCodePayResult', 'finance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/finance/payCodes/payResults/notify', 'json', $req, $runtime));
     }
 
     /**
@@ -569,57 +482,6 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryRegisterOrderRequest $request
-     *
-     * @return QueryRegisterOrderResponse
-     */
-    public function queryRegisterOrder($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryRegisterOrderHeaders([]);
-
-        return $this->queryRegisterOrderWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryRegisterOrderRequest $request
-     * @param QueryRegisterOrderHeaders $headers
-     * @param RuntimeOptions            $runtime
-     *
-     * @return QueryRegisterOrderResponse
-     */
-    public function queryRegisterOrderWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->instId)) {
-            @$query['instId'] = $request->instId;
-        }
-        if (!Utils::isUnset($request->subInstId)) {
-            @$query['subInstId'] = $request->subInstId;
-        }
-        if (!Utils::isUnset($request->outTradeNo)) {
-            @$query['outTradeNo'] = $request->outTradeNo;
-        }
-        if (!Utils::isUnset($request->orderId)) {
-            @$query['orderId'] = $request->orderId;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryRegisterOrderResponse::fromMap($this->doROARequest('QueryRegisterOrder', 'finance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/finance/institutions/subInstitutions/orders', 'json', $req, $runtime));
-    }
-
-    /**
      * @param CreateBatchTradeOrderRequest $request
      *
      * @return CreateBatchTradeOrderResponse
@@ -938,6 +800,48 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param QueryAcquireRefundOrderRequest $request
+     *
+     * @return QueryAcquireRefundOrderResponse
+     */
+    public function queryAcquireRefundOrder($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryAcquireRefundOrderHeaders([]);
+
+        return $this->queryAcquireRefundOrderWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryAcquireRefundOrderRequest $request
+     * @param QueryAcquireRefundOrderHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return QueryAcquireRefundOrderResponse
+     */
+    public function queryAcquireRefundOrderWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->outRefundNo)) {
+            @$query['outRefundNo'] = $request->outRefundNo;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryAcquireRefundOrderResponse::fromMap($this->doROARequest('QueryAcquireRefundOrder', 'finance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/finance/acquireOrders/refunds', 'json', $req, $runtime));
+    }
+
+    /**
      * @param QueryBatchTradeOrderRequest $request
      *
      * @return QueryBatchTradeOrderResponse
@@ -977,72 +881,6 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryBatchTradeOrderResponse::fromMap($this->doROARequest('QueryBatchTradeOrder', 'finance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/finance/batchTrades/orders/query', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param UploadRegisterImageRequest $request
-     *
-     * @return UploadRegisterImageResponse
-     */
-    public function uploadRegisterImage($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new UploadRegisterImageHeaders([]);
-
-        return $this->uploadRegisterImageWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param UploadRegisterImageRequest $request
-     * @param UploadRegisterImageHeaders $headers
-     * @param RuntimeOptions             $runtime
-     *
-     * @return UploadRegisterImageResponse
-     */
-    public function uploadRegisterImageWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->instId)) {
-            @$body['instId'] = $request->instId;
-        }
-        if (!Utils::isUnset($request->payChannel)) {
-            @$body['payChannel'] = $request->payChannel;
-        }
-        if (!Utils::isUnset($request->imageType)) {
-            @$body['imageType'] = $request->imageType;
-        }
-        if (!Utils::isUnset($request->imageName)) {
-            @$body['imageName'] = $request->imageName;
-        }
-        if (!Utils::isUnset($request->imageContent)) {
-            @$body['imageContent'] = $request->imageContent;
-        }
-        if (!Utils::isUnset($request->dingOrgId)) {
-            @$body['dingOrgId'] = $request->dingOrgId;
-        }
-        if (!Utils::isUnset($request->dingIsvOrgId)) {
-            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
-        }
-        if (!Utils::isUnset($request->dingClientId)) {
-            @$body['dingClientId'] = $request->dingClientId;
-        }
-        if (!Utils::isUnset($request->dingTokenGrantType)) {
-            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return UploadRegisterImageResponse::fromMap($this->doROARequest('UploadRegisterImage', 'finance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/finance/institutions/images', 'json', $req, $runtime));
     }
 
     /**
@@ -1178,75 +1016,6 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UnsignUserAgreementRequest $request
-     *
-     * @return UnsignUserAgreementResponse
-     */
-    public function unsignUserAgreement($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new UnsignUserAgreementHeaders([]);
-
-        return $this->unsignUserAgreementWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param UnsignUserAgreementRequest $request
-     * @param UnsignUserAgreementHeaders $headers
-     * @param RuntimeOptions             $runtime
-     *
-     * @return UnsignUserAgreementResponse
-     */
-    public function unsignUserAgreementWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->instId)) {
-            @$body['instId'] = $request->instId;
-        }
-        if (!Utils::isUnset($request->subInstId)) {
-            @$body['subInstId'] = $request->subInstId;
-        }
-        if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
-        }
-        if (!Utils::isUnset($request->bizCode)) {
-            @$body['bizCode'] = $request->bizCode;
-        }
-        if (!Utils::isUnset($request->bizScene)) {
-            @$body['bizScene'] = $request->bizScene;
-        }
-        if (!Utils::isUnset($request->agreementNo)) {
-            @$body['agreementNo'] = $request->agreementNo;
-        }
-        if (!Utils::isUnset($request->dingOrgId)) {
-            @$body['dingOrgId'] = $request->dingOrgId;
-        }
-        if (!Utils::isUnset($request->dingIsvOrgId)) {
-            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
-        }
-        if (!Utils::isUnset($request->dingClientId)) {
-            @$body['dingClientId'] = $request->dingClientId;
-        }
-        if (!Utils::isUnset($request->dingTokenGrantType)) {
-            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return UnsignUserAgreementResponse::fromMap($this->doROARequest('UnsignUserAgreement', 'finance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/finance/userAgreements/unsign', 'none', $req, $runtime));
-    }
-
-    /**
      * @param ConsultCreateSubInstitutionRequest $request
      *
      * @return ConsultCreateSubInstitutionResponse
@@ -1346,6 +1115,438 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return ConsultCreateSubInstitutionResponse::fromMap($this->doROARequest('ConsultCreateSubInstitution', 'finance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/finance/institutions/subInstitutions/consult', 'json', $req, $runtime));
+    }
+
+    /**
+     * @return QueryPayAccountListResponse
+     */
+    public function queryPayAccountList()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryPayAccountListHeaders([]);
+
+        return $this->queryPayAccountListWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param QueryPayAccountListHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return QueryPayAccountListResponse
+     */
+    public function queryPayAccountListWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return QueryPayAccountListResponse::fromMap($this->doROARequest('QueryPayAccountList', 'finance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/finance/payAccounts', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryWithholdingOrderRequest $request
+     *
+     * @return QueryWithholdingOrderResponse
+     */
+    public function queryWithholdingOrder($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryWithholdingOrderHeaders([]);
+
+        return $this->queryWithholdingOrderWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryWithholdingOrderRequest $request
+     * @param QueryWithholdingOrderHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return QueryWithholdingOrderResponse
+     */
+    public function queryWithholdingOrderWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->outTradeNo)) {
+            @$query['outTradeNo'] = $request->outTradeNo;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryWithholdingOrderResponse::fromMap($this->doROARequest('QueryWithholdingOrder', 'finance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/finance/withholdingOrders', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param NotifyPayCodePayResultRequest $request
+     *
+     * @return NotifyPayCodePayResultResponse
+     */
+    public function notifyPayCodePayResult($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new NotifyPayCodePayResultHeaders([]);
+
+        return $this->notifyPayCodePayResultWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param NotifyPayCodePayResultRequest $request
+     * @param NotifyPayCodePayResultHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return NotifyPayCodePayResultResponse
+     */
+    public function notifyPayCodePayResultWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->payCode)) {
+            @$body['payCode'] = $request->payCode;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            @$body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->gmtTradeCreate)) {
+            @$body['gmtTradeCreate'] = $request->gmtTradeCreate;
+        }
+        if (!Utils::isUnset($request->gmtTradeFinish)) {
+            @$body['gmtTradeFinish'] = $request->gmtTradeFinish;
+        }
+        if (!Utils::isUnset($request->tradeNo)) {
+            @$body['tradeNo'] = $request->tradeNo;
+        }
+        if (!Utils::isUnset($request->tradeStatus)) {
+            @$body['tradeStatus'] = $request->tradeStatus;
+        }
+        if (!Utils::isUnset($request->title)) {
+            @$body['title'] = $request->title;
+        }
+        if (!Utils::isUnset($request->remark)) {
+            @$body['remark'] = $request->remark;
+        }
+        if (!Utils::isUnset($request->amount)) {
+            @$body['amount'] = $request->amount;
+        }
+        if (!Utils::isUnset($request->promotionAmount)) {
+            @$body['promotionAmount'] = $request->promotionAmount;
+        }
+        if (!Utils::isUnset($request->chargeAmount)) {
+            @$body['chargeAmount'] = $request->chargeAmount;
+        }
+        if (!Utils::isUnset($request->payChannelDetailList)) {
+            @$body['payChannelDetailList'] = $request->payChannelDetailList;
+        }
+        if (!Utils::isUnset($request->tradeErrorCode)) {
+            @$body['tradeErrorCode'] = $request->tradeErrorCode;
+        }
+        if (!Utils::isUnset($request->tradeErrorMsg)) {
+            @$body['tradeErrorMsg'] = $request->tradeErrorMsg;
+        }
+        if (!Utils::isUnset($request->extInfo)) {
+            @$body['extInfo'] = $request->extInfo;
+        }
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->merchantName)) {
+            @$body['merchantName'] = $request->merchantName;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return NotifyPayCodePayResultResponse::fromMap($this->doROARequest('NotifyPayCodePayResult', 'finance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/finance/payCodes/payResults/notify', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CreateAcquireRefundOrderRequest $request
+     *
+     * @return CreateAcquireRefundOrderResponse
+     */
+    public function createAcquireRefundOrder($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateAcquireRefundOrderHeaders([]);
+
+        return $this->createAcquireRefundOrderWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateAcquireRefundOrderRequest $request
+     * @param CreateAcquireRefundOrderHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return CreateAcquireRefundOrderResponse
+     */
+    public function createAcquireRefundOrderWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->instId)) {
+            @$body['instId'] = $request->instId;
+        }
+        if (!Utils::isUnset($request->subInstId)) {
+            @$body['subInstId'] = $request->subInstId;
+        }
+        if (!Utils::isUnset($request->operatorUserId)) {
+            @$body['operatorUserId'] = $request->operatorUserId;
+        }
+        if (!Utils::isUnset($request->refundAmount)) {
+            @$body['refundAmount'] = $request->refundAmount;
+        }
+        if (!Utils::isUnset($request->outRefundNo)) {
+            @$body['outRefundNo'] = $request->outRefundNo;
+        }
+        if (!Utils::isUnset($request->title)) {
+            @$body['title'] = $request->title;
+        }
+        if (!Utils::isUnset($request->remark)) {
+            @$body['remark'] = $request->remark;
+        }
+        if (!Utils::isUnset($request->originOutTradeNo)) {
+            @$body['originOutTradeNo'] = $request->originOutTradeNo;
+        }
+        if (!Utils::isUnset($request->otherPayChannelDetailInfoList)) {
+            @$body['otherPayChannelDetailInfoList'] = $request->otherPayChannelDetailInfoList;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->dingClientId)) {
+            @$body['dingClientId'] = $request->dingClientId;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateAcquireRefundOrderResponse::fromMap($this->doROARequest('CreateAcquireRefundOrder', 'finance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/finance/acquireOrders/refund', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryRegisterOrderRequest $request
+     *
+     * @return QueryRegisterOrderResponse
+     */
+    public function queryRegisterOrder($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryRegisterOrderHeaders([]);
+
+        return $this->queryRegisterOrderWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryRegisterOrderRequest $request
+     * @param QueryRegisterOrderHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return QueryRegisterOrderResponse
+     */
+    public function queryRegisterOrderWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->instId)) {
+            @$query['instId'] = $request->instId;
+        }
+        if (!Utils::isUnset($request->subInstId)) {
+            @$query['subInstId'] = $request->subInstId;
+        }
+        if (!Utils::isUnset($request->outTradeNo)) {
+            @$query['outTradeNo'] = $request->outTradeNo;
+        }
+        if (!Utils::isUnset($request->orderId)) {
+            @$query['orderId'] = $request->orderId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryRegisterOrderResponse::fromMap($this->doROARequest('QueryRegisterOrder', 'finance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/finance/institutions/subInstitutions/orders', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param UploadRegisterImageRequest $request
+     *
+     * @return UploadRegisterImageResponse
+     */
+    public function uploadRegisterImage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UploadRegisterImageHeaders([]);
+
+        return $this->uploadRegisterImageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UploadRegisterImageRequest $request
+     * @param UploadRegisterImageHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return UploadRegisterImageResponse
+     */
+    public function uploadRegisterImageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->instId)) {
+            @$body['instId'] = $request->instId;
+        }
+        if (!Utils::isUnset($request->payChannel)) {
+            @$body['payChannel'] = $request->payChannel;
+        }
+        if (!Utils::isUnset($request->imageType)) {
+            @$body['imageType'] = $request->imageType;
+        }
+        if (!Utils::isUnset($request->imageName)) {
+            @$body['imageName'] = $request->imageName;
+        }
+        if (!Utils::isUnset($request->imageContent)) {
+            @$body['imageContent'] = $request->imageContent;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->dingClientId)) {
+            @$body['dingClientId'] = $request->dingClientId;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UploadRegisterImageResponse::fromMap($this->doROARequest('UploadRegisterImage', 'finance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/finance/institutions/images', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param UnsignUserAgreementRequest $request
+     *
+     * @return UnsignUserAgreementResponse
+     */
+    public function unsignUserAgreement($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UnsignUserAgreementHeaders([]);
+
+        return $this->unsignUserAgreementWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UnsignUserAgreementRequest $request
+     * @param UnsignUserAgreementHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return UnsignUserAgreementResponse
+     */
+    public function unsignUserAgreementWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->instId)) {
+            @$body['instId'] = $request->instId;
+        }
+        if (!Utils::isUnset($request->subInstId)) {
+            @$body['subInstId'] = $request->subInstId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->bizCode)) {
+            @$body['bizCode'] = $request->bizCode;
+        }
+        if (!Utils::isUnset($request->bizScene)) {
+            @$body['bizScene'] = $request->bizScene;
+        }
+        if (!Utils::isUnset($request->agreementNo)) {
+            @$body['agreementNo'] = $request->agreementNo;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->dingClientId)) {
+            @$body['dingClientId'] = $request->dingClientId;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UnsignUserAgreementResponse::fromMap($this->doROARequest('UnsignUserAgreement', 'finance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/finance/userAgreements/unsign', 'none', $req, $runtime));
     }
 
     /**
@@ -1547,80 +1748,5 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CreateSubInstitutionResponse::fromMap($this->doROARequest('CreateSubInstitution', 'finance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/finance/institutions/subInstitutions', 'json', $req, $runtime));
-    }
-
-    /**
-     * @return QueryPayAccountListResponse
-     */
-    public function queryPayAccountList()
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryPayAccountListHeaders([]);
-
-        return $this->queryPayAccountListWithOptions($headers, $runtime);
-    }
-
-    /**
-     * @param QueryPayAccountListHeaders $headers
-     * @param RuntimeOptions             $runtime
-     *
-     * @return QueryPayAccountListResponse
-     */
-    public function queryPayAccountListWithOptions($headers, $runtime)
-    {
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-        ]);
-
-        return QueryPayAccountListResponse::fromMap($this->doROARequest('QueryPayAccountList', 'finance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/finance/payAccounts', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryWithholdingOrderRequest $request
-     *
-     * @return QueryWithholdingOrderResponse
-     */
-    public function queryWithholdingOrder($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryWithholdingOrderHeaders([]);
-
-        return $this->queryWithholdingOrderWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryWithholdingOrderRequest $request
-     * @param QueryWithholdingOrderHeaders $headers
-     * @param RuntimeOptions               $runtime
-     *
-     * @return QueryWithholdingOrderResponse
-     */
-    public function queryWithholdingOrderWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->outTradeNo)) {
-            @$query['outTradeNo'] = $request->outTradeNo;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryWithholdingOrderResponse::fromMap($this->doROARequest('QueryWithholdingOrder', 'finance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/finance/withholdingOrders', 'json', $req, $runtime));
     }
 }

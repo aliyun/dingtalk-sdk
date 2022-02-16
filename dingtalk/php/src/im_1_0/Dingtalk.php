@@ -5,6 +5,11 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vim_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CardTemplateBuildActionHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CardTemplateBuildActionRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CardTemplateBuildActionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ChatIdToOpenConversationIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ChatIdToOpenConversationIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetInterconnectionUrlHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetInterconnectionUrlRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetInterconnectionUrlResponse;
@@ -196,6 +201,42 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return UpdateInteractiveCardResponse::fromMap($this->doROARequest('UpdateInteractiveCard', 'im_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/im/interactiveCards', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $chatId
+     *
+     * @return ChatIdToOpenConversationIdResponse
+     */
+    public function chatIdToOpenConversationId($chatId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ChatIdToOpenConversationIdHeaders([]);
+
+        return $this->chatIdToOpenConversationIdWithOptions($chatId, $headers, $runtime);
+    }
+
+    /**
+     * @param string                            $chatId
+     * @param ChatIdToOpenConversationIdHeaders $headers
+     * @param RuntimeOptions                    $runtime
+     *
+     * @return ChatIdToOpenConversationIdResponse
+     */
+    public function chatIdToOpenConversationIdWithOptions($chatId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return ChatIdToOpenConversationIdResponse::fromMap($this->doROARequest('ChatIdToOpenConversationId', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/chat/' . $chatId . '/convertToOpenConversationId', 'json', $req, $runtime));
     }
 
     /**
@@ -432,14 +473,20 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->appUserMobileNumber)) {
             @$body['appUserMobileNumber'] = $request->appUserMobileNumber;
         }
-        if (!Utils::isUnset($request->dingCorpId)) {
-            @$body['dingCorpId'] = $request->dingCorpId;
+        if (!Utils::isUnset($request->qrCode)) {
+            @$body['qrCode'] = $request->qrCode;
         }
-        if (!Utils::isUnset($request->dingUserId)) {
-            @$body['dingUserId'] = $request->dingUserId;
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
         }
-        if (!Utils::isUnset($request->msgPageSettingId)) {
-            @$body['msgPageSettingId'] = $request->msgPageSettingId;
+        if (!Utils::isUnset($request->msgPageType)) {
+            @$body['msgPageType'] = $request->msgPageType;
+        }
+        if (!Utils::isUnset($request->sourceType)) {
+            @$body['sourceType'] = $request->sourceType;
+        }
+        if (!Utils::isUnset($request->signature)) {
+            @$body['signature'] = $request->signature;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -1036,6 +1083,66 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return UpdateTheGroupRolesOfGroupMemberResponse::fromMap($this->doROARequest('UpdateTheGroupRolesOfGroupMember', 'im_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/im/sceneGroups/members/groupRoles', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CardTemplateBuildActionRequest $request
+     *
+     * @return CardTemplateBuildActionResponse
+     */
+    public function cardTemplateBuildAction($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CardTemplateBuildActionHeaders([]);
+
+        return $this->cardTemplateBuildActionWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CardTemplateBuildActionRequest $request
+     * @param CardTemplateBuildActionHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return CardTemplateBuildActionResponse
+     */
+    public function cardTemplateBuildActionWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->dingOauthAppId)) {
+            @$body['dingOauthAppId'] = $request->dingOauthAppId;
+        }
+        if (!Utils::isUnset($request->action)) {
+            @$body['action'] = $request->action;
+        }
+        if (!Utils::isUnset($request->cardTemplateJson)) {
+            @$body['cardTemplateJson'] = $request->cardTemplateJson;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CardTemplateBuildActionResponse::fromMap($this->doROARequest('CardTemplateBuildAction', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/interactiveCards/templates/buildAction', 'json', $req, $runtime));
     }
 
     /**

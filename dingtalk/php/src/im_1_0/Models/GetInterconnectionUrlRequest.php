@@ -44,34 +44,50 @@ class GetInterconnectionUrlRequest extends Model
     public $appUserMobileNumber;
 
     /**
-     * @description dingCorpId
+     * @description qrCode
      *
      * @var string
      */
-    public $dingCorpId;
+    public $qrCode;
 
     /**
-     * @description dingUserId
+     * @description userId
      *
      * @var string
      */
-    public $dingUserId;
+    public $userId;
 
     /**
-     * @description msgPageSettingId
+     * @description msgPageType
      *
      * @var int
      */
-    public $msgPageSettingId;
+    public $msgPageType;
+
+    /**
+     * @description sourceType
+     *
+     * @var int
+     */
+    public $sourceType;
+
+    /**
+     * @description signature
+     *
+     * @var string
+     */
+    public $signature;
     protected $_name = [
         'appUserId'           => 'appUserId',
         'appUserName'         => 'appUserName',
         'appUserAvatar'       => 'appUserAvatar',
         'appUserAvatarType'   => 'appUserAvatarType',
         'appUserMobileNumber' => 'appUserMobileNumber',
-        'dingCorpId'          => 'dingCorpId',
-        'dingUserId'          => 'dingUserId',
-        'msgPageSettingId'    => 'msgPageSettingId',
+        'qrCode'              => 'qrCode',
+        'userId'              => 'userId',
+        'msgPageType'         => 'msgPageType',
+        'sourceType'          => 'sourceType',
+        'signature'           => 'signature',
     ];
 
     public function validate()
@@ -96,14 +112,20 @@ class GetInterconnectionUrlRequest extends Model
         if (null !== $this->appUserMobileNumber) {
             $res['appUserMobileNumber'] = $this->appUserMobileNumber;
         }
-        if (null !== $this->dingCorpId) {
-            $res['dingCorpId'] = $this->dingCorpId;
+        if (null !== $this->qrCode) {
+            $res['qrCode'] = $this->qrCode;
         }
-        if (null !== $this->dingUserId) {
-            $res['dingUserId'] = $this->dingUserId;
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
-        if (null !== $this->msgPageSettingId) {
-            $res['msgPageSettingId'] = $this->msgPageSettingId;
+        if (null !== $this->msgPageType) {
+            $res['msgPageType'] = $this->msgPageType;
+        }
+        if (null !== $this->sourceType) {
+            $res['sourceType'] = $this->sourceType;
+        }
+        if (null !== $this->signature) {
+            $res['signature'] = $this->signature;
         }
 
         return $res;
@@ -132,14 +154,20 @@ class GetInterconnectionUrlRequest extends Model
         if (isset($map['appUserMobileNumber'])) {
             $model->appUserMobileNumber = $map['appUserMobileNumber'];
         }
-        if (isset($map['dingCorpId'])) {
-            $model->dingCorpId = $map['dingCorpId'];
+        if (isset($map['qrCode'])) {
+            $model->qrCode = $map['qrCode'];
         }
-        if (isset($map['dingUserId'])) {
-            $model->dingUserId = $map['dingUserId'];
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
-        if (isset($map['msgPageSettingId'])) {
-            $model->msgPageSettingId = $map['msgPageSettingId'];
+        if (isset($map['msgPageType'])) {
+            $model->msgPageType = $map['msgPageType'];
+        }
+        if (isset($map['sourceType'])) {
+            $model->sourceType = $map['sourceType'];
+        }
+        if (isset($map['signature'])) {
+            $model->signature = $map['signature'];
         }
 
         return $model;

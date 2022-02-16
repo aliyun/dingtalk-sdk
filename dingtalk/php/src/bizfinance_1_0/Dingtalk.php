@@ -11,6 +11,8 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\CreateReceiptResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\DeleteReceiptHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\DeleteReceiptRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\DeleteReceiptResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetBookkeepingUserListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetBookkeepingUserListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetCategoryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetCategoryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetCategoryResponse;
@@ -388,6 +390,39 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetProjectResponse::fromMap($this->doROARequest('GetProject', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/bizfinance/projects/get', 'json', $req, $runtime));
+    }
+
+    /**
+     * @return GetBookkeepingUserListResponse
+     */
+    public function getBookkeepingUserList()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetBookkeepingUserListHeaders([]);
+
+        return $this->getBookkeepingUserListWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param GetBookkeepingUserListHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return GetBookkeepingUserListResponse
+     */
+    public function getBookkeepingUserListWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return GetBookkeepingUserListResponse::fromMap($this->doROARequest('GetBookkeepingUserList', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/bizfinance/bookkeeping/users', 'json', $req, $runtime));
     }
 
     /**
