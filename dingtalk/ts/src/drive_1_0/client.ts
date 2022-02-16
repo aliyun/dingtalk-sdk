@@ -3176,12 +3176,14 @@ export class GetUploadInfoResponseBodyHeaderSignatureUploadInfo extends $tea.Mod
   expirationSeconds?: number;
   headers?: { [key: string]: any };
   internalResourceUrl?: string;
+  mediaId?: string;
   resourceUrl?: string;
   static names(): { [key: string]: string } {
     return {
       expirationSeconds: 'expirationSeconds',
       headers: 'headers',
       internalResourceUrl: 'internalResourceUrl',
+      mediaId: 'mediaId',
       resourceUrl: 'resourceUrl',
     };
   }
@@ -3191,6 +3193,7 @@ export class GetUploadInfoResponseBodyHeaderSignatureUploadInfo extends $tea.Mod
       expirationSeconds: 'number',
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
       internalResourceUrl: 'string',
+      mediaId: 'string',
       resourceUrl: 'string',
     };
   }

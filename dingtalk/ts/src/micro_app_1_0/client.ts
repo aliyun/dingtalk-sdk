@@ -933,6 +933,132 @@ export class GetInnerAppResponse extends $tea.Model {
   }
 }
 
+export class GetMicroAppScopeHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMicroAppScopeResponseBody extends $tea.Model {
+  result?: GetMicroAppScopeResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: GetMicroAppScopeResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMicroAppScopeResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetMicroAppScopeResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetMicroAppScopeResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMicroAppUserAccessHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMicroAppUserAccessResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMicroAppUserAccessResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetMicroAppUserAccessResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetMicroAppUserAccessResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListAllAppHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1656,6 +1782,106 @@ export class RemoveMemberForAppRoleResponse extends $tea.Model {
   }
 }
 
+export class SetMicroAppScopeHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SetMicroAppScopeRequest extends $tea.Model {
+  addDeptIds?: number[];
+  addRoleIds?: number[];
+  addUserIds?: string[];
+  ddUserIds?: number[];
+  delDeptIds?: number[];
+  delUserIds?: string[];
+  onlyAdminVisible?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      addDeptIds: 'addDeptIds',
+      addRoleIds: 'addRoleIds',
+      addUserIds: 'addUserIds',
+      ddUserIds: 'ddUserIds',
+      delDeptIds: 'delDeptIds',
+      delUserIds: 'delUserIds',
+      onlyAdminVisible: 'onlyAdminVisible',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      addDeptIds: { 'type': 'array', 'itemType': 'number' },
+      addRoleIds: { 'type': 'array', 'itemType': 'number' },
+      addUserIds: { 'type': 'array', 'itemType': 'string' },
+      ddUserIds: { 'type': 'array', 'itemType': 'number' },
+      delDeptIds: { 'type': 'array', 'itemType': 'number' },
+      delUserIds: { 'type': 'array', 'itemType': 'string' },
+      onlyAdminVisible: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SetMicroAppScopeResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SetMicroAppScopeResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SetMicroAppScopeResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SetMicroAppScopeResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateApaasAppHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1989,6 +2215,34 @@ export class AddAppRolesToMemberResponseBodyResult extends $tea.Model {
       subErrorCode: 'string',
       subErrorMsg: 'string',
       success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMicroAppScopeResponseBodyResult extends $tea.Model {
+  deptIds?: number[];
+  onlyAdminVisible?: boolean;
+  roleIds?: number[];
+  userIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      deptIds: 'deptIds',
+      onlyAdminVisible: 'onlyAdminVisible',
+      roleIds: 'roleIds',
+      userIds: 'userIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptIds: { 'type': 'array', 'itemType': 'number' },
+      onlyAdminVisible: 'boolean',
+      roleIds: { 'type': 'array', 'itemType': 'number' },
+      userIds: { 'type': 'array', 'itemType': 'string' },
     };
   }
 
@@ -2594,6 +2848,53 @@ export default class Client extends OpenApi {
     return $tea.cast<GetInnerAppResponse>(await this.doROARequest("GetInnerApp", "microApp_1.0", "HTTP", "GET", "AK", `/v1.0/microApp/apps/${agentId}`, "json", req, runtime), new GetInnerAppResponse({}));
   }
 
+  async getMicroAppScope(agentId: string): Promise<GetMicroAppScopeResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetMicroAppScopeHeaders({ });
+    return await this.getMicroAppScopeWithOptions(agentId, headers, runtime);
+  }
+
+  async getMicroAppScopeWithOptions(agentId: string, headers: GetMicroAppScopeHeaders, runtime: $Util.RuntimeOptions): Promise<GetMicroAppScopeResponse> {
+    agentId = OpenApiUtil.getEncodeParam(agentId);
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<GetMicroAppScopeResponse>(await this.doROARequest("GetMicroAppScope", "microApp_1.0", "HTTP", "GET", "AK", `/v1.0/microApp/apps/${agentId}/scopes`, "json", req, runtime), new GetMicroAppScopeResponse({}));
+  }
+
+  async getMicroAppUserAccess(agentId: string, userId: string): Promise<GetMicroAppUserAccessResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetMicroAppUserAccessHeaders({ });
+    return await this.getMicroAppUserAccessWithOptions(agentId, userId, headers, runtime);
+  }
+
+  async getMicroAppUserAccessWithOptions(agentId: string, userId: string, headers: GetMicroAppUserAccessHeaders, runtime: $Util.RuntimeOptions): Promise<GetMicroAppUserAccessResponse> {
+    agentId = OpenApiUtil.getEncodeParam(agentId);
+    userId = OpenApiUtil.getEncodeParam(userId);
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<GetMicroAppUserAccessResponse>(await this.doROARequest("GetMicroAppUserAccess", "microApp_1.0", "HTTP", "GET", "AK", `/v1.0/microApp/apps/${agentId}/users/${userId}/adminAccess`, "json", req, runtime), new GetMicroAppUserAccessResponse({}));
+  }
+
   async listAllApp(): Promise<ListAllAppResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListAllAppHeaders({ });
@@ -2885,6 +3186,60 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<RemoveMemberForAppRoleResponse>(await this.doROARequest("RemoveMemberForAppRole", "microApp_1.0", "HTTP", "POST", "AK", `/v1.0/microApp/apps/${agentId}/roles/${roleId}/members/batchRemove`, "json", req, runtime), new RemoveMemberForAppRoleResponse({}));
+  }
+
+  async setMicroAppScope(agentId: string, request: SetMicroAppScopeRequest): Promise<SetMicroAppScopeResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SetMicroAppScopeHeaders({ });
+    return await this.setMicroAppScopeWithOptions(agentId, request, headers, runtime);
+  }
+
+  async setMicroAppScopeWithOptions(agentId: string, request: SetMicroAppScopeRequest, headers: SetMicroAppScopeHeaders, runtime: $Util.RuntimeOptions): Promise<SetMicroAppScopeResponse> {
+    Util.validateModel(request);
+    agentId = OpenApiUtil.getEncodeParam(agentId);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.addDeptIds)) {
+      body["addDeptIds"] = request.addDeptIds;
+    }
+
+    if (!Util.isUnset(request.addRoleIds)) {
+      body["addRoleIds"] = request.addRoleIds;
+    }
+
+    if (!Util.isUnset(request.addUserIds)) {
+      body["addUserIds"] = request.addUserIds;
+    }
+
+    if (!Util.isUnset(request.ddUserIds)) {
+      body["ddUserIds"] = request.ddUserIds;
+    }
+
+    if (!Util.isUnset(request.delDeptIds)) {
+      body["delDeptIds"] = request.delDeptIds;
+    }
+
+    if (!Util.isUnset(request.delUserIds)) {
+      body["delUserIds"] = request.delUserIds;
+    }
+
+    if (!Util.isUnset(request.onlyAdminVisible)) {
+      body["onlyAdminVisible"] = request.onlyAdminVisible;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SetMicroAppScopeResponse>(await this.doROARequest("SetMicroAppScope", "microApp_1.0", "HTTP", "POST", "AK", `/v1.0/microApp/apps/${agentId}/scopes`, "json", req, runtime), new SetMicroAppScopeResponse({}));
   }
 
   async updateApaasApp(request: UpdateApaasAppRequest): Promise<UpdateApaasAppResponse> {

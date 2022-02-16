@@ -1,0 +1,1 @@
+module.exports = require('./dist').apaas_1_0;

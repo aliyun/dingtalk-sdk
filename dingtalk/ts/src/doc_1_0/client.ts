@@ -1316,10 +1316,14 @@ export class GetSheetRequest extends $tea.Model {
 }
 
 export class GetSheetResponseBody extends $tea.Model {
-  name?: string[];
-  visibility?: string[];
+  lastNonEmptyColumn?: number;
+  lastNonEmptyRow?: number;
+  name?: string;
+  visibility?: string;
   static names(): { [key: string]: string } {
     return {
+      lastNonEmptyColumn: 'lastNonEmptyColumn',
+      lastNonEmptyRow: 'lastNonEmptyRow',
       name: 'name',
       visibility: 'visibility',
     };
@@ -1327,8 +1331,10 @@ export class GetSheetResponseBody extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      name: { 'type': 'array', 'itemType': 'string' },
-      visibility: { 'type': 'array', 'itemType': 'string' },
+      lastNonEmptyColumn: 'number',
+      lastNonEmptyRow: 'number',
+      name: 'string',
+      visibility: 'string',
     };
   }
 

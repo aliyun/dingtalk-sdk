@@ -385,6 +385,118 @@ export class CreatWithholdingOrderAndPayResponse extends $tea.Model {
   }
 }
 
+export class CreateAcquireRefundOrderHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAcquireRefundOrderRequest extends $tea.Model {
+  instId?: string;
+  operatorUserId?: string;
+  originOutTradeNo?: string;
+  otherPayChannelDetailInfoList?: CreateAcquireRefundOrderRequestOtherPayChannelDetailInfoList[];
+  outRefundNo?: string;
+  refundAmount?: string;
+  remark?: string;
+  subInstId?: string;
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      instId: 'instId',
+      operatorUserId: 'operatorUserId',
+      originOutTradeNo: 'originOutTradeNo',
+      otherPayChannelDetailInfoList: 'otherPayChannelDetailInfoList',
+      outRefundNo: 'outRefundNo',
+      refundAmount: 'refundAmount',
+      remark: 'remark',
+      subInstId: 'subInstId',
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      instId: 'string',
+      operatorUserId: 'string',
+      originOutTradeNo: 'string',
+      otherPayChannelDetailInfoList: { 'type': 'array', 'itemType': CreateAcquireRefundOrderRequestOtherPayChannelDetailInfoList },
+      outRefundNo: 'string',
+      refundAmount: 'string',
+      remark: 'string',
+      subInstId: 'string',
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAcquireRefundOrderResponseBody extends $tea.Model {
+  outRefundNo?: string;
+  refundOrderNo?: string;
+  status?: string;
+  static names(): { [key: string]: string } {
+    return {
+      outRefundNo: 'outRefundNo',
+      refundOrderNo: 'refundOrderNo',
+      status: 'status',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      outRefundNo: 'string',
+      refundOrderNo: 'string',
+      status: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAcquireRefundOrderResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CreateAcquireRefundOrderResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CreateAcquireRefundOrderResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateBatchTradeOrderHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1318,6 +1430,127 @@ export class NotifyVerifyResultResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: NotifyVerifyResultResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryAcquireRefundOrderHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryAcquireRefundOrderRequest extends $tea.Model {
+  outRefundNo?: string;
+  static names(): { [key: string]: string } {
+    return {
+      outRefundNo: 'outRefundNo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      outRefundNo: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryAcquireRefundOrderResponseBody extends $tea.Model {
+  amount?: string;
+  gmtCreate?: string;
+  gmtRefund?: string;
+  instId?: string;
+  orderNo?: string;
+  originOutTradeNo?: string;
+  outRefundNo?: string;
+  payChannel?: string;
+  payChannelAccountNo?: string;
+  payerUserId?: string;
+  remark?: string;
+  status?: string;
+  subInstId?: string;
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      amount: 'amount',
+      gmtCreate: 'gmtCreate',
+      gmtRefund: 'gmtRefund',
+      instId: 'instId',
+      orderNo: 'orderNo',
+      originOutTradeNo: 'originOutTradeNo',
+      outRefundNo: 'outRefundNo',
+      payChannel: 'payChannel',
+      payChannelAccountNo: 'payChannelAccountNo',
+      payerUserId: 'payerUserId',
+      remark: 'remark',
+      status: 'status',
+      subInstId: 'subInstId',
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      amount: 'string',
+      gmtCreate: 'string',
+      gmtRefund: 'string',
+      instId: 'string',
+      orderNo: 'string',
+      originOutTradeNo: 'string',
+      outRefundNo: 'string',
+      payChannel: 'string',
+      payChannelAccountNo: 'string',
+      payerUserId: 'string',
+      remark: 'string',
+      status: 'string',
+      subInstId: 'string',
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryAcquireRefundOrderResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryAcquireRefundOrderResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryAcquireRefundOrderResponseBody,
     };
   }
 
@@ -2878,6 +3111,74 @@ export class CreatWithholdingOrderAndPayRequestOtherPayChannelDetailInfoList ext
   }
 }
 
+export class CreateAcquireRefundOrderRequestOtherPayChannelDetailInfoListFundToolDetailInfoList extends $tea.Model {
+  amount?: string;
+  extInfo?: string;
+  fundToolName?: string;
+  gmtCreate?: string;
+  gmtFinish?: string;
+  promotionFundTool?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      amount: 'amount',
+      extInfo: 'extInfo',
+      fundToolName: 'fundToolName',
+      gmtCreate: 'gmtCreate',
+      gmtFinish: 'gmtFinish',
+      promotionFundTool: 'promotionFundTool',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      amount: 'string',
+      extInfo: 'string',
+      fundToolName: 'string',
+      gmtCreate: 'string',
+      gmtFinish: 'string',
+      promotionFundTool: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAcquireRefundOrderRequestOtherPayChannelDetailInfoList extends $tea.Model {
+  amount?: string;
+  fundToolDetailInfoList?: CreateAcquireRefundOrderRequestOtherPayChannelDetailInfoListFundToolDetailInfoList[];
+  payChannelName?: string;
+  payChannelOrderNo?: string;
+  payChannelType?: string;
+  promotionAmount?: string;
+  static names(): { [key: string]: string } {
+    return {
+      amount: 'amount',
+      fundToolDetailInfoList: 'fundToolDetailInfoList',
+      payChannelName: 'payChannelName',
+      payChannelOrderNo: 'payChannelOrderNo',
+      payChannelType: 'payChannelType',
+      promotionAmount: 'promotionAmount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      amount: 'string',
+      fundToolDetailInfoList: { 'type': 'array', 'itemType': CreateAcquireRefundOrderRequestOtherPayChannelDetailInfoListFundToolDetailInfoList },
+      payChannelName: 'string',
+      payChannelOrderNo: 'string',
+      payChannelType: 'string',
+      promotionAmount: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateBatchTradeOrderRequestBatchTradeDetails extends $tea.Model {
   amount?: string;
   memo?: string;
@@ -4125,6 +4426,67 @@ export default class Client extends OpenApi {
     return $tea.cast<CreatWithholdingOrderAndPayResponse>(await this.doROARequest("CreatWithholdingOrderAndPay", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/withholdingOrders`, "json", req, runtime), new CreatWithholdingOrderAndPayResponse({}));
   }
 
+  async createAcquireRefundOrder(request: CreateAcquireRefundOrderRequest): Promise<CreateAcquireRefundOrderResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateAcquireRefundOrderHeaders({ });
+    return await this.createAcquireRefundOrderWithOptions(request, headers, runtime);
+  }
+
+  async createAcquireRefundOrderWithOptions(request: CreateAcquireRefundOrderRequest, headers: CreateAcquireRefundOrderHeaders, runtime: $Util.RuntimeOptions): Promise<CreateAcquireRefundOrderResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.instId)) {
+      body["instId"] = request.instId;
+    }
+
+    if (!Util.isUnset(request.operatorUserId)) {
+      body["operatorUserId"] = request.operatorUserId;
+    }
+
+    if (!Util.isUnset(request.originOutTradeNo)) {
+      body["originOutTradeNo"] = request.originOutTradeNo;
+    }
+
+    if (!Util.isUnset(request.otherPayChannelDetailInfoList)) {
+      body["otherPayChannelDetailInfoList"] = request.otherPayChannelDetailInfoList;
+    }
+
+    if (!Util.isUnset(request.outRefundNo)) {
+      body["outRefundNo"] = request.outRefundNo;
+    }
+
+    if (!Util.isUnset(request.refundAmount)) {
+      body["refundAmount"] = request.refundAmount;
+    }
+
+    if (!Util.isUnset(request.remark)) {
+      body["remark"] = request.remark;
+    }
+
+    if (!Util.isUnset(request.subInstId)) {
+      body["subInstId"] = request.subInstId;
+    }
+
+    if (!Util.isUnset(request.title)) {
+      body["title"] = request.title;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreateAcquireRefundOrderResponse>(await this.doROARequest("CreateAcquireRefundOrder", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/acquireOrders/refund`, "json", req, runtime), new CreateAcquireRefundOrderResponse({}));
+  }
+
   async createBatchTradeOrder(request: CreateBatchTradeOrderRequest): Promise<CreateBatchTradeOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateBatchTradeOrderHeaders({ });
@@ -4691,6 +5053,35 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<NotifyVerifyResultResponse>(await this.doROARequest("NotifyVerifyResult", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/payCodes/verifyResults/notify`, "json", req, runtime), new NotifyVerifyResultResponse({}));
+  }
+
+  async queryAcquireRefundOrder(request: QueryAcquireRefundOrderRequest): Promise<QueryAcquireRefundOrderResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryAcquireRefundOrderHeaders({ });
+    return await this.queryAcquireRefundOrderWithOptions(request, headers, runtime);
+  }
+
+  async queryAcquireRefundOrderWithOptions(request: QueryAcquireRefundOrderRequest, headers: QueryAcquireRefundOrderHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAcquireRefundOrderResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.outRefundNo)) {
+      query["outRefundNo"] = request.outRefundNo;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryAcquireRefundOrderResponse>(await this.doROARequest("QueryAcquireRefundOrder", "finance_1.0", "HTTP", "GET", "AK", `/v1.0/finance/acquireOrders/refunds`, "json", req, runtime), new QueryAcquireRefundOrderResponse({}));
   }
 
   async queryBatchTradeDetailList(request: QueryBatchTradeDetailListRequest): Promise<QueryBatchTradeDetailListResponse> {

@@ -7,6 +7,154 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class CardTemplateBuildActionHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CardTemplateBuildActionRequest extends $tea.Model {
+  action?: string;
+  cardTemplateJson?: string;
+  static names(): { [key: string]: string } {
+    return {
+      action: 'action',
+      cardTemplateJson: 'cardTemplateJson',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      action: 'string',
+      cardTemplateJson: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CardTemplateBuildActionResponseBody extends $tea.Model {
+  cardTemplateJson?: string;
+  static names(): { [key: string]: string } {
+    return {
+      cardTemplateJson: 'cardTemplateJson',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cardTemplateJson: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CardTemplateBuildActionResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CardTemplateBuildActionResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CardTemplateBuildActionResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatIdToOpenConversationIdHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatIdToOpenConversationIdResponseBody extends $tea.Model {
+  openConversationId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openConversationId: 'openConversationId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openConversationId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatIdToOpenConversationIdResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ChatIdToOpenConversationIdResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ChatIdToOpenConversationIdResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetInterconnectionUrlHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -35,9 +183,11 @@ export class GetInterconnectionUrlRequest extends $tea.Model {
   appUserId?: string;
   appUserMobileNumber?: string;
   appUserName?: string;
-  dingCorpId?: string;
-  dingUserId?: string;
-  msgPageSettingId?: number;
+  msgPageType?: number;
+  qrCode?: string;
+  signature?: string;
+  sourceType?: number;
+  userId?: string;
   static names(): { [key: string]: string } {
     return {
       appUserAvatar: 'appUserAvatar',
@@ -45,9 +195,11 @@ export class GetInterconnectionUrlRequest extends $tea.Model {
       appUserId: 'appUserId',
       appUserMobileNumber: 'appUserMobileNumber',
       appUserName: 'appUserName',
-      dingCorpId: 'dingCorpId',
-      dingUserId: 'dingUserId',
-      msgPageSettingId: 'msgPageSettingId',
+      msgPageType: 'msgPageType',
+      qrCode: 'qrCode',
+      signature: 'signature',
+      sourceType: 'sourceType',
+      userId: 'userId',
     };
   }
 
@@ -58,9 +210,11 @@ export class GetInterconnectionUrlRequest extends $tea.Model {
       appUserId: 'string',
       appUserMobileNumber: 'string',
       appUserName: 'string',
-      dingCorpId: 'string',
-      dingUserId: 'string',
-      msgPageSettingId: 'number',
+      msgPageType: 'number',
+      qrCode: 'string',
+      signature: 'string',
+      sourceType: 'number',
+      userId: 'string',
     };
   }
 
@@ -1616,6 +1770,62 @@ export default class Client extends OpenApi {
   }
 
 
+  async cardTemplateBuildAction(request: CardTemplateBuildActionRequest): Promise<CardTemplateBuildActionResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CardTemplateBuildActionHeaders({ });
+    return await this.cardTemplateBuildActionWithOptions(request, headers, runtime);
+  }
+
+  async cardTemplateBuildActionWithOptions(request: CardTemplateBuildActionRequest, headers: CardTemplateBuildActionHeaders, runtime: $Util.RuntimeOptions): Promise<CardTemplateBuildActionResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.action)) {
+      body["action"] = request.action;
+    }
+
+    if (!Util.isUnset(request.cardTemplateJson)) {
+      body["cardTemplateJson"] = request.cardTemplateJson;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CardTemplateBuildActionResponse>(await this.doROARequest("CardTemplateBuildAction", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/interactiveCards/templates/buildAction`, "json", req, runtime), new CardTemplateBuildActionResponse({}));
+  }
+
+  async chatIdToOpenConversationId(chatId: string): Promise<ChatIdToOpenConversationIdResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ChatIdToOpenConversationIdHeaders({ });
+    return await this.chatIdToOpenConversationIdWithOptions(chatId, headers, runtime);
+  }
+
+  async chatIdToOpenConversationIdWithOptions(chatId: string, headers: ChatIdToOpenConversationIdHeaders, runtime: $Util.RuntimeOptions): Promise<ChatIdToOpenConversationIdResponse> {
+    chatId = OpenApiUtil.getEncodeParam(chatId);
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<ChatIdToOpenConversationIdResponse>(await this.doROARequest("ChatIdToOpenConversationId", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/chat/${chatId}/convertToOpenConversationId`, "json", req, runtime), new ChatIdToOpenConversationIdResponse({}));
+  }
+
   async getInterconnectionUrl(request: GetInterconnectionUrlRequest): Promise<GetInterconnectionUrlResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetInterconnectionUrlHeaders({ });
@@ -1645,16 +1855,24 @@ export default class Client extends OpenApi {
       body["appUserName"] = request.appUserName;
     }
 
-    if (!Util.isUnset(request.dingCorpId)) {
-      body["dingCorpId"] = request.dingCorpId;
+    if (!Util.isUnset(request.msgPageType)) {
+      body["msgPageType"] = request.msgPageType;
     }
 
-    if (!Util.isUnset(request.dingUserId)) {
-      body["dingUserId"] = request.dingUserId;
+    if (!Util.isUnset(request.qrCode)) {
+      body["qrCode"] = request.qrCode;
     }
 
-    if (!Util.isUnset(request.msgPageSettingId)) {
-      body["msgPageSettingId"] = request.msgPageSettingId;
+    if (!Util.isUnset(request.signature)) {
+      body["signature"] = request.signature;
+    }
+
+    if (!Util.isUnset(request.sourceType)) {
+      body["sourceType"] = request.sourceType;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
     }
 
     let realHeaders : {[key: string ]: string} = { };

@@ -1,4 +1,5 @@
 import * as alitrip_1_0 from './alitrip_1_0/client';
+import * as apaas_1_0 from './apaas_1_0/client';
 import * as app_market_1_0 from './app_market_1_0/client';
 import * as ats_1_0 from './ats_1_0/client';
 import * as attendance_1_0 from './attendance_1_0/client';
@@ -56,6 +57,7 @@ import * as yida_1_0 from './yida_1_0/client';
 
 export = {
   alitrip_1_0,
+  apaas_1_0,
   app_market_1_0,
   ats_1_0,
   attendance_1_0,
