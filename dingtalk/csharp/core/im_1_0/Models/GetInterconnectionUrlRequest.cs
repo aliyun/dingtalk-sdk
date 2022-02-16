@@ -45,25 +45,39 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         public string AppUserName { get; set; }
 
         /// <summary>
-        /// dingCorpId
+        /// msgPageType
         /// </summary>
-        [NameInMap("dingCorpId")]
+        [NameInMap("msgPageType")]
         [Validation(Required=false)]
-        public string DingCorpId { get; set; }
+        public int? MsgPageType { get; set; }
 
         /// <summary>
-        /// dingUserId
+        /// qrCode
         /// </summary>
-        [NameInMap("dingUserId")]
+        [NameInMap("qrCode")]
         [Validation(Required=false)]
-        public string DingUserId { get; set; }
+        public string QrCode { get; set; }
 
         /// <summary>
-        /// msgPageSettingId
+        /// signature
         /// </summary>
-        [NameInMap("msgPageSettingId")]
+        [NameInMap("signature")]
         [Validation(Required=false)]
-        public long? MsgPageSettingId { get; set; }
+        public string Signature { get; set; }
+
+        /// <summary>
+        /// sourceType
+        /// </summary>
+        [NameInMap("sourceType")]
+        [Validation(Required=false)]
+        public int? SourceType { get; set; }
+
+        /// <summary>
+        /// userId
+        /// </summary>
+        [NameInMap("userId")]
+        [Validation(Required=false)]
+        public string UserId { get; set; }
 
     }
 
