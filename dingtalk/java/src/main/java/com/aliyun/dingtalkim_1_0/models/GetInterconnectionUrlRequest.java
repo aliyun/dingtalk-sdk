@@ -24,17 +24,25 @@ public class GetInterconnectionUrlRequest extends TeaModel {
     @NameInMap("appUserName")
     public String appUserName;
 
-    // dingCorpId
-    @NameInMap("dingCorpId")
-    public String dingCorpId;
+    // msgPageType
+    @NameInMap("msgPageType")
+    public Integer msgPageType;
 
-    // dingUserId
-    @NameInMap("dingUserId")
-    public String dingUserId;
+    // qrCode
+    @NameInMap("qrCode")
+    public String qrCode;
 
-    // msgPageSettingId
-    @NameInMap("msgPageSettingId")
-    public Long msgPageSettingId;
+    // signature
+    @NameInMap("signature")
+    public String signature;
+
+    // sourceType
+    @NameInMap("sourceType")
+    public Integer sourceType;
+
+    // userId
+    @NameInMap("userId")
+    public String userId;
 
     public static GetInterconnectionUrlRequest build(java.util.Map<String, ?> map) throws Exception {
         GetInterconnectionUrlRequest self = new GetInterconnectionUrlRequest();
@@ -81,28 +89,44 @@ public class GetInterconnectionUrlRequest extends TeaModel {
         return this.appUserName;
     }
 
-    public GetInterconnectionUrlRequest setDingCorpId(String dingCorpId) {
-        this.dingCorpId = dingCorpId;
+    public GetInterconnectionUrlRequest setMsgPageType(Integer msgPageType) {
+        this.msgPageType = msgPageType;
         return this;
     }
-    public String getDingCorpId() {
-        return this.dingCorpId;
+    public Integer getMsgPageType() {
+        return this.msgPageType;
     }
 
-    public GetInterconnectionUrlRequest setDingUserId(String dingUserId) {
-        this.dingUserId = dingUserId;
+    public GetInterconnectionUrlRequest setQrCode(String qrCode) {
+        this.qrCode = qrCode;
         return this;
     }
-    public String getDingUserId() {
-        return this.dingUserId;
+    public String getQrCode() {
+        return this.qrCode;
     }
 
-    public GetInterconnectionUrlRequest setMsgPageSettingId(Long msgPageSettingId) {
-        this.msgPageSettingId = msgPageSettingId;
+    public GetInterconnectionUrlRequest setSignature(String signature) {
+        this.signature = signature;
         return this;
     }
-    public Long getMsgPageSettingId() {
-        return this.msgPageSettingId;
+    public String getSignature() {
+        return this.signature;
+    }
+
+    public GetInterconnectionUrlRequest setSourceType(Integer sourceType) {
+        this.sourceType = sourceType;
+        return this;
+    }
+    public Integer getSourceType() {
+        return this.sourceType;
+    }
+
+    public GetInterconnectionUrlRequest setUserId(String userId) {
+        this.userId = userId;
+        return this;
+    }
+    public String getUserId() {
+        return this.userId;
     }
 
 }

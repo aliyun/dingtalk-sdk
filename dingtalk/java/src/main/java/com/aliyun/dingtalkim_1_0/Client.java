@@ -21,6 +21,62 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    public CardTemplateBuildActionResponse cardTemplateBuildAction(CardTemplateBuildActionRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        CardTemplateBuildActionHeaders headers = new CardTemplateBuildActionHeaders();
+        return this.cardTemplateBuildActionWithOptions(request, headers, runtime);
+    }
+
+    public CardTemplateBuildActionResponse cardTemplateBuildActionWithOptions(CardTemplateBuildActionRequest request, CardTemplateBuildActionHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.action)) {
+            body.put("action", request.action);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.cardTemplateJson)) {
+            body.put("cardTemplateJson", request.cardTemplateJson);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("CardTemplateBuildAction", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/interactiveCards/templates/buildAction", "json", req, runtime), new CardTemplateBuildActionResponse());
+    }
+
+    public ChatIdToOpenConversationIdResponse chatIdToOpenConversationId(String chatId) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        ChatIdToOpenConversationIdHeaders headers = new ChatIdToOpenConversationIdHeaders();
+        return this.chatIdToOpenConversationIdWithOptions(chatId, headers, runtime);
+    }
+
+    public ChatIdToOpenConversationIdResponse chatIdToOpenConversationIdWithOptions(String chatId, ChatIdToOpenConversationIdHeaders headers, RuntimeOptions runtime) throws Exception {
+        chatId = com.aliyun.openapiutil.Client.getEncodeParam(chatId);
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        return TeaModel.toModel(this.doROARequest("ChatIdToOpenConversationId", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/chat/" + chatId + "/convertToOpenConversationId", "json", req, runtime), new ChatIdToOpenConversationIdResponse());
+    }
+
     public GetInterconnectionUrlResponse getInterconnectionUrl(GetInterconnectionUrlRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         GetInterconnectionUrlHeaders headers = new GetInterconnectionUrlHeaders();
@@ -50,16 +106,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("appUserName", request.appUserName);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.dingCorpId)) {
-            body.put("dingCorpId", request.dingCorpId);
+        if (!com.aliyun.teautil.Common.isUnset(request.msgPageType)) {
+            body.put("msgPageType", request.msgPageType);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.dingUserId)) {
-            body.put("dingUserId", request.dingUserId);
+        if (!com.aliyun.teautil.Common.isUnset(request.qrCode)) {
+            body.put("qrCode", request.qrCode);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.msgPageSettingId)) {
-            body.put("msgPageSettingId", request.msgPageSettingId);
+        if (!com.aliyun.teautil.Common.isUnset(request.signature)) {
+            body.put("signature", request.signature);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sourceType)) {
+            body.put("sourceType", request.sourceType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();

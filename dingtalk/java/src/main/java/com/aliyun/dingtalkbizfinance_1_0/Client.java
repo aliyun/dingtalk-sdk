@@ -79,6 +79,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("DeleteReceipt", "bizfinance_1.0", "HTTP", "POST", "AK", "/v1.0/bizfinance/receipts/remove", "json", req, runtime), new DeleteReceiptResponse());
     }
 
+    public GetBookkeepingUserListResponse getBookkeepingUserList() throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        GetBookkeepingUserListHeaders headers = new GetBookkeepingUserListHeaders();
+        return this.getBookkeepingUserListWithOptions(headers, runtime);
+    }
+
+    public GetBookkeepingUserListResponse getBookkeepingUserListWithOptions(GetBookkeepingUserListHeaders headers, RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        return TeaModel.toModel(this.doROARequest("GetBookkeepingUserList", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/bookkeeping/users", "json", req, runtime), new GetBookkeepingUserListResponse());
+    }
+
     public GetCategoryResponse getCategory(GetCategoryRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         GetCategoryHeaders headers = new GetCategoryHeaders();

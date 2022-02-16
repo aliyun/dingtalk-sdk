@@ -236,6 +236,67 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("CreatWithholdingOrderAndPay", "finance_1.0", "HTTP", "POST", "AK", "/v1.0/finance/withholdingOrders", "json", req, runtime), new CreatWithholdingOrderAndPayResponse());
     }
 
+    public CreateAcquireRefundOrderResponse createAcquireRefundOrder(CreateAcquireRefundOrderRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        CreateAcquireRefundOrderHeaders headers = new CreateAcquireRefundOrderHeaders();
+        return this.createAcquireRefundOrderWithOptions(request, headers, runtime);
+    }
+
+    public CreateAcquireRefundOrderResponse createAcquireRefundOrderWithOptions(CreateAcquireRefundOrderRequest request, CreateAcquireRefundOrderHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.instId)) {
+            body.put("instId", request.instId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorUserId)) {
+            body.put("operatorUserId", request.operatorUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.originOutTradeNo)) {
+            body.put("originOutTradeNo", request.originOutTradeNo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.otherPayChannelDetailInfoList)) {
+            body.put("otherPayChannelDetailInfoList", request.otherPayChannelDetailInfoList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.outRefundNo)) {
+            body.put("outRefundNo", request.outRefundNo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.refundAmount)) {
+            body.put("refundAmount", request.refundAmount);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.remark)) {
+            body.put("remark", request.remark);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.subInstId)) {
+            body.put("subInstId", request.subInstId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.title)) {
+            body.put("title", request.title);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("CreateAcquireRefundOrder", "finance_1.0", "HTTP", "POST", "AK", "/v1.0/finance/acquireOrders/refund", "json", req, runtime), new CreateAcquireRefundOrderResponse());
+    }
+
     public CreateBatchTradeOrderResponse createBatchTradeOrder(CreateBatchTradeOrderRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         CreateBatchTradeOrderHeaders headers = new CreateBatchTradeOrderHeaders();
@@ -802,6 +863,35 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("NotifyVerifyResult", "finance_1.0", "HTTP", "POST", "AK", "/v1.0/finance/payCodes/verifyResults/notify", "json", req, runtime), new NotifyVerifyResultResponse());
+    }
+
+    public QueryAcquireRefundOrderResponse queryAcquireRefundOrder(QueryAcquireRefundOrderRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        QueryAcquireRefundOrderHeaders headers = new QueryAcquireRefundOrderHeaders();
+        return this.queryAcquireRefundOrderWithOptions(request, headers, runtime);
+    }
+
+    public QueryAcquireRefundOrderResponse queryAcquireRefundOrderWithOptions(QueryAcquireRefundOrderRequest request, QueryAcquireRefundOrderHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.outRefundNo)) {
+            query.put("outRefundNo", request.outRefundNo);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("QueryAcquireRefundOrder", "finance_1.0", "HTTP", "GET", "AK", "/v1.0/finance/acquireOrders/refunds", "json", req, runtime), new QueryAcquireRefundOrderResponse());
     }
 
     public QueryBatchTradeDetailListResponse queryBatchTradeDetailList(QueryBatchTradeDetailListRequest request) throws Exception {
