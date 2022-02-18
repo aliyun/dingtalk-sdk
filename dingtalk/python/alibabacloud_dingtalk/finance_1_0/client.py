@@ -1943,6 +1943,110 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('QueryRegisterOrder', 'finance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/finance/institutions/subInstitutions/orders', 'json', req, runtime)
         )
 
+    def update_invoice_verify_status(
+        self,
+        request: dingtalkfinance__1__0_models.UpdateInvoiceVerifyStatusRequest,
+    ) -> dingtalkfinance__1__0_models.UpdateInvoiceVerifyStatusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.UpdateInvoiceVerifyStatusHeaders()
+        return self.update_invoice_verify_status_with_options(request, headers, runtime)
+
+    async def update_invoice_verify_status_async(
+        self,
+        request: dingtalkfinance__1__0_models.UpdateInvoiceVerifyStatusRequest,
+    ) -> dingtalkfinance__1__0_models.UpdateInvoiceVerifyStatusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.UpdateInvoiceVerifyStatusHeaders()
+        return await self.update_invoice_verify_status_with_options_async(request, headers, runtime)
+
+    def update_invoice_verify_status_with_options(
+        self,
+        request: dingtalkfinance__1__0_models.UpdateInvoiceVerifyStatusRequest,
+        headers: dingtalkfinance__1__0_models.UpdateInvoiceVerifyStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkfinance__1__0_models.UpdateInvoiceVerifyStatusResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.code):
+            body['code'] = request.code
+        if not UtilClient.is_unset(request.msg):
+            body['msg'] = request.msg
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.invoice_verify_id):
+            body['invoiceVerifyId'] = request.invoice_verify_id
+        if not UtilClient.is_unset(request.invoice_code):
+            body['invoiceCode'] = request.invoice_code
+        if not UtilClient.is_unset(request.invoice_no):
+            body['invoiceNo'] = request.invoice_no
+        if not UtilClient.is_unset(request.checking_status):
+            body['checkingStatus'] = request.checking_status
+        if not UtilClient.is_unset(request.invoice_status):
+            body['invoiceStatus'] = request.invoice_status
+        if not UtilClient.is_unset(request.checking_result):
+            body['checkingResult'] = request.checking_result
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkfinance__1__0_models.UpdateInvoiceVerifyStatusResponse(),
+            self.do_roarequest('UpdateInvoiceVerifyStatus', 'finance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/finance/invoices/verifyStatus', 'json', req, runtime)
+        )
+
+    async def update_invoice_verify_status_with_options_async(
+        self,
+        request: dingtalkfinance__1__0_models.UpdateInvoiceVerifyStatusRequest,
+        headers: dingtalkfinance__1__0_models.UpdateInvoiceVerifyStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkfinance__1__0_models.UpdateInvoiceVerifyStatusResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.code):
+            body['code'] = request.code
+        if not UtilClient.is_unset(request.msg):
+            body['msg'] = request.msg
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.invoice_verify_id):
+            body['invoiceVerifyId'] = request.invoice_verify_id
+        if not UtilClient.is_unset(request.invoice_code):
+            body['invoiceCode'] = request.invoice_code
+        if not UtilClient.is_unset(request.invoice_no):
+            body['invoiceNo'] = request.invoice_no
+        if not UtilClient.is_unset(request.checking_status):
+            body['checkingStatus'] = request.checking_status
+        if not UtilClient.is_unset(request.invoice_status):
+            body['invoiceStatus'] = request.invoice_status
+        if not UtilClient.is_unset(request.checking_result):
+            body['checkingResult'] = request.checking_result
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkfinance__1__0_models.UpdateInvoiceVerifyStatusResponse(),
+            await self.do_roarequest_async('UpdateInvoiceVerifyStatus', 'finance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/finance/invoices/verifyStatus', 'json', req, runtime)
+        )
+
     def upload_register_image(
         self,
         request: dingtalkfinance__1__0_models.UploadRegisterImageRequest,

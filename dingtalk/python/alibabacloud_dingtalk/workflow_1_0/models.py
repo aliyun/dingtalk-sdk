@@ -3777,8 +3777,8 @@ class QuerySchemaByProcessCodeResponseBodyResult(TeaModel):
         custom_setting: str = None,
         proc_type: str = None,
         visible_range: str = None,
-        gmt_create: int = None,
-        gmt_modified: int = None,
+        gmt_create: str = None,
+        gmt_modified: str = None,
     ):
         # 创建人 userId。
         self.creator_user_id = creator_user_id

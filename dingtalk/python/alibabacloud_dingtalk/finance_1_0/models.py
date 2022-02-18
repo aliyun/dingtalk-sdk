@@ -5850,6 +5850,202 @@ class QueryRegisterOrderResponse(TeaModel):
         return self
 
 
+class UpdateInvoiceVerifyStatusHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateInvoiceVerifyStatusRequest(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        msg: str = None,
+        corp_id: str = None,
+        union_id: str = None,
+        biz_id: str = None,
+        invoice_verify_id: str = None,
+        invoice_code: str = None,
+        invoice_no: str = None,
+        checking_status: int = None,
+        invoice_status: int = None,
+        checking_result: int = None,
+    ):
+        # 业务响应码
+        self.code = code
+        # 响应信息
+        self.msg = msg
+        # 企业Id
+        self.corp_id = corp_id
+        # 用户Id
+        self.union_id = union_id
+        # 查验流水号
+        self.biz_id = biz_id
+        # 发票验真编号
+        self.invoice_verify_id = invoice_verify_id
+        # 发票代码
+        self.invoice_code = invoice_code
+        # 发票号码
+        self.invoice_no = invoice_no
+        # 查验状态
+        self.checking_status = checking_status
+        # 发票状态
+        self.invoice_status = invoice_status
+        # 查验结果
+        self.checking_result = checking_result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.msg is not None:
+            result['msg'] = self.msg
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        if self.biz_id is not None:
+            result['bizId'] = self.biz_id
+        if self.invoice_verify_id is not None:
+            result['invoiceVerifyId'] = self.invoice_verify_id
+        if self.invoice_code is not None:
+            result['invoiceCode'] = self.invoice_code
+        if self.invoice_no is not None:
+            result['invoiceNo'] = self.invoice_no
+        if self.checking_status is not None:
+            result['checkingStatus'] = self.checking_status
+        if self.invoice_status is not None:
+            result['invoiceStatus'] = self.invoice_status
+        if self.checking_result is not None:
+            result['checkingResult'] = self.checking_result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('msg') is not None:
+            self.msg = m.get('msg')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        if m.get('bizId') is not None:
+            self.biz_id = m.get('bizId')
+        if m.get('invoiceVerifyId') is not None:
+            self.invoice_verify_id = m.get('invoiceVerifyId')
+        if m.get('invoiceCode') is not None:
+            self.invoice_code = m.get('invoiceCode')
+        if m.get('invoiceNo') is not None:
+            self.invoice_no = m.get('invoiceNo')
+        if m.get('checkingStatus') is not None:
+            self.checking_status = m.get('checkingStatus')
+        if m.get('invoiceStatus') is not None:
+            self.invoice_status = m.get('invoiceStatus')
+        if m.get('checkingResult') is not None:
+            self.checking_result = m.get('checkingResult')
+        return self
+
+
+class UpdateInvoiceVerifyStatusResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        # Id of the request
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class UpdateInvoiceVerifyStatusResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: UpdateInvoiceVerifyStatusResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = UpdateInvoiceVerifyStatusResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class UploadRegisterImageHeaders(TeaModel):
     def __init__(
         self,
