@@ -48,7 +48,7 @@ class SetMicroAppScopeRequest extends Model
      *
      * @var int[]
      */
-    public $ddUserIds;
+    public $delRoleIds;
 
     /**
      * @description 是否管理员可见
@@ -62,7 +62,7 @@ class SetMicroAppScopeRequest extends Model
         'addDeptIds'       => 'addDeptIds',
         'delDeptIds'       => 'delDeptIds',
         'addRoleIds'       => 'addRoleIds',
-        'ddUserIds'        => 'ddUserIds',
+        'delRoleIds'       => 'delRoleIds',
         'onlyAdminVisible' => 'onlyAdminVisible',
     ];
 
@@ -88,8 +88,8 @@ class SetMicroAppScopeRequest extends Model
         if (null !== $this->addRoleIds) {
             $res['addRoleIds'] = $this->addRoleIds;
         }
-        if (null !== $this->ddUserIds) {
-            $res['ddUserIds'] = $this->ddUserIds;
+        if (null !== $this->delRoleIds) {
+            $res['delRoleIds'] = $this->delRoleIds;
         }
         if (null !== $this->onlyAdminVisible) {
             $res['onlyAdminVisible'] = $this->onlyAdminVisible;
@@ -131,9 +131,9 @@ class SetMicroAppScopeRequest extends Model
                 $model->addRoleIds = $map['addRoleIds'];
             }
         }
-        if (isset($map['ddUserIds'])) {
-            if (!empty($map['ddUserIds'])) {
-                $model->ddUserIds = $map['ddUserIds'];
+        if (isset($map['delRoleIds'])) {
+            if (!empty($map['delRoleIds'])) {
+                $model->delRoleIds = $map['delRoleIds'];
             }
         }
         if (isset($map['onlyAdminVisible'])) {

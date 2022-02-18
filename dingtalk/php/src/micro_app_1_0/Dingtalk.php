@@ -231,8 +231,8 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->addRoleIds)) {
             @$body['addRoleIds'] = $request->addRoleIds;
         }
-        if (!Utils::isUnset($request->ddUserIds)) {
-            @$body['ddUserIds'] = $request->ddUserIds;
+        if (!Utils::isUnset($request->delRoleIds)) {
+            @$body['delRoleIds'] = $request->delRoleIds;
         }
         if (!Utils::isUnset($request->onlyAdminVisible)) {
             @$body['onlyAdminVisible'] = $request->onlyAdminVisible;

@@ -370,6 +370,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->signScene)) {
             @$body['signScene'] = $request->signScene;
         }
+        if (!Utils::isUnset($request->returnUrl)) {
+            @$body['returnUrl'] = $request->returnUrl;
+        }
         if (!Utils::isUnset($request->dingOrgId)) {
             @$body['dingOrgId'] = $request->dingOrgId;
         }

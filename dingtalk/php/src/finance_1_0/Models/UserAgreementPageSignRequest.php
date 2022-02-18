@@ -86,6 +86,13 @@ class UserAgreementPageSignRequest extends Model
     public $signScene;
 
     /**
+     * @description 签约后页面返回url
+     *
+     * @var string
+     */
+    public $returnUrl;
+
+    /**
      * @description 组织id
      *
      * @var int
@@ -124,6 +131,7 @@ class UserAgreementPageSignRequest extends Model
         'bizCode'                => 'bizCode',
         'bizScene'               => 'bizScene',
         'signScene'              => 'signScene',
+        'returnUrl'              => 'returnUrl',
         'dingOrgId'              => 'dingOrgId',
         'dingIsvOrgId'           => 'dingIsvOrgId',
         'dingClientId'           => 'dingClientId',
@@ -169,6 +177,9 @@ class UserAgreementPageSignRequest extends Model
         }
         if (null !== $this->signScene) {
             $res['signScene'] = $this->signScene;
+        }
+        if (null !== $this->returnUrl) {
+            $res['returnUrl'] = $this->returnUrl;
         }
         if (null !== $this->dingOrgId) {
             $res['dingOrgId'] = $this->dingOrgId;
@@ -226,6 +237,9 @@ class UserAgreementPageSignRequest extends Model
         }
         if (isset($map['signScene'])) {
             $model->signScene = $map['signScene'];
+        }
+        if (isset($map['returnUrl'])) {
+            $model->returnUrl = $map['returnUrl'];
         }
         if (isset($map['dingOrgId'])) {
             $model->dingOrgId = $map['dingOrgId'];
