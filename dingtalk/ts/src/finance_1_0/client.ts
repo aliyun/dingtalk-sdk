@@ -2508,6 +2508,118 @@ export class UpateUserCodeInstanceResponse extends $tea.Model {
   }
 }
 
+export class UpdateInvoiceVerifyStatusHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateInvoiceVerifyStatusRequest extends $tea.Model {
+  bizId?: string;
+  checkingResult?: number;
+  checkingStatus?: number;
+  code?: string;
+  corpId?: string;
+  invoiceCode?: string;
+  invoiceNo?: string;
+  invoiceStatus?: number;
+  invoiceVerifyId?: string;
+  msg?: string;
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizId: 'bizId',
+      checkingResult: 'checkingResult',
+      checkingStatus: 'checkingStatus',
+      code: 'code',
+      corpId: 'corpId',
+      invoiceCode: 'invoiceCode',
+      invoiceNo: 'invoiceNo',
+      invoiceStatus: 'invoiceStatus',
+      invoiceVerifyId: 'invoiceVerifyId',
+      msg: 'msg',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizId: 'string',
+      checkingResult: 'number',
+      checkingStatus: 'number',
+      code: 'string',
+      corpId: 'string',
+      invoiceCode: 'string',
+      invoiceNo: 'string',
+      invoiceStatus: 'number',
+      invoiceVerifyId: 'string',
+      msg: 'string',
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateInvoiceVerifyStatusResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateInvoiceVerifyStatusResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateInvoiceVerifyStatusResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateInvoiceVerifyStatusResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UploadRegisterImageHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -5465,6 +5577,75 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<UpateUserCodeInstanceResponse>(await this.doROARequest("UpateUserCodeInstance", "finance_1.0", "HTTP", "PUT", "AK", `/v1.0/finance/payCodes/userInstances`, "json", req, runtime), new UpateUserCodeInstanceResponse({}));
+  }
+
+  async updateInvoiceVerifyStatus(request: UpdateInvoiceVerifyStatusRequest): Promise<UpdateInvoiceVerifyStatusResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateInvoiceVerifyStatusHeaders({ });
+    return await this.updateInvoiceVerifyStatusWithOptions(request, headers, runtime);
+  }
+
+  async updateInvoiceVerifyStatusWithOptions(request: UpdateInvoiceVerifyStatusRequest, headers: UpdateInvoiceVerifyStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInvoiceVerifyStatusResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizId)) {
+      body["bizId"] = request.bizId;
+    }
+
+    if (!Util.isUnset(request.checkingResult)) {
+      body["checkingResult"] = request.checkingResult;
+    }
+
+    if (!Util.isUnset(request.checkingStatus)) {
+      body["checkingStatus"] = request.checkingStatus;
+    }
+
+    if (!Util.isUnset(request.code)) {
+      body["code"] = request.code;
+    }
+
+    if (!Util.isUnset(request.corpId)) {
+      body["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.invoiceCode)) {
+      body["invoiceCode"] = request.invoiceCode;
+    }
+
+    if (!Util.isUnset(request.invoiceNo)) {
+      body["invoiceNo"] = request.invoiceNo;
+    }
+
+    if (!Util.isUnset(request.invoiceStatus)) {
+      body["invoiceStatus"] = request.invoiceStatus;
+    }
+
+    if (!Util.isUnset(request.invoiceVerifyId)) {
+      body["invoiceVerifyId"] = request.invoiceVerifyId;
+    }
+
+    if (!Util.isUnset(request.msg)) {
+      body["msg"] = request.msg;
+    }
+
+    if (!Util.isUnset(request.unionId)) {
+      body["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateInvoiceVerifyStatusResponse>(await this.doROARequest("UpdateInvoiceVerifyStatus", "finance_1.0", "HTTP", "PUT", "AK", `/v1.0/finance/invoices/verifyStatus`, "json", req, runtime), new UpdateInvoiceVerifyStatusResponse({}));
   }
 
   async uploadRegisterImage(request: UploadRegisterImageRequest): Promise<UploadRegisterImageResponse> {

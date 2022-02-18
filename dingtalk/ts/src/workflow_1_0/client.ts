@@ -2091,8 +2091,8 @@ export class QuerySchemaByProcessCodeResponseBodyResult extends $tea.Model {
   engineType?: number;
   formCode?: string;
   formUuid?: string;
-  gmtCreate?: number;
-  gmtModified?: number;
+  gmtCreate?: string;
+  gmtModified?: string;
   icon?: string;
   listOrder?: number;
   memo?: string;
@@ -2140,8 +2140,8 @@ export class QuerySchemaByProcessCodeResponseBodyResult extends $tea.Model {
       engineType: 'number',
       formCode: 'string',
       formUuid: 'string',
-      gmtCreate: 'number',
-      gmtModified: 'number',
+      gmtCreate: 'string',
+      gmtModified: 'string',
       icon: 'string',
       listOrder: 'number',
       memo: 'string',
