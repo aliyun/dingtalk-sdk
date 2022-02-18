@@ -1808,8 +1808,8 @@ export class SetMicroAppScopeRequest extends $tea.Model {
   addDeptIds?: number[];
   addRoleIds?: number[];
   addUserIds?: string[];
-  ddUserIds?: number[];
   delDeptIds?: number[];
+  delRoleIds?: number[];
   delUserIds?: string[];
   onlyAdminVisible?: boolean;
   static names(): { [key: string]: string } {
@@ -1817,8 +1817,8 @@ export class SetMicroAppScopeRequest extends $tea.Model {
       addDeptIds: 'addDeptIds',
       addRoleIds: 'addRoleIds',
       addUserIds: 'addUserIds',
-      ddUserIds: 'ddUserIds',
       delDeptIds: 'delDeptIds',
+      delRoleIds: 'delRoleIds',
       delUserIds: 'delUserIds',
       onlyAdminVisible: 'onlyAdminVisible',
     };
@@ -1829,8 +1829,8 @@ export class SetMicroAppScopeRequest extends $tea.Model {
       addDeptIds: { 'type': 'array', 'itemType': 'number' },
       addRoleIds: { 'type': 'array', 'itemType': 'number' },
       addUserIds: { 'type': 'array', 'itemType': 'string' },
-      ddUserIds: { 'type': 'array', 'itemType': 'number' },
       delDeptIds: { 'type': 'array', 'itemType': 'number' },
+      delRoleIds: { 'type': 'array', 'itemType': 'number' },
       delUserIds: { 'type': 'array', 'itemType': 'string' },
       onlyAdminVisible: 'boolean',
     };
@@ -3210,12 +3210,12 @@ export default class Client extends OpenApi {
       body["addUserIds"] = request.addUserIds;
     }
 
-    if (!Util.isUnset(request.ddUserIds)) {
-      body["ddUserIds"] = request.ddUserIds;
-    }
-
     if (!Util.isUnset(request.delDeptIds)) {
       body["delDeptIds"] = request.delDeptIds;
+    }
+
+    if (!Util.isUnset(request.delRoleIds)) {
+      body["delRoleIds"] = request.delRoleIds;
     }
 
     if (!Util.isUnset(request.delUserIds)) {

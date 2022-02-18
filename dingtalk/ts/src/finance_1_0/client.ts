@@ -2630,6 +2630,7 @@ export class UserAgreementPageSignRequest extends $tea.Model {
   instId?: string;
   payChannel?: string;
   remark?: string;
+  returnUrl?: string;
   signScene?: string;
   subInstId?: string;
   subMerchantName?: string;
@@ -2643,6 +2644,7 @@ export class UserAgreementPageSignRequest extends $tea.Model {
       instId: 'instId',
       payChannel: 'payChannel',
       remark: 'remark',
+      returnUrl: 'returnUrl',
       signScene: 'signScene',
       subInstId: 'subInstId',
       subMerchantName: 'subMerchantName',
@@ -2659,6 +2661,7 @@ export class UserAgreementPageSignRequest extends $tea.Model {
       instId: 'string',
       payChannel: 'string',
       remark: 'string',
+      returnUrl: 'string',
       signScene: 'string',
       subInstId: 'string',
       subMerchantName: 'string',
@@ -5536,6 +5539,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.remark)) {
       body["remark"] = request.remark;
+    }
+
+    if (!Util.isUnset(request.returnUrl)) {
+      body["returnUrl"] = request.returnUrl;
     }
 
     if (!Util.isUnset(request.signScene)) {
