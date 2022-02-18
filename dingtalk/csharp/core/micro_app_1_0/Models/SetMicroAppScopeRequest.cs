@@ -31,18 +31,18 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
         public List<string> AddUserIds { get; set; }
 
         /// <summary>
-        /// 删除的可见角色
-        /// </summary>
-        [NameInMap("ddUserIds")]
-        [Validation(Required=false)]
-        public List<long?> DdUserIds { get; set; }
-
-        /// <summary>
         /// 删除的可见部门
         /// </summary>
         [NameInMap("delDeptIds")]
         [Validation(Required=false)]
         public List<long?> DelDeptIds { get; set; }
+
+        /// <summary>
+        /// 删除的可见角色
+        /// </summary>
+        [NameInMap("delRoleIds")]
+        [Validation(Required=false)]
+        public List<long?> DelRoleIds { get; set; }
 
         /// <summary>
         /// 删除的可见用户

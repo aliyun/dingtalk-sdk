@@ -73,6 +73,13 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         public string Remark { get; set; }
 
         /// <summary>
+        /// 签约后页面返回url
+        /// </summary>
+        [NameInMap("returnUrl")]
+        [Validation(Required=false)]
+        public string ReturnUrl { get; set; }
+
+        /// <summary>
         /// 签约场景
         /// </summary>
         [NameInMap("signScene")]

@@ -1661,13 +1661,13 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
             {
                 body["addUserIds"] = request.AddUserIds;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DdUserIds))
-            {
-                body["ddUserIds"] = request.DdUserIds;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DelDeptIds))
             {
                 body["delDeptIds"] = request.DelDeptIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DelRoleIds))
+            {
+                body["delRoleIds"] = request.DelRoleIds;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DelUserIds))
             {
@@ -1711,13 +1711,13 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
             {
                 body["addUserIds"] = request.AddUserIds;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DdUserIds))
-            {
-                body["ddUserIds"] = request.DdUserIds;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DelDeptIds))
             {
                 body["delDeptIds"] = request.DelDeptIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DelRoleIds))
+            {
+                body["delRoleIds"] = request.DelRoleIds;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DelUserIds))
             {

@@ -3140,6 +3140,10 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             {
                 body["remark"] = request.Remark;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReturnUrl))
+            {
+                body["returnUrl"] = request.ReturnUrl;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SignScene))
             {
                 body["signScene"] = request.SignScene;
@@ -3220,6 +3224,10 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Remark))
             {
                 body["remark"] = request.Remark;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReturnUrl))
+            {
+                body["returnUrl"] = request.ReturnUrl;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SignScene))
             {
