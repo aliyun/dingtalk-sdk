@@ -2958,6 +2958,150 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<UpateUserCodeInstanceResponse>(await DoROARequestAsync("UpateUserCodeInstance", "finance_1.0", "HTTP", "PUT", "AK", "/v1.0/finance/payCodes/userInstances", "json", req, runtime));
         }
 
+        public UpdateInvoiceVerifyStatusResponse UpdateInvoiceVerifyStatus(UpdateInvoiceVerifyStatusRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateInvoiceVerifyStatusHeaders headers = new UpdateInvoiceVerifyStatusHeaders();
+            return UpdateInvoiceVerifyStatusWithOptions(request, headers, runtime);
+        }
+
+        public async Task<UpdateInvoiceVerifyStatusResponse> UpdateInvoiceVerifyStatusAsync(UpdateInvoiceVerifyStatusRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateInvoiceVerifyStatusHeaders headers = new UpdateInvoiceVerifyStatusHeaders();
+            return await UpdateInvoiceVerifyStatusWithOptionsAsync(request, headers, runtime);
+        }
+
+        public UpdateInvoiceVerifyStatusResponse UpdateInvoiceVerifyStatusWithOptions(UpdateInvoiceVerifyStatusRequest request, UpdateInvoiceVerifyStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizId))
+            {
+                body["bizId"] = request.BizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CheckingResult))
+            {
+                body["checkingResult"] = request.CheckingResult;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CheckingStatus))
+            {
+                body["checkingStatus"] = request.CheckingStatus;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Code))
+            {
+                body["code"] = request.Code;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                body["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceCode))
+            {
+                body["invoiceCode"] = request.InvoiceCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceNo))
+            {
+                body["invoiceNo"] = request.InvoiceNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceStatus))
+            {
+                body["invoiceStatus"] = request.InvoiceStatus;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceVerifyId))
+            {
+                body["invoiceVerifyId"] = request.InvoiceVerifyId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Msg))
+            {
+                body["msg"] = request.Msg;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                body["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<UpdateInvoiceVerifyStatusResponse>(DoROARequest("UpdateInvoiceVerifyStatus", "finance_1.0", "HTTP", "PUT", "AK", "/v1.0/finance/invoices/verifyStatus", "json", req, runtime));
+        }
+
+        public async Task<UpdateInvoiceVerifyStatusResponse> UpdateInvoiceVerifyStatusWithOptionsAsync(UpdateInvoiceVerifyStatusRequest request, UpdateInvoiceVerifyStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizId))
+            {
+                body["bizId"] = request.BizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CheckingResult))
+            {
+                body["checkingResult"] = request.CheckingResult;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CheckingStatus))
+            {
+                body["checkingStatus"] = request.CheckingStatus;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Code))
+            {
+                body["code"] = request.Code;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                body["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceCode))
+            {
+                body["invoiceCode"] = request.InvoiceCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceNo))
+            {
+                body["invoiceNo"] = request.InvoiceNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceStatus))
+            {
+                body["invoiceStatus"] = request.InvoiceStatus;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceVerifyId))
+            {
+                body["invoiceVerifyId"] = request.InvoiceVerifyId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Msg))
+            {
+                body["msg"] = request.Msg;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                body["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<UpdateInvoiceVerifyStatusResponse>(await DoROARequestAsync("UpdateInvoiceVerifyStatus", "finance_1.0", "HTTP", "PUT", "AK", "/v1.0/finance/invoices/verifyStatus", "json", req, runtime));
+        }
+
         public UploadRegisterImageResponse UploadRegisterImage(UploadRegisterImageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

@@ -45,10 +45,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
             public string FormUuid { get; set; }
             [NameInMap("gmtCreate")]
             [Validation(Required=false)]
-            public int? GmtCreate { get; set; }
+            public string GmtCreate { get; set; }
             [NameInMap("gmtModified")]
             [Validation(Required=false)]
-            public int? GmtModified { get; set; }
+            public string GmtModified { get; set; }
             [NameInMap("icon")]
             [Validation(Required=false)]
             public string Icon { get; set; }
