@@ -72,6 +72,9 @@ use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\UnsignUserAgreementResponse;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\UpateUserCodeInstanceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\UpateUserCodeInstanceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\UpateUserCodeInstanceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\UpdateInvoiceVerifyStatusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\UpdateInvoiceVerifyStatusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\UpdateInvoiceVerifyStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\UploadRegisterImageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\UploadRegisterImageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\UploadRegisterImageResponse;
@@ -1415,6 +1418,78 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryRegisterOrderResponse::fromMap($this->doROARequest('QueryRegisterOrder', 'finance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/finance/institutions/subInstitutions/orders', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param UpdateInvoiceVerifyStatusRequest $request
+     *
+     * @return UpdateInvoiceVerifyStatusResponse
+     */
+    public function updateInvoiceVerifyStatus($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateInvoiceVerifyStatusHeaders([]);
+
+        return $this->updateInvoiceVerifyStatusWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateInvoiceVerifyStatusRequest $request
+     * @param UpdateInvoiceVerifyStatusHeaders $headers
+     * @param RuntimeOptions                   $runtime
+     *
+     * @return UpdateInvoiceVerifyStatusResponse
+     */
+    public function updateInvoiceVerifyStatusWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->code)) {
+            @$body['code'] = $request->code;
+        }
+        if (!Utils::isUnset($request->msg)) {
+            @$body['msg'] = $request->msg;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            @$body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            @$body['unionId'] = $request->unionId;
+        }
+        if (!Utils::isUnset($request->bizId)) {
+            @$body['bizId'] = $request->bizId;
+        }
+        if (!Utils::isUnset($request->invoiceVerifyId)) {
+            @$body['invoiceVerifyId'] = $request->invoiceVerifyId;
+        }
+        if (!Utils::isUnset($request->invoiceCode)) {
+            @$body['invoiceCode'] = $request->invoiceCode;
+        }
+        if (!Utils::isUnset($request->invoiceNo)) {
+            @$body['invoiceNo'] = $request->invoiceNo;
+        }
+        if (!Utils::isUnset($request->checkingStatus)) {
+            @$body['checkingStatus'] = $request->checkingStatus;
+        }
+        if (!Utils::isUnset($request->invoiceStatus)) {
+            @$body['invoiceStatus'] = $request->invoiceStatus;
+        }
+        if (!Utils::isUnset($request->checkingResult)) {
+            @$body['checkingResult'] = $request->checkingResult;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateInvoiceVerifyStatusResponse::fromMap($this->doROARequest('UpdateInvoiceVerifyStatus', 'finance_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/finance/invoices/verifyStatus', 'json', $req, $runtime));
     }
 
     /**

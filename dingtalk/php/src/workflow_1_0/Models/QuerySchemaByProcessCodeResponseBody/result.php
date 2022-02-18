@@ -145,14 +145,14 @@ class result extends Model
     /**
      * @description 创建时间的时间戳。
      *
-     * @var int
+     * @var string
      */
     public $gmtCreate;
 
     /**
      * @description 修改时间的时间戳。
      *
-     * @var int
+     * @var string
      */
     public $gmtModified;
     protected $_name = [
