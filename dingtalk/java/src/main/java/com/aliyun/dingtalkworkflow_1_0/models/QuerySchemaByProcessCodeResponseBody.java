@@ -867,11 +867,11 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
 
         // 创建时间的时间戳。
         @NameInMap("gmtCreate")
-        public Integer gmtCreate;
+        public String gmtCreate;
 
         // 修改时间的时间戳。
         @NameInMap("gmtModified")
-        public Integer gmtModified;
+        public String gmtModified;
 
         // 图标。
         @NameInMap("icon")
@@ -990,19 +990,19 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
             return this.formUuid;
         }
 
-        public QuerySchemaByProcessCodeResponseBodyResult setGmtCreate(Integer gmtCreate) {
+        public QuerySchemaByProcessCodeResponseBodyResult setGmtCreate(String gmtCreate) {
             this.gmtCreate = gmtCreate;
             return this;
         }
-        public Integer getGmtCreate() {
+        public String getGmtCreate() {
             return this.gmtCreate;
         }
 
-        public QuerySchemaByProcessCodeResponseBodyResult setGmtModified(Integer gmtModified) {
+        public QuerySchemaByProcessCodeResponseBodyResult setGmtModified(String gmtModified) {
             this.gmtModified = gmtModified;
             return this;
         }
-        public Integer getGmtModified() {
+        public String getGmtModified() {
             return this.gmtModified;
         }
 
