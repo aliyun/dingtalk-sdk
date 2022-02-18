@@ -1348,6 +1348,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("remark", request.remark);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.returnUrl)) {
+            body.put("returnUrl", request.returnUrl);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.signScene)) {
             body.put("signScene", request.signScene);
         }

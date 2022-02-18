@@ -16,13 +16,13 @@ public class SetMicroAppScopeRequest extends TeaModel {
     @NameInMap("addUserIds")
     public java.util.List<String> addUserIds;
 
-    // 删除的可见角色
-    @NameInMap("ddUserIds")
-    public java.util.List<Long> ddUserIds;
-
     // 删除的可见部门
     @NameInMap("delDeptIds")
     public java.util.List<Long> delDeptIds;
+
+    // 删除的可见角色
+    @NameInMap("delRoleIds")
+    public java.util.List<Long> delRoleIds;
 
     // 删除的可见用户
     @NameInMap("delUserIds")
@@ -61,20 +61,20 @@ public class SetMicroAppScopeRequest extends TeaModel {
         return this.addUserIds;
     }
 
-    public SetMicroAppScopeRequest setDdUserIds(java.util.List<Long> ddUserIds) {
-        this.ddUserIds = ddUserIds;
-        return this;
-    }
-    public java.util.List<Long> getDdUserIds() {
-        return this.ddUserIds;
-    }
-
     public SetMicroAppScopeRequest setDelDeptIds(java.util.List<Long> delDeptIds) {
         this.delDeptIds = delDeptIds;
         return this;
     }
     public java.util.List<Long> getDelDeptIds() {
         return this.delDeptIds;
+    }
+
+    public SetMicroAppScopeRequest setDelRoleIds(java.util.List<Long> delRoleIds) {
+        this.delRoleIds = delRoleIds;
+        return this;
+    }
+    public java.util.List<Long> getDelRoleIds() {
+        return this.delRoleIds;
     }
 
     public SetMicroAppScopeRequest setDelUserIds(java.util.List<String> delUserIds) {

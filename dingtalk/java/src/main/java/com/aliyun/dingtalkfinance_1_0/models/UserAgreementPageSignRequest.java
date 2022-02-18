@@ -24,6 +24,10 @@ public class UserAgreementPageSignRequest extends TeaModel {
     @NameInMap("remark")
     public String remark;
 
+    // 签约后页面返回url
+    @NameInMap("returnUrl")
+    public String returnUrl;
+
     // 签约场景
     @NameInMap("signScene")
     public String signScene;
@@ -91,6 +95,14 @@ public class UserAgreementPageSignRequest extends TeaModel {
     }
     public String getRemark() {
         return this.remark;
+    }
+
+    public UserAgreementPageSignRequest setReturnUrl(String returnUrl) {
+        this.returnUrl = returnUrl;
+        return this;
+    }
+    public String getReturnUrl() {
+        return this.returnUrl;
     }
 
     public UserAgreementPageSignRequest setSignScene(String signScene) {

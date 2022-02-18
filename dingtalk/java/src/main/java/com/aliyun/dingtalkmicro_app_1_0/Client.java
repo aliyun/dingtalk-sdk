@@ -782,12 +782,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("addUserIds", request.addUserIds);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.ddUserIds)) {
-            body.put("ddUserIds", request.ddUserIds);
-        }
-
         if (!com.aliyun.teautil.Common.isUnset(request.delDeptIds)) {
             body.put("delDeptIds", request.delDeptIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.delRoleIds)) {
+            body.put("delRoleIds", request.delRoleIds);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.delUserIds)) {
