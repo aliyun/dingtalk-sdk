@@ -385,6 +385,8 @@ class Client(OpenApiClient):
             body['bizScene'] = request.biz_scene
         if not UtilClient.is_unset(request.sign_scene):
             body['signScene'] = request.sign_scene
+        if not UtilClient.is_unset(request.return_url):
+            body['returnUrl'] = request.return_url
         if not UtilClient.is_unset(request.ding_org_id):
             body['dingOrgId'] = request.ding_org_id
         if not UtilClient.is_unset(request.ding_isv_org_id):
@@ -437,6 +439,8 @@ class Client(OpenApiClient):
             body['bizScene'] = request.biz_scene
         if not UtilClient.is_unset(request.sign_scene):
             body['signScene'] = request.sign_scene
+        if not UtilClient.is_unset(request.return_url):
+            body['returnUrl'] = request.return_url
         if not UtilClient.is_unset(request.ding_org_id):
             body['dingOrgId'] = request.ding_org_id
         if not UtilClient.is_unset(request.ding_isv_org_id):

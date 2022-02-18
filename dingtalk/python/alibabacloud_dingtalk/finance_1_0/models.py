@@ -913,6 +913,7 @@ class UserAgreementPageSignRequest(TeaModel):
         biz_code: str = None,
         biz_scene: str = None,
         sign_scene: str = None,
+        return_url: str = None,
         ding_org_id: int = None,
         ding_isv_org_id: int = None,
         ding_client_id: str = None,
@@ -940,6 +941,8 @@ class UserAgreementPageSignRequest(TeaModel):
         self.biz_scene = biz_scene
         # 签约场景
         self.sign_scene = sign_scene
+        # 签约后页面返回url
+        self.return_url = return_url
         # 组织id
         self.ding_org_id = ding_org_id
         # isv组织id
@@ -980,6 +983,8 @@ class UserAgreementPageSignRequest(TeaModel):
             result['bizScene'] = self.biz_scene
         if self.sign_scene is not None:
             result['signScene'] = self.sign_scene
+        if self.return_url is not None:
+            result['returnUrl'] = self.return_url
         if self.ding_org_id is not None:
             result['dingOrgId'] = self.ding_org_id
         if self.ding_isv_org_id is not None:
@@ -1014,6 +1019,8 @@ class UserAgreementPageSignRequest(TeaModel):
             self.biz_scene = m.get('bizScene')
         if m.get('signScene') is not None:
             self.sign_scene = m.get('signScene')
+        if m.get('returnUrl') is not None:
+            self.return_url = m.get('returnUrl')
         if m.get('dingOrgId') is not None:
             self.ding_org_id = m.get('dingOrgId')
         if m.get('dingIsvOrgId') is not None:

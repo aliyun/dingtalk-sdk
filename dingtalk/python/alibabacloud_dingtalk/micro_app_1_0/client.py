@@ -212,8 +212,8 @@ class Client(OpenApiClient):
             body['delDeptIds'] = request.del_dept_ids
         if not UtilClient.is_unset(request.add_role_ids):
             body['addRoleIds'] = request.add_role_ids
-        if not UtilClient.is_unset(request.dd_user_ids):
-            body['ddUserIds'] = request.dd_user_ids
+        if not UtilClient.is_unset(request.del_role_ids):
+            body['delRoleIds'] = request.del_role_ids
         if not UtilClient.is_unset(request.only_admin_visible):
             body['onlyAdminVisible'] = request.only_admin_visible
         real_headers = {}
@@ -249,8 +249,8 @@ class Client(OpenApiClient):
             body['delDeptIds'] = request.del_dept_ids
         if not UtilClient.is_unset(request.add_role_ids):
             body['addRoleIds'] = request.add_role_ids
-        if not UtilClient.is_unset(request.dd_user_ids):
-            body['ddUserIds'] = request.dd_user_ids
+        if not UtilClient.is_unset(request.del_role_ids):
+            body['delRoleIds'] = request.del_role_ids
         if not UtilClient.is_unset(request.only_admin_visible):
             body['onlyAdminVisible'] = request.only_admin_visible
         real_headers = {}

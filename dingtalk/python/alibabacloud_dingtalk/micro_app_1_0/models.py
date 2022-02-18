@@ -397,7 +397,7 @@ class SetMicroAppScopeRequest(TeaModel):
         add_dept_ids: List[int] = None,
         del_dept_ids: List[int] = None,
         add_role_ids: List[int] = None,
-        dd_user_ids: List[int] = None,
+        del_role_ids: List[int] = None,
         only_admin_visible: bool = None,
     ):
         # 增加的可见用户
@@ -411,7 +411,7 @@ class SetMicroAppScopeRequest(TeaModel):
         # 增加的可见角色
         self.add_role_ids = add_role_ids
         # 删除的可见角色
-        self.dd_user_ids = dd_user_ids
+        self.del_role_ids = del_role_ids
         # 是否管理员可见
         self.only_admin_visible = only_admin_visible
 
@@ -434,8 +434,8 @@ class SetMicroAppScopeRequest(TeaModel):
             result['delDeptIds'] = self.del_dept_ids
         if self.add_role_ids is not None:
             result['addRoleIds'] = self.add_role_ids
-        if self.dd_user_ids is not None:
-            result['ddUserIds'] = self.dd_user_ids
+        if self.del_role_ids is not None:
+            result['delRoleIds'] = self.del_role_ids
         if self.only_admin_visible is not None:
             result['onlyAdminVisible'] = self.only_admin_visible
         return result
@@ -452,8 +452,8 @@ class SetMicroAppScopeRequest(TeaModel):
             self.del_dept_ids = m.get('delDeptIds')
         if m.get('addRoleIds') is not None:
             self.add_role_ids = m.get('addRoleIds')
-        if m.get('ddUserIds') is not None:
-            self.dd_user_ids = m.get('ddUserIds')
+        if m.get('delRoleIds') is not None:
+            self.del_role_ids = m.get('delRoleIds')
         if m.get('onlyAdminVisible') is not None:
             self.only_admin_visible = m.get('onlyAdminVisible')
         return self
