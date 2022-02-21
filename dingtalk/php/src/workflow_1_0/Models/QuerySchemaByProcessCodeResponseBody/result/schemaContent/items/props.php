@@ -239,7 +239,7 @@ class props extends Model
     /**
      * @description 兼容出勤套件类型。
      *
-     * @var string
+     * @var string[][]
      */
     public $holidayOptions;
 
@@ -657,7 +657,9 @@ class props extends Model
             $model->duration = $map['duration'];
         }
         if (isset($map['holidayOptions'])) {
-            $model->holidayOptions = $map['holidayOptions'];
+            if (!empty($map['holidayOptions'])) {
+                $model->holidayOptions = $map['holidayOptions'];
+            }
         }
         if (isset($map['useCalendar'])) {
             $model->useCalendar = $map['useCalendar'];
