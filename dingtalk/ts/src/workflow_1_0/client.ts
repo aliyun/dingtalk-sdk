@@ -1906,7 +1906,7 @@ export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsProps e
   hidden?: boolean;
   hiddenInApprovalDetail?: boolean;
   hideLabel?: boolean;
-  holidayOptions?: string;
+  holidayOptions?: { [key: string]: string }[];
   id?: string;
   label?: string;
   labelEditableFreeze?: boolean;
@@ -2003,7 +2003,7 @@ export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsProps e
       hidden: 'boolean',
       hiddenInApprovalDetail: 'boolean',
       hideLabel: 'boolean',
-      holidayOptions: 'string',
+      holidayOptions: { 'type': 'array', 'itemType': { 'type': 'map', 'keyType': 'string', 'valueType': 'string' } },
       id: 'string',
       label: 'string',
       labelEditableFreeze: 'boolean',
