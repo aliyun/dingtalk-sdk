@@ -3338,7 +3338,7 @@ class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsProps(TeaModel
         not_print: str = None,
         vertical_print: bool = None,
         duration: bool = None,
-        holiday_options: str = None,
+        holiday_options: List[Dict[str, str]] = None,
         use_calendar: bool = None,
         hidden_in_approval_detail: bool = None,
         disabled: bool = None,
