@@ -232,7 +232,7 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
                         public bool? Duration { get; set; }
                         [NameInMap("holidayOptions")]
                         [Validation(Required=false)]
-                        public string HolidayOptions { get; set; }
+                        public List<string> HolidayOptions { get; set; }
                         [NameInMap("useCalendar")]
                         [Validation(Required=false)]
                         public bool? UseCalendar { get; set; }
