@@ -295,7 +295,7 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
 
         // 兼容出勤套件类型。
         @NameInMap("holidayOptions")
-        public String holidayOptions;
+        public java.util.List<java.util.Map<String, String>> holidayOptions;
 
         // 控件 id。
         @NameInMap("id")
@@ -566,11 +566,11 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
             return this.hideLabel;
         }
 
-        public QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsProps setHolidayOptions(String holidayOptions) {
+        public QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsProps setHolidayOptions(java.util.List<java.util.Map<String, String>> holidayOptions) {
             this.holidayOptions = holidayOptions;
             return this;
         }
-        public String getHolidayOptions() {
+        public java.util.List<java.util.Map<String, String>> getHolidayOptions() {
             return this.holidayOptions;
         }
 
