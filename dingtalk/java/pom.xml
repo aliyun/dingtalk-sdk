@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.aliyun</groupId>
   <artifactId>dingtalk</artifactId>
-  <version>1.2.89</version>
+  <version>1.2.90</version>
   <packaging>jar</packaging>
   <name>dingtalk</name>
   <description>Alibaba Cloud dingtalk SDK for Java
@@ -147,8 +147,8 @@
                   <shadedPattern>com.aliyun.dingtalk.external.com.sun</shadedPattern>
                 </relocation>
                 <relocation>
-                  <pattern>commons-codec</pattern>
-                  <shadedPattern>com.aliyun.dingtalk.external.commons.codec</shadedPattern>
+                  <pattern>org.apache</pattern>
+                  <shadedPattern>com.aliyun.dingtalk.external.org.apache</shadedPattern>
                 </relocation>
               </relocations>
               <artifactSet>

@@ -3,24 +3,24 @@ package com.aliyun.dingtalkconnector_1_0.models;
 
 import com.aliyun.tea.*;
 
-public class CreateActionRequest extends TeaModel {
+public class UpdateActionRequest extends TeaModel {
     @NameInMap("actionInfo")
-    public java.util.List<CreateActionRequestActionInfo> actionInfo;
+    public java.util.List<UpdateActionRequestActionInfo> actionInfo;
 
-    public static CreateActionRequest build(java.util.Map<String, ?> map) throws Exception {
-        CreateActionRequest self = new CreateActionRequest();
+    public static UpdateActionRequest build(java.util.Map<String, ?> map) throws Exception {
+        UpdateActionRequest self = new UpdateActionRequest();
         return TeaModel.build(map, self);
     }
 
-    public CreateActionRequest setActionInfo(java.util.List<CreateActionRequestActionInfo> actionInfo) {
+    public UpdateActionRequest setActionInfo(java.util.List<UpdateActionRequestActionInfo> actionInfo) {
         this.actionInfo = actionInfo;
         return this;
     }
-    public java.util.List<CreateActionRequestActionInfo> getActionInfo() {
+    public java.util.List<UpdateActionRequestActionInfo> getActionInfo() {
         return this.actionInfo;
     }
 
-    public static class CreateActionRequestActionInfoOutputDataRules extends TeaModel {
+    public static class UpdateActionRequestActionInfoOutputDataRules extends TeaModel {
         // 规则的预期值。
         @NameInMap("expectValue")
         public String expectValue;
@@ -33,12 +33,12 @@ public class CreateActionRequest extends TeaModel {
         @NameInMap("propertyPath")
         public String propertyPath;
 
-        public static CreateActionRequestActionInfoOutputDataRules build(java.util.Map<String, ?> map) throws Exception {
-            CreateActionRequestActionInfoOutputDataRules self = new CreateActionRequestActionInfoOutputDataRules();
+        public static UpdateActionRequestActionInfoOutputDataRules build(java.util.Map<String, ?> map) throws Exception {
+            UpdateActionRequestActionInfoOutputDataRules self = new UpdateActionRequestActionInfoOutputDataRules();
             return TeaModel.build(map, self);
         }
 
-        public CreateActionRequestActionInfoOutputDataRules setExpectValue(String expectValue) {
+        public UpdateActionRequestActionInfoOutputDataRules setExpectValue(String expectValue) {
             this.expectValue = expectValue;
             return this;
         }
@@ -46,7 +46,7 @@ public class CreateActionRequest extends TeaModel {
             return this.expectValue;
         }
 
-        public CreateActionRequestActionInfoOutputDataRules setOperate(String operate) {
+        public UpdateActionRequestActionInfoOutputDataRules setOperate(String operate) {
             this.operate = operate;
             return this;
         }
@@ -54,7 +54,7 @@ public class CreateActionRequest extends TeaModel {
             return this.operate;
         }
 
-        public CreateActionRequestActionInfoOutputDataRules setPropertyPath(String propertyPath) {
+        public UpdateActionRequestActionInfoOutputDataRules setPropertyPath(String propertyPath) {
             this.propertyPath = propertyPath;
             return this;
         }
@@ -64,7 +64,7 @@ public class CreateActionRequest extends TeaModel {
 
     }
 
-    public static class CreateActionRequestActionInfo extends TeaModel {
+    public static class UpdateActionRequestActionInfo extends TeaModel {
         // api请求url path，结合Connector上的apiDomain使用
         @NameInMap("apiPath")
         public String apiPath;
@@ -72,6 +72,10 @@ public class CreateActionRequest extends TeaModel {
         // 描述
         @NameInMap("description")
         public String description;
+
+        // 连接平台的执行动作唯一标识。
+        @NameInMap("dingActionId")
+        public String dingActionId;
 
         // 连接平台连接器id
         @NameInMap("dingConnectorId")
@@ -95,18 +99,18 @@ public class CreateActionRequest extends TeaModel {
 
         // 执行动作接口成功调用规则。
         @NameInMap("outputDataRules")
-        public java.util.List<CreateActionRequestActionInfoOutputDataRules> outputDataRules;
+        public java.util.List<UpdateActionRequestActionInfoOutputDataRules> outputDataRules;
 
         // 出参schema
         @NameInMap("outputSchema")
         public String outputSchema;
 
-        public static CreateActionRequestActionInfo build(java.util.Map<String, ?> map) throws Exception {
-            CreateActionRequestActionInfo self = new CreateActionRequestActionInfo();
+        public static UpdateActionRequestActionInfo build(java.util.Map<String, ?> map) throws Exception {
+            UpdateActionRequestActionInfo self = new UpdateActionRequestActionInfo();
             return TeaModel.build(map, self);
         }
 
-        public CreateActionRequestActionInfo setApiPath(String apiPath) {
+        public UpdateActionRequestActionInfo setApiPath(String apiPath) {
             this.apiPath = apiPath;
             return this;
         }
@@ -114,7 +118,7 @@ public class CreateActionRequest extends TeaModel {
             return this.apiPath;
         }
 
-        public CreateActionRequestActionInfo setDescription(String description) {
+        public UpdateActionRequestActionInfo setDescription(String description) {
             this.description = description;
             return this;
         }
@@ -122,7 +126,15 @@ public class CreateActionRequest extends TeaModel {
             return this.description;
         }
 
-        public CreateActionRequestActionInfo setDingConnectorId(String dingConnectorId) {
+        public UpdateActionRequestActionInfo setDingActionId(String dingActionId) {
+            this.dingActionId = dingActionId;
+            return this;
+        }
+        public String getDingActionId() {
+            return this.dingActionId;
+        }
+
+        public UpdateActionRequestActionInfo setDingConnectorId(String dingConnectorId) {
             this.dingConnectorId = dingConnectorId;
             return this;
         }
@@ -130,7 +142,7 @@ public class CreateActionRequest extends TeaModel {
             return this.dingConnectorId;
         }
 
-        public CreateActionRequestActionInfo setInputSchema(String inputSchema) {
+        public UpdateActionRequestActionInfo setInputSchema(String inputSchema) {
             this.inputSchema = inputSchema;
             return this;
         }
@@ -138,7 +150,7 @@ public class CreateActionRequest extends TeaModel {
             return this.inputSchema;
         }
 
-        public CreateActionRequestActionInfo setIntegratorActionId(String integratorActionId) {
+        public UpdateActionRequestActionInfo setIntegratorActionId(String integratorActionId) {
             this.integratorActionId = integratorActionId;
             return this;
         }
@@ -146,7 +158,7 @@ public class CreateActionRequest extends TeaModel {
             return this.integratorActionId;
         }
 
-        public CreateActionRequestActionInfo setIntegratorConnectorId(String integratorConnectorId) {
+        public UpdateActionRequestActionInfo setIntegratorConnectorId(String integratorConnectorId) {
             this.integratorConnectorId = integratorConnectorId;
             return this;
         }
@@ -154,7 +166,7 @@ public class CreateActionRequest extends TeaModel {
             return this.integratorConnectorId;
         }
 
-        public CreateActionRequestActionInfo setName(String name) {
+        public UpdateActionRequestActionInfo setName(String name) {
             this.name = name;
             return this;
         }
@@ -162,15 +174,15 @@ public class CreateActionRequest extends TeaModel {
             return this.name;
         }
 
-        public CreateActionRequestActionInfo setOutputDataRules(java.util.List<CreateActionRequestActionInfoOutputDataRules> outputDataRules) {
+        public UpdateActionRequestActionInfo setOutputDataRules(java.util.List<UpdateActionRequestActionInfoOutputDataRules> outputDataRules) {
             this.outputDataRules = outputDataRules;
             return this;
         }
-        public java.util.List<CreateActionRequestActionInfoOutputDataRules> getOutputDataRules() {
+        public java.util.List<UpdateActionRequestActionInfoOutputDataRules> getOutputDataRules() {
             return this.outputDataRules;
         }
 
-        public CreateActionRequestActionInfo setOutputSchema(String outputSchema) {
+        public UpdateActionRequestActionInfo setOutputSchema(String outputSchema) {
             this.outputSchema = outputSchema;
             return this;
         }
