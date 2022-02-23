@@ -547,28 +547,297 @@ export class SyncDataResponse extends $tea.Model {
   }
 }
 
+export class UpdateActionHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateActionRequest extends $tea.Model {
+  actionInfo?: UpdateActionRequestActionInfo[];
+  static names(): { [key: string]: string } {
+    return {
+      actionInfo: 'actionInfo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      actionInfo: { 'type': 'array', 'itemType': UpdateActionRequestActionInfo },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateActionResponseBody extends $tea.Model {
+  item?: UpdateActionResponseBodyItem[];
+  static names(): { [key: string]: string } {
+    return {
+      item: 'item',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      item: { 'type': 'array', 'itemType': UpdateActionResponseBodyItem },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateActionResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateActionResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateActionResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateConnectorHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateConnectorRequest extends $tea.Model {
+  connectorInfo?: UpdateConnectorRequestConnectorInfo[];
+  static names(): { [key: string]: string } {
+    return {
+      connectorInfo: 'connectorInfo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      connectorInfo: { 'type': 'array', 'itemType': UpdateConnectorRequestConnectorInfo },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateConnectorResponseBody extends $tea.Model {
+  item?: UpdateConnectorResponseBodyItem[];
+  static names(): { [key: string]: string } {
+    return {
+      item: 'item',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      item: { 'type': 'array', 'itemType': UpdateConnectorResponseBodyItem },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateConnectorResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateConnectorResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateConnectorResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateTriggerHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateTriggerRequest extends $tea.Model {
+  triggerInfo?: UpdateTriggerRequestTriggerInfo[];
+  static names(): { [key: string]: string } {
+    return {
+      triggerInfo: 'triggerInfo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      triggerInfo: { 'type': 'array', 'itemType': UpdateTriggerRequestTriggerInfo },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateTriggerResponseBody extends $tea.Model {
+  item?: UpdateTriggerResponseBodyItem[];
+  static names(): { [key: string]: string } {
+    return {
+      item: 'item',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      item: { 'type': 'array', 'itemType': UpdateTriggerResponseBodyItem },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateTriggerResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateTriggerResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateTriggerResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateActionRequestActionInfoOutputDataRules extends $tea.Model {
+  expectValue?: string;
+  operate?: string;
+  propertyPath?: string;
+  static names(): { [key: string]: string } {
+    return {
+      expectValue: 'expectValue',
+      operate: 'operate',
+      propertyPath: 'propertyPath',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      expectValue: 'string',
+      operate: 'string',
+      propertyPath: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateActionRequestActionInfo extends $tea.Model {
   apiPath?: string;
-  apiSecret?: string;
-  apiUrl?: string;
   description?: string;
   dingConnectorId?: string;
   inputSchema?: string;
   integratorActionId?: string;
   integratorConnectorId?: string;
   name?: string;
+  outputDataRules?: CreateActionRequestActionInfoOutputDataRules[];
   outputSchema?: string;
   static names(): { [key: string]: string } {
     return {
       apiPath: 'apiPath',
-      apiSecret: 'apiSecret',
-      apiUrl: 'apiUrl',
       description: 'description',
       dingConnectorId: 'dingConnectorId',
       inputSchema: 'inputSchema',
       integratorActionId: 'integratorActionId',
       integratorConnectorId: 'integratorConnectorId',
       name: 'name',
+      outputDataRules: 'outputDataRules',
       outputSchema: 'outputSchema',
     };
   }
@@ -576,14 +845,13 @@ export class CreateActionRequestActionInfo extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       apiPath: 'string',
-      apiSecret: 'string',
-      apiUrl: 'string',
       description: 'string',
       dingConnectorId: 'string',
       inputSchema: 'string',
       integratorActionId: 'string',
       integratorConnectorId: 'string',
       name: 'string',
+      outputDataRules: { 'type': 'array', 'itemType': CreateActionRequestActionInfoOutputDataRules },
       outputSchema: 'string',
     };
   }
@@ -634,8 +902,9 @@ export class CreateConnectorRequestConnectorInfo extends $tea.Model {
   apiDomain?: string;
   apiSecret?: string;
   appId?: number;
-  baseVariables?: string[];
+  authValueEnv?: boolean;
   description?: string;
+  domainEnv?: boolean;
   iconMediaId?: string;
   integratorConnectorId?: string;
   name?: string;
@@ -644,8 +913,9 @@ export class CreateConnectorRequestConnectorInfo extends $tea.Model {
       apiDomain: 'apiDomain',
       apiSecret: 'apiSecret',
       appId: 'appId',
-      baseVariables: 'baseVariables',
+      authValueEnv: 'authValueEnv',
       description: 'description',
+      domainEnv: 'domainEnv',
       iconMediaId: 'iconMediaId',
       integratorConnectorId: 'integratorConnectorId',
       name: 'name',
@@ -657,8 +927,9 @@ export class CreateConnectorRequestConnectorInfo extends $tea.Model {
       apiDomain: 'string',
       apiSecret: 'string',
       appId: 'number',
-      baseVariables: { 'type': 'array', 'itemType': 'string' },
+      authValueEnv: 'boolean',
       description: 'string',
+      domainEnv: 'boolean',
       iconMediaId: 'string',
       integratorConnectorId: 'string',
       name: 'string',
@@ -866,6 +1137,265 @@ export class SyncDataResponseBodyList extends $tea.Model {
       subErrMsg: 'string',
       success: 'boolean',
       triggerId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateActionRequestActionInfoOutputDataRules extends $tea.Model {
+  expectValue?: string;
+  operate?: string;
+  propertyPath?: string;
+  static names(): { [key: string]: string } {
+    return {
+      expectValue: 'expectValue',
+      operate: 'operate',
+      propertyPath: 'propertyPath',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      expectValue: 'string',
+      operate: 'string',
+      propertyPath: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateActionRequestActionInfo extends $tea.Model {
+  apiPath?: string;
+  description?: string;
+  dingActionId?: string;
+  dingConnectorId?: string;
+  inputSchema?: string;
+  integratorActionId?: string;
+  integratorConnectorId?: string;
+  name?: string;
+  outputDataRules?: UpdateActionRequestActionInfoOutputDataRules[];
+  outputSchema?: string;
+  static names(): { [key: string]: string } {
+    return {
+      apiPath: 'apiPath',
+      description: 'description',
+      dingActionId: 'dingActionId',
+      dingConnectorId: 'dingConnectorId',
+      inputSchema: 'inputSchema',
+      integratorActionId: 'integratorActionId',
+      integratorConnectorId: 'integratorConnectorId',
+      name: 'name',
+      outputDataRules: 'outputDataRules',
+      outputSchema: 'outputSchema',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      apiPath: 'string',
+      description: 'string',
+      dingActionId: 'string',
+      dingConnectorId: 'string',
+      inputSchema: 'string',
+      integratorActionId: 'string',
+      integratorConnectorId: 'string',
+      name: 'string',
+      outputDataRules: { 'type': 'array', 'itemType': UpdateActionRequestActionInfoOutputDataRules },
+      outputSchema: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateActionResponseBodyItem extends $tea.Model {
+  dingActionId?: string;
+  dingConnectorId?: string;
+  integratorActionId?: string;
+  integratorConnectorId?: string;
+  subErrCode?: string;
+  subErrMsg?: string;
+  success?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dingActionId: 'dingActionId',
+      dingConnectorId: 'dingConnectorId',
+      integratorActionId: 'integratorActionId',
+      integratorConnectorId: 'integratorConnectorId',
+      subErrCode: 'subErrCode',
+      subErrMsg: 'subErrMsg',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingActionId: 'string',
+      dingConnectorId: 'string',
+      integratorActionId: 'string',
+      integratorConnectorId: 'string',
+      subErrCode: 'string',
+      subErrMsg: 'string',
+      success: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateConnectorRequestConnectorInfo extends $tea.Model {
+  apiDomain?: string;
+  apiSecret?: string;
+  appId?: number;
+  authValueEnv?: boolean;
+  description?: string;
+  dingConnectorId?: string;
+  domainEnv?: boolean;
+  iconMediaId?: string;
+  integratorConnectorId?: string;
+  name?: string;
+  static names(): { [key: string]: string } {
+    return {
+      apiDomain: 'apiDomain',
+      apiSecret: 'apiSecret',
+      appId: 'appId',
+      authValueEnv: 'authValueEnv',
+      description: 'description',
+      dingConnectorId: 'dingConnectorId',
+      domainEnv: 'domainEnv',
+      iconMediaId: 'iconMediaId',
+      integratorConnectorId: 'integratorConnectorId',
+      name: 'name',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      apiDomain: 'string',
+      apiSecret: 'string',
+      appId: 'number',
+      authValueEnv: 'boolean',
+      description: 'string',
+      dingConnectorId: 'string',
+      domainEnv: 'boolean',
+      iconMediaId: 'string',
+      integratorConnectorId: 'string',
+      name: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateConnectorResponseBodyItem extends $tea.Model {
+  dingConnectorId?: string;
+  integratorConnectorId?: string;
+  subErrCode?: string;
+  subErrMsg?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      dingConnectorId: 'dingConnectorId',
+      integratorConnectorId: 'integratorConnectorId',
+      subErrCode: 'subErrCode',
+      subErrMsg: 'subErrMsg',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingConnectorId: 'string',
+      integratorConnectorId: 'string',
+      subErrCode: 'string',
+      subErrMsg: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateTriggerRequestTriggerInfo extends $tea.Model {
+  description?: string;
+  dingConnectorId?: string;
+  dingTriggerId?: string;
+  inputSchema?: string;
+  integratorConnectorId?: string;
+  integratorTriggerId?: string;
+  name?: string;
+  static names(): { [key: string]: string } {
+    return {
+      description: 'description',
+      dingConnectorId: 'dingConnectorId',
+      dingTriggerId: 'dingTriggerId',
+      inputSchema: 'inputSchema',
+      integratorConnectorId: 'integratorConnectorId',
+      integratorTriggerId: 'integratorTriggerId',
+      name: 'name',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      description: 'string',
+      dingConnectorId: 'string',
+      dingTriggerId: 'string',
+      inputSchema: 'string',
+      integratorConnectorId: 'string',
+      integratorTriggerId: 'string',
+      name: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateTriggerResponseBodyItem extends $tea.Model {
+  dingConnectorId?: string;
+  dingTriggerId?: string;
+  integratorConnectorId?: string;
+  integratorTriggerId?: string;
+  subErrCode?: string;
+  subErrMsg?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      dingConnectorId: 'dingConnectorId',
+      dingTriggerId: 'dingTriggerId',
+      integratorConnectorId: 'integratorConnectorId',
+      integratorTriggerId: 'integratorTriggerId',
+      subErrCode: 'subErrCode',
+      subErrMsg: 'subErrMsg',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingConnectorId: 'string',
+      dingTriggerId: 'string',
+      integratorConnectorId: 'string',
+      integratorTriggerId: 'string',
+      subErrCode: 'string',
+      subErrMsg: 'string',
+      success: 'boolean',
     };
   }
 
@@ -1092,6 +1622,93 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<SyncDataResponse>(await this.doROARequest("SyncData", "connector_1.0", "HTTP", "POST", "AK", `/v1.0/connector/triggers/data/sync`, "json", req, runtime), new SyncDataResponse({}));
+  }
+
+  async updateAction(request: UpdateActionRequest): Promise<UpdateActionResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateActionHeaders({ });
+    return await this.updateActionWithOptions(request, headers, runtime);
+  }
+
+  async updateActionWithOptions(request: UpdateActionRequest, headers: UpdateActionHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateActionResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.actionInfo)) {
+      body["actionInfo"] = request.actionInfo;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateActionResponse>(await this.doROARequest("UpdateAction", "connector_1.0", "HTTP", "PUT", "AK", `/v1.0/connector/actions`, "json", req, runtime), new UpdateActionResponse({}));
+  }
+
+  async updateConnector(request: UpdateConnectorRequest): Promise<UpdateConnectorResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateConnectorHeaders({ });
+    return await this.updateConnectorWithOptions(request, headers, runtime);
+  }
+
+  async updateConnectorWithOptions(request: UpdateConnectorRequest, headers: UpdateConnectorHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateConnectorResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.connectorInfo)) {
+      body["connectorInfo"] = request.connectorInfo;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateConnectorResponse>(await this.doROARequest("UpdateConnector", "connector_1.0", "HTTP", "PUT", "AK", `/v1.0/connector/connectors`, "json", req, runtime), new UpdateConnectorResponse({}));
+  }
+
+  async updateTrigger(request: UpdateTriggerRequest): Promise<UpdateTriggerResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateTriggerHeaders({ });
+    return await this.updateTriggerWithOptions(request, headers, runtime);
+  }
+
+  async updateTriggerWithOptions(request: UpdateTriggerRequest, headers: UpdateTriggerHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTriggerResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.triggerInfo)) {
+      body["triggerInfo"] = request.triggerInfo;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateTriggerResponse>(await this.doROARequest("UpdateTrigger", "connector_1.0", "HTTP", "PUT", "AK", `/v1.0/connector/triggers`, "json", req, runtime), new UpdateTriggerResponse({}));
   }
 
 }
