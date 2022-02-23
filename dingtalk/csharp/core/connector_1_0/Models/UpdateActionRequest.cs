@@ -8,11 +8,11 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
 {
-    public class CreateActionRequest : TeaModel {
+    public class UpdateActionRequest : TeaModel {
         [NameInMap("actionInfo")]
         [Validation(Required=false)]
-        public List<CreateActionRequestActionInfo> ActionInfo { get; set; }
-        public class CreateActionRequestActionInfo : TeaModel {
+        public List<UpdateActionRequestActionInfo> ActionInfo { get; set; }
+        public class UpdateActionRequestActionInfo : TeaModel {
             /// <summary>
             /// 连接平台连接器id
             /// </summary>
@@ -26,6 +26,13 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
             [NameInMap("integratorConnectorId")]
             [Validation(Required=false)]
             public string IntegratorConnectorId { get; set; }
+
+            /// <summary>
+            /// 连接平台的执行动作唯一标识。
+            /// </summary>
+            [NameInMap("dingActionId")]
+            [Validation(Required=false)]
+            public string DingActionId { get; set; }
 
             /// <summary>
             /// 服务商的执行事件Id
@@ -74,8 +81,8 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
             /// </summary>
             [NameInMap("outputDataRules")]
             [Validation(Required=false)]
-            public List<CreateActionRequestActionInfoOutputDataRules> OutputDataRules { get; set; }
-            public class CreateActionRequestActionInfoOutputDataRules : TeaModel {
+            public List<UpdateActionRequestActionInfoOutputDataRules> OutputDataRules { get; set; }
+            public class UpdateActionRequestActionInfoOutputDataRules : TeaModel {
                 /// <summary>
                 /// 规则的属性路径。
                 /// </summary>

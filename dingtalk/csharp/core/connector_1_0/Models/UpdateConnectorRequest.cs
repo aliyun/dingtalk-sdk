@@ -8,19 +8,35 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
 {
-    public class CreateConnectorRequest : TeaModel {
+    public class UpdateConnectorRequest : TeaModel {
         [NameInMap("connectorInfo")]
         [Validation(Required=false)]
-        public List<CreateConnectorRequestConnectorInfo> ConnectorInfo { get; set; }
-        public class CreateConnectorRequestConnectorInfo : TeaModel {
+        public List<UpdateConnectorRequestConnectorInfo> ConnectorInfo { get; set; }
+        public class UpdateConnectorRequestConnectorInfo : TeaModel {
+            /// <summary>
+            /// 服务商的连接器唯一标识。
+            /// </summary>
             [NameInMap("integratorConnectorId")]
             [Validation(Required=false)]
             public string IntegratorConnectorId { get; set; }
 
+            /// <summary>
+            /// 连接平台连接器唯一标识。
+            /// </summary>
+            [NameInMap("dingConnectorId")]
+            [Validation(Required=false)]
+            public string DingConnectorId { get; set; }
+
+            /// <summary>
+            /// 连接器名称。
+            /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
 
+            /// <summary>
+            /// 连接器描述。
+            /// </summary>
             [NameInMap("description")]
             [Validation(Required=false)]
             public string Description { get; set; }
@@ -29,6 +45,9 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
             [Validation(Required=false)]
             public string IconMediaId { get; set; }
 
+            /// <summary>
+            /// 应用id。
+            /// </summary>
             [NameInMap("appId")]
             [Validation(Required=false)]
             public long? AppId { get; set; }
@@ -48,7 +67,7 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
             public string ApiDomain { get; set; }
 
             /// <summary>
-            /// 将apiSecret设置为模板变量。
+            /// 将执行动作鉴权值设为环境变量。
             /// </summary>
             [NameInMap("authValueEnv")]
             [Validation(Required=false)]
