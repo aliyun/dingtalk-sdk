@@ -2,9 +2,9 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vconnector_1_0\Models\CreateActionRequest;
+namespace AlibabaCloud\SDK\Dingtalk\Vconnector_1_0\Models\UpdateActionRequest;
 
-use AlibabaCloud\SDK\Dingtalk\Vconnector_1_0\Models\CreateActionRequest\actionInfo\outputDataRules;
+use AlibabaCloud\SDK\Dingtalk\Vconnector_1_0\Models\UpdateActionRequest\actionInfo\outputDataRules;
 use AlibabaCloud\Tea\Model;
 
 class actionInfo extends Model
@@ -22,6 +22,13 @@ class actionInfo extends Model
      * @var string
      */
     public $integratorConnectorId;
+
+    /**
+     * @description 连接平台的执行动作唯一标识。
+     *
+     * @var string
+     */
+    public $dingActionId;
 
     /**
      * @description 服务商的执行事件Id
@@ -74,6 +81,7 @@ class actionInfo extends Model
     protected $_name = [
         'dingConnectorId'       => 'dingConnectorId',
         'integratorConnectorId' => 'integratorConnectorId',
+        'dingActionId'          => 'dingActionId',
         'integratorActionId'    => 'integratorActionId',
         'name'                  => 'name',
         'description'           => 'description',
@@ -95,6 +103,9 @@ class actionInfo extends Model
         }
         if (null !== $this->integratorConnectorId) {
             $res['integratorConnectorId'] = $this->integratorConnectorId;
+        }
+        if (null !== $this->dingActionId) {
+            $res['dingActionId'] = $this->dingActionId;
         }
         if (null !== $this->integratorActionId) {
             $res['integratorActionId'] = $this->integratorActionId;
@@ -140,6 +151,9 @@ class actionInfo extends Model
         }
         if (isset($map['integratorConnectorId'])) {
             $model->integratorConnectorId = $map['integratorConnectorId'];
+        }
+        if (isset($map['dingActionId'])) {
+            $model->dingActionId = $map['dingActionId'];
         }
         if (isset($map['integratorActionId'])) {
             $model->integratorActionId = $map['integratorActionId'];

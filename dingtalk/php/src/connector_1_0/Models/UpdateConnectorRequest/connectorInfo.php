@@ -2,23 +2,36 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vconnector_1_0\Models\CreateConnectorRequest;
+namespace AlibabaCloud\SDK\Dingtalk\Vconnector_1_0\Models\UpdateConnectorRequest;
 
 use AlibabaCloud\Tea\Model;
 
 class connectorInfo extends Model
 {
     /**
+     * @description 服务商的连接器唯一标识。
+     *
      * @var string
      */
     public $integratorConnectorId;
 
     /**
+     * @description 连接平台连接器唯一标识。
+     *
+     * @var string
+     */
+    public $dingConnectorId;
+
+    /**
+     * @description 连接器名称。
+     *
      * @var string
      */
     public $name;
 
     /**
+     * @description 连接器描述。
+     *
      * @var string
      */
     public $description;
@@ -29,6 +42,8 @@ class connectorInfo extends Model
     public $iconMediaId;
 
     /**
+     * @description 应用id。
+     *
      * @var int
      */
     public $appId;
@@ -48,7 +63,7 @@ class connectorInfo extends Model
     public $apiDomain;
 
     /**
-     * @description 将apiSecret设置为模板变量。
+     * @description 将执行动作鉴权值设为环境变量。
      *
      * @var bool
      */
@@ -62,6 +77,7 @@ class connectorInfo extends Model
     public $apiSecret;
     protected $_name = [
         'integratorConnectorId' => 'integratorConnectorId',
+        'dingConnectorId'       => 'dingConnectorId',
         'name'                  => 'name',
         'description'           => 'description',
         'iconMediaId'           => 'iconMediaId',
@@ -81,6 +97,9 @@ class connectorInfo extends Model
         $res = [];
         if (null !== $this->integratorConnectorId) {
             $res['integratorConnectorId'] = $this->integratorConnectorId;
+        }
+        if (null !== $this->dingConnectorId) {
+            $res['dingConnectorId'] = $this->dingConnectorId;
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
@@ -120,6 +139,9 @@ class connectorInfo extends Model
         $model = new self();
         if (isset($map['integratorConnectorId'])) {
             $model->integratorConnectorId = $map['integratorConnectorId'];
+        }
+        if (isset($map['dingConnectorId'])) {
+            $model->dingConnectorId = $map['dingConnectorId'];
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];

@@ -67,6 +67,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SearchWorkspaceDocsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\UpdateRangeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\UpdateRangeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\UpdateRangeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\UpdateSheetHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\UpdateSheetRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\UpdateSheetResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\UpdateWorkspaceDocMembersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\UpdateWorkspaceDocMembersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\UpdateWorkspaceDocMembersResponse;
@@ -1037,6 +1040,60 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetRecentOpenDocsResponse::fromMap($this->doROARequest('GetRecentOpenDocs', 'doc_1.0', 'HTTP', 'GET', 'AK', '/v1.0/doc/workspaces/docs/recentOpenDocs', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string             $workbookId
+     * @param string             $sheetId
+     * @param UpdateSheetRequest $request
+     *
+     * @return UpdateSheetResponse
+     */
+    public function updateSheet($workbookId, $sheetId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateSheetHeaders([]);
+
+        return $this->updateSheetWithOptions($workbookId, $sheetId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string             $workbookId
+     * @param string             $sheetId
+     * @param UpdateSheetRequest $request
+     * @param UpdateSheetHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return UpdateSheetResponse
+     */
+    public function updateSheetWithOptions($workbookId, $sheetId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->name)) {
+            @$body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->visibility)) {
+            @$body['visibility'] = $request->visibility;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateSheetResponse::fromMap($this->doROARequest('UpdateSheet', 'doc_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '', 'none', $req, $runtime));
     }
 
     /**
