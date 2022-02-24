@@ -1742,6 +1742,34 @@ class SendInteractiveCardRequestCardData(TeaModel):
         return self
 
 
+class SendInteractiveCardRequestCardOptions(TeaModel):
+    def __init__(
+        self,
+        support_forward: bool = None,
+    ):
+        # 是否支持转发
+        self.support_forward = support_forward
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.support_forward is not None:
+            result['supportForward'] = self.support_forward
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('supportForward') is not None:
+            self.support_forward = m.get('supportForward')
+        return self
+
+
 class SendInteractiveCardRequest(TeaModel):
     def __init__(
         self,
@@ -1762,6 +1790,7 @@ class SendInteractiveCardRequest(TeaModel):
         chat_bot_id: str = None,
         user_id_type: int = None,
         at_open_ids: Dict[str, str] = None,
+        card_options: SendInteractiveCardRequestCardOptions = None,
     ):
         self.ding_isv_org_id = ding_isv_org_id
         # 卡片模板ID
@@ -1792,6 +1821,8 @@ class SendInteractiveCardRequest(TeaModel):
         self.user_id_type = user_id_type
         # 消息@人，{123456:"钉三多"}，key：根据userIdType来设置，【特殊设置：如果key、value都为"@ALL"则判断at所有人】
         self.at_open_ids = at_open_ids
+        # 卡片属性
+        self.card_options = card_options
 
     def validate(self):
         if self.card_data:
@@ -1800,6 +1831,8 @@ class SendInteractiveCardRequest(TeaModel):
             for v in self.private_data.values():
                 if v:
                     v.validate()
+        if self.card_options:
+            self.card_options.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -1843,6 +1876,8 @@ class SendInteractiveCardRequest(TeaModel):
             result['userIdType'] = self.user_id_type
         if self.at_open_ids is not None:
             result['atOpenIds'] = self.at_open_ids
+        if self.card_options is not None:
+            result['cardOptions'] = self.card_options.to_map()
         return result
 
     def from_map(self, m: dict = None):
@@ -1885,6 +1920,9 @@ class SendInteractiveCardRequest(TeaModel):
             self.user_id_type = m.get('userIdType')
         if m.get('atOpenIds') is not None:
             self.at_open_ids = m.get('atOpenIds')
+        if m.get('cardOptions') is not None:
+            temp_model = SendInteractiveCardRequestCardOptions()
+            self.card_options = temp_model.from_map(m['cardOptions'])
         return self
 
 
