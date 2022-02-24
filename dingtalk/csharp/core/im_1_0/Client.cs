@@ -916,6 +916,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             {
                 body["cardData"] = request.CardData;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardOptions.ToMap()))
+            {
+                body["cardOptions"] = request.CardOptions;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardTemplateId))
             {
                 body["cardTemplateId"] = request.CardTemplateId;
@@ -1004,6 +1008,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardData.ToMap()))
             {
                 body["cardData"] = request.CardData;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardOptions.ToMap()))
+            {
+                body["cardOptions"] = request.CardOptions;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardTemplateId))
             {

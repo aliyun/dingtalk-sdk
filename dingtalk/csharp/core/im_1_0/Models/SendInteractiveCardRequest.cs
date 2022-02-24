@@ -39,6 +39,18 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         };
 
         /// <summary>
+        /// 卡片属性
+        /// </summary>
+        [NameInMap("cardOptions")]
+        [Validation(Required=false)]
+        public SendInteractiveCardRequestCardOptions CardOptions { get; set; }
+        public class SendInteractiveCardRequestCardOptions : TeaModel {
+            [NameInMap("supportForward")]
+            [Validation(Required=false)]
+            public bool? SupportForward { get; set; }
+        };
+
+        /// <summary>
         /// 卡片模板ID
         /// </summary>
         [NameInMap("cardTemplateId")]
