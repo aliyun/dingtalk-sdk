@@ -5,6 +5,7 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models;
 
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendInteractiveCardRequest\cardData;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendInteractiveCardRequest\cardOptions;
 use AlibabaCloud\Tea\Model;
 
 class SendInteractiveCardRequest extends Model
@@ -117,6 +118,13 @@ class SendInteractiveCardRequest extends Model
      * @var string[]
      */
     public $atOpenIds;
+
+    /**
+     * @description 卡片属性
+     *
+     * @var cardOptions
+     */
+    public $cardOptions;
     protected $_name = [
         'dingIsvOrgId'       => 'dingIsvOrgId',
         'cardTemplateId'     => 'cardTemplateId',
@@ -135,6 +143,7 @@ class SendInteractiveCardRequest extends Model
         'chatBotId'          => 'chatBotId',
         'userIdType'         => 'userIdType',
         'atOpenIds'          => 'atOpenIds',
+        'cardOptions'        => 'cardOptions',
     ];
 
     public function validate()
@@ -200,6 +209,9 @@ class SendInteractiveCardRequest extends Model
         if (null !== $this->atOpenIds) {
             $res['atOpenIds'] = $this->atOpenIds;
         }
+        if (null !== $this->cardOptions) {
+            $res['cardOptions'] = null !== $this->cardOptions ? $this->cardOptions->toMap() : null;
+        }
 
         return $res;
     }
@@ -264,6 +276,9 @@ class SendInteractiveCardRequest extends Model
         }
         if (isset($map['atOpenIds'])) {
             $model->atOpenIds = $map['atOpenIds'];
+        }
+        if (isset($map['cardOptions'])) {
+            $model->cardOptions = cardOptions::fromMap($map['cardOptions']);
         }
 
         return $model;
