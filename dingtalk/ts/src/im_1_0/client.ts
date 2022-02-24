@@ -693,6 +693,7 @@ export class SendInteractiveCardRequest extends $tea.Model {
   atOpenIds?: { [key: string]: string };
   callbackRouteKey?: string;
   cardData?: SendInteractiveCardRequestCardData;
+  cardOptions?: SendInteractiveCardRequestCardOptions;
   cardTemplateId?: string;
   chatBotId?: string;
   conversationType?: number;
@@ -707,6 +708,7 @@ export class SendInteractiveCardRequest extends $tea.Model {
       atOpenIds: 'atOpenIds',
       callbackRouteKey: 'callbackRouteKey',
       cardData: 'cardData',
+      cardOptions: 'cardOptions',
       cardTemplateId: 'cardTemplateId',
       chatBotId: 'chatBotId',
       conversationType: 'conversationType',
@@ -724,6 +726,7 @@ export class SendInteractiveCardRequest extends $tea.Model {
       atOpenIds: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       callbackRouteKey: 'string',
       cardData: SendInteractiveCardRequestCardData,
+      cardOptions: SendInteractiveCardRequestCardOptions,
       cardTemplateId: 'string',
       chatBotId: 'string',
       conversationType: 'number',
@@ -1638,6 +1641,25 @@ export class SendInteractiveCardRequestCardData extends $tea.Model {
   }
 }
 
+export class SendInteractiveCardRequestCardOptions extends $tea.Model {
+  supportForward?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      supportForward: 'supportForward',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      supportForward: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SendInteractiveCardResponseBodyResult extends $tea.Model {
   processQueryKey?: string;
   static names(): { [key: string]: string } {
@@ -2090,6 +2112,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset($tea.toMap(request.cardData))) {
       body["cardData"] = request.cardData;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.cardOptions))) {
+      body["cardOptions"] = request.cardOptions;
     }
 
     if (!Util.isUnset(request.cardTemplateId)) {
