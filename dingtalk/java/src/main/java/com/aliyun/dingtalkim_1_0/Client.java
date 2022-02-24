@@ -343,6 +343,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("cardData", request.cardData);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.cardOptions))) {
+            body.put("cardOptions", request.cardOptions);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.cardTemplateId)) {
             body.put("cardTemplateId", request.cardTemplateId);
         }

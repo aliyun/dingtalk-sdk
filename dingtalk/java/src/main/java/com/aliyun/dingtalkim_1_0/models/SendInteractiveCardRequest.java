@@ -16,6 +16,10 @@ public class SendInteractiveCardRequest extends TeaModel {
     @NameInMap("cardData")
     public SendInteractiveCardRequestCardData cardData;
 
+    // 卡片属性
+    @NameInMap("cardOptions")
+    public SendInteractiveCardRequestCardOptions cardOptions;
+
     // 卡片模板ID
     @NameInMap("cardTemplateId")
     public String cardTemplateId;
@@ -79,6 +83,14 @@ public class SendInteractiveCardRequest extends TeaModel {
     }
     public SendInteractiveCardRequestCardData getCardData() {
         return this.cardData;
+    }
+
+    public SendInteractiveCardRequest setCardOptions(SendInteractiveCardRequestCardOptions cardOptions) {
+        this.cardOptions = cardOptions;
+        return this;
+    }
+    public SendInteractiveCardRequestCardOptions getCardOptions() {
+        return this.cardOptions;
     }
 
     public SendInteractiveCardRequest setCardTemplateId(String cardTemplateId) {
@@ -181,6 +193,26 @@ public class SendInteractiveCardRequest extends TeaModel {
         }
         public java.util.Map<String, String> getCardParamMap() {
             return this.cardParamMap;
+        }
+
+    }
+
+    public static class SendInteractiveCardRequestCardOptions extends TeaModel {
+        // 是否支持转发
+        @NameInMap("supportForward")
+        public Boolean supportForward;
+
+        public static SendInteractiveCardRequestCardOptions build(java.util.Map<String, ?> map) throws Exception {
+            SendInteractiveCardRequestCardOptions self = new SendInteractiveCardRequestCardOptions();
+            return TeaModel.build(map, self);
+        }
+
+        public SendInteractiveCardRequestCardOptions setSupportForward(Boolean supportForward) {
+            this.supportForward = supportForward;
+            return this;
+        }
+        public Boolean getSupportForward() {
+            return this.supportForward;
         }
 
     }
