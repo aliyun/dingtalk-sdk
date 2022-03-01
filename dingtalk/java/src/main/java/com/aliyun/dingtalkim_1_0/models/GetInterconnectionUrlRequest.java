@@ -36,6 +36,10 @@ public class GetInterconnectionUrlRequest extends TeaModel {
     @NameInMap("signature")
     public String signature;
 
+    // sourceCode
+    @NameInMap("sourceCode")
+    public String sourceCode;
+
     // sourceType
     @NameInMap("sourceType")
     public Integer sourceType;
@@ -111,6 +115,14 @@ public class GetInterconnectionUrlRequest extends TeaModel {
     }
     public String getSignature() {
         return this.signature;
+    }
+
+    public GetInterconnectionUrlRequest setSourceCode(String sourceCode) {
+        this.sourceCode = sourceCode;
+        return this;
+    }
+    public String getSourceCode() {
+        return this.sourceCode;
     }
 
     public GetInterconnectionUrlRequest setSourceType(Integer sourceType) {
