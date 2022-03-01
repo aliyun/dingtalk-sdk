@@ -485,6 +485,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->sourceType)) {
             @$body['sourceType'] = $request->sourceType;
         }
+        if (!Utils::isUnset($request->sourceCode)) {
+            @$body['sourceCode'] = $request->sourceCode;
+        }
         if (!Utils::isUnset($request->signature)) {
             @$body['signature'] = $request->signature;
         }

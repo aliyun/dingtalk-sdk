@@ -72,6 +72,13 @@ class GetInterconnectionUrlRequest extends Model
     public $sourceType;
 
     /**
+     * @description sourceCode
+     *
+     * @var string
+     */
+    public $sourceCode;
+
+    /**
      * @description signature
      *
      * @var string
@@ -87,6 +94,7 @@ class GetInterconnectionUrlRequest extends Model
         'userId'              => 'userId',
         'msgPageType'         => 'msgPageType',
         'sourceType'          => 'sourceType',
+        'sourceCode'          => 'sourceCode',
         'signature'           => 'signature',
     ];
 
@@ -123,6 +131,9 @@ class GetInterconnectionUrlRequest extends Model
         }
         if (null !== $this->sourceType) {
             $res['sourceType'] = $this->sourceType;
+        }
+        if (null !== $this->sourceCode) {
+            $res['sourceCode'] = $this->sourceCode;
         }
         if (null !== $this->signature) {
             $res['signature'] = $this->signature;
@@ -165,6 +176,9 @@ class GetInterconnectionUrlRequest extends Model
         }
         if (isset($map['sourceType'])) {
             $model->sourceType = $map['sourceType'];
+        }
+        if (isset($map['sourceCode'])) {
+            $model->sourceCode = $map['sourceCode'];
         }
         if (isset($map['signature'])) {
             $model->signature = $map['signature'];

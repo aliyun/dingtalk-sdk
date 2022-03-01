@@ -18,6 +18,7 @@
   },
   "autoload": {
     "psr-4": {
+      "AlibabaCloud\\SDK\\Dingtalk\\Valgo_1_0\\": "src/algo_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Valitrip_1_0\\": "src/alitrip_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vapaas_1_0\\": "src/apaas_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vapp_market_1_0\\": "src/app_market_1_0/",
