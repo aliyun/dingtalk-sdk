@@ -1,0 +1,1 @@
+module.exports = require('./dist').algo_1_0;

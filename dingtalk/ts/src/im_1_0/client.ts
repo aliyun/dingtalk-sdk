@@ -186,6 +186,7 @@ export class GetInterconnectionUrlRequest extends $tea.Model {
   msgPageType?: number;
   qrCode?: string;
   signature?: string;
+  sourceCode?: string;
   sourceType?: number;
   userId?: string;
   static names(): { [key: string]: string } {
@@ -198,6 +199,7 @@ export class GetInterconnectionUrlRequest extends $tea.Model {
       msgPageType: 'msgPageType',
       qrCode: 'qrCode',
       signature: 'signature',
+      sourceCode: 'sourceCode',
       sourceType: 'sourceType',
       userId: 'userId',
     };
@@ -213,6 +215,7 @@ export class GetInterconnectionUrlRequest extends $tea.Model {
       msgPageType: 'number',
       qrCode: 'string',
       signature: 'string',
+      sourceCode: 'string',
       sourceType: 'number',
       userId: 'string',
     };
@@ -1887,6 +1890,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.signature)) {
       body["signature"] = request.signature;
+    }
+
+    if (!Util.isUnset(request.sourceCode)) {
+      body["sourceCode"] = request.sourceCode;
     }
 
     if (!Util.isUnset(request.sourceType)) {
