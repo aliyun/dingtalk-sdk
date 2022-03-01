@@ -240,6 +240,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             {
                 body["signature"] = request.Signature;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceCode))
+            {
+                body["sourceCode"] = request.SourceCode;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceType))
             {
                 body["sourceType"] = request.SourceType;
@@ -300,6 +304,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Signature))
             {
                 body["signature"] = request.Signature;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceCode))
+            {
+                body["sourceCode"] = request.SourceCode;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceType))
             {

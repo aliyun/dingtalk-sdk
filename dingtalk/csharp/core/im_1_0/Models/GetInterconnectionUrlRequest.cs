@@ -66,6 +66,13 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         public string Signature { get; set; }
 
         /// <summary>
+        /// sourceCode
+        /// </summary>
+        [NameInMap("sourceCode")]
+        [Validation(Required=false)]
+        public string SourceCode { get; set; }
+
+        /// <summary>
         /// sourceType
         /// </summary>
         [NameInMap("sourceType")]
