@@ -595,6 +595,8 @@ class Client(OpenApiClient):
             body['msgPageType'] = request.msg_page_type
         if not UtilClient.is_unset(request.source_type):
             body['sourceType'] = request.source_type
+        if not UtilClient.is_unset(request.source_code):
+            body['sourceCode'] = request.source_code
         if not UtilClient.is_unset(request.signature):
             body['signature'] = request.signature
         real_headers = {}
@@ -637,6 +639,8 @@ class Client(OpenApiClient):
             body['msgPageType'] = request.msg_page_type
         if not UtilClient.is_unset(request.source_type):
             body['sourceType'] = request.source_type
+        if not UtilClient.is_unset(request.source_code):
+            body['sourceCode'] = request.source_code
         if not UtilClient.is_unset(request.signature):
             body['signature'] = request.signature
         real_headers = {}

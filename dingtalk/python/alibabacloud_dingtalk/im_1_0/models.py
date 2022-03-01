@@ -1104,6 +1104,7 @@ class GetInterconnectionUrlRequest(TeaModel):
         user_id: str = None,
         msg_page_type: int = None,
         source_type: int = None,
+        source_code: str = None,
         signature: str = None,
     ):
         # appUserId
@@ -1124,6 +1125,8 @@ class GetInterconnectionUrlRequest(TeaModel):
         self.msg_page_type = msg_page_type
         # sourceType
         self.source_type = source_type
+        # sourceCode
+        self.source_code = source_code
         # signature
         self.signature = signature
 
@@ -1154,6 +1157,8 @@ class GetInterconnectionUrlRequest(TeaModel):
             result['msgPageType'] = self.msg_page_type
         if self.source_type is not None:
             result['sourceType'] = self.source_type
+        if self.source_code is not None:
+            result['sourceCode'] = self.source_code
         if self.signature is not None:
             result['signature'] = self.signature
         return result
@@ -1178,6 +1183,8 @@ class GetInterconnectionUrlRequest(TeaModel):
             self.msg_page_type = m.get('msgPageType')
         if m.get('sourceType') is not None:
             self.source_type = m.get('sourceType')
+        if m.get('sourceCode') is not None:
+            self.source_code = m.get('sourceCode')
         if m.get('signature') is not None:
             self.signature = m.get('signature')
         return self
