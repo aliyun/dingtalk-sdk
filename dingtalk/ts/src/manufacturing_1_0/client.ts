@@ -8,7 +8,7 @@ import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
 export class IndustrializeManufactureJobBookRequest extends $tea.Model {
-  dingCorpId?: string;
+  corpId?: string;
   extend?: string;
   instNo?: string;
   isBatchJob?: string;
@@ -30,7 +30,7 @@ export class IndustrializeManufactureJobBookRequest extends $tea.Model {
   uuid?: string;
   static names(): { [key: string]: string } {
     return {
-      dingCorpId: 'dingCorpId',
+      corpId: 'corpId',
       extend: 'extend',
       instNo: 'instNo',
       isBatchJob: 'isBatchJob',
@@ -55,7 +55,7 @@ export class IndustrializeManufactureJobBookRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      dingCorpId: 'string',
+      corpId: 'string',
       extend: 'string',
       instNo: 'string',
       isBatchJob: 'string',
@@ -84,7 +84,7 @@ export class IndustrializeManufactureJobBookRequest extends $tea.Model {
 }
 
 export class IndustrializeManufactureJobBookResponseBody extends $tea.Model {
-  content?: string;
+  content?: IndustrializeManufactureJobBookResponseBodyContent;
   errorCode?: string;
   errorLevel?: number;
   errorMsg?: string;
@@ -105,7 +105,7 @@ export class IndustrializeManufactureJobBookResponseBody extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      content: 'string',
+      content: IndustrializeManufactureJobBookResponseBodyContent,
       errorCode: 'string',
       errorLevel: 'number',
       errorMsg: 'string',
@@ -170,12 +170,14 @@ export class IndustrializeManufactureQueryJobsRequest extends $tea.Model {
   manufactureDay?: string;
   mesAppKey?: string;
   pageSize?: number;
+  processName?: string;
   productCode?: string;
   productName?: string;
   productSpecification?: string;
   qualifiedQuantity?: string;
   unitPrice?: string;
   userId?: string;
+  userIdList?: string;
   userName?: string;
   uuid?: string;
   static names(): { [key: string]: string } {
@@ -185,12 +187,14 @@ export class IndustrializeManufactureQueryJobsRequest extends $tea.Model {
       manufactureDay: 'manufactureDay',
       mesAppKey: 'mesAppKey',
       pageSize: 'pageSize',
+      processName: 'processName',
       productCode: 'productCode',
       productName: 'productName',
       productSpecification: 'productSpecification',
       qualifiedQuantity: 'qualifiedQuantity',
       unitPrice: 'unitPrice',
       userId: 'userId',
+      userIdList: 'userIdList',
       userName: 'userName',
       uuid: 'uuid',
     };
@@ -203,12 +207,14 @@ export class IndustrializeManufactureQueryJobsRequest extends $tea.Model {
       manufactureDay: 'string',
       mesAppKey: 'string',
       pageSize: 'number',
+      processName: 'string',
       productCode: 'string',
       productName: 'string',
       productSpecification: 'string',
       qualifiedQuantity: 'string',
       unitPrice: 'string',
       userId: 'string',
+      userIdList: 'string',
       userName: 'string',
       uuid: 'string',
     };
@@ -220,7 +226,7 @@ export class IndustrializeManufactureQueryJobsRequest extends $tea.Model {
 }
 
 export class IndustrializeManufactureQueryJobsResponseBody extends $tea.Model {
-  content?: string;
+  content?: IndustrializeManufactureQueryJobsResponseBodyContent;
   httpCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -231,7 +237,7 @@ export class IndustrializeManufactureQueryJobsResponseBody extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      content: 'string',
+      content: IndustrializeManufactureQueryJobsResponseBodyContent,
       httpCode: 'string',
     };
   }
@@ -263,6 +269,95 @@ export class IndustrializeManufactureQueryJobsResponse extends $tea.Model {
   }
 }
 
+export class IndustrializeManufactureJobBookResponseBodyContent extends $tea.Model {
+  count?: number;
+  id?: number;
+  static names(): { [key: string]: string } {
+    return {
+      count: 'count',
+      id: 'id',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      count: 'number',
+      id: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustrializeManufactureQueryJobsResponseBodyContent extends $tea.Model {
+  corpId?: string;
+  gmtCreate?: string;
+  gmtModified?: string;
+  id?: number;
+  instNo?: string;
+  isBatchJob?: string;
+  manufactureDate?: string;
+  manufactureDay?: string;
+  mesAppKey?: string;
+  processName?: string;
+  qualifiedQuantity?: string;
+  scrappedQuantity?: string;
+  unitPrice?: string;
+  userId?: string;
+  userIdList?: string;
+  userNameList?: string;
+  uuid?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      gmtCreate: 'gmtCreate',
+      gmtModified: 'gmtModified',
+      id: 'id',
+      instNo: 'instNo',
+      isBatchJob: 'isBatchJob',
+      manufactureDate: 'manufactureDate',
+      manufactureDay: 'manufactureDay',
+      mesAppKey: 'mesAppKey',
+      processName: 'processName',
+      qualifiedQuantity: 'qualifiedQuantity',
+      scrappedQuantity: 'scrappedQuantity',
+      unitPrice: 'unitPrice',
+      userId: 'userId',
+      userIdList: 'userIdList',
+      userNameList: 'userNameList',
+      uuid: 'uuid',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      gmtCreate: 'string',
+      gmtModified: 'string',
+      id: 'number',
+      instNo: 'string',
+      isBatchJob: 'string',
+      manufactureDate: 'string',
+      manufactureDay: 'string',
+      mesAppKey: 'string',
+      processName: 'string',
+      qualifiedQuantity: 'string',
+      scrappedQuantity: 'string',
+      unitPrice: 'string',
+      userId: 'string',
+      userIdList: 'string',
+      userNameList: 'string',
+      uuid: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
 
@@ -286,8 +381,8 @@ export default class Client extends OpenApi {
     Util.validateModel(request);
     userId = OpenApiUtil.getEncodeParam(userId);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.dingCorpId)) {
-      body["dingCorpId"] = request.dingCorpId;
+    if (!Util.isUnset(request.corpId)) {
+      body["corpId"] = request.corpId;
     }
 
     if (!Util.isUnset(request.extend)) {
@@ -402,6 +497,10 @@ export default class Client extends OpenApi {
       body["pageSize"] = request.pageSize;
     }
 
+    if (!Util.isUnset(request.processName)) {
+      body["processName"] = request.processName;
+    }
+
     if (!Util.isUnset(request.productCode)) {
       body["productCode"] = request.productCode;
     }
@@ -424,6 +523,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.userId)) {
       body["userId"] = request.userId;
+    }
+
+    if (!Util.isUnset(request.userIdList)) {
+      body["userIdList"] = request.userIdList;
     }
 
     if (!Util.isUnset(request.userName)) {
