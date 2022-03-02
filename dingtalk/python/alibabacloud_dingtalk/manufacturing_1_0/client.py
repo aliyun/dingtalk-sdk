@@ -81,8 +81,8 @@ class Client(OpenApiClient):
             body['instNo'] = request.inst_no
         if not UtilClient.is_unset(request.manufacture_date):
             body['manufactureDate'] = request.manufacture_date
-        if not UtilClient.is_unset(request.ding_corp_id):
-            body['dingCorpId'] = request.ding_corp_id
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
         if not UtilClient.is_unset(request.is_batch_job):
             body['isBatchJob'] = request.is_batch_job
         if not UtilClient.is_unset(request.user_name_list):
@@ -139,8 +139,8 @@ class Client(OpenApiClient):
             body['instNo'] = request.inst_no
         if not UtilClient.is_unset(request.manufacture_date):
             body['manufactureDate'] = request.manufacture_date
-        if not UtilClient.is_unset(request.ding_corp_id):
-            body['dingCorpId'] = request.ding_corp_id
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
         if not UtilClient.is_unset(request.is_batch_job):
             body['isBatchJob'] = request.is_batch_job
         if not UtilClient.is_unset(request.user_name_list):
@@ -208,6 +208,10 @@ class Client(OpenApiClient):
             body['userId'] = request.user_id
         if not UtilClient.is_unset(request.mes_app_key):
             body['mesAppKey'] = request.mes_app_key
+        if not UtilClient.is_unset(request.user_id_list):
+            body['userIdList'] = request.user_id_list
+        if not UtilClient.is_unset(request.process_name):
+            body['processName'] = request.process_name
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -256,6 +260,10 @@ class Client(OpenApiClient):
             body['userId'] = request.user_id
         if not UtilClient.is_unset(request.mes_app_key):
             body['mesAppKey'] = request.mes_app_key
+        if not UtilClient.is_unset(request.user_id_list):
+            body['userIdList'] = request.user_id_list
+        if not UtilClient.is_unset(request.process_name):
+            body['processName'] = request.process_name
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

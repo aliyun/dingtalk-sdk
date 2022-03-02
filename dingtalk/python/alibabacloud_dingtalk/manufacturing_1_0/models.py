@@ -22,7 +22,7 @@ class IndustrializeManufactureJobBookRequest(TeaModel):
         mes_app_key: str = None,
         inst_no: str = None,
         manufacture_date: str = None,
-        ding_corp_id: str = None,
+        corp_id: str = None,
         is_batch_job: str = None,
         user_name_list: str = None,
         user_id_list: str = None,
@@ -59,7 +59,7 @@ class IndustrializeManufactureJobBookRequest(TeaModel):
         # 生产日期时间(到时分秒)
         self.manufacture_date = manufacture_date
         # 钉钉组织id
-        self.ding_corp_id = ding_corp_id
+        self.corp_id = corp_id
         # 是否是批量报工(取值[n,y])
         self.is_batch_job = is_batch_job
         # 批量报工时多个人名以英文逗号分隔
@@ -108,8 +108,8 @@ class IndustrializeManufactureJobBookRequest(TeaModel):
             result['instNo'] = self.inst_no
         if self.manufacture_date is not None:
             result['manufactureDate'] = self.manufacture_date
-        if self.ding_corp_id is not None:
-            result['dingCorpId'] = self.ding_corp_id
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
         if self.is_batch_job is not None:
             result['isBatchJob'] = self.is_batch_job
         if self.user_name_list is not None:
@@ -152,8 +152,8 @@ class IndustrializeManufactureJobBookRequest(TeaModel):
             self.inst_no = m.get('instNo')
         if m.get('manufactureDate') is not None:
             self.manufacture_date = m.get('manufactureDate')
-        if m.get('dingCorpId') is not None:
-            self.ding_corp_id = m.get('dingCorpId')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
         if m.get('isBatchJob') is not None:
             self.is_batch_job = m.get('isBatchJob')
         if m.get('userNameList') is not None:
@@ -165,12 +165,47 @@ class IndustrializeManufactureJobBookRequest(TeaModel):
         return self
 
 
+class IndustrializeManufactureJobBookResponseBodyContent(TeaModel):
+    def __init__(
+        self,
+        count: int = None,
+        id: int = None,
+    ):
+        # 影响行数
+        self.count = count
+        # 新增记录的数据库id
+        self.id = id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.count is not None:
+            result['count'] = self.count
+        if self.id is not None:
+            result['id'] = self.id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('count') is not None:
+            self.count = m.get('count')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        return self
+
+
 class IndustrializeManufactureJobBookResponseBody(TeaModel):
     def __init__(
         self,
         http_code: str = None,
         uuid: str = None,
-        content: str = None,
+        content: IndustrializeManufactureJobBookResponseBodyContent = None,
         error_msg: str = None,
         error_level: int = None,
         error_code: str = None,
@@ -192,7 +227,8 @@ class IndustrializeManufactureJobBookResponseBody(TeaModel):
         self.success = success
 
     def validate(self):
-        pass
+        if self.content:
+            self.content.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -205,7 +241,7 @@ class IndustrializeManufactureJobBookResponseBody(TeaModel):
         if self.uuid is not None:
             result['uuid'] = self.uuid
         if self.content is not None:
-            result['content'] = self.content
+            result['content'] = self.content.to_map()
         if self.error_msg is not None:
             result['errorMsg'] = self.error_msg
         if self.error_level is not None:
@@ -223,7 +259,8 @@ class IndustrializeManufactureJobBookResponseBody(TeaModel):
         if m.get('uuid') is not None:
             self.uuid = m.get('uuid')
         if m.get('content') is not None:
-            self.content = m.get('content')
+            temp_model = IndustrializeManufactureJobBookResponseBodyContent()
+            self.content = temp_model.from_map(m['content'])
         if m.get('errorMsg') is not None:
             self.error_msg = m.get('errorMsg')
         if m.get('errorLevel') is not None:
@@ -321,6 +358,8 @@ class IndustrializeManufactureQueryJobsRequest(TeaModel):
         current_page: int = None,
         user_id: str = None,
         mes_app_key: str = None,
+        user_id_list: str = None,
+        process_name: str = None,
     ):
         # 产品中文名称
         self.product_name = product_name
@@ -348,6 +387,10 @@ class IndustrializeManufactureQueryJobsRequest(TeaModel):
         self.user_id = user_id
         # MES系统唯一标识
         self.mes_app_key = mes_app_key
+        # 批量报工时多个人钉钉工号以英文逗号分隔
+        self.user_id_list = user_id_list
+        # 工序名称
+        self.process_name = process_name
 
     def validate(self):
         pass
@@ -384,6 +427,10 @@ class IndustrializeManufactureQueryJobsRequest(TeaModel):
             result['userId'] = self.user_id
         if self.mes_app_key is not None:
             result['mesAppKey'] = self.mes_app_key
+        if self.user_id_list is not None:
+            result['userIdList'] = self.user_id_list
+        if self.process_name is not None:
+            result['processName'] = self.process_name
         return result
 
     def from_map(self, m: dict = None):
@@ -414,19 +461,68 @@ class IndustrializeManufactureQueryJobsRequest(TeaModel):
             self.user_id = m.get('userId')
         if m.get('mesAppKey') is not None:
             self.mes_app_key = m.get('mesAppKey')
+        if m.get('userIdList') is not None:
+            self.user_id_list = m.get('userIdList')
+        if m.get('processName') is not None:
+            self.process_name = m.get('processName')
         return self
 
 
-class IndustrializeManufactureQueryJobsResponseBody(TeaModel):
+class IndustrializeManufactureQueryJobsResponseBodyContent(TeaModel):
     def __init__(
         self,
-        http_code: str = None,
-        content: str = None,
+        corp_id: str = None,
+        user_id: str = None,
+        uuid: str = None,
+        mes_app_key: str = None,
+        manufacture_date: str = None,
+        manufacture_day: str = None,
+        inst_no: str = None,
+        user_id_list: str = None,
+        user_name_list: str = None,
+        unit_price: str = None,
+        process_name: str = None,
+        gmt_modified: str = None,
+        gmt_create: str = None,
+        qualified_quantity: str = None,
+        id: int = None,
+        is_batch_job: str = None,
+        scrapped_quantity: str = None,
     ):
-        # httpCode
-        self.http_code = http_code
-        # 查询的数据结果
-        self.content = content
+        # 组织id
+        self.corp_id = corp_id
+        # 工人工号(isBatchJob=='n'时)
+        self.user_id = user_id
+        # 报工记录的唯一标识
+        self.uuid = uuid
+        # 分配给mes系统的appkey
+        self.mes_app_key = mes_app_key
+        # 生产日期时间(到时分秒),格式:2021-07-05 08:00:21
+        self.manufacture_date = manufacture_date
+        # 生产日期(到天)
+        self.manufacture_day = manufacture_day
+        # 工单id
+        self.inst_no = inst_no
+        # 批量报工时多个人钉钉工号以英文逗号分隔
+        self.user_id_list = user_id_list
+        # 批量报工时多个人名以英文逗号分隔
+        self.user_name_list = user_name_list
+        # 计件单价，单位：分
+        self.unit_price = unit_price
+        # 工序名称
+        self.process_name = process_name
+        # 修改时间
+        self.gmt_modified = gmt_modified
+        # 创建时间
+        self.gmt_create = gmt_create
+        # 合格数
+        self.qualified_quantity = qualified_quantity
+        # 数据库id
+        self.id = id
+        # 是否是批量报工，即一次报工由多个工人一起分担，取值[n,y],y表示是批量，批量时多个人名以英文逗号分隔
+        self.is_batch_job = is_batch_job
+        # 不合格数
+        self.scrapped_quantity = scrapped_quantity
 
     def validate(self):
         pass
@@ -437,10 +533,106 @@ class IndustrializeManufactureQueryJobsResponseBody(TeaModel):
             return _map
 
         result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.uuid is not None:
+            result['uuid'] = self.uuid
+        if self.mes_app_key is not None:
+            result['mesAppKey'] = self.mes_app_key
+        if self.manufacture_date is not None:
+            result['manufactureDate'] = self.manufacture_date
+        if self.manufacture_day is not None:
+            result['manufactureDay'] = self.manufacture_day
+        if self.inst_no is not None:
+            result['instNo'] = self.inst_no
+        if self.user_id_list is not None:
+            result['userIdList'] = self.user_id_list
+        if self.user_name_list is not None:
+            result['userNameList'] = self.user_name_list
+        if self.unit_price is not None:
+            result['unitPrice'] = self.unit_price
+        if self.process_name is not None:
+            result['processName'] = self.process_name
+        if self.gmt_modified is not None:
+            result['gmtModified'] = self.gmt_modified
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.qualified_quantity is not None:
+            result['qualifiedQuantity'] = self.qualified_quantity
+        if self.id is not None:
+            result['id'] = self.id
+        if self.is_batch_job is not None:
+            result['isBatchJob'] = self.is_batch_job
+        if self.scrapped_quantity is not None:
+            result['scrappedQuantity'] = self.scrapped_quantity
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('uuid') is not None:
+            self.uuid = m.get('uuid')
+        if m.get('mesAppKey') is not None:
+            self.mes_app_key = m.get('mesAppKey')
+        if m.get('manufactureDate') is not None:
+            self.manufacture_date = m.get('manufactureDate')
+        if m.get('manufactureDay') is not None:
+            self.manufacture_day = m.get('manufactureDay')
+        if m.get('instNo') is not None:
+            self.inst_no = m.get('instNo')
+        if m.get('userIdList') is not None:
+            self.user_id_list = m.get('userIdList')
+        if m.get('userNameList') is not None:
+            self.user_name_list = m.get('userNameList')
+        if m.get('unitPrice') is not None:
+            self.unit_price = m.get('unitPrice')
+        if m.get('processName') is not None:
+            self.process_name = m.get('processName')
+        if m.get('gmtModified') is not None:
+            self.gmt_modified = m.get('gmtModified')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('qualifiedQuantity') is not None:
+            self.qualified_quantity = m.get('qualifiedQuantity')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('isBatchJob') is not None:
+            self.is_batch_job = m.get('isBatchJob')
+        if m.get('scrappedQuantity') is not None:
+            self.scrapped_quantity = m.get('scrappedQuantity')
+        return self
+
+
+class IndustrializeManufactureQueryJobsResponseBody(TeaModel):
+    def __init__(
+        self,
+        http_code: str = None,
+        content: IndustrializeManufactureQueryJobsResponseBodyContent = None,
+    ):
+        # httpCode
+        self.http_code = http_code
+        # 查询的数据结果
+        self.content = content
+
+    def validate(self):
+        if self.content:
+            self.content.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
         if self.http_code is not None:
             result['httpCode'] = self.http_code
         if self.content is not None:
-            result['content'] = self.content
+            result['content'] = self.content.to_map()
         return result
 
     def from_map(self, m: dict = None):
@@ -448,7 +640,8 @@ class IndustrializeManufactureQueryJobsResponseBody(TeaModel):
         if m.get('httpCode') is not None:
             self.http_code = m.get('httpCode')
         if m.get('content') is not None:
-            self.content = m.get('content')
+            temp_model = IndustrializeManufactureQueryJobsResponseBodyContent()
+            self.content = temp_model.from_map(m['content'])
         return self
 
 
