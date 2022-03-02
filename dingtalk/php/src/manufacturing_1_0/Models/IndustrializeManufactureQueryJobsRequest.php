@@ -98,6 +98,20 @@ class IndustrializeManufactureQueryJobsRequest extends Model
      * @var string
      */
     public $mesAppKey;
+
+    /**
+     * @description 批量报工时多个人钉钉工号以英文逗号分隔
+     *
+     * @var string
+     */
+    public $userIdList;
+
+    /**
+     * @description 工序名称
+     *
+     * @var string
+     */
+    public $processName;
     protected $_name = [
         'productName'          => 'productName',
         'pageSize'             => 'pageSize',
@@ -112,6 +126,8 @@ class IndustrializeManufactureQueryJobsRequest extends Model
         'currentPage'          => 'currentPage',
         'userId'               => 'userId',
         'mesAppKey'            => 'mesAppKey',
+        'userIdList'           => 'userIdList',
+        'processName'          => 'processName',
     ];
 
     public function validate()
@@ -159,6 +175,12 @@ class IndustrializeManufactureQueryJobsRequest extends Model
         }
         if (null !== $this->mesAppKey) {
             $res['mesAppKey'] = $this->mesAppKey;
+        }
+        if (null !== $this->userIdList) {
+            $res['userIdList'] = $this->userIdList;
+        }
+        if (null !== $this->processName) {
+            $res['processName'] = $this->processName;
         }
 
         return $res;
@@ -210,6 +232,12 @@ class IndustrializeManufactureQueryJobsRequest extends Model
         }
         if (isset($map['mesAppKey'])) {
             $model->mesAppKey = $map['mesAppKey'];
+        }
+        if (isset($map['userIdList'])) {
+            $model->userIdList = $map['userIdList'];
+        }
+        if (isset($map['processName'])) {
+            $model->processName = $map['processName'];
         }
 
         return $model;

@@ -97,8 +97,8 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->manufactureDate)) {
             @$body['manufactureDate'] = $request->manufactureDate;
         }
-        if (!Utils::isUnset($request->dingCorpId)) {
-            @$body['dingCorpId'] = $request->dingCorpId;
+        if (!Utils::isUnset($request->corpId)) {
+            @$body['corpId'] = $request->corpId;
         }
         if (!Utils::isUnset($request->isBatchJob)) {
             @$body['isBatchJob'] = $request->isBatchJob;
@@ -182,6 +182,12 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->mesAppKey)) {
             @$body['mesAppKey'] = $request->mesAppKey;
+        }
+        if (!Utils::isUnset($request->userIdList)) {
+            @$body['userIdList'] = $request->userIdList;
+        }
+        if (!Utils::isUnset($request->processName)) {
+            @$body['processName'] = $request->processName;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {

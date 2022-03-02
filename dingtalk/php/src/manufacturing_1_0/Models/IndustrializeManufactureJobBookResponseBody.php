@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vmanufacturing_1_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vmanufacturing_1_0\Models\IndustrializeManufactureJobBookResponseBody\content;
 use AlibabaCloud\Tea\Model;
 
 class IndustrializeManufactureJobBookResponseBody extends Model
@@ -25,7 +26,7 @@ class IndustrializeManufactureJobBookResponseBody extends Model
     /**
      * @description content
      *
-     * @var string
+     * @var content
      */
     public $content;
 
@@ -80,7 +81,7 @@ class IndustrializeManufactureJobBookResponseBody extends Model
             $res['uuid'] = $this->uuid;
         }
         if (null !== $this->content) {
-            $res['content'] = $this->content;
+            $res['content'] = null !== $this->content ? $this->content->toMap() : null;
         }
         if (null !== $this->errorMsg) {
             $res['errorMsg'] = $this->errorMsg;
@@ -113,7 +114,7 @@ class IndustrializeManufactureJobBookResponseBody extends Model
             $model->uuid = $map['uuid'];
         }
         if (isset($map['content'])) {
-            $model->content = $map['content'];
+            $model->content = content::fromMap($map['content']);
         }
         if (isset($map['errorMsg'])) {
             $model->errorMsg = $map['errorMsg'];

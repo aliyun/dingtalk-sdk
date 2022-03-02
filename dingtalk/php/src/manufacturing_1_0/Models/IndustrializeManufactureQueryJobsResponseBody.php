@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vmanufacturing_1_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vmanufacturing_1_0\Models\IndustrializeManufactureQueryJobsResponseBody\content;
 use AlibabaCloud\Tea\Model;
 
 class IndustrializeManufactureQueryJobsResponseBody extends Model
@@ -18,7 +19,7 @@ class IndustrializeManufactureQueryJobsResponseBody extends Model
     /**
      * @description 查询的数据结果
      *
-     * @var string
+     * @var content
      */
     public $content;
     protected $_name = [
@@ -37,7 +38,7 @@ class IndustrializeManufactureQueryJobsResponseBody extends Model
             $res['httpCode'] = $this->httpCode;
         }
         if (null !== $this->content) {
-            $res['content'] = $this->content;
+            $res['content'] = null !== $this->content ? $this->content->toMap() : null;
         }
 
         return $res;
@@ -55,7 +56,7 @@ class IndustrializeManufactureQueryJobsResponseBody extends Model
             $model->httpCode = $map['httpCode'];
         }
         if (isset($map['content'])) {
-            $model->content = $map['content'];
+            $model->content = content::fromMap($map['content']);
         }
 
         return $model;

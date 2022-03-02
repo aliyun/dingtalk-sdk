@@ -118,7 +118,7 @@ class IndustrializeManufactureJobBookRequest extends Model
      *
      * @var string
      */
-    public $dingCorpId;
+    public $corpId;
 
     /**
      * @description 是否是批量报工(取值[n,y])
@@ -163,7 +163,7 @@ class IndustrializeManufactureJobBookRequest extends Model
         'mesAppKey'            => 'mesAppKey',
         'instNo'               => 'instNo',
         'manufactureDate'      => 'manufactureDate',
-        'dingCorpId'           => 'dingCorpId',
+        'corpId'               => 'corpId',
         'isBatchJob'           => 'isBatchJob',
         'userNameList'         => 'userNameList',
         'userIdList'           => 'userIdList',
@@ -222,8 +222,8 @@ class IndustrializeManufactureJobBookRequest extends Model
         if (null !== $this->manufactureDate) {
             $res['manufactureDate'] = $this->manufactureDate;
         }
-        if (null !== $this->dingCorpId) {
-            $res['dingCorpId'] = $this->dingCorpId;
+        if (null !== $this->corpId) {
+            $res['corpId'] = $this->corpId;
         }
         if (null !== $this->isBatchJob) {
             $res['isBatchJob'] = $this->isBatchJob;
@@ -294,8 +294,8 @@ class IndustrializeManufactureJobBookRequest extends Model
         if (isset($map['manufactureDate'])) {
             $model->manufactureDate = $map['manufactureDate'];
         }
-        if (isset($map['dingCorpId'])) {
-            $model->dingCorpId = $map['dingCorpId'];
+        if (isset($map['corpId'])) {
+            $model->corpId = $map['corpId'];
         }
         if (isset($map['isBatchJob'])) {
             $model->isBatchJob = $map['isBatchJob'];
