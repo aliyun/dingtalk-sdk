@@ -45,6 +45,13 @@ namespace AlibabaCloud.SDK.Dingtalkmanufacturing_1_0.Models
         public int? PageSize { get; set; }
 
         /// <summary>
+        /// 工序名称
+        /// </summary>
+        [NameInMap("processName")]
+        [Validation(Required=false)]
+        public string ProcessName { get; set; }
+
+        /// <summary>
         /// 产品唯一标识
         /// </summary>
         [NameInMap("productCode")]
@@ -85,6 +92,13 @@ namespace AlibabaCloud.SDK.Dingtalkmanufacturing_1_0.Models
         [NameInMap("userId")]
         [Validation(Required=false)]
         public string UserId { get; set; }
+
+        /// <summary>
+        /// 批量报工时多个人钉钉工号以英文逗号分隔
+        /// </summary>
+        [NameInMap("userIdList")]
+        [Validation(Required=false)]
+        public string UserIdList { get; set; }
 
         /// <summary>
         /// 员工姓名

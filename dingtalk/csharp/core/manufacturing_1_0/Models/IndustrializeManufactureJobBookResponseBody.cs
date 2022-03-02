@@ -14,7 +14,15 @@ namespace AlibabaCloud.SDK.Dingtalkmanufacturing_1_0.Models
         /// </summary>
         [NameInMap("content")]
         [Validation(Required=false)]
-        public string Content { get; set; }
+        public IndustrializeManufactureJobBookResponseBodyContent Content { get; set; }
+        public class IndustrializeManufactureJobBookResponseBodyContent : TeaModel {
+            [NameInMap("count")]
+            [Validation(Required=false)]
+            public int? Count { get; set; }
+            [NameInMap("id")]
+            [Validation(Required=false)]
+            public long? Id { get; set; }
+        };
 
         /// <summary>
         /// errorCode

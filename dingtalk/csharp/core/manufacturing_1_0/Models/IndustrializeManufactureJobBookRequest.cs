@@ -15,9 +15,9 @@ namespace AlibabaCloud.SDK.Dingtalkmanufacturing_1_0.Models
         /// <summary>
         /// 钉钉组织id
         /// </summary>
-        [NameInMap("dingCorpId")]
+        [NameInMap("corpId")]
         [Validation(Required=false)]
-        public string DingCorpId { get; set; }
+        public string CorpId { get; set; }
 
         /// <summary>
         /// 扩展字段，用于增加自定义字段
