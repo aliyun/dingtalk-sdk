@@ -6,7 +6,7 @@ import com.aliyun.tea.*;
 public class IndustrializeManufactureJobBookResponseBody extends TeaModel {
     // content
     @NameInMap("content")
-    public String content;
+    public IndustrializeManufactureJobBookResponseBodyContent content;
 
     // errorCode
     @NameInMap("errorCode")
@@ -37,11 +37,11 @@ public class IndustrializeManufactureJobBookResponseBody extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public IndustrializeManufactureJobBookResponseBody setContent(String content) {
+    public IndustrializeManufactureJobBookResponseBody setContent(IndustrializeManufactureJobBookResponseBodyContent content) {
         this.content = content;
         return this;
     }
-    public String getContent() {
+    public IndustrializeManufactureJobBookResponseBodyContent getContent() {
         return this.content;
     }
 
@@ -91,6 +91,38 @@ public class IndustrializeManufactureJobBookResponseBody extends TeaModel {
     }
     public String getUuid() {
         return this.uuid;
+    }
+
+    public static class IndustrializeManufactureJobBookResponseBodyContent extends TeaModel {
+        // 影响行数
+        @NameInMap("count")
+        public Integer count;
+
+        // 新增记录的数据库id
+        @NameInMap("id")
+        public Long id;
+
+        public static IndustrializeManufactureJobBookResponseBodyContent build(java.util.Map<String, ?> map) throws Exception {
+            IndustrializeManufactureJobBookResponseBodyContent self = new IndustrializeManufactureJobBookResponseBodyContent();
+            return TeaModel.build(map, self);
+        }
+
+        public IndustrializeManufactureJobBookResponseBodyContent setCount(Integer count) {
+            this.count = count;
+            return this;
+        }
+        public Integer getCount() {
+            return this.count;
+        }
+
+        public IndustrializeManufactureJobBookResponseBodyContent setId(Long id) {
+            this.id = id;
+            return this;
+        }
+        public Long getId() {
+            return this.id;
+        }
+
     }
 
 }

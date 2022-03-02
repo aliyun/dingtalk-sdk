@@ -31,8 +31,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.Common.validateModel(request);
         userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.dingCorpId)) {
-            body.put("dingCorpId", request.dingCorpId);
+        if (!com.aliyun.teautil.Common.isUnset(request.corpId)) {
+            body.put("corpId", request.corpId);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.extend)) {
@@ -147,6 +147,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("pageSize", request.pageSize);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.processName)) {
+            body.put("processName", request.processName);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.productCode)) {
             body.put("productCode", request.productCode);
         }
@@ -169,6 +173,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
             body.put("userId", request.userId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userIdList)) {
+            body.put("userIdList", request.userIdList);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.userName)) {

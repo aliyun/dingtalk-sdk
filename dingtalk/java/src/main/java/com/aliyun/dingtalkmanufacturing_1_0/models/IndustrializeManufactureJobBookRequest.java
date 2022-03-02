@@ -5,8 +5,8 @@ import com.aliyun.tea.*;
 
 public class IndustrializeManufactureJobBookRequest extends TeaModel {
     // 钉钉组织id
-    @NameInMap("dingCorpId")
-    public String dingCorpId;
+    @NameInMap("corpId")
+    public String corpId;
 
     // 扩展字段，用于增加自定义字段
     @NameInMap("extend")
@@ -89,12 +89,12 @@ public class IndustrializeManufactureJobBookRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public IndustrializeManufactureJobBookRequest setDingCorpId(String dingCorpId) {
-        this.dingCorpId = dingCorpId;
+    public IndustrializeManufactureJobBookRequest setCorpId(String corpId) {
+        this.corpId = corpId;
         return this;
     }
-    public String getDingCorpId() {
-        return this.dingCorpId;
+    public String getCorpId() {
+        return this.corpId;
     }
 
     public IndustrializeManufactureJobBookRequest setExtend(String extend) {

@@ -24,6 +24,10 @@ public class IndustrializeManufactureQueryJobsRequest extends TeaModel {
     @NameInMap("pageSize")
     public Integer pageSize;
 
+    // 工序名称
+    @NameInMap("processName")
+    public String processName;
+
     // 产品唯一标识
     @NameInMap("productCode")
     public String productCode;
@@ -47,6 +51,10 @@ public class IndustrializeManufactureQueryJobsRequest extends TeaModel {
     // 员工钉钉userId
     @NameInMap("userId")
     public String userId;
+
+    // 批量报工时多个人钉钉工号以英文逗号分隔
+    @NameInMap("userIdList")
+    public String userIdList;
 
     // 员工姓名
     @NameInMap("userName")
@@ -101,6 +109,14 @@ public class IndustrializeManufactureQueryJobsRequest extends TeaModel {
         return this.pageSize;
     }
 
+    public IndustrializeManufactureQueryJobsRequest setProcessName(String processName) {
+        this.processName = processName;
+        return this;
+    }
+    public String getProcessName() {
+        return this.processName;
+    }
+
     public IndustrializeManufactureQueryJobsRequest setProductCode(String productCode) {
         this.productCode = productCode;
         return this;
@@ -147,6 +163,14 @@ public class IndustrializeManufactureQueryJobsRequest extends TeaModel {
     }
     public String getUserId() {
         return this.userId;
+    }
+
+    public IndustrializeManufactureQueryJobsRequest setUserIdList(String userIdList) {
+        this.userIdList = userIdList;
+        return this;
+    }
+    public String getUserIdList() {
+        return this.userIdList;
     }
 
     public IndustrializeManufactureQueryJobsRequest setUserName(String userName) {
