@@ -80,6 +80,10 @@ public class FormComponentProps extends TeaModel {
     @NameInMap("link")
     public String link;
 
+    // 电话控件支持的类型
+    @NameInMap("mode")
+    public String mode;
+
     // 部门控件是否可多选
     @NameInMap("multiple")
     public Boolean multiple;
@@ -275,6 +279,14 @@ public class FormComponentProps extends TeaModel {
     }
     public String getLink() {
         return this.link;
+    }
+
+    public FormComponentProps setMode(String mode) {
+        this.mode = mode;
+        return this;
+    }
+    public String getMode() {
+        return this.mode;
     }
 
     public FormComponentProps setMultiple(Boolean multiple) {

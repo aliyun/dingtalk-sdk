@@ -1343,6 +1343,72 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("UpdateInvoiceVerifyStatus", "finance_1.0", "HTTP", "PUT", "AK", "/v1.0/finance/invoices/verifyStatus", "json", req, runtime), new UpdateInvoiceVerifyStatusResponse());
     }
 
+    public UploadInvoiceByAuthResponse uploadInvoiceByAuth(UploadInvoiceByAuthRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        UploadInvoiceByAuthHeaders headers = new UploadInvoiceByAuthHeaders();
+        return this.uploadInvoiceByAuthWithOptions(request, headers, runtime);
+    }
+
+    public UploadInvoiceByAuthResponse uploadInvoiceByAuthWithOptions(UploadInvoiceByAuthRequest request, UploadInvoiceByAuthHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.invoices)) {
+            body.put("invoices", request.invoices);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("UploadInvoiceByAuth", "finance_1.0", "HTTP", "POST", "AK", "/v1.0/finance/invoices/authorizations/upload", "json", req, runtime), new UploadInvoiceByAuthResponse());
+    }
+
+    public UploadInvoiceByMobileResponse uploadInvoiceByMobile(UploadInvoiceByMobileRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        UploadInvoiceByMobileHeaders headers = new UploadInvoiceByMobileHeaders();
+        return this.uploadInvoiceByMobileWithOptions(request, headers, runtime);
+    }
+
+    public UploadInvoiceByMobileResponse uploadInvoiceByMobileWithOptions(UploadInvoiceByMobileRequest request, UploadInvoiceByMobileHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.invoices)) {
+            body.put("invoices", request.invoices);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.mobile)) {
+            body.put("mobile", request.mobile);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.mobileStateCode)) {
+            body.put("mobileStateCode", request.mobileStateCode);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("UploadInvoiceByMobile", "finance_1.0", "HTTP", "POST", "AK", "/v1.0/finance/invoices/mobiles/upload", "json", req, runtime), new UploadInvoiceByMobileResponse());
+    }
+
     public UploadRegisterImageResponse uploadRegisterImage(UploadRegisterImageRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         UploadRegisterImageHeaders headers = new UploadRegisterImageHeaders();

@@ -38,6 +38,10 @@ public class ListUserVilebleAppResponseBody extends TeaModel {
         @NameInMap("desc")
         public String desc;
 
+        // 应用类型，0表示h5应用，1表示小程序
+        @NameInMap("developType")
+        public Integer developType;
+
         // 应用移动端首页地址
         @NameInMap("homepageLink")
         public String homepageLink;
@@ -93,6 +97,14 @@ public class ListUserVilebleAppResponseBody extends TeaModel {
         }
         public String getDesc() {
             return this.desc;
+        }
+
+        public ListUserVilebleAppResponseBodyAppList setDevelopType(Integer developType) {
+            this.developType = developType;
+            return this;
+        }
+        public Integer getDevelopType() {
+            return this.developType;
         }
 
         public ListUserVilebleAppResponseBodyAppList setHomepageLink(String homepageLink) {

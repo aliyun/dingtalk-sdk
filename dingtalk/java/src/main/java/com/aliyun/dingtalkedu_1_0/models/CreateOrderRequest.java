@@ -44,6 +44,10 @@ public class CreateOrderRequest extends TeaModel {
     @NameInMap("userId")
     public String userId;
 
+    // 版本号
+    @NameInMap("version")
+    public String version;
+
     public static CreateOrderRequest build(java.util.Map<String, ?> map) throws Exception {
         CreateOrderRequest self = new CreateOrderRequest();
         return TeaModel.build(map, self);
@@ -127,6 +131,14 @@ public class CreateOrderRequest extends TeaModel {
     }
     public String getUserId() {
         return this.userId;
+    }
+
+    public CreateOrderRequest setVersion(String version) {
+        this.version = version;
+        return this;
+    }
+    public String getVersion() {
+        return this.version;
     }
 
     public static class CreateOrderRequestDetailList extends TeaModel {

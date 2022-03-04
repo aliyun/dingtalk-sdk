@@ -28,6 +28,10 @@ public class QueryPayResultRequest extends TeaModel {
     @NameInMap("userId")
     public String userId;
 
+    // 版本号
+    @NameInMap("version")
+    public String version;
+
     public static QueryPayResultRequest build(java.util.Map<String, ?> map) throws Exception {
         QueryPayResultRequest self = new QueryPayResultRequest();
         return TeaModel.build(map, self);
@@ -79,6 +83,14 @@ public class QueryPayResultRequest extends TeaModel {
     }
     public String getUserId() {
         return this.userId;
+    }
+
+    public QueryPayResultRequest setVersion(String version) {
+        this.version = version;
+        return this;
+    }
+    public String getVersion() {
+        return this.version;
     }
 
 }

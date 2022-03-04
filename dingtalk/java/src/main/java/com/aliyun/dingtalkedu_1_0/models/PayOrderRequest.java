@@ -28,6 +28,10 @@ public class PayOrderRequest extends TeaModel {
     @NameInMap("userId")
     public String userId;
 
+    // 版本号
+    @NameInMap("version")
+    public String version;
+
     public static PayOrderRequest build(java.util.Map<String, ?> map) throws Exception {
         PayOrderRequest self = new PayOrderRequest();
         return TeaModel.build(map, self);
@@ -79,6 +83,14 @@ public class PayOrderRequest extends TeaModel {
     }
     public String getUserId() {
         return this.userId;
+    }
+
+    public PayOrderRequest setVersion(String version) {
+        this.version = version;
+        return this;
+    }
+    public String getVersion() {
+        return this.version;
     }
 
 }
