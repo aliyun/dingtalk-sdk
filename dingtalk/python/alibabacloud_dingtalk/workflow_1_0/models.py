@@ -234,6 +234,7 @@ class FormComponentProps(TeaModel):
         limit: int = None,
         available_templates: List[AvaliableTemplate] = None,
         table_view_mode: str = None,
+        mode: str = None,
     ):
         # 控件表单内唯一id
         self.component_id = component_id
@@ -293,6 +294,8 @@ class FormComponentProps(TeaModel):
         self.available_templates = available_templates
         # 明细填写方式，table（表格）、list（列表）
         self.table_view_mode = table_view_mode
+        # 电话控件支持的类型
+        self.mode = mode
 
     def validate(self):
         if self.options:
@@ -380,6 +383,8 @@ class FormComponentProps(TeaModel):
                 result['availableTemplates'].append(k.to_map() if k else None)
         if self.table_view_mode is not None:
             result['tableViewMode'] = self.table_view_mode
+        if self.mode is not None:
+            result['mode'] = self.mode
         return result
 
     def from_map(self, m: dict = None):
@@ -452,6 +457,8 @@ class FormComponentProps(TeaModel):
                 self.available_templates.append(temp_model.from_map(k))
         if m.get('tableViewMode') is not None:
             self.table_view_mode = m.get('tableViewMode')
+        if m.get('mode') is not None:
+            self.mode = m.get('mode')
         return self
 
 

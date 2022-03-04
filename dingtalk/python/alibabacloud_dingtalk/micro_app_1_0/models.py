@@ -2949,6 +2949,7 @@ class ListUserVilebleAppResponseBodyAppList(TeaModel):
         omp_link: str = None,
         app_id: int = None,
         app_status: int = None,
+        develop_type: int = None,
     ):
         # 应用id
         self.agent_id = agent_id
@@ -2968,6 +2969,8 @@ class ListUserVilebleAppResponseBodyAppList(TeaModel):
         self.app_id = app_id
         # 应用状态，0：停用，1：启用 ，3：过期
         self.app_status = app_status
+        # 应用类型，0表示h5应用，1表示小程序
+        self.develop_type = develop_type
 
     def validate(self):
         pass
@@ -2996,6 +2999,8 @@ class ListUserVilebleAppResponseBodyAppList(TeaModel):
             result['appId'] = self.app_id
         if self.app_status is not None:
             result['appStatus'] = self.app_status
+        if self.develop_type is not None:
+            result['developType'] = self.develop_type
         return result
 
     def from_map(self, m: dict = None):
@@ -3018,6 +3023,8 @@ class ListUserVilebleAppResponseBodyAppList(TeaModel):
             self.app_id = m.get('appId')
         if m.get('appStatus') is not None:
             self.app_status = m.get('appStatus')
+        if m.get('developType') is not None:
+            self.develop_type = m.get('developType')
         return self
 
 
@@ -3364,6 +3371,7 @@ class ListAllAppResponseBodyAppList(TeaModel):
         omp_link: str = None,
         app_id: int = None,
         app_status: int = None,
+        develop_type: int = None,
     ):
         # 应用id
         self.agent_id = agent_id
@@ -3383,6 +3391,8 @@ class ListAllAppResponseBodyAppList(TeaModel):
         self.app_id = app_id
         # 应用状态，0：停用，1：启用 ，3：过期
         self.app_status = app_status
+        # 应用类型，0表示h5应用，1表示小程序
+        self.develop_type = develop_type
 
     def validate(self):
         pass
@@ -3411,6 +3421,8 @@ class ListAllAppResponseBodyAppList(TeaModel):
             result['appId'] = self.app_id
         if self.app_status is not None:
             result['appStatus'] = self.app_status
+        if self.develop_type is not None:
+            result['developType'] = self.develop_type
         return result
 
     def from_map(self, m: dict = None):
@@ -3433,6 +3445,8 @@ class ListAllAppResponseBodyAppList(TeaModel):
             self.app_id = m.get('appId')
         if m.get('appStatus') is not None:
             self.app_status = m.get('appStatus')
+        if m.get('developType') is not None:
+            self.develop_type = m.get('developType')
         return self
 
 
