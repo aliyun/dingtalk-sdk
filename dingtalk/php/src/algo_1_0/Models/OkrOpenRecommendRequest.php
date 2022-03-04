@@ -33,12 +33,18 @@ class OkrOpenRecommendRequest extends Model
      * @var string
      */
     public $corpId;
+
+    /**
+     * @var string[]
+     */
+    public $words;
     protected $_name = [
         'candidateOkrItems' => 'candidateOkrItems',
         'deptIds'           => 'deptIds',
         'userId'            => 'userId',
         'isvAppId'          => 'isvAppId',
         'corpId'            => 'corpId',
+        'words'             => 'words',
     ];
 
     public function validate()
@@ -68,6 +74,9 @@ class OkrOpenRecommendRequest extends Model
         }
         if (null !== $this->corpId) {
             $res['corpId'] = $this->corpId;
+        }
+        if (null !== $this->words) {
+            $res['words'] = $this->words;
         }
 
         return $res;
@@ -103,6 +112,11 @@ class OkrOpenRecommendRequest extends Model
         }
         if (isset($map['corpId'])) {
             $model->corpId = $map['corpId'];
+        }
+        if (isset($map['words'])) {
+            if (!empty($map['words'])) {
+                $model->words = $map['words'];
+            }
         }
 
         return $model;

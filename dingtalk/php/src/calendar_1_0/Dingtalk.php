@@ -59,6 +59,8 @@ use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\RespondEventRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\RespondEventResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\SignInHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\SignInResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\SubscribeCalendarHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\SubscribeCalendarResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -125,6 +127,44 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CreateAclsResponse::fromMap($this->doROARequest('CreateAcls', 'calendar_1.0', 'HTTP', 'POST', 'AK', '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/acls', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $userId
+     * @param string $calendarId
+     *
+     * @return SubscribeCalendarResponse
+     */
+    public function subscribeCalendar($userId, $calendarId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SubscribeCalendarHeaders([]);
+
+        return $this->subscribeCalendarWithOptions($userId, $calendarId, $headers, $runtime);
+    }
+
+    /**
+     * @param string                   $userId
+     * @param string                   $calendarId
+     * @param SubscribeCalendarHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return SubscribeCalendarResponse
+     */
+    public function subscribeCalendarWithOptions($userId, $calendarId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return SubscribeCalendarResponse::fromMap($this->doROARequest('SubscribeCalendar', 'calendar_1.0', 'HTTP', 'POST', 'AK', '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/subscribe', 'none', $req, $runtime));
     }
 
     /**
