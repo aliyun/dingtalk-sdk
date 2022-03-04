@@ -75,6 +75,10 @@ namespace AlibabaCloud.SDK.Dingtalkalgo_1_0.Models
         [Validation(Required=false)]
         public string UserId { get; set; }
 
+        [NameInMap("words")]
+        [Validation(Required=false)]
+        public List<string> Words { get; set; }
+
     }
 
 }

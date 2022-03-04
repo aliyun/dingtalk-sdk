@@ -144,6 +144,10 @@ namespace AlibabaCloud.SDK.Dingtalkalgo_1_0
             {
                 body["userId"] = request.UserId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Words))
+            {
+                body["words"] = request.Words;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -184,6 +188,10 @@ namespace AlibabaCloud.SDK.Dingtalkalgo_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
                 body["userId"] = request.UserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Words))
+            {
+                body["words"] = request.Words;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
