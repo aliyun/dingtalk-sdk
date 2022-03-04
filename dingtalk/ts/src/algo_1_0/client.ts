@@ -126,6 +126,7 @@ export class OkrOpenRecommendRequest extends $tea.Model {
   deptIds?: string[];
   isvAppId?: string;
   userId?: string;
+  words?: string[];
   static names(): { [key: string]: string } {
     return {
       candidateOkrItems: 'candidateOkrItems',
@@ -133,6 +134,7 @@ export class OkrOpenRecommendRequest extends $tea.Model {
       deptIds: 'deptIds',
       isvAppId: 'isvAppId',
       userId: 'userId',
+      words: 'words',
     };
   }
 
@@ -143,6 +145,7 @@ export class OkrOpenRecommendRequest extends $tea.Model {
       deptIds: { 'type': 'array', 'itemType': 'string' },
       isvAppId: 'string',
       userId: 'string',
+      words: { 'type': 'array', 'itemType': 'string' },
     };
   }
 
@@ -472,6 +475,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.userId)) {
       body["userId"] = request.userId;
+    }
+
+    if (!Util.isUnset(request.words)) {
+      body["words"] = request.words;
     }
 
     let realHeaders : {[key: string ]: string} = { };
