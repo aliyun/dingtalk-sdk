@@ -103,6 +103,64 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('CreateAcls', 'calendar_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/acls', 'json', req, runtime)
         )
 
+    def subscribe_calendar(
+        self,
+        user_id: str,
+        calendar_id: str,
+    ) -> dingtalkcalendar__1__0_models.SubscribeCalendarResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcalendar__1__0_models.SubscribeCalendarHeaders()
+        return self.subscribe_calendar_with_options(user_id, calendar_id, headers, runtime)
+
+    async def subscribe_calendar_async(
+        self,
+        user_id: str,
+        calendar_id: str,
+    ) -> dingtalkcalendar__1__0_models.SubscribeCalendarResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcalendar__1__0_models.SubscribeCalendarHeaders()
+        return await self.subscribe_calendar_with_options_async(user_id, calendar_id, headers, runtime)
+
+    def subscribe_calendar_with_options(
+        self,
+        user_id: str,
+        calendar_id: str,
+        headers: dingtalkcalendar__1__0_models.SubscribeCalendarHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcalendar__1__0_models.SubscribeCalendarResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkcalendar__1__0_models.SubscribeCalendarResponse(),
+            self.do_roarequest('SubscribeCalendar', 'calendar_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/subscribe', 'none', req, runtime)
+        )
+
+    async def subscribe_calendar_with_options_async(
+        self,
+        user_id: str,
+        calendar_id: str,
+        headers: dingtalkcalendar__1__0_models.SubscribeCalendarHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcalendar__1__0_models.SubscribeCalendarResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkcalendar__1__0_models.SubscribeCalendarResponse(),
+            await self.do_roarequest_async('SubscribeCalendar', 'calendar_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/subscribe', 'none', req, runtime)
+        )
+
     def list_acls(
         self,
         user_id: str,

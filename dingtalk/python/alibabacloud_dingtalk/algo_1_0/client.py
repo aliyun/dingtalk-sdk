@@ -129,6 +129,8 @@ class Client(OpenApiClient):
             body['isvAppId'] = request.isv_app_id
         if not UtilClient.is_unset(request.corp_id):
             body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.words):
+            body['words'] = request.words
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -161,6 +163,8 @@ class Client(OpenApiClient):
             body['isvAppId'] = request.isv_app_id
         if not UtilClient.is_unset(request.corp_id):
             body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.words):
+            body['words'] = request.words
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

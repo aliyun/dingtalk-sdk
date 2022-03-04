@@ -414,12 +414,14 @@ class OkrOpenRecommendRequest(TeaModel):
         user_id: str = None,
         isv_app_id: str = None,
         corp_id: str = None,
+        words: List[str] = None,
     ):
         self.candidate_okr_items = candidate_okr_items
         self.dept_ids = dept_ids
         self.user_id = user_id
         self.isv_app_id = isv_app_id
         self.corp_id = corp_id
+        self.words = words
 
     def validate(self):
         if self.candidate_okr_items:
@@ -445,6 +447,8 @@ class OkrOpenRecommendRequest(TeaModel):
             result['isvAppId'] = self.isv_app_id
         if self.corp_id is not None:
             result['corpId'] = self.corp_id
+        if self.words is not None:
+            result['words'] = self.words
         return result
 
     def from_map(self, m: dict = None):
@@ -462,6 +466,8 @@ class OkrOpenRecommendRequest(TeaModel):
             self.isv_app_id = m.get('isvAppId')
         if m.get('corpId') is not None:
             self.corp_id = m.get('corpId')
+        if m.get('words') is not None:
+            self.words = m.get('words')
         return self
 
 
