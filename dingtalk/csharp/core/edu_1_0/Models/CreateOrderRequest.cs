@@ -129,6 +129,13 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         [Validation(Required=false)]
         public string UserId { get; set; }
 
+        /// <summary>
+        /// 版本号
+        /// </summary>
+        [NameInMap("version")]
+        [Validation(Required=false)]
+        public string Version { get; set; }
+
     }
 
 }

@@ -8,7 +8,14 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
-    public class QueryPayResultRequest : TeaModel {
+    public class SendMessageRequest : TeaModel {
+        /// <summary>
+        /// 消息的唯一id
+        /// </summary>
+        [NameInMap("bizId")]
+        [Validation(Required=false)]
+        public string BizId { get; set; }
+
         [NameInMap("dingIsvOrgId")]
         [Validation(Required=false)]
         public long? DingIsvOrgId { get; set; }
@@ -30,53 +37,32 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public long? DingTokenGrantType { get; set; }
 
         /// <summary>
-        /// 人脸id
+        /// 发送者
         /// </summary>
-        [NameInMap("faceId")]
+        [NameInMap("fromUserId")]
         [Validation(Required=false)]
-        public string FaceId { get; set; }
+        public string FromUserId { get; set; }
 
         /// <summary>
-        /// 订单号
-        /// </summary>
-        [NameInMap("orderNo")]
-        [Validation(Required=false)]
-        public string OrderNo { get; set; }
-
-        /// <summary>
-        /// 签名
-        /// </summary>
-        [NameInMap("signature")]
-        [Validation(Required=false)]
-        public string Signature { get; set; }
-
-        /// <summary>
-        /// 设备序列号
+        /// 设备sn
         /// </summary>
         [NameInMap("sn")]
         [Validation(Required=false)]
         public string Sn { get; set; }
 
         /// <summary>
-        /// utc时间戳
+        /// 接收者
         /// </summary>
-        [NameInMap("timestamp")]
+        [NameInMap("toUserIdList")]
         [Validation(Required=false)]
-        public long? Timestamp { get; set; }
+        public List<string> ToUserIdList { get; set; }
 
         /// <summary>
-        /// 用户id
+        /// 发送消息的类型
         /// </summary>
-        [NameInMap("userId")]
+        [NameInMap("type")]
         [Validation(Required=false)]
-        public string UserId { get; set; }
-
-        /// <summary>
-        /// 版本号
-        /// </summary>
-        [NameInMap("version")]
-        [Validation(Required=false)]
-        public string Version { get; set; }
+        public long? Type { get; set; }
 
     }
 

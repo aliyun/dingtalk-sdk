@@ -143,6 +143,13 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         public string Link { get; set; }
 
         /// <summary>
+        /// 电话控件支持的类型
+        /// </summary>
+        [NameInMap("mode")]
+        [Validation(Required=false)]
+        public string Mode { get; set; }
+
+        /// <summary>
         /// 部门控件是否可多选
         /// </summary>
         [NameInMap("multiple")]

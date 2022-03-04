@@ -79,6 +79,13 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
             [Validation(Required=false)]
             public int? AppStatus { get; set; }
 
+            /// <summary>
+            /// 应用类型，0表示h5应用，1表示小程序
+            /// </summary>
+            [NameInMap("developType")]
+            [Validation(Required=false)]
+            public int? DevelopType { get; set; }
+
         }
 
     }
