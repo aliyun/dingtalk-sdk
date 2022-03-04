@@ -2256,6 +2256,7 @@ export class ListAllAppResponseBodyAppList extends $tea.Model {
   appId?: number;
   appStatus?: number;
   desc?: string;
+  developType?: number;
   homepageLink?: string;
   icon?: string;
   name?: string;
@@ -2267,6 +2268,7 @@ export class ListAllAppResponseBodyAppList extends $tea.Model {
       appId: 'appId',
       appStatus: 'appStatus',
       desc: 'desc',
+      developType: 'developType',
       homepageLink: 'homepageLink',
       icon: 'icon',
       name: 'name',
@@ -2281,6 +2283,7 @@ export class ListAllAppResponseBodyAppList extends $tea.Model {
       appId: 'number',
       appStatus: 'number',
       desc: 'string',
+      developType: 'number',
       homepageLink: 'string',
       icon: 'string',
       name: 'string',
@@ -2398,6 +2401,7 @@ export class ListUserVilebleAppResponseBodyAppList extends $tea.Model {
   appId?: number;
   appStatus?: number;
   desc?: string;
+  developType?: number;
   homepageLink?: string;
   icon?: string;
   name?: string;
@@ -2409,6 +2413,7 @@ export class ListUserVilebleAppResponseBodyAppList extends $tea.Model {
       appId: 'appId',
       appStatus: 'appStatus',
       desc: 'desc',
+      developType: 'developType',
       homepageLink: 'homepageLink',
       icon: 'icon',
       name: 'name',
@@ -2423,6 +2428,7 @@ export class ListUserVilebleAppResponseBodyAppList extends $tea.Model {
       appId: 'number',
       appStatus: 'number',
       desc: 'string',
+      developType: 'number',
       homepageLink: 'string',
       icon: 'string',
       name: 'string',

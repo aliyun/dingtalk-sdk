@@ -1049,6 +1049,7 @@ export class CreateOrderRequest extends $tea.Model {
   timestamp?: number;
   totalAmount?: number;
   userId?: string;
+  version?: string;
   static names(): { [key: string]: string } {
     return {
       actualAmount: 'actualAmount',
@@ -1061,6 +1062,7 @@ export class CreateOrderRequest extends $tea.Model {
       timestamp: 'timestamp',
       totalAmount: 'totalAmount',
       userId: 'userId',
+      version: 'version',
     };
   }
 
@@ -1076,6 +1078,7 @@ export class CreateOrderRequest extends $tea.Model {
       timestamp: 'number',
       totalAmount: 'number',
       userId: 'string',
+      version: 'string',
     };
   }
 
@@ -3685,6 +3688,100 @@ export class InitCoursesOfClassResponse extends $tea.Model {
   }
 }
 
+export class InitDeviceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InitDeviceRequest extends $tea.Model {
+  encryptPubKey?: string;
+  signature?: string;
+  sn?: string;
+  timestamp?: number;
+  version?: string;
+  static names(): { [key: string]: string } {
+    return {
+      encryptPubKey: 'encryptPubKey',
+      signature: 'signature',
+      sn: 'sn',
+      timestamp: 'timestamp',
+      version: 'version',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      encryptPubKey: 'string',
+      signature: 'string',
+      sn: 'string',
+      timestamp: 'number',
+      version: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InitDeviceResponseBody extends $tea.Model {
+  successInfo?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      successInfo: 'successInfo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      successInfo: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InitDeviceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: InitDeviceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: InitDeviceResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class InsertSectionConfigHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3899,6 +3996,7 @@ export class PayOrderRequest extends $tea.Model {
   sn?: string;
   timestamp?: number;
   userId?: string;
+  version?: string;
   static names(): { [key: string]: string } {
     return {
       faceId: 'faceId',
@@ -3907,6 +4005,7 @@ export class PayOrderRequest extends $tea.Model {
       sn: 'sn',
       timestamp: 'timestamp',
       userId: 'userId',
+      version: 'version',
     };
   }
 
@@ -3918,6 +4017,7 @@ export class PayOrderRequest extends $tea.Model {
       sn: 'string',
       timestamp: 'number',
       userId: 'string',
+      version: 'string',
     };
   }
 
@@ -5010,6 +5110,7 @@ export class QueryPayResultRequest extends $tea.Model {
   sn?: string;
   timestamp?: number;
   userId?: string;
+  version?: string;
   static names(): { [key: string]: string } {
     return {
       faceId: 'faceId',
@@ -5018,6 +5119,7 @@ export class QueryPayResultRequest extends $tea.Model {
       sn: 'sn',
       timestamp: 'timestamp',
       userId: 'userId',
+      version: 'version',
     };
   }
 
@@ -5029,6 +5131,7 @@ export class QueryPayResultRequest extends $tea.Model {
       sn: 'string',
       timestamp: 'number',
       userId: 'string',
+      version: 'string',
     };
   }
 
@@ -6332,6 +6435,100 @@ export class SearchTeachersResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: SearchTeachersResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendMessageHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendMessageRequest extends $tea.Model {
+  bizId?: string;
+  fromUserId?: string;
+  sn?: string;
+  toUserIdList?: string[];
+  type?: number;
+  static names(): { [key: string]: string } {
+    return {
+      bizId: 'bizId',
+      fromUserId: 'fromUserId',
+      sn: 'sn',
+      toUserIdList: 'toUserIdList',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizId: 'string',
+      fromUserId: 'string',
+      sn: 'string',
+      toUserIdList: { 'type': 'array', 'itemType': 'string' },
+      type: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendMessageResponseBody extends $tea.Model {
+  successInfo?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      successInfo: 'successInfo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      successInfo: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendMessageResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SendMessageResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SendMessageResponseBody,
     };
   }
 
@@ -10979,6 +11176,10 @@ export default class Client extends OpenApi {
       body["userId"] = request.userId;
     }
 
+    if (!Util.isUnset(request.version)) {
+      body["version"] = request.version;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -12108,6 +12309,51 @@ export default class Client extends OpenApi {
     return $tea.cast<InitCoursesOfClassResponse>(await this.doROARequest("InitCoursesOfClass", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/classes/${classId}/courses/init`, "json", req, runtime), new InitCoursesOfClassResponse({}));
   }
 
+  async initDevice(request: InitDeviceRequest): Promise<InitDeviceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new InitDeviceHeaders({ });
+    return await this.initDeviceWithOptions(request, headers, runtime);
+  }
+
+  async initDeviceWithOptions(request: InitDeviceRequest, headers: InitDeviceHeaders, runtime: $Util.RuntimeOptions): Promise<InitDeviceResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.encryptPubKey)) {
+      body["encryptPubKey"] = request.encryptPubKey;
+    }
+
+    if (!Util.isUnset(request.signature)) {
+      body["signature"] = request.signature;
+    }
+
+    if (!Util.isUnset(request.sn)) {
+      body["sn"] = request.sn;
+    }
+
+    if (!Util.isUnset(request.timestamp)) {
+      body["timestamp"] = request.timestamp;
+    }
+
+    if (!Util.isUnset(request.version)) {
+      body["version"] = request.version;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<InitDeviceResponse>(await this.doROARequest("InitDevice", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/devices/init`, "json", req, runtime), new InitDeviceResponse({}));
+  }
+
   async insertSectionConfig(request: InsertSectionConfigRequest): Promise<InsertSectionConfigResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new InsertSectionConfigHeaders({ });
@@ -12227,6 +12473,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.userId)) {
       body["userId"] = request.userId;
+    }
+
+    if (!Util.isUnset(request.version)) {
+      body["version"] = request.version;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -12674,6 +12924,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.userId)) {
       body["userId"] = request.userId;
+    }
+
+    if (!Util.isUnset(request.version)) {
+      body["version"] = request.version;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -13202,6 +13456,51 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<SearchTeachersResponse>(await this.doROARequest("SearchTeachers", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/teachers/search`, "json", req, runtime), new SearchTeachersResponse({}));
+  }
+
+  async sendMessage(request: SendMessageRequest): Promise<SendMessageResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SendMessageHeaders({ });
+    return await this.sendMessageWithOptions(request, headers, runtime);
+  }
+
+  async sendMessageWithOptions(request: SendMessageRequest, headers: SendMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SendMessageResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizId)) {
+      body["bizId"] = request.bizId;
+    }
+
+    if (!Util.isUnset(request.fromUserId)) {
+      body["fromUserId"] = request.fromUserId;
+    }
+
+    if (!Util.isUnset(request.sn)) {
+      body["sn"] = request.sn;
+    }
+
+    if (!Util.isUnset(request.toUserIdList)) {
+      body["toUserIdList"] = request.toUserIdList;
+    }
+
+    if (!Util.isUnset(request.type)) {
+      body["type"] = request.type;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SendMessageResponse>(await this.doROARequest("SendMessage", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/messages/send`, "json", req, runtime), new SendMessageResponse({}));
   }
 
   async startCourse(request: StartCourseRequest): Promise<StartCourseResponse> {

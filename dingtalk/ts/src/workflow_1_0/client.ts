@@ -74,6 +74,7 @@ export class FormComponentProps extends $tea.Model {
   label?: string;
   limit?: number;
   link?: string;
+  mode?: string;
   multiple?: boolean;
   options?: SelectOption[];
   placeholder?: string;
@@ -105,6 +106,7 @@ export class FormComponentProps extends $tea.Model {
       label: 'label',
       limit: 'limit',
       link: 'link',
+      mode: 'mode',
       multiple: 'multiple',
       options: 'options',
       placeholder: 'placeholder',
@@ -139,6 +141,7 @@ export class FormComponentProps extends $tea.Model {
       label: 'string',
       limit: 'number',
       link: 'string',
+      mode: 'string',
       multiple: 'boolean',
       options: { 'type': 'array', 'itemType': SelectOption },
       placeholder: 'string',

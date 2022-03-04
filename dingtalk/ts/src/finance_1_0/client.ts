@@ -2620,6 +2620,176 @@ export class UpdateInvoiceVerifyStatusResponse extends $tea.Model {
   }
 }
 
+export class UploadInvoiceByAuthHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UploadInvoiceByAuthRequest extends $tea.Model {
+  invoices?: UploadInvoiceByAuthRequestInvoices[];
+  static names(): { [key: string]: string } {
+    return {
+      invoices: 'invoices',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      invoices: { 'type': 'array', 'itemType': UploadInvoiceByAuthRequestInvoices },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UploadInvoiceByAuthResponseBody extends $tea.Model {
+  result?: UploadInvoiceByAuthResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: UploadInvoiceByAuthResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UploadInvoiceByAuthResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UploadInvoiceByAuthResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UploadInvoiceByAuthResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UploadInvoiceByMobileHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UploadInvoiceByMobileRequest extends $tea.Model {
+  invoices?: UploadInvoiceByMobileRequestInvoices[];
+  mobile?: string;
+  mobileStateCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      invoices: 'invoices',
+      mobile: 'mobile',
+      mobileStateCode: 'mobileStateCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      invoices: { 'type': 'array', 'itemType': UploadInvoiceByMobileRequestInvoices },
+      mobile: 'string',
+      mobileStateCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UploadInvoiceByMobileResponseBody extends $tea.Model {
+  result?: UploadInvoiceByMobileResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: UploadInvoiceByMobileResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UploadInvoiceByMobileResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UploadInvoiceByMobileResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UploadInvoiceByMobileResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UploadRegisterImageHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4313,6 +4483,222 @@ export class UpateUserCodeInstanceRequestAvailableTimes extends $tea.Model {
   }
 }
 
+export class UploadInvoiceByAuthRequestInvoices extends $tea.Model {
+  invoiceAmount?: string;
+  invoiceCode?: string;
+  invoiceDate?: string;
+  invoiceNo?: string;
+  invoiceType?: string;
+  logoUrl?: string;
+  payeeName?: string;
+  payeeTaxNo?: string;
+  payerName?: string;
+  payerTaxNo?: string;
+  pdfUrl?: string;
+  taxAmount?: string;
+  verifyCode?: string;
+  withoutTaxAmount?: string;
+  static names(): { [key: string]: string } {
+    return {
+      invoiceAmount: 'invoiceAmount',
+      invoiceCode: 'invoiceCode',
+      invoiceDate: 'invoiceDate',
+      invoiceNo: 'invoiceNo',
+      invoiceType: 'invoiceType',
+      logoUrl: 'logoUrl',
+      payeeName: 'payeeName',
+      payeeTaxNo: 'payeeTaxNo',
+      payerName: 'payerName',
+      payerTaxNo: 'payerTaxNo',
+      pdfUrl: 'pdfUrl',
+      taxAmount: 'taxAmount',
+      verifyCode: 'verifyCode',
+      withoutTaxAmount: 'withoutTaxAmount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      invoiceAmount: 'string',
+      invoiceCode: 'string',
+      invoiceDate: 'string',
+      invoiceNo: 'string',
+      invoiceType: 'string',
+      logoUrl: 'string',
+      payeeName: 'string',
+      payeeTaxNo: 'string',
+      payerName: 'string',
+      payerTaxNo: 'string',
+      pdfUrl: 'string',
+      taxAmount: 'string',
+      verifyCode: 'string',
+      withoutTaxAmount: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UploadInvoiceByAuthResponseBodyResultResults extends $tea.Model {
+  errCode?: string;
+  invoiceCode?: string;
+  invoiceNo?: string;
+  reason?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      errCode: 'errCode',
+      invoiceCode: 'invoiceCode',
+      invoiceNo: 'invoiceNo',
+      reason: 'reason',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      errCode: 'string',
+      invoiceCode: 'string',
+      invoiceNo: 'string',
+      reason: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UploadInvoiceByAuthResponseBodyResult extends $tea.Model {
+  results?: UploadInvoiceByAuthResponseBodyResultResults[];
+  static names(): { [key: string]: string } {
+    return {
+      results: 'results',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      results: { 'type': 'array', 'itemType': UploadInvoiceByAuthResponseBodyResultResults },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UploadInvoiceByMobileRequestInvoices extends $tea.Model {
+  invoiceAmount?: string;
+  invoiceCode?: string;
+  invoiceDate?: string;
+  invoiceNo?: string;
+  invoiceType?: string;
+  logoUrl?: string;
+  payeeName?: string;
+  payeeTaxNo?: string;
+  payerName?: string;
+  payerTaxNo?: string;
+  pdfUrl?: string;
+  taxAmount?: string;
+  verifyCode?: string;
+  withoutTaxAmount?: string;
+  static names(): { [key: string]: string } {
+    return {
+      invoiceAmount: 'invoiceAmount',
+      invoiceCode: 'invoiceCode',
+      invoiceDate: 'invoiceDate',
+      invoiceNo: 'invoiceNo',
+      invoiceType: 'invoiceType',
+      logoUrl: 'logoUrl',
+      payeeName: 'payeeName',
+      payeeTaxNo: 'payeeTaxNo',
+      payerName: 'payerName',
+      payerTaxNo: 'payerTaxNo',
+      pdfUrl: 'pdfUrl',
+      taxAmount: 'taxAmount',
+      verifyCode: 'verifyCode',
+      withoutTaxAmount: 'withoutTaxAmount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      invoiceAmount: 'string',
+      invoiceCode: 'string',
+      invoiceDate: 'string',
+      invoiceNo: 'string',
+      invoiceType: 'string',
+      logoUrl: 'string',
+      payeeName: 'string',
+      payeeTaxNo: 'string',
+      payerName: 'string',
+      payerTaxNo: 'string',
+      pdfUrl: 'string',
+      taxAmount: 'string',
+      verifyCode: 'string',
+      withoutTaxAmount: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UploadInvoiceByMobileResponseBodyResultResults extends $tea.Model {
+  errCode?: string;
+  invoiceCode?: string;
+  invoiceNo?: string;
+  reason?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      errCode: 'errCode',
+      invoiceCode: 'invoiceCode',
+      invoiceNo: 'invoiceNo',
+      reason: 'reason',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      errCode: 'string',
+      invoiceCode: 'string',
+      invoiceNo: 'string',
+      reason: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UploadInvoiceByMobileResponseBodyResult extends $tea.Model {
+  results?: UploadInvoiceByMobileResponseBodyResultResults[];
+  static names(): { [key: string]: string } {
+    return {
+      results: 'results',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      results: { 'type': 'array', 'itemType': UploadInvoiceByMobileResponseBodyResultResults },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
 
@@ -5646,6 +6032,72 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<UpdateInvoiceVerifyStatusResponse>(await this.doROARequest("UpdateInvoiceVerifyStatus", "finance_1.0", "HTTP", "PUT", "AK", `/v1.0/finance/invoices/verifyStatus`, "json", req, runtime), new UpdateInvoiceVerifyStatusResponse({}));
+  }
+
+  async uploadInvoiceByAuth(request: UploadInvoiceByAuthRequest): Promise<UploadInvoiceByAuthResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UploadInvoiceByAuthHeaders({ });
+    return await this.uploadInvoiceByAuthWithOptions(request, headers, runtime);
+  }
+
+  async uploadInvoiceByAuthWithOptions(request: UploadInvoiceByAuthRequest, headers: UploadInvoiceByAuthHeaders, runtime: $Util.RuntimeOptions): Promise<UploadInvoiceByAuthResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.invoices)) {
+      body["invoices"] = request.invoices;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UploadInvoiceByAuthResponse>(await this.doROARequest("UploadInvoiceByAuth", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/invoices/authorizations/upload`, "json", req, runtime), new UploadInvoiceByAuthResponse({}));
+  }
+
+  async uploadInvoiceByMobile(request: UploadInvoiceByMobileRequest): Promise<UploadInvoiceByMobileResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UploadInvoiceByMobileHeaders({ });
+    return await this.uploadInvoiceByMobileWithOptions(request, headers, runtime);
+  }
+
+  async uploadInvoiceByMobileWithOptions(request: UploadInvoiceByMobileRequest, headers: UploadInvoiceByMobileHeaders, runtime: $Util.RuntimeOptions): Promise<UploadInvoiceByMobileResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.invoices)) {
+      body["invoices"] = request.invoices;
+    }
+
+    if (!Util.isUnset(request.mobile)) {
+      body["mobile"] = request.mobile;
+    }
+
+    if (!Util.isUnset(request.mobileStateCode)) {
+      body["mobileStateCode"] = request.mobileStateCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UploadInvoiceByMobileResponse>(await this.doROARequest("UploadInvoiceByMobile", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/invoices/mobiles/upload`, "json", req, runtime), new UploadInvoiceByMobileResponse({}));
   }
 
   async uploadRegisterImage(request: UploadRegisterImageRequest): Promise<UploadRegisterImageResponse> {
