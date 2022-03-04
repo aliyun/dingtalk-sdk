@@ -19,6 +19,9 @@ public class OkrOpenRecommendRequest extends TeaModel {
     @NameInMap("userId")
     public String userId;
 
+    @NameInMap("words")
+    public java.util.List<String> words;
+
     public static OkrOpenRecommendRequest build(java.util.Map<String, ?> map) throws Exception {
         OkrOpenRecommendRequest self = new OkrOpenRecommendRequest();
         return TeaModel.build(map, self);
@@ -62,6 +65,14 @@ public class OkrOpenRecommendRequest extends TeaModel {
     }
     public String getUserId() {
         return this.userId;
+    }
+
+    public OkrOpenRecommendRequest setWords(java.util.List<String> words) {
+        this.words = words;
+        return this;
+    }
+    public java.util.List<String> getWords() {
+        return this.words;
     }
 
     public static class OkrOpenRecommendRequestCandidateOkrItemsOkrInfosKeyResultInfos extends TeaModel {
