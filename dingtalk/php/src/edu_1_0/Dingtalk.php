@@ -121,6 +121,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetShareRolesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InitCoursesOfClassHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InitCoursesOfClassRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InitCoursesOfClassResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InitDeviceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InitDeviceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InitDeviceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InsertSectionConfigHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InsertSectionConfigRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InsertSectionConfigResponse;
@@ -209,6 +212,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ReportDeviceUseLogResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SearchTeachersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SearchTeachersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SearchTeachersResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SendMessageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SendMessageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SendMessageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\StartCourseHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\StartCoursePrepareHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\StartCoursePrepareRequest;
@@ -934,6 +940,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->signature)) {
             @$body['signature'] = $request->signature;
         }
+        if (!Utils::isUnset($request->version)) {
+            @$body['version'] = $request->version;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -1077,6 +1086,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->faceId)) {
             @$body['faceId'] = $request->faceId;
+        }
+        if (!Utils::isUnset($request->version)) {
+            @$body['version'] = $request->version;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -1710,6 +1722,75 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CreateSectionConfigResponse::fromMap($this->doROARequest('CreateSectionConfig', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/universities/sectionConfigs', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param SendMessageRequest $request
+     *
+     * @return SendMessageResponse
+     */
+    public function sendMessage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SendMessageHeaders([]);
+
+        return $this->sendMessageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SendMessageRequest $request
+     * @param SendMessageHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return SendMessageResponse
+     */
+    public function sendMessageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->dingOauthAppId)) {
+            @$body['dingOauthAppId'] = $request->dingOauthAppId;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->bizId)) {
+            @$body['bizId'] = $request->bizId;
+        }
+        if (!Utils::isUnset($request->fromUserId)) {
+            @$body['fromUserId'] = $request->fromUserId;
+        }
+        if (!Utils::isUnset($request->toUserIdList)) {
+            @$body['toUserIdList'] = $request->toUserIdList;
+        }
+        if (!Utils::isUnset($request->sn)) {
+            @$body['sn'] = $request->sn;
+        }
+        if (!Utils::isUnset($request->type)) {
+            @$body['type'] = $request->type;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SendMessageResponse::fromMap($this->doROARequest('SendMessage', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/messages/send', 'json', $req, $runtime));
     }
 
     /**
@@ -4241,6 +4322,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->signature)) {
             @$body['signature'] = $request->signature;
         }
+        if (!Utils::isUnset($request->version)) {
+            @$body['version'] = $request->version;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -4254,6 +4338,75 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryPayResultResponse::fromMap($this->doROARequest('QueryPayResult', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/payResults/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param InitDeviceRequest $request
+     *
+     * @return InitDeviceResponse
+     */
+    public function initDevice($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new InitDeviceHeaders([]);
+
+        return $this->initDeviceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param InitDeviceRequest $request
+     * @param InitDeviceHeaders $headers
+     * @param RuntimeOptions    $runtime
+     *
+     * @return InitDeviceResponse
+     */
+    public function initDeviceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->dingOauthAppId)) {
+            @$body['dingOauthAppId'] = $request->dingOauthAppId;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->sn)) {
+            @$body['sn'] = $request->sn;
+        }
+        if (!Utils::isUnset($request->encryptPubKey)) {
+            @$body['encryptPubKey'] = $request->encryptPubKey;
+        }
+        if (!Utils::isUnset($request->timestamp)) {
+            @$body['timestamp'] = $request->timestamp;
+        }
+        if (!Utils::isUnset($request->signature)) {
+            @$body['signature'] = $request->signature;
+        }
+        if (!Utils::isUnset($request->version)) {
+            @$body['version'] = $request->version;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return InitDeviceResponse::fromMap($this->doROARequest('InitDevice', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/devices/init', 'json', $req, $runtime));
     }
 
     /**

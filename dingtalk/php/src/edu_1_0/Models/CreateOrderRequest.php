@@ -103,6 +103,13 @@ class CreateOrderRequest extends Model
      * @var string
      */
     public $faceId;
+
+    /**
+     * @description 版本号
+     *
+     * @var string
+     */
+    public $version;
     protected $_name = [
         'sn'                 => 'sn',
         'userId'             => 'userId',
@@ -119,6 +126,7 @@ class CreateOrderRequest extends Model
         'dingSuiteKey'       => 'dingSuiteKey',
         'dingTokenGrantType' => 'dingTokenGrantType',
         'faceId'             => 'faceId',
+        'version'            => 'version',
     ];
 
     public function validate()
@@ -178,6 +186,9 @@ class CreateOrderRequest extends Model
         }
         if (null !== $this->faceId) {
             $res['faceId'] = $this->faceId;
+        }
+        if (null !== $this->version) {
+            $res['version'] = $this->version;
         }
 
         return $res;
@@ -241,6 +252,9 @@ class CreateOrderRequest extends Model
         }
         if (isset($map['faceId'])) {
             $model->faceId = $map['faceId'];
+        }
+        if (isset($map['version'])) {
+            $model->version = $map['version'];
         }
 
         return $model;

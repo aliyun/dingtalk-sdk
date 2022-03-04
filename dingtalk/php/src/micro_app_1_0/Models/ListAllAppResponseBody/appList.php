@@ -70,6 +70,13 @@ class appList extends Model
      * @var int
      */
     public $appStatus;
+
+    /**
+     * @description 应用类型，0表示h5应用，1表示小程序
+     *
+     * @var int
+     */
+    public $developType;
     protected $_name = [
         'agentId'        => 'agentId',
         'name'           => 'name',
@@ -80,6 +87,7 @@ class appList extends Model
         'ompLink'        => 'ompLink',
         'appId'          => 'appId',
         'appStatus'      => 'appStatus',
+        'developType'    => 'developType',
     ];
 
     public function validate()
@@ -115,6 +123,9 @@ class appList extends Model
         }
         if (null !== $this->appStatus) {
             $res['appStatus'] = $this->appStatus;
+        }
+        if (null !== $this->developType) {
+            $res['developType'] = $this->developType;
         }
 
         return $res;
@@ -154,6 +165,9 @@ class appList extends Model
         }
         if (isset($map['appStatus'])) {
             $model->appStatus = $map['appStatus'];
+        }
+        if (isset($map['developType'])) {
+            $model->developType = $map['developType'];
         }
 
         return $model;

@@ -6,7 +6,7 @@ namespace AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class PayOrderRequest extends Model
+class InitDeviceRequest extends Model
 {
     /**
      * @var int
@@ -19,9 +19,9 @@ class PayOrderRequest extends Model
     public $dingOrgId;
 
     /**
-     * @var string
+     * @var int
      */
-    public $dingOpenAppId;
+    public $dingOauthAppId;
 
     /**
      * @var string
@@ -34,35 +34,21 @@ class PayOrderRequest extends Model
     public $dingTokenGrantType;
 
     /**
-     * @description 设备序列号
+     * @description 设备sn号
      *
      * @var string
      */
     public $sn;
 
     /**
-     * @description 订单号
+     * @description 公钥密文
      *
      * @var string
      */
-    public $orderNo;
+    public $encryptPubKey;
 
     /**
-     * @description 员工id
-     *
-     * @var string
-     */
-    public $userId;
-
-    /**
-     * @description 人脸id
-     *
-     * @var string
-     */
-    public $faceId;
-
-    /**
-     * @description utc时间戳
+     * @description 时间戳，utc时间
      *
      * @var int
      */
@@ -84,13 +70,11 @@ class PayOrderRequest extends Model
     protected $_name = [
         'dingIsvOrgId'       => 'dingIsvOrgId',
         'dingOrgId'          => 'dingOrgId',
-        'dingOpenAppId'      => 'dingOpenAppId',
+        'dingOauthAppId'     => 'dingOauthAppId',
         'dingSuiteKey'       => 'dingSuiteKey',
         'dingTokenGrantType' => 'dingTokenGrantType',
         'sn'                 => 'sn',
-        'orderNo'            => 'orderNo',
-        'userId'             => 'userId',
-        'faceId'             => 'faceId',
+        'encryptPubKey'      => 'encryptPubKey',
         'timestamp'          => 'timestamp',
         'signature'          => 'signature',
         'version'            => 'version',
@@ -109,8 +93,8 @@ class PayOrderRequest extends Model
         if (null !== $this->dingOrgId) {
             $res['dingOrgId'] = $this->dingOrgId;
         }
-        if (null !== $this->dingOpenAppId) {
-            $res['dingOpenAppId'] = $this->dingOpenAppId;
+        if (null !== $this->dingOauthAppId) {
+            $res['dingOauthAppId'] = $this->dingOauthAppId;
         }
         if (null !== $this->dingSuiteKey) {
             $res['dingSuiteKey'] = $this->dingSuiteKey;
@@ -121,14 +105,8 @@ class PayOrderRequest extends Model
         if (null !== $this->sn) {
             $res['sn'] = $this->sn;
         }
-        if (null !== $this->orderNo) {
-            $res['orderNo'] = $this->orderNo;
-        }
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
-        }
-        if (null !== $this->faceId) {
-            $res['faceId'] = $this->faceId;
+        if (null !== $this->encryptPubKey) {
+            $res['encryptPubKey'] = $this->encryptPubKey;
         }
         if (null !== $this->timestamp) {
             $res['timestamp'] = $this->timestamp;
@@ -146,7 +124,7 @@ class PayOrderRequest extends Model
     /**
      * @param array $map
      *
-     * @return PayOrderRequest
+     * @return InitDeviceRequest
      */
     public static function fromMap($map = [])
     {
@@ -157,8 +135,8 @@ class PayOrderRequest extends Model
         if (isset($map['dingOrgId'])) {
             $model->dingOrgId = $map['dingOrgId'];
         }
-        if (isset($map['dingOpenAppId'])) {
-            $model->dingOpenAppId = $map['dingOpenAppId'];
+        if (isset($map['dingOauthAppId'])) {
+            $model->dingOauthAppId = $map['dingOauthAppId'];
         }
         if (isset($map['dingSuiteKey'])) {
             $model->dingSuiteKey = $map['dingSuiteKey'];
@@ -169,14 +147,8 @@ class PayOrderRequest extends Model
         if (isset($map['sn'])) {
             $model->sn = $map['sn'];
         }
-        if (isset($map['orderNo'])) {
-            $model->orderNo = $map['orderNo'];
-        }
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
-        }
-        if (isset($map['faceId'])) {
-            $model->faceId = $map['faceId'];
+        if (isset($map['encryptPubKey'])) {
+            $model->encryptPubKey = $map['encryptPubKey'];
         }
         if (isset($map['timestamp'])) {
             $model->timestamp = $map['timestamp'];

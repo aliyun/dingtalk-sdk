@@ -211,6 +211,13 @@ class FormComponentProps extends Model
      * @var string
      */
     public $tableViewMode;
+
+    /**
+     * @description 电话控件支持的类型
+     *
+     * @var string
+     */
+    public $mode;
     protected $_name = [
         'componentId'        => 'componentId',
         'label'              => 'label',
@@ -241,6 +248,7 @@ class FormComponentProps extends Model
         'limit'              => 'limit',
         'availableTemplates' => 'availableTemplates',
         'tableViewMode'      => 'tableViewMode',
+        'mode'               => 'mode',
     ];
 
     public function validate()
@@ -354,6 +362,9 @@ class FormComponentProps extends Model
         }
         if (null !== $this->tableViewMode) {
             $res['tableViewMode'] = $this->tableViewMode;
+        }
+        if (null !== $this->mode) {
+            $res['mode'] = $this->mode;
         }
 
         return $res;
@@ -471,6 +482,9 @@ class FormComponentProps extends Model
         }
         if (isset($map['tableViewMode'])) {
             $model->tableViewMode = $map['tableViewMode'];
+        }
+        if (isset($map['mode'])) {
+            $model->mode = $map['mode'];
         }
 
         return $model;

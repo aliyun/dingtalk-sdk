@@ -6,7 +6,7 @@ namespace AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class QueryPayResultRequest extends Model
+class SendMessageRequest extends Model
 {
     /**
      * @var int
@@ -34,66 +34,50 @@ class QueryPayResultRequest extends Model
     public $dingTokenGrantType;
 
     /**
-     * @description 设备序列号
+     * @description 消息的唯一id
+     *
+     * @var string
+     */
+    public $bizId;
+
+    /**
+     * @description 发送者
+     *
+     * @var string
+     */
+    public $fromUserId;
+
+    /**
+     * @description 接收者
+     *
+     * @var string[]
+     */
+    public $toUserIdList;
+
+    /**
+     * @description 设备sn
      *
      * @var string
      */
     public $sn;
 
     /**
-     * @description 订单号
-     *
-     * @var string
-     */
-    public $orderNo;
-
-    /**
-     * @description 用户id
-     *
-     * @var string
-     */
-    public $userId;
-
-    /**
-     * @description 人脸id
-     *
-     * @var string
-     */
-    public $faceId;
-
-    /**
-     * @description utc时间戳
+     * @description 发送消息的类型
      *
      * @var int
      */
-    public $timestamp;
-
-    /**
-     * @description 签名
-     *
-     * @var string
-     */
-    public $signature;
-
-    /**
-     * @description 版本号
-     *
-     * @var string
-     */
-    public $version;
+    public $type;
     protected $_name = [
         'dingIsvOrgId'       => 'dingIsvOrgId',
         'dingOrgId'          => 'dingOrgId',
         'dingOauthAppId'     => 'dingOauthAppId',
         'dingSuiteKey'       => 'dingSuiteKey',
         'dingTokenGrantType' => 'dingTokenGrantType',
+        'bizId'              => 'bizId',
+        'fromUserId'         => 'fromUserId',
+        'toUserIdList'       => 'toUserIdList',
         'sn'                 => 'sn',
-        'orderNo'            => 'orderNo',
-        'userId'             => 'userId',
-        'faceId'             => 'faceId',
-        'timestamp'          => 'timestamp',
-        'signature'          => 'signature',
-        'version'            => 'version',
+        'type'               => 'type',
     ];
 
     public function validate()
@@ -118,26 +102,20 @@ class QueryPayResultRequest extends Model
         if (null !== $this->dingTokenGrantType) {
             $res['dingTokenGrantType'] = $this->dingTokenGrantType;
         }
+        if (null !== $this->bizId) {
+            $res['bizId'] = $this->bizId;
+        }
+        if (null !== $this->fromUserId) {
+            $res['fromUserId'] = $this->fromUserId;
+        }
+        if (null !== $this->toUserIdList) {
+            $res['toUserIdList'] = $this->toUserIdList;
+        }
         if (null !== $this->sn) {
             $res['sn'] = $this->sn;
         }
-        if (null !== $this->orderNo) {
-            $res['orderNo'] = $this->orderNo;
-        }
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
-        }
-        if (null !== $this->faceId) {
-            $res['faceId'] = $this->faceId;
-        }
-        if (null !== $this->timestamp) {
-            $res['timestamp'] = $this->timestamp;
-        }
-        if (null !== $this->signature) {
-            $res['signature'] = $this->signature;
-        }
-        if (null !== $this->version) {
-            $res['version'] = $this->version;
+        if (null !== $this->type) {
+            $res['type'] = $this->type;
         }
 
         return $res;
@@ -146,7 +124,7 @@ class QueryPayResultRequest extends Model
     /**
      * @param array $map
      *
-     * @return QueryPayResultRequest
+     * @return SendMessageRequest
      */
     public static function fromMap($map = [])
     {
@@ -166,26 +144,22 @@ class QueryPayResultRequest extends Model
         if (isset($map['dingTokenGrantType'])) {
             $model->dingTokenGrantType = $map['dingTokenGrantType'];
         }
+        if (isset($map['bizId'])) {
+            $model->bizId = $map['bizId'];
+        }
+        if (isset($map['fromUserId'])) {
+            $model->fromUserId = $map['fromUserId'];
+        }
+        if (isset($map['toUserIdList'])) {
+            if (!empty($map['toUserIdList'])) {
+                $model->toUserIdList = $map['toUserIdList'];
+            }
+        }
         if (isset($map['sn'])) {
             $model->sn = $map['sn'];
         }
-        if (isset($map['orderNo'])) {
-            $model->orderNo = $map['orderNo'];
-        }
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
-        }
-        if (isset($map['faceId'])) {
-            $model->faceId = $map['faceId'];
-        }
-        if (isset($map['timestamp'])) {
-            $model->timestamp = $map['timestamp'];
-        }
-        if (isset($map['signature'])) {
-            $model->signature = $map['signature'];
-        }
-        if (isset($map['version'])) {
-            $model->version = $map['version'];
+        if (isset($map['type'])) {
+            $model->type = $map['type'];
         }
 
         return $model;
