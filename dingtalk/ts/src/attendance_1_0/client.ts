@@ -559,6 +559,100 @@ export class CreateApproveResponse extends $tea.Model {
   }
 }
 
+export class DingTalkSecurityCheckHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DingTalkSecurityCheckRequest extends $tea.Model {
+  clientVer?: string;
+  platform?: string;
+  platformVer?: string;
+  sec?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      clientVer: 'clientVer',
+      platform: 'platform',
+      platformVer: 'platformVer',
+      sec: 'sec',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      clientVer: 'string',
+      platform: 'string',
+      platformVer: 'string',
+      sec: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DingTalkSecurityCheckResponseBody extends $tea.Model {
+  result?: DingTalkSecurityCheckResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: DingTalkSecurityCheckResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DingTalkSecurityCheckResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: DingTalkSecurityCheckResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: DingTalkSecurityCheckResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetClosingAccountsHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1241,6 +1335,28 @@ export class CreateApproveRequestPunchParam extends $tea.Model {
       positionName: 'string',
       positionType: 'string',
       punchTime: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DingTalkSecurityCheckResponseBodyResult extends $tea.Model {
+  hasRisk?: boolean;
+  riskInfo?: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      hasRisk: 'hasRisk',
+      riskInfo: 'riskInfo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasRisk: 'boolean',
+      riskInfo: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
     };
   }
 
@@ -1947,6 +2063,51 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<CreateApproveResponse>(await this.doROARequest("CreateApprove", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/approves`, "json", req, runtime), new CreateApproveResponse({}));
+  }
+
+  async dingTalkSecurityCheck(request: DingTalkSecurityCheckRequest): Promise<DingTalkSecurityCheckResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DingTalkSecurityCheckHeaders({ });
+    return await this.dingTalkSecurityCheckWithOptions(request, headers, runtime);
+  }
+
+  async dingTalkSecurityCheckWithOptions(request: DingTalkSecurityCheckRequest, headers: DingTalkSecurityCheckHeaders, runtime: $Util.RuntimeOptions): Promise<DingTalkSecurityCheckResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.clientVer)) {
+      body["clientVer"] = request.clientVer;
+    }
+
+    if (!Util.isUnset(request.platform)) {
+      body["platform"] = request.platform;
+    }
+
+    if (!Util.isUnset(request.platformVer)) {
+      body["platformVer"] = request.platformVer;
+    }
+
+    if (!Util.isUnset(request.sec)) {
+      body["sec"] = request.sec;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<DingTalkSecurityCheckResponse>(await this.doROARequest("DingTalkSecurityCheck", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/securities/check`, "json", req, runtime), new DingTalkSecurityCheckResponse({}));
   }
 
   async getClosingAccounts(request: GetClosingAccountsRequest): Promise<GetClosingAccountsResponse> {
