@@ -23,6 +23,9 @@ use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\CheckWritePermissionRespons
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\CreateApproveHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\CreateApproveRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\CreateApproveResponse;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\DingTalkSecurityCheckHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\DingTalkSecurityCheckRequest;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\DingTalkSecurityCheckResponse;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetClosingAccountsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetClosingAccountsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetClosingAccountsResponse;
@@ -54,63 +57,6 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
-    }
-
-    /**
-     * @param CreateApproveRequest $request
-     *
-     * @return CreateApproveResponse
-     */
-    public function createApprove($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new CreateApproveHeaders([]);
-
-        return $this->createApproveWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param CreateApproveRequest $request
-     * @param CreateApproveHeaders $headers
-     * @param RuntimeOptions       $runtime
-     *
-     * @return CreateApproveResponse
-     */
-    public function createApproveWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->userid)) {
-            @$body['userid'] = $request->userid;
-        }
-        if (!Utils::isUnset($request->tagName)) {
-            @$body['tagName'] = $request->tagName;
-        }
-        if (!Utils::isUnset($request->subType)) {
-            @$body['subType'] = $request->subType;
-        }
-        if (!Utils::isUnset($request->punchParam)) {
-            @$body['punchParam'] = $request->punchParam;
-        }
-        if (!Utils::isUnset($request->approveId)) {
-            @$body['approveId'] = $request->approveId;
-        }
-        if (!Utils::isUnset($request->opUserid)) {
-            @$body['opUserid'] = $request->opUserid;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return CreateApproveResponse::fromMap($this->doROARequest('CreateApprove', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/approves', 'json', $req, $runtime));
     }
 
     /**
@@ -242,54 +188,6 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetMachineUserResponse::fromMap($this->doROARequest('GetMachineUser', 'attendance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/attendance/machines/getUser/' . $devId . '', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param GetUserHolidaysRequest $request
-     *
-     * @return GetUserHolidaysResponse
-     */
-    public function getUserHolidays($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new GetUserHolidaysHeaders([]);
-
-        return $this->getUserHolidaysWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param GetUserHolidaysRequest $request
-     * @param GetUserHolidaysHeaders $headers
-     * @param RuntimeOptions         $runtime
-     *
-     * @return GetUserHolidaysResponse
-     */
-    public function getUserHolidaysWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->userIds)) {
-            @$body['userIds'] = $request->userIds;
-        }
-        if (!Utils::isUnset($request->workDateFrom)) {
-            @$body['workDateFrom'] = $request->workDateFrom;
-        }
-        if (!Utils::isUnset($request->workDateTo)) {
-            @$body['workDateTo'] = $request->workDateTo;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return GetUserHolidaysResponse::fromMap($this->doROARequest('GetUserHolidays', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/holidays', 'json', $req, $runtime));
     }
 
     /**
@@ -535,48 +433,6 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetOvertimeSettingRequest $request
-     *
-     * @return GetOvertimeSettingResponse
-     */
-    public function getOvertimeSetting($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new GetOvertimeSettingHeaders([]);
-
-        return $this->getOvertimeSettingWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param GetOvertimeSettingRequest $request
-     * @param GetOvertimeSettingHeaders $headers
-     * @param RuntimeOptions            $runtime
-     *
-     * @return GetOvertimeSettingResponse
-     */
-    public function getOvertimeSettingWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->overtimeSettingIds)) {
-            @$body['overtimeSettingIds'] = $request->overtimeSettingIds;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return GetOvertimeSettingResponse::fromMap($this->doROARequest('GetOvertimeSetting', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/overtimeSettings/query', 'json', $req, $runtime));
-    }
-
-    /**
      * @param GetClosingAccountsRequest $request
      *
      * @return GetClosingAccountsResponse
@@ -616,5 +472,221 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetClosingAccountsResponse::fromMap($this->doROARequest('GetClosingAccounts', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/closingAccounts/rules/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CreateApproveRequest $request
+     *
+     * @return CreateApproveResponse
+     */
+    public function createApprove($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateApproveHeaders([]);
+
+        return $this->createApproveWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateApproveRequest $request
+     * @param CreateApproveHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return CreateApproveResponse
+     */
+    public function createApproveWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->userid)) {
+            @$body['userid'] = $request->userid;
+        }
+        if (!Utils::isUnset($request->tagName)) {
+            @$body['tagName'] = $request->tagName;
+        }
+        if (!Utils::isUnset($request->subType)) {
+            @$body['subType'] = $request->subType;
+        }
+        if (!Utils::isUnset($request->punchParam)) {
+            @$body['punchParam'] = $request->punchParam;
+        }
+        if (!Utils::isUnset($request->approveId)) {
+            @$body['approveId'] = $request->approveId;
+        }
+        if (!Utils::isUnset($request->opUserid)) {
+            @$body['opUserid'] = $request->opUserid;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateApproveResponse::fromMap($this->doROARequest('CreateApprove', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/approves', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetUserHolidaysRequest $request
+     *
+     * @return GetUserHolidaysResponse
+     */
+    public function getUserHolidays($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetUserHolidaysHeaders([]);
+
+        return $this->getUserHolidaysWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetUserHolidaysRequest $request
+     * @param GetUserHolidaysHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return GetUserHolidaysResponse
+     */
+    public function getUserHolidaysWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->userIds)) {
+            @$body['userIds'] = $request->userIds;
+        }
+        if (!Utils::isUnset($request->workDateFrom)) {
+            @$body['workDateFrom'] = $request->workDateFrom;
+        }
+        if (!Utils::isUnset($request->workDateTo)) {
+            @$body['workDateTo'] = $request->workDateTo;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GetUserHolidaysResponse::fromMap($this->doROARequest('GetUserHolidays', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/holidays', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param DingTalkSecurityCheckRequest $request
+     *
+     * @return DingTalkSecurityCheckResponse
+     */
+    public function dingTalkSecurityCheck($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DingTalkSecurityCheckHeaders([]);
+
+        return $this->dingTalkSecurityCheckWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param DingTalkSecurityCheckRequest $request
+     * @param DingTalkSecurityCheckHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return DingTalkSecurityCheckResponse
+     */
+    public function dingTalkSecurityCheckWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->sec)) {
+            @$body['sec'] = $request->sec;
+        }
+        if (!Utils::isUnset($request->platform)) {
+            @$body['platform'] = $request->platform;
+        }
+        if (!Utils::isUnset($request->clientVer)) {
+            @$body['clientVer'] = $request->clientVer;
+        }
+        if (!Utils::isUnset($request->platformVer)) {
+            @$body['platformVer'] = $request->platformVer;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->dingCorpId)) {
+            @$body['dingCorpId'] = $request->dingCorpId;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return DingTalkSecurityCheckResponse::fromMap($this->doROARequest('DingTalkSecurityCheck', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/securities/check', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetOvertimeSettingRequest $request
+     *
+     * @return GetOvertimeSettingResponse
+     */
+    public function getOvertimeSetting($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetOvertimeSettingHeaders([]);
+
+        return $this->getOvertimeSettingWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetOvertimeSettingRequest $request
+     * @param GetOvertimeSettingHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return GetOvertimeSettingResponse
+     */
+    public function getOvertimeSettingWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->overtimeSettingIds)) {
+            @$body['overtimeSettingIds'] = $request->overtimeSettingIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GetOvertimeSettingResponse::fromMap($this->doROARequest('GetOvertimeSetting', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/overtimeSettings/query', 'json', $req, $runtime));
     }
 }
