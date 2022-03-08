@@ -57,7 +57,7 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
@@ -85,7 +85,7 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
@@ -121,21 +121,21 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.candidate_okr_items):
             body['candidateOkrItems'] = request.candidate_okr_items
-        if not UtilClient.is_unset(request.dept_ids):
-            body['deptIds'] = request.dept_ids
-        if not UtilClient.is_unset(request.user_id):
-            body['userId'] = request.user_id
-        if not UtilClient.is_unset(request.isv_app_id):
-            body['isvAppId'] = request.isv_app_id
         if not UtilClient.is_unset(request.corp_id):
             body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.dept_ids):
+            body['deptIds'] = request.dept_ids
+        if not UtilClient.is_unset(request.isv_app_id):
+            body['isvAppId'] = request.isv_app_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
         if not UtilClient.is_unset(request.words):
             body['words'] = request.words
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
@@ -155,21 +155,21 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.candidate_okr_items):
             body['candidateOkrItems'] = request.candidate_okr_items
-        if not UtilClient.is_unset(request.dept_ids):
-            body['deptIds'] = request.dept_ids
-        if not UtilClient.is_unset(request.user_id):
-            body['userId'] = request.user_id
-        if not UtilClient.is_unset(request.isv_app_id):
-            body['isvAppId'] = request.isv_app_id
         if not UtilClient.is_unset(request.corp_id):
             body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.dept_ids):
+            body['deptIds'] = request.dept_ids
+        if not UtilClient.is_unset(request.isv_app_id):
+            body['isvAppId'] = request.isv_app_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
         if not UtilClient.is_unset(request.words):
             body['words'] = request.words
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)

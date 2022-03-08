@@ -23,96 +23,68 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
-    def query_industry_tag_list(self) -> dingtalkapaas__1__0_models.QueryIndustryTagListResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkapaas__1__0_models.QueryIndustryTagListHeaders()
-        return self.query_industry_tag_list_with_options(headers, runtime)
-
-    async def query_industry_tag_list_async(self) -> dingtalkapaas__1__0_models.QueryIndustryTagListResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkapaas__1__0_models.QueryIndustryTagListHeaders()
-        return await self.query_industry_tag_list_with_options_async(headers, runtime)
-
-    def query_industry_tag_list_with_options(
+    def batch_create_template(
         self,
-        headers: dingtalkapaas__1__0_models.QueryIndustryTagListHeaders,
+        request: dingtalkapaas__1__0_models.BatchCreateTemplateRequest,
+    ) -> dingtalkapaas__1__0_models.BatchCreateTemplateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkapaas__1__0_models.BatchCreateTemplateHeaders()
+        return self.batch_create_template_with_options(request, headers, runtime)
+
+    async def batch_create_template_async(
+        self,
+        request: dingtalkapaas__1__0_models.BatchCreateTemplateRequest,
+    ) -> dingtalkapaas__1__0_models.BatchCreateTemplateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkapaas__1__0_models.BatchCreateTemplateHeaders()
+        return await self.batch_create_template_with_options_async(request, headers, runtime)
+
+    def batch_create_template_with_options(
+        self,
+        request: dingtalkapaas__1__0_models.BatchCreateTemplateRequest,
+        headers: dingtalkapaas__1__0_models.BatchCreateTemplateHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkapaas__1__0_models.QueryIndustryTagListResponse:
+    ) -> dingtalkapaas__1__0_models.BatchCreateTemplateResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.template_list):
+            body['templateList'] = request.template_list
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=real_headers
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
         )
         return TeaCore.from_map(
-            dingtalkapaas__1__0_models.QueryIndustryTagListResponse(),
-            self.do_roarequest('QueryIndustryTagList', 'apaas_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/apaas/templates/industries', 'json', req, runtime)
+            dingtalkapaas__1__0_models.BatchCreateTemplateResponse(),
+            self.do_roarequest('BatchCreateTemplate', 'apaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/apaas/templates', 'json', req, runtime)
         )
 
-    async def query_industry_tag_list_with_options_async(
+    async def batch_create_template_with_options_async(
         self,
-        headers: dingtalkapaas__1__0_models.QueryIndustryTagListHeaders,
+        request: dingtalkapaas__1__0_models.BatchCreateTemplateRequest,
+        headers: dingtalkapaas__1__0_models.BatchCreateTemplateHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkapaas__1__0_models.QueryIndustryTagListResponse:
+    ) -> dingtalkapaas__1__0_models.BatchCreateTemplateResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.template_list):
+            body['templateList'] = request.template_list
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=real_headers
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
         )
         return TeaCore.from_map(
-            dingtalkapaas__1__0_models.QueryIndustryTagListResponse(),
-            await self.do_roarequest_async('QueryIndustryTagList', 'apaas_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/apaas/templates/industries', 'json', req, runtime)
-        )
-
-    def query_role_tag_list(self) -> dingtalkapaas__1__0_models.QueryRoleTagListResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkapaas__1__0_models.QueryRoleTagListHeaders()
-        return self.query_role_tag_list_with_options(headers, runtime)
-
-    async def query_role_tag_list_async(self) -> dingtalkapaas__1__0_models.QueryRoleTagListResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkapaas__1__0_models.QueryRoleTagListHeaders()
-        return await self.query_role_tag_list_with_options_async(headers, runtime)
-
-    def query_role_tag_list_with_options(
-        self,
-        headers: dingtalkapaas__1__0_models.QueryRoleTagListHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkapaas__1__0_models.QueryRoleTagListResponse:
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers
-        )
-        return TeaCore.from_map(
-            dingtalkapaas__1__0_models.QueryRoleTagListResponse(),
-            self.do_roarequest('QueryRoleTagList', 'apaas_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/apaas/templates/roles', 'json', req, runtime)
-        )
-
-    async def query_role_tag_list_with_options_async(
-        self,
-        headers: dingtalkapaas__1__0_models.QueryRoleTagListHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkapaas__1__0_models.QueryRoleTagListResponse:
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers
-        )
-        return TeaCore.from_map(
-            dingtalkapaas__1__0_models.QueryRoleTagListResponse(),
-            await self.do_roarequest_async('QueryRoleTagList', 'apaas_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/apaas/templates/roles', 'json', req, runtime)
+            dingtalkapaas__1__0_models.BatchCreateTemplateResponse(),
+            await self.do_roarequest_async('BatchCreateTemplate', 'apaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/apaas/templates', 'json', req, runtime)
         )
 
     def batch_query_by_template_key(
@@ -141,13 +113,11 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.template_keys):
             body['templateKeys'] = request.template_keys
-        if not UtilClient.is_unset(request.ding_suite_key):
-            body['dingSuiteKey'] = request.ding_suite_key
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
@@ -167,13 +137,11 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.template_keys):
             body['templateKeys'] = request.template_keys
-        if not UtilClient.is_unset(request.ding_suite_key):
-            body['dingSuiteKey'] = request.ding_suite_key
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
@@ -181,120 +149,6 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkapaas__1__0_models.BatchQueryByTemplateKeyResponse(),
             await self.do_roarequest_async('BatchQueryByTemplateKey', 'apaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/apaas/templates/query', 'json', req, runtime)
-        )
-
-    def batch_create_template(
-        self,
-        request: dingtalkapaas__1__0_models.BatchCreateTemplateRequest,
-    ) -> dingtalkapaas__1__0_models.BatchCreateTemplateResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkapaas__1__0_models.BatchCreateTemplateHeaders()
-        return self.batch_create_template_with_options(request, headers, runtime)
-
-    async def batch_create_template_async(
-        self,
-        request: dingtalkapaas__1__0_models.BatchCreateTemplateRequest,
-    ) -> dingtalkapaas__1__0_models.BatchCreateTemplateResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkapaas__1__0_models.BatchCreateTemplateHeaders()
-        return await self.batch_create_template_with_options_async(request, headers, runtime)
-
-    def batch_create_template_with_options(
-        self,
-        request: dingtalkapaas__1__0_models.BatchCreateTemplateRequest,
-        headers: dingtalkapaas__1__0_models.BatchCreateTemplateHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkapaas__1__0_models.BatchCreateTemplateResponse:
-        UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.template_list):
-            body['templateList'] = request.template_list
-        if not UtilClient.is_unset(request.ding_suite_key):
-            body['dingSuiteKey'] = request.ding_suite_key
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
-        )
-        return TeaCore.from_map(
-            dingtalkapaas__1__0_models.BatchCreateTemplateResponse(),
-            self.do_roarequest('BatchCreateTemplate', 'apaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/apaas/templates', 'json', req, runtime)
-        )
-
-    async def batch_create_template_with_options_async(
-        self,
-        request: dingtalkapaas__1__0_models.BatchCreateTemplateRequest,
-        headers: dingtalkapaas__1__0_models.BatchCreateTemplateHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkapaas__1__0_models.BatchCreateTemplateResponse:
-        UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.template_list):
-            body['templateList'] = request.template_list
-        if not UtilClient.is_unset(request.ding_suite_key):
-            body['dingSuiteKey'] = request.ding_suite_key
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
-        )
-        return TeaCore.from_map(
-            dingtalkapaas__1__0_models.BatchCreateTemplateResponse(),
-            await self.do_roarequest_async('BatchCreateTemplate', 'apaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/apaas/templates', 'json', req, runtime)
-        )
-
-    def query_template_categorys(self) -> dingtalkapaas__1__0_models.QueryTemplateCategorysResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkapaas__1__0_models.QueryTemplateCategorysHeaders()
-        return self.query_template_categorys_with_options(headers, runtime)
-
-    async def query_template_categorys_async(self) -> dingtalkapaas__1__0_models.QueryTemplateCategorysResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkapaas__1__0_models.QueryTemplateCategorysHeaders()
-        return await self.query_template_categorys_with_options_async(headers, runtime)
-
-    def query_template_categorys_with_options(
-        self,
-        headers: dingtalkapaas__1__0_models.QueryTemplateCategorysHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkapaas__1__0_models.QueryTemplateCategorysResponse:
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers
-        )
-        return TeaCore.from_map(
-            dingtalkapaas__1__0_models.QueryTemplateCategorysResponse(),
-            self.do_roarequest('QueryTemplateCategorys', 'apaas_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/apaas/templates/categories', 'json', req, runtime)
-        )
-
-    async def query_template_categorys_with_options_async(
-        self,
-        headers: dingtalkapaas__1__0_models.QueryTemplateCategorysHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkapaas__1__0_models.QueryTemplateCategorysResponse:
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers
-        )
-        return TeaCore.from_map(
-            dingtalkapaas__1__0_models.QueryTemplateCategorysResponse(),
-            await self.do_roarequest_async('QueryTemplateCategorys', 'apaas_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/apaas/templates/categories', 'json', req, runtime)
         )
 
     def batch_update_template(
@@ -323,13 +177,11 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.template_list):
             body['templateList'] = request.template_list
-        if not UtilClient.is_unset(request.ding_suite_key):
-            body['dingSuiteKey'] = request.ding_suite_key
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
@@ -349,13 +201,11 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.template_list):
             body['templateList'] = request.template_list
-        if not UtilClient.is_unset(request.ding_suite_key):
-            body['dingSuiteKey'] = request.ding_suite_key
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
@@ -363,6 +213,144 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkapaas__1__0_models.BatchUpdateTemplateResponse(),
             await self.do_roarequest_async('BatchUpdateTemplate', 'apaas_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/apaas/templates', 'json', req, runtime)
+        )
+
+    def query_industry_tag_list(self) -> dingtalkapaas__1__0_models.QueryIndustryTagListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkapaas__1__0_models.QueryIndustryTagListHeaders()
+        return self.query_industry_tag_list_with_options(headers, runtime)
+
+    async def query_industry_tag_list_async(self) -> dingtalkapaas__1__0_models.QueryIndustryTagListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkapaas__1__0_models.QueryIndustryTagListHeaders()
+        return await self.query_industry_tag_list_with_options_async(headers, runtime)
+
+    def query_industry_tag_list_with_options(
+        self,
+        headers: dingtalkapaas__1__0_models.QueryIndustryTagListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkapaas__1__0_models.QueryIndustryTagListResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkapaas__1__0_models.QueryIndustryTagListResponse(),
+            self.do_roarequest('QueryIndustryTagList', 'apaas_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/apaas/templates/industries', 'json', req, runtime)
+        )
+
+    async def query_industry_tag_list_with_options_async(
+        self,
+        headers: dingtalkapaas__1__0_models.QueryIndustryTagListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkapaas__1__0_models.QueryIndustryTagListResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkapaas__1__0_models.QueryIndustryTagListResponse(),
+            await self.do_roarequest_async('QueryIndustryTagList', 'apaas_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/apaas/templates/industries', 'json', req, runtime)
+        )
+
+    def query_role_tag_list(self) -> dingtalkapaas__1__0_models.QueryRoleTagListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkapaas__1__0_models.QueryRoleTagListHeaders()
+        return self.query_role_tag_list_with_options(headers, runtime)
+
+    async def query_role_tag_list_async(self) -> dingtalkapaas__1__0_models.QueryRoleTagListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkapaas__1__0_models.QueryRoleTagListHeaders()
+        return await self.query_role_tag_list_with_options_async(headers, runtime)
+
+    def query_role_tag_list_with_options(
+        self,
+        headers: dingtalkapaas__1__0_models.QueryRoleTagListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkapaas__1__0_models.QueryRoleTagListResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkapaas__1__0_models.QueryRoleTagListResponse(),
+            self.do_roarequest('QueryRoleTagList', 'apaas_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/apaas/templates/roles', 'json', req, runtime)
+        )
+
+    async def query_role_tag_list_with_options_async(
+        self,
+        headers: dingtalkapaas__1__0_models.QueryRoleTagListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkapaas__1__0_models.QueryRoleTagListResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkapaas__1__0_models.QueryRoleTagListResponse(),
+            await self.do_roarequest_async('QueryRoleTagList', 'apaas_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/apaas/templates/roles', 'json', req, runtime)
+        )
+
+    def query_template_categorys(self) -> dingtalkapaas__1__0_models.QueryTemplateCategorysResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkapaas__1__0_models.QueryTemplateCategorysHeaders()
+        return self.query_template_categorys_with_options(headers, runtime)
+
+    async def query_template_categorys_async(self) -> dingtalkapaas__1__0_models.QueryTemplateCategorysResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkapaas__1__0_models.QueryTemplateCategorysHeaders()
+        return await self.query_template_categorys_with_options_async(headers, runtime)
+
+    def query_template_categorys_with_options(
+        self,
+        headers: dingtalkapaas__1__0_models.QueryTemplateCategorysHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkapaas__1__0_models.QueryTemplateCategorysResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkapaas__1__0_models.QueryTemplateCategorysResponse(),
+            self.do_roarequest('QueryTemplateCategorys', 'apaas_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/apaas/templates/categories', 'json', req, runtime)
+        )
+
+    async def query_template_categorys_with_options_async(
+        self,
+        headers: dingtalkapaas__1__0_models.QueryTemplateCategorysHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkapaas__1__0_models.QueryTemplateCategorysResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkapaas__1__0_models.QueryTemplateCategorysResponse(),
+            await self.do_roarequest_async('QueryTemplateCategorys', 'apaas_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/apaas/templates/categories', 'json', req, runtime)
         )
 
     def recall_audit_template(
@@ -391,13 +379,11 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.template_keys):
             body['templateKeys'] = request.template_keys
-        if not UtilClient.is_unset(request.ding_suite_key):
-            body['dingSuiteKey'] = request.ding_suite_key
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
@@ -417,13 +403,11 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.template_keys):
             body['templateKeys'] = request.template_keys
-        if not UtilClient.is_unset(request.ding_suite_key):
-            body['dingSuiteKey'] = request.ding_suite_key
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)

@@ -42,15 +42,15 @@ class NlpWordDistinguishRequestAttachExtractDecisionInfo(TeaModel):
         self,
         black_words: List[str] = None,
         candidate_words: List[str] = None,
+        corp_id: str = None,
         dept_ids: List[str] = None,
         user_id: str = None,
-        corp_id: str = None,
     ):
         self.black_words = black_words
         self.candidate_words = candidate_words
+        self.corp_id = corp_id
         self.dept_ids = dept_ids
         self.user_id = user_id
-        self.corp_id = corp_id
 
     def validate(self):
         pass
@@ -65,12 +65,12 @@ class NlpWordDistinguishRequestAttachExtractDecisionInfo(TeaModel):
             result['blackWords'] = self.black_words
         if self.candidate_words is not None:
             result['candidateWords'] = self.candidate_words
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
         if self.dept_ids is not None:
             result['deptIds'] = self.dept_ids
         if self.user_id is not None:
             result['userId'] = self.user_id
-        if self.corp_id is not None:
-            result['corpId'] = self.corp_id
         return result
 
     def from_map(self, m: dict = None):
@@ -79,12 +79,12 @@ class NlpWordDistinguishRequestAttachExtractDecisionInfo(TeaModel):
             self.black_words = m.get('blackWords')
         if m.get('candidateWords') is not None:
             self.candidate_words = m.get('candidateWords')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
         if m.get('deptIds') is not None:
             self.dept_ids = m.get('deptIds')
         if m.get('userId') is not None:
             self.user_id = m.get('userId')
-        if m.get('corpId') is not None:
-            self.corp_id = m.get('corpId')
         return self
 
 
@@ -159,11 +159,11 @@ class NlpWordDistinguishResponseBodyWordEntities(TeaModel):
 class NlpWordDistinguishResponseBody(TeaModel):
     def __init__(
         self,
-        word_entities: List[NlpWordDistinguishResponseBodyWordEntities] = None,
         request_id: str = None,
+        word_entities: List[NlpWordDistinguishResponseBodyWordEntities] = None,
     ):
-        self.word_entities = word_entities
         self.request_id = request_id
+        self.word_entities = word_entities
 
     def validate(self):
         if self.word_entities:
@@ -177,23 +177,23 @@ class NlpWordDistinguishResponseBody(TeaModel):
             return _map
 
         result = dict()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
         result['wordEntities'] = []
         if self.word_entities is not None:
             for k in self.word_entities:
                 result['wordEntities'].append(k.to_map() if k else None)
-        if self.request_id is not None:
-            result['requestId'] = self.request_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
         self.word_entities = []
         if m.get('wordEntities') is not None:
             for k in m.get('wordEntities'):
                 temp_model = NlpWordDistinguishResponseBodyWordEntities()
                 self.word_entities.append(temp_model.from_map(k))
-        if m.get('requestId') is not None:
-            self.request_id = m.get('requestId')
         return self
 
 
@@ -362,13 +362,13 @@ class OkrOpenRecommendRequestCandidateOkrItemsOkrInfos(TeaModel):
 class OkrOpenRecommendRequestCandidateOkrItems(TeaModel):
     def __init__(
         self,
-        user_id: str = None,
         okr_infos: List[OkrOpenRecommendRequestCandidateOkrItemsOkrInfos] = None,
         relation: str = None,
+        user_id: str = None,
     ):
-        self.user_id = user_id
         self.okr_infos = okr_infos
         self.relation = relation
+        self.user_id = user_id
 
     def validate(self):
         if self.okr_infos:
@@ -382,20 +382,18 @@ class OkrOpenRecommendRequestCandidateOkrItems(TeaModel):
             return _map
 
         result = dict()
-        if self.user_id is not None:
-            result['userId'] = self.user_id
         result['okrInfos'] = []
         if self.okr_infos is not None:
             for k in self.okr_infos:
                 result['okrInfos'].append(k.to_map() if k else None)
         if self.relation is not None:
             result['relation'] = self.relation
+        if self.user_id is not None:
+            result['userId'] = self.user_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('userId') is not None:
-            self.user_id = m.get('userId')
         self.okr_infos = []
         if m.get('okrInfos') is not None:
             for k in m.get('okrInfos'):
@@ -403,6 +401,8 @@ class OkrOpenRecommendRequestCandidateOkrItems(TeaModel):
                 self.okr_infos.append(temp_model.from_map(k))
         if m.get('relation') is not None:
             self.relation = m.get('relation')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
         return self
 
 
@@ -410,17 +410,17 @@ class OkrOpenRecommendRequest(TeaModel):
     def __init__(
         self,
         candidate_okr_items: List[OkrOpenRecommendRequestCandidateOkrItems] = None,
-        dept_ids: List[str] = None,
-        user_id: str = None,
-        isv_app_id: str = None,
         corp_id: str = None,
+        dept_ids: List[str] = None,
+        isv_app_id: str = None,
+        user_id: str = None,
         words: List[str] = None,
     ):
         self.candidate_okr_items = candidate_okr_items
-        self.dept_ids = dept_ids
-        self.user_id = user_id
-        self.isv_app_id = isv_app_id
         self.corp_id = corp_id
+        self.dept_ids = dept_ids
+        self.isv_app_id = isv_app_id
+        self.user_id = user_id
         self.words = words
 
     def validate(self):
@@ -439,14 +439,14 @@ class OkrOpenRecommendRequest(TeaModel):
         if self.candidate_okr_items is not None:
             for k in self.candidate_okr_items:
                 result['candidateOkrItems'].append(k.to_map() if k else None)
-        if self.dept_ids is not None:
-            result['deptIds'] = self.dept_ids
-        if self.user_id is not None:
-            result['userId'] = self.user_id
-        if self.isv_app_id is not None:
-            result['isvAppId'] = self.isv_app_id
         if self.corp_id is not None:
             result['corpId'] = self.corp_id
+        if self.dept_ids is not None:
+            result['deptIds'] = self.dept_ids
+        if self.isv_app_id is not None:
+            result['isvAppId'] = self.isv_app_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
         if self.words is not None:
             result['words'] = self.words
         return result
@@ -458,49 +458,14 @@ class OkrOpenRecommendRequest(TeaModel):
             for k in m.get('candidateOkrItems'):
                 temp_model = OkrOpenRecommendRequestCandidateOkrItems()
                 self.candidate_okr_items.append(temp_model.from_map(k))
-        if m.get('deptIds') is not None:
-            self.dept_ids = m.get('deptIds')
-        if m.get('userId') is not None:
-            self.user_id = m.get('userId')
-        if m.get('isvAppId') is not None:
-            self.isv_app_id = m.get('isvAppId')
         if m.get('corpId') is not None:
             self.corp_id = m.get('corpId')
-        if m.get('words') is not None:
-            self.words = m.get('words')
-        return self
-
-
-class OkrOpenRecommendResponseBodyOkrRecommendItemsObjectiveRelatedResults(TeaModel):
-    def __init__(
-        self,
-        objective_id: str = None,
-        words: List[str] = None,
-    ):
-        # objectiveId
-        self.objective_id = objective_id
-        # words
-        self.words = words
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.objective_id is not None:
-            result['objectiveId'] = self.objective_id
-        if self.words is not None:
-            result['words'] = self.words
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('objectiveId') is not None:
-            self.objective_id = m.get('objectiveId')
+        if m.get('deptIds') is not None:
+            self.dept_ids = m.get('deptIds')
+        if m.get('isvAppId') is not None:
+            self.isv_app_id = m.get('isvAppId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
         if m.get('words') is not None:
             self.words = m.get('words')
         return self
@@ -541,30 +506,65 @@ class OkrOpenRecommendResponseBodyOkrRecommendItemsKrResultRelatedResults(TeaMod
         return self
 
 
+class OkrOpenRecommendResponseBodyOkrRecommendItemsObjectiveRelatedResults(TeaModel):
+    def __init__(
+        self,
+        objective_id: str = None,
+        words: List[str] = None,
+    ):
+        # objectiveId
+        self.objective_id = objective_id
+        # words
+        self.words = words
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.objective_id is not None:
+            result['objectiveId'] = self.objective_id
+        if self.words is not None:
+            result['words'] = self.words
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('objectiveId') is not None:
+            self.objective_id = m.get('objectiveId')
+        if m.get('words') is not None:
+            self.words = m.get('words')
+        return self
+
+
 class OkrOpenRecommendResponseBodyOkrRecommendItems(TeaModel):
     def __init__(
         self,
-        user_id: str = None,
-        related_level: int = None,
-        objective_related_results: List[OkrOpenRecommendResponseBodyOkrRecommendItemsObjectiveRelatedResults] = None,
         kr_result_related_results: List[OkrOpenRecommendResponseBodyOkrRecommendItemsKrResultRelatedResults] = None,
+        objective_related_results: List[OkrOpenRecommendResponseBodyOkrRecommendItemsObjectiveRelatedResults] = None,
+        related_level: int = None,
+        user_id: str = None,
     ):
-        # userId
-        self.user_id = user_id
-        # relatedLevel
-        self.related_level = related_level
-        # objectiveRelatedResults
-        self.objective_related_results = objective_related_results
         # krResultRelatedResults
         self.kr_result_related_results = kr_result_related_results
+        # objectiveRelatedResults
+        self.objective_related_results = objective_related_results
+        # relatedLevel
+        self.related_level = related_level
+        # userId
+        self.user_id = user_id
 
     def validate(self):
-        if self.objective_related_results:
-            for k in self.objective_related_results:
-                if k:
-                    k.validate()
         if self.kr_result_related_results:
             for k in self.kr_result_related_results:
+                if k:
+                    k.validate()
+        if self.objective_related_results:
+            for k in self.objective_related_results:
                 if k:
                     k.validate()
 
@@ -574,36 +574,36 @@ class OkrOpenRecommendResponseBodyOkrRecommendItems(TeaModel):
             return _map
 
         result = dict()
-        if self.user_id is not None:
-            result['userId'] = self.user_id
-        if self.related_level is not None:
-            result['relatedLevel'] = self.related_level
-        result['objectiveRelatedResults'] = []
-        if self.objective_related_results is not None:
-            for k in self.objective_related_results:
-                result['objectiveRelatedResults'].append(k.to_map() if k else None)
         result['krResultRelatedResults'] = []
         if self.kr_result_related_results is not None:
             for k in self.kr_result_related_results:
                 result['krResultRelatedResults'].append(k.to_map() if k else None)
+        result['objectiveRelatedResults'] = []
+        if self.objective_related_results is not None:
+            for k in self.objective_related_results:
+                result['objectiveRelatedResults'].append(k.to_map() if k else None)
+        if self.related_level is not None:
+            result['relatedLevel'] = self.related_level
+        if self.user_id is not None:
+            result['userId'] = self.user_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('userId') is not None:
-            self.user_id = m.get('userId')
-        if m.get('relatedLevel') is not None:
-            self.related_level = m.get('relatedLevel')
-        self.objective_related_results = []
-        if m.get('objectiveRelatedResults') is not None:
-            for k in m.get('objectiveRelatedResults'):
-                temp_model = OkrOpenRecommendResponseBodyOkrRecommendItemsObjectiveRelatedResults()
-                self.objective_related_results.append(temp_model.from_map(k))
         self.kr_result_related_results = []
         if m.get('krResultRelatedResults') is not None:
             for k in m.get('krResultRelatedResults'):
                 temp_model = OkrOpenRecommendResponseBodyOkrRecommendItemsKrResultRelatedResults()
                 self.kr_result_related_results.append(temp_model.from_map(k))
+        self.objective_related_results = []
+        if m.get('objectiveRelatedResults') is not None:
+            for k in m.get('objectiveRelatedResults'):
+                temp_model = OkrOpenRecommendResponseBodyOkrRecommendItemsObjectiveRelatedResults()
+                self.objective_related_results.append(temp_model.from_map(k))
+        if m.get('relatedLevel') is not None:
+            self.related_level = m.get('relatedLevel')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
         return self
 
 

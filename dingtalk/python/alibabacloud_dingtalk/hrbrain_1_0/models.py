@@ -40,17 +40,17 @@ class SyncDataHeaders(TeaModel):
 class SyncDataRequest(TeaModel):
     def __init__(
         self,
+        content: str = None,
+        data_id: str = None,
+        etl_time: str = None,
         project_id: str = None,
         schema_id: str = None,
-        data_id: str = None,
-        content: str = None,
-        etl_time: str = None,
     ):
+        self.content = content
+        self.data_id = data_id
+        self.etl_time = etl_time
         self.project_id = project_id
         self.schema_id = schema_id
-        self.data_id = data_id
-        self.content = content
-        self.etl_time = etl_time
 
     def validate(self):
         pass
@@ -61,30 +61,30 @@ class SyncDataRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        if self.data_id is not None:
+            result['dataId'] = self.data_id
+        if self.etl_time is not None:
+            result['etlTime'] = self.etl_time
         if self.project_id is not None:
             result['projectId'] = self.project_id
         if self.schema_id is not None:
             result['schemaId'] = self.schema_id
-        if self.data_id is not None:
-            result['dataId'] = self.data_id
-        if self.content is not None:
-            result['content'] = self.content
-        if self.etl_time is not None:
-            result['etlTime'] = self.etl_time
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('dataId') is not None:
+            self.data_id = m.get('dataId')
+        if m.get('etlTime') is not None:
+            self.etl_time = m.get('etlTime')
         if m.get('projectId') is not None:
             self.project_id = m.get('projectId')
         if m.get('schemaId') is not None:
             self.schema_id = m.get('schemaId')
-        if m.get('dataId') is not None:
-            self.data_id = m.get('dataId')
-        if m.get('content') is not None:
-            self.content = m.get('content')
-        if m.get('etlTime') is not None:
-            self.etl_time = m.get('etlTime')
         return self
 
 

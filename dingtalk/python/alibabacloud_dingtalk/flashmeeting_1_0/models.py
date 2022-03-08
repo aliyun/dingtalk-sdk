@@ -40,16 +40,16 @@ class CreateFlashMeetingHeaders(TeaModel):
 class CreateFlashMeetingRequest(TeaModel):
     def __init__(
         self,
+        creator: str = None,
         event_id: str = None,
         title: str = None,
-        creator: str = None,
     ):
+        # 创建人union id
+        self.creator = creator
         # 日程id
         self.event_id = event_id
         # 钉闪会名称
         self.title = title
-        # 创建人union id
-        self.creator = creator
 
     def validate(self):
         pass
@@ -60,22 +60,22 @@ class CreateFlashMeetingRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.creator is not None:
+            result['creator'] = self.creator
         if self.event_id is not None:
             result['eventId'] = self.event_id
         if self.title is not None:
             result['title'] = self.title
-        if self.creator is not None:
-            result['creator'] = self.creator
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('creator') is not None:
+            self.creator = m.get('creator')
         if m.get('eventId') is not None:
             self.event_id = m.get('eventId')
         if m.get('title') is not None:
             self.title = m.get('title')
-        if m.get('creator') is not None:
-            self.creator = m.get('creator')
         return self
 
 
@@ -83,21 +83,21 @@ class CreateFlashMeetingResponseBody(TeaModel):
     def __init__(
         self,
         end_time: int = None,
+        flash_meeting_key: str = None,
         start_time: int = None,
         title: str = None,
         url: str = None,
-        flash_meeting_key: str = None,
     ):
         # 闪会结束时间
         self.end_time = end_time
+        # 闪会的key
+        self.flash_meeting_key = flash_meeting_key
         # 闪会开始时间
         self.start_time = start_time
         # 闪会标题
         self.title = title
         # 闪会url
         self.url = url
-        # 闪会的key
-        self.flash_meeting_key = flash_meeting_key
 
     def validate(self):
         pass
@@ -110,28 +110,28 @@ class CreateFlashMeetingResponseBody(TeaModel):
         result = dict()
         if self.end_time is not None:
             result['endTime'] = self.end_time
+        if self.flash_meeting_key is not None:
+            result['flashMeetingKey'] = self.flash_meeting_key
         if self.start_time is not None:
             result['startTime'] = self.start_time
         if self.title is not None:
             result['title'] = self.title
         if self.url is not None:
             result['url'] = self.url
-        if self.flash_meeting_key is not None:
-            result['flashMeetingKey'] = self.flash_meeting_key
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('endTime') is not None:
             self.end_time = m.get('endTime')
+        if m.get('flashMeetingKey') is not None:
+            self.flash_meeting_key = m.get('flashMeetingKey')
         if m.get('startTime') is not None:
             self.start_time = m.get('startTime')
         if m.get('title') is not None:
             self.title = m.get('title')
         if m.get('url') is not None:
             self.url = m.get('url')
-        if m.get('flashMeetingKey') is not None:
-            self.flash_meeting_key = m.get('flashMeetingKey')
         return self
 
 

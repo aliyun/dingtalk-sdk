@@ -53,7 +53,7 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
@@ -77,7 +77,7 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
@@ -85,6 +85,70 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkcarbon__1__0_models.WriteAlibabaOrgCarbonResponse(),
             await self.do_roarequest_async('WriteAlibabaOrgCarbon', 'carbon_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/carbon/alibabaOrgDetails/write', 'json', req, runtime)
+        )
+
+    def write_alibaba_user_carbon(
+        self,
+        request: dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonRequest,
+    ) -> dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonHeaders()
+        return self.write_alibaba_user_carbon_with_options(request, headers, runtime)
+
+    async def write_alibaba_user_carbon_async(
+        self,
+        request: dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonRequest,
+    ) -> dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonHeaders()
+        return await self.write_alibaba_user_carbon_with_options_async(request, headers, runtime)
+
+    def write_alibaba_user_carbon_with_options(
+        self,
+        request: dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonRequest,
+        headers: dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.user_details_list):
+            body['userDetailsList'] = request.user_details_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonResponse(),
+            self.do_roarequest('WriteAlibabaUserCarbon', 'carbon_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/carbon/alibabaUserDetails/write', 'json', req, runtime)
+        )
+
+    async def write_alibaba_user_carbon_with_options_async(
+        self,
+        request: dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonRequest,
+        headers: dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.user_details_list):
+            body['userDetailsList'] = request.user_details_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonResponse(),
+            await self.do_roarequest_async('WriteAlibabaUserCarbon', 'carbon_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/carbon/alibabaUserDetails/write', 'json', req, runtime)
         )
 
     def write_org_carbon(
@@ -117,7 +181,7 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
@@ -141,7 +205,7 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
@@ -181,7 +245,7 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
@@ -205,7 +269,7 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
@@ -213,68 +277,4 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkcarbon__1__0_models.WriteUserCarbonResponse(),
             await self.do_roarequest_async('WriteUserCarbon', 'carbon_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/carbon/userDetails/write', 'json', req, runtime)
-        )
-
-    def write_alibaba_user_carbon(
-        self,
-        request: dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonRequest,
-    ) -> dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonHeaders()
-        return self.write_alibaba_user_carbon_with_options(request, headers, runtime)
-
-    async def write_alibaba_user_carbon_async(
-        self,
-        request: dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonRequest,
-    ) -> dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonHeaders()
-        return await self.write_alibaba_user_carbon_with_options_async(request, headers, runtime)
-
-    def write_alibaba_user_carbon_with_options(
-        self,
-        request: dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonRequest,
-        headers: dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonResponse:
-        UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.user_details_list):
-            body['userDetailsList'] = request.user_details_list
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
-        )
-        return TeaCore.from_map(
-            dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonResponse(),
-            self.do_roarequest('WriteAlibabaUserCarbon', 'carbon_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/carbon/alibabaUserDetails/write', 'json', req, runtime)
-        )
-
-    async def write_alibaba_user_carbon_with_options_async(
-        self,
-        request: dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonRequest,
-        headers: dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonResponse:
-        UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.user_details_list):
-            body['userDetailsList'] = request.user_details_list
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
-        )
-        return TeaCore.from_map(
-            dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonResponse(),
-            await self.do_roarequest_async('WriteAlibabaUserCarbon', 'carbon_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/carbon/alibabaUserDetails/write', 'json', req, runtime)
         )

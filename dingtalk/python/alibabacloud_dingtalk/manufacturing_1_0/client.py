@@ -50,47 +50,48 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmanufacturing__1__0_models.IndustrializeManufactureJobBookResponse:
         UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
         body = {}
-        if not UtilClient.is_unset(request.scrapped_quantity):
-            body['scrappedQuantity'] = request.scrapped_quantity
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.extend):
+            body['extend'] = request.extend
+        if not UtilClient.is_unset(request.inst_no):
+            body['instNo'] = request.inst_no
+        if not UtilClient.is_unset(request.is_batch_job):
+            body['isBatchJob'] = request.is_batch_job
+        if not UtilClient.is_unset(request.manufacture_date):
+            body['manufactureDate'] = request.manufacture_date
+        if not UtilClient.is_unset(request.mes_app_key):
+            body['mesAppKey'] = request.mes_app_key
+        if not UtilClient.is_unset(request.process_en_name):
+            body['processEnName'] = request.process_en_name
+        if not UtilClient.is_unset(request.process_name):
+            body['processName'] = request.process_name
+        if not UtilClient.is_unset(request.product_code):
+            body['productCode'] = request.product_code
+        if not UtilClient.is_unset(request.product_en_name):
+            body['productEnName'] = request.product_en_name
+        if not UtilClient.is_unset(request.product_name):
+            body['productName'] = request.product_name
         if not UtilClient.is_unset(request.product_specification):
             body['productSpecification'] = request.product_specification
         if not UtilClient.is_unset(request.qualified_quantity):
             body['qualifiedQuantity'] = request.qualified_quantity
         if not UtilClient.is_unset(request.reworkable_quantity):
             body['reworkableQuantity'] = request.reworkable_quantity
-        if not UtilClient.is_unset(request.user_name):
-            body['userName'] = request.user_name
-        if not UtilClient.is_unset(request.uuid):
-            body['uuid'] = request.uuid
-        if not UtilClient.is_unset(request.product_name):
-            body['productName'] = request.product_name
-        if not UtilClient.is_unset(request.product_en_name):
-            body['productEnName'] = request.product_en_name
-        if not UtilClient.is_unset(request.extend):
-            body['extend'] = request.extend
-        if not UtilClient.is_unset(request.product_code):
-            body['productCode'] = request.product_code
-        if not UtilClient.is_unset(request.process_name):
-            body['processName'] = request.process_name
-        if not UtilClient.is_unset(request.process_en_name):
-            body['processEnName'] = request.process_en_name
-        if not UtilClient.is_unset(request.mes_app_key):
-            body['mesAppKey'] = request.mes_app_key
-        if not UtilClient.is_unset(request.inst_no):
-            body['instNo'] = request.inst_no
-        if not UtilClient.is_unset(request.manufacture_date):
-            body['manufactureDate'] = request.manufacture_date
-        if not UtilClient.is_unset(request.corp_id):
-            body['corpId'] = request.corp_id
-        if not UtilClient.is_unset(request.is_batch_job):
-            body['isBatchJob'] = request.is_batch_job
-        if not UtilClient.is_unset(request.user_name_list):
-            body['userNameList'] = request.user_name_list
-        if not UtilClient.is_unset(request.user_id_list):
-            body['userIdList'] = request.user_id_list
+        if not UtilClient.is_unset(request.scrapped_quantity):
+            body['scrappedQuantity'] = request.scrapped_quantity
         if not UtilClient.is_unset(request.unit_price):
             body['unitPrice'] = request.unit_price
+        if not UtilClient.is_unset(request.user_id_list):
+            body['userIdList'] = request.user_id_list
+        if not UtilClient.is_unset(request.user_name):
+            body['userName'] = request.user_name
+        if not UtilClient.is_unset(request.user_name_list):
+            body['userNameList'] = request.user_name_list
+        if not UtilClient.is_unset(request.uuid):
+            body['uuid'] = request.uuid
         req = open_api_models.OpenApiRequest(
             headers=headers,
             body=OpenApiUtilClient.parse_to_map(body)
@@ -108,47 +109,48 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmanufacturing__1__0_models.IndustrializeManufactureJobBookResponse:
         UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
         body = {}
-        if not UtilClient.is_unset(request.scrapped_quantity):
-            body['scrappedQuantity'] = request.scrapped_quantity
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.extend):
+            body['extend'] = request.extend
+        if not UtilClient.is_unset(request.inst_no):
+            body['instNo'] = request.inst_no
+        if not UtilClient.is_unset(request.is_batch_job):
+            body['isBatchJob'] = request.is_batch_job
+        if not UtilClient.is_unset(request.manufacture_date):
+            body['manufactureDate'] = request.manufacture_date
+        if not UtilClient.is_unset(request.mes_app_key):
+            body['mesAppKey'] = request.mes_app_key
+        if not UtilClient.is_unset(request.process_en_name):
+            body['processEnName'] = request.process_en_name
+        if not UtilClient.is_unset(request.process_name):
+            body['processName'] = request.process_name
+        if not UtilClient.is_unset(request.product_code):
+            body['productCode'] = request.product_code
+        if not UtilClient.is_unset(request.product_en_name):
+            body['productEnName'] = request.product_en_name
+        if not UtilClient.is_unset(request.product_name):
+            body['productName'] = request.product_name
         if not UtilClient.is_unset(request.product_specification):
             body['productSpecification'] = request.product_specification
         if not UtilClient.is_unset(request.qualified_quantity):
             body['qualifiedQuantity'] = request.qualified_quantity
         if not UtilClient.is_unset(request.reworkable_quantity):
             body['reworkableQuantity'] = request.reworkable_quantity
-        if not UtilClient.is_unset(request.user_name):
-            body['userName'] = request.user_name
-        if not UtilClient.is_unset(request.uuid):
-            body['uuid'] = request.uuid
-        if not UtilClient.is_unset(request.product_name):
-            body['productName'] = request.product_name
-        if not UtilClient.is_unset(request.product_en_name):
-            body['productEnName'] = request.product_en_name
-        if not UtilClient.is_unset(request.extend):
-            body['extend'] = request.extend
-        if not UtilClient.is_unset(request.product_code):
-            body['productCode'] = request.product_code
-        if not UtilClient.is_unset(request.process_name):
-            body['processName'] = request.process_name
-        if not UtilClient.is_unset(request.process_en_name):
-            body['processEnName'] = request.process_en_name
-        if not UtilClient.is_unset(request.mes_app_key):
-            body['mesAppKey'] = request.mes_app_key
-        if not UtilClient.is_unset(request.inst_no):
-            body['instNo'] = request.inst_no
-        if not UtilClient.is_unset(request.manufacture_date):
-            body['manufactureDate'] = request.manufacture_date
-        if not UtilClient.is_unset(request.corp_id):
-            body['corpId'] = request.corp_id
-        if not UtilClient.is_unset(request.is_batch_job):
-            body['isBatchJob'] = request.is_batch_job
-        if not UtilClient.is_unset(request.user_name_list):
-            body['userNameList'] = request.user_name_list
-        if not UtilClient.is_unset(request.user_id_list):
-            body['userIdList'] = request.user_id_list
+        if not UtilClient.is_unset(request.scrapped_quantity):
+            body['scrappedQuantity'] = request.scrapped_quantity
         if not UtilClient.is_unset(request.unit_price):
             body['unitPrice'] = request.unit_price
+        if not UtilClient.is_unset(request.user_id_list):
+            body['userIdList'] = request.user_id_list
+        if not UtilClient.is_unset(request.user_name):
+            body['userName'] = request.user_name
+        if not UtilClient.is_unset(request.user_name_list):
+            body['userNameList'] = request.user_name_list
+        if not UtilClient.is_unset(request.uuid):
+            body['uuid'] = request.uuid
         req = open_api_models.OpenApiRequest(
             headers=headers,
             body=OpenApiUtilClient.parse_to_map(body)
@@ -182,41 +184,41 @@ class Client(OpenApiClient):
     ) -> dingtalkmanufacturing__1__0_models.IndustrializeManufactureQueryJobsResponse:
         UtilClient.validate_model(request)
         body = {}
-        if not UtilClient.is_unset(request.product_name):
-            body['productName'] = request.product_name
-        if not UtilClient.is_unset(request.page_size):
-            body['pageSize'] = request.page_size
-        if not UtilClient.is_unset(request.qualified_quantity):
-            body['qualifiedQuantity'] = request.qualified_quantity
-        if not UtilClient.is_unset(request.manufacture_day):
-            body['manufactureDay'] = request.manufacture_day
-        if not UtilClient.is_unset(request.inst_no):
-            body['instNo'] = request.inst_no
-        if not UtilClient.is_unset(request.user_name):
-            body['userName'] = request.user_name
-        if not UtilClient.is_unset(request.product_code):
-            body['productCode'] = request.product_code
-        if not UtilClient.is_unset(request.product_specification):
-            body['productSpecification'] = request.product_specification
-        if not UtilClient.is_unset(request.unit_price):
-            body['unitPrice'] = request.unit_price
-        if not UtilClient.is_unset(request.uuid):
-            body['uuid'] = request.uuid
         if not UtilClient.is_unset(request.current_page):
             body['currentPage'] = request.current_page
-        if not UtilClient.is_unset(request.user_id):
-            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.inst_no):
+            body['instNo'] = request.inst_no
+        if not UtilClient.is_unset(request.manufacture_day):
+            body['manufactureDay'] = request.manufacture_day
         if not UtilClient.is_unset(request.mes_app_key):
             body['mesAppKey'] = request.mes_app_key
-        if not UtilClient.is_unset(request.user_id_list):
-            body['userIdList'] = request.user_id_list
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
         if not UtilClient.is_unset(request.process_name):
             body['processName'] = request.process_name
+        if not UtilClient.is_unset(request.product_code):
+            body['productCode'] = request.product_code
+        if not UtilClient.is_unset(request.product_name):
+            body['productName'] = request.product_name
+        if not UtilClient.is_unset(request.product_specification):
+            body['productSpecification'] = request.product_specification
+        if not UtilClient.is_unset(request.qualified_quantity):
+            body['qualifiedQuantity'] = request.qualified_quantity
+        if not UtilClient.is_unset(request.unit_price):
+            body['unitPrice'] = request.unit_price
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.user_id_list):
+            body['userIdList'] = request.user_id_list
+        if not UtilClient.is_unset(request.user_name):
+            body['userName'] = request.user_name
+        if not UtilClient.is_unset(request.uuid):
+            body['uuid'] = request.uuid
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
@@ -234,41 +236,41 @@ class Client(OpenApiClient):
     ) -> dingtalkmanufacturing__1__0_models.IndustrializeManufactureQueryJobsResponse:
         UtilClient.validate_model(request)
         body = {}
-        if not UtilClient.is_unset(request.product_name):
-            body['productName'] = request.product_name
-        if not UtilClient.is_unset(request.page_size):
-            body['pageSize'] = request.page_size
-        if not UtilClient.is_unset(request.qualified_quantity):
-            body['qualifiedQuantity'] = request.qualified_quantity
-        if not UtilClient.is_unset(request.manufacture_day):
-            body['manufactureDay'] = request.manufacture_day
-        if not UtilClient.is_unset(request.inst_no):
-            body['instNo'] = request.inst_no
-        if not UtilClient.is_unset(request.user_name):
-            body['userName'] = request.user_name
-        if not UtilClient.is_unset(request.product_code):
-            body['productCode'] = request.product_code
-        if not UtilClient.is_unset(request.product_specification):
-            body['productSpecification'] = request.product_specification
-        if not UtilClient.is_unset(request.unit_price):
-            body['unitPrice'] = request.unit_price
-        if not UtilClient.is_unset(request.uuid):
-            body['uuid'] = request.uuid
         if not UtilClient.is_unset(request.current_page):
             body['currentPage'] = request.current_page
-        if not UtilClient.is_unset(request.user_id):
-            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.inst_no):
+            body['instNo'] = request.inst_no
+        if not UtilClient.is_unset(request.manufacture_day):
+            body['manufactureDay'] = request.manufacture_day
         if not UtilClient.is_unset(request.mes_app_key):
             body['mesAppKey'] = request.mes_app_key
-        if not UtilClient.is_unset(request.user_id_list):
-            body['userIdList'] = request.user_id_list
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
         if not UtilClient.is_unset(request.process_name):
             body['processName'] = request.process_name
+        if not UtilClient.is_unset(request.product_code):
+            body['productCode'] = request.product_code
+        if not UtilClient.is_unset(request.product_name):
+            body['productName'] = request.product_name
+        if not UtilClient.is_unset(request.product_specification):
+            body['productSpecification'] = request.product_specification
+        if not UtilClient.is_unset(request.qualified_quantity):
+            body['qualifiedQuantity'] = request.qualified_quantity
+        if not UtilClient.is_unset(request.unit_price):
+            body['unitPrice'] = request.unit_price
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.user_id_list):
+            body['userIdList'] = request.user_id_list
+        if not UtilClient.is_unset(request.user_name):
+            body['userName'] = request.user_name
+        if not UtilClient.is_unset(request.uuid):
+            body['uuid'] = request.uuid
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)

@@ -55,7 +55,7 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
@@ -81,7 +81,7 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
@@ -89,286 +89,6 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkdiot__1__0_models.BatchDeleteDeviceResponse(),
             await self.do_roarequest_async('BatchDeleteDevice', 'diot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/diot/devices/remove', 'json', req, runtime)
-        )
-
-    def push_event(
-        self,
-        request: dingtalkdiot__1__0_models.PushEventRequest,
-    ) -> dingtalkdiot__1__0_models.PushEventResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkdiot__1__0_models.PushEventHeaders()
-        return self.push_event_with_options(request, headers, runtime)
-
-    async def push_event_async(
-        self,
-        request: dingtalkdiot__1__0_models.PushEventRequest,
-    ) -> dingtalkdiot__1__0_models.PushEventResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkdiot__1__0_models.PushEventHeaders()
-        return await self.push_event_with_options_async(request, headers, runtime)
-
-    def push_event_with_options(
-        self,
-        request: dingtalkdiot__1__0_models.PushEventRequest,
-        headers: dingtalkdiot__1__0_models.PushEventHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkdiot__1__0_models.PushEventResponse:
-        UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.corp_id):
-            body['corpId'] = request.corp_id
-        if not UtilClient.is_unset(request.event_id):
-            body['eventId'] = request.event_id
-        if not UtilClient.is_unset(request.event_type):
-            body['eventType'] = request.event_type
-        if not UtilClient.is_unset(request.event_name):
-            body['eventName'] = request.event_name
-        if not UtilClient.is_unset(request.occurrence_time):
-            body['occurrenceTime'] = request.occurrence_time
-        if not UtilClient.is_unset(request.device_id):
-            body['deviceId'] = request.device_id
-        if not UtilClient.is_unset(request.location):
-            body['location'] = request.location
-        if not UtilClient.is_unset(request.msg):
-            body['msg'] = request.msg
-        if not UtilClient.is_unset(request.pic_urls):
-            body['picUrls'] = request.pic_urls
-        if not UtilClient.is_unset(request.extra_data):
-            body['extraData'] = request.extra_data
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
-        )
-        return TeaCore.from_map(
-            dingtalkdiot__1__0_models.PushEventResponse(),
-            self.do_roarequest('PushEvent', 'diot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/diot/events/push', 'json', req, runtime)
-        )
-
-    async def push_event_with_options_async(
-        self,
-        request: dingtalkdiot__1__0_models.PushEventRequest,
-        headers: dingtalkdiot__1__0_models.PushEventHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkdiot__1__0_models.PushEventResponse:
-        UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.corp_id):
-            body['corpId'] = request.corp_id
-        if not UtilClient.is_unset(request.event_id):
-            body['eventId'] = request.event_id
-        if not UtilClient.is_unset(request.event_type):
-            body['eventType'] = request.event_type
-        if not UtilClient.is_unset(request.event_name):
-            body['eventName'] = request.event_name
-        if not UtilClient.is_unset(request.occurrence_time):
-            body['occurrenceTime'] = request.occurrence_time
-        if not UtilClient.is_unset(request.device_id):
-            body['deviceId'] = request.device_id
-        if not UtilClient.is_unset(request.location):
-            body['location'] = request.location
-        if not UtilClient.is_unset(request.msg):
-            body['msg'] = request.msg
-        if not UtilClient.is_unset(request.pic_urls):
-            body['picUrls'] = request.pic_urls
-        if not UtilClient.is_unset(request.extra_data):
-            body['extraData'] = request.extra_data
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
-        )
-        return TeaCore.from_map(
-            dingtalkdiot__1__0_models.PushEventResponse(),
-            await self.do_roarequest_async('PushEvent', 'diot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/diot/events/push', 'json', req, runtime)
-        )
-
-    def device_conference(
-        self,
-        request: dingtalkdiot__1__0_models.DeviceConferenceRequest,
-    ) -> dingtalkdiot__1__0_models.DeviceConferenceResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkdiot__1__0_models.DeviceConferenceHeaders()
-        return self.device_conference_with_options(request, headers, runtime)
-
-    async def device_conference_async(
-        self,
-        request: dingtalkdiot__1__0_models.DeviceConferenceRequest,
-    ) -> dingtalkdiot__1__0_models.DeviceConferenceResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkdiot__1__0_models.DeviceConferenceHeaders()
-        return await self.device_conference_with_options_async(request, headers, runtime)
-
-    def device_conference_with_options(
-        self,
-        request: dingtalkdiot__1__0_models.DeviceConferenceRequest,
-        headers: dingtalkdiot__1__0_models.DeviceConferenceHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkdiot__1__0_models.DeviceConferenceResponse:
-        UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.conf_title):
-            body['confTitle'] = request.conf_title
-        if not UtilClient.is_unset(request.conference_id):
-            body['conferenceId'] = request.conference_id
-        if not UtilClient.is_unset(request.conference_password):
-            body['conferencePassword'] = request.conference_password
-        if not UtilClient.is_unset(request.device_ids):
-            body['deviceIds'] = request.device_ids
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
-        )
-        return TeaCore.from_map(
-            dingtalkdiot__1__0_models.DeviceConferenceResponse(),
-            self.do_roarequest('DeviceConference', 'diot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/diot/deviceConferences/initiate', 'json', req, runtime)
-        )
-
-    async def device_conference_with_options_async(
-        self,
-        request: dingtalkdiot__1__0_models.DeviceConferenceRequest,
-        headers: dingtalkdiot__1__0_models.DeviceConferenceHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkdiot__1__0_models.DeviceConferenceResponse:
-        UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.conf_title):
-            body['confTitle'] = request.conf_title
-        if not UtilClient.is_unset(request.conference_id):
-            body['conferenceId'] = request.conference_id
-        if not UtilClient.is_unset(request.conference_password):
-            body['conferencePassword'] = request.conference_password
-        if not UtilClient.is_unset(request.device_ids):
-            body['deviceIds'] = request.device_ids
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
-        )
-        return TeaCore.from_map(
-            dingtalkdiot__1__0_models.DeviceConferenceResponse(),
-            await self.do_roarequest_async('DeviceConference', 'diot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/diot/deviceConferences/initiate', 'json', req, runtime)
-        )
-
-    def register_device(
-        self,
-        request: dingtalkdiot__1__0_models.RegisterDeviceRequest,
-    ) -> dingtalkdiot__1__0_models.RegisterDeviceResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkdiot__1__0_models.RegisterDeviceHeaders()
-        return self.register_device_with_options(request, headers, runtime)
-
-    async def register_device_async(
-        self,
-        request: dingtalkdiot__1__0_models.RegisterDeviceRequest,
-    ) -> dingtalkdiot__1__0_models.RegisterDeviceResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkdiot__1__0_models.RegisterDeviceHeaders()
-        return await self.register_device_with_options_async(request, headers, runtime)
-
-    def register_device_with_options(
-        self,
-        request: dingtalkdiot__1__0_models.RegisterDeviceRequest,
-        headers: dingtalkdiot__1__0_models.RegisterDeviceHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkdiot__1__0_models.RegisterDeviceResponse:
-        UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.corp_id):
-            body['corpId'] = request.corp_id
-        if not UtilClient.is_unset(request.id):
-            body['id'] = request.id
-        if not UtilClient.is_unset(request.device_name):
-            body['deviceName'] = request.device_name
-        if not UtilClient.is_unset(request.nick_name):
-            body['nickName'] = request.nick_name
-        if not UtilClient.is_unset(request.location):
-            body['location'] = request.location
-        if not UtilClient.is_unset(request.device_status):
-            body['deviceStatus'] = request.device_status
-        if not UtilClient.is_unset(request.device_type):
-            body['deviceType'] = request.device_type
-        if not UtilClient.is_unset(request.device_type_name):
-            body['deviceTypeName'] = request.device_type_name
-        if not UtilClient.is_unset(request.parent_id):
-            body['parentId'] = request.parent_id
-        if not UtilClient.is_unset(request.product_type):
-            body['productType'] = request.product_type
-        if not UtilClient.is_unset(request.live_url):
-            body['liveUrl'] = request.live_url
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
-        )
-        return TeaCore.from_map(
-            dingtalkdiot__1__0_models.RegisterDeviceResponse(),
-            self.do_roarequest('RegisterDevice', 'diot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/diot/devices/register', 'json', req, runtime)
-        )
-
-    async def register_device_with_options_async(
-        self,
-        request: dingtalkdiot__1__0_models.RegisterDeviceRequest,
-        headers: dingtalkdiot__1__0_models.RegisterDeviceHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkdiot__1__0_models.RegisterDeviceResponse:
-        UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.corp_id):
-            body['corpId'] = request.corp_id
-        if not UtilClient.is_unset(request.id):
-            body['id'] = request.id
-        if not UtilClient.is_unset(request.device_name):
-            body['deviceName'] = request.device_name
-        if not UtilClient.is_unset(request.nick_name):
-            body['nickName'] = request.nick_name
-        if not UtilClient.is_unset(request.location):
-            body['location'] = request.location
-        if not UtilClient.is_unset(request.device_status):
-            body['deviceStatus'] = request.device_status
-        if not UtilClient.is_unset(request.device_type):
-            body['deviceType'] = request.device_type
-        if not UtilClient.is_unset(request.device_type_name):
-            body['deviceTypeName'] = request.device_type_name
-        if not UtilClient.is_unset(request.parent_id):
-            body['parentId'] = request.parent_id
-        if not UtilClient.is_unset(request.product_type):
-            body['productType'] = request.product_type
-        if not UtilClient.is_unset(request.live_url):
-            body['liveUrl'] = request.live_url
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
-        )
-        return TeaCore.from_map(
-            dingtalkdiot__1__0_models.RegisterDeviceResponse(),
-            await self.do_roarequest_async('RegisterDevice', 'diot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/diot/devices/register', 'json', req, runtime)
         )
 
     def batch_register_device(
@@ -403,7 +123,7 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
@@ -429,7 +149,7 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
@@ -471,7 +191,7 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
@@ -497,7 +217,7 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
@@ -539,7 +259,7 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
@@ -565,7 +285,7 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
@@ -599,21 +319,21 @@ class Client(OpenApiClient):
     ) -> dingtalkdiot__1__0_models.BindSystemResponse:
         UtilClient.validate_model(request)
         body = {}
-        if not UtilClient.is_unset(request.corp_id):
-            body['corpId'] = request.corp_id
         if not UtilClient.is_unset(request.auth_code):
             body['authCode'] = request.auth_code
         if not UtilClient.is_unset(request.client_id):
             body['clientId'] = request.client_id
         if not UtilClient.is_unset(request.client_name):
             body['clientName'] = request.client_name
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
         if not UtilClient.is_unset(request.extra_data):
             body['extraData'] = request.extra_data
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
@@ -631,21 +351,21 @@ class Client(OpenApiClient):
     ) -> dingtalkdiot__1__0_models.BindSystemResponse:
         UtilClient.validate_model(request)
         body = {}
-        if not UtilClient.is_unset(request.corp_id):
-            body['corpId'] = request.corp_id
         if not UtilClient.is_unset(request.auth_code):
             body['authCode'] = request.auth_code
         if not UtilClient.is_unset(request.client_id):
             body['clientId'] = request.client_id
         if not UtilClient.is_unset(request.client_name):
             body['clientName'] = request.client_name
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
         if not UtilClient.is_unset(request.extra_data):
             body['extraData'] = request.extra_data
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
@@ -653,4 +373,284 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkdiot__1__0_models.BindSystemResponse(),
             await self.do_roarequest_async('BindSystem', 'diot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/diot/systems/bind', 'json', req, runtime)
+        )
+
+    def device_conference(
+        self,
+        request: dingtalkdiot__1__0_models.DeviceConferenceRequest,
+    ) -> dingtalkdiot__1__0_models.DeviceConferenceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdiot__1__0_models.DeviceConferenceHeaders()
+        return self.device_conference_with_options(request, headers, runtime)
+
+    async def device_conference_async(
+        self,
+        request: dingtalkdiot__1__0_models.DeviceConferenceRequest,
+    ) -> dingtalkdiot__1__0_models.DeviceConferenceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdiot__1__0_models.DeviceConferenceHeaders()
+        return await self.device_conference_with_options_async(request, headers, runtime)
+
+    def device_conference_with_options(
+        self,
+        request: dingtalkdiot__1__0_models.DeviceConferenceRequest,
+        headers: dingtalkdiot__1__0_models.DeviceConferenceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdiot__1__0_models.DeviceConferenceResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.conf_title):
+            body['confTitle'] = request.conf_title
+        if not UtilClient.is_unset(request.conference_id):
+            body['conferenceId'] = request.conference_id
+        if not UtilClient.is_unset(request.conference_password):
+            body['conferencePassword'] = request.conference_password
+        if not UtilClient.is_unset(request.device_ids):
+            body['deviceIds'] = request.device_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdiot__1__0_models.DeviceConferenceResponse(),
+            self.do_roarequest('DeviceConference', 'diot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/diot/deviceConferences/initiate', 'json', req, runtime)
+        )
+
+    async def device_conference_with_options_async(
+        self,
+        request: dingtalkdiot__1__0_models.DeviceConferenceRequest,
+        headers: dingtalkdiot__1__0_models.DeviceConferenceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdiot__1__0_models.DeviceConferenceResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.conf_title):
+            body['confTitle'] = request.conf_title
+        if not UtilClient.is_unset(request.conference_id):
+            body['conferenceId'] = request.conference_id
+        if not UtilClient.is_unset(request.conference_password):
+            body['conferencePassword'] = request.conference_password
+        if not UtilClient.is_unset(request.device_ids):
+            body['deviceIds'] = request.device_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdiot__1__0_models.DeviceConferenceResponse(),
+            await self.do_roarequest_async('DeviceConference', 'diot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/diot/deviceConferences/initiate', 'json', req, runtime)
+        )
+
+    def push_event(
+        self,
+        request: dingtalkdiot__1__0_models.PushEventRequest,
+    ) -> dingtalkdiot__1__0_models.PushEventResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdiot__1__0_models.PushEventHeaders()
+        return self.push_event_with_options(request, headers, runtime)
+
+    async def push_event_async(
+        self,
+        request: dingtalkdiot__1__0_models.PushEventRequest,
+    ) -> dingtalkdiot__1__0_models.PushEventResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdiot__1__0_models.PushEventHeaders()
+        return await self.push_event_with_options_async(request, headers, runtime)
+
+    def push_event_with_options(
+        self,
+        request: dingtalkdiot__1__0_models.PushEventRequest,
+        headers: dingtalkdiot__1__0_models.PushEventHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdiot__1__0_models.PushEventResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.device_id):
+            body['deviceId'] = request.device_id
+        if not UtilClient.is_unset(request.event_id):
+            body['eventId'] = request.event_id
+        if not UtilClient.is_unset(request.event_name):
+            body['eventName'] = request.event_name
+        if not UtilClient.is_unset(request.event_type):
+            body['eventType'] = request.event_type
+        if not UtilClient.is_unset(request.extra_data):
+            body['extraData'] = request.extra_data
+        if not UtilClient.is_unset(request.location):
+            body['location'] = request.location
+        if not UtilClient.is_unset(request.msg):
+            body['msg'] = request.msg
+        if not UtilClient.is_unset(request.occurrence_time):
+            body['occurrenceTime'] = request.occurrence_time
+        if not UtilClient.is_unset(request.pic_urls):
+            body['picUrls'] = request.pic_urls
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdiot__1__0_models.PushEventResponse(),
+            self.do_roarequest('PushEvent', 'diot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/diot/events/push', 'json', req, runtime)
+        )
+
+    async def push_event_with_options_async(
+        self,
+        request: dingtalkdiot__1__0_models.PushEventRequest,
+        headers: dingtalkdiot__1__0_models.PushEventHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdiot__1__0_models.PushEventResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.device_id):
+            body['deviceId'] = request.device_id
+        if not UtilClient.is_unset(request.event_id):
+            body['eventId'] = request.event_id
+        if not UtilClient.is_unset(request.event_name):
+            body['eventName'] = request.event_name
+        if not UtilClient.is_unset(request.event_type):
+            body['eventType'] = request.event_type
+        if not UtilClient.is_unset(request.extra_data):
+            body['extraData'] = request.extra_data
+        if not UtilClient.is_unset(request.location):
+            body['location'] = request.location
+        if not UtilClient.is_unset(request.msg):
+            body['msg'] = request.msg
+        if not UtilClient.is_unset(request.occurrence_time):
+            body['occurrenceTime'] = request.occurrence_time
+        if not UtilClient.is_unset(request.pic_urls):
+            body['picUrls'] = request.pic_urls
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdiot__1__0_models.PushEventResponse(),
+            await self.do_roarequest_async('PushEvent', 'diot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/diot/events/push', 'json', req, runtime)
+        )
+
+    def register_device(
+        self,
+        request: dingtalkdiot__1__0_models.RegisterDeviceRequest,
+    ) -> dingtalkdiot__1__0_models.RegisterDeviceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdiot__1__0_models.RegisterDeviceHeaders()
+        return self.register_device_with_options(request, headers, runtime)
+
+    async def register_device_async(
+        self,
+        request: dingtalkdiot__1__0_models.RegisterDeviceRequest,
+    ) -> dingtalkdiot__1__0_models.RegisterDeviceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdiot__1__0_models.RegisterDeviceHeaders()
+        return await self.register_device_with_options_async(request, headers, runtime)
+
+    def register_device_with_options(
+        self,
+        request: dingtalkdiot__1__0_models.RegisterDeviceRequest,
+        headers: dingtalkdiot__1__0_models.RegisterDeviceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdiot__1__0_models.RegisterDeviceResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.device_name):
+            body['deviceName'] = request.device_name
+        if not UtilClient.is_unset(request.device_status):
+            body['deviceStatus'] = request.device_status
+        if not UtilClient.is_unset(request.device_type):
+            body['deviceType'] = request.device_type
+        if not UtilClient.is_unset(request.device_type_name):
+            body['deviceTypeName'] = request.device_type_name
+        if not UtilClient.is_unset(request.id):
+            body['id'] = request.id
+        if not UtilClient.is_unset(request.live_url):
+            body['liveUrl'] = request.live_url
+        if not UtilClient.is_unset(request.location):
+            body['location'] = request.location
+        if not UtilClient.is_unset(request.nick_name):
+            body['nickName'] = request.nick_name
+        if not UtilClient.is_unset(request.parent_id):
+            body['parentId'] = request.parent_id
+        if not UtilClient.is_unset(request.product_type):
+            body['productType'] = request.product_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdiot__1__0_models.RegisterDeviceResponse(),
+            self.do_roarequest('RegisterDevice', 'diot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/diot/devices/register', 'json', req, runtime)
+        )
+
+    async def register_device_with_options_async(
+        self,
+        request: dingtalkdiot__1__0_models.RegisterDeviceRequest,
+        headers: dingtalkdiot__1__0_models.RegisterDeviceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdiot__1__0_models.RegisterDeviceResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.device_name):
+            body['deviceName'] = request.device_name
+        if not UtilClient.is_unset(request.device_status):
+            body['deviceStatus'] = request.device_status
+        if not UtilClient.is_unset(request.device_type):
+            body['deviceType'] = request.device_type
+        if not UtilClient.is_unset(request.device_type_name):
+            body['deviceTypeName'] = request.device_type_name
+        if not UtilClient.is_unset(request.id):
+            body['id'] = request.id
+        if not UtilClient.is_unset(request.live_url):
+            body['liveUrl'] = request.live_url
+        if not UtilClient.is_unset(request.location):
+            body['location'] = request.location
+        if not UtilClient.is_unset(request.nick_name):
+            body['nickName'] = request.nick_name
+        if not UtilClient.is_unset(request.parent_id):
+            body['parentId'] = request.parent_id
+        if not UtilClient.is_unset(request.product_type):
+            body['productType'] = request.product_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdiot__1__0_models.RegisterDeviceResponse(),
+            await self.do_roarequest_async('RegisterDevice', 'diot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/diot/devices/register', 'json', req, runtime)
         )

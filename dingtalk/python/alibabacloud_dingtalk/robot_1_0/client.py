@@ -23,6 +23,214 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def batch_otoquery(
+        self,
+        request: dingtalkrobot__1__0_models.BatchOTOQueryRequest,
+    ) -> dingtalkrobot__1__0_models.BatchOTOQueryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.BatchOTOQueryHeaders()
+        return self.batch_otoquery_with_options(request, headers, runtime)
+
+    async def batch_otoquery_async(
+        self,
+        request: dingtalkrobot__1__0_models.BatchOTOQueryRequest,
+    ) -> dingtalkrobot__1__0_models.BatchOTOQueryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.BatchOTOQueryHeaders()
+        return await self.batch_otoquery_with_options_async(request, headers, runtime)
+
+    def batch_otoquery_with_options(
+        self,
+        request: dingtalkrobot__1__0_models.BatchOTOQueryRequest,
+        headers: dingtalkrobot__1__0_models.BatchOTOQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.BatchOTOQueryResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.process_query_key):
+            query['processQueryKey'] = request.process_query_key
+        if not UtilClient.is_unset(request.robot_code):
+            query['robotCode'] = request.robot_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.BatchOTOQueryResponse(),
+            self.do_roarequest('BatchOTOQuery', 'robot_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/robot/oToMessages/readStatus', 'json', req, runtime)
+        )
+
+    async def batch_otoquery_with_options_async(
+        self,
+        request: dingtalkrobot__1__0_models.BatchOTOQueryRequest,
+        headers: dingtalkrobot__1__0_models.BatchOTOQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.BatchOTOQueryResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.process_query_key):
+            query['processQueryKey'] = request.process_query_key
+        if not UtilClient.is_unset(request.robot_code):
+            query['robotCode'] = request.robot_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.BatchOTOQueryResponse(),
+            await self.do_roarequest_async('BatchOTOQuery', 'robot_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/robot/oToMessages/readStatus', 'json', req, runtime)
+        )
+
+    def batch_recall_group(
+        self,
+        request: dingtalkrobot__1__0_models.BatchRecallGroupRequest,
+    ) -> dingtalkrobot__1__0_models.BatchRecallGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.BatchRecallGroupHeaders()
+        return self.batch_recall_group_with_options(request, headers, runtime)
+
+    async def batch_recall_group_async(
+        self,
+        request: dingtalkrobot__1__0_models.BatchRecallGroupRequest,
+    ) -> dingtalkrobot__1__0_models.BatchRecallGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.BatchRecallGroupHeaders()
+        return await self.batch_recall_group_with_options_async(request, headers, runtime)
+
+    def batch_recall_group_with_options(
+        self,
+        request: dingtalkrobot__1__0_models.BatchRecallGroupRequest,
+        headers: dingtalkrobot__1__0_models.BatchRecallGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.BatchRecallGroupResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.chatbot_id):
+            body['chatbotId'] = request.chatbot_id
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.process_query_keys):
+            body['processQueryKeys'] = request.process_query_keys
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.BatchRecallGroupResponse(),
+            self.do_roarequest('BatchRecallGroup', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/groupMessages/batchRecall', 'json', req, runtime)
+        )
+
+    async def batch_recall_group_with_options_async(
+        self,
+        request: dingtalkrobot__1__0_models.BatchRecallGroupRequest,
+        headers: dingtalkrobot__1__0_models.BatchRecallGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.BatchRecallGroupResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.chatbot_id):
+            body['chatbotId'] = request.chatbot_id
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.process_query_keys):
+            body['processQueryKeys'] = request.process_query_keys
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.BatchRecallGroupResponse(),
+            await self.do_roarequest_async('BatchRecallGroup', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/groupMessages/batchRecall', 'json', req, runtime)
+        )
+
+    def batch_recall_oto(
+        self,
+        request: dingtalkrobot__1__0_models.BatchRecallOTORequest,
+    ) -> dingtalkrobot__1__0_models.BatchRecallOTOResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.BatchRecallOTOHeaders()
+        return self.batch_recall_otowith_options(request, headers, runtime)
+
+    async def batch_recall_oto_async(
+        self,
+        request: dingtalkrobot__1__0_models.BatchRecallOTORequest,
+    ) -> dingtalkrobot__1__0_models.BatchRecallOTOResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.BatchRecallOTOHeaders()
+        return await self.batch_recall_otowith_options_async(request, headers, runtime)
+
+    def batch_recall_otowith_options(
+        self,
+        request: dingtalkrobot__1__0_models.BatchRecallOTORequest,
+        headers: dingtalkrobot__1__0_models.BatchRecallOTOHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.BatchRecallOTOResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.process_query_keys):
+            body['processQueryKeys'] = request.process_query_keys
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.BatchRecallOTOResponse(),
+            self.do_roarequest('BatchRecallOTO', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/otoMessages/batchRecall', 'json', req, runtime)
+        )
+
+    async def batch_recall_otowith_options_async(
+        self,
+        request: dingtalkrobot__1__0_models.BatchRecallOTORequest,
+        headers: dingtalkrobot__1__0_models.BatchRecallOTOHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.BatchRecallOTOResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.process_query_keys):
+            body['processQueryKeys'] = request.process_query_keys
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.BatchRecallOTOResponse(),
+            await self.do_roarequest_async('BatchRecallOTO', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/otoMessages/batchRecall', 'json', req, runtime)
+        )
+
     def batch_send_oto(
         self,
         request: dingtalkrobot__1__0_models.BatchSendOTORequest,
@@ -47,19 +255,19 @@ class Client(OpenApiClient):
     ) -> dingtalkrobot__1__0_models.BatchSendOTOResponse:
         UtilClient.validate_model(request)
         body = {}
-        if not UtilClient.is_unset(request.robot_code):
-            body['robotCode'] = request.robot_code
-        if not UtilClient.is_unset(request.user_ids):
-            body['userIds'] = request.user_ids
         if not UtilClient.is_unset(request.msg_key):
             body['msgKey'] = request.msg_key
         if not UtilClient.is_unset(request.msg_param):
             body['msgParam'] = request.msg_param
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
@@ -77,19 +285,19 @@ class Client(OpenApiClient):
     ) -> dingtalkrobot__1__0_models.BatchSendOTOResponse:
         UtilClient.validate_model(request)
         body = {}
-        if not UtilClient.is_unset(request.robot_code):
-            body['robotCode'] = request.robot_code
-        if not UtilClient.is_unset(request.user_ids):
-            body['userIds'] = request.user_ids
         if not UtilClient.is_unset(request.msg_key):
             body['msgKey'] = request.msg_key
         if not UtilClient.is_unset(request.msg_param):
             body['msgParam'] = request.msg_param
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
@@ -123,35 +331,23 @@ class Client(OpenApiClient):
     ) -> dingtalkrobot__1__0_models.OrgGroupSendResponse:
         UtilClient.validate_model(request)
         body = {}
-        if not UtilClient.is_unset(request.msg_param):
-            body['msgParam'] = request.msg_param
+        if not UtilClient.is_unset(request.cool_app_code):
+            body['coolAppCode'] = request.cool_app_code
         if not UtilClient.is_unset(request.msg_key):
             body['msgKey'] = request.msg_key
+        if not UtilClient.is_unset(request.msg_param):
+            body['msgParam'] = request.msg_param
         if not UtilClient.is_unset(request.open_conversation_id):
             body['openConversationId'] = request.open_conversation_id
         if not UtilClient.is_unset(request.robot_code):
             body['robotCode'] = request.robot_code
         if not UtilClient.is_unset(request.token):
             body['token'] = request.token
-        if not UtilClient.is_unset(request.cool_app_code):
-            body['coolAppCode'] = request.cool_app_code
-        if not UtilClient.is_unset(request.ding_token_grant_type):
-            body['dingTokenGrantType'] = request.ding_token_grant_type
-        if not UtilClient.is_unset(request.ding_org_id):
-            body['dingOrgId'] = request.ding_org_id
-        if not UtilClient.is_unset(request.ding_corp_id):
-            body['dingCorpId'] = request.ding_corp_id
-        if not UtilClient.is_unset(request.ding_isv_org_id):
-            body['dingIsvOrgId'] = request.ding_isv_org_id
-        if not UtilClient.is_unset(request.ding_suite_key):
-            body['dingSuiteKey'] = request.ding_suite_key
-        if not UtilClient.is_unset(request.ding_client_id):
-            body['dingClientId'] = request.ding_client_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
@@ -169,35 +365,23 @@ class Client(OpenApiClient):
     ) -> dingtalkrobot__1__0_models.OrgGroupSendResponse:
         UtilClient.validate_model(request)
         body = {}
-        if not UtilClient.is_unset(request.msg_param):
-            body['msgParam'] = request.msg_param
+        if not UtilClient.is_unset(request.cool_app_code):
+            body['coolAppCode'] = request.cool_app_code
         if not UtilClient.is_unset(request.msg_key):
             body['msgKey'] = request.msg_key
+        if not UtilClient.is_unset(request.msg_param):
+            body['msgParam'] = request.msg_param
         if not UtilClient.is_unset(request.open_conversation_id):
             body['openConversationId'] = request.open_conversation_id
         if not UtilClient.is_unset(request.robot_code):
             body['robotCode'] = request.robot_code
         if not UtilClient.is_unset(request.token):
             body['token'] = request.token
-        if not UtilClient.is_unset(request.cool_app_code):
-            body['coolAppCode'] = request.cool_app_code
-        if not UtilClient.is_unset(request.ding_token_grant_type):
-            body['dingTokenGrantType'] = request.ding_token_grant_type
-        if not UtilClient.is_unset(request.ding_org_id):
-            body['dingOrgId'] = request.ding_org_id
-        if not UtilClient.is_unset(request.ding_corp_id):
-            body['dingCorpId'] = request.ding_corp_id
-        if not UtilClient.is_unset(request.ding_isv_org_id):
-            body['dingIsvOrgId'] = request.ding_isv_org_id
-        if not UtilClient.is_unset(request.ding_suite_key):
-            body['dingSuiteKey'] = request.ding_suite_key
-        if not UtilClient.is_unset(request.ding_client_id):
-            body['dingClientId'] = request.ding_client_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
@@ -205,214 +389,6 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkrobot__1__0_models.OrgGroupSendResponse(),
             await self.do_roarequest_async('OrgGroupSend', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/groupMessages/send', 'json', req, runtime)
-        )
-
-    def batch_recall_oto(
-        self,
-        request: dingtalkrobot__1__0_models.BatchRecallOTORequest,
-    ) -> dingtalkrobot__1__0_models.BatchRecallOTOResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkrobot__1__0_models.BatchRecallOTOHeaders()
-        return self.batch_recall_otowith_options(request, headers, runtime)
-
-    async def batch_recall_oto_async(
-        self,
-        request: dingtalkrobot__1__0_models.BatchRecallOTORequest,
-    ) -> dingtalkrobot__1__0_models.BatchRecallOTOResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkrobot__1__0_models.BatchRecallOTOHeaders()
-        return await self.batch_recall_otowith_options_async(request, headers, runtime)
-
-    def batch_recall_otowith_options(
-        self,
-        request: dingtalkrobot__1__0_models.BatchRecallOTORequest,
-        headers: dingtalkrobot__1__0_models.BatchRecallOTOHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkrobot__1__0_models.BatchRecallOTOResponse:
-        UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.robot_code):
-            body['robotCode'] = request.robot_code
-        if not UtilClient.is_unset(request.process_query_keys):
-            body['processQueryKeys'] = request.process_query_keys
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
-        )
-        return TeaCore.from_map(
-            dingtalkrobot__1__0_models.BatchRecallOTOResponse(),
-            self.do_roarequest('BatchRecallOTO', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/otoMessages/batchRecall', 'json', req, runtime)
-        )
-
-    async def batch_recall_otowith_options_async(
-        self,
-        request: dingtalkrobot__1__0_models.BatchRecallOTORequest,
-        headers: dingtalkrobot__1__0_models.BatchRecallOTOHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkrobot__1__0_models.BatchRecallOTOResponse:
-        UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.robot_code):
-            body['robotCode'] = request.robot_code
-        if not UtilClient.is_unset(request.process_query_keys):
-            body['processQueryKeys'] = request.process_query_keys
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
-        )
-        return TeaCore.from_map(
-            dingtalkrobot__1__0_models.BatchRecallOTOResponse(),
-            await self.do_roarequest_async('BatchRecallOTO', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/otoMessages/batchRecall', 'json', req, runtime)
-        )
-
-    def batch_recall_group(
-        self,
-        request: dingtalkrobot__1__0_models.BatchRecallGroupRequest,
-    ) -> dingtalkrobot__1__0_models.BatchRecallGroupResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkrobot__1__0_models.BatchRecallGroupHeaders()
-        return self.batch_recall_group_with_options(request, headers, runtime)
-
-    async def batch_recall_group_async(
-        self,
-        request: dingtalkrobot__1__0_models.BatchRecallGroupRequest,
-    ) -> dingtalkrobot__1__0_models.BatchRecallGroupResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkrobot__1__0_models.BatchRecallGroupHeaders()
-        return await self.batch_recall_group_with_options_async(request, headers, runtime)
-
-    def batch_recall_group_with_options(
-        self,
-        request: dingtalkrobot__1__0_models.BatchRecallGroupRequest,
-        headers: dingtalkrobot__1__0_models.BatchRecallGroupHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkrobot__1__0_models.BatchRecallGroupResponse:
-        UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.open_conversation_id):
-            body['openConversationId'] = request.open_conversation_id
-        if not UtilClient.is_unset(request.chatbot_id):
-            body['chatbotId'] = request.chatbot_id
-        if not UtilClient.is_unset(request.process_query_keys):
-            body['processQueryKeys'] = request.process_query_keys
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
-        )
-        return TeaCore.from_map(
-            dingtalkrobot__1__0_models.BatchRecallGroupResponse(),
-            self.do_roarequest('BatchRecallGroup', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/groupMessages/batchRecall', 'json', req, runtime)
-        )
-
-    async def batch_recall_group_with_options_async(
-        self,
-        request: dingtalkrobot__1__0_models.BatchRecallGroupRequest,
-        headers: dingtalkrobot__1__0_models.BatchRecallGroupHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkrobot__1__0_models.BatchRecallGroupResponse:
-        UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.open_conversation_id):
-            body['openConversationId'] = request.open_conversation_id
-        if not UtilClient.is_unset(request.chatbot_id):
-            body['chatbotId'] = request.chatbot_id
-        if not UtilClient.is_unset(request.process_query_keys):
-            body['processQueryKeys'] = request.process_query_keys
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
-        )
-        return TeaCore.from_map(
-            dingtalkrobot__1__0_models.BatchRecallGroupResponse(),
-            await self.do_roarequest_async('BatchRecallGroup', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/groupMessages/batchRecall', 'json', req, runtime)
-        )
-
-    def batch_otoquery(
-        self,
-        request: dingtalkrobot__1__0_models.BatchOTOQueryRequest,
-    ) -> dingtalkrobot__1__0_models.BatchOTOQueryResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkrobot__1__0_models.BatchOTOQueryHeaders()
-        return self.batch_otoquery_with_options(request, headers, runtime)
-
-    async def batch_otoquery_async(
-        self,
-        request: dingtalkrobot__1__0_models.BatchOTOQueryRequest,
-    ) -> dingtalkrobot__1__0_models.BatchOTOQueryResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkrobot__1__0_models.BatchOTOQueryHeaders()
-        return await self.batch_otoquery_with_options_async(request, headers, runtime)
-
-    def batch_otoquery_with_options(
-        self,
-        request: dingtalkrobot__1__0_models.BatchOTOQueryRequest,
-        headers: dingtalkrobot__1__0_models.BatchOTOQueryHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkrobot__1__0_models.BatchOTOQueryResponse:
-        UtilClient.validate_model(request)
-        query = {}
-        if not UtilClient.is_unset(request.robot_code):
-            query['robotCode'] = request.robot_code
-        if not UtilClient.is_unset(request.process_query_key):
-            query['processQueryKey'] = request.process_query_key
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
-        )
-        return TeaCore.from_map(
-            dingtalkrobot__1__0_models.BatchOTOQueryResponse(),
-            self.do_roarequest('BatchOTOQuery', 'robot_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/robot/oToMessages/readStatus', 'json', req, runtime)
-        )
-
-    async def batch_otoquery_with_options_async(
-        self,
-        request: dingtalkrobot__1__0_models.BatchOTOQueryRequest,
-        headers: dingtalkrobot__1__0_models.BatchOTOQueryHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkrobot__1__0_models.BatchOTOQueryResponse:
-        UtilClient.validate_model(request)
-        query = {}
-        if not UtilClient.is_unset(request.robot_code):
-            query['robotCode'] = request.robot_code
-        if not UtilClient.is_unset(request.process_query_key):
-            query['processQueryKey'] = request.process_query_key
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
-        )
-        return TeaCore.from_map(
-            dingtalkrobot__1__0_models.BatchOTOQueryResponse(),
-            await self.do_roarequest_async('BatchOTOQuery', 'robot_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/robot/oToMessages/readStatus', 'json', req, runtime)
         )
 
     def send_robot_ding_message(
@@ -439,21 +415,21 @@ class Client(OpenApiClient):
     ) -> dingtalkrobot__1__0_models.SendRobotDingMessageResponse:
         UtilClient.validate_model(request)
         body = {}
-        if not UtilClient.is_unset(request.robot_code):
-            body['robotCode'] = request.robot_code
+        if not UtilClient.is_unset(request.content_params):
+            body['contentParams'] = request.content_params
+        if not UtilClient.is_unset(request.ding_template_id):
+            body['dingTemplateId'] = request.ding_template_id
         if not UtilClient.is_unset(request.open_conversation_id):
             body['openConversationId'] = request.open_conversation_id
         if not UtilClient.is_unset(request.receiver_user_id_list):
             body['receiverUserIdList'] = request.receiver_user_id_list
-        if not UtilClient.is_unset(request.ding_template_id):
-            body['dingTemplateId'] = request.ding_template_id
-        if not UtilClient.is_unset(request.content_params):
-            body['contentParams'] = request.content_params
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
@@ -471,21 +447,21 @@ class Client(OpenApiClient):
     ) -> dingtalkrobot__1__0_models.SendRobotDingMessageResponse:
         UtilClient.validate_model(request)
         body = {}
-        if not UtilClient.is_unset(request.robot_code):
-            body['robotCode'] = request.robot_code
+        if not UtilClient.is_unset(request.content_params):
+            body['contentParams'] = request.content_params
+        if not UtilClient.is_unset(request.ding_template_id):
+            body['dingTemplateId'] = request.ding_template_id
         if not UtilClient.is_unset(request.open_conversation_id):
             body['openConversationId'] = request.open_conversation_id
         if not UtilClient.is_unset(request.receiver_user_id_list):
             body['receiverUserIdList'] = request.receiver_user_id_list
-        if not UtilClient.is_unset(request.ding_template_id):
-            body['dingTemplateId'] = request.ding_template_id
-        if not UtilClient.is_unset(request.content_params):
-            body['contentParams'] = request.content_params
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
