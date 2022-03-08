@@ -37,63 +37,51 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetMediaCerficateRequest $request
+     * @param CreateFeedRequest $request
      *
-     * @return GetMediaCerficateResponse
+     * @return CreateFeedResponse
      */
-    public function getMediaCerficate($request)
+    public function createFeed($request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new GetMediaCerficateHeaders([]);
+        $headers = new CreateFeedHeaders([]);
 
-        return $this->getMediaCerficateWithOptions($request, $headers, $runtime);
+        return $this->createFeedWithOptions($request, $headers, $runtime);
     }
 
     /**
-     * @param GetMediaCerficateRequest $request
-     * @param GetMediaCerficateHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @param CreateFeedRequest $request
+     * @param CreateFeedHeaders $headers
+     * @param RuntimeOptions    $runtime
      *
-     * @return GetMediaCerficateResponse
+     * @return CreateFeedResponse
      */
-    public function getMediaCerficateWithOptions($request, $headers, $runtime)
+    public function createFeedWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->thumbUrl)) {
-            @$query['thumbUrl'] = $request->thumbUrl;
+        $body = [];
+        if (!Utils::isUnset($request->courseInfo)) {
+            @$body['courseInfo'] = $request->courseInfo;
         }
-        if (!Utils::isUnset($request->fileName)) {
-            @$query['fileName'] = $request->fileName;
+        if (!Utils::isUnset($request->createUserId)) {
+            @$body['createUserId'] = $request->createUserId;
         }
-        if (!Utils::isUnset($request->mediaId)) {
-            @$query['mediaId'] = $request->mediaId;
-        }
-        if (!Utils::isUnset($request->mediaTitle)) {
-            @$query['mediaTitle'] = $request->mediaTitle;
-        }
-        if (!Utils::isUnset($request->mcnId)) {
-            @$query['mcnId'] = $request->mcnId;
-        }
-        if (!Utils::isUnset($request->userId)) {
-            @$query['userId'] = $request->userId;
-        }
-        if (!Utils::isUnset($request->mediaIntroduction)) {
-            @$query['mediaIntroduction'] = $request->mediaIntroduction;
+        if (!Utils::isUnset($request->feedInfo)) {
+            @$body['feedInfo'] = $request->feedInfo;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return GetMediaCerficateResponse::fromMap($this->doROARequest('GetMediaCerficate', 'content_1.0', 'HTTP', 'GET', 'AK', '/v1.0/content/media/cerficates', 'json', $req, $runtime));
+        return CreateFeedResponse::fromMap($this->doROARequest('CreateFeed', 'content_1.0', 'HTTP', 'POST', 'AK', '/v1.0/content/feeds', 'json', $req, $runtime));
     }
 
     /**
@@ -121,7 +109,8 @@ class Dingtalk extends OpenApiClient
     public function getFeedWithOptions($feedId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $feedId = OpenApiUtilClient::getEncodeParam($feedId);
+        $query  = [];
         if (!Utils::isUnset($request->mcnId)) {
             @$query['mcnId'] = $request->mcnId;
         }
@@ -130,7 +119,7 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -141,100 +130,63 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PageFeedRequest $request
+     * @param GetMediaCerficateRequest $request
      *
-     * @return PageFeedResponse
+     * @return GetMediaCerficateResponse
      */
-    public function pageFeed($request)
+    public function getMediaCerficate($request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new PageFeedHeaders([]);
+        $headers = new GetMediaCerficateHeaders([]);
 
-        return $this->pageFeedWithOptions($request, $headers, $runtime);
+        return $this->getMediaCerficateWithOptions($request, $headers, $runtime);
     }
 
     /**
-     * @param PageFeedRequest $request
-     * @param PageFeedHeaders $headers
-     * @param RuntimeOptions  $runtime
+     * @param GetMediaCerficateRequest $request
+     * @param GetMediaCerficateHeaders $headers
+     * @param RuntimeOptions           $runtime
      *
-     * @return PageFeedResponse
+     * @return GetMediaCerficateResponse
      */
-    public function pageFeedWithOptions($request, $headers, $runtime)
+    public function getMediaCerficateWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->nextToken)) {
-            @$query['nextToken'] = $request->nextToken;
-        }
-        if (!Utils::isUnset($request->maxResults)) {
-            @$query['maxResults'] = $request->maxResults;
+        if (!Utils::isUnset($request->fileName)) {
+            @$query['fileName'] = $request->fileName;
         }
         if (!Utils::isUnset($request->mcnId)) {
             @$query['mcnId'] = $request->mcnId;
         }
+        if (!Utils::isUnset($request->mediaId)) {
+            @$query['mediaId'] = $request->mediaId;
+        }
+        if (!Utils::isUnset($request->mediaIntroduction)) {
+            @$query['mediaIntroduction'] = $request->mediaIntroduction;
+        }
+        if (!Utils::isUnset($request->mediaTitle)) {
+            @$query['mediaTitle'] = $request->mediaTitle;
+        }
+        if (!Utils::isUnset($request->thumbUrl)) {
+            @$query['thumbUrl'] = $request->thumbUrl;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
-            'body'    => $request->body,
         ]);
 
-        return PageFeedResponse::fromMap($this->doROARequest('PageFeed', 'content_1.0', 'HTTP', 'POST', 'AK', '/v1.0/content/feeds/query', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param CreateFeedRequest $request
-     *
-     * @return CreateFeedResponse
-     */
-    public function createFeed($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new CreateFeedHeaders([]);
-
-        return $this->createFeedWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param CreateFeedRequest $request
-     * @param CreateFeedHeaders $headers
-     * @param RuntimeOptions    $runtime
-     *
-     * @return CreateFeedResponse
-     */
-    public function createFeedWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->courseInfo)) {
-            @$body['courseInfo'] = $request->courseInfo;
-        }
-        if (!Utils::isUnset($request->feedInfo)) {
-            @$body['feedInfo'] = $request->feedInfo;
-        }
-        if (!Utils::isUnset($request->createUserId)) {
-            @$body['createUserId'] = $request->createUserId;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return CreateFeedResponse::fromMap($this->doROARequest('CreateFeed', 'content_1.0', 'HTTP', 'POST', 'AK', '/v1.0/content/feeds', 'json', $req, $runtime));
+        return GetMediaCerficateResponse::fromMap($this->doROARequest('GetMediaCerficate', 'content_1.0', 'HTTP', 'GET', 'AK', '/v1.0/content/media/cerficates', 'json', $req, $runtime));
     }
 
     /**
@@ -262,12 +214,13 @@ class Dingtalk extends OpenApiClient
     public function listItemUserDataWithOptions($itemId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
+        $itemId      = OpenApiUtilClient::getEncodeParam($itemId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -275,5 +228,54 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return ListItemUserDataResponse::fromMap($this->doROARequest('ListItemUserData', 'content_1.0', 'HTTP', 'POST', 'AK', '/v1.0/content/feeds/items/' . $itemId . '/userStatistics/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param PageFeedRequest $request
+     *
+     * @return PageFeedResponse
+     */
+    public function pageFeed($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PageFeedHeaders([]);
+
+        return $this->pageFeedWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param PageFeedRequest $request
+     * @param PageFeedHeaders $headers
+     * @param RuntimeOptions  $runtime
+     *
+     * @return PageFeedResponse
+     */
+    public function pageFeedWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->mcnId)) {
+            @$query['mcnId'] = $request->mcnId;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => $request->body,
+        ]);
+
+        return PageFeedResponse::fromMap($this->doROARequest('PageFeed', 'content_1.0', 'HTTP', 'POST', 'AK', '/v1.0/content/feeds/query', 'json', $req, $runtime));
     }
 }

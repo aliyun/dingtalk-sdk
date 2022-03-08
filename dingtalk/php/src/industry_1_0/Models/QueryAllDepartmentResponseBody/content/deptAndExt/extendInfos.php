@@ -9,27 +9,6 @@ use AlibabaCloud\Tea\Model;
 class extendInfos extends Model
 {
     /**
-     * @description 扩展信息id
-     *
-     * @var int
-     */
-    public $id;
-
-    /**
-     * @description 创建时间
-     *
-     * @var string
-     */
-    public $gmtCreateStr;
-
-    /**
-     * @description 修改时间
-     *
-     * @var string
-     */
-    public $gmtModifiedStr;
-
-    /**
      * @description 租户CorpID
      *
      * @var string
@@ -42,6 +21,13 @@ class extendInfos extends Model
      * @var string
      */
     public $deptCode;
+
+    /**
+     * @description 科室扩展字段描述
+     *
+     * @var string
+     */
+    public $deptExtendDisplayName;
 
     /**
      * @description 科室扩展字段key
@@ -58,11 +44,25 @@ class extendInfos extends Model
     public $deptExtendValue;
 
     /**
-     * @description 科室扩展字段描述
+     * @description 创建时间
      *
      * @var string
      */
-    public $deptExtendDisplayName;
+    public $gmtCreateStr;
+
+    /**
+     * @description 修改时间
+     *
+     * @var string
+     */
+    public $gmtModifiedStr;
+
+    /**
+     * @description 扩展信息id
+     *
+     * @var int
+     */
+    public $id;
 
     /**
      * @description 0-有效 ，1-无效
@@ -71,14 +71,14 @@ class extendInfos extends Model
      */
     public $status;
     protected $_name = [
-        'id'                    => 'id',
-        'gmtCreateStr'          => 'gmtCreateStr',
-        'gmtModifiedStr'        => 'gmtModifiedStr',
         'corpId'                => 'corpId',
         'deptCode'              => 'deptCode',
+        'deptExtendDisplayName' => 'deptExtendDisplayName',
         'deptExtendKey'         => 'deptExtendKey',
         'deptExtendValue'       => 'deptExtendValue',
-        'deptExtendDisplayName' => 'deptExtendDisplayName',
+        'gmtCreateStr'          => 'gmtCreateStr',
+        'gmtModifiedStr'        => 'gmtModifiedStr',
+        'id'                    => 'id',
         'status'                => 'status',
     ];
 
@@ -89,20 +89,14 @@ class extendInfos extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->id) {
-            $res['id'] = $this->id;
-        }
-        if (null !== $this->gmtCreateStr) {
-            $res['gmtCreateStr'] = $this->gmtCreateStr;
-        }
-        if (null !== $this->gmtModifiedStr) {
-            $res['gmtModifiedStr'] = $this->gmtModifiedStr;
-        }
         if (null !== $this->corpId) {
             $res['corpId'] = $this->corpId;
         }
         if (null !== $this->deptCode) {
             $res['deptCode'] = $this->deptCode;
+        }
+        if (null !== $this->deptExtendDisplayName) {
+            $res['deptExtendDisplayName'] = $this->deptExtendDisplayName;
         }
         if (null !== $this->deptExtendKey) {
             $res['deptExtendKey'] = $this->deptExtendKey;
@@ -110,8 +104,14 @@ class extendInfos extends Model
         if (null !== $this->deptExtendValue) {
             $res['deptExtendValue'] = $this->deptExtendValue;
         }
-        if (null !== $this->deptExtendDisplayName) {
-            $res['deptExtendDisplayName'] = $this->deptExtendDisplayName;
+        if (null !== $this->gmtCreateStr) {
+            $res['gmtCreateStr'] = $this->gmtCreateStr;
+        }
+        if (null !== $this->gmtModifiedStr) {
+            $res['gmtModifiedStr'] = $this->gmtModifiedStr;
+        }
+        if (null !== $this->id) {
+            $res['id'] = $this->id;
         }
         if (null !== $this->status) {
             $res['status'] = $this->status;
@@ -128,20 +128,14 @@ class extendInfos extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['id'])) {
-            $model->id = $map['id'];
-        }
-        if (isset($map['gmtCreateStr'])) {
-            $model->gmtCreateStr = $map['gmtCreateStr'];
-        }
-        if (isset($map['gmtModifiedStr'])) {
-            $model->gmtModifiedStr = $map['gmtModifiedStr'];
-        }
         if (isset($map['corpId'])) {
             $model->corpId = $map['corpId'];
         }
         if (isset($map['deptCode'])) {
             $model->deptCode = $map['deptCode'];
+        }
+        if (isset($map['deptExtendDisplayName'])) {
+            $model->deptExtendDisplayName = $map['deptExtendDisplayName'];
         }
         if (isset($map['deptExtendKey'])) {
             $model->deptExtendKey = $map['deptExtendKey'];
@@ -149,8 +143,14 @@ class extendInfos extends Model
         if (isset($map['deptExtendValue'])) {
             $model->deptExtendValue = $map['deptExtendValue'];
         }
-        if (isset($map['deptExtendDisplayName'])) {
-            $model->deptExtendDisplayName = $map['deptExtendDisplayName'];
+        if (isset($map['gmtCreateStr'])) {
+            $model->gmtCreateStr = $map['gmtCreateStr'];
+        }
+        if (isset($map['gmtModifiedStr'])) {
+            $model->gmtModifiedStr = $map['gmtModifiedStr'];
+        }
+        if (isset($map['id'])) {
+            $model->id = $map['id'];
         }
         if (isset($map['status'])) {
             $model->status = $map['status'];

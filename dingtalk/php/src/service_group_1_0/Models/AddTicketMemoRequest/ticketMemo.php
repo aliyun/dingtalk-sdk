@@ -10,21 +10,21 @@ use AlibabaCloud\Tea\Model;
 class ticketMemo extends Model
 {
     /**
-     * @description 文字备注
-     *
-     * @var string
-     */
-    public $memo;
-
-    /**
      * @description 备注相关的附件
      *
      * @var attachments[]
      */
     public $attachments;
+
+    /**
+     * @description 文字备注
+     *
+     * @var string
+     */
+    public $memo;
     protected $_name = [
-        'memo'        => 'memo',
         'attachments' => 'attachments',
+        'memo'        => 'memo',
     ];
 
     public function validate()
@@ -34,9 +34,6 @@ class ticketMemo extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->memo) {
-            $res['memo'] = $this->memo;
-        }
         if (null !== $this->attachments) {
             $res['attachments'] = [];
             if (null !== $this->attachments && \is_array($this->attachments)) {
@@ -45,6 +42,9 @@ class ticketMemo extends Model
                     $res['attachments'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->memo) {
+            $res['memo'] = $this->memo;
         }
 
         return $res;
@@ -58,9 +58,6 @@ class ticketMemo extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['memo'])) {
-            $model->memo = $map['memo'];
-        }
         if (isset($map['attachments'])) {
             if (!empty($map['attachments'])) {
                 $model->attachments = [];
@@ -69,6 +66,9 @@ class ticketMemo extends Model
                     $model->attachments[$n++] = null !== $item ? attachments::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['memo'])) {
+            $model->memo = $map['memo'];
         }
 
         return $model;

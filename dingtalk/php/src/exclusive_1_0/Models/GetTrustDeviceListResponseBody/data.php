@@ -9,18 +9,11 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 员工Id
+     * @description 创建时间
      *
-     * @var string
+     * @var int
      */
-    public $userId;
-
-    /**
-     * @description 平台类型
-     *
-     * @var string
-     */
-    public $platform;
+    public $createTime;
 
     /**
      * @description mac地址
@@ -30,6 +23,13 @@ class data extends Model
     public $macAddress;
 
     /**
+     * @description 平台类型
+     *
+     * @var string
+     */
+    public $platform;
+
+    /**
      * @description 设备状态
      *
      * @var int
@@ -37,17 +37,17 @@ class data extends Model
     public $status;
 
     /**
-     * @description 创建时间
+     * @description 员工Id
      *
-     * @var int
+     * @var string
      */
-    public $createTime;
+    public $userId;
     protected $_name = [
-        'userId'     => 'userId',
-        'platform'   => 'platform',
-        'macAddress' => 'macAddress',
-        'status'     => 'status',
         'createTime' => 'createTime',
+        'macAddress' => 'macAddress',
+        'platform'   => 'platform',
+        'status'     => 'status',
+        'userId'     => 'userId',
     ];
 
     public function validate()
@@ -57,20 +57,20 @@ class data extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
-        }
-        if (null !== $this->platform) {
-            $res['platform'] = $this->platform;
+        if (null !== $this->createTime) {
+            $res['createTime'] = $this->createTime;
         }
         if (null !== $this->macAddress) {
             $res['macAddress'] = $this->macAddress;
         }
+        if (null !== $this->platform) {
+            $res['platform'] = $this->platform;
+        }
         if (null !== $this->status) {
             $res['status'] = $this->status;
         }
-        if (null !== $this->createTime) {
-            $res['createTime'] = $this->createTime;
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -84,20 +84,20 @@ class data extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
-        }
-        if (isset($map['platform'])) {
-            $model->platform = $map['platform'];
+        if (isset($map['createTime'])) {
+            $model->createTime = $map['createTime'];
         }
         if (isset($map['macAddress'])) {
             $model->macAddress = $map['macAddress'];
         }
+        if (isset($map['platform'])) {
+            $model->platform = $map['platform'];
+        }
         if (isset($map['status'])) {
             $model->status = $map['status'];
         }
-        if (isset($map['createTime'])) {
-            $model->createTime = $map['createTime'];
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

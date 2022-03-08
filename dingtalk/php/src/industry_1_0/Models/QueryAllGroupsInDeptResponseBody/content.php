@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class content extends Model
 {
     /**
+     * @description 所在科室Id
+     *
+     * @var int
+     */
+    public $deptId;
+
+    /**
      * @description 医疗组Id
      *
      * @var int
@@ -21,17 +28,10 @@ class content extends Model
      * @var string
      */
     public $name;
-
-    /**
-     * @description 所在科室Id
-     *
-     * @var int
-     */
-    public $deptId;
     protected $_name = [
+        'deptId' => 'deptId',
         'id'     => 'id',
         'name'   => 'name',
-        'deptId' => 'deptId',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class content extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->deptId) {
+            $res['deptId'] = $this->deptId;
+        }
         if (null !== $this->id) {
             $res['id'] = $this->id;
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
-        }
-        if (null !== $this->deptId) {
-            $res['deptId'] = $this->deptId;
         }
 
         return $res;
@@ -62,14 +62,14 @@ class content extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['deptId'])) {
+            $model->deptId = $map['deptId'];
+        }
         if (isset($map['id'])) {
             $model->id = $map['id'];
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];
-        }
-        if (isset($map['deptId'])) {
-            $model->deptId = $map['deptId'];
         }
 
         return $model;

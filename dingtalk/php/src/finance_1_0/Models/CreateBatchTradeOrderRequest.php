@@ -10,13 +10,6 @@ use AlibabaCloud\Tea\Model;
 class CreateBatchTradeOrderRequest extends Model
 {
     /**
-     * @description 员工staffId
-     *
-     * @var string
-     */
-    public $staffId;
-
-    /**
      * @description 付款账号唯一id
      *
      * @var string
@@ -31,11 +24,18 @@ class CreateBatchTradeOrderRequest extends Model
     public $accountNo;
 
     /**
-     * @description 交易抬头
+     * @description 批次备注
      *
      * @var string
      */
-    public $tradeTitle;
+    public $batchRemark;
+
+    /**
+     * @description 交易明细列表
+     *
+     * @var batchTradeDetails[]
+     */
+    public $batchTradeDetails;
 
     /**
      * @description 外部商户批次号
@@ -45,18 +45,11 @@ class CreateBatchTradeOrderRequest extends Model
     public $outBatchNo;
 
     /**
-     * @description 批次备注
+     * @description 员工staffId
      *
      * @var string
      */
-    public $batchRemark;
-
-    /**
-     * @description 总笔数（必填）
-     *
-     * @var int
-     */
-    public $totalCount;
+    public $staffId;
 
     /**
      * @description 总金额（必填，单位：元）
@@ -66,21 +59,28 @@ class CreateBatchTradeOrderRequest extends Model
     public $totalAmount;
 
     /**
-     * @description 交易明细列表
+     * @description 总笔数（必填）
      *
-     * @var batchTradeDetails[]
+     * @var int
      */
-    public $batchTradeDetails;
+    public $totalCount;
+
+    /**
+     * @description 交易抬头
+     *
+     * @var string
+     */
+    public $tradeTitle;
     protected $_name = [
-        'staffId'           => 'staffId',
         'accountId'         => 'accountId',
         'accountNo'         => 'accountNo',
-        'tradeTitle'        => 'tradeTitle',
-        'outBatchNo'        => 'outBatchNo',
         'batchRemark'       => 'batchRemark',
-        'totalCount'        => 'totalCount',
-        'totalAmount'       => 'totalAmount',
         'batchTradeDetails' => 'batchTradeDetails',
+        'outBatchNo'        => 'outBatchNo',
+        'staffId'           => 'staffId',
+        'totalAmount'       => 'totalAmount',
+        'totalCount'        => 'totalCount',
+        'tradeTitle'        => 'tradeTitle',
     ];
 
     public function validate()
@@ -90,29 +90,14 @@ class CreateBatchTradeOrderRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->staffId) {
-            $res['staffId'] = $this->staffId;
-        }
         if (null !== $this->accountId) {
             $res['accountId'] = $this->accountId;
         }
         if (null !== $this->accountNo) {
             $res['accountNo'] = $this->accountNo;
         }
-        if (null !== $this->tradeTitle) {
-            $res['tradeTitle'] = $this->tradeTitle;
-        }
-        if (null !== $this->outBatchNo) {
-            $res['outBatchNo'] = $this->outBatchNo;
-        }
         if (null !== $this->batchRemark) {
             $res['batchRemark'] = $this->batchRemark;
-        }
-        if (null !== $this->totalCount) {
-            $res['totalCount'] = $this->totalCount;
-        }
-        if (null !== $this->totalAmount) {
-            $res['totalAmount'] = $this->totalAmount;
         }
         if (null !== $this->batchTradeDetails) {
             $res['batchTradeDetails'] = [];
@@ -122,6 +107,21 @@ class CreateBatchTradeOrderRequest extends Model
                     $res['batchTradeDetails'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->outBatchNo) {
+            $res['outBatchNo'] = $this->outBatchNo;
+        }
+        if (null !== $this->staffId) {
+            $res['staffId'] = $this->staffId;
+        }
+        if (null !== $this->totalAmount) {
+            $res['totalAmount'] = $this->totalAmount;
+        }
+        if (null !== $this->totalCount) {
+            $res['totalCount'] = $this->totalCount;
+        }
+        if (null !== $this->tradeTitle) {
+            $res['tradeTitle'] = $this->tradeTitle;
         }
 
         return $res;
@@ -135,29 +135,14 @@ class CreateBatchTradeOrderRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['staffId'])) {
-            $model->staffId = $map['staffId'];
-        }
         if (isset($map['accountId'])) {
             $model->accountId = $map['accountId'];
         }
         if (isset($map['accountNo'])) {
             $model->accountNo = $map['accountNo'];
         }
-        if (isset($map['tradeTitle'])) {
-            $model->tradeTitle = $map['tradeTitle'];
-        }
-        if (isset($map['outBatchNo'])) {
-            $model->outBatchNo = $map['outBatchNo'];
-        }
         if (isset($map['batchRemark'])) {
             $model->batchRemark = $map['batchRemark'];
-        }
-        if (isset($map['totalCount'])) {
-            $model->totalCount = $map['totalCount'];
-        }
-        if (isset($map['totalAmount'])) {
-            $model->totalAmount = $map['totalAmount'];
         }
         if (isset($map['batchTradeDetails'])) {
             if (!empty($map['batchTradeDetails'])) {
@@ -167,6 +152,21 @@ class CreateBatchTradeOrderRequest extends Model
                     $model->batchTradeDetails[$n++] = null !== $item ? batchTradeDetails::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['outBatchNo'])) {
+            $model->outBatchNo = $map['outBatchNo'];
+        }
+        if (isset($map['staffId'])) {
+            $model->staffId = $map['staffId'];
+        }
+        if (isset($map['totalAmount'])) {
+            $model->totalAmount = $map['totalAmount'];
+        }
+        if (isset($map['totalCount'])) {
+            $model->totalCount = $map['totalCount'];
+        }
+        if (isset($map['tradeTitle'])) {
+            $model->tradeTitle = $map['tradeTitle'];
         }
 
         return $model;

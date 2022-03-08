@@ -11,27 +11,12 @@ class GetUploadUrlRequest extends Model
     /**
      * @var string
      */
-    public $dingCorpId;
-
-    /**
-     * @var string
-     */
-    public $dingIsvAccessToken;
-
-    /**
-     * @var string
-     */
-    public $dingSuiteKey;
+    public $contentMd5;
 
     /**
      * @var string
      */
     public $contentType;
-
-    /**
-     * @var string
-     */
-    public $contentMd5;
 
     /**
      * @var bool
@@ -48,14 +33,11 @@ class GetUploadUrlRequest extends Model
      */
     public $fileSize;
     protected $_name = [
-        'dingCorpId'         => 'dingCorpId',
-        'dingIsvAccessToken' => 'dingIsvAccessToken',
-        'dingSuiteKey'       => 'dingSuiteKey',
-        'contentType'        => 'contentType',
-        'contentMd5'         => 'contentMd5',
-        'convert2Pdf'        => 'convert2Pdf',
-        'fileName'           => 'fileName',
-        'fileSize'           => 'fileSize',
+        'contentMd5'  => 'contentMd5',
+        'contentType' => 'contentType',
+        'convert2Pdf' => 'convert2Pdf',
+        'fileName'    => 'fileName',
+        'fileSize'    => 'fileSize',
     ];
 
     public function validate()
@@ -65,20 +47,11 @@ class GetUploadUrlRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->dingCorpId) {
-            $res['dingCorpId'] = $this->dingCorpId;
-        }
-        if (null !== $this->dingIsvAccessToken) {
-            $res['dingIsvAccessToken'] = $this->dingIsvAccessToken;
-        }
-        if (null !== $this->dingSuiteKey) {
-            $res['dingSuiteKey'] = $this->dingSuiteKey;
+        if (null !== $this->contentMd5) {
+            $res['contentMd5'] = $this->contentMd5;
         }
         if (null !== $this->contentType) {
             $res['contentType'] = $this->contentType;
-        }
-        if (null !== $this->contentMd5) {
-            $res['contentMd5'] = $this->contentMd5;
         }
         if (null !== $this->convert2Pdf) {
             $res['convert2Pdf'] = $this->convert2Pdf;
@@ -101,20 +74,11 @@ class GetUploadUrlRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['dingCorpId'])) {
-            $model->dingCorpId = $map['dingCorpId'];
-        }
-        if (isset($map['dingIsvAccessToken'])) {
-            $model->dingIsvAccessToken = $map['dingIsvAccessToken'];
-        }
-        if (isset($map['dingSuiteKey'])) {
-            $model->dingSuiteKey = $map['dingSuiteKey'];
+        if (isset($map['contentMd5'])) {
+            $model->contentMd5 = $map['contentMd5'];
         }
         if (isset($map['contentType'])) {
             $model->contentType = $map['contentType'];
-        }
-        if (isset($map['contentMd5'])) {
-            $model->contentMd5 = $map['contentMd5'];
         }
         if (isset($map['convert2Pdf'])) {
             $model->convert2Pdf = $map['convert2Pdf'];

@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class formInfoList extends Model
 {
     /**
-     * @description formUuid
-     *
-     * @var string
-     */
-    public $formUuid;
-
-    /**
      * @description formName
      *
      * @var string
      */
     public $formName;
+
+    /**
+     * @description formUuid
+     *
+     * @var string
+     */
+    public $formUuid;
     protected $_name = [
-        'formUuid' => 'formUuid',
         'formName' => 'formName',
+        'formUuid' => 'formUuid',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class formInfoList extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->formUuid) {
-            $res['formUuid'] = $this->formUuid;
-        }
         if (null !== $this->formName) {
             $res['formName'] = $this->formName;
+        }
+        if (null !== $this->formUuid) {
+            $res['formUuid'] = $this->formUuid;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class formInfoList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['formUuid'])) {
-            $model->formUuid = $map['formUuid'];
-        }
         if (isset($map['formName'])) {
             $model->formName = $map['formName'];
+        }
+        if (isset($map['formUuid'])) {
+            $model->formUuid = $map['formUuid'];
         }
 
         return $model;

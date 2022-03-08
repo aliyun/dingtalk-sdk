@@ -16,25 +16,11 @@ class appList extends Model
     public $agentId;
 
     /**
-     * @description 应用名称
-     *
-     * @var string
-     */
-    public $name;
-
-    /**
      * @description 应用描述
      *
      * @var string
      */
     public $desc;
-
-    /**
-     * @description 应用图标
-     *
-     * @var string
-     */
-    public $icon;
 
     /**
      * @description 应用移动端首页地址
@@ -44,11 +30,18 @@ class appList extends Model
     public $homepageLink;
 
     /**
-     * @description 应用PC端首页地址
+     * @description 应用图标
      *
      * @var string
      */
-    public $pcHomepageLink;
+    public $icon;
+
+    /**
+     * @description 应用名称
+     *
+     * @var string
+     */
+    public $name;
 
     /**
      * @description 应用管理后台地址
@@ -56,14 +49,21 @@ class appList extends Model
      * @var string
      */
     public $ompLink;
+
+    /**
+     * @description 应用PC端首页地址
+     *
+     * @var string
+     */
+    public $pcHomepageLink;
     protected $_name = [
         'agentId'        => 'agentId',
-        'name'           => 'name',
         'desc'           => 'desc',
-        'icon'           => 'icon',
         'homepageLink'   => 'homepageLink',
-        'pcHomepageLink' => 'pcHomepageLink',
+        'icon'           => 'icon',
+        'name'           => 'name',
         'ompLink'        => 'ompLink',
+        'pcHomepageLink' => 'pcHomepageLink',
     ];
 
     public function validate()
@@ -76,23 +76,23 @@ class appList extends Model
         if (null !== $this->agentId) {
             $res['agentId'] = $this->agentId;
         }
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
-        }
         if (null !== $this->desc) {
             $res['desc'] = $this->desc;
-        }
-        if (null !== $this->icon) {
-            $res['icon'] = $this->icon;
         }
         if (null !== $this->homepageLink) {
             $res['homepageLink'] = $this->homepageLink;
         }
-        if (null !== $this->pcHomepageLink) {
-            $res['pcHomepageLink'] = $this->pcHomepageLink;
+        if (null !== $this->icon) {
+            $res['icon'] = $this->icon;
+        }
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
         }
         if (null !== $this->ompLink) {
             $res['ompLink'] = $this->ompLink;
+        }
+        if (null !== $this->pcHomepageLink) {
+            $res['pcHomepageLink'] = $this->pcHomepageLink;
         }
 
         return $res;
@@ -109,23 +109,23 @@ class appList extends Model
         if (isset($map['agentId'])) {
             $model->agentId = $map['agentId'];
         }
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
-        }
         if (isset($map['desc'])) {
             $model->desc = $map['desc'];
-        }
-        if (isset($map['icon'])) {
-            $model->icon = $map['icon'];
         }
         if (isset($map['homepageLink'])) {
             $model->homepageLink = $map['homepageLink'];
         }
-        if (isset($map['pcHomepageLink'])) {
-            $model->pcHomepageLink = $map['pcHomepageLink'];
+        if (isset($map['icon'])) {
+            $model->icon = $map['icon'];
+        }
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
         }
         if (isset($map['ompLink'])) {
             $model->ompLink = $map['ompLink'];
+        }
+        if (isset($map['pcHomepageLink'])) {
+            $model->pcHomepageLink = $map['pcHomepageLink'];
         }
 
         return $model;

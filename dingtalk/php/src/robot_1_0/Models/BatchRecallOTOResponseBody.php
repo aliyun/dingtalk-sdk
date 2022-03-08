@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class BatchRecallOTOResponseBody extends Model
 {
     /**
-     * @description 撤回成功的消息id
-     *
-     * @var string[]
-     */
-    public $successResult;
-
-    /**
      * @description 撤回失败的消息id及对应的失败原因
      *
      * @var string[]
      */
     public $failedResult;
+
+    /**
+     * @description 撤回成功的消息id
+     *
+     * @var string[]
+     */
+    public $successResult;
     protected $_name = [
-        'successResult' => 'successResult',
         'failedResult'  => 'failedResult',
+        'successResult' => 'successResult',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class BatchRecallOTOResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->successResult) {
-            $res['successResult'] = $this->successResult;
-        }
         if (null !== $this->failedResult) {
             $res['failedResult'] = $this->failedResult;
+        }
+        if (null !== $this->successResult) {
+            $res['successResult'] = $this->successResult;
         }
 
         return $res;
@@ -51,13 +51,13 @@ class BatchRecallOTOResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['failedResult'])) {
+            $model->failedResult = $map['failedResult'];
+        }
         if (isset($map['successResult'])) {
             if (!empty($map['successResult'])) {
                 $model->successResult = $map['successResult'];
             }
-        }
-        if (isset($map['failedResult'])) {
-            $model->failedResult = $map['failedResult'];
         }
 
         return $model;

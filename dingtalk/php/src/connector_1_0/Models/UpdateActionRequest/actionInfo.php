@@ -10,39 +10,11 @@ use AlibabaCloud\Tea\Model;
 class actionInfo extends Model
 {
     /**
-     * @description 连接平台连接器id
+     * @description api请求url path，结合Connector上的apiDomain使用
      *
      * @var string
      */
-    public $dingConnectorId;
-
-    /**
-     * @description 服务商的连接器Id
-     *
-     * @var string
-     */
-    public $integratorConnectorId;
-
-    /**
-     * @description 连接平台的执行动作唯一标识。
-     *
-     * @var string
-     */
-    public $dingActionId;
-
-    /**
-     * @description 服务商的执行事件Id
-     *
-     * @var string
-     */
-    public $integratorActionId;
-
-    /**
-     * @description 名称
-     *
-     * @var string
-     */
-    public $name;
+    public $apiPath;
 
     /**
      * @description 描述
@@ -52,11 +24,18 @@ class actionInfo extends Model
     public $description;
 
     /**
-     * @description api请求url path，结合Connector上的apiDomain使用
+     * @description 连接平台的执行动作唯一标识。
      *
      * @var string
      */
-    public $apiPath;
+    public $dingActionId;
+
+    /**
+     * @description 连接平台连接器id
+     *
+     * @var string
+     */
+    public $dingConnectorId;
 
     /**
      * @description 入参schema
@@ -66,11 +45,25 @@ class actionInfo extends Model
     public $inputSchema;
 
     /**
-     * @description 出参schema
+     * @description 服务商的执行事件Id
      *
      * @var string
      */
-    public $outputSchema;
+    public $integratorActionId;
+
+    /**
+     * @description 服务商的连接器Id
+     *
+     * @var string
+     */
+    public $integratorConnectorId;
+
+    /**
+     * @description 名称
+     *
+     * @var string
+     */
+    public $name;
 
     /**
      * @description 执行动作接口成功调用规则。
@@ -78,17 +71,24 @@ class actionInfo extends Model
      * @var outputDataRules[]
      */
     public $outputDataRules;
+
+    /**
+     * @description 出参schema
+     *
+     * @var string
+     */
+    public $outputSchema;
     protected $_name = [
-        'dingConnectorId'       => 'dingConnectorId',
-        'integratorConnectorId' => 'integratorConnectorId',
-        'dingActionId'          => 'dingActionId',
-        'integratorActionId'    => 'integratorActionId',
-        'name'                  => 'name',
-        'description'           => 'description',
         'apiPath'               => 'apiPath',
+        'description'           => 'description',
+        'dingActionId'          => 'dingActionId',
+        'dingConnectorId'       => 'dingConnectorId',
         'inputSchema'           => 'inputSchema',
-        'outputSchema'          => 'outputSchema',
+        'integratorActionId'    => 'integratorActionId',
+        'integratorConnectorId' => 'integratorConnectorId',
+        'name'                  => 'name',
         'outputDataRules'       => 'outputDataRules',
+        'outputSchema'          => 'outputSchema',
     ];
 
     public function validate()
@@ -98,32 +98,29 @@ class actionInfo extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->dingConnectorId) {
-            $res['dingConnectorId'] = $this->dingConnectorId;
-        }
-        if (null !== $this->integratorConnectorId) {
-            $res['integratorConnectorId'] = $this->integratorConnectorId;
-        }
-        if (null !== $this->dingActionId) {
-            $res['dingActionId'] = $this->dingActionId;
-        }
-        if (null !== $this->integratorActionId) {
-            $res['integratorActionId'] = $this->integratorActionId;
-        }
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
+        if (null !== $this->apiPath) {
+            $res['apiPath'] = $this->apiPath;
         }
         if (null !== $this->description) {
             $res['description'] = $this->description;
         }
-        if (null !== $this->apiPath) {
-            $res['apiPath'] = $this->apiPath;
+        if (null !== $this->dingActionId) {
+            $res['dingActionId'] = $this->dingActionId;
+        }
+        if (null !== $this->dingConnectorId) {
+            $res['dingConnectorId'] = $this->dingConnectorId;
         }
         if (null !== $this->inputSchema) {
             $res['inputSchema'] = $this->inputSchema;
         }
-        if (null !== $this->outputSchema) {
-            $res['outputSchema'] = $this->outputSchema;
+        if (null !== $this->integratorActionId) {
+            $res['integratorActionId'] = $this->integratorActionId;
+        }
+        if (null !== $this->integratorConnectorId) {
+            $res['integratorConnectorId'] = $this->integratorConnectorId;
+        }
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
         }
         if (null !== $this->outputDataRules) {
             $res['outputDataRules'] = [];
@@ -133,6 +130,9 @@ class actionInfo extends Model
                     $res['outputDataRules'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->outputSchema) {
+            $res['outputSchema'] = $this->outputSchema;
         }
 
         return $res;
@@ -146,32 +146,29 @@ class actionInfo extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['dingConnectorId'])) {
-            $model->dingConnectorId = $map['dingConnectorId'];
-        }
-        if (isset($map['integratorConnectorId'])) {
-            $model->integratorConnectorId = $map['integratorConnectorId'];
-        }
-        if (isset($map['dingActionId'])) {
-            $model->dingActionId = $map['dingActionId'];
-        }
-        if (isset($map['integratorActionId'])) {
-            $model->integratorActionId = $map['integratorActionId'];
-        }
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
+        if (isset($map['apiPath'])) {
+            $model->apiPath = $map['apiPath'];
         }
         if (isset($map['description'])) {
             $model->description = $map['description'];
         }
-        if (isset($map['apiPath'])) {
-            $model->apiPath = $map['apiPath'];
+        if (isset($map['dingActionId'])) {
+            $model->dingActionId = $map['dingActionId'];
+        }
+        if (isset($map['dingConnectorId'])) {
+            $model->dingConnectorId = $map['dingConnectorId'];
         }
         if (isset($map['inputSchema'])) {
             $model->inputSchema = $map['inputSchema'];
         }
-        if (isset($map['outputSchema'])) {
-            $model->outputSchema = $map['outputSchema'];
+        if (isset($map['integratorActionId'])) {
+            $model->integratorActionId = $map['integratorActionId'];
+        }
+        if (isset($map['integratorConnectorId'])) {
+            $model->integratorConnectorId = $map['integratorConnectorId'];
+        }
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
         }
         if (isset($map['outputDataRules'])) {
             if (!empty($map['outputDataRules'])) {
@@ -181,6 +178,9 @@ class actionInfo extends Model
                     $model->outputDataRules[$n++] = null !== $item ? outputDataRules::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['outputSchema'])) {
+            $model->outputSchema = $map['outputSchema'];
         }
 
         return $model;

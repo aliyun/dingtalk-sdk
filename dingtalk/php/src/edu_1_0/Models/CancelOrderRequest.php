@@ -9,29 +9,11 @@ use AlibabaCloud\Tea\Model;
 class CancelOrderRequest extends Model
 {
     /**
-     * @var int
-     */
-    public $dingIsvOrgId;
-
-    /**
-     * @var int
-     */
-    public $dingOrgId;
-
-    /**
-     * @var int
-     */
-    public $dingOauthAppId;
-
-    /**
+     * @description 人脸id
+     *
      * @var string
      */
-    public $dingSuiteKey;
-
-    /**
-     * @var int
-     */
-    public $dingTokenGrantType;
+    public $faceId;
 
     /**
      * @description 订单号
@@ -41,25 +23,18 @@ class CancelOrderRequest extends Model
     public $orderNo;
 
     /**
+     * @description 签名
+     *
+     * @var string
+     */
+    public $signature;
+
+    /**
      * @description 设备号
      *
      * @var string
      */
     public $sn;
-
-    /**
-     * @description 员工id
-     *
-     * @var string
-     */
-    public $userId;
-
-    /**
-     * @description 人脸id
-     *
-     * @var string
-     */
-    public $faceId;
 
     /**
      * @description utc时间戳
@@ -69,23 +44,18 @@ class CancelOrderRequest extends Model
     public $timestamp;
 
     /**
-     * @description 签名
+     * @description 员工id
      *
      * @var string
      */
-    public $signature;
+    public $userId;
     protected $_name = [
-        'dingIsvOrgId'       => 'dingIsvOrgId',
-        'dingOrgId'          => 'dingOrgId',
-        'dingOauthAppId'     => 'dingOauthAppId',
-        'dingSuiteKey'       => 'dingSuiteKey',
-        'dingTokenGrantType' => 'dingTokenGrantType',
-        'orderNo'            => 'orderNo',
-        'sn'                 => 'sn',
-        'userId'             => 'userId',
-        'faceId'             => 'faceId',
-        'timestamp'          => 'timestamp',
-        'signature'          => 'signature',
+        'faceId'    => 'faceId',
+        'orderNo'   => 'orderNo',
+        'signature' => 'signature',
+        'sn'        => 'sn',
+        'timestamp' => 'timestamp',
+        'userId'    => 'userId',
     ];
 
     public function validate()
@@ -95,38 +65,23 @@ class CancelOrderRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->dingIsvOrgId) {
-            $res['dingIsvOrgId'] = $this->dingIsvOrgId;
-        }
-        if (null !== $this->dingOrgId) {
-            $res['dingOrgId'] = $this->dingOrgId;
-        }
-        if (null !== $this->dingOauthAppId) {
-            $res['dingOauthAppId'] = $this->dingOauthAppId;
-        }
-        if (null !== $this->dingSuiteKey) {
-            $res['dingSuiteKey'] = $this->dingSuiteKey;
-        }
-        if (null !== $this->dingTokenGrantType) {
-            $res['dingTokenGrantType'] = $this->dingTokenGrantType;
+        if (null !== $this->faceId) {
+            $res['faceId'] = $this->faceId;
         }
         if (null !== $this->orderNo) {
             $res['orderNo'] = $this->orderNo;
         }
+        if (null !== $this->signature) {
+            $res['signature'] = $this->signature;
+        }
         if (null !== $this->sn) {
             $res['sn'] = $this->sn;
-        }
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
-        }
-        if (null !== $this->faceId) {
-            $res['faceId'] = $this->faceId;
         }
         if (null !== $this->timestamp) {
             $res['timestamp'] = $this->timestamp;
         }
-        if (null !== $this->signature) {
-            $res['signature'] = $this->signature;
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -140,38 +95,23 @@ class CancelOrderRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['dingIsvOrgId'])) {
-            $model->dingIsvOrgId = $map['dingIsvOrgId'];
-        }
-        if (isset($map['dingOrgId'])) {
-            $model->dingOrgId = $map['dingOrgId'];
-        }
-        if (isset($map['dingOauthAppId'])) {
-            $model->dingOauthAppId = $map['dingOauthAppId'];
-        }
-        if (isset($map['dingSuiteKey'])) {
-            $model->dingSuiteKey = $map['dingSuiteKey'];
-        }
-        if (isset($map['dingTokenGrantType'])) {
-            $model->dingTokenGrantType = $map['dingTokenGrantType'];
+        if (isset($map['faceId'])) {
+            $model->faceId = $map['faceId'];
         }
         if (isset($map['orderNo'])) {
             $model->orderNo = $map['orderNo'];
         }
+        if (isset($map['signature'])) {
+            $model->signature = $map['signature'];
+        }
         if (isset($map['sn'])) {
             $model->sn = $map['sn'];
-        }
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
-        }
-        if (isset($map['faceId'])) {
-            $model->faceId = $map['faceId'];
         }
         if (isset($map['timestamp'])) {
             $model->timestamp = $map['timestamp'];
         }
-        if (isset($map['signature'])) {
-            $model->signature = $map['signature'];
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

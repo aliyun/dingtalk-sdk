@@ -11,14 +11,8 @@ class GetAuthUrlRequest extends Model
     /**
      * @var string
      */
-    public $dingCorpId;
-
-    /**
-     * @var string
-     */
     public $redirectUrl;
     protected $_name = [
-        'dingCorpId'  => 'dingCorpId',
         'redirectUrl' => 'redirectUrl',
     ];
 
@@ -29,9 +23,6 @@ class GetAuthUrlRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->dingCorpId) {
-            $res['dingCorpId'] = $this->dingCorpId;
-        }
         if (null !== $this->redirectUrl) {
             $res['redirectUrl'] = $this->redirectUrl;
         }
@@ -47,9 +38,6 @@ class GetAuthUrlRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['dingCorpId'])) {
-            $model->dingCorpId = $map['dingCorpId'];
-        }
         if (isset($map['redirectUrl'])) {
             $model->redirectUrl = $map['redirectUrl'];
         }

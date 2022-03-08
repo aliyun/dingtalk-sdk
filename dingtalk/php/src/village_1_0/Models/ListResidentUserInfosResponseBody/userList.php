@@ -10,6 +10,27 @@ use AlibabaCloud\Tea\Model;
 class userList extends Model
 {
     /**
+     * @description 员工特征
+     *
+     * @var string
+     */
+    public $feature;
+
+    /**
+     * @description 标签列表
+     *
+     * @var roles[]
+     */
+    public $roles;
+
+    /**
+     * @description 钉钉唯一标识
+     *
+     * @var string
+     */
+    public $unionId;
+
+    /**
      * @description 员工 ID
      *
      * @var string
@@ -22,33 +43,12 @@ class userList extends Model
      * @var string
      */
     public $userName;
-
-    /**
-     * @description 标签列表
-     *
-     * @var roles[]
-     */
-    public $roles;
-
-    /**
-     * @description 员工特征
-     *
-     * @var string
-     */
-    public $feature;
-
-    /**
-     * @description 钉钉唯一标识
-     *
-     * @var string
-     */
-    public $unionId;
     protected $_name = [
+        'feature'  => 'feature',
+        'roles'    => 'roles',
+        'unionId'  => 'unionId',
         'userId'   => 'userId',
         'userName' => 'userName',
-        'roles'    => 'roles',
-        'feature'  => 'feature',
-        'unionId'  => 'unionId',
     ];
 
     public function validate()
@@ -58,11 +58,8 @@ class userList extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
-        }
-        if (null !== $this->userName) {
-            $res['userName'] = $this->userName;
+        if (null !== $this->feature) {
+            $res['feature'] = $this->feature;
         }
         if (null !== $this->roles) {
             $res['roles'] = [];
@@ -73,11 +70,14 @@ class userList extends Model
                 }
             }
         }
-        if (null !== $this->feature) {
-            $res['feature'] = $this->feature;
-        }
         if (null !== $this->unionId) {
             $res['unionId'] = $this->unionId;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
+        }
+        if (null !== $this->userName) {
+            $res['userName'] = $this->userName;
         }
 
         return $res;
@@ -91,11 +91,8 @@ class userList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
-        }
-        if (isset($map['userName'])) {
-            $model->userName = $map['userName'];
+        if (isset($map['feature'])) {
+            $model->feature = $map['feature'];
         }
         if (isset($map['roles'])) {
             if (!empty($map['roles'])) {
@@ -106,11 +103,14 @@ class userList extends Model
                 }
             }
         }
-        if (isset($map['feature'])) {
-            $model->feature = $map['feature'];
-        }
         if (isset($map['unionId'])) {
             $model->unionId = $map['unionId'];
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
+        }
+        if (isset($map['userName'])) {
+            $model->userName = $map['userName'];
         }
 
         return $model;

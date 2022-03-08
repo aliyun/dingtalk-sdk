@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description aliasEn
-     *
-     * @var string
-     */
-    public $aliasInEnglish;
-
-    /**
      * @description alias
      *
      * @var string
      */
     public $aliasInChinese;
+
+    /**
+     * @description aliasEn
+     *
+     * @var string
+     */
+    public $aliasInEnglish;
     protected $_name = [
-        'aliasInEnglish' => 'aliasInEnglish',
         'aliasInChinese' => 'aliasInChinese',
+        'aliasInEnglish' => 'aliasInEnglish',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class result extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->aliasInEnglish) {
-            $res['aliasInEnglish'] = $this->aliasInEnglish;
-        }
         if (null !== $this->aliasInChinese) {
             $res['aliasInChinese'] = $this->aliasInChinese;
+        }
+        if (null !== $this->aliasInEnglish) {
+            $res['aliasInEnglish'] = $this->aliasInEnglish;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class result extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['aliasInEnglish'])) {
-            $model->aliasInEnglish = $map['aliasInEnglish'];
-        }
         if (isset($map['aliasInChinese'])) {
             $model->aliasInChinese = $map['aliasInChinese'];
+        }
+        if (isset($map['aliasInEnglish'])) {
+            $model->aliasInEnglish = $map['aliasInEnglish'];
         }
 
         return $model;

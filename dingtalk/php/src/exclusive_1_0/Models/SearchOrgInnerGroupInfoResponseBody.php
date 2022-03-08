@@ -12,21 +12,21 @@ class SearchOrgInnerGroupInfoResponseBody extends Model
     /**
      * @var int
      */
-    public $totalCount;
-
-    /**
-     * @var int
-     */
     public $itemCount;
 
     /**
      * @var items[]
      */
     public $items;
+
+    /**
+     * @var int
+     */
+    public $totalCount;
     protected $_name = [
-        'totalCount' => 'totalCount',
         'itemCount'  => 'itemCount',
         'items'      => 'items',
+        'totalCount' => 'totalCount',
     ];
 
     public function validate()
@@ -36,9 +36,6 @@ class SearchOrgInnerGroupInfoResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->totalCount) {
-            $res['totalCount'] = $this->totalCount;
-        }
         if (null !== $this->itemCount) {
             $res['itemCount'] = $this->itemCount;
         }
@@ -50,6 +47,9 @@ class SearchOrgInnerGroupInfoResponseBody extends Model
                     $res['items'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->totalCount) {
+            $res['totalCount'] = $this->totalCount;
         }
 
         return $res;
@@ -63,9 +63,6 @@ class SearchOrgInnerGroupInfoResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['totalCount'])) {
-            $model->totalCount = $map['totalCount'];
-        }
         if (isset($map['itemCount'])) {
             $model->itemCount = $map['itemCount'];
         }
@@ -77,6 +74,9 @@ class SearchOrgInnerGroupInfoResponseBody extends Model
                     $model->items[$n++] = null !== $item ? items::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['totalCount'])) {
+            $model->totalCount = $map['totalCount'];
         }
 
         return $model;

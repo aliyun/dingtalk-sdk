@@ -11,27 +11,9 @@ class GetSignNoticeUrlRequest extends Model
     /**
      * @var string
      */
-    public $dingCorpId;
-
-    /**
-     * @var string
-     */
     public $taskId;
-
-    /**
-     * @var string
-     */
-    public $dingSuiteKey;
-
-    /**
-     * @var string
-     */
-    public $dingIsvAccessToken;
     protected $_name = [
-        'dingCorpId'         => 'dingCorpId',
-        'taskId'             => 'taskId',
-        'dingSuiteKey'       => 'dingSuiteKey',
-        'dingIsvAccessToken' => 'dingIsvAccessToken',
+        'taskId' => 'taskId',
     ];
 
     public function validate()
@@ -41,17 +23,8 @@ class GetSignNoticeUrlRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->dingCorpId) {
-            $res['dingCorpId'] = $this->dingCorpId;
-        }
         if (null !== $this->taskId) {
             $res['taskId'] = $this->taskId;
-        }
-        if (null !== $this->dingSuiteKey) {
-            $res['dingSuiteKey'] = $this->dingSuiteKey;
-        }
-        if (null !== $this->dingIsvAccessToken) {
-            $res['dingIsvAccessToken'] = $this->dingIsvAccessToken;
         }
 
         return $res;
@@ -65,17 +38,8 @@ class GetSignNoticeUrlRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['dingCorpId'])) {
-            $model->dingCorpId = $map['dingCorpId'];
-        }
         if (isset($map['taskId'])) {
             $model->taskId = $map['taskId'];
-        }
-        if (isset($map['dingSuiteKey'])) {
-            $model->dingSuiteKey = $map['dingSuiteKey'];
-        }
-        if (isset($map['dingIsvAccessToken'])) {
-            $model->dingIsvAccessToken = $map['dingIsvAccessToken'];
         }
 
         return $model;

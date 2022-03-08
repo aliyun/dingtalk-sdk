@@ -11,15 +11,15 @@ class DismissGroupRequest extends Model
     /**
      * @var string
      */
-    public $operatorUid;
+    public $conversationId;
 
     /**
      * @var string
      */
-    public $conversationId;
+    public $operatorUid;
     protected $_name = [
-        'operatorUid'    => 'operatorUid',
         'conversationId' => 'conversationId',
+        'operatorUid'    => 'operatorUid',
     ];
 
     public function validate()
@@ -29,11 +29,11 @@ class DismissGroupRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->operatorUid) {
-            $res['operatorUid'] = $this->operatorUid;
-        }
         if (null !== $this->conversationId) {
             $res['conversationId'] = $this->conversationId;
+        }
+        if (null !== $this->operatorUid) {
+            $res['operatorUid'] = $this->operatorUid;
         }
 
         return $res;
@@ -47,11 +47,11 @@ class DismissGroupRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['operatorUid'])) {
-            $model->operatorUid = $map['operatorUid'];
-        }
         if (isset($map['conversationId'])) {
             $model->conversationId = $map['conversationId'];
+        }
+        if (isset($map['operatorUid'])) {
+            $model->operatorUid = $map['operatorUid'];
         }
 
         return $model;

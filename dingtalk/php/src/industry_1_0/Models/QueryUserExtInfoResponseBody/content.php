@@ -9,25 +9,18 @@ use AlibabaCloud\Tea\Model;
 class content extends Model
 {
     /**
-     * @description 扩展属性Key
+     * @description 创建时间
      *
      * @var string
      */
-    public $userExtendKey;
+    public $gmtCreate;
 
     /**
-     * @description 扩展属性值
+     * @description 修改时间
      *
      * @var string
      */
-    public $userExtendValue;
-
-    /**
-     * @description 扩展属性描述
-     *
-     * @var string
-     */
-    public $userExtendDisplayName;
+    public $gmtModified;
 
     /**
      * @description 组织id
@@ -51,27 +44,34 @@ class content extends Model
     public $userCode;
 
     /**
-     * @description 创建时间
+     * @description 扩展属性描述
      *
      * @var string
      */
-    public $gmtCreate;
+    public $userExtendDisplayName;
 
     /**
-     * @description 修改时间
+     * @description 扩展属性Key
      *
      * @var string
      */
-    public $gmtModified;
+    public $userExtendKey;
+
+    /**
+     * @description 扩展属性值
+     *
+     * @var string
+     */
+    public $userExtendValue;
     protected $_name = [
-        'userExtendKey'         => 'userExtendKey',
-        'userExtendValue'       => 'userExtendValue',
-        'userExtendDisplayName' => 'userExtendDisplayName',
+        'gmtCreate'             => 'gmtCreate',
+        'gmtModified'           => 'gmtModified',
         'orgId'                 => 'orgId',
         'status'                => 'status',
         'userCode'              => 'userCode',
-        'gmtCreate'             => 'gmtCreate',
-        'gmtModified'           => 'gmtModified',
+        'userExtendDisplayName' => 'userExtendDisplayName',
+        'userExtendKey'         => 'userExtendKey',
+        'userExtendValue'       => 'userExtendValue',
     ];
 
     public function validate()
@@ -81,14 +81,11 @@ class content extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->userExtendKey) {
-            $res['userExtendKey'] = $this->userExtendKey;
+        if (null !== $this->gmtCreate) {
+            $res['gmtCreate'] = $this->gmtCreate;
         }
-        if (null !== $this->userExtendValue) {
-            $res['userExtendValue'] = $this->userExtendValue;
-        }
-        if (null !== $this->userExtendDisplayName) {
-            $res['userExtendDisplayName'] = $this->userExtendDisplayName;
+        if (null !== $this->gmtModified) {
+            $res['gmtModified'] = $this->gmtModified;
         }
         if (null !== $this->orgId) {
             $res['orgId'] = $this->orgId;
@@ -99,11 +96,14 @@ class content extends Model
         if (null !== $this->userCode) {
             $res['userCode'] = $this->userCode;
         }
-        if (null !== $this->gmtCreate) {
-            $res['gmtCreate'] = $this->gmtCreate;
+        if (null !== $this->userExtendDisplayName) {
+            $res['userExtendDisplayName'] = $this->userExtendDisplayName;
         }
-        if (null !== $this->gmtModified) {
-            $res['gmtModified'] = $this->gmtModified;
+        if (null !== $this->userExtendKey) {
+            $res['userExtendKey'] = $this->userExtendKey;
+        }
+        if (null !== $this->userExtendValue) {
+            $res['userExtendValue'] = $this->userExtendValue;
         }
 
         return $res;
@@ -117,14 +117,11 @@ class content extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['userExtendKey'])) {
-            $model->userExtendKey = $map['userExtendKey'];
+        if (isset($map['gmtCreate'])) {
+            $model->gmtCreate = $map['gmtCreate'];
         }
-        if (isset($map['userExtendValue'])) {
-            $model->userExtendValue = $map['userExtendValue'];
-        }
-        if (isset($map['userExtendDisplayName'])) {
-            $model->userExtendDisplayName = $map['userExtendDisplayName'];
+        if (isset($map['gmtModified'])) {
+            $model->gmtModified = $map['gmtModified'];
         }
         if (isset($map['orgId'])) {
             $model->orgId = $map['orgId'];
@@ -135,11 +132,14 @@ class content extends Model
         if (isset($map['userCode'])) {
             $model->userCode = $map['userCode'];
         }
-        if (isset($map['gmtCreate'])) {
-            $model->gmtCreate = $map['gmtCreate'];
+        if (isset($map['userExtendDisplayName'])) {
+            $model->userExtendDisplayName = $map['userExtendDisplayName'];
         }
-        if (isset($map['gmtModified'])) {
-            $model->gmtModified = $map['gmtModified'];
+        if (isset($map['userExtendKey'])) {
+            $model->userExtendKey = $map['userExtendKey'];
+        }
+        if (isset($map['userExtendValue'])) {
+            $model->userExtendValue = $map['userExtendValue'];
         }
 
         return $model;

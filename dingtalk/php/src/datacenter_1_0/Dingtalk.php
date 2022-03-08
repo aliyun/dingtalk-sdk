@@ -214,26 +214,26 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydAppDayStatisticalDataRequest $request
+     * @param QueryActiveUserStatisticalDataRequest $request
      *
-     * @return QueryYydAppDayStatisticalDataResponse
+     * @return QueryActiveUserStatisticalDataResponse
      */
-    public function queryYydAppDayStatisticalData($request)
+    public function queryActiveUserStatisticalData($request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new QueryYydAppDayStatisticalDataHeaders([]);
+        $headers = new QueryActiveUserStatisticalDataHeaders([]);
 
-        return $this->queryYydAppDayStatisticalDataWithOptions($request, $headers, $runtime);
+        return $this->queryActiveUserStatisticalDataWithOptions($request, $headers, $runtime);
     }
 
     /**
-     * @param QueryYydAppDayStatisticalDataRequest $request
-     * @param QueryYydAppDayStatisticalDataHeaders $headers
-     * @param RuntimeOptions                       $runtime
+     * @param QueryActiveUserStatisticalDataRequest $request
+     * @param QueryActiveUserStatisticalDataHeaders $headers
+     * @param RuntimeOptions                        $runtime
      *
-     * @return QueryYydAppDayStatisticalDataResponse
+     * @return QueryActiveUserStatisticalDataResponse
      */
-    public function queryYydAppDayStatisticalDataWithOptions($request, $headers, $runtime)
+    public function queryActiveUserStatisticalDataWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
@@ -245,37 +245,37 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return QueryYydAppDayStatisticalDataResponse::fromMap($this->doROARequest('QueryYydAppDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydAppDayDatas', 'json', $req, $runtime));
+        return QueryActiveUserStatisticalDataResponse::fromMap($this->doROARequest('QueryActiveUserStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/activeUserData', 'json', $req, $runtime));
     }
 
     /**
-     * @param QueryGroupMessageStatisticalDataRequest $request
+     * @param QueryApprovalStatisticalDataRequest $request
      *
-     * @return QueryGroupMessageStatisticalDataResponse
+     * @return QueryApprovalStatisticalDataResponse
      */
-    public function queryGroupMessageStatisticalData($request)
+    public function queryApprovalStatisticalData($request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new QueryGroupMessageStatisticalDataHeaders([]);
+        $headers = new QueryApprovalStatisticalDataHeaders([]);
 
-        return $this->queryGroupMessageStatisticalDataWithOptions($request, $headers, $runtime);
+        return $this->queryApprovalStatisticalDataWithOptions($request, $headers, $runtime);
     }
 
     /**
-     * @param QueryGroupMessageStatisticalDataRequest $request
-     * @param QueryGroupMessageStatisticalDataHeaders $headers
-     * @param RuntimeOptions                          $runtime
+     * @param QueryApprovalStatisticalDataRequest $request
+     * @param QueryApprovalStatisticalDataHeaders $headers
+     * @param RuntimeOptions                      $runtime
      *
-     * @return QueryGroupMessageStatisticalDataResponse
+     * @return QueryApprovalStatisticalDataResponse
      */
-    public function queryGroupMessageStatisticalDataWithOptions($request, $headers, $runtime)
+    public function queryApprovalStatisticalDataWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
@@ -287,37 +287,37 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return QueryGroupMessageStatisticalDataResponse::fromMap($this->doROARequest('QueryGroupMessageStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/groupMessageData', 'json', $req, $runtime));
+        return QueryApprovalStatisticalDataResponse::fromMap($this->doROARequest('QueryApprovalStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/approvalData', 'json', $req, $runtime));
     }
 
     /**
-     * @param QueryHealthStatisticalDataRequest $request
+     * @param QueryAttendanceStatisticalDataRequest $request
      *
-     * @return QueryHealthStatisticalDataResponse
+     * @return QueryAttendanceStatisticalDataResponse
      */
-    public function queryHealthStatisticalData($request)
+    public function queryAttendanceStatisticalData($request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new QueryHealthStatisticalDataHeaders([]);
+        $headers = new QueryAttendanceStatisticalDataHeaders([]);
 
-        return $this->queryHealthStatisticalDataWithOptions($request, $headers, $runtime);
+        return $this->queryAttendanceStatisticalDataWithOptions($request, $headers, $runtime);
     }
 
     /**
-     * @param QueryHealthStatisticalDataRequest $request
-     * @param QueryHealthStatisticalDataHeaders $headers
-     * @param RuntimeOptions                    $runtime
+     * @param QueryAttendanceStatisticalDataRequest $request
+     * @param QueryAttendanceStatisticalDataHeaders $headers
+     * @param RuntimeOptions                        $runtime
      *
-     * @return QueryHealthStatisticalDataResponse
+     * @return QueryAttendanceStatisticalDataResponse
      */
-    public function queryHealthStatisticalDataWithOptions($request, $headers, $runtime)
+    public function queryAttendanceStatisticalDataWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
@@ -329,37 +329,37 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return QueryHealthStatisticalDataResponse::fromMap($this->doROARequest('QueryHealthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/healtheUserData', 'json', $req, $runtime));
+        return QueryAttendanceStatisticalDataResponse::fromMap($this->doROARequest('QueryAttendanceStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/attendanceData', 'json', $req, $runtime));
     }
 
     /**
-     * @param QueryYydTotalMonthStatisticalDataRequest $request
+     * @param QueryBlackboardStatisticalDataRequest $request
      *
-     * @return QueryYydTotalMonthStatisticalDataResponse
+     * @return QueryBlackboardStatisticalDataResponse
      */
-    public function queryYydTotalMonthStatisticalData($request)
+    public function queryBlackboardStatisticalData($request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new QueryYydTotalMonthStatisticalDataHeaders([]);
+        $headers = new QueryBlackboardStatisticalDataHeaders([]);
 
-        return $this->queryYydTotalMonthStatisticalDataWithOptions($request, $headers, $runtime);
+        return $this->queryBlackboardStatisticalDataWithOptions($request, $headers, $runtime);
     }
 
     /**
-     * @param QueryYydTotalMonthStatisticalDataRequest $request
-     * @param QueryYydTotalMonthStatisticalDataHeaders $headers
-     * @param RuntimeOptions                           $runtime
+     * @param QueryBlackboardStatisticalDataRequest $request
+     * @param QueryBlackboardStatisticalDataHeaders $headers
+     * @param RuntimeOptions                        $runtime
      *
-     * @return QueryYydTotalMonthStatisticalDataResponse
+     * @return QueryBlackboardStatisticalDataResponse
      */
-    public function queryYydTotalMonthStatisticalDataWithOptions($request, $headers, $runtime)
+    public function queryBlackboardStatisticalDataWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
@@ -371,308 +371,14 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return QueryYydTotalMonthStatisticalDataResponse::fromMap($this->doROARequest('QueryYydTotalMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydTotalMonthDatas', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryYydDingMsgMonthStatisticalDataRequest $request
-     *
-     * @return QueryYydDingMsgMonthStatisticalDataResponse
-     */
-    public function queryYydDingMsgMonthStatisticalData($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryYydDingMsgMonthStatisticalDataHeaders([]);
-
-        return $this->queryYydDingMsgMonthStatisticalDataWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryYydDingMsgMonthStatisticalDataRequest $request
-     * @param QueryYydDingMsgMonthStatisticalDataHeaders $headers
-     * @param RuntimeOptions                             $runtime
-     *
-     * @return QueryYydDingMsgMonthStatisticalDataResponse
-     */
-    public function queryYydDingMsgMonthStatisticalDataWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->statDate)) {
-            @$query['statDate'] = $request->statDate;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryYydDingMsgMonthStatisticalDataResponse::fromMap($this->doROARequest('QueryYydDingMsgMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydDingMsgMonthDatas', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QuerySingleMessageStatisticalDataRequest $request
-     *
-     * @return QuerySingleMessageStatisticalDataResponse
-     */
-    public function querySingleMessageStatisticalData($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QuerySingleMessageStatisticalDataHeaders([]);
-
-        return $this->querySingleMessageStatisticalDataWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QuerySingleMessageStatisticalDataRequest $request
-     * @param QuerySingleMessageStatisticalDataHeaders $headers
-     * @param RuntimeOptions                           $runtime
-     *
-     * @return QuerySingleMessageStatisticalDataResponse
-     */
-    public function querySingleMessageStatisticalDataWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->statDate)) {
-            @$query['statDate'] = $request->statDate;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QuerySingleMessageStatisticalDataResponse::fromMap($this->doROARequest('QuerySingleMessageStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/singleMessagerData', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryYydMeetingMonthStatisticalDataRequest $request
-     *
-     * @return QueryYydMeetingMonthStatisticalDataResponse
-     */
-    public function queryYydMeetingMonthStatisticalData($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryYydMeetingMonthStatisticalDataHeaders([]);
-
-        return $this->queryYydMeetingMonthStatisticalDataWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryYydMeetingMonthStatisticalDataRequest $request
-     * @param QueryYydMeetingMonthStatisticalDataHeaders $headers
-     * @param RuntimeOptions                             $runtime
-     *
-     * @return QueryYydMeetingMonthStatisticalDataResponse
-     */
-    public function queryYydMeetingMonthStatisticalDataWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->statDate)) {
-            @$query['statDate'] = $request->statDate;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryYydMeetingMonthStatisticalDataResponse::fromMap($this->doROARequest('QueryYydMeetingMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydMeetingMonthDatas', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryTodoStatisticalDataRequest $request
-     *
-     * @return QueryTodoStatisticalDataResponse
-     */
-    public function queryTodoStatisticalData($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryTodoStatisticalDataHeaders([]);
-
-        return $this->queryTodoStatisticalDataWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryTodoStatisticalDataRequest $request
-     * @param QueryTodoStatisticalDataHeaders $headers
-     * @param RuntimeOptions                  $runtime
-     *
-     * @return QueryTodoStatisticalDataResponse
-     */
-    public function queryTodoStatisticalDataWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->statDate)) {
-            @$query['statDate'] = $request->statDate;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryTodoStatisticalDataResponse::fromMap($this->doROARequest('QueryTodoStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/todoUserData', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryYydActiveDayStatisticalDataRequest $request
-     *
-     * @return QueryYydActiveDayStatisticalDataResponse
-     */
-    public function queryYydActiveDayStatisticalData($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryYydActiveDayStatisticalDataHeaders([]);
-
-        return $this->queryYydActiveDayStatisticalDataWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryYydActiveDayStatisticalDataRequest $request
-     * @param QueryYydActiveDayStatisticalDataHeaders $headers
-     * @param RuntimeOptions                          $runtime
-     *
-     * @return QueryYydActiveDayStatisticalDataResponse
-     */
-    public function queryYydActiveDayStatisticalDataWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->statDate)) {
-            @$query['statDate'] = $request->statDate;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryYydActiveDayStatisticalDataResponse::fromMap($this->doROARequest('QueryYydActiveDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydActiveDayDatas', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryMailStatisticalDataRequest $request
-     *
-     * @return QueryMailStatisticalDataResponse
-     */
-    public function queryMailStatisticalData($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryMailStatisticalDataHeaders([]);
-
-        return $this->queryMailStatisticalDataWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryMailStatisticalDataRequest $request
-     * @param QueryMailStatisticalDataHeaders $headers
-     * @param RuntimeOptions                  $runtime
-     *
-     * @return QueryMailStatisticalDataResponse
-     */
-    public function queryMailStatisticalDataWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->statDate)) {
-            @$query['statDate'] = $request->statDate;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryMailStatisticalDataResponse::fromMap($this->doROARequest('QueryMailStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/mailData', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryYydActiveWeekStatisticalDataRequest $request
-     *
-     * @return QueryYydActiveWeekStatisticalDataResponse
-     */
-    public function queryYydActiveWeekStatisticalData($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryYydActiveWeekStatisticalDataHeaders([]);
-
-        return $this->queryYydActiveWeekStatisticalDataWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryYydActiveWeekStatisticalDataRequest $request
-     * @param QueryYydActiveWeekStatisticalDataHeaders $headers
-     * @param RuntimeOptions                           $runtime
-     *
-     * @return QueryYydActiveWeekStatisticalDataResponse
-     */
-    public function queryYydActiveWeekStatisticalDataWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->statDate)) {
-            @$query['statDate'] = $request->statDate;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryYydActiveWeekStatisticalDataResponse::fromMap($this->doROARequest('QueryYydActiveWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydActiveWeekDatas', 'json', $req, $runtime));
+        return QueryBlackboardStatisticalDataResponse::fromMap($this->doROARequest('QueryBlackboardStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/blackboardData', 'json', $req, $runtime));
     }
 
     /**
@@ -707,7 +413,7 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -718,26 +424,26 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydSingleMsgMonthStatisticalDataRequest $request
+     * @param QueryCheckinStatisticalDataRequest $request
      *
-     * @return QueryYydSingleMsgMonthStatisticalDataResponse
+     * @return QueryCheckinStatisticalDataResponse
      */
-    public function queryYydSingleMsgMonthStatisticalData($request)
+    public function queryCheckinStatisticalData($request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new QueryYydSingleMsgMonthStatisticalDataHeaders([]);
+        $headers = new QueryCheckinStatisticalDataHeaders([]);
 
-        return $this->queryYydSingleMsgMonthStatisticalDataWithOptions($request, $headers, $runtime);
+        return $this->queryCheckinStatisticalDataWithOptions($request, $headers, $runtime);
     }
 
     /**
-     * @param QueryYydSingleMsgMonthStatisticalDataRequest $request
-     * @param QueryYydSingleMsgMonthStatisticalDataHeaders $headers
-     * @param RuntimeOptions                               $runtime
+     * @param QueryCheckinStatisticalDataRequest $request
+     * @param QueryCheckinStatisticalDataHeaders $headers
+     * @param RuntimeOptions                     $runtime
      *
-     * @return QueryYydSingleMsgMonthStatisticalDataResponse
+     * @return QueryCheckinStatisticalDataResponse
      */
-    public function queryYydSingleMsgMonthStatisticalDataWithOptions($request, $headers, $runtime)
+    public function queryCheckinStatisticalDataWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
@@ -749,121 +455,37 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return QueryYydSingleMsgMonthStatisticalDataResponse::fromMap($this->doROARequest('QueryYydSingleMsgMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydSingleMsgMonthDatas', 'json', $req, $runtime));
+        return QueryCheckinStatisticalDataResponse::fromMap($this->doROARequest('QueryCheckinStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/checkinData', 'json', $req, $runtime));
     }
 
     /**
-     * @param QueryYydLogWeekStatisticalDataRequest $request
+     * @param QueryCircleStatisticalDataRequest $request
      *
-     * @return QueryYydLogWeekStatisticalDataResponse
+     * @return QueryCircleStatisticalDataResponse
      */
-    public function queryYydLogWeekStatisticalData($request)
+    public function queryCircleStatisticalData($request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new QueryYydLogWeekStatisticalDataHeaders([]);
+        $headers = new QueryCircleStatisticalDataHeaders([]);
 
-        return $this->queryYydLogWeekStatisticalDataWithOptions($request, $headers, $runtime);
+        return $this->queryCircleStatisticalDataWithOptions($request, $headers, $runtime);
     }
 
     /**
-     * @param QueryYydLogWeekStatisticalDataRequest $request
-     * @param QueryYydLogWeekStatisticalDataHeaders $headers
-     * @param RuntimeOptions                        $runtime
-     *
-     * @return QueryYydLogWeekStatisticalDataResponse
-     */
-    public function queryYydLogWeekStatisticalDataWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->statDate)) {
-            @$query['statDate'] = $request->statDate;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryYydLogWeekStatisticalDataResponse::fromMap($this->doROARequest('QueryYydLogWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydLogWeekDatas', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryYydAppStdStatisticalDataRequest $request
-     *
-     * @return QueryYydAppStdStatisticalDataResponse
-     */
-    public function queryYydAppStdStatisticalData($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryYydAppStdStatisticalDataHeaders([]);
-
-        return $this->queryYydAppStdStatisticalDataWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryYydAppStdStatisticalDataRequest $request
-     * @param QueryYydAppStdStatisticalDataHeaders $headers
-     * @param RuntimeOptions                       $runtime
-     *
-     * @return QueryYydAppStdStatisticalDataResponse
-     */
-    public function queryYydAppStdStatisticalDataWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->statDate)) {
-            @$query['statDate'] = $request->statDate;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryYydAppStdStatisticalDataResponse::fromMap($this->doROARequest('QueryYydAppStdStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydAppStdDatas', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryReportStatisticalDataRequest $request
-     *
-     * @return QueryReportStatisticalDataResponse
-     */
-    public function queryReportStatisticalData($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryReportStatisticalDataHeaders([]);
-
-        return $this->queryReportStatisticalDataWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryReportStatisticalDataRequest $request
-     * @param QueryReportStatisticalDataHeaders $headers
+     * @param QueryCircleStatisticalDataRequest $request
+     * @param QueryCircleStatisticalDataHeaders $headers
      * @param RuntimeOptions                    $runtime
      *
-     * @return QueryReportStatisticalDataResponse
+     * @return QueryCircleStatisticalDataResponse
      */
-    public function queryReportStatisticalDataWithOptions($request, $headers, $runtime)
+    public function queryCircleStatisticalDataWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
@@ -875,14 +497,14 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return QueryReportStatisticalDataResponse::fromMap($this->doROARequest('QueryReportStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/reportData', 'json', $req, $runtime));
+        return QueryCircleStatisticalDataResponse::fromMap($this->doROARequest('QueryCircleStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/circleData', 'json', $req, $runtime));
     }
 
     /**
@@ -923,7 +545,7 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -931,468 +553,6 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryCompanyBasicInfoResponse::fromMap($this->doROARequest('QueryCompanyBasicInfo', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/companies/basicInfo', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryYydCalendarMonthStatisticalDataRequest $request
-     *
-     * @return QueryYydCalendarMonthStatisticalDataResponse
-     */
-    public function queryYydCalendarMonthStatisticalData($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryYydCalendarMonthStatisticalDataHeaders([]);
-
-        return $this->queryYydCalendarMonthStatisticalDataWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryYydCalendarMonthStatisticalDataRequest $request
-     * @param QueryYydCalendarMonthStatisticalDataHeaders $headers
-     * @param RuntimeOptions                              $runtime
-     *
-     * @return QueryYydCalendarMonthStatisticalDataResponse
-     */
-    public function queryYydCalendarMonthStatisticalDataWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->statDate)) {
-            @$query['statDate'] = $request->statDate;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryYydCalendarMonthStatisticalDataResponse::fromMap($this->doROARequest('QueryYydCalendarMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydCalendarMonthDatas', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryYydTotalWeekStatisticalDataRequest $request
-     *
-     * @return QueryYydTotalWeekStatisticalDataResponse
-     */
-    public function queryYydTotalWeekStatisticalData($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryYydTotalWeekStatisticalDataHeaders([]);
-
-        return $this->queryYydTotalWeekStatisticalDataWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryYydTotalWeekStatisticalDataRequest $request
-     * @param QueryYydTotalWeekStatisticalDataHeaders $headers
-     * @param RuntimeOptions                          $runtime
-     *
-     * @return QueryYydTotalWeekStatisticalDataResponse
-     */
-    public function queryYydTotalWeekStatisticalDataWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->statDate)) {
-            @$query['statDate'] = $request->statDate;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryYydTotalWeekStatisticalDataResponse::fromMap($this->doROARequest('QueryYydTotalWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydTotalWeekDatas', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryYydCalendarDayStatisticalDataRequest $request
-     *
-     * @return QueryYydCalendarDayStatisticalDataResponse
-     */
-    public function queryYydCalendarDayStatisticalData($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryYydCalendarDayStatisticalDataHeaders([]);
-
-        return $this->queryYydCalendarDayStatisticalDataWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryYydCalendarDayStatisticalDataRequest $request
-     * @param QueryYydCalendarDayStatisticalDataHeaders $headers
-     * @param RuntimeOptions                            $runtime
-     *
-     * @return QueryYydCalendarDayStatisticalDataResponse
-     */
-    public function queryYydCalendarDayStatisticalDataWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->statDate)) {
-            @$query['statDate'] = $request->statDate;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryYydCalendarDayStatisticalDataResponse::fromMap($this->doROARequest('QueryYydCalendarDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydCalendarDayDatas', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryDriveStatisticalDataRequest $request
-     *
-     * @return QueryDriveStatisticalDataResponse
-     */
-    public function queryDriveStatisticalData($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryDriveStatisticalDataHeaders([]);
-
-        return $this->queryDriveStatisticalDataWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryDriveStatisticalDataRequest $request
-     * @param QueryDriveStatisticalDataHeaders $headers
-     * @param RuntimeOptions                   $runtime
-     *
-     * @return QueryDriveStatisticalDataResponse
-     */
-    public function queryDriveStatisticalDataWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->statDate)) {
-            @$query['statDate'] = $request->statDate;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryDriveStatisticalDataResponse::fromMap($this->doROARequest('QueryDriveStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/driveData', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryDingSendStatisticalDataRequest $request
-     *
-     * @return QueryDingSendStatisticalDataResponse
-     */
-    public function queryDingSendStatisticalData($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryDingSendStatisticalDataHeaders([]);
-
-        return $this->queryDingSendStatisticalDataWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryDingSendStatisticalDataRequest $request
-     * @param QueryDingSendStatisticalDataHeaders $headers
-     * @param RuntimeOptions                      $runtime
-     *
-     * @return QueryDingSendStatisticalDataResponse
-     */
-    public function queryDingSendStatisticalDataWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->statDate)) {
-            @$query['statDate'] = $request->statDate;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryDingSendStatisticalDataResponse::fromMap($this->doROARequest('QueryDingSendStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/dingSendData', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryYydLogMonthStatisticalDataRequest $request
-     *
-     * @return QueryYydLogMonthStatisticalDataResponse
-     */
-    public function queryYydLogMonthStatisticalData($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryYydLogMonthStatisticalDataHeaders([]);
-
-        return $this->queryYydLogMonthStatisticalDataWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryYydLogMonthStatisticalDataRequest $request
-     * @param QueryYydLogMonthStatisticalDataHeaders $headers
-     * @param RuntimeOptions                         $runtime
-     *
-     * @return QueryYydLogMonthStatisticalDataResponse
-     */
-    public function queryYydLogMonthStatisticalDataWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->statDate)) {
-            @$query['statDate'] = $request->statDate;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryYydLogMonthStatisticalDataResponse::fromMap($this->doROARequest('QueryYydLogMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydLogMonthDatas', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryYydSingleMsgWeekStatisticalDataRequest $request
-     *
-     * @return QueryYydSingleMsgWeekStatisticalDataResponse
-     */
-    public function queryYydSingleMsgWeekStatisticalData($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryYydSingleMsgWeekStatisticalDataHeaders([]);
-
-        return $this->queryYydSingleMsgWeekStatisticalDataWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryYydSingleMsgWeekStatisticalDataRequest $request
-     * @param QueryYydSingleMsgWeekStatisticalDataHeaders $headers
-     * @param RuntimeOptions                              $runtime
-     *
-     * @return QueryYydSingleMsgWeekStatisticalDataResponse
-     */
-    public function queryYydSingleMsgWeekStatisticalDataWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->statDate)) {
-            @$query['statDate'] = $request->statDate;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryYydSingleMsgWeekStatisticalDataResponse::fromMap($this->doROARequest('QueryYydSingleMsgWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydSingleMsgWeekDatas', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryYydToatlMsgMonthStatisticalDataRequest $request
-     *
-     * @return QueryYydToatlMsgMonthStatisticalDataResponse
-     */
-    public function queryYydToatlMsgMonthStatisticalData($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryYydToatlMsgMonthStatisticalDataHeaders([]);
-
-        return $this->queryYydToatlMsgMonthStatisticalDataWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryYydToatlMsgMonthStatisticalDataRequest $request
-     * @param QueryYydToatlMsgMonthStatisticalDataHeaders $headers
-     * @param RuntimeOptions                              $runtime
-     *
-     * @return QueryYydToatlMsgMonthStatisticalDataResponse
-     */
-    public function queryYydToatlMsgMonthStatisticalDataWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->statDate)) {
-            @$query['statDate'] = $request->statDate;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryYydToatlMsgMonthStatisticalDataResponse::fromMap($this->doROARequest('QueryYydToatlMsgMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydToatlMsgMonthDatas', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryYydTodoMonthStatisticalDataRequest $request
-     *
-     * @return QueryYydTodoMonthStatisticalDataResponse
-     */
-    public function queryYydTodoMonthStatisticalData($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryYydTodoMonthStatisticalDataHeaders([]);
-
-        return $this->queryYydTodoMonthStatisticalDataWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryYydTodoMonthStatisticalDataRequest $request
-     * @param QueryYydTodoMonthStatisticalDataHeaders $headers
-     * @param RuntimeOptions                          $runtime
-     *
-     * @return QueryYydTodoMonthStatisticalDataResponse
-     */
-    public function queryYydTodoMonthStatisticalDataWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->statDate)) {
-            @$query['statDate'] = $request->statDate;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryYydTodoMonthStatisticalDataResponse::fromMap($this->doROARequest('QueryYydTodoMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydTodoMonthDatas', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryYydTotalDayStatisticalDataRequest $request
-     *
-     * @return QueryYydTotalDayStatisticalDataResponse
-     */
-    public function queryYydTotalDayStatisticalData($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryYydTotalDayStatisticalDataHeaders([]);
-
-        return $this->queryYydTotalDayStatisticalDataWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryYydTotalDayStatisticalDataRequest $request
-     * @param QueryYydTotalDayStatisticalDataHeaders $headers
-     * @param RuntimeOptions                         $runtime
-     *
-     * @return QueryYydTotalDayStatisticalDataResponse
-     */
-    public function queryYydTotalDayStatisticalDataWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->statDate)) {
-            @$query['statDate'] = $request->statDate;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryYydTotalDayStatisticalDataResponse::fromMap($this->doROARequest('QueryYydTotalDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydTotalDayDatas', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryYydLogDayStatisticalDataRequest $request
-     *
-     * @return QueryYydLogDayStatisticalDataResponse
-     */
-    public function queryYydLogDayStatisticalData($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryYydLogDayStatisticalDataHeaders([]);
-
-        return $this->queryYydLogDayStatisticalDataWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryYydLogDayStatisticalDataRequest $request
-     * @param QueryYydLogDayStatisticalDataHeaders $headers
-     * @param RuntimeOptions                       $runtime
-     *
-     * @return QueryYydLogDayStatisticalDataResponse
-     */
-    public function queryYydLogDayStatisticalDataWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->statDate)) {
-            @$query['statDate'] = $request->statDate;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryYydLogDayStatisticalDataResponse::fromMap($this->doROARequest('QueryYydLogDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydLogDayDatas', 'json', $req, $runtime));
     }
 
     /**
@@ -1419,21 +579,18 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->kpiGroupId)) {
-            @$body['kpiGroupId'] = $request->kpiGroupId;
+        if (!Utils::isUnset($request->corpIds)) {
+            @$body['corpIds'] = $request->corpIds;
         }
         if (!Utils::isUnset($request->statDates)) {
             @$body['statDates'] = $request->statDates;
-        }
-        if (!Utils::isUnset($request->corpIds)) {
-            @$body['corpIds'] = $request->corpIds;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -1475,7 +632,7 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -1486,26 +643,26 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydNoticeDayStatisticalDataRequest $request
+     * @param QueryDingSendStatisticalDataRequest $request
      *
-     * @return QueryYydNoticeDayStatisticalDataResponse
+     * @return QueryDingSendStatisticalDataResponse
      */
-    public function queryYydNoticeDayStatisticalData($request)
+    public function queryDingSendStatisticalData($request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new QueryYydNoticeDayStatisticalDataHeaders([]);
+        $headers = new QueryDingSendStatisticalDataHeaders([]);
 
-        return $this->queryYydNoticeDayStatisticalDataWithOptions($request, $headers, $runtime);
+        return $this->queryDingSendStatisticalDataWithOptions($request, $headers, $runtime);
     }
 
     /**
-     * @param QueryYydNoticeDayStatisticalDataRequest $request
-     * @param QueryYydNoticeDayStatisticalDataHeaders $headers
-     * @param RuntimeOptions                          $runtime
+     * @param QueryDingSendStatisticalDataRequest $request
+     * @param QueryDingSendStatisticalDataHeaders $headers
+     * @param RuntimeOptions                      $runtime
      *
-     * @return QueryYydNoticeDayStatisticalDataResponse
+     * @return QueryDingSendStatisticalDataResponse
      */
-    public function queryYydNoticeDayStatisticalDataWithOptions($request, $headers, $runtime)
+    public function queryDingSendStatisticalDataWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
@@ -1517,644 +674,14 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return QueryYydNoticeDayStatisticalDataResponse::fromMap($this->doROARequest('QueryYydNoticeDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydNoticeDayDatas', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryCircleStatisticalDataRequest $request
-     *
-     * @return QueryCircleStatisticalDataResponse
-     */
-    public function queryCircleStatisticalData($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryCircleStatisticalDataHeaders([]);
-
-        return $this->queryCircleStatisticalDataWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryCircleStatisticalDataRequest $request
-     * @param QueryCircleStatisticalDataHeaders $headers
-     * @param RuntimeOptions                    $runtime
-     *
-     * @return QueryCircleStatisticalDataResponse
-     */
-    public function queryCircleStatisticalDataWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->statDate)) {
-            @$query['statDate'] = $request->statDate;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryCircleStatisticalDataResponse::fromMap($this->doROARequest('QueryCircleStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/circleData', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryYydCalendarWeekStatisticalDataRequest $request
-     *
-     * @return QueryYydCalendarWeekStatisticalDataResponse
-     */
-    public function queryYydCalendarWeekStatisticalData($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryYydCalendarWeekStatisticalDataHeaders([]);
-
-        return $this->queryYydCalendarWeekStatisticalDataWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryYydCalendarWeekStatisticalDataRequest $request
-     * @param QueryYydCalendarWeekStatisticalDataHeaders $headers
-     * @param RuntimeOptions                             $runtime
-     *
-     * @return QueryYydCalendarWeekStatisticalDataResponse
-     */
-    public function queryYydCalendarWeekStatisticalDataWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->statDate)) {
-            @$query['statDate'] = $request->statDate;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryYydCalendarWeekStatisticalDataResponse::fromMap($this->doROARequest('QueryYydCalendarWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydCalendarWeekDatas', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryYydNoticeMonthStatisticalDataRequest $request
-     *
-     * @return QueryYydNoticeMonthStatisticalDataResponse
-     */
-    public function queryYydNoticeMonthStatisticalData($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryYydNoticeMonthStatisticalDataHeaders([]);
-
-        return $this->queryYydNoticeMonthStatisticalDataWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryYydNoticeMonthStatisticalDataRequest $request
-     * @param QueryYydNoticeMonthStatisticalDataHeaders $headers
-     * @param RuntimeOptions                            $runtime
-     *
-     * @return QueryYydNoticeMonthStatisticalDataResponse
-     */
-    public function queryYydNoticeMonthStatisticalDataWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->statDate)) {
-            @$query['statDate'] = $request->statDate;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryYydNoticeMonthStatisticalDataResponse::fromMap($this->doROARequest('QueryYydNoticeMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydNoticeMonthDatas', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryYydToatlMsgDayStatisticalDataRequest $request
-     *
-     * @return QueryYydToatlMsgDayStatisticalDataResponse
-     */
-    public function queryYydToatlMsgDayStatisticalData($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryYydToatlMsgDayStatisticalDataHeaders([]);
-
-        return $this->queryYydToatlMsgDayStatisticalDataWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryYydToatlMsgDayStatisticalDataRequest $request
-     * @param QueryYydToatlMsgDayStatisticalDataHeaders $headers
-     * @param RuntimeOptions                            $runtime
-     *
-     * @return QueryYydToatlMsgDayStatisticalDataResponse
-     */
-    public function queryYydToatlMsgDayStatisticalDataWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->statDate)) {
-            @$query['statDate'] = $request->statDate;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryYydToatlMsgDayStatisticalDataResponse::fromMap($this->doROARequest('QueryYydToatlMsgDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydToatlMsgDayDatas', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryTelMeetingStatisticalDataRequest $request
-     *
-     * @return QueryTelMeetingStatisticalDataResponse
-     */
-    public function queryTelMeetingStatisticalData($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryTelMeetingStatisticalDataHeaders([]);
-
-        return $this->queryTelMeetingStatisticalDataWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryTelMeetingStatisticalDataRequest $request
-     * @param QueryTelMeetingStatisticalDataHeaders $headers
-     * @param RuntimeOptions                        $runtime
-     *
-     * @return QueryTelMeetingStatisticalDataResponse
-     */
-    public function queryTelMeetingStatisticalDataWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->statDate)) {
-            @$query['statDate'] = $request->statDate;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryTelMeetingStatisticalDataResponse::fromMap($this->doROARequest('QueryTelMeetingStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/telMeetingData', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryYydGroupMsgMonthStatisticalDataRequest $request
-     *
-     * @return QueryYydGroupMsgMonthStatisticalDataResponse
-     */
-    public function queryYydGroupMsgMonthStatisticalData($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryYydGroupMsgMonthStatisticalDataHeaders([]);
-
-        return $this->queryYydGroupMsgMonthStatisticalDataWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryYydGroupMsgMonthStatisticalDataRequest $request
-     * @param QueryYydGroupMsgMonthStatisticalDataHeaders $headers
-     * @param RuntimeOptions                              $runtime
-     *
-     * @return QueryYydGroupMsgMonthStatisticalDataResponse
-     */
-    public function queryYydGroupMsgMonthStatisticalDataWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->statDate)) {
-            @$query['statDate'] = $request->statDate;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryYydGroupMsgMonthStatisticalDataResponse::fromMap($this->doROARequest('QueryYydGroupMsgMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydGroupMsgMonthDatas', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryYydAppMonthStatisticalDataRequest $request
-     *
-     * @return QueryYydAppMonthStatisticalDataResponse
-     */
-    public function queryYydAppMonthStatisticalData($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryYydAppMonthStatisticalDataHeaders([]);
-
-        return $this->queryYydAppMonthStatisticalDataWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryYydAppMonthStatisticalDataRequest $request
-     * @param QueryYydAppMonthStatisticalDataHeaders $headers
-     * @param RuntimeOptions                         $runtime
-     *
-     * @return QueryYydAppMonthStatisticalDataResponse
-     */
-    public function queryYydAppMonthStatisticalDataWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->statDate)) {
-            @$query['statDate'] = $request->statDate;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryYydAppMonthStatisticalDataResponse::fromMap($this->doROARequest('QueryYydAppMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydAppMonthDatas', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryYydTodoWeekStatisticalDataRequest $request
-     *
-     * @return QueryYydTodoWeekStatisticalDataResponse
-     */
-    public function queryYydTodoWeekStatisticalData($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryYydTodoWeekStatisticalDataHeaders([]);
-
-        return $this->queryYydTodoWeekStatisticalDataWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryYydTodoWeekStatisticalDataRequest $request
-     * @param QueryYydTodoWeekStatisticalDataHeaders $headers
-     * @param RuntimeOptions                         $runtime
-     *
-     * @return QueryYydTodoWeekStatisticalDataResponse
-     */
-    public function queryYydTodoWeekStatisticalDataWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->statDate)) {
-            @$query['statDate'] = $request->statDate;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryYydTodoWeekStatisticalDataResponse::fromMap($this->doROARequest('QueryYydTodoWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydTodoWeekDatas', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryVedioMeetingStatisticalDataRequest $request
-     *
-     * @return QueryVedioMeetingStatisticalDataResponse
-     */
-    public function queryVedioMeetingStatisticalData($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryVedioMeetingStatisticalDataHeaders([]);
-
-        return $this->queryVedioMeetingStatisticalDataWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryVedioMeetingStatisticalDataRequest $request
-     * @param QueryVedioMeetingStatisticalDataHeaders $headers
-     * @param RuntimeOptions                          $runtime
-     *
-     * @return QueryVedioMeetingStatisticalDataResponse
-     */
-    public function queryVedioMeetingStatisticalDataWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->statDate)) {
-            @$query['statDate'] = $request->statDate;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryVedioMeetingStatisticalDataResponse::fromMap($this->doROARequest('QueryVedioMeetingStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/vedioMeetingData', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryYydActiveMonthStatisticalDataRequest $request
-     *
-     * @return QueryYydActiveMonthStatisticalDataResponse
-     */
-    public function queryYydActiveMonthStatisticalData($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryYydActiveMonthStatisticalDataHeaders([]);
-
-        return $this->queryYydActiveMonthStatisticalDataWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryYydActiveMonthStatisticalDataRequest $request
-     * @param QueryYydActiveMonthStatisticalDataHeaders $headers
-     * @param RuntimeOptions                            $runtime
-     *
-     * @return QueryYydActiveMonthStatisticalDataResponse
-     */
-    public function queryYydActiveMonthStatisticalDataWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->statDate)) {
-            @$query['statDate'] = $request->statDate;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryYydActiveMonthStatisticalDataResponse::fromMap($this->doROARequest('QueryYydActiveMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydActiveMonthDatas', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryYydDingMsgWeekStatisticalDataRequest $request
-     *
-     * @return QueryYydDingMsgWeekStatisticalDataResponse
-     */
-    public function queryYydDingMsgWeekStatisticalData($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryYydDingMsgWeekStatisticalDataHeaders([]);
-
-        return $this->queryYydDingMsgWeekStatisticalDataWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryYydDingMsgWeekStatisticalDataRequest $request
-     * @param QueryYydDingMsgWeekStatisticalDataHeaders $headers
-     * @param RuntimeOptions                            $runtime
-     *
-     * @return QueryYydDingMsgWeekStatisticalDataResponse
-     */
-    public function queryYydDingMsgWeekStatisticalDataWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->statDate)) {
-            @$query['statDate'] = $request->statDate;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryYydDingMsgWeekStatisticalDataResponse::fromMap($this->doROARequest('QueryYydDingMsgWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydDingMsgWeekDatas', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryYydTodoDayStatisticalDataRequest $request
-     *
-     * @return QueryYydTodoDayStatisticalDataResponse
-     */
-    public function queryYydTodoDayStatisticalData($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryYydTodoDayStatisticalDataHeaders([]);
-
-        return $this->queryYydTodoDayStatisticalDataWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryYydTodoDayStatisticalDataRequest $request
-     * @param QueryYydTodoDayStatisticalDataHeaders $headers
-     * @param RuntimeOptions                        $runtime
-     *
-     * @return QueryYydTodoDayStatisticalDataResponse
-     */
-    public function queryYydTodoDayStatisticalDataWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->statDate)) {
-            @$query['statDate'] = $request->statDate;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryYydTodoDayStatisticalDataResponse::fromMap($this->doROARequest('QueryYydTodoDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydTodoDayDatas', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryCheckinStatisticalDataRequest $request
-     *
-     * @return QueryCheckinStatisticalDataResponse
-     */
-    public function queryCheckinStatisticalData($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryCheckinStatisticalDataHeaders([]);
-
-        return $this->queryCheckinStatisticalDataWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryCheckinStatisticalDataRequest $request
-     * @param QueryCheckinStatisticalDataHeaders $headers
-     * @param RuntimeOptions                     $runtime
-     *
-     * @return QueryCheckinStatisticalDataResponse
-     */
-    public function queryCheckinStatisticalDataWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->statDate)) {
-            @$query['statDate'] = $request->statDate;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryCheckinStatisticalDataResponse::fromMap($this->doROARequest('QueryCheckinStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/checkinData', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryYydToatlMsgWeekStatisticalDataRequest $request
-     *
-     * @return QueryYydToatlMsgWeekStatisticalDataResponse
-     */
-    public function queryYydToatlMsgWeekStatisticalData($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryYydToatlMsgWeekStatisticalDataHeaders([]);
-
-        return $this->queryYydToatlMsgWeekStatisticalDataWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryYydToatlMsgWeekStatisticalDataRequest $request
-     * @param QueryYydToatlMsgWeekStatisticalDataHeaders $headers
-     * @param RuntimeOptions                             $runtime
-     *
-     * @return QueryYydToatlMsgWeekStatisticalDataResponse
-     */
-    public function queryYydToatlMsgWeekStatisticalDataWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->statDate)) {
-            @$query['statDate'] = $request->statDate;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryYydToatlMsgWeekStatisticalDataResponse::fromMap($this->doROARequest('QueryYydToatlMsgWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydToatlMsgWeekDatas', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryEmployeeTypeStatisticalDataRequest $request
-     *
-     * @return QueryEmployeeTypeStatisticalDataResponse
-     */
-    public function queryEmployeeTypeStatisticalData($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryEmployeeTypeStatisticalDataHeaders([]);
-
-        return $this->queryEmployeeTypeStatisticalDataWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryEmployeeTypeStatisticalDataRequest $request
-     * @param QueryEmployeeTypeStatisticalDataHeaders $headers
-     * @param RuntimeOptions                          $runtime
-     *
-     * @return QueryEmployeeTypeStatisticalDataResponse
-     */
-    public function queryEmployeeTypeStatisticalDataWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->statDate)) {
-            @$query['statDate'] = $request->statDate;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryEmployeeTypeStatisticalDataResponse::fromMap($this->doROARequest('QueryEmployeeTypeStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/employeeTypeData', 'json', $req, $runtime));
+        return QueryDingSendStatisticalDataResponse::fromMap($this->doROARequest('QueryDingSendStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/dingSendData', 'json', $req, $runtime));
     }
 
     /**
@@ -2189,7 +716,7 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -2200,26 +727,26 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydDingMsgDayStatisticalDataRequest $request
+     * @param QueryDriveStatisticalDataRequest $request
      *
-     * @return QueryYydDingMsgDayStatisticalDataResponse
+     * @return QueryDriveStatisticalDataResponse
      */
-    public function queryYydDingMsgDayStatisticalData($request)
+    public function queryDriveStatisticalData($request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new QueryYydDingMsgDayStatisticalDataHeaders([]);
+        $headers = new QueryDriveStatisticalDataHeaders([]);
 
-        return $this->queryYydDingMsgDayStatisticalDataWithOptions($request, $headers, $runtime);
+        return $this->queryDriveStatisticalDataWithOptions($request, $headers, $runtime);
     }
 
     /**
-     * @param QueryYydDingMsgDayStatisticalDataRequest $request
-     * @param QueryYydDingMsgDayStatisticalDataHeaders $headers
-     * @param RuntimeOptions                           $runtime
+     * @param QueryDriveStatisticalDataRequest $request
+     * @param QueryDriveStatisticalDataHeaders $headers
+     * @param RuntimeOptions                   $runtime
      *
-     * @return QueryYydDingMsgDayStatisticalDataResponse
+     * @return QueryDriveStatisticalDataResponse
      */
-    public function queryYydDingMsgDayStatisticalDataWithOptions($request, $headers, $runtime)
+    public function queryDriveStatisticalDataWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
@@ -2231,37 +758,37 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return QueryYydDingMsgDayStatisticalDataResponse::fromMap($this->doROARequest('QueryYydDingMsgDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydDingMsgDayDatas', 'json', $req, $runtime));
+        return QueryDriveStatisticalDataResponse::fromMap($this->doROARequest('QueryDriveStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/driveData', 'json', $req, $runtime));
     }
 
     /**
-     * @param QueryOnlineUserStatisticalDataRequest $request
+     * @param QueryEmployeeTypeStatisticalDataRequest $request
      *
-     * @return QueryOnlineUserStatisticalDataResponse
+     * @return QueryEmployeeTypeStatisticalDataResponse
      */
-    public function queryOnlineUserStatisticalData($request)
+    public function queryEmployeeTypeStatisticalData($request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new QueryOnlineUserStatisticalDataHeaders([]);
+        $headers = new QueryEmployeeTypeStatisticalDataHeaders([]);
 
-        return $this->queryOnlineUserStatisticalDataWithOptions($request, $headers, $runtime);
+        return $this->queryEmployeeTypeStatisticalDataWithOptions($request, $headers, $runtime);
     }
 
     /**
-     * @param QueryOnlineUserStatisticalDataRequest $request
-     * @param QueryOnlineUserStatisticalDataHeaders $headers
-     * @param RuntimeOptions                        $runtime
+     * @param QueryEmployeeTypeStatisticalDataRequest $request
+     * @param QueryEmployeeTypeStatisticalDataHeaders $headers
+     * @param RuntimeOptions                          $runtime
      *
-     * @return QueryOnlineUserStatisticalDataResponse
+     * @return QueryEmployeeTypeStatisticalDataResponse
      */
-    public function queryOnlineUserStatisticalDataWithOptions($request, $headers, $runtime)
+    public function queryEmployeeTypeStatisticalDataWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
@@ -2273,224 +800,14 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return QueryOnlineUserStatisticalDataResponse::fromMap($this->doROARequest('QueryOnlineUserStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/onlineUserData', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryApprovalStatisticalDataRequest $request
-     *
-     * @return QueryApprovalStatisticalDataResponse
-     */
-    public function queryApprovalStatisticalData($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryApprovalStatisticalDataHeaders([]);
-
-        return $this->queryApprovalStatisticalDataWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryApprovalStatisticalDataRequest $request
-     * @param QueryApprovalStatisticalDataHeaders $headers
-     * @param RuntimeOptions                      $runtime
-     *
-     * @return QueryApprovalStatisticalDataResponse
-     */
-    public function queryApprovalStatisticalDataWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->statDate)) {
-            @$query['statDate'] = $request->statDate;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryApprovalStatisticalDataResponse::fromMap($this->doROARequest('QueryApprovalStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/approvalData', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryYydGroupMsgWeekStatisticalDataRequest $request
-     *
-     * @return QueryYydGroupMsgWeekStatisticalDataResponse
-     */
-    public function queryYydGroupMsgWeekStatisticalData($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryYydGroupMsgWeekStatisticalDataHeaders([]);
-
-        return $this->queryYydGroupMsgWeekStatisticalDataWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryYydGroupMsgWeekStatisticalDataRequest $request
-     * @param QueryYydGroupMsgWeekStatisticalDataHeaders $headers
-     * @param RuntimeOptions                             $runtime
-     *
-     * @return QueryYydGroupMsgWeekStatisticalDataResponse
-     */
-    public function queryYydGroupMsgWeekStatisticalDataWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->statDate)) {
-            @$query['statDate'] = $request->statDate;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryYydGroupMsgWeekStatisticalDataResponse::fromMap($this->doROARequest('QueryYydGroupMsgWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydGroupMsgWeekDatas', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryYydAppWeekStatisticalDataRequest $request
-     *
-     * @return QueryYydAppWeekStatisticalDataResponse
-     */
-    public function queryYydAppWeekStatisticalData($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryYydAppWeekStatisticalDataHeaders([]);
-
-        return $this->queryYydAppWeekStatisticalDataWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryYydAppWeekStatisticalDataRequest $request
-     * @param QueryYydAppWeekStatisticalDataHeaders $headers
-     * @param RuntimeOptions                        $runtime
-     *
-     * @return QueryYydAppWeekStatisticalDataResponse
-     */
-    public function queryYydAppWeekStatisticalDataWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->statDate)) {
-            @$query['statDate'] = $request->statDate;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryYydAppWeekStatisticalDataResponse::fromMap($this->doROARequest('QueryYydAppWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydAppWeekDatas', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryActiveUserStatisticalDataRequest $request
-     *
-     * @return QueryActiveUserStatisticalDataResponse
-     */
-    public function queryActiveUserStatisticalData($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryActiveUserStatisticalDataHeaders([]);
-
-        return $this->queryActiveUserStatisticalDataWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryActiveUserStatisticalDataRequest $request
-     * @param QueryActiveUserStatisticalDataHeaders $headers
-     * @param RuntimeOptions                        $runtime
-     *
-     * @return QueryActiveUserStatisticalDataResponse
-     */
-    public function queryActiveUserStatisticalDataWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->statDate)) {
-            @$query['statDate'] = $request->statDate;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryActiveUserStatisticalDataResponse::fromMap($this->doROARequest('QueryActiveUserStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/activeUserData', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryYydSingleMsgDayStatisticalDataRequest $request
-     *
-     * @return QueryYydSingleMsgDayStatisticalDataResponse
-     */
-    public function queryYydSingleMsgDayStatisticalData($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryYydSingleMsgDayStatisticalDataHeaders([]);
-
-        return $this->queryYydSingleMsgDayStatisticalDataWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryYydSingleMsgDayStatisticalDataRequest $request
-     * @param QueryYydSingleMsgDayStatisticalDataHeaders $headers
-     * @param RuntimeOptions                             $runtime
-     *
-     * @return QueryYydSingleMsgDayStatisticalDataResponse
-     */
-    public function queryYydSingleMsgDayStatisticalDataWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->statDate)) {
-            @$query['statDate'] = $request->statDate;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryYydSingleMsgDayStatisticalDataResponse::fromMap($this->doROARequest('QueryYydSingleMsgDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydSingleMsgDayDatas', 'json', $req, $runtime));
+        return QueryEmployeeTypeStatisticalDataResponse::fromMap($this->doROARequest('QueryEmployeeTypeStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/employeeTypeData', 'json', $req, $runtime));
     }
 
     /**
@@ -2525,7 +842,7 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -2536,26 +853,26 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydGroupMsgDayStatisticalDataRequest $request
+     * @param QueryGroupMessageStatisticalDataRequest $request
      *
-     * @return QueryYydGroupMsgDayStatisticalDataResponse
+     * @return QueryGroupMessageStatisticalDataResponse
      */
-    public function queryYydGroupMsgDayStatisticalData($request)
+    public function queryGroupMessageStatisticalData($request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new QueryYydGroupMsgDayStatisticalDataHeaders([]);
+        $headers = new QueryGroupMessageStatisticalDataHeaders([]);
 
-        return $this->queryYydGroupMsgDayStatisticalDataWithOptions($request, $headers, $runtime);
+        return $this->queryGroupMessageStatisticalDataWithOptions($request, $headers, $runtime);
     }
 
     /**
-     * @param QueryYydGroupMsgDayStatisticalDataRequest $request
-     * @param QueryYydGroupMsgDayStatisticalDataHeaders $headers
-     * @param RuntimeOptions                            $runtime
+     * @param QueryGroupMessageStatisticalDataRequest $request
+     * @param QueryGroupMessageStatisticalDataHeaders $headers
+     * @param RuntimeOptions                          $runtime
      *
-     * @return QueryYydGroupMsgDayStatisticalDataResponse
+     * @return QueryGroupMessageStatisticalDataResponse
      */
-    public function queryYydGroupMsgDayStatisticalDataWithOptions($request, $headers, $runtime)
+    public function queryGroupMessageStatisticalDataWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
@@ -2567,37 +884,121 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return QueryYydGroupMsgDayStatisticalDataResponse::fromMap($this->doROARequest('QueryYydGroupMsgDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydGroupMsgDayDatas', 'json', $req, $runtime));
+        return QueryGroupMessageStatisticalDataResponse::fromMap($this->doROARequest('QueryGroupMessageStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/groupMessageData', 'json', $req, $runtime));
     }
 
     /**
-     * @param QueryAttendanceStatisticalDataRequest $request
+     * @param QueryHealthStatisticalDataRequest $request
      *
-     * @return QueryAttendanceStatisticalDataResponse
+     * @return QueryHealthStatisticalDataResponse
      */
-    public function queryAttendanceStatisticalData($request)
+    public function queryHealthStatisticalData($request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new QueryAttendanceStatisticalDataHeaders([]);
+        $headers = new QueryHealthStatisticalDataHeaders([]);
 
-        return $this->queryAttendanceStatisticalDataWithOptions($request, $headers, $runtime);
+        return $this->queryHealthStatisticalDataWithOptions($request, $headers, $runtime);
     }
 
     /**
-     * @param QueryAttendanceStatisticalDataRequest $request
-     * @param QueryAttendanceStatisticalDataHeaders $headers
+     * @param QueryHealthStatisticalDataRequest $request
+     * @param QueryHealthStatisticalDataHeaders $headers
+     * @param RuntimeOptions                    $runtime
+     *
+     * @return QueryHealthStatisticalDataResponse
+     */
+    public function queryHealthStatisticalDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->statDate)) {
+            @$query['statDate'] = $request->statDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryHealthStatisticalDataResponse::fromMap($this->doROARequest('QueryHealthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/healtheUserData', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryMailStatisticalDataRequest $request
+     *
+     * @return QueryMailStatisticalDataResponse
+     */
+    public function queryMailStatisticalData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryMailStatisticalDataHeaders([]);
+
+        return $this->queryMailStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryMailStatisticalDataRequest $request
+     * @param QueryMailStatisticalDataHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return QueryMailStatisticalDataResponse
+     */
+    public function queryMailStatisticalDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->statDate)) {
+            @$query['statDate'] = $request->statDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryMailStatisticalDataResponse::fromMap($this->doROARequest('QueryMailStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/mailData', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryOnlineUserStatisticalDataRequest $request
+     *
+     * @return QueryOnlineUserStatisticalDataResponse
+     */
+    public function queryOnlineUserStatisticalData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryOnlineUserStatisticalDataHeaders([]);
+
+        return $this->queryOnlineUserStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryOnlineUserStatisticalDataRequest $request
+     * @param QueryOnlineUserStatisticalDataHeaders $headers
      * @param RuntimeOptions                        $runtime
      *
-     * @return QueryAttendanceStatisticalDataResponse
+     * @return QueryOnlineUserStatisticalDataResponse
      */
-    public function queryAttendanceStatisticalDataWithOptions($request, $headers, $runtime)
+    public function queryOnlineUserStatisticalDataWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
@@ -2609,14 +1010,14 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return QueryAttendanceStatisticalDataResponse::fromMap($this->doROARequest('QueryAttendanceStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/attendanceData', 'json', $req, $runtime));
+        return QueryOnlineUserStatisticalDataResponse::fromMap($this->doROARequest('QueryOnlineUserStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/onlineUserData', 'json', $req, $runtime));
     }
 
     /**
@@ -2651,7 +1052,7 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -2693,7 +1094,7 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -2704,26 +1105,26 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydNoticeWeekStatisticalDataRequest $request
+     * @param QueryReportStatisticalDataRequest $request
      *
-     * @return QueryYydNoticeWeekStatisticalDataResponse
+     * @return QueryReportStatisticalDataResponse
      */
-    public function queryYydNoticeWeekStatisticalData($request)
+    public function queryReportStatisticalData($request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new QueryYydNoticeWeekStatisticalDataHeaders([]);
+        $headers = new QueryReportStatisticalDataHeaders([]);
 
-        return $this->queryYydNoticeWeekStatisticalDataWithOptions($request, $headers, $runtime);
+        return $this->queryReportStatisticalDataWithOptions($request, $headers, $runtime);
     }
 
     /**
-     * @param QueryYydNoticeWeekStatisticalDataRequest $request
-     * @param QueryYydNoticeWeekStatisticalDataHeaders $headers
-     * @param RuntimeOptions                           $runtime
+     * @param QueryReportStatisticalDataRequest $request
+     * @param QueryReportStatisticalDataHeaders $headers
+     * @param RuntimeOptions                    $runtime
      *
-     * @return QueryYydNoticeWeekStatisticalDataResponse
+     * @return QueryReportStatisticalDataResponse
      */
-    public function queryYydNoticeWeekStatisticalDataWithOptions($request, $headers, $runtime)
+    public function queryReportStatisticalDataWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
@@ -2735,14 +1136,980 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return QueryYydNoticeWeekStatisticalDataResponse::fromMap($this->doROARequest('QueryYydNoticeWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydNoticeWeekDatas', 'json', $req, $runtime));
+        return QueryReportStatisticalDataResponse::fromMap($this->doROARequest('QueryReportStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/reportData', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QuerySingleMessageStatisticalDataRequest $request
+     *
+     * @return QuerySingleMessageStatisticalDataResponse
+     */
+    public function querySingleMessageStatisticalData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QuerySingleMessageStatisticalDataHeaders([]);
+
+        return $this->querySingleMessageStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QuerySingleMessageStatisticalDataRequest $request
+     * @param QuerySingleMessageStatisticalDataHeaders $headers
+     * @param RuntimeOptions                           $runtime
+     *
+     * @return QuerySingleMessageStatisticalDataResponse
+     */
+    public function querySingleMessageStatisticalDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->statDate)) {
+            @$query['statDate'] = $request->statDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QuerySingleMessageStatisticalDataResponse::fromMap($this->doROARequest('QuerySingleMessageStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/singleMessagerData', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryTelMeetingStatisticalDataRequest $request
+     *
+     * @return QueryTelMeetingStatisticalDataResponse
+     */
+    public function queryTelMeetingStatisticalData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryTelMeetingStatisticalDataHeaders([]);
+
+        return $this->queryTelMeetingStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryTelMeetingStatisticalDataRequest $request
+     * @param QueryTelMeetingStatisticalDataHeaders $headers
+     * @param RuntimeOptions                        $runtime
+     *
+     * @return QueryTelMeetingStatisticalDataResponse
+     */
+    public function queryTelMeetingStatisticalDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->statDate)) {
+            @$query['statDate'] = $request->statDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryTelMeetingStatisticalDataResponse::fromMap($this->doROARequest('QueryTelMeetingStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/telMeetingData', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryTodoStatisticalDataRequest $request
+     *
+     * @return QueryTodoStatisticalDataResponse
+     */
+    public function queryTodoStatisticalData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryTodoStatisticalDataHeaders([]);
+
+        return $this->queryTodoStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryTodoStatisticalDataRequest $request
+     * @param QueryTodoStatisticalDataHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return QueryTodoStatisticalDataResponse
+     */
+    public function queryTodoStatisticalDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->statDate)) {
+            @$query['statDate'] = $request->statDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryTodoStatisticalDataResponse::fromMap($this->doROARequest('QueryTodoStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/todoUserData', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryVedioMeetingStatisticalDataRequest $request
+     *
+     * @return QueryVedioMeetingStatisticalDataResponse
+     */
+    public function queryVedioMeetingStatisticalData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryVedioMeetingStatisticalDataHeaders([]);
+
+        return $this->queryVedioMeetingStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryVedioMeetingStatisticalDataRequest $request
+     * @param QueryVedioMeetingStatisticalDataHeaders $headers
+     * @param RuntimeOptions                          $runtime
+     *
+     * @return QueryVedioMeetingStatisticalDataResponse
+     */
+    public function queryVedioMeetingStatisticalDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->statDate)) {
+            @$query['statDate'] = $request->statDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryVedioMeetingStatisticalDataResponse::fromMap($this->doROARequest('QueryVedioMeetingStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/vedioMeetingData', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryYydActiveDayStatisticalDataRequest $request
+     *
+     * @return QueryYydActiveDayStatisticalDataResponse
+     */
+    public function queryYydActiveDayStatisticalData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryYydActiveDayStatisticalDataHeaders([]);
+
+        return $this->queryYydActiveDayStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryYydActiveDayStatisticalDataRequest $request
+     * @param QueryYydActiveDayStatisticalDataHeaders $headers
+     * @param RuntimeOptions                          $runtime
+     *
+     * @return QueryYydActiveDayStatisticalDataResponse
+     */
+    public function queryYydActiveDayStatisticalDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->statDate)) {
+            @$query['statDate'] = $request->statDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryYydActiveDayStatisticalDataResponse::fromMap($this->doROARequest('QueryYydActiveDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydActiveDayDatas', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryYydActiveMonthStatisticalDataRequest $request
+     *
+     * @return QueryYydActiveMonthStatisticalDataResponse
+     */
+    public function queryYydActiveMonthStatisticalData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryYydActiveMonthStatisticalDataHeaders([]);
+
+        return $this->queryYydActiveMonthStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryYydActiveMonthStatisticalDataRequest $request
+     * @param QueryYydActiveMonthStatisticalDataHeaders $headers
+     * @param RuntimeOptions                            $runtime
+     *
+     * @return QueryYydActiveMonthStatisticalDataResponse
+     */
+    public function queryYydActiveMonthStatisticalDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->statDate)) {
+            @$query['statDate'] = $request->statDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryYydActiveMonthStatisticalDataResponse::fromMap($this->doROARequest('QueryYydActiveMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydActiveMonthDatas', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryYydActiveWeekStatisticalDataRequest $request
+     *
+     * @return QueryYydActiveWeekStatisticalDataResponse
+     */
+    public function queryYydActiveWeekStatisticalData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryYydActiveWeekStatisticalDataHeaders([]);
+
+        return $this->queryYydActiveWeekStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryYydActiveWeekStatisticalDataRequest $request
+     * @param QueryYydActiveWeekStatisticalDataHeaders $headers
+     * @param RuntimeOptions                           $runtime
+     *
+     * @return QueryYydActiveWeekStatisticalDataResponse
+     */
+    public function queryYydActiveWeekStatisticalDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->statDate)) {
+            @$query['statDate'] = $request->statDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryYydActiveWeekStatisticalDataResponse::fromMap($this->doROARequest('QueryYydActiveWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydActiveWeekDatas', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryYydAppDayStatisticalDataRequest $request
+     *
+     * @return QueryYydAppDayStatisticalDataResponse
+     */
+    public function queryYydAppDayStatisticalData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryYydAppDayStatisticalDataHeaders([]);
+
+        return $this->queryYydAppDayStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryYydAppDayStatisticalDataRequest $request
+     * @param QueryYydAppDayStatisticalDataHeaders $headers
+     * @param RuntimeOptions                       $runtime
+     *
+     * @return QueryYydAppDayStatisticalDataResponse
+     */
+    public function queryYydAppDayStatisticalDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->statDate)) {
+            @$query['statDate'] = $request->statDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryYydAppDayStatisticalDataResponse::fromMap($this->doROARequest('QueryYydAppDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydAppDayDatas', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryYydAppMonthStatisticalDataRequest $request
+     *
+     * @return QueryYydAppMonthStatisticalDataResponse
+     */
+    public function queryYydAppMonthStatisticalData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryYydAppMonthStatisticalDataHeaders([]);
+
+        return $this->queryYydAppMonthStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryYydAppMonthStatisticalDataRequest $request
+     * @param QueryYydAppMonthStatisticalDataHeaders $headers
+     * @param RuntimeOptions                         $runtime
+     *
+     * @return QueryYydAppMonthStatisticalDataResponse
+     */
+    public function queryYydAppMonthStatisticalDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->statDate)) {
+            @$query['statDate'] = $request->statDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryYydAppMonthStatisticalDataResponse::fromMap($this->doROARequest('QueryYydAppMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydAppMonthDatas', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryYydAppStdStatisticalDataRequest $request
+     *
+     * @return QueryYydAppStdStatisticalDataResponse
+     */
+    public function queryYydAppStdStatisticalData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryYydAppStdStatisticalDataHeaders([]);
+
+        return $this->queryYydAppStdStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryYydAppStdStatisticalDataRequest $request
+     * @param QueryYydAppStdStatisticalDataHeaders $headers
+     * @param RuntimeOptions                       $runtime
+     *
+     * @return QueryYydAppStdStatisticalDataResponse
+     */
+    public function queryYydAppStdStatisticalDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->statDate)) {
+            @$query['statDate'] = $request->statDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryYydAppStdStatisticalDataResponse::fromMap($this->doROARequest('QueryYydAppStdStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydAppStdDatas', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryYydAppWeekStatisticalDataRequest $request
+     *
+     * @return QueryYydAppWeekStatisticalDataResponse
+     */
+    public function queryYydAppWeekStatisticalData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryYydAppWeekStatisticalDataHeaders([]);
+
+        return $this->queryYydAppWeekStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryYydAppWeekStatisticalDataRequest $request
+     * @param QueryYydAppWeekStatisticalDataHeaders $headers
+     * @param RuntimeOptions                        $runtime
+     *
+     * @return QueryYydAppWeekStatisticalDataResponse
+     */
+    public function queryYydAppWeekStatisticalDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->statDate)) {
+            @$query['statDate'] = $request->statDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryYydAppWeekStatisticalDataResponse::fromMap($this->doROARequest('QueryYydAppWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydAppWeekDatas', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryYydCalendarDayStatisticalDataRequest $request
+     *
+     * @return QueryYydCalendarDayStatisticalDataResponse
+     */
+    public function queryYydCalendarDayStatisticalData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryYydCalendarDayStatisticalDataHeaders([]);
+
+        return $this->queryYydCalendarDayStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryYydCalendarDayStatisticalDataRequest $request
+     * @param QueryYydCalendarDayStatisticalDataHeaders $headers
+     * @param RuntimeOptions                            $runtime
+     *
+     * @return QueryYydCalendarDayStatisticalDataResponse
+     */
+    public function queryYydCalendarDayStatisticalDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->statDate)) {
+            @$query['statDate'] = $request->statDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryYydCalendarDayStatisticalDataResponse::fromMap($this->doROARequest('QueryYydCalendarDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydCalendarDayDatas', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryYydCalendarMonthStatisticalDataRequest $request
+     *
+     * @return QueryYydCalendarMonthStatisticalDataResponse
+     */
+    public function queryYydCalendarMonthStatisticalData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryYydCalendarMonthStatisticalDataHeaders([]);
+
+        return $this->queryYydCalendarMonthStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryYydCalendarMonthStatisticalDataRequest $request
+     * @param QueryYydCalendarMonthStatisticalDataHeaders $headers
+     * @param RuntimeOptions                              $runtime
+     *
+     * @return QueryYydCalendarMonthStatisticalDataResponse
+     */
+    public function queryYydCalendarMonthStatisticalDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->statDate)) {
+            @$query['statDate'] = $request->statDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryYydCalendarMonthStatisticalDataResponse::fromMap($this->doROARequest('QueryYydCalendarMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydCalendarMonthDatas', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryYydCalendarWeekStatisticalDataRequest $request
+     *
+     * @return QueryYydCalendarWeekStatisticalDataResponse
+     */
+    public function queryYydCalendarWeekStatisticalData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryYydCalendarWeekStatisticalDataHeaders([]);
+
+        return $this->queryYydCalendarWeekStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryYydCalendarWeekStatisticalDataRequest $request
+     * @param QueryYydCalendarWeekStatisticalDataHeaders $headers
+     * @param RuntimeOptions                             $runtime
+     *
+     * @return QueryYydCalendarWeekStatisticalDataResponse
+     */
+    public function queryYydCalendarWeekStatisticalDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->statDate)) {
+            @$query['statDate'] = $request->statDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryYydCalendarWeekStatisticalDataResponse::fromMap($this->doROARequest('QueryYydCalendarWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydCalendarWeekDatas', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryYydDingMsgDayStatisticalDataRequest $request
+     *
+     * @return QueryYydDingMsgDayStatisticalDataResponse
+     */
+    public function queryYydDingMsgDayStatisticalData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryYydDingMsgDayStatisticalDataHeaders([]);
+
+        return $this->queryYydDingMsgDayStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryYydDingMsgDayStatisticalDataRequest $request
+     * @param QueryYydDingMsgDayStatisticalDataHeaders $headers
+     * @param RuntimeOptions                           $runtime
+     *
+     * @return QueryYydDingMsgDayStatisticalDataResponse
+     */
+    public function queryYydDingMsgDayStatisticalDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->statDate)) {
+            @$query['statDate'] = $request->statDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryYydDingMsgDayStatisticalDataResponse::fromMap($this->doROARequest('QueryYydDingMsgDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydDingMsgDayDatas', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryYydDingMsgMonthStatisticalDataRequest $request
+     *
+     * @return QueryYydDingMsgMonthStatisticalDataResponse
+     */
+    public function queryYydDingMsgMonthStatisticalData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryYydDingMsgMonthStatisticalDataHeaders([]);
+
+        return $this->queryYydDingMsgMonthStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryYydDingMsgMonthStatisticalDataRequest $request
+     * @param QueryYydDingMsgMonthStatisticalDataHeaders $headers
+     * @param RuntimeOptions                             $runtime
+     *
+     * @return QueryYydDingMsgMonthStatisticalDataResponse
+     */
+    public function queryYydDingMsgMonthStatisticalDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->statDate)) {
+            @$query['statDate'] = $request->statDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryYydDingMsgMonthStatisticalDataResponse::fromMap($this->doROARequest('QueryYydDingMsgMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydDingMsgMonthDatas', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryYydDingMsgWeekStatisticalDataRequest $request
+     *
+     * @return QueryYydDingMsgWeekStatisticalDataResponse
+     */
+    public function queryYydDingMsgWeekStatisticalData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryYydDingMsgWeekStatisticalDataHeaders([]);
+
+        return $this->queryYydDingMsgWeekStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryYydDingMsgWeekStatisticalDataRequest $request
+     * @param QueryYydDingMsgWeekStatisticalDataHeaders $headers
+     * @param RuntimeOptions                            $runtime
+     *
+     * @return QueryYydDingMsgWeekStatisticalDataResponse
+     */
+    public function queryYydDingMsgWeekStatisticalDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->statDate)) {
+            @$query['statDate'] = $request->statDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryYydDingMsgWeekStatisticalDataResponse::fromMap($this->doROARequest('QueryYydDingMsgWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydDingMsgWeekDatas', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryYydGroupMsgDayStatisticalDataRequest $request
+     *
+     * @return QueryYydGroupMsgDayStatisticalDataResponse
+     */
+    public function queryYydGroupMsgDayStatisticalData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryYydGroupMsgDayStatisticalDataHeaders([]);
+
+        return $this->queryYydGroupMsgDayStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryYydGroupMsgDayStatisticalDataRequest $request
+     * @param QueryYydGroupMsgDayStatisticalDataHeaders $headers
+     * @param RuntimeOptions                            $runtime
+     *
+     * @return QueryYydGroupMsgDayStatisticalDataResponse
+     */
+    public function queryYydGroupMsgDayStatisticalDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->statDate)) {
+            @$query['statDate'] = $request->statDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryYydGroupMsgDayStatisticalDataResponse::fromMap($this->doROARequest('QueryYydGroupMsgDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydGroupMsgDayDatas', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryYydGroupMsgMonthStatisticalDataRequest $request
+     *
+     * @return QueryYydGroupMsgMonthStatisticalDataResponse
+     */
+    public function queryYydGroupMsgMonthStatisticalData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryYydGroupMsgMonthStatisticalDataHeaders([]);
+
+        return $this->queryYydGroupMsgMonthStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryYydGroupMsgMonthStatisticalDataRequest $request
+     * @param QueryYydGroupMsgMonthStatisticalDataHeaders $headers
+     * @param RuntimeOptions                              $runtime
+     *
+     * @return QueryYydGroupMsgMonthStatisticalDataResponse
+     */
+    public function queryYydGroupMsgMonthStatisticalDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->statDate)) {
+            @$query['statDate'] = $request->statDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryYydGroupMsgMonthStatisticalDataResponse::fromMap($this->doROARequest('QueryYydGroupMsgMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydGroupMsgMonthDatas', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryYydGroupMsgWeekStatisticalDataRequest $request
+     *
+     * @return QueryYydGroupMsgWeekStatisticalDataResponse
+     */
+    public function queryYydGroupMsgWeekStatisticalData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryYydGroupMsgWeekStatisticalDataHeaders([]);
+
+        return $this->queryYydGroupMsgWeekStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryYydGroupMsgWeekStatisticalDataRequest $request
+     * @param QueryYydGroupMsgWeekStatisticalDataHeaders $headers
+     * @param RuntimeOptions                             $runtime
+     *
+     * @return QueryYydGroupMsgWeekStatisticalDataResponse
+     */
+    public function queryYydGroupMsgWeekStatisticalDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->statDate)) {
+            @$query['statDate'] = $request->statDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryYydGroupMsgWeekStatisticalDataResponse::fromMap($this->doROARequest('QueryYydGroupMsgWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydGroupMsgWeekDatas', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryYydLogDayStatisticalDataRequest $request
+     *
+     * @return QueryYydLogDayStatisticalDataResponse
+     */
+    public function queryYydLogDayStatisticalData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryYydLogDayStatisticalDataHeaders([]);
+
+        return $this->queryYydLogDayStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryYydLogDayStatisticalDataRequest $request
+     * @param QueryYydLogDayStatisticalDataHeaders $headers
+     * @param RuntimeOptions                       $runtime
+     *
+     * @return QueryYydLogDayStatisticalDataResponse
+     */
+    public function queryYydLogDayStatisticalDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->statDate)) {
+            @$query['statDate'] = $request->statDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryYydLogDayStatisticalDataResponse::fromMap($this->doROARequest('QueryYydLogDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydLogDayDatas', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryYydLogMonthStatisticalDataRequest $request
+     *
+     * @return QueryYydLogMonthStatisticalDataResponse
+     */
+    public function queryYydLogMonthStatisticalData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryYydLogMonthStatisticalDataHeaders([]);
+
+        return $this->queryYydLogMonthStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryYydLogMonthStatisticalDataRequest $request
+     * @param QueryYydLogMonthStatisticalDataHeaders $headers
+     * @param RuntimeOptions                         $runtime
+     *
+     * @return QueryYydLogMonthStatisticalDataResponse
+     */
+    public function queryYydLogMonthStatisticalDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->statDate)) {
+            @$query['statDate'] = $request->statDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryYydLogMonthStatisticalDataResponse::fromMap($this->doROARequest('QueryYydLogMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydLogMonthDatas', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryYydLogWeekStatisticalDataRequest $request
+     *
+     * @return QueryYydLogWeekStatisticalDataResponse
+     */
+    public function queryYydLogWeekStatisticalData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryYydLogWeekStatisticalDataHeaders([]);
+
+        return $this->queryYydLogWeekStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryYydLogWeekStatisticalDataRequest $request
+     * @param QueryYydLogWeekStatisticalDataHeaders $headers
+     * @param RuntimeOptions                        $runtime
+     *
+     * @return QueryYydLogWeekStatisticalDataResponse
+     */
+    public function queryYydLogWeekStatisticalDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->statDate)) {
+            @$query['statDate'] = $request->statDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryYydLogWeekStatisticalDataResponse::fromMap($this->doROARequest('QueryYydLogWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydLogWeekDatas', 'json', $req, $runtime));
     }
 
     /**
@@ -2777,7 +2144,7 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -2788,26 +2155,26 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydTotalStdStatisticalDataRequest $request
+     * @param QueryYydMeetingMonthStatisticalDataRequest $request
      *
-     * @return QueryYydTotalStdStatisticalDataResponse
+     * @return QueryYydMeetingMonthStatisticalDataResponse
      */
-    public function queryYydTotalStdStatisticalData($request)
+    public function queryYydMeetingMonthStatisticalData($request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new QueryYydTotalStdStatisticalDataHeaders([]);
+        $headers = new QueryYydMeetingMonthStatisticalDataHeaders([]);
 
-        return $this->queryYydTotalStdStatisticalDataWithOptions($request, $headers, $runtime);
+        return $this->queryYydMeetingMonthStatisticalDataWithOptions($request, $headers, $runtime);
     }
 
     /**
-     * @param QueryYydTotalStdStatisticalDataRequest $request
-     * @param QueryYydTotalStdStatisticalDataHeaders $headers
-     * @param RuntimeOptions                         $runtime
+     * @param QueryYydMeetingMonthStatisticalDataRequest $request
+     * @param QueryYydMeetingMonthStatisticalDataHeaders $headers
+     * @param RuntimeOptions                             $runtime
      *
-     * @return QueryYydTotalStdStatisticalDataResponse
+     * @return QueryYydMeetingMonthStatisticalDataResponse
      */
-    public function queryYydTotalStdStatisticalDataWithOptions($request, $headers, $runtime)
+    public function queryYydMeetingMonthStatisticalDataWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
@@ -2819,14 +2186,14 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return QueryYydTotalStdStatisticalDataResponse::fromMap($this->doROARequest('QueryYydTotalStdStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydTotalStdDatas', 'json', $req, $runtime));
+        return QueryYydMeetingMonthStatisticalDataResponse::fromMap($this->doROARequest('QueryYydMeetingMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydMeetingMonthDatas', 'json', $req, $runtime));
     }
 
     /**
@@ -2861,7 +2228,7 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -2872,26 +2239,26 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryBlackboardStatisticalDataRequest $request
+     * @param QueryYydNoticeDayStatisticalDataRequest $request
      *
-     * @return QueryBlackboardStatisticalDataResponse
+     * @return QueryYydNoticeDayStatisticalDataResponse
      */
-    public function queryBlackboardStatisticalData($request)
+    public function queryYydNoticeDayStatisticalData($request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new QueryBlackboardStatisticalDataHeaders([]);
+        $headers = new QueryYydNoticeDayStatisticalDataHeaders([]);
 
-        return $this->queryBlackboardStatisticalDataWithOptions($request, $headers, $runtime);
+        return $this->queryYydNoticeDayStatisticalDataWithOptions($request, $headers, $runtime);
     }
 
     /**
-     * @param QueryBlackboardStatisticalDataRequest $request
-     * @param QueryBlackboardStatisticalDataHeaders $headers
-     * @param RuntimeOptions                        $runtime
+     * @param QueryYydNoticeDayStatisticalDataRequest $request
+     * @param QueryYydNoticeDayStatisticalDataHeaders $headers
+     * @param RuntimeOptions                          $runtime
      *
-     * @return QueryBlackboardStatisticalDataResponse
+     * @return QueryYydNoticeDayStatisticalDataResponse
      */
-    public function queryBlackboardStatisticalDataWithOptions($request, $headers, $runtime)
+    public function queryYydNoticeDayStatisticalDataWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
@@ -2903,13 +2270,643 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return QueryBlackboardStatisticalDataResponse::fromMap($this->doROARequest('QueryBlackboardStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/blackboardData', 'json', $req, $runtime));
+        return QueryYydNoticeDayStatisticalDataResponse::fromMap($this->doROARequest('QueryYydNoticeDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydNoticeDayDatas', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryYydNoticeMonthStatisticalDataRequest $request
+     *
+     * @return QueryYydNoticeMonthStatisticalDataResponse
+     */
+    public function queryYydNoticeMonthStatisticalData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryYydNoticeMonthStatisticalDataHeaders([]);
+
+        return $this->queryYydNoticeMonthStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryYydNoticeMonthStatisticalDataRequest $request
+     * @param QueryYydNoticeMonthStatisticalDataHeaders $headers
+     * @param RuntimeOptions                            $runtime
+     *
+     * @return QueryYydNoticeMonthStatisticalDataResponse
+     */
+    public function queryYydNoticeMonthStatisticalDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->statDate)) {
+            @$query['statDate'] = $request->statDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryYydNoticeMonthStatisticalDataResponse::fromMap($this->doROARequest('QueryYydNoticeMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydNoticeMonthDatas', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryYydNoticeWeekStatisticalDataRequest $request
+     *
+     * @return QueryYydNoticeWeekStatisticalDataResponse
+     */
+    public function queryYydNoticeWeekStatisticalData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryYydNoticeWeekStatisticalDataHeaders([]);
+
+        return $this->queryYydNoticeWeekStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryYydNoticeWeekStatisticalDataRequest $request
+     * @param QueryYydNoticeWeekStatisticalDataHeaders $headers
+     * @param RuntimeOptions                           $runtime
+     *
+     * @return QueryYydNoticeWeekStatisticalDataResponse
+     */
+    public function queryYydNoticeWeekStatisticalDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->statDate)) {
+            @$query['statDate'] = $request->statDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryYydNoticeWeekStatisticalDataResponse::fromMap($this->doROARequest('QueryYydNoticeWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydNoticeWeekDatas', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryYydSingleMsgDayStatisticalDataRequest $request
+     *
+     * @return QueryYydSingleMsgDayStatisticalDataResponse
+     */
+    public function queryYydSingleMsgDayStatisticalData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryYydSingleMsgDayStatisticalDataHeaders([]);
+
+        return $this->queryYydSingleMsgDayStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryYydSingleMsgDayStatisticalDataRequest $request
+     * @param QueryYydSingleMsgDayStatisticalDataHeaders $headers
+     * @param RuntimeOptions                             $runtime
+     *
+     * @return QueryYydSingleMsgDayStatisticalDataResponse
+     */
+    public function queryYydSingleMsgDayStatisticalDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->statDate)) {
+            @$query['statDate'] = $request->statDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryYydSingleMsgDayStatisticalDataResponse::fromMap($this->doROARequest('QueryYydSingleMsgDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydSingleMsgDayDatas', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryYydSingleMsgMonthStatisticalDataRequest $request
+     *
+     * @return QueryYydSingleMsgMonthStatisticalDataResponse
+     */
+    public function queryYydSingleMsgMonthStatisticalData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryYydSingleMsgMonthStatisticalDataHeaders([]);
+
+        return $this->queryYydSingleMsgMonthStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryYydSingleMsgMonthStatisticalDataRequest $request
+     * @param QueryYydSingleMsgMonthStatisticalDataHeaders $headers
+     * @param RuntimeOptions                               $runtime
+     *
+     * @return QueryYydSingleMsgMonthStatisticalDataResponse
+     */
+    public function queryYydSingleMsgMonthStatisticalDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->statDate)) {
+            @$query['statDate'] = $request->statDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryYydSingleMsgMonthStatisticalDataResponse::fromMap($this->doROARequest('QueryYydSingleMsgMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydSingleMsgMonthDatas', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryYydSingleMsgWeekStatisticalDataRequest $request
+     *
+     * @return QueryYydSingleMsgWeekStatisticalDataResponse
+     */
+    public function queryYydSingleMsgWeekStatisticalData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryYydSingleMsgWeekStatisticalDataHeaders([]);
+
+        return $this->queryYydSingleMsgWeekStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryYydSingleMsgWeekStatisticalDataRequest $request
+     * @param QueryYydSingleMsgWeekStatisticalDataHeaders $headers
+     * @param RuntimeOptions                              $runtime
+     *
+     * @return QueryYydSingleMsgWeekStatisticalDataResponse
+     */
+    public function queryYydSingleMsgWeekStatisticalDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->statDate)) {
+            @$query['statDate'] = $request->statDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryYydSingleMsgWeekStatisticalDataResponse::fromMap($this->doROARequest('QueryYydSingleMsgWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydSingleMsgWeekDatas', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryYydToatlMsgDayStatisticalDataRequest $request
+     *
+     * @return QueryYydToatlMsgDayStatisticalDataResponse
+     */
+    public function queryYydToatlMsgDayStatisticalData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryYydToatlMsgDayStatisticalDataHeaders([]);
+
+        return $this->queryYydToatlMsgDayStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryYydToatlMsgDayStatisticalDataRequest $request
+     * @param QueryYydToatlMsgDayStatisticalDataHeaders $headers
+     * @param RuntimeOptions                            $runtime
+     *
+     * @return QueryYydToatlMsgDayStatisticalDataResponse
+     */
+    public function queryYydToatlMsgDayStatisticalDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->statDate)) {
+            @$query['statDate'] = $request->statDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryYydToatlMsgDayStatisticalDataResponse::fromMap($this->doROARequest('QueryYydToatlMsgDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydToatlMsgDayDatas', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryYydToatlMsgMonthStatisticalDataRequest $request
+     *
+     * @return QueryYydToatlMsgMonthStatisticalDataResponse
+     */
+    public function queryYydToatlMsgMonthStatisticalData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryYydToatlMsgMonthStatisticalDataHeaders([]);
+
+        return $this->queryYydToatlMsgMonthStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryYydToatlMsgMonthStatisticalDataRequest $request
+     * @param QueryYydToatlMsgMonthStatisticalDataHeaders $headers
+     * @param RuntimeOptions                              $runtime
+     *
+     * @return QueryYydToatlMsgMonthStatisticalDataResponse
+     */
+    public function queryYydToatlMsgMonthStatisticalDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->statDate)) {
+            @$query['statDate'] = $request->statDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryYydToatlMsgMonthStatisticalDataResponse::fromMap($this->doROARequest('QueryYydToatlMsgMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydToatlMsgMonthDatas', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryYydToatlMsgWeekStatisticalDataRequest $request
+     *
+     * @return QueryYydToatlMsgWeekStatisticalDataResponse
+     */
+    public function queryYydToatlMsgWeekStatisticalData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryYydToatlMsgWeekStatisticalDataHeaders([]);
+
+        return $this->queryYydToatlMsgWeekStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryYydToatlMsgWeekStatisticalDataRequest $request
+     * @param QueryYydToatlMsgWeekStatisticalDataHeaders $headers
+     * @param RuntimeOptions                             $runtime
+     *
+     * @return QueryYydToatlMsgWeekStatisticalDataResponse
+     */
+    public function queryYydToatlMsgWeekStatisticalDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->statDate)) {
+            @$query['statDate'] = $request->statDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryYydToatlMsgWeekStatisticalDataResponse::fromMap($this->doROARequest('QueryYydToatlMsgWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydToatlMsgWeekDatas', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryYydTodoDayStatisticalDataRequest $request
+     *
+     * @return QueryYydTodoDayStatisticalDataResponse
+     */
+    public function queryYydTodoDayStatisticalData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryYydTodoDayStatisticalDataHeaders([]);
+
+        return $this->queryYydTodoDayStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryYydTodoDayStatisticalDataRequest $request
+     * @param QueryYydTodoDayStatisticalDataHeaders $headers
+     * @param RuntimeOptions                        $runtime
+     *
+     * @return QueryYydTodoDayStatisticalDataResponse
+     */
+    public function queryYydTodoDayStatisticalDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->statDate)) {
+            @$query['statDate'] = $request->statDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryYydTodoDayStatisticalDataResponse::fromMap($this->doROARequest('QueryYydTodoDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydTodoDayDatas', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryYydTodoMonthStatisticalDataRequest $request
+     *
+     * @return QueryYydTodoMonthStatisticalDataResponse
+     */
+    public function queryYydTodoMonthStatisticalData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryYydTodoMonthStatisticalDataHeaders([]);
+
+        return $this->queryYydTodoMonthStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryYydTodoMonthStatisticalDataRequest $request
+     * @param QueryYydTodoMonthStatisticalDataHeaders $headers
+     * @param RuntimeOptions                          $runtime
+     *
+     * @return QueryYydTodoMonthStatisticalDataResponse
+     */
+    public function queryYydTodoMonthStatisticalDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->statDate)) {
+            @$query['statDate'] = $request->statDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryYydTodoMonthStatisticalDataResponse::fromMap($this->doROARequest('QueryYydTodoMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydTodoMonthDatas', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryYydTodoWeekStatisticalDataRequest $request
+     *
+     * @return QueryYydTodoWeekStatisticalDataResponse
+     */
+    public function queryYydTodoWeekStatisticalData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryYydTodoWeekStatisticalDataHeaders([]);
+
+        return $this->queryYydTodoWeekStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryYydTodoWeekStatisticalDataRequest $request
+     * @param QueryYydTodoWeekStatisticalDataHeaders $headers
+     * @param RuntimeOptions                         $runtime
+     *
+     * @return QueryYydTodoWeekStatisticalDataResponse
+     */
+    public function queryYydTodoWeekStatisticalDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->statDate)) {
+            @$query['statDate'] = $request->statDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryYydTodoWeekStatisticalDataResponse::fromMap($this->doROARequest('QueryYydTodoWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydTodoWeekDatas', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryYydTotalDayStatisticalDataRequest $request
+     *
+     * @return QueryYydTotalDayStatisticalDataResponse
+     */
+    public function queryYydTotalDayStatisticalData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryYydTotalDayStatisticalDataHeaders([]);
+
+        return $this->queryYydTotalDayStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryYydTotalDayStatisticalDataRequest $request
+     * @param QueryYydTotalDayStatisticalDataHeaders $headers
+     * @param RuntimeOptions                         $runtime
+     *
+     * @return QueryYydTotalDayStatisticalDataResponse
+     */
+    public function queryYydTotalDayStatisticalDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->statDate)) {
+            @$query['statDate'] = $request->statDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryYydTotalDayStatisticalDataResponse::fromMap($this->doROARequest('QueryYydTotalDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydTotalDayDatas', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryYydTotalMonthStatisticalDataRequest $request
+     *
+     * @return QueryYydTotalMonthStatisticalDataResponse
+     */
+    public function queryYydTotalMonthStatisticalData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryYydTotalMonthStatisticalDataHeaders([]);
+
+        return $this->queryYydTotalMonthStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryYydTotalMonthStatisticalDataRequest $request
+     * @param QueryYydTotalMonthStatisticalDataHeaders $headers
+     * @param RuntimeOptions                           $runtime
+     *
+     * @return QueryYydTotalMonthStatisticalDataResponse
+     */
+    public function queryYydTotalMonthStatisticalDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->statDate)) {
+            @$query['statDate'] = $request->statDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryYydTotalMonthStatisticalDataResponse::fromMap($this->doROARequest('QueryYydTotalMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydTotalMonthDatas', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryYydTotalStdStatisticalDataRequest $request
+     *
+     * @return QueryYydTotalStdStatisticalDataResponse
+     */
+    public function queryYydTotalStdStatisticalData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryYydTotalStdStatisticalDataHeaders([]);
+
+        return $this->queryYydTotalStdStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryYydTotalStdStatisticalDataRequest $request
+     * @param QueryYydTotalStdStatisticalDataHeaders $headers
+     * @param RuntimeOptions                         $runtime
+     *
+     * @return QueryYydTotalStdStatisticalDataResponse
+     */
+    public function queryYydTotalStdStatisticalDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->statDate)) {
+            @$query['statDate'] = $request->statDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryYydTotalStdStatisticalDataResponse::fromMap($this->doROARequest('QueryYydTotalStdStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydTotalStdDatas', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryYydTotalWeekStatisticalDataRequest $request
+     *
+     * @return QueryYydTotalWeekStatisticalDataResponse
+     */
+    public function queryYydTotalWeekStatisticalData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryYydTotalWeekStatisticalDataHeaders([]);
+
+        return $this->queryYydTotalWeekStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryYydTotalWeekStatisticalDataRequest $request
+     * @param QueryYydTotalWeekStatisticalDataHeaders $headers
+     * @param RuntimeOptions                          $runtime
+     *
+     * @return QueryYydTotalWeekStatisticalDataResponse
+     */
+    public function queryYydTotalWeekStatisticalDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->statDate)) {
+            @$query['statDate'] = $request->statDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryYydTotalWeekStatisticalDataResponse::fromMap($this->doROARequest('QueryYydTotalWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydTotalWeekDatas', 'json', $req, $runtime));
     }
 }

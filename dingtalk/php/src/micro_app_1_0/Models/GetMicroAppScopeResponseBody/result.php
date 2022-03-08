@@ -9,18 +9,18 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 用户可见列表
-     *
-     * @var string[]
-     */
-    public $userIds;
-
-    /**
      * @description 部门可见列表
      *
      * @var int[]
      */
     public $deptIds;
+
+    /**
+     * @description 是否管理员可见。如果为true，优先看这个字段
+     *
+     * @var bool
+     */
+    public $onlyAdminVisible;
 
     /**
      * @description 角色可见列表
@@ -30,16 +30,16 @@ class result extends Model
     public $roleIds;
 
     /**
-     * @description 是否管理员可见。如果为true，优先看这个字段
+     * @description 用户可见列表
      *
-     * @var bool
+     * @var string[]
      */
-    public $onlyAdminVisible;
+    public $userIds;
     protected $_name = [
-        'userIds'          => 'userIds',
         'deptIds'          => 'deptIds',
-        'roleIds'          => 'roleIds',
         'onlyAdminVisible' => 'onlyAdminVisible',
+        'roleIds'          => 'roleIds',
+        'userIds'          => 'userIds',
     ];
 
     public function validate()
@@ -49,17 +49,17 @@ class result extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->userIds) {
-            $res['userIds'] = $this->userIds;
-        }
         if (null !== $this->deptIds) {
             $res['deptIds'] = $this->deptIds;
+        }
+        if (null !== $this->onlyAdminVisible) {
+            $res['onlyAdminVisible'] = $this->onlyAdminVisible;
         }
         if (null !== $this->roleIds) {
             $res['roleIds'] = $this->roleIds;
         }
-        if (null !== $this->onlyAdminVisible) {
-            $res['onlyAdminVisible'] = $this->onlyAdminVisible;
+        if (null !== $this->userIds) {
+            $res['userIds'] = $this->userIds;
         }
 
         return $res;
@@ -73,23 +73,23 @@ class result extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['userIds'])) {
-            if (!empty($map['userIds'])) {
-                $model->userIds = $map['userIds'];
-            }
-        }
         if (isset($map['deptIds'])) {
             if (!empty($map['deptIds'])) {
                 $model->deptIds = $map['deptIds'];
             }
+        }
+        if (isset($map['onlyAdminVisible'])) {
+            $model->onlyAdminVisible = $map['onlyAdminVisible'];
         }
         if (isset($map['roleIds'])) {
             if (!empty($map['roleIds'])) {
                 $model->roleIds = $map['roleIds'];
             }
         }
-        if (isset($map['onlyAdminVisible'])) {
-            $model->onlyAdminVisible = $map['onlyAdminVisible'];
+        if (isset($map['userIds'])) {
+            if (!empty($map['userIds'])) {
+                $model->userIds = $map['userIds'];
+            }
         }
 
         return $model;

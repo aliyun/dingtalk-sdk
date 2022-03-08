@@ -10,6 +10,13 @@ use AlibabaCloud\Tea\Model;
 class todoCardView extends Model
 {
     /**
+     * @description link, button, 操作区类型，是链接类型，或者按钮类型
+     *
+     * @var string
+     */
+    public $actionType;
+
+    /**
      * @description 卡片类型
      *
      * @var string
@@ -31,13 +38,6 @@ class todoCardView extends Model
     public $contentType;
 
     /**
-     * @description link, button, 操作区类型，是链接类型，或者按钮类型
-     *
-     * @var string
-     */
-    public $actionType;
-
-    /**
      * @description 卡片icon
      *
      * @var string
@@ -45,24 +45,24 @@ class todoCardView extends Model
     public $icon;
 
     /**
+     * @var todoCardContentList[]
+     */
+    public $todoCardContentList;
+
+    /**
      * @description 卡片标题
      *
      * @var string
      */
     public $todoCardTitle;
-
-    /**
-     * @var todoCardContentList[]
-     */
-    public $todoCardContentList;
     protected $_name = [
+        'actionType'          => 'actionType',
         'cardType'            => 'cardType',
         'circleELType'        => 'circleELType',
         'contentType'         => 'contentType',
-        'actionType'          => 'actionType',
         'icon'                => 'icon',
-        'todoCardTitle'       => 'todoCardTitle',
         'todoCardContentList' => 'todoCardContentList',
+        'todoCardTitle'       => 'todoCardTitle',
     ];
 
     public function validate()
@@ -72,6 +72,9 @@ class todoCardView extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->actionType) {
+            $res['actionType'] = $this->actionType;
+        }
         if (null !== $this->cardType) {
             $res['cardType'] = $this->cardType;
         }
@@ -81,14 +84,8 @@ class todoCardView extends Model
         if (null !== $this->contentType) {
             $res['contentType'] = $this->contentType;
         }
-        if (null !== $this->actionType) {
-            $res['actionType'] = $this->actionType;
-        }
         if (null !== $this->icon) {
             $res['icon'] = $this->icon;
-        }
-        if (null !== $this->todoCardTitle) {
-            $res['todoCardTitle'] = $this->todoCardTitle;
         }
         if (null !== $this->todoCardContentList) {
             $res['todoCardContentList'] = [];
@@ -98,6 +95,9 @@ class todoCardView extends Model
                     $res['todoCardContentList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->todoCardTitle) {
+            $res['todoCardTitle'] = $this->todoCardTitle;
         }
 
         return $res;
@@ -111,6 +111,9 @@ class todoCardView extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['actionType'])) {
+            $model->actionType = $map['actionType'];
+        }
         if (isset($map['cardType'])) {
             $model->cardType = $map['cardType'];
         }
@@ -120,14 +123,8 @@ class todoCardView extends Model
         if (isset($map['contentType'])) {
             $model->contentType = $map['contentType'];
         }
-        if (isset($map['actionType'])) {
-            $model->actionType = $map['actionType'];
-        }
         if (isset($map['icon'])) {
             $model->icon = $map['icon'];
-        }
-        if (isset($map['todoCardTitle'])) {
-            $model->todoCardTitle = $map['todoCardTitle'];
         }
         if (isset($map['todoCardContentList'])) {
             if (!empty($map['todoCardContentList'])) {
@@ -137,6 +134,9 @@ class todoCardView extends Model
                     $model->todoCardContentList[$n++] = null !== $item ? todoCardContentList::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['todoCardTitle'])) {
+            $model->todoCardTitle = $map['todoCardTitle'];
         }
 
         return $model;

@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class QueryBizOptLogRequest extends Model
 {
     /**
-     * @description 拉取记录的起始位置，默认从上次拉取的最后位置开始
-     *
-     * @var int
-     */
-    public $nextToken;
-
-    /**
      * @description 每次拉取的数据量，最大200条
      *
      * @var int
      */
     public $maxResults;
+
+    /**
+     * @description 拉取记录的起始位置，默认从上次拉取的最后位置开始
+     *
+     * @var int
+     */
+    public $nextToken;
     protected $_name = [
-        'nextToken'  => 'nextToken',
         'maxResults' => 'maxResults',
+        'nextToken'  => 'nextToken',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class QueryBizOptLogRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->nextToken) {
-            $res['nextToken'] = $this->nextToken;
-        }
         if (null !== $this->maxResults) {
             $res['maxResults'] = $this->maxResults;
+        }
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class QueryBizOptLogRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['nextToken'])) {
-            $model->nextToken = $map['nextToken'];
-        }
         if (isset($map['maxResults'])) {
             $model->maxResults = $map['maxResults'];
+        }
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
         }
 
         return $model;

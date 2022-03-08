@@ -13,6 +13,20 @@ use AlibabaCloud\Tea\Model;
 class cardContactInfo extends Model
 {
     /**
+     * @description 地址
+     *
+     * @var address[]
+     */
+    public $address;
+
+    /**
+     * @description 邮箱
+     *
+     * @var email[]
+     */
+    public $email;
+
+    /**
      * @description 电话
      *
      * @var telephone[]
@@ -25,25 +39,11 @@ class cardContactInfo extends Model
      * @var wechat[]
      */
     public $wechat;
-
-    /**
-     * @description 邮箱
-     *
-     * @var email[]
-     */
-    public $email;
-
-    /**
-     * @description 地址
-     *
-     * @var address[]
-     */
-    public $address;
     protected $_name = [
+        'address'   => 'address',
+        'email'     => 'email',
         'telephone' => 'telephone',
         'wechat'    => 'wechat',
-        'email'     => 'email',
-        'address'   => 'address',
     ];
 
     public function validate()
@@ -53,6 +53,24 @@ class cardContactInfo extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->address) {
+            $res['address'] = [];
+            if (null !== $this->address && \is_array($this->address)) {
+                $n = 0;
+                foreach ($this->address as $item) {
+                    $res['address'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
+        if (null !== $this->email) {
+            $res['email'] = [];
+            if (null !== $this->email && \is_array($this->email)) {
+                $n = 0;
+                foreach ($this->email as $item) {
+                    $res['email'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
         if (null !== $this->telephone) {
             $res['telephone'] = [];
             if (null !== $this->telephone && \is_array($this->telephone)) {
@@ -71,24 +89,6 @@ class cardContactInfo extends Model
                 }
             }
         }
-        if (null !== $this->email) {
-            $res['email'] = [];
-            if (null !== $this->email && \is_array($this->email)) {
-                $n = 0;
-                foreach ($this->email as $item) {
-                    $res['email'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
-        }
-        if (null !== $this->address) {
-            $res['address'] = [];
-            if (null !== $this->address && \is_array($this->address)) {
-                $n = 0;
-                foreach ($this->address as $item) {
-                    $res['address'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
-        }
 
         return $res;
     }
@@ -101,6 +101,24 @@ class cardContactInfo extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['address'])) {
+            if (!empty($map['address'])) {
+                $model->address = [];
+                $n              = 0;
+                foreach ($map['address'] as $item) {
+                    $model->address[$n++] = null !== $item ? address::fromMap($item) : $item;
+                }
+            }
+        }
+        if (isset($map['email'])) {
+            if (!empty($map['email'])) {
+                $model->email = [];
+                $n            = 0;
+                foreach ($map['email'] as $item) {
+                    $model->email[$n++] = null !== $item ? email::fromMap($item) : $item;
+                }
+            }
+        }
         if (isset($map['telephone'])) {
             if (!empty($map['telephone'])) {
                 $model->telephone = [];
@@ -116,24 +134,6 @@ class cardContactInfo extends Model
                 $n             = 0;
                 foreach ($map['wechat'] as $item) {
                     $model->wechat[$n++] = null !== $item ? wechat::fromMap($item) : $item;
-                }
-            }
-        }
-        if (isset($map['email'])) {
-            if (!empty($map['email'])) {
-                $model->email = [];
-                $n            = 0;
-                foreach ($map['email'] as $item) {
-                    $model->email[$n++] = null !== $item ? email::fromMap($item) : $item;
-                }
-            }
-        }
-        if (isset($map['address'])) {
-            if (!empty($map['address'])) {
-                $model->address = [];
-                $n              = 0;
-                foreach ($map['address'] as $item) {
-                    $model->address[$n++] = null !== $item ? address::fromMap($item) : $item;
                 }
             }
         }

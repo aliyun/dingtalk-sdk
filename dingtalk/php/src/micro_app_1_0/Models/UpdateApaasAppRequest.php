@@ -11,12 +11,12 @@ class UpdateApaasAppRequest extends Model
     /**
      * @var string
      */
-    public $appName;
+    public $appIcon;
 
     /**
      * @var string
      */
-    public $appIcon;
+    public $appName;
 
     /**
      * @var int
@@ -26,18 +26,18 @@ class UpdateApaasAppRequest extends Model
     /**
      * @var string
      */
-    public $opUserId;
+    public $bizAppId;
 
     /**
      * @var string
      */
-    public $bizAppId;
+    public $opUserId;
     protected $_name = [
-        'appName'   => 'appName',
         'appIcon'   => 'appIcon',
+        'appName'   => 'appName',
         'appStatus' => 'appStatus',
-        'opUserId'  => 'opUserId',
         'bizAppId'  => 'bizAppId',
+        'opUserId'  => 'opUserId',
     ];
 
     public function validate()
@@ -47,20 +47,20 @@ class UpdateApaasAppRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->appName) {
-            $res['appName'] = $this->appName;
-        }
         if (null !== $this->appIcon) {
             $res['appIcon'] = $this->appIcon;
+        }
+        if (null !== $this->appName) {
+            $res['appName'] = $this->appName;
         }
         if (null !== $this->appStatus) {
             $res['appStatus'] = $this->appStatus;
         }
-        if (null !== $this->opUserId) {
-            $res['opUserId'] = $this->opUserId;
-        }
         if (null !== $this->bizAppId) {
             $res['bizAppId'] = $this->bizAppId;
+        }
+        if (null !== $this->opUserId) {
+            $res['opUserId'] = $this->opUserId;
         }
 
         return $res;
@@ -74,20 +74,20 @@ class UpdateApaasAppRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['appName'])) {
-            $model->appName = $map['appName'];
-        }
         if (isset($map['appIcon'])) {
             $model->appIcon = $map['appIcon'];
+        }
+        if (isset($map['appName'])) {
+            $model->appName = $map['appName'];
         }
         if (isset($map['appStatus'])) {
             $model->appStatus = $map['appStatus'];
         }
-        if (isset($map['opUserId'])) {
-            $model->opUserId = $map['opUserId'];
-        }
         if (isset($map['bizAppId'])) {
             $model->bizAppId = $map['bizAppId'];
+        }
+        if (isset($map['opUserId'])) {
+            $model->opUserId = $map['opUserId'];
         }
 
         return $model;

@@ -9,18 +9,18 @@ use AlibabaCloud\Tea\Model;
 class AddResidentDepartmentRequest extends Model
 {
     /**
-     * @description 是否为组
-     *
-     * @var bool
-     */
-    public $isResidenceGroup;
-
-    /**
      * @description 部门名字
      *
      * @var string
      */
     public $departmentName;
+
+    /**
+     * @description 是否为组
+     *
+     * @var bool
+     */
+    public $isResidenceGroup;
 
     /**
      * @description 父部门id
@@ -29,8 +29,8 @@ class AddResidentDepartmentRequest extends Model
      */
     public $parentDepartmentId;
     protected $_name = [
-        'isResidenceGroup'   => 'isResidenceGroup',
         'departmentName'     => 'departmentName',
+        'isResidenceGroup'   => 'isResidenceGroup',
         'parentDepartmentId' => 'parentDepartmentId',
     ];
 
@@ -41,11 +41,11 @@ class AddResidentDepartmentRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->isResidenceGroup) {
-            $res['isResidenceGroup'] = $this->isResidenceGroup;
-        }
         if (null !== $this->departmentName) {
             $res['departmentName'] = $this->departmentName;
+        }
+        if (null !== $this->isResidenceGroup) {
+            $res['isResidenceGroup'] = $this->isResidenceGroup;
         }
         if (null !== $this->parentDepartmentId) {
             $res['parentDepartmentId'] = $this->parentDepartmentId;
@@ -62,11 +62,11 @@ class AddResidentDepartmentRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['isResidenceGroup'])) {
-            $model->isResidenceGroup = $map['isResidenceGroup'];
-        }
         if (isset($map['departmentName'])) {
             $model->departmentName = $map['departmentName'];
+        }
+        if (isset($map['isResidenceGroup'])) {
+            $model->isResidenceGroup = $map['isResidenceGroup'];
         }
         if (isset($map['parentDepartmentId'])) {
             $model->parentDepartmentId = $map['parentDepartmentId'];

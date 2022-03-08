@@ -9,18 +9,18 @@ use AlibabaCloud\Tea\Model;
 class GetRunningTaskListRequest extends Model
 {
     /**
-     * @description 流程实例id列表, 逗号分隔
-     *
-     * @var string
-     */
-    public $processInstanceIdList;
-
-    /**
      * @description appType
      *
      * @var string
      */
     public $appType;
+
+    /**
+     * @description 流程实例id列表, 逗号分隔
+     *
+     * @var string
+     */
+    public $processInstanceIdList;
 
     /**
      * @description systemToken
@@ -30,24 +30,24 @@ class GetRunningTaskListRequest extends Model
     public $systemToken;
 
     /**
-     * @description userId
-     *
-     * @var string
-     */
-    public $userId;
-
-    /**
      * @description 用户所属的企业id
      *
      * @var string
      */
     public $userCorpId;
+
+    /**
+     * @description userId
+     *
+     * @var string
+     */
+    public $userId;
     protected $_name = [
-        'processInstanceIdList' => 'processInstanceIdList',
         'appType'               => 'appType',
+        'processInstanceIdList' => 'processInstanceIdList',
         'systemToken'           => 'systemToken',
-        'userId'                => 'userId',
         'userCorpId'            => 'userCorpId',
+        'userId'                => 'userId',
     ];
 
     public function validate()
@@ -57,20 +57,20 @@ class GetRunningTaskListRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->processInstanceIdList) {
-            $res['processInstanceIdList'] = $this->processInstanceIdList;
-        }
         if (null !== $this->appType) {
             $res['appType'] = $this->appType;
+        }
+        if (null !== $this->processInstanceIdList) {
+            $res['processInstanceIdList'] = $this->processInstanceIdList;
         }
         if (null !== $this->systemToken) {
             $res['systemToken'] = $this->systemToken;
         }
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
-        }
         if (null !== $this->userCorpId) {
             $res['userCorpId'] = $this->userCorpId;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -84,20 +84,20 @@ class GetRunningTaskListRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['processInstanceIdList'])) {
-            $model->processInstanceIdList = $map['processInstanceIdList'];
-        }
         if (isset($map['appType'])) {
             $model->appType = $map['appType'];
+        }
+        if (isset($map['processInstanceIdList'])) {
+            $model->processInstanceIdList = $map['processInstanceIdList'];
         }
         if (isset($map['systemToken'])) {
             $model->systemToken = $map['systemToken'];
         }
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
-        }
         if (isset($map['userCorpId'])) {
             $model->userCorpId = $map['userCorpId'];
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

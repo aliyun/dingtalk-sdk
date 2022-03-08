@@ -9,6 +9,34 @@ use AlibabaCloud\Tea\Model;
 class spaces extends Model
 {
     /**
+     * @description 创建时间
+     *
+     * @var string
+     */
+    public $createTime;
+
+    /**
+     * @description 修改时间
+     *
+     * @var string
+     */
+    public $modifyTime;
+
+    /**
+     * @description 授权模式
+     *
+     * @var string
+     */
+    public $permissionMode;
+
+    /**
+     * @description 空间总额度
+     *
+     * @var int
+     */
+    public $quota;
+
+    /**
      * @description 空间id
      *
      * @var string
@@ -30,48 +58,20 @@ class spaces extends Model
     public $spaceType;
 
     /**
-     * @description 空间总额度
-     *
-     * @var int
-     */
-    public $quota;
-
-    /**
      * @description 空间已使用额度
      *
      * @var int
      */
     public $usedQuota;
-
-    /**
-     * @description 授权模式
-     *
-     * @var string
-     */
-    public $permissionMode;
-
-    /**
-     * @description 创建时间
-     *
-     * @var string
-     */
-    public $createTime;
-
-    /**
-     * @description 修改时间
-     *
-     * @var string
-     */
-    public $modifyTime;
     protected $_name = [
+        'createTime'     => 'createTime',
+        'modifyTime'     => 'modifyTime',
+        'permissionMode' => 'permissionMode',
+        'quota'          => 'quota',
         'spaceId'        => 'spaceId',
         'spaceName'      => 'spaceName',
         'spaceType'      => 'spaceType',
-        'quota'          => 'quota',
         'usedQuota'      => 'usedQuota',
-        'permissionMode' => 'permissionMode',
-        'createTime'     => 'createTime',
-        'modifyTime'     => 'modifyTime',
     ];
 
     public function validate()
@@ -81,6 +81,18 @@ class spaces extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->createTime) {
+            $res['createTime'] = $this->createTime;
+        }
+        if (null !== $this->modifyTime) {
+            $res['modifyTime'] = $this->modifyTime;
+        }
+        if (null !== $this->permissionMode) {
+            $res['permissionMode'] = $this->permissionMode;
+        }
+        if (null !== $this->quota) {
+            $res['quota'] = $this->quota;
+        }
         if (null !== $this->spaceId) {
             $res['spaceId'] = $this->spaceId;
         }
@@ -90,20 +102,8 @@ class spaces extends Model
         if (null !== $this->spaceType) {
             $res['spaceType'] = $this->spaceType;
         }
-        if (null !== $this->quota) {
-            $res['quota'] = $this->quota;
-        }
         if (null !== $this->usedQuota) {
             $res['usedQuota'] = $this->usedQuota;
-        }
-        if (null !== $this->permissionMode) {
-            $res['permissionMode'] = $this->permissionMode;
-        }
-        if (null !== $this->createTime) {
-            $res['createTime'] = $this->createTime;
-        }
-        if (null !== $this->modifyTime) {
-            $res['modifyTime'] = $this->modifyTime;
         }
 
         return $res;
@@ -117,6 +117,18 @@ class spaces extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['createTime'])) {
+            $model->createTime = $map['createTime'];
+        }
+        if (isset($map['modifyTime'])) {
+            $model->modifyTime = $map['modifyTime'];
+        }
+        if (isset($map['permissionMode'])) {
+            $model->permissionMode = $map['permissionMode'];
+        }
+        if (isset($map['quota'])) {
+            $model->quota = $map['quota'];
+        }
         if (isset($map['spaceId'])) {
             $model->spaceId = $map['spaceId'];
         }
@@ -126,20 +138,8 @@ class spaces extends Model
         if (isset($map['spaceType'])) {
             $model->spaceType = $map['spaceType'];
         }
-        if (isset($map['quota'])) {
-            $model->quota = $map['quota'];
-        }
         if (isset($map['usedQuota'])) {
             $model->usedQuota = $map['usedQuota'];
-        }
-        if (isset($map['permissionMode'])) {
-            $model->permissionMode = $map['permissionMode'];
-        }
-        if (isset($map['createTime'])) {
-            $model->createTime = $map['createTime'];
-        }
-        if (isset($map['modifyTime'])) {
-            $model->modifyTime = $map['modifyTime'];
         }
 
         return $model;

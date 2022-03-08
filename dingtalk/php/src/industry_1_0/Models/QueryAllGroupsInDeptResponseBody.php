@@ -17,11 +17,11 @@ class QueryAllGroupsInDeptResponseBody extends Model
     public $content;
 
     /**
-     * @description 总页数
+     * @description 当前页码
      *
      * @var int
      */
-    public $totalPages;
+    public $currentPage;
 
     /**
      * @description 数据总量
@@ -31,16 +31,16 @@ class QueryAllGroupsInDeptResponseBody extends Model
     public $totalCount;
 
     /**
-     * @description 当前页码
+     * @description 总页数
      *
      * @var int
      */
-    public $currentPage;
+    public $totalPages;
     protected $_name = [
         'content'     => 'content',
-        'totalPages'  => 'totalPages',
-        'totalCount'  => 'totalCount',
         'currentPage' => 'currentPage',
+        'totalCount'  => 'totalCount',
+        'totalPages'  => 'totalPages',
     ];
 
     public function validate()
@@ -59,14 +59,14 @@ class QueryAllGroupsInDeptResponseBody extends Model
                 }
             }
         }
-        if (null !== $this->totalPages) {
-            $res['totalPages'] = $this->totalPages;
+        if (null !== $this->currentPage) {
+            $res['currentPage'] = $this->currentPage;
         }
         if (null !== $this->totalCount) {
             $res['totalCount'] = $this->totalCount;
         }
-        if (null !== $this->currentPage) {
-            $res['currentPage'] = $this->currentPage;
+        if (null !== $this->totalPages) {
+            $res['totalPages'] = $this->totalPages;
         }
 
         return $res;
@@ -89,14 +89,14 @@ class QueryAllGroupsInDeptResponseBody extends Model
                 }
             }
         }
-        if (isset($map['totalPages'])) {
-            $model->totalPages = $map['totalPages'];
+        if (isset($map['currentPage'])) {
+            $model->currentPage = $map['currentPage'];
         }
         if (isset($map['totalCount'])) {
             $model->totalCount = $map['totalCount'];
         }
-        if (isset($map['currentPage'])) {
-            $model->currentPage = $map['currentPage'];
+        if (isset($map['totalPages'])) {
+            $model->totalPages = $map['totalPages'];
         }
 
         return $model;

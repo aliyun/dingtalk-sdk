@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class AbandonCustomerRequest extends Model
 {
     /**
-     * @description 操作人staffId，一般为企业员工
+     * @description 自定义动态描述
      *
      * @var string
      */
-    public $operatorUserId;
+    public $customTrackDesc;
 
     /**
      * @description 客户实例 id 数组
@@ -23,11 +23,11 @@ class AbandonCustomerRequest extends Model
     public $instanceIdList;
 
     /**
-     * @description 自定义动态描述
+     * @description 操作人staffId，一般为企业员工
      *
      * @var string
      */
-    public $customTrackDesc;
+    public $operatorUserId;
 
     /**
      * @description 释放类型：returnPool-退回公海（默认），innerAbandon-仅清除负责人
@@ -36,9 +36,9 @@ class AbandonCustomerRequest extends Model
      */
     public $optType;
     protected $_name = [
-        'operatorUserId'  => 'operatorUserId',
-        'instanceIdList'  => 'instanceIdList',
         'customTrackDesc' => 'customTrackDesc',
+        'instanceIdList'  => 'instanceIdList',
+        'operatorUserId'  => 'operatorUserId',
         'optType'         => 'optType',
     ];
 
@@ -49,14 +49,14 @@ class AbandonCustomerRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->operatorUserId) {
-            $res['operatorUserId'] = $this->operatorUserId;
+        if (null !== $this->customTrackDesc) {
+            $res['customTrackDesc'] = $this->customTrackDesc;
         }
         if (null !== $this->instanceIdList) {
             $res['instanceIdList'] = $this->instanceIdList;
         }
-        if (null !== $this->customTrackDesc) {
-            $res['customTrackDesc'] = $this->customTrackDesc;
+        if (null !== $this->operatorUserId) {
+            $res['operatorUserId'] = $this->operatorUserId;
         }
         if (null !== $this->optType) {
             $res['optType'] = $this->optType;
@@ -73,16 +73,16 @@ class AbandonCustomerRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['operatorUserId'])) {
-            $model->operatorUserId = $map['operatorUserId'];
+        if (isset($map['customTrackDesc'])) {
+            $model->customTrackDesc = $map['customTrackDesc'];
         }
         if (isset($map['instanceIdList'])) {
             if (!empty($map['instanceIdList'])) {
                 $model->instanceIdList = $map['instanceIdList'];
             }
         }
-        if (isset($map['customTrackDesc'])) {
-            $model->customTrackDesc = $map['customTrackDesc'];
+        if (isset($map['operatorUserId'])) {
+            $model->operatorUserId = $map['operatorUserId'];
         }
         if (isset($map['optType'])) {
             $model->optType = $map['optType'];

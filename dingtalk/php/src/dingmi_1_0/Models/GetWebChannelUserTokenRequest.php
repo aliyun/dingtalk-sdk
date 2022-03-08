@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class GetWebChannelUserTokenRequest extends Model
 {
     /**
-     * @description 调用方在小蜜客服平台申请的业务账号体系的id
+     * @description 登录用户在业务账号体系内的用户id
      *
-     * @var int
+     * @var string
      */
-    public $source;
+    public $foreignId;
 
     /**
      * @description 登录用户在业务账号体系内的昵称
@@ -23,23 +23,15 @@ class GetWebChannelUserTokenRequest extends Model
     public $nick;
 
     /**
-     * @description 企业corpId
+     * @description 调用方在小蜜客服平台申请的业务账号体系的id
      *
-     * @var string
+     * @var int
      */
-    public $dingCorpId;
-
-    /**
-     * @description 登录用户在业务账号体系内的用户id
-     *
-     * @var string
-     */
-    public $foreignId;
+    public $source;
     protected $_name = [
-        'source'     => 'source',
-        'nick'       => 'nick',
-        'dingCorpId' => 'dingCorpId',
-        'foreignId'  => 'foreignId',
+        'foreignId' => 'foreignId',
+        'nick'      => 'nick',
+        'source'    => 'source',
     ];
 
     public function validate()
@@ -49,17 +41,14 @@ class GetWebChannelUserTokenRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->source) {
-            $res['source'] = $this->source;
+        if (null !== $this->foreignId) {
+            $res['foreignId'] = $this->foreignId;
         }
         if (null !== $this->nick) {
             $res['nick'] = $this->nick;
         }
-        if (null !== $this->dingCorpId) {
-            $res['dingCorpId'] = $this->dingCorpId;
-        }
-        if (null !== $this->foreignId) {
-            $res['foreignId'] = $this->foreignId;
+        if (null !== $this->source) {
+            $res['source'] = $this->source;
         }
 
         return $res;
@@ -73,17 +62,14 @@ class GetWebChannelUserTokenRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['source'])) {
-            $model->source = $map['source'];
+        if (isset($map['foreignId'])) {
+            $model->foreignId = $map['foreignId'];
         }
         if (isset($map['nick'])) {
             $model->nick = $map['nick'];
         }
-        if (isset($map['dingCorpId'])) {
-            $model->dingCorpId = $map['dingCorpId'];
-        }
-        if (isset($map['foreignId'])) {
-            $model->foreignId = $map['foreignId'];
+        if (isset($map['source'])) {
+            $model->source = $map['source'];
         }
 
         return $model;

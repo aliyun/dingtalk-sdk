@@ -9,18 +9,18 @@ use AlibabaCloud\Tea\Model;
 class actionContent extends Model
 {
     /**
-     * @description displayValue
-     *
-     * @var string
-     */
-    public $displayValue;
-
-    /**
      * @description displayName
      *
      * @var string
      */
     public $displayName;
+
+    /**
+     * @description displayValue
+     *
+     * @var string
+     */
+    public $displayValue;
 
     /**
      * @description name
@@ -43,8 +43,8 @@ class actionContent extends Model
      */
     public $valueType;
     protected $_name = [
-        'displayValue' => 'displayValue',
         'displayName'  => 'displayName',
+        'displayValue' => 'displayValue',
         'name'         => 'name',
         'value'        => 'value',
         'valueType'    => 'valueType',
@@ -57,11 +57,11 @@ class actionContent extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->displayValue) {
-            $res['displayValue'] = $this->displayValue;
-        }
         if (null !== $this->displayName) {
             $res['displayName'] = $this->displayName;
+        }
+        if (null !== $this->displayValue) {
+            $res['displayValue'] = $this->displayValue;
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
@@ -84,11 +84,11 @@ class actionContent extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['displayValue'])) {
-            $model->displayValue = $map['displayValue'];
-        }
         if (isset($map['displayName'])) {
             $model->displayName = $map['displayName'];
+        }
+        if (isset($map['displayValue'])) {
+            $model->displayValue = $map['displayValue'];
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];

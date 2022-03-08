@@ -11,20 +11,6 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 创建时间
-     *
-     * @var string
-     */
-    public $createTimeGMT;
-
-    /**
-     * @description processInstanceId
-     *
-     * @var string
-     */
-    public $processInstanceId;
-
-    /**
      * @description actioners
      *
      * @var actionExecutor[]
@@ -39,11 +25,11 @@ class data extends Model
     public $approvedResult;
 
     /**
-     * @description formUuid
+     * @description 创建时间
      *
      * @var string
      */
-    public $formUuid;
+    public $createTimeGMT;
 
     /**
      * @description data
@@ -53,11 +39,18 @@ class data extends Model
     public $data;
 
     /**
-     * @description processCode
+     * @description formUuid
      *
      * @var string
      */
-    public $processCode;
+    public $formUuid;
+
+    /**
+     * @description instanceStatus
+     *
+     * @var string
+     */
+    public $instanceStatus;
 
     /**
      * @description 修改时间
@@ -74,18 +67,25 @@ class data extends Model
     public $originator;
 
     /**
+     * @description processCode
+     *
+     * @var string
+     */
+    public $processCode;
+
+    /**
+     * @description processInstanceId
+     *
+     * @var string
+     */
+    public $processInstanceId;
+
+    /**
      * @description title
      *
      * @var string
      */
     public $title;
-
-    /**
-     * @description instanceStatus
-     *
-     * @var string
-     */
-    public $instanceStatus;
 
     /**
      * @description version
@@ -94,17 +94,17 @@ class data extends Model
      */
     public $version;
     protected $_name = [
-        'createTimeGMT'     => 'createTimeGMT',
-        'processInstanceId' => 'processInstanceId',
         'actionExecutor'    => 'actionExecutor',
         'approvedResult'    => 'approvedResult',
-        'formUuid'          => 'formUuid',
+        'createTimeGMT'     => 'createTimeGMT',
         'data'              => 'data',
-        'processCode'       => 'processCode',
+        'formUuid'          => 'formUuid',
+        'instanceStatus'    => 'instanceStatus',
         'modifiedTimeGMT'   => 'modifiedTimeGMT',
         'originator'        => 'originator',
+        'processCode'       => 'processCode',
+        'processInstanceId' => 'processInstanceId',
         'title'             => 'title',
-        'instanceStatus'    => 'instanceStatus',
         'version'           => 'version',
     ];
 
@@ -115,12 +115,6 @@ class data extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->createTimeGMT) {
-            $res['createTimeGMT'] = $this->createTimeGMT;
-        }
-        if (null !== $this->processInstanceId) {
-            $res['processInstanceId'] = $this->processInstanceId;
-        }
         if (null !== $this->actionExecutor) {
             $res['actionExecutor'] = [];
             if (null !== $this->actionExecutor && \is_array($this->actionExecutor)) {
@@ -133,14 +127,17 @@ class data extends Model
         if (null !== $this->approvedResult) {
             $res['approvedResult'] = $this->approvedResult;
         }
-        if (null !== $this->formUuid) {
-            $res['formUuid'] = $this->formUuid;
+        if (null !== $this->createTimeGMT) {
+            $res['createTimeGMT'] = $this->createTimeGMT;
         }
         if (null !== $this->data) {
             $res['data'] = $this->data;
         }
-        if (null !== $this->processCode) {
-            $res['processCode'] = $this->processCode;
+        if (null !== $this->formUuid) {
+            $res['formUuid'] = $this->formUuid;
+        }
+        if (null !== $this->instanceStatus) {
+            $res['instanceStatus'] = $this->instanceStatus;
         }
         if (null !== $this->modifiedTimeGMT) {
             $res['modifiedTimeGMT'] = $this->modifiedTimeGMT;
@@ -148,11 +145,14 @@ class data extends Model
         if (null !== $this->originator) {
             $res['originator'] = null !== $this->originator ? $this->originator->toMap() : null;
         }
+        if (null !== $this->processCode) {
+            $res['processCode'] = $this->processCode;
+        }
+        if (null !== $this->processInstanceId) {
+            $res['processInstanceId'] = $this->processInstanceId;
+        }
         if (null !== $this->title) {
             $res['title'] = $this->title;
-        }
-        if (null !== $this->instanceStatus) {
-            $res['instanceStatus'] = $this->instanceStatus;
         }
         if (null !== $this->version) {
             $res['version'] = $this->version;
@@ -169,12 +169,6 @@ class data extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['createTimeGMT'])) {
-            $model->createTimeGMT = $map['createTimeGMT'];
-        }
-        if (isset($map['processInstanceId'])) {
-            $model->processInstanceId = $map['processInstanceId'];
-        }
         if (isset($map['actionExecutor'])) {
             if (!empty($map['actionExecutor'])) {
                 $model->actionExecutor = [];
@@ -187,14 +181,17 @@ class data extends Model
         if (isset($map['approvedResult'])) {
             $model->approvedResult = $map['approvedResult'];
         }
-        if (isset($map['formUuid'])) {
-            $model->formUuid = $map['formUuid'];
+        if (isset($map['createTimeGMT'])) {
+            $model->createTimeGMT = $map['createTimeGMT'];
         }
         if (isset($map['data'])) {
             $model->data = $map['data'];
         }
-        if (isset($map['processCode'])) {
-            $model->processCode = $map['processCode'];
+        if (isset($map['formUuid'])) {
+            $model->formUuid = $map['formUuid'];
+        }
+        if (isset($map['instanceStatus'])) {
+            $model->instanceStatus = $map['instanceStatus'];
         }
         if (isset($map['modifiedTimeGMT'])) {
             $model->modifiedTimeGMT = $map['modifiedTimeGMT'];
@@ -202,11 +199,14 @@ class data extends Model
         if (isset($map['originator'])) {
             $model->originator = originator::fromMap($map['originator']);
         }
+        if (isset($map['processCode'])) {
+            $model->processCode = $map['processCode'];
+        }
+        if (isset($map['processInstanceId'])) {
+            $model->processInstanceId = $map['processInstanceId'];
+        }
         if (isset($map['title'])) {
             $model->title = $map['title'];
-        }
-        if (isset($map['instanceStatus'])) {
-            $model->instanceStatus = $map['instanceStatus'];
         }
         if (isset($map['version'])) {
             $model->version = $map['version'];

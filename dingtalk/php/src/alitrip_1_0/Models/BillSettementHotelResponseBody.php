@@ -10,13 +10,6 @@ use AlibabaCloud\Tea\Model;
 class BillSettementHotelResponseBody extends Model
 {
     /**
-     * @description 结果msg
-     *
-     * @var string
-     */
-    public $resultMsg;
-
-    /**
      * @description module
      *
      * @var module
@@ -24,23 +17,30 @@ class BillSettementHotelResponseBody extends Model
     public $module;
 
     /**
-     * @description 是否成功
-     *
-     * @var bool
-     */
-    public $success;
-
-    /**
      * @description 结果code
      *
      * @var int
      */
     public $resultCode;
+
+    /**
+     * @description 结果msg
+     *
+     * @var string
+     */
+    public $resultMsg;
+
+    /**
+     * @description 是否成功
+     *
+     * @var bool
+     */
+    public $success;
     protected $_name = [
-        'resultMsg'  => 'resultMsg',
         'module'     => 'module',
-        'success'    => 'success',
         'resultCode' => 'resultCode',
+        'resultMsg'  => 'resultMsg',
+        'success'    => 'success',
     ];
 
     public function validate()
@@ -50,17 +50,17 @@ class BillSettementHotelResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->resultMsg) {
-            $res['resultMsg'] = $this->resultMsg;
-        }
         if (null !== $this->module) {
             $res['module'] = null !== $this->module ? $this->module->toMap() : null;
         }
-        if (null !== $this->success) {
-            $res['success'] = $this->success;
-        }
         if (null !== $this->resultCode) {
             $res['resultCode'] = $this->resultCode;
+        }
+        if (null !== $this->resultMsg) {
+            $res['resultMsg'] = $this->resultMsg;
+        }
+        if (null !== $this->success) {
+            $res['success'] = $this->success;
         }
 
         return $res;
@@ -74,17 +74,17 @@ class BillSettementHotelResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['resultMsg'])) {
-            $model->resultMsg = $map['resultMsg'];
-        }
         if (isset($map['module'])) {
             $model->module = module::fromMap($map['module']);
         }
-        if (isset($map['success'])) {
-            $model->success = $map['success'];
-        }
         if (isset($map['resultCode'])) {
             $model->resultCode = $map['resultCode'];
+        }
+        if (isset($map['resultMsg'])) {
+            $model->resultMsg = $map['resultMsg'];
+        }
+        if (isset($map['success'])) {
+            $model->success = $map['success'];
         }
 
         return $model;

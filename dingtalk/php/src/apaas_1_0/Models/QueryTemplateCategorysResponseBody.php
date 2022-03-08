@@ -10,19 +10,19 @@ use AlibabaCloud\Tea\Model;
 class QueryTemplateCategorysResponseBody extends Model
 {
     /**
+     * @var categoryList[]
+     */
+    public $categoryList;
+
+    /**
      * @description 总数
      *
      * @var string
      */
     public $total;
-
-    /**
-     * @var categoryList[]
-     */
-    public $categoryList;
     protected $_name = [
-        'total'        => 'total',
         'categoryList' => 'categoryList',
+        'total'        => 'total',
     ];
 
     public function validate()
@@ -32,9 +32,6 @@ class QueryTemplateCategorysResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->total) {
-            $res['total'] = $this->total;
-        }
         if (null !== $this->categoryList) {
             $res['categoryList'] = [];
             if (null !== $this->categoryList && \is_array($this->categoryList)) {
@@ -43,6 +40,9 @@ class QueryTemplateCategorysResponseBody extends Model
                     $res['categoryList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->total) {
+            $res['total'] = $this->total;
         }
 
         return $res;
@@ -56,9 +56,6 @@ class QueryTemplateCategorysResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['total'])) {
-            $model->total = $map['total'];
-        }
         if (isset($map['categoryList'])) {
             if (!empty($map['categoryList'])) {
                 $model->categoryList = [];
@@ -67,6 +64,9 @@ class QueryTemplateCategorysResponseBody extends Model
                     $model->categoryList[$n++] = null !== $item ? categoryList::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['total'])) {
+            $model->total = $map['total'];
         }
 
         return $model;

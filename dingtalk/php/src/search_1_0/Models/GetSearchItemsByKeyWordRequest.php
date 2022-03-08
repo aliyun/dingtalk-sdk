@@ -16,22 +16,22 @@ class GetSearchItemsByKeyWordRequest extends Model
     public $keyWord;
 
     /**
-     * @description 加密偏移量，第一次请求取“0”值，后续请求根据接口返回的nextToken值进行填写
-     *
-     * @var string
-     */
-    public $nextToken;
-
-    /**
      * @description 一次性请求的item数量
      *
      * @var int
      */
     public $maxResults;
+
+    /**
+     * @description 加密偏移量，第一次请求取“0”值，后续请求根据接口返回的nextToken值进行填写
+     *
+     * @var string
+     */
+    public $nextToken;
     protected $_name = [
         'keyWord'    => 'keyWord',
-        'nextToken'  => 'nextToken',
         'maxResults' => 'maxResults',
+        'nextToken'  => 'nextToken',
     ];
 
     public function validate()
@@ -44,11 +44,11 @@ class GetSearchItemsByKeyWordRequest extends Model
         if (null !== $this->keyWord) {
             $res['keyWord'] = $this->keyWord;
         }
-        if (null !== $this->nextToken) {
-            $res['nextToken'] = $this->nextToken;
-        }
         if (null !== $this->maxResults) {
             $res['maxResults'] = $this->maxResults;
+        }
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
         }
 
         return $res;
@@ -65,11 +65,11 @@ class GetSearchItemsByKeyWordRequest extends Model
         if (isset($map['keyWord'])) {
             $model->keyWord = $map['keyWord'];
         }
-        if (isset($map['nextToken'])) {
-            $model->nextToken = $map['nextToken'];
-        }
         if (isset($map['maxResults'])) {
             $model->maxResults = $map['maxResults'];
+        }
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
         }
 
         return $model;

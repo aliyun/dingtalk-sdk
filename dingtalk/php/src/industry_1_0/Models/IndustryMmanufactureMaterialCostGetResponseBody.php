@@ -10,6 +10,11 @@ use AlibabaCloud\Tea\Model;
 class IndustryMmanufactureMaterialCostGetResponseBody extends Model
 {
     /**
+     * @var bool
+     */
+    public $hasMore;
+
+    /**
      * @var list_[]
      */
     public $list;
@@ -17,22 +22,17 @@ class IndustryMmanufactureMaterialCostGetResponseBody extends Model
     /**
      * @var int
      */
-    public $totalCount;
+    public $nextCursor;
 
     /**
      * @var int
      */
-    public $nextCursor;
-
-    /**
-     * @var bool
-     */
-    public $hasMore;
+    public $totalCount;
     protected $_name = [
-        'list'       => 'list',
-        'totalCount' => 'totalCount',
-        'nextCursor' => 'nextCursor',
         'hasMore'    => 'hasMore',
+        'list'       => 'list',
+        'nextCursor' => 'nextCursor',
+        'totalCount' => 'totalCount',
     ];
 
     public function validate()
@@ -42,6 +42,9 @@ class IndustryMmanufactureMaterialCostGetResponseBody extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->hasMore) {
+            $res['hasMore'] = $this->hasMore;
+        }
         if (null !== $this->list) {
             $res['list'] = [];
             if (null !== $this->list && \is_array($this->list)) {
@@ -51,14 +54,11 @@ class IndustryMmanufactureMaterialCostGetResponseBody extends Model
                 }
             }
         }
-        if (null !== $this->totalCount) {
-            $res['totalCount'] = $this->totalCount;
-        }
         if (null !== $this->nextCursor) {
             $res['nextCursor'] = $this->nextCursor;
         }
-        if (null !== $this->hasMore) {
-            $res['hasMore'] = $this->hasMore;
+        if (null !== $this->totalCount) {
+            $res['totalCount'] = $this->totalCount;
         }
 
         return $res;
@@ -72,6 +72,9 @@ class IndustryMmanufactureMaterialCostGetResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['hasMore'])) {
+            $model->hasMore = $map['hasMore'];
+        }
         if (isset($map['list'])) {
             if (!empty($map['list'])) {
                 $model->list = [];
@@ -81,14 +84,11 @@ class IndustryMmanufactureMaterialCostGetResponseBody extends Model
                 }
             }
         }
-        if (isset($map['totalCount'])) {
-            $model->totalCount = $map['totalCount'];
-        }
         if (isset($map['nextCursor'])) {
             $model->nextCursor = $map['nextCursor'];
         }
-        if (isset($map['hasMore'])) {
-            $model->hasMore = $map['hasMore'];
+        if (isset($map['totalCount'])) {
+            $model->totalCount = $map['totalCount'];
         }
 
         return $model;

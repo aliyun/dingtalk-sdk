@@ -10,13 +10,6 @@ use AlibabaCloud\Tea\Model;
 class PagePointHistoryResponseBody extends Model
 {
     /**
-     * @description 查询所得积分流水集合
-     *
-     * @var pointRecordList[]
-     */
-    public $pointRecordList;
-
-    /**
      * @description 是否有下一页
      *
      * @var bool
@@ -31,15 +24,22 @@ class PagePointHistoryResponseBody extends Model
     public $nextToken;
 
     /**
+     * @description 查询所得积分流水集合
+     *
+     * @var pointRecordList[]
+     */
+    public $pointRecordList;
+
+    /**
      * @description 总数，如果为-1则不计算总数
      *
      * @var int
      */
     public $totalCount;
     protected $_name = [
-        'pointRecordList' => 'pointRecordList',
         'hasMore'         => 'hasMore',
         'nextToken'       => 'nextToken',
+        'pointRecordList' => 'pointRecordList',
         'totalCount'      => 'totalCount',
     ];
 
@@ -50,6 +50,12 @@ class PagePointHistoryResponseBody extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->hasMore) {
+            $res['hasMore'] = $this->hasMore;
+        }
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
+        }
         if (null !== $this->pointRecordList) {
             $res['pointRecordList'] = [];
             if (null !== $this->pointRecordList && \is_array($this->pointRecordList)) {
@@ -58,12 +64,6 @@ class PagePointHistoryResponseBody extends Model
                     $res['pointRecordList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
-        }
-        if (null !== $this->hasMore) {
-            $res['hasMore'] = $this->hasMore;
-        }
-        if (null !== $this->nextToken) {
-            $res['nextToken'] = $this->nextToken;
         }
         if (null !== $this->totalCount) {
             $res['totalCount'] = $this->totalCount;
@@ -80,6 +80,12 @@ class PagePointHistoryResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['hasMore'])) {
+            $model->hasMore = $map['hasMore'];
+        }
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
+        }
         if (isset($map['pointRecordList'])) {
             if (!empty($map['pointRecordList'])) {
                 $model->pointRecordList = [];
@@ -88,12 +94,6 @@ class PagePointHistoryResponseBody extends Model
                     $model->pointRecordList[$n++] = null !== $item ? pointRecordList::fromMap($item) : $item;
                 }
             }
-        }
-        if (isset($map['hasMore'])) {
-            $model->hasMore = $map['hasMore'];
-        }
-        if (isset($map['nextToken'])) {
-            $model->nextToken = $map['nextToken'];
         }
         if (isset($map['totalCount'])) {
             $model->totalCount = $map['totalCount'];

@@ -10,9 +10,9 @@ use AlibabaCloud\Tea\Model;
 class UpdateRelationMetaFieldRequest extends Model
 {
     /**
-     * @var string
+     * @var fieldDTOList[]
      */
-    public $tenant;
+    public $fieldDTOList;
 
     /**
      * @var string
@@ -25,14 +25,14 @@ class UpdateRelationMetaFieldRequest extends Model
     public $relationType;
 
     /**
-     * @var fieldDTOList[]
+     * @var string
      */
-    public $fieldDTOList;
+    public $tenant;
     protected $_name = [
-        'tenant'         => 'tenant',
+        'fieldDTOList'   => 'fieldDTOList',
         'operatorUserId' => 'operatorUserId',
         'relationType'   => 'relationType',
-        'fieldDTOList'   => 'fieldDTOList',
+        'tenant'         => 'tenant',
     ];
 
     public function validate()
@@ -42,15 +42,6 @@ class UpdateRelationMetaFieldRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->tenant) {
-            $res['tenant'] = $this->tenant;
-        }
-        if (null !== $this->operatorUserId) {
-            $res['operatorUserId'] = $this->operatorUserId;
-        }
-        if (null !== $this->relationType) {
-            $res['relationType'] = $this->relationType;
-        }
         if (null !== $this->fieldDTOList) {
             $res['fieldDTOList'] = [];
             if (null !== $this->fieldDTOList && \is_array($this->fieldDTOList)) {
@@ -59,6 +50,15 @@ class UpdateRelationMetaFieldRequest extends Model
                     $res['fieldDTOList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->operatorUserId) {
+            $res['operatorUserId'] = $this->operatorUserId;
+        }
+        if (null !== $this->relationType) {
+            $res['relationType'] = $this->relationType;
+        }
+        if (null !== $this->tenant) {
+            $res['tenant'] = $this->tenant;
         }
 
         return $res;
@@ -72,15 +72,6 @@ class UpdateRelationMetaFieldRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['tenant'])) {
-            $model->tenant = $map['tenant'];
-        }
-        if (isset($map['operatorUserId'])) {
-            $model->operatorUserId = $map['operatorUserId'];
-        }
-        if (isset($map['relationType'])) {
-            $model->relationType = $map['relationType'];
-        }
         if (isset($map['fieldDTOList'])) {
             if (!empty($map['fieldDTOList'])) {
                 $model->fieldDTOList = [];
@@ -89,6 +80,15 @@ class UpdateRelationMetaFieldRequest extends Model
                     $model->fieldDTOList[$n++] = null !== $item ? fieldDTOList::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['operatorUserId'])) {
+            $model->operatorUserId = $map['operatorUserId'];
+        }
+        if (isset($map['relationType'])) {
+            $model->relationType = $map['relationType'];
+        }
+        if (isset($map['tenant'])) {
+            $model->tenant = $map['tenant'];
         }
 
         return $model;

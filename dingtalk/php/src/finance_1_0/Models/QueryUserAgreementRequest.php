@@ -9,6 +9,20 @@ use AlibabaCloud\Tea\Model;
 class QueryUserAgreementRequest extends Model
 {
     /**
+     * @description 业务编码
+     *
+     * @var string
+     */
+    public $bizCode;
+
+    /**
+     * @description 业务场景
+     *
+     * @var string
+     */
+    public $bizScene;
+
+    /**
      * @description 主机构编号
      *
      * @var string
@@ -28,26 +42,12 @@ class QueryUserAgreementRequest extends Model
      * @var string
      */
     public $userId;
-
-    /**
-     * @description 业务编码
-     *
-     * @var string
-     */
-    public $bizCode;
-
-    /**
-     * @description 业务场景
-     *
-     * @var string
-     */
-    public $bizScene;
     protected $_name = [
+        'bizCode'   => 'bizCode',
+        'bizScene'  => 'bizScene',
         'instId'    => 'instId',
         'subInstId' => 'subInstId',
         'userId'    => 'userId',
-        'bizCode'   => 'bizCode',
-        'bizScene'  => 'bizScene',
     ];
 
     public function validate()
@@ -57,6 +57,12 @@ class QueryUserAgreementRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->bizCode) {
+            $res['bizCode'] = $this->bizCode;
+        }
+        if (null !== $this->bizScene) {
+            $res['bizScene'] = $this->bizScene;
+        }
         if (null !== $this->instId) {
             $res['instId'] = $this->instId;
         }
@@ -65,12 +71,6 @@ class QueryUserAgreementRequest extends Model
         }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
-        }
-        if (null !== $this->bizCode) {
-            $res['bizCode'] = $this->bizCode;
-        }
-        if (null !== $this->bizScene) {
-            $res['bizScene'] = $this->bizScene;
         }
 
         return $res;
@@ -84,6 +84,12 @@ class QueryUserAgreementRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['bizCode'])) {
+            $model->bizCode = $map['bizCode'];
+        }
+        if (isset($map['bizScene'])) {
+            $model->bizScene = $map['bizScene'];
+        }
         if (isset($map['instId'])) {
             $model->instId = $map['instId'];
         }
@@ -92,12 +98,6 @@ class QueryUserAgreementRequest extends Model
         }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];
-        }
-        if (isset($map['bizCode'])) {
-            $model->bizCode = $map['bizCode'];
-        }
-        if (isset($map['bizScene'])) {
-            $model->bizScene = $map['bizScene'];
         }
 
         return $model;

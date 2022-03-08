@@ -13,26 +13,9 @@ use AlibabaCloud\Tea\Model;
 class GetTicketResponseBody extends Model
 {
     /**
-     * @description Id of the request
-     *
-     * @var string
-     */
-    public $openTicketId;
-
-    /**
      * @var string
      */
     public $createTime;
-
-    /**
-     * @var string
-     */
-    public $updateTime;
-
-    /**
-     * @var string
-     */
-    public $openConversationId;
 
     /**
      * @var creator
@@ -40,29 +23,26 @@ class GetTicketResponseBody extends Model
     public $creator;
 
     /**
-     * @var processor
-     */
-    public $processor;
-
-    /**
-     * @var takers[]
-     */
-    public $takers;
-
-    /**
-     * @var string
-     */
-    public $stage;
-
-    /**
-     * @var string
-     */
-    public $title;
-
-    /**
      * @var string
      */
     public $customFields;
+
+    /**
+     * @var string
+     */
+    public $openConversationId;
+
+    /**
+     * @description Id of the request
+     *
+     * @var string
+     */
+    public $openTicketId;
+
+    /**
+     * @var processor
+     */
+    public $processor;
 
     /**
      * @var string
@@ -75,23 +55,43 @@ class GetTicketResponseBody extends Model
     public $sceneContext;
 
     /**
+     * @var string
+     */
+    public $stage;
+
+    /**
+     * @var takers[]
+     */
+    public $takers;
+
+    /**
      * @var template
      */
     public $template;
+
+    /**
+     * @var string
+     */
+    public $title;
+
+    /**
+     * @var string
+     */
+    public $updateTime;
     protected $_name = [
-        'openTicketId'       => 'openTicketId',
         'createTime'         => 'createTime',
-        'updateTime'         => 'updateTime',
-        'openConversationId' => 'openConversationId',
         'creator'            => 'creator',
-        'processor'          => 'processor',
-        'takers'             => 'takers',
-        'stage'              => 'stage',
-        'title'              => 'title',
         'customFields'       => 'customFields',
+        'openConversationId' => 'openConversationId',
+        'openTicketId'       => 'openTicketId',
+        'processor'          => 'processor',
         'scene'              => 'scene',
         'sceneContext'       => 'sceneContext',
+        'stage'              => 'stage',
+        'takers'             => 'takers',
         'template'           => 'template',
+        'title'              => 'title',
+        'updateTime'         => 'updateTime',
     ];
 
     public function validate()
@@ -101,23 +101,32 @@ class GetTicketResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->openTicketId) {
-            $res['openTicketId'] = $this->openTicketId;
-        }
         if (null !== $this->createTime) {
             $res['createTime'] = $this->createTime;
-        }
-        if (null !== $this->updateTime) {
-            $res['updateTime'] = $this->updateTime;
-        }
-        if (null !== $this->openConversationId) {
-            $res['openConversationId'] = $this->openConversationId;
         }
         if (null !== $this->creator) {
             $res['creator'] = null !== $this->creator ? $this->creator->toMap() : null;
         }
+        if (null !== $this->customFields) {
+            $res['customFields'] = $this->customFields;
+        }
+        if (null !== $this->openConversationId) {
+            $res['openConversationId'] = $this->openConversationId;
+        }
+        if (null !== $this->openTicketId) {
+            $res['openTicketId'] = $this->openTicketId;
+        }
         if (null !== $this->processor) {
             $res['processor'] = null !== $this->processor ? $this->processor->toMap() : null;
+        }
+        if (null !== $this->scene) {
+            $res['scene'] = $this->scene;
+        }
+        if (null !== $this->sceneContext) {
+            $res['sceneContext'] = $this->sceneContext;
+        }
+        if (null !== $this->stage) {
+            $res['stage'] = $this->stage;
         }
         if (null !== $this->takers) {
             $res['takers'] = [];
@@ -128,23 +137,14 @@ class GetTicketResponseBody extends Model
                 }
             }
         }
-        if (null !== $this->stage) {
-            $res['stage'] = $this->stage;
+        if (null !== $this->template) {
+            $res['template'] = null !== $this->template ? $this->template->toMap() : null;
         }
         if (null !== $this->title) {
             $res['title'] = $this->title;
         }
-        if (null !== $this->customFields) {
-            $res['customFields'] = $this->customFields;
-        }
-        if (null !== $this->scene) {
-            $res['scene'] = $this->scene;
-        }
-        if (null !== $this->sceneContext) {
-            $res['sceneContext'] = $this->sceneContext;
-        }
-        if (null !== $this->template) {
-            $res['template'] = null !== $this->template ? $this->template->toMap() : null;
+        if (null !== $this->updateTime) {
+            $res['updateTime'] = $this->updateTime;
         }
 
         return $res;
@@ -158,23 +158,32 @@ class GetTicketResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['openTicketId'])) {
-            $model->openTicketId = $map['openTicketId'];
-        }
         if (isset($map['createTime'])) {
             $model->createTime = $map['createTime'];
-        }
-        if (isset($map['updateTime'])) {
-            $model->updateTime = $map['updateTime'];
-        }
-        if (isset($map['openConversationId'])) {
-            $model->openConversationId = $map['openConversationId'];
         }
         if (isset($map['creator'])) {
             $model->creator = creator::fromMap($map['creator']);
         }
+        if (isset($map['customFields'])) {
+            $model->customFields = $map['customFields'];
+        }
+        if (isset($map['openConversationId'])) {
+            $model->openConversationId = $map['openConversationId'];
+        }
+        if (isset($map['openTicketId'])) {
+            $model->openTicketId = $map['openTicketId'];
+        }
         if (isset($map['processor'])) {
             $model->processor = processor::fromMap($map['processor']);
+        }
+        if (isset($map['scene'])) {
+            $model->scene = $map['scene'];
+        }
+        if (isset($map['sceneContext'])) {
+            $model->sceneContext = $map['sceneContext'];
+        }
+        if (isset($map['stage'])) {
+            $model->stage = $map['stage'];
         }
         if (isset($map['takers'])) {
             if (!empty($map['takers'])) {
@@ -185,23 +194,14 @@ class GetTicketResponseBody extends Model
                 }
             }
         }
-        if (isset($map['stage'])) {
-            $model->stage = $map['stage'];
+        if (isset($map['template'])) {
+            $model->template = template::fromMap($map['template']);
         }
         if (isset($map['title'])) {
             $model->title = $map['title'];
         }
-        if (isset($map['customFields'])) {
-            $model->customFields = $map['customFields'];
-        }
-        if (isset($map['scene'])) {
-            $model->scene = $map['scene'];
-        }
-        if (isset($map['sceneContext'])) {
-            $model->sceneContext = $map['sceneContext'];
-        }
-        if (isset($map['template'])) {
-            $model->template = template::fromMap($map['template']);
+        if (isset($map['updateTime'])) {
+            $model->updateTime = $map['updateTime'];
         }
 
         return $model;

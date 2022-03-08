@@ -9,25 +9,11 @@ use AlibabaCloud\Tea\Model;
 class TransformToExclusiveAccountRequest extends Model
 {
     /**
-     * @description transformType
-     *
-     * @var string
-     */
-    public $transformType;
-
-    /**
      * @description idpDingTalk
      *
      * @var bool
      */
     public $idpDingTalk;
-
-    /**
-     * @description loginId
-     *
-     * @var string
-     */
-    public $loginId;
 
     /**
      * @description initPassword
@@ -37,16 +23,30 @@ class TransformToExclusiveAccountRequest extends Model
     public $initPassword;
 
     /**
+     * @description loginId
+     *
+     * @var string
+     */
+    public $loginId;
+
+    /**
+     * @description transformType
+     *
+     * @var string
+     */
+    public $transformType;
+
+    /**
      * @description userId
      *
      * @var string
      */
     public $userId;
     protected $_name = [
-        'transformType' => 'transformType',
         'idpDingTalk'   => 'idpDingTalk',
-        'loginId'       => 'loginId',
         'initPassword'  => 'initPassword',
+        'loginId'       => 'loginId',
+        'transformType' => 'transformType',
         'userId'        => 'userId',
     ];
 
@@ -57,17 +57,17 @@ class TransformToExclusiveAccountRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->transformType) {
-            $res['transformType'] = $this->transformType;
-        }
         if (null !== $this->idpDingTalk) {
             $res['idpDingTalk'] = $this->idpDingTalk;
+        }
+        if (null !== $this->initPassword) {
+            $res['initPassword'] = $this->initPassword;
         }
         if (null !== $this->loginId) {
             $res['loginId'] = $this->loginId;
         }
-        if (null !== $this->initPassword) {
-            $res['initPassword'] = $this->initPassword;
+        if (null !== $this->transformType) {
+            $res['transformType'] = $this->transformType;
         }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
@@ -84,17 +84,17 @@ class TransformToExclusiveAccountRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['transformType'])) {
-            $model->transformType = $map['transformType'];
-        }
         if (isset($map['idpDingTalk'])) {
             $model->idpDingTalk = $map['idpDingTalk'];
+        }
+        if (isset($map['initPassword'])) {
+            $model->initPassword = $map['initPassword'];
         }
         if (isset($map['loginId'])) {
             $model->loginId = $map['loginId'];
         }
-        if (isset($map['initPassword'])) {
-            $model->initPassword = $map['initPassword'];
+        if (isset($map['transformType'])) {
+            $model->transformType = $map['transformType'];
         }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];

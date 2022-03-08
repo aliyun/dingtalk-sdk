@@ -9,20 +9,6 @@ use AlibabaCloud\Tea\Model;
 class ListEventsViewRequest extends Model
 {
     /**
-     * @description 查询开始时间
-     *
-     * @var string
-     */
-    public $timeMin;
-
-    /**
-     * @description 查询截止时间
-     *
-     * @var string
-     */
-    public $timeMax;
-
-    /**
      * @description 查询返回结果数
      *
      * @var int
@@ -35,11 +21,25 @@ class ListEventsViewRequest extends Model
      * @var string
      */
     public $nextToken;
+
+    /**
+     * @description 查询截止时间
+     *
+     * @var string
+     */
+    public $timeMax;
+
+    /**
+     * @description 查询开始时间
+     *
+     * @var string
+     */
+    public $timeMin;
     protected $_name = [
-        'timeMin'    => 'timeMin',
-        'timeMax'    => 'timeMax',
         'maxResults' => 'maxResults',
         'nextToken'  => 'nextToken',
+        'timeMax'    => 'timeMax',
+        'timeMin'    => 'timeMin',
     ];
 
     public function validate()
@@ -49,17 +49,17 @@ class ListEventsViewRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->timeMin) {
-            $res['timeMin'] = $this->timeMin;
-        }
-        if (null !== $this->timeMax) {
-            $res['timeMax'] = $this->timeMax;
-        }
         if (null !== $this->maxResults) {
             $res['maxResults'] = $this->maxResults;
         }
         if (null !== $this->nextToken) {
             $res['nextToken'] = $this->nextToken;
+        }
+        if (null !== $this->timeMax) {
+            $res['timeMax'] = $this->timeMax;
+        }
+        if (null !== $this->timeMin) {
+            $res['timeMin'] = $this->timeMin;
         }
 
         return $res;
@@ -73,17 +73,17 @@ class ListEventsViewRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['timeMin'])) {
-            $model->timeMin = $map['timeMin'];
-        }
-        if (isset($map['timeMax'])) {
-            $model->timeMax = $map['timeMax'];
-        }
         if (isset($map['maxResults'])) {
             $model->maxResults = $map['maxResults'];
         }
         if (isset($map['nextToken'])) {
             $model->nextToken = $map['nextToken'];
+        }
+        if (isset($map['timeMax'])) {
+            $model->timeMax = $map['timeMax'];
+        }
+        if (isset($map['timeMin'])) {
+            $model->timeMin = $map['timeMin'];
         }
 
         return $model;

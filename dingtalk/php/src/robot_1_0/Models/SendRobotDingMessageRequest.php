@@ -9,11 +9,18 @@ use AlibabaCloud\Tea\Model;
 class SendRobotDingMessageRequest extends Model
 {
     /**
-     * @description 机器人的Id
+     * @description 模版对应的参数
+     *
+     * @var string[]
+     */
+    public $contentParams;
+
+    /**
+     * @description 颁发的模版id，可通过宜搭申请：https://yida.alibaba-inc.com/alibaba/web/APP_NSUGAGIQUMI4ESRA7O7D/inst/homepage/#/FORM-WO866371VGXSECXX4M0NC9KSGAT92VSA3TZSK9B
      *
      * @var string
      */
-    public $robotCode;
+    public $dingTemplateId;
 
     /**
      * @description 群聊的对外开放Id
@@ -30,24 +37,17 @@ class SendRobotDingMessageRequest extends Model
     public $receiverUserIdList;
 
     /**
-     * @description 颁发的模版id，可通过宜搭申请：https://yida.alibaba-inc.com/alibaba/web/APP_NSUGAGIQUMI4ESRA7O7D/inst/homepage/#/FORM-WO866371VGXSECXX4M0NC9KSGAT92VSA3TZSK9B
+     * @description 机器人的Id
      *
      * @var string
      */
-    public $dingTemplateId;
-
-    /**
-     * @description 模版对应的参数
-     *
-     * @var string[]
-     */
-    public $contentParams;
+    public $robotCode;
     protected $_name = [
-        'robotCode'          => 'robotCode',
+        'contentParams'      => 'contentParams',
+        'dingTemplateId'     => 'dingTemplateId',
         'openConversationId' => 'openConversationId',
         'receiverUserIdList' => 'receiverUserIdList',
-        'dingTemplateId'     => 'dingTemplateId',
-        'contentParams'      => 'contentParams',
+        'robotCode'          => 'robotCode',
     ];
 
     public function validate()
@@ -57,8 +57,11 @@ class SendRobotDingMessageRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->robotCode) {
-            $res['robotCode'] = $this->robotCode;
+        if (null !== $this->contentParams) {
+            $res['contentParams'] = $this->contentParams;
+        }
+        if (null !== $this->dingTemplateId) {
+            $res['dingTemplateId'] = $this->dingTemplateId;
         }
         if (null !== $this->openConversationId) {
             $res['openConversationId'] = $this->openConversationId;
@@ -66,11 +69,8 @@ class SendRobotDingMessageRequest extends Model
         if (null !== $this->receiverUserIdList) {
             $res['receiverUserIdList'] = $this->receiverUserIdList;
         }
-        if (null !== $this->dingTemplateId) {
-            $res['dingTemplateId'] = $this->dingTemplateId;
-        }
-        if (null !== $this->contentParams) {
-            $res['contentParams'] = $this->contentParams;
+        if (null !== $this->robotCode) {
+            $res['robotCode'] = $this->robotCode;
         }
 
         return $res;
@@ -84,8 +84,11 @@ class SendRobotDingMessageRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['robotCode'])) {
-            $model->robotCode = $map['robotCode'];
+        if (isset($map['contentParams'])) {
+            $model->contentParams = $map['contentParams'];
+        }
+        if (isset($map['dingTemplateId'])) {
+            $model->dingTemplateId = $map['dingTemplateId'];
         }
         if (isset($map['openConversationId'])) {
             $model->openConversationId = $map['openConversationId'];
@@ -95,11 +98,8 @@ class SendRobotDingMessageRequest extends Model
                 $model->receiverUserIdList = $map['receiverUserIdList'];
             }
         }
-        if (isset($map['dingTemplateId'])) {
-            $model->dingTemplateId = $map['dingTemplateId'];
-        }
-        if (isset($map['contentParams'])) {
-            $model->contentParams = $map['contentParams'];
+        if (isset($map['robotCode'])) {
+            $model->robotCode = $map['robotCode'];
         }
 
         return $model;

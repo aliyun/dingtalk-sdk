@@ -16,18 +16,18 @@ class AddFileRequest extends Model
     public $bizCode;
 
     /**
-     * @description 文件mediaId
-     *
-     * @var string
-     */
-    public $mediaId;
-
-    /**
      * @description 文件名称
      *
      * @var string
      */
     public $fileName;
+
+    /**
+     * @description 文件mediaId
+     *
+     * @var string
+     */
+    public $mediaId;
 
     /**
      * @description 操作人员工标识，为空时默认以企业管理员身份进行操作
@@ -37,8 +37,8 @@ class AddFileRequest extends Model
     public $opUserId;
     protected $_name = [
         'bizCode'  => 'bizCode',
-        'mediaId'  => 'mediaId',
         'fileName' => 'fileName',
+        'mediaId'  => 'mediaId',
         'opUserId' => 'opUserId',
     ];
 
@@ -52,11 +52,11 @@ class AddFileRequest extends Model
         if (null !== $this->bizCode) {
             $res['bizCode'] = $this->bizCode;
         }
-        if (null !== $this->mediaId) {
-            $res['mediaId'] = $this->mediaId;
-        }
         if (null !== $this->fileName) {
             $res['fileName'] = $this->fileName;
+        }
+        if (null !== $this->mediaId) {
+            $res['mediaId'] = $this->mediaId;
         }
         if (null !== $this->opUserId) {
             $res['opUserId'] = $this->opUserId;
@@ -76,11 +76,11 @@ class AddFileRequest extends Model
         if (isset($map['bizCode'])) {
             $model->bizCode = $map['bizCode'];
         }
-        if (isset($map['mediaId'])) {
-            $model->mediaId = $map['mediaId'];
-        }
         if (isset($map['fileName'])) {
             $model->fileName = $map['fileName'];
+        }
+        if (isset($map['mediaId'])) {
+            $model->mediaId = $map['mediaId'];
         }
         if (isset($map['opUserId'])) {
             $model->opUserId = $map['opUserId'];

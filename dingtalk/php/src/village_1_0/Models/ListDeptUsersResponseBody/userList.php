@@ -9,18 +9,16 @@ use AlibabaCloud\Tea\Model;
 class userList extends Model
 {
     /**
-     * @description 用户ID
-     *
-     * @var string
+     * @var bool
      */
-    public $userId;
+    public $active;
 
     /**
-     * @description unionId
+     * @description 部门ID列表
      *
-     * @var string
+     * @var int[]
      */
-    public $unionId;
+    public $departmentList;
 
     /**
      * @var string
@@ -33,23 +31,25 @@ class userList extends Model
     public $name;
 
     /**
-     * @description 部门ID列表
+     * @description unionId
      *
-     * @var int[]
+     * @var string
      */
-    public $departmentList;
+    public $unionId;
 
     /**
-     * @var bool
+     * @description 用户ID
+     *
+     * @var string
      */
-    public $active;
+    public $userId;
     protected $_name = [
-        'userId'         => 'userId',
-        'unionId'        => 'unionId',
+        'active'         => 'active',
+        'departmentList' => 'departmentList',
         'jobNumber'      => 'jobNumber',
         'name'           => 'name',
-        'departmentList' => 'departmentList',
-        'active'         => 'active',
+        'unionId'        => 'unionId',
+        'userId'         => 'userId',
     ];
 
     public function validate()
@@ -59,11 +59,11 @@ class userList extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
+        if (null !== $this->active) {
+            $res['active'] = $this->active;
         }
-        if (null !== $this->unionId) {
-            $res['unionId'] = $this->unionId;
+        if (null !== $this->departmentList) {
+            $res['departmentList'] = $this->departmentList;
         }
         if (null !== $this->jobNumber) {
             $res['jobNumber'] = $this->jobNumber;
@@ -71,11 +71,11 @@ class userList extends Model
         if (null !== $this->name) {
             $res['name'] = $this->name;
         }
-        if (null !== $this->departmentList) {
-            $res['departmentList'] = $this->departmentList;
+        if (null !== $this->unionId) {
+            $res['unionId'] = $this->unionId;
         }
-        if (null !== $this->active) {
-            $res['active'] = $this->active;
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -89,11 +89,13 @@ class userList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
+        if (isset($map['active'])) {
+            $model->active = $map['active'];
         }
-        if (isset($map['unionId'])) {
-            $model->unionId = $map['unionId'];
+        if (isset($map['departmentList'])) {
+            if (!empty($map['departmentList'])) {
+                $model->departmentList = $map['departmentList'];
+            }
         }
         if (isset($map['jobNumber'])) {
             $model->jobNumber = $map['jobNumber'];
@@ -101,13 +103,11 @@ class userList extends Model
         if (isset($map['name'])) {
             $model->name = $map['name'];
         }
-        if (isset($map['departmentList'])) {
-            if (!empty($map['departmentList'])) {
-                $model->departmentList = $map['departmentList'];
-            }
+        if (isset($map['unionId'])) {
+            $model->unionId = $map['unionId'];
         }
-        if (isset($map['active'])) {
-            $model->active = $map['active'];
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

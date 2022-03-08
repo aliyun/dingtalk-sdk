@@ -24,21 +24,21 @@ class GetDeptsByOrgIdResponseBody extends Model
     public $hasMore;
 
     /**
+     * @var int
+     */
+    public $maxResults;
+
+    /**
      * @description nextCursor
      *
      * @var int
      */
     public $nextToken;
-
-    /**
-     * @var int
-     */
-    public $maxResults;
     protected $_name = [
         'deptList'   => 'deptList',
         'hasMore'    => 'hasMore',
-        'nextToken'  => 'nextToken',
         'maxResults' => 'maxResults',
+        'nextToken'  => 'nextToken',
     ];
 
     public function validate()
@@ -60,11 +60,11 @@ class GetDeptsByOrgIdResponseBody extends Model
         if (null !== $this->hasMore) {
             $res['hasMore'] = $this->hasMore;
         }
-        if (null !== $this->nextToken) {
-            $res['nextToken'] = $this->nextToken;
-        }
         if (null !== $this->maxResults) {
             $res['maxResults'] = $this->maxResults;
+        }
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
         }
 
         return $res;
@@ -90,11 +90,11 @@ class GetDeptsByOrgIdResponseBody extends Model
         if (isset($map['hasMore'])) {
             $model->hasMore = $map['hasMore'];
         }
-        if (isset($map['nextToken'])) {
-            $model->nextToken = $map['nextToken'];
-        }
         if (isset($map['maxResults'])) {
             $model->maxResults = $map['maxResults'];
+        }
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
         }
 
         return $model;

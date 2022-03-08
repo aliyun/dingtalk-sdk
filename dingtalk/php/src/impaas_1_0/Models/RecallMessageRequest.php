@@ -11,20 +11,20 @@ class RecallMessageRequest extends Model
     /**
      * @var string
      */
-    public $operatorUid;
+    public $messageId;
 
     /**
      * @var string
      */
-    public $messageId;
+    public $operatorUid;
 
     /**
      * @var int
      */
     public $type;
     protected $_name = [
-        'operatorUid' => 'operatorUid',
         'messageId'   => 'messageId',
+        'operatorUid' => 'operatorUid',
         'type'        => 'type',
     ];
 
@@ -35,11 +35,11 @@ class RecallMessageRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->operatorUid) {
-            $res['operatorUid'] = $this->operatorUid;
-        }
         if (null !== $this->messageId) {
             $res['messageId'] = $this->messageId;
+        }
+        if (null !== $this->operatorUid) {
+            $res['operatorUid'] = $this->operatorUid;
         }
         if (null !== $this->type) {
             $res['type'] = $this->type;
@@ -56,11 +56,11 @@ class RecallMessageRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['operatorUid'])) {
-            $model->operatorUid = $map['operatorUid'];
-        }
         if (isset($map['messageId'])) {
             $model->messageId = $map['messageId'];
+        }
+        if (isset($map['operatorUid'])) {
+            $model->operatorUid = $map['operatorUid'];
         }
         if (isset($map['type'])) {
             $model->type = $map['type'];

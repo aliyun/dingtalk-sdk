@@ -12,6 +12,20 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
+     * @description 听课设备列表
+     *
+     * @var attendParticipants[]
+     */
+    public $attendParticipants;
+
+    /**
+     * @description 课程是否可以编辑或删除
+     *
+     * @var bool
+     */
+    public $canEdit;
+
+    /**
      * @description 课程code
      *
      * @var string
@@ -26,53 +40,11 @@ class result extends Model
     public $courseName;
 
     /**
-     * @description 开始时间
-     *
-     * @var int
-     */
-    public $startTime;
-
-    /**
      * @description 结束时间
      *
      * @var int
      */
     public $endTime;
-
-    /**
-     * @description 课程状态：0: 未开始；1: 已开始；2: 已结束
-     *
-     * @var int
-     */
-    public $status;
-
-    /**
-     * @description 课堂当前状态：0: 未进行；1: 进行中
-     *
-     * @var int
-     */
-    public $roomStatus;
-
-    /**
-     * @description 课程是否可以编辑或删除
-     *
-     * @var bool
-     */
-    public $canEdit;
-
-    /**
-     * @description 授课设备
-     *
-     * @var teachingParticipant
-     */
-    public $teachingParticipant;
-
-    /**
-     * @description 听课设备列表
-     *
-     * @var attendParticipants[]
-     */
-    public $attendParticipants;
 
     /**
      * @description 直播观看URL（如果有）
@@ -87,18 +59,46 @@ class result extends Model
      * @var recordInfos[]
      */
     public $recordInfos;
+
+    /**
+     * @description 课堂当前状态：0: 未进行；1: 进行中
+     *
+     * @var int
+     */
+    public $roomStatus;
+
+    /**
+     * @description 开始时间
+     *
+     * @var int
+     */
+    public $startTime;
+
+    /**
+     * @description 课程状态：0: 未开始；1: 已开始；2: 已结束
+     *
+     * @var int
+     */
+    public $status;
+
+    /**
+     * @description 授课设备
+     *
+     * @var teachingParticipant
+     */
+    public $teachingParticipant;
     protected $_name = [
+        'attendParticipants'  => 'attendParticipants',
+        'canEdit'             => 'canEdit',
         'courseCode'          => 'courseCode',
         'courseName'          => 'courseName',
-        'startTime'           => 'startTime',
         'endTime'             => 'endTime',
-        'status'              => 'status',
-        'roomStatus'          => 'roomStatus',
-        'canEdit'             => 'canEdit',
-        'teachingParticipant' => 'teachingParticipant',
-        'attendParticipants'  => 'attendParticipants',
         'liveUrl'             => 'liveUrl',
         'recordInfos'         => 'recordInfos',
+        'roomStatus'          => 'roomStatus',
+        'startTime'           => 'startTime',
+        'status'              => 'status',
+        'teachingParticipant' => 'teachingParticipant',
     ];
 
     public function validate()
@@ -108,30 +108,6 @@ class result extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->courseCode) {
-            $res['courseCode'] = $this->courseCode;
-        }
-        if (null !== $this->courseName) {
-            $res['courseName'] = $this->courseName;
-        }
-        if (null !== $this->startTime) {
-            $res['startTime'] = $this->startTime;
-        }
-        if (null !== $this->endTime) {
-            $res['endTime'] = $this->endTime;
-        }
-        if (null !== $this->status) {
-            $res['status'] = $this->status;
-        }
-        if (null !== $this->roomStatus) {
-            $res['roomStatus'] = $this->roomStatus;
-        }
-        if (null !== $this->canEdit) {
-            $res['canEdit'] = $this->canEdit;
-        }
-        if (null !== $this->teachingParticipant) {
-            $res['teachingParticipant'] = null !== $this->teachingParticipant ? $this->teachingParticipant->toMap() : null;
-        }
         if (null !== $this->attendParticipants) {
             $res['attendParticipants'] = [];
             if (null !== $this->attendParticipants && \is_array($this->attendParticipants)) {
@@ -140,6 +116,18 @@ class result extends Model
                     $res['attendParticipants'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->canEdit) {
+            $res['canEdit'] = $this->canEdit;
+        }
+        if (null !== $this->courseCode) {
+            $res['courseCode'] = $this->courseCode;
+        }
+        if (null !== $this->courseName) {
+            $res['courseName'] = $this->courseName;
+        }
+        if (null !== $this->endTime) {
+            $res['endTime'] = $this->endTime;
         }
         if (null !== $this->liveUrl) {
             $res['liveUrl'] = $this->liveUrl;
@@ -153,6 +141,18 @@ class result extends Model
                 }
             }
         }
+        if (null !== $this->roomStatus) {
+            $res['roomStatus'] = $this->roomStatus;
+        }
+        if (null !== $this->startTime) {
+            $res['startTime'] = $this->startTime;
+        }
+        if (null !== $this->status) {
+            $res['status'] = $this->status;
+        }
+        if (null !== $this->teachingParticipant) {
+            $res['teachingParticipant'] = null !== $this->teachingParticipant ? $this->teachingParticipant->toMap() : null;
+        }
 
         return $res;
     }
@@ -165,30 +165,6 @@ class result extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['courseCode'])) {
-            $model->courseCode = $map['courseCode'];
-        }
-        if (isset($map['courseName'])) {
-            $model->courseName = $map['courseName'];
-        }
-        if (isset($map['startTime'])) {
-            $model->startTime = $map['startTime'];
-        }
-        if (isset($map['endTime'])) {
-            $model->endTime = $map['endTime'];
-        }
-        if (isset($map['status'])) {
-            $model->status = $map['status'];
-        }
-        if (isset($map['roomStatus'])) {
-            $model->roomStatus = $map['roomStatus'];
-        }
-        if (isset($map['canEdit'])) {
-            $model->canEdit = $map['canEdit'];
-        }
-        if (isset($map['teachingParticipant'])) {
-            $model->teachingParticipant = teachingParticipant::fromMap($map['teachingParticipant']);
-        }
         if (isset($map['attendParticipants'])) {
             if (!empty($map['attendParticipants'])) {
                 $model->attendParticipants = [];
@@ -197,6 +173,18 @@ class result extends Model
                     $model->attendParticipants[$n++] = null !== $item ? attendParticipants::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['canEdit'])) {
+            $model->canEdit = $map['canEdit'];
+        }
+        if (isset($map['courseCode'])) {
+            $model->courseCode = $map['courseCode'];
+        }
+        if (isset($map['courseName'])) {
+            $model->courseName = $map['courseName'];
+        }
+        if (isset($map['endTime'])) {
+            $model->endTime = $map['endTime'];
         }
         if (isset($map['liveUrl'])) {
             $model->liveUrl = $map['liveUrl'];
@@ -209,6 +197,18 @@ class result extends Model
                     $model->recordInfos[$n++] = null !== $item ? recordInfos::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['roomStatus'])) {
+            $model->roomStatus = $map['roomStatus'];
+        }
+        if (isset($map['startTime'])) {
+            $model->startTime = $map['startTime'];
+        }
+        if (isset($map['status'])) {
+            $model->status = $map['status'];
+        }
+        if (isset($map['teachingParticipant'])) {
+            $model->teachingParticipant = teachingParticipant::fromMap($map['teachingParticipant']);
         }
 
         return $model;

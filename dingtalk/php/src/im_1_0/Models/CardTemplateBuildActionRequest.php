@@ -9,31 +9,6 @@ use AlibabaCloud\Tea\Model;
 class CardTemplateBuildActionRequest extends Model
 {
     /**
-     * @var int
-     */
-    public $dingIsvOrgId;
-
-    /**
-     * @var int
-     */
-    public $dingTokenGrantType;
-
-    /**
-     * @var string
-     */
-    public $dingSuiteKey;
-
-    /**
-     * @var int
-     */
-    public $dingOrgId;
-
-    /**
-     * @var int
-     */
-    public $dingOauthAppId;
-
-    /**
      * @description 模板构建的action：含create、save、deploy
      *
      * @var string
@@ -47,13 +22,8 @@ class CardTemplateBuildActionRequest extends Model
      */
     public $cardTemplateJson;
     protected $_name = [
-        'dingIsvOrgId'       => 'dingIsvOrgId',
-        'dingTokenGrantType' => 'dingTokenGrantType',
-        'dingSuiteKey'       => 'dingSuiteKey',
-        'dingOrgId'          => 'dingOrgId',
-        'dingOauthAppId'     => 'dingOauthAppId',
-        'action'             => 'action',
-        'cardTemplateJson'   => 'cardTemplateJson',
+        'action'           => 'action',
+        'cardTemplateJson' => 'cardTemplateJson',
     ];
 
     public function validate()
@@ -63,21 +33,6 @@ class CardTemplateBuildActionRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->dingIsvOrgId) {
-            $res['dingIsvOrgId'] = $this->dingIsvOrgId;
-        }
-        if (null !== $this->dingTokenGrantType) {
-            $res['dingTokenGrantType'] = $this->dingTokenGrantType;
-        }
-        if (null !== $this->dingSuiteKey) {
-            $res['dingSuiteKey'] = $this->dingSuiteKey;
-        }
-        if (null !== $this->dingOrgId) {
-            $res['dingOrgId'] = $this->dingOrgId;
-        }
-        if (null !== $this->dingOauthAppId) {
-            $res['dingOauthAppId'] = $this->dingOauthAppId;
-        }
         if (null !== $this->action) {
             $res['action'] = $this->action;
         }
@@ -96,21 +51,6 @@ class CardTemplateBuildActionRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['dingIsvOrgId'])) {
-            $model->dingIsvOrgId = $map['dingIsvOrgId'];
-        }
-        if (isset($map['dingTokenGrantType'])) {
-            $model->dingTokenGrantType = $map['dingTokenGrantType'];
-        }
-        if (isset($map['dingSuiteKey'])) {
-            $model->dingSuiteKey = $map['dingSuiteKey'];
-        }
-        if (isset($map['dingOrgId'])) {
-            $model->dingOrgId = $map['dingOrgId'];
-        }
-        if (isset($map['dingOauthAppId'])) {
-            $model->dingOauthAppId = $map['dingOauthAppId'];
-        }
         if (isset($map['action'])) {
             $model->action = $map['action'];
         }

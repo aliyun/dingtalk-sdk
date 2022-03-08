@@ -9,21 +9,6 @@ use AlibabaCloud\Tea\Model;
 class OrderResaleRequest extends Model
 {
     /**
-     * @var string
-     */
-    public $dingCorpId;
-
-    /**
-     * @var int
-     */
-    public $serviceStartTime;
-
-    /**
-     * @var int
-     */
-    public $serviceStopTime;
-
-    /**
      * @var int
      */
     public $orderCreateTime;
@@ -39,23 +24,20 @@ class OrderResaleRequest extends Model
     public $quantity;
 
     /**
-     * @var string
+     * @var int
      */
-    public $dingIsvAccessToken;
+    public $serviceStartTime;
 
     /**
-     * @var string
+     * @var int
      */
-    public $dingSuiteKey;
+    public $serviceStopTime;
     protected $_name = [
-        'dingCorpId'         => 'dingCorpId',
-        'serviceStartTime'   => 'serviceStartTime',
-        'serviceStopTime'    => 'serviceStopTime',
-        'orderCreateTime'    => 'orderCreateTime',
-        'orderId'            => 'orderId',
-        'quantity'           => 'quantity',
-        'dingIsvAccessToken' => 'dingIsvAccessToken',
-        'dingSuiteKey'       => 'dingSuiteKey',
+        'orderCreateTime'  => 'orderCreateTime',
+        'orderId'          => 'orderId',
+        'quantity'         => 'quantity',
+        'serviceStartTime' => 'serviceStartTime',
+        'serviceStopTime'  => 'serviceStopTime',
     ];
 
     public function validate()
@@ -65,15 +47,6 @@ class OrderResaleRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->dingCorpId) {
-            $res['dingCorpId'] = $this->dingCorpId;
-        }
-        if (null !== $this->serviceStartTime) {
-            $res['serviceStartTime'] = $this->serviceStartTime;
-        }
-        if (null !== $this->serviceStopTime) {
-            $res['serviceStopTime'] = $this->serviceStopTime;
-        }
         if (null !== $this->orderCreateTime) {
             $res['orderCreateTime'] = $this->orderCreateTime;
         }
@@ -83,11 +56,11 @@ class OrderResaleRequest extends Model
         if (null !== $this->quantity) {
             $res['quantity'] = $this->quantity;
         }
-        if (null !== $this->dingIsvAccessToken) {
-            $res['dingIsvAccessToken'] = $this->dingIsvAccessToken;
+        if (null !== $this->serviceStartTime) {
+            $res['serviceStartTime'] = $this->serviceStartTime;
         }
-        if (null !== $this->dingSuiteKey) {
-            $res['dingSuiteKey'] = $this->dingSuiteKey;
+        if (null !== $this->serviceStopTime) {
+            $res['serviceStopTime'] = $this->serviceStopTime;
         }
 
         return $res;
@@ -101,15 +74,6 @@ class OrderResaleRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['dingCorpId'])) {
-            $model->dingCorpId = $map['dingCorpId'];
-        }
-        if (isset($map['serviceStartTime'])) {
-            $model->serviceStartTime = $map['serviceStartTime'];
-        }
-        if (isset($map['serviceStopTime'])) {
-            $model->serviceStopTime = $map['serviceStopTime'];
-        }
         if (isset($map['orderCreateTime'])) {
             $model->orderCreateTime = $map['orderCreateTime'];
         }
@@ -119,11 +83,11 @@ class OrderResaleRequest extends Model
         if (isset($map['quantity'])) {
             $model->quantity = $map['quantity'];
         }
-        if (isset($map['dingIsvAccessToken'])) {
-            $model->dingIsvAccessToken = $map['dingIsvAccessToken'];
+        if (isset($map['serviceStartTime'])) {
+            $model->serviceStartTime = $map['serviceStartTime'];
         }
-        if (isset($map['dingSuiteKey'])) {
-            $model->dingSuiteKey = $map['dingSuiteKey'];
+        if (isset($map['serviceStopTime'])) {
+            $model->serviceStopTime = $map['serviceStopTime'];
         }
 
         return $model;

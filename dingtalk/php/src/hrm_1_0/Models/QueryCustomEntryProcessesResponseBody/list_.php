@@ -11,6 +11,11 @@ class list_ extends Model
     /**
      * @var string
      */
+    public $formDesc;
+
+    /**
+     * @var string
+     */
     public $formId;
 
     /**
@@ -21,16 +26,11 @@ class list_ extends Model
     /**
      * @var string
      */
-    public $formDesc;
-
-    /**
-     * @var string
-     */
     public $shortUrl;
     protected $_name = [
+        'formDesc' => 'formDesc',
         'formId'   => 'formId',
         'formName' => 'formName',
-        'formDesc' => 'formDesc',
         'shortUrl' => 'shortUrl',
     ];
 
@@ -41,14 +41,14 @@ class list_ extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->formDesc) {
+            $res['formDesc'] = $this->formDesc;
+        }
         if (null !== $this->formId) {
             $res['formId'] = $this->formId;
         }
         if (null !== $this->formName) {
             $res['formName'] = $this->formName;
-        }
-        if (null !== $this->formDesc) {
-            $res['formDesc'] = $this->formDesc;
         }
         if (null !== $this->shortUrl) {
             $res['shortUrl'] = $this->shortUrl;
@@ -65,14 +65,14 @@ class list_ extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['formDesc'])) {
+            $model->formDesc = $map['formDesc'];
+        }
         if (isset($map['formId'])) {
             $model->formId = $map['formId'];
         }
         if (isset($map['formName'])) {
             $model->formName = $map['formName'];
-        }
-        if (isset($map['formDesc'])) {
-            $model->formDesc = $map['formDesc'];
         }
         if (isset($map['shortUrl'])) {
             $model->shortUrl = $map['shortUrl'];

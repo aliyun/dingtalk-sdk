@@ -9,20 +9,6 @@ use AlibabaCloud\Tea\Model;
 class QueryPurchaseInfoRequest extends Model
 {
     /**
-     * @description 设备序列号
-     *
-     * @var string
-     */
-    public $sn;
-
-    /**
-     * @description 员工id
-     *
-     * @var string
-     */
-    public $userId;
-
-    /**
      * @description 商户id
      *
      * @var string
@@ -35,11 +21,25 @@ class QueryPurchaseInfoRequest extends Model
      * @var int
      */
     public $scene;
+
+    /**
+     * @description 设备序列号
+     *
+     * @var string
+     */
+    public $sn;
+
+    /**
+     * @description 员工id
+     *
+     * @var string
+     */
+    public $userId;
     protected $_name = [
-        'sn'         => 'sn',
-        'userId'     => 'userId',
         'merchantId' => 'merchantId',
         'scene'      => 'scene',
+        'sn'         => 'sn',
+        'userId'     => 'userId',
     ];
 
     public function validate()
@@ -49,17 +49,17 @@ class QueryPurchaseInfoRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->sn) {
-            $res['sn'] = $this->sn;
-        }
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
-        }
         if (null !== $this->merchantId) {
             $res['merchantId'] = $this->merchantId;
         }
         if (null !== $this->scene) {
             $res['scene'] = $this->scene;
+        }
+        if (null !== $this->sn) {
+            $res['sn'] = $this->sn;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -73,17 +73,17 @@ class QueryPurchaseInfoRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['sn'])) {
-            $model->sn = $map['sn'];
-        }
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
-        }
         if (isset($map['merchantId'])) {
             $model->merchantId = $map['merchantId'];
         }
         if (isset($map['scene'])) {
             $model->scene = $map['scene'];
+        }
+        if (isset($map['sn'])) {
+            $model->sn = $map['sn'];
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

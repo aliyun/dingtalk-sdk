@@ -9,25 +9,11 @@ use AlibabaCloud\Tea\Model;
 class pages extends Model
 {
     /**
-     * @description 页面ID
+     * @description 是否全公司可见
      *
-     * @var string
+     * @var bool
      */
-    public $pageUuid;
-
-    /**
-     * @description 页面名称
-     *
-     * @var string
-     */
-    public $pageName;
-
-    /**
-     * @description 可见员工 ID 列表
-     *
-     * @var string[]
-     */
-    public $userids;
+    public $allVisible;
 
     /**
      * @description 可见部门 ID 铺
@@ -37,6 +23,20 @@ class pages extends Model
     public $deptIds;
 
     /**
+     * @description 页面名称
+     *
+     * @var string
+     */
+    public $pageName;
+
+    /**
+     * @description 页面ID
+     *
+     * @var string
+     */
+    public $pageUuid;
+
+    /**
      * @description 可见角色列表
      *
      * @var int[]
@@ -44,18 +44,18 @@ class pages extends Model
     public $roleIds;
 
     /**
-     * @description 是否全公司可见
+     * @description 可见员工 ID 列表
      *
-     * @var bool
+     * @var string[]
      */
-    public $allVisible;
+    public $userids;
     protected $_name = [
-        'pageUuid'   => 'pageUuid',
-        'pageName'   => 'pageName',
-        'userids'    => 'userids',
-        'deptIds'    => 'deptIds',
-        'roleIds'    => 'roleIds',
         'allVisible' => 'allVisible',
+        'deptIds'    => 'deptIds',
+        'pageName'   => 'pageName',
+        'pageUuid'   => 'pageUuid',
+        'roleIds'    => 'roleIds',
+        'userids'    => 'userids',
     ];
 
     public function validate()
@@ -65,23 +65,23 @@ class pages extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->pageUuid) {
-            $res['pageUuid'] = $this->pageUuid;
-        }
-        if (null !== $this->pageName) {
-            $res['pageName'] = $this->pageName;
-        }
-        if (null !== $this->userids) {
-            $res['userids'] = $this->userids;
+        if (null !== $this->allVisible) {
+            $res['allVisible'] = $this->allVisible;
         }
         if (null !== $this->deptIds) {
             $res['deptIds'] = $this->deptIds;
         }
+        if (null !== $this->pageName) {
+            $res['pageName'] = $this->pageName;
+        }
+        if (null !== $this->pageUuid) {
+            $res['pageUuid'] = $this->pageUuid;
+        }
         if (null !== $this->roleIds) {
             $res['roleIds'] = $this->roleIds;
         }
-        if (null !== $this->allVisible) {
-            $res['allVisible'] = $this->allVisible;
+        if (null !== $this->userids) {
+            $res['userids'] = $this->userids;
         }
 
         return $res;
@@ -95,29 +95,29 @@ class pages extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['pageUuid'])) {
-            $model->pageUuid = $map['pageUuid'];
-        }
-        if (isset($map['pageName'])) {
-            $model->pageName = $map['pageName'];
-        }
-        if (isset($map['userids'])) {
-            if (!empty($map['userids'])) {
-                $model->userids = $map['userids'];
-            }
+        if (isset($map['allVisible'])) {
+            $model->allVisible = $map['allVisible'];
         }
         if (isset($map['deptIds'])) {
             if (!empty($map['deptIds'])) {
                 $model->deptIds = $map['deptIds'];
             }
         }
+        if (isset($map['pageName'])) {
+            $model->pageName = $map['pageName'];
+        }
+        if (isset($map['pageUuid'])) {
+            $model->pageUuid = $map['pageUuid'];
+        }
         if (isset($map['roleIds'])) {
             if (!empty($map['roleIds'])) {
                 $model->roleIds = $map['roleIds'];
             }
         }
-        if (isset($map['allVisible'])) {
-            $model->allVisible = $map['allVisible'];
+        if (isset($map['userids'])) {
+            if (!empty($map['userids'])) {
+                $model->userids = $map['userids'];
+            }
         }
 
         return $model;

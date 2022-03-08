@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class warningSettings extends Model
 {
     /**
-     * @description 预警类型
+     * @description 风险预警 或 最大加班时间
      *
      * @var string
      */
-    public $time;
+    public $action;
 
     /**
      * @description 提醒阈值
@@ -23,15 +23,15 @@ class warningSettings extends Model
     public $threshold;
 
     /**
-     * @description 风险预警 或 最大加班时间
+     * @description 预警类型
      *
      * @var string
      */
-    public $action;
+    public $time;
     protected $_name = [
-        'time'      => 'time',
-        'threshold' => 'threshold',
         'action'    => 'action',
+        'threshold' => 'threshold',
+        'time'      => 'time',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class warningSettings extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->time) {
-            $res['time'] = $this->time;
+        if (null !== $this->action) {
+            $res['action'] = $this->action;
         }
         if (null !== $this->threshold) {
             $res['threshold'] = $this->threshold;
         }
-        if (null !== $this->action) {
-            $res['action'] = $this->action;
+        if (null !== $this->time) {
+            $res['time'] = $this->time;
         }
 
         return $res;
@@ -62,14 +62,14 @@ class warningSettings extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['time'])) {
-            $model->time = $map['time'];
+        if (isset($map['action'])) {
+            $model->action = $map['action'];
         }
         if (isset($map['threshold'])) {
             $model->threshold = $map['threshold'];
         }
-        if (isset($map['action'])) {
-            $model->action = $map['action'];
+        if (isset($map['time'])) {
+            $model->time = $map['time'];
         }
 
         return $model;

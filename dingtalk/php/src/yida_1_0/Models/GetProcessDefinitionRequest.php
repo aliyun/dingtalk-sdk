@@ -11,6 +11,11 @@ class GetProcessDefinitionRequest extends Model
     /**
      * @var string
      */
+    public $appType;
+
+    /**
+     * @var string
+     */
     public $corpId;
 
     /**
@@ -21,22 +26,7 @@ class GetProcessDefinitionRequest extends Model
     /**
      * @var string
      */
-    public $appType;
-
-    /**
-     * @var string
-     */
-    public $orderNumber;
-
-    /**
-     * @var string
-     */
-    public $systemType;
-
-    /**
-     * @var string
-     */
-    public $systemToken;
+    public $language;
 
     /**
      * @var string
@@ -46,21 +36,31 @@ class GetProcessDefinitionRequest extends Model
     /**
      * @var string
      */
-    public $language;
+    public $orderNumber;
+
+    /**
+     * @var string
+     */
+    public $systemToken;
+
+    /**
+     * @var string
+     */
+    public $systemType;
 
     /**
      * @var string
      */
     public $userId;
     protected $_name = [
+        'appType'     => 'appType',
         'corpId'      => 'corpId',
         'groupId'     => 'groupId',
-        'appType'     => 'appType',
-        'orderNumber' => 'orderNumber',
-        'systemType'  => 'systemType',
-        'systemToken' => 'systemToken',
-        'nameSpace'   => 'nameSpace',
         'language'    => 'language',
+        'nameSpace'   => 'nameSpace',
+        'orderNumber' => 'orderNumber',
+        'systemToken' => 'systemToken',
+        'systemType'  => 'systemType',
         'userId'      => 'userId',
     ];
 
@@ -71,29 +71,29 @@ class GetProcessDefinitionRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->appType) {
+            $res['appType'] = $this->appType;
+        }
         if (null !== $this->corpId) {
             $res['corpId'] = $this->corpId;
         }
         if (null !== $this->groupId) {
             $res['groupId'] = $this->groupId;
         }
-        if (null !== $this->appType) {
-            $res['appType'] = $this->appType;
-        }
-        if (null !== $this->orderNumber) {
-            $res['orderNumber'] = $this->orderNumber;
-        }
-        if (null !== $this->systemType) {
-            $res['systemType'] = $this->systemType;
-        }
-        if (null !== $this->systemToken) {
-            $res['systemToken'] = $this->systemToken;
+        if (null !== $this->language) {
+            $res['language'] = $this->language;
         }
         if (null !== $this->nameSpace) {
             $res['nameSpace'] = $this->nameSpace;
         }
-        if (null !== $this->language) {
-            $res['language'] = $this->language;
+        if (null !== $this->orderNumber) {
+            $res['orderNumber'] = $this->orderNumber;
+        }
+        if (null !== $this->systemToken) {
+            $res['systemToken'] = $this->systemToken;
+        }
+        if (null !== $this->systemType) {
+            $res['systemType'] = $this->systemType;
         }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
@@ -110,29 +110,29 @@ class GetProcessDefinitionRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['appType'])) {
+            $model->appType = $map['appType'];
+        }
         if (isset($map['corpId'])) {
             $model->corpId = $map['corpId'];
         }
         if (isset($map['groupId'])) {
             $model->groupId = $map['groupId'];
         }
-        if (isset($map['appType'])) {
-            $model->appType = $map['appType'];
-        }
-        if (isset($map['orderNumber'])) {
-            $model->orderNumber = $map['orderNumber'];
-        }
-        if (isset($map['systemType'])) {
-            $model->systemType = $map['systemType'];
-        }
-        if (isset($map['systemToken'])) {
-            $model->systemToken = $map['systemToken'];
+        if (isset($map['language'])) {
+            $model->language = $map['language'];
         }
         if (isset($map['nameSpace'])) {
             $model->nameSpace = $map['nameSpace'];
         }
-        if (isset($map['language'])) {
-            $model->language = $map['language'];
+        if (isset($map['orderNumber'])) {
+            $model->orderNumber = $map['orderNumber'];
+        }
+        if (isset($map['systemToken'])) {
+            $model->systemToken = $map['systemToken'];
+        }
+        if (isset($map['systemType'])) {
+            $model->systemType = $map['systemType'];
         }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];

@@ -9,6 +9,20 @@ use AlibabaCloud\Tea\Model;
 class QueryCompanyBasicInfoResponseBody extends Model
 {
     /**
+     * @description code
+     *
+     * @var string
+     */
+    public $code;
+
+    /**
+     * @description data
+     *
+     * @var string[][]
+     */
+    public $data;
+
+    /**
      * @description message
      *
      * @var string
@@ -28,26 +42,12 @@ class QueryCompanyBasicInfoResponseBody extends Model
      * @var int
      */
     public $total;
-
-    /**
-     * @description data
-     *
-     * @var string[][]
-     */
-    public $data;
-
-    /**
-     * @description code
-     *
-     * @var string
-     */
-    public $code;
     protected $_name = [
+        'code'      => 'code',
+        'data'      => 'data',
         'message'   => 'message',
         'requestId' => 'requestId',
         'total'     => 'total',
-        'data'      => 'data',
-        'code'      => 'code',
     ];
 
     public function validate()
@@ -57,6 +57,12 @@ class QueryCompanyBasicInfoResponseBody extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->code) {
+            $res['code'] = $this->code;
+        }
+        if (null !== $this->data) {
+            $res['data'] = $this->data;
+        }
         if (null !== $this->message) {
             $res['message'] = $this->message;
         }
@@ -65,12 +71,6 @@ class QueryCompanyBasicInfoResponseBody extends Model
         }
         if (null !== $this->total) {
             $res['total'] = $this->total;
-        }
-        if (null !== $this->data) {
-            $res['data'] = $this->data;
-        }
-        if (null !== $this->code) {
-            $res['code'] = $this->code;
         }
 
         return $res;
@@ -84,6 +84,14 @@ class QueryCompanyBasicInfoResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['code'])) {
+            $model->code = $map['code'];
+        }
+        if (isset($map['data'])) {
+            if (!empty($map['data'])) {
+                $model->data = $map['data'];
+            }
+        }
         if (isset($map['message'])) {
             $model->message = $map['message'];
         }
@@ -92,14 +100,6 @@ class QueryCompanyBasicInfoResponseBody extends Model
         }
         if (isset($map['total'])) {
             $model->total = $map['total'];
-        }
-        if (isset($map['data'])) {
-            if (!empty($map['data'])) {
-                $model->data = $map['data'];
-            }
-        }
-        if (isset($map['code'])) {
-            $model->code = $map['code'];
         }
 
         return $model;

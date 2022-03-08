@@ -9,26 +9,6 @@ use AlibabaCloud\Tea\Model;
 class TakeTicketRequest extends Model
 {
     /**
-     * @var int
-     */
-    public $dingIsvOrgId;
-
-    /**
-     * @var int
-     */
-    public $dingOrgId;
-
-    /**
-     * @var string
-     */
-    public $dingSuiteKey;
-
-    /**
-     * @var int
-     */
-    public $dingTokenGrantType;
-
-    /**
      * @var string
      */
     public $openTeamId;
@@ -36,20 +16,16 @@ class TakeTicketRequest extends Model
     /**
      * @var string
      */
-    public $takerUnionId;
+    public $openTicketId;
 
     /**
      * @var string
      */
-    public $openTicketId;
+    public $takerUnionId;
     protected $_name = [
-        'dingIsvOrgId'       => 'dingIsvOrgId',
-        'dingOrgId'          => 'dingOrgId',
-        'dingSuiteKey'       => 'dingSuiteKey',
-        'dingTokenGrantType' => 'dingTokenGrantType',
-        'openTeamId'         => 'openTeamId',
-        'takerUnionId'       => 'takerUnionId',
-        'openTicketId'       => 'openTicketId',
+        'openTeamId'   => 'openTeamId',
+        'openTicketId' => 'openTicketId',
+        'takerUnionId' => 'takerUnionId',
     ];
 
     public function validate()
@@ -59,26 +35,14 @@ class TakeTicketRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->dingIsvOrgId) {
-            $res['dingIsvOrgId'] = $this->dingIsvOrgId;
-        }
-        if (null !== $this->dingOrgId) {
-            $res['dingOrgId'] = $this->dingOrgId;
-        }
-        if (null !== $this->dingSuiteKey) {
-            $res['dingSuiteKey'] = $this->dingSuiteKey;
-        }
-        if (null !== $this->dingTokenGrantType) {
-            $res['dingTokenGrantType'] = $this->dingTokenGrantType;
-        }
         if (null !== $this->openTeamId) {
             $res['openTeamId'] = $this->openTeamId;
         }
-        if (null !== $this->takerUnionId) {
-            $res['takerUnionId'] = $this->takerUnionId;
-        }
         if (null !== $this->openTicketId) {
             $res['openTicketId'] = $this->openTicketId;
+        }
+        if (null !== $this->takerUnionId) {
+            $res['takerUnionId'] = $this->takerUnionId;
         }
 
         return $res;
@@ -92,26 +56,14 @@ class TakeTicketRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['dingIsvOrgId'])) {
-            $model->dingIsvOrgId = $map['dingIsvOrgId'];
-        }
-        if (isset($map['dingOrgId'])) {
-            $model->dingOrgId = $map['dingOrgId'];
-        }
-        if (isset($map['dingSuiteKey'])) {
-            $model->dingSuiteKey = $map['dingSuiteKey'];
-        }
-        if (isset($map['dingTokenGrantType'])) {
-            $model->dingTokenGrantType = $map['dingTokenGrantType'];
-        }
         if (isset($map['openTeamId'])) {
             $model->openTeamId = $map['openTeamId'];
         }
-        if (isset($map['takerUnionId'])) {
-            $model->takerUnionId = $map['takerUnionId'];
-        }
         if (isset($map['openTicketId'])) {
             $model->openTicketId = $map['openTicketId'];
+        }
+        if (isset($map['takerUnionId'])) {
+            $model->takerUnionId = $map['takerUnionId'];
         }
 
         return $model;

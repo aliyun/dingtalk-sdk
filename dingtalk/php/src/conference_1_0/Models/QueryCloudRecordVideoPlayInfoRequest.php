@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class QueryCloudRecordVideoPlayInfoRequest extends Model
 {
     /**
-     * @description 用户id
-     *
-     * @var string
-     */
-    public $unionId;
-
-    /**
      * @description 媒体文件id
      *
      * @var string
@@ -28,10 +21,17 @@ class QueryCloudRecordVideoPlayInfoRequest extends Model
      * @var string
      */
     public $regionId;
+
+    /**
+     * @description 用户id
+     *
+     * @var string
+     */
+    public $unionId;
     protected $_name = [
-        'unionId'  => 'unionId',
         'mediaId'  => 'mediaId',
         'regionId' => 'regionId',
+        'unionId'  => 'unionId',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class QueryCloudRecordVideoPlayInfoRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->unionId) {
-            $res['unionId'] = $this->unionId;
-        }
         if (null !== $this->mediaId) {
             $res['mediaId'] = $this->mediaId;
         }
         if (null !== $this->regionId) {
             $res['regionId'] = $this->regionId;
+        }
+        if (null !== $this->unionId) {
+            $res['unionId'] = $this->unionId;
         }
 
         return $res;
@@ -62,14 +62,14 @@ class QueryCloudRecordVideoPlayInfoRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['unionId'])) {
-            $model->unionId = $map['unionId'];
-        }
         if (isset($map['mediaId'])) {
             $model->mediaId = $map['mediaId'];
         }
         if (isset($map['regionId'])) {
             $model->regionId = $map['regionId'];
+        }
+        if (isset($map['unionId'])) {
+            $model->unionId = $map['unionId'];
         }
 
         return $model;

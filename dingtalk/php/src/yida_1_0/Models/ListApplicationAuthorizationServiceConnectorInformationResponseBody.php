@@ -10,13 +10,6 @@ use AlibabaCloud\Tea\Model;
 class ListApplicationAuthorizationServiceConnectorInformationResponseBody extends Model
 {
     /**
-     * @description 分页大小
-     *
-     * @var int
-     */
-    public $pageSize;
-
-    /**
      * @description 当前第几页
      *
      * @var int
@@ -24,11 +17,11 @@ class ListApplicationAuthorizationServiceConnectorInformationResponseBody extend
     public $pageNumber;
 
     /**
-     * @description 总数量
+     * @description 分页大小
      *
      * @var int
      */
-    public $totalCount;
+    public $pageSize;
 
     /**
      * @description pluginInfos
@@ -36,11 +29,18 @@ class ListApplicationAuthorizationServiceConnectorInformationResponseBody extend
      * @var plugInformation[]
      */
     public $plugInformation;
+
+    /**
+     * @description 总数量
+     *
+     * @var int
+     */
+    public $totalCount;
     protected $_name = [
-        'pageSize'        => 'pageSize',
         'pageNumber'      => 'pageNumber',
-        'totalCount'      => 'totalCount',
+        'pageSize'        => 'pageSize',
         'plugInformation' => 'plugInformation',
+        'totalCount'      => 'totalCount',
     ];
 
     public function validate()
@@ -50,14 +50,11 @@ class ListApplicationAuthorizationServiceConnectorInformationResponseBody extend
     public function toMap()
     {
         $res = [];
-        if (null !== $this->pageSize) {
-            $res['pageSize'] = $this->pageSize;
-        }
         if (null !== $this->pageNumber) {
             $res['pageNumber'] = $this->pageNumber;
         }
-        if (null !== $this->totalCount) {
-            $res['totalCount'] = $this->totalCount;
+        if (null !== $this->pageSize) {
+            $res['pageSize'] = $this->pageSize;
         }
         if (null !== $this->plugInformation) {
             $res['plugInformation'] = [];
@@ -67,6 +64,9 @@ class ListApplicationAuthorizationServiceConnectorInformationResponseBody extend
                     $res['plugInformation'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->totalCount) {
+            $res['totalCount'] = $this->totalCount;
         }
 
         return $res;
@@ -80,14 +80,11 @@ class ListApplicationAuthorizationServiceConnectorInformationResponseBody extend
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['pageSize'])) {
-            $model->pageSize = $map['pageSize'];
-        }
         if (isset($map['pageNumber'])) {
             $model->pageNumber = $map['pageNumber'];
         }
-        if (isset($map['totalCount'])) {
-            $model->totalCount = $map['totalCount'];
+        if (isset($map['pageSize'])) {
+            $model->pageSize = $map['pageSize'];
         }
         if (isset($map['plugInformation'])) {
             if (!empty($map['plugInformation'])) {
@@ -97,6 +94,9 @@ class ListApplicationAuthorizationServiceConnectorInformationResponseBody extend
                     $model->plugInformation[$n++] = null !== $item ? plugInformation::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['totalCount'])) {
+            $model->totalCount = $map['totalCount'];
         }
 
         return $model;

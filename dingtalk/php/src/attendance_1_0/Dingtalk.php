@@ -60,134 +60,51 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CheckClosingAccountRequest $request
+     * @param AttendanceBleDevicesAddRequest $request
      *
-     * @return CheckClosingAccountResponse
+     * @return AttendanceBleDevicesAddResponse
      */
-    public function checkClosingAccount($request)
+    public function attendanceBleDevicesAdd($request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new CheckClosingAccountHeaders([]);
+        $headers = new AttendanceBleDevicesAddHeaders([]);
 
-        return $this->checkClosingAccountWithOptions($request, $headers, $runtime);
+        return $this->attendanceBleDevicesAddWithOptions($request, $headers, $runtime);
     }
 
     /**
-     * @param CheckClosingAccountRequest $request
-     * @param CheckClosingAccountHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param AttendanceBleDevicesAddRequest $request
+     * @param AttendanceBleDevicesAddHeaders $headers
+     * @param RuntimeOptions                 $runtime
      *
-     * @return CheckClosingAccountResponse
+     * @return AttendanceBleDevicesAddResponse
      */
-    public function checkClosingAccountWithOptions($request, $headers, $runtime)
+    public function attendanceBleDevicesAddWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->userIds)) {
-            @$body['userIds'] = $request->userIds;
+        if (!Utils::isUnset($request->deviceIdList)) {
+            @$body['deviceIdList'] = $request->deviceIdList;
         }
-        if (!Utils::isUnset($request->userTimeRange)) {
-            @$body['userTimeRange'] = $request->userTimeRange;
+        if (!Utils::isUnset($request->groupKey)) {
+            @$body['groupKey'] = $request->groupKey;
         }
-        if (!Utils::isUnset($request->bizCode)) {
-            @$body['bizCode'] = $request->bizCode;
+        if (!Utils::isUnset($request->opUserId)) {
+            @$body['opUserId'] = $request->opUserId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return CheckClosingAccountResponse::fromMap($this->doROARequest('CheckClosingAccount', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/closingAccounts/status/query', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param string $devId
-     *
-     * @return GetMachineResponse
-     */
-    public function getMachine($devId)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new GetMachineHeaders([]);
-
-        return $this->getMachineWithOptions($devId, $headers, $runtime);
-    }
-
-    /**
-     * @param string            $devId
-     * @param GetMachineHeaders $headers
-     * @param RuntimeOptions    $runtime
-     *
-     * @return GetMachineResponse
-     */
-    public function getMachineWithOptions($devId, $headers, $runtime)
-    {
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-        ]);
-
-        return GetMachineResponse::fromMap($this->doROARequest('GetMachine', 'attendance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/attendance/machines/' . $devId . '', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param string                $devId
-     * @param GetMachineUserRequest $request
-     *
-     * @return GetMachineUserResponse
-     */
-    public function getMachineUser($devId, $request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new GetMachineUserHeaders([]);
-
-        return $this->getMachineUserWithOptions($devId, $request, $headers, $runtime);
-    }
-
-    /**
-     * @param string                $devId
-     * @param GetMachineUserRequest $request
-     * @param GetMachineUserHeaders $headers
-     * @param RuntimeOptions        $runtime
-     *
-     * @return GetMachineUserResponse
-     */
-    public function getMachineUserWithOptions($devId, $request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->nextToken)) {
-            @$query['nextToken'] = $request->nextToken;
-        }
-        if (!Utils::isUnset($request->maxResults)) {
-            @$query['maxResults'] = $request->maxResults;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return GetMachineUserResponse::fromMap($this->doROARequest('GetMachineUser', 'attendance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/attendance/machines/getUser/' . $devId . '', 'json', $req, $runtime));
+        return AttendanceBleDevicesAddResponse::fromMap($this->doROARequest('AttendanceBleDevicesAdd', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/group/bledevices', 'json', $req, $runtime));
     }
 
     /**
@@ -214,18 +131,18 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->opUserId)) {
-            @$body['opUserId'] = $request->opUserId;
-        }
         if (!Utils::isUnset($request->groupKey)) {
             @$body['groupKey'] = $request->groupKey;
+        }
+        if (!Utils::isUnset($request->opUserId)) {
+            @$body['opUserId'] = $request->opUserId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -233,99 +150,6 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return AttendanceBleDevicesQueryResponse::fromMap($this->doROARequestWithForm('AttendanceBleDevicesQuery', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/group/bledevices/query', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param SyncScheduleInfoRequest $request
-     *
-     * @return SyncScheduleInfoResponse
-     */
-    public function syncScheduleInfo($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new SyncScheduleInfoHeaders([]);
-
-        return $this->syncScheduleInfoWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param SyncScheduleInfoRequest $request
-     * @param SyncScheduleInfoHeaders $headers
-     * @param RuntimeOptions          $runtime
-     *
-     * @return SyncScheduleInfoResponse
-     */
-    public function syncScheduleInfoWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->scheduleInfos)) {
-            @$body['scheduleInfos'] = $request->scheduleInfos;
-        }
-        if (!Utils::isUnset($request->opUserId)) {
-            @$body['opUserId'] = $request->opUserId;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return SyncScheduleInfoResponse::fromMap($this->doROARequest('SyncScheduleInfo', 'attendance_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/attendance/schedules/additionalInfo', 'none', $req, $runtime));
-    }
-
-    /**
-     * @param AttendanceBleDevicesAddRequest $request
-     *
-     * @return AttendanceBleDevicesAddResponse
-     */
-    public function attendanceBleDevicesAdd($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new AttendanceBleDevicesAddHeaders([]);
-
-        return $this->attendanceBleDevicesAddWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param AttendanceBleDevicesAddRequest $request
-     * @param AttendanceBleDevicesAddHeaders $headers
-     * @param RuntimeOptions                 $runtime
-     *
-     * @return AttendanceBleDevicesAddResponse
-     */
-    public function attendanceBleDevicesAddWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->opUserId)) {
-            @$body['opUserId'] = $request->opUserId;
-        }
-        if (!Utils::isUnset($request->groupKey)) {
-            @$body['groupKey'] = $request->groupKey;
-        }
-        if (!Utils::isUnset($request->deviceIdList)) {
-            @$body['deviceIdList'] = $request->deviceIdList;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return AttendanceBleDevicesAddResponse::fromMap($this->doROARequest('AttendanceBleDevicesAdd', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/group/bledevices', 'json', $req, $runtime));
     }
 
     /**
@@ -352,21 +176,21 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->opUserId)) {
-            @$body['opUserId'] = $request->opUserId;
+        if (!Utils::isUnset($request->deviceIdList)) {
+            @$body['deviceIdList'] = $request->deviceIdList;
         }
         if (!Utils::isUnset($request->groupKey)) {
             @$body['groupKey'] = $request->groupKey;
         }
-        if (!Utils::isUnset($request->deviceIdList)) {
-            @$body['deviceIdList'] = $request->deviceIdList;
+        if (!Utils::isUnset($request->opUserId)) {
+            @$body['opUserId'] = $request->opUserId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -374,6 +198,54 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return AttendanceBleDevicesRemoveResponse::fromMap($this->doROARequest('AttendanceBleDevicesRemove', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/group/bledevices/remove', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CheckClosingAccountRequest $request
+     *
+     * @return CheckClosingAccountResponse
+     */
+    public function checkClosingAccount($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CheckClosingAccountHeaders([]);
+
+        return $this->checkClosingAccountWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CheckClosingAccountRequest $request
+     * @param CheckClosingAccountHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return CheckClosingAccountResponse
+     */
+    public function checkClosingAccountWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizCode)) {
+            @$body['bizCode'] = $request->bizCode;
+        }
+        if (!Utils::isUnset($request->userIds)) {
+            @$body['userIds'] = $request->userIds;
+        }
+        if (!Utils::isUnset($request->userTimeRange)) {
+            @$body['userTimeRange'] = $request->userTimeRange;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CheckClosingAccountResponse::fromMap($this->doROARequest('CheckClosingAccount', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/closingAccounts/status/query', 'json', $req, $runtime));
     }
 
     /**
@@ -404,24 +276,24 @@ class Dingtalk extends OpenApiClient
             @$query['corpId'] = $request->corpId;
         }
         $body = [];
-        if (!Utils::isUnset($request->opUserId)) {
-            @$body['opUserId'] = $request->opUserId;
-        }
         if (!Utils::isUnset($request->category)) {
             @$body['category'] = $request->category;
         }
-        if (!Utils::isUnset($request->resourceKey)) {
-            @$body['resourceKey'] = $request->resourceKey;
-        }
         if (!Utils::isUnset($request->entityIds)) {
             @$body['entityIds'] = $request->entityIds;
+        }
+        if (!Utils::isUnset($request->opUserId)) {
+            @$body['opUserId'] = $request->opUserId;
+        }
+        if (!Utils::isUnset($request->resourceKey)) {
+            @$body['resourceKey'] = $request->resourceKey;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -430,6 +302,117 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CheckWritePermissionResponse::fromMap($this->doROARequest('CheckWritePermission', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/writePermissions/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CreateApproveRequest $request
+     *
+     * @return CreateApproveResponse
+     */
+    public function createApprove($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateApproveHeaders([]);
+
+        return $this->createApproveWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateApproveRequest $request
+     * @param CreateApproveHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return CreateApproveResponse
+     */
+    public function createApproveWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->approveId)) {
+            @$body['approveId'] = $request->approveId;
+        }
+        if (!Utils::isUnset($request->opUserid)) {
+            @$body['opUserid'] = $request->opUserid;
+        }
+        if (!Utils::isUnset($request->punchParam)) {
+            @$body['punchParam'] = $request->punchParam;
+        }
+        if (!Utils::isUnset($request->subType)) {
+            @$body['subType'] = $request->subType;
+        }
+        if (!Utils::isUnset($request->tagName)) {
+            @$body['tagName'] = $request->tagName;
+        }
+        if (!Utils::isUnset($request->userid)) {
+            @$body['userid'] = $request->userid;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateApproveResponse::fromMap($this->doROARequest('CreateApprove', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/approves', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param DingTalkSecurityCheckRequest $request
+     *
+     * @return DingTalkSecurityCheckResponse
+     */
+    public function dingTalkSecurityCheck($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DingTalkSecurityCheckHeaders([]);
+
+        return $this->dingTalkSecurityCheckWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param DingTalkSecurityCheckRequest $request
+     * @param DingTalkSecurityCheckHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return DingTalkSecurityCheckResponse
+     */
+    public function dingTalkSecurityCheckWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->clientVer)) {
+            @$body['clientVer'] = $request->clientVer;
+        }
+        if (!Utils::isUnset($request->platform)) {
+            @$body['platform'] = $request->platform;
+        }
+        if (!Utils::isUnset($request->platformVer)) {
+            @$body['platformVer'] = $request->platformVer;
+        }
+        if (!Utils::isUnset($request->sec)) {
+            @$body['sec'] = $request->sec;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return DingTalkSecurityCheckResponse::fromMap($this->doROARequest('DingTalkSecurityCheck', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/securities/check', 'json', $req, $runtime));
     }
 
     /**
@@ -464,7 +447,7 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -475,60 +458,130 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateApproveRequest $request
+     * @param string $devId
      *
-     * @return CreateApproveResponse
+     * @return GetMachineResponse
      */
-    public function createApprove($request)
+    public function getMachine($devId)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new CreateApproveHeaders([]);
+        $headers = new GetMachineHeaders([]);
 
-        return $this->createApproveWithOptions($request, $headers, $runtime);
+        return $this->getMachineWithOptions($devId, $headers, $runtime);
     }
 
     /**
-     * @param CreateApproveRequest $request
-     * @param CreateApproveHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @param string            $devId
+     * @param GetMachineHeaders $headers
+     * @param RuntimeOptions    $runtime
      *
-     * @return CreateApproveResponse
+     * @return GetMachineResponse
      */
-    public function createApproveWithOptions($request, $headers, $runtime)
+    public function getMachineWithOptions($devId, $headers, $runtime)
+    {
+        $devId       = OpenApiUtilClient::getEncodeParam($devId);
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return GetMachineResponse::fromMap($this->doROARequest('GetMachine', 'attendance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/attendance/machines/' . $devId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                $devId
+     * @param GetMachineUserRequest $request
+     *
+     * @return GetMachineUserResponse
+     */
+    public function getMachineUser($devId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetMachineUserHeaders([]);
+
+        return $this->getMachineUserWithOptions($devId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                $devId
+     * @param GetMachineUserRequest $request
+     * @param GetMachineUserHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return GetMachineUserResponse
+     */
+    public function getMachineUserWithOptions($devId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->userid)) {
-            @$body['userid'] = $request->userid;
+        $devId = OpenApiUtilClient::getEncodeParam($devId);
+        $query = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
         }
-        if (!Utils::isUnset($request->tagName)) {
-            @$body['tagName'] = $request->tagName;
-        }
-        if (!Utils::isUnset($request->subType)) {
-            @$body['subType'] = $request->subType;
-        }
-        if (!Utils::isUnset($request->punchParam)) {
-            @$body['punchParam'] = $request->punchParam;
-        }
-        if (!Utils::isUnset($request->approveId)) {
-            @$body['approveId'] = $request->approveId;
-        }
-        if (!Utils::isUnset($request->opUserid)) {
-            @$body['opUserid'] = $request->opUserid;
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetMachineUserResponse::fromMap($this->doROARequest('GetMachineUser', 'attendance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/attendance/machines/getUser/' . $devId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetOvertimeSettingRequest $request
+     *
+     * @return GetOvertimeSettingResponse
+     */
+    public function getOvertimeSetting($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetOvertimeSettingHeaders([]);
+
+        return $this->getOvertimeSettingWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetOvertimeSettingRequest $request
+     * @param GetOvertimeSettingHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return GetOvertimeSettingResponse
+     */
+    public function getOvertimeSettingWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->overtimeSettingIds)) {
+            @$body['overtimeSettingIds'] = $request->overtimeSettingIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return CreateApproveResponse::fromMap($this->doROARequest('CreateApprove', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/approves', 'json', $req, $runtime));
+        return GetOvertimeSettingResponse::fromMap($this->doROARequest('GetOvertimeSetting', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/overtimeSettings/query', 'json', $req, $runtime));
     }
 
     /**
@@ -569,7 +622,7 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -580,113 +633,47 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DingTalkSecurityCheckRequest $request
+     * @param SyncScheduleInfoRequest $request
      *
-     * @return DingTalkSecurityCheckResponse
+     * @return SyncScheduleInfoResponse
      */
-    public function dingTalkSecurityCheck($request)
+    public function syncScheduleInfo($request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new DingTalkSecurityCheckHeaders([]);
+        $headers = new SyncScheduleInfoHeaders([]);
 
-        return $this->dingTalkSecurityCheckWithOptions($request, $headers, $runtime);
+        return $this->syncScheduleInfoWithOptions($request, $headers, $runtime);
     }
 
     /**
-     * @param DingTalkSecurityCheckRequest $request
-     * @param DingTalkSecurityCheckHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @param SyncScheduleInfoRequest $request
+     * @param SyncScheduleInfoHeaders $headers
+     * @param RuntimeOptions          $runtime
      *
-     * @return DingTalkSecurityCheckResponse
+     * @return SyncScheduleInfoResponse
      */
-    public function dingTalkSecurityCheckWithOptions($request, $headers, $runtime)
+    public function syncScheduleInfoWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->sec)) {
-            @$body['sec'] = $request->sec;
+        if (!Utils::isUnset($request->opUserId)) {
+            @$body['opUserId'] = $request->opUserId;
         }
-        if (!Utils::isUnset($request->platform)) {
-            @$body['platform'] = $request->platform;
-        }
-        if (!Utils::isUnset($request->clientVer)) {
-            @$body['clientVer'] = $request->clientVer;
-        }
-        if (!Utils::isUnset($request->platformVer)) {
-            @$body['platformVer'] = $request->platformVer;
-        }
-        if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
-        }
-        if (!Utils::isUnset($request->dingTokenGrantType)) {
-            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
-        }
-        if (!Utils::isUnset($request->dingSuiteKey)) {
-            @$body['dingSuiteKey'] = $request->dingSuiteKey;
-        }
-        if (!Utils::isUnset($request->dingCorpId)) {
-            @$body['dingCorpId'] = $request->dingCorpId;
-        }
-        if (!Utils::isUnset($request->dingOrgId)) {
-            @$body['dingOrgId'] = $request->dingOrgId;
-        }
-        if (!Utils::isUnset($request->dingIsvOrgId)) {
-            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        if (!Utils::isUnset($request->scheduleInfos)) {
+            @$body['scheduleInfos'] = $request->scheduleInfos;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return DingTalkSecurityCheckResponse::fromMap($this->doROARequest('DingTalkSecurityCheck', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/securities/check', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param GetOvertimeSettingRequest $request
-     *
-     * @return GetOvertimeSettingResponse
-     */
-    public function getOvertimeSetting($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new GetOvertimeSettingHeaders([]);
-
-        return $this->getOvertimeSettingWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param GetOvertimeSettingRequest $request
-     * @param GetOvertimeSettingHeaders $headers
-     * @param RuntimeOptions            $runtime
-     *
-     * @return GetOvertimeSettingResponse
-     */
-    public function getOvertimeSettingWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->overtimeSettingIds)) {
-            @$body['overtimeSettingIds'] = $request->overtimeSettingIds;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return GetOvertimeSettingResponse::fromMap($this->doROARequest('GetOvertimeSetting', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/overtimeSettings/query', 'json', $req, $runtime));
+        return SyncScheduleInfoResponse::fromMap($this->doROARequest('SyncScheduleInfo', 'attendance_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/attendance/schedules/additionalInfo', 'none', $req, $runtime));
     }
 }

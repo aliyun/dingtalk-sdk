@@ -11,17 +11,7 @@ class GetRunningTasksRequest extends Model
     /**
      * @var string
      */
-    public $processInstanceId;
-
-    /**
-     * @var string
-     */
     public $appType;
-
-    /**
-     * @var string
-     */
-    public $systemToken;
 
     /**
      * @var string
@@ -31,12 +21,22 @@ class GetRunningTasksRequest extends Model
     /**
      * @var string
      */
+    public $processInstanceId;
+
+    /**
+     * @var string
+     */
+    public $systemToken;
+
+    /**
+     * @var string
+     */
     public $userId;
     protected $_name = [
-        'processInstanceId' => 'processInstanceId',
         'appType'           => 'appType',
-        'systemToken'       => 'systemToken',
         'language'          => 'language',
+        'processInstanceId' => 'processInstanceId',
+        'systemToken'       => 'systemToken',
         'userId'            => 'userId',
     ];
 
@@ -47,17 +47,17 @@ class GetRunningTasksRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->processInstanceId) {
-            $res['processInstanceId'] = $this->processInstanceId;
-        }
         if (null !== $this->appType) {
             $res['appType'] = $this->appType;
         }
-        if (null !== $this->systemToken) {
-            $res['systemToken'] = $this->systemToken;
-        }
         if (null !== $this->language) {
             $res['language'] = $this->language;
+        }
+        if (null !== $this->processInstanceId) {
+            $res['processInstanceId'] = $this->processInstanceId;
+        }
+        if (null !== $this->systemToken) {
+            $res['systemToken'] = $this->systemToken;
         }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
@@ -74,17 +74,17 @@ class GetRunningTasksRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['processInstanceId'])) {
-            $model->processInstanceId = $map['processInstanceId'];
-        }
         if (isset($map['appType'])) {
             $model->appType = $map['appType'];
         }
-        if (isset($map['systemToken'])) {
-            $model->systemToken = $map['systemToken'];
-        }
         if (isset($map['language'])) {
             $model->language = $map['language'];
+        }
+        if (isset($map['processInstanceId'])) {
+            $model->processInstanceId = $map['processInstanceId'];
+        }
+        if (isset($map['systemToken'])) {
+            $model->systemToken = $map['systemToken'];
         }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];

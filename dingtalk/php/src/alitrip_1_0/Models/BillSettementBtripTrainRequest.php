@@ -9,6 +9,11 @@ use AlibabaCloud\Tea\Model;
 class BillSettementBtripTrainRequest extends Model
 {
     /**
+     * @var int
+     */
+    public $category;
+
+    /**
      * @var string
      */
     public $corpId;
@@ -16,7 +21,7 @@ class BillSettementBtripTrainRequest extends Model
     /**
      * @var int
      */
-    public $category;
+    public $pageNumber;
 
     /**
      * @var int
@@ -26,24 +31,19 @@ class BillSettementBtripTrainRequest extends Model
     /**
      * @var string
      */
-    public $periodStart;
-
-    /**
-     * @var int
-     */
-    public $pageNumber;
+    public $periodEnd;
 
     /**
      * @var string
      */
-    public $periodEnd;
+    public $periodStart;
     protected $_name = [
-        'corpId'      => 'corpId',
         'category'    => 'category',
-        'pageSize'    => 'pageSize',
-        'periodStart' => 'periodStart',
+        'corpId'      => 'corpId',
         'pageNumber'  => 'pageNumber',
+        'pageSize'    => 'pageSize',
         'periodEnd'   => 'periodEnd',
+        'periodStart' => 'periodStart',
     ];
 
     public function validate()
@@ -53,23 +53,23 @@ class BillSettementBtripTrainRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->corpId) {
-            $res['corpId'] = $this->corpId;
-        }
         if (null !== $this->category) {
             $res['category'] = $this->category;
         }
-        if (null !== $this->pageSize) {
-            $res['pageSize'] = $this->pageSize;
-        }
-        if (null !== $this->periodStart) {
-            $res['periodStart'] = $this->periodStart;
+        if (null !== $this->corpId) {
+            $res['corpId'] = $this->corpId;
         }
         if (null !== $this->pageNumber) {
             $res['pageNumber'] = $this->pageNumber;
         }
+        if (null !== $this->pageSize) {
+            $res['pageSize'] = $this->pageSize;
+        }
         if (null !== $this->periodEnd) {
             $res['periodEnd'] = $this->periodEnd;
+        }
+        if (null !== $this->periodStart) {
+            $res['periodStart'] = $this->periodStart;
         }
 
         return $res;
@@ -83,23 +83,23 @@ class BillSettementBtripTrainRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['corpId'])) {
-            $model->corpId = $map['corpId'];
-        }
         if (isset($map['category'])) {
             $model->category = $map['category'];
         }
-        if (isset($map['pageSize'])) {
-            $model->pageSize = $map['pageSize'];
-        }
-        if (isset($map['periodStart'])) {
-            $model->periodStart = $map['periodStart'];
+        if (isset($map['corpId'])) {
+            $model->corpId = $map['corpId'];
         }
         if (isset($map['pageNumber'])) {
             $model->pageNumber = $map['pageNumber'];
         }
+        if (isset($map['pageSize'])) {
+            $model->pageSize = $map['pageSize'];
+        }
         if (isset($map['periodEnd'])) {
             $model->periodEnd = $map['periodEnd'];
+        }
+        if (isset($map['periodStart'])) {
+            $model->periodStart = $map['periodStart'];
         }
 
         return $model;

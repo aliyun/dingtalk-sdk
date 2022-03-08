@@ -18,22 +18,22 @@ class payInfo extends Model
     public $csUserInfo;
 
     /**
-     * @description 商品的默认情况下非打折时的价格，单位为分
-     *
-     * @var int
-     */
-    public $price;
-
-    /**
      * @description 课程打折信息
      *
      * @var discountInfo
      */
     public $discountInfo;
+
+    /**
+     * @description 商品的默认情况下非打折时的价格，单位为分
+     *
+     * @var int
+     */
+    public $price;
     protected $_name = [
         'csUserInfo'   => 'csUserInfo',
-        'price'        => 'price',
         'discountInfo' => 'discountInfo',
+        'price'        => 'price',
     ];
 
     public function validate()
@@ -46,11 +46,11 @@ class payInfo extends Model
         if (null !== $this->csUserInfo) {
             $res['csUserInfo'] = null !== $this->csUserInfo ? $this->csUserInfo->toMap() : null;
         }
-        if (null !== $this->price) {
-            $res['price'] = $this->price;
-        }
         if (null !== $this->discountInfo) {
             $res['discountInfo'] = null !== $this->discountInfo ? $this->discountInfo->toMap() : null;
+        }
+        if (null !== $this->price) {
+            $res['price'] = $this->price;
         }
 
         return $res;
@@ -67,11 +67,11 @@ class payInfo extends Model
         if (isset($map['csUserInfo'])) {
             $model->csUserInfo = csUserInfo::fromMap($map['csUserInfo']);
         }
-        if (isset($map['price'])) {
-            $model->price = $map['price'];
-        }
         if (isset($map['discountInfo'])) {
             $model->discountInfo = discountInfo::fromMap($map['discountInfo']);
+        }
+        if (isset($map['price'])) {
+            $model->price = $map['price'];
         }
 
         return $model;

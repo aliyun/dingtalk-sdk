@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class fields extends Model
 {
     /**
-     * @description 显示名称
+     * @description 字段数据类型
      *
      * @var string
      */
-    public $label;
+    public $bizDataType;
 
     /**
      * @description 字段名或组件名
@@ -23,15 +23,15 @@ class fields extends Model
     public $fieldName;
 
     /**
-     * @description 字段数据类型
+     * @description 显示名称
      *
      * @var string
      */
-    public $bizDataType;
+    public $label;
     protected $_name = [
-        'label'       => 'label',
-        'fieldName'   => 'fieldName',
         'bizDataType' => 'bizDataType',
+        'fieldName'   => 'fieldName',
+        'label'       => 'label',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class fields extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->label) {
-            $res['label'] = $this->label;
+        if (null !== $this->bizDataType) {
+            $res['bizDataType'] = $this->bizDataType;
         }
         if (null !== $this->fieldName) {
             $res['fieldName'] = $this->fieldName;
         }
-        if (null !== $this->bizDataType) {
-            $res['bizDataType'] = $this->bizDataType;
+        if (null !== $this->label) {
+            $res['label'] = $this->label;
         }
 
         return $res;
@@ -62,14 +62,14 @@ class fields extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['label'])) {
-            $model->label = $map['label'];
+        if (isset($map['bizDataType'])) {
+            $model->bizDataType = $map['bizDataType'];
         }
         if (isset($map['fieldName'])) {
             $model->fieldName = $map['fieldName'];
         }
-        if (isset($map['bizDataType'])) {
-            $model->bizDataType = $map['bizDataType'];
+        if (isset($map['label'])) {
+            $model->label = $map['label'];
         }
 
         return $model;

@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class corpList extends Model
 {
     /**
-     * @description namespace
-     *
-     * @var string
-     */
-    public $namespace;
-
-    /**
      * @description corpId
      *
      * @var string
@@ -28,10 +21,17 @@ class corpList extends Model
      * @var string
      */
     public $corpName;
+
+    /**
+     * @description namespace
+     *
+     * @var string
+     */
+    public $namespace;
     protected $_name = [
-        'namespace' => 'namespace',
         'corpId'    => 'corpId',
         'corpName'  => 'corpName',
+        'namespace' => 'namespace',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class corpList extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->namespace) {
-            $res['namespace'] = $this->namespace;
-        }
         if (null !== $this->corpId) {
             $res['corpId'] = $this->corpId;
         }
         if (null !== $this->corpName) {
             $res['corpName'] = $this->corpName;
+        }
+        if (null !== $this->namespace) {
+            $res['namespace'] = $this->namespace;
         }
 
         return $res;
@@ -62,14 +62,14 @@ class corpList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['namespace'])) {
-            $model->namespace = $map['namespace'];
-        }
         if (isset($map['corpId'])) {
             $model->corpId = $map['corpId'];
         }
         if (isset($map['corpName'])) {
             $model->corpName = $map['corpName'];
+        }
+        if (isset($map['namespace'])) {
+            $model->namespace = $map['namespace'];
         }
 
         return $model;

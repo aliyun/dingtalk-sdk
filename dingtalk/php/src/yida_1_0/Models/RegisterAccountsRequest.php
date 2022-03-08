@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class RegisterAccountsRequest extends Model
 {
     /**
-     * @description 组织id
-     *
-     * @var string
-     */
-    public $corpId;
-
-    /**
      * @description 访问秘钥
      *
      * @var string
@@ -28,10 +21,17 @@ class RegisterAccountsRequest extends Model
      * @var string
      */
     public $activeCode;
+
+    /**
+     * @description 组织id
+     *
+     * @var string
+     */
+    public $corpId;
     protected $_name = [
-        'corpId'     => 'corpId',
         'accessKey'  => 'accessKey',
         'activeCode' => 'activeCode',
+        'corpId'     => 'corpId',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class RegisterAccountsRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->corpId) {
-            $res['corpId'] = $this->corpId;
-        }
         if (null !== $this->accessKey) {
             $res['accessKey'] = $this->accessKey;
         }
         if (null !== $this->activeCode) {
             $res['activeCode'] = $this->activeCode;
+        }
+        if (null !== $this->corpId) {
+            $res['corpId'] = $this->corpId;
         }
 
         return $res;
@@ -62,14 +62,14 @@ class RegisterAccountsRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['corpId'])) {
-            $model->corpId = $map['corpId'];
-        }
         if (isset($map['accessKey'])) {
             $model->accessKey = $map['accessKey'];
         }
         if (isset($map['activeCode'])) {
             $model->activeCode = $map['activeCode'];
+        }
+        if (isset($map['corpId'])) {
+            $model->corpId = $map['corpId'];
         }
 
         return $model;

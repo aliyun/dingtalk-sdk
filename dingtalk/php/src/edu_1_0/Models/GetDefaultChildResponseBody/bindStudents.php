@@ -9,16 +9,6 @@ use AlibabaCloud\Tea\Model;
 class bindStudents extends Model
 {
     /**
-     * @var string
-     */
-    public $corpId;
-
-    /**
-     * @var string
-     */
-    public $staffId;
-
-    /**
      * @var int
      */
     public $classId;
@@ -26,12 +16,22 @@ class bindStudents extends Model
     /**
      * @var string
      */
+    public $corpId;
+
+    /**
+     * @var string
+     */
     public $period;
+
+    /**
+     * @var string
+     */
+    public $staffId;
     protected $_name = [
-        'corpId'  => 'corpId',
-        'staffId' => 'staffId',
         'classId' => 'classId',
+        'corpId'  => 'corpId',
         'period'  => 'period',
+        'staffId' => 'staffId',
     ];
 
     public function validate()
@@ -41,17 +41,17 @@ class bindStudents extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->corpId) {
-            $res['corpId'] = $this->corpId;
-        }
-        if (null !== $this->staffId) {
-            $res['staffId'] = $this->staffId;
-        }
         if (null !== $this->classId) {
             $res['classId'] = $this->classId;
         }
+        if (null !== $this->corpId) {
+            $res['corpId'] = $this->corpId;
+        }
         if (null !== $this->period) {
             $res['period'] = $this->period;
+        }
+        if (null !== $this->staffId) {
+            $res['staffId'] = $this->staffId;
         }
 
         return $res;
@@ -65,17 +65,17 @@ class bindStudents extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['corpId'])) {
-            $model->corpId = $map['corpId'];
-        }
-        if (isset($map['staffId'])) {
-            $model->staffId = $map['staffId'];
-        }
         if (isset($map['classId'])) {
             $model->classId = $map['classId'];
         }
+        if (isset($map['corpId'])) {
+            $model->corpId = $map['corpId'];
+        }
         if (isset($map['period'])) {
             $model->period = $map['period'];
+        }
+        if (isset($map['staffId'])) {
+            $model->staffId = $map['staffId'];
         }
 
         return $model;

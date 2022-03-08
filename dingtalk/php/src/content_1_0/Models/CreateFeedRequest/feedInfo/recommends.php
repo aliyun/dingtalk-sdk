@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class recommends extends Model
 {
     /**
-     * @description 推荐物品的类别,0:课程,1:微应用
-     *
-     * @var int
-     */
-    public $type;
-
-    /**
      * @description 推荐物品的id，可以时feedId或者是微应用Id
      *
      * @var string
      */
     public $objectId;
+
+    /**
+     * @description 推荐物品的类别,0:课程,1:微应用
+     *
+     * @var int
+     */
+    public $type;
     protected $_name = [
-        'type'     => 'type',
         'objectId' => 'objectId',
+        'type'     => 'type',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class recommends extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->type) {
-            $res['type'] = $this->type;
-        }
         if (null !== $this->objectId) {
             $res['objectId'] = $this->objectId;
+        }
+        if (null !== $this->type) {
+            $res['type'] = $this->type;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class recommends extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['type'])) {
-            $model->type = $map['type'];
-        }
         if (isset($map['objectId'])) {
             $model->objectId = $map['objectId'];
+        }
+        if (isset($map['type'])) {
+            $model->type = $map['type'];
         }
 
         return $model;

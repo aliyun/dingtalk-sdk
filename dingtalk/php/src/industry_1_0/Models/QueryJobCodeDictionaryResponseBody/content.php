@@ -9,18 +9,18 @@ use AlibabaCloud\Tea\Model;
 class content extends Model
 {
     /**
-     * @description 固定字段标识
-     *
-     * @var string
-     */
-    public $code;
-
-    /**
      * @description 分类
      *
      * @var string
      */
     public $category;
+
+    /**
+     * @description 固定字段标识
+     *
+     * @var string
+     */
+    public $code;
 
     /**
      * @description 展示名字
@@ -36,8 +36,8 @@ class content extends Model
      */
     public $doctorType;
     protected $_name = [
-        'code'        => 'code',
         'category'    => 'category',
+        'code'        => 'code',
         'displayName' => 'displayName',
         'doctorType'  => 'doctorType',
     ];
@@ -49,11 +49,11 @@ class content extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->code) {
-            $res['code'] = $this->code;
-        }
         if (null !== $this->category) {
             $res['category'] = $this->category;
+        }
+        if (null !== $this->code) {
+            $res['code'] = $this->code;
         }
         if (null !== $this->displayName) {
             $res['displayName'] = $this->displayName;
@@ -73,11 +73,11 @@ class content extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['code'])) {
-            $model->code = $map['code'];
-        }
         if (isset($map['category'])) {
             $model->category = $map['category'];
+        }
+        if (isset($map['code'])) {
+            $model->code = $map['code'];
         }
         if (isset($map['displayName'])) {
             $model->displayName = $map['displayName'];

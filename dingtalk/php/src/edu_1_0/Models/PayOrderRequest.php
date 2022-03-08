@@ -9,36 +9,11 @@ use AlibabaCloud\Tea\Model;
 class PayOrderRequest extends Model
 {
     /**
-     * @var int
-     */
-    public $dingIsvOrgId;
-
-    /**
-     * @var int
-     */
-    public $dingOrgId;
-
-    /**
-     * @var string
-     */
-    public $dingOpenAppId;
-
-    /**
-     * @var string
-     */
-    public $dingSuiteKey;
-
-    /**
-     * @var int
-     */
-    public $dingTokenGrantType;
-
-    /**
-     * @description 设备序列号
+     * @description 人脸id
      *
      * @var string
      */
-    public $sn;
+    public $faceId;
 
     /**
      * @description 订单号
@@ -48,18 +23,18 @@ class PayOrderRequest extends Model
     public $orderNo;
 
     /**
-     * @description 员工id
+     * @description 签名
      *
      * @var string
      */
-    public $userId;
+    public $signature;
 
     /**
-     * @description 人脸id
+     * @description 设备序列号
      *
      * @var string
      */
-    public $faceId;
+    public $sn;
 
     /**
      * @description utc时间戳
@@ -69,11 +44,11 @@ class PayOrderRequest extends Model
     public $timestamp;
 
     /**
-     * @description 签名
+     * @description 员工id
      *
      * @var string
      */
-    public $signature;
+    public $userId;
 
     /**
      * @description 版本号
@@ -82,18 +57,13 @@ class PayOrderRequest extends Model
      */
     public $version;
     protected $_name = [
-        'dingIsvOrgId'       => 'dingIsvOrgId',
-        'dingOrgId'          => 'dingOrgId',
-        'dingOpenAppId'      => 'dingOpenAppId',
-        'dingSuiteKey'       => 'dingSuiteKey',
-        'dingTokenGrantType' => 'dingTokenGrantType',
-        'sn'                 => 'sn',
-        'orderNo'            => 'orderNo',
-        'userId'             => 'userId',
-        'faceId'             => 'faceId',
-        'timestamp'          => 'timestamp',
-        'signature'          => 'signature',
-        'version'            => 'version',
+        'faceId'    => 'faceId',
+        'orderNo'   => 'orderNo',
+        'signature' => 'signature',
+        'sn'        => 'sn',
+        'timestamp' => 'timestamp',
+        'userId'    => 'userId',
+        'version'   => 'version',
     ];
 
     public function validate()
@@ -103,38 +73,23 @@ class PayOrderRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->dingIsvOrgId) {
-            $res['dingIsvOrgId'] = $this->dingIsvOrgId;
-        }
-        if (null !== $this->dingOrgId) {
-            $res['dingOrgId'] = $this->dingOrgId;
-        }
-        if (null !== $this->dingOpenAppId) {
-            $res['dingOpenAppId'] = $this->dingOpenAppId;
-        }
-        if (null !== $this->dingSuiteKey) {
-            $res['dingSuiteKey'] = $this->dingSuiteKey;
-        }
-        if (null !== $this->dingTokenGrantType) {
-            $res['dingTokenGrantType'] = $this->dingTokenGrantType;
-        }
-        if (null !== $this->sn) {
-            $res['sn'] = $this->sn;
+        if (null !== $this->faceId) {
+            $res['faceId'] = $this->faceId;
         }
         if (null !== $this->orderNo) {
             $res['orderNo'] = $this->orderNo;
         }
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
+        if (null !== $this->signature) {
+            $res['signature'] = $this->signature;
         }
-        if (null !== $this->faceId) {
-            $res['faceId'] = $this->faceId;
+        if (null !== $this->sn) {
+            $res['sn'] = $this->sn;
         }
         if (null !== $this->timestamp) {
             $res['timestamp'] = $this->timestamp;
         }
-        if (null !== $this->signature) {
-            $res['signature'] = $this->signature;
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
         if (null !== $this->version) {
             $res['version'] = $this->version;
@@ -151,38 +106,23 @@ class PayOrderRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['dingIsvOrgId'])) {
-            $model->dingIsvOrgId = $map['dingIsvOrgId'];
-        }
-        if (isset($map['dingOrgId'])) {
-            $model->dingOrgId = $map['dingOrgId'];
-        }
-        if (isset($map['dingOpenAppId'])) {
-            $model->dingOpenAppId = $map['dingOpenAppId'];
-        }
-        if (isset($map['dingSuiteKey'])) {
-            $model->dingSuiteKey = $map['dingSuiteKey'];
-        }
-        if (isset($map['dingTokenGrantType'])) {
-            $model->dingTokenGrantType = $map['dingTokenGrantType'];
-        }
-        if (isset($map['sn'])) {
-            $model->sn = $map['sn'];
+        if (isset($map['faceId'])) {
+            $model->faceId = $map['faceId'];
         }
         if (isset($map['orderNo'])) {
             $model->orderNo = $map['orderNo'];
         }
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
+        if (isset($map['signature'])) {
+            $model->signature = $map['signature'];
         }
-        if (isset($map['faceId'])) {
-            $model->faceId = $map['faceId'];
+        if (isset($map['sn'])) {
+            $model->sn = $map['sn'];
         }
         if (isset($map['timestamp'])) {
             $model->timestamp = $map['timestamp'];
         }
-        if (isset($map['signature'])) {
-            $model->signature = $map['signature'];
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
         if (isset($map['version'])) {
             $model->version = $map['version'];

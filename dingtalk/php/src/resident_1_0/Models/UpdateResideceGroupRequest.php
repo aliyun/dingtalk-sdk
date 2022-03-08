@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class UpdateResideceGroupRequest extends Model
 {
     /**
-     * @description 组长userid
+     * @description 组id
      *
-     * @var string
+     * @var int
      */
-    public $managerUserId;
+    public $departmentId;
 
     /**
      * @description 组名字
@@ -23,15 +23,15 @@ class UpdateResideceGroupRequest extends Model
     public $departmentName;
 
     /**
-     * @description 组id
+     * @description 组长userid
      *
-     * @var int
+     * @var string
      */
-    public $departmentId;
+    public $managerUserId;
     protected $_name = [
-        'managerUserId'  => 'managerUserId',
-        'departmentName' => 'departmentName',
         'departmentId'   => 'departmentId',
+        'departmentName' => 'departmentName',
+        'managerUserId'  => 'managerUserId',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class UpdateResideceGroupRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->managerUserId) {
-            $res['managerUserId'] = $this->managerUserId;
+        if (null !== $this->departmentId) {
+            $res['departmentId'] = $this->departmentId;
         }
         if (null !== $this->departmentName) {
             $res['departmentName'] = $this->departmentName;
         }
-        if (null !== $this->departmentId) {
-            $res['departmentId'] = $this->departmentId;
+        if (null !== $this->managerUserId) {
+            $res['managerUserId'] = $this->managerUserId;
         }
 
         return $res;
@@ -62,14 +62,14 @@ class UpdateResideceGroupRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['managerUserId'])) {
-            $model->managerUserId = $map['managerUserId'];
+        if (isset($map['departmentId'])) {
+            $model->departmentId = $map['departmentId'];
         }
         if (isset($map['departmentName'])) {
             $model->departmentName = $map['departmentName'];
         }
-        if (isset($map['departmentId'])) {
-            $model->departmentId = $map['departmentId'];
+        if (isset($map['managerUserId'])) {
+            $model->managerUserId = $map['managerUserId'];
         }
 
         return $model;

@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description resource
-     *
-     * @var string
-     */
-    public $resource;
-
-    /**
      * @description authItems
      *
      * @var string[]
      */
     public $authItems;
+
+    /**
+     * @description resource
+     *
+     * @var string
+     */
+    public $resource;
     protected $_name = [
-        'resource'  => 'resource',
         'authItems' => 'authItems',
+        'resource'  => 'resource',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class result extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->resource) {
-            $res['resource'] = $this->resource;
-        }
         if (null !== $this->authItems) {
             $res['authItems'] = $this->authItems;
+        }
+        if (null !== $this->resource) {
+            $res['resource'] = $this->resource;
         }
 
         return $res;
@@ -51,13 +51,13 @@ class result extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['resource'])) {
-            $model->resource = $map['resource'];
-        }
         if (isset($map['authItems'])) {
             if (!empty($map['authItems'])) {
                 $model->authItems = $map['authItems'];
             }
+        }
+        if (isset($map['resource'])) {
+            $model->resource = $map['resource'];
         }
 
         return $model;

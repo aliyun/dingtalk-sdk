@@ -9,20 +9,6 @@ use AlibabaCloud\Tea\Model;
 class QueryAllFormInstancesRequest extends Model
 {
     /**
-     * @description 分页游标，第一次调用传空或者null
-     *
-     * @var string
-     */
-    public $nextToken;
-
-    /**
-     * @description 翻页size
-     *
-     * @var int
-     */
-    public $maxResults;
-
-    /**
      * @description 应用搭建id
      *
      * @var string
@@ -35,11 +21,25 @@ class QueryAllFormInstancesRequest extends Model
      * @var string
      */
     public $formCode;
+
+    /**
+     * @description 翻页size
+     *
+     * @var int
+     */
+    public $maxResults;
+
+    /**
+     * @description 分页游标，第一次调用传空或者null
+     *
+     * @var string
+     */
+    public $nextToken;
     protected $_name = [
-        'nextToken'  => 'nextToken',
-        'maxResults' => 'maxResults',
         'appUuid'    => 'appUuid',
         'formCode'   => 'formCode',
+        'maxResults' => 'maxResults',
+        'nextToken'  => 'nextToken',
     ];
 
     public function validate()
@@ -49,17 +49,17 @@ class QueryAllFormInstancesRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->nextToken) {
-            $res['nextToken'] = $this->nextToken;
-        }
-        if (null !== $this->maxResults) {
-            $res['maxResults'] = $this->maxResults;
-        }
         if (null !== $this->appUuid) {
             $res['appUuid'] = $this->appUuid;
         }
         if (null !== $this->formCode) {
             $res['formCode'] = $this->formCode;
+        }
+        if (null !== $this->maxResults) {
+            $res['maxResults'] = $this->maxResults;
+        }
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
         }
 
         return $res;
@@ -73,17 +73,17 @@ class QueryAllFormInstancesRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['nextToken'])) {
-            $model->nextToken = $map['nextToken'];
-        }
-        if (isset($map['maxResults'])) {
-            $model->maxResults = $map['maxResults'];
-        }
         if (isset($map['appUuid'])) {
             $model->appUuid = $map['appUuid'];
         }
         if (isset($map['formCode'])) {
             $model->formCode = $map['formCode'];
+        }
+        if (isset($map['maxResults'])) {
+            $model->maxResults = $map['maxResults'];
+        }
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
         }
 
         return $model;

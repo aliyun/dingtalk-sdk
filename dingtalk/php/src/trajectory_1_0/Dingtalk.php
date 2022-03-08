@@ -54,21 +54,21 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $query = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
+        }
         if (!Utils::isUnset($request->needPositionInfo)) {
             @$query['needPositionInfo'] = $request->needPositionInfo;
         }
         if (!Utils::isUnset($request->nextToken)) {
             @$query['nextToken'] = $request->nextToken;
         }
-        if (!Utils::isUnset($request->maxResults)) {
-            @$query['maxResults'] = $request->maxResults;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -105,27 +105,12 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->userIds)) {
             @$body['userIds'] = $request->userIds;
         }
-        if (!Utils::isUnset($request->dingIsvOrgId)) {
-            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
-        }
-        if (!Utils::isUnset($request->dingTokenGrantType)) {
-            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
-        }
-        if (!Utils::isUnset($request->dingClientId)) {
-            @$body['dingClientId'] = $request->dingClientId;
-        }
-        if (!Utils::isUnset($request->dingOrgId)) {
-            @$body['dingOrgId'] = $request->dingOrgId;
-        }
-        if (!Utils::isUnset($request->dingOauthAppId)) {
-            @$body['dingOauthAppId'] = $request->dingOauthAppId;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -159,30 +144,30 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->traceId)) {
-            @$query['traceId'] = $request->traceId;
-        }
-        if (!Utils::isUnset($request->nextToken)) {
-            @$query['nextToken'] = $request->nextToken;
+        if (!Utils::isUnset($request->endTime)) {
+            @$query['endTime'] = $request->endTime;
         }
         if (!Utils::isUnset($request->maxResults)) {
             @$query['maxResults'] = $request->maxResults;
         }
-        if (!Utils::isUnset($request->startTime)) {
-            @$query['startTime'] = $request->startTime;
-        }
-        if (!Utils::isUnset($request->endTime)) {
-            @$query['endTime'] = $request->endTime;
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
         }
         if (!Utils::isUnset($request->staffId)) {
             @$query['staffId'] = $request->staffId;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            @$query['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->traceId)) {
+            @$query['traceId'] = $request->traceId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,

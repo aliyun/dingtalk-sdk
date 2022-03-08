@@ -93,122 +93,537 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string $userId
+     * @param IndustryManufactureCostRecordListGetRequest $request
      *
-     * @return QueryUserInfoResponse
+     * @return IndustryManufactureCostRecordListGetResponse
      */
-    public function queryUserInfo($userId)
+    public function industryManufactureCostRecordListGet($request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new QueryUserInfoHeaders([]);
+        $headers = new IndustryManufactureCostRecordListGetHeaders([]);
 
-        return $this->queryUserInfoWithOptions($userId, $headers, $runtime);
+        return $this->industryManufactureCostRecordListGetWithOptions($request, $headers, $runtime);
     }
 
     /**
-     * @param string               $userId
-     * @param QueryUserInfoHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @param IndustryManufactureCostRecordListGetRequest $request
+     * @param IndustryManufactureCostRecordListGetHeaders $headers
+     * @param RuntimeOptions                              $runtime
      *
-     * @return QueryUserInfoResponse
+     * @return IndustryManufactureCostRecordListGetResponse
      */
-    public function queryUserInfoWithOptions($userId, $headers, $runtime)
+    public function industryManufactureCostRecordListGetWithOptions($request, $headers, $runtime)
     {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appId)) {
+            @$body['appId'] = $request->appId;
+        }
+        if (!Utils::isUnset($request->appIds)) {
+            @$body['appIds'] = $request->appIds;
+        }
+        if (!Utils::isUnset($request->appName)) {
+            @$body['appName'] = $request->appName;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            @$body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->cursor)) {
+            @$body['cursor'] = $request->cursor;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            @$body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->instanceId)) {
+            @$body['instanceId'] = $request->instanceId;
+        }
+        if (!Utils::isUnset($request->isvOrgId)) {
+            @$body['isvOrgId'] = $request->isvOrgId;
+        }
+        if (!Utils::isUnset($request->materialNo)) {
+            @$body['materialNo'] = $request->materialNo;
+        }
+        if (!Utils::isUnset($request->microappAgentId)) {
+            @$body['microappAgentId'] = $request->microappAgentId;
+        }
+        if (!Utils::isUnset($request->orderNo)) {
+            @$body['orderNo'] = $request->orderNo;
+        }
+        if (!Utils::isUnset($request->orgId)) {
+            @$body['orgId'] = $request->orgId;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$body['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->productionTaskNo)) {
+            @$body['productionTaskNo'] = $request->productionTaskNo;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            @$body['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->suiteKey)) {
+            @$body['suiteKey'] = $request->suiteKey;
+        }
+        if (!Utils::isUnset($request->tokenGrantType)) {
+            @$body['tokenGrantType'] = $request->tokenGrantType;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return QueryUserInfoResponse::fromMap($this->doROARequest('QueryUserInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/users/' . $userId . '', 'json', $req, $runtime));
+        return IndustryManufactureCostRecordListGetResponse::fromMap($this->doROARequest('IndustryManufactureCostRecordListGet', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/manufactures/materialCostRecords/query', 'json', $req, $runtime));
     }
 
     /**
-     * @param string                      $deptId
-     * @param QueryAllMemberByDeptRequest $request
+     * @param IndustryManufactureFeeListGetRequest $request
      *
-     * @return QueryAllMemberByDeptResponse
+     * @return IndustryManufactureFeeListGetResponse
      */
-    public function queryAllMemberByDept($deptId, $request)
+    public function industryManufactureFeeListGet($request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new QueryAllMemberByDeptHeaders([]);
+        $headers = new IndustryManufactureFeeListGetHeaders([]);
 
-        return $this->queryAllMemberByDeptWithOptions($deptId, $request, $headers, $runtime);
+        return $this->industryManufactureFeeListGetWithOptions($request, $headers, $runtime);
     }
 
     /**
-     * @param string                      $deptId
-     * @param QueryAllMemberByDeptRequest $request
-     * @param QueryAllMemberByDeptHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @param IndustryManufactureFeeListGetRequest $request
+     * @param IndustryManufactureFeeListGetHeaders $headers
+     * @param RuntimeOptions                       $runtime
      *
-     * @return QueryAllMemberByDeptResponse
+     * @return IndustryManufactureFeeListGetResponse
      */
-    public function queryAllMemberByDeptWithOptions($deptId, $request, $headers, $runtime)
+    public function industryManufactureFeeListGetWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->pageSize)) {
-            @$query['pageSize'] = $request->pageSize;
+        $body = [];
+        if (!Utils::isUnset($request->appId)) {
+            @$body['appId'] = $request->appId;
+        }
+        if (!Utils::isUnset($request->appIds)) {
+            @$body['appIds'] = $request->appIds;
+        }
+        if (!Utils::isUnset($request->appName)) {
+            @$body['appName'] = $request->appName;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            @$body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->cursor)) {
+            @$body['cursor'] = $request->cursor;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            @$body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->isvOrgId)) {
+            @$body['isvOrgId'] = $request->isvOrgId;
+        }
+        if (!Utils::isUnset($request->materialNo)) {
+            @$body['materialNo'] = $request->materialNo;
+        }
+        if (!Utils::isUnset($request->microappAgentId)) {
+            @$body['microappAgentId'] = $request->microappAgentId;
+        }
+        if (!Utils::isUnset($request->orgId)) {
+            @$body['orgId'] = $request->orgId;
         }
         if (!Utils::isUnset($request->pageNumber)) {
-            @$query['pageNumber'] = $request->pageNumber;
+            @$body['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->productionTaskNo)) {
+            @$body['productionTaskNo'] = $request->productionTaskNo;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            @$body['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->suiteKey)) {
+            @$body['suiteKey'] = $request->suiteKey;
+        }
+        if (!Utils::isUnset($request->tokenGrantType)) {
+            @$body['tokenGrantType'] = $request->tokenGrantType;
+        }
+        if (!Utils::isUnset($request->type)) {
+            @$body['type'] = $request->type;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return IndustryManufactureFeeListGetResponse::fromMap($this->doROARequest('IndustryManufactureFeeListGet', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/manufactures/fees/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param IndustryManufactureLabourCostRequest $request
+     *
+     * @return IndustryManufactureLabourCostResponse
+     */
+    public function industryManufactureLabourCost($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new IndustryManufactureLabourCostHeaders([]);
+
+        return $this->industryManufactureLabourCostWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param IndustryManufactureLabourCostRequest $request
+     * @param IndustryManufactureLabourCostHeaders $headers
+     * @param RuntimeOptions                       $runtime
+     *
+     * @return IndustryManufactureLabourCostResponse
+     */
+    public function industryManufactureLabourCostWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appId)) {
+            @$body['appId'] = $request->appId;
+        }
+        if (!Utils::isUnset($request->appIds)) {
+            @$body['appIds'] = $request->appIds;
+        }
+        if (!Utils::isUnset($request->appName)) {
+            @$body['appName'] = $request->appName;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            @$body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->cursor)) {
+            @$body['cursor'] = $request->cursor;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            @$body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->isvOrgId)) {
+            @$body['isvOrgId'] = $request->isvOrgId;
+        }
+        if (!Utils::isUnset($request->materialNo)) {
+            @$body['materialNo'] = $request->materialNo;
+        }
+        if (!Utils::isUnset($request->microappAgentId)) {
+            @$body['microappAgentId'] = $request->microappAgentId;
+        }
+        if (!Utils::isUnset($request->orgId)) {
+            @$body['orgId'] = $request->orgId;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$body['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->processNo)) {
+            @$body['processNo'] = $request->processNo;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            @$body['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->suiteKey)) {
+            @$body['suiteKey'] = $request->suiteKey;
+        }
+        if (!Utils::isUnset($request->tokenGrantType)) {
+            @$body['tokenGrantType'] = $request->tokenGrantType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return IndustryManufactureLabourCostResponse::fromMap($this->doROARequest('IndustryManufactureLabourCost', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/manufactures/labourCosts/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param IndustryManufactureMaterialListRequest $request
+     *
+     * @return IndustryManufactureMaterialListResponse
+     */
+    public function industryManufactureMaterialList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new IndustryManufactureMaterialListHeaders([]);
+
+        return $this->industryManufactureMaterialListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param IndustryManufactureMaterialListRequest $request
+     * @param IndustryManufactureMaterialListHeaders $headers
+     * @param RuntimeOptions                         $runtime
+     *
+     * @return IndustryManufactureMaterialListResponse
+     */
+    public function industryManufactureMaterialListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appId)) {
+            @$body['appId'] = $request->appId;
+        }
+        if (!Utils::isUnset($request->appIds)) {
+            @$body['appIds'] = $request->appIds;
+        }
+        if (!Utils::isUnset($request->appName)) {
+            @$body['appName'] = $request->appName;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            @$body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->currentPage)) {
+            @$body['currentPage'] = $request->currentPage;
+        }
+        if (!Utils::isUnset($request->cursor)) {
+            @$body['cursor'] = $request->cursor;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            @$body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->instanceId)) {
+            @$body['instanceId'] = $request->instanceId;
+        }
+        if (!Utils::isUnset($request->isvOrgId)) {
+            @$body['isvOrgId'] = $request->isvOrgId;
+        }
+        if (!Utils::isUnset($request->materialNo)) {
+            @$body['materialNo'] = $request->materialNo;
+        }
+        if (!Utils::isUnset($request->microappAgentId)) {
+            @$body['microappAgentId'] = $request->microappAgentId;
+        }
+        if (!Utils::isUnset($request->orgId)) {
+            @$body['orgId'] = $request->orgId;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            @$body['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->suiteKey)) {
+            @$body['suiteKey'] = $request->suiteKey;
+        }
+        if (!Utils::isUnset($request->tokenGrantType)) {
+            @$body['tokenGrantType'] = $request->tokenGrantType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return IndustryManufactureMaterialListResponse::fromMap($this->doROARequest('IndustryManufactureMaterialList', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/manufactures/materials/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param IndustryMmanufactureMaterialCostGetRequest $request
+     *
+     * @return IndustryMmanufactureMaterialCostGetResponse
+     */
+    public function industryMmanufactureMaterialCostGet($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new IndustryMmanufactureMaterialCostGetHeaders([]);
+
+        return $this->industryMmanufactureMaterialCostGetWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param IndustryMmanufactureMaterialCostGetRequest $request
+     * @param IndustryMmanufactureMaterialCostGetHeaders $headers
+     * @param RuntimeOptions                             $runtime
+     *
+     * @return IndustryMmanufactureMaterialCostGetResponse
+     */
+    public function industryMmanufactureMaterialCostGetWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appId)) {
+            @$body['appId'] = $request->appId;
+        }
+        if (!Utils::isUnset($request->appIds)) {
+            @$body['appIds'] = $request->appIds;
+        }
+        if (!Utils::isUnset($request->appName)) {
+            @$body['appName'] = $request->appName;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            @$body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->cursor)) {
+            @$body['cursor'] = $request->cursor;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            @$body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->instanceId)) {
+            @$body['instanceId'] = $request->instanceId;
+        }
+        if (!Utils::isUnset($request->isvOrgId)) {
+            @$body['isvOrgId'] = $request->isvOrgId;
+        }
+        if (!Utils::isUnset($request->materialNo)) {
+            @$body['materialNo'] = $request->materialNo;
+        }
+        if (!Utils::isUnset($request->microappAgentId)) {
+            @$body['microappAgentId'] = $request->microappAgentId;
+        }
+        if (!Utils::isUnset($request->orgId)) {
+            @$body['orgId'] = $request->orgId;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$body['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            @$body['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->suiteKey)) {
+            @$body['suiteKey'] = $request->suiteKey;
+        }
+        if (!Utils::isUnset($request->tokenGrantType)) {
+            @$body['tokenGrantType'] = $request->tokenGrantType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return IndustryMmanufactureMaterialCostGetResponse::fromMap($this->doROARequest('IndustryMmanufactureMaterialCostGet', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/manufactures/base/materialCosts/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryAllDepartmentRequest $request
+     *
+     * @return QueryAllDepartmentResponse
+     */
+    public function queryAllDepartment($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryAllDepartmentHeaders([]);
+
+        return $this->queryAllDepartmentWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryAllDepartmentRequest $request
+     * @param QueryAllDepartmentHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return QueryAllDepartmentResponse
+     */
+    public function queryAllDepartmentWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return QueryAllMemberByDeptResponse::fromMap($this->doROARequest('QueryAllMemberByDept', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/departments/' . $deptId . '/members', 'json', $req, $runtime));
+        return QueryAllDepartmentResponse::fromMap($this->doROARequest('QueryAllDepartment', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/departments', 'json', $req, $runtime));
     }
 
     /**
-     * @param string $userId
+     * @param QueryAllDoctorsRequest $request
      *
-     * @return QueryUserRolesResponse
+     * @return QueryAllDoctorsResponse
      */
-    public function queryUserRoles($userId)
+    public function queryAllDoctors($request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new QueryUserRolesHeaders([]);
+        $headers = new QueryAllDoctorsHeaders([]);
 
-        return $this->queryUserRolesWithOptions($userId, $headers, $runtime);
+        return $this->queryAllDoctorsWithOptions($request, $headers, $runtime);
     }
 
     /**
-     * @param string                $userId
-     * @param QueryUserRolesHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param QueryAllDoctorsRequest $request
+     * @param QueryAllDoctorsHeaders $headers
+     * @param RuntimeOptions         $runtime
      *
-     * @return QueryUserRolesResponse
+     * @return QueryAllDoctorsResponse
      */
-    public function queryUserRolesWithOptions($userId, $headers, $runtime)
+    public function queryAllDoctorsWithOptions($request, $headers, $runtime)
     {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pageNum)) {
+            @$query['pageNum'] = $request->pageNum;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return QueryUserRolesResponse::fromMap($this->doROARequest('QueryUserRoles', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/users/' . $userId . '/roles', 'json', $req, $runtime));
+        return QueryAllDoctorsResponse::fromMap($this->doROARequest('QueryAllDoctors', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/doctors', 'json', $req, $runtime));
     }
 
     /**
@@ -235,18 +650,18 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->pageSize)) {
-            @$query['pageSize'] = $request->pageSize;
-        }
         if (!Utils::isUnset($request->pageNumber)) {
             @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -281,19 +696,20 @@ class Dingtalk extends OpenApiClient
     public function queryAllGroupsInDeptWithOptions($deptId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->pageSize)) {
-            @$query['pageSize'] = $request->pageSize;
-        }
+        $deptId = OpenApiUtilClient::getEncodeParam($deptId);
+        $query  = [];
         if (!Utils::isUnset($request->pageNumber)) {
             @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -304,434 +720,51 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryUserExtendValuesRequest $request
+     * @param string                      $deptId
+     * @param QueryAllMemberByDeptRequest $request
      *
-     * @return QueryUserExtendValuesResponse
+     * @return QueryAllMemberByDeptResponse
      */
-    public function queryUserExtendValues($request)
+    public function queryAllMemberByDept($deptId, $request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new QueryUserExtendValuesHeaders([]);
+        $headers = new QueryAllMemberByDeptHeaders([]);
 
-        return $this->queryUserExtendValuesWithOptions($request, $headers, $runtime);
+        return $this->queryAllMemberByDeptWithOptions($deptId, $request, $headers, $runtime);
     }
 
     /**
-     * @param QueryUserExtendValuesRequest $request
-     * @param QueryUserExtendValuesHeaders $headers
-     * @param RuntimeOptions               $runtime
-     *
-     * @return QueryUserExtendValuesResponse
-     */
-    public function queryUserExtendValuesWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->dingOrgId)) {
-            @$body['dingOrgId'] = $request->dingOrgId;
-        }
-        if (!Utils::isUnset($request->userIds)) {
-            @$body['userIds'] = $request->userIds;
-        }
-        if (!Utils::isUnset($request->userExtendKey)) {
-            @$body['userExtendKey'] = $request->userExtendKey;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return QueryUserExtendValuesResponse::fromMap($this->doROARequest('QueryUserExtendValues', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/medicals/users/extends/query', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param string $deptId
-     *
-     * @return QueryDepartmentInfoResponse
-     */
-    public function queryDepartmentInfo($deptId)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryDepartmentInfoHeaders([]);
-
-        return $this->queryDepartmentInfoWithOptions($deptId, $headers, $runtime);
-    }
-
-    /**
-     * @param string                     $deptId
-     * @param QueryDepartmentInfoHeaders $headers
-     * @param RuntimeOptions             $runtime
-     *
-     * @return QueryDepartmentInfoResponse
-     */
-    public function queryDepartmentInfoWithOptions($deptId, $headers, $runtime)
-    {
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-        ]);
-
-        return QueryDepartmentInfoResponse::fromMap($this->doROARequest('QueryDepartmentInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/departments/' . $deptId . '', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param string                      $userId
-     * @param UpdateUserExtendInfoRequest $request
-     *
-     * @return UpdateUserExtendInfoResponse
-     */
-    public function updateUserExtendInfo($userId, $request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new UpdateUserExtendInfoHeaders([]);
-
-        return $this->updateUserExtendInfoWithOptions($userId, $request, $headers, $runtime);
-    }
-
-    /**
-     * @param string                      $userId
-     * @param UpdateUserExtendInfoRequest $request
-     * @param UpdateUserExtendInfoHeaders $headers
+     * @param string                      $deptId
+     * @param QueryAllMemberByDeptRequest $request
+     * @param QueryAllMemberByDeptHeaders $headers
      * @param RuntimeOptions              $runtime
      *
-     * @return UpdateUserExtendInfoResponse
+     * @return QueryAllMemberByDeptResponse
      */
-    public function updateUserExtendInfoWithOptions($userId, $request, $headers, $runtime)
+    public function queryAllMemberByDeptWithOptions($deptId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->jobCode)) {
-            @$body['jobCode'] = $request->jobCode;
-        }
-        if (!Utils::isUnset($request->userProbCode)) {
-            @$body['userProbCode'] = $request->userProbCode;
-        }
-        if (!Utils::isUnset($request->jobStatusCode)) {
-            @$body['jobStatusCode'] = $request->jobStatusCode;
-        }
-        if (!Utils::isUnset($request->comments)) {
-            @$body['comments'] = $request->comments;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return UpdateUserExtendInfoResponse::fromMap($this->doROARequest('UpdateUserExtendInfo', 'industry_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/industry/medicals/users/' . $userId . '/extInfos', 'none', $req, $runtime));
-    }
-
-    /**
-     * @param string $userId
-     *
-     * @return QueryUserExtInfoResponse
-     */
-    public function queryUserExtInfo($userId)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryUserExtInfoHeaders([]);
-
-        return $this->queryUserExtInfoWithOptions($userId, $headers, $runtime);
-    }
-
-    /**
-     * @param string                  $userId
-     * @param QueryUserExtInfoHeaders $headers
-     * @param RuntimeOptions          $runtime
-     *
-     * @return QueryUserExtInfoResponse
-     */
-    public function queryUserExtInfoWithOptions($userId, $headers, $runtime)
-    {
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-        ]);
-
-        return QueryUserExtInfoResponse::fromMap($this->doROARequest('QueryUserExtInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/users/' . $userId . '/extInfos', 'json', $req, $runtime));
-    }
-
-    /**
-     * @return QueryJobCodeDictionaryResponse
-     */
-    public function queryJobCodeDictionary()
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryJobCodeDictionaryHeaders([]);
-
-        return $this->queryJobCodeDictionaryWithOptions($headers, $runtime);
-    }
-
-    /**
-     * @param QueryJobCodeDictionaryHeaders $headers
-     * @param RuntimeOptions                $runtime
-     *
-     * @return QueryJobCodeDictionaryResponse
-     */
-    public function queryJobCodeDictionaryWithOptions($headers, $runtime)
-    {
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-        ]);
-
-        return QueryJobCodeDictionaryResponse::fromMap($this->doROARequest('QueryJobCodeDictionary', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/jobCodes', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param IndustryManufactureLabourCostRequest $request
-     *
-     * @return IndustryManufactureLabourCostResponse
-     */
-    public function industryManufactureLabourCost($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new IndustryManufactureLabourCostHeaders([]);
-
-        return $this->industryManufactureLabourCostWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param IndustryManufactureLabourCostRequest $request
-     * @param IndustryManufactureLabourCostHeaders $headers
-     * @param RuntimeOptions                       $runtime
-     *
-     * @return IndustryManufactureLabourCostResponse
-     */
-    public function industryManufactureLabourCostWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->processNo)) {
-            @$body['processNo'] = $request->processNo;
-        }
-        if (!Utils::isUnset($request->materialNo)) {
-            @$body['materialNo'] = $request->materialNo;
-        }
-        if (!Utils::isUnset($request->startTime)) {
-            @$body['startTime'] = $request->startTime;
-        }
-        if (!Utils::isUnset($request->endTime)) {
-            @$body['endTime'] = $request->endTime;
-        }
-        if (!Utils::isUnset($request->cursor)) {
-            @$body['cursor'] = $request->cursor;
-        }
-        if (!Utils::isUnset($request->pageNumber)) {
-            @$body['pageNumber'] = $request->pageNumber;
-        }
-        if (!Utils::isUnset($request->pageSize)) {
-            @$body['pageSize'] = $request->pageSize;
-        }
-        if (!Utils::isUnset($request->tokenGrantType)) {
-            @$body['tokenGrantType'] = $request->tokenGrantType;
-        }
-        if (!Utils::isUnset($request->orgId)) {
-            @$body['orgId'] = $request->orgId;
-        }
-        if (!Utils::isUnset($request->corpId)) {
-            @$body['corpId'] = $request->corpId;
-        }
-        if (!Utils::isUnset($request->isvOrgId)) {
-            @$body['isvOrgId'] = $request->isvOrgId;
-        }
-        if (!Utils::isUnset($request->suiteKey)) {
-            @$body['suiteKey'] = $request->suiteKey;
-        }
-        if (!Utils::isUnset($request->microappAgentId)) {
-            @$body['microappAgentId'] = $request->microappAgentId;
-        }
-        if (!Utils::isUnset($request->appIds)) {
-            @$body['appIds'] = $request->appIds;
-        }
-        if (!Utils::isUnset($request->appId)) {
-            @$body['appId'] = $request->appId;
-        }
-        if (!Utils::isUnset($request->appName)) {
-            @$body['appName'] = $request->appName;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return IndustryManufactureLabourCostResponse::fromMap($this->doROARequest('IndustryManufactureLabourCost', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/manufactures/labourCosts/query', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryHospitalDistrictInfoRequest $request
-     *
-     * @return QueryHospitalDistrictInfoResponse
-     */
-    public function queryHospitalDistrictInfo($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryHospitalDistrictInfoHeaders([]);
-
-        return $this->queryHospitalDistrictInfoWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryHospitalDistrictInfoRequest $request
-     * @param QueryHospitalDistrictInfoHeaders $headers
-     * @param RuntimeOptions                   $runtime
-     *
-     * @return QueryHospitalDistrictInfoResponse
-     */
-    public function queryHospitalDistrictInfoWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->pageSize)) {
-            @$query['pageSize'] = $request->pageSize;
-        }
+        $deptId = OpenApiUtilClient::getEncodeParam($deptId);
+        $query  = [];
         if (!Utils::isUnset($request->pageNumber)) {
             @$query['pageNumber'] = $request->pageNumber;
         }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return QueryHospitalDistrictInfoResponse::fromMap($this->doROARequest('QueryHospitalDistrictInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/districts', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param IndustryManufactureCostRecordListGetRequest $request
-     *
-     * @return IndustryManufactureCostRecordListGetResponse
-     */
-    public function industryManufactureCostRecordListGet($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new IndustryManufactureCostRecordListGetHeaders([]);
-
-        return $this->industryManufactureCostRecordListGetWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param IndustryManufactureCostRecordListGetRequest $request
-     * @param IndustryManufactureCostRecordListGetHeaders $headers
-     * @param RuntimeOptions                              $runtime
-     *
-     * @return IndustryManufactureCostRecordListGetResponse
-     */
-    public function industryManufactureCostRecordListGetWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->instanceId)) {
-            @$body['instanceId'] = $request->instanceId;
-        }
-        if (!Utils::isUnset($request->materialNo)) {
-            @$body['materialNo'] = $request->materialNo;
-        }
-        if (!Utils::isUnset($request->orderNo)) {
-            @$body['orderNo'] = $request->orderNo;
-        }
-        if (!Utils::isUnset($request->productionTaskNo)) {
-            @$body['productionTaskNo'] = $request->productionTaskNo;
-        }
-        if (!Utils::isUnset($request->startTime)) {
-            @$body['startTime'] = $request->startTime;
-        }
-        if (!Utils::isUnset($request->endTime)) {
-            @$body['endTime'] = $request->endTime;
-        }
-        if (!Utils::isUnset($request->cursor)) {
-            @$body['cursor'] = $request->cursor;
-        }
-        if (!Utils::isUnset($request->pageNumber)) {
-            @$body['pageNumber'] = $request->pageNumber;
-        }
-        if (!Utils::isUnset($request->pageSize)) {
-            @$body['pageSize'] = $request->pageSize;
-        }
-        if (!Utils::isUnset($request->tokenGrantType)) {
-            @$body['tokenGrantType'] = $request->tokenGrantType;
-        }
-        if (!Utils::isUnset($request->orgId)) {
-            @$body['orgId'] = $request->orgId;
-        }
-        if (!Utils::isUnset($request->corpId)) {
-            @$body['corpId'] = $request->corpId;
-        }
-        if (!Utils::isUnset($request->isvOrgId)) {
-            @$body['isvOrgId'] = $request->isvOrgId;
-        }
-        if (!Utils::isUnset($request->suiteKey)) {
-            @$body['suiteKey'] = $request->suiteKey;
-        }
-        if (!Utils::isUnset($request->microappAgentId)) {
-            @$body['microappAgentId'] = $request->microappAgentId;
-        }
-        if (!Utils::isUnset($request->appIds)) {
-            @$body['appIds'] = $request->appIds;
-        }
-        if (!Utils::isUnset($request->appId)) {
-            @$body['appId'] = $request->appId;
-        }
-        if (!Utils::isUnset($request->appName)) {
-            @$body['appName'] = $request->appName;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return IndustryManufactureCostRecordListGetResponse::fromMap($this->doROARequest('IndustryManufactureCostRecordListGet', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/manufactures/materialCostRecords/query', 'json', $req, $runtime));
+        return QueryAllMemberByDeptResponse::fromMap($this->doROARequest('QueryAllMemberByDept', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/departments/' . $deptId . '/members', 'json', $req, $runtime));
     }
 
     /**
@@ -759,19 +792,20 @@ class Dingtalk extends OpenApiClient
     public function queryAllMemberByGroupWithOptions($groupId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->pageSize)) {
-            @$query['pageSize'] = $request->pageSize;
-        }
+        $groupId = OpenApiUtilClient::getEncodeParam($groupId);
+        $query   = [];
         if (!Utils::isUnset($request->pageNumber)) {
             @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -779,39 +813,6 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryAllMemberByGroupResponse::fromMap($this->doROARequest('QueryAllMemberByGroup', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/groups/' . $groupId . '/members', 'json', $req, $runtime));
-    }
-
-    /**
-     * @return QueryHospitalRolesResponse
-     */
-    public function queryHospitalRoles()
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryHospitalRolesHeaders([]);
-
-        return $this->queryHospitalRolesWithOptions($headers, $runtime);
-    }
-
-    /**
-     * @param QueryHospitalRolesHeaders $headers
-     * @param RuntimeOptions            $runtime
-     *
-     * @return QueryHospitalRolesResponse
-     */
-    public function queryHospitalRolesWithOptions($headers, $runtime)
-    {
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-        ]);
-
-        return QueryHospitalRolesResponse::fromMap($this->doROARequest('QueryHospitalRoles', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/roles', 'json', $req, $runtime));
     }
 
     /**
@@ -838,18 +839,18 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->nextToken)) {
-            @$query['nextToken'] = $request->nextToken;
-        }
         if (!Utils::isUnset($request->maxResults)) {
             @$query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -857,6 +858,125 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryBizOptLogResponse::fromMap($this->doROARequest('QueryBizOptLog', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/bizOptLogs', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $deptId
+     *
+     * @return QueryDepartmentInfoResponse
+     */
+    public function queryDepartmentInfo($deptId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryDepartmentInfoHeaders([]);
+
+        return $this->queryDepartmentInfoWithOptions($deptId, $headers, $runtime);
+    }
+
+    /**
+     * @param string                     $deptId
+     * @param QueryDepartmentInfoHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return QueryDepartmentInfoResponse
+     */
+    public function queryDepartmentInfoWithOptions($deptId, $headers, $runtime)
+    {
+        $deptId      = OpenApiUtilClient::getEncodeParam($deptId);
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return QueryDepartmentInfoResponse::fromMap($this->doROARequest('QueryDepartmentInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/departments/' . $deptId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $groupId
+     *
+     * @return QueryGroupInfoResponse
+     */
+    public function queryGroupInfo($groupId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryGroupInfoHeaders([]);
+
+        return $this->queryGroupInfoWithOptions($groupId, $headers, $runtime);
+    }
+
+    /**
+     * @param string                $groupId
+     * @param QueryGroupInfoHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return QueryGroupInfoResponse
+     */
+    public function queryGroupInfoWithOptions($groupId, $headers, $runtime)
+    {
+        $groupId     = OpenApiUtilClient::getEncodeParam($groupId);
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return QueryGroupInfoResponse::fromMap($this->doROARequest('QueryGroupInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/groups/' . $groupId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryHospitalDistrictInfoRequest $request
+     *
+     * @return QueryHospitalDistrictInfoResponse
+     */
+    public function queryHospitalDistrictInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryHospitalDistrictInfoHeaders([]);
+
+        return $this->queryHospitalDistrictInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryHospitalDistrictInfoRequest $request
+     * @param QueryHospitalDistrictInfoHeaders $headers
+     * @param RuntimeOptions                   $runtime
+     *
+     * @return QueryHospitalDistrictInfoResponse
+     */
+    public function queryHospitalDistrictInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryHospitalDistrictInfoResponse::fromMap($this->doROARequest('QueryHospitalDistrictInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/districts', 'json', $req, $runtime));
     }
 
     /**
@@ -883,18 +1003,18 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->pageSize)) {
-            @$query['pageSize'] = $request->pageSize;
-        }
         if (!Utils::isUnset($request->pageNumber)) {
             @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -905,36 +1025,69 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return QueryUserProbCodeDictionaryResponse
+     * @return QueryHospitalRolesResponse
      */
-    public function queryUserProbCodeDictionary()
+    public function queryHospitalRoles()
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new QueryUserProbCodeDictionaryHeaders([]);
+        $headers = new QueryHospitalRolesHeaders([]);
 
-        return $this->queryUserProbCodeDictionaryWithOptions($headers, $runtime);
+        return $this->queryHospitalRolesWithOptions($headers, $runtime);
     }
 
     /**
-     * @param QueryUserProbCodeDictionaryHeaders $headers
-     * @param RuntimeOptions                     $runtime
+     * @param QueryHospitalRolesHeaders $headers
+     * @param RuntimeOptions            $runtime
      *
-     * @return QueryUserProbCodeDictionaryResponse
+     * @return QueryHospitalRolesResponse
      */
-    public function queryUserProbCodeDictionaryWithOptions($headers, $runtime)
+    public function queryHospitalRolesWithOptions($headers, $runtime)
     {
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
         ]);
 
-        return QueryUserProbCodeDictionaryResponse::fromMap($this->doROARequest('QueryUserProbCodeDictionary', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/userProbCodes', 'json', $req, $runtime));
+        return QueryHospitalRolesResponse::fromMap($this->doROARequest('QueryHospitalRoles', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/roles', 'json', $req, $runtime));
+    }
+
+    /**
+     * @return QueryJobCodeDictionaryResponse
+     */
+    public function queryJobCodeDictionary()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryJobCodeDictionaryHeaders([]);
+
+        return $this->queryJobCodeDictionaryWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param QueryJobCodeDictionaryHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return QueryJobCodeDictionaryResponse
+     */
+    public function queryJobCodeDictionaryWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return QueryJobCodeDictionaryResponse::fromMap($this->doROARequest('QueryJobCodeDictionary', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/jobCodes', 'json', $req, $runtime));
     }
 
     /**
@@ -961,7 +1114,7 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -994,7 +1147,7 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -1004,393 +1157,192 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param IndustryManufactureMaterialListRequest $request
+     * @param string $userId
      *
-     * @return IndustryManufactureMaterialListResponse
+     * @return QueryUserExtInfoResponse
      */
-    public function industryManufactureMaterialList($request)
+    public function queryUserExtInfo($userId)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new IndustryManufactureMaterialListHeaders([]);
+        $headers = new QueryUserExtInfoHeaders([]);
 
-        return $this->industryManufactureMaterialListWithOptions($request, $headers, $runtime);
+        return $this->queryUserExtInfoWithOptions($userId, $headers, $runtime);
     }
 
     /**
-     * @param IndustryManufactureMaterialListRequest $request
-     * @param IndustryManufactureMaterialListHeaders $headers
-     * @param RuntimeOptions                         $runtime
+     * @param string                  $userId
+     * @param QueryUserExtInfoHeaders $headers
+     * @param RuntimeOptions          $runtime
      *
-     * @return IndustryManufactureMaterialListResponse
+     * @return QueryUserExtInfoResponse
      */
-    public function industryManufactureMaterialListWithOptions($request, $headers, $runtime)
+    public function queryUserExtInfoWithOptions($userId, $headers, $runtime)
+    {
+        $userId      = OpenApiUtilClient::getEncodeParam($userId);
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return QueryUserExtInfoResponse::fromMap($this->doROARequest('QueryUserExtInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/users/' . $userId . '/extInfos', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryUserExtendValuesRequest $request
+     *
+     * @return QueryUserExtendValuesResponse
+     */
+    public function queryUserExtendValues($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryUserExtendValuesHeaders([]);
+
+        return $this->queryUserExtendValuesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryUserExtendValuesRequest $request
+     * @param QueryUserExtendValuesHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return QueryUserExtendValuesResponse
+     */
+    public function queryUserExtendValuesWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->tokenGrantType)) {
-            @$body['tokenGrantType'] = $request->tokenGrantType;
+        if (!Utils::isUnset($request->userExtendKey)) {
+            @$body['userExtendKey'] = $request->userExtendKey;
         }
-        if (!Utils::isUnset($request->corpId)) {
-            @$body['corpId'] = $request->corpId;
-        }
-        if (!Utils::isUnset($request->pageSize)) {
-            @$body['pageSize'] = $request->pageSize;
-        }
-        if (!Utils::isUnset($request->endTime)) {
-            @$body['endTime'] = $request->endTime;
-        }
-        if (!Utils::isUnset($request->instanceId)) {
-            @$body['instanceId'] = $request->instanceId;
-        }
-        if (!Utils::isUnset($request->materialNo)) {
-            @$body['materialNo'] = $request->materialNo;
-        }
-        if (!Utils::isUnset($request->startTime)) {
-            @$body['startTime'] = $request->startTime;
-        }
-        if (!Utils::isUnset($request->microappAgentId)) {
-            @$body['microappAgentId'] = $request->microappAgentId;
-        }
-        if (!Utils::isUnset($request->cursor)) {
-            @$body['cursor'] = $request->cursor;
-        }
-        if (!Utils::isUnset($request->appName)) {
-            @$body['appName'] = $request->appName;
-        }
-        if (!Utils::isUnset($request->orgId)) {
-            @$body['orgId'] = $request->orgId;
-        }
-        if (!Utils::isUnset($request->appId)) {
-            @$body['appId'] = $request->appId;
-        }
-        if (!Utils::isUnset($request->suiteKey)) {
-            @$body['suiteKey'] = $request->suiteKey;
-        }
-        if (!Utils::isUnset($request->appIds)) {
-            @$body['appIds'] = $request->appIds;
-        }
-        if (!Utils::isUnset($request->currentPage)) {
-            @$body['currentPage'] = $request->currentPage;
-        }
-        if (!Utils::isUnset($request->isvOrgId)) {
-            @$body['isvOrgId'] = $request->isvOrgId;
+        if (!Utils::isUnset($request->userIds)) {
+            @$body['userIds'] = $request->userIds;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return IndustryManufactureMaterialListResponse::fromMap($this->doROARequest('IndustryManufactureMaterialList', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/manufactures/materials/query', 'json', $req, $runtime));
+        return QueryUserExtendValuesResponse::fromMap($this->doROARequest('QueryUserExtendValues', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/medicals/users/extends/query', 'json', $req, $runtime));
     }
 
     /**
-     * @param IndustryMmanufactureMaterialCostGetRequest $request
+     * @param string $userId
      *
-     * @return IndustryMmanufactureMaterialCostGetResponse
+     * @return QueryUserInfoResponse
      */
-    public function industryMmanufactureMaterialCostGet($request)
+    public function queryUserInfo($userId)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new IndustryMmanufactureMaterialCostGetHeaders([]);
+        $headers = new QueryUserInfoHeaders([]);
 
-        return $this->industryMmanufactureMaterialCostGetWithOptions($request, $headers, $runtime);
+        return $this->queryUserInfoWithOptions($userId, $headers, $runtime);
     }
 
     /**
-     * @param IndustryMmanufactureMaterialCostGetRequest $request
-     * @param IndustryMmanufactureMaterialCostGetHeaders $headers
-     * @param RuntimeOptions                             $runtime
+     * @param string               $userId
+     * @param QueryUserInfoHeaders $headers
+     * @param RuntimeOptions       $runtime
      *
-     * @return IndustryMmanufactureMaterialCostGetResponse
+     * @return QueryUserInfoResponse
      */
-    public function industryMmanufactureMaterialCostGetWithOptions($request, $headers, $runtime)
+    public function queryUserInfoWithOptions($userId, $headers, $runtime)
     {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->instanceId)) {
-            @$body['instanceId'] = $request->instanceId;
-        }
-        if (!Utils::isUnset($request->materialNo)) {
-            @$body['materialNo'] = $request->materialNo;
-        }
-        if (!Utils::isUnset($request->startTime)) {
-            @$body['startTime'] = $request->startTime;
-        }
-        if (!Utils::isUnset($request->endTime)) {
-            @$body['endTime'] = $request->endTime;
-        }
-        if (!Utils::isUnset($request->cursor)) {
-            @$body['cursor'] = $request->cursor;
-        }
-        if (!Utils::isUnset($request->pageNumber)) {
-            @$body['pageNumber'] = $request->pageNumber;
-        }
-        if (!Utils::isUnset($request->pageSize)) {
-            @$body['pageSize'] = $request->pageSize;
-        }
-        if (!Utils::isUnset($request->tokenGrantType)) {
-            @$body['tokenGrantType'] = $request->tokenGrantType;
-        }
-        if (!Utils::isUnset($request->orgId)) {
-            @$body['orgId'] = $request->orgId;
-        }
-        if (!Utils::isUnset($request->corpId)) {
-            @$body['corpId'] = $request->corpId;
-        }
-        if (!Utils::isUnset($request->isvOrgId)) {
-            @$body['isvOrgId'] = $request->isvOrgId;
-        }
-        if (!Utils::isUnset($request->suiteKey)) {
-            @$body['suiteKey'] = $request->suiteKey;
-        }
-        if (!Utils::isUnset($request->microappAgentId)) {
-            @$body['microappAgentId'] = $request->microappAgentId;
-        }
-        if (!Utils::isUnset($request->appIds)) {
-            @$body['appIds'] = $request->appIds;
-        }
-        if (!Utils::isUnset($request->appId)) {
-            @$body['appId'] = $request->appId;
-        }
-        if (!Utils::isUnset($request->appName)) {
-            @$body['appName'] = $request->appName;
-        }
+        $userId      = OpenApiUtilClient::getEncodeParam($userId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return IndustryMmanufactureMaterialCostGetResponse::fromMap($this->doROARequest('IndustryMmanufactureMaterialCostGet', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/manufactures/base/materialCosts/query', 'json', $req, $runtime));
+        return QueryUserInfoResponse::fromMap($this->doROARequest('QueryUserInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/users/' . $userId . '', 'json', $req, $runtime));
     }
 
     /**
-     * @param IndustryManufactureFeeListGetRequest $request
-     *
-     * @return IndustryManufactureFeeListGetResponse
+     * @return QueryUserProbCodeDictionaryResponse
      */
-    public function industryManufactureFeeListGet($request)
+    public function queryUserProbCodeDictionary()
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new IndustryManufactureFeeListGetHeaders([]);
+        $headers = new QueryUserProbCodeDictionaryHeaders([]);
 
-        return $this->industryManufactureFeeListGetWithOptions($request, $headers, $runtime);
+        return $this->queryUserProbCodeDictionaryWithOptions($headers, $runtime);
     }
 
     /**
-     * @param IndustryManufactureFeeListGetRequest $request
-     * @param IndustryManufactureFeeListGetHeaders $headers
-     * @param RuntimeOptions                       $runtime
+     * @param QueryUserProbCodeDictionaryHeaders $headers
+     * @param RuntimeOptions                     $runtime
      *
-     * @return IndustryManufactureFeeListGetResponse
+     * @return QueryUserProbCodeDictionaryResponse
      */
-    public function industryManufactureFeeListGetWithOptions($request, $headers, $runtime)
+    public function queryUserProbCodeDictionaryWithOptions($headers, $runtime)
     {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->productionTaskNo)) {
-            @$body['productionTaskNo'] = $request->productionTaskNo;
-        }
-        if (!Utils::isUnset($request->materialNo)) {
-            @$body['materialNo'] = $request->materialNo;
-        }
-        if (!Utils::isUnset($request->type)) {
-            @$body['type'] = $request->type;
-        }
-        if (!Utils::isUnset($request->startTime)) {
-            @$body['startTime'] = $request->startTime;
-        }
-        if (!Utils::isUnset($request->endTime)) {
-            @$body['endTime'] = $request->endTime;
-        }
-        if (!Utils::isUnset($request->cursor)) {
-            @$body['cursor'] = $request->cursor;
-        }
-        if (!Utils::isUnset($request->pageNumber)) {
-            @$body['pageNumber'] = $request->pageNumber;
-        }
-        if (!Utils::isUnset($request->pageSize)) {
-            @$body['pageSize'] = $request->pageSize;
-        }
-        if (!Utils::isUnset($request->tokenGrantType)) {
-            @$body['tokenGrantType'] = $request->tokenGrantType;
-        }
-        if (!Utils::isUnset($request->orgId)) {
-            @$body['orgId'] = $request->orgId;
-        }
-        if (!Utils::isUnset($request->corpId)) {
-            @$body['corpId'] = $request->corpId;
-        }
-        if (!Utils::isUnset($request->isvOrgId)) {
-            @$body['isvOrgId'] = $request->isvOrgId;
-        }
-        if (!Utils::isUnset($request->suiteKey)) {
-            @$body['suiteKey'] = $request->suiteKey;
-        }
-        if (!Utils::isUnset($request->microappAgentId)) {
-            @$body['microappAgentId'] = $request->microappAgentId;
-        }
-        if (!Utils::isUnset($request->appIds)) {
-            @$body['appIds'] = $request->appIds;
-        }
-        if (!Utils::isUnset($request->appId)) {
-            @$body['appId'] = $request->appId;
-        }
-        if (!Utils::isUnset($request->appName)) {
-            @$body['appName'] = $request->appName;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return IndustryManufactureFeeListGetResponse::fromMap($this->doROARequest('IndustryManufactureFeeListGet', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/manufactures/fees/query', 'json', $req, $runtime));
+        return QueryUserProbCodeDictionaryResponse::fromMap($this->doROARequest('QueryUserProbCodeDictionary', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/userProbCodes', 'json', $req, $runtime));
     }
 
     /**
-     * @param QueryAllDoctorsRequest $request
+     * @param string $userId
      *
-     * @return QueryAllDoctorsResponse
+     * @return QueryUserRolesResponse
      */
-    public function queryAllDoctors($request)
+    public function queryUserRoles($userId)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new QueryAllDoctorsHeaders([]);
+        $headers = new QueryUserRolesHeaders([]);
 
-        return $this->queryAllDoctorsWithOptions($request, $headers, $runtime);
+        return $this->queryUserRolesWithOptions($userId, $headers, $runtime);
     }
 
     /**
-     * @param QueryAllDoctorsRequest $request
-     * @param QueryAllDoctorsHeaders $headers
-     * @param RuntimeOptions         $runtime
-     *
-     * @return QueryAllDoctorsResponse
-     */
-    public function queryAllDoctorsWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->pageSize)) {
-            @$query['pageSize'] = $request->pageSize;
-        }
-        if (!Utils::isUnset($request->pageNum)) {
-            @$query['pageNum'] = $request->pageNum;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryAllDoctorsResponse::fromMap($this->doROARequest('QueryAllDoctors', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/doctors', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryAllDepartmentRequest $request
-     *
-     * @return QueryAllDepartmentResponse
-     */
-    public function queryAllDepartment($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryAllDepartmentHeaders([]);
-
-        return $this->queryAllDepartmentWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryAllDepartmentRequest $request
-     * @param QueryAllDepartmentHeaders $headers
-     * @param RuntimeOptions            $runtime
-     *
-     * @return QueryAllDepartmentResponse
-     */
-    public function queryAllDepartmentWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->pageSize)) {
-            @$query['pageSize'] = $request->pageSize;
-        }
-        if (!Utils::isUnset($request->pageNumber)) {
-            @$query['pageNumber'] = $request->pageNumber;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryAllDepartmentResponse::fromMap($this->doROARequest('QueryAllDepartment', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/departments', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param string $groupId
-     *
-     * @return QueryGroupInfoResponse
-     */
-    public function queryGroupInfo($groupId)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryGroupInfoHeaders([]);
-
-        return $this->queryGroupInfoWithOptions($groupId, $headers, $runtime);
-    }
-
-    /**
-     * @param string                $groupId
-     * @param QueryGroupInfoHeaders $headers
+     * @param string                $userId
+     * @param QueryUserRolesHeaders $headers
      * @param RuntimeOptions        $runtime
      *
-     * @return QueryGroupInfoResponse
+     * @return QueryUserRolesResponse
      */
-    public function queryGroupInfoWithOptions($groupId, $headers, $runtime)
+    public function queryUserRolesWithOptions($userId, $headers, $runtime)
     {
+        $userId      = OpenApiUtilClient::getEncodeParam($userId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
         ]);
 
-        return QueryGroupInfoResponse::fromMap($this->doROARequest('QueryGroupInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/groups/' . $groupId . '', 'json', $req, $runtime));
+        return QueryUserRolesResponse::fromMap($this->doROARequest('QueryUserRoles', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/users/' . $userId . '/roles', 'json', $req, $runtime));
     }
 
     /**
@@ -1418,22 +1370,23 @@ class Dingtalk extends OpenApiClient
     public function saveUserExtendValuesWithOptions($userId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $userId = OpenApiUtilClient::getEncodeParam($userId);
+        $query  = [];
+        if (!Utils::isUnset($request->userDisplayName)) {
+            @$query['userDisplayName'] = $request->userDisplayName;
+        }
         if (!Utils::isUnset($request->userExtendKey)) {
             @$query['userExtendKey'] = $request->userExtendKey;
         }
         if (!Utils::isUnset($request->userExtendValue)) {
             @$query['userExtendValue'] = $request->userExtendValue;
         }
-        if (!Utils::isUnset($request->userDisplayName)) {
-            @$query['userDisplayName'] = $request->userDisplayName;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -1441,5 +1394,59 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return SaveUserExtendValuesResponse::fromMap($this->doROARequest('SaveUserExtendValues', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/medicals/users/' . $userId . '/extends', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                      $userId
+     * @param UpdateUserExtendInfoRequest $request
+     *
+     * @return UpdateUserExtendInfoResponse
+     */
+    public function updateUserExtendInfo($userId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateUserExtendInfoHeaders([]);
+
+        return $this->updateUserExtendInfoWithOptions($userId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                      $userId
+     * @param UpdateUserExtendInfoRequest $request
+     * @param UpdateUserExtendInfoHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return UpdateUserExtendInfoResponse
+     */
+    public function updateUserExtendInfoWithOptions($userId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $userId = OpenApiUtilClient::getEncodeParam($userId);
+        $body   = [];
+        if (!Utils::isUnset($request->comments)) {
+            @$body['comments'] = $request->comments;
+        }
+        if (!Utils::isUnset($request->jobCode)) {
+            @$body['jobCode'] = $request->jobCode;
+        }
+        if (!Utils::isUnset($request->jobStatusCode)) {
+            @$body['jobStatusCode'] = $request->jobStatusCode;
+        }
+        if (!Utils::isUnset($request->userProbCode)) {
+            @$body['userProbCode'] = $request->userProbCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateUserExtendInfoResponse::fromMap($this->doROARequest('UpdateUserExtendInfo', 'industry_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/industry/medicals/users/' . $userId . '/extInfos', 'none', $req, $runtime));
     }
 }

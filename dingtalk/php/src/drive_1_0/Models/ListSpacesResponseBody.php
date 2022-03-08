@@ -10,19 +10,19 @@ use AlibabaCloud\Tea\Model;
 class ListSpacesResponseBody extends Model
 {
     /**
-     * @var spaces[]
-     */
-    public $spaces;
-
-    /**
      * @description 分页加载更多锚点, nextToken不为空表示有更多数据
      *
      * @var string
      */
     public $nextToken;
+
+    /**
+     * @var spaces[]
+     */
+    public $spaces;
     protected $_name = [
-        'spaces'    => 'spaces',
         'nextToken' => 'nextToken',
+        'spaces'    => 'spaces',
     ];
 
     public function validate()
@@ -32,6 +32,9 @@ class ListSpacesResponseBody extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
+        }
         if (null !== $this->spaces) {
             $res['spaces'] = [];
             if (null !== $this->spaces && \is_array($this->spaces)) {
@@ -40,9 +43,6 @@ class ListSpacesResponseBody extends Model
                     $res['spaces'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
-        }
-        if (null !== $this->nextToken) {
-            $res['nextToken'] = $this->nextToken;
         }
 
         return $res;
@@ -56,6 +56,9 @@ class ListSpacesResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
+        }
         if (isset($map['spaces'])) {
             if (!empty($map['spaces'])) {
                 $model->spaces = [];
@@ -64,9 +67,6 @@ class ListSpacesResponseBody extends Model
                     $model->spaces[$n++] = null !== $item ? spaces::fromMap($item) : $item;
                 }
             }
-        }
-        if (isset($map['nextToken'])) {
-            $model->nextToken = $map['nextToken'];
         }
 
         return $model;

@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class fieldScopes extends Model
 {
     /**
-     * @description 字段id
-     *
-     * @var string
-     */
-    public $fieldId;
-
-    /**
      * @description 字段权限点
      *
      * @var string[]
      */
     public $fieldActions;
+
+    /**
+     * @description 字段id
+     *
+     * @var string
+     */
+    public $fieldId;
     protected $_name = [
-        'fieldId'      => 'fieldId',
         'fieldActions' => 'fieldActions',
+        'fieldId'      => 'fieldId',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class fieldScopes extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->fieldId) {
-            $res['fieldId'] = $this->fieldId;
-        }
         if (null !== $this->fieldActions) {
             $res['fieldActions'] = $this->fieldActions;
+        }
+        if (null !== $this->fieldId) {
+            $res['fieldId'] = $this->fieldId;
         }
 
         return $res;
@@ -51,13 +51,13 @@ class fieldScopes extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['fieldId'])) {
-            $model->fieldId = $map['fieldId'];
-        }
         if (isset($map['fieldActions'])) {
             if (!empty($map['fieldActions'])) {
                 $model->fieldActions = $map['fieldActions'];
             }
+        }
+        if (isset($map['fieldId'])) {
+            $model->fieldId = $map['fieldId'];
         }
 
         return $model;

@@ -10,6 +10,13 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
+     * @description 分页大小
+     *
+     * @var int
+     */
+    public $maxResults;
+
+    /**
      * @description 下一页的游标，为null则表示无数据
      *
      * @var string
@@ -22,17 +29,10 @@ class result extends Model
      * @var values[]
      */
     public $values;
-
-    /**
-     * @description 分页大小
-     *
-     * @var int
-     */
-    public $maxResults;
     protected $_name = [
+        'maxResults' => 'maxResults',
         'nextToken'  => 'nextToken',
         'values'     => 'values',
-        'maxResults' => 'maxResults',
     ];
 
     public function validate()
@@ -42,6 +42,9 @@ class result extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->maxResults) {
+            $res['maxResults'] = $this->maxResults;
+        }
         if (null !== $this->nextToken) {
             $res['nextToken'] = $this->nextToken;
         }
@@ -53,9 +56,6 @@ class result extends Model
                     $res['values'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
-        }
-        if (null !== $this->maxResults) {
-            $res['maxResults'] = $this->maxResults;
         }
 
         return $res;
@@ -69,6 +69,9 @@ class result extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['maxResults'])) {
+            $model->maxResults = $map['maxResults'];
+        }
         if (isset($map['nextToken'])) {
             $model->nextToken = $map['nextToken'];
         }
@@ -80,9 +83,6 @@ class result extends Model
                     $model->values[$n++] = null !== $item ? values::fromMap($item) : $item;
                 }
             }
-        }
-        if (isset($map['maxResults'])) {
-            $model->maxResults = $map['maxResults'];
         }
 
         return $model;

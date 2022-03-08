@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class SearchFormDataIdListResponseBody extends Model
 {
     /**
-     * @description 总数量
+     * @description data
      *
-     * @var int
+     * @var string[]
      */
-    public $totalCount;
+    public $data;
 
     /**
      * @description 当前第几页
@@ -23,15 +23,15 @@ class SearchFormDataIdListResponseBody extends Model
     public $pageNumber;
 
     /**
-     * @description data
+     * @description 总数量
      *
-     * @var string[]
+     * @var int
      */
-    public $data;
+    public $totalCount;
     protected $_name = [
-        'totalCount' => 'totalCount',
-        'pageNumber' => 'pageNumber',
         'data'       => 'data',
+        'pageNumber' => 'pageNumber',
+        'totalCount' => 'totalCount',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class SearchFormDataIdListResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->totalCount) {
-            $res['totalCount'] = $this->totalCount;
+        if (null !== $this->data) {
+            $res['data'] = $this->data;
         }
         if (null !== $this->pageNumber) {
             $res['pageNumber'] = $this->pageNumber;
         }
-        if (null !== $this->data) {
-            $res['data'] = $this->data;
+        if (null !== $this->totalCount) {
+            $res['totalCount'] = $this->totalCount;
         }
 
         return $res;
@@ -62,16 +62,16 @@ class SearchFormDataIdListResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['totalCount'])) {
-            $model->totalCount = $map['totalCount'];
-        }
-        if (isset($map['pageNumber'])) {
-            $model->pageNumber = $map['pageNumber'];
-        }
         if (isset($map['data'])) {
             if (!empty($map['data'])) {
                 $model->data = $map['data'];
             }
+        }
+        if (isset($map['pageNumber'])) {
+            $model->pageNumber = $map['pageNumber'];
+        }
+        if (isset($map['totalCount'])) {
+            $model->totalCount = $map['totalCount'];
         }
 
         return $model;

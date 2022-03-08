@@ -10,6 +10,11 @@ use AlibabaCloud\Tea\Model;
 class SearchWorkspaceDocsResponseBody extends Model
 {
     /**
+     * @var docs[]
+     */
+    public $docs;
+
+    /**
      * @description 是否还有可搜索内容
      *
      * @var bool
@@ -20,15 +25,10 @@ class SearchWorkspaceDocsResponseBody extends Model
      * @var string
      */
     public $nextToken;
-
-    /**
-     * @var docs[]
-     */
-    public $docs;
     protected $_name = [
+        'docs'      => 'docs',
         'hasMore'   => 'hasMore',
         'nextToken' => 'nextToken',
-        'docs'      => 'docs',
     ];
 
     public function validate()
@@ -38,12 +38,6 @@ class SearchWorkspaceDocsResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->hasMore) {
-            $res['hasMore'] = $this->hasMore;
-        }
-        if (null !== $this->nextToken) {
-            $res['nextToken'] = $this->nextToken;
-        }
         if (null !== $this->docs) {
             $res['docs'] = [];
             if (null !== $this->docs && \is_array($this->docs)) {
@@ -52,6 +46,12 @@ class SearchWorkspaceDocsResponseBody extends Model
                     $res['docs'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->hasMore) {
+            $res['hasMore'] = $this->hasMore;
+        }
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
         }
 
         return $res;
@@ -65,12 +65,6 @@ class SearchWorkspaceDocsResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['hasMore'])) {
-            $model->hasMore = $map['hasMore'];
-        }
-        if (isset($map['nextToken'])) {
-            $model->nextToken = $map['nextToken'];
-        }
         if (isset($map['docs'])) {
             if (!empty($map['docs'])) {
                 $model->docs = [];
@@ -79,6 +73,12 @@ class SearchWorkspaceDocsResponseBody extends Model
                     $model->docs[$n++] = null !== $item ? docs::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['hasMore'])) {
+            $model->hasMore = $map['hasMore'];
+        }
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
         }
 
         return $model;

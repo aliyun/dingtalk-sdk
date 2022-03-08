@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class holidays extends Model
 {
     /**
-     * @description 日期
-     *
-     * @var int
-     */
-    public $workDate;
-
-    /**
      * @description 假期名称
      *
      * @var string
@@ -35,11 +28,18 @@ class holidays extends Model
      * @var int
      */
     public $realWorkDate;
+
+    /**
+     * @description 日期
+     *
+     * @var int
+     */
+    public $workDate;
     protected $_name = [
-        'workDate'     => 'workDate',
         'holidayName'  => 'holidayName',
         'holidayType'  => 'holidayType',
         'realWorkDate' => 'realWorkDate',
+        'workDate'     => 'workDate',
     ];
 
     public function validate()
@@ -49,9 +49,6 @@ class holidays extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->workDate) {
-            $res['workDate'] = $this->workDate;
-        }
         if (null !== $this->holidayName) {
             $res['holidayName'] = $this->holidayName;
         }
@@ -60,6 +57,9 @@ class holidays extends Model
         }
         if (null !== $this->realWorkDate) {
             $res['realWorkDate'] = $this->realWorkDate;
+        }
+        if (null !== $this->workDate) {
+            $res['workDate'] = $this->workDate;
         }
 
         return $res;
@@ -73,9 +73,6 @@ class holidays extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['workDate'])) {
-            $model->workDate = $map['workDate'];
-        }
         if (isset($map['holidayName'])) {
             $model->holidayName = $map['holidayName'];
         }
@@ -84,6 +81,9 @@ class holidays extends Model
         }
         if (isset($map['realWorkDate'])) {
             $model->realWorkDate = $map['realWorkDate'];
+        }
+        if (isset($map['workDate'])) {
+            $model->workDate = $map['workDate'];
         }
 
         return $model;

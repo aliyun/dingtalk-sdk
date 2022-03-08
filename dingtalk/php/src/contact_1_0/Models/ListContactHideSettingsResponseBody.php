@@ -17,22 +17,22 @@ class ListContactHideSettingsResponseBody extends Model
     public $hasMore;
 
     /**
-     * @description 下一次拉取数据时的offset
-     *
-     * @var int
-     */
-    public $nextToken;
-
-    /**
      * @description 设置列表
      *
      * @var list_[]
      */
     public $list;
+
+    /**
+     * @description 下一次拉取数据时的offset
+     *
+     * @var int
+     */
+    public $nextToken;
     protected $_name = [
         'hasMore'   => 'hasMore',
-        'nextToken' => 'nextToken',
         'list'      => 'list',
+        'nextToken' => 'nextToken',
     ];
 
     public function validate()
@@ -45,9 +45,6 @@ class ListContactHideSettingsResponseBody extends Model
         if (null !== $this->hasMore) {
             $res['hasMore'] = $this->hasMore;
         }
-        if (null !== $this->nextToken) {
-            $res['nextToken'] = $this->nextToken;
-        }
         if (null !== $this->list) {
             $res['list'] = [];
             if (null !== $this->list && \is_array($this->list)) {
@@ -56,6 +53,9 @@ class ListContactHideSettingsResponseBody extends Model
                     $res['list'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
         }
 
         return $res;
@@ -72,9 +72,6 @@ class ListContactHideSettingsResponseBody extends Model
         if (isset($map['hasMore'])) {
             $model->hasMore = $map['hasMore'];
         }
-        if (isset($map['nextToken'])) {
-            $model->nextToken = $map['nextToken'];
-        }
         if (isset($map['list'])) {
             if (!empty($map['list'])) {
                 $model->list = [];
@@ -83,6 +80,9 @@ class ListContactHideSettingsResponseBody extends Model
                     $model->list[$n++] = null !== $item ? list_::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
         }
 
         return $model;

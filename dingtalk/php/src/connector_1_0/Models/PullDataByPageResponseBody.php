@@ -17,22 +17,22 @@ class PullDataByPageResponseBody extends Model
     public $list;
 
     /**
-     * @description 用于查看下一页数据的游标，如果为空则说明没有更多数据了。
-     *
-     * @var string
-     */
-    public $nextToken;
-
-    /**
      * @description 单次获取的最大记录条数。
      *
      * @var int
      */
     public $maxResults;
+
+    /**
+     * @description 用于查看下一页数据的游标，如果为空则说明没有更多数据了。
+     *
+     * @var string
+     */
+    public $nextToken;
     protected $_name = [
         'list'       => 'list',
-        'nextToken'  => 'nextToken',
         'maxResults' => 'maxResults',
+        'nextToken'  => 'nextToken',
     ];
 
     public function validate()
@@ -51,11 +51,11 @@ class PullDataByPageResponseBody extends Model
                 }
             }
         }
-        if (null !== $this->nextToken) {
-            $res['nextToken'] = $this->nextToken;
-        }
         if (null !== $this->maxResults) {
             $res['maxResults'] = $this->maxResults;
+        }
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
         }
 
         return $res;
@@ -78,11 +78,11 @@ class PullDataByPageResponseBody extends Model
                 }
             }
         }
-        if (isset($map['nextToken'])) {
-            $model->nextToken = $map['nextToken'];
-        }
         if (isset($map['maxResults'])) {
             $model->maxResults = $map['maxResults'];
+        }
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
         }
 
         return $model;

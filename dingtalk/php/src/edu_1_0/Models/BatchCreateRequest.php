@@ -31,6 +31,13 @@ class BatchCreateRequest extends Model
     public $identifier;
 
     /**
+     * @description 小程序版本号
+     *
+     * @var int
+     */
+    public $jsVersion;
+
+    /**
      * @description isv业务类型
      *
      * @var string
@@ -43,28 +50,13 @@ class BatchCreateRequest extends Model
      * @var string
      */
     public $userid;
-
-    /**
-     * @description 老师corpId
-     *
-     * @var string
-     */
-    public $dingCorpId;
-
-    /**
-     * @description 小程序版本号
-     *
-     * @var int
-     */
-    public $jsVersion;
     protected $_name = [
         'cardBizCode' => 'cardBizCode',
         'data'        => 'data',
         'identifier'  => 'identifier',
+        'jsVersion'   => 'jsVersion',
         'sourceType'  => 'sourceType',
         'userid'      => 'userid',
-        'dingCorpId'  => 'dingCorpId',
-        'jsVersion'   => 'jsVersion',
     ];
 
     public function validate()
@@ -83,17 +75,14 @@ class BatchCreateRequest extends Model
         if (null !== $this->identifier) {
             $res['identifier'] = $this->identifier;
         }
+        if (null !== $this->jsVersion) {
+            $res['jsVersion'] = $this->jsVersion;
+        }
         if (null !== $this->sourceType) {
             $res['sourceType'] = $this->sourceType;
         }
         if (null !== $this->userid) {
             $res['userid'] = $this->userid;
-        }
-        if (null !== $this->dingCorpId) {
-            $res['dingCorpId'] = $this->dingCorpId;
-        }
-        if (null !== $this->jsVersion) {
-            $res['jsVersion'] = $this->jsVersion;
         }
 
         return $res;
@@ -116,17 +105,14 @@ class BatchCreateRequest extends Model
         if (isset($map['identifier'])) {
             $model->identifier = $map['identifier'];
         }
+        if (isset($map['jsVersion'])) {
+            $model->jsVersion = $map['jsVersion'];
+        }
         if (isset($map['sourceType'])) {
             $model->sourceType = $map['sourceType'];
         }
         if (isset($map['userid'])) {
             $model->userid = $map['userid'];
-        }
-        if (isset($map['dingCorpId'])) {
-            $model->dingCorpId = $map['dingCorpId'];
-        }
-        if (isset($map['jsVersion'])) {
-            $model->jsVersion = $map['jsVersion'];
         }
 
         return $model;

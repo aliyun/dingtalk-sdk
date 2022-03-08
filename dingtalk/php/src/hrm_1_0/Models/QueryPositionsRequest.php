@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class QueryPositionsRequest extends Model
 {
     /**
-     * @description 职位名称
-     *
-     * @var string
-     */
-    public $positionName;
-
-    /**
      * @description 职位类别列表
      *
      * @var string[]
@@ -30,11 +23,11 @@ class QueryPositionsRequest extends Model
     public $inPositionIds;
 
     /**
-     * @description 偏移量
+     * @description 职位名称
      *
-     * @var int
+     * @var string
      */
-    public $nextToken;
+    public $positionName;
 
     /**
      * @description 一次查询获取记录数
@@ -42,12 +35,19 @@ class QueryPositionsRequest extends Model
      * @var int
      */
     public $maxResults;
+
+    /**
+     * @description 偏移量
+     *
+     * @var int
+     */
+    public $nextToken;
     protected $_name = [
-        'positionName'  => 'positionName',
         'inCategoryIds' => 'inCategoryIds',
         'inPositionIds' => 'inPositionIds',
-        'nextToken'     => 'nextToken',
+        'positionName'  => 'positionName',
         'maxResults'    => 'maxResults',
+        'nextToken'     => 'nextToken',
     ];
 
     public function validate()
@@ -57,20 +57,20 @@ class QueryPositionsRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->positionName) {
-            $res['positionName'] = $this->positionName;
-        }
         if (null !== $this->inCategoryIds) {
             $res['inCategoryIds'] = $this->inCategoryIds;
         }
         if (null !== $this->inPositionIds) {
             $res['inPositionIds'] = $this->inPositionIds;
         }
-        if (null !== $this->nextToken) {
-            $res['nextToken'] = $this->nextToken;
+        if (null !== $this->positionName) {
+            $res['positionName'] = $this->positionName;
         }
         if (null !== $this->maxResults) {
             $res['maxResults'] = $this->maxResults;
+        }
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
         }
 
         return $res;
@@ -84,9 +84,6 @@ class QueryPositionsRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['positionName'])) {
-            $model->positionName = $map['positionName'];
-        }
         if (isset($map['inCategoryIds'])) {
             if (!empty($map['inCategoryIds'])) {
                 $model->inCategoryIds = $map['inCategoryIds'];
@@ -97,11 +94,14 @@ class QueryPositionsRequest extends Model
                 $model->inPositionIds = $map['inPositionIds'];
             }
         }
-        if (isset($map['nextToken'])) {
-            $model->nextToken = $map['nextToken'];
+        if (isset($map['positionName'])) {
+            $model->positionName = $map['positionName'];
         }
         if (isset($map['maxResults'])) {
             $model->maxResults = $map['maxResults'];
+        }
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
         }
 
         return $model;

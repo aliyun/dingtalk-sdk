@@ -10,6 +10,13 @@ use AlibabaCloud\Tea\Model;
 class queryParams extends Model
 {
     /**
+     * @description 筛选条件
+     *
+     * @var conditionList[]
+     */
+    public $conditionList;
+
+    /**
      * @description 需要筛选的字段
      *
      * @var string
@@ -22,17 +29,10 @@ class queryParams extends Model
      * @var string
      */
     public $joinType;
-
-    /**
-     * @description 筛选条件
-     *
-     * @var conditionList[]
-     */
-    public $conditionList;
     protected $_name = [
+        'conditionList' => 'conditionList',
         'fieldCode'     => 'fieldCode',
         'joinType'      => 'joinType',
-        'conditionList' => 'conditionList',
     ];
 
     public function validate()
@@ -42,12 +42,6 @@ class queryParams extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->fieldCode) {
-            $res['fieldCode'] = $this->fieldCode;
-        }
-        if (null !== $this->joinType) {
-            $res['joinType'] = $this->joinType;
-        }
         if (null !== $this->conditionList) {
             $res['conditionList'] = [];
             if (null !== $this->conditionList && \is_array($this->conditionList)) {
@@ -56,6 +50,12 @@ class queryParams extends Model
                     $res['conditionList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->fieldCode) {
+            $res['fieldCode'] = $this->fieldCode;
+        }
+        if (null !== $this->joinType) {
+            $res['joinType'] = $this->joinType;
         }
 
         return $res;
@@ -69,12 +69,6 @@ class queryParams extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['fieldCode'])) {
-            $model->fieldCode = $map['fieldCode'];
-        }
-        if (isset($map['joinType'])) {
-            $model->joinType = $map['joinType'];
-        }
         if (isset($map['conditionList'])) {
             if (!empty($map['conditionList'])) {
                 $model->conditionList = [];
@@ -83,6 +77,12 @@ class queryParams extends Model
                     $model->conditionList[$n++] = null !== $item ? conditionList::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['fieldCode'])) {
+            $model->fieldCode = $map['fieldCode'];
+        }
+        if (isset($map['joinType'])) {
+            $model->joinType = $map['joinType'];
         }
 
         return $model;

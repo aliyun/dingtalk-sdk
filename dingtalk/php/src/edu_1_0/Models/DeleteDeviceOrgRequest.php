@@ -11,15 +11,15 @@ class DeleteDeviceOrgRequest extends Model
     /**
      * @var string
      */
-    public $deviceCode;
+    public $authCode;
 
     /**
      * @var string
      */
-    public $authCode;
+    public $deviceCode;
     protected $_name = [
-        'deviceCode' => 'deviceCode',
         'authCode'   => 'authCode',
+        'deviceCode' => 'deviceCode',
     ];
 
     public function validate()
@@ -29,11 +29,11 @@ class DeleteDeviceOrgRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->deviceCode) {
-            $res['deviceCode'] = $this->deviceCode;
-        }
         if (null !== $this->authCode) {
             $res['authCode'] = $this->authCode;
+        }
+        if (null !== $this->deviceCode) {
+            $res['deviceCode'] = $this->deviceCode;
         }
 
         return $res;
@@ -47,11 +47,11 @@ class DeleteDeviceOrgRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['deviceCode'])) {
-            $model->deviceCode = $map['deviceCode'];
-        }
         if (isset($map['authCode'])) {
             $model->authCode = $map['authCode'];
+        }
+        if (isset($map['deviceCode'])) {
+            $model->deviceCode = $map['deviceCode'];
         }
 
         return $model;

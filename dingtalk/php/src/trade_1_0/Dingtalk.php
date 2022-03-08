@@ -31,54 +31,57 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryTradeOrderRequest $request
+     * @param CheckOpportunityResultRequest $request
      *
-     * @return QueryTradeOrderResponse
+     * @return CheckOpportunityResultResponse
      */
-    public function queryTradeOrder($request)
+    public function checkOpportunityResult($request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new QueryTradeOrderHeaders([]);
+        $headers = new CheckOpportunityResultHeaders([]);
 
-        return $this->queryTradeOrderWithOptions($request, $headers, $runtime);
+        return $this->checkOpportunityResultWithOptions($request, $headers, $runtime);
     }
 
     /**
-     * @param QueryTradeOrderRequest $request
-     * @param QueryTradeOrderHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param CheckOpportunityResultRequest $request
+     * @param CheckOpportunityResultHeaders $headers
+     * @param RuntimeOptions                $runtime
      *
-     * @return QueryTradeOrderResponse
+     * @return CheckOpportunityResultResponse
      */
-    public function queryTradeOrderWithOptions($request, $headers, $runtime)
+    public function checkOpportunityResultWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->outerOrderId)) {
-            @$body['outerOrderId'] = $request->outerOrderId;
+        $query = [];
+        if (!Utils::isUnset($request->belongToPhoneNum)) {
+            @$query['belongToPhoneNum'] = $request->belongToPhoneNum;
         }
-        if (!Utils::isUnset($request->orderId)) {
-            @$body['orderId'] = $request->orderId;
+        if (!Utils::isUnset($request->contactPhoneNum)) {
+            @$query['contactPhoneNum'] = $request->contactPhoneNum;
         }
-        if (!Utils::isUnset($request->dingIsvOrgId)) {
-            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        if (!Utils::isUnset($request->corpId)) {
+            @$query['corpId'] = $request->corpId;
         }
-        if (!Utils::isUnset($request->dingSuiteKey)) {
-            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        if (!Utils::isUnset($request->deptId)) {
+            @$query['deptId'] = $request->deptId;
+        }
+        if (!Utils::isUnset($request->marketCode)) {
+            @$query['marketCode'] = $request->marketCode;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return QueryTradeOrderResponse::fromMap($this->doROARequest('QueryTradeOrder', 'trade_1.0', 'HTTP', 'POST', 'AK', '/v1.0/trade/orders/query', 'json', $req, $runtime));
+        return CheckOpportunityResultResponse::fromMap($this->doROARequest('CheckOpportunityResult', 'trade_1.0', 'HTTP', 'GET', 'AK', '/v1.0/trade/opportunity/check', 'json', $req, $runtime));
     }
 
     /**
@@ -105,14 +108,14 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->corpId)) {
-            @$body['corpId'] = $request->corpId;
-        }
         if (!Utils::isUnset($request->belongToPhoneNum)) {
             @$body['belongToPhoneNum'] = $request->belongToPhoneNum;
         }
         if (!Utils::isUnset($request->contactPhoneNum)) {
             @$body['contactPhoneNum'] = $request->contactPhoneNum;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            @$body['corpId'] = $request->corpId;
         }
         if (!Utils::isUnset($request->deptId)) {
             @$body['deptId'] = $request->deptId;
@@ -120,15 +123,12 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->marketCode)) {
             @$body['marketCode'] = $request->marketCode;
         }
-        if (!Utils::isUnset($request->dingIsvOrgId)) {
-            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -139,56 +139,47 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CheckOpportunityResultRequest $request
+     * @param QueryTradeOrderRequest $request
      *
-     * @return CheckOpportunityResultResponse
+     * @return QueryTradeOrderResponse
      */
-    public function checkOpportunityResult($request)
+    public function queryTradeOrder($request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new CheckOpportunityResultHeaders([]);
+        $headers = new QueryTradeOrderHeaders([]);
 
-        return $this->checkOpportunityResultWithOptions($request, $headers, $runtime);
+        return $this->queryTradeOrderWithOptions($request, $headers, $runtime);
     }
 
     /**
-     * @param CheckOpportunityResultRequest $request
-     * @param CheckOpportunityResultHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @param QueryTradeOrderRequest $request
+     * @param QueryTradeOrderHeaders $headers
+     * @param RuntimeOptions         $runtime
      *
-     * @return CheckOpportunityResultResponse
+     * @return QueryTradeOrderResponse
      */
-    public function checkOpportunityResultWithOptions($request, $headers, $runtime)
+    public function queryTradeOrderWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->corpId)) {
-            @$query['corpId'] = $request->corpId;
+        $body = [];
+        if (!Utils::isUnset($request->orderId)) {
+            @$body['orderId'] = $request->orderId;
         }
-        if (!Utils::isUnset($request->belongToPhoneNum)) {
-            @$query['belongToPhoneNum'] = $request->belongToPhoneNum;
-        }
-        if (!Utils::isUnset($request->contactPhoneNum)) {
-            @$query['contactPhoneNum'] = $request->contactPhoneNum;
-        }
-        if (!Utils::isUnset($request->deptId)) {
-            @$query['deptId'] = $request->deptId;
-        }
-        if (!Utils::isUnset($request->marketCode)) {
-            @$query['marketCode'] = $request->marketCode;
+        if (!Utils::isUnset($request->outerOrderId)) {
+            @$body['outerOrderId'] = $request->outerOrderId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return CheckOpportunityResultResponse::fromMap($this->doROARequest('CheckOpportunityResult', 'trade_1.0', 'HTTP', 'GET', 'AK', '/v1.0/trade/opportunity/check', 'json', $req, $runtime));
+        return QueryTradeOrderResponse::fromMap($this->doROARequest('QueryTradeOrder', 'trade_1.0', 'HTTP', 'POST', 'AK', '/v1.0/trade/orders/query', 'json', $req, $runtime));
     }
 }

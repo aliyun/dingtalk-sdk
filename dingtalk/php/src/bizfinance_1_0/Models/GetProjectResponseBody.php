@@ -9,6 +9,34 @@ use AlibabaCloud\Tea\Model;
 class GetProjectResponseBody extends Model
 {
     /**
+     * @description 企业id
+     *
+     * @var string
+     */
+    public $corpId;
+
+    /**
+     * @description 创建时间
+     *
+     * @var int
+     */
+    public $createTime;
+
+    /**
+     * @description 创建人工号
+     *
+     * @var string
+     */
+    public $creator;
+
+    /**
+     * @description 项目描述
+     *
+     * @var string
+     */
+    public $description;
+
+    /**
      * @description 项目code
      *
      * @var string
@@ -23,47 +51,19 @@ class GetProjectResponseBody extends Model
     public $projectName;
 
     /**
-     * @description 项目描述
-     *
-     * @var string
-     */
-    public $description;
-
-    /**
-     * @description 创建人工号
-     *
-     * @var string
-     */
-    public $creator;
-
-    /**
-     * @description 创建时间
-     *
-     * @var int
-     */
-    public $createTime;
-
-    /**
      * @description 状态:valid, invalid, deleted
      *
      * @var string
      */
     public $status;
-
-    /**
-     * @description 企业id
-     *
-     * @var string
-     */
-    public $corpId;
     protected $_name = [
+        'corpId'      => 'corpId',
+        'createTime'  => 'createTime',
+        'creator'     => 'creator',
+        'description' => 'description',
         'projectCode' => 'projectCode',
         'projectName' => 'projectName',
-        'description' => 'description',
-        'creator'     => 'creator',
-        'createTime'  => 'createTime',
         'status'      => 'status',
-        'corpId'      => 'corpId',
     ];
 
     public function validate()
@@ -73,26 +73,26 @@ class GetProjectResponseBody extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->corpId) {
+            $res['corpId'] = $this->corpId;
+        }
+        if (null !== $this->createTime) {
+            $res['createTime'] = $this->createTime;
+        }
+        if (null !== $this->creator) {
+            $res['creator'] = $this->creator;
+        }
+        if (null !== $this->description) {
+            $res['description'] = $this->description;
+        }
         if (null !== $this->projectCode) {
             $res['projectCode'] = $this->projectCode;
         }
         if (null !== $this->projectName) {
             $res['projectName'] = $this->projectName;
         }
-        if (null !== $this->description) {
-            $res['description'] = $this->description;
-        }
-        if (null !== $this->creator) {
-            $res['creator'] = $this->creator;
-        }
-        if (null !== $this->createTime) {
-            $res['createTime'] = $this->createTime;
-        }
         if (null !== $this->status) {
             $res['status'] = $this->status;
-        }
-        if (null !== $this->corpId) {
-            $res['corpId'] = $this->corpId;
         }
 
         return $res;
@@ -106,26 +106,26 @@ class GetProjectResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['corpId'])) {
+            $model->corpId = $map['corpId'];
+        }
+        if (isset($map['createTime'])) {
+            $model->createTime = $map['createTime'];
+        }
+        if (isset($map['creator'])) {
+            $model->creator = $map['creator'];
+        }
+        if (isset($map['description'])) {
+            $model->description = $map['description'];
+        }
         if (isset($map['projectCode'])) {
             $model->projectCode = $map['projectCode'];
         }
         if (isset($map['projectName'])) {
             $model->projectName = $map['projectName'];
         }
-        if (isset($map['description'])) {
-            $model->description = $map['description'];
-        }
-        if (isset($map['creator'])) {
-            $model->creator = $map['creator'];
-        }
-        if (isset($map['createTime'])) {
-            $model->createTime = $map['createTime'];
-        }
         if (isset($map['status'])) {
             $model->status = $map['status'];
-        }
-        if (isset($map['corpId'])) {
-            $model->corpId = $map['corpId'];
         }
 
         return $model;

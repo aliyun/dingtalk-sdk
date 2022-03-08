@@ -10,11 +10,11 @@ use AlibabaCloud\Tea\Model;
 class AddCrmPersonalCustomerRequest extends Model
 {
     /**
-     * @description 记录创建人的用户ID
+     * @description 公海领取客户：publicDraw 公海分配客户：publicAssign 其余场景：（不用传）
      *
      * @var string
      */
-    public $creatorUserId;
+    public $action;
 
     /**
      * @description 记录创建人的昵称
@@ -22,6 +22,13 @@ class AddCrmPersonalCustomerRequest extends Model
      * @var string
      */
     public $creatorNick;
+
+    /**
+     * @description 记录创建人的用户ID
+     *
+     * @var string
+     */
+    public $creatorUserId;
 
     /**
      * @description 数据内容
@@ -57,22 +64,15 @@ class AddCrmPersonalCustomerRequest extends Model
      * @var bool
      */
     public $skipDuplicateCheck;
-
-    /**
-     * @description 公海领取客户：publicDraw 公海分配客户：publicAssign 其余场景：（不用传）
-     *
-     * @var string
-     */
-    public $action;
     protected $_name = [
-        'creatorUserId'      => 'creatorUserId',
+        'action'             => 'action',
         'creatorNick'        => 'creatorNick',
+        'creatorUserId'      => 'creatorUserId',
         'data'               => 'data',
         'extendData'         => 'extendData',
         'permission'         => 'permission',
         'relationType'       => 'relationType',
         'skipDuplicateCheck' => 'skipDuplicateCheck',
-        'action'             => 'action',
     ];
 
     public function validate()
@@ -82,11 +82,14 @@ class AddCrmPersonalCustomerRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->creatorUserId) {
-            $res['creatorUserId'] = $this->creatorUserId;
+        if (null !== $this->action) {
+            $res['action'] = $this->action;
         }
         if (null !== $this->creatorNick) {
             $res['creatorNick'] = $this->creatorNick;
+        }
+        if (null !== $this->creatorUserId) {
+            $res['creatorUserId'] = $this->creatorUserId;
         }
         if (null !== $this->data) {
             $res['data'] = $this->data;
@@ -103,9 +106,6 @@ class AddCrmPersonalCustomerRequest extends Model
         if (null !== $this->skipDuplicateCheck) {
             $res['skipDuplicateCheck'] = $this->skipDuplicateCheck;
         }
-        if (null !== $this->action) {
-            $res['action'] = $this->action;
-        }
 
         return $res;
     }
@@ -118,11 +118,14 @@ class AddCrmPersonalCustomerRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['creatorUserId'])) {
-            $model->creatorUserId = $map['creatorUserId'];
+        if (isset($map['action'])) {
+            $model->action = $map['action'];
         }
         if (isset($map['creatorNick'])) {
             $model->creatorNick = $map['creatorNick'];
+        }
+        if (isset($map['creatorUserId'])) {
+            $model->creatorUserId = $map['creatorUserId'];
         }
         if (isset($map['data'])) {
             $model->data = $map['data'];
@@ -138,9 +141,6 @@ class AddCrmPersonalCustomerRequest extends Model
         }
         if (isset($map['skipDuplicateCheck'])) {
             $model->skipDuplicateCheck = $map['skipDuplicateCheck'];
-        }
-        if (isset($map['action'])) {
-            $model->action = $map['action'];
         }
 
         return $model;

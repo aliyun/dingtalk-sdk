@@ -37,6 +37,13 @@ class AddCityCarApplyRequest extends Model
     public $date;
 
     /**
+     * @description 用车截止时间，按天管控，比如date传值2021-03-18 20:26:56、finished_date传值2021-03-30 20:26:56表示2021-03-18(含)到2021-03-30(含)之间可用车，该参数不传值情况使用date作为用车截止时间；
+     *
+     * @var string
+     */
+    public $finishedDate;
+
+    /**
      * @description 审批单关联的项目code
      *
      * @var string
@@ -112,39 +119,12 @@ class AddCityCarApplyRequest extends Model
      * @var string
      */
     public $userId;
-
-    /**
-     * @description suiteKey
-     *
-     * @var string
-     */
-    public $dingSuiteKey;
-
-    /**
-     * @description account
-     *
-     * @var string
-     */
-    public $dingCorpId;
-
-    /**
-     * @description tokenGrantType
-     *
-     * @var int
-     */
-    public $dingTokenGrantType;
-
-    /**
-     * @description 用车截止时间，按天管控，比如date传值2021-03-18 20:26:56、finished_date传值2021-03-30 20:26:56表示2021-03-18(含)到2021-03-30(含)之间可用车，该参数不传值情况使用date作为用车截止时间；
-     *
-     * @var string
-     */
-    public $finishedDate;
     protected $_name = [
         'cause'                 => 'cause',
         'city'                  => 'city',
         'corpId'                => 'corpId',
         'date'                  => 'date',
+        'finishedDate'          => 'finishedDate',
         'projectCode'           => 'projectCode',
         'projectName'           => 'projectName',
         'status'                => 'status',
@@ -156,10 +136,6 @@ class AddCityCarApplyRequest extends Model
         'timesUsed'             => 'timesUsed',
         'title'                 => 'title',
         'userId'                => 'userId',
-        'dingSuiteKey'          => 'dingSuiteKey',
-        'dingCorpId'            => 'dingCorpId',
-        'dingTokenGrantType'    => 'dingTokenGrantType',
-        'finishedDate'          => 'finishedDate',
     ];
 
     public function validate()
@@ -180,6 +156,9 @@ class AddCityCarApplyRequest extends Model
         }
         if (null !== $this->date) {
             $res['date'] = $this->date;
+        }
+        if (null !== $this->finishedDate) {
+            $res['finishedDate'] = $this->finishedDate;
         }
         if (null !== $this->projectCode) {
             $res['projectCode'] = $this->projectCode;
@@ -214,18 +193,6 @@ class AddCityCarApplyRequest extends Model
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
         }
-        if (null !== $this->dingSuiteKey) {
-            $res['dingSuiteKey'] = $this->dingSuiteKey;
-        }
-        if (null !== $this->dingCorpId) {
-            $res['dingCorpId'] = $this->dingCorpId;
-        }
-        if (null !== $this->dingTokenGrantType) {
-            $res['dingTokenGrantType'] = $this->dingTokenGrantType;
-        }
-        if (null !== $this->finishedDate) {
-            $res['finishedDate'] = $this->finishedDate;
-        }
 
         return $res;
     }
@@ -249,6 +216,9 @@ class AddCityCarApplyRequest extends Model
         }
         if (isset($map['date'])) {
             $model->date = $map['date'];
+        }
+        if (isset($map['finishedDate'])) {
+            $model->finishedDate = $map['finishedDate'];
         }
         if (isset($map['projectCode'])) {
             $model->projectCode = $map['projectCode'];
@@ -282,18 +252,6 @@ class AddCityCarApplyRequest extends Model
         }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];
-        }
-        if (isset($map['dingSuiteKey'])) {
-            $model->dingSuiteKey = $map['dingSuiteKey'];
-        }
-        if (isset($map['dingCorpId'])) {
-            $model->dingCorpId = $map['dingCorpId'];
-        }
-        if (isset($map['dingTokenGrantType'])) {
-            $model->dingTokenGrantType = $map['dingTokenGrantType'];
-        }
-        if (isset($map['finishedDate'])) {
-            $model->finishedDate = $map['finishedDate'];
         }
 
         return $model;

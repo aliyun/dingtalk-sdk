@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class dingPanFile extends Model
 {
     /**
-     * @description 钉盘空间标识
-     *
-     * @var int
-     */
-    public $spaceId;
-
-    /**
      * @description 钉盘文件标识
      *
      * @var string
@@ -42,12 +35,19 @@ class dingPanFile extends Model
      * @var string
      */
     public $fileType;
+
+    /**
+     * @description 钉盘空间标识
+     *
+     * @var int
+     */
+    public $spaceId;
     protected $_name = [
-        'spaceId'  => 'spaceId',
         'fileId'   => 'fileId',
         'fileName' => 'fileName',
         'fileSize' => 'fileSize',
         'fileType' => 'fileType',
+        'spaceId'  => 'spaceId',
     ];
 
     public function validate()
@@ -57,9 +57,6 @@ class dingPanFile extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->spaceId) {
-            $res['spaceId'] = $this->spaceId;
-        }
         if (null !== $this->fileId) {
             $res['fileId'] = $this->fileId;
         }
@@ -71,6 +68,9 @@ class dingPanFile extends Model
         }
         if (null !== $this->fileType) {
             $res['fileType'] = $this->fileType;
+        }
+        if (null !== $this->spaceId) {
+            $res['spaceId'] = $this->spaceId;
         }
 
         return $res;
@@ -84,9 +84,6 @@ class dingPanFile extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['spaceId'])) {
-            $model->spaceId = $map['spaceId'];
-        }
         if (isset($map['fileId'])) {
             $model->fileId = $map['fileId'];
         }
@@ -98,6 +95,9 @@ class dingPanFile extends Model
         }
         if (isset($map['fileType'])) {
             $model->fileType = $map['fileType'];
+        }
+        if (isset($map['spaceId'])) {
+            $model->spaceId = $map['spaceId'];
         }
 
         return $model;

@@ -10,13 +10,6 @@ use AlibabaCloud\Tea\Model;
 class ListApplicationAuthorizationServiceApplicationInformationResponseBody extends Model
 {
     /**
-     * @description 分页大小
-     *
-     * @var int
-     */
-    public $pageSize;
-
-    /**
      * @description applicationInformation
      *
      * @var applicationInformation[]
@@ -31,15 +24,22 @@ class ListApplicationAuthorizationServiceApplicationInformationResponseBody exte
     public $pageNumber;
 
     /**
+     * @description 分页大小
+     *
+     * @var int
+     */
+    public $pageSize;
+
+    /**
      * @description 总数量
      *
      * @var int
      */
     public $totalCount;
     protected $_name = [
-        'pageSize'               => 'pageSize',
         'applicationInformation' => 'applicationInformation',
         'pageNumber'             => 'pageNumber',
+        'pageSize'               => 'pageSize',
         'totalCount'             => 'totalCount',
     ];
 
@@ -50,9 +50,6 @@ class ListApplicationAuthorizationServiceApplicationInformationResponseBody exte
     public function toMap()
     {
         $res = [];
-        if (null !== $this->pageSize) {
-            $res['pageSize'] = $this->pageSize;
-        }
         if (null !== $this->applicationInformation) {
             $res['applicationInformation'] = [];
             if (null !== $this->applicationInformation && \is_array($this->applicationInformation)) {
@@ -64,6 +61,9 @@ class ListApplicationAuthorizationServiceApplicationInformationResponseBody exte
         }
         if (null !== $this->pageNumber) {
             $res['pageNumber'] = $this->pageNumber;
+        }
+        if (null !== $this->pageSize) {
+            $res['pageSize'] = $this->pageSize;
         }
         if (null !== $this->totalCount) {
             $res['totalCount'] = $this->totalCount;
@@ -80,9 +80,6 @@ class ListApplicationAuthorizationServiceApplicationInformationResponseBody exte
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['pageSize'])) {
-            $model->pageSize = $map['pageSize'];
-        }
         if (isset($map['applicationInformation'])) {
             if (!empty($map['applicationInformation'])) {
                 $model->applicationInformation = [];
@@ -94,6 +91,9 @@ class ListApplicationAuthorizationServiceApplicationInformationResponseBody exte
         }
         if (isset($map['pageNumber'])) {
             $model->pageNumber = $map['pageNumber'];
+        }
+        if (isset($map['pageSize'])) {
+            $model->pageSize = $map['pageSize'];
         }
         if (isset($map['totalCount'])) {
             $model->totalCount = $map['totalCount'];

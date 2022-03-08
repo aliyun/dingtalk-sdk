@@ -9,32 +9,11 @@ use AlibabaCloud\Tea\Model;
 class nodeBO extends Model
 {
     /**
-     * @description 节点名称，如果命中了搜索关键词会包含高亮标签
+     * @description 节点类型
      *
      * @var string
      */
-    public $name;
-
-    /**
-     * @description 节点原始名称
-     *
-     * @var string
-     */
-    public $originName;
-
-    /**
-     * @description 节点Id
-     *
-     * @var string
-     */
-    public $nodeId;
-
-    /**
-     * @description 节点打开url
-     *
-     * @var string
-     */
-    public $url;
+    public $docType;
 
     /**
      * @description 最近编辑时间
@@ -44,18 +23,39 @@ class nodeBO extends Model
     public $lastEditTime;
 
     /**
-     * @description 节点类型
+     * @description 节点名称，如果命中了搜索关键词会包含高亮标签
      *
      * @var string
      */
-    public $docType;
+    public $name;
+
+    /**
+     * @description 节点Id
+     *
+     * @var string
+     */
+    public $nodeId;
+
+    /**
+     * @description 节点原始名称
+     *
+     * @var string
+     */
+    public $originName;
+
+    /**
+     * @description 节点打开url
+     *
+     * @var string
+     */
+    public $url;
     protected $_name = [
-        'name'         => 'name',
-        'originName'   => 'originName',
-        'nodeId'       => 'nodeId',
-        'url'          => 'url',
-        'lastEditTime' => 'lastEditTime',
         'docType'      => 'docType',
+        'lastEditTime' => 'lastEditTime',
+        'name'         => 'name',
+        'nodeId'       => 'nodeId',
+        'originName'   => 'originName',
+        'url'          => 'url',
     ];
 
     public function validate()
@@ -65,23 +65,23 @@ class nodeBO extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
-        }
-        if (null !== $this->originName) {
-            $res['originName'] = $this->originName;
-        }
-        if (null !== $this->nodeId) {
-            $res['nodeId'] = $this->nodeId;
-        }
-        if (null !== $this->url) {
-            $res['url'] = $this->url;
+        if (null !== $this->docType) {
+            $res['docType'] = $this->docType;
         }
         if (null !== $this->lastEditTime) {
             $res['lastEditTime'] = $this->lastEditTime;
         }
-        if (null !== $this->docType) {
-            $res['docType'] = $this->docType;
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
+        }
+        if (null !== $this->nodeId) {
+            $res['nodeId'] = $this->nodeId;
+        }
+        if (null !== $this->originName) {
+            $res['originName'] = $this->originName;
+        }
+        if (null !== $this->url) {
+            $res['url'] = $this->url;
         }
 
         return $res;
@@ -95,23 +95,23 @@ class nodeBO extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
-        }
-        if (isset($map['originName'])) {
-            $model->originName = $map['originName'];
-        }
-        if (isset($map['nodeId'])) {
-            $model->nodeId = $map['nodeId'];
-        }
-        if (isset($map['url'])) {
-            $model->url = $map['url'];
+        if (isset($map['docType'])) {
+            $model->docType = $map['docType'];
         }
         if (isset($map['lastEditTime'])) {
             $model->lastEditTime = $map['lastEditTime'];
         }
-        if (isset($map['docType'])) {
-            $model->docType = $map['docType'];
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
+        }
+        if (isset($map['nodeId'])) {
+            $model->nodeId = $map['nodeId'];
+        }
+        if (isset($map['originName'])) {
+            $model->originName = $map['originName'];
+        }
+        if (isset($map['url'])) {
+            $model->url = $map['url'];
         }
 
         return $model;

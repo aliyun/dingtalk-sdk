@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class DeleteGuardianRequest extends Model
 {
     /**
-     * @description 学生ID
-     *
-     * @var string
-     */
-    public $stuId;
-
-    /**
      * @description 钉钉企业管理员员工ID
      *
      * @var string
      */
     public $operator;
+
+    /**
+     * @description 学生ID
+     *
+     * @var string
+     */
+    public $stuId;
     protected $_name = [
-        'stuId'    => 'stuId',
         'operator' => 'operator',
+        'stuId'    => 'stuId',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class DeleteGuardianRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->stuId) {
-            $res['stuId'] = $this->stuId;
-        }
         if (null !== $this->operator) {
             $res['operator'] = $this->operator;
+        }
+        if (null !== $this->stuId) {
+            $res['stuId'] = $this->stuId;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class DeleteGuardianRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['stuId'])) {
-            $model->stuId = $map['stuId'];
-        }
         if (isset($map['operator'])) {
             $model->operator = $map['operator'];
+        }
+        if (isset($map['stuId'])) {
+            $model->stuId = $map['stuId'];
         }
 
         return $model;

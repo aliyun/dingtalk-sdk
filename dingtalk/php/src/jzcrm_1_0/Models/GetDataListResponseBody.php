@@ -38,25 +38,25 @@ class GetDataListResponseBody extends Model
     public $pageSize;
 
     /**
-     * @description 总条数
-     *
-     * @var int
-     */
-    public $totalCount;
-
-    /**
      * @description 响应时间
      *
      * @var string
      */
     public $time;
+
+    /**
+     * @description 总条数
+     *
+     * @var int
+     */
+    public $totalCount;
     protected $_name = [
         'data'       => 'data',
         'dataname'   => 'dataname',
         'page'       => 'page',
         'pageSize'   => 'pageSize',
-        'totalCount' => 'totalCount',
         'time'       => 'time',
+        'totalCount' => 'totalCount',
     ];
 
     public function validate()
@@ -84,11 +84,11 @@ class GetDataListResponseBody extends Model
         if (null !== $this->pageSize) {
             $res['pageSize'] = $this->pageSize;
         }
-        if (null !== $this->totalCount) {
-            $res['totalCount'] = $this->totalCount;
-        }
         if (null !== $this->time) {
             $res['time'] = $this->time;
+        }
+        if (null !== $this->totalCount) {
+            $res['totalCount'] = $this->totalCount;
         }
 
         return $res;
@@ -120,11 +120,11 @@ class GetDataListResponseBody extends Model
         if (isset($map['pageSize'])) {
             $model->pageSize = $map['pageSize'];
         }
-        if (isset($map['totalCount'])) {
-            $model->totalCount = $map['totalCount'];
-        }
         if (isset($map['time'])) {
             $model->time = $map['time'];
+        }
+        if (isset($map['totalCount'])) {
+            $model->totalCount = $map['totalCount'];
         }
 
         return $model;

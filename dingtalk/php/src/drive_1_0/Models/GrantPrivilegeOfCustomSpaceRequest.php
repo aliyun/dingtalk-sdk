@@ -9,18 +9,11 @@ use AlibabaCloud\Tea\Model;
 class GrantPrivilegeOfCustomSpaceRequest extends Model
 {
     /**
-     * @description 权限类型
+     * @description 权限有效时间
      *
-     * @var string
+     * @var int
      */
-    public $type;
-
-    /**
-     * @description 被授予权限的员工id
-     *
-     * @var string
-     */
-    public $userId;
+    public $duration;
 
     /**
      * @description 授权访问的文件id列表
@@ -30,11 +23,11 @@ class GrantPrivilegeOfCustomSpaceRequest extends Model
     public $fileIds;
 
     /**
-     * @description 权限有效时间
+     * @description 权限类型
      *
-     * @var int
+     * @var string
      */
-    public $duration;
+    public $type;
 
     /**
      * @description 用户id
@@ -42,12 +35,19 @@ class GrantPrivilegeOfCustomSpaceRequest extends Model
      * @var string
      */
     public $unionId;
+
+    /**
+     * @description 被授予权限的员工id
+     *
+     * @var string
+     */
+    public $userId;
     protected $_name = [
-        'type'     => 'type',
-        'userId'   => 'userId',
-        'fileIds'  => 'fileIds',
         'duration' => 'duration',
+        'fileIds'  => 'fileIds',
+        'type'     => 'type',
         'unionId'  => 'unionId',
+        'userId'   => 'userId',
     ];
 
     public function validate()
@@ -57,20 +57,20 @@ class GrantPrivilegeOfCustomSpaceRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->type) {
-            $res['type'] = $this->type;
-        }
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
+        if (null !== $this->duration) {
+            $res['duration'] = $this->duration;
         }
         if (null !== $this->fileIds) {
             $res['fileIds'] = $this->fileIds;
         }
-        if (null !== $this->duration) {
-            $res['duration'] = $this->duration;
+        if (null !== $this->type) {
+            $res['type'] = $this->type;
         }
         if (null !== $this->unionId) {
             $res['unionId'] = $this->unionId;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -84,22 +84,22 @@ class GrantPrivilegeOfCustomSpaceRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['type'])) {
-            $model->type = $map['type'];
-        }
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
+        if (isset($map['duration'])) {
+            $model->duration = $map['duration'];
         }
         if (isset($map['fileIds'])) {
             if (!empty($map['fileIds'])) {
                 $model->fileIds = $map['fileIds'];
             }
         }
-        if (isset($map['duration'])) {
-            $model->duration = $map['duration'];
+        if (isset($map['type'])) {
+            $model->type = $map['type'];
         }
         if (isset($map['unionId'])) {
             $model->unionId = $map['unionId'];
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

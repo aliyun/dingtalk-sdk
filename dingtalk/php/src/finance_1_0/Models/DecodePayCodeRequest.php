@@ -21,25 +21,9 @@ class DecodePayCodeRequest extends Model
      * @var string
      */
     public $requestId;
-
-    /**
-     * @description ISV组织ID
-     *
-     * @var int
-     */
-    public $dingIsvOrgId;
-
-    /**
-     * @description 组织ID
-     *
-     * @var int
-     */
-    public $dingOrgId;
     protected $_name = [
-        'payCode'      => 'payCode',
-        'requestId'    => 'requestId',
-        'dingIsvOrgId' => 'dingIsvOrgId',
-        'dingOrgId'    => 'dingOrgId',
+        'payCode'   => 'payCode',
+        'requestId' => 'requestId',
     ];
 
     public function validate()
@@ -54,12 +38,6 @@ class DecodePayCodeRequest extends Model
         }
         if (null !== $this->requestId) {
             $res['requestId'] = $this->requestId;
-        }
-        if (null !== $this->dingIsvOrgId) {
-            $res['dingIsvOrgId'] = $this->dingIsvOrgId;
-        }
-        if (null !== $this->dingOrgId) {
-            $res['dingOrgId'] = $this->dingOrgId;
         }
 
         return $res;
@@ -78,12 +56,6 @@ class DecodePayCodeRequest extends Model
         }
         if (isset($map['requestId'])) {
             $model->requestId = $map['requestId'];
-        }
-        if (isset($map['dingIsvOrgId'])) {
-            $model->dingIsvOrgId = $map['dingIsvOrgId'];
-        }
-        if (isset($map['dingOrgId'])) {
-            $model->dingOrgId = $map['dingOrgId'];
         }
 
         return $model;

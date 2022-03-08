@@ -23,23 +23,23 @@ class CreateManagementGroupRequest extends Model
     public $members;
 
     /**
-     * @description 管理范围
-     *
-     * @var scope
-     */
-    public $scope;
-
-    /**
      * @description 资源列表
      *
      * @var string[]
      */
     public $resourceIds;
+
+    /**
+     * @description 管理范围
+     *
+     * @var scope
+     */
+    public $scope;
     protected $_name = [
         'groupName'   => 'groupName',
         'members'     => 'members',
-        'scope'       => 'scope',
         'resourceIds' => 'resourceIds',
+        'scope'       => 'scope',
     ];
 
     public function validate()
@@ -61,11 +61,11 @@ class CreateManagementGroupRequest extends Model
                 }
             }
         }
-        if (null !== $this->scope) {
-            $res['scope'] = null !== $this->scope ? $this->scope->toMap() : null;
-        }
         if (null !== $this->resourceIds) {
             $res['resourceIds'] = $this->resourceIds;
+        }
+        if (null !== $this->scope) {
+            $res['scope'] = null !== $this->scope ? $this->scope->toMap() : null;
         }
 
         return $res;
@@ -91,13 +91,13 @@ class CreateManagementGroupRequest extends Model
                 }
             }
         }
-        if (isset($map['scope'])) {
-            $model->scope = scope::fromMap($map['scope']);
-        }
         if (isset($map['resourceIds'])) {
             if (!empty($map['resourceIds'])) {
                 $model->resourceIds = $map['resourceIds'];
             }
+        }
+        if (isset($map['scope'])) {
+            $model->scope = scope::fromMap($map['scope']);
         }
 
         return $model;

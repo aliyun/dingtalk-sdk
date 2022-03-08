@@ -16,9 +16,11 @@ class QueryCrmPersonalCustomerRequest extends Model
     public $currentOperatorUserId;
 
     /**
-     * @var string
+     * @description 分页条数
+     *
+     * @var int
      */
-    public $relationType;
+    public $maxResults;
 
     /**
      * @description 分页页码
@@ -28,24 +30,22 @@ class QueryCrmPersonalCustomerRequest extends Model
     public $nextToken;
 
     /**
-     * @description 分页条数
-     *
-     * @var int
-     */
-    public $maxResults;
-
-    /**
      * @description 查询条件
      *
      * @var string
      */
     public $queryDsl;
+
+    /**
+     * @var string
+     */
+    public $relationType;
     protected $_name = [
         'currentOperatorUserId' => 'currentOperatorUserId',
-        'relationType'          => 'relationType',
-        'nextToken'             => 'nextToken',
         'maxResults'            => 'maxResults',
+        'nextToken'             => 'nextToken',
         'queryDsl'              => 'queryDsl',
+        'relationType'          => 'relationType',
     ];
 
     public function validate()
@@ -58,17 +58,17 @@ class QueryCrmPersonalCustomerRequest extends Model
         if (null !== $this->currentOperatorUserId) {
             $res['currentOperatorUserId'] = $this->currentOperatorUserId;
         }
-        if (null !== $this->relationType) {
-            $res['relationType'] = $this->relationType;
+        if (null !== $this->maxResults) {
+            $res['maxResults'] = $this->maxResults;
         }
         if (null !== $this->nextToken) {
             $res['nextToken'] = $this->nextToken;
         }
-        if (null !== $this->maxResults) {
-            $res['maxResults'] = $this->maxResults;
-        }
         if (null !== $this->queryDsl) {
             $res['queryDsl'] = $this->queryDsl;
+        }
+        if (null !== $this->relationType) {
+            $res['relationType'] = $this->relationType;
         }
 
         return $res;
@@ -85,17 +85,17 @@ class QueryCrmPersonalCustomerRequest extends Model
         if (isset($map['currentOperatorUserId'])) {
             $model->currentOperatorUserId = $map['currentOperatorUserId'];
         }
-        if (isset($map['relationType'])) {
-            $model->relationType = $map['relationType'];
+        if (isset($map['maxResults'])) {
+            $model->maxResults = $map['maxResults'];
         }
         if (isset($map['nextToken'])) {
             $model->nextToken = $map['nextToken'];
         }
-        if (isset($map['maxResults'])) {
-            $model->maxResults = $map['maxResults'];
-        }
         if (isset($map['queryDsl'])) {
             $model->queryDsl = $map['queryDsl'];
+        }
+        if (isset($map['relationType'])) {
+            $model->relationType = $map['relationType'];
         }
 
         return $model;

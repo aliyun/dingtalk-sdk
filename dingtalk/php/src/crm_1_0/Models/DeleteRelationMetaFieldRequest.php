@@ -9,9 +9,9 @@ use AlibabaCloud\Tea\Model;
 class DeleteRelationMetaFieldRequest extends Model
 {
     /**
-     * @var string
+     * @var string[]
      */
-    public $tenant;
+    public $fieldIdList;
 
     /**
      * @var string
@@ -24,14 +24,14 @@ class DeleteRelationMetaFieldRequest extends Model
     public $relationType;
 
     /**
-     * @var string[]
+     * @var string
      */
-    public $fieldIdList;
+    public $tenant;
     protected $_name = [
-        'tenant'         => 'tenant',
+        'fieldIdList'    => 'fieldIdList',
         'operatorUserId' => 'operatorUserId',
         'relationType'   => 'relationType',
-        'fieldIdList'    => 'fieldIdList',
+        'tenant'         => 'tenant',
     ];
 
     public function validate()
@@ -41,8 +41,8 @@ class DeleteRelationMetaFieldRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->tenant) {
-            $res['tenant'] = $this->tenant;
+        if (null !== $this->fieldIdList) {
+            $res['fieldIdList'] = $this->fieldIdList;
         }
         if (null !== $this->operatorUserId) {
             $res['operatorUserId'] = $this->operatorUserId;
@@ -50,8 +50,8 @@ class DeleteRelationMetaFieldRequest extends Model
         if (null !== $this->relationType) {
             $res['relationType'] = $this->relationType;
         }
-        if (null !== $this->fieldIdList) {
-            $res['fieldIdList'] = $this->fieldIdList;
+        if (null !== $this->tenant) {
+            $res['tenant'] = $this->tenant;
         }
 
         return $res;
@@ -65,8 +65,10 @@ class DeleteRelationMetaFieldRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['tenant'])) {
-            $model->tenant = $map['tenant'];
+        if (isset($map['fieldIdList'])) {
+            if (!empty($map['fieldIdList'])) {
+                $model->fieldIdList = $map['fieldIdList'];
+            }
         }
         if (isset($map['operatorUserId'])) {
             $model->operatorUserId = $map['operatorUserId'];
@@ -74,10 +76,8 @@ class DeleteRelationMetaFieldRequest extends Model
         if (isset($map['relationType'])) {
             $model->relationType = $map['relationType'];
         }
-        if (isset($map['fieldIdList'])) {
-            if (!empty($map['fieldIdList'])) {
-                $model->fieldIdList = $map['fieldIdList'];
-            }
+        if (isset($map['tenant'])) {
+            $model->tenant = $map['tenant'];
         }
 
         return $model;

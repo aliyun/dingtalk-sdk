@@ -11,21 +11,21 @@ class range extends Model
     /**
      * @var string
      */
-    public $type;
-
-    /**
-     * @var string
-     */
     public $endDate;
 
     /**
      * @var int
      */
     public $numberOfOccurrences;
+
+    /**
+     * @var string
+     */
+    public $type;
     protected $_name = [
-        'type'                => 'type',
         'endDate'             => 'endDate',
         'numberOfOccurrences' => 'numberOfOccurrences',
+        'type'                => 'type',
     ];
 
     public function validate()
@@ -35,14 +35,14 @@ class range extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->type) {
-            $res['type'] = $this->type;
-        }
         if (null !== $this->endDate) {
             $res['endDate'] = $this->endDate;
         }
         if (null !== $this->numberOfOccurrences) {
             $res['numberOfOccurrences'] = $this->numberOfOccurrences;
+        }
+        if (null !== $this->type) {
+            $res['type'] = $this->type;
         }
 
         return $res;
@@ -56,14 +56,14 @@ class range extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['type'])) {
-            $model->type = $map['type'];
-        }
         if (isset($map['endDate'])) {
             $model->endDate = $map['endDate'];
         }
         if (isset($map['numberOfOccurrences'])) {
             $model->numberOfOccurrences = $map['numberOfOccurrences'];
+        }
+        if (isset($map['type'])) {
+            $model->type = $map['type'];
         }
 
         return $model;

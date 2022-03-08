@@ -9,6 +9,20 @@ use AlibabaCloud\Tea\Model;
 class livePlayInfoList extends Model
 {
     /**
+     * @description 直播推流地址
+     *
+     * @var string
+     */
+    public $liveInputUrl;
+
+    /**
+     * @description Flv格式直播地址
+     *
+     * @var string
+     */
+    public $liveOutputFlvUrl;
+
+    /**
      * @description Hls格式直播拉流地址
      *
      * @var string
@@ -23,31 +37,17 @@ class livePlayInfoList extends Model
     public $liveType;
 
     /**
-     * @description 直播推流地址
-     *
-     * @var string
-     */
-    public $liveInputUrl;
-
-    /**
      * @description 视频回放地址
      *
      * @var string
      */
     public $replayUrl;
-
-    /**
-     * @description Flv格式直播地址
-     *
-     * @var string
-     */
-    public $liveOutputFlvUrl;
     protected $_name = [
+        'liveInputUrl'     => 'liveInputUrl',
+        'liveOutputFlvUrl' => 'liveOutputFlvUrl',
         'liveOutputHlsUrl' => 'liveOutputHlsUrl',
         'liveType'         => 'liveType',
-        'liveInputUrl'     => 'liveInputUrl',
         'replayUrl'        => 'replayUrl',
-        'liveOutputFlvUrl' => 'liveOutputFlvUrl',
     ];
 
     public function validate()
@@ -57,20 +57,20 @@ class livePlayInfoList extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->liveInputUrl) {
+            $res['liveInputUrl'] = $this->liveInputUrl;
+        }
+        if (null !== $this->liveOutputFlvUrl) {
+            $res['liveOutputFlvUrl'] = $this->liveOutputFlvUrl;
+        }
         if (null !== $this->liveOutputHlsUrl) {
             $res['liveOutputHlsUrl'] = $this->liveOutputHlsUrl;
         }
         if (null !== $this->liveType) {
             $res['liveType'] = $this->liveType;
         }
-        if (null !== $this->liveInputUrl) {
-            $res['liveInputUrl'] = $this->liveInputUrl;
-        }
         if (null !== $this->replayUrl) {
             $res['replayUrl'] = $this->replayUrl;
-        }
-        if (null !== $this->liveOutputFlvUrl) {
-            $res['liveOutputFlvUrl'] = $this->liveOutputFlvUrl;
         }
 
         return $res;
@@ -84,20 +84,20 @@ class livePlayInfoList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['liveInputUrl'])) {
+            $model->liveInputUrl = $map['liveInputUrl'];
+        }
+        if (isset($map['liveOutputFlvUrl'])) {
+            $model->liveOutputFlvUrl = $map['liveOutputFlvUrl'];
+        }
         if (isset($map['liveOutputHlsUrl'])) {
             $model->liveOutputHlsUrl = $map['liveOutputHlsUrl'];
         }
         if (isset($map['liveType'])) {
             $model->liveType = $map['liveType'];
         }
-        if (isset($map['liveInputUrl'])) {
-            $model->liveInputUrl = $map['liveInputUrl'];
-        }
         if (isset($map['replayUrl'])) {
             $model->replayUrl = $map['replayUrl'];
-        }
-        if (isset($map['liveOutputFlvUrl'])) {
-            $model->liveOutputFlvUrl = $map['liveOutputFlvUrl'];
         }
 
         return $model;

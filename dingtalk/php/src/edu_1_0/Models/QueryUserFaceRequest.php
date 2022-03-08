@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class QueryUserFaceRequest extends Model
 {
     /**
-     * @description 设备序列号
-     *
-     * @var string
-     */
-    public $sn;
-
-    /**
      * @description 人脸id
      *
      * @var string
      */
     public $faceId;
+
+    /**
+     * @description 设备序列号
+     *
+     * @var string
+     */
+    public $sn;
     protected $_name = [
-        'sn'     => 'sn',
         'faceId' => 'faceId',
+        'sn'     => 'sn',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class QueryUserFaceRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->sn) {
-            $res['sn'] = $this->sn;
-        }
         if (null !== $this->faceId) {
             $res['faceId'] = $this->faceId;
+        }
+        if (null !== $this->sn) {
+            $res['sn'] = $this->sn;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class QueryUserFaceRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['sn'])) {
-            $model->sn = $map['sn'];
-        }
         if (isset($map['faceId'])) {
             $model->faceId = $map['faceId'];
+        }
+        if (isset($map['sn'])) {
+            $model->sn = $map['sn'];
         }
 
         return $model;

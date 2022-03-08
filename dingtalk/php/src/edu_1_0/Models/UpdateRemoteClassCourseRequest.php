@@ -11,39 +11,16 @@ use AlibabaCloud\Tea\Model;
 class UpdateRemoteClassCourseRequest extends Model
 {
     /**
-     * @description 课程名称
-     *
-     * @var string
-     */
-    public $courseName;
-
-    /**
-     * @description 课程开始时间
-     *
-     * @var int
-     */
-    public $startTime;
-
-    /**
-     * @description 课程结束时间
-     *
-     * @var int
-     */
-    public $endTime;
-
-    /**
-     * @description 授课设备
-     *
-     * @var teachingParticipant
-     */
-    public $teachingParticipant;
-
-    /**
      * @description 听课设备
      *
      * @var attendParticipants[]
      */
     public $attendParticipants;
+
+    /**
+     * @var string
+     */
+    public $authCode;
 
     /**
      * @description 课程码
@@ -53,53 +30,40 @@ class UpdateRemoteClassCourseRequest extends Model
     public $courseCode;
 
     /**
+     * @description 课程名称
+     *
      * @var string
      */
-    public $dingClientId;
+    public $courseName;
 
     /**
-     * @var string
-     */
-    public $dingSuiteKey;
-
-    /**
+     * @description 课程结束时间
+     *
      * @var int
      */
-    public $dingTokenGrantType;
+    public $endTime;
 
     /**
+     * @description 课程开始时间
+     *
      * @var int
      */
-    public $dingOauthAppId;
+    public $startTime;
 
     /**
-     * @var string
+     * @description 授课设备
+     *
+     * @var teachingParticipant
      */
-    public $dingCorpId;
-
-    /**
-     * @var int
-     */
-    public $dingIsvOrgId;
-
-    /**
-     * @var string
-     */
-    public $authCode;
+    public $teachingParticipant;
     protected $_name = [
-        'courseName'          => 'courseName',
-        'startTime'           => 'startTime',
-        'endTime'             => 'endTime',
-        'teachingParticipant' => 'teachingParticipant',
         'attendParticipants'  => 'attendParticipants',
-        'courseCode'          => 'courseCode',
-        'dingClientId'        => 'dingClientId',
-        'dingSuiteKey'        => 'dingSuiteKey',
-        'dingTokenGrantType'  => 'dingTokenGrantType',
-        'dingOauthAppId'      => 'dingOauthAppId',
-        'dingCorpId'          => 'dingCorpId',
-        'dingIsvOrgId'        => 'dingIsvOrgId',
         'authCode'            => 'authCode',
+        'courseCode'          => 'courseCode',
+        'courseName'          => 'courseName',
+        'endTime'             => 'endTime',
+        'startTime'           => 'startTime',
+        'teachingParticipant' => 'teachingParticipant',
     ];
 
     public function validate()
@@ -109,18 +73,6 @@ class UpdateRemoteClassCourseRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->courseName) {
-            $res['courseName'] = $this->courseName;
-        }
-        if (null !== $this->startTime) {
-            $res['startTime'] = $this->startTime;
-        }
-        if (null !== $this->endTime) {
-            $res['endTime'] = $this->endTime;
-        }
-        if (null !== $this->teachingParticipant) {
-            $res['teachingParticipant'] = null !== $this->teachingParticipant ? $this->teachingParticipant->toMap() : null;
-        }
         if (null !== $this->attendParticipants) {
             $res['attendParticipants'] = [];
             if (null !== $this->attendParticipants && \is_array($this->attendParticipants)) {
@@ -130,29 +82,23 @@ class UpdateRemoteClassCourseRequest extends Model
                 }
             }
         }
+        if (null !== $this->authCode) {
+            $res['authCode'] = $this->authCode;
+        }
         if (null !== $this->courseCode) {
             $res['courseCode'] = $this->courseCode;
         }
-        if (null !== $this->dingClientId) {
-            $res['dingClientId'] = $this->dingClientId;
+        if (null !== $this->courseName) {
+            $res['courseName'] = $this->courseName;
         }
-        if (null !== $this->dingSuiteKey) {
-            $res['dingSuiteKey'] = $this->dingSuiteKey;
+        if (null !== $this->endTime) {
+            $res['endTime'] = $this->endTime;
         }
-        if (null !== $this->dingTokenGrantType) {
-            $res['dingTokenGrantType'] = $this->dingTokenGrantType;
+        if (null !== $this->startTime) {
+            $res['startTime'] = $this->startTime;
         }
-        if (null !== $this->dingOauthAppId) {
-            $res['dingOauthAppId'] = $this->dingOauthAppId;
-        }
-        if (null !== $this->dingCorpId) {
-            $res['dingCorpId'] = $this->dingCorpId;
-        }
-        if (null !== $this->dingIsvOrgId) {
-            $res['dingIsvOrgId'] = $this->dingIsvOrgId;
-        }
-        if (null !== $this->authCode) {
-            $res['authCode'] = $this->authCode;
+        if (null !== $this->teachingParticipant) {
+            $res['teachingParticipant'] = null !== $this->teachingParticipant ? $this->teachingParticipant->toMap() : null;
         }
 
         return $res;
@@ -166,18 +112,6 @@ class UpdateRemoteClassCourseRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['courseName'])) {
-            $model->courseName = $map['courseName'];
-        }
-        if (isset($map['startTime'])) {
-            $model->startTime = $map['startTime'];
-        }
-        if (isset($map['endTime'])) {
-            $model->endTime = $map['endTime'];
-        }
-        if (isset($map['teachingParticipant'])) {
-            $model->teachingParticipant = teachingParticipant::fromMap($map['teachingParticipant']);
-        }
         if (isset($map['attendParticipants'])) {
             if (!empty($map['attendParticipants'])) {
                 $model->attendParticipants = [];
@@ -187,29 +121,23 @@ class UpdateRemoteClassCourseRequest extends Model
                 }
             }
         }
+        if (isset($map['authCode'])) {
+            $model->authCode = $map['authCode'];
+        }
         if (isset($map['courseCode'])) {
             $model->courseCode = $map['courseCode'];
         }
-        if (isset($map['dingClientId'])) {
-            $model->dingClientId = $map['dingClientId'];
+        if (isset($map['courseName'])) {
+            $model->courseName = $map['courseName'];
         }
-        if (isset($map['dingSuiteKey'])) {
-            $model->dingSuiteKey = $map['dingSuiteKey'];
+        if (isset($map['endTime'])) {
+            $model->endTime = $map['endTime'];
         }
-        if (isset($map['dingTokenGrantType'])) {
-            $model->dingTokenGrantType = $map['dingTokenGrantType'];
+        if (isset($map['startTime'])) {
+            $model->startTime = $map['startTime'];
         }
-        if (isset($map['dingOauthAppId'])) {
-            $model->dingOauthAppId = $map['dingOauthAppId'];
-        }
-        if (isset($map['dingCorpId'])) {
-            $model->dingCorpId = $map['dingCorpId'];
-        }
-        if (isset($map['dingIsvOrgId'])) {
-            $model->dingIsvOrgId = $map['dingIsvOrgId'];
-        }
-        if (isset($map['authCode'])) {
-            $model->authCode = $map['authCode'];
+        if (isset($map['teachingParticipant'])) {
+            $model->teachingParticipant = teachingParticipant::fromMap($map['teachingParticipant']);
         }
 
         return $model;

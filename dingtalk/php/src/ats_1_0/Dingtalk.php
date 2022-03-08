@@ -58,107 +58,6 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddFileRequest $request
-     *
-     * @return AddFileResponse
-     */
-    public function addFile($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new AddFileHeaders([]);
-
-        return $this->addFileWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param AddFileRequest $request
-     * @param AddFileHeaders $headers
-     * @param RuntimeOptions $runtime
-     *
-     * @return AddFileResponse
-     */
-    public function addFileWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->bizCode)) {
-            @$query['bizCode'] = $request->bizCode;
-        }
-        if (!Utils::isUnset($request->opUserId)) {
-            @$query['opUserId'] = $request->opUserId;
-        }
-        $body = [];
-        if (!Utils::isUnset($request->mediaId)) {
-            @$body['mediaId'] = $request->mediaId;
-        }
-        if (!Utils::isUnset($request->fileName)) {
-            @$body['fileName'] = $request->fileName;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return AddFileResponse::fromMap($this->doROARequest('AddFile', 'ats_1.0', 'HTTP', 'POST', 'AK', '/v1.0/ats/files', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param GetFlowIdByRelationEntityIdRequest $request
-     *
-     * @return GetFlowIdByRelationEntityIdResponse
-     */
-    public function getFlowIdByRelationEntityId($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new GetFlowIdByRelationEntityIdHeaders([]);
-
-        return $this->getFlowIdByRelationEntityIdWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param GetFlowIdByRelationEntityIdRequest $request
-     * @param GetFlowIdByRelationEntityIdHeaders $headers
-     * @param RuntimeOptions                     $runtime
-     *
-     * @return GetFlowIdByRelationEntityIdResponse
-     */
-    public function getFlowIdByRelationEntityIdWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->bizCode)) {
-            @$query['bizCode'] = $request->bizCode;
-        }
-        if (!Utils::isUnset($request->relationEntity)) {
-            @$query['relationEntity'] = $request->relationEntity;
-        }
-        if (!Utils::isUnset($request->relationEntityId)) {
-            @$query['relationEntityId'] = $request->relationEntityId;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return GetFlowIdByRelationEntityIdResponse::fromMap($this->doROARequest('GetFlowIdByRelationEntityId', 'ats_1.0', 'HTTP', 'GET', 'AK', '/v1.0/ats/flows/ids', 'json', $req, $runtime));
-    }
-
-    /**
      * @param AddApplicationRegFormTemplateRequest $request
      *
      * @return AddApplicationRegFormTemplateResponse
@@ -189,11 +88,11 @@ class Dingtalk extends OpenApiClient
             @$query['opUserId'] = $request->opUserId;
         }
         $body = [];
-        if (!Utils::isUnset($request->name)) {
-            @$body['name'] = $request->name;
-        }
         if (!Utils::isUnset($request->content)) {
             @$body['content'] = $request->content;
+        }
+        if (!Utils::isUnset($request->name)) {
+            @$body['name'] = $request->name;
         }
         if (!Utils::isUnset($request->outerId)) {
             @$body['outerId'] = $request->outerId;
@@ -203,7 +102,7 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -215,54 +114,48 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryInterviewsRequest $request
+     * @param AddFileRequest $request
      *
-     * @return QueryInterviewsResponse
+     * @return AddFileResponse
      */
-    public function queryInterviews($request)
+    public function addFile($request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new QueryInterviewsHeaders([]);
+        $headers = new AddFileHeaders([]);
 
-        return $this->queryInterviewsWithOptions($request, $headers, $runtime);
+        return $this->addFileWithOptions($request, $headers, $runtime);
     }
 
     /**
-     * @param QueryInterviewsRequest $request
-     * @param QueryInterviewsHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param AddFileRequest $request
+     * @param AddFileHeaders $headers
+     * @param RuntimeOptions $runtime
      *
-     * @return QueryInterviewsResponse
+     * @return AddFileResponse
      */
-    public function queryInterviewsWithOptions($request, $headers, $runtime)
+    public function addFileWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
         if (!Utils::isUnset($request->bizCode)) {
             @$query['bizCode'] = $request->bizCode;
         }
-        if (!Utils::isUnset($request->nextToken)) {
-            @$query['nextToken'] = $request->nextToken;
-        }
-        if (!Utils::isUnset($request->size)) {
-            @$query['size'] = $request->size;
+        if (!Utils::isUnset($request->opUserId)) {
+            @$query['opUserId'] = $request->opUserId;
         }
         $body = [];
-        if (!Utils::isUnset($request->startTimeBeginMillis)) {
-            @$body['startTimeBeginMillis'] = $request->startTimeBeginMillis;
+        if (!Utils::isUnset($request->fileName)) {
+            @$body['fileName'] = $request->fileName;
         }
-        if (!Utils::isUnset($request->startTimeEndMillis)) {
-            @$body['startTimeEndMillis'] = $request->startTimeEndMillis;
-        }
-        if (!Utils::isUnset($request->candidateId)) {
-            @$body['candidateId'] = $request->candidateId;
+        if (!Utils::isUnset($request->mediaId)) {
+            @$body['mediaId'] = $request->mediaId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -270,7 +163,190 @@ class Dingtalk extends OpenApiClient
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return QueryInterviewsResponse::fromMap($this->doROARequest('QueryInterviews', 'ats_1.0', 'HTTP', 'POST', 'AK', '/v1.0/ats/interviews/query', 'json', $req, $runtime));
+        return AddFileResponse::fromMap($this->doROARequest('AddFile', 'ats_1.0', 'HTTP', 'POST', 'AK', '/v1.0/ats/files', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string               $rightsCode
+     * @param ConfirmRightsRequest $request
+     *
+     * @return ConfirmRightsResponse
+     */
+    public function confirmRights($rightsCode, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ConfirmRightsHeaders([]);
+
+        return $this->confirmRightsWithOptions($rightsCode, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string               $rightsCode
+     * @param ConfirmRightsRequest $request
+     * @param ConfirmRightsHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return ConfirmRightsResponse
+     */
+    public function confirmRightsWithOptions($rightsCode, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $rightsCode = OpenApiUtilClient::getEncodeParam($rightsCode);
+        $query      = [];
+        if (!Utils::isUnset($request->bizCode)) {
+            @$query['bizCode'] = $request->bizCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ConfirmRightsResponse::fromMap($this->doROARequest('ConfirmRights', 'ats_1.0', 'HTTP', 'POST', 'AK', '/v1.0/ats/rights/' . $rightsCode . '/confirm', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                    $taskCode
+     * @param FinishBeginnerTaskRequest $request
+     *
+     * @return FinishBeginnerTaskResponse
+     */
+    public function finishBeginnerTask($taskCode, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new FinishBeginnerTaskHeaders([]);
+
+        return $this->finishBeginnerTaskWithOptions($taskCode, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                    $taskCode
+     * @param FinishBeginnerTaskRequest $request
+     * @param FinishBeginnerTaskHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return FinishBeginnerTaskResponse
+     */
+    public function finishBeginnerTaskWithOptions($taskCode, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $taskCode = OpenApiUtilClient::getEncodeParam($taskCode);
+        $query    = [];
+        if (!Utils::isUnset($request->scope)) {
+            @$query['scope'] = $request->scope;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return FinishBeginnerTaskResponse::fromMap($this->doROARequest('FinishBeginnerTask', 'ats_1.0', 'HTTP', 'POST', 'AK', '/v1.0/ats/beginnerTasks/' . $taskCode . '/finish', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                               $flowId
+     * @param GetApplicationRegFormByFlowIdRequest $request
+     *
+     * @return GetApplicationRegFormByFlowIdResponse
+     */
+    public function getApplicationRegFormByFlowId($flowId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetApplicationRegFormByFlowIdHeaders([]);
+
+        return $this->getApplicationRegFormByFlowIdWithOptions($flowId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                               $flowId
+     * @param GetApplicationRegFormByFlowIdRequest $request
+     * @param GetApplicationRegFormByFlowIdHeaders $headers
+     * @param RuntimeOptions                       $runtime
+     *
+     * @return GetApplicationRegFormByFlowIdResponse
+     */
+    public function getApplicationRegFormByFlowIdWithOptions($flowId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $flowId = OpenApiUtilClient::getEncodeParam($flowId);
+        $query  = [];
+        if (!Utils::isUnset($request->bizCode)) {
+            @$query['bizCode'] = $request->bizCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetApplicationRegFormByFlowIdResponse::fromMap($this->doROARequest('GetApplicationRegFormByFlowId', 'ats_1.0', 'HTTP', 'GET', 'AK', '/v1.0/ats/flows/' . $flowId . '/applicationRegForms', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetCandidateByPhoneNumberRequest $request
+     *
+     * @return GetCandidateByPhoneNumberResponse
+     */
+    public function getCandidateByPhoneNumber($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetCandidateByPhoneNumberHeaders([]);
+
+        return $this->getCandidateByPhoneNumberWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetCandidateByPhoneNumberRequest $request
+     * @param GetCandidateByPhoneNumberHeaders $headers
+     * @param RuntimeOptions                   $runtime
+     *
+     * @return GetCandidateByPhoneNumberResponse
+     */
+    public function getCandidateByPhoneNumberWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->bizCode)) {
+            @$query['bizCode'] = $request->bizCode;
+        }
+        if (!Utils::isUnset($request->phoneNumber)) {
+            @$query['phoneNumber'] = $request->phoneNumber;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetCandidateByPhoneNumberResponse::fromMap($this->doROARequest('GetCandidateByPhoneNumber', 'ats_1.0', 'HTTP', 'GET', 'AK', '/v1.0/ats/candidates', 'json', $req, $runtime));
     }
 
     /**
@@ -317,7 +393,7 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -328,284 +404,51 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                    $taskCode
-     * @param FinishBeginnerTaskRequest $request
+     * @param GetFlowIdByRelationEntityIdRequest $request
      *
-     * @return FinishBeginnerTaskResponse
+     * @return GetFlowIdByRelationEntityIdResponse
      */
-    public function finishBeginnerTask($taskCode, $request)
+    public function getFlowIdByRelationEntityId($request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new FinishBeginnerTaskHeaders([]);
+        $headers = new GetFlowIdByRelationEntityIdHeaders([]);
 
-        return $this->finishBeginnerTaskWithOptions($taskCode, $request, $headers, $runtime);
+        return $this->getFlowIdByRelationEntityIdWithOptions($request, $headers, $runtime);
     }
 
     /**
-     * @param string                    $taskCode
-     * @param FinishBeginnerTaskRequest $request
-     * @param FinishBeginnerTaskHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @param GetFlowIdByRelationEntityIdRequest $request
+     * @param GetFlowIdByRelationEntityIdHeaders $headers
+     * @param RuntimeOptions                     $runtime
      *
-     * @return FinishBeginnerTaskResponse
+     * @return GetFlowIdByRelationEntityIdResponse
      */
-    public function finishBeginnerTaskWithOptions($taskCode, $request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->userId)) {
-            @$query['userId'] = $request->userId;
-        }
-        if (!Utils::isUnset($request->scope)) {
-            @$query['scope'] = $request->scope;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return FinishBeginnerTaskResponse::fromMap($this->doROARequest('FinishBeginnerTask', 'ats_1.0', 'HTTP', 'POST', 'AK', '/v1.0/ats/beginnerTasks/' . $taskCode . '/finish', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param string               $rightsCode
-     * @param ConfirmRightsRequest $request
-     *
-     * @return ConfirmRightsResponse
-     */
-    public function confirmRights($rightsCode, $request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new ConfirmRightsHeaders([]);
-
-        return $this->confirmRightsWithOptions($rightsCode, $request, $headers, $runtime);
-    }
-
-    /**
-     * @param string               $rightsCode
-     * @param ConfirmRightsRequest $request
-     * @param ConfirmRightsHeaders $headers
-     * @param RuntimeOptions       $runtime
-     *
-     * @return ConfirmRightsResponse
-     */
-    public function confirmRightsWithOptions($rightsCode, $request, $headers, $runtime)
+    public function getFlowIdByRelationEntityIdWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
         if (!Utils::isUnset($request->bizCode)) {
             @$query['bizCode'] = $request->bizCode;
         }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
+        if (!Utils::isUnset($request->relationEntity)) {
+            @$query['relationEntity'] = $request->relationEntity;
         }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return ConfirmRightsResponse::fromMap($this->doROARequest('ConfirmRights', 'ats_1.0', 'HTTP', 'POST', 'AK', '/v1.0/ats/rights/' . $rightsCode . '/confirm', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param string                               $flowId
-     * @param GetApplicationRegFormByFlowIdRequest $request
-     *
-     * @return GetApplicationRegFormByFlowIdResponse
-     */
-    public function getApplicationRegFormByFlowId($flowId, $request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new GetApplicationRegFormByFlowIdHeaders([]);
-
-        return $this->getApplicationRegFormByFlowIdWithOptions($flowId, $request, $headers, $runtime);
-    }
-
-    /**
-     * @param string                               $flowId
-     * @param GetApplicationRegFormByFlowIdRequest $request
-     * @param GetApplicationRegFormByFlowIdHeaders $headers
-     * @param RuntimeOptions                       $runtime
-     *
-     * @return GetApplicationRegFormByFlowIdResponse
-     */
-    public function getApplicationRegFormByFlowIdWithOptions($flowId, $request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->bizCode)) {
-            @$query['bizCode'] = $request->bizCode;
+        if (!Utils::isUnset($request->relationEntityId)) {
+            @$query['relationEntityId'] = $request->relationEntityId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return GetApplicationRegFormByFlowIdResponse::fromMap($this->doROARequest('GetApplicationRegFormByFlowId', 'ats_1.0', 'HTTP', 'GET', 'AK', '/v1.0/ats/flows/' . $flowId . '/applicationRegForms', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param string                          $flowId
-     * @param UpdateApplicationRegFormRequest $request
-     *
-     * @return UpdateApplicationRegFormResponse
-     */
-    public function updateApplicationRegForm($flowId, $request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new UpdateApplicationRegFormHeaders([]);
-
-        return $this->updateApplicationRegFormWithOptions($flowId, $request, $headers, $runtime);
-    }
-
-    /**
-     * @param string                          $flowId
-     * @param UpdateApplicationRegFormRequest $request
-     * @param UpdateApplicationRegFormHeaders $headers
-     * @param RuntimeOptions                  $runtime
-     *
-     * @return UpdateApplicationRegFormResponse
-     */
-    public function updateApplicationRegFormWithOptions($flowId, $request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->bizCode)) {
-            @$query['bizCode'] = $request->bizCode;
-        }
-        $body = [];
-        if (!Utils::isUnset($request->content)) {
-            @$body['content'] = $request->content;
-        }
-        if (!Utils::isUnset($request->dingPanFile)) {
-            @$body['dingPanFile'] = $request->dingPanFile;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return UpdateApplicationRegFormResponse::fromMap($this->doROARequest('UpdateApplicationRegForm', 'ats_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/ats/flows/' . $flowId . '/applicationRegForms', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param GetCandidateByPhoneNumberRequest $request
-     *
-     * @return GetCandidateByPhoneNumberResponse
-     */
-    public function getCandidateByPhoneNumber($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new GetCandidateByPhoneNumberHeaders([]);
-
-        return $this->getCandidateByPhoneNumberWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param GetCandidateByPhoneNumberRequest $request
-     * @param GetCandidateByPhoneNumberHeaders $headers
-     * @param RuntimeOptions                   $runtime
-     *
-     * @return GetCandidateByPhoneNumberResponse
-     */
-    public function getCandidateByPhoneNumberWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->bizCode)) {
-            @$query['bizCode'] = $request->bizCode;
-        }
-        if (!Utils::isUnset($request->phoneNumber)) {
-            @$query['phoneNumber'] = $request->phoneNumber;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return GetCandidateByPhoneNumberResponse::fromMap($this->doROARequest('GetCandidateByPhoneNumber', 'ats_1.0', 'HTTP', 'GET', 'AK', '/v1.0/ats/candidates', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param string                           $interviewId
-     * @param UpdateInterviewSignInInfoRequest $request
-     *
-     * @return UpdateInterviewSignInInfoResponse
-     */
-    public function updateInterviewSignInInfo($interviewId, $request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new UpdateInterviewSignInInfoHeaders([]);
-
-        return $this->updateInterviewSignInInfoWithOptions($interviewId, $request, $headers, $runtime);
-    }
-
-    /**
-     * @param string                           $interviewId
-     * @param UpdateInterviewSignInInfoRequest $request
-     * @param UpdateInterviewSignInInfoHeaders $headers
-     * @param RuntimeOptions                   $runtime
-     *
-     * @return UpdateInterviewSignInInfoResponse
-     */
-    public function updateInterviewSignInInfoWithOptions($interviewId, $request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->bizCode)) {
-            @$query['bizCode'] = $request->bizCode;
-        }
-        $body = [];
-        if (!Utils::isUnset($request->signInTimeMillis)) {
-            @$body['signInTimeMillis'] = $request->signInTimeMillis;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return UpdateInterviewSignInInfoResponse::fromMap($this->doROARequest('UpdateInterviewSignInInfo', 'ats_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/ats/interviews/' . $interviewId . '/signInInfos', 'none', $req, $runtime));
+        return GetFlowIdByRelationEntityIdResponse::fromMap($this->doROARequest('GetFlowIdByRelationEntityId', 'ats_1.0', 'HTTP', 'GET', 'AK', '/v1.0/ats/flows/ids', 'json', $req, $runtime));
     }
 
     /**
@@ -633,6 +476,7 @@ class Dingtalk extends OpenApiClient
     public function getJobAuthWithOptions($jobId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
+        $jobId = OpenApiUtilClient::getEncodeParam($jobId);
         $query = [];
         if (!Utils::isUnset($request->opUserId)) {
             @$query['opUserId'] = $request->opUserId;
@@ -642,7 +486,7 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -650,5 +494,167 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetJobAuthResponse::fromMap($this->doROARequest('GetJobAuth', 'ats_1.0', 'HTTP', 'GET', 'AK', '/v1.0/ats/auths/jobs/' . $jobId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryInterviewsRequest $request
+     *
+     * @return QueryInterviewsResponse
+     */
+    public function queryInterviews($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryInterviewsHeaders([]);
+
+        return $this->queryInterviewsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryInterviewsRequest $request
+     * @param QueryInterviewsHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return QueryInterviewsResponse
+     */
+    public function queryInterviewsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->bizCode)) {
+            @$query['bizCode'] = $request->bizCode;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->size)) {
+            @$query['size'] = $request->size;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->candidateId)) {
+            @$body['candidateId'] = $request->candidateId;
+        }
+        if (!Utils::isUnset($request->startTimeBeginMillis)) {
+            @$body['startTimeBeginMillis'] = $request->startTimeBeginMillis;
+        }
+        if (!Utils::isUnset($request->startTimeEndMillis)) {
+            @$body['startTimeEndMillis'] = $request->startTimeEndMillis;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return QueryInterviewsResponse::fromMap($this->doROARequest('QueryInterviews', 'ats_1.0', 'HTTP', 'POST', 'AK', '/v1.0/ats/interviews/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                          $flowId
+     * @param UpdateApplicationRegFormRequest $request
+     *
+     * @return UpdateApplicationRegFormResponse
+     */
+    public function updateApplicationRegForm($flowId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateApplicationRegFormHeaders([]);
+
+        return $this->updateApplicationRegFormWithOptions($flowId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                          $flowId
+     * @param UpdateApplicationRegFormRequest $request
+     * @param UpdateApplicationRegFormHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return UpdateApplicationRegFormResponse
+     */
+    public function updateApplicationRegFormWithOptions($flowId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $flowId = OpenApiUtilClient::getEncodeParam($flowId);
+        $query  = [];
+        if (!Utils::isUnset($request->bizCode)) {
+            @$query['bizCode'] = $request->bizCode;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->content)) {
+            @$body['content'] = $request->content;
+        }
+        if (!Utils::isUnset($request->dingPanFile)) {
+            @$body['dingPanFile'] = $request->dingPanFile;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateApplicationRegFormResponse::fromMap($this->doROARequest('UpdateApplicationRegForm', 'ats_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/ats/flows/' . $flowId . '/applicationRegForms', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                           $interviewId
+     * @param UpdateInterviewSignInInfoRequest $request
+     *
+     * @return UpdateInterviewSignInInfoResponse
+     */
+    public function updateInterviewSignInInfo($interviewId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateInterviewSignInInfoHeaders([]);
+
+        return $this->updateInterviewSignInInfoWithOptions($interviewId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                           $interviewId
+     * @param UpdateInterviewSignInInfoRequest $request
+     * @param UpdateInterviewSignInInfoHeaders $headers
+     * @param RuntimeOptions                   $runtime
+     *
+     * @return UpdateInterviewSignInInfoResponse
+     */
+    public function updateInterviewSignInInfoWithOptions($interviewId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $interviewId = OpenApiUtilClient::getEncodeParam($interviewId);
+        $query       = [];
+        if (!Utils::isUnset($request->bizCode)) {
+            @$query['bizCode'] = $request->bizCode;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->signInTimeMillis)) {
+            @$body['signInTimeMillis'] = $request->signInTimeMillis;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateInterviewSignInInfoResponse::fromMap($this->doROARequest('UpdateInterviewSignInInfo', 'ats_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/ats/interviews/' . $interviewId . '/signInInfos', 'none', $req, $runtime));
     }
 }

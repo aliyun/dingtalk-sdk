@@ -9,18 +9,18 @@ use AlibabaCloud\Tea\Model;
 class ListGroupSetRequest extends Model
 {
     /**
-     * @description 第一页不传，下一页传入上一页返回的nextToken
-     *
-     * @var string
-     */
-    public $nextToken;
-
-    /**
      * @description 每页返回的结果集个数
      *
      * @var int
      */
     public $maxResults;
+
+    /**
+     * @description 第一页不传，下一页传入上一页返回的nextToken
+     *
+     * @var string
+     */
+    public $nextToken;
 
     /**
      * @description 查询DSL
@@ -36,8 +36,8 @@ class ListGroupSetRequest extends Model
      */
     public $relationType;
     protected $_name = [
-        'nextToken'    => 'nextToken',
         'maxResults'   => 'maxResults',
+        'nextToken'    => 'nextToken',
         'queryDsl'     => 'queryDsl',
         'relationType' => 'relationType',
     ];
@@ -49,11 +49,11 @@ class ListGroupSetRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->nextToken) {
-            $res['nextToken'] = $this->nextToken;
-        }
         if (null !== $this->maxResults) {
             $res['maxResults'] = $this->maxResults;
+        }
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
         }
         if (null !== $this->queryDsl) {
             $res['queryDsl'] = $this->queryDsl;
@@ -73,11 +73,11 @@ class ListGroupSetRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['nextToken'])) {
-            $model->nextToken = $map['nextToken'];
-        }
         if (isset($map['maxResults'])) {
             $model->maxResults = $map['maxResults'];
+        }
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
         }
         if (isset($map['queryDsl'])) {
             $model->queryDsl = $map['queryDsl'];

@@ -16,6 +16,13 @@ class GetInstanceByIdRequest extends Model
     public $appType;
 
     /**
+     * @description 语言
+     *
+     * @var string
+     */
+    public $language;
+
+    /**
      * @description 应用秘钥
      *
      * @var string
@@ -28,18 +35,11 @@ class GetInstanceByIdRequest extends Model
      * @var string
      */
     public $userId;
-
-    /**
-     * @description 语言
-     *
-     * @var string
-     */
-    public $language;
     protected $_name = [
         'appType'     => 'appType',
+        'language'    => 'language',
         'systemToken' => 'systemToken',
         'userId'      => 'userId',
-        'language'    => 'language',
     ];
 
     public function validate()
@@ -52,14 +52,14 @@ class GetInstanceByIdRequest extends Model
         if (null !== $this->appType) {
             $res['appType'] = $this->appType;
         }
+        if (null !== $this->language) {
+            $res['language'] = $this->language;
+        }
         if (null !== $this->systemToken) {
             $res['systemToken'] = $this->systemToken;
         }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
-        }
-        if (null !== $this->language) {
-            $res['language'] = $this->language;
         }
 
         return $res;
@@ -76,14 +76,14 @@ class GetInstanceByIdRequest extends Model
         if (isset($map['appType'])) {
             $model->appType = $map['appType'];
         }
+        if (isset($map['language'])) {
+            $model->language = $map['language'];
+        }
         if (isset($map['systemToken'])) {
             $model->systemToken = $map['systemToken'];
         }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];
-        }
-        if (isset($map['language'])) {
-            $model->language = $map['language'];
         }
 
         return $model;

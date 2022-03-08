@@ -10,13 +10,6 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 下一页的游标
-     *
-     * @var string
-     */
-    public $nextToken;
-
-    /**
      * @description 是否有更多数据
      *
      * @var bool
@@ -31,15 +24,22 @@ class result extends Model
     public $maxResults;
 
     /**
+     * @description 下一页的游标
+     *
+     * @var string
+     */
+    public $nextToken;
+
+    /**
      * @description 表单列表
      *
      * @var values[]
      */
     public $values;
     protected $_name = [
-        'nextToken'  => 'nextToken',
         'hasMore'    => 'hasMore',
         'maxResults' => 'maxResults',
+        'nextToken'  => 'nextToken',
         'values'     => 'values',
     ];
 
@@ -50,14 +50,14 @@ class result extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->nextToken) {
-            $res['nextToken'] = $this->nextToken;
-        }
         if (null !== $this->hasMore) {
             $res['hasMore'] = $this->hasMore;
         }
         if (null !== $this->maxResults) {
             $res['maxResults'] = $this->maxResults;
+        }
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
         }
         if (null !== $this->values) {
             $res['values'] = [];
@@ -80,14 +80,14 @@ class result extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['nextToken'])) {
-            $model->nextToken = $map['nextToken'];
-        }
         if (isset($map['hasMore'])) {
             $model->hasMore = $map['hasMore'];
         }
         if (isset($map['maxResults'])) {
             $model->maxResults = $map['maxResults'];
+        }
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
         }
         if (isset($map['values'])) {
             if (!empty($map['values'])) {

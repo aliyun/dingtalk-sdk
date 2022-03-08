@@ -10,13 +10,6 @@ use AlibabaCloud\Tea\Model;
 class QueryJobsResponseBody extends Model
 {
     /**
-     * @description 下次获取数据的起始游标
-     *
-     * @var int
-     */
-    public $nextToken;
-
-    /**
      * @description 是否有更多数据
      *
      * @var bool
@@ -29,10 +22,17 @@ class QueryJobsResponseBody extends Model
      * @var list_[]
      */
     public $list;
+
+    /**
+     * @description 下次获取数据的起始游标
+     *
+     * @var int
+     */
+    public $nextToken;
     protected $_name = [
-        'nextToken' => 'nextToken',
         'hasMore'   => 'hasMore',
         'list'      => 'list',
+        'nextToken' => 'nextToken',
     ];
 
     public function validate()
@@ -42,9 +42,6 @@ class QueryJobsResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->nextToken) {
-            $res['nextToken'] = $this->nextToken;
-        }
         if (null !== $this->hasMore) {
             $res['hasMore'] = $this->hasMore;
         }
@@ -56,6 +53,9 @@ class QueryJobsResponseBody extends Model
                     $res['list'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
         }
 
         return $res;
@@ -69,9 +69,6 @@ class QueryJobsResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['nextToken'])) {
-            $model->nextToken = $map['nextToken'];
-        }
         if (isset($map['hasMore'])) {
             $model->hasMore = $map['hasMore'];
         }
@@ -83,6 +80,9 @@ class QueryJobsResponseBody extends Model
                     $model->list[$n++] = null !== $item ? list_::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
         }
 
         return $model;

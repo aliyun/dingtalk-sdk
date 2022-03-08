@@ -16,11 +16,11 @@ class SendInvitationRequest extends Model
     public $deptId;
 
     /**
-     * @description 伙伴编码
+     * @description 组织别名
      *
      * @var string
      */
-    public $partnerNum;
+    public $orgAlias;
 
     /**
      * @description 伙伴标签id
@@ -30,24 +30,24 @@ class SendInvitationRequest extends Model
     public $partnerLabelId;
 
     /**
+     * @description 伙伴编码
+     *
+     * @var string
+     */
+    public $partnerNum;
+
+    /**
      * @description 手机号
      *
      * @var string
      */
     public $phone;
-
-    /**
-     * @description 组织别名
-     *
-     * @var string
-     */
-    public $orgAlias;
     protected $_name = [
         'deptId'         => 'deptId',
-        'partnerNum'     => 'partnerNum',
-        'partnerLabelId' => 'partnerLabelId',
-        'phone'          => 'phone',
         'orgAlias'       => 'orgAlias',
+        'partnerLabelId' => 'partnerLabelId',
+        'partnerNum'     => 'partnerNum',
+        'phone'          => 'phone',
     ];
 
     public function validate()
@@ -60,17 +60,17 @@ class SendInvitationRequest extends Model
         if (null !== $this->deptId) {
             $res['deptId'] = $this->deptId;
         }
-        if (null !== $this->partnerNum) {
-            $res['partnerNum'] = $this->partnerNum;
+        if (null !== $this->orgAlias) {
+            $res['orgAlias'] = $this->orgAlias;
         }
         if (null !== $this->partnerLabelId) {
             $res['partnerLabelId'] = $this->partnerLabelId;
         }
+        if (null !== $this->partnerNum) {
+            $res['partnerNum'] = $this->partnerNum;
+        }
         if (null !== $this->phone) {
             $res['phone'] = $this->phone;
-        }
-        if (null !== $this->orgAlias) {
-            $res['orgAlias'] = $this->orgAlias;
         }
 
         return $res;
@@ -87,17 +87,17 @@ class SendInvitationRequest extends Model
         if (isset($map['deptId'])) {
             $model->deptId = $map['deptId'];
         }
-        if (isset($map['partnerNum'])) {
-            $model->partnerNum = $map['partnerNum'];
+        if (isset($map['orgAlias'])) {
+            $model->orgAlias = $map['orgAlias'];
         }
         if (isset($map['partnerLabelId'])) {
             $model->partnerLabelId = $map['partnerLabelId'];
         }
+        if (isset($map['partnerNum'])) {
+            $model->partnerNum = $map['partnerNum'];
+        }
         if (isset($map['phone'])) {
             $model->phone = $map['phone'];
-        }
-        if (isset($map['orgAlias'])) {
-            $model->orgAlias = $map['orgAlias'];
         }
 
         return $model;

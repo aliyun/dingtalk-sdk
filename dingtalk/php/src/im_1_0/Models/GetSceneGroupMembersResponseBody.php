@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class GetSceneGroupMembersResponseBody extends Model
 {
     /**
-     * @description result
+     * @description 是否还有更多数据
      *
      * @var bool
      */
-    public $success;
+    public $hasMore;
 
     /**
      * @description 群成员员工号
@@ -23,23 +23,23 @@ class GetSceneGroupMembersResponseBody extends Model
     public $memberUserIds;
 
     /**
-     * @description 是否还有更多数据
-     *
-     * @var bool
-     */
-    public $hasMore;
-
-    /**
      * @description 下一次请求的游标
      *
      * @var string
      */
     public $nextCursor;
+
+    /**
+     * @description result
+     *
+     * @var bool
+     */
+    public $success;
     protected $_name = [
-        'success'       => 'success',
-        'memberUserIds' => 'memberUserIds',
         'hasMore'       => 'hasMore',
+        'memberUserIds' => 'memberUserIds',
         'nextCursor'    => 'nextCursor',
+        'success'       => 'success',
     ];
 
     public function validate()
@@ -49,17 +49,17 @@ class GetSceneGroupMembersResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->success) {
-            $res['success'] = $this->success;
+        if (null !== $this->hasMore) {
+            $res['hasMore'] = $this->hasMore;
         }
         if (null !== $this->memberUserIds) {
             $res['memberUserIds'] = $this->memberUserIds;
         }
-        if (null !== $this->hasMore) {
-            $res['hasMore'] = $this->hasMore;
-        }
         if (null !== $this->nextCursor) {
             $res['nextCursor'] = $this->nextCursor;
+        }
+        if (null !== $this->success) {
+            $res['success'] = $this->success;
         }
 
         return $res;
@@ -73,19 +73,19 @@ class GetSceneGroupMembersResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['success'])) {
-            $model->success = $map['success'];
+        if (isset($map['hasMore'])) {
+            $model->hasMore = $map['hasMore'];
         }
         if (isset($map['memberUserIds'])) {
             if (!empty($map['memberUserIds'])) {
                 $model->memberUserIds = $map['memberUserIds'];
             }
         }
-        if (isset($map['hasMore'])) {
-            $model->hasMore = $map['hasMore'];
-        }
         if (isset($map['nextCursor'])) {
             $model->nextCursor = $map['nextCursor'];
+        }
+        if (isset($map['success'])) {
+            $model->success = $map['success'];
         }
 
         return $model;

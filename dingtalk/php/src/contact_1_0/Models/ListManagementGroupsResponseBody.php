@@ -10,11 +10,11 @@ use AlibabaCloud\Tea\Model;
 class ListManagementGroupsResponseBody extends Model
 {
     /**
-     * @description 下一次读取的位置
+     * @description 管理组列表
      *
-     * @var int
+     * @var groups[]
      */
-    public $nextToken;
+    public $groups;
 
     /**
      * @description 是否有下一页
@@ -24,15 +24,15 @@ class ListManagementGroupsResponseBody extends Model
     public $hasMore;
 
     /**
-     * @description 管理组列表
+     * @description 下一次读取的位置
      *
-     * @var groups[]
+     * @var int
      */
-    public $groups;
+    public $nextToken;
     protected $_name = [
-        'nextToken' => 'nextToken',
-        'hasMore'   => 'hasMore',
         'groups'    => 'groups',
+        'hasMore'   => 'hasMore',
+        'nextToken' => 'nextToken',
     ];
 
     public function validate()
@@ -42,12 +42,6 @@ class ListManagementGroupsResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->nextToken) {
-            $res['nextToken'] = $this->nextToken;
-        }
-        if (null !== $this->hasMore) {
-            $res['hasMore'] = $this->hasMore;
-        }
         if (null !== $this->groups) {
             $res['groups'] = [];
             if (null !== $this->groups && \is_array($this->groups)) {
@@ -56,6 +50,12 @@ class ListManagementGroupsResponseBody extends Model
                     $res['groups'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->hasMore) {
+            $res['hasMore'] = $this->hasMore;
+        }
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
         }
 
         return $res;
@@ -69,12 +69,6 @@ class ListManagementGroupsResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['nextToken'])) {
-            $model->nextToken = $map['nextToken'];
-        }
-        if (isset($map['hasMore'])) {
-            $model->hasMore = $map['hasMore'];
-        }
         if (isset($map['groups'])) {
             if (!empty($map['groups'])) {
                 $model->groups = [];
@@ -83,6 +77,12 @@ class ListManagementGroupsResponseBody extends Model
                     $model->groups[$n++] = null !== $item ? groups::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['hasMore'])) {
+            $model->hasMore = $map['hasMore'];
+        }
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
         }
 
         return $model;

@@ -14,18 +14,18 @@ class result extends Model
     public $corpId;
 
     /**
-     * @var string
-     */
-    public $name;
-
-    /**
      * @var int
      */
     public $deviceCount;
+
+    /**
+     * @var string
+     */
+    public $name;
     protected $_name = [
         'corpId'      => 'corpId',
-        'name'        => 'name',
         'deviceCount' => 'deviceCount',
+        'name'        => 'name',
     ];
 
     public function validate()
@@ -38,11 +38,11 @@ class result extends Model
         if (null !== $this->corpId) {
             $res['corpId'] = $this->corpId;
         }
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
-        }
         if (null !== $this->deviceCount) {
             $res['deviceCount'] = $this->deviceCount;
+        }
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
         }
 
         return $res;
@@ -59,11 +59,11 @@ class result extends Model
         if (isset($map['corpId'])) {
             $model->corpId = $map['corpId'];
         }
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
-        }
         if (isset($map['deviceCount'])) {
             $model->deviceCount = $map['deviceCount'];
+        }
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
         }
 
         return $model;

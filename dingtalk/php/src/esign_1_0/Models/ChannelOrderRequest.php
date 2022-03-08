@@ -11,11 +11,6 @@ class ChannelOrderRequest extends Model
     /**
      * @var string
      */
-    public $dingCorpId;
-
-    /**
-     * @var string
-     */
     public $itemCode;
 
     /**
@@ -42,26 +37,13 @@ class ChannelOrderRequest extends Model
      * @var int
      */
     public $quantity;
-
-    /**
-     * @var string
-     */
-    public $dingIsvAccessToken;
-
-    /**
-     * @var string
-     */
-    public $dingSuiteKey;
     protected $_name = [
-        'dingCorpId'         => 'dingCorpId',
-        'itemCode'           => 'itemCode',
-        'itemName'           => 'itemName',
-        'orderCreateTime'    => 'orderCreateTime',
-        'orderId'            => 'orderId',
-        'payFee'             => 'payFee',
-        'quantity'           => 'quantity',
-        'dingIsvAccessToken' => 'dingIsvAccessToken',
-        'dingSuiteKey'       => 'dingSuiteKey',
+        'itemCode'        => 'itemCode',
+        'itemName'        => 'itemName',
+        'orderCreateTime' => 'orderCreateTime',
+        'orderId'         => 'orderId',
+        'payFee'          => 'payFee',
+        'quantity'        => 'quantity',
     ];
 
     public function validate()
@@ -71,9 +53,6 @@ class ChannelOrderRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->dingCorpId) {
-            $res['dingCorpId'] = $this->dingCorpId;
-        }
         if (null !== $this->itemCode) {
             $res['itemCode'] = $this->itemCode;
         }
@@ -92,12 +71,6 @@ class ChannelOrderRequest extends Model
         if (null !== $this->quantity) {
             $res['quantity'] = $this->quantity;
         }
-        if (null !== $this->dingIsvAccessToken) {
-            $res['dingIsvAccessToken'] = $this->dingIsvAccessToken;
-        }
-        if (null !== $this->dingSuiteKey) {
-            $res['dingSuiteKey'] = $this->dingSuiteKey;
-        }
 
         return $res;
     }
@@ -110,9 +83,6 @@ class ChannelOrderRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['dingCorpId'])) {
-            $model->dingCorpId = $map['dingCorpId'];
-        }
         if (isset($map['itemCode'])) {
             $model->itemCode = $map['itemCode'];
         }
@@ -130,12 +100,6 @@ class ChannelOrderRequest extends Model
         }
         if (isset($map['quantity'])) {
             $model->quantity = $map['quantity'];
-        }
-        if (isset($map['dingIsvAccessToken'])) {
-            $model->dingIsvAccessToken = $map['dingIsvAccessToken'];
-        }
-        if (isset($map['dingSuiteKey'])) {
-            $model->dingSuiteKey = $map['dingSuiteKey'];
         }
 
         return $model;

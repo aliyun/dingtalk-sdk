@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class TerminateCloudAuthorizationRequest extends Model
 {
     /**
-     * @description 实例id
-     *
-     * @var string
-     */
-    public $instanceId;
-
-    /**
      * @description 访问秘钥
      *
      * @var string
@@ -28,10 +21,17 @@ class TerminateCloudAuthorizationRequest extends Model
      * @var string
      */
     public $callerUnionId;
+
+    /**
+     * @description 实例id
+     *
+     * @var string
+     */
+    public $instanceId;
     protected $_name = [
-        'instanceId'    => 'instanceId',
         'accessKey'     => 'accessKey',
         'callerUnionId' => 'callerUnionId',
+        'instanceId'    => 'instanceId',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class TerminateCloudAuthorizationRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->instanceId) {
-            $res['instanceId'] = $this->instanceId;
-        }
         if (null !== $this->accessKey) {
             $res['accessKey'] = $this->accessKey;
         }
         if (null !== $this->callerUnionId) {
             $res['callerUnionId'] = $this->callerUnionId;
+        }
+        if (null !== $this->instanceId) {
+            $res['instanceId'] = $this->instanceId;
         }
 
         return $res;
@@ -62,14 +62,14 @@ class TerminateCloudAuthorizationRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['instanceId'])) {
-            $model->instanceId = $map['instanceId'];
-        }
         if (isset($map['accessKey'])) {
             $model->accessKey = $map['accessKey'];
         }
         if (isset($map['callerUnionId'])) {
             $model->callerUnionId = $map['callerUnionId'];
+        }
+        if (isset($map['instanceId'])) {
+            $model->instanceId = $map['instanceId'];
         }
 
         return $model;

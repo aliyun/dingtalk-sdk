@@ -17,48 +17,6 @@ class NotifyPayCodeRefundResultRequest extends Model
     public $corpId;
 
     /**
-     * @description 用户id
-     *
-     * @var string
-     */
-    public $userId;
-
-    /**
-     * @description 交易订单号
-     *
-     * @var string
-     */
-    public $tradeNo;
-
-    /**
-     * @description 本次退款订单号
-     *
-     * @var string
-     */
-    public $refundOrderNo;
-
-    /**
-     * @description 备注
-     *
-     * @var string
-     */
-    public $remark;
-
-    /**
-     * @description 退款金额
-     *
-     * @var string
-     */
-    public $refundAmount;
-
-    /**
-     * @description 退款的优惠金额
-     *
-     * @var string
-     */
-    public $refundPromotionAmount;
-
-    /**
      * @description 退款时间
      *
      * @var string
@@ -73,30 +31,64 @@ class NotifyPayCodeRefundResultRequest extends Model
     public $payChannelDetailList;
 
     /**
-     * @description isvOrgId
-     *
-     * @var int
-     */
-    public $dingIsvOrgId;
-
-    /**
      * @description 支付时使用的付款码
      *
      * @var string
      */
     public $payCode;
+
+    /**
+     * @description 退款金额
+     *
+     * @var string
+     */
+    public $refundAmount;
+
+    /**
+     * @description 本次退款订单号
+     *
+     * @var string
+     */
+    public $refundOrderNo;
+
+    /**
+     * @description 退款的优惠金额
+     *
+     * @var string
+     */
+    public $refundPromotionAmount;
+
+    /**
+     * @description 备注
+     *
+     * @var string
+     */
+    public $remark;
+
+    /**
+     * @description 交易订单号
+     *
+     * @var string
+     */
+    public $tradeNo;
+
+    /**
+     * @description 用户id
+     *
+     * @var string
+     */
+    public $userId;
     protected $_name = [
         'corpId'                => 'corpId',
-        'userId'                => 'userId',
-        'tradeNo'               => 'tradeNo',
-        'refundOrderNo'         => 'refundOrderNo',
-        'remark'                => 'remark',
-        'refundAmount'          => 'refundAmount',
-        'refundPromotionAmount' => 'refundPromotionAmount',
         'gmtRefund'             => 'gmtRefund',
         'payChannelDetailList'  => 'payChannelDetailList',
-        'dingIsvOrgId'          => 'dingIsvOrgId',
         'payCode'               => 'payCode',
+        'refundAmount'          => 'refundAmount',
+        'refundOrderNo'         => 'refundOrderNo',
+        'refundPromotionAmount' => 'refundPromotionAmount',
+        'remark'                => 'remark',
+        'tradeNo'               => 'tradeNo',
+        'userId'                => 'userId',
     ];
 
     public function validate()
@@ -108,24 +100,6 @@ class NotifyPayCodeRefundResultRequest extends Model
         $res = [];
         if (null !== $this->corpId) {
             $res['corpId'] = $this->corpId;
-        }
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
-        }
-        if (null !== $this->tradeNo) {
-            $res['tradeNo'] = $this->tradeNo;
-        }
-        if (null !== $this->refundOrderNo) {
-            $res['refundOrderNo'] = $this->refundOrderNo;
-        }
-        if (null !== $this->remark) {
-            $res['remark'] = $this->remark;
-        }
-        if (null !== $this->refundAmount) {
-            $res['refundAmount'] = $this->refundAmount;
-        }
-        if (null !== $this->refundPromotionAmount) {
-            $res['refundPromotionAmount'] = $this->refundPromotionAmount;
         }
         if (null !== $this->gmtRefund) {
             $res['gmtRefund'] = $this->gmtRefund;
@@ -139,11 +113,26 @@ class NotifyPayCodeRefundResultRequest extends Model
                 }
             }
         }
-        if (null !== $this->dingIsvOrgId) {
-            $res['dingIsvOrgId'] = $this->dingIsvOrgId;
-        }
         if (null !== $this->payCode) {
             $res['payCode'] = $this->payCode;
+        }
+        if (null !== $this->refundAmount) {
+            $res['refundAmount'] = $this->refundAmount;
+        }
+        if (null !== $this->refundOrderNo) {
+            $res['refundOrderNo'] = $this->refundOrderNo;
+        }
+        if (null !== $this->refundPromotionAmount) {
+            $res['refundPromotionAmount'] = $this->refundPromotionAmount;
+        }
+        if (null !== $this->remark) {
+            $res['remark'] = $this->remark;
+        }
+        if (null !== $this->tradeNo) {
+            $res['tradeNo'] = $this->tradeNo;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -160,24 +149,6 @@ class NotifyPayCodeRefundResultRequest extends Model
         if (isset($map['corpId'])) {
             $model->corpId = $map['corpId'];
         }
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
-        }
-        if (isset($map['tradeNo'])) {
-            $model->tradeNo = $map['tradeNo'];
-        }
-        if (isset($map['refundOrderNo'])) {
-            $model->refundOrderNo = $map['refundOrderNo'];
-        }
-        if (isset($map['remark'])) {
-            $model->remark = $map['remark'];
-        }
-        if (isset($map['refundAmount'])) {
-            $model->refundAmount = $map['refundAmount'];
-        }
-        if (isset($map['refundPromotionAmount'])) {
-            $model->refundPromotionAmount = $map['refundPromotionAmount'];
-        }
         if (isset($map['gmtRefund'])) {
             $model->gmtRefund = $map['gmtRefund'];
         }
@@ -190,11 +161,26 @@ class NotifyPayCodeRefundResultRequest extends Model
                 }
             }
         }
-        if (isset($map['dingIsvOrgId'])) {
-            $model->dingIsvOrgId = $map['dingIsvOrgId'];
-        }
         if (isset($map['payCode'])) {
             $model->payCode = $map['payCode'];
+        }
+        if (isset($map['refundAmount'])) {
+            $model->refundAmount = $map['refundAmount'];
+        }
+        if (isset($map['refundOrderNo'])) {
+            $model->refundOrderNo = $map['refundOrderNo'];
+        }
+        if (isset($map['refundPromotionAmount'])) {
+            $model->refundPromotionAmount = $map['refundPromotionAmount'];
+        }
+        if (isset($map['remark'])) {
+            $model->remark = $map['remark'];
+        }
+        if (isset($map['tradeNo'])) {
+            $model->tradeNo = $map['tradeNo'];
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

@@ -23,18 +23,11 @@ class closingAccountModel extends Model
     public $closingHourMinutes;
 
     /**
-     * @description 封账范围-开始月
+     * @description 封账范围-结束日
      *
      * @var int
      */
-    public $startMonth;
-
-    /**
-     * @description 封账范围-开始日
-     *
-     * @var int
-     */
-    public $startDay;
+    public $endDay;
 
     /**
      * @description 封账范围-结束月
@@ -44,18 +37,25 @@ class closingAccountModel extends Model
     public $endMonth;
 
     /**
-     * @description 封账范围-结束日
+     * @description 封账范围-开始日
      *
      * @var int
      */
-    public $endDay;
+    public $startDay;
+
+    /**
+     * @description 封账范围-开始月
+     *
+     * @var int
+     */
+    public $startMonth;
     protected $_name = [
         'closingDay'         => 'closingDay',
         'closingHourMinutes' => 'closingHourMinutes',
-        'startMonth'         => 'startMonth',
-        'startDay'           => 'startDay',
-        'endMonth'           => 'endMonth',
         'endDay'             => 'endDay',
+        'endMonth'           => 'endMonth',
+        'startDay'           => 'startDay',
+        'startMonth'         => 'startMonth',
     ];
 
     public function validate()
@@ -71,17 +71,17 @@ class closingAccountModel extends Model
         if (null !== $this->closingHourMinutes) {
             $res['closingHourMinutes'] = $this->closingHourMinutes;
         }
-        if (null !== $this->startMonth) {
-            $res['startMonth'] = $this->startMonth;
-        }
-        if (null !== $this->startDay) {
-            $res['startDay'] = $this->startDay;
+        if (null !== $this->endDay) {
+            $res['endDay'] = $this->endDay;
         }
         if (null !== $this->endMonth) {
             $res['endMonth'] = $this->endMonth;
         }
-        if (null !== $this->endDay) {
-            $res['endDay'] = $this->endDay;
+        if (null !== $this->startDay) {
+            $res['startDay'] = $this->startDay;
+        }
+        if (null !== $this->startMonth) {
+            $res['startMonth'] = $this->startMonth;
         }
 
         return $res;
@@ -101,17 +101,17 @@ class closingAccountModel extends Model
         if (isset($map['closingHourMinutes'])) {
             $model->closingHourMinutes = $map['closingHourMinutes'];
         }
-        if (isset($map['startMonth'])) {
-            $model->startMonth = $map['startMonth'];
-        }
-        if (isset($map['startDay'])) {
-            $model->startDay = $map['startDay'];
+        if (isset($map['endDay'])) {
+            $model->endDay = $map['endDay'];
         }
         if (isset($map['endMonth'])) {
             $model->endMonth = $map['endMonth'];
         }
-        if (isset($map['endDay'])) {
-            $model->endDay = $map['endDay'];
+        if (isset($map['startDay'])) {
+            $model->startDay = $map['startDay'];
+        }
+        if (isset($map['startMonth'])) {
+            $model->startMonth = $map['startMonth'];
         }
 
         return $model;

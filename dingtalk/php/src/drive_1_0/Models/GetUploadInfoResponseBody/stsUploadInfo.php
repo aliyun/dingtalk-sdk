@@ -9,27 +9,6 @@ use AlibabaCloud\Tea\Model;
 class stsUploadInfo extends Model
 {
     /**
-     * @description bucket
-     *
-     * @var string
-     */
-    public $bucket;
-
-    /**
-     * @description endPoint
-     *
-     * @var string
-     */
-    public $endPoint;
-
-    /**
-     * @description 内网endPoint
-     *
-     * @var string
-     */
-    public $internalEndPoint;
-
-    /**
      * @description accessKeyId
      *
      * @var string
@@ -58,19 +37,40 @@ class stsUploadInfo extends Model
     public $accessTokenExpirationMillis;
 
     /**
+     * @description bucket
+     *
+     * @var string
+     */
+    public $bucket;
+
+    /**
+     * @description endPoint
+     *
+     * @var string
+     */
+    public $endPoint;
+
+    /**
+     * @description 内网endPoint
+     *
+     * @var string
+     */
+    public $internalEndPoint;
+
+    /**
      * @description mediaId
      *
      * @var string
      */
     public $mediaId;
     protected $_name = [
-        'bucket'                      => 'bucket',
-        'endPoint'                    => 'endPoint',
-        'internalEndPoint'            => 'internalEndPoint',
         'accessKeyId'                 => 'accessKeyId',
         'accessKeySecret'             => 'accessKeySecret',
         'accessToken'                 => 'accessToken',
         'accessTokenExpirationMillis' => 'accessTokenExpirationMillis',
+        'bucket'                      => 'bucket',
+        'endPoint'                    => 'endPoint',
+        'internalEndPoint'            => 'internalEndPoint',
         'mediaId'                     => 'mediaId',
     ];
 
@@ -81,15 +81,6 @@ class stsUploadInfo extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->bucket) {
-            $res['bucket'] = $this->bucket;
-        }
-        if (null !== $this->endPoint) {
-            $res['endPoint'] = $this->endPoint;
-        }
-        if (null !== $this->internalEndPoint) {
-            $res['internalEndPoint'] = $this->internalEndPoint;
-        }
         if (null !== $this->accessKeyId) {
             $res['accessKeyId'] = $this->accessKeyId;
         }
@@ -101,6 +92,15 @@ class stsUploadInfo extends Model
         }
         if (null !== $this->accessTokenExpirationMillis) {
             $res['accessTokenExpirationMillis'] = $this->accessTokenExpirationMillis;
+        }
+        if (null !== $this->bucket) {
+            $res['bucket'] = $this->bucket;
+        }
+        if (null !== $this->endPoint) {
+            $res['endPoint'] = $this->endPoint;
+        }
+        if (null !== $this->internalEndPoint) {
+            $res['internalEndPoint'] = $this->internalEndPoint;
         }
         if (null !== $this->mediaId) {
             $res['mediaId'] = $this->mediaId;
@@ -117,15 +117,6 @@ class stsUploadInfo extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['bucket'])) {
-            $model->bucket = $map['bucket'];
-        }
-        if (isset($map['endPoint'])) {
-            $model->endPoint = $map['endPoint'];
-        }
-        if (isset($map['internalEndPoint'])) {
-            $model->internalEndPoint = $map['internalEndPoint'];
-        }
         if (isset($map['accessKeyId'])) {
             $model->accessKeyId = $map['accessKeyId'];
         }
@@ -137,6 +128,15 @@ class stsUploadInfo extends Model
         }
         if (isset($map['accessTokenExpirationMillis'])) {
             $model->accessTokenExpirationMillis = $map['accessTokenExpirationMillis'];
+        }
+        if (isset($map['bucket'])) {
+            $model->bucket = $map['bucket'];
+        }
+        if (isset($map['endPoint'])) {
+            $model->endPoint = $map['endPoint'];
+        }
+        if (isset($map['internalEndPoint'])) {
+            $model->internalEndPoint = $map['internalEndPoint'];
         }
         if (isset($map['mediaId'])) {
             $model->mediaId = $map['mediaId'];

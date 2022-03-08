@@ -11,21 +11,21 @@ class GenerateCaldavAccountResponseBody extends Model
     /**
      * @var string
      */
+    public $password;
+
+    /**
+     * @var string
+     */
     public $serverAddress;
 
     /**
      * @var string
      */
     public $username;
-
-    /**
-     * @var string
-     */
-    public $password;
     protected $_name = [
+        'password'      => 'password',
         'serverAddress' => 'serverAddress',
         'username'      => 'username',
-        'password'      => 'password',
     ];
 
     public function validate()
@@ -35,14 +35,14 @@ class GenerateCaldavAccountResponseBody extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->password) {
+            $res['password'] = $this->password;
+        }
         if (null !== $this->serverAddress) {
             $res['serverAddress'] = $this->serverAddress;
         }
         if (null !== $this->username) {
             $res['username'] = $this->username;
-        }
-        if (null !== $this->password) {
-            $res['password'] = $this->password;
         }
 
         return $res;
@@ -56,14 +56,14 @@ class GenerateCaldavAccountResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['password'])) {
+            $model->password = $map['password'];
+        }
         if (isset($map['serverAddress'])) {
             $model->serverAddress = $map['serverAddress'];
         }
         if (isset($map['username'])) {
             $model->username = $map['username'];
-        }
-        if (isset($map['password'])) {
-            $model->password = $map['password'];
         }
 
         return $model;

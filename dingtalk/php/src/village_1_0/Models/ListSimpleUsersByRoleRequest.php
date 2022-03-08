@@ -16,18 +16,18 @@ class ListSimpleUsersByRoleRequest extends Model
     public $offset;
 
     /**
-     * @description 查询数量
-     *
-     * @var int
-     */
-    public $size;
-
-    /**
      * @description 角色ID
      *
      * @var int
      */
     public $roleId;
+
+    /**
+     * @description 查询数量
+     *
+     * @var int
+     */
+    public $size;
 
     /**
      * @description 下属组织的组织ID，比如下属镇、村的corpId
@@ -37,8 +37,8 @@ class ListSimpleUsersByRoleRequest extends Model
     public $subCorpId;
     protected $_name = [
         'offset'    => 'offset',
-        'size'      => 'size',
         'roleId'    => 'roleId',
+        'size'      => 'size',
         'subCorpId' => 'subCorpId',
     ];
 
@@ -52,11 +52,11 @@ class ListSimpleUsersByRoleRequest extends Model
         if (null !== $this->offset) {
             $res['offset'] = $this->offset;
         }
-        if (null !== $this->size) {
-            $res['size'] = $this->size;
-        }
         if (null !== $this->roleId) {
             $res['roleId'] = $this->roleId;
+        }
+        if (null !== $this->size) {
+            $res['size'] = $this->size;
         }
         if (null !== $this->subCorpId) {
             $res['subCorpId'] = $this->subCorpId;
@@ -76,11 +76,11 @@ class ListSimpleUsersByRoleRequest extends Model
         if (isset($map['offset'])) {
             $model->offset = $map['offset'];
         }
-        if (isset($map['size'])) {
-            $model->size = $map['size'];
-        }
         if (isset($map['roleId'])) {
             $model->roleId = $map['roleId'];
+        }
+        if (isset($map['size'])) {
+            $model->size = $map['size'];
         }
         if (isset($map['subCorpId'])) {
             $model->subCorpId = $map['subCorpId'];

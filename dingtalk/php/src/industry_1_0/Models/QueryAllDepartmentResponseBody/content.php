@@ -11,20 +11,6 @@ use AlibabaCloud\Tea\Model;
 class content extends Model
 {
     /**
-     * @description 科室ID
-     *
-     * @var int
-     */
-    public $id;
-
-    /**
-     * @description 科室名称
-     *
-     * @var string
-     */
-    public $name;
-
-    /**
      * @description 科室详情
      *
      * @var deptAndExt
@@ -37,11 +23,25 @@ class content extends Model
      * @var groupAndExtList[]
      */
     public $groupAndExtList;
+
+    /**
+     * @description 科室ID
+     *
+     * @var int
+     */
+    public $id;
+
+    /**
+     * @description 科室名称
+     *
+     * @var string
+     */
+    public $name;
     protected $_name = [
-        'id'              => 'id',
-        'name'            => 'name',
         'deptAndExt'      => 'deptAndExt',
         'groupAndExtList' => 'groupAndExtList',
+        'id'              => 'id',
+        'name'            => 'name',
     ];
 
     public function validate()
@@ -51,12 +51,6 @@ class content extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->id) {
-            $res['id'] = $this->id;
-        }
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
-        }
         if (null !== $this->deptAndExt) {
             $res['deptAndExt'] = null !== $this->deptAndExt ? $this->deptAndExt->toMap() : null;
         }
@@ -68,6 +62,12 @@ class content extends Model
                     $res['groupAndExtList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->id) {
+            $res['id'] = $this->id;
+        }
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
         }
 
         return $res;
@@ -81,12 +81,6 @@ class content extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['id'])) {
-            $model->id = $map['id'];
-        }
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
-        }
         if (isset($map['deptAndExt'])) {
             $model->deptAndExt = deptAndExt::fromMap($map['deptAndExt']);
         }
@@ -98,6 +92,12 @@ class content extends Model
                     $model->groupAndExtList[$n++] = null !== $item ? groupAndExtList::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['id'])) {
+            $model->id = $map['id'];
+        }
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
         }
 
         return $model;

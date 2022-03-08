@@ -9,32 +9,11 @@ use AlibabaCloud\Tea\Model;
 class SetMicroAppScopeRequest extends Model
 {
     /**
-     * @description 增加的可见用户
-     *
-     * @var string[]
-     */
-    public $addUserIds;
-
-    /**
-     * @description 删除的可见用户
-     *
-     * @var string[]
-     */
-    public $delUserIds;
-
-    /**
      * @description 增加的可见部门
      *
      * @var int[]
      */
     public $addDeptIds;
-
-    /**
-     * @description 删除的可见部门
-     *
-     * @var int[]
-     */
-    public $delDeptIds;
 
     /**
      * @description 增加的可见角色
@@ -44,11 +23,32 @@ class SetMicroAppScopeRequest extends Model
     public $addRoleIds;
 
     /**
+     * @description 增加的可见用户
+     *
+     * @var string[]
+     */
+    public $addUserIds;
+
+    /**
+     * @description 删除的可见部门
+     *
+     * @var int[]
+     */
+    public $delDeptIds;
+
+    /**
      * @description 删除的可见角色
      *
      * @var int[]
      */
     public $delRoleIds;
+
+    /**
+     * @description 删除的可见用户
+     *
+     * @var string[]
+     */
+    public $delUserIds;
 
     /**
      * @description 是否管理员可见
@@ -57,12 +57,12 @@ class SetMicroAppScopeRequest extends Model
      */
     public $onlyAdminVisible;
     protected $_name = [
-        'addUserIds'       => 'addUserIds',
-        'delUserIds'       => 'delUserIds',
         'addDeptIds'       => 'addDeptIds',
-        'delDeptIds'       => 'delDeptIds',
         'addRoleIds'       => 'addRoleIds',
+        'addUserIds'       => 'addUserIds',
+        'delDeptIds'       => 'delDeptIds',
         'delRoleIds'       => 'delRoleIds',
+        'delUserIds'       => 'delUserIds',
         'onlyAdminVisible' => 'onlyAdminVisible',
     ];
 
@@ -73,23 +73,23 @@ class SetMicroAppScopeRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->addUserIds) {
-            $res['addUserIds'] = $this->addUserIds;
-        }
-        if (null !== $this->delUserIds) {
-            $res['delUserIds'] = $this->delUserIds;
-        }
         if (null !== $this->addDeptIds) {
             $res['addDeptIds'] = $this->addDeptIds;
-        }
-        if (null !== $this->delDeptIds) {
-            $res['delDeptIds'] = $this->delDeptIds;
         }
         if (null !== $this->addRoleIds) {
             $res['addRoleIds'] = $this->addRoleIds;
         }
+        if (null !== $this->addUserIds) {
+            $res['addUserIds'] = $this->addUserIds;
+        }
+        if (null !== $this->delDeptIds) {
+            $res['delDeptIds'] = $this->delDeptIds;
+        }
         if (null !== $this->delRoleIds) {
             $res['delRoleIds'] = $this->delRoleIds;
+        }
+        if (null !== $this->delUserIds) {
+            $res['delUserIds'] = $this->delUserIds;
         }
         if (null !== $this->onlyAdminVisible) {
             $res['onlyAdminVisible'] = $this->onlyAdminVisible;
@@ -106,24 +106,9 @@ class SetMicroAppScopeRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['addUserIds'])) {
-            if (!empty($map['addUserIds'])) {
-                $model->addUserIds = $map['addUserIds'];
-            }
-        }
-        if (isset($map['delUserIds'])) {
-            if (!empty($map['delUserIds'])) {
-                $model->delUserIds = $map['delUserIds'];
-            }
-        }
         if (isset($map['addDeptIds'])) {
             if (!empty($map['addDeptIds'])) {
                 $model->addDeptIds = $map['addDeptIds'];
-            }
-        }
-        if (isset($map['delDeptIds'])) {
-            if (!empty($map['delDeptIds'])) {
-                $model->delDeptIds = $map['delDeptIds'];
             }
         }
         if (isset($map['addRoleIds'])) {
@@ -131,9 +116,24 @@ class SetMicroAppScopeRequest extends Model
                 $model->addRoleIds = $map['addRoleIds'];
             }
         }
+        if (isset($map['addUserIds'])) {
+            if (!empty($map['addUserIds'])) {
+                $model->addUserIds = $map['addUserIds'];
+            }
+        }
+        if (isset($map['delDeptIds'])) {
+            if (!empty($map['delDeptIds'])) {
+                $model->delDeptIds = $map['delDeptIds'];
+            }
+        }
         if (isset($map['delRoleIds'])) {
             if (!empty($map['delRoleIds'])) {
                 $model->delRoleIds = $map['delRoleIds'];
+            }
+        }
+        if (isset($map['delUserIds'])) {
+            if (!empty($map['delUserIds'])) {
+                $model->delUserIds = $map['delUserIds'];
             }
         }
         if (isset($map['onlyAdminVisible'])) {

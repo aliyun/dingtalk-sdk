@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class AddFileResponseBody extends Model
 {
     /**
-     * @description 空间标识
-     *
-     * @var int
-     */
-    public $spaceId;
-
-    /**
      * @description 文件标识
      *
      * @var string
@@ -28,10 +21,17 @@ class AddFileResponseBody extends Model
      * @var string
      */
     public $fileName;
+
+    /**
+     * @description 空间标识
+     *
+     * @var int
+     */
+    public $spaceId;
     protected $_name = [
-        'spaceId'  => 'spaceId',
         'fileId'   => 'fileId',
         'fileName' => 'fileName',
+        'spaceId'  => 'spaceId',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class AddFileResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->spaceId) {
-            $res['spaceId'] = $this->spaceId;
-        }
         if (null !== $this->fileId) {
             $res['fileId'] = $this->fileId;
         }
         if (null !== $this->fileName) {
             $res['fileName'] = $this->fileName;
+        }
+        if (null !== $this->spaceId) {
+            $res['spaceId'] = $this->spaceId;
         }
 
         return $res;
@@ -62,14 +62,14 @@ class AddFileResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['spaceId'])) {
-            $model->spaceId = $map['spaceId'];
-        }
         if (isset($map['fileId'])) {
             $model->fileId = $map['fileId'];
         }
         if (isset($map['fileName'])) {
             $model->fileName = $map['fileName'];
+        }
+        if (isset($map['spaceId'])) {
+            $model->spaceId = $map['spaceId'];
         }
 
         return $model;

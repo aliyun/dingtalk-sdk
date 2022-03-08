@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class roleList extends Model
 {
     /**
+     * @description 角色组名称
+     *
+     * @var string
+     */
+    public $groupName;
+
+    /**
      * @description 角色id
      *
      * @var int
@@ -21,17 +28,10 @@ class roleList extends Model
      * @var string
      */
     public $roleName;
-
-    /**
-     * @description 角色组名称
-     *
-     * @var string
-     */
-    public $groupName;
     protected $_name = [
+        'groupName' => 'groupName',
         'roleId'    => 'roleId',
         'roleName'  => 'roleName',
-        'groupName' => 'groupName',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class roleList extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->groupName) {
+            $res['groupName'] = $this->groupName;
+        }
         if (null !== $this->roleId) {
             $res['roleId'] = $this->roleId;
         }
         if (null !== $this->roleName) {
             $res['roleName'] = $this->roleName;
-        }
-        if (null !== $this->groupName) {
-            $res['groupName'] = $this->groupName;
         }
 
         return $res;
@@ -62,14 +62,14 @@ class roleList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['groupName'])) {
+            $model->groupName = $map['groupName'];
+        }
         if (isset($map['roleId'])) {
             $model->roleId = $map['roleId'];
         }
         if (isset($map['roleName'])) {
             $model->roleName = $map['roleName'];
-        }
-        if (isset($map['groupName'])) {
-            $model->groupName = $map['groupName'];
         }
 
         return $model;

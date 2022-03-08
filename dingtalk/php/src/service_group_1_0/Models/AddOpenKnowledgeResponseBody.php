@@ -10,21 +10,21 @@ use AlibabaCloud\Tea\Model;
 class AddOpenKnowledgeResponseBody extends Model
 {
     /**
-     * @description 请求是否成功
-     *
-     * @var bool
-     */
-    public $success;
-
-    /**
      * @description 返回结果
      *
      * @var result
      */
     public $result;
+
+    /**
+     * @description 请求是否成功
+     *
+     * @var bool
+     */
+    public $success;
     protected $_name = [
-        'success' => 'success',
         'result'  => 'result',
+        'success' => 'success',
     ];
 
     public function validate()
@@ -34,11 +34,11 @@ class AddOpenKnowledgeResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->success) {
-            $res['success'] = $this->success;
-        }
         if (null !== $this->result) {
             $res['result'] = null !== $this->result ? $this->result->toMap() : null;
+        }
+        if (null !== $this->success) {
+            $res['success'] = $this->success;
         }
 
         return $res;
@@ -52,11 +52,11 @@ class AddOpenKnowledgeResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['success'])) {
-            $model->success = $map['success'];
-        }
         if (isset($map['result'])) {
             $model->result = result::fromMap($map['result']);
+        }
+        if (isset($map['success'])) {
+            $model->success = $map['success'];
         }
 
         return $model;

@@ -10,19 +10,19 @@ use AlibabaCloud\Tea\Model;
 class GetOpenCoursesResponseBody extends Model
 {
     /**
+     * @var courseList[]
+     */
+    public $courseList;
+
+    /**
      * @description 总记录数
      *
      * @var int
      */
     public $totalCount;
-
-    /**
-     * @var courseList[]
-     */
-    public $courseList;
     protected $_name = [
-        'totalCount' => 'totalCount',
         'courseList' => 'courseList',
+        'totalCount' => 'totalCount',
     ];
 
     public function validate()
@@ -32,9 +32,6 @@ class GetOpenCoursesResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->totalCount) {
-            $res['totalCount'] = $this->totalCount;
-        }
         if (null !== $this->courseList) {
             $res['courseList'] = [];
             if (null !== $this->courseList && \is_array($this->courseList)) {
@@ -43,6 +40,9 @@ class GetOpenCoursesResponseBody extends Model
                     $res['courseList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->totalCount) {
+            $res['totalCount'] = $this->totalCount;
         }
 
         return $res;
@@ -56,9 +56,6 @@ class GetOpenCoursesResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['totalCount'])) {
-            $model->totalCount = $map['totalCount'];
-        }
         if (isset($map['courseList'])) {
             if (!empty($map['courseList'])) {
                 $model->courseList = [];
@@ -67,6 +64,9 @@ class GetOpenCoursesResponseBody extends Model
                     $model->courseList[$n++] = null !== $item ? courseList::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['totalCount'])) {
+            $model->totalCount = $map['totalCount'];
         }
 
         return $model;

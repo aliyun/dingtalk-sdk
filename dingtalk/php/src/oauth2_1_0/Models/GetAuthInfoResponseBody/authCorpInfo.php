@@ -9,34 +9,6 @@ use AlibabaCloud\Tea\Model;
 class authCorpInfo extends Model
 {
     /**
-     * @description 邀请码，只有自己邀请的企业才会返回邀请码，可用该邀请码统计不同渠道的拉新，否则值为空字符串。
-     *
-     * @var string
-     */
-    public $inviteCode;
-
-    /**
-     * @description 企业所属行业。
-     *
-     * @var string
-     */
-    public $industry;
-
-    /**
-     * @description 授权方企业名称。
-     *
-     * @var string
-     */
-    public $corpName;
-
-    /**
-     * @description 序列号。
-     *
-     * @var string
-     */
-    public $licenseCode;
-
-    /**
      * @description 渠道码。
      *
      * @var string
@@ -58,6 +30,34 @@ class authCorpInfo extends Model
     public $authLevel;
 
     /**
+     * @description 企业logo。
+     *
+     * @var string
+     */
+    public $corpLogoUrl;
+
+    /**
+     * @description 授权方企业名称。
+     *
+     * @var string
+     */
+    public $corpName;
+
+    /**
+     * @description 企业所属行业。
+     *
+     * @var string
+     */
+    public $industry;
+
+    /**
+     * @description 邀请码，只有自己邀请的企业才会返回邀请码，可用该邀请码统计不同渠道的拉新，否则值为空字符串。
+     *
+     * @var string
+     */
+    public $inviteCode;
+
+    /**
      * @description 企业邀请链接。
      *
      * @var string
@@ -65,21 +65,21 @@ class authCorpInfo extends Model
     public $inviteUrl;
 
     /**
-     * @description 企业logo。
+     * @description 序列号。
      *
      * @var string
      */
-    public $corpLogoUrl;
+    public $licenseCode;
     protected $_name = [
-        'inviteCode'      => 'inviteCode',
-        'industry'        => 'industry',
-        'corpName'        => 'corpName',
-        'licenseCode'     => 'licenseCode',
         'authChannel'     => 'authChannel',
         'authChannelType' => 'authChannelType',
         'authLevel'       => 'authLevel',
-        'inviteUrl'       => 'inviteUrl',
         'corpLogoUrl'     => 'corpLogoUrl',
+        'corpName'        => 'corpName',
+        'industry'        => 'industry',
+        'inviteCode'      => 'inviteCode',
+        'inviteUrl'       => 'inviteUrl',
+        'licenseCode'     => 'licenseCode',
     ];
 
     public function validate()
@@ -89,18 +89,6 @@ class authCorpInfo extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->inviteCode) {
-            $res['inviteCode'] = $this->inviteCode;
-        }
-        if (null !== $this->industry) {
-            $res['industry'] = $this->industry;
-        }
-        if (null !== $this->corpName) {
-            $res['corpName'] = $this->corpName;
-        }
-        if (null !== $this->licenseCode) {
-            $res['licenseCode'] = $this->licenseCode;
-        }
         if (null !== $this->authChannel) {
             $res['authChannel'] = $this->authChannel;
         }
@@ -110,11 +98,23 @@ class authCorpInfo extends Model
         if (null !== $this->authLevel) {
             $res['authLevel'] = $this->authLevel;
         }
+        if (null !== $this->corpLogoUrl) {
+            $res['corpLogoUrl'] = $this->corpLogoUrl;
+        }
+        if (null !== $this->corpName) {
+            $res['corpName'] = $this->corpName;
+        }
+        if (null !== $this->industry) {
+            $res['industry'] = $this->industry;
+        }
+        if (null !== $this->inviteCode) {
+            $res['inviteCode'] = $this->inviteCode;
+        }
         if (null !== $this->inviteUrl) {
             $res['inviteUrl'] = $this->inviteUrl;
         }
-        if (null !== $this->corpLogoUrl) {
-            $res['corpLogoUrl'] = $this->corpLogoUrl;
+        if (null !== $this->licenseCode) {
+            $res['licenseCode'] = $this->licenseCode;
         }
 
         return $res;
@@ -128,18 +128,6 @@ class authCorpInfo extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['inviteCode'])) {
-            $model->inviteCode = $map['inviteCode'];
-        }
-        if (isset($map['industry'])) {
-            $model->industry = $map['industry'];
-        }
-        if (isset($map['corpName'])) {
-            $model->corpName = $map['corpName'];
-        }
-        if (isset($map['licenseCode'])) {
-            $model->licenseCode = $map['licenseCode'];
-        }
         if (isset($map['authChannel'])) {
             $model->authChannel = $map['authChannel'];
         }
@@ -149,11 +137,23 @@ class authCorpInfo extends Model
         if (isset($map['authLevel'])) {
             $model->authLevel = $map['authLevel'];
         }
+        if (isset($map['corpLogoUrl'])) {
+            $model->corpLogoUrl = $map['corpLogoUrl'];
+        }
+        if (isset($map['corpName'])) {
+            $model->corpName = $map['corpName'];
+        }
+        if (isset($map['industry'])) {
+            $model->industry = $map['industry'];
+        }
+        if (isset($map['inviteCode'])) {
+            $model->inviteCode = $map['inviteCode'];
+        }
         if (isset($map['inviteUrl'])) {
             $model->inviteUrl = $map['inviteUrl'];
         }
-        if (isset($map['corpLogoUrl'])) {
-            $model->corpLogoUrl = $map['corpLogoUrl'];
+        if (isset($map['licenseCode'])) {
+            $model->licenseCode = $map['licenseCode'];
         }
 
         return $model;

@@ -11,6 +11,13 @@ use AlibabaCloud\Tea\Model;
 class items extends Model
 {
     /**
+     * @description 子字段列表
+     *
+     * @var children[]
+     */
+    public $children;
+
+    /**
      * @description 字段类型
      *
      * @var string
@@ -23,17 +30,10 @@ class items extends Model
      * @var props
      */
     public $props;
-
-    /**
-     * @description 子字段列表
-     *
-     * @var children[]
-     */
-    public $children;
     protected $_name = [
+        'children'      => 'children',
         'componentName' => 'componentName',
         'props'         => 'props',
-        'children'      => 'children',
     ];
 
     public function validate()
@@ -43,12 +43,6 @@ class items extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->componentName) {
-            $res['componentName'] = $this->componentName;
-        }
-        if (null !== $this->props) {
-            $res['props'] = null !== $this->props ? $this->props->toMap() : null;
-        }
         if (null !== $this->children) {
             $res['children'] = [];
             if (null !== $this->children && \is_array($this->children)) {
@@ -57,6 +51,12 @@ class items extends Model
                     $res['children'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->componentName) {
+            $res['componentName'] = $this->componentName;
+        }
+        if (null !== $this->props) {
+            $res['props'] = null !== $this->props ? $this->props->toMap() : null;
         }
 
         return $res;
@@ -70,12 +70,6 @@ class items extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['componentName'])) {
-            $model->componentName = $map['componentName'];
-        }
-        if (isset($map['props'])) {
-            $model->props = props::fromMap($map['props']);
-        }
         if (isset($map['children'])) {
             if (!empty($map['children'])) {
                 $model->children = [];
@@ -84,6 +78,12 @@ class items extends Model
                     $model->children[$n++] = null !== $item ? children::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['componentName'])) {
+            $model->componentName = $map['componentName'];
+        }
+        if (isset($map['props'])) {
+            $model->props = props::fromMap($map['props']);
         }
 
         return $model;

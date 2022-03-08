@@ -11,22 +11,12 @@ class CreateGroupSetRequest extends Model
     /**
      * @var string
      */
-    public $name;
-
-    /**
-     * @var string
-     */
-    public $ownerUserId;
-
-    /**
-     * @var string
-     */
     public $creatorUserId;
 
     /**
      * @var string
      */
-    public $templateId;
+    public $managerUserIds;
 
     /**
      * @var int
@@ -36,7 +26,7 @@ class CreateGroupSetRequest extends Model
     /**
      * @var string
      */
-    public $managerUserIds;
+    public $name;
 
     /**
      * @var string
@@ -51,17 +41,27 @@ class CreateGroupSetRequest extends Model
     /**
      * @var string
      */
+    public $ownerUserId;
+
+    /**
+     * @var string
+     */
     public $relationType;
+
+    /**
+     * @var string
+     */
+    public $templateId;
     protected $_name = [
-        'name'           => 'name',
-        'ownerUserId'    => 'ownerUserId',
         'creatorUserId'  => 'creatorUserId',
-        'templateId'     => 'templateId',
-        'memberQuota'    => 'memberQuota',
         'managerUserIds' => 'managerUserIds',
+        'memberQuota'    => 'memberQuota',
+        'name'           => 'name',
         'notice'         => 'notice',
         'noticeToped'    => 'noticeToped',
+        'ownerUserId'    => 'ownerUserId',
         'relationType'   => 'relationType',
+        'templateId'     => 'templateId',
     ];
 
     public function validate()
@@ -71,23 +71,17 @@ class CreateGroupSetRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
-        }
-        if (null !== $this->ownerUserId) {
-            $res['ownerUserId'] = $this->ownerUserId;
-        }
         if (null !== $this->creatorUserId) {
             $res['creatorUserId'] = $this->creatorUserId;
         }
-        if (null !== $this->templateId) {
-            $res['templateId'] = $this->templateId;
+        if (null !== $this->managerUserIds) {
+            $res['managerUserIds'] = $this->managerUserIds;
         }
         if (null !== $this->memberQuota) {
             $res['memberQuota'] = $this->memberQuota;
         }
-        if (null !== $this->managerUserIds) {
-            $res['managerUserIds'] = $this->managerUserIds;
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
         }
         if (null !== $this->notice) {
             $res['notice'] = $this->notice;
@@ -95,8 +89,14 @@ class CreateGroupSetRequest extends Model
         if (null !== $this->noticeToped) {
             $res['noticeToped'] = $this->noticeToped;
         }
+        if (null !== $this->ownerUserId) {
+            $res['ownerUserId'] = $this->ownerUserId;
+        }
         if (null !== $this->relationType) {
             $res['relationType'] = $this->relationType;
+        }
+        if (null !== $this->templateId) {
+            $res['templateId'] = $this->templateId;
         }
 
         return $res;
@@ -110,23 +110,17 @@ class CreateGroupSetRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
-        }
-        if (isset($map['ownerUserId'])) {
-            $model->ownerUserId = $map['ownerUserId'];
-        }
         if (isset($map['creatorUserId'])) {
             $model->creatorUserId = $map['creatorUserId'];
         }
-        if (isset($map['templateId'])) {
-            $model->templateId = $map['templateId'];
+        if (isset($map['managerUserIds'])) {
+            $model->managerUserIds = $map['managerUserIds'];
         }
         if (isset($map['memberQuota'])) {
             $model->memberQuota = $map['memberQuota'];
         }
-        if (isset($map['managerUserIds'])) {
-            $model->managerUserIds = $map['managerUserIds'];
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
         }
         if (isset($map['notice'])) {
             $model->notice = $map['notice'];
@@ -134,8 +128,14 @@ class CreateGroupSetRequest extends Model
         if (isset($map['noticeToped'])) {
             $model->noticeToped = $map['noticeToped'];
         }
+        if (isset($map['ownerUserId'])) {
+            $model->ownerUserId = $map['ownerUserId'];
+        }
         if (isset($map['relationType'])) {
             $model->relationType = $map['relationType'];
+        }
+        if (isset($map['templateId'])) {
+            $model->templateId = $map['templateId'];
         }
 
         return $model;

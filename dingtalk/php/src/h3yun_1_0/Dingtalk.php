@@ -81,45 +81,54 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param LoadBizFieldsRequest $request
+     * @param BatchInsertBizObjectRequest $request
      *
-     * @return LoadBizFieldsResponse
+     * @return BatchInsertBizObjectResponse
      */
-    public function loadBizFields($request)
+    public function batchInsertBizObject($request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new LoadBizFieldsHeaders([]);
+        $headers = new BatchInsertBizObjectHeaders([]);
 
-        return $this->loadBizFieldsWithOptions($request, $headers, $runtime);
+        return $this->batchInsertBizObjectWithOptions($request, $headers, $runtime);
     }
 
     /**
-     * @param LoadBizFieldsRequest $request
-     * @param LoadBizFieldsHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @param BatchInsertBizObjectRequest $request
+     * @param BatchInsertBizObjectHeaders $headers
+     * @param RuntimeOptions              $runtime
      *
-     * @return LoadBizFieldsResponse
+     * @return BatchInsertBizObjectResponse
      */
-    public function loadBizFieldsWithOptions($request, $headers, $runtime)
+    public function batchInsertBizObjectWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $body = [];
+        if (!Utils::isUnset($request->bizObjectJsonArray)) {
+            @$body['bizObjectJsonArray'] = $request->bizObjectJsonArray;
+        }
+        if (!Utils::isUnset($request->isDraft)) {
+            @$body['isDraft'] = $request->isDraft;
+        }
+        if (!Utils::isUnset($request->opUserId)) {
+            @$body['opUserId'] = $request->opUserId;
+        }
         if (!Utils::isUnset($request->schemaCode)) {
-            @$query['schemaCode'] = $request->schemaCode;
+            @$body['schemaCode'] = $request->schemaCode;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return LoadBizFieldsResponse::fromMap($this->doROARequest('LoadBizFields', 'h3yun_1.0', 'HTTP', 'GET', 'AK', '/v1.0/h3yun/forms/loadBizFields', 'json', $req, $runtime));
+        return BatchInsertBizObjectResponse::fromMap($this->doROARequest('BatchInsertBizObject', 'h3yun_1.0', 'HTTP', 'POST', 'AK', '/v1.0/h3yun/forms/instances/batch', 'json', $req, $runtime));
     }
 
     /**
@@ -154,7 +163,7 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -162,6 +171,240 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CancelProcessInstanceResponse::fromMap($this->doROARequest('CancelProcessInstance', 'h3yun_1.0', 'HTTP', 'POST', 'AK', '/v1.0/h3yun/processes/instances/cancel', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CreateBizObjectRequest $request
+     *
+     * @return CreateBizObjectResponse
+     */
+    public function createBizObject($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateBizObjectHeaders([]);
+
+        return $this->createBizObjectWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateBizObjectRequest $request
+     * @param CreateBizObjectHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return CreateBizObjectResponse
+     */
+    public function createBizObjectWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizObjectJson)) {
+            @$body['bizObjectJson'] = $request->bizObjectJson;
+        }
+        if (!Utils::isUnset($request->isDraft)) {
+            @$body['isDraft'] = $request->isDraft;
+        }
+        if (!Utils::isUnset($request->opUserId)) {
+            @$body['opUserId'] = $request->opUserId;
+        }
+        if (!Utils::isUnset($request->schemaCode)) {
+            @$body['schemaCode'] = $request->schemaCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateBizObjectResponse::fromMap($this->doROARequest('CreateBizObject', 'h3yun_1.0', 'HTTP', 'POST', 'AK', '/v1.0/h3yun/forms/instances', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CreateProcessesInstanceRequest $request
+     *
+     * @return CreateProcessesInstanceResponse
+     */
+    public function createProcessesInstance($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateProcessesInstanceHeaders([]);
+
+        return $this->createProcessesInstanceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateProcessesInstanceRequest $request
+     * @param CreateProcessesInstanceHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return CreateProcessesInstanceResponse
+     */
+    public function createProcessesInstanceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizObjectId)) {
+            @$body['bizObjectId'] = $request->bizObjectId;
+        }
+        if (!Utils::isUnset($request->opUserId)) {
+            @$body['opUserId'] = $request->opUserId;
+        }
+        if (!Utils::isUnset($request->schemaCode)) {
+            @$body['schemaCode'] = $request->schemaCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateProcessesInstanceResponse::fromMap($this->doROARequest('CreateProcessesInstance', 'h3yun_1.0', 'HTTP', 'POST', 'AK', '/v1.0/h3yun/processes/instances', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param DeleteBizObjectRequest $request
+     *
+     * @return DeleteBizObjectResponse
+     */
+    public function deleteBizObject($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteBizObjectHeaders([]);
+
+        return $this->deleteBizObjectWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param DeleteBizObjectRequest $request
+     * @param DeleteBizObjectHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return DeleteBizObjectResponse
+     */
+    public function deleteBizObjectWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->bizObjectId)) {
+            @$query['bizObjectId'] = $request->bizObjectId;
+        }
+        if (!Utils::isUnset($request->schemaCode)) {
+            @$query['schemaCode'] = $request->schemaCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return DeleteBizObjectResponse::fromMap($this->doROARequest('DeleteBizObject', 'h3yun_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/h3yun/forms/instances', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param DeleteProcessesInstanceRequest $request
+     *
+     * @return DeleteProcessesInstanceResponse
+     */
+    public function deleteProcessesInstance($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteProcessesInstanceHeaders([]);
+
+        return $this->deleteProcessesInstanceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param DeleteProcessesInstanceRequest $request
+     * @param DeleteProcessesInstanceHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return DeleteProcessesInstanceResponse
+     */
+    public function deleteProcessesInstanceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->isAutoUpdateBizObject)) {
+            @$query['isAutoUpdateBizObject'] = $request->isAutoUpdateBizObject;
+        }
+        if (!Utils::isUnset($request->processInstanceId)) {
+            @$query['processInstanceId'] = $request->processInstanceId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return DeleteProcessesInstanceResponse::fromMap($this->doROARequest('DeleteProcessesInstance', 'h3yun_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/h3yun/processes/instances', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetAppsRequest $request
+     *
+     * @return GetAppsResponse
+     */
+    public function getApps($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetAppsHeaders([]);
+
+        return $this->getAppsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetAppsRequest $request
+     * @param GetAppsHeaders $headers
+     * @param RuntimeOptions $runtime
+     *
+     * @return GetAppsResponse
+     */
+    public function getAppsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->queryType)) {
+            @$body['queryType'] = $request->queryType;
+        }
+        if (!Utils::isUnset($request->values)) {
+            @$body['values'] = $request->values;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GetAppsResponse::fromMap($this->doROARequest('GetApps', 'h3yun_1.0', 'HTTP', 'POST', 'AK', '/v1.0/h3yun/apps/search', 'json', $req, $runtime));
     }
 
     /**
@@ -196,7 +439,7 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -204,6 +447,123 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetAttachmentTemporaryUrlResponse::fromMap($this->doROARequest('GetAttachmentTemporaryUrl', 'h3yun_1.0', 'HTTP', 'GET', 'AK', '/v1.0/h3yun/attachments/temporaryUrls', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetOrganizationsRequest $request
+     *
+     * @return GetOrganizationsResponse
+     */
+    public function getOrganizations($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetOrganizationsHeaders([]);
+
+        return $this->getOrganizationsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetOrganizationsRequest $request
+     * @param GetOrganizationsHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return GetOrganizationsResponse
+     */
+    public function getOrganizationsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->departmentId)) {
+            @$query['departmentId'] = $request->departmentId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetOrganizationsResponse::fromMap($this->doROARequest('GetOrganizations', 'h3yun_1.0', 'HTTP', 'GET', 'AK', '/v1.0/h3yun/departments', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetRoleUsersRequest $request
+     *
+     * @return GetRoleUsersResponse
+     */
+    public function getRoleUsers($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetRoleUsersHeaders([]);
+
+        return $this->getRoleUsersWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetRoleUsersRequest $request
+     * @param GetRoleUsersHeaders $headers
+     * @param RuntimeOptions      $runtime
+     *
+     * @return GetRoleUsersResponse
+     */
+    public function getRoleUsersWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->roleId)) {
+            @$query['roleId'] = $request->roleId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetRoleUsersResponse::fromMap($this->doROARequest('GetRoleUsers', 'h3yun_1.0', 'HTTP', 'GET', 'AK', '/v1.0/h3yun/roles/roleUsers', 'json', $req, $runtime));
+    }
+
+    /**
+     * @return GetRolesResponse
+     */
+    public function getRoles()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetRolesHeaders([]);
+
+        return $this->getRolesWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param GetRolesHeaders $headers
+     * @param RuntimeOptions  $runtime
+     *
+     * @return GetRolesResponse
+     */
+    public function getRolesWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return GetRolesResponse::fromMap($this->doROARequest('GetRoles', 'h3yun_1.0', 'HTTP', 'GET', 'AK', '/v1.0/h3yun/roles', 'json', $req, $runtime));
     }
 
     /**
@@ -230,9 +590,6 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->schemaCode)) {
-            @$query['schemaCode'] = $request->schemaCode;
-        }
         if (!Utils::isUnset($request->bizObjectId)) {
             @$query['bizObjectId'] = $request->bizObjectId;
         }
@@ -242,12 +599,15 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->isOverwrite)) {
             @$query['isOverwrite'] = $request->isOverwrite;
         }
+        if (!Utils::isUnset($request->schemaCode)) {
+            @$query['schemaCode'] = $request->schemaCode;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -292,7 +652,7 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -303,45 +663,45 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetRoleUsersRequest $request
+     * @param LoadBizFieldsRequest $request
      *
-     * @return GetRoleUsersResponse
+     * @return LoadBizFieldsResponse
      */
-    public function getRoleUsers($request)
+    public function loadBizFields($request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new GetRoleUsersHeaders([]);
+        $headers = new LoadBizFieldsHeaders([]);
 
-        return $this->getRoleUsersWithOptions($request, $headers, $runtime);
+        return $this->loadBizFieldsWithOptions($request, $headers, $runtime);
     }
 
     /**
-     * @param GetRoleUsersRequest $request
-     * @param GetRoleUsersHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @param LoadBizFieldsRequest $request
+     * @param LoadBizFieldsHeaders $headers
+     * @param RuntimeOptions       $runtime
      *
-     * @return GetRoleUsersResponse
+     * @return LoadBizFieldsResponse
      */
-    public function getRoleUsersWithOptions($request, $headers, $runtime)
+    public function loadBizFieldsWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->roleId)) {
-            @$query['roleId'] = $request->roleId;
+        if (!Utils::isUnset($request->schemaCode)) {
+            @$query['schemaCode'] = $request->schemaCode;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return GetRoleUsersResponse::fromMap($this->doROARequest('GetRoleUsers', 'h3yun_1.0', 'HTTP', 'GET', 'AK', '/v1.0/h3yun/roles/roleUsers', 'json', $req, $runtime));
+        return LoadBizFieldsResponse::fromMap($this->doROARequest('LoadBizFields', 'h3yun_1.0', 'HTTP', 'GET', 'AK', '/v1.0/h3yun/forms/loadBizFields', 'json', $req, $runtime));
     }
 
     /**
@@ -368,18 +728,18 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->schemaCode)) {
-            @$query['schemaCode'] = $request->schemaCode;
-        }
         if (!Utils::isUnset($request->bizObjectId)) {
             @$query['bizObjectId'] = $request->bizObjectId;
+        }
+        if (!Utils::isUnset($request->schemaCode)) {
+            @$query['schemaCode'] = $request->schemaCode;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -413,8 +773,8 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->schemaCode)) {
-            @$body['schemaCode'] = $request->schemaCode;
+        if (!Utils::isUnset($request->matcherJson)) {
+            @$body['matcherJson'] = $request->matcherJson;
         }
         if (!Utils::isUnset($request->pageNumber)) {
             @$body['pageNumber'] = $request->pageNumber;
@@ -425,18 +785,18 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->returnFields)) {
             @$body['returnFields'] = $request->returnFields;
         }
+        if (!Utils::isUnset($request->schemaCode)) {
+            @$body['schemaCode'] = $request->schemaCode;
+        }
         if (!Utils::isUnset($request->sortByFields)) {
             @$body['sortByFields'] = $request->sortByFields;
-        }
-        if (!Utils::isUnset($request->matcherJson)) {
-            @$body['matcherJson'] = $request->matcherJson;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -444,306 +804,6 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return LoadBizObjectsResponse::fromMap($this->doROARequest('LoadBizObjects', 'h3yun_1.0', 'HTTP', 'POST', 'AK', '/v1.0/h3yun/forms/instances/search', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param DeleteProcessesInstanceRequest $request
-     *
-     * @return DeleteProcessesInstanceResponse
-     */
-    public function deleteProcessesInstance($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new DeleteProcessesInstanceHeaders([]);
-
-        return $this->deleteProcessesInstanceWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param DeleteProcessesInstanceRequest $request
-     * @param DeleteProcessesInstanceHeaders $headers
-     * @param RuntimeOptions                 $runtime
-     *
-     * @return DeleteProcessesInstanceResponse
-     */
-    public function deleteProcessesInstanceWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->processInstanceId)) {
-            @$query['processInstanceId'] = $request->processInstanceId;
-        }
-        if (!Utils::isUnset($request->isAutoUpdateBizObject)) {
-            @$query['isAutoUpdateBizObject'] = $request->isAutoUpdateBizObject;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return DeleteProcessesInstanceResponse::fromMap($this->doROARequest('DeleteProcessesInstance', 'h3yun_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/h3yun/processes/instances', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryProcessesWorkItemsRequest $request
-     *
-     * @return QueryProcessesWorkItemsResponse
-     */
-    public function queryProcessesWorkItems($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryProcessesWorkItemsHeaders([]);
-
-        return $this->queryProcessesWorkItemsWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryProcessesWorkItemsRequest $request
-     * @param QueryProcessesWorkItemsHeaders $headers
-     * @param RuntimeOptions                 $runtime
-     *
-     * @return QueryProcessesWorkItemsResponse
-     */
-    public function queryProcessesWorkItemsWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->processInstanceId)) {
-            @$query['processInstanceId'] = $request->processInstanceId;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryProcessesWorkItemsResponse::fromMap($this->doROARequest('QueryProcessesWorkItems', 'h3yun_1.0', 'HTTP', 'GET', 'AK', '/v1.0/h3yun/processes/workItems', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param UpdateBizObjectRequest $request
-     *
-     * @return UpdateBizObjectResponse
-     */
-    public function updateBizObject($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new UpdateBizObjectHeaders([]);
-
-        return $this->updateBizObjectWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param UpdateBizObjectRequest $request
-     * @param UpdateBizObjectHeaders $headers
-     * @param RuntimeOptions         $runtime
-     *
-     * @return UpdateBizObjectResponse
-     */
-    public function updateBizObjectWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->schemaCode)) {
-            @$body['schemaCode'] = $request->schemaCode;
-        }
-        if (!Utils::isUnset($request->bizObjectId)) {
-            @$body['bizObjectId'] = $request->bizObjectId;
-        }
-        if (!Utils::isUnset($request->bizObjectJson)) {
-            @$body['bizObjectJson'] = $request->bizObjectJson;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return UpdateBizObjectResponse::fromMap($this->doROARequest('UpdateBizObject', 'h3yun_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/h3yun/forms/instances', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryProcessesInstanceRequest $request
-     *
-     * @return QueryProcessesInstanceResponse
-     */
-    public function queryProcessesInstance($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryProcessesInstanceHeaders([]);
-
-        return $this->queryProcessesInstanceWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryProcessesInstanceRequest $request
-     * @param QueryProcessesInstanceHeaders $headers
-     * @param RuntimeOptions                $runtime
-     *
-     * @return QueryProcessesInstanceResponse
-     */
-    public function queryProcessesInstanceWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->schemaCode)) {
-            @$query['schemaCode'] = $request->schemaCode;
-        }
-        if (!Utils::isUnset($request->bizObjectId)) {
-            @$query['bizObjectId'] = $request->bizObjectId;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryProcessesInstanceResponse::fromMap($this->doROARequest('QueryProcessesInstance', 'h3yun_1.0', 'HTTP', 'GET', 'AK', '/v1.0/h3yun/processes/instances', 'json', $req, $runtime));
-    }
-
-    /**
-     * @return GetRolesResponse
-     */
-    public function getRoles()
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new GetRolesHeaders([]);
-
-        return $this->getRolesWithOptions($headers, $runtime);
-    }
-
-    /**
-     * @param GetRolesHeaders $headers
-     * @param RuntimeOptions  $runtime
-     *
-     * @return GetRolesResponse
-     */
-    public function getRolesWithOptions($headers, $runtime)
-    {
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-        ]);
-
-        return GetRolesResponse::fromMap($this->doROARequest('GetRoles', 'h3yun_1.0', 'HTTP', 'GET', 'AK', '/v1.0/h3yun/roles', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param GetOrganizationsRequest $request
-     *
-     * @return GetOrganizationsResponse
-     */
-    public function getOrganizations($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new GetOrganizationsHeaders([]);
-
-        return $this->getOrganizationsWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param GetOrganizationsRequest $request
-     * @param GetOrganizationsHeaders $headers
-     * @param RuntimeOptions          $runtime
-     *
-     * @return GetOrganizationsResponse
-     */
-    public function getOrganizationsWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->departmentId)) {
-            @$query['departmentId'] = $request->departmentId;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return GetOrganizationsResponse::fromMap($this->doROARequest('GetOrganizations', 'h3yun_1.0', 'HTTP', 'GET', 'AK', '/v1.0/h3yun/departments', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param DeleteBizObjectRequest $request
-     *
-     * @return DeleteBizObjectResponse
-     */
-    public function deleteBizObject($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new DeleteBizObjectHeaders([]);
-
-        return $this->deleteBizObjectWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param DeleteBizObjectRequest $request
-     * @param DeleteBizObjectHeaders $headers
-     * @param RuntimeOptions         $runtime
-     *
-     * @return DeleteBizObjectResponse
-     */
-    public function deleteBizObjectWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->schemaCode)) {
-            @$query['schemaCode'] = $request->schemaCode;
-        }
-        if (!Utils::isUnset($request->bizObjectId)) {
-            @$query['bizObjectId'] = $request->bizObjectId;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return DeleteBizObjectResponse::fromMap($this->doROARequest('DeleteBizObject', 'h3yun_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/h3yun/forms/instances', 'json', $req, $runtime));
     }
 
     /**
@@ -778,7 +838,7 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -789,197 +849,137 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateBizObjectRequest $request
+     * @param QueryProcessesInstanceRequest $request
      *
-     * @return CreateBizObjectResponse
+     * @return QueryProcessesInstanceResponse
      */
-    public function createBizObject($request)
+    public function queryProcessesInstance($request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new CreateBizObjectHeaders([]);
+        $headers = new QueryProcessesInstanceHeaders([]);
 
-        return $this->createBizObjectWithOptions($request, $headers, $runtime);
+        return $this->queryProcessesInstanceWithOptions($request, $headers, $runtime);
     }
 
     /**
-     * @param CreateBizObjectRequest $request
-     * @param CreateBizObjectHeaders $headers
+     * @param QueryProcessesInstanceRequest $request
+     * @param QueryProcessesInstanceHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return QueryProcessesInstanceResponse
+     */
+    public function queryProcessesInstanceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->bizObjectId)) {
+            @$query['bizObjectId'] = $request->bizObjectId;
+        }
+        if (!Utils::isUnset($request->schemaCode)) {
+            @$query['schemaCode'] = $request->schemaCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryProcessesInstanceResponse::fromMap($this->doROARequest('QueryProcessesInstance', 'h3yun_1.0', 'HTTP', 'GET', 'AK', '/v1.0/h3yun/processes/instances', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryProcessesWorkItemsRequest $request
+     *
+     * @return QueryProcessesWorkItemsResponse
+     */
+    public function queryProcessesWorkItems($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryProcessesWorkItemsHeaders([]);
+
+        return $this->queryProcessesWorkItemsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryProcessesWorkItemsRequest $request
+     * @param QueryProcessesWorkItemsHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return QueryProcessesWorkItemsResponse
+     */
+    public function queryProcessesWorkItemsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->processInstanceId)) {
+            @$query['processInstanceId'] = $request->processInstanceId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryProcessesWorkItemsResponse::fromMap($this->doROARequest('QueryProcessesWorkItems', 'h3yun_1.0', 'HTTP', 'GET', 'AK', '/v1.0/h3yun/processes/workItems', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param UpdateBizObjectRequest $request
+     *
+     * @return UpdateBizObjectResponse
+     */
+    public function updateBizObject($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateBizObjectHeaders([]);
+
+        return $this->updateBizObjectWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateBizObjectRequest $request
+     * @param UpdateBizObjectHeaders $headers
      * @param RuntimeOptions         $runtime
      *
-     * @return CreateBizObjectResponse
+     * @return UpdateBizObjectResponse
      */
-    public function createBizObjectWithOptions($request, $headers, $runtime)
+    public function updateBizObjectWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->schemaCode)) {
-            @$body['schemaCode'] = $request->schemaCode;
-        }
-        if (!Utils::isUnset($request->opUserId)) {
-            @$body['opUserId'] = $request->opUserId;
+        if (!Utils::isUnset($request->bizObjectId)) {
+            @$body['bizObjectId'] = $request->bizObjectId;
         }
         if (!Utils::isUnset($request->bizObjectJson)) {
             @$body['bizObjectJson'] = $request->bizObjectJson;
         }
-        if (!Utils::isUnset($request->isDraft)) {
-            @$body['isDraft'] = $request->isDraft;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return CreateBizObjectResponse::fromMap($this->doROARequest('CreateBizObject', 'h3yun_1.0', 'HTTP', 'POST', 'AK', '/v1.0/h3yun/forms/instances', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param GetAppsRequest $request
-     *
-     * @return GetAppsResponse
-     */
-    public function getApps($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new GetAppsHeaders([]);
-
-        return $this->getAppsWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param GetAppsRequest $request
-     * @param GetAppsHeaders $headers
-     * @param RuntimeOptions $runtime
-     *
-     * @return GetAppsResponse
-     */
-    public function getAppsWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->queryType)) {
-            @$body['queryType'] = $request->queryType;
-        }
-        if (!Utils::isUnset($request->values)) {
-            @$body['values'] = $request->values;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return GetAppsResponse::fromMap($this->doROARequest('GetApps', 'h3yun_1.0', 'HTTP', 'POST', 'AK', '/v1.0/h3yun/apps/search', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param CreateProcessesInstanceRequest $request
-     *
-     * @return CreateProcessesInstanceResponse
-     */
-    public function createProcessesInstance($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new CreateProcessesInstanceHeaders([]);
-
-        return $this->createProcessesInstanceWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param CreateProcessesInstanceRequest $request
-     * @param CreateProcessesInstanceHeaders $headers
-     * @param RuntimeOptions                 $runtime
-     *
-     * @return CreateProcessesInstanceResponse
-     */
-    public function createProcessesInstanceWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
         if (!Utils::isUnset($request->schemaCode)) {
             @$body['schemaCode'] = $request->schemaCode;
         }
-        if (!Utils::isUnset($request->bizObjectId)) {
-            @$body['bizObjectId'] = $request->bizObjectId;
-        }
-        if (!Utils::isUnset($request->opUserId)) {
-            @$body['opUserId'] = $request->opUserId;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return CreateProcessesInstanceResponse::fromMap($this->doROARequest('CreateProcessesInstance', 'h3yun_1.0', 'HTTP', 'POST', 'AK', '/v1.0/h3yun/processes/instances', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param BatchInsertBizObjectRequest $request
-     *
-     * @return BatchInsertBizObjectResponse
-     */
-    public function batchInsertBizObject($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new BatchInsertBizObjectHeaders([]);
-
-        return $this->batchInsertBizObjectWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param BatchInsertBizObjectRequest $request
-     * @param BatchInsertBizObjectHeaders $headers
-     * @param RuntimeOptions              $runtime
-     *
-     * @return BatchInsertBizObjectResponse
-     */
-    public function batchInsertBizObjectWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->schemaCode)) {
-            @$body['schemaCode'] = $request->schemaCode;
-        }
-        if (!Utils::isUnset($request->opUserId)) {
-            @$body['opUserId'] = $request->opUserId;
-        }
-        if (!Utils::isUnset($request->bizObjectJsonArray)) {
-            @$body['bizObjectJsonArray'] = $request->bizObjectJsonArray;
-        }
-        if (!Utils::isUnset($request->isDraft)) {
-            @$body['isDraft'] = $request->isDraft;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return BatchInsertBizObjectResponse::fromMap($this->doROARequest('BatchInsertBizObject', 'h3yun_1.0', 'HTTP', 'POST', 'AK', '/v1.0/h3yun/forms/instances/batch', 'json', $req, $runtime));
+        return UpdateBizObjectResponse::fromMap($this->doROARequest('UpdateBizObject', 'h3yun_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/h3yun/forms/instances', 'json', $req, $runtime));
     }
 }

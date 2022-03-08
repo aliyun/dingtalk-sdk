@@ -9,32 +9,11 @@ use AlibabaCloud\Tea\Model;
 class payAccountVOList extends Model
 {
     /**
-     * @description 付款账号（脱敏）
+     * @description 账户分类
      *
      * @var string
      */
-    public $accountNo;
-
-    /**
-     * @description 账号名称
-     *
-     * @var string
-     */
-    public $accountName;
-
-    /**
-     * @description 账户类型
-     *
-     * @var string
-     */
-    public $accountType;
-
-    /**
-     * @description 账户备注
-     *
-     * @var string
-     */
-    public $accountRemark;
+    public $accountClass;
 
     /**
      * @description 账号唯一id
@@ -44,18 +23,39 @@ class payAccountVOList extends Model
     public $accountId;
 
     /**
-     * @description 账户分类
+     * @description 账号名称
      *
      * @var string
      */
-    public $accountClass;
+    public $accountName;
+
+    /**
+     * @description 付款账号（脱敏）
+     *
+     * @var string
+     */
+    public $accountNo;
+
+    /**
+     * @description 账户备注
+     *
+     * @var string
+     */
+    public $accountRemark;
+
+    /**
+     * @description 账户类型
+     *
+     * @var string
+     */
+    public $accountType;
     protected $_name = [
-        'accountNo'     => 'accountNo',
-        'accountName'   => 'accountName',
-        'accountType'   => 'accountType',
-        'accountRemark' => 'accountRemark',
-        'accountId'     => 'accountId',
         'accountClass'  => 'accountClass',
+        'accountId'     => 'accountId',
+        'accountName'   => 'accountName',
+        'accountNo'     => 'accountNo',
+        'accountRemark' => 'accountRemark',
+        'accountType'   => 'accountType',
     ];
 
     public function validate()
@@ -65,23 +65,23 @@ class payAccountVOList extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->accountNo) {
-            $res['accountNo'] = $this->accountNo;
-        }
-        if (null !== $this->accountName) {
-            $res['accountName'] = $this->accountName;
-        }
-        if (null !== $this->accountType) {
-            $res['accountType'] = $this->accountType;
-        }
-        if (null !== $this->accountRemark) {
-            $res['accountRemark'] = $this->accountRemark;
+        if (null !== $this->accountClass) {
+            $res['accountClass'] = $this->accountClass;
         }
         if (null !== $this->accountId) {
             $res['accountId'] = $this->accountId;
         }
-        if (null !== $this->accountClass) {
-            $res['accountClass'] = $this->accountClass;
+        if (null !== $this->accountName) {
+            $res['accountName'] = $this->accountName;
+        }
+        if (null !== $this->accountNo) {
+            $res['accountNo'] = $this->accountNo;
+        }
+        if (null !== $this->accountRemark) {
+            $res['accountRemark'] = $this->accountRemark;
+        }
+        if (null !== $this->accountType) {
+            $res['accountType'] = $this->accountType;
         }
 
         return $res;
@@ -95,23 +95,23 @@ class payAccountVOList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['accountNo'])) {
-            $model->accountNo = $map['accountNo'];
-        }
-        if (isset($map['accountName'])) {
-            $model->accountName = $map['accountName'];
-        }
-        if (isset($map['accountType'])) {
-            $model->accountType = $map['accountType'];
-        }
-        if (isset($map['accountRemark'])) {
-            $model->accountRemark = $map['accountRemark'];
+        if (isset($map['accountClass'])) {
+            $model->accountClass = $map['accountClass'];
         }
         if (isset($map['accountId'])) {
             $model->accountId = $map['accountId'];
         }
-        if (isset($map['accountClass'])) {
-            $model->accountClass = $map['accountClass'];
+        if (isset($map['accountName'])) {
+            $model->accountName = $map['accountName'];
+        }
+        if (isset($map['accountNo'])) {
+            $model->accountNo = $map['accountNo'];
+        }
+        if (isset($map['accountRemark'])) {
+            $model->accountRemark = $map['accountRemark'];
+        }
+        if (isset($map['accountType'])) {
+            $model->accountType = $map['accountType'];
         }
 
         return $model;

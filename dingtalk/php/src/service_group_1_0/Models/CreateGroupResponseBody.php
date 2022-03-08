@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class CreateGroupResponseBody extends Model
 {
     /**
-     * @description 开放群ID
-     *
-     * @var string
-     */
-    public $openConversationId;
-
-    /**
      * @description 入群url
      *
      * @var string
      */
     public $groupUrl;
+
+    /**
+     * @description 开放群ID
+     *
+     * @var string
+     */
+    public $openConversationId;
     protected $_name = [
-        'openConversationId' => 'openConversationId',
         'groupUrl'           => 'groupUrl',
+        'openConversationId' => 'openConversationId',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class CreateGroupResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->openConversationId) {
-            $res['openConversationId'] = $this->openConversationId;
-        }
         if (null !== $this->groupUrl) {
             $res['groupUrl'] = $this->groupUrl;
+        }
+        if (null !== $this->openConversationId) {
+            $res['openConversationId'] = $this->openConversationId;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class CreateGroupResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['openConversationId'])) {
-            $model->openConversationId = $map['openConversationId'];
-        }
         if (isset($map['groupUrl'])) {
             $model->groupUrl = $map['groupUrl'];
+        }
+        if (isset($map['openConversationId'])) {
+            $model->openConversationId = $map['openConversationId'];
         }
 
         return $model;

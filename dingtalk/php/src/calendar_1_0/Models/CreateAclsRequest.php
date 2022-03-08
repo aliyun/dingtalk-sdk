@@ -17,22 +17,22 @@ class CreateAclsRequest extends Model
     public $privilege;
 
     /**
-     * @description 是否向授权人发消息
-     *
-     * @var bool
-     */
-    public $sendMsg;
-
-    /**
      * @description 权限范围
      *
      * @var scope
      */
     public $scope;
+
+    /**
+     * @description 是否向授权人发消息
+     *
+     * @var bool
+     */
+    public $sendMsg;
     protected $_name = [
         'privilege' => 'privilege',
-        'sendMsg'   => 'sendMsg',
         'scope'     => 'scope',
+        'sendMsg'   => 'sendMsg',
     ];
 
     public function validate()
@@ -45,11 +45,11 @@ class CreateAclsRequest extends Model
         if (null !== $this->privilege) {
             $res['privilege'] = $this->privilege;
         }
-        if (null !== $this->sendMsg) {
-            $res['sendMsg'] = $this->sendMsg;
-        }
         if (null !== $this->scope) {
             $res['scope'] = null !== $this->scope ? $this->scope->toMap() : null;
+        }
+        if (null !== $this->sendMsg) {
+            $res['sendMsg'] = $this->sendMsg;
         }
 
         return $res;
@@ -66,11 +66,11 @@ class CreateAclsRequest extends Model
         if (isset($map['privilege'])) {
             $model->privilege = $map['privilege'];
         }
-        if (isset($map['sendMsg'])) {
-            $model->sendMsg = $map['sendMsg'];
-        }
         if (isset($map['scope'])) {
             $model->scope = scope::fromMap($map['scope']);
+        }
+        if (isset($map['sendMsg'])) {
+            $model->sendMsg = $map['sendMsg'];
         }
 
         return $model;

@@ -16,13 +16,6 @@ class data extends Model
     public $appCode;
 
     /**
-     * @description 应用显示名称
-     *
-     * @var string
-     */
-    public $displayName;
-
-    /**
      * @description 应用的来源类型。Custom=自开发的、Installed=安装的
      *
      * @var string
@@ -37,6 +30,13 @@ class data extends Model
     public $appState;
 
     /**
+     * @description 应用显示名称
+     *
+     * @var string
+     */
+    public $displayName;
+
+    /**
      * @description 应用所属的解决方案名称
      *
      * @var string
@@ -44,9 +44,9 @@ class data extends Model
     public $solution;
     protected $_name = [
         'appCode'     => 'appCode',
-        'displayName' => 'displayName',
         'appSource'   => 'appSource',
         'appState'    => 'appState',
+        'displayName' => 'displayName',
         'solution'    => 'solution',
     ];
 
@@ -60,14 +60,14 @@ class data extends Model
         if (null !== $this->appCode) {
             $res['appCode'] = $this->appCode;
         }
-        if (null !== $this->displayName) {
-            $res['displayName'] = $this->displayName;
-        }
         if (null !== $this->appSource) {
             $res['appSource'] = $this->appSource;
         }
         if (null !== $this->appState) {
             $res['appState'] = $this->appState;
+        }
+        if (null !== $this->displayName) {
+            $res['displayName'] = $this->displayName;
         }
         if (null !== $this->solution) {
             $res['solution'] = $this->solution;
@@ -87,14 +87,14 @@ class data extends Model
         if (isset($map['appCode'])) {
             $model->appCode = $map['appCode'];
         }
-        if (isset($map['displayName'])) {
-            $model->displayName = $map['displayName'];
-        }
         if (isset($map['appSource'])) {
             $model->appSource = $map['appSource'];
         }
         if (isset($map['appState'])) {
             $model->appState = $map['appState'];
+        }
+        if (isset($map['displayName'])) {
+            $model->displayName = $map['displayName'];
         }
         if (isset($map['solution'])) {
             $model->solution = $map['solution'];

@@ -11,12 +11,12 @@ class SetRobotConfigRequest extends Model
     /**
      * @var int
      */
-    public $dingTokenGrantType;
+    public $dingIsvOrgId;
 
     /**
      * @var int
      */
-    public $dingIsvOrgId;
+    public $dingOrgId;
 
     /**
      * @var string
@@ -26,14 +26,7 @@ class SetRobotConfigRequest extends Model
     /**
      * @var int
      */
-    public $dingOrgId;
-
-    /**
-     * @description 开放团队ID
-     *
-     * @var string
-     */
-    public $openTeamId;
+    public $dingTokenGrantType;
 
     /**
      * @description 群组开放ID
@@ -43,18 +36,25 @@ class SetRobotConfigRequest extends Model
     public $openGroupSetId;
 
     /**
+     * @description 开放团队ID
+     *
+     * @var string
+     */
+    public $openTeamId;
+
+    /**
      * @description 设置状态，0代表关闭,1代表开启
      *
      * @var string
      */
     public $status;
     protected $_name = [
-        'dingTokenGrantType' => 'dingTokenGrantType',
         'dingIsvOrgId'       => 'dingIsvOrgId',
-        'dingSuiteKey'       => 'dingSuiteKey',
         'dingOrgId'          => 'dingOrgId',
-        'openTeamId'         => 'openTeamId',
+        'dingSuiteKey'       => 'dingSuiteKey',
+        'dingTokenGrantType' => 'dingTokenGrantType',
         'openGroupSetId'     => 'openGroupSetId',
+        'openTeamId'         => 'openTeamId',
         'status'             => 'status',
     ];
 
@@ -65,23 +65,23 @@ class SetRobotConfigRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->dingTokenGrantType) {
-            $res['dingTokenGrantType'] = $this->dingTokenGrantType;
-        }
         if (null !== $this->dingIsvOrgId) {
             $res['dingIsvOrgId'] = $this->dingIsvOrgId;
-        }
-        if (null !== $this->dingSuiteKey) {
-            $res['dingSuiteKey'] = $this->dingSuiteKey;
         }
         if (null !== $this->dingOrgId) {
             $res['dingOrgId'] = $this->dingOrgId;
         }
-        if (null !== $this->openTeamId) {
-            $res['openTeamId'] = $this->openTeamId;
+        if (null !== $this->dingSuiteKey) {
+            $res['dingSuiteKey'] = $this->dingSuiteKey;
+        }
+        if (null !== $this->dingTokenGrantType) {
+            $res['dingTokenGrantType'] = $this->dingTokenGrantType;
         }
         if (null !== $this->openGroupSetId) {
             $res['openGroupSetId'] = $this->openGroupSetId;
+        }
+        if (null !== $this->openTeamId) {
+            $res['openTeamId'] = $this->openTeamId;
         }
         if (null !== $this->status) {
             $res['status'] = $this->status;
@@ -98,23 +98,23 @@ class SetRobotConfigRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['dingTokenGrantType'])) {
-            $model->dingTokenGrantType = $map['dingTokenGrantType'];
-        }
         if (isset($map['dingIsvOrgId'])) {
             $model->dingIsvOrgId = $map['dingIsvOrgId'];
-        }
-        if (isset($map['dingSuiteKey'])) {
-            $model->dingSuiteKey = $map['dingSuiteKey'];
         }
         if (isset($map['dingOrgId'])) {
             $model->dingOrgId = $map['dingOrgId'];
         }
-        if (isset($map['openTeamId'])) {
-            $model->openTeamId = $map['openTeamId'];
+        if (isset($map['dingSuiteKey'])) {
+            $model->dingSuiteKey = $map['dingSuiteKey'];
+        }
+        if (isset($map['dingTokenGrantType'])) {
+            $model->dingTokenGrantType = $map['dingTokenGrantType'];
         }
         if (isset($map['openGroupSetId'])) {
             $model->openGroupSetId = $map['openGroupSetId'];
+        }
+        if (isset($map['openTeamId'])) {
+            $model->openTeamId = $map['openTeamId'];
         }
         if (isset($map['status'])) {
             $model->status = $map['status'];

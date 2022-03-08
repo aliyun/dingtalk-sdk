@@ -11,12 +11,17 @@ class result extends Model
     /**
      * @var string
      */
+    public $corpId;
+
+    /**
+     * @var string
+     */
     public $deviceCode;
 
     /**
      * @var string
      */
-    public $deviceUuid;
+    public $deviceDetailUrl;
 
     /**
      * @var string
@@ -26,17 +31,12 @@ class result extends Model
     /**
      * @var string
      */
+    public $deviceUuid;
+
+    /**
+     * @var string
+     */
     public $introduction;
-
-    /**
-     * @var string
-     */
-    public $typeUuid;
-
-    /**
-     * @var string
-     */
-    public $corpId;
 
     /**
      * @var string
@@ -46,21 +46,21 @@ class result extends Model
     /**
      * @var string
      */
-    public $deviceDetailUrl;
+    public $typeUuid;
 
     /**
      * @var string[]
      */
     public $userIds;
     protected $_name = [
-        'deviceCode'      => 'deviceCode',
-        'deviceUuid'      => 'deviceUuid',
-        'deviceName'      => 'deviceName',
-        'introduction'    => 'introduction',
-        'typeUuid'        => 'typeUuid',
         'corpId'          => 'corpId',
-        'roleUuid'        => 'roleUuid',
+        'deviceCode'      => 'deviceCode',
         'deviceDetailUrl' => 'deviceDetailUrl',
+        'deviceName'      => 'deviceName',
+        'deviceUuid'      => 'deviceUuid',
+        'introduction'    => 'introduction',
+        'roleUuid'        => 'roleUuid',
+        'typeUuid'        => 'typeUuid',
         'userIds'         => 'userIds',
     ];
 
@@ -71,29 +71,29 @@ class result extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->corpId) {
+            $res['corpId'] = $this->corpId;
+        }
         if (null !== $this->deviceCode) {
             $res['deviceCode'] = $this->deviceCode;
         }
-        if (null !== $this->deviceUuid) {
-            $res['deviceUuid'] = $this->deviceUuid;
+        if (null !== $this->deviceDetailUrl) {
+            $res['deviceDetailUrl'] = $this->deviceDetailUrl;
         }
         if (null !== $this->deviceName) {
             $res['deviceName'] = $this->deviceName;
         }
+        if (null !== $this->deviceUuid) {
+            $res['deviceUuid'] = $this->deviceUuid;
+        }
         if (null !== $this->introduction) {
             $res['introduction'] = $this->introduction;
-        }
-        if (null !== $this->typeUuid) {
-            $res['typeUuid'] = $this->typeUuid;
-        }
-        if (null !== $this->corpId) {
-            $res['corpId'] = $this->corpId;
         }
         if (null !== $this->roleUuid) {
             $res['roleUuid'] = $this->roleUuid;
         }
-        if (null !== $this->deviceDetailUrl) {
-            $res['deviceDetailUrl'] = $this->deviceDetailUrl;
+        if (null !== $this->typeUuid) {
+            $res['typeUuid'] = $this->typeUuid;
         }
         if (null !== $this->userIds) {
             $res['userIds'] = $this->userIds;
@@ -110,29 +110,29 @@ class result extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['corpId'])) {
+            $model->corpId = $map['corpId'];
+        }
         if (isset($map['deviceCode'])) {
             $model->deviceCode = $map['deviceCode'];
         }
-        if (isset($map['deviceUuid'])) {
-            $model->deviceUuid = $map['deviceUuid'];
+        if (isset($map['deviceDetailUrl'])) {
+            $model->deviceDetailUrl = $map['deviceDetailUrl'];
         }
         if (isset($map['deviceName'])) {
             $model->deviceName = $map['deviceName'];
         }
+        if (isset($map['deviceUuid'])) {
+            $model->deviceUuid = $map['deviceUuid'];
+        }
         if (isset($map['introduction'])) {
             $model->introduction = $map['introduction'];
-        }
-        if (isset($map['typeUuid'])) {
-            $model->typeUuid = $map['typeUuid'];
-        }
-        if (isset($map['corpId'])) {
-            $model->corpId = $map['corpId'];
         }
         if (isset($map['roleUuid'])) {
             $model->roleUuid = $map['roleUuid'];
         }
-        if (isset($map['deviceDetailUrl'])) {
-            $model->deviceDetailUrl = $map['deviceDetailUrl'];
+        if (isset($map['typeUuid'])) {
+            $model->typeUuid = $map['typeUuid'];
         }
         if (isset($map['userIds'])) {
             if (!empty($map['userIds'])) {

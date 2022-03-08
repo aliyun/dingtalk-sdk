@@ -10,18 +10,18 @@ use AlibabaCloud\Tea\Model;
 class QueryInterviewsResponseBody extends Model
 {
     /**
-     * @description 总数量
-     *
-     * @var int
-     */
-    public $totalCount;
-
-    /**
      * @description 是否有更多数据
      *
      * @var bool
      */
     public $hasMore;
+
+    /**
+     * @description 数据列表
+     *
+     * @var list_[]
+     */
+    public $list;
 
     /**
      * @description 下次查询的分页游标
@@ -31,16 +31,16 @@ class QueryInterviewsResponseBody extends Model
     public $nextToken;
 
     /**
-     * @description 数据列表
+     * @description 总数量
      *
-     * @var list_[]
+     * @var int
      */
-    public $list;
+    public $totalCount;
     protected $_name = [
-        'totalCount' => 'totalCount',
         'hasMore'    => 'hasMore',
-        'nextToken'  => 'nextToken',
         'list'       => 'list',
+        'nextToken'  => 'nextToken',
+        'totalCount' => 'totalCount',
     ];
 
     public function validate()
@@ -50,14 +50,8 @@ class QueryInterviewsResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->totalCount) {
-            $res['totalCount'] = $this->totalCount;
-        }
         if (null !== $this->hasMore) {
             $res['hasMore'] = $this->hasMore;
-        }
-        if (null !== $this->nextToken) {
-            $res['nextToken'] = $this->nextToken;
         }
         if (null !== $this->list) {
             $res['list'] = [];
@@ -67,6 +61,12 @@ class QueryInterviewsResponseBody extends Model
                     $res['list'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
+        }
+        if (null !== $this->totalCount) {
+            $res['totalCount'] = $this->totalCount;
         }
 
         return $res;
@@ -80,14 +80,8 @@ class QueryInterviewsResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['totalCount'])) {
-            $model->totalCount = $map['totalCount'];
-        }
         if (isset($map['hasMore'])) {
             $model->hasMore = $map['hasMore'];
-        }
-        if (isset($map['nextToken'])) {
-            $model->nextToken = $map['nextToken'];
         }
         if (isset($map['list'])) {
             if (!empty($map['list'])) {
@@ -97,6 +91,12 @@ class QueryInterviewsResponseBody extends Model
                     $model->list[$n++] = null !== $item ? list_::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
+        }
+        if (isset($map['totalCount'])) {
+            $model->totalCount = $map['totalCount'];
         }
 
         return $model;

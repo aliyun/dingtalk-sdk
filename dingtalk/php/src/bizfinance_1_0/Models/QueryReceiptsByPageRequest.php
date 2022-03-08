@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class QueryReceiptsByPageRequest extends Model
 {
     /**
+     * @description 检索结束时间，默认当前时间，离开始时间最长不超过180天
+     *
+     * @var int
+     */
+    public $endTime;
+
+    /**
      * @description 数据模型id
      *
      * @var string
@@ -37,24 +44,17 @@ class QueryReceiptsByPageRequest extends Model
     public $startTime;
 
     /**
-     * @description 检索结束时间，默认当前时间，离开始时间最长不超过180天
-     *
-     * @var int
-     */
-    public $endTime;
-
-    /**
      * @description 检索排序时间类型：创建时间(gmt_create)，更新时间(gmt_modified)
      *
      * @var string
      */
     public $timeFilterField;
     protected $_name = [
+        'endTime'         => 'endTime',
         'modelId'         => 'modelId',
         'pageNumber'      => 'pageNumber',
         'pageSize'        => 'pageSize',
         'startTime'       => 'startTime',
-        'endTime'         => 'endTime',
         'timeFilterField' => 'timeFilterField',
     ];
 
@@ -65,6 +65,9 @@ class QueryReceiptsByPageRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->endTime) {
+            $res['endTime'] = $this->endTime;
+        }
         if (null !== $this->modelId) {
             $res['modelId'] = $this->modelId;
         }
@@ -76,9 +79,6 @@ class QueryReceiptsByPageRequest extends Model
         }
         if (null !== $this->startTime) {
             $res['startTime'] = $this->startTime;
-        }
-        if (null !== $this->endTime) {
-            $res['endTime'] = $this->endTime;
         }
         if (null !== $this->timeFilterField) {
             $res['timeFilterField'] = $this->timeFilterField;
@@ -95,6 +95,9 @@ class QueryReceiptsByPageRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['endTime'])) {
+            $model->endTime = $map['endTime'];
+        }
         if (isset($map['modelId'])) {
             $model->modelId = $map['modelId'];
         }
@@ -106,9 +109,6 @@ class QueryReceiptsByPageRequest extends Model
         }
         if (isset($map['startTime'])) {
             $model->startTime = $map['startTime'];
-        }
-        if (isset($map['endTime'])) {
-            $model->endTime = $map['endTime'];
         }
         if (isset($map['timeFilterField'])) {
             $model->timeFilterField = $map['timeFilterField'];

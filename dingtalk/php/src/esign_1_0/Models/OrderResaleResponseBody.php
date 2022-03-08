@@ -15,18 +15,18 @@ class OrderResaleResponseBody extends Model
     public $code;
 
     /**
-     * @var string
-     */
-    public $message;
-
-    /**
      * @var data
      */
     public $data;
+
+    /**
+     * @var string
+     */
+    public $message;
     protected $_name = [
         'code'    => 'code',
-        'message' => 'message',
         'data'    => 'data',
+        'message' => 'message',
     ];
 
     public function validate()
@@ -39,11 +39,11 @@ class OrderResaleResponseBody extends Model
         if (null !== $this->code) {
             $res['code'] = $this->code;
         }
-        if (null !== $this->message) {
-            $res['message'] = $this->message;
-        }
         if (null !== $this->data) {
             $res['data'] = null !== $this->data ? $this->data->toMap() : null;
+        }
+        if (null !== $this->message) {
+            $res['message'] = $this->message;
         }
 
         return $res;
@@ -60,11 +60,11 @@ class OrderResaleResponseBody extends Model
         if (isset($map['code'])) {
             $model->code = $map['code'];
         }
-        if (isset($map['message'])) {
-            $model->message = $map['message'];
-        }
         if (isset($map['data'])) {
             $model->data = data::fromMap($map['data']);
+        }
+        if (isset($map['message'])) {
+            $model->message = $map['message'];
         }
 
         return $model;

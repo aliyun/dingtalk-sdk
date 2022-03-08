@@ -17,22 +17,22 @@ class CreateBizObjectResponseBody extends Model
     public $code;
 
     /**
-     * @description 提示信息
-     *
-     * @var string
-     */
-    public $message;
-
-    /**
      * @description 返回结果
      *
      * @var data
      */
     public $data;
+
+    /**
+     * @description 提示信息
+     *
+     * @var string
+     */
+    public $message;
     protected $_name = [
         'code'    => 'code',
-        'message' => 'message',
         'data'    => 'data',
+        'message' => 'message',
     ];
 
     public function validate()
@@ -45,11 +45,11 @@ class CreateBizObjectResponseBody extends Model
         if (null !== $this->code) {
             $res['code'] = $this->code;
         }
-        if (null !== $this->message) {
-            $res['message'] = $this->message;
-        }
         if (null !== $this->data) {
             $res['data'] = null !== $this->data ? $this->data->toMap() : null;
+        }
+        if (null !== $this->message) {
+            $res['message'] = $this->message;
         }
 
         return $res;
@@ -66,11 +66,11 @@ class CreateBizObjectResponseBody extends Model
         if (isset($map['code'])) {
             $model->code = $map['code'];
         }
-        if (isset($map['message'])) {
-            $model->message = $map['message'];
-        }
         if (isset($map['data'])) {
             $model->data = data::fromMap($map['data']);
+        }
+        if (isset($map['message'])) {
+            $model->message = $map['message'];
         }
 
         return $model;

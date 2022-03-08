@@ -17,13 +17,6 @@ class BatchRegisterDeviceRequest extends Model
     public $deviceList;
 
     /**
-     * @description 组织id
-     *
-     * @var string
-     */
-    public $dingCorpId;
-
-    /**
      * @description 创建者userId
      *
      * @var string
@@ -31,7 +24,6 @@ class BatchRegisterDeviceRequest extends Model
     public $userId;
     protected $_name = [
         'deviceList' => 'deviceList',
-        'dingCorpId' => 'dingCorpId',
         'userId'     => 'userId',
     ];
 
@@ -50,9 +42,6 @@ class BatchRegisterDeviceRequest extends Model
                     $res['deviceList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
-        }
-        if (null !== $this->dingCorpId) {
-            $res['dingCorpId'] = $this->dingCorpId;
         }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
@@ -77,9 +66,6 @@ class BatchRegisterDeviceRequest extends Model
                     $model->deviceList[$n++] = null !== $item ? deviceList::fromMap($item) : $item;
                 }
             }
-        }
-        if (isset($map['dingCorpId'])) {
-            $model->dingCorpId = $map['dingCorpId'];
         }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];

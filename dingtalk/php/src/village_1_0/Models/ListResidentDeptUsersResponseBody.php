@@ -10,18 +10,18 @@ use AlibabaCloud\Tea\Model;
 class ListResidentDeptUsersResponseBody extends Model
 {
     /**
-     * @description 下一个游标
-     *
-     * @var int
-     */
-    public $nextCursor;
-
-    /**
      * @description 是否还有更多数据
      *
      * @var bool
      */
     public $hasMore;
+
+    /**
+     * @description 下一个游标
+     *
+     * @var int
+     */
+    public $nextCursor;
 
     /**
      * @description 用户列表
@@ -30,8 +30,8 @@ class ListResidentDeptUsersResponseBody extends Model
      */
     public $userList;
     protected $_name = [
-        'nextCursor' => 'nextCursor',
         'hasMore'    => 'hasMore',
+        'nextCursor' => 'nextCursor',
         'userList'   => 'userList',
     ];
 
@@ -42,11 +42,11 @@ class ListResidentDeptUsersResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->nextCursor) {
-            $res['nextCursor'] = $this->nextCursor;
-        }
         if (null !== $this->hasMore) {
             $res['hasMore'] = $this->hasMore;
+        }
+        if (null !== $this->nextCursor) {
+            $res['nextCursor'] = $this->nextCursor;
         }
         if (null !== $this->userList) {
             $res['userList'] = [];
@@ -69,11 +69,11 @@ class ListResidentDeptUsersResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['nextCursor'])) {
-            $model->nextCursor = $map['nextCursor'];
-        }
         if (isset($map['hasMore'])) {
             $model->hasMore = $map['hasMore'];
+        }
+        if (isset($map['nextCursor'])) {
+            $model->nextCursor = $map['nextCursor'];
         }
         if (isset($map['userList'])) {
             if (!empty($map['userList'])) {

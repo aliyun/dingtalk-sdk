@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class QueryClassScheduleByTimeSchoolRequest extends Model
 {
     /**
-     * @description 开始时间
-     *
-     * @var int
-     */
-    public $startTime;
-
-    /**
      * @description 1621676000000
      *
      * @var int
@@ -28,10 +21,17 @@ class QueryClassScheduleByTimeSchoolRequest extends Model
      * @var string
      */
     public $opUserId;
+
+    /**
+     * @description 开始时间
+     *
+     * @var int
+     */
+    public $startTime;
     protected $_name = [
-        'startTime' => 'startTime',
         'endTime'   => 'endTime',
         'opUserId'  => 'opUserId',
+        'startTime' => 'startTime',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class QueryClassScheduleByTimeSchoolRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->startTime) {
-            $res['startTime'] = $this->startTime;
-        }
         if (null !== $this->endTime) {
             $res['endTime'] = $this->endTime;
         }
         if (null !== $this->opUserId) {
             $res['opUserId'] = $this->opUserId;
+        }
+        if (null !== $this->startTime) {
+            $res['startTime'] = $this->startTime;
         }
 
         return $res;
@@ -62,14 +62,14 @@ class QueryClassScheduleByTimeSchoolRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['startTime'])) {
-            $model->startTime = $map['startTime'];
-        }
         if (isset($map['endTime'])) {
             $model->endTime = $map['endTime'];
         }
         if (isset($map['opUserId'])) {
             $model->opUserId = $map['opUserId'];
+        }
+        if (isset($map['startTime'])) {
+            $model->startTime = $map['startTime'];
         }
 
         return $model;

@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class link extends Model
 {
     /**
-     * @description 图片地址
-     *
-     * @var string
-     */
-    public $picUrl;
-
-    /**
      * @description 消息点击链接地址，当发送消息为小程序时支持小程序跳转链接。
      *
      * @var string
@@ -23,11 +16,11 @@ class link extends Model
     public $messageUrl;
 
     /**
-     * @description 消息标题，建议100字符以内。
+     * @description 图片地址
      *
      * @var string
      */
-    public $title;
+    public $picUrl;
 
     /**
      * @description 消息描述，建议500字符以内。
@@ -35,11 +28,18 @@ class link extends Model
      * @var string
      */
     public $text;
+
+    /**
+     * @description 消息标题，建议100字符以内。
+     *
+     * @var string
+     */
+    public $title;
     protected $_name = [
-        'picUrl'     => 'picUrl',
         'messageUrl' => 'messageUrl',
-        'title'      => 'title',
+        'picUrl'     => 'picUrl',
         'text'       => 'text',
+        'title'      => 'title',
     ];
 
     public function validate()
@@ -49,17 +49,17 @@ class link extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->picUrl) {
-            $res['picUrl'] = $this->picUrl;
-        }
         if (null !== $this->messageUrl) {
             $res['messageUrl'] = $this->messageUrl;
         }
-        if (null !== $this->title) {
-            $res['title'] = $this->title;
+        if (null !== $this->picUrl) {
+            $res['picUrl'] = $this->picUrl;
         }
         if (null !== $this->text) {
             $res['text'] = $this->text;
+        }
+        if (null !== $this->title) {
+            $res['title'] = $this->title;
         }
 
         return $res;
@@ -73,17 +73,17 @@ class link extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['picUrl'])) {
-            $model->picUrl = $map['picUrl'];
-        }
         if (isset($map['messageUrl'])) {
             $model->messageUrl = $map['messageUrl'];
         }
-        if (isset($map['title'])) {
-            $model->title = $map['title'];
+        if (isset($map['picUrl'])) {
+            $model->picUrl = $map['picUrl'];
         }
         if (isset($map['text'])) {
             $model->text = $map['text'];
+        }
+        if (isset($map['title'])) {
+            $model->title = $map['title'];
         }
 
         return $model;

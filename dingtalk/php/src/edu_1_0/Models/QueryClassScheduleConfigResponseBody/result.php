@@ -19,13 +19,6 @@ class result extends Model
     public $classId;
 
     /**
-     * @description 开始时间
-     *
-     * @var start
-     */
-    public $start;
-
-    /**
      * @var end
      */
     public $end;
@@ -36,11 +29,18 @@ class result extends Model
      * @var sectionModels[]
      */
     public $sectionModels;
+
+    /**
+     * @description 开始时间
+     *
+     * @var start
+     */
+    public $start;
     protected $_name = [
         'classId'       => 'classId',
-        'start'         => 'start',
         'end'           => 'end',
         'sectionModels' => 'sectionModels',
+        'start'         => 'start',
     ];
 
     public function validate()
@@ -53,9 +53,6 @@ class result extends Model
         if (null !== $this->classId) {
             $res['classId'] = $this->classId;
         }
-        if (null !== $this->start) {
-            $res['start'] = null !== $this->start ? $this->start->toMap() : null;
-        }
         if (null !== $this->end) {
             $res['end'] = null !== $this->end ? $this->end->toMap() : null;
         }
@@ -67,6 +64,9 @@ class result extends Model
                     $res['sectionModels'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->start) {
+            $res['start'] = null !== $this->start ? $this->start->toMap() : null;
         }
 
         return $res;
@@ -83,9 +83,6 @@ class result extends Model
         if (isset($map['classId'])) {
             $model->classId = $map['classId'];
         }
-        if (isset($map['start'])) {
-            $model->start = start::fromMap($map['start']);
-        }
         if (isset($map['end'])) {
             $model->end = end::fromMap($map['end']);
         }
@@ -97,6 +94,9 @@ class result extends Model
                     $model->sectionModels[$n++] = null !== $item ? sectionModels::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['start'])) {
+            $model->start = start::fromMap($map['start']);
         }
 
         return $model;

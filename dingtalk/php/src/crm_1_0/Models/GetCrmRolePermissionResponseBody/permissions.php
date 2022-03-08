@@ -13,11 +13,18 @@ use AlibabaCloud\Tea\Model;
 class permissions extends Model
 {
     /**
-     * @description 权限组配置
+     * @description 是否是默认权限
      *
-     * @var roleMemberList[]
+     * @var bool
      */
-    public $roleMemberList;
+    public $defaultRole;
+
+    /**
+     * @description 字段权限
+     *
+     * @var fieldScopes[]
+     */
+    public $fieldScopes;
 
     /**
      * @description 权限组适用范围配置
@@ -27,11 +34,11 @@ class permissions extends Model
     public $managingScopeList;
 
     /**
-     * @description 是否是默认权限
+     * @description 操作范围
      *
-     * @var bool
+     * @var operateScopes[]
      */
-    public $defaultRole;
+    public $operateScopes;
 
     /**
      * @description 资源id
@@ -41,13 +48,6 @@ class permissions extends Model
     public $resourceId;
 
     /**
-     * @description 权限组名称
-     *
-     * @var string
-     */
-    public $roleName;
-
-    /**
      * @description 权限组id
      *
      * @var float
@@ -55,27 +55,27 @@ class permissions extends Model
     public $roleId;
 
     /**
-     * @description 操作范围
+     * @description 权限组配置
      *
-     * @var operateScopes[]
+     * @var roleMemberList[]
      */
-    public $operateScopes;
+    public $roleMemberList;
 
     /**
-     * @description 字段权限
+     * @description 权限组名称
      *
-     * @var fieldScopes[]
+     * @var string
      */
-    public $fieldScopes;
+    public $roleName;
     protected $_name = [
-        'roleMemberList'    => 'roleMemberList',
-        'managingScopeList' => 'managingScopeList',
         'defaultRole'       => 'defaultRole',
-        'resourceId'        => 'resourceId',
-        'roleName'          => 'roleName',
-        'roleId'            => 'roleId',
-        'operateScopes'     => 'operateScopes',
         'fieldScopes'       => 'fieldScopes',
+        'managingScopeList' => 'managingScopeList',
+        'operateScopes'     => 'operateScopes',
+        'resourceId'        => 'resourceId',
+        'roleId'            => 'roleId',
+        'roleMemberList'    => 'roleMemberList',
+        'roleName'          => 'roleName',
     ];
 
     public function validate()
@@ -85,12 +85,15 @@ class permissions extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->roleMemberList) {
-            $res['roleMemberList'] = [];
-            if (null !== $this->roleMemberList && \is_array($this->roleMemberList)) {
+        if (null !== $this->defaultRole) {
+            $res['defaultRole'] = $this->defaultRole;
+        }
+        if (null !== $this->fieldScopes) {
+            $res['fieldScopes'] = [];
+            if (null !== $this->fieldScopes && \is_array($this->fieldScopes)) {
                 $n = 0;
-                foreach ($this->roleMemberList as $item) {
-                    $res['roleMemberList'][$n++] = null !== $item ? $item->toMap() : $item;
+                foreach ($this->fieldScopes as $item) {
+                    $res['fieldScopes'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
         }
@@ -103,18 +106,6 @@ class permissions extends Model
                 }
             }
         }
-        if (null !== $this->defaultRole) {
-            $res['defaultRole'] = $this->defaultRole;
-        }
-        if (null !== $this->resourceId) {
-            $res['resourceId'] = $this->resourceId;
-        }
-        if (null !== $this->roleName) {
-            $res['roleName'] = $this->roleName;
-        }
-        if (null !== $this->roleId) {
-            $res['roleId'] = $this->roleId;
-        }
         if (null !== $this->operateScopes) {
             $res['operateScopes'] = [];
             if (null !== $this->operateScopes && \is_array($this->operateScopes)) {
@@ -124,14 +115,23 @@ class permissions extends Model
                 }
             }
         }
-        if (null !== $this->fieldScopes) {
-            $res['fieldScopes'] = [];
-            if (null !== $this->fieldScopes && \is_array($this->fieldScopes)) {
+        if (null !== $this->resourceId) {
+            $res['resourceId'] = $this->resourceId;
+        }
+        if (null !== $this->roleId) {
+            $res['roleId'] = $this->roleId;
+        }
+        if (null !== $this->roleMemberList) {
+            $res['roleMemberList'] = [];
+            if (null !== $this->roleMemberList && \is_array($this->roleMemberList)) {
                 $n = 0;
-                foreach ($this->fieldScopes as $item) {
-                    $res['fieldScopes'][$n++] = null !== $item ? $item->toMap() : $item;
+                foreach ($this->roleMemberList as $item) {
+                    $res['roleMemberList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->roleName) {
+            $res['roleName'] = $this->roleName;
         }
 
         return $res;
@@ -145,12 +145,15 @@ class permissions extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['roleMemberList'])) {
-            if (!empty($map['roleMemberList'])) {
-                $model->roleMemberList = [];
-                $n                     = 0;
-                foreach ($map['roleMemberList'] as $item) {
-                    $model->roleMemberList[$n++] = null !== $item ? roleMemberList::fromMap($item) : $item;
+        if (isset($map['defaultRole'])) {
+            $model->defaultRole = $map['defaultRole'];
+        }
+        if (isset($map['fieldScopes'])) {
+            if (!empty($map['fieldScopes'])) {
+                $model->fieldScopes = [];
+                $n                  = 0;
+                foreach ($map['fieldScopes'] as $item) {
+                    $model->fieldScopes[$n++] = null !== $item ? fieldScopes::fromMap($item) : $item;
                 }
             }
         }
@@ -163,18 +166,6 @@ class permissions extends Model
                 }
             }
         }
-        if (isset($map['defaultRole'])) {
-            $model->defaultRole = $map['defaultRole'];
-        }
-        if (isset($map['resourceId'])) {
-            $model->resourceId = $map['resourceId'];
-        }
-        if (isset($map['roleName'])) {
-            $model->roleName = $map['roleName'];
-        }
-        if (isset($map['roleId'])) {
-            $model->roleId = $map['roleId'];
-        }
         if (isset($map['operateScopes'])) {
             if (!empty($map['operateScopes'])) {
                 $model->operateScopes = [];
@@ -184,14 +175,23 @@ class permissions extends Model
                 }
             }
         }
-        if (isset($map['fieldScopes'])) {
-            if (!empty($map['fieldScopes'])) {
-                $model->fieldScopes = [];
-                $n                  = 0;
-                foreach ($map['fieldScopes'] as $item) {
-                    $model->fieldScopes[$n++] = null !== $item ? fieldScopes::fromMap($item) : $item;
+        if (isset($map['resourceId'])) {
+            $model->resourceId = $map['resourceId'];
+        }
+        if (isset($map['roleId'])) {
+            $model->roleId = $map['roleId'];
+        }
+        if (isset($map['roleMemberList'])) {
+            if (!empty($map['roleMemberList'])) {
+                $model->roleMemberList = [];
+                $n                     = 0;
+                foreach ($map['roleMemberList'] as $item) {
+                    $model->roleMemberList[$n++] = null !== $item ? roleMemberList::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['roleName'])) {
+            $model->roleName = $map['roleName'];
         }
 
         return $model;

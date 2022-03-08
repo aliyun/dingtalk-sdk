@@ -10,25 +10,11 @@ use AlibabaCloud\Tea\Model;
 class plugInformation extends Model
 {
     /**
-     * @description pluginUuid
+     * @description apps
      *
-     * @var string
+     * @var applications[]
      */
-    public $plugUuid;
-
-    /**
-     * @description pluginTotalAmount
-     *
-     * @var int
-     */
-    public $plugTotalAmount;
-
-    /**
-     * @description pluginName
-     *
-     * @var string
-     */
-    public $plugName;
+    public $applications;
 
     /**
      * @description iconUrl
@@ -38,18 +24,18 @@ class plugInformation extends Model
     public $iconUrl;
 
     /**
+     * @description pluginName
+     *
+     * @var string
+     */
+    public $plugName;
+
+    /**
      * @description pluginPayType
      *
      * @var int
      */
     public $plugPayType;
-
-    /**
-     * @description pluginUsageAmount
-     *
-     * @var int
-     */
-    public $plugUsageAmount;
 
     /**
      * @description pluginStatus
@@ -59,20 +45,34 @@ class plugInformation extends Model
     public $plugStatus;
 
     /**
-     * @description apps
+     * @description pluginTotalAmount
      *
-     * @var applications[]
+     * @var int
      */
-    public $applications;
+    public $plugTotalAmount;
+
+    /**
+     * @description pluginUsageAmount
+     *
+     * @var int
+     */
+    public $plugUsageAmount;
+
+    /**
+     * @description pluginUuid
+     *
+     * @var string
+     */
+    public $plugUuid;
     protected $_name = [
-        'plugUuid'        => 'plugUuid',
-        'plugTotalAmount' => 'plugTotalAmount',
-        'plugName'        => 'plugName',
-        'iconUrl'         => 'iconUrl',
-        'plugPayType'     => 'plugPayType',
-        'plugUsageAmount' => 'plugUsageAmount',
-        'plugStatus'      => 'plugStatus',
         'applications'    => 'applications',
+        'iconUrl'         => 'iconUrl',
+        'plugName'        => 'plugName',
+        'plugPayType'     => 'plugPayType',
+        'plugStatus'      => 'plugStatus',
+        'plugTotalAmount' => 'plugTotalAmount',
+        'plugUsageAmount' => 'plugUsageAmount',
+        'plugUuid'        => 'plugUuid',
     ];
 
     public function validate()
@@ -82,27 +82,6 @@ class plugInformation extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->plugUuid) {
-            $res['plugUuid'] = $this->plugUuid;
-        }
-        if (null !== $this->plugTotalAmount) {
-            $res['plugTotalAmount'] = $this->plugTotalAmount;
-        }
-        if (null !== $this->plugName) {
-            $res['plugName'] = $this->plugName;
-        }
-        if (null !== $this->iconUrl) {
-            $res['iconUrl'] = $this->iconUrl;
-        }
-        if (null !== $this->plugPayType) {
-            $res['plugPayType'] = $this->plugPayType;
-        }
-        if (null !== $this->plugUsageAmount) {
-            $res['plugUsageAmount'] = $this->plugUsageAmount;
-        }
-        if (null !== $this->plugStatus) {
-            $res['plugStatus'] = $this->plugStatus;
-        }
         if (null !== $this->applications) {
             $res['applications'] = [];
             if (null !== $this->applications && \is_array($this->applications)) {
@@ -111,6 +90,27 @@ class plugInformation extends Model
                     $res['applications'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->iconUrl) {
+            $res['iconUrl'] = $this->iconUrl;
+        }
+        if (null !== $this->plugName) {
+            $res['plugName'] = $this->plugName;
+        }
+        if (null !== $this->plugPayType) {
+            $res['plugPayType'] = $this->plugPayType;
+        }
+        if (null !== $this->plugStatus) {
+            $res['plugStatus'] = $this->plugStatus;
+        }
+        if (null !== $this->plugTotalAmount) {
+            $res['plugTotalAmount'] = $this->plugTotalAmount;
+        }
+        if (null !== $this->plugUsageAmount) {
+            $res['plugUsageAmount'] = $this->plugUsageAmount;
+        }
+        if (null !== $this->plugUuid) {
+            $res['plugUuid'] = $this->plugUuid;
         }
 
         return $res;
@@ -124,27 +124,6 @@ class plugInformation extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['plugUuid'])) {
-            $model->plugUuid = $map['plugUuid'];
-        }
-        if (isset($map['plugTotalAmount'])) {
-            $model->plugTotalAmount = $map['plugTotalAmount'];
-        }
-        if (isset($map['plugName'])) {
-            $model->plugName = $map['plugName'];
-        }
-        if (isset($map['iconUrl'])) {
-            $model->iconUrl = $map['iconUrl'];
-        }
-        if (isset($map['plugPayType'])) {
-            $model->plugPayType = $map['plugPayType'];
-        }
-        if (isset($map['plugUsageAmount'])) {
-            $model->plugUsageAmount = $map['plugUsageAmount'];
-        }
-        if (isset($map['plugStatus'])) {
-            $model->plugStatus = $map['plugStatus'];
-        }
         if (isset($map['applications'])) {
             if (!empty($map['applications'])) {
                 $model->applications = [];
@@ -153,6 +132,27 @@ class plugInformation extends Model
                     $model->applications[$n++] = null !== $item ? applications::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['iconUrl'])) {
+            $model->iconUrl = $map['iconUrl'];
+        }
+        if (isset($map['plugName'])) {
+            $model->plugName = $map['plugName'];
+        }
+        if (isset($map['plugPayType'])) {
+            $model->plugPayType = $map['plugPayType'];
+        }
+        if (isset($map['plugStatus'])) {
+            $model->plugStatus = $map['plugStatus'];
+        }
+        if (isset($map['plugTotalAmount'])) {
+            $model->plugTotalAmount = $map['plugTotalAmount'];
+        }
+        if (isset($map['plugUsageAmount'])) {
+            $model->plugUsageAmount = $map['plugUsageAmount'];
+        }
+        if (isset($map['plugUuid'])) {
+            $model->plugUuid = $map['plugUuid'];
         }
 
         return $model;

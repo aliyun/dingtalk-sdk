@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class QueryGroupResponseBody extends Model
 {
     /**
-     * @description 开放群ID
+     * @description 群bizId
      *
      * @var string
      */
-    public $openConversationId;
+    public $bizId;
 
     /**
      * @description 群名称
@@ -23,11 +23,18 @@ class QueryGroupResponseBody extends Model
     public $groupName;
 
     /**
-     * @description 开放团队ID
+     * @description 入群URL
      *
      * @var string
      */
-    public $openTeamId;
+    public $groupUrl;
+
+    /**
+     * @description 开放群ID
+     *
+     * @var string
+     */
+    public $openConversationId;
 
     /**
      * @description 开放群组ID
@@ -37,11 +44,11 @@ class QueryGroupResponseBody extends Model
     public $openGroupSetId;
 
     /**
-     * @description 入群URL
+     * @description 开放团队ID
      *
      * @var string
      */
-    public $groupUrl;
+    public $openTeamId;
 
     /**
      * @description 服务群机器人code
@@ -56,22 +63,15 @@ class QueryGroupResponseBody extends Model
      * @var string
      */
     public $robotName;
-
-    /**
-     * @description 群bizId
-     *
-     * @var string
-     */
-    public $bizId;
     protected $_name = [
-        'openConversationId' => 'openConversationId',
+        'bizId'              => 'bizId',
         'groupName'          => 'groupName',
-        'openTeamId'         => 'openTeamId',
-        'openGroupSetId'     => 'openGroupSetId',
         'groupUrl'           => 'groupUrl',
+        'openConversationId' => 'openConversationId',
+        'openGroupSetId'     => 'openGroupSetId',
+        'openTeamId'         => 'openTeamId',
         'robotCode'          => 'robotCode',
         'robotName'          => 'robotName',
-        'bizId'              => 'bizId',
     ];
 
     public function validate()
@@ -81,29 +81,29 @@ class QueryGroupResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->openConversationId) {
-            $res['openConversationId'] = $this->openConversationId;
+        if (null !== $this->bizId) {
+            $res['bizId'] = $this->bizId;
         }
         if (null !== $this->groupName) {
             $res['groupName'] = $this->groupName;
         }
-        if (null !== $this->openTeamId) {
-            $res['openTeamId'] = $this->openTeamId;
+        if (null !== $this->groupUrl) {
+            $res['groupUrl'] = $this->groupUrl;
+        }
+        if (null !== $this->openConversationId) {
+            $res['openConversationId'] = $this->openConversationId;
         }
         if (null !== $this->openGroupSetId) {
             $res['openGroupSetId'] = $this->openGroupSetId;
         }
-        if (null !== $this->groupUrl) {
-            $res['groupUrl'] = $this->groupUrl;
+        if (null !== $this->openTeamId) {
+            $res['openTeamId'] = $this->openTeamId;
         }
         if (null !== $this->robotCode) {
             $res['robotCode'] = $this->robotCode;
         }
         if (null !== $this->robotName) {
             $res['robotName'] = $this->robotName;
-        }
-        if (null !== $this->bizId) {
-            $res['bizId'] = $this->bizId;
         }
 
         return $res;
@@ -117,29 +117,29 @@ class QueryGroupResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['openConversationId'])) {
-            $model->openConversationId = $map['openConversationId'];
+        if (isset($map['bizId'])) {
+            $model->bizId = $map['bizId'];
         }
         if (isset($map['groupName'])) {
             $model->groupName = $map['groupName'];
         }
-        if (isset($map['openTeamId'])) {
-            $model->openTeamId = $map['openTeamId'];
+        if (isset($map['groupUrl'])) {
+            $model->groupUrl = $map['groupUrl'];
+        }
+        if (isset($map['openConversationId'])) {
+            $model->openConversationId = $map['openConversationId'];
         }
         if (isset($map['openGroupSetId'])) {
             $model->openGroupSetId = $map['openGroupSetId'];
         }
-        if (isset($map['groupUrl'])) {
-            $model->groupUrl = $map['groupUrl'];
+        if (isset($map['openTeamId'])) {
+            $model->openTeamId = $map['openTeamId'];
         }
         if (isset($map['robotCode'])) {
             $model->robotCode = $map['robotCode'];
         }
         if (isset($map['robotName'])) {
             $model->robotName = $map['robotName'];
-        }
-        if (isset($map['bizId'])) {
-            $model->bizId = $map['bizId'];
         }
 
         return $model;

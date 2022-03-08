@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class GetGroupActiveInfoRequest extends Model
 {
     /**
-     * @description 统计日期
-     *
-     * @var string
-     */
-    public $statDate;
-
-    /**
      * @description 钉钉群组id
      *
      * @var string
@@ -35,11 +28,18 @@ class GetGroupActiveInfoRequest extends Model
      * @var int
      */
     public $pageSize;
+
+    /**
+     * @description 统计日期
+     *
+     * @var string
+     */
+    public $statDate;
     protected $_name = [
-        'statDate'    => 'statDate',
         'dingGroupId' => 'dingGroupId',
         'pageNumber'  => 'pageNumber',
         'pageSize'    => 'pageSize',
+        'statDate'    => 'statDate',
     ];
 
     public function validate()
@@ -49,9 +49,6 @@ class GetGroupActiveInfoRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->statDate) {
-            $res['statDate'] = $this->statDate;
-        }
         if (null !== $this->dingGroupId) {
             $res['dingGroupId'] = $this->dingGroupId;
         }
@@ -60,6 +57,9 @@ class GetGroupActiveInfoRequest extends Model
         }
         if (null !== $this->pageSize) {
             $res['pageSize'] = $this->pageSize;
+        }
+        if (null !== $this->statDate) {
+            $res['statDate'] = $this->statDate;
         }
 
         return $res;
@@ -73,9 +73,6 @@ class GetGroupActiveInfoRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['statDate'])) {
-            $model->statDate = $map['statDate'];
-        }
         if (isset($map['dingGroupId'])) {
             $model->dingGroupId = $map['dingGroupId'];
         }
@@ -84,6 +81,9 @@ class GetGroupActiveInfoRequest extends Model
         }
         if (isset($map['pageSize'])) {
             $model->pageSize = $map['pageSize'];
+        }
+        if (isset($map['statDate'])) {
+            $model->statDate = $map['statDate'];
         }
 
         return $model;

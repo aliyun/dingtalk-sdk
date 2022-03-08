@@ -9,18 +9,18 @@ use AlibabaCloud\Tea\Model;
 class template extends Model
 {
     /**
-     * @description 工单模版ID
-     *
-     * @var string
-     */
-    public $openTemplateId;
-
-    /**
      * @description 工单模版业务ID
      *
      * @var string
      */
     public $openTemplateBizId;
+
+    /**
+     * @description 工单模版ID
+     *
+     * @var string
+     */
+    public $openTemplateId;
 
     /**
      * @description 工单模版名称
@@ -29,8 +29,8 @@ class template extends Model
      */
     public $templateName;
     protected $_name = [
-        'openTemplateId'    => 'openTemplateId',
         'openTemplateBizId' => 'openTemplateBizId',
+        'openTemplateId'    => 'openTemplateId',
         'templateName'      => 'templateName',
     ];
 
@@ -41,11 +41,11 @@ class template extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->openTemplateId) {
-            $res['openTemplateId'] = $this->openTemplateId;
-        }
         if (null !== $this->openTemplateBizId) {
             $res['openTemplateBizId'] = $this->openTemplateBizId;
+        }
+        if (null !== $this->openTemplateId) {
+            $res['openTemplateId'] = $this->openTemplateId;
         }
         if (null !== $this->templateName) {
             $res['templateName'] = $this->templateName;
@@ -62,11 +62,11 @@ class template extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['openTemplateId'])) {
-            $model->openTemplateId = $map['openTemplateId'];
-        }
         if (isset($map['openTemplateBizId'])) {
             $model->openTemplateBizId = $map['openTemplateBizId'];
+        }
+        if (isset($map['openTemplateId'])) {
+            $model->openTemplateId = $map['openTemplateId'];
         }
         if (isset($map['templateName'])) {
             $model->templateName = $map['templateName'];

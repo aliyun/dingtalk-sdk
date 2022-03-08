@@ -16,11 +16,11 @@ class GetCategoryResponseBody extends Model
     public $code;
 
     /**
-     * @description 类型：income收入，expense支出
+     * @description 是否为目录
      *
-     * @var string
+     * @var bool
      */
-    public $type;
+    public $isDir;
 
     /**
      * @description 名称
@@ -28,13 +28,6 @@ class GetCategoryResponseBody extends Model
      * @var string
      */
     public $name;
-
-    /**
-     * @description 是否为目录
-     *
-     * @var bool
-     */
-    public $isDir;
 
     /**
      * @description 父类别code
@@ -49,13 +42,20 @@ class GetCategoryResponseBody extends Model
      * @var string
      */
     public $status;
+
+    /**
+     * @description 类型：income收入，expense支出
+     *
+     * @var string
+     */
+    public $type;
     protected $_name = [
         'code'       => 'code',
-        'type'       => 'type',
-        'name'       => 'name',
         'isDir'      => 'isDir',
+        'name'       => 'name',
         'parentCode' => 'parentCode',
         'status'     => 'status',
+        'type'       => 'type',
     ];
 
     public function validate()
@@ -68,20 +68,20 @@ class GetCategoryResponseBody extends Model
         if (null !== $this->code) {
             $res['code'] = $this->code;
         }
-        if (null !== $this->type) {
-            $res['type'] = $this->type;
+        if (null !== $this->isDir) {
+            $res['isDir'] = $this->isDir;
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
-        }
-        if (null !== $this->isDir) {
-            $res['isDir'] = $this->isDir;
         }
         if (null !== $this->parentCode) {
             $res['parentCode'] = $this->parentCode;
         }
         if (null !== $this->status) {
             $res['status'] = $this->status;
+        }
+        if (null !== $this->type) {
+            $res['type'] = $this->type;
         }
 
         return $res;
@@ -98,20 +98,20 @@ class GetCategoryResponseBody extends Model
         if (isset($map['code'])) {
             $model->code = $map['code'];
         }
-        if (isset($map['type'])) {
-            $model->type = $map['type'];
+        if (isset($map['isDir'])) {
+            $model->isDir = $map['isDir'];
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];
-        }
-        if (isset($map['isDir'])) {
-            $model->isDir = $map['isDir'];
         }
         if (isset($map['parentCode'])) {
             $model->parentCode = $map['parentCode'];
         }
         if (isset($map['status'])) {
             $model->status = $map['status'];
+        }
+        if (isset($map['type'])) {
+            $model->type = $map['type'];
         }
 
         return $model;

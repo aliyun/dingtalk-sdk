@@ -11,13 +11,6 @@ use AlibabaCloud\Tea\Model;
 class courserGroupItemModels extends Model
 {
     /**
-     * @description 一周的第几天
-     *
-     * @var int
-     */
-    public $dayOfWeek;
-
-    /**
      * @description 上课周期
      *
      * @var int
@@ -25,25 +18,11 @@ class courserGroupItemModels extends Model
     public $classPeriodType;
 
     /**
-     * @description 开始时间
+     * @description classroomId
      *
-     * @var courserGroupItemStartDate
+     * @var int
      */
-    public $courserGroupItemStartDate;
-
-    /**
-     * @description 课节
-     *
-     * @var int[]
-     */
-    public $sectionIndex;
-
-    /**
-     * @description 结束时间
-     *
-     * @var courserGroupItemEndDate
-     */
-    public $courserGroupItemEndDate;
+    public $classroomId;
 
     /**
      * @description 课程类型
@@ -53,19 +32,40 @@ class courserGroupItemModels extends Model
     public $courseType;
 
     /**
-     * @description classroomId
+     * @description 结束时间
+     *
+     * @var courserGroupItemEndDate
+     */
+    public $courserGroupItemEndDate;
+
+    /**
+     * @description 开始时间
+     *
+     * @var courserGroupItemStartDate
+     */
+    public $courserGroupItemStartDate;
+
+    /**
+     * @description 一周的第几天
      *
      * @var int
      */
-    public $classroomId;
+    public $dayOfWeek;
+
+    /**
+     * @description 课节
+     *
+     * @var int[]
+     */
+    public $sectionIndex;
     protected $_name = [
-        'dayOfWeek'                 => 'dayOfWeek',
         'classPeriodType'           => 'classPeriodType',
-        'courserGroupItemStartDate' => 'courserGroupItemStartDate',
-        'sectionIndex'              => 'sectionIndex',
-        'courserGroupItemEndDate'   => 'courserGroupItemEndDate',
-        'courseType'                => 'courseType',
         'classroomId'               => 'classroomId',
+        'courseType'                => 'courseType',
+        'courserGroupItemEndDate'   => 'courserGroupItemEndDate',
+        'courserGroupItemStartDate' => 'courserGroupItemStartDate',
+        'dayOfWeek'                 => 'dayOfWeek',
+        'sectionIndex'              => 'sectionIndex',
     ];
 
     public function validate()
@@ -75,26 +75,26 @@ class courserGroupItemModels extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->dayOfWeek) {
-            $res['dayOfWeek'] = $this->dayOfWeek;
-        }
         if (null !== $this->classPeriodType) {
             $res['classPeriodType'] = $this->classPeriodType;
         }
-        if (null !== $this->courserGroupItemStartDate) {
-            $res['courserGroupItemStartDate'] = null !== $this->courserGroupItemStartDate ? $this->courserGroupItemStartDate->toMap() : null;
-        }
-        if (null !== $this->sectionIndex) {
-            $res['sectionIndex'] = $this->sectionIndex;
-        }
-        if (null !== $this->courserGroupItemEndDate) {
-            $res['courserGroupItemEndDate'] = null !== $this->courserGroupItemEndDate ? $this->courserGroupItemEndDate->toMap() : null;
+        if (null !== $this->classroomId) {
+            $res['classroomId'] = $this->classroomId;
         }
         if (null !== $this->courseType) {
             $res['courseType'] = $this->courseType;
         }
-        if (null !== $this->classroomId) {
-            $res['classroomId'] = $this->classroomId;
+        if (null !== $this->courserGroupItemEndDate) {
+            $res['courserGroupItemEndDate'] = null !== $this->courserGroupItemEndDate ? $this->courserGroupItemEndDate->toMap() : null;
+        }
+        if (null !== $this->courserGroupItemStartDate) {
+            $res['courserGroupItemStartDate'] = null !== $this->courserGroupItemStartDate ? $this->courserGroupItemStartDate->toMap() : null;
+        }
+        if (null !== $this->dayOfWeek) {
+            $res['dayOfWeek'] = $this->dayOfWeek;
+        }
+        if (null !== $this->sectionIndex) {
+            $res['sectionIndex'] = $this->sectionIndex;
         }
 
         return $res;
@@ -108,28 +108,28 @@ class courserGroupItemModels extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['dayOfWeek'])) {
-            $model->dayOfWeek = $map['dayOfWeek'];
-        }
         if (isset($map['classPeriodType'])) {
             $model->classPeriodType = $map['classPeriodType'];
         }
+        if (isset($map['classroomId'])) {
+            $model->classroomId = $map['classroomId'];
+        }
+        if (isset($map['courseType'])) {
+            $model->courseType = $map['courseType'];
+        }
+        if (isset($map['courserGroupItemEndDate'])) {
+            $model->courserGroupItemEndDate = courserGroupItemEndDate::fromMap($map['courserGroupItemEndDate']);
+        }
         if (isset($map['courserGroupItemStartDate'])) {
             $model->courserGroupItemStartDate = courserGroupItemStartDate::fromMap($map['courserGroupItemStartDate']);
+        }
+        if (isset($map['dayOfWeek'])) {
+            $model->dayOfWeek = $map['dayOfWeek'];
         }
         if (isset($map['sectionIndex'])) {
             if (!empty($map['sectionIndex'])) {
                 $model->sectionIndex = $map['sectionIndex'];
             }
-        }
-        if (isset($map['courserGroupItemEndDate'])) {
-            $model->courserGroupItemEndDate = courserGroupItemEndDate::fromMap($map['courserGroupItemEndDate']);
-        }
-        if (isset($map['courseType'])) {
-            $model->courseType = $map['courseType'];
-        }
-        if (isset($map['classroomId'])) {
-            $model->classroomId = $map['classroomId'];
         }
 
         return $model;

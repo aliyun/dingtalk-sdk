@@ -23,13 +23,6 @@ class GetSearchTabResponseBody extends Model
     public $gmtModified;
 
     /**
-     * @description 数据源的id,范围为3000-4000
-     *
-     * @var int
-     */
-    public $tabId;
-
-    /**
      * @description 数据源名称
      *
      * @var string
@@ -49,13 +42,20 @@ class GetSearchTabResponseBody extends Model
      * @var int
      */
     public $status;
+
+    /**
+     * @description 数据源的id,范围为3000-4000
+     *
+     * @var int
+     */
+    public $tabId;
     protected $_name = [
         'gmtCreate'   => 'gmtCreate',
         'gmtModified' => 'gmtModified',
-        'tabId'       => 'tabId',
         'name'        => 'name',
         'priority'    => 'priority',
         'status'      => 'status',
+        'tabId'       => 'tabId',
     ];
 
     public function validate()
@@ -71,9 +71,6 @@ class GetSearchTabResponseBody extends Model
         if (null !== $this->gmtModified) {
             $res['gmtModified'] = $this->gmtModified;
         }
-        if (null !== $this->tabId) {
-            $res['tabId'] = $this->tabId;
-        }
         if (null !== $this->name) {
             $res['name'] = $this->name;
         }
@@ -82,6 +79,9 @@ class GetSearchTabResponseBody extends Model
         }
         if (null !== $this->status) {
             $res['status'] = $this->status;
+        }
+        if (null !== $this->tabId) {
+            $res['tabId'] = $this->tabId;
         }
 
         return $res;
@@ -101,9 +101,6 @@ class GetSearchTabResponseBody extends Model
         if (isset($map['gmtModified'])) {
             $model->gmtModified = $map['gmtModified'];
         }
-        if (isset($map['tabId'])) {
-            $model->tabId = $map['tabId'];
-        }
         if (isset($map['name'])) {
             $model->name = $map['name'];
         }
@@ -112,6 +109,9 @@ class GetSearchTabResponseBody extends Model
         }
         if (isset($map['status'])) {
             $model->status = $map['status'];
+        }
+        if (isset($map['tabId'])) {
+            $model->tabId = $map['tabId'];
         }
 
         return $model;

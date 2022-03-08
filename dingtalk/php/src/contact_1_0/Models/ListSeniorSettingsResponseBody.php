@@ -10,6 +10,11 @@ use AlibabaCloud\Tea\Model;
 class ListSeniorSettingsResponseBody extends Model
 {
     /**
+     * @var string[]
+     */
+    public $protectScenes;
+
+    /**
      * @description Id of the request
      *
      * @var string
@@ -17,17 +22,12 @@ class ListSeniorSettingsResponseBody extends Model
     public $seniorStaffId;
 
     /**
-     * @var string[]
-     */
-    public $protectScenes;
-
-    /**
      * @var seniorWhiteList[]
      */
     public $seniorWhiteList;
     protected $_name = [
-        'seniorStaffId'   => 'seniorStaffId',
         'protectScenes'   => 'protectScenes',
+        'seniorStaffId'   => 'seniorStaffId',
         'seniorWhiteList' => 'seniorWhiteList',
     ];
 
@@ -38,11 +38,11 @@ class ListSeniorSettingsResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->seniorStaffId) {
-            $res['seniorStaffId'] = $this->seniorStaffId;
-        }
         if (null !== $this->protectScenes) {
             $res['protectScenes'] = $this->protectScenes;
+        }
+        if (null !== $this->seniorStaffId) {
+            $res['seniorStaffId'] = $this->seniorStaffId;
         }
         if (null !== $this->seniorWhiteList) {
             $res['seniorWhiteList'] = [];
@@ -65,13 +65,13 @@ class ListSeniorSettingsResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['seniorStaffId'])) {
-            $model->seniorStaffId = $map['seniorStaffId'];
-        }
         if (isset($map['protectScenes'])) {
             if (!empty($map['protectScenes'])) {
                 $model->protectScenes = $map['protectScenes'];
             }
+        }
+        if (isset($map['seniorStaffId'])) {
+            $model->seniorStaffId = $map['seniorStaffId'];
         }
         if (isset($map['seniorWhiteList'])) {
             if (!empty($map['seniorWhiteList'])) {

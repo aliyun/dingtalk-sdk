@@ -9,18 +9,25 @@ use AlibabaCloud\Tea\Model;
 class empList extends Model
 {
     /**
+     * @description avatar
+     *
+     * @var string
+     */
+    public $avatar;
+
+    /**
+     * @description deptIdList
+     *
+     * @var int[]
+     */
+    public $deptIdList;
+
+    /**
      * @description dingId
      *
      * @var string
      */
     public $dingId;
-
-    /**
-     * @description unionId
-     *
-     * @var string
-     */
-    public $unionid;
 
     /**
      * @description name
@@ -37,13 +44,6 @@ class empList extends Model
     public $nick;
 
     /**
-     * @description userid
-     *
-     * @var string
-     */
-    public $userid;
-
-    /**
      * @description orgId
      *
      * @var int
@@ -51,33 +51,33 @@ class empList extends Model
     public $orgId;
 
     /**
-     * @description avatar
-     *
-     * @var string
-     */
-    public $avatar;
-
-    /**
-     * @description deptIdList
-     *
-     * @var int[]
-     */
-    public $deptIdList;
-
-    /**
      * @var string
      */
     public $position;
+
+    /**
+     * @description unionId
+     *
+     * @var string
+     */
+    public $unionid;
+
+    /**
+     * @description userid
+     *
+     * @var string
+     */
+    public $userid;
     protected $_name = [
-        'dingId'     => 'dingId',
-        'unionid'    => 'unionid',
-        'name'       => 'name',
-        'nick'       => 'nick',
-        'userid'     => 'userid',
-        'orgId'      => 'orgId',
         'avatar'     => 'avatar',
         'deptIdList' => 'dept_id_list',
+        'dingId'     => 'dingId',
+        'name'       => 'name',
+        'nick'       => 'nick',
+        'orgId'      => 'orgId',
         'position'   => 'position',
+        'unionid'    => 'unionid',
+        'userid'     => 'userid',
     ];
 
     public function validate()
@@ -87,11 +87,14 @@ class empList extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->avatar) {
+            $res['avatar'] = $this->avatar;
+        }
+        if (null !== $this->deptIdList) {
+            $res['dept_id_list'] = $this->deptIdList;
+        }
         if (null !== $this->dingId) {
             $res['dingId'] = $this->dingId;
-        }
-        if (null !== $this->unionid) {
-            $res['unionid'] = $this->unionid;
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
@@ -99,20 +102,17 @@ class empList extends Model
         if (null !== $this->nick) {
             $res['nick'] = $this->nick;
         }
-        if (null !== $this->userid) {
-            $res['userid'] = $this->userid;
-        }
         if (null !== $this->orgId) {
             $res['orgId'] = $this->orgId;
         }
-        if (null !== $this->avatar) {
-            $res['avatar'] = $this->avatar;
-        }
-        if (null !== $this->deptIdList) {
-            $res['dept_id_list'] = $this->deptIdList;
-        }
         if (null !== $this->position) {
             $res['position'] = $this->position;
+        }
+        if (null !== $this->unionid) {
+            $res['unionid'] = $this->unionid;
+        }
+        if (null !== $this->userid) {
+            $res['userid'] = $this->userid;
         }
 
         return $res;
@@ -126,24 +126,6 @@ class empList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['dingId'])) {
-            $model->dingId = $map['dingId'];
-        }
-        if (isset($map['unionid'])) {
-            $model->unionid = $map['unionid'];
-        }
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
-        }
-        if (isset($map['nick'])) {
-            $model->nick = $map['nick'];
-        }
-        if (isset($map['userid'])) {
-            $model->userid = $map['userid'];
-        }
-        if (isset($map['orgId'])) {
-            $model->orgId = $map['orgId'];
-        }
         if (isset($map['avatar'])) {
             $model->avatar = $map['avatar'];
         }
@@ -152,8 +134,26 @@ class empList extends Model
                 $model->deptIdList = $map['dept_id_list'];
             }
         }
+        if (isset($map['dingId'])) {
+            $model->dingId = $map['dingId'];
+        }
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
+        }
+        if (isset($map['nick'])) {
+            $model->nick = $map['nick'];
+        }
+        if (isset($map['orgId'])) {
+            $model->orgId = $map['orgId'];
+        }
         if (isset($map['position'])) {
             $model->position = $map['position'];
+        }
+        if (isset($map['unionid'])) {
+            $model->unionid = $map['unionid'];
+        }
+        if (isset($map['userid'])) {
+            $model->userid = $map['userid'];
         }
 
         return $model;

@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class customDept extends Model
 {
     /**
-     * @description 部门类型：custom_campus: 自定义校区；custom_dept: 自定义部门
-     *
-     * @var string
-     */
-    public $type;
-
-    /**
      * @description 自定义校区或部门名称
      *
      * @var string
      */
     public $name;
+
+    /**
+     * @description 部门类型：custom_campus: 自定义校区；custom_dept: 自定义部门
+     *
+     * @var string
+     */
+    public $type;
     protected $_name = [
-        'type' => 'type',
         'name' => 'name',
+        'type' => 'type',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class customDept extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->type) {
-            $res['type'] = $this->type;
-        }
         if (null !== $this->name) {
             $res['name'] = $this->name;
+        }
+        if (null !== $this->type) {
+            $res['type'] = $this->type;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class customDept extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['type'])) {
-            $model->type = $map['type'];
-        }
         if (isset($map['name'])) {
             $model->name = $map['name'];
+        }
+        if (isset($map['type'])) {
+            $model->type = $map['type'];
         }
 
         return $model;

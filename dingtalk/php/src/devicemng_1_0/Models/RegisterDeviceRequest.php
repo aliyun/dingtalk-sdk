@@ -9,11 +9,25 @@ use AlibabaCloud\Tea\Model;
 class RegisterDeviceRequest extends Model
 {
     /**
-     * @description 组织id
+     * @description 协助者userId列表
      *
      * @var string
      */
-    public $dingCorpId;
+    public $collaborators;
+
+    /**
+     * @description 部门id
+     *
+     * @var int
+     */
+    public $departmentId;
+
+    /**
+     * @description 设备描述
+     *
+     * @var string
+     */
+    public $description;
 
     /**
      * @description 设备标识
@@ -30,32 +44,11 @@ class RegisterDeviceRequest extends Model
     public $deviceName;
 
     /**
-     * @description 部门id
-     *
-     * @var int
-     */
-    public $departmentId;
-
-    /**
      * @description 管理员userId列表
      *
      * @var string
      */
     public $managers;
-
-    /**
-     * @description 协助者userId列表
-     *
-     * @var string
-     */
-    public $collaborators;
-
-    /**
-     * @description 设备描述
-     *
-     * @var string
-     */
-    public $description;
 
     /**
      * @description 创建者userId
@@ -64,13 +57,12 @@ class RegisterDeviceRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'dingCorpId'    => 'dingCorpId',
+        'collaborators' => 'collaborators',
+        'departmentId'  => 'departmentId',
+        'description'   => 'description',
         'deviceKey'     => 'deviceKey',
         'deviceName'    => 'deviceName',
-        'departmentId'  => 'departmentId',
         'managers'      => 'managers',
-        'collaborators' => 'collaborators',
-        'description'   => 'description',
         'userId'        => 'userId',
     ];
 
@@ -81,8 +73,14 @@ class RegisterDeviceRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->dingCorpId) {
-            $res['dingCorpId'] = $this->dingCorpId;
+        if (null !== $this->collaborators) {
+            $res['collaborators'] = $this->collaborators;
+        }
+        if (null !== $this->departmentId) {
+            $res['departmentId'] = $this->departmentId;
+        }
+        if (null !== $this->description) {
+            $res['description'] = $this->description;
         }
         if (null !== $this->deviceKey) {
             $res['deviceKey'] = $this->deviceKey;
@@ -90,17 +88,8 @@ class RegisterDeviceRequest extends Model
         if (null !== $this->deviceName) {
             $res['deviceName'] = $this->deviceName;
         }
-        if (null !== $this->departmentId) {
-            $res['departmentId'] = $this->departmentId;
-        }
         if (null !== $this->managers) {
             $res['managers'] = $this->managers;
-        }
-        if (null !== $this->collaborators) {
-            $res['collaborators'] = $this->collaborators;
-        }
-        if (null !== $this->description) {
-            $res['description'] = $this->description;
         }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
@@ -117,8 +106,14 @@ class RegisterDeviceRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['dingCorpId'])) {
-            $model->dingCorpId = $map['dingCorpId'];
+        if (isset($map['collaborators'])) {
+            $model->collaborators = $map['collaborators'];
+        }
+        if (isset($map['departmentId'])) {
+            $model->departmentId = $map['departmentId'];
+        }
+        if (isset($map['description'])) {
+            $model->description = $map['description'];
         }
         if (isset($map['deviceKey'])) {
             $model->deviceKey = $map['deviceKey'];
@@ -126,17 +121,8 @@ class RegisterDeviceRequest extends Model
         if (isset($map['deviceName'])) {
             $model->deviceName = $map['deviceName'];
         }
-        if (isset($map['departmentId'])) {
-            $model->departmentId = $map['departmentId'];
-        }
         if (isset($map['managers'])) {
             $model->managers = $map['managers'];
-        }
-        if (isset($map['collaborators'])) {
-            $model->collaborators = $map['collaborators'];
-        }
-        if (isset($map['description'])) {
-            $model->description = $map['description'];
         }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];

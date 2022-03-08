@@ -9,25 +9,11 @@ use AlibabaCloud\Tea\Model;
 class GetSceneGroupMembersRequest extends Model
 {
     /**
-     * @description 开放群ID
-     *
-     * @var string
-     */
-    public $openConversationId;
-
-    /**
      * @description 酷应用编码
      *
      * @var string
      */
     public $coolAppCode;
-
-    /**
-     * @description 本次查询返回数量上限（该入参传入值小于钉钉阈值时不启用）
-     *
-     * @var int
-     */
-    public $size;
 
     /**
      * @description 分页游标，首页传0
@@ -37,45 +23,23 @@ class GetSceneGroupMembersRequest extends Model
     public $cursor;
 
     /**
-     * @var int
-     */
-    public $dingTokenGrantType;
-
-    /**
-     * @var int
-     */
-    public $dingOrgId;
-
-    /**
-     * @var int
-     */
-    public $dingIsvOrgId;
-
-    /**
+     * @description 开放群ID
+     *
      * @var string
      */
-    public $dingSuiteKey;
+    public $openConversationId;
 
     /**
-     * @var string
-     */
-    public $dingClientId;
-
-    /**
+     * @description 本次查询返回数量上限（该入参传入值小于钉钉阈值时不启用）
+     *
      * @var int
      */
-    public $dingOauthAppId;
+    public $size;
     protected $_name = [
-        'openConversationId' => 'openConversationId',
         'coolAppCode'        => 'coolAppCode',
-        'size'               => 'size',
         'cursor'             => 'cursor',
-        'dingTokenGrantType' => 'dingTokenGrantType',
-        'dingOrgId'          => 'dingOrgId',
-        'dingIsvOrgId'       => 'dingIsvOrgId',
-        'dingSuiteKey'       => 'dingSuiteKey',
-        'dingClientId'       => 'dingClientId',
-        'dingOauthAppId'     => 'dingOauthAppId',
+        'openConversationId' => 'openConversationId',
+        'size'               => 'size',
     ];
 
     public function validate()
@@ -85,35 +49,17 @@ class GetSceneGroupMembersRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->openConversationId) {
-            $res['openConversationId'] = $this->openConversationId;
-        }
         if (null !== $this->coolAppCode) {
             $res['coolAppCode'] = $this->coolAppCode;
-        }
-        if (null !== $this->size) {
-            $res['size'] = $this->size;
         }
         if (null !== $this->cursor) {
             $res['cursor'] = $this->cursor;
         }
-        if (null !== $this->dingTokenGrantType) {
-            $res['dingTokenGrantType'] = $this->dingTokenGrantType;
+        if (null !== $this->openConversationId) {
+            $res['openConversationId'] = $this->openConversationId;
         }
-        if (null !== $this->dingOrgId) {
-            $res['dingOrgId'] = $this->dingOrgId;
-        }
-        if (null !== $this->dingIsvOrgId) {
-            $res['dingIsvOrgId'] = $this->dingIsvOrgId;
-        }
-        if (null !== $this->dingSuiteKey) {
-            $res['dingSuiteKey'] = $this->dingSuiteKey;
-        }
-        if (null !== $this->dingClientId) {
-            $res['dingClientId'] = $this->dingClientId;
-        }
-        if (null !== $this->dingOauthAppId) {
-            $res['dingOauthAppId'] = $this->dingOauthAppId;
+        if (null !== $this->size) {
+            $res['size'] = $this->size;
         }
 
         return $res;
@@ -127,35 +73,17 @@ class GetSceneGroupMembersRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['openConversationId'])) {
-            $model->openConversationId = $map['openConversationId'];
-        }
         if (isset($map['coolAppCode'])) {
             $model->coolAppCode = $map['coolAppCode'];
-        }
-        if (isset($map['size'])) {
-            $model->size = $map['size'];
         }
         if (isset($map['cursor'])) {
             $model->cursor = $map['cursor'];
         }
-        if (isset($map['dingTokenGrantType'])) {
-            $model->dingTokenGrantType = $map['dingTokenGrantType'];
+        if (isset($map['openConversationId'])) {
+            $model->openConversationId = $map['openConversationId'];
         }
-        if (isset($map['dingOrgId'])) {
-            $model->dingOrgId = $map['dingOrgId'];
-        }
-        if (isset($map['dingIsvOrgId'])) {
-            $model->dingIsvOrgId = $map['dingIsvOrgId'];
-        }
-        if (isset($map['dingSuiteKey'])) {
-            $model->dingSuiteKey = $map['dingSuiteKey'];
-        }
-        if (isset($map['dingClientId'])) {
-            $model->dingClientId = $map['dingClientId'];
-        }
-        if (isset($map['dingOauthAppId'])) {
-            $model->dingOauthAppId = $map['dingOauthAppId'];
+        if (isset($map['size'])) {
+            $model->size = $map['size'];
         }
 
         return $model;

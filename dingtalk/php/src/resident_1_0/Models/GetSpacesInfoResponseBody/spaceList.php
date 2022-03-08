@@ -9,6 +9,38 @@ use AlibabaCloud\Tea\Model;
 class spaceList extends Model
 {
     /**
+     * @var float
+     */
+    public $billingArea;
+
+    /**
+     * @var float
+     */
+    public $buildingArea;
+
+    /**
+     * @var string
+     */
+    public $floor;
+
+    /**
+     * @description 房屋状态：0空置/1未领/2入住/3空关/4装修
+     *
+     * @var int
+     */
+    public $houseState;
+
+    /**
+     * @var int
+     */
+    public $isVirtual;
+
+    /**
+     * @var int
+     */
+    public $parentReferId;
+
+    /**
      * @var int
      */
     public $referId;
@@ -29,49 +61,17 @@ class spaceList extends Model
      * @var string
      */
     public $type;
-
-    /**
-     * @var string
-     */
-    public $floor;
-
-    /**
-     * @var int
-     */
-    public $isVirtual;
-
-    /**
-     * @var float
-     */
-    public $billingArea;
-
-    /**
-     * @var float
-     */
-    public $buildingArea;
-
-    /**
-     * @description 房屋状态：0空置/1未领/2入住/3空关/4装修
-     *
-     * @var int
-     */
-    public $houseState;
-
-    /**
-     * @var int
-     */
-    public $parentReferId;
     protected $_name = [
+        'billingArea'   => 'billingArea',
+        'buildingArea'  => 'buildingArea',
+        'floor'         => 'floor',
+        'houseState'    => 'houseState',
+        'isVirtual'     => 'isVirtual',
+        'parentReferId' => 'parentReferId',
         'referId'       => 'referId',
         'spaceName'     => 'spaceName',
         'tagCode'       => 'tagCode',
         'type'          => 'type',
-        'floor'         => 'floor',
-        'isVirtual'     => 'isVirtual',
-        'billingArea'   => 'billingArea',
-        'buildingArea'  => 'buildingArea',
-        'houseState'    => 'houseState',
-        'parentReferId' => 'parentReferId',
     ];
 
     public function validate()
@@ -81,6 +81,24 @@ class spaceList extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->billingArea) {
+            $res['billingArea'] = $this->billingArea;
+        }
+        if (null !== $this->buildingArea) {
+            $res['buildingArea'] = $this->buildingArea;
+        }
+        if (null !== $this->floor) {
+            $res['floor'] = $this->floor;
+        }
+        if (null !== $this->houseState) {
+            $res['houseState'] = $this->houseState;
+        }
+        if (null !== $this->isVirtual) {
+            $res['isVirtual'] = $this->isVirtual;
+        }
+        if (null !== $this->parentReferId) {
+            $res['parentReferId'] = $this->parentReferId;
+        }
         if (null !== $this->referId) {
             $res['referId'] = $this->referId;
         }
@@ -92,24 +110,6 @@ class spaceList extends Model
         }
         if (null !== $this->type) {
             $res['type'] = $this->type;
-        }
-        if (null !== $this->floor) {
-            $res['floor'] = $this->floor;
-        }
-        if (null !== $this->isVirtual) {
-            $res['isVirtual'] = $this->isVirtual;
-        }
-        if (null !== $this->billingArea) {
-            $res['billingArea'] = $this->billingArea;
-        }
-        if (null !== $this->buildingArea) {
-            $res['buildingArea'] = $this->buildingArea;
-        }
-        if (null !== $this->houseState) {
-            $res['houseState'] = $this->houseState;
-        }
-        if (null !== $this->parentReferId) {
-            $res['parentReferId'] = $this->parentReferId;
         }
 
         return $res;
@@ -123,6 +123,24 @@ class spaceList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['billingArea'])) {
+            $model->billingArea = $map['billingArea'];
+        }
+        if (isset($map['buildingArea'])) {
+            $model->buildingArea = $map['buildingArea'];
+        }
+        if (isset($map['floor'])) {
+            $model->floor = $map['floor'];
+        }
+        if (isset($map['houseState'])) {
+            $model->houseState = $map['houseState'];
+        }
+        if (isset($map['isVirtual'])) {
+            $model->isVirtual = $map['isVirtual'];
+        }
+        if (isset($map['parentReferId'])) {
+            $model->parentReferId = $map['parentReferId'];
+        }
         if (isset($map['referId'])) {
             $model->referId = $map['referId'];
         }
@@ -134,24 +152,6 @@ class spaceList extends Model
         }
         if (isset($map['type'])) {
             $model->type = $map['type'];
-        }
-        if (isset($map['floor'])) {
-            $model->floor = $map['floor'];
-        }
-        if (isset($map['isVirtual'])) {
-            $model->isVirtual = $map['isVirtual'];
-        }
-        if (isset($map['billingArea'])) {
-            $model->billingArea = $map['billingArea'];
-        }
-        if (isset($map['buildingArea'])) {
-            $model->buildingArea = $map['buildingArea'];
-        }
-        if (isset($map['houseState'])) {
-            $model->houseState = $map['houseState'];
-        }
-        if (isset($map['parentReferId'])) {
-            $model->parentReferId = $map['parentReferId'];
         }
 
         return $model;

@@ -9,18 +9,11 @@ use AlibabaCloud\Tea\Model;
 class GetOssTempUrlRequest extends Model
 {
     /**
-     * @description 团队开放ID
+     * @description 访问模式 AUTO(自动，例如在浏览器中如果是图片，PDF等可以在线直接查看，不能在线看时自动下载)、DOWNLOAD（直接下载）
      *
      * @var string
      */
-    public $openTeamId;
-
-    /**
-     * @description oss文件key
-     *
-     * @var string
-     */
-    public $key;
+    public $fetchMode;
 
     /**
      * @description 文件名
@@ -30,16 +23,23 @@ class GetOssTempUrlRequest extends Model
     public $fileName;
 
     /**
-     * @description 访问模式 AUTO(自动，例如在浏览器中如果是图片，PDF等可以在线直接查看，不能在线看时自动下载)、DOWNLOAD（直接下载）
+     * @description oss文件key
      *
      * @var string
      */
-    public $fetchMode;
+    public $key;
+
+    /**
+     * @description 团队开放ID
+     *
+     * @var string
+     */
+    public $openTeamId;
     protected $_name = [
-        'openTeamId' => 'openTeamId',
-        'key'        => 'key',
-        'fileName'   => 'fileName',
         'fetchMode'  => 'fetchMode',
+        'fileName'   => 'fileName',
+        'key'        => 'key',
+        'openTeamId' => 'openTeamId',
     ];
 
     public function validate()
@@ -49,17 +49,17 @@ class GetOssTempUrlRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->openTeamId) {
-            $res['openTeamId'] = $this->openTeamId;
-        }
-        if (null !== $this->key) {
-            $res['key'] = $this->key;
+        if (null !== $this->fetchMode) {
+            $res['fetchMode'] = $this->fetchMode;
         }
         if (null !== $this->fileName) {
             $res['fileName'] = $this->fileName;
         }
-        if (null !== $this->fetchMode) {
-            $res['fetchMode'] = $this->fetchMode;
+        if (null !== $this->key) {
+            $res['key'] = $this->key;
+        }
+        if (null !== $this->openTeamId) {
+            $res['openTeamId'] = $this->openTeamId;
         }
 
         return $res;
@@ -73,17 +73,17 @@ class GetOssTempUrlRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['openTeamId'])) {
-            $model->openTeamId = $map['openTeamId'];
-        }
-        if (isset($map['key'])) {
-            $model->key = $map['key'];
+        if (isset($map['fetchMode'])) {
+            $model->fetchMode = $map['fetchMode'];
         }
         if (isset($map['fileName'])) {
             $model->fileName = $map['fileName'];
         }
-        if (isset($map['fetchMode'])) {
-            $model->fetchMode = $map['fetchMode'];
+        if (isset($map['key'])) {
+            $model->key = $map['key'];
+        }
+        if (isset($map['openTeamId'])) {
+            $model->openTeamId = $map['openTeamId'];
         }
 
         return $model;

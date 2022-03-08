@@ -23,18 +23,18 @@ class devices extends Model
     public $deviceName;
 
     /**
-     * @description 设备地址。
-     *
-     * @var string
-     */
-    public $location;
-
-    /**
      * @description 设备状态 0:在线 1:离线
      *
      * @var int
      */
     public $deviceStatus;
+
+    /**
+     * @description 第三方平台定制参数，企业内部系统忽略。
+     *
+     * @var mixed[]
+     */
+    public $extraData;
 
     /**
      * @description 视频流地址直播流地址，支持rtmp、flv、hls等格式，需要https协议。
@@ -44,18 +44,18 @@ class devices extends Model
     public $liveUrl;
 
     /**
-     * @description 第三方平台定制参数，企业内部系统忽略。
+     * @description 设备地址。
      *
-     * @var mixed[]
+     * @var string
      */
-    public $extraData;
+    public $location;
     protected $_name = [
         'deviceId'     => 'deviceId',
         'deviceName'   => 'deviceName',
-        'location'     => 'location',
         'deviceStatus' => 'deviceStatus',
-        'liveUrl'      => 'liveUrl',
         'extraData'    => 'extraData',
+        'liveUrl'      => 'liveUrl',
+        'location'     => 'location',
     ];
 
     public function validate()
@@ -71,17 +71,17 @@ class devices extends Model
         if (null !== $this->deviceName) {
             $res['deviceName'] = $this->deviceName;
         }
-        if (null !== $this->location) {
-            $res['location'] = $this->location;
-        }
         if (null !== $this->deviceStatus) {
             $res['deviceStatus'] = $this->deviceStatus;
+        }
+        if (null !== $this->extraData) {
+            $res['extraData'] = $this->extraData;
         }
         if (null !== $this->liveUrl) {
             $res['liveUrl'] = $this->liveUrl;
         }
-        if (null !== $this->extraData) {
-            $res['extraData'] = $this->extraData;
+        if (null !== $this->location) {
+            $res['location'] = $this->location;
         }
 
         return $res;
@@ -101,17 +101,17 @@ class devices extends Model
         if (isset($map['deviceName'])) {
             $model->deviceName = $map['deviceName'];
         }
-        if (isset($map['location'])) {
-            $model->location = $map['location'];
-        }
         if (isset($map['deviceStatus'])) {
             $model->deviceStatus = $map['deviceStatus'];
+        }
+        if (isset($map['extraData'])) {
+            $model->extraData = $map['extraData'];
         }
         if (isset($map['liveUrl'])) {
             $model->liveUrl = $map['liveUrl'];
         }
-        if (isset($map['extraData'])) {
-            $model->extraData = $map['extraData'];
+        if (isset($map['location'])) {
+            $model->location = $map['location'];
         }
 
         return $model;

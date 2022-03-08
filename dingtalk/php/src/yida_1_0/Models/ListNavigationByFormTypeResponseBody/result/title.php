@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class title extends Model
 {
     /**
+     * @description 中文名称
+     *
+     * @var string
+     */
+    public $nameInChinese;
+
+    /**
      * @description 英文名称
      *
      * @var string
@@ -21,17 +28,10 @@ class title extends Model
      * @var string
      */
     public $type;
-
-    /**
-     * @description 中文名称
-     *
-     * @var string
-     */
-    public $nameInChinese;
     protected $_name = [
+        'nameInChinese' => 'nameInChinese',
         'nameInEnglish' => 'nameInEnglish',
         'type'          => 'type',
-        'nameInChinese' => 'nameInChinese',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class title extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->nameInChinese) {
+            $res['nameInChinese'] = $this->nameInChinese;
+        }
         if (null !== $this->nameInEnglish) {
             $res['nameInEnglish'] = $this->nameInEnglish;
         }
         if (null !== $this->type) {
             $res['type'] = $this->type;
-        }
-        if (null !== $this->nameInChinese) {
-            $res['nameInChinese'] = $this->nameInChinese;
         }
 
         return $res;
@@ -62,14 +62,14 @@ class title extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['nameInChinese'])) {
+            $model->nameInChinese = $map['nameInChinese'];
+        }
         if (isset($map['nameInEnglish'])) {
             $model->nameInEnglish = $map['nameInEnglish'];
         }
         if (isset($map['type'])) {
             $model->type = $map['type'];
-        }
-        if (isset($map['nameInChinese'])) {
-            $model->nameInChinese = $map['nameInChinese'];
         }
 
         return $model;

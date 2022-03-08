@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class CreateUniversityStudentRequest extends Model
 {
     /**
-     * @description 学号
-     *
-     * @var string
-     */
-    public $studentNumber;
-
-    /**
      * @description 班级id
      *
      * @var int
@@ -28,6 +21,13 @@ class CreateUniversityStudentRequest extends Model
      * @var string
      */
     public $gender;
+
+    /**
+     * @description 身份证号
+     *
+     * @var string
+     */
+    public $identityNumber;
 
     /**
      * @description 电话
@@ -44,11 +44,11 @@ class CreateUniversityStudentRequest extends Model
     public $name;
 
     /**
-     * @description 身份证号
+     * @description 学号
      *
      * @var string
      */
-    public $identityNumber;
+    public $studentNumber;
 
     /**
      * @description opUserId
@@ -57,12 +57,12 @@ class CreateUniversityStudentRequest extends Model
      */
     public $opUserId;
     protected $_name = [
-        'studentNumber'  => 'studentNumber',
         'classId'        => 'classId',
         'gender'         => 'gender',
+        'identityNumber' => 'identityNumber',
         'mobile'         => 'mobile',
         'name'           => 'name',
-        'identityNumber' => 'identityNumber',
+        'studentNumber'  => 'studentNumber',
         'opUserId'       => 'opUserId',
     ];
 
@@ -73,14 +73,14 @@ class CreateUniversityStudentRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->studentNumber) {
-            $res['studentNumber'] = $this->studentNumber;
-        }
         if (null !== $this->classId) {
             $res['classId'] = $this->classId;
         }
         if (null !== $this->gender) {
             $res['gender'] = $this->gender;
+        }
+        if (null !== $this->identityNumber) {
+            $res['identityNumber'] = $this->identityNumber;
         }
         if (null !== $this->mobile) {
             $res['mobile'] = $this->mobile;
@@ -88,8 +88,8 @@ class CreateUniversityStudentRequest extends Model
         if (null !== $this->name) {
             $res['name'] = $this->name;
         }
-        if (null !== $this->identityNumber) {
-            $res['identityNumber'] = $this->identityNumber;
+        if (null !== $this->studentNumber) {
+            $res['studentNumber'] = $this->studentNumber;
         }
         if (null !== $this->opUserId) {
             $res['opUserId'] = $this->opUserId;
@@ -106,14 +106,14 @@ class CreateUniversityStudentRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['studentNumber'])) {
-            $model->studentNumber = $map['studentNumber'];
-        }
         if (isset($map['classId'])) {
             $model->classId = $map['classId'];
         }
         if (isset($map['gender'])) {
             $model->gender = $map['gender'];
+        }
+        if (isset($map['identityNumber'])) {
+            $model->identityNumber = $map['identityNumber'];
         }
         if (isset($map['mobile'])) {
             $model->mobile = $map['mobile'];
@@ -121,8 +121,8 @@ class CreateUniversityStudentRequest extends Model
         if (isset($map['name'])) {
             $model->name = $map['name'];
         }
-        if (isset($map['identityNumber'])) {
-            $model->identityNumber = $map['identityNumber'];
+        if (isset($map['studentNumber'])) {
+            $model->studentNumber = $map['studentNumber'];
         }
         if (isset($map['opUserId'])) {
             $model->opUserId = $map['opUserId'];

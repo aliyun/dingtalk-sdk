@@ -10,21 +10,21 @@ use AlibabaCloud\Tea\Model;
 class IndustrializeManufactureQueryJobsResponseBody extends Model
 {
     /**
-     * @description httpCode
-     *
-     * @var string
-     */
-    public $httpCode;
-
-    /**
      * @description 查询的数据结果
      *
      * @var content
      */
     public $content;
+
+    /**
+     * @description httpCode
+     *
+     * @var string
+     */
+    public $httpCode;
     protected $_name = [
-        'httpCode' => 'httpCode',
         'content'  => 'content',
+        'httpCode' => 'httpCode',
     ];
 
     public function validate()
@@ -34,11 +34,11 @@ class IndustrializeManufactureQueryJobsResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->httpCode) {
-            $res['httpCode'] = $this->httpCode;
-        }
         if (null !== $this->content) {
             $res['content'] = null !== $this->content ? $this->content->toMap() : null;
+        }
+        if (null !== $this->httpCode) {
+            $res['httpCode'] = $this->httpCode;
         }
 
         return $res;
@@ -52,11 +52,11 @@ class IndustrializeManufactureQueryJobsResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['httpCode'])) {
-            $model->httpCode = $map['httpCode'];
-        }
         if (isset($map['content'])) {
             $model->content = content::fromMap($map['content']);
+        }
+        if (isset($map['httpCode'])) {
+            $model->httpCode = $map['httpCode'];
         }
 
         return $model;

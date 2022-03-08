@@ -9,20 +9,6 @@ use AlibabaCloud\Tea\Model;
 class SearchWorkspaceDocsRequest extends Model
 {
     /**
-     * @description 团队空间Id
-     *
-     * @var string
-     */
-    public $workspaceId;
-
-    /**
-     * @description 发起操作用户unionId
-     *
-     * @var string
-     */
-    public $operatorId;
-
-    /**
      * @description 搜索关键字
      *
      * @var string
@@ -42,12 +28,26 @@ class SearchWorkspaceDocsRequest extends Model
      * @var string
      */
     public $nextToken;
+
+    /**
+     * @description 发起操作用户unionId
+     *
+     * @var string
+     */
+    public $operatorId;
+
+    /**
+     * @description 团队空间Id
+     *
+     * @var string
+     */
+    public $workspaceId;
     protected $_name = [
-        'workspaceId' => 'workspaceId',
-        'operatorId'  => 'operatorId',
         'keyword'     => 'keyword',
         'maxResults'  => 'maxResults',
         'nextToken'   => 'nextToken',
+        'operatorId'  => 'operatorId',
+        'workspaceId' => 'workspaceId',
     ];
 
     public function validate()
@@ -57,12 +57,6 @@ class SearchWorkspaceDocsRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->workspaceId) {
-            $res['workspaceId'] = $this->workspaceId;
-        }
-        if (null !== $this->operatorId) {
-            $res['operatorId'] = $this->operatorId;
-        }
         if (null !== $this->keyword) {
             $res['keyword'] = $this->keyword;
         }
@@ -71,6 +65,12 @@ class SearchWorkspaceDocsRequest extends Model
         }
         if (null !== $this->nextToken) {
             $res['nextToken'] = $this->nextToken;
+        }
+        if (null !== $this->operatorId) {
+            $res['operatorId'] = $this->operatorId;
+        }
+        if (null !== $this->workspaceId) {
+            $res['workspaceId'] = $this->workspaceId;
         }
 
         return $res;
@@ -84,12 +84,6 @@ class SearchWorkspaceDocsRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['workspaceId'])) {
-            $model->workspaceId = $map['workspaceId'];
-        }
-        if (isset($map['operatorId'])) {
-            $model->operatorId = $map['operatorId'];
-        }
         if (isset($map['keyword'])) {
             $model->keyword = $map['keyword'];
         }
@@ -98,6 +92,12 @@ class SearchWorkspaceDocsRequest extends Model
         }
         if (isset($map['nextToken'])) {
             $model->nextToken = $map['nextToken'];
+        }
+        if (isset($map['operatorId'])) {
+            $model->operatorId = $map['operatorId'];
+        }
+        if (isset($map['workspaceId'])) {
+            $model->workspaceId = $map['workspaceId'];
         }
 
         return $model;

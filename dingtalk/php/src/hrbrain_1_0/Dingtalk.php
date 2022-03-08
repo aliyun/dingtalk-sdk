@@ -48,27 +48,27 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->content)) {
+            @$body['content'] = $request->content;
+        }
+        if (!Utils::isUnset($request->dataId)) {
+            @$body['dataId'] = $request->dataId;
+        }
+        if (!Utils::isUnset($request->etlTime)) {
+            @$body['etlTime'] = $request->etlTime;
+        }
         if (!Utils::isUnset($request->projectId)) {
             @$body['projectId'] = $request->projectId;
         }
         if (!Utils::isUnset($request->schemaId)) {
             @$body['schemaId'] = $request->schemaId;
         }
-        if (!Utils::isUnset($request->dataId)) {
-            @$body['dataId'] = $request->dataId;
-        }
-        if (!Utils::isUnset($request->content)) {
-            @$body['content'] = $request->content;
-        }
-        if (!Utils::isUnset($request->etlTime)) {
-            @$body['etlTime'] = $request->etlTime;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,

@@ -11,18 +11,11 @@ use AlibabaCloud\Tea\Model;
 class okrRecommendItems extends Model
 {
     /**
-     * @description userId
+     * @description krResultRelatedResults
      *
-     * @var string
+     * @var krResultRelatedResults[]
      */
-    public $userId;
-
-    /**
-     * @description relatedLevel
-     *
-     * @var int
-     */
-    public $relatedLevel;
+    public $krResultRelatedResults;
 
     /**
      * @description objectiveRelatedResults
@@ -32,16 +25,23 @@ class okrRecommendItems extends Model
     public $objectiveRelatedResults;
 
     /**
-     * @description krResultRelatedResults
+     * @description relatedLevel
      *
-     * @var krResultRelatedResults[]
+     * @var int
      */
-    public $krResultRelatedResults;
+    public $relatedLevel;
+
+    /**
+     * @description userId
+     *
+     * @var string
+     */
+    public $userId;
     protected $_name = [
-        'userId'                  => 'userId',
-        'relatedLevel'            => 'relatedLevel',
-        'objectiveRelatedResults' => 'objectiveRelatedResults',
         'krResultRelatedResults'  => 'krResultRelatedResults',
+        'objectiveRelatedResults' => 'objectiveRelatedResults',
+        'relatedLevel'            => 'relatedLevel',
+        'userId'                  => 'userId',
     ];
 
     public function validate()
@@ -51,11 +51,14 @@ class okrRecommendItems extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
-        }
-        if (null !== $this->relatedLevel) {
-            $res['relatedLevel'] = $this->relatedLevel;
+        if (null !== $this->krResultRelatedResults) {
+            $res['krResultRelatedResults'] = [];
+            if (null !== $this->krResultRelatedResults && \is_array($this->krResultRelatedResults)) {
+                $n = 0;
+                foreach ($this->krResultRelatedResults as $item) {
+                    $res['krResultRelatedResults'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
         if (null !== $this->objectiveRelatedResults) {
             $res['objectiveRelatedResults'] = [];
@@ -66,14 +69,11 @@ class okrRecommendItems extends Model
                 }
             }
         }
-        if (null !== $this->krResultRelatedResults) {
-            $res['krResultRelatedResults'] = [];
-            if (null !== $this->krResultRelatedResults && \is_array($this->krResultRelatedResults)) {
-                $n = 0;
-                foreach ($this->krResultRelatedResults as $item) {
-                    $res['krResultRelatedResults'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
+        if (null !== $this->relatedLevel) {
+            $res['relatedLevel'] = $this->relatedLevel;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -87,11 +87,14 @@ class okrRecommendItems extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
-        }
-        if (isset($map['relatedLevel'])) {
-            $model->relatedLevel = $map['relatedLevel'];
+        if (isset($map['krResultRelatedResults'])) {
+            if (!empty($map['krResultRelatedResults'])) {
+                $model->krResultRelatedResults = [];
+                $n                             = 0;
+                foreach ($map['krResultRelatedResults'] as $item) {
+                    $model->krResultRelatedResults[$n++] = null !== $item ? krResultRelatedResults::fromMap($item) : $item;
+                }
+            }
         }
         if (isset($map['objectiveRelatedResults'])) {
             if (!empty($map['objectiveRelatedResults'])) {
@@ -102,14 +105,11 @@ class okrRecommendItems extends Model
                 }
             }
         }
-        if (isset($map['krResultRelatedResults'])) {
-            if (!empty($map['krResultRelatedResults'])) {
-                $model->krResultRelatedResults = [];
-                $n                             = 0;
-                foreach ($map['krResultRelatedResults'] as $item) {
-                    $model->krResultRelatedResults[$n++] = null !== $item ? krResultRelatedResults::fromMap($item) : $item;
-                }
-            }
+        if (isset($map['relatedLevel'])) {
+            $model->relatedLevel = $map['relatedLevel'];
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class GetPrintDictionaryRequest extends Model
 {
     /**
-     * @description 表单id
-     *
-     * @var string
-     */
-    public $formUuid;
-
-    /**
      * @description 应用代码
      *
      * @var string
@@ -23,11 +16,11 @@ class GetPrintDictionaryRequest extends Model
     public $appType;
 
     /**
-     * @description 版本
+     * @description 表单id
      *
-     * @var int
+     * @var string
      */
-    public $version;
+    public $formUuid;
 
     /**
      * @description 用户id
@@ -35,11 +28,18 @@ class GetPrintDictionaryRequest extends Model
      * @var string
      */
     public $userId;
+
+    /**
+     * @description 版本
+     *
+     * @var int
+     */
+    public $version;
     protected $_name = [
-        'formUuid' => 'formUuid',
         'appType'  => 'appType',
-        'version'  => 'version',
+        'formUuid' => 'formUuid',
         'userId'   => 'userId',
+        'version'  => 'version',
     ];
 
     public function validate()
@@ -49,17 +49,17 @@ class GetPrintDictionaryRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->formUuid) {
-            $res['formUuid'] = $this->formUuid;
-        }
         if (null !== $this->appType) {
             $res['appType'] = $this->appType;
         }
-        if (null !== $this->version) {
-            $res['version'] = $this->version;
+        if (null !== $this->formUuid) {
+            $res['formUuid'] = $this->formUuid;
         }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
+        }
+        if (null !== $this->version) {
+            $res['version'] = $this->version;
         }
 
         return $res;
@@ -73,17 +73,17 @@ class GetPrintDictionaryRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['formUuid'])) {
-            $model->formUuid = $map['formUuid'];
-        }
         if (isset($map['appType'])) {
             $model->appType = $map['appType'];
         }
-        if (isset($map['version'])) {
-            $model->version = $map['version'];
+        if (isset($map['formUuid'])) {
+            $model->formUuid = $map['formUuid'];
         }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];
+        }
+        if (isset($map['version'])) {
+            $model->version = $map['version'];
         }
 
         return $model;

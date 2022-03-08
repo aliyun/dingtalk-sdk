@@ -9,18 +9,18 @@ use AlibabaCloud\Tea\Model;
 class BatchRecallGroupRequest extends Model
 {
     /**
-     * @description 开放的群id
-     *
-     * @var string
-     */
-    public $openConversationId;
-
-    /**
      * @description 机器人的robotCode
      *
      * @var string
      */
     public $chatbotId;
+
+    /**
+     * @description 开放的群id
+     *
+     * @var string
+     */
+    public $openConversationId;
 
     /**
      * @description 消息id
@@ -29,8 +29,8 @@ class BatchRecallGroupRequest extends Model
      */
     public $processQueryKeys;
     protected $_name = [
-        'openConversationId' => 'openConversationId',
         'chatbotId'          => 'chatbotId',
+        'openConversationId' => 'openConversationId',
         'processQueryKeys'   => 'processQueryKeys',
     ];
 
@@ -41,11 +41,11 @@ class BatchRecallGroupRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->openConversationId) {
-            $res['openConversationId'] = $this->openConversationId;
-        }
         if (null !== $this->chatbotId) {
             $res['chatbotId'] = $this->chatbotId;
+        }
+        if (null !== $this->openConversationId) {
+            $res['openConversationId'] = $this->openConversationId;
         }
         if (null !== $this->processQueryKeys) {
             $res['processQueryKeys'] = $this->processQueryKeys;
@@ -62,11 +62,11 @@ class BatchRecallGroupRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['openConversationId'])) {
-            $model->openConversationId = $map['openConversationId'];
-        }
         if (isset($map['chatbotId'])) {
             $model->chatbotId = $map['chatbotId'];
+        }
+        if (isset($map['openConversationId'])) {
+            $model->openConversationId = $map['openConversationId'];
         }
         if (isset($map['processQueryKeys'])) {
             if (!empty($map['processQueryKeys'])) {

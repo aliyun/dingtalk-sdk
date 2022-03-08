@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class GetDeptResponseBody extends Model
 {
     /**
-     * @description 在父部门中的次序值
-     *
-     * @var int
-     */
-    public $order;
-
-    /**
      * @description 下属组织的部门ID
      *
      * @var int
@@ -30,24 +23,31 @@ class GetDeptResponseBody extends Model
     public $departmentName;
 
     /**
-     * @description 父部门id
-     *
-     * @var int
-     */
-    public $parentDepartmentId;
-
-    /**
      * @description 部门是否来自关联组织
      *
      * @var bool
      */
     public $fromUnionOrg;
+
+    /**
+     * @description 在父部门中的次序值
+     *
+     * @var int
+     */
+    public $order;
+
+    /**
+     * @description 父部门id
+     *
+     * @var int
+     */
+    public $parentDepartmentId;
     protected $_name = [
-        'order'              => 'order',
         'departmentId'       => 'departmentId',
         'departmentName'     => 'departmentName',
-        'parentDepartmentId' => 'parentDepartmentId',
         'fromUnionOrg'       => 'fromUnionOrg',
+        'order'              => 'order',
+        'parentDepartmentId' => 'parentDepartmentId',
     ];
 
     public function validate()
@@ -57,20 +57,20 @@ class GetDeptResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->order) {
-            $res['order'] = $this->order;
-        }
         if (null !== $this->departmentId) {
             $res['departmentId'] = $this->departmentId;
         }
         if (null !== $this->departmentName) {
             $res['departmentName'] = $this->departmentName;
         }
-        if (null !== $this->parentDepartmentId) {
-            $res['parentDepartmentId'] = $this->parentDepartmentId;
-        }
         if (null !== $this->fromUnionOrg) {
             $res['fromUnionOrg'] = $this->fromUnionOrg;
+        }
+        if (null !== $this->order) {
+            $res['order'] = $this->order;
+        }
+        if (null !== $this->parentDepartmentId) {
+            $res['parentDepartmentId'] = $this->parentDepartmentId;
         }
 
         return $res;
@@ -84,20 +84,20 @@ class GetDeptResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['order'])) {
-            $model->order = $map['order'];
-        }
         if (isset($map['departmentId'])) {
             $model->departmentId = $map['departmentId'];
         }
         if (isset($map['departmentName'])) {
             $model->departmentName = $map['departmentName'];
         }
-        if (isset($map['parentDepartmentId'])) {
-            $model->parentDepartmentId = $map['parentDepartmentId'];
-        }
         if (isset($map['fromUnionOrg'])) {
             $model->fromUnionOrg = $map['fromUnionOrg'];
+        }
+        if (isset($map['order'])) {
+            $model->order = $map['order'];
+        }
+        if (isset($map['parentDepartmentId'])) {
+            $model->parentDepartmentId = $map['parentDepartmentId'];
         }
 
         return $model;

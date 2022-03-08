@@ -10,25 +10,11 @@ use AlibabaCloud\Tea\Model;
 class GetFormDataByIDResponseBody extends Model
 {
     /**
-     * @description 发起人详情
+     * @description 表单数据详情
      *
-     * @var originator
+     * @var mixed[]
      */
-    public $originator;
-
-    /**
-     * @description 最后修改时间
-     *
-     * @var string
-     */
-    public $modifiedTimeGMT;
-
-    /**
-     * @description 表单ID
-     *
-     * @var string
-     */
-    public $formUuid;
+    public $formData;
 
     /**
      * @description 表单实例ID
@@ -38,17 +24,31 @@ class GetFormDataByIDResponseBody extends Model
     public $formInstId;
 
     /**
-     * @description 表单数据详情
+     * @description 表单ID
      *
-     * @var mixed[]
+     * @var string
      */
-    public $formData;
+    public $formUuid;
+
+    /**
+     * @description 最后修改时间
+     *
+     * @var string
+     */
+    public $modifiedTimeGMT;
+
+    /**
+     * @description 发起人详情
+     *
+     * @var originator
+     */
+    public $originator;
     protected $_name = [
-        'originator'      => 'originator',
-        'modifiedTimeGMT' => 'modifiedTimeGMT',
-        'formUuid'        => 'formUuid',
-        'formInstId'      => 'formInstId',
         'formData'        => 'formData',
+        'formInstId'      => 'formInstId',
+        'formUuid'        => 'formUuid',
+        'modifiedTimeGMT' => 'modifiedTimeGMT',
+        'originator'      => 'originator',
     ];
 
     public function validate()
@@ -58,20 +58,20 @@ class GetFormDataByIDResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->originator) {
-            $res['originator'] = null !== $this->originator ? $this->originator->toMap() : null;
-        }
-        if (null !== $this->modifiedTimeGMT) {
-            $res['modifiedTimeGMT'] = $this->modifiedTimeGMT;
-        }
-        if (null !== $this->formUuid) {
-            $res['formUuid'] = $this->formUuid;
+        if (null !== $this->formData) {
+            $res['formData'] = $this->formData;
         }
         if (null !== $this->formInstId) {
             $res['formInstId'] = $this->formInstId;
         }
-        if (null !== $this->formData) {
-            $res['formData'] = $this->formData;
+        if (null !== $this->formUuid) {
+            $res['formUuid'] = $this->formUuid;
+        }
+        if (null !== $this->modifiedTimeGMT) {
+            $res['modifiedTimeGMT'] = $this->modifiedTimeGMT;
+        }
+        if (null !== $this->originator) {
+            $res['originator'] = null !== $this->originator ? $this->originator->toMap() : null;
         }
 
         return $res;
@@ -85,20 +85,20 @@ class GetFormDataByIDResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['originator'])) {
-            $model->originator = originator::fromMap($map['originator']);
-        }
-        if (isset($map['modifiedTimeGMT'])) {
-            $model->modifiedTimeGMT = $map['modifiedTimeGMT'];
-        }
-        if (isset($map['formUuid'])) {
-            $model->formUuid = $map['formUuid'];
+        if (isset($map['formData'])) {
+            $model->formData = $map['formData'];
         }
         if (isset($map['formInstId'])) {
             $model->formInstId = $map['formInstId'];
         }
-        if (isset($map['formData'])) {
-            $model->formData = $map['formData'];
+        if (isset($map['formUuid'])) {
+            $model->formUuid = $map['formUuid'];
+        }
+        if (isset($map['modifiedTimeGMT'])) {
+            $model->modifiedTimeGMT = $map['modifiedTimeGMT'];
+        }
+        if (isset($map['originator'])) {
+            $model->originator = originator::fromMap($map['originator']);
         }
 
         return $model;

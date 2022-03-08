@@ -9,20 +9,6 @@ use AlibabaCloud\Tea\Model;
 class userList extends Model
 {
     /**
-     * @description 用户id
-     *
-     * @var string
-     */
-    public $userId;
-
-    /**
-     * @description 名称
-     *
-     * @var string
-     */
-    public $nick;
-
-    /**
      * @description 在会状态
      *
      * @var int
@@ -44,18 +30,32 @@ class userList extends Model
     public $micStatus;
 
     /**
+     * @description 名称
+     *
+     * @var string
+     */
+    public $nick;
+
+    /**
      * @description 拒绝原因
      *
      * @var string
      */
     public $rejectDescription;
+
+    /**
+     * @description 用户id
+     *
+     * @var string
+     */
+    public $userId;
     protected $_name = [
-        'userId'            => 'userId',
-        'nick'              => 'nick',
         'attendStatus'      => 'attendStatus',
         'cameraStatus'      => 'cameraStatus',
         'micStatus'         => 'micStatus',
+        'nick'              => 'nick',
         'rejectDescription' => 'rejectDescription',
+        'userId'            => 'userId',
     ];
 
     public function validate()
@@ -65,12 +65,6 @@ class userList extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
-        }
-        if (null !== $this->nick) {
-            $res['nick'] = $this->nick;
-        }
         if (null !== $this->attendStatus) {
             $res['attendStatus'] = $this->attendStatus;
         }
@@ -80,8 +74,14 @@ class userList extends Model
         if (null !== $this->micStatus) {
             $res['micStatus'] = $this->micStatus;
         }
+        if (null !== $this->nick) {
+            $res['nick'] = $this->nick;
+        }
         if (null !== $this->rejectDescription) {
             $res['rejectDescription'] = $this->rejectDescription;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -95,12 +95,6 @@ class userList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
-        }
-        if (isset($map['nick'])) {
-            $model->nick = $map['nick'];
-        }
         if (isset($map['attendStatus'])) {
             $model->attendStatus = $map['attendStatus'];
         }
@@ -110,8 +104,14 @@ class userList extends Model
         if (isset($map['micStatus'])) {
             $model->micStatus = $map['micStatus'];
         }
+        if (isset($map['nick'])) {
+            $model->nick = $map['nick'];
+        }
         if (isset($map['rejectDescription'])) {
             $model->rejectDescription = $map['rejectDescription'];
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

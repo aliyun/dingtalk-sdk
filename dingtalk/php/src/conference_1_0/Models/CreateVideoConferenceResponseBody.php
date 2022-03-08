@@ -23,18 +23,18 @@ class CreateVideoConferenceResponseBody extends Model
     public $conferencePassword;
 
     /**
-     * @description 主持人密码
-     *
-     * @var string
-     */
-    public $hostPassword;
-
-    /**
      * @description 入会链接
      *
      * @var string
      */
     public $externalLinkUrl;
+
+    /**
+     * @description 主持人密码
+     *
+     * @var string
+     */
+    public $hostPassword;
 
     /**
      * @description 电话入会号码
@@ -45,8 +45,8 @@ class CreateVideoConferenceResponseBody extends Model
     protected $_name = [
         'conferenceId'       => 'conferenceId',
         'conferencePassword' => 'conferencePassword',
-        'hostPassword'       => 'hostPassword',
         'externalLinkUrl'    => 'externalLinkUrl',
+        'hostPassword'       => 'hostPassword',
         'phoneNumbers'       => 'phoneNumbers',
     ];
 
@@ -63,11 +63,11 @@ class CreateVideoConferenceResponseBody extends Model
         if (null !== $this->conferencePassword) {
             $res['conferencePassword'] = $this->conferencePassword;
         }
-        if (null !== $this->hostPassword) {
-            $res['hostPassword'] = $this->hostPassword;
-        }
         if (null !== $this->externalLinkUrl) {
             $res['externalLinkUrl'] = $this->externalLinkUrl;
+        }
+        if (null !== $this->hostPassword) {
+            $res['hostPassword'] = $this->hostPassword;
         }
         if (null !== $this->phoneNumbers) {
             $res['phoneNumbers'] = $this->phoneNumbers;
@@ -90,11 +90,11 @@ class CreateVideoConferenceResponseBody extends Model
         if (isset($map['conferencePassword'])) {
             $model->conferencePassword = $map['conferencePassword'];
         }
-        if (isset($map['hostPassword'])) {
-            $model->hostPassword = $map['hostPassword'];
-        }
         if (isset($map['externalLinkUrl'])) {
             $model->externalLinkUrl = $map['externalLinkUrl'];
+        }
+        if (isset($map['hostPassword'])) {
+            $model->hostPassword = $map['hostPassword'];
         }
         if (isset($map['phoneNumbers'])) {
             if (!empty($map['phoneNumbers'])) {

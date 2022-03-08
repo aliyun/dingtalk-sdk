@@ -10,18 +10,11 @@ use AlibabaCloud\Tea\Model;
 class group extends Model
 {
     /**
-     * @description 医疗组ID
-     *
-     * @var int
-     */
-    public $id;
-
-    /**
-     * @description 医疗组名称
+     * @description 租户CorpID
      *
      * @var string
      */
-    public $name;
+    public $corpId;
 
     /**
      * @description 科室ID，同parentDeptCode，这里保留是做兼容，原来定义成Long不太好改成了String了
@@ -29,6 +22,13 @@ class group extends Model
      * @var int
      */
     public $deptId;
+
+    /**
+     * @description 部门状态：0-正常，1-删除
+     *
+     * @var int
+     */
+    public $deptStatus;
 
     /**
      * @description 创建时间
@@ -45,11 +45,11 @@ class group extends Model
     public $gmtModifiedStr;
 
     /**
-     * @description 租户CorpID
+     * @description 医疗组ID
      *
-     * @var string
+     * @var int
      */
-    public $corpId;
+    public $id;
 
     /**
      * @description 医疗组组长信息
@@ -59,11 +59,11 @@ class group extends Model
     public $leader;
 
     /**
-     * @description 部门状态：0-正常，1-删除
+     * @description 医疗组名称
      *
-     * @var int
+     * @var string
      */
-    public $deptStatus;
+    public $name;
 
     /**
      * @description 父级组织id，这里医疗组的父级就是科室
@@ -79,14 +79,14 @@ class group extends Model
      */
     public $remark;
     protected $_name = [
-        'id'             => 'id',
-        'name'           => 'name',
+        'corpId'         => 'corpId',
         'deptId'         => 'deptId',
+        'deptStatus'     => 'deptStatus',
         'gmtCreateStr'   => 'gmtCreateStr',
         'gmtModifiedStr' => 'gmtModifiedStr',
-        'corpId'         => 'corpId',
+        'id'             => 'id',
         'leader'         => 'leader',
-        'deptStatus'     => 'deptStatus',
+        'name'           => 'name',
         'parentDeptCode' => 'parentDeptCode',
         'remark'         => 'remark',
     ];
@@ -98,14 +98,14 @@ class group extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->id) {
-            $res['id'] = $this->id;
-        }
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
+        if (null !== $this->corpId) {
+            $res['corpId'] = $this->corpId;
         }
         if (null !== $this->deptId) {
             $res['deptId'] = $this->deptId;
+        }
+        if (null !== $this->deptStatus) {
+            $res['deptStatus'] = $this->deptStatus;
         }
         if (null !== $this->gmtCreateStr) {
             $res['gmtCreateStr'] = $this->gmtCreateStr;
@@ -113,14 +113,14 @@ class group extends Model
         if (null !== $this->gmtModifiedStr) {
             $res['gmtModifiedStr'] = $this->gmtModifiedStr;
         }
-        if (null !== $this->corpId) {
-            $res['corpId'] = $this->corpId;
+        if (null !== $this->id) {
+            $res['id'] = $this->id;
         }
         if (null !== $this->leader) {
             $res['leader'] = null !== $this->leader ? $this->leader->toMap() : null;
         }
-        if (null !== $this->deptStatus) {
-            $res['deptStatus'] = $this->deptStatus;
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
         }
         if (null !== $this->parentDeptCode) {
             $res['parentDeptCode'] = $this->parentDeptCode;
@@ -140,14 +140,14 @@ class group extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['id'])) {
-            $model->id = $map['id'];
-        }
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
+        if (isset($map['corpId'])) {
+            $model->corpId = $map['corpId'];
         }
         if (isset($map['deptId'])) {
             $model->deptId = $map['deptId'];
+        }
+        if (isset($map['deptStatus'])) {
+            $model->deptStatus = $map['deptStatus'];
         }
         if (isset($map['gmtCreateStr'])) {
             $model->gmtCreateStr = $map['gmtCreateStr'];
@@ -155,14 +155,14 @@ class group extends Model
         if (isset($map['gmtModifiedStr'])) {
             $model->gmtModifiedStr = $map['gmtModifiedStr'];
         }
-        if (isset($map['corpId'])) {
-            $model->corpId = $map['corpId'];
+        if (isset($map['id'])) {
+            $model->id = $map['id'];
         }
         if (isset($map['leader'])) {
             $model->leader = leader::fromMap($map['leader']);
         }
-        if (isset($map['deptStatus'])) {
-            $model->deptStatus = $map['deptStatus'];
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
         }
         if (isset($map['parentDeptCode'])) {
             $model->parentDeptCode = $map['parentDeptCode'];

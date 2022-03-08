@@ -17,6 +17,13 @@ class result extends Model
     public $outerId;
 
     /**
+     * @description 关联id列表，一般为userId
+     *
+     * @var string
+     */
+    public $relationId;
+
+    /**
      * @description 领域
      *
      * @var string
@@ -36,19 +43,12 @@ class result extends Model
      * @var viewEntityFieldVOList[]
      */
     public $viewEntityFieldVOList;
-
-    /**
-     * @description 关联id列表，一般为userId
-     *
-     * @var string
-     */
-    public $relationId;
     protected $_name = [
         'outerId'               => 'outerId',
+        'relationId'            => 'relationId',
         'scopeCode'             => 'scopeCode',
         'viewEntityCode'        => 'viewEntityCode',
         'viewEntityFieldVOList' => 'viewEntityFieldVOList',
-        'relationId'            => 'relationId',
     ];
 
     public function validate()
@@ -60,6 +60,9 @@ class result extends Model
         $res = [];
         if (null !== $this->outerId) {
             $res['outerId'] = $this->outerId;
+        }
+        if (null !== $this->relationId) {
+            $res['relationId'] = $this->relationId;
         }
         if (null !== $this->scopeCode) {
             $res['scopeCode'] = $this->scopeCode;
@@ -76,9 +79,6 @@ class result extends Model
                 }
             }
         }
-        if (null !== $this->relationId) {
-            $res['relationId'] = $this->relationId;
-        }
 
         return $res;
     }
@@ -94,6 +94,9 @@ class result extends Model
         if (isset($map['outerId'])) {
             $model->outerId = $map['outerId'];
         }
+        if (isset($map['relationId'])) {
+            $model->relationId = $map['relationId'];
+        }
         if (isset($map['scopeCode'])) {
             $model->scopeCode = $map['scopeCode'];
         }
@@ -108,9 +111,6 @@ class result extends Model
                     $model->viewEntityFieldVOList[$n++] = null !== $item ? viewEntityFieldVOList::fromMap($item) : $item;
                 }
             }
-        }
-        if (isset($map['relationId'])) {
-            $model->relationId = $map['relationId'];
         }
 
         return $model;

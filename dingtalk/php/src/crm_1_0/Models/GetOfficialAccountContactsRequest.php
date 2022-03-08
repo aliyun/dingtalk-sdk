@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class GetOfficialAccountContactsRequest extends Model
 {
     /**
-     * @description 取数游标，第一次传0
-     *
-     * @var string
-     */
-    public $nextToken;
-
-    /**
      * @description 分页大小，最大不超过10
      *
      * @var int
      */
     public $maxResults;
+
+    /**
+     * @description 取数游标，第一次传0
+     *
+     * @var string
+     */
+    public $nextToken;
     protected $_name = [
-        'nextToken'  => 'nextToken',
         'maxResults' => 'maxResults',
+        'nextToken'  => 'nextToken',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class GetOfficialAccountContactsRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->nextToken) {
-            $res['nextToken'] = $this->nextToken;
-        }
         if (null !== $this->maxResults) {
             $res['maxResults'] = $this->maxResults;
+        }
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class GetOfficialAccountContactsRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['nextToken'])) {
-            $model->nextToken = $map['nextToken'];
-        }
         if (isset($map['maxResults'])) {
             $model->maxResults = $map['maxResults'];
+        }
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
         }
 
         return $model;

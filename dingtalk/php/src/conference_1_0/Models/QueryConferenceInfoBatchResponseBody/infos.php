@@ -17,11 +17,11 @@ class infos extends Model
     public $conferenceId;
 
     /**
-     * @description 会议名称
+     * @description 媒体状态
      *
-     * @var string
+     * @var int
      */
-    public $title;
+    public $mediaStatus;
 
     /**
      * @description 会议开始时间
@@ -38,11 +38,11 @@ class infos extends Model
     public $status;
 
     /**
-     * @description 媒体状态
+     * @description 会议名称
      *
-     * @var int
+     * @var string
      */
-    public $mediaStatus;
+    public $title;
 
     /**
      * @description 参会用户列表
@@ -52,10 +52,10 @@ class infos extends Model
     public $userList;
     protected $_name = [
         'conferenceId' => 'conferenceId',
-        'title'        => 'title',
+        'mediaStatus'  => 'mediaStatus',
         'startTime'    => 'startTime',
         'status'       => 'status',
-        'mediaStatus'  => 'mediaStatus',
+        'title'        => 'title',
         'userList'     => 'userList',
     ];
 
@@ -69,8 +69,8 @@ class infos extends Model
         if (null !== $this->conferenceId) {
             $res['conferenceId'] = $this->conferenceId;
         }
-        if (null !== $this->title) {
-            $res['title'] = $this->title;
+        if (null !== $this->mediaStatus) {
+            $res['mediaStatus'] = $this->mediaStatus;
         }
         if (null !== $this->startTime) {
             $res['startTime'] = $this->startTime;
@@ -78,8 +78,8 @@ class infos extends Model
         if (null !== $this->status) {
             $res['status'] = $this->status;
         }
-        if (null !== $this->mediaStatus) {
-            $res['mediaStatus'] = $this->mediaStatus;
+        if (null !== $this->title) {
+            $res['title'] = $this->title;
         }
         if (null !== $this->userList) {
             $res['userList'] = [];
@@ -105,8 +105,8 @@ class infos extends Model
         if (isset($map['conferenceId'])) {
             $model->conferenceId = $map['conferenceId'];
         }
-        if (isset($map['title'])) {
-            $model->title = $map['title'];
+        if (isset($map['mediaStatus'])) {
+            $model->mediaStatus = $map['mediaStatus'];
         }
         if (isset($map['startTime'])) {
             $model->startTime = $map['startTime'];
@@ -114,8 +114,8 @@ class infos extends Model
         if (isset($map['status'])) {
             $model->status = $map['status'];
         }
-        if (isset($map['mediaStatus'])) {
-            $model->mediaStatus = $map['mediaStatus'];
+        if (isset($map['title'])) {
+            $model->title = $map['title'];
         }
         if (isset($map['userList'])) {
             if (!empty($map['userList'])) {

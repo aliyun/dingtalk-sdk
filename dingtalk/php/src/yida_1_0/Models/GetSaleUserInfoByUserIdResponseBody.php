@@ -10,20 +10,6 @@ use AlibabaCloud\Tea\Model;
 class GetSaleUserInfoByUserIdResponseBody extends Model
 {
     /**
-     * @description userName
-     *
-     * @var string
-     */
-    public $userName;
-
-    /**
-     * @description userId
-     *
-     * @var string
-     */
-    public $userId;
-
-    /**
      * @description accountId
      *
      * @var int
@@ -36,11 +22,25 @@ class GetSaleUserInfoByUserIdResponseBody extends Model
      * @var corpList[]
      */
     public $corpList;
+
+    /**
+     * @description userId
+     *
+     * @var string
+     */
+    public $userId;
+
+    /**
+     * @description userName
+     *
+     * @var string
+     */
+    public $userName;
     protected $_name = [
-        'userName'  => 'userName',
-        'userId'    => 'userId',
         'accountId' => 'accountId',
         'corpList'  => 'corpList',
+        'userId'    => 'userId',
+        'userName'  => 'userName',
     ];
 
     public function validate()
@@ -50,12 +50,6 @@ class GetSaleUserInfoByUserIdResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->userName) {
-            $res['userName'] = $this->userName;
-        }
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
-        }
         if (null !== $this->accountId) {
             $res['accountId'] = $this->accountId;
         }
@@ -67,6 +61,12 @@ class GetSaleUserInfoByUserIdResponseBody extends Model
                     $res['corpList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
+        }
+        if (null !== $this->userName) {
+            $res['userName'] = $this->userName;
         }
 
         return $res;
@@ -80,12 +80,6 @@ class GetSaleUserInfoByUserIdResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['userName'])) {
-            $model->userName = $map['userName'];
-        }
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
-        }
         if (isset($map['accountId'])) {
             $model->accountId = $map['accountId'];
         }
@@ -97,6 +91,12 @@ class GetSaleUserInfoByUserIdResponseBody extends Model
                     $model->corpList[$n++] = null !== $item ? corpList::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
+        }
+        if (isset($map['userName'])) {
+            $model->userName = $map['userName'];
         }
 
         return $model;

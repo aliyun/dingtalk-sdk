@@ -14,18 +14,18 @@ class files extends Model
     public $fileId;
 
     /**
-     * @var int
-     */
-    public $fileType;
-
-    /**
      * @var string
      */
     public $fileName;
+
+    /**
+     * @var int
+     */
+    public $fileType;
     protected $_name = [
         'fileId'   => 'fileId',
-        'fileType' => 'fileType',
         'fileName' => 'fileName',
+        'fileType' => 'fileType',
     ];
 
     public function validate()
@@ -38,11 +38,11 @@ class files extends Model
         if (null !== $this->fileId) {
             $res['fileId'] = $this->fileId;
         }
-        if (null !== $this->fileType) {
-            $res['fileType'] = $this->fileType;
-        }
         if (null !== $this->fileName) {
             $res['fileName'] = $this->fileName;
+        }
+        if (null !== $this->fileType) {
+            $res['fileType'] = $this->fileType;
         }
 
         return $res;
@@ -59,11 +59,11 @@ class files extends Model
         if (isset($map['fileId'])) {
             $model->fileId = $map['fileId'];
         }
-        if (isset($map['fileType'])) {
-            $model->fileType = $map['fileType'];
-        }
         if (isset($map['fileName'])) {
             $model->fileName = $map['fileName'];
+        }
+        if (isset($map['fileType'])) {
+            $model->fileType = $map['fileType'];
         }
 
         return $model;

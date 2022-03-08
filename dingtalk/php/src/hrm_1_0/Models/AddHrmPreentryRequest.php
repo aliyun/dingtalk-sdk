@@ -12,12 +12,12 @@ class AddHrmPreentryRequest extends Model
     /**
      * @var int
      */
-    public $preEntryTime;
+    public $agentId;
 
     /**
-     * @var string
+     * @var groups[]
      */
-    public $name;
+    public $groups;
 
     /**
      * @var string
@@ -25,20 +25,20 @@ class AddHrmPreentryRequest extends Model
     public $mobile;
 
     /**
-     * @var int
+     * @var string
      */
-    public $agentId;
+    public $name;
 
     /**
-     * @var groups[]
+     * @var int
      */
-    public $groups;
+    public $preEntryTime;
     protected $_name = [
-        'preEntryTime' => 'preEntryTime',
-        'name'         => 'name',
-        'mobile'       => 'mobile',
         'agentId'      => 'agentId',
         'groups'       => 'groups',
+        'mobile'       => 'mobile',
+        'name'         => 'name',
+        'preEntryTime' => 'preEntryTime',
     ];
 
     public function validate()
@@ -48,15 +48,6 @@ class AddHrmPreentryRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->preEntryTime) {
-            $res['preEntryTime'] = $this->preEntryTime;
-        }
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
-        }
-        if (null !== $this->mobile) {
-            $res['mobile'] = $this->mobile;
-        }
         if (null !== $this->agentId) {
             $res['agentId'] = $this->agentId;
         }
@@ -68,6 +59,15 @@ class AddHrmPreentryRequest extends Model
                     $res['groups'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->mobile) {
+            $res['mobile'] = $this->mobile;
+        }
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
+        }
+        if (null !== $this->preEntryTime) {
+            $res['preEntryTime'] = $this->preEntryTime;
         }
 
         return $res;
@@ -81,15 +81,6 @@ class AddHrmPreentryRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['preEntryTime'])) {
-            $model->preEntryTime = $map['preEntryTime'];
-        }
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
-        }
-        if (isset($map['mobile'])) {
-            $model->mobile = $map['mobile'];
-        }
         if (isset($map['agentId'])) {
             $model->agentId = $map['agentId'];
         }
@@ -101,6 +92,15 @@ class AddHrmPreentryRequest extends Model
                     $model->groups[$n++] = null !== $item ? groups::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['mobile'])) {
+            $model->mobile = $map['mobile'];
+        }
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
+        }
+        if (isset($map['preEntryTime'])) {
+            $model->preEntryTime = $map['preEntryTime'];
         }
 
         return $model;

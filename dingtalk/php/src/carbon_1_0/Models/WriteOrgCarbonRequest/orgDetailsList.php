@@ -16,18 +16,11 @@ class orgDetailsList extends Model
     public $actionId;
 
     /**
-     * @description 钉钉组织id
+     * @description 行为发生时间
      *
      * @var string
      */
-    public $corpId;
-
-    /**
-     * @description 钉钉部门id
-     *
-     * @var int
-     */
-    public $deptId;
+    public $actionTime;
 
     /**
      * @description 碳能量行为类型，需要联系管理员添加
@@ -44,11 +37,18 @@ class orgDetailsList extends Model
     public $carbonAmount;
 
     /**
-     * @description 行为发生时间
+     * @description 钉钉组织id
      *
      * @var string
      */
-    public $actionTime;
+    public $corpId;
+
+    /**
+     * @description 钉钉部门id
+     *
+     * @var int
+     */
+    public $deptId;
 
     /**
      * @description 版本，默认为1
@@ -58,11 +58,11 @@ class orgDetailsList extends Model
     public $version;
     protected $_name = [
         'actionId'     => 'actionId',
-        'corpId'       => 'corpId',
-        'deptId'       => 'deptId',
+        'actionTime'   => 'actionTime',
         'actionType'   => 'actionType',
         'carbonAmount' => 'carbonAmount',
-        'actionTime'   => 'actionTime',
+        'corpId'       => 'corpId',
+        'deptId'       => 'deptId',
         'version'      => 'version',
     ];
 
@@ -76,11 +76,8 @@ class orgDetailsList extends Model
         if (null !== $this->actionId) {
             $res['actionId'] = $this->actionId;
         }
-        if (null !== $this->corpId) {
-            $res['corpId'] = $this->corpId;
-        }
-        if (null !== $this->deptId) {
-            $res['deptId'] = $this->deptId;
+        if (null !== $this->actionTime) {
+            $res['actionTime'] = $this->actionTime;
         }
         if (null !== $this->actionType) {
             $res['actionType'] = $this->actionType;
@@ -88,8 +85,11 @@ class orgDetailsList extends Model
         if (null !== $this->carbonAmount) {
             $res['carbonAmount'] = $this->carbonAmount;
         }
-        if (null !== $this->actionTime) {
-            $res['actionTime'] = $this->actionTime;
+        if (null !== $this->corpId) {
+            $res['corpId'] = $this->corpId;
+        }
+        if (null !== $this->deptId) {
+            $res['deptId'] = $this->deptId;
         }
         if (null !== $this->version) {
             $res['version'] = $this->version;
@@ -109,11 +109,8 @@ class orgDetailsList extends Model
         if (isset($map['actionId'])) {
             $model->actionId = $map['actionId'];
         }
-        if (isset($map['corpId'])) {
-            $model->corpId = $map['corpId'];
-        }
-        if (isset($map['deptId'])) {
-            $model->deptId = $map['deptId'];
+        if (isset($map['actionTime'])) {
+            $model->actionTime = $map['actionTime'];
         }
         if (isset($map['actionType'])) {
             $model->actionType = $map['actionType'];
@@ -121,8 +118,11 @@ class orgDetailsList extends Model
         if (isset($map['carbonAmount'])) {
             $model->carbonAmount = $map['carbonAmount'];
         }
-        if (isset($map['actionTime'])) {
-            $model->actionTime = $map['actionTime'];
+        if (isset($map['corpId'])) {
+            $model->corpId = $map['corpId'];
+        }
+        if (isset($map['deptId'])) {
+            $model->deptId = $map['deptId'];
         }
         if (isset($map['version'])) {
             $model->version = $map['version'];

@@ -9,9 +9,11 @@ use AlibabaCloud\Tea\Model;
 class ResaleOrderRequest extends Model
 {
     /**
-     * @var string
+     * @description 下单时间
+     *
+     * @var float
      */
-    public $dingCorpId;
+    public $orderCreateTime;
 
     /**
      * @description isv方的订单Id（用于幂等，请保证唯一性）
@@ -28,13 +30,6 @@ class ResaleOrderRequest extends Model
     public $quantity;
 
     /**
-     * @description 下单时间
-     *
-     * @var float
-     */
-    public $orderCreateTime;
-
-    /**
      * @description 合同生效起始时间
      *
      * @var float
@@ -48,10 +43,9 @@ class ResaleOrderRequest extends Model
      */
     public $serviceStopTime;
     protected $_name = [
-        'dingCorpId'       => 'dingCorpId',
+        'orderCreateTime'  => 'orderCreateTime',
         'orderId'          => 'orderId',
         'quantity'         => 'quantity',
-        'orderCreateTime'  => 'orderCreateTime',
         'serviceStartTime' => 'serviceStartTime',
         'serviceStopTime'  => 'serviceStopTime',
     ];
@@ -63,17 +57,14 @@ class ResaleOrderRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->dingCorpId) {
-            $res['dingCorpId'] = $this->dingCorpId;
+        if (null !== $this->orderCreateTime) {
+            $res['orderCreateTime'] = $this->orderCreateTime;
         }
         if (null !== $this->orderId) {
             $res['orderId'] = $this->orderId;
         }
         if (null !== $this->quantity) {
             $res['quantity'] = $this->quantity;
-        }
-        if (null !== $this->orderCreateTime) {
-            $res['orderCreateTime'] = $this->orderCreateTime;
         }
         if (null !== $this->serviceStartTime) {
             $res['serviceStartTime'] = $this->serviceStartTime;
@@ -93,17 +84,14 @@ class ResaleOrderRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['dingCorpId'])) {
-            $model->dingCorpId = $map['dingCorpId'];
+        if (isset($map['orderCreateTime'])) {
+            $model->orderCreateTime = $map['orderCreateTime'];
         }
         if (isset($map['orderId'])) {
             $model->orderId = $map['orderId'];
         }
         if (isset($map['quantity'])) {
             $model->quantity = $map['quantity'];
-        }
-        if (isset($map['orderCreateTime'])) {
-            $model->orderCreateTime = $map['orderCreateTime'];
         }
         if (isset($map['serviceStartTime'])) {
             $model->serviceStartTime = $map['serviceStartTime'];

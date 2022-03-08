@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class RemoveDeviceRequest extends Model
 {
     /**
-     * @description 设备sn
-     *
-     * @var string
-     */
-    public $sn;
-
-    /**
      * @description 商户id
      *
      * @var string
      */
     public $merchantId;
+
+    /**
+     * @description 设备sn
+     *
+     * @var string
+     */
+    public $sn;
     protected $_name = [
-        'sn'         => 'sn',
         'merchantId' => 'merchantId',
+        'sn'         => 'sn',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class RemoveDeviceRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->sn) {
-            $res['sn'] = $this->sn;
-        }
         if (null !== $this->merchantId) {
             $res['merchantId'] = $this->merchantId;
+        }
+        if (null !== $this->sn) {
+            $res['sn'] = $this->sn;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class RemoveDeviceRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['sn'])) {
-            $model->sn = $map['sn'];
-        }
         if (isset($map['merchantId'])) {
             $model->merchantId = $map['merchantId'];
+        }
+        if (isset($map['sn'])) {
+            $model->sn = $map['sn'];
         }
 
         return $model;

@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class GetUserCardHolderListRequest extends Model
 {
     /**
-     * @description 标记当前开始读取的位置，置空表示从头开始
-     *
-     * @var int
-     */
-    public $nextToken;
-
-    /**
      * @description 每页返回个数
      *
      * @var int
      */
     public $maxResults;
+
+    /**
+     * @description 标记当前开始读取的位置，置空表示从头开始
+     *
+     * @var int
+     */
+    public $nextToken;
     protected $_name = [
-        'nextToken'  => 'nextToken',
         'maxResults' => 'maxResults',
+        'nextToken'  => 'nextToken',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class GetUserCardHolderListRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->nextToken) {
-            $res['nextToken'] = $this->nextToken;
-        }
         if (null !== $this->maxResults) {
             $res['maxResults'] = $this->maxResults;
+        }
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class GetUserCardHolderListRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['nextToken'])) {
-            $model->nextToken = $map['nextToken'];
-        }
         if (isset($map['maxResults'])) {
             $model->maxResults = $map['maxResults'];
+        }
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
         }
 
         return $model;

@@ -10,21 +10,21 @@ use AlibabaCloud\Tea\Model;
 class MasterDataSaveRequest extends Model
 {
     /**
-     * @description 租户id
-     *
-     * @var int
-     */
-    public $tenantId;
-
-    /**
      * @description 主数据
      *
      * @var body[]
      */
     public $body;
+
+    /**
+     * @description 租户id
+     *
+     * @var int
+     */
+    public $tenantId;
     protected $_name = [
-        'tenantId' => 'tenantId',
         'body'     => 'body',
+        'tenantId' => 'tenantId',
     ];
 
     public function validate()
@@ -34,9 +34,6 @@ class MasterDataSaveRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->tenantId) {
-            $res['tenantId'] = $this->tenantId;
-        }
         if (null !== $this->body) {
             $res['body'] = [];
             if (null !== $this->body && \is_array($this->body)) {
@@ -45,6 +42,9 @@ class MasterDataSaveRequest extends Model
                     $res['body'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->tenantId) {
+            $res['tenantId'] = $this->tenantId;
         }
 
         return $res;
@@ -58,9 +58,6 @@ class MasterDataSaveRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['tenantId'])) {
-            $model->tenantId = $map['tenantId'];
-        }
         if (isset($map['body'])) {
             if (!empty($map['body'])) {
                 $model->body = [];
@@ -69,6 +66,9 @@ class MasterDataSaveRequest extends Model
                     $model->body[$n++] = null !== $item ? body::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['tenantId'])) {
+            $model->tenantId = $map['tenantId'];
         }
 
         return $model;

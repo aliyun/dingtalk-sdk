@@ -33,63 +33,6 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetTbProjectGrayRequest $request
-     *
-     * @return GetTbProjectGrayResponse
-     */
-    public function getTbProjectGray($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new GetTbProjectGrayHeaders([]);
-
-        return $this->getTbProjectGrayWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param GetTbProjectGrayRequest $request
-     * @param GetTbProjectGrayHeaders $headers
-     * @param RuntimeOptions          $runtime
-     *
-     * @return GetTbProjectGrayResponse
-     */
-    public function getTbProjectGrayWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->label)) {
-            @$body['label'] = $request->label;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->dingAccessTokenType)) {
-            @$realHeaders['dingAccessTokenType'] = $headers->dingAccessTokenType;
-        }
-        if (!Utils::isUnset($headers->dingSuiteKey)) {
-            @$realHeaders['dingSuiteKey'] = $headers->dingSuiteKey;
-        }
-        if (!Utils::isUnset($headers->dingIsvOrgId)) {
-            @$realHeaders['dingIsvOrgId'] = $headers->dingIsvOrgId;
-        }
-        if (!Utils::isUnset($headers->dingOrgId)) {
-            @$realHeaders['dingOrgId'] = $headers->dingOrgId;
-        }
-        if (!Utils::isUnset($headers->dingCorpId)) {
-            @$realHeaders['dingCorpId'] = $headers->dingCorpId;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return GetTbProjectGrayResponse::fromMap($this->doROARequest('GetTbProjectGray', 'project_1.0', 'HTTP', 'POST', 'AK', '/v1.0/project/projects/gray', 'json', $req, $runtime));
-    }
-
-    /**
      * @param GetDeptsByOrgIdRequest $request
      *
      * @return GetDeptsByOrgIdResponse
@@ -124,13 +67,13 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->dingAccessTokenType)) {
-            @$realHeaders['dingAccessTokenType'] = $headers->dingAccessTokenType;
+            @$realHeaders['dingAccessTokenType'] = Utils::toJSONString($headers->dingAccessTokenType);
         }
         if (!Utils::isUnset($headers->dingOrgId)) {
-            @$realHeaders['dingOrgId'] = $headers->dingOrgId;
+            @$realHeaders['dingOrgId'] = Utils::toJSONString($headers->dingOrgId);
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -138,54 +81,6 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetDeptsByOrgIdResponse::fromMap($this->doROARequest('GetDeptsByOrgId', 'project_1.0', 'HTTP', 'GET', 'AK', '/v1.0/project/orgs/depts', 'json', $req, $runtime));
-    }
-
-    /**
-     * @return GetTbProjectSourceResponse
-     */
-    public function getTbProjectSource()
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new GetTbProjectSourceHeaders([]);
-
-        return $this->getTbProjectSourceWithOptions($headers, $runtime);
-    }
-
-    /**
-     * @param GetTbProjectSourceHeaders $headers
-     * @param RuntimeOptions            $runtime
-     *
-     * @return GetTbProjectSourceResponse
-     */
-    public function getTbProjectSourceWithOptions($headers, $runtime)
-    {
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->dingOrgId)) {
-            @$realHeaders['dingOrgId'] = $headers->dingOrgId;
-        }
-        if (!Utils::isUnset($headers->dingIsvOrgId)) {
-            @$realHeaders['dingIsvOrgId'] = $headers->dingIsvOrgId;
-        }
-        if (!Utils::isUnset($headers->dingCorpId)) {
-            @$realHeaders['dingCorpId'] = $headers->dingCorpId;
-        }
-        if (!Utils::isUnset($headers->dingSuiteKey)) {
-            @$realHeaders['dingSuiteKey'] = $headers->dingSuiteKey;
-        }
-        if (!Utils::isUnset($headers->dingAccessTokenType)) {
-            @$realHeaders['dingAccessTokenType'] = $headers->dingAccessTokenType;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-        ]);
-
-        return GetTbProjectSourceResponse::fromMap($this->doROARequest('GetTbProjectSource', 'project_1.0', 'HTTP', 'POST', 'AK', '/v1.0/project/projects/source', 'json', $req, $runtime));
     }
 
     /**
@@ -212,27 +107,27 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->nextToken)) {
-            @$query['nextToken'] = $request->nextToken;
-        }
         if (!Utils::isUnset($request->maxResults)) {
             @$query['maxResults'] = $request->maxResults;
         }
         if (!Utils::isUnset($request->needDept)) {
             @$query['needDept'] = $request->needDept;
         }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->dingAccessTokenType)) {
-            @$realHeaders['dingAccessTokenType'] = $headers->dingAccessTokenType;
+            @$realHeaders['dingAccessTokenType'] = Utils::toJSONString($headers->dingAccessTokenType);
         }
         if (!Utils::isUnset($headers->dingOrgId)) {
-            @$realHeaders['dingOrgId'] = $headers->dingOrgId;
+            @$realHeaders['dingOrgId'] = Utils::toJSONString($headers->dingOrgId);
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -240,5 +135,110 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetEmpsByOrgIdResponse::fromMap($this->doROARequest('GetEmpsByOrgId', 'project_1.0', 'HTTP', 'GET', 'AK', '/v1.0/project/orgs/employees', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetTbProjectGrayRequest $request
+     *
+     * @return GetTbProjectGrayResponse
+     */
+    public function getTbProjectGray($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetTbProjectGrayHeaders([]);
+
+        return $this->getTbProjectGrayWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetTbProjectGrayRequest $request
+     * @param GetTbProjectGrayHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return GetTbProjectGrayResponse
+     */
+    public function getTbProjectGrayWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->label)) {
+            @$body['label'] = $request->label;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->dingAccessTokenType)) {
+            @$realHeaders['dingAccessTokenType'] = Utils::toJSONString($headers->dingAccessTokenType);
+        }
+        if (!Utils::isUnset($headers->dingCorpId)) {
+            @$realHeaders['dingCorpId'] = Utils::toJSONString($headers->dingCorpId);
+        }
+        if (!Utils::isUnset($headers->dingIsvOrgId)) {
+            @$realHeaders['dingIsvOrgId'] = Utils::toJSONString($headers->dingIsvOrgId);
+        }
+        if (!Utils::isUnset($headers->dingOrgId)) {
+            @$realHeaders['dingOrgId'] = Utils::toJSONString($headers->dingOrgId);
+        }
+        if (!Utils::isUnset($headers->dingSuiteKey)) {
+            @$realHeaders['dingSuiteKey'] = Utils::toJSONString($headers->dingSuiteKey);
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GetTbProjectGrayResponse::fromMap($this->doROARequest('GetTbProjectGray', 'project_1.0', 'HTTP', 'POST', 'AK', '/v1.0/project/projects/gray', 'json', $req, $runtime));
+    }
+
+    /**
+     * @return GetTbProjectSourceResponse
+     */
+    public function getTbProjectSource()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetTbProjectSourceHeaders([]);
+
+        return $this->getTbProjectSourceWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param GetTbProjectSourceHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return GetTbProjectSourceResponse
+     */
+    public function getTbProjectSourceWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->dingAccessTokenType)) {
+            @$realHeaders['dingAccessTokenType'] = Utils::toJSONString($headers->dingAccessTokenType);
+        }
+        if (!Utils::isUnset($headers->dingCorpId)) {
+            @$realHeaders['dingCorpId'] = Utils::toJSONString($headers->dingCorpId);
+        }
+        if (!Utils::isUnset($headers->dingIsvOrgId)) {
+            @$realHeaders['dingIsvOrgId'] = Utils::toJSONString($headers->dingIsvOrgId);
+        }
+        if (!Utils::isUnset($headers->dingOrgId)) {
+            @$realHeaders['dingOrgId'] = Utils::toJSONString($headers->dingOrgId);
+        }
+        if (!Utils::isUnset($headers->dingSuiteKey)) {
+            @$realHeaders['dingSuiteKey'] = Utils::toJSONString($headers->dingSuiteKey);
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return GetTbProjectSourceResponse::fromMap($this->doROARequest('GetTbProjectSource', 'project_1.0', 'HTTP', 'POST', 'AK', '/v1.0/project/projects/source', 'json', $req, $runtime));
     }
 }

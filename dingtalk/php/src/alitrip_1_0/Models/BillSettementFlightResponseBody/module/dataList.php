@@ -93,6 +93,13 @@ class dataList extends Model
     public $bookerId;
 
     /**
+     * @description 预订人工号
+     *
+     * @var string
+     */
+    public $bookerJobNo;
+
+    /**
      * @description 预订人名称
      *
      * @var string
@@ -450,6 +457,13 @@ class dataList extends Model
     public $travelerId;
 
     /**
+     * @description 出行人工号
+     *
+     * @var string
+     */
+    public $travelerJobNo;
+
+    /**
      * @description 出行人名称
      *
      * @var string
@@ -462,20 +476,6 @@ class dataList extends Model
      * @var float
      */
     public $upgradeCost;
-
-    /**
-     * @description 预订人工号
-     *
-     * @var string
-     */
-    public $bookerJobNo;
-
-    /**
-     * @description 出行人工号
-     *
-     * @var string
-     */
-    public $travelerJobNo;
 
     /**
      * @description 发票类型
@@ -496,6 +496,7 @@ class dataList extends Model
         'arrTime'                => 'arrTime',
         'bookTime'               => 'bookTime',
         'bookerId'               => 'bookerId',
+        'bookerJobNo'            => 'bookerJobNo',
         'bookerName'             => 'bookerName',
         'btripCouponFee'         => 'btripCouponFee',
         'buildFee'               => 'buildFee',
@@ -547,10 +548,9 @@ class dataList extends Model
         'status'                 => 'status',
         'ticketId'               => 'ticketId',
         'travelerId'             => 'travelerId',
+        'travelerJobNo'          => 'travelerJobNo',
         'travelerName'           => 'travelerName',
         'upgradeCost'            => 'upgradeCost',
-        'bookerJobNo'            => 'bookerJobNo',
-        'travelerJobNo'          => 'travelerJobNo',
         'voucherType'            => 'voucherType',
     ];
 
@@ -596,6 +596,9 @@ class dataList extends Model
         }
         if (null !== $this->bookerId) {
             $res['bookerId'] = $this->bookerId;
+        }
+        if (null !== $this->bookerJobNo) {
+            $res['bookerJobNo'] = $this->bookerJobNo;
         }
         if (null !== $this->bookerName) {
             $res['bookerName'] = $this->bookerName;
@@ -750,17 +753,14 @@ class dataList extends Model
         if (null !== $this->travelerId) {
             $res['travelerId'] = $this->travelerId;
         }
+        if (null !== $this->travelerJobNo) {
+            $res['travelerJobNo'] = $this->travelerJobNo;
+        }
         if (null !== $this->travelerName) {
             $res['travelerName'] = $this->travelerName;
         }
         if (null !== $this->upgradeCost) {
             $res['upgradeCost'] = $this->upgradeCost;
-        }
-        if (null !== $this->bookerJobNo) {
-            $res['bookerJobNo'] = $this->bookerJobNo;
-        }
-        if (null !== $this->travelerJobNo) {
-            $res['travelerJobNo'] = $this->travelerJobNo;
         }
         if (null !== $this->voucherType) {
             $res['voucherType'] = $this->voucherType;
@@ -812,6 +812,9 @@ class dataList extends Model
         }
         if (isset($map['bookerId'])) {
             $model->bookerId = $map['bookerId'];
+        }
+        if (isset($map['bookerJobNo'])) {
+            $model->bookerJobNo = $map['bookerJobNo'];
         }
         if (isset($map['bookerName'])) {
             $model->bookerName = $map['bookerName'];
@@ -966,17 +969,14 @@ class dataList extends Model
         if (isset($map['travelerId'])) {
             $model->travelerId = $map['travelerId'];
         }
+        if (isset($map['travelerJobNo'])) {
+            $model->travelerJobNo = $map['travelerJobNo'];
+        }
         if (isset($map['travelerName'])) {
             $model->travelerName = $map['travelerName'];
         }
         if (isset($map['upgradeCost'])) {
             $model->upgradeCost = $map['upgradeCost'];
-        }
-        if (isset($map['bookerJobNo'])) {
-            $model->bookerJobNo = $map['bookerJobNo'];
-        }
-        if (isset($map['travelerJobNo'])) {
-            $model->travelerJobNo = $map['travelerJobNo'];
         }
         if (isset($map['voucherType'])) {
             $model->voucherType = $map['voucherType'];

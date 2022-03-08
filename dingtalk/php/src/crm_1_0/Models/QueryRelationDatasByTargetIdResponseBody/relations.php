@@ -10,20 +10,6 @@ use AlibabaCloud\Tea\Model;
 class relations extends Model
 {
     /**
-     * @description 关系实例ID。
-     *
-     * @var string
-     */
-    public $relationId;
-
-    /**
-     * @description 关系类型。
-     *
-     * @var string
-     */
-    public $relationType;
-
-    /**
      * @description 关系模型。
      *
      * @var bizDataList[]
@@ -36,11 +22,25 @@ class relations extends Model
      * @var string[]
      */
     public $openConversationIds;
+
+    /**
+     * @description 关系实例ID。
+     *
+     * @var string
+     */
+    public $relationId;
+
+    /**
+     * @description 关系类型。
+     *
+     * @var string
+     */
+    public $relationType;
     protected $_name = [
-        'relationId'          => 'relationId',
-        'relationType'        => 'relationType',
         'bizDataList'         => 'bizDataList',
         'openConversationIds' => 'openConversationIds',
+        'relationId'          => 'relationId',
+        'relationType'        => 'relationType',
     ];
 
     public function validate()
@@ -50,12 +50,6 @@ class relations extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->relationId) {
-            $res['relationId'] = $this->relationId;
-        }
-        if (null !== $this->relationType) {
-            $res['relationType'] = $this->relationType;
-        }
         if (null !== $this->bizDataList) {
             $res['bizDataList'] = [];
             if (null !== $this->bizDataList && \is_array($this->bizDataList)) {
@@ -67,6 +61,12 @@ class relations extends Model
         }
         if (null !== $this->openConversationIds) {
             $res['openConversationIds'] = $this->openConversationIds;
+        }
+        if (null !== $this->relationId) {
+            $res['relationId'] = $this->relationId;
+        }
+        if (null !== $this->relationType) {
+            $res['relationType'] = $this->relationType;
         }
 
         return $res;
@@ -80,12 +80,6 @@ class relations extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['relationId'])) {
-            $model->relationId = $map['relationId'];
-        }
-        if (isset($map['relationType'])) {
-            $model->relationType = $map['relationType'];
-        }
         if (isset($map['bizDataList'])) {
             if (!empty($map['bizDataList'])) {
                 $model->bizDataList = [];
@@ -99,6 +93,12 @@ class relations extends Model
             if (!empty($map['openConversationIds'])) {
                 $model->openConversationIds = $map['openConversationIds'];
             }
+        }
+        if (isset($map['relationId'])) {
+            $model->relationId = $map['relationId'];
+        }
+        if (isset($map['relationType'])) {
+            $model->relationType = $map['relationType'];
         }
 
         return $model;

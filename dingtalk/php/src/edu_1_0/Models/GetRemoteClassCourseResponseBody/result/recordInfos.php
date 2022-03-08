@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class recordInfos extends Model
 {
     /**
-     * @description 录制文件地址（文件有效期7天）
-     *
-     * @var string
-     */
-    public $url;
-
-    /**
      * @description 录制开始时间（UTC/GMT格式）
      *
      * @var string
@@ -28,10 +21,17 @@ class recordInfos extends Model
      * @var string
      */
     public $stopTime;
+
+    /**
+     * @description 录制文件地址（文件有效期7天）
+     *
+     * @var string
+     */
+    public $url;
     protected $_name = [
-        'url'       => 'url',
         'startTime' => 'startTime',
         'stopTime'  => 'stopTime',
+        'url'       => 'url',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class recordInfos extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->url) {
-            $res['url'] = $this->url;
-        }
         if (null !== $this->startTime) {
             $res['startTime'] = $this->startTime;
         }
         if (null !== $this->stopTime) {
             $res['stopTime'] = $this->stopTime;
+        }
+        if (null !== $this->url) {
+            $res['url'] = $this->url;
         }
 
         return $res;
@@ -62,14 +62,14 @@ class recordInfos extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['url'])) {
-            $model->url = $map['url'];
-        }
         if (isset($map['startTime'])) {
             $model->startTime = $map['startTime'];
         }
         if (isset($map['stopTime'])) {
             $model->stopTime = $map['stopTime'];
+        }
+        if (isset($map['url'])) {
+            $model->url = $map['url'];
         }
 
         return $model;

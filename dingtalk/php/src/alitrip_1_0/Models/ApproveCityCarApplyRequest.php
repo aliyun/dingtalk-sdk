@@ -49,37 +49,13 @@ class ApproveCityCarApplyRequest extends Model
      * @var string
      */
     public $userId;
-
-    /**
-     * @description suiteKey
-     *
-     * @var string
-     */
-    public $dingSuiteKey;
-
-    /**
-     * @description account
-     *
-     * @var string
-     */
-    public $dingCorpId;
-
-    /**
-     * @description tokenGrantType
-     *
-     * @var int
-     */
-    public $dingTokenGrantType;
     protected $_name = [
-        'corpId'             => 'corpId',
-        'operateTime'        => 'operateTime',
-        'remark'             => 'remark',
-        'status'             => 'status',
-        'thirdPartApplyId'   => 'thirdPartApplyId',
-        'userId'             => 'userId',
-        'dingSuiteKey'       => 'dingSuiteKey',
-        'dingCorpId'         => 'dingCorpId',
-        'dingTokenGrantType' => 'dingTokenGrantType',
+        'corpId'           => 'corpId',
+        'operateTime'      => 'operateTime',
+        'remark'           => 'remark',
+        'status'           => 'status',
+        'thirdPartApplyId' => 'thirdPartApplyId',
+        'userId'           => 'userId',
     ];
 
     public function validate()
@@ -106,15 +82,6 @@ class ApproveCityCarApplyRequest extends Model
         }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
-        }
-        if (null !== $this->dingSuiteKey) {
-            $res['dingSuiteKey'] = $this->dingSuiteKey;
-        }
-        if (null !== $this->dingCorpId) {
-            $res['dingCorpId'] = $this->dingCorpId;
-        }
-        if (null !== $this->dingTokenGrantType) {
-            $res['dingTokenGrantType'] = $this->dingTokenGrantType;
         }
 
         return $res;
@@ -145,15 +112,6 @@ class ApproveCityCarApplyRequest extends Model
         }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];
-        }
-        if (isset($map['dingSuiteKey'])) {
-            $model->dingSuiteKey = $map['dingSuiteKey'];
-        }
-        if (isset($map['dingCorpId'])) {
-            $model->dingCorpId = $map['dingCorpId'];
-        }
-        if (isset($map['dingTokenGrantType'])) {
-            $model->dingTokenGrantType = $map['dingTokenGrantType'];
         }
 
         return $model;

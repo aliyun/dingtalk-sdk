@@ -10,27 +10,6 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
-     * @description operatorId
-     *
-     * @var string
-     */
-    public $operatorId;
-
-    /**
-     * @description operator
-     *
-     * @var string
-     */
-    public $operator;
-
-    /**
-     * @description operatorRole
-     *
-     * @var string
-     */
-    public $operatorRole;
-
-    /**
      * @description actionCode
      *
      * @var string
@@ -43,12 +22,33 @@ class list_ extends Model
      * @var actionContent[]
      */
     public $actionContent;
+
+    /**
+     * @description operator
+     *
+     * @var string
+     */
+    public $operator;
+
+    /**
+     * @description operatorId
+     *
+     * @var string
+     */
+    public $operatorId;
+
+    /**
+     * @description operatorRole
+     *
+     * @var string
+     */
+    public $operatorRole;
     protected $_name = [
-        'operatorId'    => 'operatorId',
-        'operator'      => 'operator',
-        'operatorRole'  => 'operatorRole',
         'actionCode'    => 'actionCode',
         'actionContent' => 'actionContent',
+        'operator'      => 'operator',
+        'operatorId'    => 'operatorId',
+        'operatorRole'  => 'operatorRole',
     ];
 
     public function validate()
@@ -58,15 +58,6 @@ class list_ extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->operatorId) {
-            $res['operatorId'] = $this->operatorId;
-        }
-        if (null !== $this->operator) {
-            $res['operator'] = $this->operator;
-        }
-        if (null !== $this->operatorRole) {
-            $res['operatorRole'] = $this->operatorRole;
-        }
         if (null !== $this->actionCode) {
             $res['actionCode'] = $this->actionCode;
         }
@@ -78,6 +69,15 @@ class list_ extends Model
                     $res['actionContent'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->operator) {
+            $res['operator'] = $this->operator;
+        }
+        if (null !== $this->operatorId) {
+            $res['operatorId'] = $this->operatorId;
+        }
+        if (null !== $this->operatorRole) {
+            $res['operatorRole'] = $this->operatorRole;
         }
 
         return $res;
@@ -91,15 +91,6 @@ class list_ extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['operatorId'])) {
-            $model->operatorId = $map['operatorId'];
-        }
-        if (isset($map['operator'])) {
-            $model->operator = $map['operator'];
-        }
-        if (isset($map['operatorRole'])) {
-            $model->operatorRole = $map['operatorRole'];
-        }
         if (isset($map['actionCode'])) {
             $model->actionCode = $map['actionCode'];
         }
@@ -111,6 +102,15 @@ class list_ extends Model
                     $model->actionContent[$n++] = null !== $item ? actionContent::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['operator'])) {
+            $model->operator = $map['operator'];
+        }
+        if (isset($map['operatorId'])) {
+            $model->operatorId = $map['operatorId'];
+        }
+        if (isset($map['operatorRole'])) {
+            $model->operatorRole = $map['operatorRole'];
         }
 
         return $model;

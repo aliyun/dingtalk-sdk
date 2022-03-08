@@ -9,18 +9,18 @@ use AlibabaCloud\Tea\Model;
 class QueryClassScheduleRequest extends Model
 {
     /**
-     * @description 订阅者类型：  DEPARTMENT：班级订阅 USER：老师订阅
+     * @description 查询课程的节次。
      *
-     * @var string
+     * @var int[]
      */
-    public $subscriberType;
+    public $sectionIndexList;
 
     /**
-     * @description 开始时间（unix时间戳）
+     * @description 订阅者的Id。
      *
-     * @var int
+     * @var string[]
      */
-    public $startTime;
+    public $subscriberIds;
 
     /**
      * @description 结束时间（unix时间戳）
@@ -37,25 +37,25 @@ class QueryClassScheduleRequest extends Model
     public $opUserId;
 
     /**
-     * @description 订阅者的Id。
+     * @description 开始时间（unix时间戳）
      *
-     * @var string[]
+     * @var int
      */
-    public $subscriberIds;
+    public $startTime;
 
     /**
-     * @description 查询课程的节次。
+     * @description 订阅者类型：  DEPARTMENT：班级订阅 USER：老师订阅
      *
-     * @var int[]
+     * @var string
      */
-    public $sectionIndexList;
+    public $subscriberType;
     protected $_name = [
-        'subscriberType'   => 'subscriberType',
-        'startTime'        => 'startTime',
+        'sectionIndexList' => 'sectionIndexList',
+        'subscriberIds'    => 'subscriberIds',
         'endTime'          => 'endTime',
         'opUserId'         => 'opUserId',
-        'subscriberIds'    => 'subscriberIds',
-        'sectionIndexList' => 'sectionIndexList',
+        'startTime'        => 'startTime',
+        'subscriberType'   => 'subscriberType',
     ];
 
     public function validate()
@@ -65,11 +65,11 @@ class QueryClassScheduleRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->subscriberType) {
-            $res['subscriberType'] = $this->subscriberType;
+        if (null !== $this->sectionIndexList) {
+            $res['sectionIndexList'] = $this->sectionIndexList;
         }
-        if (null !== $this->startTime) {
-            $res['startTime'] = $this->startTime;
+        if (null !== $this->subscriberIds) {
+            $res['subscriberIds'] = $this->subscriberIds;
         }
         if (null !== $this->endTime) {
             $res['endTime'] = $this->endTime;
@@ -77,11 +77,11 @@ class QueryClassScheduleRequest extends Model
         if (null !== $this->opUserId) {
             $res['opUserId'] = $this->opUserId;
         }
-        if (null !== $this->subscriberIds) {
-            $res['subscriberIds'] = $this->subscriberIds;
+        if (null !== $this->startTime) {
+            $res['startTime'] = $this->startTime;
         }
-        if (null !== $this->sectionIndexList) {
-            $res['sectionIndexList'] = $this->sectionIndexList;
+        if (null !== $this->subscriberType) {
+            $res['subscriberType'] = $this->subscriberType;
         }
 
         return $res;
@@ -95,11 +95,15 @@ class QueryClassScheduleRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['subscriberType'])) {
-            $model->subscriberType = $map['subscriberType'];
+        if (isset($map['sectionIndexList'])) {
+            if (!empty($map['sectionIndexList'])) {
+                $model->sectionIndexList = $map['sectionIndexList'];
+            }
         }
-        if (isset($map['startTime'])) {
-            $model->startTime = $map['startTime'];
+        if (isset($map['subscriberIds'])) {
+            if (!empty($map['subscriberIds'])) {
+                $model->subscriberIds = $map['subscriberIds'];
+            }
         }
         if (isset($map['endTime'])) {
             $model->endTime = $map['endTime'];
@@ -107,15 +111,11 @@ class QueryClassScheduleRequest extends Model
         if (isset($map['opUserId'])) {
             $model->opUserId = $map['opUserId'];
         }
-        if (isset($map['subscriberIds'])) {
-            if (!empty($map['subscriberIds'])) {
-                $model->subscriberIds = $map['subscriberIds'];
-            }
+        if (isset($map['startTime'])) {
+            $model->startTime = $map['startTime'];
         }
-        if (isset($map['sectionIndexList'])) {
-            if (!empty($map['sectionIndexList'])) {
-                $model->sectionIndexList = $map['sectionIndexList'];
-            }
+        if (isset($map['subscriberType'])) {
+            $model->subscriberType = $map['subscriberType'];
         }
 
         return $model;

@@ -9,18 +9,18 @@ use AlibabaCloud\Tea\Model;
 class QueryActiveUsersRequest extends Model
 {
     /**
-     * @description 开放团队ID
-     *
-     * @var string
-     */
-    public $openTeamId;
-
-    /**
      * @description 开放群ID
      *
      * @var string
      */
     public $openConversationId;
+
+    /**
+     * @description 开放团队ID
+     *
+     * @var string
+     */
+    public $openTeamId;
 
     /**
      * @description 查询topN的数据
@@ -29,8 +29,8 @@ class QueryActiveUsersRequest extends Model
      */
     public $topN;
     protected $_name = [
-        'openTeamId'         => 'openTeamId',
         'openConversationId' => 'openConversationId',
+        'openTeamId'         => 'openTeamId',
         'topN'               => 'topN',
     ];
 
@@ -41,11 +41,11 @@ class QueryActiveUsersRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->openTeamId) {
-            $res['openTeamId'] = $this->openTeamId;
-        }
         if (null !== $this->openConversationId) {
             $res['openConversationId'] = $this->openConversationId;
+        }
+        if (null !== $this->openTeamId) {
+            $res['openTeamId'] = $this->openTeamId;
         }
         if (null !== $this->topN) {
             $res['topN'] = $this->topN;
@@ -62,11 +62,11 @@ class QueryActiveUsersRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['openTeamId'])) {
-            $model->openTeamId = $map['openTeamId'];
-        }
         if (isset($map['openConversationId'])) {
             $model->openConversationId = $map['openConversationId'];
+        }
+        if (isset($map['openTeamId'])) {
+            $model->openTeamId = $map['openTeamId'];
         }
         if (isset($map['topN'])) {
             $model->topN = $map['topN'];

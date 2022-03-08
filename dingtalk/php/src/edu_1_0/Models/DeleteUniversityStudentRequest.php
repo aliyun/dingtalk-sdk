@@ -16,22 +16,22 @@ class DeleteUniversityStudentRequest extends Model
     public $classId;
 
     /**
-     * @description 学生用户ID
-     *
-     * @var string
-     */
-    public $studentUserId;
-
-    /**
      * @description 操作人用户ID
      *
      * @var string
      */
     public $opUserId;
+
+    /**
+     * @description 学生用户ID
+     *
+     * @var string
+     */
+    public $studentUserId;
     protected $_name = [
         'classId'       => 'classId',
-        'studentUserId' => 'studentUserId',
         'opUserId'      => 'opUserId',
+        'studentUserId' => 'studentUserId',
     ];
 
     public function validate()
@@ -44,11 +44,11 @@ class DeleteUniversityStudentRequest extends Model
         if (null !== $this->classId) {
             $res['classId'] = $this->classId;
         }
-        if (null !== $this->studentUserId) {
-            $res['studentUserId'] = $this->studentUserId;
-        }
         if (null !== $this->opUserId) {
             $res['opUserId'] = $this->opUserId;
+        }
+        if (null !== $this->studentUserId) {
+            $res['studentUserId'] = $this->studentUserId;
         }
 
         return $res;
@@ -65,11 +65,11 @@ class DeleteUniversityStudentRequest extends Model
         if (isset($map['classId'])) {
             $model->classId = $map['classId'];
         }
-        if (isset($map['studentUserId'])) {
-            $model->studentUserId = $map['studentUserId'];
-        }
         if (isset($map['opUserId'])) {
             $model->opUserId = $map['opUserId'];
+        }
+        if (isset($map['studentUserId'])) {
+            $model->studentUserId = $map['studentUserId'];
         }
 
         return $model;

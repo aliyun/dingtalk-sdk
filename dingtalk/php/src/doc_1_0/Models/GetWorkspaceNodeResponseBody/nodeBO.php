@@ -9,6 +9,20 @@ use AlibabaCloud\Tea\Model;
 class nodeBO extends Model
 {
     /**
+     * @description 节点类型
+     *
+     * @var string
+     */
+    public $docType;
+
+    /**
+     * @description 最后编辑时间
+     *
+     * @var int
+     */
+    public $lastEditTime;
+
+    /**
      * @description 节点名称
      *
      * @var string
@@ -28,26 +42,12 @@ class nodeBO extends Model
      * @var string
      */
     public $url;
-
-    /**
-     * @description 最后编辑时间
-     *
-     * @var int
-     */
-    public $lastEditTime;
-
-    /**
-     * @description 节点类型
-     *
-     * @var string
-     */
-    public $docType;
     protected $_name = [
+        'docType'      => 'docType',
+        'lastEditTime' => 'lastEditTime',
         'name'         => 'name',
         'nodeId'       => 'nodeId',
         'url'          => 'url',
-        'lastEditTime' => 'lastEditTime',
-        'docType'      => 'docType',
     ];
 
     public function validate()
@@ -57,6 +57,12 @@ class nodeBO extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->docType) {
+            $res['docType'] = $this->docType;
+        }
+        if (null !== $this->lastEditTime) {
+            $res['lastEditTime'] = $this->lastEditTime;
+        }
         if (null !== $this->name) {
             $res['name'] = $this->name;
         }
@@ -65,12 +71,6 @@ class nodeBO extends Model
         }
         if (null !== $this->url) {
             $res['url'] = $this->url;
-        }
-        if (null !== $this->lastEditTime) {
-            $res['lastEditTime'] = $this->lastEditTime;
-        }
-        if (null !== $this->docType) {
-            $res['docType'] = $this->docType;
         }
 
         return $res;
@@ -84,6 +84,12 @@ class nodeBO extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['docType'])) {
+            $model->docType = $map['docType'];
+        }
+        if (isset($map['lastEditTime'])) {
+            $model->lastEditTime = $map['lastEditTime'];
+        }
         if (isset($map['name'])) {
             $model->name = $map['name'];
         }
@@ -92,12 +98,6 @@ class nodeBO extends Model
         }
         if (isset($map['url'])) {
             $model->url = $map['url'];
-        }
-        if (isset($map['lastEditTime'])) {
-            $model->lastEditTime = $map['lastEditTime'];
-        }
-        if (isset($map['docType'])) {
-            $model->docType = $map['docType'];
         }
 
         return $model;

@@ -9,32 +9,11 @@ use AlibabaCloud\Tea\Model;
 class ECertQueryResponseBody extends Model
 {
     /**
-     * @description 身份证姓名
-     *
-     * @var string
-     */
-    public $realName;
-
-    /**
      * @description 身份证号码
      *
      * @var string
      */
     public $certNO;
-
-    /**
-     * @description 主部门ID
-     *
-     * @var int
-     */
-    public $mainDeptId;
-
-    /**
-     * @description 主部门
-     *
-     * @var string
-     */
-    public $mainDeptName;
 
     /**
      * @description 职务ID
@@ -93,11 +72,32 @@ class ECertQueryResponseBody extends Model
     public $lastWorkDay;
 
     /**
-     * @description 主动离职原因
+     * @description 主部门ID
      *
-     * @var string[]
+     * @var int
      */
-    public $terminationReasonVoluntary;
+    public $mainDeptId;
+
+    /**
+     * @description 主部门
+     *
+     * @var string
+     */
+    public $mainDeptName;
+
+    /**
+     * @description 姓名
+     *
+     * @var string
+     */
+    public $name;
+
+    /**
+     * @description 身份证姓名
+     *
+     * @var string
+     */
+    public $realName;
 
     /**
      * @description 被动离职原因
@@ -107,16 +107,13 @@ class ECertQueryResponseBody extends Model
     public $terminationReasonPassive;
 
     /**
-     * @description 姓名
+     * @description 主动离职原因
      *
-     * @var string
+     * @var string[]
      */
-    public $name;
+    public $terminationReasonVoluntary;
     protected $_name = [
-        'realName'                   => 'realName',
         'certNO'                     => 'certNO',
-        'mainDeptId'                 => 'mainDeptId',
-        'mainDeptName'               => 'mainDeptName',
         'employJobId'                => 'employJobId',
         'employJobIdLabel'           => 'employJobIdLabel',
         'employPositionId'           => 'employPositionId',
@@ -125,9 +122,12 @@ class ECertQueryResponseBody extends Model
         'employPositionRankIdLabel'  => 'employPositionRankIdLabel',
         'hiredDate'                  => 'hiredDate',
         'lastWorkDay'                => 'lastWorkDay',
-        'terminationReasonVoluntary' => 'terminationReasonVoluntary',
-        'terminationReasonPassive'   => 'terminationReasonPassive',
+        'mainDeptId'                 => 'mainDeptId',
+        'mainDeptName'               => 'mainDeptName',
         'name'                       => 'name',
+        'realName'                   => 'realName',
+        'terminationReasonPassive'   => 'terminationReasonPassive',
+        'terminationReasonVoluntary' => 'terminationReasonVoluntary',
     ];
 
     public function validate()
@@ -137,17 +137,8 @@ class ECertQueryResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->realName) {
-            $res['realName'] = $this->realName;
-        }
         if (null !== $this->certNO) {
             $res['certNO'] = $this->certNO;
-        }
-        if (null !== $this->mainDeptId) {
-            $res['mainDeptId'] = $this->mainDeptId;
-        }
-        if (null !== $this->mainDeptName) {
-            $res['mainDeptName'] = $this->mainDeptName;
         }
         if (null !== $this->employJobId) {
             $res['employJobId'] = $this->employJobId;
@@ -173,14 +164,23 @@ class ECertQueryResponseBody extends Model
         if (null !== $this->lastWorkDay) {
             $res['lastWorkDay'] = $this->lastWorkDay;
         }
-        if (null !== $this->terminationReasonVoluntary) {
-            $res['terminationReasonVoluntary'] = $this->terminationReasonVoluntary;
+        if (null !== $this->mainDeptId) {
+            $res['mainDeptId'] = $this->mainDeptId;
+        }
+        if (null !== $this->mainDeptName) {
+            $res['mainDeptName'] = $this->mainDeptName;
+        }
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
+        }
+        if (null !== $this->realName) {
+            $res['realName'] = $this->realName;
         }
         if (null !== $this->terminationReasonPassive) {
             $res['terminationReasonPassive'] = $this->terminationReasonPassive;
         }
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
+        if (null !== $this->terminationReasonVoluntary) {
+            $res['terminationReasonVoluntary'] = $this->terminationReasonVoluntary;
         }
 
         return $res;
@@ -194,17 +194,8 @@ class ECertQueryResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['realName'])) {
-            $model->realName = $map['realName'];
-        }
         if (isset($map['certNO'])) {
             $model->certNO = $map['certNO'];
-        }
-        if (isset($map['mainDeptId'])) {
-            $model->mainDeptId = $map['mainDeptId'];
-        }
-        if (isset($map['mainDeptName'])) {
-            $model->mainDeptName = $map['mainDeptName'];
         }
         if (isset($map['employJobId'])) {
             $model->employJobId = $map['employJobId'];
@@ -230,18 +221,27 @@ class ECertQueryResponseBody extends Model
         if (isset($map['lastWorkDay'])) {
             $model->lastWorkDay = $map['lastWorkDay'];
         }
-        if (isset($map['terminationReasonVoluntary'])) {
-            if (!empty($map['terminationReasonVoluntary'])) {
-                $model->terminationReasonVoluntary = $map['terminationReasonVoluntary'];
-            }
+        if (isset($map['mainDeptId'])) {
+            $model->mainDeptId = $map['mainDeptId'];
+        }
+        if (isset($map['mainDeptName'])) {
+            $model->mainDeptName = $map['mainDeptName'];
+        }
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
+        }
+        if (isset($map['realName'])) {
+            $model->realName = $map['realName'];
         }
         if (isset($map['terminationReasonPassive'])) {
             if (!empty($map['terminationReasonPassive'])) {
                 $model->terminationReasonPassive = $map['terminationReasonPassive'];
             }
         }
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
+        if (isset($map['terminationReasonVoluntary'])) {
+            if (!empty($map['terminationReasonVoluntary'])) {
+                $model->terminationReasonVoluntary = $map['terminationReasonVoluntary'];
+            }
         }
 
         return $model;

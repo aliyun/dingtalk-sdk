@@ -10,21 +10,21 @@ use AlibabaCloud\Tea\Model;
 class DeleteWorkspaceDocMembersRequest extends Model
 {
     /**
-     * @description 发起操作者unionId
-     *
-     * @var string
-     */
-    public $operatorId;
-
-    /**
      * @description 被操作用户组
      *
      * @var members[]
      */
     public $members;
+
+    /**
+     * @description 发起操作者unionId
+     *
+     * @var string
+     */
+    public $operatorId;
     protected $_name = [
-        'operatorId' => 'operatorId',
         'members'    => 'members',
+        'operatorId' => 'operatorId',
     ];
 
     public function validate()
@@ -34,9 +34,6 @@ class DeleteWorkspaceDocMembersRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->operatorId) {
-            $res['operatorId'] = $this->operatorId;
-        }
         if (null !== $this->members) {
             $res['members'] = [];
             if (null !== $this->members && \is_array($this->members)) {
@@ -45,6 +42,9 @@ class DeleteWorkspaceDocMembersRequest extends Model
                     $res['members'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->operatorId) {
+            $res['operatorId'] = $this->operatorId;
         }
 
         return $res;
@@ -58,9 +58,6 @@ class DeleteWorkspaceDocMembersRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['operatorId'])) {
-            $model->operatorId = $map['operatorId'];
-        }
         if (isset($map['members'])) {
             if (!empty($map['members'])) {
                 $model->members = [];
@@ -69,6 +66,9 @@ class DeleteWorkspaceDocMembersRequest extends Model
                     $model->members[$n++] = null !== $item ? members::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['operatorId'])) {
+            $model->operatorId = $map['operatorId'];
         }
 
         return $model;

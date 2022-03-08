@@ -10,18 +10,18 @@ use AlibabaCloud\Tea\Model;
 class QueryAllTracksResponseBody extends Model
 {
     /**
-     * @description 客户动态分页数据
-     *
-     * @var values[]
-     */
-    public $values;
-
-    /**
      * @description 是否还有数据
      *
      * @var bool
      */
     public $hasMore;
+
+    /**
+     * @description 翻页size
+     *
+     * @var int
+     */
+    public $maxResults;
 
     /**
      * @description 下页翻页起始游标
@@ -31,16 +31,16 @@ class QueryAllTracksResponseBody extends Model
     public $nextToken;
 
     /**
-     * @description 翻页size
+     * @description 客户动态分页数据
      *
-     * @var int
+     * @var values[]
      */
-    public $maxResults;
+    public $values;
     protected $_name = [
-        'values'     => 'values',
         'hasMore'    => 'hasMore',
-        'nextToken'  => 'nextToken',
         'maxResults' => 'maxResults',
+        'nextToken'  => 'nextToken',
+        'values'     => 'values',
     ];
 
     public function validate()
@@ -50,6 +50,15 @@ class QueryAllTracksResponseBody extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->hasMore) {
+            $res['hasMore'] = $this->hasMore;
+        }
+        if (null !== $this->maxResults) {
+            $res['maxResults'] = $this->maxResults;
+        }
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
+        }
         if (null !== $this->values) {
             $res['values'] = [];
             if (null !== $this->values && \is_array($this->values)) {
@@ -58,15 +67,6 @@ class QueryAllTracksResponseBody extends Model
                     $res['values'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
-        }
-        if (null !== $this->hasMore) {
-            $res['hasMore'] = $this->hasMore;
-        }
-        if (null !== $this->nextToken) {
-            $res['nextToken'] = $this->nextToken;
-        }
-        if (null !== $this->maxResults) {
-            $res['maxResults'] = $this->maxResults;
         }
 
         return $res;
@@ -80,6 +80,15 @@ class QueryAllTracksResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['hasMore'])) {
+            $model->hasMore = $map['hasMore'];
+        }
+        if (isset($map['maxResults'])) {
+            $model->maxResults = $map['maxResults'];
+        }
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
+        }
         if (isset($map['values'])) {
             if (!empty($map['values'])) {
                 $model->values = [];
@@ -88,15 +97,6 @@ class QueryAllTracksResponseBody extends Model
                     $model->values[$n++] = null !== $item ? values::fromMap($item) : $item;
                 }
             }
-        }
-        if (isset($map['hasMore'])) {
-            $model->hasMore = $map['hasMore'];
-        }
-        if (isset($map['nextToken'])) {
-            $model->nextToken = $map['nextToken'];
-        }
-        if (isset($map['maxResults'])) {
-            $model->maxResults = $map['maxResults'];
         }
 
         return $model;

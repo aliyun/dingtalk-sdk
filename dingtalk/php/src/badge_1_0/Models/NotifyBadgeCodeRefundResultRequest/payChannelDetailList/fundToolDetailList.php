@@ -9,18 +9,25 @@ use AlibabaCloud\Tea\Model;
 class fundToolDetailList extends Model
 {
     /**
-     * @description 资金工具名称
-     *
-     * @var string
-     */
-    public $fundToolName;
-
-    /**
      * @description 金额
      *
      * @var string
      */
     public $amount;
+
+    /**
+     * @description 扩展信息
+     *
+     * @var string
+     */
+    public $extInfo;
+
+    /**
+     * @description 资金工具名称
+     *
+     * @var string
+     */
+    public $fundToolName;
 
     /**
      * @description 创建时间
@@ -42,20 +49,13 @@ class fundToolDetailList extends Model
      * @var bool
      */
     public $promotionFundTool;
-
-    /**
-     * @description 扩展信息
-     *
-     * @var string
-     */
-    public $extInfo;
     protected $_name = [
-        'fundToolName'      => 'fundToolName',
         'amount'            => 'amount',
+        'extInfo'           => 'extInfo',
+        'fundToolName'      => 'fundToolName',
         'gmtCreate'         => 'gmtCreate',
         'gmtFinish'         => 'gmtFinish',
         'promotionFundTool' => 'promotionFundTool',
-        'extInfo'           => 'extInfo',
     ];
 
     public function validate()
@@ -65,11 +65,14 @@ class fundToolDetailList extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->fundToolName) {
-            $res['fundToolName'] = $this->fundToolName;
-        }
         if (null !== $this->amount) {
             $res['amount'] = $this->amount;
+        }
+        if (null !== $this->extInfo) {
+            $res['extInfo'] = $this->extInfo;
+        }
+        if (null !== $this->fundToolName) {
+            $res['fundToolName'] = $this->fundToolName;
         }
         if (null !== $this->gmtCreate) {
             $res['gmtCreate'] = $this->gmtCreate;
@@ -79,9 +82,6 @@ class fundToolDetailList extends Model
         }
         if (null !== $this->promotionFundTool) {
             $res['promotionFundTool'] = $this->promotionFundTool;
-        }
-        if (null !== $this->extInfo) {
-            $res['extInfo'] = $this->extInfo;
         }
 
         return $res;
@@ -95,11 +95,14 @@ class fundToolDetailList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['fundToolName'])) {
-            $model->fundToolName = $map['fundToolName'];
-        }
         if (isset($map['amount'])) {
             $model->amount = $map['amount'];
+        }
+        if (isset($map['extInfo'])) {
+            $model->extInfo = $map['extInfo'];
+        }
+        if (isset($map['fundToolName'])) {
+            $model->fundToolName = $map['fundToolName'];
         }
         if (isset($map['gmtCreate'])) {
             $model->gmtCreate = $map['gmtCreate'];
@@ -109,9 +112,6 @@ class fundToolDetailList extends Model
         }
         if (isset($map['promotionFundTool'])) {
             $model->promotionFundTool = $map['promotionFundTool'];
-        }
-        if (isset($map['extInfo'])) {
-            $model->extInfo = $map['extInfo'];
         }
 
         return $model;

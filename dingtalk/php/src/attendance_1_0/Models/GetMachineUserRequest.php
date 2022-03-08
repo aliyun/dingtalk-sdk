@@ -9,17 +9,17 @@ use AlibabaCloud\Tea\Model;
 class GetMachineUserRequest extends Model
 {
     /**
-     * @var string
-     */
-    public $nextToken;
-
-    /**
      * @var int
      */
     public $maxResults;
+
+    /**
+     * @var string
+     */
+    public $nextToken;
     protected $_name = [
-        'nextToken'  => 'nextToken',
         'maxResults' => 'maxResults',
+        'nextToken'  => 'nextToken',
     ];
 
     public function validate()
@@ -29,11 +29,11 @@ class GetMachineUserRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->nextToken) {
-            $res['nextToken'] = $this->nextToken;
-        }
         if (null !== $this->maxResults) {
             $res['maxResults'] = $this->maxResults;
+        }
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
         }
 
         return $res;
@@ -47,11 +47,11 @@ class GetMachineUserRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['nextToken'])) {
-            $model->nextToken = $map['nextToken'];
-        }
         if (isset($map['maxResults'])) {
             $model->maxResults = $map['maxResults'];
+        }
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
         }
 
         return $model;

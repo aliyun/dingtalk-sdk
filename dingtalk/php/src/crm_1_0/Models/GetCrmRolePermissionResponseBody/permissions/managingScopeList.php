@@ -10,11 +10,11 @@ use AlibabaCloud\Tea\Model;
 class managingScopeList extends Model
 {
     /**
-     * @description 管理范围类型
+     * @description 扩展信息
      *
-     * @var string
+     * @var ext
      */
-    public $type;
+    public $ext;
 
     /**
      * @description 是否是主管
@@ -24,15 +24,15 @@ class managingScopeList extends Model
     public $manager;
 
     /**
-     * @description 扩展信息
+     * @description 管理范围类型
      *
-     * @var ext
+     * @var string
      */
-    public $ext;
+    public $type;
     protected $_name = [
-        'type'    => 'type',
-        'manager' => 'manager',
         'ext'     => 'ext',
+        'manager' => 'manager',
+        'type'    => 'type',
     ];
 
     public function validate()
@@ -42,14 +42,14 @@ class managingScopeList extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->type) {
-            $res['type'] = $this->type;
+        if (null !== $this->ext) {
+            $res['ext'] = null !== $this->ext ? $this->ext->toMap() : null;
         }
         if (null !== $this->manager) {
             $res['manager'] = $this->manager;
         }
-        if (null !== $this->ext) {
-            $res['ext'] = null !== $this->ext ? $this->ext->toMap() : null;
+        if (null !== $this->type) {
+            $res['type'] = $this->type;
         }
 
         return $res;
@@ -63,14 +63,14 @@ class managingScopeList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['type'])) {
-            $model->type = $map['type'];
+        if (isset($map['ext'])) {
+            $model->ext = ext::fromMap($map['ext']);
         }
         if (isset($map['manager'])) {
             $model->manager = $map['manager'];
         }
-        if (isset($map['ext'])) {
-            $model->ext = ext::fromMap($map['ext']);
+        if (isset($map['type'])) {
+            $model->type = $map['type'];
         }
 
         return $model;

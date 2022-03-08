@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class attachmentList extends Model
 {
     /**
-     * @description 附件名称
+     * @description 多媒体类型
      *
      * @var string
      */
-    public $title;
+    public $mimeType;
 
     /**
      * @description 附件URL
@@ -37,17 +37,17 @@ class attachmentList extends Model
     public $suffix;
 
     /**
-     * @description 多媒体类型
+     * @description 附件名称
      *
      * @var string
      */
-    public $mimeType;
+    public $title;
     protected $_name = [
-        'title'    => 'title',
+        'mimeType' => 'mime_type',
         'path'     => 'path',
         'size'     => 'size',
         'suffix'   => 'suffix',
-        'mimeType' => 'mime_type',
+        'title'    => 'title',
     ];
 
     public function validate()
@@ -57,8 +57,8 @@ class attachmentList extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->title) {
-            $res['title'] = $this->title;
+        if (null !== $this->mimeType) {
+            $res['mime_type'] = $this->mimeType;
         }
         if (null !== $this->path) {
             $res['path'] = $this->path;
@@ -69,8 +69,8 @@ class attachmentList extends Model
         if (null !== $this->suffix) {
             $res['suffix'] = $this->suffix;
         }
-        if (null !== $this->mimeType) {
-            $res['mime_type'] = $this->mimeType;
+        if (null !== $this->title) {
+            $res['title'] = $this->title;
         }
 
         return $res;
@@ -84,8 +84,8 @@ class attachmentList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['title'])) {
-            $model->title = $map['title'];
+        if (isset($map['mime_type'])) {
+            $model->mimeType = $map['mime_type'];
         }
         if (isset($map['path'])) {
             $model->path = $map['path'];
@@ -96,8 +96,8 @@ class attachmentList extends Model
         if (isset($map['suffix'])) {
             $model->suffix = $map['suffix'];
         }
-        if (isset($map['mime_type'])) {
-            $model->mimeType = $map['mime_type'];
+        if (isset($map['title'])) {
+            $model->title = $map['title'];
         }
 
         return $model;

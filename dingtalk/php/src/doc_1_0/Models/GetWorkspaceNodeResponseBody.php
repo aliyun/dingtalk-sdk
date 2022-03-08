@@ -11,6 +11,13 @@ use AlibabaCloud\Tea\Model;
 class GetWorkspaceNodeResponseBody extends Model
 {
     /**
+     * @description 是否有权限
+     *
+     * @var bool
+     */
+    public $hasPermission;
+
+    /**
      * @description 节点信息
      *
      * @var nodeBO
@@ -23,17 +30,10 @@ class GetWorkspaceNodeResponseBody extends Model
      * @var workspaceBO
      */
     public $workspaceBO;
-
-    /**
-     * @description 是否有权限
-     *
-     * @var bool
-     */
-    public $hasPermission;
     protected $_name = [
+        'hasPermission' => 'hasPermission',
         'nodeBO'        => 'nodeBO',
         'workspaceBO'   => 'workspaceBO',
-        'hasPermission' => 'hasPermission',
     ];
 
     public function validate()
@@ -43,14 +43,14 @@ class GetWorkspaceNodeResponseBody extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->hasPermission) {
+            $res['hasPermission'] = $this->hasPermission;
+        }
         if (null !== $this->nodeBO) {
             $res['nodeBO'] = null !== $this->nodeBO ? $this->nodeBO->toMap() : null;
         }
         if (null !== $this->workspaceBO) {
             $res['workspaceBO'] = null !== $this->workspaceBO ? $this->workspaceBO->toMap() : null;
-        }
-        if (null !== $this->hasPermission) {
-            $res['hasPermission'] = $this->hasPermission;
         }
 
         return $res;
@@ -64,14 +64,14 @@ class GetWorkspaceNodeResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['hasPermission'])) {
+            $model->hasPermission = $map['hasPermission'];
+        }
         if (isset($map['nodeBO'])) {
             $model->nodeBO = nodeBO::fromMap($map['nodeBO']);
         }
         if (isset($map['workspaceBO'])) {
             $model->workspaceBO = workspaceBO::fromMap($map['workspaceBO']);
-        }
-        if (isset($map['hasPermission'])) {
-            $model->hasPermission = $map['hasPermission'];
         }
 
         return $model;

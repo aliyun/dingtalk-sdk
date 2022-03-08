@@ -9,6 +9,20 @@ use AlibabaCloud\Tea\Model;
 class detailList extends Model
 {
     /**
+     * @description 计算优惠后的实付金额，单位为分
+     *
+     * @var int
+     */
+    public $actualAmount;
+
+    /**
+     * @description 应付金额，单位为分
+     *
+     * @var int
+     */
+    public $itemAmount;
+
+    /**
      * @description 商品名
      *
      * @var string
@@ -21,25 +35,11 @@ class detailList extends Model
      * @var int
      */
     public $scene;
-
-    /**
-     * @description 应付金额，单位为分
-     *
-     * @var int
-     */
-    public $itemAmount;
-
-    /**
-     * @description 计算优惠后的实付金额，单位为分
-     *
-     * @var int
-     */
-    public $actualAmount;
     protected $_name = [
+        'actualAmount' => 'actualAmount',
+        'itemAmount'   => 'itemAmount',
         'itemName'     => 'itemName',
         'scene'        => 'scene',
-        'itemAmount'   => 'itemAmount',
-        'actualAmount' => 'actualAmount',
     ];
 
     public function validate()
@@ -49,17 +49,17 @@ class detailList extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->actualAmount) {
+            $res['actualAmount'] = $this->actualAmount;
+        }
+        if (null !== $this->itemAmount) {
+            $res['itemAmount'] = $this->itemAmount;
+        }
         if (null !== $this->itemName) {
             $res['itemName'] = $this->itemName;
         }
         if (null !== $this->scene) {
             $res['scene'] = $this->scene;
-        }
-        if (null !== $this->itemAmount) {
-            $res['itemAmount'] = $this->itemAmount;
-        }
-        if (null !== $this->actualAmount) {
-            $res['actualAmount'] = $this->actualAmount;
         }
 
         return $res;
@@ -73,17 +73,17 @@ class detailList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['actualAmount'])) {
+            $model->actualAmount = $map['actualAmount'];
+        }
+        if (isset($map['itemAmount'])) {
+            $model->itemAmount = $map['itemAmount'];
+        }
         if (isset($map['itemName'])) {
             $model->itemName = $map['itemName'];
         }
         if (isset($map['scene'])) {
             $model->scene = $map['scene'];
-        }
-        if (isset($map['itemAmount'])) {
-            $model->itemAmount = $map['itemAmount'];
-        }
-        if (isset($map['actualAmount'])) {
-            $model->actualAmount = $map['actualAmount'];
         }
 
         return $model;

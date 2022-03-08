@@ -11,17 +11,12 @@ class UploadEventRequest extends Model
     /**
      * @var string
      */
-    public $deviceUuid;
-
-    /**
-     * @var string
-     */
     public $content;
 
     /**
      * @var string
      */
-    public $dingCorpId;
+    public $coverUrl;
 
     /**
      * @var string
@@ -31,7 +26,7 @@ class UploadEventRequest extends Model
     /**
      * @var string
      */
-    public $level;
+    public $deviceUuid;
 
     /**
      * @var string
@@ -46,16 +41,15 @@ class UploadEventRequest extends Model
     /**
      * @var string
      */
-    public $coverUrl;
+    public $level;
     protected $_name = [
-        'deviceUuid' => 'deviceUuid',
         'content'    => 'content',
-        'dingCorpId' => 'dingCorpId',
+        'coverUrl'   => 'coverUrl',
         'deviceCode' => 'deviceCode',
-        'level'      => 'level',
+        'deviceUuid' => 'deviceUuid',
         'eventTime'  => 'eventTime',
         'eventType'  => 'eventType',
-        'coverUrl'   => 'coverUrl',
+        'level'      => 'level',
     ];
 
     public function validate()
@@ -65,20 +59,17 @@ class UploadEventRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->deviceUuid) {
-            $res['deviceUuid'] = $this->deviceUuid;
-        }
         if (null !== $this->content) {
             $res['content'] = $this->content;
         }
-        if (null !== $this->dingCorpId) {
-            $res['dingCorpId'] = $this->dingCorpId;
+        if (null !== $this->coverUrl) {
+            $res['coverUrl'] = $this->coverUrl;
         }
         if (null !== $this->deviceCode) {
             $res['deviceCode'] = $this->deviceCode;
         }
-        if (null !== $this->level) {
-            $res['level'] = $this->level;
+        if (null !== $this->deviceUuid) {
+            $res['deviceUuid'] = $this->deviceUuid;
         }
         if (null !== $this->eventTime) {
             $res['eventTime'] = $this->eventTime;
@@ -86,8 +77,8 @@ class UploadEventRequest extends Model
         if (null !== $this->eventType) {
             $res['eventType'] = $this->eventType;
         }
-        if (null !== $this->coverUrl) {
-            $res['coverUrl'] = $this->coverUrl;
+        if (null !== $this->level) {
+            $res['level'] = $this->level;
         }
 
         return $res;
@@ -101,20 +92,17 @@ class UploadEventRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['deviceUuid'])) {
-            $model->deviceUuid = $map['deviceUuid'];
-        }
         if (isset($map['content'])) {
             $model->content = $map['content'];
         }
-        if (isset($map['dingCorpId'])) {
-            $model->dingCorpId = $map['dingCorpId'];
+        if (isset($map['coverUrl'])) {
+            $model->coverUrl = $map['coverUrl'];
         }
         if (isset($map['deviceCode'])) {
             $model->deviceCode = $map['deviceCode'];
         }
-        if (isset($map['level'])) {
-            $model->level = $map['level'];
+        if (isset($map['deviceUuid'])) {
+            $model->deviceUuid = $map['deviceUuid'];
         }
         if (isset($map['eventTime'])) {
             $model->eventTime = $map['eventTime'];
@@ -122,8 +110,8 @@ class UploadEventRequest extends Model
         if (isset($map['eventType'])) {
             $model->eventType = $map['eventType'];
         }
-        if (isset($map['coverUrl'])) {
-            $model->coverUrl = $map['coverUrl'];
+        if (isset($map['level'])) {
+            $model->level = $map['level'];
         }
 
         return $model;

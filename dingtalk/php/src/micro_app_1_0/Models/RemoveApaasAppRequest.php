@@ -11,15 +11,15 @@ class RemoveApaasAppRequest extends Model
     /**
      * @var string
      */
-    public $opUserId;
+    public $bizAppId;
 
     /**
      * @var string
      */
-    public $bizAppId;
+    public $opUserId;
     protected $_name = [
-        'opUserId' => 'opUserId',
         'bizAppId' => 'bizAppId',
+        'opUserId' => 'opUserId',
     ];
 
     public function validate()
@@ -29,11 +29,11 @@ class RemoveApaasAppRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->opUserId) {
-            $res['opUserId'] = $this->opUserId;
-        }
         if (null !== $this->bizAppId) {
             $res['bizAppId'] = $this->bizAppId;
+        }
+        if (null !== $this->opUserId) {
+            $res['opUserId'] = $this->opUserId;
         }
 
         return $res;
@@ -47,11 +47,11 @@ class RemoveApaasAppRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['opUserId'])) {
-            $model->opUserId = $map['opUserId'];
-        }
         if (isset($map['bizAppId'])) {
             $model->bizAppId = $map['bizAppId'];
+        }
+        if (isset($map['opUserId'])) {
+            $model->opUserId = $map['opUserId'];
         }
 
         return $model;

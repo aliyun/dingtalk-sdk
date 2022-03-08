@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class MoveFileRequest extends Model
 {
     /**
-     * @description 目标空间id
+     * @description 文件名冲突策略
      *
      * @var string
      */
-    public $targetSpaceId;
+    public $addConflictPolicy;
 
     /**
      * @description 目标父目录id
@@ -23,11 +23,11 @@ class MoveFileRequest extends Model
     public $targetParentId;
 
     /**
-     * @description 文件名冲突策略
+     * @description 目标空间id
      *
      * @var string
      */
-    public $addConflictPolicy;
+    public $targetSpaceId;
 
     /**
      * @description 用户id
@@ -36,9 +36,9 @@ class MoveFileRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'targetSpaceId'     => 'targetSpaceId',
-        'targetParentId'    => 'targetParentId',
         'addConflictPolicy' => 'addConflictPolicy',
+        'targetParentId'    => 'targetParentId',
+        'targetSpaceId'     => 'targetSpaceId',
         'unionId'           => 'unionId',
     ];
 
@@ -49,14 +49,14 @@ class MoveFileRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->targetSpaceId) {
-            $res['targetSpaceId'] = $this->targetSpaceId;
+        if (null !== $this->addConflictPolicy) {
+            $res['addConflictPolicy'] = $this->addConflictPolicy;
         }
         if (null !== $this->targetParentId) {
             $res['targetParentId'] = $this->targetParentId;
         }
-        if (null !== $this->addConflictPolicy) {
-            $res['addConflictPolicy'] = $this->addConflictPolicy;
+        if (null !== $this->targetSpaceId) {
+            $res['targetSpaceId'] = $this->targetSpaceId;
         }
         if (null !== $this->unionId) {
             $res['unionId'] = $this->unionId;
@@ -73,14 +73,14 @@ class MoveFileRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['targetSpaceId'])) {
-            $model->targetSpaceId = $map['targetSpaceId'];
+        if (isset($map['addConflictPolicy'])) {
+            $model->addConflictPolicy = $map['addConflictPolicy'];
         }
         if (isset($map['targetParentId'])) {
             $model->targetParentId = $map['targetParentId'];
         }
-        if (isset($map['addConflictPolicy'])) {
-            $model->addConflictPolicy = $map['addConflictPolicy'];
+        if (isset($map['targetSpaceId'])) {
+            $model->targetSpaceId = $map['targetSpaceId'];
         }
         if (isset($map['unionId'])) {
             $model->unionId = $map['unionId'];

@@ -17,13 +17,6 @@ class GetOpenCourseDetailResponseBody extends Model
     public $courseId;
 
     /**
-     * @description 课程标题
-     *
-     * @var string
-     */
-    public $title;
-
-    /**
      * @description 课程类型: 0-直播 2-视频内容
      *
      * @var int
@@ -31,18 +24,25 @@ class GetOpenCourseDetailResponseBody extends Model
     public $courseType;
 
     /**
-     * @description 老师名称
-     *
-     * @var string
-     */
-    public $teacherName;
-
-    /**
      * @description 封面图片地址
      *
      * @var string
      */
     public $coverUrl;
+
+    /**
+     * @description 课程介绍
+     *
+     * @var string
+     */
+    public $introduction;
+
+    /**
+     * @description 发布详情model
+     *
+     * @var pushModel
+     */
+    public $pushModel;
 
     /**
      * @description 课程开始时间
@@ -59,28 +59,28 @@ class GetOpenCourseDetailResponseBody extends Model
     public $teacherId;
 
     /**
-     * @description 课程介绍
+     * @description 老师名称
      *
      * @var string
      */
-    public $introduction;
+    public $teacherName;
 
     /**
-     * @description 发布详情model
+     * @description 课程标题
      *
-     * @var pushModel
+     * @var string
      */
-    public $pushModel;
+    public $title;
     protected $_name = [
         'courseId'     => 'courseId',
-        'title'        => 'title',
         'courseType'   => 'courseType',
-        'teacherName'  => 'teacherName',
         'coverUrl'     => 'coverUrl',
-        'startTime'    => 'startTime',
-        'teacherId'    => 'teacherId',
         'introduction' => 'introduction',
         'pushModel'    => 'pushModel',
+        'startTime'    => 'startTime',
+        'teacherId'    => 'teacherId',
+        'teacherName'  => 'teacherName',
+        'title'        => 'title',
     ];
 
     public function validate()
@@ -93,17 +93,17 @@ class GetOpenCourseDetailResponseBody extends Model
         if (null !== $this->courseId) {
             $res['courseId'] = $this->courseId;
         }
-        if (null !== $this->title) {
-            $res['title'] = $this->title;
-        }
         if (null !== $this->courseType) {
             $res['courseType'] = $this->courseType;
         }
-        if (null !== $this->teacherName) {
-            $res['teacherName'] = $this->teacherName;
-        }
         if (null !== $this->coverUrl) {
             $res['coverUrl'] = $this->coverUrl;
+        }
+        if (null !== $this->introduction) {
+            $res['introduction'] = $this->introduction;
+        }
+        if (null !== $this->pushModel) {
+            $res['pushModel'] = null !== $this->pushModel ? $this->pushModel->toMap() : null;
         }
         if (null !== $this->startTime) {
             $res['startTime'] = $this->startTime;
@@ -111,11 +111,11 @@ class GetOpenCourseDetailResponseBody extends Model
         if (null !== $this->teacherId) {
             $res['teacherId'] = $this->teacherId;
         }
-        if (null !== $this->introduction) {
-            $res['introduction'] = $this->introduction;
+        if (null !== $this->teacherName) {
+            $res['teacherName'] = $this->teacherName;
         }
-        if (null !== $this->pushModel) {
-            $res['pushModel'] = null !== $this->pushModel ? $this->pushModel->toMap() : null;
+        if (null !== $this->title) {
+            $res['title'] = $this->title;
         }
 
         return $res;
@@ -132,17 +132,17 @@ class GetOpenCourseDetailResponseBody extends Model
         if (isset($map['courseId'])) {
             $model->courseId = $map['courseId'];
         }
-        if (isset($map['title'])) {
-            $model->title = $map['title'];
-        }
         if (isset($map['courseType'])) {
             $model->courseType = $map['courseType'];
         }
-        if (isset($map['teacherName'])) {
-            $model->teacherName = $map['teacherName'];
-        }
         if (isset($map['coverUrl'])) {
             $model->coverUrl = $map['coverUrl'];
+        }
+        if (isset($map['introduction'])) {
+            $model->introduction = $map['introduction'];
+        }
+        if (isset($map['pushModel'])) {
+            $model->pushModel = pushModel::fromMap($map['pushModel']);
         }
         if (isset($map['startTime'])) {
             $model->startTime = $map['startTime'];
@@ -150,11 +150,11 @@ class GetOpenCourseDetailResponseBody extends Model
         if (isset($map['teacherId'])) {
             $model->teacherId = $map['teacherId'];
         }
-        if (isset($map['introduction'])) {
-            $model->introduction = $map['introduction'];
+        if (isset($map['teacherName'])) {
+            $model->teacherName = $map['teacherName'];
         }
-        if (isset($map['pushModel'])) {
-            $model->pushModel = pushModel::fromMap($map['pushModel']);
+        if (isset($map['title'])) {
+            $model->title = $map['title'];
         }
 
         return $model;

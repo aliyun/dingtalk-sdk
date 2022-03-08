@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class GetActivityButtonListRequest extends Model
 {
     /**
+     * @description 语言环境
+     *
+     * @var string
+     */
+    public $language;
+
+    /**
      * @description 应用秘钥
      *
      * @var string
@@ -21,17 +28,10 @@ class GetActivityButtonListRequest extends Model
      * @var string
      */
     public $userId;
-
-    /**
-     * @description 语言环境
-     *
-     * @var string
-     */
-    public $language;
     protected $_name = [
+        'language'    => 'language',
         'systemToken' => 'systemToken',
         'userId'      => 'userId',
-        'language'    => 'language',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class GetActivityButtonListRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->language) {
+            $res['language'] = $this->language;
+        }
         if (null !== $this->systemToken) {
             $res['systemToken'] = $this->systemToken;
         }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
-        }
-        if (null !== $this->language) {
-            $res['language'] = $this->language;
         }
 
         return $res;
@@ -62,14 +62,14 @@ class GetActivityButtonListRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['language'])) {
+            $model->language = $map['language'];
+        }
         if (isset($map['systemToken'])) {
             $model->systemToken = $map['systemToken'];
         }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];
-        }
-        if (isset($map['language'])) {
-            $model->language = $map['language'];
         }
 
         return $model;

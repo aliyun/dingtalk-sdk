@@ -11,15 +11,9 @@ class CreateDevelopersRequest extends Model
     /**
      * @var string
      */
-    public $dingCorpId;
-
-    /**
-     * @var string
-     */
     public $noticeUrl;
     protected $_name = [
-        'dingCorpId' => 'dingCorpId',
-        'noticeUrl'  => 'noticeUrl',
+        'noticeUrl' => 'noticeUrl',
     ];
 
     public function validate()
@@ -29,9 +23,6 @@ class CreateDevelopersRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->dingCorpId) {
-            $res['dingCorpId'] = $this->dingCorpId;
-        }
         if (null !== $this->noticeUrl) {
             $res['noticeUrl'] = $this->noticeUrl;
         }
@@ -47,9 +38,6 @@ class CreateDevelopersRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['dingCorpId'])) {
-            $model->dingCorpId = $map['dingCorpId'];
-        }
         if (isset($map['noticeUrl'])) {
             $model->noticeUrl = $map['noticeUrl'];
         }

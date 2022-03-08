@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class usagePlugins extends Model
 {
     /**
-     * @description pluginName
-     *
-     * @var string
-     */
-    public $pluginName;
-
-    /**
      * @description iconUrl
      *
      * @var string
      */
     public $iconUrl;
+
+    /**
+     * @description pluginName
+     *
+     * @var string
+     */
+    public $pluginName;
     protected $_name = [
-        'pluginName' => 'pluginName',
         'iconUrl'    => 'iconUrl',
+        'pluginName' => 'pluginName',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class usagePlugins extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->pluginName) {
-            $res['pluginName'] = $this->pluginName;
-        }
         if (null !== $this->iconUrl) {
             $res['iconUrl'] = $this->iconUrl;
+        }
+        if (null !== $this->pluginName) {
+            $res['pluginName'] = $this->pluginName;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class usagePlugins extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['pluginName'])) {
-            $model->pluginName = $map['pluginName'];
-        }
         if (isset($map['iconUrl'])) {
             $model->iconUrl = $map['iconUrl'];
+        }
+        if (isset($map['pluginName'])) {
+            $model->pluginName = $map['pluginName'];
         }
 
         return $model;

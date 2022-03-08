@@ -9,20 +9,6 @@ use AlibabaCloud\Tea\Model;
 class ListDeptUsersRequest extends Model
 {
     /**
-     * @description cursor
-     *
-     * @var int
-     */
-    public $cursor;
-
-    /**
-     * @description size
-     *
-     * @var int
-     */
-    public $size;
-
-    /**
      * @description containAccessLimit
      *
      * @var bool
@@ -30,11 +16,11 @@ class ListDeptUsersRequest extends Model
     public $containAccessLimit;
 
     /**
-     * @description 下属组织的组织ID，比如下属镇、村的corpId
+     * @description cursor
      *
-     * @var string
+     * @var int
      */
-    public $subCorpId;
+    public $cursor;
 
     /**
      * @description language
@@ -49,13 +35,27 @@ class ListDeptUsersRequest extends Model
      * @var string
      */
     public $orderField;
+
+    /**
+     * @description size
+     *
+     * @var int
+     */
+    public $size;
+
+    /**
+     * @description 下属组织的组织ID，比如下属镇、村的corpId
+     *
+     * @var string
+     */
+    public $subCorpId;
     protected $_name = [
-        'cursor'             => 'cursor',
-        'size'               => 'size',
         'containAccessLimit' => 'containAccessLimit',
-        'subCorpId'          => 'subCorpId',
+        'cursor'             => 'cursor',
         'language'           => 'language',
         'orderField'         => 'orderField',
+        'size'               => 'size',
+        'subCorpId'          => 'subCorpId',
     ];
 
     public function validate()
@@ -65,23 +65,23 @@ class ListDeptUsersRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->cursor) {
-            $res['cursor'] = $this->cursor;
-        }
-        if (null !== $this->size) {
-            $res['size'] = $this->size;
-        }
         if (null !== $this->containAccessLimit) {
             $res['containAccessLimit'] = $this->containAccessLimit;
         }
-        if (null !== $this->subCorpId) {
-            $res['subCorpId'] = $this->subCorpId;
+        if (null !== $this->cursor) {
+            $res['cursor'] = $this->cursor;
         }
         if (null !== $this->language) {
             $res['language'] = $this->language;
         }
         if (null !== $this->orderField) {
             $res['orderField'] = $this->orderField;
+        }
+        if (null !== $this->size) {
+            $res['size'] = $this->size;
+        }
+        if (null !== $this->subCorpId) {
+            $res['subCorpId'] = $this->subCorpId;
         }
 
         return $res;
@@ -95,23 +95,23 @@ class ListDeptUsersRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['cursor'])) {
-            $model->cursor = $map['cursor'];
-        }
-        if (isset($map['size'])) {
-            $model->size = $map['size'];
-        }
         if (isset($map['containAccessLimit'])) {
             $model->containAccessLimit = $map['containAccessLimit'];
         }
-        if (isset($map['subCorpId'])) {
-            $model->subCorpId = $map['subCorpId'];
+        if (isset($map['cursor'])) {
+            $model->cursor = $map['cursor'];
         }
         if (isset($map['language'])) {
             $model->language = $map['language'];
         }
         if (isset($map['orderField'])) {
             $model->orderField = $map['orderField'];
+        }
+        if (isset($map['size'])) {
+            $model->size = $map['size'];
+        }
+        if (isset($map['subCorpId'])) {
+            $model->subCorpId = $map['subCorpId'];
         }
 
         return $model;

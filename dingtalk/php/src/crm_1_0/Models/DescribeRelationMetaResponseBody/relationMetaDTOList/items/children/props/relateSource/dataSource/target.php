@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class target extends Model
 {
     /**
-     * @var string
-     */
-    public $appUuid;
-
-    /**
      * @var int
      */
     public $appType;
+
+    /**
+     * @var string
+     */
+    public $appUuid;
 
     /**
      * @var string
@@ -28,8 +28,8 @@ class target extends Model
      */
     public $formCode;
     protected $_name = [
-        'appUuid'  => 'appUuid',
         'appType'  => 'appType',
+        'appUuid'  => 'appUuid',
         'bizType'  => 'bizType',
         'formCode' => 'formCode',
     ];
@@ -41,11 +41,11 @@ class target extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->appUuid) {
-            $res['appUuid'] = $this->appUuid;
-        }
         if (null !== $this->appType) {
             $res['appType'] = $this->appType;
+        }
+        if (null !== $this->appUuid) {
+            $res['appUuid'] = $this->appUuid;
         }
         if (null !== $this->bizType) {
             $res['bizType'] = $this->bizType;
@@ -65,11 +65,11 @@ class target extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['appUuid'])) {
-            $model->appUuid = $map['appUuid'];
-        }
         if (isset($map['appType'])) {
             $model->appType = $map['appType'];
+        }
+        if (isset($map['appUuid'])) {
+            $model->appUuid = $map['appUuid'];
         }
         if (isset($map['bizType'])) {
             $model->bizType = $map['bizType'];

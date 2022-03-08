@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class discountInfo extends Model
 {
     /**
-     * @description 打折开始的时间，时间戳精确到毫秒，时间为东八区时间
+     * @description 打折结束的时间，时间戳精确到毫秒，时间为东八区时间
      *
      * @var int
      */
-    public $startTimeMillis;
+    public $endTimeMillis;
 
     /**
      * @description 打折时商品的价格，单位为分
@@ -23,15 +23,15 @@ class discountInfo extends Model
     public $price;
 
     /**
-     * @description 打折结束的时间，时间戳精确到毫秒，时间为东八区时间
+     * @description 打折开始的时间，时间戳精确到毫秒，时间为东八区时间
      *
      * @var int
      */
-    public $endTimeMillis;
+    public $startTimeMillis;
     protected $_name = [
-        'startTimeMillis' => 'startTimeMillis',
-        'price'           => 'price',
         'endTimeMillis'   => 'endTimeMillis',
+        'price'           => 'price',
+        'startTimeMillis' => 'startTimeMillis',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class discountInfo extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->startTimeMillis) {
-            $res['startTimeMillis'] = $this->startTimeMillis;
+        if (null !== $this->endTimeMillis) {
+            $res['endTimeMillis'] = $this->endTimeMillis;
         }
         if (null !== $this->price) {
             $res['price'] = $this->price;
         }
-        if (null !== $this->endTimeMillis) {
-            $res['endTimeMillis'] = $this->endTimeMillis;
+        if (null !== $this->startTimeMillis) {
+            $res['startTimeMillis'] = $this->startTimeMillis;
         }
 
         return $res;
@@ -62,14 +62,14 @@ class discountInfo extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['startTimeMillis'])) {
-            $model->startTimeMillis = $map['startTimeMillis'];
+        if (isset($map['endTimeMillis'])) {
+            $model->endTimeMillis = $map['endTimeMillis'];
         }
         if (isset($map['price'])) {
             $model->price = $map['price'];
         }
-        if (isset($map['endTimeMillis'])) {
-            $model->endTimeMillis = $map['endTimeMillis'];
+        if (isset($map['startTimeMillis'])) {
+            $model->startTimeMillis = $map['startTimeMillis'];
         }
 
         return $model;

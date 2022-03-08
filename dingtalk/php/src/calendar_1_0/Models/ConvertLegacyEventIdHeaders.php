@@ -11,6 +11,13 @@ class ConvertLegacyEventIdHeaders extends Model
     public $commonHeaders;
 
     /**
+     * @description 授权类型
+     *
+     * @var string
+     */
+    public $dingAccessTokenType;
+
+    /**
      * @description 授权本次调用的企业id，该字段有值时认为本次调用已被授权访问该企业下的所有数据
      *
      * @var string
@@ -25,20 +32,13 @@ class ConvertLegacyEventIdHeaders extends Model
     public $dingUid;
 
     /**
-     * @description 授权类型
-     *
-     * @var string
-     */
-    public $dingAccessTokenType;
-
-    /**
      * @var string
      */
     public $xAcsDingtalkAccessToken;
     protected $_name = [
+        'dingAccessTokenType'     => 'dingAccessTokenType',
         'dingOrgId'               => 'dingOrgId',
         'dingUid'                 => 'dingUid',
-        'dingAccessTokenType'     => 'dingAccessTokenType',
         'xAcsDingtalkAccessToken' => 'x-acs-dingtalk-access-token',
     ];
 
@@ -52,14 +52,14 @@ class ConvertLegacyEventIdHeaders extends Model
         if (null !== $this->commonHeaders) {
             $res['commonHeaders'] = $this->commonHeaders;
         }
+        if (null !== $this->dingAccessTokenType) {
+            $res['dingAccessTokenType'] = $this->dingAccessTokenType;
+        }
         if (null !== $this->dingOrgId) {
             $res['dingOrgId'] = $this->dingOrgId;
         }
         if (null !== $this->dingUid) {
             $res['dingUid'] = $this->dingUid;
-        }
-        if (null !== $this->dingAccessTokenType) {
-            $res['dingAccessTokenType'] = $this->dingAccessTokenType;
         }
         if (null !== $this->xAcsDingtalkAccessToken) {
             $res['x-acs-dingtalk-access-token'] = $this->xAcsDingtalkAccessToken;
@@ -79,14 +79,14 @@ class ConvertLegacyEventIdHeaders extends Model
         if (isset($map['commonHeaders'])) {
             $model->commonHeaders = $map['commonHeaders'];
         }
+        if (isset($map['dingAccessTokenType'])) {
+            $model->dingAccessTokenType = $map['dingAccessTokenType'];
+        }
         if (isset($map['dingOrgId'])) {
             $model->dingOrgId = $map['dingOrgId'];
         }
         if (isset($map['dingUid'])) {
             $model->dingUid = $map['dingUid'];
-        }
-        if (isset($map['dingAccessTokenType'])) {
-            $model->dingAccessTokenType = $map['dingAccessTokenType'];
         }
         if (isset($map['x-acs-dingtalk-access-token'])) {
             $model->xAcsDingtalkAccessToken = $map['x-acs-dingtalk-access-token'];

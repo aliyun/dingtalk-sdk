@@ -17,13 +17,6 @@ class CreateCustomClassRequest extends Model
     public $customClass;
 
     /**
-     * @description 上级部门ID
-     *
-     * @var int
-     */
-    public $superId;
-
-    /**
      * @description 钉钉企业管理员工ID
      *
      * @var string
@@ -31,44 +24,15 @@ class CreateCustomClassRequest extends Model
     public $operator;
 
     /**
+     * @description 上级部门ID
+     *
      * @var int
      */
-    public $dingIsvOrgId;
-
-    /**
-     * @var string
-     */
-    public $dingCorpId;
-
-    /**
-     * @var int
-     */
-    public $dingOauthAppId;
-
-    /**
-     * @var string
-     */
-    public $dingSuiteKey;
-
-    /**
-     * @var int
-     */
-    public $dingTokenGrantType;
-
-    /**
-     * @var int
-     */
-    public $dingOrgId;
+    public $superId;
     protected $_name = [
-        'customClass'        => 'customClass',
-        'superId'            => 'superId',
-        'operator'           => 'operator',
-        'dingIsvOrgId'       => 'dingIsvOrgId',
-        'dingCorpId'         => 'dingCorpId',
-        'dingOauthAppId'     => 'dingOauthAppId',
-        'dingSuiteKey'       => 'dingSuiteKey',
-        'dingTokenGrantType' => 'dingTokenGrantType',
-        'dingOrgId'          => 'dingOrgId',
+        'customClass' => 'customClass',
+        'operator'    => 'operator',
+        'superId'     => 'superId',
     ];
 
     public function validate()
@@ -81,29 +45,11 @@ class CreateCustomClassRequest extends Model
         if (null !== $this->customClass) {
             $res['customClass'] = null !== $this->customClass ? $this->customClass->toMap() : null;
         }
-        if (null !== $this->superId) {
-            $res['superId'] = $this->superId;
-        }
         if (null !== $this->operator) {
             $res['operator'] = $this->operator;
         }
-        if (null !== $this->dingIsvOrgId) {
-            $res['dingIsvOrgId'] = $this->dingIsvOrgId;
-        }
-        if (null !== $this->dingCorpId) {
-            $res['dingCorpId'] = $this->dingCorpId;
-        }
-        if (null !== $this->dingOauthAppId) {
-            $res['dingOauthAppId'] = $this->dingOauthAppId;
-        }
-        if (null !== $this->dingSuiteKey) {
-            $res['dingSuiteKey'] = $this->dingSuiteKey;
-        }
-        if (null !== $this->dingTokenGrantType) {
-            $res['dingTokenGrantType'] = $this->dingTokenGrantType;
-        }
-        if (null !== $this->dingOrgId) {
-            $res['dingOrgId'] = $this->dingOrgId;
+        if (null !== $this->superId) {
+            $res['superId'] = $this->superId;
         }
 
         return $res;
@@ -120,29 +66,11 @@ class CreateCustomClassRequest extends Model
         if (isset($map['customClass'])) {
             $model->customClass = customClass::fromMap($map['customClass']);
         }
-        if (isset($map['superId'])) {
-            $model->superId = $map['superId'];
-        }
         if (isset($map['operator'])) {
             $model->operator = $map['operator'];
         }
-        if (isset($map['dingIsvOrgId'])) {
-            $model->dingIsvOrgId = $map['dingIsvOrgId'];
-        }
-        if (isset($map['dingCorpId'])) {
-            $model->dingCorpId = $map['dingCorpId'];
-        }
-        if (isset($map['dingOauthAppId'])) {
-            $model->dingOauthAppId = $map['dingOauthAppId'];
-        }
-        if (isset($map['dingSuiteKey'])) {
-            $model->dingSuiteKey = $map['dingSuiteKey'];
-        }
-        if (isset($map['dingTokenGrantType'])) {
-            $model->dingTokenGrantType = $map['dingTokenGrantType'];
-        }
-        if (isset($map['dingOrgId'])) {
-            $model->dingOrgId = $map['dingOrgId'];
+        if (isset($map['superId'])) {
+            $model->superId = $map['superId'];
         }
 
         return $model;

@@ -10,6 +10,11 @@ use AlibabaCloud\Tea\Model;
 class sceneContext extends Model
 {
     /**
+     * @var groupMsgs[]
+     */
+    public $groupMsgs;
+
+    /**
      * @description 服务群openConversationId
      *
      * @var string
@@ -22,15 +27,10 @@ class sceneContext extends Model
      * @var string[]
      */
     public $relevantorUnionIds;
-
-    /**
-     * @var groupMsgs[]
-     */
-    public $groupMsgs;
     protected $_name = [
+        'groupMsgs'          => 'groupMsgs',
         'openConversationId' => 'openConversationId',
         'relevantorUnionIds' => 'relevantorUnionIds',
-        'groupMsgs'          => 'groupMsgs',
     ];
 
     public function validate()
@@ -40,12 +40,6 @@ class sceneContext extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->openConversationId) {
-            $res['openConversationId'] = $this->openConversationId;
-        }
-        if (null !== $this->relevantorUnionIds) {
-            $res['relevantorUnionIds'] = $this->relevantorUnionIds;
-        }
         if (null !== $this->groupMsgs) {
             $res['groupMsgs'] = [];
             if (null !== $this->groupMsgs && \is_array($this->groupMsgs)) {
@@ -54,6 +48,12 @@ class sceneContext extends Model
                     $res['groupMsgs'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->openConversationId) {
+            $res['openConversationId'] = $this->openConversationId;
+        }
+        if (null !== $this->relevantorUnionIds) {
+            $res['relevantorUnionIds'] = $this->relevantorUnionIds;
         }
 
         return $res;
@@ -67,14 +67,6 @@ class sceneContext extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['openConversationId'])) {
-            $model->openConversationId = $map['openConversationId'];
-        }
-        if (isset($map['relevantorUnionIds'])) {
-            if (!empty($map['relevantorUnionIds'])) {
-                $model->relevantorUnionIds = $map['relevantorUnionIds'];
-            }
-        }
         if (isset($map['groupMsgs'])) {
             if (!empty($map['groupMsgs'])) {
                 $model->groupMsgs = [];
@@ -82,6 +74,14 @@ class sceneContext extends Model
                 foreach ($map['groupMsgs'] as $item) {
                     $model->groupMsgs[$n++] = null !== $item ? groupMsgs::fromMap($item) : $item;
                 }
+            }
+        }
+        if (isset($map['openConversationId'])) {
+            $model->openConversationId = $map['openConversationId'];
+        }
+        if (isset($map['relevantorUnionIds'])) {
+            if (!empty($map['relevantorUnionIds'])) {
+                $model->relevantorUnionIds = $map['relevantorUnionIds'];
             }
         }
 

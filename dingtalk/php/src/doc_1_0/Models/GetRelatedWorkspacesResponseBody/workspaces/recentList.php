@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class recentList extends Model
 {
     /**
-     * @description 文档id
+     * @description 文档最后编辑时间
      *
-     * @var string
+     * @var int
      */
-    public $nodeId;
+    public $lastEditTime;
 
     /**
      * @description 文档名称
@@ -23,23 +23,23 @@ class recentList extends Model
     public $name;
 
     /**
+     * @description 文档id
+     *
+     * @var string
+     */
+    public $nodeId;
+
+    /**
      * @description 文档打开url
      *
      * @var string
      */
     public $url;
-
-    /**
-     * @description 文档最后编辑时间
-     *
-     * @var int
-     */
-    public $lastEditTime;
     protected $_name = [
-        'nodeId'       => 'nodeId',
-        'name'         => 'name',
-        'url'          => 'url',
         'lastEditTime' => 'lastEditTime',
+        'name'         => 'name',
+        'nodeId'       => 'nodeId',
+        'url'          => 'url',
     ];
 
     public function validate()
@@ -49,17 +49,17 @@ class recentList extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->nodeId) {
-            $res['nodeId'] = $this->nodeId;
+        if (null !== $this->lastEditTime) {
+            $res['lastEditTime'] = $this->lastEditTime;
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
         }
+        if (null !== $this->nodeId) {
+            $res['nodeId'] = $this->nodeId;
+        }
         if (null !== $this->url) {
             $res['url'] = $this->url;
-        }
-        if (null !== $this->lastEditTime) {
-            $res['lastEditTime'] = $this->lastEditTime;
         }
 
         return $res;
@@ -73,17 +73,17 @@ class recentList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['nodeId'])) {
-            $model->nodeId = $map['nodeId'];
+        if (isset($map['lastEditTime'])) {
+            $model->lastEditTime = $map['lastEditTime'];
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];
         }
+        if (isset($map['nodeId'])) {
+            $model->nodeId = $map['nodeId'];
+        }
         if (isset($map['url'])) {
             $model->url = $map['url'];
-        }
-        if (isset($map['lastEditTime'])) {
-            $model->lastEditTime = $map['lastEditTime'];
         }
 
         return $model;

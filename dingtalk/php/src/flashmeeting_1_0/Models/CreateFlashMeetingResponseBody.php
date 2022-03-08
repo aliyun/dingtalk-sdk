@@ -16,6 +16,13 @@ class CreateFlashMeetingResponseBody extends Model
     public $endTime;
 
     /**
+     * @description 闪会的key
+     *
+     * @var string
+     */
+    public $flashMeetingKey;
+
+    /**
      * @description 闪会开始时间
      *
      * @var int
@@ -35,19 +42,12 @@ class CreateFlashMeetingResponseBody extends Model
      * @var string
      */
     public $url;
-
-    /**
-     * @description 闪会的key
-     *
-     * @var string
-     */
-    public $flashMeetingKey;
     protected $_name = [
         'endTime'         => 'endTime',
+        'flashMeetingKey' => 'flashMeetingKey',
         'startTime'       => 'startTime',
         'title'           => 'title',
         'url'             => 'url',
-        'flashMeetingKey' => 'flashMeetingKey',
     ];
 
     public function validate()
@@ -60,6 +60,9 @@ class CreateFlashMeetingResponseBody extends Model
         if (null !== $this->endTime) {
             $res['endTime'] = $this->endTime;
         }
+        if (null !== $this->flashMeetingKey) {
+            $res['flashMeetingKey'] = $this->flashMeetingKey;
+        }
         if (null !== $this->startTime) {
             $res['startTime'] = $this->startTime;
         }
@@ -68,9 +71,6 @@ class CreateFlashMeetingResponseBody extends Model
         }
         if (null !== $this->url) {
             $res['url'] = $this->url;
-        }
-        if (null !== $this->flashMeetingKey) {
-            $res['flashMeetingKey'] = $this->flashMeetingKey;
         }
 
         return $res;
@@ -87,6 +87,9 @@ class CreateFlashMeetingResponseBody extends Model
         if (isset($map['endTime'])) {
             $model->endTime = $map['endTime'];
         }
+        if (isset($map['flashMeetingKey'])) {
+            $model->flashMeetingKey = $map['flashMeetingKey'];
+        }
         if (isset($map['startTime'])) {
             $model->startTime = $map['startTime'];
         }
@@ -95,9 +98,6 @@ class CreateFlashMeetingResponseBody extends Model
         }
         if (isset($map['url'])) {
             $model->url = $map['url'];
-        }
-        if (isset($map['flashMeetingKey'])) {
-            $model->flashMeetingKey = $map['flashMeetingKey'];
         }
 
         return $model;

@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class CreateSheetResponseBody extends Model
 {
     /**
-     * @description 工作表可见性
-     *
-     * @var string
-     */
-    public $visibility;
-
-    /**
      * @description 创建的工作表的名称。当输入参数中的工作表名称在表格中已存在时，可能与输入参数指定的工作表名称不同。
      *
      * @var string
      */
     public $name;
+
+    /**
+     * @description 工作表可见性
+     *
+     * @var string
+     */
+    public $visibility;
     protected $_name = [
-        'visibility' => 'visibility',
         'name'       => 'name',
+        'visibility' => 'visibility',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class CreateSheetResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->visibility) {
-            $res['visibility'] = $this->visibility;
-        }
         if (null !== $this->name) {
             $res['name'] = $this->name;
+        }
+        if (null !== $this->visibility) {
+            $res['visibility'] = $this->visibility;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class CreateSheetResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['visibility'])) {
-            $model->visibility = $map['visibility'];
-        }
         if (isset($map['name'])) {
             $model->name = $map['name'];
+        }
+        if (isset($map['visibility'])) {
+            $model->visibility = $map['visibility'];
         }
 
         return $model;

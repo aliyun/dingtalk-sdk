@@ -9,18 +9,11 @@ use AlibabaCloud\Tea\Model;
 class MachineUsersUpdateRequest extends Model
 {
     /**
-     * @description 移除的员工id列表
+     * @description 新增的部门id列表
      *
-     * @var string[]
+     * @var int[]
      */
-    public $delUserIds;
-
-    /**
-     * @description 设备唯一标识id列表，字符串数组
-     *
-     * @var string[]
-     */
-    public $deviceIds;
+    public $addDeptIds;
 
     /**
      * @description 新增的员工id列表
@@ -30,38 +23,6 @@ class MachineUsersUpdateRequest extends Model
     public $addUserIds;
 
     /**
-     * @description 设备唯一标识id列表，Long数组
-     *
-     * @var int[]
-     */
-    public $devIds;
-
-    /**
-     * @var int
-     */
-    public $dingTokenGrantType;
-
-    /**
-     * @var string
-     */
-    public $dingSuiteKey;
-
-    /**
-     * @var string
-     */
-    public $dingCorpId;
-
-    /**
-     * @var int
-     */
-    public $dingOrgId;
-
-    /**
-     * @var int
-     */
-    public $dingIsvOrgId;
-
-    /**
      * @description 移除的部门id列表
      *
      * @var int[]
@@ -69,23 +30,32 @@ class MachineUsersUpdateRequest extends Model
     public $delDeptIds;
 
     /**
-     * @description 新增的部门id列表
+     * @description 移除的员工id列表
+     *
+     * @var string[]
+     */
+    public $delUserIds;
+
+    /**
+     * @description 设备唯一标识id列表，Long数组
      *
      * @var int[]
      */
-    public $addDeptIds;
+    public $devIds;
+
+    /**
+     * @description 设备唯一标识id列表，字符串数组
+     *
+     * @var string[]
+     */
+    public $deviceIds;
     protected $_name = [
-        'delUserIds'         => 'delUserIds',
-        'deviceIds'          => 'deviceIds',
-        'addUserIds'         => 'addUserIds',
-        'devIds'             => 'devIds',
-        'dingTokenGrantType' => 'dingTokenGrantType',
-        'dingSuiteKey'       => 'dingSuiteKey',
-        'dingCorpId'         => 'dingCorpId',
-        'dingOrgId'          => 'dingOrgId',
-        'dingIsvOrgId'       => 'dingIsvOrgId',
-        'delDeptIds'         => 'delDeptIds',
-        'addDeptIds'         => 'addDeptIds',
+        'addDeptIds' => 'addDeptIds',
+        'addUserIds' => 'addUserIds',
+        'delDeptIds' => 'delDeptIds',
+        'delUserIds' => 'delUserIds',
+        'devIds'     => 'devIds',
+        'deviceIds'  => 'deviceIds',
     ];
 
     public function validate()
@@ -95,38 +65,23 @@ class MachineUsersUpdateRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->delUserIds) {
-            $res['delUserIds'] = $this->delUserIds;
-        }
-        if (null !== $this->deviceIds) {
-            $res['deviceIds'] = $this->deviceIds;
+        if (null !== $this->addDeptIds) {
+            $res['addDeptIds'] = $this->addDeptIds;
         }
         if (null !== $this->addUserIds) {
             $res['addUserIds'] = $this->addUserIds;
         }
-        if (null !== $this->devIds) {
-            $res['devIds'] = $this->devIds;
-        }
-        if (null !== $this->dingTokenGrantType) {
-            $res['dingTokenGrantType'] = $this->dingTokenGrantType;
-        }
-        if (null !== $this->dingSuiteKey) {
-            $res['dingSuiteKey'] = $this->dingSuiteKey;
-        }
-        if (null !== $this->dingCorpId) {
-            $res['dingCorpId'] = $this->dingCorpId;
-        }
-        if (null !== $this->dingOrgId) {
-            $res['dingOrgId'] = $this->dingOrgId;
-        }
-        if (null !== $this->dingIsvOrgId) {
-            $res['dingIsvOrgId'] = $this->dingIsvOrgId;
-        }
         if (null !== $this->delDeptIds) {
             $res['delDeptIds'] = $this->delDeptIds;
         }
-        if (null !== $this->addDeptIds) {
-            $res['addDeptIds'] = $this->addDeptIds;
+        if (null !== $this->delUserIds) {
+            $res['delUserIds'] = $this->delUserIds;
+        }
+        if (null !== $this->devIds) {
+            $res['devIds'] = $this->devIds;
+        }
+        if (null !== $this->deviceIds) {
+            $res['deviceIds'] = $this->deviceIds;
         }
 
         return $res;
@@ -140,14 +95,9 @@ class MachineUsersUpdateRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['delUserIds'])) {
-            if (!empty($map['delUserIds'])) {
-                $model->delUserIds = $map['delUserIds'];
-            }
-        }
-        if (isset($map['deviceIds'])) {
-            if (!empty($map['deviceIds'])) {
-                $model->deviceIds = $map['deviceIds'];
+        if (isset($map['addDeptIds'])) {
+            if (!empty($map['addDeptIds'])) {
+                $model->addDeptIds = $map['addDeptIds'];
             }
         }
         if (isset($map['addUserIds'])) {
@@ -155,34 +105,24 @@ class MachineUsersUpdateRequest extends Model
                 $model->addUserIds = $map['addUserIds'];
             }
         }
-        if (isset($map['devIds'])) {
-            if (!empty($map['devIds'])) {
-                $model->devIds = $map['devIds'];
-            }
-        }
-        if (isset($map['dingTokenGrantType'])) {
-            $model->dingTokenGrantType = $map['dingTokenGrantType'];
-        }
-        if (isset($map['dingSuiteKey'])) {
-            $model->dingSuiteKey = $map['dingSuiteKey'];
-        }
-        if (isset($map['dingCorpId'])) {
-            $model->dingCorpId = $map['dingCorpId'];
-        }
-        if (isset($map['dingOrgId'])) {
-            $model->dingOrgId = $map['dingOrgId'];
-        }
-        if (isset($map['dingIsvOrgId'])) {
-            $model->dingIsvOrgId = $map['dingIsvOrgId'];
-        }
         if (isset($map['delDeptIds'])) {
             if (!empty($map['delDeptIds'])) {
                 $model->delDeptIds = $map['delDeptIds'];
             }
         }
-        if (isset($map['addDeptIds'])) {
-            if (!empty($map['addDeptIds'])) {
-                $model->addDeptIds = $map['addDeptIds'];
+        if (isset($map['delUserIds'])) {
+            if (!empty($map['delUserIds'])) {
+                $model->delUserIds = $map['delUserIds'];
+            }
+        }
+        if (isset($map['devIds'])) {
+            if (!empty($map['devIds'])) {
+                $model->devIds = $map['devIds'];
+            }
+        }
+        if (isset($map['deviceIds'])) {
+            if (!empty($map['deviceIds'])) {
+                $model->deviceIds = $map['deviceIds'];
             }
         }
 

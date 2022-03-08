@@ -10,11 +10,11 @@ use AlibabaCloud\Tea\Model;
 class DescribeCrmPersonalCustomerObjectMetaResponseBody extends Model
 {
     /**
-     * @description 对象名称
+     * @description 表单code
      *
      * @var string
      */
-    public $name;
+    public $code;
 
     /**
      * @description 是否自定义对象
@@ -31,24 +31,24 @@ class DescribeCrmPersonalCustomerObjectMetaResponseBody extends Model
     public $fields;
 
     /**
+     * @description 对象名称
+     *
+     * @var string
+     */
+    public $name;
+
+    /**
      * @description 表单状态
      *
      * @var string
      */
     public $status;
-
-    /**
-     * @description 表单code
-     *
-     * @var string
-     */
-    public $code;
     protected $_name = [
-        'name'       => 'name',
+        'code'       => 'code',
         'customized' => 'customized',
         'fields'     => 'fields',
+        'name'       => 'name',
         'status'     => 'status',
-        'code'       => 'code',
     ];
 
     public function validate()
@@ -58,8 +58,8 @@ class DescribeCrmPersonalCustomerObjectMetaResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
+        if (null !== $this->code) {
+            $res['code'] = $this->code;
         }
         if (null !== $this->customized) {
             $res['customized'] = $this->customized;
@@ -73,11 +73,11 @@ class DescribeCrmPersonalCustomerObjectMetaResponseBody extends Model
                 }
             }
         }
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
+        }
         if (null !== $this->status) {
             $res['status'] = $this->status;
-        }
-        if (null !== $this->code) {
-            $res['code'] = $this->code;
         }
 
         return $res;
@@ -91,8 +91,8 @@ class DescribeCrmPersonalCustomerObjectMetaResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
+        if (isset($map['code'])) {
+            $model->code = $map['code'];
         }
         if (isset($map['customized'])) {
             $model->customized = $map['customized'];
@@ -106,11 +106,11 @@ class DescribeCrmPersonalCustomerObjectMetaResponseBody extends Model
                 }
             }
         }
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
+        }
         if (isset($map['status'])) {
             $model->status = $map['status'];
-        }
-        if (isset($map['code'])) {
-            $model->code = $map['code'];
         }
 
         return $model;

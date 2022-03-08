@@ -9,9 +9,11 @@ use AlibabaCloud\Tea\Model;
 class GetWorkspaceResponseBody extends Model
 {
     /**
+     * @description 团队空间所属企业id
+     *
      * @var string
      */
-    public $url;
+    public $corpId;
 
     /**
      * @var bool
@@ -24,16 +26,14 @@ class GetWorkspaceResponseBody extends Model
     public $owner;
 
     /**
-     * @description 团队空间所属企业id
-     *
      * @var string
      */
-    public $corpId;
+    public $url;
     protected $_name = [
-        'url'       => 'url',
+        'corpId'    => 'corpId',
         'isDeleted' => 'isDeleted',
         'owner'     => 'owner',
-        'corpId'    => 'corpId',
+        'url'       => 'url',
     ];
 
     public function validate()
@@ -43,8 +43,8 @@ class GetWorkspaceResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->url) {
-            $res['url'] = $this->url;
+        if (null !== $this->corpId) {
+            $res['corpId'] = $this->corpId;
         }
         if (null !== $this->isDeleted) {
             $res['isDeleted'] = $this->isDeleted;
@@ -52,8 +52,8 @@ class GetWorkspaceResponseBody extends Model
         if (null !== $this->owner) {
             $res['owner'] = $this->owner;
         }
-        if (null !== $this->corpId) {
-            $res['corpId'] = $this->corpId;
+        if (null !== $this->url) {
+            $res['url'] = $this->url;
         }
 
         return $res;
@@ -67,8 +67,8 @@ class GetWorkspaceResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['url'])) {
-            $model->url = $map['url'];
+        if (isset($map['corpId'])) {
+            $model->corpId = $map['corpId'];
         }
         if (isset($map['isDeleted'])) {
             $model->isDeleted = $map['isDeleted'];
@@ -76,8 +76,8 @@ class GetWorkspaceResponseBody extends Model
         if (isset($map['owner'])) {
             $model->owner = $map['owner'];
         }
-        if (isset($map['corpId'])) {
-            $model->corpId = $map['corpId'];
+        if (isset($map['url'])) {
+            $model->url = $map['url'];
         }
 
         return $model;

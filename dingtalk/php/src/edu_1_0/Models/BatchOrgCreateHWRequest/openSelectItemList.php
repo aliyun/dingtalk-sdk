@@ -10,6 +10,13 @@ use AlibabaCloud\Tea\Model;
 class openSelectItemList extends Model
 {
     /**
+     * @description 班级列表
+     *
+     * @var classList[]
+     */
+    public $classList;
+
+    /**
      * @description 组织corpId
      *
      * @var string
@@ -22,17 +29,10 @@ class openSelectItemList extends Model
      * @var string
      */
     public $selectedClassesDesc;
-
-    /**
-     * @description 班级列表
-     *
-     * @var classList[]
-     */
-    public $classList;
     protected $_name = [
+        'classList'           => 'classList',
         'corpId'              => 'corpId',
         'selectedClassesDesc' => 'selectedClassesDesc',
-        'classList'           => 'classList',
     ];
 
     public function validate()
@@ -42,12 +42,6 @@ class openSelectItemList extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->corpId) {
-            $res['corpId'] = $this->corpId;
-        }
-        if (null !== $this->selectedClassesDesc) {
-            $res['selectedClassesDesc'] = $this->selectedClassesDesc;
-        }
         if (null !== $this->classList) {
             $res['classList'] = [];
             if (null !== $this->classList && \is_array($this->classList)) {
@@ -56,6 +50,12 @@ class openSelectItemList extends Model
                     $res['classList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->corpId) {
+            $res['corpId'] = $this->corpId;
+        }
+        if (null !== $this->selectedClassesDesc) {
+            $res['selectedClassesDesc'] = $this->selectedClassesDesc;
         }
 
         return $res;
@@ -69,12 +69,6 @@ class openSelectItemList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['corpId'])) {
-            $model->corpId = $map['corpId'];
-        }
-        if (isset($map['selectedClassesDesc'])) {
-            $model->selectedClassesDesc = $map['selectedClassesDesc'];
-        }
         if (isset($map['classList'])) {
             if (!empty($map['classList'])) {
                 $model->classList = [];
@@ -83,6 +77,12 @@ class openSelectItemList extends Model
                     $model->classList[$n++] = null !== $item ? classList::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['corpId'])) {
+            $model->corpId = $map['corpId'];
+        }
+        if (isset($map['selectedClassesDesc'])) {
+            $model->selectedClassesDesc = $map['selectedClassesDesc'];
         }
 
         return $model;

@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class ListResidentSubDeptsRequest extends Model
 {
     /**
-     * @description 下属组织的组织ID，比如下属镇、村的corpId
-     *
-     * @var string
-     */
-    public $subCorpId;
-
-    /**
      * @description 游标，不传默认1
      *
      * @var int
@@ -28,10 +21,17 @@ class ListResidentSubDeptsRequest extends Model
      * @var int
      */
     public $size;
+
+    /**
+     * @description 下属组织的组织ID，比如下属镇、村的corpId
+     *
+     * @var string
+     */
+    public $subCorpId;
     protected $_name = [
-        'subCorpId' => 'subCorpId',
         'cursor'    => 'cursor',
         'size'      => 'size',
+        'subCorpId' => 'subCorpId',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class ListResidentSubDeptsRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->subCorpId) {
-            $res['subCorpId'] = $this->subCorpId;
-        }
         if (null !== $this->cursor) {
             $res['cursor'] = $this->cursor;
         }
         if (null !== $this->size) {
             $res['size'] = $this->size;
+        }
+        if (null !== $this->subCorpId) {
+            $res['subCorpId'] = $this->subCorpId;
         }
 
         return $res;
@@ -62,14 +62,14 @@ class ListResidentSubDeptsRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['subCorpId'])) {
-            $model->subCorpId = $map['subCorpId'];
-        }
         if (isset($map['cursor'])) {
             $model->cursor = $map['cursor'];
         }
         if (isset($map['size'])) {
             $model->size = $map['size'];
+        }
+        if (isset($map['subCorpId'])) {
+            $model->subCorpId = $map['subCorpId'];
         }
 
         return $model;

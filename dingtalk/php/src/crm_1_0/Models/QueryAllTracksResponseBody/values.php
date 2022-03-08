@@ -9,39 +9,18 @@ use AlibabaCloud\Tea\Model;
 class values extends Model
 {
     /**
+     * @description 动态外键
+     *
+     * @var string
+     */
+    public $bizId;
+
+    /**
      * @description 企业id
      *
      * @var string
      */
     public $corpId;
-
-    /**
-     * @description 客户id
-     *
-     * @var string
-     */
-    public $customerId;
-
-    /**
-     * @description 动态类型
-     *
-     * @var int
-     */
-    public $type;
-
-    /**
-     * @description 动态子类型
-     *
-     * @var int
-     */
-    public $subType;
-
-    /**
-     * @description 创建时间
-     *
-     * @var int
-     */
-    public $gmtCreate;
 
     /**
      * @description 创建人userId
@@ -51,11 +30,18 @@ class values extends Model
     public $creator;
 
     /**
-     * @description 动态外键
+     * @description 客户id
      *
      * @var string
      */
-    public $bizId;
+    public $customerId;
+
+    /**
+     * @description 创建时间
+     *
+     * @var int
+     */
+    public $gmtCreate;
 
     /**
      * @description 动态加密主键
@@ -63,15 +49,29 @@ class values extends Model
      * @var string
      */
     public $id;
+
+    /**
+     * @description 动态子类型
+     *
+     * @var int
+     */
+    public $subType;
+
+    /**
+     * @description 动态类型
+     *
+     * @var int
+     */
+    public $type;
     protected $_name = [
-        'corpId'     => 'corpId',
-        'customerId' => 'customerId',
-        'type'       => 'type',
-        'subType'    => 'subType',
-        'gmtCreate'  => 'gmtCreate',
-        'creator'    => 'creator',
         'bizId'      => 'bizId',
+        'corpId'     => 'corpId',
+        'creator'    => 'creator',
+        'customerId' => 'customerId',
+        'gmtCreate'  => 'gmtCreate',
         'id'         => 'id',
+        'subType'    => 'subType',
+        'type'       => 'type',
     ];
 
     public function validate()
@@ -81,29 +81,29 @@ class values extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->bizId) {
+            $res['bizId'] = $this->bizId;
+        }
         if (null !== $this->corpId) {
             $res['corpId'] = $this->corpId;
-        }
-        if (null !== $this->customerId) {
-            $res['customerId'] = $this->customerId;
-        }
-        if (null !== $this->type) {
-            $res['type'] = $this->type;
-        }
-        if (null !== $this->subType) {
-            $res['subType'] = $this->subType;
-        }
-        if (null !== $this->gmtCreate) {
-            $res['gmtCreate'] = $this->gmtCreate;
         }
         if (null !== $this->creator) {
             $res['creator'] = $this->creator;
         }
-        if (null !== $this->bizId) {
-            $res['bizId'] = $this->bizId;
+        if (null !== $this->customerId) {
+            $res['customerId'] = $this->customerId;
+        }
+        if (null !== $this->gmtCreate) {
+            $res['gmtCreate'] = $this->gmtCreate;
         }
         if (null !== $this->id) {
             $res['id'] = $this->id;
+        }
+        if (null !== $this->subType) {
+            $res['subType'] = $this->subType;
+        }
+        if (null !== $this->type) {
+            $res['type'] = $this->type;
         }
 
         return $res;
@@ -117,29 +117,29 @@ class values extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['bizId'])) {
+            $model->bizId = $map['bizId'];
+        }
         if (isset($map['corpId'])) {
             $model->corpId = $map['corpId'];
-        }
-        if (isset($map['customerId'])) {
-            $model->customerId = $map['customerId'];
-        }
-        if (isset($map['type'])) {
-            $model->type = $map['type'];
-        }
-        if (isset($map['subType'])) {
-            $model->subType = $map['subType'];
-        }
-        if (isset($map['gmtCreate'])) {
-            $model->gmtCreate = $map['gmtCreate'];
         }
         if (isset($map['creator'])) {
             $model->creator = $map['creator'];
         }
-        if (isset($map['bizId'])) {
-            $model->bizId = $map['bizId'];
+        if (isset($map['customerId'])) {
+            $model->customerId = $map['customerId'];
+        }
+        if (isset($map['gmtCreate'])) {
+            $model->gmtCreate = $map['gmtCreate'];
         }
         if (isset($map['id'])) {
             $model->id = $map['id'];
+        }
+        if (isset($map['subType'])) {
+            $model->subType = $map['subType'];
+        }
+        if (isset($map['type'])) {
+            $model->type = $map['type'];
         }
 
         return $model;

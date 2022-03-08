@@ -17,22 +17,22 @@ class QueryProcessesInstanceResponseBody extends Model
     public $code;
 
     /**
-     * @description 提示信息
-     *
-     * @var string
-     */
-    public $message;
-
-    /**
      * @description 返回结果
      *
      * @var data[]
      */
     public $data;
+
+    /**
+     * @description 提示信息
+     *
+     * @var string
+     */
+    public $message;
     protected $_name = [
         'code'    => 'code',
-        'message' => 'message',
         'data'    => 'data',
+        'message' => 'message',
     ];
 
     public function validate()
@@ -45,9 +45,6 @@ class QueryProcessesInstanceResponseBody extends Model
         if (null !== $this->code) {
             $res['code'] = $this->code;
         }
-        if (null !== $this->message) {
-            $res['message'] = $this->message;
-        }
         if (null !== $this->data) {
             $res['data'] = [];
             if (null !== $this->data && \is_array($this->data)) {
@@ -56,6 +53,9 @@ class QueryProcessesInstanceResponseBody extends Model
                     $res['data'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->message) {
+            $res['message'] = $this->message;
         }
 
         return $res;
@@ -72,9 +72,6 @@ class QueryProcessesInstanceResponseBody extends Model
         if (isset($map['code'])) {
             $model->code = $map['code'];
         }
-        if (isset($map['message'])) {
-            $model->message = $map['message'];
-        }
         if (isset($map['data'])) {
             if (!empty($map['data'])) {
                 $model->data = [];
@@ -83,6 +80,9 @@ class QueryProcessesInstanceResponseBody extends Model
                     $model->data[$n++] = null !== $item ? data::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['message'])) {
+            $model->message = $map['message'];
         }
 
         return $model;

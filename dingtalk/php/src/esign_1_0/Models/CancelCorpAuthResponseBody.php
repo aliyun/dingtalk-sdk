@@ -10,22 +10,22 @@ use AlibabaCloud\Tea\Model;
 class CancelCorpAuthResponseBody extends Model
 {
     /**
-     * @var data
-     */
-    public $data;
-
-    /**
      * @var int
      */
     public $code;
+
+    /**
+     * @var data
+     */
+    public $data;
 
     /**
      * @var string
      */
     public $message;
     protected $_name = [
-        'data'    => 'data',
         'code'    => 'code',
+        'data'    => 'data',
         'message' => 'message',
     ];
 
@@ -36,11 +36,11 @@ class CancelCorpAuthResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->data) {
-            $res['data'] = null !== $this->data ? $this->data->toMap() : null;
-        }
         if (null !== $this->code) {
             $res['code'] = $this->code;
+        }
+        if (null !== $this->data) {
+            $res['data'] = null !== $this->data ? $this->data->toMap() : null;
         }
         if (null !== $this->message) {
             $res['message'] = $this->message;
@@ -57,11 +57,11 @@ class CancelCorpAuthResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['data'])) {
-            $model->data = data::fromMap($map['data']);
-        }
         if (isset($map['code'])) {
             $model->code = $map['code'];
+        }
+        if (isset($map['data'])) {
+            $model->data = data::fromMap($map['data']);
         }
         if (isset($map['message'])) {
             $model->message = $map['message'];

@@ -9,16 +9,6 @@ use AlibabaCloud\Tea\Model;
 class versions extends Model
 {
     /**
-     * @var string
-     */
-    public $packageUrl;
-
-    /**
-     * @var string
-     */
-    public $packageSize;
-
-    /**
      * @var int
      */
     public $buildStatus;
@@ -26,18 +16,28 @@ class versions extends Model
     /**
      * @var string
      */
-    public $version;
+    public $h5Bundle;
 
     /**
      * @var string
      */
-    public $h5Bundle;
+    public $packageSize;
+
+    /**
+     * @var string
+     */
+    public $packageUrl;
+
+    /**
+     * @var string
+     */
+    public $version;
     protected $_name = [
-        'packageUrl'  => 'packageUrl',
-        'packageSize' => 'packageSize',
         'buildStatus' => 'buildStatus',
-        'version'     => 'version',
         'h5Bundle'    => 'h5Bundle',
+        'packageSize' => 'packageSize',
+        'packageUrl'  => 'packageUrl',
+        'version'     => 'version',
     ];
 
     public function validate()
@@ -47,20 +47,20 @@ class versions extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->packageUrl) {
-            $res['packageUrl'] = $this->packageUrl;
+        if (null !== $this->buildStatus) {
+            $res['buildStatus'] = $this->buildStatus;
+        }
+        if (null !== $this->h5Bundle) {
+            $res['h5Bundle'] = $this->h5Bundle;
         }
         if (null !== $this->packageSize) {
             $res['packageSize'] = $this->packageSize;
         }
-        if (null !== $this->buildStatus) {
-            $res['buildStatus'] = $this->buildStatus;
+        if (null !== $this->packageUrl) {
+            $res['packageUrl'] = $this->packageUrl;
         }
         if (null !== $this->version) {
             $res['version'] = $this->version;
-        }
-        if (null !== $this->h5Bundle) {
-            $res['h5Bundle'] = $this->h5Bundle;
         }
 
         return $res;
@@ -74,20 +74,20 @@ class versions extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['packageUrl'])) {
-            $model->packageUrl = $map['packageUrl'];
+        if (isset($map['buildStatus'])) {
+            $model->buildStatus = $map['buildStatus'];
+        }
+        if (isset($map['h5Bundle'])) {
+            $model->h5Bundle = $map['h5Bundle'];
         }
         if (isset($map['packageSize'])) {
             $model->packageSize = $map['packageSize'];
         }
-        if (isset($map['buildStatus'])) {
-            $model->buildStatus = $map['buildStatus'];
+        if (isset($map['packageUrl'])) {
+            $model->packageUrl = $map['packageUrl'];
         }
         if (isset($map['version'])) {
             $model->version = $map['version'];
-        }
-        if (isset($map['h5Bundle'])) {
-            $model->h5Bundle = $map['h5Bundle'];
         }
 
         return $model;

@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class CheckOpportunityResultRequest extends Model
 {
     /**
-     * @description corpId
-     *
-     * @var string
-     */
-    public $corpId;
-
-    /**
      * @description belongToPhoneNum
      *
      * @var string
@@ -28,6 +21,13 @@ class CheckOpportunityResultRequest extends Model
      * @var string
      */
     public $contactPhoneNum;
+
+    /**
+     * @description corpId
+     *
+     * @var string
+     */
+    public $corpId;
 
     /**
      * @description deptId
@@ -43,9 +43,9 @@ class CheckOpportunityResultRequest extends Model
      */
     public $marketCode;
     protected $_name = [
-        'corpId'           => 'corpId',
         'belongToPhoneNum' => 'belongToPhoneNum',
         'contactPhoneNum'  => 'contactPhoneNum',
+        'corpId'           => 'corpId',
         'deptId'           => 'deptId',
         'marketCode'       => 'marketCode',
     ];
@@ -57,14 +57,14 @@ class CheckOpportunityResultRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->corpId) {
-            $res['corpId'] = $this->corpId;
-        }
         if (null !== $this->belongToPhoneNum) {
             $res['belongToPhoneNum'] = $this->belongToPhoneNum;
         }
         if (null !== $this->contactPhoneNum) {
             $res['contactPhoneNum'] = $this->contactPhoneNum;
+        }
+        if (null !== $this->corpId) {
+            $res['corpId'] = $this->corpId;
         }
         if (null !== $this->deptId) {
             $res['deptId'] = $this->deptId;
@@ -84,14 +84,14 @@ class CheckOpportunityResultRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['corpId'])) {
-            $model->corpId = $map['corpId'];
-        }
         if (isset($map['belongToPhoneNum'])) {
             $model->belongToPhoneNum = $map['belongToPhoneNum'];
         }
         if (isset($map['contactPhoneNum'])) {
             $model->contactPhoneNum = $map['contactPhoneNum'];
+        }
+        if (isset($map['corpId'])) {
+            $model->corpId = $map['corpId'];
         }
         if (isset($map['deptId'])) {
             $model->deptId = $map['deptId'];

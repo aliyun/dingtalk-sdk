@@ -9,6 +9,20 @@ use AlibabaCloud\Tea\Model;
 class PageListActionRequest extends Model
 {
     /**
+     * @description 本次读取的最大数据记录数量，此参数为可选参数，用户传入为空时，应该有默认值。应设置最大值限制，最大不超过100
+     *
+     * @var int
+     */
+    public $maxResults;
+
+    /**
+     * @description 用来标记当前开始读取的位置，置空表示从头开始。
+     *
+     * @var string
+     */
+    public $nextToken;
+
+    /**
      * @description 实例id
      *
      * @var string
@@ -21,25 +35,11 @@ class PageListActionRequest extends Model
      * @var int
      */
     public $productionType;
-
-    /**
-     * @description 用来标记当前开始读取的位置，置空表示从头开始。
-     *
-     * @var string
-     */
-    public $nextToken;
-
-    /**
-     * @description 本次读取的最大数据记录数量，此参数为可选参数，用户传入为空时，应该有默认值。应设置最大值限制，最大不超过100
-     *
-     * @var int
-     */
-    public $maxResults;
     protected $_name = [
+        'maxResults'     => 'maxResults',
+        'nextToken'      => 'nextToken',
         'openInstanceId' => 'openInstanceId',
         'productionType' => 'productionType',
-        'nextToken'      => 'nextToken',
-        'maxResults'     => 'maxResults',
     ];
 
     public function validate()
@@ -49,17 +49,17 @@ class PageListActionRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->maxResults) {
+            $res['maxResults'] = $this->maxResults;
+        }
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
+        }
         if (null !== $this->openInstanceId) {
             $res['openInstanceId'] = $this->openInstanceId;
         }
         if (null !== $this->productionType) {
             $res['productionType'] = $this->productionType;
-        }
-        if (null !== $this->nextToken) {
-            $res['nextToken'] = $this->nextToken;
-        }
-        if (null !== $this->maxResults) {
-            $res['maxResults'] = $this->maxResults;
         }
 
         return $res;
@@ -73,17 +73,17 @@ class PageListActionRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['maxResults'])) {
+            $model->maxResults = $map['maxResults'];
+        }
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
+        }
         if (isset($map['openInstanceId'])) {
             $model->openInstanceId = $map['openInstanceId'];
         }
         if (isset($map['productionType'])) {
             $model->productionType = $map['productionType'];
-        }
-        if (isset($map['nextToken'])) {
-            $model->nextToken = $map['nextToken'];
-        }
-        if (isset($map['maxResults'])) {
-            $model->maxResults = $map['maxResults'];
         }
 
         return $model;

@@ -10,11 +10,11 @@ use AlibabaCloud\Tea\Model;
 class messageContent extends Model
 {
     /**
-     * @description 是否At全部人员
+     * @description at活跃成员数量
      *
-     * @var bool
+     * @var int
      */
-    public $atAll;
+    public $atActiveMemberNum;
 
     /**
      * @description 是否At活跃成员
@@ -24,18 +24,16 @@ class messageContent extends Model
     public $atActiveUser;
 
     /**
-     * @description 消息类型
+     * @description 是否At全部人员
      *
-     * @var string
+     * @var bool
      */
-    public $messageType;
+    public $atAll;
 
     /**
-     * @description 标题
-     *
-     * @var string
+     * @var btns[]
      */
-    public $title;
+    public $btns;
 
     /**
      * @description 内容
@@ -52,25 +50,27 @@ class messageContent extends Model
     public $images;
 
     /**
-     * @var btns[]
+     * @description 消息类型
+     *
+     * @var string
      */
-    public $btns;
+    public $messageType;
 
     /**
-     * @description at活跃成员数量
+     * @description 标题
      *
-     * @var int
+     * @var string
      */
-    public $atActiveMemberNum;
+    public $title;
     protected $_name = [
-        'atAll'             => 'atAll',
+        'atActiveMemberNum' => 'atActiveMemberNum',
         'atActiveUser'      => 'atActiveUser',
-        'messageType'       => 'messageType',
-        'title'             => 'title',
+        'atAll'             => 'atAll',
+        'btns'              => 'btns',
         'content'           => 'content',
         'images'            => 'images',
-        'btns'              => 'btns',
-        'atActiveMemberNum' => 'atActiveMemberNum',
+        'messageType'       => 'messageType',
+        'title'             => 'title',
     ];
 
     public function validate()
@@ -80,23 +80,14 @@ class messageContent extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->atAll) {
-            $res['atAll'] = $this->atAll;
+        if (null !== $this->atActiveMemberNum) {
+            $res['atActiveMemberNum'] = $this->atActiveMemberNum;
         }
         if (null !== $this->atActiveUser) {
             $res['atActiveUser'] = $this->atActiveUser;
         }
-        if (null !== $this->messageType) {
-            $res['messageType'] = $this->messageType;
-        }
-        if (null !== $this->title) {
-            $res['title'] = $this->title;
-        }
-        if (null !== $this->content) {
-            $res['content'] = $this->content;
-        }
-        if (null !== $this->images) {
-            $res['images'] = $this->images;
+        if (null !== $this->atAll) {
+            $res['atAll'] = $this->atAll;
         }
         if (null !== $this->btns) {
             $res['btns'] = [];
@@ -107,8 +98,17 @@ class messageContent extends Model
                 }
             }
         }
-        if (null !== $this->atActiveMemberNum) {
-            $res['atActiveMemberNum'] = $this->atActiveMemberNum;
+        if (null !== $this->content) {
+            $res['content'] = $this->content;
+        }
+        if (null !== $this->images) {
+            $res['images'] = $this->images;
+        }
+        if (null !== $this->messageType) {
+            $res['messageType'] = $this->messageType;
+        }
+        if (null !== $this->title) {
+            $res['title'] = $this->title;
         }
 
         return $res;
@@ -122,25 +122,14 @@ class messageContent extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['atAll'])) {
-            $model->atAll = $map['atAll'];
+        if (isset($map['atActiveMemberNum'])) {
+            $model->atActiveMemberNum = $map['atActiveMemberNum'];
         }
         if (isset($map['atActiveUser'])) {
             $model->atActiveUser = $map['atActiveUser'];
         }
-        if (isset($map['messageType'])) {
-            $model->messageType = $map['messageType'];
-        }
-        if (isset($map['title'])) {
-            $model->title = $map['title'];
-        }
-        if (isset($map['content'])) {
-            $model->content = $map['content'];
-        }
-        if (isset($map['images'])) {
-            if (!empty($map['images'])) {
-                $model->images = $map['images'];
-            }
+        if (isset($map['atAll'])) {
+            $model->atAll = $map['atAll'];
         }
         if (isset($map['btns'])) {
             if (!empty($map['btns'])) {
@@ -151,8 +140,19 @@ class messageContent extends Model
                 }
             }
         }
-        if (isset($map['atActiveMemberNum'])) {
-            $model->atActiveMemberNum = $map['atActiveMemberNum'];
+        if (isset($map['content'])) {
+            $model->content = $map['content'];
+        }
+        if (isset($map['images'])) {
+            if (!empty($map['images'])) {
+                $model->images = $map['images'];
+            }
+        }
+        if (isset($map['messageType'])) {
+            $model->messageType = $map['messageType'];
+        }
+        if (isset($map['title'])) {
+            $model->title = $map['title'];
         }
 
         return $model;

@@ -16,11 +16,11 @@ class PublishFileChangeNoticeRequest extends Model
     public $fileId;
 
     /**
-     * @description 钉盘spaceId
+     * @description 操作类型: 1-添加 2-修改
      *
      * @var string
      */
-    public $spaceId;
+    public $operateType;
 
     /**
      * @description 操作人unionId
@@ -30,16 +30,16 @@ class PublishFileChangeNoticeRequest extends Model
     public $operatorUnionId;
 
     /**
-     * @description 操作类型: 1-添加 2-修改
+     * @description 钉盘spaceId
      *
      * @var string
      */
-    public $operateType;
+    public $spaceId;
     protected $_name = [
         'fileId'          => 'fileId',
-        'spaceId'         => 'spaceId',
-        'operatorUnionId' => 'operatorUnionId',
         'operateType'     => 'operateType',
+        'operatorUnionId' => 'operatorUnionId',
+        'spaceId'         => 'spaceId',
     ];
 
     public function validate()
@@ -52,14 +52,14 @@ class PublishFileChangeNoticeRequest extends Model
         if (null !== $this->fileId) {
             $res['fileId'] = $this->fileId;
         }
-        if (null !== $this->spaceId) {
-            $res['spaceId'] = $this->spaceId;
+        if (null !== $this->operateType) {
+            $res['operateType'] = $this->operateType;
         }
         if (null !== $this->operatorUnionId) {
             $res['operatorUnionId'] = $this->operatorUnionId;
         }
-        if (null !== $this->operateType) {
-            $res['operateType'] = $this->operateType;
+        if (null !== $this->spaceId) {
+            $res['spaceId'] = $this->spaceId;
         }
 
         return $res;
@@ -76,14 +76,14 @@ class PublishFileChangeNoticeRequest extends Model
         if (isset($map['fileId'])) {
             $model->fileId = $map['fileId'];
         }
-        if (isset($map['spaceId'])) {
-            $model->spaceId = $map['spaceId'];
+        if (isset($map['operateType'])) {
+            $model->operateType = $map['operateType'];
         }
         if (isset($map['operatorUnionId'])) {
             $model->operatorUnionId = $map['operatorUnionId'];
         }
-        if (isset($map['operateType'])) {
-            $model->operateType = $map['operateType'];
+        if (isset($map['spaceId'])) {
+            $model->spaceId = $map['spaceId'];
         }
 
         return $model;

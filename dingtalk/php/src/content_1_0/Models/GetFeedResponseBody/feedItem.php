@@ -9,6 +9,20 @@ use AlibabaCloud\Tea\Model;
 class feedItem extends Model
 {
     /**
+     * @description 子内容的持续时长，单位为毫秒
+     *
+     * @var int
+     */
+    public $durationMillis;
+
+    /**
+     * @description 内容类型，0表示直播，1表示图文，2表示视频，3表示音频
+     *
+     * @var int
+     */
+    public $feedContentType;
+
+    /**
      * @description 子内容Id
      *
      * @var string
@@ -23,30 +37,16 @@ class feedItem extends Model
     public $title;
 
     /**
-     * @description 内容类型，0表示直播，1表示图文，2表示视频，3表示音频
-     *
-     * @var int
-     */
-    public $feedContentType;
-
-    /**
-     * @description 子内容的持续时长，单位为毫秒
-     *
-     * @var int
-     */
-    public $durationMillis;
-
-    /**
      * @description 子内容的跳转链接
      *
      * @var string
      */
     public $url;
     protected $_name = [
+        'durationMillis'  => 'durationMillis',
+        'feedContentType' => 'feedContentType',
         'itemId'          => 'itemId',
         'title'           => 'title',
-        'feedContentType' => 'feedContentType',
-        'durationMillis'  => 'durationMillis',
         'url'             => 'url',
     ];
 
@@ -57,17 +57,17 @@ class feedItem extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->durationMillis) {
+            $res['durationMillis'] = $this->durationMillis;
+        }
+        if (null !== $this->feedContentType) {
+            $res['feedContentType'] = $this->feedContentType;
+        }
         if (null !== $this->itemId) {
             $res['itemId'] = $this->itemId;
         }
         if (null !== $this->title) {
             $res['title'] = $this->title;
-        }
-        if (null !== $this->feedContentType) {
-            $res['feedContentType'] = $this->feedContentType;
-        }
-        if (null !== $this->durationMillis) {
-            $res['durationMillis'] = $this->durationMillis;
         }
         if (null !== $this->url) {
             $res['url'] = $this->url;
@@ -84,17 +84,17 @@ class feedItem extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['durationMillis'])) {
+            $model->durationMillis = $map['durationMillis'];
+        }
+        if (isset($map['feedContentType'])) {
+            $model->feedContentType = $map['feedContentType'];
+        }
         if (isset($map['itemId'])) {
             $model->itemId = $map['itemId'];
         }
         if (isset($map['title'])) {
             $model->title = $map['title'];
-        }
-        if (isset($map['feedContentType'])) {
-            $model->feedContentType = $map['feedContentType'];
-        }
-        if (isset($map['durationMillis'])) {
-            $model->durationMillis = $map['durationMillis'];
         }
         if (isset($map['url'])) {
             $model->url = $map['url'];

@@ -18,22 +18,22 @@ class CreateFeedRequest extends Model
     public $courseInfo;
 
     /**
-     * @description 内容相关信息
-     *
-     * @var feedInfo
-     */
-    public $feedInfo;
-
-    /**
      * @description 发布者的用户Id
      *
      * @var string
      */
     public $createUserId;
+
+    /**
+     * @description 内容相关信息
+     *
+     * @var feedInfo
+     */
+    public $feedInfo;
     protected $_name = [
         'courseInfo'   => 'courseInfo',
-        'feedInfo'     => 'feedInfo',
         'createUserId' => 'createUserId',
+        'feedInfo'     => 'feedInfo',
     ];
 
     public function validate()
@@ -46,11 +46,11 @@ class CreateFeedRequest extends Model
         if (null !== $this->courseInfo) {
             $res['courseInfo'] = null !== $this->courseInfo ? $this->courseInfo->toMap() : null;
         }
-        if (null !== $this->feedInfo) {
-            $res['feedInfo'] = null !== $this->feedInfo ? $this->feedInfo->toMap() : null;
-        }
         if (null !== $this->createUserId) {
             $res['createUserId'] = $this->createUserId;
+        }
+        if (null !== $this->feedInfo) {
+            $res['feedInfo'] = null !== $this->feedInfo ? $this->feedInfo->toMap() : null;
         }
 
         return $res;
@@ -67,11 +67,11 @@ class CreateFeedRequest extends Model
         if (isset($map['courseInfo'])) {
             $model->courseInfo = courseInfo::fromMap($map['courseInfo']);
         }
-        if (isset($map['feedInfo'])) {
-            $model->feedInfo = feedInfo::fromMap($map['feedInfo']);
-        }
         if (isset($map['createUserId'])) {
             $model->createUserId = $map['createUserId'];
+        }
+        if (isset($map['feedInfo'])) {
+            $model->feedInfo = feedInfo::fromMap($map['feedInfo']);
         }
 
         return $model;

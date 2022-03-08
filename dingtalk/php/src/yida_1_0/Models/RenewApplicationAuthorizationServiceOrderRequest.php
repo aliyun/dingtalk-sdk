@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class RenewApplicationAuthorizationServiceOrderRequest extends Model
 {
     /**
-     * @description 实例id
-     *
-     * @var string
-     */
-    public $instanceId;
-
-    /**
      * @description 访问秘钥
      *
      * @var string
@@ -35,11 +28,18 @@ class RenewApplicationAuthorizationServiceOrderRequest extends Model
      * @var int
      */
     public $endTimeGMT;
+
+    /**
+     * @description 实例id
+     *
+     * @var string
+     */
+    public $instanceId;
     protected $_name = [
-        'instanceId'    => 'instanceId',
         'accessKey'     => 'accessKey',
         'callerUnionId' => 'callerUnionId',
         'endTimeGMT'    => 'endTimeGMT',
+        'instanceId'    => 'instanceId',
     ];
 
     public function validate()
@@ -49,9 +49,6 @@ class RenewApplicationAuthorizationServiceOrderRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->instanceId) {
-            $res['instanceId'] = $this->instanceId;
-        }
         if (null !== $this->accessKey) {
             $res['accessKey'] = $this->accessKey;
         }
@@ -60,6 +57,9 @@ class RenewApplicationAuthorizationServiceOrderRequest extends Model
         }
         if (null !== $this->endTimeGMT) {
             $res['endTimeGMT'] = $this->endTimeGMT;
+        }
+        if (null !== $this->instanceId) {
+            $res['instanceId'] = $this->instanceId;
         }
 
         return $res;
@@ -73,9 +73,6 @@ class RenewApplicationAuthorizationServiceOrderRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['instanceId'])) {
-            $model->instanceId = $map['instanceId'];
-        }
         if (isset($map['accessKey'])) {
             $model->accessKey = $map['accessKey'];
         }
@@ -84,6 +81,9 @@ class RenewApplicationAuthorizationServiceOrderRequest extends Model
         }
         if (isset($map['endTimeGMT'])) {
             $model->endTimeGMT = $map['endTimeGMT'];
+        }
+        if (isset($map['instanceId'])) {
+            $model->instanceId = $map['instanceId'];
         }
 
         return $model;

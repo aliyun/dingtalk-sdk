@@ -16,22 +16,22 @@ class body extends Model
     public $branchCorpId;
 
     /**
-     * @description （分支/合作伙伴）在（集团/合作空间）的别名
-     *
-     * @var string
-     */
-    public $unionRootName;
-
-    /**
      * @description 挂载节点部门ID
      *
      * @var int
      */
     public $linkDeptId;
+
+    /**
+     * @description （分支/合作伙伴）在（集团/合作空间）的别名
+     *
+     * @var string
+     */
+    public $unionRootName;
     protected $_name = [
         'branchCorpId'  => 'branchCorpId',
-        'unionRootName' => 'unionRootName',
         'linkDeptId'    => 'linkDeptId',
+        'unionRootName' => 'unionRootName',
     ];
 
     public function validate()
@@ -44,11 +44,11 @@ class body extends Model
         if (null !== $this->branchCorpId) {
             $res['branchCorpId'] = $this->branchCorpId;
         }
-        if (null !== $this->unionRootName) {
-            $res['unionRootName'] = $this->unionRootName;
-        }
         if (null !== $this->linkDeptId) {
             $res['linkDeptId'] = $this->linkDeptId;
+        }
+        if (null !== $this->unionRootName) {
+            $res['unionRootName'] = $this->unionRootName;
         }
 
         return $res;
@@ -65,11 +65,11 @@ class body extends Model
         if (isset($map['branchCorpId'])) {
             $model->branchCorpId = $map['branchCorpId'];
         }
-        if (isset($map['unionRootName'])) {
-            $model->unionRootName = $map['unionRootName'];
-        }
         if (isset($map['linkDeptId'])) {
             $model->linkDeptId = $map['linkDeptId'];
+        }
+        if (isset($map['unionRootName'])) {
+            $model->unionRootName = $map['unionRootName'];
         }
 
         return $model;

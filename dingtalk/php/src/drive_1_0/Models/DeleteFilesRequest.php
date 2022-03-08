@@ -9,18 +9,18 @@ use AlibabaCloud\Tea\Model;
 class DeleteFilesRequest extends Model
 {
     /**
-     * @description 文件id列表
-     *
-     * @var string[]
-     */
-    public $fileIds;
-
-    /**
      * @description 删除策略
      *
      * @var string
      */
     public $deletePolicy;
+
+    /**
+     * @description 文件id列表
+     *
+     * @var string[]
+     */
+    public $fileIds;
 
     /**
      * @description 用户id
@@ -29,8 +29,8 @@ class DeleteFilesRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'fileIds'      => 'fileIds',
         'deletePolicy' => 'deletePolicy',
+        'fileIds'      => 'fileIds',
         'unionId'      => 'unionId',
     ];
 
@@ -41,11 +41,11 @@ class DeleteFilesRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->fileIds) {
-            $res['fileIds'] = $this->fileIds;
-        }
         if (null !== $this->deletePolicy) {
             $res['deletePolicy'] = $this->deletePolicy;
+        }
+        if (null !== $this->fileIds) {
+            $res['fileIds'] = $this->fileIds;
         }
         if (null !== $this->unionId) {
             $res['unionId'] = $this->unionId;
@@ -62,13 +62,13 @@ class DeleteFilesRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['deletePolicy'])) {
+            $model->deletePolicy = $map['deletePolicy'];
+        }
         if (isset($map['fileIds'])) {
             if (!empty($map['fileIds'])) {
                 $model->fileIds = $map['fileIds'];
             }
-        }
-        if (isset($map['deletePolicy'])) {
-            $model->deletePolicy = $map['deletePolicy'];
         }
         if (isset($map['unionId'])) {
             $model->unionId = $map['unionId'];

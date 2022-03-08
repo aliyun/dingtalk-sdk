@@ -9,32 +9,11 @@ use AlibabaCloud\Tea\Model;
 class UpdateInnerAppRequest extends Model
 {
     /**
-     * @description 创建人unionId
-     *
-     * @var string
-     */
-    public $opUnionId;
-
-    /**
-     * @description 应用名称
-     *
-     * @var string
-     */
-    public $name;
-
-    /**
      * @description 应用描述
      *
      * @var string
      */
     public $desc;
-
-    /**
-     * @description 应用图标
-     *
-     * @var string
-     */
-    public $icon;
 
     /**
      * @description 应用首页地址
@@ -44,11 +23,25 @@ class UpdateInnerAppRequest extends Model
     public $homepageLink;
 
     /**
-     * @description 应用PC端地址
+     * @description 应用图标
      *
      * @var string
      */
-    public $pcHomepageLink;
+    public $icon;
+
+    /**
+     * @description 服务器出口ip白名单
+     *
+     * @var string[]
+     */
+    public $ipWhiteList;
+
+    /**
+     * @description 应用名称
+     *
+     * @var string
+     */
+    public $name;
 
     /**
      * @description 应用管理后台地址
@@ -58,20 +51,27 @@ class UpdateInnerAppRequest extends Model
     public $ompLink;
 
     /**
-     * @description 服务器出口ip白名单
+     * @description 创建人unionId
      *
-     * @var string[]
+     * @var string
      */
-    public $ipWhiteList;
+    public $opUnionId;
+
+    /**
+     * @description 应用PC端地址
+     *
+     * @var string
+     */
+    public $pcHomepageLink;
     protected $_name = [
-        'opUnionId'      => 'opUnionId',
-        'name'           => 'name',
         'desc'           => 'desc',
-        'icon'           => 'icon',
         'homepageLink'   => 'homepageLink',
-        'pcHomepageLink' => 'pcHomepageLink',
-        'ompLink'        => 'ompLink',
+        'icon'           => 'icon',
         'ipWhiteList'    => 'ipWhiteList',
+        'name'           => 'name',
+        'ompLink'        => 'ompLink',
+        'opUnionId'      => 'opUnionId',
+        'pcHomepageLink' => 'pcHomepageLink',
     ];
 
     public function validate()
@@ -81,29 +81,29 @@ class UpdateInnerAppRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->opUnionId) {
-            $res['opUnionId'] = $this->opUnionId;
-        }
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
-        }
         if (null !== $this->desc) {
             $res['desc'] = $this->desc;
-        }
-        if (null !== $this->icon) {
-            $res['icon'] = $this->icon;
         }
         if (null !== $this->homepageLink) {
             $res['homepageLink'] = $this->homepageLink;
         }
-        if (null !== $this->pcHomepageLink) {
-            $res['pcHomepageLink'] = $this->pcHomepageLink;
+        if (null !== $this->icon) {
+            $res['icon'] = $this->icon;
+        }
+        if (null !== $this->ipWhiteList) {
+            $res['ipWhiteList'] = $this->ipWhiteList;
+        }
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
         }
         if (null !== $this->ompLink) {
             $res['ompLink'] = $this->ompLink;
         }
-        if (null !== $this->ipWhiteList) {
-            $res['ipWhiteList'] = $this->ipWhiteList;
+        if (null !== $this->opUnionId) {
+            $res['opUnionId'] = $this->opUnionId;
+        }
+        if (null !== $this->pcHomepageLink) {
+            $res['pcHomepageLink'] = $this->pcHomepageLink;
         }
 
         return $res;
@@ -117,31 +117,31 @@ class UpdateInnerAppRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['opUnionId'])) {
-            $model->opUnionId = $map['opUnionId'];
-        }
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
-        }
         if (isset($map['desc'])) {
             $model->desc = $map['desc'];
-        }
-        if (isset($map['icon'])) {
-            $model->icon = $map['icon'];
         }
         if (isset($map['homepageLink'])) {
             $model->homepageLink = $map['homepageLink'];
         }
-        if (isset($map['pcHomepageLink'])) {
-            $model->pcHomepageLink = $map['pcHomepageLink'];
-        }
-        if (isset($map['ompLink'])) {
-            $model->ompLink = $map['ompLink'];
+        if (isset($map['icon'])) {
+            $model->icon = $map['icon'];
         }
         if (isset($map['ipWhiteList'])) {
             if (!empty($map['ipWhiteList'])) {
                 $model->ipWhiteList = $map['ipWhiteList'];
             }
+        }
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
+        }
+        if (isset($map['ompLink'])) {
+            $model->ompLink = $map['ompLink'];
+        }
+        if (isset($map['opUnionId'])) {
+            $model->opUnionId = $map['opUnionId'];
+        }
+        if (isset($map['pcHomepageLink'])) {
+            $model->pcHomepageLink = $map['pcHomepageLink'];
         }
 
         return $model;

@@ -16,18 +16,18 @@ class AddApplicationRegFormTemplateRequest extends Model
     public $bizCode;
 
     /**
-     * @description 模板名称
-     *
-     * @var string
-     */
-    public $name;
-
-    /**
      * @description 模板内容
      *
      * @var string
      */
     public $content;
+
+    /**
+     * @description 模板名称
+     *
+     * @var string
+     */
+    public $name;
 
     /**
      * @description 外部唯一标识
@@ -44,8 +44,8 @@ class AddApplicationRegFormTemplateRequest extends Model
     public $opUserId;
     protected $_name = [
         'bizCode'  => 'bizCode',
-        'name'     => 'name',
         'content'  => 'content',
+        'name'     => 'name',
         'outerId'  => 'outerId',
         'opUserId' => 'opUserId',
     ];
@@ -60,11 +60,11 @@ class AddApplicationRegFormTemplateRequest extends Model
         if (null !== $this->bizCode) {
             $res['bizCode'] = $this->bizCode;
         }
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
-        }
         if (null !== $this->content) {
             $res['content'] = $this->content;
+        }
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
         }
         if (null !== $this->outerId) {
             $res['outerId'] = $this->outerId;
@@ -87,11 +87,11 @@ class AddApplicationRegFormTemplateRequest extends Model
         if (isset($map['bizCode'])) {
             $model->bizCode = $map['bizCode'];
         }
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
-        }
         if (isset($map['content'])) {
             $model->content = $map['content'];
+        }
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
         }
         if (isset($map['outerId'])) {
             $model->outerId = $map['outerId'];

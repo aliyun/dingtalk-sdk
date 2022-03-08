@@ -42,78 +42,6 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param MachineUsersUpdateRequest $request
-     *
-     * @return MachineUsersUpdateResponse
-     */
-    public function machineUsersUpdate($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new MachineUsersUpdateHeaders([]);
-
-        return $this->machineUsersUpdateWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param MachineUsersUpdateRequest $request
-     * @param MachineUsersUpdateHeaders $headers
-     * @param RuntimeOptions            $runtime
-     *
-     * @return MachineUsersUpdateResponse
-     */
-    public function machineUsersUpdateWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->delUserIds)) {
-            @$body['delUserIds'] = $request->delUserIds;
-        }
-        if (!Utils::isUnset($request->deviceIds)) {
-            @$body['deviceIds'] = $request->deviceIds;
-        }
-        if (!Utils::isUnset($request->addUserIds)) {
-            @$body['addUserIds'] = $request->addUserIds;
-        }
-        if (!Utils::isUnset($request->devIds)) {
-            @$body['devIds'] = $request->devIds;
-        }
-        if (!Utils::isUnset($request->dingTokenGrantType)) {
-            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
-        }
-        if (!Utils::isUnset($request->dingSuiteKey)) {
-            @$body['dingSuiteKey'] = $request->dingSuiteKey;
-        }
-        if (!Utils::isUnset($request->dingCorpId)) {
-            @$body['dingCorpId'] = $request->dingCorpId;
-        }
-        if (!Utils::isUnset($request->dingOrgId)) {
-            @$body['dingOrgId'] = $request->dingOrgId;
-        }
-        if (!Utils::isUnset($request->dingIsvOrgId)) {
-            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
-        }
-        if (!Utils::isUnset($request->delDeptIds)) {
-            @$body['delDeptIds'] = $request->delDeptIds;
-        }
-        if (!Utils::isUnset($request->addDeptIds)) {
-            @$body['addDeptIds'] = $request->addDeptIds;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return MachineUsersUpdateResponse::fromMap($this->doROARequest('MachineUsersUpdate', 'smartDevice_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/smartDevice/atmachines/users', 'none', $req, $runtime));
-    }
-
-    /**
      * @param string                                 $deviceId
      * @param string                                 $conferenceId
      * @param AddDeviceVideoConferenceMembersRequest $request
@@ -140,7 +68,9 @@ class Dingtalk extends OpenApiClient
     public function addDeviceVideoConferenceMembersWithOptions($deviceId, $conferenceId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
+        $deviceId     = OpenApiUtilClient::getEncodeParam($deviceId);
+        $conferenceId = OpenApiUtilClient::getEncodeParam($conferenceId);
+        $body         = [];
         if (!Utils::isUnset($request->userIds)) {
             @$body['userIds'] = $request->userIds;
         }
@@ -149,7 +79,7 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -184,7 +114,8 @@ class Dingtalk extends OpenApiClient
     public function createDeviceVideoConferenceWithOptions($deviceId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
+        $deviceId = OpenApiUtilClient::getEncodeParam($deviceId);
+        $body     = [];
         if (!Utils::isUnset($request->userIds)) {
             @$body['userIds'] = $request->userIds;
         }
@@ -193,7 +124,7 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -204,107 +135,48 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string $deviceId
-     * @param string $bookId
+     * @param ExtractFacialFeatureRequest $request
      *
-     * @return QueryDeviceVideoConferenceBookResponse
+     * @return ExtractFacialFeatureResponse
      */
-    public function queryDeviceVideoConferenceBook($deviceId, $bookId)
+    public function extractFacialFeature($request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new QueryDeviceVideoConferenceBookHeaders([]);
+        $headers = new ExtractFacialFeatureHeaders([]);
 
-        return $this->queryDeviceVideoConferenceBookWithOptions($deviceId, $bookId, $headers, $runtime);
+        return $this->extractFacialFeatureWithOptions($request, $headers, $runtime);
     }
 
     /**
-     * @param string                                $deviceId
-     * @param string                                $bookId
-     * @param QueryDeviceVideoConferenceBookHeaders $headers
-     * @param RuntimeOptions                        $runtime
-     *
-     * @return QueryDeviceVideoConferenceBookResponse
-     */
-    public function queryDeviceVideoConferenceBookWithOptions($deviceId, $bookId, $headers, $runtime)
-    {
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-        ]);
-
-        return QueryDeviceVideoConferenceBookResponse::fromMap($this->doROARequest('QueryDeviceVideoConferenceBook', 'smartDevice_1.0', 'HTTP', 'GET', 'AK', '/v1.0/smartDevice/devices/' . $deviceId . '/books/' . $bookId . '', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param MachineManagerUpdateRequest $request
-     *
-     * @return MachineManagerUpdateResponse
-     */
-    public function machineManagerUpdate($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new MachineManagerUpdateHeaders([]);
-
-        return $this->machineManagerUpdateWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param MachineManagerUpdateRequest $request
-     * @param MachineManagerUpdateHeaders $headers
+     * @param ExtractFacialFeatureRequest $request
+     * @param ExtractFacialFeatureHeaders $headers
      * @param RuntimeOptions              $runtime
      *
-     * @return MachineManagerUpdateResponse
+     * @return ExtractFacialFeatureResponse
      */
-    public function machineManagerUpdateWithOptions($request, $headers, $runtime)
+    public function extractFacialFeatureWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->deviceId)) {
-            @$body['deviceId'] = $request->deviceId;
+        if (!Utils::isUnset($request->mediaId)) {
+            @$body['mediaId'] = $request->mediaId;
         }
-        if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
-        }
-        if (!Utils::isUnset($request->scopeDeptIds)) {
-            @$body['scopeDeptIds'] = $request->scopeDeptIds;
-        }
-        if (!Utils::isUnset($request->atmManagerRightMap)) {
-            @$body['atmManagerRightMap'] = $request->atmManagerRightMap;
-        }
-        if (!Utils::isUnset($request->dingTokenGrantType)) {
-            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
-        }
-        if (!Utils::isUnset($request->dingSuiteKey)) {
-            @$body['dingSuiteKey'] = $request->dingSuiteKey;
-        }
-        if (!Utils::isUnset($request->dingCorpId)) {
-            @$body['dingCorpId'] = $request->dingCorpId;
-        }
-        if (!Utils::isUnset($request->dingOrgId)) {
-            @$body['dingOrgId'] = $request->dingOrgId;
-        }
-        if (!Utils::isUnset($request->dingIsvOrgId)) {
-            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        if (!Utils::isUnset($request->userid)) {
+            @$body['userid'] = $request->userid;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return MachineManagerUpdateResponse::fromMap($this->doROARequest('MachineManagerUpdate', 'smartDevice_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/smartDevice/atmachines/managers', 'none', $req, $runtime));
+        return ExtractFacialFeatureResponse::fromMap($this->doROARequest('ExtractFacialFeature', 'smartDevice_1.0', 'HTTP', 'POST', 'AK', '/v1.0/smartDevice/faceRecognitions/features/extract', 'json', $req, $runtime));
     }
 
     /**
@@ -334,7 +206,9 @@ class Dingtalk extends OpenApiClient
     public function kickDeviceVideoConferenceMembersWithOptions($deviceId, $conferenceId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
+        $deviceId     = OpenApiUtilClient::getEncodeParam($deviceId);
+        $conferenceId = OpenApiUtilClient::getEncodeParam($conferenceId);
+        $body         = [];
         if (!Utils::isUnset($request->userIds)) {
             @$body['userIds'] = $request->userIds;
         }
@@ -343,7 +217,7 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -354,47 +228,150 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ExtractFacialFeatureRequest $request
+     * @param MachineManagerUpdateRequest $request
      *
-     * @return ExtractFacialFeatureResponse
+     * @return MachineManagerUpdateResponse
      */
-    public function extractFacialFeature($request)
+    public function machineManagerUpdate($request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new ExtractFacialFeatureHeaders([]);
+        $headers = new MachineManagerUpdateHeaders([]);
 
-        return $this->extractFacialFeatureWithOptions($request, $headers, $runtime);
+        return $this->machineManagerUpdateWithOptions($request, $headers, $runtime);
     }
 
     /**
-     * @param ExtractFacialFeatureRequest $request
-     * @param ExtractFacialFeatureHeaders $headers
+     * @param MachineManagerUpdateRequest $request
+     * @param MachineManagerUpdateHeaders $headers
      * @param RuntimeOptions              $runtime
      *
-     * @return ExtractFacialFeatureResponse
+     * @return MachineManagerUpdateResponse
      */
-    public function extractFacialFeatureWithOptions($request, $headers, $runtime)
+    public function machineManagerUpdateWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->userid)) {
-            @$body['userid'] = $request->userid;
+        if (!Utils::isUnset($request->atmManagerRightMap)) {
+            @$body['atmManagerRightMap'] = $request->atmManagerRightMap;
         }
-        if (!Utils::isUnset($request->mediaId)) {
-            @$body['mediaId'] = $request->mediaId;
+        if (!Utils::isUnset($request->deviceId)) {
+            @$body['deviceId'] = $request->deviceId;
+        }
+        if (!Utils::isUnset($request->scopeDeptIds)) {
+            @$body['scopeDeptIds'] = $request->scopeDeptIds;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return ExtractFacialFeatureResponse::fromMap($this->doROARequest('ExtractFacialFeature', 'smartDevice_1.0', 'HTTP', 'POST', 'AK', '/v1.0/smartDevice/faceRecognitions/features/extract', 'json', $req, $runtime));
+        return MachineManagerUpdateResponse::fromMap($this->doROARequest('MachineManagerUpdate', 'smartDevice_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/smartDevice/atmachines/managers', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param MachineUsersUpdateRequest $request
+     *
+     * @return MachineUsersUpdateResponse
+     */
+    public function machineUsersUpdate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new MachineUsersUpdateHeaders([]);
+
+        return $this->machineUsersUpdateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param MachineUsersUpdateRequest $request
+     * @param MachineUsersUpdateHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return MachineUsersUpdateResponse
+     */
+    public function machineUsersUpdateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->addDeptIds)) {
+            @$body['addDeptIds'] = $request->addDeptIds;
+        }
+        if (!Utils::isUnset($request->addUserIds)) {
+            @$body['addUserIds'] = $request->addUserIds;
+        }
+        if (!Utils::isUnset($request->delDeptIds)) {
+            @$body['delDeptIds'] = $request->delDeptIds;
+        }
+        if (!Utils::isUnset($request->delUserIds)) {
+            @$body['delUserIds'] = $request->delUserIds;
+        }
+        if (!Utils::isUnset($request->devIds)) {
+            @$body['devIds'] = $request->devIds;
+        }
+        if (!Utils::isUnset($request->deviceIds)) {
+            @$body['deviceIds'] = $request->deviceIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return MachineUsersUpdateResponse::fromMap($this->doROARequest('MachineUsersUpdate', 'smartDevice_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/smartDevice/atmachines/users', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param string $deviceId
+     * @param string $bookId
+     *
+     * @return QueryDeviceVideoConferenceBookResponse
+     */
+    public function queryDeviceVideoConferenceBook($deviceId, $bookId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryDeviceVideoConferenceBookHeaders([]);
+
+        return $this->queryDeviceVideoConferenceBookWithOptions($deviceId, $bookId, $headers, $runtime);
+    }
+
+    /**
+     * @param string                                $deviceId
+     * @param string                                $bookId
+     * @param QueryDeviceVideoConferenceBookHeaders $headers
+     * @param RuntimeOptions                        $runtime
+     *
+     * @return QueryDeviceVideoConferenceBookResponse
+     */
+    public function queryDeviceVideoConferenceBookWithOptions($deviceId, $bookId, $headers, $runtime)
+    {
+        $deviceId    = OpenApiUtilClient::getEncodeParam($deviceId);
+        $bookId      = OpenApiUtilClient::getEncodeParam($bookId);
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return QueryDeviceVideoConferenceBookResponse::fromMap($this->doROARequest('QueryDeviceVideoConferenceBook', 'smartDevice_1.0', 'HTTP', 'GET', 'AK', '/v1.0/smartDevice/devices/' . $deviceId . '/books/' . $bookId . '', 'json', $req, $runtime));
     }
 }

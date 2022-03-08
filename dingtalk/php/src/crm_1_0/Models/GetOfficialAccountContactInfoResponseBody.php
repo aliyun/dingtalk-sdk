@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class GetOfficialAccountContactInfoResponseBody extends Model
 {
     /**
+     * @description 已授权的字段
+     *
+     * @var string[]
+     */
+    public $authItems;
+
+    /**
      * @description 联系人主企业名称
      *
      * @var string
@@ -41,20 +48,13 @@ class GetOfficialAccountContactInfoResponseBody extends Model
      *
      * @var string[]
      */
-    public $authItems;
-
-    /**
-     * @description 已授权的字段
-     *
-     * @var string[]
-     */
     public $userInfos;
     protected $_name = [
+        'authItems' => 'authItems',
         'corpName'  => 'corpName',
         'mobile'    => 'mobile',
         'stateCode' => 'stateCode',
         'unionId'   => 'unionId',
-        'authItems' => 'authItems',
         'userInfos' => 'userInfos',
     ];
 
@@ -65,6 +65,9 @@ class GetOfficialAccountContactInfoResponseBody extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->authItems) {
+            $res['authItems'] = $this->authItems;
+        }
         if (null !== $this->corpName) {
             $res['corpName'] = $this->corpName;
         }
@@ -76,9 +79,6 @@ class GetOfficialAccountContactInfoResponseBody extends Model
         }
         if (null !== $this->unionId) {
             $res['unionId'] = $this->unionId;
-        }
-        if (null !== $this->authItems) {
-            $res['authItems'] = $this->authItems;
         }
         if (null !== $this->userInfos) {
             $res['userInfos'] = $this->userInfos;
@@ -95,6 +95,11 @@ class GetOfficialAccountContactInfoResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['authItems'])) {
+            if (!empty($map['authItems'])) {
+                $model->authItems = $map['authItems'];
+            }
+        }
         if (isset($map['corpName'])) {
             $model->corpName = $map['corpName'];
         }
@@ -106,11 +111,6 @@ class GetOfficialAccountContactInfoResponseBody extends Model
         }
         if (isset($map['unionId'])) {
             $model->unionId = $map['unionId'];
-        }
-        if (isset($map['authItems'])) {
-            if (!empty($map['authItems'])) {
-                $model->authItems = $map['authItems'];
-            }
         }
         if (isset($map['userInfos'])) {
             if (!empty($map['userInfos'])) {

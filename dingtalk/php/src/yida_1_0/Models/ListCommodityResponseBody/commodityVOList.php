@@ -9,11 +9,25 @@ use AlibabaCloud\Tea\Model;
 class commodityVOList extends Model
 {
     /**
-     * @description instanceId
+     * @description accountDistributionNumber
+     *
+     * @var int
+     */
+    public $accountDistributionNumber;
+
+    /**
+     * @description accountNum
+     *
+     * @var int
+     */
+    public $accountNumber;
+
+    /**
+     * @description activationCode
      *
      * @var string
      */
-    public $instanceId;
+    public $activationCode;
 
     /**
      * @description buyDate
@@ -30,32 +44,11 @@ class commodityVOList extends Model
     public $expireDateGMT;
 
     /**
-     * @description activationCode
+     * @description instanceId
      *
      * @var string
      */
-    public $activationCode;
-
-    /**
-     * @description accountNum
-     *
-     * @var int
-     */
-    public $accountNumber;
-
-    /**
-     * @description accountDistributionNumber
-     *
-     * @var int
-     */
-    public $accountDistributionNumber;
-
-    /**
-     * @description version
-     *
-     * @var int
-     */
-    public $version;
+    public $instanceId;
 
     /**
      * @description status
@@ -63,15 +56,22 @@ class commodityVOList extends Model
      * @var string
      */
     public $status;
+
+    /**
+     * @description version
+     *
+     * @var int
+     */
+    public $version;
     protected $_name = [
-        'instanceId'                => 'instanceId',
+        'accountDistributionNumber' => 'accountDistributionNumber',
+        'accountNumber'             => 'accountNumber',
+        'activationCode'            => 'activationCode',
         'buyDateGMT'                => 'buyDateGMT',
         'expireDateGMT'             => 'expireDateGMT',
-        'activationCode'            => 'activationCode',
-        'accountNumber'             => 'accountNumber',
-        'accountDistributionNumber' => 'accountDistributionNumber',
-        'version'                   => 'version',
+        'instanceId'                => 'instanceId',
         'status'                    => 'status',
+        'version'                   => 'version',
     ];
 
     public function validate()
@@ -81,8 +81,14 @@ class commodityVOList extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->instanceId) {
-            $res['instanceId'] = $this->instanceId;
+        if (null !== $this->accountDistributionNumber) {
+            $res['accountDistributionNumber'] = $this->accountDistributionNumber;
+        }
+        if (null !== $this->accountNumber) {
+            $res['accountNumber'] = $this->accountNumber;
+        }
+        if (null !== $this->activationCode) {
+            $res['activationCode'] = $this->activationCode;
         }
         if (null !== $this->buyDateGMT) {
             $res['buyDateGMT'] = $this->buyDateGMT;
@@ -90,20 +96,14 @@ class commodityVOList extends Model
         if (null !== $this->expireDateGMT) {
             $res['expireDateGMT'] = $this->expireDateGMT;
         }
-        if (null !== $this->activationCode) {
-            $res['activationCode'] = $this->activationCode;
-        }
-        if (null !== $this->accountNumber) {
-            $res['accountNumber'] = $this->accountNumber;
-        }
-        if (null !== $this->accountDistributionNumber) {
-            $res['accountDistributionNumber'] = $this->accountDistributionNumber;
-        }
-        if (null !== $this->version) {
-            $res['version'] = $this->version;
+        if (null !== $this->instanceId) {
+            $res['instanceId'] = $this->instanceId;
         }
         if (null !== $this->status) {
             $res['status'] = $this->status;
+        }
+        if (null !== $this->version) {
+            $res['version'] = $this->version;
         }
 
         return $res;
@@ -117,8 +117,14 @@ class commodityVOList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['instanceId'])) {
-            $model->instanceId = $map['instanceId'];
+        if (isset($map['accountDistributionNumber'])) {
+            $model->accountDistributionNumber = $map['accountDistributionNumber'];
+        }
+        if (isset($map['accountNumber'])) {
+            $model->accountNumber = $map['accountNumber'];
+        }
+        if (isset($map['activationCode'])) {
+            $model->activationCode = $map['activationCode'];
         }
         if (isset($map['buyDateGMT'])) {
             $model->buyDateGMT = $map['buyDateGMT'];
@@ -126,20 +132,14 @@ class commodityVOList extends Model
         if (isset($map['expireDateGMT'])) {
             $model->expireDateGMT = $map['expireDateGMT'];
         }
-        if (isset($map['activationCode'])) {
-            $model->activationCode = $map['activationCode'];
-        }
-        if (isset($map['accountNumber'])) {
-            $model->accountNumber = $map['accountNumber'];
-        }
-        if (isset($map['accountDistributionNumber'])) {
-            $model->accountDistributionNumber = $map['accountDistributionNumber'];
-        }
-        if (isset($map['version'])) {
-            $model->version = $map['version'];
+        if (isset($map['instanceId'])) {
+            $model->instanceId = $map['instanceId'];
         }
         if (isset($map['status'])) {
             $model->status = $map['status'];
+        }
+        if (isset($map['version'])) {
+            $model->version = $map['version'];
         }
 
         return $model;

@@ -10,13 +10,6 @@ use AlibabaCloud\Tea\Model;
 class ListCommodityResponseBody extends Model
 {
     /**
-     * @description 分页大小
-     *
-     * @var int
-     */
-    public $pageSize;
-
-    /**
      * @description commodityVOList
      *
      * @var commodityVOList[]
@@ -31,15 +24,22 @@ class ListCommodityResponseBody extends Model
     public $pageNumber;
 
     /**
+     * @description 分页大小
+     *
+     * @var int
+     */
+    public $pageSize;
+
+    /**
      * @description 总数量
      *
      * @var int
      */
     public $totalCount;
     protected $_name = [
-        'pageSize'        => 'pageSize',
         'commodityVOList' => 'commodityVOList',
         'pageNumber'      => 'pageNumber',
+        'pageSize'        => 'pageSize',
         'totalCount'      => 'totalCount',
     ];
 
@@ -50,9 +50,6 @@ class ListCommodityResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->pageSize) {
-            $res['pageSize'] = $this->pageSize;
-        }
         if (null !== $this->commodityVOList) {
             $res['commodityVOList'] = [];
             if (null !== $this->commodityVOList && \is_array($this->commodityVOList)) {
@@ -64,6 +61,9 @@ class ListCommodityResponseBody extends Model
         }
         if (null !== $this->pageNumber) {
             $res['pageNumber'] = $this->pageNumber;
+        }
+        if (null !== $this->pageSize) {
+            $res['pageSize'] = $this->pageSize;
         }
         if (null !== $this->totalCount) {
             $res['totalCount'] = $this->totalCount;
@@ -80,9 +80,6 @@ class ListCommodityResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['pageSize'])) {
-            $model->pageSize = $map['pageSize'];
-        }
         if (isset($map['commodityVOList'])) {
             if (!empty($map['commodityVOList'])) {
                 $model->commodityVOList = [];
@@ -94,6 +91,9 @@ class ListCommodityResponseBody extends Model
         }
         if (isset($map['pageNumber'])) {
             $model->pageNumber = $map['pageNumber'];
+        }
+        if (isset($map['pageSize'])) {
+            $model->pageSize = $map['pageSize'];
         }
         if (isset($map['totalCount'])) {
             $model->totalCount = $map['totalCount'];

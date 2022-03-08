@@ -12,26 +12,8 @@ class AuthUrlRequest extends Model
      * @var string
      */
     public $redirectUrl;
-
-    /**
-     * @var string
-     */
-    public $dingCorpId;
-
-    /**
-     * @var string
-     */
-    public $dingIsvAccessToken;
-
-    /**
-     * @var string
-     */
-    public $dingSuiteKey;
     protected $_name = [
-        'redirectUrl'        => 'redirectUrl',
-        'dingCorpId'         => 'dingCorpId',
-        'dingIsvAccessToken' => 'dingIsvAccessToken',
-        'dingSuiteKey'       => 'dingSuiteKey',
+        'redirectUrl' => 'redirectUrl',
     ];
 
     public function validate()
@@ -43,15 +25,6 @@ class AuthUrlRequest extends Model
         $res = [];
         if (null !== $this->redirectUrl) {
             $res['redirectUrl'] = $this->redirectUrl;
-        }
-        if (null !== $this->dingCorpId) {
-            $res['dingCorpId'] = $this->dingCorpId;
-        }
-        if (null !== $this->dingIsvAccessToken) {
-            $res['dingIsvAccessToken'] = $this->dingIsvAccessToken;
-        }
-        if (null !== $this->dingSuiteKey) {
-            $res['dingSuiteKey'] = $this->dingSuiteKey;
         }
 
         return $res;
@@ -67,15 +40,6 @@ class AuthUrlRequest extends Model
         $model = new self();
         if (isset($map['redirectUrl'])) {
             $model->redirectUrl = $map['redirectUrl'];
-        }
-        if (isset($map['dingCorpId'])) {
-            $model->dingCorpId = $map['dingCorpId'];
-        }
-        if (isset($map['dingIsvAccessToken'])) {
-            $model->dingIsvAccessToken = $map['dingIsvAccessToken'];
-        }
-        if (isset($map['dingSuiteKey'])) {
-            $model->dingSuiteKey = $map['dingSuiteKey'];
         }
 
         return $model;

@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class GetTrainExceedApplyRequest extends Model
 {
     /**
-     * @description 第三方企业id
-     *
-     * @var string
-     */
-    public $corpId;
-
-    /**
      * @description 商旅超标审批单id
      *
      * @var string
      */
     public $applyId;
+
+    /**
+     * @description 第三方企业id
+     *
+     * @var string
+     */
+    public $corpId;
     protected $_name = [
-        'corpId'  => 'corpId',
         'applyId' => 'applyId',
+        'corpId'  => 'corpId',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class GetTrainExceedApplyRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->corpId) {
-            $res['corpId'] = $this->corpId;
-        }
         if (null !== $this->applyId) {
             $res['applyId'] = $this->applyId;
+        }
+        if (null !== $this->corpId) {
+            $res['corpId'] = $this->corpId;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class GetTrainExceedApplyRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['corpId'])) {
-            $model->corpId = $map['corpId'];
-        }
         if (isset($map['applyId'])) {
             $model->applyId = $map['applyId'];
+        }
+        if (isset($map['corpId'])) {
+            $model->corpId = $map['corpId'];
         }
 
         return $model;

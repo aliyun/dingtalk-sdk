@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class CreateTrustedDeviceRequest extends Model
 {
     /**
-     * @description 员工userId
+     * @description mac地址
      *
      * @var string
      */
-    public $userId;
+    public $macAddress;
 
     /**
      * @description 平台类型
@@ -23,23 +23,23 @@ class CreateTrustedDeviceRequest extends Model
     public $platform;
 
     /**
-     * @description mac地址
-     *
-     * @var string
-     */
-    public $macAddress;
-
-    /**
      * @description 设备状态
      *
      * @var int
      */
     public $status;
+
+    /**
+     * @description 员工userId
+     *
+     * @var string
+     */
+    public $userId;
     protected $_name = [
-        'userId'     => 'userId',
-        'platform'   => 'platform',
         'macAddress' => 'macAddress',
+        'platform'   => 'platform',
         'status'     => 'status',
+        'userId'     => 'userId',
     ];
 
     public function validate()
@@ -49,17 +49,17 @@ class CreateTrustedDeviceRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
+        if (null !== $this->macAddress) {
+            $res['macAddress'] = $this->macAddress;
         }
         if (null !== $this->platform) {
             $res['platform'] = $this->platform;
         }
-        if (null !== $this->macAddress) {
-            $res['macAddress'] = $this->macAddress;
-        }
         if (null !== $this->status) {
             $res['status'] = $this->status;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -73,17 +73,17 @@ class CreateTrustedDeviceRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
+        if (isset($map['macAddress'])) {
+            $model->macAddress = $map['macAddress'];
         }
         if (isset($map['platform'])) {
             $model->platform = $map['platform'];
         }
-        if (isset($map['macAddress'])) {
-            $model->macAddress = $map['macAddress'];
-        }
         if (isset($map['status'])) {
             $model->status = $map['status'];
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

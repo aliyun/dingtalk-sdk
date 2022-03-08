@@ -17,27 +17,6 @@ class UpdateResidentUserRequest extends Model
     public $address;
 
     /**
-     * @description 是否保留原部门
-     *
-     * @var bool
-     */
-    public $isRetainOldDept;
-
-    /**
-     * @description 居民名字
-     *
-     * @var string
-     */
-    public $userName;
-
-    /**
-     * @description 手机号码
-     *
-     * @var string
-     */
-    public $mobile;
-
-    /**
      * @description 所在新的户/租户部门id
      *
      * @var int
@@ -50,6 +29,27 @@ class UpdateResidentUserRequest extends Model
      * @var extField[]
      */
     public $extField;
+
+    /**
+     * @description 是否保留原部门
+     *
+     * @var bool
+     */
+    public $isRetainOldDept;
+
+    /**
+     * @description 手机号码
+     *
+     * @var string
+     */
+    public $mobile;
+
+    /**
+     * @description 原所在部门id
+     *
+     * @var int
+     */
+    public $oldDepartmentId;
 
     /**
      * @description 与户主的关系
@@ -66,21 +66,21 @@ class UpdateResidentUserRequest extends Model
     public $userId;
 
     /**
-     * @description 原所在部门id
+     * @description 居民名字
      *
-     * @var int
+     * @var string
      */
-    public $oldDepartmentId;
+    public $userName;
     protected $_name = [
         'address'         => 'address',
-        'isRetainOldDept' => 'isRetainOldDept',
-        'userName'        => 'userName',
-        'mobile'          => 'mobile',
         'departmentId'    => 'departmentId',
         'extField'        => 'extField',
+        'isRetainOldDept' => 'isRetainOldDept',
+        'mobile'          => 'mobile',
+        'oldDepartmentId' => 'oldDepartmentId',
         'relateType'      => 'relateType',
         'userId'          => 'userId',
-        'oldDepartmentId' => 'oldDepartmentId',
+        'userName'        => 'userName',
     ];
 
     public function validate()
@@ -92,15 +92,6 @@ class UpdateResidentUserRequest extends Model
         $res = [];
         if (null !== $this->address) {
             $res['address'] = $this->address;
-        }
-        if (null !== $this->isRetainOldDept) {
-            $res['isRetainOldDept'] = $this->isRetainOldDept;
-        }
-        if (null !== $this->userName) {
-            $res['userName'] = $this->userName;
-        }
-        if (null !== $this->mobile) {
-            $res['mobile'] = $this->mobile;
         }
         if (null !== $this->departmentId) {
             $res['departmentId'] = $this->departmentId;
@@ -114,14 +105,23 @@ class UpdateResidentUserRequest extends Model
                 }
             }
         }
+        if (null !== $this->isRetainOldDept) {
+            $res['isRetainOldDept'] = $this->isRetainOldDept;
+        }
+        if (null !== $this->mobile) {
+            $res['mobile'] = $this->mobile;
+        }
+        if (null !== $this->oldDepartmentId) {
+            $res['oldDepartmentId'] = $this->oldDepartmentId;
+        }
         if (null !== $this->relateType) {
             $res['relateType'] = $this->relateType;
         }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
         }
-        if (null !== $this->oldDepartmentId) {
-            $res['oldDepartmentId'] = $this->oldDepartmentId;
+        if (null !== $this->userName) {
+            $res['userName'] = $this->userName;
         }
 
         return $res;
@@ -138,15 +138,6 @@ class UpdateResidentUserRequest extends Model
         if (isset($map['address'])) {
             $model->address = $map['address'];
         }
-        if (isset($map['isRetainOldDept'])) {
-            $model->isRetainOldDept = $map['isRetainOldDept'];
-        }
-        if (isset($map['userName'])) {
-            $model->userName = $map['userName'];
-        }
-        if (isset($map['mobile'])) {
-            $model->mobile = $map['mobile'];
-        }
         if (isset($map['departmentId'])) {
             $model->departmentId = $map['departmentId'];
         }
@@ -159,14 +150,23 @@ class UpdateResidentUserRequest extends Model
                 }
             }
         }
+        if (isset($map['isRetainOldDept'])) {
+            $model->isRetainOldDept = $map['isRetainOldDept'];
+        }
+        if (isset($map['mobile'])) {
+            $model->mobile = $map['mobile'];
+        }
+        if (isset($map['oldDepartmentId'])) {
+            $model->oldDepartmentId = $map['oldDepartmentId'];
+        }
         if (isset($map['relateType'])) {
             $model->relateType = $map['relateType'];
         }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];
         }
-        if (isset($map['oldDepartmentId'])) {
-            $model->oldDepartmentId = $map['oldDepartmentId'];
+        if (isset($map['userName'])) {
+            $model->userName = $map['userName'];
         }
 
         return $model;

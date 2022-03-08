@@ -9,18 +9,11 @@ use AlibabaCloud\Tea\Model;
 class ListFilesRequest extends Model
 {
     /**
-     * @description 用户id
+     * @description 分页长度
      *
-     * @var string
+     * @var int
      */
-    public $unionId;
-
-    /**
-     * @description 父目录id
-     *
-     * @var string
-     */
-    public $parentId;
+    public $maxResults;
 
     /**
      * @description 分页查询锚点
@@ -30,18 +23,25 @@ class ListFilesRequest extends Model
     public $nextToken;
 
     /**
-     * @description 分页长度
-     *
-     * @var int
-     */
-    public $maxResults;
-
-    /**
      * @description 排序类型
      *
      * @var string
      */
     public $orderType;
+
+    /**
+     * @description 父目录id
+     *
+     * @var string
+     */
+    public $parentId;
+
+    /**
+     * @description 用户id
+     *
+     * @var string
+     */
+    public $unionId;
 
     /**
      * @description 是否返回文件图标
@@ -50,11 +50,11 @@ class ListFilesRequest extends Model
      */
     public $withIcon;
     protected $_name = [
-        'unionId'    => 'unionId',
-        'parentId'   => 'parentId',
-        'nextToken'  => 'nextToken',
         'maxResults' => 'maxResults',
+        'nextToken'  => 'nextToken',
         'orderType'  => 'orderType',
+        'parentId'   => 'parentId',
+        'unionId'    => 'unionId',
         'withIcon'   => 'withIcon',
     ];
 
@@ -65,20 +65,20 @@ class ListFilesRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->unionId) {
-            $res['unionId'] = $this->unionId;
-        }
-        if (null !== $this->parentId) {
-            $res['parentId'] = $this->parentId;
+        if (null !== $this->maxResults) {
+            $res['maxResults'] = $this->maxResults;
         }
         if (null !== $this->nextToken) {
             $res['nextToken'] = $this->nextToken;
         }
-        if (null !== $this->maxResults) {
-            $res['maxResults'] = $this->maxResults;
-        }
         if (null !== $this->orderType) {
             $res['orderType'] = $this->orderType;
+        }
+        if (null !== $this->parentId) {
+            $res['parentId'] = $this->parentId;
+        }
+        if (null !== $this->unionId) {
+            $res['unionId'] = $this->unionId;
         }
         if (null !== $this->withIcon) {
             $res['withIcon'] = $this->withIcon;
@@ -95,20 +95,20 @@ class ListFilesRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['unionId'])) {
-            $model->unionId = $map['unionId'];
-        }
-        if (isset($map['parentId'])) {
-            $model->parentId = $map['parentId'];
+        if (isset($map['maxResults'])) {
+            $model->maxResults = $map['maxResults'];
         }
         if (isset($map['nextToken'])) {
             $model->nextToken = $map['nextToken'];
         }
-        if (isset($map['maxResults'])) {
-            $model->maxResults = $map['maxResults'];
-        }
         if (isset($map['orderType'])) {
             $model->orderType = $map['orderType'];
+        }
+        if (isset($map['parentId'])) {
+            $model->parentId = $map['parentId'];
+        }
+        if (isset($map['unionId'])) {
+            $model->unionId = $map['unionId'];
         }
         if (isset($map['withIcon'])) {
             $model->withIcon = $map['withIcon'];

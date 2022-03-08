@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class UpdateDingPortalPageScopeRequest extends Model
 {
     /**
-     * @description 可见用户列表
+     * @description 是否全员可见
      *
-     * @var string[]
+     * @var bool
      */
-    public $userids;
+    public $allVisible;
 
     /**
      * @description 可见部门列表
@@ -30,16 +30,16 @@ class UpdateDingPortalPageScopeRequest extends Model
     public $roleIds;
 
     /**
-     * @description 是否全员可见
+     * @description 可见用户列表
      *
-     * @var bool
+     * @var string[]
      */
-    public $allVisible;
+    public $userids;
     protected $_name = [
-        'userids'    => 'userids',
+        'allVisible' => 'allVisible',
         'deptIds'    => 'deptIds',
         'roleIds'    => 'roleIds',
-        'allVisible' => 'allVisible',
+        'userids'    => 'userids',
     ];
 
     public function validate()
@@ -49,8 +49,8 @@ class UpdateDingPortalPageScopeRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->userids) {
-            $res['userids'] = $this->userids;
+        if (null !== $this->allVisible) {
+            $res['allVisible'] = $this->allVisible;
         }
         if (null !== $this->deptIds) {
             $res['deptIds'] = $this->deptIds;
@@ -58,8 +58,8 @@ class UpdateDingPortalPageScopeRequest extends Model
         if (null !== $this->roleIds) {
             $res['roleIds'] = $this->roleIds;
         }
-        if (null !== $this->allVisible) {
-            $res['allVisible'] = $this->allVisible;
+        if (null !== $this->userids) {
+            $res['userids'] = $this->userids;
         }
 
         return $res;
@@ -73,10 +73,8 @@ class UpdateDingPortalPageScopeRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['userids'])) {
-            if (!empty($map['userids'])) {
-                $model->userids = $map['userids'];
-            }
+        if (isset($map['allVisible'])) {
+            $model->allVisible = $map['allVisible'];
         }
         if (isset($map['deptIds'])) {
             if (!empty($map['deptIds'])) {
@@ -88,8 +86,10 @@ class UpdateDingPortalPageScopeRequest extends Model
                 $model->roleIds = $map['roleIds'];
             }
         }
-        if (isset($map['allVisible'])) {
-            $model->allVisible = $map['allVisible'];
+        if (isset($map['userids'])) {
+            if (!empty($map['userids'])) {
+                $model->userids = $map['userids'];
+            }
         }
 
         return $model;

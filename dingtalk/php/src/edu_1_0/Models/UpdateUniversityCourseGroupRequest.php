@@ -10,20 +10,6 @@ use AlibabaCloud\Tea\Model;
 class UpdateUniversityCourseGroupRequest extends Model
 {
     /**
-     * @description opUserId
-     *
-     * @var string
-     */
-    public $opUserId;
-
-    /**
-     * @description 扩展信息
-     *
-     * @var string
-     */
-    public $ext;
-
-    /**
      * @description 课程组编码
      *
      * @var string
@@ -50,13 +36,27 @@ class UpdateUniversityCourseGroupRequest extends Model
      * @var courserGroupItemModels[]
      */
     public $courserGroupItemModels;
+
+    /**
+     * @description 扩展信息
+     *
+     * @var string
+     */
+    public $ext;
+
+    /**
+     * @description opUserId
+     *
+     * @var string
+     */
+    public $opUserId;
     protected $_name = [
-        'opUserId'               => 'opUserId',
-        'ext'                    => 'ext',
         'courseGroupCode'        => 'courseGroupCode',
         'courseGroupIntroduce'   => 'courseGroupIntroduce',
         'courseGroupName'        => 'courseGroupName',
         'courserGroupItemModels' => 'courserGroupItemModels',
+        'ext'                    => 'ext',
+        'opUserId'               => 'opUserId',
     ];
 
     public function validate()
@@ -66,12 +66,6 @@ class UpdateUniversityCourseGroupRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->opUserId) {
-            $res['opUserId'] = $this->opUserId;
-        }
-        if (null !== $this->ext) {
-            $res['ext'] = $this->ext;
-        }
         if (null !== $this->courseGroupCode) {
             $res['courseGroupCode'] = $this->courseGroupCode;
         }
@@ -90,6 +84,12 @@ class UpdateUniversityCourseGroupRequest extends Model
                 }
             }
         }
+        if (null !== $this->ext) {
+            $res['ext'] = $this->ext;
+        }
+        if (null !== $this->opUserId) {
+            $res['opUserId'] = $this->opUserId;
+        }
 
         return $res;
     }
@@ -102,12 +102,6 @@ class UpdateUniversityCourseGroupRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['opUserId'])) {
-            $model->opUserId = $map['opUserId'];
-        }
-        if (isset($map['ext'])) {
-            $model->ext = $map['ext'];
-        }
         if (isset($map['courseGroupCode'])) {
             $model->courseGroupCode = $map['courseGroupCode'];
         }
@@ -125,6 +119,12 @@ class UpdateUniversityCourseGroupRequest extends Model
                     $model->courserGroupItemModels[$n++] = null !== $item ? courserGroupItemModels::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['ext'])) {
+            $model->ext = $map['ext'];
+        }
+        if (isset($map['opUserId'])) {
+            $model->opUserId = $map['opUserId'];
         }
 
         return $model;

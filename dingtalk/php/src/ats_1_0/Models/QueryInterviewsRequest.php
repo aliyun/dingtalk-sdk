@@ -16,6 +16,13 @@ class QueryInterviewsRequest extends Model
     public $bizCode;
 
     /**
+     * @description 候选人标识
+     *
+     * @var string
+     */
+    public $candidateId;
+
+    /**
      * @description 面试开始时间的查询起始时间（单位：毫秒）
      *
      * @var int
@@ -28,13 +35,6 @@ class QueryInterviewsRequest extends Model
      * @var int
      */
     public $startTimeEndMillis;
-
-    /**
-     * @description 候选人标识
-     *
-     * @var string
-     */
-    public $candidateId;
 
     /**
      * @description 分页游标，首次调用传空
@@ -51,9 +51,9 @@ class QueryInterviewsRequest extends Model
     public $size;
     protected $_name = [
         'bizCode'              => 'bizCode',
+        'candidateId'          => 'candidateId',
         'startTimeBeginMillis' => 'startTimeBeginMillis',
         'startTimeEndMillis'   => 'startTimeEndMillis',
-        'candidateId'          => 'candidateId',
         'nextToken'            => 'nextToken',
         'size'                 => 'size',
     ];
@@ -68,14 +68,14 @@ class QueryInterviewsRequest extends Model
         if (null !== $this->bizCode) {
             $res['bizCode'] = $this->bizCode;
         }
+        if (null !== $this->candidateId) {
+            $res['candidateId'] = $this->candidateId;
+        }
         if (null !== $this->startTimeBeginMillis) {
             $res['startTimeBeginMillis'] = $this->startTimeBeginMillis;
         }
         if (null !== $this->startTimeEndMillis) {
             $res['startTimeEndMillis'] = $this->startTimeEndMillis;
-        }
-        if (null !== $this->candidateId) {
-            $res['candidateId'] = $this->candidateId;
         }
         if (null !== $this->nextToken) {
             $res['nextToken'] = $this->nextToken;
@@ -98,14 +98,14 @@ class QueryInterviewsRequest extends Model
         if (isset($map['bizCode'])) {
             $model->bizCode = $map['bizCode'];
         }
+        if (isset($map['candidateId'])) {
+            $model->candidateId = $map['candidateId'];
+        }
         if (isset($map['startTimeBeginMillis'])) {
             $model->startTimeBeginMillis = $map['startTimeBeginMillis'];
         }
         if (isset($map['startTimeEndMillis'])) {
             $model->startTimeEndMillis = $map['startTimeEndMillis'];
-        }
-        if (isset($map['candidateId'])) {
-            $model->candidateId = $map['candidateId'];
         }
         if (isset($map['nextToken'])) {
             $model->nextToken = $map['nextToken'];

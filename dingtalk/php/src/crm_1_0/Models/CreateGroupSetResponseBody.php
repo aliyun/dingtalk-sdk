@@ -13,17 +13,37 @@ class CreateGroupSetResponseBody extends Model
     /**
      * @var string
      */
-    public $name;
+    public $corpId;
 
     /**
      * @var string
      */
-    public $openGroupSetId;
+    public $gmtCreate;
 
     /**
      * @var string
      */
-    public $relationType;
+    public $gmtModified;
+
+    /**
+     * @var string
+     */
+    public $lastOpenConversationId;
+
+    /**
+     * @var manager[]
+     */
+    public $manager;
+
+    /**
+     * @var string
+     */
+    public $managerUserIds;
+
+    /**
+     * @var int
+     */
+    public $memberCount;
 
     /**
      * @var int
@@ -33,27 +53,7 @@ class CreateGroupSetResponseBody extends Model
     /**
      * @var string
      */
-    public $corpId;
-
-    /**
-     * @var int
-     */
-    public $memberCount;
-
-    /**
-     * @var string
-     */
-    public $templateId;
-
-    /**
-     * @var string
-     */
-    public $ownerUserId;
-
-    /**
-     * @var string
-     */
-    public $managerUserIds;
+    public $name;
 
     /**
      * @var string
@@ -66,46 +66,46 @@ class CreateGroupSetResponseBody extends Model
     public $noticeToped;
 
     /**
+     * @var string
+     */
+    public $openGroupSetId;
+
+    /**
      * @var owner
      */
     public $owner;
 
     /**
-     * @var manager[]
+     * @var string
      */
-    public $manager;
+    public $ownerUserId;
 
     /**
      * @var string
      */
-    public $lastOpenConversationId;
+    public $relationType;
 
     /**
      * @var string
      */
-    public $gmtCreate;
-
-    /**
-     * @var string
-     */
-    public $gmtModified;
+    public $templateId;
     protected $_name = [
-        'name'                   => 'name',
-        'openGroupSetId'         => 'openGroupSetId',
-        'relationType'           => 'relationType',
-        'memberQuota'            => 'memberQuota',
         'corpId'                 => 'corpId',
-        'memberCount'            => 'memberCount',
-        'templateId'             => 'templateId',
-        'ownerUserId'            => 'ownerUserId',
-        'managerUserIds'         => 'managerUserIds',
-        'notice'                 => 'notice',
-        'noticeToped'            => 'noticeToped',
-        'owner'                  => 'owner',
-        'manager'                => 'manager',
-        'lastOpenConversationId' => 'lastOpenConversationId',
         'gmtCreate'              => 'gmtCreate',
         'gmtModified'            => 'gmtModified',
+        'lastOpenConversationId' => 'lastOpenConversationId',
+        'manager'                => 'manager',
+        'managerUserIds'         => 'managerUserIds',
+        'memberCount'            => 'memberCount',
+        'memberQuota'            => 'memberQuota',
+        'name'                   => 'name',
+        'notice'                 => 'notice',
+        'noticeToped'            => 'noticeToped',
+        'openGroupSetId'         => 'openGroupSetId',
+        'owner'                  => 'owner',
+        'ownerUserId'            => 'ownerUserId',
+        'relationType'           => 'relationType',
+        'templateId'             => 'templateId',
     ];
 
     public function validate()
@@ -115,41 +115,17 @@ class CreateGroupSetResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
-        }
-        if (null !== $this->openGroupSetId) {
-            $res['openGroupSetId'] = $this->openGroupSetId;
-        }
-        if (null !== $this->relationType) {
-            $res['relationType'] = $this->relationType;
-        }
-        if (null !== $this->memberQuota) {
-            $res['memberQuota'] = $this->memberQuota;
-        }
         if (null !== $this->corpId) {
             $res['corpId'] = $this->corpId;
         }
-        if (null !== $this->memberCount) {
-            $res['memberCount'] = $this->memberCount;
+        if (null !== $this->gmtCreate) {
+            $res['gmtCreate'] = $this->gmtCreate;
         }
-        if (null !== $this->templateId) {
-            $res['templateId'] = $this->templateId;
+        if (null !== $this->gmtModified) {
+            $res['gmtModified'] = $this->gmtModified;
         }
-        if (null !== $this->ownerUserId) {
-            $res['ownerUserId'] = $this->ownerUserId;
-        }
-        if (null !== $this->managerUserIds) {
-            $res['managerUserIds'] = $this->managerUserIds;
-        }
-        if (null !== $this->notice) {
-            $res['notice'] = $this->notice;
-        }
-        if (null !== $this->noticeToped) {
-            $res['noticeToped'] = $this->noticeToped;
-        }
-        if (null !== $this->owner) {
-            $res['owner'] = null !== $this->owner ? $this->owner->toMap() : null;
+        if (null !== $this->lastOpenConversationId) {
+            $res['lastOpenConversationId'] = $this->lastOpenConversationId;
         }
         if (null !== $this->manager) {
             $res['manager'] = [];
@@ -160,14 +136,38 @@ class CreateGroupSetResponseBody extends Model
                 }
             }
         }
-        if (null !== $this->lastOpenConversationId) {
-            $res['lastOpenConversationId'] = $this->lastOpenConversationId;
+        if (null !== $this->managerUserIds) {
+            $res['managerUserIds'] = $this->managerUserIds;
         }
-        if (null !== $this->gmtCreate) {
-            $res['gmtCreate'] = $this->gmtCreate;
+        if (null !== $this->memberCount) {
+            $res['memberCount'] = $this->memberCount;
         }
-        if (null !== $this->gmtModified) {
-            $res['gmtModified'] = $this->gmtModified;
+        if (null !== $this->memberQuota) {
+            $res['memberQuota'] = $this->memberQuota;
+        }
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
+        }
+        if (null !== $this->notice) {
+            $res['notice'] = $this->notice;
+        }
+        if (null !== $this->noticeToped) {
+            $res['noticeToped'] = $this->noticeToped;
+        }
+        if (null !== $this->openGroupSetId) {
+            $res['openGroupSetId'] = $this->openGroupSetId;
+        }
+        if (null !== $this->owner) {
+            $res['owner'] = null !== $this->owner ? $this->owner->toMap() : null;
+        }
+        if (null !== $this->ownerUserId) {
+            $res['ownerUserId'] = $this->ownerUserId;
+        }
+        if (null !== $this->relationType) {
+            $res['relationType'] = $this->relationType;
+        }
+        if (null !== $this->templateId) {
+            $res['templateId'] = $this->templateId;
         }
 
         return $res;
@@ -181,41 +181,17 @@ class CreateGroupSetResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
-        }
-        if (isset($map['openGroupSetId'])) {
-            $model->openGroupSetId = $map['openGroupSetId'];
-        }
-        if (isset($map['relationType'])) {
-            $model->relationType = $map['relationType'];
-        }
-        if (isset($map['memberQuota'])) {
-            $model->memberQuota = $map['memberQuota'];
-        }
         if (isset($map['corpId'])) {
             $model->corpId = $map['corpId'];
         }
-        if (isset($map['memberCount'])) {
-            $model->memberCount = $map['memberCount'];
+        if (isset($map['gmtCreate'])) {
+            $model->gmtCreate = $map['gmtCreate'];
         }
-        if (isset($map['templateId'])) {
-            $model->templateId = $map['templateId'];
+        if (isset($map['gmtModified'])) {
+            $model->gmtModified = $map['gmtModified'];
         }
-        if (isset($map['ownerUserId'])) {
-            $model->ownerUserId = $map['ownerUserId'];
-        }
-        if (isset($map['managerUserIds'])) {
-            $model->managerUserIds = $map['managerUserIds'];
-        }
-        if (isset($map['notice'])) {
-            $model->notice = $map['notice'];
-        }
-        if (isset($map['noticeToped'])) {
-            $model->noticeToped = $map['noticeToped'];
-        }
-        if (isset($map['owner'])) {
-            $model->owner = owner::fromMap($map['owner']);
+        if (isset($map['lastOpenConversationId'])) {
+            $model->lastOpenConversationId = $map['lastOpenConversationId'];
         }
         if (isset($map['manager'])) {
             if (!empty($map['manager'])) {
@@ -226,14 +202,38 @@ class CreateGroupSetResponseBody extends Model
                 }
             }
         }
-        if (isset($map['lastOpenConversationId'])) {
-            $model->lastOpenConversationId = $map['lastOpenConversationId'];
+        if (isset($map['managerUserIds'])) {
+            $model->managerUserIds = $map['managerUserIds'];
         }
-        if (isset($map['gmtCreate'])) {
-            $model->gmtCreate = $map['gmtCreate'];
+        if (isset($map['memberCount'])) {
+            $model->memberCount = $map['memberCount'];
         }
-        if (isset($map['gmtModified'])) {
-            $model->gmtModified = $map['gmtModified'];
+        if (isset($map['memberQuota'])) {
+            $model->memberQuota = $map['memberQuota'];
+        }
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
+        }
+        if (isset($map['notice'])) {
+            $model->notice = $map['notice'];
+        }
+        if (isset($map['noticeToped'])) {
+            $model->noticeToped = $map['noticeToped'];
+        }
+        if (isset($map['openGroupSetId'])) {
+            $model->openGroupSetId = $map['openGroupSetId'];
+        }
+        if (isset($map['owner'])) {
+            $model->owner = owner::fromMap($map['owner']);
+        }
+        if (isset($map['ownerUserId'])) {
+            $model->ownerUserId = $map['ownerUserId'];
+        }
+        if (isset($map['relationType'])) {
+            $model->relationType = $map['relationType'];
+        }
+        if (isset($map['templateId'])) {
+            $model->templateId = $map['templateId'];
         }
 
         return $model;

@@ -16,13 +16,6 @@ class userFaceList extends Model
     public $faceId;
 
     /**
-     * @description 员工id
-     *
-     * @var string
-     */
-    public $userId;
-
-    /**
      * @description 员工名字
      *
      * @var string
@@ -35,11 +28,18 @@ class userFaceList extends Model
      * @var int
      */
     public $status;
+
+    /**
+     * @description 员工id
+     *
+     * @var string
+     */
+    public $userId;
     protected $_name = [
         'faceId' => 'faceId',
-        'userId' => 'userId',
         'name'   => 'name',
         'status' => 'status',
+        'userId' => 'userId',
     ];
 
     public function validate()
@@ -52,14 +52,14 @@ class userFaceList extends Model
         if (null !== $this->faceId) {
             $res['faceId'] = $this->faceId;
         }
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
-        }
         if (null !== $this->name) {
             $res['name'] = $this->name;
         }
         if (null !== $this->status) {
             $res['status'] = $this->status;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -76,14 +76,14 @@ class userFaceList extends Model
         if (isset($map['faceId'])) {
             $model->faceId = $map['faceId'];
         }
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
-        }
         if (isset($map['name'])) {
             $model->name = $map['name'];
         }
         if (isset($map['status'])) {
             $model->status = $map['status'];
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

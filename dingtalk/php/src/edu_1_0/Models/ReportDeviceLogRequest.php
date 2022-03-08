@@ -9,18 +9,18 @@ use AlibabaCloud\Tea\Model;
 class ReportDeviceLogRequest extends Model
 {
     /**
-     * @description 设备序列号
-     *
-     * @var string
-     */
-    public $sn;
-
-    /**
      * @description 文件id
      *
      * @var string
      */
     public $mediaId;
+
+    /**
+     * @description 设备序列号
+     *
+     * @var string
+     */
+    public $sn;
 
     /**
      * @description 文件类型
@@ -29,8 +29,8 @@ class ReportDeviceLogRequest extends Model
      */
     public $type;
     protected $_name = [
-        'sn'      => 'sn',
         'mediaId' => 'mediaId',
+        'sn'      => 'sn',
         'type'    => 'type',
     ];
 
@@ -41,11 +41,11 @@ class ReportDeviceLogRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->sn) {
-            $res['sn'] = $this->sn;
-        }
         if (null !== $this->mediaId) {
             $res['mediaId'] = $this->mediaId;
+        }
+        if (null !== $this->sn) {
+            $res['sn'] = $this->sn;
         }
         if (null !== $this->type) {
             $res['type'] = $this->type;
@@ -62,11 +62,11 @@ class ReportDeviceLogRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['sn'])) {
-            $model->sn = $map['sn'];
-        }
         if (isset($map['mediaId'])) {
             $model->mediaId = $map['mediaId'];
+        }
+        if (isset($map['sn'])) {
+            $model->sn = $map['sn'];
         }
         if (isset($map['type'])) {
             $model->type = $map['type'];

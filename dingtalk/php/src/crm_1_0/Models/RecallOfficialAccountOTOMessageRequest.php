@@ -9,26 +9,6 @@ use AlibabaCloud\Tea\Model;
 class RecallOfficialAccountOTOMessageRequest extends Model
 {
     /**
-     * @var string
-     */
-    public $dingSuiteKey;
-
-    /**
-     * @var int
-     */
-    public $dingOrgId;
-
-    /**
-     * @var int
-     */
-    public $dingIsvOrgId;
-
-    /**
-     * @var int
-     */
-    public $dingTokenGrantType;
-
-    /**
      * @description 帐号ID 可空
      *
      * @var string
@@ -42,12 +22,8 @@ class RecallOfficialAccountOTOMessageRequest extends Model
      */
     public $openPushId;
     protected $_name = [
-        'dingSuiteKey'       => 'dingSuiteKey',
-        'dingOrgId'          => 'dingOrgId',
-        'dingIsvOrgId'       => 'dingIsvOrgId',
-        'dingTokenGrantType' => 'dingTokenGrantType',
-        'accountId'          => 'accountId',
-        'openPushId'         => 'openPushId',
+        'accountId'  => 'accountId',
+        'openPushId' => 'openPushId',
     ];
 
     public function validate()
@@ -57,18 +33,6 @@ class RecallOfficialAccountOTOMessageRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->dingSuiteKey) {
-            $res['dingSuiteKey'] = $this->dingSuiteKey;
-        }
-        if (null !== $this->dingOrgId) {
-            $res['dingOrgId'] = $this->dingOrgId;
-        }
-        if (null !== $this->dingIsvOrgId) {
-            $res['dingIsvOrgId'] = $this->dingIsvOrgId;
-        }
-        if (null !== $this->dingTokenGrantType) {
-            $res['dingTokenGrantType'] = $this->dingTokenGrantType;
-        }
         if (null !== $this->accountId) {
             $res['accountId'] = $this->accountId;
         }
@@ -87,18 +51,6 @@ class RecallOfficialAccountOTOMessageRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['dingSuiteKey'])) {
-            $model->dingSuiteKey = $map['dingSuiteKey'];
-        }
-        if (isset($map['dingOrgId'])) {
-            $model->dingOrgId = $map['dingOrgId'];
-        }
-        if (isset($map['dingIsvOrgId'])) {
-            $model->dingIsvOrgId = $map['dingIsvOrgId'];
-        }
-        if (isset($map['dingTokenGrantType'])) {
-            $model->dingTokenGrantType = $map['dingTokenGrantType'];
-        }
         if (isset($map['accountId'])) {
             $model->accountId = $map['accountId'];
         }

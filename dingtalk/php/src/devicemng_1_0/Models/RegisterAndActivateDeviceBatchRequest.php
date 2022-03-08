@@ -10,16 +10,10 @@ use AlibabaCloud\Tea\Model;
 class RegisterAndActivateDeviceBatchRequest extends Model
 {
     /**
-     * @var string
-     */
-    public $dingCorpId;
-
-    /**
      * @var registerAndActivateVOS[]
      */
     public $registerAndActivateVOS;
     protected $_name = [
-        'dingCorpId'             => 'dingCorpId',
         'registerAndActivateVOS' => 'registerAndActivateVOS',
     ];
 
@@ -30,9 +24,6 @@ class RegisterAndActivateDeviceBatchRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->dingCorpId) {
-            $res['dingCorpId'] = $this->dingCorpId;
-        }
         if (null !== $this->registerAndActivateVOS) {
             $res['registerAndActivateVOS'] = [];
             if (null !== $this->registerAndActivateVOS && \is_array($this->registerAndActivateVOS)) {
@@ -54,9 +45,6 @@ class RegisterAndActivateDeviceBatchRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['dingCorpId'])) {
-            $model->dingCorpId = $map['dingCorpId'];
-        }
         if (isset($map['registerAndActivateVOS'])) {
             if (!empty($map['registerAndActivateVOS'])) {
                 $model->registerAndActivateVOS = [];

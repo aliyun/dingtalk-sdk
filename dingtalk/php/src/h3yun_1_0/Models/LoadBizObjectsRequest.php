@@ -10,11 +10,11 @@ use AlibabaCloud\Tea\Model;
 class LoadBizObjectsRequest extends Model
 {
     /**
-     * @description 表单编码
+     * @description json格式的动态条件过滤器参数
      *
      * @var string
      */
-    public $schemaCode;
+    public $matcherJson;
 
     /**
      * @description 分页页码
@@ -38,25 +38,25 @@ class LoadBizObjectsRequest extends Model
     public $returnFields;
 
     /**
+     * @description 表单编码
+     *
+     * @var string
+     */
+    public $schemaCode;
+
+    /**
      * @description 排序字段结构数组
      *
      * @var sortByFields[]
      */
     public $sortByFields;
-
-    /**
-     * @description json格式的动态条件过滤器参数
-     *
-     * @var string
-     */
-    public $matcherJson;
     protected $_name = [
-        'schemaCode'   => 'schemaCode',
+        'matcherJson'  => 'matcherJson',
         'pageNumber'   => 'pageNumber',
         'pageSize'     => 'pageSize',
         'returnFields' => 'returnFields',
+        'schemaCode'   => 'schemaCode',
         'sortByFields' => 'sortByFields',
-        'matcherJson'  => 'matcherJson',
     ];
 
     public function validate()
@@ -66,8 +66,8 @@ class LoadBizObjectsRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->schemaCode) {
-            $res['schemaCode'] = $this->schemaCode;
+        if (null !== $this->matcherJson) {
+            $res['matcherJson'] = $this->matcherJson;
         }
         if (null !== $this->pageNumber) {
             $res['pageNumber'] = $this->pageNumber;
@@ -78,6 +78,9 @@ class LoadBizObjectsRequest extends Model
         if (null !== $this->returnFields) {
             $res['returnFields'] = $this->returnFields;
         }
+        if (null !== $this->schemaCode) {
+            $res['schemaCode'] = $this->schemaCode;
+        }
         if (null !== $this->sortByFields) {
             $res['sortByFields'] = [];
             if (null !== $this->sortByFields && \is_array($this->sortByFields)) {
@@ -86,9 +89,6 @@ class LoadBizObjectsRequest extends Model
                     $res['sortByFields'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
-        }
-        if (null !== $this->matcherJson) {
-            $res['matcherJson'] = $this->matcherJson;
         }
 
         return $res;
@@ -102,8 +102,8 @@ class LoadBizObjectsRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['schemaCode'])) {
-            $model->schemaCode = $map['schemaCode'];
+        if (isset($map['matcherJson'])) {
+            $model->matcherJson = $map['matcherJson'];
         }
         if (isset($map['pageNumber'])) {
             $model->pageNumber = $map['pageNumber'];
@@ -116,6 +116,9 @@ class LoadBizObjectsRequest extends Model
                 $model->returnFields = $map['returnFields'];
             }
         }
+        if (isset($map['schemaCode'])) {
+            $model->schemaCode = $map['schemaCode'];
+        }
         if (isset($map['sortByFields'])) {
             if (!empty($map['sortByFields'])) {
                 $model->sortByFields = [];
@@ -124,9 +127,6 @@ class LoadBizObjectsRequest extends Model
                     $model->sortByFields[$n++] = null !== $item ? sortByFields::fromMap($item) : $item;
                 }
             }
-        }
-        if (isset($map['matcherJson'])) {
-            $model->matcherJson = $map['matcherJson'];
         }
 
         return $model;

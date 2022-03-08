@@ -10,6 +10,13 @@ use AlibabaCloud\Tea\Model;
 class GetTaskCopiesResponseBody extends Model
 {
     /**
+     * @description 数据
+     *
+     * @var data[]
+     */
+    public $data;
+
+    /**
      * @description 当前第几页
      *
      * @var int
@@ -22,17 +29,10 @@ class GetTaskCopiesResponseBody extends Model
      * @var int
      */
     public $totalCount;
-
-    /**
-     * @description 数据
-     *
-     * @var data[]
-     */
-    public $data;
     protected $_name = [
+        'data'       => 'data',
         'pageNumber' => 'pageNumber',
         'totalCount' => 'totalCount',
-        'data'       => 'data',
     ];
 
     public function validate()
@@ -42,12 +42,6 @@ class GetTaskCopiesResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->pageNumber) {
-            $res['pageNumber'] = $this->pageNumber;
-        }
-        if (null !== $this->totalCount) {
-            $res['totalCount'] = $this->totalCount;
-        }
         if (null !== $this->data) {
             $res['data'] = [];
             if (null !== $this->data && \is_array($this->data)) {
@@ -56,6 +50,12 @@ class GetTaskCopiesResponseBody extends Model
                     $res['data'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->pageNumber) {
+            $res['pageNumber'] = $this->pageNumber;
+        }
+        if (null !== $this->totalCount) {
+            $res['totalCount'] = $this->totalCount;
         }
 
         return $res;
@@ -69,12 +69,6 @@ class GetTaskCopiesResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['pageNumber'])) {
-            $model->pageNumber = $map['pageNumber'];
-        }
-        if (isset($map['totalCount'])) {
-            $model->totalCount = $map['totalCount'];
-        }
         if (isset($map['data'])) {
             if (!empty($map['data'])) {
                 $model->data = [];
@@ -83,6 +77,12 @@ class GetTaskCopiesResponseBody extends Model
                     $model->data[$n++] = null !== $item ? data::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['pageNumber'])) {
+            $model->pageNumber = $map['pageNumber'];
+        }
+        if (isset($map['totalCount'])) {
+            $model->totalCount = $map['totalCount'];
         }
 
         return $model;

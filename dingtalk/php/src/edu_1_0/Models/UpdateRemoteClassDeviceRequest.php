@@ -11,20 +11,20 @@ class UpdateRemoteClassDeviceRequest extends Model
     /**
      * @var string
      */
-    public $deviceCode;
+    public $authCode;
 
     /**
      * @var string
      */
-    public $authCode;
+    public $deviceCode;
 
     /**
      * @var string
      */
     public $deviceName;
     protected $_name = [
-        'deviceCode' => 'deviceCode',
         'authCode'   => 'authCode',
+        'deviceCode' => 'deviceCode',
         'deviceName' => 'deviceName',
     ];
 
@@ -35,11 +35,11 @@ class UpdateRemoteClassDeviceRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->deviceCode) {
-            $res['deviceCode'] = $this->deviceCode;
-        }
         if (null !== $this->authCode) {
             $res['authCode'] = $this->authCode;
+        }
+        if (null !== $this->deviceCode) {
+            $res['deviceCode'] = $this->deviceCode;
         }
         if (null !== $this->deviceName) {
             $res['deviceName'] = $this->deviceName;
@@ -56,11 +56,11 @@ class UpdateRemoteClassDeviceRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['deviceCode'])) {
-            $model->deviceCode = $map['deviceCode'];
-        }
         if (isset($map['authCode'])) {
             $model->authCode = $map['authCode'];
+        }
+        if (isset($map['deviceCode'])) {
+            $model->deviceCode = $map['deviceCode'];
         }
         if (isset($map['deviceName'])) {
             $model->deviceName = $map['deviceName'];

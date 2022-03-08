@@ -10,52 +10,11 @@ use AlibabaCloud\Tea\Model;
 class SendServiceGroupMessageRequest extends Model
 {
     /**
-     * @var int
-     */
-    public $dingIsvOrgId;
-
-    /**
-     * @var int
-     */
-    public $dingOrgId;
-
-    /**
-     * @var int
-     */
-    public $dingTokenGrantType;
-
-    /**
-     * @var string
-     */
-    public $dingSuiteKey;
-
-    /**
-     * @description 开放群ID
+     * @description at dingtalkId
      *
-     * @var string
+     * @var string[]
      */
-    public $targetOpenConversationId;
-
-    /**
-     * @description 标题
-     *
-     * @var string
-     */
-    public $title;
-
-    /**
-     * @description 内容
-     *
-     * @var string
-     */
-    public $content;
-
-    /**
-     * @description 是否 at所有人
-     *
-     * @var bool
-     */
-    public $isAtAll;
+    public $atDingtalkIds;
 
     /**
      * @description at 手机号
@@ -65,46 +24,11 @@ class SendServiceGroupMessageRequest extends Model
     public $atMobiles;
 
     /**
-     * @description at dingtalkId
-     *
-     * @var string[]
-     */
-    public $atDingtalkIds;
-
-    /**
      * @description at unionIds
      *
      * @var string[]
      */
     public $atUnionIds;
-
-    /**
-     * @description 手机号接收者
-     *
-     * @var string[]
-     */
-    public $receiverMobiles;
-
-    /**
-     * @description dingtalkId接收者
-     *
-     * @var string[]
-     */
-    public $receiverDingtalkIds;
-
-    /**
-     * @description unionId接收者
-     *
-     * @var string[]
-     */
-    public $receiverUnionIds;
-
-    /**
-     * @description 消息类型：MARKDOWN，ACTIONCARD
-     *
-     * @var string
-     */
-    public $messageType;
 
     /**
      * @description 排列方式：0-按钮竖直排列，1-按钮横向排列
@@ -121,30 +45,82 @@ class SendServiceGroupMessageRequest extends Model
     public $btns;
 
     /**
+     * @description 内容
+     *
+     * @var string
+     */
+    public $content;
+
+    /**
      * @description 如果正文内容包含链接，并且按钮链接和文本链接分开跳转，则传递true; 否则传递false
      *
      * @var bool
      */
     public $hasContentLinks;
+
+    /**
+     * @description 是否 at所有人
+     *
+     * @var bool
+     */
+    public $isAtAll;
+
+    /**
+     * @description 消息类型：MARKDOWN，ACTIONCARD
+     *
+     * @var string
+     */
+    public $messageType;
+
+    /**
+     * @description dingtalkId接收者
+     *
+     * @var string[]
+     */
+    public $receiverDingtalkIds;
+
+    /**
+     * @description 手机号接收者
+     *
+     * @var string[]
+     */
+    public $receiverMobiles;
+
+    /**
+     * @description unionId接收者
+     *
+     * @var string[]
+     */
+    public $receiverUnionIds;
+
+    /**
+     * @description 开放群ID
+     *
+     * @var string
+     */
+    public $targetOpenConversationId;
+
+    /**
+     * @description 标题
+     *
+     * @var string
+     */
+    public $title;
     protected $_name = [
-        'dingIsvOrgId'             => 'dingIsvOrgId',
-        'dingOrgId'                => 'dingOrgId',
-        'dingTokenGrantType'       => 'dingTokenGrantType',
-        'dingSuiteKey'             => 'dingSuiteKey',
-        'targetOpenConversationId' => 'targetOpenConversationId',
-        'title'                    => 'title',
-        'content'                  => 'content',
-        'isAtAll'                  => 'isAtAll',
-        'atMobiles'                => 'atMobiles',
         'atDingtalkIds'            => 'atDingtalkIds',
+        'atMobiles'                => 'atMobiles',
         'atUnionIds'               => 'atUnionIds',
-        'receiverMobiles'          => 'receiverMobiles',
-        'receiverDingtalkIds'      => 'receiverDingtalkIds',
-        'receiverUnionIds'         => 'receiverUnionIds',
-        'messageType'              => 'messageType',
         'btnOrientation'           => 'btnOrientation',
         'btns'                     => 'btns',
+        'content'                  => 'content',
         'hasContentLinks'          => 'hasContentLinks',
+        'isAtAll'                  => 'isAtAll',
+        'messageType'              => 'messageType',
+        'receiverDingtalkIds'      => 'receiverDingtalkIds',
+        'receiverMobiles'          => 'receiverMobiles',
+        'receiverUnionIds'         => 'receiverUnionIds',
+        'targetOpenConversationId' => 'targetOpenConversationId',
+        'title'                    => 'title',
     ];
 
     public function validate()
@@ -154,50 +130,14 @@ class SendServiceGroupMessageRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->dingIsvOrgId) {
-            $res['dingIsvOrgId'] = $this->dingIsvOrgId;
-        }
-        if (null !== $this->dingOrgId) {
-            $res['dingOrgId'] = $this->dingOrgId;
-        }
-        if (null !== $this->dingTokenGrantType) {
-            $res['dingTokenGrantType'] = $this->dingTokenGrantType;
-        }
-        if (null !== $this->dingSuiteKey) {
-            $res['dingSuiteKey'] = $this->dingSuiteKey;
-        }
-        if (null !== $this->targetOpenConversationId) {
-            $res['targetOpenConversationId'] = $this->targetOpenConversationId;
-        }
-        if (null !== $this->title) {
-            $res['title'] = $this->title;
-        }
-        if (null !== $this->content) {
-            $res['content'] = $this->content;
-        }
-        if (null !== $this->isAtAll) {
-            $res['isAtAll'] = $this->isAtAll;
+        if (null !== $this->atDingtalkIds) {
+            $res['atDingtalkIds'] = $this->atDingtalkIds;
         }
         if (null !== $this->atMobiles) {
             $res['atMobiles'] = $this->atMobiles;
         }
-        if (null !== $this->atDingtalkIds) {
-            $res['atDingtalkIds'] = $this->atDingtalkIds;
-        }
         if (null !== $this->atUnionIds) {
             $res['atUnionIds'] = $this->atUnionIds;
-        }
-        if (null !== $this->receiverMobiles) {
-            $res['receiverMobiles'] = $this->receiverMobiles;
-        }
-        if (null !== $this->receiverDingtalkIds) {
-            $res['receiverDingtalkIds'] = $this->receiverDingtalkIds;
-        }
-        if (null !== $this->receiverUnionIds) {
-            $res['receiverUnionIds'] = $this->receiverUnionIds;
-        }
-        if (null !== $this->messageType) {
-            $res['messageType'] = $this->messageType;
         }
         if (null !== $this->btnOrientation) {
             $res['btnOrientation'] = $this->btnOrientation;
@@ -211,8 +151,32 @@ class SendServiceGroupMessageRequest extends Model
                 }
             }
         }
+        if (null !== $this->content) {
+            $res['content'] = $this->content;
+        }
         if (null !== $this->hasContentLinks) {
             $res['hasContentLinks'] = $this->hasContentLinks;
+        }
+        if (null !== $this->isAtAll) {
+            $res['isAtAll'] = $this->isAtAll;
+        }
+        if (null !== $this->messageType) {
+            $res['messageType'] = $this->messageType;
+        }
+        if (null !== $this->receiverDingtalkIds) {
+            $res['receiverDingtalkIds'] = $this->receiverDingtalkIds;
+        }
+        if (null !== $this->receiverMobiles) {
+            $res['receiverMobiles'] = $this->receiverMobiles;
+        }
+        if (null !== $this->receiverUnionIds) {
+            $res['receiverUnionIds'] = $this->receiverUnionIds;
+        }
+        if (null !== $this->targetOpenConversationId) {
+            $res['targetOpenConversationId'] = $this->targetOpenConversationId;
+        }
+        if (null !== $this->title) {
+            $res['title'] = $this->title;
         }
 
         return $res;
@@ -226,62 +190,20 @@ class SendServiceGroupMessageRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['dingIsvOrgId'])) {
-            $model->dingIsvOrgId = $map['dingIsvOrgId'];
-        }
-        if (isset($map['dingOrgId'])) {
-            $model->dingOrgId = $map['dingOrgId'];
-        }
-        if (isset($map['dingTokenGrantType'])) {
-            $model->dingTokenGrantType = $map['dingTokenGrantType'];
-        }
-        if (isset($map['dingSuiteKey'])) {
-            $model->dingSuiteKey = $map['dingSuiteKey'];
-        }
-        if (isset($map['targetOpenConversationId'])) {
-            $model->targetOpenConversationId = $map['targetOpenConversationId'];
-        }
-        if (isset($map['title'])) {
-            $model->title = $map['title'];
-        }
-        if (isset($map['content'])) {
-            $model->content = $map['content'];
-        }
-        if (isset($map['isAtAll'])) {
-            $model->isAtAll = $map['isAtAll'];
+        if (isset($map['atDingtalkIds'])) {
+            if (!empty($map['atDingtalkIds'])) {
+                $model->atDingtalkIds = $map['atDingtalkIds'];
+            }
         }
         if (isset($map['atMobiles'])) {
             if (!empty($map['atMobiles'])) {
                 $model->atMobiles = $map['atMobiles'];
             }
         }
-        if (isset($map['atDingtalkIds'])) {
-            if (!empty($map['atDingtalkIds'])) {
-                $model->atDingtalkIds = $map['atDingtalkIds'];
-            }
-        }
         if (isset($map['atUnionIds'])) {
             if (!empty($map['atUnionIds'])) {
                 $model->atUnionIds = $map['atUnionIds'];
             }
-        }
-        if (isset($map['receiverMobiles'])) {
-            if (!empty($map['receiverMobiles'])) {
-                $model->receiverMobiles = $map['receiverMobiles'];
-            }
-        }
-        if (isset($map['receiverDingtalkIds'])) {
-            if (!empty($map['receiverDingtalkIds'])) {
-                $model->receiverDingtalkIds = $map['receiverDingtalkIds'];
-            }
-        }
-        if (isset($map['receiverUnionIds'])) {
-            if (!empty($map['receiverUnionIds'])) {
-                $model->receiverUnionIds = $map['receiverUnionIds'];
-            }
-        }
-        if (isset($map['messageType'])) {
-            $model->messageType = $map['messageType'];
         }
         if (isset($map['btnOrientation'])) {
             $model->btnOrientation = $map['btnOrientation'];
@@ -295,8 +217,38 @@ class SendServiceGroupMessageRequest extends Model
                 }
             }
         }
+        if (isset($map['content'])) {
+            $model->content = $map['content'];
+        }
         if (isset($map['hasContentLinks'])) {
             $model->hasContentLinks = $map['hasContentLinks'];
+        }
+        if (isset($map['isAtAll'])) {
+            $model->isAtAll = $map['isAtAll'];
+        }
+        if (isset($map['messageType'])) {
+            $model->messageType = $map['messageType'];
+        }
+        if (isset($map['receiverDingtalkIds'])) {
+            if (!empty($map['receiverDingtalkIds'])) {
+                $model->receiverDingtalkIds = $map['receiverDingtalkIds'];
+            }
+        }
+        if (isset($map['receiverMobiles'])) {
+            if (!empty($map['receiverMobiles'])) {
+                $model->receiverMobiles = $map['receiverMobiles'];
+            }
+        }
+        if (isset($map['receiverUnionIds'])) {
+            if (!empty($map['receiverUnionIds'])) {
+                $model->receiverUnionIds = $map['receiverUnionIds'];
+            }
+        }
+        if (isset($map['targetOpenConversationId'])) {
+            $model->targetOpenConversationId = $map['targetOpenConversationId'];
+        }
+        if (isset($map['title'])) {
+            $model->title = $map['title'];
         }
 
         return $model;

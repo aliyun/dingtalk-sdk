@@ -23,11 +23,18 @@ class corpList extends Model
     public $corpName;
 
     /**
-     * @description 区域类型，值为county,town,community,residential，依次为区/县、乡/镇/街道、社区/村、小区
+     * @description 组织行业名称
      *
      * @var string
      */
-    public $regionType;
+    public $industry;
+
+    /**
+     * @description 组织行业码
+     *
+     * @var int
+     */
+    public $industryCode;
 
     /**
      * @description 区域码
@@ -44,26 +51,19 @@ class corpList extends Model
     public $regionLocation;
 
     /**
-     * @description 组织行业码
-     *
-     * @var int
-     */
-    public $industryCode;
-
-    /**
-     * @description 组织行业名称
+     * @description 区域类型，值为county,town,community,residential，依次为区/县、乡/镇/街道、社区/村、小区
      *
      * @var string
      */
-    public $industry;
+    public $regionType;
     protected $_name = [
         'corpId'         => 'corpId',
         'corpName'       => 'corpName',
-        'regionType'     => 'regionType',
+        'industry'       => 'industry',
+        'industryCode'   => 'industryCode',
         'regionId'       => 'regionId',
         'regionLocation' => 'regionLocation',
-        'industryCode'   => 'industryCode',
-        'industry'       => 'industry',
+        'regionType'     => 'regionType',
     ];
 
     public function validate()
@@ -79,8 +79,11 @@ class corpList extends Model
         if (null !== $this->corpName) {
             $res['corpName'] = $this->corpName;
         }
-        if (null !== $this->regionType) {
-            $res['regionType'] = $this->regionType;
+        if (null !== $this->industry) {
+            $res['industry'] = $this->industry;
+        }
+        if (null !== $this->industryCode) {
+            $res['industryCode'] = $this->industryCode;
         }
         if (null !== $this->regionId) {
             $res['regionId'] = $this->regionId;
@@ -88,11 +91,8 @@ class corpList extends Model
         if (null !== $this->regionLocation) {
             $res['regionLocation'] = $this->regionLocation;
         }
-        if (null !== $this->industryCode) {
-            $res['industryCode'] = $this->industryCode;
-        }
-        if (null !== $this->industry) {
-            $res['industry'] = $this->industry;
+        if (null !== $this->regionType) {
+            $res['regionType'] = $this->regionType;
         }
 
         return $res;
@@ -112,8 +112,11 @@ class corpList extends Model
         if (isset($map['corpName'])) {
             $model->corpName = $map['corpName'];
         }
-        if (isset($map['regionType'])) {
-            $model->regionType = $map['regionType'];
+        if (isset($map['industry'])) {
+            $model->industry = $map['industry'];
+        }
+        if (isset($map['industryCode'])) {
+            $model->industryCode = $map['industryCode'];
         }
         if (isset($map['regionId'])) {
             $model->regionId = $map['regionId'];
@@ -121,11 +124,8 @@ class corpList extends Model
         if (isset($map['regionLocation'])) {
             $model->regionLocation = $map['regionLocation'];
         }
-        if (isset($map['industryCode'])) {
-            $model->industryCode = $map['industryCode'];
-        }
-        if (isset($map['industry'])) {
-            $model->industry = $map['industry'];
+        if (isset($map['regionType'])) {
+            $model->regionType = $map['regionType'];
         }
 
         return $model;

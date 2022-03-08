@@ -10,11 +10,11 @@ use AlibabaCloud\Tea\Model;
 class QueryServiceGroupMessageReadStatusResponseBody extends Model
 {
     /**
-     * @description 本次请求条件下的数据总量，此参数为可选参数，默认可不返回。本次请求条件下的数据总量，此参数为可选参数，默认可不返回
+     * @description 本次请求所返回的最大记录条数。
      *
      * @var int
      */
-    public $totalCount;
+    public $maxResults;
 
     /**
      * @description 表示当前调用返回读取到的位置，空代表数据已经读取完毕
@@ -24,23 +24,23 @@ class QueryServiceGroupMessageReadStatusResponseBody extends Model
     public $nextToken;
 
     /**
-     * @description 本次请求所返回的最大记录条数。
-     *
-     * @var int
-     */
-    public $maxResults;
-
-    /**
      * @description 已读未读信息列表
      *
      * @var records[]
      */
     public $records;
+
+    /**
+     * @description 本次请求条件下的数据总量，此参数为可选参数，默认可不返回。本次请求条件下的数据总量，此参数为可选参数，默认可不返回
+     *
+     * @var int
+     */
+    public $totalCount;
     protected $_name = [
-        'totalCount' => 'totalCount',
-        'nextToken'  => 'nextToken',
         'maxResults' => 'maxResults',
+        'nextToken'  => 'nextToken',
         'records'    => 'records',
+        'totalCount' => 'totalCount',
     ];
 
     public function validate()
@@ -50,14 +50,11 @@ class QueryServiceGroupMessageReadStatusResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->totalCount) {
-            $res['totalCount'] = $this->totalCount;
+        if (null !== $this->maxResults) {
+            $res['maxResults'] = $this->maxResults;
         }
         if (null !== $this->nextToken) {
             $res['nextToken'] = $this->nextToken;
-        }
-        if (null !== $this->maxResults) {
-            $res['maxResults'] = $this->maxResults;
         }
         if (null !== $this->records) {
             $res['records'] = [];
@@ -67,6 +64,9 @@ class QueryServiceGroupMessageReadStatusResponseBody extends Model
                     $res['records'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->totalCount) {
+            $res['totalCount'] = $this->totalCount;
         }
 
         return $res;
@@ -80,14 +80,11 @@ class QueryServiceGroupMessageReadStatusResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['totalCount'])) {
-            $model->totalCount = $map['totalCount'];
+        if (isset($map['maxResults'])) {
+            $model->maxResults = $map['maxResults'];
         }
         if (isset($map['nextToken'])) {
             $model->nextToken = $map['nextToken'];
-        }
-        if (isset($map['maxResults'])) {
-            $model->maxResults = $map['maxResults'];
         }
         if (isset($map['records'])) {
             if (!empty($map['records'])) {
@@ -97,6 +94,9 @@ class QueryServiceGroupMessageReadStatusResponseBody extends Model
                     $model->records[$n++] = null !== $item ? records::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['totalCount'])) {
+            $model->totalCount = $map['totalCount'];
         }
 
         return $model;

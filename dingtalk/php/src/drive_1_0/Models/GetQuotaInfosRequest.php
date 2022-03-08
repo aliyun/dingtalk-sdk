@@ -9,18 +9,18 @@ use AlibabaCloud\Tea\Model;
 class GetQuotaInfosRequest extends Model
 {
     /**
-     * @description 容量类型
-     *
-     * @var string
-     */
-    public $type;
-
-    /**
      * @description 容量标识符列表
      *
      * @var string[]
      */
     public $identifiers;
+
+    /**
+     * @description 容量类型
+     *
+     * @var string
+     */
+    public $type;
 
     /**
      * @description 用户id
@@ -29,8 +29,8 @@ class GetQuotaInfosRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'type'        => 'type',
         'identifiers' => 'identifiers',
+        'type'        => 'type',
         'unionId'     => 'unionId',
     ];
 
@@ -41,11 +41,11 @@ class GetQuotaInfosRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->type) {
-            $res['type'] = $this->type;
-        }
         if (null !== $this->identifiers) {
             $res['identifiers'] = $this->identifiers;
+        }
+        if (null !== $this->type) {
+            $res['type'] = $this->type;
         }
         if (null !== $this->unionId) {
             $res['unionId'] = $this->unionId;
@@ -62,13 +62,13 @@ class GetQuotaInfosRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['type'])) {
-            $model->type = $map['type'];
-        }
         if (isset($map['identifiers'])) {
             if (!empty($map['identifiers'])) {
                 $model->identifiers = $map['identifiers'];
             }
+        }
+        if (isset($map['type'])) {
+            $model->type = $map['type'];
         }
         if (isset($map['unionId'])) {
             $model->unionId = $map['unionId'];

@@ -9,18 +9,11 @@ use AlibabaCloud\Tea\Model;
 class AddFileRequest extends Model
 {
     /**
-     * @description 父目录id
+     * @description 文件名冲突策略
      *
      * @var string
      */
-    public $parentId;
-
-    /**
-     * @description 文件类型
-     *
-     * @var string
-     */
-    public $fileType;
+    public $addConflictPolicy;
 
     /**
      * @description 文件名
@@ -30,6 +23,13 @@ class AddFileRequest extends Model
     public $fileName;
 
     /**
+     * @description 文件类型
+     *
+     * @var string
+     */
+    public $fileType;
+
+    /**
      * @description mediaId
      *
      * @var string
@@ -37,11 +37,11 @@ class AddFileRequest extends Model
     public $mediaId;
 
     /**
-     * @description 文件名冲突策略
+     * @description 父目录id
      *
      * @var string
      */
-    public $addConflictPolicy;
+    public $parentId;
 
     /**
      * @description 用户id
@@ -50,11 +50,11 @@ class AddFileRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'parentId'          => 'parentId',
-        'fileType'          => 'fileType',
-        'fileName'          => 'fileName',
-        'mediaId'           => 'mediaId',
         'addConflictPolicy' => 'addConflictPolicy',
+        'fileName'          => 'fileName',
+        'fileType'          => 'fileType',
+        'mediaId'           => 'mediaId',
+        'parentId'          => 'parentId',
         'unionId'           => 'unionId',
     ];
 
@@ -65,20 +65,20 @@ class AddFileRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->parentId) {
-            $res['parentId'] = $this->parentId;
-        }
-        if (null !== $this->fileType) {
-            $res['fileType'] = $this->fileType;
+        if (null !== $this->addConflictPolicy) {
+            $res['addConflictPolicy'] = $this->addConflictPolicy;
         }
         if (null !== $this->fileName) {
             $res['fileName'] = $this->fileName;
         }
+        if (null !== $this->fileType) {
+            $res['fileType'] = $this->fileType;
+        }
         if (null !== $this->mediaId) {
             $res['mediaId'] = $this->mediaId;
         }
-        if (null !== $this->addConflictPolicy) {
-            $res['addConflictPolicy'] = $this->addConflictPolicy;
+        if (null !== $this->parentId) {
+            $res['parentId'] = $this->parentId;
         }
         if (null !== $this->unionId) {
             $res['unionId'] = $this->unionId;
@@ -95,20 +95,20 @@ class AddFileRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['parentId'])) {
-            $model->parentId = $map['parentId'];
-        }
-        if (isset($map['fileType'])) {
-            $model->fileType = $map['fileType'];
+        if (isset($map['addConflictPolicy'])) {
+            $model->addConflictPolicy = $map['addConflictPolicy'];
         }
         if (isset($map['fileName'])) {
             $model->fileName = $map['fileName'];
         }
+        if (isset($map['fileType'])) {
+            $model->fileType = $map['fileType'];
+        }
         if (isset($map['mediaId'])) {
             $model->mediaId = $map['mediaId'];
         }
-        if (isset($map['addConflictPolicy'])) {
-            $model->addConflictPolicy = $map['addConflictPolicy'];
+        if (isset($map['parentId'])) {
+            $model->parentId = $map['parentId'];
         }
         if (isset($map['unionId'])) {
             $model->unionId = $map['unionId'];

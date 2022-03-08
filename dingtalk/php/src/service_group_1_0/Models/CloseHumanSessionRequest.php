@@ -9,33 +9,6 @@ use AlibabaCloud\Tea\Model;
 class CloseHumanSessionRequest extends Model
 {
     /**
-     * @var int
-     */
-    public $dingIsvOrgId;
-
-    /**
-     * @var int
-     */
-    public $dingOrgId;
-
-    /**
-     * @var string
-     */
-    public $dingSuiteKey;
-
-    /**
-     * @var int
-     */
-    public $dingTokenGrantType;
-
-    /**
-     * @description 开放团队id
-     *
-     * @var string
-     */
-    public $openTeamId;
-
-    /**
      * @description 开放会话id
      *
      * @var string
@@ -43,19 +16,14 @@ class CloseHumanSessionRequest extends Model
     public $openConversationId;
 
     /**
-     * @description 访客unionid
+     * @description 开放团队id
      *
-     * @var int
+     * @var string
      */
-    public $visitorUnionId;
+    public $openTeamId;
     protected $_name = [
-        'dingIsvOrgId'       => 'dingIsvOrgId',
-        'dingOrgId'          => 'dingOrgId',
-        'dingSuiteKey'       => 'dingSuiteKey',
-        'dingTokenGrantType' => 'dingTokenGrantType',
-        'openTeamId'         => 'openTeamId',
         'openConversationId' => 'openConversationId',
-        'visitorUnionId'     => 'visitorUnionId',
+        'openTeamId'         => 'openTeamId',
     ];
 
     public function validate()
@@ -65,26 +33,11 @@ class CloseHumanSessionRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->dingIsvOrgId) {
-            $res['dingIsvOrgId'] = $this->dingIsvOrgId;
-        }
-        if (null !== $this->dingOrgId) {
-            $res['dingOrgId'] = $this->dingOrgId;
-        }
-        if (null !== $this->dingSuiteKey) {
-            $res['dingSuiteKey'] = $this->dingSuiteKey;
-        }
-        if (null !== $this->dingTokenGrantType) {
-            $res['dingTokenGrantType'] = $this->dingTokenGrantType;
-        }
-        if (null !== $this->openTeamId) {
-            $res['openTeamId'] = $this->openTeamId;
-        }
         if (null !== $this->openConversationId) {
             $res['openConversationId'] = $this->openConversationId;
         }
-        if (null !== $this->visitorUnionId) {
-            $res['visitorUnionId'] = $this->visitorUnionId;
+        if (null !== $this->openTeamId) {
+            $res['openTeamId'] = $this->openTeamId;
         }
 
         return $res;
@@ -98,26 +51,11 @@ class CloseHumanSessionRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['dingIsvOrgId'])) {
-            $model->dingIsvOrgId = $map['dingIsvOrgId'];
-        }
-        if (isset($map['dingOrgId'])) {
-            $model->dingOrgId = $map['dingOrgId'];
-        }
-        if (isset($map['dingSuiteKey'])) {
-            $model->dingSuiteKey = $map['dingSuiteKey'];
-        }
-        if (isset($map['dingTokenGrantType'])) {
-            $model->dingTokenGrantType = $map['dingTokenGrantType'];
-        }
-        if (isset($map['openTeamId'])) {
-            $model->openTeamId = $map['openTeamId'];
-        }
         if (isset($map['openConversationId'])) {
             $model->openConversationId = $map['openConversationId'];
         }
-        if (isset($map['visitorUnionId'])) {
-            $model->visitorUnionId = $map['visitorUnionId'];
+        if (isset($map['openTeamId'])) {
+            $model->openTeamId = $map['openTeamId'];
         }
 
         return $model;

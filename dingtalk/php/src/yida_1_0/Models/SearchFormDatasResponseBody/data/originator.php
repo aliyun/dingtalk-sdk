@@ -10,20 +10,6 @@ use AlibabaCloud\Tea\Model;
 class originator extends Model
 {
     /**
-     * @description 用户工号
-     *
-     * @var string
-     */
-    public $userId;
-
-    /**
-     * @description 用户名
-     *
-     * @var userName
-     */
-    public $userName;
-
-    /**
      * @description 部门名称
      *
      * @var string
@@ -36,11 +22,25 @@ class originator extends Model
      * @var string
      */
     public $email;
+
+    /**
+     * @description 用户工号
+     *
+     * @var string
+     */
+    public $userId;
+
+    /**
+     * @description 用户名
+     *
+     * @var userName
+     */
+    public $userName;
     protected $_name = [
-        'userId'         => 'userId',
-        'userName'       => 'userName',
         'departmentName' => 'departmentName',
         'email'          => 'email',
+        'userId'         => 'userId',
+        'userName'       => 'userName',
     ];
 
     public function validate()
@@ -50,17 +50,17 @@ class originator extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
-        }
-        if (null !== $this->userName) {
-            $res['userName'] = null !== $this->userName ? $this->userName->toMap() : null;
-        }
         if (null !== $this->departmentName) {
             $res['departmentName'] = $this->departmentName;
         }
         if (null !== $this->email) {
             $res['email'] = $this->email;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
+        }
+        if (null !== $this->userName) {
+            $res['userName'] = null !== $this->userName ? $this->userName->toMap() : null;
         }
 
         return $res;
@@ -74,17 +74,17 @@ class originator extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
-        }
-        if (isset($map['userName'])) {
-            $model->userName = userName::fromMap($map['userName']);
-        }
         if (isset($map['departmentName'])) {
             $model->departmentName = $map['departmentName'];
         }
         if (isset($map['email'])) {
             $model->email = $map['email'];
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
+        }
+        if (isset($map['userName'])) {
+            $model->userName = userName::fromMap($map['userName']);
         }
 
         return $model;

@@ -12,18 +12,11 @@ use AlibabaCloud\Tea\Model;
 class CreateCustomerRequest extends Model
 {
     /**
-     * @description 写入客户类型：个人客户crm_customer_personal; 企业客户crm_customer
+     * @description 关联联系人数据
      *
-     * @var string
+     * @var contacts[]
      */
-    public $objectType;
-
-    /**
-     * @description 已存在客户时，添加联系人，可以传入客户的instanceId用作关联绑定
-     *
-     * @var string
-     */
-    public $instanceId;
+    public $contacts;
 
     /**
      * @description 创建人的userId
@@ -47,11 +40,18 @@ class CreateCustomerRequest extends Model
     public $extendData;
 
     /**
-     * @description 关联联系人数据
+     * @description 已存在客户时，添加联系人，可以传入客户的instanceId用作关联绑定
      *
-     * @var contacts[]
+     * @var string
      */
-    public $contacts;
+    public $instanceId;
+
+    /**
+     * @description 写入客户类型：个人客户crm_customer_personal; 企业客户crm_customer
+     *
+     * @var string
+     */
+    public $objectType;
 
     /**
      * @description 权限
@@ -67,12 +67,12 @@ class CreateCustomerRequest extends Model
      */
     public $saveOption;
     protected $_name = [
-        'objectType'    => 'objectType',
-        'instanceId'    => 'instanceId',
+        'contacts'      => 'contacts',
         'creatorUserId' => 'creatorUserId',
         'data'          => 'data',
         'extendData'    => 'extendData',
-        'contacts'      => 'contacts',
+        'instanceId'    => 'instanceId',
+        'objectType'    => 'objectType',
         'permission'    => 'permission',
         'saveOption'    => 'saveOption',
     ];
@@ -84,11 +84,14 @@ class CreateCustomerRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->objectType) {
-            $res['objectType'] = $this->objectType;
-        }
-        if (null !== $this->instanceId) {
-            $res['instanceId'] = $this->instanceId;
+        if (null !== $this->contacts) {
+            $res['contacts'] = [];
+            if (null !== $this->contacts && \is_array($this->contacts)) {
+                $n = 0;
+                foreach ($this->contacts as $item) {
+                    $res['contacts'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
         if (null !== $this->creatorUserId) {
             $res['creatorUserId'] = $this->creatorUserId;
@@ -99,14 +102,11 @@ class CreateCustomerRequest extends Model
         if (null !== $this->extendData) {
             $res['extendData'] = $this->extendData;
         }
-        if (null !== $this->contacts) {
-            $res['contacts'] = [];
-            if (null !== $this->contacts && \is_array($this->contacts)) {
-                $n = 0;
-                foreach ($this->contacts as $item) {
-                    $res['contacts'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
+        if (null !== $this->instanceId) {
+            $res['instanceId'] = $this->instanceId;
+        }
+        if (null !== $this->objectType) {
+            $res['objectType'] = $this->objectType;
         }
         if (null !== $this->permission) {
             $res['permission'] = null !== $this->permission ? $this->permission->toMap() : null;
@@ -126,11 +126,14 @@ class CreateCustomerRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['objectType'])) {
-            $model->objectType = $map['objectType'];
-        }
-        if (isset($map['instanceId'])) {
-            $model->instanceId = $map['instanceId'];
+        if (isset($map['contacts'])) {
+            if (!empty($map['contacts'])) {
+                $model->contacts = [];
+                $n               = 0;
+                foreach ($map['contacts'] as $item) {
+                    $model->contacts[$n++] = null !== $item ? contacts::fromMap($item) : $item;
+                }
+            }
         }
         if (isset($map['creatorUserId'])) {
             $model->creatorUserId = $map['creatorUserId'];
@@ -141,14 +144,11 @@ class CreateCustomerRequest extends Model
         if (isset($map['extendData'])) {
             $model->extendData = $map['extendData'];
         }
-        if (isset($map['contacts'])) {
-            if (!empty($map['contacts'])) {
-                $model->contacts = [];
-                $n               = 0;
-                foreach ($map['contacts'] as $item) {
-                    $model->contacts[$n++] = null !== $item ? contacts::fromMap($item) : $item;
-                }
-            }
+        if (isset($map['instanceId'])) {
+            $model->instanceId = $map['instanceId'];
+        }
+        if (isset($map['objectType'])) {
+            $model->objectType = $map['objectType'];
         }
         if (isset($map['permission'])) {
             $model->permission = permission::fromMap($map['permission']);

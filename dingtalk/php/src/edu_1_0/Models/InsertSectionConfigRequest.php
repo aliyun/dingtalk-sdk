@@ -12,20 +12,6 @@ use AlibabaCloud\Tea\Model;
 class InsertSectionConfigRequest extends Model
 {
     /**
-     * @description 节次模型
-     *
-     * @var sectionModels[]
-     */
-    public $sectionModels;
-
-    /**
-     * @description 开始日期
-     *
-     * @var start
-     */
-    public $start;
-
-    /**
      * @description 结束日期
      *
      * @var end
@@ -40,16 +26,30 @@ class InsertSectionConfigRequest extends Model
     public $scheduleName;
 
     /**
+     * @description 节次模型
+     *
+     * @var sectionModels[]
+     */
+    public $sectionModels;
+
+    /**
+     * @description 开始日期
+     *
+     * @var start
+     */
+    public $start;
+
+    /**
      * @description 操作人的userid。
      *
      * @var string
      */
     public $opUserId;
     protected $_name = [
-        'sectionModels' => 'sectionModels',
-        'start'         => 'start',
         'end'           => 'end',
         'scheduleName'  => 'scheduleName',
+        'sectionModels' => 'sectionModels',
+        'start'         => 'start',
         'opUserId'      => 'opUserId',
     ];
 
@@ -60,6 +60,12 @@ class InsertSectionConfigRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->end) {
+            $res['end'] = null !== $this->end ? $this->end->toMap() : null;
+        }
+        if (null !== $this->scheduleName) {
+            $res['scheduleName'] = $this->scheduleName;
+        }
         if (null !== $this->sectionModels) {
             $res['sectionModels'] = [];
             if (null !== $this->sectionModels && \is_array($this->sectionModels)) {
@@ -71,12 +77,6 @@ class InsertSectionConfigRequest extends Model
         }
         if (null !== $this->start) {
             $res['start'] = null !== $this->start ? $this->start->toMap() : null;
-        }
-        if (null !== $this->end) {
-            $res['end'] = null !== $this->end ? $this->end->toMap() : null;
-        }
-        if (null !== $this->scheduleName) {
-            $res['scheduleName'] = $this->scheduleName;
         }
         if (null !== $this->opUserId) {
             $res['opUserId'] = $this->opUserId;
@@ -93,6 +93,12 @@ class InsertSectionConfigRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['end'])) {
+            $model->end = end::fromMap($map['end']);
+        }
+        if (isset($map['scheduleName'])) {
+            $model->scheduleName = $map['scheduleName'];
+        }
         if (isset($map['sectionModels'])) {
             if (!empty($map['sectionModels'])) {
                 $model->sectionModels = [];
@@ -104,12 +110,6 @@ class InsertSectionConfigRequest extends Model
         }
         if (isset($map['start'])) {
             $model->start = start::fromMap($map['start']);
-        }
-        if (isset($map['end'])) {
-            $model->end = end::fromMap($map['end']);
-        }
-        if (isset($map['scheduleName'])) {
-            $model->scheduleName = $map['scheduleName'];
         }
         if (isset($map['opUserId'])) {
             $model->opUserId = $map['opUserId'];

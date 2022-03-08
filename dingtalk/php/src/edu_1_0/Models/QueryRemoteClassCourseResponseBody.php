@@ -10,19 +10,19 @@ use AlibabaCloud\Tea\Model;
 class QueryRemoteClassCourseResponseBody extends Model
 {
     /**
+     * @var result[]
+     */
+    public $result;
+
+    /**
      * @description 是否成功
      *
      * @var bool
      */
     public $success;
-
-    /**
-     * @var result[]
-     */
-    public $result;
     protected $_name = [
-        'success' => 'success',
         'result'  => 'result',
+        'success' => 'success',
     ];
 
     public function validate()
@@ -32,9 +32,6 @@ class QueryRemoteClassCourseResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->success) {
-            $res['success'] = $this->success;
-        }
         if (null !== $this->result) {
             $res['result'] = [];
             if (null !== $this->result && \is_array($this->result)) {
@@ -43,6 +40,9 @@ class QueryRemoteClassCourseResponseBody extends Model
                     $res['result'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->success) {
+            $res['success'] = $this->success;
         }
 
         return $res;
@@ -56,9 +56,6 @@ class QueryRemoteClassCourseResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['success'])) {
-            $model->success = $map['success'];
-        }
         if (isset($map['result'])) {
             if (!empty($map['result'])) {
                 $model->result = [];
@@ -67,6 +64,9 @@ class QueryRemoteClassCourseResponseBody extends Model
                     $model->result[$n++] = null !== $item ? result::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['success'])) {
+            $model->success = $map['success'];
         }
 
         return $model;

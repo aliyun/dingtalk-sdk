@@ -10,6 +10,13 @@ use AlibabaCloud\Tea\Model;
 class PageListTicketResponseBody extends Model
 {
     /**
+     * @description list
+     *
+     * @var list_[]
+     */
+    public $list;
+
+    /**
      * @description nextCursor
      *
      * @var int
@@ -22,17 +29,10 @@ class PageListTicketResponseBody extends Model
      * @var int
      */
     public $total;
-
-    /**
-     * @description list
-     *
-     * @var list_[]
-     */
-    public $list;
     protected $_name = [
+        'list'       => 'list',
         'nextCursor' => 'nextCursor',
         'total'      => 'total',
-        'list'       => 'list',
     ];
 
     public function validate()
@@ -42,12 +42,6 @@ class PageListTicketResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->nextCursor) {
-            $res['nextCursor'] = $this->nextCursor;
-        }
-        if (null !== $this->total) {
-            $res['total'] = $this->total;
-        }
         if (null !== $this->list) {
             $res['list'] = [];
             if (null !== $this->list && \is_array($this->list)) {
@@ -56,6 +50,12 @@ class PageListTicketResponseBody extends Model
                     $res['list'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->nextCursor) {
+            $res['nextCursor'] = $this->nextCursor;
+        }
+        if (null !== $this->total) {
+            $res['total'] = $this->total;
         }
 
         return $res;
@@ -69,12 +69,6 @@ class PageListTicketResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['nextCursor'])) {
-            $model->nextCursor = $map['nextCursor'];
-        }
-        if (isset($map['total'])) {
-            $model->total = $map['total'];
-        }
         if (isset($map['list'])) {
             if (!empty($map['list'])) {
                 $model->list = [];
@@ -83,6 +77,12 @@ class PageListTicketResponseBody extends Model
                     $model->list[$n++] = null !== $item ? list_::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['nextCursor'])) {
+            $model->nextCursor = $map['nextCursor'];
+        }
+        if (isset($map['total'])) {
+            $model->total = $map['total'];
         }
 
         return $model;

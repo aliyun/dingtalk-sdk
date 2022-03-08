@@ -11,21 +11,21 @@ class data extends Model
     /**
      * @var string
      */
-    public $taskId;
-
-    /**
-     * @var string
-     */
     public $mobileUrl;
 
     /**
      * @var string
      */
     public $pcUrl;
+
+    /**
+     * @var string
+     */
+    public $taskId;
     protected $_name = [
-        'taskId'    => 'taskId',
         'mobileUrl' => 'mobileUrl',
         'pcUrl'     => 'pcUrl',
+        'taskId'    => 'taskId',
     ];
 
     public function validate()
@@ -35,14 +35,14 @@ class data extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->taskId) {
-            $res['taskId'] = $this->taskId;
-        }
         if (null !== $this->mobileUrl) {
             $res['mobileUrl'] = $this->mobileUrl;
         }
         if (null !== $this->pcUrl) {
             $res['pcUrl'] = $this->pcUrl;
+        }
+        if (null !== $this->taskId) {
+            $res['taskId'] = $this->taskId;
         }
 
         return $res;
@@ -56,14 +56,14 @@ class data extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['taskId'])) {
-            $model->taskId = $map['taskId'];
-        }
         if (isset($map['mobileUrl'])) {
             $model->mobileUrl = $map['mobileUrl'];
         }
         if (isset($map['pcUrl'])) {
             $model->pcUrl = $map['pcUrl'];
+        }
+        if (isset($map['taskId'])) {
+            $model->taskId = $map['taskId'];
         }
 
         return $model;

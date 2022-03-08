@@ -13,14 +13,8 @@ class BatchUpdateTemplateRequest extends Model
      * @var templateList[]
      */
     public $templateList;
-
-    /**
-     * @var string
-     */
-    public $dingSuiteKey;
     protected $_name = [
         'templateList' => 'templateList',
-        'dingSuiteKey' => 'dingSuiteKey',
     ];
 
     public function validate()
@@ -38,9 +32,6 @@ class BatchUpdateTemplateRequest extends Model
                     $res['templateList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
-        }
-        if (null !== $this->dingSuiteKey) {
-            $res['dingSuiteKey'] = $this->dingSuiteKey;
         }
 
         return $res;
@@ -62,9 +53,6 @@ class BatchUpdateTemplateRequest extends Model
                     $model->templateList[$n++] = null !== $item ? templateList::fromMap($item) : $item;
                 }
             }
-        }
-        if (isset($map['dingSuiteKey'])) {
-            $model->dingSuiteKey = $map['dingSuiteKey'];
         }
 
         return $model;

@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class PushCustomerGroupMessageRequest extends Model
 {
     /**
-     * @description 企业corpId
-     *
-     * @var string
-     */
-    public $dingCorpId;
-
-    /**
      * @description 客户群会话id
      *
      * @var string
@@ -36,7 +29,6 @@ class PushCustomerGroupMessageRequest extends Model
      */
     public $msgParam;
     protected $_name = [
-        'dingCorpId'     => 'dingCorpId',
         'conversationId' => 'conversationId',
         'msgKey'         => 'msgKey',
         'msgParam'       => 'msgParam',
@@ -49,9 +41,6 @@ class PushCustomerGroupMessageRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->dingCorpId) {
-            $res['dingCorpId'] = $this->dingCorpId;
-        }
         if (null !== $this->conversationId) {
             $res['conversationId'] = $this->conversationId;
         }
@@ -73,9 +62,6 @@ class PushCustomerGroupMessageRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['dingCorpId'])) {
-            $model->dingCorpId = $map['dingCorpId'];
-        }
         if (isset($map['conversationId'])) {
             $model->conversationId = $map['conversationId'];
         }

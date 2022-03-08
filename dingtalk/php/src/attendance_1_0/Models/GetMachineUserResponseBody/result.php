@@ -10,11 +10,6 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @var userList[]
-     */
-    public $userList;
-
-    /**
      * @var bool
      */
     public $hasMore;
@@ -23,10 +18,15 @@ class result extends Model
      * @var string
      */
     public $nextToken;
+
+    /**
+     * @var userList[]
+     */
+    public $userList;
     protected $_name = [
-        'userList'  => 'userList',
         'hasMore'   => 'hasMore',
         'nextToken' => 'nextToken',
+        'userList'  => 'userList',
     ];
 
     public function validate()
@@ -36,6 +36,12 @@ class result extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->hasMore) {
+            $res['hasMore'] = $this->hasMore;
+        }
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
+        }
         if (null !== $this->userList) {
             $res['userList'] = [];
             if (null !== $this->userList && \is_array($this->userList)) {
@@ -44,12 +50,6 @@ class result extends Model
                     $res['userList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
-        }
-        if (null !== $this->hasMore) {
-            $res['hasMore'] = $this->hasMore;
-        }
-        if (null !== $this->nextToken) {
-            $res['nextToken'] = $this->nextToken;
         }
 
         return $res;
@@ -63,6 +63,12 @@ class result extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['hasMore'])) {
+            $model->hasMore = $map['hasMore'];
+        }
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
+        }
         if (isset($map['userList'])) {
             if (!empty($map['userList'])) {
                 $model->userList = [];
@@ -71,12 +77,6 @@ class result extends Model
                     $model->userList[$n++] = null !== $item ? userList::fromMap($item) : $item;
                 }
             }
-        }
-        if (isset($map['hasMore'])) {
-            $model->hasMore = $map['hasMore'];
-        }
-        if (isset($map['nextToken'])) {
-            $model->nextToken = $map['nextToken'];
         }
 
         return $model;

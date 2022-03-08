@@ -13,14 +13,14 @@ use AlibabaCloud\Tea\Model;
 class GetProcessStartUrlRequest extends Model
 {
     /**
+     * @var ccs[]
+     */
+    public $ccs;
+
+    /**
      * @var files[]
      */
     public $files;
-
-    /**
-     * @var string
-     */
-    public $dingCorpId;
 
     /**
      * @var string
@@ -46,32 +46,14 @@ class GetProcessStartUrlRequest extends Model
      * @var string
      */
     public $taskName;
-
-    /**
-     * @var ccs[]
-     */
-    public $ccs;
-
-    /**
-     * @var string
-     */
-    public $dingIsvAccessToken;
-
-    /**
-     * @var string
-     */
-    public $dingSuiteKey;
     protected $_name = [
-        'files'              => 'files',
-        'dingCorpId'         => 'dingCorpId',
-        'initiatorUserId'    => 'initiatorUserId',
-        'participants'       => 'participants',
-        'redirectUrl'        => 'redirectUrl',
-        'sourceInfo'         => 'sourceInfo',
-        'taskName'           => 'taskName',
-        'ccs'                => 'ccs',
-        'dingIsvAccessToken' => 'dingIsvAccessToken',
-        'dingSuiteKey'       => 'dingSuiteKey',
+        'ccs'             => 'ccs',
+        'files'           => 'files',
+        'initiatorUserId' => 'initiatorUserId',
+        'participants'    => 'participants',
+        'redirectUrl'     => 'redirectUrl',
+        'sourceInfo'      => 'sourceInfo',
+        'taskName'        => 'taskName',
     ];
 
     public function validate()
@@ -81,6 +63,15 @@ class GetProcessStartUrlRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->ccs) {
+            $res['ccs'] = [];
+            if (null !== $this->ccs && \is_array($this->ccs)) {
+                $n = 0;
+                foreach ($this->ccs as $item) {
+                    $res['ccs'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
         if (null !== $this->files) {
             $res['files'] = [];
             if (null !== $this->files && \is_array($this->files)) {
@@ -89,9 +80,6 @@ class GetProcessStartUrlRequest extends Model
                     $res['files'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
-        }
-        if (null !== $this->dingCorpId) {
-            $res['dingCorpId'] = $this->dingCorpId;
         }
         if (null !== $this->initiatorUserId) {
             $res['initiatorUserId'] = $this->initiatorUserId;
@@ -114,21 +102,6 @@ class GetProcessStartUrlRequest extends Model
         if (null !== $this->taskName) {
             $res['taskName'] = $this->taskName;
         }
-        if (null !== $this->ccs) {
-            $res['ccs'] = [];
-            if (null !== $this->ccs && \is_array($this->ccs)) {
-                $n = 0;
-                foreach ($this->ccs as $item) {
-                    $res['ccs'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
-        }
-        if (null !== $this->dingIsvAccessToken) {
-            $res['dingIsvAccessToken'] = $this->dingIsvAccessToken;
-        }
-        if (null !== $this->dingSuiteKey) {
-            $res['dingSuiteKey'] = $this->dingSuiteKey;
-        }
 
         return $res;
     }
@@ -141,6 +114,15 @@ class GetProcessStartUrlRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['ccs'])) {
+            if (!empty($map['ccs'])) {
+                $model->ccs = [];
+                $n          = 0;
+                foreach ($map['ccs'] as $item) {
+                    $model->ccs[$n++] = null !== $item ? ccs::fromMap($item) : $item;
+                }
+            }
+        }
         if (isset($map['files'])) {
             if (!empty($map['files'])) {
                 $model->files = [];
@@ -149,9 +131,6 @@ class GetProcessStartUrlRequest extends Model
                     $model->files[$n++] = null !== $item ? files::fromMap($item) : $item;
                 }
             }
-        }
-        if (isset($map['dingCorpId'])) {
-            $model->dingCorpId = $map['dingCorpId'];
         }
         if (isset($map['initiatorUserId'])) {
             $model->initiatorUserId = $map['initiatorUserId'];
@@ -173,21 +152,6 @@ class GetProcessStartUrlRequest extends Model
         }
         if (isset($map['taskName'])) {
             $model->taskName = $map['taskName'];
-        }
-        if (isset($map['ccs'])) {
-            if (!empty($map['ccs'])) {
-                $model->ccs = [];
-                $n          = 0;
-                foreach ($map['ccs'] as $item) {
-                    $model->ccs[$n++] = null !== $item ? ccs::fromMap($item) : $item;
-                }
-            }
-        }
-        if (isset($map['dingIsvAccessToken'])) {
-            $model->dingIsvAccessToken = $map['dingIsvAccessToken'];
-        }
-        if (isset($map['dingSuiteKey'])) {
-            $model->dingSuiteKey = $map['dingSuiteKey'];
         }
 
         return $model;

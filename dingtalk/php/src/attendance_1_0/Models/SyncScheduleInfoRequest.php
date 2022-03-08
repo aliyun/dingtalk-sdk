@@ -10,17 +10,17 @@ use AlibabaCloud\Tea\Model;
 class SyncScheduleInfoRequest extends Model
 {
     /**
-     * @var scheduleInfos[]
-     */
-    public $scheduleInfos;
-
-    /**
      * @var string
      */
     public $opUserId;
+
+    /**
+     * @var scheduleInfos[]
+     */
+    public $scheduleInfos;
     protected $_name = [
-        'scheduleInfos' => 'scheduleInfos',
         'opUserId'      => 'opUserId',
+        'scheduleInfos' => 'scheduleInfos',
     ];
 
     public function validate()
@@ -30,6 +30,9 @@ class SyncScheduleInfoRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->opUserId) {
+            $res['opUserId'] = $this->opUserId;
+        }
         if (null !== $this->scheduleInfos) {
             $res['scheduleInfos'] = [];
             if (null !== $this->scheduleInfos && \is_array($this->scheduleInfos)) {
@@ -38,9 +41,6 @@ class SyncScheduleInfoRequest extends Model
                     $res['scheduleInfos'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
-        }
-        if (null !== $this->opUserId) {
-            $res['opUserId'] = $this->opUserId;
         }
 
         return $res;
@@ -54,6 +54,9 @@ class SyncScheduleInfoRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['opUserId'])) {
+            $model->opUserId = $map['opUserId'];
+        }
         if (isset($map['scheduleInfos'])) {
             if (!empty($map['scheduleInfos'])) {
                 $model->scheduleInfos = [];
@@ -62,9 +65,6 @@ class SyncScheduleInfoRequest extends Model
                     $model->scheduleInfos[$n++] = null !== $item ? scheduleInfos::fromMap($item) : $item;
                 }
             }
-        }
-        if (isset($map['opUserId'])) {
-            $model->opUserId = $map['opUserId'];
         }
 
         return $model;

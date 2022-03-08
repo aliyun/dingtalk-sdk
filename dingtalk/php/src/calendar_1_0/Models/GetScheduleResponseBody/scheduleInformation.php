@@ -10,13 +10,6 @@ use AlibabaCloud\Tea\Model;
 class scheduleInformation extends Model
 {
     /**
-     * @description 用户userId
-     *
-     * @var string
-     */
-    public $userId;
-
-    /**
      * @description 异常描述
      *
      * @var string
@@ -27,10 +20,17 @@ class scheduleInformation extends Model
      * @var scheduleItems[]
      */
     public $scheduleItems;
+
+    /**
+     * @description 用户userId
+     *
+     * @var string
+     */
+    public $userId;
     protected $_name = [
-        'userId'        => 'userId',
         'error'         => 'error',
         'scheduleItems' => 'scheduleItems',
+        'userId'        => 'userId',
     ];
 
     public function validate()
@@ -40,9 +40,6 @@ class scheduleInformation extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
-        }
         if (null !== $this->error) {
             $res['error'] = $this->error;
         }
@@ -54,6 +51,9 @@ class scheduleInformation extends Model
                     $res['scheduleItems'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -67,9 +67,6 @@ class scheduleInformation extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
-        }
         if (isset($map['error'])) {
             $model->error = $map['error'];
         }
@@ -81,6 +78,9 @@ class scheduleInformation extends Model
                     $model->scheduleItems[$n++] = null !== $item ? scheduleItems::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

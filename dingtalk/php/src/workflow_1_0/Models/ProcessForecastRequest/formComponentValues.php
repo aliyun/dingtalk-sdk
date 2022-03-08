@@ -10,18 +10,37 @@ use AlibabaCloud\Tea\Model;
 class formComponentValues extends Model
 {
     /**
-     * @description 控件id
-     *
-     * @var string
-     */
-    public $id;
-
-    /**
      * @description 控件别名
      *
      * @var string
      */
     public $bizAlias;
+
+    /**
+     * @description 控件类型
+     *
+     * @var string
+     */
+    public $componentType;
+
+    /**
+     * @var details[]
+     */
+    public $details;
+
+    /**
+     * @description 控件扩展值
+     *
+     * @var string
+     */
+    public $extValue;
+
+    /**
+     * @description 控件id
+     *
+     * @var string
+     */
+    public $id;
 
     /**
      * @description 控件名称
@@ -36,33 +55,14 @@ class formComponentValues extends Model
      * @var string
      */
     public $value;
-
-    /**
-     * @description 控件扩展值
-     *
-     * @var string
-     */
-    public $extValue;
-
-    /**
-     * @description 控件类型
-     *
-     * @var string
-     */
-    public $componentType;
-
-    /**
-     * @var details[]
-     */
-    public $details;
     protected $_name = [
-        'id'            => 'id',
         'bizAlias'      => 'bizAlias',
-        'name'          => 'name',
-        'value'         => 'value',
-        'extValue'      => 'extValue',
         'componentType' => 'componentType',
         'details'       => 'details',
+        'extValue'      => 'extValue',
+        'id'            => 'id',
+        'name'          => 'name',
+        'value'         => 'value',
     ];
 
     public function validate()
@@ -72,20 +72,8 @@ class formComponentValues extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->id) {
-            $res['id'] = $this->id;
-        }
         if (null !== $this->bizAlias) {
             $res['bizAlias'] = $this->bizAlias;
-        }
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
-        }
-        if (null !== $this->value) {
-            $res['value'] = $this->value;
-        }
-        if (null !== $this->extValue) {
-            $res['extValue'] = $this->extValue;
         }
         if (null !== $this->componentType) {
             $res['componentType'] = $this->componentType;
@@ -99,6 +87,18 @@ class formComponentValues extends Model
                 }
             }
         }
+        if (null !== $this->extValue) {
+            $res['extValue'] = $this->extValue;
+        }
+        if (null !== $this->id) {
+            $res['id'] = $this->id;
+        }
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
+        }
+        if (null !== $this->value) {
+            $res['value'] = $this->value;
+        }
 
         return $res;
     }
@@ -111,20 +111,8 @@ class formComponentValues extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['id'])) {
-            $model->id = $map['id'];
-        }
         if (isset($map['bizAlias'])) {
             $model->bizAlias = $map['bizAlias'];
-        }
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
-        }
-        if (isset($map['value'])) {
-            $model->value = $map['value'];
-        }
-        if (isset($map['extValue'])) {
-            $model->extValue = $map['extValue'];
         }
         if (isset($map['componentType'])) {
             $model->componentType = $map['componentType'];
@@ -137,6 +125,18 @@ class formComponentValues extends Model
                     $model->details[$n++] = null !== $item ? details::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['extValue'])) {
+            $model->extValue = $map['extValue'];
+        }
+        if (isset($map['id'])) {
+            $model->id = $map['id'];
+        }
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
+        }
+        if (isset($map['value'])) {
+            $model->value = $map['value'];
         }
 
         return $model;

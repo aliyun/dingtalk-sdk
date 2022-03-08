@@ -10,11 +10,11 @@ use AlibabaCloud\Tea\Model;
 class outMembers extends Model
 {
     /**
-     * @description 权限角色
+     * @description 是否是继承的权限
      *
-     * @var string
+     * @var bool
      */
-    public $role;
+    public $extend;
 
     /**
      * @description 成员信息
@@ -24,15 +24,15 @@ class outMembers extends Model
     public $member;
 
     /**
-     * @description 是否是继承的权限
+     * @description 权限角色
      *
-     * @var bool
+     * @var string
      */
-    public $extend;
+    public $role;
     protected $_name = [
-        'role'   => 'role',
-        'member' => 'member',
         'extend' => 'extend',
+        'member' => 'member',
+        'role'   => 'role',
     ];
 
     public function validate()
@@ -42,14 +42,14 @@ class outMembers extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->role) {
-            $res['role'] = $this->role;
+        if (null !== $this->extend) {
+            $res['extend'] = $this->extend;
         }
         if (null !== $this->member) {
             $res['member'] = null !== $this->member ? $this->member->toMap() : null;
         }
-        if (null !== $this->extend) {
-            $res['extend'] = $this->extend;
+        if (null !== $this->role) {
+            $res['role'] = $this->role;
         }
 
         return $res;
@@ -63,14 +63,14 @@ class outMembers extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['role'])) {
-            $model->role = $map['role'];
+        if (isset($map['extend'])) {
+            $model->extend = $map['extend'];
         }
         if (isset($map['member'])) {
             $model->member = member::fromMap($map['member']);
         }
-        if (isset($map['extend'])) {
-            $model->extend = $map['extend'];
+        if (isset($map['role'])) {
+            $model->role = $map['role'];
         }
 
         return $model;

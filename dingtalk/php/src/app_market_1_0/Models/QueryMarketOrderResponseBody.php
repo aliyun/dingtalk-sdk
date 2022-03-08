@@ -23,18 +23,18 @@ class QueryMarketOrderResponseBody extends Model
     public $corpId;
 
     /**
-     * @description 规格编码
+     * @description 创建时间戳
      *
-     * @var string
+     * @var int
      */
-    public $itemCode;
+    public $createTimestamp;
 
     /**
-     * @description 规格名称
+     * @description 生效结束时间
      *
-     * @var string
+     * @var int
      */
-    public $itemName;
+    public $endTimestamp;
 
     /**
      * @description 商品Code
@@ -51,25 +51,25 @@ class QueryMarketOrderResponseBody extends Model
     public $goodsName;
 
     /**
-     * @description 订单实付金额(单位分)
+     * @description 是否内购订单
      *
-     * @var int
+     * @var bool
      */
-    public $totalActualPayFee;
+    public $inAppOrder;
 
     /**
-     * @description 订单状态(0:订单关闭； 3：订单支付；4：订单创建)
+     * @description 规格编码
      *
-     * @var int
+     * @var string
      */
-    public $status;
+    public $itemCode;
 
     /**
-     * @description 购买数量
+     * @description 规格名称
      *
-     * @var int
+     * @var string
      */
-    public $quantity;
+    public $itemName;
 
     /**
      * @description 支付时间戳
@@ -79,11 +79,11 @@ class QueryMarketOrderResponseBody extends Model
     public $paidTimestamp;
 
     /**
-     * @description 创建时间戳
+     * @description 购买数量
      *
      * @var int
      */
-    public $createTimestamp;
+    public $quantity;
 
     /**
      * @description 开始生效时间
@@ -93,33 +93,33 @@ class QueryMarketOrderResponseBody extends Model
     public $startTimestamp;
 
     /**
-     * @description 生效结束时间
+     * @description 订单状态(0:订单关闭； 3：订单支付；4：订单创建)
      *
      * @var int
      */
-    public $endTimestamp;
+    public $status;
 
     /**
-     * @description 是否内购订单
+     * @description 订单实付金额(单位分)
      *
-     * @var bool
+     * @var int
      */
-    public $inAppOrder;
+    public $totalActualPayFee;
     protected $_name = [
         'bizOrderId'        => 'bizOrderId',
         'corpId'            => 'corpId',
-        'itemCode'          => 'itemCode',
-        'itemName'          => 'itemName',
+        'createTimestamp'   => 'createTimestamp',
+        'endTimestamp'      => 'endTimestamp',
         'goodsCode'         => 'goodsCode',
         'goodsName'         => 'goodsName',
-        'totalActualPayFee' => 'totalActualPayFee',
-        'status'            => 'status',
-        'quantity'          => 'quantity',
-        'paidTimestamp'     => 'paidTimestamp',
-        'createTimestamp'   => 'createTimestamp',
-        'startTimestamp'    => 'startTimestamp',
-        'endTimestamp'      => 'endTimestamp',
         'inAppOrder'        => 'inAppOrder',
+        'itemCode'          => 'itemCode',
+        'itemName'          => 'itemName',
+        'paidTimestamp'     => 'paidTimestamp',
+        'quantity'          => 'quantity',
+        'startTimestamp'    => 'startTimestamp',
+        'status'            => 'status',
+        'totalActualPayFee' => 'totalActualPayFee',
     ];
 
     public function validate()
@@ -135,11 +135,11 @@ class QueryMarketOrderResponseBody extends Model
         if (null !== $this->corpId) {
             $res['corpId'] = $this->corpId;
         }
-        if (null !== $this->itemCode) {
-            $res['itemCode'] = $this->itemCode;
+        if (null !== $this->createTimestamp) {
+            $res['createTimestamp'] = $this->createTimestamp;
         }
-        if (null !== $this->itemName) {
-            $res['itemName'] = $this->itemName;
+        if (null !== $this->endTimestamp) {
+            $res['endTimestamp'] = $this->endTimestamp;
         }
         if (null !== $this->goodsCode) {
             $res['goodsCode'] = $this->goodsCode;
@@ -147,29 +147,29 @@ class QueryMarketOrderResponseBody extends Model
         if (null !== $this->goodsName) {
             $res['goodsName'] = $this->goodsName;
         }
-        if (null !== $this->totalActualPayFee) {
-            $res['totalActualPayFee'] = $this->totalActualPayFee;
+        if (null !== $this->inAppOrder) {
+            $res['inAppOrder'] = $this->inAppOrder;
         }
-        if (null !== $this->status) {
-            $res['status'] = $this->status;
+        if (null !== $this->itemCode) {
+            $res['itemCode'] = $this->itemCode;
         }
-        if (null !== $this->quantity) {
-            $res['quantity'] = $this->quantity;
+        if (null !== $this->itemName) {
+            $res['itemName'] = $this->itemName;
         }
         if (null !== $this->paidTimestamp) {
             $res['paidTimestamp'] = $this->paidTimestamp;
         }
-        if (null !== $this->createTimestamp) {
-            $res['createTimestamp'] = $this->createTimestamp;
+        if (null !== $this->quantity) {
+            $res['quantity'] = $this->quantity;
         }
         if (null !== $this->startTimestamp) {
             $res['startTimestamp'] = $this->startTimestamp;
         }
-        if (null !== $this->endTimestamp) {
-            $res['endTimestamp'] = $this->endTimestamp;
+        if (null !== $this->status) {
+            $res['status'] = $this->status;
         }
-        if (null !== $this->inAppOrder) {
-            $res['inAppOrder'] = $this->inAppOrder;
+        if (null !== $this->totalActualPayFee) {
+            $res['totalActualPayFee'] = $this->totalActualPayFee;
         }
 
         return $res;
@@ -189,11 +189,11 @@ class QueryMarketOrderResponseBody extends Model
         if (isset($map['corpId'])) {
             $model->corpId = $map['corpId'];
         }
-        if (isset($map['itemCode'])) {
-            $model->itemCode = $map['itemCode'];
+        if (isset($map['createTimestamp'])) {
+            $model->createTimestamp = $map['createTimestamp'];
         }
-        if (isset($map['itemName'])) {
-            $model->itemName = $map['itemName'];
+        if (isset($map['endTimestamp'])) {
+            $model->endTimestamp = $map['endTimestamp'];
         }
         if (isset($map['goodsCode'])) {
             $model->goodsCode = $map['goodsCode'];
@@ -201,29 +201,29 @@ class QueryMarketOrderResponseBody extends Model
         if (isset($map['goodsName'])) {
             $model->goodsName = $map['goodsName'];
         }
-        if (isset($map['totalActualPayFee'])) {
-            $model->totalActualPayFee = $map['totalActualPayFee'];
+        if (isset($map['inAppOrder'])) {
+            $model->inAppOrder = $map['inAppOrder'];
         }
-        if (isset($map['status'])) {
-            $model->status = $map['status'];
+        if (isset($map['itemCode'])) {
+            $model->itemCode = $map['itemCode'];
         }
-        if (isset($map['quantity'])) {
-            $model->quantity = $map['quantity'];
+        if (isset($map['itemName'])) {
+            $model->itemName = $map['itemName'];
         }
         if (isset($map['paidTimestamp'])) {
             $model->paidTimestamp = $map['paidTimestamp'];
         }
-        if (isset($map['createTimestamp'])) {
-            $model->createTimestamp = $map['createTimestamp'];
+        if (isset($map['quantity'])) {
+            $model->quantity = $map['quantity'];
         }
         if (isset($map['startTimestamp'])) {
             $model->startTimestamp = $map['startTimestamp'];
         }
-        if (isset($map['endTimestamp'])) {
-            $model->endTimestamp = $map['endTimestamp'];
+        if (isset($map['status'])) {
+            $model->status = $map['status'];
         }
-        if (isset($map['inAppOrder'])) {
-            $model->inAppOrder = $map['inAppOrder'];
+        if (isset($map['totalActualPayFee'])) {
+            $model->totalActualPayFee = $map['totalActualPayFee'];
         }
 
         return $model;

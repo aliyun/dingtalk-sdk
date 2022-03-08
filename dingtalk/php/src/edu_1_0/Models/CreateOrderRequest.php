@@ -10,41 +10,6 @@ use AlibabaCloud\Tea\Model;
 class CreateOrderRequest extends Model
 {
     /**
-     * @description 设备号
-     *
-     * @var string
-     */
-    public $sn;
-
-    /**
-     * @description 员工id
-     *
-     * @var string
-     */
-    public $userId;
-
-    /**
-     * @description 刷脸token
-     *
-     * @var string
-     */
-    public $ftoken;
-
-    /**
-     * @description 交易加签
-     *
-     * @var string
-     */
-    public $terminalParams;
-
-    /**
-     * @description 应付价格，单位分
-     *
-     * @var int
-     */
-    public $totalAmount;
-
-    /**
      * @description 实付金额，单位分（优惠计算后）
      *
      * @var int
@@ -59,11 +24,18 @@ class CreateOrderRequest extends Model
     public $detailList;
 
     /**
-     * @description utc时间戳
+     * @description 人脸id
      *
-     * @var int
+     * @var string
      */
-    public $timestamp;
+    public $faceId;
+
+    /**
+     * @description 刷脸token
+     *
+     * @var string
+     */
+    public $ftoken;
 
     /**
      * @description 签名
@@ -73,36 +45,39 @@ class CreateOrderRequest extends Model
     public $signature;
 
     /**
-     * @var int
-     */
-    public $dingIsvOrgId;
-
-    /**
-     * @var int
-     */
-    public $dingOrgId;
-
-    /**
-     * @var int
-     */
-    public $dingOauthAppId;
-
-    /**
-     * @var string
-     */
-    public $dingSuiteKey;
-
-    /**
-     * @var int
-     */
-    public $dingTokenGrantType;
-
-    /**
-     * @description 人脸id
+     * @description 设备号
      *
      * @var string
      */
-    public $faceId;
+    public $sn;
+
+    /**
+     * @description 交易加签
+     *
+     * @var string
+     */
+    public $terminalParams;
+
+    /**
+     * @description utc时间戳
+     *
+     * @var int
+     */
+    public $timestamp;
+
+    /**
+     * @description 应付价格，单位分
+     *
+     * @var int
+     */
+    public $totalAmount;
+
+    /**
+     * @description 员工id
+     *
+     * @var string
+     */
+    public $userId;
 
     /**
      * @description 版本号
@@ -111,22 +86,17 @@ class CreateOrderRequest extends Model
      */
     public $version;
     protected $_name = [
-        'sn'                 => 'sn',
-        'userId'             => 'userId',
-        'ftoken'             => 'ftoken',
-        'terminalParams'     => 'terminalParams',
-        'totalAmount'        => 'totalAmount',
-        'actualAmount'       => 'actualAmount',
-        'detailList'         => 'detailList',
-        'timestamp'          => 'timestamp',
-        'signature'          => 'signature',
-        'dingIsvOrgId'       => 'dingIsvOrgId',
-        'dingOrgId'          => 'dingOrgId',
-        'dingOauthAppId'     => 'dingOauthAppId',
-        'dingSuiteKey'       => 'dingSuiteKey',
-        'dingTokenGrantType' => 'dingTokenGrantType',
-        'faceId'             => 'faceId',
-        'version'            => 'version',
+        'actualAmount'   => 'actualAmount',
+        'detailList'     => 'detailList',
+        'faceId'         => 'faceId',
+        'ftoken'         => 'ftoken',
+        'signature'      => 'signature',
+        'sn'             => 'sn',
+        'terminalParams' => 'terminalParams',
+        'timestamp'      => 'timestamp',
+        'totalAmount'    => 'totalAmount',
+        'userId'         => 'userId',
+        'version'        => 'version',
     ];
 
     public function validate()
@@ -136,21 +106,6 @@ class CreateOrderRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->sn) {
-            $res['sn'] = $this->sn;
-        }
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
-        }
-        if (null !== $this->ftoken) {
-            $res['ftoken'] = $this->ftoken;
-        }
-        if (null !== $this->terminalParams) {
-            $res['terminalParams'] = $this->terminalParams;
-        }
-        if (null !== $this->totalAmount) {
-            $res['totalAmount'] = $this->totalAmount;
-        }
         if (null !== $this->actualAmount) {
             $res['actualAmount'] = $this->actualAmount;
         }
@@ -163,29 +118,29 @@ class CreateOrderRequest extends Model
                 }
             }
         }
-        if (null !== $this->timestamp) {
-            $res['timestamp'] = $this->timestamp;
+        if (null !== $this->faceId) {
+            $res['faceId'] = $this->faceId;
+        }
+        if (null !== $this->ftoken) {
+            $res['ftoken'] = $this->ftoken;
         }
         if (null !== $this->signature) {
             $res['signature'] = $this->signature;
         }
-        if (null !== $this->dingIsvOrgId) {
-            $res['dingIsvOrgId'] = $this->dingIsvOrgId;
+        if (null !== $this->sn) {
+            $res['sn'] = $this->sn;
         }
-        if (null !== $this->dingOrgId) {
-            $res['dingOrgId'] = $this->dingOrgId;
+        if (null !== $this->terminalParams) {
+            $res['terminalParams'] = $this->terminalParams;
         }
-        if (null !== $this->dingOauthAppId) {
-            $res['dingOauthAppId'] = $this->dingOauthAppId;
+        if (null !== $this->timestamp) {
+            $res['timestamp'] = $this->timestamp;
         }
-        if (null !== $this->dingSuiteKey) {
-            $res['dingSuiteKey'] = $this->dingSuiteKey;
+        if (null !== $this->totalAmount) {
+            $res['totalAmount'] = $this->totalAmount;
         }
-        if (null !== $this->dingTokenGrantType) {
-            $res['dingTokenGrantType'] = $this->dingTokenGrantType;
-        }
-        if (null !== $this->faceId) {
-            $res['faceId'] = $this->faceId;
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
         if (null !== $this->version) {
             $res['version'] = $this->version;
@@ -202,21 +157,6 @@ class CreateOrderRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['sn'])) {
-            $model->sn = $map['sn'];
-        }
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
-        }
-        if (isset($map['ftoken'])) {
-            $model->ftoken = $map['ftoken'];
-        }
-        if (isset($map['terminalParams'])) {
-            $model->terminalParams = $map['terminalParams'];
-        }
-        if (isset($map['totalAmount'])) {
-            $model->totalAmount = $map['totalAmount'];
-        }
         if (isset($map['actualAmount'])) {
             $model->actualAmount = $map['actualAmount'];
         }
@@ -229,29 +169,29 @@ class CreateOrderRequest extends Model
                 }
             }
         }
-        if (isset($map['timestamp'])) {
-            $model->timestamp = $map['timestamp'];
+        if (isset($map['faceId'])) {
+            $model->faceId = $map['faceId'];
+        }
+        if (isset($map['ftoken'])) {
+            $model->ftoken = $map['ftoken'];
         }
         if (isset($map['signature'])) {
             $model->signature = $map['signature'];
         }
-        if (isset($map['dingIsvOrgId'])) {
-            $model->dingIsvOrgId = $map['dingIsvOrgId'];
+        if (isset($map['sn'])) {
+            $model->sn = $map['sn'];
         }
-        if (isset($map['dingOrgId'])) {
-            $model->dingOrgId = $map['dingOrgId'];
+        if (isset($map['terminalParams'])) {
+            $model->terminalParams = $map['terminalParams'];
         }
-        if (isset($map['dingOauthAppId'])) {
-            $model->dingOauthAppId = $map['dingOauthAppId'];
+        if (isset($map['timestamp'])) {
+            $model->timestamp = $map['timestamp'];
         }
-        if (isset($map['dingSuiteKey'])) {
-            $model->dingSuiteKey = $map['dingSuiteKey'];
+        if (isset($map['totalAmount'])) {
+            $model->totalAmount = $map['totalAmount'];
         }
-        if (isset($map['dingTokenGrantType'])) {
-            $model->dingTokenGrantType = $map['dingTokenGrantType'];
-        }
-        if (isset($map['faceId'])) {
-            $model->faceId = $map['faceId'];
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
         if (isset($map['version'])) {
             $model->version = $map['version'];

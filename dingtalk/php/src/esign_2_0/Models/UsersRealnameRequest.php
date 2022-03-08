@@ -11,21 +11,15 @@ class UsersRealnameRequest extends Model
     /**
      * @var string
      */
-    public $userId;
-
-    /**
-     * @var string
-     */
     public $redirectUrl;
 
     /**
      * @var string
      */
-    public $dingCorpId;
+    public $userId;
     protected $_name = [
-        'userId'      => 'userId',
         'redirectUrl' => 'redirectUrl',
-        'dingCorpId'  => 'dingCorpId',
+        'userId'      => 'userId',
     ];
 
     public function validate()
@@ -35,14 +29,11 @@ class UsersRealnameRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
-        }
         if (null !== $this->redirectUrl) {
             $res['redirectUrl'] = $this->redirectUrl;
         }
-        if (null !== $this->dingCorpId) {
-            $res['dingCorpId'] = $this->dingCorpId;
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -56,14 +47,11 @@ class UsersRealnameRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
-        }
         if (isset($map['redirectUrl'])) {
             $model->redirectUrl = $map['redirectUrl'];
         }
-        if (isset($map['dingCorpId'])) {
-            $model->dingCorpId = $map['dingCorpId'];
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

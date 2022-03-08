@@ -10,18 +10,18 @@ use AlibabaCloud\Tea\Model;
 class ListEventsResponseBody extends Model
 {
     /**
-     * @description 翻页token
-     *
-     * @var string
-     */
-    public $nextToken;
-
-    /**
      * @description 日程
      *
      * @var events[]
      */
     public $events;
+
+    /**
+     * @description 翻页token
+     *
+     * @var string
+     */
+    public $nextToken;
 
     /**
      * @description 增量同步token
@@ -30,8 +30,8 @@ class ListEventsResponseBody extends Model
      */
     public $syncToken;
     protected $_name = [
-        'nextToken' => 'nextToken',
         'events'    => 'events',
+        'nextToken' => 'nextToken',
         'syncToken' => 'syncToken',
     ];
 
@@ -42,9 +42,6 @@ class ListEventsResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->nextToken) {
-            $res['nextToken'] = $this->nextToken;
-        }
         if (null !== $this->events) {
             $res['events'] = [];
             if (null !== $this->events && \is_array($this->events)) {
@@ -53,6 +50,9 @@ class ListEventsResponseBody extends Model
                     $res['events'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
         }
         if (null !== $this->syncToken) {
             $res['syncToken'] = $this->syncToken;
@@ -69,9 +69,6 @@ class ListEventsResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['nextToken'])) {
-            $model->nextToken = $map['nextToken'];
-        }
         if (isset($map['events'])) {
             if (!empty($map['events'])) {
                 $model->events = [];
@@ -80,6 +77,9 @@ class ListEventsResponseBody extends Model
                     $model->events[$n++] = null !== $item ? events::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
         }
         if (isset($map['syncToken'])) {
             $model->syncToken = $map['syncToken'];

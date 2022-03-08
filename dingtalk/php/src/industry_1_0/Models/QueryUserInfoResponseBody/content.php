@@ -15,18 +15,25 @@ use AlibabaCloud\Tea\Model;
 class content extends Model
 {
     /**
-     * @description 用户Id
+     * @description comments
      *
      * @var string
      */
-    public $uid;
+    public $comments;
 
     /**
-     * @description 用户名称
+     * @description 所在科室
      *
-     * @var string
+     * @var dept[]
      */
-    public $userName;
+    public $dept;
+
+    /**
+     * @description 所在医疗组
+     *
+     * @var group[]
+     */
+    public $group;
 
     /**
      * @description 职称标签
@@ -50,50 +57,43 @@ class content extends Model
     public $jobStatus;
 
     /**
-     * @description 人员属性标签
-     *
-     * @var userProb
-     */
-    public $userProb;
-
-    /**
-     * @description 所在医疗组
-     *
-     * @var group[]
-     */
-    public $group;
-
-    /**
-     * @description 所在科室
-     *
-     * @var dept[]
-     */
-    public $dept;
-
-    /**
-     * @description comments
-     *
-     * @var string
-     */
-    public $comments;
-
-    /**
      * @description 工作状态标签
      *
      * @var jobStatusList[]
      */
     public $jobStatusList;
+
+    /**
+     * @description 用户Id
+     *
+     * @var string
+     */
+    public $uid;
+
+    /**
+     * @description 用户名称
+     *
+     * @var string
+     */
+    public $userName;
+
+    /**
+     * @description 人员属性标签
+     *
+     * @var userProb
+     */
+    public $userProb;
     protected $_name = [
-        'uid'           => 'uid',
-        'userName'      => 'userName',
+        'comments'      => 'comments',
+        'dept'          => 'dept',
+        'group'         => 'group',
         'job'           => 'job',
         'jobNum'        => 'jobNum',
         'jobStatus'     => 'jobStatus',
-        'userProb'      => 'userProb',
-        'group'         => 'group',
-        'dept'          => 'dept',
-        'comments'      => 'comments',
         'jobStatusList' => 'jobStatusList',
+        'uid'           => 'uid',
+        'userName'      => 'userName',
+        'userProb'      => 'userProb',
     ];
 
     public function validate()
@@ -103,32 +103,8 @@ class content extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->uid) {
-            $res['uid'] = $this->uid;
-        }
-        if (null !== $this->userName) {
-            $res['userName'] = $this->userName;
-        }
-        if (null !== $this->job) {
-            $res['job'] = null !== $this->job ? $this->job->toMap() : null;
-        }
-        if (null !== $this->jobNum) {
-            $res['jobNum'] = $this->jobNum;
-        }
-        if (null !== $this->jobStatus) {
-            $res['jobStatus'] = null !== $this->jobStatus ? $this->jobStatus->toMap() : null;
-        }
-        if (null !== $this->userProb) {
-            $res['userProb'] = null !== $this->userProb ? $this->userProb->toMap() : null;
-        }
-        if (null !== $this->group) {
-            $res['group'] = [];
-            if (null !== $this->group && \is_array($this->group)) {
-                $n = 0;
-                foreach ($this->group as $item) {
-                    $res['group'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
+        if (null !== $this->comments) {
+            $res['comments'] = $this->comments;
         }
         if (null !== $this->dept) {
             $res['dept'] = [];
@@ -139,8 +115,23 @@ class content extends Model
                 }
             }
         }
-        if (null !== $this->comments) {
-            $res['comments'] = $this->comments;
+        if (null !== $this->group) {
+            $res['group'] = [];
+            if (null !== $this->group && \is_array($this->group)) {
+                $n = 0;
+                foreach ($this->group as $item) {
+                    $res['group'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
+        if (null !== $this->job) {
+            $res['job'] = null !== $this->job ? $this->job->toMap() : null;
+        }
+        if (null !== $this->jobNum) {
+            $res['jobNum'] = $this->jobNum;
+        }
+        if (null !== $this->jobStatus) {
+            $res['jobStatus'] = null !== $this->jobStatus ? $this->jobStatus->toMap() : null;
         }
         if (null !== $this->jobStatusList) {
             $res['jobStatusList'] = [];
@@ -150,6 +141,15 @@ class content extends Model
                     $res['jobStatusList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->uid) {
+            $res['uid'] = $this->uid;
+        }
+        if (null !== $this->userName) {
+            $res['userName'] = $this->userName;
+        }
+        if (null !== $this->userProb) {
+            $res['userProb'] = null !== $this->userProb ? $this->userProb->toMap() : null;
         }
 
         return $res;
@@ -163,32 +163,8 @@ class content extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['uid'])) {
-            $model->uid = $map['uid'];
-        }
-        if (isset($map['userName'])) {
-            $model->userName = $map['userName'];
-        }
-        if (isset($map['job'])) {
-            $model->job = job::fromMap($map['job']);
-        }
-        if (isset($map['jobNum'])) {
-            $model->jobNum = $map['jobNum'];
-        }
-        if (isset($map['jobStatus'])) {
-            $model->jobStatus = jobStatus::fromMap($map['jobStatus']);
-        }
-        if (isset($map['userProb'])) {
-            $model->userProb = userProb::fromMap($map['userProb']);
-        }
-        if (isset($map['group'])) {
-            if (!empty($map['group'])) {
-                $model->group = [];
-                $n            = 0;
-                foreach ($map['group'] as $item) {
-                    $model->group[$n++] = null !== $item ? group::fromMap($item) : $item;
-                }
-            }
+        if (isset($map['comments'])) {
+            $model->comments = $map['comments'];
         }
         if (isset($map['dept'])) {
             if (!empty($map['dept'])) {
@@ -199,8 +175,23 @@ class content extends Model
                 }
             }
         }
-        if (isset($map['comments'])) {
-            $model->comments = $map['comments'];
+        if (isset($map['group'])) {
+            if (!empty($map['group'])) {
+                $model->group = [];
+                $n            = 0;
+                foreach ($map['group'] as $item) {
+                    $model->group[$n++] = null !== $item ? group::fromMap($item) : $item;
+                }
+            }
+        }
+        if (isset($map['job'])) {
+            $model->job = job::fromMap($map['job']);
+        }
+        if (isset($map['jobNum'])) {
+            $model->jobNum = $map['jobNum'];
+        }
+        if (isset($map['jobStatus'])) {
+            $model->jobStatus = jobStatus::fromMap($map['jobStatus']);
         }
         if (isset($map['jobStatusList'])) {
             if (!empty($map['jobStatusList'])) {
@@ -210,6 +201,15 @@ class content extends Model
                     $model->jobStatusList[$n++] = null !== $item ? jobStatusList::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['uid'])) {
+            $model->uid = $map['uid'];
+        }
+        if (isset($map['userName'])) {
+            $model->userName = $map['userName'];
+        }
+        if (isset($map['userProb'])) {
+            $model->userProb = userProb::fromMap($map['userProb']);
         }
 
         return $model;

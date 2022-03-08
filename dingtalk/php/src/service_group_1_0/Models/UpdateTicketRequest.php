@@ -10,24 +10,11 @@ use AlibabaCloud\Tea\Model;
 class UpdateTicketRequest extends Model
 {
     /**
-     * @var int
-     */
-    public $dingIsvOrgId;
-
-    /**
-     * @var int
-     */
-    public $dingOrgId;
-
-    /**
+     * @description 自定义字段值JSON格式
+     *
      * @var string
      */
-    public $dingSuiteKey;
-
-    /**
-     * @var int
-     */
-    public $dingTokenGrantType;
+    public $customFields;
 
     /**
      * @description 团队ID
@@ -37,13 +24,6 @@ class UpdateTicketRequest extends Model
     public $openTeamId;
 
     /**
-     * @description 工单处理人unionId
-     *
-     * @var string
-     */
-    public $processorUnionId;
-
-    /**
      * @description 工单开放id
      *
      * @var string
@@ -51,11 +31,11 @@ class UpdateTicketRequest extends Model
     public $openTicketId;
 
     /**
-     * @description 自定义字段值JSON格式
+     * @description 工单处理人unionId
      *
      * @var string
      */
-    public $customFields;
+    public $processorUnionId;
 
     /**
      * @description 备注
@@ -64,15 +44,11 @@ class UpdateTicketRequest extends Model
      */
     public $ticketMemo;
     protected $_name = [
-        'dingIsvOrgId'       => 'dingIsvOrgId',
-        'dingOrgId'          => 'dingOrgId',
-        'dingSuiteKey'       => 'dingSuiteKey',
-        'dingTokenGrantType' => 'dingTokenGrantType',
-        'openTeamId'         => 'openTeamId',
-        'processorUnionId'   => 'processorUnionId',
-        'openTicketId'       => 'openTicketId',
-        'customFields'       => 'customFields',
-        'ticketMemo'         => 'ticketMemo',
+        'customFields'     => 'customFields',
+        'openTeamId'       => 'openTeamId',
+        'openTicketId'     => 'openTicketId',
+        'processorUnionId' => 'processorUnionId',
+        'ticketMemo'       => 'ticketMemo',
     ];
 
     public function validate()
@@ -82,29 +58,17 @@ class UpdateTicketRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->dingIsvOrgId) {
-            $res['dingIsvOrgId'] = $this->dingIsvOrgId;
-        }
-        if (null !== $this->dingOrgId) {
-            $res['dingOrgId'] = $this->dingOrgId;
-        }
-        if (null !== $this->dingSuiteKey) {
-            $res['dingSuiteKey'] = $this->dingSuiteKey;
-        }
-        if (null !== $this->dingTokenGrantType) {
-            $res['dingTokenGrantType'] = $this->dingTokenGrantType;
+        if (null !== $this->customFields) {
+            $res['customFields'] = $this->customFields;
         }
         if (null !== $this->openTeamId) {
             $res['openTeamId'] = $this->openTeamId;
         }
-        if (null !== $this->processorUnionId) {
-            $res['processorUnionId'] = $this->processorUnionId;
-        }
         if (null !== $this->openTicketId) {
             $res['openTicketId'] = $this->openTicketId;
         }
-        if (null !== $this->customFields) {
-            $res['customFields'] = $this->customFields;
+        if (null !== $this->processorUnionId) {
+            $res['processorUnionId'] = $this->processorUnionId;
         }
         if (null !== $this->ticketMemo) {
             $res['ticketMemo'] = null !== $this->ticketMemo ? $this->ticketMemo->toMap() : null;
@@ -121,29 +85,17 @@ class UpdateTicketRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['dingIsvOrgId'])) {
-            $model->dingIsvOrgId = $map['dingIsvOrgId'];
-        }
-        if (isset($map['dingOrgId'])) {
-            $model->dingOrgId = $map['dingOrgId'];
-        }
-        if (isset($map['dingSuiteKey'])) {
-            $model->dingSuiteKey = $map['dingSuiteKey'];
-        }
-        if (isset($map['dingTokenGrantType'])) {
-            $model->dingTokenGrantType = $map['dingTokenGrantType'];
+        if (isset($map['customFields'])) {
+            $model->customFields = $map['customFields'];
         }
         if (isset($map['openTeamId'])) {
             $model->openTeamId = $map['openTeamId'];
         }
-        if (isset($map['processorUnionId'])) {
-            $model->processorUnionId = $map['processorUnionId'];
-        }
         if (isset($map['openTicketId'])) {
             $model->openTicketId = $map['openTicketId'];
         }
-        if (isset($map['customFields'])) {
-            $model->customFields = $map['customFields'];
+        if (isset($map['processorUnionId'])) {
+            $model->processorUnionId = $map['processorUnionId'];
         }
         if (isset($map['ticketMemo'])) {
             $model->ticketMemo = ticketMemo::fromMap($map['ticketMemo']);

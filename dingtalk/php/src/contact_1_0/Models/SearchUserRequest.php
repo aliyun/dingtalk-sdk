@@ -9,16 +9,11 @@ use AlibabaCloud\Tea\Model;
 class SearchUserRequest extends Model
 {
     /**
+     * @description 精确匹配的字段。1：匹配用户名称。不填则为模糊匹配
+     *
      * @var int
      */
-    public $dingOrgId;
-
-    /**
-     * @description 用户名称、名称拼音或英文名称
-     *
-     * @var string
-     */
-    public $queryWord;
+    public $fullMatchField;
 
     /**
      * @description 分页查询锚点
@@ -28,24 +23,23 @@ class SearchUserRequest extends Model
     public $offset;
 
     /**
+     * @description 用户名称、名称拼音或英文名称
+     *
+     * @var string
+     */
+    public $queryWord;
+
+    /**
      * @description 分页长度
      *
      * @var int
      */
     public $size;
-
-    /**
-     * @description 精确匹配的字段。1：匹配用户名称。不填则为模糊匹配
-     *
-     * @var int
-     */
-    public $fullMatchField;
     protected $_name = [
-        'dingOrgId'      => 'dingOrgId',
-        'queryWord'      => 'queryWord',
-        'offset'         => 'offset',
-        'size'           => 'size',
         'fullMatchField' => 'fullMatchField',
+        'offset'         => 'offset',
+        'queryWord'      => 'queryWord',
+        'size'           => 'size',
     ];
 
     public function validate()
@@ -55,20 +49,17 @@ class SearchUserRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->dingOrgId) {
-            $res['dingOrgId'] = $this->dingOrgId;
-        }
-        if (null !== $this->queryWord) {
-            $res['queryWord'] = $this->queryWord;
+        if (null !== $this->fullMatchField) {
+            $res['fullMatchField'] = $this->fullMatchField;
         }
         if (null !== $this->offset) {
             $res['offset'] = $this->offset;
         }
+        if (null !== $this->queryWord) {
+            $res['queryWord'] = $this->queryWord;
+        }
         if (null !== $this->size) {
             $res['size'] = $this->size;
-        }
-        if (null !== $this->fullMatchField) {
-            $res['fullMatchField'] = $this->fullMatchField;
         }
 
         return $res;
@@ -82,20 +73,17 @@ class SearchUserRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['dingOrgId'])) {
-            $model->dingOrgId = $map['dingOrgId'];
-        }
-        if (isset($map['queryWord'])) {
-            $model->queryWord = $map['queryWord'];
+        if (isset($map['fullMatchField'])) {
+            $model->fullMatchField = $map['fullMatchField'];
         }
         if (isset($map['offset'])) {
             $model->offset = $map['offset'];
         }
+        if (isset($map['queryWord'])) {
+            $model->queryWord = $map['queryWord'];
+        }
         if (isset($map['size'])) {
             $model->size = $map['size'];
-        }
-        if (isset($map['fullMatchField'])) {
-            $model->fullMatchField = $map['fullMatchField'];
         }
 
         return $model;

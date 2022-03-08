@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class GrantCspaceAuthorizationRequest extends Model
 {
     /**
+     * @description 权限有效时间，单位为秒。
+     *
+     * @var int
+     */
+    public $durationSeconds;
+
+    /**
      * @description 审批控件 id。
      *
      * @var string
@@ -28,48 +35,11 @@ class GrantCspaceAuthorizationRequest extends Model
      * @var string
      */
     public $userId;
-
-    /**
-     * @description 权限有效时间，单位为秒。
-     *
-     * @var int
-     */
-    public $durationSeconds;
-
-    /**
-     * @var string
-     */
-    public $dingCorpId;
-
-    /**
-     * @var int
-     */
-    public $dingOrgId;
-
-    /**
-     * @var int
-     */
-    public $dingIsvOrgId;
-
-    /**
-     * @var string
-     */
-    public $dingSuiteKey;
-
-    /**
-     * @var int
-     */
-    public $dingTokenGrantType;
     protected $_name = [
-        'spaceId'            => 'spaceId',
-        'type'               => 'type',
-        'userId'             => 'userId',
-        'durationSeconds'    => 'durationSeconds',
-        'dingCorpId'         => 'dingCorpId',
-        'dingOrgId'          => 'dingOrgId',
-        'dingIsvOrgId'       => 'dingIsvOrgId',
-        'dingSuiteKey'       => 'dingSuiteKey',
-        'dingTokenGrantType' => 'dingTokenGrantType',
+        'durationSeconds' => 'durationSeconds',
+        'spaceId'         => 'spaceId',
+        'type'            => 'type',
+        'userId'          => 'userId',
     ];
 
     public function validate()
@@ -79,6 +49,9 @@ class GrantCspaceAuthorizationRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->durationSeconds) {
+            $res['durationSeconds'] = $this->durationSeconds;
+        }
         if (null !== $this->spaceId) {
             $res['spaceId'] = $this->spaceId;
         }
@@ -87,24 +60,6 @@ class GrantCspaceAuthorizationRequest extends Model
         }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
-        }
-        if (null !== $this->durationSeconds) {
-            $res['durationSeconds'] = $this->durationSeconds;
-        }
-        if (null !== $this->dingCorpId) {
-            $res['dingCorpId'] = $this->dingCorpId;
-        }
-        if (null !== $this->dingOrgId) {
-            $res['dingOrgId'] = $this->dingOrgId;
-        }
-        if (null !== $this->dingIsvOrgId) {
-            $res['dingIsvOrgId'] = $this->dingIsvOrgId;
-        }
-        if (null !== $this->dingSuiteKey) {
-            $res['dingSuiteKey'] = $this->dingSuiteKey;
-        }
-        if (null !== $this->dingTokenGrantType) {
-            $res['dingTokenGrantType'] = $this->dingTokenGrantType;
         }
 
         return $res;
@@ -118,6 +73,9 @@ class GrantCspaceAuthorizationRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['durationSeconds'])) {
+            $model->durationSeconds = $map['durationSeconds'];
+        }
         if (isset($map['spaceId'])) {
             $model->spaceId = $map['spaceId'];
         }
@@ -126,24 +84,6 @@ class GrantCspaceAuthorizationRequest extends Model
         }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];
-        }
-        if (isset($map['durationSeconds'])) {
-            $model->durationSeconds = $map['durationSeconds'];
-        }
-        if (isset($map['dingCorpId'])) {
-            $model->dingCorpId = $map['dingCorpId'];
-        }
-        if (isset($map['dingOrgId'])) {
-            $model->dingOrgId = $map['dingOrgId'];
-        }
-        if (isset($map['dingIsvOrgId'])) {
-            $model->dingIsvOrgId = $map['dingIsvOrgId'];
-        }
-        if (isset($map['dingSuiteKey'])) {
-            $model->dingSuiteKey = $map['dingSuiteKey'];
-        }
-        if (isset($map['dingTokenGrantType'])) {
-            $model->dingTokenGrantType = $map['dingTokenGrantType'];
         }
 
         return $model;

@@ -9,20 +9,6 @@ use AlibabaCloud\Tea\Model;
 class participant extends Model
 {
     /**
-     * @description 用户id
-     *
-     * @var string
-     */
-    public $userId;
-
-    /**
-     * @description 用户名称
-     *
-     * @var string
-     */
-    public $name;
-
-    /**
      * @description 用户直属的部门id
      *
      * @var string
@@ -35,11 +21,25 @@ class participant extends Model
      * @var string
      */
     public $departmentName;
+
+    /**
+     * @description 用户名称
+     *
+     * @var string
+     */
+    public $name;
+
+    /**
+     * @description 用户id
+     *
+     * @var string
+     */
+    public $userId;
     protected $_name = [
-        'userId'         => 'userId',
-        'name'           => 'name',
         'departmentId'   => 'departmentId',
         'departmentName' => 'departmentName',
+        'name'           => 'name',
+        'userId'         => 'userId',
     ];
 
     public function validate()
@@ -49,17 +49,17 @@ class participant extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
-        }
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
-        }
         if (null !== $this->departmentId) {
             $res['departmentId'] = $this->departmentId;
         }
         if (null !== $this->departmentName) {
             $res['departmentName'] = $this->departmentName;
+        }
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -73,17 +73,17 @@ class participant extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
-        }
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
-        }
         if (isset($map['departmentId'])) {
             $model->departmentId = $map['departmentId'];
         }
         if (isset($map['departmentName'])) {
             $model->departmentName = $map['departmentName'];
+        }
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

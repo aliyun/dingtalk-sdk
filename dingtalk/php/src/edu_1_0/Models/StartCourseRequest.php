@@ -10,11 +10,11 @@ use AlibabaCloud\Tea\Model;
 class StartCourseRequest extends Model
 {
     /**
-     * @description opUserId
+     * @description 课程编码
      *
      * @var string
      */
-    public $opUserId;
+    public $courseCode;
 
     /**
      * @description 拓展字段
@@ -24,11 +24,11 @@ class StartCourseRequest extends Model
     public $ext;
 
     /**
-     * @description 课程编码
+     * @description isvCode
      *
      * @var string
      */
-    public $courseCode;
+    public $isvCode;
 
     /**
      * @description livePlayInfoList
@@ -38,17 +38,17 @@ class StartCourseRequest extends Model
     public $livePlayInfoList;
 
     /**
-     * @description isvCode
+     * @description opUserId
      *
      * @var string
      */
-    public $isvCode;
+    public $opUserId;
     protected $_name = [
-        'opUserId'         => 'opUserId',
-        'ext'              => 'ext',
         'courseCode'       => 'courseCode',
-        'livePlayInfoList' => 'livePlayInfoList',
+        'ext'              => 'ext',
         'isvCode'          => 'isvCode',
+        'livePlayInfoList' => 'livePlayInfoList',
+        'opUserId'         => 'opUserId',
     ];
 
     public function validate()
@@ -58,14 +58,14 @@ class StartCourseRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->opUserId) {
-            $res['opUserId'] = $this->opUserId;
+        if (null !== $this->courseCode) {
+            $res['courseCode'] = $this->courseCode;
         }
         if (null !== $this->ext) {
             $res['ext'] = $this->ext;
         }
-        if (null !== $this->courseCode) {
-            $res['courseCode'] = $this->courseCode;
+        if (null !== $this->isvCode) {
+            $res['isvCode'] = $this->isvCode;
         }
         if (null !== $this->livePlayInfoList) {
             $res['livePlayInfoList'] = [];
@@ -76,8 +76,8 @@ class StartCourseRequest extends Model
                 }
             }
         }
-        if (null !== $this->isvCode) {
-            $res['isvCode'] = $this->isvCode;
+        if (null !== $this->opUserId) {
+            $res['opUserId'] = $this->opUserId;
         }
 
         return $res;
@@ -91,14 +91,14 @@ class StartCourseRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['opUserId'])) {
-            $model->opUserId = $map['opUserId'];
+        if (isset($map['courseCode'])) {
+            $model->courseCode = $map['courseCode'];
         }
         if (isset($map['ext'])) {
             $model->ext = $map['ext'];
         }
-        if (isset($map['courseCode'])) {
-            $model->courseCode = $map['courseCode'];
+        if (isset($map['isvCode'])) {
+            $model->isvCode = $map['isvCode'];
         }
         if (isset($map['livePlayInfoList'])) {
             if (!empty($map['livePlayInfoList'])) {
@@ -109,8 +109,8 @@ class StartCourseRequest extends Model
                 }
             }
         }
-        if (isset($map['isvCode'])) {
-            $model->isvCode = $map['isvCode'];
+        if (isset($map['opUserId'])) {
+            $model->opUserId = $map['opUserId'];
         }
 
         return $model;

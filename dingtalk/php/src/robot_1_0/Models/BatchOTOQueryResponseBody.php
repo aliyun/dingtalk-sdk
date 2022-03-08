@@ -10,21 +10,21 @@ use AlibabaCloud\Tea\Model;
 class BatchOTOQueryResponseBody extends Model
 {
     /**
-     * @description 消息发送状态
-     *
-     * @var string
-     */
-    public $sendStatus;
-
-    /**
      * @description 消息已读情况
      *
      * @var messageReadInfoList[]
      */
     public $messageReadInfoList;
+
+    /**
+     * @description 消息发送状态
+     *
+     * @var string
+     */
+    public $sendStatus;
     protected $_name = [
-        'sendStatus'          => 'sendStatus',
         'messageReadInfoList' => 'messageReadInfoList',
+        'sendStatus'          => 'sendStatus',
     ];
 
     public function validate()
@@ -34,9 +34,6 @@ class BatchOTOQueryResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->sendStatus) {
-            $res['sendStatus'] = $this->sendStatus;
-        }
         if (null !== $this->messageReadInfoList) {
             $res['messageReadInfoList'] = [];
             if (null !== $this->messageReadInfoList && \is_array($this->messageReadInfoList)) {
@@ -45,6 +42,9 @@ class BatchOTOQueryResponseBody extends Model
                     $res['messageReadInfoList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->sendStatus) {
+            $res['sendStatus'] = $this->sendStatus;
         }
 
         return $res;
@@ -58,9 +58,6 @@ class BatchOTOQueryResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['sendStatus'])) {
-            $model->sendStatus = $map['sendStatus'];
-        }
         if (isset($map['messageReadInfoList'])) {
             if (!empty($map['messageReadInfoList'])) {
                 $model->messageReadInfoList = [];
@@ -69,6 +66,9 @@ class BatchOTOQueryResponseBody extends Model
                     $model->messageReadInfoList[$n++] = null !== $item ? messageReadInfoList::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['sendStatus'])) {
+            $model->sendStatus = $map['sendStatus'];
         }
 
         return $model;

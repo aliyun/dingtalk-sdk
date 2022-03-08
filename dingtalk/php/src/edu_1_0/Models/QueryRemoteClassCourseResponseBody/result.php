@@ -11,6 +11,20 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
+     * @description 听课设备列表
+     *
+     * @var attendParticipants[]
+     */
+    public $attendParticipants;
+
+    /**
+     * @description 课程是否可以编辑或删除
+     *
+     * @var bool
+     */
+    public $canEdit;
+
+    /**
      * @description 课程code
      *
      * @var string
@@ -25,18 +39,11 @@ class result extends Model
     public $courseName;
 
     /**
-     * @description 课程状态：0: 未开始；1: 已开始；2: 已结束
+     * @description 当前组织在课程中的角色列表：TEACHING：授课方；ATTEND：听课方
      *
-     * @var int
+     * @var string[]
      */
-    public $status;
-
-    /**
-     * @description 开始时间
-     *
-     * @var int
-     */
-    public $startTime;
+    public $courseWays;
 
     /**
      * @description 结束时间
@@ -46,11 +53,18 @@ class result extends Model
     public $endTime;
 
     /**
-     * @description 课程是否可以编辑或删除
+     * @description 开始时间
      *
-     * @var bool
+     * @var int
      */
-    public $canEdit;
+    public $startTime;
+
+    /**
+     * @description 课程状态：0: 未开始；1: 已开始；2: 已结束
+     *
+     * @var int
+     */
+    public $status;
 
     /**
      * @description 授课设备
@@ -58,30 +72,16 @@ class result extends Model
      * @var teachingParticipant
      */
     public $teachingParticipant;
-
-    /**
-     * @description 听课设备列表
-     *
-     * @var attendParticipants[]
-     */
-    public $attendParticipants;
-
-    /**
-     * @description 当前组织在课程中的角色列表：TEACHING：授课方；ATTEND：听课方
-     *
-     * @var string[]
-     */
-    public $courseWays;
     protected $_name = [
+        'attendParticipants'  => 'attendParticipants',
+        'canEdit'             => 'canEdit',
         'courseCode'          => 'courseCode',
         'courseName'          => 'courseName',
-        'status'              => 'status',
-        'startTime'           => 'startTime',
-        'endTime'             => 'endTime',
-        'canEdit'             => 'canEdit',
-        'teachingParticipant' => 'teachingParticipant',
-        'attendParticipants'  => 'attendParticipants',
         'courseWays'          => 'courseWays',
+        'endTime'             => 'endTime',
+        'startTime'           => 'startTime',
+        'status'              => 'status',
+        'teachingParticipant' => 'teachingParticipant',
     ];
 
     public function validate()
@@ -91,27 +91,6 @@ class result extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->courseCode) {
-            $res['courseCode'] = $this->courseCode;
-        }
-        if (null !== $this->courseName) {
-            $res['courseName'] = $this->courseName;
-        }
-        if (null !== $this->status) {
-            $res['status'] = $this->status;
-        }
-        if (null !== $this->startTime) {
-            $res['startTime'] = $this->startTime;
-        }
-        if (null !== $this->endTime) {
-            $res['endTime'] = $this->endTime;
-        }
-        if (null !== $this->canEdit) {
-            $res['canEdit'] = $this->canEdit;
-        }
-        if (null !== $this->teachingParticipant) {
-            $res['teachingParticipant'] = null !== $this->teachingParticipant ? $this->teachingParticipant->toMap() : null;
-        }
         if (null !== $this->attendParticipants) {
             $res['attendParticipants'] = [];
             if (null !== $this->attendParticipants && \is_array($this->attendParticipants)) {
@@ -121,8 +100,29 @@ class result extends Model
                 }
             }
         }
+        if (null !== $this->canEdit) {
+            $res['canEdit'] = $this->canEdit;
+        }
+        if (null !== $this->courseCode) {
+            $res['courseCode'] = $this->courseCode;
+        }
+        if (null !== $this->courseName) {
+            $res['courseName'] = $this->courseName;
+        }
         if (null !== $this->courseWays) {
             $res['courseWays'] = $this->courseWays;
+        }
+        if (null !== $this->endTime) {
+            $res['endTime'] = $this->endTime;
+        }
+        if (null !== $this->startTime) {
+            $res['startTime'] = $this->startTime;
+        }
+        if (null !== $this->status) {
+            $res['status'] = $this->status;
+        }
+        if (null !== $this->teachingParticipant) {
+            $res['teachingParticipant'] = null !== $this->teachingParticipant ? $this->teachingParticipant->toMap() : null;
         }
 
         return $res;
@@ -136,27 +136,6 @@ class result extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['courseCode'])) {
-            $model->courseCode = $map['courseCode'];
-        }
-        if (isset($map['courseName'])) {
-            $model->courseName = $map['courseName'];
-        }
-        if (isset($map['status'])) {
-            $model->status = $map['status'];
-        }
-        if (isset($map['startTime'])) {
-            $model->startTime = $map['startTime'];
-        }
-        if (isset($map['endTime'])) {
-            $model->endTime = $map['endTime'];
-        }
-        if (isset($map['canEdit'])) {
-            $model->canEdit = $map['canEdit'];
-        }
-        if (isset($map['teachingParticipant'])) {
-            $model->teachingParticipant = teachingParticipant::fromMap($map['teachingParticipant']);
-        }
         if (isset($map['attendParticipants'])) {
             if (!empty($map['attendParticipants'])) {
                 $model->attendParticipants = [];
@@ -166,10 +145,31 @@ class result extends Model
                 }
             }
         }
+        if (isset($map['canEdit'])) {
+            $model->canEdit = $map['canEdit'];
+        }
+        if (isset($map['courseCode'])) {
+            $model->courseCode = $map['courseCode'];
+        }
+        if (isset($map['courseName'])) {
+            $model->courseName = $map['courseName'];
+        }
         if (isset($map['courseWays'])) {
             if (!empty($map['courseWays'])) {
                 $model->courseWays = $map['courseWays'];
             }
+        }
+        if (isset($map['endTime'])) {
+            $model->endTime = $map['endTime'];
+        }
+        if (isset($map['startTime'])) {
+            $model->startTime = $map['startTime'];
+        }
+        if (isset($map['status'])) {
+            $model->status = $map['status'];
+        }
+        if (isset($map['teachingParticipant'])) {
+            $model->teachingParticipant = teachingParticipant::fromMap($map['teachingParticipant']);
         }
 
         return $model;

@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class subInstAddressInfo extends Model
 {
     /**
-     * @description 省码
+     * @description 详细地址
      *
      * @var string
      */
-    public $provinceCode;
+    public $address;
 
     /**
      * @description 市码
@@ -30,16 +30,16 @@ class subInstAddressInfo extends Model
     public $districtCode;
 
     /**
-     * @description 详细地址
+     * @description 省码
      *
      * @var string
      */
-    public $address;
+    public $provinceCode;
     protected $_name = [
-        'provinceCode' => 'provinceCode',
+        'address'      => 'address',
         'cityCode'     => 'cityCode',
         'districtCode' => 'districtCode',
-        'address'      => 'address',
+        'provinceCode' => 'provinceCode',
     ];
 
     public function validate()
@@ -49,8 +49,8 @@ class subInstAddressInfo extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->provinceCode) {
-            $res['provinceCode'] = $this->provinceCode;
+        if (null !== $this->address) {
+            $res['address'] = $this->address;
         }
         if (null !== $this->cityCode) {
             $res['cityCode'] = $this->cityCode;
@@ -58,8 +58,8 @@ class subInstAddressInfo extends Model
         if (null !== $this->districtCode) {
             $res['districtCode'] = $this->districtCode;
         }
-        if (null !== $this->address) {
-            $res['address'] = $this->address;
+        if (null !== $this->provinceCode) {
+            $res['provinceCode'] = $this->provinceCode;
         }
 
         return $res;
@@ -73,8 +73,8 @@ class subInstAddressInfo extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['provinceCode'])) {
-            $model->provinceCode = $map['provinceCode'];
+        if (isset($map['address'])) {
+            $model->address = $map['address'];
         }
         if (isset($map['cityCode'])) {
             $model->cityCode = $map['cityCode'];
@@ -82,8 +82,8 @@ class subInstAddressInfo extends Model
         if (isset($map['districtCode'])) {
             $model->districtCode = $map['districtCode'];
         }
-        if (isset($map['address'])) {
-            $model->address = $map['address'];
+        if (isset($map['provinceCode'])) {
+            $model->provinceCode = $map['provinceCode'];
         }
 
         return $model;

@@ -17,22 +17,22 @@ class QueryMedicalEventsResponseBody extends Model
     public $content;
 
     /**
-     * @description 数据总量
-     *
-     * @var int
-     */
-    public $totalCount;
-
-    /**
      * @description 是否成功
      *
      * @var bool
      */
     public $success;
+
+    /**
+     * @description 数据总量
+     *
+     * @var int
+     */
+    public $totalCount;
     protected $_name = [
         'content'    => 'content',
-        'totalCount' => 'totalCount',
         'success'    => 'success',
+        'totalCount' => 'totalCount',
     ];
 
     public function validate()
@@ -51,11 +51,11 @@ class QueryMedicalEventsResponseBody extends Model
                 }
             }
         }
-        if (null !== $this->totalCount) {
-            $res['totalCount'] = $this->totalCount;
-        }
         if (null !== $this->success) {
             $res['success'] = $this->success;
+        }
+        if (null !== $this->totalCount) {
+            $res['totalCount'] = $this->totalCount;
         }
 
         return $res;
@@ -78,11 +78,11 @@ class QueryMedicalEventsResponseBody extends Model
                 }
             }
         }
-        if (isset($map['totalCount'])) {
-            $model->totalCount = $map['totalCount'];
-        }
         if (isset($map['success'])) {
             $model->success = $map['success'];
+        }
+        if (isset($map['totalCount'])) {
+            $model->totalCount = $map['totalCount'];
         }
 
         return $model;

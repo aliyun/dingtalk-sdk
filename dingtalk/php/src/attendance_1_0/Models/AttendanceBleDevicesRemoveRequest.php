@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class AttendanceBleDevicesRemoveRequest extends Model
 {
     /**
-     * @description 操作人id
+     * @description 蓝牙设备Id列表
      *
-     * @var string
+     * @var int[]
      */
-    public $opUserId;
+    public $deviceIdList;
 
     /**
      * @description 考勤组Id
@@ -23,15 +23,15 @@ class AttendanceBleDevicesRemoveRequest extends Model
     public $groupKey;
 
     /**
-     * @description 蓝牙设备Id列表
+     * @description 操作人id
      *
-     * @var int[]
+     * @var string
      */
-    public $deviceIdList;
+    public $opUserId;
     protected $_name = [
-        'opUserId'     => 'opUserId',
-        'groupKey'     => 'groupKey',
         'deviceIdList' => 'deviceIdList',
+        'groupKey'     => 'groupKey',
+        'opUserId'     => 'opUserId',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class AttendanceBleDevicesRemoveRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->opUserId) {
-            $res['opUserId'] = $this->opUserId;
+        if (null !== $this->deviceIdList) {
+            $res['deviceIdList'] = $this->deviceIdList;
         }
         if (null !== $this->groupKey) {
             $res['groupKey'] = $this->groupKey;
         }
-        if (null !== $this->deviceIdList) {
-            $res['deviceIdList'] = $this->deviceIdList;
+        if (null !== $this->opUserId) {
+            $res['opUserId'] = $this->opUserId;
         }
 
         return $res;
@@ -62,16 +62,16 @@ class AttendanceBleDevicesRemoveRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['opUserId'])) {
-            $model->opUserId = $map['opUserId'];
-        }
-        if (isset($map['groupKey'])) {
-            $model->groupKey = $map['groupKey'];
-        }
         if (isset($map['deviceIdList'])) {
             if (!empty($map['deviceIdList'])) {
                 $model->deviceIdList = $map['deviceIdList'];
             }
+        }
+        if (isset($map['groupKey'])) {
+            $model->groupKey = $map['groupKey'];
+        }
+        if (isset($map['opUserId'])) {
+            $model->opUserId = $map['opUserId'];
         }
 
         return $model;

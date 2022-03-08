@@ -16,22 +16,22 @@ class SetDeptPartnerTypeAndNumRequest extends Model
     public $deptId;
 
     /**
-     * @description 伙伴编码
-     *
-     * @var string
-     */
-    public $partnerNum;
-
-    /**
      * @description 伙伴类型id列表
      *
      * @var string[]
      */
     public $labelIds;
+
+    /**
+     * @description 伙伴编码
+     *
+     * @var string
+     */
+    public $partnerNum;
     protected $_name = [
         'deptId'     => 'deptId',
-        'partnerNum' => 'partnerNum',
         'labelIds'   => 'labelIds',
+        'partnerNum' => 'partnerNum',
     ];
 
     public function validate()
@@ -44,11 +44,11 @@ class SetDeptPartnerTypeAndNumRequest extends Model
         if (null !== $this->deptId) {
             $res['deptId'] = $this->deptId;
         }
-        if (null !== $this->partnerNum) {
-            $res['partnerNum'] = $this->partnerNum;
-        }
         if (null !== $this->labelIds) {
             $res['labelIds'] = $this->labelIds;
+        }
+        if (null !== $this->partnerNum) {
+            $res['partnerNum'] = $this->partnerNum;
         }
 
         return $res;
@@ -65,13 +65,13 @@ class SetDeptPartnerTypeAndNumRequest extends Model
         if (isset($map['deptId'])) {
             $model->deptId = $map['deptId'];
         }
-        if (isset($map['partnerNum'])) {
-            $model->partnerNum = $map['partnerNum'];
-        }
         if (isset($map['labelIds'])) {
             if (!empty($map['labelIds'])) {
                 $model->labelIds = $map['labelIds'];
             }
+        }
+        if (isset($map['partnerNum'])) {
+            $model->partnerNum = $map['partnerNum'];
         }
 
         return $model;

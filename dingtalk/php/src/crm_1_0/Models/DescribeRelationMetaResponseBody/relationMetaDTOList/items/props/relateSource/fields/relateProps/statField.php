@@ -19,19 +19,19 @@ class statField extends Model
     public $label;
 
     /**
-     * @var bool
-     */
-    public $upper;
-
-    /**
      * @var string
      */
     public $unit;
+
+    /**
+     * @var bool
+     */
+    public $upper;
     protected $_name = [
         'fieldId' => 'fieldId',
         'label'   => 'label',
-        'upper'   => 'upper',
         'unit'    => 'unit',
+        'upper'   => 'upper',
     ];
 
     public function validate()
@@ -47,11 +47,11 @@ class statField extends Model
         if (null !== $this->label) {
             $res['label'] = $this->label;
         }
-        if (null !== $this->upper) {
-            $res['upper'] = $this->upper;
-        }
         if (null !== $this->unit) {
             $res['unit'] = $this->unit;
+        }
+        if (null !== $this->upper) {
+            $res['upper'] = $this->upper;
         }
 
         return $res;
@@ -71,11 +71,11 @@ class statField extends Model
         if (isset($map['label'])) {
             $model->label = $map['label'];
         }
-        if (isset($map['upper'])) {
-            $model->upper = $map['upper'];
-        }
         if (isset($map['unit'])) {
             $model->unit = $map['unit'];
+        }
+        if (isset($map['upper'])) {
+            $model->upper = $map['upper'];
         }
 
         return $model;

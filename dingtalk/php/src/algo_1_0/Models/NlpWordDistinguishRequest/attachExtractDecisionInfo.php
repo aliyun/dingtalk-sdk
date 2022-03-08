@@ -19,6 +19,11 @@ class attachExtractDecisionInfo extends Model
     public $candidateWords;
 
     /**
+     * @var string
+     */
+    public $corpId;
+
+    /**
      * @var string[]
      */
     public $deptIds;
@@ -27,17 +32,12 @@ class attachExtractDecisionInfo extends Model
      * @var string
      */
     public $userId;
-
-    /**
-     * @var string
-     */
-    public $corpId;
     protected $_name = [
         'blackWords'     => 'blackWords',
         'candidateWords' => 'candidateWords',
+        'corpId'         => 'corpId',
         'deptIds'        => 'deptIds',
         'userId'         => 'userId',
-        'corpId'         => 'corpId',
     ];
 
     public function validate()
@@ -53,14 +53,14 @@ class attachExtractDecisionInfo extends Model
         if (null !== $this->candidateWords) {
             $res['candidateWords'] = $this->candidateWords;
         }
+        if (null !== $this->corpId) {
+            $res['corpId'] = $this->corpId;
+        }
         if (null !== $this->deptIds) {
             $res['deptIds'] = $this->deptIds;
         }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
-        }
-        if (null !== $this->corpId) {
-            $res['corpId'] = $this->corpId;
         }
 
         return $res;
@@ -84,6 +84,9 @@ class attachExtractDecisionInfo extends Model
                 $model->candidateWords = $map['candidateWords'];
             }
         }
+        if (isset($map['corpId'])) {
+            $model->corpId = $map['corpId'];
+        }
         if (isset($map['deptIds'])) {
             if (!empty($map['deptIds'])) {
                 $model->deptIds = $map['deptIds'];
@@ -91,9 +94,6 @@ class attachExtractDecisionInfo extends Model
         }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];
-        }
-        if (isset($map['corpId'])) {
-            $model->corpId = $map['corpId'];
         }
 
         return $model;

@@ -11,17 +11,7 @@ class list_ extends Model
     /**
      * @var string
      */
-    public $triggerId;
-
-    /**
-     * @var string
-     */
     public $bizPrimaryKey;
-
-    /**
-     * @var bool
-     */
-    public $success;
 
     /**
      * @var string
@@ -32,12 +22,22 @@ class list_ extends Model
      * @var string
      */
     public $subErrMsg;
+
+    /**
+     * @var bool
+     */
+    public $success;
+
+    /**
+     * @var string
+     */
+    public $triggerId;
     protected $_name = [
-        'triggerId'     => 'triggerId',
         'bizPrimaryKey' => 'bizPrimaryKey',
-        'success'       => 'success',
         'subErrCode'    => 'subErrCode',
         'subErrMsg'     => 'subErrMsg',
+        'success'       => 'success',
+        'triggerId'     => 'triggerId',
     ];
 
     public function validate()
@@ -47,20 +47,20 @@ class list_ extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->triggerId) {
-            $res['triggerId'] = $this->triggerId;
-        }
         if (null !== $this->bizPrimaryKey) {
             $res['bizPrimaryKey'] = $this->bizPrimaryKey;
-        }
-        if (null !== $this->success) {
-            $res['success'] = $this->success;
         }
         if (null !== $this->subErrCode) {
             $res['subErrCode'] = $this->subErrCode;
         }
         if (null !== $this->subErrMsg) {
             $res['subErrMsg'] = $this->subErrMsg;
+        }
+        if (null !== $this->success) {
+            $res['success'] = $this->success;
+        }
+        if (null !== $this->triggerId) {
+            $res['triggerId'] = $this->triggerId;
         }
 
         return $res;
@@ -74,20 +74,20 @@ class list_ extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['triggerId'])) {
-            $model->triggerId = $map['triggerId'];
-        }
         if (isset($map['bizPrimaryKey'])) {
             $model->bizPrimaryKey = $map['bizPrimaryKey'];
-        }
-        if (isset($map['success'])) {
-            $model->success = $map['success'];
         }
         if (isset($map['subErrCode'])) {
             $model->subErrCode = $map['subErrCode'];
         }
         if (isset($map['subErrMsg'])) {
             $model->subErrMsg = $map['subErrMsg'];
+        }
+        if (isset($map['success'])) {
+            $model->success = $map['success'];
+        }
+        if (isset($map['triggerId'])) {
+            $model->triggerId = $map['triggerId'];
         }
 
         return $model;

@@ -9,24 +9,11 @@ use AlibabaCloud\Tea\Model;
 class AddOpenCategoryRequest extends Model
 {
     /**
+     * @description 所属知识库ID
+     *
      * @var int
      */
-    public $dingIsvOrgId;
-
-    /**
-     * @var int
-     */
-    public $dingTokenGrantType;
-
-    /**
-     * @var string
-     */
-    public $dingSuiteKey;
-
-    /**
-     * @var int
-     */
-    public $dingOrgId;
+    public $libraryId;
 
     /**
      * @description 开放团队ID
@@ -34,6 +21,20 @@ class AddOpenCategoryRequest extends Model
      * @var string
      */
     public $openTeamId;
+
+    /**
+     * @description 父类目ID(为0代表顶层id)
+     *
+     * @var int
+     */
+    public $parentId;
+
+    /**
+     * @description 类目标题
+     *
+     * @var string
+     */
+    public $title;
 
     /**
      * @description 员工/用户ID
@@ -48,38 +49,13 @@ class AddOpenCategoryRequest extends Model
      * @var string
      */
     public $userName;
-
-    /**
-     * @description 类目标题
-     *
-     * @var string
-     */
-    public $title;
-
-    /**
-     * @description 父类目ID(为0代表顶层id)
-     *
-     * @var int
-     */
-    public $parentId;
-
-    /**
-     * @description 所属知识库ID
-     *
-     * @var int
-     */
-    public $libraryId;
     protected $_name = [
-        'dingIsvOrgId'       => 'dingIsvOrgId',
-        'dingTokenGrantType' => 'dingTokenGrantType',
-        'dingSuiteKey'       => 'dingSuiteKey',
-        'dingOrgId'          => 'dingOrgId',
-        'openTeamId'         => 'openTeamId',
-        'userId'             => 'userId',
-        'userName'           => 'userName',
-        'title'              => 'title',
-        'parentId'           => 'parentId',
-        'libraryId'          => 'libraryId',
+        'libraryId'  => 'libraryId',
+        'openTeamId' => 'openTeamId',
+        'parentId'   => 'parentId',
+        'title'      => 'title',
+        'userId'     => 'userId',
+        'userName'   => 'userName',
     ];
 
     public function validate()
@@ -89,35 +65,23 @@ class AddOpenCategoryRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->dingIsvOrgId) {
-            $res['dingIsvOrgId'] = $this->dingIsvOrgId;
-        }
-        if (null !== $this->dingTokenGrantType) {
-            $res['dingTokenGrantType'] = $this->dingTokenGrantType;
-        }
-        if (null !== $this->dingSuiteKey) {
-            $res['dingSuiteKey'] = $this->dingSuiteKey;
-        }
-        if (null !== $this->dingOrgId) {
-            $res['dingOrgId'] = $this->dingOrgId;
+        if (null !== $this->libraryId) {
+            $res['libraryId'] = $this->libraryId;
         }
         if (null !== $this->openTeamId) {
             $res['openTeamId'] = $this->openTeamId;
+        }
+        if (null !== $this->parentId) {
+            $res['parentId'] = $this->parentId;
+        }
+        if (null !== $this->title) {
+            $res['title'] = $this->title;
         }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
         }
         if (null !== $this->userName) {
             $res['userName'] = $this->userName;
-        }
-        if (null !== $this->title) {
-            $res['title'] = $this->title;
-        }
-        if (null !== $this->parentId) {
-            $res['parentId'] = $this->parentId;
-        }
-        if (null !== $this->libraryId) {
-            $res['libraryId'] = $this->libraryId;
         }
 
         return $res;
@@ -131,35 +95,23 @@ class AddOpenCategoryRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['dingIsvOrgId'])) {
-            $model->dingIsvOrgId = $map['dingIsvOrgId'];
-        }
-        if (isset($map['dingTokenGrantType'])) {
-            $model->dingTokenGrantType = $map['dingTokenGrantType'];
-        }
-        if (isset($map['dingSuiteKey'])) {
-            $model->dingSuiteKey = $map['dingSuiteKey'];
-        }
-        if (isset($map['dingOrgId'])) {
-            $model->dingOrgId = $map['dingOrgId'];
+        if (isset($map['libraryId'])) {
+            $model->libraryId = $map['libraryId'];
         }
         if (isset($map['openTeamId'])) {
             $model->openTeamId = $map['openTeamId'];
+        }
+        if (isset($map['parentId'])) {
+            $model->parentId = $map['parentId'];
+        }
+        if (isset($map['title'])) {
+            $model->title = $map['title'];
         }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];
         }
         if (isset($map['userName'])) {
             $model->userName = $map['userName'];
-        }
-        if (isset($map['title'])) {
-            $model->title = $map['title'];
-        }
-        if (isset($map['parentId'])) {
-            $model->parentId = $map['parentId'];
-        }
-        if (isset($map['libraryId'])) {
-            $model->libraryId = $map['libraryId'];
         }
 
         return $model;

@@ -9,29 +9,9 @@ use AlibabaCloud\Tea\Model;
 class UpdateResidentBlackBoardRequest extends Model
 {
     /**
-     * @var int
-     */
-    public $dingIsvOrgId;
-
-    /**
      * @var string
      */
-    public $dingCorpId;
-
-    /**
-     * @var string
-     */
-    public $dingSuiteKey;
-
-    /**
-     * @var int
-     */
-    public $dingTokenGrantType;
-
-    /**
-     * @var string
-     */
-    public $title;
+    public $blackboardId;
 
     /**
      * @var string
@@ -46,16 +26,12 @@ class UpdateResidentBlackBoardRequest extends Model
     /**
      * @var string
      */
-    public $blackboardId;
+    public $title;
     protected $_name = [
-        'dingIsvOrgId'       => 'dingIsvOrgId',
-        'dingCorpId'         => 'dingCorpId',
-        'dingSuiteKey'       => 'dingSuiteKey',
-        'dingTokenGrantType' => 'dingTokenGrantType',
-        'title'              => 'title',
-        'context'            => 'context',
-        'mediaId'            => 'mediaId',
-        'blackboardId'       => 'blackboardId',
+        'blackboardId' => 'blackboardId',
+        'context'      => 'context',
+        'mediaId'      => 'mediaId',
+        'title'        => 'title',
     ];
 
     public function validate()
@@ -65,20 +41,8 @@ class UpdateResidentBlackBoardRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->dingIsvOrgId) {
-            $res['dingIsvOrgId'] = $this->dingIsvOrgId;
-        }
-        if (null !== $this->dingCorpId) {
-            $res['dingCorpId'] = $this->dingCorpId;
-        }
-        if (null !== $this->dingSuiteKey) {
-            $res['dingSuiteKey'] = $this->dingSuiteKey;
-        }
-        if (null !== $this->dingTokenGrantType) {
-            $res['dingTokenGrantType'] = $this->dingTokenGrantType;
-        }
-        if (null !== $this->title) {
-            $res['title'] = $this->title;
+        if (null !== $this->blackboardId) {
+            $res['blackboardId'] = $this->blackboardId;
         }
         if (null !== $this->context) {
             $res['context'] = $this->context;
@@ -86,8 +50,8 @@ class UpdateResidentBlackBoardRequest extends Model
         if (null !== $this->mediaId) {
             $res['mediaId'] = $this->mediaId;
         }
-        if (null !== $this->blackboardId) {
-            $res['blackboardId'] = $this->blackboardId;
+        if (null !== $this->title) {
+            $res['title'] = $this->title;
         }
 
         return $res;
@@ -101,20 +65,8 @@ class UpdateResidentBlackBoardRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['dingIsvOrgId'])) {
-            $model->dingIsvOrgId = $map['dingIsvOrgId'];
-        }
-        if (isset($map['dingCorpId'])) {
-            $model->dingCorpId = $map['dingCorpId'];
-        }
-        if (isset($map['dingSuiteKey'])) {
-            $model->dingSuiteKey = $map['dingSuiteKey'];
-        }
-        if (isset($map['dingTokenGrantType'])) {
-            $model->dingTokenGrantType = $map['dingTokenGrantType'];
-        }
-        if (isset($map['title'])) {
-            $model->title = $map['title'];
+        if (isset($map['blackboardId'])) {
+            $model->blackboardId = $map['blackboardId'];
         }
         if (isset($map['context'])) {
             $model->context = $map['context'];
@@ -122,8 +74,8 @@ class UpdateResidentBlackBoardRequest extends Model
         if (isset($map['mediaId'])) {
             $model->mediaId = $map['mediaId'];
         }
-        if (isset($map['blackboardId'])) {
-            $model->blackboardId = $map['blackboardId'];
+        if (isset($map['title'])) {
+            $model->title = $map['title'];
         }
 
         return $model;

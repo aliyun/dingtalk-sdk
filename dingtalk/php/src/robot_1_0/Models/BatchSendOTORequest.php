@@ -9,20 +9,6 @@ use AlibabaCloud\Tea\Model;
 class BatchSendOTORequest extends Model
 {
     /**
-     * @description 机器人的robotCode
-     *
-     * @var string
-     */
-    public $robotCode;
-
-    /**
-     * @description 被推送会话人员的userId列表
-     *
-     * @var string[]
-     */
-    public $userIds;
-
-    /**
      * @description 消息的msgKey
      *
      * @var string
@@ -35,11 +21,25 @@ class BatchSendOTORequest extends Model
      * @var string
      */
     public $msgParam;
+
+    /**
+     * @description 机器人的robotCode
+     *
+     * @var string
+     */
+    public $robotCode;
+
+    /**
+     * @description 被推送会话人员的userId列表
+     *
+     * @var string[]
+     */
+    public $userIds;
     protected $_name = [
-        'robotCode' => 'robotCode',
-        'userIds'   => 'userIds',
         'msgKey'    => 'msgKey',
         'msgParam'  => 'msgParam',
+        'robotCode' => 'robotCode',
+        'userIds'   => 'userIds',
     ];
 
     public function validate()
@@ -49,17 +49,17 @@ class BatchSendOTORequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->robotCode) {
-            $res['robotCode'] = $this->robotCode;
-        }
-        if (null !== $this->userIds) {
-            $res['userIds'] = $this->userIds;
-        }
         if (null !== $this->msgKey) {
             $res['msgKey'] = $this->msgKey;
         }
         if (null !== $this->msgParam) {
             $res['msgParam'] = $this->msgParam;
+        }
+        if (null !== $this->robotCode) {
+            $res['robotCode'] = $this->robotCode;
+        }
+        if (null !== $this->userIds) {
+            $res['userIds'] = $this->userIds;
         }
 
         return $res;
@@ -73,6 +73,12 @@ class BatchSendOTORequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['msgKey'])) {
+            $model->msgKey = $map['msgKey'];
+        }
+        if (isset($map['msgParam'])) {
+            $model->msgParam = $map['msgParam'];
+        }
         if (isset($map['robotCode'])) {
             $model->robotCode = $map['robotCode'];
         }
@@ -80,12 +86,6 @@ class BatchSendOTORequest extends Model
             if (!empty($map['userIds'])) {
                 $model->userIds = $map['userIds'];
             }
-        }
-        if (isset($map['msgKey'])) {
-            $model->msgKey = $map['msgKey'];
-        }
-        if (isset($map['msgParam'])) {
-            $model->msgParam = $map['msgParam'];
         }
 
         return $model;

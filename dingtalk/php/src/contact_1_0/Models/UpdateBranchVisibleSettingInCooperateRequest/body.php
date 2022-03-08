@@ -16,18 +16,18 @@ class body extends Model
     public $branchCorpId;
 
     /**
-     * @description 设置可见性类型 0 ：在主干通讯录隐藏分支(其它分支包含主组织都看不到,额外设置可以看到) 1 ： 仅可见分支所在部门(只能看到自己企业加入的成员，额外设置可以看到其它成员)
-     *
-     * @var int
-     */
-    public $type;
-
-    /**
      * @description 是否开启 true：开启，false：关闭
      *
      * @var bool
      */
     public $open;
+
+    /**
+     * @description 设置可见性类型 0 ：在主干通讯录隐藏分支(其它分支包含主组织都看不到,额外设置可以看到) 1 ： 仅可见分支所在部门(只能看到自己企业加入的成员，额外设置可以看到其它成员)
+     *
+     * @var int
+     */
+    public $type;
 
     /**
      * @description 设置例外的加入合作空间/关联组织的分支企业CorpId列表
@@ -44,8 +44,8 @@ class body extends Model
     public $visibleDeptIds;
     protected $_name = [
         'branchCorpId'         => 'branchCorpId',
-        'type'                 => 'type',
         'open'                 => 'open',
+        'type'                 => 'type',
         'visibleBranchCorpIds' => 'visibleBranchCorpIds',
         'visibleDeptIds'       => 'visibleDeptIds',
     ];
@@ -60,11 +60,11 @@ class body extends Model
         if (null !== $this->branchCorpId) {
             $res['branchCorpId'] = $this->branchCorpId;
         }
-        if (null !== $this->type) {
-            $res['type'] = $this->type;
-        }
         if (null !== $this->open) {
             $res['open'] = $this->open;
+        }
+        if (null !== $this->type) {
+            $res['type'] = $this->type;
         }
         if (null !== $this->visibleBranchCorpIds) {
             $res['visibleBranchCorpIds'] = $this->visibleBranchCorpIds;
@@ -87,11 +87,11 @@ class body extends Model
         if (isset($map['branchCorpId'])) {
             $model->branchCorpId = $map['branchCorpId'];
         }
-        if (isset($map['type'])) {
-            $model->type = $map['type'];
-        }
         if (isset($map['open'])) {
             $model->open = $map['open'];
+        }
+        if (isset($map['type'])) {
+            $model->type = $map['type'];
         }
         if (isset($map['visibleBranchCorpIds'])) {
             if (!empty($map['visibleBranchCorpIds'])) {

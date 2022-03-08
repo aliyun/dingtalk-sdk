@@ -11,15 +11,15 @@ class empFieldVOList extends Model
     /**
      * @var string
      */
-    public $value;
+    public $fieldCode;
 
     /**
      * @var string
      */
-    public $fieldCode;
+    public $value;
     protected $_name = [
-        'value'     => 'value',
         'fieldCode' => 'fieldCode',
+        'value'     => 'value',
     ];
 
     public function validate()
@@ -29,11 +29,11 @@ class empFieldVOList extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->value) {
-            $res['value'] = $this->value;
-        }
         if (null !== $this->fieldCode) {
             $res['fieldCode'] = $this->fieldCode;
+        }
+        if (null !== $this->value) {
+            $res['value'] = $this->value;
         }
 
         return $res;
@@ -47,11 +47,11 @@ class empFieldVOList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['value'])) {
-            $model->value = $map['value'];
-        }
         if (isset($map['fieldCode'])) {
             $model->fieldCode = $map['fieldCode'];
+        }
+        if (isset($map['value'])) {
+            $model->value = $map['value'];
         }
 
         return $model;

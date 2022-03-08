@@ -18,11 +18,18 @@ class result extends Model
     public $actionExecutor;
 
     /**
-     * @description 实例ID
+     * @description 流程结束时的审批结论
      *
      * @var string
      */
-    public $processInstanceId;
+    public $approvedResult;
+
+    /**
+     * @description 表单数据
+     *
+     * @var mixed[]
+     */
+    public $data;
 
     /**
      * @description 流程表单ID
@@ -32,32 +39,11 @@ class result extends Model
     public $formUuid;
 
     /**
-     * @description 流程Code
-     *
-     * @var string
-     */
-    public $processCode;
-
-    /**
-     * @description 实例标题
-     *
-     * @var string
-     */
-    public $title;
-
-    /**
      * @description 实例状态
      *
      * @var string
      */
     public $instanceStatus;
-
-    /**
-     * @description 流程结束时的审批结论
-     *
-     * @var string
-     */
-    public $approvedResult;
 
     /**
      * @description 发起人信息
@@ -67,21 +53,35 @@ class result extends Model
     public $originator;
 
     /**
-     * @description 表单数据
+     * @description 流程Code
      *
-     * @var mixed[]
+     * @var string
      */
-    public $data;
+    public $processCode;
+
+    /**
+     * @description 实例ID
+     *
+     * @var string
+     */
+    public $processInstanceId;
+
+    /**
+     * @description 实例标题
+     *
+     * @var string
+     */
+    public $title;
     protected $_name = [
         'actionExecutor'    => 'actionExecutor',
-        'processInstanceId' => 'processInstanceId',
-        'formUuid'          => 'formUuid',
-        'processCode'       => 'processCode',
-        'title'             => 'title',
-        'instanceStatus'    => 'instanceStatus',
         'approvedResult'    => 'approvedResult',
-        'originator'        => 'originator',
         'data'              => 'data',
+        'formUuid'          => 'formUuid',
+        'instanceStatus'    => 'instanceStatus',
+        'originator'        => 'originator',
+        'processCode'       => 'processCode',
+        'processInstanceId' => 'processInstanceId',
+        'title'             => 'title',
     ];
 
     public function validate()
@@ -100,29 +100,29 @@ class result extends Model
                 }
             }
         }
-        if (null !== $this->processInstanceId) {
-            $res['processInstanceId'] = $this->processInstanceId;
+        if (null !== $this->approvedResult) {
+            $res['approvedResult'] = $this->approvedResult;
+        }
+        if (null !== $this->data) {
+            $res['data'] = $this->data;
         }
         if (null !== $this->formUuid) {
             $res['formUuid'] = $this->formUuid;
         }
-        if (null !== $this->processCode) {
-            $res['processCode'] = $this->processCode;
-        }
-        if (null !== $this->title) {
-            $res['title'] = $this->title;
-        }
         if (null !== $this->instanceStatus) {
             $res['instanceStatus'] = $this->instanceStatus;
-        }
-        if (null !== $this->approvedResult) {
-            $res['approvedResult'] = $this->approvedResult;
         }
         if (null !== $this->originator) {
             $res['originator'] = null !== $this->originator ? $this->originator->toMap() : null;
         }
-        if (null !== $this->data) {
-            $res['data'] = $this->data;
+        if (null !== $this->processCode) {
+            $res['processCode'] = $this->processCode;
+        }
+        if (null !== $this->processInstanceId) {
+            $res['processInstanceId'] = $this->processInstanceId;
+        }
+        if (null !== $this->title) {
+            $res['title'] = $this->title;
         }
 
         return $res;
@@ -145,29 +145,29 @@ class result extends Model
                 }
             }
         }
-        if (isset($map['processInstanceId'])) {
-            $model->processInstanceId = $map['processInstanceId'];
+        if (isset($map['approvedResult'])) {
+            $model->approvedResult = $map['approvedResult'];
+        }
+        if (isset($map['data'])) {
+            $model->data = $map['data'];
         }
         if (isset($map['formUuid'])) {
             $model->formUuid = $map['formUuid'];
         }
-        if (isset($map['processCode'])) {
-            $model->processCode = $map['processCode'];
-        }
-        if (isset($map['title'])) {
-            $model->title = $map['title'];
-        }
         if (isset($map['instanceStatus'])) {
             $model->instanceStatus = $map['instanceStatus'];
-        }
-        if (isset($map['approvedResult'])) {
-            $model->approvedResult = $map['approvedResult'];
         }
         if (isset($map['originator'])) {
             $model->originator = originator::fromMap($map['originator']);
         }
-        if (isset($map['data'])) {
-            $model->data = $map['data'];
+        if (isset($map['processCode'])) {
+            $model->processCode = $map['processCode'];
+        }
+        if (isset($map['processInstanceId'])) {
+            $model->processInstanceId = $map['processInstanceId'];
+        }
+        if (isset($map['title'])) {
+            $model->title = $map['title'];
         }
 
         return $model;

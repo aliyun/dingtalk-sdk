@@ -17,22 +17,22 @@ class ListEmpAttributeVisibilityResponseBody extends Model
     public $hasMore;
 
     /**
-     * @description 下一次拉取时的offset
-     *
-     * @var int
-     */
-    public $nextCursor;
-
-    /**
      * @description 设置列表
      *
      * @var list_[]
      */
     public $list;
+
+    /**
+     * @description 下一次拉取时的offset
+     *
+     * @var int
+     */
+    public $nextCursor;
     protected $_name = [
         'hasMore'    => 'hasMore',
-        'nextCursor' => 'nextCursor',
         'list'       => 'list',
+        'nextCursor' => 'nextCursor',
     ];
 
     public function validate()
@@ -45,9 +45,6 @@ class ListEmpAttributeVisibilityResponseBody extends Model
         if (null !== $this->hasMore) {
             $res['hasMore'] = $this->hasMore;
         }
-        if (null !== $this->nextCursor) {
-            $res['nextCursor'] = $this->nextCursor;
-        }
         if (null !== $this->list) {
             $res['list'] = [];
             if (null !== $this->list && \is_array($this->list)) {
@@ -56,6 +53,9 @@ class ListEmpAttributeVisibilityResponseBody extends Model
                     $res['list'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->nextCursor) {
+            $res['nextCursor'] = $this->nextCursor;
         }
 
         return $res;
@@ -72,9 +72,6 @@ class ListEmpAttributeVisibilityResponseBody extends Model
         if (isset($map['hasMore'])) {
             $model->hasMore = $map['hasMore'];
         }
-        if (isset($map['nextCursor'])) {
-            $model->nextCursor = $map['nextCursor'];
-        }
         if (isset($map['list'])) {
             if (!empty($map['list'])) {
                 $model->list = [];
@@ -83,6 +80,9 @@ class ListEmpAttributeVisibilityResponseBody extends Model
                     $model->list[$n++] = null !== $item ? list_::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['nextCursor'])) {
+            $model->nextCursor = $map['nextCursor'];
         }
 
         return $model;

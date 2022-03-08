@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class GetReceiptRequest extends Model
 {
     /**
-     * @description 模型id
-     *
-     * @var string
-     */
-    public $modelId;
-
-    /**
      * @description 单据号
      *
      * @var string
      */
     public $code;
+
+    /**
+     * @description 模型id
+     *
+     * @var string
+     */
+    public $modelId;
     protected $_name = [
-        'modelId' => 'modelId',
         'code'    => 'code',
+        'modelId' => 'modelId',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class GetReceiptRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->modelId) {
-            $res['modelId'] = $this->modelId;
-        }
         if (null !== $this->code) {
             $res['code'] = $this->code;
+        }
+        if (null !== $this->modelId) {
+            $res['modelId'] = $this->modelId;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class GetReceiptRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['modelId'])) {
-            $model->modelId = $map['modelId'];
-        }
         if (isset($map['code'])) {
             $model->code = $map['code'];
+        }
+        if (isset($map['modelId'])) {
+            $model->modelId = $map['modelId'];
         }
 
         return $model;

@@ -12,7 +12,12 @@ class relationMetaDTO extends Model
     /**
      * @var string
      */
-    public $relationType;
+    public $desc;
+
+    /**
+     * @var items[]
+     */
+    public $items;
 
     /**
      * @var string
@@ -22,17 +27,12 @@ class relationMetaDTO extends Model
     /**
      * @var string
      */
-    public $desc;
-
-    /**
-     * @var items[]
-     */
-    public $items;
+    public $relationType;
     protected $_name = [
-        'relationType' => 'relationType',
-        'name'         => 'name',
         'desc'         => 'desc',
         'items'        => 'items',
+        'name'         => 'name',
+        'relationType' => 'relationType',
     ];
 
     public function validate()
@@ -42,12 +42,6 @@ class relationMetaDTO extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->relationType) {
-            $res['relationType'] = $this->relationType;
-        }
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
-        }
         if (null !== $this->desc) {
             $res['desc'] = $this->desc;
         }
@@ -59,6 +53,12 @@ class relationMetaDTO extends Model
                     $res['items'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
+        }
+        if (null !== $this->relationType) {
+            $res['relationType'] = $this->relationType;
         }
 
         return $res;
@@ -72,12 +72,6 @@ class relationMetaDTO extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['relationType'])) {
-            $model->relationType = $map['relationType'];
-        }
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
-        }
         if (isset($map['desc'])) {
             $model->desc = $map['desc'];
         }
@@ -89,6 +83,12 @@ class relationMetaDTO extends Model
                     $model->items[$n++] = null !== $item ? items::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
+        }
+        if (isset($map['relationType'])) {
+            $model->relationType = $map['relationType'];
         }
 
         return $model;

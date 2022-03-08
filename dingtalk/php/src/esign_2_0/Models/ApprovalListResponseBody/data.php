@@ -15,14 +15,24 @@ class data extends Model
     public $approvalName;
 
     /**
-     * @var string
+     * @var approvalNodes[]
      */
-    public $status;
+    public $approvalNodes;
+
+    /**
+     * @var float
+     */
+    public $endTime;
 
     /**
      * @var string
      */
     public $refuseReason;
+
+    /**
+     * @var string
+     */
+    public $sealIdImg;
 
     /**
      * @var string
@@ -35,28 +45,18 @@ class data extends Model
     public $startTime;
 
     /**
-     * @var float
-     */
-    public $endTime;
-
-    /**
      * @var string
      */
-    public $sealIdImg;
-
-    /**
-     * @var approvalNodes[]
-     */
-    public $approvalNodes;
+    public $status;
     protected $_name = [
         'approvalName'       => 'approvalName',
-        'status'             => 'status',
+        'approvalNodes'      => 'approvalNodes',
+        'endTime'            => 'endTime',
         'refuseReason'       => 'refuseReason',
+        'sealIdImg'          => 'sealIdImg',
         'sponsorAccountName' => 'sponsorAccountName',
         'startTime'          => 'startTime',
-        'endTime'            => 'endTime',
-        'sealIdImg'          => 'sealIdImg',
-        'approvalNodes'      => 'approvalNodes',
+        'status'             => 'status',
     ];
 
     public function validate()
@@ -69,24 +69,6 @@ class data extends Model
         if (null !== $this->approvalName) {
             $res['approvalName'] = $this->approvalName;
         }
-        if (null !== $this->status) {
-            $res['status'] = $this->status;
-        }
-        if (null !== $this->refuseReason) {
-            $res['refuseReason'] = $this->refuseReason;
-        }
-        if (null !== $this->sponsorAccountName) {
-            $res['sponsorAccountName'] = $this->sponsorAccountName;
-        }
-        if (null !== $this->startTime) {
-            $res['startTime'] = $this->startTime;
-        }
-        if (null !== $this->endTime) {
-            $res['endTime'] = $this->endTime;
-        }
-        if (null !== $this->sealIdImg) {
-            $res['sealIdImg'] = $this->sealIdImg;
-        }
         if (null !== $this->approvalNodes) {
             $res['approvalNodes'] = [];
             if (null !== $this->approvalNodes && \is_array($this->approvalNodes)) {
@@ -95,6 +77,24 @@ class data extends Model
                     $res['approvalNodes'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->endTime) {
+            $res['endTime'] = $this->endTime;
+        }
+        if (null !== $this->refuseReason) {
+            $res['refuseReason'] = $this->refuseReason;
+        }
+        if (null !== $this->sealIdImg) {
+            $res['sealIdImg'] = $this->sealIdImg;
+        }
+        if (null !== $this->sponsorAccountName) {
+            $res['sponsorAccountName'] = $this->sponsorAccountName;
+        }
+        if (null !== $this->startTime) {
+            $res['startTime'] = $this->startTime;
+        }
+        if (null !== $this->status) {
+            $res['status'] = $this->status;
         }
 
         return $res;
@@ -111,24 +111,6 @@ class data extends Model
         if (isset($map['approvalName'])) {
             $model->approvalName = $map['approvalName'];
         }
-        if (isset($map['status'])) {
-            $model->status = $map['status'];
-        }
-        if (isset($map['refuseReason'])) {
-            $model->refuseReason = $map['refuseReason'];
-        }
-        if (isset($map['sponsorAccountName'])) {
-            $model->sponsorAccountName = $map['sponsorAccountName'];
-        }
-        if (isset($map['startTime'])) {
-            $model->startTime = $map['startTime'];
-        }
-        if (isset($map['endTime'])) {
-            $model->endTime = $map['endTime'];
-        }
-        if (isset($map['sealIdImg'])) {
-            $model->sealIdImg = $map['sealIdImg'];
-        }
         if (isset($map['approvalNodes'])) {
             if (!empty($map['approvalNodes'])) {
                 $model->approvalNodes = [];
@@ -137,6 +119,24 @@ class data extends Model
                     $model->approvalNodes[$n++] = null !== $item ? approvalNodes::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['endTime'])) {
+            $model->endTime = $map['endTime'];
+        }
+        if (isset($map['refuseReason'])) {
+            $model->refuseReason = $map['refuseReason'];
+        }
+        if (isset($map['sealIdImg'])) {
+            $model->sealIdImg = $map['sealIdImg'];
+        }
+        if (isset($map['sponsorAccountName'])) {
+            $model->sponsorAccountName = $map['sponsorAccountName'];
+        }
+        if (isset($map['startTime'])) {
+            $model->startTime = $map['startTime'];
+        }
+        if (isset($map['status'])) {
+            $model->status = $map['status'];
         }
 
         return $model;

@@ -19,6 +19,20 @@ use AlibabaCloud\Tea\Model;
 class ModifySubInstitutionRequest extends Model
 {
     /**
+     * @description 签约支付宝账户，用于协议确认
+     *
+     * @var string
+     */
+    public $bindingAlipayLogonId;
+
+    /**
+     * @description 联系人
+     *
+     * @var contactInfo
+     */
+    public $contactInfo;
+
+    /**
      * @description 主机构编号
      *
      * @var string
@@ -26,11 +40,9 @@ class ModifySubInstitutionRequest extends Model
     public $instId;
 
     /**
-     * @description 子机构编号
-     *
-     * @var string
+     * @var legalPersonCertInfo
      */
-    public $subInstId;
+    public $legalPersonCertInfo;
 
     /**
      * @description 进件创建外部流水号
@@ -40,6 +52,20 @@ class ModifySubInstitutionRequest extends Model
     public $outTradeNo;
 
     /**
+     * @description 进件渠道
+     *
+     * @var string
+     */
+    public $payChannel;
+
+    /**
+     * @description 资质信息
+     *
+     * @var qualificationInfos[]
+     */
+    public $qualificationInfos;
+
+    /**
      * @description 开通的服务类型
      *
      * @var string[]
@@ -47,11 +73,25 @@ class ModifySubInstitutionRequest extends Model
     public $services;
 
     /**
-     * @description 进件渠道
+     * @description 资金账户信息
      *
-     * @var string
+     * @var settleInfo
      */
-    public $payChannel;
+    public $settleInfo;
+
+    /**
+     * @description 子机构地址信息
+     *
+     * @var subInstAddressInfo
+     */
+    public $subInstAddressInfo;
+
+    /**
+     * @description 授权信息
+     *
+     * @var subInstAuthInfo
+     */
+    public $subInstAuthInfo;
 
     /**
      * @description 子机构基本信息
@@ -68,51 +108,11 @@ class ModifySubInstitutionRequest extends Model
     public $subInstCertifyInfo;
 
     /**
-     * @var legalPersonCertInfo
-     */
-    public $legalPersonCertInfo;
-
-    /**
-     * @description 资金账户信息
+     * @description 子机构编号
      *
-     * @var settleInfo
+     * @var string
      */
-    public $settleInfo;
-
-    /**
-     * @description 联系人
-     *
-     * @var contactInfo
-     */
-    public $contactInfo;
-
-    /**
-     * @description 资质信息
-     *
-     * @var qualificationInfos[]
-     */
-    public $qualificationInfos;
-
-    /**
-     * @description 授权信息
-     *
-     * @var subInstAuthInfo
-     */
-    public $subInstAuthInfo;
-
-    /**
-     * @description 子机构地址信息
-     *
-     * @var subInstAddressInfo
-     */
-    public $subInstAddressInfo;
-
-    /**
-     * @description 子机构门店信息
-     *
-     * @var subInstShopInfo
-     */
-    public $subInstShopInfo;
+    public $subInstId;
 
     /**
      * @description 开票信息
@@ -122,60 +122,28 @@ class ModifySubInstitutionRequest extends Model
     public $subInstInvoiceInfo;
 
     /**
-     * @description 签约支付宝账户，用于协议确认
+     * @description 子机构门店信息
      *
-     * @var string
+     * @var subInstShopInfo
      */
-    public $bindingAlipayLogonId;
-
-    /**
-     * @description 组织id
-     *
-     * @var int
-     */
-    public $dingOrgId;
-
-    /**
-     * @description isv组织id
-     *
-     * @var int
-     */
-    public $dingIsvOrgId;
-
-    /**
-     * @description 应用id
-     *
-     * @var string
-     */
-    public $dingClientId;
-
-    /**
-     * @description 应用类型
-     *
-     * @var int
-     */
-    public $dingTokenGrantType;
+    public $subInstShopInfo;
     protected $_name = [
+        'bindingAlipayLogonId' => 'bindingAlipayLogonId',
+        'contactInfo'          => 'contactInfo',
         'instId'               => 'instId',
-        'subInstId'            => 'subInstId',
+        'legalPersonCertInfo'  => 'legalPersonCertInfo',
         'outTradeNo'           => 'outTradeNo',
-        'services'             => 'services',
         'payChannel'           => 'payChannel',
+        'qualificationInfos'   => 'qualificationInfos',
+        'services'             => 'services',
+        'settleInfo'           => 'settleInfo',
+        'subInstAddressInfo'   => 'subInstAddressInfo',
+        'subInstAuthInfo'      => 'subInstAuthInfo',
         'subInstBasicInfo'     => 'subInstBasicInfo',
         'subInstCertifyInfo'   => 'subInstCertifyInfo',
-        'legalPersonCertInfo'  => 'legalPersonCertInfo',
-        'settleInfo'           => 'settleInfo',
-        'contactInfo'          => 'contactInfo',
-        'qualificationInfos'   => 'qualificationInfos',
-        'subInstAuthInfo'      => 'subInstAuthInfo',
-        'subInstAddressInfo'   => 'subInstAddressInfo',
-        'subInstShopInfo'      => 'subInstShopInfo',
+        'subInstId'            => 'subInstId',
         'subInstInvoiceInfo'   => 'subInstInvoiceInfo',
-        'bindingAlipayLogonId' => 'bindingAlipayLogonId',
-        'dingOrgId'            => 'dingOrgId',
-        'dingIsvOrgId'         => 'dingIsvOrgId',
-        'dingClientId'         => 'dingClientId',
-        'dingTokenGrantType'   => 'dingTokenGrantType',
+        'subInstShopInfo'      => 'subInstShopInfo',
     ];
 
     public function validate()
@@ -185,35 +153,23 @@ class ModifySubInstitutionRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->bindingAlipayLogonId) {
+            $res['bindingAlipayLogonId'] = $this->bindingAlipayLogonId;
+        }
+        if (null !== $this->contactInfo) {
+            $res['contactInfo'] = null !== $this->contactInfo ? $this->contactInfo->toMap() : null;
+        }
         if (null !== $this->instId) {
             $res['instId'] = $this->instId;
-        }
-        if (null !== $this->subInstId) {
-            $res['subInstId'] = $this->subInstId;
-        }
-        if (null !== $this->outTradeNo) {
-            $res['outTradeNo'] = $this->outTradeNo;
-        }
-        if (null !== $this->services) {
-            $res['services'] = $this->services;
-        }
-        if (null !== $this->payChannel) {
-            $res['payChannel'] = $this->payChannel;
-        }
-        if (null !== $this->subInstBasicInfo) {
-            $res['subInstBasicInfo'] = null !== $this->subInstBasicInfo ? $this->subInstBasicInfo->toMap() : null;
-        }
-        if (null !== $this->subInstCertifyInfo) {
-            $res['subInstCertifyInfo'] = null !== $this->subInstCertifyInfo ? $this->subInstCertifyInfo->toMap() : null;
         }
         if (null !== $this->legalPersonCertInfo) {
             $res['legalPersonCertInfo'] = null !== $this->legalPersonCertInfo ? $this->legalPersonCertInfo->toMap() : null;
         }
-        if (null !== $this->settleInfo) {
-            $res['settleInfo'] = null !== $this->settleInfo ? $this->settleInfo->toMap() : null;
+        if (null !== $this->outTradeNo) {
+            $res['outTradeNo'] = $this->outTradeNo;
         }
-        if (null !== $this->contactInfo) {
-            $res['contactInfo'] = null !== $this->contactInfo ? $this->contactInfo->toMap() : null;
+        if (null !== $this->payChannel) {
+            $res['payChannel'] = $this->payChannel;
         }
         if (null !== $this->qualificationInfos) {
             $res['qualificationInfos'] = [];
@@ -224,32 +180,32 @@ class ModifySubInstitutionRequest extends Model
                 }
             }
         }
-        if (null !== $this->subInstAuthInfo) {
-            $res['subInstAuthInfo'] = null !== $this->subInstAuthInfo ? $this->subInstAuthInfo->toMap() : null;
+        if (null !== $this->services) {
+            $res['services'] = $this->services;
+        }
+        if (null !== $this->settleInfo) {
+            $res['settleInfo'] = null !== $this->settleInfo ? $this->settleInfo->toMap() : null;
         }
         if (null !== $this->subInstAddressInfo) {
             $res['subInstAddressInfo'] = null !== $this->subInstAddressInfo ? $this->subInstAddressInfo->toMap() : null;
         }
-        if (null !== $this->subInstShopInfo) {
-            $res['subInstShopInfo'] = null !== $this->subInstShopInfo ? $this->subInstShopInfo->toMap() : null;
+        if (null !== $this->subInstAuthInfo) {
+            $res['subInstAuthInfo'] = null !== $this->subInstAuthInfo ? $this->subInstAuthInfo->toMap() : null;
+        }
+        if (null !== $this->subInstBasicInfo) {
+            $res['subInstBasicInfo'] = null !== $this->subInstBasicInfo ? $this->subInstBasicInfo->toMap() : null;
+        }
+        if (null !== $this->subInstCertifyInfo) {
+            $res['subInstCertifyInfo'] = null !== $this->subInstCertifyInfo ? $this->subInstCertifyInfo->toMap() : null;
+        }
+        if (null !== $this->subInstId) {
+            $res['subInstId'] = $this->subInstId;
         }
         if (null !== $this->subInstInvoiceInfo) {
             $res['subInstInvoiceInfo'] = null !== $this->subInstInvoiceInfo ? $this->subInstInvoiceInfo->toMap() : null;
         }
-        if (null !== $this->bindingAlipayLogonId) {
-            $res['bindingAlipayLogonId'] = $this->bindingAlipayLogonId;
-        }
-        if (null !== $this->dingOrgId) {
-            $res['dingOrgId'] = $this->dingOrgId;
-        }
-        if (null !== $this->dingIsvOrgId) {
-            $res['dingIsvOrgId'] = $this->dingIsvOrgId;
-        }
-        if (null !== $this->dingClientId) {
-            $res['dingClientId'] = $this->dingClientId;
-        }
-        if (null !== $this->dingTokenGrantType) {
-            $res['dingTokenGrantType'] = $this->dingTokenGrantType;
+        if (null !== $this->subInstShopInfo) {
+            $res['subInstShopInfo'] = null !== $this->subInstShopInfo ? $this->subInstShopInfo->toMap() : null;
         }
 
         return $res;
@@ -263,37 +219,23 @@ class ModifySubInstitutionRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['bindingAlipayLogonId'])) {
+            $model->bindingAlipayLogonId = $map['bindingAlipayLogonId'];
+        }
+        if (isset($map['contactInfo'])) {
+            $model->contactInfo = contactInfo::fromMap($map['contactInfo']);
+        }
         if (isset($map['instId'])) {
             $model->instId = $map['instId'];
-        }
-        if (isset($map['subInstId'])) {
-            $model->subInstId = $map['subInstId'];
-        }
-        if (isset($map['outTradeNo'])) {
-            $model->outTradeNo = $map['outTradeNo'];
-        }
-        if (isset($map['services'])) {
-            if (!empty($map['services'])) {
-                $model->services = $map['services'];
-            }
-        }
-        if (isset($map['payChannel'])) {
-            $model->payChannel = $map['payChannel'];
-        }
-        if (isset($map['subInstBasicInfo'])) {
-            $model->subInstBasicInfo = subInstBasicInfo::fromMap($map['subInstBasicInfo']);
-        }
-        if (isset($map['subInstCertifyInfo'])) {
-            $model->subInstCertifyInfo = subInstCertifyInfo::fromMap($map['subInstCertifyInfo']);
         }
         if (isset($map['legalPersonCertInfo'])) {
             $model->legalPersonCertInfo = legalPersonCertInfo::fromMap($map['legalPersonCertInfo']);
         }
-        if (isset($map['settleInfo'])) {
-            $model->settleInfo = settleInfo::fromMap($map['settleInfo']);
+        if (isset($map['outTradeNo'])) {
+            $model->outTradeNo = $map['outTradeNo'];
         }
-        if (isset($map['contactInfo'])) {
-            $model->contactInfo = contactInfo::fromMap($map['contactInfo']);
+        if (isset($map['payChannel'])) {
+            $model->payChannel = $map['payChannel'];
         }
         if (isset($map['qualificationInfos'])) {
             if (!empty($map['qualificationInfos'])) {
@@ -304,32 +246,34 @@ class ModifySubInstitutionRequest extends Model
                 }
             }
         }
-        if (isset($map['subInstAuthInfo'])) {
-            $model->subInstAuthInfo = subInstAuthInfo::fromMap($map['subInstAuthInfo']);
+        if (isset($map['services'])) {
+            if (!empty($map['services'])) {
+                $model->services = $map['services'];
+            }
+        }
+        if (isset($map['settleInfo'])) {
+            $model->settleInfo = settleInfo::fromMap($map['settleInfo']);
         }
         if (isset($map['subInstAddressInfo'])) {
             $model->subInstAddressInfo = subInstAddressInfo::fromMap($map['subInstAddressInfo']);
         }
-        if (isset($map['subInstShopInfo'])) {
-            $model->subInstShopInfo = subInstShopInfo::fromMap($map['subInstShopInfo']);
+        if (isset($map['subInstAuthInfo'])) {
+            $model->subInstAuthInfo = subInstAuthInfo::fromMap($map['subInstAuthInfo']);
+        }
+        if (isset($map['subInstBasicInfo'])) {
+            $model->subInstBasicInfo = subInstBasicInfo::fromMap($map['subInstBasicInfo']);
+        }
+        if (isset($map['subInstCertifyInfo'])) {
+            $model->subInstCertifyInfo = subInstCertifyInfo::fromMap($map['subInstCertifyInfo']);
+        }
+        if (isset($map['subInstId'])) {
+            $model->subInstId = $map['subInstId'];
         }
         if (isset($map['subInstInvoiceInfo'])) {
             $model->subInstInvoiceInfo = subInstInvoiceInfo::fromMap($map['subInstInvoiceInfo']);
         }
-        if (isset($map['bindingAlipayLogonId'])) {
-            $model->bindingAlipayLogonId = $map['bindingAlipayLogonId'];
-        }
-        if (isset($map['dingOrgId'])) {
-            $model->dingOrgId = $map['dingOrgId'];
-        }
-        if (isset($map['dingIsvOrgId'])) {
-            $model->dingIsvOrgId = $map['dingIsvOrgId'];
-        }
-        if (isset($map['dingClientId'])) {
-            $model->dingClientId = $map['dingClientId'];
-        }
-        if (isset($map['dingTokenGrantType'])) {
-            $model->dingTokenGrantType = $map['dingTokenGrantType'];
+        if (isset($map['subInstShopInfo'])) {
+            $model->subInstShopInfo = subInstShopInfo::fromMap($map['subInstShopInfo']);
         }
 
         return $model;

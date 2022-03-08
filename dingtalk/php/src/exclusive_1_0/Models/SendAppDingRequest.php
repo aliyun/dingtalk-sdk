@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class SendAppDingRequest extends Model
 {
     /**
-     * @description 接收DING消息的用户列表
-     *
-     * @var string[]
-     */
-    public $userids;
-
-    /**
      * @description 消息内容
      *
      * @var string
      */
     public $content;
+
+    /**
+     * @description 接收DING消息的用户列表
+     *
+     * @var string[]
+     */
+    public $userids;
     protected $_name = [
-        'userids' => 'userids',
         'content' => 'content',
+        'userids' => 'userids',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class SendAppDingRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->userids) {
-            $res['userids'] = $this->userids;
-        }
         if (null !== $this->content) {
             $res['content'] = $this->content;
+        }
+        if (null !== $this->userids) {
+            $res['userids'] = $this->userids;
         }
 
         return $res;
@@ -51,13 +51,13 @@ class SendAppDingRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['content'])) {
+            $model->content = $map['content'];
+        }
         if (isset($map['userids'])) {
             if (!empty($map['userids'])) {
                 $model->userids = $map['userids'];
             }
-        }
-        if (isset($map['content'])) {
-            $model->content = $map['content'];
         }
 
         return $model;

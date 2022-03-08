@@ -10,13 +10,6 @@ use AlibabaCloud\Tea\Model;
 class CreateTicketRequest extends Model
 {
     /**
-     * @description 会员来源
-     *
-     * @var string
-     */
-    public $sourceId;
-
-    /**
      * @description 第三方会员ID
      *
      * @var string
@@ -45,6 +38,20 @@ class CreateTicketRequest extends Model
     public $productionType;
 
     /**
+     * @description 工单表单
+     *
+     * @var properties[]
+     */
+    public $properties;
+
+    /**
+     * @description 会员来源
+     *
+     * @var string
+     */
+    public $sourceId;
+
+    /**
      * @description 工单模板ID
      *
      * @var string
@@ -57,22 +64,15 @@ class CreateTicketRequest extends Model
      * @var string
      */
     public $title;
-
-    /**
-     * @description 工单表单
-     *
-     * @var properties[]
-     */
-    public $properties;
     protected $_name = [
-        'sourceId'       => 'sourceId',
         'foreignId'      => 'foreignId',
         'foreignName'    => 'foreignName',
         'openInstanceId' => 'openInstanceId',
         'productionType' => 'productionType',
+        'properties'     => 'properties',
+        'sourceId'       => 'sourceId',
         'templateId'     => 'templateId',
         'title'          => 'title',
-        'properties'     => 'properties',
     ];
 
     public function validate()
@@ -82,9 +82,6 @@ class CreateTicketRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->sourceId) {
-            $res['sourceId'] = $this->sourceId;
-        }
         if (null !== $this->foreignId) {
             $res['foreignId'] = $this->foreignId;
         }
@@ -97,12 +94,6 @@ class CreateTicketRequest extends Model
         if (null !== $this->productionType) {
             $res['productionType'] = $this->productionType;
         }
-        if (null !== $this->templateId) {
-            $res['templateId'] = $this->templateId;
-        }
-        if (null !== $this->title) {
-            $res['title'] = $this->title;
-        }
         if (null !== $this->properties) {
             $res['properties'] = [];
             if (null !== $this->properties && \is_array($this->properties)) {
@@ -111,6 +102,15 @@ class CreateTicketRequest extends Model
                     $res['properties'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->sourceId) {
+            $res['sourceId'] = $this->sourceId;
+        }
+        if (null !== $this->templateId) {
+            $res['templateId'] = $this->templateId;
+        }
+        if (null !== $this->title) {
+            $res['title'] = $this->title;
         }
 
         return $res;
@@ -124,9 +124,6 @@ class CreateTicketRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['sourceId'])) {
-            $model->sourceId = $map['sourceId'];
-        }
         if (isset($map['foreignId'])) {
             $model->foreignId = $map['foreignId'];
         }
@@ -139,12 +136,6 @@ class CreateTicketRequest extends Model
         if (isset($map['productionType'])) {
             $model->productionType = $map['productionType'];
         }
-        if (isset($map['templateId'])) {
-            $model->templateId = $map['templateId'];
-        }
-        if (isset($map['title'])) {
-            $model->title = $map['title'];
-        }
         if (isset($map['properties'])) {
             if (!empty($map['properties'])) {
                 $model->properties = [];
@@ -153,6 +144,15 @@ class CreateTicketRequest extends Model
                     $model->properties[$n++] = null !== $item ? properties::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['sourceId'])) {
+            $model->sourceId = $map['sourceId'];
+        }
+        if (isset($map['templateId'])) {
+            $model->templateId = $map['templateId'];
+        }
+        if (isset($map['title'])) {
+            $model->title = $map['title'];
         }
 
         return $model;

@@ -9,20 +9,6 @@ use AlibabaCloud\Tea\Model;
 class masterDataDepartments extends Model
 {
     /**
-     * @description humanSourceGroupOrderNum
-     *
-     * @var string
-     */
-    public $humanSourceGroupOrderNumber;
-
-    /**
-     * @description deptPath
-     *
-     * @var string
-     */
-    public $deptPath;
-
-    /**
      * @description deptName
      *
      * @var string
@@ -35,6 +21,27 @@ class masterDataDepartments extends Model
      * @var string
      */
     public $deptNameInEnglish;
+
+    /**
+     * @description deptNo
+     *
+     * @var string
+     */
+    public $deptNo;
+
+    /**
+     * @description deptPath
+     *
+     * @var string
+     */
+    public $deptPath;
+
+    /**
+     * @description humanSourceGroupOrderNum
+     *
+     * @var string
+     */
+    public $humanSourceGroupOrderNumber;
 
     /**
      * @description humanSourceGroupWorkNo
@@ -56,22 +63,15 @@ class masterDataDepartments extends Model
      * @var string
      */
     public $masterWorkNo;
-
-    /**
-     * @description deptNo
-     *
-     * @var string
-     */
-    public $deptNo;
     protected $_name = [
-        'humanSourceGroupOrderNumber' => 'humanSourceGroupOrderNumber',
-        'deptPath'                    => 'deptPath',
         'deptName'                    => 'deptName',
         'deptNameInEnglish'           => 'deptNameInEnglish',
+        'deptNo'                      => 'deptNo',
+        'deptPath'                    => 'deptPath',
+        'humanSourceGroupOrderNumber' => 'humanSourceGroupOrderNumber',
         'humanSourceGroupWorkNo'      => 'humanSourceGroupWorkNo',
         'id'                          => 'id',
         'masterWorkNo'                => 'masterWorkNo',
-        'deptNo'                      => 'deptNo',
     ];
 
     public function validate()
@@ -81,17 +81,20 @@ class masterDataDepartments extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->humanSourceGroupOrderNumber) {
-            $res['humanSourceGroupOrderNumber'] = $this->humanSourceGroupOrderNumber;
-        }
-        if (null !== $this->deptPath) {
-            $res['deptPath'] = $this->deptPath;
-        }
         if (null !== $this->deptName) {
             $res['deptName'] = $this->deptName;
         }
         if (null !== $this->deptNameInEnglish) {
             $res['deptNameInEnglish'] = $this->deptNameInEnglish;
+        }
+        if (null !== $this->deptNo) {
+            $res['deptNo'] = $this->deptNo;
+        }
+        if (null !== $this->deptPath) {
+            $res['deptPath'] = $this->deptPath;
+        }
+        if (null !== $this->humanSourceGroupOrderNumber) {
+            $res['humanSourceGroupOrderNumber'] = $this->humanSourceGroupOrderNumber;
         }
         if (null !== $this->humanSourceGroupWorkNo) {
             $res['humanSourceGroupWorkNo'] = $this->humanSourceGroupWorkNo;
@@ -101,9 +104,6 @@ class masterDataDepartments extends Model
         }
         if (null !== $this->masterWorkNo) {
             $res['masterWorkNo'] = $this->masterWorkNo;
-        }
-        if (null !== $this->deptNo) {
-            $res['deptNo'] = $this->deptNo;
         }
 
         return $res;
@@ -117,17 +117,20 @@ class masterDataDepartments extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['humanSourceGroupOrderNumber'])) {
-            $model->humanSourceGroupOrderNumber = $map['humanSourceGroupOrderNumber'];
-        }
-        if (isset($map['deptPath'])) {
-            $model->deptPath = $map['deptPath'];
-        }
         if (isset($map['deptName'])) {
             $model->deptName = $map['deptName'];
         }
         if (isset($map['deptNameInEnglish'])) {
             $model->deptNameInEnglish = $map['deptNameInEnglish'];
+        }
+        if (isset($map['deptNo'])) {
+            $model->deptNo = $map['deptNo'];
+        }
+        if (isset($map['deptPath'])) {
+            $model->deptPath = $map['deptPath'];
+        }
+        if (isset($map['humanSourceGroupOrderNumber'])) {
+            $model->humanSourceGroupOrderNumber = $map['humanSourceGroupOrderNumber'];
         }
         if (isset($map['humanSourceGroupWorkNo'])) {
             $model->humanSourceGroupWorkNo = $map['humanSourceGroupWorkNo'];
@@ -137,9 +140,6 @@ class masterDataDepartments extends Model
         }
         if (isset($map['masterWorkNo'])) {
             $model->masterWorkNo = $map['masterWorkNo'];
-        }
-        if (isset($map['deptNo'])) {
-            $model->deptNo = $map['deptNo'];
         }
 
         return $model;

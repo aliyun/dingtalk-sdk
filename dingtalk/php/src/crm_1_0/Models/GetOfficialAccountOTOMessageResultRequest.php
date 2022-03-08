@@ -9,19 +9,19 @@ use AlibabaCloud\Tea\Model;
 class GetOfficialAccountOTOMessageResultRequest extends Model
 {
     /**
+     * @var string
+     */
+    public $accountId;
+
+    /**
      * @description 推送ID
      *
      * @var string
      */
     public $openPushId;
-
-    /**
-     * @var string
-     */
-    public $accountId;
     protected $_name = [
-        'openPushId' => 'openPushId',
         'accountId'  => 'accountId',
+        'openPushId' => 'openPushId',
     ];
 
     public function validate()
@@ -31,11 +31,11 @@ class GetOfficialAccountOTOMessageResultRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->openPushId) {
-            $res['openPushId'] = $this->openPushId;
-        }
         if (null !== $this->accountId) {
             $res['accountId'] = $this->accountId;
+        }
+        if (null !== $this->openPushId) {
+            $res['openPushId'] = $this->openPushId;
         }
 
         return $res;
@@ -49,11 +49,11 @@ class GetOfficialAccountOTOMessageResultRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['openPushId'])) {
-            $model->openPushId = $map['openPushId'];
-        }
         if (isset($map['accountId'])) {
             $model->accountId = $map['accountId'];
+        }
+        if (isset($map['openPushId'])) {
+            $model->openPushId = $map['openPushId'];
         }
 
         return $model;

@@ -9,17 +9,17 @@ use AlibabaCloud\Tea\Model;
 class CreateAppGoodsServiceConversationRequest extends Model
 {
     /**
-     * @var int
-     */
-    public $orderId;
-
-    /**
      * @var string
      */
     public $isvUserId;
+
+    /**
+     * @var int
+     */
+    public $orderId;
     protected $_name = [
-        'orderId'   => 'orderId',
         'isvUserId' => 'isvUserId',
+        'orderId'   => 'orderId',
     ];
 
     public function validate()
@@ -29,11 +29,11 @@ class CreateAppGoodsServiceConversationRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->orderId) {
-            $res['orderId'] = $this->orderId;
-        }
         if (null !== $this->isvUserId) {
             $res['isvUserId'] = $this->isvUserId;
+        }
+        if (null !== $this->orderId) {
+            $res['orderId'] = $this->orderId;
         }
 
         return $res;
@@ -47,11 +47,11 @@ class CreateAppGoodsServiceConversationRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['orderId'])) {
-            $model->orderId = $map['orderId'];
-        }
         if (isset($map['isvUserId'])) {
             $model->isvUserId = $map['isvUserId'];
+        }
+        if (isset($map['orderId'])) {
+            $model->orderId = $map['orderId'];
         }
 
         return $model;

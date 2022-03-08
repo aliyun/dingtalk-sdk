@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class jobOwners extends Model
 {
     /**
-     * @description 员工标识
-     *
-     * @var string
-     */
-    public $userId;
-
-    /**
      * @description 员工姓名
      *
      * @var string
      */
     public $name;
+
+    /**
+     * @description 员工标识
+     *
+     * @var string
+     */
+    public $userId;
     protected $_name = [
-        'userId' => 'userId',
         'name'   => 'name',
+        'userId' => 'userId',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class jobOwners extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
-        }
         if (null !== $this->name) {
             $res['name'] = $this->name;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class jobOwners extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
-        }
         if (isset($map['name'])) {
             $model->name = $map['name'];
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

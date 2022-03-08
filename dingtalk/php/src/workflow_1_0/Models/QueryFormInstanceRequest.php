@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class QueryFormInstanceRequest extends Model
 {
     /**
-     * @description 表单实例id
+     * @description 应用搭建id
      *
      * @var string
      */
-    public $formInstanceId;
+    public $appUuid;
 
     /**
      * @description 表单模板Code
@@ -23,15 +23,15 @@ class QueryFormInstanceRequest extends Model
     public $formCode;
 
     /**
-     * @description 应用搭建id
+     * @description 表单实例id
      *
      * @var string
      */
-    public $appUuid;
+    public $formInstanceId;
     protected $_name = [
-        'formInstanceId' => 'formInstanceId',
-        'formCode'       => 'formCode',
         'appUuid'        => 'appUuid',
+        'formCode'       => 'formCode',
+        'formInstanceId' => 'formInstanceId',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class QueryFormInstanceRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->formInstanceId) {
-            $res['formInstanceId'] = $this->formInstanceId;
+        if (null !== $this->appUuid) {
+            $res['appUuid'] = $this->appUuid;
         }
         if (null !== $this->formCode) {
             $res['formCode'] = $this->formCode;
         }
-        if (null !== $this->appUuid) {
-            $res['appUuid'] = $this->appUuid;
+        if (null !== $this->formInstanceId) {
+            $res['formInstanceId'] = $this->formInstanceId;
         }
 
         return $res;
@@ -62,14 +62,14 @@ class QueryFormInstanceRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['formInstanceId'])) {
-            $model->formInstanceId = $map['formInstanceId'];
+        if (isset($map['appUuid'])) {
+            $model->appUuid = $map['appUuid'];
         }
         if (isset($map['formCode'])) {
             $model->formCode = $map['formCode'];
         }
-        if (isset($map['appUuid'])) {
-            $model->appUuid = $map['appUuid'];
+        if (isset($map['formInstanceId'])) {
+            $model->formInstanceId = $map['formInstanceId'];
         }
 
         return $model;

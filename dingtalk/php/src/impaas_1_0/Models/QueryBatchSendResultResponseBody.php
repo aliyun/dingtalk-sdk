@@ -10,19 +10,19 @@ use AlibabaCloud\Tea\Model;
 class QueryBatchSendResultResponseBody extends Model
 {
     /**
+     * @var results[]
+     */
+    public $results;
+
+    /**
      * @description status
      *
      * @var int
      */
     public $status;
-
-    /**
-     * @var results[]
-     */
-    public $results;
     protected $_name = [
-        'status'  => 'status',
         'results' => 'results',
+        'status'  => 'status',
     ];
 
     public function validate()
@@ -32,9 +32,6 @@ class QueryBatchSendResultResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->status) {
-            $res['status'] = $this->status;
-        }
         if (null !== $this->results) {
             $res['results'] = [];
             if (null !== $this->results && \is_array($this->results)) {
@@ -43,6 +40,9 @@ class QueryBatchSendResultResponseBody extends Model
                     $res['results'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->status) {
+            $res['status'] = $this->status;
         }
 
         return $res;
@@ -56,9 +56,6 @@ class QueryBatchSendResultResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['status'])) {
-            $model->status = $map['status'];
-        }
         if (isset($map['results'])) {
             if (!empty($map['results'])) {
                 $model->results = [];
@@ -67,6 +64,9 @@ class QueryBatchSendResultResponseBody extends Model
                     $model->results[$n++] = null !== $item ? results::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['status'])) {
+            $model->status = $map['status'];
         }
 
         return $model;

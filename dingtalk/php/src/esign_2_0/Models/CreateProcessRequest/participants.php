@@ -12,32 +12,7 @@ class participants extends Model
     /**
      * @var string
      */
-    public $signRequirements;
-
-    /**
-     * @var int
-     */
-    public $signOrder;
-
-    /**
-     * @var string
-     */
-    public $accountType;
-
-    /**
-     * @var string
-     */
     public $account;
-
-    /**
-     * @var string
-     */
-    public $dingCorpId;
-
-    /**
-     * @var string
-     */
-    public $userId;
 
     /**
      * @var string
@@ -47,7 +22,17 @@ class participants extends Model
     /**
      * @var string
      */
+    public $accountType;
+
+    /**
+     * @var string
+     */
     public $orgName;
+
+    /**
+     * @var int
+     */
+    public $signOrder;
 
     /**
      * @description 参与方签署位置信息列表
@@ -55,16 +40,25 @@ class participants extends Model
      * @var signPosList[]
      */
     public $signPosList;
+
+    /**
+     * @var string
+     */
+    public $signRequirements;
+
+    /**
+     * @var string
+     */
+    public $userId;
     protected $_name = [
-        'signRequirements' => 'signRequirements',
-        'signOrder'        => 'signOrder',
-        'accountType'      => 'accountType',
         'account'          => 'account',
-        'dingCorpId'       => 'dingCorpId',
-        'userId'           => 'userId',
         'accountName'      => 'accountName',
+        'accountType'      => 'accountType',
         'orgName'          => 'orgName',
+        'signOrder'        => 'signOrder',
         'signPosList'      => 'signPosList',
+        'signRequirements' => 'signRequirements',
+        'userId'           => 'userId',
     ];
 
     public function validate()
@@ -74,29 +68,20 @@ class participants extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->signRequirements) {
-            $res['signRequirements'] = $this->signRequirements;
-        }
-        if (null !== $this->signOrder) {
-            $res['signOrder'] = $this->signOrder;
-        }
-        if (null !== $this->accountType) {
-            $res['accountType'] = $this->accountType;
-        }
         if (null !== $this->account) {
             $res['account'] = $this->account;
-        }
-        if (null !== $this->dingCorpId) {
-            $res['dingCorpId'] = $this->dingCorpId;
-        }
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
         }
         if (null !== $this->accountName) {
             $res['accountName'] = $this->accountName;
         }
+        if (null !== $this->accountType) {
+            $res['accountType'] = $this->accountType;
+        }
         if (null !== $this->orgName) {
             $res['orgName'] = $this->orgName;
+        }
+        if (null !== $this->signOrder) {
+            $res['signOrder'] = $this->signOrder;
         }
         if (null !== $this->signPosList) {
             $res['signPosList'] = [];
@@ -106,6 +91,12 @@ class participants extends Model
                     $res['signPosList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->signRequirements) {
+            $res['signRequirements'] = $this->signRequirements;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -119,29 +110,20 @@ class participants extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['signRequirements'])) {
-            $model->signRequirements = $map['signRequirements'];
-        }
-        if (isset($map['signOrder'])) {
-            $model->signOrder = $map['signOrder'];
-        }
-        if (isset($map['accountType'])) {
-            $model->accountType = $map['accountType'];
-        }
         if (isset($map['account'])) {
             $model->account = $map['account'];
-        }
-        if (isset($map['dingCorpId'])) {
-            $model->dingCorpId = $map['dingCorpId'];
-        }
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
         }
         if (isset($map['accountName'])) {
             $model->accountName = $map['accountName'];
         }
+        if (isset($map['accountType'])) {
+            $model->accountType = $map['accountType'];
+        }
         if (isset($map['orgName'])) {
             $model->orgName = $map['orgName'];
+        }
+        if (isset($map['signOrder'])) {
+            $model->signOrder = $map['signOrder'];
         }
         if (isset($map['signPosList'])) {
             if (!empty($map['signPosList'])) {
@@ -151,6 +133,12 @@ class participants extends Model
                     $model->signPosList[$n++] = null !== $item ? signPosList::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['signRequirements'])) {
+            $model->signRequirements = $map['signRequirements'];
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

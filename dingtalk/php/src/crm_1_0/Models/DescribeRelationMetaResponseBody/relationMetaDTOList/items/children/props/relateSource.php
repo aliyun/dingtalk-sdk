@@ -16,20 +16,20 @@ class relateSource extends Model
     public $bizType;
 
     /**
+     * @var dataSource
+     */
+    public $dataSource;
+
+    /**
      * @description 关联表单的关联控件显示
      *
      * @var fields[]
      */
     public $fields;
-
-    /**
-     * @var dataSource
-     */
-    public $dataSource;
     protected $_name = [
         'bizType'    => 'bizType',
-        'fields'     => 'fields',
         'dataSource' => 'dataSource',
+        'fields'     => 'fields',
     ];
 
     public function validate()
@@ -42,6 +42,9 @@ class relateSource extends Model
         if (null !== $this->bizType) {
             $res['bizType'] = $this->bizType;
         }
+        if (null !== $this->dataSource) {
+            $res['dataSource'] = null !== $this->dataSource ? $this->dataSource->toMap() : null;
+        }
         if (null !== $this->fields) {
             $res['fields'] = [];
             if (null !== $this->fields && \is_array($this->fields)) {
@@ -50,9 +53,6 @@ class relateSource extends Model
                     $res['fields'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
-        }
-        if (null !== $this->dataSource) {
-            $res['dataSource'] = null !== $this->dataSource ? $this->dataSource->toMap() : null;
         }
 
         return $res;
@@ -69,6 +69,9 @@ class relateSource extends Model
         if (isset($map['bizType'])) {
             $model->bizType = $map['bizType'];
         }
+        if (isset($map['dataSource'])) {
+            $model->dataSource = dataSource::fromMap($map['dataSource']);
+        }
         if (isset($map['fields'])) {
             if (!empty($map['fields'])) {
                 $model->fields = [];
@@ -77,9 +80,6 @@ class relateSource extends Model
                     $model->fields[$n++] = null !== $item ? fields::fromMap($item) : $item;
                 }
             }
-        }
-        if (isset($map['dataSource'])) {
-            $model->dataSource = dataSource::fromMap($map['dataSource']);
         }
 
         return $model;

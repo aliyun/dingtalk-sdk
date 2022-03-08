@@ -11,15 +11,15 @@ class takers extends Model
     /**
      * @var string
      */
-    public $unionId;
+    public $nickName;
 
     /**
      * @var string
      */
-    public $nickName;
+    public $unionId;
     protected $_name = [
-        'unionId'  => 'unionId',
         'nickName' => 'nickName',
+        'unionId'  => 'unionId',
     ];
 
     public function validate()
@@ -29,11 +29,11 @@ class takers extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->unionId) {
-            $res['unionId'] = $this->unionId;
-        }
         if (null !== $this->nickName) {
             $res['nickName'] = $this->nickName;
+        }
+        if (null !== $this->unionId) {
+            $res['unionId'] = $this->unionId;
         }
 
         return $res;
@@ -47,11 +47,11 @@ class takers extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['unionId'])) {
-            $model->unionId = $map['unionId'];
-        }
         if (isset($map['nickName'])) {
             $model->nickName = $map['nickName'];
+        }
+        if (isset($map['unionId'])) {
+            $model->unionId = $map['unionId'];
         }
 
         return $model;

@@ -10,20 +10,6 @@ use AlibabaCloud\Tea\Model;
 class QueryFormInstanceResponseBody extends Model
 {
     /**
-     * @description 实例id
-     *
-     * @var string
-     */
-    public $formInstanceId;
-
-    /**
-     * @description 表单数据
-     *
-     * @var formInstDataList[]
-     */
-    public $formInstDataList;
-
-    /**
      * @description 应用搭建id
      *
      * @var string
@@ -31,32 +17,11 @@ class QueryFormInstanceResponseBody extends Model
     public $appUuid;
 
     /**
-     * @description 表单模板id
+     * @description 扩展信息
      *
-     * @var string
+     * @var mixed[]
      */
-    public $formCode;
-
-    /**
-     * @description 表单标题
-     *
-     * @var string
-     */
-    public $title;
-
-    /**
-     * @description 创建人
-     *
-     * @var string
-     */
-    public $creator;
-
-    /**
-     * @description 修改人
-     *
-     * @var string
-     */
-    public $modifier;
+    public $attributes;
 
     /**
      * @description 实例创建时间戳
@@ -66,18 +31,46 @@ class QueryFormInstanceResponseBody extends Model
     public $createTimestamp;
 
     /**
+     * @description 创建人
+     *
+     * @var string
+     */
+    public $creator;
+
+    /**
+     * @description 表单模板id
+     *
+     * @var string
+     */
+    public $formCode;
+
+    /**
+     * @description 表单数据
+     *
+     * @var formInstDataList[]
+     */
+    public $formInstDataList;
+
+    /**
+     * @description 实例id
+     *
+     * @var string
+     */
+    public $formInstanceId;
+
+    /**
+     * @description 修改人
+     *
+     * @var string
+     */
+    public $modifier;
+
+    /**
      * @description 实例最近修改时间戳
      *
      * @var int
      */
     public $modifyTimestamp;
-
-    /**
-     * @description 外联业务实例id
-     *
-     * @var string
-     */
-    public $outInstanceId;
 
     /**
      * @description 外联业务code
@@ -87,24 +80,31 @@ class QueryFormInstanceResponseBody extends Model
     public $outBizCode;
 
     /**
-     * @description 扩展信息
+     * @description 外联业务实例id
      *
-     * @var mixed[]
+     * @var string
      */
-    public $attributes;
+    public $outInstanceId;
+
+    /**
+     * @description 表单标题
+     *
+     * @var string
+     */
+    public $title;
     protected $_name = [
-        'formInstanceId'   => 'formInstanceId',
-        'formInstDataList' => 'formInstDataList',
         'appUuid'          => 'appUuid',
-        'formCode'         => 'formCode',
-        'title'            => 'title',
-        'creator'          => 'creator',
-        'modifier'         => 'modifier',
-        'createTimestamp'  => 'createTimestamp',
-        'modifyTimestamp'  => 'modifyTimestamp',
-        'outInstanceId'    => 'outInstanceId',
-        'outBizCode'       => 'outBizCode',
         'attributes'       => 'attributes',
+        'createTimestamp'  => 'createTimestamp',
+        'creator'          => 'creator',
+        'formCode'         => 'formCode',
+        'formInstDataList' => 'formInstDataList',
+        'formInstanceId'   => 'formInstanceId',
+        'modifier'         => 'modifier',
+        'modifyTimestamp'  => 'modifyTimestamp',
+        'outBizCode'       => 'outBizCode',
+        'outInstanceId'    => 'outInstanceId',
+        'title'            => 'title',
     ];
 
     public function validate()
@@ -114,8 +114,20 @@ class QueryFormInstanceResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->formInstanceId) {
-            $res['formInstanceId'] = $this->formInstanceId;
+        if (null !== $this->appUuid) {
+            $res['appUuid'] = $this->appUuid;
+        }
+        if (null !== $this->attributes) {
+            $res['attributes'] = $this->attributes;
+        }
+        if (null !== $this->createTimestamp) {
+            $res['createTimestamp'] = $this->createTimestamp;
+        }
+        if (null !== $this->creator) {
+            $res['creator'] = $this->creator;
+        }
+        if (null !== $this->formCode) {
+            $res['formCode'] = $this->formCode;
         }
         if (null !== $this->formInstDataList) {
             $res['formInstDataList'] = [];
@@ -126,35 +138,23 @@ class QueryFormInstanceResponseBody extends Model
                 }
             }
         }
-        if (null !== $this->appUuid) {
-            $res['appUuid'] = $this->appUuid;
-        }
-        if (null !== $this->formCode) {
-            $res['formCode'] = $this->formCode;
-        }
-        if (null !== $this->title) {
-            $res['title'] = $this->title;
-        }
-        if (null !== $this->creator) {
-            $res['creator'] = $this->creator;
+        if (null !== $this->formInstanceId) {
+            $res['formInstanceId'] = $this->formInstanceId;
         }
         if (null !== $this->modifier) {
             $res['modifier'] = $this->modifier;
         }
-        if (null !== $this->createTimestamp) {
-            $res['createTimestamp'] = $this->createTimestamp;
-        }
         if (null !== $this->modifyTimestamp) {
             $res['modifyTimestamp'] = $this->modifyTimestamp;
-        }
-        if (null !== $this->outInstanceId) {
-            $res['outInstanceId'] = $this->outInstanceId;
         }
         if (null !== $this->outBizCode) {
             $res['outBizCode'] = $this->outBizCode;
         }
-        if (null !== $this->attributes) {
-            $res['attributes'] = $this->attributes;
+        if (null !== $this->outInstanceId) {
+            $res['outInstanceId'] = $this->outInstanceId;
+        }
+        if (null !== $this->title) {
+            $res['title'] = $this->title;
         }
 
         return $res;
@@ -168,8 +168,20 @@ class QueryFormInstanceResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['formInstanceId'])) {
-            $model->formInstanceId = $map['formInstanceId'];
+        if (isset($map['appUuid'])) {
+            $model->appUuid = $map['appUuid'];
+        }
+        if (isset($map['attributes'])) {
+            $model->attributes = $map['attributes'];
+        }
+        if (isset($map['createTimestamp'])) {
+            $model->createTimestamp = $map['createTimestamp'];
+        }
+        if (isset($map['creator'])) {
+            $model->creator = $map['creator'];
+        }
+        if (isset($map['formCode'])) {
+            $model->formCode = $map['formCode'];
         }
         if (isset($map['formInstDataList'])) {
             if (!empty($map['formInstDataList'])) {
@@ -180,35 +192,23 @@ class QueryFormInstanceResponseBody extends Model
                 }
             }
         }
-        if (isset($map['appUuid'])) {
-            $model->appUuid = $map['appUuid'];
-        }
-        if (isset($map['formCode'])) {
-            $model->formCode = $map['formCode'];
-        }
-        if (isset($map['title'])) {
-            $model->title = $map['title'];
-        }
-        if (isset($map['creator'])) {
-            $model->creator = $map['creator'];
+        if (isset($map['formInstanceId'])) {
+            $model->formInstanceId = $map['formInstanceId'];
         }
         if (isset($map['modifier'])) {
             $model->modifier = $map['modifier'];
         }
-        if (isset($map['createTimestamp'])) {
-            $model->createTimestamp = $map['createTimestamp'];
-        }
         if (isset($map['modifyTimestamp'])) {
             $model->modifyTimestamp = $map['modifyTimestamp'];
-        }
-        if (isset($map['outInstanceId'])) {
-            $model->outInstanceId = $map['outInstanceId'];
         }
         if (isset($map['outBizCode'])) {
             $model->outBizCode = $map['outBizCode'];
         }
-        if (isset($map['attributes'])) {
-            $model->attributes = $map['attributes'];
+        if (isset($map['outInstanceId'])) {
+            $model->outInstanceId = $map['outInstanceId'];
+        }
+        if (isset($map['title'])) {
+            $model->title = $map['title'];
         }
 
         return $model;

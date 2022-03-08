@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class CreateEduAssetSpaceRequest extends Model
 {
     /**
-     * @description 空间名称
+     * @description 业务类型编码
      *
      * @var string
      */
-    public $spaceName;
+    public $bizCode;
 
     /**
      * @description 空间描述
@@ -30,40 +30,24 @@ class CreateEduAssetSpaceRequest extends Model
     public $spaceIcon;
 
     /**
+     * @description 空间名称
+     *
+     * @var string
+     */
+    public $spaceName;
+
+    /**
      * @description 用户staffId
      *
      * @var string
      */
     public $userId;
-
-    /**
-     * @description 业务类型编码
-     *
-     * @var string
-     */
-    public $bizCode;
-
-    /**
-     * @description 组织corpId
-     *
-     * @var string
-     */
-    public $dingCorpId;
-
-    /**
-     * @description 组织id
-     *
-     * @var int
-     */
-    public $dingOrgId;
     protected $_name = [
-        'spaceName'  => 'spaceName',
-        'spaceDesc'  => 'spaceDesc',
-        'spaceIcon'  => 'spaceIcon',
-        'userId'     => 'userId',
-        'bizCode'    => 'bizCode',
-        'dingCorpId' => 'dingCorpId',
-        'dingOrgId'  => 'dingOrgId',
+        'bizCode'   => 'bizCode',
+        'spaceDesc' => 'spaceDesc',
+        'spaceIcon' => 'spaceIcon',
+        'spaceName' => 'spaceName',
+        'userId'    => 'userId',
     ];
 
     public function validate()
@@ -73,8 +57,8 @@ class CreateEduAssetSpaceRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->spaceName) {
-            $res['spaceName'] = $this->spaceName;
+        if (null !== $this->bizCode) {
+            $res['bizCode'] = $this->bizCode;
         }
         if (null !== $this->spaceDesc) {
             $res['spaceDesc'] = $this->spaceDesc;
@@ -82,17 +66,11 @@ class CreateEduAssetSpaceRequest extends Model
         if (null !== $this->spaceIcon) {
             $res['spaceIcon'] = $this->spaceIcon;
         }
+        if (null !== $this->spaceName) {
+            $res['spaceName'] = $this->spaceName;
+        }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
-        }
-        if (null !== $this->bizCode) {
-            $res['bizCode'] = $this->bizCode;
-        }
-        if (null !== $this->dingCorpId) {
-            $res['dingCorpId'] = $this->dingCorpId;
-        }
-        if (null !== $this->dingOrgId) {
-            $res['dingOrgId'] = $this->dingOrgId;
         }
 
         return $res;
@@ -106,8 +84,8 @@ class CreateEduAssetSpaceRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['spaceName'])) {
-            $model->spaceName = $map['spaceName'];
+        if (isset($map['bizCode'])) {
+            $model->bizCode = $map['bizCode'];
         }
         if (isset($map['spaceDesc'])) {
             $model->spaceDesc = $map['spaceDesc'];
@@ -115,17 +93,11 @@ class CreateEduAssetSpaceRequest extends Model
         if (isset($map['spaceIcon'])) {
             $model->spaceIcon = $map['spaceIcon'];
         }
+        if (isset($map['spaceName'])) {
+            $model->spaceName = $map['spaceName'];
+        }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];
-        }
-        if (isset($map['bizCode'])) {
-            $model->bizCode = $map['bizCode'];
-        }
-        if (isset($map['dingCorpId'])) {
-            $model->dingCorpId = $map['dingCorpId'];
-        }
-        if (isset($map['dingOrgId'])) {
-            $model->dingOrgId = $map['dingOrgId'];
         }
 
         return $model;

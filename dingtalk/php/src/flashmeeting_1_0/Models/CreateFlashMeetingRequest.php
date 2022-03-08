@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class CreateFlashMeetingRequest extends Model
 {
     /**
+     * @description 创建人union id
+     *
+     * @var string
+     */
+    public $creator;
+
+    /**
      * @description 日程id
      *
      * @var string
@@ -21,17 +28,10 @@ class CreateFlashMeetingRequest extends Model
      * @var string
      */
     public $title;
-
-    /**
-     * @description 创建人union id
-     *
-     * @var string
-     */
-    public $creator;
     protected $_name = [
+        'creator' => 'creator',
         'eventId' => 'eventId',
         'title'   => 'title',
-        'creator' => 'creator',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class CreateFlashMeetingRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->creator) {
+            $res['creator'] = $this->creator;
+        }
         if (null !== $this->eventId) {
             $res['eventId'] = $this->eventId;
         }
         if (null !== $this->title) {
             $res['title'] = $this->title;
-        }
-        if (null !== $this->creator) {
-            $res['creator'] = $this->creator;
         }
 
         return $res;
@@ -62,14 +62,14 @@ class CreateFlashMeetingRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['creator'])) {
+            $model->creator = $map['creator'];
+        }
         if (isset($map['eventId'])) {
             $model->eventId = $map['eventId'];
         }
         if (isset($map['title'])) {
             $model->title = $map['title'];
-        }
-        if (isset($map['creator'])) {
-            $model->creator = $map['creator'];
         }
 
         return $model;

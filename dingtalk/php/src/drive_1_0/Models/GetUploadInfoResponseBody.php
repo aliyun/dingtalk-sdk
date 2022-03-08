@@ -11,11 +11,6 @@ use AlibabaCloud\Tea\Model;
 class GetUploadInfoResponseBody extends Model
 {
     /**
-     * @var stsUploadInfo
-     */
-    public $stsUploadInfo;
-
-    /**
      * @var headerSignatureUploadInfo
      */
     public $headerSignatureUploadInfo;
@@ -26,10 +21,15 @@ class GetUploadInfoResponseBody extends Model
      * @var string
      */
     public $region;
+
+    /**
+     * @var stsUploadInfo
+     */
+    public $stsUploadInfo;
     protected $_name = [
-        'stsUploadInfo'             => 'stsUploadInfo',
         'headerSignatureUploadInfo' => 'headerSignatureUploadInfo',
         'region'                    => 'region',
+        'stsUploadInfo'             => 'stsUploadInfo',
     ];
 
     public function validate()
@@ -39,14 +39,14 @@ class GetUploadInfoResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->stsUploadInfo) {
-            $res['stsUploadInfo'] = null !== $this->stsUploadInfo ? $this->stsUploadInfo->toMap() : null;
-        }
         if (null !== $this->headerSignatureUploadInfo) {
             $res['headerSignatureUploadInfo'] = null !== $this->headerSignatureUploadInfo ? $this->headerSignatureUploadInfo->toMap() : null;
         }
         if (null !== $this->region) {
             $res['region'] = $this->region;
+        }
+        if (null !== $this->stsUploadInfo) {
+            $res['stsUploadInfo'] = null !== $this->stsUploadInfo ? $this->stsUploadInfo->toMap() : null;
         }
 
         return $res;
@@ -60,14 +60,14 @@ class GetUploadInfoResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['stsUploadInfo'])) {
-            $model->stsUploadInfo = stsUploadInfo::fromMap($map['stsUploadInfo']);
-        }
         if (isset($map['headerSignatureUploadInfo'])) {
             $model->headerSignatureUploadInfo = headerSignatureUploadInfo::fromMap($map['headerSignatureUploadInfo']);
         }
         if (isset($map['region'])) {
             $model->region = $map['region'];
+        }
+        if (isset($map['stsUploadInfo'])) {
+            $model->stsUploadInfo = stsUploadInfo::fromMap($map['stsUploadInfo']);
         }
 
         return $model;

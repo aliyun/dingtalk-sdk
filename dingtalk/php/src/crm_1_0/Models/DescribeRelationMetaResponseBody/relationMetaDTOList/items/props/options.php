@@ -10,6 +10,11 @@ use AlibabaCloud\Tea\Model;
 class options extends Model
 {
     /**
+     * @var extension
+     */
+    public $extension;
+
+    /**
      * @description 选项数据主键
      *
      * @var string
@@ -29,16 +34,11 @@ class options extends Model
      * @var bool
      */
     public $warn;
-
-    /**
-     * @var extension
-     */
-    public $extension;
     protected $_name = [
+        'extension' => 'extension',
         'key'       => 'key',
         'value'     => 'value',
         'warn'      => 'warn',
-        'extension' => 'extension',
     ];
 
     public function validate()
@@ -48,6 +48,9 @@ class options extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->extension) {
+            $res['extension'] = null !== $this->extension ? $this->extension->toMap() : null;
+        }
         if (null !== $this->key) {
             $res['key'] = $this->key;
         }
@@ -56,9 +59,6 @@ class options extends Model
         }
         if (null !== $this->warn) {
             $res['warn'] = $this->warn;
-        }
-        if (null !== $this->extension) {
-            $res['extension'] = null !== $this->extension ? $this->extension->toMap() : null;
         }
 
         return $res;
@@ -72,6 +72,9 @@ class options extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['extension'])) {
+            $model->extension = extension::fromMap($map['extension']);
+        }
         if (isset($map['key'])) {
             $model->key = $map['key'];
         }
@@ -80,9 +83,6 @@ class options extends Model
         }
         if (isset($map['warn'])) {
             $model->warn = $map['warn'];
-        }
-        if (isset($map['extension'])) {
-            $model->extension = extension::fromMap($map['extension']);
         }
 
         return $model;

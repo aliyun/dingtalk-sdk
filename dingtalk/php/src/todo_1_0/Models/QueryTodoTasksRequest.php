@@ -9,6 +9,34 @@ use AlibabaCloud\Tea\Model;
 class QueryTodoTasksRequest extends Model
 {
     /**
+     * @description 所属分类
+     *
+     * @var string
+     */
+    public $category;
+
+    /**
+     * @description 查询从计划完成时间开始
+     *
+     * @var int
+     */
+    public $fromDueTime;
+
+    /**
+     * @description 待办完成状态。
+     *
+     * @var bool
+     */
+    public $isDone;
+
+    /**
+     * @description 待办回收状态
+     *
+     * @var bool
+     */
+    public $isRecycled;
+
+    /**
      * @description 分页游标。如果一个查询条件一次无法全部返回结果，会返回分页token，下次查询带上该token后会返回后续数据，直到分页token为null表示数据已经全部查询完毕。
      *
      * @var string
@@ -30,13 +58,6 @@ class QueryTodoTasksRequest extends Model
     public $orderDirection;
 
     /**
-     * @description 待办完成状态。
-     *
-     * @var bool
-     */
-    public $isDone;
-
-    /**
      * @description 查询目标用户角色类型，执行人 | 创建人 | 参与人，可以同时传多个值。如：[["executor"], ["creator"],["participant"]] 或 [["executor", "creator"]]
      *
      * @var string[][]
@@ -44,42 +65,21 @@ class QueryTodoTasksRequest extends Model
     public $roleTypes;
 
     /**
-     * @description 查询从计划完成时间开始
-     *
-     * @var int
-     */
-    public $fromDueTime;
-
-    /**
      * @description 查询到计划完成时间结束
      *
      * @var int
      */
     public $toDueTime;
-
-    /**
-     * @description 所属分类
-     *
-     * @var string
-     */
-    public $category;
-
-    /**
-     * @description 待办回收状态
-     *
-     * @var bool
-     */
-    public $isRecycled;
     protected $_name = [
+        'category'       => 'category',
+        'fromDueTime'    => 'fromDueTime',
+        'isDone'         => 'isDone',
+        'isRecycled'     => 'isRecycled',
         'nextToken'      => 'nextToken',
         'orderBy'        => 'orderBy',
         'orderDirection' => 'orderDirection',
-        'isDone'         => 'isDone',
         'roleTypes'      => 'roleTypes',
-        'fromDueTime'    => 'fromDueTime',
         'toDueTime'      => 'toDueTime',
-        'category'       => 'category',
-        'isRecycled'     => 'isRecycled',
     ];
 
     public function validate()
@@ -89,6 +89,18 @@ class QueryTodoTasksRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->category) {
+            $res['category'] = $this->category;
+        }
+        if (null !== $this->fromDueTime) {
+            $res['fromDueTime'] = $this->fromDueTime;
+        }
+        if (null !== $this->isDone) {
+            $res['isDone'] = $this->isDone;
+        }
+        if (null !== $this->isRecycled) {
+            $res['isRecycled'] = $this->isRecycled;
+        }
         if (null !== $this->nextToken) {
             $res['nextToken'] = $this->nextToken;
         }
@@ -98,23 +110,11 @@ class QueryTodoTasksRequest extends Model
         if (null !== $this->orderDirection) {
             $res['orderDirection'] = $this->orderDirection;
         }
-        if (null !== $this->isDone) {
-            $res['isDone'] = $this->isDone;
-        }
         if (null !== $this->roleTypes) {
             $res['roleTypes'] = $this->roleTypes;
         }
-        if (null !== $this->fromDueTime) {
-            $res['fromDueTime'] = $this->fromDueTime;
-        }
         if (null !== $this->toDueTime) {
             $res['toDueTime'] = $this->toDueTime;
-        }
-        if (null !== $this->category) {
-            $res['category'] = $this->category;
-        }
-        if (null !== $this->isRecycled) {
-            $res['isRecycled'] = $this->isRecycled;
         }
 
         return $res;
@@ -128,6 +128,18 @@ class QueryTodoTasksRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['category'])) {
+            $model->category = $map['category'];
+        }
+        if (isset($map['fromDueTime'])) {
+            $model->fromDueTime = $map['fromDueTime'];
+        }
+        if (isset($map['isDone'])) {
+            $model->isDone = $map['isDone'];
+        }
+        if (isset($map['isRecycled'])) {
+            $model->isRecycled = $map['isRecycled'];
+        }
         if (isset($map['nextToken'])) {
             $model->nextToken = $map['nextToken'];
         }
@@ -137,25 +149,13 @@ class QueryTodoTasksRequest extends Model
         if (isset($map['orderDirection'])) {
             $model->orderDirection = $map['orderDirection'];
         }
-        if (isset($map['isDone'])) {
-            $model->isDone = $map['isDone'];
-        }
         if (isset($map['roleTypes'])) {
             if (!empty($map['roleTypes'])) {
                 $model->roleTypes = $map['roleTypes'];
             }
         }
-        if (isset($map['fromDueTime'])) {
-            $model->fromDueTime = $map['fromDueTime'];
-        }
         if (isset($map['toDueTime'])) {
             $model->toDueTime = $map['toDueTime'];
-        }
-        if (isset($map['category'])) {
-            $model->category = $map['category'];
-        }
-        if (isset($map['isRecycled'])) {
-            $model->isRecycled = $map['isRecycled'];
         }
 
         return $model;

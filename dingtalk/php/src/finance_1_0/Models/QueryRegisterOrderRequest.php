@@ -16,11 +16,11 @@ class QueryRegisterOrderRequest extends Model
     public $instId;
 
     /**
-     * @description 子机构编号
+     * @description 申请单号，和外部流水号至少一个必填
      *
      * @var string
      */
-    public $subInstId;
+    public $orderId;
 
     /**
      * @description 外部流水号，和申请单编号至少一个必填
@@ -30,16 +30,16 @@ class QueryRegisterOrderRequest extends Model
     public $outTradeNo;
 
     /**
-     * @description 申请单号，和外部流水号至少一个必填
+     * @description 子机构编号
      *
      * @var string
      */
-    public $orderId;
+    public $subInstId;
     protected $_name = [
         'instId'     => 'instId',
-        'subInstId'  => 'subInstId',
-        'outTradeNo' => 'outTradeNo',
         'orderId'    => 'orderId',
+        'outTradeNo' => 'outTradeNo',
+        'subInstId'  => 'subInstId',
     ];
 
     public function validate()
@@ -52,14 +52,14 @@ class QueryRegisterOrderRequest extends Model
         if (null !== $this->instId) {
             $res['instId'] = $this->instId;
         }
-        if (null !== $this->subInstId) {
-            $res['subInstId'] = $this->subInstId;
+        if (null !== $this->orderId) {
+            $res['orderId'] = $this->orderId;
         }
         if (null !== $this->outTradeNo) {
             $res['outTradeNo'] = $this->outTradeNo;
         }
-        if (null !== $this->orderId) {
-            $res['orderId'] = $this->orderId;
+        if (null !== $this->subInstId) {
+            $res['subInstId'] = $this->subInstId;
         }
 
         return $res;
@@ -76,14 +76,14 @@ class QueryRegisterOrderRequest extends Model
         if (isset($map['instId'])) {
             $model->instId = $map['instId'];
         }
-        if (isset($map['subInstId'])) {
-            $model->subInstId = $map['subInstId'];
+        if (isset($map['orderId'])) {
+            $model->orderId = $map['orderId'];
         }
         if (isset($map['outTradeNo'])) {
             $model->outTradeNo = $map['outTradeNo'];
         }
-        if (isset($map['orderId'])) {
-            $model->orderId = $map['orderId'];
+        if (isset($map['subInstId'])) {
+            $model->subInstId = $map['subInstId'];
         }
 
         return $model;

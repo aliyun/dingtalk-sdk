@@ -10,25 +10,25 @@ use AlibabaCloud\Tea\Model;
 class payChannelDetailList extends Model
 {
     /**
-     * @description 支付渠道名称
-     *
-     * @var string
-     */
-    public $payChannelName;
-
-    /**
-     * @description 支付渠道类型
-     *
-     * @var string
-     */
-    public $payChannelType;
-
-    /**
      * @description 金额
      *
      * @var string
      */
     public $amount;
+
+    /**
+     * @description 支付资金列表
+     *
+     * @var fundToolDetailList[]
+     */
+    public $fundToolDetailList;
+
+    /**
+     * @description 支付渠道名称
+     *
+     * @var string
+     */
+    public $payChannelName;
 
     /**
      * @description 支付渠道号
@@ -45,26 +45,26 @@ class payChannelDetailList extends Model
     public $payChannelRefundOrderNo;
 
     /**
+     * @description 支付渠道类型
+     *
+     * @var string
+     */
+    public $payChannelType;
+
+    /**
      * @description 优惠金额
      *
      * @var string
      */
     public $promotionAmount;
-
-    /**
-     * @description 支付资金列表
-     *
-     * @var fundToolDetailList[]
-     */
-    public $fundToolDetailList;
     protected $_name = [
-        'payChannelName'          => 'payChannelName',
-        'payChannelType'          => 'payChannelType',
         'amount'                  => 'amount',
+        'fundToolDetailList'      => 'fundToolDetailList',
+        'payChannelName'          => 'payChannelName',
         'payChannelOrderNo'       => 'payChannelOrderNo',
         'payChannelRefundOrderNo' => 'payChannelRefundOrderNo',
+        'payChannelType'          => 'payChannelType',
         'promotionAmount'         => 'promotionAmount',
-        'fundToolDetailList'      => 'fundToolDetailList',
     ];
 
     public function validate()
@@ -74,23 +74,8 @@ class payChannelDetailList extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->payChannelName) {
-            $res['payChannelName'] = $this->payChannelName;
-        }
-        if (null !== $this->payChannelType) {
-            $res['payChannelType'] = $this->payChannelType;
-        }
         if (null !== $this->amount) {
             $res['amount'] = $this->amount;
-        }
-        if (null !== $this->payChannelOrderNo) {
-            $res['payChannelOrderNo'] = $this->payChannelOrderNo;
-        }
-        if (null !== $this->payChannelRefundOrderNo) {
-            $res['payChannelRefundOrderNo'] = $this->payChannelRefundOrderNo;
-        }
-        if (null !== $this->promotionAmount) {
-            $res['promotionAmount'] = $this->promotionAmount;
         }
         if (null !== $this->fundToolDetailList) {
             $res['fundToolDetailList'] = [];
@@ -100,6 +85,21 @@ class payChannelDetailList extends Model
                     $res['fundToolDetailList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->payChannelName) {
+            $res['payChannelName'] = $this->payChannelName;
+        }
+        if (null !== $this->payChannelOrderNo) {
+            $res['payChannelOrderNo'] = $this->payChannelOrderNo;
+        }
+        if (null !== $this->payChannelRefundOrderNo) {
+            $res['payChannelRefundOrderNo'] = $this->payChannelRefundOrderNo;
+        }
+        if (null !== $this->payChannelType) {
+            $res['payChannelType'] = $this->payChannelType;
+        }
+        if (null !== $this->promotionAmount) {
+            $res['promotionAmount'] = $this->promotionAmount;
         }
 
         return $res;
@@ -113,23 +113,8 @@ class payChannelDetailList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['payChannelName'])) {
-            $model->payChannelName = $map['payChannelName'];
-        }
-        if (isset($map['payChannelType'])) {
-            $model->payChannelType = $map['payChannelType'];
-        }
         if (isset($map['amount'])) {
             $model->amount = $map['amount'];
-        }
-        if (isset($map['payChannelOrderNo'])) {
-            $model->payChannelOrderNo = $map['payChannelOrderNo'];
-        }
-        if (isset($map['payChannelRefundOrderNo'])) {
-            $model->payChannelRefundOrderNo = $map['payChannelRefundOrderNo'];
-        }
-        if (isset($map['promotionAmount'])) {
-            $model->promotionAmount = $map['promotionAmount'];
         }
         if (isset($map['fundToolDetailList'])) {
             if (!empty($map['fundToolDetailList'])) {
@@ -139,6 +124,21 @@ class payChannelDetailList extends Model
                     $model->fundToolDetailList[$n++] = null !== $item ? fundToolDetailList::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['payChannelName'])) {
+            $model->payChannelName = $map['payChannelName'];
+        }
+        if (isset($map['payChannelOrderNo'])) {
+            $model->payChannelOrderNo = $map['payChannelOrderNo'];
+        }
+        if (isset($map['payChannelRefundOrderNo'])) {
+            $model->payChannelRefundOrderNo = $map['payChannelRefundOrderNo'];
+        }
+        if (isset($map['payChannelType'])) {
+            $model->payChannelType = $map['payChannelType'];
+        }
+        if (isset($map['promotionAmount'])) {
+            $model->promotionAmount = $map['promotionAmount'];
         }
 
         return $model;

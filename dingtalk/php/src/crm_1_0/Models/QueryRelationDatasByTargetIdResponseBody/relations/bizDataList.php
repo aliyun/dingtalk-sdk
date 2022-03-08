@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class bizDataList extends Model
 {
     /**
+     * @description 关系模型数据字段扩展值。
+     *
+     * @var string
+     */
+    public $extendValue;
+
+    /**
      * @description 关系模型数据字段名。
      *
      * @var string
@@ -21,17 +28,10 @@ class bizDataList extends Model
      * @var string
      */
     public $value;
-
-    /**
-     * @description 关系模型数据字段扩展值。
-     *
-     * @var string
-     */
-    public $extendValue;
     protected $_name = [
+        'extendValue' => 'extendValue',
         'key'         => 'key',
         'value'       => 'value',
-        'extendValue' => 'extendValue',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class bizDataList extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->extendValue) {
+            $res['extendValue'] = $this->extendValue;
+        }
         if (null !== $this->key) {
             $res['key'] = $this->key;
         }
         if (null !== $this->value) {
             $res['value'] = $this->value;
-        }
-        if (null !== $this->extendValue) {
-            $res['extendValue'] = $this->extendValue;
         }
 
         return $res;
@@ -62,14 +62,14 @@ class bizDataList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['extendValue'])) {
+            $model->extendValue = $map['extendValue'];
+        }
         if (isset($map['key'])) {
             $model->key = $map['key'];
         }
         if (isset($map['value'])) {
             $model->value = $map['value'];
-        }
-        if (isset($map['extendValue'])) {
-            $model->extendValue = $map['extendValue'];
         }
 
         return $model;

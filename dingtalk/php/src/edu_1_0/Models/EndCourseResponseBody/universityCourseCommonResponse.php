@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class universityCourseCommonResponse extends Model
 {
     /**
-     * @description 调用是否成功
-     *
-     * @var bool
-     */
-    public $success;
-
-    /**
      * @description 课程编码
      *
      * @var string
      */
     public $courseCode;
+
+    /**
+     * @description 调用是否成功
+     *
+     * @var bool
+     */
+    public $success;
     protected $_name = [
-        'success'    => 'success',
         'courseCode' => 'courseCode',
+        'success'    => 'success',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class universityCourseCommonResponse extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->success) {
-            $res['success'] = $this->success;
-        }
         if (null !== $this->courseCode) {
             $res['courseCode'] = $this->courseCode;
+        }
+        if (null !== $this->success) {
+            $res['success'] = $this->success;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class universityCourseCommonResponse extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['success'])) {
-            $model->success = $map['success'];
-        }
         if (isset($map['courseCode'])) {
             $model->courseCode = $map['courseCode'];
+        }
+        if (isset($map['success'])) {
+            $model->success = $map['success'];
         }
 
         return $model;

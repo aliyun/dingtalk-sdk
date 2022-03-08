@@ -10,29 +10,19 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @var int
-     */
-    public $orgId;
-
-    /**
      * @var string
      */
-    public $instanceId;
-
-    /**
-     * @var string
-     */
-    public $objectType;
-
-    /**
-     * @var string
-     */
-    public $creatorUserId;
+    public $appUuid;
 
     /**
      * @var string
      */
     public $creatorNick;
+
+    /**
+     * @var string
+     */
+    public $creatorUserId;
 
     /**
      * @var mixed[]
@@ -45,29 +35,9 @@ class result extends Model
     public $extendData;
 
     /**
-     * @var permission
-     */
-    public $permission;
-
-    /**
-     * @var string
-     */
-    public $appUuid;
-
-    /**
      * @var string
      */
     public $formCode;
-
-    /**
-     * @var string
-     */
-    public $procOutResult;
-
-    /**
-     * @var string
-     */
-    public $procInstStatus;
 
     /**
      * @var string
@@ -78,21 +48,51 @@ class result extends Model
      * @var string
      */
     public $gmtModified;
+
+    /**
+     * @var string
+     */
+    public $instanceId;
+
+    /**
+     * @var string
+     */
+    public $objectType;
+
+    /**
+     * @var int
+     */
+    public $orgId;
+
+    /**
+     * @var permission
+     */
+    public $permission;
+
+    /**
+     * @var string
+     */
+    public $procInstStatus;
+
+    /**
+     * @var string
+     */
+    public $procOutResult;
     protected $_name = [
-        'orgId'          => 'orgId',
-        'instanceId'     => 'instanceId',
-        'objectType'     => 'objectType',
-        'creatorUserId'  => 'creatorUserId',
+        'appUuid'        => 'appUuid',
         'creatorNick'    => 'creatorNick',
+        'creatorUserId'  => 'creatorUserId',
         'data'           => 'data',
         'extendData'     => 'extendData',
-        'permission'     => 'permission',
-        'appUuid'        => 'appUuid',
         'formCode'       => 'formCode',
-        'procOutResult'  => 'procOutResult',
-        'procInstStatus' => 'procInstStatus',
         'gmtCreate'      => 'gmtCreate',
         'gmtModified'    => 'gmtModified',
+        'instanceId'     => 'instanceId',
+        'objectType'     => 'objectType',
+        'orgId'          => 'orgId',
+        'permission'     => 'permission',
+        'procInstStatus' => 'procInstStatus',
+        'procOutResult'  => 'procOutResult',
     ];
 
     public function validate()
@@ -102,20 +102,14 @@ class result extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->orgId) {
-            $res['orgId'] = $this->orgId;
-        }
-        if (null !== $this->instanceId) {
-            $res['instanceId'] = $this->instanceId;
-        }
-        if (null !== $this->objectType) {
-            $res['objectType'] = $this->objectType;
-        }
-        if (null !== $this->creatorUserId) {
-            $res['creatorUserId'] = $this->creatorUserId;
+        if (null !== $this->appUuid) {
+            $res['appUuid'] = $this->appUuid;
         }
         if (null !== $this->creatorNick) {
             $res['creatorNick'] = $this->creatorNick;
+        }
+        if (null !== $this->creatorUserId) {
+            $res['creatorUserId'] = $this->creatorUserId;
         }
         if (null !== $this->data) {
             $res['data'] = $this->data;
@@ -123,26 +117,32 @@ class result extends Model
         if (null !== $this->extendData) {
             $res['extendData'] = $this->extendData;
         }
-        if (null !== $this->permission) {
-            $res['permission'] = null !== $this->permission ? $this->permission->toMap() : null;
-        }
-        if (null !== $this->appUuid) {
-            $res['appUuid'] = $this->appUuid;
-        }
         if (null !== $this->formCode) {
             $res['formCode'] = $this->formCode;
-        }
-        if (null !== $this->procOutResult) {
-            $res['procOutResult'] = $this->procOutResult;
-        }
-        if (null !== $this->procInstStatus) {
-            $res['procInstStatus'] = $this->procInstStatus;
         }
         if (null !== $this->gmtCreate) {
             $res['gmtCreate'] = $this->gmtCreate;
         }
         if (null !== $this->gmtModified) {
             $res['gmtModified'] = $this->gmtModified;
+        }
+        if (null !== $this->instanceId) {
+            $res['instanceId'] = $this->instanceId;
+        }
+        if (null !== $this->objectType) {
+            $res['objectType'] = $this->objectType;
+        }
+        if (null !== $this->orgId) {
+            $res['orgId'] = $this->orgId;
+        }
+        if (null !== $this->permission) {
+            $res['permission'] = null !== $this->permission ? $this->permission->toMap() : null;
+        }
+        if (null !== $this->procInstStatus) {
+            $res['procInstStatus'] = $this->procInstStatus;
+        }
+        if (null !== $this->procOutResult) {
+            $res['procOutResult'] = $this->procOutResult;
         }
 
         return $res;
@@ -156,20 +156,14 @@ class result extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['orgId'])) {
-            $model->orgId = $map['orgId'];
-        }
-        if (isset($map['instanceId'])) {
-            $model->instanceId = $map['instanceId'];
-        }
-        if (isset($map['objectType'])) {
-            $model->objectType = $map['objectType'];
-        }
-        if (isset($map['creatorUserId'])) {
-            $model->creatorUserId = $map['creatorUserId'];
+        if (isset($map['appUuid'])) {
+            $model->appUuid = $map['appUuid'];
         }
         if (isset($map['creatorNick'])) {
             $model->creatorNick = $map['creatorNick'];
+        }
+        if (isset($map['creatorUserId'])) {
+            $model->creatorUserId = $map['creatorUserId'];
         }
         if (isset($map['data'])) {
             $model->data = $map['data'];
@@ -177,26 +171,32 @@ class result extends Model
         if (isset($map['extendData'])) {
             $model->extendData = $map['extendData'];
         }
-        if (isset($map['permission'])) {
-            $model->permission = permission::fromMap($map['permission']);
-        }
-        if (isset($map['appUuid'])) {
-            $model->appUuid = $map['appUuid'];
-        }
         if (isset($map['formCode'])) {
             $model->formCode = $map['formCode'];
-        }
-        if (isset($map['procOutResult'])) {
-            $model->procOutResult = $map['procOutResult'];
-        }
-        if (isset($map['procInstStatus'])) {
-            $model->procInstStatus = $map['procInstStatus'];
         }
         if (isset($map['gmtCreate'])) {
             $model->gmtCreate = $map['gmtCreate'];
         }
         if (isset($map['gmtModified'])) {
             $model->gmtModified = $map['gmtModified'];
+        }
+        if (isset($map['instanceId'])) {
+            $model->instanceId = $map['instanceId'];
+        }
+        if (isset($map['objectType'])) {
+            $model->objectType = $map['objectType'];
+        }
+        if (isset($map['orgId'])) {
+            $model->orgId = $map['orgId'];
+        }
+        if (isset($map['permission'])) {
+            $model->permission = permission::fromMap($map['permission']);
+        }
+        if (isset($map['procInstStatus'])) {
+            $model->procInstStatus = $map['procInstStatus'];
+        }
+        if (isset($map['procOutResult'])) {
+            $model->procOutResult = $map['procOutResult'];
         }
 
         return $model;

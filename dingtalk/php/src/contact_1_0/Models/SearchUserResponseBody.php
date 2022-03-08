@@ -16,18 +16,18 @@ class SearchUserResponseBody extends Model
     public $hasMore;
 
     /**
-     * @var int
-     */
-    public $totalCount;
-
-    /**
      * @var string[]
      */
     public $list;
+
+    /**
+     * @var int
+     */
+    public $totalCount;
     protected $_name = [
         'hasMore'    => 'hasMore',
-        'totalCount' => 'totalCount',
         'list'       => 'list',
+        'totalCount' => 'totalCount',
     ];
 
     public function validate()
@@ -40,11 +40,11 @@ class SearchUserResponseBody extends Model
         if (null !== $this->hasMore) {
             $res['hasMore'] = $this->hasMore;
         }
-        if (null !== $this->totalCount) {
-            $res['totalCount'] = $this->totalCount;
-        }
         if (null !== $this->list) {
             $res['list'] = $this->list;
+        }
+        if (null !== $this->totalCount) {
+            $res['totalCount'] = $this->totalCount;
         }
 
         return $res;
@@ -61,13 +61,13 @@ class SearchUserResponseBody extends Model
         if (isset($map['hasMore'])) {
             $model->hasMore = $map['hasMore'];
         }
-        if (isset($map['totalCount'])) {
-            $model->totalCount = $map['totalCount'];
-        }
         if (isset($map['list'])) {
             if (!empty($map['list'])) {
                 $model->list = $map['list'];
             }
+        }
+        if (isset($map['totalCount'])) {
+            $model->totalCount = $map['totalCount'];
         }
 
         return $model;

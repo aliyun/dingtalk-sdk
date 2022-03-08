@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class CreateDeviceVideoConferenceResponseBody extends Model
 {
     /**
-     * @description 会议id
-     *
-     * @var string
-     */
-    public $conferenceId;
-
-    /**
      * @description 入会口令
      *
      * @var string
      */
     public $code;
+
+    /**
+     * @description 会议id
+     *
+     * @var string
+     */
+    public $conferenceId;
     protected $_name = [
-        'conferenceId' => 'conferenceId',
         'code'         => 'code',
+        'conferenceId' => 'conferenceId',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class CreateDeviceVideoConferenceResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->conferenceId) {
-            $res['conferenceId'] = $this->conferenceId;
-        }
         if (null !== $this->code) {
             $res['code'] = $this->code;
+        }
+        if (null !== $this->conferenceId) {
+            $res['conferenceId'] = $this->conferenceId;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class CreateDeviceVideoConferenceResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['conferenceId'])) {
-            $model->conferenceId = $map['conferenceId'];
-        }
         if (isset($map['code'])) {
             $model->code = $map['code'];
+        }
+        if (isset($map['conferenceId'])) {
+            $model->conferenceId = $map['conferenceId'];
         }
 
         return $model;

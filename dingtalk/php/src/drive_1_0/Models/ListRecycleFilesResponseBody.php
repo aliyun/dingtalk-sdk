@@ -10,21 +10,21 @@ use AlibabaCloud\Tea\Model;
 class ListRecycleFilesResponseBody extends Model
 {
     /**
-     * @description 回收站文件列表
-     *
-     * @var recycleItems[]
-     */
-    public $recycleItems;
-
-    /**
      * @description 加载更多锚点, nextToken不为空表示有更多数据
      *
      * @var string
      */
     public $nextToken;
+
+    /**
+     * @description 回收站文件列表
+     *
+     * @var recycleItems[]
+     */
+    public $recycleItems;
     protected $_name = [
-        'recycleItems' => 'recycleItems',
         'nextToken'    => 'nextToken',
+        'recycleItems' => 'recycleItems',
     ];
 
     public function validate()
@@ -34,6 +34,9 @@ class ListRecycleFilesResponseBody extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
+        }
         if (null !== $this->recycleItems) {
             $res['recycleItems'] = [];
             if (null !== $this->recycleItems && \is_array($this->recycleItems)) {
@@ -42,9 +45,6 @@ class ListRecycleFilesResponseBody extends Model
                     $res['recycleItems'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
-        }
-        if (null !== $this->nextToken) {
-            $res['nextToken'] = $this->nextToken;
         }
 
         return $res;
@@ -58,6 +58,9 @@ class ListRecycleFilesResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
+        }
         if (isset($map['recycleItems'])) {
             if (!empty($map['recycleItems'])) {
                 $model->recycleItems = [];
@@ -66,9 +69,6 @@ class ListRecycleFilesResponseBody extends Model
                     $model->recycleItems[$n++] = null !== $item ? recycleItems::fromMap($item) : $item;
                 }
             }
-        }
-        if (isset($map['nextToken'])) {
-            $model->nextToken = $map['nextToken'];
         }
 
         return $model;

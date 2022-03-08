@@ -23,23 +23,23 @@ class data extends Model
     public $deptName;
 
     /**
-     * @description 最近1天累计创建日志人数
-     *
-     * @var string
-     */
-    public $dingReportSendUsrCnt;
-
-    /**
      * @description 最近1天累计创建日志数
      *
      * @var string
      */
     public $dingReportSendCnt;
+
+    /**
+     * @description 最近1天累计创建日志人数
+     *
+     * @var string
+     */
+    public $dingReportSendUsrCnt;
     protected $_name = [
         'deptId'               => 'deptId',
         'deptName'             => 'deptName',
-        'dingReportSendUsrCnt' => 'dingReportSendUsrCnt',
         'dingReportSendCnt'    => 'dingReportSendCnt',
+        'dingReportSendUsrCnt' => 'dingReportSendUsrCnt',
     ];
 
     public function validate()
@@ -55,11 +55,11 @@ class data extends Model
         if (null !== $this->deptName) {
             $res['deptName'] = $this->deptName;
         }
-        if (null !== $this->dingReportSendUsrCnt) {
-            $res['dingReportSendUsrCnt'] = $this->dingReportSendUsrCnt;
-        }
         if (null !== $this->dingReportSendCnt) {
             $res['dingReportSendCnt'] = $this->dingReportSendCnt;
+        }
+        if (null !== $this->dingReportSendUsrCnt) {
+            $res['dingReportSendUsrCnt'] = $this->dingReportSendUsrCnt;
         }
 
         return $res;
@@ -79,11 +79,11 @@ class data extends Model
         if (isset($map['deptName'])) {
             $model->deptName = $map['deptName'];
         }
-        if (isset($map['dingReportSendUsrCnt'])) {
-            $model->dingReportSendUsrCnt = $map['dingReportSendUsrCnt'];
-        }
         if (isset($map['dingReportSendCnt'])) {
             $model->dingReportSendCnt = $map['dingReportSendCnt'];
+        }
+        if (isset($map['dingReportSendUsrCnt'])) {
+            $model->dingReportSendUsrCnt = $map['dingReportSendUsrCnt'];
         }
 
         return $model;

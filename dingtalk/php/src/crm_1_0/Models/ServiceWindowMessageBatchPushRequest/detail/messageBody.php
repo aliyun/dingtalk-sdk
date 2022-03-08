@@ -13,14 +13,9 @@ use AlibabaCloud\Tea\Model;
 class messageBody extends Model
 {
     /**
-     * @var text
+     * @var actionCard
      */
-    public $text;
-
-    /**
-     * @var markdown
-     */
-    public $markdown;
+    public $actionCard;
 
     /**
      * @var link
@@ -28,14 +23,19 @@ class messageBody extends Model
     public $link;
 
     /**
-     * @var actionCard
+     * @var markdown
      */
-    public $actionCard;
+    public $markdown;
+
+    /**
+     * @var text
+     */
+    public $text;
     protected $_name = [
-        'text'       => 'text',
-        'markdown'   => 'markdown',
-        'link'       => 'link',
         'actionCard' => 'actionCard',
+        'link'       => 'link',
+        'markdown'   => 'markdown',
+        'text'       => 'text',
     ];
 
     public function validate()
@@ -45,17 +45,17 @@ class messageBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->text) {
-            $res['text'] = null !== $this->text ? $this->text->toMap() : null;
-        }
-        if (null !== $this->markdown) {
-            $res['markdown'] = null !== $this->markdown ? $this->markdown->toMap() : null;
+        if (null !== $this->actionCard) {
+            $res['actionCard'] = null !== $this->actionCard ? $this->actionCard->toMap() : null;
         }
         if (null !== $this->link) {
             $res['link'] = null !== $this->link ? $this->link->toMap() : null;
         }
-        if (null !== $this->actionCard) {
-            $res['actionCard'] = null !== $this->actionCard ? $this->actionCard->toMap() : null;
+        if (null !== $this->markdown) {
+            $res['markdown'] = null !== $this->markdown ? $this->markdown->toMap() : null;
+        }
+        if (null !== $this->text) {
+            $res['text'] = null !== $this->text ? $this->text->toMap() : null;
         }
 
         return $res;
@@ -69,17 +69,17 @@ class messageBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['text'])) {
-            $model->text = text::fromMap($map['text']);
-        }
-        if (isset($map['markdown'])) {
-            $model->markdown = markdown::fromMap($map['markdown']);
+        if (isset($map['actionCard'])) {
+            $model->actionCard = actionCard::fromMap($map['actionCard']);
         }
         if (isset($map['link'])) {
             $model->link = link::fromMap($map['link']);
         }
-        if (isset($map['actionCard'])) {
-            $model->actionCard = actionCard::fromMap($map['actionCard']);
+        if (isset($map['markdown'])) {
+            $model->markdown = markdown::fromMap($map['markdown']);
+        }
+        if (isset($map['text'])) {
+            $model->text = text::fromMap($map['text']);
         }
 
         return $model;

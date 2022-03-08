@@ -11,7 +11,12 @@ class DeleteSequenceRequest extends Model
     /**
      * @var string
      */
-    public $userId;
+    public $appType;
+
+    /**
+     * @var string
+     */
+    public $language;
 
     /**
      * @var string
@@ -26,18 +31,13 @@ class DeleteSequenceRequest extends Model
     /**
      * @var string
      */
-    public $language;
-
-    /**
-     * @var string
-     */
-    public $appType;
+    public $userId;
     protected $_name = [
-        'userId'      => 'userId',
+        'appType'     => 'appType',
+        'language'    => 'language',
         'sequence'    => 'sequence',
         'systemToken' => 'systemToken',
-        'language'    => 'language',
-        'appType'     => 'appType',
+        'userId'      => 'userId',
     ];
 
     public function validate()
@@ -47,8 +47,11 @@ class DeleteSequenceRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
+        if (null !== $this->appType) {
+            $res['appType'] = $this->appType;
+        }
+        if (null !== $this->language) {
+            $res['language'] = $this->language;
         }
         if (null !== $this->sequence) {
             $res['sequence'] = $this->sequence;
@@ -56,11 +59,8 @@ class DeleteSequenceRequest extends Model
         if (null !== $this->systemToken) {
             $res['systemToken'] = $this->systemToken;
         }
-        if (null !== $this->language) {
-            $res['language'] = $this->language;
-        }
-        if (null !== $this->appType) {
-            $res['appType'] = $this->appType;
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -74,8 +74,11 @@ class DeleteSequenceRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
+        if (isset($map['appType'])) {
+            $model->appType = $map['appType'];
+        }
+        if (isset($map['language'])) {
+            $model->language = $map['language'];
         }
         if (isset($map['sequence'])) {
             $model->sequence = $map['sequence'];
@@ -83,11 +86,8 @@ class DeleteSequenceRequest extends Model
         if (isset($map['systemToken'])) {
             $model->systemToken = $map['systemToken'];
         }
-        if (isset($map['language'])) {
-            $model->language = $map['language'];
-        }
-        if (isset($map['appType'])) {
-            $model->appType = $map['appType'];
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

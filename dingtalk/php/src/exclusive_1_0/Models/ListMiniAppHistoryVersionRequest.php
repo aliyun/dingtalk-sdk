@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class ListMiniAppHistoryVersionRequest extends Model
 {
     /**
-     * @description 分页大小
+     * @description 小程序id
      *
-     * @var int
+     * @var string
      */
-    public $pageSize;
+    public $miniAppId;
 
     /**
      * @description 分页码
@@ -23,15 +23,15 @@ class ListMiniAppHistoryVersionRequest extends Model
     public $pageNumber;
 
     /**
-     * @description 小程序id
+     * @description 分页大小
      *
-     * @var string
+     * @var int
      */
-    public $miniAppId;
+    public $pageSize;
     protected $_name = [
-        'pageSize'   => 'pageSize',
-        'pageNumber' => 'pageNumber',
         'miniAppId'  => 'miniAppId',
+        'pageNumber' => 'pageNumber',
+        'pageSize'   => 'pageSize',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class ListMiniAppHistoryVersionRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->pageSize) {
-            $res['pageSize'] = $this->pageSize;
+        if (null !== $this->miniAppId) {
+            $res['miniAppId'] = $this->miniAppId;
         }
         if (null !== $this->pageNumber) {
             $res['pageNumber'] = $this->pageNumber;
         }
-        if (null !== $this->miniAppId) {
-            $res['miniAppId'] = $this->miniAppId;
+        if (null !== $this->pageSize) {
+            $res['pageSize'] = $this->pageSize;
         }
 
         return $res;
@@ -62,14 +62,14 @@ class ListMiniAppHistoryVersionRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['pageSize'])) {
-            $model->pageSize = $map['pageSize'];
+        if (isset($map['miniAppId'])) {
+            $model->miniAppId = $map['miniAppId'];
         }
         if (isset($map['pageNumber'])) {
             $model->pageNumber = $map['pageNumber'];
         }
-        if (isset($map['miniAppId'])) {
-            $model->miniAppId = $map['miniAppId'];
+        if (isset($map['pageSize'])) {
+            $model->pageSize = $map['pageSize'];
         }
 
         return $model;

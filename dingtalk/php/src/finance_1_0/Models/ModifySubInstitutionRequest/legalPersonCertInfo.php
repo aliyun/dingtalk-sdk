@@ -9,18 +9,11 @@ use AlibabaCloud\Tea\Model;
 class legalPersonCertInfo extends Model
 {
     /**
-     * @description 法人姓名
+     * @description 法人证件反面url
      *
      * @var string
      */
-    public $certName;
-
-    /**
-     * @description 法人证件号
-     *
-     * @var string
-     */
-    public $idCardNo;
+    public $certBackImage;
 
     /**
      * @description 法人证件正面url
@@ -30,11 +23,11 @@ class legalPersonCertInfo extends Model
     public $certFrontImage;
 
     /**
-     * @description 法人证件反面url
+     * @description 法人姓名
      *
      * @var string
      */
-    public $certBackImage;
+    public $certName;
 
     /**
      * @description 法人证件类型 不填默认为身份证
@@ -42,12 +35,19 @@ class legalPersonCertInfo extends Model
      * @var string
      */
     public $certType;
+
+    /**
+     * @description 法人证件号
+     *
+     * @var string
+     */
+    public $idCardNo;
     protected $_name = [
-        'certName'       => 'certName',
-        'idCardNo'       => 'idCardNo',
-        'certFrontImage' => 'certFrontImage',
         'certBackImage'  => 'certBackImage',
+        'certFrontImage' => 'certFrontImage',
+        'certName'       => 'certName',
         'certType'       => 'certType',
+        'idCardNo'       => 'idCardNo',
     ];
 
     public function validate()
@@ -57,20 +57,20 @@ class legalPersonCertInfo extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->certName) {
-            $res['certName'] = $this->certName;
-        }
-        if (null !== $this->idCardNo) {
-            $res['idCardNo'] = $this->idCardNo;
+        if (null !== $this->certBackImage) {
+            $res['certBackImage'] = $this->certBackImage;
         }
         if (null !== $this->certFrontImage) {
             $res['certFrontImage'] = $this->certFrontImage;
         }
-        if (null !== $this->certBackImage) {
-            $res['certBackImage'] = $this->certBackImage;
+        if (null !== $this->certName) {
+            $res['certName'] = $this->certName;
         }
         if (null !== $this->certType) {
             $res['certType'] = $this->certType;
+        }
+        if (null !== $this->idCardNo) {
+            $res['idCardNo'] = $this->idCardNo;
         }
 
         return $res;
@@ -84,20 +84,20 @@ class legalPersonCertInfo extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['certName'])) {
-            $model->certName = $map['certName'];
-        }
-        if (isset($map['idCardNo'])) {
-            $model->idCardNo = $map['idCardNo'];
+        if (isset($map['certBackImage'])) {
+            $model->certBackImage = $map['certBackImage'];
         }
         if (isset($map['certFrontImage'])) {
             $model->certFrontImage = $map['certFrontImage'];
         }
-        if (isset($map['certBackImage'])) {
-            $model->certBackImage = $map['certBackImage'];
+        if (isset($map['certName'])) {
+            $model->certName = $map['certName'];
         }
         if (isset($map['certType'])) {
             $model->certType = $map['certType'];
+        }
+        if (isset($map['idCardNo'])) {
+            $model->idCardNo = $map['idCardNo'];
         }
 
         return $model;

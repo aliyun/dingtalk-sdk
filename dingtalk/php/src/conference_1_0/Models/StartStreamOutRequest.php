@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class StartStreamOutRequest extends Model
 {
     /**
-     * @description 主持人UID
+     * @description 布局
      *
      * @var string
      */
-    public $unionId;
+    public $mode;
 
     /**
      * @description 是否需要主持人加入后才允许推流
@@ -23,11 +23,11 @@ class StartStreamOutRequest extends Model
     public $needHostJoin;
 
     /**
-     * @description 推流地址列表, 最多10个，需要以RTMP开头
+     * @description 小窗位置
      *
-     * @var string[]
+     * @var string
      */
-    public $streamUrlList;
+    public $smallWindowPosition;
 
     /**
      * @var string
@@ -35,25 +35,25 @@ class StartStreamOutRequest extends Model
     public $streamName;
 
     /**
-     * @description 布局
+     * @description 推流地址列表, 最多10个，需要以RTMP开头
      *
-     * @var string
+     * @var string[]
      */
-    public $mode;
+    public $streamUrlList;
 
     /**
-     * @description 小窗位置
+     * @description 主持人UID
      *
      * @var string
      */
-    public $smallWindowPosition;
+    public $unionId;
     protected $_name = [
-        'unionId'             => 'unionId',
-        'needHostJoin'        => 'needHostJoin',
-        'streamUrlList'       => 'streamUrlList',
-        'streamName'          => 'streamName',
         'mode'                => 'mode',
+        'needHostJoin'        => 'needHostJoin',
         'smallWindowPosition' => 'smallWindowPosition',
+        'streamName'          => 'streamName',
+        'streamUrlList'       => 'streamUrlList',
+        'unionId'             => 'unionId',
     ];
 
     public function validate()
@@ -63,23 +63,23 @@ class StartStreamOutRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->unionId) {
-            $res['unionId'] = $this->unionId;
+        if (null !== $this->mode) {
+            $res['mode'] = $this->mode;
         }
         if (null !== $this->needHostJoin) {
             $res['needHostJoin'] = $this->needHostJoin;
         }
-        if (null !== $this->streamUrlList) {
-            $res['streamUrlList'] = $this->streamUrlList;
+        if (null !== $this->smallWindowPosition) {
+            $res['smallWindowPosition'] = $this->smallWindowPosition;
         }
         if (null !== $this->streamName) {
             $res['streamName'] = $this->streamName;
         }
-        if (null !== $this->mode) {
-            $res['mode'] = $this->mode;
+        if (null !== $this->streamUrlList) {
+            $res['streamUrlList'] = $this->streamUrlList;
         }
-        if (null !== $this->smallWindowPosition) {
-            $res['smallWindowPosition'] = $this->smallWindowPosition;
+        if (null !== $this->unionId) {
+            $res['unionId'] = $this->unionId;
         }
 
         return $res;
@@ -93,25 +93,25 @@ class StartStreamOutRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['unionId'])) {
-            $model->unionId = $map['unionId'];
+        if (isset($map['mode'])) {
+            $model->mode = $map['mode'];
         }
         if (isset($map['needHostJoin'])) {
             $model->needHostJoin = $map['needHostJoin'];
+        }
+        if (isset($map['smallWindowPosition'])) {
+            $model->smallWindowPosition = $map['smallWindowPosition'];
+        }
+        if (isset($map['streamName'])) {
+            $model->streamName = $map['streamName'];
         }
         if (isset($map['streamUrlList'])) {
             if (!empty($map['streamUrlList'])) {
                 $model->streamUrlList = $map['streamUrlList'];
             }
         }
-        if (isset($map['streamName'])) {
-            $model->streamName = $map['streamName'];
-        }
-        if (isset($map['mode'])) {
-            $model->mode = $map['mode'];
-        }
-        if (isset($map['smallWindowPosition'])) {
-            $model->smallWindowPosition = $map['smallWindowPosition'];
+        if (isset($map['unionId'])) {
+            $model->unionId = $map['unionId'];
         }
 
         return $model;

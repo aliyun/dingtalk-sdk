@@ -10,13 +10,6 @@ use AlibabaCloud\Tea\Model;
 class ListConnectorInformationResponseBody extends Model
 {
     /**
-     * @description 分页大小
-     *
-     * @var int
-     */
-    public $pageSize;
-
-    /**
      * @description 当前第几页
      *
      * @var int
@@ -24,11 +17,11 @@ class ListConnectorInformationResponseBody extends Model
     public $pageNumber;
 
     /**
-     * @description 总数量
+     * @description 分页大小
      *
      * @var int
      */
-    public $totalCount;
+    public $pageSize;
 
     /**
      * @description pluginInfos
@@ -36,11 +29,18 @@ class ListConnectorInformationResponseBody extends Model
      * @var pluginInfos[]
      */
     public $pluginInfos;
+
+    /**
+     * @description 总数量
+     *
+     * @var int
+     */
+    public $totalCount;
     protected $_name = [
-        'pageSize'    => 'pageSize',
         'pageNumber'  => 'pageNumber',
-        'totalCount'  => 'totalCount',
+        'pageSize'    => 'pageSize',
         'pluginInfos' => 'pluginInfos',
+        'totalCount'  => 'totalCount',
     ];
 
     public function validate()
@@ -50,14 +50,11 @@ class ListConnectorInformationResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->pageSize) {
-            $res['pageSize'] = $this->pageSize;
-        }
         if (null !== $this->pageNumber) {
             $res['pageNumber'] = $this->pageNumber;
         }
-        if (null !== $this->totalCount) {
-            $res['totalCount'] = $this->totalCount;
+        if (null !== $this->pageSize) {
+            $res['pageSize'] = $this->pageSize;
         }
         if (null !== $this->pluginInfos) {
             $res['pluginInfos'] = [];
@@ -67,6 +64,9 @@ class ListConnectorInformationResponseBody extends Model
                     $res['pluginInfos'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->totalCount) {
+            $res['totalCount'] = $this->totalCount;
         }
 
         return $res;
@@ -80,14 +80,11 @@ class ListConnectorInformationResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['pageSize'])) {
-            $model->pageSize = $map['pageSize'];
-        }
         if (isset($map['pageNumber'])) {
             $model->pageNumber = $map['pageNumber'];
         }
-        if (isset($map['totalCount'])) {
-            $model->totalCount = $map['totalCount'];
+        if (isset($map['pageSize'])) {
+            $model->pageSize = $map['pageSize'];
         }
         if (isset($map['pluginInfos'])) {
             if (!empty($map['pluginInfos'])) {
@@ -97,6 +94,9 @@ class ListConnectorInformationResponseBody extends Model
                     $model->pluginInfos[$n++] = null !== $item ? pluginInfos::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['totalCount'])) {
+            $model->totalCount = $map['totalCount'];
         }
 
         return $model;

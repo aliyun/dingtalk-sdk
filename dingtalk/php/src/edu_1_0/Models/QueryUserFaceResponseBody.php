@@ -23,23 +23,23 @@ class QueryUserFaceResponseBody extends Model
     public $faceId;
 
     /**
-     * @description 员工id
-     *
-     * @var string
-     */
-    public $userId;
-
-    /**
      * @description 员工姓名
      *
      * @var string
      */
     public $name;
+
+    /**
+     * @description 员工id
+     *
+     * @var string
+     */
+    public $userId;
     protected $_name = [
         'corpId' => 'corpId',
         'faceId' => 'faceId',
-        'userId' => 'userId',
         'name'   => 'name',
+        'userId' => 'userId',
     ];
 
     public function validate()
@@ -55,11 +55,11 @@ class QueryUserFaceResponseBody extends Model
         if (null !== $this->faceId) {
             $res['faceId'] = $this->faceId;
         }
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
-        }
         if (null !== $this->name) {
             $res['name'] = $this->name;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -79,11 +79,11 @@ class QueryUserFaceResponseBody extends Model
         if (isset($map['faceId'])) {
             $model->faceId = $map['faceId'];
         }
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
-        }
         if (isset($map['name'])) {
             $model->name = $map['name'];
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

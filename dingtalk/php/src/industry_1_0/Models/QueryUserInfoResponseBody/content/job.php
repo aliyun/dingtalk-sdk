@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class job extends Model
 {
     /**
-     * @description 标签Code
-     *
-     * @var string
-     */
-    public $code;
-
-    /**
      * @description 标签类型
      *
      * @var string
@@ -30,15 +23,22 @@ class job extends Model
     public $category;
 
     /**
+     * @description 标签Code
+     *
+     * @var string
+     */
+    public $code;
+
+    /**
      * @description 展示名称
      *
      * @var string
      */
     public $displayName;
     protected $_name = [
-        'code'        => 'code',
         'bizType'     => 'bizType',
         'category'    => 'category',
+        'code'        => 'code',
         'displayName' => 'displayName',
     ];
 
@@ -49,14 +49,14 @@ class job extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->code) {
-            $res['code'] = $this->code;
-        }
         if (null !== $this->bizType) {
             $res['bizType'] = $this->bizType;
         }
         if (null !== $this->category) {
             $res['category'] = $this->category;
+        }
+        if (null !== $this->code) {
+            $res['code'] = $this->code;
         }
         if (null !== $this->displayName) {
             $res['displayName'] = $this->displayName;
@@ -73,14 +73,14 @@ class job extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['code'])) {
-            $model->code = $map['code'];
-        }
         if (isset($map['bizType'])) {
             $model->bizType = $map['bizType'];
         }
         if (isset($map['category'])) {
             $model->category = $map['category'];
+        }
+        if (isset($map['code'])) {
+            $model->code = $map['code'];
         }
         if (isset($map['displayName'])) {
             $model->displayName = $map['displayName'];

@@ -10,11 +10,11 @@ use AlibabaCloud\Tea\Model;
 class sentenceList extends Model
 {
     /**
-     * @description 用户unionId
+     * @description 结束时间
      *
-     * @var string
+     * @var int
      */
-    public $unionId;
+    public $endTime;
 
     /**
      * @description 句子
@@ -31,11 +31,11 @@ class sentenceList extends Model
     public $startTime;
 
     /**
-     * @description 结束时间
+     * @description 用户unionId
      *
-     * @var int
+     * @var string
      */
-    public $endTime;
+    public $unionId;
 
     /**
      * @description 单词列表
@@ -44,10 +44,10 @@ class sentenceList extends Model
      */
     public $wordList;
     protected $_name = [
-        'unionId'   => 'unionId',
+        'endTime'   => 'endTime',
         'sentence'  => 'sentence',
         'startTime' => 'startTime',
-        'endTime'   => 'endTime',
+        'unionId'   => 'unionId',
         'wordList'  => 'wordList',
     ];
 
@@ -58,8 +58,8 @@ class sentenceList extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->unionId) {
-            $res['unionId'] = $this->unionId;
+        if (null !== $this->endTime) {
+            $res['endTime'] = $this->endTime;
         }
         if (null !== $this->sentence) {
             $res['sentence'] = $this->sentence;
@@ -67,8 +67,8 @@ class sentenceList extends Model
         if (null !== $this->startTime) {
             $res['startTime'] = $this->startTime;
         }
-        if (null !== $this->endTime) {
-            $res['endTime'] = $this->endTime;
+        if (null !== $this->unionId) {
+            $res['unionId'] = $this->unionId;
         }
         if (null !== $this->wordList) {
             $res['wordList'] = [];
@@ -91,8 +91,8 @@ class sentenceList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['unionId'])) {
-            $model->unionId = $map['unionId'];
+        if (isset($map['endTime'])) {
+            $model->endTime = $map['endTime'];
         }
         if (isset($map['sentence'])) {
             $model->sentence = $map['sentence'];
@@ -100,8 +100,8 @@ class sentenceList extends Model
         if (isset($map['startTime'])) {
             $model->startTime = $map['startTime'];
         }
-        if (isset($map['endTime'])) {
-            $model->endTime = $map['endTime'];
+        if (isset($map['unionId'])) {
+            $model->unionId = $map['unionId'];
         }
         if (isset($map['wordList'])) {
             if (!empty($map['wordList'])) {

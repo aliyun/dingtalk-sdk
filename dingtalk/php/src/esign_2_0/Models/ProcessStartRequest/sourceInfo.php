@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class sourceInfo extends Model
 {
     /**
-     * @description 展示文案
+     * @description 移动端跳转地址
      *
      * @var string
      */
-    public $showText;
+    public $mobileUrl;
 
     /**
      * @description pc端跳转地址
@@ -23,15 +23,15 @@ class sourceInfo extends Model
     public $pcUrl;
 
     /**
-     * @description 移动端跳转地址
+     * @description 展示文案
      *
      * @var string
      */
-    public $mobileUrl;
+    public $showText;
     protected $_name = [
-        'showText'  => 'showText',
-        'pcUrl'     => 'pcUrl',
         'mobileUrl' => 'mobileUrl',
+        'pcUrl'     => 'pcUrl',
+        'showText'  => 'showText',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class sourceInfo extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->showText) {
-            $res['showText'] = $this->showText;
+        if (null !== $this->mobileUrl) {
+            $res['mobileUrl'] = $this->mobileUrl;
         }
         if (null !== $this->pcUrl) {
             $res['pcUrl'] = $this->pcUrl;
         }
-        if (null !== $this->mobileUrl) {
-            $res['mobileUrl'] = $this->mobileUrl;
+        if (null !== $this->showText) {
+            $res['showText'] = $this->showText;
         }
 
         return $res;
@@ -62,14 +62,14 @@ class sourceInfo extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['showText'])) {
-            $model->showText = $map['showText'];
+        if (isset($map['mobileUrl'])) {
+            $model->mobileUrl = $map['mobileUrl'];
         }
         if (isset($map['pcUrl'])) {
             $model->pcUrl = $map['pcUrl'];
         }
-        if (isset($map['mobileUrl'])) {
-            $model->mobileUrl = $map['mobileUrl'];
+        if (isset($map['showText'])) {
+            $model->showText = $map['showText'];
         }
 
         return $model;

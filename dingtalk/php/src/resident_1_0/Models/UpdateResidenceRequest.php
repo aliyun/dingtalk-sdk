@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class UpdateResidenceRequest extends Model
 {
     /**
-     * @description 家庭管理员用户id
+     * @description 组id
      *
-     * @var string
+     * @var int
      */
-    public $managerUserId;
+    public $departmentId;
 
     /**
      * @description 户名字
@@ -23,11 +23,11 @@ class UpdateResidenceRequest extends Model
     public $departmentName;
 
     /**
-     * @description 组id
+     * @description 是否是贫困户
      *
-     * @var int
+     * @var bool
      */
-    public $departmentId;
+    public $destitute;
 
     /**
      * @description 所属网格
@@ -44,11 +44,11 @@ class UpdateResidenceRequest extends Model
     public $homeTel;
 
     /**
-     * @description 是否是贫困户
+     * @description 家庭管理员用户id
      *
-     * @var bool
+     * @var string
      */
-    public $destitute;
+    public $managerUserId;
 
     /**
      * @description 组id
@@ -57,12 +57,12 @@ class UpdateResidenceRequest extends Model
      */
     public $parentDepartmentId;
     protected $_name = [
-        'managerUserId'      => 'managerUserId',
-        'departmentName'     => 'departmentName',
         'departmentId'       => 'departmentId',
+        'departmentName'     => 'departmentName',
+        'destitute'          => 'destitute',
         'grid'               => 'grid',
         'homeTel'            => 'homeTel',
-        'destitute'          => 'destitute',
+        'managerUserId'      => 'managerUserId',
         'parentDepartmentId' => 'parentDepartmentId',
     ];
 
@@ -73,14 +73,14 @@ class UpdateResidenceRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->managerUserId) {
-            $res['managerUserId'] = $this->managerUserId;
+        if (null !== $this->departmentId) {
+            $res['departmentId'] = $this->departmentId;
         }
         if (null !== $this->departmentName) {
             $res['departmentName'] = $this->departmentName;
         }
-        if (null !== $this->departmentId) {
-            $res['departmentId'] = $this->departmentId;
+        if (null !== $this->destitute) {
+            $res['destitute'] = $this->destitute;
         }
         if (null !== $this->grid) {
             $res['grid'] = $this->grid;
@@ -88,8 +88,8 @@ class UpdateResidenceRequest extends Model
         if (null !== $this->homeTel) {
             $res['homeTel'] = $this->homeTel;
         }
-        if (null !== $this->destitute) {
-            $res['destitute'] = $this->destitute;
+        if (null !== $this->managerUserId) {
+            $res['managerUserId'] = $this->managerUserId;
         }
         if (null !== $this->parentDepartmentId) {
             $res['parentDepartmentId'] = $this->parentDepartmentId;
@@ -106,14 +106,14 @@ class UpdateResidenceRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['managerUserId'])) {
-            $model->managerUserId = $map['managerUserId'];
+        if (isset($map['departmentId'])) {
+            $model->departmentId = $map['departmentId'];
         }
         if (isset($map['departmentName'])) {
             $model->departmentName = $map['departmentName'];
         }
-        if (isset($map['departmentId'])) {
-            $model->departmentId = $map['departmentId'];
+        if (isset($map['destitute'])) {
+            $model->destitute = $map['destitute'];
         }
         if (isset($map['grid'])) {
             $model->grid = $map['grid'];
@@ -121,8 +121,8 @@ class UpdateResidenceRequest extends Model
         if (isset($map['homeTel'])) {
             $model->homeTel = $map['homeTel'];
         }
-        if (isset($map['destitute'])) {
-            $model->destitute = $map['destitute'];
+        if (isset($map['managerUserId'])) {
+            $model->managerUserId = $map['managerUserId'];
         }
         if (isset($map['parentDepartmentId'])) {
             $model->parentDepartmentId = $map['parentDepartmentId'];

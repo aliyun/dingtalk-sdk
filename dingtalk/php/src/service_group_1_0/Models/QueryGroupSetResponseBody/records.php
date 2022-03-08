@@ -11,7 +11,12 @@ class records extends Model
     /**
      * @var string
      */
-    public $openGroupSetId;
+    public $gmtCreate;
+
+    /**
+     * @var string
+     */
+    public $gmtModified;
 
     /**
      * @var string
@@ -21,23 +26,18 @@ class records extends Model
     /**
      * @var string
      */
+    public $openGroupSetId;
+
+    /**
+     * @var string
+     */
     public $templateId;
-
-    /**
-     * @var string
-     */
-    public $gmtCreate;
-
-    /**
-     * @var string
-     */
-    public $gmtModified;
     protected $_name = [
-        'openGroupSetId' => 'openGroupSetId',
-        'groupSetName'   => 'groupSetName',
-        'templateId'     => 'templateId',
         'gmtCreate'      => 'gmtCreate',
         'gmtModified'    => 'gmtModified',
+        'groupSetName'   => 'groupSetName',
+        'openGroupSetId' => 'openGroupSetId',
+        'templateId'     => 'templateId',
     ];
 
     public function validate()
@@ -47,20 +47,20 @@ class records extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->openGroupSetId) {
-            $res['openGroupSetId'] = $this->openGroupSetId;
-        }
-        if (null !== $this->groupSetName) {
-            $res['groupSetName'] = $this->groupSetName;
-        }
-        if (null !== $this->templateId) {
-            $res['templateId'] = $this->templateId;
-        }
         if (null !== $this->gmtCreate) {
             $res['gmtCreate'] = $this->gmtCreate;
         }
         if (null !== $this->gmtModified) {
             $res['gmtModified'] = $this->gmtModified;
+        }
+        if (null !== $this->groupSetName) {
+            $res['groupSetName'] = $this->groupSetName;
+        }
+        if (null !== $this->openGroupSetId) {
+            $res['openGroupSetId'] = $this->openGroupSetId;
+        }
+        if (null !== $this->templateId) {
+            $res['templateId'] = $this->templateId;
         }
 
         return $res;
@@ -74,20 +74,20 @@ class records extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['openGroupSetId'])) {
-            $model->openGroupSetId = $map['openGroupSetId'];
-        }
-        if (isset($map['groupSetName'])) {
-            $model->groupSetName = $map['groupSetName'];
-        }
-        if (isset($map['templateId'])) {
-            $model->templateId = $map['templateId'];
-        }
         if (isset($map['gmtCreate'])) {
             $model->gmtCreate = $map['gmtCreate'];
         }
         if (isset($map['gmtModified'])) {
             $model->gmtModified = $map['gmtModified'];
+        }
+        if (isset($map['groupSetName'])) {
+            $model->groupSetName = $map['groupSetName'];
+        }
+        if (isset($map['openGroupSetId'])) {
+            $model->openGroupSetId = $map['openGroupSetId'];
+        }
+        if (isset($map['templateId'])) {
+            $model->templateId = $map['templateId'];
         }
 
         return $model;

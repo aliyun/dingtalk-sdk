@@ -18,18 +18,18 @@ class content extends Model
     public $id;
 
     /**
-     * @description 科室名称
-     *
-     * @var string
-     */
-    public $name;
-
-    /**
      * @description 科室主任
      *
      * @var leader
      */
     public $leader;
+
+    /**
+     * @description 科室名称
+     *
+     * @var string
+     */
+    public $name;
 
     /**
      * @description 住院总医师
@@ -39,8 +39,8 @@ class content extends Model
     public $residentLeader;
     protected $_name = [
         'id'             => 'id',
-        'name'           => 'name',
         'leader'         => 'leader',
+        'name'           => 'name',
         'residentLeader' => 'residentLeader',
     ];
 
@@ -54,11 +54,11 @@ class content extends Model
         if (null !== $this->id) {
             $res['id'] = $this->id;
         }
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
-        }
         if (null !== $this->leader) {
             $res['leader'] = null !== $this->leader ? $this->leader->toMap() : null;
+        }
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
         }
         if (null !== $this->residentLeader) {
             $res['residentLeader'] = null !== $this->residentLeader ? $this->residentLeader->toMap() : null;
@@ -78,11 +78,11 @@ class content extends Model
         if (isset($map['id'])) {
             $model->id = $map['id'];
         }
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
-        }
         if (isset($map['leader'])) {
             $model->leader = leader::fromMap($map['leader']);
+        }
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
         }
         if (isset($map['residentLeader'])) {
             $model->residentLeader = residentLeader::fromMap($map['residentLeader']);

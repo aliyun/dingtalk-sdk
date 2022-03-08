@@ -14,11 +14,6 @@ class ListApplicationAuthorizationServiceApplicationInformationRequest extends M
     public $accessKey;
 
     /**
-     * @var int
-     */
-    public $pageSize;
-
-    /**
      * @var string
      */
     public $callerUnionId;
@@ -27,11 +22,16 @@ class ListApplicationAuthorizationServiceApplicationInformationRequest extends M
      * @var int
      */
     public $pageNumber;
+
+    /**
+     * @var int
+     */
+    public $pageSize;
     protected $_name = [
         'accessKey'     => 'accessKey',
-        'pageSize'      => 'pageSize',
         'callerUnionId' => 'callerUnionId',
         'pageNumber'    => 'pageNumber',
+        'pageSize'      => 'pageSize',
     ];
 
     public function validate()
@@ -44,14 +44,14 @@ class ListApplicationAuthorizationServiceApplicationInformationRequest extends M
         if (null !== $this->accessKey) {
             $res['accessKey'] = $this->accessKey;
         }
-        if (null !== $this->pageSize) {
-            $res['pageSize'] = $this->pageSize;
-        }
         if (null !== $this->callerUnionId) {
             $res['callerUnionId'] = $this->callerUnionId;
         }
         if (null !== $this->pageNumber) {
             $res['pageNumber'] = $this->pageNumber;
+        }
+        if (null !== $this->pageSize) {
+            $res['pageSize'] = $this->pageSize;
         }
 
         return $res;
@@ -68,14 +68,14 @@ class ListApplicationAuthorizationServiceApplicationInformationRequest extends M
         if (isset($map['accessKey'])) {
             $model->accessKey = $map['accessKey'];
         }
-        if (isset($map['pageSize'])) {
-            $model->pageSize = $map['pageSize'];
-        }
         if (isset($map['callerUnionId'])) {
             $model->callerUnionId = $map['callerUnionId'];
         }
         if (isset($map['pageNumber'])) {
             $model->pageNumber = $map['pageNumber'];
+        }
+        if (isset($map['pageSize'])) {
+            $model->pageSize = $map['pageSize'];
         }
 
         return $model;

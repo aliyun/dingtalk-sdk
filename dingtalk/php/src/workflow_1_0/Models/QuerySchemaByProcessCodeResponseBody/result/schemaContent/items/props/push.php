@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class push extends Model
 {
     /**
+     * @description 考勤类型(1表示请假, 2表示出差, 3表示加班, 4表示外出)
+     *
+     * @var int
+     */
+    public $attendanceRule;
+
+    /**
      * @description 开启状态(1表示开启, 0表示关闭)
      *
      * @var int
@@ -21,17 +28,10 @@ class push extends Model
      * @var string
      */
     public $pushTag;
-
-    /**
-     * @description 考勤类型(1表示请假, 2表示出差, 3表示加班, 4表示外出)
-     *
-     * @var int
-     */
-    public $attendanceRule;
     protected $_name = [
+        'attendanceRule' => 'attendanceRule',
         'pushSwitch'     => 'pushSwitch',
         'pushTag'        => 'pushTag',
-        'attendanceRule' => 'attendanceRule',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class push extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->attendanceRule) {
+            $res['attendanceRule'] = $this->attendanceRule;
+        }
         if (null !== $this->pushSwitch) {
             $res['pushSwitch'] = $this->pushSwitch;
         }
         if (null !== $this->pushTag) {
             $res['pushTag'] = $this->pushTag;
-        }
-        if (null !== $this->attendanceRule) {
-            $res['attendanceRule'] = $this->attendanceRule;
         }
 
         return $res;
@@ -62,14 +62,14 @@ class push extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['attendanceRule'])) {
+            $model->attendanceRule = $map['attendanceRule'];
+        }
         if (isset($map['pushSwitch'])) {
             $model->pushSwitch = $map['pushSwitch'];
         }
         if (isset($map['pushTag'])) {
             $model->pushTag = $map['pushTag'];
-        }
-        if (isset($map['attendanceRule'])) {
-            $model->attendanceRule = $map['attendanceRule'];
         }
 
         return $model;

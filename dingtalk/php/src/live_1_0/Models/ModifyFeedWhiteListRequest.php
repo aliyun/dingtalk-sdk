@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class ModifyFeedWhiteListRequest extends Model
 {
     /**
-     * @description 用户id（操作者的组织内id）
-     *
-     * @var string
-     */
-    public $userId;
-
-    /**
      * @description 操作类型（1 添加白名单 / 2 删除白名单）
      *
      * @var int
@@ -28,10 +21,17 @@ class ModifyFeedWhiteListRequest extends Model
      * @var string[]
      */
     public $modifyUserList;
+
+    /**
+     * @description 用户id（操作者的组织内id）
+     *
+     * @var string
+     */
+    public $userId;
     protected $_name = [
-        'userId'         => 'userId',
         'action'         => 'action',
         'modifyUserList' => 'modifyUserList',
+        'userId'         => 'userId',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class ModifyFeedWhiteListRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
-        }
         if (null !== $this->action) {
             $res['action'] = $this->action;
         }
         if (null !== $this->modifyUserList) {
             $res['modifyUserList'] = $this->modifyUserList;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -62,9 +62,6 @@ class ModifyFeedWhiteListRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
-        }
         if (isset($map['action'])) {
             $model->action = $map['action'];
         }
@@ -72,6 +69,9 @@ class ModifyFeedWhiteListRequest extends Model
             if (!empty($map['modifyUserList'])) {
                 $model->modifyUserList = $map['modifyUserList'];
             }
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

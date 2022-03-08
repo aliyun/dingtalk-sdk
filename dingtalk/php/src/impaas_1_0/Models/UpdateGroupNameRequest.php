@@ -11,21 +11,21 @@ class UpdateGroupNameRequest extends Model
     /**
      * @var string
      */
-    public $operatorUid;
-
-    /**
-     * @var string
-     */
     public $conversationId;
 
     /**
      * @var string
      */
     public $name;
+
+    /**
+     * @var string
+     */
+    public $operatorUid;
     protected $_name = [
-        'operatorUid'    => 'operatorUid',
         'conversationId' => 'conversationId',
         'name'           => 'name',
+        'operatorUid'    => 'operatorUid',
     ];
 
     public function validate()
@@ -35,14 +35,14 @@ class UpdateGroupNameRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->operatorUid) {
-            $res['operatorUid'] = $this->operatorUid;
-        }
         if (null !== $this->conversationId) {
             $res['conversationId'] = $this->conversationId;
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
+        }
+        if (null !== $this->operatorUid) {
+            $res['operatorUid'] = $this->operatorUid;
         }
 
         return $res;
@@ -56,14 +56,14 @@ class UpdateGroupNameRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['operatorUid'])) {
-            $model->operatorUid = $map['operatorUid'];
-        }
         if (isset($map['conversationId'])) {
             $model->conversationId = $map['conversationId'];
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];
+        }
+        if (isset($map['operatorUid'])) {
+            $model->operatorUid = $map['operatorUid'];
         }
 
         return $model;

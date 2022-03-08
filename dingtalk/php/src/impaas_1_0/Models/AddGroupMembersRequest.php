@@ -12,21 +12,21 @@ class AddGroupMembersRequest extends Model
     /**
      * @var string
      */
-    public $operatorUid;
-
-    /**
-     * @var string
-     */
     public $conversationId;
 
     /**
      * @var members[]
      */
     public $members;
+
+    /**
+     * @var string
+     */
+    public $operatorUid;
     protected $_name = [
-        'operatorUid'    => 'operatorUid',
         'conversationId' => 'conversationId',
         'members'        => 'members',
+        'operatorUid'    => 'operatorUid',
     ];
 
     public function validate()
@@ -36,9 +36,6 @@ class AddGroupMembersRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->operatorUid) {
-            $res['operatorUid'] = $this->operatorUid;
-        }
         if (null !== $this->conversationId) {
             $res['conversationId'] = $this->conversationId;
         }
@@ -50,6 +47,9 @@ class AddGroupMembersRequest extends Model
                     $res['members'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->operatorUid) {
+            $res['operatorUid'] = $this->operatorUid;
         }
 
         return $res;
@@ -63,9 +63,6 @@ class AddGroupMembersRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['operatorUid'])) {
-            $model->operatorUid = $map['operatorUid'];
-        }
         if (isset($map['conversationId'])) {
             $model->conversationId = $map['conversationId'];
         }
@@ -77,6 +74,9 @@ class AddGroupMembersRequest extends Model
                     $model->members[$n++] = null !== $item ? members::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['operatorUid'])) {
+            $model->operatorUid = $map['operatorUid'];
         }
 
         return $model;

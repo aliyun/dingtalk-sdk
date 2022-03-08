@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class OrgGroupSendRequest extends Model
 {
     /**
-     * @description 消息体
+     * @description 酷应用的code
      *
      * @var string
      */
-    public $msgParam;
+    public $coolAppCode;
 
     /**
      * @description 消息类型的key
@@ -21,6 +21,13 @@ class OrgGroupSendRequest extends Model
      * @var string
      */
     public $msgKey;
+
+    /**
+     * @description 消息体
+     *
+     * @var string
+     */
+    public $msgParam;
 
     /**
      * @description 开放的群id
@@ -42,56 +49,13 @@ class OrgGroupSendRequest extends Model
      * @var string
      */
     public $token;
-
-    /**
-     * @description 酷应用的code
-     *
-     * @var string
-     */
-    public $coolAppCode;
-
-    /**
-     * @var int
-     */
-    public $dingTokenGrantType;
-
-    /**
-     * @var int
-     */
-    public $dingOrgId;
-
-    /**
-     * @var string
-     */
-    public $dingCorpId;
-
-    /**
-     * @var int
-     */
-    public $dingIsvOrgId;
-
-    /**
-     * @var string
-     */
-    public $dingSuiteKey;
-
-    /**
-     * @var string
-     */
-    public $dingClientId;
     protected $_name = [
-        'msgParam'           => 'msgParam',
+        'coolAppCode'        => 'coolAppCode',
         'msgKey'             => 'msgKey',
+        'msgParam'           => 'msgParam',
         'openConversationId' => 'openConversationId',
         'robotCode'          => 'robotCode',
         'token'              => 'token',
-        'coolAppCode'        => 'coolAppCode',
-        'dingTokenGrantType' => 'dingTokenGrantType',
-        'dingOrgId'          => 'dingOrgId',
-        'dingCorpId'         => 'dingCorpId',
-        'dingIsvOrgId'       => 'dingIsvOrgId',
-        'dingSuiteKey'       => 'dingSuiteKey',
-        'dingClientId'       => 'dingClientId',
     ];
 
     public function validate()
@@ -101,11 +65,14 @@ class OrgGroupSendRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->msgParam) {
-            $res['msgParam'] = $this->msgParam;
+        if (null !== $this->coolAppCode) {
+            $res['coolAppCode'] = $this->coolAppCode;
         }
         if (null !== $this->msgKey) {
             $res['msgKey'] = $this->msgKey;
+        }
+        if (null !== $this->msgParam) {
+            $res['msgParam'] = $this->msgParam;
         }
         if (null !== $this->openConversationId) {
             $res['openConversationId'] = $this->openConversationId;
@@ -115,27 +82,6 @@ class OrgGroupSendRequest extends Model
         }
         if (null !== $this->token) {
             $res['token'] = $this->token;
-        }
-        if (null !== $this->coolAppCode) {
-            $res['coolAppCode'] = $this->coolAppCode;
-        }
-        if (null !== $this->dingTokenGrantType) {
-            $res['dingTokenGrantType'] = $this->dingTokenGrantType;
-        }
-        if (null !== $this->dingOrgId) {
-            $res['dingOrgId'] = $this->dingOrgId;
-        }
-        if (null !== $this->dingCorpId) {
-            $res['dingCorpId'] = $this->dingCorpId;
-        }
-        if (null !== $this->dingIsvOrgId) {
-            $res['dingIsvOrgId'] = $this->dingIsvOrgId;
-        }
-        if (null !== $this->dingSuiteKey) {
-            $res['dingSuiteKey'] = $this->dingSuiteKey;
-        }
-        if (null !== $this->dingClientId) {
-            $res['dingClientId'] = $this->dingClientId;
         }
 
         return $res;
@@ -149,11 +95,14 @@ class OrgGroupSendRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['msgParam'])) {
-            $model->msgParam = $map['msgParam'];
+        if (isset($map['coolAppCode'])) {
+            $model->coolAppCode = $map['coolAppCode'];
         }
         if (isset($map['msgKey'])) {
             $model->msgKey = $map['msgKey'];
+        }
+        if (isset($map['msgParam'])) {
+            $model->msgParam = $map['msgParam'];
         }
         if (isset($map['openConversationId'])) {
             $model->openConversationId = $map['openConversationId'];
@@ -163,27 +112,6 @@ class OrgGroupSendRequest extends Model
         }
         if (isset($map['token'])) {
             $model->token = $map['token'];
-        }
-        if (isset($map['coolAppCode'])) {
-            $model->coolAppCode = $map['coolAppCode'];
-        }
-        if (isset($map['dingTokenGrantType'])) {
-            $model->dingTokenGrantType = $map['dingTokenGrantType'];
-        }
-        if (isset($map['dingOrgId'])) {
-            $model->dingOrgId = $map['dingOrgId'];
-        }
-        if (isset($map['dingCorpId'])) {
-            $model->dingCorpId = $map['dingCorpId'];
-        }
-        if (isset($map['dingIsvOrgId'])) {
-            $model->dingIsvOrgId = $map['dingIsvOrgId'];
-        }
-        if (isset($map['dingSuiteKey'])) {
-            $model->dingSuiteKey = $map['dingSuiteKey'];
-        }
-        if (isset($map['dingClientId'])) {
-            $model->dingClientId = $map['dingClientId'];
         }
 
         return $model;

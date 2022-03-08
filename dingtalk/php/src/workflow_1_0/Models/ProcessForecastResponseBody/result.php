@@ -18,18 +18,18 @@ class result extends Model
     public $isForecastSuccess;
 
     /**
+     * @description 是否静态流程
+     *
+     * @var bool
+     */
+    public $isStaticWorkflow;
+
+    /**
      * @description 流程 code
      *
      * @var string
      */
     public $processCode;
-
-    /**
-     * @description 用户 id
-     *
-     * @var string
-     */
-    public $userId;
 
     /**
      * @description 流程 id
@@ -39,11 +39,11 @@ class result extends Model
     public $processId;
 
     /**
-     * @description 是否静态流程
+     * @description 用户 id
      *
-     * @var bool
+     * @var string
      */
-    public $isStaticWorkflow;
+    public $userId;
 
     /**
      * @var workflowActivityRules[]
@@ -56,10 +56,10 @@ class result extends Model
     public $workflowForecastNodes;
     protected $_name = [
         'isForecastSuccess'     => 'isForecastSuccess',
-        'processCode'           => 'processCode',
-        'userId'                => 'userId',
-        'processId'             => 'processId',
         'isStaticWorkflow'      => 'isStaticWorkflow',
+        'processCode'           => 'processCode',
+        'processId'             => 'processId',
+        'userId'                => 'userId',
         'workflowActivityRules' => 'workflowActivityRules',
         'workflowForecastNodes' => 'workflowForecastNodes',
     ];
@@ -74,17 +74,17 @@ class result extends Model
         if (null !== $this->isForecastSuccess) {
             $res['isForecastSuccess'] = $this->isForecastSuccess;
         }
+        if (null !== $this->isStaticWorkflow) {
+            $res['isStaticWorkflow'] = $this->isStaticWorkflow;
+        }
         if (null !== $this->processCode) {
             $res['processCode'] = $this->processCode;
-        }
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
         }
         if (null !== $this->processId) {
             $res['processId'] = $this->processId;
         }
-        if (null !== $this->isStaticWorkflow) {
-            $res['isStaticWorkflow'] = $this->isStaticWorkflow;
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
         if (null !== $this->workflowActivityRules) {
             $res['workflowActivityRules'] = [];
@@ -119,17 +119,17 @@ class result extends Model
         if (isset($map['isForecastSuccess'])) {
             $model->isForecastSuccess = $map['isForecastSuccess'];
         }
+        if (isset($map['isStaticWorkflow'])) {
+            $model->isStaticWorkflow = $map['isStaticWorkflow'];
+        }
         if (isset($map['processCode'])) {
             $model->processCode = $map['processCode'];
-        }
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
         }
         if (isset($map['processId'])) {
             $model->processId = $map['processId'];
         }
-        if (isset($map['isStaticWorkflow'])) {
-            $model->isStaticWorkflow = $map['isStaticWorkflow'];
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
         if (isset($map['workflowActivityRules'])) {
             if (!empty($map['workflowActivityRules'])) {

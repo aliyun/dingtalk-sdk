@@ -11,21 +11,21 @@ class CreateGroupResponseBody extends Model
     /**
      * @var string
      */
+    public $chatId;
+
+    /**
+     * @var string
+     */
     public $conversationId;
 
     /**
      * @var int
      */
     public $createTime;
-
-    /**
-     * @var string
-     */
-    public $chatId;
     protected $_name = [
+        'chatId'         => 'chatId',
         'conversationId' => 'conversationId',
         'createTime'     => 'createTime',
-        'chatId'         => 'chatId',
     ];
 
     public function validate()
@@ -35,14 +35,14 @@ class CreateGroupResponseBody extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->chatId) {
+            $res['chatId'] = $this->chatId;
+        }
         if (null !== $this->conversationId) {
             $res['conversationId'] = $this->conversationId;
         }
         if (null !== $this->createTime) {
             $res['createTime'] = $this->createTime;
-        }
-        if (null !== $this->chatId) {
-            $res['chatId'] = $this->chatId;
         }
 
         return $res;
@@ -56,14 +56,14 @@ class CreateGroupResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['chatId'])) {
+            $model->chatId = $map['chatId'];
+        }
         if (isset($map['conversationId'])) {
             $model->conversationId = $map['conversationId'];
         }
         if (isset($map['createTime'])) {
             $model->createTime = $map['createTime'];
-        }
-        if (isset($map['chatId'])) {
-            $model->chatId = $map['chatId'];
         }
 
         return $model;

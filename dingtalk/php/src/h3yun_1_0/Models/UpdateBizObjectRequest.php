@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class UpdateBizObjectRequest extends Model
 {
     /**
-     * @description 表单编码
-     *
-     * @var string
-     */
-    public $schemaCode;
-
-    /**
      * @description 业务数据id
      *
      * @var string
@@ -28,10 +21,17 @@ class UpdateBizObjectRequest extends Model
      * @var string
      */
     public $bizObjectJson;
+
+    /**
+     * @description 表单编码
+     *
+     * @var string
+     */
+    public $schemaCode;
     protected $_name = [
-        'schemaCode'    => 'schemaCode',
         'bizObjectId'   => 'bizObjectId',
         'bizObjectJson' => 'bizObjectJson',
+        'schemaCode'    => 'schemaCode',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class UpdateBizObjectRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->schemaCode) {
-            $res['schemaCode'] = $this->schemaCode;
-        }
         if (null !== $this->bizObjectId) {
             $res['bizObjectId'] = $this->bizObjectId;
         }
         if (null !== $this->bizObjectJson) {
             $res['bizObjectJson'] = $this->bizObjectJson;
+        }
+        if (null !== $this->schemaCode) {
+            $res['schemaCode'] = $this->schemaCode;
         }
 
         return $res;
@@ -62,14 +62,14 @@ class UpdateBizObjectRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['schemaCode'])) {
-            $model->schemaCode = $map['schemaCode'];
-        }
         if (isset($map['bizObjectId'])) {
             $model->bizObjectId = $map['bizObjectId'];
         }
         if (isset($map['bizObjectJson'])) {
             $model->bizObjectJson = $map['bizObjectJson'];
+        }
+        if (isset($map['schemaCode'])) {
+            $model->schemaCode = $map['schemaCode'];
         }
 
         return $model;

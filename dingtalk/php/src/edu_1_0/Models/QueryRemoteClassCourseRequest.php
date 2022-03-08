@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class QueryRemoteClassCourseRequest extends Model
 {
     /**
+     * @description 结束时间
+     *
+     * @var int
+     */
+    public $endTime;
+
+    /**
      * @description 操作者用户ID
      *
      * @var string
@@ -21,17 +28,10 @@ class QueryRemoteClassCourseRequest extends Model
      * @var int
      */
     public $startTime;
-
-    /**
-     * @description 结束时间
-     *
-     * @var int
-     */
-    public $endTime;
     protected $_name = [
+        'endTime'   => 'endTime',
         'operator'  => 'operator',
         'startTime' => 'startTime',
-        'endTime'   => 'endTime',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class QueryRemoteClassCourseRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->endTime) {
+            $res['endTime'] = $this->endTime;
+        }
         if (null !== $this->operator) {
             $res['operator'] = $this->operator;
         }
         if (null !== $this->startTime) {
             $res['startTime'] = $this->startTime;
-        }
-        if (null !== $this->endTime) {
-            $res['endTime'] = $this->endTime;
         }
 
         return $res;
@@ -62,14 +62,14 @@ class QueryRemoteClassCourseRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['endTime'])) {
+            $model->endTime = $map['endTime'];
+        }
         if (isset($map['operator'])) {
             $model->operator = $map['operator'];
         }
         if (isset($map['startTime'])) {
             $model->startTime = $map['startTime'];
-        }
-        if (isset($map['endTime'])) {
-            $model->endTime = $map['endTime'];
         }
 
         return $model;

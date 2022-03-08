@@ -10,6 +10,13 @@ use AlibabaCloud\Tea\Model;
 class ManagementBuyQuotaRequest extends Model
 {
     /**
+     * @description 订单
+     *
+     * @var order
+     */
+    public $order;
+
+    /**
      * @description token
      *
      * @var string
@@ -22,17 +29,10 @@ class ManagementBuyQuotaRequest extends Model
      * @var string
      */
     public $unionId;
-
-    /**
-     * @description 订单
-     *
-     * @var order
-     */
-    public $order;
     protected $_name = [
+        'order'   => 'order',
         'token'   => 'token',
         'unionId' => 'unionId',
-        'order'   => 'order',
     ];
 
     public function validate()
@@ -42,14 +42,14 @@ class ManagementBuyQuotaRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->order) {
+            $res['order'] = null !== $this->order ? $this->order->toMap() : null;
+        }
         if (null !== $this->token) {
             $res['token'] = $this->token;
         }
         if (null !== $this->unionId) {
             $res['unionId'] = $this->unionId;
-        }
-        if (null !== $this->order) {
-            $res['order'] = null !== $this->order ? $this->order->toMap() : null;
         }
 
         return $res;
@@ -63,14 +63,14 @@ class ManagementBuyQuotaRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['order'])) {
+            $model->order = order::fromMap($map['order']);
+        }
         if (isset($map['token'])) {
             $model->token = $map['token'];
         }
         if (isset($map['unionId'])) {
             $model->unionId = $map['unionId'];
-        }
-        if (isset($map['order'])) {
-            $model->order = order::fromMap($map['order']);
         }
 
         return $model;

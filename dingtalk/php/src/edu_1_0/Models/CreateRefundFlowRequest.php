@@ -9,25 +9,11 @@ use AlibabaCloud\Tea\Model;
 class CreateRefundFlowRequest extends Model
 {
     /**
-     * @description 设备号
+     * @description 人脸id
      *
      * @var string
      */
-    public $sn;
-
-    /**
-     * @description 订单号
-     *
-     * @var string
-     */
-    public $orderNo;
-
-    /**
-     * @description 员工id
-     *
-     * @var string
-     */
-    public $userId;
+    public $faceId;
 
     /**
      * @description 操作人id
@@ -44,36 +30,11 @@ class CreateRefundFlowRequest extends Model
     public $operatorName;
 
     /**
-     * @var int
-     */
-    public $dingIsvOrgId;
-
-    /**
-     * @var int
-     */
-    public $dingOrgId;
-
-    /**
-     * @var int
-     */
-    public $dingOauthAppId;
-
-    /**
+     * @description 订单号
+     *
      * @var string
      */
-    public $dingSuiteKey;
-
-    /**
-     * @var int
-     */
-    public $dingTokenGrantType;
-
-    /**
-     * @description utc时间戳
-     *
-     * @var int
-     */
-    public $timestamp;
+    public $orderNo;
 
     /**
      * @description 签名
@@ -83,25 +44,34 @@ class CreateRefundFlowRequest extends Model
     public $signature;
 
     /**
-     * @description 人脸id
+     * @description 设备号
      *
      * @var string
      */
-    public $faceId;
+    public $sn;
+
+    /**
+     * @description utc时间戳
+     *
+     * @var int
+     */
+    public $timestamp;
+
+    /**
+     * @description 员工id
+     *
+     * @var string
+     */
+    public $userId;
     protected $_name = [
-        'sn'                 => 'sn',
-        'orderNo'            => 'orderNo',
-        'userId'             => 'userId',
-        'operatorId'         => 'operatorId',
-        'operatorName'       => 'operatorName',
-        'dingIsvOrgId'       => 'dingIsvOrgId',
-        'dingOrgId'          => 'dingOrgId',
-        'dingOauthAppId'     => 'dingOauthAppId',
-        'dingSuiteKey'       => 'dingSuiteKey',
-        'dingTokenGrantType' => 'dingTokenGrantType',
-        'timestamp'          => 'timestamp',
-        'signature'          => 'signature',
-        'faceId'             => 'faceId',
+        'faceId'       => 'faceId',
+        'operatorId'   => 'operatorId',
+        'operatorName' => 'operatorName',
+        'orderNo'      => 'orderNo',
+        'signature'    => 'signature',
+        'sn'           => 'sn',
+        'timestamp'    => 'timestamp',
+        'userId'       => 'userId',
     ];
 
     public function validate()
@@ -111,14 +81,8 @@ class CreateRefundFlowRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->sn) {
-            $res['sn'] = $this->sn;
-        }
-        if (null !== $this->orderNo) {
-            $res['orderNo'] = $this->orderNo;
-        }
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
+        if (null !== $this->faceId) {
+            $res['faceId'] = $this->faceId;
         }
         if (null !== $this->operatorId) {
             $res['operatorId'] = $this->operatorId;
@@ -126,29 +90,20 @@ class CreateRefundFlowRequest extends Model
         if (null !== $this->operatorName) {
             $res['operatorName'] = $this->operatorName;
         }
-        if (null !== $this->dingIsvOrgId) {
-            $res['dingIsvOrgId'] = $this->dingIsvOrgId;
-        }
-        if (null !== $this->dingOrgId) {
-            $res['dingOrgId'] = $this->dingOrgId;
-        }
-        if (null !== $this->dingOauthAppId) {
-            $res['dingOauthAppId'] = $this->dingOauthAppId;
-        }
-        if (null !== $this->dingSuiteKey) {
-            $res['dingSuiteKey'] = $this->dingSuiteKey;
-        }
-        if (null !== $this->dingTokenGrantType) {
-            $res['dingTokenGrantType'] = $this->dingTokenGrantType;
-        }
-        if (null !== $this->timestamp) {
-            $res['timestamp'] = $this->timestamp;
+        if (null !== $this->orderNo) {
+            $res['orderNo'] = $this->orderNo;
         }
         if (null !== $this->signature) {
             $res['signature'] = $this->signature;
         }
-        if (null !== $this->faceId) {
-            $res['faceId'] = $this->faceId;
+        if (null !== $this->sn) {
+            $res['sn'] = $this->sn;
+        }
+        if (null !== $this->timestamp) {
+            $res['timestamp'] = $this->timestamp;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -162,14 +117,8 @@ class CreateRefundFlowRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['sn'])) {
-            $model->sn = $map['sn'];
-        }
-        if (isset($map['orderNo'])) {
-            $model->orderNo = $map['orderNo'];
-        }
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
+        if (isset($map['faceId'])) {
+            $model->faceId = $map['faceId'];
         }
         if (isset($map['operatorId'])) {
             $model->operatorId = $map['operatorId'];
@@ -177,29 +126,20 @@ class CreateRefundFlowRequest extends Model
         if (isset($map['operatorName'])) {
             $model->operatorName = $map['operatorName'];
         }
-        if (isset($map['dingIsvOrgId'])) {
-            $model->dingIsvOrgId = $map['dingIsvOrgId'];
-        }
-        if (isset($map['dingOrgId'])) {
-            $model->dingOrgId = $map['dingOrgId'];
-        }
-        if (isset($map['dingOauthAppId'])) {
-            $model->dingOauthAppId = $map['dingOauthAppId'];
-        }
-        if (isset($map['dingSuiteKey'])) {
-            $model->dingSuiteKey = $map['dingSuiteKey'];
-        }
-        if (isset($map['dingTokenGrantType'])) {
-            $model->dingTokenGrantType = $map['dingTokenGrantType'];
-        }
-        if (isset($map['timestamp'])) {
-            $model->timestamp = $map['timestamp'];
+        if (isset($map['orderNo'])) {
+            $model->orderNo = $map['orderNo'];
         }
         if (isset($map['signature'])) {
             $model->signature = $map['signature'];
         }
-        if (isset($map['faceId'])) {
-            $model->faceId = $map['faceId'];
+        if (isset($map['sn'])) {
+            $model->sn = $map['sn'];
+        }
+        if (isset($map['timestamp'])) {
+            $model->timestamp = $map['timestamp'];
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

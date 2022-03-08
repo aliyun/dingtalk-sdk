@@ -11,17 +11,12 @@ class triggerDataList extends Model
     /**
      * @var string
      */
-    public $triggerId;
+    public $action;
 
     /**
      * @var string
      */
     public $customTriggerId;
-
-    /**
-     * @var string
-     */
-    public $jsonData;
 
     /**
      * @var int
@@ -36,14 +31,19 @@ class triggerDataList extends Model
     /**
      * @var string
      */
-    public $action;
+    public $jsonData;
+
+    /**
+     * @var string
+     */
+    public $triggerId;
     protected $_name = [
-        'triggerId'       => 'triggerId',
+        'action'          => 'action',
         'customTriggerId' => 'customTriggerId',
-        'jsonData'        => 'jsonData',
         'dataGmtCreate'   => 'dataGmtCreate',
         'dataGmtModified' => 'dataGmtModified',
-        'action'          => 'action',
+        'jsonData'        => 'jsonData',
+        'triggerId'       => 'triggerId',
     ];
 
     public function validate()
@@ -53,14 +53,11 @@ class triggerDataList extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->triggerId) {
-            $res['triggerId'] = $this->triggerId;
+        if (null !== $this->action) {
+            $res['action'] = $this->action;
         }
         if (null !== $this->customTriggerId) {
             $res['customTriggerId'] = $this->customTriggerId;
-        }
-        if (null !== $this->jsonData) {
-            $res['jsonData'] = $this->jsonData;
         }
         if (null !== $this->dataGmtCreate) {
             $res['dataGmtCreate'] = $this->dataGmtCreate;
@@ -68,8 +65,11 @@ class triggerDataList extends Model
         if (null !== $this->dataGmtModified) {
             $res['dataGmtModified'] = $this->dataGmtModified;
         }
-        if (null !== $this->action) {
-            $res['action'] = $this->action;
+        if (null !== $this->jsonData) {
+            $res['jsonData'] = $this->jsonData;
+        }
+        if (null !== $this->triggerId) {
+            $res['triggerId'] = $this->triggerId;
         }
 
         return $res;
@@ -83,14 +83,11 @@ class triggerDataList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['triggerId'])) {
-            $model->triggerId = $map['triggerId'];
+        if (isset($map['action'])) {
+            $model->action = $map['action'];
         }
         if (isset($map['customTriggerId'])) {
             $model->customTriggerId = $map['customTriggerId'];
-        }
-        if (isset($map['jsonData'])) {
-            $model->jsonData = $map['jsonData'];
         }
         if (isset($map['dataGmtCreate'])) {
             $model->dataGmtCreate = $map['dataGmtCreate'];
@@ -98,8 +95,11 @@ class triggerDataList extends Model
         if (isset($map['dataGmtModified'])) {
             $model->dataGmtModified = $map['dataGmtModified'];
         }
-        if (isset($map['action'])) {
-            $model->action = $map['action'];
+        if (isset($map['jsonData'])) {
+            $model->jsonData = $map['jsonData'];
+        }
+        if (isset($map['triggerId'])) {
+            $model->triggerId = $map['triggerId'];
         }
 
         return $model;

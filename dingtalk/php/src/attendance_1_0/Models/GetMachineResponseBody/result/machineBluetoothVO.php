@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class machineBluetoothVO extends Model
 {
     /**
-     * @description 蓝牙打卡开关
+     * @description 地址位置描述
      *
-     * @var bool
+     * @var string
      */
-    public $bluetoothValue;
+    public $address;
 
     /**
      * @description 蓝牙打卡人脸识别开关值
@@ -37,25 +37,11 @@ class machineBluetoothVO extends Model
     public $bluetoothDistanceModeDesc;
 
     /**
-     * @description 是否打开位置异常监控
+     * @description 蓝牙打卡开关
      *
      * @var bool
      */
-    public $monitorLocationAbnormal;
-
-    /**
-     * @description 地址位置描述
-     *
-     * @var string
-     */
-    public $address;
-
-    /**
-     * @description 经度
-     *
-     * @var float
-     */
-    public $longitude;
+    public $bluetoothValue;
 
     /**
      * @description 纬度
@@ -72,21 +58,35 @@ class machineBluetoothVO extends Model
     public $limitUserDeviceCount;
 
     /**
+     * @description 经度
+     *
+     * @var float
+     */
+    public $longitude;
+
+    /**
+     * @description 是否打开位置异常监控
+     *
+     * @var bool
+     */
+    public $monitorLocationAbnormal;
+
+    /**
      * @description 员工常用手机数量
      *
      * @var int
      */
     public $userDeviceCount;
     protected $_name = [
-        'bluetoothValue'            => 'bluetoothValue',
+        'address'                   => 'address',
         'bluetoothCheckWithFace'    => 'bluetoothCheckWithFace',
         'bluetoothDistanceMode'     => 'bluetoothDistanceMode',
         'bluetoothDistanceModeDesc' => 'bluetoothDistanceModeDesc',
-        'monitorLocationAbnormal'   => 'monitorLocationAbnormal',
-        'address'                   => 'address',
-        'longitude'                 => 'longitude',
+        'bluetoothValue'            => 'bluetoothValue',
         'latitude'                  => 'latitude',
         'limitUserDeviceCount'      => 'limitUserDeviceCount',
+        'longitude'                 => 'longitude',
+        'monitorLocationAbnormal'   => 'monitorLocationAbnormal',
         'userDeviceCount'           => 'userDeviceCount',
     ];
 
@@ -97,8 +97,8 @@ class machineBluetoothVO extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->bluetoothValue) {
-            $res['bluetoothValue'] = $this->bluetoothValue;
+        if (null !== $this->address) {
+            $res['address'] = $this->address;
         }
         if (null !== $this->bluetoothCheckWithFace) {
             $res['bluetoothCheckWithFace'] = $this->bluetoothCheckWithFace;
@@ -109,20 +109,20 @@ class machineBluetoothVO extends Model
         if (null !== $this->bluetoothDistanceModeDesc) {
             $res['bluetoothDistanceModeDesc'] = $this->bluetoothDistanceModeDesc;
         }
-        if (null !== $this->monitorLocationAbnormal) {
-            $res['monitorLocationAbnormal'] = $this->monitorLocationAbnormal;
-        }
-        if (null !== $this->address) {
-            $res['address'] = $this->address;
-        }
-        if (null !== $this->longitude) {
-            $res['longitude'] = $this->longitude;
+        if (null !== $this->bluetoothValue) {
+            $res['bluetoothValue'] = $this->bluetoothValue;
         }
         if (null !== $this->latitude) {
             $res['latitude'] = $this->latitude;
         }
         if (null !== $this->limitUserDeviceCount) {
             $res['limitUserDeviceCount'] = $this->limitUserDeviceCount;
+        }
+        if (null !== $this->longitude) {
+            $res['longitude'] = $this->longitude;
+        }
+        if (null !== $this->monitorLocationAbnormal) {
+            $res['monitorLocationAbnormal'] = $this->monitorLocationAbnormal;
         }
         if (null !== $this->userDeviceCount) {
             $res['userDeviceCount'] = $this->userDeviceCount;
@@ -139,8 +139,8 @@ class machineBluetoothVO extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['bluetoothValue'])) {
-            $model->bluetoothValue = $map['bluetoothValue'];
+        if (isset($map['address'])) {
+            $model->address = $map['address'];
         }
         if (isset($map['bluetoothCheckWithFace'])) {
             $model->bluetoothCheckWithFace = $map['bluetoothCheckWithFace'];
@@ -151,20 +151,20 @@ class machineBluetoothVO extends Model
         if (isset($map['bluetoothDistanceModeDesc'])) {
             $model->bluetoothDistanceModeDesc = $map['bluetoothDistanceModeDesc'];
         }
-        if (isset($map['monitorLocationAbnormal'])) {
-            $model->monitorLocationAbnormal = $map['monitorLocationAbnormal'];
-        }
-        if (isset($map['address'])) {
-            $model->address = $map['address'];
-        }
-        if (isset($map['longitude'])) {
-            $model->longitude = $map['longitude'];
+        if (isset($map['bluetoothValue'])) {
+            $model->bluetoothValue = $map['bluetoothValue'];
         }
         if (isset($map['latitude'])) {
             $model->latitude = $map['latitude'];
         }
         if (isset($map['limitUserDeviceCount'])) {
             $model->limitUserDeviceCount = $map['limitUserDeviceCount'];
+        }
+        if (isset($map['longitude'])) {
+            $model->longitude = $map['longitude'];
+        }
+        if (isset($map['monitorLocationAbnormal'])) {
+            $model->monitorLocationAbnormal = $map['monitorLocationAbnormal'];
         }
         if (isset($map['userDeviceCount'])) {
             $model->userDeviceCount = $map['userDeviceCount'];

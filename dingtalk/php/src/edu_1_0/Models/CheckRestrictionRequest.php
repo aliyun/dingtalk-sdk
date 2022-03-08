@@ -9,43 +9,11 @@ use AlibabaCloud\Tea\Model;
 class CheckRestrictionRequest extends Model
 {
     /**
-     * @var int
-     */
-    public $dingIsvOrgId;
-
-    /**
-     * @var int
-     */
-    public $dingOrgId;
-
-    /**
-     * @var int
-     */
-    public $dingOpenAppId;
-
-    /**
-     * @var string
-     */
-    public $dingSuiteKey;
-
-    /**
-     * @var int
-     */
-    public $dingTokenGrantType;
-
-    /**
-     * @description 设备号
+     * @description 实付金额，单位分
      *
-     * @var string
+     * @var int
      */
-    public $sn;
-
-    /**
-     * @description 员工id
-     *
-     * @var string
-     */
-    public $userId;
+    public $actualAmount;
 
     /**
      * @description 人脸id
@@ -62,22 +30,24 @@ class CheckRestrictionRequest extends Model
     public $scene;
 
     /**
-     * @description 实付金额，单位分
+     * @description 设备号
      *
-     * @var int
+     * @var string
      */
-    public $actualAmount;
+    public $sn;
+
+    /**
+     * @description 员工id
+     *
+     * @var string
+     */
+    public $userId;
     protected $_name = [
-        'dingIsvOrgId'       => 'dingIsvOrgId',
-        'dingOrgId'          => 'dingOrgId',
-        'dingOpenAppId'      => 'dingOpenAppId',
-        'dingSuiteKey'       => 'dingSuiteKey',
-        'dingTokenGrantType' => 'dingTokenGrantType',
-        'sn'                 => 'sn',
-        'userId'             => 'userId',
-        'faceId'             => 'faceId',
-        'scene'              => 'scene',
-        'actualAmount'       => 'actualAmount',
+        'actualAmount' => 'actualAmount',
+        'faceId'       => 'faceId',
+        'scene'        => 'scene',
+        'sn'           => 'sn',
+        'userId'       => 'userId',
     ];
 
     public function validate()
@@ -87,26 +57,8 @@ class CheckRestrictionRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->dingIsvOrgId) {
-            $res['dingIsvOrgId'] = $this->dingIsvOrgId;
-        }
-        if (null !== $this->dingOrgId) {
-            $res['dingOrgId'] = $this->dingOrgId;
-        }
-        if (null !== $this->dingOpenAppId) {
-            $res['dingOpenAppId'] = $this->dingOpenAppId;
-        }
-        if (null !== $this->dingSuiteKey) {
-            $res['dingSuiteKey'] = $this->dingSuiteKey;
-        }
-        if (null !== $this->dingTokenGrantType) {
-            $res['dingTokenGrantType'] = $this->dingTokenGrantType;
-        }
-        if (null !== $this->sn) {
-            $res['sn'] = $this->sn;
-        }
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
+        if (null !== $this->actualAmount) {
+            $res['actualAmount'] = $this->actualAmount;
         }
         if (null !== $this->faceId) {
             $res['faceId'] = $this->faceId;
@@ -114,8 +66,11 @@ class CheckRestrictionRequest extends Model
         if (null !== $this->scene) {
             $res['scene'] = $this->scene;
         }
-        if (null !== $this->actualAmount) {
-            $res['actualAmount'] = $this->actualAmount;
+        if (null !== $this->sn) {
+            $res['sn'] = $this->sn;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -129,26 +84,8 @@ class CheckRestrictionRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['dingIsvOrgId'])) {
-            $model->dingIsvOrgId = $map['dingIsvOrgId'];
-        }
-        if (isset($map['dingOrgId'])) {
-            $model->dingOrgId = $map['dingOrgId'];
-        }
-        if (isset($map['dingOpenAppId'])) {
-            $model->dingOpenAppId = $map['dingOpenAppId'];
-        }
-        if (isset($map['dingSuiteKey'])) {
-            $model->dingSuiteKey = $map['dingSuiteKey'];
-        }
-        if (isset($map['dingTokenGrantType'])) {
-            $model->dingTokenGrantType = $map['dingTokenGrantType'];
-        }
-        if (isset($map['sn'])) {
-            $model->sn = $map['sn'];
-        }
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
+        if (isset($map['actualAmount'])) {
+            $model->actualAmount = $map['actualAmount'];
         }
         if (isset($map['faceId'])) {
             $model->faceId = $map['faceId'];
@@ -156,8 +93,11 @@ class CheckRestrictionRequest extends Model
         if (isset($map['scene'])) {
             $model->scene = $map['scene'];
         }
-        if (isset($map['actualAmount'])) {
-            $model->actualAmount = $map['actualAmount'];
+        if (isset($map['sn'])) {
+            $model->sn = $map['sn'];
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

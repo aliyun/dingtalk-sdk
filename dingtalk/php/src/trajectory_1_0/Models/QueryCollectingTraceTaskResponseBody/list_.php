@@ -16,16 +16,9 @@ class list_ extends Model
     public $appTraceId;
 
     /**
-     * @description 组织下员工Id
-     *
-     * @var string
-     */
-    public $userId;
-
-    /**
      * @var int
      */
-    public $geoReportStatus;
+    public $geoCollectPeriod;
 
     /**
      * @var int
@@ -35,7 +28,12 @@ class list_ extends Model
     /**
      * @var int
      */
-    public $geoCollectPeriod;
+    public $geoReportStatus;
+
+    /**
+     * @var int
+     */
+    public $reportEndTime;
 
     /**
      * @var int
@@ -43,17 +41,19 @@ class list_ extends Model
     public $reportStartTime;
 
     /**
-     * @var int
+     * @description 组织下员工Id
+     *
+     * @var string
      */
-    public $reportEndTime;
+    public $userId;
     protected $_name = [
         'appTraceId'       => 'appTraceId',
-        'userId'           => 'userId',
-        'geoReportStatus'  => 'geoReportStatus',
-        'geoReportPeriod'  => 'geoReportPeriod',
         'geoCollectPeriod' => 'geoCollectPeriod',
-        'reportStartTime'  => 'reportStartTime',
+        'geoReportPeriod'  => 'geoReportPeriod',
+        'geoReportStatus'  => 'geoReportStatus',
         'reportEndTime'    => 'reportEndTime',
+        'reportStartTime'  => 'reportStartTime',
+        'userId'           => 'userId',
     ];
 
     public function validate()
@@ -66,23 +66,23 @@ class list_ extends Model
         if (null !== $this->appTraceId) {
             $res['appTraceId'] = $this->appTraceId;
         }
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
-        }
-        if (null !== $this->geoReportStatus) {
-            $res['geoReportStatus'] = $this->geoReportStatus;
+        if (null !== $this->geoCollectPeriod) {
+            $res['geoCollectPeriod'] = $this->geoCollectPeriod;
         }
         if (null !== $this->geoReportPeriod) {
             $res['geoReportPeriod'] = $this->geoReportPeriod;
         }
-        if (null !== $this->geoCollectPeriod) {
-            $res['geoCollectPeriod'] = $this->geoCollectPeriod;
+        if (null !== $this->geoReportStatus) {
+            $res['geoReportStatus'] = $this->geoReportStatus;
+        }
+        if (null !== $this->reportEndTime) {
+            $res['reportEndTime'] = $this->reportEndTime;
         }
         if (null !== $this->reportStartTime) {
             $res['reportStartTime'] = $this->reportStartTime;
         }
-        if (null !== $this->reportEndTime) {
-            $res['reportEndTime'] = $this->reportEndTime;
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -99,23 +99,23 @@ class list_ extends Model
         if (isset($map['appTraceId'])) {
             $model->appTraceId = $map['appTraceId'];
         }
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
-        }
-        if (isset($map['geoReportStatus'])) {
-            $model->geoReportStatus = $map['geoReportStatus'];
+        if (isset($map['geoCollectPeriod'])) {
+            $model->geoCollectPeriod = $map['geoCollectPeriod'];
         }
         if (isset($map['geoReportPeriod'])) {
             $model->geoReportPeriod = $map['geoReportPeriod'];
         }
-        if (isset($map['geoCollectPeriod'])) {
-            $model->geoCollectPeriod = $map['geoCollectPeriod'];
+        if (isset($map['geoReportStatus'])) {
+            $model->geoReportStatus = $map['geoReportStatus'];
+        }
+        if (isset($map['reportEndTime'])) {
+            $model->reportEndTime = $map['reportEndTime'];
         }
         if (isset($map['reportStartTime'])) {
             $model->reportStartTime = $map['reportStartTime'];
         }
-        if (isset($map['reportEndTime'])) {
-            $model->reportEndTime = $map['reportEndTime'];
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

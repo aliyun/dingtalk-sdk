@@ -10,19 +10,19 @@ use AlibabaCloud\Tea\Model;
 class QueryDeviceListByCorpIdResponseBody extends Model
 {
     /**
+     * @var result
+     */
+    public $result;
+
+    /**
      * @description Id of the request
      *
      * @var bool
      */
     public $success;
-
-    /**
-     * @var result
-     */
-    public $result;
     protected $_name = [
-        'success' => 'success',
         'result'  => 'result',
+        'success' => 'success',
     ];
 
     public function validate()
@@ -32,11 +32,11 @@ class QueryDeviceListByCorpIdResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->success) {
-            $res['success'] = $this->success;
-        }
         if (null !== $this->result) {
             $res['result'] = null !== $this->result ? $this->result->toMap() : null;
+        }
+        if (null !== $this->success) {
+            $res['success'] = $this->success;
         }
 
         return $res;
@@ -50,11 +50,11 @@ class QueryDeviceListByCorpIdResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['success'])) {
-            $model->success = $map['success'];
-        }
         if (isset($map['result'])) {
             $model->result = result::fromMap($map['result']);
+        }
+        if (isset($map['success'])) {
+            $model->success = $map['success'];
         }
 
         return $model;

@@ -10,11 +10,11 @@ use AlibabaCloud\Tea\Model;
 class childForms extends Model
 {
     /**
-     * @description 子表编码
+     * @description 子表字段
      *
-     * @var string
+     * @var fields[]
      */
-    public $schemaCode;
+    public $fields;
 
     /**
      * @description 子表名称
@@ -24,15 +24,15 @@ class childForms extends Model
     public $formName;
 
     /**
-     * @description 子表字段
+     * @description 子表编码
      *
-     * @var fields[]
+     * @var string
      */
-    public $fields;
+    public $schemaCode;
     protected $_name = [
-        'schemaCode' => 'schemaCode',
-        'formName'   => 'formName',
         'fields'     => 'fields',
+        'formName'   => 'formName',
+        'schemaCode' => 'schemaCode',
     ];
 
     public function validate()
@@ -42,12 +42,6 @@ class childForms extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->schemaCode) {
-            $res['schemaCode'] = $this->schemaCode;
-        }
-        if (null !== $this->formName) {
-            $res['formName'] = $this->formName;
-        }
         if (null !== $this->fields) {
             $res['fields'] = [];
             if (null !== $this->fields && \is_array($this->fields)) {
@@ -56,6 +50,12 @@ class childForms extends Model
                     $res['fields'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->formName) {
+            $res['formName'] = $this->formName;
+        }
+        if (null !== $this->schemaCode) {
+            $res['schemaCode'] = $this->schemaCode;
         }
 
         return $res;
@@ -69,12 +69,6 @@ class childForms extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['schemaCode'])) {
-            $model->schemaCode = $map['schemaCode'];
-        }
-        if (isset($map['formName'])) {
-            $model->formName = $map['formName'];
-        }
         if (isset($map['fields'])) {
             if (!empty($map['fields'])) {
                 $model->fields = [];
@@ -83,6 +77,12 @@ class childForms extends Model
                     $model->fields[$n++] = null !== $item ? fields::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['formName'])) {
+            $model->formName = $map['formName'];
+        }
+        if (isset($map['schemaCode'])) {
+            $model->schemaCode = $map['schemaCode'];
         }
 
         return $model;

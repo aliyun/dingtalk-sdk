@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class RenderBatchCallbackRequest extends Model
 {
     /**
-     * @description oss文件链接
+     * @description appType
      *
      * @var string
      */
-    public $ossUrl;
+    public $appType;
 
     /**
      * @description 组织id
@@ -30,18 +30,11 @@ class RenderBatchCallbackRequest extends Model
     public $fileSize;
 
     /**
-     * @description appType
+     * @description language
      *
      * @var string
      */
-    public $appType;
-
-    /**
-     * @description systemToken
-     *
-     * @var string
-     */
-    public $systemToken;
+    public $language;
 
     /**
      * @description 名称空间
@@ -51,25 +44,11 @@ class RenderBatchCallbackRequest extends Model
     public $namespace;
 
     /**
-     * @description 时间区域
+     * @description oss文件链接
      *
      * @var string
      */
-    public $timeZone;
-
-    /**
-     * @description language
-     *
-     * @var string
-     */
-    public $language;
-
-    /**
-     * @description 源
-     *
-     * @var string
-     */
-    public $source;
+    public $ossUrl;
 
     /**
      * @description 流水号
@@ -79,11 +58,11 @@ class RenderBatchCallbackRequest extends Model
     public $sequenceId;
 
     /**
-     * @description userId
+     * @description 源
      *
      * @var string
      */
-    public $userId;
+    public $source;
 
     /**
      * @description 状态
@@ -91,19 +70,40 @@ class RenderBatchCallbackRequest extends Model
      * @var string
      */
     public $status;
+
+    /**
+     * @description systemToken
+     *
+     * @var string
+     */
+    public $systemToken;
+
+    /**
+     * @description 时间区域
+     *
+     * @var string
+     */
+    public $timeZone;
+
+    /**
+     * @description userId
+     *
+     * @var string
+     */
+    public $userId;
     protected $_name = [
-        'ossUrl'      => 'ossUrl',
+        'appType'     => 'appType',
         'corpId'      => 'corpId',
         'fileSize'    => 'fileSize',
-        'appType'     => 'appType',
-        'systemToken' => 'systemToken',
-        'namespace'   => 'namespace',
-        'timeZone'    => 'timeZone',
         'language'    => 'language',
-        'source'      => 'source',
+        'namespace'   => 'namespace',
+        'ossUrl'      => 'ossUrl',
         'sequenceId'  => 'sequenceId',
-        'userId'      => 'userId',
+        'source'      => 'source',
         'status'      => 'status',
+        'systemToken' => 'systemToken',
+        'timeZone'    => 'timeZone',
+        'userId'      => 'userId',
     ];
 
     public function validate()
@@ -113,8 +113,8 @@ class RenderBatchCallbackRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->ossUrl) {
-            $res['ossUrl'] = $this->ossUrl;
+        if (null !== $this->appType) {
+            $res['appType'] = $this->appType;
         }
         if (null !== $this->corpId) {
             $res['corpId'] = $this->corpId;
@@ -122,32 +122,32 @@ class RenderBatchCallbackRequest extends Model
         if (null !== $this->fileSize) {
             $res['fileSize'] = $this->fileSize;
         }
-        if (null !== $this->appType) {
-            $res['appType'] = $this->appType;
-        }
-        if (null !== $this->systemToken) {
-            $res['systemToken'] = $this->systemToken;
+        if (null !== $this->language) {
+            $res['language'] = $this->language;
         }
         if (null !== $this->namespace) {
             $res['namespace'] = $this->namespace;
         }
-        if (null !== $this->timeZone) {
-            $res['timeZone'] = $this->timeZone;
-        }
-        if (null !== $this->language) {
-            $res['language'] = $this->language;
-        }
-        if (null !== $this->source) {
-            $res['source'] = $this->source;
+        if (null !== $this->ossUrl) {
+            $res['ossUrl'] = $this->ossUrl;
         }
         if (null !== $this->sequenceId) {
             $res['sequenceId'] = $this->sequenceId;
         }
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
+        if (null !== $this->source) {
+            $res['source'] = $this->source;
         }
         if (null !== $this->status) {
             $res['status'] = $this->status;
+        }
+        if (null !== $this->systemToken) {
+            $res['systemToken'] = $this->systemToken;
+        }
+        if (null !== $this->timeZone) {
+            $res['timeZone'] = $this->timeZone;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -161,8 +161,8 @@ class RenderBatchCallbackRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['ossUrl'])) {
-            $model->ossUrl = $map['ossUrl'];
+        if (isset($map['appType'])) {
+            $model->appType = $map['appType'];
         }
         if (isset($map['corpId'])) {
             $model->corpId = $map['corpId'];
@@ -170,32 +170,32 @@ class RenderBatchCallbackRequest extends Model
         if (isset($map['fileSize'])) {
             $model->fileSize = $map['fileSize'];
         }
-        if (isset($map['appType'])) {
-            $model->appType = $map['appType'];
-        }
-        if (isset($map['systemToken'])) {
-            $model->systemToken = $map['systemToken'];
+        if (isset($map['language'])) {
+            $model->language = $map['language'];
         }
         if (isset($map['namespace'])) {
             $model->namespace = $map['namespace'];
         }
-        if (isset($map['timeZone'])) {
-            $model->timeZone = $map['timeZone'];
-        }
-        if (isset($map['language'])) {
-            $model->language = $map['language'];
-        }
-        if (isset($map['source'])) {
-            $model->source = $map['source'];
+        if (isset($map['ossUrl'])) {
+            $model->ossUrl = $map['ossUrl'];
         }
         if (isset($map['sequenceId'])) {
             $model->sequenceId = $map['sequenceId'];
         }
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
+        if (isset($map['source'])) {
+            $model->source = $map['source'];
         }
         if (isset($map['status'])) {
             $model->status = $map['status'];
+        }
+        if (isset($map['systemToken'])) {
+            $model->systemToken = $map['systemToken'];
+        }
+        if (isset($map['timeZone'])) {
+            $model->timeZone = $map['timeZone'];
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

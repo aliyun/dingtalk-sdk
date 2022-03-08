@@ -10,21 +10,21 @@ use AlibabaCloud\Tea\Model;
 class QueryCustomerByPageResponseBody extends Model
 {
     /**
-     * @description resultList
-     *
-     * @var list_[]
-     */
-    public $list;
-
-    /**
      * @description 是否还有更多数据
      *
      * @var bool
      */
     public $hasMore;
+
+    /**
+     * @description resultList
+     *
+     * @var list_[]
+     */
+    public $list;
     protected $_name = [
-        'list'    => 'list',
         'hasMore' => 'hasMore',
+        'list'    => 'list',
     ];
 
     public function validate()
@@ -34,6 +34,9 @@ class QueryCustomerByPageResponseBody extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->hasMore) {
+            $res['hasMore'] = $this->hasMore;
+        }
         if (null !== $this->list) {
             $res['list'] = [];
             if (null !== $this->list && \is_array($this->list)) {
@@ -42,9 +45,6 @@ class QueryCustomerByPageResponseBody extends Model
                     $res['list'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
-        }
-        if (null !== $this->hasMore) {
-            $res['hasMore'] = $this->hasMore;
         }
 
         return $res;
@@ -58,6 +58,9 @@ class QueryCustomerByPageResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['hasMore'])) {
+            $model->hasMore = $map['hasMore'];
+        }
         if (isset($map['list'])) {
             if (!empty($map['list'])) {
                 $model->list = [];
@@ -66,9 +69,6 @@ class QueryCustomerByPageResponseBody extends Model
                     $model->list[$n++] = null !== $item ? list_::fromMap($item) : $item;
                 }
             }
-        }
-        if (isset($map['hasMore'])) {
-            $model->hasMore = $map['hasMore'];
         }
 
         return $model;

@@ -17,13 +17,6 @@ class QueryAppActiveUsersResponseBody extends Model
     public $hasMore;
 
     /**
-     * @description 总数
-     *
-     * @var int
-     */
-    public $totalCount;
-
-    /**
      * @description 数据集合
      *
      * @var list_[]
@@ -36,11 +29,18 @@ class QueryAppActiveUsersResponseBody extends Model
      * @var int
      */
     public $nextToken;
+
+    /**
+     * @description 总数
+     *
+     * @var int
+     */
+    public $totalCount;
     protected $_name = [
         'hasMore'    => 'hasMore',
-        'totalCount' => 'totalCount',
         'list'       => 'list',
         'nextToken'  => 'nextToken',
+        'totalCount' => 'totalCount',
     ];
 
     public function validate()
@@ -53,9 +53,6 @@ class QueryAppActiveUsersResponseBody extends Model
         if (null !== $this->hasMore) {
             $res['hasMore'] = $this->hasMore;
         }
-        if (null !== $this->totalCount) {
-            $res['totalCount'] = $this->totalCount;
-        }
         if (null !== $this->list) {
             $res['list'] = [];
             if (null !== $this->list && \is_array($this->list)) {
@@ -67,6 +64,9 @@ class QueryAppActiveUsersResponseBody extends Model
         }
         if (null !== $this->nextToken) {
             $res['nextToken'] = $this->nextToken;
+        }
+        if (null !== $this->totalCount) {
+            $res['totalCount'] = $this->totalCount;
         }
 
         return $res;
@@ -83,9 +83,6 @@ class QueryAppActiveUsersResponseBody extends Model
         if (isset($map['hasMore'])) {
             $model->hasMore = $map['hasMore'];
         }
-        if (isset($map['totalCount'])) {
-            $model->totalCount = $map['totalCount'];
-        }
         if (isset($map['list'])) {
             if (!empty($map['list'])) {
                 $model->list = [];
@@ -97,6 +94,9 @@ class QueryAppActiveUsersResponseBody extends Model
         }
         if (isset($map['nextToken'])) {
             $model->nextToken = $map['nextToken'];
+        }
+        if (isset($map['totalCount'])) {
+            $model->totalCount = $map['totalCount'];
         }
 
         return $model;

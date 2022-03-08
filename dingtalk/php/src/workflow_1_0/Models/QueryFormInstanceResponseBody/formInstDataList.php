@@ -11,17 +11,22 @@ class formInstDataList extends Model
     /**
      * @var string
      */
-    public $componentType;
-
-    /**
-     * @var string
-     */
     public $bizAlias;
 
     /**
      * @var string
      */
+    public $componentType;
+
+    /**
+     * @var string
+     */
     public $extendValue;
+
+    /**
+     * @var string
+     */
+    public $key;
 
     /**
      * @var string
@@ -32,18 +37,13 @@ class formInstDataList extends Model
      * @var string
      */
     public $value;
-
-    /**
-     * @var string
-     */
-    public $key;
     protected $_name = [
-        'componentType' => 'componentType',
         'bizAlias'      => 'bizAlias',
+        'componentType' => 'componentType',
         'extendValue'   => 'extendValue',
+        'key'           => 'key',
         'label'         => 'label',
         'value'         => 'value',
-        'key'           => 'key',
     ];
 
     public function validate()
@@ -53,23 +53,23 @@ class formInstDataList extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->componentType) {
-            $res['componentType'] = $this->componentType;
-        }
         if (null !== $this->bizAlias) {
             $res['bizAlias'] = $this->bizAlias;
         }
+        if (null !== $this->componentType) {
+            $res['componentType'] = $this->componentType;
+        }
         if (null !== $this->extendValue) {
             $res['extendValue'] = $this->extendValue;
+        }
+        if (null !== $this->key) {
+            $res['key'] = $this->key;
         }
         if (null !== $this->label) {
             $res['label'] = $this->label;
         }
         if (null !== $this->value) {
             $res['value'] = $this->value;
-        }
-        if (null !== $this->key) {
-            $res['key'] = $this->key;
         }
 
         return $res;
@@ -83,23 +83,23 @@ class formInstDataList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['componentType'])) {
-            $model->componentType = $map['componentType'];
-        }
         if (isset($map['bizAlias'])) {
             $model->bizAlias = $map['bizAlias'];
         }
+        if (isset($map['componentType'])) {
+            $model->componentType = $map['componentType'];
+        }
         if (isset($map['extendValue'])) {
             $model->extendValue = $map['extendValue'];
+        }
+        if (isset($map['key'])) {
+            $model->key = $map['key'];
         }
         if (isset($map['label'])) {
             $model->label = $map['label'];
         }
         if (isset($map['value'])) {
             $model->value = $map['value'];
-        }
-        if (isset($map['key'])) {
-            $model->key = $map['key'];
         }
 
         return $model;

@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class CreateBadgeNotifyRequest extends Model
 {
     /**
-     * @description 员工ID
+     * @description 通知内容
      *
      * @var string
      */
-    public $userId;
+    public $content;
 
     /**
      * @description 消息ID
@@ -30,28 +30,16 @@ class CreateBadgeNotifyRequest extends Model
     public $msgType;
 
     /**
-     * @description 通知内容
+     * @description 员工ID
      *
      * @var string
      */
-    public $content;
-
-    /**
-     * @var int
-     */
-    public $dingOrgId;
-
-    /**
-     * @var int
-     */
-    public $dingIsvOrgId;
+    public $userId;
     protected $_name = [
-        'userId'       => 'userId',
-        'msgId'        => 'msgId',
-        'msgType'      => 'msgType',
-        'content'      => 'content',
-        'dingOrgId'    => 'dingOrgId',
-        'dingIsvOrgId' => 'dingIsvOrgId',
+        'content' => 'content',
+        'msgId'   => 'msgId',
+        'msgType' => 'msgType',
+        'userId'  => 'userId',
     ];
 
     public function validate()
@@ -61,8 +49,8 @@ class CreateBadgeNotifyRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
+        if (null !== $this->content) {
+            $res['content'] = $this->content;
         }
         if (null !== $this->msgId) {
             $res['msgId'] = $this->msgId;
@@ -70,14 +58,8 @@ class CreateBadgeNotifyRequest extends Model
         if (null !== $this->msgType) {
             $res['msgType'] = $this->msgType;
         }
-        if (null !== $this->content) {
-            $res['content'] = $this->content;
-        }
-        if (null !== $this->dingOrgId) {
-            $res['dingOrgId'] = $this->dingOrgId;
-        }
-        if (null !== $this->dingIsvOrgId) {
-            $res['dingIsvOrgId'] = $this->dingIsvOrgId;
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -91,8 +73,8 @@ class CreateBadgeNotifyRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
+        if (isset($map['content'])) {
+            $model->content = $map['content'];
         }
         if (isset($map['msgId'])) {
             $model->msgId = $map['msgId'];
@@ -100,14 +82,8 @@ class CreateBadgeNotifyRequest extends Model
         if (isset($map['msgType'])) {
             $model->msgType = $map['msgType'];
         }
-        if (isset($map['content'])) {
-            $model->content = $map['content'];
-        }
-        if (isset($map['dingOrgId'])) {
-            $model->dingOrgId = $map['dingOrgId'];
-        }
-        if (isset($map['dingIsvOrgId'])) {
-            $model->dingIsvOrgId = $map['dingIsvOrgId'];
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

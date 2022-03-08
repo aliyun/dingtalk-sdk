@@ -9,18 +9,11 @@ use AlibabaCloud\Tea\Model;
 class ListRecycleFilesRequest extends Model
 {
     /**
-     * @description 用户id
+     * @description 分页长度
      *
-     * @var string
+     * @var int
      */
-    public $unionId;
-
-    /**
-     * @description 回收站类型
-     *
-     * @var string
-     */
-    public $recycleType;
+    public $maxResults;
 
     /**
      * @description 分页加载更多锚点
@@ -30,24 +23,31 @@ class ListRecycleFilesRequest extends Model
     public $nextToken;
 
     /**
-     * @description 分页长度
-     *
-     * @var int
-     */
-    public $maxResults;
-
-    /**
      * @description 文件排序类型
      *
      * @var string
      */
     public $orderType;
+
+    /**
+     * @description 回收站类型
+     *
+     * @var string
+     */
+    public $recycleType;
+
+    /**
+     * @description 用户id
+     *
+     * @var string
+     */
+    public $unionId;
     protected $_name = [
-        'unionId'     => 'unionId',
-        'recycleType' => 'recycleType',
-        'nextToken'   => 'nextToken',
         'maxResults'  => 'maxResults',
+        'nextToken'   => 'nextToken',
         'orderType'   => 'orderType',
+        'recycleType' => 'recycleType',
+        'unionId'     => 'unionId',
     ];
 
     public function validate()
@@ -57,20 +57,20 @@ class ListRecycleFilesRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->unionId) {
-            $res['unionId'] = $this->unionId;
-        }
-        if (null !== $this->recycleType) {
-            $res['recycleType'] = $this->recycleType;
+        if (null !== $this->maxResults) {
+            $res['maxResults'] = $this->maxResults;
         }
         if (null !== $this->nextToken) {
             $res['nextToken'] = $this->nextToken;
         }
-        if (null !== $this->maxResults) {
-            $res['maxResults'] = $this->maxResults;
-        }
         if (null !== $this->orderType) {
             $res['orderType'] = $this->orderType;
+        }
+        if (null !== $this->recycleType) {
+            $res['recycleType'] = $this->recycleType;
+        }
+        if (null !== $this->unionId) {
+            $res['unionId'] = $this->unionId;
         }
 
         return $res;
@@ -84,20 +84,20 @@ class ListRecycleFilesRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['unionId'])) {
-            $model->unionId = $map['unionId'];
-        }
-        if (isset($map['recycleType'])) {
-            $model->recycleType = $map['recycleType'];
+        if (isset($map['maxResults'])) {
+            $model->maxResults = $map['maxResults'];
         }
         if (isset($map['nextToken'])) {
             $model->nextToken = $map['nextToken'];
         }
-        if (isset($map['maxResults'])) {
-            $model->maxResults = $map['maxResults'];
-        }
         if (isset($map['orderType'])) {
             $model->orderType = $map['orderType'];
+        }
+        if (isset($map['recycleType'])) {
+            $model->recycleType = $map['recycleType'];
+        }
+        if (isset($map['unionId'])) {
+            $model->unionId = $map['unionId'];
         }
 
         return $model;

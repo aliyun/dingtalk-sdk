@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class outputDataRules extends Model
 {
     /**
-     * @description 规则的属性路径。
+     * @description 规则的预期值。
      *
      * @var string
      */
-    public $propertyPath;
+    public $expectValue;
 
     /**
      * @description 操作类型。
@@ -23,15 +23,15 @@ class outputDataRules extends Model
     public $operate;
 
     /**
-     * @description 规则的预期值。
+     * @description 规则的属性路径。
      *
      * @var string
      */
-    public $expectValue;
+    public $propertyPath;
     protected $_name = [
-        'propertyPath' => 'propertyPath',
-        'operate'      => 'operate',
         'expectValue'  => 'expectValue',
+        'operate'      => 'operate',
+        'propertyPath' => 'propertyPath',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class outputDataRules extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->propertyPath) {
-            $res['propertyPath'] = $this->propertyPath;
+        if (null !== $this->expectValue) {
+            $res['expectValue'] = $this->expectValue;
         }
         if (null !== $this->operate) {
             $res['operate'] = $this->operate;
         }
-        if (null !== $this->expectValue) {
-            $res['expectValue'] = $this->expectValue;
+        if (null !== $this->propertyPath) {
+            $res['propertyPath'] = $this->propertyPath;
         }
 
         return $res;
@@ -62,14 +62,14 @@ class outputDataRules extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['propertyPath'])) {
-            $model->propertyPath = $map['propertyPath'];
+        if (isset($map['expectValue'])) {
+            $model->expectValue = $map['expectValue'];
         }
         if (isset($map['operate'])) {
             $model->operate = $map['operate'];
         }
-        if (isset($map['expectValue'])) {
-            $model->expectValue = $map['expectValue'];
+        if (isset($map['propertyPath'])) {
+            $model->propertyPath = $map['propertyPath'];
         }
 
         return $model;

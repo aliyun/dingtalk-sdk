@@ -10,17 +10,17 @@ use AlibabaCloud\Tea\Model;
 class sections extends Model
 {
     /**
-     * @var int
-     */
-    public $oldIndex;
-
-    /**
      * @var empFieldVOList[]
      */
     public $empFieldVOList;
+
+    /**
+     * @var int
+     */
+    public $oldIndex;
     protected $_name = [
-        'oldIndex'       => 'oldIndex',
         'empFieldVOList' => 'empFieldVOList',
+        'oldIndex'       => 'oldIndex',
     ];
 
     public function validate()
@@ -30,9 +30,6 @@ class sections extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->oldIndex) {
-            $res['oldIndex'] = $this->oldIndex;
-        }
         if (null !== $this->empFieldVOList) {
             $res['empFieldVOList'] = [];
             if (null !== $this->empFieldVOList && \is_array($this->empFieldVOList)) {
@@ -41,6 +38,9 @@ class sections extends Model
                     $res['empFieldVOList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->oldIndex) {
+            $res['oldIndex'] = $this->oldIndex;
         }
 
         return $res;
@@ -54,9 +54,6 @@ class sections extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['oldIndex'])) {
-            $model->oldIndex = $map['oldIndex'];
-        }
         if (isset($map['empFieldVOList'])) {
             if (!empty($map['empFieldVOList'])) {
                 $model->empFieldVOList = [];
@@ -65,6 +62,9 @@ class sections extends Model
                     $model->empFieldVOList[$n++] = null !== $item ? empFieldVOList::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['oldIndex'])) {
+            $model->oldIndex = $map['oldIndex'];
         }
 
         return $model;

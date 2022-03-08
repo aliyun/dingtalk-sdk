@@ -11,7 +11,17 @@ class SendMessageRequest extends Model
     /**
      * @var string
      */
-    public $senderUid;
+    public $content;
+
+    /**
+     * @var string
+     */
+    public $conversationId;
+
+    /**
+     * @var int
+     */
+    public $createTime;
 
     /**
      * @var string
@@ -21,29 +31,19 @@ class SendMessageRequest extends Model
     /**
      * @var string
      */
-    public $conversationId;
-
-    /**
-     * @var string
-     */
-    public $content;
+    public $senderUid;
 
     /**
      * @var string
      */
     public $uuid;
-
-    /**
-     * @var int
-     */
-    public $createTime;
     protected $_name = [
-        'senderUid'      => 'senderUid',
-        'receiverUid'    => 'receiverUid',
-        'conversationId' => 'conversationId',
         'content'        => 'content',
-        'uuid'           => 'uuid',
+        'conversationId' => 'conversationId',
         'createTime'     => 'createTime',
+        'receiverUid'    => 'receiverUid',
+        'senderUid'      => 'senderUid',
+        'uuid'           => 'uuid',
     ];
 
     public function validate()
@@ -53,23 +53,23 @@ class SendMessageRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->senderUid) {
-            $res['senderUid'] = $this->senderUid;
-        }
-        if (null !== $this->receiverUid) {
-            $res['receiverUid'] = $this->receiverUid;
+        if (null !== $this->content) {
+            $res['content'] = $this->content;
         }
         if (null !== $this->conversationId) {
             $res['conversationId'] = $this->conversationId;
         }
-        if (null !== $this->content) {
-            $res['content'] = $this->content;
+        if (null !== $this->createTime) {
+            $res['createTime'] = $this->createTime;
+        }
+        if (null !== $this->receiverUid) {
+            $res['receiverUid'] = $this->receiverUid;
+        }
+        if (null !== $this->senderUid) {
+            $res['senderUid'] = $this->senderUid;
         }
         if (null !== $this->uuid) {
             $res['uuid'] = $this->uuid;
-        }
-        if (null !== $this->createTime) {
-            $res['createTime'] = $this->createTime;
         }
 
         return $res;
@@ -83,23 +83,23 @@ class SendMessageRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['senderUid'])) {
-            $model->senderUid = $map['senderUid'];
-        }
-        if (isset($map['receiverUid'])) {
-            $model->receiverUid = $map['receiverUid'];
+        if (isset($map['content'])) {
+            $model->content = $map['content'];
         }
         if (isset($map['conversationId'])) {
             $model->conversationId = $map['conversationId'];
         }
-        if (isset($map['content'])) {
-            $model->content = $map['content'];
+        if (isset($map['createTime'])) {
+            $model->createTime = $map['createTime'];
+        }
+        if (isset($map['receiverUid'])) {
+            $model->receiverUid = $map['receiverUid'];
+        }
+        if (isset($map['senderUid'])) {
+            $model->senderUid = $map['senderUid'];
         }
         if (isset($map['uuid'])) {
             $model->uuid = $map['uuid'];
-        }
-        if (isset($map['createTime'])) {
-            $model->createTime = $map['createTime'];
         }
 
         return $model;

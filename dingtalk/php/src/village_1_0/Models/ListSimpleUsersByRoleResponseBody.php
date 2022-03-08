@@ -10,11 +10,11 @@ use AlibabaCloud\Tea\Model;
 class ListSimpleUsersByRoleResponseBody extends Model
 {
     /**
-     * @description 用户列表
+     * @description 是否还有记录
      *
-     * @var userList[]
+     * @var bool
      */
-    public $userList;
+    public $hasMore;
 
     /**
      * @description 下一条记录
@@ -24,15 +24,15 @@ class ListSimpleUsersByRoleResponseBody extends Model
     public $nextCursor;
 
     /**
-     * @description 是否还有记录
+     * @description 用户列表
      *
-     * @var bool
+     * @var userList[]
      */
-    public $hasMore;
+    public $userList;
     protected $_name = [
-        'userList'   => 'userList',
-        'nextCursor' => 'nextCursor',
         'hasMore'    => 'hasMore',
+        'nextCursor' => 'nextCursor',
+        'userList'   => 'userList',
     ];
 
     public function validate()
@@ -42,6 +42,12 @@ class ListSimpleUsersByRoleResponseBody extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->hasMore) {
+            $res['hasMore'] = $this->hasMore;
+        }
+        if (null !== $this->nextCursor) {
+            $res['nextCursor'] = $this->nextCursor;
+        }
         if (null !== $this->userList) {
             $res['userList'] = [];
             if (null !== $this->userList && \is_array($this->userList)) {
@@ -50,12 +56,6 @@ class ListSimpleUsersByRoleResponseBody extends Model
                     $res['userList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
-        }
-        if (null !== $this->nextCursor) {
-            $res['nextCursor'] = $this->nextCursor;
-        }
-        if (null !== $this->hasMore) {
-            $res['hasMore'] = $this->hasMore;
         }
 
         return $res;
@@ -69,6 +69,12 @@ class ListSimpleUsersByRoleResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['hasMore'])) {
+            $model->hasMore = $map['hasMore'];
+        }
+        if (isset($map['nextCursor'])) {
+            $model->nextCursor = $map['nextCursor'];
+        }
         if (isset($map['userList'])) {
             if (!empty($map['userList'])) {
                 $model->userList = [];
@@ -77,12 +83,6 @@ class ListSimpleUsersByRoleResponseBody extends Model
                     $model->userList[$n++] = null !== $item ? userList::fromMap($item) : $item;
                 }
             }
-        }
-        if (isset($map['nextCursor'])) {
-            $model->nextCursor = $map['nextCursor'];
-        }
-        if (isset($map['hasMore'])) {
-            $model->hasMore = $map['hasMore'];
         }
 
         return $model;

@@ -9,18 +9,18 @@ use AlibabaCloud\Tea\Model;
 class content extends Model
 {
     /**
-     * @description 用户编码
+     * @description gmtCreate
      *
      * @var string
      */
-    public $userCode;
+    public $gmtCreate;
 
     /**
-     * @description 用户名称
+     * @description 修改时间
      *
      * @var string
      */
-    public $userName;
+    public $gmtModified;
 
     /**
      * @description 用户工号
@@ -44,26 +44,26 @@ class content extends Model
     public $roleName;
 
     /**
-     * @description gmtCreate
+     * @description 用户编码
      *
      * @var string
      */
-    public $gmtCreate;
+    public $userCode;
 
     /**
-     * @description 修改时间
+     * @description 用户名称
      *
      * @var string
      */
-    public $gmtModified;
+    public $userName;
     protected $_name = [
-        'userCode'    => 'userCode',
-        'userName'    => 'userName',
+        'gmtCreate'   => 'gmtCreate',
+        'gmtModified' => 'gmtModified',
         'jobNumber'   => 'jobNumber',
         'roleCode'    => 'roleCode',
         'roleName'    => 'roleName',
-        'gmtCreate'   => 'gmtCreate',
-        'gmtModified' => 'gmtModified',
+        'userCode'    => 'userCode',
+        'userName'    => 'userName',
     ];
 
     public function validate()
@@ -73,11 +73,11 @@ class content extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->userCode) {
-            $res['userCode'] = $this->userCode;
+        if (null !== $this->gmtCreate) {
+            $res['gmtCreate'] = $this->gmtCreate;
         }
-        if (null !== $this->userName) {
-            $res['userName'] = $this->userName;
+        if (null !== $this->gmtModified) {
+            $res['gmtModified'] = $this->gmtModified;
         }
         if (null !== $this->jobNumber) {
             $res['jobNumber'] = $this->jobNumber;
@@ -88,11 +88,11 @@ class content extends Model
         if (null !== $this->roleName) {
             $res['roleName'] = $this->roleName;
         }
-        if (null !== $this->gmtCreate) {
-            $res['gmtCreate'] = $this->gmtCreate;
+        if (null !== $this->userCode) {
+            $res['userCode'] = $this->userCode;
         }
-        if (null !== $this->gmtModified) {
-            $res['gmtModified'] = $this->gmtModified;
+        if (null !== $this->userName) {
+            $res['userName'] = $this->userName;
         }
 
         return $res;
@@ -106,11 +106,11 @@ class content extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['userCode'])) {
-            $model->userCode = $map['userCode'];
+        if (isset($map['gmtCreate'])) {
+            $model->gmtCreate = $map['gmtCreate'];
         }
-        if (isset($map['userName'])) {
-            $model->userName = $map['userName'];
+        if (isset($map['gmtModified'])) {
+            $model->gmtModified = $map['gmtModified'];
         }
         if (isset($map['jobNumber'])) {
             $model->jobNumber = $map['jobNumber'];
@@ -121,11 +121,11 @@ class content extends Model
         if (isset($map['roleName'])) {
             $model->roleName = $map['roleName'];
         }
-        if (isset($map['gmtCreate'])) {
-            $model->gmtCreate = $map['gmtCreate'];
+        if (isset($map['userCode'])) {
+            $model->userCode = $map['userCode'];
         }
-        if (isset($map['gmtModified'])) {
-            $model->gmtModified = $map['gmtModified'];
+        if (isset($map['userName'])) {
+            $model->userName = $map['userName'];
         }
 
         return $model;

@@ -10,21 +10,21 @@ use AlibabaCloud\Tea\Model;
 class behaviorLinkage extends Model
 {
     /**
-     * @description 控件值。
-     *
-     * @var string
-     */
-    public $value;
-
-    /**
      * @description 关联控件列表。
      *
      * @var targets[]
      */
     public $targets;
+
+    /**
+     * @description 控件值。
+     *
+     * @var string
+     */
+    public $value;
     protected $_name = [
-        'value'   => 'value',
         'targets' => 'targets',
+        'value'   => 'value',
     ];
 
     public function validate()
@@ -34,9 +34,6 @@ class behaviorLinkage extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->value) {
-            $res['value'] = $this->value;
-        }
         if (null !== $this->targets) {
             $res['targets'] = [];
             if (null !== $this->targets && \is_array($this->targets)) {
@@ -45,6 +42,9 @@ class behaviorLinkage extends Model
                     $res['targets'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->value) {
+            $res['value'] = $this->value;
         }
 
         return $res;
@@ -58,9 +58,6 @@ class behaviorLinkage extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['value'])) {
-            $model->value = $map['value'];
-        }
         if (isset($map['targets'])) {
             if (!empty($map['targets'])) {
                 $model->targets = [];
@@ -69,6 +66,9 @@ class behaviorLinkage extends Model
                     $model->targets[$n++] = null !== $item ? targets::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['value'])) {
+            $model->value = $map['value'];
         }
 
         return $model;

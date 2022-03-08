@@ -10,16 +10,16 @@ use AlibabaCloud\Tea\Model;
 class ModifyPermissionRequest extends Model
 {
     /**
+     * @var members[]
+     */
+    public $members;
+
+    /**
      * @description 权限角色
      *
      * @var string
      */
     public $role;
-
-    /**
-     * @var members[]
-     */
-    public $members;
 
     /**
      * @description 用户id
@@ -28,8 +28,8 @@ class ModifyPermissionRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'role'    => 'role',
         'members' => 'members',
+        'role'    => 'role',
         'unionId' => 'unionId',
     ];
 
@@ -40,9 +40,6 @@ class ModifyPermissionRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->role) {
-            $res['role'] = $this->role;
-        }
         if (null !== $this->members) {
             $res['members'] = [];
             if (null !== $this->members && \is_array($this->members)) {
@@ -51,6 +48,9 @@ class ModifyPermissionRequest extends Model
                     $res['members'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->role) {
+            $res['role'] = $this->role;
         }
         if (null !== $this->unionId) {
             $res['unionId'] = $this->unionId;
@@ -67,9 +67,6 @@ class ModifyPermissionRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['role'])) {
-            $model->role = $map['role'];
-        }
         if (isset($map['members'])) {
             if (!empty($map['members'])) {
                 $model->members = [];
@@ -78,6 +75,9 @@ class ModifyPermissionRequest extends Model
                     $model->members[$n++] = null !== $item ? members::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['role'])) {
+            $model->role = $map['role'];
         }
         if (isset($map['unionId'])) {
             $model->unionId = $map['unionId'];

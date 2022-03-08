@@ -9,18 +9,18 @@ use AlibabaCloud\Tea\Model;
 class batchTradeDetails extends Model
 {
     /**
-     * @description 序号（必填）
-     *
-     * @var int
-     */
-    public $serialNo;
-
-    /**
      * @description 金额（必填，单位：元）
      *
      * @var string
      */
     public $amount;
+
+    /**
+     * @description 备注（选填）
+     *
+     * @var string
+     */
+    public $memo;
 
     /**
      * @description 收款方户名（必填）
@@ -44,18 +44,18 @@ class batchTradeDetails extends Model
     public $payeeAccountType;
 
     /**
-     * @description 备注（选填）
+     * @description 序号（必填）
      *
-     * @var string
+     * @var int
      */
-    public $memo;
+    public $serialNo;
     protected $_name = [
-        'serialNo'         => 'serialNo',
         'amount'           => 'amount',
+        'memo'             => 'memo',
         'payeeAccountName' => 'payeeAccountName',
         'payeeAccountNo'   => 'payeeAccountNo',
         'payeeAccountType' => 'payeeAccountType',
-        'memo'             => 'memo',
+        'serialNo'         => 'serialNo',
     ];
 
     public function validate()
@@ -65,11 +65,11 @@ class batchTradeDetails extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->serialNo) {
-            $res['serialNo'] = $this->serialNo;
-        }
         if (null !== $this->amount) {
             $res['amount'] = $this->amount;
+        }
+        if (null !== $this->memo) {
+            $res['memo'] = $this->memo;
         }
         if (null !== $this->payeeAccountName) {
             $res['payeeAccountName'] = $this->payeeAccountName;
@@ -80,8 +80,8 @@ class batchTradeDetails extends Model
         if (null !== $this->payeeAccountType) {
             $res['payeeAccountType'] = $this->payeeAccountType;
         }
-        if (null !== $this->memo) {
-            $res['memo'] = $this->memo;
+        if (null !== $this->serialNo) {
+            $res['serialNo'] = $this->serialNo;
         }
 
         return $res;
@@ -95,11 +95,11 @@ class batchTradeDetails extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['serialNo'])) {
-            $model->serialNo = $map['serialNo'];
-        }
         if (isset($map['amount'])) {
             $model->amount = $map['amount'];
+        }
+        if (isset($map['memo'])) {
+            $model->memo = $map['memo'];
         }
         if (isset($map['payeeAccountName'])) {
             $model->payeeAccountName = $map['payeeAccountName'];
@@ -110,8 +110,8 @@ class batchTradeDetails extends Model
         if (isset($map['payeeAccountType'])) {
             $model->payeeAccountType = $map['payeeAccountType'];
         }
-        if (isset($map['memo'])) {
-            $model->memo = $map['memo'];
+        if (isset($map['serialNo'])) {
+            $model->serialNo = $map['serialNo'];
         }
 
         return $model;

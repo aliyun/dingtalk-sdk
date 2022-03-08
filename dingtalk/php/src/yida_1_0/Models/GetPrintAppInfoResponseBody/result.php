@@ -10,11 +10,11 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description formInfoList
+     * @description 应用名称
      *
-     * @var formInfoList[]
+     * @var string
      */
-    public $formInfoList;
+    public $appName;
 
     /**
      * @description appType
@@ -24,11 +24,11 @@ class result extends Model
     public $appType;
 
     /**
-     * @description 应用名称
+     * @description formInfoList
      *
-     * @var string
+     * @var formInfoList[]
      */
-    public $appName;
+    public $formInfoList;
 
     /**
      * @description 图标链接
@@ -37,9 +37,9 @@ class result extends Model
      */
     public $iconUrl;
     protected $_name = [
-        'formInfoList' => 'formInfoList',
-        'appType'      => 'appType',
         'appName'      => 'appName',
+        'appType'      => 'appType',
+        'formInfoList' => 'formInfoList',
         'iconUrl'      => 'iconUrl',
     ];
 
@@ -50,6 +50,12 @@ class result extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->appName) {
+            $res['appName'] = $this->appName;
+        }
+        if (null !== $this->appType) {
+            $res['appType'] = $this->appType;
+        }
         if (null !== $this->formInfoList) {
             $res['formInfoList'] = [];
             if (null !== $this->formInfoList && \is_array($this->formInfoList)) {
@@ -58,12 +64,6 @@ class result extends Model
                     $res['formInfoList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
-        }
-        if (null !== $this->appType) {
-            $res['appType'] = $this->appType;
-        }
-        if (null !== $this->appName) {
-            $res['appName'] = $this->appName;
         }
         if (null !== $this->iconUrl) {
             $res['iconUrl'] = $this->iconUrl;
@@ -80,6 +80,12 @@ class result extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['appName'])) {
+            $model->appName = $map['appName'];
+        }
+        if (isset($map['appType'])) {
+            $model->appType = $map['appType'];
+        }
         if (isset($map['formInfoList'])) {
             if (!empty($map['formInfoList'])) {
                 $model->formInfoList = [];
@@ -88,12 +94,6 @@ class result extends Model
                     $model->formInfoList[$n++] = null !== $item ? formInfoList::fromMap($item) : $item;
                 }
             }
-        }
-        if (isset($map['appType'])) {
-            $model->appType = $map['appType'];
-        }
-        if (isset($map['appName'])) {
-            $model->appName = $map['appName'];
         }
         if (isset($map['iconUrl'])) {
             $model->iconUrl = $map['iconUrl'];

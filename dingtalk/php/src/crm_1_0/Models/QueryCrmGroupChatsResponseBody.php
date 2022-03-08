@@ -10,13 +10,6 @@ use AlibabaCloud\Tea\Model;
 class QueryCrmGroupChatsResponseBody extends Model
 {
     /**
-     * @description 数据列表
-     *
-     * @var resultList[]
-     */
-    public $resultList;
-
-    /**
      * @description 是否还有下一页
      *
      * @var bool
@@ -31,15 +24,22 @@ class QueryCrmGroupChatsResponseBody extends Model
     public $nextToken;
 
     /**
+     * @description 数据列表
+     *
+     * @var resultList[]
+     */
+    public $resultList;
+
+    /**
      * @description 总条数，queryDsl入参为空时才会返回
      *
      * @var int
      */
     public $totalCount;
     protected $_name = [
-        'resultList' => 'resultList',
         'hasMore'    => 'hasMore',
         'nextToken'  => 'nextToken',
+        'resultList' => 'resultList',
         'totalCount' => 'totalCount',
     ];
 
@@ -50,6 +50,12 @@ class QueryCrmGroupChatsResponseBody extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->hasMore) {
+            $res['hasMore'] = $this->hasMore;
+        }
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
+        }
         if (null !== $this->resultList) {
             $res['resultList'] = [];
             if (null !== $this->resultList && \is_array($this->resultList)) {
@@ -58,12 +64,6 @@ class QueryCrmGroupChatsResponseBody extends Model
                     $res['resultList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
-        }
-        if (null !== $this->hasMore) {
-            $res['hasMore'] = $this->hasMore;
-        }
-        if (null !== $this->nextToken) {
-            $res['nextToken'] = $this->nextToken;
         }
         if (null !== $this->totalCount) {
             $res['totalCount'] = $this->totalCount;
@@ -80,6 +80,12 @@ class QueryCrmGroupChatsResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['hasMore'])) {
+            $model->hasMore = $map['hasMore'];
+        }
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
+        }
         if (isset($map['resultList'])) {
             if (!empty($map['resultList'])) {
                 $model->resultList = [];
@@ -88,12 +94,6 @@ class QueryCrmGroupChatsResponseBody extends Model
                     $model->resultList[$n++] = null !== $item ? resultList::fromMap($item) : $item;
                 }
             }
-        }
-        if (isset($map['hasMore'])) {
-            $model->hasMore = $map['hasMore'];
-        }
-        if (isset($map['nextToken'])) {
-            $model->nextToken = $map['nextToken'];
         }
         if (isset($map['totalCount'])) {
             $model->totalCount = $map['totalCount'];

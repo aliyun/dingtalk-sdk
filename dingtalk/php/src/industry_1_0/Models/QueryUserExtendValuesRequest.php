@@ -9,9 +9,11 @@ use AlibabaCloud\Tea\Model;
 class QueryUserExtendValuesRequest extends Model
 {
     /**
-     * @var int
+     * @description 用户拓展key
+     *
+     * @var string
      */
-    public $dingOrgId;
+    public $userExtendKey;
 
     /**
      * @description userId列表
@@ -19,17 +21,9 @@ class QueryUserExtendValuesRequest extends Model
      * @var string[]
      */
     public $userIds;
-
-    /**
-     * @description 用户拓展key
-     *
-     * @var string
-     */
-    public $userExtendKey;
     protected $_name = [
-        'dingOrgId'     => 'dingOrgId',
-        'userIds'       => 'userIds',
         'userExtendKey' => 'userExtendKey',
+        'userIds'       => 'userIds',
     ];
 
     public function validate()
@@ -39,14 +33,11 @@ class QueryUserExtendValuesRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->dingOrgId) {
-            $res['dingOrgId'] = $this->dingOrgId;
+        if (null !== $this->userExtendKey) {
+            $res['userExtendKey'] = $this->userExtendKey;
         }
         if (null !== $this->userIds) {
             $res['userIds'] = $this->userIds;
-        }
-        if (null !== $this->userExtendKey) {
-            $res['userExtendKey'] = $this->userExtendKey;
         }
 
         return $res;
@@ -60,16 +51,13 @@ class QueryUserExtendValuesRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['dingOrgId'])) {
-            $model->dingOrgId = $map['dingOrgId'];
+        if (isset($map['userExtendKey'])) {
+            $model->userExtendKey = $map['userExtendKey'];
         }
         if (isset($map['userIds'])) {
             if (!empty($map['userIds'])) {
                 $model->userIds = $map['userIds'];
             }
-        }
-        if (isset($map['userExtendKey'])) {
-            $model->userExtendKey = $map['userExtendKey'];
         }
 
         return $model;

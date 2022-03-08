@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class CreateWorkspaceDocResponseBody extends Model
 {
     /**
-     * @description 团队空间Id
+     * @description 文档docKey
      *
      * @var string
      */
-    public $workspaceId;
+    public $docKey;
 
     /**
      * @description 文档Id
@@ -23,23 +23,23 @@ class CreateWorkspaceDocResponseBody extends Model
     public $nodeId;
 
     /**
-     * @description 文档docKey
-     *
-     * @var string
-     */
-    public $docKey;
-
-    /**
      * @description 文档打开url
      *
      * @var string
      */
     public $url;
+
+    /**
+     * @description 团队空间Id
+     *
+     * @var string
+     */
+    public $workspaceId;
     protected $_name = [
-        'workspaceId' => 'workspaceId',
-        'nodeId'      => 'nodeId',
         'docKey'      => 'docKey',
+        'nodeId'      => 'nodeId',
         'url'         => 'url',
+        'workspaceId' => 'workspaceId',
     ];
 
     public function validate()
@@ -49,17 +49,17 @@ class CreateWorkspaceDocResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->workspaceId) {
-            $res['workspaceId'] = $this->workspaceId;
+        if (null !== $this->docKey) {
+            $res['docKey'] = $this->docKey;
         }
         if (null !== $this->nodeId) {
             $res['nodeId'] = $this->nodeId;
         }
-        if (null !== $this->docKey) {
-            $res['docKey'] = $this->docKey;
-        }
         if (null !== $this->url) {
             $res['url'] = $this->url;
+        }
+        if (null !== $this->workspaceId) {
+            $res['workspaceId'] = $this->workspaceId;
         }
 
         return $res;
@@ -73,17 +73,17 @@ class CreateWorkspaceDocResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['workspaceId'])) {
-            $model->workspaceId = $map['workspaceId'];
+        if (isset($map['docKey'])) {
+            $model->docKey = $map['docKey'];
         }
         if (isset($map['nodeId'])) {
             $model->nodeId = $map['nodeId'];
         }
-        if (isset($map['docKey'])) {
-            $model->docKey = $map['docKey'];
-        }
         if (isset($map['url'])) {
             $model->url = $map['url'];
+        }
+        if (isset($map['workspaceId'])) {
+            $model->workspaceId = $map['workspaceId'];
         }
 
         return $model;

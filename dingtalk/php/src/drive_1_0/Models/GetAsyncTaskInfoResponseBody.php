@@ -9,25 +9,18 @@ use AlibabaCloud\Tea\Model;
 class GetAsyncTaskInfoResponseBody extends Model
 {
     /**
-     * @description 异步任务id
+     * @description 任务开始时间
      *
      * @var string
      */
-    public $taskId;
+    public $beginTime;
 
     /**
-     * @description 任务总数
+     * @description 任务结束时间
      *
-     * @var int
+     * @var string
      */
-    public $total;
-
-    /**
-     * @description 完成个数
-     *
-     * @var int
-     */
-    public $success;
+    public $endTime;
 
     /**
      * @description 失败个数
@@ -44,26 +37,33 @@ class GetAsyncTaskInfoResponseBody extends Model
     public $status;
 
     /**
-     * @description 任务开始时间
+     * @description 完成个数
      *
-     * @var string
+     * @var int
      */
-    public $beginTime;
+    public $success;
 
     /**
-     * @description 任务结束时间
+     * @description 异步任务id
      *
      * @var string
      */
-    public $endTime;
+    public $taskId;
+
+    /**
+     * @description 任务总数
+     *
+     * @var int
+     */
+    public $total;
     protected $_name = [
-        'taskId'    => 'taskId',
-        'total'     => 'total',
-        'success'   => 'success',
-        'failed'    => 'failed',
-        'status'    => 'status',
         'beginTime' => 'beginTime',
         'endTime'   => 'endTime',
+        'failed'    => 'failed',
+        'status'    => 'status',
+        'success'   => 'success',
+        'taskId'    => 'taskId',
+        'total'     => 'total',
     ];
 
     public function validate()
@@ -73,14 +73,11 @@ class GetAsyncTaskInfoResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->taskId) {
-            $res['taskId'] = $this->taskId;
+        if (null !== $this->beginTime) {
+            $res['beginTime'] = $this->beginTime;
         }
-        if (null !== $this->total) {
-            $res['total'] = $this->total;
-        }
-        if (null !== $this->success) {
-            $res['success'] = $this->success;
+        if (null !== $this->endTime) {
+            $res['endTime'] = $this->endTime;
         }
         if (null !== $this->failed) {
             $res['failed'] = $this->failed;
@@ -88,11 +85,14 @@ class GetAsyncTaskInfoResponseBody extends Model
         if (null !== $this->status) {
             $res['status'] = $this->status;
         }
-        if (null !== $this->beginTime) {
-            $res['beginTime'] = $this->beginTime;
+        if (null !== $this->success) {
+            $res['success'] = $this->success;
         }
-        if (null !== $this->endTime) {
-            $res['endTime'] = $this->endTime;
+        if (null !== $this->taskId) {
+            $res['taskId'] = $this->taskId;
+        }
+        if (null !== $this->total) {
+            $res['total'] = $this->total;
         }
 
         return $res;
@@ -106,14 +106,11 @@ class GetAsyncTaskInfoResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['taskId'])) {
-            $model->taskId = $map['taskId'];
+        if (isset($map['beginTime'])) {
+            $model->beginTime = $map['beginTime'];
         }
-        if (isset($map['total'])) {
-            $model->total = $map['total'];
-        }
-        if (isset($map['success'])) {
-            $model->success = $map['success'];
+        if (isset($map['endTime'])) {
+            $model->endTime = $map['endTime'];
         }
         if (isset($map['failed'])) {
             $model->failed = $map['failed'];
@@ -121,11 +118,14 @@ class GetAsyncTaskInfoResponseBody extends Model
         if (isset($map['status'])) {
             $model->status = $map['status'];
         }
-        if (isset($map['beginTime'])) {
-            $model->beginTime = $map['beginTime'];
+        if (isset($map['success'])) {
+            $model->success = $map['success'];
         }
-        if (isset($map['endTime'])) {
-            $model->endTime = $map['endTime'];
+        if (isset($map['taskId'])) {
+            $model->taskId = $map['taskId'];
+        }
+        if (isset($map['total'])) {
+            $model->total = $map['total'];
         }
 
         return $model;

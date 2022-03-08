@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class FinishBeginnerTaskRequest extends Model
 {
     /**
-     * @description 员工标识
-     *
-     * @var string
-     */
-    public $userId;
-
-    /**
      * @description 任务范围
      *
      * @var string
      */
     public $scope;
+
+    /**
+     * @description 员工标识
+     *
+     * @var string
+     */
+    public $userId;
     protected $_name = [
-        'userId' => 'userId',
         'scope'  => 'scope',
+        'userId' => 'userId',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class FinishBeginnerTaskRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
-        }
         if (null !== $this->scope) {
             $res['scope'] = $this->scope;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class FinishBeginnerTaskRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
-        }
         if (isset($map['scope'])) {
             $model->scope = $map['scope'];
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

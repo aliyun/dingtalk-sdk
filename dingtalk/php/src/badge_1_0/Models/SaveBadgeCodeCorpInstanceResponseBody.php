@@ -23,23 +23,23 @@ class SaveBadgeCodeCorpInstanceResponseBody extends Model
     public $corpId;
 
     /**
-     * @description 状态
-     *
-     * @var string
-     */
-    public $status;
-
-    /**
      * @description 扩展参数
      *
      * @var string[]
      */
     public $extInfo;
+
+    /**
+     * @description 状态
+     *
+     * @var string
+     */
+    public $status;
     protected $_name = [
         'codeIdentity' => 'codeIdentity',
         'corpId'       => 'corpId',
-        'status'       => 'status',
         'extInfo'      => 'extInfo',
+        'status'       => 'status',
     ];
 
     public function validate()
@@ -55,11 +55,11 @@ class SaveBadgeCodeCorpInstanceResponseBody extends Model
         if (null !== $this->corpId) {
             $res['corpId'] = $this->corpId;
         }
-        if (null !== $this->status) {
-            $res['status'] = $this->status;
-        }
         if (null !== $this->extInfo) {
             $res['extInfo'] = $this->extInfo;
+        }
+        if (null !== $this->status) {
+            $res['status'] = $this->status;
         }
 
         return $res;
@@ -79,11 +79,11 @@ class SaveBadgeCodeCorpInstanceResponseBody extends Model
         if (isset($map['corpId'])) {
             $model->corpId = $map['corpId'];
         }
-        if (isset($map['status'])) {
-            $model->status = $map['status'];
-        }
         if (isset($map['extInfo'])) {
             $model->extInfo = $map['extInfo'];
+        }
+        if (isset($map['status'])) {
+            $model->status = $map['status'];
         }
 
         return $model;

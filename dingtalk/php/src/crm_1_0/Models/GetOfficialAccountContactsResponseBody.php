@@ -10,18 +10,18 @@ use AlibabaCloud\Tea\Model;
 class GetOfficialAccountContactsResponseBody extends Model
 {
     /**
-     * @description 下一页的游标，为null则表示无数据
-     *
-     * @var string
-     */
-    public $nextToken;
-
-    /**
      * @description 分页大小
      *
      * @var int
      */
     public $maxResults;
+
+    /**
+     * @description 下一页的游标，为null则表示无数据
+     *
+     * @var string
+     */
+    public $nextToken;
 
     /**
      * @description 客户数据节点
@@ -30,8 +30,8 @@ class GetOfficialAccountContactsResponseBody extends Model
      */
     public $values;
     protected $_name = [
-        'nextToken'  => 'nextToken',
         'maxResults' => 'maxResults',
+        'nextToken'  => 'nextToken',
         'values'     => 'values',
     ];
 
@@ -42,11 +42,11 @@ class GetOfficialAccountContactsResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->nextToken) {
-            $res['nextToken'] = $this->nextToken;
-        }
         if (null !== $this->maxResults) {
             $res['maxResults'] = $this->maxResults;
+        }
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
         }
         if (null !== $this->values) {
             $res['values'] = [];
@@ -69,11 +69,11 @@ class GetOfficialAccountContactsResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['nextToken'])) {
-            $model->nextToken = $map['nextToken'];
-        }
         if (isset($map['maxResults'])) {
             $model->maxResults = $map['maxResults'];
+        }
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
         }
         if (isset($map['values'])) {
             if (!empty($map['values'])) {

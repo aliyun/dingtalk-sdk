@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class QueryCrmGroupChatsRequest extends Model
 {
     /**
-     * @description 关系类型
+     * @description 每页返回的结果集个数
      *
-     * @var string
+     * @var int
      */
-    public $relationType;
+    public $maxResults;
 
     /**
      * @description 第一页不传，下一页传入上一页返回的nextToken
@@ -23,23 +23,23 @@ class QueryCrmGroupChatsRequest extends Model
     public $nextToken;
 
     /**
-     * @description 每页返回的结果集个数
-     *
-     * @var int
-     */
-    public $maxResults;
-
-    /**
      * @description 查询DSL
      *
      * @var string
      */
     public $queryDsl;
+
+    /**
+     * @description 关系类型
+     *
+     * @var string
+     */
+    public $relationType;
     protected $_name = [
-        'relationType' => 'relationType',
-        'nextToken'    => 'nextToken',
         'maxResults'   => 'maxResults',
+        'nextToken'    => 'nextToken',
         'queryDsl'     => 'queryDsl',
+        'relationType' => 'relationType',
     ];
 
     public function validate()
@@ -49,17 +49,17 @@ class QueryCrmGroupChatsRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->relationType) {
-            $res['relationType'] = $this->relationType;
+        if (null !== $this->maxResults) {
+            $res['maxResults'] = $this->maxResults;
         }
         if (null !== $this->nextToken) {
             $res['nextToken'] = $this->nextToken;
         }
-        if (null !== $this->maxResults) {
-            $res['maxResults'] = $this->maxResults;
-        }
         if (null !== $this->queryDsl) {
             $res['queryDsl'] = $this->queryDsl;
+        }
+        if (null !== $this->relationType) {
+            $res['relationType'] = $this->relationType;
         }
 
         return $res;
@@ -73,17 +73,17 @@ class QueryCrmGroupChatsRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['relationType'])) {
-            $model->relationType = $map['relationType'];
+        if (isset($map['maxResults'])) {
+            $model->maxResults = $map['maxResults'];
         }
         if (isset($map['nextToken'])) {
             $model->nextToken = $map['nextToken'];
         }
-        if (isset($map['maxResults'])) {
-            $model->maxResults = $map['maxResults'];
-        }
         if (isset($map['queryDsl'])) {
             $model->queryDsl = $map['queryDsl'];
+        }
+        if (isset($map['relationType'])) {
+            $model->relationType = $map['relationType'];
         }
 
         return $model;

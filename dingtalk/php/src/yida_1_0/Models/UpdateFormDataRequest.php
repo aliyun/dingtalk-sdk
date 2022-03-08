@@ -16,18 +16,11 @@ class UpdateFormDataRequest extends Model
     public $appType;
 
     /**
-     * @description 应用秘钥。在应用数据中获取。
+     * @description 要更新的表单数据ID
      *
      * @var string
      */
-    public $systemToken;
-
-    /**
-     * @description 钉钉userId
-     *
-     * @var string
-     */
-    public $userId;
+    public $formInstanceId;
 
     /**
      * @description 语言。可选值：zh_CN/en_US 默认：zh_CN
@@ -37,11 +30,18 @@ class UpdateFormDataRequest extends Model
     public $language;
 
     /**
-     * @description 要更新的表单数据ID
+     * @description 应用秘钥。在应用数据中获取。
      *
      * @var string
      */
-    public $formInstanceId;
+    public $systemToken;
+
+    /**
+     * @description 要更新的表单组件值。参数有的组件更新，没有的组件保持不变。 明细的值只能统一更新，无法只更新明细下某个组件的值
+     *
+     * @var string
+     */
+    public $updateFormDataJson;
 
     /**
      * @description 使用最新的表单版本进行更新。默认为false
@@ -51,19 +51,19 @@ class UpdateFormDataRequest extends Model
     public $useLatestVersion;
 
     /**
-     * @description 要更新的表单组件值。参数有的组件更新，没有的组件保持不变。 明细的值只能统一更新，无法只更新明细下某个组件的值
+     * @description 钉钉userId
      *
      * @var string
      */
-    public $updateFormDataJson;
+    public $userId;
     protected $_name = [
         'appType'            => 'appType',
-        'systemToken'        => 'systemToken',
-        'userId'             => 'userId',
-        'language'           => 'language',
         'formInstanceId'     => 'formInstanceId',
-        'useLatestVersion'   => 'useLatestVersion',
+        'language'           => 'language',
+        'systemToken'        => 'systemToken',
         'updateFormDataJson' => 'updateFormDataJson',
+        'useLatestVersion'   => 'useLatestVersion',
+        'userId'             => 'userId',
     ];
 
     public function validate()
@@ -76,23 +76,23 @@ class UpdateFormDataRequest extends Model
         if (null !== $this->appType) {
             $res['appType'] = $this->appType;
         }
-        if (null !== $this->systemToken) {
-            $res['systemToken'] = $this->systemToken;
-        }
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
+        if (null !== $this->formInstanceId) {
+            $res['formInstanceId'] = $this->formInstanceId;
         }
         if (null !== $this->language) {
             $res['language'] = $this->language;
         }
-        if (null !== $this->formInstanceId) {
-            $res['formInstanceId'] = $this->formInstanceId;
+        if (null !== $this->systemToken) {
+            $res['systemToken'] = $this->systemToken;
+        }
+        if (null !== $this->updateFormDataJson) {
+            $res['updateFormDataJson'] = $this->updateFormDataJson;
         }
         if (null !== $this->useLatestVersion) {
             $res['useLatestVersion'] = $this->useLatestVersion;
         }
-        if (null !== $this->updateFormDataJson) {
-            $res['updateFormDataJson'] = $this->updateFormDataJson;
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -109,23 +109,23 @@ class UpdateFormDataRequest extends Model
         if (isset($map['appType'])) {
             $model->appType = $map['appType'];
         }
-        if (isset($map['systemToken'])) {
-            $model->systemToken = $map['systemToken'];
-        }
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
+        if (isset($map['formInstanceId'])) {
+            $model->formInstanceId = $map['formInstanceId'];
         }
         if (isset($map['language'])) {
             $model->language = $map['language'];
         }
-        if (isset($map['formInstanceId'])) {
-            $model->formInstanceId = $map['formInstanceId'];
+        if (isset($map['systemToken'])) {
+            $model->systemToken = $map['systemToken'];
+        }
+        if (isset($map['updateFormDataJson'])) {
+            $model->updateFormDataJson = $map['updateFormDataJson'];
         }
         if (isset($map['useLatestVersion'])) {
             $model->useLatestVersion = $map['useLatestVersion'];
         }
-        if (isset($map['updateFormDataJson'])) {
-            $model->updateFormDataJson = $map['updateFormDataJson'];
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

@@ -10,11 +10,11 @@ use AlibabaCloud\Tea\Model;
 class workspace extends Model
 {
     /**
-     * @description 团队空间Id
+     * @description 团队空间创建时间
      *
-     * @var string
+     * @var int
      */
-    public $workspaceId;
+    public $createTime;
 
     /**
      * @description 团队空间名称
@@ -24,11 +24,11 @@ class workspace extends Model
     public $name;
 
     /**
-     * @description 团队空间打开url
+     * @description 是否全员公开
      *
-     * @var string
+     * @var bool
      */
-    public $url;
+    public $orgPublished;
 
     /**
      * @description 最近访问列表
@@ -38,25 +38,25 @@ class workspace extends Model
     public $recentList;
 
     /**
-     * @description 是否全员公开
+     * @description 团队空间打开url
      *
-     * @var bool
+     * @var string
      */
-    public $orgPublished;
+    public $url;
 
     /**
-     * @description 团队空间创建时间
+     * @description 团队空间Id
      *
-     * @var int
+     * @var string
      */
-    public $createTime;
+    public $workspaceId;
     protected $_name = [
-        'workspaceId'  => 'workspaceId',
-        'name'         => 'name',
-        'url'          => 'url',
-        'recentList'   => 'recentList',
-        'orgPublished' => 'orgPublished',
         'createTime'   => 'createTime',
+        'name'         => 'name',
+        'orgPublished' => 'orgPublished',
+        'recentList'   => 'recentList',
+        'url'          => 'url',
+        'workspaceId'  => 'workspaceId',
     ];
 
     public function validate()
@@ -66,14 +66,14 @@ class workspace extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->workspaceId) {
-            $res['workspaceId'] = $this->workspaceId;
+        if (null !== $this->createTime) {
+            $res['createTime'] = $this->createTime;
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
         }
-        if (null !== $this->url) {
-            $res['url'] = $this->url;
+        if (null !== $this->orgPublished) {
+            $res['orgPublished'] = $this->orgPublished;
         }
         if (null !== $this->recentList) {
             $res['recentList'] = [];
@@ -84,11 +84,11 @@ class workspace extends Model
                 }
             }
         }
-        if (null !== $this->orgPublished) {
-            $res['orgPublished'] = $this->orgPublished;
+        if (null !== $this->url) {
+            $res['url'] = $this->url;
         }
-        if (null !== $this->createTime) {
-            $res['createTime'] = $this->createTime;
+        if (null !== $this->workspaceId) {
+            $res['workspaceId'] = $this->workspaceId;
         }
 
         return $res;
@@ -102,14 +102,14 @@ class workspace extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['workspaceId'])) {
-            $model->workspaceId = $map['workspaceId'];
+        if (isset($map['createTime'])) {
+            $model->createTime = $map['createTime'];
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];
         }
-        if (isset($map['url'])) {
-            $model->url = $map['url'];
+        if (isset($map['orgPublished'])) {
+            $model->orgPublished = $map['orgPublished'];
         }
         if (isset($map['recentList'])) {
             if (!empty($map['recentList'])) {
@@ -120,11 +120,11 @@ class workspace extends Model
                 }
             }
         }
-        if (isset($map['orgPublished'])) {
-            $model->orgPublished = $map['orgPublished'];
+        if (isset($map['url'])) {
+            $model->url = $map['url'];
         }
-        if (isset($map['createTime'])) {
-            $model->createTime = $map['createTime'];
+        if (isset($map['workspaceId'])) {
+            $model->workspaceId = $map['workspaceId'];
         }
 
         return $model;

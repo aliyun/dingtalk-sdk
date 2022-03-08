@@ -9,18 +9,16 @@ use AlibabaCloud\Tea\Model;
 class AskRobotRequest extends Model
 {
     /**
+     * @var string
+     */
+    public $dingUserId;
+
+    /**
      * @description 问题
      *
      * @var string
      */
     public $question;
-
-    /**
-     * @description 企业corpId
-     *
-     * @var string
-     */
-    public $dingCorpId;
 
     /**
      * @description 机器人id
@@ -35,25 +33,11 @@ class AskRobotRequest extends Model
      * @var string
      */
     public $sessionUuid;
-
-    /**
-     * @description suiteKey
-     *
-     * @var string
-     */
-    public $dingSuiteKey;
-
-    /**
-     * @var string
-     */
-    public $dingUserId;
     protected $_name = [
-        'question'     => 'question',
-        'dingCorpId'   => 'dingCorpId',
-        'robotAppKey'  => 'robotAppKey',
-        'sessionUuid'  => 'sessionUuid',
-        'dingSuiteKey' => 'dingSuiteKey',
-        'dingUserId'   => 'dingUserId',
+        'dingUserId'  => 'dingUserId',
+        'question'    => 'question',
+        'robotAppKey' => 'robotAppKey',
+        'sessionUuid' => 'sessionUuid',
     ];
 
     public function validate()
@@ -63,23 +47,17 @@ class AskRobotRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->dingUserId) {
+            $res['dingUserId'] = $this->dingUserId;
+        }
         if (null !== $this->question) {
             $res['question'] = $this->question;
-        }
-        if (null !== $this->dingCorpId) {
-            $res['dingCorpId'] = $this->dingCorpId;
         }
         if (null !== $this->robotAppKey) {
             $res['robotAppKey'] = $this->robotAppKey;
         }
         if (null !== $this->sessionUuid) {
             $res['sessionUuid'] = $this->sessionUuid;
-        }
-        if (null !== $this->dingSuiteKey) {
-            $res['dingSuiteKey'] = $this->dingSuiteKey;
-        }
-        if (null !== $this->dingUserId) {
-            $res['dingUserId'] = $this->dingUserId;
         }
 
         return $res;
@@ -93,23 +71,17 @@ class AskRobotRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['dingUserId'])) {
+            $model->dingUserId = $map['dingUserId'];
+        }
         if (isset($map['question'])) {
             $model->question = $map['question'];
-        }
-        if (isset($map['dingCorpId'])) {
-            $model->dingCorpId = $map['dingCorpId'];
         }
         if (isset($map['robotAppKey'])) {
             $model->robotAppKey = $map['robotAppKey'];
         }
         if (isset($map['sessionUuid'])) {
             $model->sessionUuid = $map['sessionUuid'];
-        }
-        if (isset($map['dingSuiteKey'])) {
-            $model->dingSuiteKey = $map['dingSuiteKey'];
-        }
-        if (isset($map['dingUserId'])) {
-            $model->dingUserId = $map['dingUserId'];
         }
 
         return $model;

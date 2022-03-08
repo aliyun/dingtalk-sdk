@@ -17,11 +17,11 @@ class JoinGroupSetRequest extends Model
     public $bizDataList;
 
     /**
-     * @description unionId。
+     * @description 组织id。
      *
      * @var string
      */
-    public $unionId;
+    public $corpId;
 
     /**
      * @description 群组openGroupSetId。
@@ -31,16 +31,16 @@ class JoinGroupSetRequest extends Model
     public $openGroupSetId;
 
     /**
-     * @description 组织id。
+     * @description unionId。
      *
      * @var string
      */
-    public $corpId;
+    public $unionId;
     protected $_name = [
         'bizDataList'    => 'bizDataList',
-        'unionId'        => 'unionId',
-        'openGroupSetId' => 'openGroupSetId',
         'corpId'         => 'corpId',
+        'openGroupSetId' => 'openGroupSetId',
+        'unionId'        => 'unionId',
     ];
 
     public function validate()
@@ -59,14 +59,14 @@ class JoinGroupSetRequest extends Model
                 }
             }
         }
-        if (null !== $this->unionId) {
-            $res['unionId'] = $this->unionId;
+        if (null !== $this->corpId) {
+            $res['corpId'] = $this->corpId;
         }
         if (null !== $this->openGroupSetId) {
             $res['openGroupSetId'] = $this->openGroupSetId;
         }
-        if (null !== $this->corpId) {
-            $res['corpId'] = $this->corpId;
+        if (null !== $this->unionId) {
+            $res['unionId'] = $this->unionId;
         }
 
         return $res;
@@ -89,14 +89,14 @@ class JoinGroupSetRequest extends Model
                 }
             }
         }
-        if (isset($map['unionId'])) {
-            $model->unionId = $map['unionId'];
+        if (isset($map['corpId'])) {
+            $model->corpId = $map['corpId'];
         }
         if (isset($map['openGroupSetId'])) {
             $model->openGroupSetId = $map['openGroupSetId'];
         }
-        if (isset($map['corpId'])) {
-            $model->corpId = $map['corpId'];
+        if (isset($map['unionId'])) {
+            $model->unionId = $map['unionId'];
         }
 
         return $model;

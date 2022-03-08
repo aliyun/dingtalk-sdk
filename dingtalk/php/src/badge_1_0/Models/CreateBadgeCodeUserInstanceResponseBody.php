@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class CreateBadgeCodeUserInstanceResponseBody extends Model
 {
     /**
-     * @description 码ID
-     *
-     * @var string
-     */
-    public $codeId;
-
-    /**
      * @description 码详情跳转地址
      *
      * @var string
      */
     public $codeDetailUrl;
+
+    /**
+     * @description 码ID
+     *
+     * @var string
+     */
+    public $codeId;
     protected $_name = [
-        'codeId'        => 'codeId',
         'codeDetailUrl' => 'codeDetailUrl',
+        'codeId'        => 'codeId',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class CreateBadgeCodeUserInstanceResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->codeId) {
-            $res['codeId'] = $this->codeId;
-        }
         if (null !== $this->codeDetailUrl) {
             $res['codeDetailUrl'] = $this->codeDetailUrl;
+        }
+        if (null !== $this->codeId) {
+            $res['codeId'] = $this->codeId;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class CreateBadgeCodeUserInstanceResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['codeId'])) {
-            $model->codeId = $map['codeId'];
-        }
         if (isset($map['codeDetailUrl'])) {
             $model->codeDetailUrl = $map['codeDetailUrl'];
+        }
+        if (isset($map['codeId'])) {
+            $model->codeId = $map['codeId'];
         }
 
         return $model;

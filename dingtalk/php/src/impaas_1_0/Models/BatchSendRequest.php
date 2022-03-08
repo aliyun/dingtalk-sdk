@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class BatchSendRequest extends Model
 {
     /**
-     * @description 发送者，企业员工账号
-     *
-     * @var string
-     */
-    public $userId;
-
-    /**
      * @description 接受者列表，外部用户
      *
      * @var string[]
@@ -35,11 +28,18 @@ class BatchSendRequest extends Model
      * @var string[]
      */
     public $conversationIds;
+
+    /**
+     * @description 发送者，企业员工账号
+     *
+     * @var string
+     */
+    public $userId;
     protected $_name = [
-        'userId'          => 'userId',
         'appUids'         => 'appUids',
         'content'         => 'content',
         'conversationIds' => 'conversationIds',
+        'userId'          => 'userId',
     ];
 
     public function validate()
@@ -49,9 +49,6 @@ class BatchSendRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
-        }
         if (null !== $this->appUids) {
             $res['appUids'] = $this->appUids;
         }
@@ -60,6 +57,9 @@ class BatchSendRequest extends Model
         }
         if (null !== $this->conversationIds) {
             $res['conversationIds'] = $this->conversationIds;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -73,9 +73,6 @@ class BatchSendRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
-        }
         if (isset($map['appUids'])) {
             if (!empty($map['appUids'])) {
                 $model->appUids = $map['appUids'];
@@ -88,6 +85,9 @@ class BatchSendRequest extends Model
             if (!empty($map['conversationIds'])) {
                 $model->conversationIds = $map['conversationIds'];
             }
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

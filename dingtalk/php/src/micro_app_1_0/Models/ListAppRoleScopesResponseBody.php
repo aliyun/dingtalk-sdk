@@ -10,6 +10,13 @@ use AlibabaCloud\Tea\Model;
 class ListAppRoleScopesResponseBody extends Model
 {
     /**
+     * @description 数据列表
+     *
+     * @var dataList[]
+     */
+    public $dataList;
+
+    /**
      * @description 是否还有数据，true: 还有；false: 已经全部拉取完成
      *
      * @var bool
@@ -22,17 +29,10 @@ class ListAppRoleScopesResponseBody extends Model
      * @var int
      */
     public $nextToken;
-
-    /**
-     * @description 数据列表
-     *
-     * @var dataList[]
-     */
-    public $dataList;
     protected $_name = [
+        'dataList'  => 'dataList',
         'hasMore'   => 'hasMore',
         'nextToken' => 'nextToken',
-        'dataList'  => 'dataList',
     ];
 
     public function validate()
@@ -42,12 +42,6 @@ class ListAppRoleScopesResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->hasMore) {
-            $res['hasMore'] = $this->hasMore;
-        }
-        if (null !== $this->nextToken) {
-            $res['nextToken'] = $this->nextToken;
-        }
         if (null !== $this->dataList) {
             $res['dataList'] = [];
             if (null !== $this->dataList && \is_array($this->dataList)) {
@@ -56,6 +50,12 @@ class ListAppRoleScopesResponseBody extends Model
                     $res['dataList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->hasMore) {
+            $res['hasMore'] = $this->hasMore;
+        }
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
         }
 
         return $res;
@@ -69,12 +69,6 @@ class ListAppRoleScopesResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['hasMore'])) {
-            $model->hasMore = $map['hasMore'];
-        }
-        if (isset($map['nextToken'])) {
-            $model->nextToken = $map['nextToken'];
-        }
         if (isset($map['dataList'])) {
             if (!empty($map['dataList'])) {
                 $model->dataList = [];
@@ -83,6 +77,12 @@ class ListAppRoleScopesResponseBody extends Model
                     $model->dataList[$n++] = null !== $item ? dataList::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['hasMore'])) {
+            $model->hasMore = $map['hasMore'];
+        }
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
         }
 
         return $model;

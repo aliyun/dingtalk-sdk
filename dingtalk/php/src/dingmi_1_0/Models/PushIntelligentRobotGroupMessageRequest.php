@@ -9,25 +9,11 @@ use AlibabaCloud\Tea\Model;
 class PushIntelligentRobotGroupMessageRequest extends Model
 {
     /**
-     * @description 企业corpId
-     *
-     * @var string
-     */
-    public $dingCorpId;
-
-    /**
      * @description 机器人id
      *
      * @var string
      */
     public $chatbotId;
-
-    /**
-     * @description 群对话id
-     *
-     * @var string
-     */
-    public $openConversationId;
 
     /**
      * @description 消息类型
@@ -42,12 +28,18 @@ class PushIntelligentRobotGroupMessageRequest extends Model
      * @var string
      */
     public $msgParam;
+
+    /**
+     * @description 群对话id
+     *
+     * @var string
+     */
+    public $openConversationId;
     protected $_name = [
-        'dingCorpId'         => 'dingCorpId',
         'chatbotId'          => 'chatbotId',
-        'openConversationId' => 'openConversationId',
         'msgKey'             => 'msgKey',
         'msgParam'           => 'msgParam',
+        'openConversationId' => 'openConversationId',
     ];
 
     public function validate()
@@ -57,20 +49,17 @@ class PushIntelligentRobotGroupMessageRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->dingCorpId) {
-            $res['dingCorpId'] = $this->dingCorpId;
-        }
         if (null !== $this->chatbotId) {
             $res['chatbotId'] = $this->chatbotId;
-        }
-        if (null !== $this->openConversationId) {
-            $res['openConversationId'] = $this->openConversationId;
         }
         if (null !== $this->msgKey) {
             $res['msgKey'] = $this->msgKey;
         }
         if (null !== $this->msgParam) {
             $res['msgParam'] = $this->msgParam;
+        }
+        if (null !== $this->openConversationId) {
+            $res['openConversationId'] = $this->openConversationId;
         }
 
         return $res;
@@ -84,20 +73,17 @@ class PushIntelligentRobotGroupMessageRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['dingCorpId'])) {
-            $model->dingCorpId = $map['dingCorpId'];
-        }
         if (isset($map['chatbotId'])) {
             $model->chatbotId = $map['chatbotId'];
-        }
-        if (isset($map['openConversationId'])) {
-            $model->openConversationId = $map['openConversationId'];
         }
         if (isset($map['msgKey'])) {
             $model->msgKey = $map['msgKey'];
         }
         if (isset($map['msgParam'])) {
             $model->msgParam = $map['msgParam'];
+        }
+        if (isset($map['openConversationId'])) {
+            $model->openConversationId = $map['openConversationId'];
         }
 
         return $model;

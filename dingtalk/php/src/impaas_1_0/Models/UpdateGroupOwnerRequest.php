@@ -11,7 +11,7 @@ class UpdateGroupOwnerRequest extends Model
     /**
      * @var string
      */
-    public $ownerUid;
+    public $conversationId;
 
     /**
      * @var string
@@ -21,11 +21,11 @@ class UpdateGroupOwnerRequest extends Model
     /**
      * @var string
      */
-    public $conversationId;
+    public $ownerUid;
     protected $_name = [
-        'ownerUid'       => 'ownerUid',
-        'operatorUid'    => 'operatorUid',
         'conversationId' => 'conversationId',
+        'operatorUid'    => 'operatorUid',
+        'ownerUid'       => 'ownerUid',
     ];
 
     public function validate()
@@ -35,14 +35,14 @@ class UpdateGroupOwnerRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->ownerUid) {
-            $res['ownerUid'] = $this->ownerUid;
+        if (null !== $this->conversationId) {
+            $res['conversationId'] = $this->conversationId;
         }
         if (null !== $this->operatorUid) {
             $res['operatorUid'] = $this->operatorUid;
         }
-        if (null !== $this->conversationId) {
-            $res['conversationId'] = $this->conversationId;
+        if (null !== $this->ownerUid) {
+            $res['ownerUid'] = $this->ownerUid;
         }
 
         return $res;
@@ -56,14 +56,14 @@ class UpdateGroupOwnerRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['ownerUid'])) {
-            $model->ownerUid = $map['ownerUid'];
+        if (isset($map['conversationId'])) {
+            $model->conversationId = $map['conversationId'];
         }
         if (isset($map['operatorUid'])) {
             $model->operatorUid = $map['operatorUid'];
         }
-        if (isset($map['conversationId'])) {
-            $model->conversationId = $map['conversationId'];
+        if (isset($map['ownerUid'])) {
+            $model->ownerUid = $map['ownerUid'];
         }
 
         return $model;

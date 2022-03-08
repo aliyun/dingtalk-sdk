@@ -10,9 +10,9 @@ use AlibabaCloud\Tea\Model;
 class ListActivateDevicesResponseBody extends Model
 {
     /**
-     * @var int
+     * @var result[]
      */
-    public $totalCount;
+    public $result;
 
     /**
      * @var bool
@@ -20,13 +20,13 @@ class ListActivateDevicesResponseBody extends Model
     public $success;
 
     /**
-     * @var result[]
+     * @var int
      */
-    public $result;
+    public $totalCount;
     protected $_name = [
-        'totalCount' => 'totalCount',
-        'success'    => 'success',
         'result'     => 'result',
+        'success'    => 'success',
+        'totalCount' => 'totalCount',
     ];
 
     public function validate()
@@ -36,12 +36,6 @@ class ListActivateDevicesResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->totalCount) {
-            $res['totalCount'] = $this->totalCount;
-        }
-        if (null !== $this->success) {
-            $res['success'] = $this->success;
-        }
         if (null !== $this->result) {
             $res['result'] = [];
             if (null !== $this->result && \is_array($this->result)) {
@@ -50,6 +44,12 @@ class ListActivateDevicesResponseBody extends Model
                     $res['result'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->success) {
+            $res['success'] = $this->success;
+        }
+        if (null !== $this->totalCount) {
+            $res['totalCount'] = $this->totalCount;
         }
 
         return $res;
@@ -63,12 +63,6 @@ class ListActivateDevicesResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['totalCount'])) {
-            $model->totalCount = $map['totalCount'];
-        }
-        if (isset($map['success'])) {
-            $model->success = $map['success'];
-        }
         if (isset($map['result'])) {
             if (!empty($map['result'])) {
                 $model->result = [];
@@ -77,6 +71,12 @@ class ListActivateDevicesResponseBody extends Model
                     $model->result[$n++] = null !== $item ? result::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['success'])) {
+            $model->success = $map['success'];
+        }
+        if (isset($map['totalCount'])) {
+            $model->totalCount = $map['totalCount'];
         }
 
         return $model;

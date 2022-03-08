@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class AddAppToWorkBenchGroupRequest extends Model
 {
     /**
-     * @description 创建人unionId
+     * @description 工作台分组id
      *
      * @var string
      */
-    public $opUnionId;
+    public $componentId;
 
     /**
      * @description 关联组织corpId
@@ -23,15 +23,15 @@ class AddAppToWorkBenchGroupRequest extends Model
     public $ecologicalCorpId;
 
     /**
-     * @description 工作台分组id
+     * @description 创建人unionId
      *
      * @var string
      */
-    public $componentId;
+    public $opUnionId;
     protected $_name = [
-        'opUnionId'        => 'opUnionId',
-        'ecologicalCorpId' => 'ecologicalCorpId',
         'componentId'      => 'componentId',
+        'ecologicalCorpId' => 'ecologicalCorpId',
+        'opUnionId'        => 'opUnionId',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class AddAppToWorkBenchGroupRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->opUnionId) {
-            $res['opUnionId'] = $this->opUnionId;
+        if (null !== $this->componentId) {
+            $res['componentId'] = $this->componentId;
         }
         if (null !== $this->ecologicalCorpId) {
             $res['ecologicalCorpId'] = $this->ecologicalCorpId;
         }
-        if (null !== $this->componentId) {
-            $res['componentId'] = $this->componentId;
+        if (null !== $this->opUnionId) {
+            $res['opUnionId'] = $this->opUnionId;
         }
 
         return $res;
@@ -62,14 +62,14 @@ class AddAppToWorkBenchGroupRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['opUnionId'])) {
-            $model->opUnionId = $map['opUnionId'];
+        if (isset($map['componentId'])) {
+            $model->componentId = $map['componentId'];
         }
         if (isset($map['ecologicalCorpId'])) {
             $model->ecologicalCorpId = $map['ecologicalCorpId'];
         }
-        if (isset($map['componentId'])) {
-            $model->componentId = $map['componentId'];
+        if (isset($map['opUnionId'])) {
+            $model->opUnionId = $map['opUnionId'];
         }
 
         return $model;

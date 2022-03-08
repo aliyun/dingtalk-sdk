@@ -16,18 +16,18 @@ class QueryPurchaseInfoResponseBody extends Model
     public $corpId;
 
     /**
-     * @description 员工id
-     *
-     * @var string
-     */
-    public $userId;
-
-    /**
      * @description 商户id
      *
      * @var string
      */
     public $merchantId;
+
+    /**
+     * @description 名字
+     *
+     * @var string
+     */
+    public $name;
 
     /**
      * @description 场景id
@@ -44,18 +44,18 @@ class QueryPurchaseInfoResponseBody extends Model
     public $status;
 
     /**
-     * @description 名字
+     * @description 员工id
      *
      * @var string
      */
-    public $name;
+    public $userId;
     protected $_name = [
         'corpId'     => 'corpId',
-        'userId'     => 'userId',
         'merchantId' => 'merchantId',
+        'name'       => 'name',
         'scene'      => 'scene',
         'status'     => 'status',
-        'name'       => 'name',
+        'userId'     => 'userId',
     ];
 
     public function validate()
@@ -68,11 +68,11 @@ class QueryPurchaseInfoResponseBody extends Model
         if (null !== $this->corpId) {
             $res['corpId'] = $this->corpId;
         }
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
-        }
         if (null !== $this->merchantId) {
             $res['merchantId'] = $this->merchantId;
+        }
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
         }
         if (null !== $this->scene) {
             $res['scene'] = $this->scene;
@@ -80,8 +80,8 @@ class QueryPurchaseInfoResponseBody extends Model
         if (null !== $this->status) {
             $res['status'] = $this->status;
         }
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -98,11 +98,11 @@ class QueryPurchaseInfoResponseBody extends Model
         if (isset($map['corpId'])) {
             $model->corpId = $map['corpId'];
         }
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
-        }
         if (isset($map['merchantId'])) {
             $model->merchantId = $map['merchantId'];
+        }
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
         }
         if (isset($map['scene'])) {
             $model->scene = $map['scene'];
@@ -110,8 +110,8 @@ class QueryPurchaseInfoResponseBody extends Model
         if (isset($map['status'])) {
             $model->status = $map['status'];
         }
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class quotas extends Model
 {
     /**
-     * @description 容量类型
-     *
-     * @var string
-     */
-    public $type;
-
-    /**
      * @description 容量标识符
      *
      * @var string
@@ -30,15 +23,22 @@ class quotas extends Model
     public $quota;
 
     /**
+     * @description 容量类型
+     *
+     * @var string
+     */
+    public $type;
+
+    /**
      * @description 已使用容量
      *
      * @var int
      */
     public $usedQuota;
     protected $_name = [
-        'type'       => 'type',
         'identifier' => 'identifier',
         'quota'      => 'quota',
+        'type'       => 'type',
         'usedQuota'  => 'usedQuota',
     ];
 
@@ -49,14 +49,14 @@ class quotas extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->type) {
-            $res['type'] = $this->type;
-        }
         if (null !== $this->identifier) {
             $res['identifier'] = $this->identifier;
         }
         if (null !== $this->quota) {
             $res['quota'] = $this->quota;
+        }
+        if (null !== $this->type) {
+            $res['type'] = $this->type;
         }
         if (null !== $this->usedQuota) {
             $res['usedQuota'] = $this->usedQuota;
@@ -73,14 +73,14 @@ class quotas extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['type'])) {
-            $model->type = $map['type'];
-        }
         if (isset($map['identifier'])) {
             $model->identifier = $map['identifier'];
         }
         if (isset($map['quota'])) {
             $model->quota = $map['quota'];
+        }
+        if (isset($map['type'])) {
+            $model->type = $map['type'];
         }
         if (isset($map['usedQuota'])) {
             $model->usedQuota = $map['usedQuota'];

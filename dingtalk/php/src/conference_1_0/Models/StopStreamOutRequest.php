@@ -9,18 +9,18 @@ use AlibabaCloud\Tea\Model;
 class StopStreamOutRequest extends Model
 {
     /**
-     * @description 流id
-     *
-     * @var string
-     */
-    public $streamId;
-
-    /**
      * @description 是否停止所有流，为true时，则不理会streamId字段
      *
      * @var bool
      */
     public $stopAllStream;
+
+    /**
+     * @description 流id
+     *
+     * @var string
+     */
+    public $streamId;
 
     /**
      * @description 用户id
@@ -29,8 +29,8 @@ class StopStreamOutRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'streamId'      => 'streamId',
         'stopAllStream' => 'stopAllStream',
+        'streamId'      => 'streamId',
         'unionId'       => 'unionId',
     ];
 
@@ -41,11 +41,11 @@ class StopStreamOutRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->streamId) {
-            $res['streamId'] = $this->streamId;
-        }
         if (null !== $this->stopAllStream) {
             $res['stopAllStream'] = $this->stopAllStream;
+        }
+        if (null !== $this->streamId) {
+            $res['streamId'] = $this->streamId;
         }
         if (null !== $this->unionId) {
             $res['unionId'] = $this->unionId;
@@ -62,11 +62,11 @@ class StopStreamOutRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['streamId'])) {
-            $model->streamId = $map['streamId'];
-        }
         if (isset($map['stopAllStream'])) {
             $model->stopAllStream = $map['stopAllStream'];
+        }
+        if (isset($map['streamId'])) {
+            $model->streamId = $map['streamId'];
         }
         if (isset($map['unionId'])) {
             $model->unionId = $map['unionId'];

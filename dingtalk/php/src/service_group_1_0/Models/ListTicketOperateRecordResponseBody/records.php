@@ -18,6 +18,11 @@ class records extends Model
     public $openTicketId;
 
     /**
+     * @var string
+     */
+    public $operateData;
+
+    /**
      * @description 操作时间
      *
      * @var string
@@ -47,19 +52,14 @@ class records extends Model
      * @var ticketMemo
      */
     public $ticketMemo;
-
-    /**
-     * @var string
-     */
-    public $operateData;
     protected $_name = [
         'openTicketId'         => 'openTicketId',
+        'operateData'          => 'operateData',
         'operateTime'          => 'operateTime',
         'operation'            => 'operation',
         'operationDisplayName' => 'operationDisplayName',
         'operator'             => 'operator',
         'ticketMemo'           => 'ticketMemo',
-        'operateData'          => 'operateData',
     ];
 
     public function validate()
@@ -71,6 +71,9 @@ class records extends Model
         $res = [];
         if (null !== $this->openTicketId) {
             $res['openTicketId'] = $this->openTicketId;
+        }
+        if (null !== $this->operateData) {
+            $res['operateData'] = $this->operateData;
         }
         if (null !== $this->operateTime) {
             $res['operateTime'] = $this->operateTime;
@@ -87,9 +90,6 @@ class records extends Model
         if (null !== $this->ticketMemo) {
             $res['ticketMemo'] = null !== $this->ticketMemo ? $this->ticketMemo->toMap() : null;
         }
-        if (null !== $this->operateData) {
-            $res['operateData'] = $this->operateData;
-        }
 
         return $res;
     }
@@ -105,6 +105,9 @@ class records extends Model
         if (isset($map['openTicketId'])) {
             $model->openTicketId = $map['openTicketId'];
         }
+        if (isset($map['operateData'])) {
+            $model->operateData = $map['operateData'];
+        }
         if (isset($map['operateTime'])) {
             $model->operateTime = $map['operateTime'];
         }
@@ -119,9 +122,6 @@ class records extends Model
         }
         if (isset($map['ticketMemo'])) {
             $model->ticketMemo = ticketMemo::fromMap($map['ticketMemo']);
-        }
-        if (isset($map['operateData'])) {
-            $model->operateData = $map['operateData'];
         }
 
         return $model;

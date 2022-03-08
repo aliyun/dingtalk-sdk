@@ -17,27 +17,6 @@ class AddResidentUsersRequest extends Model
     public $address;
 
     /**
-     * @description 是否是租客
-     *
-     * @var bool
-     */
-    public $isLeaseholder;
-
-    /**
-     * @description 居民名字
-     *
-     * @var string
-     */
-    public $userName;
-
-    /**
-     * @description 手机号码
-     *
-     * @var string
-     */
-    public $mobile;
-
-    /**
      * @description 户/租户部门id
      *
      * @var int
@@ -52,19 +31,40 @@ class AddResidentUsersRequest extends Model
     public $extField;
 
     /**
+     * @description 是否是租客
+     *
+     * @var bool
+     */
+    public $isLeaseholder;
+
+    /**
+     * @description 手机号码
+     *
+     * @var string
+     */
+    public $mobile;
+
+    /**
      * @description 与户主的关系
      *
      * @var string
      */
     public $relateType;
+
+    /**
+     * @description 居民名字
+     *
+     * @var string
+     */
+    public $userName;
     protected $_name = [
         'address'       => 'address',
-        'isLeaseholder' => 'isLeaseholder',
-        'userName'      => 'userName',
-        'mobile'        => 'mobile',
         'departmentId'  => 'departmentId',
         'extField'      => 'extField',
+        'isLeaseholder' => 'isLeaseholder',
+        'mobile'        => 'mobile',
         'relateType'    => 'relateType',
+        'userName'      => 'userName',
     ];
 
     public function validate()
@@ -76,15 +76,6 @@ class AddResidentUsersRequest extends Model
         $res = [];
         if (null !== $this->address) {
             $res['address'] = $this->address;
-        }
-        if (null !== $this->isLeaseholder) {
-            $res['isLeaseholder'] = $this->isLeaseholder;
-        }
-        if (null !== $this->userName) {
-            $res['userName'] = $this->userName;
-        }
-        if (null !== $this->mobile) {
-            $res['mobile'] = $this->mobile;
         }
         if (null !== $this->departmentId) {
             $res['departmentId'] = $this->departmentId;
@@ -98,8 +89,17 @@ class AddResidentUsersRequest extends Model
                 }
             }
         }
+        if (null !== $this->isLeaseholder) {
+            $res['isLeaseholder'] = $this->isLeaseholder;
+        }
+        if (null !== $this->mobile) {
+            $res['mobile'] = $this->mobile;
+        }
         if (null !== $this->relateType) {
             $res['relateType'] = $this->relateType;
+        }
+        if (null !== $this->userName) {
+            $res['userName'] = $this->userName;
         }
 
         return $res;
@@ -116,15 +116,6 @@ class AddResidentUsersRequest extends Model
         if (isset($map['address'])) {
             $model->address = $map['address'];
         }
-        if (isset($map['isLeaseholder'])) {
-            $model->isLeaseholder = $map['isLeaseholder'];
-        }
-        if (isset($map['userName'])) {
-            $model->userName = $map['userName'];
-        }
-        if (isset($map['mobile'])) {
-            $model->mobile = $map['mobile'];
-        }
         if (isset($map['departmentId'])) {
             $model->departmentId = $map['departmentId'];
         }
@@ -137,8 +128,17 @@ class AddResidentUsersRequest extends Model
                 }
             }
         }
+        if (isset($map['isLeaseholder'])) {
+            $model->isLeaseholder = $map['isLeaseholder'];
+        }
+        if (isset($map['mobile'])) {
+            $model->mobile = $map['mobile'];
+        }
         if (isset($map['relateType'])) {
             $model->relateType = $map['relateType'];
+        }
+        if (isset($map['userName'])) {
+            $model->userName = $map['userName'];
         }
 
         return $model;

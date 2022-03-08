@@ -10,6 +10,11 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
+     * @var files[]
+     */
+    public $files;
+
+    /**
      * @var string
      */
     public $flowId;
@@ -18,15 +23,10 @@ class data extends Model
      * @var string
      */
     public $status;
-
-    /**
-     * @var files[]
-     */
-    public $files;
     protected $_name = [
+        'files'  => 'files',
         'flowId' => 'flowId',
         'status' => 'status',
-        'files'  => 'files',
     ];
 
     public function validate()
@@ -36,12 +36,6 @@ class data extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->flowId) {
-            $res['flowId'] = $this->flowId;
-        }
-        if (null !== $this->status) {
-            $res['status'] = $this->status;
-        }
         if (null !== $this->files) {
             $res['files'] = [];
             if (null !== $this->files && \is_array($this->files)) {
@@ -50,6 +44,12 @@ class data extends Model
                     $res['files'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->flowId) {
+            $res['flowId'] = $this->flowId;
+        }
+        if (null !== $this->status) {
+            $res['status'] = $this->status;
         }
 
         return $res;
@@ -63,12 +63,6 @@ class data extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['flowId'])) {
-            $model->flowId = $map['flowId'];
-        }
-        if (isset($map['status'])) {
-            $model->status = $map['status'];
-        }
         if (isset($map['files'])) {
             if (!empty($map['files'])) {
                 $model->files = [];
@@ -77,6 +71,12 @@ class data extends Model
                     $model->files[$n++] = null !== $item ? files::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['flowId'])) {
+            $model->flowId = $map['flowId'];
+        }
+        if (isset($map['status'])) {
+            $model->status = $map['status'];
         }
 
         return $model;

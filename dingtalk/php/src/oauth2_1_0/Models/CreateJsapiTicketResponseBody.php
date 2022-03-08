@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class CreateJsapiTicketResponseBody extends Model
 {
     /**
-     * @description jsapi ticket
-     *
-     * @var string
-     */
-    public $jsapiTicket;
-
-    /**
      * @description 超时时间
      *
      * @var int
      */
     public $expireIn;
+
+    /**
+     * @description jsapi ticket
+     *
+     * @var string
+     */
+    public $jsapiTicket;
     protected $_name = [
-        'jsapiTicket' => 'jsapiTicket',
         'expireIn'    => 'expireIn',
+        'jsapiTicket' => 'jsapiTicket',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class CreateJsapiTicketResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->jsapiTicket) {
-            $res['jsapiTicket'] = $this->jsapiTicket;
-        }
         if (null !== $this->expireIn) {
             $res['expireIn'] = $this->expireIn;
+        }
+        if (null !== $this->jsapiTicket) {
+            $res['jsapiTicket'] = $this->jsapiTicket;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class CreateJsapiTicketResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['jsapiTicket'])) {
-            $model->jsapiTicket = $map['jsapiTicket'];
-        }
         if (isset($map['expireIn'])) {
             $model->expireIn = $map['expireIn'];
+        }
+        if (isset($map['jsapiTicket'])) {
+            $model->jsapiTicket = $map['jsapiTicket'];
         }
 
         return $model;

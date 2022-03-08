@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class GetUserByUnionIdRequest extends Model
 {
     /**
+     * @description 通讯录语言(默认zh_CN另外支持en_US)
+     *
+     * @var string
+     */
+    public $language;
+
+    /**
      * @description 下属组织的组织ID，比如下属镇、村的corpId
      *
      * @var string
@@ -21,17 +28,10 @@ class GetUserByUnionIdRequest extends Model
      * @var string
      */
     public $unionId;
-
-    /**
-     * @description 通讯录语言(默认zh_CN另外支持en_US)
-     *
-     * @var string
-     */
-    public $language;
     protected $_name = [
+        'language'  => 'language',
         'subCorpId' => 'subCorpId',
         'unionId'   => 'unionId',
-        'language'  => 'language',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class GetUserByUnionIdRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->language) {
+            $res['language'] = $this->language;
+        }
         if (null !== $this->subCorpId) {
             $res['subCorpId'] = $this->subCorpId;
         }
         if (null !== $this->unionId) {
             $res['unionId'] = $this->unionId;
-        }
-        if (null !== $this->language) {
-            $res['language'] = $this->language;
         }
 
         return $res;
@@ -62,14 +62,14 @@ class GetUserByUnionIdRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['language'])) {
+            $model->language = $map['language'];
+        }
         if (isset($map['subCorpId'])) {
             $model->subCorpId = $map['subCorpId'];
         }
         if (isset($map['unionId'])) {
             $model->unionId = $map['unionId'];
-        }
-        if (isset($map['language'])) {
-            $model->language = $map['language'];
         }
 
         return $model;

@@ -11,20 +11,20 @@ class CheckClosingAccountResponseBody extends Model
     /**
      * @var string
      */
-    public $mesage;
+    public $code;
 
     /**
      * @var string
      */
-    public $code;
+    public $mesage;
 
     /**
      * @var bool
      */
     public $pass;
     protected $_name = [
-        'mesage' => 'mesage',
         'code'   => 'code',
+        'mesage' => 'mesage',
         'pass'   => 'pass',
     ];
 
@@ -35,11 +35,11 @@ class CheckClosingAccountResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->mesage) {
-            $res['mesage'] = $this->mesage;
-        }
         if (null !== $this->code) {
             $res['code'] = $this->code;
+        }
+        if (null !== $this->mesage) {
+            $res['mesage'] = $this->mesage;
         }
         if (null !== $this->pass) {
             $res['pass'] = $this->pass;
@@ -56,11 +56,11 @@ class CheckClosingAccountResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['mesage'])) {
-            $model->mesage = $map['mesage'];
-        }
         if (isset($map['code'])) {
             $model->code = $map['code'];
+        }
+        if (isset($map['mesage'])) {
+            $model->mesage = $map['mesage'];
         }
         if (isset($map['pass'])) {
             $model->pass = $map['pass'];

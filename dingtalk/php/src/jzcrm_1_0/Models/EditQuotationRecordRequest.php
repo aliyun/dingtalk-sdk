@@ -10,18 +10,18 @@ use AlibabaCloud\Tea\Model;
 class EditQuotationRecordRequest extends Model
 {
     /**
+     * @description 编辑数据
+     *
+     * @var data
+     */
+    public $data;
+
+    /**
      * @description 数据类型，固定填写161
      *
      * @var int
      */
     public $datatype;
-
-    /**
-     * @description 时间戳
-     *
-     * @var int
-     */
-    public $stamp;
 
     /**
      * @description 数据id，不填或者填0为新增数据
@@ -31,16 +31,16 @@ class EditQuotationRecordRequest extends Model
     public $msgid;
 
     /**
-     * @description 编辑数据
+     * @description 时间戳
      *
-     * @var data
+     * @var int
      */
-    public $data;
+    public $stamp;
     protected $_name = [
-        'datatype' => 'datatype',
-        'stamp'    => 'stamp',
-        'msgid'    => 'msgid',
         'data'     => 'data',
+        'datatype' => 'datatype',
+        'msgid'    => 'msgid',
+        'stamp'    => 'stamp',
     ];
 
     public function validate()
@@ -50,17 +50,17 @@ class EditQuotationRecordRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->data) {
+            $res['data'] = null !== $this->data ? $this->data->toMap() : null;
+        }
         if (null !== $this->datatype) {
             $res['datatype'] = $this->datatype;
-        }
-        if (null !== $this->stamp) {
-            $res['stamp'] = $this->stamp;
         }
         if (null !== $this->msgid) {
             $res['msgid'] = $this->msgid;
         }
-        if (null !== $this->data) {
-            $res['data'] = null !== $this->data ? $this->data->toMap() : null;
+        if (null !== $this->stamp) {
+            $res['stamp'] = $this->stamp;
         }
 
         return $res;
@@ -74,17 +74,17 @@ class EditQuotationRecordRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['data'])) {
+            $model->data = data::fromMap($map['data']);
+        }
         if (isset($map['datatype'])) {
             $model->datatype = $map['datatype'];
-        }
-        if (isset($map['stamp'])) {
-            $model->stamp = $map['stamp'];
         }
         if (isset($map['msgid'])) {
             $model->msgid = $map['msgid'];
         }
-        if (isset($map['data'])) {
-            $model->data = data::fromMap($map['data']);
+        if (isset($map['stamp'])) {
+            $model->stamp = $map['stamp'];
         }
 
         return $model;

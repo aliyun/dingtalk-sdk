@@ -9,20 +9,6 @@ use AlibabaCloud\Tea\Model;
 class QuerySchoolUserFaceRequest extends Model
 {
     /**
-     * @description 类型
-     *
-     * @var int
-     */
-    public $type;
-
-    /**
-     * @description 设备序列号
-     *
-     * @var string
-     */
-    public $sn;
-
-    /**
      * @description 页码
      *
      * @var int
@@ -35,11 +21,25 @@ class QuerySchoolUserFaceRequest extends Model
      * @var int
      */
     public $pageSize;
+
+    /**
+     * @description 设备序列号
+     *
+     * @var string
+     */
+    public $sn;
+
+    /**
+     * @description 类型
+     *
+     * @var int
+     */
+    public $type;
     protected $_name = [
-        'type'       => 'type',
-        'sn'         => 'sn',
         'pageNumber' => 'pageNumber',
         'pageSize'   => 'pageSize',
+        'sn'         => 'sn',
+        'type'       => 'type',
     ];
 
     public function validate()
@@ -49,17 +49,17 @@ class QuerySchoolUserFaceRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->type) {
-            $res['type'] = $this->type;
-        }
-        if (null !== $this->sn) {
-            $res['sn'] = $this->sn;
-        }
         if (null !== $this->pageNumber) {
             $res['pageNumber'] = $this->pageNumber;
         }
         if (null !== $this->pageSize) {
             $res['pageSize'] = $this->pageSize;
+        }
+        if (null !== $this->sn) {
+            $res['sn'] = $this->sn;
+        }
+        if (null !== $this->type) {
+            $res['type'] = $this->type;
         }
 
         return $res;
@@ -73,17 +73,17 @@ class QuerySchoolUserFaceRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['type'])) {
-            $model->type = $map['type'];
-        }
-        if (isset($map['sn'])) {
-            $model->sn = $map['sn'];
-        }
         if (isset($map['pageNumber'])) {
             $model->pageNumber = $map['pageNumber'];
         }
         if (isset($map['pageSize'])) {
             $model->pageSize = $map['pageSize'];
+        }
+        if (isset($map['sn'])) {
+            $model->sn = $map['sn'];
+        }
+        if (isset($map['type'])) {
+            $model->type = $map['type'];
         }
 
         return $model;

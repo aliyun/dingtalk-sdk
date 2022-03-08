@@ -10,16 +10,9 @@ use AlibabaCloud\Tea\Model;
 class ListDeptSimpleUsersResponseBody extends Model
 {
     /**
-     * @description 用户列表
-     *
-     * @var userList[]
+     * @var bool
      */
-    public $userList;
-
-    /**
-     * @var int
-     */
-    public $totalCount;
+    public $hasMore;
 
     /**
      * @var int
@@ -27,14 +20,21 @@ class ListDeptSimpleUsersResponseBody extends Model
     public $nextCursor;
 
     /**
-     * @var bool
+     * @var int
      */
-    public $hasMore;
+    public $totalCount;
+
+    /**
+     * @description 用户列表
+     *
+     * @var userList[]
+     */
+    public $userList;
     protected $_name = [
-        'userList'   => 'userList',
-        'totalCount' => 'totalCount',
-        'nextCursor' => 'nextCursor',
         'hasMore'    => 'hasMore',
+        'nextCursor' => 'nextCursor',
+        'totalCount' => 'totalCount',
+        'userList'   => 'userList',
     ];
 
     public function validate()
@@ -44,6 +44,15 @@ class ListDeptSimpleUsersResponseBody extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->hasMore) {
+            $res['hasMore'] = $this->hasMore;
+        }
+        if (null !== $this->nextCursor) {
+            $res['nextCursor'] = $this->nextCursor;
+        }
+        if (null !== $this->totalCount) {
+            $res['totalCount'] = $this->totalCount;
+        }
         if (null !== $this->userList) {
             $res['userList'] = [];
             if (null !== $this->userList && \is_array($this->userList)) {
@@ -52,15 +61,6 @@ class ListDeptSimpleUsersResponseBody extends Model
                     $res['userList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
-        }
-        if (null !== $this->totalCount) {
-            $res['totalCount'] = $this->totalCount;
-        }
-        if (null !== $this->nextCursor) {
-            $res['nextCursor'] = $this->nextCursor;
-        }
-        if (null !== $this->hasMore) {
-            $res['hasMore'] = $this->hasMore;
         }
 
         return $res;
@@ -74,6 +74,15 @@ class ListDeptSimpleUsersResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['hasMore'])) {
+            $model->hasMore = $map['hasMore'];
+        }
+        if (isset($map['nextCursor'])) {
+            $model->nextCursor = $map['nextCursor'];
+        }
+        if (isset($map['totalCount'])) {
+            $model->totalCount = $map['totalCount'];
+        }
         if (isset($map['userList'])) {
             if (!empty($map['userList'])) {
                 $model->userList = [];
@@ -82,15 +91,6 @@ class ListDeptSimpleUsersResponseBody extends Model
                     $model->userList[$n++] = null !== $item ? userList::fromMap($item) : $item;
                 }
             }
-        }
-        if (isset($map['totalCount'])) {
-            $model->totalCount = $map['totalCount'];
-        }
-        if (isset($map['nextCursor'])) {
-            $model->nextCursor = $map['nextCursor'];
-        }
-        if (isset($map['hasMore'])) {
-            $model->hasMore = $map['hasMore'];
         }
 
         return $model;

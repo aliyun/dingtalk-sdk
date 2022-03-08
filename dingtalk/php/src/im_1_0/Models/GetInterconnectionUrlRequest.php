@@ -9,20 +9,6 @@ use AlibabaCloud\Tea\Model;
 class GetInterconnectionUrlRequest extends Model
 {
     /**
-     * @description appUserId
-     *
-     * @var string
-     */
-    public $appUserId;
-
-    /**
-     * @description appUserName
-     *
-     * @var string
-     */
-    public $appUserName;
-
-    /**
      * @description appUserAvatar
      *
      * @var string
@@ -37,6 +23,13 @@ class GetInterconnectionUrlRequest extends Model
     public $appUserAvatarType;
 
     /**
+     * @description appUserId
+     *
+     * @var string
+     */
+    public $appUserId;
+
+    /**
      * @description appUserMobileNumber
      *
      * @var string
@@ -44,18 +37,11 @@ class GetInterconnectionUrlRequest extends Model
     public $appUserMobileNumber;
 
     /**
-     * @description qrCode
+     * @description appUserName
      *
      * @var string
      */
-    public $qrCode;
-
-    /**
-     * @description userId
-     *
-     * @var string
-     */
-    public $userId;
+    public $appUserName;
 
     /**
      * @description msgPageType
@@ -65,11 +51,18 @@ class GetInterconnectionUrlRequest extends Model
     public $msgPageType;
 
     /**
-     * @description sourceType
+     * @description qrCode
      *
-     * @var int
+     * @var string
      */
-    public $sourceType;
+    public $qrCode;
+
+    /**
+     * @description signature
+     *
+     * @var string
+     */
+    public $signature;
 
     /**
      * @description sourceCode
@@ -79,23 +72,30 @@ class GetInterconnectionUrlRequest extends Model
     public $sourceCode;
 
     /**
-     * @description signature
+     * @description sourceType
+     *
+     * @var int
+     */
+    public $sourceType;
+
+    /**
+     * @description userId
      *
      * @var string
      */
-    public $signature;
+    public $userId;
     protected $_name = [
-        'appUserId'           => 'appUserId',
-        'appUserName'         => 'appUserName',
         'appUserAvatar'       => 'appUserAvatar',
         'appUserAvatarType'   => 'appUserAvatarType',
+        'appUserId'           => 'appUserId',
         'appUserMobileNumber' => 'appUserMobileNumber',
-        'qrCode'              => 'qrCode',
-        'userId'              => 'userId',
+        'appUserName'         => 'appUserName',
         'msgPageType'         => 'msgPageType',
-        'sourceType'          => 'sourceType',
-        'sourceCode'          => 'sourceCode',
+        'qrCode'              => 'qrCode',
         'signature'           => 'signature',
+        'sourceCode'          => 'sourceCode',
+        'sourceType'          => 'sourceType',
+        'userId'              => 'userId',
     ];
 
     public function validate()
@@ -105,38 +105,38 @@ class GetInterconnectionUrlRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->appUserId) {
-            $res['appUserId'] = $this->appUserId;
-        }
-        if (null !== $this->appUserName) {
-            $res['appUserName'] = $this->appUserName;
-        }
         if (null !== $this->appUserAvatar) {
             $res['appUserAvatar'] = $this->appUserAvatar;
         }
         if (null !== $this->appUserAvatarType) {
             $res['appUserAvatarType'] = $this->appUserAvatarType;
         }
+        if (null !== $this->appUserId) {
+            $res['appUserId'] = $this->appUserId;
+        }
         if (null !== $this->appUserMobileNumber) {
             $res['appUserMobileNumber'] = $this->appUserMobileNumber;
         }
-        if (null !== $this->qrCode) {
-            $res['qrCode'] = $this->qrCode;
-        }
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
+        if (null !== $this->appUserName) {
+            $res['appUserName'] = $this->appUserName;
         }
         if (null !== $this->msgPageType) {
             $res['msgPageType'] = $this->msgPageType;
         }
-        if (null !== $this->sourceType) {
-            $res['sourceType'] = $this->sourceType;
+        if (null !== $this->qrCode) {
+            $res['qrCode'] = $this->qrCode;
+        }
+        if (null !== $this->signature) {
+            $res['signature'] = $this->signature;
         }
         if (null !== $this->sourceCode) {
             $res['sourceCode'] = $this->sourceCode;
         }
-        if (null !== $this->signature) {
-            $res['signature'] = $this->signature;
+        if (null !== $this->sourceType) {
+            $res['sourceType'] = $this->sourceType;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -150,38 +150,38 @@ class GetInterconnectionUrlRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['appUserId'])) {
-            $model->appUserId = $map['appUserId'];
-        }
-        if (isset($map['appUserName'])) {
-            $model->appUserName = $map['appUserName'];
-        }
         if (isset($map['appUserAvatar'])) {
             $model->appUserAvatar = $map['appUserAvatar'];
         }
         if (isset($map['appUserAvatarType'])) {
             $model->appUserAvatarType = $map['appUserAvatarType'];
         }
+        if (isset($map['appUserId'])) {
+            $model->appUserId = $map['appUserId'];
+        }
         if (isset($map['appUserMobileNumber'])) {
             $model->appUserMobileNumber = $map['appUserMobileNumber'];
         }
-        if (isset($map['qrCode'])) {
-            $model->qrCode = $map['qrCode'];
-        }
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
+        if (isset($map['appUserName'])) {
+            $model->appUserName = $map['appUserName'];
         }
         if (isset($map['msgPageType'])) {
             $model->msgPageType = $map['msgPageType'];
         }
-        if (isset($map['sourceType'])) {
-            $model->sourceType = $map['sourceType'];
+        if (isset($map['qrCode'])) {
+            $model->qrCode = $map['qrCode'];
+        }
+        if (isset($map['signature'])) {
+            $model->signature = $map['signature'];
         }
         if (isset($map['sourceCode'])) {
             $model->sourceCode = $map['sourceCode'];
         }
-        if (isset($map['signature'])) {
-            $model->signature = $map['signature'];
+        if (isset($map['sourceType'])) {
+            $model->sourceType = $map['sourceType'];
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

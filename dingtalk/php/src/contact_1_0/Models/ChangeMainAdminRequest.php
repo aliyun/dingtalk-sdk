@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class ChangeMainAdminRequest extends Model
 {
     /**
+     * @description effectCorpId
+     *
+     * @var string
+     */
+    public $effectCorpId;
+
+    /**
      * @description sourceUserId
      *
      * @var string
@@ -21,17 +28,10 @@ class ChangeMainAdminRequest extends Model
      * @var string
      */
     public $targetUserId;
-
-    /**
-     * @description effectCorpId
-     *
-     * @var string
-     */
-    public $effectCorpId;
     protected $_name = [
+        'effectCorpId' => 'effectCorpId',
         'sourceUserId' => 'sourceUserId',
         'targetUserId' => 'targetUserId',
-        'effectCorpId' => 'effectCorpId',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class ChangeMainAdminRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->effectCorpId) {
+            $res['effectCorpId'] = $this->effectCorpId;
+        }
         if (null !== $this->sourceUserId) {
             $res['sourceUserId'] = $this->sourceUserId;
         }
         if (null !== $this->targetUserId) {
             $res['targetUserId'] = $this->targetUserId;
-        }
-        if (null !== $this->effectCorpId) {
-            $res['effectCorpId'] = $this->effectCorpId;
         }
 
         return $res;
@@ -62,14 +62,14 @@ class ChangeMainAdminRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['effectCorpId'])) {
+            $model->effectCorpId = $map['effectCorpId'];
+        }
         if (isset($map['sourceUserId'])) {
             $model->sourceUserId = $map['sourceUserId'];
         }
         if (isset($map['targetUserId'])) {
             $model->targetUserId = $map['targetUserId'];
-        }
-        if (isset($map['effectCorpId'])) {
-            $model->effectCorpId = $map['effectCorpId'];
         }
 
         return $model;

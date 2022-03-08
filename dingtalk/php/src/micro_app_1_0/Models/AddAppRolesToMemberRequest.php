@@ -10,13 +10,6 @@ use AlibabaCloud\Tea\Model;
 class AddAppRolesToMemberRequest extends Model
 {
     /**
-     * @description 执行用户userId
-     *
-     * @var string
-     */
-    public $opUserId;
-
-    /**
      * @description 人员id
      *
      * @var string
@@ -31,15 +24,22 @@ class AddAppRolesToMemberRequest extends Model
     public $memberType;
 
     /**
+     * @description 执行用户userId
+     *
+     * @var string
+     */
+    public $opUserId;
+
+    /**
      * @description 角色Id列表
      *
      * @var roleList[]
      */
     public $roleList;
     protected $_name = [
-        'opUserId'   => 'opUserId',
         'memberId'   => 'memberId',
         'memberType' => 'memberType',
+        'opUserId'   => 'opUserId',
         'roleList'   => 'roleList',
     ];
 
@@ -50,14 +50,14 @@ class AddAppRolesToMemberRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->opUserId) {
-            $res['opUserId'] = $this->opUserId;
-        }
         if (null !== $this->memberId) {
             $res['memberId'] = $this->memberId;
         }
         if (null !== $this->memberType) {
             $res['memberType'] = $this->memberType;
+        }
+        if (null !== $this->opUserId) {
+            $res['opUserId'] = $this->opUserId;
         }
         if (null !== $this->roleList) {
             $res['roleList'] = [];
@@ -80,14 +80,14 @@ class AddAppRolesToMemberRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['opUserId'])) {
-            $model->opUserId = $map['opUserId'];
-        }
         if (isset($map['memberId'])) {
             $model->memberId = $map['memberId'];
         }
         if (isset($map['memberType'])) {
             $model->memberType = $map['memberType'];
+        }
+        if (isset($map['opUserId'])) {
+            $model->opUserId = $map['opUserId'];
         }
         if (isset($map['roleList'])) {
             if (!empty($map['roleList'])) {

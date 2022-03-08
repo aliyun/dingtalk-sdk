@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class buttonList extends Model
 {
     /**
-     * @description 使用独立跳转ActionCard样式时的按钮的标题，最长20个字符。
-     *
-     * @var string
-     */
-    public $title;
-
-    /**
      * @description 使用独立跳转ActionCard样式时的跳转链接。
      *
      * @var string
      */
     public $actionUrl;
+
+    /**
+     * @description 使用独立跳转ActionCard样式时的按钮的标题，最长20个字符。
+     *
+     * @var string
+     */
+    public $title;
     protected $_name = [
-        'title'     => 'title',
         'actionUrl' => 'actionUrl',
+        'title'     => 'title',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class buttonList extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->title) {
-            $res['title'] = $this->title;
-        }
         if (null !== $this->actionUrl) {
             $res['actionUrl'] = $this->actionUrl;
+        }
+        if (null !== $this->title) {
+            $res['title'] = $this->title;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class buttonList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['title'])) {
-            $model->title = $map['title'];
-        }
         if (isset($map['actionUrl'])) {
             $model->actionUrl = $map['actionUrl'];
+        }
+        if (isset($map['title'])) {
+            $model->title = $map['title'];
         }
 
         return $model;

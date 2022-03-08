@@ -15,14 +15,14 @@ class OkrOpenRecommendRequest extends Model
     public $candidateOkrItems;
 
     /**
+     * @var string
+     */
+    public $corpId;
+
+    /**
      * @var string[]
      */
     public $deptIds;
-
-    /**
-     * @var string
-     */
-    public $userId;
 
     /**
      * @var string
@@ -32,7 +32,7 @@ class OkrOpenRecommendRequest extends Model
     /**
      * @var string
      */
-    public $corpId;
+    public $userId;
 
     /**
      * @var string[]
@@ -40,10 +40,10 @@ class OkrOpenRecommendRequest extends Model
     public $words;
     protected $_name = [
         'candidateOkrItems' => 'candidateOkrItems',
-        'deptIds'           => 'deptIds',
-        'userId'            => 'userId',
-        'isvAppId'          => 'isvAppId',
         'corpId'            => 'corpId',
+        'deptIds'           => 'deptIds',
+        'isvAppId'          => 'isvAppId',
+        'userId'            => 'userId',
         'words'             => 'words',
     ];
 
@@ -63,17 +63,17 @@ class OkrOpenRecommendRequest extends Model
                 }
             }
         }
+        if (null !== $this->corpId) {
+            $res['corpId'] = $this->corpId;
+        }
         if (null !== $this->deptIds) {
             $res['deptIds'] = $this->deptIds;
-        }
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
         }
         if (null !== $this->isvAppId) {
             $res['isvAppId'] = $this->isvAppId;
         }
-        if (null !== $this->corpId) {
-            $res['corpId'] = $this->corpId;
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
         if (null !== $this->words) {
             $res['words'] = $this->words;
@@ -99,19 +99,19 @@ class OkrOpenRecommendRequest extends Model
                 }
             }
         }
+        if (isset($map['corpId'])) {
+            $model->corpId = $map['corpId'];
+        }
         if (isset($map['deptIds'])) {
             if (!empty($map['deptIds'])) {
                 $model->deptIds = $map['deptIds'];
             }
         }
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
-        }
         if (isset($map['isvAppId'])) {
             $model->isvAppId = $map['isvAppId'];
         }
-        if (isset($map['corpId'])) {
-            $model->corpId = $map['corpId'];
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
         if (isset($map['words'])) {
             if (!empty($map['words'])) {

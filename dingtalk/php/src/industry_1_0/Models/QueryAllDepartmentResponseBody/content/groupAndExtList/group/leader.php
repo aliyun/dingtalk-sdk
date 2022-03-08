@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class leader extends Model
 {
     /**
+     * @description 用户工号
+     *
+     * @var string
+     */
+    public $jobNumber;
+
+    /**
      * @description 姓名
      *
      * @var string
@@ -21,17 +28,10 @@ class leader extends Model
      * @var string
      */
     public $userId;
-
-    /**
-     * @description 用户工号
-     *
-     * @var string
-     */
-    public $jobNumber;
     protected $_name = [
+        'jobNumber' => 'jobNumber',
         'name'      => 'name',
         'userId'    => 'userId',
-        'jobNumber' => 'jobNumber',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class leader extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->jobNumber) {
+            $res['jobNumber'] = $this->jobNumber;
+        }
         if (null !== $this->name) {
             $res['name'] = $this->name;
         }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
-        }
-        if (null !== $this->jobNumber) {
-            $res['jobNumber'] = $this->jobNumber;
         }
 
         return $res;
@@ -62,14 +62,14 @@ class leader extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['jobNumber'])) {
+            $model->jobNumber = $map['jobNumber'];
+        }
         if (isset($map['name'])) {
             $model->name = $map['name'];
         }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];
-        }
-        if (isset($map['jobNumber'])) {
-            $model->jobNumber = $map['jobNumber'];
         }
 
         return $model;

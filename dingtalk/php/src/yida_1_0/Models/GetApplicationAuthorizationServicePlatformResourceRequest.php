@@ -11,21 +11,21 @@ class GetApplicationAuthorizationServicePlatformResourceRequest extends Model
     /**
      * @var string
      */
-    public $instanceId;
-
-    /**
-     * @var string
-     */
     public $accessKey;
 
     /**
      * @var string
      */
     public $callerUid;
+
+    /**
+     * @var string
+     */
+    public $instanceId;
     protected $_name = [
-        'instanceId' => 'instanceId',
         'accessKey'  => 'accessKey',
         'callerUid'  => 'callerUid',
+        'instanceId' => 'instanceId',
     ];
 
     public function validate()
@@ -35,14 +35,14 @@ class GetApplicationAuthorizationServicePlatformResourceRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->instanceId) {
-            $res['instanceId'] = $this->instanceId;
-        }
         if (null !== $this->accessKey) {
             $res['accessKey'] = $this->accessKey;
         }
         if (null !== $this->callerUid) {
             $res['callerUid'] = $this->callerUid;
+        }
+        if (null !== $this->instanceId) {
+            $res['instanceId'] = $this->instanceId;
         }
 
         return $res;
@@ -56,14 +56,14 @@ class GetApplicationAuthorizationServicePlatformResourceRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['instanceId'])) {
-            $model->instanceId = $map['instanceId'];
-        }
         if (isset($map['accessKey'])) {
             $model->accessKey = $map['accessKey'];
         }
         if (isset($map['callerUid'])) {
             $model->callerUid = $map['callerUid'];
+        }
+        if (isset($map['instanceId'])) {
+            $model->instanceId = $map['instanceId'];
         }
 
         return $model;

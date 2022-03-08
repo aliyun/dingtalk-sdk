@@ -11,6 +11,11 @@ class GetFileInfoResponseBody extends Model
     /**
      * @var string
      */
+    public $downloadUrl;
+
+    /**
+     * @var string
+     */
     public $fileId;
 
     /**
@@ -19,9 +24,9 @@ class GetFileInfoResponseBody extends Model
     public $name;
 
     /**
-     * @var string
+     * @var int
      */
-    public $downloadUrl;
+    public $pdfTotalPages;
 
     /**
      * @var int
@@ -32,18 +37,13 @@ class GetFileInfoResponseBody extends Model
      * @var int
      */
     public $status;
-
-    /**
-     * @var int
-     */
-    public $pdfTotalPages;
     protected $_name = [
+        'downloadUrl'   => 'downloadUrl',
         'fileId'        => 'fileId',
         'name'          => 'name',
-        'downloadUrl'   => 'downloadUrl',
+        'pdfTotalPages' => 'pdfTotalPages',
         'size'          => 'size',
         'status'        => 'status',
-        'pdfTotalPages' => 'pdfTotalPages',
     ];
 
     public function validate()
@@ -53,23 +53,23 @@ class GetFileInfoResponseBody extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->downloadUrl) {
+            $res['downloadUrl'] = $this->downloadUrl;
+        }
         if (null !== $this->fileId) {
             $res['fileId'] = $this->fileId;
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
         }
-        if (null !== $this->downloadUrl) {
-            $res['downloadUrl'] = $this->downloadUrl;
+        if (null !== $this->pdfTotalPages) {
+            $res['pdfTotalPages'] = $this->pdfTotalPages;
         }
         if (null !== $this->size) {
             $res['size'] = $this->size;
         }
         if (null !== $this->status) {
             $res['status'] = $this->status;
-        }
-        if (null !== $this->pdfTotalPages) {
-            $res['pdfTotalPages'] = $this->pdfTotalPages;
         }
 
         return $res;
@@ -83,23 +83,23 @@ class GetFileInfoResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['downloadUrl'])) {
+            $model->downloadUrl = $map['downloadUrl'];
+        }
         if (isset($map['fileId'])) {
             $model->fileId = $map['fileId'];
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];
         }
-        if (isset($map['downloadUrl'])) {
-            $model->downloadUrl = $map['downloadUrl'];
+        if (isset($map['pdfTotalPages'])) {
+            $model->pdfTotalPages = $map['pdfTotalPages'];
         }
         if (isset($map['size'])) {
             $model->size = $map['size'];
         }
         if (isset($map['status'])) {
             $model->status = $map['status'];
-        }
-        if (isset($map['pdfTotalPages'])) {
-            $model->pdfTotalPages = $map['pdfTotalPages'];
         }
 
         return $model;

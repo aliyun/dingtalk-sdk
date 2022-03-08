@@ -9,25 +9,11 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
-     * @description 轨迹采集开启时间
-     *
-     * @var int
-     */
-    public $startTime;
-
-    /**
      * @description 应用轨迹ID
      *
      * @var string
      */
     public $appTraceId;
-
-    /**
-     * @description 经度
-     *
-     * @var float
-     */
-    public $longitude;
 
     /**
      * @description 纬度
@@ -37,11 +23,25 @@ class list_ extends Model
     public $latitude;
 
     /**
+     * @description 经度
+     *
+     * @var float
+     */
+    public $longitude;
+
+    /**
      * @description 该位置采集时间
      *
      * @var int
      */
     public $reportTime;
+
+    /**
+     * @description 轨迹采集开启时间
+     *
+     * @var int
+     */
+    public $startTime;
 
     /**
      * @description 员工Id
@@ -50,11 +50,11 @@ class list_ extends Model
      */
     public $userId;
     protected $_name = [
-        'startTime'  => 'startTime',
         'appTraceId' => 'appTraceId',
-        'longitude'  => 'longitude',
         'latitude'   => 'latitude',
+        'longitude'  => 'longitude',
         'reportTime' => 'reportTime',
+        'startTime'  => 'startTime',
         'userId'     => 'userId',
     ];
 
@@ -65,20 +65,20 @@ class list_ extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->startTime) {
-            $res['startTime'] = $this->startTime;
-        }
         if (null !== $this->appTraceId) {
             $res['appTraceId'] = $this->appTraceId;
-        }
-        if (null !== $this->longitude) {
-            $res['longitude'] = $this->longitude;
         }
         if (null !== $this->latitude) {
             $res['latitude'] = $this->latitude;
         }
+        if (null !== $this->longitude) {
+            $res['longitude'] = $this->longitude;
+        }
         if (null !== $this->reportTime) {
             $res['reportTime'] = $this->reportTime;
+        }
+        if (null !== $this->startTime) {
+            $res['startTime'] = $this->startTime;
         }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
@@ -95,20 +95,20 @@ class list_ extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['startTime'])) {
-            $model->startTime = $map['startTime'];
-        }
         if (isset($map['appTraceId'])) {
             $model->appTraceId = $map['appTraceId'];
-        }
-        if (isset($map['longitude'])) {
-            $model->longitude = $map['longitude'];
         }
         if (isset($map['latitude'])) {
             $model->latitude = $map['latitude'];
         }
+        if (isset($map['longitude'])) {
+            $model->longitude = $map['longitude'];
+        }
         if (isset($map['reportTime'])) {
             $model->reportTime = $map['reportTime'];
+        }
+        if (isset($map['startTime'])) {
+            $model->startTime = $map['startTime'];
         }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];

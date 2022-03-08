@@ -9,6 +9,20 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
+     * @description 评论ID
+     *
+     * @var string
+     */
+    public $commentId;
+
+    /**
+     * @description 评论时间
+     *
+     * @var float
+     */
+    public $commentTime;
+
+    /**
      * @description 评论者姓名
      *
      * @var string
@@ -21,25 +35,11 @@ class data extends Model
      * @var string
      */
     public $content;
-
-    /**
-     * @description 评论时间
-     *
-     * @var float
-     */
-    public $commentTime;
-
-    /**
-     * @description 评论ID
-     *
-     * @var string
-     */
-    public $commentId;
     protected $_name = [
+        'commentId'       => 'commentId',
+        'commentTime'     => 'commentTime',
         'commentUserName' => 'commentUserName',
         'content'         => 'content',
-        'commentTime'     => 'commentTime',
-        'commentId'       => 'commentId',
     ];
 
     public function validate()
@@ -49,17 +49,17 @@ class data extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->commentId) {
+            $res['commentId'] = $this->commentId;
+        }
+        if (null !== $this->commentTime) {
+            $res['commentTime'] = $this->commentTime;
+        }
         if (null !== $this->commentUserName) {
             $res['commentUserName'] = $this->commentUserName;
         }
         if (null !== $this->content) {
             $res['content'] = $this->content;
-        }
-        if (null !== $this->commentTime) {
-            $res['commentTime'] = $this->commentTime;
-        }
-        if (null !== $this->commentId) {
-            $res['commentId'] = $this->commentId;
         }
 
         return $res;
@@ -73,17 +73,17 @@ class data extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['commentId'])) {
+            $model->commentId = $map['commentId'];
+        }
+        if (isset($map['commentTime'])) {
+            $model->commentTime = $map['commentTime'];
+        }
         if (isset($map['commentUserName'])) {
             $model->commentUserName = $map['commentUserName'];
         }
         if (isset($map['content'])) {
             $model->content = $map['content'];
-        }
-        if (isset($map['commentTime'])) {
-            $model->commentTime = $map['commentTime'];
-        }
-        if (isset($map['commentId'])) {
-            $model->commentId = $map['commentId'];
         }
 
         return $model;

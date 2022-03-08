@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class DeleteProcessesInstanceRequest extends Model
 {
     /**
-     * @description 流程实例id
-     *
-     * @var string
-     */
-    public $processInstanceId;
-
-    /**
      * @description 删除成功后，是否需要更新业务表单关联的流程实例id
      *
      * @var bool
      */
     public $isAutoUpdateBizObject;
+
+    /**
+     * @description 流程实例id
+     *
+     * @var string
+     */
+    public $processInstanceId;
     protected $_name = [
-        'processInstanceId'     => 'processInstanceId',
         'isAutoUpdateBizObject' => 'isAutoUpdateBizObject',
+        'processInstanceId'     => 'processInstanceId',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class DeleteProcessesInstanceRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->processInstanceId) {
-            $res['processInstanceId'] = $this->processInstanceId;
-        }
         if (null !== $this->isAutoUpdateBizObject) {
             $res['isAutoUpdateBizObject'] = $this->isAutoUpdateBizObject;
+        }
+        if (null !== $this->processInstanceId) {
+            $res['processInstanceId'] = $this->processInstanceId;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class DeleteProcessesInstanceRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['processInstanceId'])) {
-            $model->processInstanceId = $map['processInstanceId'];
-        }
         if (isset($map['isAutoUpdateBizObject'])) {
             $model->isAutoUpdateBizObject = $map['isAutoUpdateBizObject'];
+        }
+        if (isset($map['processInstanceId'])) {
+            $model->processInstanceId = $map['processInstanceId'];
         }
 
         return $model;

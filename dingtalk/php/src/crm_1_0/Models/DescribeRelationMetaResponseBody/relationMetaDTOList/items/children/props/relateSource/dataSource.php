@@ -11,11 +11,6 @@ use AlibabaCloud\Tea\Model;
 class dataSource extends Model
 {
     /**
-     * @var string
-     */
-    public $type;
-
-    /**
      * @var params
      */
     public $params;
@@ -24,10 +19,15 @@ class dataSource extends Model
      * @var target
      */
     public $target;
+
+    /**
+     * @var string
+     */
+    public $type;
     protected $_name = [
-        'type'   => 'type',
         'params' => 'params',
         'target' => 'target',
+        'type'   => 'type',
     ];
 
     public function validate()
@@ -37,14 +37,14 @@ class dataSource extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->type) {
-            $res['type'] = $this->type;
-        }
         if (null !== $this->params) {
             $res['params'] = null !== $this->params ? $this->params->toMap() : null;
         }
         if (null !== $this->target) {
             $res['target'] = null !== $this->target ? $this->target->toMap() : null;
+        }
+        if (null !== $this->type) {
+            $res['type'] = $this->type;
         }
 
         return $res;
@@ -58,14 +58,14 @@ class dataSource extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['type'])) {
-            $model->type = $map['type'];
-        }
         if (isset($map['params'])) {
             $model->params = params::fromMap($map['params']);
         }
         if (isset($map['target'])) {
             $model->target = target::fromMap($map['target']);
+        }
+        if (isset($map['type'])) {
+            $model->type = $map['type'];
         }
 
         return $model;

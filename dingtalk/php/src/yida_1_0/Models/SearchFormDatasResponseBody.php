@@ -17,22 +17,22 @@ class SearchFormDatasResponseBody extends Model
     public $currentPage;
 
     /**
-     * @description 符合条件的实例总数
-     *
-     * @var int
-     */
-    public $totalCount;
-
-    /**
      * @description 实例详情列表
      *
      * @var data[]
      */
     public $data;
+
+    /**
+     * @description 符合条件的实例总数
+     *
+     * @var int
+     */
+    public $totalCount;
     protected $_name = [
         'currentPage' => 'currentPage',
-        'totalCount'  => 'totalCount',
         'data'        => 'data',
+        'totalCount'  => 'totalCount',
     ];
 
     public function validate()
@@ -45,9 +45,6 @@ class SearchFormDatasResponseBody extends Model
         if (null !== $this->currentPage) {
             $res['currentPage'] = $this->currentPage;
         }
-        if (null !== $this->totalCount) {
-            $res['totalCount'] = $this->totalCount;
-        }
         if (null !== $this->data) {
             $res['data'] = [];
             if (null !== $this->data && \is_array($this->data)) {
@@ -56,6 +53,9 @@ class SearchFormDatasResponseBody extends Model
                     $res['data'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->totalCount) {
+            $res['totalCount'] = $this->totalCount;
         }
 
         return $res;
@@ -72,9 +72,6 @@ class SearchFormDatasResponseBody extends Model
         if (isset($map['currentPage'])) {
             $model->currentPage = $map['currentPage'];
         }
-        if (isset($map['totalCount'])) {
-            $model->totalCount = $map['totalCount'];
-        }
         if (isset($map['data'])) {
             if (!empty($map['data'])) {
                 $model->data = [];
@@ -83,6 +80,9 @@ class SearchFormDatasResponseBody extends Model
                     $model->data[$n++] = null !== $item ? data::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['totalCount'])) {
+            $model->totalCount = $map['totalCount'];
         }
 
         return $model;

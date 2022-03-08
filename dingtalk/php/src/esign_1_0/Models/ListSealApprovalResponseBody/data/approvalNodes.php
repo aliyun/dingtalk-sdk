@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class approvalNodes extends Model
 {
     /**
-     * @var string
+     * @var int
      */
-    public $approverName;
+    public $approvalTime;
 
     /**
      * @var string
      */
-    public $status;
+    public $approverName;
 
     /**
      * @var int
@@ -24,14 +24,14 @@ class approvalNodes extends Model
     public $startTime;
 
     /**
-     * @var int
+     * @var string
      */
-    public $approvalTime;
+    public $status;
     protected $_name = [
-        'approverName' => 'approverName',
-        'status'       => 'status',
-        'startTime'    => 'startTime',
         'approvalTime' => 'approvalTime',
+        'approverName' => 'approverName',
+        'startTime'    => 'startTime',
+        'status'       => 'status',
     ];
 
     public function validate()
@@ -41,17 +41,17 @@ class approvalNodes extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->approvalTime) {
+            $res['approvalTime'] = $this->approvalTime;
+        }
         if (null !== $this->approverName) {
             $res['approverName'] = $this->approverName;
-        }
-        if (null !== $this->status) {
-            $res['status'] = $this->status;
         }
         if (null !== $this->startTime) {
             $res['startTime'] = $this->startTime;
         }
-        if (null !== $this->approvalTime) {
-            $res['approvalTime'] = $this->approvalTime;
+        if (null !== $this->status) {
+            $res['status'] = $this->status;
         }
 
         return $res;
@@ -65,17 +65,17 @@ class approvalNodes extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['approvalTime'])) {
+            $model->approvalTime = $map['approvalTime'];
+        }
         if (isset($map['approverName'])) {
             $model->approverName = $map['approverName'];
-        }
-        if (isset($map['status'])) {
-            $model->status = $map['status'];
         }
         if (isset($map['startTime'])) {
             $model->startTime = $map['startTime'];
         }
-        if (isset($map['approvalTime'])) {
-            $model->approvalTime = $map['approvalTime'];
+        if (isset($map['status'])) {
+            $model->status = $map['status'];
         }
 
         return $model;

@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class GetRelatedWorkspacesRequest extends Model
 {
     /**
-     * @description 发起操作用户unionId
-     *
-     * @var string
-     */
-    public $operatorId;
-
-    /**
      * @description 是否查询最近访问文档列表
      *
      * @var bool
      */
     public $includeRecent;
+
+    /**
+     * @description 发起操作用户unionId
+     *
+     * @var string
+     */
+    public $operatorId;
     protected $_name = [
-        'operatorId'    => 'operatorId',
         'includeRecent' => 'includeRecent',
+        'operatorId'    => 'operatorId',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class GetRelatedWorkspacesRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->operatorId) {
-            $res['operatorId'] = $this->operatorId;
-        }
         if (null !== $this->includeRecent) {
             $res['includeRecent'] = $this->includeRecent;
+        }
+        if (null !== $this->operatorId) {
+            $res['operatorId'] = $this->operatorId;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class GetRelatedWorkspacesRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['operatorId'])) {
-            $model->operatorId = $map['operatorId'];
-        }
         if (isset($map['includeRecent'])) {
             $model->includeRecent = $map['includeRecent'];
+        }
+        if (isset($map['operatorId'])) {
+            $model->operatorId = $map['operatorId'];
         }
 
         return $model;

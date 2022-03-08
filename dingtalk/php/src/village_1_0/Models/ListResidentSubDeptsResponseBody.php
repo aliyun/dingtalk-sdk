@@ -17,18 +17,18 @@ class ListResidentSubDeptsResponseBody extends Model
     public $departmentList;
 
     /**
-     * @description 游标
-     *
-     * @var int
-     */
-    public $nextCursor;
-
-    /**
      * @description 是否还有记录
      *
      * @var bool
      */
     public $hasMore;
+
+    /**
+     * @description 游标
+     *
+     * @var int
+     */
+    public $nextCursor;
 
     /**
      * @description 总数
@@ -38,8 +38,8 @@ class ListResidentSubDeptsResponseBody extends Model
     public $total;
     protected $_name = [
         'departmentList' => 'departmentList',
-        'nextCursor'     => 'nextCursor',
         'hasMore'        => 'hasMore',
+        'nextCursor'     => 'nextCursor',
         'total'          => 'total',
     ];
 
@@ -59,11 +59,11 @@ class ListResidentSubDeptsResponseBody extends Model
                 }
             }
         }
-        if (null !== $this->nextCursor) {
-            $res['nextCursor'] = $this->nextCursor;
-        }
         if (null !== $this->hasMore) {
             $res['hasMore'] = $this->hasMore;
+        }
+        if (null !== $this->nextCursor) {
+            $res['nextCursor'] = $this->nextCursor;
         }
         if (null !== $this->total) {
             $res['total'] = $this->total;
@@ -89,11 +89,11 @@ class ListResidentSubDeptsResponseBody extends Model
                 }
             }
         }
-        if (isset($map['nextCursor'])) {
-            $model->nextCursor = $map['nextCursor'];
-        }
         if (isset($map['hasMore'])) {
             $model->hasMore = $map['hasMore'];
+        }
+        if (isset($map['nextCursor'])) {
+            $model->nextCursor = $map['nextCursor'];
         }
         if (isset($map['total'])) {
             $model->total = $map['total'];

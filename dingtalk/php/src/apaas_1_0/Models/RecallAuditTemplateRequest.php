@@ -12,14 +12,8 @@ class RecallAuditTemplateRequest extends Model
      * @var string[]
      */
     public $templateKeys;
-
-    /**
-     * @var string
-     */
-    public $dingSuiteKey;
     protected $_name = [
         'templateKeys' => 'templateKeys',
-        'dingSuiteKey' => 'dingSuiteKey',
     ];
 
     public function validate()
@@ -31,9 +25,6 @@ class RecallAuditTemplateRequest extends Model
         $res = [];
         if (null !== $this->templateKeys) {
             $res['templateKeys'] = $this->templateKeys;
-        }
-        if (null !== $this->dingSuiteKey) {
-            $res['dingSuiteKey'] = $this->dingSuiteKey;
         }
 
         return $res;
@@ -51,9 +42,6 @@ class RecallAuditTemplateRequest extends Model
             if (!empty($map['templateKeys'])) {
                 $model->templateKeys = $map['templateKeys'];
             }
-        }
-        if (isset($map['dingSuiteKey'])) {
-            $model->dingSuiteKey = $map['dingSuiteKey'];
         }
 
         return $model;

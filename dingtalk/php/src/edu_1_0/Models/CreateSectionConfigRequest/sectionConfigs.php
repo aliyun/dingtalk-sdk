@@ -14,18 +14,11 @@ use AlibabaCloud\Tea\Model;
 class sectionConfigs extends Model
 {
     /**
-     * @description 学期
+     * @description 课表名称
      *
-     * @var int
+     * @var string
      */
-    public $semester;
-
-    /**
-     * @description 开始时间（精确到日）
-     *
-     * @var sectionStartDate
-     */
-    public $sectionStartDate;
+    public $scheduleName;
 
     /**
      * @description 学年
@@ -35,11 +28,11 @@ class sectionConfigs extends Model
     public $schoolYear;
 
     /**
-     * @description 课表名称
+     * @description 结束时间
      *
-     * @var string
+     * @var sectionEndDate
      */
-    public $scheduleName;
+    public $sectionEndDate;
 
     /**
      * @description 节次模型
@@ -49,18 +42,18 @@ class sectionConfigs extends Model
     public $sectionModels;
 
     /**
-     * @description 结束时间
+     * @description 开始时间（精确到日）
      *
-     * @var sectionEndDate
+     * @var sectionStartDate
      */
-    public $sectionEndDate;
+    public $sectionStartDate;
 
     /**
-     * @description 学期开始时间
+     * @description 学期
      *
-     * @var semesterStartDate
+     * @var int
      */
-    public $semesterStartDate;
+    public $semester;
 
     /**
      * @description 学期结束时间
@@ -68,15 +61,22 @@ class sectionConfigs extends Model
      * @var semesterEndDate
      */
     public $semesterEndDate;
+
+    /**
+     * @description 学期开始时间
+     *
+     * @var semesterStartDate
+     */
+    public $semesterStartDate;
     protected $_name = [
-        'semester'          => 'semester',
-        'sectionStartDate'  => 'sectionStartDate',
-        'schoolYear'        => 'schoolYear',
         'scheduleName'      => 'scheduleName',
-        'sectionModels'     => 'sectionModels',
+        'schoolYear'        => 'schoolYear',
         'sectionEndDate'    => 'sectionEndDate',
-        'semesterStartDate' => 'semesterStartDate',
+        'sectionModels'     => 'sectionModels',
+        'sectionStartDate'  => 'sectionStartDate',
+        'semester'          => 'semester',
         'semesterEndDate'   => 'semesterEndDate',
+        'semesterStartDate' => 'semesterStartDate',
     ];
 
     public function validate()
@@ -86,17 +86,14 @@ class sectionConfigs extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->semester) {
-            $res['semester'] = $this->semester;
-        }
-        if (null !== $this->sectionStartDate) {
-            $res['sectionStartDate'] = null !== $this->sectionStartDate ? $this->sectionStartDate->toMap() : null;
+        if (null !== $this->scheduleName) {
+            $res['scheduleName'] = $this->scheduleName;
         }
         if (null !== $this->schoolYear) {
             $res['schoolYear'] = $this->schoolYear;
         }
-        if (null !== $this->scheduleName) {
-            $res['scheduleName'] = $this->scheduleName;
+        if (null !== $this->sectionEndDate) {
+            $res['sectionEndDate'] = null !== $this->sectionEndDate ? $this->sectionEndDate->toMap() : null;
         }
         if (null !== $this->sectionModels) {
             $res['sectionModels'] = [];
@@ -107,14 +104,17 @@ class sectionConfigs extends Model
                 }
             }
         }
-        if (null !== $this->sectionEndDate) {
-            $res['sectionEndDate'] = null !== $this->sectionEndDate ? $this->sectionEndDate->toMap() : null;
+        if (null !== $this->sectionStartDate) {
+            $res['sectionStartDate'] = null !== $this->sectionStartDate ? $this->sectionStartDate->toMap() : null;
         }
-        if (null !== $this->semesterStartDate) {
-            $res['semesterStartDate'] = null !== $this->semesterStartDate ? $this->semesterStartDate->toMap() : null;
+        if (null !== $this->semester) {
+            $res['semester'] = $this->semester;
         }
         if (null !== $this->semesterEndDate) {
             $res['semesterEndDate'] = null !== $this->semesterEndDate ? $this->semesterEndDate->toMap() : null;
+        }
+        if (null !== $this->semesterStartDate) {
+            $res['semesterStartDate'] = null !== $this->semesterStartDate ? $this->semesterStartDate->toMap() : null;
         }
 
         return $res;
@@ -128,17 +128,14 @@ class sectionConfigs extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['semester'])) {
-            $model->semester = $map['semester'];
-        }
-        if (isset($map['sectionStartDate'])) {
-            $model->sectionStartDate = sectionStartDate::fromMap($map['sectionStartDate']);
+        if (isset($map['scheduleName'])) {
+            $model->scheduleName = $map['scheduleName'];
         }
         if (isset($map['schoolYear'])) {
             $model->schoolYear = $map['schoolYear'];
         }
-        if (isset($map['scheduleName'])) {
-            $model->scheduleName = $map['scheduleName'];
+        if (isset($map['sectionEndDate'])) {
+            $model->sectionEndDate = sectionEndDate::fromMap($map['sectionEndDate']);
         }
         if (isset($map['sectionModels'])) {
             if (!empty($map['sectionModels'])) {
@@ -149,14 +146,17 @@ class sectionConfigs extends Model
                 }
             }
         }
-        if (isset($map['sectionEndDate'])) {
-            $model->sectionEndDate = sectionEndDate::fromMap($map['sectionEndDate']);
+        if (isset($map['sectionStartDate'])) {
+            $model->sectionStartDate = sectionStartDate::fromMap($map['sectionStartDate']);
         }
-        if (isset($map['semesterStartDate'])) {
-            $model->semesterStartDate = semesterStartDate::fromMap($map['semesterStartDate']);
+        if (isset($map['semester'])) {
+            $model->semester = $map['semester'];
         }
         if (isset($map['semesterEndDate'])) {
             $model->semesterEndDate = semesterEndDate::fromMap($map['semesterEndDate']);
+        }
+        if (isset($map['semesterStartDate'])) {
+            $model->semesterStartDate = semesterStartDate::fromMap($map['semesterStartDate']);
         }
 
         return $model;

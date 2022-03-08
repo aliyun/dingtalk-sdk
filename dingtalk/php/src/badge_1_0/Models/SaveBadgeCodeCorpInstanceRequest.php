@@ -23,13 +23,6 @@ class SaveBadgeCodeCorpInstanceRequest extends Model
     public $corpId;
 
     /**
-     * @description 状态，OPEN或CLOSED
-     *
-     * @var string
-     */
-    public $status;
-
-    /**
      * @description 扩展参数
      *
      * @var string[]
@@ -37,25 +30,16 @@ class SaveBadgeCodeCorpInstanceRequest extends Model
     public $extInfo;
 
     /**
-     * @description 组织ID
+     * @description 状态，OPEN或CLOSED
      *
-     * @var int
+     * @var string
      */
-    public $dingOrgId;
-
-    /**
-     * @description ISV组织ID
-     *
-     * @var int
-     */
-    public $dingIsvOrgId;
+    public $status;
     protected $_name = [
         'codeIdentity' => 'codeIdentity',
         'corpId'       => 'corpId',
-        'status'       => 'status',
         'extInfo'      => 'extInfo',
-        'dingOrgId'    => 'dingOrgId',
-        'dingIsvOrgId' => 'dingIsvOrgId',
+        'status'       => 'status',
     ];
 
     public function validate()
@@ -71,17 +55,11 @@ class SaveBadgeCodeCorpInstanceRequest extends Model
         if (null !== $this->corpId) {
             $res['corpId'] = $this->corpId;
         }
-        if (null !== $this->status) {
-            $res['status'] = $this->status;
-        }
         if (null !== $this->extInfo) {
             $res['extInfo'] = $this->extInfo;
         }
-        if (null !== $this->dingOrgId) {
-            $res['dingOrgId'] = $this->dingOrgId;
-        }
-        if (null !== $this->dingIsvOrgId) {
-            $res['dingIsvOrgId'] = $this->dingIsvOrgId;
+        if (null !== $this->status) {
+            $res['status'] = $this->status;
         }
 
         return $res;
@@ -101,17 +79,11 @@ class SaveBadgeCodeCorpInstanceRequest extends Model
         if (isset($map['corpId'])) {
             $model->corpId = $map['corpId'];
         }
-        if (isset($map['status'])) {
-            $model->status = $map['status'];
-        }
         if (isset($map['extInfo'])) {
             $model->extInfo = $map['extInfo'];
         }
-        if (isset($map['dingOrgId'])) {
-            $model->dingOrgId = $map['dingOrgId'];
-        }
-        if (isset($map['dingIsvOrgId'])) {
-            $model->dingIsvOrgId = $map['dingIsvOrgId'];
+        if (isset($map['status'])) {
+            $model->status = $map['status'];
         }
 
         return $model;

@@ -10,34 +10,6 @@ use AlibabaCloud\Tea\Model;
 class CreatWithholdingOrderAndPayRequest extends Model
 {
     /**
-     * @description 主机构编号
-     *
-     * @var string
-     */
-    public $instId;
-
-    /**
-     * @description 子机构编号
-     *
-     * @var string
-     */
-    public $subInstId;
-
-    /**
-     * @description 付款人staffId
-     *
-     * @var string
-     */
-    public $payerUserId;
-
-    /**
-     * @description 支付渠道
-     *
-     * @var string
-     */
-    public $payChannel;
-
-    /**
      * @description 扣款金额
      *
      * @var string
@@ -45,32 +17,11 @@ class CreatWithholdingOrderAndPayRequest extends Model
     public $amount;
 
     /**
-     * @description 外部订单号
+     * @description 主机构编号
      *
      * @var string
      */
-    public $outTradeNo;
-
-    /**
-     * @description 代扣标题
-     *
-     * @var string
-     */
-    public $title;
-
-    /**
-     * @description 代扣备注
-     *
-     * @var string
-     */
-    public $remark;
-
-    /**
-     * @description 代扣过期时间
-     *
-     * @var string
-     */
-    public $timeOutExpress;
+    public $instId;
 
     /**
      * @description 其他资金渠道付款明细
@@ -80,47 +31,64 @@ class CreatWithholdingOrderAndPayRequest extends Model
     public $otherPayChannelDetailInfoList;
 
     /**
-     * @description 组织id
-     *
-     * @var int
-     */
-    public $dingOrgId;
-
-    /**
-     * @description isv组织id
-     *
-     * @var int
-     */
-    public $dingIsvOrgId;
-
-    /**
-     * @description 应用id
+     * @description 外部订单号
      *
      * @var string
      */
-    public $dingClientId;
+    public $outTradeNo;
 
     /**
-     * @description 应用类型
+     * @description 支付渠道
      *
-     * @var int
+     * @var string
      */
-    public $dingTokenGrantType;
+    public $payChannel;
+
+    /**
+     * @description 付款人staffId
+     *
+     * @var string
+     */
+    public $payerUserId;
+
+    /**
+     * @description 代扣备注
+     *
+     * @var string
+     */
+    public $remark;
+
+    /**
+     * @description 子机构编号
+     *
+     * @var string
+     */
+    public $subInstId;
+
+    /**
+     * @description 代扣过期时间
+     *
+     * @var string
+     */
+    public $timeOutExpress;
+
+    /**
+     * @description 代扣标题
+     *
+     * @var string
+     */
+    public $title;
     protected $_name = [
-        'instId'                        => 'instId',
-        'subInstId'                     => 'subInstId',
-        'payerUserId'                   => 'payerUserId',
-        'payChannel'                    => 'payChannel',
         'amount'                        => 'amount',
-        'outTradeNo'                    => 'outTradeNo',
-        'title'                         => 'title',
-        'remark'                        => 'remark',
-        'timeOutExpress'                => 'timeOutExpress',
+        'instId'                        => 'instId',
         'otherPayChannelDetailInfoList' => 'otherPayChannelDetailInfoList',
-        'dingOrgId'                     => 'dingOrgId',
-        'dingIsvOrgId'                  => 'dingIsvOrgId',
-        'dingClientId'                  => 'dingClientId',
-        'dingTokenGrantType'            => 'dingTokenGrantType',
+        'outTradeNo'                    => 'outTradeNo',
+        'payChannel'                    => 'payChannel',
+        'payerUserId'                   => 'payerUserId',
+        'remark'                        => 'remark',
+        'subInstId'                     => 'subInstId',
+        'timeOutExpress'                => 'timeOutExpress',
+        'title'                         => 'title',
     ];
 
     public function validate()
@@ -130,32 +98,11 @@ class CreatWithholdingOrderAndPayRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->instId) {
-            $res['instId'] = $this->instId;
-        }
-        if (null !== $this->subInstId) {
-            $res['subInstId'] = $this->subInstId;
-        }
-        if (null !== $this->payerUserId) {
-            $res['payerUserId'] = $this->payerUserId;
-        }
-        if (null !== $this->payChannel) {
-            $res['payChannel'] = $this->payChannel;
-        }
         if (null !== $this->amount) {
             $res['amount'] = $this->amount;
         }
-        if (null !== $this->outTradeNo) {
-            $res['outTradeNo'] = $this->outTradeNo;
-        }
-        if (null !== $this->title) {
-            $res['title'] = $this->title;
-        }
-        if (null !== $this->remark) {
-            $res['remark'] = $this->remark;
-        }
-        if (null !== $this->timeOutExpress) {
-            $res['timeOutExpress'] = $this->timeOutExpress;
+        if (null !== $this->instId) {
+            $res['instId'] = $this->instId;
         }
         if (null !== $this->otherPayChannelDetailInfoList) {
             $res['otherPayChannelDetailInfoList'] = [];
@@ -166,17 +113,26 @@ class CreatWithholdingOrderAndPayRequest extends Model
                 }
             }
         }
-        if (null !== $this->dingOrgId) {
-            $res['dingOrgId'] = $this->dingOrgId;
+        if (null !== $this->outTradeNo) {
+            $res['outTradeNo'] = $this->outTradeNo;
         }
-        if (null !== $this->dingIsvOrgId) {
-            $res['dingIsvOrgId'] = $this->dingIsvOrgId;
+        if (null !== $this->payChannel) {
+            $res['payChannel'] = $this->payChannel;
         }
-        if (null !== $this->dingClientId) {
-            $res['dingClientId'] = $this->dingClientId;
+        if (null !== $this->payerUserId) {
+            $res['payerUserId'] = $this->payerUserId;
         }
-        if (null !== $this->dingTokenGrantType) {
-            $res['dingTokenGrantType'] = $this->dingTokenGrantType;
+        if (null !== $this->remark) {
+            $res['remark'] = $this->remark;
+        }
+        if (null !== $this->subInstId) {
+            $res['subInstId'] = $this->subInstId;
+        }
+        if (null !== $this->timeOutExpress) {
+            $res['timeOutExpress'] = $this->timeOutExpress;
+        }
+        if (null !== $this->title) {
+            $res['title'] = $this->title;
         }
 
         return $res;
@@ -190,32 +146,11 @@ class CreatWithholdingOrderAndPayRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['instId'])) {
-            $model->instId = $map['instId'];
-        }
-        if (isset($map['subInstId'])) {
-            $model->subInstId = $map['subInstId'];
-        }
-        if (isset($map['payerUserId'])) {
-            $model->payerUserId = $map['payerUserId'];
-        }
-        if (isset($map['payChannel'])) {
-            $model->payChannel = $map['payChannel'];
-        }
         if (isset($map['amount'])) {
             $model->amount = $map['amount'];
         }
-        if (isset($map['outTradeNo'])) {
-            $model->outTradeNo = $map['outTradeNo'];
-        }
-        if (isset($map['title'])) {
-            $model->title = $map['title'];
-        }
-        if (isset($map['remark'])) {
-            $model->remark = $map['remark'];
-        }
-        if (isset($map['timeOutExpress'])) {
-            $model->timeOutExpress = $map['timeOutExpress'];
+        if (isset($map['instId'])) {
+            $model->instId = $map['instId'];
         }
         if (isset($map['otherPayChannelDetailInfoList'])) {
             if (!empty($map['otherPayChannelDetailInfoList'])) {
@@ -226,17 +161,26 @@ class CreatWithholdingOrderAndPayRequest extends Model
                 }
             }
         }
-        if (isset($map['dingOrgId'])) {
-            $model->dingOrgId = $map['dingOrgId'];
+        if (isset($map['outTradeNo'])) {
+            $model->outTradeNo = $map['outTradeNo'];
         }
-        if (isset($map['dingIsvOrgId'])) {
-            $model->dingIsvOrgId = $map['dingIsvOrgId'];
+        if (isset($map['payChannel'])) {
+            $model->payChannel = $map['payChannel'];
         }
-        if (isset($map['dingClientId'])) {
-            $model->dingClientId = $map['dingClientId'];
+        if (isset($map['payerUserId'])) {
+            $model->payerUserId = $map['payerUserId'];
         }
-        if (isset($map['dingTokenGrantType'])) {
-            $model->dingTokenGrantType = $map['dingTokenGrantType'];
+        if (isset($map['remark'])) {
+            $model->remark = $map['remark'];
+        }
+        if (isset($map['subInstId'])) {
+            $model->subInstId = $map['subInstId'];
+        }
+        if (isset($map['timeOutExpress'])) {
+            $model->timeOutExpress = $map['timeOutExpress'];
+        }
+        if (isset($map['title'])) {
+            $model->title = $map['title'];
         }
 
         return $model;

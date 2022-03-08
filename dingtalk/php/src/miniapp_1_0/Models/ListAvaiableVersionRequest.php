@@ -11,22 +11,12 @@ class ListAvaiableVersionRequest extends Model
     /**
      * @var string
      */
-    public $miniAppId;
-
-    /**
-     * @var int[]
-     */
-    public $versionTypeSet;
+    public $bundleId;
 
     /**
      * @var string
      */
-    public $bundleId;
-
-    /**
-     * @var int
-     */
-    public $pageSize;
+    public $miniAppId;
 
     /**
      * @var int
@@ -36,44 +26,18 @@ class ListAvaiableVersionRequest extends Model
     /**
      * @var int
      */
-    public $dingIsvOrgId;
+    public $pageSize;
 
     /**
-     * @var int
+     * @var int[]
      */
-    public $dingOrgId;
-
-    /**
-     * @var string
-     */
-    public $dingSuiteKey;
-
-    /**
-     * @var string
-     */
-    public $dingCorpId;
-
-    /**
-     * @var string
-     */
-    public $dingClientId;
-
-    /**
-     * @var int
-     */
-    public $dingTokenGrantType;
+    public $versionTypeSet;
     protected $_name = [
-        'miniAppId'          => 'miniAppId',
-        'versionTypeSet'     => 'versionTypeSet',
-        'bundleId'           => 'bundleId',
-        'pageSize'           => 'pageSize',
-        'pageNum'            => 'pageNum',
-        'dingIsvOrgId'       => 'dingIsvOrgId',
-        'dingOrgId'          => 'dingOrgId',
-        'dingSuiteKey'       => 'dingSuiteKey',
-        'dingCorpId'         => 'dingCorpId',
-        'dingClientId'       => 'dingClientId',
-        'dingTokenGrantType' => 'dingTokenGrantType',
+        'bundleId'       => 'bundleId',
+        'miniAppId'      => 'miniAppId',
+        'pageNum'        => 'pageNum',
+        'pageSize'       => 'pageSize',
+        'versionTypeSet' => 'versionTypeSet',
     ];
 
     public function validate()
@@ -83,38 +47,20 @@ class ListAvaiableVersionRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->miniAppId) {
-            $res['miniAppId'] = $this->miniAppId;
-        }
-        if (null !== $this->versionTypeSet) {
-            $res['versionTypeSet'] = $this->versionTypeSet;
-        }
         if (null !== $this->bundleId) {
             $res['bundleId'] = $this->bundleId;
         }
-        if (null !== $this->pageSize) {
-            $res['pageSize'] = $this->pageSize;
+        if (null !== $this->miniAppId) {
+            $res['miniAppId'] = $this->miniAppId;
         }
         if (null !== $this->pageNum) {
             $res['pageNum'] = $this->pageNum;
         }
-        if (null !== $this->dingIsvOrgId) {
-            $res['dingIsvOrgId'] = $this->dingIsvOrgId;
+        if (null !== $this->pageSize) {
+            $res['pageSize'] = $this->pageSize;
         }
-        if (null !== $this->dingOrgId) {
-            $res['dingOrgId'] = $this->dingOrgId;
-        }
-        if (null !== $this->dingSuiteKey) {
-            $res['dingSuiteKey'] = $this->dingSuiteKey;
-        }
-        if (null !== $this->dingCorpId) {
-            $res['dingCorpId'] = $this->dingCorpId;
-        }
-        if (null !== $this->dingClientId) {
-            $res['dingClientId'] = $this->dingClientId;
-        }
-        if (null !== $this->dingTokenGrantType) {
-            $res['dingTokenGrantType'] = $this->dingTokenGrantType;
+        if (null !== $this->versionTypeSet) {
+            $res['versionTypeSet'] = $this->versionTypeSet;
         }
 
         return $res;
@@ -128,40 +74,22 @@ class ListAvaiableVersionRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['bundleId'])) {
+            $model->bundleId = $map['bundleId'];
+        }
         if (isset($map['miniAppId'])) {
             $model->miniAppId = $map['miniAppId'];
+        }
+        if (isset($map['pageNum'])) {
+            $model->pageNum = $map['pageNum'];
+        }
+        if (isset($map['pageSize'])) {
+            $model->pageSize = $map['pageSize'];
         }
         if (isset($map['versionTypeSet'])) {
             if (!empty($map['versionTypeSet'])) {
                 $model->versionTypeSet = $map['versionTypeSet'];
             }
-        }
-        if (isset($map['bundleId'])) {
-            $model->bundleId = $map['bundleId'];
-        }
-        if (isset($map['pageSize'])) {
-            $model->pageSize = $map['pageSize'];
-        }
-        if (isset($map['pageNum'])) {
-            $model->pageNum = $map['pageNum'];
-        }
-        if (isset($map['dingIsvOrgId'])) {
-            $model->dingIsvOrgId = $map['dingIsvOrgId'];
-        }
-        if (isset($map['dingOrgId'])) {
-            $model->dingOrgId = $map['dingOrgId'];
-        }
-        if (isset($map['dingSuiteKey'])) {
-            $model->dingSuiteKey = $map['dingSuiteKey'];
-        }
-        if (isset($map['dingCorpId'])) {
-            $model->dingCorpId = $map['dingCorpId'];
-        }
-        if (isset($map['dingClientId'])) {
-            $model->dingClientId = $map['dingClientId'];
-        }
-        if (isset($map['dingTokenGrantType'])) {
-            $model->dingTokenGrantType = $map['dingTokenGrantType'];
         }
 
         return $model;

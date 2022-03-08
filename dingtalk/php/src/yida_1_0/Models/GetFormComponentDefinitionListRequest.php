@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class GetFormComponentDefinitionListRequest extends Model
 {
     /**
+     * @description 语言
+     *
+     * @var string
+     */
+    public $language;
+
+    /**
      * @description 应用秘钥
      *
      * @var string
@@ -23,22 +30,15 @@ class GetFormComponentDefinitionListRequest extends Model
     public $userId;
 
     /**
-     * @description 语言
-     *
-     * @var string
-     */
-    public $language;
-
-    /**
      * @description 表单版本
      *
      * @var int
      */
     public $version;
     protected $_name = [
+        'language'    => 'language',
         'systemToken' => 'systemToken',
         'userId'      => 'userId',
-        'language'    => 'language',
         'version'     => 'version',
     ];
 
@@ -49,14 +49,14 @@ class GetFormComponentDefinitionListRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->language) {
+            $res['language'] = $this->language;
+        }
         if (null !== $this->systemToken) {
             $res['systemToken'] = $this->systemToken;
         }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
-        }
-        if (null !== $this->language) {
-            $res['language'] = $this->language;
         }
         if (null !== $this->version) {
             $res['version'] = $this->version;
@@ -73,14 +73,14 @@ class GetFormComponentDefinitionListRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['language'])) {
+            $model->language = $map['language'];
+        }
         if (isset($map['systemToken'])) {
             $model->systemToken = $map['systemToken'];
         }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];
-        }
-        if (isset($map['language'])) {
-            $model->language = $map['language'];
         }
         if (isset($map['version'])) {
             $model->version = $map['version'];

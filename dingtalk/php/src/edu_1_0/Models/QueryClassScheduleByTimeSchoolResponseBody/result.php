@@ -11,6 +11,27 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
+     * @description 业务唯一键
+     *
+     * @var string
+     */
+    public $bizKey;
+
+    /**
+     * @description 课程所在班级id
+     *
+     * @var int
+     */
+    public $classId;
+
+    /**
+     * @description 课堂列表
+     *
+     * @var classrooms[]
+     */
+    public $classrooms;
+
+    /**
      * @description 课程编码
      *
      * @var string
@@ -18,18 +39,11 @@ class result extends Model
     public $code;
 
     /**
-     * @description 课程名称
+     * @description 课程组编码
      *
      * @var string
      */
-    public $name;
-
-    /**
-     * @description 课程介绍
-     *
-     * @var string
-     */
-    public $introduce;
+    public $courseGroupCode;
 
     /**
      * @description 课程封面地址
@@ -37,20 +51,6 @@ class result extends Model
      * @var string
      */
     public $coverUrl;
-
-    /**
-     * @description 开始时间
-     *
-     * @var int
-     */
-    public $startTime;
-
-    /**
-     * @description 结束时间
-     *
-     * @var int
-     */
-    public $endTime;
 
     /**
      * @description 创建者组织id
@@ -74,6 +74,76 @@ class result extends Model
     public $creatorUserName;
 
     /**
+     * @description 课程参与人列表
+     *
+     * @var eduUserModels[]
+     */
+    public $eduUserModels;
+
+    /**
+     * @description 结束时间
+     *
+     * @var int
+     */
+    public $endTime;
+
+    /**
+     * @description 课程扩展信息
+     *
+     * @var string
+     */
+    public $extInfo;
+
+    /**
+     * @description 课程介绍
+     *
+     * @var string
+     */
+    public $introduce;
+
+    /**
+     * @description 课程名称
+     *
+     * @var string
+     */
+    public $name;
+
+    /**
+     * @description 课程所在节次序列号
+     *
+     * @var int
+     */
+    public $sectionIndex;
+
+    /**
+     * @description 课程编码
+     *
+     * @var string
+     */
+    public $sectionName;
+
+    /**
+     * @description 开始时间
+     *
+     * @var int
+     */
+    public $startTime;
+
+    /**
+     * @description 课程状态
+     *
+     * @var int
+     */
+    public $status;
+
+    /**
+     * @description 学科编码
+     *
+     * @var string
+     */
+    public $subjectCode;
+
+    /**
      * @description 老师CorpId
      *
      * @var string
@@ -93,99 +163,29 @@ class result extends Model
      * @var string
      */
     public $teacherUserName;
-
-    /**
-     * @description 业务唯一键
-     *
-     * @var string
-     */
-    public $bizKey;
-
-    /**
-     * @description 学科编码
-     *
-     * @var string
-     */
-    public $subjectCode;
-
-    /**
-     * @description 课程组编码
-     *
-     * @var string
-     */
-    public $courseGroupCode;
-
-    /**
-     * @description 课程状态
-     *
-     * @var int
-     */
-    public $status;
-
-    /**
-     * @description 课堂列表
-     *
-     * @var classrooms[]
-     */
-    public $classrooms;
-
-    /**
-     * @description 课程参与人列表
-     *
-     * @var eduUserModels[]
-     */
-    public $eduUserModels;
-
-    /**
-     * @description 课程编码
-     *
-     * @var string
-     */
-    public $sectionName;
-
-    /**
-     * @description 课程所在节次序列号
-     *
-     * @var int
-     */
-    public $sectionIndex;
-
-    /**
-     * @description 课程所在班级id
-     *
-     * @var int
-     */
-    public $classId;
-
-    /**
-     * @description 课程扩展信息
-     *
-     * @var string
-     */
-    public $extInfo;
     protected $_name = [
+        'bizKey'          => 'bizKey',
+        'classId'         => 'classId',
+        'classrooms'      => 'classrooms',
         'code'            => 'code',
-        'name'            => 'name',
-        'introduce'       => 'introduce',
+        'courseGroupCode' => 'courseGroupCode',
         'coverUrl'        => 'coverUrl',
-        'startTime'       => 'startTime',
-        'endTime'         => 'endTime',
         'creatorCorpId'   => 'creatorCorpId',
         'creatorUserId'   => 'creatorUserId',
         'creatorUserName' => 'creatorUserName',
+        'eduUserModels'   => 'eduUserModels',
+        'endTime'         => 'endTime',
+        'extInfo'         => 'extInfo',
+        'introduce'       => 'introduce',
+        'name'            => 'name',
+        'sectionIndex'    => 'sectionIndex',
+        'sectionName'     => 'sectionName',
+        'startTime'       => 'startTime',
+        'status'          => 'status',
+        'subjectCode'     => 'subjectCode',
         'teacherCorpId'   => 'teacherCorpId',
         'teacherUserId'   => 'teacherUserId',
         'teacherUserName' => 'teacherUserName',
-        'bizKey'          => 'bizKey',
-        'subjectCode'     => 'subjectCode',
-        'courseGroupCode' => 'courseGroupCode',
-        'status'          => 'status',
-        'classrooms'      => 'classrooms',
-        'eduUserModels'   => 'eduUserModels',
-        'sectionName'     => 'sectionName',
-        'sectionIndex'    => 'sectionIndex',
-        'classId'         => 'classId',
-        'extInfo'         => 'extInfo',
     ];
 
     public function validate()
@@ -195,53 +195,11 @@ class result extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->code) {
-            $res['code'] = $this->code;
-        }
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
-        }
-        if (null !== $this->introduce) {
-            $res['introduce'] = $this->introduce;
-        }
-        if (null !== $this->coverUrl) {
-            $res['coverUrl'] = $this->coverUrl;
-        }
-        if (null !== $this->startTime) {
-            $res['startTime'] = $this->startTime;
-        }
-        if (null !== $this->endTime) {
-            $res['endTime'] = $this->endTime;
-        }
-        if (null !== $this->creatorCorpId) {
-            $res['creatorCorpId'] = $this->creatorCorpId;
-        }
-        if (null !== $this->creatorUserId) {
-            $res['creatorUserId'] = $this->creatorUserId;
-        }
-        if (null !== $this->creatorUserName) {
-            $res['creatorUserName'] = $this->creatorUserName;
-        }
-        if (null !== $this->teacherCorpId) {
-            $res['teacherCorpId'] = $this->teacherCorpId;
-        }
-        if (null !== $this->teacherUserId) {
-            $res['teacherUserId'] = $this->teacherUserId;
-        }
-        if (null !== $this->teacherUserName) {
-            $res['teacherUserName'] = $this->teacherUserName;
-        }
         if (null !== $this->bizKey) {
             $res['bizKey'] = $this->bizKey;
         }
-        if (null !== $this->subjectCode) {
-            $res['subjectCode'] = $this->subjectCode;
-        }
-        if (null !== $this->courseGroupCode) {
-            $res['courseGroupCode'] = $this->courseGroupCode;
-        }
-        if (null !== $this->status) {
-            $res['status'] = $this->status;
+        if (null !== $this->classId) {
+            $res['classId'] = $this->classId;
         }
         if (null !== $this->classrooms) {
             $res['classrooms'] = [];
@@ -252,6 +210,24 @@ class result extends Model
                 }
             }
         }
+        if (null !== $this->code) {
+            $res['code'] = $this->code;
+        }
+        if (null !== $this->courseGroupCode) {
+            $res['courseGroupCode'] = $this->courseGroupCode;
+        }
+        if (null !== $this->coverUrl) {
+            $res['coverUrl'] = $this->coverUrl;
+        }
+        if (null !== $this->creatorCorpId) {
+            $res['creatorCorpId'] = $this->creatorCorpId;
+        }
+        if (null !== $this->creatorUserId) {
+            $res['creatorUserId'] = $this->creatorUserId;
+        }
+        if (null !== $this->creatorUserName) {
+            $res['creatorUserName'] = $this->creatorUserName;
+        }
         if (null !== $this->eduUserModels) {
             $res['eduUserModels'] = [];
             if (null !== $this->eduUserModels && \is_array($this->eduUserModels)) {
@@ -261,17 +237,41 @@ class result extends Model
                 }
             }
         }
-        if (null !== $this->sectionName) {
-            $res['sectionName'] = $this->sectionName;
+        if (null !== $this->endTime) {
+            $res['endTime'] = $this->endTime;
+        }
+        if (null !== $this->extInfo) {
+            $res['extInfo'] = $this->extInfo;
+        }
+        if (null !== $this->introduce) {
+            $res['introduce'] = $this->introduce;
+        }
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
         }
         if (null !== $this->sectionIndex) {
             $res['sectionIndex'] = $this->sectionIndex;
         }
-        if (null !== $this->classId) {
-            $res['classId'] = $this->classId;
+        if (null !== $this->sectionName) {
+            $res['sectionName'] = $this->sectionName;
         }
-        if (null !== $this->extInfo) {
-            $res['extInfo'] = $this->extInfo;
+        if (null !== $this->startTime) {
+            $res['startTime'] = $this->startTime;
+        }
+        if (null !== $this->status) {
+            $res['status'] = $this->status;
+        }
+        if (null !== $this->subjectCode) {
+            $res['subjectCode'] = $this->subjectCode;
+        }
+        if (null !== $this->teacherCorpId) {
+            $res['teacherCorpId'] = $this->teacherCorpId;
+        }
+        if (null !== $this->teacherUserId) {
+            $res['teacherUserId'] = $this->teacherUserId;
+        }
+        if (null !== $this->teacherUserName) {
+            $res['teacherUserName'] = $this->teacherUserName;
         }
 
         return $res;
@@ -285,53 +285,11 @@ class result extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['code'])) {
-            $model->code = $map['code'];
-        }
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
-        }
-        if (isset($map['introduce'])) {
-            $model->introduce = $map['introduce'];
-        }
-        if (isset($map['coverUrl'])) {
-            $model->coverUrl = $map['coverUrl'];
-        }
-        if (isset($map['startTime'])) {
-            $model->startTime = $map['startTime'];
-        }
-        if (isset($map['endTime'])) {
-            $model->endTime = $map['endTime'];
-        }
-        if (isset($map['creatorCorpId'])) {
-            $model->creatorCorpId = $map['creatorCorpId'];
-        }
-        if (isset($map['creatorUserId'])) {
-            $model->creatorUserId = $map['creatorUserId'];
-        }
-        if (isset($map['creatorUserName'])) {
-            $model->creatorUserName = $map['creatorUserName'];
-        }
-        if (isset($map['teacherCorpId'])) {
-            $model->teacherCorpId = $map['teacherCorpId'];
-        }
-        if (isset($map['teacherUserId'])) {
-            $model->teacherUserId = $map['teacherUserId'];
-        }
-        if (isset($map['teacherUserName'])) {
-            $model->teacherUserName = $map['teacherUserName'];
-        }
         if (isset($map['bizKey'])) {
             $model->bizKey = $map['bizKey'];
         }
-        if (isset($map['subjectCode'])) {
-            $model->subjectCode = $map['subjectCode'];
-        }
-        if (isset($map['courseGroupCode'])) {
-            $model->courseGroupCode = $map['courseGroupCode'];
-        }
-        if (isset($map['status'])) {
-            $model->status = $map['status'];
+        if (isset($map['classId'])) {
+            $model->classId = $map['classId'];
         }
         if (isset($map['classrooms'])) {
             if (!empty($map['classrooms'])) {
@@ -342,6 +300,24 @@ class result extends Model
                 }
             }
         }
+        if (isset($map['code'])) {
+            $model->code = $map['code'];
+        }
+        if (isset($map['courseGroupCode'])) {
+            $model->courseGroupCode = $map['courseGroupCode'];
+        }
+        if (isset($map['coverUrl'])) {
+            $model->coverUrl = $map['coverUrl'];
+        }
+        if (isset($map['creatorCorpId'])) {
+            $model->creatorCorpId = $map['creatorCorpId'];
+        }
+        if (isset($map['creatorUserId'])) {
+            $model->creatorUserId = $map['creatorUserId'];
+        }
+        if (isset($map['creatorUserName'])) {
+            $model->creatorUserName = $map['creatorUserName'];
+        }
         if (isset($map['eduUserModels'])) {
             if (!empty($map['eduUserModels'])) {
                 $model->eduUserModels = [];
@@ -351,17 +327,41 @@ class result extends Model
                 }
             }
         }
-        if (isset($map['sectionName'])) {
-            $model->sectionName = $map['sectionName'];
+        if (isset($map['endTime'])) {
+            $model->endTime = $map['endTime'];
+        }
+        if (isset($map['extInfo'])) {
+            $model->extInfo = $map['extInfo'];
+        }
+        if (isset($map['introduce'])) {
+            $model->introduce = $map['introduce'];
+        }
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
         }
         if (isset($map['sectionIndex'])) {
             $model->sectionIndex = $map['sectionIndex'];
         }
-        if (isset($map['classId'])) {
-            $model->classId = $map['classId'];
+        if (isset($map['sectionName'])) {
+            $model->sectionName = $map['sectionName'];
         }
-        if (isset($map['extInfo'])) {
-            $model->extInfo = $map['extInfo'];
+        if (isset($map['startTime'])) {
+            $model->startTime = $map['startTime'];
+        }
+        if (isset($map['status'])) {
+            $model->status = $map['status'];
+        }
+        if (isset($map['subjectCode'])) {
+            $model->subjectCode = $map['subjectCode'];
+        }
+        if (isset($map['teacherCorpId'])) {
+            $model->teacherCorpId = $map['teacherCorpId'];
+        }
+        if (isset($map['teacherUserId'])) {
+            $model->teacherUserId = $map['teacherUserId'];
+        }
+        if (isset($map['teacherUserName'])) {
+            $model->teacherUserName = $map['teacherUserName'];
         }
 
         return $model;

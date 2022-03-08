@@ -11,32 +11,12 @@ class NotifyAuthorizationResultRequest extends Model
     /**
      * @var string
      */
-    public $instanceId;
-
-    /**
-     * @var string
-     */
-    public $accountNumber;
-
-    /**
-     * @var string
-     */
-    public $instanceName;
-
-    /**
-     * @var string
-     */
     public $accessKey;
 
     /**
      * @var string
      */
-    public $chargeType;
-
-    /**
-     * @var int
-     */
-    public $endTimeGMT;
+    public $accountNumber;
 
     /**
      * @var int
@@ -51,6 +31,11 @@ class NotifyAuthorizationResultRequest extends Model
     /**
      * @var string
      */
+    public $chargeType;
+
+    /**
+     * @var string
+     */
     public $commerceType;
 
     /**
@@ -59,22 +44,37 @@ class NotifyAuthorizationResultRequest extends Model
     public $commodityType;
 
     /**
+     * @var int
+     */
+    public $endTimeGMT;
+
+    /**
+     * @var string
+     */
+    public $instanceId;
+
+    /**
+     * @var string
+     */
+    public $instanceName;
+
+    /**
      * @description 阿里云产品code
      *
      * @var string
      */
     public $produceCode;
     protected $_name = [
-        'instanceId'    => 'instanceId',
-        'accountNumber' => 'accountNumber',
-        'instanceName'  => 'instanceName',
         'accessKey'     => 'accessKey',
-        'chargeType'    => 'chargeType',
-        'endTimeGMT'    => 'endTimeGMT',
+        'accountNumber' => 'accountNumber',
         'beginTimeGMT'  => 'beginTimeGMT',
         'callerUid'     => 'callerUid',
+        'chargeType'    => 'chargeType',
         'commerceType'  => 'commerceType',
         'commodityType' => 'commodityType',
+        'endTimeGMT'    => 'endTimeGMT',
+        'instanceId'    => 'instanceId',
+        'instanceName'  => 'instanceName',
         'produceCode'   => 'produceCode',
     ];
 
@@ -85,23 +85,11 @@ class NotifyAuthorizationResultRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->instanceId) {
-            $res['instanceId'] = $this->instanceId;
-        }
-        if (null !== $this->accountNumber) {
-            $res['accountNumber'] = $this->accountNumber;
-        }
-        if (null !== $this->instanceName) {
-            $res['instanceName'] = $this->instanceName;
-        }
         if (null !== $this->accessKey) {
             $res['accessKey'] = $this->accessKey;
         }
-        if (null !== $this->chargeType) {
-            $res['chargeType'] = $this->chargeType;
-        }
-        if (null !== $this->endTimeGMT) {
-            $res['endTimeGMT'] = $this->endTimeGMT;
+        if (null !== $this->accountNumber) {
+            $res['accountNumber'] = $this->accountNumber;
         }
         if (null !== $this->beginTimeGMT) {
             $res['beginTimeGMT'] = $this->beginTimeGMT;
@@ -109,11 +97,23 @@ class NotifyAuthorizationResultRequest extends Model
         if (null !== $this->callerUid) {
             $res['callerUid'] = $this->callerUid;
         }
+        if (null !== $this->chargeType) {
+            $res['chargeType'] = $this->chargeType;
+        }
         if (null !== $this->commerceType) {
             $res['commerceType'] = $this->commerceType;
         }
         if (null !== $this->commodityType) {
             $res['commodityType'] = $this->commodityType;
+        }
+        if (null !== $this->endTimeGMT) {
+            $res['endTimeGMT'] = $this->endTimeGMT;
+        }
+        if (null !== $this->instanceId) {
+            $res['instanceId'] = $this->instanceId;
+        }
+        if (null !== $this->instanceName) {
+            $res['instanceName'] = $this->instanceName;
         }
         if (null !== $this->produceCode) {
             $res['produceCode'] = $this->produceCode;
@@ -130,23 +130,11 @@ class NotifyAuthorizationResultRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['instanceId'])) {
-            $model->instanceId = $map['instanceId'];
-        }
-        if (isset($map['accountNumber'])) {
-            $model->accountNumber = $map['accountNumber'];
-        }
-        if (isset($map['instanceName'])) {
-            $model->instanceName = $map['instanceName'];
-        }
         if (isset($map['accessKey'])) {
             $model->accessKey = $map['accessKey'];
         }
-        if (isset($map['chargeType'])) {
-            $model->chargeType = $map['chargeType'];
-        }
-        if (isset($map['endTimeGMT'])) {
-            $model->endTimeGMT = $map['endTimeGMT'];
+        if (isset($map['accountNumber'])) {
+            $model->accountNumber = $map['accountNumber'];
         }
         if (isset($map['beginTimeGMT'])) {
             $model->beginTimeGMT = $map['beginTimeGMT'];
@@ -154,11 +142,23 @@ class NotifyAuthorizationResultRequest extends Model
         if (isset($map['callerUid'])) {
             $model->callerUid = $map['callerUid'];
         }
+        if (isset($map['chargeType'])) {
+            $model->chargeType = $map['chargeType'];
+        }
         if (isset($map['commerceType'])) {
             $model->commerceType = $map['commerceType'];
         }
         if (isset($map['commodityType'])) {
             $model->commodityType = $map['commodityType'];
+        }
+        if (isset($map['endTimeGMT'])) {
+            $model->endTimeGMT = $map['endTimeGMT'];
+        }
+        if (isset($map['instanceId'])) {
+            $model->instanceId = $map['instanceId'];
+        }
+        if (isset($map['instanceName'])) {
+            $model->instanceName = $map['instanceName'];
         }
         if (isset($map['produceCode'])) {
             $model->produceCode = $map['produceCode'];

@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class records extends Model
 {
     /**
-     * @description 开放群ID
-     *
-     * @var string
-     */
-    public $openConversationId;
-
-    /**
      * @description 群名称
      *
      * @var string
@@ -23,11 +16,18 @@ class records extends Model
     public $groupName;
 
     /**
-     * @description 开放团队ID
+     * @description 入群链接
      *
      * @var string
      */
-    public $openTeamId;
+    public $groupUrl;
+
+    /**
+     * @description 开放群ID
+     *
+     * @var string
+     */
+    public $openConversationId;
 
     /**
      * @description 开放群组ID
@@ -37,17 +37,17 @@ class records extends Model
     public $openGroupSetId;
 
     /**
-     * @description 入群链接
+     * @description 开放团队ID
      *
      * @var string
      */
-    public $groupUrl;
+    public $openTeamId;
     protected $_name = [
-        'openConversationId' => 'openConversationId',
         'groupName'          => 'groupName',
-        'openTeamId'         => 'openTeamId',
-        'openGroupSetId'     => 'openGroupSetId',
         'groupUrl'           => 'groupUrl',
+        'openConversationId' => 'openConversationId',
+        'openGroupSetId'     => 'openGroupSetId',
+        'openTeamId'         => 'openTeamId',
     ];
 
     public function validate()
@@ -57,20 +57,20 @@ class records extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->openConversationId) {
-            $res['openConversationId'] = $this->openConversationId;
-        }
         if (null !== $this->groupName) {
             $res['groupName'] = $this->groupName;
         }
-        if (null !== $this->openTeamId) {
-            $res['openTeamId'] = $this->openTeamId;
+        if (null !== $this->groupUrl) {
+            $res['groupUrl'] = $this->groupUrl;
+        }
+        if (null !== $this->openConversationId) {
+            $res['openConversationId'] = $this->openConversationId;
         }
         if (null !== $this->openGroupSetId) {
             $res['openGroupSetId'] = $this->openGroupSetId;
         }
-        if (null !== $this->groupUrl) {
-            $res['groupUrl'] = $this->groupUrl;
+        if (null !== $this->openTeamId) {
+            $res['openTeamId'] = $this->openTeamId;
         }
 
         return $res;
@@ -84,20 +84,20 @@ class records extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['openConversationId'])) {
-            $model->openConversationId = $map['openConversationId'];
-        }
         if (isset($map['groupName'])) {
             $model->groupName = $map['groupName'];
         }
-        if (isset($map['openTeamId'])) {
-            $model->openTeamId = $map['openTeamId'];
+        if (isset($map['groupUrl'])) {
+            $model->groupUrl = $map['groupUrl'];
+        }
+        if (isset($map['openConversationId'])) {
+            $model->openConversationId = $map['openConversationId'];
         }
         if (isset($map['openGroupSetId'])) {
             $model->openGroupSetId = $map['openGroupSetId'];
         }
-        if (isset($map['groupUrl'])) {
-            $model->groupUrl = $map['groupUrl'];
+        if (isset($map['openTeamId'])) {
+            $model->openTeamId = $map['openTeamId'];
         }
 
         return $model;

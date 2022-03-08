@@ -12,20 +12,6 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 设置id
-     *
-     * @var int
-     */
-    public $settingId;
-
-    /**
-     * @description 规则名称
-     *
-     * @var string
-     */
-    public $name;
-
-    /**
      * @description 是否默认
      *
      * @var bool
@@ -38,9 +24,32 @@ class result extends Model
     public $durationSettings;
 
     /**
-     * @var warningSettings[]
+     * @description 历史加班规则设置id
+     *
+     * @var int
      */
-    public $warningSettings;
+    public $id;
+
+    /**
+     * @description 规则名称
+     *
+     * @var string
+     */
+    public $name;
+
+    /**
+     * @description 时间分割规则
+     *
+     * @var overtimeDivisions[]
+     */
+    public $overtimeDivisions;
+
+    /**
+     * @description 设置id
+     *
+     * @var int
+     */
+    public $settingId;
 
     /**
      * @description 加班时长单位
@@ -57,36 +66,27 @@ class result extends Model
     public $stepValue;
 
     /**
+     * @var warningSettings[]
+     */
+    public $warningSettings;
+
+    /**
      * @description 日折算时长 单位：分钟
      *
      * @var int
      */
     public $workMinutesPerDay;
-
-    /**
-     * @description 时间分割规则
-     *
-     * @var overtimeDivisions[]
-     */
-    public $overtimeDivisions;
-
-    /**
-     * @description 历史加班规则设置id
-     *
-     * @var int
-     */
-    public $id;
     protected $_name = [
-        'settingId'         => 'settingId',
-        'name'              => 'name',
         'default'           => 'default',
         'durationSettings'  => 'durationSettings',
-        'warningSettings'   => 'warningSettings',
+        'id'                => 'id',
+        'name'              => 'name',
+        'overtimeDivisions' => 'overtimeDivisions',
+        'settingId'         => 'settingId',
         'stepType'          => 'stepType',
         'stepValue'         => 'stepValue',
+        'warningSettings'   => 'warningSettings',
         'workMinutesPerDay' => 'workMinutesPerDay',
-        'overtimeDivisions' => 'overtimeDivisions',
-        'id'                => 'id',
     ];
 
     public function validate()
@@ -96,12 +96,6 @@ class result extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->settingId) {
-            $res['settingId'] = $this->settingId;
-        }
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
-        }
         if (null !== $this->default) {
             $res['default'] = $this->default;
         }
@@ -113,23 +107,11 @@ class result extends Model
                 }
             }
         }
-        if (null !== $this->warningSettings) {
-            $res['warningSettings'] = [];
-            if (null !== $this->warningSettings && \is_array($this->warningSettings)) {
-                $n = 0;
-                foreach ($this->warningSettings as $item) {
-                    $res['warningSettings'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
+        if (null !== $this->id) {
+            $res['id'] = $this->id;
         }
-        if (null !== $this->stepType) {
-            $res['stepType'] = $this->stepType;
-        }
-        if (null !== $this->stepValue) {
-            $res['stepValue'] = $this->stepValue;
-        }
-        if (null !== $this->workMinutesPerDay) {
-            $res['workMinutesPerDay'] = $this->workMinutesPerDay;
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
         }
         if (null !== $this->overtimeDivisions) {
             $res['overtimeDivisions'] = [];
@@ -140,8 +122,26 @@ class result extends Model
                 }
             }
         }
-        if (null !== $this->id) {
-            $res['id'] = $this->id;
+        if (null !== $this->settingId) {
+            $res['settingId'] = $this->settingId;
+        }
+        if (null !== $this->stepType) {
+            $res['stepType'] = $this->stepType;
+        }
+        if (null !== $this->stepValue) {
+            $res['stepValue'] = $this->stepValue;
+        }
+        if (null !== $this->warningSettings) {
+            $res['warningSettings'] = [];
+            if (null !== $this->warningSettings && \is_array($this->warningSettings)) {
+                $n = 0;
+                foreach ($this->warningSettings as $item) {
+                    $res['warningSettings'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
+        if (null !== $this->workMinutesPerDay) {
+            $res['workMinutesPerDay'] = $this->workMinutesPerDay;
         }
 
         return $res;
@@ -155,35 +155,17 @@ class result extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['settingId'])) {
-            $model->settingId = $map['settingId'];
-        }
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
-        }
         if (isset($map['default'])) {
             $model->default = $map['default'];
         }
         if (isset($map['durationSettings'])) {
             $model->durationSettings = $map['durationSettings'];
         }
-        if (isset($map['warningSettings'])) {
-            if (!empty($map['warningSettings'])) {
-                $model->warningSettings = [];
-                $n                      = 0;
-                foreach ($map['warningSettings'] as $item) {
-                    $model->warningSettings[$n++] = null !== $item ? warningSettings::fromMap($item) : $item;
-                }
-            }
+        if (isset($map['id'])) {
+            $model->id = $map['id'];
         }
-        if (isset($map['stepType'])) {
-            $model->stepType = $map['stepType'];
-        }
-        if (isset($map['stepValue'])) {
-            $model->stepValue = $map['stepValue'];
-        }
-        if (isset($map['workMinutesPerDay'])) {
-            $model->workMinutesPerDay = $map['workMinutesPerDay'];
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
         }
         if (isset($map['overtimeDivisions'])) {
             if (!empty($map['overtimeDivisions'])) {
@@ -194,8 +176,26 @@ class result extends Model
                 }
             }
         }
-        if (isset($map['id'])) {
-            $model->id = $map['id'];
+        if (isset($map['settingId'])) {
+            $model->settingId = $map['settingId'];
+        }
+        if (isset($map['stepType'])) {
+            $model->stepType = $map['stepType'];
+        }
+        if (isset($map['stepValue'])) {
+            $model->stepValue = $map['stepValue'];
+        }
+        if (isset($map['warningSettings'])) {
+            if (!empty($map['warningSettings'])) {
+                $model->warningSettings = [];
+                $n                      = 0;
+                foreach ($map['warningSettings'] as $item) {
+                    $model->warningSettings[$n++] = null !== $item ? warningSettings::fromMap($item) : $item;
+                }
+            }
+        }
+        if (isset($map['workMinutesPerDay'])) {
+            $model->workMinutesPerDay = $map['workMinutesPerDay'];
         }
 
         return $model;

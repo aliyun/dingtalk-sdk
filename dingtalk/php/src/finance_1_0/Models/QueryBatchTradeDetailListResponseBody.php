@@ -10,25 +10,11 @@ use AlibabaCloud\Tea\Model;
 class QueryBatchTradeDetailListResponseBody extends Model
 {
     /**
-     * @description 总记录数
+     * @description 明细列表
      *
-     * @var int
+     * @var batchTradeDetailList[]
      */
-    public $total;
-
-    /**
-     * @description 单页条数
-     *
-     * @var int
-     */
-    public $pageSize;
-
-    /**
-     * @description 总页数
-     *
-     * @var int
-     */
-    public $totalPageNumber;
+    public $batchTradeDetailList;
 
     /**
      * @description 当前页数
@@ -38,17 +24,31 @@ class QueryBatchTradeDetailListResponseBody extends Model
     public $pageNumber;
 
     /**
-     * @description 明细列表
+     * @description 单页条数
      *
-     * @var batchTradeDetailList[]
+     * @var int
      */
-    public $batchTradeDetailList;
+    public $pageSize;
+
+    /**
+     * @description 总记录数
+     *
+     * @var int
+     */
+    public $total;
+
+    /**
+     * @description 总页数
+     *
+     * @var int
+     */
+    public $totalPageNumber;
     protected $_name = [
-        'total'                => 'total',
-        'pageSize'             => 'pageSize',
-        'totalPageNumber'      => 'totalPageNumber',
-        'pageNumber'           => 'pageNumber',
         'batchTradeDetailList' => 'batchTradeDetailList',
+        'pageNumber'           => 'pageNumber',
+        'pageSize'             => 'pageSize',
+        'total'                => 'total',
+        'totalPageNumber'      => 'totalPageNumber',
     ];
 
     public function validate()
@@ -58,18 +58,6 @@ class QueryBatchTradeDetailListResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->total) {
-            $res['total'] = $this->total;
-        }
-        if (null !== $this->pageSize) {
-            $res['pageSize'] = $this->pageSize;
-        }
-        if (null !== $this->totalPageNumber) {
-            $res['totalPageNumber'] = $this->totalPageNumber;
-        }
-        if (null !== $this->pageNumber) {
-            $res['pageNumber'] = $this->pageNumber;
-        }
         if (null !== $this->batchTradeDetailList) {
             $res['batchTradeDetailList'] = [];
             if (null !== $this->batchTradeDetailList && \is_array($this->batchTradeDetailList)) {
@@ -78,6 +66,18 @@ class QueryBatchTradeDetailListResponseBody extends Model
                     $res['batchTradeDetailList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->pageNumber) {
+            $res['pageNumber'] = $this->pageNumber;
+        }
+        if (null !== $this->pageSize) {
+            $res['pageSize'] = $this->pageSize;
+        }
+        if (null !== $this->total) {
+            $res['total'] = $this->total;
+        }
+        if (null !== $this->totalPageNumber) {
+            $res['totalPageNumber'] = $this->totalPageNumber;
         }
 
         return $res;
@@ -91,18 +91,6 @@ class QueryBatchTradeDetailListResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['total'])) {
-            $model->total = $map['total'];
-        }
-        if (isset($map['pageSize'])) {
-            $model->pageSize = $map['pageSize'];
-        }
-        if (isset($map['totalPageNumber'])) {
-            $model->totalPageNumber = $map['totalPageNumber'];
-        }
-        if (isset($map['pageNumber'])) {
-            $model->pageNumber = $map['pageNumber'];
-        }
         if (isset($map['batchTradeDetailList'])) {
             if (!empty($map['batchTradeDetailList'])) {
                 $model->batchTradeDetailList = [];
@@ -111,6 +99,18 @@ class QueryBatchTradeDetailListResponseBody extends Model
                     $model->batchTradeDetailList[$n++] = null !== $item ? batchTradeDetailList::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['pageNumber'])) {
+            $model->pageNumber = $map['pageNumber'];
+        }
+        if (isset($map['pageSize'])) {
+            $model->pageSize = $map['pageSize'];
+        }
+        if (isset($map['total'])) {
+            $model->total = $map['total'];
+        }
+        if (isset($map['totalPageNumber'])) {
+            $model->totalPageNumber = $map['totalPageNumber'];
         }
 
         return $model;

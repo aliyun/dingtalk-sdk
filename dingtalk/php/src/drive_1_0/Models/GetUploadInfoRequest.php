@@ -9,11 +9,18 @@ use AlibabaCloud\Tea\Model;
 class GetUploadInfoRequest extends Model
 {
     /**
-     * @description 用户id
+     * @description 文件名称冲突策略
      *
      * @var string
      */
-    public $unionId;
+    public $addConflictPolicy;
+
+    /**
+     * @description 调用方所处区域
+     *
+     * @var string
+     */
+    public $callerRegion;
 
     /**
      * @description 文件名
@@ -37,13 +44,6 @@ class GetUploadInfoRequest extends Model
     public $md5;
 
     /**
-     * @description 文件名称冲突策略
-     *
-     * @var string
-     */
-    public $addConflictPolicy;
-
-    /**
      * @description mediaId
      *
      * @var string
@@ -51,11 +51,11 @@ class GetUploadInfoRequest extends Model
     public $mediaId;
 
     /**
-     * @description 是否返回区域
+     * @description 用户id
      *
-     * @var bool
+     * @var string
      */
-    public $withRegion;
+    public $unionId;
 
     /**
      * @description 是否返回OSS内网访问域名
@@ -65,21 +65,21 @@ class GetUploadInfoRequest extends Model
     public $withInternalEndPoint;
 
     /**
-     * @description 调用方所处区域
+     * @description 是否返回区域
      *
-     * @var string
+     * @var bool
      */
-    public $callerRegion;
+    public $withRegion;
     protected $_name = [
-        'unionId'              => 'unionId',
+        'addConflictPolicy'    => 'addConflictPolicy',
+        'callerRegion'         => 'callerRegion',
         'fileName'             => 'fileName',
         'fileSize'             => 'fileSize',
         'md5'                  => 'md5',
-        'addConflictPolicy'    => 'addConflictPolicy',
         'mediaId'              => 'mediaId',
-        'withRegion'           => 'withRegion',
+        'unionId'              => 'unionId',
         'withInternalEndPoint' => 'withInternalEndPoint',
-        'callerRegion'         => 'callerRegion',
+        'withRegion'           => 'withRegion',
     ];
 
     public function validate()
@@ -89,8 +89,11 @@ class GetUploadInfoRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->unionId) {
-            $res['unionId'] = $this->unionId;
+        if (null !== $this->addConflictPolicy) {
+            $res['addConflictPolicy'] = $this->addConflictPolicy;
+        }
+        if (null !== $this->callerRegion) {
+            $res['callerRegion'] = $this->callerRegion;
         }
         if (null !== $this->fileName) {
             $res['fileName'] = $this->fileName;
@@ -101,20 +104,17 @@ class GetUploadInfoRequest extends Model
         if (null !== $this->md5) {
             $res['md5'] = $this->md5;
         }
-        if (null !== $this->addConflictPolicy) {
-            $res['addConflictPolicy'] = $this->addConflictPolicy;
-        }
         if (null !== $this->mediaId) {
             $res['mediaId'] = $this->mediaId;
         }
-        if (null !== $this->withRegion) {
-            $res['withRegion'] = $this->withRegion;
+        if (null !== $this->unionId) {
+            $res['unionId'] = $this->unionId;
         }
         if (null !== $this->withInternalEndPoint) {
             $res['withInternalEndPoint'] = $this->withInternalEndPoint;
         }
-        if (null !== $this->callerRegion) {
-            $res['callerRegion'] = $this->callerRegion;
+        if (null !== $this->withRegion) {
+            $res['withRegion'] = $this->withRegion;
         }
 
         return $res;
@@ -128,8 +128,11 @@ class GetUploadInfoRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['unionId'])) {
-            $model->unionId = $map['unionId'];
+        if (isset($map['addConflictPolicy'])) {
+            $model->addConflictPolicy = $map['addConflictPolicy'];
+        }
+        if (isset($map['callerRegion'])) {
+            $model->callerRegion = $map['callerRegion'];
         }
         if (isset($map['fileName'])) {
             $model->fileName = $map['fileName'];
@@ -140,20 +143,17 @@ class GetUploadInfoRequest extends Model
         if (isset($map['md5'])) {
             $model->md5 = $map['md5'];
         }
-        if (isset($map['addConflictPolicy'])) {
-            $model->addConflictPolicy = $map['addConflictPolicy'];
-        }
         if (isset($map['mediaId'])) {
             $model->mediaId = $map['mediaId'];
         }
-        if (isset($map['withRegion'])) {
-            $model->withRegion = $map['withRegion'];
+        if (isset($map['unionId'])) {
+            $model->unionId = $map['unionId'];
         }
         if (isset($map['withInternalEndPoint'])) {
             $model->withInternalEndPoint = $map['withInternalEndPoint'];
         }
-        if (isset($map['callerRegion'])) {
-            $model->callerRegion = $map['callerRegion'];
+        if (isset($map['withRegion'])) {
+            $model->withRegion = $map['withRegion'];
         }
 
         return $model;

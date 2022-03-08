@@ -10,19 +10,19 @@ use AlibabaCloud\Tea\Model;
 class SyncDataRequest extends Model
 {
     /**
-     * @var triggerDataList[]
-     */
-    public $triggerDataList;
-
-    /**
      * @description 同步数据的应用id，isv应用传isv应用id，企业自建应用传agentId。
      *
      * @var string
      */
     public $appId;
+
+    /**
+     * @var triggerDataList[]
+     */
+    public $triggerDataList;
     protected $_name = [
-        'triggerDataList' => 'triggerDataList',
         'appId'           => 'appId',
+        'triggerDataList' => 'triggerDataList',
     ];
 
     public function validate()
@@ -32,6 +32,9 @@ class SyncDataRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->appId) {
+            $res['appId'] = $this->appId;
+        }
         if (null !== $this->triggerDataList) {
             $res['triggerDataList'] = [];
             if (null !== $this->triggerDataList && \is_array($this->triggerDataList)) {
@@ -40,9 +43,6 @@ class SyncDataRequest extends Model
                     $res['triggerDataList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
-        }
-        if (null !== $this->appId) {
-            $res['appId'] = $this->appId;
         }
 
         return $res;
@@ -56,6 +56,9 @@ class SyncDataRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['appId'])) {
+            $model->appId = $map['appId'];
+        }
         if (isset($map['triggerDataList'])) {
             if (!empty($map['triggerDataList'])) {
                 $model->triggerDataList = [];
@@ -64,9 +67,6 @@ class SyncDataRequest extends Model
                     $model->triggerDataList[$n++] = null !== $item ? triggerDataList::fromMap($item) : $item;
                 }
             }
-        }
-        if (isset($map['appId'])) {
-            $model->appId = $map['appId'];
         }
 
         return $model;

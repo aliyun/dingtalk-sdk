@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class end extends Model
 {
     /**
-     * @description 年份
+     * @description 一个月中第几天
      *
      * @var int
      */
-    public $year;
+    public $dayOfMonth;
 
     /**
      * @description 月份
@@ -23,15 +23,15 @@ class end extends Model
     public $month;
 
     /**
-     * @description 一个月中第几天
+     * @description 年份
      *
      * @var int
      */
-    public $dayOfMonth;
+    public $year;
     protected $_name = [
-        'year'       => 'year',
-        'month'      => 'month',
         'dayOfMonth' => 'dayOfMonth',
+        'month'      => 'month',
+        'year'       => 'year',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class end extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->year) {
-            $res['year'] = $this->year;
+        if (null !== $this->dayOfMonth) {
+            $res['dayOfMonth'] = $this->dayOfMonth;
         }
         if (null !== $this->month) {
             $res['month'] = $this->month;
         }
-        if (null !== $this->dayOfMonth) {
-            $res['dayOfMonth'] = $this->dayOfMonth;
+        if (null !== $this->year) {
+            $res['year'] = $this->year;
         }
 
         return $res;
@@ -62,14 +62,14 @@ class end extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['year'])) {
-            $model->year = $map['year'];
+        if (isset($map['dayOfMonth'])) {
+            $model->dayOfMonth = $map['dayOfMonth'];
         }
         if (isset($map['month'])) {
             $model->month = $map['month'];
         }
-        if (isset($map['dayOfMonth'])) {
-            $model->dayOfMonth = $map['dayOfMonth'];
+        if (isset($map['year'])) {
+            $model->year = $map['year'];
         }
 
         return $model;

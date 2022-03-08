@@ -76,247 +76,51 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListSubCorpsRequest $request
+     * @param string         $departmentId
+     * @param GetDeptRequest $request
      *
-     * @return ListSubCorpsResponse
+     * @return GetDeptResponse
      */
-    public function listSubCorps($request)
+    public function getDept($departmentId, $request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new ListSubCorpsHeaders([]);
+        $headers = new GetDeptHeaders([]);
 
-        return $this->listSubCorpsWithOptions($request, $headers, $runtime);
+        return $this->getDeptWithOptions($departmentId, $request, $headers, $runtime);
     }
 
     /**
-     * @param ListSubCorpsRequest $request
-     * @param ListSubCorpsHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @param string         $departmentId
+     * @param GetDeptRequest $request
+     * @param GetDeptHeaders $headers
+     * @param RuntimeOptions $runtime
      *
-     * @return ListSubCorpsResponse
+     * @return GetDeptResponse
      */
-    public function listSubCorpsWithOptions($request, $headers, $runtime)
+    public function getDeptWithOptions($departmentId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->types)) {
-            @$query['types'] = $request->types;
-        }
-        if (!Utils::isUnset($request->subCorpId)) {
-            @$query['subCorpId'] = $request->subCorpId;
-        }
-        if (!Utils::isUnset($request->isOnlyDirect)) {
-            @$query['isOnlyDirect'] = $request->isOnlyDirect;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return ListSubCorpsResponse::fromMap($this->doROARequest('ListSubCorps', 'village_1.0', 'HTTP', 'POST', 'AK', '/v1.0/village/corps/subCorps', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param string $subCorpId
-     *
-     * @return GetVillageOrgInfoResponse
-     */
-    public function getVillageOrgInfo($subCorpId)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new GetVillageOrgInfoHeaders([]);
-
-        return $this->getVillageOrgInfoWithOptions($subCorpId, $headers, $runtime);
-    }
-
-    /**
-     * @param string                   $subCorpId
-     * @param GetVillageOrgInfoHeaders $headers
-     * @param RuntimeOptions           $runtime
-     *
-     * @return GetVillageOrgInfoResponse
-     */
-    public function getVillageOrgInfoWithOptions($subCorpId, $headers, $runtime)
-    {
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-        ]);
-
-        return GetVillageOrgInfoResponse::fromMap($this->doROARequest('GetVillageOrgInfo', 'village_1.0', 'HTTP', 'GET', 'AK', '/v1.0/village/corps/' . $subCorpId . '', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param string                       $departmentId
-     * @param ListResidentDeptUsersRequest $request
-     *
-     * @return ListResidentDeptUsersResponse
-     */
-    public function listResidentDeptUsers($departmentId, $request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new ListResidentDeptUsersHeaders([]);
-
-        return $this->listResidentDeptUsersWithOptions($departmentId, $request, $headers, $runtime);
-    }
-
-    /**
-     * @param string                       $departmentId
-     * @param ListResidentDeptUsersRequest $request
-     * @param ListResidentDeptUsersHeaders $headers
-     * @param RuntimeOptions               $runtime
-     *
-     * @return ListResidentDeptUsersResponse
-     */
-    public function listResidentDeptUsersWithOptions($departmentId, $request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->subCorpId)) {
-            @$query['subCorpId'] = $request->subCorpId;
-        }
-        if (!Utils::isUnset($request->role)) {
-            @$query['role'] = $request->role;
-        }
-        if (!Utils::isUnset($request->cursor)) {
-            @$query['cursor'] = $request->cursor;
-        }
-        if (!Utils::isUnset($request->size)) {
-            @$query['size'] = $request->size;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return ListResidentDeptUsersResponse::fromMap($this->doROARequest('ListResidentDeptUsers', 'village_1.0', 'HTTP', 'GET', 'AK', '/v1.0/village/residentDepartments/' . $departmentId . '/users', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param string                     $departmentId
-     * @param ListDeptSimpleUsersRequest $request
-     *
-     * @return ListDeptSimpleUsersResponse
-     */
-    public function listDeptSimpleUsers($departmentId, $request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new ListDeptSimpleUsersHeaders([]);
-
-        return $this->listDeptSimpleUsersWithOptions($departmentId, $request, $headers, $runtime);
-    }
-
-    /**
-     * @param string                     $departmentId
-     * @param ListDeptSimpleUsersRequest $request
-     * @param ListDeptSimpleUsersHeaders $headers
-     * @param RuntimeOptions             $runtime
-     *
-     * @return ListDeptSimpleUsersResponse
-     */
-    public function listDeptSimpleUsersWithOptions($departmentId, $request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->cursor)) {
-            @$query['cursor'] = $request->cursor;
-        }
-        if (!Utils::isUnset($request->size)) {
-            @$query['size'] = $request->size;
-        }
-        if (!Utils::isUnset($request->containAccessLimit)) {
-            @$query['containAccessLimit'] = $request->containAccessLimit;
-        }
-        if (!Utils::isUnset($request->subCorpId)) {
-            @$query['subCorpId'] = $request->subCorpId;
-        }
+        $departmentId = OpenApiUtilClient::getEncodeParam($departmentId);
+        $query        = [];
         if (!Utils::isUnset($request->language)) {
             @$query['language'] = $request->language;
         }
-        if (!Utils::isUnset($request->orderField)) {
-            @$query['orderField'] = $request->orderField;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return ListDeptSimpleUsersResponse::fromMap($this->doROARequest('ListDeptSimpleUsers', 'village_1.0', 'HTTP', 'GET', 'AK', '/v1.0/village/departments/' . $departmentId . '/simpleUsers', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param GetUserByUnionIdRequest $request
-     *
-     * @return GetUserByUnionIdResponse
-     */
-    public function getUserByUnionId($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new GetUserByUnionIdHeaders([]);
-
-        return $this->getUserByUnionIdWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param GetUserByUnionIdRequest $request
-     * @param GetUserByUnionIdHeaders $headers
-     * @param RuntimeOptions          $runtime
-     *
-     * @return GetUserByUnionIdResponse
-     */
-    public function getUserByUnionIdWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
         if (!Utils::isUnset($request->subCorpId)) {
             @$query['subCorpId'] = $request->subCorpId;
         }
-        if (!Utils::isUnset($request->unionId)) {
-            @$query['unionId'] = $request->unionId;
-        }
-        if (!Utils::isUnset($request->language)) {
-            @$query['language'] = $request->language;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return GetUserByUnionIdResponse::fromMap($this->doROARequest('GetUserByUnionId', 'village_1.0', 'HTTP', 'GET', 'AK', '/v1.0/village/users/getByUnionId', 'json', $req, $runtime));
+        return GetDeptResponse::fromMap($this->doROARequest('GetDept', 'village_1.0', 'HTTP', 'GET', 'AK', '/v1.0/village/deptartments/' . $departmentId . '', 'json', $req, $runtime));
     }
 
     /**
@@ -344,7 +148,8 @@ class Dingtalk extends OpenApiClient
     public function getResidentDeptWithOptions($departmentId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $departmentId = OpenApiUtilClient::getEncodeParam($departmentId);
+        $query        = [];
         if (!Utils::isUnset($request->subCorpId)) {
             @$query['subCorpId'] = $request->subCorpId;
         }
@@ -353,7 +158,7 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -390,7 +195,9 @@ class Dingtalk extends OpenApiClient
     public function getResidentUserInfoWithOptions($departmentId, $userId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $departmentId = OpenApiUtilClient::getEncodeParam($departmentId);
+        $userId       = OpenApiUtilClient::getEncodeParam($userId);
+        $query        = [];
         if (!Utils::isUnset($request->subCorpId)) {
             @$query['subCorpId'] = $request->subCorpId;
         }
@@ -399,7 +206,7 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -410,95 +217,196 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string         $departmentId
-     * @param GetDeptRequest $request
+     * @param string         $userId
+     * @param GetUserRequest $request
      *
-     * @return GetDeptResponse
+     * @return GetUserResponse
      */
-    public function getDept($departmentId, $request)
+    public function getUser($userId, $request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new GetDeptHeaders([]);
+        $headers = new GetUserHeaders([]);
 
-        return $this->getDeptWithOptions($departmentId, $request, $headers, $runtime);
+        return $this->getUserWithOptions($userId, $request, $headers, $runtime);
     }
 
     /**
-     * @param string         $departmentId
-     * @param GetDeptRequest $request
-     * @param GetDeptHeaders $headers
+     * @param string         $userId
+     * @param GetUserRequest $request
+     * @param GetUserHeaders $headers
      * @param RuntimeOptions $runtime
      *
-     * @return GetDeptResponse
+     * @return GetUserResponse
      */
-    public function getDeptWithOptions($departmentId, $request, $headers, $runtime)
+    public function getUserWithOptions($userId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $userId = OpenApiUtilClient::getEncodeParam($userId);
+        $query  = [];
+        if (!Utils::isUnset($request->language)) {
+            @$query['language'] = $request->language;
+        }
+        if (!Utils::isUnset($request->subCorpId)) {
+            @$query['subCorpId'] = $request->subCorpId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetUserResponse::fromMap($this->doROARequest('GetUser', 'village_1.0', 'HTTP', 'GET', 'AK', '/v1.0/village/users/getByUserId', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetUserByUnionIdRequest $request
+     *
+     * @return GetUserByUnionIdResponse
+     */
+    public function getUserByUnionId($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetUserByUnionIdHeaders([]);
+
+        return $this->getUserByUnionIdWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetUserByUnionIdRequest $request
+     * @param GetUserByUnionIdHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return GetUserByUnionIdResponse
+     */
+    public function getUserByUnionIdWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
+        if (!Utils::isUnset($request->language)) {
+            @$query['language'] = $request->language;
+        }
         if (!Utils::isUnset($request->subCorpId)) {
             @$query['subCorpId'] = $request->subCorpId;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            @$query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetUserByUnionIdResponse::fromMap($this->doROARequest('GetUserByUnionId', 'village_1.0', 'HTTP', 'GET', 'AK', '/v1.0/village/users/getByUnionId', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $subCorpId
+     *
+     * @return GetVillageOrgInfoResponse
+     */
+    public function getVillageOrgInfo($subCorpId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetVillageOrgInfoHeaders([]);
+
+        return $this->getVillageOrgInfoWithOptions($subCorpId, $headers, $runtime);
+    }
+
+    /**
+     * @param string                   $subCorpId
+     * @param GetVillageOrgInfoHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return GetVillageOrgInfoResponse
+     */
+    public function getVillageOrgInfoWithOptions($subCorpId, $headers, $runtime)
+    {
+        $subCorpId   = OpenApiUtilClient::getEncodeParam($subCorpId);
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return GetVillageOrgInfoResponse::fromMap($this->doROARequest('GetVillageOrgInfo', 'village_1.0', 'HTTP', 'GET', 'AK', '/v1.0/village/corps/' . $subCorpId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                     $departmentId
+     * @param ListDeptSimpleUsersRequest $request
+     *
+     * @return ListDeptSimpleUsersResponse
+     */
+    public function listDeptSimpleUsers($departmentId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListDeptSimpleUsersHeaders([]);
+
+        return $this->listDeptSimpleUsersWithOptions($departmentId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                     $departmentId
+     * @param ListDeptSimpleUsersRequest $request
+     * @param ListDeptSimpleUsersHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return ListDeptSimpleUsersResponse
+     */
+    public function listDeptSimpleUsersWithOptions($departmentId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $departmentId = OpenApiUtilClient::getEncodeParam($departmentId);
+        $query        = [];
+        if (!Utils::isUnset($request->containAccessLimit)) {
+            @$query['containAccessLimit'] = $request->containAccessLimit;
+        }
+        if (!Utils::isUnset($request->cursor)) {
+            @$query['cursor'] = $request->cursor;
         }
         if (!Utils::isUnset($request->language)) {
             @$query['language'] = $request->language;
         }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
+        if (!Utils::isUnset($request->orderField)) {
+            @$query['orderField'] = $request->orderField;
         }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        if (!Utils::isUnset($request->size)) {
+            @$query['size'] = $request->size;
         }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return GetDeptResponse::fromMap($this->doROARequest('GetDept', 'village_1.0', 'HTTP', 'GET', 'AK', '/v1.0/village/deptartments/' . $departmentId . '', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param ListParentByDeptRequest $request
-     *
-     * @return ListParentByDeptResponse
-     */
-    public function listParentByDept($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new ListParentByDeptHeaders([]);
-
-        return $this->listParentByDeptWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param ListParentByDeptRequest $request
-     * @param ListParentByDeptHeaders $headers
-     * @param RuntimeOptions          $runtime
-     *
-     * @return ListParentByDeptResponse
-     */
-    public function listParentByDeptWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
         if (!Utils::isUnset($request->subCorpId)) {
             @$query['subCorpId'] = $request->subCorpId;
         }
-        if (!Utils::isUnset($request->departmentId)) {
-            @$query['departmentId'] = $request->departmentId;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return ListParentByDeptResponse::fromMap($this->doROARequest('ListParentByDept', 'village_1.0', 'HTTP', 'GET', 'AK', '/v1.0/village/departments/listParentByDepartment', 'json', $req, $runtime));
+        return ListDeptSimpleUsersResponse::fromMap($this->doROARequest('ListDeptSimpleUsers', 'village_1.0', 'HTTP', 'GET', 'AK', '/v1.0/village/departments/' . $departmentId . '/simpleUsers', 'json', $req, $runtime));
     }
 
     /**
@@ -526,7 +434,8 @@ class Dingtalk extends OpenApiClient
     public function listDeptUserIdsWithOptions($departmentId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $departmentId = OpenApiUtilClient::getEncodeParam($departmentId);
+        $query        = [];
         if (!Utils::isUnset($request->subCorpId)) {
             @$query['subCorpId'] = $request->subCorpId;
         }
@@ -535,7 +444,7 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -546,104 +455,108 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListSimpleUsersByRoleRequest $request
+     * @param string               $departmentId
+     * @param ListDeptUsersRequest $request
      *
-     * @return ListSimpleUsersByRoleResponse
+     * @return ListDeptUsersResponse
      */
-    public function listSimpleUsersByRole($request)
+    public function listDeptUsers($departmentId, $request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new ListSimpleUsersByRoleHeaders([]);
+        $headers = new ListDeptUsersHeaders([]);
 
-        return $this->listSimpleUsersByRoleWithOptions($request, $headers, $runtime);
+        return $this->listDeptUsersWithOptions($departmentId, $request, $headers, $runtime);
     }
 
     /**
-     * @param ListSimpleUsersByRoleRequest $request
-     * @param ListSimpleUsersByRoleHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @param string               $departmentId
+     * @param ListDeptUsersRequest $request
+     * @param ListDeptUsersHeaders $headers
+     * @param RuntimeOptions       $runtime
      *
-     * @return ListSimpleUsersByRoleResponse
+     * @return ListDeptUsersResponse
      */
-    public function listSimpleUsersByRoleWithOptions($request, $headers, $runtime)
+    public function listDeptUsersWithOptions($departmentId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->offset)) {
-            @$query['offset'] = $request->offset;
-        }
-        if (!Utils::isUnset($request->size)) {
-            @$query['size'] = $request->size;
-        }
-        if (!Utils::isUnset($request->roleId)) {
-            @$query['roleId'] = $request->roleId;
-        }
-        if (!Utils::isUnset($request->subCorpId)) {
-            @$query['subCorpId'] = $request->subCorpId;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return ListSimpleUsersByRoleResponse::fromMap($this->doROARequest('ListSimpleUsersByRole', 'village_1.0', 'HTTP', 'GET', 'AK', '/v1.0/village/users/listByRole', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param string                      $departmentId
-     * @param ListResidentSubDeptsRequest $request
-     *
-     * @return ListResidentSubDeptsResponse
-     */
-    public function listResidentSubDepts($departmentId, $request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new ListResidentSubDeptsHeaders([]);
-
-        return $this->listResidentSubDeptsWithOptions($departmentId, $request, $headers, $runtime);
-    }
-
-    /**
-     * @param string                      $departmentId
-     * @param ListResidentSubDeptsRequest $request
-     * @param ListResidentSubDeptsHeaders $headers
-     * @param RuntimeOptions              $runtime
-     *
-     * @return ListResidentSubDeptsResponse
-     */
-    public function listResidentSubDeptsWithOptions($departmentId, $request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->subCorpId)) {
-            @$query['subCorpId'] = $request->subCorpId;
+        $departmentId = OpenApiUtilClient::getEncodeParam($departmentId);
+        $query        = [];
+        if (!Utils::isUnset($request->containAccessLimit)) {
+            @$query['containAccessLimit'] = $request->containAccessLimit;
         }
         if (!Utils::isUnset($request->cursor)) {
             @$query['cursor'] = $request->cursor;
         }
+        if (!Utils::isUnset($request->language)) {
+            @$query['language'] = $request->language;
+        }
+        if (!Utils::isUnset($request->orderField)) {
+            @$query['orderField'] = $request->orderField;
+        }
         if (!Utils::isUnset($request->size)) {
             @$query['size'] = $request->size;
+        }
+        if (!Utils::isUnset($request->subCorpId)) {
+            @$query['subCorpId'] = $request->subCorpId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return ListResidentSubDeptsResponse::fromMap($this->doROARequest('ListResidentSubDepts', 'village_1.0', 'HTTP', 'GET', 'AK', '/v1.0/village/residentDepartments/' . $departmentId . '/subDepartments', 'json', $req, $runtime));
+        return ListDeptUsersResponse::fromMap($this->doROARequest('ListDeptUsers', 'village_1.0', 'HTTP', 'GET', 'AK', '/v1.0/village/departments/' . $departmentId . '/users', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ListParentByDeptRequest $request
+     *
+     * @return ListParentByDeptResponse
+     */
+    public function listParentByDept($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListParentByDeptHeaders([]);
+
+        return $this->listParentByDeptWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ListParentByDeptRequest $request
+     * @param ListParentByDeptHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return ListParentByDeptResponse
+     */
+    public function listParentByDeptWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->departmentId)) {
+            @$query['departmentId'] = $request->departmentId;
+        }
+        if (!Utils::isUnset($request->subCorpId)) {
+            @$query['subCorpId'] = $request->subCorpId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ListParentByDeptResponse::fromMap($this->doROARequest('ListParentByDept', 'village_1.0', 'HTTP', 'GET', 'AK', '/v1.0/village/departments/listParentByDepartment', 'json', $req, $runtime));
     }
 
     /**
@@ -681,7 +594,7 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -692,156 +605,108 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string             $departmentId
-     * @param ListSubDeptRequest $request
+     * @param string                       $departmentId
+     * @param ListResidentDeptUsersRequest $request
      *
-     * @return ListSubDeptResponse
+     * @return ListResidentDeptUsersResponse
      */
-    public function listSubDept($departmentId, $request)
+    public function listResidentDeptUsers($departmentId, $request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new ListSubDeptHeaders([]);
+        $headers = new ListResidentDeptUsersHeaders([]);
 
-        return $this->listSubDeptWithOptions($departmentId, $request, $headers, $runtime);
+        return $this->listResidentDeptUsersWithOptions($departmentId, $request, $headers, $runtime);
     }
 
     /**
-     * @param string             $departmentId
-     * @param ListSubDeptRequest $request
-     * @param ListSubDeptHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param string                       $departmentId
+     * @param ListResidentDeptUsersRequest $request
+     * @param ListResidentDeptUsersHeaders $headers
+     * @param RuntimeOptions               $runtime
      *
-     * @return ListSubDeptResponse
+     * @return ListResidentDeptUsersResponse
      */
-    public function listSubDeptWithOptions($departmentId, $request, $headers, $runtime)
+    public function listResidentDeptUsersWithOptions($departmentId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $departmentId = OpenApiUtilClient::getEncodeParam($departmentId);
+        $query        = [];
+        if (!Utils::isUnset($request->cursor)) {
+            @$query['cursor'] = $request->cursor;
+        }
+        if (!Utils::isUnset($request->role)) {
+            @$query['role'] = $request->role;
+        }
+        if (!Utils::isUnset($request->size)) {
+            @$query['size'] = $request->size;
+        }
         if (!Utils::isUnset($request->subCorpId)) {
             @$query['subCorpId'] = $request->subCorpId;
-        }
-        if (!Utils::isUnset($request->language)) {
-            @$query['language'] = $request->language;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return ListSubDeptResponse::fromMap($this->doROARequest('ListSubDept', 'village_1.0', 'HTTP', 'GET', 'AK', '/v1.0/village/departments/' . $departmentId . '/subDepartments', 'json', $req, $runtime));
+        return ListResidentDeptUsersResponse::fromMap($this->doROARequest('ListResidentDeptUsers', 'village_1.0', 'HTTP', 'GET', 'AK', '/v1.0/village/residentDepartments/' . $departmentId . '/users', 'json', $req, $runtime));
     }
 
     /**
-     * @param string         $userId
-     * @param GetUserRequest $request
+     * @param string                      $departmentId
+     * @param ListResidentSubDeptsRequest $request
      *
-     * @return GetUserResponse
+     * @return ListResidentSubDeptsResponse
      */
-    public function getUser($userId, $request)
+    public function listResidentSubDepts($departmentId, $request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new GetUserHeaders([]);
+        $headers = new ListResidentSubDeptsHeaders([]);
 
-        return $this->getUserWithOptions($userId, $request, $headers, $runtime);
+        return $this->listResidentSubDeptsWithOptions($departmentId, $request, $headers, $runtime);
     }
 
     /**
-     * @param string         $userId
-     * @param GetUserRequest $request
-     * @param GetUserHeaders $headers
-     * @param RuntimeOptions $runtime
+     * @param string                      $departmentId
+     * @param ListResidentSubDeptsRequest $request
+     * @param ListResidentSubDeptsHeaders $headers
+     * @param RuntimeOptions              $runtime
      *
-     * @return GetUserResponse
+     * @return ListResidentSubDeptsResponse
      */
-    public function getUserWithOptions($userId, $request, $headers, $runtime)
+    public function listResidentSubDeptsWithOptions($departmentId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->subCorpId)) {
-            @$query['subCorpId'] = $request->subCorpId;
-        }
-        if (!Utils::isUnset($request->language)) {
-            @$query['language'] = $request->language;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return GetUserResponse::fromMap($this->doROARequest('GetUser', 'village_1.0', 'HTTP', 'GET', 'AK', '/v1.0/village/users/getByUserId', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param string               $departmentId
-     * @param ListDeptUsersRequest $request
-     *
-     * @return ListDeptUsersResponse
-     */
-    public function listDeptUsers($departmentId, $request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new ListDeptUsersHeaders([]);
-
-        return $this->listDeptUsersWithOptions($departmentId, $request, $headers, $runtime);
-    }
-
-    /**
-     * @param string               $departmentId
-     * @param ListDeptUsersRequest $request
-     * @param ListDeptUsersHeaders $headers
-     * @param RuntimeOptions       $runtime
-     *
-     * @return ListDeptUsersResponse
-     */
-    public function listDeptUsersWithOptions($departmentId, $request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
+        $departmentId = OpenApiUtilClient::getEncodeParam($departmentId);
+        $query        = [];
         if (!Utils::isUnset($request->cursor)) {
             @$query['cursor'] = $request->cursor;
         }
         if (!Utils::isUnset($request->size)) {
             @$query['size'] = $request->size;
         }
-        if (!Utils::isUnset($request->containAccessLimit)) {
-            @$query['containAccessLimit'] = $request->containAccessLimit;
-        }
         if (!Utils::isUnset($request->subCorpId)) {
             @$query['subCorpId'] = $request->subCorpId;
-        }
-        if (!Utils::isUnset($request->language)) {
-            @$query['language'] = $request->language;
-        }
-        if (!Utils::isUnset($request->orderField)) {
-            @$query['orderField'] = $request->orderField;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return ListDeptUsersResponse::fromMap($this->doROARequest('ListDeptUsers', 'village_1.0', 'HTTP', 'GET', 'AK', '/v1.0/village/departments/' . $departmentId . '/users', 'json', $req, $runtime));
+        return ListResidentSubDeptsResponse::fromMap($this->doROARequest('ListResidentSubDepts', 'village_1.0', 'HTTP', 'GET', 'AK', '/v1.0/village/residentDepartments/' . $departmentId . '/subDepartments', 'json', $req, $runtime));
     }
 
     /**
@@ -884,7 +749,7 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -892,6 +757,153 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return ListResidentUserInfosResponse::fromMap($this->doROARequest('ListResidentUserInfos', 'village_1.0', 'HTTP', 'GET', 'AK', '/v1.0/village/residentUsers/getByUserIds', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ListSimpleUsersByRoleRequest $request
+     *
+     * @return ListSimpleUsersByRoleResponse
+     */
+    public function listSimpleUsersByRole($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListSimpleUsersByRoleHeaders([]);
+
+        return $this->listSimpleUsersByRoleWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ListSimpleUsersByRoleRequest $request
+     * @param ListSimpleUsersByRoleHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return ListSimpleUsersByRoleResponse
+     */
+    public function listSimpleUsersByRoleWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->offset)) {
+            @$query['offset'] = $request->offset;
+        }
+        if (!Utils::isUnset($request->roleId)) {
+            @$query['roleId'] = $request->roleId;
+        }
+        if (!Utils::isUnset($request->size)) {
+            @$query['size'] = $request->size;
+        }
+        if (!Utils::isUnset($request->subCorpId)) {
+            @$query['subCorpId'] = $request->subCorpId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ListSimpleUsersByRoleResponse::fromMap($this->doROARequest('ListSimpleUsersByRole', 'village_1.0', 'HTTP', 'GET', 'AK', '/v1.0/village/users/listByRole', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ListSubCorpsRequest $request
+     *
+     * @return ListSubCorpsResponse
+     */
+    public function listSubCorps($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListSubCorpsHeaders([]);
+
+        return $this->listSubCorpsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ListSubCorpsRequest $request
+     * @param ListSubCorpsHeaders $headers
+     * @param RuntimeOptions      $runtime
+     *
+     * @return ListSubCorpsResponse
+     */
+    public function listSubCorpsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->isOnlyDirect)) {
+            @$query['isOnlyDirect'] = $request->isOnlyDirect;
+        }
+        if (!Utils::isUnset($request->subCorpId)) {
+            @$query['subCorpId'] = $request->subCorpId;
+        }
+        if (!Utils::isUnset($request->types)) {
+            @$query['types'] = $request->types;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ListSubCorpsResponse::fromMap($this->doROARequest('ListSubCorps', 'village_1.0', 'HTTP', 'POST', 'AK', '/v1.0/village/corps/subCorps', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string             $departmentId
+     * @param ListSubDeptRequest $request
+     *
+     * @return ListSubDeptResponse
+     */
+    public function listSubDept($departmentId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListSubDeptHeaders([]);
+
+        return $this->listSubDeptWithOptions($departmentId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string             $departmentId
+     * @param ListSubDeptRequest $request
+     * @param ListSubDeptHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return ListSubDeptResponse
+     */
+    public function listSubDeptWithOptions($departmentId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $departmentId = OpenApiUtilClient::getEncodeParam($departmentId);
+        $query        = [];
+        if (!Utils::isUnset($request->language)) {
+            @$query['language'] = $request->language;
+        }
+        if (!Utils::isUnset($request->subCorpId)) {
+            @$query['subCorpId'] = $request->subCorpId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ListSubDeptResponse::fromMap($this->doROARequest('ListSubDept', 'village_1.0', 'HTTP', 'GET', 'AK', '/v1.0/village/departments/' . $departmentId . '/subDepartments', 'json', $req, $runtime));
     }
 
     /**
@@ -919,7 +931,8 @@ class Dingtalk extends OpenApiClient
     public function listSubDeptIdsWithOptions($departmentId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $departmentId = OpenApiUtilClient::getEncodeParam($departmentId);
+        $query        = [];
         if (!Utils::isUnset($request->subCorpId)) {
             @$query['subCorpId'] = $request->subCorpId;
         }
@@ -928,7 +941,7 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,

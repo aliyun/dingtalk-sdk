@@ -16,22 +16,22 @@ class scheduleInfos extends Model
     /**
      * @var string[]
      */
-    public $wifiKeys;
-
-    /**
-     * @var string[]
-     */
     public $positionKeys;
 
     /**
      * @var bool
      */
     public $retainAttendanceCheck;
+
+    /**
+     * @var string[]
+     */
+    public $wifiKeys;
     protected $_name = [
         'planId'                => 'planId',
-        'wifiKeys'              => 'wifiKeys',
         'positionKeys'          => 'positionKeys',
         'retainAttendanceCheck' => 'retainAttendanceCheck',
+        'wifiKeys'              => 'wifiKeys',
     ];
 
     public function validate()
@@ -44,14 +44,14 @@ class scheduleInfos extends Model
         if (null !== $this->planId) {
             $res['planId'] = $this->planId;
         }
-        if (null !== $this->wifiKeys) {
-            $res['wifiKeys'] = $this->wifiKeys;
-        }
         if (null !== $this->positionKeys) {
             $res['positionKeys'] = $this->positionKeys;
         }
         if (null !== $this->retainAttendanceCheck) {
             $res['retainAttendanceCheck'] = $this->retainAttendanceCheck;
+        }
+        if (null !== $this->wifiKeys) {
+            $res['wifiKeys'] = $this->wifiKeys;
         }
 
         return $res;
@@ -68,11 +68,6 @@ class scheduleInfos extends Model
         if (isset($map['planId'])) {
             $model->planId = $map['planId'];
         }
-        if (isset($map['wifiKeys'])) {
-            if (!empty($map['wifiKeys'])) {
-                $model->wifiKeys = $map['wifiKeys'];
-            }
-        }
         if (isset($map['positionKeys'])) {
             if (!empty($map['positionKeys'])) {
                 $model->positionKeys = $map['positionKeys'];
@@ -80,6 +75,11 @@ class scheduleInfos extends Model
         }
         if (isset($map['retainAttendanceCheck'])) {
             $model->retainAttendanceCheck = $map['retainAttendanceCheck'];
+        }
+        if (isset($map['wifiKeys'])) {
+            if (!empty($map['wifiKeys'])) {
+                $model->wifiKeys = $map['wifiKeys'];
+            }
         }
 
         return $model;

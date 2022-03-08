@@ -11,7 +11,7 @@ class filters extends Model
     /**
      * @var string
      */
-    public $valueType;
+    public $fieldId;
 
     /**
      * @var string
@@ -26,12 +26,12 @@ class filters extends Model
     /**
      * @var string
      */
-    public $fieldId;
+    public $valueType;
     protected $_name = [
-        'valueType'  => 'valueType',
+        'fieldId'    => 'fieldId',
         'filterType' => 'filterType',
         'value'      => 'value',
-        'fieldId'    => 'fieldId',
+        'valueType'  => 'valueType',
     ];
 
     public function validate()
@@ -41,8 +41,8 @@ class filters extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->valueType) {
-            $res['valueType'] = $this->valueType;
+        if (null !== $this->fieldId) {
+            $res['fieldId'] = $this->fieldId;
         }
         if (null !== $this->filterType) {
             $res['filterType'] = $this->filterType;
@@ -50,8 +50,8 @@ class filters extends Model
         if (null !== $this->value) {
             $res['value'] = $this->value;
         }
-        if (null !== $this->fieldId) {
-            $res['fieldId'] = $this->fieldId;
+        if (null !== $this->valueType) {
+            $res['valueType'] = $this->valueType;
         }
 
         return $res;
@@ -65,8 +65,8 @@ class filters extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['valueType'])) {
-            $model->valueType = $map['valueType'];
+        if (isset($map['fieldId'])) {
+            $model->fieldId = $map['fieldId'];
         }
         if (isset($map['filterType'])) {
             $model->filterType = $map['filterType'];
@@ -74,8 +74,8 @@ class filters extends Model
         if (isset($map['value'])) {
             $model->value = $map['value'];
         }
-        if (isset($map['fieldId'])) {
-            $model->fieldId = $map['fieldId'];
+        if (isset($map['valueType'])) {
+            $model->valueType = $map['valueType'];
         }
 
         return $model;

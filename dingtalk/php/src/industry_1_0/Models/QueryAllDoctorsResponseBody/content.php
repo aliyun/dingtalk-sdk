@@ -9,32 +9,32 @@ use AlibabaCloud\Tea\Model;
 class content extends Model
 {
     /**
-     * @description 租户下staffId
+     * @description 考核医疗组id
      *
      * @var string
      */
-    public $uid;
+    public $assessGroupId;
 
     /**
-     * @description 用户名称
+     * @description 考核医疗组名称
      *
      * @var string
      */
-    public $userName;
+    public $assessGroupName;
 
     /**
-     * @description 工号
+     * @description 租户CorpId
      *
      * @var string
      */
-    public $jobNum;
+    public $corpId;
 
     /**
-     * @description 用户id
+     * @description 关联的部门id
      *
-     * @var int
+     * @var string
      */
-    public $id;
+    public $deptCode;
 
     /**
      * @description 用户创建时间
@@ -51,25 +51,18 @@ class content extends Model
     public $gmtModifiedStr;
 
     /**
-     * @description 租户CorpId
+     * @description 用户id
      *
-     * @var string
+     * @var int
      */
-    public $corpId;
+    public $id;
 
     /**
-     * @description 租户内staffId
+     * @description 工号
      *
      * @var string
      */
-    public $userCode;
-
-    /**
-     * @description 关联的部门id
-     *
-     * @var string
-     */
-    public $deptCode;
+    public $jobNum;
 
     /**
      * @description 状态0-有效，1-删除
@@ -79,31 +72,38 @@ class content extends Model
     public $status;
 
     /**
-     * @description 考核医疗组id
+     * @description 租户下staffId
      *
      * @var string
      */
-    public $assessGroupId;
+    public $uid;
 
     /**
-     * @description 考核医疗组名称
+     * @description 租户内staffId
      *
      * @var string
      */
-    public $assessGroupName;
+    public $userCode;
+
+    /**
+     * @description 用户名称
+     *
+     * @var string
+     */
+    public $userName;
     protected $_name = [
-        'uid'             => 'uid',
-        'userName'        => 'userName',
-        'jobNum'          => 'jobNum',
-        'id'              => 'id',
-        'gmtCreateStr'    => 'gmtCreateStr',
-        'gmtModifiedStr'  => 'gmtModifiedStr',
-        'corpId'          => 'corpId',
-        'userCode'        => 'userCode',
-        'deptCode'        => 'deptCode',
-        'status'          => 'status',
         'assessGroupId'   => 'assessGroupId',
         'assessGroupName' => 'assessGroupName',
+        'corpId'          => 'corpId',
+        'deptCode'        => 'deptCode',
+        'gmtCreateStr'    => 'gmtCreateStr',
+        'gmtModifiedStr'  => 'gmtModifiedStr',
+        'id'              => 'id',
+        'jobNum'          => 'jobNum',
+        'status'          => 'status',
+        'uid'             => 'uid',
+        'userCode'        => 'userCode',
+        'userName'        => 'userName',
     ];
 
     public function validate()
@@ -113,17 +113,17 @@ class content extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->uid) {
-            $res['uid'] = $this->uid;
+        if (null !== $this->assessGroupId) {
+            $res['assessGroupId'] = $this->assessGroupId;
         }
-        if (null !== $this->userName) {
-            $res['userName'] = $this->userName;
+        if (null !== $this->assessGroupName) {
+            $res['assessGroupName'] = $this->assessGroupName;
         }
-        if (null !== $this->jobNum) {
-            $res['jobNum'] = $this->jobNum;
+        if (null !== $this->corpId) {
+            $res['corpId'] = $this->corpId;
         }
-        if (null !== $this->id) {
-            $res['id'] = $this->id;
+        if (null !== $this->deptCode) {
+            $res['deptCode'] = $this->deptCode;
         }
         if (null !== $this->gmtCreateStr) {
             $res['gmtCreateStr'] = $this->gmtCreateStr;
@@ -131,23 +131,23 @@ class content extends Model
         if (null !== $this->gmtModifiedStr) {
             $res['gmtModifiedStr'] = $this->gmtModifiedStr;
         }
-        if (null !== $this->corpId) {
-            $res['corpId'] = $this->corpId;
+        if (null !== $this->id) {
+            $res['id'] = $this->id;
         }
-        if (null !== $this->userCode) {
-            $res['userCode'] = $this->userCode;
-        }
-        if (null !== $this->deptCode) {
-            $res['deptCode'] = $this->deptCode;
+        if (null !== $this->jobNum) {
+            $res['jobNum'] = $this->jobNum;
         }
         if (null !== $this->status) {
             $res['status'] = $this->status;
         }
-        if (null !== $this->assessGroupId) {
-            $res['assessGroupId'] = $this->assessGroupId;
+        if (null !== $this->uid) {
+            $res['uid'] = $this->uid;
         }
-        if (null !== $this->assessGroupName) {
-            $res['assessGroupName'] = $this->assessGroupName;
+        if (null !== $this->userCode) {
+            $res['userCode'] = $this->userCode;
+        }
+        if (null !== $this->userName) {
+            $res['userName'] = $this->userName;
         }
 
         return $res;
@@ -161,17 +161,17 @@ class content extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['uid'])) {
-            $model->uid = $map['uid'];
+        if (isset($map['assessGroupId'])) {
+            $model->assessGroupId = $map['assessGroupId'];
         }
-        if (isset($map['userName'])) {
-            $model->userName = $map['userName'];
+        if (isset($map['assessGroupName'])) {
+            $model->assessGroupName = $map['assessGroupName'];
         }
-        if (isset($map['jobNum'])) {
-            $model->jobNum = $map['jobNum'];
+        if (isset($map['corpId'])) {
+            $model->corpId = $map['corpId'];
         }
-        if (isset($map['id'])) {
-            $model->id = $map['id'];
+        if (isset($map['deptCode'])) {
+            $model->deptCode = $map['deptCode'];
         }
         if (isset($map['gmtCreateStr'])) {
             $model->gmtCreateStr = $map['gmtCreateStr'];
@@ -179,23 +179,23 @@ class content extends Model
         if (isset($map['gmtModifiedStr'])) {
             $model->gmtModifiedStr = $map['gmtModifiedStr'];
         }
-        if (isset($map['corpId'])) {
-            $model->corpId = $map['corpId'];
+        if (isset($map['id'])) {
+            $model->id = $map['id'];
         }
-        if (isset($map['userCode'])) {
-            $model->userCode = $map['userCode'];
-        }
-        if (isset($map['deptCode'])) {
-            $model->deptCode = $map['deptCode'];
+        if (isset($map['jobNum'])) {
+            $model->jobNum = $map['jobNum'];
         }
         if (isset($map['status'])) {
             $model->status = $map['status'];
         }
-        if (isset($map['assessGroupId'])) {
-            $model->assessGroupId = $map['assessGroupId'];
+        if (isset($map['uid'])) {
+            $model->uid = $map['uid'];
         }
-        if (isset($map['assessGroupName'])) {
-            $model->assessGroupName = $map['assessGroupName'];
+        if (isset($map['userCode'])) {
+            $model->userCode = $map['userCode'];
+        }
+        if (isset($map['userName'])) {
+            $model->userName = $map['userName'];
         }
 
         return $model;

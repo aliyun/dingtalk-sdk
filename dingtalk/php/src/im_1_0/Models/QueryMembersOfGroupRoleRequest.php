@@ -28,40 +28,10 @@ class QueryMembersOfGroupRoleRequest extends Model
      * @var int
      */
     public $timestamp;
-
-    /**
-     * @var int
-     */
-    public $dingTokenGrantType;
-
-    /**
-     * @var int
-     */
-    public $dingOrgId;
-
-    /**
-     * @var int
-     */
-    public $dingIsvOrgId;
-
-    /**
-     * @var string
-     */
-    public $dingSuiteKey;
-
-    /**
-     * @var int
-     */
-    public $dingOauthAppId;
     protected $_name = [
         'openConversationId' => 'openConversationId',
         'openRoleId'         => 'openRoleId',
         'timestamp'          => 'timestamp',
-        'dingTokenGrantType' => 'dingTokenGrantType',
-        'dingOrgId'          => 'dingOrgId',
-        'dingIsvOrgId'       => 'dingIsvOrgId',
-        'dingSuiteKey'       => 'dingSuiteKey',
-        'dingOauthAppId'     => 'dingOauthAppId',
     ];
 
     public function validate()
@@ -79,21 +49,6 @@ class QueryMembersOfGroupRoleRequest extends Model
         }
         if (null !== $this->timestamp) {
             $res['timestamp'] = $this->timestamp;
-        }
-        if (null !== $this->dingTokenGrantType) {
-            $res['dingTokenGrantType'] = $this->dingTokenGrantType;
-        }
-        if (null !== $this->dingOrgId) {
-            $res['dingOrgId'] = $this->dingOrgId;
-        }
-        if (null !== $this->dingIsvOrgId) {
-            $res['dingIsvOrgId'] = $this->dingIsvOrgId;
-        }
-        if (null !== $this->dingSuiteKey) {
-            $res['dingSuiteKey'] = $this->dingSuiteKey;
-        }
-        if (null !== $this->dingOauthAppId) {
-            $res['dingOauthAppId'] = $this->dingOauthAppId;
         }
 
         return $res;
@@ -115,21 +70,6 @@ class QueryMembersOfGroupRoleRequest extends Model
         }
         if (isset($map['timestamp'])) {
             $model->timestamp = $map['timestamp'];
-        }
-        if (isset($map['dingTokenGrantType'])) {
-            $model->dingTokenGrantType = $map['dingTokenGrantType'];
-        }
-        if (isset($map['dingOrgId'])) {
-            $model->dingOrgId = $map['dingOrgId'];
-        }
-        if (isset($map['dingIsvOrgId'])) {
-            $model->dingIsvOrgId = $map['dingIsvOrgId'];
-        }
-        if (isset($map['dingSuiteKey'])) {
-            $model->dingSuiteKey = $map['dingSuiteKey'];
-        }
-        if (isset($map['dingOauthAppId'])) {
-            $model->dingOauthAppId = $map['dingOauthAppId'];
         }
 
         return $model;

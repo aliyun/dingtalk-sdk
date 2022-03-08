@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class PollingConfirmStatusRequest extends Model
 {
     /**
+     * @description courseCode
+     *
+     * @var string
+     */
+    public $courseCode;
+
+    /**
      * @description ext
      *
      * @var string
@@ -23,22 +30,15 @@ class PollingConfirmStatusRequest extends Model
     public $isvCode;
 
     /**
-     * @description courseCode
-     *
-     * @var string
-     */
-    public $courseCode;
-
-    /**
      * @description opUserId
      *
      * @var string
      */
     public $opUserId;
     protected $_name = [
+        'courseCode' => 'courseCode',
         'ext'        => 'ext',
         'isvCode'    => 'isvCode',
-        'courseCode' => 'courseCode',
         'opUserId'   => 'opUserId',
     ];
 
@@ -49,14 +49,14 @@ class PollingConfirmStatusRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->courseCode) {
+            $res['courseCode'] = $this->courseCode;
+        }
         if (null !== $this->ext) {
             $res['ext'] = $this->ext;
         }
         if (null !== $this->isvCode) {
             $res['isvCode'] = $this->isvCode;
-        }
-        if (null !== $this->courseCode) {
-            $res['courseCode'] = $this->courseCode;
         }
         if (null !== $this->opUserId) {
             $res['opUserId'] = $this->opUserId;
@@ -73,14 +73,14 @@ class PollingConfirmStatusRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['courseCode'])) {
+            $model->courseCode = $map['courseCode'];
+        }
         if (isset($map['ext'])) {
             $model->ext = $map['ext'];
         }
         if (isset($map['isvCode'])) {
             $model->isvCode = $map['isvCode'];
-        }
-        if (isset($map['courseCode'])) {
-            $model->courseCode = $map['courseCode'];
         }
         if (isset($map['opUserId'])) {
             $model->opUserId = $map['opUserId'];

@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class AddShareCidListRequest extends Model
 {
     /**
-     * @description 操作的的组织内id(staffId)
+     * @description 传入的群id类型（1 chatId / 2 openConversationId ）
      *
-     * @var string
+     * @var int
      */
-    public $userId;
+    public $groupIdType;
 
     /**
      * @description 添加的联播群列表
@@ -23,15 +23,15 @@ class AddShareCidListRequest extends Model
     public $groupIds;
 
     /**
-     * @description 传入的群id类型（1 chatId / 2 openConversationId ）
+     * @description 操作的的组织内id(staffId)
      *
-     * @var int
+     * @var string
      */
-    public $groupIdType;
+    public $userId;
     protected $_name = [
-        'userId'      => 'userId',
-        'groupIds'    => 'groupIds',
         'groupIdType' => 'groupIdType',
+        'groupIds'    => 'groupIds',
+        'userId'      => 'userId',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class AddShareCidListRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
+        if (null !== $this->groupIdType) {
+            $res['groupIdType'] = $this->groupIdType;
         }
         if (null !== $this->groupIds) {
             $res['groupIds'] = $this->groupIds;
         }
-        if (null !== $this->groupIdType) {
-            $res['groupIdType'] = $this->groupIdType;
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -62,16 +62,16 @@ class AddShareCidListRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
+        if (isset($map['groupIdType'])) {
+            $model->groupIdType = $map['groupIdType'];
         }
         if (isset($map['groupIds'])) {
             if (!empty($map['groupIds'])) {
                 $model->groupIds = $map['groupIds'];
             }
         }
-        if (isset($map['groupIdType'])) {
-            $model->groupIdType = $map['groupIdType'];
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

@@ -9,18 +9,18 @@ use AlibabaCloud\Tea\Model;
 class QueryHtmlBundleBuildRequest extends Model
 {
     /**
-     * @description miniAppId
-     *
-     * @var string
-     */
-    public $miniAppId;
-
-    /**
      * @description bundleId
      *
      * @var string
      */
     public $bundleId;
+
+    /**
+     * @description miniAppId
+     *
+     * @var string
+     */
+    public $miniAppId;
 
     /**
      * @description version
@@ -29,8 +29,8 @@ class QueryHtmlBundleBuildRequest extends Model
      */
     public $version;
     protected $_name = [
-        'miniAppId' => 'miniAppId',
         'bundleId'  => 'bundleId',
+        'miniAppId' => 'miniAppId',
         'version'   => 'version',
     ];
 
@@ -41,11 +41,11 @@ class QueryHtmlBundleBuildRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->miniAppId) {
-            $res['miniAppId'] = $this->miniAppId;
-        }
         if (null !== $this->bundleId) {
             $res['bundleId'] = $this->bundleId;
+        }
+        if (null !== $this->miniAppId) {
+            $res['miniAppId'] = $this->miniAppId;
         }
         if (null !== $this->version) {
             $res['version'] = $this->version;
@@ -62,11 +62,11 @@ class QueryHtmlBundleBuildRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['miniAppId'])) {
-            $model->miniAppId = $map['miniAppId'];
-        }
         if (isset($map['bundleId'])) {
             $model->bundleId = $map['bundleId'];
+        }
+        if (isset($map['miniAppId'])) {
+            $model->miniAppId = $map['miniAppId'];
         }
         if (isset($map['version'])) {
             $model->version = $map['version'];

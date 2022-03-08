@@ -11,26 +11,6 @@ class participants extends Model
     /**
      * @var string
      */
-    public $accountType;
-
-    /**
-     * @var string
-     */
-    public $dingCorpId;
-
-    /**
-     * @var string
-     */
-    public $signRequirements;
-
-    /**
-     * @var string
-     */
-    public $userId;
-
-    /**
-     * @var string
-     */
     public $account;
 
     /**
@@ -41,15 +21,29 @@ class participants extends Model
     /**
      * @var string
      */
+    public $accountType;
+
+    /**
+     * @var string
+     */
     public $orgName;
+
+    /**
+     * @var string
+     */
+    public $signRequirements;
+
+    /**
+     * @var string
+     */
+    public $userId;
     protected $_name = [
-        'accountType'      => 'accountType',
-        'dingCorpId'       => 'dingCorpId',
-        'signRequirements' => 'signRequirements',
-        'userId'           => 'userId',
         'account'          => 'account',
         'accountName'      => 'accountName',
+        'accountType'      => 'accountType',
         'orgName'          => 'orgName',
+        'signRequirements' => 'signRequirements',
+        'userId'           => 'userId',
     ];
 
     public function validate()
@@ -59,26 +53,23 @@ class participants extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->accountType) {
-            $res['accountType'] = $this->accountType;
-        }
-        if (null !== $this->dingCorpId) {
-            $res['dingCorpId'] = $this->dingCorpId;
-        }
-        if (null !== $this->signRequirements) {
-            $res['signRequirements'] = $this->signRequirements;
-        }
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
-        }
         if (null !== $this->account) {
             $res['account'] = $this->account;
         }
         if (null !== $this->accountName) {
             $res['accountName'] = $this->accountName;
         }
+        if (null !== $this->accountType) {
+            $res['accountType'] = $this->accountType;
+        }
         if (null !== $this->orgName) {
             $res['orgName'] = $this->orgName;
+        }
+        if (null !== $this->signRequirements) {
+            $res['signRequirements'] = $this->signRequirements;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -92,26 +83,23 @@ class participants extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['accountType'])) {
-            $model->accountType = $map['accountType'];
-        }
-        if (isset($map['dingCorpId'])) {
-            $model->dingCorpId = $map['dingCorpId'];
-        }
-        if (isset($map['signRequirements'])) {
-            $model->signRequirements = $map['signRequirements'];
-        }
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
-        }
         if (isset($map['account'])) {
             $model->account = $map['account'];
         }
         if (isset($map['accountName'])) {
             $model->accountName = $map['accountName'];
         }
+        if (isset($map['accountType'])) {
+            $model->accountType = $map['accountType'];
+        }
         if (isset($map['orgName'])) {
             $model->orgName = $map['orgName'];
+        }
+        if (isset($map['signRequirements'])) {
+            $model->signRequirements = $map['signRequirements'];
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

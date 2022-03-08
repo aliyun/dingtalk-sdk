@@ -14,18 +14,18 @@ class seniorWhiteList extends Model
     public $id;
 
     /**
-     * @var int
-     */
-    public $type;
-
-    /**
      * @var string
      */
     public $name;
+
+    /**
+     * @var int
+     */
+    public $type;
     protected $_name = [
         'id'   => 'id',
-        'type' => 'type',
         'name' => 'name',
+        'type' => 'type',
     ];
 
     public function validate()
@@ -38,11 +38,11 @@ class seniorWhiteList extends Model
         if (null !== $this->id) {
             $res['id'] = $this->id;
         }
-        if (null !== $this->type) {
-            $res['type'] = $this->type;
-        }
         if (null !== $this->name) {
             $res['name'] = $this->name;
+        }
+        if (null !== $this->type) {
+            $res['type'] = $this->type;
         }
 
         return $res;
@@ -59,11 +59,11 @@ class seniorWhiteList extends Model
         if (isset($map['id'])) {
             $model->id = $map['id'];
         }
-        if (isset($map['type'])) {
-            $model->type = $map['type'];
-        }
         if (isset($map['name'])) {
             $model->name = $map['name'];
+        }
+        if (isset($map['type'])) {
+            $model->type = $map['type'];
         }
 
         return $model;

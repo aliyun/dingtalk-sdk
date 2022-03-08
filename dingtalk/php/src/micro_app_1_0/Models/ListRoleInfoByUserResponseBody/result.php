@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 角色名称
+     * @description 是否拥有角色管理权限，默认false
      *
-     * @var string
+     * @var bool
      */
-    public $roleName;
+    public $canManageRole;
 
     /**
      * @description 角色id
@@ -23,15 +23,15 @@ class result extends Model
     public $roleId;
 
     /**
-     * @description 是否拥有角色管理权限，默认false
+     * @description 角色名称
      *
-     * @var bool
+     * @var string
      */
-    public $canManageRole;
+    public $roleName;
     protected $_name = [
-        'roleName'      => 'roleName',
-        'roleId'        => 'roleId',
         'canManageRole' => 'canManageRole',
+        'roleId'        => 'roleId',
+        'roleName'      => 'roleName',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class result extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->roleName) {
-            $res['roleName'] = $this->roleName;
+        if (null !== $this->canManageRole) {
+            $res['canManageRole'] = $this->canManageRole;
         }
         if (null !== $this->roleId) {
             $res['roleId'] = $this->roleId;
         }
-        if (null !== $this->canManageRole) {
-            $res['canManageRole'] = $this->canManageRole;
+        if (null !== $this->roleName) {
+            $res['roleName'] = $this->roleName;
         }
 
         return $res;
@@ -62,14 +62,14 @@ class result extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['roleName'])) {
-            $model->roleName = $map['roleName'];
+        if (isset($map['canManageRole'])) {
+            $model->canManageRole = $map['canManageRole'];
         }
         if (isset($map['roleId'])) {
             $model->roleId = $map['roleId'];
         }
-        if (isset($map['canManageRole'])) {
-            $model->canManageRole = $map['canManageRole'];
+        if (isset($map['roleName'])) {
+            $model->roleName = $map['roleName'];
         }
 
         return $model;

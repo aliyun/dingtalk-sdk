@@ -11,20 +11,6 @@ use AlibabaCloud\Tea\Model;
 class CreateTodoTaskRequest extends Model
 {
     /**
-     * @description 来源id，接入业务系统侧的唯一标识id
-     *
-     * @var string
-     */
-    public $sourceId;
-
-    /**
-     * @description 待办标题
-     *
-     * @var string
-     */
-    public $subject;
-
-    /**
      * @description 创建者id，需传用户的unionId
      *
      * @var string
@@ -37,6 +23,13 @@ class CreateTodoTaskRequest extends Model
      * @var string
      */
     public $description;
+
+    /**
+     * @description 详情页url跳转地址
+     *
+     * @var detailUrl
+     */
+    public $detailUrl;
 
     /**
      * @description 截止时间
@@ -53,32 +46,11 @@ class CreateTodoTaskRequest extends Model
     public $executorIds;
 
     /**
-     * @description 参与者列表，需传用户的unionId
-     *
-     * @var string[]
-     */
-    public $participantIds;
-
-    /**
-     * @description 详情页url跳转地址
-     *
-     * @var detailUrl
-     */
-    public $detailUrl;
-
-    /**
      * @description 生成的待办是否仅展示在执行者的待办列表中
      *
      * @var bool
      */
     public $isOnlyShowExecutor;
-
-    /**
-     * @description 优先级
-     *
-     * @var int
-     */
-    public $priority;
 
     /**
      * @description 通知提醒配置
@@ -88,23 +60,51 @@ class CreateTodoTaskRequest extends Model
     public $notifyConfigs;
 
     /**
+     * @description 参与者列表，需传用户的unionId
+     *
+     * @var string[]
+     */
+    public $participantIds;
+
+    /**
+     * @description 优先级
+     *
+     * @var int
+     */
+    public $priority;
+
+    /**
+     * @description 来源id，接入业务系统侧的唯一标识id
+     *
+     * @var string
+     */
+    public $sourceId;
+
+    /**
+     * @description 待办标题
+     *
+     * @var string
+     */
+    public $subject;
+
+    /**
      * @description 当前操作者id，需传用户的unionId
      *
      * @var string
      */
     public $operatorId;
     protected $_name = [
-        'sourceId'           => 'sourceId',
-        'subject'            => 'subject',
         'creatorId'          => 'creatorId',
         'description'        => 'description',
+        'detailUrl'          => 'detailUrl',
         'dueTime'            => 'dueTime',
         'executorIds'        => 'executorIds',
-        'participantIds'     => 'participantIds',
-        'detailUrl'          => 'detailUrl',
         'isOnlyShowExecutor' => 'isOnlyShowExecutor',
-        'priority'           => 'priority',
         'notifyConfigs'      => 'notifyConfigs',
+        'participantIds'     => 'participantIds',
+        'priority'           => 'priority',
+        'sourceId'           => 'sourceId',
+        'subject'            => 'subject',
         'operatorId'         => 'operatorId',
     ];
 
@@ -115,17 +115,14 @@ class CreateTodoTaskRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->sourceId) {
-            $res['sourceId'] = $this->sourceId;
-        }
-        if (null !== $this->subject) {
-            $res['subject'] = $this->subject;
-        }
         if (null !== $this->creatorId) {
             $res['creatorId'] = $this->creatorId;
         }
         if (null !== $this->description) {
             $res['description'] = $this->description;
+        }
+        if (null !== $this->detailUrl) {
+            $res['detailUrl'] = null !== $this->detailUrl ? $this->detailUrl->toMap() : null;
         }
         if (null !== $this->dueTime) {
             $res['dueTime'] = $this->dueTime;
@@ -133,20 +130,23 @@ class CreateTodoTaskRequest extends Model
         if (null !== $this->executorIds) {
             $res['executorIds'] = $this->executorIds;
         }
-        if (null !== $this->participantIds) {
-            $res['participantIds'] = $this->participantIds;
-        }
-        if (null !== $this->detailUrl) {
-            $res['detailUrl'] = null !== $this->detailUrl ? $this->detailUrl->toMap() : null;
-        }
         if (null !== $this->isOnlyShowExecutor) {
             $res['isOnlyShowExecutor'] = $this->isOnlyShowExecutor;
+        }
+        if (null !== $this->notifyConfigs) {
+            $res['notifyConfigs'] = null !== $this->notifyConfigs ? $this->notifyConfigs->toMap() : null;
+        }
+        if (null !== $this->participantIds) {
+            $res['participantIds'] = $this->participantIds;
         }
         if (null !== $this->priority) {
             $res['priority'] = $this->priority;
         }
-        if (null !== $this->notifyConfigs) {
-            $res['notifyConfigs'] = null !== $this->notifyConfigs ? $this->notifyConfigs->toMap() : null;
+        if (null !== $this->sourceId) {
+            $res['sourceId'] = $this->sourceId;
+        }
+        if (null !== $this->subject) {
+            $res['subject'] = $this->subject;
         }
         if (null !== $this->operatorId) {
             $res['operatorId'] = $this->operatorId;
@@ -163,17 +163,14 @@ class CreateTodoTaskRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['sourceId'])) {
-            $model->sourceId = $map['sourceId'];
-        }
-        if (isset($map['subject'])) {
-            $model->subject = $map['subject'];
-        }
         if (isset($map['creatorId'])) {
             $model->creatorId = $map['creatorId'];
         }
         if (isset($map['description'])) {
             $model->description = $map['description'];
+        }
+        if (isset($map['detailUrl'])) {
+            $model->detailUrl = detailUrl::fromMap($map['detailUrl']);
         }
         if (isset($map['dueTime'])) {
             $model->dueTime = $map['dueTime'];
@@ -183,22 +180,25 @@ class CreateTodoTaskRequest extends Model
                 $model->executorIds = $map['executorIds'];
             }
         }
+        if (isset($map['isOnlyShowExecutor'])) {
+            $model->isOnlyShowExecutor = $map['isOnlyShowExecutor'];
+        }
+        if (isset($map['notifyConfigs'])) {
+            $model->notifyConfigs = notifyConfigs::fromMap($map['notifyConfigs']);
+        }
         if (isset($map['participantIds'])) {
             if (!empty($map['participantIds'])) {
                 $model->participantIds = $map['participantIds'];
             }
         }
-        if (isset($map['detailUrl'])) {
-            $model->detailUrl = detailUrl::fromMap($map['detailUrl']);
-        }
-        if (isset($map['isOnlyShowExecutor'])) {
-            $model->isOnlyShowExecutor = $map['isOnlyShowExecutor'];
-        }
         if (isset($map['priority'])) {
             $model->priority = $map['priority'];
         }
-        if (isset($map['notifyConfigs'])) {
-            $model->notifyConfigs = notifyConfigs::fromMap($map['notifyConfigs']);
+        if (isset($map['sourceId'])) {
+            $model->sourceId = $map['sourceId'];
+        }
+        if (isset($map['subject'])) {
+            $model->subject = $map['subject'];
         }
         if (isset($map['operatorId'])) {
             $model->operatorId = $map['operatorId'];

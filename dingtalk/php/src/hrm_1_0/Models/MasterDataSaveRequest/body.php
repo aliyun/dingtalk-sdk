@@ -11,20 +11,6 @@ use AlibabaCloud\Tea\Model;
 class body extends Model
 {
     /**
-     * @description 员工id
-     *
-     * @var string
-     */
-    public $userId;
-
-    /**
-     * @description 数据流水唯一标识，如流水号，用以唯一确认一条写入数据
-     *
-     * @var string
-     */
-    public $bizUk;
-
-    /**
      * @description 数据变更时间戳，用以保证更新操作的顺序性
      *
      * @var int
@@ -32,11 +18,11 @@ class body extends Model
     public $bizTime;
 
     /**
-     * @description 业务域描述，系统分配
+     * @description 数据流水唯一标识，如流水号，用以唯一确认一条写入数据
      *
-     * @var scope
+     * @var string
      */
-    public $scope;
+    public $bizUk;
 
     /**
      * @description 业务域下的细分领域实体
@@ -51,13 +37,27 @@ class body extends Model
      * @var fieldList[]
      */
     public $fieldList;
+
+    /**
+     * @description 业务域描述，系统分配
+     *
+     * @var scope
+     */
+    public $scope;
+
+    /**
+     * @description 员工id
+     *
+     * @var string
+     */
+    public $userId;
     protected $_name = [
-        'userId'     => 'userId',
-        'bizUk'      => 'bizUk',
         'bizTime'    => 'bizTime',
-        'scope'      => 'scope',
+        'bizUk'      => 'bizUk',
         'entityCode' => 'entityCode',
         'fieldList'  => 'fieldList',
+        'scope'      => 'scope',
+        'userId'     => 'userId',
     ];
 
     public function validate()
@@ -67,17 +67,11 @@ class body extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
-        }
-        if (null !== $this->bizUk) {
-            $res['bizUk'] = $this->bizUk;
-        }
         if (null !== $this->bizTime) {
             $res['bizTime'] = $this->bizTime;
         }
-        if (null !== $this->scope) {
-            $res['scope'] = null !== $this->scope ? $this->scope->toMap() : null;
+        if (null !== $this->bizUk) {
+            $res['bizUk'] = $this->bizUk;
         }
         if (null !== $this->entityCode) {
             $res['entityCode'] = $this->entityCode;
@@ -91,6 +85,12 @@ class body extends Model
                 }
             }
         }
+        if (null !== $this->scope) {
+            $res['scope'] = null !== $this->scope ? $this->scope->toMap() : null;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
+        }
 
         return $res;
     }
@@ -103,17 +103,11 @@ class body extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
-        }
-        if (isset($map['bizUk'])) {
-            $model->bizUk = $map['bizUk'];
-        }
         if (isset($map['bizTime'])) {
             $model->bizTime = $map['bizTime'];
         }
-        if (isset($map['scope'])) {
-            $model->scope = scope::fromMap($map['scope']);
+        if (isset($map['bizUk'])) {
+            $model->bizUk = $map['bizUk'];
         }
         if (isset($map['entityCode'])) {
             $model->entityCode = $map['entityCode'];
@@ -126,6 +120,12 @@ class body extends Model
                     $model->fieldList[$n++] = null !== $item ? fieldList::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['scope'])) {
+            $model->scope = scope::fromMap($map['scope']);
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

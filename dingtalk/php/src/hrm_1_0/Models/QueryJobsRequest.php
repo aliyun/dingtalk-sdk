@@ -16,22 +16,22 @@ class QueryJobsRequest extends Model
     public $jobName;
 
     /**
-     * @description 偏移量
-     *
-     * @var int
-     */
-    public $nextToken;
-
-    /**
      * @description 最大值
      *
      * @var int
      */
     public $maxResults;
+
+    /**
+     * @description 偏移量
+     *
+     * @var int
+     */
+    public $nextToken;
     protected $_name = [
         'jobName'    => 'jobName',
-        'nextToken'  => 'nextToken',
         'maxResults' => 'maxResults',
+        'nextToken'  => 'nextToken',
     ];
 
     public function validate()
@@ -44,11 +44,11 @@ class QueryJobsRequest extends Model
         if (null !== $this->jobName) {
             $res['jobName'] = $this->jobName;
         }
-        if (null !== $this->nextToken) {
-            $res['nextToken'] = $this->nextToken;
-        }
         if (null !== $this->maxResults) {
             $res['maxResults'] = $this->maxResults;
+        }
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
         }
 
         return $res;
@@ -65,11 +65,11 @@ class QueryJobsRequest extends Model
         if (isset($map['jobName'])) {
             $model->jobName = $map['jobName'];
         }
-        if (isset($map['nextToken'])) {
-            $model->nextToken = $map['nextToken'];
-        }
         if (isset($map['maxResults'])) {
             $model->maxResults = $map['maxResults'];
+        }
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
         }
 
         return $model;

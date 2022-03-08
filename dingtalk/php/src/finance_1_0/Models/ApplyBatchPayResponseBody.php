@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class ApplyBatchPayResponseBody extends Model
 {
     /**
-     * @description 支付确认页数据
-     *
-     * @var string
-     */
-    public $payData;
-
-    /**
      * @description 钉钉支付的批次号
      *
      * @var string
      */
     public $orderNo;
+
+    /**
+     * @description 支付确认页数据
+     *
+     * @var string
+     */
+    public $payData;
     protected $_name = [
-        'payData' => 'payData',
         'orderNo' => 'orderNo',
+        'payData' => 'payData',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class ApplyBatchPayResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->payData) {
-            $res['payData'] = $this->payData;
-        }
         if (null !== $this->orderNo) {
             $res['orderNo'] = $this->orderNo;
+        }
+        if (null !== $this->payData) {
+            $res['payData'] = $this->payData;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class ApplyBatchPayResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['payData'])) {
-            $model->payData = $map['payData'];
-        }
         if (isset($map['orderNo'])) {
             $model->orderNo = $map['orderNo'];
+        }
+        if (isset($map['payData'])) {
+            $model->payData = $map['payData'];
         }
 
         return $model;

@@ -9,11 +9,25 @@ use AlibabaCloud\Tea\Model;
 class invoices extends Model
 {
     /**
+     * @description 发票总金额
+     *
+     * @var string
+     */
+    public $invoiceAmount;
+
+    /**
      * @description 发票代码
      *
      * @var string
      */
     public $invoiceCode;
+
+    /**
+     * @description 开票时间
+     *
+     * @var string
+     */
+    public $invoiceDate;
 
     /**
      * @description 发票号码
@@ -30,11 +44,11 @@ class invoices extends Model
     public $invoiceType;
 
     /**
-     * @description 开票时间
+     * @description 发票logo地址
      *
      * @var string
      */
-    public $invoiceDate;
+    public $logoUrl;
 
     /**
      * @description 收款方名称
@@ -65,18 +79,11 @@ class invoices extends Model
     public $payerTaxNo;
 
     /**
-     * @description 发票总金额
+     * @description 发票pdf原件下载链接
      *
      * @var string
      */
-    public $invoiceAmount;
-
-    /**
-     * @description 不含税金额
-     *
-     * @var string
-     */
-    public $withoutTaxAmount;
+    public $pdfUrl;
 
     /**
      * @description 税金额
@@ -93,33 +100,26 @@ class invoices extends Model
     public $verifyCode;
 
     /**
-     * @description 发票pdf原件下载链接
+     * @description 不含税金额
      *
      * @var string
      */
-    public $pdfUrl;
-
-    /**
-     * @description 发票logo地址
-     *
-     * @var string
-     */
-    public $logoUrl;
+    public $withoutTaxAmount;
     protected $_name = [
+        'invoiceAmount'    => 'invoiceAmount',
         'invoiceCode'      => 'invoiceCode',
+        'invoiceDate'      => 'invoiceDate',
         'invoiceNo'        => 'invoiceNo',
         'invoiceType'      => 'invoiceType',
-        'invoiceDate'      => 'invoiceDate',
+        'logoUrl'          => 'logoUrl',
         'payeeName'        => 'payeeName',
         'payeeTaxNo'       => 'payeeTaxNo',
         'payerName'        => 'payerName',
         'payerTaxNo'       => 'payerTaxNo',
-        'invoiceAmount'    => 'invoiceAmount',
-        'withoutTaxAmount' => 'withoutTaxAmount',
+        'pdfUrl'           => 'pdfUrl',
         'taxAmount'        => 'taxAmount',
         'verifyCode'       => 'verifyCode',
-        'pdfUrl'           => 'pdfUrl',
-        'logoUrl'          => 'logoUrl',
+        'withoutTaxAmount' => 'withoutTaxAmount',
     ];
 
     public function validate()
@@ -129,8 +129,14 @@ class invoices extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->invoiceAmount) {
+            $res['invoiceAmount'] = $this->invoiceAmount;
+        }
         if (null !== $this->invoiceCode) {
             $res['invoiceCode'] = $this->invoiceCode;
+        }
+        if (null !== $this->invoiceDate) {
+            $res['invoiceDate'] = $this->invoiceDate;
         }
         if (null !== $this->invoiceNo) {
             $res['invoiceNo'] = $this->invoiceNo;
@@ -138,8 +144,8 @@ class invoices extends Model
         if (null !== $this->invoiceType) {
             $res['invoiceType'] = $this->invoiceType;
         }
-        if (null !== $this->invoiceDate) {
-            $res['invoiceDate'] = $this->invoiceDate;
+        if (null !== $this->logoUrl) {
+            $res['logoUrl'] = $this->logoUrl;
         }
         if (null !== $this->payeeName) {
             $res['payeeName'] = $this->payeeName;
@@ -153,11 +159,8 @@ class invoices extends Model
         if (null !== $this->payerTaxNo) {
             $res['payerTaxNo'] = $this->payerTaxNo;
         }
-        if (null !== $this->invoiceAmount) {
-            $res['invoiceAmount'] = $this->invoiceAmount;
-        }
-        if (null !== $this->withoutTaxAmount) {
-            $res['withoutTaxAmount'] = $this->withoutTaxAmount;
+        if (null !== $this->pdfUrl) {
+            $res['pdfUrl'] = $this->pdfUrl;
         }
         if (null !== $this->taxAmount) {
             $res['taxAmount'] = $this->taxAmount;
@@ -165,11 +168,8 @@ class invoices extends Model
         if (null !== $this->verifyCode) {
             $res['verifyCode'] = $this->verifyCode;
         }
-        if (null !== $this->pdfUrl) {
-            $res['pdfUrl'] = $this->pdfUrl;
-        }
-        if (null !== $this->logoUrl) {
-            $res['logoUrl'] = $this->logoUrl;
+        if (null !== $this->withoutTaxAmount) {
+            $res['withoutTaxAmount'] = $this->withoutTaxAmount;
         }
 
         return $res;
@@ -183,8 +183,14 @@ class invoices extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['invoiceAmount'])) {
+            $model->invoiceAmount = $map['invoiceAmount'];
+        }
         if (isset($map['invoiceCode'])) {
             $model->invoiceCode = $map['invoiceCode'];
+        }
+        if (isset($map['invoiceDate'])) {
+            $model->invoiceDate = $map['invoiceDate'];
         }
         if (isset($map['invoiceNo'])) {
             $model->invoiceNo = $map['invoiceNo'];
@@ -192,8 +198,8 @@ class invoices extends Model
         if (isset($map['invoiceType'])) {
             $model->invoiceType = $map['invoiceType'];
         }
-        if (isset($map['invoiceDate'])) {
-            $model->invoiceDate = $map['invoiceDate'];
+        if (isset($map['logoUrl'])) {
+            $model->logoUrl = $map['logoUrl'];
         }
         if (isset($map['payeeName'])) {
             $model->payeeName = $map['payeeName'];
@@ -207,11 +213,8 @@ class invoices extends Model
         if (isset($map['payerTaxNo'])) {
             $model->payerTaxNo = $map['payerTaxNo'];
         }
-        if (isset($map['invoiceAmount'])) {
-            $model->invoiceAmount = $map['invoiceAmount'];
-        }
-        if (isset($map['withoutTaxAmount'])) {
-            $model->withoutTaxAmount = $map['withoutTaxAmount'];
+        if (isset($map['pdfUrl'])) {
+            $model->pdfUrl = $map['pdfUrl'];
         }
         if (isset($map['taxAmount'])) {
             $model->taxAmount = $map['taxAmount'];
@@ -219,11 +222,8 @@ class invoices extends Model
         if (isset($map['verifyCode'])) {
             $model->verifyCode = $map['verifyCode'];
         }
-        if (isset($map['pdfUrl'])) {
-            $model->pdfUrl = $map['pdfUrl'];
-        }
-        if (isset($map['logoUrl'])) {
-            $model->logoUrl = $map['logoUrl'];
+        if (isset($map['withoutTaxAmount'])) {
+            $model->withoutTaxAmount = $map['withoutTaxAmount'];
         }
 
         return $model;

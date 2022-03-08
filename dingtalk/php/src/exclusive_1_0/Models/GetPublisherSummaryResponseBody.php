@@ -18,11 +18,18 @@ class GetPublisherSummaryResponseBody extends Model
     public $data;
 
     /**
-     * @description 历史截至当日服务窗数
+     * @description 是否有更多数据
      *
-     * @var string
+     * @var bool
      */
-    public $publisherCntStd;
+    public $hasMore;
+
+    /**
+     * @description 下一次请求的分页游标
+     *
+     * @var int
+     */
+    public $nextToken;
 
     /**
      * @description 历史截至当日服务窗文章数
@@ -46,26 +53,19 @@ class GetPublisherSummaryResponseBody extends Model
     public $publisherArticlePvTop5;
 
     /**
-     * @description 下一次请求的分页游标
+     * @description 历史截至当日服务窗数
      *
-     * @var int
+     * @var string
      */
-    public $nextToken;
-
-    /**
-     * @description 是否有更多数据
-     *
-     * @var bool
-     */
-    public $hasMore;
+    public $publisherCntStd;
     protected $_name = [
         'data'                     => 'data',
-        'publisherCntStd'          => 'publisherCntStd',
+        'hasMore'                  => 'hasMore',
+        'nextToken'                => 'nextToken',
         'publisherArticleCntStd'   => 'publisherArticleCntStd',
         'publisherArticlePvCntStd' => 'publisherArticlePvCntStd',
         'publisherArticlePvTop5'   => 'publisherArticlePvTop5',
-        'nextToken'                => 'nextToken',
-        'hasMore'                  => 'hasMore',
+        'publisherCntStd'          => 'publisherCntStd',
     ];
 
     public function validate()
@@ -84,8 +84,11 @@ class GetPublisherSummaryResponseBody extends Model
                 }
             }
         }
-        if (null !== $this->publisherCntStd) {
-            $res['publisherCntStd'] = $this->publisherCntStd;
+        if (null !== $this->hasMore) {
+            $res['hasMore'] = $this->hasMore;
+        }
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
         }
         if (null !== $this->publisherArticleCntStd) {
             $res['publisherArticleCntStd'] = $this->publisherArticleCntStd;
@@ -102,11 +105,8 @@ class GetPublisherSummaryResponseBody extends Model
                 }
             }
         }
-        if (null !== $this->nextToken) {
-            $res['nextToken'] = $this->nextToken;
-        }
-        if (null !== $this->hasMore) {
-            $res['hasMore'] = $this->hasMore;
+        if (null !== $this->publisherCntStd) {
+            $res['publisherCntStd'] = $this->publisherCntStd;
         }
 
         return $res;
@@ -129,8 +129,11 @@ class GetPublisherSummaryResponseBody extends Model
                 }
             }
         }
-        if (isset($map['publisherCntStd'])) {
-            $model->publisherCntStd = $map['publisherCntStd'];
+        if (isset($map['hasMore'])) {
+            $model->hasMore = $map['hasMore'];
+        }
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
         }
         if (isset($map['publisherArticleCntStd'])) {
             $model->publisherArticleCntStd = $map['publisherArticleCntStd'];
@@ -147,11 +150,8 @@ class GetPublisherSummaryResponseBody extends Model
                 }
             }
         }
-        if (isset($map['nextToken'])) {
-            $model->nextToken = $map['nextToken'];
-        }
-        if (isset($map['hasMore'])) {
-            $model->hasMore = $map['hasMore'];
+        if (isset($map['publisherCntStd'])) {
+            $model->publisherCntStd = $map['publisherCntStd'];
         }
 
         return $model;

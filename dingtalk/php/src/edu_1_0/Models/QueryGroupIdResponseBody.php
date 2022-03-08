@@ -9,18 +9,18 @@ use AlibabaCloud\Tea\Model;
 class QueryGroupIdResponseBody extends Model
 {
     /**
-     * @description 开发者pid
+     * @description 组织id
      *
      * @var string
      */
-    public $pid;
+    public $corpId;
 
     /**
-     * @description 开发者名称
+     * @description 人脸库id
      *
      * @var string
      */
-    public $name;
+    public $groupId;
 
     /**
      * @description 商户id
@@ -37,25 +37,25 @@ class QueryGroupIdResponseBody extends Model
     public $merchantName;
 
     /**
-     * @description 组织id
+     * @description 开发者名称
      *
      * @var string
      */
-    public $corpId;
+    public $name;
 
     /**
-     * @description 人脸库id
+     * @description 开发者pid
      *
      * @var string
      */
-    public $groupId;
+    public $pid;
     protected $_name = [
-        'pid'          => 'pid',
-        'name'         => 'name',
-        'merchantId'   => 'merchantId',
-        'merchantName' => 'merchantName',
         'corpId'       => 'corpId',
         'groupId'      => 'groupId',
+        'merchantId'   => 'merchantId',
+        'merchantName' => 'merchantName',
+        'name'         => 'name',
+        'pid'          => 'pid',
     ];
 
     public function validate()
@@ -65,11 +65,11 @@ class QueryGroupIdResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->pid) {
-            $res['pid'] = $this->pid;
+        if (null !== $this->corpId) {
+            $res['corpId'] = $this->corpId;
         }
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
+        if (null !== $this->groupId) {
+            $res['groupId'] = $this->groupId;
         }
         if (null !== $this->merchantId) {
             $res['merchantId'] = $this->merchantId;
@@ -77,11 +77,11 @@ class QueryGroupIdResponseBody extends Model
         if (null !== $this->merchantName) {
             $res['merchantName'] = $this->merchantName;
         }
-        if (null !== $this->corpId) {
-            $res['corpId'] = $this->corpId;
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
         }
-        if (null !== $this->groupId) {
-            $res['groupId'] = $this->groupId;
+        if (null !== $this->pid) {
+            $res['pid'] = $this->pid;
         }
 
         return $res;
@@ -95,11 +95,11 @@ class QueryGroupIdResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['pid'])) {
-            $model->pid = $map['pid'];
+        if (isset($map['corpId'])) {
+            $model->corpId = $map['corpId'];
         }
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
+        if (isset($map['groupId'])) {
+            $model->groupId = $map['groupId'];
         }
         if (isset($map['merchantId'])) {
             $model->merchantId = $map['merchantId'];
@@ -107,11 +107,11 @@ class QueryGroupIdResponseBody extends Model
         if (isset($map['merchantName'])) {
             $model->merchantName = $map['merchantName'];
         }
-        if (isset($map['corpId'])) {
-            $model->corpId = $map['corpId'];
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
         }
-        if (isset($map['groupId'])) {
-            $model->groupId = $map['groupId'];
+        if (isset($map['pid'])) {
+            $model->pid = $map['pid'];
         }
 
         return $model;

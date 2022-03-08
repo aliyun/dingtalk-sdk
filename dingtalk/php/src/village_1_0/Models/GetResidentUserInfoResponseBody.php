@@ -10,11 +10,11 @@ use AlibabaCloud\Tea\Model;
 class GetResidentUserInfoResponseBody extends Model
 {
     /**
-     * @description 员工id
+     * @description 员工特征
      *
      * @var string
      */
-    public $userid;
+    public $feature;
 
     /**
      * @description 员工名字
@@ -31,24 +31,24 @@ class GetResidentUserInfoResponseBody extends Model
     public $roles;
 
     /**
-     * @description 员工特征
-     *
-     * @var string
-     */
-    public $feature;
-
-    /**
      * @description 钉钉唯一标识
      *
      * @var string
      */
     public $unionId;
+
+    /**
+     * @description 员工id
+     *
+     * @var string
+     */
+    public $userid;
     protected $_name = [
-        'userid'  => 'userid',
+        'feature' => 'feature',
         'name'    => 'name',
         'roles'   => 'roles',
-        'feature' => 'feature',
         'unionId' => 'unionId',
+        'userid'  => 'userid',
     ];
 
     public function validate()
@@ -58,8 +58,8 @@ class GetResidentUserInfoResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->userid) {
-            $res['userid'] = $this->userid;
+        if (null !== $this->feature) {
+            $res['feature'] = $this->feature;
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
@@ -73,11 +73,11 @@ class GetResidentUserInfoResponseBody extends Model
                 }
             }
         }
-        if (null !== $this->feature) {
-            $res['feature'] = $this->feature;
-        }
         if (null !== $this->unionId) {
             $res['unionId'] = $this->unionId;
+        }
+        if (null !== $this->userid) {
+            $res['userid'] = $this->userid;
         }
 
         return $res;
@@ -91,8 +91,8 @@ class GetResidentUserInfoResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['userid'])) {
-            $model->userid = $map['userid'];
+        if (isset($map['feature'])) {
+            $model->feature = $map['feature'];
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];
@@ -106,11 +106,11 @@ class GetResidentUserInfoResponseBody extends Model
                 }
             }
         }
-        if (isset($map['feature'])) {
-            $model->feature = $map['feature'];
-        }
         if (isset($map['unionId'])) {
             $model->unionId = $map['unionId'];
+        }
+        if (isset($map['userid'])) {
+            $model->userid = $map['userid'];
         }
 
         return $model;

@@ -14,9 +14,9 @@ class config extends Model
     /**
      * @description 开始时间（到日）。
      *
-     * @var start
+     * @var end
      */
-    public $start;
+    public $end;
 
     /**
      * @description 节次模型。
@@ -28,13 +28,13 @@ class config extends Model
     /**
      * @description 开始时间（到日）。
      *
-     * @var end
+     * @var start
      */
-    public $end;
+    public $start;
     protected $_name = [
-        'start'         => 'start',
-        'sectionModels' => 'sectionModels',
         'end'           => 'end',
+        'sectionModels' => 'sectionModels',
+        'start'         => 'start',
     ];
 
     public function validate()
@@ -44,8 +44,8 @@ class config extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->start) {
-            $res['start'] = null !== $this->start ? $this->start->toMap() : null;
+        if (null !== $this->end) {
+            $res['end'] = null !== $this->end ? $this->end->toMap() : null;
         }
         if (null !== $this->sectionModels) {
             $res['sectionModels'] = [];
@@ -56,8 +56,8 @@ class config extends Model
                 }
             }
         }
-        if (null !== $this->end) {
-            $res['end'] = null !== $this->end ? $this->end->toMap() : null;
+        if (null !== $this->start) {
+            $res['start'] = null !== $this->start ? $this->start->toMap() : null;
         }
 
         return $res;
@@ -71,8 +71,8 @@ class config extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['start'])) {
-            $model->start = start::fromMap($map['start']);
+        if (isset($map['end'])) {
+            $model->end = end::fromMap($map['end']);
         }
         if (isset($map['sectionModels'])) {
             if (!empty($map['sectionModels'])) {
@@ -83,8 +83,8 @@ class config extends Model
                 }
             }
         }
-        if (isset($map['end'])) {
-            $model->end = end::fromMap($map['end']);
+        if (isset($map['start'])) {
+            $model->start = start::fromMap($map['start']);
         }
 
         return $model;

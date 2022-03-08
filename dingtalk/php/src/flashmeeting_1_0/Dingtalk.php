@@ -48,21 +48,21 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->creator)) {
+            @$body['creator'] = $request->creator;
+        }
         if (!Utils::isUnset($request->eventId)) {
             @$body['eventId'] = $request->eventId;
         }
         if (!Utils::isUnset($request->title)) {
             @$body['title'] = $request->title;
         }
-        if (!Utils::isUnset($request->creator)) {
-            @$body['creator'] = $request->creator;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,

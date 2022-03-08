@@ -10,19 +10,14 @@ use AlibabaCloud\Tea\Model;
 class actionCard extends Model
 {
     /**
+     * @var buttonList[]
+     */
+    public $buttonList;
+
+    /**
      * @var string
      */
     public $buttonOrientation;
-
-    /**
-     * @var string
-     */
-    public $singleUrl;
-
-    /**
-     * @var string
-     */
-    public $singleTitle;
 
     /**
      * @var string
@@ -32,19 +27,24 @@ class actionCard extends Model
     /**
      * @var string
      */
-    public $title;
+    public $singleTitle;
 
     /**
-     * @var buttonList[]
+     * @var string
      */
-    public $buttonList;
+    public $singleUrl;
+
+    /**
+     * @var string
+     */
+    public $title;
     protected $_name = [
-        'buttonOrientation' => 'buttonOrientation',
-        'singleUrl'         => 'singleUrl',
-        'singleTitle'       => 'singleTitle',
-        'markdown'          => 'markdown',
-        'title'             => 'title',
         'buttonList'        => 'buttonList',
+        'buttonOrientation' => 'buttonOrientation',
+        'markdown'          => 'markdown',
+        'singleTitle'       => 'singleTitle',
+        'singleUrl'         => 'singleUrl',
+        'title'             => 'title',
     ];
 
     public function validate()
@@ -54,21 +54,6 @@ class actionCard extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->buttonOrientation) {
-            $res['buttonOrientation'] = $this->buttonOrientation;
-        }
-        if (null !== $this->singleUrl) {
-            $res['singleUrl'] = $this->singleUrl;
-        }
-        if (null !== $this->singleTitle) {
-            $res['singleTitle'] = $this->singleTitle;
-        }
-        if (null !== $this->markdown) {
-            $res['markdown'] = $this->markdown;
-        }
-        if (null !== $this->title) {
-            $res['title'] = $this->title;
-        }
         if (null !== $this->buttonList) {
             $res['buttonList'] = [];
             if (null !== $this->buttonList && \is_array($this->buttonList)) {
@@ -77,6 +62,21 @@ class actionCard extends Model
                     $res['buttonList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->buttonOrientation) {
+            $res['buttonOrientation'] = $this->buttonOrientation;
+        }
+        if (null !== $this->markdown) {
+            $res['markdown'] = $this->markdown;
+        }
+        if (null !== $this->singleTitle) {
+            $res['singleTitle'] = $this->singleTitle;
+        }
+        if (null !== $this->singleUrl) {
+            $res['singleUrl'] = $this->singleUrl;
+        }
+        if (null !== $this->title) {
+            $res['title'] = $this->title;
         }
 
         return $res;
@@ -90,21 +90,6 @@ class actionCard extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['buttonOrientation'])) {
-            $model->buttonOrientation = $map['buttonOrientation'];
-        }
-        if (isset($map['singleUrl'])) {
-            $model->singleUrl = $map['singleUrl'];
-        }
-        if (isset($map['singleTitle'])) {
-            $model->singleTitle = $map['singleTitle'];
-        }
-        if (isset($map['markdown'])) {
-            $model->markdown = $map['markdown'];
-        }
-        if (isset($map['title'])) {
-            $model->title = $map['title'];
-        }
         if (isset($map['buttonList'])) {
             if (!empty($map['buttonList'])) {
                 $model->buttonList = [];
@@ -113,6 +98,21 @@ class actionCard extends Model
                     $model->buttonList[$n++] = null !== $item ? buttonList::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['buttonOrientation'])) {
+            $model->buttonOrientation = $map['buttonOrientation'];
+        }
+        if (isset($map['markdown'])) {
+            $model->markdown = $map['markdown'];
+        }
+        if (isset($map['singleTitle'])) {
+            $model->singleTitle = $map['singleTitle'];
+        }
+        if (isset($map['singleUrl'])) {
+            $model->singleUrl = $map['singleUrl'];
+        }
+        if (isset($map['title'])) {
+            $model->title = $map['title'];
         }
 
         return $model;

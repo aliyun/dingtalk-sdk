@@ -10,18 +10,11 @@ use AlibabaCloud\Tea\Model;
 class workspaces extends Model
 {
     /**
-     * @description 团队空间Id
+     * @description 团队空间创建时间
      *
-     * @var string
+     * @var int
      */
-    public $workspaceId;
-
-    /**
-     * @description 团队空间打开url
-     *
-     * @var string
-     */
-    public $url;
+    public $createTime;
 
     /**
      * @description 团队空间是否被删除
@@ -31,23 +24,16 @@ class workspaces extends Model
     public $deleted;
 
     /**
-     * @var string
-     */
-    public $owner;
-
-    /**
-     * @description 用户的角色
-     *
-     * @var string
-     */
-    public $role;
-
-    /**
      * @description 团队空间名称
      *
      * @var string
      */
     public $name;
+
+    /**
+     * @var string
+     */
+    public $owner;
 
     /**
      * @description 团队空间最近访问文档列表
@@ -57,20 +43,34 @@ class workspaces extends Model
     public $recentList;
 
     /**
-     * @description 团队空间创建时间
+     * @description 用户的角色
      *
-     * @var int
+     * @var string
      */
-    public $createTime;
+    public $role;
+
+    /**
+     * @description 团队空间打开url
+     *
+     * @var string
+     */
+    public $url;
+
+    /**
+     * @description 团队空间Id
+     *
+     * @var string
+     */
+    public $workspaceId;
     protected $_name = [
-        'workspaceId' => 'workspaceId',
-        'url'         => 'url',
-        'deleted'     => 'deleted',
-        'owner'       => 'owner',
-        'role'        => 'role',
-        'name'        => 'name',
-        'recentList'  => 'recentList',
         'createTime'  => 'createTime',
+        'deleted'     => 'deleted',
+        'name'        => 'name',
+        'owner'       => 'owner',
+        'recentList'  => 'recentList',
+        'role'        => 'role',
+        'url'         => 'url',
+        'workspaceId' => 'workspaceId',
     ];
 
     public function validate()
@@ -80,23 +80,17 @@ class workspaces extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->workspaceId) {
-            $res['workspaceId'] = $this->workspaceId;
-        }
-        if (null !== $this->url) {
-            $res['url'] = $this->url;
+        if (null !== $this->createTime) {
+            $res['createTime'] = $this->createTime;
         }
         if (null !== $this->deleted) {
             $res['deleted'] = $this->deleted;
         }
-        if (null !== $this->owner) {
-            $res['owner'] = $this->owner;
-        }
-        if (null !== $this->role) {
-            $res['role'] = $this->role;
-        }
         if (null !== $this->name) {
             $res['name'] = $this->name;
+        }
+        if (null !== $this->owner) {
+            $res['owner'] = $this->owner;
         }
         if (null !== $this->recentList) {
             $res['recentList'] = [];
@@ -107,8 +101,14 @@ class workspaces extends Model
                 }
             }
         }
-        if (null !== $this->createTime) {
-            $res['createTime'] = $this->createTime;
+        if (null !== $this->role) {
+            $res['role'] = $this->role;
+        }
+        if (null !== $this->url) {
+            $res['url'] = $this->url;
+        }
+        if (null !== $this->workspaceId) {
+            $res['workspaceId'] = $this->workspaceId;
         }
 
         return $res;
@@ -122,23 +122,17 @@ class workspaces extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['workspaceId'])) {
-            $model->workspaceId = $map['workspaceId'];
-        }
-        if (isset($map['url'])) {
-            $model->url = $map['url'];
+        if (isset($map['createTime'])) {
+            $model->createTime = $map['createTime'];
         }
         if (isset($map['deleted'])) {
             $model->deleted = $map['deleted'];
         }
-        if (isset($map['owner'])) {
-            $model->owner = $map['owner'];
-        }
-        if (isset($map['role'])) {
-            $model->role = $map['role'];
-        }
         if (isset($map['name'])) {
             $model->name = $map['name'];
+        }
+        if (isset($map['owner'])) {
+            $model->owner = $map['owner'];
         }
         if (isset($map['recentList'])) {
             if (!empty($map['recentList'])) {
@@ -149,8 +143,14 @@ class workspaces extends Model
                 }
             }
         }
-        if (isset($map['createTime'])) {
-            $model->createTime = $map['createTime'];
+        if (isset($map['role'])) {
+            $model->role = $map['role'];
+        }
+        if (isset($map['url'])) {
+            $model->url = $map['url'];
+        }
+        if (isset($map['workspaceId'])) {
+            $model->workspaceId = $map['workspaceId'];
         }
 
         return $model;

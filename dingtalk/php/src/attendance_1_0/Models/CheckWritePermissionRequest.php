@@ -9,11 +9,18 @@ use AlibabaCloud\Tea\Model;
 class CheckWritePermissionRequest extends Model
 {
     /**
-     * @description corpId
+     * @description category
      *
      * @var string
      */
-    public $corpId;
+    public $category;
+
+    /**
+     * @description entityIds
+     *
+     * @var int[]
+     */
+    public $entityIds;
 
     /**
      * @description opUserId
@@ -23,13 +30,6 @@ class CheckWritePermissionRequest extends Model
     public $opUserId;
 
     /**
-     * @description category
-     *
-     * @var string
-     */
-    public $category;
-
-    /**
      * @description resourceKey
      *
      * @var string
@@ -37,17 +37,17 @@ class CheckWritePermissionRequest extends Model
     public $resourceKey;
 
     /**
-     * @description entityIds
+     * @description corpId
      *
-     * @var int[]
+     * @var string
      */
-    public $entityIds;
+    public $corpId;
     protected $_name = [
-        'corpId'      => 'corpId',
-        'opUserId'    => 'opUserId',
         'category'    => 'category',
-        'resourceKey' => 'resourceKey',
         'entityIds'   => 'entityIds',
+        'opUserId'    => 'opUserId',
+        'resourceKey' => 'resourceKey',
+        'corpId'      => 'corpId',
     ];
 
     public function validate()
@@ -57,20 +57,20 @@ class CheckWritePermissionRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->corpId) {
-            $res['corpId'] = $this->corpId;
+        if (null !== $this->category) {
+            $res['category'] = $this->category;
+        }
+        if (null !== $this->entityIds) {
+            $res['entityIds'] = $this->entityIds;
         }
         if (null !== $this->opUserId) {
             $res['opUserId'] = $this->opUserId;
         }
-        if (null !== $this->category) {
-            $res['category'] = $this->category;
-        }
         if (null !== $this->resourceKey) {
             $res['resourceKey'] = $this->resourceKey;
         }
-        if (null !== $this->entityIds) {
-            $res['entityIds'] = $this->entityIds;
+        if (null !== $this->corpId) {
+            $res['corpId'] = $this->corpId;
         }
 
         return $res;
@@ -84,22 +84,22 @@ class CheckWritePermissionRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['corpId'])) {
-            $model->corpId = $map['corpId'];
-        }
-        if (isset($map['opUserId'])) {
-            $model->opUserId = $map['opUserId'];
-        }
         if (isset($map['category'])) {
             $model->category = $map['category'];
-        }
-        if (isset($map['resourceKey'])) {
-            $model->resourceKey = $map['resourceKey'];
         }
         if (isset($map['entityIds'])) {
             if (!empty($map['entityIds'])) {
                 $model->entityIds = $map['entityIds'];
             }
+        }
+        if (isset($map['opUserId'])) {
+            $model->opUserId = $map['opUserId'];
+        }
+        if (isset($map['resourceKey'])) {
+            $model->resourceKey = $map['resourceKey'];
+        }
+        if (isset($map['corpId'])) {
+            $model->corpId = $map['corpId'];
         }
 
         return $model;

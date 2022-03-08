@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class QueryCustomEntryProcessesRequest extends Model
 {
     /**
-     * @description 操作人id
+     * @description 最大值
      *
-     * @var string
+     * @var int
      */
-    public $operateUserId;
+    public $maxResults;
 
     /**
      * @description 偏移量
@@ -23,15 +23,15 @@ class QueryCustomEntryProcessesRequest extends Model
     public $nextToken;
 
     /**
-     * @description 最大值
+     * @description 操作人id
      *
-     * @var int
+     * @var string
      */
-    public $maxResults;
+    public $operateUserId;
     protected $_name = [
-        'operateUserId' => 'operateUserId',
-        'nextToken'     => 'nextToken',
         'maxResults'    => 'maxResults',
+        'nextToken'     => 'nextToken',
+        'operateUserId' => 'operateUserId',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class QueryCustomEntryProcessesRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->operateUserId) {
-            $res['operateUserId'] = $this->operateUserId;
+        if (null !== $this->maxResults) {
+            $res['maxResults'] = $this->maxResults;
         }
         if (null !== $this->nextToken) {
             $res['nextToken'] = $this->nextToken;
         }
-        if (null !== $this->maxResults) {
-            $res['maxResults'] = $this->maxResults;
+        if (null !== $this->operateUserId) {
+            $res['operateUserId'] = $this->operateUserId;
         }
 
         return $res;
@@ -62,14 +62,14 @@ class QueryCustomEntryProcessesRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['operateUserId'])) {
-            $model->operateUserId = $map['operateUserId'];
+        if (isset($map['maxResults'])) {
+            $model->maxResults = $map['maxResults'];
         }
         if (isset($map['nextToken'])) {
             $model->nextToken = $map['nextToken'];
         }
-        if (isset($map['maxResults'])) {
-            $model->maxResults = $map['maxResults'];
+        if (isset($map['operateUserId'])) {
+            $model->operateUserId = $map['operateUserId'];
         }
 
         return $model;

@@ -9,6 +9,20 @@ use AlibabaCloud\Tea\Model;
 class content extends Model
 {
     /**
+     * @description 用户code
+     *
+     * @var string
+     */
+    public $userCode;
+
+    /**
+     * @description 扩展字段描述
+     *
+     * @var string
+     */
+    public $userExtendDisplayName;
+
+    /**
      * @description 扩展字段key
      *
      * @var string
@@ -21,25 +35,11 @@ class content extends Model
      * @var string
      */
     public $userExtendValue;
-
-    /**
-     * @description 扩展字段描述
-     *
-     * @var string
-     */
-    public $userExtendDisplayName;
-
-    /**
-     * @description 用户code
-     *
-     * @var string
-     */
-    public $userCode;
     protected $_name = [
+        'userCode'              => 'userCode',
+        'userExtendDisplayName' => 'userExtendDisplayName',
         'userExtendKey'         => 'userExtendKey',
         'userExtendValue'       => 'userExtendValue',
-        'userExtendDisplayName' => 'userExtendDisplayName',
-        'userCode'              => 'userCode',
     ];
 
     public function validate()
@@ -49,17 +49,17 @@ class content extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->userCode) {
+            $res['userCode'] = $this->userCode;
+        }
+        if (null !== $this->userExtendDisplayName) {
+            $res['userExtendDisplayName'] = $this->userExtendDisplayName;
+        }
         if (null !== $this->userExtendKey) {
             $res['userExtendKey'] = $this->userExtendKey;
         }
         if (null !== $this->userExtendValue) {
             $res['userExtendValue'] = $this->userExtendValue;
-        }
-        if (null !== $this->userExtendDisplayName) {
-            $res['userExtendDisplayName'] = $this->userExtendDisplayName;
-        }
-        if (null !== $this->userCode) {
-            $res['userCode'] = $this->userCode;
         }
 
         return $res;
@@ -73,17 +73,17 @@ class content extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['userCode'])) {
+            $model->userCode = $map['userCode'];
+        }
+        if (isset($map['userExtendDisplayName'])) {
+            $model->userExtendDisplayName = $map['userExtendDisplayName'];
+        }
         if (isset($map['userExtendKey'])) {
             $model->userExtendKey = $map['userExtendKey'];
         }
         if (isset($map['userExtendValue'])) {
             $model->userExtendValue = $map['userExtendValue'];
-        }
-        if (isset($map['userExtendDisplayName'])) {
-            $model->userExtendDisplayName = $map['userExtendDisplayName'];
-        }
-        if (isset($map['userCode'])) {
-            $model->userCode = $map['userCode'];
         }
 
         return $model;

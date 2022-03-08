@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class QueryUserPayInfoRequest extends Model
 {
     /**
-     * @description 员工id
+     * @description 人脸id
      *
      * @var string
      */
-    public $userId;
+    public $faceId;
 
     /**
      * @description 设备id
@@ -23,15 +23,15 @@ class QueryUserPayInfoRequest extends Model
     public $sn;
 
     /**
-     * @description 人脸id
+     * @description 员工id
      *
      * @var string
      */
-    public $faceId;
+    public $userId;
     protected $_name = [
-        'userId' => 'userId',
-        'sn'     => 'sn',
         'faceId' => 'faceId',
+        'sn'     => 'sn',
+        'userId' => 'userId',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class QueryUserPayInfoRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
+        if (null !== $this->faceId) {
+            $res['faceId'] = $this->faceId;
         }
         if (null !== $this->sn) {
             $res['sn'] = $this->sn;
         }
-        if (null !== $this->faceId) {
-            $res['faceId'] = $this->faceId;
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -62,14 +62,14 @@ class QueryUserPayInfoRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
+        if (isset($map['faceId'])) {
+            $model->faceId = $map['faceId'];
         }
         if (isset($map['sn'])) {
             $model->sn = $map['sn'];
         }
-        if (isset($map['faceId'])) {
-            $model->faceId = $map['faceId'];
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

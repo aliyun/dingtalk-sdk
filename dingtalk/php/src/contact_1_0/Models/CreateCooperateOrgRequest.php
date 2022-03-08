@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class CreateCooperateOrgRequest extends Model
 {
     /**
-     * @description 合作空间组织名称
+     * @description 行业code
      *
-     * @var string
+     * @var int
      */
-    public $orgName;
+    public $industryCode;
 
     /**
      * @description 合作空间的logo
@@ -23,15 +23,15 @@ class CreateCooperateOrgRequest extends Model
     public $logoMediaId;
 
     /**
-     * @description 行业code
+     * @description 合作空间组织名称
      *
-     * @var int
+     * @var string
      */
-    public $industryCode;
+    public $orgName;
     protected $_name = [
-        'orgName'      => 'orgName',
-        'logoMediaId'  => 'logoMediaId',
         'industryCode' => 'industryCode',
+        'logoMediaId'  => 'logoMediaId',
+        'orgName'      => 'orgName',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class CreateCooperateOrgRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->orgName) {
-            $res['orgName'] = $this->orgName;
+        if (null !== $this->industryCode) {
+            $res['industryCode'] = $this->industryCode;
         }
         if (null !== $this->logoMediaId) {
             $res['logoMediaId'] = $this->logoMediaId;
         }
-        if (null !== $this->industryCode) {
-            $res['industryCode'] = $this->industryCode;
+        if (null !== $this->orgName) {
+            $res['orgName'] = $this->orgName;
         }
 
         return $res;
@@ -62,14 +62,14 @@ class CreateCooperateOrgRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['orgName'])) {
-            $model->orgName = $map['orgName'];
+        if (isset($map['industryCode'])) {
+            $model->industryCode = $map['industryCode'];
         }
         if (isset($map['logoMediaId'])) {
             $model->logoMediaId = $map['logoMediaId'];
         }
-        if (isset($map['industryCode'])) {
-            $model->industryCode = $map['industryCode'];
+        if (isset($map['orgName'])) {
+            $model->orgName = $map['orgName'];
         }
 
         return $model;

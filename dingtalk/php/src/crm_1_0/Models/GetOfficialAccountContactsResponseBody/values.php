@@ -10,21 +10,21 @@ use AlibabaCloud\Tea\Model;
 class values extends Model
 {
     /**
-     * @description 用户userId
-     *
-     * @var string
-     */
-    public $userId;
-
-    /**
      * @description 用户的联系人数据
      *
      * @var contacts[]
      */
     public $contacts;
+
+    /**
+     * @description 用户userId
+     *
+     * @var string
+     */
+    public $userId;
     protected $_name = [
-        'userId'   => 'userId',
         'contacts' => 'contacts',
+        'userId'   => 'userId',
     ];
 
     public function validate()
@@ -34,9 +34,6 @@ class values extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
-        }
         if (null !== $this->contacts) {
             $res['contacts'] = [];
             if (null !== $this->contacts && \is_array($this->contacts)) {
@@ -45,6 +42,9 @@ class values extends Model
                     $res['contacts'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -58,9 +58,6 @@ class values extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
-        }
         if (isset($map['contacts'])) {
             if (!empty($map['contacts'])) {
                 $model->contacts = [];
@@ -69,6 +66,9 @@ class values extends Model
                     $model->contacts[$n++] = null !== $item ? contacts::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

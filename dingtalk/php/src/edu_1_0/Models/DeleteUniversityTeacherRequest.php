@@ -16,6 +16,13 @@ class DeleteUniversityTeacherRequest extends Model
     public $classId;
 
     /**
+     * @description opUserId
+     *
+     * @var string
+     */
+    public $opUserId;
+
+    /**
      * @description 角色
      *
      * @var string
@@ -28,18 +35,11 @@ class DeleteUniversityTeacherRequest extends Model
      * @var string
      */
     public $teacherUserId;
-
-    /**
-     * @description opUserId
-     *
-     * @var string
-     */
-    public $opUserId;
     protected $_name = [
         'classId'       => 'classId',
+        'opUserId'      => 'opUserId',
         'role'          => 'role',
         'teacherUserId' => 'teacherUserId',
-        'opUserId'      => 'opUserId',
     ];
 
     public function validate()
@@ -52,14 +52,14 @@ class DeleteUniversityTeacherRequest extends Model
         if (null !== $this->classId) {
             $res['classId'] = $this->classId;
         }
+        if (null !== $this->opUserId) {
+            $res['opUserId'] = $this->opUserId;
+        }
         if (null !== $this->role) {
             $res['role'] = $this->role;
         }
         if (null !== $this->teacherUserId) {
             $res['teacherUserId'] = $this->teacherUserId;
-        }
-        if (null !== $this->opUserId) {
-            $res['opUserId'] = $this->opUserId;
         }
 
         return $res;
@@ -76,14 +76,14 @@ class DeleteUniversityTeacherRequest extends Model
         if (isset($map['classId'])) {
             $model->classId = $map['classId'];
         }
+        if (isset($map['opUserId'])) {
+            $model->opUserId = $map['opUserId'];
+        }
         if (isset($map['role'])) {
             $model->role = $map['role'];
         }
         if (isset($map['teacherUserId'])) {
             $model->teacherUserId = $map['teacherUserId'];
-        }
-        if (isset($map['opUserId'])) {
-            $model->opUserId = $map['opUserId'];
         }
 
         return $model;

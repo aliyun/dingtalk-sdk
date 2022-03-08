@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description PC端URL
-     *
-     * @var string
-     */
-    public $pcUrl;
-
-    /**
      * @description 移动端URL
      *
      * @var string
      */
     public $mobileUrl;
+
+    /**
+     * @description PC端URL
+     *
+     * @var string
+     */
+    public $pcUrl;
     protected $_name = [
-        'pcUrl'     => 'pcUrl',
         'mobileUrl' => 'mobileUrl',
+        'pcUrl'     => 'pcUrl',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class data extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->pcUrl) {
-            $res['pcUrl'] = $this->pcUrl;
-        }
         if (null !== $this->mobileUrl) {
             $res['mobileUrl'] = $this->mobileUrl;
+        }
+        if (null !== $this->pcUrl) {
+            $res['pcUrl'] = $this->pcUrl;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class data extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['pcUrl'])) {
-            $model->pcUrl = $map['pcUrl'];
-        }
         if (isset($map['mobileUrl'])) {
             $model->mobileUrl = $map['mobileUrl'];
+        }
+        if (isset($map['pcUrl'])) {
+            $model->pcUrl = $map['pcUrl'];
         }
 
         return $model;

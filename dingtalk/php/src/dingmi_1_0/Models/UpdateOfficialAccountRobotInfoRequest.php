@@ -9,20 +9,6 @@ use AlibabaCloud\Tea\Model;
 class UpdateOfficialAccountRobotInfoRequest extends Model
 {
     /**
-     * @description 机器人类型参数
-     *
-     * @var string
-     */
-    public $type;
-
-    /**
-     * @description 机器人名称
-     *
-     * @var string
-     */
-    public $name;
-
-    /**
      * @description 机器人头像
      *
      * @var string
@@ -44,18 +30,32 @@ class UpdateOfficialAccountRobotInfoRequest extends Model
     public $description;
 
     /**
+     * @description 机器人名称
+     *
+     * @var string
+     */
+    public $name;
+
+    /**
      * @description 机器人预览图
      *
      * @var string
      */
     public $previewMediaUrl;
+
+    /**
+     * @description 机器人类型参数
+     *
+     * @var string
+     */
+    public $type;
     protected $_name = [
-        'type'            => 'type',
-        'name'            => 'name',
         'avatar'          => 'avatar',
         'brief'           => 'brief',
         'description'     => 'description',
+        'name'            => 'name',
         'previewMediaUrl' => 'previewMediaUrl',
+        'type'            => 'type',
     ];
 
     public function validate()
@@ -65,12 +65,6 @@ class UpdateOfficialAccountRobotInfoRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->type) {
-            $res['type'] = $this->type;
-        }
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
-        }
         if (null !== $this->avatar) {
             $res['avatar'] = $this->avatar;
         }
@@ -80,8 +74,14 @@ class UpdateOfficialAccountRobotInfoRequest extends Model
         if (null !== $this->description) {
             $res['description'] = $this->description;
         }
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
+        }
         if (null !== $this->previewMediaUrl) {
             $res['previewMediaUrl'] = $this->previewMediaUrl;
+        }
+        if (null !== $this->type) {
+            $res['type'] = $this->type;
         }
 
         return $res;
@@ -95,12 +95,6 @@ class UpdateOfficialAccountRobotInfoRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['type'])) {
-            $model->type = $map['type'];
-        }
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
-        }
         if (isset($map['avatar'])) {
             $model->avatar = $map['avatar'];
         }
@@ -110,8 +104,14 @@ class UpdateOfficialAccountRobotInfoRequest extends Model
         if (isset($map['description'])) {
             $model->description = $map['description'];
         }
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
+        }
         if (isset($map['previewMediaUrl'])) {
             $model->previewMediaUrl = $map['previewMediaUrl'];
+        }
+        if (isset($map['type'])) {
+            $model->type = $map['type'];
         }
 
         return $model;

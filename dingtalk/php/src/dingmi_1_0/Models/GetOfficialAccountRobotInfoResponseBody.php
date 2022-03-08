@@ -16,20 +16,6 @@ class GetOfficialAccountRobotInfoResponseBody extends Model
     public $appId;
 
     /**
-     * @description 机器人名称
-     *
-     * @var string
-     */
-    public $name;
-
-    /**
-     * @description 机器人icon
-     *
-     * @var string
-     */
-    public $icon;
-
-    /**
      * @description 机器人简介
      *
      * @var string
@@ -44,6 +30,20 @@ class GetOfficialAccountRobotInfoResponseBody extends Model
     public $description;
 
     /**
+     * @description 机器人icon
+     *
+     * @var string
+     */
+    public $icon;
+
+    /**
+     * @description 机器人名称
+     *
+     * @var string
+     */
+    public $name;
+
+    /**
      * @description 机器人预览图
      *
      * @var string
@@ -51,10 +51,10 @@ class GetOfficialAccountRobotInfoResponseBody extends Model
     public $previewMediaUrl;
     protected $_name = [
         'appId'           => 'appId',
-        'name'            => 'name',
-        'icon'            => 'icon',
         'brief'           => 'brief',
         'description'     => 'description',
+        'icon'            => 'icon',
+        'name'            => 'name',
         'previewMediaUrl' => 'previewMediaUrl',
     ];
 
@@ -68,17 +68,17 @@ class GetOfficialAccountRobotInfoResponseBody extends Model
         if (null !== $this->appId) {
             $res['appId'] = $this->appId;
         }
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
-        }
-        if (null !== $this->icon) {
-            $res['icon'] = $this->icon;
-        }
         if (null !== $this->brief) {
             $res['brief'] = $this->brief;
         }
         if (null !== $this->description) {
             $res['description'] = $this->description;
+        }
+        if (null !== $this->icon) {
+            $res['icon'] = $this->icon;
+        }
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
         }
         if (null !== $this->previewMediaUrl) {
             $res['previewMediaUrl'] = $this->previewMediaUrl;
@@ -98,17 +98,17 @@ class GetOfficialAccountRobotInfoResponseBody extends Model
         if (isset($map['appId'])) {
             $model->appId = $map['appId'];
         }
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
-        }
-        if (isset($map['icon'])) {
-            $model->icon = $map['icon'];
-        }
         if (isset($map['brief'])) {
             $model->brief = $map['brief'];
         }
         if (isset($map['description'])) {
             $model->description = $map['description'];
+        }
+        if (isset($map['icon'])) {
+            $model->icon = $map['icon'];
+        }
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
         }
         if (isset($map['previewMediaUrl'])) {
             $model->previewMediaUrl = $map['previewMediaUrl'];

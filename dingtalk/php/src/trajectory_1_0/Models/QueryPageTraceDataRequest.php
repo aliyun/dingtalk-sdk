@@ -9,18 +9,11 @@ use AlibabaCloud\Tea\Model;
 class QueryPageTraceDataRequest extends Model
 {
     /**
-     * @description traceId
-     *
-     * @var string
-     */
-    public $traceId;
-
-    /**
-     * @description 起始位置
+     * @description 终止时间
      *
      * @var int
      */
-    public $nextToken;
+    public $endTime;
 
     /**
      * @description 查询数量
@@ -30,18 +23,11 @@ class QueryPageTraceDataRequest extends Model
     public $maxResults;
 
     /**
-     * @description 开始时间
+     * @description 起始位置
      *
      * @var int
      */
-    public $startTime;
-
-    /**
-     * @description 终止时间
-     *
-     * @var int
-     */
-    public $endTime;
+    public $nextToken;
 
     /**
      * @description 员工ID
@@ -49,13 +35,27 @@ class QueryPageTraceDataRequest extends Model
      * @var string
      */
     public $staffId;
+
+    /**
+     * @description 开始时间
+     *
+     * @var int
+     */
+    public $startTime;
+
+    /**
+     * @description traceId
+     *
+     * @var string
+     */
+    public $traceId;
     protected $_name = [
-        'traceId'    => 'traceId',
-        'nextToken'  => 'nextToken',
-        'maxResults' => 'maxResults',
-        'startTime'  => 'startTime',
         'endTime'    => 'endTime',
+        'maxResults' => 'maxResults',
+        'nextToken'  => 'nextToken',
         'staffId'    => 'staffId',
+        'startTime'  => 'startTime',
+        'traceId'    => 'traceId',
     ];
 
     public function validate()
@@ -65,23 +65,23 @@ class QueryPageTraceDataRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->traceId) {
-            $res['traceId'] = $this->traceId;
-        }
-        if (null !== $this->nextToken) {
-            $res['nextToken'] = $this->nextToken;
+        if (null !== $this->endTime) {
+            $res['endTime'] = $this->endTime;
         }
         if (null !== $this->maxResults) {
             $res['maxResults'] = $this->maxResults;
         }
-        if (null !== $this->startTime) {
-            $res['startTime'] = $this->startTime;
-        }
-        if (null !== $this->endTime) {
-            $res['endTime'] = $this->endTime;
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
         }
         if (null !== $this->staffId) {
             $res['staffId'] = $this->staffId;
+        }
+        if (null !== $this->startTime) {
+            $res['startTime'] = $this->startTime;
+        }
+        if (null !== $this->traceId) {
+            $res['traceId'] = $this->traceId;
         }
 
         return $res;
@@ -95,23 +95,23 @@ class QueryPageTraceDataRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['traceId'])) {
-            $model->traceId = $map['traceId'];
-        }
-        if (isset($map['nextToken'])) {
-            $model->nextToken = $map['nextToken'];
+        if (isset($map['endTime'])) {
+            $model->endTime = $map['endTime'];
         }
         if (isset($map['maxResults'])) {
             $model->maxResults = $map['maxResults'];
         }
-        if (isset($map['startTime'])) {
-            $model->startTime = $map['startTime'];
-        }
-        if (isset($map['endTime'])) {
-            $model->endTime = $map['endTime'];
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
         }
         if (isset($map['staffId'])) {
             $model->staffId = $map['staffId'];
+        }
+        if (isset($map['startTime'])) {
+            $model->startTime = $map['startTime'];
+        }
+        if (isset($map['traceId'])) {
+            $model->traceId = $map['traceId'];
         }
 
         return $model;

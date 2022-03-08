@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class ListManagementGroupsRequest extends Model
 {
     /**
-     * @description 开始读取的位置
-     *
-     * @var int
-     */
-    public $nextToken;
-
-    /**
      * @description 本次读取的最大数据记录数量
      *
      * @var int
      */
     public $maxResults;
+
+    /**
+     * @description 开始读取的位置
+     *
+     * @var int
+     */
+    public $nextToken;
     protected $_name = [
-        'nextToken'  => 'nextToken',
         'maxResults' => 'maxResults',
+        'nextToken'  => 'nextToken',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class ListManagementGroupsRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->nextToken) {
-            $res['nextToken'] = $this->nextToken;
-        }
         if (null !== $this->maxResults) {
             $res['maxResults'] = $this->maxResults;
+        }
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class ListManagementGroupsRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['nextToken'])) {
-            $model->nextToken = $map['nextToken'];
-        }
         if (isset($map['maxResults'])) {
             $model->maxResults = $map['maxResults'];
+        }
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
         }
 
         return $model;

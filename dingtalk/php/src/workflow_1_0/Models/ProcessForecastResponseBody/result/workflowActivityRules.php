@@ -17,13 +17,6 @@ class workflowActivityRules extends Model
     public $activityId;
 
     /**
-     * @description 流程中前一个节点的 id
-     *
-     * @var string
-     */
-    public $prevActivityId;
-
-    /**
      * @description 节点名称
      *
      * @var string
@@ -45,6 +38,13 @@ class workflowActivityRules extends Model
     public $isTargetSelect;
 
     /**
+     * @description 流程中前一个节点的 id
+     *
+     * @var string
+     */
+    public $prevActivityId;
+
+    /**
      * @description 节点操作人信息
      *
      * @var workflowActor
@@ -52,10 +52,10 @@ class workflowActivityRules extends Model
     public $workflowActor;
     protected $_name = [
         'activityId'     => 'activityId',
-        'prevActivityId' => 'prevActivityId',
         'activityName'   => 'activityName',
         'activityType'   => 'activityType',
         'isTargetSelect' => 'isTargetSelect',
+        'prevActivityId' => 'prevActivityId',
         'workflowActor'  => 'workflowActor',
     ];
 
@@ -69,9 +69,6 @@ class workflowActivityRules extends Model
         if (null !== $this->activityId) {
             $res['activityId'] = $this->activityId;
         }
-        if (null !== $this->prevActivityId) {
-            $res['prevActivityId'] = $this->prevActivityId;
-        }
         if (null !== $this->activityName) {
             $res['activityName'] = $this->activityName;
         }
@@ -80,6 +77,9 @@ class workflowActivityRules extends Model
         }
         if (null !== $this->isTargetSelect) {
             $res['isTargetSelect'] = $this->isTargetSelect;
+        }
+        if (null !== $this->prevActivityId) {
+            $res['prevActivityId'] = $this->prevActivityId;
         }
         if (null !== $this->workflowActor) {
             $res['workflowActor'] = null !== $this->workflowActor ? $this->workflowActor->toMap() : null;
@@ -99,9 +99,6 @@ class workflowActivityRules extends Model
         if (isset($map['activityId'])) {
             $model->activityId = $map['activityId'];
         }
-        if (isset($map['prevActivityId'])) {
-            $model->prevActivityId = $map['prevActivityId'];
-        }
         if (isset($map['activityName'])) {
             $model->activityName = $map['activityName'];
         }
@@ -110,6 +107,9 @@ class workflowActivityRules extends Model
         }
         if (isset($map['isTargetSelect'])) {
             $model->isTargetSelect = $map['isTargetSelect'];
+        }
+        if (isset($map['prevActivityId'])) {
+            $model->prevActivityId = $map['prevActivityId'];
         }
         if (isset($map['workflowActor'])) {
             $model->workflowActor = workflowActor::fromMap($map['workflowActor']);

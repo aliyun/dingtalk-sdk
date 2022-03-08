@@ -10,74 +10,11 @@ use AlibabaCloud\Tea\Model;
 class values extends Model
 {
     /**
-     * @description 表单实例id
-     *
-     * @var string
-     */
-    public $formInstanceId;
-
-    /**
      * @description 应用搭建id
      *
      * @var string
      */
     public $appUuid;
-
-    /**
-     * @description 表单模板code
-     *
-     * @var string
-     */
-    public $formCode;
-
-    /**
-     * @description 标题
-     *
-     * @var string
-     */
-    public $title;
-
-    /**
-     * @description 创建人
-     *
-     * @var string
-     */
-    public $creator;
-
-    /**
-     * @description 修改人
-     *
-     * @var string
-     */
-    public $modifier;
-
-    /**
-     * @description 创建时间
-     *
-     * @var int
-     */
-    public $createTimestamp;
-
-    /**
-     * @description 修改时间
-     *
-     * @var int
-     */
-    public $modifyTimestamp;
-
-    /**
-     * @description 外部实例编码
-     *
-     * @var string
-     */
-    public $outInstanceId;
-
-    /**
-     * @description 外部业务编码
-     *
-     * @var string
-     */
-    public $outBizCode;
 
     /**
      * @description 扩展信息
@@ -87,24 +24,87 @@ class values extends Model
     public $attributes;
 
     /**
+     * @description 创建时间
+     *
+     * @var int
+     */
+    public $createTimestamp;
+
+    /**
+     * @description 创建人
+     *
+     * @var string
+     */
+    public $creator;
+
+    /**
+     * @description 表单模板code
+     *
+     * @var string
+     */
+    public $formCode;
+
+    /**
      * @description 表单实例数据
      *
      * @var formInstDataList[]
      */
     public $formInstDataList;
+
+    /**
+     * @description 表单实例id
+     *
+     * @var string
+     */
+    public $formInstanceId;
+
+    /**
+     * @description 修改人
+     *
+     * @var string
+     */
+    public $modifier;
+
+    /**
+     * @description 修改时间
+     *
+     * @var int
+     */
+    public $modifyTimestamp;
+
+    /**
+     * @description 外部业务编码
+     *
+     * @var string
+     */
+    public $outBizCode;
+
+    /**
+     * @description 外部实例编码
+     *
+     * @var string
+     */
+    public $outInstanceId;
+
+    /**
+     * @description 标题
+     *
+     * @var string
+     */
+    public $title;
     protected $_name = [
-        'formInstanceId'   => 'formInstanceId',
         'appUuid'          => 'appUuid',
-        'formCode'         => 'formCode',
-        'title'            => 'title',
-        'creator'          => 'creator',
-        'modifier'         => 'modifier',
-        'createTimestamp'  => 'createTimestamp',
-        'modifyTimestamp'  => 'modifyTimestamp',
-        'outInstanceId'    => 'outInstanceId',
-        'outBizCode'       => 'outBizCode',
         'attributes'       => 'attributes',
+        'createTimestamp'  => 'createTimestamp',
+        'creator'          => 'creator',
+        'formCode'         => 'formCode',
         'formInstDataList' => 'formInstDataList',
+        'formInstanceId'   => 'formInstanceId',
+        'modifier'         => 'modifier',
+        'modifyTimestamp'  => 'modifyTimestamp',
+        'outBizCode'       => 'outBizCode',
+        'outInstanceId'    => 'outInstanceId',
+        'title'            => 'title',
     ];
 
     public function validate()
@@ -114,38 +114,20 @@ class values extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->formInstanceId) {
-            $res['formInstanceId'] = $this->formInstanceId;
-        }
         if (null !== $this->appUuid) {
             $res['appUuid'] = $this->appUuid;
         }
-        if (null !== $this->formCode) {
-            $res['formCode'] = $this->formCode;
-        }
-        if (null !== $this->title) {
-            $res['title'] = $this->title;
-        }
-        if (null !== $this->creator) {
-            $res['creator'] = $this->creator;
-        }
-        if (null !== $this->modifier) {
-            $res['modifier'] = $this->modifier;
+        if (null !== $this->attributes) {
+            $res['attributes'] = $this->attributes;
         }
         if (null !== $this->createTimestamp) {
             $res['createTimestamp'] = $this->createTimestamp;
         }
-        if (null !== $this->modifyTimestamp) {
-            $res['modifyTimestamp'] = $this->modifyTimestamp;
+        if (null !== $this->creator) {
+            $res['creator'] = $this->creator;
         }
-        if (null !== $this->outInstanceId) {
-            $res['outInstanceId'] = $this->outInstanceId;
-        }
-        if (null !== $this->outBizCode) {
-            $res['outBizCode'] = $this->outBizCode;
-        }
-        if (null !== $this->attributes) {
-            $res['attributes'] = $this->attributes;
+        if (null !== $this->formCode) {
+            $res['formCode'] = $this->formCode;
         }
         if (null !== $this->formInstDataList) {
             $res['formInstDataList'] = [];
@@ -155,6 +137,24 @@ class values extends Model
                     $res['formInstDataList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->formInstanceId) {
+            $res['formInstanceId'] = $this->formInstanceId;
+        }
+        if (null !== $this->modifier) {
+            $res['modifier'] = $this->modifier;
+        }
+        if (null !== $this->modifyTimestamp) {
+            $res['modifyTimestamp'] = $this->modifyTimestamp;
+        }
+        if (null !== $this->outBizCode) {
+            $res['outBizCode'] = $this->outBizCode;
+        }
+        if (null !== $this->outInstanceId) {
+            $res['outInstanceId'] = $this->outInstanceId;
+        }
+        if (null !== $this->title) {
+            $res['title'] = $this->title;
         }
 
         return $res;
@@ -168,38 +168,20 @@ class values extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['formInstanceId'])) {
-            $model->formInstanceId = $map['formInstanceId'];
-        }
         if (isset($map['appUuid'])) {
             $model->appUuid = $map['appUuid'];
         }
-        if (isset($map['formCode'])) {
-            $model->formCode = $map['formCode'];
-        }
-        if (isset($map['title'])) {
-            $model->title = $map['title'];
-        }
-        if (isset($map['creator'])) {
-            $model->creator = $map['creator'];
-        }
-        if (isset($map['modifier'])) {
-            $model->modifier = $map['modifier'];
+        if (isset($map['attributes'])) {
+            $model->attributes = $map['attributes'];
         }
         if (isset($map['createTimestamp'])) {
             $model->createTimestamp = $map['createTimestamp'];
         }
-        if (isset($map['modifyTimestamp'])) {
-            $model->modifyTimestamp = $map['modifyTimestamp'];
+        if (isset($map['creator'])) {
+            $model->creator = $map['creator'];
         }
-        if (isset($map['outInstanceId'])) {
-            $model->outInstanceId = $map['outInstanceId'];
-        }
-        if (isset($map['outBizCode'])) {
-            $model->outBizCode = $map['outBizCode'];
-        }
-        if (isset($map['attributes'])) {
-            $model->attributes = $map['attributes'];
+        if (isset($map['formCode'])) {
+            $model->formCode = $map['formCode'];
         }
         if (isset($map['formInstDataList'])) {
             if (!empty($map['formInstDataList'])) {
@@ -209,6 +191,24 @@ class values extends Model
                     $model->formInstDataList[$n++] = null !== $item ? formInstDataList::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['formInstanceId'])) {
+            $model->formInstanceId = $map['formInstanceId'];
+        }
+        if (isset($map['modifier'])) {
+            $model->modifier = $map['modifier'];
+        }
+        if (isset($map['modifyTimestamp'])) {
+            $model->modifyTimestamp = $map['modifyTimestamp'];
+        }
+        if (isset($map['outBizCode'])) {
+            $model->outBizCode = $map['outBizCode'];
+        }
+        if (isset($map['outInstanceId'])) {
+            $model->outInstanceId = $map['outInstanceId'];
+        }
+        if (isset($map['title'])) {
+            $model->title = $map['title'];
         }
 
         return $model;

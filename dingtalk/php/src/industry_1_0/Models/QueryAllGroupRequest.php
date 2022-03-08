@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class QueryAllGroupRequest extends Model
 {
     /**
-     * @description 分页查询页容量
-     *
-     * @var int
-     */
-    public $pageSize;
-
-    /**
      * @description 分页查询页码
      *
      * @var int
      */
     public $pageNumber;
+
+    /**
+     * @description 分页查询页容量
+     *
+     * @var int
+     */
+    public $pageSize;
     protected $_name = [
-        'pageSize'   => 'pageSize',
         'pageNumber' => 'pageNumber',
+        'pageSize'   => 'pageSize',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class QueryAllGroupRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->pageSize) {
-            $res['pageSize'] = $this->pageSize;
-        }
         if (null !== $this->pageNumber) {
             $res['pageNumber'] = $this->pageNumber;
+        }
+        if (null !== $this->pageSize) {
+            $res['pageSize'] = $this->pageSize;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class QueryAllGroupRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['pageSize'])) {
-            $model->pageSize = $map['pageSize'];
-        }
         if (isset($map['pageNumber'])) {
             $model->pageNumber = $map['pageNumber'];
+        }
+        if (isset($map['pageSize'])) {
+            $model->pageSize = $map['pageSize'];
         }
 
         return $model;

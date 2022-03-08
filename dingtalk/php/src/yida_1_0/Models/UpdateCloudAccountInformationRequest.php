@@ -16,18 +16,18 @@ class UpdateCloudAccountInformationRequest extends Model
     public $accessKey;
 
     /**
-     * @description 调用者unionId
-     *
-     * @var string
-     */
-    public $callerUnionId;
-
-    /**
      * @description 账户号
      *
      * @var string
      */
     public $accountNumber;
+
+    /**
+     * @description 调用者unionId
+     *
+     * @var string
+     */
+    public $callerUnionId;
 
     /**
      * @description 商品类型
@@ -37,8 +37,8 @@ class UpdateCloudAccountInformationRequest extends Model
     public $commodityType;
     protected $_name = [
         'accessKey'     => 'accessKey',
-        'callerUnionId' => 'callerUnionId',
         'accountNumber' => 'accountNumber',
+        'callerUnionId' => 'callerUnionId',
         'commodityType' => 'commodityType',
     ];
 
@@ -52,11 +52,11 @@ class UpdateCloudAccountInformationRequest extends Model
         if (null !== $this->accessKey) {
             $res['accessKey'] = $this->accessKey;
         }
-        if (null !== $this->callerUnionId) {
-            $res['callerUnionId'] = $this->callerUnionId;
-        }
         if (null !== $this->accountNumber) {
             $res['accountNumber'] = $this->accountNumber;
+        }
+        if (null !== $this->callerUnionId) {
+            $res['callerUnionId'] = $this->callerUnionId;
         }
         if (null !== $this->commodityType) {
             $res['commodityType'] = $this->commodityType;
@@ -76,11 +76,11 @@ class UpdateCloudAccountInformationRequest extends Model
         if (isset($map['accessKey'])) {
             $model->accessKey = $map['accessKey'];
         }
-        if (isset($map['callerUnionId'])) {
-            $model->callerUnionId = $map['callerUnionId'];
-        }
         if (isset($map['accountNumber'])) {
             $model->accountNumber = $map['accountNumber'];
+        }
+        if (isset($map['callerUnionId'])) {
+            $model->callerUnionId = $map['callerUnionId'];
         }
         if (isset($map['commodityType'])) {
             $model->commodityType = $map['commodityType'];

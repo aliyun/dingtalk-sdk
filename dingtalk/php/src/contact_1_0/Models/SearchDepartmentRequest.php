@@ -9,9 +9,11 @@ use AlibabaCloud\Tea\Model;
 class SearchDepartmentRequest extends Model
 {
     /**
+     * @description 分页查询锚点
+     *
      * @var int
      */
-    public $dingOrgId;
+    public $offset;
 
     /**
      * @description 部门名称或者部门名称拼音
@@ -21,22 +23,14 @@ class SearchDepartmentRequest extends Model
     public $queryWord;
 
     /**
-     * @description 分页查询锚点
-     *
-     * @var int
-     */
-    public $offset;
-
-    /**
      * @description 分页长度
      *
      * @var int
      */
     public $size;
     protected $_name = [
-        'dingOrgId' => 'dingOrgId',
-        'queryWord' => 'queryWord',
         'offset'    => 'offset',
+        'queryWord' => 'queryWord',
         'size'      => 'size',
     ];
 
@@ -47,14 +41,11 @@ class SearchDepartmentRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->dingOrgId) {
-            $res['dingOrgId'] = $this->dingOrgId;
+        if (null !== $this->offset) {
+            $res['offset'] = $this->offset;
         }
         if (null !== $this->queryWord) {
             $res['queryWord'] = $this->queryWord;
-        }
-        if (null !== $this->offset) {
-            $res['offset'] = $this->offset;
         }
         if (null !== $this->size) {
             $res['size'] = $this->size;
@@ -71,14 +62,11 @@ class SearchDepartmentRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['dingOrgId'])) {
-            $model->dingOrgId = $map['dingOrgId'];
+        if (isset($map['offset'])) {
+            $model->offset = $map['offset'];
         }
         if (isset($map['queryWord'])) {
             $model->queryWord = $map['queryWord'];
-        }
-        if (isset($map['offset'])) {
-            $model->offset = $map['offset'];
         }
         if (isset($map['size'])) {
             $model->size = $map['size'];

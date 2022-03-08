@@ -14,48 +14,8 @@ class QueryCollectingTraceTaskRequest extends Model
      * @var string[]
      */
     public $userIds;
-
-    /**
-     * @description isvOrgId
-     *
-     * @var int
-     */
-    public $dingIsvOrgId;
-
-    /**
-     * @description tokenGrantType
-     *
-     * @var int
-     */
-    public $dingTokenGrantType;
-
-    /**
-     * @description appKey
-     *
-     * @var string
-     */
-    public $dingClientId;
-
-    /**
-     * @description orgId
-     *
-     * @var int
-     */
-    public $dingOrgId;
-
-    /**
-     * @description oauthAppId
-     *
-     * @var int
-     */
-    public $dingOauthAppId;
     protected $_name = [
-        'userIds'            => 'userIds',
-        'dingIsvOrgId'       => 'dingIsvOrgId',
-        'dingTokenGrantType' => 'dingTokenGrantType',
-        'dingClientId'       => 'dingClientId',
-        'dingOrgId'          => 'dingOrgId',
-        'dingOauthAppId'     => 'dingOauthAppId',
+        'userIds' => 'userIds',
     ];
 
     public function validate()
@@ -67,21 +27,6 @@ class QueryCollectingTraceTaskRequest extends Model
         $res = [];
         if (null !== $this->userIds) {
             $res['userIds'] = $this->userIds;
-        }
-        if (null !== $this->dingIsvOrgId) {
-            $res['dingIsvOrgId'] = $this->dingIsvOrgId;
-        }
-        if (null !== $this->dingTokenGrantType) {
-            $res['dingTokenGrantType'] = $this->dingTokenGrantType;
-        }
-        if (null !== $this->dingClientId) {
-            $res['dingClientId'] = $this->dingClientId;
-        }
-        if (null !== $this->dingOrgId) {
-            $res['dingOrgId'] = $this->dingOrgId;
-        }
-        if (null !== $this->dingOauthAppId) {
-            $res['dingOauthAppId'] = $this->dingOauthAppId;
         }
 
         return $res;
@@ -99,21 +44,6 @@ class QueryCollectingTraceTaskRequest extends Model
             if (!empty($map['userIds'])) {
                 $model->userIds = $map['userIds'];
             }
-        }
-        if (isset($map['dingIsvOrgId'])) {
-            $model->dingIsvOrgId = $map['dingIsvOrgId'];
-        }
-        if (isset($map['dingTokenGrantType'])) {
-            $model->dingTokenGrantType = $map['dingTokenGrantType'];
-        }
-        if (isset($map['dingClientId'])) {
-            $model->dingClientId = $map['dingClientId'];
-        }
-        if (isset($map['dingOrgId'])) {
-            $model->dingOrgId = $map['dingOrgId'];
-        }
-        if (isset($map['dingOauthAppId'])) {
-            $model->dingOauthAppId = $map['dingOauthAppId'];
         }
 
         return $model;

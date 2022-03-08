@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class item extends Model
 {
     /**
-     * @description 服务商连接器connectorId
-     *
-     * @var string
-     */
-    public $integratorConnectorId;
-
-    /**
      * @description 连接平台connectorId
      *
      * @var string
@@ -23,11 +16,11 @@ class item extends Model
     public $dingConnectorId;
 
     /**
-     * @description 是否成功
+     * @description 服务商连接器connectorId
      *
-     * @var bool
+     * @var string
      */
-    public $success;
+    public $integratorConnectorId;
 
     /**
      * @description 错误码
@@ -42,12 +35,19 @@ class item extends Model
      * @var string
      */
     public $subErrMsg;
+
+    /**
+     * @description 是否成功
+     *
+     * @var bool
+     */
+    public $success;
     protected $_name = [
-        'integratorConnectorId' => 'integratorConnectorId',
         'dingConnectorId'       => 'dingConnectorId',
-        'success'               => 'success',
+        'integratorConnectorId' => 'integratorConnectorId',
         'subErrCode'            => 'subErrCode',
         'subErrMsg'             => 'subErrMsg',
+        'success'               => 'success',
     ];
 
     public function validate()
@@ -57,20 +57,20 @@ class item extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->integratorConnectorId) {
-            $res['integratorConnectorId'] = $this->integratorConnectorId;
-        }
         if (null !== $this->dingConnectorId) {
             $res['dingConnectorId'] = $this->dingConnectorId;
         }
-        if (null !== $this->success) {
-            $res['success'] = $this->success;
+        if (null !== $this->integratorConnectorId) {
+            $res['integratorConnectorId'] = $this->integratorConnectorId;
         }
         if (null !== $this->subErrCode) {
             $res['subErrCode'] = $this->subErrCode;
         }
         if (null !== $this->subErrMsg) {
             $res['subErrMsg'] = $this->subErrMsg;
+        }
+        if (null !== $this->success) {
+            $res['success'] = $this->success;
         }
 
         return $res;
@@ -84,20 +84,20 @@ class item extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['integratorConnectorId'])) {
-            $model->integratorConnectorId = $map['integratorConnectorId'];
-        }
         if (isset($map['dingConnectorId'])) {
             $model->dingConnectorId = $map['dingConnectorId'];
         }
-        if (isset($map['success'])) {
-            $model->success = $map['success'];
+        if (isset($map['integratorConnectorId'])) {
+            $model->integratorConnectorId = $map['integratorConnectorId'];
         }
         if (isset($map['subErrCode'])) {
             $model->subErrCode = $map['subErrCode'];
         }
         if (isset($map['subErrMsg'])) {
             $model->subErrMsg = $map['subErrMsg'];
+        }
+        if (isset($map['success'])) {
+            $model->success = $map['success'];
         }
 
         return $model;

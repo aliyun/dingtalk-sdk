@@ -17,22 +17,22 @@ class GetDocCreatedDeptSummaryResponseBody extends Model
     public $data;
 
     /**
-     * @description 下一次请求的分页游标
-     *
-     * @var int
-     */
-    public $nextToken;
-
-    /**
      * @description 是否有更多数据
      *
      * @var bool
      */
     public $hasMore;
+
+    /**
+     * @description 下一次请求的分页游标
+     *
+     * @var int
+     */
+    public $nextToken;
     protected $_name = [
         'data'      => 'data',
-        'nextToken' => 'nextToken',
         'hasMore'   => 'hasMore',
+        'nextToken' => 'nextToken',
     ];
 
     public function validate()
@@ -51,11 +51,11 @@ class GetDocCreatedDeptSummaryResponseBody extends Model
                 }
             }
         }
-        if (null !== $this->nextToken) {
-            $res['nextToken'] = $this->nextToken;
-        }
         if (null !== $this->hasMore) {
             $res['hasMore'] = $this->hasMore;
+        }
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
         }
 
         return $res;
@@ -78,11 +78,11 @@ class GetDocCreatedDeptSummaryResponseBody extends Model
                 }
             }
         }
-        if (isset($map['nextToken'])) {
-            $model->nextToken = $map['nextToken'];
-        }
         if (isset($map['hasMore'])) {
             $model->hasMore = $map['hasMore'];
+        }
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
         }
 
         return $model;

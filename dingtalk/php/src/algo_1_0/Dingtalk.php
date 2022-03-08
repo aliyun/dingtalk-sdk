@@ -65,7 +65,7 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -102,17 +102,17 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->candidateOkrItems)) {
             @$body['candidateOkrItems'] = $request->candidateOkrItems;
         }
+        if (!Utils::isUnset($request->corpId)) {
+            @$body['corpId'] = $request->corpId;
+        }
         if (!Utils::isUnset($request->deptIds)) {
             @$body['deptIds'] = $request->deptIds;
-        }
-        if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
         }
         if (!Utils::isUnset($request->isvAppId)) {
             @$body['isvAppId'] = $request->isvAppId;
         }
-        if (!Utils::isUnset($request->corpId)) {
-            @$body['corpId'] = $request->corpId;
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
         }
         if (!Utils::isUnset($request->words)) {
             @$body['words'] = $request->words;
@@ -122,7 +122,7 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,

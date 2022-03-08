@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class ListSubCorpsRequest extends Model
 {
     /**
-     * @description 下级指定组织层级列表，组织层级为county,town,community,residential，依次为区/县、乡/镇/街道、社区/村、小区，如果查多个用 '|' 分隔
+     * @description 是否查询直接下级
      *
-     * @var string
+     * @var bool
      */
-    public $types;
+    public $isOnlyDirect;
 
     /**
      * @description 下属组织的组织ID，比如下属镇、村的corpId
@@ -23,15 +23,15 @@ class ListSubCorpsRequest extends Model
     public $subCorpId;
 
     /**
-     * @description 是否查询直接下级
+     * @description 下级指定组织层级列表，组织层级为county,town,community,residential，依次为区/县、乡/镇/街道、社区/村、小区，如果查多个用 '|' 分隔
      *
-     * @var bool
+     * @var string
      */
-    public $isOnlyDirect;
+    public $types;
     protected $_name = [
-        'types'        => 'types',
-        'subCorpId'    => 'subCorpId',
         'isOnlyDirect' => 'isOnlyDirect',
+        'subCorpId'    => 'subCorpId',
+        'types'        => 'types',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class ListSubCorpsRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->types) {
-            $res['types'] = $this->types;
+        if (null !== $this->isOnlyDirect) {
+            $res['isOnlyDirect'] = $this->isOnlyDirect;
         }
         if (null !== $this->subCorpId) {
             $res['subCorpId'] = $this->subCorpId;
         }
-        if (null !== $this->isOnlyDirect) {
-            $res['isOnlyDirect'] = $this->isOnlyDirect;
+        if (null !== $this->types) {
+            $res['types'] = $this->types;
         }
 
         return $res;
@@ -62,14 +62,14 @@ class ListSubCorpsRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['types'])) {
-            $model->types = $map['types'];
+        if (isset($map['isOnlyDirect'])) {
+            $model->isOnlyDirect = $map['isOnlyDirect'];
         }
         if (isset($map['subCorpId'])) {
             $model->subCorpId = $map['subCorpId'];
         }
-        if (isset($map['isOnlyDirect'])) {
-            $model->isOnlyDirect = $map['isOnlyDirect'];
+        if (isset($map['types'])) {
+            $model->types = $map['types'];
         }
 
         return $model;

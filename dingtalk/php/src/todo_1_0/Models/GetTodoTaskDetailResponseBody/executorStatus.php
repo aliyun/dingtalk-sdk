@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class executorStatus extends Model
 {
     /**
-     * @description 执行者id（用户的unionId）
-     *
-     * @var string
-     */
-    public $userId;
-
-    /**
      * @description 执行者完成状态
      *
      * @var bool
      */
     public $isDone;
+
+    /**
+     * @description 执行者id（用户的unionId）
+     *
+     * @var string
+     */
+    public $userId;
     protected $_name = [
-        'userId' => 'userId',
         'isDone' => 'isDone',
+        'userId' => 'userId',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class executorStatus extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
-        }
         if (null !== $this->isDone) {
             $res['isDone'] = $this->isDone;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class executorStatus extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
-        }
         if (isset($map['isDone'])) {
             $model->isDone = $map['isDone'];
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

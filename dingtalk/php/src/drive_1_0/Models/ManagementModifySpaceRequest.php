@@ -9,18 +9,18 @@ use AlibabaCloud\Tea\Model;
 class ManagementModifySpaceRequest extends Model
 {
     /**
-     * @description 空间id列表
-     *
-     * @var string[]
-     */
-    public $spaceIds;
-
-    /**
      * @description 容量
      *
      * @var int
      */
     public $quota;
+
+    /**
+     * @description 空间id列表
+     *
+     * @var string[]
+     */
+    public $spaceIds;
 
     /**
      * @description 用户id
@@ -29,8 +29,8 @@ class ManagementModifySpaceRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'spaceIds' => 'spaceIds',
         'quota'    => 'quota',
+        'spaceIds' => 'spaceIds',
         'unionId'  => 'unionId',
     ];
 
@@ -41,11 +41,11 @@ class ManagementModifySpaceRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->spaceIds) {
-            $res['spaceIds'] = $this->spaceIds;
-        }
         if (null !== $this->quota) {
             $res['quota'] = $this->quota;
+        }
+        if (null !== $this->spaceIds) {
+            $res['spaceIds'] = $this->spaceIds;
         }
         if (null !== $this->unionId) {
             $res['unionId'] = $this->unionId;
@@ -62,13 +62,13 @@ class ManagementModifySpaceRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['quota'])) {
+            $model->quota = $map['quota'];
+        }
         if (isset($map['spaceIds'])) {
             if (!empty($map['spaceIds'])) {
                 $model->spaceIds = $map['spaceIds'];
             }
-        }
-        if (isset($map['quota'])) {
-            $model->quota = $map['quota'];
         }
         if (isset($map['unionId'])) {
             $model->unionId = $map['unionId'];

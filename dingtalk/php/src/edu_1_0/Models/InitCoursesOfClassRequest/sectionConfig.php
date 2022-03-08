@@ -12,6 +12,13 @@ use AlibabaCloud\Tea\Model;
 class sectionConfig extends Model
 {
     /**
+     * @description 课程表结束开始时间（精确到日）
+     *
+     * @var end
+     */
+    public $end;
+
+    /**
      * @description 节次模型
      *
      * @var sectionModels[]
@@ -24,17 +31,10 @@ class sectionConfig extends Model
      * @var start
      */
     public $start;
-
-    /**
-     * @description 课程表结束开始时间（精确到日）
-     *
-     * @var end
-     */
-    public $end;
     protected $_name = [
+        'end'           => 'end',
         'sectionModels' => 'sectionModels',
         'start'         => 'start',
-        'end'           => 'end',
     ];
 
     public function validate()
@@ -44,6 +44,9 @@ class sectionConfig extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->end) {
+            $res['end'] = null !== $this->end ? $this->end->toMap() : null;
+        }
         if (null !== $this->sectionModels) {
             $res['sectionModels'] = [];
             if (null !== $this->sectionModels && \is_array($this->sectionModels)) {
@@ -55,9 +58,6 @@ class sectionConfig extends Model
         }
         if (null !== $this->start) {
             $res['start'] = null !== $this->start ? $this->start->toMap() : null;
-        }
-        if (null !== $this->end) {
-            $res['end'] = null !== $this->end ? $this->end->toMap() : null;
         }
 
         return $res;
@@ -71,6 +71,9 @@ class sectionConfig extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['end'])) {
+            $model->end = end::fromMap($map['end']);
+        }
         if (isset($map['sectionModels'])) {
             if (!empty($map['sectionModels'])) {
                 $model->sectionModels = [];
@@ -82,9 +85,6 @@ class sectionConfig extends Model
         }
         if (isset($map['start'])) {
             $model->start = start::fromMap($map['start']);
-        }
-        if (isset($map['end'])) {
-            $model->end = end::fromMap($map['end']);
         }
 
         return $model;

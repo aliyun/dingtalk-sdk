@@ -9,20 +9,6 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 服务窗unionId
-     *
-     * @var string
-     */
-    public $unionId;
-
-    /**
-     * @description 服务窗名称
-     *
-     * @var string
-     */
-    public $publisherName;
-
-    /**
      * @description 历史截至当日服务窗文章数
      *
      * @var string
@@ -35,11 +21,25 @@ class data extends Model
      * @var string
      */
     public $publisherArticlePvCntStd;
+
+    /**
+     * @description 服务窗名称
+     *
+     * @var string
+     */
+    public $publisherName;
+
+    /**
+     * @description 服务窗unionId
+     *
+     * @var string
+     */
+    public $unionId;
     protected $_name = [
-        'unionId'                  => 'unionId',
-        'publisherName'            => 'publisherName',
         'publisherArticleCntStd'   => 'publisherArticleCntStd',
         'publisherArticlePvCntStd' => 'publisherArticlePvCntStd',
+        'publisherName'            => 'publisherName',
+        'unionId'                  => 'unionId',
     ];
 
     public function validate()
@@ -49,17 +49,17 @@ class data extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->unionId) {
-            $res['unionId'] = $this->unionId;
-        }
-        if (null !== $this->publisherName) {
-            $res['publisherName'] = $this->publisherName;
-        }
         if (null !== $this->publisherArticleCntStd) {
             $res['publisherArticleCntStd'] = $this->publisherArticleCntStd;
         }
         if (null !== $this->publisherArticlePvCntStd) {
             $res['publisherArticlePvCntStd'] = $this->publisherArticlePvCntStd;
+        }
+        if (null !== $this->publisherName) {
+            $res['publisherName'] = $this->publisherName;
+        }
+        if (null !== $this->unionId) {
+            $res['unionId'] = $this->unionId;
         }
 
         return $res;
@@ -73,17 +73,17 @@ class data extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['unionId'])) {
-            $model->unionId = $map['unionId'];
-        }
-        if (isset($map['publisherName'])) {
-            $model->publisherName = $map['publisherName'];
-        }
         if (isset($map['publisherArticleCntStd'])) {
             $model->publisherArticleCntStd = $map['publisherArticleCntStd'];
         }
         if (isset($map['publisherArticlePvCntStd'])) {
             $model->publisherArticlePvCntStd = $map['publisherArticlePvCntStd'];
+        }
+        if (isset($map['publisherName'])) {
+            $model->publisherName = $map['publisherName'];
+        }
+        if (isset($map['unionId'])) {
+            $model->unionId = $map['unionId'];
         }
 
         return $model;

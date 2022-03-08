@@ -12,46 +12,11 @@ use AlibabaCloud\Tea\Model;
 class GetProcessDefinitionResponseBody extends Model
 {
     /**
-     * @description outResult
-     *
-     * @var string
-     */
-    public $outResult;
-
-    /**
-     * @description processInstanceId
-     *
-     * @var string
-     */
-    public $processInstanceId;
-
-    /**
-     * @description variables
-     *
-     * @var mixed[]
-     */
-    public $variables;
-
-    /**
      * @description formUuid
      *
      * @var string
      */
     public $formUuid;
-
-    /**
-     * @description processId
-     *
-     * @var string
-     */
-    public $processId;
-
-    /**
-     * @description owners
-     *
-     * @var owners[]
-     */
-    public $owners;
 
     /**
      * @description originator
@@ -61,11 +26,39 @@ class GetProcessDefinitionResponseBody extends Model
     public $originator;
 
     /**
-     * @description title
+     * @description outResult
      *
      * @var string
      */
-    public $title;
+    public $outResult;
+
+    /**
+     * @description owners
+     *
+     * @var owners[]
+     */
+    public $owners;
+
+    /**
+     * @description processId
+     *
+     * @var string
+     */
+    public $processId;
+
+    /**
+     * @description processInstanceId
+     *
+     * @var string
+     */
+    public $processInstanceId;
+
+    /**
+     * @description status
+     *
+     * @var string
+     */
+    public $status;
 
     /**
      * @description tasks
@@ -75,22 +68,29 @@ class GetProcessDefinitionResponseBody extends Model
     public $tasks;
 
     /**
-     * @description status
+     * @description title
      *
      * @var string
      */
-    public $status;
+    public $title;
+
+    /**
+     * @description variables
+     *
+     * @var mixed[]
+     */
+    public $variables;
     protected $_name = [
-        'outResult'         => 'outResult',
-        'processInstanceId' => 'processInstanceId',
-        'variables'         => 'variables',
         'formUuid'          => 'formUuid',
-        'processId'         => 'processId',
-        'owners'            => 'owners',
         'originator'        => 'originator',
-        'title'             => 'title',
-        'tasks'             => 'tasks',
+        'outResult'         => 'outResult',
+        'owners'            => 'owners',
+        'processId'         => 'processId',
+        'processInstanceId' => 'processInstanceId',
         'status'            => 'status',
+        'tasks'             => 'tasks',
+        'title'             => 'title',
+        'variables'         => 'variables',
     ];
 
     public function validate()
@@ -100,20 +100,14 @@ class GetProcessDefinitionResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->outResult) {
-            $res['outResult'] = $this->outResult;
-        }
-        if (null !== $this->processInstanceId) {
-            $res['processInstanceId'] = $this->processInstanceId;
-        }
-        if (null !== $this->variables) {
-            $res['variables'] = $this->variables;
-        }
         if (null !== $this->formUuid) {
             $res['formUuid'] = $this->formUuid;
         }
-        if (null !== $this->processId) {
-            $res['processId'] = $this->processId;
+        if (null !== $this->originator) {
+            $res['originator'] = null !== $this->originator ? $this->originator->toMap() : null;
+        }
+        if (null !== $this->outResult) {
+            $res['outResult'] = $this->outResult;
         }
         if (null !== $this->owners) {
             $res['owners'] = [];
@@ -124,11 +118,14 @@ class GetProcessDefinitionResponseBody extends Model
                 }
             }
         }
-        if (null !== $this->originator) {
-            $res['originator'] = null !== $this->originator ? $this->originator->toMap() : null;
+        if (null !== $this->processId) {
+            $res['processId'] = $this->processId;
         }
-        if (null !== $this->title) {
-            $res['title'] = $this->title;
+        if (null !== $this->processInstanceId) {
+            $res['processInstanceId'] = $this->processInstanceId;
+        }
+        if (null !== $this->status) {
+            $res['status'] = $this->status;
         }
         if (null !== $this->tasks) {
             $res['tasks'] = [];
@@ -139,8 +136,11 @@ class GetProcessDefinitionResponseBody extends Model
                 }
             }
         }
-        if (null !== $this->status) {
-            $res['status'] = $this->status;
+        if (null !== $this->title) {
+            $res['title'] = $this->title;
+        }
+        if (null !== $this->variables) {
+            $res['variables'] = $this->variables;
         }
 
         return $res;
@@ -154,20 +154,14 @@ class GetProcessDefinitionResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['outResult'])) {
-            $model->outResult = $map['outResult'];
-        }
-        if (isset($map['processInstanceId'])) {
-            $model->processInstanceId = $map['processInstanceId'];
-        }
-        if (isset($map['variables'])) {
-            $model->variables = $map['variables'];
-        }
         if (isset($map['formUuid'])) {
             $model->formUuid = $map['formUuid'];
         }
-        if (isset($map['processId'])) {
-            $model->processId = $map['processId'];
+        if (isset($map['originator'])) {
+            $model->originator = originator::fromMap($map['originator']);
+        }
+        if (isset($map['outResult'])) {
+            $model->outResult = $map['outResult'];
         }
         if (isset($map['owners'])) {
             if (!empty($map['owners'])) {
@@ -178,11 +172,14 @@ class GetProcessDefinitionResponseBody extends Model
                 }
             }
         }
-        if (isset($map['originator'])) {
-            $model->originator = originator::fromMap($map['originator']);
+        if (isset($map['processId'])) {
+            $model->processId = $map['processId'];
         }
-        if (isset($map['title'])) {
-            $model->title = $map['title'];
+        if (isset($map['processInstanceId'])) {
+            $model->processInstanceId = $map['processInstanceId'];
+        }
+        if (isset($map['status'])) {
+            $model->status = $map['status'];
         }
         if (isset($map['tasks'])) {
             if (!empty($map['tasks'])) {
@@ -193,8 +190,11 @@ class GetProcessDefinitionResponseBody extends Model
                 }
             }
         }
-        if (isset($map['status'])) {
-            $model->status = $map['status'];
+        if (isset($map['title'])) {
+            $model->title = $map['title'];
+        }
+        if (isset($map['variables'])) {
+            $model->variables = $map['variables'];
         }
 
         return $model;

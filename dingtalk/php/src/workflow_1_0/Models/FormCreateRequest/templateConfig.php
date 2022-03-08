@@ -9,18 +9,11 @@ use AlibabaCloud\Tea\Model;
 class templateConfig extends Model
 {
     /**
-     * @description 禁用停止按钮
+     * @description 更新后模板目录id
      *
-     * @var bool
+     * @var string
      */
-    public $disableStopProcessButton;
-
-    /**
-     * @description 审批场景内隐藏模板
-     *
-     * @var bool
-     */
-    public $hidden;
+    public $dirId;
 
     /**
      * @description 禁用模板删除按钮
@@ -37,13 +30,6 @@ class templateConfig extends Model
     public $disableFormEdit;
 
     /**
-     * @description 禁用再次提交
-     *
-     * @var bool
-     */
-    public $disableResubmit;
-
-    /**
      * @description 首页工作台是否可见
      *
      * @var bool
@@ -51,11 +37,25 @@ class templateConfig extends Model
     public $disableHomepage;
 
     /**
-     * @description 更新后模板目录id
+     * @description 禁用再次提交
      *
-     * @var string
+     * @var bool
      */
-    public $dirId;
+    public $disableResubmit;
+
+    /**
+     * @description 禁用停止按钮
+     *
+     * @var bool
+     */
+    public $disableStopProcessButton;
+
+    /**
+     * @description 审批场景内隐藏模板
+     *
+     * @var bool
+     */
+    public $hidden;
 
     /**
      * @description 源模板目录id
@@ -64,13 +64,13 @@ class templateConfig extends Model
      */
     public $originDirId;
     protected $_name = [
-        'disableStopProcessButton' => 'disableStopProcessButton',
-        'hidden'                   => 'hidden',
+        'dirId'                    => 'dirId',
         'disableDeleteProcess'     => 'disableDeleteProcess',
         'disableFormEdit'          => 'disableFormEdit',
-        'disableResubmit'          => 'disableResubmit',
         'disableHomepage'          => 'disableHomepage',
-        'dirId'                    => 'dirId',
+        'disableResubmit'          => 'disableResubmit',
+        'disableStopProcessButton' => 'disableStopProcessButton',
+        'hidden'                   => 'hidden',
         'originDirId'              => 'originDirId',
     ];
 
@@ -81,11 +81,8 @@ class templateConfig extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->disableStopProcessButton) {
-            $res['disableStopProcessButton'] = $this->disableStopProcessButton;
-        }
-        if (null !== $this->hidden) {
-            $res['hidden'] = $this->hidden;
+        if (null !== $this->dirId) {
+            $res['dirId'] = $this->dirId;
         }
         if (null !== $this->disableDeleteProcess) {
             $res['disableDeleteProcess'] = $this->disableDeleteProcess;
@@ -93,14 +90,17 @@ class templateConfig extends Model
         if (null !== $this->disableFormEdit) {
             $res['disableFormEdit'] = $this->disableFormEdit;
         }
-        if (null !== $this->disableResubmit) {
-            $res['disableResubmit'] = $this->disableResubmit;
-        }
         if (null !== $this->disableHomepage) {
             $res['disableHomepage'] = $this->disableHomepage;
         }
-        if (null !== $this->dirId) {
-            $res['dirId'] = $this->dirId;
+        if (null !== $this->disableResubmit) {
+            $res['disableResubmit'] = $this->disableResubmit;
+        }
+        if (null !== $this->disableStopProcessButton) {
+            $res['disableStopProcessButton'] = $this->disableStopProcessButton;
+        }
+        if (null !== $this->hidden) {
+            $res['hidden'] = $this->hidden;
         }
         if (null !== $this->originDirId) {
             $res['originDirId'] = $this->originDirId;
@@ -117,11 +117,8 @@ class templateConfig extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['disableStopProcessButton'])) {
-            $model->disableStopProcessButton = $map['disableStopProcessButton'];
-        }
-        if (isset($map['hidden'])) {
-            $model->hidden = $map['hidden'];
+        if (isset($map['dirId'])) {
+            $model->dirId = $map['dirId'];
         }
         if (isset($map['disableDeleteProcess'])) {
             $model->disableDeleteProcess = $map['disableDeleteProcess'];
@@ -129,14 +126,17 @@ class templateConfig extends Model
         if (isset($map['disableFormEdit'])) {
             $model->disableFormEdit = $map['disableFormEdit'];
         }
-        if (isset($map['disableResubmit'])) {
-            $model->disableResubmit = $map['disableResubmit'];
-        }
         if (isset($map['disableHomepage'])) {
             $model->disableHomepage = $map['disableHomepage'];
         }
-        if (isset($map['dirId'])) {
-            $model->dirId = $map['dirId'];
+        if (isset($map['disableResubmit'])) {
+            $model->disableResubmit = $map['disableResubmit'];
+        }
+        if (isset($map['disableStopProcessButton'])) {
+            $model->disableStopProcessButton = $map['disableStopProcessButton'];
+        }
+        if (isset($map['hidden'])) {
+            $model->hidden = $map['hidden'];
         }
         if (isset($map['originDirId'])) {
             $model->originDirId = $map['originDirId'];

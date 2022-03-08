@@ -16,11 +16,11 @@ class GetSupplierResponseBody extends Model
     public $code;
 
     /**
-     * @description 供应商名称
+     * @description 创建时间(单位MS)
      *
-     * @var string
+     * @var int
      */
-    public $name;
+    public $createTime;
 
     /**
      * @description 供应商描述
@@ -30,11 +30,11 @@ class GetSupplierResponseBody extends Model
     public $description;
 
     /**
-     * @description 创建时间(单位MS)
+     * @description 供应商名称
      *
-     * @var int
+     * @var string
      */
-    public $createTime;
+    public $name;
 
     /**
      * @description 状态：启用(valid), 停用(invalid), 删除(deleted)
@@ -44,9 +44,9 @@ class GetSupplierResponseBody extends Model
     public $status;
     protected $_name = [
         'code'        => 'code',
-        'name'        => 'name',
-        'description' => 'description',
         'createTime'  => 'createTime',
+        'description' => 'description',
+        'name'        => 'name',
         'status'      => 'status',
     ];
 
@@ -60,14 +60,14 @@ class GetSupplierResponseBody extends Model
         if (null !== $this->code) {
             $res['code'] = $this->code;
         }
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
+        if (null !== $this->createTime) {
+            $res['createTime'] = $this->createTime;
         }
         if (null !== $this->description) {
             $res['description'] = $this->description;
         }
-        if (null !== $this->createTime) {
-            $res['createTime'] = $this->createTime;
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
         }
         if (null !== $this->status) {
             $res['status'] = $this->status;
@@ -87,14 +87,14 @@ class GetSupplierResponseBody extends Model
         if (isset($map['code'])) {
             $model->code = $map['code'];
         }
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
+        if (isset($map['createTime'])) {
+            $model->createTime = $map['createTime'];
         }
         if (isset($map['description'])) {
             $model->description = $map['description'];
         }
-        if (isset($map['createTime'])) {
-            $model->createTime = $map['createTime'];
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
         }
         if (isset($map['status'])) {
             $model->status = $map['status'];

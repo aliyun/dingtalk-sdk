@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class pattern extends Model
 {
     /**
-     * @description 循环模式类型(type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly)
-     *
-     * @var string
-     */
-    public $type;
-
-    /**
      * @var int
      */
     public $dayOfMonth;
@@ -34,12 +27,19 @@ class pattern extends Model
      * @var int
      */
     public $interval;
+
+    /**
+     * @description 循环模式类型(type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly)
+     *
+     * @var string
+     */
+    public $type;
     protected $_name = [
-        'type'       => 'type',
         'dayOfMonth' => 'dayOfMonth',
         'daysOfWeek' => 'daysOfWeek',
         'index'      => 'index',
         'interval'   => 'interval',
+        'type'       => 'type',
     ];
 
     public function validate()
@@ -49,9 +49,6 @@ class pattern extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->type) {
-            $res['type'] = $this->type;
-        }
         if (null !== $this->dayOfMonth) {
             $res['dayOfMonth'] = $this->dayOfMonth;
         }
@@ -63,6 +60,9 @@ class pattern extends Model
         }
         if (null !== $this->interval) {
             $res['interval'] = $this->interval;
+        }
+        if (null !== $this->type) {
+            $res['type'] = $this->type;
         }
 
         return $res;
@@ -76,9 +76,6 @@ class pattern extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['type'])) {
-            $model->type = $map['type'];
-        }
         if (isset($map['dayOfMonth'])) {
             $model->dayOfMonth = $map['dayOfMonth'];
         }
@@ -90,6 +87,9 @@ class pattern extends Model
         }
         if (isset($map['interval'])) {
             $model->interval = $map['interval'];
+        }
+        if (isset($map['type'])) {
+            $model->type = $map['type'];
         }
 
         return $model;

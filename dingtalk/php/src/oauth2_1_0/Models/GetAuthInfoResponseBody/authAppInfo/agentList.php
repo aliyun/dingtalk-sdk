@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class agentList extends Model
 {
     /**
+     * @description 对此微应用有管理权限的管理员列表
+     *
+     * @var string[]
+     */
+    public $adminList;
+
+    /**
      * @description 应用id
      *
      * @var int
@@ -28,18 +35,11 @@ class agentList extends Model
      * @var int
      */
     public $appId;
-
-    /**
-     * @description 对此微应用有管理权限的管理员列表
-     *
-     * @var string[]
-     */
-    public $adminList;
     protected $_name = [
+        'adminList' => 'adminList',
         'agentId'   => 'agentId',
         'agentName' => 'agentName',
         'appId'     => 'appId',
-        'adminList' => 'adminList',
     ];
 
     public function validate()
@@ -49,6 +49,9 @@ class agentList extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->adminList) {
+            $res['adminList'] = $this->adminList;
+        }
         if (null !== $this->agentId) {
             $res['agentId'] = $this->agentId;
         }
@@ -57,9 +60,6 @@ class agentList extends Model
         }
         if (null !== $this->appId) {
             $res['appId'] = $this->appId;
-        }
-        if (null !== $this->adminList) {
-            $res['adminList'] = $this->adminList;
         }
 
         return $res;
@@ -73,6 +73,11 @@ class agentList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['adminList'])) {
+            if (!empty($map['adminList'])) {
+                $model->adminList = $map['adminList'];
+            }
+        }
         if (isset($map['agentId'])) {
             $model->agentId = $map['agentId'];
         }
@@ -81,11 +86,6 @@ class agentList extends Model
         }
         if (isset($map['appId'])) {
             $model->appId = $map['appId'];
-        }
-        if (isset($map['adminList'])) {
-            if (!empty($map['adminList'])) {
-                $model->adminList = $map['adminList'];
-            }
         }
 
         return $model;

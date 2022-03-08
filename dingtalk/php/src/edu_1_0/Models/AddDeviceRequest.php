@@ -9,18 +9,25 @@ use AlibabaCloud\Tea\Model;
 class AddDeviceRequest extends Model
 {
     /**
+     * @description 商户id
+     *
+     * @var string
+     */
+    public $merchantId;
+
+    /**
+     * @description 设备型号
+     *
+     * @var string
+     */
+    public $model;
+
+    /**
      * @description 设备名称
      *
      * @var string
      */
     public $name;
-
-    /**
-     * @description 设备类型
-     *
-     * @var int
-     */
-    public $type;
 
     /**
      * @description 消费场景
@@ -37,13 +44,6 @@ class AddDeviceRequest extends Model
     public $sn;
 
     /**
-     * @description 设备型号
-     *
-     * @var string
-     */
-    public $model;
-
-    /**
      * @description 设备状态
      *
      * @var int
@@ -51,49 +51,19 @@ class AddDeviceRequest extends Model
     public $status;
 
     /**
-     * @description 商户id
+     * @description 设备类型
      *
-     * @var string
-     */
-    public $merchantId;
-
-    /**
      * @var int
      */
-    public $dingIsvOrgId;
-
-    /**
-     * @var int
-     */
-    public $dingOrgId;
-
-    /**
-     * @var int
-     */
-    public $dingOauthAppId;
-
-    /**
-     * @var string
-     */
-    public $dingSuiteKey;
-
-    /**
-     * @var int
-     */
-    public $dingTokenGrantType;
+    public $type;
     protected $_name = [
-        'name'               => 'name',
-        'type'               => 'type',
-        'scene'              => 'scene',
-        'sn'                 => 'sn',
-        'model'              => 'model',
-        'status'             => 'status',
-        'merchantId'         => 'merchantId',
-        'dingIsvOrgId'       => 'dingIsvOrgId',
-        'dingOrgId'          => 'dingOrgId',
-        'dingOauthAppId'     => 'dingOauthAppId',
-        'dingSuiteKey'       => 'dingSuiteKey',
-        'dingTokenGrantType' => 'dingTokenGrantType',
+        'merchantId' => 'merchantId',
+        'model'      => 'model',
+        'name'       => 'name',
+        'scene'      => 'scene',
+        'sn'         => 'sn',
+        'status'     => 'status',
+        'type'       => 'type',
     ];
 
     public function validate()
@@ -103,11 +73,14 @@ class AddDeviceRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->merchantId) {
+            $res['merchantId'] = $this->merchantId;
+        }
+        if (null !== $this->model) {
+            $res['model'] = $this->model;
+        }
         if (null !== $this->name) {
             $res['name'] = $this->name;
-        }
-        if (null !== $this->type) {
-            $res['type'] = $this->type;
         }
         if (null !== $this->scene) {
             $res['scene'] = $this->scene;
@@ -115,29 +88,11 @@ class AddDeviceRequest extends Model
         if (null !== $this->sn) {
             $res['sn'] = $this->sn;
         }
-        if (null !== $this->model) {
-            $res['model'] = $this->model;
-        }
         if (null !== $this->status) {
             $res['status'] = $this->status;
         }
-        if (null !== $this->merchantId) {
-            $res['merchantId'] = $this->merchantId;
-        }
-        if (null !== $this->dingIsvOrgId) {
-            $res['dingIsvOrgId'] = $this->dingIsvOrgId;
-        }
-        if (null !== $this->dingOrgId) {
-            $res['dingOrgId'] = $this->dingOrgId;
-        }
-        if (null !== $this->dingOauthAppId) {
-            $res['dingOauthAppId'] = $this->dingOauthAppId;
-        }
-        if (null !== $this->dingSuiteKey) {
-            $res['dingSuiteKey'] = $this->dingSuiteKey;
-        }
-        if (null !== $this->dingTokenGrantType) {
-            $res['dingTokenGrantType'] = $this->dingTokenGrantType;
+        if (null !== $this->type) {
+            $res['type'] = $this->type;
         }
 
         return $res;
@@ -151,11 +106,14 @@ class AddDeviceRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['merchantId'])) {
+            $model->merchantId = $map['merchantId'];
+        }
+        if (isset($map['model'])) {
+            $model->model = $map['model'];
+        }
         if (isset($map['name'])) {
             $model->name = $map['name'];
-        }
-        if (isset($map['type'])) {
-            $model->type = $map['type'];
         }
         if (isset($map['scene'])) {
             $model->scene = $map['scene'];
@@ -163,29 +121,11 @@ class AddDeviceRequest extends Model
         if (isset($map['sn'])) {
             $model->sn = $map['sn'];
         }
-        if (isset($map['model'])) {
-            $model->model = $map['model'];
-        }
         if (isset($map['status'])) {
             $model->status = $map['status'];
         }
-        if (isset($map['merchantId'])) {
-            $model->merchantId = $map['merchantId'];
-        }
-        if (isset($map['dingIsvOrgId'])) {
-            $model->dingIsvOrgId = $map['dingIsvOrgId'];
-        }
-        if (isset($map['dingOrgId'])) {
-            $model->dingOrgId = $map['dingOrgId'];
-        }
-        if (isset($map['dingOauthAppId'])) {
-            $model->dingOauthAppId = $map['dingOauthAppId'];
-        }
-        if (isset($map['dingSuiteKey'])) {
-            $model->dingSuiteKey = $map['dingSuiteKey'];
-        }
-        if (isset($map['dingTokenGrantType'])) {
-            $model->dingTokenGrantType = $map['dingTokenGrantType'];
+        if (isset($map['type'])) {
+            $model->type = $map['type'];
         }
 
         return $model;

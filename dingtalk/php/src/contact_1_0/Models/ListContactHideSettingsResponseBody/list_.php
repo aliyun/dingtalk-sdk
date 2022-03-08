@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
-     * @description 设置名称
+     * @description 规则是否生效
      *
-     * @var string
+     * @var bool
      */
-    public $name;
+    public $active;
 
     /**
      * @description 设置描述
@@ -23,25 +23,11 @@ class list_ extends Model
     public $description;
 
     /**
-     * @description 要隐藏的员工列表
-     *
-     * @var string[]
-     */
-    public $objectStaffIds;
-
-    /**
-     * @description 要隐藏的部门列表
+     * @description 白名单部门列表
      *
      * @var int[]
      */
-    public $objectDeptIds;
-
-    /**
-     * @description 要影藏的角色列表
-     *
-     * @var int[]
-     */
-    public $objectTagIds;
+    public $excludeDeptIds;
 
     /**
      * @description 白名单用户列表
@@ -51,13 +37,6 @@ class list_ extends Model
     public $excludeStaffIds;
 
     /**
-     * @description 白名单部门列表
-     *
-     * @var int[]
-     */
-    public $excludeDeptIds;
-
-    /**
      * @description 白名单角色列表
      *
      * @var int[]
@@ -65,29 +44,50 @@ class list_ extends Model
     public $excludeTagIds;
 
     /**
-     * @description 规则是否生效
-     *
-     * @var bool
-     */
-    public $active;
-
-    /**
      * @description settingId
      *
      * @var int
      */
     public $id;
+
+    /**
+     * @description 设置名称
+     *
+     * @var string
+     */
+    public $name;
+
+    /**
+     * @description 要隐藏的部门列表
+     *
+     * @var int[]
+     */
+    public $objectDeptIds;
+
+    /**
+     * @description 要隐藏的员工列表
+     *
+     * @var string[]
+     */
+    public $objectStaffIds;
+
+    /**
+     * @description 要影藏的角色列表
+     *
+     * @var int[]
+     */
+    public $objectTagIds;
     protected $_name = [
-        'name'            => 'name',
-        'description'     => 'description',
-        'objectStaffIds'  => 'objectStaffIds',
-        'objectDeptIds'   => 'objectDeptIds',
-        'objectTagIds'    => 'objectTagIds',
-        'excludeStaffIds' => 'excludeStaffIds',
-        'excludeDeptIds'  => 'excludeDeptIds',
-        'excludeTagIds'   => 'excludeTagIds',
         'active'          => 'active',
+        'description'     => 'description',
+        'excludeDeptIds'  => 'excludeDeptIds',
+        'excludeStaffIds' => 'excludeStaffIds',
+        'excludeTagIds'   => 'excludeTagIds',
         'id'              => 'id',
+        'name'            => 'name',
+        'objectDeptIds'   => 'objectDeptIds',
+        'objectStaffIds'  => 'objectStaffIds',
+        'objectTagIds'    => 'objectTagIds',
     ];
 
     public function validate()
@@ -97,35 +97,35 @@ class list_ extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
+        if (null !== $this->active) {
+            $res['active'] = $this->active;
         }
         if (null !== $this->description) {
             $res['description'] = $this->description;
         }
-        if (null !== $this->objectStaffIds) {
-            $res['objectStaffIds'] = $this->objectStaffIds;
-        }
-        if (null !== $this->objectDeptIds) {
-            $res['objectDeptIds'] = $this->objectDeptIds;
-        }
-        if (null !== $this->objectTagIds) {
-            $res['objectTagIds'] = $this->objectTagIds;
+        if (null !== $this->excludeDeptIds) {
+            $res['excludeDeptIds'] = $this->excludeDeptIds;
         }
         if (null !== $this->excludeStaffIds) {
             $res['excludeStaffIds'] = $this->excludeStaffIds;
         }
-        if (null !== $this->excludeDeptIds) {
-            $res['excludeDeptIds'] = $this->excludeDeptIds;
-        }
         if (null !== $this->excludeTagIds) {
             $res['excludeTagIds'] = $this->excludeTagIds;
         }
-        if (null !== $this->active) {
-            $res['active'] = $this->active;
-        }
         if (null !== $this->id) {
             $res['id'] = $this->id;
+        }
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
+        }
+        if (null !== $this->objectDeptIds) {
+            $res['objectDeptIds'] = $this->objectDeptIds;
+        }
+        if (null !== $this->objectStaffIds) {
+            $res['objectStaffIds'] = $this->objectStaffIds;
+        }
+        if (null !== $this->objectTagIds) {
+            $res['objectTagIds'] = $this->objectTagIds;
         }
 
         return $res;
@@ -139,25 +139,15 @@ class list_ extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
+        if (isset($map['active'])) {
+            $model->active = $map['active'];
         }
         if (isset($map['description'])) {
             $model->description = $map['description'];
         }
-        if (isset($map['objectStaffIds'])) {
-            if (!empty($map['objectStaffIds'])) {
-                $model->objectStaffIds = $map['objectStaffIds'];
-            }
-        }
-        if (isset($map['objectDeptIds'])) {
-            if (!empty($map['objectDeptIds'])) {
-                $model->objectDeptIds = $map['objectDeptIds'];
-            }
-        }
-        if (isset($map['objectTagIds'])) {
-            if (!empty($map['objectTagIds'])) {
-                $model->objectTagIds = $map['objectTagIds'];
+        if (isset($map['excludeDeptIds'])) {
+            if (!empty($map['excludeDeptIds'])) {
+                $model->excludeDeptIds = $map['excludeDeptIds'];
             }
         }
         if (isset($map['excludeStaffIds'])) {
@@ -165,21 +155,31 @@ class list_ extends Model
                 $model->excludeStaffIds = $map['excludeStaffIds'];
             }
         }
-        if (isset($map['excludeDeptIds'])) {
-            if (!empty($map['excludeDeptIds'])) {
-                $model->excludeDeptIds = $map['excludeDeptIds'];
-            }
-        }
         if (isset($map['excludeTagIds'])) {
             if (!empty($map['excludeTagIds'])) {
                 $model->excludeTagIds = $map['excludeTagIds'];
             }
         }
-        if (isset($map['active'])) {
-            $model->active = $map['active'];
-        }
         if (isset($map['id'])) {
             $model->id = $map['id'];
+        }
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
+        }
+        if (isset($map['objectDeptIds'])) {
+            if (!empty($map['objectDeptIds'])) {
+                $model->objectDeptIds = $map['objectDeptIds'];
+            }
+        }
+        if (isset($map['objectStaffIds'])) {
+            if (!empty($map['objectStaffIds'])) {
+                $model->objectStaffIds = $map['objectStaffIds'];
+            }
+        }
+        if (isset($map['objectTagIds'])) {
+            if (!empty($map['objectTagIds'])) {
+                $model->objectTagIds = $map['objectTagIds'];
+            }
         }
 
         return $model;

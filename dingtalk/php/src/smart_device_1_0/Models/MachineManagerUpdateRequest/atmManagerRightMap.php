@@ -16,25 +16,18 @@ class atmManagerRightMap extends Model
     public $attendancePersonManage;
 
     /**
-     * @description 指纹打卡管理。
-     *
-     * @var bool
-     */
-    public $fingerPunchManage;
-
-    /**
-     * @description 人脸打卡管理。
-     *
-     * @var bool
-     */
-    public $facePunchManage;
-
-    /**
      * @description 蓝牙打卡管理。
      *
      * @var bool
      */
     public $bluetoothPunchManage;
+
+    /**
+     * @description 设备解绑并重置。
+     *
+     * @var bool
+     */
+    public $deviceReset;
 
     /**
      * @description 设备设置。
@@ -44,18 +37,25 @@ class atmManagerRightMap extends Model
     public $deviceSettings;
 
     /**
-     * @description 设备解绑并重置。
+     * @description 人脸打卡管理。
      *
      * @var bool
      */
-    public $deviceReset;
+    public $facePunchManage;
+
+    /**
+     * @description 指纹打卡管理。
+     *
+     * @var bool
+     */
+    public $fingerPunchManage;
     protected $_name = [
         'attendancePersonManage' => 'attendancePersonManage',
-        'fingerPunchManage'      => 'fingerPunchManage',
-        'facePunchManage'        => 'facePunchManage',
         'bluetoothPunchManage'   => 'bluetoothPunchManage',
-        'deviceSettings'         => 'deviceSettings',
         'deviceReset'            => 'deviceReset',
+        'deviceSettings'         => 'deviceSettings',
+        'facePunchManage'        => 'facePunchManage',
+        'fingerPunchManage'      => 'fingerPunchManage',
     ];
 
     public function validate()
@@ -68,20 +68,20 @@ class atmManagerRightMap extends Model
         if (null !== $this->attendancePersonManage) {
             $res['attendancePersonManage'] = $this->attendancePersonManage;
         }
-        if (null !== $this->fingerPunchManage) {
-            $res['fingerPunchManage'] = $this->fingerPunchManage;
-        }
-        if (null !== $this->facePunchManage) {
-            $res['facePunchManage'] = $this->facePunchManage;
-        }
         if (null !== $this->bluetoothPunchManage) {
             $res['bluetoothPunchManage'] = $this->bluetoothPunchManage;
+        }
+        if (null !== $this->deviceReset) {
+            $res['deviceReset'] = $this->deviceReset;
         }
         if (null !== $this->deviceSettings) {
             $res['deviceSettings'] = $this->deviceSettings;
         }
-        if (null !== $this->deviceReset) {
-            $res['deviceReset'] = $this->deviceReset;
+        if (null !== $this->facePunchManage) {
+            $res['facePunchManage'] = $this->facePunchManage;
+        }
+        if (null !== $this->fingerPunchManage) {
+            $res['fingerPunchManage'] = $this->fingerPunchManage;
         }
 
         return $res;
@@ -98,20 +98,20 @@ class atmManagerRightMap extends Model
         if (isset($map['attendancePersonManage'])) {
             $model->attendancePersonManage = $map['attendancePersonManage'];
         }
-        if (isset($map['fingerPunchManage'])) {
-            $model->fingerPunchManage = $map['fingerPunchManage'];
-        }
-        if (isset($map['facePunchManage'])) {
-            $model->facePunchManage = $map['facePunchManage'];
-        }
         if (isset($map['bluetoothPunchManage'])) {
             $model->bluetoothPunchManage = $map['bluetoothPunchManage'];
+        }
+        if (isset($map['deviceReset'])) {
+            $model->deviceReset = $map['deviceReset'];
         }
         if (isset($map['deviceSettings'])) {
             $model->deviceSettings = $map['deviceSettings'];
         }
-        if (isset($map['deviceReset'])) {
-            $model->deviceReset = $map['deviceReset'];
+        if (isset($map['facePunchManage'])) {
+            $model->facePunchManage = $map['facePunchManage'];
+        }
+        if (isset($map['fingerPunchManage'])) {
+            $model->fingerPunchManage = $map['fingerPunchManage'];
         }
 
         return $model;

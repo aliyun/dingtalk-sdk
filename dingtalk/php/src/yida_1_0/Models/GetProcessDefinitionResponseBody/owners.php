@@ -10,32 +10,18 @@ use AlibabaCloud\Tea\Model;
 class owners extends Model
 {
     /**
-     * @description userInfo
-     *
-     * @var string
-     */
-    public $userInfo;
-
-    /**
-     * @description tbWang
-     *
-     * @var string
-     */
-    public $tbWang;
-
-    /**
-     * @description orderNum
-     *
-     * @var string
-     */
-    public $orderNumber;
-
-    /**
      * @description departmentDescription
      *
      * @var string
      */
     public $departmentDescription;
+
+    /**
+     * @description displayEnName
+     *
+     * @var string
+     */
+    public $displayEnName;
 
     /**
      * @description displayName
@@ -52,18 +38,11 @@ class owners extends Model
     public $masterDataDepartments;
 
     /**
-     * @description displayEnName
+     * @description orderNum
      *
      * @var string
      */
-    public $displayEnName;
-
-    /**
-     * @description userId
-     *
-     * @var string
-     */
-    public $userId;
+    public $orderNumber;
 
     /**
      * @description personalPhoto
@@ -78,17 +57,38 @@ class owners extends Model
      * @var string
      */
     public $status;
+
+    /**
+     * @description tbWang
+     *
+     * @var string
+     */
+    public $tbWang;
+
+    /**
+     * @description userId
+     *
+     * @var string
+     */
+    public $userId;
+
+    /**
+     * @description userInfo
+     *
+     * @var string
+     */
+    public $userInfo;
     protected $_name = [
-        'userInfo'              => 'userInfo',
-        'tbWang'                => 'tbWang',
-        'orderNumber'           => 'orderNumber',
         'departmentDescription' => 'departmentDescription',
+        'displayEnName'         => 'displayEnName',
         'displayName'           => 'displayName',
         'masterDataDepartments' => 'masterDataDepartments',
-        'displayEnName'         => 'displayEnName',
-        'userId'                => 'userId',
+        'orderNumber'           => 'orderNumber',
         'personalPhoto'         => 'personalPhoto',
         'status'                => 'status',
+        'tbWang'                => 'tbWang',
+        'userId'                => 'userId',
+        'userInfo'              => 'userInfo',
     ];
 
     public function validate()
@@ -98,17 +98,11 @@ class owners extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->userInfo) {
-            $res['userInfo'] = $this->userInfo;
-        }
-        if (null !== $this->tbWang) {
-            $res['tbWang'] = $this->tbWang;
-        }
-        if (null !== $this->orderNumber) {
-            $res['orderNumber'] = $this->orderNumber;
-        }
         if (null !== $this->departmentDescription) {
             $res['departmentDescription'] = $this->departmentDescription;
+        }
+        if (null !== $this->displayEnName) {
+            $res['displayEnName'] = $this->displayEnName;
         }
         if (null !== $this->displayName) {
             $res['displayName'] = $this->displayName;
@@ -122,17 +116,23 @@ class owners extends Model
                 }
             }
         }
-        if (null !== $this->displayEnName) {
-            $res['displayEnName'] = $this->displayEnName;
-        }
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
+        if (null !== $this->orderNumber) {
+            $res['orderNumber'] = $this->orderNumber;
         }
         if (null !== $this->personalPhoto) {
             $res['personalPhoto'] = $this->personalPhoto;
         }
         if (null !== $this->status) {
             $res['status'] = $this->status;
+        }
+        if (null !== $this->tbWang) {
+            $res['tbWang'] = $this->tbWang;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
+        }
+        if (null !== $this->userInfo) {
+            $res['userInfo'] = $this->userInfo;
         }
 
         return $res;
@@ -146,17 +146,11 @@ class owners extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['userInfo'])) {
-            $model->userInfo = $map['userInfo'];
-        }
-        if (isset($map['tbWang'])) {
-            $model->tbWang = $map['tbWang'];
-        }
-        if (isset($map['orderNumber'])) {
-            $model->orderNumber = $map['orderNumber'];
-        }
         if (isset($map['departmentDescription'])) {
             $model->departmentDescription = $map['departmentDescription'];
+        }
+        if (isset($map['displayEnName'])) {
+            $model->displayEnName = $map['displayEnName'];
         }
         if (isset($map['displayName'])) {
             $model->displayName = $map['displayName'];
@@ -170,17 +164,23 @@ class owners extends Model
                 }
             }
         }
-        if (isset($map['displayEnName'])) {
-            $model->displayEnName = $map['displayEnName'];
-        }
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
+        if (isset($map['orderNumber'])) {
+            $model->orderNumber = $map['orderNumber'];
         }
         if (isset($map['personalPhoto'])) {
             $model->personalPhoto = $map['personalPhoto'];
         }
         if (isset($map['status'])) {
             $model->status = $map['status'];
+        }
+        if (isset($map['tbWang'])) {
+            $model->tbWang = $map['tbWang'];
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
+        }
+        if (isset($map['userInfo'])) {
+            $model->userInfo = $map['userInfo'];
         }
 
         return $model;

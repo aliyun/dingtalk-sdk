@@ -16,22 +16,22 @@ class csUserInfo extends Model
     public $avatar;
 
     /**
-     * @description 客服用户Id
-     *
-     * @var string
-     */
-    public $userId;
-
-    /**
      * @description 客服用户名称
      *
      * @var string
      */
     public $name;
+
+    /**
+     * @description 客服用户Id
+     *
+     * @var string
+     */
+    public $userId;
     protected $_name = [
         'avatar' => 'avatar',
-        'userId' => 'userId',
         'name'   => 'name',
+        'userId' => 'userId',
     ];
 
     public function validate()
@@ -44,11 +44,11 @@ class csUserInfo extends Model
         if (null !== $this->avatar) {
             $res['avatar'] = $this->avatar;
         }
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
-        }
         if (null !== $this->name) {
             $res['name'] = $this->name;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -65,11 +65,11 @@ class csUserInfo extends Model
         if (isset($map['avatar'])) {
             $model->avatar = $map['avatar'];
         }
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
-        }
         if (isset($map['name'])) {
             $model->name = $map['name'];
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

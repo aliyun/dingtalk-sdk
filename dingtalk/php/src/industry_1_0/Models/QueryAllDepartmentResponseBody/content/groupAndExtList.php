@@ -11,21 +11,21 @@ use AlibabaCloud\Tea\Model;
 class groupAndExtList extends Model
 {
     /**
-     * @description 医疗组详细信息
-     *
-     * @var group
-     */
-    public $group;
-
-    /**
      * @description 医疗组扩展信息列表
      *
      * @var extendInfos[]
      */
     public $extendInfos;
+
+    /**
+     * @description 医疗组详细信息
+     *
+     * @var group
+     */
+    public $group;
     protected $_name = [
-        'group'       => 'group',
         'extendInfos' => 'extendInfos',
+        'group'       => 'group',
     ];
 
     public function validate()
@@ -35,9 +35,6 @@ class groupAndExtList extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->group) {
-            $res['group'] = null !== $this->group ? $this->group->toMap() : null;
-        }
         if (null !== $this->extendInfos) {
             $res['extendInfos'] = [];
             if (null !== $this->extendInfos && \is_array($this->extendInfos)) {
@@ -46,6 +43,9 @@ class groupAndExtList extends Model
                     $res['extendInfos'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->group) {
+            $res['group'] = null !== $this->group ? $this->group->toMap() : null;
         }
 
         return $res;
@@ -59,9 +59,6 @@ class groupAndExtList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['group'])) {
-            $model->group = group::fromMap($map['group']);
-        }
         if (isset($map['extendInfos'])) {
             if (!empty($map['extendInfos'])) {
                 $model->extendInfos = [];
@@ -70,6 +67,9 @@ class groupAndExtList extends Model
                     $model->extendInfos[$n++] = null !== $item ? extendInfos::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['group'])) {
+            $model->group = group::fromMap($map['group']);
         }
 
         return $model;

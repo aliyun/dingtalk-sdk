@@ -9,41 +9,6 @@ use AlibabaCloud\Tea\Model;
 class GetApplyInviteInfoResponseBody extends Model
 {
     /**
-     * @description 是否开启邀请
-     *
-     * @var bool
-     */
-    public $inviteSwitch;
-
-    /**
-     * @description 是否开启通过企业名称搜索申请
-     *
-     * @var bool
-     */
-    public $searchNameInvite;
-
-    /**
-     * @description 是否开启通过团队号申请加入
-     *
-     * @var bool
-     */
-    public $orgApplyCodeInvite;
-
-    /**
-     * @description 是否开启通过链接邀请加入
-     *
-     * @var bool
-     */
-    public $linkInvite;
-
-    /**
-     * @description 邀请链接
-     *
-     * @var string
-     */
-    public $inviteUrl;
-
-    /**
      * @description 仅部门邀请有效： 0-无需审核 1-有权限的子管理员
      *
      * @var int
@@ -56,14 +21,49 @@ class GetApplyInviteInfoResponseBody extends Model
      * @var bool
      */
     public $empApplyJoinDept;
+
+    /**
+     * @description 是否开启邀请
+     *
+     * @var bool
+     */
+    public $inviteSwitch;
+
+    /**
+     * @description 邀请链接
+     *
+     * @var string
+     */
+    public $inviteUrl;
+
+    /**
+     * @description 是否开启通过链接邀请加入
+     *
+     * @var bool
+     */
+    public $linkInvite;
+
+    /**
+     * @description 是否开启通过团队号申请加入
+     *
+     * @var bool
+     */
+    public $orgApplyCodeInvite;
+
+    /**
+     * @description 是否开启通过企业名称搜索申请
+     *
+     * @var bool
+     */
+    public $searchNameInvite;
     protected $_name = [
-        'inviteSwitch'       => 'inviteSwitch',
-        'searchNameInvite'   => 'searchNameInvite',
-        'orgApplyCodeInvite' => 'orgApplyCodeInvite',
-        'linkInvite'         => 'linkInvite',
-        'inviteUrl'          => 'inviteUrl',
         'auditType'          => 'auditType',
         'empApplyJoinDept'   => 'empApplyJoinDept',
+        'inviteSwitch'       => 'inviteSwitch',
+        'inviteUrl'          => 'inviteUrl',
+        'linkInvite'         => 'linkInvite',
+        'orgApplyCodeInvite' => 'orgApplyCodeInvite',
+        'searchNameInvite'   => 'searchNameInvite',
     ];
 
     public function validate()
@@ -73,26 +73,26 @@ class GetApplyInviteInfoResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->inviteSwitch) {
-            $res['inviteSwitch'] = $this->inviteSwitch;
-        }
-        if (null !== $this->searchNameInvite) {
-            $res['searchNameInvite'] = $this->searchNameInvite;
-        }
-        if (null !== $this->orgApplyCodeInvite) {
-            $res['orgApplyCodeInvite'] = $this->orgApplyCodeInvite;
-        }
-        if (null !== $this->linkInvite) {
-            $res['linkInvite'] = $this->linkInvite;
-        }
-        if (null !== $this->inviteUrl) {
-            $res['inviteUrl'] = $this->inviteUrl;
-        }
         if (null !== $this->auditType) {
             $res['auditType'] = $this->auditType;
         }
         if (null !== $this->empApplyJoinDept) {
             $res['empApplyJoinDept'] = $this->empApplyJoinDept;
+        }
+        if (null !== $this->inviteSwitch) {
+            $res['inviteSwitch'] = $this->inviteSwitch;
+        }
+        if (null !== $this->inviteUrl) {
+            $res['inviteUrl'] = $this->inviteUrl;
+        }
+        if (null !== $this->linkInvite) {
+            $res['linkInvite'] = $this->linkInvite;
+        }
+        if (null !== $this->orgApplyCodeInvite) {
+            $res['orgApplyCodeInvite'] = $this->orgApplyCodeInvite;
+        }
+        if (null !== $this->searchNameInvite) {
+            $res['searchNameInvite'] = $this->searchNameInvite;
         }
 
         return $res;
@@ -106,26 +106,26 @@ class GetApplyInviteInfoResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['inviteSwitch'])) {
-            $model->inviteSwitch = $map['inviteSwitch'];
-        }
-        if (isset($map['searchNameInvite'])) {
-            $model->searchNameInvite = $map['searchNameInvite'];
-        }
-        if (isset($map['orgApplyCodeInvite'])) {
-            $model->orgApplyCodeInvite = $map['orgApplyCodeInvite'];
-        }
-        if (isset($map['linkInvite'])) {
-            $model->linkInvite = $map['linkInvite'];
-        }
-        if (isset($map['inviteUrl'])) {
-            $model->inviteUrl = $map['inviteUrl'];
-        }
         if (isset($map['auditType'])) {
             $model->auditType = $map['auditType'];
         }
         if (isset($map['empApplyJoinDept'])) {
             $model->empApplyJoinDept = $map['empApplyJoinDept'];
+        }
+        if (isset($map['inviteSwitch'])) {
+            $model->inviteSwitch = $map['inviteSwitch'];
+        }
+        if (isset($map['inviteUrl'])) {
+            $model->inviteUrl = $map['inviteUrl'];
+        }
+        if (isset($map['linkInvite'])) {
+            $model->linkInvite = $map['linkInvite'];
+        }
+        if (isset($map['orgApplyCodeInvite'])) {
+            $model->orgApplyCodeInvite = $map['orgApplyCodeInvite'];
+        }
+        if (isset($map['searchNameInvite'])) {
+            $model->searchNameInvite = $map['searchNameInvite'];
         }
 
         return $model;

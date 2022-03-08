@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class FormComponent extends Model
 {
     /**
+     * @description 子控件集合
+     *
+     * @var \AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\FormComponent[]
+     */
+    public $children;
+
+    /**
      * @description 控件类型
      *
      * @var string
@@ -21,17 +28,10 @@ class FormComponent extends Model
      * @var FormComponentProps
      */
     public $props;
-
-    /**
-     * @description 子控件集合
-     *
-     * @var \AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\FormComponent[]
-     */
-    public $children;
     protected $_name = [
+        'children'      => 'children',
         'componentType' => 'componentType',
         'props'         => 'props',
-        'children'      => 'children',
     ];
 
     public function validate()
@@ -41,12 +41,6 @@ class FormComponent extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->componentType) {
-            $res['componentType'] = $this->componentType;
-        }
-        if (null !== $this->props) {
-            $res['props'] = null !== $this->props ? $this->props->toMap() : null;
-        }
         if (null !== $this->children) {
             $res['children'] = [];
             if (null !== $this->children && \is_array($this->children)) {
@@ -55,6 +49,12 @@ class FormComponent extends Model
                     $res['children'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->componentType) {
+            $res['componentType'] = $this->componentType;
+        }
+        if (null !== $this->props) {
+            $res['props'] = null !== $this->props ? $this->props->toMap() : null;
         }
 
         return $res;
@@ -68,12 +68,6 @@ class FormComponent extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['componentType'])) {
-            $model->componentType = $map['componentType'];
-        }
-        if (isset($map['props'])) {
-            $model->props = FormComponentProps::fromMap($map['props']);
-        }
         if (isset($map['children'])) {
             if (!empty($map['children'])) {
                 $model->children = [];
@@ -82,6 +76,12 @@ class FormComponent extends Model
                     $model->children[$n++] = null !== $item ? self::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['componentType'])) {
+            $model->componentType = $map['componentType'];
+        }
+        if (isset($map['props'])) {
+            $model->props = FormComponentProps::fromMap($map['props']);
         }
 
         return $model;

@@ -10,11 +10,6 @@ use AlibabaCloud\Tea\Model;
 class candidateOkrItems extends Model
 {
     /**
-     * @var string
-     */
-    public $userId;
-
-    /**
      * @var okrInfos[]
      */
     public $okrInfos;
@@ -23,10 +18,15 @@ class candidateOkrItems extends Model
      * @var string
      */
     public $relation;
+
+    /**
+     * @var string
+     */
+    public $userId;
     protected $_name = [
-        'userId'   => 'userId',
         'okrInfos' => 'okrInfos',
         'relation' => 'relation',
+        'userId'   => 'userId',
     ];
 
     public function validate()
@@ -36,9 +36,6 @@ class candidateOkrItems extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
-        }
         if (null !== $this->okrInfos) {
             $res['okrInfos'] = [];
             if (null !== $this->okrInfos && \is_array($this->okrInfos)) {
@@ -50,6 +47,9 @@ class candidateOkrItems extends Model
         }
         if (null !== $this->relation) {
             $res['relation'] = $this->relation;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -63,9 +63,6 @@ class candidateOkrItems extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
-        }
         if (isset($map['okrInfos'])) {
             if (!empty($map['okrInfos'])) {
                 $model->okrInfos = [];
@@ -77,6 +74,9 @@ class candidateOkrItems extends Model
         }
         if (isset($map['relation'])) {
             $model->relation = $map['relation'];
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

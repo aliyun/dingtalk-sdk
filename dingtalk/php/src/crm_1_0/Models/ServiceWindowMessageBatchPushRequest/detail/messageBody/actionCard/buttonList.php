@@ -11,15 +11,15 @@ class buttonList extends Model
     /**
      * @var string
      */
-    public $title;
+    public $actionUrl;
 
     /**
      * @var string
      */
-    public $actionUrl;
+    public $title;
     protected $_name = [
-        'title'     => 'title',
         'actionUrl' => 'actionUrl',
+        'title'     => 'title',
     ];
 
     public function validate()
@@ -29,11 +29,11 @@ class buttonList extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->title) {
-            $res['title'] = $this->title;
-        }
         if (null !== $this->actionUrl) {
             $res['actionUrl'] = $this->actionUrl;
+        }
+        if (null !== $this->title) {
+            $res['title'] = $this->title;
         }
 
         return $res;
@@ -47,11 +47,11 @@ class buttonList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['title'])) {
-            $model->title = $map['title'];
-        }
         if (isset($map['actionUrl'])) {
             $model->actionUrl = $map['actionUrl'];
+        }
+        if (isset($map['title'])) {
+            $model->title = $map['title'];
         }
 
         return $model;

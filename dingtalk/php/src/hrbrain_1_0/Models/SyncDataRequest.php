@@ -11,12 +11,7 @@ class SyncDataRequest extends Model
     /**
      * @var string
      */
-    public $projectId;
-
-    /**
-     * @var string
-     */
-    public $schemaId;
+    public $content;
 
     /**
      * @var string
@@ -26,18 +21,23 @@ class SyncDataRequest extends Model
     /**
      * @var string
      */
-    public $content;
+    public $etlTime;
 
     /**
      * @var string
      */
-    public $etlTime;
+    public $projectId;
+
+    /**
+     * @var string
+     */
+    public $schemaId;
     protected $_name = [
+        'content'   => 'content',
+        'dataId'    => 'dataId',
+        'etlTime'   => 'etlTime',
         'projectId' => 'projectId',
         'schemaId'  => 'schemaId',
-        'dataId'    => 'dataId',
-        'content'   => 'content',
-        'etlTime'   => 'etlTime',
     ];
 
     public function validate()
@@ -47,20 +47,20 @@ class SyncDataRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->content) {
+            $res['content'] = $this->content;
+        }
+        if (null !== $this->dataId) {
+            $res['dataId'] = $this->dataId;
+        }
+        if (null !== $this->etlTime) {
+            $res['etlTime'] = $this->etlTime;
+        }
         if (null !== $this->projectId) {
             $res['projectId'] = $this->projectId;
         }
         if (null !== $this->schemaId) {
             $res['schemaId'] = $this->schemaId;
-        }
-        if (null !== $this->dataId) {
-            $res['dataId'] = $this->dataId;
-        }
-        if (null !== $this->content) {
-            $res['content'] = $this->content;
-        }
-        if (null !== $this->etlTime) {
-            $res['etlTime'] = $this->etlTime;
         }
 
         return $res;
@@ -74,20 +74,20 @@ class SyncDataRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['content'])) {
+            $model->content = $map['content'];
+        }
+        if (isset($map['dataId'])) {
+            $model->dataId = $map['dataId'];
+        }
+        if (isset($map['etlTime'])) {
+            $model->etlTime = $map['etlTime'];
+        }
         if (isset($map['projectId'])) {
             $model->projectId = $map['projectId'];
         }
         if (isset($map['schemaId'])) {
             $model->schemaId = $map['schemaId'];
-        }
-        if (isset($map['dataId'])) {
-            $model->dataId = $map['dataId'];
-        }
-        if (isset($map['content'])) {
-            $model->content = $map['content'];
-        }
-        if (isset($map['etlTime'])) {
-            $model->etlTime = $map['etlTime'];
         }
 
         return $model;

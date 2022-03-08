@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class EditPurchaseResponseBody extends Model
 {
     /**
-     * @description 响应时间
-     *
-     * @var string
-     */
-    public $time;
-
-    /**
      * @description 编辑数据的id
      *
      * @var int
      */
     public $msgid;
+
+    /**
+     * @description 响应时间
+     *
+     * @var string
+     */
+    public $time;
     protected $_name = [
-        'time'  => 'time',
         'msgid' => 'msgid',
+        'time'  => 'time',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class EditPurchaseResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->time) {
-            $res['time'] = $this->time;
-        }
         if (null !== $this->msgid) {
             $res['msgid'] = $this->msgid;
+        }
+        if (null !== $this->time) {
+            $res['time'] = $this->time;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class EditPurchaseResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['time'])) {
-            $model->time = $map['time'];
-        }
         if (isset($map['msgid'])) {
             $model->msgid = $map['msgid'];
+        }
+        if (isset($map['time'])) {
+            $model->time = $map['time'];
         }
 
         return $model;

@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class BindSystemResponseBody extends Model
 {
     /**
-     * @description 钉钉物联组织ID。
-     *
-     * @var string
-     */
-    public $corpId;
-
-    /**
      * @description 三方平台的用户ID。
      *
      * @var string
      */
     public $clientId;
+
+    /**
+     * @description 钉钉物联组织ID。
+     *
+     * @var string
+     */
+    public $corpId;
     protected $_name = [
-        'corpId'   => 'corpId',
         'clientId' => 'clientId',
+        'corpId'   => 'corpId',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class BindSystemResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->corpId) {
-            $res['corpId'] = $this->corpId;
-        }
         if (null !== $this->clientId) {
             $res['clientId'] = $this->clientId;
+        }
+        if (null !== $this->corpId) {
+            $res['corpId'] = $this->corpId;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class BindSystemResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['corpId'])) {
-            $model->corpId = $map['corpId'];
-        }
         if (isset($map['clientId'])) {
             $model->clientId = $map['clientId'];
+        }
+        if (isset($map['corpId'])) {
+            $model->corpId = $map['corpId'];
         }
 
         return $model;

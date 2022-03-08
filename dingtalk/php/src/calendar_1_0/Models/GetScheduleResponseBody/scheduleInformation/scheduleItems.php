@@ -11,11 +11,11 @@ use AlibabaCloud\Tea\Model;
 class scheduleItems extends Model
 {
     /**
-     * @description 状态: - BUSY：繁忙, - TENTATIVE：暂定繁忙
+     * @description 结束时间，表示一个日期，或者一个带时区的时间戳
      *
-     * @var string
+     * @var end
      */
-    public $status;
+    public $end;
 
     /**
      * @description 开始时间，表示一个日期，或者一个带时区的时间戳
@@ -25,15 +25,15 @@ class scheduleItems extends Model
     public $start;
 
     /**
-     * @description 结束时间，表示一个日期，或者一个带时区的时间戳
+     * @description 状态: - BUSY：繁忙, - TENTATIVE：暂定繁忙
      *
-     * @var end
+     * @var string
      */
-    public $end;
+    public $status;
     protected $_name = [
-        'status' => 'status',
-        'start'  => 'start',
         'end'    => 'end',
+        'start'  => 'start',
+        'status' => 'status',
     ];
 
     public function validate()
@@ -43,14 +43,14 @@ class scheduleItems extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->status) {
-            $res['status'] = $this->status;
+        if (null !== $this->end) {
+            $res['end'] = null !== $this->end ? $this->end->toMap() : null;
         }
         if (null !== $this->start) {
             $res['start'] = null !== $this->start ? $this->start->toMap() : null;
         }
-        if (null !== $this->end) {
-            $res['end'] = null !== $this->end ? $this->end->toMap() : null;
+        if (null !== $this->status) {
+            $res['status'] = $this->status;
         }
 
         return $res;
@@ -64,14 +64,14 @@ class scheduleItems extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['status'])) {
-            $model->status = $map['status'];
+        if (isset($map['end'])) {
+            $model->end = end::fromMap($map['end']);
         }
         if (isset($map['start'])) {
             $model->start = start::fromMap($map['start']);
         }
-        if (isset($map['end'])) {
-            $model->end = end::fromMap($map['end']);
+        if (isset($map['status'])) {
+            $model->status = $map['status'];
         }
 
         return $model;

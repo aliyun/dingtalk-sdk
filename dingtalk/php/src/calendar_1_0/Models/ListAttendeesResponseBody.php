@@ -10,21 +10,21 @@ use AlibabaCloud\Tea\Model;
 class ListAttendeesResponseBody extends Model
 {
     /**
-     * @description 翻页token
-     *
-     * @var string
-     */
-    public $nextToken;
-
-    /**
      * @description 参与人
      *
      * @var attendees[]
      */
     public $attendees;
+
+    /**
+     * @description 翻页token
+     *
+     * @var string
+     */
+    public $nextToken;
     protected $_name = [
-        'nextToken' => 'nextToken',
         'attendees' => 'attendees',
+        'nextToken' => 'nextToken',
     ];
 
     public function validate()
@@ -34,9 +34,6 @@ class ListAttendeesResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->nextToken) {
-            $res['nextToken'] = $this->nextToken;
-        }
         if (null !== $this->attendees) {
             $res['attendees'] = [];
             if (null !== $this->attendees && \is_array($this->attendees)) {
@@ -45,6 +42,9 @@ class ListAttendeesResponseBody extends Model
                     $res['attendees'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
         }
 
         return $res;
@@ -58,9 +58,6 @@ class ListAttendeesResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['nextToken'])) {
-            $model->nextToken = $map['nextToken'];
-        }
         if (isset($map['attendees'])) {
             if (!empty($map['attendees'])) {
                 $model->attendees = [];
@@ -69,6 +66,9 @@ class ListAttendeesResponseBody extends Model
                     $model->attendees[$n++] = null !== $item ? attendees::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
         }
 
         return $model;

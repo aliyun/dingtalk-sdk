@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class notify extends Model
 {
     /**
-     * @description 企业工作通知接收人（钉钉UnionId）
-     *
-     * @var string[]
-     */
-    public $workNoticeReceiverUnionIds;
-
-    /**
      * @description 服务群通知接收人（钉钉UnionId）
      *
      * @var string[]
@@ -28,10 +21,17 @@ class notify extends Model
      * @var bool
      */
     public $noticeAllGroupMember;
+
+    /**
+     * @description 企业工作通知接收人（钉钉UnionId）
+     *
+     * @var string[]
+     */
+    public $workNoticeReceiverUnionIds;
     protected $_name = [
-        'workNoticeReceiverUnionIds'  => 'workNoticeReceiverUnionIds',
         'groupNoticeReceiverUnionIds' => 'groupNoticeReceiverUnionIds',
         'noticeAllGroupMember'        => 'noticeAllGroupMember',
+        'workNoticeReceiverUnionIds'  => 'workNoticeReceiverUnionIds',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class notify extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->workNoticeReceiverUnionIds) {
-            $res['workNoticeReceiverUnionIds'] = $this->workNoticeReceiverUnionIds;
-        }
         if (null !== $this->groupNoticeReceiverUnionIds) {
             $res['groupNoticeReceiverUnionIds'] = $this->groupNoticeReceiverUnionIds;
         }
         if (null !== $this->noticeAllGroupMember) {
             $res['noticeAllGroupMember'] = $this->noticeAllGroupMember;
+        }
+        if (null !== $this->workNoticeReceiverUnionIds) {
+            $res['workNoticeReceiverUnionIds'] = $this->workNoticeReceiverUnionIds;
         }
 
         return $res;
@@ -62,11 +62,6 @@ class notify extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['workNoticeReceiverUnionIds'])) {
-            if (!empty($map['workNoticeReceiverUnionIds'])) {
-                $model->workNoticeReceiverUnionIds = $map['workNoticeReceiverUnionIds'];
-            }
-        }
         if (isset($map['groupNoticeReceiverUnionIds'])) {
             if (!empty($map['groupNoticeReceiverUnionIds'])) {
                 $model->groupNoticeReceiverUnionIds = $map['groupNoticeReceiverUnionIds'];
@@ -74,6 +69,11 @@ class notify extends Model
         }
         if (isset($map['noticeAllGroupMember'])) {
             $model->noticeAllGroupMember = $map['noticeAllGroupMember'];
+        }
+        if (isset($map['workNoticeReceiverUnionIds'])) {
+            if (!empty($map['workNoticeReceiverUnionIds'])) {
+                $model->workNoticeReceiverUnionIds = $map['workNoticeReceiverUnionIds'];
+            }
         }
 
         return $model;

@@ -16,18 +16,18 @@ class GetDingMeBaseDataResponseBody extends Model
     public $fromCache;
 
     /**
-     * @description 运行时间
-     *
-     * @var int
-     */
-    public $runtime;
-
-    /**
      * @description 结果集
      *
      * @var string[][]
      */
     public $rawset;
+
+    /**
+     * @description 运行时间
+     *
+     * @var int
+     */
+    public $runtime;
 
     /**
      * @description 字段解释
@@ -37,8 +37,8 @@ class GetDingMeBaseDataResponseBody extends Model
     public $tips;
     protected $_name = [
         'fromCache' => 'fromCache',
-        'runtime'   => 'runtime',
         'rawset'    => 'rawset',
+        'runtime'   => 'runtime',
         'tips'      => 'tips',
     ];
 
@@ -52,11 +52,11 @@ class GetDingMeBaseDataResponseBody extends Model
         if (null !== $this->fromCache) {
             $res['fromCache'] = $this->fromCache;
         }
-        if (null !== $this->runtime) {
-            $res['runtime'] = $this->runtime;
-        }
         if (null !== $this->rawset) {
             $res['rawset'] = $this->rawset;
+        }
+        if (null !== $this->runtime) {
+            $res['runtime'] = $this->runtime;
         }
         if (null !== $this->tips) {
             $res['tips'] = $this->tips;
@@ -76,13 +76,13 @@ class GetDingMeBaseDataResponseBody extends Model
         if (isset($map['fromCache'])) {
             $model->fromCache = $map['fromCache'];
         }
-        if (isset($map['runtime'])) {
-            $model->runtime = $map['runtime'];
-        }
         if (isset($map['rawset'])) {
             if (!empty($map['rawset'])) {
                 $model->rawset = $map['rawset'];
             }
+        }
+        if (isset($map['runtime'])) {
+            $model->runtime = $map['runtime'];
         }
         if (isset($map['tips'])) {
             $model->tips = $map['tips'];

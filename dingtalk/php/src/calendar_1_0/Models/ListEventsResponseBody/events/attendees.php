@@ -9,18 +9,18 @@ use AlibabaCloud\Tea\Model;
 class attendees extends Model
 {
     /**
-     * @description 用户id
-     *
-     * @var string
-     */
-    public $id;
-
-    /**
      * @description 用户名
      *
      * @var string
      */
     public $displayName;
+
+    /**
+     * @description 用户id
+     *
+     * @var string
+     */
+    public $id;
 
     /**
      * @description 回复状态
@@ -36,8 +36,8 @@ class attendees extends Model
      */
     public $self;
     protected $_name = [
-        'id'             => 'id',
         'displayName'    => 'displayName',
+        'id'             => 'id',
         'responseStatus' => 'responseStatus',
         'self'           => 'self',
     ];
@@ -49,11 +49,11 @@ class attendees extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->id) {
-            $res['id'] = $this->id;
-        }
         if (null !== $this->displayName) {
             $res['displayName'] = $this->displayName;
+        }
+        if (null !== $this->id) {
+            $res['id'] = $this->id;
         }
         if (null !== $this->responseStatus) {
             $res['responseStatus'] = $this->responseStatus;
@@ -73,11 +73,11 @@ class attendees extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['id'])) {
-            $model->id = $map['id'];
-        }
         if (isset($map['displayName'])) {
             $model->displayName = $map['displayName'];
+        }
+        if (isset($map['id'])) {
+            $model->id = $map['id'];
         }
         if (isset($map['responseStatus'])) {
             $model->responseStatus = $map['responseStatus'];

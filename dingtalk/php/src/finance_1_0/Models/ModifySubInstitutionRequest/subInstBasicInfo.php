@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class subInstBasicInfo extends Model
 {
     /**
-     * @description 名称
-     *
-     * @var string
-     */
-    public $subInstName;
-
-    /**
      * @description 别名
      *
      * @var string
@@ -23,23 +16,30 @@ class subInstBasicInfo extends Model
     public $aliasName;
 
     /**
-     * @description 类型
-     *
-     * @var string
-     */
-    public $type;
-
-    /**
      * @description 机构识别码
      *
      * @var string
      */
     public $mcc;
+
+    /**
+     * @description 名称
+     *
+     * @var string
+     */
+    public $subInstName;
+
+    /**
+     * @description 类型
+     *
+     * @var string
+     */
+    public $type;
     protected $_name = [
-        'subInstName' => 'subInstName',
         'aliasName'   => 'aliasName',
-        'type'        => 'type',
         'mcc'         => 'mcc',
+        'subInstName' => 'subInstName',
+        'type'        => 'type',
     ];
 
     public function validate()
@@ -49,17 +49,17 @@ class subInstBasicInfo extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->subInstName) {
-            $res['subInstName'] = $this->subInstName;
-        }
         if (null !== $this->aliasName) {
             $res['aliasName'] = $this->aliasName;
         }
-        if (null !== $this->type) {
-            $res['type'] = $this->type;
-        }
         if (null !== $this->mcc) {
             $res['mcc'] = $this->mcc;
+        }
+        if (null !== $this->subInstName) {
+            $res['subInstName'] = $this->subInstName;
+        }
+        if (null !== $this->type) {
+            $res['type'] = $this->type;
         }
 
         return $res;
@@ -73,17 +73,17 @@ class subInstBasicInfo extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['subInstName'])) {
-            $model->subInstName = $map['subInstName'];
-        }
         if (isset($map['aliasName'])) {
             $model->aliasName = $map['aliasName'];
         }
-        if (isset($map['type'])) {
-            $model->type = $map['type'];
-        }
         if (isset($map['mcc'])) {
             $model->mcc = $map['mcc'];
+        }
+        if (isset($map['subInstName'])) {
+            $model->subInstName = $map['subInstName'];
+        }
+        if (isset($map['type'])) {
+            $model->type = $map['type'];
         }
 
         return $model;

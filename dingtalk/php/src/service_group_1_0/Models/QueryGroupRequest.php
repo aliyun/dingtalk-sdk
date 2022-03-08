@@ -9,31 +9,11 @@ use AlibabaCloud\Tea\Model;
 class QueryGroupRequest extends Model
 {
     /**
-     * @var int
-     */
-    public $dingIsvOrgId;
-
-    /**
-     * @var int
-     */
-    public $dingOrgId;
-
-    /**
-     * @var string
-     */
-    public $dingSuiteKey;
-
-    /**
-     * @var int
-     */
-    public $dingTokenGrantType;
-
-    /**
-     * @description 开放团队ID
+     * @description 业务关联ID，和开放群ID二选一传
      *
      * @var string
      */
-    public $openTeamId;
+    public $bizId;
 
     /**
      * @description 开放群ID
@@ -43,19 +23,15 @@ class QueryGroupRequest extends Model
     public $openConversationId;
 
     /**
-     * @description 业务关联ID，和开放群ID二选一传
+     * @description 开放团队ID
      *
      * @var string
      */
-    public $bizId;
+    public $openTeamId;
     protected $_name = [
-        'dingIsvOrgId'       => 'dingIsvOrgId',
-        'dingOrgId'          => 'dingOrgId',
-        'dingSuiteKey'       => 'dingSuiteKey',
-        'dingTokenGrantType' => 'dingTokenGrantType',
-        'openTeamId'         => 'openTeamId',
-        'openConversationId' => 'openConversationId',
         'bizId'              => 'bizId',
+        'openConversationId' => 'openConversationId',
+        'openTeamId'         => 'openTeamId',
     ];
 
     public function validate()
@@ -65,26 +41,14 @@ class QueryGroupRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->dingIsvOrgId) {
-            $res['dingIsvOrgId'] = $this->dingIsvOrgId;
-        }
-        if (null !== $this->dingOrgId) {
-            $res['dingOrgId'] = $this->dingOrgId;
-        }
-        if (null !== $this->dingSuiteKey) {
-            $res['dingSuiteKey'] = $this->dingSuiteKey;
-        }
-        if (null !== $this->dingTokenGrantType) {
-            $res['dingTokenGrantType'] = $this->dingTokenGrantType;
-        }
-        if (null !== $this->openTeamId) {
-            $res['openTeamId'] = $this->openTeamId;
+        if (null !== $this->bizId) {
+            $res['bizId'] = $this->bizId;
         }
         if (null !== $this->openConversationId) {
             $res['openConversationId'] = $this->openConversationId;
         }
-        if (null !== $this->bizId) {
-            $res['bizId'] = $this->bizId;
+        if (null !== $this->openTeamId) {
+            $res['openTeamId'] = $this->openTeamId;
         }
 
         return $res;
@@ -98,26 +62,14 @@ class QueryGroupRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['dingIsvOrgId'])) {
-            $model->dingIsvOrgId = $map['dingIsvOrgId'];
-        }
-        if (isset($map['dingOrgId'])) {
-            $model->dingOrgId = $map['dingOrgId'];
-        }
-        if (isset($map['dingSuiteKey'])) {
-            $model->dingSuiteKey = $map['dingSuiteKey'];
-        }
-        if (isset($map['dingTokenGrantType'])) {
-            $model->dingTokenGrantType = $map['dingTokenGrantType'];
-        }
-        if (isset($map['openTeamId'])) {
-            $model->openTeamId = $map['openTeamId'];
+        if (isset($map['bizId'])) {
+            $model->bizId = $map['bizId'];
         }
         if (isset($map['openConversationId'])) {
             $model->openConversationId = $map['openConversationId'];
         }
-        if (isset($map['bizId'])) {
-            $model->bizId = $map['bizId'];
+        if (isset($map['openTeamId'])) {
+            $model->openTeamId = $map['openTeamId'];
         }
 
         return $model;

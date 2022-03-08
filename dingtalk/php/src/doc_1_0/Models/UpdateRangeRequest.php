@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class UpdateRangeRequest extends Model
 {
     /**
-     * @description 操作人unionId
+     * @description 背景色
      *
-     * @var string
+     * @var string[][]
      */
-    public $operatorId;
+    public $backgroundColors;
 
     /**
      * @description 值
@@ -23,15 +23,15 @@ class UpdateRangeRequest extends Model
     public $values;
 
     /**
-     * @description 背景色
+     * @description 操作人unionId
      *
-     * @var string[][]
+     * @var string
      */
-    public $backgroundColors;
+    public $operatorId;
     protected $_name = [
-        'operatorId'       => 'operatorId',
-        'values'           => 'values',
         'backgroundColors' => 'backgroundColors',
+        'values'           => 'values',
+        'operatorId'       => 'operatorId',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class UpdateRangeRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->operatorId) {
-            $res['operatorId'] = $this->operatorId;
+        if (null !== $this->backgroundColors) {
+            $res['backgroundColors'] = $this->backgroundColors;
         }
         if (null !== $this->values) {
             $res['values'] = $this->values;
         }
-        if (null !== $this->backgroundColors) {
-            $res['backgroundColors'] = $this->backgroundColors;
+        if (null !== $this->operatorId) {
+            $res['operatorId'] = $this->operatorId;
         }
 
         return $res;
@@ -62,18 +62,18 @@ class UpdateRangeRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['operatorId'])) {
-            $model->operatorId = $map['operatorId'];
+        if (isset($map['backgroundColors'])) {
+            if (!empty($map['backgroundColors'])) {
+                $model->backgroundColors = $map['backgroundColors'];
+            }
         }
         if (isset($map['values'])) {
             if (!empty($map['values'])) {
                 $model->values = $map['values'];
             }
         }
-        if (isset($map['backgroundColors'])) {
-            if (!empty($map['backgroundColors'])) {
-                $model->backgroundColors = $map['backgroundColors'];
-            }
+        if (isset($map['operatorId'])) {
+            $model->operatorId = $map['operatorId'];
         }
 
         return $model;

@@ -11,6 +11,11 @@ class GetExecuteUrlResponseBody extends Model
     /**
      * @var string
      */
+    public $longUrl;
+
+    /**
+     * @var string
+     */
     public $mobileUrl;
 
     /**
@@ -21,16 +26,11 @@ class GetExecuteUrlResponseBody extends Model
     /**
      * @var string
      */
-    public $longUrl;
-
-    /**
-     * @var string
-     */
     public $shortUrl;
     protected $_name = [
+        'longUrl'   => 'longUrl',
         'mobileUrl' => 'mobileUrl',
         'pcUrl'     => 'pcUrl',
-        'longUrl'   => 'longUrl',
         'shortUrl'  => 'shortUrl',
     ];
 
@@ -41,14 +41,14 @@ class GetExecuteUrlResponseBody extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->longUrl) {
+            $res['longUrl'] = $this->longUrl;
+        }
         if (null !== $this->mobileUrl) {
             $res['mobileUrl'] = $this->mobileUrl;
         }
         if (null !== $this->pcUrl) {
             $res['pcUrl'] = $this->pcUrl;
-        }
-        if (null !== $this->longUrl) {
-            $res['longUrl'] = $this->longUrl;
         }
         if (null !== $this->shortUrl) {
             $res['shortUrl'] = $this->shortUrl;
@@ -65,14 +65,14 @@ class GetExecuteUrlResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['longUrl'])) {
+            $model->longUrl = $map['longUrl'];
+        }
         if (isset($map['mobileUrl'])) {
             $model->mobileUrl = $map['mobileUrl'];
         }
         if (isset($map['pcUrl'])) {
             $model->pcUrl = $map['pcUrl'];
-        }
-        if (isset($map['longUrl'])) {
-            $model->longUrl = $map['longUrl'];
         }
         if (isset($map['shortUrl'])) {
             $model->shortUrl = $map['shortUrl'];

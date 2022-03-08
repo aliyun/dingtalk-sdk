@@ -55,58 +55,47 @@ class Dingtalk extends OpenApiClient
 
     /**
      * @param string                      $conferenceId
-     * @param QueryCloudRecordTextRequest $request
+     * @param CloseVideoConferenceRequest $request
      *
-     * @return QueryCloudRecordTextResponse
+     * @return CloseVideoConferenceResponse
      */
-    public function queryCloudRecordText($conferenceId, $request)
+    public function closeVideoConference($conferenceId, $request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new QueryCloudRecordTextHeaders([]);
+        $headers = new CloseVideoConferenceHeaders([]);
 
-        return $this->queryCloudRecordTextWithOptions($conferenceId, $request, $headers, $runtime);
+        return $this->closeVideoConferenceWithOptions($conferenceId, $request, $headers, $runtime);
     }
 
     /**
      * @param string                      $conferenceId
-     * @param QueryCloudRecordTextRequest $request
-     * @param QueryCloudRecordTextHeaders $headers
+     * @param CloseVideoConferenceRequest $request
+     * @param CloseVideoConferenceHeaders $headers
      * @param RuntimeOptions              $runtime
      *
-     * @return QueryCloudRecordTextResponse
+     * @return CloseVideoConferenceResponse
      */
-    public function queryCloudRecordTextWithOptions($conferenceId, $request, $headers, $runtime)
+    public function closeVideoConferenceWithOptions($conferenceId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $conferenceId = OpenApiUtilClient::getEncodeParam($conferenceId);
+        $query        = [];
         if (!Utils::isUnset($request->unionId)) {
             @$query['unionId'] = $request->unionId;
-        }
-        if (!Utils::isUnset($request->startTime)) {
-            @$query['startTime'] = $request->startTime;
-        }
-        if (!Utils::isUnset($request->direction)) {
-            @$query['direction'] = $request->direction;
-        }
-        if (!Utils::isUnset($request->maxResults)) {
-            @$query['maxResults'] = $request->maxResults;
-        }
-        if (!Utils::isUnset($request->nextToken)) {
-            @$query['nextToken'] = $request->nextToken;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return QueryCloudRecordTextResponse::fromMap($this->doROARequest('QueryCloudRecordText', 'conference_1.0', 'HTTP', 'GET', 'AK', '/v1.0/conference/videoConferences/' . $conferenceId . '/cloudRecords/getTexts', 'json', $req, $runtime));
+        return CloseVideoConferenceResponse::fromMap($this->doROARequest('CloseVideoConference', 'conference_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/conference/videoConferences/' . $conferenceId . '', 'json', $req, $runtime));
     }
 
     /**
@@ -133,24 +122,24 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
-        }
         if (!Utils::isUnset($request->confTitle)) {
             @$body['confTitle'] = $request->confTitle;
+        }
+        if (!Utils::isUnset($request->inviteCaller)) {
+            @$body['inviteCaller'] = $request->inviteCaller;
         }
         if (!Utils::isUnset($request->inviteUserIds)) {
             @$body['inviteUserIds'] = $request->inviteUserIds;
         }
-        if (!Utils::isUnset($request->inviteCaller)) {
-            @$body['inviteCaller'] = $request->inviteCaller;
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -158,6 +147,108 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CreateVideoConferenceResponse::fromMap($this->doROARequest('CreateVideoConference', 'conference_1.0', 'HTTP', 'POST', 'AK', '/v1.0/conference/videoConferences', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                      $conferenceId
+     * @param QueryCloudRecordTextRequest $request
+     *
+     * @return QueryCloudRecordTextResponse
+     */
+    public function queryCloudRecordText($conferenceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryCloudRecordTextHeaders([]);
+
+        return $this->queryCloudRecordTextWithOptions($conferenceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                      $conferenceId
+     * @param QueryCloudRecordTextRequest $request
+     * @param QueryCloudRecordTextHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return QueryCloudRecordTextResponse
+     */
+    public function queryCloudRecordTextWithOptions($conferenceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $conferenceId = OpenApiUtilClient::getEncodeParam($conferenceId);
+        $query        = [];
+        if (!Utils::isUnset($request->direction)) {
+            @$query['direction'] = $request->direction;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            @$query['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            @$query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryCloudRecordTextResponse::fromMap($this->doROARequest('QueryCloudRecordText', 'conference_1.0', 'HTTP', 'GET', 'AK', '/v1.0/conference/videoConferences/' . $conferenceId . '/cloudRecords/getTexts', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                       $conferenceId
+     * @param QueryCloudRecordVideoRequest $request
+     *
+     * @return QueryCloudRecordVideoResponse
+     */
+    public function queryCloudRecordVideo($conferenceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryCloudRecordVideoHeaders([]);
+
+        return $this->queryCloudRecordVideoWithOptions($conferenceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                       $conferenceId
+     * @param QueryCloudRecordVideoRequest $request
+     * @param QueryCloudRecordVideoHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return QueryCloudRecordVideoResponse
+     */
+    public function queryCloudRecordVideoWithOptions($conferenceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $conferenceId = OpenApiUtilClient::getEncodeParam($conferenceId);
+        $query        = [];
+        if (!Utils::isUnset($request->unionId)) {
+            @$query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryCloudRecordVideoResponse::fromMap($this->doROARequest('QueryCloudRecordVideo', 'conference_1.0', 'HTTP', 'GET', 'AK', '/v1.0/conference/videoConferences/' . $conferenceId . '/cloudRecords/getVideos', 'json', $req, $runtime));
     }
 
     /**
@@ -185,22 +276,23 @@ class Dingtalk extends OpenApiClient
     public function queryCloudRecordVideoPlayInfoWithOptions($conferenceId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->unionId)) {
-            @$query['unionId'] = $request->unionId;
-        }
+        $conferenceId = OpenApiUtilClient::getEncodeParam($conferenceId);
+        $query        = [];
         if (!Utils::isUnset($request->mediaId)) {
             @$query['mediaId'] = $request->mediaId;
         }
         if (!Utils::isUnset($request->regionId)) {
             @$query['regionId'] = $request->regionId;
         }
+        if (!Utils::isUnset($request->unionId)) {
+            @$query['unionId'] = $request->unionId;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -242,7 +334,7 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -250,180 +342,6 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryConferenceInfoBatchResponse::fromMap($this->doROARequest('QueryConferenceInfoBatch', 'conference_1.0', 'HTTP', 'POST', 'AK', '/v1.0/conference/videoConferences/query', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param string                 $conferenceId
-     * @param StopCloudRecordRequest $request
-     *
-     * @return StopCloudRecordResponse
-     */
-    public function stopCloudRecord($conferenceId, $request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new StopCloudRecordHeaders([]);
-
-        return $this->stopCloudRecordWithOptions($conferenceId, $request, $headers, $runtime);
-    }
-
-    /**
-     * @param string                 $conferenceId
-     * @param StopCloudRecordRequest $request
-     * @param StopCloudRecordHeaders $headers
-     * @param RuntimeOptions         $runtime
-     *
-     * @return StopCloudRecordResponse
-     */
-    public function stopCloudRecordWithOptions($conferenceId, $request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->unionId)) {
-            @$body['unionId'] = $request->unionId;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return StopCloudRecordResponse::fromMap($this->doROARequest('StopCloudRecord', 'conference_1.0', 'HTTP', 'POST', 'AK', '/v1.0/conference/videoConferences/' . $conferenceId . '/cloudRecords/stop', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param string $conferenceId
-     *
-     * @return UpdateVideoConferenceExtInfoResponse
-     */
-    public function updateVideoConferenceExtInfo($conferenceId)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new UpdateVideoConferenceExtInfoHeaders([]);
-
-        return $this->updateVideoConferenceExtInfoWithOptions($conferenceId, $headers, $runtime);
-    }
-
-    /**
-     * @param string                              $conferenceId
-     * @param UpdateVideoConferenceExtInfoHeaders $headers
-     * @param RuntimeOptions                      $runtime
-     *
-     * @return UpdateVideoConferenceExtInfoResponse
-     */
-    public function updateVideoConferenceExtInfoWithOptions($conferenceId, $headers, $runtime)
-    {
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-        ]);
-
-        return UpdateVideoConferenceExtInfoResponse::fromMap($this->doROARequest('UpdateVideoConferenceExtInfo', 'conference_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/conference/videoConferences/' . $conferenceId . '/extInfo', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param string                      $conferenceId
-     * @param CloseVideoConferenceRequest $request
-     *
-     * @return CloseVideoConferenceResponse
-     */
-    public function closeVideoConference($conferenceId, $request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new CloseVideoConferenceHeaders([]);
-
-        return $this->closeVideoConferenceWithOptions($conferenceId, $request, $headers, $runtime);
-    }
-
-    /**
-     * @param string                      $conferenceId
-     * @param CloseVideoConferenceRequest $request
-     * @param CloseVideoConferenceHeaders $headers
-     * @param RuntimeOptions              $runtime
-     *
-     * @return CloseVideoConferenceResponse
-     */
-    public function closeVideoConferenceWithOptions($conferenceId, $request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->unionId)) {
-            @$query['unionId'] = $request->unionId;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return CloseVideoConferenceResponse::fromMap($this->doROARequest('CloseVideoConference', 'conference_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/conference/videoConferences/' . $conferenceId . '', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param string               $conferenceId
-     * @param StopStreamOutRequest $request
-     *
-     * @return StopStreamOutResponse
-     */
-    public function stopStreamOut($conferenceId, $request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new StopStreamOutHeaders([]);
-
-        return $this->stopStreamOutWithOptions($conferenceId, $request, $headers, $runtime);
-    }
-
-    /**
-     * @param string               $conferenceId
-     * @param StopStreamOutRequest $request
-     * @param StopStreamOutHeaders $headers
-     * @param RuntimeOptions       $runtime
-     *
-     * @return StopStreamOutResponse
-     */
-    public function stopStreamOutWithOptions($conferenceId, $request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->streamId)) {
-            @$body['streamId'] = $request->streamId;
-        }
-        if (!Utils::isUnset($request->stopAllStream)) {
-            @$body['stopAllStream'] = $request->stopAllStream;
-        }
-        if (!Utils::isUnset($request->unionId)) {
-            @$body['unionId'] = $request->unionId;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return StopStreamOutResponse::fromMap($this->doROARequest('StopStreamOut', 'conference_1.0', 'HTTP', 'POST', 'AK', '/v1.0/conference/videoConferences/' . $conferenceId . '/streamOuts/stop', 'json', $req, $runtime));
     }
 
     /**
@@ -451,22 +369,23 @@ class Dingtalk extends OpenApiClient
     public function startCloudRecordWithOptions($conferenceId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->unionId)) {
-            @$body['unionId'] = $request->unionId;
+        $conferenceId = OpenApiUtilClient::getEncodeParam($conferenceId);
+        $body         = [];
+        if (!Utils::isUnset($request->mode)) {
+            @$body['mode'] = $request->mode;
         }
         if (!Utils::isUnset($request->smallWindowPosition)) {
             @$body['smallWindowPosition'] = $request->smallWindowPosition;
         }
-        if (!Utils::isUnset($request->mode)) {
-            @$body['mode'] = $request->mode;
+        if (!Utils::isUnset($request->unionId)) {
+            @$body['unionId'] = $request->unionId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -501,31 +420,32 @@ class Dingtalk extends OpenApiClient
     public function startStreamOutWithOptions($conferenceId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->unionId)) {
-            @$body['unionId'] = $request->unionId;
+        $conferenceId = OpenApiUtilClient::getEncodeParam($conferenceId);
+        $body         = [];
+        if (!Utils::isUnset($request->mode)) {
+            @$body['mode'] = $request->mode;
         }
         if (!Utils::isUnset($request->needHostJoin)) {
             @$body['needHostJoin'] = $request->needHostJoin;
         }
-        if (!Utils::isUnset($request->streamUrlList)) {
-            @$body['streamUrlList'] = $request->streamUrlList;
+        if (!Utils::isUnset($request->smallWindowPosition)) {
+            @$body['smallWindowPosition'] = $request->smallWindowPosition;
         }
         if (!Utils::isUnset($request->streamName)) {
             @$body['streamName'] = $request->streamName;
         }
-        if (!Utils::isUnset($request->mode)) {
-            @$body['mode'] = $request->mode;
+        if (!Utils::isUnset($request->streamUrlList)) {
+            @$body['streamUrlList'] = $request->streamUrlList;
         }
-        if (!Utils::isUnset($request->smallWindowPosition)) {
-            @$body['smallWindowPosition'] = $request->smallWindowPosition;
+        if (!Utils::isUnset($request->unionId)) {
+            @$body['unionId'] = $request->unionId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
@@ -536,46 +456,135 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                       $conferenceId
-     * @param QueryCloudRecordVideoRequest $request
+     * @param string                 $conferenceId
+     * @param StopCloudRecordRequest $request
      *
-     * @return QueryCloudRecordVideoResponse
+     * @return StopCloudRecordResponse
      */
-    public function queryCloudRecordVideo($conferenceId, $request)
+    public function stopCloudRecord($conferenceId, $request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new QueryCloudRecordVideoHeaders([]);
+        $headers = new StopCloudRecordHeaders([]);
 
-        return $this->queryCloudRecordVideoWithOptions($conferenceId, $request, $headers, $runtime);
+        return $this->stopCloudRecordWithOptions($conferenceId, $request, $headers, $runtime);
     }
 
     /**
-     * @param string                       $conferenceId
-     * @param QueryCloudRecordVideoRequest $request
-     * @param QueryCloudRecordVideoHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @param string                 $conferenceId
+     * @param StopCloudRecordRequest $request
+     * @param StopCloudRecordHeaders $headers
+     * @param RuntimeOptions         $runtime
      *
-     * @return QueryCloudRecordVideoResponse
+     * @return StopCloudRecordResponse
      */
-    public function queryCloudRecordVideoWithOptions($conferenceId, $request, $headers, $runtime)
+    public function stopCloudRecordWithOptions($conferenceId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $conferenceId = OpenApiUtilClient::getEncodeParam($conferenceId);
+        $body         = [];
         if (!Utils::isUnset($request->unionId)) {
-            @$query['unionId'] = $request->unionId;
+            @$body['unionId'] = $request->unionId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return QueryCloudRecordVideoResponse::fromMap($this->doROARequest('QueryCloudRecordVideo', 'conference_1.0', 'HTTP', 'GET', 'AK', '/v1.0/conference/videoConferences/' . $conferenceId . '/cloudRecords/getVideos', 'json', $req, $runtime));
+        return StopCloudRecordResponse::fromMap($this->doROARequest('StopCloudRecord', 'conference_1.0', 'HTTP', 'POST', 'AK', '/v1.0/conference/videoConferences/' . $conferenceId . '/cloudRecords/stop', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string               $conferenceId
+     * @param StopStreamOutRequest $request
+     *
+     * @return StopStreamOutResponse
+     */
+    public function stopStreamOut($conferenceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new StopStreamOutHeaders([]);
+
+        return $this->stopStreamOutWithOptions($conferenceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string               $conferenceId
+     * @param StopStreamOutRequest $request
+     * @param StopStreamOutHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return StopStreamOutResponse
+     */
+    public function stopStreamOutWithOptions($conferenceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $conferenceId = OpenApiUtilClient::getEncodeParam($conferenceId);
+        $body         = [];
+        if (!Utils::isUnset($request->stopAllStream)) {
+            @$body['stopAllStream'] = $request->stopAllStream;
+        }
+        if (!Utils::isUnset($request->streamId)) {
+            @$body['streamId'] = $request->streamId;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            @$body['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return StopStreamOutResponse::fromMap($this->doROARequest('StopStreamOut', 'conference_1.0', 'HTTP', 'POST', 'AK', '/v1.0/conference/videoConferences/' . $conferenceId . '/streamOuts/stop', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $conferenceId
+     *
+     * @return UpdateVideoConferenceExtInfoResponse
+     */
+    public function updateVideoConferenceExtInfo($conferenceId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateVideoConferenceExtInfoHeaders([]);
+
+        return $this->updateVideoConferenceExtInfoWithOptions($conferenceId, $headers, $runtime);
+    }
+
+    /**
+     * @param string                              $conferenceId
+     * @param UpdateVideoConferenceExtInfoHeaders $headers
+     * @param RuntimeOptions                      $runtime
+     *
+     * @return UpdateVideoConferenceExtInfoResponse
+     */
+    public function updateVideoConferenceExtInfoWithOptions($conferenceId, $headers, $runtime)
+    {
+        $conferenceId = OpenApiUtilClient::getEncodeParam($conferenceId);
+        $realHeaders  = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return UpdateVideoConferenceExtInfoResponse::fromMap($this->doROARequest('UpdateVideoConferenceExtInfo', 'conference_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/conference/videoConferences/' . $conferenceId . '/extInfo', 'json', $req, $runtime));
     }
 }

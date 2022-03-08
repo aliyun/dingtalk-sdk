@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class GetBranchAuthDataRequest extends Model
 {
     /**
+     * @description 查询条件
+     *
+     * @var string[]
+     */
+    public $body;
+
+    /**
      * @description 分支组织corpId
      *
      * @var string
@@ -21,17 +28,10 @@ class GetBranchAuthDataRequest extends Model
      * @var string
      */
     public $code;
-
-    /**
-     * @description 查询条件
-     *
-     * @var string[]
-     */
-    public $body;
     protected $_name = [
+        'body'         => 'body',
         'branchCorpId' => 'branchCorpId',
         'code'         => 'code',
-        'body'         => 'body',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class GetBranchAuthDataRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->body) {
+            $res['body'] = $this->body;
+        }
         if (null !== $this->branchCorpId) {
             $res['branchCorpId'] = $this->branchCorpId;
         }
         if (null !== $this->code) {
             $res['code'] = $this->code;
-        }
-        if (null !== $this->body) {
-            $res['body'] = $this->body;
         }
 
         return $res;
@@ -62,14 +62,14 @@ class GetBranchAuthDataRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['body'])) {
+            $model->body = $map['body'];
+        }
         if (isset($map['branchCorpId'])) {
             $model->branchCorpId = $map['branchCorpId'];
         }
         if (isset($map['code'])) {
             $model->code = $map['code'];
-        }
-        if (isset($map['body'])) {
-            $model->body = $map['body'];
         }
 
         return $model;

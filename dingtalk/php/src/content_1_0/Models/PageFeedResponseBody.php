@@ -17,22 +17,22 @@ class PageFeedResponseBody extends Model
     public $feedList;
 
     /**
-     * @description 分页参数：下一页的起始位置
-     *
-     * @var int
-     */
-    public $nextCursor;
-
-    /**
      * @description 分页参数：是否还有下一页，false表示没有下一页
      *
      * @var bool
      */
     public $hasNext;
+
+    /**
+     * @description 分页参数：下一页的起始位置
+     *
+     * @var int
+     */
+    public $nextCursor;
     protected $_name = [
         'feedList'   => 'feedList',
-        'nextCursor' => 'nextCursor',
         'hasNext'    => 'hasNext',
+        'nextCursor' => 'nextCursor',
     ];
 
     public function validate()
@@ -51,11 +51,11 @@ class PageFeedResponseBody extends Model
                 }
             }
         }
-        if (null !== $this->nextCursor) {
-            $res['nextCursor'] = $this->nextCursor;
-        }
         if (null !== $this->hasNext) {
             $res['hasNext'] = $this->hasNext;
+        }
+        if (null !== $this->nextCursor) {
+            $res['nextCursor'] = $this->nextCursor;
         }
 
         return $res;
@@ -78,11 +78,11 @@ class PageFeedResponseBody extends Model
                 }
             }
         }
-        if (isset($map['nextCursor'])) {
-            $model->nextCursor = $map['nextCursor'];
-        }
         if (isset($map['hasNext'])) {
             $model->hasNext = $map['hasNext'];
+        }
+        if (isset($map['nextCursor'])) {
+            $model->nextCursor = $map['nextCursor'];
         }
 
         return $model;

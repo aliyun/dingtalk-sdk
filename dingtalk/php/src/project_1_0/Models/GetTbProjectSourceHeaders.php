@@ -13,12 +13,7 @@ class GetTbProjectSourceHeaders extends Model
     /**
      * @var string
      */
-    public $dingOrgId;
-
-    /**
-     * @var string
-     */
-    public $dingIsvOrgId;
+    public $dingAccessTokenType;
 
     /**
      * @var string
@@ -28,23 +23,28 @@ class GetTbProjectSourceHeaders extends Model
     /**
      * @var string
      */
-    public $dingSuiteKey;
+    public $dingIsvOrgId;
 
     /**
      * @var string
      */
-    public $dingAccessTokenType;
+    public $dingOrgId;
+
+    /**
+     * @var string
+     */
+    public $dingSuiteKey;
 
     /**
      * @var string
      */
     public $xAcsDingtalkAccessToken;
     protected $_name = [
-        'dingOrgId'               => 'dingOrgId',
-        'dingIsvOrgId'            => 'dingIsvOrgId',
-        'dingCorpId'              => 'dingCorpId',
-        'dingSuiteKey'            => 'dingSuiteKey',
         'dingAccessTokenType'     => 'dingAccessTokenType',
+        'dingCorpId'              => 'dingCorpId',
+        'dingIsvOrgId'            => 'dingIsvOrgId',
+        'dingOrgId'               => 'dingOrgId',
+        'dingSuiteKey'            => 'dingSuiteKey',
         'xAcsDingtalkAccessToken' => 'x-acs-dingtalk-access-token',
     ];
 
@@ -58,20 +58,20 @@ class GetTbProjectSourceHeaders extends Model
         if (null !== $this->commonHeaders) {
             $res['commonHeaders'] = $this->commonHeaders;
         }
-        if (null !== $this->dingOrgId) {
-            $res['dingOrgId'] = $this->dingOrgId;
-        }
-        if (null !== $this->dingIsvOrgId) {
-            $res['dingIsvOrgId'] = $this->dingIsvOrgId;
+        if (null !== $this->dingAccessTokenType) {
+            $res['dingAccessTokenType'] = $this->dingAccessTokenType;
         }
         if (null !== $this->dingCorpId) {
             $res['dingCorpId'] = $this->dingCorpId;
         }
+        if (null !== $this->dingIsvOrgId) {
+            $res['dingIsvOrgId'] = $this->dingIsvOrgId;
+        }
+        if (null !== $this->dingOrgId) {
+            $res['dingOrgId'] = $this->dingOrgId;
+        }
         if (null !== $this->dingSuiteKey) {
             $res['dingSuiteKey'] = $this->dingSuiteKey;
-        }
-        if (null !== $this->dingAccessTokenType) {
-            $res['dingAccessTokenType'] = $this->dingAccessTokenType;
         }
         if (null !== $this->xAcsDingtalkAccessToken) {
             $res['x-acs-dingtalk-access-token'] = $this->xAcsDingtalkAccessToken;
@@ -91,20 +91,20 @@ class GetTbProjectSourceHeaders extends Model
         if (isset($map['commonHeaders'])) {
             $model->commonHeaders = $map['commonHeaders'];
         }
-        if (isset($map['dingOrgId'])) {
-            $model->dingOrgId = $map['dingOrgId'];
-        }
-        if (isset($map['dingIsvOrgId'])) {
-            $model->dingIsvOrgId = $map['dingIsvOrgId'];
+        if (isset($map['dingAccessTokenType'])) {
+            $model->dingAccessTokenType = $map['dingAccessTokenType'];
         }
         if (isset($map['dingCorpId'])) {
             $model->dingCorpId = $map['dingCorpId'];
         }
+        if (isset($map['dingIsvOrgId'])) {
+            $model->dingIsvOrgId = $map['dingIsvOrgId'];
+        }
+        if (isset($map['dingOrgId'])) {
+            $model->dingOrgId = $map['dingOrgId'];
+        }
         if (isset($map['dingSuiteKey'])) {
             $model->dingSuiteKey = $map['dingSuiteKey'];
-        }
-        if (isset($map['dingAccessTokenType'])) {
-            $model->dingAccessTokenType = $map['dingAccessTokenType'];
         }
         if (isset($map['x-acs-dingtalk-access-token'])) {
             $model->xAcsDingtalkAccessToken = $map['x-acs-dingtalk-access-token'];

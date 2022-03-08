@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class GetRecentEditDocsRequest extends Model
 {
     /**
-     * @description 发起操作用户unionId
-     *
-     * @var string
-     */
-    public $operatorId;
-
-    /**
      * @description 查询size
      *
      * @var int
@@ -26,10 +19,17 @@ class GetRecentEditDocsRequest extends Model
      * @var string
      */
     public $nextToken;
+
+    /**
+     * @description 发起操作用户unionId
+     *
+     * @var string
+     */
+    public $operatorId;
     protected $_name = [
-        'operatorId' => 'operatorId',
         'maxResults' => 'maxResults',
         'nextToken'  => 'nextToken',
+        'operatorId' => 'operatorId',
     ];
 
     public function validate()
@@ -39,14 +39,14 @@ class GetRecentEditDocsRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->operatorId) {
-            $res['operatorId'] = $this->operatorId;
-        }
         if (null !== $this->maxResults) {
             $res['maxResults'] = $this->maxResults;
         }
         if (null !== $this->nextToken) {
             $res['nextToken'] = $this->nextToken;
+        }
+        if (null !== $this->operatorId) {
+            $res['operatorId'] = $this->operatorId;
         }
 
         return $res;
@@ -60,14 +60,14 @@ class GetRecentEditDocsRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['operatorId'])) {
-            $model->operatorId = $map['operatorId'];
-        }
         if (isset($map['maxResults'])) {
             $model->maxResults = $map['maxResults'];
         }
         if (isset($map['nextToken'])) {
             $model->nextToken = $map['nextToken'];
+        }
+        if (isset($map['operatorId'])) {
+            $model->operatorId = $map['operatorId'];
         }
 
         return $model;

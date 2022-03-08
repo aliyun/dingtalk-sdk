@@ -9,20 +9,6 @@ use AlibabaCloud\Tea\Model;
 class ExecutePlatformTaskRequest extends Model
 {
     /**
-     * @description 审批结果
-     *
-     * @var string
-     */
-    public $outResult;
-
-    /**
-     * @description 是否不执行校验&关联操作
-     *
-     * @var string
-     */
-    public $noExecuteExpressions;
-
-    /**
      * @description 应用ID
      *
      * @var string
@@ -37,13 +23,6 @@ class ExecutePlatformTaskRequest extends Model
     public $formDataJson;
 
     /**
-     * @description 应用秘钥
-     *
-     * @var string
-     */
-    public $systemToken;
-
-    /**
      * @description 语言
      *
      * @var string
@@ -51,11 +30,18 @@ class ExecutePlatformTaskRequest extends Model
     public $language;
 
     /**
-     * @description 审批意见
+     * @description 是否不执行校验&关联操作
      *
      * @var string
      */
-    public $remark;
+    public $noExecuteExpressions;
+
+    /**
+     * @description 审批结果
+     *
+     * @var string
+     */
+    public $outResult;
 
     /**
      * @description 流程实例ID
@@ -65,20 +51,34 @@ class ExecutePlatformTaskRequest extends Model
     public $processInstanceId;
 
     /**
+     * @description 审批意见
+     *
+     * @var string
+     */
+    public $remark;
+
+    /**
+     * @description 应用秘钥
+     *
+     * @var string
+     */
+    public $systemToken;
+
+    /**
      * @description 钉钉的userId
      *
      * @var string
      */
     public $userId;
     protected $_name = [
-        'outResult'            => 'outResult',
-        'noExecuteExpressions' => 'noExecuteExpressions',
         'appType'              => 'appType',
         'formDataJson'         => 'formDataJson',
-        'systemToken'          => 'systemToken',
         'language'             => 'language',
-        'remark'               => 'remark',
+        'noExecuteExpressions' => 'noExecuteExpressions',
+        'outResult'            => 'outResult',
         'processInstanceId'    => 'processInstanceId',
+        'remark'               => 'remark',
+        'systemToken'          => 'systemToken',
         'userId'               => 'userId',
     ];
 
@@ -89,29 +89,29 @@ class ExecutePlatformTaskRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->outResult) {
-            $res['outResult'] = $this->outResult;
-        }
-        if (null !== $this->noExecuteExpressions) {
-            $res['noExecuteExpressions'] = $this->noExecuteExpressions;
-        }
         if (null !== $this->appType) {
             $res['appType'] = $this->appType;
         }
         if (null !== $this->formDataJson) {
             $res['formDataJson'] = $this->formDataJson;
         }
-        if (null !== $this->systemToken) {
-            $res['systemToken'] = $this->systemToken;
-        }
         if (null !== $this->language) {
             $res['language'] = $this->language;
+        }
+        if (null !== $this->noExecuteExpressions) {
+            $res['noExecuteExpressions'] = $this->noExecuteExpressions;
+        }
+        if (null !== $this->outResult) {
+            $res['outResult'] = $this->outResult;
+        }
+        if (null !== $this->processInstanceId) {
+            $res['processInstanceId'] = $this->processInstanceId;
         }
         if (null !== $this->remark) {
             $res['remark'] = $this->remark;
         }
-        if (null !== $this->processInstanceId) {
-            $res['processInstanceId'] = $this->processInstanceId;
+        if (null !== $this->systemToken) {
+            $res['systemToken'] = $this->systemToken;
         }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
@@ -128,29 +128,29 @@ class ExecutePlatformTaskRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['outResult'])) {
-            $model->outResult = $map['outResult'];
-        }
-        if (isset($map['noExecuteExpressions'])) {
-            $model->noExecuteExpressions = $map['noExecuteExpressions'];
-        }
         if (isset($map['appType'])) {
             $model->appType = $map['appType'];
         }
         if (isset($map['formDataJson'])) {
             $model->formDataJson = $map['formDataJson'];
         }
-        if (isset($map['systemToken'])) {
-            $model->systemToken = $map['systemToken'];
-        }
         if (isset($map['language'])) {
             $model->language = $map['language'];
+        }
+        if (isset($map['noExecuteExpressions'])) {
+            $model->noExecuteExpressions = $map['noExecuteExpressions'];
+        }
+        if (isset($map['outResult'])) {
+            $model->outResult = $map['outResult'];
+        }
+        if (isset($map['processInstanceId'])) {
+            $model->processInstanceId = $map['processInstanceId'];
         }
         if (isset($map['remark'])) {
             $model->remark = $map['remark'];
         }
-        if (isset($map['processInstanceId'])) {
-            $model->processInstanceId = $map['processInstanceId'];
+        if (isset($map['systemToken'])) {
+            $model->systemToken = $map['systemToken'];
         }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];

@@ -16,18 +16,25 @@ class GetTaskCopiesRequest extends Model
     public $appType;
 
     /**
-     * @description 验权token
-     *
-     * @var string
-     */
-    public $systemToken;
-
-    /**
-     * @description 每页记录数; 必须大于0 默认10 最大值：100
+     * @description 创建时间开始; 时间戳
      *
      * @var int
      */
-    public $pageSize;
+    public $createFromTimeGMT;
+
+    /**
+     * @description 创建时间结束; 时间戳
+     *
+     * @var int
+     */
+    public $createToTimeGMT;
+
+    /**
+     * @description 关键词
+     *
+     * @var string
+     */
+    public $keyword;
 
     /**
      * @description 语言环境; 可选值：zh_CN/en_US
@@ -44,18 +51,11 @@ class GetTaskCopiesRequest extends Model
     public $pageNumber;
 
     /**
-     * @description 关键词
+     * @description 每页记录数; 必须大于0 默认10 最大值：100
      *
-     * @var string
+     * @var int
      */
-    public $keyword;
-
-    /**
-     * @description 钉钉的userId
-     *
-     * @var string
-     */
-    public $userId;
+    public $pageSize;
 
     /**
      * @description 流程code列表
@@ -65,29 +65,29 @@ class GetTaskCopiesRequest extends Model
     public $processCodes;
 
     /**
-     * @description 创建时间开始; 时间戳
+     * @description 验权token
      *
-     * @var int
+     * @var string
      */
-    public $createFromTimeGMT;
+    public $systemToken;
 
     /**
-     * @description 创建时间结束; 时间戳
+     * @description 钉钉的userId
      *
-     * @var int
+     * @var string
      */
-    public $createToTimeGMT;
+    public $userId;
     protected $_name = [
         'appType'           => 'appType',
-        'systemToken'       => 'systemToken',
-        'pageSize'          => 'pageSize',
-        'language'          => 'language',
-        'pageNumber'        => 'pageNumber',
-        'keyword'           => 'keyword',
-        'userId'            => 'userId',
-        'processCodes'      => 'processCodes',
         'createFromTimeGMT' => 'createFromTimeGMT',
         'createToTimeGMT'   => 'createToTimeGMT',
+        'keyword'           => 'keyword',
+        'language'          => 'language',
+        'pageNumber'        => 'pageNumber',
+        'pageSize'          => 'pageSize',
+        'processCodes'      => 'processCodes',
+        'systemToken'       => 'systemToken',
+        'userId'            => 'userId',
     ];
 
     public function validate()
@@ -100,11 +100,14 @@ class GetTaskCopiesRequest extends Model
         if (null !== $this->appType) {
             $res['appType'] = $this->appType;
         }
-        if (null !== $this->systemToken) {
-            $res['systemToken'] = $this->systemToken;
+        if (null !== $this->createFromTimeGMT) {
+            $res['createFromTimeGMT'] = $this->createFromTimeGMT;
         }
-        if (null !== $this->pageSize) {
-            $res['pageSize'] = $this->pageSize;
+        if (null !== $this->createToTimeGMT) {
+            $res['createToTimeGMT'] = $this->createToTimeGMT;
+        }
+        if (null !== $this->keyword) {
+            $res['keyword'] = $this->keyword;
         }
         if (null !== $this->language) {
             $res['language'] = $this->language;
@@ -112,20 +115,17 @@ class GetTaskCopiesRequest extends Model
         if (null !== $this->pageNumber) {
             $res['pageNumber'] = $this->pageNumber;
         }
-        if (null !== $this->keyword) {
-            $res['keyword'] = $this->keyword;
-        }
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
+        if (null !== $this->pageSize) {
+            $res['pageSize'] = $this->pageSize;
         }
         if (null !== $this->processCodes) {
             $res['processCodes'] = $this->processCodes;
         }
-        if (null !== $this->createFromTimeGMT) {
-            $res['createFromTimeGMT'] = $this->createFromTimeGMT;
+        if (null !== $this->systemToken) {
+            $res['systemToken'] = $this->systemToken;
         }
-        if (null !== $this->createToTimeGMT) {
-            $res['createToTimeGMT'] = $this->createToTimeGMT;
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -142,11 +142,14 @@ class GetTaskCopiesRequest extends Model
         if (isset($map['appType'])) {
             $model->appType = $map['appType'];
         }
-        if (isset($map['systemToken'])) {
-            $model->systemToken = $map['systemToken'];
+        if (isset($map['createFromTimeGMT'])) {
+            $model->createFromTimeGMT = $map['createFromTimeGMT'];
         }
-        if (isset($map['pageSize'])) {
-            $model->pageSize = $map['pageSize'];
+        if (isset($map['createToTimeGMT'])) {
+            $model->createToTimeGMT = $map['createToTimeGMT'];
+        }
+        if (isset($map['keyword'])) {
+            $model->keyword = $map['keyword'];
         }
         if (isset($map['language'])) {
             $model->language = $map['language'];
@@ -154,20 +157,17 @@ class GetTaskCopiesRequest extends Model
         if (isset($map['pageNumber'])) {
             $model->pageNumber = $map['pageNumber'];
         }
-        if (isset($map['keyword'])) {
-            $model->keyword = $map['keyword'];
-        }
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
+        if (isset($map['pageSize'])) {
+            $model->pageSize = $map['pageSize'];
         }
         if (isset($map['processCodes'])) {
             $model->processCodes = $map['processCodes'];
         }
-        if (isset($map['createFromTimeGMT'])) {
-            $model->createFromTimeGMT = $map['createFromTimeGMT'];
+        if (isset($map['systemToken'])) {
+            $model->systemToken = $map['systemToken'];
         }
-        if (isset($map['createToTimeGMT'])) {
-            $model->createToTimeGMT = $map['createToTimeGMT'];
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

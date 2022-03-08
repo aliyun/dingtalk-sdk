@@ -11,15 +11,15 @@ class ExtractFacialFeatureRequest extends Model
     /**
      * @var string
      */
-    public $userid;
+    public $mediaId;
 
     /**
      * @var string
      */
-    public $mediaId;
+    public $userid;
     protected $_name = [
-        'userid'  => 'userid',
         'mediaId' => 'mediaId',
+        'userid'  => 'userid',
     ];
 
     public function validate()
@@ -29,11 +29,11 @@ class ExtractFacialFeatureRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->userid) {
-            $res['userid'] = $this->userid;
-        }
         if (null !== $this->mediaId) {
             $res['mediaId'] = $this->mediaId;
+        }
+        if (null !== $this->userid) {
+            $res['userid'] = $this->userid;
         }
 
         return $res;
@@ -47,11 +47,11 @@ class ExtractFacialFeatureRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['userid'])) {
-            $model->userid = $map['userid'];
-        }
         if (isset($map['mediaId'])) {
             $model->mediaId = $map['mediaId'];
+        }
+        if (isset($map['userid'])) {
+            $model->userid = $map['userid'];
         }
 
         return $model;

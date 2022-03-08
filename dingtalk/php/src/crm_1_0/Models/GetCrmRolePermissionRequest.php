@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class GetCrmRolePermissionRequest extends Model
 {
     /**
-     * @description 表单标识（formCode & bizType二选一）
-     *
-     * @var string
-     */
-    public $formCode;
-
-    /**
      * @description 表单业务标识（formCode & bizType二选一）
      *
      * @var string
      */
     public $bizType;
+
+    /**
+     * @description 表单标识（formCode & bizType二选一）
+     *
+     * @var string
+     */
+    public $formCode;
     protected $_name = [
-        'formCode' => 'formCode',
         'bizType'  => 'bizType',
+        'formCode' => 'formCode',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class GetCrmRolePermissionRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->formCode) {
-            $res['formCode'] = $this->formCode;
-        }
         if (null !== $this->bizType) {
             $res['bizType'] = $this->bizType;
+        }
+        if (null !== $this->formCode) {
+            $res['formCode'] = $this->formCode;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class GetCrmRolePermissionRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['formCode'])) {
-            $model->formCode = $map['formCode'];
-        }
         if (isset($map['bizType'])) {
             $model->bizType = $map['bizType'];
+        }
+        if (isset($map['formCode'])) {
+            $model->formCode = $map['formCode'];
         }
 
         return $model;

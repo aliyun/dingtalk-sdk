@@ -9,11 +9,18 @@ use AlibabaCloud\Tea\Model;
 class IsvCardEventPushRequest extends Model
 {
     /**
-     * @description ISV用户iD
+     * @description 事件参数
+     *
+     * @var mixed[]
+     */
+    public $eventParams;
+
+    /**
+     * @description 事件类型
      *
      * @var string
      */
-    public $isvUid;
+    public $eventType;
 
     /**
      * @description ISV名片ID
@@ -30,24 +37,17 @@ class IsvCardEventPushRequest extends Model
     public $isvToken;
 
     /**
-     * @description 事件类型
+     * @description ISV用户iD
      *
      * @var string
      */
-    public $eventType;
-
-    /**
-     * @description 事件参数
-     *
-     * @var mixed[]
-     */
-    public $eventParams;
+    public $isvUid;
     protected $_name = [
-        'isvUid'      => 'isvUid',
+        'eventParams' => 'eventParams',
+        'eventType'   => 'eventType',
         'isvCardId'   => 'isvCardId',
         'isvToken'    => 'isvToken',
-        'eventType'   => 'eventType',
-        'eventParams' => 'eventParams',
+        'isvUid'      => 'isvUid',
     ];
 
     public function validate()
@@ -57,8 +57,11 @@ class IsvCardEventPushRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->isvUid) {
-            $res['isvUid'] = $this->isvUid;
+        if (null !== $this->eventParams) {
+            $res['eventParams'] = $this->eventParams;
+        }
+        if (null !== $this->eventType) {
+            $res['eventType'] = $this->eventType;
         }
         if (null !== $this->isvCardId) {
             $res['isvCardId'] = $this->isvCardId;
@@ -66,11 +69,8 @@ class IsvCardEventPushRequest extends Model
         if (null !== $this->isvToken) {
             $res['isvToken'] = $this->isvToken;
         }
-        if (null !== $this->eventType) {
-            $res['eventType'] = $this->eventType;
-        }
-        if (null !== $this->eventParams) {
-            $res['eventParams'] = $this->eventParams;
+        if (null !== $this->isvUid) {
+            $res['isvUid'] = $this->isvUid;
         }
 
         return $res;
@@ -84,8 +84,11 @@ class IsvCardEventPushRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['isvUid'])) {
-            $model->isvUid = $map['isvUid'];
+        if (isset($map['eventParams'])) {
+            $model->eventParams = $map['eventParams'];
+        }
+        if (isset($map['eventType'])) {
+            $model->eventType = $map['eventType'];
         }
         if (isset($map['isvCardId'])) {
             $model->isvCardId = $map['isvCardId'];
@@ -93,11 +96,8 @@ class IsvCardEventPushRequest extends Model
         if (isset($map['isvToken'])) {
             $model->isvToken = $map['isvToken'];
         }
-        if (isset($map['eventType'])) {
-            $model->eventType = $map['eventType'];
-        }
-        if (isset($map['eventParams'])) {
-            $model->eventParams = $map['eventParams'];
+        if (isset($map['isvUid'])) {
+            $model->isvUid = $map['isvUid'];
         }
 
         return $model;

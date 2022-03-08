@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class operateScopes extends Model
 {
     /**
-     * @description 操作范围类型
-     *
-     * @var string
-     */
-    public $type;
-
-    /**
      * @description 是否有权限
      *
      * @var bool
      */
     public $hasAuth;
+
+    /**
+     * @description 操作范围类型
+     *
+     * @var string
+     */
+    public $type;
     protected $_name = [
-        'type'    => 'type',
         'hasAuth' => 'hasAuth',
+        'type'    => 'type',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class operateScopes extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->type) {
-            $res['type'] = $this->type;
-        }
         if (null !== $this->hasAuth) {
             $res['hasAuth'] = $this->hasAuth;
+        }
+        if (null !== $this->type) {
+            $res['type'] = $this->type;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class operateScopes extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['type'])) {
-            $model->type = $map['type'];
-        }
         if (isset($map['hasAuth'])) {
             $model->hasAuth = $map['hasAuth'];
+        }
+        if (isset($map['type'])) {
+            $model->type = $map['type'];
         }
 
         return $model;

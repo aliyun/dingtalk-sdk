@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class QueryEduAssetSpacesRequest extends Model
 {
     /**
-     * @description 标记当前开始读取的位置，置空表示从头开始
+     * @description 业务编码
      *
-     * @var int
+     * @var string
      */
-    public $nextToken;
+    public $bizCode;
 
     /**
      * @description 本次读取的最大数据记录数量
@@ -23,15 +23,15 @@ class QueryEduAssetSpacesRequest extends Model
     public $maxResults;
 
     /**
-     * @description 业务编码
+     * @description 标记当前开始读取的位置，置空表示从头开始
      *
-     * @var string
+     * @var int
      */
-    public $bizCode;
+    public $nextToken;
     protected $_name = [
-        'nextToken'  => 'nextToken',
-        'maxResults' => 'maxResults',
         'bizCode'    => 'bizCode',
+        'maxResults' => 'maxResults',
+        'nextToken'  => 'nextToken',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class QueryEduAssetSpacesRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->nextToken) {
-            $res['nextToken'] = $this->nextToken;
+        if (null !== $this->bizCode) {
+            $res['bizCode'] = $this->bizCode;
         }
         if (null !== $this->maxResults) {
             $res['maxResults'] = $this->maxResults;
         }
-        if (null !== $this->bizCode) {
-            $res['bizCode'] = $this->bizCode;
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
         }
 
         return $res;
@@ -62,14 +62,14 @@ class QueryEduAssetSpacesRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['nextToken'])) {
-            $model->nextToken = $map['nextToken'];
+        if (isset($map['bizCode'])) {
+            $model->bizCode = $map['bizCode'];
         }
         if (isset($map['maxResults'])) {
             $model->maxResults = $map['maxResults'];
         }
-        if (isset($map['bizCode'])) {
-            $model->bizCode = $map['bizCode'];
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
         }
 
         return $model;

@@ -11,15 +11,15 @@ class rollUpSummaryFields extends Model
     /**
      * @var string
      */
-    public $name;
+    public $aggregator;
 
     /**
      * @var string
      */
-    public $aggregator;
+    public $name;
     protected $_name = [
-        'name'       => 'name',
         'aggregator' => 'aggregator',
+        'name'       => 'name',
     ];
 
     public function validate()
@@ -29,11 +29,11 @@ class rollUpSummaryFields extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
-        }
         if (null !== $this->aggregator) {
             $res['aggregator'] = $this->aggregator;
+        }
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
         }
 
         return $res;
@@ -47,11 +47,11 @@ class rollUpSummaryFields extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
-        }
         if (isset($map['aggregator'])) {
             $model->aggregator = $map['aggregator'];
+        }
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
         }
 
         return $model;

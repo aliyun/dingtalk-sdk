@@ -9,17 +9,17 @@ use AlibabaCloud\Tea\Model;
 class CloseVideoConferenceResponseBody extends Model
 {
     /**
-     * @var int
-     */
-    public $code;
-
-    /**
      * @var string
      */
     public $cause;
+
+    /**
+     * @var int
+     */
+    public $code;
     protected $_name = [
-        'code'  => 'code',
         'cause' => 'cause',
+        'code'  => 'code',
     ];
 
     public function validate()
@@ -29,11 +29,11 @@ class CloseVideoConferenceResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->code) {
-            $res['code'] = $this->code;
-        }
         if (null !== $this->cause) {
             $res['cause'] = $this->cause;
+        }
+        if (null !== $this->code) {
+            $res['code'] = $this->code;
         }
 
         return $res;
@@ -47,11 +47,11 @@ class CloseVideoConferenceResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['code'])) {
-            $model->code = $map['code'];
-        }
         if (isset($map['cause'])) {
             $model->cause = $map['cause'];
+        }
+        if (isset($map['code'])) {
+            $model->code = $map['code'];
         }
 
         return $model;

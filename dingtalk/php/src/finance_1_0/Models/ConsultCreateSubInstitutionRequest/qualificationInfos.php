@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class qualificationInfos extends Model
 {
     /**
-     * @description 子机构行业资质类型
-     *
-     * @var string
-     */
-    public $qualificationType;
-
-    /**
      * @description 子机构行业资质图片
      *
      * @var string
      */
     public $qualificationImage;
+
+    /**
+     * @description 子机构行业资质类型
+     *
+     * @var string
+     */
+    public $qualificationType;
     protected $_name = [
-        'qualificationType'  => 'qualificationType',
         'qualificationImage' => 'qualificationImage',
+        'qualificationType'  => 'qualificationType',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class qualificationInfos extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->qualificationType) {
-            $res['qualificationType'] = $this->qualificationType;
-        }
         if (null !== $this->qualificationImage) {
             $res['qualificationImage'] = $this->qualificationImage;
+        }
+        if (null !== $this->qualificationType) {
+            $res['qualificationType'] = $this->qualificationType;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class qualificationInfos extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['qualificationType'])) {
-            $model->qualificationType = $map['qualificationType'];
-        }
         if (isset($map['qualificationImage'])) {
             $model->qualificationImage = $map['qualificationImage'];
+        }
+        if (isset($map['qualificationType'])) {
+            $model->qualificationType = $map['qualificationType'];
         }
 
         return $model;

@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class SearchActivationCodeResponseBody extends Model
 {
     /**
-     * @description instanceId
-     *
-     * @var string
-     */
-    public $instanceId;
-
-    /**
      * @description activationCode
      *
      * @var string
@@ -37,16 +30,23 @@ class SearchActivationCodeResponseBody extends Model
     public $expireTimeGMT;
 
     /**
+     * @description instanceId
+     *
+     * @var string
+     */
+    public $instanceId;
+
+    /**
      * @description status
      *
      * @var int
      */
     public $status;
     protected $_name = [
-        'instanceId'     => 'instanceId',
         'activationCode' => 'activationCode',
         'authType'       => 'authType',
         'expireTimeGMT'  => 'expireTimeGMT',
+        'instanceId'     => 'instanceId',
         'status'         => 'status',
     ];
 
@@ -57,9 +57,6 @@ class SearchActivationCodeResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->instanceId) {
-            $res['instanceId'] = $this->instanceId;
-        }
         if (null !== $this->activationCode) {
             $res['activationCode'] = $this->activationCode;
         }
@@ -68,6 +65,9 @@ class SearchActivationCodeResponseBody extends Model
         }
         if (null !== $this->expireTimeGMT) {
             $res['expireTimeGMT'] = $this->expireTimeGMT;
+        }
+        if (null !== $this->instanceId) {
+            $res['instanceId'] = $this->instanceId;
         }
         if (null !== $this->status) {
             $res['status'] = $this->status;
@@ -84,9 +84,6 @@ class SearchActivationCodeResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['instanceId'])) {
-            $model->instanceId = $map['instanceId'];
-        }
         if (isset($map['activationCode'])) {
             $model->activationCode = $map['activationCode'];
         }
@@ -95,6 +92,9 @@ class SearchActivationCodeResponseBody extends Model
         }
         if (isset($map['expireTimeGMT'])) {
             $model->expireTimeGMT = $map['expireTimeGMT'];
+        }
+        if (isset($map['instanceId'])) {
+            $model->instanceId = $map['instanceId'];
         }
         if (isset($map['status'])) {
             $model->status = $map['status'];

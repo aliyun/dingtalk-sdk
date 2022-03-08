@@ -16,22 +16,22 @@ class CreateBatchTradeOrderResponseBody extends Model
     public $orderNo;
 
     /**
-     * @description 商户批次号
-     *
-     * @var string
-     */
-    public $outBatchNo;
-
-    /**
      * @description 批次订单状态
      *
      * @var string
      */
     public $orderStatus;
+
+    /**
+     * @description 商户批次号
+     *
+     * @var string
+     */
+    public $outBatchNo;
     protected $_name = [
         'orderNo'     => 'orderNo',
-        'outBatchNo'  => 'outBatchNo',
         'orderStatus' => 'orderStatus',
+        'outBatchNo'  => 'outBatchNo',
     ];
 
     public function validate()
@@ -44,11 +44,11 @@ class CreateBatchTradeOrderResponseBody extends Model
         if (null !== $this->orderNo) {
             $res['orderNo'] = $this->orderNo;
         }
-        if (null !== $this->outBatchNo) {
-            $res['outBatchNo'] = $this->outBatchNo;
-        }
         if (null !== $this->orderStatus) {
             $res['orderStatus'] = $this->orderStatus;
+        }
+        if (null !== $this->outBatchNo) {
+            $res['outBatchNo'] = $this->outBatchNo;
         }
 
         return $res;
@@ -65,11 +65,11 @@ class CreateBatchTradeOrderResponseBody extends Model
         if (isset($map['orderNo'])) {
             $model->orderNo = $map['orderNo'];
         }
-        if (isset($map['outBatchNo'])) {
-            $model->outBatchNo = $map['outBatchNo'];
-        }
         if (isset($map['orderStatus'])) {
             $model->orderStatus = $map['orderStatus'];
+        }
+        if (isset($map['outBatchNo'])) {
+            $model->outBatchNo = $map['outBatchNo'];
         }
 
         return $model;

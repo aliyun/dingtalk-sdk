@@ -16,11 +16,11 @@ class GetUserTokenResponseBody extends Model
     public $accessToken;
 
     /**
-     * @description refreshToken
+     * @description 所选企业corpId
      *
      * @var string
      */
-    public $refreshToken;
+    public $corpId;
 
     /**
      * @description 超时时间
@@ -30,16 +30,16 @@ class GetUserTokenResponseBody extends Model
     public $expireIn;
 
     /**
-     * @description 所选企业corpId
+     * @description refreshToken
      *
      * @var string
      */
-    public $corpId;
+    public $refreshToken;
     protected $_name = [
         'accessToken'  => 'accessToken',
-        'refreshToken' => 'refreshToken',
-        'expireIn'     => 'expireIn',
         'corpId'       => 'corpId',
+        'expireIn'     => 'expireIn',
+        'refreshToken' => 'refreshToken',
     ];
 
     public function validate()
@@ -52,14 +52,14 @@ class GetUserTokenResponseBody extends Model
         if (null !== $this->accessToken) {
             $res['accessToken'] = $this->accessToken;
         }
-        if (null !== $this->refreshToken) {
-            $res['refreshToken'] = $this->refreshToken;
+        if (null !== $this->corpId) {
+            $res['corpId'] = $this->corpId;
         }
         if (null !== $this->expireIn) {
             $res['expireIn'] = $this->expireIn;
         }
-        if (null !== $this->corpId) {
-            $res['corpId'] = $this->corpId;
+        if (null !== $this->refreshToken) {
+            $res['refreshToken'] = $this->refreshToken;
         }
 
         return $res;
@@ -76,14 +76,14 @@ class GetUserTokenResponseBody extends Model
         if (isset($map['accessToken'])) {
             $model->accessToken = $map['accessToken'];
         }
-        if (isset($map['refreshToken'])) {
-            $model->refreshToken = $map['refreshToken'];
+        if (isset($map['corpId'])) {
+            $model->corpId = $map['corpId'];
         }
         if (isset($map['expireIn'])) {
             $model->expireIn = $map['expireIn'];
         }
-        if (isset($map['corpId'])) {
-            $model->corpId = $map['corpId'];
+        if (isset($map['refreshToken'])) {
+            $model->refreshToken = $map['refreshToken'];
         }
 
         return $model;

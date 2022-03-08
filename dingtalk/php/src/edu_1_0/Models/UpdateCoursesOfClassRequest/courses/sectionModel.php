@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class sectionModel extends Model
 {
     /**
-     * @description sectionType
-     *
-     * @var string
-     */
-    public $sectionType;
-
-    /**
      * @description 节次index
      *
      * @var int
@@ -28,10 +21,17 @@ class sectionModel extends Model
      * @var string
      */
     public $sectionName;
+
+    /**
+     * @description sectionType
+     *
+     * @var string
+     */
+    public $sectionType;
     protected $_name = [
-        'sectionType'  => 'sectionType',
         'sectionIndex' => 'sectionIndex',
         'sectionName'  => 'sectionName',
+        'sectionType'  => 'sectionType',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class sectionModel extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->sectionType) {
-            $res['sectionType'] = $this->sectionType;
-        }
         if (null !== $this->sectionIndex) {
             $res['sectionIndex'] = $this->sectionIndex;
         }
         if (null !== $this->sectionName) {
             $res['sectionName'] = $this->sectionName;
+        }
+        if (null !== $this->sectionType) {
+            $res['sectionType'] = $this->sectionType;
         }
 
         return $res;
@@ -62,14 +62,14 @@ class sectionModel extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['sectionType'])) {
-            $model->sectionType = $map['sectionType'];
-        }
         if (isset($map['sectionIndex'])) {
             $model->sectionIndex = $map['sectionIndex'];
         }
         if (isset($map['sectionName'])) {
             $model->sectionName = $map['sectionName'];
+        }
+        if (isset($map['sectionType'])) {
+            $model->sectionType = $map['sectionType'];
         }
 
         return $model;

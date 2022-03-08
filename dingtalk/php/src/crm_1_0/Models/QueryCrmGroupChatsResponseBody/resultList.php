@@ -16,6 +16,27 @@ class resultList extends Model
     public $chatId;
 
     /**
+     * @description 创建时间(时间戳)
+     *
+     * @var int
+     */
+    public $gmtCreate;
+
+    /**
+     * @description 客户群成员数
+     *
+     * @var int
+     */
+    public $memberCount;
+
+    /**
+     * @description 客户群名
+     *
+     * @var string
+     */
+    public $name;
+
+    /**
      * @description 客户群openConversationId
      *
      * @var string
@@ -42,36 +63,15 @@ class resultList extends Model
      * @var string
      */
     public $ownerUserName;
-
-    /**
-     * @description 客户群名
-     *
-     * @var string
-     */
-    public $name;
-
-    /**
-     * @description 客户群成员数
-     *
-     * @var int
-     */
-    public $memberCount;
-
-    /**
-     * @description 创建时间(时间戳)
-     *
-     * @var int
-     */
-    public $gmtCreate;
     protected $_name = [
         'chatId'             => 'chatId',
+        'gmtCreate'          => 'gmtCreate',
+        'memberCount'        => 'memberCount',
+        'name'               => 'name',
         'openConversationId' => 'openConversationId',
         'openGroupSetId'     => 'openGroupSetId',
         'ownerUserId'        => 'ownerUserId',
         'ownerUserName'      => 'ownerUserName',
-        'name'               => 'name',
-        'memberCount'        => 'memberCount',
-        'gmtCreate'          => 'gmtCreate',
     ];
 
     public function validate()
@@ -84,6 +84,15 @@ class resultList extends Model
         if (null !== $this->chatId) {
             $res['chatId'] = $this->chatId;
         }
+        if (null !== $this->gmtCreate) {
+            $res['gmtCreate'] = $this->gmtCreate;
+        }
+        if (null !== $this->memberCount) {
+            $res['memberCount'] = $this->memberCount;
+        }
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
+        }
         if (null !== $this->openConversationId) {
             $res['openConversationId'] = $this->openConversationId;
         }
@@ -95,15 +104,6 @@ class resultList extends Model
         }
         if (null !== $this->ownerUserName) {
             $res['ownerUserName'] = $this->ownerUserName;
-        }
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
-        }
-        if (null !== $this->memberCount) {
-            $res['memberCount'] = $this->memberCount;
-        }
-        if (null !== $this->gmtCreate) {
-            $res['gmtCreate'] = $this->gmtCreate;
         }
 
         return $res;
@@ -120,6 +120,15 @@ class resultList extends Model
         if (isset($map['chatId'])) {
             $model->chatId = $map['chatId'];
         }
+        if (isset($map['gmtCreate'])) {
+            $model->gmtCreate = $map['gmtCreate'];
+        }
+        if (isset($map['memberCount'])) {
+            $model->memberCount = $map['memberCount'];
+        }
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
+        }
         if (isset($map['openConversationId'])) {
             $model->openConversationId = $map['openConversationId'];
         }
@@ -131,15 +140,6 @@ class resultList extends Model
         }
         if (isset($map['ownerUserName'])) {
             $model->ownerUserName = $map['ownerUserName'];
-        }
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
-        }
-        if (isset($map['memberCount'])) {
-            $model->memberCount = $map['memberCount'];
-        }
-        if (isset($map['gmtCreate'])) {
-            $model->gmtCreate = $map['gmtCreate'];
         }
 
         return $model;

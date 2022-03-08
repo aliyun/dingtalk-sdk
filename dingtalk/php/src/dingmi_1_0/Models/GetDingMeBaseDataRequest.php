@@ -16,11 +16,11 @@ class GetDingMeBaseDataRequest extends Model
     public $appKey;
 
     /**
-     * @description 开始时间
+     * @description 是否按天分组
      *
-     * @var string
+     * @var bool
      */
-    public $startDay;
+    public $byDay;
 
     /**
      * @description 结束时间
@@ -30,16 +30,16 @@ class GetDingMeBaseDataRequest extends Model
     public $endDay;
 
     /**
-     * @description 是否按天分组
+     * @description 开始时间
      *
-     * @var bool
+     * @var string
      */
-    public $byDay;
+    public $startDay;
     protected $_name = [
         'appKey'   => 'appKey',
-        'startDay' => 'startDay',
-        'endDay'   => 'endDay',
         'byDay'    => 'byDay',
+        'endDay'   => 'endDay',
+        'startDay' => 'startDay',
     ];
 
     public function validate()
@@ -52,14 +52,14 @@ class GetDingMeBaseDataRequest extends Model
         if (null !== $this->appKey) {
             $res['appKey'] = $this->appKey;
         }
-        if (null !== $this->startDay) {
-            $res['startDay'] = $this->startDay;
+        if (null !== $this->byDay) {
+            $res['byDay'] = $this->byDay;
         }
         if (null !== $this->endDay) {
             $res['endDay'] = $this->endDay;
         }
-        if (null !== $this->byDay) {
-            $res['byDay'] = $this->byDay;
+        if (null !== $this->startDay) {
+            $res['startDay'] = $this->startDay;
         }
 
         return $res;
@@ -76,14 +76,14 @@ class GetDingMeBaseDataRequest extends Model
         if (isset($map['appKey'])) {
             $model->appKey = $map['appKey'];
         }
-        if (isset($map['startDay'])) {
-            $model->startDay = $map['startDay'];
+        if (isset($map['byDay'])) {
+            $model->byDay = $map['byDay'];
         }
         if (isset($map['endDay'])) {
             $model->endDay = $map['endDay'];
         }
-        if (isset($map['byDay'])) {
-            $model->byDay = $map['byDay'];
+        if (isset($map['startDay'])) {
+            $model->startDay = $map['startDay'];
         }
 
         return $model;

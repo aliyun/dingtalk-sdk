@@ -10,18 +10,18 @@ use AlibabaCloud\Tea\Model;
 class acls extends Model
 {
     /**
-     * @description 权限信息
-     *
-     * @var string
-     */
-    public $privilege;
-
-    /**
      * @description acl资源ID
      *
      * @var string
      */
     public $aclId;
+
+    /**
+     * @description 权限信息
+     *
+     * @var string
+     */
+    public $privilege;
 
     /**
      * @description 权限范围
@@ -30,8 +30,8 @@ class acls extends Model
      */
     public $scope;
     protected $_name = [
-        'privilege' => 'privilege',
         'aclId'     => 'aclId',
+        'privilege' => 'privilege',
         'scope'     => 'scope',
     ];
 
@@ -42,11 +42,11 @@ class acls extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->privilege) {
-            $res['privilege'] = $this->privilege;
-        }
         if (null !== $this->aclId) {
             $res['aclId'] = $this->aclId;
+        }
+        if (null !== $this->privilege) {
+            $res['privilege'] = $this->privilege;
         }
         if (null !== $this->scope) {
             $res['scope'] = null !== $this->scope ? $this->scope->toMap() : null;
@@ -63,11 +63,11 @@ class acls extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['privilege'])) {
-            $model->privilege = $map['privilege'];
-        }
         if (isset($map['aclId'])) {
             $model->aclId = $map['aclId'];
+        }
+        if (isset($map['privilege'])) {
+            $model->privilege = $map['privilege'];
         }
         if (isset($map['scope'])) {
             $model->scope = scope::fromMap($map['scope']);

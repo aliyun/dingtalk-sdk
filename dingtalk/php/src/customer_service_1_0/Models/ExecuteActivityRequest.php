@@ -10,11 +10,11 @@ use AlibabaCloud\Tea\Model;
 class ExecuteActivityRequest extends Model
 {
     /**
-     * @description 来源ID
+     * @description 动作编码
      *
      * @var string
      */
-    public $sourceId;
+    public $activityCode;
 
     /**
      * @description 会员ID
@@ -29,13 +29,6 @@ class ExecuteActivityRequest extends Model
      * @var string
      */
     public $foreignName;
-
-    /**
-     * @description 动作编码
-     *
-     * @var string
-     */
-    public $activityCode;
 
     /**
      * @description 实例id
@@ -57,14 +50,21 @@ class ExecuteActivityRequest extends Model
      * @var properties[]
      */
     public $properties;
+
+    /**
+     * @description 来源ID
+     *
+     * @var string
+     */
+    public $sourceId;
     protected $_name = [
-        'sourceId'       => 'sourceId',
+        'activityCode'   => 'activityCode',
         'foreignId'      => 'foreignId',
         'foreignName'    => 'foreignName',
-        'activityCode'   => 'activityCode',
         'openInstanceId' => 'openInstanceId',
         'productionType' => 'productionType',
         'properties'     => 'properties',
+        'sourceId'       => 'sourceId',
     ];
 
     public function validate()
@@ -74,17 +74,14 @@ class ExecuteActivityRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->sourceId) {
-            $res['sourceId'] = $this->sourceId;
+        if (null !== $this->activityCode) {
+            $res['activityCode'] = $this->activityCode;
         }
         if (null !== $this->foreignId) {
             $res['foreignId'] = $this->foreignId;
         }
         if (null !== $this->foreignName) {
             $res['foreignName'] = $this->foreignName;
-        }
-        if (null !== $this->activityCode) {
-            $res['activityCode'] = $this->activityCode;
         }
         if (null !== $this->openInstanceId) {
             $res['openInstanceId'] = $this->openInstanceId;
@@ -101,6 +98,9 @@ class ExecuteActivityRequest extends Model
                 }
             }
         }
+        if (null !== $this->sourceId) {
+            $res['sourceId'] = $this->sourceId;
+        }
 
         return $res;
     }
@@ -113,17 +113,14 @@ class ExecuteActivityRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['sourceId'])) {
-            $model->sourceId = $map['sourceId'];
+        if (isset($map['activityCode'])) {
+            $model->activityCode = $map['activityCode'];
         }
         if (isset($map['foreignId'])) {
             $model->foreignId = $map['foreignId'];
         }
         if (isset($map['foreignName'])) {
             $model->foreignName = $map['foreignName'];
-        }
-        if (isset($map['activityCode'])) {
-            $model->activityCode = $map['activityCode'];
         }
         if (isset($map['openInstanceId'])) {
             $model->openInstanceId = $map['openInstanceId'];
@@ -139,6 +136,9 @@ class ExecuteActivityRequest extends Model
                     $model->properties[$n++] = null !== $item ? properties::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['sourceId'])) {
+            $model->sourceId = $map['sourceId'];
         }
 
         return $model;

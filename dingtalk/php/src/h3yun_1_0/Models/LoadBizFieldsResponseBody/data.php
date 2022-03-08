@@ -11,18 +11,11 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 表单编码
+     * @description 子表结构
      *
-     * @var string
+     * @var childForms[]
      */
-    public $schemaCode;
-
-    /**
-     * @description 表单名称
-     *
-     * @var string
-     */
-    public $formName;
+    public $childForms;
 
     /**
      * @description 字段、组件结构数组
@@ -32,16 +25,23 @@ class data extends Model
     public $fields;
 
     /**
-     * @description 子表结构
+     * @description 表单名称
      *
-     * @var childForms[]
+     * @var string
      */
-    public $childForms;
+    public $formName;
+
+    /**
+     * @description 表单编码
+     *
+     * @var string
+     */
+    public $schemaCode;
     protected $_name = [
-        'schemaCode' => 'schemaCode',
-        'formName'   => 'formName',
-        'fields'     => 'fields',
         'childForms' => 'childForms',
+        'fields'     => 'fields',
+        'formName'   => 'formName',
+        'schemaCode' => 'schemaCode',
     ];
 
     public function validate()
@@ -51,11 +51,14 @@ class data extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->schemaCode) {
-            $res['schemaCode'] = $this->schemaCode;
-        }
-        if (null !== $this->formName) {
-            $res['formName'] = $this->formName;
+        if (null !== $this->childForms) {
+            $res['childForms'] = [];
+            if (null !== $this->childForms && \is_array($this->childForms)) {
+                $n = 0;
+                foreach ($this->childForms as $item) {
+                    $res['childForms'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
         if (null !== $this->fields) {
             $res['fields'] = [];
@@ -66,14 +69,11 @@ class data extends Model
                 }
             }
         }
-        if (null !== $this->childForms) {
-            $res['childForms'] = [];
-            if (null !== $this->childForms && \is_array($this->childForms)) {
-                $n = 0;
-                foreach ($this->childForms as $item) {
-                    $res['childForms'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
+        if (null !== $this->formName) {
+            $res['formName'] = $this->formName;
+        }
+        if (null !== $this->schemaCode) {
+            $res['schemaCode'] = $this->schemaCode;
         }
 
         return $res;
@@ -87,11 +87,14 @@ class data extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['schemaCode'])) {
-            $model->schemaCode = $map['schemaCode'];
-        }
-        if (isset($map['formName'])) {
-            $model->formName = $map['formName'];
+        if (isset($map['childForms'])) {
+            if (!empty($map['childForms'])) {
+                $model->childForms = [];
+                $n                 = 0;
+                foreach ($map['childForms'] as $item) {
+                    $model->childForms[$n++] = null !== $item ? childForms::fromMap($item) : $item;
+                }
+            }
         }
         if (isset($map['fields'])) {
             if (!empty($map['fields'])) {
@@ -102,14 +105,11 @@ class data extends Model
                 }
             }
         }
-        if (isset($map['childForms'])) {
-            if (!empty($map['childForms'])) {
-                $model->childForms = [];
-                $n                 = 0;
-                foreach ($map['childForms'] as $item) {
-                    $model->childForms[$n++] = null !== $item ? childForms::fromMap($item) : $item;
-                }
-            }
+        if (isset($map['formName'])) {
+            $model->formName = $map['formName'];
+        }
+        if (isset($map['schemaCode'])) {
+            $model->schemaCode = $map['schemaCode'];
         }
 
         return $model;

@@ -9,20 +9,6 @@ use AlibabaCloud\Tea\Model;
 class GetFileUploadInfoResponseBody extends Model
 {
     /**
-     * @description OSS上传所需信息：bucket
-     *
-     * @var string
-     */
-    public $bucket;
-
-    /**
-     * @description OSS上传所需信息：endPoint
-     *
-     * @var string
-     */
-    public $endPoint;
-
-    /**
      * @description OSS上传所需信息：accessKeyId
      *
      * @var string
@@ -51,18 +37,32 @@ class GetFileUploadInfoResponseBody extends Model
     public $accessTokenExpirationMillis;
 
     /**
+     * @description OSS上传所需信息：bucket
+     *
+     * @var string
+     */
+    public $bucket;
+
+    /**
+     * @description OSS上传所需信息：endPoint
+     *
+     * @var string
+     */
+    public $endPoint;
+
+    /**
      * @description 文件mediaId
      *
      * @var string
      */
     public $mediaId;
     protected $_name = [
-        'bucket'                      => 'bucket',
-        'endPoint'                    => 'endPoint',
         'accessKeyId'                 => 'accessKeyId',
         'accessKeySecret'             => 'accessKeySecret',
         'accessToken'                 => 'accessToken',
         'accessTokenExpirationMillis' => 'accessTokenExpirationMillis',
+        'bucket'                      => 'bucket',
+        'endPoint'                    => 'endPoint',
         'mediaId'                     => 'mediaId',
     ];
 
@@ -73,12 +73,6 @@ class GetFileUploadInfoResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->bucket) {
-            $res['bucket'] = $this->bucket;
-        }
-        if (null !== $this->endPoint) {
-            $res['endPoint'] = $this->endPoint;
-        }
         if (null !== $this->accessKeyId) {
             $res['accessKeyId'] = $this->accessKeyId;
         }
@@ -90,6 +84,12 @@ class GetFileUploadInfoResponseBody extends Model
         }
         if (null !== $this->accessTokenExpirationMillis) {
             $res['accessTokenExpirationMillis'] = $this->accessTokenExpirationMillis;
+        }
+        if (null !== $this->bucket) {
+            $res['bucket'] = $this->bucket;
+        }
+        if (null !== $this->endPoint) {
+            $res['endPoint'] = $this->endPoint;
         }
         if (null !== $this->mediaId) {
             $res['mediaId'] = $this->mediaId;
@@ -106,12 +106,6 @@ class GetFileUploadInfoResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['bucket'])) {
-            $model->bucket = $map['bucket'];
-        }
-        if (isset($map['endPoint'])) {
-            $model->endPoint = $map['endPoint'];
-        }
         if (isset($map['accessKeyId'])) {
             $model->accessKeyId = $map['accessKeyId'];
         }
@@ -123,6 +117,12 @@ class GetFileUploadInfoResponseBody extends Model
         }
         if (isset($map['accessTokenExpirationMillis'])) {
             $model->accessTokenExpirationMillis = $map['accessTokenExpirationMillis'];
+        }
+        if (isset($map['bucket'])) {
+            $model->bucket = $map['bucket'];
+        }
+        if (isset($map['endPoint'])) {
+            $model->endPoint = $map['endPoint'];
         }
         if (isset($map['mediaId'])) {
             $model->mediaId = $map['mediaId'];

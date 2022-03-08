@@ -9,24 +9,11 @@ use AlibabaCloud\Tea\Model;
 class DeleteKnowledgeRequest extends Model
 {
     /**
-     * @var int
-     */
-    public $dingIsvOrgId;
-
-    /**
-     * @var int
-     */
-    public $dingOrgId;
-
-    /**
+     * @description 知识库的唯一标识 比如:天工知识库ID
+     *
      * @var string
      */
-    public $dingSuiteKey;
-
-    /**
-     * @var int
-     */
-    public $dingTokenGrantType;
+    public $libraryKey;
 
     /**
      * @description 开放团队ID
@@ -34,13 +21,6 @@ class DeleteKnowledgeRequest extends Model
      * @var string
      */
     public $openTeamId;
-
-    /**
-     * @description 知识库的唯一标识 比如:天工知识库ID
-     *
-     * @var string
-     */
-    public $libraryKey;
 
     /**
      * @description 知识点来源 CCM:天工知识库
@@ -56,14 +36,10 @@ class DeleteKnowledgeRequest extends Model
      */
     public $sourcePrimaryKey;
     protected $_name = [
-        'dingIsvOrgId'       => 'dingIsvOrgId',
-        'dingOrgId'          => 'dingOrgId',
-        'dingSuiteKey'       => 'dingSuiteKey',
-        'dingTokenGrantType' => 'dingTokenGrantType',
-        'openTeamId'         => 'openTeamId',
-        'libraryKey'         => 'libraryKey',
-        'source'             => 'source',
-        'sourcePrimaryKey'   => 'sourcePrimaryKey',
+        'libraryKey'       => 'libraryKey',
+        'openTeamId'       => 'openTeamId',
+        'source'           => 'source',
+        'sourcePrimaryKey' => 'sourcePrimaryKey',
     ];
 
     public function validate()
@@ -73,23 +49,11 @@ class DeleteKnowledgeRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->dingIsvOrgId) {
-            $res['dingIsvOrgId'] = $this->dingIsvOrgId;
-        }
-        if (null !== $this->dingOrgId) {
-            $res['dingOrgId'] = $this->dingOrgId;
-        }
-        if (null !== $this->dingSuiteKey) {
-            $res['dingSuiteKey'] = $this->dingSuiteKey;
-        }
-        if (null !== $this->dingTokenGrantType) {
-            $res['dingTokenGrantType'] = $this->dingTokenGrantType;
+        if (null !== $this->libraryKey) {
+            $res['libraryKey'] = $this->libraryKey;
         }
         if (null !== $this->openTeamId) {
             $res['openTeamId'] = $this->openTeamId;
-        }
-        if (null !== $this->libraryKey) {
-            $res['libraryKey'] = $this->libraryKey;
         }
         if (null !== $this->source) {
             $res['source'] = $this->source;
@@ -109,23 +73,11 @@ class DeleteKnowledgeRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['dingIsvOrgId'])) {
-            $model->dingIsvOrgId = $map['dingIsvOrgId'];
-        }
-        if (isset($map['dingOrgId'])) {
-            $model->dingOrgId = $map['dingOrgId'];
-        }
-        if (isset($map['dingSuiteKey'])) {
-            $model->dingSuiteKey = $map['dingSuiteKey'];
-        }
-        if (isset($map['dingTokenGrantType'])) {
-            $model->dingTokenGrantType = $map['dingTokenGrantType'];
+        if (isset($map['libraryKey'])) {
+            $model->libraryKey = $map['libraryKey'];
         }
         if (isset($map['openTeamId'])) {
             $model->openTeamId = $map['openTeamId'];
-        }
-        if (isset($map['libraryKey'])) {
-            $model->libraryKey = $map['libraryKey'];
         }
         if (isset($map['source'])) {
             $model->source = $map['source'];

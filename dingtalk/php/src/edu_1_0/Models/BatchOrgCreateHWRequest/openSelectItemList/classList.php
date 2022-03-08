@@ -10,6 +10,13 @@ use AlibabaCloud\Tea\Model;
 class classList extends Model
 {
     /**
+     * @description 是否全选
+     *
+     * @var bool
+     */
+    public $all;
+
+    /**
      * @description 班级id
      *
      * @var string
@@ -24,22 +31,15 @@ class classList extends Model
     public $className;
 
     /**
-     * @description 是否全选
-     *
-     * @var bool
-     */
-    public $all;
-
-    /**
      * @description 学生列表
      *
      * @var students[]
      */
     public $students;
     protected $_name = [
+        'all'       => 'all',
         'classId'   => 'classId',
         'className' => 'className',
-        'all'       => 'all',
         'students'  => 'students',
     ];
 
@@ -50,14 +50,14 @@ class classList extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->all) {
+            $res['all'] = $this->all;
+        }
         if (null !== $this->classId) {
             $res['classId'] = $this->classId;
         }
         if (null !== $this->className) {
             $res['className'] = $this->className;
-        }
-        if (null !== $this->all) {
-            $res['all'] = $this->all;
         }
         if (null !== $this->students) {
             $res['students'] = [];
@@ -80,14 +80,14 @@ class classList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['all'])) {
+            $model->all = $map['all'];
+        }
         if (isset($map['classId'])) {
             $model->classId = $map['classId'];
         }
         if (isset($map['className'])) {
             $model->className = $map['className'];
-        }
-        if (isset($map['all'])) {
-            $model->all = $map['all'];
         }
         if (isset($map['students'])) {
             if (!empty($map['students'])) {

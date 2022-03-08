@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class start extends Model
 {
     /**
-     * @description 分钟
-     *
-     * @var int
-     */
-    public $min;
-
-    /**
      * @description 小时
      *
      * @var int
      */
     public $hour;
+
+    /**
+     * @description 分钟
+     *
+     * @var int
+     */
+    public $min;
     protected $_name = [
-        'min'  => 'min',
         'hour' => 'hour',
+        'min'  => 'min',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class start extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->min) {
-            $res['min'] = $this->min;
-        }
         if (null !== $this->hour) {
             $res['hour'] = $this->hour;
+        }
+        if (null !== $this->min) {
+            $res['min'] = $this->min;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class start extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['min'])) {
-            $model->min = $map['min'];
-        }
         if (isset($map['hour'])) {
             $model->hour = $map['hour'];
+        }
+        if (isset($map['min'])) {
+            $model->min = $map['min'];
         }
 
         return $model;

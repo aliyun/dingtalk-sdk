@@ -44,11 +44,11 @@ class devices extends Model
     public $deviceTypeName;
 
     /**
-     * @description 产品类型 CAMERA：摄像头，可看直播 OTHERS：非摄像头
+     * @description 第三方平台定制参数，企业内部系统忽略。
      *
-     * @var string
+     * @var mixed[]
      */
-    public $productType;
+    public $extraData;
 
     /**
      * @description 视频流地址直播流地址，支持rtmp、flv、hls等格式，需要https协议。
@@ -58,13 +58,6 @@ class devices extends Model
     public $liveUrl;
 
     /**
-     * @description 父设备ID。
-     *
-     * @var string
-     */
-    public $parentId;
-
-    /**
      * @description 设备地址。
      *
      * @var string
@@ -72,22 +65,29 @@ class devices extends Model
     public $location;
 
     /**
-     * @description 第三方平台定制参数，企业内部系统忽略。
+     * @description 父设备ID。
      *
-     * @var mixed[]
+     * @var string
      */
-    public $extraData;
+    public $parentId;
+
+    /**
+     * @description 产品类型 CAMERA：摄像头，可看直播 OTHERS：非摄像头
+     *
+     * @var string
+     */
+    public $productType;
     protected $_name = [
         'deviceId'       => 'deviceId',
         'deviceName'     => 'deviceName',
         'deviceStatus'   => 'deviceStatus',
         'deviceType'     => 'deviceType',
         'deviceTypeName' => 'deviceTypeName',
-        'productType'    => 'productType',
-        'liveUrl'        => 'liveUrl',
-        'parentId'       => 'parentId',
-        'location'       => 'location',
         'extraData'      => 'extraData',
+        'liveUrl'        => 'liveUrl',
+        'location'       => 'location',
+        'parentId'       => 'parentId',
+        'productType'    => 'productType',
     ];
 
     public function validate()
@@ -112,20 +112,20 @@ class devices extends Model
         if (null !== $this->deviceTypeName) {
             $res['deviceTypeName'] = $this->deviceTypeName;
         }
-        if (null !== $this->productType) {
-            $res['productType'] = $this->productType;
+        if (null !== $this->extraData) {
+            $res['extraData'] = $this->extraData;
         }
         if (null !== $this->liveUrl) {
             $res['liveUrl'] = $this->liveUrl;
         }
-        if (null !== $this->parentId) {
-            $res['parentId'] = $this->parentId;
-        }
         if (null !== $this->location) {
             $res['location'] = $this->location;
         }
-        if (null !== $this->extraData) {
-            $res['extraData'] = $this->extraData;
+        if (null !== $this->parentId) {
+            $res['parentId'] = $this->parentId;
+        }
+        if (null !== $this->productType) {
+            $res['productType'] = $this->productType;
         }
 
         return $res;
@@ -154,20 +154,20 @@ class devices extends Model
         if (isset($map['deviceTypeName'])) {
             $model->deviceTypeName = $map['deviceTypeName'];
         }
-        if (isset($map['productType'])) {
-            $model->productType = $map['productType'];
+        if (isset($map['extraData'])) {
+            $model->extraData = $map['extraData'];
         }
         if (isset($map['liveUrl'])) {
             $model->liveUrl = $map['liveUrl'];
         }
-        if (isset($map['parentId'])) {
-            $model->parentId = $map['parentId'];
-        }
         if (isset($map['location'])) {
             $model->location = $map['location'];
         }
-        if (isset($map['extraData'])) {
-            $model->extraData = $map['extraData'];
+        if (isset($map['parentId'])) {
+            $model->parentId = $map['parentId'];
+        }
+        if (isset($map['productType'])) {
+            $model->productType = $map['productType'];
         }
 
         return $model;

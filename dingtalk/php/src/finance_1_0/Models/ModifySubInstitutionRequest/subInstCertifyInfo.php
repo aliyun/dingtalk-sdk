@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class subInstCertifyInfo extends Model
 {
     /**
+     * @description 证件图片, 如果是特殊行业必填
+     *
+     * @var string
+     */
+    public $certImage;
+
+    /**
      * @description 证件号码
      *
      * @var string
@@ -21,17 +28,10 @@ class subInstCertifyInfo extends Model
      * @var string
      */
     public $certType;
-
-    /**
-     * @description 证件图片, 如果是特殊行业必填
-     *
-     * @var string
-     */
-    public $certImage;
     protected $_name = [
+        'certImage' => 'certImage',
         'certNo'    => 'certNo',
         'certType'  => 'certType',
-        'certImage' => 'certImage',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class subInstCertifyInfo extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->certImage) {
+            $res['certImage'] = $this->certImage;
+        }
         if (null !== $this->certNo) {
             $res['certNo'] = $this->certNo;
         }
         if (null !== $this->certType) {
             $res['certType'] = $this->certType;
-        }
-        if (null !== $this->certImage) {
-            $res['certImage'] = $this->certImage;
         }
 
         return $res;
@@ -62,14 +62,14 @@ class subInstCertifyInfo extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['certImage'])) {
+            $model->certImage = $map['certImage'];
+        }
         if (isset($map['certNo'])) {
             $model->certNo = $map['certNo'];
         }
         if (isset($map['certType'])) {
             $model->certType = $map['certType'];
-        }
-        if (isset($map['certImage'])) {
-            $model->certImage = $map['certImage'];
         }
 
         return $model;

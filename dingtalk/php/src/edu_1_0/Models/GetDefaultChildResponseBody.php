@@ -12,6 +12,21 @@ class GetDefaultChildResponseBody extends Model
     /**
      * @var string
      */
+    public $avatar;
+
+    /**
+     * @var bindStudents[]
+     */
+    public $bindStudents;
+
+    /**
+     * @var int
+     */
+    public $grade;
+
+    /**
+     * @var string
+     */
     public $name;
 
     /**
@@ -22,35 +37,20 @@ class GetDefaultChildResponseBody extends Model
     /**
      * @var string
      */
-    public $avatar;
+    public $period;
 
     /**
      * @var string
      */
     public $unionId;
-
-    /**
-     * @var string
-     */
-    public $period;
-
-    /**
-     * @var int
-     */
-    public $grade;
-
-    /**
-     * @var bindStudents[]
-     */
-    public $bindStudents;
     protected $_name = [
+        'avatar'       => 'avatar',
+        'bindStudents' => 'bindStudents',
+        'grade'        => 'grade',
         'name'         => 'name',
         'nick'         => 'nick',
-        'avatar'       => 'avatar',
-        'unionId'      => 'unionId',
         'period'       => 'period',
-        'grade'        => 'grade',
-        'bindStudents' => 'bindStudents',
+        'unionId'      => 'unionId',
     ];
 
     public function validate()
@@ -60,23 +60,8 @@ class GetDefaultChildResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
-        }
-        if (null !== $this->nick) {
-            $res['nick'] = $this->nick;
-        }
         if (null !== $this->avatar) {
             $res['avatar'] = $this->avatar;
-        }
-        if (null !== $this->unionId) {
-            $res['unionId'] = $this->unionId;
-        }
-        if (null !== $this->period) {
-            $res['period'] = $this->period;
-        }
-        if (null !== $this->grade) {
-            $res['grade'] = $this->grade;
         }
         if (null !== $this->bindStudents) {
             $res['bindStudents'] = [];
@@ -86,6 +71,21 @@ class GetDefaultChildResponseBody extends Model
                     $res['bindStudents'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->grade) {
+            $res['grade'] = $this->grade;
+        }
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
+        }
+        if (null !== $this->nick) {
+            $res['nick'] = $this->nick;
+        }
+        if (null !== $this->period) {
+            $res['period'] = $this->period;
+        }
+        if (null !== $this->unionId) {
+            $res['unionId'] = $this->unionId;
         }
 
         return $res;
@@ -99,23 +99,8 @@ class GetDefaultChildResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
-        }
-        if (isset($map['nick'])) {
-            $model->nick = $map['nick'];
-        }
         if (isset($map['avatar'])) {
             $model->avatar = $map['avatar'];
-        }
-        if (isset($map['unionId'])) {
-            $model->unionId = $map['unionId'];
-        }
-        if (isset($map['period'])) {
-            $model->period = $map['period'];
-        }
-        if (isset($map['grade'])) {
-            $model->grade = $map['grade'];
         }
         if (isset($map['bindStudents'])) {
             if (!empty($map['bindStudents'])) {
@@ -125,6 +110,21 @@ class GetDefaultChildResponseBody extends Model
                     $model->bindStudents[$n++] = null !== $item ? bindStudents::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['grade'])) {
+            $model->grade = $map['grade'];
+        }
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
+        }
+        if (isset($map['nick'])) {
+            $model->nick = $map['nick'];
+        }
+        if (isset($map['period'])) {
+            $model->period = $map['period'];
+        }
+        if (isset($map['unionId'])) {
+            $model->unionId = $map['unionId'];
         }
 
         return $model;

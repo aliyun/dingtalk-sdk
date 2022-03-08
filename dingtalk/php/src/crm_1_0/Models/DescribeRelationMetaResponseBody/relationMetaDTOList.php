@@ -10,18 +10,11 @@ use AlibabaCloud\Tea\Model;
 class relationMetaDTOList extends Model
 {
     /**
-     * @description 关系类型
+     * @description 创建者userId
      *
      * @var string
      */
-    public $relationType;
-
-    /**
-     * @description 模型结构名称
-     *
-     * @var string
-     */
-    public $name;
+    public $creatorUserId;
 
     /**
      * @description 模型结构描述
@@ -29,27 +22,6 @@ class relationMetaDTOList extends Model
      * @var string
      */
     public $desc;
-
-    /**
-     * @description 模型结构code
-     *
-     * @var string
-     */
-    public $relationMetaCode;
-
-    /**
-     * @description 模型结构状态
-     *
-     * @var string
-     */
-    public $relationMetaStatus;
-
-    /**
-     * @description 创建者userId
-     *
-     * @var string
-     */
-    public $creatorUserId;
 
     /**
      * @description 创建时间
@@ -71,16 +43,44 @@ class relationMetaDTOList extends Model
      * @var items[]
      */
     public $items;
+
+    /**
+     * @description 模型结构名称
+     *
+     * @var string
+     */
+    public $name;
+
+    /**
+     * @description 模型结构code
+     *
+     * @var string
+     */
+    public $relationMetaCode;
+
+    /**
+     * @description 模型结构状态
+     *
+     * @var string
+     */
+    public $relationMetaStatus;
+
+    /**
+     * @description 关系类型
+     *
+     * @var string
+     */
+    public $relationType;
     protected $_name = [
-        'relationType'       => 'relationType',
-        'name'               => 'name',
-        'desc'               => 'desc',
-        'relationMetaCode'   => 'relationMetaCode',
-        'relationMetaStatus' => 'relationMetaStatus',
         'creatorUserId'      => 'creatorUserId',
+        'desc'               => 'desc',
         'gmtCreate'          => 'gmtCreate',
         'gmtModified'        => 'gmtModified',
         'items'              => 'items',
+        'name'               => 'name',
+        'relationMetaCode'   => 'relationMetaCode',
+        'relationMetaStatus' => 'relationMetaStatus',
+        'relationType'       => 'relationType',
     ];
 
     public function validate()
@@ -90,23 +90,11 @@ class relationMetaDTOList extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->relationType) {
-            $res['relationType'] = $this->relationType;
-        }
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
+        if (null !== $this->creatorUserId) {
+            $res['creatorUserId'] = $this->creatorUserId;
         }
         if (null !== $this->desc) {
             $res['desc'] = $this->desc;
-        }
-        if (null !== $this->relationMetaCode) {
-            $res['relationMetaCode'] = $this->relationMetaCode;
-        }
-        if (null !== $this->relationMetaStatus) {
-            $res['relationMetaStatus'] = $this->relationMetaStatus;
-        }
-        if (null !== $this->creatorUserId) {
-            $res['creatorUserId'] = $this->creatorUserId;
         }
         if (null !== $this->gmtCreate) {
             $res['gmtCreate'] = $this->gmtCreate;
@@ -123,6 +111,18 @@ class relationMetaDTOList extends Model
                 }
             }
         }
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
+        }
+        if (null !== $this->relationMetaCode) {
+            $res['relationMetaCode'] = $this->relationMetaCode;
+        }
+        if (null !== $this->relationMetaStatus) {
+            $res['relationMetaStatus'] = $this->relationMetaStatus;
+        }
+        if (null !== $this->relationType) {
+            $res['relationType'] = $this->relationType;
+        }
 
         return $res;
     }
@@ -135,23 +135,11 @@ class relationMetaDTOList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['relationType'])) {
-            $model->relationType = $map['relationType'];
-        }
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
+        if (isset($map['creatorUserId'])) {
+            $model->creatorUserId = $map['creatorUserId'];
         }
         if (isset($map['desc'])) {
             $model->desc = $map['desc'];
-        }
-        if (isset($map['relationMetaCode'])) {
-            $model->relationMetaCode = $map['relationMetaCode'];
-        }
-        if (isset($map['relationMetaStatus'])) {
-            $model->relationMetaStatus = $map['relationMetaStatus'];
-        }
-        if (isset($map['creatorUserId'])) {
-            $model->creatorUserId = $map['creatorUserId'];
         }
         if (isset($map['gmtCreate'])) {
             $model->gmtCreate = $map['gmtCreate'];
@@ -167,6 +155,18 @@ class relationMetaDTOList extends Model
                     $model->items[$n++] = null !== $item ? items::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
+        }
+        if (isset($map['relationMetaCode'])) {
+            $model->relationMetaCode = $map['relationMetaCode'];
+        }
+        if (isset($map['relationMetaStatus'])) {
+            $model->relationMetaStatus = $map['relationMetaStatus'];
+        }
+        if (isset($map['relationType'])) {
+            $model->relationType = $map['relationType'];
         }
 
         return $model;

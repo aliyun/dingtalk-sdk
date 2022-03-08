@@ -9,18 +9,18 @@ use AlibabaCloud\Tea\Model;
 class QueryAllTracksRequest extends Model
 {
     /**
-     * @description 分页游标
-     *
-     * @var string
-     */
-    public $nextToken;
-
-    /**
      * @description 分页size
      *
      * @var int
      */
     public $maxResults;
+
+    /**
+     * @description 分页游标
+     *
+     * @var string
+     */
+    public $nextToken;
 
     /**
      * @description 排序
@@ -29,8 +29,8 @@ class QueryAllTracksRequest extends Model
      */
     public $order;
     protected $_name = [
-        'nextToken'  => 'nextToken',
         'maxResults' => 'maxResults',
+        'nextToken'  => 'nextToken',
         'order'      => 'order',
     ];
 
@@ -41,11 +41,11 @@ class QueryAllTracksRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->nextToken) {
-            $res['nextToken'] = $this->nextToken;
-        }
         if (null !== $this->maxResults) {
             $res['maxResults'] = $this->maxResults;
+        }
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
         }
         if (null !== $this->order) {
             $res['order'] = $this->order;
@@ -62,11 +62,11 @@ class QueryAllTracksRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['nextToken'])) {
-            $model->nextToken = $map['nextToken'];
-        }
         if (isset($map['maxResults'])) {
             $model->maxResults = $map['maxResults'];
+        }
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
         }
         if (isset($map['order'])) {
             $model->order = $map['order'];

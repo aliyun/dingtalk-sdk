@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class GetDocCreatedDeptSummaryRequest extends Model
 {
     /**
-     * @description 启始数据游标
-     *
-     * @var int
-     */
-    public $nextToken;
-
-    /**
      * @description 每页包含的数据条数
      *
      * @var int
      */
     public $maxResults;
+
+    /**
+     * @description 启始数据游标
+     *
+     * @var int
+     */
+    public $nextToken;
     protected $_name = [
-        'nextToken'  => 'nextToken',
         'maxResults' => 'maxResults',
+        'nextToken'  => 'nextToken',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class GetDocCreatedDeptSummaryRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->nextToken) {
-            $res['nextToken'] = $this->nextToken;
-        }
         if (null !== $this->maxResults) {
             $res['maxResults'] = $this->maxResults;
+        }
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class GetDocCreatedDeptSummaryRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['nextToken'])) {
-            $model->nextToken = $map['nextToken'];
-        }
         if (isset($map['maxResults'])) {
             $model->maxResults = $map['maxResults'];
+        }
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
         }
 
         return $model;

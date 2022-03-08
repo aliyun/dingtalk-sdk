@@ -9,18 +9,18 @@ use AlibabaCloud\Tea\Model;
 class AddCustomSpaceRequest extends Model
 {
     /**
-     * @description 空间标识
-     *
-     * @var string
-     */
-    public $identifier;
-
-    /**
      * @description 业务类型
      *
      * @var string
      */
     public $bizType;
+
+    /**
+     * @description 空间标识
+     *
+     * @var string
+     */
+    public $identifier;
 
     /**
      * @description 授权模式
@@ -36,8 +36,8 @@ class AddCustomSpaceRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'identifier'     => 'identifier',
         'bizType'        => 'bizType',
+        'identifier'     => 'identifier',
         'permissionMode' => 'permissionMode',
         'unionId'        => 'unionId',
     ];
@@ -49,11 +49,11 @@ class AddCustomSpaceRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->identifier) {
-            $res['identifier'] = $this->identifier;
-        }
         if (null !== $this->bizType) {
             $res['bizType'] = $this->bizType;
+        }
+        if (null !== $this->identifier) {
+            $res['identifier'] = $this->identifier;
         }
         if (null !== $this->permissionMode) {
             $res['permissionMode'] = $this->permissionMode;
@@ -73,11 +73,11 @@ class AddCustomSpaceRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['identifier'])) {
-            $model->identifier = $map['identifier'];
-        }
         if (isset($map['bizType'])) {
             $model->bizType = $map['bizType'];
+        }
+        if (isset($map['identifier'])) {
+            $model->identifier = $map['identifier'];
         }
         if (isset($map['permissionMode'])) {
             $model->permissionMode = $map['permissionMode'];

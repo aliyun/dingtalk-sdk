@@ -10,41 +10,6 @@ use AlibabaCloud\Tea\Model;
 class GetConferenceDetailResponseBody extends Model
 {
     /**
-     * @description 会议ID
-     *
-     * @var string
-     */
-    public $conferenceId;
-
-    /**
-     * @description 会议标题
-     *
-     * @var string
-     */
-    public $title;
-
-    /**
-     * @description 开始时间
-     *
-     * @var float
-     */
-    public $confStartTime;
-
-    /**
-     * @description 持续时间
-     *
-     * @var float
-     */
-    public $duration;
-
-    /**
-     * @description 会议人数
-     *
-     * @var int
-     */
-    public $totalNum;
-
-    /**
      * @description 出席会议人数
      *
      * @var int
@@ -73,22 +38,57 @@ class GetConferenceDetailResponseBody extends Model
     public $callerName;
 
     /**
+     * @description 开始时间
+     *
+     * @var float
+     */
+    public $confStartTime;
+
+    /**
+     * @description 会议ID
+     *
+     * @var string
+     */
+    public $conferenceId;
+
+    /**
+     * @description 持续时间
+     *
+     * @var float
+     */
+    public $duration;
+
+    /**
      * @description 参会人员列表
      *
      * @var memberList[]
      */
     public $memberList;
+
+    /**
+     * @description 会议标题
+     *
+     * @var string
+     */
+    public $title;
+
+    /**
+     * @description 会议人数
+     *
+     * @var int
+     */
+    public $totalNum;
     protected $_name = [
-        'conferenceId'       => 'conferenceId',
-        'title'              => 'title',
-        'confStartTime'      => 'confStartTime',
-        'duration'           => 'duration',
-        'totalNum'           => 'totalNum',
         'attendeeNum'        => 'attendeeNum',
         'attendeePercentage' => 'attendeePercentage',
         'callerId'           => 'callerId',
         'callerName'         => 'callerName',
+        'confStartTime'      => 'confStartTime',
+        'conferenceId'       => 'conferenceId',
+        'duration'           => 'duration',
         'memberList'         => 'memberList',
+        'title'              => 'title',
+        'totalNum'           => 'totalNum',
     ];
 
     public function validate()
@@ -98,21 +98,6 @@ class GetConferenceDetailResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->conferenceId) {
-            $res['conferenceId'] = $this->conferenceId;
-        }
-        if (null !== $this->title) {
-            $res['title'] = $this->title;
-        }
-        if (null !== $this->confStartTime) {
-            $res['confStartTime'] = $this->confStartTime;
-        }
-        if (null !== $this->duration) {
-            $res['duration'] = $this->duration;
-        }
-        if (null !== $this->totalNum) {
-            $res['totalNum'] = $this->totalNum;
-        }
         if (null !== $this->attendeeNum) {
             $res['attendeeNum'] = $this->attendeeNum;
         }
@@ -125,6 +110,15 @@ class GetConferenceDetailResponseBody extends Model
         if (null !== $this->callerName) {
             $res['callerName'] = $this->callerName;
         }
+        if (null !== $this->confStartTime) {
+            $res['confStartTime'] = $this->confStartTime;
+        }
+        if (null !== $this->conferenceId) {
+            $res['conferenceId'] = $this->conferenceId;
+        }
+        if (null !== $this->duration) {
+            $res['duration'] = $this->duration;
+        }
         if (null !== $this->memberList) {
             $res['memberList'] = [];
             if (null !== $this->memberList && \is_array($this->memberList)) {
@@ -133,6 +127,12 @@ class GetConferenceDetailResponseBody extends Model
                     $res['memberList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->title) {
+            $res['title'] = $this->title;
+        }
+        if (null !== $this->totalNum) {
+            $res['totalNum'] = $this->totalNum;
         }
 
         return $res;
@@ -146,21 +146,6 @@ class GetConferenceDetailResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['conferenceId'])) {
-            $model->conferenceId = $map['conferenceId'];
-        }
-        if (isset($map['title'])) {
-            $model->title = $map['title'];
-        }
-        if (isset($map['confStartTime'])) {
-            $model->confStartTime = $map['confStartTime'];
-        }
-        if (isset($map['duration'])) {
-            $model->duration = $map['duration'];
-        }
-        if (isset($map['totalNum'])) {
-            $model->totalNum = $map['totalNum'];
-        }
         if (isset($map['attendeeNum'])) {
             $model->attendeeNum = $map['attendeeNum'];
         }
@@ -173,6 +158,15 @@ class GetConferenceDetailResponseBody extends Model
         if (isset($map['callerName'])) {
             $model->callerName = $map['callerName'];
         }
+        if (isset($map['confStartTime'])) {
+            $model->confStartTime = $map['confStartTime'];
+        }
+        if (isset($map['conferenceId'])) {
+            $model->conferenceId = $map['conferenceId'];
+        }
+        if (isset($map['duration'])) {
+            $model->duration = $map['duration'];
+        }
         if (isset($map['memberList'])) {
             if (!empty($map['memberList'])) {
                 $model->memberList = [];
@@ -181,6 +175,12 @@ class GetConferenceDetailResponseBody extends Model
                     $model->memberList[$n++] = null !== $item ? memberList::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['title'])) {
+            $model->title = $map['title'];
+        }
+        if (isset($map['totalNum'])) {
+            $model->totalNum = $map['totalNum'];
         }
 
         return $model;

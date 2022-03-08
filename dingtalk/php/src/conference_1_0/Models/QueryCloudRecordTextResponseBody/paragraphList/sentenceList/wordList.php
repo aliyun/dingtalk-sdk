@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class wordList extends Model
 {
     /**
-     * @description 单词
+     * @description 结束时间
      *
-     * @var string
+     * @var int
      */
-    public $word;
+    public $endTime;
 
     /**
      * @description 开始时间
@@ -23,11 +23,11 @@ class wordList extends Model
     public $startTime;
 
     /**
-     * @description 结束时间
+     * @description 单词
      *
-     * @var int
+     * @var string
      */
-    public $endTime;
+    public $word;
 
     /**
      * @description 单词id
@@ -36,9 +36,9 @@ class wordList extends Model
      */
     public $wordId;
     protected $_name = [
-        'word'      => 'word',
-        'startTime' => 'startTime',
         'endTime'   => 'endTime',
+        'startTime' => 'startTime',
+        'word'      => 'word',
         'wordId'    => 'wordId',
     ];
 
@@ -49,14 +49,14 @@ class wordList extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->word) {
-            $res['word'] = $this->word;
+        if (null !== $this->endTime) {
+            $res['endTime'] = $this->endTime;
         }
         if (null !== $this->startTime) {
             $res['startTime'] = $this->startTime;
         }
-        if (null !== $this->endTime) {
-            $res['endTime'] = $this->endTime;
+        if (null !== $this->word) {
+            $res['word'] = $this->word;
         }
         if (null !== $this->wordId) {
             $res['wordId'] = $this->wordId;
@@ -73,14 +73,14 @@ class wordList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['word'])) {
-            $model->word = $map['word'];
+        if (isset($map['endTime'])) {
+            $model->endTime = $map['endTime'];
         }
         if (isset($map['startTime'])) {
             $model->startTime = $map['startTime'];
         }
-        if (isset($map['endTime'])) {
-            $model->endTime = $map['endTime'];
+        if (isset($map['word'])) {
+            $model->word = $map['word'];
         }
         if (isset($map['wordId'])) {
             $model->wordId = $map['wordId'];

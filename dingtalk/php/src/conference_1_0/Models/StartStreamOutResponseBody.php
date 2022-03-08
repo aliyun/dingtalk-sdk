@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class StartStreamOutResponseBody extends Model
 {
     /**
-     * @description 成功推流地址与liveId映射
-     *
-     * @var mixed[]
-     */
-    public $successStreamMap;
-
-    /**
      * @description 失败的地址与失败原因映射
      *
      * @var mixed[]
      */
     public $failStreamMap;
+
+    /**
+     * @description 成功推流地址与liveId映射
+     *
+     * @var mixed[]
+     */
+    public $successStreamMap;
     protected $_name = [
-        'successStreamMap' => 'successStreamMap',
         'failStreamMap'    => 'failStreamMap',
+        'successStreamMap' => 'successStreamMap',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class StartStreamOutResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->successStreamMap) {
-            $res['successStreamMap'] = $this->successStreamMap;
-        }
         if (null !== $this->failStreamMap) {
             $res['failStreamMap'] = $this->failStreamMap;
+        }
+        if (null !== $this->successStreamMap) {
+            $res['successStreamMap'] = $this->successStreamMap;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class StartStreamOutResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['successStreamMap'])) {
-            $model->successStreamMap = $map['successStreamMap'];
-        }
         if (isset($map['failStreamMap'])) {
             $model->failStreamMap = $map['failStreamMap'];
+        }
+        if (isset($map['successStreamMap'])) {
+            $model->successStreamMap = $map['successStreamMap'];
         }
 
         return $model;

@@ -9,20 +9,6 @@ use AlibabaCloud\Tea\Model;
 class records extends Model
 {
     /**
-     * @description 已读人员为企业员工则有值
-     *
-     * @var string
-     */
-    public $receiverUserId;
-
-    /**
-     * @description 已读人员为非企业员工则有值
-     *
-     * @var string
-     */
-    public $receiverUnionId;
-
-    /**
      * @description 状态：已读1/未读0
      *
      * @var int
@@ -30,11 +16,11 @@ class records extends Model
     public $readStatus;
 
     /**
-     * @description 接收者昵称
+     * @description 已读时间
      *
      * @var string
      */
-    public $receiverName;
+    public $readTimeStr;
 
     /**
      * @description 接收者dingtalkId
@@ -44,26 +30,40 @@ class records extends Model
     public $receiverDingTalkId;
 
     /**
+     * @description 接收者昵称
+     *
+     * @var string
+     */
+    public $receiverName;
+
+    /**
+     * @description 已读人员为非企业员工则有值
+     *
+     * @var string
+     */
+    public $receiverUnionId;
+
+    /**
+     * @description 已读人员为企业员工则有值
+     *
+     * @var string
+     */
+    public $receiverUserId;
+
+    /**
      * @description 发送时间
      *
      * @var string
      */
     public $sendTimeStr;
-
-    /**
-     * @description 已读时间
-     *
-     * @var string
-     */
-    public $readTimeStr;
     protected $_name = [
-        'receiverUserId'     => 'receiverUserId',
-        'receiverUnionId'    => 'receiverUnionId',
         'readStatus'         => 'readStatus',
-        'receiverName'       => 'receiverName',
-        'receiverDingTalkId' => 'receiverDingTalkId',
-        'sendTimeStr'        => 'sendTimeStr',
         'readTimeStr'        => 'readTimeStr',
+        'receiverDingTalkId' => 'receiverDingTalkId',
+        'receiverName'       => 'receiverName',
+        'receiverUnionId'    => 'receiverUnionId',
+        'receiverUserId'     => 'receiverUserId',
+        'sendTimeStr'        => 'sendTimeStr',
     ];
 
     public function validate()
@@ -73,26 +73,26 @@ class records extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->receiverUserId) {
-            $res['receiverUserId'] = $this->receiverUserId;
-        }
-        if (null !== $this->receiverUnionId) {
-            $res['receiverUnionId'] = $this->receiverUnionId;
-        }
         if (null !== $this->readStatus) {
             $res['readStatus'] = $this->readStatus;
         }
-        if (null !== $this->receiverName) {
-            $res['receiverName'] = $this->receiverName;
+        if (null !== $this->readTimeStr) {
+            $res['readTimeStr'] = $this->readTimeStr;
         }
         if (null !== $this->receiverDingTalkId) {
             $res['receiverDingTalkId'] = $this->receiverDingTalkId;
         }
+        if (null !== $this->receiverName) {
+            $res['receiverName'] = $this->receiverName;
+        }
+        if (null !== $this->receiverUnionId) {
+            $res['receiverUnionId'] = $this->receiverUnionId;
+        }
+        if (null !== $this->receiverUserId) {
+            $res['receiverUserId'] = $this->receiverUserId;
+        }
         if (null !== $this->sendTimeStr) {
             $res['sendTimeStr'] = $this->sendTimeStr;
-        }
-        if (null !== $this->readTimeStr) {
-            $res['readTimeStr'] = $this->readTimeStr;
         }
 
         return $res;
@@ -106,26 +106,26 @@ class records extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['receiverUserId'])) {
-            $model->receiverUserId = $map['receiverUserId'];
-        }
-        if (isset($map['receiverUnionId'])) {
-            $model->receiverUnionId = $map['receiverUnionId'];
-        }
         if (isset($map['readStatus'])) {
             $model->readStatus = $map['readStatus'];
         }
-        if (isset($map['receiverName'])) {
-            $model->receiverName = $map['receiverName'];
+        if (isset($map['readTimeStr'])) {
+            $model->readTimeStr = $map['readTimeStr'];
         }
         if (isset($map['receiverDingTalkId'])) {
             $model->receiverDingTalkId = $map['receiverDingTalkId'];
         }
+        if (isset($map['receiverName'])) {
+            $model->receiverName = $map['receiverName'];
+        }
+        if (isset($map['receiverUnionId'])) {
+            $model->receiverUnionId = $map['receiverUnionId'];
+        }
+        if (isset($map['receiverUserId'])) {
+            $model->receiverUserId = $map['receiverUserId'];
+        }
         if (isset($map['sendTimeStr'])) {
             $model->sendTimeStr = $map['sendTimeStr'];
-        }
-        if (isset($map['readTimeStr'])) {
-            $model->readTimeStr = $map['readTimeStr'];
         }
 
         return $model;

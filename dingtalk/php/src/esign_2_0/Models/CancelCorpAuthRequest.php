@@ -8,26 +8,13 @@ use AlibabaCloud\Tea\Model;
 
 class CancelCorpAuthRequest extends Model
 {
-    /**
-     * @var string
-     */
-    public $dingCorpId;
-    protected $_name = [
-        'dingCorpId' => 'dingCorpId',
-    ];
-
     public function validate()
     {
     }
 
     public function toMap()
     {
-        $res = [];
-        if (null !== $this->dingCorpId) {
-            $res['dingCorpId'] = $this->dingCorpId;
-        }
-
-        return $res;
+        return [];
     }
 
     /**
@@ -37,11 +24,6 @@ class CancelCorpAuthRequest extends Model
      */
     public static function fromMap($map = [])
     {
-        $model = new self();
-        if (isset($map['dingCorpId'])) {
-            $model->dingCorpId = $map['dingCorpId'];
-        }
-
-        return $model;
+        return new self();
     }
 }

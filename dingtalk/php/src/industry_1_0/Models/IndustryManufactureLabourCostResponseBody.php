@@ -10,14 +10,14 @@ use AlibabaCloud\Tea\Model;
 class IndustryManufactureLabourCostResponseBody extends Model
 {
     /**
-     * @var list_[]
-     */
-    public $list;
-
-    /**
      * @var bool
      */
     public $hasMore;
+
+    /**
+     * @var list_[]
+     */
+    public $list;
 
     /**
      * @var int
@@ -29,8 +29,8 @@ class IndustryManufactureLabourCostResponseBody extends Model
      */
     public $totalCount;
     protected $_name = [
-        'list'       => 'list',
         'hasMore'    => 'hasMore',
+        'list'       => 'list',
         'nextCursor' => 'nextCursor',
         'totalCount' => 'totalCount',
     ];
@@ -42,6 +42,9 @@ class IndustryManufactureLabourCostResponseBody extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->hasMore) {
+            $res['hasMore'] = $this->hasMore;
+        }
         if (null !== $this->list) {
             $res['list'] = [];
             if (null !== $this->list && \is_array($this->list)) {
@@ -50,9 +53,6 @@ class IndustryManufactureLabourCostResponseBody extends Model
                     $res['list'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
-        }
-        if (null !== $this->hasMore) {
-            $res['hasMore'] = $this->hasMore;
         }
         if (null !== $this->nextCursor) {
             $res['nextCursor'] = $this->nextCursor;
@@ -72,6 +72,9 @@ class IndustryManufactureLabourCostResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['hasMore'])) {
+            $model->hasMore = $map['hasMore'];
+        }
         if (isset($map['list'])) {
             if (!empty($map['list'])) {
                 $model->list = [];
@@ -80,9 +83,6 @@ class IndustryManufactureLabourCostResponseBody extends Model
                     $model->list[$n++] = null !== $item ? list_::fromMap($item) : $item;
                 }
             }
-        }
-        if (isset($map['hasMore'])) {
-            $model->hasMore = $map['hasMore'];
         }
         if (isset($map['nextCursor'])) {
             $model->nextCursor = $map['nextCursor'];

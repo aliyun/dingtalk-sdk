@@ -16,13 +16,6 @@ class messageReadInfoList extends Model
     public $name;
 
     /**
-     * @description 工号
-     *
-     * @var string
-     */
-    public $userId;
-
-    /**
      * @description 已读状态
      *
      * @var string
@@ -35,11 +28,18 @@ class messageReadInfoList extends Model
      * @var int
      */
     public $readTimestamp;
+
+    /**
+     * @description 工号
+     *
+     * @var string
+     */
+    public $userId;
     protected $_name = [
         'name'          => 'name',
-        'userId'        => 'userId',
         'readStatus'    => 'readStatus',
         'readTimestamp' => 'readTimestamp',
+        'userId'        => 'userId',
     ];
 
     public function validate()
@@ -52,14 +52,14 @@ class messageReadInfoList extends Model
         if (null !== $this->name) {
             $res['name'] = $this->name;
         }
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
-        }
         if (null !== $this->readStatus) {
             $res['readStatus'] = $this->readStatus;
         }
         if (null !== $this->readTimestamp) {
             $res['readTimestamp'] = $this->readTimestamp;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -76,14 +76,14 @@ class messageReadInfoList extends Model
         if (isset($map['name'])) {
             $model->name = $map['name'];
         }
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
-        }
         if (isset($map['readStatus'])) {
             $model->readStatus = $map['readStatus'];
         }
         if (isset($map['readTimestamp'])) {
             $model->readTimestamp = $map['readTimestamp'];
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

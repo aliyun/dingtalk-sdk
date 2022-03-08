@@ -11,17 +11,17 @@ class registerAndActivateVOS extends Model
     /**
      * @var string
      */
+    public $deviceCallbackUrl;
+
+    /**
+     * @var string
+     */
     public $deviceCode;
 
     /**
      * @var string
      */
     public $deviceDetailUrl;
-
-    /**
-     * @var string
-     */
-    public $deviceCallbackUrl;
 
     /**
      * @var string
@@ -53,9 +53,9 @@ class registerAndActivateVOS extends Model
      */
     public $userIds;
     protected $_name = [
+        'deviceCallbackUrl' => 'deviceCallbackUrl',
         'deviceCode'        => 'deviceCode',
         'deviceDetailUrl'   => 'deviceDetailUrl',
-        'deviceCallbackUrl' => 'deviceCallbackUrl',
         'deviceName'        => 'deviceName',
         'groupUuid'         => 'groupUuid',
         'introduction'      => 'introduction',
@@ -71,14 +71,14 @@ class registerAndActivateVOS extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->deviceCallbackUrl) {
+            $res['deviceCallbackUrl'] = $this->deviceCallbackUrl;
+        }
         if (null !== $this->deviceCode) {
             $res['deviceCode'] = $this->deviceCode;
         }
         if (null !== $this->deviceDetailUrl) {
             $res['deviceDetailUrl'] = $this->deviceDetailUrl;
-        }
-        if (null !== $this->deviceCallbackUrl) {
-            $res['deviceCallbackUrl'] = $this->deviceCallbackUrl;
         }
         if (null !== $this->deviceName) {
             $res['deviceName'] = $this->deviceName;
@@ -110,14 +110,14 @@ class registerAndActivateVOS extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['deviceCallbackUrl'])) {
+            $model->deviceCallbackUrl = $map['deviceCallbackUrl'];
+        }
         if (isset($map['deviceCode'])) {
             $model->deviceCode = $map['deviceCode'];
         }
         if (isset($map['deviceDetailUrl'])) {
             $model->deviceDetailUrl = $map['deviceDetailUrl'];
-        }
-        if (isset($map['deviceCallbackUrl'])) {
-            $model->deviceCallbackUrl = $map['deviceCallbackUrl'];
         }
         if (isset($map['deviceName'])) {
             $model->deviceName = $map['deviceName'];

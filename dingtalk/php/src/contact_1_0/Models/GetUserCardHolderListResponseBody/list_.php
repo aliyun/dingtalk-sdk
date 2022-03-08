@@ -9,20 +9,6 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
-     * @description 名片ID
-     *
-     * @var string
-     */
-    public $cardId;
-
-    /**
-     * @description 名字
-     *
-     * @var string
-     */
-    public $name;
-
-    /**
      * @description 头像
      *
      * @var string
@@ -30,18 +16,18 @@ class list_ extends Model
     public $avatarUrl;
 
     /**
-     * @description 组织名称
+     * @description 名片ID
      *
      * @var string
      */
-    public $orgName;
+    public $cardId;
 
     /**
-     * @description 职位
+     * @description 扩展信息
      *
-     * @var string
+     * @var mixed[]
      */
-    public $title;
+    public $extension;
 
     /**
      * @description 行业名称
@@ -58,6 +44,20 @@ class list_ extends Model
     public $introduce;
 
     /**
+     * @description 名字
+     *
+     * @var string
+     */
+    public $name;
+
+    /**
+     * @description 组织名称
+     *
+     * @var string
+     */
+    public $orgName;
+
+    /**
      * @description 模板ID
      *
      * @var string
@@ -65,21 +65,21 @@ class list_ extends Model
     public $templateId;
 
     /**
-     * @description 扩展信息
+     * @description 职位
      *
-     * @var mixed[]
+     * @var string
      */
-    public $extension;
+    public $title;
     protected $_name = [
-        'cardId'       => 'cardId',
-        'name'         => 'name',
         'avatarUrl'    => 'avatarUrl',
-        'orgName'      => 'orgName',
-        'title'        => 'title',
+        'cardId'       => 'cardId',
+        'extension'    => 'extension',
         'industryName' => 'industryName',
         'introduce'    => 'introduce',
+        'name'         => 'name',
+        'orgName'      => 'orgName',
         'templateId'   => 'templateId',
-        'extension'    => 'extension',
+        'title'        => 'title',
     ];
 
     public function validate()
@@ -89,20 +89,14 @@ class list_ extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->cardId) {
-            $res['cardId'] = $this->cardId;
-        }
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
-        }
         if (null !== $this->avatarUrl) {
             $res['avatarUrl'] = $this->avatarUrl;
         }
-        if (null !== $this->orgName) {
-            $res['orgName'] = $this->orgName;
+        if (null !== $this->cardId) {
+            $res['cardId'] = $this->cardId;
         }
-        if (null !== $this->title) {
-            $res['title'] = $this->title;
+        if (null !== $this->extension) {
+            $res['extension'] = $this->extension;
         }
         if (null !== $this->industryName) {
             $res['industryName'] = $this->industryName;
@@ -110,11 +104,17 @@ class list_ extends Model
         if (null !== $this->introduce) {
             $res['introduce'] = $this->introduce;
         }
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
+        }
+        if (null !== $this->orgName) {
+            $res['orgName'] = $this->orgName;
+        }
         if (null !== $this->templateId) {
             $res['templateId'] = $this->templateId;
         }
-        if (null !== $this->extension) {
-            $res['extension'] = $this->extension;
+        if (null !== $this->title) {
+            $res['title'] = $this->title;
         }
 
         return $res;
@@ -128,20 +128,14 @@ class list_ extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['cardId'])) {
-            $model->cardId = $map['cardId'];
-        }
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
-        }
         if (isset($map['avatarUrl'])) {
             $model->avatarUrl = $map['avatarUrl'];
         }
-        if (isset($map['orgName'])) {
-            $model->orgName = $map['orgName'];
+        if (isset($map['cardId'])) {
+            $model->cardId = $map['cardId'];
         }
-        if (isset($map['title'])) {
-            $model->title = $map['title'];
+        if (isset($map['extension'])) {
+            $model->extension = $map['extension'];
         }
         if (isset($map['industryName'])) {
             $model->industryName = $map['industryName'];
@@ -149,11 +143,17 @@ class list_ extends Model
         if (isset($map['introduce'])) {
             $model->introduce = $map['introduce'];
         }
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
+        }
+        if (isset($map['orgName'])) {
+            $model->orgName = $map['orgName'];
+        }
         if (isset($map['templateId'])) {
             $model->templateId = $map['templateId'];
         }
-        if (isset($map['extension'])) {
-            $model->extension = $map['extension'];
+        if (isset($map['title'])) {
+            $model->title = $map['title'];
         }
 
         return $model;

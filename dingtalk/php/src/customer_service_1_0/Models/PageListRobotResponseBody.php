@@ -10,20 +10,6 @@ use AlibabaCloud\Tea\Model;
 class PageListRobotResponseBody extends Model
 {
     /**
-     * @description 查询结果总数
-     *
-     * @var int
-     */
-    public $total;
-
-    /**
-     * @description 下一次查询起始游标
-     *
-     * @var int
-     */
-    public $nextCursor;
-
-    /**
      * @description 是否有更多结果
      *
      * @var bool
@@ -36,11 +22,25 @@ class PageListRobotResponseBody extends Model
      * @var list_[]
      */
     public $list;
+
+    /**
+     * @description 下一次查询起始游标
+     *
+     * @var int
+     */
+    public $nextCursor;
+
+    /**
+     * @description 查询结果总数
+     *
+     * @var int
+     */
+    public $total;
     protected $_name = [
-        'total'      => 'total',
-        'nextCursor' => 'nextCursor',
         'hasMore'    => 'hasMore',
         'list'       => 'list',
+        'nextCursor' => 'nextCursor',
+        'total'      => 'total',
     ];
 
     public function validate()
@@ -50,12 +50,6 @@ class PageListRobotResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->total) {
-            $res['total'] = $this->total;
-        }
-        if (null !== $this->nextCursor) {
-            $res['nextCursor'] = $this->nextCursor;
-        }
         if (null !== $this->hasMore) {
             $res['hasMore'] = $this->hasMore;
         }
@@ -67,6 +61,12 @@ class PageListRobotResponseBody extends Model
                     $res['list'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->nextCursor) {
+            $res['nextCursor'] = $this->nextCursor;
+        }
+        if (null !== $this->total) {
+            $res['total'] = $this->total;
         }
 
         return $res;
@@ -80,12 +80,6 @@ class PageListRobotResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['total'])) {
-            $model->total = $map['total'];
-        }
-        if (isset($map['nextCursor'])) {
-            $model->nextCursor = $map['nextCursor'];
-        }
         if (isset($map['hasMore'])) {
             $model->hasMore = $map['hasMore'];
         }
@@ -97,6 +91,12 @@ class PageListRobotResponseBody extends Model
                     $model->list[$n++] = null !== $item ? list_::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['nextCursor'])) {
+            $model->nextCursor = $map['nextCursor'];
+        }
+        if (isset($map['total'])) {
+            $model->total = $map['total'];
         }
 
         return $model;

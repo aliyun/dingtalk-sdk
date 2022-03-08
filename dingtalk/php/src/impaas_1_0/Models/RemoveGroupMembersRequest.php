@@ -11,21 +11,21 @@ class RemoveGroupMembersRequest extends Model
     /**
      * @var string
      */
-    public $operatorUid;
-
-    /**
-     * @var string
-     */
     public $conversationId;
 
     /**
      * @var string[]
      */
     public $memberUids;
+
+    /**
+     * @var string
+     */
+    public $operatorUid;
     protected $_name = [
-        'operatorUid'    => 'operatorUid',
         'conversationId' => 'conversationId',
         'memberUids'     => 'memberUids',
+        'operatorUid'    => 'operatorUid',
     ];
 
     public function validate()
@@ -35,14 +35,14 @@ class RemoveGroupMembersRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->operatorUid) {
-            $res['operatorUid'] = $this->operatorUid;
-        }
         if (null !== $this->conversationId) {
             $res['conversationId'] = $this->conversationId;
         }
         if (null !== $this->memberUids) {
             $res['memberUids'] = $this->memberUids;
+        }
+        if (null !== $this->operatorUid) {
+            $res['operatorUid'] = $this->operatorUid;
         }
 
         return $res;
@@ -56,9 +56,6 @@ class RemoveGroupMembersRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['operatorUid'])) {
-            $model->operatorUid = $map['operatorUid'];
-        }
         if (isset($map['conversationId'])) {
             $model->conversationId = $map['conversationId'];
         }
@@ -66,6 +63,9 @@ class RemoveGroupMembersRequest extends Model
             if (!empty($map['memberUids'])) {
                 $model->memberUids = $map['memberUids'];
             }
+        }
+        if (isset($map['operatorUid'])) {
+            $model->operatorUid = $map['operatorUid'];
         }
 
         return $model;

@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class ext extends Model
 {
     /**
-     * @description 管理员工列表
-     *
-     * @var string[]
-     */
-    public $staffIdList;
-
-    /**
      * @description 管理部门列表
      *
      * @var float[]
      */
     public $deptIdList;
+
+    /**
+     * @description 管理员工列表
+     *
+     * @var string[]
+     */
+    public $staffIdList;
     protected $_name = [
-        'staffIdList' => 'staffIdList',
         'deptIdList'  => 'deptIdList',
+        'staffIdList' => 'staffIdList',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class ext extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->staffIdList) {
-            $res['staffIdList'] = $this->staffIdList;
-        }
         if (null !== $this->deptIdList) {
             $res['deptIdList'] = $this->deptIdList;
+        }
+        if (null !== $this->staffIdList) {
+            $res['staffIdList'] = $this->staffIdList;
         }
 
         return $res;
@@ -51,14 +51,14 @@ class ext extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['staffIdList'])) {
-            if (!empty($map['staffIdList'])) {
-                $model->staffIdList = $map['staffIdList'];
-            }
-        }
         if (isset($map['deptIdList'])) {
             if (!empty($map['deptIdList'])) {
                 $model->deptIdList = $map['deptIdList'];
+            }
+        }
+        if (isset($map['staffIdList'])) {
+            if (!empty($map['staffIdList'])) {
+                $model->staffIdList = $map['staffIdList'];
             }
         }
 

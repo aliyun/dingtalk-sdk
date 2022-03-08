@@ -16,13 +16,6 @@ class results extends Model
     public $code;
 
     /**
-     * @description 是否成功
-     *
-     * @var bool
-     */
-    public $success;
-
-    /**
      * @description 错误码
      *
      * @var string
@@ -35,11 +28,18 @@ class results extends Model
      * @var string
      */
     public $errorMsg;
+
+    /**
+     * @description 是否成功
+     *
+     * @var bool
+     */
+    public $success;
     protected $_name = [
         'code'      => 'code',
-        'success'   => 'success',
         'errorCode' => 'errorCode',
         'errorMsg'  => 'errorMsg',
+        'success'   => 'success',
     ];
 
     public function validate()
@@ -52,14 +52,14 @@ class results extends Model
         if (null !== $this->code) {
             $res['code'] = $this->code;
         }
-        if (null !== $this->success) {
-            $res['success'] = $this->success;
-        }
         if (null !== $this->errorCode) {
             $res['errorCode'] = $this->errorCode;
         }
         if (null !== $this->errorMsg) {
             $res['errorMsg'] = $this->errorMsg;
+        }
+        if (null !== $this->success) {
+            $res['success'] = $this->success;
         }
 
         return $res;
@@ -76,14 +76,14 @@ class results extends Model
         if (isset($map['code'])) {
             $model->code = $map['code'];
         }
-        if (isset($map['success'])) {
-            $model->success = $map['success'];
-        }
         if (isset($map['errorCode'])) {
             $model->errorCode = $map['errorCode'];
         }
         if (isset($map['errorMsg'])) {
             $model->errorMsg = $map['errorMsg'];
+        }
+        if (isset($map['success'])) {
+            $model->success = $map['success'];
         }
 
         return $model;

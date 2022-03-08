@@ -9,20 +9,6 @@ use AlibabaCloud\Tea\Model;
 class BatchInsertBizObjectRequest extends Model
 {
     /**
-     * @description 表单编码
-     *
-     * @var string
-     */
-    public $schemaCode;
-
-    /**
-     * @description 操作用户id
-     *
-     * @var string
-     */
-    public $opUserId;
-
-    /**
      * @description 待新增的业对象json数组
      *
      * @var string[]
@@ -35,11 +21,25 @@ class BatchInsertBizObjectRequest extends Model
      * @var bool
      */
     public $isDraft;
+
+    /**
+     * @description 操作用户id
+     *
+     * @var string
+     */
+    public $opUserId;
+
+    /**
+     * @description 表单编码
+     *
+     * @var string
+     */
+    public $schemaCode;
     protected $_name = [
-        'schemaCode'         => 'schemaCode',
-        'opUserId'           => 'opUserId',
         'bizObjectJsonArray' => 'bizObjectJsonArray',
         'isDraft'            => 'isDraft',
+        'opUserId'           => 'opUserId',
+        'schemaCode'         => 'schemaCode',
     ];
 
     public function validate()
@@ -49,17 +49,17 @@ class BatchInsertBizObjectRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->schemaCode) {
-            $res['schemaCode'] = $this->schemaCode;
-        }
-        if (null !== $this->opUserId) {
-            $res['opUserId'] = $this->opUserId;
-        }
         if (null !== $this->bizObjectJsonArray) {
             $res['bizObjectJsonArray'] = $this->bizObjectJsonArray;
         }
         if (null !== $this->isDraft) {
             $res['isDraft'] = $this->isDraft;
+        }
+        if (null !== $this->opUserId) {
+            $res['opUserId'] = $this->opUserId;
+        }
+        if (null !== $this->schemaCode) {
+            $res['schemaCode'] = $this->schemaCode;
         }
 
         return $res;
@@ -73,12 +73,6 @@ class BatchInsertBizObjectRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['schemaCode'])) {
-            $model->schemaCode = $map['schemaCode'];
-        }
-        if (isset($map['opUserId'])) {
-            $model->opUserId = $map['opUserId'];
-        }
         if (isset($map['bizObjectJsonArray'])) {
             if (!empty($map['bizObjectJsonArray'])) {
                 $model->bizObjectJsonArray = $map['bizObjectJsonArray'];
@@ -86,6 +80,12 @@ class BatchInsertBizObjectRequest extends Model
         }
         if (isset($map['isDraft'])) {
             $model->isDraft = $map['isDraft'];
+        }
+        if (isset($map['opUserId'])) {
+            $model->opUserId = $map['opUserId'];
+        }
+        if (isset($map['schemaCode'])) {
+            $model->schemaCode = $map['schemaCode'];
         }
 
         return $model;

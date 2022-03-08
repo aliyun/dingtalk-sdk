@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class permission extends Model
 {
     /**
-     * @description 协同人用户ID列表
-     *
-     * @var string[]
-     */
-    public $participantStaffIds;
-
-    /**
      * @description 负责人用户ID列表
      *
      * @var string[]
      */
     public $ownerStaffIds;
+
+    /**
+     * @description 协同人用户ID列表
+     *
+     * @var string[]
+     */
+    public $participantStaffIds;
     protected $_name = [
-        'participantStaffIds' => 'participantStaffIds',
         'ownerStaffIds'       => 'ownerStaffIds',
+        'participantStaffIds' => 'participantStaffIds',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class permission extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->participantStaffIds) {
-            $res['participantStaffIds'] = $this->participantStaffIds;
-        }
         if (null !== $this->ownerStaffIds) {
             $res['ownerStaffIds'] = $this->ownerStaffIds;
+        }
+        if (null !== $this->participantStaffIds) {
+            $res['participantStaffIds'] = $this->participantStaffIds;
         }
 
         return $res;
@@ -51,14 +51,14 @@ class permission extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['participantStaffIds'])) {
-            if (!empty($map['participantStaffIds'])) {
-                $model->participantStaffIds = $map['participantStaffIds'];
-            }
-        }
         if (isset($map['ownerStaffIds'])) {
             if (!empty($map['ownerStaffIds'])) {
                 $model->ownerStaffIds = $map['ownerStaffIds'];
+            }
+        }
+        if (isset($map['participantStaffIds'])) {
+            if (!empty($map['participantStaffIds'])) {
+                $model->participantStaffIds = $map['participantStaffIds'];
             }
         }
 

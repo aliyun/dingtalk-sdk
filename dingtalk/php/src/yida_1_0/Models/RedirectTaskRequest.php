@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class RedirectTaskRequest extends Model
 {
     /**
-     * @description 实例ID
+     * @description 应用ID
      *
      * @var string
      */
-    public $processInstanceId;
+    public $appType;
 
     /**
      * @description 是否应用管理员进行转交; ●
@@ -23,32 +23,11 @@ class RedirectTaskRequest extends Model
     public $byManager;
 
     /**
-     * @description 应用ID
-     *
-     * @var string
-     */
-    public $appType;
-
-    /**
-     * @description 验权token; 在应用数据中获取。
-     *
-     * @var string
-     */
-    public $systemToken;
-
-    /**
      * @description 语言环境; 可选值：zh_CN/en_US
      *
      * @var string
      */
     public $language;
-
-    /**
-     * @description 转交备注
-     *
-     * @var string
-     */
-    public $remark;
 
     /**
      * @description 新的任务处理人工号
@@ -58,11 +37,25 @@ class RedirectTaskRequest extends Model
     public $nowActionExecutorId;
 
     /**
-     * @description 钉钉的userId
+     * @description 实例ID
      *
      * @var string
      */
-    public $userId;
+    public $processInstanceId;
+
+    /**
+     * @description 转交备注
+     *
+     * @var string
+     */
+    public $remark;
+
+    /**
+     * @description 验权token; 在应用数据中获取。
+     *
+     * @var string
+     */
+    public $systemToken;
 
     /**
      * @description 任务ID
@@ -70,16 +63,23 @@ class RedirectTaskRequest extends Model
      * @var int
      */
     public $taskId;
+
+    /**
+     * @description 钉钉的userId
+     *
+     * @var string
+     */
+    public $userId;
     protected $_name = [
-        'processInstanceId'   => 'processInstanceId',
-        'byManager'           => 'byManager',
         'appType'             => 'appType',
-        'systemToken'         => 'systemToken',
+        'byManager'           => 'byManager',
         'language'            => 'language',
-        'remark'              => 'remark',
         'nowActionExecutorId' => 'nowActionExecutorId',
-        'userId'              => 'userId',
+        'processInstanceId'   => 'processInstanceId',
+        'remark'              => 'remark',
+        'systemToken'         => 'systemToken',
         'taskId'              => 'taskId',
+        'userId'              => 'userId',
     ];
 
     public function validate()
@@ -89,32 +89,32 @@ class RedirectTaskRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->processInstanceId) {
-            $res['processInstanceId'] = $this->processInstanceId;
+        if (null !== $this->appType) {
+            $res['appType'] = $this->appType;
         }
         if (null !== $this->byManager) {
             $res['byManager'] = $this->byManager;
         }
-        if (null !== $this->appType) {
-            $res['appType'] = $this->appType;
-        }
-        if (null !== $this->systemToken) {
-            $res['systemToken'] = $this->systemToken;
-        }
         if (null !== $this->language) {
             $res['language'] = $this->language;
-        }
-        if (null !== $this->remark) {
-            $res['remark'] = $this->remark;
         }
         if (null !== $this->nowActionExecutorId) {
             $res['nowActionExecutorId'] = $this->nowActionExecutorId;
         }
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
+        if (null !== $this->processInstanceId) {
+            $res['processInstanceId'] = $this->processInstanceId;
+        }
+        if (null !== $this->remark) {
+            $res['remark'] = $this->remark;
+        }
+        if (null !== $this->systemToken) {
+            $res['systemToken'] = $this->systemToken;
         }
         if (null !== $this->taskId) {
             $res['taskId'] = $this->taskId;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -128,32 +128,32 @@ class RedirectTaskRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['processInstanceId'])) {
-            $model->processInstanceId = $map['processInstanceId'];
+        if (isset($map['appType'])) {
+            $model->appType = $map['appType'];
         }
         if (isset($map['byManager'])) {
             $model->byManager = $map['byManager'];
         }
-        if (isset($map['appType'])) {
-            $model->appType = $map['appType'];
-        }
-        if (isset($map['systemToken'])) {
-            $model->systemToken = $map['systemToken'];
-        }
         if (isset($map['language'])) {
             $model->language = $map['language'];
-        }
-        if (isset($map['remark'])) {
-            $model->remark = $map['remark'];
         }
         if (isset($map['nowActionExecutorId'])) {
             $model->nowActionExecutorId = $map['nowActionExecutorId'];
         }
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
+        if (isset($map['processInstanceId'])) {
+            $model->processInstanceId = $map['processInstanceId'];
+        }
+        if (isset($map['remark'])) {
+            $model->remark = $map['remark'];
+        }
+        if (isset($map['systemToken'])) {
+            $model->systemToken = $map['systemToken'];
         }
         if (isset($map['taskId'])) {
             $model->taskId = $map['taskId'];
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

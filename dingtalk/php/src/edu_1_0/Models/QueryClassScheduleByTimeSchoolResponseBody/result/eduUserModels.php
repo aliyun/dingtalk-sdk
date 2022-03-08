@@ -9,11 +9,9 @@ use AlibabaCloud\Tea\Model;
 class eduUserModels extends Model
 {
     /**
-     * @description 用户userid
-     *
      * @var string
      */
-    public $userId;
+    public $name;
 
     /**
      * @description 用户uid
@@ -23,13 +21,15 @@ class eduUserModels extends Model
     public $uid;
 
     /**
+     * @description 用户userid
+     *
      * @var string
      */
-    public $name;
+    public $userId;
     protected $_name = [
-        'userId' => 'userId',
-        'uid'    => 'uid',
         'name'   => 'name',
+        'uid'    => 'uid',
+        'userId' => 'userId',
     ];
 
     public function validate()
@@ -39,14 +39,14 @@ class eduUserModels extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
         }
         if (null !== $this->uid) {
             $res['uid'] = $this->uid;
         }
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -60,14 +60,14 @@ class eduUserModels extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
         }
         if (isset($map['uid'])) {
             $model->uid = $map['uid'];
         }
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

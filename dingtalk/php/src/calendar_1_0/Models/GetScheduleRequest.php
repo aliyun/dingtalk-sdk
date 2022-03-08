@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class GetScheduleRequest extends Model
 {
     /**
-     * @description 待查询的用户列表
+     * @description 查询结束时间
      *
-     * @var string[]
+     * @var string
      */
-    public $userIds;
+    public $endTime;
 
     /**
      * @description 查询开始时间
@@ -23,15 +23,15 @@ class GetScheduleRequest extends Model
     public $startTime;
 
     /**
-     * @description 查询结束时间
+     * @description 待查询的用户列表
      *
-     * @var string
+     * @var string[]
      */
-    public $endTime;
+    public $userIds;
     protected $_name = [
-        'userIds'   => 'userIds',
-        'startTime' => 'startTime',
         'endTime'   => 'endTime',
+        'startTime' => 'startTime',
+        'userIds'   => 'userIds',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class GetScheduleRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->userIds) {
-            $res['userIds'] = $this->userIds;
+        if (null !== $this->endTime) {
+            $res['endTime'] = $this->endTime;
         }
         if (null !== $this->startTime) {
             $res['startTime'] = $this->startTime;
         }
-        if (null !== $this->endTime) {
-            $res['endTime'] = $this->endTime;
+        if (null !== $this->userIds) {
+            $res['userIds'] = $this->userIds;
         }
 
         return $res;
@@ -62,16 +62,16 @@ class GetScheduleRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['userIds'])) {
-            if (!empty($map['userIds'])) {
-                $model->userIds = $map['userIds'];
-            }
+        if (isset($map['endTime'])) {
+            $model->endTime = $map['endTime'];
         }
         if (isset($map['startTime'])) {
             $model->startTime = $map['startTime'];
         }
-        if (isset($map['endTime'])) {
-            $model->endTime = $map['endTime'];
+        if (isset($map['userIds'])) {
+            if (!empty($map['userIds'])) {
+                $model->userIds = $map['userIds'];
+            }
         }
 
         return $model;

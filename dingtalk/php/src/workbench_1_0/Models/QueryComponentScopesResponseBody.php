@@ -9,19 +9,19 @@ use AlibabaCloud\Tea\Model;
 class QueryComponentScopesResponseBody extends Model
 {
     /**
+     * @var int[]
+     */
+    public $deptVisibleScopes;
+
+    /**
      * @description scopes
      *
      * @var string[]
      */
     public $userVisibleScopes;
-
-    /**
-     * @var int[]
-     */
-    public $deptVisibleScopes;
     protected $_name = [
-        'userVisibleScopes' => 'userVisibleScopes',
         'deptVisibleScopes' => 'deptVisibleScopes',
+        'userVisibleScopes' => 'userVisibleScopes',
     ];
 
     public function validate()
@@ -31,11 +31,11 @@ class QueryComponentScopesResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->userVisibleScopes) {
-            $res['userVisibleScopes'] = $this->userVisibleScopes;
-        }
         if (null !== $this->deptVisibleScopes) {
             $res['deptVisibleScopes'] = $this->deptVisibleScopes;
+        }
+        if (null !== $this->userVisibleScopes) {
+            $res['userVisibleScopes'] = $this->userVisibleScopes;
         }
 
         return $res;
@@ -49,14 +49,14 @@ class QueryComponentScopesResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['userVisibleScopes'])) {
-            if (!empty($map['userVisibleScopes'])) {
-                $model->userVisibleScopes = $map['userVisibleScopes'];
-            }
-        }
         if (isset($map['deptVisibleScopes'])) {
             if (!empty($map['deptVisibleScopes'])) {
                 $model->deptVisibleScopes = $map['deptVisibleScopes'];
+            }
+        }
+        if (isset($map['userVisibleScopes'])) {
+            if (!empty($map['userVisibleScopes'])) {
+                $model->userVisibleScopes = $map['userVisibleScopes'];
             }
         }
 

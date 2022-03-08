@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class BatchSendOTOResponseBody extends Model
 {
     /**
-     * @description 消息id
+     * @description 推送频繁，被限流的用户userId列表
      *
-     * @var string
+     * @var string[]
      */
-    public $processQueryKey;
+    public $flowControlledStaffIdList;
 
     /**
      * @description 无效的用户userId列表
@@ -23,15 +23,15 @@ class BatchSendOTOResponseBody extends Model
     public $invalidStaffIdList;
 
     /**
-     * @description 推送频繁，被限流的用户userId列表
+     * @description 消息id
      *
-     * @var string[]
+     * @var string
      */
-    public $flowControlledStaffIdList;
+    public $processQueryKey;
     protected $_name = [
-        'processQueryKey'           => 'processQueryKey',
-        'invalidStaffIdList'        => 'invalidStaffIdList',
         'flowControlledStaffIdList' => 'flowControlledStaffIdList',
+        'invalidStaffIdList'        => 'invalidStaffIdList',
+        'processQueryKey'           => 'processQueryKey',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class BatchSendOTOResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->processQueryKey) {
-            $res['processQueryKey'] = $this->processQueryKey;
+        if (null !== $this->flowControlledStaffIdList) {
+            $res['flowControlledStaffIdList'] = $this->flowControlledStaffIdList;
         }
         if (null !== $this->invalidStaffIdList) {
             $res['invalidStaffIdList'] = $this->invalidStaffIdList;
         }
-        if (null !== $this->flowControlledStaffIdList) {
-            $res['flowControlledStaffIdList'] = $this->flowControlledStaffIdList;
+        if (null !== $this->processQueryKey) {
+            $res['processQueryKey'] = $this->processQueryKey;
         }
 
         return $res;
@@ -62,18 +62,18 @@ class BatchSendOTOResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['processQueryKey'])) {
-            $model->processQueryKey = $map['processQueryKey'];
+        if (isset($map['flowControlledStaffIdList'])) {
+            if (!empty($map['flowControlledStaffIdList'])) {
+                $model->flowControlledStaffIdList = $map['flowControlledStaffIdList'];
+            }
         }
         if (isset($map['invalidStaffIdList'])) {
             if (!empty($map['invalidStaffIdList'])) {
                 $model->invalidStaffIdList = $map['invalidStaffIdList'];
             }
         }
-        if (isset($map['flowControlledStaffIdList'])) {
-            if (!empty($map['flowControlledStaffIdList'])) {
-                $model->flowControlledStaffIdList = $map['flowControlledStaffIdList'];
-            }
+        if (isset($map['processQueryKey'])) {
+            $model->processQueryKey = $map['processQueryKey'];
         }
 
         return $model;

@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
+     * @description 职务描述
+     *
+     * @var string
+     */
+    public $jobDescription;
+
+    /**
      * @description 职务ID
      *
      * @var string
@@ -21,17 +28,10 @@ class list_ extends Model
      * @var string
      */
     public $jobName;
-
-    /**
-     * @description 职务描述
-     *
-     * @var string
-     */
-    public $jobDescription;
     protected $_name = [
+        'jobDescription' => 'jobDescription',
         'jobId'          => 'jobId',
         'jobName'        => 'jobName',
-        'jobDescription' => 'jobDescription',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class list_ extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->jobDescription) {
+            $res['jobDescription'] = $this->jobDescription;
+        }
         if (null !== $this->jobId) {
             $res['jobId'] = $this->jobId;
         }
         if (null !== $this->jobName) {
             $res['jobName'] = $this->jobName;
-        }
-        if (null !== $this->jobDescription) {
-            $res['jobDescription'] = $this->jobDescription;
         }
 
         return $res;
@@ -62,14 +62,14 @@ class list_ extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['jobDescription'])) {
+            $model->jobDescription = $map['jobDescription'];
+        }
         if (isset($map['jobId'])) {
             $model->jobId = $map['jobId'];
         }
         if (isset($map['jobName'])) {
             $model->jobName = $map['jobName'];
-        }
-        if (isset($map['jobDescription'])) {
-            $model->jobDescription = $map['jobDescription'];
         }
 
         return $model;

@@ -9,27 +9,6 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 操作员userId
-     *
-     * @var string
-     */
-    public $opUserId;
-
-    /**
-     * @description 操作员名字
-     *
-     * @var string
-     */
-    public $opName;
-
-    /**
-     * @description 操作时间
-     *
-     * @var int
-     */
-    public $opTime;
-
-    /**
      * @description 操作分类（一级）
      *
      * @var string
@@ -49,13 +28,34 @@ class data extends Model
      * @var string
      */
     public $content;
+
+    /**
+     * @description 操作员名字
+     *
+     * @var string
+     */
+    public $opName;
+
+    /**
+     * @description 操作时间
+     *
+     * @var int
+     */
+    public $opTime;
+
+    /**
+     * @description 操作员userId
+     *
+     * @var string
+     */
+    public $opUserId;
     protected $_name = [
-        'opUserId'      => 'opUserId',
-        'opName'        => 'opName',
-        'opTime'        => 'opTime',
         'category1Name' => 'category1Name',
         'category2Name' => 'category2Name',
         'content'       => 'content',
+        'opName'        => 'opName',
+        'opTime'        => 'opTime',
+        'opUserId'      => 'opUserId',
     ];
 
     public function validate()
@@ -65,15 +65,6 @@ class data extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->opUserId) {
-            $res['opUserId'] = $this->opUserId;
-        }
-        if (null !== $this->opName) {
-            $res['opName'] = $this->opName;
-        }
-        if (null !== $this->opTime) {
-            $res['opTime'] = $this->opTime;
-        }
         if (null !== $this->category1Name) {
             $res['category1Name'] = $this->category1Name;
         }
@@ -82,6 +73,15 @@ class data extends Model
         }
         if (null !== $this->content) {
             $res['content'] = $this->content;
+        }
+        if (null !== $this->opName) {
+            $res['opName'] = $this->opName;
+        }
+        if (null !== $this->opTime) {
+            $res['opTime'] = $this->opTime;
+        }
+        if (null !== $this->opUserId) {
+            $res['opUserId'] = $this->opUserId;
         }
 
         return $res;
@@ -95,15 +95,6 @@ class data extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['opUserId'])) {
-            $model->opUserId = $map['opUserId'];
-        }
-        if (isset($map['opName'])) {
-            $model->opName = $map['opName'];
-        }
-        if (isset($map['opTime'])) {
-            $model->opTime = $map['opTime'];
-        }
         if (isset($map['category1Name'])) {
             $model->category1Name = $map['category1Name'];
         }
@@ -112,6 +103,15 @@ class data extends Model
         }
         if (isset($map['content'])) {
             $model->content = $map['content'];
+        }
+        if (isset($map['opName'])) {
+            $model->opName = $map['opName'];
+        }
+        if (isset($map['opTime'])) {
+            $model->opTime = $map['opTime'];
+        }
+        if (isset($map['opUserId'])) {
+            $model->opUserId = $map['opUserId'];
         }
 
         return $model;

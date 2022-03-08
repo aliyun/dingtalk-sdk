@@ -11,7 +11,7 @@ class CreateGroupRequest extends Model
     /**
      * @var string
      */
-    public $uuid;
+    public $channel;
 
     /**
      * @var string
@@ -21,29 +21,29 @@ class CreateGroupRequest extends Model
     /**
      * @var string
      */
-    public $name;
-
-    /**
-     * @var string
-     */
     public $iconMediaId;
 
     /**
      * @var string
      */
-    public $channel;
+    public $name;
 
     /**
      * @var string[]
      */
     public $properties;
+
+    /**
+     * @var string
+     */
+    public $uuid;
     protected $_name = [
-        'uuid'        => 'uuid',
-        'creatorUid'  => 'creatorUid',
-        'name'        => 'name',
-        'iconMediaId' => 'iconMediaId',
         'channel'     => 'channel',
+        'creatorUid'  => 'creatorUid',
+        'iconMediaId' => 'iconMediaId',
+        'name'        => 'name',
         'properties'  => 'properties',
+        'uuid'        => 'uuid',
     ];
 
     public function validate()
@@ -53,23 +53,23 @@ class CreateGroupRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->uuid) {
-            $res['uuid'] = $this->uuid;
+        if (null !== $this->channel) {
+            $res['channel'] = $this->channel;
         }
         if (null !== $this->creatorUid) {
             $res['creatorUid'] = $this->creatorUid;
         }
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
-        }
         if (null !== $this->iconMediaId) {
             $res['iconMediaId'] = $this->iconMediaId;
         }
-        if (null !== $this->channel) {
-            $res['channel'] = $this->channel;
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
         }
         if (null !== $this->properties) {
             $res['properties'] = $this->properties;
+        }
+        if (null !== $this->uuid) {
+            $res['uuid'] = $this->uuid;
         }
 
         return $res;
@@ -83,23 +83,23 @@ class CreateGroupRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['uuid'])) {
-            $model->uuid = $map['uuid'];
+        if (isset($map['channel'])) {
+            $model->channel = $map['channel'];
         }
         if (isset($map['creatorUid'])) {
             $model->creatorUid = $map['creatorUid'];
         }
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
-        }
         if (isset($map['iconMediaId'])) {
             $model->iconMediaId = $map['iconMediaId'];
         }
-        if (isset($map['channel'])) {
-            $model->channel = $map['channel'];
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
         }
         if (isset($map['properties'])) {
             $model->properties = $map['properties'];
+        }
+        if (isset($map['uuid'])) {
+            $model->uuid = $map['uuid'];
         }
 
         return $model;

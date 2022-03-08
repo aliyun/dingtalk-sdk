@@ -9,6 +9,20 @@ use AlibabaCloud\Tea\Model;
 class QueryJobRanksRequest extends Model
 {
     /**
+     * @description 本次读取的最大数据记录数量
+     *
+     * @var int
+     */
+    public $maxResults;
+
+    /**
+     * @description 标记当前开始读取的位置
+     *
+     * @var int
+     */
+    public $nextToken;
+
+    /**
      * @description 职级序列
      *
      * @var string
@@ -28,26 +42,12 @@ class QueryJobRanksRequest extends Model
      * @var string
      */
     public $rankName;
-
-    /**
-     * @description 标记当前开始读取的位置
-     *
-     * @var int
-     */
-    public $nextToken;
-
-    /**
-     * @description 本次读取的最大数据记录数量
-     *
-     * @var int
-     */
-    public $maxResults;
     protected $_name = [
+        'maxResults'     => 'maxResults',
+        'nextToken'      => 'nextToken',
         'rankCategoryId' => 'rankCategoryId',
         'rankCode'       => 'rankCode',
         'rankName'       => 'rankName',
-        'nextToken'      => 'nextToken',
-        'maxResults'     => 'maxResults',
     ];
 
     public function validate()
@@ -57,6 +57,12 @@ class QueryJobRanksRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->maxResults) {
+            $res['maxResults'] = $this->maxResults;
+        }
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
+        }
         if (null !== $this->rankCategoryId) {
             $res['rankCategoryId'] = $this->rankCategoryId;
         }
@@ -65,12 +71,6 @@ class QueryJobRanksRequest extends Model
         }
         if (null !== $this->rankName) {
             $res['rankName'] = $this->rankName;
-        }
-        if (null !== $this->nextToken) {
-            $res['nextToken'] = $this->nextToken;
-        }
-        if (null !== $this->maxResults) {
-            $res['maxResults'] = $this->maxResults;
         }
 
         return $res;
@@ -84,6 +84,12 @@ class QueryJobRanksRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['maxResults'])) {
+            $model->maxResults = $map['maxResults'];
+        }
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
+        }
         if (isset($map['rankCategoryId'])) {
             $model->rankCategoryId = $map['rankCategoryId'];
         }
@@ -92,12 +98,6 @@ class QueryJobRanksRequest extends Model
         }
         if (isset($map['rankName'])) {
             $model->rankName = $map['rankName'];
-        }
-        if (isset($map['nextToken'])) {
-            $model->nextToken = $map['nextToken'];
-        }
-        if (isset($map['maxResults'])) {
-            $model->maxResults = $map['maxResults'];
         }
 
         return $model;

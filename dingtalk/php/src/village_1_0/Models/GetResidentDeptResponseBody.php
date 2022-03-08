@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class GetResidentDeptResponseBody extends Model
 {
     /**
+     * @description 通讯录架构类型
+     *
+     * @var string
+     */
+    public $contactType;
+
+    /**
      * @description 下属组织的部门ID
      *
      * @var int
@@ -30,23 +37,16 @@ class GetResidentDeptResponseBody extends Model
     public $deptType;
 
     /**
-     * @description 通讯录架构类型
-     *
-     * @var string
-     */
-    public $contactType;
-
-    /**
      * @description 部门属性
      *
      * @var string
      */
     public $feature;
     protected $_name = [
+        'contactType'    => 'contactType',
         'departmentId'   => 'departmentId',
         'departmentName' => 'departmentName',
         'deptType'       => 'deptType',
-        'contactType'    => 'contactType',
         'feature'        => 'feature',
     ];
 
@@ -57,6 +57,9 @@ class GetResidentDeptResponseBody extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->contactType) {
+            $res['contactType'] = $this->contactType;
+        }
         if (null !== $this->departmentId) {
             $res['departmentId'] = $this->departmentId;
         }
@@ -65,9 +68,6 @@ class GetResidentDeptResponseBody extends Model
         }
         if (null !== $this->deptType) {
             $res['deptType'] = $this->deptType;
-        }
-        if (null !== $this->contactType) {
-            $res['contactType'] = $this->contactType;
         }
         if (null !== $this->feature) {
             $res['feature'] = $this->feature;
@@ -84,6 +84,9 @@ class GetResidentDeptResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['contactType'])) {
+            $model->contactType = $map['contactType'];
+        }
         if (isset($map['departmentId'])) {
             $model->departmentId = $map['departmentId'];
         }
@@ -92,9 +95,6 @@ class GetResidentDeptResponseBody extends Model
         }
         if (isset($map['deptType'])) {
             $model->deptType = $map['deptType'];
-        }
-        if (isset($map['contactType'])) {
-            $model->contactType = $map['contactType'];
         }
         if (isset($map['feature'])) {
             $model->feature = $map['feature'];

@@ -9,18 +9,11 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 统计日期
+     * @description 版本信息
      *
      * @var string
      */
-    public $statDate;
-
-    /**
-     * @description 组织名称
-     *
-     * @var string
-     */
-    public $orgName;
+    public $appVersion;
 
     /**
      * @description 端信息
@@ -30,11 +23,18 @@ class data extends Model
     public $client;
 
     /**
-     * @description 版本信息
+     * @description 组织名称
      *
      * @var string
      */
-    public $appVersion;
+    public $orgName;
+
+    /**
+     * @description 统计日期
+     *
+     * @var string
+     */
+    public $statDate;
 
     /**
      * @description 用户数
@@ -43,10 +43,10 @@ class data extends Model
      */
     public $userCnt;
     protected $_name = [
-        'statDate'   => 'statDate',
-        'orgName'    => 'orgName',
-        'client'     => 'client',
         'appVersion' => 'appVersion',
+        'client'     => 'client',
+        'orgName'    => 'orgName',
+        'statDate'   => 'statDate',
         'userCnt'    => 'userCnt',
     ];
 
@@ -57,17 +57,17 @@ class data extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->statDate) {
-            $res['statDate'] = $this->statDate;
-        }
-        if (null !== $this->orgName) {
-            $res['orgName'] = $this->orgName;
+        if (null !== $this->appVersion) {
+            $res['appVersion'] = $this->appVersion;
         }
         if (null !== $this->client) {
             $res['client'] = $this->client;
         }
-        if (null !== $this->appVersion) {
-            $res['appVersion'] = $this->appVersion;
+        if (null !== $this->orgName) {
+            $res['orgName'] = $this->orgName;
+        }
+        if (null !== $this->statDate) {
+            $res['statDate'] = $this->statDate;
         }
         if (null !== $this->userCnt) {
             $res['userCnt'] = $this->userCnt;
@@ -84,17 +84,17 @@ class data extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['statDate'])) {
-            $model->statDate = $map['statDate'];
-        }
-        if (isset($map['orgName'])) {
-            $model->orgName = $map['orgName'];
+        if (isset($map['appVersion'])) {
+            $model->appVersion = $map['appVersion'];
         }
         if (isset($map['client'])) {
             $model->client = $map['client'];
         }
-        if (isset($map['appVersion'])) {
-            $model->appVersion = $map['appVersion'];
+        if (isset($map['orgName'])) {
+            $model->orgName = $map['orgName'];
+        }
+        if (isset($map['statDate'])) {
+            $model->statDate = $map['statDate'];
         }
         if (isset($map['userCnt'])) {
             $model->userCnt = $map['userCnt'];

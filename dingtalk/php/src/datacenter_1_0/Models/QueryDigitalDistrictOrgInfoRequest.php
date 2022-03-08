@@ -9,23 +9,17 @@ use AlibabaCloud\Tea\Model;
 class QueryDigitalDistrictOrgInfoRequest extends Model
 {
     /**
-     * @var string
+     * @var string[]
      */
-    public $kpiGroupId;
+    public $corpIds;
 
     /**
      * @var string[]
      */
     public $statDates;
-
-    /**
-     * @var string[]
-     */
-    public $corpIds;
     protected $_name = [
-        'kpiGroupId' => 'kpiGroupId',
-        'statDates'  => 'statDates',
-        'corpIds'    => 'corpIds',
+        'corpIds'   => 'corpIds',
+        'statDates' => 'statDates',
     ];
 
     public function validate()
@@ -35,14 +29,11 @@ class QueryDigitalDistrictOrgInfoRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->kpiGroupId) {
-            $res['kpiGroupId'] = $this->kpiGroupId;
+        if (null !== $this->corpIds) {
+            $res['corpIds'] = $this->corpIds;
         }
         if (null !== $this->statDates) {
             $res['statDates'] = $this->statDates;
-        }
-        if (null !== $this->corpIds) {
-            $res['corpIds'] = $this->corpIds;
         }
 
         return $res;
@@ -56,17 +47,14 @@ class QueryDigitalDistrictOrgInfoRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['kpiGroupId'])) {
-            $model->kpiGroupId = $map['kpiGroupId'];
+        if (isset($map['corpIds'])) {
+            if (!empty($map['corpIds'])) {
+                $model->corpIds = $map['corpIds'];
+            }
         }
         if (isset($map['statDates'])) {
             if (!empty($map['statDates'])) {
                 $model->statDates = $map['statDates'];
-            }
-        }
-        if (isset($map['corpIds'])) {
-            if (!empty($map['corpIds'])) {
-                $model->corpIds = $map['corpIds'];
             }
         }
 

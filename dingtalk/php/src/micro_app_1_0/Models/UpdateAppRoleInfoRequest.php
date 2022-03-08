@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class UpdateAppRoleInfoRequest extends Model
 {
     /**
-     * @description 执行用户userId
+     * @description 变更角色管理权限，可不传，不传则不变
      *
-     * @var string
+     * @var bool
      */
-    public $opUserId;
+    public $canManageRole;
 
     /**
      * @description 变更角色名称，可不传，不传则不变
@@ -23,15 +23,15 @@ class UpdateAppRoleInfoRequest extends Model
     public $newRoleName;
 
     /**
-     * @description 变更角色管理权限，可不传，不传则不变
+     * @description 执行用户userId
      *
-     * @var bool
+     * @var string
      */
-    public $canManageRole;
+    public $opUserId;
     protected $_name = [
-        'opUserId'      => 'opUserId',
-        'newRoleName'   => 'newRoleName',
         'canManageRole' => 'canManageRole',
+        'newRoleName'   => 'newRoleName',
+        'opUserId'      => 'opUserId',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class UpdateAppRoleInfoRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->opUserId) {
-            $res['opUserId'] = $this->opUserId;
+        if (null !== $this->canManageRole) {
+            $res['canManageRole'] = $this->canManageRole;
         }
         if (null !== $this->newRoleName) {
             $res['newRoleName'] = $this->newRoleName;
         }
-        if (null !== $this->canManageRole) {
-            $res['canManageRole'] = $this->canManageRole;
+        if (null !== $this->opUserId) {
+            $res['opUserId'] = $this->opUserId;
         }
 
         return $res;
@@ -62,14 +62,14 @@ class UpdateAppRoleInfoRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['opUserId'])) {
-            $model->opUserId = $map['opUserId'];
+        if (isset($map['canManageRole'])) {
+            $model->canManageRole = $map['canManageRole'];
         }
         if (isset($map['newRoleName'])) {
             $model->newRoleName = $map['newRoleName'];
         }
-        if (isset($map['canManageRole'])) {
-            $model->canManageRole = $map['canManageRole'];
+        if (isset($map['opUserId'])) {
+            $model->opUserId = $map['opUserId'];
         }
 
         return $model;

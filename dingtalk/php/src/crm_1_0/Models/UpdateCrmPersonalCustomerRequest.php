@@ -10,19 +10,11 @@ use AlibabaCloud\Tea\Model;
 class UpdateCrmPersonalCustomerRequest extends Model
 {
     /**
+     * @description 公海领取客户：publicDraw 公海分配客户：publicAssign 其余场景：（不用传）
+     *
      * @var string
      */
-    public $instanceId;
-
-    /**
-     * @var string
-     */
-    public $modifierUserId;
-
-    /**
-     * @var string
-     */
-    public $modifierNick;
+    public $action;
 
     /**
      * @var mixed[]
@@ -33,6 +25,21 @@ class UpdateCrmPersonalCustomerRequest extends Model
      * @var mixed[]
      */
     public $extendData;
+
+    /**
+     * @var string
+     */
+    public $instanceId;
+
+    /**
+     * @var string
+     */
+    public $modifierNick;
+
+    /**
+     * @var string
+     */
+    public $modifierUserId;
 
     /**
      * @var permission
@@ -50,23 +57,16 @@ class UpdateCrmPersonalCustomerRequest extends Model
      * @var bool
      */
     public $skipDuplicateCheck;
-
-    /**
-     * @description 公海领取客户：publicDraw 公海分配客户：publicAssign 其余场景：（不用传）
-     *
-     * @var string
-     */
-    public $action;
     protected $_name = [
-        'instanceId'         => 'instanceId',
-        'modifierUserId'     => 'modifierUserId',
-        'modifierNick'       => 'modifierNick',
+        'action'             => 'action',
         'data'               => 'data',
         'extendData'         => 'extendData',
+        'instanceId'         => 'instanceId',
+        'modifierNick'       => 'modifierNick',
+        'modifierUserId'     => 'modifierUserId',
         'permission'         => 'permission',
         'relationType'       => 'relationType',
         'skipDuplicateCheck' => 'skipDuplicateCheck',
-        'action'             => 'action',
     ];
 
     public function validate()
@@ -76,20 +76,23 @@ class UpdateCrmPersonalCustomerRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->instanceId) {
-            $res['instanceId'] = $this->instanceId;
-        }
-        if (null !== $this->modifierUserId) {
-            $res['modifierUserId'] = $this->modifierUserId;
-        }
-        if (null !== $this->modifierNick) {
-            $res['modifierNick'] = $this->modifierNick;
+        if (null !== $this->action) {
+            $res['action'] = $this->action;
         }
         if (null !== $this->data) {
             $res['data'] = $this->data;
         }
         if (null !== $this->extendData) {
             $res['extendData'] = $this->extendData;
+        }
+        if (null !== $this->instanceId) {
+            $res['instanceId'] = $this->instanceId;
+        }
+        if (null !== $this->modifierNick) {
+            $res['modifierNick'] = $this->modifierNick;
+        }
+        if (null !== $this->modifierUserId) {
+            $res['modifierUserId'] = $this->modifierUserId;
         }
         if (null !== $this->permission) {
             $res['permission'] = null !== $this->permission ? $this->permission->toMap() : null;
@@ -99,9 +102,6 @@ class UpdateCrmPersonalCustomerRequest extends Model
         }
         if (null !== $this->skipDuplicateCheck) {
             $res['skipDuplicateCheck'] = $this->skipDuplicateCheck;
-        }
-        if (null !== $this->action) {
-            $res['action'] = $this->action;
         }
 
         return $res;
@@ -115,20 +115,23 @@ class UpdateCrmPersonalCustomerRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['instanceId'])) {
-            $model->instanceId = $map['instanceId'];
-        }
-        if (isset($map['modifierUserId'])) {
-            $model->modifierUserId = $map['modifierUserId'];
-        }
-        if (isset($map['modifierNick'])) {
-            $model->modifierNick = $map['modifierNick'];
+        if (isset($map['action'])) {
+            $model->action = $map['action'];
         }
         if (isset($map['data'])) {
             $model->data = $map['data'];
         }
         if (isset($map['extendData'])) {
             $model->extendData = $map['extendData'];
+        }
+        if (isset($map['instanceId'])) {
+            $model->instanceId = $map['instanceId'];
+        }
+        if (isset($map['modifierNick'])) {
+            $model->modifierNick = $map['modifierNick'];
+        }
+        if (isset($map['modifierUserId'])) {
+            $model->modifierUserId = $map['modifierUserId'];
         }
         if (isset($map['permission'])) {
             $model->permission = permission::fromMap($map['permission']);
@@ -138,9 +141,6 @@ class UpdateCrmPersonalCustomerRequest extends Model
         }
         if (isset($map['skipDuplicateCheck'])) {
             $model->skipDuplicateCheck = $map['skipDuplicateCheck'];
-        }
-        if (isset($map['action'])) {
-            $model->action = $map['action'];
         }
 
         return $model;

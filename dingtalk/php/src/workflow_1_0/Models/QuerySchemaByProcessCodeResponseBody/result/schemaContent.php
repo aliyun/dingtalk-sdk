@@ -10,13 +10,6 @@ use AlibabaCloud\Tea\Model;
 class schemaContent extends Model
 {
     /**
-     * @description 表单名称。
-     *
-     * @var string
-     */
-    public $title;
-
-    /**
      * @description 图标
      *
      * @var string
@@ -29,10 +22,17 @@ class schemaContent extends Model
      * @var items[]
      */
     public $items;
+
+    /**
+     * @description 表单名称。
+     *
+     * @var string
+     */
+    public $title;
     protected $_name = [
-        'title' => 'title',
         'icon'  => 'icon',
         'items' => 'items',
+        'title' => 'title',
     ];
 
     public function validate()
@@ -42,9 +42,6 @@ class schemaContent extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->title) {
-            $res['title'] = $this->title;
-        }
         if (null !== $this->icon) {
             $res['icon'] = $this->icon;
         }
@@ -56,6 +53,9 @@ class schemaContent extends Model
                     $res['items'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->title) {
+            $res['title'] = $this->title;
         }
 
         return $res;
@@ -69,9 +69,6 @@ class schemaContent extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['title'])) {
-            $model->title = $map['title'];
-        }
         if (isset($map['icon'])) {
             $model->icon = $map['icon'];
         }
@@ -83,6 +80,9 @@ class schemaContent extends Model
                     $model->items[$n++] = null !== $item ? items::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['title'])) {
+            $model->title = $map['title'];
         }
 
         return $model;

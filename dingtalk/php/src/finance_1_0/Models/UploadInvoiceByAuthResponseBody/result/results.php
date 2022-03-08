@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class results extends Model
 {
     /**
+     * @description 业务错误码
+     *
+     * @var string
+     */
+    public $errCode;
+
+    /**
      * @description 发票代码
      *
      * @var string
@@ -23,13 +30,6 @@ class results extends Model
     public $invoiceNo;
 
     /**
-     * @description 是否成功
-     *
-     * @var bool
-     */
-    public $success;
-
-    /**
      * @description 失败原因
      *
      * @var string
@@ -37,17 +37,17 @@ class results extends Model
     public $reason;
 
     /**
-     * @description 业务错误码
+     * @description 是否成功
      *
-     * @var string
+     * @var bool
      */
-    public $errCode;
+    public $success;
     protected $_name = [
+        'errCode'     => 'errCode',
         'invoiceCode' => 'invoiceCode',
         'invoiceNo'   => 'invoiceNo',
-        'success'     => 'success',
         'reason'      => 'reason',
-        'errCode'     => 'errCode',
+        'success'     => 'success',
     ];
 
     public function validate()
@@ -57,20 +57,20 @@ class results extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->errCode) {
+            $res['errCode'] = $this->errCode;
+        }
         if (null !== $this->invoiceCode) {
             $res['invoiceCode'] = $this->invoiceCode;
         }
         if (null !== $this->invoiceNo) {
             $res['invoiceNo'] = $this->invoiceNo;
         }
-        if (null !== $this->success) {
-            $res['success'] = $this->success;
-        }
         if (null !== $this->reason) {
             $res['reason'] = $this->reason;
         }
-        if (null !== $this->errCode) {
-            $res['errCode'] = $this->errCode;
+        if (null !== $this->success) {
+            $res['success'] = $this->success;
         }
 
         return $res;
@@ -84,20 +84,20 @@ class results extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['errCode'])) {
+            $model->errCode = $map['errCode'];
+        }
         if (isset($map['invoiceCode'])) {
             $model->invoiceCode = $map['invoiceCode'];
         }
         if (isset($map['invoiceNo'])) {
             $model->invoiceNo = $map['invoiceNo'];
         }
-        if (isset($map['success'])) {
-            $model->success = $map['success'];
-        }
         if (isset($map['reason'])) {
             $model->reason = $map['reason'];
         }
-        if (isset($map['errCode'])) {
-            $model->errCode = $map['errCode'];
+        if (isset($map['success'])) {
+            $model->success = $map['success'];
         }
 
         return $model;

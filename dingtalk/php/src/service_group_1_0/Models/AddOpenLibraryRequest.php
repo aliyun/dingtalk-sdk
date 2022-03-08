@@ -9,24 +9,11 @@ use AlibabaCloud\Tea\Model;
 class AddOpenLibraryRequest extends Model
 {
     /**
-     * @var int
-     */
-    public $dingIsvOrgId;
-
-    /**
-     * @var int
-     */
-    public $dingTokenGrantType;
-
-    /**
+     * @description 知识库描述
+     *
      * @var string
      */
-    public $dingSuiteKey;
-
-    /**
-     * @var int
-     */
-    public $dingOrgId;
+    public $description;
 
     /**
      * @description 开放团队ID
@@ -34,6 +21,27 @@ class AddOpenLibraryRequest extends Model
      * @var string
      */
     public $openTeamId;
+
+    /**
+     * @description 知识库来源
+     *
+     * @var string
+     */
+    public $source;
+
+    /**
+     * @description 知识库名称
+     *
+     * @var string
+     */
+    public $title;
+
+    /**
+     * @description 知识库类型
+     *
+     * @var string
+     */
+    public $type;
 
     /**
      * @description 用户/员工ID
@@ -48,46 +56,14 @@ class AddOpenLibraryRequest extends Model
      * @var string
      */
     public $userName;
-
-    /**
-     * @description 知识库名称
-     *
-     * @var string
-     */
-    public $title;
-
-    /**
-     * @description 知识库描述
-     *
-     * @var string
-     */
-    public $description;
-
-    /**
-     * @description 知识库类型
-     *
-     * @var string
-     */
-    public $type;
-
-    /**
-     * @description 知识库来源
-     *
-     * @var string
-     */
-    public $source;
     protected $_name = [
-        'dingIsvOrgId'       => 'dingIsvOrgId',
-        'dingTokenGrantType' => 'dingTokenGrantType',
-        'dingSuiteKey'       => 'dingSuiteKey',
-        'dingOrgId'          => 'dingOrgId',
-        'openTeamId'         => 'openTeamId',
-        'userId'             => 'userId',
-        'userName'           => 'userName',
-        'title'              => 'title',
-        'description'        => 'description',
-        'type'               => 'type',
-        'source'             => 'source',
+        'description' => 'description',
+        'openTeamId'  => 'openTeamId',
+        'source'      => 'source',
+        'title'       => 'title',
+        'type'        => 'type',
+        'userId'      => 'userId',
+        'userName'    => 'userName',
     ];
 
     public function validate()
@@ -97,38 +73,26 @@ class AddOpenLibraryRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->dingIsvOrgId) {
-            $res['dingIsvOrgId'] = $this->dingIsvOrgId;
-        }
-        if (null !== $this->dingTokenGrantType) {
-            $res['dingTokenGrantType'] = $this->dingTokenGrantType;
-        }
-        if (null !== $this->dingSuiteKey) {
-            $res['dingSuiteKey'] = $this->dingSuiteKey;
-        }
-        if (null !== $this->dingOrgId) {
-            $res['dingOrgId'] = $this->dingOrgId;
+        if (null !== $this->description) {
+            $res['description'] = $this->description;
         }
         if (null !== $this->openTeamId) {
             $res['openTeamId'] = $this->openTeamId;
+        }
+        if (null !== $this->source) {
+            $res['source'] = $this->source;
+        }
+        if (null !== $this->title) {
+            $res['title'] = $this->title;
+        }
+        if (null !== $this->type) {
+            $res['type'] = $this->type;
         }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
         }
         if (null !== $this->userName) {
             $res['userName'] = $this->userName;
-        }
-        if (null !== $this->title) {
-            $res['title'] = $this->title;
-        }
-        if (null !== $this->description) {
-            $res['description'] = $this->description;
-        }
-        if (null !== $this->type) {
-            $res['type'] = $this->type;
-        }
-        if (null !== $this->source) {
-            $res['source'] = $this->source;
         }
 
         return $res;
@@ -142,38 +106,26 @@ class AddOpenLibraryRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['dingIsvOrgId'])) {
-            $model->dingIsvOrgId = $map['dingIsvOrgId'];
-        }
-        if (isset($map['dingTokenGrantType'])) {
-            $model->dingTokenGrantType = $map['dingTokenGrantType'];
-        }
-        if (isset($map['dingSuiteKey'])) {
-            $model->dingSuiteKey = $map['dingSuiteKey'];
-        }
-        if (isset($map['dingOrgId'])) {
-            $model->dingOrgId = $map['dingOrgId'];
+        if (isset($map['description'])) {
+            $model->description = $map['description'];
         }
         if (isset($map['openTeamId'])) {
             $model->openTeamId = $map['openTeamId'];
+        }
+        if (isset($map['source'])) {
+            $model->source = $map['source'];
+        }
+        if (isset($map['title'])) {
+            $model->title = $map['title'];
+        }
+        if (isset($map['type'])) {
+            $model->type = $map['type'];
         }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];
         }
         if (isset($map['userName'])) {
             $model->userName = $map['userName'];
-        }
-        if (isset($map['title'])) {
-            $model->title = $map['title'];
-        }
-        if (isset($map['description'])) {
-            $model->description = $map['description'];
-        }
-        if (isset($map['type'])) {
-            $model->type = $map['type'];
-        }
-        if (isset($map['source'])) {
-            $model->source = $map['source'];
         }
 
         return $model;

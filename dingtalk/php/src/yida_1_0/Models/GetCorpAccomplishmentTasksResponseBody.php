@@ -10,11 +10,11 @@ use AlibabaCloud\Tea\Model;
 class GetCorpAccomplishmentTasksResponseBody extends Model
 {
     /**
-     * @description 总数量
+     * @description data
      *
-     * @var int
+     * @var data[]
      */
-    public $totalCount;
+    public $data;
 
     /**
      * @description 当前第几页
@@ -24,15 +24,15 @@ class GetCorpAccomplishmentTasksResponseBody extends Model
     public $pageNumber;
 
     /**
-     * @description data
+     * @description 总数量
      *
-     * @var data[]
+     * @var int
      */
-    public $data;
+    public $totalCount;
     protected $_name = [
-        'totalCount' => 'totalCount',
-        'pageNumber' => 'pageNumber',
         'data'       => 'data',
+        'pageNumber' => 'pageNumber',
+        'totalCount' => 'totalCount',
     ];
 
     public function validate()
@@ -42,12 +42,6 @@ class GetCorpAccomplishmentTasksResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->totalCount) {
-            $res['totalCount'] = $this->totalCount;
-        }
-        if (null !== $this->pageNumber) {
-            $res['pageNumber'] = $this->pageNumber;
-        }
         if (null !== $this->data) {
             $res['data'] = [];
             if (null !== $this->data && \is_array($this->data)) {
@@ -56,6 +50,12 @@ class GetCorpAccomplishmentTasksResponseBody extends Model
                     $res['data'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->pageNumber) {
+            $res['pageNumber'] = $this->pageNumber;
+        }
+        if (null !== $this->totalCount) {
+            $res['totalCount'] = $this->totalCount;
         }
 
         return $res;
@@ -69,12 +69,6 @@ class GetCorpAccomplishmentTasksResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['totalCount'])) {
-            $model->totalCount = $map['totalCount'];
-        }
-        if (isset($map['pageNumber'])) {
-            $model->pageNumber = $map['pageNumber'];
-        }
         if (isset($map['data'])) {
             if (!empty($map['data'])) {
                 $model->data = [];
@@ -83,6 +77,12 @@ class GetCorpAccomplishmentTasksResponseBody extends Model
                     $model->data[$n++] = null !== $item ? data::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['pageNumber'])) {
+            $model->pageNumber = $map['pageNumber'];
+        }
+        if (isset($map['totalCount'])) {
+            $model->totalCount = $map['totalCount'];
         }
 
         return $model;

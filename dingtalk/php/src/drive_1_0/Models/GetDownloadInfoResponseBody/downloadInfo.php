@@ -9,20 +9,6 @@ use AlibabaCloud\Tea\Model;
 class downloadInfo extends Model
 {
     /**
-     * @description 加签url
-     *
-     * @var string
-     */
-    public $resourceUrl;
-
-    /**
-     * @description 内网加签url
-     *
-     * @var string
-     */
-    public $internalResourceUrl;
-
-    /**
      * @description 加签url过期时间
      *
      * @var int
@@ -35,11 +21,25 @@ class downloadInfo extends Model
      * @var mixed[]
      */
     public $headers;
+
+    /**
+     * @description 内网加签url
+     *
+     * @var string
+     */
+    public $internalResourceUrl;
+
+    /**
+     * @description 加签url
+     *
+     * @var string
+     */
+    public $resourceUrl;
     protected $_name = [
-        'resourceUrl'         => 'resourceUrl',
-        'internalResourceUrl' => 'internalResourceUrl',
         'expirationSeconds'   => 'expirationSeconds',
         'headers'             => 'headers',
+        'internalResourceUrl' => 'internalResourceUrl',
+        'resourceUrl'         => 'resourceUrl',
     ];
 
     public function validate()
@@ -49,17 +49,17 @@ class downloadInfo extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->resourceUrl) {
-            $res['resourceUrl'] = $this->resourceUrl;
-        }
-        if (null !== $this->internalResourceUrl) {
-            $res['internalResourceUrl'] = $this->internalResourceUrl;
-        }
         if (null !== $this->expirationSeconds) {
             $res['expirationSeconds'] = $this->expirationSeconds;
         }
         if (null !== $this->headers) {
             $res['headers'] = $this->headers;
+        }
+        if (null !== $this->internalResourceUrl) {
+            $res['internalResourceUrl'] = $this->internalResourceUrl;
+        }
+        if (null !== $this->resourceUrl) {
+            $res['resourceUrl'] = $this->resourceUrl;
         }
 
         return $res;
@@ -73,17 +73,17 @@ class downloadInfo extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['resourceUrl'])) {
-            $model->resourceUrl = $map['resourceUrl'];
-        }
-        if (isset($map['internalResourceUrl'])) {
-            $model->internalResourceUrl = $map['internalResourceUrl'];
-        }
         if (isset($map['expirationSeconds'])) {
             $model->expirationSeconds = $map['expirationSeconds'];
         }
         if (isset($map['headers'])) {
             $model->headers = $map['headers'];
+        }
+        if (isset($map['internalResourceUrl'])) {
+            $model->internalResourceUrl = $map['internalResourceUrl'];
+        }
+        if (isset($map['resourceUrl'])) {
+            $model->resourceUrl = $map['resourceUrl'];
         }
 
         return $model;

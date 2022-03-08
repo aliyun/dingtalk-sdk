@@ -10,11 +10,6 @@ use AlibabaCloud\Tea\Model;
 class GetSearchItemsByKeyWordResponseBody extends Model
 {
     /**
-     * @var value[]
-     */
-    public $value;
-
-    /**
      * @description 下一次请求的加密offset，若为空则代表item已经读取完毕
      *
      * @var string
@@ -27,10 +22,15 @@ class GetSearchItemsByKeyWordResponseBody extends Model
      * @var int
      */
     public $totalCount;
+
+    /**
+     * @var value[]
+     */
+    public $value;
     protected $_name = [
-        'value'      => 'value',
         'nextToken'  => 'nextToken',
         'totalCount' => 'totalCount',
+        'value'      => 'value',
     ];
 
     public function validate()
@@ -40,6 +40,12 @@ class GetSearchItemsByKeyWordResponseBody extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
+        }
+        if (null !== $this->totalCount) {
+            $res['totalCount'] = $this->totalCount;
+        }
         if (null !== $this->value) {
             $res['value'] = [];
             if (null !== $this->value && \is_array($this->value)) {
@@ -48,12 +54,6 @@ class GetSearchItemsByKeyWordResponseBody extends Model
                     $res['value'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
-        }
-        if (null !== $this->nextToken) {
-            $res['nextToken'] = $this->nextToken;
-        }
-        if (null !== $this->totalCount) {
-            $res['totalCount'] = $this->totalCount;
         }
 
         return $res;
@@ -67,6 +67,12 @@ class GetSearchItemsByKeyWordResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
+        }
+        if (isset($map['totalCount'])) {
+            $model->totalCount = $map['totalCount'];
+        }
         if (isset($map['value'])) {
             if (!empty($map['value'])) {
                 $model->value = [];
@@ -75,12 +81,6 @@ class GetSearchItemsByKeyWordResponseBody extends Model
                     $model->value[$n++] = null !== $item ? value::fromMap($item) : $item;
                 }
             }
-        }
-        if (isset($map['nextToken'])) {
-            $model->nextToken = $map['nextToken'];
-        }
-        if (isset($map['totalCount'])) {
-            $model->totalCount = $map['totalCount'];
         }
 
         return $model;

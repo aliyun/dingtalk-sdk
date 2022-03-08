@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class groupMsgs extends Model
 {
     /**
-     * @description 勾选消息openMsgId
-     *
-     * @var string
-     */
-    public $openMsgId;
-
-    /**
      * @description 是否为锚点消息
      *
      * @var bool
      */
     public $anchor;
+
+    /**
+     * @description 勾选消息openMsgId
+     *
+     * @var string
+     */
+    public $openMsgId;
     protected $_name = [
-        'openMsgId' => 'openMsgId',
         'anchor'    => 'anchor',
+        'openMsgId' => 'openMsgId',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class groupMsgs extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->openMsgId) {
-            $res['openMsgId'] = $this->openMsgId;
-        }
         if (null !== $this->anchor) {
             $res['anchor'] = $this->anchor;
+        }
+        if (null !== $this->openMsgId) {
+            $res['openMsgId'] = $this->openMsgId;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class groupMsgs extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['openMsgId'])) {
-            $model->openMsgId = $map['openMsgId'];
-        }
         if (isset($map['anchor'])) {
             $model->anchor = $map['anchor'];
+        }
+        if (isset($map['openMsgId'])) {
+            $model->openMsgId = $map['openMsgId'];
         }
 
         return $model;

@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class roles extends Model
 {
     /**
+     * @description 标签名称 tagCode
+     *
+     * @var string
+     */
+    public $tagCode;
+
+    /**
      * @description 标签id
      *
      * @var int
@@ -21,17 +28,10 @@ class roles extends Model
      * @var string
      */
     public $tagName;
-
-    /**
-     * @description 标签名称 tagCode
-     *
-     * @var string
-     */
-    public $tagCode;
     protected $_name = [
+        'tagCode' => 'tagCode',
         'tagId'   => 'tagId',
         'tagName' => 'tagName',
-        'tagCode' => 'tagCode',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class roles extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->tagCode) {
+            $res['tagCode'] = $this->tagCode;
+        }
         if (null !== $this->tagId) {
             $res['tagId'] = $this->tagId;
         }
         if (null !== $this->tagName) {
             $res['tagName'] = $this->tagName;
-        }
-        if (null !== $this->tagCode) {
-            $res['tagCode'] = $this->tagCode;
         }
 
         return $res;
@@ -62,14 +62,14 @@ class roles extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['tagCode'])) {
+            $model->tagCode = $map['tagCode'];
+        }
         if (isset($map['tagId'])) {
             $model->tagId = $map['tagId'];
         }
         if (isset($map['tagName'])) {
             $model->tagName = $map['tagName'];
-        }
-        if (isset($map['tagCode'])) {
-            $model->tagCode = $map['tagCode'];
         }
 
         return $model;

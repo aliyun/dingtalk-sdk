@@ -9,18 +9,18 @@ use AlibabaCloud\Tea\Model;
 class ListActivateDevicesRequest extends Model
 {
     /**
+     * @description deviceCode
+     *
+     * @var string
+     */
+    public $deviceCode;
+
+    /**
      * @description deviceTypeId
      *
      * @var string
      */
     public $deviceTypeId;
-
-    /**
-     * @description pageNo
-     *
-     * @var int
-     */
-    public $pageNumber;
 
     /**
      * @description groupId
@@ -30,24 +30,24 @@ class ListActivateDevicesRequest extends Model
     public $groupId;
 
     /**
+     * @description pageNo
+     *
+     * @var int
+     */
+    public $pageNumber;
+
+    /**
      * @description pageSize
      *
      * @var int
      */
     public $pageSize;
-
-    /**
-     * @description deviceCode
-     *
-     * @var string
-     */
-    public $deviceCode;
     protected $_name = [
-        'deviceTypeId' => 'deviceTypeId',
-        'pageNumber'   => 'pageNumber',
-        'groupId'      => 'groupId',
-        'pageSize'     => 'pageSize',
         'deviceCode'   => 'deviceCode',
+        'deviceTypeId' => 'deviceTypeId',
+        'groupId'      => 'groupId',
+        'pageNumber'   => 'pageNumber',
+        'pageSize'     => 'pageSize',
     ];
 
     public function validate()
@@ -57,20 +57,20 @@ class ListActivateDevicesRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->deviceCode) {
+            $res['deviceCode'] = $this->deviceCode;
+        }
         if (null !== $this->deviceTypeId) {
             $res['deviceTypeId'] = $this->deviceTypeId;
-        }
-        if (null !== $this->pageNumber) {
-            $res['pageNumber'] = $this->pageNumber;
         }
         if (null !== $this->groupId) {
             $res['groupId'] = $this->groupId;
         }
+        if (null !== $this->pageNumber) {
+            $res['pageNumber'] = $this->pageNumber;
+        }
         if (null !== $this->pageSize) {
             $res['pageSize'] = $this->pageSize;
-        }
-        if (null !== $this->deviceCode) {
-            $res['deviceCode'] = $this->deviceCode;
         }
 
         return $res;
@@ -84,20 +84,20 @@ class ListActivateDevicesRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['deviceCode'])) {
+            $model->deviceCode = $map['deviceCode'];
+        }
         if (isset($map['deviceTypeId'])) {
             $model->deviceTypeId = $map['deviceTypeId'];
-        }
-        if (isset($map['pageNumber'])) {
-            $model->pageNumber = $map['pageNumber'];
         }
         if (isset($map['groupId'])) {
             $model->groupId = $map['groupId'];
         }
+        if (isset($map['pageNumber'])) {
+            $model->pageNumber = $map['pageNumber'];
+        }
         if (isset($map['pageSize'])) {
             $model->pageSize = $map['pageSize'];
-        }
-        if (isset($map['deviceCode'])) {
-            $model->deviceCode = $map['deviceCode'];
         }
 
         return $model;

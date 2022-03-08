@@ -10,6 +10,13 @@ use AlibabaCloud\Tea\Model;
 class CreateCustomerResponseBody extends Model
 {
     /**
+     * @description 联系人保存结果
+     *
+     * @var contacts[]
+     */
+    public $contacts;
+
+    /**
      * @description 客户实例id
      *
      * @var string
@@ -22,17 +29,10 @@ class CreateCustomerResponseBody extends Model
      * @var string
      */
     public $objectType;
-
-    /**
-     * @description 联系人保存结果
-     *
-     * @var contacts[]
-     */
-    public $contacts;
     protected $_name = [
+        'contacts'           => 'contacts',
         'customerInstanceId' => 'customerInstanceId',
         'objectType'         => 'objectType',
-        'contacts'           => 'contacts',
     ];
 
     public function validate()
@@ -42,12 +42,6 @@ class CreateCustomerResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->customerInstanceId) {
-            $res['customerInstanceId'] = $this->customerInstanceId;
-        }
-        if (null !== $this->objectType) {
-            $res['objectType'] = $this->objectType;
-        }
         if (null !== $this->contacts) {
             $res['contacts'] = [];
             if (null !== $this->contacts && \is_array($this->contacts)) {
@@ -56,6 +50,12 @@ class CreateCustomerResponseBody extends Model
                     $res['contacts'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->customerInstanceId) {
+            $res['customerInstanceId'] = $this->customerInstanceId;
+        }
+        if (null !== $this->objectType) {
+            $res['objectType'] = $this->objectType;
         }
 
         return $res;
@@ -69,12 +69,6 @@ class CreateCustomerResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['customerInstanceId'])) {
-            $model->customerInstanceId = $map['customerInstanceId'];
-        }
-        if (isset($map['objectType'])) {
-            $model->objectType = $map['objectType'];
-        }
         if (isset($map['contacts'])) {
             if (!empty($map['contacts'])) {
                 $model->contacts = [];
@@ -83,6 +77,12 @@ class CreateCustomerResponseBody extends Model
                     $model->contacts[$n++] = null !== $item ? contacts::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['customerInstanceId'])) {
+            $model->customerInstanceId = $map['customerInstanceId'];
+        }
+        if (isset($map['objectType'])) {
+            $model->objectType = $map['objectType'];
         }
 
         return $model;

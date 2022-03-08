@@ -10,11 +10,11 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description title
+     * @description formUuid
      *
-     * @var title
+     * @var string
      */
-    public $title;
+    public $formUuid;
 
     /**
      * @description processCode
@@ -24,15 +24,15 @@ class result extends Model
     public $processCode;
 
     /**
-     * @description formUuid
+     * @description title
      *
-     * @var string
+     * @var title
      */
-    public $formUuid;
+    public $title;
     protected $_name = [
-        'title'       => 'title',
-        'processCode' => 'processCode',
         'formUuid'    => 'formUuid',
+        'processCode' => 'processCode',
+        'title'       => 'title',
     ];
 
     public function validate()
@@ -42,14 +42,14 @@ class result extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->title) {
-            $res['title'] = null !== $this->title ? $this->title->toMap() : null;
+        if (null !== $this->formUuid) {
+            $res['formUuid'] = $this->formUuid;
         }
         if (null !== $this->processCode) {
             $res['processCode'] = $this->processCode;
         }
-        if (null !== $this->formUuid) {
-            $res['formUuid'] = $this->formUuid;
+        if (null !== $this->title) {
+            $res['title'] = null !== $this->title ? $this->title->toMap() : null;
         }
 
         return $res;
@@ -63,14 +63,14 @@ class result extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['title'])) {
-            $model->title = title::fromMap($map['title']);
+        if (isset($map['formUuid'])) {
+            $model->formUuid = $map['formUuid'];
         }
         if (isset($map['processCode'])) {
             $model->processCode = $map['processCode'];
         }
-        if (isset($map['formUuid'])) {
-            $model->formUuid = $map['formUuid'];
+        if (isset($map['title'])) {
+            $model->title = title::fromMap($map['title']);
         }
 
         return $model;

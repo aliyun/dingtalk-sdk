@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class BindSystemRequest extends Model
 {
     /**
-     * @description 三方平台的用户的钉钉物联组织ID。
-     *
-     * @var string
-     */
-    public $corpId;
-
-    /**
      * @description 与三方平台绑定验证的临时授权码。
      *
      * @var string
@@ -37,16 +30,23 @@ class BindSystemRequest extends Model
     public $clientName;
 
     /**
+     * @description 三方平台的用户的钉钉物联组织ID。
+     *
+     * @var string
+     */
+    public $corpId;
+
+    /**
      * @description 三方平台协定的其它参数。
      *
      * @var mixed[]
      */
     public $extraData;
     protected $_name = [
-        'corpId'     => 'corpId',
         'authCode'   => 'authCode',
         'clientId'   => 'clientId',
         'clientName' => 'clientName',
+        'corpId'     => 'corpId',
         'extraData'  => 'extraData',
     ];
 
@@ -57,9 +57,6 @@ class BindSystemRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->corpId) {
-            $res['corpId'] = $this->corpId;
-        }
         if (null !== $this->authCode) {
             $res['authCode'] = $this->authCode;
         }
@@ -68,6 +65,9 @@ class BindSystemRequest extends Model
         }
         if (null !== $this->clientName) {
             $res['clientName'] = $this->clientName;
+        }
+        if (null !== $this->corpId) {
+            $res['corpId'] = $this->corpId;
         }
         if (null !== $this->extraData) {
             $res['extraData'] = $this->extraData;
@@ -84,9 +84,6 @@ class BindSystemRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['corpId'])) {
-            $model->corpId = $map['corpId'];
-        }
         if (isset($map['authCode'])) {
             $model->authCode = $map['authCode'];
         }
@@ -95,6 +92,9 @@ class BindSystemRequest extends Model
         }
         if (isset($map['clientName'])) {
             $model->clientName = $map['clientName'];
+        }
+        if (isset($map['corpId'])) {
+            $model->corpId = $map['corpId'];
         }
         if (isset($map['extraData'])) {
             $model->extraData = $map['extraData'];

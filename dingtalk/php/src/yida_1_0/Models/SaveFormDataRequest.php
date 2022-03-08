@@ -16,6 +16,27 @@ class SaveFormDataRequest extends Model
     public $appType;
 
     /**
+     * @description 表单数据
+     *
+     * @var string
+     */
+    public $formDataJson;
+
+    /**
+     * @description 表单ID
+     *
+     * @var string
+     */
+    public $formUuid;
+
+    /**
+     * @description 语言。可选值：zh_CN/en_US 默认：zh_CN
+     *
+     * @var string
+     */
+    public $language;
+
+    /**
      * @description 应用秘钥。在应用数据中获取。
      *
      * @var string
@@ -28,34 +49,13 @@ class SaveFormDataRequest extends Model
      * @var string
      */
     public $userId;
-
-    /**
-     * @description 语言。可选值：zh_CN/en_US 默认：zh_CN
-     *
-     * @var string
-     */
-    public $language;
-
-    /**
-     * @description 表单ID
-     *
-     * @var string
-     */
-    public $formUuid;
-
-    /**
-     * @description 表单数据
-     *
-     * @var string
-     */
-    public $formDataJson;
     protected $_name = [
         'appType'      => 'appType',
+        'formDataJson' => 'formDataJson',
+        'formUuid'     => 'formUuid',
+        'language'     => 'language',
         'systemToken'  => 'systemToken',
         'userId'       => 'userId',
-        'language'     => 'language',
-        'formUuid'     => 'formUuid',
-        'formDataJson' => 'formDataJson',
     ];
 
     public function validate()
@@ -68,20 +68,20 @@ class SaveFormDataRequest extends Model
         if (null !== $this->appType) {
             $res['appType'] = $this->appType;
         }
+        if (null !== $this->formDataJson) {
+            $res['formDataJson'] = $this->formDataJson;
+        }
+        if (null !== $this->formUuid) {
+            $res['formUuid'] = $this->formUuid;
+        }
+        if (null !== $this->language) {
+            $res['language'] = $this->language;
+        }
         if (null !== $this->systemToken) {
             $res['systemToken'] = $this->systemToken;
         }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
-        }
-        if (null !== $this->language) {
-            $res['language'] = $this->language;
-        }
-        if (null !== $this->formUuid) {
-            $res['formUuid'] = $this->formUuid;
-        }
-        if (null !== $this->formDataJson) {
-            $res['formDataJson'] = $this->formDataJson;
         }
 
         return $res;
@@ -98,20 +98,20 @@ class SaveFormDataRequest extends Model
         if (isset($map['appType'])) {
             $model->appType = $map['appType'];
         }
+        if (isset($map['formDataJson'])) {
+            $model->formDataJson = $map['formDataJson'];
+        }
+        if (isset($map['formUuid'])) {
+            $model->formUuid = $map['formUuid'];
+        }
+        if (isset($map['language'])) {
+            $model->language = $map['language'];
+        }
         if (isset($map['systemToken'])) {
             $model->systemToken = $map['systemToken'];
         }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];
-        }
-        if (isset($map['language'])) {
-            $model->language = $map['language'];
-        }
-        if (isset($map['formUuid'])) {
-            $model->formUuid = $map['formUuid'];
-        }
-        if (isset($map['formDataJson'])) {
-            $model->formDataJson = $map['formDataJson'];
         }
 
         return $model;

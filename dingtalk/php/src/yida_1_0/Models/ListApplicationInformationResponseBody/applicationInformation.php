@@ -10,13 +10,6 @@ use AlibabaCloud\Tea\Model;
 class applicationInformation extends Model
 {
     /**
-     * @description usagePlugins
-     *
-     * @var usagePlugins[]
-     */
-    public $usagePlugins;
-
-    /**
      * @description appName
      *
      * @var string
@@ -31,6 +24,13 @@ class applicationInformation extends Model
     public $appType;
 
     /**
+     * @description attachmentUsageAmount
+     *
+     * @var int
+     */
+    public $attachmentUsageAmount;
+
+    /**
      * @description instanceUsageAmount
      *
      * @var int
@@ -38,17 +38,17 @@ class applicationInformation extends Model
     public $instanceUsageAmount;
 
     /**
-     * @description attachmentUsageAmount
+     * @description usagePlugins
      *
-     * @var int
+     * @var usagePlugins[]
      */
-    public $attachmentUsageAmount;
+    public $usagePlugins;
     protected $_name = [
-        'usagePlugins'          => 'usagePlugins',
         'appName'               => 'appName',
         'appType'               => 'appType',
-        'instanceUsageAmount'   => 'instanceUsageAmount',
         'attachmentUsageAmount' => 'attachmentUsageAmount',
+        'instanceUsageAmount'   => 'instanceUsageAmount',
+        'usagePlugins'          => 'usagePlugins',
     ];
 
     public function validate()
@@ -58,6 +58,18 @@ class applicationInformation extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->appName) {
+            $res['appName'] = $this->appName;
+        }
+        if (null !== $this->appType) {
+            $res['appType'] = $this->appType;
+        }
+        if (null !== $this->attachmentUsageAmount) {
+            $res['attachmentUsageAmount'] = $this->attachmentUsageAmount;
+        }
+        if (null !== $this->instanceUsageAmount) {
+            $res['instanceUsageAmount'] = $this->instanceUsageAmount;
+        }
         if (null !== $this->usagePlugins) {
             $res['usagePlugins'] = [];
             if (null !== $this->usagePlugins && \is_array($this->usagePlugins)) {
@@ -66,18 +78,6 @@ class applicationInformation extends Model
                     $res['usagePlugins'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
-        }
-        if (null !== $this->appName) {
-            $res['appName'] = $this->appName;
-        }
-        if (null !== $this->appType) {
-            $res['appType'] = $this->appType;
-        }
-        if (null !== $this->instanceUsageAmount) {
-            $res['instanceUsageAmount'] = $this->instanceUsageAmount;
-        }
-        if (null !== $this->attachmentUsageAmount) {
-            $res['attachmentUsageAmount'] = $this->attachmentUsageAmount;
         }
 
         return $res;
@@ -91,6 +91,18 @@ class applicationInformation extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['appName'])) {
+            $model->appName = $map['appName'];
+        }
+        if (isset($map['appType'])) {
+            $model->appType = $map['appType'];
+        }
+        if (isset($map['attachmentUsageAmount'])) {
+            $model->attachmentUsageAmount = $map['attachmentUsageAmount'];
+        }
+        if (isset($map['instanceUsageAmount'])) {
+            $model->instanceUsageAmount = $map['instanceUsageAmount'];
+        }
         if (isset($map['usagePlugins'])) {
             if (!empty($map['usagePlugins'])) {
                 $model->usagePlugins = [];
@@ -99,18 +111,6 @@ class applicationInformation extends Model
                     $model->usagePlugins[$n++] = null !== $item ? usagePlugins::fromMap($item) : $item;
                 }
             }
-        }
-        if (isset($map['appName'])) {
-            $model->appName = $map['appName'];
-        }
-        if (isset($map['appType'])) {
-            $model->appType = $map['appType'];
-        }
-        if (isset($map['instanceUsageAmount'])) {
-            $model->instanceUsageAmount = $map['instanceUsageAmount'];
-        }
-        if (isset($map['attachmentUsageAmount'])) {
-            $model->attachmentUsageAmount = $map['attachmentUsageAmount'];
         }
 
         return $model;

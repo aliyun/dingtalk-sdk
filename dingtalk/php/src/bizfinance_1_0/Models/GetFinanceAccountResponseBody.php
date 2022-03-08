@@ -23,13 +23,6 @@ class GetFinanceAccountResponseBody extends Model
     public $accountId;
 
     /**
-     * @description 账户类型:ALIPAY, BANKCARD, CASH, WECHAT
-     *
-     * @var string
-     */
-    public $accountType;
-
-    /**
      * @description 账户名称
      *
      * @var string
@@ -44,6 +37,13 @@ class GetFinanceAccountResponseBody extends Model
     public $accountRemark;
 
     /**
+     * @description 账户类型:ALIPAY, BANKCARD, CASH, WECHAT
+     *
+     * @var string
+     */
+    public $accountType;
+
+    /**
      * @description 账户总额，保留2位小数
      *
      * @var string
@@ -51,27 +51,27 @@ class GetFinanceAccountResponseBody extends Model
     public $amount;
 
     /**
-     * @description 创建人工号
-     *
-     * @var string
-     */
-    public $creator;
-
-    /**
      * @description 创建时间
      *
      * @var int
      */
     public $createTime;
+
+    /**
+     * @description 创建人工号
+     *
+     * @var string
+     */
+    public $creator;
     protected $_name = [
         'accountCode'   => 'accountCode',
         'accountId'     => 'accountId',
-        'accountType'   => 'accountType',
         'accountName'   => 'accountName',
         'accountRemark' => 'accountRemark',
+        'accountType'   => 'accountType',
         'amount'        => 'amount',
-        'creator'       => 'creator',
         'createTime'    => 'createTime',
+        'creator'       => 'creator',
     ];
 
     public function validate()
@@ -87,23 +87,23 @@ class GetFinanceAccountResponseBody extends Model
         if (null !== $this->accountId) {
             $res['accountId'] = $this->accountId;
         }
-        if (null !== $this->accountType) {
-            $res['accountType'] = $this->accountType;
-        }
         if (null !== $this->accountName) {
             $res['accountName'] = $this->accountName;
         }
         if (null !== $this->accountRemark) {
             $res['accountRemark'] = $this->accountRemark;
         }
+        if (null !== $this->accountType) {
+            $res['accountType'] = $this->accountType;
+        }
         if (null !== $this->amount) {
             $res['amount'] = $this->amount;
         }
-        if (null !== $this->creator) {
-            $res['creator'] = $this->creator;
-        }
         if (null !== $this->createTime) {
             $res['createTime'] = $this->createTime;
+        }
+        if (null !== $this->creator) {
+            $res['creator'] = $this->creator;
         }
 
         return $res;
@@ -123,23 +123,23 @@ class GetFinanceAccountResponseBody extends Model
         if (isset($map['accountId'])) {
             $model->accountId = $map['accountId'];
         }
-        if (isset($map['accountType'])) {
-            $model->accountType = $map['accountType'];
-        }
         if (isset($map['accountName'])) {
             $model->accountName = $map['accountName'];
         }
         if (isset($map['accountRemark'])) {
             $model->accountRemark = $map['accountRemark'];
         }
+        if (isset($map['accountType'])) {
+            $model->accountType = $map['accountType'];
+        }
         if (isset($map['amount'])) {
             $model->amount = $map['amount'];
         }
-        if (isset($map['creator'])) {
-            $model->creator = $map['creator'];
-        }
         if (isset($map['createTime'])) {
             $model->createTime = $map['createTime'];
+        }
+        if (isset($map['creator'])) {
+            $model->creator = $map['creator'];
         }
 
         return $model;

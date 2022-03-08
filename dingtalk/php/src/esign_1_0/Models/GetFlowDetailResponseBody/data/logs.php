@@ -11,11 +11,6 @@ class logs extends Model
     /**
      * @var string
      */
-    public $operatorAccountName;
-
-    /**
-     * @var string
-     */
     public $logType;
 
     /**
@@ -27,11 +22,16 @@ class logs extends Model
      * @var int
      */
     public $operateTime;
+
+    /**
+     * @var string
+     */
+    public $operatorAccountName;
     protected $_name = [
-        'operatorAccountName' => 'operatorAccountName',
         'logType'             => 'logType',
         'operateDescription'  => 'operateDescription',
         'operateTime'         => 'operateTime',
+        'operatorAccountName' => 'operatorAccountName',
     ];
 
     public function validate()
@@ -41,9 +41,6 @@ class logs extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->operatorAccountName) {
-            $res['operatorAccountName'] = $this->operatorAccountName;
-        }
         if (null !== $this->logType) {
             $res['logType'] = $this->logType;
         }
@@ -52,6 +49,9 @@ class logs extends Model
         }
         if (null !== $this->operateTime) {
             $res['operateTime'] = $this->operateTime;
+        }
+        if (null !== $this->operatorAccountName) {
+            $res['operatorAccountName'] = $this->operatorAccountName;
         }
 
         return $res;
@@ -65,9 +65,6 @@ class logs extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['operatorAccountName'])) {
-            $model->operatorAccountName = $map['operatorAccountName'];
-        }
         if (isset($map['logType'])) {
             $model->logType = $map['logType'];
         }
@@ -76,6 +73,9 @@ class logs extends Model
         }
         if (isset($map['operateTime'])) {
             $model->operateTime = $map['operateTime'];
+        }
+        if (isset($map['operatorAccountName'])) {
+            $model->operatorAccountName = $map['operatorAccountName'];
         }
 
         return $model;

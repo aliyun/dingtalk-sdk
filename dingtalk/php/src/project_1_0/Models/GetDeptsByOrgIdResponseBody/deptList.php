@@ -16,22 +16,22 @@ class deptList extends Model
     public $deptId;
 
     /**
-     * @description parentId
-     *
-     * @var int
-     */
-    public $parentId;
-
-    /**
      * @description name
      *
      * @var string
      */
     public $name;
+
+    /**
+     * @description parentId
+     *
+     * @var int
+     */
+    public $parentId;
     protected $_name = [
         'deptId'   => 'dept_id',
-        'parentId' => 'parent_id',
         'name'     => 'name',
+        'parentId' => 'parent_id',
     ];
 
     public function validate()
@@ -44,11 +44,11 @@ class deptList extends Model
         if (null !== $this->deptId) {
             $res['dept_id'] = $this->deptId;
         }
-        if (null !== $this->parentId) {
-            $res['parent_id'] = $this->parentId;
-        }
         if (null !== $this->name) {
             $res['name'] = $this->name;
+        }
+        if (null !== $this->parentId) {
+            $res['parent_id'] = $this->parentId;
         }
 
         return $res;
@@ -65,11 +65,11 @@ class deptList extends Model
         if (isset($map['dept_id'])) {
             $model->deptId = $map['dept_id'];
         }
-        if (isset($map['parent_id'])) {
-            $model->parentId = $map['parent_id'];
-        }
         if (isset($map['name'])) {
             $model->name = $map['name'];
+        }
+        if (isset($map['parent_id'])) {
+            $model->parentId = $map['parent_id'];
         }
 
         return $model;

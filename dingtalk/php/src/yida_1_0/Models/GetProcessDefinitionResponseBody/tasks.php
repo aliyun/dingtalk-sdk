@@ -24,23 +24,23 @@ class tasks extends Model
     public $activity;
 
     /**
-     * @description taskId
-     *
-     * @var int
-     */
-    public $taskId;
-
-    /**
      * @description status
      *
      * @var string
      */
     public $status;
+
+    /**
+     * @description taskId
+     *
+     * @var int
+     */
+    public $taskId;
     protected $_name = [
         'actionerId' => 'actionerId',
         'activity'   => 'activity',
-        'taskId'     => 'taskId',
         'status'     => 'status',
+        'taskId'     => 'taskId',
     ];
 
     public function validate()
@@ -56,11 +56,11 @@ class tasks extends Model
         if (null !== $this->activity) {
             $res['activity'] = null !== $this->activity ? $this->activity->toMap() : null;
         }
-        if (null !== $this->taskId) {
-            $res['taskId'] = $this->taskId;
-        }
         if (null !== $this->status) {
             $res['status'] = $this->status;
+        }
+        if (null !== $this->taskId) {
+            $res['taskId'] = $this->taskId;
         }
 
         return $res;
@@ -80,11 +80,11 @@ class tasks extends Model
         if (isset($map['activity'])) {
             $model->activity = activity::fromMap($map['activity']);
         }
-        if (isset($map['taskId'])) {
-            $model->taskId = $map['taskId'];
-        }
         if (isset($map['status'])) {
             $model->status = $map['status'];
+        }
+        if (isset($map['taskId'])) {
+            $model->taskId = $map['taskId'];
         }
 
         return $model;

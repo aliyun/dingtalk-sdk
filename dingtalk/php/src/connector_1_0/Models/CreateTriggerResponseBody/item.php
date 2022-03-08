@@ -16,6 +16,13 @@ class item extends Model
     public $dingConnectorId;
 
     /**
+     * @description 连接平台触发事件id
+     *
+     * @var string
+     */
+    public $dingTriggerId;
+
+    /**
      * @description 服务商的连接器Id
      *
      * @var string
@@ -30,20 +37,6 @@ class item extends Model
     public $integratorTriggerId;
 
     /**
-     * @description 连接平台触发事件id
-     *
-     * @var string
-     */
-    public $dingTriggerId;
-
-    /**
-     * @description 是否成功
-     *
-     * @var bool
-     */
-    public $success;
-
-    /**
      * @description 错误码
      *
      * @var string
@@ -56,14 +49,21 @@ class item extends Model
      * @var string
      */
     public $subErrMsg;
+
+    /**
+     * @description 是否成功
+     *
+     * @var bool
+     */
+    public $success;
     protected $_name = [
         'dingConnectorId'       => 'dingConnectorId',
+        'dingTriggerId'         => 'dingTriggerId',
         'integratorConnectorId' => 'integratorConnectorId',
         'integratorTriggerId'   => 'integratorTriggerId',
-        'dingTriggerId'         => 'dingTriggerId',
-        'success'               => 'success',
         'subErrCode'            => 'subErrCode',
         'subErrMsg'             => 'subErrMsg',
+        'success'               => 'success',
     ];
 
     public function validate()
@@ -76,23 +76,23 @@ class item extends Model
         if (null !== $this->dingConnectorId) {
             $res['dingConnectorId'] = $this->dingConnectorId;
         }
+        if (null !== $this->dingTriggerId) {
+            $res['dingTriggerId'] = $this->dingTriggerId;
+        }
         if (null !== $this->integratorConnectorId) {
             $res['integratorConnectorId'] = $this->integratorConnectorId;
         }
         if (null !== $this->integratorTriggerId) {
             $res['integratorTriggerId'] = $this->integratorTriggerId;
         }
-        if (null !== $this->dingTriggerId) {
-            $res['dingTriggerId'] = $this->dingTriggerId;
-        }
-        if (null !== $this->success) {
-            $res['success'] = $this->success;
-        }
         if (null !== $this->subErrCode) {
             $res['subErrCode'] = $this->subErrCode;
         }
         if (null !== $this->subErrMsg) {
             $res['subErrMsg'] = $this->subErrMsg;
+        }
+        if (null !== $this->success) {
+            $res['success'] = $this->success;
         }
 
         return $res;
@@ -109,23 +109,23 @@ class item extends Model
         if (isset($map['dingConnectorId'])) {
             $model->dingConnectorId = $map['dingConnectorId'];
         }
+        if (isset($map['dingTriggerId'])) {
+            $model->dingTriggerId = $map['dingTriggerId'];
+        }
         if (isset($map['integratorConnectorId'])) {
             $model->integratorConnectorId = $map['integratorConnectorId'];
         }
         if (isset($map['integratorTriggerId'])) {
             $model->integratorTriggerId = $map['integratorTriggerId'];
         }
-        if (isset($map['dingTriggerId'])) {
-            $model->dingTriggerId = $map['dingTriggerId'];
-        }
-        if (isset($map['success'])) {
-            $model->success = $map['success'];
-        }
         if (isset($map['subErrCode'])) {
             $model->subErrCode = $map['subErrCode'];
         }
         if (isset($map['subErrMsg'])) {
             $model->subErrMsg = $map['subErrMsg'];
+        }
+        if (isset($map['success'])) {
+            $model->success = $map['success'];
         }
 
         return $model;

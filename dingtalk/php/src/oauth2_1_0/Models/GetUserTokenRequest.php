@@ -30,24 +30,24 @@ class GetUserTokenRequest extends Model
     public $code;
 
     /**
-     * @description OAuth 2.0 刷新令牌
-     *
-     * @var string
-     */
-    public $refreshToken;
-
-    /**
      * @description 分为authorization_code和refresh_token。使用授权码换token，传authorization_code；使用刷新token换用户token，传refresh_token
      *
      * @var string
      */
     public $grantType;
+
+    /**
+     * @description OAuth 2.0 刷新令牌
+     *
+     * @var string
+     */
+    public $refreshToken;
     protected $_name = [
         'clientId'     => 'clientId',
         'clientSecret' => 'clientSecret',
         'code'         => 'code',
-        'refreshToken' => 'refreshToken',
         'grantType'    => 'grantType',
+        'refreshToken' => 'refreshToken',
     ];
 
     public function validate()
@@ -66,11 +66,11 @@ class GetUserTokenRequest extends Model
         if (null !== $this->code) {
             $res['code'] = $this->code;
         }
-        if (null !== $this->refreshToken) {
-            $res['refreshToken'] = $this->refreshToken;
-        }
         if (null !== $this->grantType) {
             $res['grantType'] = $this->grantType;
+        }
+        if (null !== $this->refreshToken) {
+            $res['refreshToken'] = $this->refreshToken;
         }
 
         return $res;
@@ -93,11 +93,11 @@ class GetUserTokenRequest extends Model
         if (isset($map['code'])) {
             $model->code = $map['code'];
         }
-        if (isset($map['refreshToken'])) {
-            $model->refreshToken = $map['refreshToken'];
-        }
         if (isset($map['grantType'])) {
             $model->grantType = $map['grantType'];
+        }
+        if (isset($map['refreshToken'])) {
+            $model->refreshToken = $map['refreshToken'];
         }
 
         return $model;

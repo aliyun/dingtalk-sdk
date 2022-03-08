@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class courserGroupItemStartDate extends Model
 {
     /**
+     * @description 一月的第几天
+     *
+     * @var int
+     */
+    public $dayOfMonth;
+
+    /**
      * @description 月
      *
      * @var int
@@ -21,17 +28,10 @@ class courserGroupItemStartDate extends Model
      * @var int
      */
     public $year;
-
-    /**
-     * @description 一月的第几天
-     *
-     * @var int
-     */
-    public $dayOfMonth;
     protected $_name = [
+        'dayOfMonth' => 'dayOfMonth',
         'month'      => 'month',
         'year'       => 'year',
-        'dayOfMonth' => 'dayOfMonth',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class courserGroupItemStartDate extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->dayOfMonth) {
+            $res['dayOfMonth'] = $this->dayOfMonth;
+        }
         if (null !== $this->month) {
             $res['month'] = $this->month;
         }
         if (null !== $this->year) {
             $res['year'] = $this->year;
-        }
-        if (null !== $this->dayOfMonth) {
-            $res['dayOfMonth'] = $this->dayOfMonth;
         }
 
         return $res;
@@ -62,14 +62,14 @@ class courserGroupItemStartDate extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['dayOfMonth'])) {
+            $model->dayOfMonth = $map['dayOfMonth'];
+        }
         if (isset($map['month'])) {
             $model->month = $map['month'];
         }
         if (isset($map['year'])) {
             $model->year = $map['year'];
-        }
-        if (isset($map['dayOfMonth'])) {
-            $model->dayOfMonth = $map['dayOfMonth'];
         }
 
         return $model;

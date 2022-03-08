@@ -21,23 +21,9 @@ class DecodeBadgeCodeRequest extends Model
      * @var string
      */
     public $requestId;
-
-    /**
-     * @description 组织ID
-     *
-     * @var int
-     */
-    public $dingOrgId;
-
-    /**
-     * @var int
-     */
-    public $dingIsvOrgId;
     protected $_name = [
-        'payCode'      => 'payCode',
-        'requestId'    => 'requestId',
-        'dingOrgId'    => 'dingOrgId',
-        'dingIsvOrgId' => 'dingIsvOrgId',
+        'payCode'   => 'payCode',
+        'requestId' => 'requestId',
     ];
 
     public function validate()
@@ -52,12 +38,6 @@ class DecodeBadgeCodeRequest extends Model
         }
         if (null !== $this->requestId) {
             $res['requestId'] = $this->requestId;
-        }
-        if (null !== $this->dingOrgId) {
-            $res['dingOrgId'] = $this->dingOrgId;
-        }
-        if (null !== $this->dingIsvOrgId) {
-            $res['dingIsvOrgId'] = $this->dingIsvOrgId;
         }
 
         return $res;
@@ -76,12 +56,6 @@ class DecodeBadgeCodeRequest extends Model
         }
         if (isset($map['requestId'])) {
             $model->requestId = $map['requestId'];
-        }
-        if (isset($map['dingOrgId'])) {
-            $model->dingOrgId = $map['dingOrgId'];
-        }
-        if (isset($map['dingIsvOrgId'])) {
-            $model->dingIsvOrgId = $map['dingIsvOrgId'];
         }
 
         return $model;

@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class scope extends Model
 {
     /**
-     * @description 1
-     *
-     * @var int
-     */
-    public $scopeType;
-
-    /**
      * @description 部门列表，只在scopeType=3 生效
      *
      * @var int[]
      */
     public $deptIds;
+
+    /**
+     * @description 1
+     *
+     * @var int
+     */
+    public $scopeType;
     protected $_name = [
-        'scopeType' => 'scopeType',
         'deptIds'   => 'deptIds',
+        'scopeType' => 'scopeType',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class scope extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->scopeType) {
-            $res['scopeType'] = $this->scopeType;
-        }
         if (null !== $this->deptIds) {
             $res['deptIds'] = $this->deptIds;
+        }
+        if (null !== $this->scopeType) {
+            $res['scopeType'] = $this->scopeType;
         }
 
         return $res;
@@ -51,13 +51,13 @@ class scope extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['scopeType'])) {
-            $model->scopeType = $map['scopeType'];
-        }
         if (isset($map['deptIds'])) {
             if (!empty($map['deptIds'])) {
                 $model->deptIds = $map['deptIds'];
             }
+        }
+        if (isset($map['scopeType'])) {
+            $model->scopeType = $map['scopeType'];
         }
 
         return $model;

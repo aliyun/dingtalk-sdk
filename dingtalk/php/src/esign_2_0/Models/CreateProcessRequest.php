@@ -13,29 +13,9 @@ use AlibabaCloud\Tea\Model;
 class CreateProcessRequest extends Model
 {
     /**
-     * @var string
+     * @var ccs[]
      */
-    public $dingCorpId;
-
-    /**
-     * @var string
-     */
-    public $initiatorUserId;
-
-    /**
-     * @var string
-     */
-    public $taskName;
-
-    /**
-     * @var int
-     */
-    public $signEndTime;
-
-    /**
-     * @var string
-     */
-    public $redirectUrl;
+    public $ccs;
 
     /**
      * @var files[]
@@ -43,29 +23,43 @@ class CreateProcessRequest extends Model
     public $files;
 
     /**
+     * @var string
+     */
+    public $initiatorUserId;
+
+    /**
      * @var participants[]
      */
     public $participants;
 
     /**
-     * @var ccs[]
+     * @var string
      */
-    public $ccs;
+    public $redirectUrl;
+
+    /**
+     * @var int
+     */
+    public $signEndTime;
 
     /**
      * @var sourceInfo
      */
     public $sourceInfo;
+
+    /**
+     * @var string
+     */
+    public $taskName;
     protected $_name = [
-        'dingCorpId'      => 'dingCorpId',
-        'initiatorUserId' => 'initiatorUserId',
-        'taskName'        => 'taskName',
-        'signEndTime'     => 'signEndTime',
-        'redirectUrl'     => 'redirectUrl',
-        'files'           => 'files',
-        'participants'    => 'participants',
         'ccs'             => 'ccs',
+        'files'           => 'files',
+        'initiatorUserId' => 'initiatorUserId',
+        'participants'    => 'participants',
+        'redirectUrl'     => 'redirectUrl',
+        'signEndTime'     => 'signEndTime',
         'sourceInfo'      => 'sourceInfo',
+        'taskName'        => 'taskName',
     ];
 
     public function validate()
@@ -75,20 +69,14 @@ class CreateProcessRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->dingCorpId) {
-            $res['dingCorpId'] = $this->dingCorpId;
-        }
-        if (null !== $this->initiatorUserId) {
-            $res['initiatorUserId'] = $this->initiatorUserId;
-        }
-        if (null !== $this->taskName) {
-            $res['taskName'] = $this->taskName;
-        }
-        if (null !== $this->signEndTime) {
-            $res['signEndTime'] = $this->signEndTime;
-        }
-        if (null !== $this->redirectUrl) {
-            $res['redirectUrl'] = $this->redirectUrl;
+        if (null !== $this->ccs) {
+            $res['ccs'] = [];
+            if (null !== $this->ccs && \is_array($this->ccs)) {
+                $n = 0;
+                foreach ($this->ccs as $item) {
+                    $res['ccs'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
         if (null !== $this->files) {
             $res['files'] = [];
@@ -99,6 +87,9 @@ class CreateProcessRequest extends Model
                 }
             }
         }
+        if (null !== $this->initiatorUserId) {
+            $res['initiatorUserId'] = $this->initiatorUserId;
+        }
         if (null !== $this->participants) {
             $res['participants'] = [];
             if (null !== $this->participants && \is_array($this->participants)) {
@@ -108,17 +99,17 @@ class CreateProcessRequest extends Model
                 }
             }
         }
-        if (null !== $this->ccs) {
-            $res['ccs'] = [];
-            if (null !== $this->ccs && \is_array($this->ccs)) {
-                $n = 0;
-                foreach ($this->ccs as $item) {
-                    $res['ccs'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
+        if (null !== $this->redirectUrl) {
+            $res['redirectUrl'] = $this->redirectUrl;
+        }
+        if (null !== $this->signEndTime) {
+            $res['signEndTime'] = $this->signEndTime;
         }
         if (null !== $this->sourceInfo) {
             $res['sourceInfo'] = null !== $this->sourceInfo ? $this->sourceInfo->toMap() : null;
+        }
+        if (null !== $this->taskName) {
+            $res['taskName'] = $this->taskName;
         }
 
         return $res;
@@ -132,20 +123,14 @@ class CreateProcessRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['dingCorpId'])) {
-            $model->dingCorpId = $map['dingCorpId'];
-        }
-        if (isset($map['initiatorUserId'])) {
-            $model->initiatorUserId = $map['initiatorUserId'];
-        }
-        if (isset($map['taskName'])) {
-            $model->taskName = $map['taskName'];
-        }
-        if (isset($map['signEndTime'])) {
-            $model->signEndTime = $map['signEndTime'];
-        }
-        if (isset($map['redirectUrl'])) {
-            $model->redirectUrl = $map['redirectUrl'];
+        if (isset($map['ccs'])) {
+            if (!empty($map['ccs'])) {
+                $model->ccs = [];
+                $n          = 0;
+                foreach ($map['ccs'] as $item) {
+                    $model->ccs[$n++] = null !== $item ? ccs::fromMap($item) : $item;
+                }
+            }
         }
         if (isset($map['files'])) {
             if (!empty($map['files'])) {
@@ -156,6 +141,9 @@ class CreateProcessRequest extends Model
                 }
             }
         }
+        if (isset($map['initiatorUserId'])) {
+            $model->initiatorUserId = $map['initiatorUserId'];
+        }
         if (isset($map['participants'])) {
             if (!empty($map['participants'])) {
                 $model->participants = [];
@@ -165,17 +153,17 @@ class CreateProcessRequest extends Model
                 }
             }
         }
-        if (isset($map['ccs'])) {
-            if (!empty($map['ccs'])) {
-                $model->ccs = [];
-                $n          = 0;
-                foreach ($map['ccs'] as $item) {
-                    $model->ccs[$n++] = null !== $item ? ccs::fromMap($item) : $item;
-                }
-            }
+        if (isset($map['redirectUrl'])) {
+            $model->redirectUrl = $map['redirectUrl'];
+        }
+        if (isset($map['signEndTime'])) {
+            $model->signEndTime = $map['signEndTime'];
         }
         if (isset($map['sourceInfo'])) {
             $model->sourceInfo = sourceInfo::fromMap($map['sourceInfo']);
+        }
+        if (isset($map['taskName'])) {
+            $model->taskName = $map['taskName'];
         }
 
         return $model;

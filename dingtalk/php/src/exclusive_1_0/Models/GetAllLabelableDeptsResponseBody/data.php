@@ -21,13 +21,6 @@ class data extends Model
     public $deptId;
 
     /**
-     * @description 父部门id
-     *
-     * @var string
-     */
-    public $superDeptId;
-
-    /**
      * @description 部门名称
      *
      * @var string
@@ -40,13 +33,6 @@ class data extends Model
      * @var int
      */
     public $memberCount;
-
-    /**
-     * @description 部门伙伴编码
-     *
-     * @var string
-     */
-    public $partnerNum;
 
     /**
      * @description 部门一级伙伴类型
@@ -82,17 +68,31 @@ class data extends Model
      * @var partnerLabelVOLevel5
      */
     public $partnerLabelVOLevel5;
+
+    /**
+     * @description 部门伙伴编码
+     *
+     * @var string
+     */
+    public $partnerNum;
+
+    /**
+     * @description 父部门id
+     *
+     * @var string
+     */
+    public $superDeptId;
     protected $_name = [
         'deptId'               => 'deptId',
-        'superDeptId'          => 'superDeptId',
         'deptName'             => 'deptName',
         'memberCount'          => 'memberCount',
-        'partnerNum'           => 'partnerNum',
         'partnerLabelVOLevel1' => 'partnerLabelVOLevel1',
         'partnerLabelVOLevel2' => 'partnerLabelVOLevel2',
         'partnerLabelVOLevel3' => 'partnerLabelVOLevel3',
         'partnerLabelVOLevel4' => 'partnerLabelVOLevel4',
         'partnerLabelVOLevel5' => 'partnerLabelVOLevel5',
+        'partnerNum'           => 'partnerNum',
+        'superDeptId'          => 'superDeptId',
     ];
 
     public function validate()
@@ -105,17 +105,11 @@ class data extends Model
         if (null !== $this->deptId) {
             $res['deptId'] = $this->deptId;
         }
-        if (null !== $this->superDeptId) {
-            $res['superDeptId'] = $this->superDeptId;
-        }
         if (null !== $this->deptName) {
             $res['deptName'] = $this->deptName;
         }
         if (null !== $this->memberCount) {
             $res['memberCount'] = $this->memberCount;
-        }
-        if (null !== $this->partnerNum) {
-            $res['partnerNum'] = $this->partnerNum;
         }
         if (null !== $this->partnerLabelVOLevel1) {
             $res['partnerLabelVOLevel1'] = null !== $this->partnerLabelVOLevel1 ? $this->partnerLabelVOLevel1->toMap() : null;
@@ -132,6 +126,12 @@ class data extends Model
         if (null !== $this->partnerLabelVOLevel5) {
             $res['partnerLabelVOLevel5'] = null !== $this->partnerLabelVOLevel5 ? $this->partnerLabelVOLevel5->toMap() : null;
         }
+        if (null !== $this->partnerNum) {
+            $res['partnerNum'] = $this->partnerNum;
+        }
+        if (null !== $this->superDeptId) {
+            $res['superDeptId'] = $this->superDeptId;
+        }
 
         return $res;
     }
@@ -147,17 +147,11 @@ class data extends Model
         if (isset($map['deptId'])) {
             $model->deptId = $map['deptId'];
         }
-        if (isset($map['superDeptId'])) {
-            $model->superDeptId = $map['superDeptId'];
-        }
         if (isset($map['deptName'])) {
             $model->deptName = $map['deptName'];
         }
         if (isset($map['memberCount'])) {
             $model->memberCount = $map['memberCount'];
-        }
-        if (isset($map['partnerNum'])) {
-            $model->partnerNum = $map['partnerNum'];
         }
         if (isset($map['partnerLabelVOLevel1'])) {
             $model->partnerLabelVOLevel1 = partnerLabelVOLevel1::fromMap($map['partnerLabelVOLevel1']);
@@ -173,6 +167,12 @@ class data extends Model
         }
         if (isset($map['partnerLabelVOLevel5'])) {
             $model->partnerLabelVOLevel5 = partnerLabelVOLevel5::fromMap($map['partnerLabelVOLevel5']);
+        }
+        if (isset($map['partnerNum'])) {
+            $model->partnerNum = $map['partnerNum'];
+        }
+        if (isset($map['superDeptId'])) {
+            $model->superDeptId = $map['superDeptId'];
         }
 
         return $model;

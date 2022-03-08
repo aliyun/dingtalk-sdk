@@ -16,6 +16,20 @@ class PageListRobotRequest extends Model
     public $corpId;
 
     /**
+     * @description 本次读取的最大数据记录数量
+     *
+     * @var int
+     */
+    public $maxResults;
+
+    /**
+     * @description 用来标记当前开始读取的位置，置空表示从头开始
+     *
+     * @var int
+     */
+    public $nextToken;
+
+    /**
      * @description 多实例ID
      *
      * @var string
@@ -28,26 +42,12 @@ class PageListRobotRequest extends Model
      * @var int
      */
     public $productionType;
-
-    /**
-     * @description 用来标记当前开始读取的位置，置空表示从头开始
-     *
-     * @var int
-     */
-    public $nextToken;
-
-    /**
-     * @description 本次读取的最大数据记录数量
-     *
-     * @var int
-     */
-    public $maxResults;
     protected $_name = [
         'corpId'         => 'corpId',
+        'maxResults'     => 'maxResults',
+        'nextToken'      => 'nextToken',
         'openInstanceId' => 'openInstanceId',
         'productionType' => 'productionType',
-        'nextToken'      => 'nextToken',
-        'maxResults'     => 'maxResults',
     ];
 
     public function validate()
@@ -60,17 +60,17 @@ class PageListRobotRequest extends Model
         if (null !== $this->corpId) {
             $res['corpId'] = $this->corpId;
         }
+        if (null !== $this->maxResults) {
+            $res['maxResults'] = $this->maxResults;
+        }
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
+        }
         if (null !== $this->openInstanceId) {
             $res['openInstanceId'] = $this->openInstanceId;
         }
         if (null !== $this->productionType) {
             $res['productionType'] = $this->productionType;
-        }
-        if (null !== $this->nextToken) {
-            $res['nextToken'] = $this->nextToken;
-        }
-        if (null !== $this->maxResults) {
-            $res['maxResults'] = $this->maxResults;
         }
 
         return $res;
@@ -87,17 +87,17 @@ class PageListRobotRequest extends Model
         if (isset($map['corpId'])) {
             $model->corpId = $map['corpId'];
         }
+        if (isset($map['maxResults'])) {
+            $model->maxResults = $map['maxResults'];
+        }
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
+        }
         if (isset($map['openInstanceId'])) {
             $model->openInstanceId = $map['openInstanceId'];
         }
         if (isset($map['productionType'])) {
             $model->productionType = $map['productionType'];
-        }
-        if (isset($map['nextToken'])) {
-            $model->nextToken = $map['nextToken'];
-        }
-        if (isset($map['maxResults'])) {
-            $model->maxResults = $map['maxResults'];
         }
 
         return $model;

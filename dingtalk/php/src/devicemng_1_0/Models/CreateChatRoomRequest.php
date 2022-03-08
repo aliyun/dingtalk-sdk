@@ -14,11 +14,6 @@ class CreateChatRoomRequest extends Model
     public $chatGroupName;
 
     /**
-     * @var string
-     */
-    public $dingCorpId;
-
-    /**
      * @var string[]
      */
     public $deviceCodes;
@@ -29,21 +24,20 @@ class CreateChatRoomRequest extends Model
     public $deviceTypeId;
 
     /**
-     * @var string[]
-     */
-    public $roleList;
-
-    /**
      * @var string
      */
     public $ownerUserId;
+
+    /**
+     * @var string[]
+     */
+    public $roleList;
     protected $_name = [
         'chatGroupName' => 'chatGroupName',
-        'dingCorpId'    => 'dingCorpId',
         'deviceCodes'   => 'deviceCodes',
         'deviceTypeId'  => 'deviceTypeId',
-        'roleList'      => 'roleList',
         'ownerUserId'   => 'ownerUserId',
+        'roleList'      => 'roleList',
     ];
 
     public function validate()
@@ -56,20 +50,17 @@ class CreateChatRoomRequest extends Model
         if (null !== $this->chatGroupName) {
             $res['chatGroupName'] = $this->chatGroupName;
         }
-        if (null !== $this->dingCorpId) {
-            $res['dingCorpId'] = $this->dingCorpId;
-        }
         if (null !== $this->deviceCodes) {
             $res['deviceCodes'] = $this->deviceCodes;
         }
         if (null !== $this->deviceTypeId) {
             $res['deviceTypeId'] = $this->deviceTypeId;
         }
-        if (null !== $this->roleList) {
-            $res['roleList'] = $this->roleList;
-        }
         if (null !== $this->ownerUserId) {
             $res['ownerUserId'] = $this->ownerUserId;
+        }
+        if (null !== $this->roleList) {
+            $res['roleList'] = $this->roleList;
         }
 
         return $res;
@@ -86,9 +77,6 @@ class CreateChatRoomRequest extends Model
         if (isset($map['chatGroupName'])) {
             $model->chatGroupName = $map['chatGroupName'];
         }
-        if (isset($map['dingCorpId'])) {
-            $model->dingCorpId = $map['dingCorpId'];
-        }
         if (isset($map['deviceCodes'])) {
             if (!empty($map['deviceCodes'])) {
                 $model->deviceCodes = $map['deviceCodes'];
@@ -97,13 +85,13 @@ class CreateChatRoomRequest extends Model
         if (isset($map['deviceTypeId'])) {
             $model->deviceTypeId = $map['deviceTypeId'];
         }
+        if (isset($map['ownerUserId'])) {
+            $model->ownerUserId = $map['ownerUserId'];
+        }
         if (isset($map['roleList'])) {
             if (!empty($map['roleList'])) {
                 $model->roleList = $map['roleList'];
             }
-        }
-        if (isset($map['ownerUserId'])) {
-            $model->ownerUserId = $map['ownerUserId'];
         }
 
         return $model;

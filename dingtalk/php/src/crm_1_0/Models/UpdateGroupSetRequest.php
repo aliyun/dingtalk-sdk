@@ -11,12 +11,7 @@ class UpdateGroupSetRequest extends Model
     /**
      * @var string
      */
-    public $openGroupSetId;
-
-    /**
-     * @var string
-     */
-    public $name;
+    public $managerUserIds;
 
     /**
      * @var int
@@ -26,12 +21,7 @@ class UpdateGroupSetRequest extends Model
     /**
      * @var string
      */
-    public $ownerUserId;
-
-    /**
-     * @var string
-     */
-    public $managerUserIds;
+    public $name;
 
     /**
      * @var string
@@ -46,15 +36,25 @@ class UpdateGroupSetRequest extends Model
     /**
      * @var string
      */
+    public $openGroupSetId;
+
+    /**
+     * @var string
+     */
+    public $ownerUserId;
+
+    /**
+     * @var string
+     */
     public $templateId;
     protected $_name = [
-        'openGroupSetId' => 'openGroupSetId',
-        'name'           => 'name',
-        'memberQuota'    => 'memberQuota',
-        'ownerUserId'    => 'ownerUserId',
         'managerUserIds' => 'managerUserIds',
+        'memberQuota'    => 'memberQuota',
+        'name'           => 'name',
         'notice'         => 'notice',
         'noticeToped'    => 'noticeToped',
+        'openGroupSetId' => 'openGroupSetId',
+        'ownerUserId'    => 'ownerUserId',
         'templateId'     => 'templateId',
     ];
 
@@ -65,26 +65,26 @@ class UpdateGroupSetRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->openGroupSetId) {
-            $res['openGroupSetId'] = $this->openGroupSetId;
-        }
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
+        if (null !== $this->managerUserIds) {
+            $res['managerUserIds'] = $this->managerUserIds;
         }
         if (null !== $this->memberQuota) {
             $res['memberQuota'] = $this->memberQuota;
         }
-        if (null !== $this->ownerUserId) {
-            $res['ownerUserId'] = $this->ownerUserId;
-        }
-        if (null !== $this->managerUserIds) {
-            $res['managerUserIds'] = $this->managerUserIds;
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
         }
         if (null !== $this->notice) {
             $res['notice'] = $this->notice;
         }
         if (null !== $this->noticeToped) {
             $res['noticeToped'] = $this->noticeToped;
+        }
+        if (null !== $this->openGroupSetId) {
+            $res['openGroupSetId'] = $this->openGroupSetId;
+        }
+        if (null !== $this->ownerUserId) {
+            $res['ownerUserId'] = $this->ownerUserId;
         }
         if (null !== $this->templateId) {
             $res['templateId'] = $this->templateId;
@@ -101,26 +101,26 @@ class UpdateGroupSetRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['openGroupSetId'])) {
-            $model->openGroupSetId = $map['openGroupSetId'];
-        }
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
+        if (isset($map['managerUserIds'])) {
+            $model->managerUserIds = $map['managerUserIds'];
         }
         if (isset($map['memberQuota'])) {
             $model->memberQuota = $map['memberQuota'];
         }
-        if (isset($map['ownerUserId'])) {
-            $model->ownerUserId = $map['ownerUserId'];
-        }
-        if (isset($map['managerUserIds'])) {
-            $model->managerUserIds = $map['managerUserIds'];
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
         }
         if (isset($map['notice'])) {
             $model->notice = $map['notice'];
         }
         if (isset($map['noticeToped'])) {
             $model->noticeToped = $map['noticeToped'];
+        }
+        if (isset($map['openGroupSetId'])) {
+            $model->openGroupSetId = $map['openGroupSetId'];
+        }
+        if (isset($map['ownerUserId'])) {
+            $model->ownerUserId = $map['ownerUserId'];
         }
         if (isset($map['templateId'])) {
             $model->templateId = $map['templateId'];

@@ -11,15 +11,15 @@ class SignOutRequest extends Model
     /**
      * @var string
      */
-    public $userId;
+    public $reason;
 
     /**
      * @var string
      */
-    public $reason;
+    public $userId;
     protected $_name = [
-        'userId' => 'userId',
         'reason' => 'reason',
+        'userId' => 'userId',
     ];
 
     public function validate()
@@ -29,11 +29,11 @@ class SignOutRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
-        }
         if (null !== $this->reason) {
             $res['reason'] = $this->reason;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -47,11 +47,11 @@ class SignOutRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
-        }
         if (isset($map['reason'])) {
             $model->reason = $map['reason'];
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

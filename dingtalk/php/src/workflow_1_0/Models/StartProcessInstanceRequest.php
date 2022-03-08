@@ -12,34 +12,6 @@ use AlibabaCloud\Tea\Model;
 class StartProcessInstanceRequest extends Model
 {
     /**
-     * @description 审批发起人的userId
-     *
-     * @var string
-     */
-    public $originatorUserId;
-
-    /**
-     * @description 审批流的唯一码
-     *
-     * @var string
-     */
-    public $processCode;
-
-    /**
-     * @description 部门ID
-     *
-     * @var int
-     */
-    public $deptId;
-
-    /**
-     * @description 企业微应用标识
-     *
-     * @var int
-     */
-    public $microappAgentId;
-
-    /**
      * @description 不使用审批流模板时，直接指定审批人列表
      *
      * @var approvers[]
@@ -61,11 +33,11 @@ class StartProcessInstanceRequest extends Model
     public $ccPosition;
 
     /**
-     * @description 使用审批流模板时，模板上的自选操作人列表
+     * @description 部门ID
      *
-     * @var targetSelectActioners[]
+     * @var int
      */
-    public $targetSelectActioners;
+    public $deptId;
 
     /**
      * @description 表单数据内容，控件列表
@@ -75,50 +47,42 @@ class StartProcessInstanceRequest extends Model
     public $formComponentValues;
 
     /**
-     * @var string
-     */
-    public $requestId;
-
-    /**
-     * @var string
-     */
-    public $dingCorpId;
-
-    /**
+     * @description 企业微应用标识
+     *
      * @var int
      */
-    public $dingOrgId;
+    public $microappAgentId;
 
     /**
-     * @var int
-     */
-    public $dingIsvOrgId;
-
-    /**
+     * @description 审批发起人的userId
+     *
      * @var string
      */
-    public $dingSuiteKey;
+    public $originatorUserId;
 
     /**
-     * @var int
+     * @description 审批流的唯一码
+     *
+     * @var string
      */
-    public $dingTokenGrantType;
+    public $processCode;
+
+    /**
+     * @description 使用审批流模板时，模板上的自选操作人列表
+     *
+     * @var targetSelectActioners[]
+     */
+    public $targetSelectActioners;
     protected $_name = [
-        'originatorUserId'      => 'originatorUserId',
-        'processCode'           => 'processCode',
-        'deptId'                => 'deptId',
-        'microappAgentId'       => 'microappAgentId',
         'approvers'             => 'approvers',
         'ccList'                => 'ccList',
         'ccPosition'            => 'ccPosition',
-        'targetSelectActioners' => 'targetSelectActioners',
+        'deptId'                => 'deptId',
         'formComponentValues'   => 'formComponentValues',
-        'requestId'             => 'RequestId',
-        'dingCorpId'            => 'dingCorpId',
-        'dingOrgId'             => 'dingOrgId',
-        'dingIsvOrgId'          => 'dingIsvOrgId',
-        'dingSuiteKey'          => 'dingSuiteKey',
-        'dingTokenGrantType'    => 'dingTokenGrantType',
+        'microappAgentId'       => 'microappAgentId',
+        'originatorUserId'      => 'originatorUserId',
+        'processCode'           => 'processCode',
+        'targetSelectActioners' => 'targetSelectActioners',
     ];
 
     public function validate()
@@ -128,18 +92,6 @@ class StartProcessInstanceRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->originatorUserId) {
-            $res['originatorUserId'] = $this->originatorUserId;
-        }
-        if (null !== $this->processCode) {
-            $res['processCode'] = $this->processCode;
-        }
-        if (null !== $this->deptId) {
-            $res['deptId'] = $this->deptId;
-        }
-        if (null !== $this->microappAgentId) {
-            $res['microappAgentId'] = $this->microappAgentId;
-        }
         if (null !== $this->approvers) {
             $res['approvers'] = [];
             if (null !== $this->approvers && \is_array($this->approvers)) {
@@ -155,14 +107,8 @@ class StartProcessInstanceRequest extends Model
         if (null !== $this->ccPosition) {
             $res['ccPosition'] = $this->ccPosition;
         }
-        if (null !== $this->targetSelectActioners) {
-            $res['targetSelectActioners'] = [];
-            if (null !== $this->targetSelectActioners && \is_array($this->targetSelectActioners)) {
-                $n = 0;
-                foreach ($this->targetSelectActioners as $item) {
-                    $res['targetSelectActioners'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
+        if (null !== $this->deptId) {
+            $res['deptId'] = $this->deptId;
         }
         if (null !== $this->formComponentValues) {
             $res['formComponentValues'] = [];
@@ -173,23 +119,23 @@ class StartProcessInstanceRequest extends Model
                 }
             }
         }
-        if (null !== $this->requestId) {
-            $res['RequestId'] = $this->requestId;
+        if (null !== $this->microappAgentId) {
+            $res['microappAgentId'] = $this->microappAgentId;
         }
-        if (null !== $this->dingCorpId) {
-            $res['dingCorpId'] = $this->dingCorpId;
+        if (null !== $this->originatorUserId) {
+            $res['originatorUserId'] = $this->originatorUserId;
         }
-        if (null !== $this->dingOrgId) {
-            $res['dingOrgId'] = $this->dingOrgId;
+        if (null !== $this->processCode) {
+            $res['processCode'] = $this->processCode;
         }
-        if (null !== $this->dingIsvOrgId) {
-            $res['dingIsvOrgId'] = $this->dingIsvOrgId;
-        }
-        if (null !== $this->dingSuiteKey) {
-            $res['dingSuiteKey'] = $this->dingSuiteKey;
-        }
-        if (null !== $this->dingTokenGrantType) {
-            $res['dingTokenGrantType'] = $this->dingTokenGrantType;
+        if (null !== $this->targetSelectActioners) {
+            $res['targetSelectActioners'] = [];
+            if (null !== $this->targetSelectActioners && \is_array($this->targetSelectActioners)) {
+                $n = 0;
+                foreach ($this->targetSelectActioners as $item) {
+                    $res['targetSelectActioners'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
 
         return $res;
@@ -203,18 +149,6 @@ class StartProcessInstanceRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['originatorUserId'])) {
-            $model->originatorUserId = $map['originatorUserId'];
-        }
-        if (isset($map['processCode'])) {
-            $model->processCode = $map['processCode'];
-        }
-        if (isset($map['deptId'])) {
-            $model->deptId = $map['deptId'];
-        }
-        if (isset($map['microappAgentId'])) {
-            $model->microappAgentId = $map['microappAgentId'];
-        }
         if (isset($map['approvers'])) {
             if (!empty($map['approvers'])) {
                 $model->approvers = [];
@@ -232,14 +166,8 @@ class StartProcessInstanceRequest extends Model
         if (isset($map['ccPosition'])) {
             $model->ccPosition = $map['ccPosition'];
         }
-        if (isset($map['targetSelectActioners'])) {
-            if (!empty($map['targetSelectActioners'])) {
-                $model->targetSelectActioners = [];
-                $n                            = 0;
-                foreach ($map['targetSelectActioners'] as $item) {
-                    $model->targetSelectActioners[$n++] = null !== $item ? targetSelectActioners::fromMap($item) : $item;
-                }
-            }
+        if (isset($map['deptId'])) {
+            $model->deptId = $map['deptId'];
         }
         if (isset($map['formComponentValues'])) {
             if (!empty($map['formComponentValues'])) {
@@ -250,23 +178,23 @@ class StartProcessInstanceRequest extends Model
                 }
             }
         }
-        if (isset($map['RequestId'])) {
-            $model->requestId = $map['RequestId'];
+        if (isset($map['microappAgentId'])) {
+            $model->microappAgentId = $map['microappAgentId'];
         }
-        if (isset($map['dingCorpId'])) {
-            $model->dingCorpId = $map['dingCorpId'];
+        if (isset($map['originatorUserId'])) {
+            $model->originatorUserId = $map['originatorUserId'];
         }
-        if (isset($map['dingOrgId'])) {
-            $model->dingOrgId = $map['dingOrgId'];
+        if (isset($map['processCode'])) {
+            $model->processCode = $map['processCode'];
         }
-        if (isset($map['dingIsvOrgId'])) {
-            $model->dingIsvOrgId = $map['dingIsvOrgId'];
-        }
-        if (isset($map['dingSuiteKey'])) {
-            $model->dingSuiteKey = $map['dingSuiteKey'];
-        }
-        if (isset($map['dingTokenGrantType'])) {
-            $model->dingTokenGrantType = $map['dingTokenGrantType'];
+        if (isset($map['targetSelectActioners'])) {
+            if (!empty($map['targetSelectActioners'])) {
+                $model->targetSelectActioners = [];
+                $n                            = 0;
+                foreach ($map['targetSelectActioners'] as $item) {
+                    $model->targetSelectActioners[$n++] = null !== $item ? targetSelectActioners::fromMap($item) : $item;
+                }
+            }
         }
 
         return $model;

@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class GetPrintAppInfoRequest extends Model
 {
     /**
-     * @description 用户id
-     *
-     * @var string
-     */
-    public $userId;
-
-    /**
      * @description 搜索关键字
      *
      * @var string
      */
     public $nameLike;
+
+    /**
+     * @description 用户id
+     *
+     * @var string
+     */
+    public $userId;
     protected $_name = [
-        'userId'   => 'userId',
         'nameLike' => 'nameLike',
+        'userId'   => 'userId',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class GetPrintAppInfoRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
-        }
         if (null !== $this->nameLike) {
             $res['nameLike'] = $this->nameLike;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class GetPrintAppInfoRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
-        }
         if (isset($map['nameLike'])) {
             $model->nameLike = $map['nameLike'];
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

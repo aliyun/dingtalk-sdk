@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class extField extends Model
 {
     /**
-     * @description 扩展字段值
-     *
-     * @var string
-     */
-    public $itemValue;
-
-    /**
      * @description 扩展字段名字
      *
      * @var string
      */
     public $itemName;
+
+    /**
+     * @description 扩展字段值
+     *
+     * @var string
+     */
+    public $itemValue;
     protected $_name = [
-        'itemValue' => 'itemValue',
         'itemName'  => 'itemName',
+        'itemValue' => 'itemValue',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class extField extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->itemValue) {
-            $res['itemValue'] = $this->itemValue;
-        }
         if (null !== $this->itemName) {
             $res['itemName'] = $this->itemName;
+        }
+        if (null !== $this->itemValue) {
+            $res['itemValue'] = $this->itemValue;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class extField extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['itemValue'])) {
-            $model->itemValue = $map['itemValue'];
-        }
         if (isset($map['itemName'])) {
             $model->itemName = $map['itemName'];
+        }
+        if (isset($map['itemValue'])) {
+            $model->itemValue = $map['itemValue'];
         }
 
         return $model;

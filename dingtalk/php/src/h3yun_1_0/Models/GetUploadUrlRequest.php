@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class GetUploadUrlRequest extends Model
 {
     /**
-     * @description 表单编码
-     *
-     * @var string
-     */
-    public $schemaCode;
-
-    /**
      * @description 业务数据实例id
      *
      * @var string
@@ -35,11 +28,18 @@ class GetUploadUrlRequest extends Model
      * @var bool
      */
     public $isOverwrite;
+
+    /**
+     * @description 表单编码
+     *
+     * @var string
+     */
+    public $schemaCode;
     protected $_name = [
-        'schemaCode'  => 'schemaCode',
         'bizObjectId' => 'bizObjectId',
         'fieldName'   => 'fieldName',
         'isOverwrite' => 'isOverwrite',
+        'schemaCode'  => 'schemaCode',
     ];
 
     public function validate()
@@ -49,9 +49,6 @@ class GetUploadUrlRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->schemaCode) {
-            $res['schemaCode'] = $this->schemaCode;
-        }
         if (null !== $this->bizObjectId) {
             $res['bizObjectId'] = $this->bizObjectId;
         }
@@ -60,6 +57,9 @@ class GetUploadUrlRequest extends Model
         }
         if (null !== $this->isOverwrite) {
             $res['isOverwrite'] = $this->isOverwrite;
+        }
+        if (null !== $this->schemaCode) {
+            $res['schemaCode'] = $this->schemaCode;
         }
 
         return $res;
@@ -73,9 +73,6 @@ class GetUploadUrlRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['schemaCode'])) {
-            $model->schemaCode = $map['schemaCode'];
-        }
         if (isset($map['bizObjectId'])) {
             $model->bizObjectId = $map['bizObjectId'];
         }
@@ -84,6 +81,9 @@ class GetUploadUrlRequest extends Model
         }
         if (isset($map['isOverwrite'])) {
             $model->isOverwrite = $map['isOverwrite'];
+        }
+        if (isset($map['schemaCode'])) {
+            $model->schemaCode = $map['schemaCode'];
         }
 
         return $model;

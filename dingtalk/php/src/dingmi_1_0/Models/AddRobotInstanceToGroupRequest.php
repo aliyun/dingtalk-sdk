@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class AddRobotInstanceToGroupRequest extends Model
 {
     /**
-     * @description 企业id
-     *
-     * @var string
-     */
-    public $dingCorpId;
-
-    /**
      * @description 机器人id
      *
      * @var string
@@ -29,7 +22,6 @@ class AddRobotInstanceToGroupRequest extends Model
      */
     public $openConversationId;
     protected $_name = [
-        'dingCorpId'         => 'dingCorpId',
         'chatbotId'          => 'chatbotId',
         'openConversationId' => 'openConversationId',
     ];
@@ -41,9 +33,6 @@ class AddRobotInstanceToGroupRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->dingCorpId) {
-            $res['dingCorpId'] = $this->dingCorpId;
-        }
         if (null !== $this->chatbotId) {
             $res['chatbotId'] = $this->chatbotId;
         }
@@ -62,9 +51,6 @@ class AddRobotInstanceToGroupRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['dingCorpId'])) {
-            $model->dingCorpId = $map['dingCorpId'];
-        }
         if (isset($map['chatbotId'])) {
             $model->chatbotId = $map['chatbotId'];
         }

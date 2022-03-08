@@ -11,17 +11,12 @@ class ExecuteCustomApiRequest extends Model
     /**
      * @var string
      */
-    public $data;
-
-    /**
-     * @var string
-     */
     public $appType;
 
     /**
      * @var string
      */
-    public $systemToken;
+    public $data;
 
     /**
      * @var string
@@ -36,13 +31,18 @@ class ExecuteCustomApiRequest extends Model
     /**
      * @var string
      */
+    public $systemToken;
+
+    /**
+     * @var string
+     */
     public $userId;
     protected $_name = [
-        'data'        => 'data',
         'appType'     => 'appType',
-        'systemToken' => 'systemToken',
+        'data'        => 'data',
         'language'    => 'language',
         'serviceId'   => 'serviceId',
+        'systemToken' => 'systemToken',
         'userId'      => 'userId',
     ];
 
@@ -53,20 +53,20 @@ class ExecuteCustomApiRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->data) {
-            $res['data'] = $this->data;
-        }
         if (null !== $this->appType) {
             $res['appType'] = $this->appType;
         }
-        if (null !== $this->systemToken) {
-            $res['systemToken'] = $this->systemToken;
+        if (null !== $this->data) {
+            $res['data'] = $this->data;
         }
         if (null !== $this->language) {
             $res['language'] = $this->language;
         }
         if (null !== $this->serviceId) {
             $res['serviceId'] = $this->serviceId;
+        }
+        if (null !== $this->systemToken) {
+            $res['systemToken'] = $this->systemToken;
         }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
@@ -83,20 +83,20 @@ class ExecuteCustomApiRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['data'])) {
-            $model->data = $map['data'];
-        }
         if (isset($map['appType'])) {
             $model->appType = $map['appType'];
         }
-        if (isset($map['systemToken'])) {
-            $model->systemToken = $map['systemToken'];
+        if (isset($map['data'])) {
+            $model->data = $map['data'];
         }
         if (isset($map['language'])) {
             $model->language = $map['language'];
         }
         if (isset($map['serviceId'])) {
             $model->serviceId = $map['serviceId'];
+        }
+        if (isset($map['systemToken'])) {
+            $model->systemToken = $map['systemToken'];
         }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];

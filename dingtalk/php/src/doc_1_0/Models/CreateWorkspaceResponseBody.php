@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class CreateWorkspaceResponseBody extends Model
 {
     /**
-     * @description 工作空间id
+     * @description 工作空间描述
      *
      * @var string
      */
-    public $workspaceId;
+    public $description;
 
     /**
      * @description 工作空间名称
@@ -23,23 +23,23 @@ class CreateWorkspaceResponseBody extends Model
     public $name;
 
     /**
-     * @description 工作空间描述
-     *
-     * @var string
-     */
-    public $description;
-
-    /**
      * @description 工作空间打开url
      *
      * @var string
      */
     public $url;
+
+    /**
+     * @description 工作空间id
+     *
+     * @var string
+     */
+    public $workspaceId;
     protected $_name = [
-        'workspaceId' => 'workspaceId',
-        'name'        => 'name',
         'description' => 'description',
+        'name'        => 'name',
         'url'         => 'url',
+        'workspaceId' => 'workspaceId',
     ];
 
     public function validate()
@@ -49,17 +49,17 @@ class CreateWorkspaceResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->workspaceId) {
-            $res['workspaceId'] = $this->workspaceId;
+        if (null !== $this->description) {
+            $res['description'] = $this->description;
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
         }
-        if (null !== $this->description) {
-            $res['description'] = $this->description;
-        }
         if (null !== $this->url) {
             $res['url'] = $this->url;
+        }
+        if (null !== $this->workspaceId) {
+            $res['workspaceId'] = $this->workspaceId;
         }
 
         return $res;
@@ -73,17 +73,17 @@ class CreateWorkspaceResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['workspaceId'])) {
-            $model->workspaceId = $map['workspaceId'];
+        if (isset($map['description'])) {
+            $model->description = $map['description'];
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];
         }
-        if (isset($map['description'])) {
-            $model->description = $map['description'];
-        }
         if (isset($map['url'])) {
             $model->url = $map['url'];
+        }
+        if (isset($map['workspaceId'])) {
+            $model->workspaceId = $map['workspaceId'];
         }
 
         return $model;

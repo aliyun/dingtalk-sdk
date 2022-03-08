@@ -54,11 +54,6 @@ class result extends Model
     public $roleUuid;
 
     /**
-     * @var string[]
-     */
-    public $userIds;
-
-    /**
      * @var int
      */
     public $status;
@@ -67,6 +62,11 @@ class result extends Model
      * @var string
      */
     public $typeUuid;
+
+    /**
+     * @var string[]
+     */
+    public $userIds;
 
     /**
      * @var string
@@ -82,9 +82,9 @@ class result extends Model
         'icon'              => 'icon',
         'introduction'      => 'introduction',
         'roleUuid'          => 'roleUuid',
-        'userIds'           => 'userIds',
         'status'            => 'status',
         'typeUuid'          => 'typeUuid',
+        'userIds'           => 'userIds',
         'uuid'              => 'uuid',
     ];
 
@@ -122,14 +122,14 @@ class result extends Model
         if (null !== $this->roleUuid) {
             $res['roleUuid'] = $this->roleUuid;
         }
-        if (null !== $this->userIds) {
-            $res['userIds'] = $this->userIds;
-        }
         if (null !== $this->status) {
             $res['status'] = $this->status;
         }
         if (null !== $this->typeUuid) {
             $res['typeUuid'] = $this->typeUuid;
+        }
+        if (null !== $this->userIds) {
+            $res['userIds'] = $this->userIds;
         }
         if (null !== $this->uuid) {
             $res['uuid'] = $this->uuid;
@@ -173,16 +173,16 @@ class result extends Model
         if (isset($map['roleUuid'])) {
             $model->roleUuid = $map['roleUuid'];
         }
-        if (isset($map['userIds'])) {
-            if (!empty($map['userIds'])) {
-                $model->userIds = $map['userIds'];
-            }
-        }
         if (isset($map['status'])) {
             $model->status = $map['status'];
         }
         if (isset($map['typeUuid'])) {
             $model->typeUuid = $map['typeUuid'];
+        }
+        if (isset($map['userIds'])) {
+            if (!empty($map['userIds'])) {
+                $model->userIds = $map['userIds'];
+            }
         }
         if (isset($map['uuid'])) {
             $model->uuid = $map['uuid'];

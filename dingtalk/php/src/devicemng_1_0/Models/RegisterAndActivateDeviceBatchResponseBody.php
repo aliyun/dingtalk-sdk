@@ -11,9 +11,9 @@ use AlibabaCloud\Tea\Model;
 class RegisterAndActivateDeviceBatchResponseBody extends Model
 {
     /**
-     * @var successItems[]
+     * @var failItems[]
      */
-    public $successItems;
+    public $failItems;
 
     /**
      * @var bool
@@ -21,13 +21,13 @@ class RegisterAndActivateDeviceBatchResponseBody extends Model
     public $success;
 
     /**
-     * @var failItems[]
+     * @var successItems[]
      */
-    public $failItems;
+    public $successItems;
     protected $_name = [
-        'successItems' => 'successItems',
-        'success'      => 'success',
         'failItems'    => 'failItems',
+        'success'      => 'success',
+        'successItems' => 'successItems',
     ];
 
     public function validate()
@@ -37,24 +37,24 @@ class RegisterAndActivateDeviceBatchResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->successItems) {
-            $res['successItems'] = [];
-            if (null !== $this->successItems && \is_array($this->successItems)) {
-                $n = 0;
-                foreach ($this->successItems as $item) {
-                    $res['successItems'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
-        }
-        if (null !== $this->success) {
-            $res['success'] = $this->success;
-        }
         if (null !== $this->failItems) {
             $res['failItems'] = [];
             if (null !== $this->failItems && \is_array($this->failItems)) {
                 $n = 0;
                 foreach ($this->failItems as $item) {
                     $res['failItems'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
+        if (null !== $this->success) {
+            $res['success'] = $this->success;
+        }
+        if (null !== $this->successItems) {
+            $res['successItems'] = [];
+            if (null !== $this->successItems && \is_array($this->successItems)) {
+                $n = 0;
+                foreach ($this->successItems as $item) {
+                    $res['successItems'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
         }
@@ -70,24 +70,24 @@ class RegisterAndActivateDeviceBatchResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['successItems'])) {
-            if (!empty($map['successItems'])) {
-                $model->successItems = [];
-                $n                   = 0;
-                foreach ($map['successItems'] as $item) {
-                    $model->successItems[$n++] = null !== $item ? successItems::fromMap($item) : $item;
-                }
-            }
-        }
-        if (isset($map['success'])) {
-            $model->success = $map['success'];
-        }
         if (isset($map['failItems'])) {
             if (!empty($map['failItems'])) {
                 $model->failItems = [];
                 $n                = 0;
                 foreach ($map['failItems'] as $item) {
                     $model->failItems[$n++] = null !== $item ? failItems::fromMap($item) : $item;
+                }
+            }
+        }
+        if (isset($map['success'])) {
+            $model->success = $map['success'];
+        }
+        if (isset($map['successItems'])) {
+            if (!empty($map['successItems'])) {
+                $model->successItems = [];
+                $n                   = 0;
+                foreach ($map['successItems'] as $item) {
+                    $model->successItems[$n++] = null !== $item ? successItems::fromMap($item) : $item;
                 }
             }
         }

@@ -12,27 +12,22 @@ class referenceFields extends Model
     /**
      * @var string
      */
+    public $format;
+
+    /**
+     * @var string
+     */
     public $label;
 
     /**
      * @var string
      */
-    public $type;
+    public $name;
 
     /**
      * @var bool
      */
     public $nillable;
-
-    /**
-     * @var string
-     */
-    public $unit;
-
-    /**
-     * @var string
-     */
-    public $format;
 
     /**
      * @var selectOptions[]
@@ -42,15 +37,20 @@ class referenceFields extends Model
     /**
      * @var string
      */
-    public $name;
+    public $type;
+
+    /**
+     * @var string
+     */
+    public $unit;
     protected $_name = [
-        'label'         => 'label',
-        'type'          => 'type',
-        'nillable'      => 'nillable',
-        'unit'          => 'unit',
         'format'        => 'format',
-        'selectOptions' => 'selectOptions',
+        'label'         => 'label',
         'name'          => 'name',
+        'nillable'      => 'nillable',
+        'selectOptions' => 'selectOptions',
+        'type'          => 'type',
+        'unit'          => 'unit',
     ];
 
     public function validate()
@@ -60,20 +60,17 @@ class referenceFields extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->format) {
+            $res['format'] = $this->format;
+        }
         if (null !== $this->label) {
             $res['label'] = $this->label;
         }
-        if (null !== $this->type) {
-            $res['type'] = $this->type;
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
         }
         if (null !== $this->nillable) {
             $res['nillable'] = $this->nillable;
-        }
-        if (null !== $this->unit) {
-            $res['unit'] = $this->unit;
-        }
-        if (null !== $this->format) {
-            $res['format'] = $this->format;
         }
         if (null !== $this->selectOptions) {
             $res['selectOptions'] = [];
@@ -84,8 +81,11 @@ class referenceFields extends Model
                 }
             }
         }
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
+        if (null !== $this->type) {
+            $res['type'] = $this->type;
+        }
+        if (null !== $this->unit) {
+            $res['unit'] = $this->unit;
         }
 
         return $res;
@@ -99,20 +99,17 @@ class referenceFields extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['format'])) {
+            $model->format = $map['format'];
+        }
         if (isset($map['label'])) {
             $model->label = $map['label'];
         }
-        if (isset($map['type'])) {
-            $model->type = $map['type'];
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
         }
         if (isset($map['nillable'])) {
             $model->nillable = $map['nillable'];
-        }
-        if (isset($map['unit'])) {
-            $model->unit = $map['unit'];
-        }
-        if (isset($map['format'])) {
-            $model->format = $map['format'];
         }
         if (isset($map['selectOptions'])) {
             if (!empty($map['selectOptions'])) {
@@ -123,8 +120,11 @@ class referenceFields extends Model
                 }
             }
         }
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
+        if (isset($map['type'])) {
+            $model->type = $map['type'];
+        }
+        if (isset($map['unit'])) {
+            $model->unit = $map['unit'];
         }
 
         return $model;

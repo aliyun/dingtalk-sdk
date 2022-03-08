@@ -10,20 +10,6 @@ use AlibabaCloud\Tea\Model;
 class GetUserCardHolderListResponseBody extends Model
 {
     /**
-     * @description TotalCount本次请求条件下的数据总量，此参数为可选参数，默认可不返回
-     *
-     * @var int
-     */
-    public $totalCount;
-
-    /**
-     * @description 表示当前调用返回读取到的位置，空代表数据已经读取完毕
-     *
-     * @var int
-     */
-    public $nextToken;
-
-    /**
      * @description 是否还有数据
      *
      * @var bool
@@ -36,11 +22,25 @@ class GetUserCardHolderListResponseBody extends Model
      * @var list_[]
      */
     public $list;
+
+    /**
+     * @description 表示当前调用返回读取到的位置，空代表数据已经读取完毕
+     *
+     * @var int
+     */
+    public $nextToken;
+
+    /**
+     * @description TotalCount本次请求条件下的数据总量，此参数为可选参数，默认可不返回
+     *
+     * @var int
+     */
+    public $totalCount;
     protected $_name = [
-        'totalCount' => 'totalCount',
-        'nextToken'  => 'nextToken',
         'hasMore'    => 'hasMore',
         'list'       => 'list',
+        'nextToken'  => 'nextToken',
+        'totalCount' => 'totalCount',
     ];
 
     public function validate()
@@ -50,12 +50,6 @@ class GetUserCardHolderListResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->totalCount) {
-            $res['totalCount'] = $this->totalCount;
-        }
-        if (null !== $this->nextToken) {
-            $res['nextToken'] = $this->nextToken;
-        }
         if (null !== $this->hasMore) {
             $res['hasMore'] = $this->hasMore;
         }
@@ -67,6 +61,12 @@ class GetUserCardHolderListResponseBody extends Model
                     $res['list'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
+        }
+        if (null !== $this->totalCount) {
+            $res['totalCount'] = $this->totalCount;
         }
 
         return $res;
@@ -80,12 +80,6 @@ class GetUserCardHolderListResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['totalCount'])) {
-            $model->totalCount = $map['totalCount'];
-        }
-        if (isset($map['nextToken'])) {
-            $model->nextToken = $map['nextToken'];
-        }
         if (isset($map['hasMore'])) {
             $model->hasMore = $map['hasMore'];
         }
@@ -97,6 +91,12 @@ class GetUserCardHolderListResponseBody extends Model
                     $model->list[$n++] = null !== $item ? list_::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
+        }
+        if (isset($map['totalCount'])) {
+            $model->totalCount = $map['totalCount'];
         }
 
         return $model;

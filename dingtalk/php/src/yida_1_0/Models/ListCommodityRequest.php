@@ -16,13 +16,6 @@ class ListCommodityRequest extends Model
     public $accessKey;
 
     /**
-     * @description pageSize
-     *
-     * @var int
-     */
-    public $pageSize;
-
-    /**
      * @description callerUid
      *
      * @var string
@@ -35,11 +28,18 @@ class ListCommodityRequest extends Model
      * @var int
      */
     public $pageNumber;
+
+    /**
+     * @description pageSize
+     *
+     * @var int
+     */
+    public $pageSize;
     protected $_name = [
         'accessKey'  => 'accessKey',
-        'pageSize'   => 'pageSize',
         'callerUid'  => 'callerUid',
         'pageNumber' => 'pageNumber',
+        'pageSize'   => 'pageSize',
     ];
 
     public function validate()
@@ -52,14 +52,14 @@ class ListCommodityRequest extends Model
         if (null !== $this->accessKey) {
             $res['accessKey'] = $this->accessKey;
         }
-        if (null !== $this->pageSize) {
-            $res['pageSize'] = $this->pageSize;
-        }
         if (null !== $this->callerUid) {
             $res['callerUid'] = $this->callerUid;
         }
         if (null !== $this->pageNumber) {
             $res['pageNumber'] = $this->pageNumber;
+        }
+        if (null !== $this->pageSize) {
+            $res['pageSize'] = $this->pageSize;
         }
 
         return $res;
@@ -76,14 +76,14 @@ class ListCommodityRequest extends Model
         if (isset($map['accessKey'])) {
             $model->accessKey = $map['accessKey'];
         }
-        if (isset($map['pageSize'])) {
-            $model->pageSize = $map['pageSize'];
-        }
         if (isset($map['callerUid'])) {
             $model->callerUid = $map['callerUid'];
         }
         if (isset($map['pageNumber'])) {
             $model->pageNumber = $map['pageNumber'];
+        }
+        if (isset($map['pageSize'])) {
+            $model->pageSize = $map['pageSize'];
         }
 
         return $model;

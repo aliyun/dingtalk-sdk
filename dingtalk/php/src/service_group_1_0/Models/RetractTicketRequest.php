@@ -11,24 +11,9 @@ use AlibabaCloud\Tea\Model;
 class RetractTicketRequest extends Model
 {
     /**
-     * @var int
+     * @var notify
      */
-    public $dingIsvOrgId;
-
-    /**
-     * @var int
-     */
-    public $dingOrgId;
-
-    /**
-     * @var int
-     */
-    public $dingTokenGrantType;
-
-    /**
-     * @var string
-     */
-    public $dingSuiteKey;
+    public $notify;
 
     /**
      * @var string
@@ -53,21 +38,12 @@ class RetractTicketRequest extends Model
      * @var ticketMemo
      */
     public $ticketMemo;
-
-    /**
-     * @var notify
-     */
-    public $notify;
     protected $_name = [
-        'dingIsvOrgId'       => 'dingIsvOrgId',
-        'dingOrgId'          => 'dingOrgId',
-        'dingTokenGrantType' => 'dingTokenGrantType',
-        'dingSuiteKey'       => 'dingSuiteKey',
-        'openTeamId'         => 'openTeamId',
-        'openTicketId'       => 'openTicketId',
-        'operatorUnionId'    => 'operatorUnionId',
-        'ticketMemo'         => 'ticketMemo',
-        'notify'             => 'notify',
+        'notify'          => 'notify',
+        'openTeamId'      => 'openTeamId',
+        'openTicketId'    => 'openTicketId',
+        'operatorUnionId' => 'operatorUnionId',
+        'ticketMemo'      => 'ticketMemo',
     ];
 
     public function validate()
@@ -77,17 +53,8 @@ class RetractTicketRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->dingIsvOrgId) {
-            $res['dingIsvOrgId'] = $this->dingIsvOrgId;
-        }
-        if (null !== $this->dingOrgId) {
-            $res['dingOrgId'] = $this->dingOrgId;
-        }
-        if (null !== $this->dingTokenGrantType) {
-            $res['dingTokenGrantType'] = $this->dingTokenGrantType;
-        }
-        if (null !== $this->dingSuiteKey) {
-            $res['dingSuiteKey'] = $this->dingSuiteKey;
+        if (null !== $this->notify) {
+            $res['notify'] = null !== $this->notify ? $this->notify->toMap() : null;
         }
         if (null !== $this->openTeamId) {
             $res['openTeamId'] = $this->openTeamId;
@@ -101,9 +68,6 @@ class RetractTicketRequest extends Model
         if (null !== $this->ticketMemo) {
             $res['ticketMemo'] = null !== $this->ticketMemo ? $this->ticketMemo->toMap() : null;
         }
-        if (null !== $this->notify) {
-            $res['notify'] = null !== $this->notify ? $this->notify->toMap() : null;
-        }
 
         return $res;
     }
@@ -116,17 +80,8 @@ class RetractTicketRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['dingIsvOrgId'])) {
-            $model->dingIsvOrgId = $map['dingIsvOrgId'];
-        }
-        if (isset($map['dingOrgId'])) {
-            $model->dingOrgId = $map['dingOrgId'];
-        }
-        if (isset($map['dingTokenGrantType'])) {
-            $model->dingTokenGrantType = $map['dingTokenGrantType'];
-        }
-        if (isset($map['dingSuiteKey'])) {
-            $model->dingSuiteKey = $map['dingSuiteKey'];
+        if (isset($map['notify'])) {
+            $model->notify = notify::fromMap($map['notify']);
         }
         if (isset($map['openTeamId'])) {
             $model->openTeamId = $map['openTeamId'];
@@ -139,9 +94,6 @@ class RetractTicketRequest extends Model
         }
         if (isset($map['ticketMemo'])) {
             $model->ticketMemo = ticketMemo::fromMap($map['ticketMemo']);
-        }
-        if (isset($map['notify'])) {
-            $model->notify = notify::fromMap($map['notify']);
         }
 
         return $model;

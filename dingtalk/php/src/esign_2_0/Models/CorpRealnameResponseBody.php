@@ -11,7 +11,7 @@ class CorpRealnameResponseBody extends Model
     /**
      * @var string
      */
-    public $taskId;
+    public $mobileUrl;
 
     /**
      * @var string
@@ -21,11 +21,11 @@ class CorpRealnameResponseBody extends Model
     /**
      * @var string
      */
-    public $mobileUrl;
+    public $taskId;
     protected $_name = [
-        'taskId'    => 'taskId',
-        'pcUrl'     => 'pcUrl',
         'mobileUrl' => 'mobileUrl',
+        'pcUrl'     => 'pcUrl',
+        'taskId'    => 'taskId',
     ];
 
     public function validate()
@@ -35,14 +35,14 @@ class CorpRealnameResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->taskId) {
-            $res['taskId'] = $this->taskId;
+        if (null !== $this->mobileUrl) {
+            $res['mobileUrl'] = $this->mobileUrl;
         }
         if (null !== $this->pcUrl) {
             $res['pcUrl'] = $this->pcUrl;
         }
-        if (null !== $this->mobileUrl) {
-            $res['mobileUrl'] = $this->mobileUrl;
+        if (null !== $this->taskId) {
+            $res['taskId'] = $this->taskId;
         }
 
         return $res;
@@ -56,14 +56,14 @@ class CorpRealnameResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['taskId'])) {
-            $model->taskId = $map['taskId'];
+        if (isset($map['mobileUrl'])) {
+            $model->mobileUrl = $map['mobileUrl'];
         }
         if (isset($map['pcUrl'])) {
             $model->pcUrl = $map['pcUrl'];
         }
-        if (isset($map['mobileUrl'])) {
-            $model->mobileUrl = $map['mobileUrl'];
+        if (isset($map['taskId'])) {
+            $model->taskId = $map['taskId'];
         }
 
         return $model;

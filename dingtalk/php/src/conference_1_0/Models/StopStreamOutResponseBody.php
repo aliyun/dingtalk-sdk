@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class StopStreamOutResponseBody extends Model
 {
     /**
-     * @description conferenceId
-     *
-     * @var string
-     */
-    public $code;
-
-    /**
      * @description 会议密码
      *
      * @var string
      */
     public $cause;
+
+    /**
+     * @description conferenceId
+     *
+     * @var string
+     */
+    public $code;
     protected $_name = [
-        'code'  => 'code',
         'cause' => 'cause',
+        'code'  => 'code',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class StopStreamOutResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->code) {
-            $res['code'] = $this->code;
-        }
         if (null !== $this->cause) {
             $res['cause'] = $this->cause;
+        }
+        if (null !== $this->code) {
+            $res['code'] = $this->code;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class StopStreamOutResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['code'])) {
-            $model->code = $map['code'];
-        }
         if (isset($map['cause'])) {
             $model->cause = $map['cause'];
+        }
+        if (isset($map['code'])) {
+            $model->code = $map['code'];
         }
 
         return $model;

@@ -10,6 +10,11 @@ use AlibabaCloud\Tea\Model;
 class IndustryManufactureFeeListGetResponseBody extends Model
 {
     /**
+     * @var bool
+     */
+    public $hasMore;
+
+    /**
      * @var list_[]
      */
     public $list;
@@ -23,16 +28,11 @@ class IndustryManufactureFeeListGetResponseBody extends Model
      * @var int
      */
     public $totalCount;
-
-    /**
-     * @var bool
-     */
-    public $hasMore;
     protected $_name = [
+        'hasMore'    => 'hasMore',
         'list'       => 'list',
         'nextCursor' => 'nextCursor',
         'totalCount' => 'totalCount',
-        'hasMore'    => 'hasMore',
     ];
 
     public function validate()
@@ -42,6 +42,9 @@ class IndustryManufactureFeeListGetResponseBody extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->hasMore) {
+            $res['hasMore'] = $this->hasMore;
+        }
         if (null !== $this->list) {
             $res['list'] = [];
             if (null !== $this->list && \is_array($this->list)) {
@@ -57,9 +60,6 @@ class IndustryManufactureFeeListGetResponseBody extends Model
         if (null !== $this->totalCount) {
             $res['totalCount'] = $this->totalCount;
         }
-        if (null !== $this->hasMore) {
-            $res['hasMore'] = $this->hasMore;
-        }
 
         return $res;
     }
@@ -72,6 +72,9 @@ class IndustryManufactureFeeListGetResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['hasMore'])) {
+            $model->hasMore = $map['hasMore'];
+        }
         if (isset($map['list'])) {
             if (!empty($map['list'])) {
                 $model->list = [];
@@ -86,9 +89,6 @@ class IndustryManufactureFeeListGetResponseBody extends Model
         }
         if (isset($map['totalCount'])) {
             $model->totalCount = $map['totalCount'];
-        }
-        if (isset($map['hasMore'])) {
-            $model->hasMore = $map['hasMore'];
         }
 
         return $model;

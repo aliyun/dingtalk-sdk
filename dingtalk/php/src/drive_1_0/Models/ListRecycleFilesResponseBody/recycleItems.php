@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class recycleItems extends Model
 {
     /**
-     * @description 回收站item id
+     * @description 文件内容类型
      *
      * @var string
      */
-    public $recycleItemId;
+    public $contentType;
 
     /**
      * @description 删除员工工号
@@ -30,6 +30,20 @@ class recycleItems extends Model
     public $deleteTime;
 
     /**
+     * @description 文件名称
+     *
+     * @var string
+     */
+    public $fileName;
+
+    /**
+     * @description 文件路径
+     *
+     * @var string
+     */
+    public $filePath;
+
+    /**
      * @description 文件大小
      *
      * @var int
@@ -44,34 +58,20 @@ class recycleItems extends Model
     public $fileType;
 
     /**
-     * @description 文件内容类型
+     * @description 回收站item id
      *
      * @var string
      */
-    public $contentType;
-
-    /**
-     * @description 文件名称
-     *
-     * @var string
-     */
-    public $fileName;
-
-    /**
-     * @description 文件路径
-     *
-     * @var string
-     */
-    public $filePath;
+    public $recycleItemId;
     protected $_name = [
-        'recycleItemId' => 'recycleItemId',
+        'contentType'   => 'contentType',
         'deleteStaffId' => 'deleteStaffId',
         'deleteTime'    => 'deleteTime',
-        'fileSize'      => 'fileSize',
-        'fileType'      => 'fileType',
-        'contentType'   => 'contentType',
         'fileName'      => 'fileName',
         'filePath'      => 'filePath',
+        'fileSize'      => 'fileSize',
+        'fileType'      => 'fileType',
+        'recycleItemId' => 'recycleItemId',
     ];
 
     public function validate()
@@ -81,8 +81,8 @@ class recycleItems extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->recycleItemId) {
-            $res['recycleItemId'] = $this->recycleItemId;
+        if (null !== $this->contentType) {
+            $res['contentType'] = $this->contentType;
         }
         if (null !== $this->deleteStaffId) {
             $res['deleteStaffId'] = $this->deleteStaffId;
@@ -90,20 +90,20 @@ class recycleItems extends Model
         if (null !== $this->deleteTime) {
             $res['deleteTime'] = $this->deleteTime;
         }
+        if (null !== $this->fileName) {
+            $res['fileName'] = $this->fileName;
+        }
+        if (null !== $this->filePath) {
+            $res['filePath'] = $this->filePath;
+        }
         if (null !== $this->fileSize) {
             $res['fileSize'] = $this->fileSize;
         }
         if (null !== $this->fileType) {
             $res['fileType'] = $this->fileType;
         }
-        if (null !== $this->contentType) {
-            $res['contentType'] = $this->contentType;
-        }
-        if (null !== $this->fileName) {
-            $res['fileName'] = $this->fileName;
-        }
-        if (null !== $this->filePath) {
-            $res['filePath'] = $this->filePath;
+        if (null !== $this->recycleItemId) {
+            $res['recycleItemId'] = $this->recycleItemId;
         }
 
         return $res;
@@ -117,8 +117,8 @@ class recycleItems extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['recycleItemId'])) {
-            $model->recycleItemId = $map['recycleItemId'];
+        if (isset($map['contentType'])) {
+            $model->contentType = $map['contentType'];
         }
         if (isset($map['deleteStaffId'])) {
             $model->deleteStaffId = $map['deleteStaffId'];
@@ -126,20 +126,20 @@ class recycleItems extends Model
         if (isset($map['deleteTime'])) {
             $model->deleteTime = $map['deleteTime'];
         }
+        if (isset($map['fileName'])) {
+            $model->fileName = $map['fileName'];
+        }
+        if (isset($map['filePath'])) {
+            $model->filePath = $map['filePath'];
+        }
         if (isset($map['fileSize'])) {
             $model->fileSize = $map['fileSize'];
         }
         if (isset($map['fileType'])) {
             $model->fileType = $map['fileType'];
         }
-        if (isset($map['contentType'])) {
-            $model->contentType = $map['contentType'];
-        }
-        if (isset($map['fileName'])) {
-            $model->fileName = $map['fileName'];
-        }
-        if (isset($map['filePath'])) {
-            $model->filePath = $map['filePath'];
+        if (isset($map['recycleItemId'])) {
+            $model->recycleItemId = $map['recycleItemId'];
         }
 
         return $model;

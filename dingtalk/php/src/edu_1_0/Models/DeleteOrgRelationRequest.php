@@ -11,15 +11,15 @@ class DeleteOrgRelationRequest extends Model
     /**
      * @var string
      */
-    public $targetCorpId;
+    public $authCode;
 
     /**
      * @var string
      */
-    public $authCode;
+    public $targetCorpId;
     protected $_name = [
-        'targetCorpId' => 'targetCorpId',
         'authCode'     => 'authCode',
+        'targetCorpId' => 'targetCorpId',
     ];
 
     public function validate()
@@ -29,11 +29,11 @@ class DeleteOrgRelationRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->targetCorpId) {
-            $res['targetCorpId'] = $this->targetCorpId;
-        }
         if (null !== $this->authCode) {
             $res['authCode'] = $this->authCode;
+        }
+        if (null !== $this->targetCorpId) {
+            $res['targetCorpId'] = $this->targetCorpId;
         }
 
         return $res;
@@ -47,11 +47,11 @@ class DeleteOrgRelationRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['targetCorpId'])) {
-            $model->targetCorpId = $map['targetCorpId'];
-        }
         if (isset($map['authCode'])) {
             $model->authCode = $map['authCode'];
+        }
+        if (isset($map['targetCorpId'])) {
+            $model->targetCorpId = $map['targetCorpId'];
         }
 
         return $model;

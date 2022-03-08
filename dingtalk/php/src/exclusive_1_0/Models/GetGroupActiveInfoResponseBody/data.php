@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 统计时间
-     *
-     * @var string
-     */
-    public $statDate;
-
-    /**
      * @description 群组id
      *
      * @var string
@@ -65,11 +58,11 @@ class data extends Model
     public $groupUserCnt1d;
 
     /**
-     * @description 最近1天发消息人数
+     * @description 最近1天打开群人数
      *
      * @var int
      */
-    public $sendMessageUserCnt1d;
+    public $openConvUv1d;
 
     /**
      * @description 最近1天发消息次数
@@ -79,13 +72,19 @@ class data extends Model
     public $sendMessageCnt1d;
 
     /**
-     * @description 最近1天打开群人数
+     * @description 最近1天发消息人数
      *
      * @var int
      */
-    public $openConvUv1d;
+    public $sendMessageUserCnt1d;
+
+    /**
+     * @description 统计时间
+     *
+     * @var string
+     */
+    public $statDate;
     protected $_name = [
-        'statDate'             => 'statDate',
         'dingGroupId'          => 'dingGroupId',
         'groupCreateTime'      => 'groupCreateTime',
         'groupCreateUserId'    => 'groupCreateUserId',
@@ -93,9 +92,10 @@ class data extends Model
         'groupName'            => 'groupName',
         'groupType'            => 'groupType',
         'groupUserCnt1d'       => 'groupUserCnt1d',
-        'sendMessageUserCnt1d' => 'sendMessageUserCnt1d',
-        'sendMessageCnt1d'     => 'sendMessageCnt1d',
         'openConvUv1d'         => 'openConvUv1d',
+        'sendMessageCnt1d'     => 'sendMessageCnt1d',
+        'sendMessageUserCnt1d' => 'sendMessageUserCnt1d',
+        'statDate'             => 'statDate',
     ];
 
     public function validate()
@@ -105,9 +105,6 @@ class data extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->statDate) {
-            $res['statDate'] = $this->statDate;
-        }
         if (null !== $this->dingGroupId) {
             $res['dingGroupId'] = $this->dingGroupId;
         }
@@ -129,14 +126,17 @@ class data extends Model
         if (null !== $this->groupUserCnt1d) {
             $res['groupUserCnt1d'] = $this->groupUserCnt1d;
         }
-        if (null !== $this->sendMessageUserCnt1d) {
-            $res['sendMessageUserCnt1d'] = $this->sendMessageUserCnt1d;
+        if (null !== $this->openConvUv1d) {
+            $res['openConvUv1d'] = $this->openConvUv1d;
         }
         if (null !== $this->sendMessageCnt1d) {
             $res['sendMessageCnt1d'] = $this->sendMessageCnt1d;
         }
-        if (null !== $this->openConvUv1d) {
-            $res['openConvUv1d'] = $this->openConvUv1d;
+        if (null !== $this->sendMessageUserCnt1d) {
+            $res['sendMessageUserCnt1d'] = $this->sendMessageUserCnt1d;
+        }
+        if (null !== $this->statDate) {
+            $res['statDate'] = $this->statDate;
         }
 
         return $res;
@@ -150,9 +150,6 @@ class data extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['statDate'])) {
-            $model->statDate = $map['statDate'];
-        }
         if (isset($map['dingGroupId'])) {
             $model->dingGroupId = $map['dingGroupId'];
         }
@@ -174,14 +171,17 @@ class data extends Model
         if (isset($map['groupUserCnt1d'])) {
             $model->groupUserCnt1d = $map['groupUserCnt1d'];
         }
-        if (isset($map['sendMessageUserCnt1d'])) {
-            $model->sendMessageUserCnt1d = $map['sendMessageUserCnt1d'];
+        if (isset($map['openConvUv1d'])) {
+            $model->openConvUv1d = $map['openConvUv1d'];
         }
         if (isset($map['sendMessageCnt1d'])) {
             $model->sendMessageCnt1d = $map['sendMessageCnt1d'];
         }
-        if (isset($map['openConvUv1d'])) {
-            $model->openConvUv1d = $map['openConvUv1d'];
+        if (isset($map['sendMessageUserCnt1d'])) {
+            $model->sendMessageUserCnt1d = $map['sendMessageUserCnt1d'];
+        }
+        if (isset($map['statDate'])) {
+            $model->statDate = $map['statDate'];
         }
 
         return $model;

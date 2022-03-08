@@ -10,21 +10,21 @@ use AlibabaCloud\Tea\Model;
 class orgClassStudentGroupList extends Model
 {
     /**
-     * @description 组织id
-     *
-     * @var string
-     */
-    public $corpId;
-
-    /**
      * @description 班级列表
      *
      * @var classList[]
      */
     public $classList;
+
+    /**
+     * @description 组织id
+     *
+     * @var string
+     */
+    public $corpId;
     protected $_name = [
-        'corpId'    => 'corpId',
         'classList' => 'classList',
+        'corpId'    => 'corpId',
     ];
 
     public function validate()
@@ -34,9 +34,6 @@ class orgClassStudentGroupList extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->corpId) {
-            $res['corpId'] = $this->corpId;
-        }
         if (null !== $this->classList) {
             $res['classList'] = [];
             if (null !== $this->classList && \is_array($this->classList)) {
@@ -45,6 +42,9 @@ class orgClassStudentGroupList extends Model
                     $res['classList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->corpId) {
+            $res['corpId'] = $this->corpId;
         }
 
         return $res;
@@ -58,9 +58,6 @@ class orgClassStudentGroupList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['corpId'])) {
-            $model->corpId = $map['corpId'];
-        }
         if (isset($map['classList'])) {
             if (!empty($map['classList'])) {
                 $model->classList = [];
@@ -69,6 +66,9 @@ class orgClassStudentGroupList extends Model
                     $model->classList[$n++] = null !== $item ? classList::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['corpId'])) {
+            $model->corpId = $map['corpId'];
         }
 
         return $model;

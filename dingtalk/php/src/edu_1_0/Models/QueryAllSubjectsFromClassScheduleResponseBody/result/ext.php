@@ -10,13 +10,6 @@ use AlibabaCloud\Tea\Model;
 class ext extends Model
 {
     /**
-     * @description 学科字体颜色
-     *
-     * @var string
-     */
-    public $fontColor;
-
-    /**
      * @description 学科背景颜色
      *
      * @var string
@@ -31,15 +24,22 @@ class ext extends Model
     public $classId;
 
     /**
+     * @description 学科字体颜色
+     *
+     * @var string
+     */
+    public $fontColor;
+
+    /**
      * @description 老师列表
      *
      * @var teacherList[]
      */
     public $teacherList;
     protected $_name = [
-        'fontColor'       => 'fontColor',
         'backgroundColor' => 'backgroundColor',
         'classId'         => 'classId',
+        'fontColor'       => 'fontColor',
         'teacherList'     => 'teacherList',
     ];
 
@@ -50,14 +50,14 @@ class ext extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->fontColor) {
-            $res['fontColor'] = $this->fontColor;
-        }
         if (null !== $this->backgroundColor) {
             $res['backgroundColor'] = $this->backgroundColor;
         }
         if (null !== $this->classId) {
             $res['classId'] = $this->classId;
+        }
+        if (null !== $this->fontColor) {
+            $res['fontColor'] = $this->fontColor;
         }
         if (null !== $this->teacherList) {
             $res['teacherList'] = [];
@@ -80,14 +80,14 @@ class ext extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['fontColor'])) {
-            $model->fontColor = $map['fontColor'];
-        }
         if (isset($map['backgroundColor'])) {
             $model->backgroundColor = $map['backgroundColor'];
         }
         if (isset($map['classId'])) {
             $model->classId = $map['classId'];
+        }
+        if (isset($map['fontColor'])) {
+            $model->fontColor = $map['fontColor'];
         }
         if (isset($map['teacherList'])) {
             if (!empty($map['teacherList'])) {

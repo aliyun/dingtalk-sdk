@@ -9,18 +9,11 @@ use AlibabaCloud\Tea\Model;
 class GetLatestDingIndexResponseBody extends Model
 {
     /**
-     * @description 日期
-     *
-     * @var string
-     */
-    public $statDate;
-
-    /**
-     * @description 钉钉指数
+     * @description 绿色指数
      *
      * @var float
      */
-    public $idxTotal;
+    public $idxCarbon;
 
     /**
      * @description 效率指数
@@ -30,24 +23,31 @@ class GetLatestDingIndexResponseBody extends Model
     public $idxEfficiency;
 
     /**
-     * @description 绿色指数
-     *
-     * @var float
-     */
-    public $idxCarbon;
-
-    /**
      * @description 钉钉指数月均分
      *
      * @var float
      */
     public $idxMonthlyAvg;
+
+    /**
+     * @description 钉钉指数
+     *
+     * @var float
+     */
+    public $idxTotal;
+
+    /**
+     * @description 日期
+     *
+     * @var string
+     */
+    public $statDate;
     protected $_name = [
-        'statDate'      => 'statDate',
-        'idxTotal'      => 'idxTotal',
-        'idxEfficiency' => 'idxEfficiency',
         'idxCarbon'     => 'idxCarbon',
+        'idxEfficiency' => 'idxEfficiency',
         'idxMonthlyAvg' => 'idxMonthlyAvg',
+        'idxTotal'      => 'idxTotal',
+        'statDate'      => 'statDate',
     ];
 
     public function validate()
@@ -57,20 +57,20 @@ class GetLatestDingIndexResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->statDate) {
-            $res['statDate'] = $this->statDate;
-        }
-        if (null !== $this->idxTotal) {
-            $res['idxTotal'] = $this->idxTotal;
+        if (null !== $this->idxCarbon) {
+            $res['idxCarbon'] = $this->idxCarbon;
         }
         if (null !== $this->idxEfficiency) {
             $res['idxEfficiency'] = $this->idxEfficiency;
         }
-        if (null !== $this->idxCarbon) {
-            $res['idxCarbon'] = $this->idxCarbon;
-        }
         if (null !== $this->idxMonthlyAvg) {
             $res['idxMonthlyAvg'] = $this->idxMonthlyAvg;
+        }
+        if (null !== $this->idxTotal) {
+            $res['idxTotal'] = $this->idxTotal;
+        }
+        if (null !== $this->statDate) {
+            $res['statDate'] = $this->statDate;
         }
 
         return $res;
@@ -84,20 +84,20 @@ class GetLatestDingIndexResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['statDate'])) {
-            $model->statDate = $map['statDate'];
-        }
-        if (isset($map['idxTotal'])) {
-            $model->idxTotal = $map['idxTotal'];
+        if (isset($map['idxCarbon'])) {
+            $model->idxCarbon = $map['idxCarbon'];
         }
         if (isset($map['idxEfficiency'])) {
             $model->idxEfficiency = $map['idxEfficiency'];
         }
-        if (isset($map['idxCarbon'])) {
-            $model->idxCarbon = $map['idxCarbon'];
-        }
         if (isset($map['idxMonthlyAvg'])) {
             $model->idxMonthlyAvg = $map['idxMonthlyAvg'];
+        }
+        if (isset($map['idxTotal'])) {
+            $model->idxTotal = $map['idxTotal'];
+        }
+        if (isset($map['statDate'])) {
+            $model->statDate = $map['statDate'];
         }
 
         return $model;

@@ -9,6 +9,34 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
+     * @description 创建时间(时间戳)。
+     *
+     * @var int
+     */
+    public $gmtCreate;
+
+    /**
+     * @description 群头像地址。
+     *
+     * @var string
+     */
+    public $iconUrl;
+
+    /**
+     * @description 客户群成员数。
+     *
+     * @var int
+     */
+    public $memberCount;
+
+    /**
+     * @description 客户群名
+     *
+     * @var string
+     */
+    public $name;
+
+    /**
      * @description 客户群openConversationId。
      *
      * @var string
@@ -35,43 +63,15 @@ class result extends Model
      * @var string
      */
     public $ownerUserName;
-
-    /**
-     * @description 客户群名
-     *
-     * @var string
-     */
-    public $name;
-
-    /**
-     * @description 客户群成员数。
-     *
-     * @var int
-     */
-    public $memberCount;
-
-    /**
-     * @description 创建时间(时间戳)。
-     *
-     * @var int
-     */
-    public $gmtCreate;
-
-    /**
-     * @description 群头像地址。
-     *
-     * @var string
-     */
-    public $iconUrl;
     protected $_name = [
+        'gmtCreate'          => 'gmtCreate',
+        'iconUrl'            => 'iconUrl',
+        'memberCount'        => 'memberCount',
+        'name'               => 'name',
         'openConversationId' => 'openConversationId',
         'openGroupSetId'     => 'openGroupSetId',
         'ownerUserId'        => 'ownerUserId',
         'ownerUserName'      => 'ownerUserName',
-        'name'               => 'name',
-        'memberCount'        => 'memberCount',
-        'gmtCreate'          => 'gmtCreate',
-        'iconUrl'            => 'iconUrl',
     ];
 
     public function validate()
@@ -81,6 +81,18 @@ class result extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->gmtCreate) {
+            $res['gmtCreate'] = $this->gmtCreate;
+        }
+        if (null !== $this->iconUrl) {
+            $res['iconUrl'] = $this->iconUrl;
+        }
+        if (null !== $this->memberCount) {
+            $res['memberCount'] = $this->memberCount;
+        }
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
+        }
         if (null !== $this->openConversationId) {
             $res['openConversationId'] = $this->openConversationId;
         }
@@ -92,18 +104,6 @@ class result extends Model
         }
         if (null !== $this->ownerUserName) {
             $res['ownerUserName'] = $this->ownerUserName;
-        }
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
-        }
-        if (null !== $this->memberCount) {
-            $res['memberCount'] = $this->memberCount;
-        }
-        if (null !== $this->gmtCreate) {
-            $res['gmtCreate'] = $this->gmtCreate;
-        }
-        if (null !== $this->iconUrl) {
-            $res['iconUrl'] = $this->iconUrl;
         }
 
         return $res;
@@ -117,6 +117,18 @@ class result extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['gmtCreate'])) {
+            $model->gmtCreate = $map['gmtCreate'];
+        }
+        if (isset($map['iconUrl'])) {
+            $model->iconUrl = $map['iconUrl'];
+        }
+        if (isset($map['memberCount'])) {
+            $model->memberCount = $map['memberCount'];
+        }
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
+        }
         if (isset($map['openConversationId'])) {
             $model->openConversationId = $map['openConversationId'];
         }
@@ -128,18 +140,6 @@ class result extends Model
         }
         if (isset($map['ownerUserName'])) {
             $model->ownerUserName = $map['ownerUserName'];
-        }
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
-        }
-        if (isset($map['memberCount'])) {
-            $model->memberCount = $map['memberCount'];
-        }
-        if (isset($map['gmtCreate'])) {
-            $model->gmtCreate = $map['gmtCreate'];
-        }
-        if (isset($map['iconUrl'])) {
-            $model->iconUrl = $map['iconUrl'];
         }
 
         return $model;

@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class NotifyVerifyResultRequest extends Model
 {
     /**
+     * @description 企业ID
+     *
+     * @var string
+     */
+    public $corpId;
+
+    /**
      * @description 码值
      *
      * @var string
@@ -16,11 +23,11 @@ class NotifyVerifyResultRequest extends Model
     public $payCode;
 
     /**
-     * @description 企业ID
+     * @description 备注信息
      *
      * @var string
      */
-    public $corpId;
+    public $remark;
 
     /**
      * @description 用户和企业的关系类型，区分内部员工，外部联系人，无关系普通用户
@@ -37,18 +44,11 @@ class NotifyVerifyResultRequest extends Model
     public $userIdentity;
 
     /**
-     * @description 验证时间
+     * @description 验证事件，长度不超过8个中文
      *
      * @var string
      */
-    public $verifyTime;
-
-    /**
-     * @description 验证结果
-     *
-     * @var bool
-     */
-    public $verifyResult;
+    public $verifyEvent;
 
     /**
      * @description 验证地点，调用时请务必传入，以便生成工牌使用记录
@@ -65,41 +65,29 @@ class NotifyVerifyResultRequest extends Model
     public $verifyNo;
 
     /**
-     * @description 验证事件，长度不超过8个中文
+     * @description 验证结果
+     *
+     * @var bool
+     */
+    public $verifyResult;
+
+    /**
+     * @description 验证时间
      *
      * @var string
      */
-    public $verifyEvent;
-
-    /**
-     * @description 备注信息
-     *
-     * @var string
-     */
-    public $remark;
-
-    /**
-     * @var int
-     */
-    public $dingOrgId;
-
-    /**
-     * @var int
-     */
-    public $dingIsvOrgId;
+    public $verifyTime;
     protected $_name = [
-        'payCode'              => 'payCode',
         'corpId'               => 'corpId',
+        'payCode'              => 'payCode',
+        'remark'               => 'remark',
         'userCorpRelationType' => 'userCorpRelationType',
         'userIdentity'         => 'userIdentity',
-        'verifyTime'           => 'verifyTime',
-        'verifyResult'         => 'verifyResult',
+        'verifyEvent'          => 'verifyEvent',
         'verifyLocation'       => 'verifyLocation',
         'verifyNo'             => 'verifyNo',
-        'verifyEvent'          => 'verifyEvent',
-        'remark'               => 'remark',
-        'dingOrgId'            => 'dingOrgId',
-        'dingIsvOrgId'         => 'dingIsvOrgId',
+        'verifyResult'         => 'verifyResult',
+        'verifyTime'           => 'verifyTime',
     ];
 
     public function validate()
@@ -109,11 +97,14 @@ class NotifyVerifyResultRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->corpId) {
+            $res['corpId'] = $this->corpId;
+        }
         if (null !== $this->payCode) {
             $res['payCode'] = $this->payCode;
         }
-        if (null !== $this->corpId) {
-            $res['corpId'] = $this->corpId;
+        if (null !== $this->remark) {
+            $res['remark'] = $this->remark;
         }
         if (null !== $this->userCorpRelationType) {
             $res['userCorpRelationType'] = $this->userCorpRelationType;
@@ -121,11 +112,8 @@ class NotifyVerifyResultRequest extends Model
         if (null !== $this->userIdentity) {
             $res['userIdentity'] = $this->userIdentity;
         }
-        if (null !== $this->verifyTime) {
-            $res['verifyTime'] = $this->verifyTime;
-        }
-        if (null !== $this->verifyResult) {
-            $res['verifyResult'] = $this->verifyResult;
+        if (null !== $this->verifyEvent) {
+            $res['verifyEvent'] = $this->verifyEvent;
         }
         if (null !== $this->verifyLocation) {
             $res['verifyLocation'] = $this->verifyLocation;
@@ -133,17 +121,11 @@ class NotifyVerifyResultRequest extends Model
         if (null !== $this->verifyNo) {
             $res['verifyNo'] = $this->verifyNo;
         }
-        if (null !== $this->verifyEvent) {
-            $res['verifyEvent'] = $this->verifyEvent;
+        if (null !== $this->verifyResult) {
+            $res['verifyResult'] = $this->verifyResult;
         }
-        if (null !== $this->remark) {
-            $res['remark'] = $this->remark;
-        }
-        if (null !== $this->dingOrgId) {
-            $res['dingOrgId'] = $this->dingOrgId;
-        }
-        if (null !== $this->dingIsvOrgId) {
-            $res['dingIsvOrgId'] = $this->dingIsvOrgId;
+        if (null !== $this->verifyTime) {
+            $res['verifyTime'] = $this->verifyTime;
         }
 
         return $res;
@@ -157,11 +139,14 @@ class NotifyVerifyResultRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['corpId'])) {
+            $model->corpId = $map['corpId'];
+        }
         if (isset($map['payCode'])) {
             $model->payCode = $map['payCode'];
         }
-        if (isset($map['corpId'])) {
-            $model->corpId = $map['corpId'];
+        if (isset($map['remark'])) {
+            $model->remark = $map['remark'];
         }
         if (isset($map['userCorpRelationType'])) {
             $model->userCorpRelationType = $map['userCorpRelationType'];
@@ -169,11 +154,8 @@ class NotifyVerifyResultRequest extends Model
         if (isset($map['userIdentity'])) {
             $model->userIdentity = $map['userIdentity'];
         }
-        if (isset($map['verifyTime'])) {
-            $model->verifyTime = $map['verifyTime'];
-        }
-        if (isset($map['verifyResult'])) {
-            $model->verifyResult = $map['verifyResult'];
+        if (isset($map['verifyEvent'])) {
+            $model->verifyEvent = $map['verifyEvent'];
         }
         if (isset($map['verifyLocation'])) {
             $model->verifyLocation = $map['verifyLocation'];
@@ -181,17 +163,11 @@ class NotifyVerifyResultRequest extends Model
         if (isset($map['verifyNo'])) {
             $model->verifyNo = $map['verifyNo'];
         }
-        if (isset($map['verifyEvent'])) {
-            $model->verifyEvent = $map['verifyEvent'];
+        if (isset($map['verifyResult'])) {
+            $model->verifyResult = $map['verifyResult'];
         }
-        if (isset($map['remark'])) {
-            $model->remark = $map['remark'];
-        }
-        if (isset($map['dingOrgId'])) {
-            $model->dingOrgId = $map['dingOrgId'];
-        }
-        if (isset($map['dingIsvOrgId'])) {
-            $model->dingIsvOrgId = $map['dingIsvOrgId'];
+        if (isset($map['verifyTime'])) {
+            $model->verifyTime = $map['verifyTime'];
         }
 
         return $model;

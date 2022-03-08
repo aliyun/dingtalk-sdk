@@ -11,7 +11,7 @@ class GetExecuteUrlRequest extends Model
     /**
      * @var string
      */
-    public $taskId;
+    public $account;
 
     /**
      * @var int
@@ -21,17 +21,11 @@ class GetExecuteUrlRequest extends Model
     /**
      * @var string
      */
-    public $dingCorpId;
-
-    /**
-     * @var string
-     */
-    public $account;
+    public $taskId;
     protected $_name = [
-        'taskId'        => 'taskId',
-        'signContainer' => 'signContainer',
-        'dingCorpId'    => 'dingCorpId',
         'account'       => 'account',
+        'signContainer' => 'signContainer',
+        'taskId'        => 'taskId',
     ];
 
     public function validate()
@@ -41,17 +35,14 @@ class GetExecuteUrlRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->taskId) {
-            $res['taskId'] = $this->taskId;
+        if (null !== $this->account) {
+            $res['account'] = $this->account;
         }
         if (null !== $this->signContainer) {
             $res['signContainer'] = $this->signContainer;
         }
-        if (null !== $this->dingCorpId) {
-            $res['dingCorpId'] = $this->dingCorpId;
-        }
-        if (null !== $this->account) {
-            $res['account'] = $this->account;
+        if (null !== $this->taskId) {
+            $res['taskId'] = $this->taskId;
         }
 
         return $res;
@@ -65,17 +56,14 @@ class GetExecuteUrlRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['taskId'])) {
-            $model->taskId = $map['taskId'];
+        if (isset($map['account'])) {
+            $model->account = $map['account'];
         }
         if (isset($map['signContainer'])) {
             $model->signContainer = $map['signContainer'];
         }
-        if (isset($map['dingCorpId'])) {
-            $model->dingCorpId = $map['dingCorpId'];
-        }
-        if (isset($map['account'])) {
-            $model->account = $map['account'];
+        if (isset($map['taskId'])) {
+            $model->taskId = $map['taskId'];
         }
 
         return $model;

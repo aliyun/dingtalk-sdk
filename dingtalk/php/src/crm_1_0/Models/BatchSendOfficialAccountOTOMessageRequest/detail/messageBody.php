@@ -13,18 +13,11 @@ use AlibabaCloud\Tea\Model;
 class messageBody extends Model
 {
     /**
-     * @description 文本消息体  对于文本类型消息时必填
+     * @description 卡片消息
      *
-     * @var text
+     * @var actionCard
      */
-    public $text;
-
-    /**
-     * @description markdown消息，仅对消息类型为markdown时有效
-     *
-     * @var markdown
-     */
-    public $markdown;
+    public $actionCard;
 
     /**
      * @description 链接消息类型
@@ -34,16 +27,23 @@ class messageBody extends Model
     public $link;
 
     /**
-     * @description 卡片消息
+     * @description markdown消息，仅对消息类型为markdown时有效
      *
-     * @var actionCard
+     * @var markdown
      */
-    public $actionCard;
+    public $markdown;
+
+    /**
+     * @description 文本消息体  对于文本类型消息时必填
+     *
+     * @var text
+     */
+    public $text;
     protected $_name = [
-        'text'       => 'text',
-        'markdown'   => 'markdown',
-        'link'       => 'link',
         'actionCard' => 'actionCard',
+        'link'       => 'link',
+        'markdown'   => 'markdown',
+        'text'       => 'text',
     ];
 
     public function validate()
@@ -53,17 +53,17 @@ class messageBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->text) {
-            $res['text'] = null !== $this->text ? $this->text->toMap() : null;
-        }
-        if (null !== $this->markdown) {
-            $res['markdown'] = null !== $this->markdown ? $this->markdown->toMap() : null;
+        if (null !== $this->actionCard) {
+            $res['actionCard'] = null !== $this->actionCard ? $this->actionCard->toMap() : null;
         }
         if (null !== $this->link) {
             $res['link'] = null !== $this->link ? $this->link->toMap() : null;
         }
-        if (null !== $this->actionCard) {
-            $res['actionCard'] = null !== $this->actionCard ? $this->actionCard->toMap() : null;
+        if (null !== $this->markdown) {
+            $res['markdown'] = null !== $this->markdown ? $this->markdown->toMap() : null;
+        }
+        if (null !== $this->text) {
+            $res['text'] = null !== $this->text ? $this->text->toMap() : null;
         }
 
         return $res;
@@ -77,17 +77,17 @@ class messageBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['text'])) {
-            $model->text = text::fromMap($map['text']);
-        }
-        if (isset($map['markdown'])) {
-            $model->markdown = markdown::fromMap($map['markdown']);
+        if (isset($map['actionCard'])) {
+            $model->actionCard = actionCard::fromMap($map['actionCard']);
         }
         if (isset($map['link'])) {
             $model->link = link::fromMap($map['link']);
         }
-        if (isset($map['actionCard'])) {
-            $model->actionCard = actionCard::fromMap($map['actionCard']);
+        if (isset($map['markdown'])) {
+            $model->markdown = markdown::fromMap($map['markdown']);
+        }
+        if (isset($map['text'])) {
+            $model->text = text::fromMap($map['text']);
         }
 
         return $model;

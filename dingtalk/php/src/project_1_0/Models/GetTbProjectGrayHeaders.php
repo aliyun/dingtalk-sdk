@@ -18,7 +18,7 @@ class GetTbProjectGrayHeaders extends Model
     /**
      * @var string
      */
-    public $dingSuiteKey;
+    public $dingCorpId;
 
     /**
      * @var string
@@ -33,7 +33,7 @@ class GetTbProjectGrayHeaders extends Model
     /**
      * @var string
      */
-    public $dingCorpId;
+    public $dingSuiteKey;
 
     /**
      * @var string
@@ -41,10 +41,10 @@ class GetTbProjectGrayHeaders extends Model
     public $xAcsDingtalkAccessToken;
     protected $_name = [
         'dingAccessTokenType'     => 'dingAccessTokenType',
-        'dingSuiteKey'            => 'dingSuiteKey',
+        'dingCorpId'              => 'dingCorpId',
         'dingIsvOrgId'            => 'dingIsvOrgId',
         'dingOrgId'               => 'dingOrgId',
-        'dingCorpId'              => 'dingCorpId',
+        'dingSuiteKey'            => 'dingSuiteKey',
         'xAcsDingtalkAccessToken' => 'x-acs-dingtalk-access-token',
     ];
 
@@ -61,8 +61,8 @@ class GetTbProjectGrayHeaders extends Model
         if (null !== $this->dingAccessTokenType) {
             $res['dingAccessTokenType'] = $this->dingAccessTokenType;
         }
-        if (null !== $this->dingSuiteKey) {
-            $res['dingSuiteKey'] = $this->dingSuiteKey;
+        if (null !== $this->dingCorpId) {
+            $res['dingCorpId'] = $this->dingCorpId;
         }
         if (null !== $this->dingIsvOrgId) {
             $res['dingIsvOrgId'] = $this->dingIsvOrgId;
@@ -70,8 +70,8 @@ class GetTbProjectGrayHeaders extends Model
         if (null !== $this->dingOrgId) {
             $res['dingOrgId'] = $this->dingOrgId;
         }
-        if (null !== $this->dingCorpId) {
-            $res['dingCorpId'] = $this->dingCorpId;
+        if (null !== $this->dingSuiteKey) {
+            $res['dingSuiteKey'] = $this->dingSuiteKey;
         }
         if (null !== $this->xAcsDingtalkAccessToken) {
             $res['x-acs-dingtalk-access-token'] = $this->xAcsDingtalkAccessToken;
@@ -94,8 +94,8 @@ class GetTbProjectGrayHeaders extends Model
         if (isset($map['dingAccessTokenType'])) {
             $model->dingAccessTokenType = $map['dingAccessTokenType'];
         }
-        if (isset($map['dingSuiteKey'])) {
-            $model->dingSuiteKey = $map['dingSuiteKey'];
+        if (isset($map['dingCorpId'])) {
+            $model->dingCorpId = $map['dingCorpId'];
         }
         if (isset($map['dingIsvOrgId'])) {
             $model->dingIsvOrgId = $map['dingIsvOrgId'];
@@ -103,8 +103,8 @@ class GetTbProjectGrayHeaders extends Model
         if (isset($map['dingOrgId'])) {
             $model->dingOrgId = $map['dingOrgId'];
         }
-        if (isset($map['dingCorpId'])) {
-            $model->dingCorpId = $map['dingCorpId'];
+        if (isset($map['dingSuiteKey'])) {
+            $model->dingSuiteKey = $map['dingSuiteKey'];
         }
         if (isset($map['x-acs-dingtalk-access-token'])) {
             $model->xAcsDingtalkAccessToken = $map['x-acs-dingtalk-access-token'];
