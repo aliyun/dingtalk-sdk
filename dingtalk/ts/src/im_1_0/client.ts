@@ -582,6 +582,94 @@ export class InteractiveCardCreateInstanceResponse extends $tea.Model {
   }
 }
 
+export class QueryGroupMuteStatusHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryGroupMuteStatusRequest extends $tea.Model {
+  openConversationId?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openConversationId: 'openConversationId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openConversationId: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryGroupMuteStatusResponseBody extends $tea.Model {
+  groupMuteMode?: boolean;
+  userMuteResult?: QueryGroupMuteStatusResponseBodyUserMuteResult;
+  static names(): { [key: string]: string } {
+    return {
+      groupMuteMode: 'groupMuteMode',
+      userMuteResult: 'userMuteResult',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      groupMuteMode: 'boolean',
+      userMuteResult: QueryGroupMuteStatusResponseBodyUserMuteResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryGroupMuteStatusResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryGroupMuteStatusResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryGroupMuteStatusResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryMembersOfGroupRoleHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1402,6 +1490,75 @@ export class UpdateInteractiveCardResponse extends $tea.Model {
   }
 }
 
+export class UpdateMemberBanWordsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateMemberBanWordsRequest extends $tea.Model {
+  muteDuration?: number;
+  muteStatus?: number;
+  openConversationId?: string;
+  userIdList?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      muteDuration: 'muteDuration',
+      muteStatus: 'muteStatus',
+      openConversationId: 'openConversationId',
+      userIdList: 'userIdList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      muteDuration: 'number',
+      muteStatus: 'number',
+      openConversationId: 'string',
+      userIdList: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateMemberBanWordsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateMemberGroupNickHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1614,6 +1771,31 @@ export class InteractiveCardCreateInstanceRequestCardData extends $tea.Model {
     return {
       cardMediaIdParamMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       cardParamMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryGroupMuteStatusResponseBodyUserMuteResult extends $tea.Model {
+  muteEndTime?: number;
+  muteStartTime?: number;
+  userMuteMode?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      muteEndTime: 'muteEndTime',
+      muteStartTime: 'muteStartTime',
+      userMuteMode: 'userMuteMode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      muteEndTime: 'number',
+      muteStartTime: 'number',
+      userMuteMode: 'boolean',
     };
   }
 
@@ -2063,6 +2245,39 @@ export default class Client extends OpenApi {
     return $tea.cast<InteractiveCardCreateInstanceResponse>(await this.doROARequest("InteractiveCardCreateInstance", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/interactiveCards/instances`, "json", req, runtime), new InteractiveCardCreateInstanceResponse({}));
   }
 
+  async queryGroupMuteStatus(request: QueryGroupMuteStatusRequest): Promise<QueryGroupMuteStatusResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryGroupMuteStatusHeaders({ });
+    return await this.queryGroupMuteStatusWithOptions(request, headers, runtime);
+  }
+
+  async queryGroupMuteStatusWithOptions(request: QueryGroupMuteStatusRequest, headers: QueryGroupMuteStatusHeaders, runtime: $Util.RuntimeOptions): Promise<QueryGroupMuteStatusResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openConversationId)) {
+      query["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryGroupMuteStatusResponse>(await this.doROARequest("QueryGroupMuteStatus", "im_1.0", "HTTP", "GET", "AK", `/v1.0/im/sceneGroups/muteSettings`, "json", req, runtime), new QueryGroupMuteStatusResponse({}));
+  }
+
   async queryMembersOfGroupRole(request: QueryMembersOfGroupRoleRequest): Promise<QueryMembersOfGroupRoleResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryMembersOfGroupRoleHeaders({ });
@@ -2486,6 +2701,47 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<UpdateInteractiveCardResponse>(await this.doROARequest("UpdateInteractiveCard", "im_1.0", "HTTP", "PUT", "AK", `/v1.0/im/interactiveCards`, "json", req, runtime), new UpdateInteractiveCardResponse({}));
+  }
+
+  async updateMemberBanWords(request: UpdateMemberBanWordsRequest): Promise<UpdateMemberBanWordsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateMemberBanWordsHeaders({ });
+    return await this.updateMemberBanWordsWithOptions(request, headers, runtime);
+  }
+
+  async updateMemberBanWordsWithOptions(request: UpdateMemberBanWordsRequest, headers: UpdateMemberBanWordsHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateMemberBanWordsResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.muteDuration)) {
+      body["muteDuration"] = request.muteDuration;
+    }
+
+    if (!Util.isUnset(request.muteStatus)) {
+      body["muteStatus"] = request.muteStatus;
+    }
+
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.userIdList)) {
+      body["userIdList"] = request.userIdList;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateMemberBanWordsResponse>(await this.doROARequest("UpdateMemberBanWords", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/sceneGroups/muteMembers/set`, "none", req, runtime), new UpdateMemberBanWordsResponse({}));
   }
 
   async updateMemberGroupNick(request: UpdateMemberGroupNickRequest): Promise<UpdateMemberGroupNickResponse> {
