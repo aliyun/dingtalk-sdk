@@ -24,20 +24,6 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         public List<GetUserCardHolderListResponseBodyList> List { get; set; }
         public class GetUserCardHolderListResponseBodyList : TeaModel {
             /// <summary>
-            /// 名片ID
-            /// </summary>
-            [NameInMap("cardId")]
-            [Validation(Required=false)]
-            public string CardId { get; set; }
-
-            /// <summary>
-            /// 名字
-            /// </summary>
-            [NameInMap("name")]
-            [Validation(Required=false)]
-            public string Name { get; set; }
-
-            /// <summary>
             /// 头像
             /// </summary>
             [NameInMap("avatarUrl")]
@@ -45,18 +31,18 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
             public string AvatarUrl { get; set; }
 
             /// <summary>
-            /// 组织名称
+            /// 名片ID
             /// </summary>
-            [NameInMap("orgName")]
+            [NameInMap("cardId")]
             [Validation(Required=false)]
-            public string OrgName { get; set; }
+            public string CardId { get; set; }
 
             /// <summary>
-            /// 职位
+            /// 扩展信息
             /// </summary>
-            [NameInMap("title")]
+            [NameInMap("extension")]
             [Validation(Required=false)]
-            public string Title { get; set; }
+            public Dictionary<string, object> Extension { get; set; }
 
             /// <summary>
             /// 行业名称
@@ -73,6 +59,20 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
             public string Introduce { get; set; }
 
             /// <summary>
+            /// 名字
+            /// </summary>
+            [NameInMap("name")]
+            [Validation(Required=false)]
+            public string Name { get; set; }
+
+            /// <summary>
+            /// 组织名称
+            /// </summary>
+            [NameInMap("orgName")]
+            [Validation(Required=false)]
+            public string OrgName { get; set; }
+
+            /// <summary>
             /// 模板ID
             /// </summary>
             [NameInMap("templateId")]
@@ -80,11 +80,11 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
             public string TemplateId { get; set; }
 
             /// <summary>
-            /// 扩展信息
+            /// 职位
             /// </summary>
-            [NameInMap("extension")]
+            [NameInMap("title")]
             [Validation(Required=false)]
-            public Dictionary<string, object> Extension { get; set; }
+            public string Title { get; set; }
 
         }
 

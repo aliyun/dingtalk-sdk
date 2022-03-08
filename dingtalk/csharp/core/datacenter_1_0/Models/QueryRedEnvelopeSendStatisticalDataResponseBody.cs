@@ -24,6 +24,13 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0.Models
         public List<QueryRedEnvelopeSendStatisticalDataResponseBodyMetaList> MetaList { get; set; }
         public class QueryRedEnvelopeSendStatisticalDataResponseBodyMetaList : TeaModel {
             /// <summary>
+            /// 指标口径
+            /// </summary>
+            [NameInMap("kpiCaliber")]
+            [Validation(Required=false)]
+            public string KpiCaliber { get; set; }
+
+            /// <summary>
             /// 指标ID
             /// </summary>
             [NameInMap("kpiId")]
@@ -38,25 +45,18 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0.Models
             public string KpiName { get; set; }
 
             /// <summary>
-            /// 指标单位
-            /// </summary>
-            [NameInMap("unit")]
-            [Validation(Required=false)]
-            public string Unit { get; set; }
-
-            /// <summary>
-            /// 指标口径
-            /// </summary>
-            [NameInMap("kpiCaliber")]
-            [Validation(Required=false)]
-            public string KpiCaliber { get; set; }
-
-            /// <summary>
             /// 指标周期
             /// </summary>
             [NameInMap("period")]
             [Validation(Required=false)]
             public string Period { get; set; }
+
+            /// <summary>
+            /// 指标单位
+            /// </summary>
+            [NameInMap("unit")]
+            [Validation(Required=false)]
+            public string Unit { get; set; }
 
         }
 

@@ -24,25 +24,25 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         public List<QueryOrgTodoTasksResponseBodyTodoCards> TodoCards { get; set; }
         public class QueryOrgTodoTasksResponseBodyTodoCards : TeaModel {
             /// <summary>
-            /// 待办id
+            /// 所属应用
             /// </summary>
-            [NameInMap("taskId")]
+            [NameInMap("bizTag")]
             [Validation(Required=false)]
-            public string TaskId { get; set; }
+            public string BizTag { get; set; }
 
             /// <summary>
-            /// 待办标题
+            /// 创建时间
             /// </summary>
-            [NameInMap("subject")]
+            [NameInMap("createdTime")]
             [Validation(Required=false)]
-            public string Subject { get; set; }
+            public long? CreatedTime { get; set; }
 
             /// <summary>
-            /// 待办截止时间
+            /// 创建者id
             /// </summary>
-            [NameInMap("dueTime")]
+            [NameInMap("creatorId")]
             [Validation(Required=false)]
-            public long? DueTime { get; set; }
+            public string CreatorId { get; set; }
 
             /// <summary>
             /// 详情页链接
@@ -60,18 +60,18 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
             };
 
             /// <summary>
-            /// 优先级
+            /// 待办截止时间
             /// </summary>
-            [NameInMap("priority")]
+            [NameInMap("dueTime")]
             [Validation(Required=false)]
-            public int? Priority { get; set; }
+            public long? DueTime { get; set; }
 
             /// <summary>
-            /// 创建时间
+            /// 待办完成状态
             /// </summary>
-            [NameInMap("createdTime")]
+            [NameInMap("isDone")]
             [Validation(Required=false)]
-            public long? CreatedTime { get; set; }
+            public bool? IsDone { get; set; }
 
             /// <summary>
             /// 更新时间
@@ -81,11 +81,11 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
             public long? ModifiedTime { get; set; }
 
             /// <summary>
-            /// 创建者id
+            /// 优先级
             /// </summary>
-            [NameInMap("creatorId")]
+            [NameInMap("priority")]
             [Validation(Required=false)]
-            public string CreatorId { get; set; }
+            public int? Priority { get; set; }
 
             /// <summary>
             /// 来源id
@@ -95,18 +95,18 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
             public string SourceId { get; set; }
 
             /// <summary>
-            /// 所属应用
+            /// 待办标题
             /// </summary>
-            [NameInMap("bizTag")]
+            [NameInMap("subject")]
             [Validation(Required=false)]
-            public string BizTag { get; set; }
+            public string Subject { get; set; }
 
             /// <summary>
-            /// 待办完成状态
+            /// 待办id
             /// </summary>
-            [NameInMap("isDone")]
+            [NameInMap("taskId")]
             [Validation(Required=false)]
-            public bool? IsDone { get; set; }
+            public string TaskId { get; set; }
 
         }
 

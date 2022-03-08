@@ -52,15 +52,15 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0.Models
                 [NameInMap("roleUuid")]
                 [Validation(Required=false)]
                 public string RoleUuid { get; set; }
-                [NameInMap("userIds")]
-                [Validation(Required=false)]
-                public List<string> UserIds { get; set; }
                 [NameInMap("status")]
                 [Validation(Required=false)]
                 public long? Status { get; set; }
                 [NameInMap("typeUuid")]
                 [Validation(Required=false)]
                 public string TypeUuid { get; set; }
+                [NameInMap("userIds")]
+                [Validation(Required=false)]
+                public List<string> UserIds { get; set; }
                 [NameInMap("uuid")]
                 [Validation(Required=false)]
                 public string Uuid { get; set; }
@@ -119,15 +119,15 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0.Models
                 [NameInMap("roleUuid")]
                 [Validation(Required=false)]
                 public string RoleUuid { get; set; }
-                [NameInMap("userIds")]
-                [Validation(Required=false)]
-                public List<string> UserIds { get; set; }
                 [NameInMap("status")]
                 [Validation(Required=false)]
                 public long? Status { get; set; }
                 [NameInMap("typeUuid")]
                 [Validation(Required=false)]
                 public string TypeUuid { get; set; }
+                [NameInMap("userIds")]
+                [Validation(Required=false)]
+                public List<string> UserIds { get; set; }
                 [NameInMap("uuid")]
                 [Validation(Required=false)]
                 public string Uuid { get; set; }

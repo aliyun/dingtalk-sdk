@@ -13,10 +13,6 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0.Models
         [Validation(Required=false)]
         public List<string> CorpIds { get; set; }
 
-        [NameInMap("kpiGroupId")]
-        [Validation(Required=false)]
-        public string KpiGroupId { get; set; }
-
         [NameInMap("statDates")]
         [Validation(Required=false)]
         public List<string> StatDates { get; set; }

@@ -66,11 +66,11 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         public List<GetConferenceDetailResponseBodyMemberList> MemberList { get; set; }
         public class GetConferenceDetailResponseBodyMemberList : TeaModel {
             /// <summary>
-            /// 用户uid
+            /// 参会时长
             /// </summary>
-            [NameInMap("unionId")]
+            [NameInMap("attendDuration")]
             [Validation(Required=false)]
-            public string UnionId { get; set; }
+            public float? AttendDuration { get; set; }
 
             /// <summary>
             /// 用户昵称
@@ -80,18 +80,18 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             public string Name { get; set; }
 
             /// <summary>
-            /// 参会时长
-            /// </summary>
-            [NameInMap("attendDuration")]
-            [Validation(Required=false)]
-            public float? AttendDuration { get; set; }
-
-            /// <summary>
             /// 员工id
             /// </summary>
             [NameInMap("staffId")]
             [Validation(Required=false)]
             public string StaffId { get; set; }
+
+            /// <summary>
+            /// 用户uid
+            /// </summary>
+            [NameInMap("unionId")]
+            [Validation(Required=false)]
+            public string UnionId { get; set; }
 
         }
 

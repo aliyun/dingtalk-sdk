@@ -24,13 +24,6 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             public string DeptId { get; set; }
 
             /// <summary>
-            /// 父部门id
-            /// </summary>
-            [NameInMap("superDeptId")]
-            [Validation(Required=false)]
-            public string SuperDeptId { get; set; }
-
-            /// <summary>
             /// 部门名称
             /// </summary>
             [NameInMap("deptName")]
@@ -43,13 +36,6 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             [NameInMap("memberCount")]
             [Validation(Required=false)]
             public long? MemberCount { get; set; }
-
-            /// <summary>
-            /// 部门伙伴编码
-            /// </summary>
-            [NameInMap("partnerNum")]
-            [Validation(Required=false)]
-            public string PartnerNum { get; set; }
 
             /// <summary>
             /// 部门一级伙伴类型
@@ -140,6 +126,20 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
                 [Validation(Required=false)]
                 public long? LevelNum { get; set; }
             };
+
+            /// <summary>
+            /// 部门伙伴编码
+            /// </summary>
+            [NameInMap("partnerNum")]
+            [Validation(Required=false)]
+            public string PartnerNum { get; set; }
+
+            /// <summary>
+            /// 父部门id
+            /// </summary>
+            [NameInMap("superDeptId")]
+            [Validation(Required=false)]
+            public string SuperDeptId { get; set; }
 
         }
 

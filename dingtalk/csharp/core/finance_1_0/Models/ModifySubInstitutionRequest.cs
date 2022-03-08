@@ -32,34 +32,6 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         };
 
         /// <summary>
-        /// 应用id
-        /// </summary>
-        [NameInMap("dingClientId")]
-        [Validation(Required=false)]
-        public string DingClientId { get; set; }
-
-        /// <summary>
-        /// isv组织id
-        /// </summary>
-        [NameInMap("dingIsvOrgId")]
-        [Validation(Required=false)]
-        public long? DingIsvOrgId { get; set; }
-
-        /// <summary>
-        /// 组织id
-        /// </summary>
-        [NameInMap("dingOrgId")]
-        [Validation(Required=false)]
-        public long? DingOrgId { get; set; }
-
-        /// <summary>
-        /// 应用类型
-        /// </summary>
-        [NameInMap("dingTokenGrantType")]
-        [Validation(Required=false)]
-        public long? DingTokenGrantType { get; set; }
-
-        /// <summary>
         /// 主机构编号
         /// </summary>
         [NameInMap("instId")]
@@ -109,18 +81,18 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         public List<ModifySubInstitutionRequestQualificationInfos> QualificationInfos { get; set; }
         public class ModifySubInstitutionRequestQualificationInfos : TeaModel {
             /// <summary>
-            /// 子机构行业资质类型
-            /// </summary>
-            [NameInMap("qualificationType")]
-            [Validation(Required=false)]
-            public string QualificationType { get; set; }
-
-            /// <summary>
             /// 子机构行业资质图片
             /// </summary>
             [NameInMap("qualificationImage")]
             [Validation(Required=false)]
             public string QualificationImage { get; set; }
+
+            /// <summary>
+            /// 子机构行业资质类型
+            /// </summary>
+            [NameInMap("qualificationType")]
+            [Validation(Required=false)]
+            public string QualificationType { get; set; }
 
         }
 

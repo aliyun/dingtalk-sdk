@@ -17,18 +17,11 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
         public List<ListResidentUserInfosResponseBodyUserList> UserList { get; set; }
         public class ListResidentUserInfosResponseBodyUserList : TeaModel {
             /// <summary>
-            /// 员工 ID
+            /// 员工特征
             /// </summary>
-            [NameInMap("userId")]
+            [NameInMap("feature")]
             [Validation(Required=false)]
-            public string UserId { get; set; }
-
-            /// <summary>
-            /// 员工名字
-            /// </summary>
-            [NameInMap("userName")]
-            [Validation(Required=false)]
-            public string UserName { get; set; }
+            public string Feature { get; set; }
 
             /// <summary>
             /// 标签列表
@@ -37,6 +30,13 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
             [Validation(Required=false)]
             public List<ListResidentUserInfosResponseBodyUserListRoles> Roles { get; set; }
             public class ListResidentUserInfosResponseBodyUserListRoles : TeaModel {
+                /// <summary>
+                /// 标签名称 tagCode
+                /// </summary>
+                [NameInMap("tagCode")]
+                [Validation(Required=false)]
+                public string TagCode { get; set; }
+
                 /// <summary>
                 /// 标签id
                 /// </summary>
@@ -51,21 +51,7 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
                 [Validation(Required=false)]
                 public string TagName { get; set; }
 
-                /// <summary>
-                /// 标签名称 tagCode
-                /// </summary>
-                [NameInMap("tagCode")]
-                [Validation(Required=false)]
-                public string TagCode { get; set; }
-
             }
-
-            /// <summary>
-            /// 员工特征
-            /// </summary>
-            [NameInMap("feature")]
-            [Validation(Required=false)]
-            public string Feature { get; set; }
 
             /// <summary>
             /// 钉钉唯一标识
@@ -73,6 +59,20 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
             [NameInMap("unionId")]
             [Validation(Required=false)]
             public string UnionId { get; set; }
+
+            /// <summary>
+            /// 员工 ID
+            /// </summary>
+            [NameInMap("userId")]
+            [Validation(Required=false)]
+            public string UserId { get; set; }
+
+            /// <summary>
+            /// 员工名字
+            /// </summary>
+            [NameInMap("userName")]
+            [Validation(Required=false)]
+            public string UserName { get; set; }
 
         }
 

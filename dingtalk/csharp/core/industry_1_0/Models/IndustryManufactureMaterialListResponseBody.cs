@@ -17,45 +17,37 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         [Validation(Required=false)]
         public List<IndustryManufactureMaterialListResponseBodyList> List { get; set; }
         public class IndustryManufactureMaterialListResponseBodyList : TeaModel {
-            [NameInMap("corpId")]
-            [Validation(Required=false)]
-            public string CorpId { get; set; }
-
-            [NameInMap("instanceId")]
-            [Validation(Required=false)]
-            public string InstanceId { get; set; }
-
-            [NameInMap("materialNo")]
-            [Validation(Required=false)]
-            public string MaterialNo { get; set; }
-
-            [NameInMap("materialName")]
-            [Validation(Required=false)]
-            public string MaterialName { get; set; }
-
-            [NameInMap("specification")]
-            [Validation(Required=false)]
-            public string Specification { get; set; }
-
-            [NameInMap("type")]
-            [Validation(Required=false)]
-            public string Type { get; set; }
-
             [NameInMap("category")]
             [Validation(Required=false)]
             public string Category { get; set; }
 
-            [NameInMap("unit")]
+            [NameInMap("corpId")]
             [Validation(Required=false)]
-            public string Unit { get; set; }
+            public string CorpId { get; set; }
 
             [NameInMap("ext")]
             [Validation(Required=false)]
             public string Ext { get; set; }
 
+            [NameInMap("instanceId")]
+            [Validation(Required=false)]
+            public string InstanceId { get; set; }
+
+            [NameInMap("materialName")]
+            [Validation(Required=false)]
+            public string MaterialName { get; set; }
+
+            [NameInMap("materialNo")]
+            [Validation(Required=false)]
+            public string MaterialNo { get; set; }
+
             [NameInMap("processCode")]
             [Validation(Required=false)]
             public string ProcessCode { get; set; }
+
+            [NameInMap("specification")]
+            [Validation(Required=false)]
+            public string Specification { get; set; }
 
             [NameInMap("stockMaxWarn")]
             [Validation(Required=false)]
@@ -64,6 +56,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             [NameInMap("stockMinWarn")]
             [Validation(Required=false)]
             public float? StockMinWarn { get; set; }
+
+            [NameInMap("type")]
+            [Validation(Required=false)]
+            public string Type { get; set; }
+
+            [NameInMap("unit")]
+            [Validation(Required=false)]
+            public string Unit { get; set; }
 
         }
 

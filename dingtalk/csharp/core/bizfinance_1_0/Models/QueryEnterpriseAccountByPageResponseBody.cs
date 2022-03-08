@@ -38,13 +38,6 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             public string AccountId { get; set; }
 
             /// <summary>
-            /// 账户类型:ALIPAY, BANKCARD, CASH, WECHAT
-            /// </summary>
-            [NameInMap("accountType")]
-            [Validation(Required=false)]
-            public string AccountType { get; set; }
-
-            /// <summary>
             /// 账户名称
             /// </summary>
             [NameInMap("accountName")]
@@ -59,6 +52,13 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             public string AccountRemark { get; set; }
 
             /// <summary>
+            /// 账户类型:ALIPAY, BANKCARD, CASH, WECHAT
+            /// </summary>
+            [NameInMap("accountType")]
+            [Validation(Required=false)]
+            public string AccountType { get; set; }
+
+            /// <summary>
             /// 账户总额，保留2位小数
             /// </summary>
             [NameInMap("amount")]
@@ -66,18 +66,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             public string Amount { get; set; }
 
             /// <summary>
-            /// 创建人工号
-            /// </summary>
-            [NameInMap("creator")]
-            [Validation(Required=false)]
-            public string Creator { get; set; }
-
-            /// <summary>
             /// 创建时间
             /// </summary>
             [NameInMap("createTime")]
             [Validation(Required=false)]
             public long? CreateTime { get; set; }
+
+            /// <summary>
+            /// 创建人工号
+            /// </summary>
+            [NameInMap("creator")]
+            [Validation(Required=false)]
+            public string Creator { get; set; }
 
         }
 

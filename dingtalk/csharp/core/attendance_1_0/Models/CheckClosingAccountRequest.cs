@@ -30,13 +30,13 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
         [Validation(Required=false)]
         public List<CheckClosingAccountRequestUserTimeRange> UserTimeRange { get; set; }
         public class CheckClosingAccountRequestUserTimeRange : TeaModel {
-            [NameInMap("startTime")]
-            [Validation(Required=false)]
-            public long? StartTime { get; set; }
-
             [NameInMap("endTime")]
             [Validation(Required=false)]
             public long? EndTime { get; set; }
+
+            [NameInMap("startTime")]
+            [Validation(Required=false)]
+            public long? StartTime { get; set; }
 
         }
 

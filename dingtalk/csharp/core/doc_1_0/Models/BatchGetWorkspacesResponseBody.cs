@@ -30,30 +30,30 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
             [Validation(Required=false)]
             public BatchGetWorkspacesResponseBodyWorkspacesWorkspace Workspace { get; set; }
             public class BatchGetWorkspacesResponseBodyWorkspacesWorkspace : TeaModel {
-                [NameInMap("workspaceId")]
+                [NameInMap("createTime")]
                 [Validation(Required=false)]
-                public string WorkspaceId { get; set; }
+                public long? CreateTime { get; set; }
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public string Name { get; set; }
-                [NameInMap("url")]
+                [NameInMap("orgPublished")]
                 [Validation(Required=false)]
-                public string Url { get; set; }
+                public bool? OrgPublished { get; set; }
                 [NameInMap("recentList")]
                 [Validation(Required=false)]
                 public List<BatchGetWorkspacesResponseBodyWorkspacesWorkspaceRecentList> RecentList { get; set; }
                 public class BatchGetWorkspacesResponseBodyWorkspacesWorkspaceRecentList : TeaModel {
-                    public string NodeId { get; set; }
-                    public string Name { get; set; }
-                    public string Url { get; set; }
                     public string LastEditTime { get; set; }
+                    public string Name { get; set; }
+                    public string NodeId { get; set; }
+                    public string Url { get; set; }
                 }
-                [NameInMap("orgPublished")]
+                [NameInMap("url")]
                 [Validation(Required=false)]
-                public bool? OrgPublished { get; set; }
-                [NameInMap("createTime")]
+                public string Url { get; set; }
+                [NameInMap("workspaceId")]
                 [Validation(Required=false)]
-                public long? CreateTime { get; set; }
+                public string WorkspaceId { get; set; }
             };
 
         }

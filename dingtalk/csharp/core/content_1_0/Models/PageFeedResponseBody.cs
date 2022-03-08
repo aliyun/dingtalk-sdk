@@ -17,25 +17,18 @@ namespace AlibabaCloud.SDK.Dingtalkcontent_1_0.Models
         public List<PageFeedResponseBodyFeedList> FeedList { get; set; }
         public class PageFeedResponseBodyFeedList : TeaModel {
             /// <summary>
+            /// 内容分类，请见https://developers.dingtalk.com/document/app/appendix-content
+            /// </summary>
+            [NameInMap("feedCategory")]
+            [Validation(Required=false)]
+            public string FeedCategory { get; set; }
+
+            /// <summary>
             /// 内容Id
             /// </summary>
             [NameInMap("feedId")]
             [Validation(Required=false)]
             public string FeedId { get; set; }
-
-            /// <summary>
-            /// 内容名称
-            /// </summary>
-            [NameInMap("name")]
-            [Validation(Required=false)]
-            public string Name { get; set; }
-
-            /// <summary>
-            /// 跳转Url，跳转到职场学堂后台页面
-            /// </summary>
-            [NameInMap("url")]
-            [Validation(Required=false)]
-            public string Url { get; set; }
 
             /// <summary>
             /// 内容类型，0：免费内容 4：平价内容 5：专栏内容 6：训练营内容
@@ -45,6 +38,13 @@ namespace AlibabaCloud.SDK.Dingtalkcontent_1_0.Models
             public int? FeedType { get; set; }
 
             /// <summary>
+            /// 内容名称
+            /// </summary>
+            [NameInMap("name")]
+            [Validation(Required=false)]
+            public string Name { get; set; }
+
+            /// <summary>
             /// 封面URL
             /// </summary>
             [NameInMap("thumbUrl")]
@@ -52,11 +52,11 @@ namespace AlibabaCloud.SDK.Dingtalkcontent_1_0.Models
             public string ThumbUrl { get; set; }
 
             /// <summary>
-            /// 内容分类，请见https://developers.dingtalk.com/document/app/appendix-content
+            /// 跳转Url，跳转到职场学堂后台页面
             /// </summary>
-            [NameInMap("feedCategory")]
+            [NameInMap("url")]
             [Validation(Required=false)]
-            public string FeedCategory { get; set; }
+            public string Url { get; set; }
 
         }
 

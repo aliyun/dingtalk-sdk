@@ -14,18 +14,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public List<GetActivityButtonListResponseBodyResult> Result { get; set; }
         public class GetActivityButtonListResponseBodyResult : TeaModel {
             /// <summary>
-            /// aliasEn
-            /// </summary>
-            [NameInMap("aliasInEnglish")]
-            [Validation(Required=false)]
-            public string AliasInEnglish { get; set; }
-
-            /// <summary>
             /// alias
             /// </summary>
             [NameInMap("aliasInChinese")]
             [Validation(Required=false)]
             public string AliasInChinese { get; set; }
+
+            /// <summary>
+            /// aliasEn
+            /// </summary>
+            [NameInMap("aliasInEnglish")]
+            [Validation(Required=false)]
+            public string AliasInEnglish { get; set; }
 
         }
 

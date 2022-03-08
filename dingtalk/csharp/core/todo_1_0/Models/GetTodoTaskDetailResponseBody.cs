@@ -88,18 +88,18 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         public List<GetTodoTaskDetailResponseBodyExecutorStatus> ExecutorStatus { get; set; }
         public class GetTodoTaskDetailResponseBodyExecutorStatus : TeaModel {
             /// <summary>
-            /// 执行者id（用户的unionId）
-            /// </summary>
-            [NameInMap("userId")]
-            [Validation(Required=false)]
-            public string UserId { get; set; }
-
-            /// <summary>
             /// 执行者完成状态
             /// </summary>
             [NameInMap("isDone")]
             [Validation(Required=false)]
             public bool? IsDone { get; set; }
+
+            /// <summary>
+            /// 执行者id（用户的unionId）
+            /// </summary>
+            [NameInMap("userId")]
+            [Validation(Required=false)]
+            public string UserId { get; set; }
 
         }
 

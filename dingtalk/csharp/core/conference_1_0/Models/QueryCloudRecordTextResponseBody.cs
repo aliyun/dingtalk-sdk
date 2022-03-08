@@ -24,25 +24,18 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
         public List<QueryCloudRecordTextResponseBodyParagraphList> ParagraphList { get; set; }
         public class QueryCloudRecordTextResponseBodyParagraphList : TeaModel {
             /// <summary>
+            /// 结束时间，毫秒
+            /// </summary>
+            [NameInMap("endTime")]
+            [Validation(Required=false)]
+            public long? EndTime { get; set; }
+
+            /// <summary>
             /// 游标，下次查询时使用
             /// </summary>
             [NameInMap("nextTtoken")]
             [Validation(Required=false)]
             public long? NextTtoken { get; set; }
-
-            /// <summary>
-            /// 状态，暂不解析
-            /// </summary>
-            [NameInMap("status")]
-            [Validation(Required=false)]
-            public long? Status { get; set; }
-
-            /// <summary>
-            /// 发言人unionId
-            /// </summary>
-            [NameInMap("unionId")]
-            [Validation(Required=false)]
-            public string UnionId { get; set; }
 
             /// <summary>
             /// 发言人昵称
@@ -52,32 +45,18 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
             public string NickName { get; set; }
 
             /// <summary>
-            /// 云录制id
-            /// </summary>
-            [NameInMap("recordId")]
-            [Validation(Required=false)]
-            public long? RecordId { get; set; }
-
-            /// <summary>
-            /// 开始时间，毫秒
-            /// </summary>
-            [NameInMap("startTime")]
-            [Validation(Required=false)]
-            public long? StartTime { get; set; }
-
-            /// <summary>
-            /// 结束时间，毫秒
-            /// </summary>
-            [NameInMap("endTime")]
-            [Validation(Required=false)]
-            public long? EndTime { get; set; }
-
-            /// <summary>
             /// 段落内容
             /// </summary>
             [NameInMap("paragraph")]
             [Validation(Required=false)]
             public string Paragraph { get; set; }
+
+            /// <summary>
+            /// 云录制id
+            /// </summary>
+            [NameInMap("recordId")]
+            [Validation(Required=false)]
+            public long? RecordId { get; set; }
 
             /// <summary>
             /// 句子列表
@@ -87,11 +66,11 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
             public List<QueryCloudRecordTextResponseBodyParagraphListSentenceList> SentenceList { get; set; }
             public class QueryCloudRecordTextResponseBodyParagraphListSentenceList : TeaModel {
                 /// <summary>
-                /// 用户unionId
+                /// 结束时间
                 /// </summary>
-                [NameInMap("unionId")]
+                [NameInMap("endTime")]
                 [Validation(Required=false)]
-                public string UnionId { get; set; }
+                public long? EndTime { get; set; }
 
                 /// <summary>
                 /// 句子
@@ -108,11 +87,11 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
                 public long? StartTime { get; set; }
 
                 /// <summary>
-                /// 结束时间
+                /// 用户unionId
                 /// </summary>
-                [NameInMap("endTime")]
+                [NameInMap("unionId")]
                 [Validation(Required=false)]
-                public long? EndTime { get; set; }
+                public string UnionId { get; set; }
 
                 /// <summary>
                 /// 单词列表
@@ -122,11 +101,11 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
                 public List<QueryCloudRecordTextResponseBodyParagraphListSentenceListWordList> WordList { get; set; }
                 public class QueryCloudRecordTextResponseBodyParagraphListSentenceListWordList : TeaModel {
                     /// <summary>
-                    /// 单词
+                    /// 结束时间
                     /// </summary>
-                    [NameInMap("word")]
+                    [NameInMap("endTime")]
                     [Validation(Required=false)]
-                    public string Word { get; set; }
+                    public long? EndTime { get; set; }
 
                     /// <summary>
                     /// 开始时间
@@ -136,11 +115,11 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
                     public long? StartTime { get; set; }
 
                     /// <summary>
-                    /// 结束时间
+                    /// 单词
                     /// </summary>
-                    [NameInMap("endTime")]
+                    [NameInMap("word")]
                     [Validation(Required=false)]
-                    public long? EndTime { get; set; }
+                    public string Word { get; set; }
 
                     /// <summary>
                     /// 单词id
@@ -152,6 +131,27 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
                 }
 
             }
+
+            /// <summary>
+            /// 开始时间，毫秒
+            /// </summary>
+            [NameInMap("startTime")]
+            [Validation(Required=false)]
+            public long? StartTime { get; set; }
+
+            /// <summary>
+            /// 状态，暂不解析
+            /// </summary>
+            [NameInMap("status")]
+            [Validation(Required=false)]
+            public long? Status { get; set; }
+
+            /// <summary>
+            /// 发言人unionId
+            /// </summary>
+            [NameInMap("unionId")]
+            [Validation(Required=false)]
+            public string UnionId { get; set; }
 
         }
 

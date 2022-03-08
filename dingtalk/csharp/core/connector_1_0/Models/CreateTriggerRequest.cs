@@ -14,11 +14,25 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
         public List<CreateTriggerRequestTriggerInfo> TriggerInfo { get; set; }
         public class CreateTriggerRequestTriggerInfo : TeaModel {
             /// <summary>
+            /// 描述
+            /// </summary>
+            [NameInMap("description")]
+            [Validation(Required=false)]
+            public string Description { get; set; }
+
+            /// <summary>
             /// 连接平台连接器id
             /// </summary>
             [NameInMap("dingConnectorId")]
             [Validation(Required=false)]
             public string DingConnectorId { get; set; }
+
+            /// <summary>
+            /// 入参jsonSchema
+            /// </summary>
+            [NameInMap("inputSchema")]
+            [Validation(Required=false)]
+            public string InputSchema { get; set; }
 
             /// <summary>
             /// 服务商的连接器Id，优先使用dingConnectorId，其次使用integratorConnectorId
@@ -40,20 +54,6 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
-
-            /// <summary>
-            /// 描述
-            /// </summary>
-            [NameInMap("description")]
-            [Validation(Required=false)]
-            public string Description { get; set; }
-
-            /// <summary>
-            /// 入参jsonSchema
-            /// </summary>
-            [NameInMap("inputSchema")]
-            [Validation(Required=false)]
-            public string InputSchema { get; set; }
 
         }
 

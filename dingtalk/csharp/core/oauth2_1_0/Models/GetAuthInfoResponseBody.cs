@@ -20,10 +20,10 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0.Models
             [Validation(Required=false)]
             public List<GetAuthInfoResponseBodyAuthAppInfoAgentList> AgentList { get; set; }
             public class GetAuthInfoResponseBodyAuthAppInfoAgentList : TeaModel {
+                public List<string> AdminList { get; set; }
                 public long? AgentId { get; set; }
                 public string AgentName { get; set; }
                 public long? AppId { get; set; }
-                public List<string> AdminList { get; set; }
             }
         };
 

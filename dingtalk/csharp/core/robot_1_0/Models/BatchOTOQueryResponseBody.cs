@@ -24,13 +24,6 @@ namespace AlibabaCloud.SDK.Dingtalkrobot_1_0.Models
             public string Name { get; set; }
 
             /// <summary>
-            /// 工号
-            /// </summary>
-            [NameInMap("userId")]
-            [Validation(Required=false)]
-            public string UserId { get; set; }
-
-            /// <summary>
             /// 已读状态
             /// </summary>
             [NameInMap("readStatus")]
@@ -43,6 +36,13 @@ namespace AlibabaCloud.SDK.Dingtalkrobot_1_0.Models
             [NameInMap("readTimestamp")]
             [Validation(Required=false)]
             public long? ReadTimestamp { get; set; }
+
+            /// <summary>
+            /// 工号
+            /// </summary>
+            [NameInMap("userId")]
+            [Validation(Required=false)]
+            public string UserId { get; set; }
 
         }
 

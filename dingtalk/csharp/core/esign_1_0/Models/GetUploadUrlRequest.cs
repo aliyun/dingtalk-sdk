@@ -21,18 +21,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
         [Validation(Required=false)]
         public bool? Convert2Pdf { get; set; }
 
-        [NameInMap("dingCorpId")]
-        [Validation(Required=false)]
-        public string DingCorpId { get; set; }
-
-        [NameInMap("dingIsvAccessToken")]
-        [Validation(Required=false)]
-        public string DingIsvAccessToken { get; set; }
-
-        [NameInMap("dingSuiteKey")]
-        [Validation(Required=false)]
-        public string DingSuiteKey { get; set; }
-
         [NameInMap("fileName")]
         [Validation(Required=false)]
         public string FileName { get; set; }

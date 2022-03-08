@@ -24,11 +24,11 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
             public string ConferenceId { get; set; }
 
             /// <summary>
-            /// 会议名称
+            /// 媒体状态
             /// </summary>
-            [NameInMap("title")]
+            [NameInMap("mediaStatus")]
             [Validation(Required=false)]
-            public string Title { get; set; }
+            public long? MediaStatus { get; set; }
 
             /// <summary>
             /// 会议开始时间
@@ -45,11 +45,11 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
             public long? Status { get; set; }
 
             /// <summary>
-            /// 媒体状态
+            /// 会议名称
             /// </summary>
-            [NameInMap("mediaStatus")]
+            [NameInMap("title")]
             [Validation(Required=false)]
-            public long? MediaStatus { get; set; }
+            public string Title { get; set; }
 
             /// <summary>
             /// 参会用户列表
@@ -58,20 +58,6 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
             [Validation(Required=false)]
             public List<QueryConferenceInfoBatchResponseBodyInfosUserList> UserList { get; set; }
             public class QueryConferenceInfoBatchResponseBodyInfosUserList : TeaModel {
-                /// <summary>
-                /// 用户id
-                /// </summary>
-                [NameInMap("userId")]
-                [Validation(Required=false)]
-                public string UserId { get; set; }
-
-                /// <summary>
-                /// 名称
-                /// </summary>
-                [NameInMap("nick")]
-                [Validation(Required=false)]
-                public string Nick { get; set; }
-
                 /// <summary>
                 /// 在会状态
                 /// </summary>
@@ -94,11 +80,25 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
                 public long? MicStatus { get; set; }
 
                 /// <summary>
+                /// 名称
+                /// </summary>
+                [NameInMap("nick")]
+                [Validation(Required=false)]
+                public string Nick { get; set; }
+
+                /// <summary>
                 /// 拒绝原因
                 /// </summary>
                 [NameInMap("rejectDescription")]
                 [Validation(Required=false)]
                 public string RejectDescription { get; set; }
+
+                /// <summary>
+                /// 用户id
+                /// </summary>
+                [NameInMap("userId")]
+                [Validation(Required=false)]
+                public string UserId { get; set; }
 
             }
 

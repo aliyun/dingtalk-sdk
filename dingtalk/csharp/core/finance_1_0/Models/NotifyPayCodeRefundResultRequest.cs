@@ -17,13 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         public string CorpId { get; set; }
 
         /// <summary>
-        /// isvOrgId
-        /// </summary>
-        [NameInMap("dingIsvOrgId")]
-        [Validation(Required=false)]
-        public long? DingIsvOrgId { get; set; }
-
-        /// <summary>
         /// 退款时间
         /// </summary>
         [NameInMap("gmtRefund")]
@@ -38,46 +31,11 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         public List<NotifyPayCodeRefundResultRequestPayChannelDetailList> PayChannelDetailList { get; set; }
         public class NotifyPayCodeRefundResultRequestPayChannelDetailList : TeaModel {
             /// <summary>
-            /// 支付渠道名称
-            /// </summary>
-            [NameInMap("payChannelName")]
-            [Validation(Required=false)]
-            public string PayChannelName { get; set; }
-
-            /// <summary>
-            /// 支付渠道类型
-            /// </summary>
-            [NameInMap("payChannelType")]
-            [Validation(Required=false)]
-            public string PayChannelType { get; set; }
-
-            /// <summary>
             /// 金额
             /// </summary>
             [NameInMap("amount")]
             [Validation(Required=false)]
             public string Amount { get; set; }
-
-            /// <summary>
-            /// 支付渠道号
-            /// </summary>
-            [NameInMap("payChannelOrderNo")]
-            [Validation(Required=false)]
-            public string PayChannelOrderNo { get; set; }
-
-            /// <summary>
-            /// 支付渠道退款号
-            /// </summary>
-            [NameInMap("payChannelRefundOrderNo")]
-            [Validation(Required=false)]
-            public string PayChannelRefundOrderNo { get; set; }
-
-            /// <summary>
-            /// 优惠金额
-            /// </summary>
-            [NameInMap("promotionAmount")]
-            [Validation(Required=false)]
-            public string PromotionAmount { get; set; }
 
             /// <summary>
             /// 支付资金列表
@@ -87,18 +45,25 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
             public List<NotifyPayCodeRefundResultRequestPayChannelDetailListFundToolDetailList> FundToolDetailList { get; set; }
             public class NotifyPayCodeRefundResultRequestPayChannelDetailListFundToolDetailList : TeaModel {
                 /// <summary>
-                /// 资金工具名称
-                /// </summary>
-                [NameInMap("fundToolName")]
-                [Validation(Required=false)]
-                public string FundToolName { get; set; }
-
-                /// <summary>
                 /// 金额
                 /// </summary>
                 [NameInMap("amount")]
                 [Validation(Required=false)]
                 public string Amount { get; set; }
+
+                /// <summary>
+                /// 扩展信息
+                /// </summary>
+                [NameInMap("extInfo")]
+                [Validation(Required=false)]
+                public string ExtInfo { get; set; }
+
+                /// <summary>
+                /// 资金工具名称
+                /// </summary>
+                [NameInMap("fundToolName")]
+                [Validation(Required=false)]
+                public string FundToolName { get; set; }
 
                 /// <summary>
                 /// 创建时间
@@ -121,14 +86,42 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
                 [Validation(Required=false)]
                 public bool? PromotionFundTool { get; set; }
 
-                /// <summary>
-                /// 扩展信息
-                /// </summary>
-                [NameInMap("extInfo")]
-                [Validation(Required=false)]
-                public string ExtInfo { get; set; }
-
             }
+
+            /// <summary>
+            /// 支付渠道名称
+            /// </summary>
+            [NameInMap("payChannelName")]
+            [Validation(Required=false)]
+            public string PayChannelName { get; set; }
+
+            /// <summary>
+            /// 支付渠道号
+            /// </summary>
+            [NameInMap("payChannelOrderNo")]
+            [Validation(Required=false)]
+            public string PayChannelOrderNo { get; set; }
+
+            /// <summary>
+            /// 支付渠道退款号
+            /// </summary>
+            [NameInMap("payChannelRefundOrderNo")]
+            [Validation(Required=false)]
+            public string PayChannelRefundOrderNo { get; set; }
+
+            /// <summary>
+            /// 支付渠道类型
+            /// </summary>
+            [NameInMap("payChannelType")]
+            [Validation(Required=false)]
+            public string PayChannelType { get; set; }
+
+            /// <summary>
+            /// 优惠金额
+            /// </summary>
+            [NameInMap("promotionAmount")]
+            [Validation(Required=false)]
+            public string PromotionAmount { get; set; }
 
         }
 

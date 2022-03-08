@@ -14,39 +14,11 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
         public List<UpdateActionRequestActionInfo> ActionInfo { get; set; }
         public class UpdateActionRequestActionInfo : TeaModel {
             /// <summary>
-            /// 连接平台连接器id
+            /// api请求url path，结合Connector上的apiDomain使用
             /// </summary>
-            [NameInMap("dingConnectorId")]
+            [NameInMap("apiPath")]
             [Validation(Required=false)]
-            public string DingConnectorId { get; set; }
-
-            /// <summary>
-            /// 服务商的连接器Id
-            /// </summary>
-            [NameInMap("integratorConnectorId")]
-            [Validation(Required=false)]
-            public string IntegratorConnectorId { get; set; }
-
-            /// <summary>
-            /// 连接平台的执行动作唯一标识。
-            /// </summary>
-            [NameInMap("dingActionId")]
-            [Validation(Required=false)]
-            public string DingActionId { get; set; }
-
-            /// <summary>
-            /// 服务商的执行事件Id
-            /// </summary>
-            [NameInMap("integratorActionId")]
-            [Validation(Required=false)]
-            public string IntegratorActionId { get; set; }
-
-            /// <summary>
-            /// 名称
-            /// </summary>
-            [NameInMap("name")]
-            [Validation(Required=false)]
-            public string Name { get; set; }
+            public string ApiPath { get; set; }
 
             /// <summary>
             /// 描述
@@ -56,11 +28,18 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
             public string Description { get; set; }
 
             /// <summary>
-            /// api请求url path，结合Connector上的apiDomain使用
+            /// 连接平台的执行动作唯一标识。
             /// </summary>
-            [NameInMap("apiPath")]
+            [NameInMap("dingActionId")]
             [Validation(Required=false)]
-            public string ApiPath { get; set; }
+            public string DingActionId { get; set; }
+
+            /// <summary>
+            /// 连接平台连接器id
+            /// </summary>
+            [NameInMap("dingConnectorId")]
+            [Validation(Required=false)]
+            public string DingConnectorId { get; set; }
 
             /// <summary>
             /// 入参schema
@@ -70,11 +49,25 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
             public string InputSchema { get; set; }
 
             /// <summary>
-            /// 出参schema
+            /// 服务商的执行事件Id
             /// </summary>
-            [NameInMap("outputSchema")]
+            [NameInMap("integratorActionId")]
             [Validation(Required=false)]
-            public string OutputSchema { get; set; }
+            public string IntegratorActionId { get; set; }
+
+            /// <summary>
+            /// 服务商的连接器Id
+            /// </summary>
+            [NameInMap("integratorConnectorId")]
+            [Validation(Required=false)]
+            public string IntegratorConnectorId { get; set; }
+
+            /// <summary>
+            /// 名称
+            /// </summary>
+            [NameInMap("name")]
+            [Validation(Required=false)]
+            public string Name { get; set; }
 
             /// <summary>
             /// 执行动作接口成功调用规则。
@@ -84,11 +77,11 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
             public List<UpdateActionRequestActionInfoOutputDataRules> OutputDataRules { get; set; }
             public class UpdateActionRequestActionInfoOutputDataRules : TeaModel {
                 /// <summary>
-                /// 规则的属性路径。
+                /// 规则的预期值。
                 /// </summary>
-                [NameInMap("propertyPath")]
+                [NameInMap("expectValue")]
                 [Validation(Required=false)]
-                public string PropertyPath { get; set; }
+                public string ExpectValue { get; set; }
 
                 /// <summary>
                 /// 操作类型。
@@ -98,13 +91,20 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
                 public string Operate { get; set; }
 
                 /// <summary>
-                /// 规则的预期值。
+                /// 规则的属性路径。
                 /// </summary>
-                [NameInMap("expectValue")]
+                [NameInMap("propertyPath")]
                 [Validation(Required=false)]
-                public string ExpectValue { get; set; }
+                public string PropertyPath { get; set; }
 
             }
+
+            /// <summary>
+            /// 出参schema
+            /// </summary>
+            [NameInMap("outputSchema")]
+            [Validation(Required=false)]
+            public string OutputSchema { get; set; }
 
         }
 

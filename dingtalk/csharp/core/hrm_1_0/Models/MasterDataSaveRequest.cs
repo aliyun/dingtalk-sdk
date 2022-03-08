@@ -17,20 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
         public List<MasterDataSaveRequestBody> Body { get; set; }
         public class MasterDataSaveRequestBody : TeaModel {
             /// <summary>
-            /// 员工id
-            /// </summary>
-            [NameInMap("userId")]
-            [Validation(Required=false)]
-            public string UserId { get; set; }
-
-            /// <summary>
-            /// 数据流水唯一标识，如流水号，用以唯一确认一条写入数据
-            /// </summary>
-            [NameInMap("bizUk")]
-            [Validation(Required=false)]
-            public string BizUk { get; set; }
-
-            /// <summary>
             /// 数据变更时间戳，用以保证更新操作的顺序性
             /// </summary>
             [NameInMap("bizTime")]
@@ -38,19 +24,11 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
             public long? BizTime { get; set; }
 
             /// <summary>
-            /// 业务域描述，系统分配
+            /// 数据流水唯一标识，如流水号，用以唯一确认一条写入数据
             /// </summary>
-            [NameInMap("scope")]
+            [NameInMap("bizUk")]
             [Validation(Required=false)]
-            public MasterDataSaveRequestBodyScope Scope { get; set; }
-            public class MasterDataSaveRequestBodyScope : TeaModel {
-                [NameInMap("scopeCode")]
-                [Validation(Required=false)]
-                public string ScopeCode { get; set; }
-                [NameInMap("version")]
-                [Validation(Required=false)]
-                public int? Version { get; set; }
-            };
+            public string BizUk { get; set; }
 
             /// <summary>
             /// 业务域下的细分领域实体
@@ -81,6 +59,28 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
                 public string ValueStr { get; set; }
 
             }
+
+            /// <summary>
+            /// 业务域描述，系统分配
+            /// </summary>
+            [NameInMap("scope")]
+            [Validation(Required=false)]
+            public MasterDataSaveRequestBodyScope Scope { get; set; }
+            public class MasterDataSaveRequestBodyScope : TeaModel {
+                [NameInMap("scopeCode")]
+                [Validation(Required=false)]
+                public string ScopeCode { get; set; }
+                [NameInMap("version")]
+                [Validation(Required=false)]
+                public int? Version { get; set; }
+            };
+
+            /// <summary>
+            /// 员工id
+            /// </summary>
+            [NameInMap("userId")]
+            [Validation(Required=false)]
+            public string UserId { get; set; }
 
         }
 

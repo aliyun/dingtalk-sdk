@@ -9,14 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalktrade_1_0.Models
 {
     public class QueryTradeOrderRequest : TeaModel {
-        [NameInMap("dingIsvOrgId")]
-        [Validation(Required=false)]
-        public long? DingIsvOrgId { get; set; }
-
-        [NameInMap("dingSuiteKey")]
-        [Validation(Required=false)]
-        public string DingSuiteKey { get; set; }
-
         /// <summary>
         /// 内部订单号
         /// </summary>

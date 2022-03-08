@@ -36,10 +36,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             [Validation(Required=false)]
             public List<BatchCreateRequestDataCardRuleItemParamList> CardRuleItemParamList { get; set; }
             public class BatchCreateRequestDataCardRuleItemParamList : TeaModel {
-                public string CardTaskCode { get; set; }
-                public string RelationId { get; set; }
                 public string CardRuleAttr { get; set; }
+                public string CardTaskCode { get; set; }
                 public int? DailyDubbing { get; set; }
+                public string RelationId { get; set; }
                 public string RelationTitle { get; set; }
                 public string RelationUrl { get; set; }
             }
@@ -65,7 +65,6 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             [Validation(Required=false)]
             public List<BatchCreateRequestDataOrgClassStudentGroupList> OrgClassStudentGroupList { get; set; }
             public class BatchCreateRequestDataOrgClassStudentGroupList : TeaModel {
-                public string CorpId { get; set; }
                 public List<BatchCreateRequestDataOrgClassStudentGroupListClassList> ClassList { get; set; }
                 public class BatchCreateRequestDataOrgClassStudentGroupListClassList : TeaModel {
                     public long? ClassId { get; set; }
@@ -76,6 +75,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
                         public string StaffId { get; set; }
                     }
                 }
+                public string CorpId { get; set; }
             }
             [NameInMap("remindHour")]
             [Validation(Required=false)]
@@ -96,13 +96,6 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             [Validation(Required=false)]
             public string UnitOfMeasurement { get; set; }
         };
-
-        /// <summary>
-        /// 老师corpId
-        /// </summary>
-        [NameInMap("dingCorpId")]
-        [Validation(Required=false)]
-        public string DingCorpId { get; set; }
 
         /// <summary>
         /// 卡片幂等唯一键

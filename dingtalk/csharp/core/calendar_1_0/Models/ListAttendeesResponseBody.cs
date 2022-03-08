@@ -17,18 +17,18 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         public List<ListAttendeesResponseBodyAttendees> Attendees { get; set; }
         public class ListAttendeesResponseBodyAttendees : TeaModel {
             /// <summary>
-            /// 用户id
-            /// </summary>
-            [NameInMap("id")]
-            [Validation(Required=false)]
-            public string Id { get; set; }
-
-            /// <summary>
             /// 用户名
             /// </summary>
             [NameInMap("displayName")]
             [Validation(Required=false)]
             public string DisplayName { get; set; }
+
+            /// <summary>
+            /// 用户id
+            /// </summary>
+            [NameInMap("id")]
+            [Validation(Required=false)]
+            public string Id { get; set; }
 
             /// <summary>
             /// 回复状态

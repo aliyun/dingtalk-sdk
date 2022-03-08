@@ -38,6 +38,20 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public List<StartCourseRequestLivePlayInfoList> LivePlayInfoList { get; set; }
         public class StartCourseRequestLivePlayInfoList : TeaModel {
             /// <summary>
+            /// 直播推流地址
+            /// </summary>
+            [NameInMap("liveInputUrl")]
+            [Validation(Required=false)]
+            public string LiveInputUrl { get; set; }
+
+            /// <summary>
+            /// Flv格式直播地址
+            /// </summary>
+            [NameInMap("liveOutputFlvUrl")]
+            [Validation(Required=false)]
+            public string LiveOutputFlvUrl { get; set; }
+
+            /// <summary>
             /// Hls格式直播拉流地址
             /// </summary>
             [NameInMap("liveOutputHlsUrl")]
@@ -52,25 +66,11 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             public int? LiveType { get; set; }
 
             /// <summary>
-            /// 直播推流地址
-            /// </summary>
-            [NameInMap("liveInputUrl")]
-            [Validation(Required=false)]
-            public string LiveInputUrl { get; set; }
-
-            /// <summary>
             /// 视频回放地址
             /// </summary>
             [NameInMap("replayUrl")]
             [Validation(Required=false)]
             public string ReplayUrl { get; set; }
-
-            /// <summary>
-            /// Flv格式直播地址
-            /// </summary>
-            [NameInMap("liveOutputFlvUrl")]
-            [Validation(Required=false)]
-            public string LiveOutputFlvUrl { get; set; }
 
         }
 

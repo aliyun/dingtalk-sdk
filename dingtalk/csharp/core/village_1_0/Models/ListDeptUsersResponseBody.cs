@@ -24,19 +24,16 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
         [Validation(Required=false)]
         public List<ListDeptUsersResponseBodyUserList> UserList { get; set; }
         public class ListDeptUsersResponseBodyUserList : TeaModel {
-            /// <summary>
-            /// 用户ID
-            /// </summary>
-            [NameInMap("userId")]
+            [NameInMap("active")]
             [Validation(Required=false)]
-            public string UserId { get; set; }
+            public bool? Active { get; set; }
 
             /// <summary>
-            /// unionId
+            /// 部门ID列表
             /// </summary>
-            [NameInMap("unionId")]
+            [NameInMap("departmentList")]
             [Validation(Required=false)]
-            public string UnionId { get; set; }
+            public List<long?> DepartmentList { get; set; }
 
             [NameInMap("jobNumber")]
             [Validation(Required=false)]
@@ -47,15 +44,18 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
             public string Name { get; set; }
 
             /// <summary>
-            /// 部门ID列表
+            /// unionId
             /// </summary>
-            [NameInMap("departmentList")]
+            [NameInMap("unionId")]
             [Validation(Required=false)]
-            public List<long?> DepartmentList { get; set; }
+            public string UnionId { get; set; }
 
-            [NameInMap("active")]
+            /// <summary>
+            /// 用户ID
+            /// </summary>
+            [NameInMap("userId")]
             [Validation(Required=false)]
-            public bool? Active { get; set; }
+            public string UserId { get; set; }
 
         }
 

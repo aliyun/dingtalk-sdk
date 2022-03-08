@@ -31,55 +31,6 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public List<ListApplicationAuthorizationServiceConnectorInformationResponseBodyPlugInformation> PlugInformation { get; set; }
         public class ListApplicationAuthorizationServiceConnectorInformationResponseBodyPlugInformation : TeaModel {
             /// <summary>
-            /// pluginUuid
-            /// </summary>
-            [NameInMap("plugUuid")]
-            [Validation(Required=false)]
-            public string PlugUuid { get; set; }
-
-            /// <summary>
-            /// pluginTotalAmount
-            /// </summary>
-            [NameInMap("plugTotalAmount")]
-            [Validation(Required=false)]
-            public long? PlugTotalAmount { get; set; }
-
-            /// <summary>
-            /// pluginName
-            /// </summary>
-            [NameInMap("plugName")]
-            [Validation(Required=false)]
-            public string PlugName { get; set; }
-
-            /// <summary>
-            /// iconUrl
-            /// </summary>
-            [NameInMap("iconUrl")]
-            [Validation(Required=false)]
-            public string IconUrl { get; set; }
-
-            /// <summary>
-            /// pluginPayType
-            /// </summary>
-            [NameInMap("plugPayType")]
-            [Validation(Required=false)]
-            public int? PlugPayType { get; set; }
-
-            /// <summary>
-            /// pluginUsageAmount
-            /// </summary>
-            [NameInMap("plugUsageAmount")]
-            [Validation(Required=false)]
-            public long? PlugUsageAmount { get; set; }
-
-            /// <summary>
-            /// pluginStatus
-            /// </summary>
-            [NameInMap("plugStatus")]
-            [Validation(Required=false)]
-            public int? PlugStatus { get; set; }
-
-            /// <summary>
             /// apps
             /// </summary>
             [NameInMap("applications")]
@@ -94,6 +45,55 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
                 public string AppName { get; set; }
 
             }
+
+            /// <summary>
+            /// iconUrl
+            /// </summary>
+            [NameInMap("iconUrl")]
+            [Validation(Required=false)]
+            public string IconUrl { get; set; }
+
+            /// <summary>
+            /// pluginName
+            /// </summary>
+            [NameInMap("plugName")]
+            [Validation(Required=false)]
+            public string PlugName { get; set; }
+
+            /// <summary>
+            /// pluginPayType
+            /// </summary>
+            [NameInMap("plugPayType")]
+            [Validation(Required=false)]
+            public int? PlugPayType { get; set; }
+
+            /// <summary>
+            /// pluginStatus
+            /// </summary>
+            [NameInMap("plugStatus")]
+            [Validation(Required=false)]
+            public int? PlugStatus { get; set; }
+
+            /// <summary>
+            /// pluginTotalAmount
+            /// </summary>
+            [NameInMap("plugTotalAmount")]
+            [Validation(Required=false)]
+            public long? PlugTotalAmount { get; set; }
+
+            /// <summary>
+            /// pluginUsageAmount
+            /// </summary>
+            [NameInMap("plugUsageAmount")]
+            [Validation(Required=false)]
+            public long? PlugUsageAmount { get; set; }
+
+            /// <summary>
+            /// pluginUuid
+            /// </summary>
+            [NameInMap("plugUuid")]
+            [Validation(Required=false)]
+            public string PlugUuid { get; set; }
 
         }
 

@@ -17,13 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0.Models
         public string ChatbotId { get; set; }
 
         /// <summary>
-        /// 企业id
-        /// </summary>
-        [NameInMap("dingCorpId")]
-        [Validation(Required=false)]
-        public string DingCorpId { get; set; }
-
-        /// <summary>
         /// 对话id
         /// </summary>
         [NameInMap("openConversationId")]

@@ -14,11 +14,11 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
         public List<ListRoleInfoByUserResponseBodyResult> Result { get; set; }
         public class ListRoleInfoByUserResponseBodyResult : TeaModel {
             /// <summary>
-            /// 角色名称
+            /// 是否拥有角色管理权限，默认false
             /// </summary>
-            [NameInMap("roleName")]
+            [NameInMap("canManageRole")]
             [Validation(Required=false)]
-            public string RoleName { get; set; }
+            public bool? CanManageRole { get; set; }
 
             /// <summary>
             /// 角色id
@@ -28,11 +28,11 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
             public long? RoleId { get; set; }
 
             /// <summary>
-            /// 是否拥有角色管理权限，默认false
+            /// 角色名称
             /// </summary>
-            [NameInMap("canManageRole")]
+            [NameInMap("roleName")]
             [Validation(Required=false)]
-            public bool? CanManageRole { get; set; }
+            public string RoleName { get; set; }
 
         }
 

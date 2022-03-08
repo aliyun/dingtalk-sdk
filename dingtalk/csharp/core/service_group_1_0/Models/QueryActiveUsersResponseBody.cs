@@ -17,27 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         public List<QueryActiveUsersResponseBodyActiveUserInfos> ActiveUserInfos { get; set; }
         public class QueryActiveUsersResponseBodyActiveUserInfos : TeaModel {
             /// <summary>
-            /// 钉钉用户unionId
-            /// </summary>
-            [NameInMap("unionId")]
-            [Validation(Required=false)]
-            public string UnionId { get; set; }
-
-            /// <summary>
-            /// 昵称
-            /// </summary>
-            [NameInMap("nickName")]
-            [Validation(Required=false)]
-            public string NickName { get; set; }
-
-            /// <summary>
-            /// 最近一周的行为指数
-            /// </summary>
-            [NameInMap("actionIndexL7d")]
-            [Validation(Required=false)]
-            public double? ActionIndexL7d { get; set; }
-
-            /// <summary>
             /// 最近二周的行为指数
             /// </summary>
             [NameInMap("actionIndexL14d")]
@@ -52,6 +31,13 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
             public double? ActionIndexL30d { get; set; }
 
             /// <summary>
+            /// 最近一周的行为指数
+            /// </summary>
+            [NameInMap("actionIndexL7d")]
+            [Validation(Required=false)]
+            public double? ActionIndexL7d { get; set; }
+
+            /// <summary>
             /// 活跃度
             /// </summary>
             [NameInMap("activeScore")]
@@ -59,11 +45,25 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
             public double? ActiveScore { get; set; }
 
             /// <summary>
+            /// 昵称
+            /// </summary>
+            [NameInMap("nickName")]
+            [Validation(Required=false)]
+            public string NickName { get; set; }
+
+            /// <summary>
             /// 排名
             /// </summary>
             [NameInMap("ranking")]
             [Validation(Required=false)]
             public long? Ranking { get; set; }
+
+            /// <summary>
+            /// 钉钉用户unionId
+            /// </summary>
+            [NameInMap("unionId")]
+            [Validation(Required=false)]
+            public string UnionId { get; set; }
 
         }
 

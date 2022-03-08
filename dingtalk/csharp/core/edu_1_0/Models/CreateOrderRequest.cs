@@ -24,6 +24,20 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public List<CreateOrderRequestDetailList> DetailList { get; set; }
         public class CreateOrderRequestDetailList : TeaModel {
             /// <summary>
+            /// 计算优惠后的实付金额，单位为分
+            /// </summary>
+            [NameInMap("actualAmount")]
+            [Validation(Required=false)]
+            public long? ActualAmount { get; set; }
+
+            /// <summary>
+            /// 应付金额，单位为分
+            /// </summary>
+            [NameInMap("itemAmount")]
+            [Validation(Required=false)]
+            public long? ItemAmount { get; set; }
+
+            /// <summary>
             /// 商品名
             /// </summary>
             [NameInMap("itemName")]
@@ -37,41 +51,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             [Validation(Required=false)]
             public long? Scene { get; set; }
 
-            /// <summary>
-            /// 应付金额，单位为分
-            /// </summary>
-            [NameInMap("itemAmount")]
-            [Validation(Required=false)]
-            public long? ItemAmount { get; set; }
-
-            /// <summary>
-            /// 计算优惠后的实付金额，单位为分
-            /// </summary>
-            [NameInMap("actualAmount")]
-            [Validation(Required=false)]
-            public long? ActualAmount { get; set; }
-
         }
-
-        [NameInMap("dingIsvOrgId")]
-        [Validation(Required=false)]
-        public long? DingIsvOrgId { get; set; }
-
-        [NameInMap("dingOauthAppId")]
-        [Validation(Required=false)]
-        public long? DingOauthAppId { get; set; }
-
-        [NameInMap("dingOrgId")]
-        [Validation(Required=false)]
-        public long? DingOrgId { get; set; }
-
-        [NameInMap("dingSuiteKey")]
-        [Validation(Required=false)]
-        public string DingSuiteKey { get; set; }
-
-        [NameInMap("dingTokenGrantType")]
-        [Validation(Required=false)]
-        public long? DingTokenGrantType { get; set; }
 
         /// <summary>
         /// 人脸id

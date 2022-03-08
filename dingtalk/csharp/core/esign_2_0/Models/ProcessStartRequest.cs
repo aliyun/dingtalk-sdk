@@ -24,24 +24,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0.Models
         public List<ProcessStartRequestCcs> Ccs { get; set; }
         public class ProcessStartRequestCcs : TeaModel {
             /// <summary>
-            /// 用户类型（"DING_USER":钉钉用户，"OUTER_USER":外部用户）
-            /// </summary>
-            [NameInMap("accountType")]
-            [Validation(Required=false)]
-            public string AccountType { get; set; }
-
-            [NameInMap("dingCorpId")]
-            [Validation(Required=false)]
-            public string DingCorpId { get; set; }
-
-            /// <summary>
-            /// DING_USER必填
-            /// </summary>
-            [NameInMap("userId")]
-            [Validation(Required=false)]
-            public string UserId { get; set; }
-
-            /// <summary>
             /// OUTER_USER必填
             /// </summary>
             [NameInMap("account")]
@@ -56,17 +38,27 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0.Models
             public string AccountName { get; set; }
 
             /// <summary>
+            /// 用户类型（"DING_USER":钉钉用户，"OUTER_USER":外部用户）
+            /// </summary>
+            [NameInMap("accountType")]
+            [Validation(Required=false)]
+            public string AccountType { get; set; }
+
+            /// <summary>
             /// 发给企业方必填
             /// </summary>
             [NameInMap("orgName")]
             [Validation(Required=false)]
             public string OrgName { get; set; }
 
-        }
+            /// <summary>
+            /// DING_USER必填
+            /// </summary>
+            [NameInMap("userId")]
+            [Validation(Required=false)]
+            public string UserId { get; set; }
 
-        [NameInMap("dingCorpId")]
-        [Validation(Required=false)]
-        public string DingCorpId { get; set; }
+        }
 
         /// <summary>
         /// 文件列表
@@ -100,31 +92,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0.Models
         public List<ProcessStartRequestParticipants> Participants { get; set; }
         public class ProcessStartRequestParticipants : TeaModel {
             /// <summary>
-            /// 用户类型（"DING_USER":钉钉用户，"OUTER_USER":外部用户）
-            /// </summary>
-            [NameInMap("accountType")]
-            [Validation(Required=false)]
-            public string AccountType { get; set; }
-
-            /// <summary>
-            /// 签署印章类型（1：企业章 2：个人章  1,2：个人和企业章）
-            /// </summary>
-            [NameInMap("signRequirements")]
-            [Validation(Required=false)]
-            public string SignRequirements { get; set; }
-
-            [NameInMap("dingCorpId")]
-            [Validation(Required=false)]
-            public string DingCorpId { get; set; }
-
-            /// <summary>
-            /// DING_USER必填
-            /// </summary>
-            [NameInMap("userId")]
-            [Validation(Required=false)]
-            public string UserId { get; set; }
-
-            /// <summary>
             /// OUTER_USER必填
             /// </summary>
             [NameInMap("account")]
@@ -139,11 +106,32 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0.Models
             public string AccountName { get; set; }
 
             /// <summary>
+            /// 用户类型（"DING_USER":钉钉用户，"OUTER_USER":外部用户）
+            /// </summary>
+            [NameInMap("accountType")]
+            [Validation(Required=false)]
+            public string AccountType { get; set; }
+
+            /// <summary>
             /// OUTER_USER需要盖企业章必填(如果不传，默认会赋值当前企业名称)
             /// </summary>
             [NameInMap("orgName")]
             [Validation(Required=false)]
             public string OrgName { get; set; }
+
+            /// <summary>
+            /// 签署印章类型（1：企业章 2：个人章  1,2：个人和企业章）
+            /// </summary>
+            [NameInMap("signRequirements")]
+            [Validation(Required=false)]
+            public string SignRequirements { get; set; }
+
+            /// <summary>
+            /// DING_USER必填
+            /// </summary>
+            [NameInMap("userId")]
+            [Validation(Required=false)]
+            public string UserId { get; set; }
 
         }
 

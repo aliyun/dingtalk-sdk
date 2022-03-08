@@ -76,7 +76,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -122,7 +122,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -207,7 +207,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -279,7 +279,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -345,7 +345,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -397,7 +397,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -408,25 +408,25 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             return TeaModel.ToObject<CreateTodoTypeConfigResponse>(await DoROARequestAsync("CreateTodoTypeConfig", "todo_1.0", "HTTP", "POST", "AK", "/v1.0/todo/users/" + unionId + "/configs/types", "json", req, runtime));
         }
 
-        public DeleteTodoTaskResponse DeleteTodoTask(string taskId, string unionId, DeleteTodoTaskRequest request)
+        public DeleteTodoTaskResponse DeleteTodoTask(string unionId, string taskId, DeleteTodoTaskRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             DeleteTodoTaskHeaders headers = new DeleteTodoTaskHeaders();
-            return DeleteTodoTaskWithOptions(taskId, unionId, request, headers, runtime);
+            return DeleteTodoTaskWithOptions(unionId, taskId, request, headers, runtime);
         }
 
-        public async Task<DeleteTodoTaskResponse> DeleteTodoTaskAsync(string taskId, string unionId, DeleteTodoTaskRequest request)
+        public async Task<DeleteTodoTaskResponse> DeleteTodoTaskAsync(string unionId, string taskId, DeleteTodoTaskRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             DeleteTodoTaskHeaders headers = new DeleteTodoTaskHeaders();
-            return await DeleteTodoTaskWithOptionsAsync(taskId, unionId, request, headers, runtime);
+            return await DeleteTodoTaskWithOptionsAsync(unionId, taskId, request, headers, runtime);
         }
 
-        public DeleteTodoTaskResponse DeleteTodoTaskWithOptions(string taskId, string unionId, DeleteTodoTaskRequest request, DeleteTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public DeleteTodoTaskResponse DeleteTodoTaskWithOptions(string unionId, string taskId, DeleteTodoTaskRequest request, DeleteTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            taskId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(taskId);
             unionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(unionId);
+            taskId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(taskId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
@@ -439,7 +439,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -449,11 +449,11 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             return TeaModel.ToObject<DeleteTodoTaskResponse>(DoROARequest("DeleteTodoTask", "todo_1.0", "HTTP", "DELETE", "AK", "/v1.0/todo/users/" + unionId + "/tasks/" + taskId, "json", req, runtime));
         }
 
-        public async Task<DeleteTodoTaskResponse> DeleteTodoTaskWithOptionsAsync(string taskId, string unionId, DeleteTodoTaskRequest request, DeleteTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<DeleteTodoTaskResponse> DeleteTodoTaskWithOptionsAsync(string unionId, string taskId, DeleteTodoTaskRequest request, DeleteTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            taskId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(taskId);
             unionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(unionId);
+            taskId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(taskId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
@@ -466,7 +466,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -476,24 +476,24 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             return TeaModel.ToObject<DeleteTodoTaskResponse>(await DoROARequestAsync("DeleteTodoTask", "todo_1.0", "HTTP", "DELETE", "AK", "/v1.0/todo/users/" + unionId + "/tasks/" + taskId, "json", req, runtime));
         }
 
-        public GetTodoTaskResponse GetTodoTask(string taskId, string unionId)
+        public GetTodoTaskResponse GetTodoTask(string unionId, string taskId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetTodoTaskHeaders headers = new GetTodoTaskHeaders();
-            return GetTodoTaskWithOptions(taskId, unionId, headers, runtime);
+            return GetTodoTaskWithOptions(unionId, taskId, headers, runtime);
         }
 
-        public async Task<GetTodoTaskResponse> GetTodoTaskAsync(string taskId, string unionId)
+        public async Task<GetTodoTaskResponse> GetTodoTaskAsync(string unionId, string taskId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetTodoTaskHeaders headers = new GetTodoTaskHeaders();
-            return await GetTodoTaskWithOptionsAsync(taskId, unionId, headers, runtime);
+            return await GetTodoTaskWithOptionsAsync(unionId, taskId, headers, runtime);
         }
 
-        public GetTodoTaskResponse GetTodoTaskWithOptions(string taskId, string unionId, GetTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public GetTodoTaskResponse GetTodoTaskWithOptions(string unionId, string taskId, GetTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            taskId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(taskId);
             unionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(unionId);
+            taskId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(taskId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -501,7 +501,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -510,10 +510,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             return TeaModel.ToObject<GetTodoTaskResponse>(DoROARequest("GetTodoTask", "todo_1.0", "HTTP", "GET", "AK", "/v1.0/todo/users/" + unionId + "/tasks/" + taskId, "json", req, runtime));
         }
 
-        public async Task<GetTodoTaskResponse> GetTodoTaskWithOptionsAsync(string taskId, string unionId, GetTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<GetTodoTaskResponse> GetTodoTaskWithOptionsAsync(string unionId, string taskId, GetTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            taskId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(taskId);
             unionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(unionId);
+            taskId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(taskId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -521,7 +521,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -530,24 +530,24 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             return TeaModel.ToObject<GetTodoTaskResponse>(await DoROARequestAsync("GetTodoTask", "todo_1.0", "HTTP", "GET", "AK", "/v1.0/todo/users/" + unionId + "/tasks/" + taskId, "json", req, runtime));
         }
 
-        public GetTodoTaskBySourceIdResponse GetTodoTaskBySourceId(string sourceId, string unionId)
+        public GetTodoTaskBySourceIdResponse GetTodoTaskBySourceId(string unionId, string sourceId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetTodoTaskBySourceIdHeaders headers = new GetTodoTaskBySourceIdHeaders();
-            return GetTodoTaskBySourceIdWithOptions(sourceId, unionId, headers, runtime);
+            return GetTodoTaskBySourceIdWithOptions(unionId, sourceId, headers, runtime);
         }
 
-        public async Task<GetTodoTaskBySourceIdResponse> GetTodoTaskBySourceIdAsync(string sourceId, string unionId)
+        public async Task<GetTodoTaskBySourceIdResponse> GetTodoTaskBySourceIdAsync(string unionId, string sourceId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetTodoTaskBySourceIdHeaders headers = new GetTodoTaskBySourceIdHeaders();
-            return await GetTodoTaskBySourceIdWithOptionsAsync(sourceId, unionId, headers, runtime);
+            return await GetTodoTaskBySourceIdWithOptionsAsync(unionId, sourceId, headers, runtime);
         }
 
-        public GetTodoTaskBySourceIdResponse GetTodoTaskBySourceIdWithOptions(string sourceId, string unionId, GetTodoTaskBySourceIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public GetTodoTaskBySourceIdResponse GetTodoTaskBySourceIdWithOptions(string unionId, string sourceId, GetTodoTaskBySourceIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            sourceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sourceId);
             unionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(unionId);
+            sourceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sourceId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -555,7 +555,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -564,10 +564,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             return TeaModel.ToObject<GetTodoTaskBySourceIdResponse>(DoROARequest("GetTodoTaskBySourceId", "todo_1.0", "HTTP", "GET", "AK", "/v1.0/todo/users/" + unionId + "/tasks/sources/" + sourceId, "json", req, runtime));
         }
 
-        public async Task<GetTodoTaskBySourceIdResponse> GetTodoTaskBySourceIdWithOptionsAsync(string sourceId, string unionId, GetTodoTaskBySourceIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<GetTodoTaskBySourceIdResponse> GetTodoTaskBySourceIdWithOptionsAsync(string unionId, string sourceId, GetTodoTaskBySourceIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            sourceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sourceId);
             unionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(unionId);
+            sourceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sourceId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -575,7 +575,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -609,7 +609,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -629,7 +629,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -638,24 +638,24 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             return TeaModel.ToObject<GetTodoTaskDetailResponse>(await DoROARequestAsync("GetTodoTaskDetail", "todo_1.0", "HTTP", "GET", "AK", "/v1.0/todo/exclusive/users/" + unionId + "/tasks/" + taskId, "json", req, runtime));
         }
 
-        public GetTodoTypeConfigResponse GetTodoTypeConfig(string cardTypeId, string unionId)
+        public GetTodoTypeConfigResponse GetTodoTypeConfig(string unionId, string cardTypeId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetTodoTypeConfigHeaders headers = new GetTodoTypeConfigHeaders();
-            return GetTodoTypeConfigWithOptions(cardTypeId, unionId, headers, runtime);
+            return GetTodoTypeConfigWithOptions(unionId, cardTypeId, headers, runtime);
         }
 
-        public async Task<GetTodoTypeConfigResponse> GetTodoTypeConfigAsync(string cardTypeId, string unionId)
+        public async Task<GetTodoTypeConfigResponse> GetTodoTypeConfigAsync(string unionId, string cardTypeId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetTodoTypeConfigHeaders headers = new GetTodoTypeConfigHeaders();
-            return await GetTodoTypeConfigWithOptionsAsync(cardTypeId, unionId, headers, runtime);
+            return await GetTodoTypeConfigWithOptionsAsync(unionId, cardTypeId, headers, runtime);
         }
 
-        public GetTodoTypeConfigResponse GetTodoTypeConfigWithOptions(string cardTypeId, string unionId, GetTodoTypeConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public GetTodoTypeConfigResponse GetTodoTypeConfigWithOptions(string unionId, string cardTypeId, GetTodoTypeConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            cardTypeId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(cardTypeId);
             unionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(unionId);
+            cardTypeId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(cardTypeId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -663,7 +663,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -672,10 +672,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             return TeaModel.ToObject<GetTodoTypeConfigResponse>(DoROARequest("GetTodoTypeConfig", "todo_1.0", "HTTP", "GET", "AK", "/v1.0/todo/users/" + unionId + "/configs/types/" + cardTypeId, "json", req, runtime));
         }
 
-        public async Task<GetTodoTypeConfigResponse> GetTodoTypeConfigWithOptionsAsync(string cardTypeId, string unionId, GetTodoTypeConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<GetTodoTypeConfigResponse> GetTodoTypeConfigWithOptionsAsync(string unionId, string cardTypeId, GetTodoTypeConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            cardTypeId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(cardTypeId);
             unionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(unionId);
+            cardTypeId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(cardTypeId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -683,7 +683,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -726,7 +726,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -756,7 +756,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -828,7 +828,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -886,7 +886,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -896,25 +896,25 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             return TeaModel.ToObject<QueryTodoTasksResponse>(await DoROARequestAsync("QueryTodoTasks", "todo_1.0", "HTTP", "POST", "AK", "/v1.0/todo/users/" + unionId + "/tasks/list", "json", req, runtime));
         }
 
-        public UpdateTodoTaskResponse UpdateTodoTask(string taskId, string unionId, UpdateTodoTaskRequest request)
+        public UpdateTodoTaskResponse UpdateTodoTask(string unionId, string taskId, UpdateTodoTaskRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             UpdateTodoTaskHeaders headers = new UpdateTodoTaskHeaders();
-            return UpdateTodoTaskWithOptions(taskId, unionId, request, headers, runtime);
+            return UpdateTodoTaskWithOptions(unionId, taskId, request, headers, runtime);
         }
 
-        public async Task<UpdateTodoTaskResponse> UpdateTodoTaskAsync(string taskId, string unionId, UpdateTodoTaskRequest request)
+        public async Task<UpdateTodoTaskResponse> UpdateTodoTaskAsync(string unionId, string taskId, UpdateTodoTaskRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             UpdateTodoTaskHeaders headers = new UpdateTodoTaskHeaders();
-            return await UpdateTodoTaskWithOptionsAsync(taskId, unionId, request, headers, runtime);
+            return await UpdateTodoTaskWithOptionsAsync(unionId, taskId, request, headers, runtime);
         }
 
-        public UpdateTodoTaskResponse UpdateTodoTaskWithOptions(string taskId, string unionId, UpdateTodoTaskRequest request, UpdateTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public UpdateTodoTaskResponse UpdateTodoTaskWithOptions(string unionId, string taskId, UpdateTodoTaskRequest request, UpdateTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            taskId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(taskId);
             unionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(unionId);
+            taskId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(taskId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
@@ -952,7 +952,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -963,11 +963,11 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             return TeaModel.ToObject<UpdateTodoTaskResponse>(DoROARequest("UpdateTodoTask", "todo_1.0", "HTTP", "PUT", "AK", "/v1.0/todo/users/" + unionId + "/tasks/" + taskId, "json", req, runtime));
         }
 
-        public async Task<UpdateTodoTaskResponse> UpdateTodoTaskWithOptionsAsync(string taskId, string unionId, UpdateTodoTaskRequest request, UpdateTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<UpdateTodoTaskResponse> UpdateTodoTaskWithOptionsAsync(string unionId, string taskId, UpdateTodoTaskRequest request, UpdateTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            taskId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(taskId);
             unionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(unionId);
+            taskId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(taskId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
@@ -1005,7 +1005,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -1016,25 +1016,25 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             return TeaModel.ToObject<UpdateTodoTaskResponse>(await DoROARequestAsync("UpdateTodoTask", "todo_1.0", "HTTP", "PUT", "AK", "/v1.0/todo/users/" + unionId + "/tasks/" + taskId, "json", req, runtime));
         }
 
-        public UpdateTodoTaskExecutorStatusResponse UpdateTodoTaskExecutorStatus(string taskId, string unionId, UpdateTodoTaskExecutorStatusRequest request)
+        public UpdateTodoTaskExecutorStatusResponse UpdateTodoTaskExecutorStatus(string unionId, string taskId, UpdateTodoTaskExecutorStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             UpdateTodoTaskExecutorStatusHeaders headers = new UpdateTodoTaskExecutorStatusHeaders();
-            return UpdateTodoTaskExecutorStatusWithOptions(taskId, unionId, request, headers, runtime);
+            return UpdateTodoTaskExecutorStatusWithOptions(unionId, taskId, request, headers, runtime);
         }
 
-        public async Task<UpdateTodoTaskExecutorStatusResponse> UpdateTodoTaskExecutorStatusAsync(string taskId, string unionId, UpdateTodoTaskExecutorStatusRequest request)
+        public async Task<UpdateTodoTaskExecutorStatusResponse> UpdateTodoTaskExecutorStatusAsync(string unionId, string taskId, UpdateTodoTaskExecutorStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             UpdateTodoTaskExecutorStatusHeaders headers = new UpdateTodoTaskExecutorStatusHeaders();
-            return await UpdateTodoTaskExecutorStatusWithOptionsAsync(taskId, unionId, request, headers, runtime);
+            return await UpdateTodoTaskExecutorStatusWithOptionsAsync(unionId, taskId, request, headers, runtime);
         }
 
-        public UpdateTodoTaskExecutorStatusResponse UpdateTodoTaskExecutorStatusWithOptions(string taskId, string unionId, UpdateTodoTaskExecutorStatusRequest request, UpdateTodoTaskExecutorStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public UpdateTodoTaskExecutorStatusResponse UpdateTodoTaskExecutorStatusWithOptions(string unionId, string taskId, UpdateTodoTaskExecutorStatusRequest request, UpdateTodoTaskExecutorStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            taskId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(taskId);
             unionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(unionId);
+            taskId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(taskId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
@@ -1052,7 +1052,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -1063,11 +1063,11 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             return TeaModel.ToObject<UpdateTodoTaskExecutorStatusResponse>(DoROARequest("UpdateTodoTaskExecutorStatus", "todo_1.0", "HTTP", "PUT", "AK", "/v1.0/todo/users/" + unionId + "/tasks/" + taskId + "/executorStatus", "json", req, runtime));
         }
 
-        public async Task<UpdateTodoTaskExecutorStatusResponse> UpdateTodoTaskExecutorStatusWithOptionsAsync(string taskId, string unionId, UpdateTodoTaskExecutorStatusRequest request, UpdateTodoTaskExecutorStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<UpdateTodoTaskExecutorStatusResponse> UpdateTodoTaskExecutorStatusWithOptionsAsync(string unionId, string taskId, UpdateTodoTaskExecutorStatusRequest request, UpdateTodoTaskExecutorStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            taskId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(taskId);
             unionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(unionId);
+            taskId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(taskId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
@@ -1085,7 +1085,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -1096,25 +1096,25 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             return TeaModel.ToObject<UpdateTodoTaskExecutorStatusResponse>(await DoROARequestAsync("UpdateTodoTaskExecutorStatus", "todo_1.0", "HTTP", "PUT", "AK", "/v1.0/todo/users/" + unionId + "/tasks/" + taskId + "/executorStatus", "json", req, runtime));
         }
 
-        public UpdateTodoTypeConfigResponse UpdateTodoTypeConfig(string cardTypeId, string unionId, UpdateTodoTypeConfigRequest request)
+        public UpdateTodoTypeConfigResponse UpdateTodoTypeConfig(string unionId, string cardTypeId, UpdateTodoTypeConfigRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             UpdateTodoTypeConfigHeaders headers = new UpdateTodoTypeConfigHeaders();
-            return UpdateTodoTypeConfigWithOptions(cardTypeId, unionId, request, headers, runtime);
+            return UpdateTodoTypeConfigWithOptions(unionId, cardTypeId, request, headers, runtime);
         }
 
-        public async Task<UpdateTodoTypeConfigResponse> UpdateTodoTypeConfigAsync(string cardTypeId, string unionId, UpdateTodoTypeConfigRequest request)
+        public async Task<UpdateTodoTypeConfigResponse> UpdateTodoTypeConfigAsync(string unionId, string cardTypeId, UpdateTodoTypeConfigRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             UpdateTodoTypeConfigHeaders headers = new UpdateTodoTypeConfigHeaders();
-            return await UpdateTodoTypeConfigWithOptionsAsync(cardTypeId, unionId, request, headers, runtime);
+            return await UpdateTodoTypeConfigWithOptionsAsync(unionId, cardTypeId, request, headers, runtime);
         }
 
-        public UpdateTodoTypeConfigResponse UpdateTodoTypeConfigWithOptions(string cardTypeId, string unionId, UpdateTodoTypeConfigRequest request, UpdateTodoTypeConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public UpdateTodoTypeConfigResponse UpdateTodoTypeConfigWithOptions(string unionId, string cardTypeId, UpdateTodoTypeConfigRequest request, UpdateTodoTypeConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            cardTypeId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(cardTypeId);
             unionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(unionId);
+            cardTypeId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(cardTypeId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
@@ -1152,7 +1152,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -1163,11 +1163,11 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             return TeaModel.ToObject<UpdateTodoTypeConfigResponse>(DoROARequest("UpdateTodoTypeConfig", "todo_1.0", "HTTP", "PUT", "AK", "/v1.0/todo/users/" + unionId + "/configs/types/" + cardTypeId, "json", req, runtime));
         }
 
-        public async Task<UpdateTodoTypeConfigResponse> UpdateTodoTypeConfigWithOptionsAsync(string cardTypeId, string unionId, UpdateTodoTypeConfigRequest request, UpdateTodoTypeConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<UpdateTodoTypeConfigResponse> UpdateTodoTypeConfigWithOptionsAsync(string unionId, string cardTypeId, UpdateTodoTypeConfigRequest request, UpdateTodoTypeConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            cardTypeId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(cardTypeId);
             unionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(unionId);
+            cardTypeId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(cardTypeId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
@@ -1205,7 +1205,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {

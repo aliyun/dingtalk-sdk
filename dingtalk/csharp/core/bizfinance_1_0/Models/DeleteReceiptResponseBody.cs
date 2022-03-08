@@ -24,13 +24,6 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             public string Code { get; set; }
 
             /// <summary>
-            /// 是否成功
-            /// </summary>
-            [NameInMap("success")]
-            [Validation(Required=false)]
-            public bool? Success { get; set; }
-
-            /// <summary>
             /// 错误码
             /// </summary>
             [NameInMap("errorCode")]
@@ -43,6 +36,13 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [NameInMap("errorMsg")]
             [Validation(Required=false)]
             public string ErrorMsg { get; set; }
+
+            /// <summary>
+            /// 是否成功
+            /// </summary>
+            [NameInMap("success")]
+            [Validation(Required=false)]
+            public bool? Success { get; set; }
 
         }
 

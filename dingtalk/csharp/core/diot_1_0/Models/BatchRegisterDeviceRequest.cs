@@ -59,11 +59,11 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0.Models
             public string DeviceTypeName { get; set; }
 
             /// <summary>
-            /// 产品类型 CAMERA：摄像头，可看直播 OTHERS：非摄像头
+            /// 第三方平台定制参数，企业内部系统忽略。
             /// </summary>
-            [NameInMap("productType")]
+            [NameInMap("extraData")]
             [Validation(Required=false)]
-            public string ProductType { get; set; }
+            public Dictionary<string, object> ExtraData { get; set; }
 
             /// <summary>
             /// 视频流地址直播流地址，支持rtmp、flv、hls等格式，需要https协议。
@@ -73,13 +73,6 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0.Models
             public string LiveUrl { get; set; }
 
             /// <summary>
-            /// 父设备ID。
-            /// </summary>
-            [NameInMap("parentId")]
-            [Validation(Required=false)]
-            public string ParentId { get; set; }
-
-            /// <summary>
             /// 设备地址。
             /// </summary>
             [NameInMap("location")]
@@ -87,11 +80,18 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0.Models
             public string Location { get; set; }
 
             /// <summary>
-            /// 第三方平台定制参数，企业内部系统忽略。
+            /// 父设备ID。
             /// </summary>
-            [NameInMap("extraData")]
+            [NameInMap("parentId")]
             [Validation(Required=false)]
-            public Dictionary<string, object> ExtraData { get; set; }
+            public string ParentId { get; set; }
+
+            /// <summary>
+            /// 产品类型 CAMERA：摄像头，可看直播 OTHERS：非摄像头
+            /// </summary>
+            [NameInMap("productType")]
+            [Validation(Required=false)]
+            public string ProductType { get; set; }
 
         }
 

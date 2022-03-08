@@ -24,11 +24,25 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         public List<ListEmpLeaveRecordsResponseBodyRecords> Records { get; set; }
         public class ListEmpLeaveRecordsResponseBodyRecords : TeaModel {
             /// <summary>
-            /// 员工userid
+            /// 离职原因(oapi-开放平台删除，cancel-注销，leave-主动离职，unknown-未知原因，delete-管理员删除）
             /// </summary>
-            [NameInMap("userId")]
+            [NameInMap("leaveReason")]
             [Validation(Required=false)]
-            public string UserId { get; set; }
+            public string LeaveReason { get; set; }
+
+            /// <summary>
+            /// 离职时间
+            /// </summary>
+            [NameInMap("leaveTime")]
+            [Validation(Required=false)]
+            public string LeaveTime { get; set; }
+
+            /// <summary>
+            /// 手机号码
+            /// </summary>
+            [NameInMap("mobile")]
+            [Validation(Required=false)]
+            public string Mobile { get; set; }
 
             /// <summary>
             /// 员工名称
@@ -45,25 +59,11 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
             public string StateCode { get; set; }
 
             /// <summary>
-            /// 手机号码
+            /// 员工userid
             /// </summary>
-            [NameInMap("mobile")]
+            [NameInMap("userId")]
             [Validation(Required=false)]
-            public string Mobile { get; set; }
-
-            /// <summary>
-            /// 离职时间
-            /// </summary>
-            [NameInMap("leaveTime")]
-            [Validation(Required=false)]
-            public string LeaveTime { get; set; }
-
-            /// <summary>
-            /// 离职原因(oapi-开放平台删除，cancel-注销，leave-主动离职，unknown-未知原因，delete-管理员删除）
-            /// </summary>
-            [NameInMap("leaveReason")]
-            [Validation(Required=false)]
-            public string LeaveReason { get; set; }
+            public string UserId { get; set; }
 
         }
 

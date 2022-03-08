@@ -38,39 +38,18 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         public List<QueryAllTracksResponseBodyValues> Values { get; set; }
         public class QueryAllTracksResponseBodyValues : TeaModel {
             /// <summary>
+            /// 动态外键
+            /// </summary>
+            [NameInMap("bizId")]
+            [Validation(Required=false)]
+            public string BizId { get; set; }
+
+            /// <summary>
             /// 企业id
             /// </summary>
             [NameInMap("corpId")]
             [Validation(Required=false)]
             public string CorpId { get; set; }
-
-            /// <summary>
-            /// 客户id
-            /// </summary>
-            [NameInMap("customerId")]
-            [Validation(Required=false)]
-            public string CustomerId { get; set; }
-
-            /// <summary>
-            /// 动态类型
-            /// </summary>
-            [NameInMap("type")]
-            [Validation(Required=false)]
-            public int? Type { get; set; }
-
-            /// <summary>
-            /// 动态子类型
-            /// </summary>
-            [NameInMap("subType")]
-            [Validation(Required=false)]
-            public int? SubType { get; set; }
-
-            /// <summary>
-            /// 创建时间
-            /// </summary>
-            [NameInMap("gmtCreate")]
-            [Validation(Required=false)]
-            public long? GmtCreate { get; set; }
 
             /// <summary>
             /// 创建人userId
@@ -80,11 +59,18 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             public string Creator { get; set; }
 
             /// <summary>
-            /// 动态外键
+            /// 客户id
             /// </summary>
-            [NameInMap("bizId")]
+            [NameInMap("customerId")]
             [Validation(Required=false)]
-            public string BizId { get; set; }
+            public string CustomerId { get; set; }
+
+            /// <summary>
+            /// 创建时间
+            /// </summary>
+            [NameInMap("gmtCreate")]
+            [Validation(Required=false)]
+            public long? GmtCreate { get; set; }
 
             /// <summary>
             /// 动态加密主键
@@ -92,6 +78,20 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             [NameInMap("id")]
             [Validation(Required=false)]
             public string Id { get; set; }
+
+            /// <summary>
+            /// 动态子类型
+            /// </summary>
+            [NameInMap("subType")]
+            [Validation(Required=false)]
+            public int? SubType { get; set; }
+
+            /// <summary>
+            /// 动态类型
+            /// </summary>
+            [NameInMap("type")]
+            [Validation(Required=false)]
+            public int? Type { get; set; }
 
         }
 

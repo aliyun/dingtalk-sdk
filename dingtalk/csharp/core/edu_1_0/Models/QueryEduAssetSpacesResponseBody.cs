@@ -31,6 +31,34 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public List<QueryEduAssetSpacesResponseBodySpaces> Spaces { get; set; }
         public class QueryEduAssetSpacesResponseBodySpaces : TeaModel {
             /// <summary>
+            /// 创建时间的时间戳
+            /// </summary>
+            [NameInMap("createTimeMillis")]
+            [Validation(Required=false)]
+            public long? CreateTimeMillis { get; set; }
+
+            /// <summary>
+            /// 修改时间的时间戳
+            /// </summary>
+            [NameInMap("modifyTimeMillis")]
+            [Validation(Required=false)]
+            public long? ModifyTimeMillis { get; set; }
+
+            /// <summary>
+            /// 权限类型acl：acl授权；custom：自定义授权
+            /// </summary>
+            [NameInMap("permissionMode")]
+            [Validation(Required=false)]
+            public string PermissionMode { get; set; }
+
+            /// <summary>
+            /// 空间容量
+            /// </summary>
+            [NameInMap("quota")]
+            [Validation(Required=false)]
+            public long? Quota { get; set; }
+
+            /// <summary>
             /// 空间id
             /// </summary>
             [NameInMap("spaceId")]
@@ -52,39 +80,11 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             public string SpaceType { get; set; }
 
             /// <summary>
-            /// 空间容量
-            /// </summary>
-            [NameInMap("quota")]
-            [Validation(Required=false)]
-            public long? Quota { get; set; }
-
-            /// <summary>
             /// 已使用容量
             /// </summary>
             [NameInMap("usedQuota")]
             [Validation(Required=false)]
             public long? UsedQuota { get; set; }
-
-            /// <summary>
-            /// 权限类型acl：acl授权；custom：自定义授权
-            /// </summary>
-            [NameInMap("permissionMode")]
-            [Validation(Required=false)]
-            public string PermissionMode { get; set; }
-
-            /// <summary>
-            /// 创建时间的时间戳
-            /// </summary>
-            [NameInMap("createTimeMillis")]
-            [Validation(Required=false)]
-            public long? CreateTimeMillis { get; set; }
-
-            /// <summary>
-            /// 修改时间的时间戳
-            /// </summary>
-            [NameInMap("modifyTimeMillis")]
-            [Validation(Required=false)]
-            public long? ModifyTimeMillis { get; set; }
 
         }
 

@@ -24,25 +24,11 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0.Models
         public List<QueryAppActiveUsersResponseBodyList> List { get; set; }
         public class QueryAppActiveUsersResponseBodyList : TeaModel {
             /// <summary>
-            /// 轨迹采集开启时间
-            /// </summary>
-            [NameInMap("startTime")]
-            [Validation(Required=false)]
-            public long? StartTime { get; set; }
-
-            /// <summary>
             /// 应用轨迹ID
             /// </summary>
             [NameInMap("appTraceId")]
             [Validation(Required=false)]
             public string AppTraceId { get; set; }
-
-            /// <summary>
-            /// 经度
-            /// </summary>
-            [NameInMap("longitude")]
-            [Validation(Required=false)]
-            public float? Longitude { get; set; }
 
             /// <summary>
             /// 纬度
@@ -52,11 +38,25 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0.Models
             public float? Latitude { get; set; }
 
             /// <summary>
+            /// 经度
+            /// </summary>
+            [NameInMap("longitude")]
+            [Validation(Required=false)]
+            public float? Longitude { get; set; }
+
+            /// <summary>
             /// 该位置采集时间
             /// </summary>
             [NameInMap("reportTime")]
             [Validation(Required=false)]
             public long? ReportTime { get; set; }
+
+            /// <summary>
+            /// 轨迹采集开启时间
+            /// </summary>
+            [NameInMap("startTime")]
+            [Validation(Required=false)]
+            public long? StartTime { get; set; }
 
             /// <summary>
             /// 员工Id

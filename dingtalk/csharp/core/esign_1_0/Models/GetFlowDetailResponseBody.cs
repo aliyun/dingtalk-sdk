@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
             [Validation(Required=false)]
             public List<GetFlowDetailResponseBodyDataLogs> Logs { get; set; }
             public class GetFlowDetailResponseBodyDataLogs : TeaModel {
-                public string OperatorAccountName { get; set; }
                 public string LogType { get; set; }
                 public string OperateDescription { get; set; }
                 public long? OperateTime { get; set; }
+                public string OperatorAccountName { get; set; }
             }
         };
 

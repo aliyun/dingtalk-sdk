@@ -27,22 +27,22 @@ namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0.Models
             [Validation(Required=false)]
             public List<LoadBizFieldsResponseBodyDataChildForms> ChildForms { get; set; }
             public class LoadBizFieldsResponseBodyDataChildForms : TeaModel {
-                public string SchemaCode { get; set; }
-                public string FormName { get; set; }
                 public List<LoadBizFieldsResponseBodyDataChildFormsFields> Fields { get; set; }
                 public class LoadBizFieldsResponseBodyDataChildFormsFields : TeaModel {
-                    public string Label { get; set; }
-                    public string FieldName { get; set; }
                     public string BizDataType { get; set; }
+                    public string FieldName { get; set; }
+                    public string Label { get; set; }
                 }
+                public string FormName { get; set; }
+                public string SchemaCode { get; set; }
             }
             [NameInMap("fields")]
             [Validation(Required=false)]
             public List<LoadBizFieldsResponseBodyDataFields> Fields { get; set; }
             public class LoadBizFieldsResponseBodyDataFields : TeaModel {
-                public string Label { get; set; }
-                public string FieldName { get; set; }
                 public string BizDataType { get; set; }
+                public string FieldName { get; set; }
+                public string Label { get; set; }
             }
             [NameInMap("formName")]
             [Validation(Required=false)]

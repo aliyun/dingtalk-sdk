@@ -17,18 +17,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         public List<QueryJobCodeDictionaryResponseBodyContent> Content { get; set; }
         public class QueryJobCodeDictionaryResponseBodyContent : TeaModel {
             /// <summary>
-            /// 固定字段标识
-            /// </summary>
-            [NameInMap("code")]
-            [Validation(Required=false)]
-            public string Code { get; set; }
-
-            /// <summary>
             /// 分类
             /// </summary>
             [NameInMap("category")]
             [Validation(Required=false)]
             public string Category { get; set; }
+
+            /// <summary>
+            /// 固定字段标识
+            /// </summary>
+            [NameInMap("code")]
+            [Validation(Required=false)]
+            public string Code { get; set; }
 
             /// <summary>
             /// 展示名字

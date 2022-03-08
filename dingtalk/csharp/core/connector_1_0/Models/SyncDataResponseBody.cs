@@ -16,17 +16,9 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
         [Validation(Required=false)]
         public List<SyncDataResponseBodyList> List { get; set; }
         public class SyncDataResponseBodyList : TeaModel {
-            [NameInMap("triggerId")]
-            [Validation(Required=false)]
-            public string TriggerId { get; set; }
-
             [NameInMap("bizPrimaryKey")]
             [Validation(Required=false)]
             public string BizPrimaryKey { get; set; }
-
-            [NameInMap("success")]
-            [Validation(Required=false)]
-            public bool? Success { get; set; }
 
             [NameInMap("subErrCode")]
             [Validation(Required=false)]
@@ -35,6 +27,14 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
             [NameInMap("subErrMsg")]
             [Validation(Required=false)]
             public string SubErrMsg { get; set; }
+
+            [NameInMap("success")]
+            [Validation(Required=false)]
+            public bool? Success { get; set; }
+
+            [NameInMap("triggerId")]
+            [Validation(Required=false)]
+            public string TriggerId { get; set; }
 
         }
 

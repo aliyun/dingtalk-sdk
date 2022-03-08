@@ -24,34 +24,6 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
         public List<QueryInterviewsResponseBodyList> List { get; set; }
         public class QueryInterviewsResponseBodyList : TeaModel {
             /// <summary>
-            /// 面试标识
-            /// </summary>
-            [NameInMap("interviewId")]
-            [Validation(Required=false)]
-            public string InterviewId { get; set; }
-
-            /// <summary>
-            /// 职位标识
-            /// </summary>
-            [NameInMap("jobId")]
-            [Validation(Required=false)]
-            public string JobId { get; set; }
-
-            /// <summary>
-            /// 面试开始时间（单位：毫秒）
-            /// </summary>
-            [NameInMap("startTimeMillis")]
-            [Validation(Required=false)]
-            public long? StartTimeMillis { get; set; }
-
-            /// <summary>
-            /// 面试结束时间（单位：毫秒）
-            /// </summary>
-            [NameInMap("endTimeMillis")]
-            [Validation(Required=false)]
-            public long? EndTimeMillis { get; set; }
-
-            /// <summary>
             /// 面试是否已取消
             /// </summary>
             [NameInMap("cancelled")]
@@ -64,6 +36,20 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
             [NameInMap("creatorUserId")]
             [Validation(Required=false)]
             public string CreatorUserId { get; set; }
+
+            /// <summary>
+            /// 面试结束时间（单位：毫秒）
+            /// </summary>
+            [NameInMap("endTimeMillis")]
+            [Validation(Required=false)]
+            public long? EndTimeMillis { get; set; }
+
+            /// <summary>
+            /// 面试标识
+            /// </summary>
+            [NameInMap("interviewId")]
+            [Validation(Required=false)]
+            public string InterviewId { get; set; }
 
             /// <summary>
             /// 面试官列表
@@ -80,6 +66,20 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
                 public string UserId { get; set; }
 
             }
+
+            /// <summary>
+            /// 职位标识
+            /// </summary>
+            [NameInMap("jobId")]
+            [Validation(Required=false)]
+            public string JobId { get; set; }
+
+            /// <summary>
+            /// 面试开始时间（单位：毫秒）
+            /// </summary>
+            [NameInMap("startTimeMillis")]
+            [Validation(Required=false)]
+            public long? StartTimeMillis { get; set; }
 
         }
 

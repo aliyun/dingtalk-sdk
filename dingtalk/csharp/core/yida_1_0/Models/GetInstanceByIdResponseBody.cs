@@ -17,24 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public List<GetInstanceByIdResponseBodyActionExecutor> ActionExecutor { get; set; }
         public class GetInstanceByIdResponseBodyActionExecutor : TeaModel {
             /// <summary>
-            /// name
-            /// </summary>
-            [NameInMap("name")]
-            [Validation(Required=false)]
-            public GetInstanceByIdResponseBodyActionExecutorName Name { get; set; }
-            public class GetInstanceByIdResponseBodyActionExecutorName : TeaModel {
-                [NameInMap("nameInEnglish")]
-                [Validation(Required=false)]
-                public string NameInEnglish { get; set; }
-                [NameInMap("type")]
-                [Validation(Required=false)]
-                public string Type { get; set; }
-                [NameInMap("nameInChinese")]
-                [Validation(Required=false)]
-                public string NameInChinese { get; set; }
-            };
-
-            /// <summary>
             /// deptName
             /// </summary>
             [NameInMap("deptName")]
@@ -42,18 +24,36 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             public string DeptName { get; set; }
 
             /// <summary>
-            /// userId
-            /// </summary>
-            [NameInMap("userId")]
-            [Validation(Required=false)]
-            public string UserId { get; set; }
-
-            /// <summary>
             /// email
             /// </summary>
             [NameInMap("email")]
             [Validation(Required=false)]
             public string Email { get; set; }
+
+            /// <summary>
+            /// name
+            /// </summary>
+            [NameInMap("name")]
+            [Validation(Required=false)]
+            public GetInstanceByIdResponseBodyActionExecutorName Name { get; set; }
+            public class GetInstanceByIdResponseBodyActionExecutorName : TeaModel {
+                [NameInMap("nameInChinese")]
+                [Validation(Required=false)]
+                public string NameInChinese { get; set; }
+                [NameInMap("nameInEnglish")]
+                [Validation(Required=false)]
+                public string NameInEnglish { get; set; }
+                [NameInMap("type")]
+                [Validation(Required=false)]
+                public string Type { get; set; }
+            };
+
+            /// <summary>
+            /// userId
+            /// </summary>
+            [NameInMap("userId")]
+            [Validation(Required=false)]
+            public string UserId { get; set; }
 
         }
 

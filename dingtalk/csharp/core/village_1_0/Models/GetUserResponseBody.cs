@@ -154,6 +154,13 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
         public List<GetUserResponseBodyRoleList> RoleList { get; set; }
         public class GetUserResponseBodyRoleList : TeaModel {
             /// <summary>
+            /// 角色组名称
+            /// </summary>
+            [NameInMap("groupName")]
+            [Validation(Required=false)]
+            public string GroupName { get; set; }
+
+            /// <summary>
             /// 角色id
             /// </summary>
             [NameInMap("roleId")]
@@ -166,13 +173,6 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
             [NameInMap("roleName")]
             [Validation(Required=false)]
             public string RoleName { get; set; }
-
-            /// <summary>
-            /// 角色组名称
-            /// </summary>
-            [NameInMap("groupName")]
-            [Validation(Required=false)]
-            public string GroupName { get; set; }
 
         }
 

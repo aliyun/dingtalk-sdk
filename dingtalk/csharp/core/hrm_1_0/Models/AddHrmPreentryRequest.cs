@@ -25,23 +25,23 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
             [Validation(Required=false)]
             public List<AddHrmPreentryRequestGroupsSections> Sections { get; set; }
             public class AddHrmPreentryRequestGroupsSections : TeaModel {
-                [NameInMap("oldIndex")]
-                [Validation(Required=false)]
-                public int? OldIndex { get; set; }
-
                 [NameInMap("empFieldVOList")]
                 [Validation(Required=false)]
                 public List<AddHrmPreentryRequestGroupsSectionsEmpFieldVOList> EmpFieldVOList { get; set; }
                 public class AddHrmPreentryRequestGroupsSectionsEmpFieldVOList : TeaModel {
-                    [NameInMap("value")]
-                    [Validation(Required=false)]
-                    public string Value { get; set; }
-
                     [NameInMap("fieldCode")]
                     [Validation(Required=false)]
                     public string FieldCode { get; set; }
 
+                    [NameInMap("value")]
+                    [Validation(Required=false)]
+                    public string Value { get; set; }
+
                 }
+
+                [NameInMap("oldIndex")]
+                [Validation(Required=false)]
+                public int? OldIndex { get; set; }
 
             }
 

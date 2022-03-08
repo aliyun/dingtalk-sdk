@@ -16,6 +16,33 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
         [Validation(Required=false)]
         public List<ListSubSpaceResponseBodySpaceList> SpaceList { get; set; }
         public class ListSubSpaceResponseBodySpaceList : TeaModel {
+            [NameInMap("billingArea")]
+            [Validation(Required=false)]
+            public float? BillingArea { get; set; }
+
+            [NameInMap("buildingArea")]
+            [Validation(Required=false)]
+            public float? BuildingArea { get; set; }
+
+            [NameInMap("floor")]
+            [Validation(Required=false)]
+            public string Floor { get; set; }
+
+            /// <summary>
+            /// 房屋状态：0空置/1未领/2入住/3空关/4装修
+            /// </summary>
+            [NameInMap("houseState")]
+            [Validation(Required=false)]
+            public int? HouseState { get; set; }
+
+            [NameInMap("isVirtual")]
+            [Validation(Required=false)]
+            public int? IsVirtual { get; set; }
+
+            [NameInMap("parentReferId")]
+            [Validation(Required=false)]
+            public long? ParentReferId { get; set; }
+
             [NameInMap("referId")]
             [Validation(Required=false)]
             public long? ReferId { get; set; }
@@ -34,33 +61,6 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
             [NameInMap("type")]
             [Validation(Required=false)]
             public string Type { get; set; }
-
-            [NameInMap("floor")]
-            [Validation(Required=false)]
-            public string Floor { get; set; }
-
-            [NameInMap("isVirtual")]
-            [Validation(Required=false)]
-            public int? IsVirtual { get; set; }
-
-            [NameInMap("billingArea")]
-            [Validation(Required=false)]
-            public float? BillingArea { get; set; }
-
-            [NameInMap("buildingArea")]
-            [Validation(Required=false)]
-            public float? BuildingArea { get; set; }
-
-            /// <summary>
-            /// 房屋状态：0空置/1未领/2入住/3空关/4装修
-            /// </summary>
-            [NameInMap("houseState")]
-            [Validation(Required=false)]
-            public int? HouseState { get; set; }
-
-            [NameInMap("parentReferId")]
-            [Validation(Required=false)]
-            public long? ParentReferId { get; set; }
 
         }
 

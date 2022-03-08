@@ -27,6 +27,15 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
             [Validation(Required=false)]
             public GetRecentEditDocsResponseBodyRecentListNodeBO NodeBO { get; set; }
             public class GetRecentEditDocsResponseBodyRecentListNodeBO : TeaModel {
+                [NameInMap("docType")]
+                [Validation(Required=false)]
+                public string DocType { get; set; }
+                [NameInMap("isDeleted")]
+                [Validation(Required=false)]
+                public bool? IsDeleted { get; set; }
+                [NameInMap("lastEditTime")]
+                [Validation(Required=false)]
+                public long? LastEditTime { get; set; }
                 [NameInMap("nodeId")]
                 [Validation(Required=false)]
                 public string NodeId { get; set; }
@@ -36,15 +45,6 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
                 [NameInMap("url")]
                 [Validation(Required=false)]
                 public string Url { get; set; }
-                [NameInMap("lastEditTime")]
-                [Validation(Required=false)]
-                public long? LastEditTime { get; set; }
-                [NameInMap("isDeleted")]
-                [Validation(Required=false)]
-                public bool? IsDeleted { get; set; }
-                [NameInMap("docType")]
-                [Validation(Required=false)]
-                public string DocType { get; set; }
             };
 
             /// <summary>

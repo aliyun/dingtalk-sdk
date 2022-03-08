@@ -20,11 +20,11 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
             [Validation(Required=false)]
             public List<UploadInvoiceByMobileResponseBodyResultResults> Results { get; set; }
             public class UploadInvoiceByMobileResponseBodyResultResults : TeaModel {
+                public string ErrCode { get; set; }
                 public string InvoiceCode { get; set; }
                 public string InvoiceNo { get; set; }
-                public bool? Success { get; set; }
                 public string Reason { get; set; }
-                public string ErrCode { get; set; }
+                public bool? Success { get; set; }
             }
         };
 

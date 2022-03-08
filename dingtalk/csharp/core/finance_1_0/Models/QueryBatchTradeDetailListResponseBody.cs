@@ -17,11 +17,11 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         public List<QueryBatchTradeDetailListResponseBodyBatchTradeDetailList> BatchTradeDetailList { get; set; }
         public class QueryBatchTradeDetailListResponseBodyBatchTradeDetailList : TeaModel {
             /// <summary>
-            /// 序号
+            /// 金额
             /// </summary>
-            [NameInMap("serialNo")]
+            [NameInMap("amount")]
             [Validation(Required=false)]
-            public long? SerialNo { get; set; }
+            public string Amount { get; set; }
 
             /// <summary>
             /// 明细单号
@@ -29,6 +29,34 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
             [NameInMap("detailNo")]
             [Validation(Required=false)]
             public string DetailNo { get; set; }
+
+            /// <summary>
+            /// 订单时间时间
+            /// </summary>
+            [NameInMap("gmtCreate")]
+            [Validation(Required=false)]
+            public string GmtCreate { get; set; }
+
+            /// <summary>
+            /// 支付完成时间
+            /// </summary>
+            [NameInMap("gmtFinish")]
+            [Validation(Required=false)]
+            public string GmtFinish { get; set; }
+
+            /// <summary>
+            /// 备注
+            /// </summary>
+            [NameInMap("memo")]
+            [Validation(Required=false)]
+            public string Memo { get; set; }
+
+            /// <summary>
+            /// 收款方电子钱包持有者姓名
+            /// </summary>
+            [NameInMap("payeeAccountName")]
+            [Validation(Required=false)]
+            public string PayeeAccountName { get; set; }
 
             /// <summary>
             /// 收款人账号
@@ -45,46 +73,18 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
             public string PayeeAccountType { get; set; }
 
             /// <summary>
+            /// 序号
+            /// </summary>
+            [NameInMap("serialNo")]
+            [Validation(Required=false)]
+            public long? SerialNo { get; set; }
+
+            /// <summary>
             /// 状态
             /// </summary>
             [NameInMap("status")]
             [Validation(Required=false)]
             public string Status { get; set; }
-
-            /// <summary>
-            /// 收款方电子钱包持有者姓名
-            /// </summary>
-            [NameInMap("payeeAccountName")]
-            [Validation(Required=false)]
-            public string PayeeAccountName { get; set; }
-
-            /// <summary>
-            /// 金额
-            /// </summary>
-            [NameInMap("amount")]
-            [Validation(Required=false)]
-            public string Amount { get; set; }
-
-            /// <summary>
-            /// 备注
-            /// </summary>
-            [NameInMap("memo")]
-            [Validation(Required=false)]
-            public string Memo { get; set; }
-
-            /// <summary>
-            /// 订单时间时间
-            /// </summary>
-            [NameInMap("gmtCreate")]
-            [Validation(Required=false)]
-            public string GmtCreate { get; set; }
-
-            /// <summary>
-            /// 支付完成时间
-            /// </summary>
-            [NameInMap("gmtFinish")]
-            [Validation(Required=false)]
-            public string GmtFinish { get; set; }
 
         }
 

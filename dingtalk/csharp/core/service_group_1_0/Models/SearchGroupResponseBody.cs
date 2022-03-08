@@ -31,13 +31,6 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         public List<SearchGroupResponseBodyRecords> Records { get; set; }
         public class SearchGroupResponseBodyRecords : TeaModel {
             /// <summary>
-            /// 开放群ID
-            /// </summary>
-            [NameInMap("openConversationId")]
-            [Validation(Required=false)]
-            public string OpenConversationId { get; set; }
-
-            /// <summary>
             /// 群名称
             /// </summary>
             [NameInMap("groupName")]
@@ -45,11 +38,18 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
             public string GroupName { get; set; }
 
             /// <summary>
-            /// 开放团队ID
+            /// 入群链接
             /// </summary>
-            [NameInMap("openTeamId")]
+            [NameInMap("groupUrl")]
             [Validation(Required=false)]
-            public string OpenTeamId { get; set; }
+            public string GroupUrl { get; set; }
+
+            /// <summary>
+            /// 开放群ID
+            /// </summary>
+            [NameInMap("openConversationId")]
+            [Validation(Required=false)]
+            public string OpenConversationId { get; set; }
 
             /// <summary>
             /// 开放群组ID
@@ -59,11 +59,11 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
             public string OpenGroupSetId { get; set; }
 
             /// <summary>
-            /// 入群链接
+            /// 开放团队ID
             /// </summary>
-            [NameInMap("groupUrl")]
+            [NameInMap("openTeamId")]
             [Validation(Required=false)]
-            public string GroupUrl { get; set; }
+            public string OpenTeamId { get; set; }
 
         }
 

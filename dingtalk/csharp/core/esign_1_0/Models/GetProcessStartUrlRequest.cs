@@ -13,18 +13,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
         [Validation(Required=false)]
         public List<GetProcessStartUrlRequestCcs> Ccs { get; set; }
         public class GetProcessStartUrlRequestCcs : TeaModel {
-            [NameInMap("accountType")]
-            [Validation(Required=false)]
-            public string AccountType { get; set; }
-
-            [NameInMap("dingCorpId")]
-            [Validation(Required=false)]
-            public string DingCorpId { get; set; }
-
-            [NameInMap("userId")]
-            [Validation(Required=false)]
-            public string UserId { get; set; }
-
             [NameInMap("account")]
             [Validation(Required=false)]
             public string Account { get; set; }
@@ -33,23 +21,19 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
             [Validation(Required=false)]
             public string AccountName { get; set; }
 
+            [NameInMap("accountType")]
+            [Validation(Required=false)]
+            public string AccountType { get; set; }
+
             [NameInMap("orgName")]
             [Validation(Required=false)]
             public string OrgName { get; set; }
 
+            [NameInMap("userId")]
+            [Validation(Required=false)]
+            public string UserId { get; set; }
+
         }
-
-        [NameInMap("dingCorpId")]
-        [Validation(Required=false)]
-        public string DingCorpId { get; set; }
-
-        [NameInMap("dingIsvAccessToken")]
-        [Validation(Required=false)]
-        public string DingIsvAccessToken { get; set; }
-
-        [NameInMap("dingSuiteKey")]
-        [Validation(Required=false)]
-        public string DingSuiteKey { get; set; }
 
         [NameInMap("files")]
         [Validation(Required=false)]
@@ -73,22 +57,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
         [Validation(Required=false)]
         public List<GetProcessStartUrlRequestParticipants> Participants { get; set; }
         public class GetProcessStartUrlRequestParticipants : TeaModel {
-            [NameInMap("accountType")]
-            [Validation(Required=false)]
-            public string AccountType { get; set; }
-
-            [NameInMap("dingCorpId")]
-            [Validation(Required=false)]
-            public string DingCorpId { get; set; }
-
-            [NameInMap("signRequirements")]
-            [Validation(Required=false)]
-            public string SignRequirements { get; set; }
-
-            [NameInMap("userId")]
-            [Validation(Required=false)]
-            public string UserId { get; set; }
-
             [NameInMap("account")]
             [Validation(Required=false)]
             public string Account { get; set; }
@@ -97,9 +65,21 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
             [Validation(Required=false)]
             public string AccountName { get; set; }
 
+            [NameInMap("accountType")]
+            [Validation(Required=false)]
+            public string AccountType { get; set; }
+
             [NameInMap("orgName")]
             [Validation(Required=false)]
             public string OrgName { get; set; }
+
+            [NameInMap("signRequirements")]
+            [Validation(Required=false)]
+            public string SignRequirements { get; set; }
+
+            [NameInMap("userId")]
+            [Validation(Required=false)]
+            public string UserId { get; set; }
 
         }
 

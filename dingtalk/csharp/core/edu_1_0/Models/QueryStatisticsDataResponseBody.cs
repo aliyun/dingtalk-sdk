@@ -17,6 +17,41 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public List<QueryStatisticsDataResponseBodyResult> Result { get; set; }
         public class QueryStatisticsDataResponseBodyResult : TeaModel {
             /// <summary>
+            /// 班级id
+            /// </summary>
+            [NameInMap("classId")]
+            [Validation(Required=false)]
+            public long? ClassId { get; set; }
+
+            /// <summary>
+            /// 总课程数
+            /// </summary>
+            [NameInMap("courseCount")]
+            [Validation(Required=false)]
+            public long? CourseCount { get; set; }
+
+            /// <summary>
+            /// 总学时
+            /// </summary>
+            [NameInMap("courseHours")]
+            [Validation(Required=false)]
+            public float? CourseHours { get; set; }
+
+            /// <summary>
+            /// 学科code
+            /// </summary>
+            [NameInMap("subjectCode")]
+            [Validation(Required=false)]
+            public string SubjectCode { get; set; }
+
+            /// <summary>
+            /// 学科名称
+            /// </summary>
+            [NameInMap("subjectName")]
+            [Validation(Required=false)]
+            public long? SubjectName { get; set; }
+
+            /// <summary>
             /// 用户id
             /// </summary>
             [NameInMap("userId")]
@@ -29,41 +64,6 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             [NameInMap("userName")]
             [Validation(Required=false)]
             public string UserName { get; set; }
-
-            /// <summary>
-            /// 班级id
-            /// </summary>
-            [NameInMap("classId")]
-            [Validation(Required=false)]
-            public long? ClassId { get; set; }
-
-            /// <summary>
-            /// 学科名称
-            /// </summary>
-            [NameInMap("subjectName")]
-            [Validation(Required=false)]
-            public long? SubjectName { get; set; }
-
-            /// <summary>
-            /// 学科code
-            /// </summary>
-            [NameInMap("subjectCode")]
-            [Validation(Required=false)]
-            public string SubjectCode { get; set; }
-
-            /// <summary>
-            /// 总学时
-            /// </summary>
-            [NameInMap("courseHours")]
-            [Validation(Required=false)]
-            public float? CourseHours { get; set; }
-
-            /// <summary>
-            /// 总课程数
-            /// </summary>
-            [NameInMap("courseCount")]
-            [Validation(Required=false)]
-            public long? CourseCount { get; set; }
 
         }
 

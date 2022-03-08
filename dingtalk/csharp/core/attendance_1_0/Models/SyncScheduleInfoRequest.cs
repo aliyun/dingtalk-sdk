@@ -21,10 +21,6 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
             [Validation(Required=false)]
             public long? PlanId { get; set; }
 
-            [NameInMap("wifiKeys")]
-            [Validation(Required=false)]
-            public List<string> WifiKeys { get; set; }
-
             [NameInMap("positionKeys")]
             [Validation(Required=false)]
             public List<string> PositionKeys { get; set; }
@@ -32,6 +28,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
             [NameInMap("retainAttendanceCheck")]
             [Validation(Required=false)]
             public bool? RetainAttendanceCheck { get; set; }
+
+            [NameInMap("wifiKeys")]
+            [Validation(Required=false)]
+            public List<string> WifiKeys { get; set; }
 
         }
 

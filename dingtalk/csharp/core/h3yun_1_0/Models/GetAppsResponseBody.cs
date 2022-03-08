@@ -31,13 +31,6 @@ namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0.Models
             public string AppCode { get; set; }
 
             /// <summary>
-            /// 应用显示名称
-            /// </summary>
-            [NameInMap("displayName")]
-            [Validation(Required=false)]
-            public string DisplayName { get; set; }
-
-            /// <summary>
             /// 应用的来源类型。Custom=自开发的、Installed=安装的
             /// </summary>
             [NameInMap("appSource")]
@@ -50,6 +43,13 @@ namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0.Models
             [NameInMap("appState")]
             [Validation(Required=false)]
             public string AppState { get; set; }
+
+            /// <summary>
+            /// 应用显示名称
+            /// </summary>
+            [NameInMap("displayName")]
+            [Validation(Required=false)]
+            public string DisplayName { get; set; }
 
             /// <summary>
             /// 应用所属的解决方案名称

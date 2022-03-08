@@ -14,22 +14,11 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public List<ListNavigationByFormTypeResponseBodyResult> Result { get; set; }
         public class ListNavigationByFormTypeResponseBodyResult : TeaModel {
             /// <summary>
-            /// title
+            /// formUuid
             /// </summary>
-            [NameInMap("title")]
+            [NameInMap("formUuid")]
             [Validation(Required=false)]
-            public ListNavigationByFormTypeResponseBodyResultTitle Title { get; set; }
-            public class ListNavigationByFormTypeResponseBodyResultTitle : TeaModel {
-                [NameInMap("nameInEnglish")]
-                [Validation(Required=false)]
-                public string NameInEnglish { get; set; }
-                [NameInMap("type")]
-                [Validation(Required=false)]
-                public string Type { get; set; }
-                [NameInMap("nameInChinese")]
-                [Validation(Required=false)]
-                public string NameInChinese { get; set; }
-            };
+            public string FormUuid { get; set; }
 
             /// <summary>
             /// processCode
@@ -39,11 +28,22 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             public string ProcessCode { get; set; }
 
             /// <summary>
-            /// formUuid
+            /// title
             /// </summary>
-            [NameInMap("formUuid")]
+            [NameInMap("title")]
             [Validation(Required=false)]
-            public string FormUuid { get; set; }
+            public ListNavigationByFormTypeResponseBodyResultTitle Title { get; set; }
+            public class ListNavigationByFormTypeResponseBodyResultTitle : TeaModel {
+                [NameInMap("nameInChinese")]
+                [Validation(Required=false)]
+                public string NameInChinese { get; set; }
+                [NameInMap("nameInEnglish")]
+                [Validation(Required=false)]
+                public string NameInEnglish { get; set; }
+                [NameInMap("type")]
+                [Validation(Required=false)]
+                public string Type { get; set; }
+            };
 
         }
 

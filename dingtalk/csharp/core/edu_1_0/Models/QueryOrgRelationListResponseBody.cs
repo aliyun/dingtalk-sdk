@@ -17,13 +17,13 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             [Validation(Required=false)]
             public string CorpId { get; set; }
 
-            [NameInMap("name")]
-            [Validation(Required=false)]
-            public string Name { get; set; }
-
             [NameInMap("deviceCount")]
             [Validation(Required=false)]
             public int? DeviceCount { get; set; }
+
+            [NameInMap("name")]
+            [Validation(Required=false)]
+            public string Name { get; set; }
 
         }
 

@@ -31,13 +31,6 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         public string CorpId { get; set; }
 
         /// <summary>
-        /// isvOrgId
-        /// </summary>
-        [NameInMap("dingIsvOrgId")]
-        [Validation(Required=false)]
-        public long? DingIsvOrgId { get; set; }
-
-        /// <summary>
         /// 扩展信息
         /// </summary>
         [NameInMap("extInfo")]
@@ -73,53 +66,11 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         public List<NotifyPayCodePayResultRequestPayChannelDetailList> PayChannelDetailList { get; set; }
         public class NotifyPayCodePayResultRequestPayChannelDetailList : TeaModel {
             /// <summary>
-            /// 支付渠道名称
-            /// </summary>
-            [NameInMap("payChannelName")]
-            [Validation(Required=false)]
-            public string PayChannelName { get; set; }
-
-            /// <summary>
-            /// 开始时间
-            /// </summary>
-            [NameInMap("gmtCreate")]
-            [Validation(Required=false)]
-            public string GmtCreate { get; set; }
-
-            /// <summary>
-            /// 结束时间
-            /// </summary>
-            [NameInMap("gmtFinish")]
-            [Validation(Required=false)]
-            public string GmtFinish { get; set; }
-
-            /// <summary>
-            /// 支付渠道类型
-            /// </summary>
-            [NameInMap("payChannelType")]
-            [Validation(Required=false)]
-            public string PayChannelType { get; set; }
-
-            /// <summary>
             /// 支付金额
             /// </summary>
             [NameInMap("amount")]
             [Validation(Required=false)]
             public string Amount { get; set; }
-
-            /// <summary>
-            /// 支付渠道单号
-            /// </summary>
-            [NameInMap("payChannelOrderNo")]
-            [Validation(Required=false)]
-            public string PayChannelOrderNo { get; set; }
-
-            /// <summary>
-            /// 优惠金额
-            /// </summary>
-            [NameInMap("promotionAmount")]
-            [Validation(Required=false)]
-            public string PromotionAmount { get; set; }
 
             /// <summary>
             /// 资金工具明细
@@ -129,18 +80,25 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
             public List<NotifyPayCodePayResultRequestPayChannelDetailListFundToolDetailList> FundToolDetailList { get; set; }
             public class NotifyPayCodePayResultRequestPayChannelDetailListFundToolDetailList : TeaModel {
                 /// <summary>
-                /// 资金渠道名称
-                /// </summary>
-                [NameInMap("fundToolName")]
-                [Validation(Required=false)]
-                public string FundToolName { get; set; }
-
-                /// <summary>
                 /// 1.00
                 /// </summary>
                 [NameInMap("amount")]
                 [Validation(Required=false)]
                 public string Amount { get; set; }
+
+                /// <summary>
+                /// 扩展信息
+                /// </summary>
+                [NameInMap("extInfo")]
+                [Validation(Required=false)]
+                public string ExtInfo { get; set; }
+
+                /// <summary>
+                /// 资金渠道名称
+                /// </summary>
+                [NameInMap("fundToolName")]
+                [Validation(Required=false)]
+                public string FundToolName { get; set; }
 
                 /// <summary>
                 /// 开始时间
@@ -163,14 +121,49 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
                 [Validation(Required=false)]
                 public bool? PromotionFundTool { get; set; }
 
-                /// <summary>
-                /// 扩展信息
-                /// </summary>
-                [NameInMap("extInfo")]
-                [Validation(Required=false)]
-                public string ExtInfo { get; set; }
-
             }
+
+            /// <summary>
+            /// 开始时间
+            /// </summary>
+            [NameInMap("gmtCreate")]
+            [Validation(Required=false)]
+            public string GmtCreate { get; set; }
+
+            /// <summary>
+            /// 结束时间
+            /// </summary>
+            [NameInMap("gmtFinish")]
+            [Validation(Required=false)]
+            public string GmtFinish { get; set; }
+
+            /// <summary>
+            /// 支付渠道名称
+            /// </summary>
+            [NameInMap("payChannelName")]
+            [Validation(Required=false)]
+            public string PayChannelName { get; set; }
+
+            /// <summary>
+            /// 支付渠道单号
+            /// </summary>
+            [NameInMap("payChannelOrderNo")]
+            [Validation(Required=false)]
+            public string PayChannelOrderNo { get; set; }
+
+            /// <summary>
+            /// 支付渠道类型
+            /// </summary>
+            [NameInMap("payChannelType")]
+            [Validation(Required=false)]
+            public string PayChannelType { get; set; }
+
+            /// <summary>
+            /// 优惠金额
+            /// </summary>
+            [NameInMap("promotionAmount")]
+            [Validation(Required=false)]
+            public string PromotionAmount { get; set; }
 
         }
 

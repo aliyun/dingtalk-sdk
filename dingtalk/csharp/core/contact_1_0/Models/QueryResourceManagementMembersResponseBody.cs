@@ -17,18 +17,18 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         public List<QueryResourceManagementMembersResponseBodyMembers> Members { get; set; }
         public class QueryResourceManagementMembersResponseBodyMembers : TeaModel {
             /// <summary>
-            /// 成员类型
-            /// </summary>
-            [NameInMap("memberType")]
-            [Validation(Required=false)]
-            public string MemberType { get; set; }
-
-            /// <summary>
             /// 成员id
             /// </summary>
             [NameInMap("memberId")]
             [Validation(Required=false)]
             public string MemberId { get; set; }
+
+            /// <summary>
+            /// 成员类型
+            /// </summary>
+            [NameInMap("memberType")]
+            [Validation(Required=false)]
+            public string MemberType { get; set; }
 
         }
 

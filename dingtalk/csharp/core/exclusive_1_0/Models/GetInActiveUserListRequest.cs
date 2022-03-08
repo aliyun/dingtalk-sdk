@@ -13,14 +13,6 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         [Validation(Required=false)]
         public List<string> DeptIds { get; set; }
 
-        [NameInMap("dingOauthAppId")]
-        [Validation(Required=false)]
-        public long? DingOauthAppId { get; set; }
-
-        [NameInMap("dingOrgId")]
-        [Validation(Required=false)]
-        public long? DingOrgId { get; set; }
-
         [NameInMap("pageNumber")]
         [Validation(Required=false)]
         public long? PageNumber { get; set; }
@@ -28,10 +20,6 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         [NameInMap("pageSize")]
         [Validation(Required=false)]
         public long? PageSize { get; set; }
-
-        [NameInMap("serviceId")]
-        [Validation(Required=false)]
-        public long? ServiceId { get; set; }
 
         [NameInMap("statDate")]
         [Validation(Required=false)]

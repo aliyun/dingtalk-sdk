@@ -17,10 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             [Validation(Required=false)]
             public List<GetRemoteClassCourseResponseBodyResultAttendParticipants> AttendParticipants { get; set; }
             public class GetRemoteClassCourseResponseBodyResultAttendParticipants : TeaModel {
-                public string ParticipantId { get; set; }
-                public string ParticipantName { get; set; }
                 public string CorpId { get; set; }
                 public string OrgName { get; set; }
+                public string ParticipantId { get; set; }
+                public string ParticipantName { get; set; }
             }
             [NameInMap("canEdit")]
             [Validation(Required=false)]
@@ -41,9 +41,9 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             [Validation(Required=false)]
             public List<GetRemoteClassCourseResponseBodyResultRecordInfos> RecordInfos { get; set; }
             public class GetRemoteClassCourseResponseBodyResultRecordInfos : TeaModel {
-                public string Url { get; set; }
                 public string StartTime { get; set; }
                 public string StopTime { get; set; }
+                public string Url { get; set; }
             }
             [NameInMap("roomStatus")]
             [Validation(Required=false)]

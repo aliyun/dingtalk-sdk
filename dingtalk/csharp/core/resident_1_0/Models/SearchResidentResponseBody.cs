@@ -16,24 +16,6 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
         [Validation(Required=false)]
         public List<SearchResidentResponseBodyResidenceList> ResidenceList { get; set; }
         public class SearchResidentResponseBodyResidenceList : TeaModel {
-            [NameInMap("name")]
-            [Validation(Required=false)]
-            public string Name { get; set; }
-
-            /// <summary>
-            /// 业主/租客/亲友等
-            /// </summary>
-            [NameInMap("relateType")]
-            [Validation(Required=false)]
-            public string RelateType { get; set; }
-
-            /// <summary>
-            /// 是否是产权人
-            /// </summary>
-            [NameInMap("isPropertyOwner")]
-            [Validation(Required=false)]
-            public bool? IsPropertyOwner { get; set; }
-
             /// <summary>
             /// 是否激活
             /// </summary>
@@ -47,6 +29,24 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
             [NameInMap("extField")]
             [Validation(Required=false)]
             public string ExtField { get; set; }
+
+            /// <summary>
+            /// 是否是产权人
+            /// </summary>
+            [NameInMap("isPropertyOwner")]
+            [Validation(Required=false)]
+            public bool? IsPropertyOwner { get; set; }
+
+            [NameInMap("name")]
+            [Validation(Required=false)]
+            public string Name { get; set; }
+
+            /// <summary>
+            /// 业主/租客/亲友等
+            /// </summary>
+            [NameInMap("relateType")]
+            [Validation(Required=false)]
+            public string RelateType { get; set; }
 
         }
 

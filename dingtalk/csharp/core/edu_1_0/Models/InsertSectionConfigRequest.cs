@@ -42,6 +42,35 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public List<InsertSectionConfigRequestSectionModels> SectionModels { get; set; }
         public class InsertSectionConfigRequestSectionModels : TeaModel {
             /// <summary>
+            /// 结束时间
+            /// </summary>
+            [NameInMap("end")]
+            [Validation(Required=false)]
+            public InsertSectionConfigRequestSectionModelsEnd End { get; set; }
+            public class InsertSectionConfigRequestSectionModelsEnd : TeaModel {
+                [NameInMap("hour")]
+                [Validation(Required=false)]
+                public int? Hour { get; set; }
+                [NameInMap("min")]
+                [Validation(Required=false)]
+                public int? Min { get; set; }
+            };
+
+            /// <summary>
+            /// 节次序号
+            /// </summary>
+            [NameInMap("sectionIndex")]
+            [Validation(Required=false)]
+            public int? SectionIndex { get; set; }
+
+            /// <summary>
+            /// 节次名称
+            /// </summary>
+            [NameInMap("sectionName")]
+            [Validation(Required=false)]
+            public string SectionName { get; set; }
+
+            /// <summary>
             /// 节次类型
             /// </summary>
             [NameInMap("sectionType")]
@@ -55,42 +84,13 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             [Validation(Required=false)]
             public InsertSectionConfigRequestSectionModelsStart Start { get; set; }
             public class InsertSectionConfigRequestSectionModelsStart : TeaModel {
-                [NameInMap("min")]
-                [Validation(Required=false)]
-                public int? Min { get; set; }
                 [NameInMap("hour")]
                 [Validation(Required=false)]
                 public int? Hour { get; set; }
-            };
-
-            /// <summary>
-            /// 节次序号
-            /// </summary>
-            [NameInMap("sectionIndex")]
-            [Validation(Required=false)]
-            public int? SectionIndex { get; set; }
-
-            /// <summary>
-            /// 结束时间
-            /// </summary>
-            [NameInMap("end")]
-            [Validation(Required=false)]
-            public InsertSectionConfigRequestSectionModelsEnd End { get; set; }
-            public class InsertSectionConfigRequestSectionModelsEnd : TeaModel {
                 [NameInMap("min")]
                 [Validation(Required=false)]
                 public int? Min { get; set; }
-                [NameInMap("hour")]
-                [Validation(Required=false)]
-                public int? Hour { get; set; }
             };
-
-            /// <summary>
-            /// 节次名称
-            /// </summary>
-            [NameInMap("sectionName")]
-            [Validation(Required=false)]
-            public string SectionName { get; set; }
 
         }
 

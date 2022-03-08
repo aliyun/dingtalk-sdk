@@ -31,55 +31,6 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public List<ListConnectorInformationResponseBodyPluginInfos> PluginInfos { get; set; }
         public class ListConnectorInformationResponseBodyPluginInfos : TeaModel {
             /// <summary>
-            /// pluginUuid
-            /// </summary>
-            [NameInMap("pluginUuid")]
-            [Validation(Required=false)]
-            public string PluginUuid { get; set; }
-
-            /// <summary>
-            /// pluginTotalAmount
-            /// </summary>
-            [NameInMap("pluginTotalAmount")]
-            [Validation(Required=false)]
-            public long? PluginTotalAmount { get; set; }
-
-            /// <summary>
-            /// pluginName
-            /// </summary>
-            [NameInMap("pluginName")]
-            [Validation(Required=false)]
-            public string PluginName { get; set; }
-
-            /// <summary>
-            /// iconUrl
-            /// </summary>
-            [NameInMap("iconUrl")]
-            [Validation(Required=false)]
-            public string IconUrl { get; set; }
-
-            /// <summary>
-            /// pluginPayType
-            /// </summary>
-            [NameInMap("pluginPayType")]
-            [Validation(Required=false)]
-            public int? PluginPayType { get; set; }
-
-            /// <summary>
-            /// pluginUsageAmount
-            /// </summary>
-            [NameInMap("pluginUsageAmount")]
-            [Validation(Required=false)]
-            public long? PluginUsageAmount { get; set; }
-
-            /// <summary>
-            /// pluginStatus
-            /// </summary>
-            [NameInMap("pluginStatus")]
-            [Validation(Required=false)]
-            public int? PluginStatus { get; set; }
-
-            /// <summary>
             /// apps
             /// </summary>
             [NameInMap("apps")]
@@ -94,6 +45,55 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
                 public string AppName { get; set; }
 
             }
+
+            /// <summary>
+            /// iconUrl
+            /// </summary>
+            [NameInMap("iconUrl")]
+            [Validation(Required=false)]
+            public string IconUrl { get; set; }
+
+            /// <summary>
+            /// pluginName
+            /// </summary>
+            [NameInMap("pluginName")]
+            [Validation(Required=false)]
+            public string PluginName { get; set; }
+
+            /// <summary>
+            /// pluginPayType
+            /// </summary>
+            [NameInMap("pluginPayType")]
+            [Validation(Required=false)]
+            public int? PluginPayType { get; set; }
+
+            /// <summary>
+            /// pluginStatus
+            /// </summary>
+            [NameInMap("pluginStatus")]
+            [Validation(Required=false)]
+            public int? PluginStatus { get; set; }
+
+            /// <summary>
+            /// pluginTotalAmount
+            /// </summary>
+            [NameInMap("pluginTotalAmount")]
+            [Validation(Required=false)]
+            public long? PluginTotalAmount { get; set; }
+
+            /// <summary>
+            /// pluginUsageAmount
+            /// </summary>
+            [NameInMap("pluginUsageAmount")]
+            [Validation(Required=false)]
+            public long? PluginUsageAmount { get; set; }
+
+            /// <summary>
+            /// pluginUuid
+            /// </summary>
+            [NameInMap("pluginUuid")]
+            [Validation(Required=false)]
+            public string PluginUuid { get; set; }
 
         }
 

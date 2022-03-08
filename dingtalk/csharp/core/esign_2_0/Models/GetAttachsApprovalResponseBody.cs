@@ -16,14 +16,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0.Models
         [Validation(Required=false)]
         public List<GetAttachsApprovalResponseBodyData> Data { get; set; }
         public class GetAttachsApprovalResponseBodyData : TeaModel {
-            [NameInMap("flowId")]
-            [Validation(Required=false)]
-            public string FlowId { get; set; }
-
-            [NameInMap("status")]
-            [Validation(Required=false)]
-            public string Status { get; set; }
-
             [NameInMap("files")]
             [Validation(Required=false)]
             public List<GetAttachsApprovalResponseBodyDataFiles> Files { get; set; }
@@ -41,6 +33,14 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0.Models
                 public string SignFinishFileUrl { get; set; }
 
             }
+
+            [NameInMap("flowId")]
+            [Validation(Required=false)]
+            public string FlowId { get; set; }
+
+            [NameInMap("status")]
+            [Validation(Required=false)]
+            public string Status { get; set; }
 
         }
 

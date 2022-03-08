@@ -17,11 +17,11 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
         public List<ListPermissionsResponseBodyMembers> Members { get; set; }
         public class ListPermissionsResponseBodyMembers : TeaModel {
             /// <summary>
-            /// 权限角色
+            /// 是否是继承的权限
             /// </summary>
-            [NameInMap("role")]
+            [NameInMap("extend")]
             [Validation(Required=false)]
-            public string Role { get; set; }
+            public bool? Extend { get; set; }
 
             /// <summary>
             /// 成员信息
@@ -33,23 +33,23 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
                 [NameInMap("corpId")]
                 [Validation(Required=false)]
                 public string CorpId { get; set; }
-                [NameInMap("memberType")]
-                [Validation(Required=false)]
-                public string MemberType { get; set; }
                 [NameInMap("memberId")]
                 [Validation(Required=false)]
                 public string MemberId { get; set; }
                 [NameInMap("memberName")]
                 [Validation(Required=false)]
                 public string MemberName { get; set; }
+                [NameInMap("memberType")]
+                [Validation(Required=false)]
+                public string MemberType { get; set; }
             };
 
             /// <summary>
-            /// 是否是继承的权限
+            /// 权限角色
             /// </summary>
-            [NameInMap("extend")]
+            [NameInMap("role")]
             [Validation(Required=false)]
-            public bool? Extend { get; set; }
+            public string Role { get; set; }
 
         }
 
@@ -61,11 +61,11 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
         public List<ListPermissionsResponseBodyOutMembers> OutMembers { get; set; }
         public class ListPermissionsResponseBodyOutMembers : TeaModel {
             /// <summary>
-            /// 权限角色
+            /// 是否是继承的权限
             /// </summary>
-            [NameInMap("role")]
+            [NameInMap("extend")]
             [Validation(Required=false)]
-            public string Role { get; set; }
+            public bool? Extend { get; set; }
 
             /// <summary>
             /// 成员信息
@@ -77,23 +77,23 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
                 [NameInMap("corpId")]
                 [Validation(Required=false)]
                 public string CorpId { get; set; }
-                [NameInMap("memberType")]
-                [Validation(Required=false)]
-                public string MemberType { get; set; }
                 [NameInMap("memberId")]
                 [Validation(Required=false)]
                 public string MemberId { get; set; }
                 [NameInMap("memberName")]
                 [Validation(Required=false)]
                 public string MemberName { get; set; }
+                [NameInMap("memberType")]
+                [Validation(Required=false)]
+                public string MemberType { get; set; }
             };
 
             /// <summary>
-            /// 是否是继承的权限
+            /// 权限角色
             /// </summary>
-            [NameInMap("extend")]
+            [NameInMap("role")]
             [Validation(Required=false)]
-            public bool? Extend { get; set; }
+            public string Role { get; set; }
 
         }
 

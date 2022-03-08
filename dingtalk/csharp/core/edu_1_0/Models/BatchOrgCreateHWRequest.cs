@@ -31,13 +31,6 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public string CourseName { get; set; }
 
         /// <summary>
-        /// 组织ID
-        /// </summary>
-        [NameInMap("dingOrgId")]
-        [Validation(Required=false)]
-        public long? DingOrgId { get; set; }
-
-        /// <summary>
         /// 作业内容
         /// </summary>
         [NameInMap("hwContent")]
@@ -108,26 +101,19 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public List<BatchOrgCreateHWRequestOpenSelectItemList> OpenSelectItemList { get; set; }
         public class BatchOrgCreateHWRequestOpenSelectItemList : TeaModel {
             /// <summary>
-            /// 组织corpId
-            /// </summary>
-            [NameInMap("corpId")]
-            [Validation(Required=false)]
-            public string CorpId { get; set; }
-
-            /// <summary>
-            /// 选择内容
-            /// </summary>
-            [NameInMap("selectedClassesDesc")]
-            [Validation(Required=false)]
-            public string SelectedClassesDesc { get; set; }
-
-            /// <summary>
             /// 班级列表
             /// </summary>
             [NameInMap("classList")]
             [Validation(Required=false)]
             public List<BatchOrgCreateHWRequestOpenSelectItemListClassList> ClassList { get; set; }
             public class BatchOrgCreateHWRequestOpenSelectItemListClassList : TeaModel {
+                /// <summary>
+                /// 是否全选
+                /// </summary>
+                [NameInMap("all")]
+                [Validation(Required=false)]
+                public bool? All { get; set; }
+
                 /// <summary>
                 /// 班级id
                 /// </summary>
@@ -143,19 +129,19 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
                 public string ClassName { get; set; }
 
                 /// <summary>
-                /// 是否全选
-                /// </summary>
-                [NameInMap("all")]
-                [Validation(Required=false)]
-                public bool? All { get; set; }
-
-                /// <summary>
                 /// 学生列表
                 /// </summary>
                 [NameInMap("students")]
                 [Validation(Required=false)]
                 public List<BatchOrgCreateHWRequestOpenSelectItemListClassListStudents> Students { get; set; }
                 public class BatchOrgCreateHWRequestOpenSelectItemListClassListStudents : TeaModel {
+                    /// <summary>
+                    /// 学生头像
+                    /// </summary>
+                    [NameInMap("avatar")]
+                    [Validation(Required=false)]
+                    public string Avatar { get; set; }
+
                     /// <summary>
                     /// 学生姓名
                     /// </summary>
@@ -170,16 +156,23 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
                     [Validation(Required=false)]
                     public string StaffId { get; set; }
 
-                    /// <summary>
-                    /// 学生头像
-                    /// </summary>
-                    [NameInMap("avatar")]
-                    [Validation(Required=false)]
-                    public string Avatar { get; set; }
-
                 }
 
             }
+
+            /// <summary>
+            /// 组织corpId
+            /// </summary>
+            [NameInMap("corpId")]
+            [Validation(Required=false)]
+            public string CorpId { get; set; }
+
+            /// <summary>
+            /// 选择内容
+            /// </summary>
+            [NameInMap("selectedClassesDesc")]
+            [Validation(Required=false)]
+            public string SelectedClassesDesc { get; set; }
 
         }
 

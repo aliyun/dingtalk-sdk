@@ -17,11 +17,25 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         public List<UploadInvoiceByMobileRequestInvoices> Invoices { get; set; }
         public class UploadInvoiceByMobileRequestInvoices : TeaModel {
             /// <summary>
+            /// 发票总金额
+            /// </summary>
+            [NameInMap("invoiceAmount")]
+            [Validation(Required=false)]
+            public string InvoiceAmount { get; set; }
+
+            /// <summary>
             /// 发票代码
             /// </summary>
             [NameInMap("invoiceCode")]
             [Validation(Required=false)]
             public string InvoiceCode { get; set; }
+
+            /// <summary>
+            /// 开票时间
+            /// </summary>
+            [NameInMap("invoiceDate")]
+            [Validation(Required=false)]
+            public string InvoiceDate { get; set; }
 
             /// <summary>
             /// 发票号码
@@ -38,11 +52,11 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
             public string InvoiceType { get; set; }
 
             /// <summary>
-            /// 开票时间
+            /// 发票logo地址
             /// </summary>
-            [NameInMap("invoiceDate")]
+            [NameInMap("logoUrl")]
             [Validation(Required=false)]
-            public string InvoiceDate { get; set; }
+            public string LogoUrl { get; set; }
 
             /// <summary>
             /// 收款方名称
@@ -73,18 +87,11 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
             public string PayerTaxNo { get; set; }
 
             /// <summary>
-            /// 发票总金额
+            /// 发票pdf原件下载链接
             /// </summary>
-            [NameInMap("invoiceAmount")]
+            [NameInMap("pdfUrl")]
             [Validation(Required=false)]
-            public string InvoiceAmount { get; set; }
-
-            /// <summary>
-            /// 不含税金额
-            /// </summary>
-            [NameInMap("withoutTaxAmount")]
-            [Validation(Required=false)]
-            public string WithoutTaxAmount { get; set; }
+            public string PdfUrl { get; set; }
 
             /// <summary>
             /// 税金额
@@ -101,18 +108,11 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
             public string VerifyCode { get; set; }
 
             /// <summary>
-            /// 发票pdf原件下载链接
+            /// 不含税金额
             /// </summary>
-            [NameInMap("pdfUrl")]
+            [NameInMap("withoutTaxAmount")]
             [Validation(Required=false)]
-            public string PdfUrl { get; set; }
-
-            /// <summary>
-            /// 发票logo地址
-            /// </summary>
-            [NameInMap("logoUrl")]
-            [Validation(Required=false)]
-            public string LogoUrl { get; set; }
+            public string WithoutTaxAmount { get; set; }
 
         }
 

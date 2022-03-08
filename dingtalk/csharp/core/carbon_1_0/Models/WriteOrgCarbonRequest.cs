@@ -24,18 +24,11 @@ namespace AlibabaCloud.SDK.Dingtalkcarbon_1_0.Models
             public string ActionId { get; set; }
 
             /// <summary>
-            /// 钉钉组织id
+            /// 行为发生时间
             /// </summary>
-            [NameInMap("corpId")]
+            [NameInMap("actionTime")]
             [Validation(Required=false)]
-            public string CorpId { get; set; }
-
-            /// <summary>
-            /// 钉钉部门id
-            /// </summary>
-            [NameInMap("deptId")]
-            [Validation(Required=false)]
-            public long? DeptId { get; set; }
+            public string ActionTime { get; set; }
 
             /// <summary>
             /// 碳能量行为类型，需要联系管理员添加
@@ -52,11 +45,18 @@ namespace AlibabaCloud.SDK.Dingtalkcarbon_1_0.Models
             public string CarbonAmount { get; set; }
 
             /// <summary>
-            /// 行为发生时间
+            /// 钉钉组织id
             /// </summary>
-            [NameInMap("actionTime")]
+            [NameInMap("corpId")]
             [Validation(Required=false)]
-            public string ActionTime { get; set; }
+            public string CorpId { get; set; }
+
+            /// <summary>
+            /// 钉钉部门id
+            /// </summary>
+            [NameInMap("deptId")]
+            [Validation(Required=false)]
+            public long? DeptId { get; set; }
 
             /// <summary>
             /// 版本，默认为1

@@ -14,13 +14,6 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         public List<GetGroupActiveInfoResponseBodyData> Data { get; set; }
         public class GetGroupActiveInfoResponseBodyData : TeaModel {
             /// <summary>
-            /// 统计时间
-            /// </summary>
-            [NameInMap("statDate")]
-            [Validation(Required=false)]
-            public string StatDate { get; set; }
-
-            /// <summary>
             /// 群组id
             /// </summary>
             [NameInMap("dingGroupId")]
@@ -70,11 +63,11 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             public int? GroupUserCnt1d { get; set; }
 
             /// <summary>
-            /// 最近1天发消息人数
+            /// 最近1天打开群人数
             /// </summary>
-            [NameInMap("sendMessageUserCnt1d")]
+            [NameInMap("openConvUv1d")]
             [Validation(Required=false)]
-            public long? SendMessageUserCnt1d { get; set; }
+            public int? OpenConvUv1d { get; set; }
 
             /// <summary>
             /// 最近1天发消息次数
@@ -84,11 +77,18 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             public long? SendMessageCnt1d { get; set; }
 
             /// <summary>
-            /// 最近1天打开群人数
+            /// 最近1天发消息人数
             /// </summary>
-            [NameInMap("openConvUv1d")]
+            [NameInMap("sendMessageUserCnt1d")]
             [Validation(Required=false)]
-            public int? OpenConvUv1d { get; set; }
+            public long? SendMessageUserCnt1d { get; set; }
+
+            /// <summary>
+            /// 统计时间
+            /// </summary>
+            [NameInMap("statDate")]
+            [Validation(Required=false)]
+            public string StatDate { get; set; }
 
         }
 

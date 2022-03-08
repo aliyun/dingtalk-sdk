@@ -30,79 +30,49 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public List<DescribeCrmPersonalCustomerObjectMetaResponseBodyFields> Fields { get; set; }
         public class DescribeCrmPersonalCustomerObjectMetaResponseBodyFields : TeaModel {
-            [NameInMap("name")]
-            [Validation(Required=false)]
-            public string Name { get; set; }
-
             [NameInMap("customized")]
             [Validation(Required=false)]
             public bool? Customized { get; set; }
-
-            [NameInMap("label")]
-            [Validation(Required=false)]
-            public string Label { get; set; }
-
-            [NameInMap("type")]
-            [Validation(Required=false)]
-            public string Type { get; set; }
-
-            [NameInMap("nillable")]
-            [Validation(Required=false)]
-            public bool? Nillable { get; set; }
 
             [NameInMap("format")]
             [Validation(Required=false)]
             public string Format { get; set; }
 
-            [NameInMap("unit")]
+            [NameInMap("label")]
             [Validation(Required=false)]
-            public string Unit { get; set; }
+            public string Label { get; set; }
 
-            [NameInMap("selectOptions")]
+            [NameInMap("name")]
             [Validation(Required=false)]
-            public List<DescribeCrmPersonalCustomerObjectMetaResponseBodyFieldsSelectOptions> SelectOptions { get; set; }
-            public class DescribeCrmPersonalCustomerObjectMetaResponseBodyFieldsSelectOptions : TeaModel {
-                [NameInMap("key")]
-                [Validation(Required=false)]
-                public string Key { get; set; }
+            public string Name { get; set; }
 
-                [NameInMap("value")]
-                [Validation(Required=false)]
-                public string Value { get; set; }
-
-            }
+            [NameInMap("nillable")]
+            [Validation(Required=false)]
+            public bool? Nillable { get; set; }
 
             [NameInMap("quote")]
             [Validation(Required=false)]
             public bool? Quote { get; set; }
 
-            [NameInMap("referenceTo")]
-            [Validation(Required=false)]
-            public string ReferenceTo { get; set; }
-
             [NameInMap("referenceFields")]
             [Validation(Required=false)]
             public List<DescribeCrmPersonalCustomerObjectMetaResponseBodyFieldsReferenceFields> ReferenceFields { get; set; }
             public class DescribeCrmPersonalCustomerObjectMetaResponseBodyFieldsReferenceFields : TeaModel {
+                [NameInMap("format")]
+                [Validation(Required=false)]
+                public string Format { get; set; }
+
                 [NameInMap("label")]
                 [Validation(Required=false)]
                 public string Label { get; set; }
 
-                [NameInMap("type")]
+                [NameInMap("name")]
                 [Validation(Required=false)]
-                public string Type { get; set; }
+                public string Name { get; set; }
 
                 [NameInMap("nillable")]
                 [Validation(Required=false)]
                 public bool? Nillable { get; set; }
-
-                [NameInMap("unit")]
-                [Validation(Required=false)]
-                public string Unit { get; set; }
-
-                [NameInMap("format")]
-                [Validation(Required=false)]
-                public string Format { get; set; }
 
                 [NameInMap("selectOptions")]
                 [Validation(Required=false)]
@@ -118,25 +88,55 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 
                 }
 
-                [NameInMap("name")]
+                [NameInMap("type")]
                 [Validation(Required=false)]
-                public string Name { get; set; }
+                public string Type { get; set; }
+
+                [NameInMap("unit")]
+                [Validation(Required=false)]
+                public string Unit { get; set; }
 
             }
+
+            [NameInMap("referenceTo")]
+            [Validation(Required=false)]
+            public string ReferenceTo { get; set; }
 
             [NameInMap("rollUpSummaryFields")]
             [Validation(Required=false)]
             public List<DescribeCrmPersonalCustomerObjectMetaResponseBodyFieldsRollUpSummaryFields> RollUpSummaryFields { get; set; }
             public class DescribeCrmPersonalCustomerObjectMetaResponseBodyFieldsRollUpSummaryFields : TeaModel {
-                [NameInMap("name")]
-                [Validation(Required=false)]
-                public string Name { get; set; }
-
                 [NameInMap("aggregator")]
                 [Validation(Required=false)]
                 public string Aggregator { get; set; }
 
+                [NameInMap("name")]
+                [Validation(Required=false)]
+                public string Name { get; set; }
+
             }
+
+            [NameInMap("selectOptions")]
+            [Validation(Required=false)]
+            public List<DescribeCrmPersonalCustomerObjectMetaResponseBodyFieldsSelectOptions> SelectOptions { get; set; }
+            public class DescribeCrmPersonalCustomerObjectMetaResponseBodyFieldsSelectOptions : TeaModel {
+                [NameInMap("key")]
+                [Validation(Required=false)]
+                public string Key { get; set; }
+
+                [NameInMap("value")]
+                [Validation(Required=false)]
+                public string Value { get; set; }
+
+            }
+
+            [NameInMap("type")]
+            [Validation(Required=false)]
+            public string Type { get; set; }
+
+            [NameInMap("unit")]
+            [Validation(Required=false)]
+            public string Unit { get; set; }
 
         }
 

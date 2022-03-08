@@ -9,22 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
     public class BatchGetWorkspacesRequest : TeaModel {
-        [NameInMap("dingAccessTokenType")]
-        [Validation(Required=false)]
-        public string DingAccessTokenType { get; set; }
-
-        [NameInMap("dingIsvOrgId")]
-        [Validation(Required=false)]
-        public long? DingIsvOrgId { get; set; }
-
-        [NameInMap("dingOrgId")]
-        [Validation(Required=false)]
-        public long? DingOrgId { get; set; }
-
-        [NameInMap("dingUid")]
-        [Validation(Required=false)]
-        public long? DingUid { get; set; }
-
         /// <summary>
         /// 是否查询最近访问文档
         /// </summary>

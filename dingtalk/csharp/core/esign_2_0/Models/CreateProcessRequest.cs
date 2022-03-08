@@ -13,35 +13,27 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0.Models
         [Validation(Required=false)]
         public List<CreateProcessRequestCcs> Ccs { get; set; }
         public class CreateProcessRequestCcs : TeaModel {
-            [NameInMap("accountType")]
-            [Validation(Required=false)]
-            public string AccountType { get; set; }
-
             [NameInMap("account")]
             [Validation(Required=false)]
             public string Account { get; set; }
-
-            [NameInMap("dingCorpId")]
-            [Validation(Required=false)]
-            public string DingCorpId { get; set; }
-
-            [NameInMap("userId")]
-            [Validation(Required=false)]
-            public string UserId { get; set; }
 
             [NameInMap("accountName")]
             [Validation(Required=false)]
             public string AccountName { get; set; }
 
+            [NameInMap("accountType")]
+            [Validation(Required=false)]
+            public string AccountType { get; set; }
+
             [NameInMap("orgName")]
             [Validation(Required=false)]
             public string OrgName { get; set; }
 
-        }
+            [NameInMap("userId")]
+            [Validation(Required=false)]
+            public string UserId { get; set; }
 
-        [NameInMap("dingCorpId")]
-        [Validation(Required=false)]
-        public string DingCorpId { get; set; }
+        }
 
         [NameInMap("files")]
         [Validation(Required=false)]
@@ -51,13 +43,13 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0.Models
             [Validation(Required=false)]
             public string FileId { get; set; }
 
-            [NameInMap("fileType")]
-            [Validation(Required=false)]
-            public int? FileType { get; set; }
-
             [NameInMap("fileName")]
             [Validation(Required=false)]
             public string FileName { get; set; }
+
+            [NameInMap("fileType")]
+            [Validation(Required=false)]
+            public int? FileType { get; set; }
 
         }
 
@@ -69,37 +61,25 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0.Models
         [Validation(Required=false)]
         public List<CreateProcessRequestParticipants> Participants { get; set; }
         public class CreateProcessRequestParticipants : TeaModel {
-            [NameInMap("signRequirements")]
-            [Validation(Required=false)]
-            public string SignRequirements { get; set; }
-
-            [NameInMap("signOrder")]
-            [Validation(Required=false)]
-            public int? SignOrder { get; set; }
-
-            [NameInMap("accountType")]
-            [Validation(Required=false)]
-            public string AccountType { get; set; }
-
             [NameInMap("account")]
             [Validation(Required=false)]
             public string Account { get; set; }
-
-            [NameInMap("dingCorpId")]
-            [Validation(Required=false)]
-            public string DingCorpId { get; set; }
-
-            [NameInMap("userId")]
-            [Validation(Required=false)]
-            public string UserId { get; set; }
 
             [NameInMap("accountName")]
             [Validation(Required=false)]
             public string AccountName { get; set; }
 
+            [NameInMap("accountType")]
+            [Validation(Required=false)]
+            public string AccountType { get; set; }
+
             [NameInMap("orgName")]
             [Validation(Required=false)]
             public string OrgName { get; set; }
+
+            [NameInMap("signOrder")]
+            [Validation(Required=false)]
+            public int? SignOrder { get; set; }
 
             /// <summary>
             /// 参与方签署位置信息列表
@@ -167,6 +147,14 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0.Models
                 public double? Y { get; set; }
 
             }
+
+            [NameInMap("signRequirements")]
+            [Validation(Required=false)]
+            public string SignRequirements { get; set; }
+
+            [NameInMap("userId")]
+            [Validation(Required=false)]
+            public string UserId { get; set; }
 
         }
 

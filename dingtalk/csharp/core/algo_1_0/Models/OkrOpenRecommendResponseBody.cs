@@ -17,18 +17,27 @@ namespace AlibabaCloud.SDK.Dingtalkalgo_1_0.Models
         public List<OkrOpenRecommendResponseBodyOkrRecommendItems> OkrRecommendItems { get; set; }
         public class OkrOpenRecommendResponseBodyOkrRecommendItems : TeaModel {
             /// <summary>
-            /// userId
+            /// krResultRelatedResults
             /// </summary>
-            [NameInMap("userId")]
+            [NameInMap("krResultRelatedResults")]
             [Validation(Required=false)]
-            public string UserId { get; set; }
+            public List<OkrOpenRecommendResponseBodyOkrRecommendItemsKrResultRelatedResults> KrResultRelatedResults { get; set; }
+            public class OkrOpenRecommendResponseBodyOkrRecommendItemsKrResultRelatedResults : TeaModel {
+                /// <summary>
+                /// krId
+                /// </summary>
+                [NameInMap("krId")]
+                [Validation(Required=false)]
+                public string KrId { get; set; }
 
-            /// <summary>
-            /// relatedLevel
-            /// </summary>
-            [NameInMap("relatedLevel")]
-            [Validation(Required=false)]
-            public long? RelatedLevel { get; set; }
+                /// <summary>
+                /// words
+                /// </summary>
+                [NameInMap("words")]
+                [Validation(Required=false)]
+                public List<string> Words { get; set; }
+
+            }
 
             /// <summary>
             /// objectiveRelatedResults
@@ -54,27 +63,18 @@ namespace AlibabaCloud.SDK.Dingtalkalgo_1_0.Models
             }
 
             /// <summary>
-            /// krResultRelatedResults
+            /// relatedLevel
             /// </summary>
-            [NameInMap("krResultRelatedResults")]
+            [NameInMap("relatedLevel")]
             [Validation(Required=false)]
-            public List<OkrOpenRecommendResponseBodyOkrRecommendItemsKrResultRelatedResults> KrResultRelatedResults { get; set; }
-            public class OkrOpenRecommendResponseBodyOkrRecommendItemsKrResultRelatedResults : TeaModel {
-                /// <summary>
-                /// krId
-                /// </summary>
-                [NameInMap("krId")]
-                [Validation(Required=false)]
-                public string KrId { get; set; }
+            public long? RelatedLevel { get; set; }
 
-                /// <summary>
-                /// words
-                /// </summary>
-                [NameInMap("words")]
-                [Validation(Required=false)]
-                public List<string> Words { get; set; }
-
-            }
+            /// <summary>
+            /// userId
+            /// </summary>
+            [NameInMap("userId")]
+            [Validation(Required=false)]
+            public string UserId { get; set; }
 
         }
 

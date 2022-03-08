@@ -17,18 +17,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         public List<QueryHospitalRoleUserInfoResponseBodyContent> Content { get; set; }
         public class QueryHospitalRoleUserInfoResponseBodyContent : TeaModel {
             /// <summary>
-            /// 用户编码
+            /// gmtCreate
             /// </summary>
-            [NameInMap("userCode")]
+            [NameInMap("gmtCreate")]
             [Validation(Required=false)]
-            public string UserCode { get; set; }
+            public string GmtCreate { get; set; }
 
             /// <summary>
-            /// 用户名称
+            /// 修改时间
             /// </summary>
-            [NameInMap("userName")]
+            [NameInMap("gmtModified")]
             [Validation(Required=false)]
-            public string UserName { get; set; }
+            public string GmtModified { get; set; }
 
             /// <summary>
             /// 用户工号
@@ -52,18 +52,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             public string RoleName { get; set; }
 
             /// <summary>
-            /// gmtCreate
+            /// 用户编码
             /// </summary>
-            [NameInMap("gmtCreate")]
+            [NameInMap("userCode")]
             [Validation(Required=false)]
-            public string GmtCreate { get; set; }
+            public string UserCode { get; set; }
 
             /// <summary>
-            /// 修改时间
+            /// 用户名称
             /// </summary>
-            [NameInMap("gmtModified")]
+            [NameInMap("userName")]
             [Validation(Required=false)]
-            public string GmtModified { get; set; }
+            public string UserName { get; set; }
 
         }
 

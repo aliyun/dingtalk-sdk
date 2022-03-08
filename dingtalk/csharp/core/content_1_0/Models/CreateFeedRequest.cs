@@ -143,16 +143,16 @@ namespace AlibabaCloud.SDK.Dingtalkcontent_1_0.Models
             [Validation(Required=false)]
             public List<CreateFeedRequestFeedInfoMediaContents> MediaContents { get; set; }
             public class CreateFeedRequestFeedInfoMediaContents : TeaModel {
-                public int? Type { get; set; }
                 public string MediaId { get; set; }
                 public string Title { get; set; }
+                public int? Type { get; set; }
             }
             [NameInMap("recommends")]
             [Validation(Required=false)]
             public List<CreateFeedRequestFeedInfoRecommends> Recommends { get; set; }
             public class CreateFeedRequestFeedInfoRecommends : TeaModel {
-                public int? Type { get; set; }
                 public string ObjectId { get; set; }
+                public int? Type { get; set; }
             }
             [NameInMap("thumbUrl")]
             [Validation(Required=false)]

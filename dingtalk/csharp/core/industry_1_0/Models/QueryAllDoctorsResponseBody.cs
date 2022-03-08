@@ -17,32 +17,32 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         public List<QueryAllDoctorsResponseBodyContent> Content { get; set; }
         public class QueryAllDoctorsResponseBodyContent : TeaModel {
             /// <summary>
-            /// 租户下staffId
+            /// 考核医疗组id
             /// </summary>
-            [NameInMap("uid")]
+            [NameInMap("assessGroupId")]
             [Validation(Required=false)]
-            public string Uid { get; set; }
+            public string AssessGroupId { get; set; }
 
             /// <summary>
-            /// 用户名称
+            /// 考核医疗组名称
             /// </summary>
-            [NameInMap("userName")]
+            [NameInMap("assessGroupName")]
             [Validation(Required=false)]
-            public string UserName { get; set; }
+            public string AssessGroupName { get; set; }
 
             /// <summary>
-            /// 工号
+            /// 租户CorpId
             /// </summary>
-            [NameInMap("jobNum")]
+            [NameInMap("corpId")]
             [Validation(Required=false)]
-            public string JobNum { get; set; }
+            public string CorpId { get; set; }
 
             /// <summary>
-            /// 用户id
+            /// 关联的部门id
             /// </summary>
-            [NameInMap("id")]
+            [NameInMap("deptCode")]
             [Validation(Required=false)]
-            public long? Id { get; set; }
+            public string DeptCode { get; set; }
 
             /// <summary>
             /// 用户创建时间
@@ -59,25 +59,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             public string GmtModifiedStr { get; set; }
 
             /// <summary>
-            /// 租户CorpId
+            /// 用户id
             /// </summary>
-            [NameInMap("corpId")]
+            [NameInMap("id")]
             [Validation(Required=false)]
-            public string CorpId { get; set; }
+            public long? Id { get; set; }
 
             /// <summary>
-            /// 租户内staffId
+            /// 工号
             /// </summary>
-            [NameInMap("userCode")]
+            [NameInMap("jobNum")]
             [Validation(Required=false)]
-            public string UserCode { get; set; }
-
-            /// <summary>
-            /// 关联的部门id
-            /// </summary>
-            [NameInMap("deptCode")]
-            [Validation(Required=false)]
-            public string DeptCode { get; set; }
+            public string JobNum { get; set; }
 
             /// <summary>
             /// 状态0-有效，1-删除
@@ -87,18 +80,25 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             public int? Status { get; set; }
 
             /// <summary>
-            /// 考核医疗组id
+            /// 租户下staffId
             /// </summary>
-            [NameInMap("assessGroupId")]
+            [NameInMap("uid")]
             [Validation(Required=false)]
-            public string AssessGroupId { get; set; }
+            public string Uid { get; set; }
 
             /// <summary>
-            /// 考核医疗组名称
+            /// 租户内staffId
             /// </summary>
-            [NameInMap("assessGroupName")]
+            [NameInMap("userCode")]
             [Validation(Required=false)]
-            public string AssessGroupName { get; set; }
+            public string UserCode { get; set; }
+
+            /// <summary>
+            /// 用户名称
+            /// </summary>
+            [NameInMap("userName")]
+            [Validation(Required=false)]
+            public string UserName { get; set; }
 
         }
 

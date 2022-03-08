@@ -24,6 +24,27 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
         public List<QueryPositionsResponseBodyList> List { get; set; }
         public class QueryPositionsResponseBodyList : TeaModel {
             /// <summary>
+            /// 所属职务ID
+            /// </summary>
+            [NameInMap("jobId")]
+            [Validation(Required=false)]
+            public string JobId { get; set; }
+
+            /// <summary>
+            /// 职位类别ID
+            /// </summary>
+            [NameInMap("positionCategoryId")]
+            [Validation(Required=false)]
+            public string PositionCategoryId { get; set; }
+
+            /// <summary>
+            /// 职位描述
+            /// </summary>
+            [NameInMap("positionDes")]
+            [Validation(Required=false)]
+            public string PositionDes { get; set; }
+
+            /// <summary>
             /// 职位ID
             /// </summary>
             [NameInMap("positionId")]
@@ -36,27 +57,6 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
             [NameInMap("positionName")]
             [Validation(Required=false)]
             public string PositionName { get; set; }
-
-            /// <summary>
-            /// 职位类别ID
-            /// </summary>
-            [NameInMap("positionCategoryId")]
-            [Validation(Required=false)]
-            public string PositionCategoryId { get; set; }
-
-            /// <summary>
-            /// 所属职务ID
-            /// </summary>
-            [NameInMap("jobId")]
-            [Validation(Required=false)]
-            public string JobId { get; set; }
-
-            /// <summary>
-            /// 职位描述
-            /// </summary>
-            [NameInMap("positionDes")]
-            [Validation(Required=false)]
-            public string PositionDes { get; set; }
 
             /// <summary>
             /// 职位对应职级列表

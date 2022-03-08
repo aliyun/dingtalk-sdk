@@ -31,20 +31,6 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         public List<QueryServiceGroupMessageReadStatusResponseBodyRecords> Records { get; set; }
         public class QueryServiceGroupMessageReadStatusResponseBodyRecords : TeaModel {
             /// <summary>
-            /// 已读人员为企业员工则有值
-            /// </summary>
-            [NameInMap("receiverUserId")]
-            [Validation(Required=false)]
-            public string ReceiverUserId { get; set; }
-
-            /// <summary>
-            /// 已读人员为非企业员工则有值
-            /// </summary>
-            [NameInMap("receiverUnionId")]
-            [Validation(Required=false)]
-            public string ReceiverUnionId { get; set; }
-
-            /// <summary>
             /// 状态：已读1/未读0
             /// </summary>
             [NameInMap("readStatus")]
@@ -52,11 +38,11 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
             public int? ReadStatus { get; set; }
 
             /// <summary>
-            /// 接收者昵称
+            /// 已读时间
             /// </summary>
-            [NameInMap("receiverName")]
+            [NameInMap("readTimeStr")]
             [Validation(Required=false)]
-            public string ReceiverName { get; set; }
+            public string ReadTimeStr { get; set; }
 
             /// <summary>
             /// 接收者dingtalkId
@@ -66,18 +52,32 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
             public string ReceiverDingTalkId { get; set; }
 
             /// <summary>
+            /// 接收者昵称
+            /// </summary>
+            [NameInMap("receiverName")]
+            [Validation(Required=false)]
+            public string ReceiverName { get; set; }
+
+            /// <summary>
+            /// 已读人员为非企业员工则有值
+            /// </summary>
+            [NameInMap("receiverUnionId")]
+            [Validation(Required=false)]
+            public string ReceiverUnionId { get; set; }
+
+            /// <summary>
+            /// 已读人员为企业员工则有值
+            /// </summary>
+            [NameInMap("receiverUserId")]
+            [Validation(Required=false)]
+            public string ReceiverUserId { get; set; }
+
+            /// <summary>
             /// 发送时间
             /// </summary>
             [NameInMap("sendTimeStr")]
             [Validation(Required=false)]
             public string SendTimeStr { get; set; }
-
-            /// <summary>
-            /// 已读时间
-            /// </summary>
-            [NameInMap("readTimeStr")]
-            [Validation(Required=false)]
-            public string ReadTimeStr { get; set; }
 
         }
 

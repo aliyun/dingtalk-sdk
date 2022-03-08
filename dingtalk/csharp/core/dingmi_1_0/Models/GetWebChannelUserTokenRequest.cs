@@ -10,13 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0.Models
 {
     public class GetWebChannelUserTokenRequest : TeaModel {
         /// <summary>
-        /// 企业corpId
-        /// </summary>
-        [NameInMap("dingCorpId")]
-        [Validation(Required=false)]
-        public string DingCorpId { get; set; }
-
-        /// <summary>
         /// 登录用户在业务账号体系内的用户id
         /// </summary>
         [NameInMap("foreignId")]

@@ -42,8 +42,8 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                     [Validation(Required=false)]
                     public List<SendOfficialAccountSNSMessageRequestDetailMessageBodyActionCardButtonList> ButtonList { get; set; }
                     public class SendOfficialAccountSNSMessageRequestDetailMessageBodyActionCardButtonList : TeaModel {
-                        public string Title { get; set; }
                         public string ActionUrl { get; set; }
+                        public string Title { get; set; }
                     }
                     [NameInMap("buttonOrientation")]
                     [Validation(Required=false)]
@@ -118,22 +118,6 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             [Validation(Required=false)]
             public string Uuid { get; set; }
         };
-
-        [NameInMap("dingClientId")]
-        [Validation(Required=false)]
-        public string DingClientId { get; set; }
-
-        [NameInMap("dingOpenAppOrgId")]
-        [Validation(Required=false)]
-        public long? DingOpenAppOrgId { get; set; }
-
-        [NameInMap("dingTokenGrantType")]
-        [Validation(Required=false)]
-        public long? DingTokenGrantType { get; set; }
-
-        [NameInMap("dingUid")]
-        [Validation(Required=false)]
-        public long? DingUid { get; set; }
 
     }
 

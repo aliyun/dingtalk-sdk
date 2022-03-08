@@ -38,18 +38,18 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         public List<CreateBatchTradeOrderRequestBatchTradeDetails> BatchTradeDetails { get; set; }
         public class CreateBatchTradeOrderRequestBatchTradeDetails : TeaModel {
             /// <summary>
-            /// 序号（必填）
-            /// </summary>
-            [NameInMap("serialNo")]
-            [Validation(Required=false)]
-            public long? SerialNo { get; set; }
-
-            /// <summary>
             /// 金额（必填，单位：元）
             /// </summary>
             [NameInMap("amount")]
             [Validation(Required=false)]
             public string Amount { get; set; }
+
+            /// <summary>
+            /// 备注（选填）
+            /// </summary>
+            [NameInMap("memo")]
+            [Validation(Required=false)]
+            public string Memo { get; set; }
 
             /// <summary>
             /// 收款方户名（必填）
@@ -73,11 +73,11 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
             public string PayeeAccountType { get; set; }
 
             /// <summary>
-            /// 备注（选填）
+            /// 序号（必填）
             /// </summary>
-            [NameInMap("memo")]
+            [NameInMap("serialNo")]
             [Validation(Required=false)]
-            public string Memo { get; set; }
+            public long? SerialNo { get; set; }
 
         }
 

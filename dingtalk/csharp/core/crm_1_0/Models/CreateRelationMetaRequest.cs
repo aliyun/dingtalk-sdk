@@ -27,45 +27,65 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                 public string ComponentName { get; set; }
                 public CreateRelationMetaRequestRelationMetaDTOItemsProps Props { get; set; }
                 public class CreateRelationMetaRequestRelationMetaDTOItemsProps : TeaModel {
-                    [NameInMap("fieldId")]
+                    [NameInMap("align")]
                     [Validation(Required=false)]
-                    public string FieldId { get; set; }
+                    public string Align { get; set; }
 
-                    [NameInMap("label")]
+                    [NameInMap("bizAlias")]
                     [Validation(Required=false)]
-                    public string Label { get; set; }
+                    public string BizAlias { get; set; }
 
-                    [NameInMap("sortable")]
+                    [NameInMap("choice")]
                     [Validation(Required=false)]
-                    public bool? Sortable { get; set; }
-
-                    [NameInMap("needDetail")]
-                    [Validation(Required=false)]
-                    public string NeedDetail { get; set; }
-
-                    [NameInMap("labelEditableFreeze")]
-                    [Validation(Required=false)]
-                    public bool? LabelEditableFreeze { get; set; }
-
-                    [NameInMap("required")]
-                    [Validation(Required=false)]
-                    public bool? Required { get; set; }
-
-                    [NameInMap("requiredEditableFreeze")]
-                    [Validation(Required=false)]
-                    public bool? RequiredEditableFreeze { get; set; }
-
-                    [NameInMap("notPrint")]
-                    [Validation(Required=false)]
-                    public string NotPrint { get; set; }
+                    public long? Choice { get; set; }
 
                     [NameInMap("content")]
                     [Validation(Required=false)]
                     public string Content { get; set; }
 
+                    [NameInMap("disabled")]
+                    [Validation(Required=false)]
+                    public bool? Disabled { get; set; }
+
+                    [NameInMap("duration")]
+                    [Validation(Required=false)]
+                    public bool? Duration { get; set; }
+
+                    [NameInMap("fieldId")]
+                    [Validation(Required=false)]
+                    public string FieldId { get; set; }
+
                     [NameInMap("format")]
                     [Validation(Required=false)]
                     public string Format { get; set; }
+
+                    [NameInMap("invisible")]
+                    [Validation(Required=false)]
+                    public bool? Invisible { get; set; }
+
+                    [NameInMap("label")]
+                    [Validation(Required=false)]
+                    public string Label { get; set; }
+
+                    [NameInMap("labelEditableFreeze")]
+                    [Validation(Required=false)]
+                    public bool? LabelEditableFreeze { get; set; }
+
+                    [NameInMap("link")]
+                    [Validation(Required=false)]
+                    public string Link { get; set; }
+
+                    [NameInMap("needDetail")]
+                    [Validation(Required=false)]
+                    public string NeedDetail { get; set; }
+
+                    [NameInMap("notPrint")]
+                    [Validation(Required=false)]
+                    public string NotPrint { get; set; }
+
+                    [NameInMap("notUpper")]
+                    [Validation(Required=false)]
+                    public string NotUpper { get; set; }
 
                     [NameInMap("options")]
                     [Validation(Required=false)]
@@ -81,49 +101,29 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 
                     }
 
-                    [NameInMap("notUpper")]
+                    [NameInMap("payEnable")]
                     [Validation(Required=false)]
-                    public string NotUpper { get; set; }
-
-                    [NameInMap("unit")]
-                    [Validation(Required=false)]
-                    public string Unit { get; set; }
+                    public bool? PayEnable { get; set; }
 
                     [NameInMap("placeholder")]
                     [Validation(Required=false)]
                     public string Placeholder { get; set; }
 
-                    [NameInMap("bizAlias")]
+                    [NameInMap("required")]
                     [Validation(Required=false)]
-                    public string BizAlias { get; set; }
+                    public bool? Required { get; set; }
 
-                    [NameInMap("duration")]
+                    [NameInMap("requiredEditableFreeze")]
                     [Validation(Required=false)]
-                    public bool? Duration { get; set; }
+                    public bool? RequiredEditableFreeze { get; set; }
 
-                    [NameInMap("choice")]
+                    [NameInMap("sortable")]
                     [Validation(Required=false)]
-                    public long? Choice { get; set; }
+                    public bool? Sortable { get; set; }
 
-                    [NameInMap("disabled")]
+                    [NameInMap("unit")]
                     [Validation(Required=false)]
-                    public bool? Disabled { get; set; }
-
-                    [NameInMap("align")]
-                    [Validation(Required=false)]
-                    public string Align { get; set; }
-
-                    [NameInMap("invisible")]
-                    [Validation(Required=false)]
-                    public bool? Invisible { get; set; }
-
-                    [NameInMap("payEnable")]
-                    [Validation(Required=false)]
-                    public bool? PayEnable { get; set; }
-
-                    [NameInMap("link")]
-                    [Validation(Required=false)]
-                    public string Link { get; set; }
+                    public string Unit { get; set; }
 
                 }
             }

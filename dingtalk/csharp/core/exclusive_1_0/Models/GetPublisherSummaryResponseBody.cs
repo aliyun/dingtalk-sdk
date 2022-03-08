@@ -17,20 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         public List<GetPublisherSummaryResponseBodyData> Data { get; set; }
         public class GetPublisherSummaryResponseBodyData : TeaModel {
             /// <summary>
-            /// 服务窗unionId
-            /// </summary>
-            [NameInMap("unionId")]
-            [Validation(Required=false)]
-            public string UnionId { get; set; }
-
-            /// <summary>
-            /// 服务窗名称
-            /// </summary>
-            [NameInMap("publisherName")]
-            [Validation(Required=false)]
-            public string PublisherName { get; set; }
-
-            /// <summary>
             /// 历史截至当日服务窗文章数
             /// </summary>
             [NameInMap("publisherArticleCntStd")]
@@ -43,6 +29,20 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             [NameInMap("publisherArticlePvCntStd")]
             [Validation(Required=false)]
             public string PublisherArticlePvCntStd { get; set; }
+
+            /// <summary>
+            /// 服务窗名称
+            /// </summary>
+            [NameInMap("publisherName")]
+            [Validation(Required=false)]
+            public string PublisherName { get; set; }
+
+            /// <summary>
+            /// 服务窗unionId
+            /// </summary>
+            [NameInMap("unionId")]
+            [Validation(Required=false)]
+            public string UnionId { get; set; }
 
         }
 

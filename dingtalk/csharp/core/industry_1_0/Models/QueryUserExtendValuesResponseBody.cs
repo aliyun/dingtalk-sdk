@@ -17,6 +17,20 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         public List<QueryUserExtendValuesResponseBodyContent> Content { get; set; }
         public class QueryUserExtendValuesResponseBodyContent : TeaModel {
             /// <summary>
+            /// 用户code
+            /// </summary>
+            [NameInMap("userCode")]
+            [Validation(Required=false)]
+            public string UserCode { get; set; }
+
+            /// <summary>
+            /// 扩展字段描述
+            /// </summary>
+            [NameInMap("userExtendDisplayName")]
+            [Validation(Required=false)]
+            public string UserExtendDisplayName { get; set; }
+
+            /// <summary>
             /// 扩展字段key
             /// </summary>
             [NameInMap("userExtendKey")]
@@ -29,20 +43,6 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             [NameInMap("userExtendValue")]
             [Validation(Required=false)]
             public string UserExtendValue { get; set; }
-
-            /// <summary>
-            /// 扩展字段描述
-            /// </summary>
-            [NameInMap("userExtendDisplayName")]
-            [Validation(Required=false)]
-            public string UserExtendDisplayName { get; set; }
-
-            /// <summary>
-            /// 用户code
-            /// </summary>
-            [NameInMap("userCode")]
-            [Validation(Required=false)]
-            public string UserCode { get; set; }
 
         }
 

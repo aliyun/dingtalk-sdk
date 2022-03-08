@@ -24,6 +24,20 @@ namespace AlibabaCloud.SDK.Dingtalkcontent_1_0.Models
         public List<GetFeedResponseBodyFeedItem> FeedItem { get; set; }
         public class GetFeedResponseBodyFeedItem : TeaModel {
             /// <summary>
+            /// 子内容的持续时长，单位为毫秒
+            /// </summary>
+            [NameInMap("durationMillis")]
+            [Validation(Required=false)]
+            public long? DurationMillis { get; set; }
+
+            /// <summary>
+            /// 内容类型，0表示直播，1表示图文，2表示视频，3表示音频
+            /// </summary>
+            [NameInMap("feedContentType")]
+            [Validation(Required=false)]
+            public int? FeedContentType { get; set; }
+
+            /// <summary>
             /// 子内容Id
             /// </summary>
             [NameInMap("itemId")]
@@ -36,20 +50,6 @@ namespace AlibabaCloud.SDK.Dingtalkcontent_1_0.Models
             [NameInMap("title")]
             [Validation(Required=false)]
             public string Title { get; set; }
-
-            /// <summary>
-            /// 内容类型，0表示直播，1表示图文，2表示视频，3表示音频
-            /// </summary>
-            [NameInMap("feedContentType")]
-            [Validation(Required=false)]
-            public int? FeedContentType { get; set; }
-
-            /// <summary>
-            /// 子内容的持续时长，单位为毫秒
-            /// </summary>
-            [NameInMap("durationMillis")]
-            [Validation(Required=false)]
-            public long? DurationMillis { get; set; }
 
             /// <summary>
             /// 子内容的跳转链接

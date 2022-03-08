@@ -24,6 +24,13 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
             public string DingConnectorId { get; set; }
 
             /// <summary>
+            /// 连接平台触发事件id
+            /// </summary>
+            [NameInMap("dingTriggerId")]
+            [Validation(Required=false)]
+            public string DingTriggerId { get; set; }
+
+            /// <summary>
             /// 服务商的连接器Id
             /// </summary>
             [NameInMap("integratorConnectorId")]
@@ -38,20 +45,6 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
             public string IntegratorTriggerId { get; set; }
 
             /// <summary>
-            /// 连接平台触发事件id
-            /// </summary>
-            [NameInMap("dingTriggerId")]
-            [Validation(Required=false)]
-            public string DingTriggerId { get; set; }
-
-            /// <summary>
-            /// 是否成功
-            /// </summary>
-            [NameInMap("success")]
-            [Validation(Required=false)]
-            public bool? Success { get; set; }
-
-            /// <summary>
             /// 错误码
             /// </summary>
             [NameInMap("subErrCode")]
@@ -64,6 +57,13 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
             [NameInMap("subErrMsg")]
             [Validation(Required=false)]
             public string SubErrMsg { get; set; }
+
+            /// <summary>
+            /// 是否成功
+            /// </summary>
+            [NameInMap("success")]
+            [Validation(Required=false)]
+            public bool? Success { get; set; }
 
         }
 

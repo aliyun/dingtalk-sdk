@@ -17,18 +17,11 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         public List<GetUserAppVersionSummaryResponseBodyData> Data { get; set; }
         public class GetUserAppVersionSummaryResponseBodyData : TeaModel {
             /// <summary>
-            /// 统计日期
+            /// 版本信息
             /// </summary>
-            [NameInMap("statDate")]
+            [NameInMap("appVersion")]
             [Validation(Required=false)]
-            public string StatDate { get; set; }
-
-            /// <summary>
-            /// 组织名称
-            /// </summary>
-            [NameInMap("orgName")]
-            [Validation(Required=false)]
-            public string OrgName { get; set; }
+            public string AppVersion { get; set; }
 
             /// <summary>
             /// 端信息
@@ -38,11 +31,18 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             public string Client { get; set; }
 
             /// <summary>
-            /// 版本信息
+            /// 组织名称
             /// </summary>
-            [NameInMap("appVersion")]
+            [NameInMap("orgName")]
             [Validation(Required=false)]
-            public string AppVersion { get; set; }
+            public string OrgName { get; set; }
+
+            /// <summary>
+            /// 统计日期
+            /// </summary>
+            [NameInMap("statDate")]
+            [Validation(Required=false)]
+            public string StatDate { get; set; }
 
             /// <summary>
             /// 用户数

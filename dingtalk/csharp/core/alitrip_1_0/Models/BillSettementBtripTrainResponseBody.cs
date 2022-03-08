@@ -33,6 +33,7 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0.Models
                 public string ArrTime { get; set; }
                 public string BookTime { get; set; }
                 public string BookerId { get; set; }
+                public string BookerJobNo { get; set; }
                 public string BookerName { get; set; }
                 public string CapitalDirection { get; set; }
                 public string CascadeDepartment { get; set; }
@@ -68,9 +69,8 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0.Models
                 public string TrainNo { get; set; }
                 public string TrainType { get; set; }
                 public string TravelerId { get; set; }
-                public string TravelerName { get; set; }
-                public string BookerJobNo { get; set; }
                 public string TravelerJobNo { get; set; }
+                public string TravelerName { get; set; }
                 public long? VoucherType { get; set; }
             }
             [NameInMap("periodEnd")]

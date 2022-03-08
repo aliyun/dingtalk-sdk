@@ -17,34 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         public string Amount { get; set; }
 
         /// <summary>
-        /// 应用id
-        /// </summary>
-        [NameInMap("dingClientId")]
-        [Validation(Required=false)]
-        public string DingClientId { get; set; }
-
-        /// <summary>
-        /// isv组织id
-        /// </summary>
-        [NameInMap("dingIsvOrgId")]
-        [Validation(Required=false)]
-        public long? DingIsvOrgId { get; set; }
-
-        /// <summary>
-        /// 组织id
-        /// </summary>
-        [NameInMap("dingOrgId")]
-        [Validation(Required=false)]
-        public long? DingOrgId { get; set; }
-
-        /// <summary>
-        /// 应用类型
-        /// </summary>
-        [NameInMap("dingTokenGrantType")]
-        [Validation(Required=false)]
-        public long? DingTokenGrantType { get; set; }
-
-        /// <summary>
         /// 主机构编号
         /// </summary>
         [NameInMap("instId")]
@@ -59,39 +31,11 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         public List<CreatWithholdingOrderAndPayRequestOtherPayChannelDetailInfoList> OtherPayChannelDetailInfoList { get; set; }
         public class CreatWithholdingOrderAndPayRequestOtherPayChannelDetailInfoList : TeaModel {
             /// <summary>
-            /// 渠道名称
-            /// </summary>
-            [NameInMap("payChannelName")]
-            [Validation(Required=false)]
-            public string PayChannelName { get; set; }
-
-            /// <summary>
-            /// 渠道类型
-            /// </summary>
-            [NameInMap("payChannelType")]
-            [Validation(Required=false)]
-            public string PayChannelType { get; set; }
-
-            /// <summary>
             /// 渠道金额
             /// </summary>
             [NameInMap("amount")]
             [Validation(Required=false)]
             public string Amount { get; set; }
-
-            /// <summary>
-            /// 支付渠道单号
-            /// </summary>
-            [NameInMap("payChannelOrderNo")]
-            [Validation(Required=false)]
-            public string PayChannelOrderNo { get; set; }
-
-            /// <summary>
-            /// 总优惠金额
-            /// </summary>
-            [NameInMap("promotionAmount")]
-            [Validation(Required=false)]
-            public string PromotionAmount { get; set; }
 
             /// <summary>
             /// 资金明细列表
@@ -101,18 +45,25 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
             public List<CreatWithholdingOrderAndPayRequestOtherPayChannelDetailInfoListFundToolDetailInfoList> FundToolDetailInfoList { get; set; }
             public class CreatWithholdingOrderAndPayRequestOtherPayChannelDetailInfoListFundToolDetailInfoList : TeaModel {
                 /// <summary>
-                /// 资金工具名称
-                /// </summary>
-                [NameInMap("fundToolName")]
-                [Validation(Required=false)]
-                public string FundToolName { get; set; }
-
-                /// <summary>
                 /// 金额
                 /// </summary>
                 [NameInMap("amount")]
                 [Validation(Required=false)]
                 public string Amount { get; set; }
+
+                /// <summary>
+                /// 扩展信息
+                /// </summary>
+                [NameInMap("extInfo")]
+                [Validation(Required=false)]
+                public string ExtInfo { get; set; }
+
+                /// <summary>
+                /// 资金工具名称
+                /// </summary>
+                [NameInMap("fundToolName")]
+                [Validation(Required=false)]
+                public string FundToolName { get; set; }
 
                 /// <summary>
                 /// 资金明细创建时间
@@ -135,14 +86,35 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
                 [Validation(Required=false)]
                 public bool? PromotionFundTool { get; set; }
 
-                /// <summary>
-                /// 扩展信息
-                /// </summary>
-                [NameInMap("extInfo")]
-                [Validation(Required=false)]
-                public string ExtInfo { get; set; }
-
             }
+
+            /// <summary>
+            /// 渠道名称
+            /// </summary>
+            [NameInMap("payChannelName")]
+            [Validation(Required=false)]
+            public string PayChannelName { get; set; }
+
+            /// <summary>
+            /// 支付渠道单号
+            /// </summary>
+            [NameInMap("payChannelOrderNo")]
+            [Validation(Required=false)]
+            public string PayChannelOrderNo { get; set; }
+
+            /// <summary>
+            /// 渠道类型
+            /// </summary>
+            [NameInMap("payChannelType")]
+            [Validation(Required=false)]
+            public string PayChannelType { get; set; }
+
+            /// <summary>
+            /// 总优惠金额
+            /// </summary>
+            [NameInMap("promotionAmount")]
+            [Validation(Required=false)]
+            public string PromotionAmount { get; set; }
 
         }
 

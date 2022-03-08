@@ -9,35 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkapaas_1_0.Models
 {
     public class BatchUpdateTemplateRequest : TeaModel {
-        [NameInMap("dingSuiteKey")]
-        [Validation(Required=false)]
-        public string DingSuiteKey { get; set; }
-
         [NameInMap("templateList")]
         [Validation(Required=false)]
         public List<BatchUpdateTemplateRequestTemplateList> TemplateList { get; set; }
         public class BatchUpdateTemplateRequestTemplateList : TeaModel {
-            /// <summary>
-            /// category
-            /// </summary>
-            [NameInMap("categoryCode")]
-            [Validation(Required=false)]
-            public string CategoryCode { get; set; }
-
-            /// <summary>
-            /// mobilePreviewMediaList
-            /// </summary>
-            [NameInMap("mobilePreviewMediaList")]
-            [Validation(Required=false)]
-            public List<string> MobilePreviewMediaList { get; set; }
-
-            /// <summary>
-            /// templateKey
-            /// </summary>
-            [NameInMap("templateKey")]
-            [Validation(Required=false)]
-            public string TemplateKey { get; set; }
-
             /// <summary>
             /// adaptEnv
             /// </summary>
@@ -53,46 +28,11 @@ namespace AlibabaCloud.SDK.Dingtalkapaas_1_0.Models
             public string AppDesc { get; set; }
 
             /// <summary>
-            /// name
+            /// appIcon
             /// </summary>
-            [NameInMap("name")]
+            [NameInMap("appIcon")]
             [Validation(Required=false)]
-            public string Name { get; set; }
-
-            /// <summary>
-            /// providerName
-            /// </summary>
-            [NameInMap("providerName")]
-            [Validation(Required=false)]
-            public string ProviderName { get; set; }
-
-            /// <summary>
-            /// coverImgList
-            /// </summary>
-            [NameInMap("coverImgList")]
-            [Validation(Required=false)]
-            public List<string> CoverImgList { get; set; }
-
-            /// <summary>
-            /// roleLabelList
-            /// </summary>
-            [NameInMap("roleLabelList")]
-            [Validation(Required=false)]
-            public List<string> RoleLabelList { get; set; }
-
-            /// <summary>
-            /// previewMediaList
-            /// </summary>
-            [NameInMap("previewMediaList")]
-            [Validation(Required=false)]
-            public List<string> PreviewMediaList { get; set; }
-
-            /// <summary>
-            /// simpleDesc
-            /// </summary>
-            [NameInMap("simpleDesc")]
-            [Validation(Required=false)]
-            public string SimpleDesc { get; set; }
+            public string AppIcon { get; set; }
 
             /// <summary>
             /// caseVideoList
@@ -102,25 +42,18 @@ namespace AlibabaCloud.SDK.Dingtalkapaas_1_0.Models
             public List<string> CaseVideoList { get; set; }
 
             /// <summary>
-            /// industryLabelList
+            /// category
             /// </summary>
-            [NameInMap("industryLabelList")]
+            [NameInMap("categoryCode")]
             [Validation(Required=false)]
-            public List<string> IndustryLabelList { get; set; }
+            public string CategoryCode { get; set; }
 
             /// <summary>
-            /// appIcon
+            /// coverImgList
             /// </summary>
-            [NameInMap("appIcon")]
+            [NameInMap("coverImgList")]
             [Validation(Required=false)]
-            public string AppIcon { get; set; }
-
-            /// <summary>
-            /// useCasesMediaList
-            /// </summary>
-            [NameInMap("useCasesMediaList")]
-            [Validation(Required=false)]
-            public List<string> UseCasesMediaList { get; set; }
+            public List<string> CoverImgList { get; set; }
 
             /// <summary>
             /// expUrl
@@ -128,6 +61,69 @@ namespace AlibabaCloud.SDK.Dingtalkapaas_1_0.Models
             [NameInMap("expUrl")]
             [Validation(Required=false)]
             public string ExpUrl { get; set; }
+
+            /// <summary>
+            /// industryLabelList
+            /// </summary>
+            [NameInMap("industryLabelList")]
+            [Validation(Required=false)]
+            public List<string> IndustryLabelList { get; set; }
+
+            /// <summary>
+            /// mobilePreviewMediaList
+            /// </summary>
+            [NameInMap("mobilePreviewMediaList")]
+            [Validation(Required=false)]
+            public List<string> MobilePreviewMediaList { get; set; }
+
+            /// <summary>
+            /// name
+            /// </summary>
+            [NameInMap("name")]
+            [Validation(Required=false)]
+            public string Name { get; set; }
+
+            /// <summary>
+            /// previewMediaList
+            /// </summary>
+            [NameInMap("previewMediaList")]
+            [Validation(Required=false)]
+            public List<string> PreviewMediaList { get; set; }
+
+            /// <summary>
+            /// providerName
+            /// </summary>
+            [NameInMap("providerName")]
+            [Validation(Required=false)]
+            public string ProviderName { get; set; }
+
+            /// <summary>
+            /// roleLabelList
+            /// </summary>
+            [NameInMap("roleLabelList")]
+            [Validation(Required=false)]
+            public List<string> RoleLabelList { get; set; }
+
+            /// <summary>
+            /// simpleDesc
+            /// </summary>
+            [NameInMap("simpleDesc")]
+            [Validation(Required=false)]
+            public string SimpleDesc { get; set; }
+
+            /// <summary>
+            /// templateKey
+            /// </summary>
+            [NameInMap("templateKey")]
+            [Validation(Required=false)]
+            public string TemplateKey { get; set; }
+
+            /// <summary>
+            /// useCasesMediaList
+            /// </summary>
+            [NameInMap("useCasesMediaList")]
+            [Validation(Required=false)]
+            public List<string> UseCasesMediaList { get; set; }
 
         }
 

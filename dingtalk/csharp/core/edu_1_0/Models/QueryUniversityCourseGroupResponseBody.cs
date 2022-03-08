@@ -29,42 +29,17 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             [Validation(Required=false)]
             public List<QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModels> CourserGroupItemModels { get; set; }
             public class QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModels : TeaModel {
-                public long? ClassroomId { get; set; }
                 public int? ClassPeriodType { get; set; }
-                public int? DayOfWeek { get; set; }
-                public List<string> SectionIndex { get; set; }
-                public QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsCourserGroupItemStartDate CourserGroupItemStartDate { get; set; }
-                public class QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsCourserGroupItemStartDate : TeaModel {
-                    /// <summary>
-                    /// 年
-                    /// </summary>
-                    [NameInMap("year")]
-                    [Validation(Required=false)]
-                    public int? Year { get; set; }
-
-                    /// <summary>
-                    /// 月
-                    /// </summary>
-                    [NameInMap("month")]
-                    [Validation(Required=false)]
-                    public int? Month { get; set; }
-
-                    /// <summary>
-                    /// 日
-                    /// </summary>
-                    [NameInMap("dayOfMonth")]
-                    [Validation(Required=false)]
-                    public int? DayOfMonth { get; set; }
-
-                }
+                public long? ClassroomId { get; set; }
+                public int? CourseType { get; set; }
                 public QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsCourserGroupItemEndDate CourserGroupItemEndDate { get; set; }
                 public class QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsCourserGroupItemEndDate : TeaModel {
                     /// <summary>
-                    /// 年
+                    /// 日
                     /// </summary>
-                    [NameInMap("year")]
+                    [NameInMap("dayOfMonth")]
                     [Validation(Required=false)]
-                    public int? Year { get; set; }
+                    public int? DayOfMonth { get; set; }
 
                     /// <summary>
                     /// 月
@@ -74,14 +49,39 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
                     public int? Month { get; set; }
 
                     /// <summary>
+                    /// 年
+                    /// </summary>
+                    [NameInMap("year")]
+                    [Validation(Required=false)]
+                    public int? Year { get; set; }
+
+                }
+                public QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsCourserGroupItemStartDate CourserGroupItemStartDate { get; set; }
+                public class QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsCourserGroupItemStartDate : TeaModel {
+                    /// <summary>
                     /// 日
                     /// </summary>
                     [NameInMap("dayOfMonth")]
                     [Validation(Required=false)]
                     public int? DayOfMonth { get; set; }
 
+                    /// <summary>
+                    /// 月
+                    /// </summary>
+                    [NameInMap("month")]
+                    [Validation(Required=false)]
+                    public int? Month { get; set; }
+
+                    /// <summary>
+                    /// 年
+                    /// </summary>
+                    [NameInMap("year")]
+                    [Validation(Required=false)]
+                    public int? Year { get; set; }
+
                 }
-                public int? CourseType { get; set; }
+                public int? DayOfWeek { get; set; }
+                public List<string> SectionIndex { get; set; }
             }
             [NameInMap("isvCourseGroupCode")]
             [Validation(Required=false)]

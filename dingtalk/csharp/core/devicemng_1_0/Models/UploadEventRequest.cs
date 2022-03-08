@@ -25,10 +25,6 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0.Models
         [Validation(Required=false)]
         public string DeviceUuid { get; set; }
 
-        [NameInMap("dingCorpId")]
-        [Validation(Required=false)]
-        public string DingCorpId { get; set; }
-
         [NameInMap("eventTime")]
         [Validation(Required=false)]
         public string EventTime { get; set; }

@@ -21,18 +21,18 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
             public string BranchCorpId { get; set; }
 
             /// <summary>
-            /// unionRootName
-            /// </summary>
-            [NameInMap("unionRootName")]
-            [Validation(Required=false)]
-            public string UnionRootName { get; set; }
-
-            /// <summary>
             /// linkDeptId
             /// </summary>
             [NameInMap("linkDeptId")]
             [Validation(Required=false)]
             public long? LinkDeptId { get; set; }
+
+            /// <summary>
+            /// unionRootName
+            /// </summary>
+            [NameInMap("unionRootName")]
+            [Validation(Required=false)]
+            public string UnionRootName { get; set; }
 
         }
 

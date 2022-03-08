@@ -10,13 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0.Models
 {
     public class ReplyRobotRequest : TeaModel {
         /// <summary>
-        /// 企业corpId
-        /// </summary>
-        [NameInMap("dingCorpId")]
-        [Validation(Required=false)]
-        public string DingCorpId { get; set; }
-
-        /// <summary>
         /// 回复消息内容的json string
         /// </summary>
         [NameInMap("proxyMessageStr")]

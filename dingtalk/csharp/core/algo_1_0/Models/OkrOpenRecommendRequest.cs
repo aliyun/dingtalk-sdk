@@ -13,10 +13,6 @@ namespace AlibabaCloud.SDK.Dingtalkalgo_1_0.Models
         [Validation(Required=false)]
         public List<OkrOpenRecommendRequestCandidateOkrItems> CandidateOkrItems { get; set; }
         public class OkrOpenRecommendRequestCandidateOkrItems : TeaModel {
-            [NameInMap("userId")]
-            [Validation(Required=false)]
-            public string UserId { get; set; }
-
             [NameInMap("okrInfos")]
             [Validation(Required=false)]
             public List<OkrOpenRecommendRequestCandidateOkrItemsOkrInfos> OkrInfos { get; set; }
@@ -56,6 +52,10 @@ namespace AlibabaCloud.SDK.Dingtalkalgo_1_0.Models
             [NameInMap("relation")]
             [Validation(Required=false)]
             public string Relation { get; set; }
+
+            [NameInMap("userId")]
+            [Validation(Required=false)]
+            public string UserId { get; set; }
 
         }
 

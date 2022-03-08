@@ -9,20 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0.Models
 {
     public class AskRobotRequest : TeaModel {
-        /// <summary>
-        /// 企业corpId
-        /// </summary>
-        [NameInMap("dingCorpId")]
-        [Validation(Required=false)]
-        public string DingCorpId { get; set; }
-
-        /// <summary>
-        /// suiteKey
-        /// </summary>
-        [NameInMap("dingSuiteKey")]
-        [Validation(Required=false)]
-        public string DingSuiteKey { get; set; }
-
         [NameInMap("dingUserId")]
         [Validation(Required=false)]
         public string DingUserId { get; set; }

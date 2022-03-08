@@ -13,10 +13,23 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         [Validation(Required=false)]
         public List<BatchGetWorkspaceDocsResponseBodyResult> Result { get; set; }
         public class BatchGetWorkspaceDocsResponseBodyResult : TeaModel {
+            [NameInMap("hasPermission")]
+            [Validation(Required=false)]
+            public bool? HasPermission { get; set; }
+
             [NameInMap("nodeBO")]
             [Validation(Required=false)]
             public BatchGetWorkspaceDocsResponseBodyResultNodeBO NodeBO { get; set; }
             public class BatchGetWorkspaceDocsResponseBodyResultNodeBO : TeaModel {
+                [NameInMap("deleted")]
+                [Validation(Required=false)]
+                public bool? Deleted { get; set; }
+                [NameInMap("docType")]
+                [Validation(Required=false)]
+                public string DocType { get; set; }
+                [NameInMap("lastEditTime")]
+                [Validation(Required=false)]
+                public long? LastEditTime { get; set; }
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public string Name { get; set; }
@@ -26,32 +39,19 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
                 [NameInMap("url")]
                 [Validation(Required=false)]
                 public string Url { get; set; }
-                [NameInMap("lastEditTime")]
-                [Validation(Required=false)]
-                public long? LastEditTime { get; set; }
-                [NameInMap("deleted")]
-                [Validation(Required=false)]
-                public bool? Deleted { get; set; }
-                [NameInMap("docType")]
-                [Validation(Required=false)]
-                public string DocType { get; set; }
             };
 
             [NameInMap("workspaceBO")]
             [Validation(Required=false)]
             public BatchGetWorkspaceDocsResponseBodyResultWorkspaceBO WorkspaceBO { get; set; }
             public class BatchGetWorkspaceDocsResponseBodyResultWorkspaceBO : TeaModel {
-                [NameInMap("workspaceId")]
-                [Validation(Required=false)]
-                public string WorkspaceId { get; set; }
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public string Name { get; set; }
+                [NameInMap("workspaceId")]
+                [Validation(Required=false)]
+                public string WorkspaceId { get; set; }
             };
-
-            [NameInMap("hasPermission")]
-            [Validation(Required=false)]
-            public bool? HasPermission { get; set; }
 
         }
 

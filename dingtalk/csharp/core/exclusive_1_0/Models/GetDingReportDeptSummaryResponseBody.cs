@@ -31,18 +31,18 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             public string DeptName { get; set; }
 
             /// <summary>
-            /// 最近1天累计创建日志人数
-            /// </summary>
-            [NameInMap("dingReportSendUsrCnt")]
-            [Validation(Required=false)]
-            public string DingReportSendUsrCnt { get; set; }
-
-            /// <summary>
             /// 最近1天累计创建日志数
             /// </summary>
             [NameInMap("dingReportSendCnt")]
             [Validation(Required=false)]
             public string DingReportSendCnt { get; set; }
+
+            /// <summary>
+            /// 最近1天累计创建日志人数
+            /// </summary>
+            [NameInMap("dingReportSendUsrCnt")]
+            [Validation(Required=false)]
+            public string DingReportSendUsrCnt { get; set; }
 
         }
 

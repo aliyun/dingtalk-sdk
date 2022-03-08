@@ -31,18 +31,18 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
         public List<UpdateResidentUserRequestExtField> ExtField { get; set; }
         public class UpdateResidentUserRequestExtField : TeaModel {
             /// <summary>
-            /// 扩展字段值
-            /// </summary>
-            [NameInMap("itemValue")]
-            [Validation(Required=false)]
-            public string ItemValue { get; set; }
-
-            /// <summary>
             /// 扩展字段名字
             /// </summary>
             [NameInMap("itemName")]
             [Validation(Required=false)]
             public string ItemName { get; set; }
+
+            /// <summary>
+            /// 扩展字段值
+            /// </summary>
+            [NameInMap("itemValue")]
+            [Validation(Required=false)]
+            public string ItemValue { get; set; }
 
         }
 

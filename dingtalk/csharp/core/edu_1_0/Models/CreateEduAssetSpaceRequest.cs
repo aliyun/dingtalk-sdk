@@ -17,20 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public string BizCode { get; set; }
 
         /// <summary>
-        /// 组织corpId
-        /// </summary>
-        [NameInMap("dingCorpId")]
-        [Validation(Required=false)]
-        public string DingCorpId { get; set; }
-
-        /// <summary>
-        /// 组织id
-        /// </summary>
-        [NameInMap("dingOrgId")]
-        [Validation(Required=false)]
-        public long? DingOrgId { get; set; }
-
-        /// <summary>
         /// 空间描述
         /// </summary>
         [NameInMap("spaceDesc")]

@@ -38,32 +38,11 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
             public string CorpId { get; set; }
 
             /// <summary>
-            /// 成员id
-            /// </summary>
-            [NameInMap("userId")]
-            [Validation(Required=false)]
-            public string UserId { get; set; }
-
-            /// <summary>
-            /// 增加或减少的分数（增加为正数，减少为负数）
-            /// </summary>
-            [NameInMap("score")]
-            [Validation(Required=false)]
-            public int? Score { get; set; }
-
-            /// <summary>
             /// 创建时间（精确到毫秒数）
             /// </summary>
             [NameInMap("createAt")]
             [Validation(Required=false)]
             public long? CreateAt { get; set; }
-
-            /// <summary>
-            /// 幂等键
-            /// </summary>
-            [NameInMap("uuid")]
-            [Validation(Required=false)]
-            public string Uuid { get; set; }
 
             /// <summary>
             /// 对应的行为代码（可空）
@@ -78,6 +57,27 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
             [NameInMap("ruleName")]
             [Validation(Required=false)]
             public string RuleName { get; set; }
+
+            /// <summary>
+            /// 增加或减少的分数（增加为正数，减少为负数）
+            /// </summary>
+            [NameInMap("score")]
+            [Validation(Required=false)]
+            public int? Score { get; set; }
+
+            /// <summary>
+            /// 成员id
+            /// </summary>
+            [NameInMap("userId")]
+            [Validation(Required=false)]
+            public string UserId { get; set; }
+
+            /// <summary>
+            /// 幂等键
+            /// </summary>
+            [NameInMap("uuid")]
+            [Validation(Required=false)]
+            public string Uuid { get; set; }
 
         }
 

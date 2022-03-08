@@ -9,22 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
 {
     public class SendMsgByTaskRequest : TeaModel {
-        [NameInMap("dingIsvOrgId")]
-        [Validation(Required=false)]
-        public long? DingIsvOrgId { get; set; }
-
-        [NameInMap("dingOrgId")]
-        [Validation(Required=false)]
-        public long? DingOrgId { get; set; }
-
-        [NameInMap("dingSuiteKey")]
-        [Validation(Required=false)]
-        public string DingSuiteKey { get; set; }
-
-        [NameInMap("dingTokenGrantType")]
-        [Validation(Required=false)]
-        public long? DingTokenGrantType { get; set; }
-
         /// <summary>
         /// 群发内容
         /// </summary>
@@ -116,9 +100,9 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
             [Validation(Required=false)]
             public List<SendMsgByTaskRequestSendConfigUrlTrackConfig> UrlTrackConfig { get; set; }
             public class SendMsgByTaskRequestSendConfigUrlTrackConfig : TeaModel {
-                public string TrackUrl { get; set; }
                 public string Title { get; set; }
                 public string TrackId { get; set; }
+                public string TrackUrl { get; set; }
             }
         };
 

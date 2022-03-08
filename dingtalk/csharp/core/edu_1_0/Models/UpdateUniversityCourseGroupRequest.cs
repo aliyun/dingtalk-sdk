@@ -38,13 +38,6 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public List<UpdateUniversityCourseGroupRequestCourserGroupItemModels> CourserGroupItemModels { get; set; }
         public class UpdateUniversityCourseGroupRequestCourserGroupItemModels : TeaModel {
             /// <summary>
-            /// 一周的第几天
-            /// </summary>
-            [NameInMap("dayOfWeek")]
-            [Validation(Required=false)]
-            public int? DayOfWeek { get; set; }
-
-            /// <summary>
             /// 上课周期
             /// </summary>
             [NameInMap("classPeriodType")]
@@ -52,47 +45,11 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             public int? ClassPeriodType { get; set; }
 
             /// <summary>
-            /// 开始时间
+            /// classroomId
             /// </summary>
-            [NameInMap("courserGroupItemStartDate")]
+            [NameInMap("classroomId")]
             [Validation(Required=false)]
-            public UpdateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemStartDate CourserGroupItemStartDate { get; set; }
-            public class UpdateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemStartDate : TeaModel {
-                [NameInMap("month")]
-                [Validation(Required=false)]
-                public int? Month { get; set; }
-                [NameInMap("year")]
-                [Validation(Required=false)]
-                public int? Year { get; set; }
-                [NameInMap("dayOfMonth")]
-                [Validation(Required=false)]
-                public int? DayOfMonth { get; set; }
-            };
-
-            /// <summary>
-            /// 课节
-            /// </summary>
-            [NameInMap("sectionIndex")]
-            [Validation(Required=false)]
-            public List<int?> SectionIndex { get; set; }
-
-            /// <summary>
-            /// 结束时间
-            /// </summary>
-            [NameInMap("courserGroupItemEndDate")]
-            [Validation(Required=false)]
-            public UpdateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemEndDate CourserGroupItemEndDate { get; set; }
-            public class UpdateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemEndDate : TeaModel {
-                [NameInMap("month")]
-                [Validation(Required=false)]
-                public int? Month { get; set; }
-                [NameInMap("year")]
-                [Validation(Required=false)]
-                public int? Year { get; set; }
-                [NameInMap("dayOfMonth")]
-                [Validation(Required=false)]
-                public int? DayOfMonth { get; set; }
-            };
+            public long? ClassroomId { get; set; }
 
             /// <summary>
             /// 课程类型
@@ -102,11 +59,54 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             public int? CourseType { get; set; }
 
             /// <summary>
-            /// classroomId
+            /// 结束时间
             /// </summary>
-            [NameInMap("classroomId")]
+            [NameInMap("courserGroupItemEndDate")]
             [Validation(Required=false)]
-            public long? ClassroomId { get; set; }
+            public UpdateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemEndDate CourserGroupItemEndDate { get; set; }
+            public class UpdateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemEndDate : TeaModel {
+                [NameInMap("dayOfMonth")]
+                [Validation(Required=false)]
+                public int? DayOfMonth { get; set; }
+                [NameInMap("month")]
+                [Validation(Required=false)]
+                public int? Month { get; set; }
+                [NameInMap("year")]
+                [Validation(Required=false)]
+                public int? Year { get; set; }
+            };
+
+            /// <summary>
+            /// 开始时间
+            /// </summary>
+            [NameInMap("courserGroupItemStartDate")]
+            [Validation(Required=false)]
+            public UpdateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemStartDate CourserGroupItemStartDate { get; set; }
+            public class UpdateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemStartDate : TeaModel {
+                [NameInMap("dayOfMonth")]
+                [Validation(Required=false)]
+                public int? DayOfMonth { get; set; }
+                [NameInMap("month")]
+                [Validation(Required=false)]
+                public int? Month { get; set; }
+                [NameInMap("year")]
+                [Validation(Required=false)]
+                public int? Year { get; set; }
+            };
+
+            /// <summary>
+            /// 一周的第几天
+            /// </summary>
+            [NameInMap("dayOfWeek")]
+            [Validation(Required=false)]
+            public int? DayOfWeek { get; set; }
+
+            /// <summary>
+            /// 课节
+            /// </summary>
+            [NameInMap("sectionIndex")]
+            [Validation(Required=false)]
+            public List<int?> SectionIndex { get; set; }
 
         }
 

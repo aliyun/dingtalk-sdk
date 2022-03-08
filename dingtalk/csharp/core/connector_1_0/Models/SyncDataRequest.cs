@@ -20,17 +20,13 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
         [Validation(Required=false)]
         public List<SyncDataRequestTriggerDataList> TriggerDataList { get; set; }
         public class SyncDataRequestTriggerDataList : TeaModel {
-            [NameInMap("triggerId")]
+            [NameInMap("action")]
             [Validation(Required=false)]
-            public string TriggerId { get; set; }
+            public string Action { get; set; }
 
             [NameInMap("customTriggerId")]
             [Validation(Required=false)]
             public string CustomTriggerId { get; set; }
-
-            [NameInMap("jsonData")]
-            [Validation(Required=false)]
-            public string JsonData { get; set; }
 
             [NameInMap("dataGmtCreate")]
             [Validation(Required=false)]
@@ -40,9 +36,13 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
             [Validation(Required=false)]
             public long? DataGmtModified { get; set; }
 
-            [NameInMap("action")]
+            [NameInMap("jsonData")]
             [Validation(Required=false)]
-            public string Action { get; set; }
+            public string JsonData { get; set; }
+
+            [NameInMap("triggerId")]
+            [Validation(Required=false)]
+            public string TriggerId { get; set; }
 
         }
 

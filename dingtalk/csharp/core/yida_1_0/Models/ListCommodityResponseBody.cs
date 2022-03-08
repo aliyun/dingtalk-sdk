@@ -17,11 +17,25 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public List<ListCommodityResponseBodyCommodityVOList> CommodityVOList { get; set; }
         public class ListCommodityResponseBodyCommodityVOList : TeaModel {
             /// <summary>
-            /// instanceId
+            /// accountDistributionNumber
             /// </summary>
-            [NameInMap("instanceId")]
+            [NameInMap("accountDistributionNumber")]
             [Validation(Required=false)]
-            public string InstanceId { get; set; }
+            public int? AccountDistributionNumber { get; set; }
+
+            /// <summary>
+            /// accountNum
+            /// </summary>
+            [NameInMap("accountNumber")]
+            [Validation(Required=false)]
+            public int? AccountNumber { get; set; }
+
+            /// <summary>
+            /// activationCode
+            /// </summary>
+            [NameInMap("activationCode")]
+            [Validation(Required=false)]
+            public string ActivationCode { get; set; }
 
             /// <summary>
             /// buyDate
@@ -38,32 +52,11 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             public string ExpireDateGMT { get; set; }
 
             /// <summary>
-            /// activationCode
+            /// instanceId
             /// </summary>
-            [NameInMap("activationCode")]
+            [NameInMap("instanceId")]
             [Validation(Required=false)]
-            public string ActivationCode { get; set; }
-
-            /// <summary>
-            /// accountNum
-            /// </summary>
-            [NameInMap("accountNumber")]
-            [Validation(Required=false)]
-            public int? AccountNumber { get; set; }
-
-            /// <summary>
-            /// accountDistributionNumber
-            /// </summary>
-            [NameInMap("accountDistributionNumber")]
-            [Validation(Required=false)]
-            public int? AccountDistributionNumber { get; set; }
-
-            /// <summary>
-            /// version
-            /// </summary>
-            [NameInMap("version")]
-            [Validation(Required=false)]
-            public int? Version { get; set; }
+            public string InstanceId { get; set; }
 
             /// <summary>
             /// status
@@ -71,6 +64,13 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             [NameInMap("status")]
             [Validation(Required=false)]
             public string Status { get; set; }
+
+            /// <summary>
+            /// version
+            /// </summary>
+            [NameInMap("version")]
+            [Validation(Required=false)]
+            public int? Version { get; set; }
 
         }
 

@@ -29,10 +29,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0.Models
         [Validation(Required=false)]
         public List<GetFlowDetailResponseBodyLogs> Logs { get; set; }
         public class GetFlowDetailResponseBodyLogs : TeaModel {
-            [NameInMap("operatorAccountName")]
-            [Validation(Required=false)]
-            public string OperatorAccountName { get; set; }
-
             [NameInMap("logType")]
             [Validation(Required=false)]
             public string LogType { get; set; }
@@ -44,6 +40,10 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0.Models
             [NameInMap("operateTime")]
             [Validation(Required=false)]
             public float? OperateTime { get; set; }
+
+            [NameInMap("operatorAccountName")]
+            [Validation(Required=false)]
+            public string OperatorAccountName { get; set; }
 
         }
 

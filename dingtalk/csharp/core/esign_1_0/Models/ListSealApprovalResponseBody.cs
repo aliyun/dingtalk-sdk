@@ -21,13 +21,39 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
             [Validation(Required=false)]
             public string ApprovalName { get; set; }
 
-            [NameInMap("status")]
+            [NameInMap("approvalNodes")]
             [Validation(Required=false)]
-            public string Status { get; set; }
+            public List<ListSealApprovalResponseBodyDataApprovalNodes> ApprovalNodes { get; set; }
+            public class ListSealApprovalResponseBodyDataApprovalNodes : TeaModel {
+                [NameInMap("approvalTime")]
+                [Validation(Required=false)]
+                public long? ApprovalTime { get; set; }
+
+                [NameInMap("approverName")]
+                [Validation(Required=false)]
+                public string ApproverName { get; set; }
+
+                [NameInMap("startTime")]
+                [Validation(Required=false)]
+                public long? StartTime { get; set; }
+
+                [NameInMap("status")]
+                [Validation(Required=false)]
+                public string Status { get; set; }
+
+            }
+
+            [NameInMap("endTime")]
+            [Validation(Required=false)]
+            public long? EndTime { get; set; }
 
             [NameInMap("refuseReason")]
             [Validation(Required=false)]
             public string RefuseReason { get; set; }
+
+            [NameInMap("sealIdImg")]
+            [Validation(Required=false)]
+            public string SealIdImg { get; set; }
 
             [NameInMap("sponsorAccountName")]
             [Validation(Required=false)]
@@ -37,35 +63,9 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
             [Validation(Required=false)]
             public long? StartTime { get; set; }
 
-            [NameInMap("endTime")]
+            [NameInMap("status")]
             [Validation(Required=false)]
-            public long? EndTime { get; set; }
-
-            [NameInMap("sealIdImg")]
-            [Validation(Required=false)]
-            public string SealIdImg { get; set; }
-
-            [NameInMap("approvalNodes")]
-            [Validation(Required=false)]
-            public List<ListSealApprovalResponseBodyDataApprovalNodes> ApprovalNodes { get; set; }
-            public class ListSealApprovalResponseBodyDataApprovalNodes : TeaModel {
-                [NameInMap("approverName")]
-                [Validation(Required=false)]
-                public string ApproverName { get; set; }
-
-                [NameInMap("status")]
-                [Validation(Required=false)]
-                public string Status { get; set; }
-
-                [NameInMap("startTime")]
-                [Validation(Required=false)]
-                public long? StartTime { get; set; }
-
-                [NameInMap("approvalTime")]
-                [Validation(Required=false)]
-                public long? ApprovalTime { get; set; }
-
-            }
+            public string Status { get; set; }
 
         }
 

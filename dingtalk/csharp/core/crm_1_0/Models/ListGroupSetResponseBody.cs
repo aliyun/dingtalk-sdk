@@ -31,34 +31,6 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         public List<ListGroupSetResponseBodyResultList> ResultList { get; set; }
         public class ListGroupSetResponseBodyResultList : TeaModel {
             /// <summary>
-            /// 群组名
-            /// </summary>
-            [NameInMap("name")]
-            [Validation(Required=false)]
-            public string Name { get; set; }
-
-            /// <summary>
-            /// 群组openGroupSetId
-            /// </summary>
-            [NameInMap("openGroupSetId")]
-            [Validation(Required=false)]
-            public string OpenGroupSetId { get; set; }
-
-            /// <summary>
-            /// 关系类型
-            /// </summary>
-            [NameInMap("relationType")]
-            [Validation(Required=false)]
-            public string RelationType { get; set; }
-
-            /// <summary>
-            /// 单个群的人数上限
-            /// </summary>
-            [NameInMap("memberQuota")]
-            [Validation(Required=false)]
-            public int? MemberQuota { get; set; }
-
-            /// <summary>
             /// 企业corpId
             /// </summary>
             [NameInMap("corpId")]
@@ -66,61 +38,32 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             public string CorpId { get; set; }
 
             /// <summary>
-            /// 群组内所有群的成员数量
+            /// 创建时间
             /// </summary>
-            [NameInMap("memberCount")]
+            [NameInMap("gmtCreate")]
             [Validation(Required=false)]
-            public int? MemberCount { get; set; }
+            public string GmtCreate { get; set; }
 
             /// <summary>
-            /// 群模板id
+            /// 修改时间
             /// </summary>
-            [NameInMap("templateId")]
+            [NameInMap("gmtModified")]
             [Validation(Required=false)]
-            public string TemplateId { get; set; }
+            public string GmtModified { get; set; }
 
             /// <summary>
-            /// 群主userId，裂变出的新群会自动设置该userId为群主
+            /// 群组内群数量（不包含已解散的群）。
             /// </summary>
-            [NameInMap("ownerUserId")]
+            [NameInMap("groupChatCount")]
             [Validation(Required=false)]
-            public string OwnerUserId { get; set; }
+            public int? GroupChatCount { get; set; }
 
             /// <summary>
-            /// 群管理员userId列表，多个用逗号隔开，裂变出的新群会自动设置这些userId为群管理员
+            /// 最新裂变群的群openConversationId
             /// </summary>
-            [NameInMap("managerUserIds")]
+            [NameInMap("lastOpenConversationId")]
             [Validation(Required=false)]
-            public string ManagerUserIds { get; set; }
-
-            /// <summary>
-            /// 群公告文本，裂变出的新群会自动设置上该群公告
-            /// </summary>
-            [NameInMap("notice")]
-            [Validation(Required=false)]
-            public string Notice { get; set; }
-
-            /// <summary>
-            /// 群公告是否置顶，0：不置顶，1：置顶。裂变出的新群会自动设置上该属性
-            /// </summary>
-            [NameInMap("noticeToped")]
-            [Validation(Required=false)]
-            public int? NoticeToped { get; set; }
-
-            /// <summary>
-            /// 群主
-            /// </summary>
-            [NameInMap("owner")]
-            [Validation(Required=false)]
-            public ListGroupSetResponseBodyResultListOwner Owner { get; set; }
-            public class ListGroupSetResponseBodyResultListOwner : TeaModel {
-                [NameInMap("name")]
-                [Validation(Required=false)]
-                public string Name { get; set; }
-                [NameInMap("userId")]
-                [Validation(Required=false)]
-                public string UserId { get; set; }
-            };
+            public string LastOpenConversationId { get; set; }
 
             /// <summary>
             /// 群管理员列表
@@ -146,32 +89,89 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             }
 
             /// <summary>
-            /// 最新裂变群的群openConversationId
+            /// 群管理员userId列表，多个用逗号隔开，裂变出的新群会自动设置这些userId为群管理员
             /// </summary>
-            [NameInMap("lastOpenConversationId")]
+            [NameInMap("managerUserIds")]
             [Validation(Required=false)]
-            public string LastOpenConversationId { get; set; }
+            public string ManagerUserIds { get; set; }
 
             /// <summary>
-            /// 创建时间
+            /// 群组内所有群的成员数量
             /// </summary>
-            [NameInMap("gmtCreate")]
+            [NameInMap("memberCount")]
             [Validation(Required=false)]
-            public string GmtCreate { get; set; }
+            public int? MemberCount { get; set; }
 
             /// <summary>
-            /// 修改时间
+            /// 单个群的人数上限
             /// </summary>
-            [NameInMap("gmtModified")]
+            [NameInMap("memberQuota")]
             [Validation(Required=false)]
-            public string GmtModified { get; set; }
+            public int? MemberQuota { get; set; }
 
             /// <summary>
-            /// 群组内群数量（不包含已解散的群）。
+            /// 群组名
             /// </summary>
-            [NameInMap("groupChatCount")]
+            [NameInMap("name")]
             [Validation(Required=false)]
-            public int? GroupChatCount { get; set; }
+            public string Name { get; set; }
+
+            /// <summary>
+            /// 群公告文本，裂变出的新群会自动设置上该群公告
+            /// </summary>
+            [NameInMap("notice")]
+            [Validation(Required=false)]
+            public string Notice { get; set; }
+
+            /// <summary>
+            /// 群公告是否置顶，0：不置顶，1：置顶。裂变出的新群会自动设置上该属性
+            /// </summary>
+            [NameInMap("noticeToped")]
+            [Validation(Required=false)]
+            public int? NoticeToped { get; set; }
+
+            /// <summary>
+            /// 群组openGroupSetId
+            /// </summary>
+            [NameInMap("openGroupSetId")]
+            [Validation(Required=false)]
+            public string OpenGroupSetId { get; set; }
+
+            /// <summary>
+            /// 群主
+            /// </summary>
+            [NameInMap("owner")]
+            [Validation(Required=false)]
+            public ListGroupSetResponseBodyResultListOwner Owner { get; set; }
+            public class ListGroupSetResponseBodyResultListOwner : TeaModel {
+                [NameInMap("name")]
+                [Validation(Required=false)]
+                public string Name { get; set; }
+                [NameInMap("userId")]
+                [Validation(Required=false)]
+                public string UserId { get; set; }
+            };
+
+            /// <summary>
+            /// 群主userId，裂变出的新群会自动设置该userId为群主
+            /// </summary>
+            [NameInMap("ownerUserId")]
+            [Validation(Required=false)]
+            public string OwnerUserId { get; set; }
+
+            /// <summary>
+            /// 关系类型
+            /// </summary>
+            [NameInMap("relationType")]
+            [Validation(Required=false)]
+            public string RelationType { get; set; }
+
+            /// <summary>
+            /// 群模板id
+            /// </summary>
+            [NameInMap("templateId")]
+            [Validation(Required=false)]
+            public string TemplateId { get; set; }
 
         }
 

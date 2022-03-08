@@ -17,25 +17,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public List<GetOperationRecordsResponseBodyResult> Result { get; set; }
         public class GetOperationRecordsResponseBodyResult : TeaModel {
             /// <summary>
-            /// processInstanceId
+            /// action
             /// </summary>
-            [NameInMap("processInstanceId")]
+            [NameInMap("action")]
             [Validation(Required=false)]
-            public string ProcessInstanceId { get; set; }
+            public string Action { get; set; }
 
             /// <summary>
-            /// showName
+            /// actionExt
             /// </summary>
-            [NameInMap("showName")]
+            [NameInMap("actionExit")]
             [Validation(Required=false)]
-            public string ShowName { get; set; }
-
-            /// <summary>
-            /// operatorNick
-            /// </summary>
-            [NameInMap("operatorNickName")]
-            [Validation(Required=false)]
-            public string OperatorNickName { get; set; }
+            public string ActionExit { get; set; }
 
             /// <summary>
             /// activeTime
@@ -43,6 +36,34 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             [NameInMap("activeTimeGMT")]
             [Validation(Required=false)]
             public string ActiveTimeGMT { get; set; }
+
+            /// <summary>
+            /// activityId
+            /// </summary>
+            [NameInMap("activityId")]
+            [Validation(Required=false)]
+            public string ActivityId { get; set; }
+
+            /// <summary>
+            /// id
+            /// </summary>
+            [NameInMap("dataId")]
+            [Validation(Required=false)]
+            public long? DataId { get; set; }
+
+            /// <summary>
+            /// digitalSign
+            /// </summary>
+            [NameInMap("digitalSign")]
+            [Validation(Required=false)]
+            public string DigitalSign { get; set; }
+
+            /// <summary>
+            /// files
+            /// </summary>
+            [NameInMap("files")]
+            [Validation(Required=false)]
+            public string Files { get; set; }
 
             /// <summary>
             /// operateTime
@@ -59,32 +80,11 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             public string OperateType { get; set; }
 
             /// <summary>
-            /// operatorStatus
+            /// operatorDisplayName
             /// </summary>
-            [NameInMap("operatorStatus")]
+            [NameInMap("operatorDisplayName")]
             [Validation(Required=false)]
-            public string OperatorStatus { get; set; }
-
-            /// <summary>
-            /// remark
-            /// </summary>
-            [NameInMap("remark")]
-            [Validation(Required=false)]
-            public string Remark { get; set; }
-
-            /// <summary>
-            /// taskHoldTime
-            /// </summary>
-            [NameInMap("taskHoldTimeGMT")]
-            [Validation(Required=false)]
-            public long? TaskHoldTimeGMT { get; set; }
-
-            /// <summary>
-            /// type
-            /// </summary>
-            [NameInMap("type")]
-            [Validation(Required=false)]
-            public string Type { get; set; }
+            public string OperatorDisplayName { get; set; }
 
             /// <summary>
             /// operatorName
@@ -94,6 +94,27 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             public string OperatorName { get; set; }
 
             /// <summary>
+            /// operatorNick
+            /// </summary>
+            [NameInMap("operatorNickName")]
+            [Validation(Required=false)]
+            public string OperatorNickName { get; set; }
+
+            /// <summary>
+            /// operatorPhotoUrl
+            /// </summary>
+            [NameInMap("operatorPhotoUrl")]
+            [Validation(Required=false)]
+            public string OperatorPhotoUrl { get; set; }
+
+            /// <summary>
+            /// operatorStatus
+            /// </summary>
+            [NameInMap("operatorStatus")]
+            [Validation(Required=false)]
+            public string OperatorStatus { get; set; }
+
+            /// <summary>
             /// operator
             /// </summary>
             [NameInMap("operatorUserId")]
@@ -101,25 +122,25 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             public string OperatorUserId { get; set; }
 
             /// <summary>
-            /// activityId
+            /// processInstanceId
             /// </summary>
-            [NameInMap("activityId")]
+            [NameInMap("processInstanceId")]
             [Validation(Required=false)]
-            public string ActivityId { get; set; }
+            public string ProcessInstanceId { get; set; }
 
             /// <summary>
-            /// taskType
+            /// remark
             /// </summary>
-            [NameInMap("taskType")]
+            [NameInMap("remark")]
             [Validation(Required=false)]
-            public string TaskType { get; set; }
+            public string Remark { get; set; }
 
             /// <summary>
-            /// taskExecuteType
+            /// showName
             /// </summary>
-            [NameInMap("taskExecuteType")]
+            [NameInMap("showName")]
             [Validation(Required=false)]
-            public string TaskExecuteType { get; set; }
+            public string ShowName { get; set; }
 
             /// <summary>
             /// size
@@ -129,39 +150,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             public int? Size { get; set; }
 
             /// <summary>
-            /// operatorDisplayName
+            /// taskExecuteType
             /// </summary>
-            [NameInMap("operatorDisplayName")]
+            [NameInMap("taskExecuteType")]
             [Validation(Required=false)]
-            public string OperatorDisplayName { get; set; }
+            public string TaskExecuteType { get; set; }
 
             /// <summary>
-            /// files
+            /// taskHoldTime
             /// </summary>
-            [NameInMap("files")]
+            [NameInMap("taskHoldTimeGMT")]
             [Validation(Required=false)]
-            public string Files { get; set; }
-
-            /// <summary>
-            /// action
-            /// </summary>
-            [NameInMap("action")]
-            [Validation(Required=false)]
-            public string Action { get; set; }
-
-            /// <summary>
-            /// actionExt
-            /// </summary>
-            [NameInMap("actionExit")]
-            [Validation(Required=false)]
-            public string ActionExit { get; set; }
-
-            /// <summary>
-            /// id
-            /// </summary>
-            [NameInMap("dataId")]
-            [Validation(Required=false)]
-            public long? DataId { get; set; }
+            public long? TaskHoldTimeGMT { get; set; }
 
             /// <summary>
             /// taskId
@@ -171,18 +171,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             public string TaskId { get; set; }
 
             /// <summary>
-            /// digitalSign
+            /// taskType
             /// </summary>
-            [NameInMap("digitalSign")]
+            [NameInMap("taskType")]
             [Validation(Required=false)]
-            public string DigitalSign { get; set; }
+            public string TaskType { get; set; }
 
             /// <summary>
-            /// operatorPhotoUrl
+            /// type
             /// </summary>
-            [NameInMap("operatorPhotoUrl")]
+            [NameInMap("type")]
             [Validation(Required=false)]
-            public string OperatorPhotoUrl { get; set; }
+            public string Type { get; set; }
 
         }
 

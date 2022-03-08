@@ -36,32 +36,25 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
             public List<ProcessForecastResponseBodyResultWorkflowActivityRules> WorkflowActivityRules { get; set; }
             public class ProcessForecastResponseBodyResultWorkflowActivityRules : TeaModel {
                 public string ActivityId { get; set; }
-                public string PrevActivityId { get; set; }
                 public string ActivityName { get; set; }
                 public string ActivityType { get; set; }
                 public bool? IsTargetSelect { get; set; }
+                public string PrevActivityId { get; set; }
                 public ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActor WorkflowActor { get; set; }
                 public class ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActor : TeaModel {
+                    /// <summary>
+                    /// 节点激活类型
+                    /// </summary>
+                    [NameInMap("actorActivateType")]
+                    [Validation(Required=false)]
+                    public string ActorActivateType { get; set; }
+
                     /// <summary>
                     /// 节点操作人 key
                     /// </summary>
                     [NameInMap("actorKey")]
                     [Validation(Required=false)]
                     public string ActorKey { get; set; }
-
-                    /// <summary>
-                    /// 节点操作人类型
-                    /// </summary>
-                    [NameInMap("actorType")]
-                    [Validation(Required=false)]
-                    public string ActorType { get; set; }
-
-                    /// <summary>
-                    /// 节点操作人选择范围类型
-                    /// </summary>
-                    [NameInMap("actorSelectionType")]
-                    [Validation(Required=false)]
-                    public string ActorSelectionType { get; set; }
 
                     /// <summary>
                     /// 节点操作人选择范围
@@ -74,17 +67,31 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
                         [Validation(Required=false)]
                         public List<ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRangeApprovals> Approvals { get; set; }
                         public class ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRangeApprovals : TeaModel {
-                            public string WorkNo { get; set; }
                             public string UserName { get; set; }
+                            public string WorkNo { get; set; }
                         }
                         [NameInMap("labels")]
                         [Validation(Required=false)]
                         public List<ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRangeLabels> Labels { get; set; }
                         public class ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRangeLabels : TeaModel {
-                            public string Labels { get; set; }
                             public string LabelNames { get; set; }
+                            public string Labels { get; set; }
                         }
                     };
+
+                    /// <summary>
+                    /// 节点操作人选择范围类型
+                    /// </summary>
+                    [NameInMap("actorSelectionType")]
+                    [Validation(Required=false)]
+                    public string ActorSelectionType { get; set; }
+
+                    /// <summary>
+                    /// 节点操作人类型
+                    /// </summary>
+                    [NameInMap("actorType")]
+                    [Validation(Required=false)]
+                    public string ActorType { get; set; }
 
                     /// <summary>
                     /// 是否允许多选，还是仅允许选一人
@@ -94,13 +101,6 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
                     public bool? AllowedMulti { get; set; }
 
                     /// <summary>
-                    /// 节点审批类型
-                    /// </summary>
-                    [NameInMap("approvalType")]
-                    [Validation(Required=false)]
-                    public string ApprovalType { get; set; }
-
-                    /// <summary>
                     /// 节点审批方式
                     /// </summary>
                     [NameInMap("approvalMethod")]
@@ -108,11 +108,11 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
                     public string ApprovalMethod { get; set; }
 
                     /// <summary>
-                    /// 节点激活类型
+                    /// 节点审批类型
                     /// </summary>
-                    [NameInMap("actorActivateType")]
+                    [NameInMap("approvalType")]
                     [Validation(Required=false)]
-                    public string ActorActivateType { get; set; }
+                    public string ApprovalType { get; set; }
 
                     /// <summary>
                     /// 该审批人节点在发起审批时是否必填

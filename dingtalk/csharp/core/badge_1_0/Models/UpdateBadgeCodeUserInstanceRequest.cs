@@ -17,18 +17,18 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0.Models
         public List<UpdateBadgeCodeUserInstanceRequestAvailableTimes> AvailableTimes { get; set; }
         public class UpdateBadgeCodeUserInstanceRequestAvailableTimes : TeaModel {
             /// <summary>
-            /// 开始时间
-            /// </summary>
-            [NameInMap("gmtStart")]
-            [Validation(Required=false)]
-            public string GmtStart { get; set; }
-
-            /// <summary>
             /// 结束时间
             /// </summary>
             [NameInMap("gmtEnd")]
             [Validation(Required=false)]
             public string GmtEnd { get; set; }
+
+            /// <summary>
+            /// 开始时间
+            /// </summary>
+            [NameInMap("gmtStart")]
+            [Validation(Required=false)]
+            public string GmtStart { get; set; }
 
         }
 
@@ -59,20 +59,6 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0.Models
         [NameInMap("corpId")]
         [Validation(Required=false)]
         public string CorpId { get; set; }
-
-        /// <summary>
-        /// ISV组织iID
-        /// </summary>
-        [NameInMap("dingIsvOrgId")]
-        [Validation(Required=false)]
-        public long? DingIsvOrgId { get; set; }
-
-        /// <summary>
-        /// 组织ID
-        /// </summary>
-        [NameInMap("dingOrgId")]
-        [Validation(Required=false)]
-        public long? DingOrgId { get; set; }
 
         /// <summary>
         /// 扩展参数

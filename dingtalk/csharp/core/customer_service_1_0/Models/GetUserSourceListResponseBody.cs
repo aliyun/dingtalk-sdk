@@ -13,29 +13,29 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_service_1_0.Models
         [Validation(Required=false)]
         public List<GetUserSourceListResponseBodyResult> Result { get; set; }
         public class GetUserSourceListResponseBodyResult : TeaModel {
-            [NameInMap("id")]
+            [NameInMap("config")]
             [Validation(Required=false)]
-            public long? Id { get; set; }
-
-            [NameInMap("status")]
-            [Validation(Required=false)]
-            public int? Status { get; set; }
+            public string Config { get; set; }
 
             [NameInMap("description")]
             [Validation(Required=false)]
             public string Description { get; set; }
 
-            [NameInMap("config")]
+            [NameInMap("id")]
             [Validation(Required=false)]
-            public string Config { get; set; }
-
-            [NameInMap("vendor")]
-            [Validation(Required=false)]
-            public string Vendor { get; set; }
+            public long? Id { get; set; }
 
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
+
+            [NameInMap("status")]
+            [Validation(Required=false)]
+            public int? Status { get; set; }
+
+            [NameInMap("vendor")]
+            [Validation(Required=false)]
+            public string Vendor { get; set; }
 
         }
 

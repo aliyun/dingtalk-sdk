@@ -51,17 +51,21 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         [Validation(Required=false)]
         public List<QueryFormInstanceResponseBodyFormInstDataList> FormInstDataList { get; set; }
         public class QueryFormInstanceResponseBodyFormInstDataList : TeaModel {
-            [NameInMap("componentType")]
-            [Validation(Required=false)]
-            public string ComponentType { get; set; }
-
             [NameInMap("bizAlias")]
             [Validation(Required=false)]
             public string BizAlias { get; set; }
 
+            [NameInMap("componentType")]
+            [Validation(Required=false)]
+            public string ComponentType { get; set; }
+
             [NameInMap("extendValue")]
             [Validation(Required=false)]
             public string ExtendValue { get; set; }
+
+            [NameInMap("key")]
+            [Validation(Required=false)]
+            public string Key { get; set; }
 
             [NameInMap("label")]
             [Validation(Required=false)]
@@ -70,10 +74,6 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
             [NameInMap("value")]
             [Validation(Required=false)]
             public string Value { get; set; }
-
-            [NameInMap("key")]
-            [Validation(Required=false)]
-            public string Key { get; set; }
 
         }
 

@@ -16,22 +16,6 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         [Validation(Required=false)]
         public string Description { get; set; }
 
-        [NameInMap("dingAccessTokenType")]
-        [Validation(Required=false)]
-        public string DingAccessTokenType { get; set; }
-
-        [NameInMap("dingIsvOrgId")]
-        [Validation(Required=false)]
-        public long? DingIsvOrgId { get; set; }
-
-        [NameInMap("dingOrgId")]
-        [Validation(Required=false)]
-        public long? DingOrgId { get; set; }
-
-        [NameInMap("dingUid")]
-        [Validation(Required=false)]
-        public long? DingUid { get; set; }
-
         /// <summary>
         /// 团队空间名称
         /// </summary>

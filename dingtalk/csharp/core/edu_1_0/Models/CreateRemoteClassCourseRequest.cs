@@ -17,18 +17,18 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public List<CreateRemoteClassCourseRequestAttendParticipants> AttendParticipants { get; set; }
         public class CreateRemoteClassCourseRequestAttendParticipants : TeaModel {
             /// <summary>
-            /// 参与方ID
-            /// </summary>
-            [NameInMap("participantId")]
-            [Validation(Required=false)]
-            public string ParticipantId { get; set; }
-
-            /// <summary>
             /// 组织ID
             /// </summary>
             [NameInMap("corpId")]
             [Validation(Required=false)]
             public string CorpId { get; set; }
+
+            /// <summary>
+            /// 参与方ID
+            /// </summary>
+            [NameInMap("participantId")]
+            [Validation(Required=false)]
+            public string ParticipantId { get; set; }
 
         }
 
@@ -45,30 +45,6 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         [NameInMap("courseName")]
         [Validation(Required=false)]
         public string CourseName { get; set; }
-
-        [NameInMap("dingClientId")]
-        [Validation(Required=false)]
-        public string DingClientId { get; set; }
-
-        [NameInMap("dingCorpId")]
-        [Validation(Required=false)]
-        public string DingCorpId { get; set; }
-
-        [NameInMap("dingIsvOrgId")]
-        [Validation(Required=false)]
-        public long? DingIsvOrgId { get; set; }
-
-        [NameInMap("dingOauthAppId")]
-        [Validation(Required=false)]
-        public long? DingOauthAppId { get; set; }
-
-        [NameInMap("dingSuiteKey")]
-        [Validation(Required=false)]
-        public string DingSuiteKey { get; set; }
-
-        [NameInMap("dingTokenGrantType")]
-        [Validation(Required=false)]
-        public int? DingTokenGrantType { get; set; }
 
         /// <summary>
         /// 结束时间

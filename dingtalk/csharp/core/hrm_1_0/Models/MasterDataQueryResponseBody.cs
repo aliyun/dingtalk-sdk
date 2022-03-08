@@ -38,6 +38,13 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
             public string OuterId { get; set; }
 
             /// <summary>
+            /// 关联id列表，一般为userId
+            /// </summary>
+            [NameInMap("relationId")]
+            [Validation(Required=false)]
+            public string RelationId { get; set; }
+
+            /// <summary>
             /// 领域
             /// </summary>
             [NameInMap("scopeCode")]
@@ -95,13 +102,6 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
                 public string FieldType { get; set; }
 
             }
-
-            /// <summary>
-            /// 关联id列表，一般为userId
-            /// </summary>
-            [NameInMap("relationId")]
-            [Validation(Required=false)]
-            public string RelationId { get; set; }
 
         }
 

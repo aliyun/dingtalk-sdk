@@ -23,24 +23,24 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
             [Validation(Required=false)]
             public List<QueryAllProcessInstancesResponseBodyResultList> List { get; set; }
             public class QueryAllProcessInstancesResponseBodyResultList : TeaModel {
-                public string ProcessInstanceId { get; set; }
-                public string MainProcessInstanceId { get; set; }
-                public long? FinishTime { get; set; }
                 public string AttachedProcessInstanceIds { get; set; }
                 public string BusinessId { get; set; }
-                public string Title { get; set; }
-                public string OriginatorDeptId { get; set; }
-                public string Result { get; set; }
                 public long? CreateTime { get; set; }
-                public string OriginatorUserid { get; set; }
-                public string Status { get; set; }
+                public long? FinishTime { get; set; }
                 public List<QueryAllProcessInstancesResponseBodyResultListFormComponentValues> FormComponentValues { get; set; }
                 public class QueryAllProcessInstancesResponseBodyResultListFormComponentValues : TeaModel {
-                    public string Name { get; set; }
-                    public string Id { get; set; }
-                    public string Value { get; set; }
                     public string ExtValue { get; set; }
+                    public string Id { get; set; }
+                    public string Name { get; set; }
+                    public string Value { get; set; }
                 }
+                public string MainProcessInstanceId { get; set; }
+                public string OriginatorDeptId { get; set; }
+                public string OriginatorUserid { get; set; }
+                public string ProcessInstanceId { get; set; }
+                public string Result { get; set; }
+                public string Status { get; set; }
+                public string Title { get; set; }
             }
             [NameInMap("maxResults")]
             [Validation(Required=false)]

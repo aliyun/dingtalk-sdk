@@ -24,25 +24,11 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
             public long? AgentId { get; set; }
 
             /// <summary>
-            /// 应用名称
-            /// </summary>
-            [NameInMap("name")]
-            [Validation(Required=false)]
-            public string Name { get; set; }
-
-            /// <summary>
             /// 应用描述
             /// </summary>
             [NameInMap("desc")]
             [Validation(Required=false)]
             public string Desc { get; set; }
-
-            /// <summary>
-            /// 应用图标
-            /// </summary>
-            [NameInMap("icon")]
-            [Validation(Required=false)]
-            public string Icon { get; set; }
 
             /// <summary>
             /// 应用移动端首页地址
@@ -52,11 +38,18 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
             public string HomepageLink { get; set; }
 
             /// <summary>
-            /// 应用PC端首页地址
+            /// 应用图标
             /// </summary>
-            [NameInMap("pcHomepageLink")]
+            [NameInMap("icon")]
             [Validation(Required=false)]
-            public string PcHomepageLink { get; set; }
+            public string Icon { get; set; }
+
+            /// <summary>
+            /// 应用名称
+            /// </summary>
+            [NameInMap("name")]
+            [Validation(Required=false)]
+            public string Name { get; set; }
 
             /// <summary>
             /// 应用管理后台地址
@@ -64,6 +57,13 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
             [NameInMap("ompLink")]
             [Validation(Required=false)]
             public string OmpLink { get; set; }
+
+            /// <summary>
+            /// 应用PC端首页地址
+            /// </summary>
+            [NameInMap("pcHomepageLink")]
+            [Validation(Required=false)]
+            public string PcHomepageLink { get; set; }
 
         }
 

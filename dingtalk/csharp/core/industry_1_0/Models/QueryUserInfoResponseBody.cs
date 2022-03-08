@@ -30,10 +30,10 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             [Validation(Required=false)]
             public List<QueryUserInfoResponseBodyContentGroup> Group { get; set; }
             public class QueryUserInfoResponseBodyContentGroup : TeaModel {
-                public long? Id { get; set; }
-                public string Name { get; set; }
                 public long? DeptId { get; set; }
                 public string DeptName { get; set; }
+                public long? Id { get; set; }
+                public string Name { get; set; }
             }
             [NameInMap("job")]
             [Validation(Required=false)]
@@ -108,9 +108,9 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             [Validation(Required=false)]
             public List<QueryUserInfoResponseBodyContentJobStatusList> JobStatusList { get; set; }
             public class QueryUserInfoResponseBodyContentJobStatusList : TeaModel {
-                public string Code { get; set; }
                 public string BizType { get; set; }
                 public string Category { get; set; }
+                public string Code { get; set; }
                 public string DisplayName { get; set; }
             }
             [NameInMap("uid")]

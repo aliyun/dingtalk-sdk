@@ -37,10 +37,6 @@ namespace AlibabaCloud.SDK.Dingtalktrade_1_0.Models
         [Validation(Required=false)]
         public long? DeptId { get; set; }
 
-        [NameInMap("dingIsvOrgId")]
-        [Validation(Required=false)]
-        public long? DingIsvOrgId { get; set; }
-
         /// <summary>
         /// 商品码
         /// </summary>

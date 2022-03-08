@@ -24,25 +24,11 @@ namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0.Models
         public List<QueryAppFunctionNodesResponseBodyData> Data { get; set; }
         public class QueryAppFunctionNodesResponseBodyData : TeaModel {
             /// <summary>
-            /// 节点编码。如果nodeType=FormModule,则为表单编码
-            /// </summary>
-            [NameInMap("schemaCode")]
-            [Validation(Required=false)]
-            public string SchemaCode { get; set; }
-
-            /// <summary>
             /// 节点所属的应用编码
             /// </summary>
             [NameInMap("appCode")]
             [Validation(Required=false)]
             public string AppCode { get; set; }
-
-            /// <summary>
-            /// 父节点的编码
-            /// </summary>
-            [NameInMap("parentCode")]
-            [Validation(Required=false)]
-            public string ParentCode { get; set; }
 
             /// <summary>
             /// 显示名称
@@ -52,11 +38,11 @@ namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0.Models
             public string DisplayName { get; set; }
 
             /// <summary>
-            /// 菜单可见类型。 Inactive=未指定 AllVisible=全部可见 PcVisible=仅pc可见 MobileVisible=仅移动端可见 InVisible=全部不可见
+            /// 是否是系统节点，如果是则无法删除
             /// </summary>
-            [NameInMap("nodeVisibleType")]
+            [NameInMap("isSystem")]
             [Validation(Required=false)]
-            public string NodeVisibleType { get; set; }
+            public bool? IsSystem { get; set; }
 
             /// <summary>
             /// 菜单节点类型。 AppPackage=应用程序 FormModule=列表模块(不能发起流程)、 WorkflowModule=流程列表模块(可以发起流程) ReportModule=报表模块 GroupModule=节点分组
@@ -66,11 +52,25 @@ namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0.Models
             public string NodeType { get; set; }
 
             /// <summary>
-            /// 菜单状态。 Inactive=未激活 Active=激活
+            /// 菜单可见类型。 Inactive=未指定 AllVisible=全部可见 PcVisible=仅pc可见 MobileVisible=仅移动端可见 InVisible=全部不可见
             /// </summary>
-            [NameInMap("state")]
+            [NameInMap("nodeVisibleType")]
             [Validation(Required=false)]
-            public string State { get; set; }
+            public string NodeVisibleType { get; set; }
+
+            /// <summary>
+            /// 父节点的编码
+            /// </summary>
+            [NameInMap("parentCode")]
+            [Validation(Required=false)]
+            public string ParentCode { get; set; }
+
+            /// <summary>
+            /// 节点编码。如果nodeType=FormModule,则为表单编码
+            /// </summary>
+            [NameInMap("schemaCode")]
+            [Validation(Required=false)]
+            public string SchemaCode { get; set; }
 
             /// <summary>
             /// 排序编号
@@ -80,11 +80,11 @@ namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0.Models
             public long? SortKey { get; set; }
 
             /// <summary>
-            /// 是否是系统节点，如果是则无法删除
+            /// 菜单状态。 Inactive=未激活 Active=激活
             /// </summary>
-            [NameInMap("isSystem")]
+            [NameInMap("state")]
             [Validation(Required=false)]
-            public bool? IsSystem { get; set; }
+            public string State { get; set; }
 
         }
 

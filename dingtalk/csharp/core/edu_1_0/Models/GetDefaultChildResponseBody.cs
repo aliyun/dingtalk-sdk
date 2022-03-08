@@ -17,21 +17,21 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         [Validation(Required=false)]
         public List<GetDefaultChildResponseBodyBindStudents> BindStudents { get; set; }
         public class GetDefaultChildResponseBodyBindStudents : TeaModel {
-            [NameInMap("corpId")]
-            [Validation(Required=false)]
-            public string CorpId { get; set; }
-
-            [NameInMap("staffId")]
-            [Validation(Required=false)]
-            public string StaffId { get; set; }
-
             [NameInMap("classId")]
             [Validation(Required=false)]
             public long? ClassId { get; set; }
 
+            [NameInMap("corpId")]
+            [Validation(Required=false)]
+            public string CorpId { get; set; }
+
             [NameInMap("period")]
             [Validation(Required=false)]
             public string Period { get; set; }
+
+            [NameInMap("staffId")]
+            [Validation(Required=false)]
+            public string StaffId { get; set; }
 
         }
 

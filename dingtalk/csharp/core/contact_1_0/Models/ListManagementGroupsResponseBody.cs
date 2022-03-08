@@ -38,20 +38,27 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
             public List<ListManagementGroupsResponseBodyGroupsMembers> Members { get; set; }
             public class ListManagementGroupsResponseBodyGroupsMembers : TeaModel {
                 /// <summary>
-                /// 成员类型
-                /// </summary>
-                [NameInMap("memberType")]
-                [Validation(Required=false)]
-                public string MemberType { get; set; }
-
-                /// <summary>
                 /// 成员id
                 /// </summary>
                 [NameInMap("memberId")]
                 [Validation(Required=false)]
                 public string MemberId { get; set; }
 
+                /// <summary>
+                /// 成员类型
+                /// </summary>
+                [NameInMap("memberType")]
+                [Validation(Required=false)]
+                public string MemberType { get; set; }
+
             }
+
+            /// <summary>
+            /// 资源列表
+            /// </summary>
+            [NameInMap("resourceIds")]
+            [Validation(Required=false)]
+            public List<string> ResourceIds { get; set; }
 
             /// <summary>
             /// 管理范围
@@ -60,20 +67,13 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
             [Validation(Required=false)]
             public ListManagementGroupsResponseBodyGroupsScope Scope { get; set; }
             public class ListManagementGroupsResponseBodyGroupsScope : TeaModel {
-                [NameInMap("scopeType")]
-                [Validation(Required=false)]
-                public int? ScopeType { get; set; }
                 [NameInMap("deptIds")]
                 [Validation(Required=false)]
                 public List<string> DeptIds { get; set; }
+                [NameInMap("scopeType")]
+                [Validation(Required=false)]
+                public int? ScopeType { get; set; }
             };
-
-            /// <summary>
-            /// 资源列表
-            /// </summary>
-            [NameInMap("resourceIds")]
-            [Validation(Required=false)]
-            public List<string> ResourceIds { get; set; }
 
         }
 

@@ -9,14 +9,14 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0.Models
 {
     public class RegisterAndActivateDeviceBatchRequest : TeaModel {
-        [NameInMap("dingCorpId")]
-        [Validation(Required=false)]
-        public string DingCorpId { get; set; }
-
         [NameInMap("registerAndActivateVOS")]
         [Validation(Required=false)]
         public List<RegisterAndActivateDeviceBatchRequestRegisterAndActivateVOS> RegisterAndActivateVOS { get; set; }
         public class RegisterAndActivateDeviceBatchRequestRegisterAndActivateVOS : TeaModel {
+            [NameInMap("deviceCallbackUrl")]
+            [Validation(Required=false)]
+            public string DeviceCallbackUrl { get; set; }
+
             [NameInMap("deviceCode")]
             [Validation(Required=false)]
             public string DeviceCode { get; set; }
@@ -24,10 +24,6 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0.Models
             [NameInMap("deviceDetailUrl")]
             [Validation(Required=false)]
             public string DeviceDetailUrl { get; set; }
-
-            [NameInMap("deviceCallbackUrl")]
-            [Validation(Required=false)]
-            public string DeviceCallbackUrl { get; set; }
 
             [NameInMap("deviceName")]
             [Validation(Required=false)]

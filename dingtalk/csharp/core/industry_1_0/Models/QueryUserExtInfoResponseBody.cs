@@ -17,25 +17,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         public List<QueryUserExtInfoResponseBodyContent> Content { get; set; }
         public class QueryUserExtInfoResponseBodyContent : TeaModel {
             /// <summary>
-            /// 扩展属性Key
+            /// 创建时间
             /// </summary>
-            [NameInMap("userExtendKey")]
+            [NameInMap("gmtCreate")]
             [Validation(Required=false)]
-            public string UserExtendKey { get; set; }
+            public string GmtCreate { get; set; }
 
             /// <summary>
-            /// 扩展属性值
+            /// 修改时间
             /// </summary>
-            [NameInMap("userExtendValue")]
+            [NameInMap("gmtModified")]
             [Validation(Required=false)]
-            public string UserExtendValue { get; set; }
-
-            /// <summary>
-            /// 扩展属性描述
-            /// </summary>
-            [NameInMap("userExtendDisplayName")]
-            [Validation(Required=false)]
-            public string UserExtendDisplayName { get; set; }
+            public string GmtModified { get; set; }
 
             /// <summary>
             /// 组织id
@@ -59,18 +52,25 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             public string UserCode { get; set; }
 
             /// <summary>
-            /// 创建时间
+            /// 扩展属性描述
             /// </summary>
-            [NameInMap("gmtCreate")]
+            [NameInMap("userExtendDisplayName")]
             [Validation(Required=false)]
-            public string GmtCreate { get; set; }
+            public string UserExtendDisplayName { get; set; }
 
             /// <summary>
-            /// 修改时间
+            /// 扩展属性Key
             /// </summary>
-            [NameInMap("gmtModified")]
+            [NameInMap("userExtendKey")]
             [Validation(Required=false)]
-            public string GmtModified { get; set; }
+            public string UserExtendKey { get; set; }
+
+            /// <summary>
+            /// 扩展属性值
+            /// </summary>
+            [NameInMap("userExtendValue")]
+            [Validation(Required=false)]
+            public string UserExtendValue { get; set; }
 
         }
 

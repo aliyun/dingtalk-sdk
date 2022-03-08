@@ -17,44 +17,12 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public List<GetInstancesResponseBodyData> Data { get; set; }
         public class GetInstancesResponseBodyData : TeaModel {
             /// <summary>
-            /// 创建时间
-            /// </summary>
-            [NameInMap("createTimeGMT")]
-            [Validation(Required=false)]
-            public string CreateTimeGMT { get; set; }
-
-            /// <summary>
-            /// processInstanceId
-            /// </summary>
-            [NameInMap("processInstanceId")]
-            [Validation(Required=false)]
-            public string ProcessInstanceId { get; set; }
-
-            /// <summary>
             /// actioners
             /// </summary>
             [NameInMap("actionExecutor")]
             [Validation(Required=false)]
             public List<GetInstancesResponseBodyDataActionExecutor> ActionExecutor { get; set; }
             public class GetInstancesResponseBodyDataActionExecutor : TeaModel {
-                /// <summary>
-                /// name
-                /// </summary>
-                [NameInMap("name")]
-                [Validation(Required=false)]
-                public GetInstancesResponseBodyDataActionExecutorName Name { get; set; }
-                public class GetInstancesResponseBodyDataActionExecutorName : TeaModel {
-                    [NameInMap("nameInEnglish")]
-                    [Validation(Required=false)]
-                    public string NameInEnglish { get; set; }
-                    [NameInMap("type")]
-                    [Validation(Required=false)]
-                    public string Type { get; set; }
-                    [NameInMap("nameInChinese")]
-                    [Validation(Required=false)]
-                    public string NameInChinese { get; set; }
-                };
-
                 /// <summary>
                 /// deptName
                 /// </summary>
@@ -63,18 +31,36 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
                 public string DeptName { get; set; }
 
                 /// <summary>
-                /// userId
-                /// </summary>
-                [NameInMap("userId")]
-                [Validation(Required=false)]
-                public string UserId { get; set; }
-
-                /// <summary>
                 /// email
                 /// </summary>
                 [NameInMap("email")]
                 [Validation(Required=false)]
                 public string Email { get; set; }
+
+                /// <summary>
+                /// name
+                /// </summary>
+                [NameInMap("name")]
+                [Validation(Required=false)]
+                public GetInstancesResponseBodyDataActionExecutorName Name { get; set; }
+                public class GetInstancesResponseBodyDataActionExecutorName : TeaModel {
+                    [NameInMap("nameInChinese")]
+                    [Validation(Required=false)]
+                    public string NameInChinese { get; set; }
+                    [NameInMap("nameInEnglish")]
+                    [Validation(Required=false)]
+                    public string NameInEnglish { get; set; }
+                    [NameInMap("type")]
+                    [Validation(Required=false)]
+                    public string Type { get; set; }
+                };
+
+                /// <summary>
+                /// userId
+                /// </summary>
+                [NameInMap("userId")]
+                [Validation(Required=false)]
+                public string UserId { get; set; }
 
             }
 
@@ -86,11 +72,11 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             public string ApprovedResult { get; set; }
 
             /// <summary>
-            /// formUuid
+            /// 创建时间
             /// </summary>
-            [NameInMap("formUuid")]
+            [NameInMap("createTimeGMT")]
             [Validation(Required=false)]
-            public string FormUuid { get; set; }
+            public string CreateTimeGMT { get; set; }
 
             /// <summary>
             /// data
@@ -100,11 +86,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             public Dictionary<string, object> Data { get; set; }
 
             /// <summary>
-            /// processCode
+            /// formUuid
             /// </summary>
-            [NameInMap("processCode")]
+            [NameInMap("formUuid")]
             [Validation(Required=false)]
-            public string ProcessCode { get; set; }
+            public string FormUuid { get; set; }
+
+            /// <summary>
+            /// instanceStatus
+            /// </summary>
+            [NameInMap("instanceStatus")]
+            [Validation(Required=false)]
+            public string InstanceStatus { get; set; }
 
             /// <summary>
             /// 修改时间
@@ -120,10 +113,23 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             [Validation(Required=false)]
             public GetInstancesResponseBodyDataOriginator Originator { get; set; }
             public class GetInstancesResponseBodyDataOriginator : TeaModel {
+                [NameInMap("deptName")]
+                [Validation(Required=false)]
+                public string DeptName { get; set; }
+                [NameInMap("email")]
+                [Validation(Required=false)]
+                public string Email { get; set; }
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public GetInstancesResponseBodyDataOriginatorName Name { get; set; }
                 public class GetInstancesResponseBodyDataOriginatorName : TeaModel {
+                    /// <summary>
+                    /// 中文名称
+                    /// </summary>
+                    [NameInMap("nameInChinese")]
+                    [Validation(Required=false)]
+                    public string NameInChinese { get; set; }
+
                     /// <summary>
                     /// 英文名称
                     /// </summary>
@@ -138,24 +144,25 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
                     [Validation(Required=false)]
                     public string Type { get; set; }
 
-                    /// <summary>
-                    /// 中文名称
-                    /// </summary>
-                    [NameInMap("nameInChinese")]
-                    [Validation(Required=false)]
-                    public string NameInChinese { get; set; }
-
                 }
-                [NameInMap("deptName")]
-                [Validation(Required=false)]
-                public string DeptName { get; set; }
                 [NameInMap("userId")]
                 [Validation(Required=false)]
                 public string UserId { get; set; }
-                [NameInMap("email")]
-                [Validation(Required=false)]
-                public string Email { get; set; }
             };
+
+            /// <summary>
+            /// processCode
+            /// </summary>
+            [NameInMap("processCode")]
+            [Validation(Required=false)]
+            public string ProcessCode { get; set; }
+
+            /// <summary>
+            /// processInstanceId
+            /// </summary>
+            [NameInMap("processInstanceId")]
+            [Validation(Required=false)]
+            public string ProcessInstanceId { get; set; }
 
             /// <summary>
             /// title
@@ -163,13 +170,6 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             [NameInMap("title")]
             [Validation(Required=false)]
             public string Title { get; set; }
-
-            /// <summary>
-            /// instanceStatus
-            /// </summary>
-            [NameInMap("instanceStatus")]
-            [Validation(Required=false)]
-            public string InstanceStatus { get; set; }
 
             /// <summary>
             /// version

@@ -24,20 +24,6 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         public List<QueryReceiptsByPageResponseBodyList> List { get; set; }
         public class QueryReceiptsByPageResponseBodyList : TeaModel {
             /// <summary>
-            /// 模型id
-            /// </summary>
-            [NameInMap("modelId")]
-            [Validation(Required=false)]
-            public string ModelId { get; set; }
-
-            /// <summary>
-            /// 数据来源：审批(approval)，开放接口(openapi)
-            /// </summary>
-            [NameInMap("source")]
-            [Validation(Required=false)]
-            public string Source { get; set; }
-
-            /// <summary>
             /// 数据来源于开放时，对应的微应用id
             /// </summary>
             [NameInMap("appId")]
@@ -50,6 +36,20 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [NameInMap("data")]
             [Validation(Required=false)]
             public string Data { get; set; }
+
+            /// <summary>
+            /// 模型id
+            /// </summary>
+            [NameInMap("modelId")]
+            [Validation(Required=false)]
+            public string ModelId { get; set; }
+
+            /// <summary>
+            /// 数据来源：审批(approval)，开放接口(openapi)
+            /// </summary>
+            [NameInMap("source")]
+            [Validation(Required=false)]
+            public string Source { get; set; }
 
         }
 

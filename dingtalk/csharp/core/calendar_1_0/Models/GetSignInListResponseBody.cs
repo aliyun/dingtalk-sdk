@@ -23,9 +23,12 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         [Validation(Required=false)]
         public List<GetSignInListResponseBodyUsers> Users { get; set; }
         public class GetSignInListResponseBodyUsers : TeaModel {
-            [NameInMap("userId")]
+            /// <summary>
+            /// 签到时间
+            /// </summary>
+            [NameInMap("checkInTime")]
             [Validation(Required=false)]
-            public string UserId { get; set; }
+            public long? CheckInTime { get; set; }
 
             /// <summary>
             /// 用户名
@@ -34,12 +37,9 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             [Validation(Required=false)]
             public string DisplayName { get; set; }
 
-            /// <summary>
-            /// 签到时间
-            /// </summary>
-            [NameInMap("checkInTime")]
+            [NameInMap("userId")]
             [Validation(Required=false)]
-            public long? CheckInTime { get; set; }
+            public string UserId { get; set; }
 
         }
 

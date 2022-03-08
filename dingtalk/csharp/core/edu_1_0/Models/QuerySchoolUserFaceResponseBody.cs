@@ -38,13 +38,6 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             public string FaceId { get; set; }
 
             /// <summary>
-            /// 员工id
-            /// </summary>
-            [NameInMap("userId")]
-            [Validation(Required=false)]
-            public string UserId { get; set; }
-
-            /// <summary>
             /// 员工名字
             /// </summary>
             [NameInMap("name")]
@@ -57,6 +50,13 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             [NameInMap("status")]
             [Validation(Required=false)]
             public int? Status { get; set; }
+
+            /// <summary>
+            /// 员工id
+            /// </summary>
+            [NameInMap("userId")]
+            [Validation(Required=false)]
+            public string UserId { get; set; }
 
         }
 

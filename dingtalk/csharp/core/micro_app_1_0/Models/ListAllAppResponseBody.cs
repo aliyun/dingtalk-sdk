@@ -24,48 +24,6 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
             public long? AgentId { get; set; }
 
             /// <summary>
-            /// 应用名称
-            /// </summary>
-            [NameInMap("name")]
-            [Validation(Required=false)]
-            public string Name { get; set; }
-
-            /// <summary>
-            /// 应用描述
-            /// </summary>
-            [NameInMap("desc")]
-            [Validation(Required=false)]
-            public string Desc { get; set; }
-
-            /// <summary>
-            /// 应用图标
-            /// </summary>
-            [NameInMap("icon")]
-            [Validation(Required=false)]
-            public string Icon { get; set; }
-
-            /// <summary>
-            /// 应用移动端首页地址
-            /// </summary>
-            [NameInMap("homepageLink")]
-            [Validation(Required=false)]
-            public string HomepageLink { get; set; }
-
-            /// <summary>
-            /// 应用PC端首页地址
-            /// </summary>
-            [NameInMap("pcHomepageLink")]
-            [Validation(Required=false)]
-            public string PcHomepageLink { get; set; }
-
-            /// <summary>
-            /// 应用管理后台地址
-            /// </summary>
-            [NameInMap("ompLink")]
-            [Validation(Required=false)]
-            public string OmpLink { get; set; }
-
-            /// <summary>
             /// 三方应用id，如果是企业内部应用，返回0
             /// </summary>
             [NameInMap("appId")]
@@ -80,11 +38,53 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
             public int? AppStatus { get; set; }
 
             /// <summary>
+            /// 应用描述
+            /// </summary>
+            [NameInMap("desc")]
+            [Validation(Required=false)]
+            public string Desc { get; set; }
+
+            /// <summary>
             /// 应用类型，0表示h5应用，1表示小程序
             /// </summary>
             [NameInMap("developType")]
             [Validation(Required=false)]
             public int? DevelopType { get; set; }
+
+            /// <summary>
+            /// 应用移动端首页地址
+            /// </summary>
+            [NameInMap("homepageLink")]
+            [Validation(Required=false)]
+            public string HomepageLink { get; set; }
+
+            /// <summary>
+            /// 应用图标
+            /// </summary>
+            [NameInMap("icon")]
+            [Validation(Required=false)]
+            public string Icon { get; set; }
+
+            /// <summary>
+            /// 应用名称
+            /// </summary>
+            [NameInMap("name")]
+            [Validation(Required=false)]
+            public string Name { get; set; }
+
+            /// <summary>
+            /// 应用管理后台地址
+            /// </summary>
+            [NameInMap("ompLink")]
+            [Validation(Required=false)]
+            public string OmpLink { get; set; }
+
+            /// <summary>
+            /// 应用PC端首页地址
+            /// </summary>
+            [NameInMap("pcHomepageLink")]
+            [Validation(Required=false)]
+            public string PcHomepageLink { get; set; }
 
         }
 

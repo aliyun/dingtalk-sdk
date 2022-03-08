@@ -14,6 +14,20 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         public List<GetCommentListResponseBodyData> Data { get; set; }
         public class GetCommentListResponseBodyData : TeaModel {
             /// <summary>
+            /// 评论ID
+            /// </summary>
+            [NameInMap("commentId")]
+            [Validation(Required=false)]
+            public string CommentId { get; set; }
+
+            /// <summary>
+            /// 评论时间
+            /// </summary>
+            [NameInMap("commentTime")]
+            [Validation(Required=false)]
+            public float? CommentTime { get; set; }
+
+            /// <summary>
             /// 评论者姓名
             /// </summary>
             [NameInMap("commentUserName")]
@@ -26,20 +40,6 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             [NameInMap("content")]
             [Validation(Required=false)]
             public string Content { get; set; }
-
-            /// <summary>
-            /// 评论时间
-            /// </summary>
-            [NameInMap("commentTime")]
-            [Validation(Required=false)]
-            public float? CommentTime { get; set; }
-
-            /// <summary>
-            /// 评论ID
-            /// </summary>
-            [NameInMap("commentId")]
-            [Validation(Required=false)]
-            public string CommentId { get; set; }
 
         }
 

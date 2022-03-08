@@ -17,6 +17,13 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         public List<QueryAllGroupResponseBodyContent> Content { get; set; }
         public class QueryAllGroupResponseBodyContent : TeaModel {
             /// <summary>
+            /// 所在科室Id
+            /// </summary>
+            [NameInMap("deptId")]
+            [Validation(Required=false)]
+            public long? DeptId { get; set; }
+
+            /// <summary>
             /// 医疗组Id
             /// </summary>
             [NameInMap("id")]
@@ -29,13 +36,6 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
-
-            /// <summary>
-            /// 所在科室Id
-            /// </summary>
-            [NameInMap("deptId")]
-            [Validation(Required=false)]
-            public long? DeptId { get; set; }
 
         }
 

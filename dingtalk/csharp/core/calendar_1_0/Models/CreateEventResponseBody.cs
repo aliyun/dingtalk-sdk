@@ -13,13 +13,13 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         [Validation(Required=false)]
         public List<CreateEventResponseBodyAttendees> Attendees { get; set; }
         public class CreateEventResponseBodyAttendees : TeaModel {
-            [NameInMap("id")]
-            [Validation(Required=false)]
-            public string Id { get; set; }
-
             [NameInMap("displayName")]
             [Validation(Required=false)]
             public string DisplayName { get; set; }
+
+            [NameInMap("id")]
+            [Validation(Required=false)]
+            public string Id { get; set; }
 
             /// <summary>
             /// 回复状态

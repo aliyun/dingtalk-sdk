@@ -38,18 +38,18 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0.Models
             public string DeviceName { get; set; }
 
             /// <summary>
-            /// 设备地址。
-            /// </summary>
-            [NameInMap("location")]
-            [Validation(Required=false)]
-            public string Location { get; set; }
-
-            /// <summary>
             /// 设备状态 0:在线 1:离线
             /// </summary>
             [NameInMap("deviceStatus")]
             [Validation(Required=false)]
             public int? DeviceStatus { get; set; }
+
+            /// <summary>
+            /// 第三方平台定制参数，企业内部系统忽略。
+            /// </summary>
+            [NameInMap("extraData")]
+            [Validation(Required=false)]
+            public Dictionary<string, object> ExtraData { get; set; }
 
             /// <summary>
             /// 视频流地址直播流地址，支持rtmp、flv、hls等格式，需要https协议。
@@ -59,11 +59,11 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0.Models
             public string LiveUrl { get; set; }
 
             /// <summary>
-            /// 第三方平台定制参数，企业内部系统忽略。
+            /// 设备地址。
             /// </summary>
-            [NameInMap("extraData")]
+            [NameInMap("location")]
             [Validation(Required=false)]
-            public Dictionary<string, object> ExtraData { get; set; }
+            public string Location { get; set; }
 
         }
 

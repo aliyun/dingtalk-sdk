@@ -27,8 +27,8 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
             [Validation(Required=false)]
             public List<GetFlowSignDetailResponseBodyDataSigners> Signers { get; set; }
             public class GetFlowSignDetailResponseBodyDataSigners : TeaModel {
-                public string SignerName { get; set; }
                 public int? SignStatus { get; set; }
+                public string SignerName { get; set; }
             }
         };
 

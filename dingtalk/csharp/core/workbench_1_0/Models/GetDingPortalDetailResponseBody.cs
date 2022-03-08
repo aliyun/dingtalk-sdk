@@ -31,25 +31,11 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0.Models
         public List<GetDingPortalDetailResponseBodyPages> Pages { get; set; }
         public class GetDingPortalDetailResponseBodyPages : TeaModel {
             /// <summary>
-            /// 页面ID
+            /// 是否全公司可见
             /// </summary>
-            [NameInMap("pageUuid")]
+            [NameInMap("allVisible")]
             [Validation(Required=false)]
-            public string PageUuid { get; set; }
-
-            /// <summary>
-            /// 页面名称
-            /// </summary>
-            [NameInMap("pageName")]
-            [Validation(Required=false)]
-            public string PageName { get; set; }
-
-            /// <summary>
-            /// 可见员工 ID 列表
-            /// </summary>
-            [NameInMap("userids")]
-            [Validation(Required=false)]
-            public List<string> Userids { get; set; }
+            public bool? AllVisible { get; set; }
 
             /// <summary>
             /// 可见部门 ID 铺
@@ -59,6 +45,20 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0.Models
             public List<long?> DeptIds { get; set; }
 
             /// <summary>
+            /// 页面名称
+            /// </summary>
+            [NameInMap("pageName")]
+            [Validation(Required=false)]
+            public string PageName { get; set; }
+
+            /// <summary>
+            /// 页面ID
+            /// </summary>
+            [NameInMap("pageUuid")]
+            [Validation(Required=false)]
+            public string PageUuid { get; set; }
+
+            /// <summary>
             /// 可见角色列表
             /// </summary>
             [NameInMap("roleIds")]
@@ -66,11 +66,11 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0.Models
             public List<long?> RoleIds { get; set; }
 
             /// <summary>
-            /// 是否全公司可见
+            /// 可见员工 ID 列表
             /// </summary>
-            [NameInMap("allVisible")]
+            [NameInMap("userids")]
             [Validation(Required=false)]
-            public bool? AllVisible { get; set; }
+            public List<string> Userids { get; set; }
 
         }
 

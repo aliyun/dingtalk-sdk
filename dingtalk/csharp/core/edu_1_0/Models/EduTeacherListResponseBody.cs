@@ -23,10 +23,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             [Validation(Required=false)]
             public List<EduTeacherListResponseBodyResultTeacherDetails> TeacherDetails { get; set; }
             public class EduTeacherListResponseBodyResultTeacherDetails : TeaModel {
-                public string UserId { get; set; }
                 public string Name { get; set; }
                 public string Role { get; set; }
                 public string UnionId { get; set; }
+                public string UserId { get; set; }
             }
         };
 

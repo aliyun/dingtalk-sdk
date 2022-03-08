@@ -17,13 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0.Models
         public string DeviceKey { get; set; }
 
         /// <summary>
-        /// 钉钉组织id
-        /// </summary>
-        [NameInMap("dingCorpId")]
-        [Validation(Required=false)]
-        public string DingCorpId { get; set; }
-
-        /// <summary>
         /// 消息体动态参数
         /// </summary>
         [NameInMap("paramsJson")]

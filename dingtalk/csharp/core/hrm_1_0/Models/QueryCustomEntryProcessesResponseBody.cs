@@ -23,6 +23,10 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
         [Validation(Required=false)]
         public List<QueryCustomEntryProcessesResponseBodyList> List { get; set; }
         public class QueryCustomEntryProcessesResponseBodyList : TeaModel {
+            [NameInMap("formDesc")]
+            [Validation(Required=false)]
+            public string FormDesc { get; set; }
+
             [NameInMap("formId")]
             [Validation(Required=false)]
             public string FormId { get; set; }
@@ -30,10 +34,6 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
             [NameInMap("formName")]
             [Validation(Required=false)]
             public string FormName { get; set; }
-
-            [NameInMap("formDesc")]
-            [Validation(Required=false)]
-            public string FormDesc { get; set; }
 
             [NameInMap("shortUrl")]
             [Validation(Required=false)]

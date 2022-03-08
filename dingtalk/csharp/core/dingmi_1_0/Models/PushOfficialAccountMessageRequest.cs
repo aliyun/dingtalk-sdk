@@ -10,13 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0.Models
 {
     public class PushOfficialAccountMessageRequest : TeaModel {
         /// <summary>
-        /// 企业corpId
-        /// </summary>
-        [NameInMap("dingCorpId")]
-        [Validation(Required=false)]
-        public string DingCorpId { get; set; }
-
-        /// <summary>
         /// 消息类型
         /// </summary>
         [NameInMap("msgKey")]

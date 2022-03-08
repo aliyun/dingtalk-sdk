@@ -17,26 +17,12 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
         public List<GetUserHolidaysResponseBodyResult> Result { get; set; }
         public class GetUserHolidaysResponseBodyResult : TeaModel {
             /// <summary>
-            /// 员工id
-            /// </summary>
-            [NameInMap("userId")]
-            [Validation(Required=false)]
-            public string UserId { get; set; }
-
-            /// <summary>
             /// 假期列表
             /// </summary>
             [NameInMap("holidays")]
             [Validation(Required=false)]
             public List<GetUserHolidaysResponseBodyResultHolidays> Holidays { get; set; }
             public class GetUserHolidaysResponseBodyResultHolidays : TeaModel {
-                /// <summary>
-                /// 日期
-                /// </summary>
-                [NameInMap("workDate")]
-                [Validation(Required=false)]
-                public long? WorkDate { get; set; }
-
                 /// <summary>
                 /// 假期名称
                 /// </summary>
@@ -58,7 +44,21 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
                 [Validation(Required=false)]
                 public long? RealWorkDate { get; set; }
 
+                /// <summary>
+                /// 日期
+                /// </summary>
+                [NameInMap("workDate")]
+                [Validation(Required=false)]
+                public long? WorkDate { get; set; }
+
             }
+
+            /// <summary>
+            /// 员工id
+            /// </summary>
+            [NameInMap("userId")]
+            [Validation(Required=false)]
+            public string UserId { get; set; }
 
         }
 

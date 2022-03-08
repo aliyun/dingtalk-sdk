@@ -17,27 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public long? ClassId { get; set; }
 
         /// <summary>
-        /// isvOrgId
-        /// </summary>
-        [NameInMap("dingIsvOrgId")]
-        [Validation(Required=false)]
-        public long? DingIsvOrgId { get; set; }
-
-        /// <summary>
-        /// opOrgId
-        /// </summary>
-        [NameInMap("dingOrgId")]
-        [Validation(Required=false)]
-        public long? DingOrgId { get; set; }
-
-        /// <summary>
-        /// suiteKey
-        /// </summary>
-        [NameInMap("dingSuiteKey")]
-        [Validation(Required=false)]
-        public string DingSuiteKey { get; set; }
-
-        /// <summary>
         /// 操作人用户ID
         /// </summary>
         [NameInMap("opUserId")]

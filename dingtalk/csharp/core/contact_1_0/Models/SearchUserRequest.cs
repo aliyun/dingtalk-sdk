@@ -9,10 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class SearchUserRequest : TeaModel {
-        [NameInMap("dingOrgId")]
-        [Validation(Required=false)]
-        public long? DingOrgId { get; set; }
-
         /// <summary>
         /// 精确匹配的字段。1：匹配用户名称。不填则为模糊匹配
         /// </summary>

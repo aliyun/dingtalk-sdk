@@ -13,9 +13,37 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public List<ListCrmPersonalCustomersResponseBodyResult> Result { get; set; }
         public class ListCrmPersonalCustomersResponseBodyResult : TeaModel {
-            [NameInMap("orgId")]
+            [NameInMap("appUuid")]
             [Validation(Required=false)]
-            public long? OrgId { get; set; }
+            public string AppUuid { get; set; }
+
+            [NameInMap("creatorNick")]
+            [Validation(Required=false)]
+            public string CreatorNick { get; set; }
+
+            [NameInMap("creatorUserId")]
+            [Validation(Required=false)]
+            public string CreatorUserId { get; set; }
+
+            [NameInMap("data")]
+            [Validation(Required=false)]
+            public Dictionary<string, object> Data { get; set; }
+
+            [NameInMap("extendData")]
+            [Validation(Required=false)]
+            public Dictionary<string, object> ExtendData { get; set; }
+
+            [NameInMap("formCode")]
+            [Validation(Required=false)]
+            public string FormCode { get; set; }
+
+            [NameInMap("gmtCreate")]
+            [Validation(Required=false)]
+            public string GmtCreate { get; set; }
+
+            [NameInMap("gmtModified")]
+            [Validation(Required=false)]
+            public string GmtModified { get; set; }
 
             [NameInMap("instanceId")]
             [Validation(Required=false)]
@@ -25,21 +53,9 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             [Validation(Required=false)]
             public string ObjectType { get; set; }
 
-            [NameInMap("creatorUserId")]
+            [NameInMap("orgId")]
             [Validation(Required=false)]
-            public string CreatorUserId { get; set; }
-
-            [NameInMap("creatorNick")]
-            [Validation(Required=false)]
-            public string CreatorNick { get; set; }
-
-            [NameInMap("data")]
-            [Validation(Required=false)]
-            public Dictionary<string, object> Data { get; set; }
-
-            [NameInMap("extendData")]
-            [Validation(Required=false)]
-            public Dictionary<string, object> ExtendData { get; set; }
+            public long? OrgId { get; set; }
 
             [NameInMap("permission")]
             [Validation(Required=false)]
@@ -53,29 +69,13 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                 public List<string> ParticipantStaffIds { get; set; }
             };
 
-            [NameInMap("appUuid")]
-            [Validation(Required=false)]
-            public string AppUuid { get; set; }
-
-            [NameInMap("formCode")]
-            [Validation(Required=false)]
-            public string FormCode { get; set; }
-
-            [NameInMap("procOutResult")]
-            [Validation(Required=false)]
-            public string ProcOutResult { get; set; }
-
             [NameInMap("procInstStatus")]
             [Validation(Required=false)]
             public string ProcInstStatus { get; set; }
 
-            [NameInMap("gmtCreate")]
+            [NameInMap("procOutResult")]
             [Validation(Required=false)]
-            public string GmtCreate { get; set; }
-
-            [NameInMap("gmtModified")]
-            [Validation(Required=false)]
-            public string GmtModified { get; set; }
+            public string ProcOutResult { get; set; }
 
         }
 

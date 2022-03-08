@@ -24,13 +24,6 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
             public string ActionKey { get; set; }
 
             /// <summary>
-            /// 按钮样式类型（101：蓝色线型主按钮样式，例如「同意」，102：黑色线型副按钮样式，例如「拒绝」）
-            /// </summary>
-            [NameInMap("buttonStyleType")]
-            [Validation(Required=false)]
-            public int? ButtonStyleType { get; set; }
-
-            /// <summary>
             /// 按钮类型（1：有操作的，2：直接跳转）
             /// </summary>
             [NameInMap("actionType")]
@@ -38,11 +31,11 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
             public int? ActionType { get; set; }
 
             /// <summary>
-            /// 按钮类型为直接跳转时，对应的跳转url
+            /// 按钮样式类型（101：蓝色线型主按钮样式，例如「同意」，102：黑色线型副按钮样式，例如「拒绝」）
             /// </summary>
-            [NameInMap("url")]
+            [NameInMap("buttonStyleType")]
             [Validation(Required=false)]
-            public string Url { get; set; }
+            public int? ButtonStyleType { get; set; }
 
             /// <summary>
             /// 按钮操作的显示名称（需支持国际化）
@@ -50,6 +43,13 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
             [NameInMap("nameI18n")]
             [Validation(Required=false)]
             public Dictionary<string, object> NameI18n { get; set; }
+
+            /// <summary>
+            /// 按钮类型为直接跳转时，对应的跳转url
+            /// </summary>
+            [NameInMap("url")]
+            [Validation(Required=false)]
+            public string Url { get; set; }
 
         }
 

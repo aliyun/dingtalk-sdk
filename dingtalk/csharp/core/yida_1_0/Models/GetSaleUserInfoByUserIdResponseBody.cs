@@ -24,13 +24,6 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public List<GetSaleUserInfoByUserIdResponseBodyCorpList> CorpList { get; set; }
         public class GetSaleUserInfoByUserIdResponseBodyCorpList : TeaModel {
             /// <summary>
-            /// namespace
-            /// </summary>
-            [NameInMap("namespace")]
-            [Validation(Required=false)]
-            public string Namespace { get; set; }
-
-            /// <summary>
             /// corpId
             /// </summary>
             [NameInMap("corpId")]
@@ -43,6 +36,13 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             [NameInMap("corpName")]
             [Validation(Required=false)]
             public string CorpName { get; set; }
+
+            /// <summary>
+            /// namespace
+            /// </summary>
+            [NameInMap("namespace")]
+            [Validation(Required=false)]
+            public string Namespace { get; set; }
 
         }
 

@@ -14,20 +14,6 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public List<SearchTeachersResponseBodyUsers> Users { get; set; }
         public class SearchTeachersResponseBodyUsers : TeaModel {
             /// <summary>
-            /// 用户ID
-            /// </summary>
-            [NameInMap("userId")]
-            [Validation(Required=false)]
-            public string UserId { get; set; }
-
-            /// <summary>
-            /// 名称
-            /// </summary>
-            [NameInMap("name")]
-            [Validation(Required=false)]
-            public string Name { get; set; }
-
-            /// <summary>
             /// 所在其中一个班级ID
             /// </summary>
             [NameInMap("classId")]
@@ -40,6 +26,20 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             [NameInMap("deptName")]
             [Validation(Required=false)]
             public string DeptName { get; set; }
+
+            /// <summary>
+            /// 名称
+            /// </summary>
+            [NameInMap("name")]
+            [Validation(Required=false)]
+            public string Name { get; set; }
+
+            /// <summary>
+            /// 用户ID
+            /// </summary>
+            [NameInMap("userId")]
+            [Validation(Required=false)]
+            public string UserId { get; set; }
 
         }
 

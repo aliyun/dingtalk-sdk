@@ -24,11 +24,11 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
         public List<ListRecycleFilesResponseBodyRecycleItems> RecycleItems { get; set; }
         public class ListRecycleFilesResponseBodyRecycleItems : TeaModel {
             /// <summary>
-            /// 回收站item id
+            /// 文件内容类型
             /// </summary>
-            [NameInMap("recycleItemId")]
+            [NameInMap("contentType")]
             [Validation(Required=false)]
-            public string RecycleItemId { get; set; }
+            public string ContentType { get; set; }
 
             /// <summary>
             /// 删除员工工号
@@ -45,6 +45,20 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
             public string DeleteTime { get; set; }
 
             /// <summary>
+            /// 文件名称
+            /// </summary>
+            [NameInMap("fileName")]
+            [Validation(Required=false)]
+            public string FileName { get; set; }
+
+            /// <summary>
+            /// 文件路径
+            /// </summary>
+            [NameInMap("filePath")]
+            [Validation(Required=false)]
+            public string FilePath { get; set; }
+
+            /// <summary>
             /// 文件大小
             /// </summary>
             [NameInMap("fileSize")]
@@ -59,25 +73,11 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
             public string FileType { get; set; }
 
             /// <summary>
-            /// 文件内容类型
+            /// 回收站item id
             /// </summary>
-            [NameInMap("contentType")]
+            [NameInMap("recycleItemId")]
             [Validation(Required=false)]
-            public string ContentType { get; set; }
-
-            /// <summary>
-            /// 文件名称
-            /// </summary>
-            [NameInMap("fileName")]
-            [Validation(Required=false)]
-            public string FileName { get; set; }
-
-            /// <summary>
-            /// 文件路径
-            /// </summary>
-            [NameInMap("filePath")]
-            [Validation(Required=false)]
-            public string FilePath { get; set; }
+            public string RecycleItemId { get; set; }
 
         }
 

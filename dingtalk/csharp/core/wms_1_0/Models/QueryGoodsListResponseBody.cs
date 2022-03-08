@@ -23,11 +23,11 @@ namespace AlibabaCloud.SDK.Dingtalkwms_1_0.Models
             [Validation(Required=false)]
             public List<QueryGoodsListResponseBodyResultList> List { get; set; }
             public class QueryGoodsListResponseBodyResultList : TeaModel {
-                public string InstanceId { get; set; }
-                public string GoodsNo { get; set; }
                 public string GoodsName { get; set; }
-                public string Unit { get; set; }
+                public string GoodsNo { get; set; }
+                public string InstanceId { get; set; }
                 public string ProductSpecs { get; set; }
+                public string Unit { get; set; }
             }
             [NameInMap("maxResults")]
             [Validation(Required=false)]

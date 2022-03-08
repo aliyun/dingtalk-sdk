@@ -17,27 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_service_1_0.Models
         public List<PageListActionResponseBodyList> List { get; set; }
         public class PageListActionResponseBodyList : TeaModel {
             /// <summary>
-            /// operatorId
-            /// </summary>
-            [NameInMap("operatorId")]
-            [Validation(Required=false)]
-            public string OperatorId { get; set; }
-
-            /// <summary>
-            /// operator
-            /// </summary>
-            [NameInMap("operator")]
-            [Validation(Required=false)]
-            public string Operator { get; set; }
-
-            /// <summary>
-            /// operatorRole
-            /// </summary>
-            [NameInMap("operatorRole")]
-            [Validation(Required=false)]
-            public string OperatorRole { get; set; }
-
-            /// <summary>
             /// actionCode
             /// </summary>
             [NameInMap("actionCode")]
@@ -52,18 +31,18 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_service_1_0.Models
             public List<PageListActionResponseBodyListActionContent> ActionContent { get; set; }
             public class PageListActionResponseBodyListActionContent : TeaModel {
                 /// <summary>
-                /// displayValue
-                /// </summary>
-                [NameInMap("displayValue")]
-                [Validation(Required=false)]
-                public string DisplayValue { get; set; }
-
-                /// <summary>
                 /// displayName
                 /// </summary>
                 [NameInMap("displayName")]
                 [Validation(Required=false)]
                 public string DisplayName { get; set; }
+
+                /// <summary>
+                /// displayValue
+                /// </summary>
+                [NameInMap("displayValue")]
+                [Validation(Required=false)]
+                public string DisplayValue { get; set; }
 
                 /// <summary>
                 /// name
@@ -87,6 +66,27 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_service_1_0.Models
                 public string ValueType { get; set; }
 
             }
+
+            /// <summary>
+            /// operator
+            /// </summary>
+            [NameInMap("operator")]
+            [Validation(Required=false)]
+            public string Operator { get; set; }
+
+            /// <summary>
+            /// operatorId
+            /// </summary>
+            [NameInMap("operatorId")]
+            [Validation(Required=false)]
+            public string OperatorId { get; set; }
+
+            /// <summary>
+            /// operatorRole
+            /// </summary>
+            [NameInMap("operatorRole")]
+            [Validation(Required=false)]
+            public string OperatorRole { get; set; }
 
         }
 

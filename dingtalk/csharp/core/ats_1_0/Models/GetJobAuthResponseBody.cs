@@ -24,18 +24,18 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
         public List<GetJobAuthResponseBodyJobOwners> JobOwners { get; set; }
         public class GetJobAuthResponseBodyJobOwners : TeaModel {
             /// <summary>
-            /// 员工标识
-            /// </summary>
-            [NameInMap("userId")]
-            [Validation(Required=false)]
-            public string UserId { get; set; }
-
-            /// <summary>
             /// 员工姓名
             /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
+
+            /// <summary>
+            /// 员工标识
+            /// </summary>
+            [NameInMap("userId")]
+            [Validation(Required=false)]
+            public string UserId { get; set; }
 
         }
 

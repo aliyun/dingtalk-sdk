@@ -17,25 +17,9 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         [Validation(Required=false)]
         public List<SearchOrgInnerGroupInfoResponseBodyItems> Items { get; set; }
         public class SearchOrgInnerGroupInfoResponseBodyItems : TeaModel {
-            [NameInMap("openConversationId")]
-            [Validation(Required=false)]
-            public string OpenConversationId { get; set; }
-
-            [NameInMap("groupOwner")]
-            [Validation(Required=false)]
-            public string GroupOwner { get; set; }
-
-            [NameInMap("groupName")]
-            [Validation(Required=false)]
-            public string GroupName { get; set; }
-
             [NameInMap("groupAdminsCount")]
             [Validation(Required=false)]
             public int? GroupAdminsCount { get; set; }
-
-            [NameInMap("groupMembersCount")]
-            [Validation(Required=false)]
-            public int? GroupMembersCount { get; set; }
 
             [NameInMap("groupCreateTime")]
             [Validation(Required=false)]
@@ -49,21 +33,33 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             [Validation(Required=false)]
             public string GroupLastActiveTimeShow { get; set; }
 
-            [NameInMap("syncToDingpan")]
+            [NameInMap("groupMembersCount")]
             [Validation(Required=false)]
-            public int? SyncToDingpan { get; set; }
+            public int? GroupMembersCount { get; set; }
 
-            [NameInMap("usedQuota")]
+            [NameInMap("groupName")]
             [Validation(Required=false)]
-            public long? UsedQuota { get; set; }
+            public string GroupName { get; set; }
+
+            [NameInMap("groupOwner")]
+            [Validation(Required=false)]
+            public string GroupOwner { get; set; }
 
             [NameInMap("groupOwnerUserId")]
             [Validation(Required=false)]
             public string GroupOwnerUserId { get; set; }
 
+            [NameInMap("openConversationId")]
+            [Validation(Required=false)]
+            public string OpenConversationId { get; set; }
+
             [NameInMap("status")]
             [Validation(Required=false)]
             public int? Status { get; set; }
+
+            [NameInMap("syncToDingpan")]
+            [Validation(Required=false)]
+            public int? SyncToDingpan { get; set; }
 
             [NameInMap("templateId")]
             [Validation(Required=false)]
@@ -72,6 +68,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             [NameInMap("templateName")]
             [Validation(Required=false)]
             public string TemplateName { get; set; }
+
+            [NameInMap("usedQuota")]
+            [Validation(Required=false)]
+            public long? UsedQuota { get; set; }
 
         }
 

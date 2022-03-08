@@ -17,11 +17,11 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         public List<AddOpenKnowledgeRequestAttachments> Attachments { get; set; }
         public class AddOpenKnowledgeRequestAttachments : TeaModel {
             /// <summary>
-            /// 附件名称
+            /// 媒体类型(扩展名大写)
             /// </summary>
-            [NameInMap("title")]
+            [NameInMap("mimeType")]
             [Validation(Required=false)]
-            public string Title { get; set; }
+            public string MimeType { get; set; }
 
             /// <summary>
             /// 附件URL
@@ -45,11 +45,11 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
             public string Suffix { get; set; }
 
             /// <summary>
-            /// 媒体类型(扩展名大写)
+            /// 附件名称
             /// </summary>
-            [NameInMap("mimeType")]
+            [NameInMap("title")]
             [Validation(Required=false)]
-            public string MimeType { get; set; }
+            public string Title { get; set; }
 
         }
 
@@ -66,22 +66,6 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         [NameInMap("content")]
         [Validation(Required=false)]
         public string Content { get; set; }
-
-        [NameInMap("dingIsvOrgId")]
-        [Validation(Required=false)]
-        public long? DingIsvOrgId { get; set; }
-
-        [NameInMap("dingOrgId")]
-        [Validation(Required=false)]
-        public long? DingOrgId { get; set; }
-
-        [NameInMap("dingSuiteKey")]
-        [Validation(Required=false)]
-        public string DingSuiteKey { get; set; }
-
-        [NameInMap("dingTokenGrantType")]
-        [Validation(Required=false)]
-        public long? DingTokenGrantType { get; set; }
 
         /// <summary>
         /// 生效结束时间(默认2100-01-01 23:59:59)

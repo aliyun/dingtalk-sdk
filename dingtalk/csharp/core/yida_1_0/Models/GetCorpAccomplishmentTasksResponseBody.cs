@@ -17,34 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public List<GetCorpAccomplishmentTasksResponseBodyData> Data { get; set; }
         public class GetCorpAccomplishmentTasksResponseBodyData : TeaModel {
             /// <summary>
-            /// originatorNickName
-            /// </summary>
-            [NameInMap("originatorNickName")]
-            [Validation(Required=false)]
-            public string OriginatorNickName { get; set; }
-
-            /// <summary>
-            /// processInstanceId
-            /// </summary>
-            [NameInMap("processInstanceId")]
-            [Validation(Required=false)]
-            public string ProcessInstanceId { get; set; }
-
-            /// <summary>
-            /// originatorName
-            /// </summary>
-            [NameInMap("originatorName")]
-            [Validation(Required=false)]
-            public string OriginatorName { get; set; }
-
-            /// <summary>
-            /// finishTime
-            /// </summary>
-            [NameInMap("finishTimeGMT")]
-            [Validation(Required=false)]
-            public string FinishTimeGMT { get; set; }
-
-            /// <summary>
             /// activeTime
             /// </summary>
             [NameInMap("activeTimeGMT")]
@@ -59,53 +31,11 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             public string ActualActionerId { get; set; }
 
             /// <summary>
-            /// originatorEmail
+            /// appType
             /// </summary>
-            [NameInMap("originatorEmail")]
+            [NameInMap("appType")]
             [Validation(Required=false)]
-            public string OriginatorEmail { get; set; }
-
-            /// <summary>
-            /// title
-            /// </summary>
-            [NameInMap("title")]
-            [Validation(Required=false)]
-            public string Title { get; set; }
-
-            /// <summary>
-            /// outResultName
-            /// </summary>
-            [NameInMap("outResultName")]
-            [Validation(Required=false)]
-            public string OutResultName { get; set; }
-
-            /// <summary>
-            /// outResult
-            /// </summary>
-            [NameInMap("outResult")]
-            [Validation(Required=false)]
-            public string OutResult { get; set; }
-
-            /// <summary>
-            /// originatorPhoto
-            /// </summary>
-            [NameInMap("originatorPhoto")]
-            [Validation(Required=false)]
-            public string OriginatorPhoto { get; set; }
-
-            /// <summary>
-            /// taskType
-            /// </summary>
-            [NameInMap("taskType")]
-            [Validation(Required=false)]
-            public string TaskType { get; set; }
-
-            /// <summary>
-            /// originatorNickNameEn
-            /// </summary>
-            [NameInMap("originatorNickNameInEnglish")]
-            [Validation(Required=false)]
-            public string OriginatorNickNameInEnglish { get; set; }
+            public string AppType { get; set; }
 
             /// <summary>
             /// createTime
@@ -115,25 +45,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             public string CreateTimeGMT { get; set; }
 
             /// <summary>
-            /// titleEn
+            /// finishTime
             /// </summary>
-            [NameInMap("titleInEnglish")]
+            [NameInMap("finishTimeGMT")]
             [Validation(Required=false)]
-            public string TitleInEnglish { get; set; }
+            public string FinishTimeGMT { get; set; }
 
             /// <summary>
-            /// appType
+            /// originatorEmail
             /// </summary>
-            [NameInMap("appType")]
+            [NameInMap("originatorEmail")]
             [Validation(Required=false)]
-            public string AppType { get; set; }
-
-            /// <summary>
-            /// originatorNameEn
-            /// </summary>
-            [NameInMap("originatorNameInEnglish")]
-            [Validation(Required=false)]
-            public string OriginatorNameInEnglish { get; set; }
+            public string OriginatorEmail { get; set; }
 
             /// <summary>
             /// originatorId
@@ -143,11 +66,60 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             public string OriginatorId { get; set; }
 
             /// <summary>
-            /// taskId
+            /// originatorName
             /// </summary>
-            [NameInMap("taskId")]
+            [NameInMap("originatorName")]
             [Validation(Required=false)]
-            public string TaskId { get; set; }
+            public string OriginatorName { get; set; }
+
+            /// <summary>
+            /// originatorNameEn
+            /// </summary>
+            [NameInMap("originatorNameInEnglish")]
+            [Validation(Required=false)]
+            public string OriginatorNameInEnglish { get; set; }
+
+            /// <summary>
+            /// originatorNickName
+            /// </summary>
+            [NameInMap("originatorNickName")]
+            [Validation(Required=false)]
+            public string OriginatorNickName { get; set; }
+
+            /// <summary>
+            /// originatorNickNameEn
+            /// </summary>
+            [NameInMap("originatorNickNameInEnglish")]
+            [Validation(Required=false)]
+            public string OriginatorNickNameInEnglish { get; set; }
+
+            /// <summary>
+            /// originatorPhoto
+            /// </summary>
+            [NameInMap("originatorPhoto")]
+            [Validation(Required=false)]
+            public string OriginatorPhoto { get; set; }
+
+            /// <summary>
+            /// outResult
+            /// </summary>
+            [NameInMap("outResult")]
+            [Validation(Required=false)]
+            public string OutResult { get; set; }
+
+            /// <summary>
+            /// outResultName
+            /// </summary>
+            [NameInMap("outResultName")]
+            [Validation(Required=false)]
+            public string OutResultName { get; set; }
+
+            /// <summary>
+            /// processInstanceId
+            /// </summary>
+            [NameInMap("processInstanceId")]
+            [Validation(Required=false)]
+            public string ProcessInstanceId { get; set; }
 
             /// <summary>
             /// status
@@ -155,6 +127,34 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             [NameInMap("status")]
             [Validation(Required=false)]
             public string Status { get; set; }
+
+            /// <summary>
+            /// taskId
+            /// </summary>
+            [NameInMap("taskId")]
+            [Validation(Required=false)]
+            public string TaskId { get; set; }
+
+            /// <summary>
+            /// taskType
+            /// </summary>
+            [NameInMap("taskType")]
+            [Validation(Required=false)]
+            public string TaskType { get; set; }
+
+            /// <summary>
+            /// title
+            /// </summary>
+            [NameInMap("title")]
+            [Validation(Required=false)]
+            public string Title { get; set; }
+
+            /// <summary>
+            /// titleEn
+            /// </summary>
+            [NameInMap("titleInEnglish")]
+            [Validation(Required=false)]
+            public string TitleInEnglish { get; set; }
 
         }
 

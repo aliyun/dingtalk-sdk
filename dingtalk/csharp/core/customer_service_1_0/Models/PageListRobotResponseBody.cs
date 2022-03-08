@@ -24,6 +24,20 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_service_1_0.Models
         public List<PageListRobotResponseBodyList> List { get; set; }
         public class PageListRobotResponseBodyList : TeaModel {
             /// <summary>
+            /// 机器人所在租户ID
+            /// </summary>
+            [NameInMap("accountId")]
+            [Validation(Required=false)]
+            public long? AccountId { get; set; }
+
+            /// <summary>
+            /// 机器人APPKEY
+            /// </summary>
+            [NameInMap("appKey")]
+            [Validation(Required=false)]
+            public string AppKey { get; set; }
+
+            /// <summary>
             /// 机器人自增Id
             /// </summary>
             [NameInMap("id")]
@@ -36,20 +50,6 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_service_1_0.Models
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
-
-            /// <summary>
-            /// 机器人APPKEY
-            /// </summary>
-            [NameInMap("appKey")]
-            [Validation(Required=false)]
-            public string AppKey { get; set; }
-
-            /// <summary>
-            /// 机器人所在租户ID
-            /// </summary>
-            [NameInMap("accountId")]
-            [Validation(Required=false)]
-            public long? AccountId { get; set; }
 
             /// <summary>
             /// 机器人状态

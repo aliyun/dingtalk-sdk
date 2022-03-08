@@ -16,10 +16,6 @@ namespace AlibabaCloud.SDK.Dingtalkapp_market_1_0.Models
         [Validation(Required=false)]
         public string BizNo { get; set; }
 
-        [NameInMap("dingCorpId")]
-        [Validation(Required=false)]
-        public string DingCorpId { get; set; }
-
         /// <summary>
         /// operateDate
         /// </summary>

@@ -46,26 +46,6 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             [Validation(Required=false)]
             public List<QueryClassScheduleResponseBodyConfigSectionModels> SectionModels { get; set; }
             public class QueryClassScheduleResponseBodyConfigSectionModels : TeaModel {
-                public string SectionName { get; set; }
-                public string SectionType { get; set; }
-                public long? SectionIndex { get; set; }
-                public QueryClassScheduleResponseBodyConfigSectionModelsStart Start { get; set; }
-                public class QueryClassScheduleResponseBodyConfigSectionModelsStart : TeaModel {
-                    /// <summary>
-                    /// 小时。
-                    /// </summary>
-                    [NameInMap("hour")]
-                    [Validation(Required=false)]
-                    public long? Hour { get; set; }
-
-                    /// <summary>
-                    /// 分钟
-                    /// </summary>
-                    [NameInMap("min")]
-                    [Validation(Required=false)]
-                    public long? Min { get; set; }
-
-                }
                 public QueryClassScheduleResponseBodyConfigSectionModelsEnd End { get; set; }
                 public class QueryClassScheduleResponseBodyConfigSectionModelsEnd : TeaModel {
                     /// <summary>
@@ -77,6 +57,26 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 
                     /// <summary>
                     /// 分钟。
+                    /// </summary>
+                    [NameInMap("min")]
+                    [Validation(Required=false)]
+                    public long? Min { get; set; }
+
+                }
+                public long? SectionIndex { get; set; }
+                public string SectionName { get; set; }
+                public string SectionType { get; set; }
+                public QueryClassScheduleResponseBodyConfigSectionModelsStart Start { get; set; }
+                public class QueryClassScheduleResponseBodyConfigSectionModelsStart : TeaModel {
+                    /// <summary>
+                    /// 小时。
+                    /// </summary>
+                    [NameInMap("hour")]
+                    [Validation(Required=false)]
+                    public long? Hour { get; set; }
+
+                    /// <summary>
+                    /// 分钟
                     /// </summary>
                     [NameInMap("min")]
                     [Validation(Required=false)]
@@ -120,6 +120,36 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public List<QueryClassScheduleResponseBodyCourseDTOS> CourseDTOS { get; set; }
         public class QueryClassScheduleResponseBodyCourseDTOS : TeaModel {
             /// <summary>
+            /// 课程所在班级id
+            /// </summary>
+            [NameInMap("classId")]
+            [Validation(Required=false)]
+            public long? ClassId { get; set; }
+
+            /// <summary>
+            /// 课堂列表
+            /// </summary>
+            [NameInMap("classrooms")]
+            [Validation(Required=false)]
+            public List<QueryClassScheduleResponseBodyCourseDTOSClassrooms> Classrooms { get; set; }
+            public class QueryClassScheduleResponseBodyCourseDTOSClassrooms : TeaModel {
+                /// <summary>
+                /// 交互信息
+                /// </summary>
+                [NameInMap("interactInfo")]
+                [Validation(Required=false)]
+                public string InteractInfo { get; set; }
+
+                /// <summary>
+                /// 课堂唯一标识
+                /// </summary>
+                [NameInMap("targetId")]
+                [Validation(Required=false)]
+                public string TargetId { get; set; }
+
+            }
+
+            /// <summary>
             /// 课程编码
             /// </summary>
             [NameInMap("code")]
@@ -127,18 +157,11 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             public string Code { get; set; }
 
             /// <summary>
-            /// 课程名称
+            /// 课程组编码
             /// </summary>
-            [NameInMap("name")]
+            [NameInMap("courseGroupCode")]
             [Validation(Required=false)]
-            public string Name { get; set; }
-
-            /// <summary>
-            /// 课程介绍
-            /// </summary>
-            [NameInMap("introduce")]
-            [Validation(Required=false)]
-            public string Introduce { get; set; }
+            public string CourseGroupCode { get; set; }
 
             /// <summary>
             /// 课程封面地址
@@ -146,20 +169,6 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             [NameInMap("coverUrl")]
             [Validation(Required=false)]
             public string CoverUrl { get; set; }
-
-            /// <summary>
-            /// 开始时间
-            /// </summary>
-            [NameInMap("startTime")]
-            [Validation(Required=false)]
-            public long? StartTime { get; set; }
-
-            /// <summary>
-            /// 结束时间
-            /// </summary>
-            [NameInMap("endTime")]
-            [Validation(Required=false)]
-            public long? EndTime { get; set; }
 
             /// <summary>
             /// 创建者组织id
@@ -183,6 +192,96 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             public string CreatorUserName { get; set; }
 
             /// <summary>
+            /// 课程参与人列表
+            /// </summary>
+            [NameInMap("eduUserModels")]
+            [Validation(Required=false)]
+            public List<QueryClassScheduleResponseBodyCourseDTOSEduUserModels> EduUserModels { get; set; }
+            public class QueryClassScheduleResponseBodyCourseDTOSEduUserModels : TeaModel {
+                [NameInMap("name")]
+                [Validation(Required=false)]
+                public string Name { get; set; }
+
+                /// <summary>
+                /// 用户uid
+                /// </summary>
+                [NameInMap("uid")]
+                [Validation(Required=false)]
+                public long? Uid { get; set; }
+
+                /// <summary>
+                /// 用户userid
+                /// </summary>
+                [NameInMap("userId")]
+                [Validation(Required=false)]
+                public string UserId { get; set; }
+
+            }
+
+            /// <summary>
+            /// 结束时间
+            /// </summary>
+            [NameInMap("endTime")]
+            [Validation(Required=false)]
+            public long? EndTime { get; set; }
+
+            /// <summary>
+            /// 课程扩展信息
+            /// </summary>
+            [NameInMap("extInfo")]
+            [Validation(Required=false)]
+            public string ExtInfo { get; set; }
+
+            /// <summary>
+            /// 课程介绍
+            /// </summary>
+            [NameInMap("introduce")]
+            [Validation(Required=false)]
+            public string Introduce { get; set; }
+
+            /// <summary>
+            /// 课程名称
+            /// </summary>
+            [NameInMap("name")]
+            [Validation(Required=false)]
+            public string Name { get; set; }
+
+            /// <summary>
+            /// 课程所在节次序列号
+            /// </summary>
+            [NameInMap("sectionIndex")]
+            [Validation(Required=false)]
+            public long? SectionIndex { get; set; }
+
+            /// <summary>
+            /// 课程名称
+            /// </summary>
+            [NameInMap("sectionName")]
+            [Validation(Required=false)]
+            public string SectionName { get; set; }
+
+            /// <summary>
+            /// 开始时间
+            /// </summary>
+            [NameInMap("startTime")]
+            [Validation(Required=false)]
+            public long? StartTime { get; set; }
+
+            /// <summary>
+            /// 课程状态
+            /// </summary>
+            [NameInMap("status")]
+            [Validation(Required=false)]
+            public long? Status { get; set; }
+
+            /// <summary>
+            /// 学科编码
+            /// </summary>
+            [NameInMap("subjectCode")]
+            [Validation(Required=false)]
+            public string SubjectCode { get; set; }
+
+            /// <summary>
             /// 老师CorpId
             /// </summary>
             [NameInMap("teacherCorpId")]
@@ -202,105 +301,6 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             [NameInMap("teacherUserName")]
             [Validation(Required=false)]
             public string TeacherUserName { get; set; }
-
-            /// <summary>
-            /// 学科编码
-            /// </summary>
-            [NameInMap("subjectCode")]
-            [Validation(Required=false)]
-            public string SubjectCode { get; set; }
-
-            /// <summary>
-            /// 课程组编码
-            /// </summary>
-            [NameInMap("courseGroupCode")]
-            [Validation(Required=false)]
-            public string CourseGroupCode { get; set; }
-
-            /// <summary>
-            /// 课程状态
-            /// </summary>
-            [NameInMap("status")]
-            [Validation(Required=false)]
-            public long? Status { get; set; }
-
-            /// <summary>
-            /// 课堂列表
-            /// </summary>
-            [NameInMap("classrooms")]
-            [Validation(Required=false)]
-            public List<QueryClassScheduleResponseBodyCourseDTOSClassrooms> Classrooms { get; set; }
-            public class QueryClassScheduleResponseBodyCourseDTOSClassrooms : TeaModel {
-                /// <summary>
-                /// 课堂唯一标识
-                /// </summary>
-                [NameInMap("targetId")]
-                [Validation(Required=false)]
-                public string TargetId { get; set; }
-
-                /// <summary>
-                /// 交互信息
-                /// </summary>
-                [NameInMap("interactInfo")]
-                [Validation(Required=false)]
-                public string InteractInfo { get; set; }
-
-            }
-
-            /// <summary>
-            /// 课程参与人列表
-            /// </summary>
-            [NameInMap("eduUserModels")]
-            [Validation(Required=false)]
-            public List<QueryClassScheduleResponseBodyCourseDTOSEduUserModels> EduUserModels { get; set; }
-            public class QueryClassScheduleResponseBodyCourseDTOSEduUserModels : TeaModel {
-                /// <summary>
-                /// 用户userid
-                /// </summary>
-                [NameInMap("userId")]
-                [Validation(Required=false)]
-                public string UserId { get; set; }
-
-                /// <summary>
-                /// 用户uid
-                /// </summary>
-                [NameInMap("uid")]
-                [Validation(Required=false)]
-                public long? Uid { get; set; }
-
-                [NameInMap("name")]
-                [Validation(Required=false)]
-                public string Name { get; set; }
-
-            }
-
-            /// <summary>
-            /// 课程名称
-            /// </summary>
-            [NameInMap("sectionName")]
-            [Validation(Required=false)]
-            public string SectionName { get; set; }
-
-            /// <summary>
-            /// 课程所在节次序列号
-            /// </summary>
-            [NameInMap("sectionIndex")]
-            [Validation(Required=false)]
-            public long? SectionIndex { get; set; }
-
-            /// <summary>
-            /// 课程所在班级id
-            /// </summary>
-            [NameInMap("classId")]
-            [Validation(Required=false)]
-            public long? ClassId { get; set; }
-
-            /// <summary>
-            /// 课程扩展信息
-            /// </summary>
-            [NameInMap("extInfo")]
-            [Validation(Required=false)]
-            public string ExtInfo { get; set; }
 
         }
 

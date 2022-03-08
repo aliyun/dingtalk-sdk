@@ -17,11 +17,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         public List<QueryHospitalDistrictInfoResponseBodyContent> Content { get; set; }
         public class QueryHospitalDistrictInfoResponseBodyContent : TeaModel {
             /// <summary>
-            /// 主键
+            /// 病区对应的物理地址
             /// </summary>
-            [NameInMap("id")]
+            [NameInMap("address")]
             [Validation(Required=false)]
-            public long? Id { get; set; }
+            public string Address { get; set; }
+
+            /// <summary>
+            /// 删除，0:正常，其他：已删除
+            /// </summary>
+            [NameInMap("deleted")]
+            [Validation(Required=false)]
+            public int? Deleted { get; set; }
 
             /// <summary>
             /// 院区或病区名称
@@ -38,27 +45,6 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             public int? DistrictType { get; set; }
 
             /// <summary>
-            /// 院区id
-            /// </summary>
-            [NameInMap("parentDistrictId")]
-            [Validation(Required=false)]
-            public long? ParentDistrictId { get; set; }
-
-            /// <summary>
-            /// 病区对应的物理地址
-            /// </summary>
-            [NameInMap("address")]
-            [Validation(Required=false)]
-            public string Address { get; set; }
-
-            /// <summary>
-            /// 删除，0:正常，其他：已删除
-            /// </summary>
-            [NameInMap("deleted")]
-            [Validation(Required=false)]
-            public int? Deleted { get; set; }
-
-            /// <summary>
             /// 创建时间
             /// </summary>
             [NameInMap("gmtCreate")]
@@ -71,6 +57,20 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             [NameInMap("gmtModified")]
             [Validation(Required=false)]
             public string GmtModified { get; set; }
+
+            /// <summary>
+            /// 主键
+            /// </summary>
+            [NameInMap("id")]
+            [Validation(Required=false)]
+            public long? Id { get; set; }
+
+            /// <summary>
+            /// 院区id
+            /// </summary>
+            [NameInMap("parentDistrictId")]
+            [Validation(Required=false)]
+            public long? ParentDistrictId { get; set; }
 
         }
 

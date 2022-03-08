@@ -14,11 +14,11 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public List<GetRunningTasksResponseBodyResult> Result { get; set; }
         public class GetRunningTasksResponseBodyResult : TeaModel {
             /// <summary>
-            /// createTime
+            /// activeTime
             /// </summary>
-            [NameInMap("createTimeGMT")]
+            [NameInMap("activeTimeGMT")]
             [Validation(Required=false)]
-            public string CreateTimeGMT { get; set; }
+            public string ActiveTimeGMT { get; set; }
 
             /// <summary>
             /// activityId
@@ -28,34 +28,6 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             public string ActivityId { get; set; }
 
             /// <summary>
-            /// processInstanceId
-            /// </summary>
-            [NameInMap("processInstanceId")]
-            [Validation(Required=false)]
-            public string ProcessInstanceId { get; set; }
-
-            /// <summary>
-            /// taskType
-            /// </summary>
-            [NameInMap("taskType")]
-            [Validation(Required=false)]
-            public string TaskType { get; set; }
-
-            /// <summary>
-            /// titleEn
-            /// </summary>
-            [NameInMap("titleInEnglish")]
-            [Validation(Required=false)]
-            public string TitleInEnglish { get; set; }
-
-            /// <summary>
-            /// activeTime
-            /// </summary>
-            [NameInMap("activeTimeGMT")]
-            [Validation(Required=false)]
-            public string ActiveTimeGMT { get; set; }
-
-            /// <summary>
             /// actualActionerId
             /// </summary>
             [NameInMap("actualActionerId")]
@@ -63,11 +35,11 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             public string ActualActionerId { get; set; }
 
             /// <summary>
-            /// originatorId
+            /// createTime
             /// </summary>
-            [NameInMap("originatorId")]
+            [NameInMap("createTimeGMT")]
             [Validation(Required=false)]
-            public string OriginatorId { get; set; }
+            public string CreateTimeGMT { get; set; }
 
             /// <summary>
             /// finishTime
@@ -77,11 +49,25 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             public string FinishTimeGMT { get; set; }
 
             /// <summary>
-            /// title
+            /// originatorId
             /// </summary>
-            [NameInMap("title")]
+            [NameInMap("originatorId")]
             [Validation(Required=false)]
-            public string Title { get; set; }
+            public string OriginatorId { get; set; }
+
+            /// <summary>
+            /// processInstanceId
+            /// </summary>
+            [NameInMap("processInstanceId")]
+            [Validation(Required=false)]
+            public string ProcessInstanceId { get; set; }
+
+            /// <summary>
+            /// status
+            /// </summary>
+            [NameInMap("status")]
+            [Validation(Required=false)]
+            public string Status { get; set; }
 
             /// <summary>
             /// taskId
@@ -91,11 +77,25 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             public string TaskId { get; set; }
 
             /// <summary>
-            /// status
+            /// taskType
             /// </summary>
-            [NameInMap("status")]
+            [NameInMap("taskType")]
             [Validation(Required=false)]
-            public string Status { get; set; }
+            public string TaskType { get; set; }
+
+            /// <summary>
+            /// title
+            /// </summary>
+            [NameInMap("title")]
+            [Validation(Required=false)]
+            public string Title { get; set; }
+
+            /// <summary>
+            /// titleEn
+            /// </summary>
+            [NameInMap("titleInEnglish")]
+            [Validation(Required=false)]
+            public string TitleInEnglish { get; set; }
 
         }
 

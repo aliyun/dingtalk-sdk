@@ -14,18 +14,11 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         public List<GetTrustDeviceListResponseBodyData> Data { get; set; }
         public class GetTrustDeviceListResponseBodyData : TeaModel {
             /// <summary>
-            /// 员工Id
+            /// 创建时间
             /// </summary>
-            [NameInMap("userId")]
+            [NameInMap("createTime")]
             [Validation(Required=false)]
-            public string UserId { get; set; }
-
-            /// <summary>
-            /// 平台类型
-            /// </summary>
-            [NameInMap("platform")]
-            [Validation(Required=false)]
-            public string Platform { get; set; }
+            public long? CreateTime { get; set; }
 
             /// <summary>
             /// mac地址
@@ -35,6 +28,13 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             public string MacAddress { get; set; }
 
             /// <summary>
+            /// 平台类型
+            /// </summary>
+            [NameInMap("platform")]
+            [Validation(Required=false)]
+            public string Platform { get; set; }
+
+            /// <summary>
             /// 设备状态
             /// </summary>
             [NameInMap("status")]
@@ -42,11 +42,11 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             public int? Status { get; set; }
 
             /// <summary>
-            /// 创建时间
+            /// 员工Id
             /// </summary>
-            [NameInMap("createTime")]
+            [NameInMap("userId")]
             [Validation(Required=false)]
-            public long? CreateTime { get; set; }
+            public string UserId { get; set; }
 
         }
 

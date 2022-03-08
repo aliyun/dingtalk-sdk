@@ -52,18 +52,18 @@ namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0.Models
         public List<LoadBizObjectsRequestSortByFields> SortByFields { get; set; }
         public class LoadBizObjectsRequestSortByFields : TeaModel {
             /// <summary>
-            /// 排序字段名
-            /// </summary>
-            [NameInMap("fieldName")]
-            [Validation(Required=false)]
-            public string FieldName { get; set; }
-
-            /// <summary>
             /// 排序方向。Ascending=升序，Descending=降序
             /// </summary>
             [NameInMap("direction")]
             [Validation(Required=false)]
             public string Direction { get; set; }
+
+            /// <summary>
+            /// 排序字段名
+            /// </summary>
+            [NameInMap("fieldName")]
+            [Validation(Required=false)]
+            public string FieldName { get; set; }
 
         }
 

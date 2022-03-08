@@ -9,10 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class SendRobotInteractiveCardRequest : TeaModel {
-        [NameInMap("RequestId")]
-        [Validation(Required=false)]
-        public string RequestId { get; set; }
-
         /// <summary>
         /// 唯一标识一张卡片的外部ID（卡片幂等ID，可用于更新或重复发送同一卡片到多个群会话）【备注：同一个outTrackId重复创建，卡片数据不覆盖更新】
         /// </summary>
@@ -33,42 +29,6 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         [NameInMap("cardTemplateId")]
         [Validation(Required=false)]
         public string CardTemplateId { get; set; }
-
-        [NameInMap("dingAccessTokenType")]
-        [Validation(Required=false)]
-        public string DingAccessTokenType { get; set; }
-
-        [NameInMap("dingClientId")]
-        [Validation(Required=false)]
-        public string DingClientId { get; set; }
-
-        [NameInMap("dingIsvOrgId")]
-        [Validation(Required=false)]
-        public long? DingIsvOrgId { get; set; }
-
-        [NameInMap("dingOauthAppId")]
-        [Validation(Required=false)]
-        public long? DingOauthAppId { get; set; }
-
-        [NameInMap("dingOpenAppId")]
-        [Validation(Required=false)]
-        public string DingOpenAppId { get; set; }
-
-        [NameInMap("dingOrgId")]
-        [Validation(Required=false)]
-        public long? DingOrgId { get; set; }
-
-        [NameInMap("dingSuiteKey")]
-        [Validation(Required=false)]
-        public string DingSuiteKey { get; set; }
-
-        [NameInMap("dingTokenGrantType")]
-        [Validation(Required=false)]
-        public long? DingTokenGrantType { get; set; }
-
-        [NameInMap("dingUid")]
-        [Validation(Required=false)]
-        public long? DingUid { get; set; }
 
         /// <summary>
         /// 【openConversationId & singleChatReceiver 二选一必填】接收卡片的加密群ID，特指多人群会话（非单聊）

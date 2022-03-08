@@ -16,14 +16,6 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0.Models
         [Validation(Required=false)]
         public string Content { get; set; }
 
-        [NameInMap("dingIsvOrgId")]
-        [Validation(Required=false)]
-        public long? DingIsvOrgId { get; set; }
-
-        [NameInMap("dingOrgId")]
-        [Validation(Required=false)]
-        public long? DingOrgId { get; set; }
-
         /// <summary>
         /// 消息ID
         /// </summary>

@@ -23,9 +23,9 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
             [Validation(Required=false)]
             public List<GetMachineUserResponseBodyResultUserList> UserList { get; set; }
             public class GetMachineUserResponseBodyResultUserList : TeaModel {
-                public string UserId { get; set; }
-                public string Name { get; set; }
                 public bool? HasFace { get; set; }
+                public string Name { get; set; }
+                public string UserId { get; set; }
             }
         };
 

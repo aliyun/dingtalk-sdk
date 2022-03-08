@@ -31,11 +31,18 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
             public string CorpName { get; set; }
 
             /// <summary>
-            /// 区域类型，值为county,town,community,residential，依次为区/县、乡/镇/街道、社区/村、小区
+            /// 组织行业名称
             /// </summary>
-            [NameInMap("regionType")]
+            [NameInMap("industry")]
             [Validation(Required=false)]
-            public string RegionType { get; set; }
+            public string Industry { get; set; }
+
+            /// <summary>
+            /// 组织行业码
+            /// </summary>
+            [NameInMap("industryCode")]
+            [Validation(Required=false)]
+            public int? IndustryCode { get; set; }
 
             /// <summary>
             /// 区域码
@@ -52,18 +59,11 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
             public string RegionLocation { get; set; }
 
             /// <summary>
-            /// 组织行业码
+            /// 区域类型，值为county,town,community,residential，依次为区/县、乡/镇/街道、社区/村、小区
             /// </summary>
-            [NameInMap("industryCode")]
+            [NameInMap("regionType")]
             [Validation(Required=false)]
-            public int? IndustryCode { get; set; }
-
-            /// <summary>
-            /// 组织行业名称
-            /// </summary>
-            [NameInMap("industry")]
-            [Validation(Required=false)]
-            public string Industry { get; set; }
+            public string RegionType { get; set; }
 
         }
 

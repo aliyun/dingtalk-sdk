@@ -17,6 +17,13 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public List<GetActivityListResponseBodyResult> Result { get; set; }
         public class GetActivityListResponseBodyResult : TeaModel {
             /// <summary>
+            /// activityId
+            /// </summary>
+            [NameInMap("activityId")]
+            [Validation(Required=false)]
+            public string ActivityId { get; set; }
+
+            /// <summary>
             /// activityName
             /// </summary>
             [NameInMap("activityName")]
@@ -29,13 +36,6 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             [NameInMap("activityNameInEnglish")]
             [Validation(Required=false)]
             public string ActivityNameInEnglish { get; set; }
-
-            /// <summary>
-            /// activityId
-            /// </summary>
-            [NameInMap("activityId")]
-            [Validation(Required=false)]
-            public string ActivityId { get; set; }
 
         }
 

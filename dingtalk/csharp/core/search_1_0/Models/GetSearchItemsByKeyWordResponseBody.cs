@@ -28,6 +28,13 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0.Models
         public List<GetSearchItemsByKeyWordResponseBodyValue> Value { get; set; }
         public class GetSearchItemsByKeyWordResponseBodyValue : TeaModel {
             /// <summary>
+            /// 数据项的脚注
+            /// </summary>
+            [NameInMap("footer")]
+            [Validation(Required=false)]
+            public string Footer { get; set; }
+
+            /// <summary>
             /// 创建时间
             /// </summary>
             [NameInMap("gmtCreate")]
@@ -42,41 +49,6 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0.Models
             public string GmtModified { get; set; }
 
             /// <summary>
-            /// 数据源id
-            /// </summary>
-            [NameInMap("tabId")]
-            [Validation(Required=false)]
-            public int? TabId { get; set; }
-
-            /// <summary>
-            /// 数据项的id,tabId和orgId相同的情况下，itemId唯一标识一条数据项
-            /// </summary>
-            [NameInMap("itemId")]
-            [Validation(Required=false)]
-            public string ItemId { get; set; }
-
-            /// <summary>
-            /// 数据项的标题
-            /// </summary>
-            [NameInMap("title")]
-            [Validation(Required=false)]
-            public string Title { get; set; }
-
-            /// <summary>
-            /// 数据项的脚注
-            /// </summary>
-            [NameInMap("footer")]
-            [Validation(Required=false)]
-            public string Footer { get; set; }
-
-            /// <summary>
-            /// 数据项的摘要
-            /// </summary>
-            [NameInMap("summary")]
-            [Validation(Required=false)]
-            public string Summary { get; set; }
-
-            /// <summary>
             /// 数据项的头像
             /// </summary>
             [NameInMap("icon")]
@@ -84,11 +56,11 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0.Models
             public string Icon { get; set; }
 
             /// <summary>
-            /// 数据项的默认url地址，若mobileUrl或pcUrl没有配置，则使用该url地址，默认url和mobileUrl、pcUrl至少配置其中一个
+            /// 数据项的id,tabId和orgId相同的情况下，itemId唯一标识一条数据项
             /// </summary>
-            [NameInMap("url")]
+            [NameInMap("itemId")]
             [Validation(Required=false)]
-            public string Url { get; set; }
+            public string ItemId { get; set; }
 
             /// <summary>
             /// 数据项的移动端跳转url地址，若同时配置默认url和mobileUrl，移动端跳转链接优先使用mobileUrl
@@ -103,6 +75,34 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0.Models
             [NameInMap("pcUrl")]
             [Validation(Required=false)]
             public string PcUrl { get; set; }
+
+            /// <summary>
+            /// 数据项的摘要
+            /// </summary>
+            [NameInMap("summary")]
+            [Validation(Required=false)]
+            public string Summary { get; set; }
+
+            /// <summary>
+            /// 数据源id
+            /// </summary>
+            [NameInMap("tabId")]
+            [Validation(Required=false)]
+            public int? TabId { get; set; }
+
+            /// <summary>
+            /// 数据项的标题
+            /// </summary>
+            [NameInMap("title")]
+            [Validation(Required=false)]
+            public string Title { get; set; }
+
+            /// <summary>
+            /// 数据项的默认url地址，若mobileUrl或pcUrl没有配置，则使用该url地址，默认url和mobileUrl、pcUrl至少配置其中一个
+            /// </summary>
+            [NameInMap("url")]
+            [Validation(Required=false)]
+            public string Url { get; set; }
 
         }
 

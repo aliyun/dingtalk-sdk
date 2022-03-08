@@ -17,46 +17,11 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         public List<QueryBatchTradeOrderResponseBodyBatchTradeOrderVOs> BatchTradeOrderVOs { get; set; }
         public class QueryBatchTradeOrderResponseBodyBatchTradeOrderVOs : TeaModel {
             /// <summary>
-            /// 批次号
-            /// </summary>
-            [NameInMap("outBatchNo")]
-            [Validation(Required=false)]
-            public string OutBatchNo { get; set; }
-
-            /// <summary>
             /// 支付宝批次订单号
             /// </summary>
             [NameInMap("alipayTransId")]
             [Validation(Required=false)]
             public string AlipayTransId { get; set; }
-
-            /// <summary>
-            /// 状态
-            /// </summary>
-            [NameInMap("status")]
-            [Validation(Required=false)]
-            public string Status { get; set; }
-
-            /// <summary>
-            /// 成功笔数
-            /// </summary>
-            [NameInMap("successCount")]
-            [Validation(Required=false)]
-            public long? SuccessCount { get; set; }
-
-            /// <summary>
-            /// 成功金额（元）
-            /// </summary>
-            [NameInMap("successAmount")]
-            [Validation(Required=false)]
-            public string SuccessAmount { get; set; }
-
-            /// <summary>
-            /// 失败笔数
-            /// </summary>
-            [NameInMap("failCount")]
-            [Validation(Required=false)]
-            public long? FailCount { get; set; }
 
             /// <summary>
             /// 明细处理失败的支付汇总金额
@@ -66,11 +31,18 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
             public string FailAmount { get; set; }
 
             /// <summary>
-            /// 批次的总金额（元）
+            /// 失败笔数
             /// </summary>
-            [NameInMap("totalAmount")]
+            [NameInMap("failCount")]
             [Validation(Required=false)]
-            public string TotalAmount { get; set; }
+            public long? FailCount { get; set; }
+
+            /// <summary>
+            /// 失败原因
+            /// </summary>
+            [NameInMap("failReason")]
+            [Validation(Required=false)]
+            public string FailReason { get; set; }
 
             /// <summary>
             /// 批次完成交易时间
@@ -87,11 +59,18 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
             public string GmtSubmit { get; set; }
 
             /// <summary>
-            /// 失败原因
+            /// 批次号
             /// </summary>
-            [NameInMap("failReason")]
+            [NameInMap("outBatchNo")]
             [Validation(Required=false)]
-            public string FailReason { get; set; }
+            public string OutBatchNo { get; set; }
+
+            /// <summary>
+            /// 付款人staffId
+            /// </summary>
+            [NameInMap("payerStaffId")]
+            [Validation(Required=false)]
+            public string PayerStaffId { get; set; }
 
             /// <summary>
             /// 付款方需要支付的金额（元）
@@ -108,11 +87,32 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
             public string PaymentCurrency { get; set; }
 
             /// <summary>
-            /// 付款人staffId
+            /// 状态
             /// </summary>
-            [NameInMap("payerStaffId")]
+            [NameInMap("status")]
             [Validation(Required=false)]
-            public string PayerStaffId { get; set; }
+            public string Status { get; set; }
+
+            /// <summary>
+            /// 成功金额（元）
+            /// </summary>
+            [NameInMap("successAmount")]
+            [Validation(Required=false)]
+            public string SuccessAmount { get; set; }
+
+            /// <summary>
+            /// 成功笔数
+            /// </summary>
+            [NameInMap("successCount")]
+            [Validation(Required=false)]
+            public long? SuccessCount { get; set; }
+
+            /// <summary>
+            /// 批次的总金额（元）
+            /// </summary>
+            [NameInMap("totalAmount")]
+            [Validation(Required=false)]
+            public string TotalAmount { get; set; }
 
         }
 

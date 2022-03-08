@@ -17,13 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         public List<QueryMedicalEventsResponseBodyContent> Content { get; set; }
         public class QueryMedicalEventsResponseBodyContent : TeaModel {
             /// <summary>
-            /// 事件id
-            /// </summary>
-            [NameInMap("eventId")]
-            [Validation(Required=false)]
-            public long? EventId { get; set; }
-
-            /// <summary>
             /// 事件code
             /// </summary>
             [NameInMap("code")]
@@ -36,6 +29,13 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             [NameInMap("content")]
             [Validation(Required=false)]
             public string Content { get; set; }
+
+            /// <summary>
+            /// 事件id
+            /// </summary>
+            [NameInMap("eventId")]
+            [Validation(Required=false)]
+            public long? EventId { get; set; }
 
         }
 

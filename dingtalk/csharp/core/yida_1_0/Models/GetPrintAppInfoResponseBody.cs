@@ -14,27 +14,11 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public List<GetPrintAppInfoResponseBodyResult> Result { get; set; }
         public class GetPrintAppInfoResponseBodyResult : TeaModel {
             /// <summary>
-            /// formInfoList
+            /// 应用名称
             /// </summary>
-            [NameInMap("formInfoList")]
+            [NameInMap("appName")]
             [Validation(Required=false)]
-            public List<GetPrintAppInfoResponseBodyResultFormInfoList> FormInfoList { get; set; }
-            public class GetPrintAppInfoResponseBodyResultFormInfoList : TeaModel {
-                /// <summary>
-                /// formUuid
-                /// </summary>
-                [NameInMap("formUuid")]
-                [Validation(Required=false)]
-                public string FormUuid { get; set; }
-
-                /// <summary>
-                /// formName
-                /// </summary>
-                [NameInMap("formName")]
-                [Validation(Required=false)]
-                public string FormName { get; set; }
-
-            }
+            public string AppName { get; set; }
 
             /// <summary>
             /// appType
@@ -44,11 +28,27 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             public string AppType { get; set; }
 
             /// <summary>
-            /// 应用名称
+            /// formInfoList
             /// </summary>
-            [NameInMap("appName")]
+            [NameInMap("formInfoList")]
             [Validation(Required=false)]
-            public string AppName { get; set; }
+            public List<GetPrintAppInfoResponseBodyResultFormInfoList> FormInfoList { get; set; }
+            public class GetPrintAppInfoResponseBodyResultFormInfoList : TeaModel {
+                /// <summary>
+                /// formName
+                /// </summary>
+                [NameInMap("formName")]
+                [Validation(Required=false)]
+                public string FormName { get; set; }
+
+                /// <summary>
+                /// formUuid
+                /// </summary>
+                [NameInMap("formUuid")]
+                [Validation(Required=false)]
+                public string FormUuid { get; set; }
+
+            }
 
             /// <summary>
             /// 图标链接

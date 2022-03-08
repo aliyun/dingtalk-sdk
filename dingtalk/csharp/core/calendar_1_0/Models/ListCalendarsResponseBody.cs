@@ -20,13 +20,13 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             [Validation(Required=false)]
             public List<ListCalendarsResponseBodyResponseCalendars> Calendars { get; set; }
             public class ListCalendarsResponseBodyResponseCalendars : TeaModel {
-                public string Id { get; set; }
-                public string Summary { get; set; }
                 public string Description { get; set; }
-                public string TimeZone { get; set; }
                 public string ETag { get; set; }
-                public string Type { get; set; }
+                public string Id { get; set; }
                 public string Privilege { get; set; }
+                public string Summary { get; set; }
+                public string TimeZone { get; set; }
+                public string Type { get; set; }
             }
         };
 

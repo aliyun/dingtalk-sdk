@@ -68,13 +68,13 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         [Validation(Required=false)]
         public List<GetTicketResponseBodyTakers> Takers { get; set; }
         public class GetTicketResponseBodyTakers : TeaModel {
-            [NameInMap("unionId")]
-            [Validation(Required=false)]
-            public string UnionId { get; set; }
-
             [NameInMap("nickName")]
             [Validation(Required=false)]
             public string NickName { get; set; }
+
+            [NameInMap("unionId")]
+            [Validation(Required=false)]
+            public string UnionId { get; set; }
 
         }
 

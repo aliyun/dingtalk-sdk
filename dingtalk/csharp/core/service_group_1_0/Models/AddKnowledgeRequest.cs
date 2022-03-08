@@ -17,11 +17,11 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         public List<AddKnowledgeRequestAttachmentList> AttachmentList { get; set; }
         public class AddKnowledgeRequestAttachmentList : TeaModel {
             /// <summary>
-            /// 附件名称
+            /// 多媒体类型
             /// </summary>
-            [NameInMap("title")]
+            [NameInMap("mime_type")]
             [Validation(Required=false)]
-            public string Title { get; set; }
+            public string MimeType { get; set; }
 
             /// <summary>
             /// 附件URL
@@ -45,11 +45,11 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
             public string Suffix { get; set; }
 
             /// <summary>
-            /// 多媒体类型
+            /// 附件名称
             /// </summary>
-            [NameInMap("mime_type")]
+            [NameInMap("title")]
             [Validation(Required=false)]
-            public string MimeType { get; set; }
+            public string Title { get; set; }
 
         }
 
@@ -59,22 +59,6 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         [NameInMap("content")]
         [Validation(Required=false)]
         public string Content { get; set; }
-
-        [NameInMap("dingIsvOrgId")]
-        [Validation(Required=false)]
-        public long? DingIsvOrgId { get; set; }
-
-        [NameInMap("dingOrgId")]
-        [Validation(Required=false)]
-        public long? DingOrgId { get; set; }
-
-        [NameInMap("dingSuiteKey")]
-        [Validation(Required=false)]
-        public string DingSuiteKey { get; set; }
-
-        [NameInMap("dingTokenGrantType")]
-        [Validation(Required=false)]
-        public long? DingTokenGrantType { get; set; }
 
         /// <summary>
         /// 知识点扩展问(多个用英文逗号隔开)

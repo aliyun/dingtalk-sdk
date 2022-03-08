@@ -24,18 +24,18 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
             public long? DeptId { get; set; }
 
             /// <summary>
-            /// parentId
-            /// </summary>
-            [NameInMap("parent_id")]
-            [Validation(Required=false)]
-            public long? ParentId { get; set; }
-
-            /// <summary>
             /// name
             /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
+
+            /// <summary>
+            /// parentId
+            /// </summary>
+            [NameInMap("parent_id")]
+            [Validation(Required=false)]
+            public long? ParentId { get; set; }
 
         }
 

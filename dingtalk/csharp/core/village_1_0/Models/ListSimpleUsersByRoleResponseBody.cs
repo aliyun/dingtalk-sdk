@@ -31,20 +31,6 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
         public List<ListSimpleUsersByRoleResponseBodyUserList> UserList { get; set; }
         public class ListSimpleUsersByRoleResponseBodyUserList : TeaModel {
             /// <summary>
-            /// 用户ID
-            /// </summary>
-            [NameInMap("userId")]
-            [Validation(Required=false)]
-            public string UserId { get; set; }
-
-            /// <summary>
-            /// unionId
-            /// </summary>
-            [NameInMap("unionId")]
-            [Validation(Required=false)]
-            public string UnionId { get; set; }
-
-            /// <summary>
             /// 工号
             /// </summary>
             [NameInMap("jobNumber")]
@@ -57,6 +43,20 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
+
+            /// <summary>
+            /// unionId
+            /// </summary>
+            [NameInMap("unionId")]
+            [Validation(Required=false)]
+            public string UnionId { get; set; }
+
+            /// <summary>
+            /// 用户ID
+            /// </summary>
+            [NameInMap("userId")]
+            [Validation(Required=false)]
+            public string UserId { get; set; }
 
         }
 

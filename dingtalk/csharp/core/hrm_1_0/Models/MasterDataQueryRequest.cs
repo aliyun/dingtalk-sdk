@@ -45,20 +45,6 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
         public List<MasterDataQueryRequestQueryParams> QueryParams { get; set; }
         public class MasterDataQueryRequestQueryParams : TeaModel {
             /// <summary>
-            /// 需要筛选的字段
-            /// </summary>
-            [NameInMap("fieldCode")]
-            [Validation(Required=false)]
-            public string FieldCode { get; set; }
-
-            /// <summary>
-            /// 筛选条件连接类型
-            /// </summary>
-            [NameInMap("joinType")]
-            [Validation(Required=false)]
-            public string JoinType { get; set; }
-
-            /// <summary>
             /// 筛选条件
             /// </summary>
             [NameInMap("conditionList")]
@@ -80,6 +66,20 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
                 public string Value { get; set; }
 
             }
+
+            /// <summary>
+            /// 需要筛选的字段
+            /// </summary>
+            [NameInMap("fieldCode")]
+            [Validation(Required=false)]
+            public string FieldCode { get; set; }
+
+            /// <summary>
+            /// 筛选条件连接类型
+            /// </summary>
+            [NameInMap("joinType")]
+            [Validation(Required=false)]
+            public string JoinType { get; set; }
 
         }
 

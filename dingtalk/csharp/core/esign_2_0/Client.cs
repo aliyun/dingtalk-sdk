@@ -50,11 +50,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
             {
-                realHeaders["serviceGroup"] = headers.ServiceGroup;
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -73,11 +73,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
             {
-                realHeaders["serviceGroup"] = headers.ServiceGroup;
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -103,11 +103,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
         public CancelCorpAuthResponse CancelCorpAuthWithOptions(CancelCorpAuthRequest request, CancelCorpAuthHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingCorpId))
-            {
-                body["dingCorpId"] = request.DingCorpId;
-            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -115,16 +110,15 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
             {
-                realHeaders["serviceGroup"] = headers.ServiceGroup;
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             return TeaModel.ToObject<CancelCorpAuthResponse>(DoROARequest("CancelCorpAuth", "esign_2.0", "HTTP", "POST", "AK", "/v2.0/esign/auths/cancel", "json", req, runtime));
         }
@@ -132,11 +126,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
         public async Task<CancelCorpAuthResponse> CancelCorpAuthWithOptionsAsync(CancelCorpAuthRequest request, CancelCorpAuthHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingCorpId))
-            {
-                body["dingCorpId"] = request.DingCorpId;
-            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -144,16 +133,15 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
             {
-                realHeaders["serviceGroup"] = headers.ServiceGroup;
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             return TeaModel.ToObject<CancelCorpAuthResponse>(await DoROARequestAsync("CancelCorpAuth", "esign_2.0", "HTTP", "POST", "AK", "/v2.0/esign/auths/cancel", "json", req, runtime));
         }
@@ -176,10 +164,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingCorpId))
-            {
-                body["dingCorpId"] = request.DingCorpId;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ItemCode))
             {
                 body["itemCode"] = request.ItemCode;
@@ -211,11 +195,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
             {
-                realHeaders["serviceGroup"] = headers.ServiceGroup;
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -229,10 +213,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingCorpId))
-            {
-                body["dingCorpId"] = request.DingCorpId;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ItemCode))
             {
                 body["itemCode"] = request.ItemCode;
@@ -264,11 +244,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
             {
-                realHeaders["serviceGroup"] = headers.ServiceGroup;
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -296,10 +276,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingCorpId))
-            {
-                body["dingCorpId"] = request.DingCorpId;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RedirectUrl))
             {
                 body["redirectUrl"] = request.RedirectUrl;
@@ -315,11 +291,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
             {
-                realHeaders["serviceGroup"] = headers.ServiceGroup;
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -333,10 +309,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingCorpId))
-            {
-                body["dingCorpId"] = request.DingCorpId;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RedirectUrl))
             {
                 body["redirectUrl"] = request.RedirectUrl;
@@ -352,11 +324,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
             {
-                realHeaders["serviceGroup"] = headers.ServiceGroup;
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -384,10 +356,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingCorpId))
-            {
-                body["dingCorpId"] = request.DingCorpId;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NoticeUrl))
             {
                 body["noticeUrl"] = request.NoticeUrl;
@@ -399,11 +367,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
             {
-                realHeaders["serviceGroup"] = headers.ServiceGroup;
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -417,10 +385,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingCorpId))
-            {
-                body["dingCorpId"] = request.DingCorpId;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NoticeUrl))
             {
                 body["noticeUrl"] = request.NoticeUrl;
@@ -432,11 +396,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
             {
-                realHeaders["serviceGroup"] = headers.ServiceGroup;
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -468,10 +432,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             {
                 body["ccs"] = request.Ccs;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingCorpId))
-            {
-                body["dingCorpId"] = request.DingCorpId;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Files))
             {
                 body["files"] = request.Files;
@@ -507,7 +467,7 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -525,10 +485,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             {
                 body["ccs"] = request.Ccs;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingCorpId))
-            {
-                body["dingCorpId"] = request.DingCorpId;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Files))
             {
                 body["files"] = request.Files;
@@ -564,7 +520,7 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -598,15 +554,15 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
             {
-                realHeaders["serviceGroup"] = headers.ServiceGroup;
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.TsignOpenAppId))
             {
-                realHeaders["tsignOpenAppId"] = headers.TsignOpenAppId;
+                realHeaders["tsignOpenAppId"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.TsignOpenAppId);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -625,15 +581,15 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
             {
-                realHeaders["serviceGroup"] = headers.ServiceGroup;
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.TsignOpenAppId))
             {
-                realHeaders["tsignOpenAppId"] = headers.TsignOpenAppId;
+                realHeaders["tsignOpenAppId"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.TsignOpenAppId);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -660,10 +616,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingCorpId))
-            {
-                body["dingCorpId"] = request.DingCorpId;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RedirectUrl))
             {
                 body["redirectUrl"] = request.RedirectUrl;
@@ -675,11 +627,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
             {
-                realHeaders["serviceGroup"] = headers.ServiceGroup;
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -693,10 +645,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingCorpId))
-            {
-                body["dingCorpId"] = request.DingCorpId;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RedirectUrl))
             {
                 body["redirectUrl"] = request.RedirectUrl;
@@ -708,11 +656,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
             {
-                realHeaders["serviceGroup"] = headers.ServiceGroup;
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -745,11 +693,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
             {
-                realHeaders["serviceGroup"] = headers.ServiceGroup;
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -767,11 +715,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
             {
-                realHeaders["serviceGroup"] = headers.ServiceGroup;
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -803,11 +751,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
             {
-                realHeaders["serviceGroup"] = headers.ServiceGroup;
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -825,11 +773,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
             {
-                realHeaders["serviceGroup"] = headers.ServiceGroup;
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -861,11 +809,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
             {
-                realHeaders["serviceGroup"] = headers.ServiceGroup;
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -883,11 +831,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
             {
-                realHeaders["serviceGroup"] = headers.ServiceGroup;
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -918,10 +866,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             {
                 body["account"] = request.Account;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingCorpId))
-            {
-                body["dingCorpId"] = request.DingCorpId;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SignContainer))
             {
                 body["signContainer"] = request.SignContainer;
@@ -937,11 +881,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
             {
-                realHeaders["serviceGroup"] = headers.ServiceGroup;
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -959,10 +903,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             {
                 body["account"] = request.Account;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingCorpId))
-            {
-                body["dingCorpId"] = request.DingCorpId;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SignContainer))
             {
                 body["signContainer"] = request.SignContainer;
@@ -978,11 +918,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
             {
-                realHeaders["serviceGroup"] = headers.ServiceGroup;
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -1016,11 +956,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
             {
-                realHeaders["serviceGroup"] = headers.ServiceGroup;
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -1039,11 +979,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
             {
-                realHeaders["serviceGroup"] = headers.ServiceGroup;
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -1082,10 +1022,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             {
                 body["convert2Pdf"] = request.Convert2Pdf;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingCorpId))
-            {
-                body["dingCorpId"] = request.DingCorpId;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FileName))
             {
                 body["fileName"] = request.FileName;
@@ -1101,11 +1037,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
             {
-                realHeaders["serviceGroup"] = headers.ServiceGroup;
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -1131,10 +1067,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             {
                 body["convert2Pdf"] = request.Convert2Pdf;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingCorpId))
-            {
-                body["dingCorpId"] = request.DingCorpId;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FileName))
             {
                 body["fileName"] = request.FileName;
@@ -1150,11 +1082,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
             {
-                realHeaders["serviceGroup"] = headers.ServiceGroup;
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -1188,11 +1120,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
             {
-                realHeaders["serviceGroup"] = headers.ServiceGroup;
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -1211,11 +1143,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
             {
-                realHeaders["serviceGroup"] = headers.ServiceGroup;
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -1248,11 +1180,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
             {
-                realHeaders["serviceGroup"] = headers.ServiceGroup;
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -1271,11 +1203,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
             {
-                realHeaders["serviceGroup"] = headers.ServiceGroup;
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -1307,11 +1239,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
             {
-                realHeaders["serviceGroup"] = headers.ServiceGroup;
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -1329,11 +1261,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
             {
-                realHeaders["serviceGroup"] = headers.ServiceGroup;
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -1366,11 +1298,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
             {
-                realHeaders["serviceGroup"] = headers.ServiceGroup;
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -1389,11 +1321,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
             {
-                realHeaders["serviceGroup"] = headers.ServiceGroup;
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -1426,11 +1358,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
             {
-                realHeaders["serviceGroup"] = headers.ServiceGroup;
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -1449,11 +1381,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
             {
-                realHeaders["serviceGroup"] = headers.ServiceGroup;
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -1488,10 +1420,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             {
                 body["ccs"] = request.Ccs;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingCorpId))
-            {
-                body["dingCorpId"] = request.DingCorpId;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Files))
             {
                 body["files"] = request.Files;
@@ -1523,11 +1451,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
             {
-                realHeaders["serviceGroup"] = headers.ServiceGroup;
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -1549,10 +1477,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             {
                 body["ccs"] = request.Ccs;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingCorpId))
-            {
-                body["dingCorpId"] = request.DingCorpId;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Files))
             {
                 body["files"] = request.Files;
@@ -1584,11 +1508,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
             {
-                realHeaders["serviceGroup"] = headers.ServiceGroup;
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -1616,10 +1540,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingCorpId))
-            {
-                body["dingCorpId"] = request.DingCorpId;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderCreateTime))
             {
                 body["orderCreateTime"] = request.OrderCreateTime;
@@ -1647,11 +1567,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
             {
-                realHeaders["serviceGroup"] = headers.ServiceGroup;
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -1665,10 +1585,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingCorpId))
-            {
-                body["dingCorpId"] = request.DingCorpId;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderCreateTime))
             {
                 body["orderCreateTime"] = request.OrderCreateTime;
@@ -1696,11 +1612,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
             {
-                realHeaders["serviceGroup"] = headers.ServiceGroup;
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -1728,10 +1644,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingCorpId))
-            {
-                body["dingCorpId"] = request.DingCorpId;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RedirectUrl))
             {
                 body["redirectUrl"] = request.RedirectUrl;
@@ -1747,11 +1659,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
             {
-                realHeaders["serviceGroup"] = headers.ServiceGroup;
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -1765,10 +1677,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingCorpId))
-            {
-                body["dingCorpId"] = request.DingCorpId;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RedirectUrl))
             {
                 body["redirectUrl"] = request.RedirectUrl;
@@ -1784,11 +1692,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
             {
-                realHeaders["serviceGroup"] = headers.ServiceGroup;
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {

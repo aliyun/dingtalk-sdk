@@ -24,11 +24,25 @@ namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0.Models
         public List<QueryProcessesInstanceResponseBodyData> Data { get; set; }
         public class QueryProcessesInstanceResponseBodyData : TeaModel {
             /// <summary>
-            /// 流程实例ID
+            /// 流程所属的应用编码
             /// </summary>
-            [NameInMap("processInstanceId")]
+            [NameInMap("appCode")]
             [Validation(Required=false)]
-            public string ProcessInstanceId { get; set; }
+            public string AppCode { get; set; }
+
+            /// <summary>
+            /// 流程关联的业务对象id
+            /// </summary>
+            [NameInMap("bizObjectId")]
+            [Validation(Required=false)]
+            public string BizObjectId { get; set; }
+
+            /// <summary>
+            /// 创建时间
+            /// </summary>
+            [NameInMap("createdTimeGMT")]
+            [Validation(Required=false)]
+            public string CreatedTimeGMT { get; set; }
 
             /// <summary>
             /// 钉钉流程Id
@@ -38,11 +52,46 @@ namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0.Models
             public string DingTalkProcessId { get; set; }
 
             /// <summary>
+            /// 完成时间
+            /// </summary>
+            [NameInMap("finishTimeGMT")]
+            [Validation(Required=false)]
+            public string FinishTimeGMT { get; set; }
+
+            /// <summary>
+            /// 流程发起人信息
+            /// </summary>
+            [NameInMap("originator")]
+            [Validation(Required=false)]
+            public QueryProcessesInstanceResponseBodyDataOriginator Originator { get; set; }
+            public class QueryProcessesInstanceResponseBodyDataOriginator : TeaModel {
+                [NameInMap("departmentId")]
+                [Validation(Required=false)]
+                public string DepartmentId { get; set; }
+                [NameInMap("departmentName")]
+                [Validation(Required=false)]
+                public string DepartmentName { get; set; }
+                [NameInMap("name")]
+                [Validation(Required=false)]
+                public string Name { get; set; }
+                [NameInMap("userId")]
+                [Validation(Required=false)]
+                public string UserId { get; set; }
+            };
+
+            /// <summary>
             /// 流程名称
             /// </summary>
             [NameInMap("processDisplayName")]
             [Validation(Required=false)]
             public string ProcessDisplayName { get; set; }
+
+            /// <summary>
+            /// 流程实例ID
+            /// </summary>
+            [NameInMap("processInstanceId")]
+            [Validation(Required=false)]
+            public string ProcessInstanceId { get; set; }
 
             /// <summary>
             /// 工作流模板的版本
@@ -59,55 +108,6 @@ namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0.Models
             public string SchemaCode { get; set; }
 
             /// <summary>
-            /// 流程关联的业务对象id
-            /// </summary>
-            [NameInMap("bizObjectId")]
-            [Validation(Required=false)]
-            public string BizObjectId { get; set; }
-
-            /// <summary>
-            /// 流程所属的应用编码
-            /// </summary>
-            [NameInMap("appCode")]
-            [Validation(Required=false)]
-            public string AppCode { get; set; }
-
-            /// <summary>
-            /// 状态。Initiated=初始化完成，Starting=正在启动，Running=正在运行，Finishing=正在结束，Finished=已完成，Canceled=已取
-            /// </summary>
-            [NameInMap("state")]
-            [Validation(Required=false)]
-            public string State { get; set; }
-
-            /// <summary>
-            /// 流程发起人信息
-            /// </summary>
-            [NameInMap("originator")]
-            [Validation(Required=false)]
-            public QueryProcessesInstanceResponseBodyDataOriginator Originator { get; set; }
-            public class QueryProcessesInstanceResponseBodyDataOriginator : TeaModel {
-                [NameInMap("userId")]
-                [Validation(Required=false)]
-                public string UserId { get; set; }
-                [NameInMap("name")]
-                [Validation(Required=false)]
-                public string Name { get; set; }
-                [NameInMap("departmentId")]
-                [Validation(Required=false)]
-                public string DepartmentId { get; set; }
-                [NameInMap("departmentName")]
-                [Validation(Required=false)]
-                public string DepartmentName { get; set; }
-            };
-
-            /// <summary>
-            /// 创建时间
-            /// </summary>
-            [NameInMap("createdTimeGMT")]
-            [Validation(Required=false)]
-            public string CreatedTimeGMT { get; set; }
-
-            /// <summary>
             /// 开始时间
             /// </summary>
             [NameInMap("startTimeGMT")]
@@ -115,11 +115,11 @@ namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0.Models
             public string StartTimeGMT { get; set; }
 
             /// <summary>
-            /// 完成时间
+            /// 状态。Initiated=初始化完成，Starting=正在启动，Running=正在运行，Finishing=正在结束，Finished=已完成，Canceled=已取
             /// </summary>
-            [NameInMap("finishTimeGMT")]
+            [NameInMap("state")]
             [Validation(Required=false)]
-            public string FinishTimeGMT { get; set; }
+            public string State { get; set; }
 
         }
 

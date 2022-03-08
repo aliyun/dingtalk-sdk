@@ -31,13 +31,6 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0.Models
             public string GmtModified { get; set; }
 
             /// <summary>
-            /// 数据源的id,范围为3000-4000
-            /// </summary>
-            [NameInMap("tabId")]
-            [Validation(Required=false)]
-            public int? TabId { get; set; }
-
-            /// <summary>
             /// 数据源名称
             /// </summary>
             [NameInMap("name")]
@@ -57,6 +50,13 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0.Models
             [NameInMap("status")]
             [Validation(Required=false)]
             public int? Status { get; set; }
+
+            /// <summary>
+            /// 数据源的id,范围为3000-4000
+            /// </summary>
+            [NameInMap("tabId")]
+            [Validation(Required=false)]
+            public int? TabId { get; set; }
 
         }
 

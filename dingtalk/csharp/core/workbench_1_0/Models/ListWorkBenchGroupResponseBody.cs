@@ -17,18 +17,18 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0.Models
         public List<ListWorkBenchGroupResponseBodyGroupList> GroupList { get; set; }
         public class ListWorkBenchGroupResponseBodyGroupList : TeaModel {
             /// <summary>
-            /// 分组名称
-            /// </summary>
-            [NameInMap("name")]
-            [Validation(Required=false)]
-            public string Name { get; set; }
-
-            /// <summary>
             /// 分组id
             /// </summary>
             [NameInMap("componentId")]
             [Validation(Required=false)]
             public string ComponentId { get; set; }
+
+            /// <summary>
+            /// 分组名称
+            /// </summary>
+            [NameInMap("name")]
+            [Validation(Required=false)]
+            public string Name { get; set; }
 
         }
 

@@ -38,27 +38,6 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0.Models
         public string Date { get; set; }
 
         /// <summary>
-        /// account
-        /// </summary>
-        [NameInMap("dingCorpId")]
-        [Validation(Required=false)]
-        public string DingCorpId { get; set; }
-
-        /// <summary>
-        /// suiteKey
-        /// </summary>
-        [NameInMap("dingSuiteKey")]
-        [Validation(Required=false)]
-        public string DingSuiteKey { get; set; }
-
-        /// <summary>
-        /// tokenGrantType
-        /// </summary>
-        [NameInMap("dingTokenGrantType")]
-        [Validation(Required=false)]
-        public long? DingTokenGrantType { get; set; }
-
-        /// <summary>
         /// 用车截止时间，按天管控，比如date传值2021-03-18 20:26:56、finished_date传值2021-03-30 20:26:56表示2021-03-18(含)到2021-03-30(含)之间可用车，该参数不传值情况使用date作为用车截止时间；
         /// </summary>
         [NameInMap("finishedDate")]

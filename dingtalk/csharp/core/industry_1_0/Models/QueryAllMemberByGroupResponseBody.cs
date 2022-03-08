@@ -17,6 +17,13 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         public List<QueryAllMemberByGroupResponseBodyContent> Content { get; set; }
         public class QueryAllMemberByGroupResponseBodyContent : TeaModel {
             /// <summary>
+            /// 工号
+            /// </summary>
+            [NameInMap("jobNum")]
+            [Validation(Required=false)]
+            public string JobNum { get; set; }
+
+            /// <summary>
             /// 用户Id
             /// </summary>
             [NameInMap("uid")]
@@ -29,13 +36,6 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             [NameInMap("userName")]
             [Validation(Required=false)]
             public string UserName { get; set; }
-
-            /// <summary>
-            /// 工号
-            /// </summary>
-            [NameInMap("jobNum")]
-            [Validation(Required=false)]
-            public string JobNum { get; set; }
 
         }
 

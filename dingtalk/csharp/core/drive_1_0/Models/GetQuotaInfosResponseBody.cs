@@ -17,13 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
         public List<GetQuotaInfosResponseBodyQuotas> Quotas { get; set; }
         public class GetQuotaInfosResponseBodyQuotas : TeaModel {
             /// <summary>
-            /// 容量类型
-            /// </summary>
-            [NameInMap("type")]
-            [Validation(Required=false)]
-            public string Type { get; set; }
-
-            /// <summary>
             /// 容量标识符
             /// </summary>
             [NameInMap("identifier")]
@@ -36,6 +29,13 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
             [NameInMap("quota")]
             [Validation(Required=false)]
             public long? Quota { get; set; }
+
+            /// <summary>
+            /// 容量类型
+            /// </summary>
+            [NameInMap("type")]
+            [Validation(Required=false)]
+            public string Type { get; set; }
 
             /// <summary>
             /// 已使用容量

@@ -17,6 +17,22 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         [Validation(Required=false)]
         public List<IndustryMmanufactureMaterialCostGetResponseBodyList> List { get; set; }
         public class IndustryMmanufactureMaterialCostGetResponseBodyList : TeaModel {
+            [NameInMap("actPrice")]
+            [Validation(Required=false)]
+            public float? ActPrice { get; set; }
+
+            [NameInMap("corpId")]
+            [Validation(Required=false)]
+            public string CorpId { get; set; }
+
+            [NameInMap("count")]
+            [Validation(Required=false)]
+            public float? Count { get; set; }
+
+            [NameInMap("ext")]
+            [Validation(Required=false)]
+            public string Ext { get; set; }
+
             [NameInMap("gmtCreate")]
             [Validation(Required=false)]
             public long? GmtCreate { get; set; }
@@ -25,53 +41,37 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             [Validation(Required=false)]
             public long? GmtModified { get; set; }
 
-            [NameInMap("corpId")]
+            [NameInMap("instanceId")]
             [Validation(Required=false)]
-            public string CorpId { get; set; }
+            public string InstanceId { get; set; }
 
             [NameInMap("materialCostNo")]
             [Validation(Required=false)]
             public string MaterialCostNo { get; set; }
 
-            [NameInMap("instanceId")]
+            [NameInMap("materialName")]
             [Validation(Required=false)]
-            public string InstanceId { get; set; }
+            public string MaterialName { get; set; }
 
             [NameInMap("materialNo")]
             [Validation(Required=false)]
             public string MaterialNo { get; set; }
 
-            [NameInMap("materialName")]
+            [NameInMap("memo")]
             [Validation(Required=false)]
-            public string MaterialName { get; set; }
-
-            [NameInMap("unit")]
-            [Validation(Required=false)]
-            public string Unit { get; set; }
-
-            [NameInMap("count")]
-            [Validation(Required=false)]
-            public float? Count { get; set; }
+            public string Memo { get; set; }
 
             [NameInMap("price")]
             [Validation(Required=false)]
             public float? Price { get; set; }
 
-            [NameInMap("actPrice")]
-            [Validation(Required=false)]
-            public float? ActPrice { get; set; }
-
-            [NameInMap("ext")]
-            [Validation(Required=false)]
-            public string Ext { get; set; }
-
             [NameInMap("processCode")]
             [Validation(Required=false)]
             public string ProcessCode { get; set; }
 
-            [NameInMap("memo")]
+            [NameInMap("unit")]
             [Validation(Required=false)]
-            public string Memo { get; set; }
+            public string Unit { get; set; }
 
         }
 

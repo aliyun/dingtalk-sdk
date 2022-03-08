@@ -24,11 +24,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             public List<GetInstancesByIdListResponseBodyResultActionExecutor> ActionExecutor { get; set; }
             public class GetInstancesByIdListResponseBodyResultActionExecutor : TeaModel {
                 /// <summary>
-                /// 用户工号
+                /// 部门名称
                 /// </summary>
-                [NameInMap("userId")]
+                [NameInMap("departmentName")]
                 [Validation(Required=false)]
-                public string UserId { get; set; }
+                public string DepartmentName { get; set; }
+
+                /// <summary>
+                /// 邮箱
+                /// </summary>
+                [NameInMap("email")]
+                [Validation(Required=false)]
+                public string Email { get; set; }
 
                 /// <summary>
                 /// 用户名
@@ -49,55 +56,13 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
                 };
 
                 /// <summary>
-                /// 部门名称
+                /// 用户工号
                 /// </summary>
-                [NameInMap("departmentName")]
+                [NameInMap("userId")]
                 [Validation(Required=false)]
-                public string DepartmentName { get; set; }
-
-                /// <summary>
-                /// 邮箱
-                /// </summary>
-                [NameInMap("email")]
-                [Validation(Required=false)]
-                public string Email { get; set; }
+                public string UserId { get; set; }
 
             }
-
-            /// <summary>
-            /// 实例ID
-            /// </summary>
-            [NameInMap("processInstanceId")]
-            [Validation(Required=false)]
-            public string ProcessInstanceId { get; set; }
-
-            /// <summary>
-            /// 流程表单ID
-            /// </summary>
-            [NameInMap("formUuid")]
-            [Validation(Required=false)]
-            public string FormUuid { get; set; }
-
-            /// <summary>
-            /// 流程Code
-            /// </summary>
-            [NameInMap("processCode")]
-            [Validation(Required=false)]
-            public string ProcessCode { get; set; }
-
-            /// <summary>
-            /// 实例标题
-            /// </summary>
-            [NameInMap("title")]
-            [Validation(Required=false)]
-            public string Title { get; set; }
-
-            /// <summary>
-            /// 实例状态
-            /// </summary>
-            [NameInMap("instanceStatus")]
-            [Validation(Required=false)]
-            public string InstanceStatus { get; set; }
 
             /// <summary>
             /// 流程结束时的审批结论
@@ -107,15 +72,39 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             public string ApprovedResult { get; set; }
 
             /// <summary>
+            /// 表单数据
+            /// </summary>
+            [NameInMap("data")]
+            [Validation(Required=false)]
+            public Dictionary<string, object> Data { get; set; }
+
+            /// <summary>
+            /// 流程表单ID
+            /// </summary>
+            [NameInMap("formUuid")]
+            [Validation(Required=false)]
+            public string FormUuid { get; set; }
+
+            /// <summary>
+            /// 实例状态
+            /// </summary>
+            [NameInMap("instanceStatus")]
+            [Validation(Required=false)]
+            public string InstanceStatus { get; set; }
+
+            /// <summary>
             /// 发起人信息
             /// </summary>
             [NameInMap("originator")]
             [Validation(Required=false)]
             public GetInstancesByIdListResponseBodyResultOriginator Originator { get; set; }
             public class GetInstancesByIdListResponseBodyResultOriginator : TeaModel {
-                [NameInMap("userId")]
+                [NameInMap("departmentName")]
                 [Validation(Required=false)]
-                public string UserId { get; set; }
+                public string DepartmentName { get; set; }
+                [NameInMap("email")]
+                [Validation(Required=false)]
+                public string Email { get; set; }
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public GetInstancesByIdListResponseBodyResultOriginatorName Name { get; set; }
@@ -142,20 +131,31 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
                     public string Type { get; set; }
 
                 }
-                [NameInMap("departmentName")]
+                [NameInMap("userId")]
                 [Validation(Required=false)]
-                public string DepartmentName { get; set; }
-                [NameInMap("email")]
-                [Validation(Required=false)]
-                public string Email { get; set; }
+                public string UserId { get; set; }
             };
 
             /// <summary>
-            /// 表单数据
+            /// 流程Code
             /// </summary>
-            [NameInMap("data")]
+            [NameInMap("processCode")]
             [Validation(Required=false)]
-            public Dictionary<string, object> Data { get; set; }
+            public string ProcessCode { get; set; }
+
+            /// <summary>
+            /// 实例ID
+            /// </summary>
+            [NameInMap("processInstanceId")]
+            [Validation(Required=false)]
+            public string ProcessInstanceId { get; set; }
+
+            /// <summary>
+            /// 实例标题
+            /// </summary>
+            [NameInMap("title")]
+            [Validation(Required=false)]
+            public string Title { get; set; }
 
         }
 

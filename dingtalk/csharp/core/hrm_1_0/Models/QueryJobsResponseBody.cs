@@ -24,6 +24,13 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
         public List<QueryJobsResponseBodyList> List { get; set; }
         public class QueryJobsResponseBodyList : TeaModel {
             /// <summary>
+            /// 职务描述
+            /// </summary>
+            [NameInMap("jobDescription")]
+            [Validation(Required=false)]
+            public string JobDescription { get; set; }
+
+            /// <summary>
             /// 职务ID
             /// </summary>
             [NameInMap("jobId")]
@@ -36,13 +43,6 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
             [NameInMap("jobName")]
             [Validation(Required=false)]
             public string JobName { get; set; }
-
-            /// <summary>
-            /// 职务描述
-            /// </summary>
-            [NameInMap("jobDescription")]
-            [Validation(Required=false)]
-            public string JobDescription { get; set; }
 
         }
 

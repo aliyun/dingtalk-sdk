@@ -27,26 +27,26 @@ namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0.Models
             [Validation(Required=false)]
             public List<GetRolesResponseBodyDataRoleGroups> RoleGroups { get; set; }
             public class GetRolesResponseBodyDataRoleGroups : TeaModel {
+                public string CompanyId { get; set; }
+                public string Description { get; set; }
+                public string GroupCode { get; set; }
                 public string GroupId { get; set; }
                 public string GroupName { get; set; }
-                public string GroupCode { get; set; }
-                public string CompanyId { get; set; }
-                public string Visibility { get; set; }
                 public string State { get; set; }
-                public string Description { get; set; }
+                public string Visibility { get; set; }
             }
             [NameInMap("roles")]
             [Validation(Required=false)]
             public List<GetRolesResponseBodyDataRoles> Roles { get; set; }
             public class GetRolesResponseBodyDataRoles : TeaModel {
-                public string RoleId { get; set; }
-                public string RoleName { get; set; }
-                public string RoleCode { get; set; }
+                public string CompanyId { get; set; }
                 public string Description { get; set; }
                 public string GroupId { get; set; }
+                public string RoleCode { get; set; }
+                public string RoleId { get; set; }
+                public string RoleName { get; set; }
                 public string State { get; set; }
                 public string Visibility { get; set; }
-                public string CompanyId { get; set; }
             }
         };
 

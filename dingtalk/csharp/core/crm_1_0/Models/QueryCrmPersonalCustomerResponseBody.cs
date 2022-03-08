@@ -36,18 +36,11 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         public List<QueryCrmPersonalCustomerResponseBodyValues> Values { get; set; }
         public class QueryCrmPersonalCustomerResponseBodyValues : TeaModel {
             /// <summary>
-            /// 数据ID
+            /// 创建记录的用户昵称
             /// </summary>
-            [NameInMap("instanceId")]
+            [NameInMap("creatorNick")]
             [Validation(Required=false)]
-            public string InstanceId { get; set; }
-
-            /// <summary>
-            /// 数据类型
-            /// </summary>
-            [NameInMap("objectType")]
-            [Validation(Required=false)]
-            public string ObjectType { get; set; }
+            public string CreatorNick { get; set; }
 
             /// <summary>
             /// 创建记录的用户ID
@@ -55,13 +48,6 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             [NameInMap("creatorUserId")]
             [Validation(Required=false)]
             public string CreatorUserId { get; set; }
-
-            /// <summary>
-            /// 创建记录的用户昵称
-            /// </summary>
-            [NameInMap("creatorNick")]
-            [Validation(Required=false)]
-            public string CreatorNick { get; set; }
 
             /// <summary>
             /// 数据内容
@@ -76,6 +62,34 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             [NameInMap("extendData")]
             [Validation(Required=false)]
             public Dictionary<string, object> ExtendData { get; set; }
+
+            /// <summary>
+            /// 记录创建时间
+            /// </summary>
+            [NameInMap("gmtCreate")]
+            [Validation(Required=false)]
+            public string GmtCreate { get; set; }
+
+            /// <summary>
+            /// 记录修改时间
+            /// </summary>
+            [NameInMap("gmtModified")]
+            [Validation(Required=false)]
+            public string GmtModified { get; set; }
+
+            /// <summary>
+            /// 数据ID
+            /// </summary>
+            [NameInMap("instanceId")]
+            [Validation(Required=false)]
+            public string InstanceId { get; set; }
+
+            /// <summary>
+            /// 数据类型
+            /// </summary>
+            [NameInMap("objectType")]
+            [Validation(Required=false)]
+            public string ObjectType { get; set; }
 
             /// <summary>
             /// 数据权限信息
@@ -93,13 +107,6 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             };
 
             /// <summary>
-            /// 审批结果
-            /// </summary>
-            [NameInMap("procOutResult")]
-            [Validation(Required=false)]
-            public string ProcOutResult { get; set; }
-
-            /// <summary>
             /// 审批状态
             /// </summary>
             [NameInMap("procInstStatus")]
@@ -107,18 +114,11 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             public string ProcInstStatus { get; set; }
 
             /// <summary>
-            /// 记录创建时间
+            /// 审批结果
             /// </summary>
-            [NameInMap("gmtCreate")]
+            [NameInMap("procOutResult")]
             [Validation(Required=false)]
-            public string GmtCreate { get; set; }
-
-            /// <summary>
-            /// 记录修改时间
-            /// </summary>
-            [NameInMap("gmtModified")]
-            [Validation(Required=false)]
-            public string GmtModified { get; set; }
+            public string ProcOutResult { get; set; }
 
         }
 

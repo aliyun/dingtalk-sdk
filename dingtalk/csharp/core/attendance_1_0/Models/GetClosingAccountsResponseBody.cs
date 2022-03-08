@@ -17,20 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
         public List<GetClosingAccountsResponseBodyResult> Result { get; set; }
         public class GetClosingAccountsResponseBodyResult : TeaModel {
             /// <summary>
-            /// 人员ID
-            /// </summary>
-            [NameInMap("userId")]
-            [Validation(Required=false)]
-            public string UserId { get; set; }
-
-            /// <summary>
-            /// 开关
-            /// </summary>
-            [NameInMap("switchOn")]
-            [Validation(Required=false)]
-            public bool? SwitchOn { get; set; }
-
-            /// <summary>
             /// 封账规则
             /// </summary>
             [NameInMap("closingAccountModel")]
@@ -43,19 +29,26 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
                 [NameInMap("closingHourMinutes")]
                 [Validation(Required=false)]
                 public long? ClosingHourMinutes { get; set; }
-                [NameInMap("startMonth")]
-                [Validation(Required=false)]
-                public int? StartMonth { get; set; }
-                [NameInMap("startDay")]
-                [Validation(Required=false)]
-                public int? StartDay { get; set; }
-                [NameInMap("endMonth")]
-                [Validation(Required=false)]
-                public int? EndMonth { get; set; }
                 [NameInMap("endDay")]
                 [Validation(Required=false)]
                 public int? EndDay { get; set; }
+                [NameInMap("endMonth")]
+                [Validation(Required=false)]
+                public int? EndMonth { get; set; }
+                [NameInMap("startDay")]
+                [Validation(Required=false)]
+                public int? StartDay { get; set; }
+                [NameInMap("startMonth")]
+                [Validation(Required=false)]
+                public int? StartMonth { get; set; }
             };
+
+            /// <summary>
+            /// 开关
+            /// </summary>
+            [NameInMap("switchOn")]
+            [Validation(Required=false)]
+            public bool? SwitchOn { get; set; }
 
             /// <summary>
             /// 解封规则
@@ -68,6 +61,13 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
                 [Validation(Required=false)]
                 public long? InvalidTimeStamp { get; set; }
             };
+
+            /// <summary>
+            /// 人员ID
+            /// </summary>
+            [NameInMap("userId")]
+            [Validation(Required=false)]
+            public string UserId { get; set; }
 
         }
 

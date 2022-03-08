@@ -24,39 +24,11 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
             public string CorpId { get; set; }
 
             /// <summary>
-            /// 增加或减少的分数（增加为正数，减少为负数）
-            /// </summary>
-            [NameInMap("score")]
-            [Validation(Required=false)]
-            public int? Score { get; set; }
-
-            /// <summary>
             /// 单日计次上限，0表示无上限
             /// </summary>
             [NameInMap("dayLimitTimes")]
             [Validation(Required=false)]
             public int? DayLimitTimes { get; set; }
-
-            /// <summary>
-            /// 生效状态 0：不生效，1：生效
-            /// </summary>
-            [NameInMap("status")]
-            [Validation(Required=false)]
-            public int? Status { get; set; }
-
-            /// <summary>
-            /// 对应的行为代码（可空）
-            /// </summary>
-            [NameInMap("ruleCode")]
-            [Validation(Required=false)]
-            public string RuleCode { get; set; }
-
-            /// <summary>
-            /// 对应的行为名字
-            /// </summary>
-            [NameInMap("ruleName")]
-            [Validation(Required=false)]
-            public string RuleName { get; set; }
 
             /// <summary>
             /// 扩展字段
@@ -78,6 +50,34 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
             [NameInMap("orderId")]
             [Validation(Required=false)]
             public int? OrderId { get; set; }
+
+            /// <summary>
+            /// 对应的行为代码（可空）
+            /// </summary>
+            [NameInMap("ruleCode")]
+            [Validation(Required=false)]
+            public string RuleCode { get; set; }
+
+            /// <summary>
+            /// 对应的行为名字
+            /// </summary>
+            [NameInMap("ruleName")]
+            [Validation(Required=false)]
+            public string RuleName { get; set; }
+
+            /// <summary>
+            /// 增加或减少的分数（增加为正数，减少为负数）
+            /// </summary>
+            [NameInMap("score")]
+            [Validation(Required=false)]
+            public int? Score { get; set; }
+
+            /// <summary>
+            /// 生效状态 0：不生效，1：生效
+            /// </summary>
+            [NameInMap("status")]
+            [Validation(Required=false)]
+            public int? Status { get; set; }
 
         }
 

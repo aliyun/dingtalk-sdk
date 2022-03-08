@@ -17,29 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public List<ListApplicationInformationResponseBodyApplicationInformation> ApplicationInformation { get; set; }
         public class ListApplicationInformationResponseBodyApplicationInformation : TeaModel {
             /// <summary>
-            /// usagePlugins
-            /// </summary>
-            [NameInMap("usagePlugins")]
-            [Validation(Required=false)]
-            public List<ListApplicationInformationResponseBodyApplicationInformationUsagePlugins> UsagePlugins { get; set; }
-            public class ListApplicationInformationResponseBodyApplicationInformationUsagePlugins : TeaModel {
-                /// <summary>
-                /// pluginName
-                /// </summary>
-                [NameInMap("pluginName")]
-                [Validation(Required=false)]
-                public string PluginName { get; set; }
-
-                /// <summary>
-                /// iconUrl
-                /// </summary>
-                [NameInMap("iconUrl")]
-                [Validation(Required=false)]
-                public string IconUrl { get; set; }
-
-            }
-
-            /// <summary>
             /// appName
             /// </summary>
             [NameInMap("appName")]
@@ -54,6 +31,13 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             public string AppType { get; set; }
 
             /// <summary>
+            /// attachmentUsageAmount
+            /// </summary>
+            [NameInMap("attachmentUsageAmount")]
+            [Validation(Required=false)]
+            public long? AttachmentUsageAmount { get; set; }
+
+            /// <summary>
             /// instanceUsageAmount
             /// </summary>
             [NameInMap("instanceUsageAmount")]
@@ -61,11 +45,27 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             public long? InstanceUsageAmount { get; set; }
 
             /// <summary>
-            /// attachmentUsageAmount
+            /// usagePlugins
             /// </summary>
-            [NameInMap("attachmentUsageAmount")]
+            [NameInMap("usagePlugins")]
             [Validation(Required=false)]
-            public long? AttachmentUsageAmount { get; set; }
+            public List<ListApplicationInformationResponseBodyApplicationInformationUsagePlugins> UsagePlugins { get; set; }
+            public class ListApplicationInformationResponseBodyApplicationInformationUsagePlugins : TeaModel {
+                /// <summary>
+                /// iconUrl
+                /// </summary>
+                [NameInMap("iconUrl")]
+                [Validation(Required=false)]
+                public string IconUrl { get; set; }
+
+                /// <summary>
+                /// pluginName
+                /// </summary>
+                [NameInMap("pluginName")]
+                [Validation(Required=false)]
+                public string PluginName { get; set; }
+
+            }
 
         }
 

@@ -17,6 +17,13 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_service_1_0.Models
         public List<PageListTicketResponseBodyList> List { get; set; }
         public class PageListTicketResponseBodyList : TeaModel {
             /// <summary>
+            /// bizDataMap
+            /// </summary>
+            [NameInMap("bizDataMap")]
+            [Validation(Required=false)]
+            public Dictionary<string, object> BizDataMap { get; set; }
+
+            /// <summary>
             /// foreignId
             /// </summary>
             [NameInMap("foreignId")]
@@ -24,60 +31,11 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_service_1_0.Models
             public string ForeignId { get; set; }
 
             /// <summary>
-            /// sourceId
-            /// </summary>
-            [NameInMap("sourceId")]
-            [Validation(Required=false)]
-            public string SourceId { get; set; }
-
-            /// <summary>
             /// foreignName
             /// </summary>
             [NameInMap("foreignName")]
             [Validation(Required=false)]
             public string ForeignName { get; set; }
-
-            /// <summary>
-            /// templateId
-            /// </summary>
-            [NameInMap("templateId")]
-            [Validation(Required=false)]
-            public string TemplateId { get; set; }
-
-            /// <summary>
-            /// title
-            /// </summary>
-            [NameInMap("title")]
-            [Validation(Required=false)]
-            public string Title { get; set; }
-
-            /// <summary>
-            /// ticketId
-            /// </summary>
-            [NameInMap("ticketId")]
-            [Validation(Required=false)]
-            public string TicketId { get; set; }
-
-            /// <summary>
-            /// ticketStatus
-            /// </summary>
-            [NameInMap("ticketStatus")]
-            [Validation(Required=false)]
-            public string TicketStatus { get; set; }
-
-            /// <summary>
-            /// openInstanceId
-            /// </summary>
-            [NameInMap("openInstanceId")]
-            [Validation(Required=false)]
-            public string OpenInstanceId { get; set; }
-
-            /// <summary>
-            /// productionType
-            /// </summary>
-            [NameInMap("productionType")]
-            [Validation(Required=false)]
-            public int? ProductionType { get; set; }
 
             /// <summary>
             /// gmtCreate
@@ -94,11 +52,53 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_service_1_0.Models
             public string GmtModified { get; set; }
 
             /// <summary>
-            /// bizDataMap
+            /// openInstanceId
             /// </summary>
-            [NameInMap("bizDataMap")]
+            [NameInMap("openInstanceId")]
             [Validation(Required=false)]
-            public Dictionary<string, object> BizDataMap { get; set; }
+            public string OpenInstanceId { get; set; }
+
+            /// <summary>
+            /// productionType
+            /// </summary>
+            [NameInMap("productionType")]
+            [Validation(Required=false)]
+            public int? ProductionType { get; set; }
+
+            /// <summary>
+            /// sourceId
+            /// </summary>
+            [NameInMap("sourceId")]
+            [Validation(Required=false)]
+            public string SourceId { get; set; }
+
+            /// <summary>
+            /// templateId
+            /// </summary>
+            [NameInMap("templateId")]
+            [Validation(Required=false)]
+            public string TemplateId { get; set; }
+
+            /// <summary>
+            /// ticketId
+            /// </summary>
+            [NameInMap("ticketId")]
+            [Validation(Required=false)]
+            public string TicketId { get; set; }
+
+            /// <summary>
+            /// ticketStatus
+            /// </summary>
+            [NameInMap("ticketStatus")]
+            [Validation(Required=false)]
+            public string TicketStatus { get; set; }
+
+            /// <summary>
+            /// title
+            /// </summary>
+            [NameInMap("title")]
+            [Validation(Required=false)]
+            public string Title { get; set; }
 
         }
 

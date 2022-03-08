@@ -17,18 +17,25 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         public List<GetEmpsByOrgIdResponseBodyEmpList> EmpList { get; set; }
         public class GetEmpsByOrgIdResponseBodyEmpList : TeaModel {
             /// <summary>
+            /// avatar
+            /// </summary>
+            [NameInMap("avatar")]
+            [Validation(Required=false)]
+            public string Avatar { get; set; }
+
+            /// <summary>
+            /// deptIdList
+            /// </summary>
+            [NameInMap("dept_id_list")]
+            [Validation(Required=false)]
+            public List<long?> DeptIdList { get; set; }
+
+            /// <summary>
             /// dingId
             /// </summary>
             [NameInMap("dingId")]
             [Validation(Required=false)]
             public string DingId { get; set; }
-
-            /// <summary>
-            /// unionId
-            /// </summary>
-            [NameInMap("unionid")]
-            [Validation(Required=false)]
-            public string Unionid { get; set; }
 
             /// <summary>
             /// name
@@ -45,36 +52,29 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
             public string Nick { get; set; }
 
             /// <summary>
-            /// userid
-            /// </summary>
-            [NameInMap("userid")]
-            [Validation(Required=false)]
-            public string Userid { get; set; }
-
-            /// <summary>
             /// orgId
             /// </summary>
             [NameInMap("orgId")]
             [Validation(Required=false)]
             public long? OrgId { get; set; }
 
-            /// <summary>
-            /// avatar
-            /// </summary>
-            [NameInMap("avatar")]
-            [Validation(Required=false)]
-            public string Avatar { get; set; }
-
-            /// <summary>
-            /// deptIdList
-            /// </summary>
-            [NameInMap("dept_id_list")]
-            [Validation(Required=false)]
-            public List<long?> DeptIdList { get; set; }
-
             [NameInMap("position")]
             [Validation(Required=false)]
             public string Position { get; set; }
+
+            /// <summary>
+            /// unionId
+            /// </summary>
+            [NameInMap("unionid")]
+            [Validation(Required=false)]
+            public string Unionid { get; set; }
+
+            /// <summary>
+            /// userid
+            /// </summary>
+            [NameInMap("userid")]
+            [Validation(Required=false)]
+            public string Userid { get; set; }
 
         }
 
