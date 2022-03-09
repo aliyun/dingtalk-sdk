@@ -39,6 +39,7 @@ import * as micro_app_1_0 from './micro_app_1_0/client';
 import * as miniapp_1_0 from './miniapp_1_0/client';
 import * as oauth2_1_0 from './oauth2_1_0/client';
 import * as occupationauth_1_0 from './occupationauth_1_0/client';
+import * as okr_1_0 from './okr_1_0/client';
 import * as project_1_0 from './project_1_0/client';
 import * as project_integration_1_0 from './project_integration_1_0/client';
 import * as resident_1_0 from './resident_1_0/client';
@@ -98,6 +99,7 @@ export = {
   miniapp_1_0,
   oauth2_1_0,
   occupationauth_1_0,
+  okr_1_0,
   project_1_0,
   project_integration_1_0,
   resident_1_0,
