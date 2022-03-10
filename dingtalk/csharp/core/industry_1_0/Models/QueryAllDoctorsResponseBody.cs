@@ -45,6 +45,13 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             public string DeptCode { get; set; }
 
             /// <summary>
+            /// 科室医疗组标识
+            /// </summary>
+            [NameInMap("deptType")]
+            [Validation(Required=false)]
+            public string DeptType { get; set; }
+
+            /// <summary>
             /// 用户创建时间
             /// </summary>
             [NameInMap("gmtCreateStr")]
