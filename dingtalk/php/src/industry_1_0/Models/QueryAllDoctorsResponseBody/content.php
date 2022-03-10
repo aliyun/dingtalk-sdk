@@ -37,6 +37,13 @@ class content extends Model
     public $deptCode;
 
     /**
+     * @description 科室医疗组标识
+     *
+     * @var string
+     */
+    public $deptType;
+
+    /**
      * @description 用户创建时间
      *
      * @var string
@@ -96,6 +103,7 @@ class content extends Model
         'assessGroupName' => 'assessGroupName',
         'corpId'          => 'corpId',
         'deptCode'        => 'deptCode',
+        'deptType'        => 'deptType',
         'gmtCreateStr'    => 'gmtCreateStr',
         'gmtModifiedStr'  => 'gmtModifiedStr',
         'id'              => 'id',
@@ -124,6 +132,9 @@ class content extends Model
         }
         if (null !== $this->deptCode) {
             $res['deptCode'] = $this->deptCode;
+        }
+        if (null !== $this->deptType) {
+            $res['deptType'] = $this->deptType;
         }
         if (null !== $this->gmtCreateStr) {
             $res['gmtCreateStr'] = $this->gmtCreateStr;
@@ -172,6 +183,9 @@ class content extends Model
         }
         if (isset($map['deptCode'])) {
             $model->deptCode = $map['deptCode'];
+        }
+        if (isset($map['deptType'])) {
+            $model->deptType = $map['deptType'];
         }
         if (isset($map['gmtCreateStr'])) {
             $model->gmtCreateStr = $map['gmtCreateStr'];
