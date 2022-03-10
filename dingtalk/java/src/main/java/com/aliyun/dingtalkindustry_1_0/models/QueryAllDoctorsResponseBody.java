@@ -74,6 +74,10 @@ public class QueryAllDoctorsResponseBody extends TeaModel {
         @NameInMap("deptCode")
         public String deptCode;
 
+        // 科室医疗组标识
+        @NameInMap("deptType")
+        public String deptType;
+
         // 用户创建时间
         @NameInMap("gmtCreateStr")
         public String gmtCreateStr;
@@ -141,6 +145,14 @@ public class QueryAllDoctorsResponseBody extends TeaModel {
         }
         public String getDeptCode() {
             return this.deptCode;
+        }
+
+        public QueryAllDoctorsResponseBodyContent setDeptType(String deptType) {
+            this.deptType = deptType;
+            return this;
+        }
+        public String getDeptType() {
+            return this.deptType;
         }
 
         public QueryAllDoctorsResponseBodyContent setGmtCreateStr(String gmtCreateStr) {
