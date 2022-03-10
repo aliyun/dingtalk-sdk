@@ -3029,6 +3029,7 @@ export class QueryAllDoctorsResponseBodyContent extends $tea.Model {
   assessGroupName?: string;
   corpId?: string;
   deptCode?: string;
+  deptType?: string;
   gmtCreateStr?: string;
   gmtModifiedStr?: string;
   id?: number;
@@ -3043,6 +3044,7 @@ export class QueryAllDoctorsResponseBodyContent extends $tea.Model {
       assessGroupName: 'assessGroupName',
       corpId: 'corpId',
       deptCode: 'deptCode',
+      deptType: 'deptType',
       gmtCreateStr: 'gmtCreateStr',
       gmtModifiedStr: 'gmtModifiedStr',
       id: 'id',
@@ -3060,6 +3062,7 @@ export class QueryAllDoctorsResponseBodyContent extends $tea.Model {
       assessGroupName: 'string',
       corpId: 'string',
       deptCode: 'string',
+      deptType: 'string',
       gmtCreateStr: 'string',
       gmtModifiedStr: 'string',
       id: 'number',
