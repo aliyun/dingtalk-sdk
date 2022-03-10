@@ -2611,6 +2611,7 @@ class QueryAllDoctorsResponseBodyContent(TeaModel):
         assess_group_name: str = None,
         corp_id: str = None,
         dept_code: str = None,
+        dept_type: str = None,
         gmt_create_str: str = None,
         gmt_modified_str: str = None,
         id: int = None,
@@ -2628,6 +2629,8 @@ class QueryAllDoctorsResponseBodyContent(TeaModel):
         self.corp_id = corp_id
         # 关联的部门id
         self.dept_code = dept_code
+        # 科室医疗组标识
+        self.dept_type = dept_type
         # 用户创建时间
         self.gmt_create_str = gmt_create_str
         # 用户最后修改时间
@@ -2662,6 +2665,8 @@ class QueryAllDoctorsResponseBodyContent(TeaModel):
             result['corpId'] = self.corp_id
         if self.dept_code is not None:
             result['deptCode'] = self.dept_code
+        if self.dept_type is not None:
+            result['deptType'] = self.dept_type
         if self.gmt_create_str is not None:
             result['gmtCreateStr'] = self.gmt_create_str
         if self.gmt_modified_str is not None:
@@ -2690,6 +2695,8 @@ class QueryAllDoctorsResponseBodyContent(TeaModel):
             self.corp_id = m.get('corpId')
         if m.get('deptCode') is not None:
             self.dept_code = m.get('deptCode')
+        if m.get('deptType') is not None:
+            self.dept_type = m.get('deptType')
         if m.get('gmtCreateStr') is not None:
             self.gmt_create_str = m.get('gmtCreateStr')
         if m.get('gmtModifiedStr') is not None:
