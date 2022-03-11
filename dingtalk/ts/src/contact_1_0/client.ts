@@ -2785,6 +2785,66 @@ export class SearchUserResponse extends $tea.Model {
   }
 }
 
+export class SeparateBranchOrgHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SeparateBranchOrgRequest extends $tea.Model {
+  attachDeptId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      attachDeptId: 'attachDeptId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      attachDeptId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SeparateBranchOrgResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SetDisableHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -5622,6 +5682,35 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<SearchUserResponse>(await this.doROARequest("SearchUser", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/users/search`, "json", req, runtime), new SearchUserResponse({}));
+  }
+
+  async separateBranchOrg(request: SeparateBranchOrgRequest): Promise<SeparateBranchOrgResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SeparateBranchOrgHeaders({ });
+    return await this.separateBranchOrgWithOptions(request, headers, runtime);
+  }
+
+  async separateBranchOrgWithOptions(request: SeparateBranchOrgRequest, headers: SeparateBranchOrgHeaders, runtime: $Util.RuntimeOptions): Promise<SeparateBranchOrgResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.attachDeptId)) {
+      body["attachDeptId"] = request.attachDeptId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SeparateBranchOrgResponse>(await this.doROARequest("SeparateBranchOrg", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/cooperateCorps/separate`, "none", req, runtime), new SeparateBranchOrgResponse({}));
   }
 
   async setDisable(request: SetDisableRequest): Promise<SetDisableResponse> {

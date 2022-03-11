@@ -263,6 +263,7 @@ export class DecodeBadgeCodeResponseBody extends $tea.Model {
   codeIdentity?: string;
   codeType?: string;
   corpId?: string;
+  extInfo?: string;
   outBizId?: string;
   userCorpRelationType?: string;
   userId?: string;
@@ -273,6 +274,7 @@ export class DecodeBadgeCodeResponseBody extends $tea.Model {
       codeIdentity: 'codeIdentity',
       codeType: 'codeType',
       corpId: 'corpId',
+      extInfo: 'extInfo',
       outBizId: 'outBizId',
       userCorpRelationType: 'userCorpRelationType',
       userId: 'userId',
@@ -286,6 +288,7 @@ export class DecodeBadgeCodeResponseBody extends $tea.Model {
       codeIdentity: 'string',
       codeType: 'string',
       corpId: 'string',
+      extInfo: 'string',
       outBizId: 'string',
       userCorpRelationType: 'string',
       userId: 'string',
