@@ -3245,6 +3245,7 @@ class DecodePayCodeResponseBody(TeaModel):
         code_identity: str = None,
         code_type: str = None,
         corp_id: str = None,
+        ext_info: str = None,
         out_biz_id: str = None,
         user_corp_relation_type: str = None,
         user_id: str = None,
@@ -3260,6 +3261,8 @@ class DecodePayCodeResponseBody(TeaModel):
         self.code_type = code_type
         # 企业id
         self.corp_id = corp_id
+        # 扩展信息
+        self.ext_info = ext_info
         # 外部业务ID,其值为调用创建用户码接口传入的requestId
         self.out_biz_id = out_biz_id
         # 用户和企业关系
@@ -3288,6 +3291,8 @@ class DecodePayCodeResponseBody(TeaModel):
             result['codeType'] = self.code_type
         if self.corp_id is not None:
             result['corpId'] = self.corp_id
+        if self.ext_info is not None:
+            result['extInfo'] = self.ext_info
         if self.out_biz_id is not None:
             result['outBizId'] = self.out_biz_id
         if self.user_corp_relation_type is not None:
@@ -3310,6 +3315,8 @@ class DecodePayCodeResponseBody(TeaModel):
             self.code_type = m.get('codeType')
         if m.get('corpId') is not None:
             self.corp_id = m.get('corpId')
+        if m.get('extInfo') is not None:
+            self.ext_info = m.get('extInfo')
         if m.get('outBizId') is not None:
             self.out_biz_id = m.get('outBizId')
         if m.get('userCorpRelationType') is not None:

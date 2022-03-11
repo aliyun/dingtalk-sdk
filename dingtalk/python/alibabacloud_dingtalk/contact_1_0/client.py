@@ -2261,6 +2261,70 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('SearchUser', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/users/search', 'json', req, runtime)
         )
 
+    def separate_branch_org(
+        self,
+        request: dingtalkcontact__1__0_models.SeparateBranchOrgRequest,
+    ) -> dingtalkcontact__1__0_models.SeparateBranchOrgResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.SeparateBranchOrgHeaders()
+        return self.separate_branch_org_with_options(request, headers, runtime)
+
+    async def separate_branch_org_async(
+        self,
+        request: dingtalkcontact__1__0_models.SeparateBranchOrgRequest,
+    ) -> dingtalkcontact__1__0_models.SeparateBranchOrgResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.SeparateBranchOrgHeaders()
+        return await self.separate_branch_org_with_options_async(request, headers, runtime)
+
+    def separate_branch_org_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.SeparateBranchOrgRequest,
+        headers: dingtalkcontact__1__0_models.SeparateBranchOrgHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.SeparateBranchOrgResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.attach_dept_id):
+            body['attachDeptId'] = request.attach_dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.SeparateBranchOrgResponse(),
+            self.do_roarequest('SeparateBranchOrg', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/cooperateCorps/separate', 'none', req, runtime)
+        )
+
+    async def separate_branch_org_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.SeparateBranchOrgRequest,
+        headers: dingtalkcontact__1__0_models.SeparateBranchOrgHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.SeparateBranchOrgResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.attach_dept_id):
+            body['attachDeptId'] = request.attach_dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.SeparateBranchOrgResponse(),
+            await self.do_roarequest_async('SeparateBranchOrg', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/cooperateCorps/separate', 'none', req, runtime)
+        )
+
     def set_disable(
         self,
         request: dingtalkcontact__1__0_models.SetDisableRequest,
