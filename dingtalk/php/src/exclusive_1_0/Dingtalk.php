@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\BanOrOpenGroupWordsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\BanOrOpenGroupWordsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\BanOrOpenGroupWordsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateTrustedDeviceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateTrustedDeviceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateTrustedDeviceResponse;
@@ -48,6 +51,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPartnerTypeByParentIdResp
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPublisherSummaryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPublisherSummaryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPublisherSummaryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetSignedDetailByPageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetSignedDetailByPageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetSignedDetailByPageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetTrustDeviceListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetTrustDeviceListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetTrustDeviceListResponse;
@@ -101,6 +107,51 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param BanOrOpenGroupWordsRequest $request
+     *
+     * @return BanOrOpenGroupWordsResponse
+     */
+    public function banOrOpenGroupWords($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BanOrOpenGroupWordsHeaders([]);
+
+        return $this->banOrOpenGroupWordsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param BanOrOpenGroupWordsRequest $request
+     * @param BanOrOpenGroupWordsHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return BanOrOpenGroupWordsResponse
+     */
+    public function banOrOpenGroupWordsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->banWordsType)) {
+            @$body['banWordsType'] = $request->banWordsType;
+        }
+        if (!Utils::isUnset($request->openConverationId)) {
+            @$body['openConverationId'] = $request->openConverationId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return BanOrOpenGroupWordsResponse::fromMap($this->doROARequest('BanOrOpenGroupWords', 'exclusive_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/exclusive/enterpriseSecurities/banOrOpenGroupWords', 'json', $req, $runtime));
     }
 
     /**
@@ -846,6 +897,54 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetPublisherSummaryResponse::fromMap($this->doROARequest('GetPublisherSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/data/publisher/' . $dataId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetSignedDetailByPageRequest $request
+     *
+     * @return GetSignedDetailByPageResponse
+     */
+    public function getSignedDetailByPage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetSignedDetailByPageHeaders([]);
+
+        return $this->getSignedDetailByPageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetSignedDetailByPageRequest $request
+     * @param GetSignedDetailByPageHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return GetSignedDetailByPageResponse
+     */
+    public function getSignedDetailByPageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->signStatus)) {
+            @$query['signStatus'] = $request->signStatus;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetSignedDetailByPageResponse::fromMap($this->doROARequest('GetSignedDetailByPage', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/audits/users', 'json', $req, $runtime));
     }
 
     /**
