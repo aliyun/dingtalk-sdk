@@ -24,6 +24,10 @@ public class DecodePayCodeResponseBody extends TeaModel {
     @NameInMap("corpId")
     public String corpId;
 
+    // 扩展信息
+    @NameInMap("extInfo")
+    public String extInfo;
+
     // 外部业务ID,其值为调用创建用户码接口传入的requestId
     @NameInMap("outBizId")
     public String outBizId;
@@ -83,6 +87,14 @@ public class DecodePayCodeResponseBody extends TeaModel {
     }
     public String getCorpId() {
         return this.corpId;
+    }
+
+    public DecodePayCodeResponseBody setExtInfo(String extInfo) {
+        this.extInfo = extInfo;
+        return this;
+    }
+    public String getExtInfo() {
+        return this.extInfo;
     }
 
     public DecodePayCodeResponseBody setOutBizId(String outBizId) {

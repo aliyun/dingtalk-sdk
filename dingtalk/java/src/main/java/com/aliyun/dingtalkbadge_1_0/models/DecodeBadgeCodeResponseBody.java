@@ -24,6 +24,10 @@ public class DecodeBadgeCodeResponseBody extends TeaModel {
     @NameInMap("corpId")
     public String corpId;
 
+    // 扩展信息
+    @NameInMap("extInfo")
+    public String extInfo;
+
     // 外部业务ID，值为调用创建工牌码接口传入的requestId
     @NameInMap("outBizId")
     public String outBizId;
@@ -79,6 +83,14 @@ public class DecodeBadgeCodeResponseBody extends TeaModel {
     }
     public String getCorpId() {
         return this.corpId;
+    }
+
+    public DecodeBadgeCodeResponseBody setExtInfo(String extInfo) {
+        this.extInfo = extInfo;
+        return this;
+    }
+    public String getExtInfo() {
+        return this.extInfo;
     }
 
     public DecodeBadgeCodeResponseBody setOutBizId(String outBizId) {
