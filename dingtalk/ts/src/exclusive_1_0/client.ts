@@ -7,6 +7,94 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class BanOrOpenGroupWordsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BanOrOpenGroupWordsRequest extends $tea.Model {
+  banWordsType?: number;
+  openConverationId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      banWordsType: 'banWordsType',
+      openConverationId: 'openConverationId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      banWordsType: 'number',
+      openConverationId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BanOrOpenGroupWordsResponseBody extends $tea.Model {
+  cause?: string;
+  code?: string;
+  static names(): { [key: string]: string } {
+    return {
+      cause: 'cause',
+      code: 'code',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cause: 'string',
+      code: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BanOrOpenGroupWordsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: BanOrOpenGroupWordsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: BanOrOpenGroupWordsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateTrustedDeviceHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1354,6 +1442,103 @@ export class GetPublisherSummaryResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: GetPublisherSummaryResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSignedDetailByPageHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSignedDetailByPageRequest extends $tea.Model {
+  pageNumber?: number;
+  pageSize?: number;
+  signStatus?: number;
+  static names(): { [key: string]: string } {
+    return {
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      signStatus: 'signStatus',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      pageNumber: 'number',
+      pageSize: 'number',
+      signStatus: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSignedDetailByPageResponseBody extends $tea.Model {
+  auditSignedDetailDTOList?: GetSignedDetailByPageResponseBodyAuditSignedDetailDTOList[];
+  currentPage?: number;
+  pageSize?: number;
+  total?: number;
+  static names(): { [key: string]: string } {
+    return {
+      auditSignedDetailDTOList: 'auditSignedDetailDTOList',
+      currentPage: 'currentPage',
+      pageSize: 'pageSize',
+      total: 'total',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      auditSignedDetailDTOList: { 'type': 'array', 'itemType': GetSignedDetailByPageResponseBodyAuditSignedDetailDTOList },
+      currentPage: 'number',
+      pageSize: 'number',
+      total: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSignedDetailByPageResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetSignedDetailByPageResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetSignedDetailByPageResponseBody,
     };
   }
 
@@ -2916,6 +3101,43 @@ export class GetPublisherSummaryResponseBodyPublisherArticlePvTop5 extends $tea.
   }
 }
 
+export class GetSignedDetailByPageResponseBodyAuditSignedDetailDTOList extends $tea.Model {
+  deptName?: string;
+  email?: string;
+  name?: string;
+  phone?: string;
+  roles?: string;
+  staffId?: string;
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptName: 'deptName',
+      email: 'email',
+      name: 'name',
+      phone: 'phone',
+      roles: 'roles',
+      staffId: 'staffId',
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptName: 'string',
+      email: 'string',
+      name: 'string',
+      phone: 'string',
+      roles: 'string',
+      staffId: 'string',
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetTrustDeviceListResponseBodyData extends $tea.Model {
   createTime?: number;
   macAddress?: string;
@@ -3101,6 +3323,39 @@ export default class Client extends OpenApi {
 
   }
 
+
+  async banOrOpenGroupWords(request: BanOrOpenGroupWordsRequest): Promise<BanOrOpenGroupWordsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BanOrOpenGroupWordsHeaders({ });
+    return await this.banOrOpenGroupWordsWithOptions(request, headers, runtime);
+  }
+
+  async banOrOpenGroupWordsWithOptions(request: BanOrOpenGroupWordsRequest, headers: BanOrOpenGroupWordsHeaders, runtime: $Util.RuntimeOptions): Promise<BanOrOpenGroupWordsResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.banWordsType)) {
+      body["banWordsType"] = request.banWordsType;
+    }
+
+    if (!Util.isUnset(request.openConverationId)) {
+      body["openConverationId"] = request.openConverationId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<BanOrOpenGroupWordsResponse>(await this.doROARequest("BanOrOpenGroupWords", "exclusive_1.0", "HTTP", "PUT", "AK", `/v1.0/exclusive/enterpriseSecurities/banOrOpenGroupWords`, "json", req, runtime), new BanOrOpenGroupWordsResponse({}));
+  }
 
   async createTrustedDevice(request: CreateTrustedDeviceRequest): Promise<CreateTrustedDeviceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3626,6 +3881,43 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<GetPublisherSummaryResponse>(await this.doROARequest("GetPublisherSummary", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/data/publisher/${dataId}`, "json", req, runtime), new GetPublisherSummaryResponse({}));
+  }
+
+  async getSignedDetailByPage(request: GetSignedDetailByPageRequest): Promise<GetSignedDetailByPageResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetSignedDetailByPageHeaders({ });
+    return await this.getSignedDetailByPageWithOptions(request, headers, runtime);
+  }
+
+  async getSignedDetailByPageWithOptions(request: GetSignedDetailByPageRequest, headers: GetSignedDetailByPageHeaders, runtime: $Util.RuntimeOptions): Promise<GetSignedDetailByPageResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.signStatus)) {
+      query["signStatus"] = request.signStatus;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetSignedDetailByPageResponse>(await this.doROARequest("GetSignedDetailByPage", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/audits/users`, "json", req, runtime), new GetSignedDetailByPageResponse({}));
   }
 
   async getTrustDeviceList(request: GetTrustDeviceListRequest): Promise<GetTrustDeviceListResponse> {
