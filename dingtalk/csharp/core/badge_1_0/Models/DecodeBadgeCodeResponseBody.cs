@@ -45,6 +45,13 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0.Models
         public string CorpId { get; set; }
 
         /// <summary>
+        /// 扩展信息
+        /// </summary>
+        [NameInMap("extInfo")]
+        [Validation(Required=false)]
+        public string ExtInfo { get; set; }
+
+        /// <summary>
         /// 外部业务ID，值为调用创建工牌码接口传入的requestId
         /// </summary>
         [NameInMap("outBizId")]
