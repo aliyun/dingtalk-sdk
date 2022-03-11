@@ -23,6 +23,74 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def ban_or_open_group_words(
+        self,
+        request: dingtalkexclusive__1__0_models.BanOrOpenGroupWordsRequest,
+    ) -> dingtalkexclusive__1__0_models.BanOrOpenGroupWordsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.BanOrOpenGroupWordsHeaders()
+        return self.ban_or_open_group_words_with_options(request, headers, runtime)
+
+    async def ban_or_open_group_words_async(
+        self,
+        request: dingtalkexclusive__1__0_models.BanOrOpenGroupWordsRequest,
+    ) -> dingtalkexclusive__1__0_models.BanOrOpenGroupWordsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.BanOrOpenGroupWordsHeaders()
+        return await self.ban_or_open_group_words_with_options_async(request, headers, runtime)
+
+    def ban_or_open_group_words_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.BanOrOpenGroupWordsRequest,
+        headers: dingtalkexclusive__1__0_models.BanOrOpenGroupWordsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.BanOrOpenGroupWordsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ban_words_type):
+            body['banWordsType'] = request.ban_words_type
+        if not UtilClient.is_unset(request.open_converation_id):
+            body['openConverationId'] = request.open_converation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.BanOrOpenGroupWordsResponse(),
+            self.do_roarequest('BanOrOpenGroupWords', 'exclusive_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/exclusive/enterpriseSecurities/banOrOpenGroupWords', 'json', req, runtime)
+        )
+
+    async def ban_or_open_group_words_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.BanOrOpenGroupWordsRequest,
+        headers: dingtalkexclusive__1__0_models.BanOrOpenGroupWordsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.BanOrOpenGroupWordsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ban_words_type):
+            body['banWordsType'] = request.ban_words_type
+        if not UtilClient.is_unset(request.open_converation_id):
+            body['openConverationId'] = request.open_converation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.BanOrOpenGroupWordsResponse(),
+            await self.do_roarequest_async('BanOrOpenGroupWords', 'exclusive_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/exclusive/enterpriseSecurities/banOrOpenGroupWords', 'json', req, runtime)
+        )
+
     def create_trusted_device(
         self,
         request: dingtalkexclusive__1__0_models.CreateTrustedDeviceRequest,
@@ -1147,6 +1215,78 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkexclusive__1__0_models.GetPublisherSummaryResponse(),
             await self.do_roarequest_async('GetPublisherSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/data/publisher/{data_id}', 'json', req, runtime)
+        )
+
+    def get_signed_detail_by_page(
+        self,
+        request: dingtalkexclusive__1__0_models.GetSignedDetailByPageRequest,
+    ) -> dingtalkexclusive__1__0_models.GetSignedDetailByPageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetSignedDetailByPageHeaders()
+        return self.get_signed_detail_by_page_with_options(request, headers, runtime)
+
+    async def get_signed_detail_by_page_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetSignedDetailByPageRequest,
+    ) -> dingtalkexclusive__1__0_models.GetSignedDetailByPageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetSignedDetailByPageHeaders()
+        return await self.get_signed_detail_by_page_with_options_async(request, headers, runtime)
+
+    def get_signed_detail_by_page_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.GetSignedDetailByPageRequest,
+        headers: dingtalkexclusive__1__0_models.GetSignedDetailByPageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetSignedDetailByPageResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.sign_status):
+            query['signStatus'] = request.sign_status
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetSignedDetailByPageResponse(),
+            self.do_roarequest('GetSignedDetailByPage', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/audits/users', 'json', req, runtime)
+        )
+
+    async def get_signed_detail_by_page_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetSignedDetailByPageRequest,
+        headers: dingtalkexclusive__1__0_models.GetSignedDetailByPageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetSignedDetailByPageResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.sign_status):
+            query['signStatus'] = request.sign_status
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetSignedDetailByPageResponse(),
+            await self.do_roarequest_async('GetSignedDetailByPage', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/audits/users', 'json', req, runtime)
         )
 
     def get_trust_device_list(

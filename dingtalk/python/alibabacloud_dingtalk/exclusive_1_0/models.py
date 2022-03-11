@@ -4,6 +4,146 @@ from Tea.model import TeaModel
 from typing import Dict, List, Any
 
 
+class BanOrOpenGroupWordsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class BanOrOpenGroupWordsRequest(TeaModel):
+    def __init__(
+        self,
+        ban_words_type: int = None,
+        open_converation_id: str = None,
+    ):
+        # 操作类型:0 不禁言;1:禁言
+        self.ban_words_type = ban_words_type
+        # 群id
+        self.open_converation_id = open_converation_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ban_words_type is not None:
+            result['banWordsType'] = self.ban_words_type
+        if self.open_converation_id is not None:
+            result['openConverationId'] = self.open_converation_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('banWordsType') is not None:
+            self.ban_words_type = m.get('banWordsType')
+        if m.get('openConverationId') is not None:
+            self.open_converation_id = m.get('openConverationId')
+        return self
+
+
+class BanOrOpenGroupWordsResponseBody(TeaModel):
+    def __init__(
+        self,
+        cause: str = None,
+        code: str = None,
+    ):
+        # 原因
+        self.cause = cause
+        # 返回码
+        self.code = code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.cause is not None:
+            result['cause'] = self.cause
+        if self.code is not None:
+            result['code'] = self.code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cause') is not None:
+            self.cause = m.get('cause')
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        return self
+
+
+class BanOrOpenGroupWordsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: BanOrOpenGroupWordsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = BanOrOpenGroupWordsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateTrustedDeviceHeaders(TeaModel):
     def __init__(
         self,
@@ -3157,6 +3297,245 @@ class GetPublisherSummaryResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = GetPublisherSummaryResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetSignedDetailByPageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetSignedDetailByPageRequest(TeaModel):
+    def __init__(
+        self,
+        page_number: int = None,
+        page_size: int = None,
+        sign_status: int = None,
+    ):
+        # pageStart
+        self.page_number = page_number
+        # pageSize
+        self.page_size = page_size
+        # signStatus
+        self.sign_status = sign_status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.sign_status is not None:
+            result['signStatus'] = self.sign_status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('signStatus') is not None:
+            self.sign_status = m.get('signStatus')
+        return self
+
+
+class GetSignedDetailByPageResponseBodyAuditSignedDetailDTOList(TeaModel):
+    def __init__(
+        self,
+        dept_name: str = None,
+        email: str = None,
+        name: str = None,
+        phone: str = None,
+        roles: str = None,
+        staff_id: str = None,
+        title: str = None,
+    ):
+        # 部门名称
+        self.dept_name = dept_name
+        # 邮件
+        self.email = email
+        # 员工名称
+        self.name = name
+        # 手机号
+        self.phone = phone
+        # 角色
+        self.roles = roles
+        # 工号
+        self.staff_id = staff_id
+        # 职位
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_name is not None:
+            result['deptName'] = self.dept_name
+        if self.email is not None:
+            result['email'] = self.email
+        if self.name is not None:
+            result['name'] = self.name
+        if self.phone is not None:
+            result['phone'] = self.phone
+        if self.roles is not None:
+            result['roles'] = self.roles
+        if self.staff_id is not None:
+            result['staffId'] = self.staff_id
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptName') is not None:
+            self.dept_name = m.get('deptName')
+        if m.get('email') is not None:
+            self.email = m.get('email')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('phone') is not None:
+            self.phone = m.get('phone')
+        if m.get('roles') is not None:
+            self.roles = m.get('roles')
+        if m.get('staffId') is not None:
+            self.staff_id = m.get('staffId')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class GetSignedDetailByPageResponseBody(TeaModel):
+    def __init__(
+        self,
+        audit_signed_detail_dtolist: List[GetSignedDetailByPageResponseBodyAuditSignedDetailDTOList] = None,
+        current_page: int = None,
+        page_size: int = None,
+        total: int = None,
+    ):
+        # 员工信息
+        self.audit_signed_detail_dtolist = audit_signed_detail_dtolist
+        # 当前页
+        self.current_page = current_page
+        # 一页数据量
+        self.page_size = page_size
+        # 总数据量
+        self.total = total
+
+    def validate(self):
+        if self.audit_signed_detail_dtolist:
+            for k in self.audit_signed_detail_dtolist:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['auditSignedDetailDTOList'] = []
+        if self.audit_signed_detail_dtolist is not None:
+            for k in self.audit_signed_detail_dtolist:
+                result['auditSignedDetailDTOList'].append(k.to_map() if k else None)
+        if self.current_page is not None:
+            result['currentPage'] = self.current_page
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.total is not None:
+            result['total'] = self.total
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.audit_signed_detail_dtolist = []
+        if m.get('auditSignedDetailDTOList') is not None:
+            for k in m.get('auditSignedDetailDTOList'):
+                temp_model = GetSignedDetailByPageResponseBodyAuditSignedDetailDTOList()
+                self.audit_signed_detail_dtolist.append(temp_model.from_map(k))
+        if m.get('currentPage') is not None:
+            self.current_page = m.get('currentPage')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('total') is not None:
+            self.total = m.get('total')
+        return self
+
+
+class GetSignedDetailByPageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetSignedDetailByPageResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetSignedDetailByPageResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
