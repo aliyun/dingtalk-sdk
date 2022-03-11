@@ -99,6 +99,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SearchDepartmentResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SearchUserHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SearchUserRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SearchUserResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SeparateBranchOrgHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SeparateBranchOrgRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SeparateBranchOrgResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SetDisableHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SetDisableRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SetDisableResponse;
@@ -1640,6 +1643,48 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return SearchUserResponse::fromMap($this->doROARequest('SearchUser', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/users/search', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param SeparateBranchOrgRequest $request
+     *
+     * @return SeparateBranchOrgResponse
+     */
+    public function separateBranchOrg($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SeparateBranchOrgHeaders([]);
+
+        return $this->separateBranchOrgWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SeparateBranchOrgRequest $request
+     * @param SeparateBranchOrgHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return SeparateBranchOrgResponse
+     */
+    public function separateBranchOrgWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->attachDeptId)) {
+            @$body['attachDeptId'] = $request->attachDeptId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SeparateBranchOrgResponse::fromMap($this->doROARequest('SeparateBranchOrg', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/cooperateCorps/separate', 'none', $req, $runtime));
     }
 
     /**

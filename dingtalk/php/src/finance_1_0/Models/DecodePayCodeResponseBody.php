@@ -44,6 +44,13 @@ class DecodePayCodeResponseBody extends Model
     public $corpId;
 
     /**
+     * @description 扩展信息
+     *
+     * @var string
+     */
+    public $extInfo;
+
+    /**
      * @description 外部业务ID,其值为调用创建用户码接口传入的requestId
      *
      * @var string
@@ -76,6 +83,7 @@ class DecodePayCodeResponseBody extends Model
         'codeIdentity'         => 'codeIdentity',
         'codeType'             => 'codeType',
         'corpId'               => 'corpId',
+        'extInfo'              => 'extInfo',
         'outBizId'             => 'outBizId',
         'userCorpRelationType' => 'userCorpRelationType',
         'userId'               => 'userId',
@@ -103,6 +111,9 @@ class DecodePayCodeResponseBody extends Model
         }
         if (null !== $this->corpId) {
             $res['corpId'] = $this->corpId;
+        }
+        if (null !== $this->extInfo) {
+            $res['extInfo'] = $this->extInfo;
         }
         if (null !== $this->outBizId) {
             $res['outBizId'] = $this->outBizId;
@@ -142,6 +153,9 @@ class DecodePayCodeResponseBody extends Model
         }
         if (isset($map['corpId'])) {
             $model->corpId = $map['corpId'];
+        }
+        if (isset($map['extInfo'])) {
+            $model->extInfo = $map['extInfo'];
         }
         if (isset($map['outBizId'])) {
             $model->outBizId = $map['outBizId'];
