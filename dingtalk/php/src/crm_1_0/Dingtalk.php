@@ -83,6 +83,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryCrmGroupChatsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryCrmPersonalCustomerHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryCrmPersonalCustomerRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryCrmPersonalCustomerResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryOfficialAccountUserBasicInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryOfficialAccountUserBasicInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryOfficialAccountUserBasicInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryRelationDatasByTargetIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryRelationDatasByTargetIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryRelationDatasByTargetIdResponse;
@@ -1420,6 +1423,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryCrmPersonalCustomerResponse::fromMap($this->doROARequest('QueryCrmPersonalCustomer', 'crm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/crm/personalCustomers', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryOfficialAccountUserBasicInfoRequest $request
+     *
+     * @return QueryOfficialAccountUserBasicInfoResponse
+     */
+    public function queryOfficialAccountUserBasicInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryOfficialAccountUserBasicInfoHeaders([]);
+
+        return $this->queryOfficialAccountUserBasicInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryOfficialAccountUserBasicInfoRequest $request
+     * @param QueryOfficialAccountUserBasicInfoHeaders $headers
+     * @param RuntimeOptions                           $runtime
+     *
+     * @return QueryOfficialAccountUserBasicInfoResponse
+     */
+    public function queryOfficialAccountUserBasicInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->bindingToken)) {
+            @$query['bindingToken'] = $request->bindingToken;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            @$query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryOfficialAccountUserBasicInfoResponse::fromMap($this->doROARequest('QueryOfficialAccountUserBasicInfo', 'crm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/crm/officialAccounts/basics/users', 'json', $req, $runtime));
     }
 
     /**
