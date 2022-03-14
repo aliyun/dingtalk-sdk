@@ -2572,6 +2572,94 @@ export class QueryCrmPersonalCustomerResponse extends $tea.Model {
   }
 }
 
+export class QueryOfficialAccountUserBasicInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryOfficialAccountUserBasicInfoRequest extends $tea.Model {
+  bindingToken?: string;
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bindingToken: 'bindingToken',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bindingToken: 'string',
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryOfficialAccountUserBasicInfoResponseBody extends $tea.Model {
+  requestId?: string;
+  result?: QueryOfficialAccountUserBasicInfoResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      requestId: 'requestId',
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      requestId: 'string',
+      result: QueryOfficialAccountUserBasicInfoResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryOfficialAccountUserBasicInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryOfficialAccountUserBasicInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryOfficialAccountUserBasicInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryRelationDatasByTargetIdHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -6624,6 +6712,25 @@ export class QueryCrmPersonalCustomerResponseBodyValues extends $tea.Model {
   }
 }
 
+export class QueryOfficialAccountUserBasicInfoResponseBodyResult extends $tea.Model {
+  status?: string;
+  static names(): { [key: string]: string } {
+    return {
+      status: 'status',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      status: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryRelationDatasByTargetIdResponseBodyRelationsBizDataList extends $tea.Model {
   extendValue?: string;
   key?: string;
@@ -8445,6 +8552,39 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<QueryCrmPersonalCustomerResponse>(await this.doROARequest("QueryCrmPersonalCustomer", "crm_1.0", "HTTP", "GET", "AK", `/v1.0/crm/personalCustomers`, "json", req, runtime), new QueryCrmPersonalCustomerResponse({}));
+  }
+
+  async queryOfficialAccountUserBasicInfo(request: QueryOfficialAccountUserBasicInfoRequest): Promise<QueryOfficialAccountUserBasicInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryOfficialAccountUserBasicInfoHeaders({ });
+    return await this.queryOfficialAccountUserBasicInfoWithOptions(request, headers, runtime);
+  }
+
+  async queryOfficialAccountUserBasicInfoWithOptions(request: QueryOfficialAccountUserBasicInfoRequest, headers: QueryOfficialAccountUserBasicInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryOfficialAccountUserBasicInfoResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bindingToken)) {
+      query["bindingToken"] = request.bindingToken;
+    }
+
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryOfficialAccountUserBasicInfoResponse>(await this.doROARequest("QueryOfficialAccountUserBasicInfo", "crm_1.0", "HTTP", "GET", "AK", `/v1.0/crm/officialAccounts/basics/users`, "json", req, runtime), new QueryOfficialAccountUserBasicInfoResponse({}));
   }
 
   async queryRelationDatasByTargetId(targetId: string, request: QueryRelationDatasByTargetIdRequest): Promise<QueryRelationDatasByTargetIdResponse> {
