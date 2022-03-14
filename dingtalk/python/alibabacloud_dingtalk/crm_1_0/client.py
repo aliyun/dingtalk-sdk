@@ -1967,6 +1967,74 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('QueryCrmPersonalCustomer', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/personalCustomers', 'json', req, runtime)
         )
 
+    def query_official_account_user_basic_info(
+        self,
+        request: dingtalkcrm__1__0_models.QueryOfficialAccountUserBasicInfoRequest,
+    ) -> dingtalkcrm__1__0_models.QueryOfficialAccountUserBasicInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.QueryOfficialAccountUserBasicInfoHeaders()
+        return self.query_official_account_user_basic_info_with_options(request, headers, runtime)
+
+    async def query_official_account_user_basic_info_async(
+        self,
+        request: dingtalkcrm__1__0_models.QueryOfficialAccountUserBasicInfoRequest,
+    ) -> dingtalkcrm__1__0_models.QueryOfficialAccountUserBasicInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.QueryOfficialAccountUserBasicInfoHeaders()
+        return await self.query_official_account_user_basic_info_with_options_async(request, headers, runtime)
+
+    def query_official_account_user_basic_info_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.QueryOfficialAccountUserBasicInfoRequest,
+        headers: dingtalkcrm__1__0_models.QueryOfficialAccountUserBasicInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.QueryOfficialAccountUserBasicInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.binding_token):
+            query['bindingToken'] = request.binding_token
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.QueryOfficialAccountUserBasicInfoResponse(),
+            self.do_roarequest('QueryOfficialAccountUserBasicInfo', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/officialAccounts/basics/users', 'json', req, runtime)
+        )
+
+    async def query_official_account_user_basic_info_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.QueryOfficialAccountUserBasicInfoRequest,
+        headers: dingtalkcrm__1__0_models.QueryOfficialAccountUserBasicInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.QueryOfficialAccountUserBasicInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.binding_token):
+            query['bindingToken'] = request.binding_token
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.QueryOfficialAccountUserBasicInfoResponse(),
+            await self.do_roarequest_async('QueryOfficialAccountUserBasicInfo', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/officialAccounts/basics/users', 'json', req, runtime)
+        )
+
     def query_relation_datas_by_target_id(
         self,
         target_id: str,
