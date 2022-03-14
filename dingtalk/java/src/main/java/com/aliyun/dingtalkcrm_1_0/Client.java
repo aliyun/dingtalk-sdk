@@ -1024,6 +1024,39 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("QueryCrmPersonalCustomer", "crm_1.0", "HTTP", "GET", "AK", "/v1.0/crm/personalCustomers", "json", req, runtime), new QueryCrmPersonalCustomerResponse());
     }
 
+    public QueryOfficialAccountUserBasicInfoResponse queryOfficialAccountUserBasicInfo(QueryOfficialAccountUserBasicInfoRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        QueryOfficialAccountUserBasicInfoHeaders headers = new QueryOfficialAccountUserBasicInfoHeaders();
+        return this.queryOfficialAccountUserBasicInfoWithOptions(request, headers, runtime);
+    }
+
+    public QueryOfficialAccountUserBasicInfoResponse queryOfficialAccountUserBasicInfoWithOptions(QueryOfficialAccountUserBasicInfoRequest request, QueryOfficialAccountUserBasicInfoHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bindingToken)) {
+            query.put("bindingToken", request.bindingToken);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            query.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("QueryOfficialAccountUserBasicInfo", "crm_1.0", "HTTP", "GET", "AK", "/v1.0/crm/officialAccounts/basics/users", "json", req, runtime), new QueryOfficialAccountUserBasicInfoResponse());
+    }
+
     public QueryRelationDatasByTargetIdResponse queryRelationDatasByTargetId(String targetId, QueryRelationDatasByTargetIdRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         QueryRelationDatasByTargetIdHeaders headers = new QueryRelationDatasByTargetIdHeaders();
