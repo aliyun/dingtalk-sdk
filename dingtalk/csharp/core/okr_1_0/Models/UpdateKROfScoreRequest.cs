@@ -9,20 +9,26 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
 {
     public class UpdateKROfScoreRequest : TeaModel {
+        /// <summary>
+        /// 分数值。
+        /// </summary>
         [NameInMap("score")]
         [Validation(Required=false)]
         public long? Score { get; set; }
 
         /// <summary>
-        /// A short description of struct
+        /// 当前 KR ID。
         /// </summary>
         [NameInMap("krId")]
         [Validation(Required=false)]
-        public Stream KrId { get; set; }
+        public string KrId { get; set; }
 
-        [NameInMap("ownerId")]
+        /// <summary>
+        /// 当前用户的userId。
+        /// </summary>
+        [NameInMap("userId")]
         [Validation(Required=false)]
-        public Stream OwnerId { get; set; }
+        public string UserId { get; set; }
 
     }
 

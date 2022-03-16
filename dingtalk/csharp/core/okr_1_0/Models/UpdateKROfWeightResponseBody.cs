@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
 {
     public class UpdateKROfWeightResponseBody : TeaModel {
-        /// <summary>
-        /// 目标分数
-        /// </summary>
         [NameInMap("data")]
         [Validation(Required=false)]
         public UpdateKROfWeightResponseBodyData Data { get; set; }
@@ -20,13 +17,12 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
             [Validation(Required=false)]
             public UpdateKROfWeightResponseBodyDataObjectiveProgress ObjectiveProgress { get; set; }
             public class UpdateKROfWeightResponseBodyDataObjectiveProgress : TeaModel {
+                /// <summary>
+                /// 目标百分比。
+                /// </summary>
                 [NameInMap("percent")]
                 [Validation(Required=false)]
                 public long? Percent { get; set; }
-
-                [NameInMap("status")]
-                [Validation(Required=false)]
-                public long? Status { get; set; }
 
             }
             [NameInMap("objectiveScore")]
@@ -35,7 +31,7 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
         };
 
         /// <summary>
-        /// Id of the request
+        /// 请求成功的标识。
         /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]

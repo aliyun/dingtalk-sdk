@@ -9,12 +9,15 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
 {
     public class DeleteKeyResultResponseBody : TeaModel {
+        /// <summary>
+        /// 返回的信息
+        /// </summary>
         [NameInMap("data")]
         [Validation(Required=false)]
         public bool? Data { get; set; }
 
         /// <summary>
-        /// is success
+        /// 请求成功的标识。
         /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]

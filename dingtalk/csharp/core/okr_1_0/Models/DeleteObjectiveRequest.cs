@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
 {
     public class DeleteObjectiveRequest : TeaModel {
         /// <summary>
-        /// userId
+        /// 当前用户的 userId。
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

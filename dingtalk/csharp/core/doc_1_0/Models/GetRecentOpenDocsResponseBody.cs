@@ -27,6 +27,9 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
             [Validation(Required=false)]
             public GetRecentOpenDocsResponseBodyRecentListNodeBO NodeBO { get; set; }
             public class GetRecentOpenDocsResponseBodyRecentListNodeBO : TeaModel {
+                [NameInMap("createTime")]
+                [Validation(Required=false)]
+                public long? CreateTime { get; set; }
                 [NameInMap("docType")]
                 [Validation(Required=false)]
                 public string DocType { get; set; }
@@ -42,6 +45,9 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
                 [NameInMap("nodeName")]
                 [Validation(Required=false)]
                 public string NodeName { get; set; }
+                [NameInMap("updateTime")]
+                [Validation(Required=false)]
+                public long? UpdateTime { get; set; }
                 [NameInMap("url")]
                 [Validation(Required=false)]
                 public string Url { get; set; }
@@ -54,6 +60,9 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
             [Validation(Required=false)]
             public GetRecentOpenDocsResponseBodyRecentListWorkspaceBO WorkspaceBO { get; set; }
             public class GetRecentOpenDocsResponseBodyRecentListWorkspaceBO : TeaModel {
+                [NameInMap("url")]
+                [Validation(Required=false)]
+                public string Url { get; set; }
                 [NameInMap("workspaceId")]
                 [Validation(Required=false)]
                 public string WorkspaceId { get; set; }

@@ -8,27 +8,29 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
 {
-    public class UnAlignObjectiveRequest : TeaModel {
-        /// <summary>
-        /// 周期 ID
-        /// </summary>
-        [NameInMap("periodId")]
-        [Validation(Required=false)]
-        public string PeriodId { get; set; }
-
-        /// <summary>
-        /// 对齐目标的 ID
-        /// </summary>
+    public class GetPermissionRequest : TeaModel {
         [NameInMap("targetId")]
         [Validation(Required=false)]
         public string TargetId { get; set; }
 
+        [NameInMap("targetType")]
+        [Validation(Required=false)]
+        public string TargetType { get; set; }
+
         /// <summary>
-        /// 当前用户的 userId。
+        /// A short description of struct
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]
         public string UserId { get; set; }
+
+        [NameInMap("withKr")]
+        [Validation(Required=false)]
+        public bool? WithKr { get; set; }
+
+        [NameInMap("withObjective")]
+        [Validation(Required=false)]
+        public bool? WithObjective { get; set; }
 
     }
 

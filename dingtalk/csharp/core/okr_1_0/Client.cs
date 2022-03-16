@@ -45,9 +45,9 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             objectiveId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(objectiveId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OwnerId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
-                query["ownerId"] = request.OwnerId;
+                query["userId"] = request.UserId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PeriodId))
@@ -81,9 +81,9 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             objectiveId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(objectiveId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OwnerId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
-                query["ownerId"] = request.OwnerId;
+                query["userId"] = request.UserId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PeriodId))
@@ -130,9 +130,9 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OwnerId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
-                query["ownerId"] = request.OwnerId;
+                query["userId"] = request.UserId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectiveIds))
@@ -177,9 +177,9 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OwnerId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
-                query["ownerId"] = request.OwnerId;
+                query["userId"] = request.UserId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectiveIds))
@@ -238,9 +238,9 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OwnerId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
-                query["ownerId"] = request.OwnerId;
+                query["userId"] = request.UserId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Content))
@@ -285,9 +285,9 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OwnerId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
-                query["ownerId"] = request.OwnerId;
+                query["userId"] = request.UserId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Content))
@@ -442,9 +442,9 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0
             {
                 query["krId"] = request.KrId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OwnerId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
-                query["ownerId"] = request.OwnerId;
+                query["userId"] = request.UserId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -471,9 +471,9 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0
             {
                 query["krId"] = request.KrId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OwnerId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
-                query["ownerId"] = request.OwnerId;
+                query["userId"] = request.UserId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -608,6 +608,102 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0
             return TeaModel.ToObject<GetPeriodListResponse>(await DoROARequestAsync("GetPeriodList", "okr_1.0", "HTTP", "GET", "AK", "/v1.0/okr/periods", "json", req, runtime));
         }
 
+        public GetPermissionResponse GetPermission(GetPermissionRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetPermissionHeaders headers = new GetPermissionHeaders();
+            return GetPermissionWithOptions(request, headers, runtime);
+        }
+
+        public async Task<GetPermissionResponse> GetPermissionAsync(GetPermissionRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetPermissionHeaders headers = new GetPermissionHeaders();
+            return await GetPermissionWithOptionsAsync(request, headers, runtime);
+        }
+
+        public GetPermissionResponse GetPermissionWithOptions(GetPermissionRequest request, GetPermissionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetId))
+            {
+                query["targetId"] = request.TargetId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetType))
+            {
+                query["targetType"] = request.TargetType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WithKr))
+            {
+                query["withKr"] = request.WithKr;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WithObjective))
+            {
+                query["withObjective"] = request.WithObjective;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<GetPermissionResponse>(DoROARequest("GetPermission", "okr_1.0", "HTTP", "GET", "AK", "/v1.0/okr/permissions", "json", req, runtime));
+        }
+
+        public async Task<GetPermissionResponse> GetPermissionWithOptionsAsync(GetPermissionRequest request, GetPermissionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetId))
+            {
+                query["targetId"] = request.TargetId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetType))
+            {
+                query["targetType"] = request.TargetType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WithKr))
+            {
+                query["withKr"] = request.WithKr;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WithObjective))
+            {
+                query["withObjective"] = request.WithObjective;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<GetPermissionResponse>(await DoROARequestAsync("GetPermission", "okr_1.0", "HTTP", "GET", "AK", "/v1.0/okr/permissions", "json", req, runtime));
+        }
+
         public GetUserOkrResponse GetUserOkr(GetUserOkrRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -626,10 +722,6 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OwnerId))
-            {
-                query["ownerId"] = request.OwnerId;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
             {
                 query["pageNumber"] = request.PageNumber;
@@ -641,6 +733,10 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PeriodId))
             {
                 query["periodId"] = request.PeriodId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -663,10 +759,6 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OwnerId))
-            {
-                query["ownerId"] = request.OwnerId;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
             {
                 query["pageNumber"] = request.PageNumber;
@@ -678,6 +770,10 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PeriodId))
             {
                 query["periodId"] = request.PeriodId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -715,9 +811,9 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             objectiveId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(objectiveId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OwnerId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
-                query["ownerId"] = request.OwnerId;
+                query["userId"] = request.UserId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PeriodId))
@@ -751,9 +847,9 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             objectiveId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(objectiveId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OwnerId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
-                query["ownerId"] = request.OwnerId;
+                query["userId"] = request.UserId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PeriodId))
@@ -804,9 +900,9 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0
             {
                 query["krId"] = request.KrId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorUid))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
-                query["operatorUid"] = request.OperatorUid;
+                query["userId"] = request.UserId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Content))
@@ -843,9 +939,9 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0
             {
                 query["krId"] = request.KrId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorUid))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
-                query["operatorUid"] = request.OperatorUid;
+                query["userId"] = request.UserId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Content))
@@ -896,9 +992,9 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0
             {
                 query["krId"] = request.KrId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OwnerId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
-                query["ownerId"] = request.OwnerId;
+                query["userId"] = request.UserId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Score))
@@ -931,9 +1027,9 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0
             {
                 query["krId"] = request.KrId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OwnerId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
-                query["ownerId"] = request.OwnerId;
+                query["userId"] = request.UserId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Score))
@@ -980,9 +1076,9 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0
             {
                 query["krId"] = request.KrId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OwnerId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
-                query["ownerId"] = request.OwnerId;
+                query["userId"] = request.UserId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Weight))
@@ -1015,9 +1111,9 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0
             {
                 query["krId"] = request.KrId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OwnerId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
-                query["ownerId"] = request.OwnerId;
+                query["userId"] = request.UserId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Weight))

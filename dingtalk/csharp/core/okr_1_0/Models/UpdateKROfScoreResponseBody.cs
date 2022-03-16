@@ -9,15 +9,17 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
 {
     public class UpdateKROfScoreResponseBody : TeaModel {
-        /// <summary>
-        /// 目标分数
-        /// </summary>
         [NameInMap("data")]
         [Validation(Required=false)]
-        public long? Data { get; set; }
+        public UpdateKROfScoreResponseBodyData Data { get; set; }
+        public class UpdateKROfScoreResponseBodyData : TeaModel {
+            [NameInMap("objectiveScore")]
+            [Validation(Required=false)]
+            public long? ObjectiveScore { get; set; }
+        };
 
         /// <summary>
-        /// Id of the request
+        /// 请求成功的标识。
         /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]

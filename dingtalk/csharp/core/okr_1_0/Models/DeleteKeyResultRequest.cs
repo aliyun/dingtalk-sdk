@@ -9,13 +9,19 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
 {
     public class DeleteKeyResultRequest : TeaModel {
+        /// <summary>
+        /// 当前 KR id。
+        /// </summary>
         [NameInMap("krId")]
         [Validation(Required=false)]
-        public Stream KrId { get; set; }
+        public string KrId { get; set; }
 
-        [NameInMap("ownerId")]
+        /// <summary>
+        /// 当前用户的userId。
+        /// </summary>
+        [NameInMap("userId")]
         [Validation(Required=false)]
-        public Stream OwnerId { get; set; }
+        public string UserId { get; set; }
 
     }
 

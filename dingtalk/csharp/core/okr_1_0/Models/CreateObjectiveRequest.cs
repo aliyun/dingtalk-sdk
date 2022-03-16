@@ -10,28 +10,28 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
 {
     public class CreateObjectiveRequest : TeaModel {
         /// <summary>
-        /// content
+        /// 创建Objective 的内容
         /// </summary>
         [NameInMap("content")]
         [Validation(Required=false)]
-        public Stream Content { get; set; }
+        public string Content { get; set; }
 
         /// <summary>
-        /// periodId
+        /// 当前周期 ID。
         /// </summary>
         [NameInMap("periodId")]
         [Validation(Required=false)]
-        public Stream PeriodId { get; set; }
+        public string PeriodId { get; set; }
 
         /// <summary>
-        /// prevPosition
+        /// 上一个 Objective 的位置。
         /// </summary>
         [NameInMap("prevPosition")]
         [Validation(Required=false)]
-        public Stream PrevPosition { get; set; }
+        public string PrevPosition { get; set; }
 
         /// <summary>
-        /// userId
+        /// 当前用户的 userId。
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

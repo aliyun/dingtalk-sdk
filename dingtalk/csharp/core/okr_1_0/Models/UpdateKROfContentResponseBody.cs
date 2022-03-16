@@ -14,7 +14,7 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
         public bool? Data { get; set; }
 
         /// <summary>
-        /// Id of the request
+        /// 请求成功的标识。
         /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]

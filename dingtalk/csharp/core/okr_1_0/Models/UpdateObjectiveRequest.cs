@@ -9,12 +9,15 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
 {
     public class UpdateObjectiveRequest : TeaModel {
+        /// <summary>
+        /// 当前 Objective 的内容。
+        /// </summary>
         [NameInMap("content")]
         [Validation(Required=false)]
-        public Stream Content { get; set; }
+        public string Content { get; set; }
 
         /// <summary>
-        /// userId
+        /// 当前用户的 userId。
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

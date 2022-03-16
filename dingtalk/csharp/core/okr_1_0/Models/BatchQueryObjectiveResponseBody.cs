@@ -10,165 +10,111 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
 {
     public class BatchQueryObjectiveResponseBody : TeaModel {
         /// <summary>
-        /// code
+        /// data
         /// </summary>
-        [NameInMap("code")]
-        [Validation(Required=false)]
-        public string Code { get; set; }
-
         [NameInMap("data")]
         [Validation(Required=false)]
-        public List<BatchQueryObjectiveResponseBodyData> Data { get; set; }
+        public BatchQueryObjectiveResponseBodyData Data { get; set; }
         public class BatchQueryObjectiveResponseBodyData : TeaModel {
-            [NameInMap("alignFromIds")]
+            [NameInMap("list")]
             [Validation(Required=false)]
-            public List<Stream> AlignFromIds { get; set; }
-
-            [NameInMap("alignToIds")]
-            [Validation(Required=false)]
-            public List<Stream> AlignToIds { get; set; }
-
-            [NameInMap("content")]
-            [Validation(Required=false)]
-            public Stream Content { get; set; }
-
-            [NameInMap("id")]
-            [Validation(Required=false)]
-            public Stream Id { get; set; }
-
-            [NameInMap("krList")]
-            [Validation(Required=false)]
-            public List<BatchQueryObjectiveResponseBodyDataKrList> KrList { get; set; }
-            public class BatchQueryObjectiveResponseBodyDataKrList : TeaModel {
-                [NameInMap("content")]
-                [Validation(Required=false)]
+            public List<BatchQueryObjectiveResponseBodyDataList> List { get; set; }
+            public class BatchQueryObjectiveResponseBodyDataList : TeaModel {
+                public List<string> AlignFromIds { get; set; }
+                public List<string> AlignToIds { get; set; }
                 public Stream Content { get; set; }
-
-                [NameInMap("id")]
-                [Validation(Required=false)]
                 public Stream Id { get; set; }
+                public List<BatchQueryObjectiveResponseBodyDataListKrList> KrList { get; set; }
+                public class BatchQueryObjectiveResponseBodyDataListKrList : TeaModel {
+                    public Stream Content { get; set; }
+                    public Stream Id { get; set; }
+                    public Stream ObjectiveId { get; set; }
+                    public List<string> Permission { get; set; }
+                    public long? Position { get; set; }
+                    public BatchQueryObjectiveResponseBodyDataListKrListProgress Progress { get; set; }
+                    public class BatchQueryObjectiveResponseBodyDataListKrListProgress : TeaModel {
+                        /// <summary>
+                        /// 百分比。
+                        /// </summary>
+                        [NameInMap("percent")]
+                        [Validation(Required=false)]
+                        public int? Percent { get; set; }
 
-                [NameInMap("objectiveId")]
-                [Validation(Required=false)]
-                public Stream ObjectiveId { get; set; }
-
-                [NameInMap("permission")]
-                [Validation(Required=false)]
-                public List<float?> Permission { get; set; }
-
-                [NameInMap("position")]
-                [Validation(Required=false)]
-                public long? Position { get; set; }
-
-                [NameInMap("progress")]
-                [Validation(Required=false)]
-                public BatchQueryObjectiveResponseBodyDataKrListProgress Progress { get; set; }
-                public class BatchQueryObjectiveResponseBodyDataKrListProgress : TeaModel {
-                    [NameInMap("percent")]
+                    }
+                    public float? Score { get; set; }
+                    public float? Weight { get; set; }
+                }
+                public BatchQueryObjectiveResponseBodyDataListOwner Owner { get; set; }
+                public class BatchQueryObjectiveResponseBodyDataListOwner : TeaModel {
+                    /// <summary>
+                    /// 所属者头像。 ID
+                    /// </summary>
+                    [NameInMap("avatarMediaId")]
                     [Validation(Required=false)]
-                    public int? Percent { get; set; }
-                };
+                    public Stream AvatarMediaId { get; set; }
 
-                [NameInMap("score")]
-                [Validation(Required=false)]
-                public float? Score { get; set; }
+                    /// <summary>
+                    /// 所属者组织 I。D
+                    /// </summary>
+                    [NameInMap("corpId")]
+                    [Validation(Required=false)]
+                    public Stream CorpId { get; set; }
 
-                [NameInMap("weight")]
-                [Validation(Required=false)]
-                public float? Weight { get; set; }
-
-            }
-
-            [NameInMap("owner")]
-            [Validation(Required=false)]
-            public BatchQueryObjectiveResponseBodyDataOwner Owner { get; set; }
-            public class BatchQueryObjectiveResponseBodyDataOwner : TeaModel {
-                [NameInMap("avatarMediaId")]
-                [Validation(Required=false)]
-                public Stream AvatarMediaId { get; set; }
-                [NameInMap("corpId")]
-                [Validation(Required=false)]
-                public Stream CorpId { get; set; }
-                [NameInMap("department")]
-                [Validation(Required=false)]
-                public BatchQueryObjectiveResponseBodyDataOwnerDepartment Department { get; set; }
-                public class BatchQueryObjectiveResponseBodyDataOwnerDepartment : TeaModel {
+                    /// <summary>
+                    /// 所属者 ID。
+                    /// </summary>
                     [NameInMap("id")]
                     [Validation(Required=false)]
                     public Stream Id { get; set; }
 
-                    [NameInMap("name")]
+                    /// <summary>
+                    /// 所属者昵称。
+                    /// </summary>
+                    [NameInMap("nickname")]
                     [Validation(Required=false)]
-                    public Stream Name { get; set; }
+                    public Stream Nickname { get; set; }
+
+                    /// <summary>
+                    /// 所属者 userId。
+                    /// </summary>
+                    [NameInMap("staffId")]
+                    [Validation(Required=false)]
+                    public Stream StaffId { get; set; }
 
                 }
-                [NameInMap("id")]
-                [Validation(Required=false)]
-                public Stream Id { get; set; }
-                [NameInMap("nickname")]
-                [Validation(Required=false)]
-                public Stream Nickname { get; set; }
-                [NameInMap("staffId")]
-                [Validation(Required=false)]
-                public Stream StaffId { get; set; }
-            };
+                public Stream PeriodId { get; set; }
+                public List<string> Permission { get; set; }
+                public int? Position { get; set; }
+                public BatchQueryObjectiveResponseBodyDataListProgress Progress { get; set; }
+                public class BatchQueryObjectiveResponseBodyDataListProgress : TeaModel {
+                    /// <summary>
+                    /// 百分比。
+                    /// </summary>
+                    [NameInMap("percent")]
+                    [Validation(Required=false)]
+                    public int? Percent { get; set; }
 
-            [NameInMap("periodId")]
+                }
+                public float? ProgressPercent { get; set; }
+                public bool? Published { get; set; }
+                public float? Score { get; set; }
+                public int? Status { get; set; }
+                public Stream UserId { get; set; }
+                public float? Weight { get; set; }
+            }
+            [NameInMap("pageNo")]
             [Validation(Required=false)]
-            public Stream PeriodId { get; set; }
-
-            [NameInMap("permission")]
+            public long? PageNo { get; set; }
+            [NameInMap("pageSize")]
             [Validation(Required=false)]
-            public List<float?> Permission { get; set; }
-
-            [NameInMap("position")]
+            public long? PageSize { get; set; }
+            [NameInMap("totalCount")]
             [Validation(Required=false)]
-            public int? Position { get; set; }
-
-            [NameInMap("progress")]
-            [Validation(Required=false)]
-            public BatchQueryObjectiveResponseBodyDataProgress Progress { get; set; }
-            public class BatchQueryObjectiveResponseBodyDataProgress : TeaModel {
-                [NameInMap("percent")]
-                [Validation(Required=false)]
-                public int? Percent { get; set; }
-            };
-
-            [NameInMap("progressPercent")]
-            [Validation(Required=false)]
-            public float? ProgressPercent { get; set; }
-
-            [NameInMap("published")]
-            [Validation(Required=false)]
-            public bool? Published { get; set; }
-
-            [NameInMap("score")]
-            [Validation(Required=false)]
-            public float? Score { get; set; }
-
-            [NameInMap("status")]
-            [Validation(Required=false)]
-            public int? Status { get; set; }
-
-            [NameInMap("userId")]
-            [Validation(Required=false)]
-            public Stream UserId { get; set; }
-
-            [NameInMap("weight")]
-            [Validation(Required=false)]
-            public float? Weight { get; set; }
-
-        }
+            public long? TotalCount { get; set; }
+        };
 
         /// <summary>
-        /// message
-        /// </summary>
-        [NameInMap("message")]
-        [Validation(Required=false)]
-        public Stream Message { get; set; }
-
-        /// <summary>
-        /// success
+        /// 请求成功的标识。
         /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]

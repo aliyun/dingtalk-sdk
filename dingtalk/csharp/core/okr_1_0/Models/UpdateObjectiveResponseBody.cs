@@ -10,13 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
 {
     public class UpdateObjectiveResponseBody : TeaModel {
         /// <summary>
-        /// code
-        /// </summary>
-        [NameInMap("code")]
-        [Validation(Required=false)]
-        public long? Code { get; set; }
-
-        /// <summary>
         /// data
         /// </summary>
         [NameInMap("data")]
@@ -32,14 +25,7 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
         };
 
         /// <summary>
-        /// message
-        /// </summary>
-        [NameInMap("message")]
-        [Validation(Required=false)]
-        public string Message { get; set; }
-
-        /// <summary>
-        /// success
+        /// 请求成功的标识。
         /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]

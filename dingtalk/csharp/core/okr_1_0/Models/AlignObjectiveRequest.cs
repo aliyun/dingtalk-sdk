@@ -10,25 +10,25 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
 {
     public class AlignObjectiveRequest : TeaModel {
         /// <summary>
-        /// 周期 ID
+        /// 周期 ID。
         /// </summary>
         [NameInMap("periodId")]
         [Validation(Required=false)]
         public string PeriodId { get; set; }
 
         /// <summary>
-        /// 对齐目标的 ID
+        /// 对齐目标的 ID。
         /// </summary>
         [NameInMap("targetId")]
         [Validation(Required=false)]
         public string TargetId { get; set; }
 
         /// <summary>
-        /// 用户 ID
+        /// 当前用户的 user ID。
         /// </summary>
-        [NameInMap("ownerId")]
+        [NameInMap("userId")]
         [Validation(Required=false)]
-        public Stream OwnerId { get; set; }
+        public string UserId { get; set; }
 
     }
 

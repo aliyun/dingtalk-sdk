@@ -10,13 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
 {
     public class GetUserOkrResponseBody : TeaModel {
         /// <summary>
-        /// code
-        /// </summary>
-        [NameInMap("code")]
-        [Validation(Required=false)]
-        public long? Code { get; set; }
-
-        /// <summary>
         /// data
         /// </summary>
         [NameInMap("data")]
@@ -40,6 +33,9 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
                     public long? Position { get; set; }
                     public GetUserOkrResponseBodyDataListKrListProgress Progress { get; set; }
                     public class GetUserOkrResponseBodyDataListKrListProgress : TeaModel {
+                        /// <summary>
+                        /// 百分比。
+                        /// </summary>
                         [NameInMap("percent")]
                         [Validation(Required=false)]
                         public int? Percent { get; set; }
@@ -50,34 +46,37 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
                 }
                 public GetUserOkrResponseBodyDataListOwner Owner { get; set; }
                 public class GetUserOkrResponseBodyDataListOwner : TeaModel {
+                    /// <summary>
+                    /// 所属者头像。 ID
+                    /// </summary>
                     [NameInMap("avatarMediaId")]
                     [Validation(Required=false)]
                     public Stream AvatarMediaId { get; set; }
 
+                    /// <summary>
+                    /// 所属者组织 I。D
+                    /// </summary>
                     [NameInMap("corpId")]
                     [Validation(Required=false)]
                     public Stream CorpId { get; set; }
 
-                    [NameInMap("department")]
-                    [Validation(Required=false)]
-                    public GetUserOkrResponseBodyDataListOwnerDepartment Department { get; set; }
-                    public class GetUserOkrResponseBodyDataListOwnerDepartment : TeaModel {
-                        [NameInMap("id")]
-                        [Validation(Required=false)]
-                        public Stream Id { get; set; }
-                        [NameInMap("name")]
-                        [Validation(Required=false)]
-                        public Stream Name { get; set; }
-                    };
-
+                    /// <summary>
+                    /// 所属者 ID。
+                    /// </summary>
                     [NameInMap("id")]
                     [Validation(Required=false)]
                     public Stream Id { get; set; }
 
+                    /// <summary>
+                    /// 所属者昵称。
+                    /// </summary>
                     [NameInMap("nickname")]
                     [Validation(Required=false)]
                     public Stream Nickname { get; set; }
 
+                    /// <summary>
+                    /// 所属者 userId。
+                    /// </summary>
                     [NameInMap("staffId")]
                     [Validation(Required=false)]
                     public Stream StaffId { get; set; }
@@ -88,6 +87,9 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
                 public int? Position { get; set; }
                 public GetUserOkrResponseBodyDataListProgress Progress { get; set; }
                 public class GetUserOkrResponseBodyDataListProgress : TeaModel {
+                    /// <summary>
+                    /// 百分比。
+                    /// </summary>
                     [NameInMap("percent")]
                     [Validation(Required=false)]
                     public int? Percent { get; set; }
@@ -112,14 +114,7 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
         };
 
         /// <summary>
-        /// message
-        /// </summary>
-        [NameInMap("message")]
-        [Validation(Required=false)]
-        public Stream Message { get; set; }
-
-        /// <summary>
-        /// success
+        /// 请求成功的标识。
         /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]

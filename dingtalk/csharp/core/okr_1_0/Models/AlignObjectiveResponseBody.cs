@@ -10,13 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
 {
     public class AlignObjectiveResponseBody : TeaModel {
         /// <summary>
-        /// code
-        /// </summary>
-        [NameInMap("code")]
-        [Validation(Required=false)]
-        public long? Code { get; set; }
-
-        /// <summary>
         /// data
         /// </summary>
         [NameInMap("data")]
@@ -30,13 +23,6 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
             [Validation(Required=false)]
             public Stream Id { get; set; }
         };
-
-        /// <summary>
-        /// message
-        /// </summary>
-        [NameInMap("message")]
-        [Validation(Required=false)]
-        public string Message { get; set; }
 
         /// <summary>
         /// success

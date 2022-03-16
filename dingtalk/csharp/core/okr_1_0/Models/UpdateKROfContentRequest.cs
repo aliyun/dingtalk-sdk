@@ -9,24 +9,33 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
 {
     public class UpdateKROfContentRequest : TeaModel {
+        /// <summary>
+        /// KR的内容。
+        /// </summary>
         [NameInMap("content")]
         [Validation(Required=false)]
-        public Stream Content { get; set; }
-
-        [NameInMap("updateQuoteList")]
-        [Validation(Required=false)]
-        public List<Stream> UpdateQuoteList { get; set; }
+        public string Content { get; set; }
 
         /// <summary>
-        /// A short description of struct
+        /// 待更新的划词 ID 列表。
+        /// </summary>
+        [NameInMap("updateQuoteList")]
+        [Validation(Required=false)]
+        public List<string> UpdateQuoteList { get; set; }
+
+        /// <summary>
+        /// 当前 KR ID。
         /// </summary>
         [NameInMap("krId")]
         [Validation(Required=false)]
-        public Stream KrId { get; set; }
+        public string KrId { get; set; }
 
-        [NameInMap("operatorUid")]
+        /// <summary>
+        /// 当前用户的userId。
+        /// </summary>
+        [NameInMap("userId")]
         [Validation(Required=false)]
-        public Stream OperatorUid { get; set; }
+        public string UserId { get; set; }
 
     }
 
