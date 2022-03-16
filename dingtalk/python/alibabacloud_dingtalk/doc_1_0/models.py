@@ -2138,23 +2138,29 @@ class GetRecentEditDocsRequest(TeaModel):
 class GetRecentEditDocsResponseBodyRecentListNodeBO(TeaModel):
     def __init__(
         self,
+        create_time: int = None,
         doc_type: str = None,
         is_deleted: bool = None,
         last_edit_time: int = None,
         node_id: str = None,
         node_name: str = None,
+        update_time: int = None,
         url: str = None,
     ):
+        # 创建时间
+        self.create_time = create_time
         # 节点类型
         self.doc_type = doc_type
         # 是否被删除
         self.is_deleted = is_deleted
-        # 最后编辑时间
+        # 内容的最后编辑时间
         self.last_edit_time = last_edit_time
         # 文档Id
         self.node_id = node_id
         # 文档名称
         self.node_name = node_name
+        # 文档更新时间，包括重命名、移动、内容编辑等操作都会刷新更新时间
+        self.update_time = update_time
         # 文档打开url
         self.url = url
 
@@ -2167,6 +2173,8 @@ class GetRecentEditDocsResponseBodyRecentListNodeBO(TeaModel):
             return _map
 
         result = dict()
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
         if self.doc_type is not None:
             result['docType'] = self.doc_type
         if self.is_deleted is not None:
@@ -2177,12 +2185,16 @@ class GetRecentEditDocsResponseBodyRecentListNodeBO(TeaModel):
             result['nodeId'] = self.node_id
         if self.node_name is not None:
             result['nodeName'] = self.node_name
+        if self.update_time is not None:
+            result['updateTime'] = self.update_time
         if self.url is not None:
             result['url'] = self.url
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
         if m.get('docType') is not None:
             self.doc_type = m.get('docType')
         if m.get('isDeleted') is not None:
@@ -2193,6 +2205,8 @@ class GetRecentEditDocsResponseBodyRecentListNodeBO(TeaModel):
             self.node_id = m.get('nodeId')
         if m.get('nodeName') is not None:
             self.node_name = m.get('nodeName')
+        if m.get('updateTime') is not None:
+            self.update_time = m.get('updateTime')
         if m.get('url') is not None:
             self.url = m.get('url')
         return self
@@ -2201,9 +2215,12 @@ class GetRecentEditDocsResponseBodyRecentListNodeBO(TeaModel):
 class GetRecentEditDocsResponseBodyRecentListWorkspaceBO(TeaModel):
     def __init__(
         self,
+        url: str = None,
         workspace_id: str = None,
         workspace_name: str = None,
     ):
+        # 团队空间打开url
+        self.url = url
         # 团队空间Id
         self.workspace_id = workspace_id
         # 团队空间名称
@@ -2218,6 +2235,8 @@ class GetRecentEditDocsResponseBodyRecentListWorkspaceBO(TeaModel):
             return _map
 
         result = dict()
+        if self.url is not None:
+            result['url'] = self.url
         if self.workspace_id is not None:
             result['workspaceId'] = self.workspace_id
         if self.workspace_name is not None:
@@ -2226,6 +2245,8 @@ class GetRecentEditDocsResponseBodyRecentListWorkspaceBO(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('url') is not None:
+            self.url = m.get('url')
         if m.get('workspaceId') is not None:
             self.workspace_id = m.get('workspaceId')
         if m.get('workspaceName') is not None:
@@ -2429,13 +2450,17 @@ class GetRecentOpenDocsRequest(TeaModel):
 class GetRecentOpenDocsResponseBodyRecentListNodeBO(TeaModel):
     def __init__(
         self,
+        create_time: int = None,
         doc_type: str = None,
         is_deleted: bool = None,
         last_open_time: int = None,
         node_id: str = None,
         node_name: str = None,
+        update_time: int = None,
         url: str = None,
     ):
+        # 创建时间
+        self.create_time = create_time
         # 节点类型
         self.doc_type = doc_type
         # 是否被删除
@@ -2446,6 +2471,8 @@ class GetRecentOpenDocsResponseBodyRecentListNodeBO(TeaModel):
         self.node_id = node_id
         # 文档名称
         self.node_name = node_name
+        # 文档更新时间，包括重命名、移动、内容编辑等操作都会刷新更新时间
+        self.update_time = update_time
         # 文档打开url
         self.url = url
 
@@ -2458,6 +2485,8 @@ class GetRecentOpenDocsResponseBodyRecentListNodeBO(TeaModel):
             return _map
 
         result = dict()
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
         if self.doc_type is not None:
             result['docType'] = self.doc_type
         if self.is_deleted is not None:
@@ -2468,12 +2497,16 @@ class GetRecentOpenDocsResponseBodyRecentListNodeBO(TeaModel):
             result['nodeId'] = self.node_id
         if self.node_name is not None:
             result['nodeName'] = self.node_name
+        if self.update_time is not None:
+            result['updateTime'] = self.update_time
         if self.url is not None:
             result['url'] = self.url
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
         if m.get('docType') is not None:
             self.doc_type = m.get('docType')
         if m.get('isDeleted') is not None:
@@ -2484,6 +2517,8 @@ class GetRecentOpenDocsResponseBodyRecentListNodeBO(TeaModel):
             self.node_id = m.get('nodeId')
         if m.get('nodeName') is not None:
             self.node_name = m.get('nodeName')
+        if m.get('updateTime') is not None:
+            self.update_time = m.get('updateTime')
         if m.get('url') is not None:
             self.url = m.get('url')
         return self
@@ -2492,9 +2527,12 @@ class GetRecentOpenDocsResponseBodyRecentListNodeBO(TeaModel):
 class GetRecentOpenDocsResponseBodyRecentListWorkspaceBO(TeaModel):
     def __init__(
         self,
+        url: str = None,
         workspace_id: str = None,
         workspace_name: str = None,
     ):
+        # 团队空间打开url
+        self.url = url
         # 团队空间Id
         self.workspace_id = workspace_id
         # 团队空间名称
@@ -2509,6 +2547,8 @@ class GetRecentOpenDocsResponseBodyRecentListWorkspaceBO(TeaModel):
             return _map
 
         result = dict()
+        if self.url is not None:
+            result['url'] = self.url
         if self.workspace_id is not None:
             result['workspaceId'] = self.workspace_id
         if self.workspace_name is not None:
@@ -2517,6 +2557,8 @@ class GetRecentOpenDocsResponseBodyRecentListWorkspaceBO(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('url') is not None:
+            self.url = m.get('url')
         if m.get('workspaceId') is not None:
             self.workspace_id = m.get('workspaceId')
         if m.get('workspaceName') is not None:

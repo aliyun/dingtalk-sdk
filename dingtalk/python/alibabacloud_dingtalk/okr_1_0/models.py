@@ -42,14 +42,14 @@ class AlignObjectiveRequest(TeaModel):
         self,
         period_id: str = None,
         target_id: str = None,
-        owner_id: BinaryIO = None,
+        user_id: str = None,
     ):
-        # 周期 ID
+        # 周期 ID。
         self.period_id = period_id
-        # 对齐目标的 ID
+        # 对齐目标的 ID。
         self.target_id = target_id
-        # 用户 ID
-        self.owner_id = owner_id
+        # 当前用户的 user ID。
+        self.user_id = user_id
 
     def validate(self):
         pass
@@ -64,8 +64,8 @@ class AlignObjectiveRequest(TeaModel):
             result['periodId'] = self.period_id
         if self.target_id is not None:
             result['targetId'] = self.target_id
-        if self.owner_id is not None:
-            result['ownerId'] = self.owner_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
         return result
 
     def from_map(self, m: dict = None):
@@ -74,8 +74,8 @@ class AlignObjectiveRequest(TeaModel):
             self.period_id = m.get('periodId')
         if m.get('targetId') is not None:
             self.target_id = m.get('targetId')
-        if m.get('ownerId') is not None:
-            self.owner_id = m.get('ownerId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
         return self
 
 
@@ -85,7 +85,9 @@ class AlignObjectiveResponseBodyData(TeaModel):
         align_id: BinaryIO = None,
         id: BinaryIO = None,
     ):
+        # 对齐目标的 ID。
         self.align_id = align_id
+        # 当前 Objective 的ID
         self.id = id
 
     def validate(self):
@@ -115,17 +117,11 @@ class AlignObjectiveResponseBodyData(TeaModel):
 class AlignObjectiveResponseBody(TeaModel):
     def __init__(
         self,
-        code: int = None,
         data: AlignObjectiveResponseBodyData = None,
-        message: str = None,
         success: bool = None,
     ):
-        # code
-        self.code = code
         # data
         self.data = data
-        # message
-        self.message = message
         # success
         self.success = success
 
@@ -139,25 +135,17 @@ class AlignObjectiveResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.code is not None:
-            result['code'] = self.code
         if self.data is not None:
             result['data'] = self.data.to_map()
-        if self.message is not None:
-            result['message'] = self.message
         if self.success is not None:
             result['success'] = self.success
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('code') is not None:
-            self.code = m.get('code')
         if m.get('data') is not None:
             temp_model = AlignObjectiveResponseBodyData()
             self.data = temp_model.from_map(m['data'])
-        if m.get('message') is not None:
-            self.message = m.get('message')
         if m.get('success') is not None:
             self.success = m.get('success')
         return self
@@ -236,24 +224,25 @@ class BatchQueryObjectiveHeaders(TeaModel):
 class BatchQueryObjectiveRequest(TeaModel):
     def __init__(
         self,
-        objective_ids: List[BinaryIO] = None,
-        period_id: BinaryIO = None,
+        objective_ids: List[str] = None,
+        period_id: str = None,
         with_align: bool = None,
         with_kr: bool = None,
         with_progress: bool = None,
-        owner_id: str = None,
+        user_id: str = None,
     ):
+        # 需要查看的 Objective ID。
         self.objective_ids = objective_ids
-        # periodId
+        # 周期 ID。
         self.period_id = period_id
-        # withAlign
+        # 是否返回关联信息。
         self.with_align = with_align
-        # withKr
+        # 是否返回 KR 信息。
         self.with_kr = with_kr
-        # withProgress
+        # 是否返回进度信息
         self.with_progress = with_progress
-        # ownerId
-        self.owner_id = owner_id
+        # 当前用户的 staff ID。
+        self.user_id = user_id
 
     def validate(self):
         pass
@@ -274,8 +263,8 @@ class BatchQueryObjectiveRequest(TeaModel):
             result['withKr'] = self.with_kr
         if self.with_progress is not None:
             result['withProgress'] = self.with_progress
-        if self.owner_id is not None:
-            result['ownerId'] = self.owner_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
         return result
 
     def from_map(self, m: dict = None):
@@ -290,16 +279,17 @@ class BatchQueryObjectiveRequest(TeaModel):
             self.with_kr = m.get('withKr')
         if m.get('withProgress') is not None:
             self.with_progress = m.get('withProgress')
-        if m.get('ownerId') is not None:
-            self.owner_id = m.get('ownerId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
         return self
 
 
-class BatchQueryObjectiveResponseBodyDataKrListProgress(TeaModel):
+class BatchQueryObjectiveResponseBodyDataListKrListProgress(TeaModel):
     def __init__(
         self,
         percent: int = None,
     ):
+        # 百分比。
         self.percent = percent
 
     def validate(self):
@@ -322,7 +312,7 @@ class BatchQueryObjectiveResponseBodyDataKrListProgress(TeaModel):
         return self
 
 
-class BatchQueryObjectiveResponseBodyDataKrList(TeaModel):
+class BatchQueryObjectiveResponseBodyDataListKrList(TeaModel):
     def __init__(
         self,
         content: BinaryIO = None,
@@ -330,17 +320,25 @@ class BatchQueryObjectiveResponseBodyDataKrList(TeaModel):
         objective_id: BinaryIO = None,
         permission: List[float] = None,
         position: int = None,
-        progress: BatchQueryObjectiveResponseBodyDataKrListProgress = None,
+        progress: BatchQueryObjectiveResponseBodyDataListKrListProgress = None,
         score: float = None,
         weight: float = None,
     ):
+        # KR 内容。
         self.content = content
+        # KR 的 ID。
         self.id = id
+        # 所属 Objective ID。
         self.objective_id = objective_id
+        # KR 权限。
         self.permission = permission
+        # 所处位置。
         self.position = position
+        # KR 进度。
         self.progress = progress
+        # 所占分数。
         self.score = score
+        # 所占权重。
         self.weight = weight
 
     def validate(self):
@@ -384,7 +382,7 @@ class BatchQueryObjectiveResponseBodyDataKrList(TeaModel):
         if m.get('position') is not None:
             self.position = m.get('position')
         if m.get('progress') is not None:
-            temp_model = BatchQueryObjectiveResponseBodyDataKrListProgress()
+            temp_model = BatchQueryObjectiveResponseBodyDataListKrListProgress()
             self.progress = temp_model.from_map(m['progress'])
         if m.get('score') is not None:
             self.score = m.get('score')
@@ -393,59 +391,28 @@ class BatchQueryObjectiveResponseBodyDataKrList(TeaModel):
         return self
 
 
-class BatchQueryObjectiveResponseBodyDataOwnerDepartment(TeaModel):
-    def __init__(
-        self,
-        id: BinaryIO = None,
-        name: BinaryIO = None,
-    ):
-        self.id = id
-        self.name = name
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.id is not None:
-            result['id'] = self.id
-        if self.name is not None:
-            result['name'] = self.name
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('id') is not None:
-            self.id = m.get('id')
-        if m.get('name') is not None:
-            self.name = m.get('name')
-        return self
-
-
-class BatchQueryObjectiveResponseBodyDataOwner(TeaModel):
+class BatchQueryObjectiveResponseBodyDataListOwner(TeaModel):
     def __init__(
         self,
         avatar_media_id: BinaryIO = None,
         corp_id: BinaryIO = None,
-        department: BatchQueryObjectiveResponseBodyDataOwnerDepartment = None,
         id: BinaryIO = None,
         nickname: BinaryIO = None,
         staff_id: BinaryIO = None,
     ):
+        # 所属者头像。 ID
         self.avatar_media_id = avatar_media_id
+        # 所属者组织 I。D
         self.corp_id = corp_id
-        self.department = department
+        # 所属者 ID。
         self.id = id
+        # 所属者昵称。
         self.nickname = nickname
+        # 所属者 userId。
         self.staff_id = staff_id
 
     def validate(self):
-        if self.department:
-            self.department.validate()
+        pass
 
     def to_map(self):
         _map = super().to_map()
@@ -457,8 +424,6 @@ class BatchQueryObjectiveResponseBodyDataOwner(TeaModel):
             result['avatarMediaId'] = self.avatar_media_id
         if self.corp_id is not None:
             result['corpId'] = self.corp_id
-        if self.department is not None:
-            result['department'] = self.department.to_map()
         if self.id is not None:
             result['id'] = self.id
         if self.nickname is not None:
@@ -473,9 +438,6 @@ class BatchQueryObjectiveResponseBodyDataOwner(TeaModel):
             self.avatar_media_id = m.get('avatarMediaId')
         if m.get('corpId') is not None:
             self.corp_id = m.get('corpId')
-        if m.get('department') is not None:
-            temp_model = BatchQueryObjectiveResponseBodyDataOwnerDepartment()
-            self.department = temp_model.from_map(m['department'])
         if m.get('id') is not None:
             self.id = m.get('id')
         if m.get('nickname') is not None:
@@ -485,11 +447,12 @@ class BatchQueryObjectiveResponseBodyDataOwner(TeaModel):
         return self
 
 
-class BatchQueryObjectiveResponseBodyDataProgress(TeaModel):
+class BatchQueryObjectiveResponseBodyDataListProgress(TeaModel):
     def __init__(
         self,
         percent: int = None,
     ):
+        # 百分比。
         self.percent = percent
 
     def validate(self):
@@ -512,19 +475,19 @@ class BatchQueryObjectiveResponseBodyDataProgress(TeaModel):
         return self
 
 
-class BatchQueryObjectiveResponseBodyData(TeaModel):
+class BatchQueryObjectiveResponseBodyDataList(TeaModel):
     def __init__(
         self,
         align_from_ids: List[BinaryIO] = None,
         align_to_ids: List[BinaryIO] = None,
         content: BinaryIO = None,
         id: BinaryIO = None,
-        kr_list: List[BatchQueryObjectiveResponseBodyDataKrList] = None,
-        owner: BatchQueryObjectiveResponseBodyDataOwner = None,
+        kr_list: List[BatchQueryObjectiveResponseBodyDataListKrList] = None,
+        owner: BatchQueryObjectiveResponseBodyDataListOwner = None,
         period_id: BinaryIO = None,
         permission: List[float] = None,
         position: int = None,
-        progress: BatchQueryObjectiveResponseBodyDataProgress = None,
+        progress: BatchQueryObjectiveResponseBodyDataListProgress = None,
         progress_percent: float = None,
         published: bool = None,
         score: float = None,
@@ -532,21 +495,37 @@ class BatchQueryObjectiveResponseBodyData(TeaModel):
         user_id: BinaryIO = None,
         weight: float = None,
     ):
+        # 被对齐的 Objective。
         self.align_from_ids = align_from_ids
+        # 对齐的 Objective。
         self.align_to_ids = align_to_ids
+        # Objective 内容。
         self.content = content
+        # objective。
         self.id = id
+        # KR 详情列表。
         self.kr_list = kr_list
+        # 所属者信息。
         self.owner = owner
+        # 周期 ID。
         self.period_id = period_id
+        # 权限值。
         self.permission = permission
+        # 所在位置。
         self.position = position
+        # 进度值。
         self.progress = progress
+        # 百分比值。
         self.progress_percent = progress_percent
+        # 是否已发布。
         self.published = published
+        # 分数值。
         self.score = score
+        # 当前内容状态。
         self.status = status
+        # 用户 ID。
         self.user_id = user_id
+        # 权重值。
         self.weight = weight
 
     def validate(self):
@@ -614,10 +593,10 @@ class BatchQueryObjectiveResponseBodyData(TeaModel):
         self.kr_list = []
         if m.get('krList') is not None:
             for k in m.get('krList'):
-                temp_model = BatchQueryObjectiveResponseBodyDataKrList()
+                temp_model = BatchQueryObjectiveResponseBodyDataListKrList()
                 self.kr_list.append(temp_model.from_map(k))
         if m.get('owner') is not None:
-            temp_model = BatchQueryObjectiveResponseBodyDataOwner()
+            temp_model = BatchQueryObjectiveResponseBodyDataListOwner()
             self.owner = temp_model.from_map(m['owner'])
         if m.get('periodId') is not None:
             self.period_id = m.get('periodId')
@@ -626,7 +605,7 @@ class BatchQueryObjectiveResponseBodyData(TeaModel):
         if m.get('position') is not None:
             self.position = m.get('position')
         if m.get('progress') is not None:
-            temp_model = BatchQueryObjectiveResponseBodyDataProgress()
+            temp_model = BatchQueryObjectiveResponseBodyDataListProgress()
             self.progress = temp_model.from_map(m['progress'])
         if m.get('progressPercent') is not None:
             self.progress_percent = m.get('progressPercent')
@@ -643,25 +622,26 @@ class BatchQueryObjectiveResponseBodyData(TeaModel):
         return self
 
 
-class BatchQueryObjectiveResponseBody(TeaModel):
+class BatchQueryObjectiveResponseBodyData(TeaModel):
     def __init__(
         self,
-        code: str = None,
-        data: List[BatchQueryObjectiveResponseBodyData] = None,
-        message: BinaryIO = None,
-        success: bool = None,
+        list: List[BatchQueryObjectiveResponseBodyDataList] = None,
+        page_no: int = None,
+        page_size: int = None,
+        total_count: int = None,
     ):
-        # code
-        self.code = code
-        self.data = data
-        # message
-        self.message = message
-        # success
-        self.success = success
+        # OKR 列表详情。
+        self.list = list
+        # 当前页码。
+        self.page_no = page_no
+        # 每一页的个数。
+        self.page_size = page_size
+        # 总数。
+        self.total_count = total_count
 
     def validate(self):
-        if self.data:
-            for k in self.data:
+        if self.list:
+            for k in self.list:
                 if k:
                     k.validate()
 
@@ -671,29 +651,66 @@ class BatchQueryObjectiveResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.code is not None:
-            result['code'] = self.code
-        result['data'] = []
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        if self.page_no is not None:
+            result['pageNo'] = self.page_no
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = BatchQueryObjectiveResponseBodyDataList()
+                self.list.append(temp_model.from_map(k))
+        if m.get('pageNo') is not None:
+            self.page_no = m.get('pageNo')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class BatchQueryObjectiveResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: BatchQueryObjectiveResponseBodyData = None,
+        success: bool = None,
+    ):
+        # data
+        self.data = data
+        # 请求成功的标识。
+        self.success = success
+
+    def validate(self):
+        if self.data:
+            self.data.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
         if self.data is not None:
-            for k in self.data:
-                result['data'].append(k.to_map() if k else None)
-        if self.message is not None:
-            result['message'] = self.message
+            result['data'] = self.data.to_map()
         if self.success is not None:
             result['success'] = self.success
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('code') is not None:
-            self.code = m.get('code')
-        self.data = []
         if m.get('data') is not None:
-            for k in m.get('data'):
-                temp_model = BatchQueryObjectiveResponseBodyData()
-                self.data.append(temp_model.from_map(k))
-        if m.get('message') is not None:
-            self.message = m.get('message')
+            temp_model = BatchQueryObjectiveResponseBodyData()
+            self.data = temp_model.from_map(m['data'])
         if m.get('success') is not None:
             self.success = m.get('success')
         return self
@@ -772,19 +789,25 @@ class CreateKeyResultHeaders(TeaModel):
 class CreateKeyResultRequest(TeaModel):
     def __init__(
         self,
-        content: BinaryIO = None,
-        objective_id: BinaryIO = None,
-        period_id: BinaryIO = None,
+        content: str = None,
+        objective_id: str = None,
+        period_id: str = None,
         prev_position: int = None,
         weight: int = None,
-        owner_id: BinaryIO = None,
+        user_id: str = None,
     ):
+        # KR 内容。
         self.content = content
+        # 所属 Objective ID。
         self.objective_id = objective_id
+        # 周期 ID。
         self.period_id = period_id
+        # 上一个 KR 的位置。
         self.prev_position = prev_position
+        # KR 的权重比。
         self.weight = weight
-        self.owner_id = owner_id
+        # 当前用户的 user ID。
+        self.user_id = user_id
 
     def validate(self):
         pass
@@ -805,8 +828,8 @@ class CreateKeyResultRequest(TeaModel):
             result['prevPosition'] = self.prev_position
         if self.weight is not None:
             result['weight'] = self.weight
-        if self.owner_id is not None:
-            result['ownerId'] = self.owner_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
         return result
 
     def from_map(self, m: dict = None):
@@ -821,8 +844,8 @@ class CreateKeyResultRequest(TeaModel):
             self.prev_position = m.get('prevPosition')
         if m.get('weight') is not None:
             self.weight = m.get('weight')
-        if m.get('ownerId') is not None:
-            self.owner_id = m.get('ownerId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
         return self
 
 
@@ -833,8 +856,11 @@ class CreateKeyResultResponseBodyData(TeaModel):
         position: int = None,
         weight: int = None,
     ):
+        # 创建成功的 KR ID。
         self.id = id
+        # KR的位置。
         self.position = position
+        # KR 的权重。
         self.weight = weight
 
     def validate(self):
@@ -872,7 +898,7 @@ class CreateKeyResultResponseBody(TeaModel):
         success: bool = None,
     ):
         self.data = data
-        # Id of the request
+        # 请求成功的标识。
         self.success = success
 
     def validate(self):
@@ -974,18 +1000,18 @@ class CreateObjectiveHeaders(TeaModel):
 class CreateObjectiveRequest(TeaModel):
     def __init__(
         self,
-        content: BinaryIO = None,
-        period_id: BinaryIO = None,
-        prev_position: BinaryIO = None,
+        content: str = None,
+        period_id: str = None,
+        prev_position: str = None,
         user_id: str = None,
     ):
-        # content
+        # 创建Objective 的内容
         self.content = content
-        # periodId
+        # 当前周期 ID。
         self.period_id = period_id
-        # prevPosition
+        # 上一个 Objective 的位置。
         self.prev_position = prev_position
-        # userId
+        # 当前用户的 userId。
         self.user_id = user_id
 
     def validate(self):
@@ -1024,8 +1050,12 @@ class CreateObjectiveResponseBodyData(TeaModel):
     def __init__(
         self,
         id: str = None,
+        position: str = None,
     ):
+        # 当前 Objective ID。
         self.id = id
+        # 当前 Objective 的位置。
+        self.position = position
 
     def validate(self):
         pass
@@ -1038,30 +1068,28 @@ class CreateObjectiveResponseBodyData(TeaModel):
         result = dict()
         if self.id is not None:
             result['id'] = self.id
+        if self.position is not None:
+            result['position'] = self.position
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('id') is not None:
             self.id = m.get('id')
+        if m.get('position') is not None:
+            self.position = m.get('position')
         return self
 
 
 class CreateObjectiveResponseBody(TeaModel):
     def __init__(
         self,
-        code: int = None,
         data: CreateObjectiveResponseBodyData = None,
-        message: str = None,
         success: bool = None,
     ):
-        # code
-        self.code = code
         # data
         self.data = data
-        # message
-        self.message = message
-        # success
+        # 请求成功的标识。
         self.success = success
 
     def validate(self):
@@ -1074,25 +1102,17 @@ class CreateObjectiveResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.code is not None:
-            result['code'] = self.code
         if self.data is not None:
             result['data'] = self.data.to_map()
-        if self.message is not None:
-            result['message'] = self.message
         if self.success is not None:
             result['success'] = self.success
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('code') is not None:
-            self.code = m.get('code')
         if m.get('data') is not None:
             temp_model = CreateObjectiveResponseBodyData()
             self.data = temp_model.from_map(m['data'])
-        if m.get('message') is not None:
-            self.message = m.get('message')
         if m.get('success') is not None:
             self.success = m.get('success')
         return self
@@ -1171,11 +1191,13 @@ class DeleteKeyResultHeaders(TeaModel):
 class DeleteKeyResultRequest(TeaModel):
     def __init__(
         self,
-        kr_id: BinaryIO = None,
-        owner_id: BinaryIO = None,
+        kr_id: str = None,
+        user_id: str = None,
     ):
+        # 当前 KR id。
         self.kr_id = kr_id
-        self.owner_id = owner_id
+        # 当前用户的userId。
+        self.user_id = user_id
 
     def validate(self):
         pass
@@ -1188,16 +1210,16 @@ class DeleteKeyResultRequest(TeaModel):
         result = dict()
         if self.kr_id is not None:
             result['krId'] = self.kr_id
-        if self.owner_id is not None:
-            result['ownerId'] = self.owner_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('krId') is not None:
             self.kr_id = m.get('krId')
-        if m.get('ownerId') is not None:
-            self.owner_id = m.get('ownerId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
         return self
 
 
@@ -1207,8 +1229,9 @@ class DeleteKeyResultResponseBody(TeaModel):
         data: bool = None,
         success: bool = None,
     ):
+        # 返回的信息
         self.data = data
-        # is success
+        # 请求成功的标识。
         self.success = success
 
     def validate(self):
@@ -1310,7 +1333,7 @@ class DeleteObjectiveRequest(TeaModel):
         self,
         user_id: str = None,
     ):
-        # userId
+        # 当前用户的 userId。
         self.user_id = user_id
 
     def validate(self):
@@ -1338,6 +1361,7 @@ class DeleteObjectiveResponseBodyData(TeaModel):
         self,
         id: str = None,
     ):
+        # 当前 Objective ID。
         self.id = id
 
     def validate(self):
@@ -1363,18 +1387,12 @@ class DeleteObjectiveResponseBodyData(TeaModel):
 class DeleteObjectiveResponseBody(TeaModel):
     def __init__(
         self,
-        code: int = None,
         data: DeleteObjectiveResponseBodyData = None,
-        message: str = None,
         success: bool = None,
     ):
-        # code
-        self.code = code
         # data
         self.data = data
-        # message
-        self.message = message
-        # success
+        # 请求成功的标识。
         self.success = success
 
     def validate(self):
@@ -1387,25 +1405,17 @@ class DeleteObjectiveResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.code is not None:
-            result['code'] = self.code
         if self.data is not None:
             result['data'] = self.data.to_map()
-        if self.message is not None:
-            result['message'] = self.message
         if self.success is not None:
             result['success'] = self.success
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('code') is not None:
-            self.code = m.get('code')
         if m.get('data') is not None:
             temp_model = DeleteObjectiveResponseBodyData()
             self.data = temp_model.from_map(m['data'])
-        if m.get('message') is not None:
-            self.message = m.get('message')
         if m.get('success') is not None:
             self.success = m.get('success')
         return self
@@ -1647,6 +1657,307 @@ class GetPeriodListResponse(TeaModel):
         return self
 
 
+class GetPermissionHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetPermissionRequest(TeaModel):
+    def __init__(
+        self,
+        target_id: str = None,
+        target_type: str = None,
+        user_id: str = None,
+        with_kr: bool = None,
+        with_objective: bool = None,
+    ):
+        self.target_id = target_id
+        self.target_type = target_type
+        # A short description of struct
+        self.user_id = user_id
+        self.with_kr = with_kr
+        self.with_objective = with_objective
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.target_id is not None:
+            result['targetId'] = self.target_id
+        if self.target_type is not None:
+            result['targetType'] = self.target_type
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.with_kr is not None:
+            result['withKr'] = self.with_kr
+        if self.with_objective is not None:
+            result['withObjective'] = self.with_objective
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('targetId') is not None:
+            self.target_id = m.get('targetId')
+        if m.get('targetType') is not None:
+            self.target_type = m.get('targetType')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('withKr') is not None:
+            self.with_kr = m.get('withKr')
+        if m.get('withObjective') is not None:
+            self.with_objective = m.get('withObjective')
+        return self
+
+
+class GetPermissionResponseBodyDataPolicyListMemberList(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+        nickname: str = None,
+        type: str = None,
+    ):
+        self.id = id
+        self.nickname = nickname
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.nickname is not None:
+            result['nickname'] = self.nickname
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('nickname') is not None:
+            self.nickname = m.get('nickname')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class GetPermissionResponseBodyDataPolicyList(TeaModel):
+    def __init__(
+        self,
+        member_list: List[GetPermissionResponseBodyDataPolicyListMemberList] = None,
+        name: str = None,
+        type: int = None,
+    ):
+        self.member_list = member_list
+        self.name = name
+        self.type = type
+
+    def validate(self):
+        if self.member_list:
+            for k in self.member_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['memberList'] = []
+        if self.member_list is not None:
+            for k in self.member_list:
+                result['memberList'].append(k.to_map() if k else None)
+        if self.name is not None:
+            result['name'] = self.name
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.member_list = []
+        if m.get('memberList') is not None:
+            for k in m.get('memberList'):
+                temp_model = GetPermissionResponseBodyDataPolicyListMemberList()
+                self.member_list.append(temp_model.from_map(k))
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class GetPermissionResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+        policy_list: List[GetPermissionResponseBodyDataPolicyList] = None,
+        privacy: str = None,
+        type: str = None,
+    ):
+        self.id = id
+        # 权限列表
+        self.policy_list = policy_list
+        # 是否可见的标识。
+        self.privacy = privacy
+        # 哪种类型的权限。
+        self.type = type
+
+    def validate(self):
+        if self.policy_list:
+            for k in self.policy_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        result['policyList'] = []
+        if self.policy_list is not None:
+            for k in self.policy_list:
+                result['policyList'].append(k.to_map() if k else None)
+        if self.privacy is not None:
+            result['privacy'] = self.privacy
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        self.policy_list = []
+        if m.get('policyList') is not None:
+            for k in m.get('policyList'):
+                temp_model = GetPermissionResponseBodyDataPolicyList()
+                self.policy_list.append(temp_model.from_map(k))
+        if m.get('privacy') is not None:
+            self.privacy = m.get('privacy')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class GetPermissionResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: GetPermissionResponseBodyData = None,
+        success: bool = None,
+    ):
+        # 返回的数据。
+        self.data = data
+        # 请求成功的标识。
+        self.success = success
+
+    def validate(self):
+        if self.data:
+            self.data.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            temp_model = GetPermissionResponseBodyData()
+            self.data = temp_model.from_map(m['data'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class GetPermissionResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetPermissionResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetPermissionResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetUserOkrHeaders(TeaModel):
     def __init__(
         self,
@@ -1683,19 +1994,19 @@ class GetUserOkrHeaders(TeaModel):
 class GetUserOkrRequest(TeaModel):
     def __init__(
         self,
-        owner_id: BinaryIO = None,
         page_number: int = None,
         page_size: int = None,
-        period_id: BinaryIO = None,
+        period_id: str = None,
+        user_id: str = None,
     ):
-        # 归属用户的ID
-        self.owner_id = owner_id
-        # 页码，默认 为 1
+        # 页码，默认 为 1。
         self.page_number = page_number
-        # 每页的个数，默认100
+        # 每页的个数，默认100。
         self.page_size = page_size
-        # 周期 ID
+        # 周期 ID。
         self.period_id = period_id
+        # 当前用户的user ID。
+        self.user_id = user_id
 
     def validate(self):
         pass
@@ -1706,26 +2017,26 @@ class GetUserOkrRequest(TeaModel):
             return _map
 
         result = dict()
-        if self.owner_id is not None:
-            result['ownerId'] = self.owner_id
         if self.page_number is not None:
             result['pageNumber'] = self.page_number
         if self.page_size is not None:
             result['pageSize'] = self.page_size
         if self.period_id is not None:
             result['periodId'] = self.period_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('ownerId') is not None:
-            self.owner_id = m.get('ownerId')
         if m.get('pageNumber') is not None:
             self.page_number = m.get('pageNumber')
         if m.get('pageSize') is not None:
             self.page_size = m.get('pageSize')
         if m.get('periodId') is not None:
             self.period_id = m.get('periodId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
         return self
 
 
@@ -1734,6 +2045,7 @@ class GetUserOkrResponseBodyDataListKrListProgress(TeaModel):
         self,
         percent: int = None,
     ):
+        # 百分比。
         self.percent = percent
 
     def validate(self):
@@ -1768,13 +2080,21 @@ class GetUserOkrResponseBodyDataListKrList(TeaModel):
         score: float = None,
         weight: float = None,
     ):
+        # KR 内容。
         self.content = content
+        # KR 的 ID。
         self.id = id
+        # 所属 Objective ID。
         self.objective_id = objective_id
+        # KR 权限。
         self.permission = permission
+        # 所处位置。
         self.position = position
+        # KR 进度。
         self.progress = progress
+        # 所占分数。
         self.score = score
+        # 所占权重。
         self.weight = weight
 
     def validate(self):
@@ -1827,59 +2147,28 @@ class GetUserOkrResponseBodyDataListKrList(TeaModel):
         return self
 
 
-class GetUserOkrResponseBodyDataListOwnerDepartment(TeaModel):
-    def __init__(
-        self,
-        id: BinaryIO = None,
-        name: BinaryIO = None,
-    ):
-        self.id = id
-        self.name = name
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.id is not None:
-            result['id'] = self.id
-        if self.name is not None:
-            result['name'] = self.name
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('id') is not None:
-            self.id = m.get('id')
-        if m.get('name') is not None:
-            self.name = m.get('name')
-        return self
-
-
 class GetUserOkrResponseBodyDataListOwner(TeaModel):
     def __init__(
         self,
         avatar_media_id: BinaryIO = None,
         corp_id: BinaryIO = None,
-        department: GetUserOkrResponseBodyDataListOwnerDepartment = None,
         id: BinaryIO = None,
         nickname: BinaryIO = None,
         staff_id: BinaryIO = None,
     ):
+        # 所属者头像。 ID
         self.avatar_media_id = avatar_media_id
+        # 所属者组织 I。D
         self.corp_id = corp_id
-        self.department = department
+        # 所属者 ID。
         self.id = id
+        # 所属者昵称。
         self.nickname = nickname
+        # 所属者 userId。
         self.staff_id = staff_id
 
     def validate(self):
-        if self.department:
-            self.department.validate()
+        pass
 
     def to_map(self):
         _map = super().to_map()
@@ -1891,8 +2180,6 @@ class GetUserOkrResponseBodyDataListOwner(TeaModel):
             result['avatarMediaId'] = self.avatar_media_id
         if self.corp_id is not None:
             result['corpId'] = self.corp_id
-        if self.department is not None:
-            result['department'] = self.department.to_map()
         if self.id is not None:
             result['id'] = self.id
         if self.nickname is not None:
@@ -1907,9 +2194,6 @@ class GetUserOkrResponseBodyDataListOwner(TeaModel):
             self.avatar_media_id = m.get('avatarMediaId')
         if m.get('corpId') is not None:
             self.corp_id = m.get('corpId')
-        if m.get('department') is not None:
-            temp_model = GetUserOkrResponseBodyDataListOwnerDepartment()
-            self.department = temp_model.from_map(m['department'])
         if m.get('id') is not None:
             self.id = m.get('id')
         if m.get('nickname') is not None:
@@ -1924,6 +2208,7 @@ class GetUserOkrResponseBodyDataListProgress(TeaModel):
         self,
         percent: int = None,
     ):
+        # 百分比。
         self.percent = percent
 
     def validate(self):
@@ -1966,21 +2251,37 @@ class GetUserOkrResponseBodyDataList(TeaModel):
         user_id: BinaryIO = None,
         weight: float = None,
     ):
+        # 被对齐的 Objective。
         self.align_from_ids = align_from_ids
+        # 对齐的 Objective。
         self.align_to_ids = align_to_ids
+        # Objective 内容。
         self.content = content
+        # objective。
         self.id = id
+        # KR 详情列表。
         self.kr_list = kr_list
+        # 所属者信息。
         self.owner = owner
+        # 周期 ID。
         self.period_id = period_id
+        # 权限值。
         self.permission = permission
+        # 所在位置。
         self.position = position
+        # 进度值。
         self.progress = progress
+        # 百分比值。
         self.progress_percent = progress_percent
+        # 是否已发布。
         self.published = published
+        # 分数值。
         self.score = score
+        # 当前内容状态。
         self.status = status
+        # 用户 ID。
         self.user_id = user_id
+        # 权重值。
         self.weight = weight
 
     def validate(self):
@@ -2085,9 +2386,13 @@ class GetUserOkrResponseBodyData(TeaModel):
         page_size: int = None,
         total_count: int = None,
     ):
+        # OKR 列表详情。
         self.list = list
+        # 当前页码。
         self.page_no = page_no
+        # 每一页的个数。
         self.page_size = page_size
+        # 总数。
         self.total_count = total_count
 
     def validate(self):
@@ -2133,18 +2438,12 @@ class GetUserOkrResponseBodyData(TeaModel):
 class GetUserOkrResponseBody(TeaModel):
     def __init__(
         self,
-        code: int = None,
         data: GetUserOkrResponseBodyData = None,
-        message: BinaryIO = None,
         success: bool = None,
     ):
-        # code
-        self.code = code
         # data
         self.data = data
-        # message
-        self.message = message
-        # success
+        # 请求成功的标识。
         self.success = success
 
     def validate(self):
@@ -2157,25 +2456,17 @@ class GetUserOkrResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.code is not None:
-            result['code'] = self.code
         if self.data is not None:
             result['data'] = self.data.to_map()
-        if self.message is not None:
-            result['message'] = self.message
         if self.success is not None:
             result['success'] = self.success
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('code') is not None:
-            self.code = m.get('code')
         if m.get('data') is not None:
             temp_model = GetUserOkrResponseBodyData()
             self.data = temp_model.from_map(m['data'])
-        if m.get('message') is not None:
-            self.message = m.get('message')
         if m.get('success') is not None:
             self.success = m.get('success')
         return self
@@ -2256,14 +2547,14 @@ class UnAlignObjectiveRequest(TeaModel):
         self,
         period_id: str = None,
         target_id: str = None,
-        owner_id: BinaryIO = None,
+        user_id: str = None,
     ):
         # 周期 ID
         self.period_id = period_id
         # 对齐目标的 ID
         self.target_id = target_id
-        # 用户 ID
-        self.owner_id = owner_id
+        # 当前用户的 userId。
+        self.user_id = user_id
 
     def validate(self):
         pass
@@ -2278,8 +2569,8 @@ class UnAlignObjectiveRequest(TeaModel):
             result['periodId'] = self.period_id
         if self.target_id is not None:
             result['targetId'] = self.target_id
-        if self.owner_id is not None:
-            result['ownerId'] = self.owner_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
         return result
 
     def from_map(self, m: dict = None):
@@ -2288,8 +2579,8 @@ class UnAlignObjectiveRequest(TeaModel):
             self.period_id = m.get('periodId')
         if m.get('targetId') is not None:
             self.target_id = m.get('targetId')
-        if m.get('ownerId') is not None:
-            self.owner_id = m.get('ownerId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
         return self
 
 
@@ -2299,7 +2590,9 @@ class UnAlignObjectiveResponseBodyData(TeaModel):
         align_id: BinaryIO = None,
         id: BinaryIO = None,
     ):
+        # 对齐的 Objective ID。
         self.align_id = align_id
+        # 当前 Objective ID。
         self.id = id
 
     def validate(self):
@@ -2329,17 +2622,11 @@ class UnAlignObjectiveResponseBodyData(TeaModel):
 class UnAlignObjectiveResponseBody(TeaModel):
     def __init__(
         self,
-        code: int = None,
         data: UnAlignObjectiveResponseBodyData = None,
-        message: str = None,
         success: bool = None,
     ):
-        # code
-        self.code = code
         # data
         self.data = data
-        # message
-        self.message = message
         # success
         self.success = success
 
@@ -2353,25 +2640,17 @@ class UnAlignObjectiveResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.code is not None:
-            result['code'] = self.code
         if self.data is not None:
             result['data'] = self.data.to_map()
-        if self.message is not None:
-            result['message'] = self.message
         if self.success is not None:
             result['success'] = self.success
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('code') is not None:
-            self.code = m.get('code')
         if m.get('data') is not None:
             temp_model = UnAlignObjectiveResponseBodyData()
             self.data = temp_model.from_map(m['data'])
-        if m.get('message') is not None:
-            self.message = m.get('message')
         if m.get('success') is not None:
             self.success = m.get('success')
         return self
@@ -2450,16 +2729,19 @@ class UpdateKROfContentHeaders(TeaModel):
 class UpdateKROfContentRequest(TeaModel):
     def __init__(
         self,
-        content: BinaryIO = None,
-        update_quote_list: List[BinaryIO] = None,
-        kr_id: BinaryIO = None,
-        operator_uid: BinaryIO = None,
+        content: str = None,
+        update_quote_list: List[str] = None,
+        kr_id: str = None,
+        user_id: str = None,
     ):
+        # KR的内容。
         self.content = content
+        # 待更新的划词 ID 列表。
         self.update_quote_list = update_quote_list
-        # A short description of struct
+        # 当前 KR ID。
         self.kr_id = kr_id
-        self.operator_uid = operator_uid
+        # 当前用户的userId。
+        self.user_id = user_id
 
     def validate(self):
         pass
@@ -2476,8 +2758,8 @@ class UpdateKROfContentRequest(TeaModel):
             result['updateQuoteList'] = self.update_quote_list
         if self.kr_id is not None:
             result['krId'] = self.kr_id
-        if self.operator_uid is not None:
-            result['operatorUid'] = self.operator_uid
+        if self.user_id is not None:
+            result['userId'] = self.user_id
         return result
 
     def from_map(self, m: dict = None):
@@ -2488,8 +2770,8 @@ class UpdateKROfContentRequest(TeaModel):
             self.update_quote_list = m.get('updateQuoteList')
         if m.get('krId') is not None:
             self.kr_id = m.get('krId')
-        if m.get('operatorUid') is not None:
-            self.operator_uid = m.get('operatorUid')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
         return self
 
 
@@ -2500,7 +2782,7 @@ class UpdateKROfContentResponseBody(TeaModel):
         success: bool = None,
     ):
         self.data = data
-        # Id of the request
+        # 请求成功的标识。
         self.success = success
 
     def validate(self):
@@ -2601,13 +2883,15 @@ class UpdateKROfScoreRequest(TeaModel):
     def __init__(
         self,
         score: int = None,
-        kr_id: BinaryIO = None,
-        owner_id: BinaryIO = None,
+        kr_id: str = None,
+        user_id: str = None,
     ):
+        # 分数值。
         self.score = score
-        # A short description of struct
+        # 当前 KR ID。
         self.kr_id = kr_id
-        self.owner_id = owner_id
+        # 当前用户的userId。
+        self.user_id = user_id
 
     def validate(self):
         pass
@@ -2622,8 +2906,8 @@ class UpdateKROfScoreRequest(TeaModel):
             result['score'] = self.score
         if self.kr_id is not None:
             result['krId'] = self.kr_id
-        if self.owner_id is not None:
-            result['ownerId'] = self.owner_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
         return result
 
     def from_map(self, m: dict = None):
@@ -2632,21 +2916,18 @@ class UpdateKROfScoreRequest(TeaModel):
             self.score = m.get('score')
         if m.get('krId') is not None:
             self.kr_id = m.get('krId')
-        if m.get('ownerId') is not None:
-            self.owner_id = m.get('ownerId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
         return self
 
 
-class UpdateKROfScoreResponseBody(TeaModel):
+class UpdateKROfScoreResponseBodyData(TeaModel):
     def __init__(
         self,
-        data: int = None,
-        success: bool = None,
+        objective_score: int = None,
     ):
-        # 目标分数
-        self.data = data
-        # Id of the request
-        self.success = success
+        # 目标分数。
+        self.objective_score = objective_score
 
     def validate(self):
         pass
@@ -2657,8 +2938,39 @@ class UpdateKROfScoreResponseBody(TeaModel):
             return _map
 
         result = dict()
+        if self.objective_score is not None:
+            result['objectiveScore'] = self.objective_score
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('objectiveScore') is not None:
+            self.objective_score = m.get('objectiveScore')
+        return self
+
+
+class UpdateKROfScoreResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: UpdateKROfScoreResponseBodyData = None,
+        success: bool = None,
+    ):
+        self.data = data
+        # 请求成功的标识。
+        self.success = success
+
+    def validate(self):
+        if self.data:
+            self.data.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
         if self.data is not None:
-            result['data'] = self.data
+            result['data'] = self.data.to_map()
         if self.success is not None:
             result['success'] = self.success
         return result
@@ -2666,7 +2978,8 @@ class UpdateKROfScoreResponseBody(TeaModel):
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('data') is not None:
-            self.data = m.get('data')
+            temp_model = UpdateKROfScoreResponseBodyData()
+            self.data = temp_model.from_map(m['data'])
         if m.get('success') is not None:
             self.success = m.get('success')
         return self
@@ -2746,13 +3059,15 @@ class UpdateKROfWeightRequest(TeaModel):
     def __init__(
         self,
         weight: int = None,
-        kr_id: BinaryIO = None,
-        owner_id: BinaryIO = None,
+        kr_id: str = None,
+        user_id: str = None,
     ):
+        # 权重比。
         self.weight = weight
-        # A short description of struct
+        # 当前 KR ID。
         self.kr_id = kr_id
-        self.owner_id = owner_id
+        # 当前用户的userId。
+        self.user_id = user_id
 
     def validate(self):
         pass
@@ -2767,8 +3082,8 @@ class UpdateKROfWeightRequest(TeaModel):
             result['weight'] = self.weight
         if self.kr_id is not None:
             result['krId'] = self.kr_id
-        if self.owner_id is not None:
-            result['ownerId'] = self.owner_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
         return result
 
     def from_map(self, m: dict = None):
@@ -2777,8 +3092,8 @@ class UpdateKROfWeightRequest(TeaModel):
             self.weight = m.get('weight')
         if m.get('krId') is not None:
             self.kr_id = m.get('krId')
-        if m.get('ownerId') is not None:
-            self.owner_id = m.get('ownerId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
         return self
 
 
@@ -2786,10 +3101,9 @@ class UpdateKROfWeightResponseBodyDataObjectiveProgress(TeaModel):
     def __init__(
         self,
         percent: int = None,
-        status: int = None,
     ):
+        # 目标百分比。
         self.percent = percent
-        self.status = status
 
     def validate(self):
         pass
@@ -2802,16 +3116,12 @@ class UpdateKROfWeightResponseBodyDataObjectiveProgress(TeaModel):
         result = dict()
         if self.percent is not None:
             result['percent'] = self.percent
-        if self.status is not None:
-            result['status'] = self.status
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('percent') is not None:
             self.percent = m.get('percent')
-        if m.get('status') is not None:
-            self.status = m.get('status')
         return self
 
 
@@ -2822,6 +3132,7 @@ class UpdateKROfWeightResponseBodyData(TeaModel):
         objective_score: int = None,
     ):
         self.objective_progress = objective_progress
+        # 目标分数。
         self.objective_score = objective_score
 
     def validate(self):
@@ -2856,9 +3167,8 @@ class UpdateKROfWeightResponseBody(TeaModel):
         data: UpdateKROfWeightResponseBodyData = None,
         success: bool = None,
     ):
-        # 目标分数
         self.data = data
-        # Id of the request
+        # 请求成功的标识。
         self.success = success
 
     def validate(self):
@@ -2960,11 +3270,12 @@ class UpdateObjectiveHeaders(TeaModel):
 class UpdateObjectiveRequest(TeaModel):
     def __init__(
         self,
-        content: BinaryIO = None,
+        content: str = None,
         user_id: str = None,
     ):
+        # 当前 Objective 的内容。
         self.content = content
-        # userId
+        # 当前用户的 userId。
         self.user_id = user_id
 
     def validate(self):
@@ -2997,7 +3308,9 @@ class UpdateObjectiveResponseBodyData(TeaModel):
         id: str = None,
         position: float = None,
     ):
+        # 当前 Objective ID。
         self.id = id
+        # 当前 Objective 的位置。
         self.position = position
 
     def validate(self):
@@ -3027,18 +3340,12 @@ class UpdateObjectiveResponseBodyData(TeaModel):
 class UpdateObjectiveResponseBody(TeaModel):
     def __init__(
         self,
-        code: int = None,
         data: UpdateObjectiveResponseBodyData = None,
-        message: str = None,
         success: bool = None,
     ):
-        # code
-        self.code = code
         # data
         self.data = data
-        # message
-        self.message = message
-        # success
+        # 请求成功的标识。
         self.success = success
 
     def validate(self):
@@ -3051,25 +3358,17 @@ class UpdateObjectiveResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.code is not None:
-            result['code'] = self.code
         if self.data is not None:
             result['data'] = self.data.to_map()
-        if self.message is not None:
-            result['message'] = self.message
         if self.success is not None:
             result['success'] = self.success
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('code') is not None:
-            self.code = m.get('code')
         if m.get('data') is not None:
             temp_model = UpdateObjectiveResponseBodyData()
             self.data = temp_model.from_map(m['data'])
-        if m.get('message') is not None:
-            self.message = m.get('message')
         if m.get('success') is not None:
             self.success = m.get('success')
         return self

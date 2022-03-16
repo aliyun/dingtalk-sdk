@@ -51,8 +51,8 @@ class Client(OpenApiClient):
         UtilClient.validate_model(request)
         objective_id = OpenApiUtilClient.get_encode_param(objective_id)
         query = {}
-        if not UtilClient.is_unset(request.owner_id):
-            query['ownerId'] = request.owner_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
         body = {}
         if not UtilClient.is_unset(request.period_id):
             body['periodId'] = request.period_id
@@ -83,8 +83,8 @@ class Client(OpenApiClient):
         UtilClient.validate_model(request)
         objective_id = OpenApiUtilClient.get_encode_param(objective_id)
         query = {}
-        if not UtilClient.is_unset(request.owner_id):
-            query['ownerId'] = request.owner_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
         body = {}
         if not UtilClient.is_unset(request.period_id):
             body['periodId'] = request.period_id
@@ -129,8 +129,8 @@ class Client(OpenApiClient):
     ) -> dingtalkokr__1__0_models.BatchQueryObjectiveResponse:
         UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.owner_id):
-            query['ownerId'] = request.owner_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
         body = {}
         if not UtilClient.is_unset(request.objective_ids):
             body['objectiveIds'] = request.objective_ids
@@ -165,8 +165,8 @@ class Client(OpenApiClient):
     ) -> dingtalkokr__1__0_models.BatchQueryObjectiveResponse:
         UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.owner_id):
-            query['ownerId'] = request.owner_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
         body = {}
         if not UtilClient.is_unset(request.objective_ids):
             body['objectiveIds'] = request.objective_ids
@@ -217,8 +217,8 @@ class Client(OpenApiClient):
     ) -> dingtalkokr__1__0_models.CreateKeyResultResponse:
         UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.owner_id):
-            query['ownerId'] = request.owner_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
         body = {}
         if not UtilClient.is_unset(request.content):
             body['content'] = request.content
@@ -253,8 +253,8 @@ class Client(OpenApiClient):
     ) -> dingtalkokr__1__0_models.CreateKeyResultResponse:
         UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.owner_id):
-            query['ownerId'] = request.owner_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
         body = {}
         if not UtilClient.is_unset(request.content):
             body['content'] = request.content
@@ -387,8 +387,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.kr_id):
             query['krId'] = request.kr_id
-        if not UtilClient.is_unset(request.owner_id):
-            query['ownerId'] = request.owner_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -413,8 +413,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.kr_id):
             query['krId'] = request.kr_id
-        if not UtilClient.is_unset(request.owner_id):
-            query['ownerId'] = request.owner_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -545,6 +545,86 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetPeriodList', 'okr_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/okr/periods', 'json', req, runtime)
         )
 
+    def get_permission(
+        self,
+        request: dingtalkokr__1__0_models.GetPermissionRequest,
+    ) -> dingtalkokr__1__0_models.GetPermissionResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkokr__1__0_models.GetPermissionHeaders()
+        return self.get_permission_with_options(request, headers, runtime)
+
+    async def get_permission_async(
+        self,
+        request: dingtalkokr__1__0_models.GetPermissionRequest,
+    ) -> dingtalkokr__1__0_models.GetPermissionResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkokr__1__0_models.GetPermissionHeaders()
+        return await self.get_permission_with_options_async(request, headers, runtime)
+
+    def get_permission_with_options(
+        self,
+        request: dingtalkokr__1__0_models.GetPermissionRequest,
+        headers: dingtalkokr__1__0_models.GetPermissionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkokr__1__0_models.GetPermissionResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.target_id):
+            query['targetId'] = request.target_id
+        if not UtilClient.is_unset(request.target_type):
+            query['targetType'] = request.target_type
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        if not UtilClient.is_unset(request.with_kr):
+            query['withKr'] = request.with_kr
+        if not UtilClient.is_unset(request.with_objective):
+            query['withObjective'] = request.with_objective
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkokr__1__0_models.GetPermissionResponse(),
+            self.do_roarequest('GetPermission', 'okr_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/okr/permissions', 'json', req, runtime)
+        )
+
+    async def get_permission_with_options_async(
+        self,
+        request: dingtalkokr__1__0_models.GetPermissionRequest,
+        headers: dingtalkokr__1__0_models.GetPermissionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkokr__1__0_models.GetPermissionResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.target_id):
+            query['targetId'] = request.target_id
+        if not UtilClient.is_unset(request.target_type):
+            query['targetType'] = request.target_type
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        if not UtilClient.is_unset(request.with_kr):
+            query['withKr'] = request.with_kr
+        if not UtilClient.is_unset(request.with_objective):
+            query['withObjective'] = request.with_objective
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkokr__1__0_models.GetPermissionResponse(),
+            await self.do_roarequest_async('GetPermission', 'okr_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/okr/permissions', 'json', req, runtime)
+        )
+
     def get_user_okr(
         self,
         request: dingtalkokr__1__0_models.GetUserOkrRequest,
@@ -569,14 +649,14 @@ class Client(OpenApiClient):
     ) -> dingtalkokr__1__0_models.GetUserOkrResponse:
         UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.owner_id):
-            query['ownerId'] = request.owner_id
         if not UtilClient.is_unset(request.page_number):
             query['pageNumber'] = request.page_number
         if not UtilClient.is_unset(request.page_size):
             query['pageSize'] = request.page_size
         if not UtilClient.is_unset(request.period_id):
             query['periodId'] = request.period_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -599,14 +679,14 @@ class Client(OpenApiClient):
     ) -> dingtalkokr__1__0_models.GetUserOkrResponse:
         UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.owner_id):
-            query['ownerId'] = request.owner_id
         if not UtilClient.is_unset(request.page_number):
             query['pageNumber'] = request.page_number
         if not UtilClient.is_unset(request.page_size):
             query['pageSize'] = request.page_size
         if not UtilClient.is_unset(request.period_id):
             query['periodId'] = request.period_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -649,8 +729,8 @@ class Client(OpenApiClient):
         UtilClient.validate_model(request)
         objective_id = OpenApiUtilClient.get_encode_param(objective_id)
         query = {}
-        if not UtilClient.is_unset(request.owner_id):
-            query['ownerId'] = request.owner_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
         body = {}
         if not UtilClient.is_unset(request.period_id):
             body['periodId'] = request.period_id
@@ -681,8 +761,8 @@ class Client(OpenApiClient):
         UtilClient.validate_model(request)
         objective_id = OpenApiUtilClient.get_encode_param(objective_id)
         query = {}
-        if not UtilClient.is_unset(request.owner_id):
-            query['ownerId'] = request.owner_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
         body = {}
         if not UtilClient.is_unset(request.period_id):
             body['periodId'] = request.period_id
@@ -729,8 +809,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.kr_id):
             query['krId'] = request.kr_id
-        if not UtilClient.is_unset(request.operator_uid):
-            query['operatorUid'] = request.operator_uid
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
         body = {}
         if not UtilClient.is_unset(request.content):
             body['content'] = request.content
@@ -761,8 +841,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.kr_id):
             query['krId'] = request.kr_id
-        if not UtilClient.is_unset(request.operator_uid):
-            query['operatorUid'] = request.operator_uid
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
         body = {}
         if not UtilClient.is_unset(request.content):
             body['content'] = request.content
@@ -809,8 +889,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.kr_id):
             query['krId'] = request.kr_id
-        if not UtilClient.is_unset(request.owner_id):
-            query['ownerId'] = request.owner_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
         body = {}
         if not UtilClient.is_unset(request.score):
             body['score'] = request.score
@@ -839,8 +919,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.kr_id):
             query['krId'] = request.kr_id
-        if not UtilClient.is_unset(request.owner_id):
-            query['ownerId'] = request.owner_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
         body = {}
         if not UtilClient.is_unset(request.score):
             body['score'] = request.score
@@ -885,8 +965,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.kr_id):
             query['krId'] = request.kr_id
-        if not UtilClient.is_unset(request.owner_id):
-            query['ownerId'] = request.owner_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
         body = {}
         if not UtilClient.is_unset(request.weight):
             body['weight'] = request.weight
@@ -915,8 +995,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.kr_id):
             query['krId'] = request.kr_id
-        if not UtilClient.is_unset(request.owner_id):
-            query['ownerId'] = request.owner_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
         body = {}
         if not UtilClient.is_unset(request.weight):
             body['weight'] = request.weight
