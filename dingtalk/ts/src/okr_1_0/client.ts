@@ -33,12 +33,12 @@ export class AlignObjectiveHeaders extends $tea.Model {
 export class AlignObjectiveRequest extends $tea.Model {
   periodId?: string;
   targetId?: string;
-  ownerId?: Readable;
+  userId?: string;
   static names(): { [key: string]: string } {
     return {
       periodId: 'periodId',
       targetId: 'targetId',
-      ownerId: 'ownerId',
+      userId: 'userId',
     };
   }
 
@@ -46,7 +46,7 @@ export class AlignObjectiveRequest extends $tea.Model {
     return {
       periodId: 'string',
       targetId: 'string',
-      ownerId: 'Readable',
+      userId: 'string',
     };
   }
 
@@ -56,24 +56,18 @@ export class AlignObjectiveRequest extends $tea.Model {
 }
 
 export class AlignObjectiveResponseBody extends $tea.Model {
-  code?: number;
   data?: AlignObjectiveResponseBodyData;
-  message?: string;
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
-      code: 'code',
       data: 'data',
-      message: 'message',
       success: 'success',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      code: 'number',
       data: AlignObjectiveResponseBodyData,
-      message: 'string',
       success: 'boolean',
     };
   }
@@ -128,12 +122,12 @@ export class BatchQueryObjectiveHeaders extends $tea.Model {
 }
 
 export class BatchQueryObjectiveRequest extends $tea.Model {
-  objectiveIds?: Readable[];
-  periodId?: Readable;
+  objectiveIds?: string[];
+  periodId?: string;
   withAlign?: boolean;
   withKr?: boolean;
   withProgress?: boolean;
-  ownerId?: string;
+  userId?: string;
   static names(): { [key: string]: string } {
     return {
       objectiveIds: 'objectiveIds',
@@ -141,18 +135,18 @@ export class BatchQueryObjectiveRequest extends $tea.Model {
       withAlign: 'withAlign',
       withKr: 'withKr',
       withProgress: 'withProgress',
-      ownerId: 'ownerId',
+      userId: 'userId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      objectiveIds: { 'type': 'array', 'itemType': 'Readable' },
-      periodId: 'Readable',
+      objectiveIds: { 'type': 'array', 'itemType': 'string' },
+      periodId: 'string',
       withAlign: 'boolean',
       withKr: 'boolean',
       withProgress: 'boolean',
-      ownerId: 'string',
+      userId: 'string',
     };
   }
 
@@ -162,24 +156,18 @@ export class BatchQueryObjectiveRequest extends $tea.Model {
 }
 
 export class BatchQueryObjectiveResponseBody extends $tea.Model {
-  code?: string;
-  data?: BatchQueryObjectiveResponseBodyData[];
-  message?: Readable;
+  data?: BatchQueryObjectiveResponseBodyData;
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
-      code: 'code',
       data: 'data',
-      message: 'message',
       success: 'success',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      code: 'string',
-      data: { 'type': 'array', 'itemType': BatchQueryObjectiveResponseBodyData },
-      message: 'Readable',
+      data: BatchQueryObjectiveResponseBodyData,
       success: 'boolean',
     };
   }
@@ -234,12 +222,12 @@ export class CreateKeyResultHeaders extends $tea.Model {
 }
 
 export class CreateKeyResultRequest extends $tea.Model {
-  content?: Readable;
-  objectiveId?: Readable;
-  periodId?: Readable;
+  content?: string;
+  objectiveId?: string;
+  periodId?: string;
   prevPosition?: number;
   weight?: number;
-  ownerId?: Readable;
+  userId?: string;
   static names(): { [key: string]: string } {
     return {
       content: 'content',
@@ -247,18 +235,18 @@ export class CreateKeyResultRequest extends $tea.Model {
       periodId: 'periodId',
       prevPosition: 'prevPosition',
       weight: 'weight',
-      ownerId: 'ownerId',
+      userId: 'userId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      content: 'Readable',
-      objectiveId: 'Readable',
-      periodId: 'Readable',
+      content: 'string',
+      objectiveId: 'string',
+      periodId: 'string',
       prevPosition: 'number',
       weight: 'number',
-      ownerId: 'Readable',
+      userId: 'string',
     };
   }
 
@@ -334,9 +322,9 @@ export class CreateObjectiveHeaders extends $tea.Model {
 }
 
 export class CreateObjectiveRequest extends $tea.Model {
-  content?: Readable;
-  periodId?: Readable;
-  prevPosition?: Readable;
+  content?: string;
+  periodId?: string;
+  prevPosition?: string;
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -349,9 +337,9 @@ export class CreateObjectiveRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      content: 'Readable',
-      periodId: 'Readable',
-      prevPosition: 'Readable',
+      content: 'string',
+      periodId: 'string',
+      prevPosition: 'string',
       userId: 'string',
     };
   }
@@ -362,24 +350,18 @@ export class CreateObjectiveRequest extends $tea.Model {
 }
 
 export class CreateObjectiveResponseBody extends $tea.Model {
-  code?: number;
   data?: CreateObjectiveResponseBodyData;
-  message?: string;
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
-      code: 'code',
       data: 'data',
-      message: 'message',
       success: 'success',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      code: 'number',
       data: CreateObjectiveResponseBodyData,
-      message: 'string',
       success: 'boolean',
     };
   }
@@ -434,19 +416,19 @@ export class DeleteKeyResultHeaders extends $tea.Model {
 }
 
 export class DeleteKeyResultRequest extends $tea.Model {
-  krId?: Readable;
-  ownerId?: Readable;
+  krId?: string;
+  userId?: string;
   static names(): { [key: string]: string } {
     return {
       krId: 'krId',
-      ownerId: 'ownerId',
+      userId: 'userId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      krId: 'Readable',
-      ownerId: 'Readable',
+      krId: 'string',
+      userId: 'string',
     };
   }
 
@@ -541,24 +523,18 @@ export class DeleteObjectiveRequest extends $tea.Model {
 }
 
 export class DeleteObjectiveResponseBody extends $tea.Model {
-  code?: number;
   data?: DeleteObjectiveResponseBodyData;
-  message?: string;
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
-      code: 'code',
       data: 'data',
-      message: 'message',
       success: 'success',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      code: 'number',
       data: DeleteObjectiveResponseBodyData,
-      message: 'string',
       success: 'boolean',
     };
   }
@@ -656,6 +632,103 @@ export class GetPeriodListResponse extends $tea.Model {
   }
 }
 
+export class GetPermissionHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPermissionRequest extends $tea.Model {
+  targetId?: string;
+  targetType?: string;
+  userId?: string;
+  withKr?: boolean;
+  withObjective?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      targetId: 'targetId',
+      targetType: 'targetType',
+      userId: 'userId',
+      withKr: 'withKr',
+      withObjective: 'withObjective',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      targetId: 'string',
+      targetType: 'string',
+      userId: 'string',
+      withKr: 'boolean',
+      withObjective: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPermissionResponseBody extends $tea.Model {
+  data?: GetPermissionResponseBodyData;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: GetPermissionResponseBodyData,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPermissionResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetPermissionResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetPermissionResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetUserOkrHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -679,25 +752,25 @@ export class GetUserOkrHeaders extends $tea.Model {
 }
 
 export class GetUserOkrRequest extends $tea.Model {
-  ownerId?: Readable;
   pageNumber?: number;
   pageSize?: number;
-  periodId?: Readable;
+  periodId?: string;
+  userId?: string;
   static names(): { [key: string]: string } {
     return {
-      ownerId: 'ownerId',
       pageNumber: 'pageNumber',
       pageSize: 'pageSize',
       periodId: 'periodId',
+      userId: 'userId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      ownerId: 'Readable',
       pageNumber: 'number',
       pageSize: 'number',
-      periodId: 'Readable',
+      periodId: 'string',
+      userId: 'string',
     };
   }
 
@@ -707,24 +780,18 @@ export class GetUserOkrRequest extends $tea.Model {
 }
 
 export class GetUserOkrResponseBody extends $tea.Model {
-  code?: number;
   data?: GetUserOkrResponseBodyData;
-  message?: Readable;
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
-      code: 'code',
       data: 'data',
-      message: 'message',
       success: 'success',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      code: 'number',
       data: GetUserOkrResponseBodyData,
-      message: 'Readable',
       success: 'boolean',
     };
   }
@@ -781,12 +848,12 @@ export class UnAlignObjectiveHeaders extends $tea.Model {
 export class UnAlignObjectiveRequest extends $tea.Model {
   periodId?: string;
   targetId?: string;
-  ownerId?: Readable;
+  userId?: string;
   static names(): { [key: string]: string } {
     return {
       periodId: 'periodId',
       targetId: 'targetId',
-      ownerId: 'ownerId',
+      userId: 'userId',
     };
   }
 
@@ -794,7 +861,7 @@ export class UnAlignObjectiveRequest extends $tea.Model {
     return {
       periodId: 'string',
       targetId: 'string',
-      ownerId: 'Readable',
+      userId: 'string',
     };
   }
 
@@ -804,24 +871,18 @@ export class UnAlignObjectiveRequest extends $tea.Model {
 }
 
 export class UnAlignObjectiveResponseBody extends $tea.Model {
-  code?: number;
   data?: UnAlignObjectiveResponseBodyData;
-  message?: string;
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
-      code: 'code',
       data: 'data',
-      message: 'message',
       success: 'success',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      code: 'number',
       data: UnAlignObjectiveResponseBodyData,
-      message: 'string',
       success: 'boolean',
     };
   }
@@ -876,25 +937,25 @@ export class UpdateKROfContentHeaders extends $tea.Model {
 }
 
 export class UpdateKROfContentRequest extends $tea.Model {
-  content?: Readable;
-  updateQuoteList?: Readable[];
-  krId?: Readable;
-  operatorUid?: Readable;
+  content?: string;
+  updateQuoteList?: string[];
+  krId?: string;
+  userId?: string;
   static names(): { [key: string]: string } {
     return {
       content: 'content',
       updateQuoteList: 'updateQuoteList',
       krId: 'krId',
-      operatorUid: 'operatorUid',
+      userId: 'userId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      content: 'Readable',
-      updateQuoteList: { 'type': 'array', 'itemType': 'Readable' },
-      krId: 'Readable',
-      operatorUid: 'Readable',
+      content: 'string',
+      updateQuoteList: { 'type': 'array', 'itemType': 'string' },
+      krId: 'string',
+      userId: 'string',
     };
   }
 
@@ -971,21 +1032,21 @@ export class UpdateKROfScoreHeaders extends $tea.Model {
 
 export class UpdateKROfScoreRequest extends $tea.Model {
   score?: number;
-  krId?: Readable;
-  ownerId?: Readable;
+  krId?: string;
+  userId?: string;
   static names(): { [key: string]: string } {
     return {
       score: 'score',
       krId: 'krId',
-      ownerId: 'ownerId',
+      userId: 'userId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       score: 'number',
-      krId: 'Readable',
-      ownerId: 'Readable',
+      krId: 'string',
+      userId: 'string',
     };
   }
 
@@ -995,7 +1056,7 @@ export class UpdateKROfScoreRequest extends $tea.Model {
 }
 
 export class UpdateKROfScoreResponseBody extends $tea.Model {
-  data?: number;
+  data?: UpdateKROfScoreResponseBodyData;
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1006,7 +1067,7 @@ export class UpdateKROfScoreResponseBody extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      data: 'number',
+      data: UpdateKROfScoreResponseBodyData,
       success: 'boolean',
     };
   }
@@ -1062,21 +1123,21 @@ export class UpdateKROfWeightHeaders extends $tea.Model {
 
 export class UpdateKROfWeightRequest extends $tea.Model {
   weight?: number;
-  krId?: Readable;
-  ownerId?: Readable;
+  krId?: string;
+  userId?: string;
   static names(): { [key: string]: string } {
     return {
       weight: 'weight',
       krId: 'krId',
-      ownerId: 'ownerId',
+      userId: 'userId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       weight: 'number',
-      krId: 'Readable',
-      ownerId: 'Readable',
+      krId: 'string',
+      userId: 'string',
     };
   }
 
@@ -1152,7 +1213,7 @@ export class UpdateObjectiveHeaders extends $tea.Model {
 }
 
 export class UpdateObjectiveRequest extends $tea.Model {
-  content?: Readable;
+  content?: string;
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1163,7 +1224,7 @@ export class UpdateObjectiveRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      content: 'Readable',
+      content: 'string',
       userId: 'string',
     };
   }
@@ -1174,24 +1235,18 @@ export class UpdateObjectiveRequest extends $tea.Model {
 }
 
 export class UpdateObjectiveResponseBody extends $tea.Model {
-  code?: number;
   data?: UpdateObjectiveResponseBodyData;
-  message?: string;
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
-      code: 'code',
       data: 'data',
-      message: 'message',
       success: 'success',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      code: 'number',
       data: UpdateObjectiveResponseBodyData,
-      message: 'string',
       success: 'boolean',
     };
   }
@@ -1245,7 +1300,7 @@ export class AlignObjectiveResponseBodyData extends $tea.Model {
   }
 }
 
-export class BatchQueryObjectiveResponseBodyDataKrListProgress extends $tea.Model {
+export class BatchQueryObjectiveResponseBodyDataListKrListProgress extends $tea.Model {
   percent?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1264,13 +1319,13 @@ export class BatchQueryObjectiveResponseBodyDataKrListProgress extends $tea.Mode
   }
 }
 
-export class BatchQueryObjectiveResponseBodyDataKrList extends $tea.Model {
+export class BatchQueryObjectiveResponseBodyDataListKrList extends $tea.Model {
   content?: Readable;
   id?: Readable;
   objectiveId?: Readable;
   permission?: number[];
   position?: number;
-  progress?: BatchQueryObjectiveResponseBodyDataKrListProgress;
+  progress?: BatchQueryObjectiveResponseBodyDataListKrListProgress;
   score?: number;
   weight?: number;
   static names(): { [key: string]: string } {
@@ -1293,7 +1348,7 @@ export class BatchQueryObjectiveResponseBodyDataKrList extends $tea.Model {
       objectiveId: 'Readable',
       permission: { 'type': 'array', 'itemType': 'number' },
       position: 'number',
-      progress: BatchQueryObjectiveResponseBodyDataKrListProgress,
+      progress: BatchQueryObjectiveResponseBodyDataListKrListProgress,
       score: 'number',
       weight: 'number',
     };
@@ -1304,32 +1359,9 @@ export class BatchQueryObjectiveResponseBodyDataKrList extends $tea.Model {
   }
 }
 
-export class BatchQueryObjectiveResponseBodyDataOwnerDepartment extends $tea.Model {
-  id?: Readable;
-  name?: Readable;
-  static names(): { [key: string]: string } {
-    return {
-      id: 'id',
-      name: 'name',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      id: 'Readable',
-      name: 'Readable',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class BatchQueryObjectiveResponseBodyDataOwner extends $tea.Model {
+export class BatchQueryObjectiveResponseBodyDataListOwner extends $tea.Model {
   avatarMediaId?: Readable;
   corpId?: Readable;
-  department?: BatchQueryObjectiveResponseBodyDataOwnerDepartment;
   id?: Readable;
   nickname?: Readable;
   staffId?: Readable;
@@ -1337,7 +1369,6 @@ export class BatchQueryObjectiveResponseBodyDataOwner extends $tea.Model {
     return {
       avatarMediaId: 'avatarMediaId',
       corpId: 'corpId',
-      department: 'department',
       id: 'id',
       nickname: 'nickname',
       staffId: 'staffId',
@@ -1348,7 +1379,6 @@ export class BatchQueryObjectiveResponseBodyDataOwner extends $tea.Model {
     return {
       avatarMediaId: 'Readable',
       corpId: 'Readable',
-      department: BatchQueryObjectiveResponseBodyDataOwnerDepartment,
       id: 'Readable',
       nickname: 'Readable',
       staffId: 'Readable',
@@ -1360,7 +1390,7 @@ export class BatchQueryObjectiveResponseBodyDataOwner extends $tea.Model {
   }
 }
 
-export class BatchQueryObjectiveResponseBodyDataProgress extends $tea.Model {
+export class BatchQueryObjectiveResponseBodyDataListProgress extends $tea.Model {
   percent?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1379,17 +1409,17 @@ export class BatchQueryObjectiveResponseBodyDataProgress extends $tea.Model {
   }
 }
 
-export class BatchQueryObjectiveResponseBodyData extends $tea.Model {
+export class BatchQueryObjectiveResponseBodyDataList extends $tea.Model {
   alignFromIds?: Readable[];
   alignToIds?: Readable[];
   content?: Readable;
   id?: Readable;
-  krList?: BatchQueryObjectiveResponseBodyDataKrList[];
-  owner?: BatchQueryObjectiveResponseBodyDataOwner;
+  krList?: BatchQueryObjectiveResponseBodyDataListKrList[];
+  owner?: BatchQueryObjectiveResponseBodyDataListOwner;
   periodId?: Readable;
   permission?: number[];
   position?: number;
-  progress?: BatchQueryObjectiveResponseBodyDataProgress;
+  progress?: BatchQueryObjectiveResponseBodyDataListProgress;
   progressPercent?: number;
   published?: boolean;
   score?: number;
@@ -1423,18 +1453,46 @@ export class BatchQueryObjectiveResponseBodyData extends $tea.Model {
       alignToIds: { 'type': 'array', 'itemType': 'Readable' },
       content: 'Readable',
       id: 'Readable',
-      krList: { 'type': 'array', 'itemType': BatchQueryObjectiveResponseBodyDataKrList },
-      owner: BatchQueryObjectiveResponseBodyDataOwner,
+      krList: { 'type': 'array', 'itemType': BatchQueryObjectiveResponseBodyDataListKrList },
+      owner: BatchQueryObjectiveResponseBodyDataListOwner,
       periodId: 'Readable',
       permission: { 'type': 'array', 'itemType': 'number' },
       position: 'number',
-      progress: BatchQueryObjectiveResponseBodyDataProgress,
+      progress: BatchQueryObjectiveResponseBodyDataListProgress,
       progressPercent: 'number',
       published: 'boolean',
       score: 'number',
       status: 'number',
       userId: 'Readable',
       weight: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchQueryObjectiveResponseBodyData extends $tea.Model {
+  list?: BatchQueryObjectiveResponseBodyDataList[];
+  pageNo?: number;
+  pageSize?: number;
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      list: 'list',
+      pageNo: 'pageNo',
+      pageSize: 'pageSize',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      list: { 'type': 'array', 'itemType': BatchQueryObjectiveResponseBodyDataList },
+      pageNo: 'number',
+      pageSize: 'number',
+      totalCount: 'number',
     };
   }
 
@@ -1470,15 +1528,18 @@ export class CreateKeyResultResponseBodyData extends $tea.Model {
 
 export class CreateObjectiveResponseBodyData extends $tea.Model {
   id?: string;
+  position?: string;
   static names(): { [key: string]: string } {
     return {
       id: 'id',
+      position: 'position',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       id: 'string',
+      position: 'string',
     };
   }
 
@@ -1559,6 +1620,84 @@ export class GetPeriodListResponseBodyData extends $tea.Model {
   }
 }
 
+export class GetPermissionResponseBodyDataPolicyListMemberList extends $tea.Model {
+  id?: string;
+  nickname?: string;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+      nickname: 'nickname',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'string',
+      nickname: 'string',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPermissionResponseBodyDataPolicyList extends $tea.Model {
+  memberList?: GetPermissionResponseBodyDataPolicyListMemberList[];
+  name?: string;
+  type?: number;
+  static names(): { [key: string]: string } {
+    return {
+      memberList: 'memberList',
+      name: 'name',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      memberList: { 'type': 'array', 'itemType': GetPermissionResponseBodyDataPolicyListMemberList },
+      name: 'string',
+      type: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPermissionResponseBodyData extends $tea.Model {
+  id?: string;
+  policyList?: GetPermissionResponseBodyDataPolicyList[];
+  privacy?: string;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+      policyList: 'policyList',
+      privacy: 'privacy',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'string',
+      policyList: { 'type': 'array', 'itemType': GetPermissionResponseBodyDataPolicyList },
+      privacy: 'string',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetUserOkrResponseBodyDataListKrListProgress extends $tea.Model {
   percent?: number;
   static names(): { [key: string]: string } {
@@ -1618,32 +1757,9 @@ export class GetUserOkrResponseBodyDataListKrList extends $tea.Model {
   }
 }
 
-export class GetUserOkrResponseBodyDataListOwnerDepartment extends $tea.Model {
-  id?: Readable;
-  name?: Readable;
-  static names(): { [key: string]: string } {
-    return {
-      id: 'id',
-      name: 'name',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      id: 'Readable',
-      name: 'Readable',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class GetUserOkrResponseBodyDataListOwner extends $tea.Model {
   avatarMediaId?: Readable;
   corpId?: Readable;
-  department?: GetUserOkrResponseBodyDataListOwnerDepartment;
   id?: Readable;
   nickname?: Readable;
   staffId?: Readable;
@@ -1651,7 +1767,6 @@ export class GetUserOkrResponseBodyDataListOwner extends $tea.Model {
     return {
       avatarMediaId: 'avatarMediaId',
       corpId: 'corpId',
-      department: 'department',
       id: 'id',
       nickname: 'nickname',
       staffId: 'staffId',
@@ -1662,7 +1777,6 @@ export class GetUserOkrResponseBodyDataListOwner extends $tea.Model {
     return {
       avatarMediaId: 'Readable',
       corpId: 'Readable',
-      department: GetUserOkrResponseBodyDataListOwnerDepartment,
       id: 'Readable',
       nickname: 'Readable',
       staffId: 'Readable',
@@ -1807,20 +1921,36 @@ export class UnAlignObjectiveResponseBodyData extends $tea.Model {
   }
 }
 
+export class UpdateKROfScoreResponseBodyData extends $tea.Model {
+  objectiveScore?: number;
+  static names(): { [key: string]: string } {
+    return {
+      objectiveScore: 'objectiveScore',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      objectiveScore: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateKROfWeightResponseBodyDataObjectiveProgress extends $tea.Model {
   percent?: number;
-  status?: number;
   static names(): { [key: string]: string } {
     return {
       percent: 'percent',
-      status: 'status',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       percent: 'number',
-      status: 'number',
     };
   }
 
@@ -1896,8 +2026,8 @@ export default class Client extends OpenApi {
     Util.validateModel(request);
     objectiveId = OpenApiUtil.getEncodeParam(objectiveId);
     let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.ownerId)) {
-      query["ownerId"] = request.ownerId;
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
     }
 
     let body : {[key: string ]: any} = { };
@@ -1935,8 +2065,8 @@ export default class Client extends OpenApi {
   async batchQueryObjectiveWithOptions(request: BatchQueryObjectiveRequest, headers: BatchQueryObjectiveHeaders, runtime: $Util.RuntimeOptions): Promise<BatchQueryObjectiveResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.ownerId)) {
-      query["ownerId"] = request.ownerId;
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
     }
 
     let body : {[key: string ]: any} = { };
@@ -1986,8 +2116,8 @@ export default class Client extends OpenApi {
   async createKeyResultWithOptions(request: CreateKeyResultRequest, headers: CreateKeyResultHeaders, runtime: $Util.RuntimeOptions): Promise<CreateKeyResultResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.ownerId)) {
-      query["ownerId"] = request.ownerId;
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
     }
 
     let body : {[key: string ]: any} = { };
@@ -2084,8 +2214,8 @@ export default class Client extends OpenApi {
       query["krId"] = request.krId;
     }
 
-    if (!Util.isUnset(request.ownerId)) {
-      query["ownerId"] = request.ownerId;
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -2156,6 +2286,51 @@ export default class Client extends OpenApi {
     return $tea.cast<GetPeriodListResponse>(await this.doROARequest("GetPeriodList", "okr_1.0", "HTTP", "GET", "AK", `/v1.0/okr/periods`, "json", req, runtime), new GetPeriodListResponse({}));
   }
 
+  async getPermission(request: GetPermissionRequest): Promise<GetPermissionResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetPermissionHeaders({ });
+    return await this.getPermissionWithOptions(request, headers, runtime);
+  }
+
+  async getPermissionWithOptions(request: GetPermissionRequest, headers: GetPermissionHeaders, runtime: $Util.RuntimeOptions): Promise<GetPermissionResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.targetId)) {
+      query["targetId"] = request.targetId;
+    }
+
+    if (!Util.isUnset(request.targetType)) {
+      query["targetType"] = request.targetType;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    if (!Util.isUnset(request.withKr)) {
+      query["withKr"] = request.withKr;
+    }
+
+    if (!Util.isUnset(request.withObjective)) {
+      query["withObjective"] = request.withObjective;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetPermissionResponse>(await this.doROARequest("GetPermission", "okr_1.0", "HTTP", "GET", "AK", `/v1.0/okr/permissions`, "json", req, runtime), new GetPermissionResponse({}));
+  }
+
   async getUserOkr(request: GetUserOkrRequest): Promise<GetUserOkrResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetUserOkrHeaders({ });
@@ -2165,10 +2340,6 @@ export default class Client extends OpenApi {
   async getUserOkrWithOptions(request: GetUserOkrRequest, headers: GetUserOkrHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserOkrResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.ownerId)) {
-      query["ownerId"] = request.ownerId;
-    }
-
     if (!Util.isUnset(request.pageNumber)) {
       query["pageNumber"] = request.pageNumber;
     }
@@ -2179,6 +2350,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.periodId)) {
       query["periodId"] = request.periodId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -2207,8 +2382,8 @@ export default class Client extends OpenApi {
     Util.validateModel(request);
     objectiveId = OpenApiUtil.getEncodeParam(objectiveId);
     let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.ownerId)) {
-      query["ownerId"] = request.ownerId;
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
     }
 
     let body : {[key: string ]: any} = { };
@@ -2250,8 +2425,8 @@ export default class Client extends OpenApi {
       query["krId"] = request.krId;
     }
 
-    if (!Util.isUnset(request.operatorUid)) {
-      query["operatorUid"] = request.operatorUid;
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
     }
 
     let body : {[key: string ]: any} = { };
@@ -2293,8 +2468,8 @@ export default class Client extends OpenApi {
       query["krId"] = request.krId;
     }
 
-    if (!Util.isUnset(request.ownerId)) {
-      query["ownerId"] = request.ownerId;
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
     }
 
     let body : {[key: string ]: any} = { };
@@ -2332,8 +2507,8 @@ export default class Client extends OpenApi {
       query["krId"] = request.krId;
     }
 
-    if (!Util.isUnset(request.ownerId)) {
-      query["ownerId"] = request.ownerId;
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
     }
 
     let body : {[key: string ]: any} = { };

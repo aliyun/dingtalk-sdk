@@ -2143,30 +2143,36 @@ export class DeleteWorkspaceMembersRequestMembers extends $tea.Model {
 }
 
 export class GetRecentEditDocsResponseBodyRecentListNodeBO extends $tea.Model {
+  createTime?: number;
   docType?: string;
   isDeleted?: boolean;
   lastEditTime?: number;
   nodeId?: string;
   nodeName?: string;
+  updateTime?: number;
   url?: string;
   static names(): { [key: string]: string } {
     return {
+      createTime: 'createTime',
       docType: 'docType',
       isDeleted: 'isDeleted',
       lastEditTime: 'lastEditTime',
       nodeId: 'nodeId',
       nodeName: 'nodeName',
+      updateTime: 'updateTime',
       url: 'url',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      createTime: 'number',
       docType: 'string',
       isDeleted: 'boolean',
       lastEditTime: 'number',
       nodeId: 'string',
       nodeName: 'string',
+      updateTime: 'number',
       url: 'string',
     };
   }
@@ -2177,10 +2183,12 @@ export class GetRecentEditDocsResponseBodyRecentListNodeBO extends $tea.Model {
 }
 
 export class GetRecentEditDocsResponseBodyRecentListWorkspaceBO extends $tea.Model {
+  url?: string;
   workspaceId?: string;
   workspaceName?: string;
   static names(): { [key: string]: string } {
     return {
+      url: 'url',
       workspaceId: 'workspaceId',
       workspaceName: 'workspaceName',
     };
@@ -2188,6 +2196,7 @@ export class GetRecentEditDocsResponseBodyRecentListWorkspaceBO extends $tea.Mod
 
   static types(): { [key: string]: any } {
     return {
+      url: 'string',
       workspaceId: 'string',
       workspaceName: 'string',
     };
@@ -2221,30 +2230,36 @@ export class GetRecentEditDocsResponseBodyRecentList extends $tea.Model {
 }
 
 export class GetRecentOpenDocsResponseBodyRecentListNodeBO extends $tea.Model {
+  createTime?: number;
   docType?: string;
   isDeleted?: boolean;
   lastOpenTime?: number;
   nodeId?: string;
   nodeName?: string;
+  updateTime?: number;
   url?: string;
   static names(): { [key: string]: string } {
     return {
+      createTime: 'createTime',
       docType: 'docType',
       isDeleted: 'isDeleted',
       lastOpenTime: 'lastOpenTime',
       nodeId: 'nodeId',
       nodeName: 'nodeName',
+      updateTime: 'updateTime',
       url: 'url',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      createTime: 'number',
       docType: 'string',
       isDeleted: 'boolean',
       lastOpenTime: 'number',
       nodeId: 'string',
       nodeName: 'string',
+      updateTime: 'number',
       url: 'string',
     };
   }
@@ -2255,10 +2270,12 @@ export class GetRecentOpenDocsResponseBodyRecentListNodeBO extends $tea.Model {
 }
 
 export class GetRecentOpenDocsResponseBodyRecentListWorkspaceBO extends $tea.Model {
+  url?: string;
   workspaceId?: string;
   workspaceName?: string;
   static names(): { [key: string]: string } {
     return {
+      url: 'url',
       workspaceId: 'workspaceId',
       workspaceName: 'workspaceName',
     };
@@ -2266,6 +2283,7 @@ export class GetRecentOpenDocsResponseBodyRecentListWorkspaceBO extends $tea.Mod
 
   static types(): { [key: string]: any } {
     return {
+      url: 'string',
       workspaceId: 'string',
       workspaceName: 'string',
     };
