@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
+     * @description 当前 Objective ID。
+     *
      * @var string
      */
     public $id;
 
     /**
+     * @description 当前 Objective 的位置。
+     *
      * @var float
      */
     public $position;

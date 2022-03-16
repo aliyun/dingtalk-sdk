@@ -5,46 +5,57 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
-use GuzzleHttp\Psr7\Stream;
 
 class CreateKeyResultRequest extends Model
 {
     /**
-     * @var Stream
+     * @description KR 内容。
+     *
+     * @var string
      */
     public $content;
 
     /**
-     * @var Stream
+     * @description 所属 Objective ID。
+     *
+     * @var string
      */
     public $objectiveId;
 
     /**
-     * @var Stream
+     * @description 周期 ID。
+     *
+     * @var string
      */
     public $periodId;
 
     /**
+     * @description 上一个 KR 的位置。
+     *
      * @var int
      */
     public $prevPosition;
 
     /**
+     * @description KR 的权重比。
+     *
      * @var int
      */
     public $weight;
 
     /**
-     * @var Stream
+     * @description 当前用户的 user ID。
+     *
+     * @var string
      */
-    public $ownerId;
+    public $userId;
     protected $_name = [
         'content'      => 'content',
         'objectiveId'  => 'objectiveId',
         'periodId'     => 'periodId',
         'prevPosition' => 'prevPosition',
         'weight'       => 'weight',
-        'ownerId'      => 'ownerId',
+        'userId'       => 'userId',
     ];
 
     public function validate()
@@ -69,8 +80,8 @@ class CreateKeyResultRequest extends Model
         if (null !== $this->weight) {
             $res['weight'] = $this->weight;
         }
-        if (null !== $this->ownerId) {
-            $res['ownerId'] = $this->ownerId;
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -99,8 +110,8 @@ class CreateKeyResultRequest extends Model
         if (isset($map['weight'])) {
             $model->weight = $map['weight'];
         }
-        if (isset($map['ownerId'])) {
-            $model->ownerId = $map['ownerId'];
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

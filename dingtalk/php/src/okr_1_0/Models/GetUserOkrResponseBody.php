@@ -6,17 +6,9 @@ namespace AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models;
 
 use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\GetUserOkrResponseBody\data;
 use AlibabaCloud\Tea\Model;
-use GuzzleHttp\Psr7\Stream;
 
 class GetUserOkrResponseBody extends Model
 {
-    /**
-     * @description code
-     *
-     * @var int
-     */
-    public $code;
-
     /**
      * @description data
      *
@@ -25,22 +17,13 @@ class GetUserOkrResponseBody extends Model
     public $data;
 
     /**
-     * @description message
-     *
-     * @var Stream
-     */
-    public $message;
-
-    /**
-     * @description success
+     * @description 请求成功的标识。
      *
      * @var bool
      */
     public $success;
     protected $_name = [
-        'code'    => 'code',
         'data'    => 'data',
-        'message' => 'message',
         'success' => 'success',
     ];
 
@@ -51,14 +34,8 @@ class GetUserOkrResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->code) {
-            $res['code'] = $this->code;
-        }
         if (null !== $this->data) {
             $res['data'] = null !== $this->data ? $this->data->toMap() : null;
-        }
-        if (null !== $this->message) {
-            $res['message'] = $this->message;
         }
         if (null !== $this->success) {
             $res['success'] = $this->success;
@@ -75,14 +52,8 @@ class GetUserOkrResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['code'])) {
-            $model->code = $map['code'];
-        }
         if (isset($map['data'])) {
             $model->data = data::fromMap($map['data']);
-        }
-        if (isset($map['message'])) {
-            $model->message = $map['message'];
         }
         if (isset($map['success'])) {
             $model->success = $map['success'];

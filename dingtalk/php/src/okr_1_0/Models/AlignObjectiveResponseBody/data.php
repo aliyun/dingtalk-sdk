@@ -10,11 +10,15 @@ use GuzzleHttp\Psr7\Stream;
 class data extends Model
 {
     /**
+     * @description 对齐目标的 ID。
+     *
      * @var Stream
      */
     public $alignId;
 
     /**
+     * @description 当前 Objective 的ID
+     *
      * @var Stream
      */
     public $id;

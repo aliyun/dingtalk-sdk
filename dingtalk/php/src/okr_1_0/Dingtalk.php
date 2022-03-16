@@ -25,6 +25,9 @@ use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\DeleteObjectiveRequest;
 use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\DeleteObjectiveResponse;
 use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\GetPeriodListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\GetPeriodListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\GetPermissionHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\GetPermissionRequest;
+use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\GetPermissionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\GetUserOkrHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\GetUserOkrRequest;
 use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\GetUserOkrResponse;
@@ -86,8 +89,8 @@ class Dingtalk extends OpenApiClient
         Utils::validateModel($request);
         $objectiveId = OpenApiUtilClient::getEncodeParam($objectiveId);
         $query       = [];
-        if (!Utils::isUnset($request->ownerId)) {
-            @$query['ownerId'] = $request->ownerId;
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
         }
         $body = [];
         if (!Utils::isUnset($request->periodId)) {
@@ -136,8 +139,8 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->ownerId)) {
-            @$query['ownerId'] = $request->ownerId;
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
         }
         $body = [];
         if (!Utils::isUnset($request->objectiveIds)) {
@@ -195,8 +198,8 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->ownerId)) {
-            @$query['ownerId'] = $request->ownerId;
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
         }
         $body = [];
         if (!Utils::isUnset($request->content)) {
@@ -310,8 +313,8 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->krId)) {
             @$query['krId'] = $request->krId;
         }
-        if (!Utils::isUnset($request->ownerId)) {
-            @$query['ownerId'] = $request->ownerId;
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -407,6 +410,60 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param GetPermissionRequest $request
+     *
+     * @return GetPermissionResponse
+     */
+    public function getPermission($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetPermissionHeaders([]);
+
+        return $this->getPermissionWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetPermissionRequest $request
+     * @param GetPermissionHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return GetPermissionResponse
+     */
+    public function getPermissionWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->targetId)) {
+            @$query['targetId'] = $request->targetId;
+        }
+        if (!Utils::isUnset($request->targetType)) {
+            @$query['targetType'] = $request->targetType;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->withKr)) {
+            @$query['withKr'] = $request->withKr;
+        }
+        if (!Utils::isUnset($request->withObjective)) {
+            @$query['withObjective'] = $request->withObjective;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetPermissionResponse::fromMap($this->doROARequest('GetPermission', 'okr_1.0', 'HTTP', 'GET', 'AK', '/v1.0/okr/permissions', 'json', $req, $runtime));
+    }
+
+    /**
      * @param GetUserOkrRequest $request
      *
      * @return GetUserOkrResponse
@@ -430,9 +487,6 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->ownerId)) {
-            @$query['ownerId'] = $request->ownerId;
-        }
         if (!Utils::isUnset($request->pageNumber)) {
             @$query['pageNumber'] = $request->pageNumber;
         }
@@ -441,6 +495,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->periodId)) {
             @$query['periodId'] = $request->periodId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -484,8 +541,8 @@ class Dingtalk extends OpenApiClient
         Utils::validateModel($request);
         $objectiveId = OpenApiUtilClient::getEncodeParam($objectiveId);
         $query       = [];
-        if (!Utils::isUnset($request->ownerId)) {
-            @$query['ownerId'] = $request->ownerId;
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
         }
         $body = [];
         if (!Utils::isUnset($request->periodId)) {
@@ -537,8 +594,8 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->krId)) {
             @$query['krId'] = $request->krId;
         }
-        if (!Utils::isUnset($request->operatorUid)) {
-            @$query['operatorUid'] = $request->operatorUid;
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
         }
         $body = [];
         if (!Utils::isUnset($request->content)) {
@@ -590,8 +647,8 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->krId)) {
             @$query['krId'] = $request->krId;
         }
-        if (!Utils::isUnset($request->ownerId)) {
-            @$query['ownerId'] = $request->ownerId;
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
         }
         $body = [];
         if (!Utils::isUnset($request->score)) {
@@ -640,8 +697,8 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->krId)) {
             @$query['krId'] = $request->krId;
         }
-        if (!Utils::isUnset($request->ownerId)) {
-            @$query['ownerId'] = $request->ownerId;
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
         }
         $body = [];
         if (!Utils::isUnset($request->weight)) {

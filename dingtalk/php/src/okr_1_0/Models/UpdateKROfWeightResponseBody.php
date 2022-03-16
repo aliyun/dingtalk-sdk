@@ -10,14 +10,12 @@ use AlibabaCloud\Tea\Model;
 class UpdateKROfWeightResponseBody extends Model
 {
     /**
-     * @description 目标分数
-     *
      * @var data
      */
     public $data;
 
     /**
-     * @description Id of the request
+     * @description 请求成功的标识。
      *
      * @var bool
      */

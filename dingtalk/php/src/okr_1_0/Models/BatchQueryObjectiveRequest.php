@@ -5,56 +5,57 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
-use GuzzleHttp\Psr7\Stream;
 
 class BatchQueryObjectiveRequest extends Model
 {
     /**
-     * @var Stream[]
+     * @description 需要查看的 Objective ID。
+     *
+     * @var string[]
      */
     public $objectiveIds;
 
     /**
-     * @description periodId
+     * @description 周期 ID。
      *
-     * @var Stream
+     * @var string
      */
     public $periodId;
 
     /**
-     * @description withAlign
+     * @description 是否返回关联信息。
      *
      * @var bool
      */
     public $withAlign;
 
     /**
-     * @description withKr
+     * @description 是否返回 KR 信息。
      *
      * @var bool
      */
     public $withKr;
 
     /**
-     * @description withProgress
+     * @description 是否返回进度信息
      *
      * @var bool
      */
     public $withProgress;
 
     /**
-     * @description ownerId
+     * @description 当前用户的 staff ID。
      *
      * @var string
      */
-    public $ownerId;
+    public $userId;
     protected $_name = [
         'objectiveIds' => 'objectiveIds',
         'periodId'     => 'periodId',
         'withAlign'    => 'withAlign',
         'withKr'       => 'withKr',
         'withProgress' => 'withProgress',
-        'ownerId'      => 'ownerId',
+        'userId'       => 'userId',
     ];
 
     public function validate()
@@ -79,8 +80,8 @@ class BatchQueryObjectiveRequest extends Model
         if (null !== $this->withProgress) {
             $res['withProgress'] = $this->withProgress;
         }
-        if (null !== $this->ownerId) {
-            $res['ownerId'] = $this->ownerId;
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -111,8 +112,8 @@ class BatchQueryObjectiveRequest extends Model
         if (isset($map['withProgress'])) {
             $model->withProgress = $map['withProgress'];
         }
-        if (isset($map['ownerId'])) {
-            $model->ownerId = $map['ownerId'];
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

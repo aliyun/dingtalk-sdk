@@ -5,7 +5,6 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
-use GuzzleHttp\Psr7\Stream;
 
 class UnAlignObjectiveRequest extends Model
 {
@@ -24,15 +23,15 @@ class UnAlignObjectiveRequest extends Model
     public $targetId;
 
     /**
-     * @description 用户 ID
+     * @description 当前用户的 userId。
      *
-     * @var Stream
+     * @var string
      */
-    public $ownerId;
+    public $userId;
     protected $_name = [
         'periodId' => 'periodId',
         'targetId' => 'targetId',
-        'ownerId'  => 'ownerId',
+        'userId'   => 'userId',
     ];
 
     public function validate()
@@ -48,8 +47,8 @@ class UnAlignObjectiveRequest extends Model
         if (null !== $this->targetId) {
             $res['targetId'] = $this->targetId;
         }
-        if (null !== $this->ownerId) {
-            $res['ownerId'] = $this->ownerId;
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -69,8 +68,8 @@ class UnAlignObjectiveRequest extends Model
         if (isset($map['targetId'])) {
             $model->targetId = $map['targetId'];
         }
-        if (isset($map['ownerId'])) {
-            $model->ownerId = $map['ownerId'];
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

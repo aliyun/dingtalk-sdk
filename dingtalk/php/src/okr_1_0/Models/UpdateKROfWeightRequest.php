@@ -5,30 +5,33 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
-use GuzzleHttp\Psr7\Stream;
 
 class UpdateKROfWeightRequest extends Model
 {
     /**
+     * @description 权重比。
+     *
      * @var int
      */
     public $weight;
 
     /**
-     * @description A short description of struct
+     * @description 当前 KR ID。
      *
-     * @var Stream
+     * @var string
      */
     public $krId;
 
     /**
-     * @var Stream
+     * @description 当前用户的userId。
+     *
+     * @var string
      */
-    public $ownerId;
+    public $userId;
     protected $_name = [
-        'weight'  => 'weight',
-        'krId'    => 'krId',
-        'ownerId' => 'ownerId',
+        'weight' => 'weight',
+        'krId'   => 'krId',
+        'userId' => 'userId',
     ];
 
     public function validate()
@@ -44,8 +47,8 @@ class UpdateKROfWeightRequest extends Model
         if (null !== $this->krId) {
             $res['krId'] = $this->krId;
         }
-        if (null !== $this->ownerId) {
-            $res['ownerId'] = $this->ownerId;
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -65,8 +68,8 @@ class UpdateKROfWeightRequest extends Model
         if (isset($map['krId'])) {
             $model->krId = $map['krId'];
         }
-        if (isset($map['ownerId'])) {
-            $model->ownerId = $map['ownerId'];
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

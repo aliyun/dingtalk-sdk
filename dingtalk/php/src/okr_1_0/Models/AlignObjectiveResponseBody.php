@@ -10,25 +10,11 @@ use AlibabaCloud\Tea\Model;
 class AlignObjectiveResponseBody extends Model
 {
     /**
-     * @description code
-     *
-     * @var int
-     */
-    public $code;
-
-    /**
      * @description data
      *
      * @var data
      */
     public $data;
-
-    /**
-     * @description message
-     *
-     * @var string
-     */
-    public $message;
 
     /**
      * @description success
@@ -37,9 +23,7 @@ class AlignObjectiveResponseBody extends Model
      */
     public $success;
     protected $_name = [
-        'code'    => 'code',
         'data'    => 'data',
-        'message' => 'message',
         'success' => 'success',
     ];
 
@@ -50,14 +34,8 @@ class AlignObjectiveResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->code) {
-            $res['code'] = $this->code;
-        }
         if (null !== $this->data) {
             $res['data'] = null !== $this->data ? $this->data->toMap() : null;
-        }
-        if (null !== $this->message) {
-            $res['message'] = $this->message;
         }
         if (null !== $this->success) {
             $res['success'] = $this->success;
@@ -74,14 +52,8 @@ class AlignObjectiveResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['code'])) {
-            $model->code = $map['code'];
-        }
         if (isset($map['data'])) {
             $model->data = data::fromMap($map['data']);
-        }
-        if (isset($map['message'])) {
-            $model->message = $map['message'];
         }
         if (isset($map['success'])) {
             $model->success = $map['success'];

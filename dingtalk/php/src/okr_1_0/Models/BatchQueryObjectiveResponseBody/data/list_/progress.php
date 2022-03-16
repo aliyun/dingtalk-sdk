@@ -2,13 +2,15 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\BatchQueryObjectiveResponseBody\data;
+namespace AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\BatchQueryObjectiveResponseBody\data\list_;
 
 use AlibabaCloud\Tea\Model;
 
 class progress extends Model
 {
     /**
+     * @description 百分比。
+     *
      * @var int
      */
     public $percent;

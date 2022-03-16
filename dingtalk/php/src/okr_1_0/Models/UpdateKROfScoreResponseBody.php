@@ -4,19 +4,18 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\UpdateKROfScoreResponseBody\data;
 use AlibabaCloud\Tea\Model;
 
 class UpdateKROfScoreResponseBody extends Model
 {
     /**
-     * @description 目标分数
-     *
-     * @var int
+     * @var data
      */
     public $data;
 
     /**
-     * @description Id of the request
+     * @description 请求成功的标识。
      *
      * @var bool
      */
@@ -34,7 +33,7 @@ class UpdateKROfScoreResponseBody extends Model
     {
         $res = [];
         if (null !== $this->data) {
-            $res['data'] = $this->data;
+            $res['data'] = null !== $this->data ? $this->data->toMap() : null;
         }
         if (null !== $this->success) {
             $res['success'] = $this->success;
@@ -52,7 +51,7 @@ class UpdateKROfScoreResponseBody extends Model
     {
         $model = new self();
         if (isset($map['data'])) {
-            $model->data = $map['data'];
+            $model->data = data::fromMap($map['data']);
         }
         if (isset($map['success'])) {
             $model->success = $map['success'];

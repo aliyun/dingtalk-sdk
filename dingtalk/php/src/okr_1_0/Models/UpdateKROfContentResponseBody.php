@@ -14,7 +14,7 @@ class UpdateKROfContentResponseBody extends Model
     public $data;
 
     /**
-     * @description Id of the request
+     * @description 请求成功的标识。
      *
      * @var bool
      */

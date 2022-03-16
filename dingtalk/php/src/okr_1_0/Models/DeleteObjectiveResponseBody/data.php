@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
+     * @description 当前 Objective ID。
+     *
      * @var string
      */
     public $id;

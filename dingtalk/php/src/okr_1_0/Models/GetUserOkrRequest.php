@@ -5,42 +5,41 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
-use GuzzleHttp\Psr7\Stream;
 
 class GetUserOkrRequest extends Model
 {
     /**
-     * @description 归属用户的ID
-     *
-     * @var Stream
-     */
-    public $ownerId;
-
-    /**
-     * @description 页码，默认 为 1
+     * @description 页码，默认 为 1。
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 每页的个数，默认100
+     * @description 每页的个数，默认100。
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 周期 ID
+     * @description 周期 ID。
      *
-     * @var Stream
+     * @var string
      */
     public $periodId;
+
+    /**
+     * @description 当前用户的user ID。
+     *
+     * @var string
+     */
+    public $userId;
     protected $_name = [
-        'ownerId'    => 'ownerId',
         'pageNumber' => 'pageNumber',
         'pageSize'   => 'pageSize',
         'periodId'   => 'periodId',
+        'userId'     => 'userId',
     ];
 
     public function validate()
@@ -50,9 +49,6 @@ class GetUserOkrRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->ownerId) {
-            $res['ownerId'] = $this->ownerId;
-        }
         if (null !== $this->pageNumber) {
             $res['pageNumber'] = $this->pageNumber;
         }
@@ -61,6 +57,9 @@ class GetUserOkrRequest extends Model
         }
         if (null !== $this->periodId) {
             $res['periodId'] = $this->periodId;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -74,9 +73,6 @@ class GetUserOkrRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['ownerId'])) {
-            $model->ownerId = $map['ownerId'];
-        }
         if (isset($map['pageNumber'])) {
             $model->pageNumber = $map['pageNumber'];
         }
@@ -85,6 +81,9 @@ class GetUserOkrRequest extends Model
         }
         if (isset($map['periodId'])) {
             $model->periodId = $map['periodId'];
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class workspaceBO extends Model
 {
     /**
+     * @description 团队空间打开url
+     *
+     * @var string
+     */
+    public $url;
+
+    /**
      * @description 团队空间Id
      *
      * @var string
@@ -22,6 +29,7 @@ class workspaceBO extends Model
      */
     public $workspaceName;
     protected $_name = [
+        'url'           => 'url',
         'workspaceId'   => 'workspaceId',
         'workspaceName' => 'workspaceName',
     ];
@@ -33,6 +41,9 @@ class workspaceBO extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->url) {
+            $res['url'] = $this->url;
+        }
         if (null !== $this->workspaceId) {
             $res['workspaceId'] = $this->workspaceId;
         }
@@ -51,6 +62,9 @@ class workspaceBO extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['url'])) {
+            $model->url = $map['url'];
+        }
         if (isset($map['workspaceId'])) {
             $model->workspaceId = $map['workspaceId'];
         }

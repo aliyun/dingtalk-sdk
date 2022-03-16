@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class nodeBO extends Model
 {
     /**
+     * @description 创建时间
+     *
+     * @var int
+     */
+    public $createTime;
+
+    /**
      * @description 节点类型
      *
      * @var string
@@ -23,7 +30,7 @@ class nodeBO extends Model
     public $isDeleted;
 
     /**
-     * @description 最后编辑时间
+     * @description 内容的最后编辑时间
      *
      * @var int
      */
@@ -44,17 +51,26 @@ class nodeBO extends Model
     public $nodeName;
 
     /**
+     * @description 文档更新时间，包括重命名、移动、内容编辑等操作都会刷新更新时间
+     *
+     * @var int
+     */
+    public $updateTime;
+
+    /**
      * @description 文档打开url
      *
      * @var string
      */
     public $url;
     protected $_name = [
+        'createTime'   => 'createTime',
         'docType'      => 'docType',
         'isDeleted'    => 'isDeleted',
         'lastEditTime' => 'lastEditTime',
         'nodeId'       => 'nodeId',
         'nodeName'     => 'nodeName',
+        'updateTime'   => 'updateTime',
         'url'          => 'url',
     ];
 
@@ -65,6 +81,9 @@ class nodeBO extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->createTime) {
+            $res['createTime'] = $this->createTime;
+        }
         if (null !== $this->docType) {
             $res['docType'] = $this->docType;
         }
@@ -79,6 +98,9 @@ class nodeBO extends Model
         }
         if (null !== $this->nodeName) {
             $res['nodeName'] = $this->nodeName;
+        }
+        if (null !== $this->updateTime) {
+            $res['updateTime'] = $this->updateTime;
         }
         if (null !== $this->url) {
             $res['url'] = $this->url;
@@ -95,6 +117,9 @@ class nodeBO extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['createTime'])) {
+            $model->createTime = $map['createTime'];
+        }
         if (isset($map['docType'])) {
             $model->docType = $map['docType'];
         }
@@ -109,6 +134,9 @@ class nodeBO extends Model
         }
         if (isset($map['nodeName'])) {
             $model->nodeName = $map['nodeName'];
+        }
+        if (isset($map['updateTime'])) {
+            $model->updateTime = $map['updateTime'];
         }
         if (isset($map['url'])) {
             $model->url = $map['url'];

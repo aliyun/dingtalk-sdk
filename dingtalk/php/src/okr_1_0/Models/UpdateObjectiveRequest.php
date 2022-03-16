@@ -5,17 +5,18 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
-use GuzzleHttp\Psr7\Stream;
 
 class UpdateObjectiveRequest extends Model
 {
     /**
-     * @var Stream
+     * @description 当前 Objective 的内容。
+     *
+     * @var string
      */
     public $content;
 
     /**
-     * @description userId
+     * @description 当前用户的 userId。
      *
      * @var string
      */

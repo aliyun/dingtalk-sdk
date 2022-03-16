@@ -5,33 +5,32 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
-use GuzzleHttp\Psr7\Stream;
 
 class CreateObjectiveRequest extends Model
 {
     /**
-     * @description content
+     * @description 创建Objective 的内容
      *
-     * @var Stream
+     * @var string
      */
     public $content;
 
     /**
-     * @description periodId
+     * @description 当前周期 ID。
      *
-     * @var Stream
+     * @var string
      */
     public $periodId;
 
     /**
-     * @description prevPosition
+     * @description 上一个 Objective 的位置。
      *
-     * @var Stream
+     * @var string
      */
     public $prevPosition;
 
     /**
-     * @description userId
+     * @description 当前用户的 userId。
      *
      * @var string
      */

@@ -2,20 +2,20 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\BatchQueryObjectiveResponseBody\data\list_\krList;
 
 use AlibabaCloud\Tea\Model;
 
-class DeleteObjectiveRequest extends Model
+class progress extends Model
 {
     /**
-     * @description 当前用户的 userId。
+     * @description 百分比。
      *
-     * @var string
+     * @var int
      */
-    public $userId;
+    public $percent;
     protected $_name = [
-        'userId' => 'userId',
+        'percent' => 'percent',
     ];
 
     public function validate()
@@ -25,8 +25,8 @@ class DeleteObjectiveRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
+        if (null !== $this->percent) {
+            $res['percent'] = $this->percent;
         }
 
         return $res;
@@ -35,13 +35,13 @@ class DeleteObjectiveRequest extends Model
     /**
      * @param array $map
      *
-     * @return DeleteObjectiveRequest
+     * @return progress
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
+        if (isset($map['percent'])) {
+            $model->percent = $map['percent'];
         }
 
         return $model;

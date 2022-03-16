@@ -2,18 +2,20 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\BatchQueryObjectiveResponseBody\data\krList;
+namespace AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\UpdateKROfScoreResponseBody;
 
 use AlibabaCloud\Tea\Model;
 
-class progress extends Model
+class data extends Model
 {
     /**
+     * @description 目标分数。
+     *
      * @var int
      */
-    public $percent;
+    public $objectiveScore;
     protected $_name = [
-        'percent' => 'percent',
+        'objectiveScore' => 'objectiveScore',
     ];
 
     public function validate()
@@ -23,8 +25,8 @@ class progress extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->percent) {
-            $res['percent'] = $this->percent;
+        if (null !== $this->objectiveScore) {
+            $res['objectiveScore'] = $this->objectiveScore;
         }
 
         return $res;
@@ -33,13 +35,13 @@ class progress extends Model
     /**
      * @param array $map
      *
-     * @return progress
+     * @return data
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['percent'])) {
-            $model->percent = $map['percent'];
+        if (isset($map['objectiveScore'])) {
+            $model->objectiveScore = $map['objectiveScore'];
         }
 
         return $model;

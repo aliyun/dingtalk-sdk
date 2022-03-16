@@ -9,17 +9,13 @@ use AlibabaCloud\Tea\Model;
 class objectiveProgress extends Model
 {
     /**
+     * @description 目标百分比。
+     *
      * @var int
      */
     public $percent;
-
-    /**
-     * @var int
-     */
-    public $status;
     protected $_name = [
         'percent' => 'percent',
-        'status'  => 'status',
     ];
 
     public function validate()
@@ -31,9 +27,6 @@ class objectiveProgress extends Model
         $res = [];
         if (null !== $this->percent) {
             $res['percent'] = $this->percent;
-        }
-        if (null !== $this->status) {
-            $res['status'] = $this->status;
         }
 
         return $res;
@@ -49,9 +42,6 @@ class objectiveProgress extends Model
         $model = new self();
         if (isset($map['percent'])) {
             $model->percent = $map['percent'];
-        }
-        if (isset($map['status'])) {
-            $model->status = $map['status'];
         }
 
         return $model;

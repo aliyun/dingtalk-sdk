@@ -5,36 +5,41 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
-use GuzzleHttp\Psr7\Stream;
 
 class UpdateKROfContentRequest extends Model
 {
     /**
-     * @var Stream
+     * @description KR的内容。
+     *
+     * @var string
      */
     public $content;
 
     /**
-     * @var Stream[]
+     * @description 待更新的划词 ID 列表。
+     *
+     * @var string[]
      */
     public $updateQuoteList;
 
     /**
-     * @description A short description of struct
+     * @description 当前 KR ID。
      *
-     * @var Stream
+     * @var string
      */
     public $krId;
 
     /**
-     * @var Stream
+     * @description 当前用户的userId。
+     *
+     * @var string
      */
-    public $operatorUid;
+    public $userId;
     protected $_name = [
         'content'         => 'content',
         'updateQuoteList' => 'updateQuoteList',
         'krId'            => 'krId',
-        'operatorUid'     => 'operatorUid',
+        'userId'          => 'userId',
     ];
 
     public function validate()
@@ -53,8 +58,8 @@ class UpdateKROfContentRequest extends Model
         if (null !== $this->krId) {
             $res['krId'] = $this->krId;
         }
-        if (null !== $this->operatorUid) {
-            $res['operatorUid'] = $this->operatorUid;
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -79,8 +84,8 @@ class UpdateKROfContentRequest extends Model
         if (isset($map['krId'])) {
             $model->krId = $map['krId'];
         }
-        if (isset($map['operatorUid'])) {
-            $model->operatorUid = $map['operatorUid'];
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

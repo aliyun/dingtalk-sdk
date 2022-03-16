@@ -2,28 +2,30 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\CreateObjectiveResponseBody;
+namespace AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\GetPermissionResponseBody\data\policyList;
 
 use AlibabaCloud\Tea\Model;
 
-class data extends Model
+class memberList extends Model
 {
     /**
-     * @description 当前 Objective ID。
-     *
      * @var string
      */
     public $id;
 
     /**
-     * @description 当前 Objective 的位置。
-     *
      * @var string
      */
-    public $position;
+    public $nickname;
+
+    /**
+     * @var string
+     */
+    public $type;
     protected $_name = [
         'id'       => 'id',
-        'position' => 'position',
+        'nickname' => 'nickname',
+        'type'     => 'type',
     ];
 
     public function validate()
@@ -36,8 +38,11 @@ class data extends Model
         if (null !== $this->id) {
             $res['id'] = $this->id;
         }
-        if (null !== $this->position) {
-            $res['position'] = $this->position;
+        if (null !== $this->nickname) {
+            $res['nickname'] = $this->nickname;
+        }
+        if (null !== $this->type) {
+            $res['type'] = $this->type;
         }
 
         return $res;
@@ -46,7 +51,7 @@ class data extends Model
     /**
      * @param array $map
      *
-     * @return data
+     * @return memberList
      */
     public static function fromMap($map = [])
     {
@@ -54,8 +59,11 @@ class data extends Model
         if (isset($map['id'])) {
             $model->id = $map['id'];
         }
-        if (isset($map['position'])) {
-            $model->position = $map['position'];
+        if (isset($map['nickname'])) {
+            $model->nickname = $map['nickname'];
+        }
+        if (isset($map['type'])) {
+            $model->type = $map['type'];
         }
 
         return $model;

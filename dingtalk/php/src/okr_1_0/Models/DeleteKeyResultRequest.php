@@ -5,22 +5,25 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
-use GuzzleHttp\Psr7\Stream;
 
 class DeleteKeyResultRequest extends Model
 {
     /**
-     * @var Stream
+     * @description 当前 KR id。
+     *
+     * @var string
      */
     public $krId;
 
     /**
-     * @var Stream
+     * @description 当前用户的userId。
+     *
+     * @var string
      */
-    public $ownerId;
+    public $userId;
     protected $_name = [
-        'krId'    => 'krId',
-        'ownerId' => 'ownerId',
+        'krId'   => 'krId',
+        'userId' => 'userId',
     ];
 
     public function validate()
@@ -33,8 +36,8 @@ class DeleteKeyResultRequest extends Model
         if (null !== $this->krId) {
             $res['krId'] = $this->krId;
         }
-        if (null !== $this->ownerId) {
-            $res['ownerId'] = $this->ownerId;
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -51,8 +54,8 @@ class DeleteKeyResultRequest extends Model
         if (isset($map['krId'])) {
             $model->krId = $map['krId'];
         }
-        if (isset($map['ownerId'])) {
-            $model->ownerId = $map['ownerId'];
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

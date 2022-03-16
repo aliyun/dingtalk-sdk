@@ -11,41 +11,57 @@ use GuzzleHttp\Psr7\Stream;
 class krList extends Model
 {
     /**
+     * @description KR 内容。
+     *
      * @var Stream
      */
     public $content;
 
     /**
+     * @description KR 的 ID。
+     *
      * @var Stream
      */
     public $id;
 
     /**
+     * @description 所属 Objective ID。
+     *
      * @var Stream
      */
     public $objectiveId;
 
     /**
+     * @description KR 权限。
+     *
      * @var float[]
      */
     public $permission;
 
     /**
+     * @description 所处位置。
+     *
      * @var int
      */
     public $position;
 
     /**
+     * @description KR 进度。
+     *
      * @var progress
      */
     public $progress;
 
     /**
+     * @description 所占分数。
+     *
      * @var float
      */
     public $score;
 
     /**
+     * @description 所占权重。
+     *
      * @var float
      */
     public $weight;

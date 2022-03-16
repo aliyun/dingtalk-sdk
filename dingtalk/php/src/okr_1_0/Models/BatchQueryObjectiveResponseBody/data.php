@@ -4,110 +4,43 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\BatchQueryObjectiveResponseBody;
 
-use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\BatchQueryObjectiveResponseBody\data\krList;
-use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\BatchQueryObjectiveResponseBody\data\owner;
-use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\BatchQueryObjectiveResponseBody\data\progress;
+use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\BatchQueryObjectiveResponseBody\data\list_;
 use AlibabaCloud\Tea\Model;
-use GuzzleHttp\Psr7\Stream;
 
 class data extends Model
 {
     /**
-     * @var Stream[]
+     * @description OKR 列表详情。
+     *
+     * @var list_[]
      */
-    public $alignFromIds;
+    public $list;
 
     /**
-     * @var Stream[]
-     */
-    public $alignToIds;
-
-    /**
-     * @var Stream
-     */
-    public $content;
-
-    /**
-     * @var Stream
-     */
-    public $id;
-
-    /**
-     * @var krList[]
-     */
-    public $krList;
-
-    /**
-     * @var owner
-     */
-    public $owner;
-
-    /**
-     * @var Stream
-     */
-    public $periodId;
-
-    /**
-     * @var float[]
-     */
-    public $permission;
-
-    /**
+     * @description 当前页码。
+     *
      * @var int
      */
-    public $position;
+    public $pageNo;
 
     /**
-     * @var progress
-     */
-    public $progress;
-
-    /**
-     * @var float
-     */
-    public $progressPercent;
-
-    /**
-     * @var bool
-     */
-    public $published;
-
-    /**
-     * @var float
-     */
-    public $score;
-
-    /**
+     * @description 每一页的个数。
+     *
      * @var int
      */
-    public $status;
+    public $pageSize;
 
     /**
-     * @var Stream
+     * @description 总数。
+     *
+     * @var int
      */
-    public $userId;
-
-    /**
-     * @var float
-     */
-    public $weight;
+    public $totalCount;
     protected $_name = [
-        'alignFromIds'    => 'alignFromIds',
-        'alignToIds'      => 'alignToIds',
-        'content'         => 'content',
-        'id'              => 'id',
-        'krList'          => 'krList',
-        'owner'           => 'owner',
-        'periodId'        => 'periodId',
-        'permission'      => 'permission',
-        'position'        => 'position',
-        'progress'        => 'progress',
-        'progressPercent' => 'progressPercent',
-        'published'       => 'published',
-        'score'           => 'score',
-        'status'          => 'status',
-        'userId'          => 'userId',
-        'weight'          => 'weight',
+        'list'       => 'list',
+        'pageNo'     => 'pageNo',
+        'pageSize'   => 'pageSize',
+        'totalCount' => 'totalCount',
     ];
 
     public function validate()
@@ -117,59 +50,23 @@ class data extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->alignFromIds) {
-            $res['alignFromIds'] = $this->alignFromIds;
-        }
-        if (null !== $this->alignToIds) {
-            $res['alignToIds'] = $this->alignToIds;
-        }
-        if (null !== $this->content) {
-            $res['content'] = $this->content;
-        }
-        if (null !== $this->id) {
-            $res['id'] = $this->id;
-        }
-        if (null !== $this->krList) {
-            $res['krList'] = [];
-            if (null !== $this->krList && \is_array($this->krList)) {
+        if (null !== $this->list) {
+            $res['list'] = [];
+            if (null !== $this->list && \is_array($this->list)) {
                 $n = 0;
-                foreach ($this->krList as $item) {
-                    $res['krList'][$n++] = null !== $item ? $item->toMap() : $item;
+                foreach ($this->list as $item) {
+                    $res['list'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
         }
-        if (null !== $this->owner) {
-            $res['owner'] = null !== $this->owner ? $this->owner->toMap() : null;
+        if (null !== $this->pageNo) {
+            $res['pageNo'] = $this->pageNo;
         }
-        if (null !== $this->periodId) {
-            $res['periodId'] = $this->periodId;
+        if (null !== $this->pageSize) {
+            $res['pageSize'] = $this->pageSize;
         }
-        if (null !== $this->permission) {
-            $res['permission'] = $this->permission;
-        }
-        if (null !== $this->position) {
-            $res['position'] = $this->position;
-        }
-        if (null !== $this->progress) {
-            $res['progress'] = null !== $this->progress ? $this->progress->toMap() : null;
-        }
-        if (null !== $this->progressPercent) {
-            $res['progressPercent'] = $this->progressPercent;
-        }
-        if (null !== $this->published) {
-            $res['published'] = $this->published;
-        }
-        if (null !== $this->score) {
-            $res['score'] = $this->score;
-        }
-        if (null !== $this->status) {
-            $res['status'] = $this->status;
-        }
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
-        }
-        if (null !== $this->weight) {
-            $res['weight'] = $this->weight;
+        if (null !== $this->totalCount) {
+            $res['totalCount'] = $this->totalCount;
         }
 
         return $res;
@@ -183,65 +80,23 @@ class data extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['alignFromIds'])) {
-            if (!empty($map['alignFromIds'])) {
-                $model->alignFromIds = $map['alignFromIds'];
-            }
-        }
-        if (isset($map['alignToIds'])) {
-            if (!empty($map['alignToIds'])) {
-                $model->alignToIds = $map['alignToIds'];
-            }
-        }
-        if (isset($map['content'])) {
-            $model->content = $map['content'];
-        }
-        if (isset($map['id'])) {
-            $model->id = $map['id'];
-        }
-        if (isset($map['krList'])) {
-            if (!empty($map['krList'])) {
-                $model->krList = [];
-                $n             = 0;
-                foreach ($map['krList'] as $item) {
-                    $model->krList[$n++] = null !== $item ? krList::fromMap($item) : $item;
+        if (isset($map['list'])) {
+            if (!empty($map['list'])) {
+                $model->list = [];
+                $n           = 0;
+                foreach ($map['list'] as $item) {
+                    $model->list[$n++] = null !== $item ? list_::fromMap($item) : $item;
                 }
             }
         }
-        if (isset($map['owner'])) {
-            $model->owner = owner::fromMap($map['owner']);
+        if (isset($map['pageNo'])) {
+            $model->pageNo = $map['pageNo'];
         }
-        if (isset($map['periodId'])) {
-            $model->periodId = $map['periodId'];
+        if (isset($map['pageSize'])) {
+            $model->pageSize = $map['pageSize'];
         }
-        if (isset($map['permission'])) {
-            if (!empty($map['permission'])) {
-                $model->permission = $map['permission'];
-            }
-        }
-        if (isset($map['position'])) {
-            $model->position = $map['position'];
-        }
-        if (isset($map['progress'])) {
-            $model->progress = progress::fromMap($map['progress']);
-        }
-        if (isset($map['progressPercent'])) {
-            $model->progressPercent = $map['progressPercent'];
-        }
-        if (isset($map['published'])) {
-            $model->published = $map['published'];
-        }
-        if (isset($map['score'])) {
-            $model->score = $map['score'];
-        }
-        if (isset($map['status'])) {
-            $model->status = $map['status'];
-        }
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
-        }
-        if (isset($map['weight'])) {
-            $model->weight = $map['weight'];
+        if (isset($map['totalCount'])) {
+            $model->totalCount = $map['totalCount'];
         }
 
         return $model;

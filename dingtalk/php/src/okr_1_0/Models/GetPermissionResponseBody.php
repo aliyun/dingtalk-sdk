@@ -4,14 +4,15 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\GetPermissionResponseBody\data;
 use AlibabaCloud\Tea\Model;
 
-class DeleteKeyResultResponseBody extends Model
+class GetPermissionResponseBody extends Model
 {
     /**
-     * @description 返回的信息
+     * @description 返回的数据。
      *
-     * @var bool
+     * @var data
      */
     public $data;
 
@@ -34,7 +35,7 @@ class DeleteKeyResultResponseBody extends Model
     {
         $res = [];
         if (null !== $this->data) {
-            $res['data'] = $this->data;
+            $res['data'] = null !== $this->data ? $this->data->toMap() : null;
         }
         if (null !== $this->success) {
             $res['success'] = $this->success;
@@ -46,13 +47,13 @@ class DeleteKeyResultResponseBody extends Model
     /**
      * @param array $map
      *
-     * @return DeleteKeyResultResponseBody
+     * @return GetPermissionResponseBody
      */
     public static function fromMap($map = [])
     {
         $model = new self();
         if (isset($map['data'])) {
-            $model->data = $map['data'];
+            $model->data = data::fromMap($map['data']);
         }
         if (isset($map['success'])) {
             $model->success = $map['success'];
