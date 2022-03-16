@@ -4,19 +4,19 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateObjectiveRequest extends TeaModel {
-    // content
+    // 创建Objective 的内容
     @NameInMap("content")
-    public java.io.InputStream content;
+    public String content;
 
-    // periodId
+    // 当前周期 ID。
     @NameInMap("periodId")
-    public java.io.InputStream periodId;
+    public String periodId;
 
-    // prevPosition
+    // 上一个 Objective 的位置。
     @NameInMap("prevPosition")
-    public java.io.InputStream prevPosition;
+    public String prevPosition;
 
-    // userId
+    // 当前用户的 userId。
     @NameInMap("userId")
     public String userId;
 
@@ -25,27 +25,27 @@ public class CreateObjectiveRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public CreateObjectiveRequest setContent(java.io.InputStream content) {
+    public CreateObjectiveRequest setContent(String content) {
         this.content = content;
         return this;
     }
-    public java.io.InputStream getContent() {
+    public String getContent() {
         return this.content;
     }
 
-    public CreateObjectiveRequest setPeriodId(java.io.InputStream periodId) {
+    public CreateObjectiveRequest setPeriodId(String periodId) {
         this.periodId = periodId;
         return this;
     }
-    public java.io.InputStream getPeriodId() {
+    public String getPeriodId() {
         return this.periodId;
     }
 
-    public CreateObjectiveRequest setPrevPosition(java.io.InputStream prevPosition) {
+    public CreateObjectiveRequest setPrevPosition(String prevPosition) {
         this.prevPosition = prevPosition;
         return this;
     }
-    public java.io.InputStream getPrevPosition() {
+    public String getPrevPosition() {
         return this.prevPosition;
     }
 

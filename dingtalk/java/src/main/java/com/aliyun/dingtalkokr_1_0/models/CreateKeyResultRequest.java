@@ -4,50 +4,56 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateKeyResultRequest extends TeaModel {
+    // KR 内容。
     @NameInMap("content")
-    public java.io.InputStream content;
+    public String content;
 
+    // 所属 Objective ID。
     @NameInMap("objectiveId")
-    public java.io.InputStream objectiveId;
+    public String objectiveId;
 
+    // 周期 ID。
     @NameInMap("periodId")
-    public java.io.InputStream periodId;
+    public String periodId;
 
+    // 上一个 KR 的位置。
     @NameInMap("prevPosition")
     public Long prevPosition;
 
+    // KR 的权重比。
     @NameInMap("weight")
     public Long weight;
 
-    @NameInMap("ownerId")
-    public java.io.InputStream ownerId;
+    // 当前用户的 user ID。
+    @NameInMap("userId")
+    public String userId;
 
     public static CreateKeyResultRequest build(java.util.Map<String, ?> map) throws Exception {
         CreateKeyResultRequest self = new CreateKeyResultRequest();
         return TeaModel.build(map, self);
     }
 
-    public CreateKeyResultRequest setContent(java.io.InputStream content) {
+    public CreateKeyResultRequest setContent(String content) {
         this.content = content;
         return this;
     }
-    public java.io.InputStream getContent() {
+    public String getContent() {
         return this.content;
     }
 
-    public CreateKeyResultRequest setObjectiveId(java.io.InputStream objectiveId) {
+    public CreateKeyResultRequest setObjectiveId(String objectiveId) {
         this.objectiveId = objectiveId;
         return this;
     }
-    public java.io.InputStream getObjectiveId() {
+    public String getObjectiveId() {
         return this.objectiveId;
     }
 
-    public CreateKeyResultRequest setPeriodId(java.io.InputStream periodId) {
+    public CreateKeyResultRequest setPeriodId(String periodId) {
         this.periodId = periodId;
         return this;
     }
-    public java.io.InputStream getPeriodId() {
+    public String getPeriodId() {
         return this.periodId;
     }
 
@@ -67,12 +73,12 @@ public class CreateKeyResultRequest extends TeaModel {
         return this.weight;
     }
 
-    public CreateKeyResultRequest setOwnerId(java.io.InputStream ownerId) {
-        this.ownerId = ownerId;
+    public CreateKeyResultRequest setUserId(String userId) {
+        this.userId = userId;
         return this;
     }
-    public java.io.InputStream getOwnerId() {
-        return this.ownerId;
+    public String getUserId() {
+        return this.userId;
     }
 
 }

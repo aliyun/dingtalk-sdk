@@ -4,11 +4,10 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateKROfWeightResponseBody extends TeaModel {
-    // 目标分数
     @NameInMap("data")
     public UpdateKROfWeightResponseBodyData data;
 
-    // Id of the request
+    // 请求成功的标识。
     @NameInMap("success")
     public Boolean success;
 
@@ -34,11 +33,9 @@ public class UpdateKROfWeightResponseBody extends TeaModel {
     }
 
     public static class UpdateKROfWeightResponseBodyDataObjectiveProgress extends TeaModel {
+        // 目标百分比。
         @NameInMap("percent")
         public Long percent;
-
-        @NameInMap("status")
-        public Long status;
 
         public static UpdateKROfWeightResponseBodyDataObjectiveProgress build(java.util.Map<String, ?> map) throws Exception {
             UpdateKROfWeightResponseBodyDataObjectiveProgress self = new UpdateKROfWeightResponseBodyDataObjectiveProgress();
@@ -53,20 +50,13 @@ public class UpdateKROfWeightResponseBody extends TeaModel {
             return this.percent;
         }
 
-        public UpdateKROfWeightResponseBodyDataObjectiveProgress setStatus(Long status) {
-            this.status = status;
-            return this;
-        }
-        public Long getStatus() {
-            return this.status;
-        }
-
     }
 
     public static class UpdateKROfWeightResponseBodyData extends TeaModel {
         @NameInMap("objectiveProgress")
         public UpdateKROfWeightResponseBodyDataObjectiveProgress objectiveProgress;
 
+        // 目标分数。
         @NameInMap("objectiveScore")
         public Long objectiveScore;
 

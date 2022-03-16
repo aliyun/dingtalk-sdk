@@ -4,19 +4,11 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateObjectiveResponseBody extends TeaModel {
-    // code
-    @NameInMap("code")
-    public Long code;
-
     // data
     @NameInMap("data")
     public UpdateObjectiveResponseBodyData data;
 
-    // message
-    @NameInMap("message")
-    public String message;
-
-    // success
+    // 请求成功的标识。
     @NameInMap("success")
     public Boolean success;
 
@@ -25,28 +17,12 @@ public class UpdateObjectiveResponseBody extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public UpdateObjectiveResponseBody setCode(Long code) {
-        this.code = code;
-        return this;
-    }
-    public Long getCode() {
-        return this.code;
-    }
-
     public UpdateObjectiveResponseBody setData(UpdateObjectiveResponseBodyData data) {
         this.data = data;
         return this;
     }
     public UpdateObjectiveResponseBodyData getData() {
         return this.data;
-    }
-
-    public UpdateObjectiveResponseBody setMessage(String message) {
-        this.message = message;
-        return this;
-    }
-    public String getMessage() {
-        return this.message;
     }
 
     public UpdateObjectiveResponseBody setSuccess(Boolean success) {
@@ -58,9 +34,11 @@ public class UpdateObjectiveResponseBody extends TeaModel {
     }
 
     public static class UpdateObjectiveResponseBodyData extends TeaModel {
+        // 当前 Objective ID。
         @NameInMap("id")
         public String id;
 
+        // 当前 Objective 的位置。
         @NameInMap("position")
         public Float position;
 

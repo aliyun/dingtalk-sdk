@@ -4,17 +4,9 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class AlignObjectiveResponseBody extends TeaModel {
-    // code
-    @NameInMap("code")
-    public Long code;
-
     // data
     @NameInMap("data")
     public AlignObjectiveResponseBodyData data;
-
-    // message
-    @NameInMap("message")
-    public String message;
 
     // success
     @NameInMap("success")
@@ -25,28 +17,12 @@ public class AlignObjectiveResponseBody extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public AlignObjectiveResponseBody setCode(Long code) {
-        this.code = code;
-        return this;
-    }
-    public Long getCode() {
-        return this.code;
-    }
-
     public AlignObjectiveResponseBody setData(AlignObjectiveResponseBodyData data) {
         this.data = data;
         return this;
     }
     public AlignObjectiveResponseBodyData getData() {
         return this.data;
-    }
-
-    public AlignObjectiveResponseBody setMessage(String message) {
-        this.message = message;
-        return this;
-    }
-    public String getMessage() {
-        return this.message;
     }
 
     public AlignObjectiveResponseBody setSuccess(Boolean success) {
@@ -58,9 +34,11 @@ public class AlignObjectiveResponseBody extends TeaModel {
     }
 
     public static class AlignObjectiveResponseBodyData extends TeaModel {
+        // 对齐目标的 ID。
         @NameInMap("alignId")
         public java.io.InputStream alignId;
 
+        // 当前 Objective 的ID
         @NameInMap("id")
         public java.io.InputStream id;
 
@@ -88,9 +66,11 @@ public class AlignObjectiveResponseBody extends TeaModel {
     }
 
     public static class UnAlignObjectiveResponseBodyData extends TeaModel {
+        // 对齐的 Objective ID。
         @NameInMap("alignId")
         public java.io.InputStream alignId;
 
+        // 当前 Objective ID。
         @NameInMap("id")
         public java.io.InputStream id;
 

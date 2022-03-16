@@ -12,9 +12,9 @@ public class UnAlignObjectiveRequest extends TeaModel {
     @NameInMap("targetId")
     public String targetId;
 
-    // 用户 ID
-    @NameInMap("ownerId")
-    public java.io.InputStream ownerId;
+    // 当前用户的 userId。
+    @NameInMap("userId")
+    public String userId;
 
     public static UnAlignObjectiveRequest build(java.util.Map<String, ?> map) throws Exception {
         UnAlignObjectiveRequest self = new UnAlignObjectiveRequest();
@@ -37,12 +37,12 @@ public class UnAlignObjectiveRequest extends TeaModel {
         return this.targetId;
     }
 
-    public UnAlignObjectiveRequest setOwnerId(java.io.InputStream ownerId) {
-        this.ownerId = ownerId;
+    public UnAlignObjectiveRequest setUserId(String userId) {
+        this.userId = userId;
         return this;
     }
-    public java.io.InputStream getOwnerId() {
-        return this.ownerId;
+    public String getUserId() {
+        return this.userId;
     }
 
 }

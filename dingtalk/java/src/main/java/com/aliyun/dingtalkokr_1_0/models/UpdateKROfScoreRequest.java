@@ -4,15 +4,17 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateKROfScoreRequest extends TeaModel {
+    // 分数值。
     @NameInMap("score")
     public Long score;
 
-    // A short description of struct
+    // 当前 KR ID。
     @NameInMap("krId")
-    public java.io.InputStream krId;
+    public String krId;
 
-    @NameInMap("ownerId")
-    public java.io.InputStream ownerId;
+    // 当前用户的userId。
+    @NameInMap("userId")
+    public String userId;
 
     public static UpdateKROfScoreRequest build(java.util.Map<String, ?> map) throws Exception {
         UpdateKROfScoreRequest self = new UpdateKROfScoreRequest();
@@ -27,20 +29,20 @@ public class UpdateKROfScoreRequest extends TeaModel {
         return this.score;
     }
 
-    public UpdateKROfScoreRequest setKrId(java.io.InputStream krId) {
+    public UpdateKROfScoreRequest setKrId(String krId) {
         this.krId = krId;
         return this;
     }
-    public java.io.InputStream getKrId() {
+    public String getKrId() {
         return this.krId;
     }
 
-    public UpdateKROfScoreRequest setOwnerId(java.io.InputStream ownerId) {
-        this.ownerId = ownerId;
+    public UpdateKROfScoreRequest setUserId(String userId) {
+        this.userId = userId;
         return this;
     }
-    public java.io.InputStream getOwnerId() {
-        return this.ownerId;
+    public String getUserId() {
+        return this.userId;
     }
 
 }

@@ -4,17 +4,17 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class AlignObjectiveRequest extends TeaModel {
-    // 周期 ID
+    // 周期 ID。
     @NameInMap("periodId")
     public String periodId;
 
-    // 对齐目标的 ID
+    // 对齐目标的 ID。
     @NameInMap("targetId")
     public String targetId;
 
-    // 用户 ID
-    @NameInMap("ownerId")
-    public java.io.InputStream ownerId;
+    // 当前用户的 user ID。
+    @NameInMap("userId")
+    public String userId;
 
     public static AlignObjectiveRequest build(java.util.Map<String, ?> map) throws Exception {
         AlignObjectiveRequest self = new AlignObjectiveRequest();
@@ -37,12 +37,12 @@ public class AlignObjectiveRequest extends TeaModel {
         return this.targetId;
     }
 
-    public AlignObjectiveRequest setOwnerId(java.io.InputStream ownerId) {
-        this.ownerId = ownerId;
+    public AlignObjectiveRequest setUserId(String userId) {
+        this.userId = userId;
         return this;
     }
-    public java.io.InputStream getOwnerId() {
-        return this.ownerId;
+    public String getUserId() {
+        return this.userId;
     }
 
 }

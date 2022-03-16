@@ -33,6 +33,10 @@ public class GetRecentEditDocsResponseBody extends TeaModel {
     }
 
     public static class GetRecentEditDocsResponseBodyRecentListNodeBO extends TeaModel {
+        // 创建时间
+        @NameInMap("createTime")
+        public Long createTime;
+
         // 节点类型
         @NameInMap("docType")
         public String docType;
@@ -41,7 +45,7 @@ public class GetRecentEditDocsResponseBody extends TeaModel {
         @NameInMap("isDeleted")
         public Boolean isDeleted;
 
-        // 最后编辑时间
+        // 内容的最后编辑时间
         @NameInMap("lastEditTime")
         public Long lastEditTime;
 
@@ -53,6 +57,10 @@ public class GetRecentEditDocsResponseBody extends TeaModel {
         @NameInMap("nodeName")
         public String nodeName;
 
+        // 文档更新时间，包括重命名、移动、内容编辑等操作都会刷新更新时间
+        @NameInMap("updateTime")
+        public Long updateTime;
+
         // 文档打开url
         @NameInMap("url")
         public String url;
@@ -60,6 +68,14 @@ public class GetRecentEditDocsResponseBody extends TeaModel {
         public static GetRecentEditDocsResponseBodyRecentListNodeBO build(java.util.Map<String, ?> map) throws Exception {
             GetRecentEditDocsResponseBodyRecentListNodeBO self = new GetRecentEditDocsResponseBodyRecentListNodeBO();
             return TeaModel.build(map, self);
+        }
+
+        public GetRecentEditDocsResponseBodyRecentListNodeBO setCreateTime(Long createTime) {
+            this.createTime = createTime;
+            return this;
+        }
+        public Long getCreateTime() {
+            return this.createTime;
         }
 
         public GetRecentEditDocsResponseBodyRecentListNodeBO setDocType(String docType) {
@@ -102,6 +118,14 @@ public class GetRecentEditDocsResponseBody extends TeaModel {
             return this.nodeName;
         }
 
+        public GetRecentEditDocsResponseBodyRecentListNodeBO setUpdateTime(Long updateTime) {
+            this.updateTime = updateTime;
+            return this;
+        }
+        public Long getUpdateTime() {
+            return this.updateTime;
+        }
+
         public GetRecentEditDocsResponseBodyRecentListNodeBO setUrl(String url) {
             this.url = url;
             return this;
@@ -113,6 +137,10 @@ public class GetRecentEditDocsResponseBody extends TeaModel {
     }
 
     public static class GetRecentEditDocsResponseBodyRecentListWorkspaceBO extends TeaModel {
+        // 团队空间打开url
+        @NameInMap("url")
+        public String url;
+
         // 团队空间Id
         @NameInMap("workspaceId")
         public String workspaceId;
@@ -124,6 +152,14 @@ public class GetRecentEditDocsResponseBody extends TeaModel {
         public static GetRecentEditDocsResponseBodyRecentListWorkspaceBO build(java.util.Map<String, ?> map) throws Exception {
             GetRecentEditDocsResponseBodyRecentListWorkspaceBO self = new GetRecentEditDocsResponseBodyRecentListWorkspaceBO();
             return TeaModel.build(map, self);
+        }
+
+        public GetRecentEditDocsResponseBodyRecentListWorkspaceBO setUrl(String url) {
+            this.url = url;
+            return this;
+        }
+        public String getUrl() {
+            return this.url;
         }
 
         public GetRecentEditDocsResponseBodyRecentListWorkspaceBO setWorkspaceId(String workspaceId) {

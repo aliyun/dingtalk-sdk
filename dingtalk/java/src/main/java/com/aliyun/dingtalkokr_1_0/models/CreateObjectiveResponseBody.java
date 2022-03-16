@@ -4,19 +4,11 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateObjectiveResponseBody extends TeaModel {
-    // code
-    @NameInMap("code")
-    public Long code;
-
     // data
     @NameInMap("data")
     public CreateObjectiveResponseBodyData data;
 
-    // message
-    @NameInMap("message")
-    public String message;
-
-    // success
+    // 请求成功的标识。
     @NameInMap("success")
     public Boolean success;
 
@@ -25,28 +17,12 @@ public class CreateObjectiveResponseBody extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public CreateObjectiveResponseBody setCode(Long code) {
-        this.code = code;
-        return this;
-    }
-    public Long getCode() {
-        return this.code;
-    }
-
     public CreateObjectiveResponseBody setData(CreateObjectiveResponseBodyData data) {
         this.data = data;
         return this;
     }
     public CreateObjectiveResponseBodyData getData() {
         return this.data;
-    }
-
-    public CreateObjectiveResponseBody setMessage(String message) {
-        this.message = message;
-        return this;
-    }
-    public String getMessage() {
-        return this.message;
     }
 
     public CreateObjectiveResponseBody setSuccess(Boolean success) {
@@ -58,8 +34,13 @@ public class CreateObjectiveResponseBody extends TeaModel {
     }
 
     public static class CreateObjectiveResponseBodyData extends TeaModel {
+        // 当前 Objective ID。
         @NameInMap("id")
         public String id;
+
+        // 当前 Objective 的位置。
+        @NameInMap("position")
+        public String position;
 
         public static CreateObjectiveResponseBodyData build(java.util.Map<String, ?> map) throws Exception {
             CreateObjectiveResponseBodyData self = new CreateObjectiveResponseBodyData();
@@ -72,6 +53,14 @@ public class CreateObjectiveResponseBody extends TeaModel {
         }
         public String getId() {
             return this.id;
+        }
+
+        public CreateObjectiveResponseBodyData setPosition(String position) {
+            this.position = position;
+            return this;
+        }
+        public String getPosition() {
+            return this.position;
         }
 
     }

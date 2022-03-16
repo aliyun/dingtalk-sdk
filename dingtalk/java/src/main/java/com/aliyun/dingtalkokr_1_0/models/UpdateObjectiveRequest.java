@@ -4,10 +4,11 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateObjectiveRequest extends TeaModel {
+    // 当前 Objective 的内容。
     @NameInMap("content")
-    public java.io.InputStream content;
+    public String content;
 
-    // userId
+    // 当前用户的 userId。
     @NameInMap("userId")
     public String userId;
 
@@ -16,11 +17,11 @@ public class UpdateObjectiveRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public UpdateObjectiveRequest setContent(java.io.InputStream content) {
+    public UpdateObjectiveRequest setContent(String content) {
         this.content = content;
         return this;
     }
-    public java.io.InputStream getContent() {
+    public String getContent() {
         return this.content;
     }
 

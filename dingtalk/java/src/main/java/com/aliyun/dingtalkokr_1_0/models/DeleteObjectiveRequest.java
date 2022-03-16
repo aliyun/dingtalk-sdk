@@ -4,7 +4,7 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteObjectiveRequest extends TeaModel {
-    // userId
+    // 当前用户的 userId。
     @NameInMap("userId")
     public String userId;
 

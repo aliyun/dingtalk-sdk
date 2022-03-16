@@ -4,19 +4,11 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetUserOkrResponseBody extends TeaModel {
-    // code
-    @NameInMap("code")
-    public Long code;
-
     // data
     @NameInMap("data")
     public GetUserOkrResponseBodyData data;
 
-    // message
-    @NameInMap("message")
-    public java.io.InputStream message;
-
-    // success
+    // 请求成功的标识。
     @NameInMap("success")
     public Boolean success;
 
@@ -25,28 +17,12 @@ public class GetUserOkrResponseBody extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public GetUserOkrResponseBody setCode(Long code) {
-        this.code = code;
-        return this;
-    }
-    public Long getCode() {
-        return this.code;
-    }
-
     public GetUserOkrResponseBody setData(GetUserOkrResponseBodyData data) {
         this.data = data;
         return this;
     }
     public GetUserOkrResponseBodyData getData() {
         return this.data;
-    }
-
-    public GetUserOkrResponseBody setMessage(java.io.InputStream message) {
-        this.message = message;
-        return this;
-    }
-    public java.io.InputStream getMessage() {
-        return this.message;
     }
 
     public GetUserOkrResponseBody setSuccess(Boolean success) {
@@ -58,6 +34,7 @@ public class GetUserOkrResponseBody extends TeaModel {
     }
 
     public static class GetUserOkrResponseBodyDataListKrListProgress extends TeaModel {
+        // 百分比。
         @NameInMap("percent")
         public Integer percent;
 
@@ -77,27 +54,35 @@ public class GetUserOkrResponseBody extends TeaModel {
     }
 
     public static class GetUserOkrResponseBodyDataListKrList extends TeaModel {
+        // KR 内容。
         @NameInMap("content")
         public java.io.InputStream content;
 
+        // KR 的 ID。
         @NameInMap("id")
         public java.io.InputStream id;
 
+        // 所属 Objective ID。
         @NameInMap("objectiveId")
         public java.io.InputStream objectiveId;
 
+        // KR 权限。
         @NameInMap("permission")
         public java.util.List<Float> permission;
 
+        // 所处位置。
         @NameInMap("position")
         public Long position;
 
+        // KR 进度。
         @NameInMap("progress")
         public GetUserOkrResponseBodyDataListKrListProgress progress;
 
+        // 所占分数。
         @NameInMap("score")
         public Float score;
 
+        // 所占权重。
         @NameInMap("weight")
         public Float weight;
 
@@ -172,52 +157,24 @@ public class GetUserOkrResponseBody extends TeaModel {
 
     }
 
-    public static class GetUserOkrResponseBodyDataListOwnerDepartment extends TeaModel {
-        @NameInMap("id")
-        public java.io.InputStream id;
-
-        @NameInMap("name")
-        public java.io.InputStream name;
-
-        public static GetUserOkrResponseBodyDataListOwnerDepartment build(java.util.Map<String, ?> map) throws Exception {
-            GetUserOkrResponseBodyDataListOwnerDepartment self = new GetUserOkrResponseBodyDataListOwnerDepartment();
-            return TeaModel.build(map, self);
-        }
-
-        public GetUserOkrResponseBodyDataListOwnerDepartment setId(java.io.InputStream id) {
-            this.id = id;
-            return this;
-        }
-        public java.io.InputStream getId() {
-            return this.id;
-        }
-
-        public GetUserOkrResponseBodyDataListOwnerDepartment setName(java.io.InputStream name) {
-            this.name = name;
-            return this;
-        }
-        public java.io.InputStream getName() {
-            return this.name;
-        }
-
-    }
-
     public static class GetUserOkrResponseBodyDataListOwner extends TeaModel {
+        // 所属者头像。 ID
         @NameInMap("avatarMediaId")
         public java.io.InputStream avatarMediaId;
 
+        // 所属者组织 I。D
         @NameInMap("corpId")
         public java.io.InputStream corpId;
 
-        @NameInMap("department")
-        public GetUserOkrResponseBodyDataListOwnerDepartment department;
-
+        // 所属者 ID。
         @NameInMap("id")
         public java.io.InputStream id;
 
+        // 所属者昵称。
         @NameInMap("nickname")
         public java.io.InputStream nickname;
 
+        // 所属者 userId。
         @NameInMap("staffId")
         public java.io.InputStream staffId;
 
@@ -240,14 +197,6 @@ public class GetUserOkrResponseBody extends TeaModel {
         }
         public java.io.InputStream getCorpId() {
             return this.corpId;
-        }
-
-        public GetUserOkrResponseBodyDataListOwner setDepartment(GetUserOkrResponseBodyDataListOwnerDepartment department) {
-            this.department = department;
-            return this;
-        }
-        public GetUserOkrResponseBodyDataListOwnerDepartment getDepartment() {
-            return this.department;
         }
 
         public GetUserOkrResponseBodyDataListOwner setId(java.io.InputStream id) {
@@ -277,6 +226,7 @@ public class GetUserOkrResponseBody extends TeaModel {
     }
 
     public static class GetUserOkrResponseBodyDataListProgress extends TeaModel {
+        // 百分比。
         @NameInMap("percent")
         public Integer percent;
 
@@ -296,51 +246,67 @@ public class GetUserOkrResponseBody extends TeaModel {
     }
 
     public static class GetUserOkrResponseBodyDataList extends TeaModel {
+        // 被对齐的 Objective。
         @NameInMap("alignFromIds")
         public java.util.List<java.io.InputStream> alignFromIds;
 
+        // 对齐的 Objective。
         @NameInMap("alignToIds")
         public java.util.List<java.io.InputStream> alignToIds;
 
+        // Objective 内容。
         @NameInMap("content")
         public java.io.InputStream content;
 
+        // objective。
         @NameInMap("id")
         public java.io.InputStream id;
 
+        // KR 详情列表。
         @NameInMap("krList")
         public java.util.List<GetUserOkrResponseBodyDataListKrList> krList;
 
+        // 所属者信息。
         @NameInMap("owner")
         public GetUserOkrResponseBodyDataListOwner owner;
 
+        // 周期 ID。
         @NameInMap("periodId")
         public java.io.InputStream periodId;
 
+        // 权限值。
         @NameInMap("permission")
         public java.util.List<Float> permission;
 
+        // 所在位置。
         @NameInMap("position")
         public Integer position;
 
+        // 进度值。
         @NameInMap("progress")
         public GetUserOkrResponseBodyDataListProgress progress;
 
+        // 百分比值。
         @NameInMap("progressPercent")
         public Float progressPercent;
 
+        // 是否已发布。
         @NameInMap("published")
         public Boolean published;
 
+        // 分数值。
         @NameInMap("score")
         public Float score;
 
+        // 当前内容状态。
         @NameInMap("status")
         public Integer status;
 
+        // 用户 ID。
         @NameInMap("userId")
         public java.io.InputStream userId;
 
+        // 权重值。
         @NameInMap("weight")
         public Float weight;
 
@@ -480,15 +446,19 @@ public class GetUserOkrResponseBody extends TeaModel {
     }
 
     public static class GetUserOkrResponseBodyData extends TeaModel {
+        // OKR 列表详情。
         @NameInMap("list")
         public java.util.List<GetUserOkrResponseBodyDataList> list;
 
+        // 当前页码。
         @NameInMap("pageNo")
         public Long pageNo;
 
+        // 每一页的个数。
         @NameInMap("pageSize")
         public Long pageSize;
 
+        // 总数。
         @NameInMap("totalCount")
         public Long totalCount;
 

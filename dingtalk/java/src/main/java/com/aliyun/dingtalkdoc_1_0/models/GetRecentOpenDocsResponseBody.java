@@ -33,6 +33,10 @@ public class GetRecentOpenDocsResponseBody extends TeaModel {
     }
 
     public static class GetRecentOpenDocsResponseBodyRecentListNodeBO extends TeaModel {
+        // 创建时间
+        @NameInMap("createTime")
+        public Long createTime;
+
         // 节点类型
         @NameInMap("docType")
         public String docType;
@@ -53,6 +57,10 @@ public class GetRecentOpenDocsResponseBody extends TeaModel {
         @NameInMap("nodeName")
         public String nodeName;
 
+        // 文档更新时间，包括重命名、移动、内容编辑等操作都会刷新更新时间
+        @NameInMap("updateTime")
+        public Long updateTime;
+
         // 文档打开url
         @NameInMap("url")
         public String url;
@@ -60,6 +68,14 @@ public class GetRecentOpenDocsResponseBody extends TeaModel {
         public static GetRecentOpenDocsResponseBodyRecentListNodeBO build(java.util.Map<String, ?> map) throws Exception {
             GetRecentOpenDocsResponseBodyRecentListNodeBO self = new GetRecentOpenDocsResponseBodyRecentListNodeBO();
             return TeaModel.build(map, self);
+        }
+
+        public GetRecentOpenDocsResponseBodyRecentListNodeBO setCreateTime(Long createTime) {
+            this.createTime = createTime;
+            return this;
+        }
+        public Long getCreateTime() {
+            return this.createTime;
         }
 
         public GetRecentOpenDocsResponseBodyRecentListNodeBO setDocType(String docType) {
@@ -102,6 +118,14 @@ public class GetRecentOpenDocsResponseBody extends TeaModel {
             return this.nodeName;
         }
 
+        public GetRecentOpenDocsResponseBodyRecentListNodeBO setUpdateTime(Long updateTime) {
+            this.updateTime = updateTime;
+            return this;
+        }
+        public Long getUpdateTime() {
+            return this.updateTime;
+        }
+
         public GetRecentOpenDocsResponseBodyRecentListNodeBO setUrl(String url) {
             this.url = url;
             return this;
@@ -113,6 +137,10 @@ public class GetRecentOpenDocsResponseBody extends TeaModel {
     }
 
     public static class GetRecentOpenDocsResponseBodyRecentListWorkspaceBO extends TeaModel {
+        // 团队空间打开url
+        @NameInMap("url")
+        public String url;
+
         // 团队空间Id
         @NameInMap("workspaceId")
         public String workspaceId;
@@ -124,6 +152,14 @@ public class GetRecentOpenDocsResponseBody extends TeaModel {
         public static GetRecentOpenDocsResponseBodyRecentListWorkspaceBO build(java.util.Map<String, ?> map) throws Exception {
             GetRecentOpenDocsResponseBodyRecentListWorkspaceBO self = new GetRecentOpenDocsResponseBodyRecentListWorkspaceBO();
             return TeaModel.build(map, self);
+        }
+
+        public GetRecentOpenDocsResponseBodyRecentListWorkspaceBO setUrl(String url) {
+            this.url = url;
+            return this;
+        }
+        public String getUrl() {
+            return this.url;
         }
 
         public GetRecentOpenDocsResponseBodyRecentListWorkspaceBO setWorkspaceId(String workspaceId) {

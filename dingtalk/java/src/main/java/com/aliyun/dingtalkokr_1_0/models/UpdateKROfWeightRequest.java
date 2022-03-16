@@ -4,15 +4,17 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateKROfWeightRequest extends TeaModel {
+    // 权重比。
     @NameInMap("weight")
     public Long weight;
 
-    // A short description of struct
+    // 当前 KR ID。
     @NameInMap("krId")
-    public java.io.InputStream krId;
+    public String krId;
 
-    @NameInMap("ownerId")
-    public java.io.InputStream ownerId;
+    // 当前用户的userId。
+    @NameInMap("userId")
+    public String userId;
 
     public static UpdateKROfWeightRequest build(java.util.Map<String, ?> map) throws Exception {
         UpdateKROfWeightRequest self = new UpdateKROfWeightRequest();
@@ -27,20 +29,20 @@ public class UpdateKROfWeightRequest extends TeaModel {
         return this.weight;
     }
 
-    public UpdateKROfWeightRequest setKrId(java.io.InputStream krId) {
+    public UpdateKROfWeightRequest setKrId(String krId) {
         this.krId = krId;
         return this;
     }
-    public java.io.InputStream getKrId() {
+    public String getKrId() {
         return this.krId;
     }
 
-    public UpdateKROfWeightRequest setOwnerId(java.io.InputStream ownerId) {
-        this.ownerId = ownerId;
+    public UpdateKROfWeightRequest setUserId(String userId) {
+        this.userId = userId;
         return this;
     }
-    public java.io.InputStream getOwnerId() {
-        return this.ownerId;
+    public String getUserId() {
+        return this.userId;
     }
 
 }

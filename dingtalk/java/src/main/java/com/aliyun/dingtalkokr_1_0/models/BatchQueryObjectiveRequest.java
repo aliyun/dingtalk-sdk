@@ -4,47 +4,48 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchQueryObjectiveRequest extends TeaModel {
+    // 需要查看的 Objective ID。
     @NameInMap("objectiveIds")
-    public java.util.List<java.io.InputStream> objectiveIds;
+    public java.util.List<String> objectiveIds;
 
-    // periodId
+    // 周期 ID。
     @NameInMap("periodId")
-    public java.io.InputStream periodId;
+    public String periodId;
 
-    // withAlign
+    // 是否返回关联信息。
     @NameInMap("withAlign")
     public Boolean withAlign;
 
-    // withKr
+    // 是否返回 KR 信息。
     @NameInMap("withKr")
     public Boolean withKr;
 
-    // withProgress
+    // 是否返回进度信息
     @NameInMap("withProgress")
     public Boolean withProgress;
 
-    // ownerId
-    @NameInMap("ownerId")
-    public String ownerId;
+    // 当前用户的 staff ID。
+    @NameInMap("userId")
+    public String userId;
 
     public static BatchQueryObjectiveRequest build(java.util.Map<String, ?> map) throws Exception {
         BatchQueryObjectiveRequest self = new BatchQueryObjectiveRequest();
         return TeaModel.build(map, self);
     }
 
-    public BatchQueryObjectiveRequest setObjectiveIds(java.util.List<java.io.InputStream> objectiveIds) {
+    public BatchQueryObjectiveRequest setObjectiveIds(java.util.List<String> objectiveIds) {
         this.objectiveIds = objectiveIds;
         return this;
     }
-    public java.util.List<java.io.InputStream> getObjectiveIds() {
+    public java.util.List<String> getObjectiveIds() {
         return this.objectiveIds;
     }
 
-    public BatchQueryObjectiveRequest setPeriodId(java.io.InputStream periodId) {
+    public BatchQueryObjectiveRequest setPeriodId(String periodId) {
         this.periodId = periodId;
         return this;
     }
-    public java.io.InputStream getPeriodId() {
+    public String getPeriodId() {
         return this.periodId;
     }
 
@@ -72,12 +73,12 @@ public class BatchQueryObjectiveRequest extends TeaModel {
         return this.withProgress;
     }
 
-    public BatchQueryObjectiveRequest setOwnerId(String ownerId) {
-        this.ownerId = ownerId;
+    public BatchQueryObjectiveRequest setUserId(String userId) {
+        this.userId = userId;
         return this;
     }
-    public String getOwnerId() {
-        return this.ownerId;
+    public String getUserId() {
+        return this.userId;
     }
 
 }

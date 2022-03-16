@@ -4,31 +4,33 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteKeyResultRequest extends TeaModel {
+    // 当前 KR id。
     @NameInMap("krId")
-    public java.io.InputStream krId;
+    public String krId;
 
-    @NameInMap("ownerId")
-    public java.io.InputStream ownerId;
+    // 当前用户的userId。
+    @NameInMap("userId")
+    public String userId;
 
     public static DeleteKeyResultRequest build(java.util.Map<String, ?> map) throws Exception {
         DeleteKeyResultRequest self = new DeleteKeyResultRequest();
         return TeaModel.build(map, self);
     }
 
-    public DeleteKeyResultRequest setKrId(java.io.InputStream krId) {
+    public DeleteKeyResultRequest setKrId(String krId) {
         this.krId = krId;
         return this;
     }
-    public java.io.InputStream getKrId() {
+    public String getKrId() {
         return this.krId;
     }
 
-    public DeleteKeyResultRequest setOwnerId(java.io.InputStream ownerId) {
-        this.ownerId = ownerId;
+    public DeleteKeyResultRequest setUserId(String userId) {
+        this.userId = userId;
         return this;
     }
-    public java.io.InputStream getOwnerId() {
-        return this.ownerId;
+    public String getUserId() {
+        return this.userId;
     }
 
 }

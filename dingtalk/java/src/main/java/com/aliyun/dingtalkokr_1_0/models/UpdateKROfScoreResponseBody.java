@@ -4,11 +4,10 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateKROfScoreResponseBody extends TeaModel {
-    // 目标分数
     @NameInMap("data")
-    public Long data;
+    public UpdateKROfScoreResponseBodyData data;
 
-    // Id of the request
+    // 请求成功的标识。
     @NameInMap("success")
     public Boolean success;
 
@@ -17,11 +16,11 @@ public class UpdateKROfScoreResponseBody extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public UpdateKROfScoreResponseBody setData(Long data) {
+    public UpdateKROfScoreResponseBody setData(UpdateKROfScoreResponseBodyData data) {
         this.data = data;
         return this;
     }
-    public Long getData() {
+    public UpdateKROfScoreResponseBodyData getData() {
         return this.data;
     }
 
@@ -31,6 +30,26 @@ public class UpdateKROfScoreResponseBody extends TeaModel {
     }
     public Boolean getSuccess() {
         return this.success;
+    }
+
+    public static class UpdateKROfScoreResponseBodyData extends TeaModel {
+        // 目标分数。
+        @NameInMap("objectiveScore")
+        public Long objectiveScore;
+
+        public static UpdateKROfScoreResponseBodyData build(java.util.Map<String, ?> map) throws Exception {
+            UpdateKROfScoreResponseBodyData self = new UpdateKROfScoreResponseBodyData();
+            return TeaModel.build(map, self);
+        }
+
+        public UpdateKROfScoreResponseBodyData setObjectiveScore(Long objectiveScore) {
+            this.objectiveScore = objectiveScore;
+            return this;
+        }
+        public Long getObjectiveScore() {
+            return this.objectiveScore;
+        }
+
     }
 
 }

@@ -4,33 +4,25 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetUserOkrRequest extends TeaModel {
-    // 归属用户的ID
-    @NameInMap("ownerId")
-    public java.io.InputStream ownerId;
-
-    // 页码，默认 为 1
+    // 页码，默认 为 1。
     @NameInMap("pageNumber")
     public Long pageNumber;
 
-    // 每页的个数，默认100
+    // 每页的个数，默认100。
     @NameInMap("pageSize")
     public Long pageSize;
 
-    // 周期 ID
+    // 周期 ID。
     @NameInMap("periodId")
-    public java.io.InputStream periodId;
+    public String periodId;
+
+    // 当前用户的user ID。
+    @NameInMap("userId")
+    public String userId;
 
     public static GetUserOkrRequest build(java.util.Map<String, ?> map) throws Exception {
         GetUserOkrRequest self = new GetUserOkrRequest();
         return TeaModel.build(map, self);
-    }
-
-    public GetUserOkrRequest setOwnerId(java.io.InputStream ownerId) {
-        this.ownerId = ownerId;
-        return this;
-    }
-    public java.io.InputStream getOwnerId() {
-        return this.ownerId;
     }
 
     public GetUserOkrRequest setPageNumber(Long pageNumber) {
@@ -49,12 +41,20 @@ public class GetUserOkrRequest extends TeaModel {
         return this.pageSize;
     }
 
-    public GetUserOkrRequest setPeriodId(java.io.InputStream periodId) {
+    public GetUserOkrRequest setPeriodId(String periodId) {
         this.periodId = periodId;
         return this;
     }
-    public java.io.InputStream getPeriodId() {
+    public String getPeriodId() {
         return this.periodId;
+    }
+
+    public GetUserOkrRequest setUserId(String userId) {
+        this.userId = userId;
+        return this;
+    }
+    public String getUserId() {
+        return this.userId;
     }
 
 }

@@ -31,8 +31,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.Common.validateModel(request);
         objectiveId = com.aliyun.openapiutil.Client.getEncodeParam(objectiveId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.ownerId)) {
-            query.put("ownerId", request.ownerId);
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
         }
 
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -70,8 +70,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public BatchQueryObjectiveResponse batchQueryObjectiveWithOptions(BatchQueryObjectiveRequest request, BatchQueryObjectiveHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.ownerId)) {
-            query.put("ownerId", request.ownerId);
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
         }
 
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -121,8 +121,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public CreateKeyResultResponse createKeyResultWithOptions(CreateKeyResultRequest request, CreateKeyResultHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.ownerId)) {
-            query.put("ownerId", request.ownerId);
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
         }
 
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -219,8 +219,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("krId", request.krId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.ownerId)) {
-            query.put("ownerId", request.ownerId);
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -291,6 +291,51 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("GetPeriodList", "okr_1.0", "HTTP", "GET", "AK", "/v1.0/okr/periods", "json", req, runtime), new GetPeriodListResponse());
     }
 
+    public GetPermissionResponse getPermission(GetPermissionRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        GetPermissionHeaders headers = new GetPermissionHeaders();
+        return this.getPermissionWithOptions(request, headers, runtime);
+    }
+
+    public GetPermissionResponse getPermissionWithOptions(GetPermissionRequest request, GetPermissionHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.targetId)) {
+            query.put("targetId", request.targetId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.targetType)) {
+            query.put("targetType", request.targetType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.withKr)) {
+            query.put("withKr", request.withKr);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.withObjective)) {
+            query.put("withObjective", request.withObjective);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("GetPermission", "okr_1.0", "HTTP", "GET", "AK", "/v1.0/okr/permissions", "json", req, runtime), new GetPermissionResponse());
+    }
+
     public GetUserOkrResponse getUserOkr(GetUserOkrRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         GetUserOkrHeaders headers = new GetUserOkrHeaders();
@@ -300,10 +345,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public GetUserOkrResponse getUserOkrWithOptions(GetUserOkrRequest request, GetUserOkrHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.ownerId)) {
-            query.put("ownerId", request.ownerId);
-        }
-
         if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
             query.put("pageNumber", request.pageNumber);
         }
@@ -314,6 +355,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.periodId)) {
             query.put("periodId", request.periodId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -342,8 +387,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.Common.validateModel(request);
         objectiveId = com.aliyun.openapiutil.Client.getEncodeParam(objectiveId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.ownerId)) {
-            query.put("ownerId", request.ownerId);
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
         }
 
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -385,8 +430,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("krId", request.krId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.operatorUid)) {
-            query.put("operatorUid", request.operatorUid);
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
         }
 
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -428,8 +473,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("krId", request.krId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.ownerId)) {
-            query.put("ownerId", request.ownerId);
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
         }
 
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -467,8 +512,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("krId", request.krId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.ownerId)) {
-            query.put("ownerId", request.ownerId);
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
         }
 
         java.util.Map<String, Object> body = new java.util.HashMap<>();
