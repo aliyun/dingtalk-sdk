@@ -898,6 +898,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public MultiOrgPermissionGrantResponse multiOrgPermissionGrantWithOptions(MultiOrgPermissionGrantRequest request, MultiOrgPermissionGrantHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.grantDeptIdList)) {
+            body.put("grantDeptIdList", request.grantDeptIdList);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.joinCorpId)) {
             body.put("joinCorpId", request.joinCorpId);
         }

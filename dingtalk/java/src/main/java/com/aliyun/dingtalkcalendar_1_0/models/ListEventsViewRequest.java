@@ -4,7 +4,11 @@ package com.aliyun.dingtalkcalendar_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListEventsViewRequest extends TeaModel {
-    // 查询返回结果数
+    // 每个日程的参与者查询个数，默认100，最大100。
+    @NameInMap("maxAttendees")
+    public Long maxAttendees;
+
+    // 返回的最大日程数，最大100个，默认100个。
     @NameInMap("maxResults")
     public Long maxResults;
 
@@ -23,6 +27,14 @@ public class ListEventsViewRequest extends TeaModel {
     public static ListEventsViewRequest build(java.util.Map<String, ?> map) throws Exception {
         ListEventsViewRequest self = new ListEventsViewRequest();
         return TeaModel.build(map, self);
+    }
+
+    public ListEventsViewRequest setMaxAttendees(Long maxAttendees) {
+        this.maxAttendees = maxAttendees;
+        return this;
+    }
+    public Long getMaxAttendees() {
+        return this.maxAttendees;
     }
 
     public ListEventsViewRequest setMaxResults(Long maxResults) {

@@ -4,6 +4,10 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class MultiOrgPermissionGrantRequest extends TeaModel {
+    // 被授权的部门，如果不填则默认全组织
+    @NameInMap("grantDeptIdList")
+    public java.util.List<Long> grantDeptIdList;
+
     // 授权加入的组织corpId
     @NameInMap("joinCorpId")
     public String joinCorpId;
@@ -11,6 +15,14 @@ public class MultiOrgPermissionGrantRequest extends TeaModel {
     public static MultiOrgPermissionGrantRequest build(java.util.Map<String, ?> map) throws Exception {
         MultiOrgPermissionGrantRequest self = new MultiOrgPermissionGrantRequest();
         return TeaModel.build(map, self);
+    }
+
+    public MultiOrgPermissionGrantRequest setGrantDeptIdList(java.util.List<Long> grantDeptIdList) {
+        this.grantDeptIdList = grantDeptIdList;
+        return this;
+    }
+    public java.util.List<Long> getGrantDeptIdList() {
+        return this.grantDeptIdList;
     }
 
     public MultiOrgPermissionGrantRequest setJoinCorpId(String joinCorpId) {

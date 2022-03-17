@@ -518,6 +518,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
         userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         calendarId = com.aliyun.openapiutil.Client.getEncodeParam(calendarId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.maxAttendees)) {
+            query.put("maxAttendees", request.maxAttendees);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
             query.put("maxResults", request.maxResults);
         }
@@ -558,6 +562,49 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("ListEvents", "calendar_1.0", "HTTP", "GET", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events", "json", req, runtime), new ListEventsResponse());
     }
 
+    public ListEventsInstancesResponse listEventsInstances(String userId, String calendarId, ListEventsInstancesRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        ListEventsInstancesHeaders headers = new ListEventsInstancesHeaders();
+        return this.listEventsInstancesWithOptions(userId, calendarId, request, headers, runtime);
+    }
+
+    public ListEventsInstancesResponse listEventsInstancesWithOptions(String userId, String calendarId, ListEventsInstancesRequest request, ListEventsInstancesHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
+        calendarId = com.aliyun.openapiutil.Client.getEncodeParam(calendarId);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.maxAttendees)) {
+            query.put("maxAttendees", request.maxAttendees);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
+            query.put("maxResults", request.maxResults);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.seriesMasterId)) {
+            query.put("seriesMasterId", request.seriesMasterId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.timeMin)) {
+            query.put("timeMin", request.timeMin);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("ListEventsInstances", "calendar_1.0", "HTTP", "GET", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/instances", "json", req, runtime), new ListEventsInstancesResponse());
+    }
+
     public ListEventsViewResponse listEventsView(String userId, String calendarId, ListEventsViewRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         ListEventsViewHeaders headers = new ListEventsViewHeaders();
@@ -569,6 +616,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
         userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         calendarId = com.aliyun.openapiutil.Client.getEncodeParam(calendarId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.maxAttendees)) {
+            query.put("maxAttendees", request.maxAttendees);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
             query.put("maxResults", request.maxResults);
         }

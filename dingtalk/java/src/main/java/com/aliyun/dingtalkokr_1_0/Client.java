@@ -61,6 +61,49 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("AlignObjective", "okr_1.0", "HTTP", "POST", "AK", "/v1.0/okr/objectives/" + objectiveId + "/alignments", "json", req, runtime), new AlignObjectiveResponse());
     }
 
+    public BatchAddPermissionResponse batchAddPermission(BatchAddPermissionRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        BatchAddPermissionHeaders headers = new BatchAddPermissionHeaders();
+        return this.batchAddPermissionWithOptions(request, headers, runtime);
+    }
+
+    public BatchAddPermissionResponse batchAddPermissionWithOptions(BatchAddPermissionRequest request, BatchAddPermissionHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.list)) {
+            body.put("list", request.list);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.targetId)) {
+            body.put("targetId", request.targetId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.targetType)) {
+            body.put("targetType", request.targetType);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("BatchAddPermission", "okr_1.0", "HTTP", "POST", "AK", "/v1.0/okr/permissions/batch", "json", req, runtime), new BatchAddPermissionResponse());
+    }
+
     public BatchQueryObjectiveResponse batchQueryObjective(BatchQueryObjectiveRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         BatchQueryObjectiveHeaders headers = new BatchQueryObjectiveHeaders();
@@ -267,6 +310,55 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
         return TeaModel.toModel(this.doROARequest("DeleteObjective", "okr_1.0", "HTTP", "DELETE", "AK", "/v1.0/okr/objectives/" + objectiveId + "", "json", req, runtime), new DeleteObjectiveResponse());
+    }
+
+    public DeletePermissionResponse deletePermission(DeletePermissionRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        DeletePermissionHeaders headers = new DeletePermissionHeaders();
+        return this.deletePermissionWithOptions(request, headers, runtime);
+    }
+
+    public DeletePermissionResponse deletePermissionWithOptions(DeletePermissionRequest request, DeletePermissionHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.id)) {
+            query.put("id", request.id);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.policyType)) {
+            query.put("policyType", request.policyType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.targetId)) {
+            query.put("targetId", request.targetId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.targetType)) {
+            query.put("targetType", request.targetType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.type)) {
+            query.put("type", request.type);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("DeletePermission", "okr_1.0", "HTTP", "DELETE", "AK", "/v1.0/okr/permissions/delete", "json", req, runtime), new DeletePermissionResponse());
     }
 
     public GetPeriodListResponse getPeriodList() throws Exception {
@@ -572,5 +664,48 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("UpdateObjective", "okr_1.0", "HTTP", "PUT", "AK", "/v1.0/okr/objectives/" + objectiveId + "", "json", req, runtime), new UpdateObjectiveResponse());
+    }
+
+    public UpdatePrivacyResponse updatePrivacy(UpdatePrivacyRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        UpdatePrivacyHeaders headers = new UpdatePrivacyHeaders();
+        return this.updatePrivacyWithOptions(request, headers, runtime);
+    }
+
+    public UpdatePrivacyResponse updatePrivacyWithOptions(UpdatePrivacyRequest request, UpdatePrivacyHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.privacy)) {
+            body.put("privacy", request.privacy);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.targetId)) {
+            body.put("targetId", request.targetId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.targetType)) {
+            body.put("targetType", request.targetType);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("UpdatePrivacy", "okr_1.0", "HTTP", "PUT", "AK", "/v1.0/okr/permissions/privacies", "json", req, runtime), new UpdatePrivacyResponse());
     }
 }
