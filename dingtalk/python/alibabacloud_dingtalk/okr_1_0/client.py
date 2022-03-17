@@ -105,6 +105,86 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('AlignObjective', 'okr_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/okr/objectives/{objective_id}/alignments', 'json', req, runtime)
         )
 
+    def batch_add_permission(
+        self,
+        request: dingtalkokr__1__0_models.BatchAddPermissionRequest,
+    ) -> dingtalkokr__1__0_models.BatchAddPermissionResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkokr__1__0_models.BatchAddPermissionHeaders()
+        return self.batch_add_permission_with_options(request, headers, runtime)
+
+    async def batch_add_permission_async(
+        self,
+        request: dingtalkokr__1__0_models.BatchAddPermissionRequest,
+    ) -> dingtalkokr__1__0_models.BatchAddPermissionResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkokr__1__0_models.BatchAddPermissionHeaders()
+        return await self.batch_add_permission_with_options_async(request, headers, runtime)
+
+    def batch_add_permission_with_options(
+        self,
+        request: dingtalkokr__1__0_models.BatchAddPermissionRequest,
+        headers: dingtalkokr__1__0_models.BatchAddPermissionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkokr__1__0_models.BatchAddPermissionResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        body = {}
+        if not UtilClient.is_unset(request.list):
+            body['list'] = request.list
+        if not UtilClient.is_unset(request.target_id):
+            body['targetId'] = request.target_id
+        if not UtilClient.is_unset(request.target_type):
+            body['targetType'] = request.target_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkokr__1__0_models.BatchAddPermissionResponse(),
+            self.do_roarequest('BatchAddPermission', 'okr_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/okr/permissions/batch', 'json', req, runtime)
+        )
+
+    async def batch_add_permission_with_options_async(
+        self,
+        request: dingtalkokr__1__0_models.BatchAddPermissionRequest,
+        headers: dingtalkokr__1__0_models.BatchAddPermissionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkokr__1__0_models.BatchAddPermissionResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        body = {}
+        if not UtilClient.is_unset(request.list):
+            body['list'] = request.list
+        if not UtilClient.is_unset(request.target_id):
+            body['targetId'] = request.target_id
+        if not UtilClient.is_unset(request.target_type):
+            body['targetType'] = request.target_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkokr__1__0_models.BatchAddPermissionResponse(),
+            await self.do_roarequest_async('BatchAddPermission', 'okr_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/okr/permissions/batch', 'json', req, runtime)
+        )
+
     def batch_query_objective(
         self,
         request: dingtalkokr__1__0_models.BatchQueryObjectiveRequest,
@@ -497,6 +577,90 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkokr__1__0_models.DeleteObjectiveResponse(),
             await self.do_roarequest_async('DeleteObjective', 'okr_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/okr/objectives/{objective_id}', 'json', req, runtime)
+        )
+
+    def delete_permission(
+        self,
+        request: dingtalkokr__1__0_models.DeletePermissionRequest,
+    ) -> dingtalkokr__1__0_models.DeletePermissionResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkokr__1__0_models.DeletePermissionHeaders()
+        return self.delete_permission_with_options(request, headers, runtime)
+
+    async def delete_permission_async(
+        self,
+        request: dingtalkokr__1__0_models.DeletePermissionRequest,
+    ) -> dingtalkokr__1__0_models.DeletePermissionResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkokr__1__0_models.DeletePermissionHeaders()
+        return await self.delete_permission_with_options_async(request, headers, runtime)
+
+    def delete_permission_with_options(
+        self,
+        request: dingtalkokr__1__0_models.DeletePermissionRequest,
+        headers: dingtalkokr__1__0_models.DeletePermissionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkokr__1__0_models.DeletePermissionResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.id):
+            query['id'] = request.id
+        if not UtilClient.is_unset(request.policy_type):
+            query['policyType'] = request.policy_type
+        if not UtilClient.is_unset(request.target_id):
+            query['targetId'] = request.target_id
+        if not UtilClient.is_unset(request.target_type):
+            query['targetType'] = request.target_type
+        if not UtilClient.is_unset(request.type):
+            query['type'] = request.type
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkokr__1__0_models.DeletePermissionResponse(),
+            self.do_roarequest('DeletePermission', 'okr_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/okr/permissions/delete', 'json', req, runtime)
+        )
+
+    async def delete_permission_with_options_async(
+        self,
+        request: dingtalkokr__1__0_models.DeletePermissionRequest,
+        headers: dingtalkokr__1__0_models.DeletePermissionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkokr__1__0_models.DeletePermissionResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.id):
+            query['id'] = request.id
+        if not UtilClient.is_unset(request.policy_type):
+            query['policyType'] = request.policy_type
+        if not UtilClient.is_unset(request.target_id):
+            query['targetId'] = request.target_id
+        if not UtilClient.is_unset(request.target_type):
+            query['targetType'] = request.target_type
+        if not UtilClient.is_unset(request.type):
+            query['type'] = request.type
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkokr__1__0_models.DeletePermissionResponse(),
+            await self.do_roarequest_async('DeletePermission', 'okr_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/okr/permissions/delete', 'json', req, runtime)
         )
 
     def get_period_list(self) -> dingtalkokr__1__0_models.GetPeriodListResponse:
@@ -1091,4 +1255,84 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkokr__1__0_models.UpdateObjectiveResponse(),
             await self.do_roarequest_async('UpdateObjective', 'okr_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/okr/objectives/{objective_id}', 'json', req, runtime)
+        )
+
+    def update_privacy(
+        self,
+        request: dingtalkokr__1__0_models.UpdatePrivacyRequest,
+    ) -> dingtalkokr__1__0_models.UpdatePrivacyResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkokr__1__0_models.UpdatePrivacyHeaders()
+        return self.update_privacy_with_options(request, headers, runtime)
+
+    async def update_privacy_async(
+        self,
+        request: dingtalkokr__1__0_models.UpdatePrivacyRequest,
+    ) -> dingtalkokr__1__0_models.UpdatePrivacyResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkokr__1__0_models.UpdatePrivacyHeaders()
+        return await self.update_privacy_with_options_async(request, headers, runtime)
+
+    def update_privacy_with_options(
+        self,
+        request: dingtalkokr__1__0_models.UpdatePrivacyRequest,
+        headers: dingtalkokr__1__0_models.UpdatePrivacyHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkokr__1__0_models.UpdatePrivacyResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        body = {}
+        if not UtilClient.is_unset(request.privacy):
+            body['privacy'] = request.privacy
+        if not UtilClient.is_unset(request.target_id):
+            body['targetId'] = request.target_id
+        if not UtilClient.is_unset(request.target_type):
+            body['targetType'] = request.target_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkokr__1__0_models.UpdatePrivacyResponse(),
+            self.do_roarequest('UpdatePrivacy', 'okr_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/okr/permissions/privacies', 'json', req, runtime)
+        )
+
+    async def update_privacy_with_options_async(
+        self,
+        request: dingtalkokr__1__0_models.UpdatePrivacyRequest,
+        headers: dingtalkokr__1__0_models.UpdatePrivacyHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkokr__1__0_models.UpdatePrivacyResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        body = {}
+        if not UtilClient.is_unset(request.privacy):
+            body['privacy'] = request.privacy
+        if not UtilClient.is_unset(request.target_id):
+            body['targetId'] = request.target_id
+        if not UtilClient.is_unset(request.target_type):
+            body['targetType'] = request.target_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkokr__1__0_models.UpdatePrivacyResponse(),
+            await self.do_roarequest_async('UpdatePrivacy', 'okr_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/okr/permissions/privacies', 'json', req, runtime)
         )

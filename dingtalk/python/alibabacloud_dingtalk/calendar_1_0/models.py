@@ -3751,6 +3751,7 @@ class ListEventsHeaders(TeaModel):
 class ListEventsRequest(TeaModel):
     def __init__(
         self,
+        max_attendees: int = None,
         max_results: int = None,
         next_token: str = None,
         show_deleted: bool = None,
@@ -3758,7 +3759,9 @@ class ListEventsRequest(TeaModel):
         time_max: str = None,
         time_min: str = None,
     ):
-        # 查询返回结果数
+        # 每个日程的参与者查询个数，默认100，最大100
+        self.max_attendees = max_attendees
+        # 返回的最大日程数，最大100个，默认100个
         self.max_results = max_results
         # 查询翻页token
         self.next_token = next_token
@@ -3780,6 +3783,8 @@ class ListEventsRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.max_attendees is not None:
+            result['maxAttendees'] = self.max_attendees
         if self.max_results is not None:
             result['maxResults'] = self.max_results
         if self.next_token is not None:
@@ -3796,6 +3801,8 @@ class ListEventsRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('maxAttendees') is not None:
+            self.max_attendees = m.get('maxAttendees')
         if m.get('maxResults') is not None:
             self.max_results = m.get('maxResults')
         if m.get('nextToken') is not None:
@@ -4481,6 +4488,754 @@ class ListEventsResponse(TeaModel):
         return self
 
 
+class ListEventsInstancesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListEventsInstancesRequest(TeaModel):
+    def __init__(
+        self,
+        max_attendees: int = None,
+        max_results: int = None,
+        series_master_id: str = None,
+        time_min: str = None,
+    ):
+        # listInstances每个日程的参与者查询个数，默认100，最大100。
+        self.max_attendees = max_attendees
+        # listInstances返回的最大日程数，最大100个，默认100个。
+        self.max_results = max_results
+        # 循环主日程id。
+        self.series_master_id = series_master_id
+        # 大于此时间的所有生成实例
+        self.time_min = time_min
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_attendees is not None:
+            result['maxAttendees'] = self.max_attendees
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.series_master_id is not None:
+            result['seriesMasterId'] = self.series_master_id
+        if self.time_min is not None:
+            result['timeMin'] = self.time_min
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxAttendees') is not None:
+            self.max_attendees = m.get('maxAttendees')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('seriesMasterId') is not None:
+            self.series_master_id = m.get('seriesMasterId')
+        if m.get('timeMin') is not None:
+            self.time_min = m.get('timeMin')
+        return self
+
+
+class ListEventsInstancesResponseBodyEventsAttendees(TeaModel):
+    def __init__(
+        self,
+        display_name: str = None,
+        id: str = None,
+        response_status: str = None,
+        self_: bool = None,
+    ):
+        # 用户名
+        self.display_name = display_name
+        # 用户id
+        self.id = id
+        # 回复状态
+        self.response_status = response_status
+        # 是否是当前登陆用户
+        self.self_ = self_
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.display_name is not None:
+            result['displayName'] = self.display_name
+        if self.id is not None:
+            result['id'] = self.id
+        if self.response_status is not None:
+            result['responseStatus'] = self.response_status
+        if self.self_ is not None:
+            result['self'] = self.self_
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('displayName') is not None:
+            self.display_name = m.get('displayName')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('responseStatus') is not None:
+            self.response_status = m.get('responseStatus')
+        if m.get('self') is not None:
+            self.self_ = m.get('self')
+        return self
+
+
+class ListEventsInstancesResponseBodyEventsEnd(TeaModel):
+    def __init__(
+        self,
+        date: str = None,
+        date_time: str = None,
+        time_zone: str = None,
+    ):
+        # 日期，格式：yyyyMMdd
+        self.date = date
+        # 时间戳，按照ISO 8601格式
+        self.date_time = date_time
+        # 时区
+        self.time_zone = time_zone
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.date is not None:
+            result['date'] = self.date
+        if self.date_time is not None:
+            result['dateTime'] = self.date_time
+        if self.time_zone is not None:
+            result['timeZone'] = self.time_zone
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('date') is not None:
+            self.date = m.get('date')
+        if m.get('dateTime') is not None:
+            self.date_time = m.get('dateTime')
+        if m.get('timeZone') is not None:
+            self.time_zone = m.get('timeZone')
+        return self
+
+
+class ListEventsInstancesResponseBodyEventsLocation(TeaModel):
+    def __init__(
+        self,
+        display_name: str = None,
+    ):
+        # 展示名称
+        self.display_name = display_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.display_name is not None:
+            result['displayName'] = self.display_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('displayName') is not None:
+            self.display_name = m.get('displayName')
+        return self
+
+
+class ListEventsInstancesResponseBodyEventsOnlineMeetingInfo(TeaModel):
+    def __init__(
+        self,
+        conference_id: str = None,
+        type: str = None,
+        url: str = None,
+    ):
+        # 会议ID
+        self.conference_id = conference_id
+        # 线上会议类型，目前支持：  dingtalk：钉钉视频会议
+        self.type = type
+        # 会议url
+        self.url = url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.conference_id is not None:
+            result['conferenceId'] = self.conference_id
+        if self.type is not None:
+            result['type'] = self.type
+        if self.url is not None:
+            result['url'] = self.url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('conferenceId') is not None:
+            self.conference_id = m.get('conferenceId')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        return self
+
+
+class ListEventsInstancesResponseBodyEventsOrganizer(TeaModel):
+    def __init__(
+        self,
+        display_name: str = None,
+        id: str = None,
+        response_status: str = None,
+        self_: bool = None,
+    ):
+        # 用户名
+        self.display_name = display_name
+        # 用户id
+        self.id = id
+        # 回复状态
+        self.response_status = response_status
+        # 是否是当前登陆用户
+        self.self_ = self_
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.display_name is not None:
+            result['displayName'] = self.display_name
+        if self.id is not None:
+            result['id'] = self.id
+        if self.response_status is not None:
+            result['responseStatus'] = self.response_status
+        if self.self_ is not None:
+            result['self'] = self.self_
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('displayName') is not None:
+            self.display_name = m.get('displayName')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('responseStatus') is not None:
+            self.response_status = m.get('responseStatus')
+        if m.get('self') is not None:
+            self.self_ = m.get('self')
+        return self
+
+
+class ListEventsInstancesResponseBodyEventsRecurrencePattern(TeaModel):
+    def __init__(
+        self,
+        day_of_month: int = None,
+        days_of_week: str = None,
+        index: str = None,
+        interval: int = None,
+        type: str = None,
+    ):
+        # 每月的第几天
+        self.day_of_month = day_of_month
+        # 每周的第几天
+        self.days_of_week = days_of_week
+        # 指定事件发生在daysOfsWeek中指定的允许天数的哪个实例上，从该月的第一个实例开始计算。取值为:first, second, third, fourth, last。默认是first。如果类型是relativMonthly或relativeYear，则可选并使用
+        self.index = index
+        # 循环间隔
+        self.interval = interval
+        # 循环模式类型(type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly)
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.day_of_month is not None:
+            result['dayOfMonth'] = self.day_of_month
+        if self.days_of_week is not None:
+            result['daysOfWeek'] = self.days_of_week
+        if self.index is not None:
+            result['index'] = self.index
+        if self.interval is not None:
+            result['interval'] = self.interval
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dayOfMonth') is not None:
+            self.day_of_month = m.get('dayOfMonth')
+        if m.get('daysOfWeek') is not None:
+            self.days_of_week = m.get('daysOfWeek')
+        if m.get('index') is not None:
+            self.index = m.get('index')
+        if m.get('interval') is not None:
+            self.interval = m.get('interval')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class ListEventsInstancesResponseBodyEventsRecurrenceRange(TeaModel):
+    def __init__(
+        self,
+        end_date: str = None,
+        number_of_occurrences: int = None,
+        type: str = None,
+    ):
+        # 循环终止日期
+        self.end_date = end_date
+        # 循环出现次数
+        self.number_of_occurrences = number_of_occurrences
+        # 范围类型(endDate, noEnd, numbered)
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end_date is not None:
+            result['endDate'] = self.end_date
+        if self.number_of_occurrences is not None:
+            result['numberOfOccurrences'] = self.number_of_occurrences
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('endDate') is not None:
+            self.end_date = m.get('endDate')
+        if m.get('numberOfOccurrences') is not None:
+            self.number_of_occurrences = m.get('numberOfOccurrences')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class ListEventsInstancesResponseBodyEventsRecurrence(TeaModel):
+    def __init__(
+        self,
+        pattern: ListEventsInstancesResponseBodyEventsRecurrencePattern = None,
+        range: ListEventsInstancesResponseBodyEventsRecurrenceRange = None,
+    ):
+        # 重复模式
+        self.pattern = pattern
+        # 重复范围
+        self.range = range
+
+    def validate(self):
+        if self.pattern:
+            self.pattern.validate()
+        if self.range:
+            self.range.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.pattern is not None:
+            result['pattern'] = self.pattern.to_map()
+        if self.range is not None:
+            result['range'] = self.range.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('pattern') is not None:
+            temp_model = ListEventsInstancesResponseBodyEventsRecurrencePattern()
+            self.pattern = temp_model.from_map(m['pattern'])
+        if m.get('range') is not None:
+            temp_model = ListEventsInstancesResponseBodyEventsRecurrenceRange()
+            self.range = temp_model.from_map(m['range'])
+        return self
+
+
+class ListEventsInstancesResponseBodyEventsReminders(TeaModel):
+    def __init__(
+        self,
+        method: str = None,
+        minutes: str = None,
+    ):
+        # 提醒方式
+        self.method = method
+        # 在日程开始前N分钟发出提醒
+        self.minutes = minutes
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.method is not None:
+            result['method'] = self.method
+        if self.minutes is not None:
+            result['minutes'] = self.minutes
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('method') is not None:
+            self.method = m.get('method')
+        if m.get('minutes') is not None:
+            self.minutes = m.get('minutes')
+        return self
+
+
+class ListEventsInstancesResponseBodyEventsStart(TeaModel):
+    def __init__(
+        self,
+        date: str = None,
+        date_time: str = None,
+        time_zone: str = None,
+    ):
+        # 日期，格式：yyyyMMdd
+        self.date = date
+        # 时间戳，按照ISO 8601格式
+        self.date_time = date_time
+        # 时区
+        self.time_zone = time_zone
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.date is not None:
+            result['date'] = self.date
+        if self.date_time is not None:
+            result['dateTime'] = self.date_time
+        if self.time_zone is not None:
+            result['timeZone'] = self.time_zone
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('date') is not None:
+            self.date = m.get('date')
+        if m.get('dateTime') is not None:
+            self.date_time = m.get('dateTime')
+        if m.get('timeZone') is not None:
+            self.time_zone = m.get('timeZone')
+        return self
+
+
+class ListEventsInstancesResponseBodyEvents(TeaModel):
+    def __init__(
+        self,
+        attendees: List[ListEventsInstancesResponseBodyEventsAttendees] = None,
+        create_time: str = None,
+        description: str = None,
+        end: ListEventsInstancesResponseBodyEventsEnd = None,
+        id: str = None,
+        is_all_day: bool = None,
+        location: ListEventsInstancesResponseBodyEventsLocation = None,
+        online_meeting_info: ListEventsInstancesResponseBodyEventsOnlineMeetingInfo = None,
+        organizer: ListEventsInstancesResponseBodyEventsOrganizer = None,
+        recurrence: ListEventsInstancesResponseBodyEventsRecurrence = None,
+        reminders: List[ListEventsInstancesResponseBodyEventsReminders] = None,
+        series_master_id: str = None,
+        start: ListEventsInstancesResponseBodyEventsStart = None,
+        status: str = None,
+        summary: str = None,
+        update_time: str = None,
+    ):
+        # 日程参与人
+        self.attendees = attendees
+        # 创建时间
+        self.create_time = create_time
+        # 日程描述
+        self.description = description
+        # 日程结束时间
+        self.end = end
+        # 日程事件id
+        self.id = id
+        # 是否为全天日程
+        self.is_all_day = is_all_day
+        # 日程地点
+        self.location = location
+        # 线上会议
+        self.online_meeting_info = online_meeting_info
+        # 日程组织人
+        self.organizer = organizer
+        # 日程重复规则
+        self.recurrence = recurrence
+        # 日程提醒
+        self.reminders = reminders
+        # 重复日程的主日程id，非重复日程为空
+        self.series_master_id = series_master_id
+        # 日程开始时间
+        self.start = start
+        # 日程状态
+        self.status = status
+        # 日程标题
+        self.summary = summary
+        # 更新时间
+        self.update_time = update_time
+
+    def validate(self):
+        if self.attendees:
+            for k in self.attendees:
+                if k:
+                    k.validate()
+        if self.end:
+            self.end.validate()
+        if self.location:
+            self.location.validate()
+        if self.online_meeting_info:
+            self.online_meeting_info.validate()
+        if self.organizer:
+            self.organizer.validate()
+        if self.recurrence:
+            self.recurrence.validate()
+        if self.reminders:
+            for k in self.reminders:
+                if k:
+                    k.validate()
+        if self.start:
+            self.start.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['attendees'] = []
+        if self.attendees is not None:
+            for k in self.attendees:
+                result['attendees'].append(k.to_map() if k else None)
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.description is not None:
+            result['description'] = self.description
+        if self.end is not None:
+            result['end'] = self.end.to_map()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.is_all_day is not None:
+            result['isAllDay'] = self.is_all_day
+        if self.location is not None:
+            result['location'] = self.location.to_map()
+        if self.online_meeting_info is not None:
+            result['onlineMeetingInfo'] = self.online_meeting_info.to_map()
+        if self.organizer is not None:
+            result['organizer'] = self.organizer.to_map()
+        if self.recurrence is not None:
+            result['recurrence'] = self.recurrence.to_map()
+        result['reminders'] = []
+        if self.reminders is not None:
+            for k in self.reminders:
+                result['reminders'].append(k.to_map() if k else None)
+        if self.series_master_id is not None:
+            result['seriesMasterId'] = self.series_master_id
+        if self.start is not None:
+            result['start'] = self.start.to_map()
+        if self.status is not None:
+            result['status'] = self.status
+        if self.summary is not None:
+            result['summary'] = self.summary
+        if self.update_time is not None:
+            result['updateTime'] = self.update_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.attendees = []
+        if m.get('attendees') is not None:
+            for k in m.get('attendees'):
+                temp_model = ListEventsInstancesResponseBodyEventsAttendees()
+                self.attendees.append(temp_model.from_map(k))
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('end') is not None:
+            temp_model = ListEventsInstancesResponseBodyEventsEnd()
+            self.end = temp_model.from_map(m['end'])
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('isAllDay') is not None:
+            self.is_all_day = m.get('isAllDay')
+        if m.get('location') is not None:
+            temp_model = ListEventsInstancesResponseBodyEventsLocation()
+            self.location = temp_model.from_map(m['location'])
+        if m.get('onlineMeetingInfo') is not None:
+            temp_model = ListEventsInstancesResponseBodyEventsOnlineMeetingInfo()
+            self.online_meeting_info = temp_model.from_map(m['onlineMeetingInfo'])
+        if m.get('organizer') is not None:
+            temp_model = ListEventsInstancesResponseBodyEventsOrganizer()
+            self.organizer = temp_model.from_map(m['organizer'])
+        if m.get('recurrence') is not None:
+            temp_model = ListEventsInstancesResponseBodyEventsRecurrence()
+            self.recurrence = temp_model.from_map(m['recurrence'])
+        self.reminders = []
+        if m.get('reminders') is not None:
+            for k in m.get('reminders'):
+                temp_model = ListEventsInstancesResponseBodyEventsReminders()
+                self.reminders.append(temp_model.from_map(k))
+        if m.get('seriesMasterId') is not None:
+            self.series_master_id = m.get('seriesMasterId')
+        if m.get('start') is not None:
+            temp_model = ListEventsInstancesResponseBodyEventsStart()
+            self.start = temp_model.from_map(m['start'])
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('summary') is not None:
+            self.summary = m.get('summary')
+        if m.get('updateTime') is not None:
+            self.update_time = m.get('updateTime')
+        return self
+
+
+class ListEventsInstancesResponseBody(TeaModel):
+    def __init__(
+        self,
+        events: List[ListEventsInstancesResponseBodyEvents] = None,
+    ):
+        # 日程
+        self.events = events
+
+    def validate(self):
+        if self.events:
+            for k in self.events:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['events'] = []
+        if self.events is not None:
+            for k in self.events:
+                result['events'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.events = []
+        if m.get('events') is not None:
+            for k in m.get('events'):
+                temp_model = ListEventsInstancesResponseBodyEvents()
+                self.events.append(temp_model.from_map(k))
+        return self
+
+
+class ListEventsInstancesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ListEventsInstancesResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ListEventsInstancesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ListEventsViewHeaders(TeaModel):
     def __init__(
         self,
@@ -4517,12 +5272,15 @@ class ListEventsViewHeaders(TeaModel):
 class ListEventsViewRequest(TeaModel):
     def __init__(
         self,
+        max_attendees: int = None,
         max_results: int = None,
         next_token: str = None,
         time_max: str = None,
         time_min: str = None,
     ):
-        # 查询返回结果数
+        # 每个日程的参与者查询个数，默认100，最大100。
+        self.max_attendees = max_attendees
+        # 返回的最大日程数，最大100个，默认100个。
         self.max_results = max_results
         # 查询翻页token
         self.next_token = next_token
@@ -4540,6 +5298,8 @@ class ListEventsViewRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.max_attendees is not None:
+            result['maxAttendees'] = self.max_attendees
         if self.max_results is not None:
             result['maxResults'] = self.max_results
         if self.next_token is not None:
@@ -4552,6 +5312,8 @@ class ListEventsViewRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('maxAttendees') is not None:
+            self.max_attendees = m.get('maxAttendees')
         if m.get('maxResults') is not None:
             self.max_results = m.get('maxResults')
         if m.get('nextToken') is not None:

@@ -1897,6 +1897,8 @@ class Client(OpenApiClient):
     ) -> dingtalkcontact__1__0_models.MultiOrgPermissionGrantResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.grant_dept_id_list):
+            body['grantDeptIdList'] = request.grant_dept_id_list
         if not UtilClient.is_unset(request.join_corp_id):
             body['joinCorpId'] = request.join_corp_id
         real_headers = {}
@@ -1921,6 +1923,8 @@ class Client(OpenApiClient):
     ) -> dingtalkcontact__1__0_models.MultiOrgPermissionGrantResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.grant_dept_id_list):
+            body['grantDeptIdList'] = request.grant_dept_id_list
         if not UtilClient.is_unset(request.join_corp_id):
             body['joinCorpId'] = request.join_corp_id
         real_headers = {}

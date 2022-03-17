@@ -188,6 +188,415 @@ class AlignObjectiveResponse(TeaModel):
         return self
 
 
+class BatchAddPermissionHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class BatchAddPermissionRequestListMember(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+        type: str = None,
+    ):
+        self.id = id
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class BatchAddPermissionRequestList(TeaModel):
+    def __init__(
+        self,
+        member: BatchAddPermissionRequestListMember = None,
+        policy_type: int = None,
+    ):
+        self.member = member
+        self.policy_type = policy_type
+
+    def validate(self):
+        if self.member:
+            self.member.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.member is not None:
+            result['member'] = self.member.to_map()
+        if self.policy_type is not None:
+            result['policyType'] = self.policy_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('member') is not None:
+            temp_model = BatchAddPermissionRequestListMember()
+            self.member = temp_model.from_map(m['member'])
+        if m.get('policyType') is not None:
+            self.policy_type = m.get('policyType')
+        return self
+
+
+class BatchAddPermissionRequest(TeaModel):
+    def __init__(
+        self,
+        list: List[BatchAddPermissionRequestList] = None,
+        target_id: str = None,
+        target_type: str = None,
+        user_id: str = None,
+    ):
+        self.list = list
+        self.target_id = target_id
+        self.target_type = target_type
+        # A short description of struct
+        self.user_id = user_id
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        if self.target_id is not None:
+            result['targetId'] = self.target_id
+        if self.target_type is not None:
+            result['targetType'] = self.target_type
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = BatchAddPermissionRequestList()
+                self.list.append(temp_model.from_map(k))
+        if m.get('targetId') is not None:
+            self.target_id = m.get('targetId')
+        if m.get('targetType') is not None:
+            self.target_type = m.get('targetType')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class BatchAddPermissionResponseBodyDataPermissionTreePolicyListMemberList(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+        nickname: str = None,
+        type: str = None,
+    ):
+        self.id = id
+        self.nickname = nickname
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.nickname is not None:
+            result['nickname'] = self.nickname
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('nickname') is not None:
+            self.nickname = m.get('nickname')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class BatchAddPermissionResponseBodyDataPermissionTreePolicyList(TeaModel):
+    def __init__(
+        self,
+        member_list: List[BatchAddPermissionResponseBodyDataPermissionTreePolicyListMemberList] = None,
+        name: str = None,
+        type: int = None,
+    ):
+        self.member_list = member_list
+        self.name = name
+        self.type = type
+
+    def validate(self):
+        if self.member_list:
+            for k in self.member_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['memberList'] = []
+        if self.member_list is not None:
+            for k in self.member_list:
+                result['memberList'].append(k.to_map() if k else None)
+        if self.name is not None:
+            result['name'] = self.name
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.member_list = []
+        if m.get('memberList') is not None:
+            for k in m.get('memberList'):
+                temp_model = BatchAddPermissionResponseBodyDataPermissionTreePolicyListMemberList()
+                self.member_list.append(temp_model.from_map(k))
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class BatchAddPermissionResponseBodyDataPermissionTree(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+        policy_list: List[BatchAddPermissionResponseBodyDataPermissionTreePolicyList] = None,
+        privacy: str = None,
+        type: str = None,
+    ):
+        # 权限 ID。
+        self.id = id
+        # 权限列表
+        self.policy_list = policy_list
+        # 是否可见的标识。
+        self.privacy = privacy
+        # 哪种类型的权限。
+        self.type = type
+
+    def validate(self):
+        if self.policy_list:
+            for k in self.policy_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        result['policyList'] = []
+        if self.policy_list is not None:
+            for k in self.policy_list:
+                result['policyList'].append(k.to_map() if k else None)
+        if self.privacy is not None:
+            result['privacy'] = self.privacy
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        self.policy_list = []
+        if m.get('policyList') is not None:
+            for k in m.get('policyList'):
+                temp_model = BatchAddPermissionResponseBodyDataPermissionTreePolicyList()
+                self.policy_list.append(temp_model.from_map(k))
+        if m.get('privacy') is not None:
+            self.privacy = m.get('privacy')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class BatchAddPermissionResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        has_invalid_user: bool = None,
+        permission_tree: BatchAddPermissionResponseBodyDataPermissionTree = None,
+    ):
+        # 是否有无效的成员。
+        self.has_invalid_user = has_invalid_user
+        # 权限信息。
+        self.permission_tree = permission_tree
+
+    def validate(self):
+        if self.permission_tree:
+            self.permission_tree.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_invalid_user is not None:
+            result['hasInvalidUser'] = self.has_invalid_user
+        if self.permission_tree is not None:
+            result['permissionTree'] = self.permission_tree.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasInvalidUser') is not None:
+            self.has_invalid_user = m.get('hasInvalidUser')
+        if m.get('permissionTree') is not None:
+            temp_model = BatchAddPermissionResponseBodyDataPermissionTree()
+            self.permission_tree = temp_model.from_map(m['permissionTree'])
+        return self
+
+
+class BatchAddPermissionResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: BatchAddPermissionResponseBodyData = None,
+        success: bool = None,
+    ):
+        # 返回的数据。
+        self.data = data
+        # 请求成功的标识。
+        self.success = success
+
+    def validate(self):
+        if self.data:
+            self.data.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            temp_model = BatchAddPermissionResponseBodyData()
+            self.data = temp_model.from_map(m['data'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class BatchAddPermissionResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: BatchAddPermissionResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = BatchAddPermissionResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class BatchQueryObjectiveHeaders(TeaModel):
     def __init__(
         self,
@@ -1454,6 +1863,312 @@ class DeleteObjectiveResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = DeleteObjectiveResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DeletePermissionHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeletePermissionRequest(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+        policy_type: int = None,
+        target_id: str = None,
+        target_type: str = None,
+        type: str = None,
+        user_id: str = None,
+    ):
+        self.id = id
+        self.policy_type = policy_type
+        self.target_id = target_id
+        self.target_type = target_type
+        self.type = type
+        # 当前用户的userId。
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.policy_type is not None:
+            result['policyType'] = self.policy_type
+        if self.target_id is not None:
+            result['targetId'] = self.target_id
+        if self.target_type is not None:
+            result['targetType'] = self.target_type
+        if self.type is not None:
+            result['type'] = self.type
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('policyType') is not None:
+            self.policy_type = m.get('policyType')
+        if m.get('targetId') is not None:
+            self.target_id = m.get('targetId')
+        if m.get('targetType') is not None:
+            self.target_type = m.get('targetType')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class DeletePermissionResponseBodyDataPolicyListMemberList(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+        nickname: str = None,
+        type: str = None,
+    ):
+        self.id = id
+        self.nickname = nickname
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.nickname is not None:
+            result['nickname'] = self.nickname
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('nickname') is not None:
+            self.nickname = m.get('nickname')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class DeletePermissionResponseBodyDataPolicyList(TeaModel):
+    def __init__(
+        self,
+        member_list: List[DeletePermissionResponseBodyDataPolicyListMemberList] = None,
+        name: str = None,
+        type: int = None,
+    ):
+        self.member_list = member_list
+        self.name = name
+        self.type = type
+
+    def validate(self):
+        if self.member_list:
+            for k in self.member_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['memberList'] = []
+        if self.member_list is not None:
+            for k in self.member_list:
+                result['memberList'].append(k.to_map() if k else None)
+        if self.name is not None:
+            result['name'] = self.name
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.member_list = []
+        if m.get('memberList') is not None:
+            for k in m.get('memberList'):
+                temp_model = DeletePermissionResponseBodyDataPolicyListMemberList()
+                self.member_list.append(temp_model.from_map(k))
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class DeletePermissionResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+        policy_list: List[DeletePermissionResponseBodyDataPolicyList] = None,
+        privacy: str = None,
+        type: str = None,
+    ):
+        self.id = id
+        # 权限列表
+        self.policy_list = policy_list
+        # 是否可见的标识。
+        self.privacy = privacy
+        # 哪种类型的权限。
+        self.type = type
+
+    def validate(self):
+        if self.policy_list:
+            for k in self.policy_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        result['policyList'] = []
+        if self.policy_list is not None:
+            for k in self.policy_list:
+                result['policyList'].append(k.to_map() if k else None)
+        if self.privacy is not None:
+            result['privacy'] = self.privacy
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        self.policy_list = []
+        if m.get('policyList') is not None:
+            for k in m.get('policyList'):
+                temp_model = DeletePermissionResponseBodyDataPolicyList()
+                self.policy_list.append(temp_model.from_map(k))
+        if m.get('privacy') is not None:
+            self.privacy = m.get('privacy')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class DeletePermissionResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: DeletePermissionResponseBodyData = None,
+        success: bool = None,
+    ):
+        self.data = data
+        # 请求成功的标识。
+        self.success = success
+
+    def validate(self):
+        if self.data:
+            self.data.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            temp_model = DeletePermissionResponseBodyData()
+            self.data = temp_model.from_map(m['data'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class DeletePermissionResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: DeletePermissionResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = DeletePermissionResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -3407,6 +4122,304 @@ class UpdateObjectiveResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = UpdateObjectiveResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdatePrivacyHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdatePrivacyRequest(TeaModel):
+    def __init__(
+        self,
+        privacy: str = None,
+        target_id: str = None,
+        target_type: str = None,
+        user_id: str = None,
+    ):
+        # 权限修改的类型
+        self.privacy = privacy
+        # 当前目标的 ID
+        self.target_id = target_id
+        # 当前目标的权限类型。
+        self.target_type = target_type
+        # 当前用户的userId。
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.privacy is not None:
+            result['privacy'] = self.privacy
+        if self.target_id is not None:
+            result['targetId'] = self.target_id
+        if self.target_type is not None:
+            result['targetType'] = self.target_type
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('privacy') is not None:
+            self.privacy = m.get('privacy')
+        if m.get('targetId') is not None:
+            self.target_id = m.get('targetId')
+        if m.get('targetType') is not None:
+            self.target_type = m.get('targetType')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class UpdatePrivacyResponseBodyDataPolicyListMemberList(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+        nickname: str = None,
+        type: str = None,
+    ):
+        self.id = id
+        self.nickname = nickname
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.nickname is not None:
+            result['nickname'] = self.nickname
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('nickname') is not None:
+            self.nickname = m.get('nickname')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class UpdatePrivacyResponseBodyDataPolicyList(TeaModel):
+    def __init__(
+        self,
+        member_list: List[UpdatePrivacyResponseBodyDataPolicyListMemberList] = None,
+        name: str = None,
+        type: int = None,
+    ):
+        self.member_list = member_list
+        self.name = name
+        self.type = type
+
+    def validate(self):
+        if self.member_list:
+            for k in self.member_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['memberList'] = []
+        if self.member_list is not None:
+            for k in self.member_list:
+                result['memberList'].append(k.to_map() if k else None)
+        if self.name is not None:
+            result['name'] = self.name
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.member_list = []
+        if m.get('memberList') is not None:
+            for k in m.get('memberList'):
+                temp_model = UpdatePrivacyResponseBodyDataPolicyListMemberList()
+                self.member_list.append(temp_model.from_map(k))
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class UpdatePrivacyResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+        policy_list: List[UpdatePrivacyResponseBodyDataPolicyList] = None,
+        privacy: str = None,
+        type: str = None,
+    ):
+        self.id = id
+        # 权限列表
+        self.policy_list = policy_list
+        # 是否可见的标识。
+        self.privacy = privacy
+        # 哪种类型的权限。
+        self.type = type
+
+    def validate(self):
+        if self.policy_list:
+            for k in self.policy_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        result['policyList'] = []
+        if self.policy_list is not None:
+            for k in self.policy_list:
+                result['policyList'].append(k.to_map() if k else None)
+        if self.privacy is not None:
+            result['privacy'] = self.privacy
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        self.policy_list = []
+        if m.get('policyList') is not None:
+            for k in m.get('policyList'):
+                temp_model = UpdatePrivacyResponseBodyDataPolicyList()
+                self.policy_list.append(temp_model.from_map(k))
+        if m.get('privacy') is not None:
+            self.privacy = m.get('privacy')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class UpdatePrivacyResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: UpdatePrivacyResponseBodyData = None,
+        success: bool = None,
+    ):
+        # 返回的数据。
+        self.data = data
+        # 请求成功的标识。
+        self.success = success
+
+    def validate(self):
+        if self.data:
+            self.data.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            temp_model = UpdatePrivacyResponseBodyData()
+            self.data = temp_model.from_map(m['data'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class UpdatePrivacyResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: UpdatePrivacyResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = UpdatePrivacyResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

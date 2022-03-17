@@ -4922,8 +4922,11 @@ class MultiOrgPermissionGrantHeaders(TeaModel):
 class MultiOrgPermissionGrantRequest(TeaModel):
     def __init__(
         self,
+        grant_dept_id_list: List[int] = None,
         join_corp_id: str = None,
     ):
+        # 被授权的部门，如果不填则默认全组织
+        self.grant_dept_id_list = grant_dept_id_list
         # 授权加入的组织corpId
         self.join_corp_id = join_corp_id
 
@@ -4936,12 +4939,16 @@ class MultiOrgPermissionGrantRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.grant_dept_id_list is not None:
+            result['grantDeptIdList'] = self.grant_dept_id_list
         if self.join_corp_id is not None:
             result['joinCorpId'] = self.join_corp_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('grantDeptIdList') is not None:
+            self.grant_dept_id_list = m.get('grantDeptIdList')
         if m.get('joinCorpId') is not None:
             self.join_corp_id = m.get('joinCorpId')
         return self
