@@ -2349,15 +2349,18 @@ export class MultiOrgPermissionGrantHeaders extends $tea.Model {
 }
 
 export class MultiOrgPermissionGrantRequest extends $tea.Model {
+  grantDeptIdList?: number[];
   joinCorpId?: string;
   static names(): { [key: string]: string } {
     return {
+      grantDeptIdList: 'grantDeptIdList',
       joinCorpId: 'joinCorpId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      grantDeptIdList: { 'type': 'array', 'itemType': 'number' },
       joinCorpId: 'string',
     };
   }
@@ -5511,6 +5514,10 @@ export default class Client extends OpenApi {
   async multiOrgPermissionGrantWithOptions(request: MultiOrgPermissionGrantRequest, headers: MultiOrgPermissionGrantHeaders, runtime: $Util.RuntimeOptions): Promise<MultiOrgPermissionGrantResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.grantDeptIdList)) {
+      body["grantDeptIdList"] = request.grantDeptIdList;
+    }
+
     if (!Util.isUnset(request.joinCorpId)) {
       body["joinCorpId"] = request.joinCorpId;
     }

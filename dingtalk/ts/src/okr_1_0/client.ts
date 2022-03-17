@@ -99,6 +99,100 @@ export class AlignObjectiveResponse extends $tea.Model {
   }
 }
 
+export class BatchAddPermissionHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchAddPermissionRequest extends $tea.Model {
+  list?: BatchAddPermissionRequestList[];
+  targetId?: string;
+  targetType?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      list: 'list',
+      targetId: 'targetId',
+      targetType: 'targetType',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      list: { 'type': 'array', 'itemType': BatchAddPermissionRequestList },
+      targetId: 'string',
+      targetType: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchAddPermissionResponseBody extends $tea.Model {
+  data?: BatchAddPermissionResponseBodyData;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: BatchAddPermissionResponseBodyData,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchAddPermissionResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: BatchAddPermissionResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: BatchAddPermissionResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BatchQueryObjectiveHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -558,6 +652,106 @@ export class DeleteObjectiveResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: DeleteObjectiveResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeletePermissionHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeletePermissionRequest extends $tea.Model {
+  id?: string;
+  policyType?: number;
+  targetId?: string;
+  targetType?: string;
+  type?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+      policyType: 'policyType',
+      targetId: 'targetId',
+      targetType: 'targetType',
+      type: 'type',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'string',
+      policyType: 'number',
+      targetId: 'string',
+      targetType: 'string',
+      type: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeletePermissionResponseBody extends $tea.Model {
+  data?: DeletePermissionResponseBodyData;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: DeletePermissionResponseBodyData,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeletePermissionResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: DeletePermissionResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: DeletePermissionResponseBody,
     };
   }
 
@@ -1278,6 +1472,100 @@ export class UpdateObjectiveResponse extends $tea.Model {
   }
 }
 
+export class UpdatePrivacyHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdatePrivacyRequest extends $tea.Model {
+  privacy?: string;
+  targetId?: string;
+  targetType?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      privacy: 'privacy',
+      targetId: 'targetId',
+      targetType: 'targetType',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      privacy: 'string',
+      targetId: 'string',
+      targetType: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdatePrivacyResponseBody extends $tea.Model {
+  data?: UpdatePrivacyResponseBodyData;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: UpdatePrivacyResponseBodyData,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdatePrivacyResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdatePrivacyResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdatePrivacyResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AlignObjectiveResponseBodyData extends $tea.Model {
   alignId?: Readable;
   id?: Readable;
@@ -1292,6 +1580,150 @@ export class AlignObjectiveResponseBodyData extends $tea.Model {
     return {
       alignId: 'Readable',
       id: 'Readable',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchAddPermissionRequestListMember extends $tea.Model {
+  id?: string;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'string',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchAddPermissionRequestList extends $tea.Model {
+  member?: BatchAddPermissionRequestListMember;
+  policyType?: number;
+  static names(): { [key: string]: string } {
+    return {
+      member: 'member',
+      policyType: 'policyType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      member: BatchAddPermissionRequestListMember,
+      policyType: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchAddPermissionResponseBodyDataPermissionTreePolicyListMemberList extends $tea.Model {
+  id?: string;
+  nickname?: string;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+      nickname: 'nickname',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'string',
+      nickname: 'string',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchAddPermissionResponseBodyDataPermissionTreePolicyList extends $tea.Model {
+  memberList?: BatchAddPermissionResponseBodyDataPermissionTreePolicyListMemberList[];
+  name?: string;
+  type?: number;
+  static names(): { [key: string]: string } {
+    return {
+      memberList: 'memberList',
+      name: 'name',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      memberList: { 'type': 'array', 'itemType': BatchAddPermissionResponseBodyDataPermissionTreePolicyListMemberList },
+      name: 'string',
+      type: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchAddPermissionResponseBodyDataPermissionTree extends $tea.Model {
+  id?: string;
+  policyList?: BatchAddPermissionResponseBodyDataPermissionTreePolicyList[];
+  privacy?: string;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+      policyList: 'policyList',
+      privacy: 'privacy',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'string',
+      policyList: { 'type': 'array', 'itemType': BatchAddPermissionResponseBodyDataPermissionTreePolicyList },
+      privacy: 'string',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchAddPermissionResponseBodyData extends $tea.Model {
+  hasInvalidUser?: boolean;
+  permissionTree?: BatchAddPermissionResponseBodyDataPermissionTree;
+  static names(): { [key: string]: string } {
+    return {
+      hasInvalidUser: 'hasInvalidUser',
+      permissionTree: 'permissionTree',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasInvalidUser: 'boolean',
+      permissionTree: BatchAddPermissionResponseBodyDataPermissionTree,
     };
   }
 
@@ -1559,6 +1991,84 @@ export class DeleteObjectiveResponseBodyData extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       id: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeletePermissionResponseBodyDataPolicyListMemberList extends $tea.Model {
+  id?: string;
+  nickname?: string;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+      nickname: 'nickname',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'string',
+      nickname: 'string',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeletePermissionResponseBodyDataPolicyList extends $tea.Model {
+  memberList?: DeletePermissionResponseBodyDataPolicyListMemberList[];
+  name?: string;
+  type?: number;
+  static names(): { [key: string]: string } {
+    return {
+      memberList: 'memberList',
+      name: 'name',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      memberList: { 'type': 'array', 'itemType': DeletePermissionResponseBodyDataPolicyListMemberList },
+      name: 'string',
+      type: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeletePermissionResponseBodyData extends $tea.Model {
+  id?: string;
+  policyList?: DeletePermissionResponseBodyDataPolicyList[];
+  privacy?: string;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+      policyList: 'policyList',
+      privacy: 'privacy',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'string',
+      policyList: { 'type': 'array', 'itemType': DeletePermissionResponseBodyDataPolicyList },
+      privacy: 'string',
+      type: 'string',
     };
   }
 
@@ -2003,6 +2513,84 @@ export class UpdateObjectiveResponseBodyData extends $tea.Model {
   }
 }
 
+export class UpdatePrivacyResponseBodyDataPolicyListMemberList extends $tea.Model {
+  id?: string;
+  nickname?: string;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+      nickname: 'nickname',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'string',
+      nickname: 'string',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdatePrivacyResponseBodyDataPolicyList extends $tea.Model {
+  memberList?: UpdatePrivacyResponseBodyDataPolicyListMemberList[];
+  name?: string;
+  type?: number;
+  static names(): { [key: string]: string } {
+    return {
+      memberList: 'memberList',
+      name: 'name',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      memberList: { 'type': 'array', 'itemType': UpdatePrivacyResponseBodyDataPolicyListMemberList },
+      name: 'string',
+      type: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdatePrivacyResponseBodyData extends $tea.Model {
+  id?: string;
+  policyList?: UpdatePrivacyResponseBodyDataPolicyList[];
+  privacy?: string;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+      policyList: 'policyList',
+      privacy: 'privacy',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'string',
+      policyList: { 'type': 'array', 'itemType': UpdatePrivacyResponseBodyDataPolicyList },
+      privacy: 'string',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
 
@@ -2054,6 +2642,49 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<AlignObjectiveResponse>(await this.doROARequest("AlignObjective", "okr_1.0", "HTTP", "POST", "AK", `/v1.0/okr/objectives/${objectiveId}/alignments`, "json", req, runtime), new AlignObjectiveResponse({}));
+  }
+
+  async batchAddPermission(request: BatchAddPermissionRequest): Promise<BatchAddPermissionResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BatchAddPermissionHeaders({ });
+    return await this.batchAddPermissionWithOptions(request, headers, runtime);
+  }
+
+  async batchAddPermissionWithOptions(request: BatchAddPermissionRequest, headers: BatchAddPermissionHeaders, runtime: $Util.RuntimeOptions): Promise<BatchAddPermissionResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.list)) {
+      body["list"] = request.list;
+    }
+
+    if (!Util.isUnset(request.targetId)) {
+      body["targetId"] = request.targetId;
+    }
+
+    if (!Util.isUnset(request.targetType)) {
+      body["targetType"] = request.targetType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<BatchAddPermissionResponse>(await this.doROARequest("BatchAddPermission", "okr_1.0", "HTTP", "POST", "AK", `/v1.0/okr/permissions/batch`, "json", req, runtime), new BatchAddPermissionResponse({}));
   }
 
   async batchQueryObjective(request: BatchQueryObjectiveRequest): Promise<BatchQueryObjectiveResponse> {
@@ -2262,6 +2893,55 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<DeleteObjectiveResponse>(await this.doROARequest("DeleteObjective", "okr_1.0", "HTTP", "DELETE", "AK", `/v1.0/okr/objectives/${objectiveId}`, "json", req, runtime), new DeleteObjectiveResponse({}));
+  }
+
+  async deletePermission(request: DeletePermissionRequest): Promise<DeletePermissionResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DeletePermissionHeaders({ });
+    return await this.deletePermissionWithOptions(request, headers, runtime);
+  }
+
+  async deletePermissionWithOptions(request: DeletePermissionRequest, headers: DeletePermissionHeaders, runtime: $Util.RuntimeOptions): Promise<DeletePermissionResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.id)) {
+      query["id"] = request.id;
+    }
+
+    if (!Util.isUnset(request.policyType)) {
+      query["policyType"] = request.policyType;
+    }
+
+    if (!Util.isUnset(request.targetId)) {
+      query["targetId"] = request.targetId;
+    }
+
+    if (!Util.isUnset(request.targetType)) {
+      query["targetType"] = request.targetType;
+    }
+
+    if (!Util.isUnset(request.type)) {
+      query["type"] = request.type;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<DeletePermissionResponse>(await this.doROARequest("DeletePermission", "okr_1.0", "HTTP", "DELETE", "AK", `/v1.0/okr/permissions/delete`, "json", req, runtime), new DeletePermissionResponse({}));
   }
 
   async getPeriodList(): Promise<GetPeriodListResponse> {
@@ -2567,6 +3247,49 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<UpdateObjectiveResponse>(await this.doROARequest("UpdateObjective", "okr_1.0", "HTTP", "PUT", "AK", `/v1.0/okr/objectives/${objectiveId}`, "json", req, runtime), new UpdateObjectiveResponse({}));
+  }
+
+  async updatePrivacy(request: UpdatePrivacyRequest): Promise<UpdatePrivacyResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdatePrivacyHeaders({ });
+    return await this.updatePrivacyWithOptions(request, headers, runtime);
+  }
+
+  async updatePrivacyWithOptions(request: UpdatePrivacyRequest, headers: UpdatePrivacyHeaders, runtime: $Util.RuntimeOptions): Promise<UpdatePrivacyResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.privacy)) {
+      body["privacy"] = request.privacy;
+    }
+
+    if (!Util.isUnset(request.targetId)) {
+      body["targetId"] = request.targetId;
+    }
+
+    if (!Util.isUnset(request.targetType)) {
+      body["targetType"] = request.targetType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdatePrivacyResponse>(await this.doROARequest("UpdatePrivacy", "okr_1.0", "HTTP", "PUT", "AK", `/v1.0/okr/permissions/privacies`, "json", req, runtime), new UpdatePrivacyResponse({}));
   }
 
 }

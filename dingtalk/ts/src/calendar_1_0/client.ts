@@ -1182,6 +1182,7 @@ export class ListEventsHeaders extends $tea.Model {
 }
 
 export class ListEventsRequest extends $tea.Model {
+  maxAttendees?: number;
   maxResults?: number;
   nextToken?: string;
   showDeleted?: boolean;
@@ -1190,6 +1191,7 @@ export class ListEventsRequest extends $tea.Model {
   timeMin?: string;
   static names(): { [key: string]: string } {
     return {
+      maxAttendees: 'maxAttendees',
       maxResults: 'maxResults',
       nextToken: 'nextToken',
       showDeleted: 'showDeleted',
@@ -1201,6 +1203,7 @@ export class ListEventsRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      maxAttendees: 'number',
       maxResults: 'number',
       nextToken: 'string',
       showDeleted: 'boolean',
@@ -1262,6 +1265,97 @@ export class ListEventsResponse extends $tea.Model {
   }
 }
 
+export class ListEventsInstancesHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListEventsInstancesRequest extends $tea.Model {
+  maxAttendees?: number;
+  maxResults?: number;
+  seriesMasterId?: string;
+  timeMin?: string;
+  static names(): { [key: string]: string } {
+    return {
+      maxAttendees: 'maxAttendees',
+      maxResults: 'maxResults',
+      seriesMasterId: 'seriesMasterId',
+      timeMin: 'timeMin',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxAttendees: 'number',
+      maxResults: 'number',
+      seriesMasterId: 'string',
+      timeMin: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListEventsInstancesResponseBody extends $tea.Model {
+  events?: ListEventsInstancesResponseBodyEvents[];
+  static names(): { [key: string]: string } {
+    return {
+      events: 'events',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      events: { 'type': 'array', 'itemType': ListEventsInstancesResponseBodyEvents },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListEventsInstancesResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ListEventsInstancesResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ListEventsInstancesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListEventsViewHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1285,12 +1379,14 @@ export class ListEventsViewHeaders extends $tea.Model {
 }
 
 export class ListEventsViewRequest extends $tea.Model {
+  maxAttendees?: number;
   maxResults?: number;
   nextToken?: string;
   timeMax?: string;
   timeMin?: string;
   static names(): { [key: string]: string } {
     return {
+      maxAttendees: 'maxAttendees',
       maxResults: 'maxResults',
       nextToken: 'nextToken',
       timeMax: 'timeMax',
@@ -1300,6 +1396,7 @@ export class ListEventsViewRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      maxAttendees: 'number',
       maxResults: 'number',
       nextToken: 'string',
       timeMax: 'string',
@@ -3077,6 +3174,320 @@ export class ListEventsResponseBodyEvents extends $tea.Model {
   }
 }
 
+export class ListEventsInstancesResponseBodyEventsAttendees extends $tea.Model {
+  displayName?: string;
+  id?: string;
+  responseStatus?: string;
+  self?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      displayName: 'displayName',
+      id: 'id',
+      responseStatus: 'responseStatus',
+      self: 'self',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      displayName: 'string',
+      id: 'string',
+      responseStatus: 'string',
+      self: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListEventsInstancesResponseBodyEventsEnd extends $tea.Model {
+  date?: string;
+  dateTime?: string;
+  timeZone?: string;
+  static names(): { [key: string]: string } {
+    return {
+      date: 'date',
+      dateTime: 'dateTime',
+      timeZone: 'timeZone',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      date: 'string',
+      dateTime: 'string',
+      timeZone: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListEventsInstancesResponseBodyEventsLocation extends $tea.Model {
+  displayName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      displayName: 'displayName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      displayName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListEventsInstancesResponseBodyEventsOnlineMeetingInfo extends $tea.Model {
+  conferenceId?: string;
+  type?: string;
+  url?: string;
+  static names(): { [key: string]: string } {
+    return {
+      conferenceId: 'conferenceId',
+      type: 'type',
+      url: 'url',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      conferenceId: 'string',
+      type: 'string',
+      url: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListEventsInstancesResponseBodyEventsOrganizer extends $tea.Model {
+  displayName?: string;
+  id?: string;
+  responseStatus?: string;
+  self?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      displayName: 'displayName',
+      id: 'id',
+      responseStatus: 'responseStatus',
+      self: 'self',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      displayName: 'string',
+      id: 'string',
+      responseStatus: 'string',
+      self: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListEventsInstancesResponseBodyEventsRecurrencePattern extends $tea.Model {
+  dayOfMonth?: number;
+  daysOfWeek?: string;
+  index?: string;
+  interval?: number;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dayOfMonth: 'dayOfMonth',
+      daysOfWeek: 'daysOfWeek',
+      index: 'index',
+      interval: 'interval',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dayOfMonth: 'number',
+      daysOfWeek: 'string',
+      index: 'string',
+      interval: 'number',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListEventsInstancesResponseBodyEventsRecurrenceRange extends $tea.Model {
+  endDate?: string;
+  numberOfOccurrences?: number;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      endDate: 'endDate',
+      numberOfOccurrences: 'numberOfOccurrences',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      endDate: 'string',
+      numberOfOccurrences: 'number',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListEventsInstancesResponseBodyEventsRecurrence extends $tea.Model {
+  pattern?: ListEventsInstancesResponseBodyEventsRecurrencePattern;
+  range?: ListEventsInstancesResponseBodyEventsRecurrenceRange;
+  static names(): { [key: string]: string } {
+    return {
+      pattern: 'pattern',
+      range: 'range',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      pattern: ListEventsInstancesResponseBodyEventsRecurrencePattern,
+      range: ListEventsInstancesResponseBodyEventsRecurrenceRange,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListEventsInstancesResponseBodyEventsReminders extends $tea.Model {
+  method?: string;
+  minutes?: string;
+  static names(): { [key: string]: string } {
+    return {
+      method: 'method',
+      minutes: 'minutes',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      method: 'string',
+      minutes: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListEventsInstancesResponseBodyEventsStart extends $tea.Model {
+  date?: string;
+  dateTime?: string;
+  timeZone?: string;
+  static names(): { [key: string]: string } {
+    return {
+      date: 'date',
+      dateTime: 'dateTime',
+      timeZone: 'timeZone',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      date: 'string',
+      dateTime: 'string',
+      timeZone: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListEventsInstancesResponseBodyEvents extends $tea.Model {
+  attendees?: ListEventsInstancesResponseBodyEventsAttendees[];
+  createTime?: string;
+  description?: string;
+  end?: ListEventsInstancesResponseBodyEventsEnd;
+  id?: string;
+  isAllDay?: boolean;
+  location?: ListEventsInstancesResponseBodyEventsLocation;
+  onlineMeetingInfo?: ListEventsInstancesResponseBodyEventsOnlineMeetingInfo;
+  organizer?: ListEventsInstancesResponseBodyEventsOrganizer;
+  recurrence?: ListEventsInstancesResponseBodyEventsRecurrence;
+  reminders?: ListEventsInstancesResponseBodyEventsReminders[];
+  seriesMasterId?: string;
+  start?: ListEventsInstancesResponseBodyEventsStart;
+  status?: string;
+  summary?: string;
+  updateTime?: string;
+  static names(): { [key: string]: string } {
+    return {
+      attendees: 'attendees',
+      createTime: 'createTime',
+      description: 'description',
+      end: 'end',
+      id: 'id',
+      isAllDay: 'isAllDay',
+      location: 'location',
+      onlineMeetingInfo: 'onlineMeetingInfo',
+      organizer: 'organizer',
+      recurrence: 'recurrence',
+      reminders: 'reminders',
+      seriesMasterId: 'seriesMasterId',
+      start: 'start',
+      status: 'status',
+      summary: 'summary',
+      updateTime: 'updateTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      attendees: { 'type': 'array', 'itemType': ListEventsInstancesResponseBodyEventsAttendees },
+      createTime: 'string',
+      description: 'string',
+      end: ListEventsInstancesResponseBodyEventsEnd,
+      id: 'string',
+      isAllDay: 'boolean',
+      location: ListEventsInstancesResponseBodyEventsLocation,
+      onlineMeetingInfo: ListEventsInstancesResponseBodyEventsOnlineMeetingInfo,
+      organizer: ListEventsInstancesResponseBodyEventsOrganizer,
+      recurrence: ListEventsInstancesResponseBodyEventsRecurrence,
+      reminders: { 'type': 'array', 'itemType': ListEventsInstancesResponseBodyEventsReminders },
+      seriesMasterId: 'string',
+      start: ListEventsInstancesResponseBodyEventsStart,
+      status: 'string',
+      summary: 'string',
+      updateTime: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListEventsViewResponseBodyEventsAttendees extends $tea.Model {
   displayName?: string;
   id?: string;
@@ -4311,6 +4722,10 @@ export default class Client extends OpenApi {
     userId = OpenApiUtil.getEncodeParam(userId);
     calendarId = OpenApiUtil.getEncodeParam(calendarId);
     let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxAttendees)) {
+      query["maxAttendees"] = request.maxAttendees;
+    }
+
     if (!Util.isUnset(request.maxResults)) {
       query["maxResults"] = request.maxResults;
     }
@@ -4351,6 +4766,49 @@ export default class Client extends OpenApi {
     return $tea.cast<ListEventsResponse>(await this.doROARequest("ListEvents", "calendar_1.0", "HTTP", "GET", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events`, "json", req, runtime), new ListEventsResponse({}));
   }
 
+  async listEventsInstances(userId: string, calendarId: string, request: ListEventsInstancesRequest): Promise<ListEventsInstancesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListEventsInstancesHeaders({ });
+    return await this.listEventsInstancesWithOptions(userId, calendarId, request, headers, runtime);
+  }
+
+  async listEventsInstancesWithOptions(userId: string, calendarId: string, request: ListEventsInstancesRequest, headers: ListEventsInstancesHeaders, runtime: $Util.RuntimeOptions): Promise<ListEventsInstancesResponse> {
+    Util.validateModel(request);
+    userId = OpenApiUtil.getEncodeParam(userId);
+    calendarId = OpenApiUtil.getEncodeParam(calendarId);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxAttendees)) {
+      query["maxAttendees"] = request.maxAttendees;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.seriesMasterId)) {
+      query["seriesMasterId"] = request.seriesMasterId;
+    }
+
+    if (!Util.isUnset(request.timeMin)) {
+      query["timeMin"] = request.timeMin;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<ListEventsInstancesResponse>(await this.doROARequest("ListEventsInstances", "calendar_1.0", "HTTP", "GET", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/instances`, "json", req, runtime), new ListEventsInstancesResponse({}));
+  }
+
   async listEventsView(userId: string, calendarId: string, request: ListEventsViewRequest): Promise<ListEventsViewResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListEventsViewHeaders({ });
@@ -4362,6 +4820,10 @@ export default class Client extends OpenApi {
     userId = OpenApiUtil.getEncodeParam(userId);
     calendarId = OpenApiUtil.getEncodeParam(calendarId);
     let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxAttendees)) {
+      query["maxAttendees"] = request.maxAttendees;
+    }
+
     if (!Util.isUnset(request.maxResults)) {
       query["maxResults"] = request.maxResults;
     }
