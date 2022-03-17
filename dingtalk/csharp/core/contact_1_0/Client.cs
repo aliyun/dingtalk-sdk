@@ -1954,6 +1954,10 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GrantDeptIdList))
+            {
+                body["grantDeptIdList"] = request.GrantDeptIdList;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.JoinCorpId))
             {
                 body["joinCorpId"] = request.JoinCorpId;
@@ -1979,6 +1983,10 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GrantDeptIdList))
+            {
+                body["grantDeptIdList"] = request.GrantDeptIdList;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.JoinCorpId))
             {
                 body["joinCorpId"] = request.JoinCorpId;

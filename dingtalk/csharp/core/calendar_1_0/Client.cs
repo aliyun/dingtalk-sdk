@@ -1102,6 +1102,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             calendarId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(calendarId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxAttendees))
+            {
+                query["maxAttendees"] = request.MaxAttendees;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
             {
                 query["maxResults"] = request.MaxResults;
@@ -1149,6 +1153,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             calendarId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(calendarId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxAttendees))
+            {
+                query["maxAttendees"] = request.MaxAttendees;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
             {
                 query["maxResults"] = request.MaxResults;
@@ -1190,6 +1198,98 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             return TeaModel.ToObject<ListEventsResponse>(await DoROARequestAsync("ListEvents", "calendar_1.0", "HTTP", "GET", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events", "json", req, runtime));
         }
 
+        public ListEventsInstancesResponse ListEventsInstances(string userId, string calendarId, ListEventsInstancesRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListEventsInstancesHeaders headers = new ListEventsInstancesHeaders();
+            return ListEventsInstancesWithOptions(userId, calendarId, request, headers, runtime);
+        }
+
+        public async Task<ListEventsInstancesResponse> ListEventsInstancesAsync(string userId, string calendarId, ListEventsInstancesRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListEventsInstancesHeaders headers = new ListEventsInstancesHeaders();
+            return await ListEventsInstancesWithOptionsAsync(userId, calendarId, request, headers, runtime);
+        }
+
+        public ListEventsInstancesResponse ListEventsInstancesWithOptions(string userId, string calendarId, ListEventsInstancesRequest request, ListEventsInstancesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
+            calendarId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(calendarId);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxAttendees))
+            {
+                query["maxAttendees"] = request.MaxAttendees;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SeriesMasterId))
+            {
+                query["seriesMasterId"] = request.SeriesMasterId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TimeMin))
+            {
+                query["timeMin"] = request.TimeMin;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<ListEventsInstancesResponse>(DoROARequest("ListEventsInstances", "calendar_1.0", "HTTP", "GET", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/instances", "json", req, runtime));
+        }
+
+        public async Task<ListEventsInstancesResponse> ListEventsInstancesWithOptionsAsync(string userId, string calendarId, ListEventsInstancesRequest request, ListEventsInstancesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
+            calendarId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(calendarId);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxAttendees))
+            {
+                query["maxAttendees"] = request.MaxAttendees;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SeriesMasterId))
+            {
+                query["seriesMasterId"] = request.SeriesMasterId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TimeMin))
+            {
+                query["timeMin"] = request.TimeMin;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<ListEventsInstancesResponse>(await DoROARequestAsync("ListEventsInstances", "calendar_1.0", "HTTP", "GET", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/instances", "json", req, runtime));
+        }
+
         public ListEventsViewResponse ListEventsView(string userId, string calendarId, ListEventsViewRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1210,6 +1310,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             calendarId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(calendarId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxAttendees))
+            {
+                query["maxAttendees"] = request.MaxAttendees;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
             {
                 query["maxResults"] = request.MaxResults;
@@ -1249,6 +1353,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             calendarId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(calendarId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxAttendees))
+            {
+                query["maxAttendees"] = request.MaxAttendees;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
             {
                 query["maxResults"] = request.MaxResults;
