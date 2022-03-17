@@ -43,6 +43,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListAttendeesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListCalendarsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListCalendarsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsInstancesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsInstancesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsInstancesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsViewHeaders;
@@ -811,6 +814,9 @@ class Dingtalk extends OpenApiClient
         $userId     = OpenApiUtilClient::getEncodeParam($userId);
         $calendarId = OpenApiUtilClient::getEncodeParam($calendarId);
         $query      = [];
+        if (!Utils::isUnset($request->maxAttendees)) {
+            @$query['maxAttendees'] = $request->maxAttendees;
+        }
         if (!Utils::isUnset($request->maxResults)) {
             @$query['maxResults'] = $request->maxResults;
         }
@@ -845,6 +851,63 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param string                     $userId
+     * @param string                     $calendarId
+     * @param ListEventsInstancesRequest $request
+     *
+     * @return ListEventsInstancesResponse
+     */
+    public function listEventsInstances($userId, $calendarId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListEventsInstancesHeaders([]);
+
+        return $this->listEventsInstancesWithOptions($userId, $calendarId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                     $userId
+     * @param string                     $calendarId
+     * @param ListEventsInstancesRequest $request
+     * @param ListEventsInstancesHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return ListEventsInstancesResponse
+     */
+    public function listEventsInstancesWithOptions($userId, $calendarId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $userId     = OpenApiUtilClient::getEncodeParam($userId);
+        $calendarId = OpenApiUtilClient::getEncodeParam($calendarId);
+        $query      = [];
+        if (!Utils::isUnset($request->maxAttendees)) {
+            @$query['maxAttendees'] = $request->maxAttendees;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->seriesMasterId)) {
+            @$query['seriesMasterId'] = $request->seriesMasterId;
+        }
+        if (!Utils::isUnset($request->timeMin)) {
+            @$query['timeMin'] = $request->timeMin;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ListEventsInstancesResponse::fromMap($this->doROARequest('ListEventsInstances', 'calendar_1.0', 'HTTP', 'GET', 'AK', '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/instances', 'json', $req, $runtime));
+    }
+
+    /**
      * @param string                $userId
      * @param string                $calendarId
      * @param ListEventsViewRequest $request
@@ -874,6 +937,9 @@ class Dingtalk extends OpenApiClient
         $userId     = OpenApiUtilClient::getEncodeParam($userId);
         $calendarId = OpenApiUtilClient::getEncodeParam($calendarId);
         $query      = [];
+        if (!Utils::isUnset($request->maxAttendees)) {
+            @$query['maxAttendees'] = $request->maxAttendees;
+        }
         if (!Utils::isUnset($request->maxResults)) {
             @$query['maxResults'] = $request->maxResults;
         }

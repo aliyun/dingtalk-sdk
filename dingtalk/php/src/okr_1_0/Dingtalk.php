@@ -8,6 +8,9 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\AlignObjectiveHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\AlignObjectiveRequest;
 use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\AlignObjectiveResponse;
+use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\BatchAddPermissionHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\BatchAddPermissionRequest;
+use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\BatchAddPermissionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\BatchQueryObjectiveHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\BatchQueryObjectiveRequest;
 use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\BatchQueryObjectiveResponse;
@@ -23,6 +26,9 @@ use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\DeleteKeyResultResponse;
 use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\DeleteObjectiveHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\DeleteObjectiveRequest;
 use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\DeleteObjectiveResponse;
+use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\DeletePermissionHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\DeletePermissionRequest;
+use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\DeletePermissionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\GetPeriodListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\GetPeriodListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\GetPermissionHeaders;
@@ -46,6 +52,9 @@ use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\UpdateKROfWeightResponse;
 use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\UpdateObjectiveHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\UpdateObjectiveRequest;
 use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\UpdateObjectiveResponse;
+use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\UpdatePrivacyHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\UpdatePrivacyRequest;
+use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\UpdatePrivacyResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -113,6 +122,59 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return AlignObjectiveResponse::fromMap($this->doROARequest('AlignObjective', 'okr_1.0', 'HTTP', 'POST', 'AK', '/v1.0/okr/objectives/' . $objectiveId . '/alignments', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param BatchAddPermissionRequest $request
+     *
+     * @return BatchAddPermissionResponse
+     */
+    public function batchAddPermission($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchAddPermissionHeaders([]);
+
+        return $this->batchAddPermissionWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param BatchAddPermissionRequest $request
+     * @param BatchAddPermissionHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return BatchAddPermissionResponse
+     */
+    public function batchAddPermissionWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->list_)) {
+            @$body['list_'] = $request->list_;
+        }
+        if (!Utils::isUnset($request->targetId)) {
+            @$body['targetId'] = $request->targetId;
+        }
+        if (!Utils::isUnset($request->targetType)) {
+            @$body['targetType'] = $request->targetType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return BatchAddPermissionResponse::fromMap($this->doROARequest('BatchAddPermission', 'okr_1.0', 'HTTP', 'POST', 'AK', '/v1.0/okr/permissions/batch', 'json', $req, $runtime));
     }
 
     /**
@@ -374,6 +436,63 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return DeleteObjectiveResponse::fromMap($this->doROARequest('DeleteObjective', 'okr_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/okr/objectives/' . $objectiveId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param DeletePermissionRequest $request
+     *
+     * @return DeletePermissionResponse
+     */
+    public function deletePermission($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeletePermissionHeaders([]);
+
+        return $this->deletePermissionWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param DeletePermissionRequest $request
+     * @param DeletePermissionHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return DeletePermissionResponse
+     */
+    public function deletePermissionWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->id)) {
+            @$query['id'] = $request->id;
+        }
+        if (!Utils::isUnset($request->policyType)) {
+            @$query['policyType'] = $request->policyType;
+        }
+        if (!Utils::isUnset($request->targetId)) {
+            @$query['targetId'] = $request->targetId;
+        }
+        if (!Utils::isUnset($request->targetType)) {
+            @$query['targetType'] = $request->targetType;
+        }
+        if (!Utils::isUnset($request->type)) {
+            @$query['type'] = $request->type;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return DeletePermissionResponse::fromMap($this->doROARequest('DeletePermission', 'okr_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/okr/permissions/delete', 'json', $req, $runtime));
     }
 
     /**
@@ -768,5 +887,58 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return UpdateObjectiveResponse::fromMap($this->doROARequest('UpdateObjective', 'okr_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/okr/objectives/' . $objectiveId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param UpdatePrivacyRequest $request
+     *
+     * @return UpdatePrivacyResponse
+     */
+    public function updatePrivacy($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdatePrivacyHeaders([]);
+
+        return $this->updatePrivacyWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdatePrivacyRequest $request
+     * @param UpdatePrivacyHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return UpdatePrivacyResponse
+     */
+    public function updatePrivacyWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->privacy)) {
+            @$body['privacy'] = $request->privacy;
+        }
+        if (!Utils::isUnset($request->targetId)) {
+            @$body['targetId'] = $request->targetId;
+        }
+        if (!Utils::isUnset($request->targetType)) {
+            @$body['targetType'] = $request->targetType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdatePrivacyResponse::fromMap($this->doROARequest('UpdatePrivacy', 'okr_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/okr/permissions/privacies', 'json', $req, $runtime));
     }
 }

@@ -1412,6 +1412,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->grantDeptIdList)) {
+            @$body['grantDeptIdList'] = $request->grantDeptIdList;
+        }
         if (!Utils::isUnset($request->joinCorpId)) {
             @$body['joinCorpId'] = $request->joinCorpId;
         }

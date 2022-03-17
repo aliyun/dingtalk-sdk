@@ -6,48 +6,40 @@ namespace AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class ListEventsViewRequest extends Model
+class ListEventsInstancesRequest extends Model
 {
     /**
-     * @description 每个日程的参与者查询个数，默认100，最大100。
+     * @description listInstances每个日程的参与者查询个数，默认100，最大100。
      *
      * @var int
      */
     public $maxAttendees;
 
     /**
-     * @description 返回的最大日程数，最大100个，默认100个。
+     * @description listInstances返回的最大日程数，最大100个，默认100个。
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 查询翻页token
+     * @description 循环主日程id。
      *
      * @var string
      */
-    public $nextToken;
+    public $seriesMasterId;
 
     /**
-     * @description 查询截止时间
-     *
-     * @var string
-     */
-    public $timeMax;
-
-    /**
-     * @description 查询开始时间
+     * @description 大于此时间的所有生成实例
      *
      * @var string
      */
     public $timeMin;
     protected $_name = [
-        'maxAttendees' => 'maxAttendees',
-        'maxResults'   => 'maxResults',
-        'nextToken'    => 'nextToken',
-        'timeMax'      => 'timeMax',
-        'timeMin'      => 'timeMin',
+        'maxAttendees'   => 'maxAttendees',
+        'maxResults'     => 'maxResults',
+        'seriesMasterId' => 'seriesMasterId',
+        'timeMin'        => 'timeMin',
     ];
 
     public function validate()
@@ -63,11 +55,8 @@ class ListEventsViewRequest extends Model
         if (null !== $this->maxResults) {
             $res['maxResults'] = $this->maxResults;
         }
-        if (null !== $this->nextToken) {
-            $res['nextToken'] = $this->nextToken;
-        }
-        if (null !== $this->timeMax) {
-            $res['timeMax'] = $this->timeMax;
+        if (null !== $this->seriesMasterId) {
+            $res['seriesMasterId'] = $this->seriesMasterId;
         }
         if (null !== $this->timeMin) {
             $res['timeMin'] = $this->timeMin;
@@ -79,7 +68,7 @@ class ListEventsViewRequest extends Model
     /**
      * @param array $map
      *
-     * @return ListEventsViewRequest
+     * @return ListEventsInstancesRequest
      */
     public static function fromMap($map = [])
     {
@@ -90,11 +79,8 @@ class ListEventsViewRequest extends Model
         if (isset($map['maxResults'])) {
             $model->maxResults = $map['maxResults'];
         }
-        if (isset($map['nextToken'])) {
-            $model->nextToken = $map['nextToken'];
-        }
-        if (isset($map['timeMax'])) {
-            $model->timeMax = $map['timeMax'];
+        if (isset($map['seriesMasterId'])) {
+            $model->seriesMasterId = $map['seriesMasterId'];
         }
         if (isset($map['timeMin'])) {
             $model->timeMin = $map['timeMin'];
