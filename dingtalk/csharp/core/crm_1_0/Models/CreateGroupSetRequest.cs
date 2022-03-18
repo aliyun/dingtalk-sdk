@@ -19,7 +19,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 
         [NameInMap("memberQuota")]
         [Validation(Required=false)]
-        public long? MemberQuota { get; set; }
+        public int? MemberQuota { get; set; }
 
         [NameInMap("name")]
         [Validation(Required=false)]
