@@ -119,6 +119,63 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("AddCrmPersonalCustomer", "crm_1.0", "HTTP", "POST", "AK", "/v1.0/crm/personalCustomers", "json", req, runtime), new AddCrmPersonalCustomerResponse());
     }
 
+    public AddCustomerTrackResponse addCustomerTrack(AddCustomerTrackRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        AddCustomerTrackHeaders headers = new AddCustomerTrackHeaders();
+        return this.addCustomerTrackWithOptions(request, headers, runtime);
+    }
+
+    public AddCustomerTrackResponse addCustomerTrackWithOptions(AddCustomerTrackRequest request, AddCustomerTrackHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.content)) {
+            body.put("content", request.content);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.customerId)) {
+            body.put("customerId", request.customerId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.extraBizInfo)) {
+            body.put("extraBizInfo", request.extraBizInfo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.idempotentKey)) {
+            body.put("idempotentKey", request.idempotentKey);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorUserId)) {
+            body.put("operatorUserId", request.operatorUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.relationType)) {
+            body.put("relationType", request.relationType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.title)) {
+            body.put("title", request.title);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.type)) {
+            body.put("type", request.type);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("AddCustomerTrack", "crm_1.0", "HTTP", "POST", "AK", "/v1.0/crm/customerTracks", "json", req, runtime), new AddCustomerTrackResponse());
+    }
+
     public AddRelationMetaFieldResponse addRelationMetaField(AddRelationMetaFieldRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         AddRelationMetaFieldHeaders headers = new AddRelationMetaFieldHeaders();
@@ -160,6 +217,47 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("AddRelationMetaField", "crm_1.0", "HTTP", "POST", "AK", "/v1.0/crm/relations/metas/fields", "json", req, runtime), new AddRelationMetaFieldResponse());
     }
 
+    public BatchAddRelationDatasResponse batchAddRelationDatas(BatchAddRelationDatasRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        BatchAddRelationDatasHeaders headers = new BatchAddRelationDatasHeaders();
+        return this.batchAddRelationDatasWithOptions(request, headers, runtime);
+    }
+
+    public BatchAddRelationDatasResponse batchAddRelationDatasWithOptions(BatchAddRelationDatasRequest request, BatchAddRelationDatasHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorUserId)) {
+            body.put("operatorUserId", request.operatorUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.relationList)) {
+            body.put("relationList", request.relationList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.relationType)) {
+            body.put("relationType", request.relationType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.skipDuplicateCheck)) {
+            body.put("skipDuplicateCheck", request.skipDuplicateCheck);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("BatchAddRelationDatas", "crm_1.0", "HTTP", "POST", "AK", "/v1.0/crm/relationDatas/batch", "json", req, runtime), new BatchAddRelationDatasResponse());
+    }
+
     public BatchSendOfficialAccountOTOMessageResponse batchSendOfficialAccountOTOMessage(BatchSendOfficialAccountOTOMessageRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         BatchSendOfficialAccountOTOMessageHeaders headers = new BatchSendOfficialAccountOTOMessageHeaders();
@@ -195,6 +293,47 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("BatchSendOfficialAccountOTOMessage", "crm_1.0", "HTTP", "POST", "AK", "/v1.0/crm/officialAccounts/oToMessages/batchSend", "json", req, runtime), new BatchSendOfficialAccountOTOMessageResponse());
+    }
+
+    public BatchUpdateRelationDatasResponse batchUpdateRelationDatas(BatchUpdateRelationDatasRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        BatchUpdateRelationDatasHeaders headers = new BatchUpdateRelationDatasHeaders();
+        return this.batchUpdateRelationDatasWithOptions(request, headers, runtime);
+    }
+
+    public BatchUpdateRelationDatasResponse batchUpdateRelationDatasWithOptions(BatchUpdateRelationDatasRequest request, BatchUpdateRelationDatasHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorUserId)) {
+            body.put("operatorUserId", request.operatorUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.relationList)) {
+            body.put("relationList", request.relationList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.relationType)) {
+            body.put("relationType", request.relationType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.skipDuplicateCheck)) {
+            body.put("skipDuplicateCheck", request.skipDuplicateCheck);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("BatchUpdateRelationDatas", "crm_1.0", "HTTP", "PUT", "AK", "/v1.0/crm/relationDatas/batch", "json", req, runtime), new BatchUpdateRelationDatasResponse());
     }
 
     public CreateCustomerResponse createCustomer(CreateCustomerRequest request) throws Exception {
@@ -746,6 +885,35 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
         return TeaModel.toModel(this.doROARequest("GetOfficialAccountOTOMessageResult", "crm_1.0", "HTTP", "GET", "AK", "/v1.0/crm/officialAccounts/oToMessages/sendResults", "json", req, runtime), new GetOfficialAccountOTOMessageResultResponse());
+    }
+
+    public GetRelationUkSettingResponse getRelationUkSetting(GetRelationUkSettingRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        GetRelationUkSettingHeaders headers = new GetRelationUkSettingHeaders();
+        return this.getRelationUkSettingWithOptions(request, headers, runtime);
+    }
+
+    public GetRelationUkSettingResponse getRelationUkSettingWithOptions(GetRelationUkSettingRequest request, GetRelationUkSettingHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.relationType)) {
+            query.put("relationType", request.relationType);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("GetRelationUkSetting", "crm_1.0", "HTTP", "GET", "AK", "/v1.0/crm/relationUkSettings", "json", req, runtime), new GetRelationUkSettingResponse());
     }
 
     public JoinGroupSetResponse joinGroupSet(JoinGroupSetRequest request) throws Exception {

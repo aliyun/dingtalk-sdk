@@ -11,7 +11,7 @@ public class CreateGroupSetRequest extends TeaModel {
     public String managerUserIds;
 
     @NameInMap("memberQuota")
-    public Long memberQuota;
+    public Integer memberQuota;
 
     @NameInMap("name")
     public String name;
@@ -52,11 +52,11 @@ public class CreateGroupSetRequest extends TeaModel {
         return this.managerUserIds;
     }
 
-    public CreateGroupSetRequest setMemberQuota(Long memberQuota) {
+    public CreateGroupSetRequest setMemberQuota(Integer memberQuota) {
         this.memberQuota = memberQuota;
         return this;
     }
-    public Long getMemberQuota() {
+    public Integer getMemberQuota() {
         return this.memberQuota;
     }
 
