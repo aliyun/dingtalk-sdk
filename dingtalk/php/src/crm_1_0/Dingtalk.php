@@ -11,12 +11,21 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AbandonCustomerResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddCrmPersonalCustomerHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddCrmPersonalCustomerRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddCrmPersonalCustomerResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddCustomerTrackHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddCustomerTrackRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddCustomerTrackResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddRelationMetaFieldHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddRelationMetaFieldRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddRelationMetaFieldResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchAddRelationDatasHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchAddRelationDatasRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchAddRelationDatasResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchSendOfficialAccountOTOMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchSendOfficialAccountOTOMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchSendOfficialAccountOTOMessageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchUpdateRelationDatasHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchUpdateRelationDatasRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchUpdateRelationDatasResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\CreateCustomerHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\CreateCustomerRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\CreateCustomerResponse;
@@ -62,6 +71,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetOfficialAccountContactsResponse
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetOfficialAccountOTOMessageResultHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetOfficialAccountOTOMessageResultRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetOfficialAccountOTOMessageResultResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetRelationUkSettingHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetRelationUkSettingRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetRelationUkSettingResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\JoinGroupSetHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\JoinGroupSetRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\JoinGroupSetResponse;
@@ -241,6 +253,69 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param AddCustomerTrackRequest $request
+     *
+     * @return AddCustomerTrackResponse
+     */
+    public function addCustomerTrack($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddCustomerTrackHeaders([]);
+
+        return $this->addCustomerTrackWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param AddCustomerTrackRequest $request
+     * @param AddCustomerTrackHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return AddCustomerTrackResponse
+     */
+    public function addCustomerTrackWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->content)) {
+            @$body['content'] = $request->content;
+        }
+        if (!Utils::isUnset($request->customerId)) {
+            @$body['customerId'] = $request->customerId;
+        }
+        if (!Utils::isUnset($request->extraBizInfo)) {
+            @$body['extraBizInfo'] = $request->extraBizInfo;
+        }
+        if (!Utils::isUnset($request->idempotentKey)) {
+            @$body['idempotentKey'] = $request->idempotentKey;
+        }
+        if (!Utils::isUnset($request->operatorUserId)) {
+            @$body['operatorUserId'] = $request->operatorUserId;
+        }
+        if (!Utils::isUnset($request->relationType)) {
+            @$body['relationType'] = $request->relationType;
+        }
+        if (!Utils::isUnset($request->title)) {
+            @$body['title'] = $request->title;
+        }
+        if (!Utils::isUnset($request->type)) {
+            @$body['type'] = $request->type;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return AddCustomerTrackResponse::fromMap($this->doROARequest('AddCustomerTrack', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/customerTracks', 'json', $req, $runtime));
+    }
+
+    /**
      * @param AddRelationMetaFieldRequest $request
      *
      * @return AddRelationMetaFieldResponse
@@ -292,6 +367,57 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param BatchAddRelationDatasRequest $request
+     *
+     * @return BatchAddRelationDatasResponse
+     */
+    public function batchAddRelationDatas($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchAddRelationDatasHeaders([]);
+
+        return $this->batchAddRelationDatasWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param BatchAddRelationDatasRequest $request
+     * @param BatchAddRelationDatasHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return BatchAddRelationDatasResponse
+     */
+    public function batchAddRelationDatasWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->operatorUserId)) {
+            @$body['operatorUserId'] = $request->operatorUserId;
+        }
+        if (!Utils::isUnset($request->relationList)) {
+            @$body['relationList'] = $request->relationList;
+        }
+        if (!Utils::isUnset($request->relationType)) {
+            @$body['relationType'] = $request->relationType;
+        }
+        if (!Utils::isUnset($request->skipDuplicateCheck)) {
+            @$body['skipDuplicateCheck'] = $request->skipDuplicateCheck;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return BatchAddRelationDatasResponse::fromMap($this->doROARequest('BatchAddRelationDatas', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/relationDatas/batch', 'json', $req, $runtime));
+    }
+
+    /**
      * @param BatchSendOfficialAccountOTOMessageRequest $request
      *
      * @return BatchSendOfficialAccountOTOMessageResponse
@@ -337,6 +463,57 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return BatchSendOfficialAccountOTOMessageResponse::fromMap($this->doROARequest('BatchSendOfficialAccountOTOMessage', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/officialAccounts/oToMessages/batchSend', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param BatchUpdateRelationDatasRequest $request
+     *
+     * @return BatchUpdateRelationDatasResponse
+     */
+    public function batchUpdateRelationDatas($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchUpdateRelationDatasHeaders([]);
+
+        return $this->batchUpdateRelationDatasWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param BatchUpdateRelationDatasRequest $request
+     * @param BatchUpdateRelationDatasHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return BatchUpdateRelationDatasResponse
+     */
+    public function batchUpdateRelationDatasWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->operatorUserId)) {
+            @$body['operatorUserId'] = $request->operatorUserId;
+        }
+        if (!Utils::isUnset($request->relationList)) {
+            @$body['relationList'] = $request->relationList;
+        }
+        if (!Utils::isUnset($request->relationType)) {
+            @$body['relationType'] = $request->relationType;
+        }
+        if (!Utils::isUnset($request->skipDuplicateCheck)) {
+            @$body['skipDuplicateCheck'] = $request->skipDuplicateCheck;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return BatchUpdateRelationDatasResponse::fromMap($this->doROARequest('BatchUpdateRelationDatas', 'crm_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/crm/relationDatas/batch', 'json', $req, $runtime));
     }
 
     /**
@@ -1074,6 +1251,48 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetOfficialAccountOTOMessageResultResponse::fromMap($this->doROARequest('GetOfficialAccountOTOMessageResult', 'crm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/crm/officialAccounts/oToMessages/sendResults', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetRelationUkSettingRequest $request
+     *
+     * @return GetRelationUkSettingResponse
+     */
+    public function getRelationUkSetting($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetRelationUkSettingHeaders([]);
+
+        return $this->getRelationUkSettingWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetRelationUkSettingRequest $request
+     * @param GetRelationUkSettingHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return GetRelationUkSettingResponse
+     */
+    public function getRelationUkSettingWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->relationType)) {
+            @$query['relationType'] = $request->relationType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetRelationUkSettingResponse::fromMap($this->doROARequest('GetRelationUkSetting', 'crm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/crm/relationUkSettings', 'json', $req, $runtime));
     }
 
     /**
