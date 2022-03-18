@@ -363,6 +363,181 @@ class AddCrmPersonalCustomerResponse(TeaModel):
         return self
 
 
+class AddCustomerTrackHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AddCustomerTrackRequest(TeaModel):
+    def __init__(
+        self,
+        content: str = None,
+        customer_id: str = None,
+        extra_biz_info: str = None,
+        idempotent_key: str = None,
+        operator_user_id: str = None,
+        relation_type: str = None,
+        title: str = None,
+        type: int = None,
+    ):
+        # 动态内容,markdown格式
+        self.content = content
+        # 客户ID
+        self.customer_id = customer_id
+        # 任意业务自定义的数据，可空
+        self.extra_biz_info = extra_biz_info
+        # 幂等key，5分钟内避免重复写入，保证幂等，可空
+        self.idempotent_key = idempotent_key
+        # 操作人userId
+        self.operator_user_id = operator_user_id
+        # 关系类型
+        self.relation_type = relation_type
+        # 动态标题
+        self.title = title
+        # 动态的类型
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        if self.customer_id is not None:
+            result['customerId'] = self.customer_id
+        if self.extra_biz_info is not None:
+            result['extraBizInfo'] = self.extra_biz_info
+        if self.idempotent_key is not None:
+            result['idempotentKey'] = self.idempotent_key
+        if self.operator_user_id is not None:
+            result['operatorUserId'] = self.operator_user_id
+        if self.relation_type is not None:
+            result['relationType'] = self.relation_type
+        if self.title is not None:
+            result['title'] = self.title
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('customerId') is not None:
+            self.customer_id = m.get('customerId')
+        if m.get('extraBizInfo') is not None:
+            self.extra_biz_info = m.get('extraBizInfo')
+        if m.get('idempotentKey') is not None:
+            self.idempotent_key = m.get('idempotentKey')
+        if m.get('operatorUserId') is not None:
+            self.operator_user_id = m.get('operatorUserId')
+        if m.get('relationType') is not None:
+            self.relation_type = m.get('relationType')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class AddCustomerTrackResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        # 是否成功
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class AddCustomerTrackResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: AddCustomerTrackResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = AddCustomerTrackResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class AddRelationMetaFieldHeaders(TeaModel):
     def __init__(
         self,
@@ -738,6 +913,355 @@ class AddRelationMetaFieldResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = AddRelationMetaFieldResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class BatchAddRelationDatasHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class BatchAddRelationDatasRequestRelationListBizDataList(TeaModel):
+    def __init__(
+        self,
+        extend_value: str = None,
+        key: str = None,
+        value: str = None,
+    ):
+        # 模型字段extendValue。
+        self.extend_value = extend_value
+        # 模型字段id。
+        self.key = key
+        # 模型字段value。
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.extend_value is not None:
+            result['extendValue'] = self.extend_value
+        if self.key is not None:
+            result['key'] = self.key
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('extendValue') is not None:
+            self.extend_value = m.get('extendValue')
+        if m.get('key') is not None:
+            self.key = m.get('key')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class BatchAddRelationDatasRequestRelationListRelationPermissionDTO(TeaModel):
+    def __init__(
+        self,
+        participant_user_ids: List[str] = None,
+        principal_user_ids: List[str] = None,
+    ):
+        # 协同人列表
+        self.participant_user_ids = participant_user_ids
+        # 负责人列表
+        self.principal_user_ids = principal_user_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.participant_user_ids is not None:
+            result['participantUserIds'] = self.participant_user_ids
+        if self.principal_user_ids is not None:
+            result['principalUserIds'] = self.principal_user_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('participantUserIds') is not None:
+            self.participant_user_ids = m.get('participantUserIds')
+        if m.get('principalUserIds') is not None:
+            self.principal_user_ids = m.get('principalUserIds')
+        return self
+
+
+class BatchAddRelationDatasRequestRelationList(TeaModel):
+    def __init__(
+        self,
+        biz_data_list: List[BatchAddRelationDatasRequestRelationListBizDataList] = None,
+        biz_ext_map: Dict[str, str] = None,
+        relation_permission_dto: BatchAddRelationDatasRequestRelationListRelationPermissionDTO = None,
+    ):
+        # 关系模型数据。
+        self.biz_data_list = biz_data_list
+        # 扩展业务字段。
+        self.biz_ext_map = biz_ext_map
+        # 负责人、协同人信息。
+        self.relation_permission_dto = relation_permission_dto
+
+    def validate(self):
+        if self.biz_data_list:
+            for k in self.biz_data_list:
+                if k:
+                    k.validate()
+        if self.relation_permission_dto:
+            self.relation_permission_dto.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['bizDataList'] = []
+        if self.biz_data_list is not None:
+            for k in self.biz_data_list:
+                result['bizDataList'].append(k.to_map() if k else None)
+        if self.biz_ext_map is not None:
+            result['bizExtMap'] = self.biz_ext_map
+        if self.relation_permission_dto is not None:
+            result['relationPermissionDTO'] = self.relation_permission_dto.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.biz_data_list = []
+        if m.get('bizDataList') is not None:
+            for k in m.get('bizDataList'):
+                temp_model = BatchAddRelationDatasRequestRelationListBizDataList()
+                self.biz_data_list.append(temp_model.from_map(k))
+        if m.get('bizExtMap') is not None:
+            self.biz_ext_map = m.get('bizExtMap')
+        if m.get('relationPermissionDTO') is not None:
+            temp_model = BatchAddRelationDatasRequestRelationListRelationPermissionDTO()
+            self.relation_permission_dto = temp_model.from_map(m['relationPermissionDTO'])
+        return self
+
+
+class BatchAddRelationDatasRequest(TeaModel):
+    def __init__(
+        self,
+        operator_user_id: str = None,
+        relation_list: List[BatchAddRelationDatasRequestRelationList] = None,
+        relation_type: str = None,
+        skip_duplicate_check: bool = None,
+    ):
+        # 操作人userId
+        self.operator_user_id = operator_user_id
+        # 关系数据列表。
+        self.relation_list = relation_list
+        # 关系类型。
+        self.relation_type = relation_type
+        # 是否跳过查重，默认不跳过。
+        self.skip_duplicate_check = skip_duplicate_check
+
+    def validate(self):
+        if self.relation_list:
+            for k in self.relation_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operator_user_id is not None:
+            result['operatorUserId'] = self.operator_user_id
+        result['relationList'] = []
+        if self.relation_list is not None:
+            for k in self.relation_list:
+                result['relationList'].append(k.to_map() if k else None)
+        if self.relation_type is not None:
+            result['relationType'] = self.relation_type
+        if self.skip_duplicate_check is not None:
+            result['skipDuplicateCheck'] = self.skip_duplicate_check
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operatorUserId') is not None:
+            self.operator_user_id = m.get('operatorUserId')
+        self.relation_list = []
+        if m.get('relationList') is not None:
+            for k in m.get('relationList'):
+                temp_model = BatchAddRelationDatasRequestRelationList()
+                self.relation_list.append(temp_model.from_map(k))
+        if m.get('relationType') is not None:
+            self.relation_type = m.get('relationType')
+        if m.get('skipDuplicateCheck') is not None:
+            self.skip_duplicate_check = m.get('skipDuplicateCheck')
+        return self
+
+
+class BatchAddRelationDatasResponseBodyResults(TeaModel):
+    def __init__(
+        self,
+        duplicated_relation_ids: List[str] = None,
+        error_code: str = None,
+        error_msg: str = None,
+        relation_id: str = None,
+        success: bool = None,
+    ):
+        # 如果因为查重导致失败，表示重复的关系数据id列表。
+        self.duplicated_relation_ids = duplicated_relation_ids
+        # 如果保存失败，则表示失败的错误码。
+        self.error_code = error_code
+        # 如果保存失败，则表示失败的错误原因。
+        self.error_msg = error_msg
+        # 保存成功的关系id。
+        self.relation_id = relation_id
+        # 数据是否保存成功。
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.duplicated_relation_ids is not None:
+            result['duplicatedRelationIds'] = self.duplicated_relation_ids
+        if self.error_code is not None:
+            result['errorCode'] = self.error_code
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.relation_id is not None:
+            result['relationId'] = self.relation_id
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('duplicatedRelationIds') is not None:
+            self.duplicated_relation_ids = m.get('duplicatedRelationIds')
+        if m.get('errorCode') is not None:
+            self.error_code = m.get('errorCode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('relationId') is not None:
+            self.relation_id = m.get('relationId')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class BatchAddRelationDatasResponseBody(TeaModel):
+    def __init__(
+        self,
+        results: List[BatchAddRelationDatasResponseBodyResults] = None,
+    ):
+        # 批量插入结果列表，results的结果和要新增的数据是一一对应的，可以获取到每条数据分别是否成功。
+        self.results = results
+
+    def validate(self):
+        if self.results:
+            for k in self.results:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['results'] = []
+        if self.results is not None:
+            for k in self.results:
+                result['results'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.results = []
+        if m.get('results') is not None:
+            for k in m.get('results'):
+                temp_model = BatchAddRelationDatasResponseBodyResults()
+                self.results.append(temp_model.from_map(k))
+        return self
+
+
+class BatchAddRelationDatasResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: BatchAddRelationDatasResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = BatchAddRelationDatasResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -1259,6 +1783,317 @@ class BatchSendOfficialAccountOTOMessageResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = BatchSendOfficialAccountOTOMessageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class BatchUpdateRelationDatasHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class BatchUpdateRelationDatasRequestRelationListBizDataList(TeaModel):
+    def __init__(
+        self,
+        extend_value: str = None,
+        key: str = None,
+        value: str = None,
+    ):
+        # 模型字段extendValue。
+        self.extend_value = extend_value
+        # 模型字段id。
+        self.key = key
+        # 模型字段value。
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.extend_value is not None:
+            result['extendValue'] = self.extend_value
+        if self.key is not None:
+            result['key'] = self.key
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('extendValue') is not None:
+            self.extend_value = m.get('extendValue')
+        if m.get('key') is not None:
+            self.key = m.get('key')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class BatchUpdateRelationDatasRequestRelationList(TeaModel):
+    def __init__(
+        self,
+        biz_data_list: List[BatchUpdateRelationDatasRequestRelationListBizDataList] = None,
+        biz_ext_map: Dict[str, str] = None,
+        relation_id: str = None,
+    ):
+        # 关系模型数据。
+        self.biz_data_list = biz_data_list
+        # 扩展业务字段。
+        self.biz_ext_map = biz_ext_map
+        # 关系id
+        self.relation_id = relation_id
+
+    def validate(self):
+        if self.biz_data_list:
+            for k in self.biz_data_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['bizDataList'] = []
+        if self.biz_data_list is not None:
+            for k in self.biz_data_list:
+                result['bizDataList'].append(k.to_map() if k else None)
+        if self.biz_ext_map is not None:
+            result['bizExtMap'] = self.biz_ext_map
+        if self.relation_id is not None:
+            result['relationId'] = self.relation_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.biz_data_list = []
+        if m.get('bizDataList') is not None:
+            for k in m.get('bizDataList'):
+                temp_model = BatchUpdateRelationDatasRequestRelationListBizDataList()
+                self.biz_data_list.append(temp_model.from_map(k))
+        if m.get('bizExtMap') is not None:
+            self.biz_ext_map = m.get('bizExtMap')
+        if m.get('relationId') is not None:
+            self.relation_id = m.get('relationId')
+        return self
+
+
+class BatchUpdateRelationDatasRequest(TeaModel):
+    def __init__(
+        self,
+        operator_user_id: str = None,
+        relation_list: List[BatchUpdateRelationDatasRequestRelationList] = None,
+        relation_type: str = None,
+        skip_duplicate_check: bool = None,
+    ):
+        # 操作人userId
+        self.operator_user_id = operator_user_id
+        # 关系数据列表。
+        self.relation_list = relation_list
+        # 关系类型。
+        self.relation_type = relation_type
+        # 是否跳过查重，默认不跳过。
+        self.skip_duplicate_check = skip_duplicate_check
+
+    def validate(self):
+        if self.relation_list:
+            for k in self.relation_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operator_user_id is not None:
+            result['operatorUserId'] = self.operator_user_id
+        result['relationList'] = []
+        if self.relation_list is not None:
+            for k in self.relation_list:
+                result['relationList'].append(k.to_map() if k else None)
+        if self.relation_type is not None:
+            result['relationType'] = self.relation_type
+        if self.skip_duplicate_check is not None:
+            result['skipDuplicateCheck'] = self.skip_duplicate_check
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operatorUserId') is not None:
+            self.operator_user_id = m.get('operatorUserId')
+        self.relation_list = []
+        if m.get('relationList') is not None:
+            for k in m.get('relationList'):
+                temp_model = BatchUpdateRelationDatasRequestRelationList()
+                self.relation_list.append(temp_model.from_map(k))
+        if m.get('relationType') is not None:
+            self.relation_type = m.get('relationType')
+        if m.get('skipDuplicateCheck') is not None:
+            self.skip_duplicate_check = m.get('skipDuplicateCheck')
+        return self
+
+
+class BatchUpdateRelationDatasResponseBodyResults(TeaModel):
+    def __init__(
+        self,
+        duplicated_relation_ids: List[str] = None,
+        error_code: str = None,
+        error_msg: str = None,
+        relation_id: str = None,
+        success: bool = None,
+    ):
+        # 如果因为查重导致失败，表示重复的关系数据id列表。
+        self.duplicated_relation_ids = duplicated_relation_ids
+        # 如果保存失败，则表示失败的错误码。
+        self.error_code = error_code
+        # 如果保存失败，则表示失败的错误原因。
+        self.error_msg = error_msg
+        # 保存成功的关系id。
+        self.relation_id = relation_id
+        # 数据是否保存成功。
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.duplicated_relation_ids is not None:
+            result['duplicatedRelationIds'] = self.duplicated_relation_ids
+        if self.error_code is not None:
+            result['errorCode'] = self.error_code
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.relation_id is not None:
+            result['relationId'] = self.relation_id
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('duplicatedRelationIds') is not None:
+            self.duplicated_relation_ids = m.get('duplicatedRelationIds')
+        if m.get('errorCode') is not None:
+            self.error_code = m.get('errorCode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('relationId') is not None:
+            self.relation_id = m.get('relationId')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class BatchUpdateRelationDatasResponseBody(TeaModel):
+    def __init__(
+        self,
+        results: List[BatchUpdateRelationDatasResponseBodyResults] = None,
+    ):
+        # 批量插入结果列表，results的结果和要新增的数据是一一对应的，可以获取到每条数据分别是否成功。
+        self.results = results
+
+    def validate(self):
+        if self.results:
+            for k in self.results:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['results'] = []
+        if self.results is not None:
+            for k in self.results:
+                result['results'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.results = []
+        if m.get('results') is not None:
+            for k in m.get('results'):
+                temp_model = BatchUpdateRelationDatasResponseBodyResults()
+                self.results.append(temp_model.from_map(k))
+        return self
+
+
+class BatchUpdateRelationDatasResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: BatchUpdateRelationDatasResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = BatchUpdateRelationDatasResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -8557,6 +9392,174 @@ class GetOfficialAccountOTOMessageResultResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = GetOfficialAccountOTOMessageResultResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetRelationUkSettingHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetRelationUkSettingRequest(TeaModel):
+    def __init__(
+        self,
+        relation_type: str = None,
+    ):
+        # 关系类型。
+        self.relation_type = relation_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.relation_type is not None:
+            result['relationType'] = self.relation_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('relationType') is not None:
+            self.relation_type = m.get('relationType')
+        return self
+
+
+class GetRelationUkSettingResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        biz_alias: str = None,
+        field_id: str = None,
+    ):
+        # 查重字段的bizAlias
+        self.biz_alias = biz_alias
+        # 查重字段的字段id
+        self.field_id = field_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_alias is not None:
+            result['bizAlias'] = self.biz_alias
+        if self.field_id is not None:
+            result['fieldId'] = self.field_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizAlias') is not None:
+            self.biz_alias = m.get('bizAlias')
+        if m.get('fieldId') is not None:
+            self.field_id = m.get('fieldId')
+        return self
+
+
+class GetRelationUkSettingResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[GetRelationUkSettingResponseBodyResult] = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = GetRelationUkSettingResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class GetRelationUkSettingResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetRelationUkSettingResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetRelationUkSettingResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
