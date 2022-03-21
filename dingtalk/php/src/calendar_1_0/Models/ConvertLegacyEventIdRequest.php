@@ -39,7 +39,9 @@ class ConvertLegacyEventIdRequest extends Model
     {
         $model = new self();
         if (isset($map['legacyEventIds'])) {
-            $model->legacyEventIds = $map['legacyEventIds'];
+            if (!empty($map['legacyEventIds'])) {
+                $model->legacyEventIds = $map['legacyEventIds'];
+            }
         }
 
         return $model;
