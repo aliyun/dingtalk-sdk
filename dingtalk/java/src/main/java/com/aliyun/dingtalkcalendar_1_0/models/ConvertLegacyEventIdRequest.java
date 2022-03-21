@@ -5,18 +5,18 @@ import com.aliyun.tea.*;
 
 public class ConvertLegacyEventIdRequest extends TeaModel {
     @NameInMap("legacyEventIds")
-    public java.util.Map<String, String> legacyEventIds;
+    public java.util.List<String> legacyEventIds;
 
     public static ConvertLegacyEventIdRequest build(java.util.Map<String, ?> map) throws Exception {
         ConvertLegacyEventIdRequest self = new ConvertLegacyEventIdRequest();
         return TeaModel.build(map, self);
     }
 
-    public ConvertLegacyEventIdRequest setLegacyEventIds(java.util.Map<String, String> legacyEventIds) {
+    public ConvertLegacyEventIdRequest setLegacyEventIds(java.util.List<String> legacyEventIds) {
         this.legacyEventIds = legacyEventIds;
         return this;
     }
-    public java.util.Map<String, String> getLegacyEventIds() {
+    public java.util.List<String> getLegacyEventIds() {
         return this.legacyEventIds;
     }
 
