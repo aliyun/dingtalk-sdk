@@ -23,6 +23,82 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def batch_query_group_member(
+        self,
+        request: dingtalkim__1__0_models.BatchQueryGroupMemberRequest,
+    ) -> dingtalkim__1__0_models.BatchQueryGroupMemberResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.BatchQueryGroupMemberHeaders()
+        return self.batch_query_group_member_with_options(request, headers, runtime)
+
+    async def batch_query_group_member_async(
+        self,
+        request: dingtalkim__1__0_models.BatchQueryGroupMemberRequest,
+    ) -> dingtalkim__1__0_models.BatchQueryGroupMemberResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.BatchQueryGroupMemberHeaders()
+        return await self.batch_query_group_member_with_options_async(request, headers, runtime)
+
+    def batch_query_group_member_with_options(
+        self,
+        request: dingtalkim__1__0_models.BatchQueryGroupMemberRequest,
+        headers: dingtalkim__1__0_models.BatchQueryGroupMemberHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.BatchQueryGroupMemberResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.cool_app_code):
+            body['coolAppCode'] = request.cool_app_code
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.BatchQueryGroupMemberResponse(),
+            self.do_roarequest('BatchQueryGroupMember', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/sceneGroups/members/batchQuery', 'json', req, runtime)
+        )
+
+    async def batch_query_group_member_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.BatchQueryGroupMemberRequest,
+        headers: dingtalkim__1__0_models.BatchQueryGroupMemberHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.BatchQueryGroupMemberResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.cool_app_code):
+            body['coolAppCode'] = request.cool_app_code
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.BatchQueryGroupMemberResponse(),
+            await self.do_roarequest_async('BatchQueryGroupMember', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/sceneGroups/members/batchQuery', 'json', req, runtime)
+        )
+
     def card_template_build_action(
         self,
         request: dingtalkim__1__0_models.CardTemplateBuildActionRequest,

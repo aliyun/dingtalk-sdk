@@ -281,7 +281,7 @@ class ConvertLegacyEventIdHeaders(TeaModel):
 class ConvertLegacyEventIdRequest(TeaModel):
     def __init__(
         self,
-        legacy_event_ids: Dict[str, str] = None,
+        legacy_event_ids: List[str] = None,
     ):
         self.legacy_event_ids = legacy_event_ids
 

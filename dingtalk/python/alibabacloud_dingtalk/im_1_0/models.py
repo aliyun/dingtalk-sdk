@@ -4,6 +4,174 @@ from Tea.model import TeaModel
 from typing import Dict, List
 
 
+class BatchQueryGroupMemberHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class BatchQueryGroupMemberRequest(TeaModel):
+    def __init__(
+        self,
+        cool_app_code: str = None,
+        max_results: int = None,
+        next_token: str = None,
+        open_conversation_id: str = None,
+    ):
+        # 酷应用编码
+        self.cool_app_code = cool_app_code
+        # 本次读取的最大数据记录数量（该入参传入值小于钉钉阈值时返回全部）
+        self.max_results = max_results
+        # 标记当前开始读取的位置，置空表示从头开始
+        self.next_token = next_token
+        # 开放群ID
+        self.open_conversation_id = open_conversation_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.cool_app_code is not None:
+            result['coolAppCode'] = self.cool_app_code
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('coolAppCode') is not None:
+            self.cool_app_code = m.get('coolAppCode')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        return self
+
+
+class BatchQueryGroupMemberResponseBody(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        member_user_ids: List[str] = None,
+        next_token: str = None,
+        success: bool = None,
+    ):
+        # 是否还有更多数据
+        self.has_more = has_more
+        # 群成员员工号
+        self.member_user_ids = member_user_ids
+        # 下一次请求的游标
+        self.next_token = next_token
+        # result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        if self.member_user_ids is not None:
+            result['memberUserIds'] = self.member_user_ids
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        if m.get('memberUserIds') is not None:
+            self.member_user_ids = m.get('memberUserIds')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class BatchQueryGroupMemberResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: BatchQueryGroupMemberResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = BatchQueryGroupMemberResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CardTemplateBuildActionHeaders(TeaModel):
     def __init__(
         self,
