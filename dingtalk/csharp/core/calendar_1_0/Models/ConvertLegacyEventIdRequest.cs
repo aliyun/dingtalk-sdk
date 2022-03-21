@@ -11,7 +11,7 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
     public class ConvertLegacyEventIdRequest : TeaModel {
         [NameInMap("legacyEventIds")]
         [Validation(Required=false)]
-        public Dictionary<string, string> LegacyEventIds { get; set; }
+        public List<string> LegacyEventIds { get; set; }
 
     }
 
