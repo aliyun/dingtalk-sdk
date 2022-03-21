@@ -7,6 +7,106 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class BatchQueryGroupMemberHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchQueryGroupMemberRequest extends $tea.Model {
+  coolAppCode?: string;
+  maxResults?: number;
+  nextToken?: string;
+  openConversationId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      coolAppCode: 'coolAppCode',
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      openConversationId: 'openConversationId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      coolAppCode: 'string',
+      maxResults: 'number',
+      nextToken: 'string',
+      openConversationId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchQueryGroupMemberResponseBody extends $tea.Model {
+  hasMore?: boolean;
+  memberUserIds?: string[];
+  nextToken?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      memberUserIds: 'memberUserIds',
+      nextToken: 'nextToken',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      memberUserIds: { 'type': 'array', 'itemType': 'string' },
+      nextToken: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchQueryGroupMemberResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: BatchQueryGroupMemberResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: BatchQueryGroupMemberResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CardTemplateBuildActionHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1976,6 +2076,47 @@ export default class Client extends OpenApi {
 
   }
 
+
+  async batchQueryGroupMember(request: BatchQueryGroupMemberRequest): Promise<BatchQueryGroupMemberResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BatchQueryGroupMemberHeaders({ });
+    return await this.batchQueryGroupMemberWithOptions(request, headers, runtime);
+  }
+
+  async batchQueryGroupMemberWithOptions(request: BatchQueryGroupMemberRequest, headers: BatchQueryGroupMemberHeaders, runtime: $Util.RuntimeOptions): Promise<BatchQueryGroupMemberResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.coolAppCode)) {
+      body["coolAppCode"] = request.coolAppCode;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      body["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      body["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<BatchQueryGroupMemberResponse>(await this.doROARequest("BatchQueryGroupMember", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/sceneGroups/members/batchQuery`, "json", req, runtime), new BatchQueryGroupMemberResponse({}));
+  }
 
   async cardTemplateBuildAction(request: CardTemplateBuildActionRequest): Promise<CardTemplateBuildActionResponse> {
     let runtime = new $Util.RuntimeOptions({ });

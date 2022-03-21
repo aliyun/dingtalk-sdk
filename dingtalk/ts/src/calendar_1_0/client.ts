@@ -162,7 +162,7 @@ export class ConvertLegacyEventIdHeaders extends $tea.Model {
 }
 
 export class ConvertLegacyEventIdRequest extends $tea.Model {
-  legacyEventIds?: { [key: string]: string };
+  legacyEventIds?: string[];
   static names(): { [key: string]: string } {
     return {
       legacyEventIds: 'legacyEventIds',
@@ -171,7 +171,7 @@ export class ConvertLegacyEventIdRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      legacyEventIds: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      legacyEventIds: { 'type': 'array', 'itemType': 'string' },
     };
   }
 
