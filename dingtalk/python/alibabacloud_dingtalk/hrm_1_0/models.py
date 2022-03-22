@@ -1310,6 +1310,209 @@ class MasterDataSaveResponse(TeaModel):
         return self
 
 
+class MasterDataTenantQueyHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class MasterDataTenantQueyRequest(TeaModel):
+    def __init__(
+        self,
+        entity_code: str = None,
+        scope_code: str = None,
+    ):
+        # 实体 code
+        self.entity_code = entity_code
+        # isv的业务领域
+        self.scope_code = scope_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.entity_code is not None:
+            result['entityCode'] = self.entity_code
+        if self.scope_code is not None:
+            result['scopeCode'] = self.scope_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('entityCode') is not None:
+            self.entity_code = m.get('entityCode')
+        if m.get('scopeCode') is not None:
+            self.scope_code = m.get('scopeCode')
+        return self
+
+
+class MasterDataTenantQueyResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        has_data: bool = None,
+        integrate_data_auth: bool = None,
+        name: str = None,
+        read_auth: bool = None,
+        tenant_id: str = None,
+        type: int = None,
+    ):
+        # 该租户是否已向主数据同步数据
+        self.has_data = has_data
+        # 该租户是否有向主数据写数据的权限
+        self.integrate_data_auth = integrate_data_auth
+        # 租户名称
+        self.name = name
+        # 调用方是否有读该租户数据的权限
+        self.read_auth = read_auth
+        # 租户 id
+        self.tenant_id = tenant_id
+        # 租户类型
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_data is not None:
+            result['hasData'] = self.has_data
+        if self.integrate_data_auth is not None:
+            result['integrateDataAuth'] = self.integrate_data_auth
+        if self.name is not None:
+            result['name'] = self.name
+        if self.read_auth is not None:
+            result['readAuth'] = self.read_auth
+        if self.tenant_id is not None:
+            result['tenantId'] = self.tenant_id
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasData') is not None:
+            self.has_data = m.get('hasData')
+        if m.get('integrateDataAuth') is not None:
+            self.integrate_data_auth = m.get('integrateDataAuth')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('readAuth') is not None:
+            self.read_auth = m.get('readAuth')
+        if m.get('tenantId') is not None:
+            self.tenant_id = m.get('tenantId')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class MasterDataTenantQueyResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[MasterDataTenantQueyResponseBodyResult] = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = MasterDataTenantQueyResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class MasterDataTenantQueyResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: MasterDataTenantQueyResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = MasterDataTenantQueyResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryCustomEntryProcessesHeaders(TeaModel):
     def __init__(
         self,

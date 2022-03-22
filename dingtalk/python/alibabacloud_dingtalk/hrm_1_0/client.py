@@ -329,6 +329,74 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('MasterDataSave', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/masters/datas/save', 'json', req, runtime)
         )
 
+    def master_data_tenant_quey(
+        self,
+        request: dingtalkhrm__1__0_models.MasterDataTenantQueyRequest,
+    ) -> dingtalkhrm__1__0_models.MasterDataTenantQueyResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.MasterDataTenantQueyHeaders()
+        return self.master_data_tenant_quey_with_options(request, headers, runtime)
+
+    async def master_data_tenant_quey_async(
+        self,
+        request: dingtalkhrm__1__0_models.MasterDataTenantQueyRequest,
+    ) -> dingtalkhrm__1__0_models.MasterDataTenantQueyResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.MasterDataTenantQueyHeaders()
+        return await self.master_data_tenant_quey_with_options_async(request, headers, runtime)
+
+    def master_data_tenant_quey_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.MasterDataTenantQueyRequest,
+        headers: dingtalkhrm__1__0_models.MasterDataTenantQueyHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.MasterDataTenantQueyResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.entity_code):
+            query['entityCode'] = request.entity_code
+        if not UtilClient.is_unset(request.scope_code):
+            query['scopeCode'] = request.scope_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.MasterDataTenantQueyResponse(),
+            self.do_roarequest('MasterDataTenantQuey', 'hrm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/hrm/masters/tenants', 'json', req, runtime)
+        )
+
+    async def master_data_tenant_quey_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.MasterDataTenantQueyRequest,
+        headers: dingtalkhrm__1__0_models.MasterDataTenantQueyHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.MasterDataTenantQueyResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.entity_code):
+            query['entityCode'] = request.entity_code
+        if not UtilClient.is_unset(request.scope_code):
+            query['scopeCode'] = request.scope_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.MasterDataTenantQueyResponse(),
+            await self.do_roarequest_async('MasterDataTenantQuey', 'hrm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/hrm/masters/tenants', 'json', req, runtime)
+        )
+
     def query_custom_entry_processes(
         self,
         request: dingtalkhrm__1__0_models.QueryCustomEntryProcessesRequest,

@@ -783,6 +783,90 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('CreateEduAssetSpace', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/assets/spaces', 'json', req, runtime)
         )
 
+    def create_fulfil_record(
+        self,
+        request: dingtalkedu__1__0_models.CreateFulfilRecordRequest,
+    ) -> dingtalkedu__1__0_models.CreateFulfilRecordResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CreateFulfilRecordHeaders()
+        return self.create_fulfil_record_with_options(request, headers, runtime)
+
+    async def create_fulfil_record_async(
+        self,
+        request: dingtalkedu__1__0_models.CreateFulfilRecordRequest,
+    ) -> dingtalkedu__1__0_models.CreateFulfilRecordResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CreateFulfilRecordHeaders()
+        return await self.create_fulfil_record_with_options_async(request, headers, runtime)
+
+    def create_fulfil_record_with_options(
+        self,
+        request: dingtalkedu__1__0_models.CreateFulfilRecordRequest,
+        headers: dingtalkedu__1__0_models.CreateFulfilRecordHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CreateFulfilRecordResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_time):
+            body['bizTime'] = request.biz_time
+        if not UtilClient.is_unset(request.ext_info):
+            body['extInfo'] = request.ext_info
+        if not UtilClient.is_unset(request.face_id):
+            body['faceId'] = request.face_id
+        if not UtilClient.is_unset(request.scene):
+            body['scene'] = request.scene
+        if not UtilClient.is_unset(request.sn):
+            body['sn'] = request.sn
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CreateFulfilRecordResponse(),
+            self.do_roarequest('CreateFulfilRecord', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/fulfilRecords', 'json', req, runtime)
+        )
+
+    async def create_fulfil_record_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.CreateFulfilRecordRequest,
+        headers: dingtalkedu__1__0_models.CreateFulfilRecordHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CreateFulfilRecordResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_time):
+            body['bizTime'] = request.biz_time
+        if not UtilClient.is_unset(request.ext_info):
+            body['extInfo'] = request.ext_info
+        if not UtilClient.is_unset(request.face_id):
+            body['faceId'] = request.face_id
+        if not UtilClient.is_unset(request.scene):
+            body['scene'] = request.scene
+        if not UtilClient.is_unset(request.sn):
+            body['sn'] = request.sn
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CreateFulfilRecordResponse(),
+            await self.do_roarequest_async('CreateFulfilRecord', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/fulfilRecords', 'json', req, runtime)
+        )
+
     def create_invite_url(
         self,
         request: dingtalkedu__1__0_models.CreateInviteUrlRequest,
@@ -881,6 +965,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.actual_amount):
             body['actualAmount'] = request.actual_amount
+        if not UtilClient.is_unset(request.create_time):
+            body['createTime'] = request.create_time
         if not UtilClient.is_unset(request.detail_list):
             body['detailList'] = request.detail_list
         if not UtilClient.is_unset(request.face_id):
@@ -925,6 +1011,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.actual_amount):
             body['actualAmount'] = request.actual_amount
+        if not UtilClient.is_unset(request.create_time):
+            body['createTime'] = request.create_time
         if not UtilClient.is_unset(request.detail_list):
             body['detailList'] = request.detail_list
         if not UtilClient.is_unset(request.face_id):
@@ -987,6 +1075,8 @@ class Client(OpenApiClient):
             body['actualAmount'] = request.actual_amount
         if not UtilClient.is_unset(request.alipay_uid):
             body['alipayUid'] = request.alipay_uid
+        if not UtilClient.is_unset(request.create_time):
+            body['createTime'] = request.create_time
         if not UtilClient.is_unset(request.detail_list):
             body['detailList'] = request.detail_list
         if not UtilClient.is_unset(request.face_id):
@@ -1031,6 +1121,8 @@ class Client(OpenApiClient):
             body['actualAmount'] = request.actual_amount
         if not UtilClient.is_unset(request.alipay_uid):
             body['alipayUid'] = request.alipay_uid
+        if not UtilClient.is_unset(request.create_time):
+            body['createTime'] = request.create_time
         if not UtilClient.is_unset(request.detail_list):
             body['detailList'] = request.detail_list
         if not UtilClient.is_unset(request.face_id):
@@ -3285,6 +3377,106 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkedu__1__0_models.InsertSectionConfigResponse(),
             await self.do_roarequest_async('InsertSectionConfig', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/schedules/configs', 'json', req, runtime)
+        )
+
+    def list_order(
+        self,
+        request: dingtalkedu__1__0_models.ListOrderRequest,
+    ) -> dingtalkedu__1__0_models.ListOrderResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.ListOrderHeaders()
+        return self.list_order_with_options(request, headers, runtime)
+
+    async def list_order_async(
+        self,
+        request: dingtalkedu__1__0_models.ListOrderRequest,
+    ) -> dingtalkedu__1__0_models.ListOrderResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.ListOrderHeaders()
+        return await self.list_order_with_options_async(request, headers, runtime)
+
+    def list_order_with_options(
+        self,
+        request: dingtalkedu__1__0_models.ListOrderRequest,
+        headers: dingtalkedu__1__0_models.ListOrderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.ListOrderResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.create_time_end):
+            body['createTimeEnd'] = request.create_time_end
+        if not UtilClient.is_unset(request.create_time_start):
+            body['createTimeStart'] = request.create_time_start
+        if not UtilClient.is_unset(request.merchant_id):
+            body['merchantId'] = request.merchant_id
+        if not UtilClient.is_unset(request.order_no):
+            body['orderNo'] = request.order_no
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.scene):
+            body['scene'] = request.scene
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        if not UtilClient.is_unset(request.trade_no):
+            body['tradeNo'] = request.trade_no
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.ListOrderResponse(),
+            self.do_roarequest('ListOrder', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/orders/query', 'json', req, runtime)
+        )
+
+    async def list_order_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.ListOrderRequest,
+        headers: dingtalkedu__1__0_models.ListOrderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.ListOrderResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.create_time_end):
+            body['createTimeEnd'] = request.create_time_end
+        if not UtilClient.is_unset(request.create_time_start):
+            body['createTimeStart'] = request.create_time_start
+        if not UtilClient.is_unset(request.merchant_id):
+            body['merchantId'] = request.merchant_id
+        if not UtilClient.is_unset(request.order_no):
+            body['orderNo'] = request.order_no
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.scene):
+            body['scene'] = request.scene
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        if not UtilClient.is_unset(request.trade_no):
+            body['tradeNo'] = request.trade_no
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.ListOrderResponse(),
+            await self.do_roarequest_async('ListOrder', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/orders/query', 'json', req, runtime)
         )
 
     def move_student(

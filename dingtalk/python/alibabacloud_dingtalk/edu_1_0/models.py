@@ -2287,6 +2287,167 @@ class CreateEduAssetSpaceResponse(TeaModel):
         return self
 
 
+class CreateFulfilRecordHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateFulfilRecordRequest(TeaModel):
+    def __init__(
+        self,
+        biz_time: int = None,
+        ext_info: str = None,
+        face_id: str = None,
+        scene: int = None,
+        sn: str = None,
+        user_id: str = None,
+    ):
+        # 业务发生时间
+        self.biz_time = biz_time
+        # 扩展信息，json格式
+        self.ext_info = ext_info
+        # 人脸id
+        self.face_id = face_id
+        # 场景
+        self.scene = scene
+        # 设备sn号
+        self.sn = sn
+        # 员工id
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_time is not None:
+            result['bizTime'] = self.biz_time
+        if self.ext_info is not None:
+            result['extInfo'] = self.ext_info
+        if self.face_id is not None:
+            result['faceId'] = self.face_id
+        if self.scene is not None:
+            result['scene'] = self.scene
+        if self.sn is not None:
+            result['sn'] = self.sn
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizTime') is not None:
+            self.biz_time = m.get('bizTime')
+        if m.get('extInfo') is not None:
+            self.ext_info = m.get('extInfo')
+        if m.get('faceId') is not None:
+            self.face_id = m.get('faceId')
+        if m.get('scene') is not None:
+            self.scene = m.get('scene')
+        if m.get('sn') is not None:
+            self.sn = m.get('sn')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class CreateFulfilRecordResponseBody(TeaModel):
+    def __init__(
+        self,
+        success_info: str = None,
+    ):
+        # 成功信息
+        self.success_info = success_info
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success_info is not None:
+            result['successInfo'] = self.success_info
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('successInfo') is not None:
+            self.success_info = m.get('successInfo')
+        return self
+
+
+class CreateFulfilRecordResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CreateFulfilRecordResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CreateFulfilRecordResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateInviteUrlHeaders(TeaModel):
     def __init__(
         self,
@@ -2544,6 +2705,7 @@ class CreateOrderRequest(TeaModel):
     def __init__(
         self,
         actual_amount: int = None,
+        create_time: int = None,
         detail_list: List[CreateOrderRequestDetailList] = None,
         face_id: str = None,
         ftoken: str = None,
@@ -2557,6 +2719,8 @@ class CreateOrderRequest(TeaModel):
     ):
         # 实付金额，单位分（优惠计算后）
         self.actual_amount = actual_amount
+        # 开单时间
+        self.create_time = create_time
         # 订单明细信息
         self.detail_list = detail_list
         # 人脸id
@@ -2592,6 +2756,8 @@ class CreateOrderRequest(TeaModel):
         result = dict()
         if self.actual_amount is not None:
             result['actualAmount'] = self.actual_amount
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
         result['detailList'] = []
         if self.detail_list is not None:
             for k in self.detail_list:
@@ -2620,6 +2786,8 @@ class CreateOrderRequest(TeaModel):
         m = m or dict()
         if m.get('actualAmount') is not None:
             self.actual_amount = m.get('actualAmount')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
         self.detail_list = []
         if m.get('detailList') is not None:
             for k in m.get('detailList'):
@@ -2798,6 +2966,7 @@ class CreateOrderFlowRequest(TeaModel):
         self,
         actual_amount: int = None,
         alipay_uid: str = None,
+        create_time: int = None,
         detail_list: List[CreateOrderFlowRequestDetailList] = None,
         face_id: str = None,
         merchant_id: str = None,
@@ -2812,6 +2981,8 @@ class CreateOrderFlowRequest(TeaModel):
         self.actual_amount = actual_amount
         # 支付宝用户id
         self.alipay_uid = alipay_uid
+        # 开单时间
+        self.create_time = create_time
         # 订单明细信息，来源于商户系统或APP的商品信息。
         self.detail_list = detail_list
         # 人脸id
@@ -2847,6 +3018,8 @@ class CreateOrderFlowRequest(TeaModel):
             result['actualAmount'] = self.actual_amount
         if self.alipay_uid is not None:
             result['alipayUid'] = self.alipay_uid
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
         result['detailList'] = []
         if self.detail_list is not None:
             for k in self.detail_list:
@@ -2875,6 +3048,8 @@ class CreateOrderFlowRequest(TeaModel):
             self.actual_amount = m.get('actualAmount')
         if m.get('alipayUid') is not None:
             self.alipay_uid = m.get('alipayUid')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
         self.detail_list = []
         if m.get('detailList') is not None:
             for k in m.get('detailList'):
@@ -8877,7 +9052,7 @@ class InitDeviceRequest(TeaModel):
 class InitDeviceResponseBody(TeaModel):
     def __init__(
         self,
-        success_info: bool = None,
+        success_info: str = None,
     ):
         # 成功信息
         self.success_info = success_info
@@ -9318,6 +9493,303 @@ class InsertSectionConfigResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = InsertSectionConfigResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ListOrderHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListOrderRequest(TeaModel):
+    def __init__(
+        self,
+        create_time_end: int = None,
+        create_time_start: int = None,
+        merchant_id: str = None,
+        order_no: str = None,
+        page_number: int = None,
+        page_size: int = None,
+        scene: int = None,
+        status: int = None,
+        trade_no: str = None,
+        user_id: str = None,
+    ):
+        # 开单结束时间
+        self.create_time_end = create_time_end
+        # 开单开始时间，utc
+        self.create_time_start = create_time_start
+        # 商户id
+        self.merchant_id = merchant_id
+        # 订单号
+        self.order_no = order_no
+        # 分页下标
+        self.page_number = page_number
+        # 分页大小
+        self.page_size = page_size
+        # 场景
+        self.scene = scene
+        # 状态
+        self.status = status
+        # 交易单号
+        self.trade_no = trade_no
+        # 员工id
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.create_time_end is not None:
+            result['createTimeEnd'] = self.create_time_end
+        if self.create_time_start is not None:
+            result['createTimeStart'] = self.create_time_start
+        if self.merchant_id is not None:
+            result['merchantId'] = self.merchant_id
+        if self.order_no is not None:
+            result['orderNo'] = self.order_no
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.scene is not None:
+            result['scene'] = self.scene
+        if self.status is not None:
+            result['status'] = self.status
+        if self.trade_no is not None:
+            result['tradeNo'] = self.trade_no
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('createTimeEnd') is not None:
+            self.create_time_end = m.get('createTimeEnd')
+        if m.get('createTimeStart') is not None:
+            self.create_time_start = m.get('createTimeStart')
+        if m.get('merchantId') is not None:
+            self.merchant_id = m.get('merchantId')
+        if m.get('orderNo') is not None:
+            self.order_no = m.get('orderNo')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('scene') is not None:
+            self.scene = m.get('scene')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('tradeNo') is not None:
+            self.trade_no = m.get('tradeNo')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class ListOrderResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        actual_amount: int = None,
+        buyer_id: str = None,
+        corp_id: str = None,
+        create_time: int = None,
+        end_time: int = None,
+        order_no: str = None,
+        pay_time: int = None,
+        scene: int = None,
+        start_time: int = None,
+        status: int = None,
+        trade_no: str = None,
+        user_id: str = None,
+    ):
+        self.actual_amount = actual_amount
+        self.buyer_id = buyer_id
+        self.corp_id = corp_id
+        self.create_time = create_time
+        self.end_time = end_time
+        self.order_no = order_no
+        self.pay_time = pay_time
+        self.scene = scene
+        self.start_time = start_time
+        self.status = status
+        self.trade_no = trade_no
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.actual_amount is not None:
+            result['actualAmount'] = self.actual_amount
+        if self.buyer_id is not None:
+            result['buyerId'] = self.buyer_id
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.order_no is not None:
+            result['orderNo'] = self.order_no
+        if self.pay_time is not None:
+            result['payTime'] = self.pay_time
+        if self.scene is not None:
+            result['scene'] = self.scene
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.status is not None:
+            result['status'] = self.status
+        if self.trade_no is not None:
+            result['tradeNo'] = self.trade_no
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('actualAmount') is not None:
+            self.actual_amount = m.get('actualAmount')
+        if m.get('buyerId') is not None:
+            self.buyer_id = m.get('buyerId')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('orderNo') is not None:
+            self.order_no = m.get('orderNo')
+        if m.get('payTime') is not None:
+            self.pay_time = m.get('payTime')
+        if m.get('scene') is not None:
+            self.scene = m.get('scene')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('tradeNo') is not None:
+            self.trade_no = m.get('tradeNo')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class ListOrderResponseBody(TeaModel):
+    def __init__(
+        self,
+        list: List[ListOrderResponseBodyList] = None,
+        total: int = None,
+    ):
+        # 列表
+        self.list = list
+        # 总数
+        self.total = total
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        if self.total is not None:
+            result['total'] = self.total
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = ListOrderResponseBodyList()
+                self.list.append(temp_model.from_map(k))
+        if m.get('total') is not None:
+            self.total = m.get('total')
+        return self
+
+
+class ListOrderResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ListOrderResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ListOrderResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -16041,7 +16513,7 @@ class SendMessageRequest(TeaModel):
 class SendMessageResponseBody(TeaModel):
     def __init__(
         self,
-        success_info: bool = None,
+        success_info: str = None,
     ):
         # 成功信息
         self.success_info = success_info
