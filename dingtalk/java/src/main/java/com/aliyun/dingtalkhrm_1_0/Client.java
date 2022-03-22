@@ -186,6 +186,39 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("MasterDataSave", "hrm_1.0", "HTTP", "POST", "AK", "/v1.0/hrm/masters/datas/save", "json", req, runtime), new MasterDataSaveResponse());
     }
 
+    public MasterDataTenantQueyResponse masterDataTenantQuey(MasterDataTenantQueyRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        MasterDataTenantQueyHeaders headers = new MasterDataTenantQueyHeaders();
+        return this.masterDataTenantQueyWithOptions(request, headers, runtime);
+    }
+
+    public MasterDataTenantQueyResponse masterDataTenantQueyWithOptions(MasterDataTenantQueyRequest request, MasterDataTenantQueyHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.entityCode)) {
+            query.put("entityCode", request.entityCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.scopeCode)) {
+            query.put("scopeCode", request.scopeCode);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("MasterDataTenantQuey", "hrm_1.0", "HTTP", "GET", "AK", "/v1.0/hrm/masters/tenants", "json", req, runtime), new MasterDataTenantQueyResponse());
+    }
+
     public QueryCustomEntryProcessesResponse queryCustomEntryProcesses(QueryCustomEntryProcessesRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         QueryCustomEntryProcessesHeaders headers = new QueryCustomEntryProcessesHeaders();

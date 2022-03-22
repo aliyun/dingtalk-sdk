@@ -12,6 +12,10 @@ public class CreateOrderFlowRequest extends TeaModel {
     @NameInMap("alipayUid")
     public String alipayUid;
 
+    // 开单时间
+    @NameInMap("createTime")
+    public Long createTime;
+
     // 订单明细信息，来源于商户系统或APP的商品信息。
     @NameInMap("detailList")
     public java.util.List<CreateOrderFlowRequestDetailList> detailList;
@@ -67,6 +71,14 @@ public class CreateOrderFlowRequest extends TeaModel {
     }
     public String getAlipayUid() {
         return this.alipayUid;
+    }
+
+    public CreateOrderFlowRequest setCreateTime(Long createTime) {
+        this.createTime = createTime;
+        return this;
+    }
+    public Long getCreateTime() {
+        return this.createTime;
     }
 
     public CreateOrderFlowRequest setDetailList(java.util.List<CreateOrderFlowRequestDetailList> detailList) {

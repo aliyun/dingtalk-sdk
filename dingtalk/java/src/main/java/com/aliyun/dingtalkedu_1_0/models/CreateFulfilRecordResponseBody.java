@@ -3,17 +3,17 @@ package com.aliyun.dingtalkedu_1_0.models;
 
 import com.aliyun.tea.*;
 
-public class SendMessageResponseBody extends TeaModel {
+public class CreateFulfilRecordResponseBody extends TeaModel {
     // 成功信息
     @NameInMap("successInfo")
     public String successInfo;
 
-    public static SendMessageResponseBody build(java.util.Map<String, ?> map) throws Exception {
-        SendMessageResponseBody self = new SendMessageResponseBody();
+    public static CreateFulfilRecordResponseBody build(java.util.Map<String, ?> map) throws Exception {
+        CreateFulfilRecordResponseBody self = new CreateFulfilRecordResponseBody();
         return TeaModel.build(map, self);
     }
 
-    public SendMessageResponseBody setSuccessInfo(String successInfo) {
+    public CreateFulfilRecordResponseBody setSuccessInfo(String successInfo) {
         this.successInfo = successInfo;
         return this;
     }

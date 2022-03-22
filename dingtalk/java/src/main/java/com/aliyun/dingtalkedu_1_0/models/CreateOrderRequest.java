@@ -8,6 +8,10 @@ public class CreateOrderRequest extends TeaModel {
     @NameInMap("actualAmount")
     public Long actualAmount;
 
+    // 开单时间
+    @NameInMap("createTime")
+    public Long createTime;
+
     // 订单明细信息
     @NameInMap("detailList")
     public java.util.List<CreateOrderRequestDetailList> detailList;
@@ -59,6 +63,14 @@ public class CreateOrderRequest extends TeaModel {
     }
     public Long getActualAmount() {
         return this.actualAmount;
+    }
+
+    public CreateOrderRequest setCreateTime(Long createTime) {
+        this.createTime = createTime;
+        return this;
+    }
+    public Long getCreateTime() {
+        return this.createTime;
     }
 
     public CreateOrderRequest setDetailList(java.util.List<CreateOrderRequestDetailList> detailList) {

@@ -6,18 +6,18 @@ import com.aliyun.tea.*;
 public class InitDeviceResponseBody extends TeaModel {
     // 成功信息
     @NameInMap("successInfo")
-    public Boolean successInfo;
+    public String successInfo;
 
     public static InitDeviceResponseBody build(java.util.Map<String, ?> map) throws Exception {
         InitDeviceResponseBody self = new InitDeviceResponseBody();
         return TeaModel.build(map, self);
     }
 
-    public InitDeviceResponseBody setSuccessInfo(Boolean successInfo) {
+    public InitDeviceResponseBody setSuccessInfo(String successInfo) {
         this.successInfo = successInfo;
         return this;
     }
-    public Boolean getSuccessInfo() {
+    public String getSuccessInfo() {
         return this.successInfo;
     }
 

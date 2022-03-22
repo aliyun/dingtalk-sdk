@@ -466,6 +466,55 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("CreateEduAssetSpace", "edu_1.0", "HTTP", "POST", "AK", "/v1.0/edu/assets/spaces", "json", req, runtime), new CreateEduAssetSpaceResponse());
     }
 
+    public CreateFulfilRecordResponse createFulfilRecord(CreateFulfilRecordRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        CreateFulfilRecordHeaders headers = new CreateFulfilRecordHeaders();
+        return this.createFulfilRecordWithOptions(request, headers, runtime);
+    }
+
+    public CreateFulfilRecordResponse createFulfilRecordWithOptions(CreateFulfilRecordRequest request, CreateFulfilRecordHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizTime)) {
+            body.put("bizTime", request.bizTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.extInfo)) {
+            body.put("extInfo", request.extInfo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.faceId)) {
+            body.put("faceId", request.faceId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.scene)) {
+            body.put("scene", request.scene);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sn)) {
+            body.put("sn", request.sn);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("CreateFulfilRecord", "edu_1.0", "HTTP", "POST", "AK", "/v1.0/edu/fulfilRecords", "json", req, runtime), new CreateFulfilRecordResponse());
+    }
+
     public CreateInviteUrlResponse createInviteUrl(CreateInviteUrlRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         CreateInviteUrlHeaders headers = new CreateInviteUrlHeaders();
@@ -514,6 +563,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.actualAmount)) {
             body.put("actualAmount", request.actualAmount);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.createTime)) {
+            body.put("createTime", request.createTime);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.detailList)) {
@@ -587,6 +640,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.alipayUid)) {
             body.put("alipayUid", request.alipayUid);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.createTime)) {
+            body.put("createTime", request.createTime);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.detailList)) {
@@ -1775,6 +1832,71 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("InsertSectionConfig", "edu_1.0", "HTTP", "POST", "AK", "/v1.0/edu/schedules/configs", "json", req, runtime), new InsertSectionConfigResponse());
+    }
+
+    public ListOrderResponse listOrder(ListOrderRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        ListOrderHeaders headers = new ListOrderHeaders();
+        return this.listOrderWithOptions(request, headers, runtime);
+    }
+
+    public ListOrderResponse listOrderWithOptions(ListOrderRequest request, ListOrderHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.createTimeEnd)) {
+            body.put("createTimeEnd", request.createTimeEnd);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.createTimeStart)) {
+            body.put("createTimeStart", request.createTimeStart);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.merchantId)) {
+            body.put("merchantId", request.merchantId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.orderNo)) {
+            body.put("orderNo", request.orderNo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
+            body.put("pageNumber", request.pageNumber);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            body.put("pageSize", request.pageSize);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.scene)) {
+            body.put("scene", request.scene);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.status)) {
+            body.put("status", request.status);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.tradeNo)) {
+            body.put("tradeNo", request.tradeNo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("ListOrder", "edu_1.0", "HTTP", "POST", "AK", "/v1.0/edu/orders/query", "json", req, runtime), new ListOrderResponse());
     }
 
     public MoveStudentResponse moveStudent(MoveStudentRequest request) throws Exception {
