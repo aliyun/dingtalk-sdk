@@ -8,7 +8,7 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
-    public class SendMessageResponseBody : TeaModel {
+    public class CreateFulfilRecordResponseBody : TeaModel {
         /// <summary>
         /// 成功信息
         /// </summary>

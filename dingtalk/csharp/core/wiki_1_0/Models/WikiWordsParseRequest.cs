@@ -6,15 +6,15 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkwiki_1_0.Models
 {
-    public class SendMessageResponseBody : TeaModel {
+    public class WikiWordsParseRequest : TeaModel {
         /// <summary>
-        /// 成功信息
+        /// 消息体以及文章内容
         /// </summary>
-        [NameInMap("successInfo")]
+        [NameInMap("content")]
         [Validation(Required=false)]
-        public string SuccessInfo { get; set; }
+        public string Content { get; set; }
 
     }
 

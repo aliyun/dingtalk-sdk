@@ -14,7 +14,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         /// </summary>
         [NameInMap("successInfo")]
         [Validation(Required=false)]
-        public bool? SuccessInfo { get; set; }
+        public string SuccessInfo { get; set; }
 
     }
 

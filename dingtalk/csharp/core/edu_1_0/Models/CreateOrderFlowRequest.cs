@@ -24,6 +24,13 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public string AlipayUid { get; set; }
 
         /// <summary>
+        /// 开单时间
+        /// </summary>
+        [NameInMap("createTime")]
+        [Validation(Required=false)]
+        public long? CreateTime { get; set; }
+
+        /// <summary>
         /// 订单明细信息，来源于商户系统或APP的商品信息。
         /// </summary>
         [NameInMap("detailList")]
