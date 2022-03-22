@@ -24,6 +24,13 @@ class CreateOrderFlowRequest extends Model
     public $alipayUid;
 
     /**
+     * @description 开单时间
+     *
+     * @var int
+     */
+    public $createTime;
+
+    /**
      * @description 订单明细信息，来源于商户系统或APP的商品信息。
      *
      * @var detailList[]
@@ -88,6 +95,7 @@ class CreateOrderFlowRequest extends Model
     protected $_name = [
         'actualAmount' => 'actualAmount',
         'alipayUid'    => 'alipayUid',
+        'createTime'   => 'createTime',
         'detailList'   => 'detailList',
         'faceId'       => 'faceId',
         'merchantId'   => 'merchantId',
@@ -111,6 +119,9 @@ class CreateOrderFlowRequest extends Model
         }
         if (null !== $this->alipayUid) {
             $res['alipayUid'] = $this->alipayUid;
+        }
+        if (null !== $this->createTime) {
+            $res['createTime'] = $this->createTime;
         }
         if (null !== $this->detailList) {
             $res['detailList'] = [];
@@ -162,6 +173,9 @@ class CreateOrderFlowRequest extends Model
         }
         if (isset($map['alipayUid'])) {
             $model->alipayUid = $map['alipayUid'];
+        }
+        if (isset($map['createTime'])) {
+            $model->createTime = $map['createTime'];
         }
         if (isset($map['detailList'])) {
             if (!empty($map['detailList'])) {

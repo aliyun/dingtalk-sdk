@@ -6,7 +6,7 @@ namespace AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class InitDeviceResponseBody extends Model
+class CreateFulfilRecordResponseBody extends Model
 {
     /**
      * @description 成功信息
@@ -35,7 +35,7 @@ class InitDeviceResponseBody extends Model
     /**
      * @param array $map
      *
-     * @return InitDeviceResponseBody
+     * @return CreateFulfilRecordResponseBody
      */
     public static function fromMap($map = [])
     {

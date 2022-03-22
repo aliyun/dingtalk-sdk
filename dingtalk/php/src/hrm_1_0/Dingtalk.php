@@ -17,6 +17,9 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataQueryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataSaveHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataSaveRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataSaveResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataTenantQueyHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataTenantQueyRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataTenantQueyResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryCustomEntryProcessesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryCustomEntryProcessesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryCustomEntryProcessesResponse;
@@ -248,6 +251,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return MasterDataSaveResponse::fromMap($this->doROARequest('MasterDataSave', 'hrm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/hrm/masters/datas/save', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param MasterDataTenantQueyRequest $request
+     *
+     * @return MasterDataTenantQueyResponse
+     */
+    public function masterDataTenantQuey($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new MasterDataTenantQueyHeaders([]);
+
+        return $this->masterDataTenantQueyWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param MasterDataTenantQueyRequest $request
+     * @param MasterDataTenantQueyHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return MasterDataTenantQueyResponse
+     */
+    public function masterDataTenantQueyWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->entityCode)) {
+            @$query['entityCode'] = $request->entityCode;
+        }
+        if (!Utils::isUnset($request->scopeCode)) {
+            @$query['scopeCode'] = $request->scopeCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return MasterDataTenantQueyResponse::fromMap($this->doROARequest('MasterDataTenantQuey', 'hrm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/hrm/masters/tenants', 'json', $req, $runtime));
     }
 
     /**

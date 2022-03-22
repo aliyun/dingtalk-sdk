@@ -2,20 +2,20 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vwiki_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class InitDeviceResponseBody extends Model
+class WikiWordsDetailRequest extends Model
 {
     /**
-     * @description 成功信息
+     * @description 传递的词条名称
      *
      * @var string
      */
-    public $successInfo;
+    public $wordName;
     protected $_name = [
-        'successInfo' => 'successInfo',
+        'wordName' => 'wordName',
     ];
 
     public function validate()
@@ -25,8 +25,8 @@ class InitDeviceResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->successInfo) {
-            $res['successInfo'] = $this->successInfo;
+        if (null !== $this->wordName) {
+            $res['wordName'] = $this->wordName;
         }
 
         return $res;
@@ -35,13 +35,13 @@ class InitDeviceResponseBody extends Model
     /**
      * @param array $map
      *
-     * @return InitDeviceResponseBody
+     * @return WikiWordsDetailRequest
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['successInfo'])) {
-            $model->successInfo = $map['successInfo'];
+        if (isset($map['wordName'])) {
+            $model->wordName = $map['wordName'];
         }
 
         return $model;

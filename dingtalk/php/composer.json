@@ -71,6 +71,7 @@
       "AlibabaCloud\\SDK\\Dingtalk\\Vtrade_1_0\\": "src/trade_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vtrajectory_1_0\\": "src/trajectory_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vvillage_1_0\\": "src/village_1_0/",
+      "AlibabaCloud\\SDK\\Dingtalk\\Vwiki_1_0\\": "src/wiki_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vwms_1_0\\": "src/wms_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vworkbench_1_0\\": "src/workbench_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vworkflow_1_0\\": "src/workflow_1_0/",

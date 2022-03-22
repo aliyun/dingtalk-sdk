@@ -17,6 +17,13 @@ class CreateOrderRequest extends Model
     public $actualAmount;
 
     /**
+     * @description 开单时间
+     *
+     * @var int
+     */
+    public $createTime;
+
+    /**
      * @description 订单明细信息
      *
      * @var detailList[]
@@ -87,6 +94,7 @@ class CreateOrderRequest extends Model
     public $version;
     protected $_name = [
         'actualAmount'   => 'actualAmount',
+        'createTime'     => 'createTime',
         'detailList'     => 'detailList',
         'faceId'         => 'faceId',
         'ftoken'         => 'ftoken',
@@ -108,6 +116,9 @@ class CreateOrderRequest extends Model
         $res = [];
         if (null !== $this->actualAmount) {
             $res['actualAmount'] = $this->actualAmount;
+        }
+        if (null !== $this->createTime) {
+            $res['createTime'] = $this->createTime;
         }
         if (null !== $this->detailList) {
             $res['detailList'] = [];
@@ -159,6 +170,9 @@ class CreateOrderRequest extends Model
         $model = new self();
         if (isset($map['actualAmount'])) {
             $model->actualAmount = $map['actualAmount'];
+        }
+        if (isset($map['createTime'])) {
+            $model->createTime = $map['createTime'];
         }
         if (isset($map['detailList'])) {
             if (!empty($map['detailList'])) {

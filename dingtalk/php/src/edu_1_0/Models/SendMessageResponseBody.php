@@ -11,7 +11,7 @@ class SendMessageResponseBody extends Model
     /**
      * @description 成功信息
      *
-     * @var bool
+     * @var string
      */
     public $successInfo;
     protected $_name = [

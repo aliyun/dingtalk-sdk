@@ -32,6 +32,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCustomDeptResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateEduAssetSpaceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateEduAssetSpaceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateEduAssetSpaceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateFulfilRecordHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateFulfilRecordRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateFulfilRecordResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateInviteUrlHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateInviteUrlRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateInviteUrlResponse;
@@ -127,6 +130,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InitDeviceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InsertSectionConfigHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InsertSectionConfigRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InsertSectionConfigResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ListOrderHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ListOrderRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ListOrderResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\MoveStudentHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\MoveStudentRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\MoveStudentResponse;
@@ -775,6 +781,63 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param CreateFulfilRecordRequest $request
+     *
+     * @return CreateFulfilRecordResponse
+     */
+    public function createFulfilRecord($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateFulfilRecordHeaders([]);
+
+        return $this->createFulfilRecordWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateFulfilRecordRequest $request
+     * @param CreateFulfilRecordHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return CreateFulfilRecordResponse
+     */
+    public function createFulfilRecordWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizTime)) {
+            @$body['bizTime'] = $request->bizTime;
+        }
+        if (!Utils::isUnset($request->extInfo)) {
+            @$body['extInfo'] = $request->extInfo;
+        }
+        if (!Utils::isUnset($request->faceId)) {
+            @$body['faceId'] = $request->faceId;
+        }
+        if (!Utils::isUnset($request->scene)) {
+            @$body['scene'] = $request->scene;
+        }
+        if (!Utils::isUnset($request->sn)) {
+            @$body['sn'] = $request->sn;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateFulfilRecordResponse::fromMap($this->doROARequest('CreateFulfilRecord', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/fulfilRecords', 'json', $req, $runtime));
+    }
+
+    /**
      * @param CreateInviteUrlRequest $request
      *
      * @return CreateInviteUrlResponse
@@ -848,6 +911,9 @@ class Dingtalk extends OpenApiClient
         $body = [];
         if (!Utils::isUnset($request->actualAmount)) {
             @$body['actualAmount'] = $request->actualAmount;
+        }
+        if (!Utils::isUnset($request->createTime)) {
+            @$body['createTime'] = $request->createTime;
         }
         if (!Utils::isUnset($request->detailList)) {
             @$body['detailList'] = $request->detailList;
@@ -923,6 +989,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->alipayUid)) {
             @$body['alipayUid'] = $request->alipayUid;
+        }
+        if (!Utils::isUnset($request->createTime)) {
+            @$body['createTime'] = $request->createTime;
         }
         if (!Utils::isUnset($request->detailList)) {
             @$body['detailList'] = $request->detailList;
@@ -2441,6 +2510,75 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return InsertSectionConfigResponse::fromMap($this->doROARequest('InsertSectionConfig', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/schedules/configs', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ListOrderRequest $request
+     *
+     * @return ListOrderResponse
+     */
+    public function listOrder($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListOrderHeaders([]);
+
+        return $this->listOrderWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ListOrderRequest $request
+     * @param ListOrderHeaders $headers
+     * @param RuntimeOptions   $runtime
+     *
+     * @return ListOrderResponse
+     */
+    public function listOrderWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->createTimeEnd)) {
+            @$body['createTimeEnd'] = $request->createTimeEnd;
+        }
+        if (!Utils::isUnset($request->createTimeStart)) {
+            @$body['createTimeStart'] = $request->createTimeStart;
+        }
+        if (!Utils::isUnset($request->merchantId)) {
+            @$body['merchantId'] = $request->merchantId;
+        }
+        if (!Utils::isUnset($request->orderNo)) {
+            @$body['orderNo'] = $request->orderNo;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$body['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->scene)) {
+            @$body['scene'] = $request->scene;
+        }
+        if (!Utils::isUnset($request->status)) {
+            @$body['status'] = $request->status;
+        }
+        if (!Utils::isUnset($request->tradeNo)) {
+            @$body['tradeNo'] = $request->tradeNo;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return ListOrderResponse::fromMap($this->doROARequest('ListOrder', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/orders/query', 'json', $req, $runtime));
     }
 
     /**
