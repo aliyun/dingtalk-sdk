@@ -431,6 +431,91 @@ export class MasterDataSaveResponse extends $tea.Model {
   }
 }
 
+export class MasterDataTenantQueyHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MasterDataTenantQueyRequest extends $tea.Model {
+  entityCode?: string;
+  scopeCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      entityCode: 'entityCode',
+      scopeCode: 'scopeCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      entityCode: 'string',
+      scopeCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MasterDataTenantQueyResponseBody extends $tea.Model {
+  result?: MasterDataTenantQueyResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': MasterDataTenantQueyResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MasterDataTenantQueyResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: MasterDataTenantQueyResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: MasterDataTenantQueyResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryCustomEntryProcessesHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1119,6 +1204,40 @@ export class MasterDataSaveResponseBodyFailResult extends $tea.Model {
   }
 }
 
+export class MasterDataTenantQueyResponseBodyResult extends $tea.Model {
+  hasData?: boolean;
+  integrateDataAuth?: boolean;
+  name?: string;
+  readAuth?: boolean;
+  tenantId?: string;
+  type?: number;
+  static names(): { [key: string]: string } {
+    return {
+      hasData: 'hasData',
+      integrateDataAuth: 'integrateDataAuth',
+      name: 'name',
+      readAuth: 'readAuth',
+      tenantId: 'tenantId',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasData: 'boolean',
+      integrateDataAuth: 'boolean',
+      name: 'string',
+      readAuth: 'boolean',
+      tenantId: 'string',
+      type: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryCustomEntryProcessesResponseBodyList extends $tea.Model {
   formDesc?: string;
   formId?: string;
@@ -1422,6 +1541,39 @@ export default class Client extends OpenApi {
       body: Util.toArray(request.body),
     });
     return $tea.cast<MasterDataSaveResponse>(await this.doROARequest("MasterDataSave", "hrm_1.0", "HTTP", "POST", "AK", `/v1.0/hrm/masters/datas/save`, "json", req, runtime), new MasterDataSaveResponse({}));
+  }
+
+  async masterDataTenantQuey(request: MasterDataTenantQueyRequest): Promise<MasterDataTenantQueyResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new MasterDataTenantQueyHeaders({ });
+    return await this.masterDataTenantQueyWithOptions(request, headers, runtime);
+  }
+
+  async masterDataTenantQueyWithOptions(request: MasterDataTenantQueyRequest, headers: MasterDataTenantQueyHeaders, runtime: $Util.RuntimeOptions): Promise<MasterDataTenantQueyResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.entityCode)) {
+      query["entityCode"] = request.entityCode;
+    }
+
+    if (!Util.isUnset(request.scopeCode)) {
+      query["scopeCode"] = request.scopeCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<MasterDataTenantQueyResponse>(await this.doROARequest("MasterDataTenantQuey", "hrm_1.0", "HTTP", "GET", "AK", `/v1.0/hrm/masters/tenants`, "json", req, runtime), new MasterDataTenantQueyResponse({}));
   }
 
   async queryCustomEntryProcesses(request: QueryCustomEntryProcessesRequest): Promise<QueryCustomEntryProcessesResponse> {

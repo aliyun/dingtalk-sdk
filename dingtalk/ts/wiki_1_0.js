@@ -1,0 +1,1 @@
+module.exports = require('./dist').wiki_1_0;

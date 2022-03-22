@@ -51,6 +51,7 @@ import * as todo_1_0 from './todo_1_0/client';
 import * as trade_1_0 from './trade_1_0/client';
 import * as trajectory_1_0 from './trajectory_1_0/client';
 import * as village_1_0 from './village_1_0/client';
+import * as wiki_1_0 from './wiki_1_0/client';
 import * as wms_1_0 from './wms_1_0/client';
 import * as workbench_1_0 from './workbench_1_0/client';
 import * as workflow_1_0 from './workflow_1_0/client';
@@ -111,6 +112,7 @@ export = {
   trade_1_0,
   trajectory_1_0,
   village_1_0,
+  wiki_1_0,
   wms_1_0,
   workbench_1_0,
   workflow_1_0,
