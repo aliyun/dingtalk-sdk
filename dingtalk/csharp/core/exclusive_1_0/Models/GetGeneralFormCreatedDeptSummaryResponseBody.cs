@@ -37,6 +37,13 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             [Validation(Required=false)]
             public string GeneralFormCreateCnt1d { get; set; }
 
+            /// <summary>
+            /// 最近1天使用智能填表人数
+            /// </summary>
+            [NameInMap("useGeneralFormUserCnt1d")]
+            [Validation(Required=false)]
+            public string UseGeneralFormUserCnt1d { get; set; }
+
         }
 
         /// <summary>

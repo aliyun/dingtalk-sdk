@@ -6,16 +6,16 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
-    public class SignInResponse : TeaModel {
+    public class GetDingReportSummaryResponse : TeaModel {
         [NameInMap("headers")]
         [Validation(Required=true)]
         public Dictionary<string, string> Headers { get; set; }
 
         [NameInMap("body")]
         [Validation(Required=true)]
-        public SignInResponseBody Body { get; set; }
+        public GetDingReportSummaryResponseBody Body { get; set; }
 
     }
 

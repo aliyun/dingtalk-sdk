@@ -17,6 +17,13 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         public List<GetDocCreatedDeptSummaryResponseBodyData> Data { get; set; }
         public class GetDocCreatedDeptSummaryResponseBodyData : TeaModel {
             /// <summary>
+            /// 最近1天创建文档人数
+            /// </summary>
+            [NameInMap("createDocUserCnt1d")]
+            [Validation(Required=false)]
+            public string CreateDocUserCnt1d { get; set; }
+
+            /// <summary>
             /// 部门id
             /// </summary>
             [NameInMap("deptId")]
@@ -31,7 +38,7 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             public string DeptName { get; set; }
 
             /// <summary>
-            /// 最近1天累计钉钉文档创建数
+            /// 最近1天钉钉文档创建数
             /// </summary>
             [NameInMap("docCreatedCnt")]
             [Validation(Required=false)]
