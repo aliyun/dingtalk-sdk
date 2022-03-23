@@ -2,11 +2,11 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class SignInResponse extends Model
+class GetDingReportSummaryResponse extends Model
 {
     /**
      * @var string[]
@@ -14,7 +14,7 @@ class SignInResponse extends Model
     public $headers;
 
     /**
-     * @var SignInResponseBody
+     * @var GetDingReportSummaryResponseBody
      */
     public $body;
     protected $_name = [
@@ -44,7 +44,7 @@ class SignInResponse extends Model
     /**
      * @param array $map
      *
-     * @return SignInResponse
+     * @return GetDingReportSummaryResponse
      */
     public static function fromMap($map = [])
     {
@@ -53,7 +53,7 @@ class SignInResponse extends Model
             $model->headers = $map['headers'];
         }
         if (isset($map['body'])) {
-            $model->body = SignInResponseBody::fromMap($map['body']);
+            $model->body = GetDingReportSummaryResponseBody::fromMap($map['body']);
         }
 
         return $model;

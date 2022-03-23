@@ -28,10 +28,18 @@ class data extends Model
      * @var string
      */
     public $generalFormCreateCnt1d;
+
+    /**
+     * @description 最近1天使用智能填表人数
+     *
+     * @var string
+     */
+    public $useGeneralFormUserCnt1d;
     protected $_name = [
-        'deptId'                 => 'deptId',
-        'deptName'               => 'deptName',
-        'generalFormCreateCnt1d' => 'generalFormCreateCnt1d',
+        'deptId'                  => 'deptId',
+        'deptName'                => 'deptName',
+        'generalFormCreateCnt1d'  => 'generalFormCreateCnt1d',
+        'useGeneralFormUserCnt1d' => 'useGeneralFormUserCnt1d',
     ];
 
     public function validate()
@@ -49,6 +57,9 @@ class data extends Model
         }
         if (null !== $this->generalFormCreateCnt1d) {
             $res['generalFormCreateCnt1d'] = $this->generalFormCreateCnt1d;
+        }
+        if (null !== $this->useGeneralFormUserCnt1d) {
+            $res['useGeneralFormUserCnt1d'] = $this->useGeneralFormUserCnt1d;
         }
 
         return $res;
@@ -70,6 +81,9 @@ class data extends Model
         }
         if (isset($map['generalFormCreateCnt1d'])) {
             $model->generalFormCreateCnt1d = $map['generalFormCreateCnt1d'];
+        }
+        if (isset($map['useGeneralFormUserCnt1d'])) {
+            $model->useGeneralFormUserCnt1d = $map['useGeneralFormUserCnt1d'];
         }
 
         return $model;

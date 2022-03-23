@@ -27,6 +27,8 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetConferenceDetailResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetDingReportDeptSummaryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetDingReportDeptSummaryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetDingReportDeptSummaryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetDingReportSummaryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetDingReportSummaryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetDocCreatedDeptSummaryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetDocCreatedDeptSummaryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetDocCreatedDeptSummaryResponse;
@@ -483,6 +485,43 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetDingReportDeptSummaryResponse::fromMap($this->doROARequest('GetDingReportDeptSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/data/report/dept/' . $dataId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $dataId
+     *
+     * @return GetDingReportSummaryResponse
+     */
+    public function getDingReportSummary($dataId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetDingReportSummaryHeaders([]);
+
+        return $this->getDingReportSummaryWithOptions($dataId, $headers, $runtime);
+    }
+
+    /**
+     * @param string                      $dataId
+     * @param GetDingReportSummaryHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return GetDingReportSummaryResponse
+     */
+    public function getDingReportSummaryWithOptions($dataId, $headers, $runtime)
+    {
+        $dataId      = OpenApiUtilClient::getEncodeParam($dataId);
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return GetDingReportSummaryResponse::fromMap($this->doROARequest('GetDingReportSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/datas/' . $dataId . '/reports/organizations', 'json', $req, $runtime));
     }
 
     /**
