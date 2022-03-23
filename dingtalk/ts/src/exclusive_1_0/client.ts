@@ -380,15 +380,21 @@ export class GetCalenderSummaryHeaders extends $tea.Model {
 
 export class GetCalenderSummaryResponseBody extends $tea.Model {
   calendarCreateUserCnt?: string;
+  recvCalendarUserCnt1d?: string;
+  useCalendarUserCnt1d?: string;
   static names(): { [key: string]: string } {
     return {
       calendarCreateUserCnt: 'calendarCreateUserCnt',
+      recvCalendarUserCnt1d: 'recvCalendarUserCnt1d',
+      useCalendarUserCnt1d: 'useCalendarUserCnt1d',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       calendarCreateUserCnt: 'string',
+      recvCalendarUserCnt1d: 'string',
+      useCalendarUserCnt1d: 'string',
     };
   }
 
@@ -688,6 +694,69 @@ export class GetDingReportDeptSummaryResponse extends $tea.Model {
   }
 }
 
+export class GetDingReportSummaryHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDingReportSummaryResponseBody extends $tea.Model {
+  reportCommentUserCnt1d?: string;
+  static names(): { [key: string]: string } {
+    return {
+      reportCommentUserCnt1d: 'reportCommentUserCnt1d',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      reportCommentUserCnt1d: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDingReportSummaryResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetDingReportSummaryResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetDingReportSummaryResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetDocCreatedDeptSummaryHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -802,15 +871,18 @@ export class GetDocCreatedSummaryHeaders extends $tea.Model {
 }
 
 export class GetDocCreatedSummaryResponseBody extends $tea.Model {
+  docCreateUserCnt1d?: string;
   docCreatedCnt?: string;
   static names(): { [key: string]: string } {
     return {
+      docCreateUserCnt1d: 'docCreateUserCnt1d',
       docCreatedCnt: 'docCreatedCnt',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      docCreateUserCnt1d: 'string',
       docCreatedCnt: 'string',
     };
   }
@@ -957,15 +1029,18 @@ export class GetGeneralFormCreatedSummaryHeaders extends $tea.Model {
 
 export class GetGeneralFormCreatedSummaryResponseBody extends $tea.Model {
   generalFormCreatedCnt?: string;
+  useGeneralFormUserCnt1d?: string;
   static names(): { [key: string]: string } {
     return {
       generalFormCreatedCnt: 'generalFormCreatedCnt',
+      useGeneralFormUserCnt1d: 'useGeneralFormUserCnt1d',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       generalFormCreatedCnt: 'string',
+      useGeneralFormUserCnt1d: 'string',
     };
   }
 
@@ -2869,11 +2944,13 @@ export class GetDingReportDeptSummaryResponseBodyData extends $tea.Model {
 }
 
 export class GetDocCreatedDeptSummaryResponseBodyData extends $tea.Model {
+  createDocUserCnt1d?: string;
   deptId?: string;
   deptName?: string;
   docCreatedCnt?: string;
   static names(): { [key: string]: string } {
     return {
+      createDocUserCnt1d: 'createDocUserCnt1d',
       deptId: 'deptId',
       deptName: 'deptName',
       docCreatedCnt: 'docCreatedCnt',
@@ -2882,6 +2959,7 @@ export class GetDocCreatedDeptSummaryResponseBodyData extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      createDocUserCnt1d: 'string',
       deptId: 'string',
       deptName: 'string',
       docCreatedCnt: 'string',
@@ -2897,11 +2975,13 @@ export class GetGeneralFormCreatedDeptSummaryResponseBodyData extends $tea.Model
   deptId?: string;
   deptName?: string;
   generalFormCreateCnt1d?: string;
+  useGeneralFormUserCnt1d?: string;
   static names(): { [key: string]: string } {
     return {
       deptId: 'deptId',
       deptName: 'deptName',
       generalFormCreateCnt1d: 'generalFormCreateCnt1d',
+      useGeneralFormUserCnt1d: 'useGeneralFormUserCnt1d',
     };
   }
 
@@ -2910,6 +2990,7 @@ export class GetGeneralFormCreatedDeptSummaryResponseBodyData extends $tea.Model
       deptId: 'string',
       deptName: 'string',
       generalFormCreateCnt1d: 'string',
+      useGeneralFormUserCnt1d: 'string',
     };
   }
 
@@ -3579,6 +3660,29 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<GetDingReportDeptSummaryResponse>(await this.doROARequest("GetDingReportDeptSummary", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/data/report/dept/${dataId}`, "json", req, runtime), new GetDingReportDeptSummaryResponse({}));
+  }
+
+  async getDingReportSummary(dataId: string): Promise<GetDingReportSummaryResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetDingReportSummaryHeaders({ });
+    return await this.getDingReportSummaryWithOptions(dataId, headers, runtime);
+  }
+
+  async getDingReportSummaryWithOptions(dataId: string, headers: GetDingReportSummaryHeaders, runtime: $Util.RuntimeOptions): Promise<GetDingReportSummaryResponse> {
+    dataId = OpenApiUtil.getEncodeParam(dataId);
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<GetDingReportSummaryResponse>(await this.doROARequest("GetDingReportSummary", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/datas/${dataId}/reports/organizations`, "json", req, runtime), new GetDingReportSummaryResponse({}));
   }
 
   async getDocCreatedDeptSummary(dataId: string, request: GetDocCreatedDeptSummaryRequest): Promise<GetDocCreatedDeptSummaryResponse> {
