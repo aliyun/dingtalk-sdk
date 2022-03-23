@@ -1,21 +1,21 @@
 // This file is auto-generated, don't edit it. Thanks.
-package com.aliyun.dingtalkcalendar_1_0.models;
+package com.aliyun.dingtalkexclusive_1_0.models;
 
 import com.aliyun.tea.*;
 
-public class SignInHeaders extends TeaModel {
+public class GetDingReportSummaryHeaders extends TeaModel {
     @NameInMap("commonHeaders")
     public java.util.Map<String, String> commonHeaders;
 
     @NameInMap("x-acs-dingtalk-access-token")
     public String xAcsDingtalkAccessToken;
 
-    public static SignInHeaders build(java.util.Map<String, ?> map) throws Exception {
-        SignInHeaders self = new SignInHeaders();
+    public static GetDingReportSummaryHeaders build(java.util.Map<String, ?> map) throws Exception {
+        GetDingReportSummaryHeaders self = new GetDingReportSummaryHeaders();
         return TeaModel.build(map, self);
     }
 
-    public SignInHeaders setCommonHeaders(java.util.Map<String, String> commonHeaders) {
+    public GetDingReportSummaryHeaders setCommonHeaders(java.util.Map<String, String> commonHeaders) {
         this.commonHeaders = commonHeaders;
         return this;
     }
@@ -23,7 +23,7 @@ public class SignInHeaders extends TeaModel {
         return this.commonHeaders;
     }
 
-    public SignInHeaders setXAcsDingtalkAccessToken(String xAcsDingtalkAccessToken) {
+    public GetDingReportSummaryHeaders setXAcsDingtalkAccessToken(String xAcsDingtalkAccessToken) {
         this.xAcsDingtalkAccessToken = xAcsDingtalkAccessToken;
         return this;
     }

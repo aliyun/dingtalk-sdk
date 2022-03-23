@@ -4,9 +4,13 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetGeneralFormCreatedSummaryResponseBody extends TeaModel {
-    // 最近1天累计智能填表创建数
+    // 最近1天智能填表创建数
     @NameInMap("generalFormCreatedCnt")
     public String generalFormCreatedCnt;
+
+    // 最近1天使用智能填表人数
+    @NameInMap("useGeneralFormUserCnt1d")
+    public String useGeneralFormUserCnt1d;
 
     public static GetGeneralFormCreatedSummaryResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetGeneralFormCreatedSummaryResponseBody self = new GetGeneralFormCreatedSummaryResponseBody();
@@ -19,6 +23,14 @@ public class GetGeneralFormCreatedSummaryResponseBody extends TeaModel {
     }
     public String getGeneralFormCreatedCnt() {
         return this.generalFormCreatedCnt;
+    }
+
+    public GetGeneralFormCreatedSummaryResponseBody setUseGeneralFormUserCnt1d(String useGeneralFormUserCnt1d) {
+        this.useGeneralFormUserCnt1d = useGeneralFormUserCnt1d;
+        return this;
+    }
+    public String getUseGeneralFormUserCnt1d() {
+        return this.useGeneralFormUserCnt1d;
     }
 
 }

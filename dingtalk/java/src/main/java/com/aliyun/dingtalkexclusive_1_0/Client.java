@@ -278,6 +278,29 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("GetDingReportDeptSummary", "exclusive_1.0", "HTTP", "GET", "AK", "/v1.0/exclusive/data/report/dept/" + dataId + "", "json", req, runtime), new GetDingReportDeptSummaryResponse());
     }
 
+    public GetDingReportSummaryResponse getDingReportSummary(String dataId) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        GetDingReportSummaryHeaders headers = new GetDingReportSummaryHeaders();
+        return this.getDingReportSummaryWithOptions(dataId, headers, runtime);
+    }
+
+    public GetDingReportSummaryResponse getDingReportSummaryWithOptions(String dataId, GetDingReportSummaryHeaders headers, RuntimeOptions runtime) throws Exception {
+        dataId = com.aliyun.openapiutil.Client.getEncodeParam(dataId);
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        return TeaModel.toModel(this.doROARequest("GetDingReportSummary", "exclusive_1.0", "HTTP", "GET", "AK", "/v1.0/exclusive/datas/" + dataId + "/reports/organizations", "json", req, runtime), new GetDingReportSummaryResponse());
+    }
+
     public GetDocCreatedDeptSummaryResponse getDocCreatedDeptSummary(String dataId, GetDocCreatedDeptSummaryRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         GetDocCreatedDeptSummaryHeaders headers = new GetDocCreatedDeptSummaryHeaders();

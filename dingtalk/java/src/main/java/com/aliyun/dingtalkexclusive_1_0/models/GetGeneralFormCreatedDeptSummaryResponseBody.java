@@ -58,6 +58,10 @@ public class GetGeneralFormCreatedDeptSummaryResponseBody extends TeaModel {
         @NameInMap("generalFormCreateCnt1d")
         public String generalFormCreateCnt1d;
 
+        // 最近1天使用智能填表人数
+        @NameInMap("useGeneralFormUserCnt1d")
+        public String useGeneralFormUserCnt1d;
+
         public static GetGeneralFormCreatedDeptSummaryResponseBodyData build(java.util.Map<String, ?> map) throws Exception {
             GetGeneralFormCreatedDeptSummaryResponseBodyData self = new GetGeneralFormCreatedDeptSummaryResponseBodyData();
             return TeaModel.build(map, self);
@@ -85,6 +89,14 @@ public class GetGeneralFormCreatedDeptSummaryResponseBody extends TeaModel {
         }
         public String getGeneralFormCreateCnt1d() {
             return this.generalFormCreateCnt1d;
+        }
+
+        public GetGeneralFormCreatedDeptSummaryResponseBodyData setUseGeneralFormUserCnt1d(String useGeneralFormUserCnt1d) {
+            this.useGeneralFormUserCnt1d = useGeneralFormUserCnt1d;
+            return this;
+        }
+        public String getUseGeneralFormUserCnt1d() {
+            return this.useGeneralFormUserCnt1d;
         }
 
     }

@@ -46,6 +46,10 @@ public class GetDocCreatedDeptSummaryResponseBody extends TeaModel {
     }
 
     public static class GetDocCreatedDeptSummaryResponseBodyData extends TeaModel {
+        // 最近1天创建文档人数
+        @NameInMap("createDocUserCnt1d")
+        public String createDocUserCnt1d;
+
         // 部门id
         @NameInMap("deptId")
         public String deptId;
@@ -54,13 +58,21 @@ public class GetDocCreatedDeptSummaryResponseBody extends TeaModel {
         @NameInMap("deptName")
         public String deptName;
 
-        // 最近1天累计钉钉文档创建数
+        // 最近1天钉钉文档创建数
         @NameInMap("docCreatedCnt")
         public String docCreatedCnt;
 
         public static GetDocCreatedDeptSummaryResponseBodyData build(java.util.Map<String, ?> map) throws Exception {
             GetDocCreatedDeptSummaryResponseBodyData self = new GetDocCreatedDeptSummaryResponseBodyData();
             return TeaModel.build(map, self);
+        }
+
+        public GetDocCreatedDeptSummaryResponseBodyData setCreateDocUserCnt1d(String createDocUserCnt1d) {
+            this.createDocUserCnt1d = createDocUserCnt1d;
+            return this;
+        }
+        public String getCreateDocUserCnt1d() {
+            return this.createDocUserCnt1d;
         }
 
         public GetDocCreatedDeptSummaryResponseBodyData setDeptId(String deptId) {
