@@ -228,18 +228,9 @@ class ConvertLegacyEventIdHeaders(TeaModel):
     def __init__(
         self,
         common_headers: Dict[str, str] = None,
-        ding_access_token_type: str = None,
-        ding_org_id: str = None,
-        ding_uid: str = None,
         x_acs_dingtalk_access_token: str = None,
     ):
         self.common_headers = common_headers
-        # 授权类型
-        self.ding_access_token_type = ding_access_token_type
-        # 授权本次调用的企业id，该字段有值时认为本次调用已被授权访问该企业下的所有数据
-        self.ding_org_id = ding_org_id
-        # 授权本次调用的用户id，该字段有值时认为本次调用已被授权访问该用户可以访问的所有数据
-        self.ding_uid = ding_uid
         self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
 
     def validate(self):
@@ -253,12 +244,6 @@ class ConvertLegacyEventIdHeaders(TeaModel):
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
-        if self.ding_access_token_type is not None:
-            result['dingAccessTokenType'] = self.ding_access_token_type
-        if self.ding_org_id is not None:
-            result['dingOrgId'] = self.ding_org_id
-        if self.ding_uid is not None:
-            result['dingUid'] = self.ding_uid
         if self.x_acs_dingtalk_access_token is not None:
             result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
         return result
@@ -267,12 +252,6 @@ class ConvertLegacyEventIdHeaders(TeaModel):
         m = m or dict()
         if m.get('commonHeaders') is not None:
             self.common_headers = m.get('commonHeaders')
-        if m.get('dingAccessTokenType') is not None:
-            self.ding_access_token_type = m.get('dingAccessTokenType')
-        if m.get('dingOrgId') is not None:
-            self.ding_org_id = m.get('dingOrgId')
-        if m.get('dingUid') is not None:
-            self.ding_uid = m.get('dingUid')
         if m.get('x-acs-dingtalk-access-token') is not None:
             self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
         return self
@@ -7125,104 +7104,6 @@ class RespondEventResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
-        return self
-
-
-class SignInHeaders(TeaModel):
-    def __init__(
-        self,
-        common_headers: Dict[str, str] = None,
-        x_acs_dingtalk_access_token: str = None,
-    ):
-        self.common_headers = common_headers
-        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.common_headers is not None:
-            result['commonHeaders'] = self.common_headers
-        if self.x_acs_dingtalk_access_token is not None:
-            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('commonHeaders') is not None:
-            self.common_headers = m.get('commonHeaders')
-        if m.get('x-acs-dingtalk-access-token') is not None:
-            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
-        return self
-
-
-class SignInResponseBody(TeaModel):
-    def __init__(
-        self,
-        check_in_time: int = None,
-    ):
-        # 签到时间戳
-        self.check_in_time = check_in_time
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.check_in_time is not None:
-            result['checkInTime'] = self.check_in_time
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('checkInTime') is not None:
-            self.check_in_time = m.get('checkInTime')
-        return self
-
-
-class SignInResponse(TeaModel):
-    def __init__(
-        self,
-        headers: Dict[str, str] = None,
-        body: SignInResponseBody = None,
-    ):
-        self.headers = headers
-        self.body = body
-
-    def validate(self):
-        self.validate_required(self.headers, 'headers')
-        self.validate_required(self.body, 'body')
-        if self.body:
-            self.body.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.headers is not None:
-            result['headers'] = self.headers
-        if self.body is not None:
-            result['body'] = self.body.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('headers') is not None:
-            self.headers = m.get('headers')
-        if m.get('body') is not None:
-            temp_model = SignInResponseBody()
-            self.body = temp_model.from_map(m['body'])
         return self
 
 

@@ -591,6 +591,62 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetDingReportDeptSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/data/report/dept/{data_id}', 'json', req, runtime)
         )
 
+    def get_ding_report_summary(
+        self,
+        data_id: str,
+    ) -> dingtalkexclusive__1__0_models.GetDingReportSummaryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetDingReportSummaryHeaders()
+        return self.get_ding_report_summary_with_options(data_id, headers, runtime)
+
+    async def get_ding_report_summary_async(
+        self,
+        data_id: str,
+    ) -> dingtalkexclusive__1__0_models.GetDingReportSummaryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetDingReportSummaryHeaders()
+        return await self.get_ding_report_summary_with_options_async(data_id, headers, runtime)
+
+    def get_ding_report_summary_with_options(
+        self,
+        data_id: str,
+        headers: dingtalkexclusive__1__0_models.GetDingReportSummaryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetDingReportSummaryResponse:
+        data_id = OpenApiUtilClient.get_encode_param(data_id)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetDingReportSummaryResponse(),
+            self.do_roarequest('GetDingReportSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/datas/{data_id}/reports/organizations', 'json', req, runtime)
+        )
+
+    async def get_ding_report_summary_with_options_async(
+        self,
+        data_id: str,
+        headers: dingtalkexclusive__1__0_models.GetDingReportSummaryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetDingReportSummaryResponse:
+        data_id = OpenApiUtilClient.get_encode_param(data_id)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetDingReportSummaryResponse(),
+            await self.do_roarequest_async('GetDingReportSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/datas/{data_id}/reports/organizations', 'json', req, runtime)
+        )
+
     def get_doc_created_dept_summary(
         self,
         data_id: str,

@@ -206,12 +206,6 @@ class Client(OpenApiClient):
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.ding_access_token_type):
-            real_headers['dingAccessTokenType'] = UtilClient.to_jsonstring(headers.ding_access_token_type)
-        if not UtilClient.is_unset(headers.ding_org_id):
-            real_headers['dingOrgId'] = UtilClient.to_jsonstring(headers.ding_org_id)
-        if not UtilClient.is_unset(headers.ding_uid):
-            real_headers['dingUid'] = UtilClient.to_jsonstring(headers.ding_uid)
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
@@ -238,12 +232,6 @@ class Client(OpenApiClient):
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.ding_access_token_type):
-            real_headers['dingAccessTokenType'] = UtilClient.to_jsonstring(headers.ding_access_token_type)
-        if not UtilClient.is_unset(headers.ding_org_id):
-            real_headers['dingOrgId'] = UtilClient.to_jsonstring(headers.ding_org_id)
-        if not UtilClient.is_unset(headers.ding_uid):
-            real_headers['dingUid'] = UtilClient.to_jsonstring(headers.ding_uid)
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
@@ -1683,74 +1671,6 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkcalendar__1__0_models.RespondEventResponse(),
             await self.do_roarequest_async('RespondEvent', 'calendar_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/events/{event_id}/respond', 'none', req, runtime)
-        )
-
-    def sign_in(
-        self,
-        user_id: str,
-        calendar_id: str,
-        event_id: str,
-    ) -> dingtalkcalendar__1__0_models.SignInResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkcalendar__1__0_models.SignInHeaders()
-        return self.sign_in_with_options(user_id, calendar_id, event_id, headers, runtime)
-
-    async def sign_in_async(
-        self,
-        user_id: str,
-        calendar_id: str,
-        event_id: str,
-    ) -> dingtalkcalendar__1__0_models.SignInResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkcalendar__1__0_models.SignInHeaders()
-        return await self.sign_in_with_options_async(user_id, calendar_id, event_id, headers, runtime)
-
-    def sign_in_with_options(
-        self,
-        user_id: str,
-        calendar_id: str,
-        event_id: str,
-        headers: dingtalkcalendar__1__0_models.SignInHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkcalendar__1__0_models.SignInResponse:
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
-        calendar_id = OpenApiUtilClient.get_encode_param(calendar_id)
-        event_id = OpenApiUtilClient.get_encode_param(event_id)
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers
-        )
-        return TeaCore.from_map(
-            dingtalkcalendar__1__0_models.SignInResponse(),
-            self.do_roarequest('SignIn', 'calendar_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/events/{event_id}/signIn', 'json', req, runtime)
-        )
-
-    async def sign_in_with_options_async(
-        self,
-        user_id: str,
-        calendar_id: str,
-        event_id: str,
-        headers: dingtalkcalendar__1__0_models.SignInHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkcalendar__1__0_models.SignInResponse:
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
-        calendar_id = OpenApiUtilClient.get_encode_param(calendar_id)
-        event_id = OpenApiUtilClient.get_encode_param(event_id)
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers
-        )
-        return TeaCore.from_map(
-            dingtalkcalendar__1__0_models.SignInResponse(),
-            await self.do_roarequest_async('SignIn', 'calendar_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/events/{event_id}/signIn', 'json', req, runtime)
         )
 
     def subscribe_calendar(

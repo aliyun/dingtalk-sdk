@@ -913,9 +913,15 @@ class GetCalenderSummaryResponseBody(TeaModel):
     def __init__(
         self,
         calendar_create_user_cnt: str = None,
+        recv_calendar_user_cnt_1d: str = None,
+        use_calendar_user_cnt_1d: str = None,
     ):
-        # 最近1天累计创建日程人数
+        # 最近1天创建日程人数
         self.calendar_create_user_cnt = calendar_create_user_cnt
+        # 最近1天接收日程人数
+        self.recv_calendar_user_cnt_1d = recv_calendar_user_cnt_1d
+        # 最近1天使用日程人数
+        self.use_calendar_user_cnt_1d = use_calendar_user_cnt_1d
 
     def validate(self):
         pass
@@ -928,12 +934,20 @@ class GetCalenderSummaryResponseBody(TeaModel):
         result = dict()
         if self.calendar_create_user_cnt is not None:
             result['calendarCreateUserCnt'] = self.calendar_create_user_cnt
+        if self.recv_calendar_user_cnt_1d is not None:
+            result['recvCalendarUserCnt1d'] = self.recv_calendar_user_cnt_1d
+        if self.use_calendar_user_cnt_1d is not None:
+            result['useCalendarUserCnt1d'] = self.use_calendar_user_cnt_1d
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('calendarCreateUserCnt') is not None:
             self.calendar_create_user_cnt = m.get('calendarCreateUserCnt')
+        if m.get('recvCalendarUserCnt1d') is not None:
+            self.recv_calendar_user_cnt_1d = m.get('recvCalendarUserCnt1d')
+        if m.get('useCalendarUserCnt1d') is not None:
+            self.use_calendar_user_cnt_1d = m.get('useCalendarUserCnt1d')
         return self
 
 
@@ -1591,6 +1605,104 @@ class GetDingReportDeptSummaryResponse(TeaModel):
         return self
 
 
+class GetDingReportSummaryHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetDingReportSummaryResponseBody(TeaModel):
+    def __init__(
+        self,
+        report_comment_user_cnt_1d: str = None,
+    ):
+        # 最近1天日志评论用户数
+        self.report_comment_user_cnt_1d = report_comment_user_cnt_1d
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.report_comment_user_cnt_1d is not None:
+            result['reportCommentUserCnt1d'] = self.report_comment_user_cnt_1d
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('reportCommentUserCnt1d') is not None:
+            self.report_comment_user_cnt_1d = m.get('reportCommentUserCnt1d')
+        return self
+
+
+class GetDingReportSummaryResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetDingReportSummaryResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetDingReportSummaryResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetDocCreatedDeptSummaryHeaders(TeaModel):
     def __init__(
         self,
@@ -1662,15 +1774,18 @@ class GetDocCreatedDeptSummaryRequest(TeaModel):
 class GetDocCreatedDeptSummaryResponseBodyData(TeaModel):
     def __init__(
         self,
+        create_doc_user_cnt_1d: str = None,
         dept_id: str = None,
         dept_name: str = None,
         doc_created_cnt: str = None,
     ):
+        # 最近1天创建文档人数
+        self.create_doc_user_cnt_1d = create_doc_user_cnt_1d
         # 部门id
         self.dept_id = dept_id
         # 部门名称
         self.dept_name = dept_name
-        # 最近1天累计钉钉文档创建数
+        # 最近1天钉钉文档创建数
         self.doc_created_cnt = doc_created_cnt
 
     def validate(self):
@@ -1682,6 +1797,8 @@ class GetDocCreatedDeptSummaryResponseBodyData(TeaModel):
             return _map
 
         result = dict()
+        if self.create_doc_user_cnt_1d is not None:
+            result['createDocUserCnt1d'] = self.create_doc_user_cnt_1d
         if self.dept_id is not None:
             result['deptId'] = self.dept_id
         if self.dept_name is not None:
@@ -1692,6 +1809,8 @@ class GetDocCreatedDeptSummaryResponseBodyData(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('createDocUserCnt1d') is not None:
+            self.create_doc_user_cnt_1d = m.get('createDocUserCnt1d')
         if m.get('deptId') is not None:
             self.dept_id = m.get('deptId')
         if m.get('deptName') is not None:
@@ -1824,9 +1943,12 @@ class GetDocCreatedSummaryHeaders(TeaModel):
 class GetDocCreatedSummaryResponseBody(TeaModel):
     def __init__(
         self,
+        doc_create_user_cnt_1d: str = None,
         doc_created_cnt: str = None,
     ):
-        # 最近1天累计创建文档数
+        # 最近1天创建文档人数
+        self.doc_create_user_cnt_1d = doc_create_user_cnt_1d
+        # 最近1天创建文档数
         self.doc_created_cnt = doc_created_cnt
 
     def validate(self):
@@ -1838,12 +1960,16 @@ class GetDocCreatedSummaryResponseBody(TeaModel):
             return _map
 
         result = dict()
+        if self.doc_create_user_cnt_1d is not None:
+            result['docCreateUserCnt1d'] = self.doc_create_user_cnt_1d
         if self.doc_created_cnt is not None:
             result['docCreatedCnt'] = self.doc_created_cnt
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('docCreateUserCnt1d') is not None:
+            self.doc_create_user_cnt_1d = m.get('docCreateUserCnt1d')
         if m.get('docCreatedCnt') is not None:
             self.doc_created_cnt = m.get('docCreatedCnt')
         return self
@@ -1960,6 +2086,7 @@ class GetGeneralFormCreatedDeptSummaryResponseBodyData(TeaModel):
         dept_id: str = None,
         dept_name: str = None,
         general_form_create_cnt_1d: str = None,
+        use_general_form_user_cnt_1d: str = None,
     ):
         # 部门id
         self.dept_id = dept_id
@@ -1967,6 +2094,8 @@ class GetGeneralFormCreatedDeptSummaryResponseBodyData(TeaModel):
         self.dept_name = dept_name
         # 最近1天累计发布智能填表数
         self.general_form_create_cnt_1d = general_form_create_cnt_1d
+        # 最近1天使用智能填表人数
+        self.use_general_form_user_cnt_1d = use_general_form_user_cnt_1d
 
     def validate(self):
         pass
@@ -1983,6 +2112,8 @@ class GetGeneralFormCreatedDeptSummaryResponseBodyData(TeaModel):
             result['deptName'] = self.dept_name
         if self.general_form_create_cnt_1d is not None:
             result['generalFormCreateCnt1d'] = self.general_form_create_cnt_1d
+        if self.use_general_form_user_cnt_1d is not None:
+            result['useGeneralFormUserCnt1d'] = self.use_general_form_user_cnt_1d
         return result
 
     def from_map(self, m: dict = None):
@@ -1993,6 +2124,8 @@ class GetGeneralFormCreatedDeptSummaryResponseBodyData(TeaModel):
             self.dept_name = m.get('deptName')
         if m.get('generalFormCreateCnt1d') is not None:
             self.general_form_create_cnt_1d = m.get('generalFormCreateCnt1d')
+        if m.get('useGeneralFormUserCnt1d') is not None:
+            self.use_general_form_user_cnt_1d = m.get('useGeneralFormUserCnt1d')
         return self
 
 
@@ -2120,9 +2253,12 @@ class GetGeneralFormCreatedSummaryResponseBody(TeaModel):
     def __init__(
         self,
         general_form_created_cnt: str = None,
+        use_general_form_user_cnt_1d: str = None,
     ):
-        # 最近1天累计智能填表创建数
+        # 最近1天智能填表创建数
         self.general_form_created_cnt = general_form_created_cnt
+        # 最近1天使用智能填表人数
+        self.use_general_form_user_cnt_1d = use_general_form_user_cnt_1d
 
     def validate(self):
         pass
@@ -2135,12 +2271,16 @@ class GetGeneralFormCreatedSummaryResponseBody(TeaModel):
         result = dict()
         if self.general_form_created_cnt is not None:
             result['generalFormCreatedCnt'] = self.general_form_created_cnt
+        if self.use_general_form_user_cnt_1d is not None:
+            result['useGeneralFormUserCnt1d'] = self.use_general_form_user_cnt_1d
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('generalFormCreatedCnt') is not None:
             self.general_form_created_cnt = m.get('generalFormCreatedCnt')
+        if m.get('useGeneralFormUserCnt1d') is not None:
+            self.use_general_form_user_cnt_1d = m.get('useGeneralFormUserCnt1d')
         return self
 
 
