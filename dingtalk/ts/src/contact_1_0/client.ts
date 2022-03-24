@@ -744,6 +744,7 @@ export class GetCardInfoResponseBody extends $tea.Model {
   introduce?: { [key: string]: any };
   name?: string;
   orgName?: string;
+  settings?: { [key: string]: any };
   templateId?: string;
   title?: string;
   static names(): { [key: string]: string } {
@@ -756,6 +757,7 @@ export class GetCardInfoResponseBody extends $tea.Model {
       introduce: 'introduce',
       name: 'name',
       orgName: 'orgName',
+      settings: 'settings',
       templateId: 'templateId',
       title: 'title',
     };
@@ -771,6 +773,7 @@ export class GetCardInfoResponseBody extends $tea.Model {
       introduce: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
       name: 'string',
       orgName: 'string',
+      settings: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
       templateId: 'string',
       title: 'string',
     };

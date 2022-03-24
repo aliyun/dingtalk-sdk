@@ -127,6 +127,7 @@ export class CreateTodoTaskHeaders extends $tea.Model {
 }
 
 export class CreateTodoTaskRequest extends $tea.Model {
+  bizCategoryId?: string;
   creatorId?: string;
   description?: string;
   detailUrl?: CreateTodoTaskRequestDetailUrl;
@@ -141,6 +142,7 @@ export class CreateTodoTaskRequest extends $tea.Model {
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
+      bizCategoryId: 'bizCategoryId',
       creatorId: 'creatorId',
       description: 'description',
       detailUrl: 'detailUrl',
@@ -158,6 +160,7 @@ export class CreateTodoTaskRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      bizCategoryId: 'string',
       creatorId: 'string',
       description: 'string',
       detailUrl: CreateTodoTaskRequestDetailUrl,
@@ -2247,6 +2250,10 @@ export default class Client extends OpenApi {
     }
 
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizCategoryId)) {
+      body["bizCategoryId"] = request.bizCategoryId;
+    }
+
     if (!Util.isUnset(request.creatorId)) {
       body["creatorId"] = request.creatorId;
     }

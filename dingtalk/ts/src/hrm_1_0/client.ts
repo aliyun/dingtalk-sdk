@@ -1209,7 +1209,7 @@ export class MasterDataTenantQueyResponseBodyResult extends $tea.Model {
   integrateDataAuth?: boolean;
   name?: string;
   readAuth?: boolean;
-  tenantId?: string;
+  tenantId?: number;
   type?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1228,7 +1228,7 @@ export class MasterDataTenantQueyResponseBodyResult extends $tea.Model {
       integrateDataAuth: 'boolean',
       name: 'string',
       readAuth: 'boolean',
-      tenantId: 'string',
+      tenantId: 'number',
       type: 'number',
     };
   }
