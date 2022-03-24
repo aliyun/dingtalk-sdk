@@ -36,6 +36,10 @@ public class GetCardInfoResponseBody extends TeaModel {
     @NameInMap("orgName")
     public String orgName;
 
+    // 用户名片信息设置
+    @NameInMap("settings")
+    public java.util.Map<String, ?> settings;
+
     // 模板ID
     @NameInMap("templateId")
     public String templateId;
@@ -111,6 +115,14 @@ public class GetCardInfoResponseBody extends TeaModel {
     }
     public String getOrgName() {
         return this.orgName;
+    }
+
+    public GetCardInfoResponseBody setSettings(java.util.Map<String, ?> settings) {
+        this.settings = settings;
+        return this;
+    }
+    public java.util.Map<String, ?> getSettings() {
+        return this.settings;
     }
 
     public GetCardInfoResponseBody setTemplateId(String templateId) {

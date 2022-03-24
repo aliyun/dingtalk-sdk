@@ -4,6 +4,10 @@ package com.aliyun.dingtalktodo_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateTodoTaskRequest extends TeaModel {
+    // 二级分类
+    @NameInMap("bizCategoryId")
+    public String bizCategoryId;
+
     // 创建者id，需传用户的unionId
     @NameInMap("creatorId")
     public String creatorId;
@@ -55,6 +59,14 @@ public class CreateTodoTaskRequest extends TeaModel {
     public static CreateTodoTaskRequest build(java.util.Map<String, ?> map) throws Exception {
         CreateTodoTaskRequest self = new CreateTodoTaskRequest();
         return TeaModel.build(map, self);
+    }
+
+    public CreateTodoTaskRequest setBizCategoryId(String bizCategoryId) {
+        this.bizCategoryId = bizCategoryId;
+        return this;
+    }
+    public String getBizCategoryId() {
+        return this.bizCategoryId;
     }
 
     public CreateTodoTaskRequest setCreatorId(String creatorId) {

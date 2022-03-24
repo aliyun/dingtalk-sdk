@@ -39,7 +39,7 @@ public class MasterDataTenantQueyResponseBody extends TeaModel {
 
         // 租户 id
         @NameInMap("tenantId")
-        public String tenantId;
+        public Long tenantId;
 
         // 租户类型
         @NameInMap("type")
@@ -82,11 +82,11 @@ public class MasterDataTenantQueyResponseBody extends TeaModel {
             return this.readAuth;
         }
 
-        public MasterDataTenantQueyResponseBodyResult setTenantId(String tenantId) {
+        public MasterDataTenantQueyResponseBodyResult setTenantId(Long tenantId) {
             this.tenantId = tenantId;
             return this;
         }
-        public String getTenantId() {
+        public Long getTenantId() {
             return this.tenantId;
         }
 
