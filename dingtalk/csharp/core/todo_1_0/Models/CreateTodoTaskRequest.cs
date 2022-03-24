@@ -10,6 +10,13 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
 {
     public class CreateTodoTaskRequest : TeaModel {
         /// <summary>
+        /// 二级分类
+        /// </summary>
+        [NameInMap("bizCategoryId")]
+        [Validation(Required=false)]
+        public string BizCategoryId { get; set; }
+
+        /// <summary>
         /// 创建者id，需传用户的unionId
         /// </summary>
         [NameInMap("creatorId")]

@@ -46,7 +46,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
             /// </summary>
             [NameInMap("tenantId")]
             [Validation(Required=false)]
-            public string TenantId { get; set; }
+            public long? TenantId { get; set; }
 
             /// <summary>
             /// 租户类型
