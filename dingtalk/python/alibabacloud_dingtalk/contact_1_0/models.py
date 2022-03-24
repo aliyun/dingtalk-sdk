@@ -1715,6 +1715,7 @@ class GetCardInfoResponseBody(TeaModel):
         introduce: Dict[str, Any] = None,
         name: str = None,
         org_name: str = None,
+        settings: Dict[str, Any] = None,
         template_id: str = None,
         title: str = None,
     ):
@@ -1734,6 +1735,8 @@ class GetCardInfoResponseBody(TeaModel):
         self.name = name
         # 组织名称
         self.org_name = org_name
+        # 用户名片信息设置
+        self.settings = settings
         # 模板ID
         self.template_id = template_id
         # 职位
@@ -1765,6 +1768,8 @@ class GetCardInfoResponseBody(TeaModel):
             result['name'] = self.name
         if self.org_name is not None:
             result['orgName'] = self.org_name
+        if self.settings is not None:
+            result['settings'] = self.settings
         if self.template_id is not None:
             result['templateId'] = self.template_id
         if self.title is not None:
@@ -1790,6 +1795,8 @@ class GetCardInfoResponseBody(TeaModel):
             self.name = m.get('name')
         if m.get('orgName') is not None:
             self.org_name = m.get('orgName')
+        if m.get('settings') is not None:
+            self.settings = m.get('settings')
         if m.get('templateId') is not None:
             self.template_id = m.get('templateId')
         if m.get('title') is not None:

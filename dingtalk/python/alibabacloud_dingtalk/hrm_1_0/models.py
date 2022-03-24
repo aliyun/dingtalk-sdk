@@ -1385,7 +1385,7 @@ class MasterDataTenantQueyResponseBodyResult(TeaModel):
         integrate_data_auth: bool = None,
         name: str = None,
         read_auth: bool = None,
-        tenant_id: str = None,
+        tenant_id: int = None,
         type: int = None,
     ):
         # 该租户是否已向主数据同步数据

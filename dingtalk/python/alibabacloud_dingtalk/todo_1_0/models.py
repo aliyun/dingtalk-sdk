@@ -264,6 +264,7 @@ class CreateTodoTaskRequestNotifyConfigs(TeaModel):
 class CreateTodoTaskRequest(TeaModel):
     def __init__(
         self,
+        biz_category_id: str = None,
         creator_id: str = None,
         description: str = None,
         detail_url: CreateTodoTaskRequestDetailUrl = None,
@@ -277,6 +278,8 @@ class CreateTodoTaskRequest(TeaModel):
         subject: str = None,
         operator_id: str = None,
     ):
+        # 二级分类
+        self.biz_category_id = biz_category_id
         # 创建者id，需传用户的unionId
         self.creator_id = creator_id
         # 待办备注描述
@@ -314,6 +317,8 @@ class CreateTodoTaskRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.biz_category_id is not None:
+            result['bizCategoryId'] = self.biz_category_id
         if self.creator_id is not None:
             result['creatorId'] = self.creator_id
         if self.description is not None:
@@ -342,6 +347,8 @@ class CreateTodoTaskRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('bizCategoryId') is not None:
+            self.biz_category_id = m.get('bizCategoryId')
         if m.get('creatorId') is not None:
             self.creator_id = m.get('creatorId')
         if m.get('description') is not None:
