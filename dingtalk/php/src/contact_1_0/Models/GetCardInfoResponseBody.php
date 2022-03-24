@@ -66,6 +66,13 @@ class GetCardInfoResponseBody extends Model
     public $orgName;
 
     /**
+     * @description 用户名片信息设置
+     *
+     * @var mixed[]
+     */
+    public $settings;
+
+    /**
      * @description 模板ID
      *
      * @var string
@@ -87,6 +94,7 @@ class GetCardInfoResponseBody extends Model
         'introduce'    => 'introduce',
         'name'         => 'name',
         'orgName'      => 'orgName',
+        'settings'     => 'settings',
         'templateId'   => 'templateId',
         'title'        => 'title',
     ];
@@ -121,6 +129,9 @@ class GetCardInfoResponseBody extends Model
         }
         if (null !== $this->orgName) {
             $res['orgName'] = $this->orgName;
+        }
+        if (null !== $this->settings) {
+            $res['settings'] = $this->settings;
         }
         if (null !== $this->templateId) {
             $res['templateId'] = $this->templateId;
@@ -163,6 +174,9 @@ class GetCardInfoResponseBody extends Model
         }
         if (isset($map['orgName'])) {
             $model->orgName = $map['orgName'];
+        }
+        if (isset($map['settings'])) {
+            $model->settings = $map['settings'];
         }
         if (isset($map['templateId'])) {
             $model->templateId = $map['templateId'];

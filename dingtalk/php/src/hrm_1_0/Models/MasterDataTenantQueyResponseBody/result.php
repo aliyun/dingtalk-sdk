@@ -39,7 +39,7 @@ class result extends Model
     /**
      * @description 租户 id
      *
-     * @var string
+     * @var int
      */
     public $tenantId;
 

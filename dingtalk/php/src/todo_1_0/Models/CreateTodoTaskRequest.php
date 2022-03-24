@@ -11,6 +11,13 @@ use AlibabaCloud\Tea\Model;
 class CreateTodoTaskRequest extends Model
 {
     /**
+     * @description 二级分类
+     *
+     * @var string
+     */
+    public $bizCategoryId;
+
+    /**
      * @description 创建者id，需传用户的unionId
      *
      * @var string
@@ -94,6 +101,7 @@ class CreateTodoTaskRequest extends Model
      */
     public $operatorId;
     protected $_name = [
+        'bizCategoryId'      => 'bizCategoryId',
         'creatorId'          => 'creatorId',
         'description'        => 'description',
         'detailUrl'          => 'detailUrl',
@@ -115,6 +123,9 @@ class CreateTodoTaskRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->bizCategoryId) {
+            $res['bizCategoryId'] = $this->bizCategoryId;
+        }
         if (null !== $this->creatorId) {
             $res['creatorId'] = $this->creatorId;
         }
@@ -163,6 +174,9 @@ class CreateTodoTaskRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['bizCategoryId'])) {
+            $model->bizCategoryId = $map['bizCategoryId'];
+        }
         if (isset($map['creatorId'])) {
             $model->creatorId = $map['creatorId'];
         }

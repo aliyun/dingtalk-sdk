@@ -147,6 +147,9 @@ class Dingtalk extends OpenApiClient
             @$query['operatorId'] = $request->operatorId;
         }
         $body = [];
+        if (!Utils::isUnset($request->bizCategoryId)) {
+            @$body['bizCategoryId'] = $request->bizCategoryId;
+        }
         if (!Utils::isUnset($request->creatorId)) {
             @$body['creatorId'] = $request->creatorId;
         }
