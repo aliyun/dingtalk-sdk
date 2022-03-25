@@ -8,14 +8,14 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 {
-    public class ListAttendeesRequest : TeaModel {
-        [NameInMap("maxResults")]
+    public class SignInHeaders : TeaModel {
+        [NameInMap("commonHeaders")]
         [Validation(Required=false)]
-        public int? MaxResults { get; set; }
+        public Dictionary<string, string> CommonHeaders { get; set; }
 
-        [NameInMap("nextToken")]
+        [NameInMap("x-acs-dingtalk-access-token")]
         [Validation(Required=false)]
-        public string NextToken { get; set; }
+        public string XAcsDingtalkAccessToken { get; set; }
 
     }
 

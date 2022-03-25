@@ -14,14 +14,14 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         /// </summary>
         [NameInMap("maxAttendees")]
         [Validation(Required=false)]
-        public long? MaxAttendees { get; set; }
+        public int? MaxAttendees { get; set; }
 
         /// <summary>
         /// 返回的最大日程数，最大100个，默认100个。
         /// </summary>
         [NameInMap("maxResults")]
         [Validation(Required=false)]
-        public long? MaxResults { get; set; }
+        public int? MaxResults { get; set; }
 
         /// <summary>
         /// 查询翻页token
