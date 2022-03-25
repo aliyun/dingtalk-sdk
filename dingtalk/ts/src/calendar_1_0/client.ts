@@ -1282,13 +1282,13 @@ export class ListEventsInstancesRequest extends $tea.Model {
   maxAttendees?: number;
   maxResults?: number;
   seriesMasterId?: string;
-  timeMin?: string;
+  startRecurrenceId?: string;
   static names(): { [key: string]: string } {
     return {
       maxAttendees: 'maxAttendees',
       maxResults: 'maxResults',
       seriesMasterId: 'seriesMasterId',
-      timeMin: 'timeMin',
+      startRecurrenceId: 'startRecurrenceId',
     };
   }
 
@@ -1297,7 +1297,7 @@ export class ListEventsInstancesRequest extends $tea.Model {
       maxAttendees: 'number',
       maxResults: 'number',
       seriesMasterId: 'string',
-      timeMin: 'string',
+      startRecurrenceId: 'string',
     };
   }
 
@@ -1704,6 +1704,69 @@ export class RespondEventResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SignInHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SignInResponseBody extends $tea.Model {
+  checkInTime?: number;
+  static names(): { [key: string]: string } {
+    return {
+      checkInTime: 'checkInTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      checkInTime: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SignInResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SignInResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SignInResponseBody,
     };
   }
 
@@ -4705,8 +4768,8 @@ export default class Client extends OpenApi {
       query["seriesMasterId"] = request.seriesMasterId;
     }
 
-    if (!Util.isUnset(request.timeMin)) {
-      query["timeMin"] = request.timeMin;
+    if (!Util.isUnset(request.startRecurrenceId)) {
+      query["startRecurrenceId"] = request.startRecurrenceId;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -4906,6 +4969,31 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<RespondEventResponse>(await this.doROARequest("RespondEvent", "calendar_1.0", "HTTP", "POST", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}/respond`, "none", req, runtime), new RespondEventResponse({}));
+  }
+
+  async signIn(userId: string, calendarId: string, eventId: string): Promise<SignInResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SignInHeaders({ });
+    return await this.signInWithOptions(userId, calendarId, eventId, headers, runtime);
+  }
+
+  async signInWithOptions(userId: string, calendarId: string, eventId: string, headers: SignInHeaders, runtime: $Util.RuntimeOptions): Promise<SignInResponse> {
+    userId = OpenApiUtil.getEncodeParam(userId);
+    calendarId = OpenApiUtil.getEncodeParam(calendarId);
+    eventId = OpenApiUtil.getEncodeParam(eventId);
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<SignInResponse>(await this.doROARequest("SignIn", "calendar_1.0", "HTTP", "POST", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}/signin`, "json", req, runtime), new SignInResponse({}));
   }
 
   async subscribeCalendar(userId: string, calendarId: string): Promise<SubscribeCalendarResponse> {
