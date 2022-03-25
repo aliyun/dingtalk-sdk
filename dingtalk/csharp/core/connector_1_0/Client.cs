@@ -48,6 +48,10 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0
             {
                 body["actionInfo"] = request.ActionInfo;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IntegratorFlag))
+            {
+                body["integratorFlag"] = request.IntegratorFlag;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -72,6 +76,10 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ActionInfo))
             {
                 body["actionInfo"] = request.ActionInfo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IntegratorFlag))
+            {
+                body["integratorFlag"] = request.IntegratorFlag;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -112,6 +120,10 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0
             {
                 body["connectorInfo"] = request.ConnectorInfo;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IntegratorFlag))
+            {
+                body["integratorFlag"] = request.IntegratorFlag;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -136,6 +148,10 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ConnectorInfo))
             {
                 body["connectorInfo"] = request.ConnectorInfo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IntegratorFlag))
+            {
+                body["integratorFlag"] = request.IntegratorFlag;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -172,6 +188,10 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IntegratorFlag))
+            {
+                body["integratorFlag"] = request.IntegratorFlag;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TriggerInfo))
             {
                 body["triggerInfo"] = request.TriggerInfo;
@@ -197,6 +217,10 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IntegratorFlag))
+            {
+                body["integratorFlag"] = request.IntegratorFlag;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TriggerInfo))
             {
                 body["triggerInfo"] = request.TriggerInfo;
@@ -498,6 +522,10 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0
             {
                 body["actionInfo"] = request.ActionInfo;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IntegratorFlag))
+            {
+                body["integratorFlag"] = request.IntegratorFlag;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -522,6 +550,10 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ActionInfo))
             {
                 body["actionInfo"] = request.ActionInfo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IntegratorFlag))
+            {
+                body["integratorFlag"] = request.IntegratorFlag;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -562,6 +594,10 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0
             {
                 body["connectorInfo"] = request.ConnectorInfo;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IntegratorFlag))
+            {
+                body["integratorFlag"] = request.IntegratorFlag;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -586,6 +622,10 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ConnectorInfo))
             {
                 body["connectorInfo"] = request.ConnectorInfo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IntegratorFlag))
+            {
+                body["integratorFlag"] = request.IntegratorFlag;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -622,6 +662,10 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IntegratorFlag))
+            {
+                body["integratorFlag"] = request.IntegratorFlag;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TriggerInfo))
             {
                 body["triggerInfo"] = request.TriggerInfo;
@@ -647,6 +691,10 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IntegratorFlag))
+            {
+                body["integratorFlag"] = request.IntegratorFlag;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TriggerInfo))
             {
                 body["triggerInfo"] = request.TriggerInfo;

@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
 {
     public class UpdateTriggerRequest : TeaModel {
+        [NameInMap("integratorFlag")]
+        [Validation(Required=false)]
+        public string IntegratorFlag { get; set; }
+
         [NameInMap("triggerInfo")]
         [Validation(Required=false)]
         public List<UpdateTriggerRequestTriggerInfo> TriggerInfo { get; set; }

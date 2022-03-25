@@ -82,6 +82,10 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
 
         }
 
+        [NameInMap("integratorFlag")]
+        [Validation(Required=false)]
+        public string IntegratorFlag { get; set; }
+
     }
 
 }

@@ -14,7 +14,7 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         /// </summary>
         [NameInMap("maxResults")]
         [Validation(Required=false)]
-        public long? MaxResults { get; set; }
+        public int? MaxResults { get; set; }
 
         [NameInMap("nextToken")]
         [Validation(Required=false)]
