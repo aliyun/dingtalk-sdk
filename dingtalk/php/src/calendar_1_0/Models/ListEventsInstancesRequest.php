@@ -30,16 +30,16 @@ class ListEventsInstancesRequest extends Model
     public $seriesMasterId;
 
     /**
-     * @description 大于此时间的所有生成实例
+     * @description 大于等于次序列id的所有实例
      *
      * @var string
      */
-    public $timeMin;
+    public $startRecurrenceId;
     protected $_name = [
-        'maxAttendees'   => 'maxAttendees',
-        'maxResults'     => 'maxResults',
-        'seriesMasterId' => 'seriesMasterId',
-        'timeMin'        => 'timeMin',
+        'maxAttendees'      => 'maxAttendees',
+        'maxResults'        => 'maxResults',
+        'seriesMasterId'    => 'seriesMasterId',
+        'startRecurrenceId' => 'startRecurrenceId',
     ];
 
     public function validate()
@@ -58,8 +58,8 @@ class ListEventsInstancesRequest extends Model
         if (null !== $this->seriesMasterId) {
             $res['seriesMasterId'] = $this->seriesMasterId;
         }
-        if (null !== $this->timeMin) {
-            $res['timeMin'] = $this->timeMin;
+        if (null !== $this->startRecurrenceId) {
+            $res['startRecurrenceId'] = $this->startRecurrenceId;
         }
 
         return $res;
@@ -82,8 +82,8 @@ class ListEventsInstancesRequest extends Model
         if (isset($map['seriesMasterId'])) {
             $model->seriesMasterId = $map['seriesMasterId'];
         }
-        if (isset($map['timeMin'])) {
-            $model->timeMin = $map['timeMin'];
+        if (isset($map['startRecurrenceId'])) {
+            $model->startRecurrenceId = $map['startRecurrenceId'];
         }
 
         return $model;
