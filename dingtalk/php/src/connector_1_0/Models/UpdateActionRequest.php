@@ -13,8 +13,14 @@ class UpdateActionRequest extends Model
      * @var actionInfo[]
      */
     public $actionInfo;
+
+    /**
+     * @var string
+     */
+    public $integratorFlag;
     protected $_name = [
-        'actionInfo' => 'actionInfo',
+        'actionInfo'     => 'actionInfo',
+        'integratorFlag' => 'integratorFlag',
     ];
 
     public function validate()
@@ -32,6 +38,9 @@ class UpdateActionRequest extends Model
                     $res['actionInfo'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->integratorFlag) {
+            $res['integratorFlag'] = $this->integratorFlag;
         }
 
         return $res;
@@ -53,6 +62,9 @@ class UpdateActionRequest extends Model
                     $model->actionInfo[$n++] = null !== $item ? actionInfo::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['integratorFlag'])) {
+            $model->integratorFlag = $map['integratorFlag'];
         }
 
         return $model;

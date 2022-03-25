@@ -10,11 +10,17 @@ use AlibabaCloud\Tea\Model;
 class UpdateTriggerRequest extends Model
 {
     /**
+     * @var string
+     */
+    public $integratorFlag;
+
+    /**
      * @var triggerInfo[]
      */
     public $triggerInfo;
     protected $_name = [
-        'triggerInfo' => 'triggerInfo',
+        'integratorFlag' => 'integratorFlag',
+        'triggerInfo'    => 'triggerInfo',
     ];
 
     public function validate()
@@ -24,6 +30,9 @@ class UpdateTriggerRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->integratorFlag) {
+            $res['integratorFlag'] = $this->integratorFlag;
+        }
         if (null !== $this->triggerInfo) {
             $res['triggerInfo'] = [];
             if (null !== $this->triggerInfo && \is_array($this->triggerInfo)) {
@@ -45,6 +54,9 @@ class UpdateTriggerRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['integratorFlag'])) {
+            $model->integratorFlag = $map['integratorFlag'];
+        }
         if (isset($map['triggerInfo'])) {
             if (!empty($map['triggerInfo'])) {
                 $model->triggerInfo = [];

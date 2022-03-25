@@ -75,6 +75,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->actionInfo)) {
             @$body['actionInfo'] = $request->actionInfo;
         }
+        if (!Utils::isUnset($request->integratorFlag)) {
+            @$body['integratorFlag'] = $request->integratorFlag;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -117,6 +120,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->connectorInfo)) {
             @$body['connectorInfo'] = $request->connectorInfo;
         }
+        if (!Utils::isUnset($request->integratorFlag)) {
+            @$body['integratorFlag'] = $request->integratorFlag;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -156,6 +162,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->integratorFlag)) {
+            @$body['integratorFlag'] = $request->integratorFlag;
+        }
         if (!Utils::isUnset($request->triggerInfo)) {
             @$body['triggerInfo'] = $request->triggerInfo;
         }
@@ -354,6 +363,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->actionInfo)) {
             @$body['actionInfo'] = $request->actionInfo;
         }
+        if (!Utils::isUnset($request->integratorFlag)) {
+            @$body['integratorFlag'] = $request->integratorFlag;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -396,6 +408,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->connectorInfo)) {
             @$body['connectorInfo'] = $request->connectorInfo;
         }
+        if (!Utils::isUnset($request->integratorFlag)) {
+            @$body['integratorFlag'] = $request->integratorFlag;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -435,6 +450,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->integratorFlag)) {
+            @$body['integratorFlag'] = $request->integratorFlag;
+        }
         if (!Utils::isUnset($request->triggerInfo)) {
             @$body['triggerInfo'] = $request->triggerInfo;
         }

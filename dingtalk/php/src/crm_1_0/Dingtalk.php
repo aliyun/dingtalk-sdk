@@ -60,6 +60,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetCrmGroupChatSingleResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetCrmRolePermissionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetCrmRolePermissionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetCrmRolePermissionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetCustomerTracksByRelationIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetCustomerTracksByRelationIdRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetCustomerTracksByRelationIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetGroupSetHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetGroupSetRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetGroupSetResponse;
@@ -1082,6 +1085,57 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetCrmRolePermissionResponse::fromMap($this->doROARequest('GetCrmRolePermission', 'crm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/crm/permissions', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetCustomerTracksByRelationIdRequest $request
+     *
+     * @return GetCustomerTracksByRelationIdResponse
+     */
+    public function getCustomerTracksByRelationId($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetCustomerTracksByRelationIdHeaders([]);
+
+        return $this->getCustomerTracksByRelationIdWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetCustomerTracksByRelationIdRequest $request
+     * @param GetCustomerTracksByRelationIdHeaders $headers
+     * @param RuntimeOptions                       $runtime
+     *
+     * @return GetCustomerTracksByRelationIdResponse
+     */
+    public function getCustomerTracksByRelationIdWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->relationId)) {
+            @$query['relationId'] = $request->relationId;
+        }
+        if (!Utils::isUnset($request->typeGroup)) {
+            @$query['typeGroup'] = $request->typeGroup;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetCustomerTracksByRelationIdResponse::fromMap($this->doROARequest('GetCustomerTracksByRelationId', 'crm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/crm/customerTracks', 'json', $req, $runtime));
     }
 
     /**

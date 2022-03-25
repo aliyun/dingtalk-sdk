@@ -13,8 +13,14 @@ class UpdateConnectorRequest extends Model
      * @var connectorInfo[]
      */
     public $connectorInfo;
+
+    /**
+     * @var string
+     */
+    public $integratorFlag;
     protected $_name = [
-        'connectorInfo' => 'connectorInfo',
+        'connectorInfo'  => 'connectorInfo',
+        'integratorFlag' => 'integratorFlag',
     ];
 
     public function validate()
@@ -32,6 +38,9 @@ class UpdateConnectorRequest extends Model
                     $res['connectorInfo'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->integratorFlag) {
+            $res['integratorFlag'] = $this->integratorFlag;
         }
 
         return $res;
@@ -53,6 +62,9 @@ class UpdateConnectorRequest extends Model
                     $model->connectorInfo[$n++] = null !== $item ? connectorInfo::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['integratorFlag'])) {
+            $model->integratorFlag = $map['integratorFlag'];
         }
 
         return $model;

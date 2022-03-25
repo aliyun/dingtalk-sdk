@@ -68,6 +68,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListMiniAppAvailableVersionR
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListMiniAppHistoryVersionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListMiniAppHistoryVersionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListMiniAppHistoryVersionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListPunchScheduleByConditionWithPagingHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListPunchScheduleByConditionWithPagingRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListPunchScheduleByConditionWithPagingResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\PublishFileChangeNoticeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\PublishFileChangeNoticeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\PublishFileChangeNoticeResponse;
@@ -1173,6 +1176,63 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return ListMiniAppHistoryVersionResponse::fromMap($this->doROARequest('ListMiniAppHistoryVersion', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/miniApps/versions/historyLists', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ListPunchScheduleByConditionWithPagingRequest $request
+     *
+     * @return ListPunchScheduleByConditionWithPagingResponse
+     */
+    public function listPunchScheduleByConditionWithPaging($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListPunchScheduleByConditionWithPagingHeaders([]);
+
+        return $this->listPunchScheduleByConditionWithPagingWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ListPunchScheduleByConditionWithPagingRequest $request
+     * @param ListPunchScheduleByConditionWithPagingHeaders $headers
+     * @param RuntimeOptions                                $runtime
+     *
+     * @return ListPunchScheduleByConditionWithPagingResponse
+     */
+    public function listPunchScheduleByConditionWithPagingWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizInstanceId)) {
+            @$body['bizInstanceId'] = $request->bizInstanceId;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            @$body['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$body['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->scheduleDateEnd)) {
+            @$body['scheduleDateEnd'] = $request->scheduleDateEnd;
+        }
+        if (!Utils::isUnset($request->scheduleDateStart)) {
+            @$body['scheduleDateStart'] = $request->scheduleDateStart;
+        }
+        if (!Utils::isUnset($request->userIdList)) {
+            @$body['userIdList'] = $request->userIdList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return ListPunchScheduleByConditionWithPagingResponse::fromMap($this->doROARequest('ListPunchScheduleByConditionWithPaging', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/punchSchedules/query', 'json', $req, $runtime));
     }
 
     /**
