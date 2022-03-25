@@ -4506,7 +4506,7 @@ class ListEventsInstancesRequest(TeaModel):
         max_attendees: int = None,
         max_results: int = None,
         series_master_id: str = None,
-        time_min: str = None,
+        start_recurrence_id: str = None,
     ):
         # listInstances每个日程的参与者查询个数，默认100，最大100。
         self.max_attendees = max_attendees
@@ -4514,8 +4514,8 @@ class ListEventsInstancesRequest(TeaModel):
         self.max_results = max_results
         # 循环主日程id。
         self.series_master_id = series_master_id
-        # 大于此时间的所有生成实例
-        self.time_min = time_min
+        # 大于等于次序列id的所有实例
+        self.start_recurrence_id = start_recurrence_id
 
     def validate(self):
         pass
@@ -4532,8 +4532,8 @@ class ListEventsInstancesRequest(TeaModel):
             result['maxResults'] = self.max_results
         if self.series_master_id is not None:
             result['seriesMasterId'] = self.series_master_id
-        if self.time_min is not None:
-            result['timeMin'] = self.time_min
+        if self.start_recurrence_id is not None:
+            result['startRecurrenceId'] = self.start_recurrence_id
         return result
 
     def from_map(self, m: dict = None):
@@ -4544,8 +4544,8 @@ class ListEventsInstancesRequest(TeaModel):
             self.max_results = m.get('maxResults')
         if m.get('seriesMasterId') is not None:
             self.series_master_id = m.get('seriesMasterId')
-        if m.get('timeMin') is not None:
-            self.time_min = m.get('timeMin')
+        if m.get('startRecurrenceId') is not None:
+            self.start_recurrence_id = m.get('startRecurrenceId')
         return self
 
 
@@ -7104,6 +7104,104 @@ class RespondEventResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        return self
+
+
+class SignInHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SignInResponseBody(TeaModel):
+    def __init__(
+        self,
+        check_in_time: int = None,
+    ):
+        # 签到时间戳
+        self.check_in_time = check_in_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.check_in_time is not None:
+            result['checkInTime'] = self.check_in_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('checkInTime') is not None:
+            self.check_in_time = m.get('checkInTime')
+        return self
+
+
+class SignInResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SignInResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SignInResponseBody()
+            self.body = temp_model.from_map(m['body'])
         return self
 
 
