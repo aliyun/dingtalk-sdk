@@ -1797,6 +1797,103 @@ export class GetCrmRolePermissionResponse extends $tea.Model {
   }
 }
 
+export class GetCustomerTracksByRelationIdHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCustomerTracksByRelationIdRequest extends $tea.Model {
+  maxResults?: number;
+  nextToken?: string;
+  relationId?: string;
+  typeGroup?: number;
+  static names(): { [key: string]: string } {
+    return {
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      relationId: 'relationId',
+      typeGroup: 'typeGroup',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxResults: 'number',
+      nextToken: 'string',
+      relationId: 'string',
+      typeGroup: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCustomerTracksByRelationIdResponseBody extends $tea.Model {
+  hasMore?: boolean;
+  nextToken?: string;
+  resultList?: GetCustomerTracksByRelationIdResponseBodyResultList[];
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      nextToken: 'nextToken',
+      resultList: 'resultList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      nextToken: 'string',
+      resultList: { 'type': 'array', 'itemType': GetCustomerTracksByRelationIdResponseBodyResultList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCustomerTracksByRelationIdResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetCustomerTracksByRelationIdResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetCustomerTracksByRelationIdResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetGroupSetHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -6647,6 +6744,71 @@ export class GetCrmRolePermissionResponseBodyPermissions extends $tea.Model {
   }
 }
 
+export class GetCustomerTracksByRelationIdResponseBodyResultListIsvInfo extends $tea.Model {
+  appName?: string;
+  orgName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appName: 'appName',
+      orgName: 'orgName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appName: 'string',
+      orgName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCustomerTracksByRelationIdResponseBodyResultList extends $tea.Model {
+  content?: string;
+  creatorName?: string;
+  detail?: { [key: string]: string };
+  format?: string;
+  gmtCreate?: string;
+  isvInfo?: GetCustomerTracksByRelationIdResponseBodyResultListIsvInfo;
+  title?: string;
+  type?: number;
+  typeGroup?: number;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+      creatorName: 'creatorName',
+      detail: 'detail',
+      format: 'format',
+      gmtCreate: 'gmtCreate',
+      isvInfo: 'isvInfo',
+      title: 'title',
+      type: 'type',
+      typeGroup: 'typeGroup',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: 'string',
+      creatorName: 'string',
+      detail: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      format: 'string',
+      gmtCreate: 'string',
+      isvInfo: GetCustomerTracksByRelationIdResponseBodyResultListIsvInfo,
+      title: 'string',
+      type: 'number',
+      typeGroup: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetGroupSetResponseBodyManager extends $tea.Model {
   name?: string;
   userId?: string;
@@ -8870,6 +9032,47 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<GetCrmRolePermissionResponse>(await this.doROARequest("GetCrmRolePermission", "crm_1.0", "HTTP", "GET", "AK", `/v1.0/crm/permissions`, "json", req, runtime), new GetCrmRolePermissionResponse({}));
+  }
+
+  async getCustomerTracksByRelationId(request: GetCustomerTracksByRelationIdRequest): Promise<GetCustomerTracksByRelationIdResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetCustomerTracksByRelationIdHeaders({ });
+    return await this.getCustomerTracksByRelationIdWithOptions(request, headers, runtime);
+  }
+
+  async getCustomerTracksByRelationIdWithOptions(request: GetCustomerTracksByRelationIdRequest, headers: GetCustomerTracksByRelationIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetCustomerTracksByRelationIdResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.relationId)) {
+      query["relationId"] = request.relationId;
+    }
+
+    if (!Util.isUnset(request.typeGroup)) {
+      query["typeGroup"] = request.typeGroup;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetCustomerTracksByRelationIdResponse>(await this.doROARequest("GetCustomerTracksByRelationId", "crm_1.0", "HTTP", "GET", "AK", `/v1.0/crm/customerTracks`, "json", req, runtime), new GetCustomerTracksByRelationIdResponse({}));
   }
 
   async getGroupSet(request: GetGroupSetRequest): Promise<GetGroupSetResponse> {

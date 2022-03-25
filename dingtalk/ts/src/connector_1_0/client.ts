@@ -31,15 +31,18 @@ export class CreateActionHeaders extends $tea.Model {
 
 export class CreateActionRequest extends $tea.Model {
   actionInfo?: CreateActionRequestActionInfo[];
+  integratorFlag?: string;
   static names(): { [key: string]: string } {
     return {
       actionInfo: 'actionInfo',
+      integratorFlag: 'integratorFlag',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       actionInfo: { 'type': 'array', 'itemType': CreateActionRequestActionInfo },
+      integratorFlag: 'string',
     };
   }
 
@@ -113,15 +116,18 @@ export class CreateConnectorHeaders extends $tea.Model {
 
 export class CreateConnectorRequest extends $tea.Model {
   connectorInfo?: CreateConnectorRequestConnectorInfo[];
+  integratorFlag?: string;
   static names(): { [key: string]: string } {
     return {
       connectorInfo: 'connectorInfo',
+      integratorFlag: 'integratorFlag',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       connectorInfo: { 'type': 'array', 'itemType': CreateConnectorRequestConnectorInfo },
+      integratorFlag: 'string',
     };
   }
 
@@ -194,15 +200,18 @@ export class CreateTriggerHeaders extends $tea.Model {
 }
 
 export class CreateTriggerRequest extends $tea.Model {
+  integratorFlag?: string;
   triggerInfo?: CreateTriggerRequestTriggerInfo[];
   static names(): { [key: string]: string } {
     return {
+      integratorFlag: 'integratorFlag',
       triggerInfo: 'triggerInfo',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      integratorFlag: 'string',
       triggerInfo: { 'type': 'array', 'itemType': CreateTriggerRequestTriggerInfo },
     };
   }
@@ -571,15 +580,18 @@ export class UpdateActionHeaders extends $tea.Model {
 
 export class UpdateActionRequest extends $tea.Model {
   actionInfo?: UpdateActionRequestActionInfo[];
+  integratorFlag?: string;
   static names(): { [key: string]: string } {
     return {
       actionInfo: 'actionInfo',
+      integratorFlag: 'integratorFlag',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       actionInfo: { 'type': 'array', 'itemType': UpdateActionRequestActionInfo },
+      integratorFlag: 'string',
     };
   }
 
@@ -653,15 +665,18 @@ export class UpdateConnectorHeaders extends $tea.Model {
 
 export class UpdateConnectorRequest extends $tea.Model {
   connectorInfo?: UpdateConnectorRequestConnectorInfo[];
+  integratorFlag?: string;
   static names(): { [key: string]: string } {
     return {
       connectorInfo: 'connectorInfo',
+      integratorFlag: 'integratorFlag',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       connectorInfo: { 'type': 'array', 'itemType': UpdateConnectorRequestConnectorInfo },
+      integratorFlag: 'string',
     };
   }
 
@@ -734,15 +749,18 @@ export class UpdateTriggerHeaders extends $tea.Model {
 }
 
 export class UpdateTriggerRequest extends $tea.Model {
+  integratorFlag?: string;
   triggerInfo?: UpdateTriggerRequestTriggerInfo[];
   static names(): { [key: string]: string } {
     return {
+      integratorFlag: 'integratorFlag',
       triggerInfo: 'triggerInfo',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      integratorFlag: 'string',
       triggerInfo: { 'type': 'array', 'itemType': UpdateTriggerRequestTriggerInfo },
     };
   }
@@ -1430,6 +1448,10 @@ export default class Client extends OpenApi {
       body["actionInfo"] = request.actionInfo;
     }
 
+    if (!Util.isUnset(request.integratorFlag)) {
+      body["integratorFlag"] = request.integratorFlag;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -1459,6 +1481,10 @@ export default class Client extends OpenApi {
       body["connectorInfo"] = request.connectorInfo;
     }
 
+    if (!Util.isUnset(request.integratorFlag)) {
+      body["integratorFlag"] = request.integratorFlag;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -1484,6 +1510,10 @@ export default class Client extends OpenApi {
   async createTriggerWithOptions(request: CreateTriggerRequest, headers: CreateTriggerHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTriggerResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.integratorFlag)) {
+      body["integratorFlag"] = request.integratorFlag;
+    }
+
     if (!Util.isUnset(request.triggerInfo)) {
       body["triggerInfo"] = request.triggerInfo;
     }
@@ -1637,6 +1667,10 @@ export default class Client extends OpenApi {
       body["actionInfo"] = request.actionInfo;
     }
 
+    if (!Util.isUnset(request.integratorFlag)) {
+      body["integratorFlag"] = request.integratorFlag;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -1666,6 +1700,10 @@ export default class Client extends OpenApi {
       body["connectorInfo"] = request.connectorInfo;
     }
 
+    if (!Util.isUnset(request.integratorFlag)) {
+      body["integratorFlag"] = request.integratorFlag;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -1691,6 +1729,10 @@ export default class Client extends OpenApi {
   async updateTriggerWithOptions(request: UpdateTriggerRequest, headers: UpdateTriggerHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTriggerResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.integratorFlag)) {
+      body["integratorFlag"] = request.integratorFlag;
+    }
+
     if (!Util.isUnset(request.triggerInfo)) {
       body["triggerInfo"] = request.triggerInfo;
     }

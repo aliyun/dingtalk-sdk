@@ -1974,6 +1974,109 @@ export class ListMiniAppHistoryVersionResponse extends $tea.Model {
   }
 }
 
+export class ListPunchScheduleByConditionWithPagingHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListPunchScheduleByConditionWithPagingRequest extends $tea.Model {
+  bizInstanceId?: string;
+  maxResults?: number;
+  nextToken?: number;
+  scheduleDateEnd?: string;
+  scheduleDateStart?: string;
+  userIdList?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      bizInstanceId: 'bizInstanceId',
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      scheduleDateEnd: 'scheduleDateEnd',
+      scheduleDateStart: 'scheduleDateStart',
+      userIdList: 'userIdList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizInstanceId: 'string',
+      maxResults: 'number',
+      nextToken: 'number',
+      scheduleDateEnd: 'string',
+      scheduleDateStart: 'string',
+      userIdList: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListPunchScheduleByConditionWithPagingResponseBody extends $tea.Model {
+  hasMore?: boolean;
+  list?: ListPunchScheduleByConditionWithPagingResponseBodyList[];
+  nextToken?: number;
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      list: 'list',
+      nextToken: 'nextToken',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      list: { 'type': 'array', 'itemType': ListPunchScheduleByConditionWithPagingResponseBodyList },
+      nextToken: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListPunchScheduleByConditionWithPagingResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ListPunchScheduleByConditionWithPagingResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ListPunchScheduleByConditionWithPagingResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class PublishFileChangeNoticeHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3334,6 +3437,37 @@ export class ListMiniAppHistoryVersionResponseBodyList extends $tea.Model {
   }
 }
 
+export class ListPunchScheduleByConditionWithPagingResponseBodyList extends $tea.Model {
+  bizOuterId?: string;
+  positionName?: string;
+  punchSymbol?: string;
+  userId?: string;
+  userPunchTime?: number;
+  static names(): { [key: string]: string } {
+    return {
+      bizOuterId: 'bizOuterId',
+      positionName: 'positionName',
+      punchSymbol: 'punchSymbol',
+      userId: 'userId',
+      userPunchTime: 'userPunchTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizOuterId: 'string',
+      positionName: 'string',
+      punchSymbol: 'string',
+      userId: 'string',
+      userPunchTime: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SearchOrgInnerGroupInfoResponseBodyItems extends $tea.Model {
   groupAdminsCount?: number;
   groupCreateTime?: number;
@@ -4163,6 +4297,55 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<ListMiniAppHistoryVersionResponse>(await this.doROARequest("ListMiniAppHistoryVersion", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/miniApps/versions/historyLists`, "json", req, runtime), new ListMiniAppHistoryVersionResponse({}));
+  }
+
+  async listPunchScheduleByConditionWithPaging(request: ListPunchScheduleByConditionWithPagingRequest): Promise<ListPunchScheduleByConditionWithPagingResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListPunchScheduleByConditionWithPagingHeaders({ });
+    return await this.listPunchScheduleByConditionWithPagingWithOptions(request, headers, runtime);
+  }
+
+  async listPunchScheduleByConditionWithPagingWithOptions(request: ListPunchScheduleByConditionWithPagingRequest, headers: ListPunchScheduleByConditionWithPagingHeaders, runtime: $Util.RuntimeOptions): Promise<ListPunchScheduleByConditionWithPagingResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizInstanceId)) {
+      body["bizInstanceId"] = request.bizInstanceId;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      body["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      body["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.scheduleDateEnd)) {
+      body["scheduleDateEnd"] = request.scheduleDateEnd;
+    }
+
+    if (!Util.isUnset(request.scheduleDateStart)) {
+      body["scheduleDateStart"] = request.scheduleDateStart;
+    }
+
+    if (!Util.isUnset(request.userIdList)) {
+      body["userIdList"] = request.userIdList;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<ListPunchScheduleByConditionWithPagingResponse>(await this.doROARequest("ListPunchScheduleByConditionWithPaging", "exclusive_1.0", "HTTP", "POST", "AK", `/v1.0/exclusive/punchSchedules/query`, "json", req, runtime), new ListPunchScheduleByConditionWithPagingResponse({}));
   }
 
   async publishFileChangeNotice(request: PublishFileChangeNoticeRequest): Promise<PublishFileChangeNoticeResponse> {
