@@ -34,6 +34,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("actionInfo", request.actionInfo);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.integratorFlag)) {
+            body.put("integratorFlag", request.integratorFlag);
+        }
+
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -63,6 +67,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("connectorInfo", request.connectorInfo);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.integratorFlag)) {
+            body.put("integratorFlag", request.integratorFlag);
+        }
+
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -88,6 +96,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public CreateTriggerResponse createTriggerWithOptions(CreateTriggerRequest request, CreateTriggerHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.integratorFlag)) {
+            body.put("integratorFlag", request.integratorFlag);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.triggerInfo)) {
             body.put("triggerInfo", request.triggerInfo);
         }
@@ -241,6 +253,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("actionInfo", request.actionInfo);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.integratorFlag)) {
+            body.put("integratorFlag", request.integratorFlag);
+        }
+
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -270,6 +286,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("connectorInfo", request.connectorInfo);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.integratorFlag)) {
+            body.put("integratorFlag", request.integratorFlag);
+        }
+
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -295,6 +315,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public UpdateTriggerResponse updateTriggerWithOptions(UpdateTriggerRequest request, UpdateTriggerHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.integratorFlag)) {
+            body.put("integratorFlag", request.integratorFlag);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.triggerInfo)) {
             body.put("triggerInfo", request.triggerInfo);
         }

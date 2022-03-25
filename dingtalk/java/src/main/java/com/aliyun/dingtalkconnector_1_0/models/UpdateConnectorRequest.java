@@ -7,6 +7,9 @@ public class UpdateConnectorRequest extends TeaModel {
     @NameInMap("connectorInfo")
     public java.util.List<UpdateConnectorRequestConnectorInfo> connectorInfo;
 
+    @NameInMap("integratorFlag")
+    public String integratorFlag;
+
     public static UpdateConnectorRequest build(java.util.Map<String, ?> map) throws Exception {
         UpdateConnectorRequest self = new UpdateConnectorRequest();
         return TeaModel.build(map, self);
@@ -18,6 +21,14 @@ public class UpdateConnectorRequest extends TeaModel {
     }
     public java.util.List<UpdateConnectorRequestConnectorInfo> getConnectorInfo() {
         return this.connectorInfo;
+    }
+
+    public UpdateConnectorRequest setIntegratorFlag(String integratorFlag) {
+        this.integratorFlag = integratorFlag;
+        return this;
+    }
+    public String getIntegratorFlag() {
+        return this.integratorFlag;
     }
 
     public static class UpdateConnectorRequestConnectorInfo extends TeaModel {

@@ -6,7 +6,7 @@ import com.aliyun.tea.*;
 public class GetSignInListRequest extends TeaModel {
     // 查询返回结果数（上限200）
     @NameInMap("maxResults")
-    public Long maxResults;
+    public Integer maxResults;
 
     @NameInMap("nextToken")
     public String nextToken;
@@ -20,11 +20,11 @@ public class GetSignInListRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public GetSignInListRequest setMaxResults(Long maxResults) {
+    public GetSignInListRequest setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
         return this;
     }
-    public Long getMaxResults() {
+    public Integer getMaxResults() {
         return this.maxResults;
     }
 

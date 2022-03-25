@@ -7,6 +7,9 @@ public class CreateActionRequest extends TeaModel {
     @NameInMap("actionInfo")
     public java.util.List<CreateActionRequestActionInfo> actionInfo;
 
+    @NameInMap("integratorFlag")
+    public String integratorFlag;
+
     public static CreateActionRequest build(java.util.Map<String, ?> map) throws Exception {
         CreateActionRequest self = new CreateActionRequest();
         return TeaModel.build(map, self);
@@ -18,6 +21,14 @@ public class CreateActionRequest extends TeaModel {
     }
     public java.util.List<CreateActionRequestActionInfo> getActionInfo() {
         return this.actionInfo;
+    }
+
+    public CreateActionRequest setIntegratorFlag(String integratorFlag) {
+        this.integratorFlag = integratorFlag;
+        return this;
+    }
+    public String getIntegratorFlag() {
+        return this.integratorFlag;
     }
 
     public static class CreateActionRequestActionInfoOutputDataRules extends TeaModel {

@@ -4,12 +4,23 @@ package com.aliyun.dingtalkconnector_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateTriggerRequest extends TeaModel {
+    @NameInMap("integratorFlag")
+    public String integratorFlag;
+
     @NameInMap("triggerInfo")
     public java.util.List<UpdateTriggerRequestTriggerInfo> triggerInfo;
 
     public static UpdateTriggerRequest build(java.util.Map<String, ?> map) throws Exception {
         UpdateTriggerRequest self = new UpdateTriggerRequest();
         return TeaModel.build(map, self);
+    }
+
+    public UpdateTriggerRequest setIntegratorFlag(String integratorFlag) {
+        this.integratorFlag = integratorFlag;
+        return this;
+    }
+    public String getIntegratorFlag() {
+        return this.integratorFlag;
     }
 
     public UpdateTriggerRequest setTriggerInfo(java.util.List<UpdateTriggerRequestTriggerInfo> triggerInfo) {
