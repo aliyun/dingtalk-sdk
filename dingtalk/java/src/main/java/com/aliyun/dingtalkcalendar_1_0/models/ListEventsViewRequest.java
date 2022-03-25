@@ -6,11 +6,11 @@ import com.aliyun.tea.*;
 public class ListEventsViewRequest extends TeaModel {
     // 每个日程的参与者查询个数，默认100，最大100。
     @NameInMap("maxAttendees")
-    public Long maxAttendees;
+    public Integer maxAttendees;
 
     // 返回的最大日程数，最大100个，默认100个。
     @NameInMap("maxResults")
-    public Long maxResults;
+    public Integer maxResults;
 
     // 查询翻页token
     @NameInMap("nextToken")
@@ -29,19 +29,19 @@ public class ListEventsViewRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public ListEventsViewRequest setMaxAttendees(Long maxAttendees) {
+    public ListEventsViewRequest setMaxAttendees(Integer maxAttendees) {
         this.maxAttendees = maxAttendees;
         return this;
     }
-    public Long getMaxAttendees() {
+    public Integer getMaxAttendees() {
         return this.maxAttendees;
     }
 
-    public ListEventsViewRequest setMaxResults(Long maxResults) {
+    public ListEventsViewRequest setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
         return this;
     }
-    public Long getMaxResults() {
+    public Integer getMaxResults() {
         return this.maxResults;
     }
 

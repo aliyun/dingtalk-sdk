@@ -5,7 +5,7 @@ import com.aliyun.tea.*;
 
 public class ListAttendeesRequest extends TeaModel {
     @NameInMap("maxResults")
-    public Long maxResults;
+    public Integer maxResults;
 
     @NameInMap("nextToken")
     public String nextToken;
@@ -15,11 +15,11 @@ public class ListAttendeesRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public ListAttendeesRequest setMaxResults(Long maxResults) {
+    public ListAttendeesRequest setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
         return this;
     }
-    public Long getMaxResults() {
+    public Integer getMaxResults() {
         return this.maxResults;
     }
 

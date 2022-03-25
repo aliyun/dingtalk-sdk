@@ -573,8 +573,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("seriesMasterId", request.seriesMasterId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.timeMin)) {
-            query.put("timeMin", request.timeMin);
+        if (!com.aliyun.teautil.Common.isUnset(request.startRecurrenceId)) {
+            query.put("startRecurrenceId", request.startRecurrenceId);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -774,6 +774,31 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("RespondEvent", "calendar_1.0", "HTTP", "POST", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId + "/respond", "none", req, runtime), new RespondEventResponse());
+    }
+
+    public SignInResponse signIn(String userId, String calendarId, String eventId) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        SignInHeaders headers = new SignInHeaders();
+        return this.signInWithOptions(userId, calendarId, eventId, headers, runtime);
+    }
+
+    public SignInResponse signInWithOptions(String userId, String calendarId, String eventId, SignInHeaders headers, RuntimeOptions runtime) throws Exception {
+        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
+        calendarId = com.aliyun.openapiutil.Client.getEncodeParam(calendarId);
+        eventId = com.aliyun.openapiutil.Client.getEncodeParam(eventId);
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        return TeaModel.toModel(this.doROARequest("SignIn", "calendar_1.0", "HTTP", "POST", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId + "/signin", "json", req, runtime), new SignInResponse());
     }
 
     public SubscribeCalendarResponse subscribeCalendar(String userId, String calendarId) throws Exception {
