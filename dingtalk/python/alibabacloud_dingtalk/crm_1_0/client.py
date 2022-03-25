@@ -1433,6 +1433,82 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetCrmRolePermission', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/permissions', 'json', req, runtime)
         )
 
+    def get_customer_tracks_by_relation_id(
+        self,
+        request: dingtalkcrm__1__0_models.GetCustomerTracksByRelationIdRequest,
+    ) -> dingtalkcrm__1__0_models.GetCustomerTracksByRelationIdResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.GetCustomerTracksByRelationIdHeaders()
+        return self.get_customer_tracks_by_relation_id_with_options(request, headers, runtime)
+
+    async def get_customer_tracks_by_relation_id_async(
+        self,
+        request: dingtalkcrm__1__0_models.GetCustomerTracksByRelationIdRequest,
+    ) -> dingtalkcrm__1__0_models.GetCustomerTracksByRelationIdResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.GetCustomerTracksByRelationIdHeaders()
+        return await self.get_customer_tracks_by_relation_id_with_options_async(request, headers, runtime)
+
+    def get_customer_tracks_by_relation_id_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.GetCustomerTracksByRelationIdRequest,
+        headers: dingtalkcrm__1__0_models.GetCustomerTracksByRelationIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.GetCustomerTracksByRelationIdResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.relation_id):
+            query['relationId'] = request.relation_id
+        if not UtilClient.is_unset(request.type_group):
+            query['typeGroup'] = request.type_group
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.GetCustomerTracksByRelationIdResponse(),
+            self.do_roarequest('GetCustomerTracksByRelationId', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/customerTracks', 'json', req, runtime)
+        )
+
+    async def get_customer_tracks_by_relation_id_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.GetCustomerTracksByRelationIdRequest,
+        headers: dingtalkcrm__1__0_models.GetCustomerTracksByRelationIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.GetCustomerTracksByRelationIdResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.relation_id):
+            query['relationId'] = request.relation_id
+        if not UtilClient.is_unset(request.type_group):
+            query['typeGroup'] = request.type_group
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.GetCustomerTracksByRelationIdResponse(),
+            await self.do_roarequest_async('GetCustomerTracksByRelationId', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/customerTracks', 'json', req, runtime)
+        )
+
     def get_group_set(
         self,
         request: dingtalkcrm__1__0_models.GetGroupSetRequest,

@@ -8477,6 +8477,296 @@ class GetCrmRolePermissionResponse(TeaModel):
         return self
 
 
+class GetCustomerTracksByRelationIdHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetCustomerTracksByRelationIdRequest(TeaModel):
+    def __init__(
+        self,
+        max_results: int = None,
+        next_token: str = None,
+        relation_id: str = None,
+        type_group: int = None,
+    ):
+        # 每页返回的结果集个数，默认10。
+        self.max_results = max_results
+        # 第一页不传，下一页传入上一页返回的nextToken
+        self.next_token = next_token
+        # 关系id。
+        self.relation_id = relation_id
+        # 动态类型分组。
+        self.type_group = type_group
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.relation_id is not None:
+            result['relationId'] = self.relation_id
+        if self.type_group is not None:
+            result['typeGroup'] = self.type_group
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('relationId') is not None:
+            self.relation_id = m.get('relationId')
+        if m.get('typeGroup') is not None:
+            self.type_group = m.get('typeGroup')
+        return self
+
+
+class GetCustomerTracksByRelationIdResponseBodyResultListIsvInfo(TeaModel):
+    def __init__(
+        self,
+        app_name: str = None,
+        org_name: str = None,
+    ):
+        # 写入动态的三方应用所属应用名。
+        self.app_name = app_name
+        # 写入动态的三方应用所属组织名。
+        self.org_name = org_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_name is not None:
+            result['appName'] = self.app_name
+        if self.org_name is not None:
+            result['orgName'] = self.org_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appName') is not None:
+            self.app_name = m.get('appName')
+        if m.get('orgName') is not None:
+            self.org_name = m.get('orgName')
+        return self
+
+
+class GetCustomerTracksByRelationIdResponseBodyResultList(TeaModel):
+    def __init__(
+        self,
+        content: str = None,
+        creator_name: str = None,
+        detail: Dict[str, str] = None,
+        format: str = None,
+        gmt_create: str = None,
+        isv_info: GetCustomerTracksByRelationIdResponseBodyResultListIsvInfo = None,
+        title: str = None,
+        type: int = None,
+        type_group: int = None,
+    ):
+        # 动态内容。
+        self.content = content
+        # 操作人姓名。
+        self.creator_name = creator_name
+        # 动态详情。
+        self.detail = detail
+        # 动态格式：markdown表示markdown格式，为空表示老格式
+        self.format = format
+        # 创建时间。
+        self.gmt_create = gmt_create
+        # 写入动态的三方应用身份信息。
+        self.isv_info = isv_info
+        # 动态标题。
+        self.title = title
+        # 动态类型。
+        self.type = type
+        # 动态类型分组。
+        self.type_group = type_group
+
+    def validate(self):
+        if self.isv_info:
+            self.isv_info.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        if self.creator_name is not None:
+            result['creatorName'] = self.creator_name
+        if self.detail is not None:
+            result['detail'] = self.detail
+        if self.format is not None:
+            result['format'] = self.format
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.isv_info is not None:
+            result['isvInfo'] = self.isv_info.to_map()
+        if self.title is not None:
+            result['title'] = self.title
+        if self.type is not None:
+            result['type'] = self.type
+        if self.type_group is not None:
+            result['typeGroup'] = self.type_group
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('creatorName') is not None:
+            self.creator_name = m.get('creatorName')
+        if m.get('detail') is not None:
+            self.detail = m.get('detail')
+        if m.get('format') is not None:
+            self.format = m.get('format')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('isvInfo') is not None:
+            temp_model = GetCustomerTracksByRelationIdResponseBodyResultListIsvInfo()
+            self.isv_info = temp_model.from_map(m['isvInfo'])
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('typeGroup') is not None:
+            self.type_group = m.get('typeGroup')
+        return self
+
+
+class GetCustomerTracksByRelationIdResponseBody(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        next_token: str = None,
+        result_list: List[GetCustomerTracksByRelationIdResponseBodyResultList] = None,
+    ):
+        # 是否还有下一页。
+        self.has_more = has_more
+        # 下一页的游标。
+        self.next_token = next_token
+        # 数据列表。
+        self.result_list = result_list
+
+    def validate(self):
+        if self.result_list:
+            for k in self.result_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        result['resultList'] = []
+        if self.result_list is not None:
+            for k in self.result_list:
+                result['resultList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        self.result_list = []
+        if m.get('resultList') is not None:
+            for k in m.get('resultList'):
+                temp_model = GetCustomerTracksByRelationIdResponseBodyResultList()
+                self.result_list.append(temp_model.from_map(k))
+        return self
+
+
+class GetCustomerTracksByRelationIdResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetCustomerTracksByRelationIdResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetCustomerTracksByRelationIdResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetGroupSetHeaders(TeaModel):
     def __init__(
         self,

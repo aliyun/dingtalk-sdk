@@ -1631,6 +1631,90 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('ListMiniAppHistoryVersion', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/miniApps/versions/historyLists', 'json', req, runtime)
         )
 
+    def list_punch_schedule_by_condition_with_paging(
+        self,
+        request: dingtalkexclusive__1__0_models.ListPunchScheduleByConditionWithPagingRequest,
+    ) -> dingtalkexclusive__1__0_models.ListPunchScheduleByConditionWithPagingResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.ListPunchScheduleByConditionWithPagingHeaders()
+        return self.list_punch_schedule_by_condition_with_paging_with_options(request, headers, runtime)
+
+    async def list_punch_schedule_by_condition_with_paging_async(
+        self,
+        request: dingtalkexclusive__1__0_models.ListPunchScheduleByConditionWithPagingRequest,
+    ) -> dingtalkexclusive__1__0_models.ListPunchScheduleByConditionWithPagingResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.ListPunchScheduleByConditionWithPagingHeaders()
+        return await self.list_punch_schedule_by_condition_with_paging_with_options_async(request, headers, runtime)
+
+    def list_punch_schedule_by_condition_with_paging_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.ListPunchScheduleByConditionWithPagingRequest,
+        headers: dingtalkexclusive__1__0_models.ListPunchScheduleByConditionWithPagingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.ListPunchScheduleByConditionWithPagingResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_instance_id):
+            body['bizInstanceId'] = request.biz_instance_id
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.schedule_date_end):
+            body['scheduleDateEnd'] = request.schedule_date_end
+        if not UtilClient.is_unset(request.schedule_date_start):
+            body['scheduleDateStart'] = request.schedule_date_start
+        if not UtilClient.is_unset(request.user_id_list):
+            body['userIdList'] = request.user_id_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.ListPunchScheduleByConditionWithPagingResponse(),
+            self.do_roarequest('ListPunchScheduleByConditionWithPaging', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/punchSchedules/query', 'json', req, runtime)
+        )
+
+    async def list_punch_schedule_by_condition_with_paging_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.ListPunchScheduleByConditionWithPagingRequest,
+        headers: dingtalkexclusive__1__0_models.ListPunchScheduleByConditionWithPagingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.ListPunchScheduleByConditionWithPagingResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_instance_id):
+            body['bizInstanceId'] = request.biz_instance_id
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.schedule_date_end):
+            body['scheduleDateEnd'] = request.schedule_date_end
+        if not UtilClient.is_unset(request.schedule_date_start):
+            body['scheduleDateStart'] = request.schedule_date_start
+        if not UtilClient.is_unset(request.user_id_list):
+            body['userIdList'] = request.user_id_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.ListPunchScheduleByConditionWithPagingResponse(),
+            await self.do_roarequest_async('ListPunchScheduleByConditionWithPaging', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/punchSchedules/query', 'json', req, runtime)
+        )
+
     def publish_file_change_notice(
         self,
         request: dingtalkexclusive__1__0_models.PublishFileChangeNoticeRequest,

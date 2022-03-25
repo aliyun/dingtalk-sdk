@@ -4473,6 +4473,245 @@ class ListMiniAppHistoryVersionResponse(TeaModel):
         return self
 
 
+class ListPunchScheduleByConditionWithPagingHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListPunchScheduleByConditionWithPagingRequest(TeaModel):
+    def __init__(
+        self,
+        biz_instance_id: str = None,
+        max_results: int = None,
+        next_token: int = None,
+        schedule_date_end: str = None,
+        schedule_date_start: str = None,
+        user_id_list: List[str] = None,
+    ):
+        # 业务实例id，在该接口中表示打卡机实例id
+        self.biz_instance_id = biz_instance_id
+        # 分页大小
+        self.max_results = max_results
+        # 游标位置
+        self.next_token = next_token
+        # 查询日期结束时间（yyyy-MM-dd)
+        self.schedule_date_end = schedule_date_end
+        # 查询日期开始时间（yyyy-MM-dd)）
+        self.schedule_date_start = schedule_date_start
+        # 用户id列表
+        self.user_id_list = user_id_list
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_instance_id is not None:
+            result['bizInstanceId'] = self.biz_instance_id
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.schedule_date_end is not None:
+            result['scheduleDateEnd'] = self.schedule_date_end
+        if self.schedule_date_start is not None:
+            result['scheduleDateStart'] = self.schedule_date_start
+        if self.user_id_list is not None:
+            result['userIdList'] = self.user_id_list
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizInstanceId') is not None:
+            self.biz_instance_id = m.get('bizInstanceId')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('scheduleDateEnd') is not None:
+            self.schedule_date_end = m.get('scheduleDateEnd')
+        if m.get('scheduleDateStart') is not None:
+            self.schedule_date_start = m.get('scheduleDateStart')
+        if m.get('userIdList') is not None:
+            self.user_id_list = m.get('userIdList')
+        return self
+
+
+class ListPunchScheduleByConditionWithPagingResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        biz_outer_id: str = None,
+        position_name: str = None,
+        punch_symbol: str = None,
+        user_id: str = None,
+        user_punch_time: int = None,
+    ):
+        # 巡点业务id，同个巡点id同一个用户最多会有两条记录，一条签到，一条签退
+        self.biz_outer_id = biz_outer_id
+        # 打卡巡点机名称
+        self.position_name = position_name
+        # 巡点类型（checkIn-签到，checkOut-签退）
+        self.punch_symbol = punch_symbol
+        # 用户id
+        self.user_id = user_id
+        # 用户巡点打卡时间
+        self.user_punch_time = user_punch_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_outer_id is not None:
+            result['bizOuterId'] = self.biz_outer_id
+        if self.position_name is not None:
+            result['positionName'] = self.position_name
+        if self.punch_symbol is not None:
+            result['punchSymbol'] = self.punch_symbol
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.user_punch_time is not None:
+            result['userPunchTime'] = self.user_punch_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizOuterId') is not None:
+            self.biz_outer_id = m.get('bizOuterId')
+        if m.get('positionName') is not None:
+            self.position_name = m.get('positionName')
+        if m.get('punchSymbol') is not None:
+            self.punch_symbol = m.get('punchSymbol')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('userPunchTime') is not None:
+            self.user_punch_time = m.get('userPunchTime')
+        return self
+
+
+class ListPunchScheduleByConditionWithPagingResponseBody(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        list: List[ListPunchScheduleByConditionWithPagingResponseBodyList] = None,
+        next_token: int = None,
+    ):
+        # 是否有更多
+        self.has_more = has_more
+        # 返回列表
+        self.list = list
+        # 下一次游标位置
+        self.next_token = next_token
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = ListPunchScheduleByConditionWithPagingResponseBodyList()
+                self.list.append(temp_model.from_map(k))
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        return self
+
+
+class ListPunchScheduleByConditionWithPagingResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ListPunchScheduleByConditionWithPagingResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ListPunchScheduleByConditionWithPagingResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class PublishFileChangeNoticeHeaders(TeaModel):
     def __init__(
         self,

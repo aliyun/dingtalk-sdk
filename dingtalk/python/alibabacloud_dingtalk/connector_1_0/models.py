@@ -175,8 +175,10 @@ class CreateActionRequest(TeaModel):
     def __init__(
         self,
         action_info: List[CreateActionRequestActionInfo] = None,
+        integrator_flag: str = None,
     ):
         self.action_info = action_info
+        self.integrator_flag = integrator_flag
 
     def validate(self):
         if self.action_info:
@@ -194,6 +196,8 @@ class CreateActionRequest(TeaModel):
         if self.action_info is not None:
             for k in self.action_info:
                 result['actionInfo'].append(k.to_map() if k else None)
+        if self.integrator_flag is not None:
+            result['integratorFlag'] = self.integrator_flag
         return result
 
     def from_map(self, m: dict = None):
@@ -203,6 +207,8 @@ class CreateActionRequest(TeaModel):
             for k in m.get('actionInfo'):
                 temp_model = CreateActionRequestActionInfo()
                 self.action_info.append(temp_model.from_map(k))
+        if m.get('integratorFlag') is not None:
+            self.integrator_flag = m.get('integratorFlag')
         return self
 
 
@@ -465,8 +471,10 @@ class CreateConnectorRequest(TeaModel):
     def __init__(
         self,
         connector_info: List[CreateConnectorRequestConnectorInfo] = None,
+        integrator_flag: str = None,
     ):
         self.connector_info = connector_info
+        self.integrator_flag = integrator_flag
 
     def validate(self):
         if self.connector_info:
@@ -484,6 +492,8 @@ class CreateConnectorRequest(TeaModel):
         if self.connector_info is not None:
             for k in self.connector_info:
                 result['connectorInfo'].append(k.to_map() if k else None)
+        if self.integrator_flag is not None:
+            result['integratorFlag'] = self.integrator_flag
         return result
 
     def from_map(self, m: dict = None):
@@ -493,6 +503,8 @@ class CreateConnectorRequest(TeaModel):
             for k in m.get('connectorInfo'):
                 temp_model = CreateConnectorRequestConnectorInfo()
                 self.connector_info.append(temp_model.from_map(k))
+        if m.get('integratorFlag') is not None:
+            self.integrator_flag = m.get('integratorFlag')
         return self
 
 
@@ -724,8 +736,10 @@ class CreateTriggerRequestTriggerInfo(TeaModel):
 class CreateTriggerRequest(TeaModel):
     def __init__(
         self,
+        integrator_flag: str = None,
         trigger_info: List[CreateTriggerRequestTriggerInfo] = None,
     ):
+        self.integrator_flag = integrator_flag
         self.trigger_info = trigger_info
 
     def validate(self):
@@ -740,6 +754,8 @@ class CreateTriggerRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.integrator_flag is not None:
+            result['integratorFlag'] = self.integrator_flag
         result['triggerInfo'] = []
         if self.trigger_info is not None:
             for k in self.trigger_info:
@@ -748,6 +764,8 @@ class CreateTriggerRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('integratorFlag') is not None:
+            self.integrator_flag = m.get('integratorFlag')
         self.trigger_info = []
         if m.get('triggerInfo') is not None:
             for k in m.get('triggerInfo'):
@@ -1768,8 +1786,10 @@ class UpdateActionRequest(TeaModel):
     def __init__(
         self,
         action_info: List[UpdateActionRequestActionInfo] = None,
+        integrator_flag: str = None,
     ):
         self.action_info = action_info
+        self.integrator_flag = integrator_flag
 
     def validate(self):
         if self.action_info:
@@ -1787,6 +1807,8 @@ class UpdateActionRequest(TeaModel):
         if self.action_info is not None:
             for k in self.action_info:
                 result['actionInfo'].append(k.to_map() if k else None)
+        if self.integrator_flag is not None:
+            result['integratorFlag'] = self.integrator_flag
         return result
 
     def from_map(self, m: dict = None):
@@ -1796,6 +1818,8 @@ class UpdateActionRequest(TeaModel):
             for k in m.get('actionInfo'):
                 temp_model = UpdateActionRequestActionInfo()
                 self.action_info.append(temp_model.from_map(k))
+        if m.get('integratorFlag') is not None:
+            self.integrator_flag = m.get('integratorFlag')
         return self
 
 
@@ -2069,8 +2093,10 @@ class UpdateConnectorRequest(TeaModel):
     def __init__(
         self,
         connector_info: List[UpdateConnectorRequestConnectorInfo] = None,
+        integrator_flag: str = None,
     ):
         self.connector_info = connector_info
+        self.integrator_flag = integrator_flag
 
     def validate(self):
         if self.connector_info:
@@ -2088,6 +2114,8 @@ class UpdateConnectorRequest(TeaModel):
         if self.connector_info is not None:
             for k in self.connector_info:
                 result['connectorInfo'].append(k.to_map() if k else None)
+        if self.integrator_flag is not None:
+            result['integratorFlag'] = self.integrator_flag
         return result
 
     def from_map(self, m: dict = None):
@@ -2097,6 +2125,8 @@ class UpdateConnectorRequest(TeaModel):
             for k in m.get('connectorInfo'):
                 temp_model = UpdateConnectorRequestConnectorInfo()
                 self.connector_info.append(temp_model.from_map(k))
+        if m.get('integratorFlag') is not None:
+            self.integrator_flag = m.get('integratorFlag')
         return self
 
 
@@ -2335,8 +2365,10 @@ class UpdateTriggerRequestTriggerInfo(TeaModel):
 class UpdateTriggerRequest(TeaModel):
     def __init__(
         self,
+        integrator_flag: str = None,
         trigger_info: List[UpdateTriggerRequestTriggerInfo] = None,
     ):
+        self.integrator_flag = integrator_flag
         self.trigger_info = trigger_info
 
     def validate(self):
@@ -2351,6 +2383,8 @@ class UpdateTriggerRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.integrator_flag is not None:
+            result['integratorFlag'] = self.integrator_flag
         result['triggerInfo'] = []
         if self.trigger_info is not None:
             for k in self.trigger_info:
@@ -2359,6 +2393,8 @@ class UpdateTriggerRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('integratorFlag') is not None:
+            self.integrator_flag = m.get('integratorFlag')
         self.trigger_info = []
         if m.get('triggerInfo') is not None:
             for k in m.get('triggerInfo'):

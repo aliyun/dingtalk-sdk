@@ -49,6 +49,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.action_info):
             body['actionInfo'] = request.action_info
+        if not UtilClient.is_unset(request.integrator_flag):
+            body['integratorFlag'] = request.integrator_flag
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -73,6 +75,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.action_info):
             body['actionInfo'] = request.action_info
+        if not UtilClient.is_unset(request.integrator_flag):
+            body['integratorFlag'] = request.integrator_flag
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -113,6 +117,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.connector_info):
             body['connectorInfo'] = request.connector_info
+        if not UtilClient.is_unset(request.integrator_flag):
+            body['integratorFlag'] = request.integrator_flag
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -137,6 +143,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.connector_info):
             body['connectorInfo'] = request.connector_info
+        if not UtilClient.is_unset(request.integrator_flag):
+            body['integratorFlag'] = request.integrator_flag
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -175,6 +183,8 @@ class Client(OpenApiClient):
     ) -> dingtalkconnector__1__0_models.CreateTriggerResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.integrator_flag):
+            body['integratorFlag'] = request.integrator_flag
         if not UtilClient.is_unset(request.trigger_info):
             body['triggerInfo'] = request.trigger_info
         real_headers = {}
@@ -199,6 +209,8 @@ class Client(OpenApiClient):
     ) -> dingtalkconnector__1__0_models.CreateTriggerResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.integrator_flag):
+            body['integratorFlag'] = request.integrator_flag
         if not UtilClient.is_unset(request.trigger_info):
             body['triggerInfo'] = request.trigger_info
         real_headers = {}
@@ -471,6 +483,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.action_info):
             body['actionInfo'] = request.action_info
+        if not UtilClient.is_unset(request.integrator_flag):
+            body['integratorFlag'] = request.integrator_flag
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -495,6 +509,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.action_info):
             body['actionInfo'] = request.action_info
+        if not UtilClient.is_unset(request.integrator_flag):
+            body['integratorFlag'] = request.integrator_flag
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -535,6 +551,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.connector_info):
             body['connectorInfo'] = request.connector_info
+        if not UtilClient.is_unset(request.integrator_flag):
+            body['integratorFlag'] = request.integrator_flag
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -559,6 +577,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.connector_info):
             body['connectorInfo'] = request.connector_info
+        if not UtilClient.is_unset(request.integrator_flag):
+            body['integratorFlag'] = request.integrator_flag
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -597,6 +617,8 @@ class Client(OpenApiClient):
     ) -> dingtalkconnector__1__0_models.UpdateTriggerResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.integrator_flag):
+            body['integratorFlag'] = request.integrator_flag
         if not UtilClient.is_unset(request.trigger_info):
             body['triggerInfo'] = request.trigger_info
         real_headers = {}
@@ -621,6 +643,8 @@ class Client(OpenApiClient):
     ) -> dingtalkconnector__1__0_models.UpdateTriggerResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.integrator_flag):
+            body['integratorFlag'] = request.integrator_flag
         if not UtilClient.is_unset(request.trigger_info):
             body['triggerInfo'] = request.trigger_info
         real_headers = {}
