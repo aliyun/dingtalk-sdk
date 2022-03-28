@@ -610,6 +610,107 @@ export class QueryCustomEntryProcessesResponse extends $tea.Model {
   }
 }
 
+export class QueryHrmEmployeeDismissionInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryHrmEmployeeDismissionInfoRequest extends $tea.Model {
+  userIdList?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      userIdList: 'userIdList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userIdList: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryHrmEmployeeDismissionInfoShrinkRequest extends $tea.Model {
+  userIdListShrink?: string;
+  static names(): { [key: string]: string } {
+    return {
+      userIdListShrink: 'userIdList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userIdListShrink: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryHrmEmployeeDismissionInfoResponseBody extends $tea.Model {
+  result?: QueryHrmEmployeeDismissionInfoResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': QueryHrmEmployeeDismissionInfoResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryHrmEmployeeDismissionInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryHrmEmployeeDismissionInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryHrmEmployeeDismissionInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryJobRanksHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1266,6 +1367,77 @@ export class QueryCustomEntryProcessesResponseBodyList extends $tea.Model {
   }
 }
 
+export class QueryHrmEmployeeDismissionInfoResponseBodyResultDeptList extends $tea.Model {
+  deptId?: number;
+  deptPath?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'dept_id',
+      deptPath: 'dept_path',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+      deptPath: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryHrmEmployeeDismissionInfoResponseBodyResult extends $tea.Model {
+  deptList?: QueryHrmEmployeeDismissionInfoResponseBodyResultDeptList[];
+  handoverUserId?: string;
+  lastWorkDay?: number;
+  mainDeptId?: number;
+  mainDeptName?: string;
+  passiveReason?: string[];
+  preStatus?: number;
+  reasonMemo?: string;
+  status?: number;
+  userId?: string;
+  voluntaryReason?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      deptList: 'deptList',
+      handoverUserId: 'handoverUserId',
+      lastWorkDay: 'lastWorkDay',
+      mainDeptId: 'mainDeptId',
+      mainDeptName: 'mainDeptName',
+      passiveReason: 'passiveReason',
+      preStatus: 'preStatus',
+      reasonMemo: 'reasonMemo',
+      status: 'status',
+      userId: 'userId',
+      voluntaryReason: 'voluntaryReason',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptList: { 'type': 'array', 'itemType': QueryHrmEmployeeDismissionInfoResponseBodyResultDeptList },
+      handoverUserId: 'string',
+      lastWorkDay: 'number',
+      mainDeptId: 'number',
+      mainDeptName: 'string',
+      passiveReason: { 'type': 'array', 'itemType': 'string' },
+      preStatus: 'number',
+      reasonMemo: 'string',
+      status: 'number',
+      userId: 'string',
+      voluntaryReason: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryJobRanksResponseBodyList extends $tea.Model {
   maxJobGrade?: number;
   minJobGrade?: number;
@@ -1611,6 +1783,41 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<QueryCustomEntryProcessesResponse>(await this.doROARequest("QueryCustomEntryProcesses", "hrm_1.0", "HTTP", "GET", "AK", `/v1.0/hrm/customEntryProcesses`, "json", req, runtime), new QueryCustomEntryProcessesResponse({}));
+  }
+
+  async queryHrmEmployeeDismissionInfo(request: QueryHrmEmployeeDismissionInfoRequest): Promise<QueryHrmEmployeeDismissionInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryHrmEmployeeDismissionInfoHeaders({ });
+    return await this.queryHrmEmployeeDismissionInfoWithOptions(request, headers, runtime);
+  }
+
+  async queryHrmEmployeeDismissionInfoWithOptions(tmpReq: QueryHrmEmployeeDismissionInfoRequest, headers: QueryHrmEmployeeDismissionInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryHrmEmployeeDismissionInfoResponse> {
+    Util.validateModel(tmpReq);
+    let request = new QueryHrmEmployeeDismissionInfoShrinkRequest({ });
+    OpenApiUtil.convert(tmpReq, request);
+    if (!Util.isUnset(tmpReq.userIdList)) {
+      request.userIdListShrink = OpenApiUtil.arrayToStringWithSpecifiedStyle(tmpReq.userIdList, "userIdList", "json");
+    }
+
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.userIdListShrink)) {
+      query["userIdList"] = request.userIdListShrink;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryHrmEmployeeDismissionInfoResponse>(await this.doROARequest("QueryHrmEmployeeDismissionInfo", "hrm_1.0", "HTTP", "GET", "AK", `/v1.0/hrm/employees/dimissionInfos`, "json", req, runtime), new QueryHrmEmployeeDismissionInfoResponse({}));
   }
 
   async queryJobRanks(request: QueryJobRanksRequest): Promise<QueryJobRanksResponse> {
