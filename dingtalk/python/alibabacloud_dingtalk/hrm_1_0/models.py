@@ -1720,6 +1720,309 @@ class QueryCustomEntryProcessesResponse(TeaModel):
         return self
 
 
+class QueryHrmEmployeeDismissionInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryHrmEmployeeDismissionInfoRequest(TeaModel):
+    def __init__(
+        self,
+        user_id_list: List[str] = None,
+    ):
+        # 员工 ids
+        self.user_id_list = user_id_list
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_id_list is not None:
+            result['userIdList'] = self.user_id_list
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userIdList') is not None:
+            self.user_id_list = m.get('userIdList')
+        return self
+
+
+class QueryHrmEmployeeDismissionInfoShrinkRequest(TeaModel):
+    def __init__(
+        self,
+        user_id_list_shrink: str = None,
+    ):
+        # 员工 ids
+        self.user_id_list_shrink = user_id_list_shrink
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_id_list_shrink is not None:
+            result['userIdList'] = self.user_id_list_shrink
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userIdList') is not None:
+            self.user_id_list_shrink = m.get('userIdList')
+        return self
+
+
+class QueryHrmEmployeeDismissionInfoResponseBodyResultDeptList(TeaModel):
+    def __init__(
+        self,
+        dept_id: int = None,
+        dept_path: str = None,
+    ):
+        # 部门id
+        self.dept_id = dept_id
+        # 部门路径
+        self.dept_path = dept_path
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_id is not None:
+            result['dept_id'] = self.dept_id
+        if self.dept_path is not None:
+            result['dept_path'] = self.dept_path
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dept_id') is not None:
+            self.dept_id = m.get('dept_id')
+        if m.get('dept_path') is not None:
+            self.dept_path = m.get('dept_path')
+        return self
+
+
+class QueryHrmEmployeeDismissionInfoResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        dept_list: List[QueryHrmEmployeeDismissionInfoResponseBodyResultDeptList] = None,
+        handover_user_id: str = None,
+        last_work_day: int = None,
+        main_dept_id: int = None,
+        main_dept_name: str = None,
+        passive_reason: List[str] = None,
+        pre_status: int = None,
+        reason_memo: str = None,
+        status: int = None,
+        user_id: str = None,
+        voluntary_reason: List[str] = None,
+    ):
+        # 离职部门列表
+        self.dept_list = dept_list
+        # 离职交接人
+        self.handover_user_id = handover_user_id
+        # 最后工作日
+        self.last_work_day = last_work_day
+        # 离职前主部门id
+        self.main_dept_id = main_dept_id
+        # 离职前主部门名称
+        self.main_dept_name = main_dept_name
+        # 离职原因-被动
+        self.passive_reason = passive_reason
+        # 离职前工作状态：1，待入职；2，试用期；3，正式
+        self.pre_status = pre_status
+        # 离职原因备注
+        self.reason_memo = reason_memo
+        # 离职状态：1，待离职；2，已离职
+        self.status = status
+        # 员工id
+        self.user_id = user_id
+        # 离职原因-主动
+        self.voluntary_reason = voluntary_reason
+
+    def validate(self):
+        if self.dept_list:
+            for k in self.dept_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['deptList'] = []
+        if self.dept_list is not None:
+            for k in self.dept_list:
+                result['deptList'].append(k.to_map() if k else None)
+        if self.handover_user_id is not None:
+            result['handoverUserId'] = self.handover_user_id
+        if self.last_work_day is not None:
+            result['lastWorkDay'] = self.last_work_day
+        if self.main_dept_id is not None:
+            result['mainDeptId'] = self.main_dept_id
+        if self.main_dept_name is not None:
+            result['mainDeptName'] = self.main_dept_name
+        if self.passive_reason is not None:
+            result['passiveReason'] = self.passive_reason
+        if self.pre_status is not None:
+            result['preStatus'] = self.pre_status
+        if self.reason_memo is not None:
+            result['reasonMemo'] = self.reason_memo
+        if self.status is not None:
+            result['status'] = self.status
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.voluntary_reason is not None:
+            result['voluntaryReason'] = self.voluntary_reason
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.dept_list = []
+        if m.get('deptList') is not None:
+            for k in m.get('deptList'):
+                temp_model = QueryHrmEmployeeDismissionInfoResponseBodyResultDeptList()
+                self.dept_list.append(temp_model.from_map(k))
+        if m.get('handoverUserId') is not None:
+            self.handover_user_id = m.get('handoverUserId')
+        if m.get('lastWorkDay') is not None:
+            self.last_work_day = m.get('lastWorkDay')
+        if m.get('mainDeptId') is not None:
+            self.main_dept_id = m.get('mainDeptId')
+        if m.get('mainDeptName') is not None:
+            self.main_dept_name = m.get('mainDeptName')
+        if m.get('passiveReason') is not None:
+            self.passive_reason = m.get('passiveReason')
+        if m.get('preStatus') is not None:
+            self.pre_status = m.get('preStatus')
+        if m.get('reasonMemo') is not None:
+            self.reason_memo = m.get('reasonMemo')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('voluntaryReason') is not None:
+            self.voluntary_reason = m.get('voluntaryReason')
+        return self
+
+
+class QueryHrmEmployeeDismissionInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[QueryHrmEmployeeDismissionInfoResponseBodyResult] = None,
+    ):
+        # 名称列表
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = QueryHrmEmployeeDismissionInfoResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class QueryHrmEmployeeDismissionInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryHrmEmployeeDismissionInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryHrmEmployeeDismissionInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryJobRanksHeaders(TeaModel):
     def __init__(
         self,

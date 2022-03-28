@@ -469,6 +469,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('QueryCustomEntryProcesses', 'hrm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/hrm/customEntryProcesses', 'json', req, runtime)
         )
 
+    def query_hrm_employee_dismission_info(
+        self,
+        request: dingtalkhrm__1__0_models.QueryHrmEmployeeDismissionInfoRequest,
+    ) -> dingtalkhrm__1__0_models.QueryHrmEmployeeDismissionInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.QueryHrmEmployeeDismissionInfoHeaders()
+        return self.query_hrm_employee_dismission_info_with_options(request, headers, runtime)
+
+    async def query_hrm_employee_dismission_info_async(
+        self,
+        request: dingtalkhrm__1__0_models.QueryHrmEmployeeDismissionInfoRequest,
+    ) -> dingtalkhrm__1__0_models.QueryHrmEmployeeDismissionInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.QueryHrmEmployeeDismissionInfoHeaders()
+        return await self.query_hrm_employee_dismission_info_with_options_async(request, headers, runtime)
+
+    def query_hrm_employee_dismission_info_with_options(
+        self,
+        tmp_req: dingtalkhrm__1__0_models.QueryHrmEmployeeDismissionInfoRequest,
+        headers: dingtalkhrm__1__0_models.QueryHrmEmployeeDismissionInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.QueryHrmEmployeeDismissionInfoResponse:
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkhrm__1__0_models.QueryHrmEmployeeDismissionInfoShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.user_id_list):
+            request.user_id_list_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.user_id_list, 'userIdList', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.user_id_list_shrink):
+            query['userIdList'] = request.user_id_list_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.QueryHrmEmployeeDismissionInfoResponse(),
+            self.do_roarequest('QueryHrmEmployeeDismissionInfo', 'hrm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/hrm/employees/dimissionInfos', 'json', req, runtime)
+        )
+
+    async def query_hrm_employee_dismission_info_with_options_async(
+        self,
+        tmp_req: dingtalkhrm__1__0_models.QueryHrmEmployeeDismissionInfoRequest,
+        headers: dingtalkhrm__1__0_models.QueryHrmEmployeeDismissionInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.QueryHrmEmployeeDismissionInfoResponse:
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkhrm__1__0_models.QueryHrmEmployeeDismissionInfoShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.user_id_list):
+            request.user_id_list_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.user_id_list, 'userIdList', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.user_id_list_shrink):
+            query['userIdList'] = request.user_id_list_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.QueryHrmEmployeeDismissionInfoResponse(),
+            await self.do_roarequest_async('QueryHrmEmployeeDismissionInfo', 'hrm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/hrm/employees/dimissionInfos', 'json', req, runtime)
+        )
+
     def query_job_ranks(
         self,
         request: dingtalkhrm__1__0_models.QueryJobRanksRequest,
