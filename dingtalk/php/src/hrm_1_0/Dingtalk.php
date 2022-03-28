@@ -23,6 +23,10 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataTenantQueyResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryCustomEntryProcessesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryCustomEntryProcessesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryCustomEntryProcessesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryHrmEmployeeDismissionInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryHrmEmployeeDismissionInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryHrmEmployeeDismissionInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryHrmEmployeeDismissionInfoShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryJobRanksHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryJobRanksRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryJobRanksResponse;
@@ -344,6 +348,53 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryCustomEntryProcessesResponse::fromMap($this->doROARequest('QueryCustomEntryProcesses', 'hrm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/hrm/customEntryProcesses', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryHrmEmployeeDismissionInfoRequest $request
+     *
+     * @return QueryHrmEmployeeDismissionInfoResponse
+     */
+    public function queryHrmEmployeeDismissionInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryHrmEmployeeDismissionInfoHeaders([]);
+
+        return $this->queryHrmEmployeeDismissionInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryHrmEmployeeDismissionInfoRequest $tmpReq
+     * @param QueryHrmEmployeeDismissionInfoHeaders $headers
+     * @param RuntimeOptions                        $runtime
+     *
+     * @return QueryHrmEmployeeDismissionInfoResponse
+     */
+    public function queryHrmEmployeeDismissionInfoWithOptions($tmpReq, $headers, $runtime)
+    {
+        Utils::validateModel($tmpReq);
+        $request = new QueryHrmEmployeeDismissionInfoShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->userIdList)) {
+            $request->userIdListShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->userIdList, 'userIdList', 'json');
+        }
+        $query = [];
+        if (!Utils::isUnset($request->userIdListShrink)) {
+            @$query['userIdList'] = $request->userIdListShrink;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryHrmEmployeeDismissionInfoResponse::fromMap($this->doROARequest('QueryHrmEmployeeDismissionInfo', 'hrm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/hrm/employees/dimissionInfos', 'json', $req, $runtime));
     }
 
     /**
