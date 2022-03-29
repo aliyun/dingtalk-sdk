@@ -6,16 +6,16 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkcarbon_1_0.Models
 {
-    public class SeparateBranchOrgResponse : TeaModel {
+    public class WriteIsvStateResponse : TeaModel {
         [NameInMap("headers")]
         [Validation(Required=true)]
         public Dictionary<string, string> Headers { get; set; }
 
         [NameInMap("body")]
         [Validation(Required=true)]
-        public SeparateBranchOrgResponseBody Body { get; set; }
+        public WriteIsvStateResponseBody Body { get; set; }
 
     }
 

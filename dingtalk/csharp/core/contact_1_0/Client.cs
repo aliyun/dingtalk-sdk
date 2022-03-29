@@ -2380,7 +2380,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<SeparateBranchOrgResponse>(DoROARequest("SeparateBranchOrg", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/cooperateCorps/separate", "none", req, runtime));
+            return TeaModel.ToObject<SeparateBranchOrgResponse>(DoROARequest("SeparateBranchOrg", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/cooperateCorps/separate", "json", req, runtime));
         }
 
         public async Task<SeparateBranchOrgResponse> SeparateBranchOrgWithOptionsAsync(SeparateBranchOrgRequest request, SeparateBranchOrgHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -2405,7 +2405,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<SeparateBranchOrgResponse>(await DoROARequestAsync("SeparateBranchOrg", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/cooperateCorps/separate", "none", req, runtime));
+            return TeaModel.ToObject<SeparateBranchOrgResponse>(await DoROARequestAsync("SeparateBranchOrg", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/cooperateCorps/separate", "json", req, runtime));
         }
 
         public SetDisableResponse SetDisable(SetDisableRequest request)

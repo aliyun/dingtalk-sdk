@@ -154,6 +154,78 @@ namespace AlibabaCloud.SDK.Dingtalkcarbon_1_0
             return TeaModel.ToObject<WriteAlibabaUserCarbonResponse>(await DoROARequestAsync("WriteAlibabaUserCarbon", "carbon_1.0", "HTTP", "POST", "AK", "/v1.0/carbon/alibabaUserDetails/write", "json", req, runtime));
         }
 
+        public WriteIsvStateResponse WriteIsvState(WriteIsvStateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            WriteIsvStateHeaders headers = new WriteIsvStateHeaders();
+            return WriteIsvStateWithOptions(request, headers, runtime);
+        }
+
+        public async Task<WriteIsvStateResponse> WriteIsvStateAsync(WriteIsvStateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            WriteIsvStateHeaders headers = new WriteIsvStateHeaders();
+            return await WriteIsvStateWithOptionsAsync(request, headers, runtime);
+        }
+
+        public WriteIsvStateResponse WriteIsvStateWithOptions(WriteIsvStateRequest request, WriteIsvStateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsvName))
+            {
+                query["isvName"] = request.IsvName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StatDate))
+            {
+                query["statDate"] = request.StatDate;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<WriteIsvStateResponse>(DoROARequest("WriteIsvState", "carbon_1.0", "HTTP", "POST", "AK", "/v1.0/carbon/datas/states/write", "json", req, runtime));
+        }
+
+        public async Task<WriteIsvStateResponse> WriteIsvStateWithOptionsAsync(WriteIsvStateRequest request, WriteIsvStateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsvName))
+            {
+                query["isvName"] = request.IsvName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StatDate))
+            {
+                query["statDate"] = request.StatDate;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<WriteIsvStateResponse>(await DoROARequestAsync("WriteIsvState", "carbon_1.0", "HTTP", "POST", "AK", "/v1.0/carbon/datas/states/write", "json", req, runtime));
+        }
+
         public WriteOrgCarbonResponse WriteOrgCarbon(WriteOrgCarbonRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
