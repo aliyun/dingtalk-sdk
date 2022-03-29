@@ -79,6 +79,39 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("WriteAlibabaUserCarbon", "carbon_1.0", "HTTP", "POST", "AK", "/v1.0/carbon/alibabaUserDetails/write", "json", req, runtime), new WriteAlibabaUserCarbonResponse());
     }
 
+    public WriteIsvStateResponse writeIsvState(WriteIsvStateRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        WriteIsvStateHeaders headers = new WriteIsvStateHeaders();
+        return this.writeIsvStateWithOptions(request, headers, runtime);
+    }
+
+    public WriteIsvStateResponse writeIsvStateWithOptions(WriteIsvStateRequest request, WriteIsvStateHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.isvName)) {
+            query.put("isvName", request.isvName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.statDate)) {
+            query.put("statDate", request.statDate);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("WriteIsvState", "carbon_1.0", "HTTP", "POST", "AK", "/v1.0/carbon/datas/states/write", "json", req, runtime), new WriteIsvStateResponse());
+    }
+
     public WriteOrgCarbonResponse writeOrgCarbon(WriteOrgCarbonRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         WriteOrgCarbonHeaders headers = new WriteOrgCarbonHeaders();

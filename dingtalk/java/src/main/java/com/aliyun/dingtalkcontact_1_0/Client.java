@@ -1101,7 +1101,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("SeparateBranchOrg", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/cooperateCorps/separate", "none", req, runtime), new SeparateBranchOrgResponse());
+        return TeaModel.toModel(this.doROARequest("SeparateBranchOrg", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/cooperateCorps/separate", "json", req, runtime), new SeparateBranchOrgResponse());
     }
 
     public SetDisableResponse setDisable(SetDisableRequest request) throws Exception {

@@ -1100,6 +1100,39 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("SetDeptPartnerTypeAndNum", "exclusive_1.0", "HTTP", "POST", "AK", "/v1.0/exclusive/partnerDepartments", "none", req, runtime), new SetDeptPartnerTypeAndNumResponse());
     }
 
+    public UpdateFileStatusResponse updateFileStatus(UpdateFileStatusRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        UpdateFileStatusHeaders headers = new UpdateFileStatusHeaders();
+        return this.updateFileStatusWithOptions(request, headers, runtime);
+    }
+
+    public UpdateFileStatusResponse updateFileStatusWithOptions(UpdateFileStatusRequest request, UpdateFileStatusHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.requestIds)) {
+            body.put("requestIds", request.requestIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.status)) {
+            body.put("status", request.status);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("UpdateFileStatus", "exclusive_1.0", "HTTP", "PUT", "AK", "/v1.0/exclusive/sending/files/status", "json", req, runtime), new UpdateFileStatusResponse());
+    }
+
     public UpdateMiniAppVersionStatusResponse updateMiniAppVersionStatus(UpdateMiniAppVersionStatusRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         UpdateMiniAppVersionStatusHeaders headers = new UpdateMiniAppVersionStatusHeaders();
