@@ -2832,17 +2832,39 @@ export class SeparateBranchOrgRequest extends $tea.Model {
   }
 }
 
+export class SeparateBranchOrgResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SeparateBranchOrgResponse extends $tea.Model {
   headers: { [key: string]: string };
+  body: SeparateBranchOrgResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      body: 'body',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SeparateBranchOrgResponseBody,
     };
   }
 
@@ -5720,7 +5742,7 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SeparateBranchOrgResponse>(await this.doROARequest("SeparateBranchOrg", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/cooperateCorps/separate`, "none", req, runtime), new SeparateBranchOrgResponse({}));
+    return $tea.cast<SeparateBranchOrgResponse>(await this.doROARequest("SeparateBranchOrg", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/cooperateCorps/separate`, "json", req, runtime), new SeparateBranchOrgResponse({}));
   }
 
   async setDisable(request: SetDisableRequest): Promise<SetDisableResponse> {

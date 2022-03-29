@@ -177,6 +177,91 @@ export class WriteAlibabaUserCarbonResponse extends $tea.Model {
   }
 }
 
+export class WriteIsvStateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class WriteIsvStateRequest extends $tea.Model {
+  isvName?: string;
+  statDate?: string;
+  static names(): { [key: string]: string } {
+    return {
+      isvName: 'isvName',
+      statDate: 'statDate',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      isvName: 'string',
+      statDate: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class WriteIsvStateResponseBody extends $tea.Model {
+  result?: number;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class WriteIsvStateResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: WriteIsvStateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: WriteIsvStateResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class WriteOrgCarbonHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -576,6 +661,39 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<WriteAlibabaUserCarbonResponse>(await this.doROARequest("WriteAlibabaUserCarbon", "carbon_1.0", "HTTP", "POST", "AK", `/v1.0/carbon/alibabaUserDetails/write`, "json", req, runtime), new WriteAlibabaUserCarbonResponse({}));
+  }
+
+  async writeIsvState(request: WriteIsvStateRequest): Promise<WriteIsvStateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new WriteIsvStateHeaders({ });
+    return await this.writeIsvStateWithOptions(request, headers, runtime);
+  }
+
+  async writeIsvStateWithOptions(request: WriteIsvStateRequest, headers: WriteIsvStateHeaders, runtime: $Util.RuntimeOptions): Promise<WriteIsvStateResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.isvName)) {
+      query["isvName"] = request.isvName;
+    }
+
+    if (!Util.isUnset(request.statDate)) {
+      query["statDate"] = request.statDate;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<WriteIsvStateResponse>(await this.doROARequest("WriteIsvState", "carbon_1.0", "HTTP", "POST", "AK", `/v1.0/carbon/datas/states/write`, "json", req, runtime), new WriteIsvStateResponse({}));
   }
 
   async writeOrgCarbon(request: WriteOrgCarbonRequest): Promise<WriteOrgCarbonResponse> {

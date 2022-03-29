@@ -777,6 +777,100 @@ export class CreateCustomerResponse extends $tea.Model {
   }
 }
 
+export class CreateGroupHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateGroupRequest extends $tea.Model {
+  groupName?: string;
+  memberUserIds?: string;
+  ownerUserId?: string;
+  relationType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      groupName: 'groupName',
+      memberUserIds: 'memberUserIds',
+      ownerUserId: 'ownerUserId',
+      relationType: 'relationType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      groupName: 'string',
+      memberUserIds: 'string',
+      ownerUserId: 'string',
+      relationType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateGroupResponseBody extends $tea.Model {
+  chatId?: string;
+  openConversationId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      chatId: 'chatId',
+      openConversationId: 'openConversationId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      chatId: 'string',
+      openConversationId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateGroupResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CreateGroupResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CreateGroupResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateGroupSetHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -8656,6 +8750,47 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<CreateCustomerResponse>(await this.doROARequest("CreateCustomer", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/customers`, "json", req, runtime), new CreateCustomerResponse({}));
+  }
+
+  async createGroup(request: CreateGroupRequest): Promise<CreateGroupResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateGroupHeaders({ });
+    return await this.createGroupWithOptions(request, headers, runtime);
+  }
+
+  async createGroupWithOptions(request: CreateGroupRequest, headers: CreateGroupHeaders, runtime: $Util.RuntimeOptions): Promise<CreateGroupResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.groupName)) {
+      body["groupName"] = request.groupName;
+    }
+
+    if (!Util.isUnset(request.memberUserIds)) {
+      body["memberUserIds"] = request.memberUserIds;
+    }
+
+    if (!Util.isUnset(request.ownerUserId)) {
+      body["ownerUserId"] = request.ownerUserId;
+    }
+
+    if (!Util.isUnset(request.relationType)) {
+      body["relationType"] = request.relationType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreateGroupResponse>(await this.doROARequest("CreateGroup", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/groups`, "json", req, runtime), new CreateGroupResponse({}));
   }
 
   async createGroupSet(request: CreateGroupSetRequest): Promise<CreateGroupSetResponse> {
