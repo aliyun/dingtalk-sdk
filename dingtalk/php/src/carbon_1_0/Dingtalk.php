@@ -11,6 +11,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcarbon_1_0\Models\WriteAlibabaOrgCarbonResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcarbon_1_0\Models\WriteAlibabaUserCarbonHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcarbon_1_0\Models\WriteAlibabaUserCarbonRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcarbon_1_0\Models\WriteAlibabaUserCarbonResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcarbon_1_0\Models\WriteIsvStateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcarbon_1_0\Models\WriteIsvStateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcarbon_1_0\Models\WriteIsvStateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcarbon_1_0\Models\WriteOrgCarbonHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcarbon_1_0\Models\WriteOrgCarbonRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcarbon_1_0\Models\WriteOrgCarbonResponse;
@@ -115,6 +118,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return WriteAlibabaUserCarbonResponse::fromMap($this->doROARequest('WriteAlibabaUserCarbon', 'carbon_1.0', 'HTTP', 'POST', 'AK', '/v1.0/carbon/alibabaUserDetails/write', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param WriteIsvStateRequest $request
+     *
+     * @return WriteIsvStateResponse
+     */
+    public function writeIsvState($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new WriteIsvStateHeaders([]);
+
+        return $this->writeIsvStateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param WriteIsvStateRequest $request
+     * @param WriteIsvStateHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return WriteIsvStateResponse
+     */
+    public function writeIsvStateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->isvName)) {
+            @$query['isvName'] = $request->isvName;
+        }
+        if (!Utils::isUnset($request->statDate)) {
+            @$query['statDate'] = $request->statDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return WriteIsvStateResponse::fromMap($this->doROARequest('WriteIsvState', 'carbon_1.0', 'HTTP', 'POST', 'AK', '/v1.0/carbon/datas/states/write', 'json', $req, $runtime));
     }
 
     /**

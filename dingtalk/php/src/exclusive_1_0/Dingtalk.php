@@ -89,6 +89,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SendInvitationResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetDeptPartnerTypeAndNumHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetDeptPartnerTypeAndNumRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetDeptPartnerTypeAndNumResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateFileStatusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateFileStatusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateFileStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateMiniAppVersionStatusHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateMiniAppVersionStatusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateMiniAppVersionStatusResponse;
@@ -1557,6 +1560,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return SetDeptPartnerTypeAndNumResponse::fromMap($this->doROARequest('SetDeptPartnerTypeAndNum', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/partnerDepartments', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param UpdateFileStatusRequest $request
+     *
+     * @return UpdateFileStatusResponse
+     */
+    public function updateFileStatus($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateFileStatusHeaders([]);
+
+        return $this->updateFileStatusWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateFileStatusRequest $request
+     * @param UpdateFileStatusHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return UpdateFileStatusResponse
+     */
+    public function updateFileStatusWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->requestIds)) {
+            @$body['requestIds'] = $request->requestIds;
+        }
+        if (!Utils::isUnset($request->status)) {
+            @$body['status'] = $request->status;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateFileStatusResponse::fromMap($this->doROARequest('UpdateFileStatus', 'exclusive_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/exclusive/sending/files/status', 'json', $req, $runtime));
     }
 
     /**

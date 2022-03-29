@@ -1687,7 +1687,7 @@ class Dingtalk extends OpenApiClient
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return SeparateBranchOrgResponse::fromMap($this->doROARequest('SeparateBranchOrg', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/cooperateCorps/separate', 'none', $req, $runtime));
+        return SeparateBranchOrgResponse::fromMap($this->doROARequest('SeparateBranchOrg', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/cooperateCorps/separate', 'json', $req, $runtime));
     }
 
     /**

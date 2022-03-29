@@ -29,6 +29,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchUpdateRelationDatasResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\CreateCustomerHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\CreateCustomerRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\CreateCustomerResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\CreateGroupHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\CreateGroupRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\CreateGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\CreateGroupSetHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\CreateGroupSetRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\CreateGroupSetResponse;
@@ -580,6 +583,57 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CreateCustomerResponse::fromMap($this->doROARequest('CreateCustomer', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/customers', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CreateGroupRequest $request
+     *
+     * @return CreateGroupResponse
+     */
+    public function createGroup($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateGroupHeaders([]);
+
+        return $this->createGroupWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateGroupRequest $request
+     * @param CreateGroupHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return CreateGroupResponse
+     */
+    public function createGroupWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->groupName)) {
+            @$body['groupName'] = $request->groupName;
+        }
+        if (!Utils::isUnset($request->memberUserIds)) {
+            @$body['memberUserIds'] = $request->memberUserIds;
+        }
+        if (!Utils::isUnset($request->ownerUserId)) {
+            @$body['ownerUserId'] = $request->ownerUserId;
+        }
+        if (!Utils::isUnset($request->relationType)) {
+            @$body['relationType'] = $request->relationType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateGroupResponse::fromMap($this->doROARequest('CreateGroup', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/groups', 'json', $req, $runtime));
     }
 
     /**
