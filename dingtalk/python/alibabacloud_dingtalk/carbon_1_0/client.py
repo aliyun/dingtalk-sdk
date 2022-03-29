@@ -151,6 +151,74 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('WriteAlibabaUserCarbon', 'carbon_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/carbon/alibabaUserDetails/write', 'json', req, runtime)
         )
 
+    def write_isv_state(
+        self,
+        request: dingtalkcarbon__1__0_models.WriteIsvStateRequest,
+    ) -> dingtalkcarbon__1__0_models.WriteIsvStateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcarbon__1__0_models.WriteIsvStateHeaders()
+        return self.write_isv_state_with_options(request, headers, runtime)
+
+    async def write_isv_state_async(
+        self,
+        request: dingtalkcarbon__1__0_models.WriteIsvStateRequest,
+    ) -> dingtalkcarbon__1__0_models.WriteIsvStateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcarbon__1__0_models.WriteIsvStateHeaders()
+        return await self.write_isv_state_with_options_async(request, headers, runtime)
+
+    def write_isv_state_with_options(
+        self,
+        request: dingtalkcarbon__1__0_models.WriteIsvStateRequest,
+        headers: dingtalkcarbon__1__0_models.WriteIsvStateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcarbon__1__0_models.WriteIsvStateResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.isv_name):
+            query['isvName'] = request.isv_name
+        if not UtilClient.is_unset(request.stat_date):
+            query['statDate'] = request.stat_date
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcarbon__1__0_models.WriteIsvStateResponse(),
+            self.do_roarequest('WriteIsvState', 'carbon_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/carbon/datas/states/write', 'json', req, runtime)
+        )
+
+    async def write_isv_state_with_options_async(
+        self,
+        request: dingtalkcarbon__1__0_models.WriteIsvStateRequest,
+        headers: dingtalkcarbon__1__0_models.WriteIsvStateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcarbon__1__0_models.WriteIsvStateResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.isv_name):
+            query['isvName'] = request.isv_name
+        if not UtilClient.is_unset(request.stat_date):
+            query['statDate'] = request.stat_date
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcarbon__1__0_models.WriteIsvStateResponse(),
+            await self.do_roarequest_async('WriteIsvState', 'carbon_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/carbon/datas/states/write', 'json', req, runtime)
+        )
+
     def write_org_carbon(
         self,
         request: dingtalkcarbon__1__0_models.WriteOrgCarbonRequest,

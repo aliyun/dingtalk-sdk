@@ -5723,15 +5723,48 @@ class SeparateBranchOrgRequest(TeaModel):
         return self
 
 
+class SeparateBranchOrgResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        # 处理结果
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
 class SeparateBranchOrgResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        body: SeparateBranchOrgResponseBody = None,
     ):
         self.headers = headers
+        self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -5741,12 +5774,17 @@ class SeparateBranchOrgResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SeparateBranchOrgResponseBody()
+            self.body = temp_model.from_map(m['body'])
         return self
 
 

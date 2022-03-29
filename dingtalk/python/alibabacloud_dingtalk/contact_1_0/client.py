@@ -2302,7 +2302,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkcontact__1__0_models.SeparateBranchOrgResponse(),
-            self.do_roarequest('SeparateBranchOrg', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/cooperateCorps/separate', 'none', req, runtime)
+            self.do_roarequest('SeparateBranchOrg', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/cooperateCorps/separate', 'json', req, runtime)
         )
 
     async def separate_branch_org_with_options_async(
@@ -2326,7 +2326,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkcontact__1__0_models.SeparateBranchOrgResponse(),
-            await self.do_roarequest_async('SeparateBranchOrg', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/cooperateCorps/separate', 'none', req, runtime)
+            await self.do_roarequest_async('SeparateBranchOrg', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/cooperateCorps/separate', 'json', req, runtime)
         )
 
     def set_disable(

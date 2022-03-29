@@ -2195,6 +2195,74 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('SetDeptPartnerTypeAndNum', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/partnerDepartments', 'none', req, runtime)
         )
 
+    def update_file_status(
+        self,
+        request: dingtalkexclusive__1__0_models.UpdateFileStatusRequest,
+    ) -> dingtalkexclusive__1__0_models.UpdateFileStatusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.UpdateFileStatusHeaders()
+        return self.update_file_status_with_options(request, headers, runtime)
+
+    async def update_file_status_async(
+        self,
+        request: dingtalkexclusive__1__0_models.UpdateFileStatusRequest,
+    ) -> dingtalkexclusive__1__0_models.UpdateFileStatusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.UpdateFileStatusHeaders()
+        return await self.update_file_status_with_options_async(request, headers, runtime)
+
+    def update_file_status_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.UpdateFileStatusRequest,
+        headers: dingtalkexclusive__1__0_models.UpdateFileStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.UpdateFileStatusResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.request_ids):
+            body['requestIds'] = request.request_ids
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.UpdateFileStatusResponse(),
+            self.do_roarequest('UpdateFileStatus', 'exclusive_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/exclusive/sending/files/status', 'json', req, runtime)
+        )
+
+    async def update_file_status_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.UpdateFileStatusRequest,
+        headers: dingtalkexclusive__1__0_models.UpdateFileStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.UpdateFileStatusResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.request_ids):
+            body['requestIds'] = request.request_ids
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.UpdateFileStatusResponse(),
+            await self.do_roarequest_async('UpdateFileStatus', 'exclusive_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/exclusive/sending/files/status', 'json', req, runtime)
+        )
+
     def update_mini_app_version_status(
         self,
         request: dingtalkexclusive__1__0_models.UpdateMiniAppVersionStatusRequest,
