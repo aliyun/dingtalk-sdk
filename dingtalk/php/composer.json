@@ -60,6 +60,7 @@
       "AlibabaCloud\\SDK\\Dingtalk\\Voauth2_1_0\\": "src/oauth2_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Voccupationauth_1_0\\": "src/occupationauth_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vokr_1_0\\": "src/okr_1_0/",
+      "AlibabaCloud\\SDK\\Dingtalk\\Vorg_culture_1_0\\": "src/org_culture_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vproject_integration_1_0\\": "src/project_integration_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vproject_1_0\\": "src/project_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vresident_1_0\\": "src/resident_1_0/",

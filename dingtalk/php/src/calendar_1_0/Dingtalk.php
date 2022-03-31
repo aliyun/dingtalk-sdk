@@ -35,6 +35,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetScheduleResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetSignInListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetSignInListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetSignInListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetSignOutListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetSignOutListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetSignOutListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListAclsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListAclsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListAttendeesHeaders;
@@ -62,6 +65,8 @@ use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\RespondEventRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\RespondEventResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\SignInHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\SignInResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\SignOutHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\SignOutResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\SubscribeCalendarHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\SubscribeCalendarResponse;
 use AlibabaCloud\Tea\Utils\Utils;
@@ -645,6 +650,63 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param string                $userId
+     * @param string                $calendarId
+     * @param string                $eventId
+     * @param GetSignOutListRequest $request
+     *
+     * @return GetSignOutListResponse
+     */
+    public function getSignOutList($userId, $calendarId, $eventId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetSignOutListHeaders([]);
+
+        return $this->getSignOutListWithOptions($userId, $calendarId, $eventId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                $userId
+     * @param string                $calendarId
+     * @param string                $eventId
+     * @param GetSignOutListRequest $request
+     * @param GetSignOutListHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return GetSignOutListResponse
+     */
+    public function getSignOutListWithOptions($userId, $calendarId, $eventId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $userId     = OpenApiUtilClient::getEncodeParam($userId);
+        $calendarId = OpenApiUtilClient::getEncodeParam($calendarId);
+        $eventId    = OpenApiUtilClient::getEncodeParam($eventId);
+        $query      = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->type)) {
+            @$query['type'] = $request->type;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetSignOutListResponse::fromMap($this->doROARequest('GetSignOutList', 'calendar_1.0', 'HTTP', 'GET', 'AK', '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/signOut', 'json', $req, $runtime));
+    }
+
+    /**
      * @param string $userId
      * @param string $calendarId
      *
@@ -1182,6 +1244,49 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return SignInResponse::fromMap($this->doROARequest('SignIn', 'calendar_1.0', 'HTTP', 'POST', 'AK', '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/signin', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $userId
+     * @param string $calendarId
+     * @param string $eventId
+     *
+     * @return SignOutResponse
+     */
+    public function signOut($userId, $calendarId, $eventId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SignOutHeaders([]);
+
+        return $this->signOutWithOptions($userId, $calendarId, $eventId, $headers, $runtime);
+    }
+
+    /**
+     * @param string         $userId
+     * @param string         $calendarId
+     * @param string         $eventId
+     * @param SignOutHeaders $headers
+     * @param RuntimeOptions $runtime
+     *
+     * @return SignOutResponse
+     */
+    public function signOutWithOptions($userId, $calendarId, $eventId, $headers, $runtime)
+    {
+        $userId      = OpenApiUtilClient::getEncodeParam($userId);
+        $calendarId  = OpenApiUtilClient::getEncodeParam($calendarId);
+        $eventId     = OpenApiUtilClient::getEncodeParam($eventId);
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return SignOutResponse::fromMap($this->doROARequest('SignOut', 'calendar_1.0', 'HTTP', 'POST', 'AK', '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/signOut', 'json', $req, $runtime));
     }
 
     /**
