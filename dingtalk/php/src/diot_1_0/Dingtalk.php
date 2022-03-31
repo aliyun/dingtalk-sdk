@@ -26,6 +26,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\DeviceConferenceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\PushEventHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\PushEventRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\PushEventResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\QueryDeviceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\QueryDeviceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\QueryDeviceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\RegisterDeviceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\RegisterDeviceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\RegisterDeviceResponse;
@@ -400,6 +403,54 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param QueryDeviceRequest $request
+     *
+     * @return QueryDeviceResponse
+     */
+    public function queryDevice($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryDeviceHeaders([]);
+
+        return $this->queryDeviceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryDeviceRequest $request
+     * @param QueryDeviceHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return QueryDeviceResponse
+     */
+    public function queryDeviceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->corpId)) {
+            @$query['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryDeviceResponse::fromMap($this->doROARequest('QueryDevice', 'diot_1.0', 'HTTP', 'GET', 'AK', '/v1.0/diot/devices', 'json', $req, $runtime));
+    }
+
+    /**
      * @param RegisterDeviceRequest $request
      *
      * @return RegisterDeviceResponse
@@ -441,8 +492,8 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->id)) {
             @$body['id'] = $request->id;
         }
-        if (!Utils::isUnset($request->liveUrl)) {
-            @$body['liveUrl'] = $request->liveUrl;
+        if (!Utils::isUnset($request->liveUrls)) {
+            @$body['liveUrls'] = $request->liveUrls;
         }
         if (!Utils::isUnset($request->location)) {
             @$body['location'] = $request->location;

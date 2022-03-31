@@ -2,22 +2,22 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\QueryDeviceResponseBody;
 
-use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\RegisterDeviceRequest\liveUrls;
+use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\QueryDeviceResponseBody\data\liveUrls;
 use AlibabaCloud\Tea\Model;
 
-class RegisterDeviceRequest extends Model
+class data extends Model
 {
     /**
-     * @description 钉钉组织id
+     * @description 设备id
      *
      * @var string
      */
-    public $corpId;
+    public $deviceId;
 
     /**
-     * @description 设备名称
+     * @description 设备昵称
      *
      * @var string
      */
@@ -45,14 +45,7 @@ class RegisterDeviceRequest extends Model
     public $deviceTypeName;
 
     /**
-     * @description 设备id
-     *
-     * @var string
-     */
-    public $id;
-
-    /**
-     * @description 视频流地址直播流地址，支持rtmp、flv、hls等格式，需要https协议。
+     * @description 直播地址
      *
      * @var liveUrls
      */
@@ -66,13 +59,6 @@ class RegisterDeviceRequest extends Model
     public $location;
 
     /**
-     * @description 设备昵称
-     *
-     * @var string
-     */
-    public $nickName;
-
-    /**
      * @description 设备父节点id
      *
      * @var string
@@ -80,21 +66,19 @@ class RegisterDeviceRequest extends Model
     public $parentId;
 
     /**
-     * @description 设备类型 摄像头:CAMERA 其它:OTHERS
+     * @description 产品类型 摄像头:CAMERA 其它:OTHERS
      *
      * @var string
      */
     public $productType;
     protected $_name = [
-        'corpId'         => 'corpId',
+        'deviceId'       => 'deviceId',
         'deviceName'     => 'deviceName',
         'deviceStatus'   => 'deviceStatus',
         'deviceType'     => 'deviceType',
         'deviceTypeName' => 'deviceTypeName',
-        'id'             => 'id',
         'liveUrls'       => 'liveUrls',
         'location'       => 'location',
-        'nickName'       => 'nickName',
         'parentId'       => 'parentId',
         'productType'    => 'productType',
     ];
@@ -106,8 +90,8 @@ class RegisterDeviceRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->corpId) {
-            $res['corpId'] = $this->corpId;
+        if (null !== $this->deviceId) {
+            $res['deviceId'] = $this->deviceId;
         }
         if (null !== $this->deviceName) {
             $res['deviceName'] = $this->deviceName;
@@ -121,17 +105,11 @@ class RegisterDeviceRequest extends Model
         if (null !== $this->deviceTypeName) {
             $res['deviceTypeName'] = $this->deviceTypeName;
         }
-        if (null !== $this->id) {
-            $res['id'] = $this->id;
-        }
         if (null !== $this->liveUrls) {
             $res['liveUrls'] = null !== $this->liveUrls ? $this->liveUrls->toMap() : null;
         }
         if (null !== $this->location) {
             $res['location'] = $this->location;
-        }
-        if (null !== $this->nickName) {
-            $res['nickName'] = $this->nickName;
         }
         if (null !== $this->parentId) {
             $res['parentId'] = $this->parentId;
@@ -146,13 +124,13 @@ class RegisterDeviceRequest extends Model
     /**
      * @param array $map
      *
-     * @return RegisterDeviceRequest
+     * @return data
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['corpId'])) {
-            $model->corpId = $map['corpId'];
+        if (isset($map['deviceId'])) {
+            $model->deviceId = $map['deviceId'];
         }
         if (isset($map['deviceName'])) {
             $model->deviceName = $map['deviceName'];
@@ -166,17 +144,11 @@ class RegisterDeviceRequest extends Model
         if (isset($map['deviceTypeName'])) {
             $model->deviceTypeName = $map['deviceTypeName'];
         }
-        if (isset($map['id'])) {
-            $model->id = $map['id'];
-        }
         if (isset($map['liveUrls'])) {
             $model->liveUrls = liveUrls::fromMap($map['liveUrls']);
         }
         if (isset($map['location'])) {
             $model->location = $map['location'];
-        }
-        if (isset($map['nickName'])) {
-            $model->nickName = $map['nickName'];
         }
         if (isset($map['parentId'])) {
             $model->parentId = $map['parentId'];

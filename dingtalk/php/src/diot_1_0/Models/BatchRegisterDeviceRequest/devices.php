@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\BatchRegisterDeviceRequest;
 
+use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\BatchRegisterDeviceRequest\devices\liveUrls;
 use AlibabaCloud\Tea\Model;
 
 class devices extends Model
@@ -53,9 +54,9 @@ class devices extends Model
     /**
      * @description 视频流地址直播流地址，支持rtmp、flv、hls等格式，需要https协议。
      *
-     * @var string
+     * @var liveUrls
      */
-    public $liveUrl;
+    public $liveUrls;
 
     /**
      * @description 设备地址。
@@ -84,7 +85,7 @@ class devices extends Model
         'deviceType'     => 'deviceType',
         'deviceTypeName' => 'deviceTypeName',
         'extraData'      => 'extraData',
-        'liveUrl'        => 'liveUrl',
+        'liveUrls'       => 'liveUrls',
         'location'       => 'location',
         'parentId'       => 'parentId',
         'productType'    => 'productType',
@@ -115,8 +116,8 @@ class devices extends Model
         if (null !== $this->extraData) {
             $res['extraData'] = $this->extraData;
         }
-        if (null !== $this->liveUrl) {
-            $res['liveUrl'] = $this->liveUrl;
+        if (null !== $this->liveUrls) {
+            $res['liveUrls'] = null !== $this->liveUrls ? $this->liveUrls->toMap() : null;
         }
         if (null !== $this->location) {
             $res['location'] = $this->location;
@@ -157,8 +158,8 @@ class devices extends Model
         if (isset($map['extraData'])) {
             $model->extraData = $map['extraData'];
         }
-        if (isset($map['liveUrl'])) {
-            $model->liveUrl = $map['liveUrl'];
+        if (isset($map['liveUrls'])) {
+            $model->liveUrls = liveUrls::fromMap($map['liveUrls']);
         }
         if (isset($map['location'])) {
             $model->location = $map['location'];
