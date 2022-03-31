@@ -304,6 +304,43 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("PushEvent", "diot_1.0", "HTTP", "POST", "AK", "/v1.0/diot/events/push", "json", req, runtime), new PushEventResponse());
     }
 
+    public QueryDeviceResponse queryDevice(QueryDeviceRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        QueryDeviceHeaders headers = new QueryDeviceHeaders();
+        return this.queryDeviceWithOptions(request, headers, runtime);
+    }
+
+    public QueryDeviceResponse queryDeviceWithOptions(QueryDeviceRequest request, QueryDeviceHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.corpId)) {
+            query.put("corpId", request.corpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
+            query.put("pageNumber", request.pageNumber);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            query.put("pageSize", request.pageSize);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("QueryDevice", "diot_1.0", "HTTP", "GET", "AK", "/v1.0/diot/devices", "json", req, runtime), new QueryDeviceResponse());
+    }
+
     public RegisterDeviceResponse registerDevice(RegisterDeviceRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         RegisterDeviceHeaders headers = new RegisterDeviceHeaders();
@@ -337,8 +374,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("id", request.id);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.liveUrl)) {
-            body.put("liveUrl", request.liveUrl);
+        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.liveUrls))) {
+            body.put("liveUrls", request.liveUrls);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.location)) {

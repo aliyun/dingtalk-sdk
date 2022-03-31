@@ -33,6 +33,50 @@ public class BatchRegisterDeviceRequest extends TeaModel {
         return this.devices;
     }
 
+    public static class BatchRegisterDeviceRequestDevicesLiveUrls extends TeaModel {
+        // flv格式视频流地址
+        @NameInMap("flv")
+        public String flv;
+
+        // hls格式视频流地址
+        @NameInMap("hls")
+        public String hls;
+
+        // rtmp格式视频流地址
+        @NameInMap("rtmp")
+        public String rtmp;
+
+        public static BatchRegisterDeviceRequestDevicesLiveUrls build(java.util.Map<String, ?> map) throws Exception {
+            BatchRegisterDeviceRequestDevicesLiveUrls self = new BatchRegisterDeviceRequestDevicesLiveUrls();
+            return TeaModel.build(map, self);
+        }
+
+        public BatchRegisterDeviceRequestDevicesLiveUrls setFlv(String flv) {
+            this.flv = flv;
+            return this;
+        }
+        public String getFlv() {
+            return this.flv;
+        }
+
+        public BatchRegisterDeviceRequestDevicesLiveUrls setHls(String hls) {
+            this.hls = hls;
+            return this;
+        }
+        public String getHls() {
+            return this.hls;
+        }
+
+        public BatchRegisterDeviceRequestDevicesLiveUrls setRtmp(String rtmp) {
+            this.rtmp = rtmp;
+            return this;
+        }
+        public String getRtmp() {
+            return this.rtmp;
+        }
+
+    }
+
     public static class BatchRegisterDeviceRequestDevices extends TeaModel {
         // 设备ID。
         @NameInMap("deviceId")
@@ -59,8 +103,8 @@ public class BatchRegisterDeviceRequest extends TeaModel {
         public java.util.Map<String, ?> extraData;
 
         // 视频流地址直播流地址，支持rtmp、flv、hls等格式，需要https协议。
-        @NameInMap("liveUrl")
-        public String liveUrl;
+        @NameInMap("liveUrls")
+        public BatchRegisterDeviceRequestDevicesLiveUrls liveUrls;
 
         // 设备地址。
         @NameInMap("location")
@@ -127,12 +171,12 @@ public class BatchRegisterDeviceRequest extends TeaModel {
             return this.extraData;
         }
 
-        public BatchRegisterDeviceRequestDevices setLiveUrl(String liveUrl) {
-            this.liveUrl = liveUrl;
+        public BatchRegisterDeviceRequestDevices setLiveUrls(BatchRegisterDeviceRequestDevicesLiveUrls liveUrls) {
+            this.liveUrls = liveUrls;
             return this;
         }
-        public String getLiveUrl() {
-            return this.liveUrl;
+        public BatchRegisterDeviceRequestDevicesLiveUrls getLiveUrls() {
+            return this.liveUrls;
         }
 
         public BatchRegisterDeviceRequestDevices setLocation(String location) {
