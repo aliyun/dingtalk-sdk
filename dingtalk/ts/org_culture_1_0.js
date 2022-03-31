@@ -1,0 +1,1 @@
+module.exports = require('./dist').org_culture_1_0;

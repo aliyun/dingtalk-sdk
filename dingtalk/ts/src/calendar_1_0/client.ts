@@ -936,6 +936,97 @@ export class GetSignInListResponse extends $tea.Model {
   }
 }
 
+export class GetSignOutListHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSignOutListRequest extends $tea.Model {
+  maxResults?: number;
+  nextToken?: string;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxResults: 'number',
+      nextToken: 'string',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSignOutListResponseBody extends $tea.Model {
+  nextToken?: string;
+  users?: GetSignOutListResponseBodyUsers[];
+  static names(): { [key: string]: string } {
+    return {
+      nextToken: 'nextToken',
+      users: 'users',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nextToken: 'string',
+      users: { 'type': 'array', 'itemType': GetSignOutListResponseBodyUsers },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSignOutListResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetSignOutListResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetSignOutListResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListAclsHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1767,6 +1858,69 @@ export class SignInResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: SignInResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SignOutHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SignOutResponseBody extends $tea.Model {
+  checkOutTime?: number;
+  static names(): { [key: string]: string } {
+    return {
+      checkOutTime: 'checkOutTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      checkOutTime: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SignOutResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SignOutResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SignOutResponseBody,
     };
   }
 
@@ -2707,6 +2861,31 @@ export class GetSignInListResponseBodyUsers extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       checkInTime: 'number',
+      displayName: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSignOutListResponseBodyUsers extends $tea.Model {
+  checkOutTime?: number;
+  displayName?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      checkOutTime: 'checkOutTime',
+      displayName: 'displayName',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      checkOutTime: 'number',
       displayName: 'string',
       userId: 'string',
     };
@@ -4607,6 +4786,46 @@ export default class Client extends OpenApi {
     return $tea.cast<GetSignInListResponse>(await this.doROARequest("GetSignInList", "calendar_1.0", "HTTP", "GET", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}/signin`, "json", req, runtime), new GetSignInListResponse({}));
   }
 
+  async getSignOutList(userId: string, calendarId: string, eventId: string, request: GetSignOutListRequest): Promise<GetSignOutListResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetSignOutListHeaders({ });
+    return await this.getSignOutListWithOptions(userId, calendarId, eventId, request, headers, runtime);
+  }
+
+  async getSignOutListWithOptions(userId: string, calendarId: string, eventId: string, request: GetSignOutListRequest, headers: GetSignOutListHeaders, runtime: $Util.RuntimeOptions): Promise<GetSignOutListResponse> {
+    Util.validateModel(request);
+    userId = OpenApiUtil.getEncodeParam(userId);
+    calendarId = OpenApiUtil.getEncodeParam(calendarId);
+    eventId = OpenApiUtil.getEncodeParam(eventId);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.type)) {
+      query["type"] = request.type;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetSignOutListResponse>(await this.doROARequest("GetSignOutList", "calendar_1.0", "HTTP", "GET", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}/signOut`, "json", req, runtime), new GetSignOutListResponse({}));
+  }
+
   async listAcls(userId: string, calendarId: string): Promise<ListAclsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListAclsHeaders({ });
@@ -4994,6 +5213,31 @@ export default class Client extends OpenApi {
       headers: realHeaders,
     });
     return $tea.cast<SignInResponse>(await this.doROARequest("SignIn", "calendar_1.0", "HTTP", "POST", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}/signin`, "json", req, runtime), new SignInResponse({}));
+  }
+
+  async signOut(userId: string, calendarId: string, eventId: string): Promise<SignOutResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SignOutHeaders({ });
+    return await this.signOutWithOptions(userId, calendarId, eventId, headers, runtime);
+  }
+
+  async signOutWithOptions(userId: string, calendarId: string, eventId: string, headers: SignOutHeaders, runtime: $Util.RuntimeOptions): Promise<SignOutResponse> {
+    userId = OpenApiUtil.getEncodeParam(userId);
+    calendarId = OpenApiUtil.getEncodeParam(calendarId);
+    eventId = OpenApiUtil.getEncodeParam(eventId);
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<SignOutResponse>(await this.doROARequest("SignOut", "calendar_1.0", "HTTP", "POST", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}/signOut`, "json", req, runtime), new SignOutResponse({}));
   }
 
   async subscribeCalendar(userId: string, calendarId: string): Promise<SubscribeCalendarResponse> {
