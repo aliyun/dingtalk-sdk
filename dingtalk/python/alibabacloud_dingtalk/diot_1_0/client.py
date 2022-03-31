@@ -551,6 +551,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('PushEvent', 'diot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/diot/events/push', 'json', req, runtime)
         )
 
+    def query_device(
+        self,
+        request: dingtalkdiot__1__0_models.QueryDeviceRequest,
+    ) -> dingtalkdiot__1__0_models.QueryDeviceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdiot__1__0_models.QueryDeviceHeaders()
+        return self.query_device_with_options(request, headers, runtime)
+
+    async def query_device_async(
+        self,
+        request: dingtalkdiot__1__0_models.QueryDeviceRequest,
+    ) -> dingtalkdiot__1__0_models.QueryDeviceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdiot__1__0_models.QueryDeviceHeaders()
+        return await self.query_device_with_options_async(request, headers, runtime)
+
+    def query_device_with_options(
+        self,
+        request: dingtalkdiot__1__0_models.QueryDeviceRequest,
+        headers: dingtalkdiot__1__0_models.QueryDeviceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdiot__1__0_models.QueryDeviceResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdiot__1__0_models.QueryDeviceResponse(),
+            self.do_roarequest('QueryDevice', 'diot_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/diot/devices', 'json', req, runtime)
+        )
+
+    async def query_device_with_options_async(
+        self,
+        request: dingtalkdiot__1__0_models.QueryDeviceRequest,
+        headers: dingtalkdiot__1__0_models.QueryDeviceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdiot__1__0_models.QueryDeviceResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdiot__1__0_models.QueryDeviceResponse(),
+            await self.do_roarequest_async('QueryDevice', 'diot_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/diot/devices', 'json', req, runtime)
+        )
+
     def register_device(
         self,
         request: dingtalkdiot__1__0_models.RegisterDeviceRequest,
@@ -587,8 +659,8 @@ class Client(OpenApiClient):
             body['deviceTypeName'] = request.device_type_name
         if not UtilClient.is_unset(request.id):
             body['id'] = request.id
-        if not UtilClient.is_unset(request.live_url):
-            body['liveUrl'] = request.live_url
+        if not UtilClient.is_unset(request.live_urls):
+            body['liveUrls'] = request.live_urls
         if not UtilClient.is_unset(request.location):
             body['location'] = request.location
         if not UtilClient.is_unset(request.nick_name):
@@ -631,8 +703,8 @@ class Client(OpenApiClient):
             body['deviceTypeName'] = request.device_type_name
         if not UtilClient.is_unset(request.id):
             body['id'] = request.id
-        if not UtilClient.is_unset(request.live_url):
-            body['liveUrl'] = request.live_url
+        if not UtilClient.is_unset(request.live_urls):
+            body['liveUrls'] = request.live_urls
         if not UtilClient.is_unset(request.location):
             body['location'] = request.location
         if not UtilClient.is_unset(request.nick_name):

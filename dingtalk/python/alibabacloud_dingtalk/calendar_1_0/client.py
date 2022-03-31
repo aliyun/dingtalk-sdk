@@ -903,6 +903,96 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetSignInList', 'calendar_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/events/{event_id}/signin', 'json', req, runtime)
         )
 
+    def get_sign_out_list(
+        self,
+        user_id: str,
+        calendar_id: str,
+        event_id: str,
+        request: dingtalkcalendar__1__0_models.GetSignOutListRequest,
+    ) -> dingtalkcalendar__1__0_models.GetSignOutListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcalendar__1__0_models.GetSignOutListHeaders()
+        return self.get_sign_out_list_with_options(user_id, calendar_id, event_id, request, headers, runtime)
+
+    async def get_sign_out_list_async(
+        self,
+        user_id: str,
+        calendar_id: str,
+        event_id: str,
+        request: dingtalkcalendar__1__0_models.GetSignOutListRequest,
+    ) -> dingtalkcalendar__1__0_models.GetSignOutListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcalendar__1__0_models.GetSignOutListHeaders()
+        return await self.get_sign_out_list_with_options_async(user_id, calendar_id, event_id, request, headers, runtime)
+
+    def get_sign_out_list_with_options(
+        self,
+        user_id: str,
+        calendar_id: str,
+        event_id: str,
+        request: dingtalkcalendar__1__0_models.GetSignOutListRequest,
+        headers: dingtalkcalendar__1__0_models.GetSignOutListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcalendar__1__0_models.GetSignOutListResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        calendar_id = OpenApiUtilClient.get_encode_param(calendar_id)
+        event_id = OpenApiUtilClient.get_encode_param(event_id)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.type):
+            query['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcalendar__1__0_models.GetSignOutListResponse(),
+            self.do_roarequest('GetSignOutList', 'calendar_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/events/{event_id}/signOut', 'json', req, runtime)
+        )
+
+    async def get_sign_out_list_with_options_async(
+        self,
+        user_id: str,
+        calendar_id: str,
+        event_id: str,
+        request: dingtalkcalendar__1__0_models.GetSignOutListRequest,
+        headers: dingtalkcalendar__1__0_models.GetSignOutListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcalendar__1__0_models.GetSignOutListResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        calendar_id = OpenApiUtilClient.get_encode_param(calendar_id)
+        event_id = OpenApiUtilClient.get_encode_param(event_id)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.type):
+            query['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcalendar__1__0_models.GetSignOutListResponse(),
+            await self.do_roarequest_async('GetSignOutList', 'calendar_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/events/{event_id}/signOut', 'json', req, runtime)
+        )
+
     def list_acls(
         self,
         user_id: str,
@@ -1739,6 +1829,74 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkcalendar__1__0_models.SignInResponse(),
             await self.do_roarequest_async('SignIn', 'calendar_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/events/{event_id}/signin', 'json', req, runtime)
+        )
+
+    def sign_out(
+        self,
+        user_id: str,
+        calendar_id: str,
+        event_id: str,
+    ) -> dingtalkcalendar__1__0_models.SignOutResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcalendar__1__0_models.SignOutHeaders()
+        return self.sign_out_with_options(user_id, calendar_id, event_id, headers, runtime)
+
+    async def sign_out_async(
+        self,
+        user_id: str,
+        calendar_id: str,
+        event_id: str,
+    ) -> dingtalkcalendar__1__0_models.SignOutResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcalendar__1__0_models.SignOutHeaders()
+        return await self.sign_out_with_options_async(user_id, calendar_id, event_id, headers, runtime)
+
+    def sign_out_with_options(
+        self,
+        user_id: str,
+        calendar_id: str,
+        event_id: str,
+        headers: dingtalkcalendar__1__0_models.SignOutHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcalendar__1__0_models.SignOutResponse:
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        calendar_id = OpenApiUtilClient.get_encode_param(calendar_id)
+        event_id = OpenApiUtilClient.get_encode_param(event_id)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkcalendar__1__0_models.SignOutResponse(),
+            self.do_roarequest('SignOut', 'calendar_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/events/{event_id}/signOut', 'json', req, runtime)
+        )
+
+    async def sign_out_with_options_async(
+        self,
+        user_id: str,
+        calendar_id: str,
+        event_id: str,
+        headers: dingtalkcalendar__1__0_models.SignOutHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcalendar__1__0_models.SignOutResponse:
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        calendar_id = OpenApiUtilClient.get_encode_param(calendar_id)
+        event_id = OpenApiUtilClient.get_encode_param(event_id)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkcalendar__1__0_models.SignOutResponse(),
+            await self.do_roarequest_async('SignOut', 'calendar_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/events/{event_id}/signOut', 'json', req, runtime)
         )
 
     def subscribe_calendar(

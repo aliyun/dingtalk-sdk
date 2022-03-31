@@ -170,6 +170,48 @@ class BatchRegisterDeviceHeaders(TeaModel):
         return self
 
 
+class BatchRegisterDeviceRequestDevicesLiveUrls(TeaModel):
+    def __init__(
+        self,
+        flv: str = None,
+        hls: str = None,
+        rtmp: str = None,
+    ):
+        # flv格式视频流地址
+        self.flv = flv
+        # hls格式视频流地址
+        self.hls = hls
+        # rtmp格式视频流地址
+        self.rtmp = rtmp
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.flv is not None:
+            result['flv'] = self.flv
+        if self.hls is not None:
+            result['hls'] = self.hls
+        if self.rtmp is not None:
+            result['rtmp'] = self.rtmp
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('flv') is not None:
+            self.flv = m.get('flv')
+        if m.get('hls') is not None:
+            self.hls = m.get('hls')
+        if m.get('rtmp') is not None:
+            self.rtmp = m.get('rtmp')
+        return self
+
+
 class BatchRegisterDeviceRequestDevices(TeaModel):
     def __init__(
         self,
@@ -179,7 +221,7 @@ class BatchRegisterDeviceRequestDevices(TeaModel):
         device_type: str = None,
         device_type_name: str = None,
         extra_data: Dict[str, Any] = None,
-        live_url: str = None,
+        live_urls: BatchRegisterDeviceRequestDevicesLiveUrls = None,
         location: str = None,
         parent_id: str = None,
         product_type: str = None,
@@ -197,7 +239,7 @@ class BatchRegisterDeviceRequestDevices(TeaModel):
         # 第三方平台定制参数，企业内部系统忽略。
         self.extra_data = extra_data
         # 视频流地址直播流地址，支持rtmp、flv、hls等格式，需要https协议。
-        self.live_url = live_url
+        self.live_urls = live_urls
         # 设备地址。
         self.location = location
         # 父设备ID。
@@ -206,7 +248,8 @@ class BatchRegisterDeviceRequestDevices(TeaModel):
         self.product_type = product_type
 
     def validate(self):
-        pass
+        if self.live_urls:
+            self.live_urls.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -226,8 +269,8 @@ class BatchRegisterDeviceRequestDevices(TeaModel):
             result['deviceTypeName'] = self.device_type_name
         if self.extra_data is not None:
             result['extraData'] = self.extra_data
-        if self.live_url is not None:
-            result['liveUrl'] = self.live_url
+        if self.live_urls is not None:
+            result['liveUrls'] = self.live_urls.to_map()
         if self.location is not None:
             result['location'] = self.location
         if self.parent_id is not None:
@@ -250,8 +293,9 @@ class BatchRegisterDeviceRequestDevices(TeaModel):
             self.device_type_name = m.get('deviceTypeName')
         if m.get('extraData') is not None:
             self.extra_data = m.get('extraData')
-        if m.get('liveUrl') is not None:
-            self.live_url = m.get('liveUrl')
+        if m.get('liveUrls') is not None:
+            temp_model = BatchRegisterDeviceRequestDevicesLiveUrls()
+            self.live_urls = temp_model.from_map(m['liveUrls'])
         if m.get('location') is not None:
             self.location = m.get('location')
         if m.get('parentId') is not None:
@@ -578,6 +622,48 @@ class BatchUpdateDeviceHeaders(TeaModel):
         return self
 
 
+class BatchUpdateDeviceRequestDevicesLiveUrls(TeaModel):
+    def __init__(
+        self,
+        flv: str = None,
+        hls: str = None,
+        rtmp: str = None,
+    ):
+        # flv格式视频流地址
+        self.flv = flv
+        # hls格式视频流地址
+        self.hls = hls
+        # rtmp格式视频流地址
+        self.rtmp = rtmp
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.flv is not None:
+            result['flv'] = self.flv
+        if self.hls is not None:
+            result['hls'] = self.hls
+        if self.rtmp is not None:
+            result['rtmp'] = self.rtmp
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('flv') is not None:
+            self.flv = m.get('flv')
+        if m.get('hls') is not None:
+            self.hls = m.get('hls')
+        if m.get('rtmp') is not None:
+            self.rtmp = m.get('rtmp')
+        return self
+
+
 class BatchUpdateDeviceRequestDevices(TeaModel):
     def __init__(
         self,
@@ -585,7 +671,7 @@ class BatchUpdateDeviceRequestDevices(TeaModel):
         device_name: str = None,
         device_status: int = None,
         extra_data: Dict[str, Any] = None,
-        live_url: str = None,
+        live_urls: BatchUpdateDeviceRequestDevicesLiveUrls = None,
         location: str = None,
     ):
         # 设备ID。
@@ -597,12 +683,13 @@ class BatchUpdateDeviceRequestDevices(TeaModel):
         # 第三方平台定制参数，企业内部系统忽略。
         self.extra_data = extra_data
         # 视频流地址直播流地址，支持rtmp、flv、hls等格式，需要https协议。
-        self.live_url = live_url
+        self.live_urls = live_urls
         # 设备地址。
         self.location = location
 
     def validate(self):
-        pass
+        if self.live_urls:
+            self.live_urls.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -618,8 +705,8 @@ class BatchUpdateDeviceRequestDevices(TeaModel):
             result['deviceStatus'] = self.device_status
         if self.extra_data is not None:
             result['extraData'] = self.extra_data
-        if self.live_url is not None:
-            result['liveUrl'] = self.live_url
+        if self.live_urls is not None:
+            result['liveUrls'] = self.live_urls.to_map()
         if self.location is not None:
             result['location'] = self.location
         return result
@@ -634,8 +721,9 @@ class BatchUpdateDeviceRequestDevices(TeaModel):
             self.device_status = m.get('deviceStatus')
         if m.get('extraData') is not None:
             self.extra_data = m.get('extraData')
-        if m.get('liveUrl') is not None:
-            self.live_url = m.get('liveUrl')
+        if m.get('liveUrls') is not None:
+            temp_model = BatchUpdateDeviceRequestDevicesLiveUrls()
+            self.live_urls = temp_model.from_map(m['liveUrls'])
         if m.get('location') is not None:
             self.location = m.get('location')
         return self
@@ -1246,6 +1334,303 @@ class PushEventResponse(TeaModel):
         return self
 
 
+class QueryDeviceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryDeviceRequest(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        page_number: int = None,
+        page_size: int = None,
+    ):
+        # 钉钉组织id
+        self.corp_id = corp_id
+        # 指定显示返回结果中的第几页的内容。默认值是 1
+        self.page_number = page_number
+        # 指定返回结果中每页显示的记录数量，最大值是50。默认值是10
+        self.page_size = page_size
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        return self
+
+
+class QueryDeviceResponseBodyDataLiveUrls(TeaModel):
+    def __init__(
+        self,
+        flv: str = None,
+        hls: str = None,
+        rtmp: str = None,
+    ):
+        # flv格式直播地址
+        self.flv = flv
+        # hls格式直播地址
+        self.hls = hls
+        # rtmp格式直播地址
+        self.rtmp = rtmp
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.flv is not None:
+            result['flv'] = self.flv
+        if self.hls is not None:
+            result['hls'] = self.hls
+        if self.rtmp is not None:
+            result['rtmp'] = self.rtmp
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('flv') is not None:
+            self.flv = m.get('flv')
+        if m.get('hls') is not None:
+            self.hls = m.get('hls')
+        if m.get('rtmp') is not None:
+            self.rtmp = m.get('rtmp')
+        return self
+
+
+class QueryDeviceResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        device_id: str = None,
+        device_name: str = None,
+        device_status: int = None,
+        device_type: str = None,
+        device_type_name: str = None,
+        live_urls: QueryDeviceResponseBodyDataLiveUrls = None,
+        location: str = None,
+        parent_id: str = None,
+        product_type: str = None,
+    ):
+        # 设备id
+        self.device_id = device_id
+        # 设备昵称
+        self.device_name = device_name
+        # 设备状态 0:在线 1:离线
+        self.device_status = device_status
+        # 设备类型
+        self.device_type = device_type
+        # 设备类型名称
+        self.device_type_name = device_type_name
+        # 直播地址
+        self.live_urls = live_urls
+        # 设备地址
+        self.location = location
+        # 设备父节点id
+        self.parent_id = parent_id
+        # 产品类型 摄像头:CAMERA 其它:OTHERS
+        self.product_type = product_type
+
+    def validate(self):
+        if self.live_urls:
+            self.live_urls.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.device_id is not None:
+            result['deviceId'] = self.device_id
+        if self.device_name is not None:
+            result['deviceName'] = self.device_name
+        if self.device_status is not None:
+            result['deviceStatus'] = self.device_status
+        if self.device_type is not None:
+            result['deviceType'] = self.device_type
+        if self.device_type_name is not None:
+            result['deviceTypeName'] = self.device_type_name
+        if self.live_urls is not None:
+            result['liveUrls'] = self.live_urls.to_map()
+        if self.location is not None:
+            result['location'] = self.location
+        if self.parent_id is not None:
+            result['parentId'] = self.parent_id
+        if self.product_type is not None:
+            result['productType'] = self.product_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deviceId') is not None:
+            self.device_id = m.get('deviceId')
+        if m.get('deviceName') is not None:
+            self.device_name = m.get('deviceName')
+        if m.get('deviceStatus') is not None:
+            self.device_status = m.get('deviceStatus')
+        if m.get('deviceType') is not None:
+            self.device_type = m.get('deviceType')
+        if m.get('deviceTypeName') is not None:
+            self.device_type_name = m.get('deviceTypeName')
+        if m.get('liveUrls') is not None:
+            temp_model = QueryDeviceResponseBodyDataLiveUrls()
+            self.live_urls = temp_model.from_map(m['liveUrls'])
+        if m.get('location') is not None:
+            self.location = m.get('location')
+        if m.get('parentId') is not None:
+            self.parent_id = m.get('parentId')
+        if m.get('productType') is not None:
+            self.product_type = m.get('productType')
+        return self
+
+
+class QueryDeviceResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: List[QueryDeviceResponseBodyData] = None,
+        page_number: int = None,
+        page_size: int = None,
+        total_count: int = None,
+    ):
+        # 结果数据
+        self.data = data
+        # 当前页码
+        self.page_number = page_number
+        # 页面大小
+        self.page_size = page_size
+        # 总数
+        self.total_count = total_count
+
+    def validate(self):
+        if self.data:
+            for k in self.data:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['data'] = []
+        if self.data is not None:
+            for k in self.data:
+                result['data'].append(k.to_map() if k else None)
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.data = []
+        if m.get('data') is not None:
+            for k in m.get('data'):
+                temp_model = QueryDeviceResponseBodyData()
+                self.data.append(temp_model.from_map(k))
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class QueryDeviceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryDeviceResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryDeviceResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class RegisterDeviceHeaders(TeaModel):
     def __init__(
         self,
@@ -1279,6 +1664,48 @@ class RegisterDeviceHeaders(TeaModel):
         return self
 
 
+class RegisterDeviceRequestLiveUrls(TeaModel):
+    def __init__(
+        self,
+        flv: str = None,
+        hls: str = None,
+        rtmp: str = None,
+    ):
+        # flv格式视频流
+        self.flv = flv
+        # hls格式视频流地址
+        self.hls = hls
+        # rtmp格式视频流
+        self.rtmp = rtmp
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.flv is not None:
+            result['flv'] = self.flv
+        if self.hls is not None:
+            result['hls'] = self.hls
+        if self.rtmp is not None:
+            result['rtmp'] = self.rtmp
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('flv') is not None:
+            self.flv = m.get('flv')
+        if m.get('hls') is not None:
+            self.hls = m.get('hls')
+        if m.get('rtmp') is not None:
+            self.rtmp = m.get('rtmp')
+        return self
+
+
 class RegisterDeviceRequest(TeaModel):
     def __init__(
         self,
@@ -1288,7 +1715,7 @@ class RegisterDeviceRequest(TeaModel):
         device_type: str = None,
         device_type_name: str = None,
         id: str = None,
-        live_url: str = None,
+        live_urls: RegisterDeviceRequestLiveUrls = None,
         location: str = None,
         nick_name: str = None,
         parent_id: str = None,
@@ -1306,8 +1733,8 @@ class RegisterDeviceRequest(TeaModel):
         self.device_type_name = device_type_name
         # 设备id
         self.id = id
-        # 视频流地址
-        self.live_url = live_url
+        # 视频流地址直播流地址，支持rtmp、flv、hls等格式，需要https协议。
+        self.live_urls = live_urls
         # 设备地址
         self.location = location
         # 设备昵称
@@ -1318,7 +1745,8 @@ class RegisterDeviceRequest(TeaModel):
         self.product_type = product_type
 
     def validate(self):
-        pass
+        if self.live_urls:
+            self.live_urls.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -1338,8 +1766,8 @@ class RegisterDeviceRequest(TeaModel):
             result['deviceTypeName'] = self.device_type_name
         if self.id is not None:
             result['id'] = self.id
-        if self.live_url is not None:
-            result['liveUrl'] = self.live_url
+        if self.live_urls is not None:
+            result['liveUrls'] = self.live_urls.to_map()
         if self.location is not None:
             result['location'] = self.location
         if self.nick_name is not None:
@@ -1364,8 +1792,9 @@ class RegisterDeviceRequest(TeaModel):
             self.device_type_name = m.get('deviceTypeName')
         if m.get('id') is not None:
             self.id = m.get('id')
-        if m.get('liveUrl') is not None:
-            self.live_url = m.get('liveUrl')
+        if m.get('liveUrls') is not None:
+            temp_model = RegisterDeviceRequestLiveUrls()
+            self.live_urls = temp_model.from_map(m['liveUrls'])
         if m.get('location') is not None:
             self.location = m.get('location')
         if m.get('nickName') is not None:
