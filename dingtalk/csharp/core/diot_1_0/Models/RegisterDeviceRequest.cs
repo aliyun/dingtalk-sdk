@@ -52,11 +52,22 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0.Models
         public string Id { get; set; }
 
         /// <summary>
-        /// 视频流地址
+        /// 视频流地址直播流地址，支持rtmp、flv、hls等格式，需要https协议。
         /// </summary>
-        [NameInMap("liveUrl")]
+        [NameInMap("liveUrls")]
         [Validation(Required=false)]
-        public string LiveUrl { get; set; }
+        public RegisterDeviceRequestLiveUrls LiveUrls { get; set; }
+        public class RegisterDeviceRequestLiveUrls : TeaModel {
+            [NameInMap("flv")]
+            [Validation(Required=false)]
+            public string Flv { get; set; }
+            [NameInMap("hls")]
+            [Validation(Required=false)]
+            public string Hls { get; set; }
+            [NameInMap("rtmp")]
+            [Validation(Required=false)]
+            public string Rtmp { get; set; }
+        };
 
         /// <summary>
         /// 设备地址
