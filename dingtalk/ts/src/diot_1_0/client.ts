@@ -644,6 +644,103 @@ export class PushEventResponse extends $tea.Model {
   }
 }
 
+export class QueryDeviceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryDeviceRequest extends $tea.Model {
+  corpId?: string;
+  pageNumber?: number;
+  pageSize?: number;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      pageNumber: 'number',
+      pageSize: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryDeviceResponseBody extends $tea.Model {
+  data?: QueryDeviceResponseBodyData[];
+  pageNumber?: number;
+  pageSize?: number;
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: { 'type': 'array', 'itemType': QueryDeviceResponseBodyData },
+      pageNumber: 'number',
+      pageSize: 'number',
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryDeviceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryDeviceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryDeviceResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class RegisterDeviceHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -673,7 +770,7 @@ export class RegisterDeviceRequest extends $tea.Model {
   deviceType?: string;
   deviceTypeName?: string;
   id?: string;
-  liveUrl?: string;
+  liveUrls?: RegisterDeviceRequestLiveUrls;
   location?: string;
   nickName?: string;
   parentId?: string;
@@ -686,7 +783,7 @@ export class RegisterDeviceRequest extends $tea.Model {
       deviceType: 'deviceType',
       deviceTypeName: 'deviceTypeName',
       id: 'id',
-      liveUrl: 'liveUrl',
+      liveUrls: 'liveUrls',
       location: 'location',
       nickName: 'nickName',
       parentId: 'parentId',
@@ -702,7 +799,7 @@ export class RegisterDeviceRequest extends $tea.Model {
       deviceType: 'string',
       deviceTypeName: 'string',
       id: 'string',
-      liveUrl: 'string',
+      liveUrls: RegisterDeviceRequestLiveUrls,
       location: 'string',
       nickName: 'string',
       parentId: 'string',
@@ -756,6 +853,31 @@ export class RegisterDeviceResponse extends $tea.Model {
   }
 }
 
+export class BatchRegisterDeviceRequestDevicesLiveUrls extends $tea.Model {
+  flv?: string;
+  hls?: string;
+  rtmp?: string;
+  static names(): { [key: string]: string } {
+    return {
+      flv: 'flv',
+      hls: 'hls',
+      rtmp: 'rtmp',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      flv: 'string',
+      hls: 'string',
+      rtmp: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BatchRegisterDeviceRequestDevices extends $tea.Model {
   deviceId?: string;
   deviceName?: string;
@@ -763,7 +885,7 @@ export class BatchRegisterDeviceRequestDevices extends $tea.Model {
   deviceType?: string;
   deviceTypeName?: string;
   extraData?: { [key: string]: any };
-  liveUrl?: string;
+  liveUrls?: BatchRegisterDeviceRequestDevicesLiveUrls;
   location?: string;
   parentId?: string;
   productType?: string;
@@ -775,7 +897,7 @@ export class BatchRegisterDeviceRequestDevices extends $tea.Model {
       deviceType: 'deviceType',
       deviceTypeName: 'deviceTypeName',
       extraData: 'extraData',
-      liveUrl: 'liveUrl',
+      liveUrls: 'liveUrls',
       location: 'location',
       parentId: 'parentId',
       productType: 'productType',
@@ -790,7 +912,7 @@ export class BatchRegisterDeviceRequestDevices extends $tea.Model {
       deviceType: 'string',
       deviceTypeName: 'string',
       extraData: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
-      liveUrl: 'string',
+      liveUrls: BatchRegisterDeviceRequestDevicesLiveUrls,
       location: 'string',
       parentId: 'string',
       productType: 'string',
@@ -824,12 +946,37 @@ export class BatchRegisterEventTypeRequestEventTypes extends $tea.Model {
   }
 }
 
+export class BatchUpdateDeviceRequestDevicesLiveUrls extends $tea.Model {
+  flv?: string;
+  hls?: string;
+  rtmp?: string;
+  static names(): { [key: string]: string } {
+    return {
+      flv: 'flv',
+      hls: 'hls',
+      rtmp: 'rtmp',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      flv: 'string',
+      hls: 'string',
+      rtmp: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BatchUpdateDeviceRequestDevices extends $tea.Model {
   deviceId?: string;
   deviceName?: string;
   deviceStatus?: number;
   extraData?: { [key: string]: any };
-  liveUrl?: string;
+  liveUrls?: BatchUpdateDeviceRequestDevicesLiveUrls;
   location?: string;
   static names(): { [key: string]: string } {
     return {
@@ -837,7 +984,7 @@ export class BatchUpdateDeviceRequestDevices extends $tea.Model {
       deviceName: 'deviceName',
       deviceStatus: 'deviceStatus',
       extraData: 'extraData',
-      liveUrl: 'liveUrl',
+      liveUrls: 'liveUrls',
       location: 'location',
     };
   }
@@ -848,8 +995,101 @@ export class BatchUpdateDeviceRequestDevices extends $tea.Model {
       deviceName: 'string',
       deviceStatus: 'number',
       extraData: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
-      liveUrl: 'string',
+      liveUrls: BatchUpdateDeviceRequestDevicesLiveUrls,
       location: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryDeviceResponseBodyDataLiveUrls extends $tea.Model {
+  flv?: string;
+  hls?: string;
+  rtmp?: string;
+  static names(): { [key: string]: string } {
+    return {
+      flv: 'flv',
+      hls: 'hls',
+      rtmp: 'rtmp',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      flv: 'string',
+      hls: 'string',
+      rtmp: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryDeviceResponseBodyData extends $tea.Model {
+  deviceId?: string;
+  deviceName?: string;
+  deviceStatus?: number;
+  deviceType?: string;
+  deviceTypeName?: string;
+  liveUrls?: QueryDeviceResponseBodyDataLiveUrls;
+  location?: string;
+  parentId?: string;
+  productType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deviceId: 'deviceId',
+      deviceName: 'deviceName',
+      deviceStatus: 'deviceStatus',
+      deviceType: 'deviceType',
+      deviceTypeName: 'deviceTypeName',
+      liveUrls: 'liveUrls',
+      location: 'location',
+      parentId: 'parentId',
+      productType: 'productType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deviceId: 'string',
+      deviceName: 'string',
+      deviceStatus: 'number',
+      deviceType: 'string',
+      deviceTypeName: 'string',
+      liveUrls: QueryDeviceResponseBodyDataLiveUrls,
+      location: 'string',
+      parentId: 'string',
+      productType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RegisterDeviceRequestLiveUrls extends $tea.Model {
+  flv?: string;
+  hls?: string;
+  rtmp?: string;
+  static names(): { [key: string]: string } {
+    return {
+      flv: 'flv',
+      hls: 'hls',
+      rtmp: 'rtmp',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      flv: 'string',
+      hls: 'string',
+      rtmp: 'string',
     };
   }
 
@@ -1154,6 +1394,43 @@ export default class Client extends OpenApi {
     return $tea.cast<PushEventResponse>(await this.doROARequest("PushEvent", "diot_1.0", "HTTP", "POST", "AK", `/v1.0/diot/events/push`, "json", req, runtime), new PushEventResponse({}));
   }
 
+  async queryDevice(request: QueryDeviceRequest): Promise<QueryDeviceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryDeviceHeaders({ });
+    return await this.queryDeviceWithOptions(request, headers, runtime);
+  }
+
+  async queryDeviceWithOptions(request: QueryDeviceRequest, headers: QueryDeviceHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDeviceResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.corpId)) {
+      query["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryDeviceResponse>(await this.doROARequest("QueryDevice", "diot_1.0", "HTTP", "GET", "AK", `/v1.0/diot/devices`, "json", req, runtime), new QueryDeviceResponse({}));
+  }
+
   async registerDevice(request: RegisterDeviceRequest): Promise<RegisterDeviceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RegisterDeviceHeaders({ });
@@ -1187,8 +1464,8 @@ export default class Client extends OpenApi {
       body["id"] = request.id;
     }
 
-    if (!Util.isUnset(request.liveUrl)) {
-      body["liveUrl"] = request.liveUrl;
+    if (!Util.isUnset($tea.toMap(request.liveUrls))) {
+      body["liveUrls"] = request.liveUrls;
     }
 
     if (!Util.isUnset(request.location)) {
