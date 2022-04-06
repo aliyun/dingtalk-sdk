@@ -31,13 +31,6 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         public List<ListGroupSetResponseBodyResultList> ResultList { get; set; }
         public class ListGroupSetResponseBodyResultList : TeaModel {
             /// <summary>
-            /// 企业corpId
-            /// </summary>
-            [NameInMap("corpId")]
-            [Validation(Required=false)]
-            public string CorpId { get; set; }
-
-            /// <summary>
             /// 创建时间
             /// </summary>
             [NameInMap("gmtCreate")]

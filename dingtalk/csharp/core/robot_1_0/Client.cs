@@ -442,6 +442,70 @@ namespace AlibabaCloud.SDK.Dingtalkrobot_1_0
             return TeaModel.ToObject<OrgGroupSendResponse>(await DoROARequestAsync("OrgGroupSend", "robot_1.0", "HTTP", "POST", "AK", "/v1.0/robot/groupMessages/send", "json", req, runtime));
         }
 
+        public QueryRobotDingtalkIdResponse QueryRobotDingtalkId(QueryRobotDingtalkIdRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryRobotDingtalkIdHeaders headers = new QueryRobotDingtalkIdHeaders();
+            return QueryRobotDingtalkIdWithOptions(request, headers, runtime);
+        }
+
+        public async Task<QueryRobotDingtalkIdResponse> QueryRobotDingtalkIdAsync(QueryRobotDingtalkIdRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryRobotDingtalkIdHeaders headers = new QueryRobotDingtalkIdHeaders();
+            return await QueryRobotDingtalkIdWithOptionsAsync(request, headers, runtime);
+        }
+
+        public QueryRobotDingtalkIdResponse QueryRobotDingtalkIdWithOptions(QueryRobotDingtalkIdRequest request, QueryRobotDingtalkIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotCode))
+            {
+                query["robotCode"] = request.RobotCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<QueryRobotDingtalkIdResponse>(DoROARequest("QueryRobotDingtalkId", "robot_1.0", "HTTP", "GET", "AK", "/v1.0/robot/dingtalkId", "json", req, runtime));
+        }
+
+        public async Task<QueryRobotDingtalkIdResponse> QueryRobotDingtalkIdWithOptionsAsync(QueryRobotDingtalkIdRequest request, QueryRobotDingtalkIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotCode))
+            {
+                query["robotCode"] = request.RobotCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<QueryRobotDingtalkIdResponse>(await DoROARequestAsync("QueryRobotDingtalkId", "robot_1.0", "HTTP", "GET", "AK", "/v1.0/robot/dingtalkId", "json", req, runtime));
+        }
+
         public SendRobotDingMessageResponse SendRobotDingMessage(SendRobotDingMessageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

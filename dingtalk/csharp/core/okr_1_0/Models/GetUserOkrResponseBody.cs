@@ -23,10 +23,14 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
                 public List<string> AlignFromIds { get; set; }
                 public List<string> AlignToIds { get; set; }
                 public Stream Content { get; set; }
+                public float? GmtCreate { get; set; }
+                public float? GmtModified { get; set; }
                 public Stream Id { get; set; }
                 public List<GetUserOkrResponseBodyDataListKrList> KrList { get; set; }
                 public class GetUserOkrResponseBodyDataListKrList : TeaModel {
                     public Stream Content { get; set; }
+                    public float? GmtCreate { get; set; }
+                    public float? GmtModified { get; set; }
                     public Stream Id { get; set; }
                     public Stream ObjectiveId { get; set; }
                     public List<string> Permission { get; set; }
@@ -61,7 +65,7 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
                     public Stream CorpId { get; set; }
 
                     /// <summary>
-                    /// 所属者 ID。
+                    /// 所属者 OKR 系统中的 ID。
                     /// </summary>
                     [NameInMap("id")]
                     [Validation(Required=false)]
@@ -77,9 +81,9 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
                     /// <summary>
                     /// 所属者 userId。
                     /// </summary>
-                    [NameInMap("staffId")]
+                    [NameInMap("userId")]
                     [Validation(Required=false)]
-                    public Stream StaffId { get; set; }
+                    public Stream UserId { get; set; }
 
                 }
                 public Stream PeriodId { get; set; }
@@ -102,9 +106,9 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
                 public Stream UserId { get; set; }
                 public float? Weight { get; set; }
             }
-            [NameInMap("pageNo")]
+            [NameInMap("pageNumber")]
             [Validation(Required=false)]
-            public long? PageNo { get; set; }
+            public long? PageNumber { get; set; }
             [NameInMap("pageSize")]
             [Validation(Required=false)]
             public long? PageSize { get; set; }

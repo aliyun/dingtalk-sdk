@@ -9,10 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
     public class CreateGroupSetResponseBody : TeaModel {
-        [NameInMap("corpId")]
-        [Validation(Required=false)]
-        public string CorpId { get; set; }
-
         [NameInMap("gmtCreate")]
         [Validation(Required=false)]
         public string GmtCreate { get; set; }

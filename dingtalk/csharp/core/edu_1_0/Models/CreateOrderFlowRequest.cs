@@ -52,6 +52,13 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             public long? ItemAmount { get; set; }
 
             /// <summary>
+            /// 商品id
+            /// </summary>
+            [NameInMap("itemId")]
+            [Validation(Required=false)]
+            public long? ItemId { get; set; }
+
+            /// <summary>
             /// 商品名
             /// </summary>
             [NameInMap("itemName")]
