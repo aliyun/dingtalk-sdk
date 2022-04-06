@@ -2,7 +2,7 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\BatchQueryObjectiveResponseBody\data\list_;
+namespace AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\BatchQueryObjectiveResponseBody\data;
 
 use AlibabaCloud\Tea\Model;
 use GuzzleHttp\Psr7\Stream;
@@ -24,7 +24,7 @@ class owner extends Model
     public $corpId;
 
     /**
-     * @description 所属者 ID。
+     * @description 所属者在 OKR 系统中的 ID。
      *
      * @var Stream
      */
@@ -42,13 +42,13 @@ class owner extends Model
      *
      * @var Stream
      */
-    public $staffId;
+    public $userId;
     protected $_name = [
         'avatarMediaId' => 'avatarMediaId',
         'corpId'        => 'corpId',
         'id'            => 'id',
         'nickname'      => 'nickname',
-        'staffId'       => 'staffId',
+        'userId'        => 'userId',
     ];
 
     public function validate()
@@ -70,8 +70,8 @@ class owner extends Model
         if (null !== $this->nickname) {
             $res['nickname'] = $this->nickname;
         }
-        if (null !== $this->staffId) {
-            $res['staffId'] = $this->staffId;
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -97,8 +97,8 @@ class owner extends Model
         if (isset($map['nickname'])) {
             $model->nickname = $map['nickname'];
         }
-        if (isset($map['staffId'])) {
-            $model->staffId = $map['staffId'];
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

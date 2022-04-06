@@ -21,7 +21,7 @@ class data extends Model
      *
      * @var int
      */
-    public $pageNo;
+    public $pageNumber;
 
     /**
      * @description 每一页的个数。
@@ -38,7 +38,7 @@ class data extends Model
     public $totalCount;
     protected $_name = [
         'list'       => 'list',
-        'pageNo'     => 'pageNo',
+        'pageNumber' => 'pageNumber',
         'pageSize'   => 'pageSize',
         'totalCount' => 'totalCount',
     ];
@@ -59,8 +59,8 @@ class data extends Model
                 }
             }
         }
-        if (null !== $this->pageNo) {
-            $res['pageNo'] = $this->pageNo;
+        if (null !== $this->pageNumber) {
+            $res['pageNumber'] = $this->pageNumber;
         }
         if (null !== $this->pageSize) {
             $res['pageSize'] = $this->pageSize;
@@ -89,8 +89,8 @@ class data extends Model
                 }
             }
         }
-        if (isset($map['pageNo'])) {
-            $model->pageNo = $map['pageNo'];
+        if (isset($map['pageNumber'])) {
+            $model->pageNumber = $map['pageNumber'];
         }
         if (isset($map['pageSize'])) {
             $model->pageSize = $map['pageSize'];

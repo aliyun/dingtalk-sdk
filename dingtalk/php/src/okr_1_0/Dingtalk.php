@@ -14,6 +14,9 @@ use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\BatchAddPermissionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\BatchQueryObjectiveHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\BatchQueryObjectiveRequest;
 use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\BatchQueryObjectiveResponse;
+use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\BatchQueryUserHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\BatchQueryUserRequest;
+use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\BatchQueryUserResponse;
 use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\CreateKeyResultHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\CreateKeyResultRequest;
 use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\CreateKeyResultResponse;
@@ -234,6 +237,48 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return BatchQueryObjectiveResponse::fromMap($this->doROARequest('BatchQueryObjective', 'okr_1.0', 'HTTP', 'POST', 'AK', '/v1.0/okr/objectives/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param BatchQueryUserRequest $request
+     *
+     * @return BatchQueryUserResponse
+     */
+    public function batchQueryUser($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchQueryUserHeaders([]);
+
+        return $this->batchQueryUserWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param BatchQueryUserRequest $request
+     * @param BatchQueryUserHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return BatchQueryUserResponse
+     */
+    public function batchQueryUserWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->userIds)) {
+            @$body['userIds'] = $request->userIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return BatchQueryUserResponse::fromMap($this->doROARequest('BatchQueryUser', 'okr_1.0', 'HTTP', 'POST', 'AK', '/v1.0/okr/users/query', 'json', $req, $runtime));
     }
 
     /**

@@ -2,9 +2,9 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\BatchQueryObjectiveResponseBody\data\list_;
+namespace AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\BatchQueryObjectiveResponseBody\data;
 
-use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\BatchQueryObjectiveResponseBody\data\list_\krList\progress;
+use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\BatchQueryObjectiveResponseBody\data\krList\progress;
 use AlibabaCloud\Tea\Model;
 use GuzzleHttp\Psr7\Stream;
 
@@ -16,6 +16,20 @@ class krList extends Model
      * @var Stream
      */
     public $content;
+
+    /**
+     * @description 创建时间。时间戳
+     *
+     * @var float
+     */
+    public $gmtCreate;
+
+    /**
+     * @description 更新时间。时间戳
+     *
+     * @var float
+     */
+    public $gmtModified;
 
     /**
      * @description KR 的 ID。
@@ -67,6 +81,8 @@ class krList extends Model
     public $weight;
     protected $_name = [
         'content'     => 'content',
+        'gmtCreate'   => 'gmtCreate',
+        'gmtModified' => 'gmtModified',
         'id'          => 'id',
         'objectiveId' => 'objectiveId',
         'permission'  => 'permission',
@@ -85,6 +101,12 @@ class krList extends Model
         $res = [];
         if (null !== $this->content) {
             $res['content'] = $this->content;
+        }
+        if (null !== $this->gmtCreate) {
+            $res['gmtCreate'] = $this->gmtCreate;
+        }
+        if (null !== $this->gmtModified) {
+            $res['gmtModified'] = $this->gmtModified;
         }
         if (null !== $this->id) {
             $res['id'] = $this->id;
@@ -121,6 +143,12 @@ class krList extends Model
         $model = new self();
         if (isset($map['content'])) {
             $model->content = $map['content'];
+        }
+        if (isset($map['gmtCreate'])) {
+            $model->gmtCreate = $map['gmtCreate'];
+        }
+        if (isset($map['gmtModified'])) {
+            $model->gmtModified = $map['gmtModified'];
         }
         if (isset($map['id'])) {
             $model->id = $map['id'];

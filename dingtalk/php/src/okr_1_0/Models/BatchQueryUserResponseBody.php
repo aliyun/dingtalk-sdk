@@ -4,10 +4,10 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\BatchQueryObjectiveResponseBody\data;
+use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\BatchQueryUserResponseBody\data;
 use AlibabaCloud\Tea\Model;
 
-class BatchQueryObjectiveResponseBody extends Model
+class BatchQueryUserResponseBody extends Model
 {
     /**
      * @description data
@@ -53,7 +53,7 @@ class BatchQueryObjectiveResponseBody extends Model
     /**
      * @param array $map
      *
-     * @return BatchQueryObjectiveResponseBody
+     * @return BatchQueryUserResponseBody
      */
     public static function fromMap($map = [])
     {

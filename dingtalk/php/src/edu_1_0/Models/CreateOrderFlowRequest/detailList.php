@@ -23,6 +23,13 @@ class detailList extends Model
     public $itemAmount;
 
     /**
+     * @description 商品id
+     *
+     * @var int
+     */
+    public $itemId;
+
+    /**
      * @description 商品名
      *
      * @var string
@@ -38,6 +45,7 @@ class detailList extends Model
     protected $_name = [
         'actualAmount' => 'actualAmount',
         'itemAmount'   => 'itemAmount',
+        'itemId'       => 'itemId',
         'itemName'     => 'itemName',
         'scene'        => 'scene',
     ];
@@ -54,6 +62,9 @@ class detailList extends Model
         }
         if (null !== $this->itemAmount) {
             $res['itemAmount'] = $this->itemAmount;
+        }
+        if (null !== $this->itemId) {
+            $res['itemId'] = $this->itemId;
         }
         if (null !== $this->itemName) {
             $res['itemName'] = $this->itemName;
@@ -78,6 +89,9 @@ class detailList extends Model
         }
         if (isset($map['itemAmount'])) {
             $model->itemAmount = $map['itemAmount'];
+        }
+        if (isset($map['itemId'])) {
+            $model->itemId = $map['itemId'];
         }
         if (isset($map['itemName'])) {
             $model->itemName = $map['itemName'];

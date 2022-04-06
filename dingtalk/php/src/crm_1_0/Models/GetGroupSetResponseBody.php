@@ -13,11 +13,6 @@ class GetGroupSetResponseBody extends Model
     /**
      * @var string
      */
-    public $corpId;
-
-    /**
-     * @var string
-     */
     public $gmtCreate;
 
     /**
@@ -97,7 +92,6 @@ class GetGroupSetResponseBody extends Model
      */
     public $templateId;
     protected $_name = [
-        'corpId'                 => 'corpId',
         'gmtCreate'              => 'gmtCreate',
         'gmtModified'            => 'gmtModified',
         'groupChatCount'         => 'groupChatCount',
@@ -123,9 +117,6 @@ class GetGroupSetResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->corpId) {
-            $res['corpId'] = $this->corpId;
-        }
         if (null !== $this->gmtCreate) {
             $res['gmtCreate'] = $this->gmtCreate;
         }
@@ -192,9 +183,6 @@ class GetGroupSetResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['corpId'])) {
-            $model->corpId = $map['corpId'];
-        }
         if (isset($map['gmtCreate'])) {
             $model->gmtCreate = $map['gmtCreate'];
         }

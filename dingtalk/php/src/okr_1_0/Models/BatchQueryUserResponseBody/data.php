@@ -2,12 +2,12 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\GetUserOkrResponseBody\data\list_;
+namespace AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\BatchQueryUserResponseBody;
 
 use AlibabaCloud\Tea\Model;
 use GuzzleHttp\Psr7\Stream;
 
-class owner extends Model
+class data extends Model
 {
     /**
      * @description 所属者头像。 ID
@@ -17,6 +17,13 @@ class owner extends Model
     public $avatarMediaId;
 
     /**
+     * @description 所属者头像。 URL
+     *
+     * @var Stream
+     */
+    public $avatarUrl;
+
+    /**
      * @description 所属者组织 I。D
      *
      * @var Stream
@@ -24,7 +31,7 @@ class owner extends Model
     public $corpId;
 
     /**
-     * @description 所属者 OKR 系统中的 ID。
+     * @description 所属者在 OKR 系统中的 ID。
      *
      * @var Stream
      */
@@ -45,6 +52,7 @@ class owner extends Model
     public $userId;
     protected $_name = [
         'avatarMediaId' => 'avatarMediaId',
+        'avatarUrl'     => 'avatarUrl',
         'corpId'        => 'corpId',
         'id'            => 'id',
         'nickname'      => 'nickname',
@@ -60,6 +68,9 @@ class owner extends Model
         $res = [];
         if (null !== $this->avatarMediaId) {
             $res['avatarMediaId'] = $this->avatarMediaId;
+        }
+        if (null !== $this->avatarUrl) {
+            $res['avatarUrl'] = $this->avatarUrl;
         }
         if (null !== $this->corpId) {
             $res['corpId'] = $this->corpId;
@@ -80,13 +91,16 @@ class owner extends Model
     /**
      * @param array $map
      *
-     * @return owner
+     * @return data
      */
     public static function fromMap($map = [])
     {
         $model = new self();
         if (isset($map['avatarMediaId'])) {
             $model->avatarMediaId = $map['avatarMediaId'];
+        }
+        if (isset($map['avatarUrl'])) {
+            $model->avatarUrl = $map['avatarUrl'];
         }
         if (isset($map['corpId'])) {
             $model->corpId = $map['corpId'];

@@ -38,6 +38,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateFulfilRecordResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateInviteUrlHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateInviteUrlRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateInviteUrlResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateItemHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateItemRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateItemResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateOrderFlowHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateOrderFlowRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateOrderFlowResponse;
@@ -56,6 +59,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateRemoteClassCourseResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateSectionConfigHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateSectionConfigRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateSectionConfigResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateTokenHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateTokenRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateTokenResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateUniversityCourseGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateUniversityCourseGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateUniversityCourseGroupResponse;
@@ -886,6 +892,78 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param CreateItemRequest $request
+     *
+     * @return CreateItemResponse
+     */
+    public function createItem($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateItemHeaders([]);
+
+        return $this->createItemWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateItemRequest $request
+     * @param CreateItemHeaders $headers
+     * @param RuntimeOptions    $runtime
+     *
+     * @return CreateItemResponse
+     */
+    public function createItemWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->description)) {
+            @$body['description'] = $request->description;
+        }
+        if (!Utils::isUnset($request->effectType)) {
+            @$body['effectType'] = $request->effectType;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            @$body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->merchantId)) {
+            @$body['merchantId'] = $request->merchantId;
+        }
+        if (!Utils::isUnset($request->name)) {
+            @$body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->optUser)) {
+            @$body['optUser'] = $request->optUser;
+        }
+        if (!Utils::isUnset($request->periodType)) {
+            @$body['periodType'] = $request->periodType;
+        }
+        if (!Utils::isUnset($request->price)) {
+            @$body['price'] = $request->price;
+        }
+        if (!Utils::isUnset($request->scene)) {
+            @$body['scene'] = $request->scene;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            @$body['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->type)) {
+            @$body['type'] = $request->type;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateItemResponse::fromMap($this->doROARequest('CreateItem', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/items', 'json', $req, $runtime));
+    }
+
+    /**
      * @param CreateOrderRequest $request
      *
      * @return CreateOrderResponse
@@ -1268,6 +1346,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CreateSectionConfigResponse::fromMap($this->doROARequest('CreateSectionConfig', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/universities/sectionConfigs', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CreateTokenRequest $request
+     *
+     * @return CreateTokenResponse
+     */
+    public function createToken($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateTokenHeaders([]);
+
+        return $this->createTokenWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateTokenRequest $request
+     * @param CreateTokenHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return CreateTokenResponse
+     */
+    public function createTokenWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->sn)) {
+            @$body['sn'] = $request->sn;
+        }
+        if (!Utils::isUnset($request->type)) {
+            @$body['type'] = $request->type;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateTokenResponse::fromMap($this->doROARequest('CreateToken', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/tokens', 'json', $req, $runtime));
     }
 
     /**

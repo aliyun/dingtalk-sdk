@@ -34,6 +34,20 @@ class list_ extends Model
     public $content;
 
     /**
+     * @description 创建时间。时间戳
+     *
+     * @var float
+     */
+    public $gmtCreate;
+
+    /**
+     * @description 更新时间。时间戳
+     *
+     * @var float
+     */
+    public $gmtModified;
+
+    /**
      * @description objective。
      *
      * @var Stream
@@ -127,6 +141,8 @@ class list_ extends Model
         'alignFromIds'    => 'alignFromIds',
         'alignToIds'      => 'alignToIds',
         'content'         => 'content',
+        'gmtCreate'       => 'gmtCreate',
+        'gmtModified'     => 'gmtModified',
         'id'              => 'id',
         'krList'          => 'krList',
         'owner'           => 'owner',
@@ -157,6 +173,12 @@ class list_ extends Model
         }
         if (null !== $this->content) {
             $res['content'] = $this->content;
+        }
+        if (null !== $this->gmtCreate) {
+            $res['gmtCreate'] = $this->gmtCreate;
+        }
+        if (null !== $this->gmtModified) {
+            $res['gmtModified'] = $this->gmtModified;
         }
         if (null !== $this->id) {
             $res['id'] = $this->id;
@@ -227,6 +249,12 @@ class list_ extends Model
         }
         if (isset($map['content'])) {
             $model->content = $map['content'];
+        }
+        if (isset($map['gmtCreate'])) {
+            $model->gmtCreate = $map['gmtCreate'];
+        }
+        if (isset($map['gmtModified'])) {
+            $model->gmtModified = $map['gmtModified'];
         }
         if (isset($map['id'])) {
             $model->id = $map['id'];
