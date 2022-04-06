@@ -250,7 +250,7 @@ export class BatchQueryObjectiveRequest extends $tea.Model {
 }
 
 export class BatchQueryObjectiveResponseBody extends $tea.Model {
-  data?: BatchQueryObjectiveResponseBodyData;
+  data?: BatchQueryObjectiveResponseBodyData[];
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -261,7 +261,7 @@ export class BatchQueryObjectiveResponseBody extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      data: BatchQueryObjectiveResponseBodyData,
+      data: { 'type': 'array', 'itemType': BatchQueryObjectiveResponseBodyData },
       success: 'boolean',
     };
   }
@@ -285,6 +285,91 @@ export class BatchQueryObjectiveResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: BatchQueryObjectiveResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchQueryUserHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchQueryUserRequest extends $tea.Model {
+  userIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      userIds: 'userIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchQueryUserResponseBody extends $tea.Model {
+  data?: BatchQueryUserResponseBodyData[];
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: { 'type': 'array', 'itemType': BatchQueryUserResponseBodyData },
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchQueryUserResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: BatchQueryUserResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: BatchQueryUserResponseBody,
     };
   }
 
@@ -1732,7 +1817,7 @@ export class BatchAddPermissionResponseBodyData extends $tea.Model {
   }
 }
 
-export class BatchQueryObjectiveResponseBodyDataListKrListProgress extends $tea.Model {
+export class BatchQueryObjectiveResponseBodyDataKrListProgress extends $tea.Model {
   percent?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1751,18 +1836,22 @@ export class BatchQueryObjectiveResponseBodyDataListKrListProgress extends $tea.
   }
 }
 
-export class BatchQueryObjectiveResponseBodyDataListKrList extends $tea.Model {
+export class BatchQueryObjectiveResponseBodyDataKrList extends $tea.Model {
   content?: Readable;
+  gmtCreate?: number;
+  gmtModified?: number;
   id?: Readable;
   objectiveId?: Readable;
   permission?: number[];
   position?: number;
-  progress?: BatchQueryObjectiveResponseBodyDataListKrListProgress;
+  progress?: BatchQueryObjectiveResponseBodyDataKrListProgress;
   score?: number;
   weight?: number;
   static names(): { [key: string]: string } {
     return {
       content: 'content',
+      gmtCreate: 'gmtCreate',
+      gmtModified: 'gmtModified',
       id: 'id',
       objectiveId: 'objectiveId',
       permission: 'permission',
@@ -1776,11 +1865,13 @@ export class BatchQueryObjectiveResponseBodyDataListKrList extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       content: 'Readable',
+      gmtCreate: 'number',
+      gmtModified: 'number',
       id: 'Readable',
       objectiveId: 'Readable',
       permission: { 'type': 'array', 'itemType': 'number' },
       position: 'number',
-      progress: BatchQueryObjectiveResponseBodyDataListKrListProgress,
+      progress: BatchQueryObjectiveResponseBodyDataKrListProgress,
       score: 'number',
       weight: 'number',
     };
@@ -1791,19 +1882,19 @@ export class BatchQueryObjectiveResponseBodyDataListKrList extends $tea.Model {
   }
 }
 
-export class BatchQueryObjectiveResponseBodyDataListOwner extends $tea.Model {
+export class BatchQueryObjectiveResponseBodyDataOwner extends $tea.Model {
   avatarMediaId?: Readable;
   corpId?: Readable;
   id?: Readable;
   nickname?: Readable;
-  staffId?: Readable;
+  userId?: Readable;
   static names(): { [key: string]: string } {
     return {
       avatarMediaId: 'avatarMediaId',
       corpId: 'corpId',
       id: 'id',
       nickname: 'nickname',
-      staffId: 'staffId',
+      userId: 'userId',
     };
   }
 
@@ -1813,7 +1904,7 @@ export class BatchQueryObjectiveResponseBodyDataListOwner extends $tea.Model {
       corpId: 'Readable',
       id: 'Readable',
       nickname: 'Readable',
-      staffId: 'Readable',
+      userId: 'Readable',
     };
   }
 
@@ -1822,7 +1913,7 @@ export class BatchQueryObjectiveResponseBodyDataListOwner extends $tea.Model {
   }
 }
 
-export class BatchQueryObjectiveResponseBodyDataListProgress extends $tea.Model {
+export class BatchQueryObjectiveResponseBodyDataProgress extends $tea.Model {
   percent?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1841,17 +1932,19 @@ export class BatchQueryObjectiveResponseBodyDataListProgress extends $tea.Model 
   }
 }
 
-export class BatchQueryObjectiveResponseBodyDataList extends $tea.Model {
+export class BatchQueryObjectiveResponseBodyData extends $tea.Model {
   alignFromIds?: Readable[];
   alignToIds?: Readable[];
   content?: Readable;
+  gmtCreate?: number;
+  gmtModified?: number;
   id?: Readable;
-  krList?: BatchQueryObjectiveResponseBodyDataListKrList[];
-  owner?: BatchQueryObjectiveResponseBodyDataListOwner;
+  krList?: BatchQueryObjectiveResponseBodyDataKrList[];
+  owner?: BatchQueryObjectiveResponseBodyDataOwner;
   periodId?: Readable;
   permission?: number[];
   position?: number;
-  progress?: BatchQueryObjectiveResponseBodyDataListProgress;
+  progress?: BatchQueryObjectiveResponseBodyDataProgress;
   progressPercent?: number;
   published?: boolean;
   score?: number;
@@ -1863,6 +1956,8 @@ export class BatchQueryObjectiveResponseBodyDataList extends $tea.Model {
       alignFromIds: 'alignFromIds',
       alignToIds: 'alignToIds',
       content: 'content',
+      gmtCreate: 'gmtCreate',
+      gmtModified: 'gmtModified',
       id: 'id',
       krList: 'krList',
       owner: 'owner',
@@ -1884,13 +1979,15 @@ export class BatchQueryObjectiveResponseBodyDataList extends $tea.Model {
       alignFromIds: { 'type': 'array', 'itemType': 'Readable' },
       alignToIds: { 'type': 'array', 'itemType': 'Readable' },
       content: 'Readable',
+      gmtCreate: 'number',
+      gmtModified: 'number',
       id: 'Readable',
-      krList: { 'type': 'array', 'itemType': BatchQueryObjectiveResponseBodyDataListKrList },
-      owner: BatchQueryObjectiveResponseBodyDataListOwner,
+      krList: { 'type': 'array', 'itemType': BatchQueryObjectiveResponseBodyDataKrList },
+      owner: BatchQueryObjectiveResponseBodyDataOwner,
       periodId: 'Readable',
       permission: { 'type': 'array', 'itemType': 'number' },
       position: 'number',
-      progress: BatchQueryObjectiveResponseBodyDataListProgress,
+      progress: BatchQueryObjectiveResponseBodyDataProgress,
       progressPercent: 'number',
       published: 'boolean',
       score: 'number',
@@ -1905,26 +2002,32 @@ export class BatchQueryObjectiveResponseBodyDataList extends $tea.Model {
   }
 }
 
-export class BatchQueryObjectiveResponseBodyData extends $tea.Model {
-  list?: BatchQueryObjectiveResponseBodyDataList[];
-  pageNo?: number;
-  pageSize?: number;
-  totalCount?: number;
+export class BatchQueryUserResponseBodyData extends $tea.Model {
+  avatarMediaId?: Readable;
+  avatarUrl?: Readable;
+  corpId?: Readable;
+  id?: Readable;
+  nickname?: Readable;
+  userId?: Readable;
   static names(): { [key: string]: string } {
     return {
-      list: 'list',
-      pageNo: 'pageNo',
-      pageSize: 'pageSize',
-      totalCount: 'totalCount',
+      avatarMediaId: 'avatarMediaId',
+      avatarUrl: 'avatarUrl',
+      corpId: 'corpId',
+      id: 'id',
+      nickname: 'nickname',
+      userId: 'userId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      list: { 'type': 'array', 'itemType': BatchQueryObjectiveResponseBodyDataList },
-      pageNo: 'number',
-      pageSize: 'number',
-      totalCount: 'number',
+      avatarMediaId: 'Readable',
+      avatarUrl: 'Readable',
+      corpId: 'Readable',
+      id: 'Readable',
+      nickname: 'Readable',
+      userId: 'Readable',
     };
   }
 
@@ -2229,6 +2332,8 @@ export class GetUserOkrResponseBodyDataListKrListProgress extends $tea.Model {
 
 export class GetUserOkrResponseBodyDataListKrList extends $tea.Model {
   content?: Readable;
+  gmtCreate?: number;
+  gmtModified?: number;
   id?: Readable;
   objectiveId?: Readable;
   permission?: number[];
@@ -2239,6 +2344,8 @@ export class GetUserOkrResponseBodyDataListKrList extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       content: 'content',
+      gmtCreate: 'gmtCreate',
+      gmtModified: 'gmtModified',
       id: 'id',
       objectiveId: 'objectiveId',
       permission: 'permission',
@@ -2252,6 +2359,8 @@ export class GetUserOkrResponseBodyDataListKrList extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       content: 'Readable',
+      gmtCreate: 'number',
+      gmtModified: 'number',
       id: 'Readable',
       objectiveId: 'Readable',
       permission: { 'type': 'array', 'itemType': 'number' },
@@ -2272,14 +2381,14 @@ export class GetUserOkrResponseBodyDataListOwner extends $tea.Model {
   corpId?: Readable;
   id?: Readable;
   nickname?: Readable;
-  staffId?: Readable;
+  userId?: Readable;
   static names(): { [key: string]: string } {
     return {
       avatarMediaId: 'avatarMediaId',
       corpId: 'corpId',
       id: 'id',
       nickname: 'nickname',
-      staffId: 'staffId',
+      userId: 'userId',
     };
   }
 
@@ -2289,7 +2398,7 @@ export class GetUserOkrResponseBodyDataListOwner extends $tea.Model {
       corpId: 'Readable',
       id: 'Readable',
       nickname: 'Readable',
-      staffId: 'Readable',
+      userId: 'Readable',
     };
   }
 
@@ -2321,6 +2430,8 @@ export class GetUserOkrResponseBodyDataList extends $tea.Model {
   alignFromIds?: Readable[];
   alignToIds?: Readable[];
   content?: Readable;
+  gmtCreate?: number;
+  gmtModified?: number;
   id?: Readable;
   krList?: GetUserOkrResponseBodyDataListKrList[];
   owner?: GetUserOkrResponseBodyDataListOwner;
@@ -2339,6 +2450,8 @@ export class GetUserOkrResponseBodyDataList extends $tea.Model {
       alignFromIds: 'alignFromIds',
       alignToIds: 'alignToIds',
       content: 'content',
+      gmtCreate: 'gmtCreate',
+      gmtModified: 'gmtModified',
       id: 'id',
       krList: 'krList',
       owner: 'owner',
@@ -2360,6 +2473,8 @@ export class GetUserOkrResponseBodyDataList extends $tea.Model {
       alignFromIds: { 'type': 'array', 'itemType': 'Readable' },
       alignToIds: { 'type': 'array', 'itemType': 'Readable' },
       content: 'Readable',
+      gmtCreate: 'number',
+      gmtModified: 'number',
       id: 'Readable',
       krList: { 'type': 'array', 'itemType': GetUserOkrResponseBodyDataListKrList },
       owner: GetUserOkrResponseBodyDataListOwner,
@@ -2383,13 +2498,13 @@ export class GetUserOkrResponseBodyDataList extends $tea.Model {
 
 export class GetUserOkrResponseBodyData extends $tea.Model {
   list?: GetUserOkrResponseBodyDataList[];
-  pageNo?: number;
+  pageNumber?: number;
   pageSize?: number;
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
       list: 'list',
-      pageNo: 'pageNo',
+      pageNumber: 'pageNumber',
       pageSize: 'pageSize',
       totalCount: 'totalCount',
     };
@@ -2398,7 +2513,7 @@ export class GetUserOkrResponseBodyData extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       list: { 'type': 'array', 'itemType': GetUserOkrResponseBodyDataList },
-      pageNo: 'number',
+      pageNumber: 'number',
       pageSize: 'number',
       totalCount: 'number',
     };
@@ -2736,6 +2851,35 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<BatchQueryObjectiveResponse>(await this.doROARequest("BatchQueryObjective", "okr_1.0", "HTTP", "POST", "AK", `/v1.0/okr/objectives/query`, "json", req, runtime), new BatchQueryObjectiveResponse({}));
+  }
+
+  async batchQueryUser(request: BatchQueryUserRequest): Promise<BatchQueryUserResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BatchQueryUserHeaders({ });
+    return await this.batchQueryUserWithOptions(request, headers, runtime);
+  }
+
+  async batchQueryUserWithOptions(request: BatchQueryUserRequest, headers: BatchQueryUserHeaders, runtime: $Util.RuntimeOptions): Promise<BatchQueryUserResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.userIds)) {
+      body["userIds"] = request.userIds;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<BatchQueryUserResponse>(await this.doROARequest("BatchQueryUser", "okr_1.0", "HTTP", "POST", "AK", `/v1.0/okr/users/query`, "json", req, runtime), new BatchQueryUserResponse({}));
   }
 
   async createKeyResult(request: CreateKeyResultRequest): Promise<CreateKeyResultResponse> {

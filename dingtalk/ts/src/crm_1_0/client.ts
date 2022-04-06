@@ -937,7 +937,6 @@ export class CreateGroupSetRequest extends $tea.Model {
 }
 
 export class CreateGroupSetResponseBody extends $tea.Model {
-  corpId?: string;
   gmtCreate?: string;
   gmtModified?: string;
   lastOpenConversationId?: string;
@@ -955,7 +954,6 @@ export class CreateGroupSetResponseBody extends $tea.Model {
   templateId?: string;
   static names(): { [key: string]: string } {
     return {
-      corpId: 'corpId',
       gmtCreate: 'gmtCreate',
       gmtModified: 'gmtModified',
       lastOpenConversationId: 'lastOpenConversationId',
@@ -976,7 +974,6 @@ export class CreateGroupSetResponseBody extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      corpId: 'string',
       gmtCreate: 'string',
       gmtModified: 'string',
       lastOpenConversationId: 'string',
@@ -2030,7 +2027,6 @@ export class GetGroupSetRequest extends $tea.Model {
 }
 
 export class GetGroupSetResponseBody extends $tea.Model {
-  corpId?: string;
   gmtCreate?: string;
   gmtModified?: string;
   groupChatCount?: number;
@@ -2049,7 +2045,6 @@ export class GetGroupSetResponseBody extends $tea.Model {
   templateId?: string;
   static names(): { [key: string]: string } {
     return {
-      corpId: 'corpId',
       gmtCreate: 'gmtCreate',
       gmtModified: 'gmtModified',
       groupChatCount: 'groupChatCount',
@@ -2071,7 +2066,6 @@ export class GetGroupSetResponseBody extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      corpId: 'string',
       gmtCreate: 'string',
       gmtModified: 'string',
       groupChatCount: 'number',
@@ -7225,7 +7219,6 @@ export class ListGroupSetResponseBodyResultListOwner extends $tea.Model {
 }
 
 export class ListGroupSetResponseBodyResultList extends $tea.Model {
-  corpId?: string;
   gmtCreate?: string;
   gmtModified?: string;
   groupChatCount?: number;
@@ -7244,7 +7237,6 @@ export class ListGroupSetResponseBodyResultList extends $tea.Model {
   templateId?: string;
   static names(): { [key: string]: string } {
     return {
-      corpId: 'corpId',
       gmtCreate: 'gmtCreate',
       gmtModified: 'gmtModified',
       groupChatCount: 'groupChatCount',
@@ -7266,7 +7258,6 @@ export class ListGroupSetResponseBodyResultList extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      corpId: 'string',
       gmtCreate: 'string',
       gmtModified: 'string',
       groupChatCount: 'number',
