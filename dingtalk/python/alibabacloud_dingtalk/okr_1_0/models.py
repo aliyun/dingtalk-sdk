@@ -693,7 +693,7 @@ class BatchQueryObjectiveRequest(TeaModel):
         return self
 
 
-class BatchQueryObjectiveResponseBodyDataListKrListProgress(TeaModel):
+class BatchQueryObjectiveResponseBodyDataKrListProgress(TeaModel):
     def __init__(
         self,
         percent: int = None,
@@ -721,20 +721,26 @@ class BatchQueryObjectiveResponseBodyDataListKrListProgress(TeaModel):
         return self
 
 
-class BatchQueryObjectiveResponseBodyDataListKrList(TeaModel):
+class BatchQueryObjectiveResponseBodyDataKrList(TeaModel):
     def __init__(
         self,
         content: BinaryIO = None,
+        gmt_create: float = None,
+        gmt_modified: float = None,
         id: BinaryIO = None,
         objective_id: BinaryIO = None,
         permission: List[float] = None,
         position: int = None,
-        progress: BatchQueryObjectiveResponseBodyDataListKrListProgress = None,
+        progress: BatchQueryObjectiveResponseBodyDataKrListProgress = None,
         score: float = None,
         weight: float = None,
     ):
         # KR 内容。
         self.content = content
+        # 创建时间。时间戳
+        self.gmt_create = gmt_create
+        # 更新时间。时间戳
+        self.gmt_modified = gmt_modified
         # KR 的 ID。
         self.id = id
         # 所属 Objective ID。
@@ -762,6 +768,10 @@ class BatchQueryObjectiveResponseBodyDataListKrList(TeaModel):
         result = dict()
         if self.content is not None:
             result['content'] = self.content
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.gmt_modified is not None:
+            result['gmtModified'] = self.gmt_modified
         if self.id is not None:
             result['id'] = self.id
         if self.objective_id is not None:
@@ -782,6 +792,10 @@ class BatchQueryObjectiveResponseBodyDataListKrList(TeaModel):
         m = m or dict()
         if m.get('content') is not None:
             self.content = m.get('content')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('gmtModified') is not None:
+            self.gmt_modified = m.get('gmtModified')
         if m.get('id') is not None:
             self.id = m.get('id')
         if m.get('objectiveId') is not None:
@@ -791,7 +805,7 @@ class BatchQueryObjectiveResponseBodyDataListKrList(TeaModel):
         if m.get('position') is not None:
             self.position = m.get('position')
         if m.get('progress') is not None:
-            temp_model = BatchQueryObjectiveResponseBodyDataListKrListProgress()
+            temp_model = BatchQueryObjectiveResponseBodyDataKrListProgress()
             self.progress = temp_model.from_map(m['progress'])
         if m.get('score') is not None:
             self.score = m.get('score')
@@ -800,25 +814,25 @@ class BatchQueryObjectiveResponseBodyDataListKrList(TeaModel):
         return self
 
 
-class BatchQueryObjectiveResponseBodyDataListOwner(TeaModel):
+class BatchQueryObjectiveResponseBodyDataOwner(TeaModel):
     def __init__(
         self,
         avatar_media_id: BinaryIO = None,
         corp_id: BinaryIO = None,
         id: BinaryIO = None,
         nickname: BinaryIO = None,
-        staff_id: BinaryIO = None,
+        user_id: BinaryIO = None,
     ):
         # 所属者头像。 ID
         self.avatar_media_id = avatar_media_id
         # 所属者组织 I。D
         self.corp_id = corp_id
-        # 所属者 ID。
+        # 所属者在 OKR 系统中的 ID。
         self.id = id
         # 所属者昵称。
         self.nickname = nickname
         # 所属者 userId。
-        self.staff_id = staff_id
+        self.user_id = user_id
 
     def validate(self):
         pass
@@ -837,8 +851,8 @@ class BatchQueryObjectiveResponseBodyDataListOwner(TeaModel):
             result['id'] = self.id
         if self.nickname is not None:
             result['nickname'] = self.nickname
-        if self.staff_id is not None:
-            result['staffId'] = self.staff_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
         return result
 
     def from_map(self, m: dict = None):
@@ -851,12 +865,12 @@ class BatchQueryObjectiveResponseBodyDataListOwner(TeaModel):
             self.id = m.get('id')
         if m.get('nickname') is not None:
             self.nickname = m.get('nickname')
-        if m.get('staffId') is not None:
-            self.staff_id = m.get('staffId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
         return self
 
 
-class BatchQueryObjectiveResponseBodyDataListProgress(TeaModel):
+class BatchQueryObjectiveResponseBodyDataProgress(TeaModel):
     def __init__(
         self,
         percent: int = None,
@@ -884,19 +898,21 @@ class BatchQueryObjectiveResponseBodyDataListProgress(TeaModel):
         return self
 
 
-class BatchQueryObjectiveResponseBodyDataList(TeaModel):
+class BatchQueryObjectiveResponseBodyData(TeaModel):
     def __init__(
         self,
         align_from_ids: List[BinaryIO] = None,
         align_to_ids: List[BinaryIO] = None,
         content: BinaryIO = None,
+        gmt_create: float = None,
+        gmt_modified: float = None,
         id: BinaryIO = None,
-        kr_list: List[BatchQueryObjectiveResponseBodyDataListKrList] = None,
-        owner: BatchQueryObjectiveResponseBodyDataListOwner = None,
+        kr_list: List[BatchQueryObjectiveResponseBodyDataKrList] = None,
+        owner: BatchQueryObjectiveResponseBodyDataOwner = None,
         period_id: BinaryIO = None,
         permission: List[float] = None,
         position: int = None,
-        progress: BatchQueryObjectiveResponseBodyDataListProgress = None,
+        progress: BatchQueryObjectiveResponseBodyDataProgress = None,
         progress_percent: float = None,
         published: bool = None,
         score: float = None,
@@ -910,6 +926,10 @@ class BatchQueryObjectiveResponseBodyDataList(TeaModel):
         self.align_to_ids = align_to_ids
         # Objective 内容。
         self.content = content
+        # 创建时间。时间戳
+        self.gmt_create = gmt_create
+        # 更新时间。时间戳
+        self.gmt_modified = gmt_modified
         # objective。
         self.id = id
         # KR 详情列表。
@@ -959,6 +979,10 @@ class BatchQueryObjectiveResponseBodyDataList(TeaModel):
             result['alignToIds'] = self.align_to_ids
         if self.content is not None:
             result['content'] = self.content
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.gmt_modified is not None:
+            result['gmtModified'] = self.gmt_modified
         if self.id is not None:
             result['id'] = self.id
         result['krList'] = []
@@ -997,15 +1021,19 @@ class BatchQueryObjectiveResponseBodyDataList(TeaModel):
             self.align_to_ids = m.get('alignToIds')
         if m.get('content') is not None:
             self.content = m.get('content')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('gmtModified') is not None:
+            self.gmt_modified = m.get('gmtModified')
         if m.get('id') is not None:
             self.id = m.get('id')
         self.kr_list = []
         if m.get('krList') is not None:
             for k in m.get('krList'):
-                temp_model = BatchQueryObjectiveResponseBodyDataListKrList()
+                temp_model = BatchQueryObjectiveResponseBodyDataKrList()
                 self.kr_list.append(temp_model.from_map(k))
         if m.get('owner') is not None:
-            temp_model = BatchQueryObjectiveResponseBodyDataListOwner()
+            temp_model = BatchQueryObjectiveResponseBodyDataOwner()
             self.owner = temp_model.from_map(m['owner'])
         if m.get('periodId') is not None:
             self.period_id = m.get('periodId')
@@ -1014,7 +1042,7 @@ class BatchQueryObjectiveResponseBodyDataList(TeaModel):
         if m.get('position') is not None:
             self.position = m.get('position')
         if m.get('progress') is not None:
-            temp_model = BatchQueryObjectiveResponseBodyDataListProgress()
+            temp_model = BatchQueryObjectiveResponseBodyDataProgress()
             self.progress = temp_model.from_map(m['progress'])
         if m.get('progressPercent') is not None:
             self.progress_percent = m.get('progressPercent')
@@ -1031,67 +1059,10 @@ class BatchQueryObjectiveResponseBodyDataList(TeaModel):
         return self
 
 
-class BatchQueryObjectiveResponseBodyData(TeaModel):
-    def __init__(
-        self,
-        list: List[BatchQueryObjectiveResponseBodyDataList] = None,
-        page_no: int = None,
-        page_size: int = None,
-        total_count: int = None,
-    ):
-        # OKR 列表详情。
-        self.list = list
-        # 当前页码。
-        self.page_no = page_no
-        # 每一页的个数。
-        self.page_size = page_size
-        # 总数。
-        self.total_count = total_count
-
-    def validate(self):
-        if self.list:
-            for k in self.list:
-                if k:
-                    k.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        result['list'] = []
-        if self.list is not None:
-            for k in self.list:
-                result['list'].append(k.to_map() if k else None)
-        if self.page_no is not None:
-            result['pageNo'] = self.page_no
-        if self.page_size is not None:
-            result['pageSize'] = self.page_size
-        if self.total_count is not None:
-            result['totalCount'] = self.total_count
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        self.list = []
-        if m.get('list') is not None:
-            for k in m.get('list'):
-                temp_model = BatchQueryObjectiveResponseBodyDataList()
-                self.list.append(temp_model.from_map(k))
-        if m.get('pageNo') is not None:
-            self.page_no = m.get('pageNo')
-        if m.get('pageSize') is not None:
-            self.page_size = m.get('pageSize')
-        if m.get('totalCount') is not None:
-            self.total_count = m.get('totalCount')
-        return self
-
-
 class BatchQueryObjectiveResponseBody(TeaModel):
     def __init__(
         self,
-        data: BatchQueryObjectiveResponseBodyData = None,
+        data: List[BatchQueryObjectiveResponseBodyData] = None,
         success: bool = None,
     ):
         # data
@@ -1101,7 +1072,9 @@ class BatchQueryObjectiveResponseBody(TeaModel):
 
     def validate(self):
         if self.data:
-            self.data.validate()
+            for k in self.data:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -1109,17 +1082,21 @@ class BatchQueryObjectiveResponseBody(TeaModel):
             return _map
 
         result = dict()
+        result['data'] = []
         if self.data is not None:
-            result['data'] = self.data.to_map()
+            for k in self.data:
+                result['data'].append(k.to_map() if k else None)
         if self.success is not None:
             result['success'] = self.success
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        self.data = []
         if m.get('data') is not None:
-            temp_model = BatchQueryObjectiveResponseBodyData()
-            self.data = temp_model.from_map(m['data'])
+            for k in m.get('data'):
+                temp_model = BatchQueryObjectiveResponseBodyData()
+                self.data.append(temp_model.from_map(k))
         if m.get('success') is not None:
             self.success = m.get('success')
         return self
@@ -1158,6 +1135,210 @@ class BatchQueryObjectiveResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = BatchQueryObjectiveResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class BatchQueryUserHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class BatchQueryUserRequest(TeaModel):
+    def __init__(
+        self,
+        user_ids: List[str] = None,
+    ):
+        # 需要查询的用户ID
+        self.user_ids = user_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_ids is not None:
+            result['userIds'] = self.user_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userIds') is not None:
+            self.user_ids = m.get('userIds')
+        return self
+
+
+class BatchQueryUserResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        avatar_media_id: BinaryIO = None,
+        avatar_url: BinaryIO = None,
+        corp_id: BinaryIO = None,
+        id: BinaryIO = None,
+        nickname: BinaryIO = None,
+        user_id: BinaryIO = None,
+    ):
+        # 所属者头像。 ID
+        self.avatar_media_id = avatar_media_id
+        # 所属者头像。 URL
+        self.avatar_url = avatar_url
+        # 所属者组织 I。D
+        self.corp_id = corp_id
+        # 所属者在 OKR 系统中的 ID。
+        self.id = id
+        # 所属者昵称。
+        self.nickname = nickname
+        # 所属者 userId。
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.avatar_media_id is not None:
+            result['avatarMediaId'] = self.avatar_media_id
+        if self.avatar_url is not None:
+            result['avatarUrl'] = self.avatar_url
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.id is not None:
+            result['id'] = self.id
+        if self.nickname is not None:
+            result['nickname'] = self.nickname
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('avatarMediaId') is not None:
+            self.avatar_media_id = m.get('avatarMediaId')
+        if m.get('avatarUrl') is not None:
+            self.avatar_url = m.get('avatarUrl')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('nickname') is not None:
+            self.nickname = m.get('nickname')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class BatchQueryUserResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: List[BatchQueryUserResponseBodyData] = None,
+        success: bool = None,
+    ):
+        # data
+        self.data = data
+        # 请求成功的标识。
+        self.success = success
+
+    def validate(self):
+        if self.data:
+            for k in self.data:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['data'] = []
+        if self.data is not None:
+            for k in self.data:
+                result['data'].append(k.to_map() if k else None)
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.data = []
+        if m.get('data') is not None:
+            for k in m.get('data'):
+                temp_model = BatchQueryUserResponseBodyData()
+                self.data.append(temp_model.from_map(k))
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class BatchQueryUserResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: BatchQueryUserResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = BatchQueryUserResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -2787,6 +2968,8 @@ class GetUserOkrResponseBodyDataListKrList(TeaModel):
     def __init__(
         self,
         content: BinaryIO = None,
+        gmt_create: float = None,
+        gmt_modified: float = None,
         id: BinaryIO = None,
         objective_id: BinaryIO = None,
         permission: List[float] = None,
@@ -2797,6 +2980,10 @@ class GetUserOkrResponseBodyDataListKrList(TeaModel):
     ):
         # KR 内容。
         self.content = content
+        # 创建时间。时间戳
+        self.gmt_create = gmt_create
+        # 更新时间。时间戳
+        self.gmt_modified = gmt_modified
         # KR 的 ID。
         self.id = id
         # 所属 Objective ID。
@@ -2824,6 +3011,10 @@ class GetUserOkrResponseBodyDataListKrList(TeaModel):
         result = dict()
         if self.content is not None:
             result['content'] = self.content
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.gmt_modified is not None:
+            result['gmtModified'] = self.gmt_modified
         if self.id is not None:
             result['id'] = self.id
         if self.objective_id is not None:
@@ -2844,6 +3035,10 @@ class GetUserOkrResponseBodyDataListKrList(TeaModel):
         m = m or dict()
         if m.get('content') is not None:
             self.content = m.get('content')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('gmtModified') is not None:
+            self.gmt_modified = m.get('gmtModified')
         if m.get('id') is not None:
             self.id = m.get('id')
         if m.get('objectiveId') is not None:
@@ -2869,18 +3064,18 @@ class GetUserOkrResponseBodyDataListOwner(TeaModel):
         corp_id: BinaryIO = None,
         id: BinaryIO = None,
         nickname: BinaryIO = None,
-        staff_id: BinaryIO = None,
+        user_id: BinaryIO = None,
     ):
         # 所属者头像。 ID
         self.avatar_media_id = avatar_media_id
         # 所属者组织 I。D
         self.corp_id = corp_id
-        # 所属者 ID。
+        # 所属者 OKR 系统中的 ID。
         self.id = id
         # 所属者昵称。
         self.nickname = nickname
         # 所属者 userId。
-        self.staff_id = staff_id
+        self.user_id = user_id
 
     def validate(self):
         pass
@@ -2899,8 +3094,8 @@ class GetUserOkrResponseBodyDataListOwner(TeaModel):
             result['id'] = self.id
         if self.nickname is not None:
             result['nickname'] = self.nickname
-        if self.staff_id is not None:
-            result['staffId'] = self.staff_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
         return result
 
     def from_map(self, m: dict = None):
@@ -2913,8 +3108,8 @@ class GetUserOkrResponseBodyDataListOwner(TeaModel):
             self.id = m.get('id')
         if m.get('nickname') is not None:
             self.nickname = m.get('nickname')
-        if m.get('staffId') is not None:
-            self.staff_id = m.get('staffId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
         return self
 
 
@@ -2952,6 +3147,8 @@ class GetUserOkrResponseBodyDataList(TeaModel):
         align_from_ids: List[BinaryIO] = None,
         align_to_ids: List[BinaryIO] = None,
         content: BinaryIO = None,
+        gmt_create: float = None,
+        gmt_modified: float = None,
         id: BinaryIO = None,
         kr_list: List[GetUserOkrResponseBodyDataListKrList] = None,
         owner: GetUserOkrResponseBodyDataListOwner = None,
@@ -2972,6 +3169,10 @@ class GetUserOkrResponseBodyDataList(TeaModel):
         self.align_to_ids = align_to_ids
         # Objective 内容。
         self.content = content
+        # 创建时间。时间戳
+        self.gmt_create = gmt_create
+        # 更新时间。时间戳
+        self.gmt_modified = gmt_modified
         # objective。
         self.id = id
         # KR 详情列表。
@@ -3021,6 +3222,10 @@ class GetUserOkrResponseBodyDataList(TeaModel):
             result['alignToIds'] = self.align_to_ids
         if self.content is not None:
             result['content'] = self.content
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.gmt_modified is not None:
+            result['gmtModified'] = self.gmt_modified
         if self.id is not None:
             result['id'] = self.id
         result['krList'] = []
@@ -3059,6 +3264,10 @@ class GetUserOkrResponseBodyDataList(TeaModel):
             self.align_to_ids = m.get('alignToIds')
         if m.get('content') is not None:
             self.content = m.get('content')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('gmtModified') is not None:
+            self.gmt_modified = m.get('gmtModified')
         if m.get('id') is not None:
             self.id = m.get('id')
         self.kr_list = []
@@ -3097,14 +3306,14 @@ class GetUserOkrResponseBodyData(TeaModel):
     def __init__(
         self,
         list: List[GetUserOkrResponseBodyDataList] = None,
-        page_no: int = None,
+        page_number: int = None,
         page_size: int = None,
         total_count: int = None,
     ):
         # OKR 列表详情。
         self.list = list
         # 当前页码。
-        self.page_no = page_no
+        self.page_number = page_number
         # 每一页的个数。
         self.page_size = page_size
         # 总数。
@@ -3126,8 +3335,8 @@ class GetUserOkrResponseBodyData(TeaModel):
         if self.list is not None:
             for k in self.list:
                 result['list'].append(k.to_map() if k else None)
-        if self.page_no is not None:
-            result['pageNo'] = self.page_no
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
         if self.page_size is not None:
             result['pageSize'] = self.page_size
         if self.total_count is not None:
@@ -3141,8 +3350,8 @@ class GetUserOkrResponseBodyData(TeaModel):
             for k in m.get('list'):
                 temp_model = GetUserOkrResponseBodyDataList()
                 self.list.append(temp_model.from_map(k))
-        if m.get('pageNo') is not None:
-            self.page_no = m.get('pageNo')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
         if m.get('pageSize') is not None:
             self.page_size = m.get('pageSize')
         if m.get('totalCount') is not None:

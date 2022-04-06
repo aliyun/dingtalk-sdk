@@ -2619,6 +2619,208 @@ class CreateInviteUrlResponse(TeaModel):
         return self
 
 
+class CreateItemHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateItemRequest(TeaModel):
+    def __init__(
+        self,
+        description: str = None,
+        effect_type: int = None,
+        end_time: int = None,
+        merchant_id: str = None,
+        name: str = None,
+        opt_user: str = None,
+        period_type: int = None,
+        price: int = None,
+        scene: int = None,
+        start_time: int = None,
+        type: int = None,
+    ):
+        self.description = description
+        self.effect_type = effect_type
+        self.end_time = end_time
+        self.merchant_id = merchant_id
+        self.name = name
+        self.opt_user = opt_user
+        self.period_type = period_type
+        self.price = price
+        self.scene = scene
+        self.start_time = start_time
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.description is not None:
+            result['description'] = self.description
+        if self.effect_type is not None:
+            result['effectType'] = self.effect_type
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.merchant_id is not None:
+            result['merchantId'] = self.merchant_id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.opt_user is not None:
+            result['optUser'] = self.opt_user
+        if self.period_type is not None:
+            result['periodType'] = self.period_type
+        if self.price is not None:
+            result['price'] = self.price
+        if self.scene is not None:
+            result['scene'] = self.scene
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('effectType') is not None:
+            self.effect_type = m.get('effectType')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('merchantId') is not None:
+            self.merchant_id = m.get('merchantId')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('optUser') is not None:
+            self.opt_user = m.get('optUser')
+        if m.get('periodType') is not None:
+            self.period_type = m.get('periodType')
+        if m.get('price') is not None:
+            self.price = m.get('price')
+        if m.get('scene') is not None:
+            self.scene = m.get('scene')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class CreateItemResponseBody(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        id: int = None,
+        merchant_id: str = None,
+        status: int = None,
+    ):
+        self.corp_id = corp_id
+        self.id = id
+        self.merchant_id = merchant_id
+        self.status = status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.id is not None:
+            result['id'] = self.id
+        if self.merchant_id is not None:
+            result['merchantId'] = self.merchant_id
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('merchantId') is not None:
+            self.merchant_id = m.get('merchantId')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class CreateItemResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CreateItemResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CreateItemResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateOrderHeaders(TeaModel):
     def __init__(
         self,
@@ -2917,6 +3119,7 @@ class CreateOrderFlowRequestDetailList(TeaModel):
         self,
         actual_amount: int = None,
         item_amount: int = None,
+        item_id: int = None,
         item_name: str = None,
         scene: int = None,
     ):
@@ -2924,6 +3127,8 @@ class CreateOrderFlowRequestDetailList(TeaModel):
         self.actual_amount = actual_amount
         # 应付金额，单位为分
         self.item_amount = item_amount
+        # 商品id
+        self.item_id = item_id
         # 商品名
         self.item_name = item_name
         # 场景
@@ -2942,6 +3147,8 @@ class CreateOrderFlowRequestDetailList(TeaModel):
             result['actualAmount'] = self.actual_amount
         if self.item_amount is not None:
             result['itemAmount'] = self.item_amount
+        if self.item_id is not None:
+            result['itemId'] = self.item_id
         if self.item_name is not None:
             result['itemName'] = self.item_name
         if self.scene is not None:
@@ -2954,6 +3161,8 @@ class CreateOrderFlowRequestDetailList(TeaModel):
             self.actual_amount = m.get('actualAmount')
         if m.get('itemAmount') is not None:
             self.item_amount = m.get('itemAmount')
+        if m.get('itemId') is not None:
+            self.item_id = m.get('itemId')
         if m.get('itemName') is not None:
             self.item_name = m.get('itemName')
         if m.get('scene') is not None:
@@ -4306,6 +4515,167 @@ class CreateSectionConfigResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = CreateSectionConfigResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CreateTokenHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateTokenRequest(TeaModel):
+    def __init__(
+        self,
+        sn: str = None,
+        type: str = None,
+    ):
+        self.sn = sn
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.sn is not None:
+            result['sn'] = self.sn
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('sn') is not None:
+            self.sn = m.get('sn')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class CreateTokenResponseBody(TeaModel):
+    def __init__(
+        self,
+        access_key_id: str = None,
+        access_key_secret: str = None,
+        expiration: str = None,
+        ext_info: str = None,
+        security_token: str = None,
+        status: str = None,
+    ):
+        self.access_key_id = access_key_id
+        self.access_key_secret = access_key_secret
+        self.expiration = expiration
+        self.ext_info = ext_info
+        self.security_token = security_token
+        # Id of the request
+        self.status = status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.access_key_id is not None:
+            result['accessKeyId'] = self.access_key_id
+        if self.access_key_secret is not None:
+            result['accessKeySecret'] = self.access_key_secret
+        if self.expiration is not None:
+            result['expiration'] = self.expiration
+        if self.ext_info is not None:
+            result['extInfo'] = self.ext_info
+        if self.security_token is not None:
+            result['securityToken'] = self.security_token
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('accessKeyId') is not None:
+            self.access_key_id = m.get('accessKeyId')
+        if m.get('accessKeySecret') is not None:
+            self.access_key_secret = m.get('accessKeySecret')
+        if m.get('expiration') is not None:
+            self.expiration = m.get('expiration')
+        if m.get('extInfo') is not None:
+            self.ext_info = m.get('extInfo')
+        if m.get('securityToken') is not None:
+            self.security_token = m.get('securityToken')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class CreateTokenResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CreateTokenResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CreateTokenResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

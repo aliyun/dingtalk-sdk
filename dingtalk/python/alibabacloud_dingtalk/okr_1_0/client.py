@@ -273,6 +273,70 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('BatchQueryObjective', 'okr_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/okr/objectives/query', 'json', req, runtime)
         )
 
+    def batch_query_user(
+        self,
+        request: dingtalkokr__1__0_models.BatchQueryUserRequest,
+    ) -> dingtalkokr__1__0_models.BatchQueryUserResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkokr__1__0_models.BatchQueryUserHeaders()
+        return self.batch_query_user_with_options(request, headers, runtime)
+
+    async def batch_query_user_async(
+        self,
+        request: dingtalkokr__1__0_models.BatchQueryUserRequest,
+    ) -> dingtalkokr__1__0_models.BatchQueryUserResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkokr__1__0_models.BatchQueryUserHeaders()
+        return await self.batch_query_user_with_options_async(request, headers, runtime)
+
+    def batch_query_user_with_options(
+        self,
+        request: dingtalkokr__1__0_models.BatchQueryUserRequest,
+        headers: dingtalkokr__1__0_models.BatchQueryUserHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkokr__1__0_models.BatchQueryUserResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkokr__1__0_models.BatchQueryUserResponse(),
+            self.do_roarequest('BatchQueryUser', 'okr_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/okr/users/query', 'json', req, runtime)
+        )
+
+    async def batch_query_user_with_options_async(
+        self,
+        request: dingtalkokr__1__0_models.BatchQueryUserRequest,
+        headers: dingtalkokr__1__0_models.BatchQueryUserHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkokr__1__0_models.BatchQueryUserResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkokr__1__0_models.BatchQueryUserResponse(),
+            await self.do_roarequest_async('BatchQueryUser', 'okr_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/okr/users/query', 'json', req, runtime)
+        )
+
     def create_key_result(
         self,
         request: dingtalkokr__1__0_models.CreateKeyResultRequest,

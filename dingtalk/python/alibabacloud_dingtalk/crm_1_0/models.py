@@ -2787,7 +2787,6 @@ class CreateGroupSetResponseBodyOwner(TeaModel):
 class CreateGroupSetResponseBody(TeaModel):
     def __init__(
         self,
-        corp_id: str = None,
         gmt_create: str = None,
         gmt_modified: str = None,
         last_open_conversation_id: str = None,
@@ -2804,7 +2803,6 @@ class CreateGroupSetResponseBody(TeaModel):
         relation_type: str = None,
         template_id: str = None,
     ):
-        self.corp_id = corp_id
         self.gmt_create = gmt_create
         self.gmt_modified = gmt_modified
         self.last_open_conversation_id = last_open_conversation_id
@@ -2835,8 +2833,6 @@ class CreateGroupSetResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.corp_id is not None:
-            result['corpId'] = self.corp_id
         if self.gmt_create is not None:
             result['gmtCreate'] = self.gmt_create
         if self.gmt_modified is not None:
@@ -2873,8 +2869,6 @@ class CreateGroupSetResponseBody(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('corpId') is not None:
-            self.corp_id = m.get('corpId')
         if m.get('gmtCreate') is not None:
             self.gmt_create = m.get('gmtCreate')
         if m.get('gmtModified') is not None:
@@ -9050,7 +9044,6 @@ class GetGroupSetResponseBodyOwner(TeaModel):
 class GetGroupSetResponseBody(TeaModel):
     def __init__(
         self,
-        corp_id: str = None,
         gmt_create: str = None,
         gmt_modified: str = None,
         group_chat_count: int = None,
@@ -9068,7 +9061,6 @@ class GetGroupSetResponseBody(TeaModel):
         relation_type: str = None,
         template_id: str = None,
     ):
-        self.corp_id = corp_id
         self.gmt_create = gmt_create
         self.gmt_modified = gmt_modified
         # 群组内群数量（不包含已解散的群）。
@@ -9101,8 +9093,6 @@ class GetGroupSetResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.corp_id is not None:
-            result['corpId'] = self.corp_id
         if self.gmt_create is not None:
             result['gmtCreate'] = self.gmt_create
         if self.gmt_modified is not None:
@@ -9141,8 +9131,6 @@ class GetGroupSetResponseBody(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('corpId') is not None:
-            self.corp_id = m.get('corpId')
         if m.get('gmtCreate') is not None:
             self.gmt_create = m.get('gmtCreate')
         if m.get('gmtModified') is not None:
@@ -10647,7 +10635,6 @@ class ListGroupSetResponseBodyResultListOwner(TeaModel):
 class ListGroupSetResponseBodyResultList(TeaModel):
     def __init__(
         self,
-        corp_id: str = None,
         gmt_create: str = None,
         gmt_modified: str = None,
         group_chat_count: int = None,
@@ -10665,8 +10652,6 @@ class ListGroupSetResponseBodyResultList(TeaModel):
         relation_type: str = None,
         template_id: str = None,
     ):
-        # 企业corpId
-        self.corp_id = corp_id
         # 创建时间
         self.gmt_create = gmt_create
         # 修改时间
@@ -10714,8 +10699,6 @@ class ListGroupSetResponseBodyResultList(TeaModel):
             return _map
 
         result = dict()
-        if self.corp_id is not None:
-            result['corpId'] = self.corp_id
         if self.gmt_create is not None:
             result['gmtCreate'] = self.gmt_create
         if self.gmt_modified is not None:
@@ -10754,8 +10737,6 @@ class ListGroupSetResponseBodyResultList(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('corpId') is not None:
-            self.corp_id = m.get('corpId')
         if m.get('gmtCreate') is not None:
             self.gmt_create = m.get('gmtCreate')
         if m.get('gmtModified') is not None:

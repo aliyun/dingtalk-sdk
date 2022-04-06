@@ -391,6 +391,70 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('OrgGroupSend', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/groupMessages/send', 'json', req, runtime)
         )
 
+    def query_robot_dingtalk_id(
+        self,
+        request: dingtalkrobot__1__0_models.QueryRobotDingtalkIdRequest,
+    ) -> dingtalkrobot__1__0_models.QueryRobotDingtalkIdResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.QueryRobotDingtalkIdHeaders()
+        return self.query_robot_dingtalk_id_with_options(request, headers, runtime)
+
+    async def query_robot_dingtalk_id_async(
+        self,
+        request: dingtalkrobot__1__0_models.QueryRobotDingtalkIdRequest,
+    ) -> dingtalkrobot__1__0_models.QueryRobotDingtalkIdResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.QueryRobotDingtalkIdHeaders()
+        return await self.query_robot_dingtalk_id_with_options_async(request, headers, runtime)
+
+    def query_robot_dingtalk_id_with_options(
+        self,
+        request: dingtalkrobot__1__0_models.QueryRobotDingtalkIdRequest,
+        headers: dingtalkrobot__1__0_models.QueryRobotDingtalkIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.QueryRobotDingtalkIdResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.robot_code):
+            query['robotCode'] = request.robot_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.QueryRobotDingtalkIdResponse(),
+            self.do_roarequest('QueryRobotDingtalkId', 'robot_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/robot/dingtalkId', 'json', req, runtime)
+        )
+
+    async def query_robot_dingtalk_id_with_options_async(
+        self,
+        request: dingtalkrobot__1__0_models.QueryRobotDingtalkIdRequest,
+        headers: dingtalkrobot__1__0_models.QueryRobotDingtalkIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.QueryRobotDingtalkIdResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.robot_code):
+            query['robotCode'] = request.robot_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.QueryRobotDingtalkIdResponse(),
+            await self.do_roarequest_async('QueryRobotDingtalkId', 'robot_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/robot/dingtalkId', 'json', req, runtime)
+        )
+
     def send_robot_ding_message(
         self,
         request: dingtalkrobot__1__0_models.SendRobotDingMessageRequest,
