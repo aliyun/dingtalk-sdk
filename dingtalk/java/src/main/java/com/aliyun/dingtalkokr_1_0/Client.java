@@ -155,6 +155,35 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("BatchQueryObjective", "okr_1.0", "HTTP", "POST", "AK", "/v1.0/okr/objectives/query", "json", req, runtime), new BatchQueryObjectiveResponse());
     }
 
+    public BatchQueryUserResponse batchQueryUser(BatchQueryUserRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        BatchQueryUserHeaders headers = new BatchQueryUserHeaders();
+        return this.batchQueryUserWithOptions(request, headers, runtime);
+    }
+
+    public BatchQueryUserResponse batchQueryUserWithOptions(BatchQueryUserRequest request, BatchQueryUserHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.userIds)) {
+            body.put("userIds", request.userIds);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("BatchQueryUser", "okr_1.0", "HTTP", "POST", "AK", "/v1.0/okr/users/query", "json", req, runtime), new BatchQueryUserResponse());
+    }
+
     public CreateKeyResultResponse createKeyResult(CreateKeyResultRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         CreateKeyResultHeaders headers = new CreateKeyResultHeaders();

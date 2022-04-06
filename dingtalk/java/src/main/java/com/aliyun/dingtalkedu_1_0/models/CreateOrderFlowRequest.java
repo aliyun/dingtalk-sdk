@@ -162,6 +162,10 @@ public class CreateOrderFlowRequest extends TeaModel {
         @NameInMap("itemAmount")
         public Long itemAmount;
 
+        // 商品id
+        @NameInMap("itemId")
+        public Long itemId;
+
         // 商品名
         @NameInMap("itemName")
         public String itemName;
@@ -189,6 +193,14 @@ public class CreateOrderFlowRequest extends TeaModel {
         }
         public Long getItemAmount() {
             return this.itemAmount;
+        }
+
+        public CreateOrderFlowRequestDetailList setItemId(Long itemId) {
+            this.itemId = itemId;
+            return this;
+        }
+        public Long getItemId() {
+            return this.itemId;
         }
 
         public CreateOrderFlowRequestDetailList setItemName(String itemName) {

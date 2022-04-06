@@ -58,6 +58,14 @@ public class GetUserOkrResponseBody extends TeaModel {
         @NameInMap("content")
         public java.io.InputStream content;
 
+        // 创建时间。时间戳
+        @NameInMap("gmtCreate")
+        public Float gmtCreate;
+
+        // 更新时间。时间戳
+        @NameInMap("gmtModified")
+        public Float gmtModified;
+
         // KR 的 ID。
         @NameInMap("id")
         public java.io.InputStream id;
@@ -97,6 +105,22 @@ public class GetUserOkrResponseBody extends TeaModel {
         }
         public java.io.InputStream getContent() {
             return this.content;
+        }
+
+        public GetUserOkrResponseBodyDataListKrList setGmtCreate(Float gmtCreate) {
+            this.gmtCreate = gmtCreate;
+            return this;
+        }
+        public Float getGmtCreate() {
+            return this.gmtCreate;
+        }
+
+        public GetUserOkrResponseBodyDataListKrList setGmtModified(Float gmtModified) {
+            this.gmtModified = gmtModified;
+            return this;
+        }
+        public Float getGmtModified() {
+            return this.gmtModified;
         }
 
         public GetUserOkrResponseBodyDataListKrList setId(java.io.InputStream id) {
@@ -166,7 +190,7 @@ public class GetUserOkrResponseBody extends TeaModel {
         @NameInMap("corpId")
         public java.io.InputStream corpId;
 
-        // 所属者 ID。
+        // 所属者 OKR 系统中的 ID。
         @NameInMap("id")
         public java.io.InputStream id;
 
@@ -175,8 +199,8 @@ public class GetUserOkrResponseBody extends TeaModel {
         public java.io.InputStream nickname;
 
         // 所属者 userId。
-        @NameInMap("staffId")
-        public java.io.InputStream staffId;
+        @NameInMap("userId")
+        public java.io.InputStream userId;
 
         public static GetUserOkrResponseBodyDataListOwner build(java.util.Map<String, ?> map) throws Exception {
             GetUserOkrResponseBodyDataListOwner self = new GetUserOkrResponseBodyDataListOwner();
@@ -215,12 +239,12 @@ public class GetUserOkrResponseBody extends TeaModel {
             return this.nickname;
         }
 
-        public GetUserOkrResponseBodyDataListOwner setStaffId(java.io.InputStream staffId) {
-            this.staffId = staffId;
+        public GetUserOkrResponseBodyDataListOwner setUserId(java.io.InputStream userId) {
+            this.userId = userId;
             return this;
         }
-        public java.io.InputStream getStaffId() {
-            return this.staffId;
+        public java.io.InputStream getUserId() {
+            return this.userId;
         }
 
     }
@@ -257,6 +281,14 @@ public class GetUserOkrResponseBody extends TeaModel {
         // Objective 内容。
         @NameInMap("content")
         public java.io.InputStream content;
+
+        // 创建时间。时间戳
+        @NameInMap("gmtCreate")
+        public Float gmtCreate;
+
+        // 更新时间。时间戳
+        @NameInMap("gmtModified")
+        public Float gmtModified;
 
         // objective。
         @NameInMap("id")
@@ -337,6 +369,22 @@ public class GetUserOkrResponseBody extends TeaModel {
         }
         public java.io.InputStream getContent() {
             return this.content;
+        }
+
+        public GetUserOkrResponseBodyDataList setGmtCreate(Float gmtCreate) {
+            this.gmtCreate = gmtCreate;
+            return this;
+        }
+        public Float getGmtCreate() {
+            return this.gmtCreate;
+        }
+
+        public GetUserOkrResponseBodyDataList setGmtModified(Float gmtModified) {
+            this.gmtModified = gmtModified;
+            return this;
+        }
+        public Float getGmtModified() {
+            return this.gmtModified;
         }
 
         public GetUserOkrResponseBodyDataList setId(java.io.InputStream id) {
@@ -451,8 +499,8 @@ public class GetUserOkrResponseBody extends TeaModel {
         public java.util.List<GetUserOkrResponseBodyDataList> list;
 
         // 当前页码。
-        @NameInMap("pageNo")
-        public Long pageNo;
+        @NameInMap("pageNumber")
+        public Long pageNumber;
 
         // 每一页的个数。
         @NameInMap("pageSize")
@@ -475,12 +523,12 @@ public class GetUserOkrResponseBody extends TeaModel {
             return this.list;
         }
 
-        public GetUserOkrResponseBodyData setPageNo(Long pageNo) {
-            this.pageNo = pageNo;
+        public GetUserOkrResponseBodyData setPageNumber(Long pageNumber) {
+            this.pageNumber = pageNumber;
             return this;
         }
-        public Long getPageNo() {
-            return this.pageNo;
+        public Long getPageNumber() {
+            return this.pageNumber;
         }
 
         public GetUserOkrResponseBodyData setPageSize(Long pageSize) {

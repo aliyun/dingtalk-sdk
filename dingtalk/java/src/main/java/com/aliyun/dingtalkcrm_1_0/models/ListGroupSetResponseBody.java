@@ -122,10 +122,6 @@ public class ListGroupSetResponseBody extends TeaModel {
     }
 
     public static class ListGroupSetResponseBodyResultList extends TeaModel {
-        // 企业corpId
-        @NameInMap("corpId")
-        public String corpId;
-
         // 创建时间
         @NameInMap("gmtCreate")
         public String gmtCreate;
@@ -193,14 +189,6 @@ public class ListGroupSetResponseBody extends TeaModel {
         public static ListGroupSetResponseBodyResultList build(java.util.Map<String, ?> map) throws Exception {
             ListGroupSetResponseBodyResultList self = new ListGroupSetResponseBodyResultList();
             return TeaModel.build(map, self);
-        }
-
-        public ListGroupSetResponseBodyResultList setCorpId(String corpId) {
-            this.corpId = corpId;
-            return this;
-        }
-        public String getCorpId() {
-            return this.corpId;
         }
 
         public ListGroupSetResponseBodyResultList setGmtCreate(String gmtCreate) {

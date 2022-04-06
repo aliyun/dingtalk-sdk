@@ -4,9 +4,6 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetGroupSetResponseBody extends TeaModel {
-    @NameInMap("corpId")
-    public String corpId;
-
     @NameInMap("gmtCreate")
     public String gmtCreate;
 
@@ -59,14 +56,6 @@ public class GetGroupSetResponseBody extends TeaModel {
     public static GetGroupSetResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetGroupSetResponseBody self = new GetGroupSetResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public GetGroupSetResponseBody setCorpId(String corpId) {
-        this.corpId = corpId;
-        return this;
-    }
-    public String getCorpId() {
-        return this.corpId;
     }
 
     public GetGroupSetResponseBody setGmtCreate(String gmtCreate) {

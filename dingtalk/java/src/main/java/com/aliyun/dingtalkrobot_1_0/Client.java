@@ -214,6 +214,35 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("OrgGroupSend", "robot_1.0", "HTTP", "POST", "AK", "/v1.0/robot/groupMessages/send", "json", req, runtime), new OrgGroupSendResponse());
     }
 
+    public QueryRobotDingtalkIdResponse queryRobotDingtalkId(QueryRobotDingtalkIdRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        QueryRobotDingtalkIdHeaders headers = new QueryRobotDingtalkIdHeaders();
+        return this.queryRobotDingtalkIdWithOptions(request, headers, runtime);
+    }
+
+    public QueryRobotDingtalkIdResponse queryRobotDingtalkIdWithOptions(QueryRobotDingtalkIdRequest request, QueryRobotDingtalkIdHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.robotCode)) {
+            query.put("robotCode", request.robotCode);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("QueryRobotDingtalkId", "robot_1.0", "HTTP", "GET", "AK", "/v1.0/robot/dingtalkId", "json", req, runtime), new QueryRobotDingtalkIdResponse());
+    }
+
     public SendRobotDingMessageResponse sendRobotDingMessage(SendRobotDingMessageRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         SendRobotDingMessageHeaders headers = new SendRobotDingMessageHeaders();

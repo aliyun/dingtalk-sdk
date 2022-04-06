@@ -6,7 +6,7 @@ import com.aliyun.tea.*;
 public class BatchQueryObjectiveResponseBody extends TeaModel {
     // data
     @NameInMap("data")
-    public BatchQueryObjectiveResponseBodyData data;
+    public java.util.List<BatchQueryObjectiveResponseBodyData> data;
 
     // 请求成功的标识。
     @NameInMap("success")
@@ -17,11 +17,11 @@ public class BatchQueryObjectiveResponseBody extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public BatchQueryObjectiveResponseBody setData(BatchQueryObjectiveResponseBodyData data) {
+    public BatchQueryObjectiveResponseBody setData(java.util.List<BatchQueryObjectiveResponseBodyData> data) {
         this.data = data;
         return this;
     }
-    public BatchQueryObjectiveResponseBodyData getData() {
+    public java.util.List<BatchQueryObjectiveResponseBodyData> getData() {
         return this.data;
     }
 
@@ -33,17 +33,17 @@ public class BatchQueryObjectiveResponseBody extends TeaModel {
         return this.success;
     }
 
-    public static class BatchQueryObjectiveResponseBodyDataListKrListProgress extends TeaModel {
+    public static class BatchQueryObjectiveResponseBodyDataKrListProgress extends TeaModel {
         // 百分比。
         @NameInMap("percent")
         public Integer percent;
 
-        public static BatchQueryObjectiveResponseBodyDataListKrListProgress build(java.util.Map<String, ?> map) throws Exception {
-            BatchQueryObjectiveResponseBodyDataListKrListProgress self = new BatchQueryObjectiveResponseBodyDataListKrListProgress();
+        public static BatchQueryObjectiveResponseBodyDataKrListProgress build(java.util.Map<String, ?> map) throws Exception {
+            BatchQueryObjectiveResponseBodyDataKrListProgress self = new BatchQueryObjectiveResponseBodyDataKrListProgress();
             return TeaModel.build(map, self);
         }
 
-        public BatchQueryObjectiveResponseBodyDataListKrListProgress setPercent(Integer percent) {
+        public BatchQueryObjectiveResponseBodyDataKrListProgress setPercent(Integer percent) {
             this.percent = percent;
             return this;
         }
@@ -53,10 +53,18 @@ public class BatchQueryObjectiveResponseBody extends TeaModel {
 
     }
 
-    public static class BatchQueryObjectiveResponseBodyDataListKrList extends TeaModel {
+    public static class BatchQueryObjectiveResponseBodyDataKrList extends TeaModel {
         // KR 内容。
         @NameInMap("content")
         public java.io.InputStream content;
+
+        // 创建时间。时间戳
+        @NameInMap("gmtCreate")
+        public Float gmtCreate;
+
+        // 更新时间。时间戳
+        @NameInMap("gmtModified")
+        public Float gmtModified;
 
         // KR 的 ID。
         @NameInMap("id")
@@ -76,7 +84,7 @@ public class BatchQueryObjectiveResponseBody extends TeaModel {
 
         // KR 进度。
         @NameInMap("progress")
-        public BatchQueryObjectiveResponseBodyDataListKrListProgress progress;
+        public BatchQueryObjectiveResponseBodyDataKrListProgress progress;
 
         // 所占分数。
         @NameInMap("score")
@@ -86,12 +94,12 @@ public class BatchQueryObjectiveResponseBody extends TeaModel {
         @NameInMap("weight")
         public Float weight;
 
-        public static BatchQueryObjectiveResponseBodyDataListKrList build(java.util.Map<String, ?> map) throws Exception {
-            BatchQueryObjectiveResponseBodyDataListKrList self = new BatchQueryObjectiveResponseBodyDataListKrList();
+        public static BatchQueryObjectiveResponseBodyDataKrList build(java.util.Map<String, ?> map) throws Exception {
+            BatchQueryObjectiveResponseBodyDataKrList self = new BatchQueryObjectiveResponseBodyDataKrList();
             return TeaModel.build(map, self);
         }
 
-        public BatchQueryObjectiveResponseBodyDataListKrList setContent(java.io.InputStream content) {
+        public BatchQueryObjectiveResponseBodyDataKrList setContent(java.io.InputStream content) {
             this.content = content;
             return this;
         }
@@ -99,7 +107,23 @@ public class BatchQueryObjectiveResponseBody extends TeaModel {
             return this.content;
         }
 
-        public BatchQueryObjectiveResponseBodyDataListKrList setId(java.io.InputStream id) {
+        public BatchQueryObjectiveResponseBodyDataKrList setGmtCreate(Float gmtCreate) {
+            this.gmtCreate = gmtCreate;
+            return this;
+        }
+        public Float getGmtCreate() {
+            return this.gmtCreate;
+        }
+
+        public BatchQueryObjectiveResponseBodyDataKrList setGmtModified(Float gmtModified) {
+            this.gmtModified = gmtModified;
+            return this;
+        }
+        public Float getGmtModified() {
+            return this.gmtModified;
+        }
+
+        public BatchQueryObjectiveResponseBodyDataKrList setId(java.io.InputStream id) {
             this.id = id;
             return this;
         }
@@ -107,7 +131,7 @@ public class BatchQueryObjectiveResponseBody extends TeaModel {
             return this.id;
         }
 
-        public BatchQueryObjectiveResponseBodyDataListKrList setObjectiveId(java.io.InputStream objectiveId) {
+        public BatchQueryObjectiveResponseBodyDataKrList setObjectiveId(java.io.InputStream objectiveId) {
             this.objectiveId = objectiveId;
             return this;
         }
@@ -115,7 +139,7 @@ public class BatchQueryObjectiveResponseBody extends TeaModel {
             return this.objectiveId;
         }
 
-        public BatchQueryObjectiveResponseBodyDataListKrList setPermission(java.util.List<Float> permission) {
+        public BatchQueryObjectiveResponseBodyDataKrList setPermission(java.util.List<Float> permission) {
             this.permission = permission;
             return this;
         }
@@ -123,7 +147,7 @@ public class BatchQueryObjectiveResponseBody extends TeaModel {
             return this.permission;
         }
 
-        public BatchQueryObjectiveResponseBodyDataListKrList setPosition(Long position) {
+        public BatchQueryObjectiveResponseBodyDataKrList setPosition(Long position) {
             this.position = position;
             return this;
         }
@@ -131,15 +155,15 @@ public class BatchQueryObjectiveResponseBody extends TeaModel {
             return this.position;
         }
 
-        public BatchQueryObjectiveResponseBodyDataListKrList setProgress(BatchQueryObjectiveResponseBodyDataListKrListProgress progress) {
+        public BatchQueryObjectiveResponseBodyDataKrList setProgress(BatchQueryObjectiveResponseBodyDataKrListProgress progress) {
             this.progress = progress;
             return this;
         }
-        public BatchQueryObjectiveResponseBodyDataListKrListProgress getProgress() {
+        public BatchQueryObjectiveResponseBodyDataKrListProgress getProgress() {
             return this.progress;
         }
 
-        public BatchQueryObjectiveResponseBodyDataListKrList setScore(Float score) {
+        public BatchQueryObjectiveResponseBodyDataKrList setScore(Float score) {
             this.score = score;
             return this;
         }
@@ -147,7 +171,7 @@ public class BatchQueryObjectiveResponseBody extends TeaModel {
             return this.score;
         }
 
-        public BatchQueryObjectiveResponseBodyDataListKrList setWeight(Float weight) {
+        public BatchQueryObjectiveResponseBodyDataKrList setWeight(Float weight) {
             this.weight = weight;
             return this;
         }
@@ -157,7 +181,7 @@ public class BatchQueryObjectiveResponseBody extends TeaModel {
 
     }
 
-    public static class BatchQueryObjectiveResponseBodyDataListOwner extends TeaModel {
+    public static class BatchQueryObjectiveResponseBodyDataOwner extends TeaModel {
         // 所属者头像。 ID
         @NameInMap("avatarMediaId")
         public java.io.InputStream avatarMediaId;
@@ -166,7 +190,7 @@ public class BatchQueryObjectiveResponseBody extends TeaModel {
         @NameInMap("corpId")
         public java.io.InputStream corpId;
 
-        // 所属者 ID。
+        // 所属者在 OKR 系统中的 ID。
         @NameInMap("id")
         public java.io.InputStream id;
 
@@ -175,15 +199,15 @@ public class BatchQueryObjectiveResponseBody extends TeaModel {
         public java.io.InputStream nickname;
 
         // 所属者 userId。
-        @NameInMap("staffId")
-        public java.io.InputStream staffId;
+        @NameInMap("userId")
+        public java.io.InputStream userId;
 
-        public static BatchQueryObjectiveResponseBodyDataListOwner build(java.util.Map<String, ?> map) throws Exception {
-            BatchQueryObjectiveResponseBodyDataListOwner self = new BatchQueryObjectiveResponseBodyDataListOwner();
+        public static BatchQueryObjectiveResponseBodyDataOwner build(java.util.Map<String, ?> map) throws Exception {
+            BatchQueryObjectiveResponseBodyDataOwner self = new BatchQueryObjectiveResponseBodyDataOwner();
             return TeaModel.build(map, self);
         }
 
-        public BatchQueryObjectiveResponseBodyDataListOwner setAvatarMediaId(java.io.InputStream avatarMediaId) {
+        public BatchQueryObjectiveResponseBodyDataOwner setAvatarMediaId(java.io.InputStream avatarMediaId) {
             this.avatarMediaId = avatarMediaId;
             return this;
         }
@@ -191,7 +215,7 @@ public class BatchQueryObjectiveResponseBody extends TeaModel {
             return this.avatarMediaId;
         }
 
-        public BatchQueryObjectiveResponseBodyDataListOwner setCorpId(java.io.InputStream corpId) {
+        public BatchQueryObjectiveResponseBodyDataOwner setCorpId(java.io.InputStream corpId) {
             this.corpId = corpId;
             return this;
         }
@@ -199,7 +223,7 @@ public class BatchQueryObjectiveResponseBody extends TeaModel {
             return this.corpId;
         }
 
-        public BatchQueryObjectiveResponseBodyDataListOwner setId(java.io.InputStream id) {
+        public BatchQueryObjectiveResponseBodyDataOwner setId(java.io.InputStream id) {
             this.id = id;
             return this;
         }
@@ -207,7 +231,7 @@ public class BatchQueryObjectiveResponseBody extends TeaModel {
             return this.id;
         }
 
-        public BatchQueryObjectiveResponseBodyDataListOwner setNickname(java.io.InputStream nickname) {
+        public BatchQueryObjectiveResponseBodyDataOwner setNickname(java.io.InputStream nickname) {
             this.nickname = nickname;
             return this;
         }
@@ -215,27 +239,27 @@ public class BatchQueryObjectiveResponseBody extends TeaModel {
             return this.nickname;
         }
 
-        public BatchQueryObjectiveResponseBodyDataListOwner setStaffId(java.io.InputStream staffId) {
-            this.staffId = staffId;
+        public BatchQueryObjectiveResponseBodyDataOwner setUserId(java.io.InputStream userId) {
+            this.userId = userId;
             return this;
         }
-        public java.io.InputStream getStaffId() {
-            return this.staffId;
+        public java.io.InputStream getUserId() {
+            return this.userId;
         }
 
     }
 
-    public static class BatchQueryObjectiveResponseBodyDataListProgress extends TeaModel {
+    public static class BatchQueryObjectiveResponseBodyDataProgress extends TeaModel {
         // 百分比。
         @NameInMap("percent")
         public Integer percent;
 
-        public static BatchQueryObjectiveResponseBodyDataListProgress build(java.util.Map<String, ?> map) throws Exception {
-            BatchQueryObjectiveResponseBodyDataListProgress self = new BatchQueryObjectiveResponseBodyDataListProgress();
+        public static BatchQueryObjectiveResponseBodyDataProgress build(java.util.Map<String, ?> map) throws Exception {
+            BatchQueryObjectiveResponseBodyDataProgress self = new BatchQueryObjectiveResponseBodyDataProgress();
             return TeaModel.build(map, self);
         }
 
-        public BatchQueryObjectiveResponseBodyDataListProgress setPercent(Integer percent) {
+        public BatchQueryObjectiveResponseBodyDataProgress setPercent(Integer percent) {
             this.percent = percent;
             return this;
         }
@@ -245,7 +269,7 @@ public class BatchQueryObjectiveResponseBody extends TeaModel {
 
     }
 
-    public static class BatchQueryObjectiveResponseBodyDataList extends TeaModel {
+    public static class BatchQueryObjectiveResponseBodyData extends TeaModel {
         // 被对齐的 Objective。
         @NameInMap("alignFromIds")
         public java.util.List<java.io.InputStream> alignFromIds;
@@ -258,17 +282,25 @@ public class BatchQueryObjectiveResponseBody extends TeaModel {
         @NameInMap("content")
         public java.io.InputStream content;
 
+        // 创建时间。时间戳
+        @NameInMap("gmtCreate")
+        public Float gmtCreate;
+
+        // 更新时间。时间戳
+        @NameInMap("gmtModified")
+        public Float gmtModified;
+
         // objective。
         @NameInMap("id")
         public java.io.InputStream id;
 
         // KR 详情列表。
         @NameInMap("krList")
-        public java.util.List<BatchQueryObjectiveResponseBodyDataListKrList> krList;
+        public java.util.List<BatchQueryObjectiveResponseBodyDataKrList> krList;
 
         // 所属者信息。
         @NameInMap("owner")
-        public BatchQueryObjectiveResponseBodyDataListOwner owner;
+        public BatchQueryObjectiveResponseBodyDataOwner owner;
 
         // 周期 ID。
         @NameInMap("periodId")
@@ -284,7 +316,7 @@ public class BatchQueryObjectiveResponseBody extends TeaModel {
 
         // 进度值。
         @NameInMap("progress")
-        public BatchQueryObjectiveResponseBodyDataListProgress progress;
+        public BatchQueryObjectiveResponseBodyDataProgress progress;
 
         // 百分比值。
         @NameInMap("progressPercent")
@@ -310,12 +342,12 @@ public class BatchQueryObjectiveResponseBody extends TeaModel {
         @NameInMap("weight")
         public Float weight;
 
-        public static BatchQueryObjectiveResponseBodyDataList build(java.util.Map<String, ?> map) throws Exception {
-            BatchQueryObjectiveResponseBodyDataList self = new BatchQueryObjectiveResponseBodyDataList();
+        public static BatchQueryObjectiveResponseBodyData build(java.util.Map<String, ?> map) throws Exception {
+            BatchQueryObjectiveResponseBodyData self = new BatchQueryObjectiveResponseBodyData();
             return TeaModel.build(map, self);
         }
 
-        public BatchQueryObjectiveResponseBodyDataList setAlignFromIds(java.util.List<java.io.InputStream> alignFromIds) {
+        public BatchQueryObjectiveResponseBodyData setAlignFromIds(java.util.List<java.io.InputStream> alignFromIds) {
             this.alignFromIds = alignFromIds;
             return this;
         }
@@ -323,7 +355,7 @@ public class BatchQueryObjectiveResponseBody extends TeaModel {
             return this.alignFromIds;
         }
 
-        public BatchQueryObjectiveResponseBodyDataList setAlignToIds(java.util.List<java.io.InputStream> alignToIds) {
+        public BatchQueryObjectiveResponseBodyData setAlignToIds(java.util.List<java.io.InputStream> alignToIds) {
             this.alignToIds = alignToIds;
             return this;
         }
@@ -331,7 +363,7 @@ public class BatchQueryObjectiveResponseBody extends TeaModel {
             return this.alignToIds;
         }
 
-        public BatchQueryObjectiveResponseBodyDataList setContent(java.io.InputStream content) {
+        public BatchQueryObjectiveResponseBodyData setContent(java.io.InputStream content) {
             this.content = content;
             return this;
         }
@@ -339,7 +371,23 @@ public class BatchQueryObjectiveResponseBody extends TeaModel {
             return this.content;
         }
 
-        public BatchQueryObjectiveResponseBodyDataList setId(java.io.InputStream id) {
+        public BatchQueryObjectiveResponseBodyData setGmtCreate(Float gmtCreate) {
+            this.gmtCreate = gmtCreate;
+            return this;
+        }
+        public Float getGmtCreate() {
+            return this.gmtCreate;
+        }
+
+        public BatchQueryObjectiveResponseBodyData setGmtModified(Float gmtModified) {
+            this.gmtModified = gmtModified;
+            return this;
+        }
+        public Float getGmtModified() {
+            return this.gmtModified;
+        }
+
+        public BatchQueryObjectiveResponseBodyData setId(java.io.InputStream id) {
             this.id = id;
             return this;
         }
@@ -347,23 +395,23 @@ public class BatchQueryObjectiveResponseBody extends TeaModel {
             return this.id;
         }
 
-        public BatchQueryObjectiveResponseBodyDataList setKrList(java.util.List<BatchQueryObjectiveResponseBodyDataListKrList> krList) {
+        public BatchQueryObjectiveResponseBodyData setKrList(java.util.List<BatchQueryObjectiveResponseBodyDataKrList> krList) {
             this.krList = krList;
             return this;
         }
-        public java.util.List<BatchQueryObjectiveResponseBodyDataListKrList> getKrList() {
+        public java.util.List<BatchQueryObjectiveResponseBodyDataKrList> getKrList() {
             return this.krList;
         }
 
-        public BatchQueryObjectiveResponseBodyDataList setOwner(BatchQueryObjectiveResponseBodyDataListOwner owner) {
+        public BatchQueryObjectiveResponseBodyData setOwner(BatchQueryObjectiveResponseBodyDataOwner owner) {
             this.owner = owner;
             return this;
         }
-        public BatchQueryObjectiveResponseBodyDataListOwner getOwner() {
+        public BatchQueryObjectiveResponseBodyDataOwner getOwner() {
             return this.owner;
         }
 
-        public BatchQueryObjectiveResponseBodyDataList setPeriodId(java.io.InputStream periodId) {
+        public BatchQueryObjectiveResponseBodyData setPeriodId(java.io.InputStream periodId) {
             this.periodId = periodId;
             return this;
         }
@@ -371,7 +419,7 @@ public class BatchQueryObjectiveResponseBody extends TeaModel {
             return this.periodId;
         }
 
-        public BatchQueryObjectiveResponseBodyDataList setPermission(java.util.List<Float> permission) {
+        public BatchQueryObjectiveResponseBodyData setPermission(java.util.List<Float> permission) {
             this.permission = permission;
             return this;
         }
@@ -379,7 +427,7 @@ public class BatchQueryObjectiveResponseBody extends TeaModel {
             return this.permission;
         }
 
-        public BatchQueryObjectiveResponseBodyDataList setPosition(Integer position) {
+        public BatchQueryObjectiveResponseBodyData setPosition(Integer position) {
             this.position = position;
             return this;
         }
@@ -387,15 +435,15 @@ public class BatchQueryObjectiveResponseBody extends TeaModel {
             return this.position;
         }
 
-        public BatchQueryObjectiveResponseBodyDataList setProgress(BatchQueryObjectiveResponseBodyDataListProgress progress) {
+        public BatchQueryObjectiveResponseBodyData setProgress(BatchQueryObjectiveResponseBodyDataProgress progress) {
             this.progress = progress;
             return this;
         }
-        public BatchQueryObjectiveResponseBodyDataListProgress getProgress() {
+        public BatchQueryObjectiveResponseBodyDataProgress getProgress() {
             return this.progress;
         }
 
-        public BatchQueryObjectiveResponseBodyDataList setProgressPercent(Float progressPercent) {
+        public BatchQueryObjectiveResponseBodyData setProgressPercent(Float progressPercent) {
             this.progressPercent = progressPercent;
             return this;
         }
@@ -403,7 +451,7 @@ public class BatchQueryObjectiveResponseBody extends TeaModel {
             return this.progressPercent;
         }
 
-        public BatchQueryObjectiveResponseBodyDataList setPublished(Boolean published) {
+        public BatchQueryObjectiveResponseBodyData setPublished(Boolean published) {
             this.published = published;
             return this;
         }
@@ -411,7 +459,7 @@ public class BatchQueryObjectiveResponseBody extends TeaModel {
             return this.published;
         }
 
-        public BatchQueryObjectiveResponseBodyDataList setScore(Float score) {
+        public BatchQueryObjectiveResponseBodyData setScore(Float score) {
             this.score = score;
             return this;
         }
@@ -419,7 +467,7 @@ public class BatchQueryObjectiveResponseBody extends TeaModel {
             return this.score;
         }
 
-        public BatchQueryObjectiveResponseBodyDataList setStatus(Integer status) {
+        public BatchQueryObjectiveResponseBodyData setStatus(Integer status) {
             this.status = status;
             return this;
         }
@@ -427,7 +475,7 @@ public class BatchQueryObjectiveResponseBody extends TeaModel {
             return this.status;
         }
 
-        public BatchQueryObjectiveResponseBodyDataList setUserId(java.io.InputStream userId) {
+        public BatchQueryObjectiveResponseBodyData setUserId(java.io.InputStream userId) {
             this.userId = userId;
             return this;
         }
@@ -435,68 +483,12 @@ public class BatchQueryObjectiveResponseBody extends TeaModel {
             return this.userId;
         }
 
-        public BatchQueryObjectiveResponseBodyDataList setWeight(Float weight) {
+        public BatchQueryObjectiveResponseBodyData setWeight(Float weight) {
             this.weight = weight;
             return this;
         }
         public Float getWeight() {
             return this.weight;
-        }
-
-    }
-
-    public static class BatchQueryObjectiveResponseBodyData extends TeaModel {
-        // OKR 列表详情。
-        @NameInMap("list")
-        public java.util.List<BatchQueryObjectiveResponseBodyDataList> list;
-
-        // 当前页码。
-        @NameInMap("pageNo")
-        public Long pageNo;
-
-        // 每一页的个数。
-        @NameInMap("pageSize")
-        public Long pageSize;
-
-        // 总数。
-        @NameInMap("totalCount")
-        public Long totalCount;
-
-        public static BatchQueryObjectiveResponseBodyData build(java.util.Map<String, ?> map) throws Exception {
-            BatchQueryObjectiveResponseBodyData self = new BatchQueryObjectiveResponseBodyData();
-            return TeaModel.build(map, self);
-        }
-
-        public BatchQueryObjectiveResponseBodyData setList(java.util.List<BatchQueryObjectiveResponseBodyDataList> list) {
-            this.list = list;
-            return this;
-        }
-        public java.util.List<BatchQueryObjectiveResponseBodyDataList> getList() {
-            return this.list;
-        }
-
-        public BatchQueryObjectiveResponseBodyData setPageNo(Long pageNo) {
-            this.pageNo = pageNo;
-            return this;
-        }
-        public Long getPageNo() {
-            return this.pageNo;
-        }
-
-        public BatchQueryObjectiveResponseBodyData setPageSize(Long pageSize) {
-            this.pageSize = pageSize;
-            return this;
-        }
-        public Long getPageSize() {
-            return this.pageSize;
-        }
-
-        public BatchQueryObjectiveResponseBodyData setTotalCount(Long totalCount) {
-            this.totalCount = totalCount;
-            return this;
-        }
-        public Long getTotalCount() {
-            return this.totalCount;
         }
 
     }
