@@ -4,6 +4,1964 @@ from Tea.model import TeaModel
 from typing import Dict, List
 
 
+class CustomizeContactCreateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CustomizeContactCreateRequest(TeaModel):
+    def __init__(
+        self,
+        manager_id_list: List[str] = None,
+        name: str = None,
+        order: int = None,
+    ):
+        # 通讯录管理员UserId
+        self.manager_id_list = manager_id_list
+        # 自定义通讯录名称
+        self.name = name
+        # 在自定义通讯录列表中的排序
+        self.order = order
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.manager_id_list is not None:
+            result['managerIdList'] = self.manager_id_list
+        if self.name is not None:
+            result['name'] = self.name
+        if self.order is not None:
+            result['order'] = self.order
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('managerIdList') is not None:
+            self.manager_id_list = m.get('managerIdList')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('order') is not None:
+            self.order = m.get('order')
+        return self
+
+
+class CustomizeContactCreateResponseBodyContent(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        name: str = None,
+        order: int = None,
+        root_dept_id: int = None,
+    ):
+        # 自定义通讯录Code
+        self.code = code
+        # 自定义通讯录名称
+        self.name = name
+        # 在自定义通讯录列表中的排序
+        self.order = order
+        # 根部们Id
+        self.root_dept_id = root_dept_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.name is not None:
+            result['name'] = self.name
+        if self.order is not None:
+            result['order'] = self.order
+        if self.root_dept_id is not None:
+            result['rootDeptId'] = self.root_dept_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('order') is not None:
+            self.order = m.get('order')
+        if m.get('rootDeptId') is not None:
+            self.root_dept_id = m.get('rootDeptId')
+        return self
+
+
+class CustomizeContactCreateResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: CustomizeContactCreateResponseBodyContent = None,
+    ):
+        # 自定义通讯录信息
+        self.content = content
+
+    def validate(self):
+        if self.content:
+            self.content.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            temp_model = CustomizeContactCreateResponseBodyContent()
+            self.content = temp_model.from_map(m['content'])
+        return self
+
+
+class CustomizeContactCreateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CustomizeContactCreateResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CustomizeContactCreateResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CustomizeContactDeleteHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CustomizeContactDeleteRequest(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+    ):
+        # 自定义通讯录Code
+        self.code = code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        return self
+
+
+class CustomizeContactDeleteResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: bool = None,
+    ):
+        # 是否操作成功
+        self.content = content
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        return self
+
+
+class CustomizeContactDeleteResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CustomizeContactDeleteResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CustomizeContactDeleteResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CustomizeContactDeptCreateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CustomizeContactDeptCreateRequest(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        manager_id_list: List[str] = None,
+        name: str = None,
+        order: int = None,
+        parent_dept_id: int = None,
+        ref_id: int = None,
+        type: int = None,
+    ):
+        # 自定义通讯录Code
+        self.code = code
+        # 部门主管列表
+        self.manager_id_list = manager_id_list
+        # 部门名称
+        self.name = name
+        # 部门排序
+        self.order = order
+        # 上级部门Id
+        self.parent_dept_id = parent_dept_id
+        # 引用的内部通讯录部门Id
+        self.ref_id = ref_id
+        # 部门类型 0:普通部门 1:引用部门
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.manager_id_list is not None:
+            result['managerIdList'] = self.manager_id_list
+        if self.name is not None:
+            result['name'] = self.name
+        if self.order is not None:
+            result['order'] = self.order
+        if self.parent_dept_id is not None:
+            result['parentDeptId'] = self.parent_dept_id
+        if self.ref_id is not None:
+            result['refId'] = self.ref_id
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('managerIdList') is not None:
+            self.manager_id_list = m.get('managerIdList')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('order') is not None:
+            self.order = m.get('order')
+        if m.get('parentDeptId') is not None:
+            self.parent_dept_id = m.get('parentDeptId')
+        if m.get('refId') is not None:
+            self.ref_id = m.get('refId')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class CustomizeContactDeptCreateResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: int = None,
+    ):
+        # 部门Id
+        self.content = content
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        return self
+
+
+class CustomizeContactDeptCreateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CustomizeContactDeptCreateResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CustomizeContactDeptCreateResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CustomizeContactDeptDeleteHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CustomizeContactDeptDeleteRequest(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        dept_id: int = None,
+    ):
+        # 自定义通讯录Code
+        self.code = code
+        # 部门Id
+        self.dept_id = dept_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        return self
+
+
+class CustomizeContactDeptDeleteResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: bool = None,
+    ):
+        # 操作结果
+        self.content = content
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        return self
+
+
+class CustomizeContactDeptDeleteResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CustomizeContactDeptDeleteResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CustomizeContactDeptDeleteResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CustomizeContactDeptInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CustomizeContactDeptInfoRequest(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        dept_id: int = None,
+    ):
+        self.code = code
+        self.dept_id = dept_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        return self
+
+
+class CustomizeContactDeptInfoResponseBodyContent(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        id: int = None,
+        manager_id_list: List[str] = None,
+        name: str = None,
+        order: int = None,
+        parent_dept_id: int = None,
+        ref_id: int = None,
+        type: int = None,
+    ):
+        # 自定义通讯录Code
+        self.code = code
+        # 部门Id
+        self.id = id
+        # 部门主管列表
+        self.manager_id_list = manager_id_list
+        # 部门名称
+        self.name = name
+        # 部门排序
+        self.order = order
+        # 上级部门Id
+        self.parent_dept_id = parent_dept_id
+        # 引用的内部通讯录部门Id
+        self.ref_id = ref_id
+        # 部门类型 0:普通部门 1:引用部门
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.id is not None:
+            result['id'] = self.id
+        if self.manager_id_list is not None:
+            result['managerIdList'] = self.manager_id_list
+        if self.name is not None:
+            result['name'] = self.name
+        if self.order is not None:
+            result['order'] = self.order
+        if self.parent_dept_id is not None:
+            result['parentDeptId'] = self.parent_dept_id
+        if self.ref_id is not None:
+            result['refId'] = self.ref_id
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('managerIdList') is not None:
+            self.manager_id_list = m.get('managerIdList')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('order') is not None:
+            self.order = m.get('order')
+        if m.get('parentDeptId') is not None:
+            self.parent_dept_id = m.get('parentDeptId')
+        if m.get('refId') is not None:
+            self.ref_id = m.get('refId')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class CustomizeContactDeptInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: CustomizeContactDeptInfoResponseBodyContent = None,
+    ):
+        # 部门信息
+        self.content = content
+
+    def validate(self):
+        if self.content:
+            self.content.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            temp_model = CustomizeContactDeptInfoResponseBodyContent()
+            self.content = temp_model.from_map(m['content'])
+        return self
+
+
+class CustomizeContactDeptInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CustomizeContactDeptInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CustomizeContactDeptInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CustomizeContactDeptListHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CustomizeContactDeptListRequest(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        dept_id: int = None,
+    ):
+        # 自定义通讯录Code
+        self.code = code
+        # 部门Id
+        self.dept_id = dept_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        return self
+
+
+class CustomizeContactDeptListResponseBodyContent(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        id: int = None,
+        manager_id_list: List[str] = None,
+        name: str = None,
+        order: int = None,
+        parent_dept_id: int = None,
+        ref_id: int = None,
+        type: int = None,
+    ):
+        # 自定义通讯录Code
+        self.code = code
+        # 部门Id
+        self.id = id
+        # 部门主管列表
+        self.manager_id_list = manager_id_list
+        # 部门名称
+        self.name = name
+        # 部门排序
+        self.order = order
+        # 上级部门Id
+        self.parent_dept_id = parent_dept_id
+        # 引用的内部通讯录部门Id
+        self.ref_id = ref_id
+        # 部门类型 0:普通部门 1:引用部门
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.id is not None:
+            result['id'] = self.id
+        if self.manager_id_list is not None:
+            result['managerIdList'] = self.manager_id_list
+        if self.name is not None:
+            result['name'] = self.name
+        if self.order is not None:
+            result['order'] = self.order
+        if self.parent_dept_id is not None:
+            result['parentDeptId'] = self.parent_dept_id
+        if self.ref_id is not None:
+            result['refId'] = self.ref_id
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('managerIdList') is not None:
+            self.manager_id_list = m.get('managerIdList')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('order') is not None:
+            self.order = m.get('order')
+        if m.get('parentDeptId') is not None:
+            self.parent_dept_id = m.get('parentDeptId')
+        if m.get('refId') is not None:
+            self.ref_id = m.get('refId')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class CustomizeContactDeptListResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: List[CustomizeContactDeptListResponseBodyContent] = None,
+    ):
+        # 子部门列表
+        self.content = content
+
+    def validate(self):
+        if self.content:
+            for k in self.content:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['content'] = []
+        if self.content is not None:
+            for k in self.content:
+                result['content'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.content = []
+        if m.get('content') is not None:
+            for k in m.get('content'):
+                temp_model = CustomizeContactDeptListResponseBodyContent()
+                self.content.append(temp_model.from_map(k))
+        return self
+
+
+class CustomizeContactDeptListResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CustomizeContactDeptListResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CustomizeContactDeptListResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CustomizeContactDeptUpdateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CustomizeContactDeptUpdateRequest(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        dept_id: int = None,
+        manager_id_list: List[str] = None,
+        name: str = None,
+        order: int = None,
+        parent_dept_id: int = None,
+    ):
+        # 自定义通讯录Code
+        self.code = code
+        # 部门Id
+        self.dept_id = dept_id
+        # 部门主管列表
+        self.manager_id_list = manager_id_list
+        # 部门名称
+        self.name = name
+        # 部门排序
+        self.order = order
+        # 上级部门Id
+        self.parent_dept_id = parent_dept_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.manager_id_list is not None:
+            result['managerIdList'] = self.manager_id_list
+        if self.name is not None:
+            result['name'] = self.name
+        if self.order is not None:
+            result['order'] = self.order
+        if self.parent_dept_id is not None:
+            result['parentDeptId'] = self.parent_dept_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('managerIdList') is not None:
+            self.manager_id_list = m.get('managerIdList')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('order') is not None:
+            self.order = m.get('order')
+        if m.get('parentDeptId') is not None:
+            self.parent_dept_id = m.get('parentDeptId')
+        return self
+
+
+class CustomizeContactDeptUpdateResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: int = None,
+    ):
+        # 部门Id
+        self.content = content
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        return self
+
+
+class CustomizeContactDeptUpdateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CustomizeContactDeptUpdateResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CustomizeContactDeptUpdateResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CustomizeContactEmpAddHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CustomizeContactEmpAddRequest(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        dept_id: int = None,
+        user_id_list: List[str] = None,
+    ):
+        # 自定义通讯录Code
+        self.code = code
+        # 部门Id
+        self.dept_id = dept_id
+        # 人员Id列表
+        self.user_id_list = user_id_list
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.user_id_list is not None:
+            result['userIdList'] = self.user_id_list
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('userIdList') is not None:
+            self.user_id_list = m.get('userIdList')
+        return self
+
+
+class CustomizeContactEmpAddResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: bool = None,
+    ):
+        # 操作结果
+        self.content = content
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        return self
+
+
+class CustomizeContactEmpAddResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CustomizeContactEmpAddResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CustomizeContactEmpAddResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CustomizeContactEmpDeleteHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CustomizeContactEmpDeleteRequest(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        dept_id: int = None,
+        user_id_list: List[str] = None,
+    ):
+        # 自定义通讯录Code
+        self.code = code
+        # 部门Id
+        self.dept_id = dept_id
+        # 人员Id列表
+        self.user_id_list = user_id_list
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.user_id_list is not None:
+            result['userIdList'] = self.user_id_list
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('userIdList') is not None:
+            self.user_id_list = m.get('userIdList')
+        return self
+
+
+class CustomizeContactEmpDeleteResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: bool = None,
+    ):
+        # 操作结果
+        self.content = content
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        return self
+
+
+class CustomizeContactEmpDeleteResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CustomizeContactEmpDeleteResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CustomizeContactEmpDeleteResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CustomizeContactEmpListHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CustomizeContactEmpListRequest(TeaModel):
+    def __init__(
+        self,
+        dept_id: int = None,
+    ):
+        # 部门Id
+        self.dept_id = dept_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        return self
+
+
+class CustomizeContactEmpListResponseBodyContent(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        user_id: str = None,
+    ):
+        # 人员姓名
+        self.name = name
+        # 人员Id
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class CustomizeContactEmpListResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: List[CustomizeContactEmpListResponseBodyContent] = None,
+    ):
+        # 人员信息列表
+        self.content = content
+
+    def validate(self):
+        if self.content:
+            for k in self.content:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['content'] = []
+        if self.content is not None:
+            for k in self.content:
+                result['content'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.content = []
+        if m.get('content') is not None:
+            for k in m.get('content'):
+                temp_model = CustomizeContactEmpListResponseBodyContent()
+                self.content.append(temp_model.from_map(k))
+        return self
+
+
+class CustomizeContactEmpListResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CustomizeContactEmpListResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CustomizeContactEmpListResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CustomizeContactListHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CustomizeContactListResponseBodyContent(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        name: str = None,
+        order: int = None,
+        root_dept_id: int = None,
+    ):
+        # 自定义通讯录Code
+        self.code = code
+        # 自定义通讯录名称
+        self.name = name
+        # 自定义通讯录排序
+        self.order = order
+        # 跟部门Id
+        self.root_dept_id = root_dept_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.name is not None:
+            result['name'] = self.name
+        if self.order is not None:
+            result['order'] = self.order
+        if self.root_dept_id is not None:
+            result['rootDeptId'] = self.root_dept_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('order') is not None:
+            self.order = m.get('order')
+        if m.get('rootDeptId') is not None:
+            self.root_dept_id = m.get('rootDeptId')
+        return self
+
+
+class CustomizeContactListResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: List[CustomizeContactListResponseBodyContent] = None,
+    ):
+        # content
+        self.content = content
+
+    def validate(self):
+        if self.content:
+            for k in self.content:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['content'] = []
+        if self.content is not None:
+            for k in self.content:
+                result['content'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.content = []
+        if m.get('content') is not None:
+            for k in m.get('content'):
+                temp_model = CustomizeContactListResponseBodyContent()
+                self.content.append(temp_model.from_map(k))
+        return self
+
+
+class CustomizeContactListResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CustomizeContactListResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CustomizeContactListResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CustomizeContactUpdateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CustomizeContactUpdateRequest(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        manager_id_list: List[str] = None,
+        name: str = None,
+        order: int = None,
+    ):
+        # 自定义通讯录Code
+        self.code = code
+        # 通讯录管理员UserId
+        self.manager_id_list = manager_id_list
+        # 自定义通讯录名称
+        self.name = name
+        # 在自定义通讯录列表中的排序
+        self.order = order
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.manager_id_list is not None:
+            result['managerIdList'] = self.manager_id_list
+        if self.name is not None:
+            result['name'] = self.name
+        if self.order is not None:
+            result['order'] = self.order
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('managerIdList') is not None:
+            self.manager_id_list = m.get('managerIdList')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('order') is not None:
+            self.order = m.get('order')
+        return self
+
+
+class CustomizeContactUpdateResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: bool = None,
+    ):
+        # 是否操作成功
+        self.content = content
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        return self
+
+
+class CustomizeContactUpdateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CustomizeContactUpdateResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CustomizeContactUpdateResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class IndustryManufactureCostRecordListGetHeaders(TeaModel):
     def __init__(
         self,

@@ -983,6 +983,8 @@ class Client(OpenApiClient):
             body['scene'] = request.scene
         if not UtilClient.is_unset(request.start_time):
             body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
         if not UtilClient.is_unset(request.type):
             body['type'] = request.type
         real_headers = {}
@@ -1027,6 +1029,8 @@ class Client(OpenApiClient):
             body['scene'] = request.scene
         if not UtilClient.is_unset(request.start_time):
             body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
         if not UtilClient.is_unset(request.type):
             body['type'] = request.type
         real_headers = {}
@@ -1185,6 +1189,8 @@ class Client(OpenApiClient):
             body['detailList'] = request.detail_list
         if not UtilClient.is_unset(request.face_id):
             body['faceId'] = request.face_id
+        if not UtilClient.is_unset(request.guardian_user_id):
+            body['guardianUserId'] = request.guardian_user_id
         if not UtilClient.is_unset(request.merchant_id):
             body['merchantId'] = request.merchant_id
         if not UtilClient.is_unset(request.order_no):
@@ -1231,6 +1237,8 @@ class Client(OpenApiClient):
             body['detailList'] = request.detail_list
         if not UtilClient.is_unset(request.face_id):
             body['faceId'] = request.face_id
+        if not UtilClient.is_unset(request.guardian_user_id):
+            body['guardianUserId'] = request.guardian_user_id
         if not UtilClient.is_unset(request.merchant_id):
             body['merchantId'] = request.merchant_id
         if not UtilClient.is_unset(request.order_no):

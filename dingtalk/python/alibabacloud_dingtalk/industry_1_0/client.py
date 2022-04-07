@@ -23,6 +23,848 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def customize_contact_create(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactCreateRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactCreateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CustomizeContactCreateHeaders()
+        return self.customize_contact_create_with_options(request, headers, runtime)
+
+    async def customize_contact_create_async(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactCreateRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactCreateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CustomizeContactCreateHeaders()
+        return await self.customize_contact_create_with_options_async(request, headers, runtime)
+
+    def customize_contact_create_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactCreateRequest,
+        headers: dingtalkindustry__1__0_models.CustomizeContactCreateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactCreateResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.manager_id_list):
+            body['managerIdList'] = request.manager_id_list
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.order):
+            body['order'] = request.order
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CustomizeContactCreateResponse(),
+            self.do_roarequest('CustomizeContactCreate', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/customizations/contacts', 'json', req, runtime)
+        )
+
+    async def customize_contact_create_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactCreateRequest,
+        headers: dingtalkindustry__1__0_models.CustomizeContactCreateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactCreateResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.manager_id_list):
+            body['managerIdList'] = request.manager_id_list
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.order):
+            body['order'] = request.order
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CustomizeContactCreateResponse(),
+            await self.do_roarequest_async('CustomizeContactCreate', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/customizations/contacts', 'json', req, runtime)
+        )
+
+    def customize_contact_delete(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactDeleteRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactDeleteResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CustomizeContactDeleteHeaders()
+        return self.customize_contact_delete_with_options(request, headers, runtime)
+
+    async def customize_contact_delete_async(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactDeleteRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactDeleteResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CustomizeContactDeleteHeaders()
+        return await self.customize_contact_delete_with_options_async(request, headers, runtime)
+
+    def customize_contact_delete_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactDeleteRequest,
+        headers: dingtalkindustry__1__0_models.CustomizeContactDeleteHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactDeleteResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.code):
+            query['code'] = request.code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CustomizeContactDeleteResponse(),
+            self.do_roarequest('CustomizeContactDelete', 'industry_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/industry/customizations/contacts', 'json', req, runtime)
+        )
+
+    async def customize_contact_delete_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactDeleteRequest,
+        headers: dingtalkindustry__1__0_models.CustomizeContactDeleteHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactDeleteResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.code):
+            query['code'] = request.code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CustomizeContactDeleteResponse(),
+            await self.do_roarequest_async('CustomizeContactDelete', 'industry_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/industry/customizations/contacts', 'json', req, runtime)
+        )
+
+    def customize_contact_dept_create(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactDeptCreateRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptCreateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CustomizeContactDeptCreateHeaders()
+        return self.customize_contact_dept_create_with_options(request, headers, runtime)
+
+    async def customize_contact_dept_create_async(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactDeptCreateRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptCreateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CustomizeContactDeptCreateHeaders()
+        return await self.customize_contact_dept_create_with_options_async(request, headers, runtime)
+
+    def customize_contact_dept_create_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactDeptCreateRequest,
+        headers: dingtalkindustry__1__0_models.CustomizeContactDeptCreateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptCreateResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.code):
+            body['code'] = request.code
+        if not UtilClient.is_unset(request.manager_id_list):
+            body['managerIdList'] = request.manager_id_list
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.order):
+            body['order'] = request.order
+        if not UtilClient.is_unset(request.parent_dept_id):
+            body['parentDeptId'] = request.parent_dept_id
+        if not UtilClient.is_unset(request.ref_id):
+            body['refId'] = request.ref_id
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CustomizeContactDeptCreateResponse(),
+            self.do_roarequest('CustomizeContactDeptCreate', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/customizations/departments', 'json', req, runtime)
+        )
+
+    async def customize_contact_dept_create_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactDeptCreateRequest,
+        headers: dingtalkindustry__1__0_models.CustomizeContactDeptCreateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptCreateResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.code):
+            body['code'] = request.code
+        if not UtilClient.is_unset(request.manager_id_list):
+            body['managerIdList'] = request.manager_id_list
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.order):
+            body['order'] = request.order
+        if not UtilClient.is_unset(request.parent_dept_id):
+            body['parentDeptId'] = request.parent_dept_id
+        if not UtilClient.is_unset(request.ref_id):
+            body['refId'] = request.ref_id
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CustomizeContactDeptCreateResponse(),
+            await self.do_roarequest_async('CustomizeContactDeptCreate', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/customizations/departments', 'json', req, runtime)
+        )
+
+    def customize_contact_dept_delete(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactDeptDeleteRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptDeleteResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CustomizeContactDeptDeleteHeaders()
+        return self.customize_contact_dept_delete_with_options(request, headers, runtime)
+
+    async def customize_contact_dept_delete_async(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactDeptDeleteRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptDeleteResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CustomizeContactDeptDeleteHeaders()
+        return await self.customize_contact_dept_delete_with_options_async(request, headers, runtime)
+
+    def customize_contact_dept_delete_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactDeptDeleteRequest,
+        headers: dingtalkindustry__1__0_models.CustomizeContactDeptDeleteHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptDeleteResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.code):
+            query['code'] = request.code
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CustomizeContactDeptDeleteResponse(),
+            self.do_roarequest('CustomizeContactDeptDelete', 'industry_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/industry/customizations/departments', 'json', req, runtime)
+        )
+
+    async def customize_contact_dept_delete_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactDeptDeleteRequest,
+        headers: dingtalkindustry__1__0_models.CustomizeContactDeptDeleteHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptDeleteResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.code):
+            query['code'] = request.code
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CustomizeContactDeptDeleteResponse(),
+            await self.do_roarequest_async('CustomizeContactDeptDelete', 'industry_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/industry/customizations/departments', 'json', req, runtime)
+        )
+
+    def customize_contact_dept_info(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactDeptInfoRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CustomizeContactDeptInfoHeaders()
+        return self.customize_contact_dept_info_with_options(request, headers, runtime)
+
+    async def customize_contact_dept_info_async(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactDeptInfoRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CustomizeContactDeptInfoHeaders()
+        return await self.customize_contact_dept_info_with_options_async(request, headers, runtime)
+
+    def customize_contact_dept_info_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactDeptInfoRequest,
+        headers: dingtalkindustry__1__0_models.CustomizeContactDeptInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.code):
+            query['code'] = request.code
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CustomizeContactDeptInfoResponse(),
+            self.do_roarequest('CustomizeContactDeptInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/customizations/departments', 'json', req, runtime)
+        )
+
+    async def customize_contact_dept_info_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactDeptInfoRequest,
+        headers: dingtalkindustry__1__0_models.CustomizeContactDeptInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.code):
+            query['code'] = request.code
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CustomizeContactDeptInfoResponse(),
+            await self.do_roarequest_async('CustomizeContactDeptInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/customizations/departments', 'json', req, runtime)
+        )
+
+    def customize_contact_dept_list(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactDeptListRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CustomizeContactDeptListHeaders()
+        return self.customize_contact_dept_list_with_options(request, headers, runtime)
+
+    async def customize_contact_dept_list_async(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactDeptListRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CustomizeContactDeptListHeaders()
+        return await self.customize_contact_dept_list_with_options_async(request, headers, runtime)
+
+    def customize_contact_dept_list_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactDeptListRequest,
+        headers: dingtalkindustry__1__0_models.CustomizeContactDeptListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptListResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.code):
+            query['code'] = request.code
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CustomizeContactDeptListResponse(),
+            self.do_roarequest('CustomizeContactDeptList', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/customizations/subsidiaryDepartments', 'json', req, runtime)
+        )
+
+    async def customize_contact_dept_list_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactDeptListRequest,
+        headers: dingtalkindustry__1__0_models.CustomizeContactDeptListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptListResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.code):
+            query['code'] = request.code
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CustomizeContactDeptListResponse(),
+            await self.do_roarequest_async('CustomizeContactDeptList', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/customizations/subsidiaryDepartments', 'json', req, runtime)
+        )
+
+    def customize_contact_dept_update(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactDeptUpdateRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptUpdateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CustomizeContactDeptUpdateHeaders()
+        return self.customize_contact_dept_update_with_options(request, headers, runtime)
+
+    async def customize_contact_dept_update_async(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactDeptUpdateRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptUpdateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CustomizeContactDeptUpdateHeaders()
+        return await self.customize_contact_dept_update_with_options_async(request, headers, runtime)
+
+    def customize_contact_dept_update_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactDeptUpdateRequest,
+        headers: dingtalkindustry__1__0_models.CustomizeContactDeptUpdateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptUpdateResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.code):
+            body['code'] = request.code
+        if not UtilClient.is_unset(request.dept_id):
+            body['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.manager_id_list):
+            body['managerIdList'] = request.manager_id_list
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.order):
+            body['order'] = request.order
+        if not UtilClient.is_unset(request.parent_dept_id):
+            body['parentDeptId'] = request.parent_dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CustomizeContactDeptUpdateResponse(),
+            self.do_roarequest('CustomizeContactDeptUpdate', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/customizations/departments', 'json', req, runtime)
+        )
+
+    async def customize_contact_dept_update_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactDeptUpdateRequest,
+        headers: dingtalkindustry__1__0_models.CustomizeContactDeptUpdateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptUpdateResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.code):
+            body['code'] = request.code
+        if not UtilClient.is_unset(request.dept_id):
+            body['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.manager_id_list):
+            body['managerIdList'] = request.manager_id_list
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.order):
+            body['order'] = request.order
+        if not UtilClient.is_unset(request.parent_dept_id):
+            body['parentDeptId'] = request.parent_dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CustomizeContactDeptUpdateResponse(),
+            await self.do_roarequest_async('CustomizeContactDeptUpdate', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/customizations/departments', 'json', req, runtime)
+        )
+
+    def customize_contact_emp_add(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactEmpAddRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactEmpAddResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CustomizeContactEmpAddHeaders()
+        return self.customize_contact_emp_add_with_options(request, headers, runtime)
+
+    async def customize_contact_emp_add_async(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactEmpAddRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactEmpAddResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CustomizeContactEmpAddHeaders()
+        return await self.customize_contact_emp_add_with_options_async(request, headers, runtime)
+
+    def customize_contact_emp_add_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactEmpAddRequest,
+        headers: dingtalkindustry__1__0_models.CustomizeContactEmpAddHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactEmpAddResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.code):
+            body['code'] = request.code
+        if not UtilClient.is_unset(request.dept_id):
+            body['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.user_id_list):
+            body['userIdList'] = request.user_id_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CustomizeContactEmpAddResponse(),
+            self.do_roarequest('CustomizeContactEmpAdd', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/customizations/users', 'json', req, runtime)
+        )
+
+    async def customize_contact_emp_add_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactEmpAddRequest,
+        headers: dingtalkindustry__1__0_models.CustomizeContactEmpAddHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactEmpAddResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.code):
+            body['code'] = request.code
+        if not UtilClient.is_unset(request.dept_id):
+            body['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.user_id_list):
+            body['userIdList'] = request.user_id_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CustomizeContactEmpAddResponse(),
+            await self.do_roarequest_async('CustomizeContactEmpAdd', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/customizations/users', 'json', req, runtime)
+        )
+
+    def customize_contact_emp_delete(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactEmpDeleteRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactEmpDeleteResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CustomizeContactEmpDeleteHeaders()
+        return self.customize_contact_emp_delete_with_options(request, headers, runtime)
+
+    async def customize_contact_emp_delete_async(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactEmpDeleteRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactEmpDeleteResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CustomizeContactEmpDeleteHeaders()
+        return await self.customize_contact_emp_delete_with_options_async(request, headers, runtime)
+
+    def customize_contact_emp_delete_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactEmpDeleteRequest,
+        headers: dingtalkindustry__1__0_models.CustomizeContactEmpDeleteHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactEmpDeleteResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.code):
+            body['code'] = request.code
+        if not UtilClient.is_unset(request.dept_id):
+            body['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.user_id_list):
+            body['userIdList'] = request.user_id_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CustomizeContactEmpDeleteResponse(),
+            self.do_roarequest('CustomizeContactEmpDelete', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/customizations/users/remove', 'json', req, runtime)
+        )
+
+    async def customize_contact_emp_delete_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactEmpDeleteRequest,
+        headers: dingtalkindustry__1__0_models.CustomizeContactEmpDeleteHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactEmpDeleteResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.code):
+            body['code'] = request.code
+        if not UtilClient.is_unset(request.dept_id):
+            body['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.user_id_list):
+            body['userIdList'] = request.user_id_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CustomizeContactEmpDeleteResponse(),
+            await self.do_roarequest_async('CustomizeContactEmpDelete', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/customizations/users/remove', 'json', req, runtime)
+        )
+
+    def customize_contact_emp_list(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactEmpListRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactEmpListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CustomizeContactEmpListHeaders()
+        return self.customize_contact_emp_list_with_options(request, headers, runtime)
+
+    async def customize_contact_emp_list_async(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactEmpListRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactEmpListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CustomizeContactEmpListHeaders()
+        return await self.customize_contact_emp_list_with_options_async(request, headers, runtime)
+
+    def customize_contact_emp_list_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactEmpListRequest,
+        headers: dingtalkindustry__1__0_models.CustomizeContactEmpListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactEmpListResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CustomizeContactEmpListResponse(),
+            self.do_roarequest('CustomizeContactEmpList', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/customizations/users', 'json', req, runtime)
+        )
+
+    async def customize_contact_emp_list_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactEmpListRequest,
+        headers: dingtalkindustry__1__0_models.CustomizeContactEmpListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactEmpListResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CustomizeContactEmpListResponse(),
+            await self.do_roarequest_async('CustomizeContactEmpList', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/customizations/users', 'json', req, runtime)
+        )
+
+    def customize_contact_list(self) -> dingtalkindustry__1__0_models.CustomizeContactListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CustomizeContactListHeaders()
+        return self.customize_contact_list_with_options(headers, runtime)
+
+    async def customize_contact_list_async(self) -> dingtalkindustry__1__0_models.CustomizeContactListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CustomizeContactListHeaders()
+        return await self.customize_contact_list_with_options_async(headers, runtime)
+
+    def customize_contact_list_with_options(
+        self,
+        headers: dingtalkindustry__1__0_models.CustomizeContactListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactListResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CustomizeContactListResponse(),
+            self.do_roarequest('CustomizeContactList', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/customizations/contacts', 'json', req, runtime)
+        )
+
+    async def customize_contact_list_with_options_async(
+        self,
+        headers: dingtalkindustry__1__0_models.CustomizeContactListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactListResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CustomizeContactListResponse(),
+            await self.do_roarequest_async('CustomizeContactList', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/customizations/contacts', 'json', req, runtime)
+        )
+
+    def customize_contact_update(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactUpdateRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactUpdateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CustomizeContactUpdateHeaders()
+        return self.customize_contact_update_with_options(request, headers, runtime)
+
+    async def customize_contact_update_async(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactUpdateRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactUpdateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CustomizeContactUpdateHeaders()
+        return await self.customize_contact_update_with_options_async(request, headers, runtime)
+
+    def customize_contact_update_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactUpdateRequest,
+        headers: dingtalkindustry__1__0_models.CustomizeContactUpdateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactUpdateResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.code):
+            body['code'] = request.code
+        if not UtilClient.is_unset(request.manager_id_list):
+            body['managerIdList'] = request.manager_id_list
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.order):
+            body['order'] = request.order
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CustomizeContactUpdateResponse(),
+            self.do_roarequest('CustomizeContactUpdate', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/customizations/contacts', 'json', req, runtime)
+        )
+
+    async def customize_contact_update_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactUpdateRequest,
+        headers: dingtalkindustry__1__0_models.CustomizeContactUpdateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactUpdateResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.code):
+            body['code'] = request.code
+        if not UtilClient.is_unset(request.manager_id_list):
+            body['managerIdList'] = request.manager_id_list
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.order):
+            body['order'] = request.order
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CustomizeContactUpdateResponse(),
+            await self.do_roarequest_async('CustomizeContactUpdate', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/customizations/contacts', 'json', req, runtime)
+        )
+
     def industry_manufacture_cost_record_list_get(
         self,
         request: dingtalkindustry__1__0_models.IndustryManufactureCostRecordListGetRequest,

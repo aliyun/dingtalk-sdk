@@ -11290,7 +11290,6 @@ class QueryAllTracksResponseBodyValues(TeaModel):
     def __init__(
         self,
         biz_id: str = None,
-        corp_id: str = None,
         creator: str = None,
         customer_id: str = None,
         gmt_create: int = None,
@@ -11300,8 +11299,6 @@ class QueryAllTracksResponseBodyValues(TeaModel):
     ):
         # 动态外键
         self.biz_id = biz_id
-        # 企业id
-        self.corp_id = corp_id
         # 创建人userId
         self.creator = creator
         # 客户id
@@ -11326,8 +11323,6 @@ class QueryAllTracksResponseBodyValues(TeaModel):
         result = dict()
         if self.biz_id is not None:
             result['bizId'] = self.biz_id
-        if self.corp_id is not None:
-            result['corpId'] = self.corp_id
         if self.creator is not None:
             result['creator'] = self.creator
         if self.customer_id is not None:
@@ -11346,8 +11341,6 @@ class QueryAllTracksResponseBodyValues(TeaModel):
         m = m or dict()
         if m.get('bizId') is not None:
             self.biz_id = m.get('bizId')
-        if m.get('corpId') is not None:
-            self.corp_id = m.get('corpId')
         if m.get('creator') is not None:
             self.creator = m.get('creator')
         if m.get('customerId') is not None:

@@ -2665,6 +2665,7 @@ class CreateItemRequest(TeaModel):
         price: int = None,
         scene: int = None,
         start_time: int = None,
+        status: int = None,
         type: int = None,
     ):
         self.description = description
@@ -2677,6 +2678,8 @@ class CreateItemRequest(TeaModel):
         self.price = price
         self.scene = scene
         self.start_time = start_time
+        # 状态
+        self.status = status
         self.type = type
 
     def validate(self):
@@ -2708,6 +2711,8 @@ class CreateItemRequest(TeaModel):
             result['scene'] = self.scene
         if self.start_time is not None:
             result['startTime'] = self.start_time
+        if self.status is not None:
+            result['status'] = self.status
         if self.type is not None:
             result['type'] = self.type
         return result
@@ -2734,6 +2739,8 @@ class CreateItemRequest(TeaModel):
             self.scene = m.get('scene')
         if m.get('startTime') is not None:
             self.start_time = m.get('startTime')
+        if m.get('status') is not None:
+            self.status = m.get('status')
         if m.get('type') is not None:
             self.type = m.get('type')
         return self
@@ -3178,6 +3185,7 @@ class CreateOrderFlowRequest(TeaModel):
         create_time: int = None,
         detail_list: List[CreateOrderFlowRequestDetailList] = None,
         face_id: str = None,
+        guardian_user_id: str = None,
         merchant_id: str = None,
         order_no: str = None,
         signature: str = None,
@@ -3196,6 +3204,8 @@ class CreateOrderFlowRequest(TeaModel):
         self.detail_list = detail_list
         # 人脸id
         self.face_id = face_id
+        # 家长员工id
+        self.guardian_user_id = guardian_user_id
         # 商户id
         self.merchant_id = merchant_id
         # 订单号
@@ -3235,6 +3245,8 @@ class CreateOrderFlowRequest(TeaModel):
                 result['detailList'].append(k.to_map() if k else None)
         if self.face_id is not None:
             result['faceId'] = self.face_id
+        if self.guardian_user_id is not None:
+            result['guardianUserId'] = self.guardian_user_id
         if self.merchant_id is not None:
             result['merchantId'] = self.merchant_id
         if self.order_no is not None:
@@ -3266,6 +3278,8 @@ class CreateOrderFlowRequest(TeaModel):
                 self.detail_list.append(temp_model.from_map(k))
         if m.get('faceId') is not None:
             self.face_id = m.get('faceId')
+        if m.get('guardianUserId') is not None:
+            self.guardian_user_id = m.get('guardianUserId')
         if m.get('merchantId') is not None:
             self.merchant_id = m.get('merchantId')
         if m.get('orderNo') is not None:
