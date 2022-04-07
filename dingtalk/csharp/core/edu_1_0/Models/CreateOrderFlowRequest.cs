@@ -82,6 +82,13 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public string FaceId { get; set; }
 
         /// <summary>
+        /// 家长员工id
+        /// </summary>
+        [NameInMap("guardianUserId")]
+        [Validation(Required=false)]
+        public string GuardianUserId { get; set; }
+
+        /// <summary>
         /// 商户id
         /// </summary>
         [NameInMap("merchantId")]

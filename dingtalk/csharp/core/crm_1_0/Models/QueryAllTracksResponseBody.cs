@@ -45,13 +45,6 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             public string BizId { get; set; }
 
             /// <summary>
-            /// 企业id
-            /// </summary>
-            [NameInMap("corpId")]
-            [Validation(Required=false)]
-            public string CorpId { get; set; }
-
-            /// <summary>
             /// 创建人userId
             /// </summary>
             [NameInMap("creator")]
