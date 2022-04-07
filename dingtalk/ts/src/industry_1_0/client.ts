@@ -7,6 +7,1040 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class CustomizeContactCreateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactCreateRequest extends $tea.Model {
+  managerIdList?: string[];
+  name?: string;
+  order?: number;
+  static names(): { [key: string]: string } {
+    return {
+      managerIdList: 'managerIdList',
+      name: 'name',
+      order: 'order',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      managerIdList: { 'type': 'array', 'itemType': 'string' },
+      name: 'string',
+      order: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactCreateResponseBody extends $tea.Model {
+  content?: CustomizeContactCreateResponseBodyContent;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: CustomizeContactCreateResponseBodyContent,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactCreateResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CustomizeContactCreateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CustomizeContactCreateResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactDeleteHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactDeleteRequest extends $tea.Model {
+  code?: string;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactDeleteResponseBody extends $tea.Model {
+  content?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactDeleteResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CustomizeContactDeleteResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CustomizeContactDeleteResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactDeptCreateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactDeptCreateRequest extends $tea.Model {
+  code?: string;
+  managerIdList?: string[];
+  name?: string;
+  order?: number;
+  parentDeptId?: number;
+  refId?: number;
+  type?: number;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      managerIdList: 'managerIdList',
+      name: 'name',
+      order: 'order',
+      parentDeptId: 'parentDeptId',
+      refId: 'refId',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      managerIdList: { 'type': 'array', 'itemType': 'string' },
+      name: 'string',
+      order: 'number',
+      parentDeptId: 'number',
+      refId: 'number',
+      type: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactDeptCreateResponseBody extends $tea.Model {
+  content?: number;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactDeptCreateResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CustomizeContactDeptCreateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CustomizeContactDeptCreateResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactDeptDeleteHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactDeptDeleteRequest extends $tea.Model {
+  code?: string;
+  deptId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      deptId: 'deptId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      deptId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactDeptDeleteResponseBody extends $tea.Model {
+  content?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactDeptDeleteResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CustomizeContactDeptDeleteResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CustomizeContactDeptDeleteResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactDeptInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactDeptInfoRequest extends $tea.Model {
+  code?: string;
+  deptId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      deptId: 'deptId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      deptId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactDeptInfoResponseBody extends $tea.Model {
+  content?: CustomizeContactDeptInfoResponseBodyContent;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: CustomizeContactDeptInfoResponseBodyContent,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactDeptInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CustomizeContactDeptInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CustomizeContactDeptInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactDeptListHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactDeptListRequest extends $tea.Model {
+  code?: string;
+  deptId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      deptId: 'deptId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      deptId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactDeptListResponseBody extends $tea.Model {
+  content?: CustomizeContactDeptListResponseBodyContent[];
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: { 'type': 'array', 'itemType': CustomizeContactDeptListResponseBodyContent },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactDeptListResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CustomizeContactDeptListResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CustomizeContactDeptListResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactDeptUpdateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactDeptUpdateRequest extends $tea.Model {
+  code?: string;
+  deptId?: number;
+  managerIdList?: string[];
+  name?: string;
+  order?: number;
+  parentDeptId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      deptId: 'deptId',
+      managerIdList: 'managerIdList',
+      name: 'name',
+      order: 'order',
+      parentDeptId: 'parentDeptId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      deptId: 'number',
+      managerIdList: { 'type': 'array', 'itemType': 'string' },
+      name: 'string',
+      order: 'number',
+      parentDeptId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactDeptUpdateResponseBody extends $tea.Model {
+  content?: number;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactDeptUpdateResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CustomizeContactDeptUpdateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CustomizeContactDeptUpdateResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactEmpAddHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactEmpAddRequest extends $tea.Model {
+  code?: string;
+  deptId?: number;
+  userIdList?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      deptId: 'deptId',
+      userIdList: 'userIdList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      deptId: 'number',
+      userIdList: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactEmpAddResponseBody extends $tea.Model {
+  content?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactEmpAddResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CustomizeContactEmpAddResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CustomizeContactEmpAddResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactEmpDeleteHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactEmpDeleteRequest extends $tea.Model {
+  code?: string;
+  deptId?: number;
+  userIdList?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      deptId: 'deptId',
+      userIdList: 'userIdList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      deptId: 'number',
+      userIdList: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactEmpDeleteResponseBody extends $tea.Model {
+  content?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactEmpDeleteResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CustomizeContactEmpDeleteResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CustomizeContactEmpDeleteResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactEmpListHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactEmpListRequest extends $tea.Model {
+  deptId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactEmpListResponseBody extends $tea.Model {
+  content?: CustomizeContactEmpListResponseBodyContent[];
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: { 'type': 'array', 'itemType': CustomizeContactEmpListResponseBodyContent },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactEmpListResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CustomizeContactEmpListResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CustomizeContactEmpListResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactListHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactListResponseBody extends $tea.Model {
+  content?: CustomizeContactListResponseBodyContent[];
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: { 'type': 'array', 'itemType': CustomizeContactListResponseBodyContent },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactListResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CustomizeContactListResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CustomizeContactListResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactUpdateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactUpdateRequest extends $tea.Model {
+  code?: string;
+  managerIdList?: string[];
+  name?: string;
+  order?: number;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      managerIdList: 'managerIdList',
+      name: 'name',
+      order: 'order',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      managerIdList: { 'type': 'array', 'itemType': 'string' },
+      name: 'string',
+      order: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactUpdateResponseBody extends $tea.Model {
+  content?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactUpdateResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CustomizeContactUpdateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CustomizeContactUpdateResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class IndustryManufactureCostRecordListGetHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2420,6 +3454,164 @@ export class UpdateUserExtendInfoResponse extends $tea.Model {
   }
 }
 
+export class CustomizeContactCreateResponseBodyContent extends $tea.Model {
+  code?: string;
+  name?: string;
+  order?: number;
+  rootDeptId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      name: 'name',
+      order: 'order',
+      rootDeptId: 'rootDeptId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      name: 'string',
+      order: 'number',
+      rootDeptId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactDeptInfoResponseBodyContent extends $tea.Model {
+  code?: string;
+  id?: number;
+  managerIdList?: string[];
+  name?: string;
+  order?: number;
+  parentDeptId?: number;
+  refId?: number;
+  type?: number;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      id: 'id',
+      managerIdList: 'managerIdList',
+      name: 'name',
+      order: 'order',
+      parentDeptId: 'parentDeptId',
+      refId: 'refId',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      id: 'number',
+      managerIdList: { 'type': 'array', 'itemType': 'string' },
+      name: 'string',
+      order: 'number',
+      parentDeptId: 'number',
+      refId: 'number',
+      type: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactDeptListResponseBodyContent extends $tea.Model {
+  code?: string;
+  id?: number;
+  managerIdList?: string[];
+  name?: string;
+  order?: number;
+  parentDeptId?: number;
+  refId?: number;
+  type?: number;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      id: 'id',
+      managerIdList: 'managerIdList',
+      name: 'name',
+      order: 'order',
+      parentDeptId: 'parentDeptId',
+      refId: 'refId',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      id: 'number',
+      managerIdList: { 'type': 'array', 'itemType': 'string' },
+      name: 'string',
+      order: 'number',
+      parentDeptId: 'number',
+      refId: 'number',
+      type: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactEmpListResponseBodyContent extends $tea.Model {
+  name?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactListResponseBodyContent extends $tea.Model {
+  code?: string;
+  name?: string;
+  order?: number;
+  rootDeptId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      name: 'name',
+      order: 'order',
+      rootDeptId: 'rootDeptId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      name: 'string',
+      order: 'number',
+      rootDeptId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class IndustryManufactureCostRecordListGetResponseBodyList extends $tea.Model {
   corpId?: string;
   count?: number;
@@ -4006,6 +5198,439 @@ export default class Client extends OpenApi {
 
   }
 
+
+  async customizeContactCreate(request: CustomizeContactCreateRequest): Promise<CustomizeContactCreateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CustomizeContactCreateHeaders({ });
+    return await this.customizeContactCreateWithOptions(request, headers, runtime);
+  }
+
+  async customizeContactCreateWithOptions(request: CustomizeContactCreateRequest, headers: CustomizeContactCreateHeaders, runtime: $Util.RuntimeOptions): Promise<CustomizeContactCreateResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.managerIdList)) {
+      body["managerIdList"] = request.managerIdList;
+    }
+
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.order)) {
+      body["order"] = request.order;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CustomizeContactCreateResponse>(await this.doROARequest("CustomizeContactCreate", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/customizations/contacts`, "json", req, runtime), new CustomizeContactCreateResponse({}));
+  }
+
+  async customizeContactDelete(request: CustomizeContactDeleteRequest): Promise<CustomizeContactDeleteResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CustomizeContactDeleteHeaders({ });
+    return await this.customizeContactDeleteWithOptions(request, headers, runtime);
+  }
+
+  async customizeContactDeleteWithOptions(request: CustomizeContactDeleteRequest, headers: CustomizeContactDeleteHeaders, runtime: $Util.RuntimeOptions): Promise<CustomizeContactDeleteResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.code)) {
+      query["code"] = request.code;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<CustomizeContactDeleteResponse>(await this.doROARequest("CustomizeContactDelete", "industry_1.0", "HTTP", "DELETE", "AK", `/v1.0/industry/customizations/contacts`, "json", req, runtime), new CustomizeContactDeleteResponse({}));
+  }
+
+  async customizeContactDeptCreate(request: CustomizeContactDeptCreateRequest): Promise<CustomizeContactDeptCreateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CustomizeContactDeptCreateHeaders({ });
+    return await this.customizeContactDeptCreateWithOptions(request, headers, runtime);
+  }
+
+  async customizeContactDeptCreateWithOptions(request: CustomizeContactDeptCreateRequest, headers: CustomizeContactDeptCreateHeaders, runtime: $Util.RuntimeOptions): Promise<CustomizeContactDeptCreateResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.code)) {
+      body["code"] = request.code;
+    }
+
+    if (!Util.isUnset(request.managerIdList)) {
+      body["managerIdList"] = request.managerIdList;
+    }
+
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.order)) {
+      body["order"] = request.order;
+    }
+
+    if (!Util.isUnset(request.parentDeptId)) {
+      body["parentDeptId"] = request.parentDeptId;
+    }
+
+    if (!Util.isUnset(request.refId)) {
+      body["refId"] = request.refId;
+    }
+
+    if (!Util.isUnset(request.type)) {
+      body["type"] = request.type;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CustomizeContactDeptCreateResponse>(await this.doROARequest("CustomizeContactDeptCreate", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/customizations/departments`, "json", req, runtime), new CustomizeContactDeptCreateResponse({}));
+  }
+
+  async customizeContactDeptDelete(request: CustomizeContactDeptDeleteRequest): Promise<CustomizeContactDeptDeleteResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CustomizeContactDeptDeleteHeaders({ });
+    return await this.customizeContactDeptDeleteWithOptions(request, headers, runtime);
+  }
+
+  async customizeContactDeptDeleteWithOptions(request: CustomizeContactDeptDeleteRequest, headers: CustomizeContactDeptDeleteHeaders, runtime: $Util.RuntimeOptions): Promise<CustomizeContactDeptDeleteResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.code)) {
+      query["code"] = request.code;
+    }
+
+    if (!Util.isUnset(request.deptId)) {
+      query["deptId"] = request.deptId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<CustomizeContactDeptDeleteResponse>(await this.doROARequest("CustomizeContactDeptDelete", "industry_1.0", "HTTP", "DELETE", "AK", `/v1.0/industry/customizations/departments`, "json", req, runtime), new CustomizeContactDeptDeleteResponse({}));
+  }
+
+  async customizeContactDeptInfo(request: CustomizeContactDeptInfoRequest): Promise<CustomizeContactDeptInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CustomizeContactDeptInfoHeaders({ });
+    return await this.customizeContactDeptInfoWithOptions(request, headers, runtime);
+  }
+
+  async customizeContactDeptInfoWithOptions(request: CustomizeContactDeptInfoRequest, headers: CustomizeContactDeptInfoHeaders, runtime: $Util.RuntimeOptions): Promise<CustomizeContactDeptInfoResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.code)) {
+      query["code"] = request.code;
+    }
+
+    if (!Util.isUnset(request.deptId)) {
+      query["deptId"] = request.deptId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<CustomizeContactDeptInfoResponse>(await this.doROARequest("CustomizeContactDeptInfo", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/customizations/departments`, "json", req, runtime), new CustomizeContactDeptInfoResponse({}));
+  }
+
+  async customizeContactDeptList(request: CustomizeContactDeptListRequest): Promise<CustomizeContactDeptListResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CustomizeContactDeptListHeaders({ });
+    return await this.customizeContactDeptListWithOptions(request, headers, runtime);
+  }
+
+  async customizeContactDeptListWithOptions(request: CustomizeContactDeptListRequest, headers: CustomizeContactDeptListHeaders, runtime: $Util.RuntimeOptions): Promise<CustomizeContactDeptListResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.code)) {
+      query["code"] = request.code;
+    }
+
+    if (!Util.isUnset(request.deptId)) {
+      query["deptId"] = request.deptId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<CustomizeContactDeptListResponse>(await this.doROARequest("CustomizeContactDeptList", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/customizations/subsidiaryDepartments`, "json", req, runtime), new CustomizeContactDeptListResponse({}));
+  }
+
+  async customizeContactDeptUpdate(request: CustomizeContactDeptUpdateRequest): Promise<CustomizeContactDeptUpdateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CustomizeContactDeptUpdateHeaders({ });
+    return await this.customizeContactDeptUpdateWithOptions(request, headers, runtime);
+  }
+
+  async customizeContactDeptUpdateWithOptions(request: CustomizeContactDeptUpdateRequest, headers: CustomizeContactDeptUpdateHeaders, runtime: $Util.RuntimeOptions): Promise<CustomizeContactDeptUpdateResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.code)) {
+      body["code"] = request.code;
+    }
+
+    if (!Util.isUnset(request.deptId)) {
+      body["deptId"] = request.deptId;
+    }
+
+    if (!Util.isUnset(request.managerIdList)) {
+      body["managerIdList"] = request.managerIdList;
+    }
+
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.order)) {
+      body["order"] = request.order;
+    }
+
+    if (!Util.isUnset(request.parentDeptId)) {
+      body["parentDeptId"] = request.parentDeptId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CustomizeContactDeptUpdateResponse>(await this.doROARequest("CustomizeContactDeptUpdate", "industry_1.0", "HTTP", "PUT", "AK", `/v1.0/industry/customizations/departments`, "json", req, runtime), new CustomizeContactDeptUpdateResponse({}));
+  }
+
+  async customizeContactEmpAdd(request: CustomizeContactEmpAddRequest): Promise<CustomizeContactEmpAddResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CustomizeContactEmpAddHeaders({ });
+    return await this.customizeContactEmpAddWithOptions(request, headers, runtime);
+  }
+
+  async customizeContactEmpAddWithOptions(request: CustomizeContactEmpAddRequest, headers: CustomizeContactEmpAddHeaders, runtime: $Util.RuntimeOptions): Promise<CustomizeContactEmpAddResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.code)) {
+      body["code"] = request.code;
+    }
+
+    if (!Util.isUnset(request.deptId)) {
+      body["deptId"] = request.deptId;
+    }
+
+    if (!Util.isUnset(request.userIdList)) {
+      body["userIdList"] = request.userIdList;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CustomizeContactEmpAddResponse>(await this.doROARequest("CustomizeContactEmpAdd", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/customizations/users`, "json", req, runtime), new CustomizeContactEmpAddResponse({}));
+  }
+
+  async customizeContactEmpDelete(request: CustomizeContactEmpDeleteRequest): Promise<CustomizeContactEmpDeleteResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CustomizeContactEmpDeleteHeaders({ });
+    return await this.customizeContactEmpDeleteWithOptions(request, headers, runtime);
+  }
+
+  async customizeContactEmpDeleteWithOptions(request: CustomizeContactEmpDeleteRequest, headers: CustomizeContactEmpDeleteHeaders, runtime: $Util.RuntimeOptions): Promise<CustomizeContactEmpDeleteResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.code)) {
+      body["code"] = request.code;
+    }
+
+    if (!Util.isUnset(request.deptId)) {
+      body["deptId"] = request.deptId;
+    }
+
+    if (!Util.isUnset(request.userIdList)) {
+      body["userIdList"] = request.userIdList;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CustomizeContactEmpDeleteResponse>(await this.doROARequest("CustomizeContactEmpDelete", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/customizations/users/remove`, "json", req, runtime), new CustomizeContactEmpDeleteResponse({}));
+  }
+
+  async customizeContactEmpList(request: CustomizeContactEmpListRequest): Promise<CustomizeContactEmpListResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CustomizeContactEmpListHeaders({ });
+    return await this.customizeContactEmpListWithOptions(request, headers, runtime);
+  }
+
+  async customizeContactEmpListWithOptions(request: CustomizeContactEmpListRequest, headers: CustomizeContactEmpListHeaders, runtime: $Util.RuntimeOptions): Promise<CustomizeContactEmpListResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deptId)) {
+      query["deptId"] = request.deptId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<CustomizeContactEmpListResponse>(await this.doROARequest("CustomizeContactEmpList", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/customizations/users`, "json", req, runtime), new CustomizeContactEmpListResponse({}));
+  }
+
+  async customizeContactList(): Promise<CustomizeContactListResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CustomizeContactListHeaders({ });
+    return await this.customizeContactListWithOptions(headers, runtime);
+  }
+
+  async customizeContactListWithOptions(headers: CustomizeContactListHeaders, runtime: $Util.RuntimeOptions): Promise<CustomizeContactListResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<CustomizeContactListResponse>(await this.doROARequest("CustomizeContactList", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/customizations/contacts`, "json", req, runtime), new CustomizeContactListResponse({}));
+  }
+
+  async customizeContactUpdate(request: CustomizeContactUpdateRequest): Promise<CustomizeContactUpdateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CustomizeContactUpdateHeaders({ });
+    return await this.customizeContactUpdateWithOptions(request, headers, runtime);
+  }
+
+  async customizeContactUpdateWithOptions(request: CustomizeContactUpdateRequest, headers: CustomizeContactUpdateHeaders, runtime: $Util.RuntimeOptions): Promise<CustomizeContactUpdateResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.code)) {
+      body["code"] = request.code;
+    }
+
+    if (!Util.isUnset(request.managerIdList)) {
+      body["managerIdList"] = request.managerIdList;
+    }
+
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.order)) {
+      body["order"] = request.order;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CustomizeContactUpdateResponse>(await this.doROARequest("CustomizeContactUpdate", "industry_1.0", "HTTP", "PUT", "AK", `/v1.0/industry/customizations/contacts`, "json", req, runtime), new CustomizeContactUpdateResponse({}));
+  }
 
   async industryManufactureCostRecordListGet(request: IndustryManufactureCostRecordListGetRequest): Promise<IndustryManufactureCostRecordListGetResponse> {
     let runtime = new $Util.RuntimeOptions({ });

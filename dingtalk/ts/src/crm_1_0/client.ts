@@ -7383,7 +7383,6 @@ export class QueryAllCustomerResponseBodyResult extends $tea.Model {
 
 export class QueryAllTracksResponseBodyValues extends $tea.Model {
   bizId?: string;
-  corpId?: string;
   creator?: string;
   customerId?: string;
   gmtCreate?: number;
@@ -7393,7 +7392,6 @@ export class QueryAllTracksResponseBodyValues extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       bizId: 'bizId',
-      corpId: 'corpId',
       creator: 'creator',
       customerId: 'customerId',
       gmtCreate: 'gmtCreate',
@@ -7406,7 +7404,6 @@ export class QueryAllTracksResponseBodyValues extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       bizId: 'string',
-      corpId: 'string',
       creator: 'string',
       customerId: 'string',
       gmtCreate: 'number',

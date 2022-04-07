@@ -1146,6 +1146,7 @@ export class CreateItemRequest extends $tea.Model {
   price?: number;
   scene?: number;
   startTime?: number;
+  status?: number;
   type?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1159,6 +1160,7 @@ export class CreateItemRequest extends $tea.Model {
       price: 'price',
       scene: 'scene',
       startTime: 'startTime',
+      status: 'status',
       type: 'type',
     };
   }
@@ -1175,6 +1177,7 @@ export class CreateItemRequest extends $tea.Model {
       price: 'number',
       scene: 'number',
       startTime: 'number',
+      status: 'number',
       type: 'number',
     };
   }
@@ -1377,6 +1380,7 @@ export class CreateOrderFlowRequest extends $tea.Model {
   createTime?: number;
   detailList?: CreateOrderFlowRequestDetailList[];
   faceId?: string;
+  guardianUserId?: string;
   merchantId?: string;
   orderNo?: string;
   signature?: string;
@@ -1391,6 +1395,7 @@ export class CreateOrderFlowRequest extends $tea.Model {
       createTime: 'createTime',
       detailList: 'detailList',
       faceId: 'faceId',
+      guardianUserId: 'guardianUserId',
       merchantId: 'merchantId',
       orderNo: 'orderNo',
       signature: 'signature',
@@ -1408,6 +1413,7 @@ export class CreateOrderFlowRequest extends $tea.Model {
       createTime: 'number',
       detailList: { 'type': 'array', 'itemType': CreateOrderFlowRequestDetailList },
       faceId: 'string',
+      guardianUserId: 'string',
       merchantId: 'string',
       orderNo: 'string',
       signature: 'string',
@@ -11716,6 +11722,10 @@ export default class Client extends OpenApi {
       body["startTime"] = request.startTime;
     }
 
+    if (!Util.isUnset(request.status)) {
+      body["status"] = request.status;
+    }
+
     if (!Util.isUnset(request.type)) {
       body["type"] = request.type;
     }
@@ -11836,6 +11846,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.faceId)) {
       body["faceId"] = request.faceId;
+    }
+
+    if (!Util.isUnset(request.guardianUserId)) {
+      body["guardianUserId"] = request.guardianUserId;
     }
 
     if (!Util.isUnset(request.merchantId)) {
