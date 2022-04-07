@@ -21,6 +21,439 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    public CustomizeContactCreateResponse customizeContactCreate(CustomizeContactCreateRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        CustomizeContactCreateHeaders headers = new CustomizeContactCreateHeaders();
+        return this.customizeContactCreateWithOptions(request, headers, runtime);
+    }
+
+    public CustomizeContactCreateResponse customizeContactCreateWithOptions(CustomizeContactCreateRequest request, CustomizeContactCreateHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.managerIdList)) {
+            body.put("managerIdList", request.managerIdList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
+            body.put("name", request.name);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.order)) {
+            body.put("order", request.order);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("CustomizeContactCreate", "industry_1.0", "HTTP", "POST", "AK", "/v1.0/industry/customizations/contacts", "json", req, runtime), new CustomizeContactCreateResponse());
+    }
+
+    public CustomizeContactDeleteResponse customizeContactDelete(CustomizeContactDeleteRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        CustomizeContactDeleteHeaders headers = new CustomizeContactDeleteHeaders();
+        return this.customizeContactDeleteWithOptions(request, headers, runtime);
+    }
+
+    public CustomizeContactDeleteResponse customizeContactDeleteWithOptions(CustomizeContactDeleteRequest request, CustomizeContactDeleteHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.code)) {
+            query.put("code", request.code);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("CustomizeContactDelete", "industry_1.0", "HTTP", "DELETE", "AK", "/v1.0/industry/customizations/contacts", "json", req, runtime), new CustomizeContactDeleteResponse());
+    }
+
+    public CustomizeContactDeptCreateResponse customizeContactDeptCreate(CustomizeContactDeptCreateRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        CustomizeContactDeptCreateHeaders headers = new CustomizeContactDeptCreateHeaders();
+        return this.customizeContactDeptCreateWithOptions(request, headers, runtime);
+    }
+
+    public CustomizeContactDeptCreateResponse customizeContactDeptCreateWithOptions(CustomizeContactDeptCreateRequest request, CustomizeContactDeptCreateHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.code)) {
+            body.put("code", request.code);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.managerIdList)) {
+            body.put("managerIdList", request.managerIdList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
+            body.put("name", request.name);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.order)) {
+            body.put("order", request.order);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.parentDeptId)) {
+            body.put("parentDeptId", request.parentDeptId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.refId)) {
+            body.put("refId", request.refId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.type)) {
+            body.put("type", request.type);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("CustomizeContactDeptCreate", "industry_1.0", "HTTP", "POST", "AK", "/v1.0/industry/customizations/departments", "json", req, runtime), new CustomizeContactDeptCreateResponse());
+    }
+
+    public CustomizeContactDeptDeleteResponse customizeContactDeptDelete(CustomizeContactDeptDeleteRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        CustomizeContactDeptDeleteHeaders headers = new CustomizeContactDeptDeleteHeaders();
+        return this.customizeContactDeptDeleteWithOptions(request, headers, runtime);
+    }
+
+    public CustomizeContactDeptDeleteResponse customizeContactDeptDeleteWithOptions(CustomizeContactDeptDeleteRequest request, CustomizeContactDeptDeleteHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.code)) {
+            query.put("code", request.code);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deptId)) {
+            query.put("deptId", request.deptId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("CustomizeContactDeptDelete", "industry_1.0", "HTTP", "DELETE", "AK", "/v1.0/industry/customizations/departments", "json", req, runtime), new CustomizeContactDeptDeleteResponse());
+    }
+
+    public CustomizeContactDeptInfoResponse customizeContactDeptInfo(CustomizeContactDeptInfoRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        CustomizeContactDeptInfoHeaders headers = new CustomizeContactDeptInfoHeaders();
+        return this.customizeContactDeptInfoWithOptions(request, headers, runtime);
+    }
+
+    public CustomizeContactDeptInfoResponse customizeContactDeptInfoWithOptions(CustomizeContactDeptInfoRequest request, CustomizeContactDeptInfoHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.code)) {
+            query.put("code", request.code);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deptId)) {
+            query.put("deptId", request.deptId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("CustomizeContactDeptInfo", "industry_1.0", "HTTP", "GET", "AK", "/v1.0/industry/customizations/departments", "json", req, runtime), new CustomizeContactDeptInfoResponse());
+    }
+
+    public CustomizeContactDeptListResponse customizeContactDeptList(CustomizeContactDeptListRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        CustomizeContactDeptListHeaders headers = new CustomizeContactDeptListHeaders();
+        return this.customizeContactDeptListWithOptions(request, headers, runtime);
+    }
+
+    public CustomizeContactDeptListResponse customizeContactDeptListWithOptions(CustomizeContactDeptListRequest request, CustomizeContactDeptListHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.code)) {
+            query.put("code", request.code);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deptId)) {
+            query.put("deptId", request.deptId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("CustomizeContactDeptList", "industry_1.0", "HTTP", "GET", "AK", "/v1.0/industry/customizations/subsidiaryDepartments", "json", req, runtime), new CustomizeContactDeptListResponse());
+    }
+
+    public CustomizeContactDeptUpdateResponse customizeContactDeptUpdate(CustomizeContactDeptUpdateRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        CustomizeContactDeptUpdateHeaders headers = new CustomizeContactDeptUpdateHeaders();
+        return this.customizeContactDeptUpdateWithOptions(request, headers, runtime);
+    }
+
+    public CustomizeContactDeptUpdateResponse customizeContactDeptUpdateWithOptions(CustomizeContactDeptUpdateRequest request, CustomizeContactDeptUpdateHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.code)) {
+            body.put("code", request.code);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deptId)) {
+            body.put("deptId", request.deptId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.managerIdList)) {
+            body.put("managerIdList", request.managerIdList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
+            body.put("name", request.name);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.order)) {
+            body.put("order", request.order);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.parentDeptId)) {
+            body.put("parentDeptId", request.parentDeptId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("CustomizeContactDeptUpdate", "industry_1.0", "HTTP", "PUT", "AK", "/v1.0/industry/customizations/departments", "json", req, runtime), new CustomizeContactDeptUpdateResponse());
+    }
+
+    public CustomizeContactEmpAddResponse customizeContactEmpAdd(CustomizeContactEmpAddRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        CustomizeContactEmpAddHeaders headers = new CustomizeContactEmpAddHeaders();
+        return this.customizeContactEmpAddWithOptions(request, headers, runtime);
+    }
+
+    public CustomizeContactEmpAddResponse customizeContactEmpAddWithOptions(CustomizeContactEmpAddRequest request, CustomizeContactEmpAddHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.code)) {
+            body.put("code", request.code);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deptId)) {
+            body.put("deptId", request.deptId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userIdList)) {
+            body.put("userIdList", request.userIdList);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("CustomizeContactEmpAdd", "industry_1.0", "HTTP", "POST", "AK", "/v1.0/industry/customizations/users", "json", req, runtime), new CustomizeContactEmpAddResponse());
+    }
+
+    public CustomizeContactEmpDeleteResponse customizeContactEmpDelete(CustomizeContactEmpDeleteRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        CustomizeContactEmpDeleteHeaders headers = new CustomizeContactEmpDeleteHeaders();
+        return this.customizeContactEmpDeleteWithOptions(request, headers, runtime);
+    }
+
+    public CustomizeContactEmpDeleteResponse customizeContactEmpDeleteWithOptions(CustomizeContactEmpDeleteRequest request, CustomizeContactEmpDeleteHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.code)) {
+            body.put("code", request.code);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deptId)) {
+            body.put("deptId", request.deptId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userIdList)) {
+            body.put("userIdList", request.userIdList);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("CustomizeContactEmpDelete", "industry_1.0", "HTTP", "POST", "AK", "/v1.0/industry/customizations/users/remove", "json", req, runtime), new CustomizeContactEmpDeleteResponse());
+    }
+
+    public CustomizeContactEmpListResponse customizeContactEmpList(CustomizeContactEmpListRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        CustomizeContactEmpListHeaders headers = new CustomizeContactEmpListHeaders();
+        return this.customizeContactEmpListWithOptions(request, headers, runtime);
+    }
+
+    public CustomizeContactEmpListResponse customizeContactEmpListWithOptions(CustomizeContactEmpListRequest request, CustomizeContactEmpListHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.deptId)) {
+            query.put("deptId", request.deptId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("CustomizeContactEmpList", "industry_1.0", "HTTP", "GET", "AK", "/v1.0/industry/customizations/users", "json", req, runtime), new CustomizeContactEmpListResponse());
+    }
+
+    public CustomizeContactListResponse customizeContactList() throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        CustomizeContactListHeaders headers = new CustomizeContactListHeaders();
+        return this.customizeContactListWithOptions(headers, runtime);
+    }
+
+    public CustomizeContactListResponse customizeContactListWithOptions(CustomizeContactListHeaders headers, RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        return TeaModel.toModel(this.doROARequest("CustomizeContactList", "industry_1.0", "HTTP", "GET", "AK", "/v1.0/industry/customizations/contacts", "json", req, runtime), new CustomizeContactListResponse());
+    }
+
+    public CustomizeContactUpdateResponse customizeContactUpdate(CustomizeContactUpdateRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        CustomizeContactUpdateHeaders headers = new CustomizeContactUpdateHeaders();
+        return this.customizeContactUpdateWithOptions(request, headers, runtime);
+    }
+
+    public CustomizeContactUpdateResponse customizeContactUpdateWithOptions(CustomizeContactUpdateRequest request, CustomizeContactUpdateHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.code)) {
+            body.put("code", request.code);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.managerIdList)) {
+            body.put("managerIdList", request.managerIdList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
+            body.put("name", request.name);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.order)) {
+            body.put("order", request.order);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("CustomizeContactUpdate", "industry_1.0", "HTTP", "PUT", "AK", "/v1.0/industry/customizations/contacts", "json", req, runtime), new CustomizeContactUpdateResponse());
+    }
+
     public IndustryManufactureCostRecordListGetResponse industryManufactureCostRecordListGet(IndustryManufactureCostRecordListGetRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         IndustryManufactureCostRecordListGetHeaders headers = new IndustryManufactureCostRecordListGetHeaders();

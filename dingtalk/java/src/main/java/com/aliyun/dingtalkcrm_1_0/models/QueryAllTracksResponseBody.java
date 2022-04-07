@@ -62,10 +62,6 @@ public class QueryAllTracksResponseBody extends TeaModel {
         @NameInMap("bizId")
         public String bizId;
 
-        // 企业id
-        @NameInMap("corpId")
-        public String corpId;
-
         // 创建人userId
         @NameInMap("creator")
         public String creator;
@@ -101,14 +97,6 @@ public class QueryAllTracksResponseBody extends TeaModel {
         }
         public String getBizId() {
             return this.bizId;
-        }
-
-        public QueryAllTracksResponseBodyValues setCorpId(String corpId) {
-            this.corpId = corpId;
-            return this;
-        }
-        public String getCorpId() {
-            return this.corpId;
         }
 
         public QueryAllTracksResponseBodyValues setCreator(String creator) {

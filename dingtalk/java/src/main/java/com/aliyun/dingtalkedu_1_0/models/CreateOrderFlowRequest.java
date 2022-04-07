@@ -24,6 +24,10 @@ public class CreateOrderFlowRequest extends TeaModel {
     @NameInMap("faceId")
     public String faceId;
 
+    // 家长员工id
+    @NameInMap("guardianUserId")
+    public String guardianUserId;
+
     // 商户id
     @NameInMap("merchantId")
     public String merchantId;
@@ -95,6 +99,14 @@ public class CreateOrderFlowRequest extends TeaModel {
     }
     public String getFaceId() {
         return this.faceId;
+    }
+
+    public CreateOrderFlowRequest setGuardianUserId(String guardianUserId) {
+        this.guardianUserId = guardianUserId;
+        return this;
+    }
+    public String getGuardianUserId() {
+        return this.guardianUserId;
     }
 
     public CreateOrderFlowRequest setMerchantId(String merchantId) {

@@ -34,6 +34,10 @@ public class CreateItemRequest extends TeaModel {
     @NameInMap("startTime")
     public Long startTime;
 
+    // 状态
+    @NameInMap("status")
+    public Integer status;
+
     @NameInMap("type")
     public Long type;
 
@@ -120,6 +124,14 @@ public class CreateItemRequest extends TeaModel {
     }
     public Long getStartTime() {
         return this.startTime;
+    }
+
+    public CreateItemRequest setStatus(Integer status) {
+        this.status = status;
+        return this;
+    }
+    public Integer getStatus() {
+        return this.status;
     }
 
     public CreateItemRequest setType(Long type) {
