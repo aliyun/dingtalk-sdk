@@ -5,6 +5,41 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vindustry_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactCreateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactCreateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactCreateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactDeleteHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactDeleteRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactDeleteResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactDeptCreateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactDeptCreateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactDeptCreateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactDeptDeleteHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactDeptDeleteRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactDeptDeleteResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactDeptInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactDeptInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactDeptInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactDeptListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactDeptListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactDeptListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactDeptUpdateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactDeptUpdateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactDeptUpdateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactEmpAddHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactEmpAddRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactEmpAddResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactEmpDeleteHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactEmpDeleteRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactEmpDeleteResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactEmpListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactEmpListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactEmpListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactUpdateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactUpdateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactUpdateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureCostRecordListGetHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureCostRecordListGetRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureCostRecordListGetResponse;
@@ -90,6 +125,570 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param CustomizeContactCreateRequest $request
+     *
+     * @return CustomizeContactCreateResponse
+     */
+    public function customizeContactCreate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CustomizeContactCreateHeaders([]);
+
+        return $this->customizeContactCreateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CustomizeContactCreateRequest $request
+     * @param CustomizeContactCreateHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return CustomizeContactCreateResponse
+     */
+    public function customizeContactCreateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->managerIdList)) {
+            @$body['managerIdList'] = $request->managerIdList;
+        }
+        if (!Utils::isUnset($request->name)) {
+            @$body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->order)) {
+            @$body['order'] = $request->order;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CustomizeContactCreateResponse::fromMap($this->doROARequest('CustomizeContactCreate', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/customizations/contacts', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CustomizeContactDeleteRequest $request
+     *
+     * @return CustomizeContactDeleteResponse
+     */
+    public function customizeContactDelete($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CustomizeContactDeleteHeaders([]);
+
+        return $this->customizeContactDeleteWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CustomizeContactDeleteRequest $request
+     * @param CustomizeContactDeleteHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return CustomizeContactDeleteResponse
+     */
+    public function customizeContactDeleteWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->code)) {
+            @$query['code'] = $request->code;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return CustomizeContactDeleteResponse::fromMap($this->doROARequest('CustomizeContactDelete', 'industry_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/industry/customizations/contacts', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CustomizeContactDeptCreateRequest $request
+     *
+     * @return CustomizeContactDeptCreateResponse
+     */
+    public function customizeContactDeptCreate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CustomizeContactDeptCreateHeaders([]);
+
+        return $this->customizeContactDeptCreateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CustomizeContactDeptCreateRequest $request
+     * @param CustomizeContactDeptCreateHeaders $headers
+     * @param RuntimeOptions                    $runtime
+     *
+     * @return CustomizeContactDeptCreateResponse
+     */
+    public function customizeContactDeptCreateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->code)) {
+            @$body['code'] = $request->code;
+        }
+        if (!Utils::isUnset($request->managerIdList)) {
+            @$body['managerIdList'] = $request->managerIdList;
+        }
+        if (!Utils::isUnset($request->name)) {
+            @$body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->order)) {
+            @$body['order'] = $request->order;
+        }
+        if (!Utils::isUnset($request->parentDeptId)) {
+            @$body['parentDeptId'] = $request->parentDeptId;
+        }
+        if (!Utils::isUnset($request->refId)) {
+            @$body['refId'] = $request->refId;
+        }
+        if (!Utils::isUnset($request->type)) {
+            @$body['type'] = $request->type;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CustomizeContactDeptCreateResponse::fromMap($this->doROARequest('CustomizeContactDeptCreate', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/customizations/departments', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CustomizeContactDeptDeleteRequest $request
+     *
+     * @return CustomizeContactDeptDeleteResponse
+     */
+    public function customizeContactDeptDelete($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CustomizeContactDeptDeleteHeaders([]);
+
+        return $this->customizeContactDeptDeleteWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CustomizeContactDeptDeleteRequest $request
+     * @param CustomizeContactDeptDeleteHeaders $headers
+     * @param RuntimeOptions                    $runtime
+     *
+     * @return CustomizeContactDeptDeleteResponse
+     */
+    public function customizeContactDeptDeleteWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->code)) {
+            @$query['code'] = $request->code;
+        }
+        if (!Utils::isUnset($request->deptId)) {
+            @$query['deptId'] = $request->deptId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return CustomizeContactDeptDeleteResponse::fromMap($this->doROARequest('CustomizeContactDeptDelete', 'industry_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/industry/customizations/departments', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CustomizeContactDeptInfoRequest $request
+     *
+     * @return CustomizeContactDeptInfoResponse
+     */
+    public function customizeContactDeptInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CustomizeContactDeptInfoHeaders([]);
+
+        return $this->customizeContactDeptInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CustomizeContactDeptInfoRequest $request
+     * @param CustomizeContactDeptInfoHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return CustomizeContactDeptInfoResponse
+     */
+    public function customizeContactDeptInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->code)) {
+            @$query['code'] = $request->code;
+        }
+        if (!Utils::isUnset($request->deptId)) {
+            @$query['deptId'] = $request->deptId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return CustomizeContactDeptInfoResponse::fromMap($this->doROARequest('CustomizeContactDeptInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/customizations/departments', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CustomizeContactDeptListRequest $request
+     *
+     * @return CustomizeContactDeptListResponse
+     */
+    public function customizeContactDeptList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CustomizeContactDeptListHeaders([]);
+
+        return $this->customizeContactDeptListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CustomizeContactDeptListRequest $request
+     * @param CustomizeContactDeptListHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return CustomizeContactDeptListResponse
+     */
+    public function customizeContactDeptListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->code)) {
+            @$query['code'] = $request->code;
+        }
+        if (!Utils::isUnset($request->deptId)) {
+            @$query['deptId'] = $request->deptId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return CustomizeContactDeptListResponse::fromMap($this->doROARequest('CustomizeContactDeptList', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/customizations/subsidiaryDepartments', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CustomizeContactDeptUpdateRequest $request
+     *
+     * @return CustomizeContactDeptUpdateResponse
+     */
+    public function customizeContactDeptUpdate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CustomizeContactDeptUpdateHeaders([]);
+
+        return $this->customizeContactDeptUpdateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CustomizeContactDeptUpdateRequest $request
+     * @param CustomizeContactDeptUpdateHeaders $headers
+     * @param RuntimeOptions                    $runtime
+     *
+     * @return CustomizeContactDeptUpdateResponse
+     */
+    public function customizeContactDeptUpdateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->code)) {
+            @$body['code'] = $request->code;
+        }
+        if (!Utils::isUnset($request->deptId)) {
+            @$body['deptId'] = $request->deptId;
+        }
+        if (!Utils::isUnset($request->managerIdList)) {
+            @$body['managerIdList'] = $request->managerIdList;
+        }
+        if (!Utils::isUnset($request->name)) {
+            @$body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->order)) {
+            @$body['order'] = $request->order;
+        }
+        if (!Utils::isUnset($request->parentDeptId)) {
+            @$body['parentDeptId'] = $request->parentDeptId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CustomizeContactDeptUpdateResponse::fromMap($this->doROARequest('CustomizeContactDeptUpdate', 'industry_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/industry/customizations/departments', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CustomizeContactEmpAddRequest $request
+     *
+     * @return CustomizeContactEmpAddResponse
+     */
+    public function customizeContactEmpAdd($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CustomizeContactEmpAddHeaders([]);
+
+        return $this->customizeContactEmpAddWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CustomizeContactEmpAddRequest $request
+     * @param CustomizeContactEmpAddHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return CustomizeContactEmpAddResponse
+     */
+    public function customizeContactEmpAddWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->code)) {
+            @$body['code'] = $request->code;
+        }
+        if (!Utils::isUnset($request->deptId)) {
+            @$body['deptId'] = $request->deptId;
+        }
+        if (!Utils::isUnset($request->userIdList)) {
+            @$body['userIdList'] = $request->userIdList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CustomizeContactEmpAddResponse::fromMap($this->doROARequest('CustomizeContactEmpAdd', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/customizations/users', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CustomizeContactEmpDeleteRequest $request
+     *
+     * @return CustomizeContactEmpDeleteResponse
+     */
+    public function customizeContactEmpDelete($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CustomizeContactEmpDeleteHeaders([]);
+
+        return $this->customizeContactEmpDeleteWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CustomizeContactEmpDeleteRequest $request
+     * @param CustomizeContactEmpDeleteHeaders $headers
+     * @param RuntimeOptions                   $runtime
+     *
+     * @return CustomizeContactEmpDeleteResponse
+     */
+    public function customizeContactEmpDeleteWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->code)) {
+            @$body['code'] = $request->code;
+        }
+        if (!Utils::isUnset($request->deptId)) {
+            @$body['deptId'] = $request->deptId;
+        }
+        if (!Utils::isUnset($request->userIdList)) {
+            @$body['userIdList'] = $request->userIdList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CustomizeContactEmpDeleteResponse::fromMap($this->doROARequest('CustomizeContactEmpDelete', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/customizations/users/remove', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CustomizeContactEmpListRequest $request
+     *
+     * @return CustomizeContactEmpListResponse
+     */
+    public function customizeContactEmpList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CustomizeContactEmpListHeaders([]);
+
+        return $this->customizeContactEmpListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CustomizeContactEmpListRequest $request
+     * @param CustomizeContactEmpListHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return CustomizeContactEmpListResponse
+     */
+    public function customizeContactEmpListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->deptId)) {
+            @$query['deptId'] = $request->deptId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return CustomizeContactEmpListResponse::fromMap($this->doROARequest('CustomizeContactEmpList', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/customizations/users', 'json', $req, $runtime));
+    }
+
+    /**
+     * @return CustomizeContactListResponse
+     */
+    public function customizeContactList()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CustomizeContactListHeaders([]);
+
+        return $this->customizeContactListWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param CustomizeContactListHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return CustomizeContactListResponse
+     */
+    public function customizeContactListWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return CustomizeContactListResponse::fromMap($this->doROARequest('CustomizeContactList', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/customizations/contacts', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CustomizeContactUpdateRequest $request
+     *
+     * @return CustomizeContactUpdateResponse
+     */
+    public function customizeContactUpdate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CustomizeContactUpdateHeaders([]);
+
+        return $this->customizeContactUpdateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CustomizeContactUpdateRequest $request
+     * @param CustomizeContactUpdateHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return CustomizeContactUpdateResponse
+     */
+    public function customizeContactUpdateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->code)) {
+            @$body['code'] = $request->code;
+        }
+        if (!Utils::isUnset($request->managerIdList)) {
+            @$body['managerIdList'] = $request->managerIdList;
+        }
+        if (!Utils::isUnset($request->name)) {
+            @$body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->order)) {
+            @$body['order'] = $request->order;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CustomizeContactUpdateResponse::fromMap($this->doROARequest('CustomizeContactUpdate', 'industry_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/industry/customizations/contacts', 'json', $req, $runtime));
     }
 
     /**

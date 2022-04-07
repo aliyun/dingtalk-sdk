@@ -945,6 +945,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->startTime)) {
             @$body['startTime'] = $request->startTime;
         }
+        if (!Utils::isUnset($request->status)) {
+            @$body['status'] = $request->status;
+        }
         if (!Utils::isUnset($request->type)) {
             @$body['type'] = $request->type;
         }
@@ -1076,6 +1079,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->faceId)) {
             @$body['faceId'] = $request->faceId;
+        }
+        if (!Utils::isUnset($request->guardianUserId)) {
+            @$body['guardianUserId'] = $request->guardianUserId;
         }
         if (!Utils::isUnset($request->merchantId)) {
             @$body['merchantId'] = $request->merchantId;

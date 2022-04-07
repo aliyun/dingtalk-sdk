@@ -45,6 +45,13 @@ class CreateOrderFlowRequest extends Model
     public $faceId;
 
     /**
+     * @description 家长员工id
+     *
+     * @var string
+     */
+    public $guardianUserId;
+
+    /**
      * @description 商户id
      *
      * @var string
@@ -93,18 +100,19 @@ class CreateOrderFlowRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'actualAmount' => 'actualAmount',
-        'alipayUid'    => 'alipayUid',
-        'createTime'   => 'createTime',
-        'detailList'   => 'detailList',
-        'faceId'       => 'faceId',
-        'merchantId'   => 'merchantId',
-        'orderNo'      => 'orderNo',
-        'signature'    => 'signature',
-        'sn'           => 'sn',
-        'timestamp'    => 'timestamp',
-        'totalAmount'  => 'totalAmount',
-        'userId'       => 'userId',
+        'actualAmount'   => 'actualAmount',
+        'alipayUid'      => 'alipayUid',
+        'createTime'     => 'createTime',
+        'detailList'     => 'detailList',
+        'faceId'         => 'faceId',
+        'guardianUserId' => 'guardianUserId',
+        'merchantId'     => 'merchantId',
+        'orderNo'        => 'orderNo',
+        'signature'      => 'signature',
+        'sn'             => 'sn',
+        'timestamp'      => 'timestamp',
+        'totalAmount'    => 'totalAmount',
+        'userId'         => 'userId',
     ];
 
     public function validate()
@@ -134,6 +142,9 @@ class CreateOrderFlowRequest extends Model
         }
         if (null !== $this->faceId) {
             $res['faceId'] = $this->faceId;
+        }
+        if (null !== $this->guardianUserId) {
+            $res['guardianUserId'] = $this->guardianUserId;
         }
         if (null !== $this->merchantId) {
             $res['merchantId'] = $this->merchantId;
@@ -188,6 +199,9 @@ class CreateOrderFlowRequest extends Model
         }
         if (isset($map['faceId'])) {
             $model->faceId = $map['faceId'];
+        }
+        if (isset($map['guardianUserId'])) {
+            $model->guardianUserId = $map['guardianUserId'];
         }
         if (isset($map['merchantId'])) {
             $model->merchantId = $map['merchantId'];

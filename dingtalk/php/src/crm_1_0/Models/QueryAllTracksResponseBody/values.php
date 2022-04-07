@@ -16,13 +16,6 @@ class values extends Model
     public $bizId;
 
     /**
-     * @description 企业id
-     *
-     * @var string
-     */
-    public $corpId;
-
-    /**
      * @description 创建人userId
      *
      * @var string
@@ -65,7 +58,6 @@ class values extends Model
     public $type;
     protected $_name = [
         'bizId'      => 'bizId',
-        'corpId'     => 'corpId',
         'creator'    => 'creator',
         'customerId' => 'customerId',
         'gmtCreate'  => 'gmtCreate',
@@ -83,9 +75,6 @@ class values extends Model
         $res = [];
         if (null !== $this->bizId) {
             $res['bizId'] = $this->bizId;
-        }
-        if (null !== $this->corpId) {
-            $res['corpId'] = $this->corpId;
         }
         if (null !== $this->creator) {
             $res['creator'] = $this->creator;
@@ -119,9 +108,6 @@ class values extends Model
         $model = new self();
         if (isset($map['bizId'])) {
             $model->bizId = $map['bizId'];
-        }
-        if (isset($map['corpId'])) {
-            $model->corpId = $map['corpId'];
         }
         if (isset($map['creator'])) {
             $model->creator = $map['creator'];

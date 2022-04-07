@@ -59,6 +59,13 @@ class CreateItemRequest extends Model
     public $startTime;
 
     /**
+     * @description 状态
+     *
+     * @var int
+     */
+    public $status;
+
+    /**
      * @var int
      */
     public $type;
@@ -73,6 +80,7 @@ class CreateItemRequest extends Model
         'price'       => 'price',
         'scene'       => 'scene',
         'startTime'   => 'startTime',
+        'status'      => 'status',
         'type'        => 'type',
     ];
 
@@ -112,6 +120,9 @@ class CreateItemRequest extends Model
         }
         if (null !== $this->startTime) {
             $res['startTime'] = $this->startTime;
+        }
+        if (null !== $this->status) {
+            $res['status'] = $this->status;
         }
         if (null !== $this->type) {
             $res['type'] = $this->type;
@@ -157,6 +168,9 @@ class CreateItemRequest extends Model
         }
         if (isset($map['startTime'])) {
             $model->startTime = $map['startTime'];
+        }
+        if (isset($map['status'])) {
+            $model->status = $map['status'];
         }
         if (isset($map['type'])) {
             $model->type = $map['type'];
