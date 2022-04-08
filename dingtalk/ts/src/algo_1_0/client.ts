@@ -328,10 +328,12 @@ export class OkrOpenRecommendRequestCandidateOkrItems extends $tea.Model {
 
 export class OkrOpenRecommendResponseBodyOkrRecommendItemsKrResultRelatedResults extends $tea.Model {
   krId?: string;
+  semanticLevel?: number;
   words?: string[];
   static names(): { [key: string]: string } {
     return {
       krId: 'krId',
+      semanticLevel: 'semanticLevel',
       words: 'words',
     };
   }
@@ -339,6 +341,7 @@ export class OkrOpenRecommendResponseBodyOkrRecommendItemsKrResultRelatedResults
   static types(): { [key: string]: any } {
     return {
       krId: 'string',
+      semanticLevel: 'number',
       words: { 'type': 'array', 'itemType': 'string' },
     };
   }
@@ -350,10 +353,12 @@ export class OkrOpenRecommendResponseBodyOkrRecommendItemsKrResultRelatedResults
 
 export class OkrOpenRecommendResponseBodyOkrRecommendItemsObjectiveRelatedResults extends $tea.Model {
   objectiveId?: string;
+  semanticLevel?: number;
   words?: string[];
   static names(): { [key: string]: string } {
     return {
       objectiveId: 'objectiveId',
+      semanticLevel: 'semanticLevel',
       words: 'words',
     };
   }
@@ -361,6 +366,7 @@ export class OkrOpenRecommendResponseBodyOkrRecommendItemsObjectiveRelatedResult
   static types(): { [key: string]: any } {
     return {
       objectiveId: 'string',
+      semanticLevel: 'number',
       words: { 'type': 'array', 'itemType': 'string' },
     };
   }
@@ -374,12 +380,14 @@ export class OkrOpenRecommendResponseBodyOkrRecommendItems extends $tea.Model {
   krResultRelatedResults?: OkrOpenRecommendResponseBodyOkrRecommendItemsKrResultRelatedResults[];
   objectiveRelatedResults?: OkrOpenRecommendResponseBodyOkrRecommendItemsObjectiveRelatedResults[];
   relatedLevel?: number;
+  semanticLevel?: number;
   userId?: string;
   static names(): { [key: string]: string } {
     return {
       krResultRelatedResults: 'krResultRelatedResults',
       objectiveRelatedResults: 'objectiveRelatedResults',
       relatedLevel: 'relatedLevel',
+      semanticLevel: 'semanticLevel',
       userId: 'userId',
     };
   }
@@ -389,6 +397,7 @@ export class OkrOpenRecommendResponseBodyOkrRecommendItems extends $tea.Model {
       krResultRelatedResults: { 'type': 'array', 'itemType': OkrOpenRecommendResponseBodyOkrRecommendItemsKrResultRelatedResults },
       objectiveRelatedResults: { 'type': 'array', 'itemType': OkrOpenRecommendResponseBodyOkrRecommendItemsObjectiveRelatedResults },
       relatedLevel: 'number',
+      semanticLevel: 'number',
       userId: 'string',
     };
   }
