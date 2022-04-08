@@ -38,6 +38,10 @@ public class OkrOpenRecommendResponseBody extends TeaModel {
         @NameInMap("krId")
         public String krId;
 
+        // semanticLevel
+        @NameInMap("semanticLevel")
+        public Long semanticLevel;
+
         // words
         @NameInMap("words")
         public java.util.List<String> words;
@@ -55,6 +59,14 @@ public class OkrOpenRecommendResponseBody extends TeaModel {
             return this.krId;
         }
 
+        public OkrOpenRecommendResponseBodyOkrRecommendItemsKrResultRelatedResults setSemanticLevel(Long semanticLevel) {
+            this.semanticLevel = semanticLevel;
+            return this;
+        }
+        public Long getSemanticLevel() {
+            return this.semanticLevel;
+        }
+
         public OkrOpenRecommendResponseBodyOkrRecommendItemsKrResultRelatedResults setWords(java.util.List<String> words) {
             this.words = words;
             return this;
@@ -69,6 +81,10 @@ public class OkrOpenRecommendResponseBody extends TeaModel {
         // objectiveId
         @NameInMap("objectiveId")
         public String objectiveId;
+
+        // semanticLevel
+        @NameInMap("semanticLevel")
+        public Long semanticLevel;
 
         // words
         @NameInMap("words")
@@ -85,6 +101,14 @@ public class OkrOpenRecommendResponseBody extends TeaModel {
         }
         public String getObjectiveId() {
             return this.objectiveId;
+        }
+
+        public OkrOpenRecommendResponseBodyOkrRecommendItemsObjectiveRelatedResults setSemanticLevel(Long semanticLevel) {
+            this.semanticLevel = semanticLevel;
+            return this;
+        }
+        public Long getSemanticLevel() {
+            return this.semanticLevel;
         }
 
         public OkrOpenRecommendResponseBodyOkrRecommendItemsObjectiveRelatedResults setWords(java.util.List<String> words) {
@@ -109,6 +133,10 @@ public class OkrOpenRecommendResponseBody extends TeaModel {
         // relatedLevel
         @NameInMap("relatedLevel")
         public Long relatedLevel;
+
+        // semanticLevel
+        @NameInMap("semanticLevel")
+        public Long semanticLevel;
 
         // userId
         @NameInMap("userId")
@@ -141,6 +169,14 @@ public class OkrOpenRecommendResponseBody extends TeaModel {
         }
         public Long getRelatedLevel() {
             return this.relatedLevel;
+        }
+
+        public OkrOpenRecommendResponseBodyOkrRecommendItems setSemanticLevel(Long semanticLevel) {
+            this.semanticLevel = semanticLevel;
+            return this;
+        }
+        public Long getSemanticLevel() {
+            return this.semanticLevel;
         }
 
         public OkrOpenRecommendResponseBodyOkrRecommendItems setUserId(String userId) {
