@@ -16,14 +16,22 @@ class objectiveRelatedResults extends Model
     public $objectiveId;
 
     /**
+     * @description semanticLevel
+     *
+     * @var int
+     */
+    public $semanticLevel;
+
+    /**
      * @description words
      *
      * @var string[]
      */
     public $words;
     protected $_name = [
-        'objectiveId' => 'objectiveId',
-        'words'       => 'words',
+        'objectiveId'   => 'objectiveId',
+        'semanticLevel' => 'semanticLevel',
+        'words'         => 'words',
     ];
 
     public function validate()
@@ -35,6 +43,9 @@ class objectiveRelatedResults extends Model
         $res = [];
         if (null !== $this->objectiveId) {
             $res['objectiveId'] = $this->objectiveId;
+        }
+        if (null !== $this->semanticLevel) {
+            $res['semanticLevel'] = $this->semanticLevel;
         }
         if (null !== $this->words) {
             $res['words'] = $this->words;
@@ -53,6 +64,9 @@ class objectiveRelatedResults extends Model
         $model = new self();
         if (isset($map['objectiveId'])) {
             $model->objectiveId = $map['objectiveId'];
+        }
+        if (isset($map['semanticLevel'])) {
+            $model->semanticLevel = $map['semanticLevel'];
         }
         if (isset($map['words'])) {
             if (!empty($map['words'])) {

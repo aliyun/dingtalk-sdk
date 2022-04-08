@@ -16,14 +16,22 @@ class krResultRelatedResults extends Model
     public $krId;
 
     /**
+     * @description semanticLevel
+     *
+     * @var int
+     */
+    public $semanticLevel;
+
+    /**
      * @description words
      *
      * @var string[]
      */
     public $words;
     protected $_name = [
-        'krId'  => 'krId',
-        'words' => 'words',
+        'krId'          => 'krId',
+        'semanticLevel' => 'semanticLevel',
+        'words'         => 'words',
     ];
 
     public function validate()
@@ -35,6 +43,9 @@ class krResultRelatedResults extends Model
         $res = [];
         if (null !== $this->krId) {
             $res['krId'] = $this->krId;
+        }
+        if (null !== $this->semanticLevel) {
+            $res['semanticLevel'] = $this->semanticLevel;
         }
         if (null !== $this->words) {
             $res['words'] = $this->words;
@@ -53,6 +64,9 @@ class krResultRelatedResults extends Model
         $model = new self();
         if (isset($map['krId'])) {
             $model->krId = $map['krId'];
+        }
+        if (isset($map['semanticLevel'])) {
+            $model->semanticLevel = $map['semanticLevel'];
         }
         if (isset($map['words'])) {
             if (!empty($map['words'])) {

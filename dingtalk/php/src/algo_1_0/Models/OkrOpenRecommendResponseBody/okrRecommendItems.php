@@ -32,6 +32,13 @@ class okrRecommendItems extends Model
     public $relatedLevel;
 
     /**
+     * @description semanticLevel
+     *
+     * @var int
+     */
+    public $semanticLevel;
+
+    /**
      * @description userId
      *
      * @var string
@@ -41,6 +48,7 @@ class okrRecommendItems extends Model
         'krResultRelatedResults'  => 'krResultRelatedResults',
         'objectiveRelatedResults' => 'objectiveRelatedResults',
         'relatedLevel'            => 'relatedLevel',
+        'semanticLevel'           => 'semanticLevel',
         'userId'                  => 'userId',
     ];
 
@@ -71,6 +79,9 @@ class okrRecommendItems extends Model
         }
         if (null !== $this->relatedLevel) {
             $res['relatedLevel'] = $this->relatedLevel;
+        }
+        if (null !== $this->semanticLevel) {
+            $res['semanticLevel'] = $this->semanticLevel;
         }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
@@ -107,6 +118,9 @@ class okrRecommendItems extends Model
         }
         if (isset($map['relatedLevel'])) {
             $model->relatedLevel = $map['relatedLevel'];
+        }
+        if (isset($map['semanticLevel'])) {
+            $model->semanticLevel = $map['semanticLevel'];
         }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];
