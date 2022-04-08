@@ -31,6 +31,13 @@ namespace AlibabaCloud.SDK.Dingtalkalgo_1_0.Models
                 public string KrId { get; set; }
 
                 /// <summary>
+                /// semanticLevel
+                /// </summary>
+                [NameInMap("semanticLevel")]
+                [Validation(Required=false)]
+                public long? SemanticLevel { get; set; }
+
+                /// <summary>
                 /// words
                 /// </summary>
                 [NameInMap("words")]
@@ -54,6 +61,13 @@ namespace AlibabaCloud.SDK.Dingtalkalgo_1_0.Models
                 public string ObjectiveId { get; set; }
 
                 /// <summary>
+                /// semanticLevel
+                /// </summary>
+                [NameInMap("semanticLevel")]
+                [Validation(Required=false)]
+                public long? SemanticLevel { get; set; }
+
+                /// <summary>
                 /// words
                 /// </summary>
                 [NameInMap("words")]
@@ -68,6 +82,13 @@ namespace AlibabaCloud.SDK.Dingtalkalgo_1_0.Models
             [NameInMap("relatedLevel")]
             [Validation(Required=false)]
             public long? RelatedLevel { get; set; }
+
+            /// <summary>
+            /// semanticLevel
+            /// </summary>
+            [NameInMap("semanticLevel")]
+            [Validation(Required=false)]
+            public long? SemanticLevel { get; set; }
 
             /// <summary>
             /// userId
