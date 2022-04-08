@@ -475,10 +475,13 @@ class OkrOpenRecommendResponseBodyOkrRecommendItemsKrResultRelatedResults(TeaMod
     def __init__(
         self,
         kr_id: str = None,
+        semantic_level: int = None,
         words: List[str] = None,
     ):
         # krId
         self.kr_id = kr_id
+        # semanticLevel
+        self.semantic_level = semantic_level
         # words
         self.words = words
 
@@ -493,6 +496,8 @@ class OkrOpenRecommendResponseBodyOkrRecommendItemsKrResultRelatedResults(TeaMod
         result = dict()
         if self.kr_id is not None:
             result['krId'] = self.kr_id
+        if self.semantic_level is not None:
+            result['semanticLevel'] = self.semantic_level
         if self.words is not None:
             result['words'] = self.words
         return result
@@ -501,6 +506,8 @@ class OkrOpenRecommendResponseBodyOkrRecommendItemsKrResultRelatedResults(TeaMod
         m = m or dict()
         if m.get('krId') is not None:
             self.kr_id = m.get('krId')
+        if m.get('semanticLevel') is not None:
+            self.semantic_level = m.get('semanticLevel')
         if m.get('words') is not None:
             self.words = m.get('words')
         return self
@@ -510,10 +517,13 @@ class OkrOpenRecommendResponseBodyOkrRecommendItemsObjectiveRelatedResults(TeaMo
     def __init__(
         self,
         objective_id: str = None,
+        semantic_level: int = None,
         words: List[str] = None,
     ):
         # objectiveId
         self.objective_id = objective_id
+        # semanticLevel
+        self.semantic_level = semantic_level
         # words
         self.words = words
 
@@ -528,6 +538,8 @@ class OkrOpenRecommendResponseBodyOkrRecommendItemsObjectiveRelatedResults(TeaMo
         result = dict()
         if self.objective_id is not None:
             result['objectiveId'] = self.objective_id
+        if self.semantic_level is not None:
+            result['semanticLevel'] = self.semantic_level
         if self.words is not None:
             result['words'] = self.words
         return result
@@ -536,6 +548,8 @@ class OkrOpenRecommendResponseBodyOkrRecommendItemsObjectiveRelatedResults(TeaMo
         m = m or dict()
         if m.get('objectiveId') is not None:
             self.objective_id = m.get('objectiveId')
+        if m.get('semanticLevel') is not None:
+            self.semantic_level = m.get('semanticLevel')
         if m.get('words') is not None:
             self.words = m.get('words')
         return self
@@ -547,6 +561,7 @@ class OkrOpenRecommendResponseBodyOkrRecommendItems(TeaModel):
         kr_result_related_results: List[OkrOpenRecommendResponseBodyOkrRecommendItemsKrResultRelatedResults] = None,
         objective_related_results: List[OkrOpenRecommendResponseBodyOkrRecommendItemsObjectiveRelatedResults] = None,
         related_level: int = None,
+        semantic_level: int = None,
         user_id: str = None,
     ):
         # krResultRelatedResults
@@ -555,6 +570,8 @@ class OkrOpenRecommendResponseBodyOkrRecommendItems(TeaModel):
         self.objective_related_results = objective_related_results
         # relatedLevel
         self.related_level = related_level
+        # semanticLevel
+        self.semantic_level = semantic_level
         # userId
         self.user_id = user_id
 
@@ -584,6 +601,8 @@ class OkrOpenRecommendResponseBodyOkrRecommendItems(TeaModel):
                 result['objectiveRelatedResults'].append(k.to_map() if k else None)
         if self.related_level is not None:
             result['relatedLevel'] = self.related_level
+        if self.semantic_level is not None:
+            result['semanticLevel'] = self.semantic_level
         if self.user_id is not None:
             result['userId'] = self.user_id
         return result
@@ -602,6 +621,8 @@ class OkrOpenRecommendResponseBodyOkrRecommendItems(TeaModel):
                 self.objective_related_results.append(temp_model.from_map(k))
         if m.get('relatedLevel') is not None:
             self.related_level = m.get('relatedLevel')
+        if m.get('semanticLevel') is not None:
+            self.semantic_level = m.get('semanticLevel')
         if m.get('userId') is not None:
             self.user_id = m.get('userId')
         return self
