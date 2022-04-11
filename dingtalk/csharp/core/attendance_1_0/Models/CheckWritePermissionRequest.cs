@@ -37,13 +37,6 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
         [Validation(Required=false)]
         public string ResourceKey { get; set; }
 
-        /// <summary>
-        /// corpId
-        /// </summary>
-        [NameInMap("corpId")]
-        [Validation(Required=false)]
-        public string CorpId { get; set; }
-
     }
 
 }

@@ -26,6 +26,78 @@ namespace AlibabaCloud.SDK.Dingtalkcarbon_1_0
         }
 
 
+        public GetPersonalCarbonInfoResponse GetPersonalCarbonInfo(GetPersonalCarbonInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetPersonalCarbonInfoHeaders headers = new GetPersonalCarbonInfoHeaders();
+            return GetPersonalCarbonInfoWithOptions(request, headers, runtime);
+        }
+
+        public async Task<GetPersonalCarbonInfoResponse> GetPersonalCarbonInfoAsync(GetPersonalCarbonInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetPersonalCarbonInfoHeaders headers = new GetPersonalCarbonInfoHeaders();
+            return await GetPersonalCarbonInfoWithOptionsAsync(request, headers, runtime);
+        }
+
+        public GetPersonalCarbonInfoResponse GetPersonalCarbonInfoWithOptions(GetPersonalCarbonInfoRequest request, GetPersonalCarbonInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ActionType))
+            {
+                query["actionType"] = request.ActionType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<GetPersonalCarbonInfoResponse>(DoROARequest("GetPersonalCarbonInfo", "carbon_1.0", "HTTP", "GET", "AK", "/v1.0/carbon/personals/infos", "json", req, runtime));
+        }
+
+        public async Task<GetPersonalCarbonInfoResponse> GetPersonalCarbonInfoWithOptionsAsync(GetPersonalCarbonInfoRequest request, GetPersonalCarbonInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ActionType))
+            {
+                query["actionType"] = request.ActionType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<GetPersonalCarbonInfoResponse>(await DoROARequestAsync("GetPersonalCarbonInfo", "carbon_1.0", "HTTP", "GET", "AK", "/v1.0/carbon/personals/infos", "json", req, runtime));
+        }
+
         public WriteAlibabaOrgCarbonResponse WriteAlibabaOrgCarbon(WriteAlibabaOrgCarbonRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
