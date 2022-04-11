@@ -21,6 +21,39 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    public GetPersonalCarbonInfoResponse getPersonalCarbonInfo(GetPersonalCarbonInfoRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        GetPersonalCarbonInfoHeaders headers = new GetPersonalCarbonInfoHeaders();
+        return this.getPersonalCarbonInfoWithOptions(request, headers, runtime);
+    }
+
+    public GetPersonalCarbonInfoResponse getPersonalCarbonInfoWithOptions(GetPersonalCarbonInfoRequest request, GetPersonalCarbonInfoHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.actionType)) {
+            query.put("actionType", request.actionType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            query.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("GetPersonalCarbonInfo", "carbon_1.0", "HTTP", "GET", "AK", "/v1.0/carbon/personals/infos", "json", req, runtime), new GetPersonalCarbonInfoResponse());
+    }
+
     public WriteAlibabaOrgCarbonResponse writeAlibabaOrgCarbon(WriteAlibabaOrgCarbonRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         WriteAlibabaOrgCarbonHeaders headers = new WriteAlibabaOrgCarbonHeaders();

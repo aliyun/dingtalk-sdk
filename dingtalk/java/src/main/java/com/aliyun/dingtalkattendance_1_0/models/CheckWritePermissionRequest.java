@@ -20,10 +20,6 @@ public class CheckWritePermissionRequest extends TeaModel {
     @NameInMap("resourceKey")
     public String resourceKey;
 
-    // corpId
-    @NameInMap("corpId")
-    public String corpId;
-
     public static CheckWritePermissionRequest build(java.util.Map<String, ?> map) throws Exception {
         CheckWritePermissionRequest self = new CheckWritePermissionRequest();
         return TeaModel.build(map, self);
@@ -59,14 +55,6 @@ public class CheckWritePermissionRequest extends TeaModel {
     }
     public String getResourceKey() {
         return this.resourceKey;
-    }
-
-    public CheckWritePermissionRequest setCorpId(String corpId) {
-        this.corpId = corpId;
-        return this;
-    }
-    public String getCorpId() {
-        return this.corpId;
     }
 
 }
