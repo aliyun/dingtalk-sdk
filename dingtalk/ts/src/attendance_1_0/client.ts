@@ -395,14 +395,12 @@ export class CheckWritePermissionRequest extends $tea.Model {
   entityIds?: number[];
   opUserId?: string;
   resourceKey?: string;
-  corpId?: string;
   static names(): { [key: string]: string } {
     return {
       category: 'category',
       entityIds: 'entityIds',
       opUserId: 'opUserId',
       resourceKey: 'resourceKey',
-      corpId: 'corpId',
     };
   }
 
@@ -412,7 +410,6 @@ export class CheckWritePermissionRequest extends $tea.Model {
       entityIds: { 'type': 'array', 'itemType': 'number' },
       opUserId: 'string',
       resourceKey: 'string',
-      corpId: 'string',
     };
   }
 
@@ -1977,11 +1974,6 @@ export default class Client extends OpenApi {
 
   async checkWritePermissionWithOptions(request: CheckWritePermissionRequest, headers: CheckWritePermissionHeaders, runtime: $Util.RuntimeOptions): Promise<CheckWritePermissionResponse> {
     Util.validateModel(request);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.corpId)) {
-      query["corpId"] = request.corpId;
-    }
-
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.category)) {
       body["category"] = request.category;
@@ -2010,7 +2002,6 @@ export default class Client extends OpenApi {
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
-      query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<CheckWritePermissionResponse>(await this.doROARequest("CheckWritePermission", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/writePermissions/query`, "json", req, runtime), new CheckWritePermissionResponse({}));
