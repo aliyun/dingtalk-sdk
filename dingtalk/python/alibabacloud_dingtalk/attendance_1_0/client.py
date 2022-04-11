@@ -330,9 +330,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkattendance__1__0_models.CheckWritePermissionResponse:
         UtilClient.validate_model(request)
-        query = {}
-        if not UtilClient.is_unset(request.corp_id):
-            query['corpId'] = request.corp_id
         body = {}
         if not UtilClient.is_unset(request.category):
             body['category'] = request.category
@@ -349,7 +346,6 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
         return TeaCore.from_map(
@@ -364,9 +360,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkattendance__1__0_models.CheckWritePermissionResponse:
         UtilClient.validate_model(request)
-        query = {}
-        if not UtilClient.is_unset(request.corp_id):
-            query['corpId'] = request.corp_id
         body = {}
         if not UtilClient.is_unset(request.category):
             body['category'] = request.category
@@ -383,7 +376,6 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
         return TeaCore.from_map(

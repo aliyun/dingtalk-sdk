@@ -914,7 +914,6 @@ class CheckWritePermissionRequest(TeaModel):
         entity_ids: List[int] = None,
         op_user_id: str = None,
         resource_key: str = None,
-        corp_id: str = None,
     ):
         # category
         self.category = category
@@ -924,8 +923,6 @@ class CheckWritePermissionRequest(TeaModel):
         self.op_user_id = op_user_id
         # resourceKey
         self.resource_key = resource_key
-        # corpId
-        self.corp_id = corp_id
 
     def validate(self):
         pass
@@ -944,8 +941,6 @@ class CheckWritePermissionRequest(TeaModel):
             result['opUserId'] = self.op_user_id
         if self.resource_key is not None:
             result['resourceKey'] = self.resource_key
-        if self.corp_id is not None:
-            result['corpId'] = self.corp_id
         return result
 
     def from_map(self, m: dict = None):
@@ -958,8 +953,6 @@ class CheckWritePermissionRequest(TeaModel):
             self.op_user_id = m.get('opUserId')
         if m.get('resourceKey') is not None:
             self.resource_key = m.get('resourceKey')
-        if m.get('corpId') is not None:
-            self.corp_id = m.get('corpId')
         return self
 
 

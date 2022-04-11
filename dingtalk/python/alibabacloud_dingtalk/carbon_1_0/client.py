@@ -23,6 +23,74 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def get_personal_carbon_info(
+        self,
+        request: dingtalkcarbon__1__0_models.GetPersonalCarbonInfoRequest,
+    ) -> dingtalkcarbon__1__0_models.GetPersonalCarbonInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcarbon__1__0_models.GetPersonalCarbonInfoHeaders()
+        return self.get_personal_carbon_info_with_options(request, headers, runtime)
+
+    async def get_personal_carbon_info_async(
+        self,
+        request: dingtalkcarbon__1__0_models.GetPersonalCarbonInfoRequest,
+    ) -> dingtalkcarbon__1__0_models.GetPersonalCarbonInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcarbon__1__0_models.GetPersonalCarbonInfoHeaders()
+        return await self.get_personal_carbon_info_with_options_async(request, headers, runtime)
+
+    def get_personal_carbon_info_with_options(
+        self,
+        request: dingtalkcarbon__1__0_models.GetPersonalCarbonInfoRequest,
+        headers: dingtalkcarbon__1__0_models.GetPersonalCarbonInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcarbon__1__0_models.GetPersonalCarbonInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.action_type):
+            query['actionType'] = request.action_type
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcarbon__1__0_models.GetPersonalCarbonInfoResponse(),
+            self.do_roarequest('GetPersonalCarbonInfo', 'carbon_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/carbon/personals/infos', 'json', req, runtime)
+        )
+
+    async def get_personal_carbon_info_with_options_async(
+        self,
+        request: dingtalkcarbon__1__0_models.GetPersonalCarbonInfoRequest,
+        headers: dingtalkcarbon__1__0_models.GetPersonalCarbonInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcarbon__1__0_models.GetPersonalCarbonInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.action_type):
+            query['actionType'] = request.action_type
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcarbon__1__0_models.GetPersonalCarbonInfoResponse(),
+            await self.do_roarequest_async('GetPersonalCarbonInfo', 'carbon_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/carbon/personals/infos', 'json', req, runtime)
+        )
+
     def write_alibaba_org_carbon(
         self,
         request: dingtalkcarbon__1__0_models.WriteAlibabaOrgCarbonRequest,
