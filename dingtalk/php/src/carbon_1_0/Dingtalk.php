@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vcarbon_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vcarbon_1_0\Models\GetPersonalCarbonInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcarbon_1_0\Models\GetPersonalCarbonInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcarbon_1_0\Models\GetPersonalCarbonInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcarbon_1_0\Models\WriteAlibabaOrgCarbonHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcarbon_1_0\Models\WriteAlibabaOrgCarbonRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcarbon_1_0\Models\WriteAlibabaOrgCarbonResponse;
@@ -34,6 +37,51 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param GetPersonalCarbonInfoRequest $request
+     *
+     * @return GetPersonalCarbonInfoResponse
+     */
+    public function getPersonalCarbonInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetPersonalCarbonInfoHeaders([]);
+
+        return $this->getPersonalCarbonInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetPersonalCarbonInfoRequest $request
+     * @param GetPersonalCarbonInfoHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return GetPersonalCarbonInfoResponse
+     */
+    public function getPersonalCarbonInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->actionType)) {
+            @$query['actionType'] = $request->actionType;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            @$query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetPersonalCarbonInfoResponse::fromMap($this->doROARequest('GetPersonalCarbonInfo', 'carbon_1.0', 'HTTP', 'GET', 'AK', '/v1.0/carbon/personals/infos', 'json', $req, $runtime));
     }
 
     /**

@@ -271,10 +271,6 @@ class Dingtalk extends OpenApiClient
     public function checkWritePermissionWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->corpId)) {
-            @$query['corpId'] = $request->corpId;
-        }
         $body = [];
         if (!Utils::isUnset($request->category)) {
             @$body['category'] = $request->category;
@@ -297,7 +293,6 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 

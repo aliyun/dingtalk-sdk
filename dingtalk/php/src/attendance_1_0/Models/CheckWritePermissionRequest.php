@@ -35,19 +35,11 @@ class CheckWritePermissionRequest extends Model
      * @var string
      */
     public $resourceKey;
-
-    /**
-     * @description corpId
-     *
-     * @var string
-     */
-    public $corpId;
     protected $_name = [
         'category'    => 'category',
         'entityIds'   => 'entityIds',
         'opUserId'    => 'opUserId',
         'resourceKey' => 'resourceKey',
-        'corpId'      => 'corpId',
     ];
 
     public function validate()
@@ -68,9 +60,6 @@ class CheckWritePermissionRequest extends Model
         }
         if (null !== $this->resourceKey) {
             $res['resourceKey'] = $this->resourceKey;
-        }
-        if (null !== $this->corpId) {
-            $res['corpId'] = $this->corpId;
         }
 
         return $res;
@@ -97,9 +86,6 @@ class CheckWritePermissionRequest extends Model
         }
         if (isset($map['resourceKey'])) {
             $model->resourceKey = $map['resourceKey'];
-        }
-        if (isset($map['corpId'])) {
-            $model->corpId = $map['corpId'];
         }
 
         return $model;
