@@ -1216,15 +1216,18 @@ export class DeleteCrmPersonalCustomerHeaders extends $tea.Model {
 
 export class DeleteCrmPersonalCustomerRequest extends $tea.Model {
   currentOperatorUserId?: string;
+  relationType?: string;
   static names(): { [key: string]: string } {
     return {
       currentOperatorUserId: 'currentOperatorUserId',
+      relationType: 'relationType',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       currentOperatorUserId: 'string',
+      relationType: 'string',
     };
   }
 
@@ -1827,18 +1830,15 @@ export class GetCrmRolePermissionHeaders extends $tea.Model {
 
 export class GetCrmRolePermissionRequest extends $tea.Model {
   bizType?: string;
-  formCode?: string;
   static names(): { [key: string]: string } {
     return {
       bizType: 'bizType',
-      formCode: 'formCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       bizType: 'string',
-      formCode: 'string',
     };
   }
 
@@ -2570,10 +2570,12 @@ export class ListCrmPersonalCustomersHeaders extends $tea.Model {
 export class ListCrmPersonalCustomersRequest extends $tea.Model {
   body?: string[];
   currentOperatorUserId?: string;
+  relationType?: string;
   static names(): { [key: string]: string } {
     return {
       body: 'body',
       currentOperatorUserId: 'currentOperatorUserId',
+      relationType: 'relationType',
     };
   }
 
@@ -2581,6 +2583,7 @@ export class ListCrmPersonalCustomersRequest extends $tea.Model {
     return {
       body: { 'type': 'array', 'itemType': 'string' },
       currentOperatorUserId: 'string',
+      relationType: 'string',
     };
   }
 
@@ -6698,10 +6701,12 @@ export class GetCrmRolePermissionResponseBodyPermissionsFieldScopes extends $tea
 export class GetCrmRolePermissionResponseBodyPermissionsManagingScopeListExt extends $tea.Model {
   deptIdList?: number[];
   staffIdList?: string[];
+  userIdList?: string[];
   static names(): { [key: string]: string } {
     return {
       deptIdList: 'deptIdList',
       staffIdList: 'staffIdList',
+      userIdList: 'userIdList',
     };
   }
 
@@ -6709,6 +6714,7 @@ export class GetCrmRolePermissionResponseBodyPermissionsManagingScopeListExt ext
     return {
       deptIdList: { 'type': 'array', 'itemType': 'number' },
       staffIdList: { 'type': 'array', 'itemType': 'string' },
+      userIdList: { 'type': 'array', 'itemType': 'string' },
     };
   }
 
@@ -6769,12 +6775,14 @@ export class GetCrmRolePermissionResponseBodyPermissionsRoleMemberList extends $
   name?: string;
   staffId?: string;
   type?: string;
+  userId?: string;
   static names(): { [key: string]: string } {
     return {
       memberId: 'memberId',
       name: 'name',
       staffId: 'staffId',
       type: 'type',
+      userId: 'userId',
     };
   }
 
@@ -6784,6 +6792,7 @@ export class GetCrmRolePermissionResponseBodyPermissionsRoleMemberList extends $
       name: 'string',
       staffId: 'string',
       type: 'string',
+      userId: 'string',
     };
   }
 
@@ -8927,6 +8936,10 @@ export default class Client extends OpenApi {
       query["currentOperatorUserId"] = request.currentOperatorUserId;
     }
 
+    if (!Util.isUnset(request.relationType)) {
+      query["relationType"] = request.relationType;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -9135,10 +9148,6 @@ export default class Client extends OpenApi {
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.bizType)) {
       query["bizType"] = request.bizType;
-    }
-
-    if (!Util.isUnset(request.formCode)) {
-      query["formCode"] = request.formCode;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -9397,6 +9406,10 @@ export default class Client extends OpenApi {
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.currentOperatorUserId)) {
       query["currentOperatorUserId"] = request.currentOperatorUserId;
+    }
+
+    if (!Util.isUnset(request.relationType)) {
+      query["relationType"] = request.relationType;
     }
 
     let realHeaders : {[key: string ]: string} = { };

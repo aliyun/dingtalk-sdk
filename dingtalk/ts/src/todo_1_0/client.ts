@@ -806,6 +806,7 @@ export class GetTodoTaskDetailResponseBody extends $tea.Model {
   subject?: string;
   tenantId?: string;
   tenantType?: string;
+  todoCardView?: GetTodoTaskDetailResponseBodyTodoCardView;
   static names(): { [key: string]: string } {
     return {
       bizTag: 'bizTag',
@@ -833,6 +834,7 @@ export class GetTodoTaskDetailResponseBody extends $tea.Model {
       subject: 'subject',
       tenantId: 'tenantId',
       tenantType: 'tenantType',
+      todoCardView: 'todoCardView',
     };
   }
 
@@ -863,6 +865,7 @@ export class GetTodoTaskDetailResponseBody extends $tea.Model {
       subject: 'string',
       tenantId: 'string',
       tenantType: 'string',
+      todoCardView: GetTodoTaskDetailResponseBodyTodoCardView,
     };
   }
 
@@ -1773,6 +1776,65 @@ export class GetTodoTaskDetailResponseBodyOrgInfo extends $tea.Model {
     return {
       corpId: 'string',
       name: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTodoTaskDetailResponseBodyTodoCardViewTodoCardContentList extends $tea.Model {
+  name?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTodoTaskDetailResponseBodyTodoCardView extends $tea.Model {
+  actionType?: string;
+  cardType?: string;
+  circleELType?: string;
+  contentType?: string;
+  icon?: string;
+  todoCardContentList?: GetTodoTaskDetailResponseBodyTodoCardViewTodoCardContentList[];
+  todoCardTitle?: string;
+  static names(): { [key: string]: string } {
+    return {
+      actionType: 'actionType',
+      cardType: 'cardType',
+      circleELType: 'circleELType',
+      contentType: 'contentType',
+      icon: 'icon',
+      todoCardContentList: 'todoCardContentList',
+      todoCardTitle: 'todoCardTitle',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      actionType: 'string',
+      cardType: 'string',
+      circleELType: 'string',
+      contentType: 'string',
+      icon: 'string',
+      todoCardContentList: { 'type': 'array', 'itemType': GetTodoTaskDetailResponseBodyTodoCardViewTodoCardContentList },
+      todoCardTitle: 'string',
     };
   }
 

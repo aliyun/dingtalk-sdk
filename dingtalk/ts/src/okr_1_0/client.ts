@@ -316,15 +316,18 @@ export class BatchQueryUserHeaders extends $tea.Model {
 }
 
 export class BatchQueryUserRequest extends $tea.Model {
+  okrUserIds?: string[];
   userIds?: string[];
   static names(): { [key: string]: string } {
     return {
+      okrUserIds: 'okrUserIds',
       userIds: 'userIds',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      okrUserIds: { 'type': 'array', 'itemType': 'string' },
       userIds: { 'type': 'array', 'itemType': 'string' },
     };
   }
@@ -2862,6 +2865,10 @@ export default class Client extends OpenApi {
   async batchQueryUserWithOptions(request: BatchQueryUserRequest, headers: BatchQueryUserHeaders, runtime: $Util.RuntimeOptions): Promise<BatchQueryUserResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.okrUserIds)) {
+      body["okrUserIds"] = request.okrUserIds;
+    }
+
     if (!Util.isUnset(request.userIds)) {
       body["userIds"] = request.userIds;
     }
