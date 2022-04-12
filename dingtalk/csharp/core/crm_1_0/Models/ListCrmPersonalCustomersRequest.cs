@@ -23,6 +23,10 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public string CurrentOperatorUserId { get; set; }
 
+        [NameInMap("relationType")]
+        [Validation(Required=false)]
+        public string RelationType { get; set; }
+
     }
 
 }

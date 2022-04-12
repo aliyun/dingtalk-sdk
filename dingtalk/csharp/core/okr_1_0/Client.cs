@@ -330,6 +330,10 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OkrUserIds))
+            {
+                body["okrUserIds"] = request.OkrUserIds;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
             {
                 body["userIds"] = request.UserIds;
@@ -355,6 +359,10 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OkrUserIds))
+            {
+                body["okrUserIds"] = request.OkrUserIds;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
             {
                 body["userIds"] = request.UserIds;

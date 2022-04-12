@@ -216,6 +216,40 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         [Validation(Required=false)]
         public string TenantType { get; set; }
 
+        /// <summary>
+        /// 待办卡片视图模型
+        /// </summary>
+        [NameInMap("todoCardView")]
+        [Validation(Required=false)]
+        public GetTodoTaskDetailResponseBodyTodoCardView TodoCardView { get; set; }
+        public class GetTodoTaskDetailResponseBodyTodoCardView : TeaModel {
+            [NameInMap("actionType")]
+            [Validation(Required=false)]
+            public string ActionType { get; set; }
+            [NameInMap("cardType")]
+            [Validation(Required=false)]
+            public string CardType { get; set; }
+            [NameInMap("circleELType")]
+            [Validation(Required=false)]
+            public string CircleELType { get; set; }
+            [NameInMap("contentType")]
+            [Validation(Required=false)]
+            public string ContentType { get; set; }
+            [NameInMap("icon")]
+            [Validation(Required=false)]
+            public string Icon { get; set; }
+            [NameInMap("todoCardContentList")]
+            [Validation(Required=false)]
+            public List<GetTodoTaskDetailResponseBodyTodoCardViewTodoCardContentList> TodoCardContentList { get; set; }
+            public class GetTodoTaskDetailResponseBodyTodoCardViewTodoCardContentList : TeaModel {
+                public string Name { get; set; }
+                public string Value { get; set; }
+            }
+            [NameInMap("todoCardTitle")]
+            [Validation(Required=false)]
+            public string TodoCardTitle { get; set; }
+        };
+
     }
 
 }

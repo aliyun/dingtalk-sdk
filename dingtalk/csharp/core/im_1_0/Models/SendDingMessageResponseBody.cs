@@ -6,15 +6,15 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
-    public class GetCrmRolePermissionRequest : TeaModel {
+    public class SendDingMessageResponseBody : TeaModel {
         /// <summary>
-        /// 表单bizType
+        /// 发送消息请求Id
         /// </summary>
-        [NameInMap("bizType")]
+        [NameInMap("requestId")]
         [Validation(Required=false)]
-        public string BizType { get; set; }
+        public string RequestId { get; set; }
 
     }
 

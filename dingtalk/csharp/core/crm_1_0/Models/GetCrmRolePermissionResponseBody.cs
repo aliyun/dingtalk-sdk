@@ -66,6 +66,9 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                     [NameInMap("staffIdList")]
                     [Validation(Required=false)]
                     public List<string> StaffIdList { get; set; }
+                    [NameInMap("userIdList")]
+                    [Validation(Required=false)]
+                    public List<string> UserIdList { get; set; }
                 };
 
                 /// <summary>
@@ -143,7 +146,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                 public string Name { get; set; }
 
                 /// <summary>
-                /// 角色的userId
+                /// 角色的userId（此字段废弃，请使用userId字段）
                 /// </summary>
                 [NameInMap("staffId")]
                 [Validation(Required=false)]
@@ -155,6 +158,13 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                 [NameInMap("type")]
                 [Validation(Required=false)]
                 public string Type { get; set; }
+
+                /// <summary>
+                /// 角色的userId
+                /// </summary>
+                [NameInMap("userId")]
+                [Validation(Required=false)]
+                public string UserId { get; set; }
 
             }
 
