@@ -2,27 +2,27 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class BatchQueryUserRequest extends Model
+class AddGroupMemberResponseBody extends Model
 {
     /**
-     * @description OKR 系统中的用户 ID 列表
+     * @description 拉取成功的C端客户列表
      *
      * @var string[]
      */
-    public $okrUserIds;
+    public $appUserIds;
 
     /**
-     * @description 开放平台中用户 ID 列表
+     * @description 拉取成功的B端客服列表
      *
      * @var string[]
      */
     public $userIds;
     protected $_name = [
-        'okrUserIds' => 'okrUserIds',
+        'appUserIds' => 'appUserIds',
         'userIds'    => 'userIds',
     ];
 
@@ -33,8 +33,8 @@ class BatchQueryUserRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->okrUserIds) {
-            $res['okrUserIds'] = $this->okrUserIds;
+        if (null !== $this->appUserIds) {
+            $res['appUserIds'] = $this->appUserIds;
         }
         if (null !== $this->userIds) {
             $res['userIds'] = $this->userIds;
@@ -46,14 +46,14 @@ class BatchQueryUserRequest extends Model
     /**
      * @param array $map
      *
-     * @return BatchQueryUserRequest
+     * @return AddGroupMemberResponseBody
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['okrUserIds'])) {
-            if (!empty($map['okrUserIds'])) {
-                $model->okrUserIds = $map['okrUserIds'];
+        if (isset($map['appUserIds'])) {
+            if (!empty($map['appUserIds'])) {
+                $model->appUserIds = $map['appUserIds'];
             }
         }
         if (isset($map['userIds'])) {

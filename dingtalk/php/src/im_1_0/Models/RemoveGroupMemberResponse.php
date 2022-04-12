@@ -2,31 +2,30 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class GetCrmRolePermissionRequest extends Model
+class RemoveGroupMemberResponse extends Model
 {
     /**
-     * @description 表单bizType
-     *
-     * @var string
+     * @var string[]
      */
-    public $bizType;
+    public $headers;
     protected $_name = [
-        'bizType' => 'bizType',
+        'headers' => 'headers',
     ];
 
     public function validate()
     {
+        Model::validateRequired('headers', $this->headers, true);
     }
 
     public function toMap()
     {
         $res = [];
-        if (null !== $this->bizType) {
-            $res['bizType'] = $this->bizType;
+        if (null !== $this->headers) {
+            $res['headers'] = $this->headers;
         }
 
         return $res;
@@ -35,13 +34,13 @@ class GetCrmRolePermissionRequest extends Model
     /**
      * @param array $map
      *
-     * @return GetCrmRolePermissionRequest
+     * @return RemoveGroupMemberResponse
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['bizType'])) {
-            $model->bizType = $map['bizType'];
+        if (isset($map['headers'])) {
+            $model->headers = $map['headers'];
         }
 
         return $model;

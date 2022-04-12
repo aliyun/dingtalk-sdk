@@ -7,6 +7,7 @@ namespace AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\GetTodoTaskDetailResponseBody\detailUrl;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\GetTodoTaskDetailResponseBody\executorStatus;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\GetTodoTaskDetailResponseBody\orgInfo;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\GetTodoTaskDetailResponseBody\todoCardView;
 use AlibabaCloud\Tea\Model;
 
 class GetTodoTaskDetailResponseBody extends Model
@@ -185,6 +186,13 @@ class GetTodoTaskDetailResponseBody extends Model
      * @var string
      */
     public $tenantType;
+
+    /**
+     * @description 待办卡片视图模型
+     *
+     * @var todoCardView
+     */
+    public $todoCardView;
     protected $_name = [
         'bizTag'             => 'bizTag',
         'category'           => 'category',
@@ -211,6 +219,7 @@ class GetTodoTaskDetailResponseBody extends Model
         'subject'            => 'subject',
         'tenantId'           => 'tenantId',
         'tenantType'         => 'tenantType',
+        'todoCardView'       => 'todoCardView',
     ];
 
     public function validate()
@@ -300,6 +309,9 @@ class GetTodoTaskDetailResponseBody extends Model
         }
         if (null !== $this->tenantType) {
             $res['tenantType'] = $this->tenantType;
+        }
+        if (null !== $this->todoCardView) {
+            $res['todoCardView'] = null !== $this->todoCardView ? $this->todoCardView->toMap() : null;
         }
 
         return $res;
@@ -397,6 +409,9 @@ class GetTodoTaskDetailResponseBody extends Model
         }
         if (isset($map['tenantType'])) {
             $model->tenantType = $map['tenantType'];
+        }
+        if (isset($map['todoCardView'])) {
+            $model->todoCardView = todoCardView::fromMap($map['todoCardView']);
         }
 
         return $model;

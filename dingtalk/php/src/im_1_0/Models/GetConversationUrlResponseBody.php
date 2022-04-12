@@ -2,20 +2,20 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class GetCrmRolePermissionRequest extends Model
+class GetConversationUrlResponseBody extends Model
 {
     /**
-     * @description 表单bizType
+     * @description 会话url
      *
      * @var string
      */
-    public $bizType;
+    public $url;
     protected $_name = [
-        'bizType' => 'bizType',
+        'url' => 'url',
     ];
 
     public function validate()
@@ -25,8 +25,8 @@ class GetCrmRolePermissionRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->bizType) {
-            $res['bizType'] = $this->bizType;
+        if (null !== $this->url) {
+            $res['url'] = $this->url;
         }
 
         return $res;
@@ -35,13 +35,13 @@ class GetCrmRolePermissionRequest extends Model
     /**
      * @param array $map
      *
-     * @return GetCrmRolePermissionRequest
+     * @return GetConversationUrlResponseBody
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['bizType'])) {
-            $model->bizType = $map['bizType'];
+        if (isset($map['url'])) {
+            $model->url = $map['url'];
         }
 
         return $model;

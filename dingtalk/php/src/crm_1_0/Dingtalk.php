@@ -828,6 +828,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->currentOperatorUserId)) {
             @$query['currentOperatorUserId'] = $request->currentOperatorUserId;
         }
+        if (!Utils::isUnset($request->relationType)) {
+            @$query['relationType'] = $request->relationType;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -1122,9 +1125,6 @@ class Dingtalk extends OpenApiClient
         $query = [];
         if (!Utils::isUnset($request->bizType)) {
             @$query['bizType'] = $request->bizType;
-        }
-        if (!Utils::isUnset($request->formCode)) {
-            @$query['formCode'] = $request->formCode;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -1480,6 +1480,9 @@ class Dingtalk extends OpenApiClient
         $query = [];
         if (!Utils::isUnset($request->currentOperatorUserId)) {
             @$query['currentOperatorUserId'] = $request->currentOperatorUserId;
+        }
+        if (!Utils::isUnset($request->relationType)) {
+            @$query['relationType'] = $request->relationType;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {

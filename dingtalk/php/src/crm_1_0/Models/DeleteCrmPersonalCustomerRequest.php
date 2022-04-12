@@ -14,8 +14,14 @@ class DeleteCrmPersonalCustomerRequest extends Model
      * @var string
      */
     public $currentOperatorUserId;
+
+    /**
+     * @var string
+     */
+    public $relationType;
     protected $_name = [
         'currentOperatorUserId' => 'currentOperatorUserId',
+        'relationType'          => 'relationType',
     ];
 
     public function validate()
@@ -27,6 +33,9 @@ class DeleteCrmPersonalCustomerRequest extends Model
         $res = [];
         if (null !== $this->currentOperatorUserId) {
             $res['currentOperatorUserId'] = $this->currentOperatorUserId;
+        }
+        if (null !== $this->relationType) {
+            $res['relationType'] = $this->relationType;
         }
 
         return $res;
@@ -42,6 +51,9 @@ class DeleteCrmPersonalCustomerRequest extends Model
         $model = new self();
         if (isset($map['currentOperatorUserId'])) {
             $model->currentOperatorUserId = $map['currentOperatorUserId'];
+        }
+        if (isset($map['relationType'])) {
+            $model->relationType = $map['relationType'];
         }
 
         return $model;

@@ -21,9 +21,15 @@ class ListCrmPersonalCustomersRequest extends Model
      * @var string
      */
     public $currentOperatorUserId;
+
+    /**
+     * @var string
+     */
+    public $relationType;
     protected $_name = [
         'body'                  => 'body',
         'currentOperatorUserId' => 'currentOperatorUserId',
+        'relationType'          => 'relationType',
     ];
 
     public function validate()
@@ -38,6 +44,9 @@ class ListCrmPersonalCustomersRequest extends Model
         }
         if (null !== $this->currentOperatorUserId) {
             $res['currentOperatorUserId'] = $this->currentOperatorUserId;
+        }
+        if (null !== $this->relationType) {
+            $res['relationType'] = $this->relationType;
         }
 
         return $res;
@@ -58,6 +67,9 @@ class ListCrmPersonalCustomersRequest extends Model
         }
         if (isset($map['currentOperatorUserId'])) {
             $model->currentOperatorUserId = $map['currentOperatorUserId'];
+        }
+        if (isset($map['relationType'])) {
+            $model->relationType = $map['relationType'];
         }
 
         return $model;

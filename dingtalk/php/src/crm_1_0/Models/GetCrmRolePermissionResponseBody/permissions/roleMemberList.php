@@ -23,7 +23,7 @@ class roleMemberList extends Model
     public $name;
 
     /**
-     * @description 角色的userId
+     * @description 角色的userId（此字段废弃，请使用userId字段）
      *
      * @var string
      */
@@ -35,11 +35,19 @@ class roleMemberList extends Model
      * @var string
      */
     public $type;
+
+    /**
+     * @description 角色的userId
+     *
+     * @var string
+     */
+    public $userId;
     protected $_name = [
         'memberId' => 'memberId',
         'name'     => 'name',
         'staffId'  => 'staffId',
         'type'     => 'type',
+        'userId'   => 'userId',
     ];
 
     public function validate()
@@ -60,6 +68,9 @@ class roleMemberList extends Model
         }
         if (null !== $this->type) {
             $res['type'] = $this->type;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -84,6 +95,9 @@ class roleMemberList extends Model
         }
         if (isset($map['type'])) {
             $model->type = $map['type'];
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

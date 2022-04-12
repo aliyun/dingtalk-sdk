@@ -263,6 +263,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->okrUserIds)) {
+            @$body['okrUserIds'] = $request->okrUserIds;
+        }
         if (!Utils::isUnset($request->userIds)) {
             @$body['userIds'] = $request->userIds;
         }
