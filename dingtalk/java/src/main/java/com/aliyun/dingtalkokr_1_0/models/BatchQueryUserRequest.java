@@ -4,13 +4,25 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchQueryUserRequest extends TeaModel {
-    // 需要查询的用户ID
+    // OKR 系统中的用户 ID 列表
+    @NameInMap("okrUserIds")
+    public java.util.List<String> okrUserIds;
+
+    // 开放平台中用户 ID 列表
     @NameInMap("userIds")
     public java.util.List<String> userIds;
 
     public static BatchQueryUserRequest build(java.util.Map<String, ?> map) throws Exception {
         BatchQueryUserRequest self = new BatchQueryUserRequest();
         return TeaModel.build(map, self);
+    }
+
+    public BatchQueryUserRequest setOkrUserIds(java.util.List<String> okrUserIds) {
+        this.okrUserIds = okrUserIds;
+        return this;
+    }
+    public java.util.List<String> getOkrUserIds() {
+        return this.okrUserIds;
     }
 
     public BatchQueryUserRequest setUserIds(java.util.List<String> userIds) {

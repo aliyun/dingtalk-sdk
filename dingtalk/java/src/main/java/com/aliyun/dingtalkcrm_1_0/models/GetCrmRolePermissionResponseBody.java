@@ -62,6 +62,10 @@ public class GetCrmRolePermissionResponseBody extends TeaModel {
         @NameInMap("staffIdList")
         public java.util.List<String> staffIdList;
 
+        // 管理员工列表
+        @NameInMap("userIdList")
+        public java.util.List<String> userIdList;
+
         public static GetCrmRolePermissionResponseBodyPermissionsManagingScopeListExt build(java.util.Map<String, ?> map) throws Exception {
             GetCrmRolePermissionResponseBodyPermissionsManagingScopeListExt self = new GetCrmRolePermissionResponseBodyPermissionsManagingScopeListExt();
             return TeaModel.build(map, self);
@@ -81,6 +85,14 @@ public class GetCrmRolePermissionResponseBody extends TeaModel {
         }
         public java.util.List<String> getStaffIdList() {
             return this.staffIdList;
+        }
+
+        public GetCrmRolePermissionResponseBodyPermissionsManagingScopeListExt setUserIdList(java.util.List<String> userIdList) {
+            this.userIdList = userIdList;
+            return this;
+        }
+        public java.util.List<String> getUserIdList() {
+            return this.userIdList;
         }
 
     }
@@ -170,13 +182,17 @@ public class GetCrmRolePermissionResponseBody extends TeaModel {
         @NameInMap("name")
         public String name;
 
-        // 角色的userId
+        // 角色的userId（此字段废弃，请使用userId字段）
         @NameInMap("staffId")
         public String staffId;
 
         // 角色类型
         @NameInMap("type")
         public String type;
+
+        // 角色的userId
+        @NameInMap("userId")
+        public String userId;
 
         public static GetCrmRolePermissionResponseBodyPermissionsRoleMemberList build(java.util.Map<String, ?> map) throws Exception {
             GetCrmRolePermissionResponseBodyPermissionsRoleMemberList self = new GetCrmRolePermissionResponseBodyPermissionsRoleMemberList();
@@ -213,6 +229,14 @@ public class GetCrmRolePermissionResponseBody extends TeaModel {
         }
         public String getType() {
             return this.type;
+        }
+
+        public GetCrmRolePermissionResponseBodyPermissionsRoleMemberList setUserId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+        public String getUserId() {
+            return this.userId;
         }
 
     }

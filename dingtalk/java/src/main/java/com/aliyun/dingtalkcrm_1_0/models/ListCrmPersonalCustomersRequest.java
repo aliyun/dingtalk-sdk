@@ -12,6 +12,9 @@ public class ListCrmPersonalCustomersRequest extends TeaModel {
     @NameInMap("currentOperatorUserId")
     public String currentOperatorUserId;
 
+    @NameInMap("relationType")
+    public String relationType;
+
     public static ListCrmPersonalCustomersRequest build(java.util.Map<String, ?> map) throws Exception {
         ListCrmPersonalCustomersRequest self = new ListCrmPersonalCustomersRequest();
         return TeaModel.build(map, self);
@@ -31,6 +34,14 @@ public class ListCrmPersonalCustomersRequest extends TeaModel {
     }
     public String getCurrentOperatorUserId() {
         return this.currentOperatorUserId;
+    }
+
+    public ListCrmPersonalCustomersRequest setRelationType(String relationType) {
+        this.relationType = relationType;
+        return this;
+    }
+    public String getRelationType() {
+        return this.relationType;
     }
 
 }

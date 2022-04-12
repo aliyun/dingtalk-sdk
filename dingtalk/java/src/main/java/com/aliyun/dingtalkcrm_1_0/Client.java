@@ -580,6 +580,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("currentOperatorUserId", request.currentOperatorUserId);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.relationType)) {
+            query.put("relationType", request.relationType);
+        }
+
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -788,10 +792,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.bizType)) {
             query.put("bizType", request.bizType);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.formCode)) {
-            query.put("formCode", request.formCode);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -1050,6 +1050,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.currentOperatorUserId)) {
             query.put("currentOperatorUserId", request.currentOperatorUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.relationType)) {
+            query.put("relationType", request.relationType);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();

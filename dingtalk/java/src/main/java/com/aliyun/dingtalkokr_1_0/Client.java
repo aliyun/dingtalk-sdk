@@ -164,6 +164,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public BatchQueryUserResponse batchQueryUserWithOptions(BatchQueryUserRequest request, BatchQueryUserHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.okrUserIds)) {
+            body.put("okrUserIds", request.okrUserIds);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.userIds)) {
             body.put("userIds", request.userIds);
         }

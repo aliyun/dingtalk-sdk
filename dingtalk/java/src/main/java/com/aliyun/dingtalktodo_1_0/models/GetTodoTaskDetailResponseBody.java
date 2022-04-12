@@ -104,6 +104,10 @@ public class GetTodoTaskDetailResponseBody extends TeaModel {
     @NameInMap("tenantType")
     public String tenantType;
 
+    // 待办卡片视图模型
+    @NameInMap("todoCardView")
+    public GetTodoTaskDetailResponseBodyTodoCardView todoCardView;
+
     public static GetTodoTaskDetailResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetTodoTaskDetailResponseBody self = new GetTodoTaskDetailResponseBody();
         return TeaModel.build(map, self);
@@ -309,6 +313,14 @@ public class GetTodoTaskDetailResponseBody extends TeaModel {
         return this.tenantType;
     }
 
+    public GetTodoTaskDetailResponseBody setTodoCardView(GetTodoTaskDetailResponseBodyTodoCardView todoCardView) {
+        this.todoCardView = todoCardView;
+        return this;
+    }
+    public GetTodoTaskDetailResponseBodyTodoCardView getTodoCardView() {
+        return this.todoCardView;
+    }
+
     public static class GetTodoTaskDetailResponseBodyDetailUrl extends TeaModel {
         // app端详情页地址
         @NameInMap("appUrl")
@@ -401,6 +413,129 @@ public class GetTodoTaskDetailResponseBody extends TeaModel {
         }
         public String getName() {
             return this.name;
+        }
+
+    }
+
+    public static class GetTodoTaskDetailResponseBodyTodoCardViewTodoCardContentList extends TeaModel {
+        // 自定义表单内容名字
+        @NameInMap("name")
+        public String name;
+
+        // 自定义表单内容值
+        @NameInMap("value")
+        public String value;
+
+        public static GetTodoTaskDetailResponseBodyTodoCardViewTodoCardContentList build(java.util.Map<String, ?> map) throws Exception {
+            GetTodoTaskDetailResponseBodyTodoCardViewTodoCardContentList self = new GetTodoTaskDetailResponseBodyTodoCardViewTodoCardContentList();
+            return TeaModel.build(map, self);
+        }
+
+        public GetTodoTaskDetailResponseBodyTodoCardViewTodoCardContentList setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
+        public GetTodoTaskDetailResponseBodyTodoCardViewTodoCardContentList setValue(String value) {
+            this.value = value;
+            return this;
+        }
+        public String getValue() {
+            return this.value;
+        }
+
+    }
+
+    public static class GetTodoTaskDetailResponseBodyTodoCardView extends TeaModel {
+        // link, button, 操作区类型，是链接类型，或者按钮类型
+        @NameInMap("actionType")
+        public String actionType;
+
+        // 卡片类型
+        @NameInMap("cardType")
+        public String cardType;
+
+        // 卡片左上角 区域类型是 icon, 或者checkbox 类型的
+        @NameInMap("circleELType")
+        public String circleELType;
+
+        // icon, name ,内容区域类型是 icon+value, 或者name+value 类型的
+        @NameInMap("contentType")
+        public String contentType;
+
+        // 卡片icon
+        @NameInMap("icon")
+        public String icon;
+
+        @NameInMap("todoCardContentList")
+        public java.util.List<GetTodoTaskDetailResponseBodyTodoCardViewTodoCardContentList> todoCardContentList;
+
+        // 卡片标题
+        @NameInMap("todoCardTitle")
+        public String todoCardTitle;
+
+        public static GetTodoTaskDetailResponseBodyTodoCardView build(java.util.Map<String, ?> map) throws Exception {
+            GetTodoTaskDetailResponseBodyTodoCardView self = new GetTodoTaskDetailResponseBodyTodoCardView();
+            return TeaModel.build(map, self);
+        }
+
+        public GetTodoTaskDetailResponseBodyTodoCardView setActionType(String actionType) {
+            this.actionType = actionType;
+            return this;
+        }
+        public String getActionType() {
+            return this.actionType;
+        }
+
+        public GetTodoTaskDetailResponseBodyTodoCardView setCardType(String cardType) {
+            this.cardType = cardType;
+            return this;
+        }
+        public String getCardType() {
+            return this.cardType;
+        }
+
+        public GetTodoTaskDetailResponseBodyTodoCardView setCircleELType(String circleELType) {
+            this.circleELType = circleELType;
+            return this;
+        }
+        public String getCircleELType() {
+            return this.circleELType;
+        }
+
+        public GetTodoTaskDetailResponseBodyTodoCardView setContentType(String contentType) {
+            this.contentType = contentType;
+            return this;
+        }
+        public String getContentType() {
+            return this.contentType;
+        }
+
+        public GetTodoTaskDetailResponseBodyTodoCardView setIcon(String icon) {
+            this.icon = icon;
+            return this;
+        }
+        public String getIcon() {
+            return this.icon;
+        }
+
+        public GetTodoTaskDetailResponseBodyTodoCardView setTodoCardContentList(java.util.List<GetTodoTaskDetailResponseBodyTodoCardViewTodoCardContentList> todoCardContentList) {
+            this.todoCardContentList = todoCardContentList;
+            return this;
+        }
+        public java.util.List<GetTodoTaskDetailResponseBodyTodoCardViewTodoCardContentList> getTodoCardContentList() {
+            return this.todoCardContentList;
+        }
+
+        public GetTodoTaskDetailResponseBodyTodoCardView setTodoCardTitle(String todoCardTitle) {
+            this.todoCardTitle = todoCardTitle;
+            return this;
+        }
+        public String getTodoCardTitle() {
+            return this.todoCardTitle;
         }
 
     }
