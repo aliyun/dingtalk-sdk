@@ -1175,9 +1175,12 @@ class BatchQueryUserHeaders(TeaModel):
 class BatchQueryUserRequest(TeaModel):
     def __init__(
         self,
+        okr_user_ids: List[str] = None,
         user_ids: List[str] = None,
     ):
-        # 需要查询的用户ID
+        # OKR 系统中的用户 ID 列表
+        self.okr_user_ids = okr_user_ids
+        # 开放平台中用户 ID 列表
         self.user_ids = user_ids
 
     def validate(self):
@@ -1189,12 +1192,16 @@ class BatchQueryUserRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.okr_user_ids is not None:
+            result['okrUserIds'] = self.okr_user_ids
         if self.user_ids is not None:
             result['userIds'] = self.user_ids
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('okrUserIds') is not None:
+            self.okr_user_ids = m.get('okrUserIds')
         if m.get('userIds') is not None:
             self.user_ids = m.get('userIds')
         return self

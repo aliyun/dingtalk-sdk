@@ -1975,6 +1975,118 @@ class GetTodoTaskDetailResponseBodyOrgInfo(TeaModel):
         return self
 
 
+class GetTodoTaskDetailResponseBodyTodoCardViewTodoCardContentList(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        value: str = None,
+    ):
+        # 自定义表单内容名字
+        self.name = name
+        # 自定义表单内容值
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class GetTodoTaskDetailResponseBodyTodoCardView(TeaModel):
+    def __init__(
+        self,
+        action_type: str = None,
+        card_type: str = None,
+        circle_eltype: str = None,
+        content_type: str = None,
+        icon: str = None,
+        todo_card_content_list: List[GetTodoTaskDetailResponseBodyTodoCardViewTodoCardContentList] = None,
+        todo_card_title: str = None,
+    ):
+        # link, button, 操作区类型，是链接类型，或者按钮类型
+        self.action_type = action_type
+        # 卡片类型
+        self.card_type = card_type
+        # 卡片左上角 区域类型是 icon, 或者checkbox 类型的
+        self.circle_eltype = circle_eltype
+        # icon, name ,内容区域类型是 icon+value, 或者name+value 类型的
+        self.content_type = content_type
+        # 卡片icon
+        self.icon = icon
+        self.todo_card_content_list = todo_card_content_list
+        # 卡片标题
+        self.todo_card_title = todo_card_title
+
+    def validate(self):
+        if self.todo_card_content_list:
+            for k in self.todo_card_content_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action_type is not None:
+            result['actionType'] = self.action_type
+        if self.card_type is not None:
+            result['cardType'] = self.card_type
+        if self.circle_eltype is not None:
+            result['circleELType'] = self.circle_eltype
+        if self.content_type is not None:
+            result['contentType'] = self.content_type
+        if self.icon is not None:
+            result['icon'] = self.icon
+        result['todoCardContentList'] = []
+        if self.todo_card_content_list is not None:
+            for k in self.todo_card_content_list:
+                result['todoCardContentList'].append(k.to_map() if k else None)
+        if self.todo_card_title is not None:
+            result['todoCardTitle'] = self.todo_card_title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('actionType') is not None:
+            self.action_type = m.get('actionType')
+        if m.get('cardType') is not None:
+            self.card_type = m.get('cardType')
+        if m.get('circleELType') is not None:
+            self.circle_eltype = m.get('circleELType')
+        if m.get('contentType') is not None:
+            self.content_type = m.get('contentType')
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
+        self.todo_card_content_list = []
+        if m.get('todoCardContentList') is not None:
+            for k in m.get('todoCardContentList'):
+                temp_model = GetTodoTaskDetailResponseBodyTodoCardViewTodoCardContentList()
+                self.todo_card_content_list.append(temp_model.from_map(k))
+        if m.get('todoCardTitle') is not None:
+            self.todo_card_title = m.get('todoCardTitle')
+        return self
+
+
 class GetTodoTaskDetailResponseBody(TeaModel):
     def __init__(
         self,
@@ -2003,6 +2115,7 @@ class GetTodoTaskDetailResponseBody(TeaModel):
         subject: str = None,
         tenant_id: str = None,
         tenant_type: str = None,
+        todo_card_view: GetTodoTaskDetailResponseBodyTodoCardView = None,
     ):
         # 接入业务应用标识
         self.biz_tag = biz_tag
@@ -2054,6 +2167,8 @@ class GetTodoTaskDetailResponseBody(TeaModel):
         self.tenant_id = tenant_id
         # 租户类型（user/org/group）
         self.tenant_type = tenant_type
+        # 待办卡片视图模型
+        self.todo_card_view = todo_card_view
 
     def validate(self):
         if self.detail_url:
@@ -2064,6 +2179,8 @@ class GetTodoTaskDetailResponseBody(TeaModel):
                     k.validate()
         if self.org_info:
             self.org_info.validate()
+        if self.todo_card_view:
+            self.todo_card_view.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -2123,6 +2240,8 @@ class GetTodoTaskDetailResponseBody(TeaModel):
             result['tenantId'] = self.tenant_id
         if self.tenant_type is not None:
             result['tenantType'] = self.tenant_type
+        if self.todo_card_view is not None:
+            result['todoCardView'] = self.todo_card_view.to_map()
         return result
 
     def from_map(self, m: dict = None):
@@ -2182,6 +2301,9 @@ class GetTodoTaskDetailResponseBody(TeaModel):
             self.tenant_id = m.get('tenantId')
         if m.get('tenantType') is not None:
             self.tenant_type = m.get('tenantType')
+        if m.get('todoCardView') is not None:
+            temp_model = GetTodoTaskDetailResponseBodyTodoCardView()
+            self.todo_card_view = temp_model.from_map(m['todoCardView'])
         return self
 
 

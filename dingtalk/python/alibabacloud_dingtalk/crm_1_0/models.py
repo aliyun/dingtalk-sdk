@@ -3533,9 +3533,11 @@ class DeleteCrmPersonalCustomerRequest(TeaModel):
     def __init__(
         self,
         current_operator_user_id: str = None,
+        relation_type: str = None,
     ):
         # 操作人用户ID
         self.current_operator_user_id = current_operator_user_id
+        self.relation_type = relation_type
 
     def validate(self):
         pass
@@ -3548,12 +3550,16 @@ class DeleteCrmPersonalCustomerRequest(TeaModel):
         result = dict()
         if self.current_operator_user_id is not None:
             result['currentOperatorUserId'] = self.current_operator_user_id
+        if self.relation_type is not None:
+            result['relationType'] = self.relation_type
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('currentOperatorUserId') is not None:
             self.current_operator_user_id = m.get('currentOperatorUserId')
+        if m.get('relationType') is not None:
+            self.relation_type = m.get('relationType')
         return self
 
 
@@ -8211,12 +8217,9 @@ class GetCrmRolePermissionRequest(TeaModel):
     def __init__(
         self,
         biz_type: str = None,
-        form_code: str = None,
     ):
-        # 表单业务标识（formCode & bizType二选一）
+        # 表单bizType
         self.biz_type = biz_type
-        # 表单标识（formCode & bizType二选一）
-        self.form_code = form_code
 
     def validate(self):
         pass
@@ -8229,16 +8232,12 @@ class GetCrmRolePermissionRequest(TeaModel):
         result = dict()
         if self.biz_type is not None:
             result['bizType'] = self.biz_type
-        if self.form_code is not None:
-            result['formCode'] = self.form_code
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('bizType') is not None:
             self.biz_type = m.get('bizType')
-        if m.get('formCode') is not None:
-            self.form_code = m.get('formCode')
         return self
 
 
@@ -8282,11 +8281,14 @@ class GetCrmRolePermissionResponseBodyPermissionsManagingScopeListExt(TeaModel):
         self,
         dept_id_list: List[float] = None,
         staff_id_list: List[str] = None,
+        user_id_list: List[str] = None,
     ):
         # 管理部门列表
         self.dept_id_list = dept_id_list
         # 管理员工列表
         self.staff_id_list = staff_id_list
+        # 管理员工列表
+        self.user_id_list = user_id_list
 
     def validate(self):
         pass
@@ -8301,6 +8303,8 @@ class GetCrmRolePermissionResponseBodyPermissionsManagingScopeListExt(TeaModel):
             result['deptIdList'] = self.dept_id_list
         if self.staff_id_list is not None:
             result['staffIdList'] = self.staff_id_list
+        if self.user_id_list is not None:
+            result['userIdList'] = self.user_id_list
         return result
 
     def from_map(self, m: dict = None):
@@ -8309,6 +8313,8 @@ class GetCrmRolePermissionResponseBodyPermissionsManagingScopeListExt(TeaModel):
             self.dept_id_list = m.get('deptIdList')
         if m.get('staffIdList') is not None:
             self.staff_id_list = m.get('staffIdList')
+        if m.get('userIdList') is not None:
+            self.user_id_list = m.get('userIdList')
         return self
 
 
@@ -8398,15 +8404,18 @@ class GetCrmRolePermissionResponseBodyPermissionsRoleMemberList(TeaModel):
         name: str = None,
         staff_id: str = None,
         type: str = None,
+        user_id: str = None,
     ):
         # 角色值
         self.member_id = member_id
         # 角色名
         self.name = name
-        # 角色的userId
+        # 角色的userId（此字段废弃，请使用userId字段）
         self.staff_id = staff_id
         # 角色类型
         self.type = type
+        # 角色的userId
+        self.user_id = user_id
 
     def validate(self):
         pass
@@ -8425,6 +8434,8 @@ class GetCrmRolePermissionResponseBodyPermissionsRoleMemberList(TeaModel):
             result['staffId'] = self.staff_id
         if self.type is not None:
             result['type'] = self.type
+        if self.user_id is not None:
+            result['userId'] = self.user_id
         return result
 
     def from_map(self, m: dict = None):
@@ -8437,6 +8448,8 @@ class GetCrmRolePermissionResponseBodyPermissionsRoleMemberList(TeaModel):
             self.staff_id = m.get('staffId')
         if m.get('type') is not None:
             self.type = m.get('type')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
         return self
 
 
@@ -10238,11 +10251,13 @@ class ListCrmPersonalCustomersRequest(TeaModel):
         self,
         body: List[str] = None,
         current_operator_user_id: str = None,
+        relation_type: str = None,
     ):
         # 数据客户列表
         self.body = body
         # 操作人用户ID
         self.current_operator_user_id = current_operator_user_id
+        self.relation_type = relation_type
 
     def validate(self):
         pass
@@ -10257,6 +10272,8 @@ class ListCrmPersonalCustomersRequest(TeaModel):
             result['body'] = self.body
         if self.current_operator_user_id is not None:
             result['currentOperatorUserId'] = self.current_operator_user_id
+        if self.relation_type is not None:
+            result['relationType'] = self.relation_type
         return result
 
     def from_map(self, m: dict = None):
@@ -10265,6 +10282,8 @@ class ListCrmPersonalCustomersRequest(TeaModel):
             self.body = m.get('body')
         if m.get('currentOperatorUserId') is not None:
             self.current_operator_user_id = m.get('currentOperatorUserId')
+        if m.get('relationType') is not None:
+            self.relation_type = m.get('relationType')
         return self
 
 

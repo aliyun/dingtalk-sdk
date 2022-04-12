@@ -297,6 +297,8 @@ class Client(OpenApiClient):
     ) -> dingtalkokr__1__0_models.BatchQueryUserResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.okr_user_ids):
+            body['okrUserIds'] = request.okr_user_ids
         if not UtilClient.is_unset(request.user_ids):
             body['userIds'] = request.user_ids
         real_headers = {}
@@ -321,6 +323,8 @@ class Client(OpenApiClient):
     ) -> dingtalkokr__1__0_models.BatchQueryUserResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.okr_user_ids):
+            body['okrUserIds'] = request.okr_user_ids
         if not UtilClient.is_unset(request.user_ids):
             body['userIds'] = request.user_ids
         real_headers = {}

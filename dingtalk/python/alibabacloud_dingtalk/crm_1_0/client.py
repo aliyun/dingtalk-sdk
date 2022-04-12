@@ -1023,6 +1023,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.current_operator_user_id):
             query['currentOperatorUserId'] = request.current_operator_user_id
+        if not UtilClient.is_unset(request.relation_type):
+            query['relationType'] = request.relation_type
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1049,6 +1051,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.current_operator_user_id):
             query['currentOperatorUserId'] = request.current_operator_user_id
+        if not UtilClient.is_unset(request.relation_type):
+            query['relationType'] = request.relation_type
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1467,8 +1471,6 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.biz_type):
             query['bizType'] = request.biz_type
-        if not UtilClient.is_unset(request.form_code):
-            query['formCode'] = request.form_code
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1493,8 +1495,6 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.biz_type):
             query['bizType'] = request.biz_type
-        if not UtilClient.is_unset(request.form_code):
-            query['formCode'] = request.form_code
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2007,6 +2007,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.current_operator_user_id):
             query['currentOperatorUserId'] = request.current_operator_user_id
+        if not UtilClient.is_unset(request.relation_type):
+            query['relationType'] = request.relation_type
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2032,6 +2034,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.current_operator_user_id):
             query['currentOperatorUserId'] = request.current_operator_user_id
+        if not UtilClient.is_unset(request.relation_type):
+            query['relationType'] = request.relation_type
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
