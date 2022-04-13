@@ -3463,6 +3463,97 @@ export class EndCourseResponse extends $tea.Model {
   }
 }
 
+export class GetBindChildInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetBindChildInfoRequest extends $tea.Model {
+  schoolCorpId?: string;
+  studentUserId?: string;
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      schoolCorpId: 'schoolCorpId',
+      studentUserId: 'studentUserId',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      schoolCorpId: 'string',
+      studentUserId: 'string',
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetBindChildInfoResponseBody extends $tea.Model {
+  childUserId?: string;
+  familyCorpId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      childUserId: 'childUserId',
+      familyCorpId: 'familyCorpId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      childUserId: 'string',
+      familyCorpId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetBindChildInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetBindChildInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetBindChildInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetDefaultChildHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -12778,6 +12869,43 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<EndCourseResponse>(await this.doROARequest("EndCourse", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/universities/courses/end`, "json", req, runtime), new EndCourseResponse({}));
+  }
+
+  async getBindChildInfo(request: GetBindChildInfoRequest): Promise<GetBindChildInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetBindChildInfoHeaders({ });
+    return await this.getBindChildInfoWithOptions(request, headers, runtime);
+  }
+
+  async getBindChildInfoWithOptions(request: GetBindChildInfoRequest, headers: GetBindChildInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetBindChildInfoResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.schoolCorpId)) {
+      query["schoolCorpId"] = request.schoolCorpId;
+    }
+
+    if (!Util.isUnset(request.studentUserId)) {
+      query["studentUserId"] = request.studentUserId;
+    }
+
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetBindChildInfoResponse>(await this.doROARequest("GetBindChildInfo", "edu_1.0", "HTTP", "GET", "AK", `/v1.0/edu/families/childs/infos`, "json", req, runtime), new GetBindChildInfoResponse({}));
   }
 
   async getDefaultChild(): Promise<GetDefaultChildResponse> {
