@@ -2971,6 +2971,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('EndCourse', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/universities/courses/end', 'json', req, runtime)
         )
 
+    def get_bind_child_info(
+        self,
+        request: dingtalkedu__1__0_models.GetBindChildInfoRequest,
+    ) -> dingtalkedu__1__0_models.GetBindChildInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.GetBindChildInfoHeaders()
+        return self.get_bind_child_info_with_options(request, headers, runtime)
+
+    async def get_bind_child_info_async(
+        self,
+        request: dingtalkedu__1__0_models.GetBindChildInfoRequest,
+    ) -> dingtalkedu__1__0_models.GetBindChildInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.GetBindChildInfoHeaders()
+        return await self.get_bind_child_info_with_options_async(request, headers, runtime)
+
+    def get_bind_child_info_with_options(
+        self,
+        request: dingtalkedu__1__0_models.GetBindChildInfoRequest,
+        headers: dingtalkedu__1__0_models.GetBindChildInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.GetBindChildInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.school_corp_id):
+            query['schoolCorpId'] = request.school_corp_id
+        if not UtilClient.is_unset(request.student_user_id):
+            query['studentUserId'] = request.student_user_id
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.GetBindChildInfoResponse(),
+            self.do_roarequest('GetBindChildInfo', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/families/childs/infos', 'json', req, runtime)
+        )
+
+    async def get_bind_child_info_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.GetBindChildInfoRequest,
+        headers: dingtalkedu__1__0_models.GetBindChildInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.GetBindChildInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.school_corp_id):
+            query['schoolCorpId'] = request.school_corp_id
+        if not UtilClient.is_unset(request.student_user_id):
+            query['studentUserId'] = request.student_user_id
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.GetBindChildInfoResponse(),
+            await self.do_roarequest_async('GetBindChildInfo', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/families/childs/infos', 'json', req, runtime)
+        )
+
     def get_default_child(self) -> dingtalkedu__1__0_models.GetDefaultChildResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalkedu__1__0_models.GetDefaultChildHeaders()
