@@ -113,6 +113,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EduTeacherListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EndCourseHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EndCourseRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EndCourseResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetBindChildInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetBindChildInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetBindChildInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetDefaultChildHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetDefaultChildResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetOpenCourseDetailHeaders;
@@ -2246,6 +2249,54 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return EndCourseResponse::fromMap($this->doROARequest('EndCourse', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/universities/courses/end', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetBindChildInfoRequest $request
+     *
+     * @return GetBindChildInfoResponse
+     */
+    public function getBindChildInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetBindChildInfoHeaders([]);
+
+        return $this->getBindChildInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetBindChildInfoRequest $request
+     * @param GetBindChildInfoHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return GetBindChildInfoResponse
+     */
+    public function getBindChildInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->schoolCorpId)) {
+            @$query['schoolCorpId'] = $request->schoolCorpId;
+        }
+        if (!Utils::isUnset($request->studentUserId)) {
+            @$query['studentUserId'] = $request->studentUserId;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            @$query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetBindChildInfoResponse::fromMap($this->doROARequest('GetBindChildInfo', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/families/childs/infos', 'json', $req, $runtime));
     }
 
     /**
