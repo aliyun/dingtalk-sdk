@@ -3518,6 +3518,86 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             return TeaModel.ToObject<EndCourseResponse>(await DoROARequestAsync("EndCourse", "edu_1.0", "HTTP", "POST", "AK", "/v1.0/edu/universities/courses/end", "json", req, runtime));
         }
 
+        public GetBindChildInfoResponse GetBindChildInfo(GetBindChildInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetBindChildInfoHeaders headers = new GetBindChildInfoHeaders();
+            return GetBindChildInfoWithOptions(request, headers, runtime);
+        }
+
+        public async Task<GetBindChildInfoResponse> GetBindChildInfoAsync(GetBindChildInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetBindChildInfoHeaders headers = new GetBindChildInfoHeaders();
+            return await GetBindChildInfoWithOptionsAsync(request, headers, runtime);
+        }
+
+        public GetBindChildInfoResponse GetBindChildInfoWithOptions(GetBindChildInfoRequest request, GetBindChildInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SchoolCorpId))
+            {
+                query["schoolCorpId"] = request.SchoolCorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StudentUserId))
+            {
+                query["studentUserId"] = request.StudentUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<GetBindChildInfoResponse>(DoROARequest("GetBindChildInfo", "edu_1.0", "HTTP", "GET", "AK", "/v1.0/edu/families/childs/infos", "json", req, runtime));
+        }
+
+        public async Task<GetBindChildInfoResponse> GetBindChildInfoWithOptionsAsync(GetBindChildInfoRequest request, GetBindChildInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SchoolCorpId))
+            {
+                query["schoolCorpId"] = request.SchoolCorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StudentUserId))
+            {
+                query["studentUserId"] = request.StudentUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<GetBindChildInfoResponse>(await DoROARequestAsync("GetBindChildInfo", "edu_1.0", "HTTP", "GET", "AK", "/v1.0/edu/families/childs/infos", "json", req, runtime));
+        }
+
         public GetDefaultChildResponse GetDefaultChild()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
