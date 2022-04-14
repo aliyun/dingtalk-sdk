@@ -781,6 +781,29 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("ListMiniAppHistoryVersion", "exclusive_1.0", "HTTP", "GET", "AK", "/v1.0/exclusive/miniApps/versions/historyLists", "json", req, runtime), new ListMiniAppHistoryVersionResponse());
     }
 
+    public ListPartnerRolesResponse listPartnerRoles(String parentId) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        ListPartnerRolesHeaders headers = new ListPartnerRolesHeaders();
+        return this.listPartnerRolesWithOptions(parentId, headers, runtime);
+    }
+
+    public ListPartnerRolesResponse listPartnerRolesWithOptions(String parentId, ListPartnerRolesHeaders headers, RuntimeOptions runtime) throws Exception {
+        parentId = com.aliyun.openapiutil.Client.getEncodeParam(parentId);
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        return TeaModel.toModel(this.doROARequest("ListPartnerRoles", "exclusive_1.0", "HTTP", "GET", "AK", "/v1.0/exclusive/partners/roles/" + parentId + "", "json", req, runtime), new ListPartnerRolesResponse());
+    }
+
     public ListPunchScheduleByConditionWithPagingResponse listPunchScheduleByConditionWithPaging(ListPunchScheduleByConditionWithPagingRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         ListPunchScheduleByConditionWithPagingHeaders headers = new ListPunchScheduleByConditionWithPagingHeaders();

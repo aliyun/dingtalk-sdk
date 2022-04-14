@@ -40,11 +40,15 @@ public class GetInstancesRequest extends TeaModel {
     @NameInMap("modifiedToTimeGMT")
     public String modifiedToTimeGMT;
 
-    // 根据数据提交人工号查询
+    // 排序规则
+    @NameInMap("orderConfigJson")
+    public String orderConfigJson;
+
+    // 数据提交人的钉钉userId
     @NameInMap("originatorId")
     public String originatorId;
 
-    // 根据表单内组件值查询
+    // 查询过滤条件，支持2种模式的过滤规则
     @NameInMap("searchFieldJson")
     public String searchFieldJson;
 
@@ -60,9 +64,11 @@ public class GetInstancesRequest extends TeaModel {
     @NameInMap("userId")
     public String userId;
 
+    // 当前第几页
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
+    // 每页多少条数据
     @NameInMap("pageSize")
     public Integer pageSize;
 
@@ -141,6 +147,14 @@ public class GetInstancesRequest extends TeaModel {
     }
     public String getModifiedToTimeGMT() {
         return this.modifiedToTimeGMT;
+    }
+
+    public GetInstancesRequest setOrderConfigJson(String orderConfigJson) {
+        this.orderConfigJson = orderConfigJson;
+        return this;
+    }
+    public String getOrderConfigJson() {
+        return this.orderConfigJson;
     }
 
     public GetInstancesRequest setOriginatorId(String originatorId) {

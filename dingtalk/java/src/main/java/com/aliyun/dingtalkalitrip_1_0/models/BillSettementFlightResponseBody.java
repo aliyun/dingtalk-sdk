@@ -224,7 +224,7 @@ public class BillSettementFlightResponseBody extends TeaModel {
 
         // 低价提醒（折扣）
         @NameInMap("mostDifferenceDiscount")
-        public Double mostDifferenceDiscount;
+        public String mostDifferenceDiscount;
 
         // 低价提醒(航班号)
         @NameInMap("mostDifferenceFlightNo")
@@ -663,11 +663,11 @@ public class BillSettementFlightResponseBody extends TeaModel {
             return this.mostDifferenceDeptTime;
         }
 
-        public BillSettementFlightResponseBodyModuleDataList setMostDifferenceDiscount(Double mostDifferenceDiscount) {
+        public BillSettementFlightResponseBodyModuleDataList setMostDifferenceDiscount(String mostDifferenceDiscount) {
             this.mostDifferenceDiscount = mostDifferenceDiscount;
             return this;
         }
-        public Double getMostDifferenceDiscount() {
+        public String getMostDifferenceDiscount() {
             return this.mostDifferenceDiscount;
         }
 
