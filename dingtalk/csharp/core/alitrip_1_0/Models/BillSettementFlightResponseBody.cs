@@ -67,7 +67,7 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0.Models
                 public string ItineraryNum { get; set; }
                 public double? ItineraryPrice { get; set; }
                 public string MostDifferenceDeptTime { get; set; }
-                public double? MostDifferenceDiscount { get; set; }
+                public string MostDifferenceDiscount { get; set; }
                 public string MostDifferenceFlightNo { get; set; }
                 public double? MostDifferencePrice { get; set; }
                 public string MostDifferenceReason { get; set; }

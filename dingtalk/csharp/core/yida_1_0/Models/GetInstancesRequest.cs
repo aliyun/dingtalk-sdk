@@ -73,14 +73,21 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public string ModifiedToTimeGMT { get; set; }
 
         /// <summary>
-        /// 根据数据提交人工号查询
+        /// 排序规则
+        /// </summary>
+        [NameInMap("orderConfigJson")]
+        [Validation(Required=false)]
+        public string OrderConfigJson { get; set; }
+
+        /// <summary>
+        /// 数据提交人的钉钉userId
         /// </summary>
         [NameInMap("originatorId")]
         [Validation(Required=false)]
         public string OriginatorId { get; set; }
 
         /// <summary>
-        /// 根据表单内组件值查询
+        /// 查询过滤条件，支持2种模式的过滤规则
         /// </summary>
         [NameInMap("searchFieldJson")]
         [Validation(Required=false)]
@@ -107,10 +114,16 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         [Validation(Required=false)]
         public string UserId { get; set; }
 
+        /// <summary>
+        /// 当前第几页
+        /// </summary>
         [NameInMap("pageNumber")]
         [Validation(Required=false)]
         public int? PageNumber { get; set; }
 
+        /// <summary>
+        /// 每页多少条数据
+        /// </summary>
         [NameInMap("pageSize")]
         [Validation(Required=false)]
         public int? PageSize { get; set; }
