@@ -1739,7 +1739,7 @@ export class BillSettementFlightResponseBodyModuleDataList extends $tea.Model {
   itineraryNum?: string;
   itineraryPrice?: number;
   mostDifferenceDeptTime?: string;
-  mostDifferenceDiscount?: number;
+  mostDifferenceDiscount?: string;
   mostDifferenceFlightNo?: string;
   mostDifferencePrice?: number;
   mostDifferenceReason?: string;
@@ -1882,7 +1882,7 @@ export class BillSettementFlightResponseBodyModuleDataList extends $tea.Model {
       itineraryNum: 'string',
       itineraryPrice: 'number',
       mostDifferenceDeptTime: 'string',
-      mostDifferenceDiscount: 'number',
+      mostDifferenceDiscount: 'string',
       mostDifferenceFlightNo: 'string',
       mostDifferencePrice: 'number',
       mostDifferenceReason: 'string',

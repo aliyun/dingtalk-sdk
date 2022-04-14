@@ -1974,6 +1974,69 @@ export class ListMiniAppHistoryVersionResponse extends $tea.Model {
   }
 }
 
+export class ListPartnerRolesHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListPartnerRolesResponseBody extends $tea.Model {
+  list?: ListPartnerRolesResponseBodyList[];
+  static names(): { [key: string]: string } {
+    return {
+      list: 'list',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      list: { 'type': 'array', 'itemType': ListPartnerRolesResponseBodyList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListPartnerRolesResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ListPartnerRolesResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ListPartnerRolesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListPunchScheduleByConditionWithPagingHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3522,6 +3585,131 @@ export class ListMiniAppHistoryVersionResponseBodyList extends $tea.Model {
   }
 }
 
+export class ListPartnerRolesResponseBodyListVisibleDepts extends $tea.Model {
+  deptId?: number;
+  name?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      name: 'name',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+      name: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListPartnerRolesResponseBodyListVisibleUsers extends $tea.Model {
+  name?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListPartnerRolesResponseBodyListWarningDepts extends $tea.Model {
+  deptId?: number;
+  name?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      name: 'name',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+      name: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListPartnerRolesResponseBodyListWarningUsers extends $tea.Model {
+  name?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListPartnerRolesResponseBodyList extends $tea.Model {
+  id?: number;
+  isNecessary?: number;
+  name?: string;
+  visibleDepts?: ListPartnerRolesResponseBodyListVisibleDepts[];
+  visibleUsers?: ListPartnerRolesResponseBodyListVisibleUsers[];
+  warningDepts?: ListPartnerRolesResponseBodyListWarningDepts[];
+  warningUsers?: ListPartnerRolesResponseBodyListWarningUsers[];
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+      isNecessary: 'isNecessary',
+      name: 'name',
+      visibleDepts: 'visibleDepts',
+      visibleUsers: 'visibleUsers',
+      warningDepts: 'warningDepts',
+      warningUsers: 'warningUsers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'number',
+      isNecessary: 'number',
+      name: 'string',
+      visibleDepts: { 'type': 'array', 'itemType': ListPartnerRolesResponseBodyListVisibleDepts },
+      visibleUsers: { 'type': 'array', 'itemType': ListPartnerRolesResponseBodyListVisibleUsers },
+      warningDepts: { 'type': 'array', 'itemType': ListPartnerRolesResponseBodyListWarningDepts },
+      warningUsers: { 'type': 'array', 'itemType': ListPartnerRolesResponseBodyListWarningUsers },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListPunchScheduleByConditionWithPagingResponseBodyList extends $tea.Model {
   bizOuterId?: string;
   positionName?: string;
@@ -4382,6 +4570,29 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<ListMiniAppHistoryVersionResponse>(await this.doROARequest("ListMiniAppHistoryVersion", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/miniApps/versions/historyLists`, "json", req, runtime), new ListMiniAppHistoryVersionResponse({}));
+  }
+
+  async listPartnerRoles(parentId: string): Promise<ListPartnerRolesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListPartnerRolesHeaders({ });
+    return await this.listPartnerRolesWithOptions(parentId, headers, runtime);
+  }
+
+  async listPartnerRolesWithOptions(parentId: string, headers: ListPartnerRolesHeaders, runtime: $Util.RuntimeOptions): Promise<ListPartnerRolesResponse> {
+    parentId = OpenApiUtil.getEncodeParam(parentId);
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<ListPartnerRolesResponse>(await this.doROARequest("ListPartnerRoles", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/partners/roles/${parentId}`, "json", req, runtime), new ListPartnerRolesResponse({}));
   }
 
   async listPunchScheduleByConditionWithPaging(request: ListPunchScheduleByConditionWithPagingRequest): Promise<ListPunchScheduleByConditionWithPagingResponse> {

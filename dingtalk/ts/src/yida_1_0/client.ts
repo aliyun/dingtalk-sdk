@@ -7,6 +7,499 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class BatchGetFormDataByIdListHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchGetFormDataByIdListRequest extends $tea.Model {
+  appType?: string;
+  formInstanceIdList?: string[];
+  formUuid?: string;
+  needFormInstanceValue?: boolean;
+  systemToken?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appType: 'appType',
+      formInstanceIdList: 'formInstanceIdList',
+      formUuid: 'formUuid',
+      needFormInstanceValue: 'needFormInstanceValue',
+      systemToken: 'systemToken',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appType: 'string',
+      formInstanceIdList: { 'type': 'array', 'itemType': 'string' },
+      formUuid: 'string',
+      needFormInstanceValue: 'boolean',
+      systemToken: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchGetFormDataByIdListResponseBody extends $tea.Model {
+  result?: BatchGetFormDataByIdListResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': BatchGetFormDataByIdListResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchGetFormDataByIdListResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: BatchGetFormDataByIdListResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: BatchGetFormDataByIdListResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchRemovalByFormInstanceIdListHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchRemovalByFormInstanceIdListRequest extends $tea.Model {
+  appType?: string;
+  asynchronousExecution?: boolean;
+  executeExpression?: boolean;
+  formInstanceIdList?: string[];
+  formUuid?: string;
+  systemToken?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appType: 'appType',
+      asynchronousExecution: 'asynchronousExecution',
+      executeExpression: 'executeExpression',
+      formInstanceIdList: 'formInstanceIdList',
+      formUuid: 'formUuid',
+      systemToken: 'systemToken',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appType: 'string',
+      asynchronousExecution: 'boolean',
+      executeExpression: 'boolean',
+      formInstanceIdList: { 'type': 'array', 'itemType': 'string' },
+      formUuid: 'string',
+      systemToken: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchRemovalByFormInstanceIdListResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchSaveFormDataHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchSaveFormDataRequest extends $tea.Model {
+  appType?: string;
+  asynchronousExecution?: boolean;
+  formDataJsonList?: string[];
+  formUuid?: string;
+  keepRunningAfterException?: boolean;
+  noExecuteExpression?: boolean;
+  systemToken?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appType: 'appType',
+      asynchronousExecution: 'asynchronousExecution',
+      formDataJsonList: 'formDataJsonList',
+      formUuid: 'formUuid',
+      keepRunningAfterException: 'keepRunningAfterException',
+      noExecuteExpression: 'noExecuteExpression',
+      systemToken: 'systemToken',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appType: 'string',
+      asynchronousExecution: 'boolean',
+      formDataJsonList: { 'type': 'array', 'itemType': 'string' },
+      formUuid: 'string',
+      keepRunningAfterException: 'boolean',
+      noExecuteExpression: 'boolean',
+      systemToken: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchSaveFormDataResponseBody extends $tea.Model {
+  result?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchSaveFormDataResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: BatchSaveFormDataResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: BatchSaveFormDataResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchUpdateFormDataByInstanceIdHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchUpdateFormDataByInstanceIdRequest extends $tea.Model {
+  appType?: string;
+  asynchronousExecution?: boolean;
+  formInstanceIdList?: string[];
+  formUuid?: string;
+  ignoreEmpty?: boolean;
+  noExecuteExpression?: boolean;
+  systemToken?: string;
+  updateFormDataJson?: string;
+  useLatestFormSchemaVersion?: boolean;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appType: 'appType',
+      asynchronousExecution: 'asynchronousExecution',
+      formInstanceIdList: 'formInstanceIdList',
+      formUuid: 'formUuid',
+      ignoreEmpty: 'ignoreEmpty',
+      noExecuteExpression: 'noExecuteExpression',
+      systemToken: 'systemToken',
+      updateFormDataJson: 'updateFormDataJson',
+      useLatestFormSchemaVersion: 'useLatestFormSchemaVersion',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appType: 'string',
+      asynchronousExecution: 'boolean',
+      formInstanceIdList: { 'type': 'array', 'itemType': 'string' },
+      formUuid: 'string',
+      ignoreEmpty: 'boolean',
+      noExecuteExpression: 'boolean',
+      systemToken: 'string',
+      updateFormDataJson: 'string',
+      useLatestFormSchemaVersion: 'boolean',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchUpdateFormDataByInstanceIdResponseBody extends $tea.Model {
+  result?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchUpdateFormDataByInstanceIdResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: BatchUpdateFormDataByInstanceIdResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: BatchUpdateFormDataByInstanceIdResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchUpdateFormDataByInstanceMapHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchUpdateFormDataByInstanceMapRequest extends $tea.Model {
+  appType?: string;
+  asynchronousExecution?: boolean;
+  formUuid?: string;
+  ignoreEmpty?: boolean;
+  noExecuteExpression?: boolean;
+  systemToken?: string;
+  updateFormDataJsonMap?: { [key: string]: any };
+  useLatestFormSchemaVersion?: boolean;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appType: 'appType',
+      asynchronousExecution: 'asynchronousExecution',
+      formUuid: 'formUuid',
+      ignoreEmpty: 'ignoreEmpty',
+      noExecuteExpression: 'noExecuteExpression',
+      systemToken: 'systemToken',
+      updateFormDataJsonMap: 'updateFormDataJsonMap',
+      useLatestFormSchemaVersion: 'useLatestFormSchemaVersion',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appType: 'string',
+      asynchronousExecution: 'boolean',
+      formUuid: 'string',
+      ignoreEmpty: 'boolean',
+      noExecuteExpression: 'boolean',
+      systemToken: 'string',
+      updateFormDataJsonMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      useLatestFormSchemaVersion: 'boolean',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchUpdateFormDataByInstanceMapResponseBody extends $tea.Model {
+  result?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchUpdateFormDataByInstanceMapResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: BatchUpdateFormDataByInstanceMapResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: BatchUpdateFormDataByInstanceMapResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BuyAuthorizationOrderHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -305,6 +798,106 @@ export class CheckCloudAccountStatusResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: CheckCloudAccountStatusResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateOrUpdateFormDataHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateOrUpdateFormDataRequest extends $tea.Model {
+  appType?: string;
+  formDataJson?: string;
+  formUuid?: string;
+  noExecuteExpression?: boolean;
+  searchCondition?: string;
+  systemToken?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appType: 'appType',
+      formDataJson: 'formDataJson',
+      formUuid: 'formUuid',
+      noExecuteExpression: 'noExecuteExpression',
+      searchCondition: 'searchCondition',
+      systemToken: 'systemToken',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appType: 'string',
+      formDataJson: 'string',
+      formUuid: 'string',
+      noExecuteExpression: 'boolean',
+      searchCondition: 'string',
+      systemToken: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateOrUpdateFormDataResponseBody extends $tea.Model {
+  result?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateOrUpdateFormDataResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CreateOrUpdateFormDataResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CreateOrUpdateFormDataResponseBody,
     };
   }
 
@@ -2159,6 +2752,7 @@ export class GetInstancesRequest extends $tea.Model {
   language?: string;
   modifiedFromTimeGMT?: string;
   modifiedToTimeGMT?: string;
+  orderConfigJson?: string;
   originatorId?: string;
   searchFieldJson?: string;
   systemToken?: string;
@@ -2177,6 +2771,7 @@ export class GetInstancesRequest extends $tea.Model {
       language: 'language',
       modifiedFromTimeGMT: 'modifiedFromTimeGMT',
       modifiedToTimeGMT: 'modifiedToTimeGMT',
+      orderConfigJson: 'orderConfigJson',
       originatorId: 'originatorId',
       searchFieldJson: 'searchFieldJson',
       systemToken: 'systemToken',
@@ -2198,6 +2793,7 @@ export class GetInstancesRequest extends $tea.Model {
       language: 'string',
       modifiedFromTimeGMT: 'string',
       modifiedToTimeGMT: 'string',
+      orderConfigJson: 'string',
       originatorId: 'string',
       searchFieldJson: 'string',
       systemToken: 'string',
@@ -3596,6 +4192,112 @@ export class GetTaskCopiesResponse extends $tea.Model {
   }
 }
 
+export class ListApplicationHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListApplicationRequest extends $tea.Model {
+  appFilter?: string;
+  appNameSearchKeyword?: string;
+  corpId?: string;
+  pageNumber?: number;
+  pageSize?: number;
+  token?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appFilter: 'appFilter',
+      appNameSearchKeyword: 'appNameSearchKeyword',
+      corpId: 'corpId',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      token: 'token',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appFilter: 'string',
+      appNameSearchKeyword: 'string',
+      corpId: 'string',
+      pageNumber: 'number',
+      pageSize: 'number',
+      token: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListApplicationResponseBody extends $tea.Model {
+  data?: ListApplicationResponseBodyData[];
+  pageNumber?: number;
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      pageNumber: 'pageNumber',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: { 'type': 'array', 'itemType': ListApplicationResponseBodyData },
+      pageNumber: 'number',
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListApplicationResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ListApplicationResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ListApplicationResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListApplicationAuthorizationServiceApplicationInformationHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4482,6 +5184,133 @@ export class NotifyAuthorizationResultResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: NotifyAuthorizationResultResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryServiceRecordHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryServiceRecordRequest extends $tea.Model {
+  appType?: string;
+  formUuid?: string;
+  hookType?: string;
+  hookUuid?: string;
+  instanceId?: string;
+  invokeAfterDateGMT?: string;
+  invokeBeforeDateGMT?: string;
+  invokeStatus?: string;
+  pageNumber?: number;
+  pageSize?: number;
+  requestUrl?: string;
+  sourceUuid?: string;
+  success?: boolean;
+  systemToken?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appType: 'appType',
+      formUuid: 'formUuid',
+      hookType: 'hookType',
+      hookUuid: 'hookUuid',
+      instanceId: 'instanceId',
+      invokeAfterDateGMT: 'invokeAfterDateGMT',
+      invokeBeforeDateGMT: 'invokeBeforeDateGMT',
+      invokeStatus: 'invokeStatus',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      requestUrl: 'requestUrl',
+      sourceUuid: 'sourceUuid',
+      success: 'success',
+      systemToken: 'systemToken',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appType: 'string',
+      formUuid: 'string',
+      hookType: 'string',
+      hookUuid: 'string',
+      instanceId: 'string',
+      invokeAfterDateGMT: 'string',
+      invokeBeforeDateGMT: 'string',
+      invokeStatus: 'string',
+      pageNumber: 'number',
+      pageSize: 'number',
+      requestUrl: 'string',
+      sourceUuid: 'string',
+      success: 'boolean',
+      systemToken: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryServiceRecordResponseBody extends $tea.Model {
+  totalCount?: number;
+  values?: QueryServiceRecordResponseBodyValues[];
+  static names(): { [key: string]: string } {
+    return {
+      totalCount: 'totalCount',
+      values: 'values',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      totalCount: 'number',
+      values: { 'type': 'array', 'itemType': QueryServiceRecordResponseBodyValues },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryServiceRecordResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryServiceRecordResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryServiceRecordResponseBody,
     };
   }
 
@@ -5837,6 +6666,381 @@ export class SearchFormDataIdListResponse extends $tea.Model {
   }
 }
 
+export class SearchFormDataRemovalTableDataHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchFormDataRemovalTableDataRequest extends $tea.Model {
+  appType?: string;
+  createFromTimeGMT?: string;
+  createToTimeGMT?: string;
+  formUuid?: string;
+  modifiedFromTimeGMT?: string;
+  modifiedToTimeGMT?: string;
+  orderConfigJson?: string;
+  originatorId?: string;
+  pageNumber?: number;
+  pageSize?: number;
+  searchFieldJson?: string;
+  systemToken?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appType: 'appType',
+      createFromTimeGMT: 'createFromTimeGMT',
+      createToTimeGMT: 'createToTimeGMT',
+      formUuid: 'formUuid',
+      modifiedFromTimeGMT: 'modifiedFromTimeGMT',
+      modifiedToTimeGMT: 'modifiedToTimeGMT',
+      orderConfigJson: 'orderConfigJson',
+      originatorId: 'originatorId',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      searchFieldJson: 'searchFieldJson',
+      systemToken: 'systemToken',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appType: 'string',
+      createFromTimeGMT: 'string',
+      createToTimeGMT: 'string',
+      formUuid: 'string',
+      modifiedFromTimeGMT: 'string',
+      modifiedToTimeGMT: 'string',
+      orderConfigJson: 'string',
+      originatorId: 'string',
+      pageNumber: 'number',
+      pageSize: 'number',
+      searchFieldJson: 'string',
+      systemToken: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchFormDataRemovalTableDataResponseBody extends $tea.Model {
+  data?: SearchFormDataRemovalTableDataResponseBodyData[];
+  hasMoreData?: boolean;
+  pageNumber?: number;
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      hasMoreData: 'hasMoreData',
+      pageNumber: 'pageNumber',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: { 'type': 'array', 'itemType': SearchFormDataRemovalTableDataResponseBodyData },
+      hasMoreData: 'boolean',
+      pageNumber: 'number',
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchFormDataRemovalTableDataResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SearchFormDataRemovalTableDataResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SearchFormDataRemovalTableDataResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchFormDataSecondGenerationHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchFormDataSecondGenerationRequest extends $tea.Model {
+  appType?: string;
+  createFromTimeGMT?: string;
+  createToTimeGMT?: string;
+  formUuid?: string;
+  modifiedFromTimeGMT?: string;
+  modifiedToTimeGMT?: string;
+  orderConfigJson?: string;
+  originatorId?: string;
+  pageNumber?: number;
+  pageSize?: number;
+  searchCondition?: string;
+  systemToken?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appType: 'appType',
+      createFromTimeGMT: 'createFromTimeGMT',
+      createToTimeGMT: 'createToTimeGMT',
+      formUuid: 'formUuid',
+      modifiedFromTimeGMT: 'modifiedFromTimeGMT',
+      modifiedToTimeGMT: 'modifiedToTimeGMT',
+      orderConfigJson: 'orderConfigJson',
+      originatorId: 'originatorId',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      searchCondition: 'searchCondition',
+      systemToken: 'systemToken',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appType: 'string',
+      createFromTimeGMT: 'string',
+      createToTimeGMT: 'string',
+      formUuid: 'string',
+      modifiedFromTimeGMT: 'string',
+      modifiedToTimeGMT: 'string',
+      orderConfigJson: 'string',
+      originatorId: 'string',
+      pageNumber: 'number',
+      pageSize: 'number',
+      searchCondition: 'string',
+      systemToken: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchFormDataSecondGenerationResponseBody extends $tea.Model {
+  data?: SearchFormDataSecondGenerationResponseBodyData[];
+  pageNumber?: number;
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      pageNumber: 'pageNumber',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: { 'type': 'array', 'itemType': SearchFormDataSecondGenerationResponseBodyData },
+      pageNumber: 'number',
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchFormDataSecondGenerationResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SearchFormDataSecondGenerationResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SearchFormDataSecondGenerationResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchFormDataSecondGenerationNoTableFieldHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchFormDataSecondGenerationNoTableFieldRequest extends $tea.Model {
+  appType?: string;
+  createFromTimeGMT?: string;
+  createToTimeGMT?: string;
+  formUuid?: string;
+  modifiedFromTimeGMT?: string;
+  modifiedToTimeGMT?: string;
+  orderConfigJson?: string;
+  originatorId?: string;
+  pageNumber?: number;
+  pageSize?: number;
+  searchCondition?: string;
+  systemToken?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appType: 'appType',
+      createFromTimeGMT: 'createFromTimeGMT',
+      createToTimeGMT: 'createToTimeGMT',
+      formUuid: 'formUuid',
+      modifiedFromTimeGMT: 'modifiedFromTimeGMT',
+      modifiedToTimeGMT: 'modifiedToTimeGMT',
+      orderConfigJson: 'orderConfigJson',
+      originatorId: 'originatorId',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      searchCondition: 'searchCondition',
+      systemToken: 'systemToken',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appType: 'string',
+      createFromTimeGMT: 'string',
+      createToTimeGMT: 'string',
+      formUuid: 'string',
+      modifiedFromTimeGMT: 'string',
+      modifiedToTimeGMT: 'string',
+      orderConfigJson: 'string',
+      originatorId: 'string',
+      pageNumber: 'number',
+      pageSize: 'number',
+      searchCondition: 'string',
+      systemToken: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchFormDataSecondGenerationNoTableFieldResponseBody extends $tea.Model {
+  data?: SearchFormDataSecondGenerationNoTableFieldResponseBodyData[];
+  pageNumber?: number;
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      pageNumber: 'pageNumber',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: { 'type': 'array', 'itemType': SearchFormDataSecondGenerationNoTableFieldResponseBodyData },
+      pageNumber: 'number',
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchFormDataSecondGenerationNoTableFieldResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SearchFormDataSecondGenerationNoTableFieldResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SearchFormDataSecondGenerationNoTableFieldResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SearchFormDatasHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -7157,6 +8361,167 @@ export class ValidateOrderUpgradeResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: ValidateOrderUpgradeResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchGetFormDataByIdListResponseBodyResultModifyUserName extends $tea.Model {
+  nameInChinese?: string;
+  nameInEnglish?: string;
+  static names(): { [key: string]: string } {
+    return {
+      nameInChinese: 'nameInChinese',
+      nameInEnglish: 'nameInEnglish',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nameInChinese: 'string',
+      nameInEnglish: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchGetFormDataByIdListResponseBodyResultModifyUser extends $tea.Model {
+  departmentName?: string;
+  email?: string;
+  name?: BatchGetFormDataByIdListResponseBodyResultModifyUserName;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      departmentName: 'departmentName',
+      email: 'email',
+      name: 'name',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      departmentName: 'string',
+      email: 'string',
+      name: BatchGetFormDataByIdListResponseBodyResultModifyUserName,
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchGetFormDataByIdListResponseBodyResultOriginatorName extends $tea.Model {
+  nameInChinese?: string;
+  nameInEnglish?: string;
+  static names(): { [key: string]: string } {
+    return {
+      nameInChinese: 'nameInChinese',
+      nameInEnglish: 'nameInEnglish',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nameInChinese: 'string',
+      nameInEnglish: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchGetFormDataByIdListResponseBodyResultOriginator extends $tea.Model {
+  departmentName?: string;
+  email?: string;
+  name?: BatchGetFormDataByIdListResponseBodyResultOriginatorName;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      departmentName: 'departmentName',
+      email: 'email',
+      name: 'name',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      departmentName: 'string',
+      email: 'string',
+      name: BatchGetFormDataByIdListResponseBodyResultOriginatorName,
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchGetFormDataByIdListResponseBodyResult extends $tea.Model {
+  createTimeGMT?: string;
+  creatorUserId?: string;
+  formData?: { [key: string]: any };
+  formInstanceId?: string;
+  formUuid?: string;
+  id?: number;
+  instanceValue?: string;
+  modifiedTimeGMT?: string;
+  modifier?: string;
+  modifyUser?: BatchGetFormDataByIdListResponseBodyResultModifyUser;
+  originator?: BatchGetFormDataByIdListResponseBodyResultOriginator;
+  sequence?: string;
+  serialNumber?: string;
+  title?: string;
+  version?: number;
+  static names(): { [key: string]: string } {
+    return {
+      createTimeGMT: 'createTimeGMT',
+      creatorUserId: 'creatorUserId',
+      formData: 'formData',
+      formInstanceId: 'formInstanceId',
+      formUuid: 'formUuid',
+      id: 'id',
+      instanceValue: 'instanceValue',
+      modifiedTimeGMT: 'modifiedTimeGMT',
+      modifier: 'modifier',
+      modifyUser: 'modifyUser',
+      originator: 'originator',
+      sequence: 'sequence',
+      serialNumber: 'serialNumber',
+      title: 'title',
+      version: 'version',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      createTimeGMT: 'string',
+      creatorUserId: 'string',
+      formData: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      formInstanceId: 'string',
+      formUuid: 'string',
+      id: 'number',
+      instanceValue: 'string',
+      modifiedTimeGMT: 'string',
+      modifier: 'string',
+      modifyUser: BatchGetFormDataByIdListResponseBodyResultModifyUser,
+      originator: BatchGetFormDataByIdListResponseBodyResultOriginator,
+      sequence: 'string',
+      serialNumber: 'string',
+      title: 'string',
+      version: 'number',
     };
   }
 
@@ -8758,6 +10123,52 @@ export class GetTaskCopiesResponseBodyData extends $tea.Model {
   }
 }
 
+export class ListApplicationResponseBodyData extends $tea.Model {
+  appConfig?: string;
+  appType?: string;
+  applicationStatus?: string;
+  corpId?: string;
+  creatorUserId?: string;
+  description?: string;
+  icon?: string;
+  inexistence?: string;
+  name?: string;
+  subCorpId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appConfig: 'appConfig',
+      appType: 'appType',
+      applicationStatus: 'applicationStatus',
+      corpId: 'corpId',
+      creatorUserId: 'creatorUserId',
+      description: 'description',
+      icon: 'icon',
+      inexistence: 'inexistence',
+      name: 'name',
+      subCorpId: 'subCorpId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appConfig: 'string',
+      appType: 'string',
+      applicationStatus: 'string',
+      corpId: 'string',
+      creatorUserId: 'string',
+      description: 'string',
+      icon: 'string',
+      inexistence: 'string',
+      name: 'string',
+      subCorpId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListApplicationAuthorizationServiceApplicationInformationResponseBodyApplicationInformationUsagePlugins extends $tea.Model {
   iconUrl?: string;
   pluginName?: string;
@@ -9072,6 +10483,544 @@ export class ListNavigationByFormTypeResponseBodyResult extends $tea.Model {
   }
 }
 
+export class QueryServiceRecordResponseBodyValues extends $tea.Model {
+  formInstanceId?: string;
+  formUuid?: string;
+  hookType?: string;
+  hookUuid?: string;
+  invokeParameter?: string;
+  invokeResult?: string;
+  invokeStatus?: string;
+  invokeSuccess?: string;
+  invokeUrl?: string;
+  serviceContent?: string;
+  serviceName?: string;
+  serviceParameter?: string;
+  sourceUuid?: string;
+  static names(): { [key: string]: string } {
+    return {
+      formInstanceId: 'formInstanceId',
+      formUuid: 'formUuid',
+      hookType: 'hookType',
+      hookUuid: 'hookUuid',
+      invokeParameter: 'invokeParameter',
+      invokeResult: 'invokeResult',
+      invokeStatus: 'invokeStatus',
+      invokeSuccess: 'invokeSuccess',
+      invokeUrl: 'invokeUrl',
+      serviceContent: 'serviceContent',
+      serviceName: 'serviceName',
+      serviceParameter: 'serviceParameter',
+      sourceUuid: 'sourceUuid',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      formInstanceId: 'string',
+      formUuid: 'string',
+      hookType: 'string',
+      hookUuid: 'string',
+      invokeParameter: 'string',
+      invokeResult: 'string',
+      invokeStatus: 'string',
+      invokeSuccess: 'string',
+      invokeUrl: 'string',
+      serviceContent: 'string',
+      serviceName: 'string',
+      serviceParameter: 'string',
+      sourceUuid: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchFormDataRemovalTableDataResponseBodyDataModifyUserName extends $tea.Model {
+  nameInChinese?: string;
+  nameInEnglish?: string;
+  static names(): { [key: string]: string } {
+    return {
+      nameInChinese: 'nameInChinese',
+      nameInEnglish: 'nameInEnglish',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nameInChinese: 'string',
+      nameInEnglish: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchFormDataRemovalTableDataResponseBodyDataModifyUser extends $tea.Model {
+  departmentName?: string;
+  email?: string;
+  name?: SearchFormDataRemovalTableDataResponseBodyDataModifyUserName;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      departmentName: 'departmentName',
+      email: 'email',
+      name: 'name',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      departmentName: 'string',
+      email: 'string',
+      name: SearchFormDataRemovalTableDataResponseBodyDataModifyUserName,
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchFormDataRemovalTableDataResponseBodyDataOriginatorName extends $tea.Model {
+  nameInChinese?: string;
+  nameInEnglish?: string;
+  static names(): { [key: string]: string } {
+    return {
+      nameInChinese: 'nameInChinese',
+      nameInEnglish: 'nameInEnglish',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nameInChinese: 'string',
+      nameInEnglish: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchFormDataRemovalTableDataResponseBodyDataOriginator extends $tea.Model {
+  departmentName?: string;
+  email?: string;
+  name?: SearchFormDataRemovalTableDataResponseBodyDataOriginatorName;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      departmentName: 'departmentName',
+      email: 'email',
+      name: 'name',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      departmentName: 'string',
+      email: 'string',
+      name: SearchFormDataRemovalTableDataResponseBodyDataOriginatorName,
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchFormDataRemovalTableDataResponseBodyData extends $tea.Model {
+  createTimeGMT?: string;
+  creatorUserId?: string;
+  formData?: { [key: string]: any };
+  formInstanceId?: string;
+  formUuid?: string;
+  id?: number;
+  instanceValue?: string;
+  modifiedTimeGMT?: string;
+  modifier?: string;
+  modifyUser?: SearchFormDataRemovalTableDataResponseBodyDataModifyUser;
+  originator?: SearchFormDataRemovalTableDataResponseBodyDataOriginator;
+  sequence?: string;
+  serialNumber?: string;
+  title?: string;
+  version?: number;
+  static names(): { [key: string]: string } {
+    return {
+      createTimeGMT: 'createTimeGMT',
+      creatorUserId: 'creatorUserId',
+      formData: 'formData',
+      formInstanceId: 'formInstanceId',
+      formUuid: 'formUuid',
+      id: 'id',
+      instanceValue: 'instanceValue',
+      modifiedTimeGMT: 'modifiedTimeGMT',
+      modifier: 'modifier',
+      modifyUser: 'modifyUser',
+      originator: 'originator',
+      sequence: 'sequence',
+      serialNumber: 'serialNumber',
+      title: 'title',
+      version: 'version',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      createTimeGMT: 'string',
+      creatorUserId: 'string',
+      formData: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      formInstanceId: 'string',
+      formUuid: 'string',
+      id: 'number',
+      instanceValue: 'string',
+      modifiedTimeGMT: 'string',
+      modifier: 'string',
+      modifyUser: SearchFormDataRemovalTableDataResponseBodyDataModifyUser,
+      originator: SearchFormDataRemovalTableDataResponseBodyDataOriginator,
+      sequence: 'string',
+      serialNumber: 'string',
+      title: 'string',
+      version: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchFormDataSecondGenerationResponseBodyDataModifyUserName extends $tea.Model {
+  nameInChinese?: string;
+  nameInEnglish?: string;
+  static names(): { [key: string]: string } {
+    return {
+      nameInChinese: 'nameInChinese',
+      nameInEnglish: 'nameInEnglish',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nameInChinese: 'string',
+      nameInEnglish: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchFormDataSecondGenerationResponseBodyDataModifyUser extends $tea.Model {
+  departmentName?: string;
+  email?: string;
+  name?: SearchFormDataSecondGenerationResponseBodyDataModifyUserName;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      departmentName: 'departmentName',
+      email: 'email',
+      name: 'name',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      departmentName: 'string',
+      email: 'string',
+      name: SearchFormDataSecondGenerationResponseBodyDataModifyUserName,
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchFormDataSecondGenerationResponseBodyDataOriginatorName extends $tea.Model {
+  nameInChinese?: string;
+  nameInEnglish?: string;
+  static names(): { [key: string]: string } {
+    return {
+      nameInChinese: 'nameInChinese',
+      nameInEnglish: 'nameInEnglish',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nameInChinese: 'string',
+      nameInEnglish: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchFormDataSecondGenerationResponseBodyDataOriginator extends $tea.Model {
+  departmentName?: string;
+  email?: string;
+  name?: SearchFormDataSecondGenerationResponseBodyDataOriginatorName;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      departmentName: 'departmentName',
+      email: 'email',
+      name: 'name',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      departmentName: 'string',
+      email: 'string',
+      name: SearchFormDataSecondGenerationResponseBodyDataOriginatorName,
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchFormDataSecondGenerationResponseBodyData extends $tea.Model {
+  createTimeGMT?: string;
+  creatorUserId?: string;
+  formData?: { [key: string]: any };
+  formInstanceId?: string;
+  formUuid?: string;
+  id?: number;
+  instanceValue?: string;
+  modifiedTimeGMT?: string;
+  modifier?: string;
+  modifyUser?: SearchFormDataSecondGenerationResponseBodyDataModifyUser;
+  originator?: SearchFormDataSecondGenerationResponseBodyDataOriginator;
+  sequence?: string;
+  serialNumber?: string;
+  title?: string;
+  version?: number;
+  static names(): { [key: string]: string } {
+    return {
+      createTimeGMT: 'createTimeGMT',
+      creatorUserId: 'creatorUserId',
+      formData: 'formData',
+      formInstanceId: 'formInstanceId',
+      formUuid: 'formUuid',
+      id: 'id',
+      instanceValue: 'instanceValue',
+      modifiedTimeGMT: 'modifiedTimeGMT',
+      modifier: 'modifier',
+      modifyUser: 'modifyUser',
+      originator: 'originator',
+      sequence: 'sequence',
+      serialNumber: 'serialNumber',
+      title: 'title',
+      version: 'version',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      createTimeGMT: 'string',
+      creatorUserId: 'string',
+      formData: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      formInstanceId: 'string',
+      formUuid: 'string',
+      id: 'number',
+      instanceValue: 'string',
+      modifiedTimeGMT: 'string',
+      modifier: 'string',
+      modifyUser: SearchFormDataSecondGenerationResponseBodyDataModifyUser,
+      originator: SearchFormDataSecondGenerationResponseBodyDataOriginator,
+      sequence: 'string',
+      serialNumber: 'string',
+      title: 'string',
+      version: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUserName extends $tea.Model {
+  nameInChinese?: string;
+  nameInEnglish?: string;
+  static names(): { [key: string]: string } {
+    return {
+      nameInChinese: 'nameInChinese',
+      nameInEnglish: 'nameInEnglish',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nameInChinese: 'string',
+      nameInEnglish: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUser extends $tea.Model {
+  departmentName?: string;
+  email?: string;
+  name?: SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUserName;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      departmentName: 'departmentName',
+      email: 'email',
+      name: 'name',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      departmentName: 'string',
+      email: 'string',
+      name: SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUserName,
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginatorName extends $tea.Model {
+  nameInChinese?: string;
+  nameInEnglish?: string;
+  static names(): { [key: string]: string } {
+    return {
+      nameInChinese: 'nameInChinese',
+      nameInEnglish: 'nameInEnglish',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nameInChinese: 'string',
+      nameInEnglish: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginator extends $tea.Model {
+  departmentName?: string;
+  email?: string;
+  name?: SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginatorName;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      departmentName: 'departmentName',
+      email: 'email',
+      name: 'name',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      departmentName: 'string',
+      email: 'string',
+      name: SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginatorName,
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchFormDataSecondGenerationNoTableFieldResponseBodyData extends $tea.Model {
+  createTimeGMT?: string;
+  creatorUserId?: string;
+  formData?: { [key: string]: any };
+  formInstanceId?: string;
+  formUuid?: string;
+  id?: number;
+  instanceValue?: string;
+  modifiedTimeGMT?: string;
+  modifier?: string;
+  modifyUser?: SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUser;
+  originator?: SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginator;
+  sequence?: string;
+  serialNumber?: string;
+  title?: string;
+  version?: number;
+  static names(): { [key: string]: string } {
+    return {
+      createTimeGMT: 'createTimeGMT',
+      creatorUserId: 'creatorUserId',
+      formData: 'formData',
+      formInstanceId: 'formInstanceId',
+      formUuid: 'formUuid',
+      id: 'id',
+      instanceValue: 'instanceValue',
+      modifiedTimeGMT: 'modifiedTimeGMT',
+      modifier: 'modifier',
+      modifyUser: 'modifyUser',
+      originator: 'originator',
+      sequence: 'sequence',
+      serialNumber: 'serialNumber',
+      title: 'title',
+      version: 'version',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      createTimeGMT: 'string',
+      creatorUserId: 'string',
+      formData: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      formInstanceId: 'string',
+      formUuid: 'string',
+      id: 'number',
+      instanceValue: 'string',
+      modifiedTimeGMT: 'string',
+      modifier: 'string',
+      modifyUser: SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUser,
+      originator: SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginator,
+      sequence: 'string',
+      serialNumber: 'string',
+      title: 'string',
+      version: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SearchFormDatasResponseBodyDataModifyUserUserName extends $tea.Model {
   nameInChinese?: string;
   nameInEnglish?: string;
@@ -9255,6 +11204,291 @@ export default class Client extends OpenApi {
   }
 
 
+  async batchGetFormDataByIdList(request: BatchGetFormDataByIdListRequest): Promise<BatchGetFormDataByIdListResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BatchGetFormDataByIdListHeaders({ });
+    return await this.batchGetFormDataByIdListWithOptions(request, headers, runtime);
+  }
+
+  async batchGetFormDataByIdListWithOptions(request: BatchGetFormDataByIdListRequest, headers: BatchGetFormDataByIdListHeaders, runtime: $Util.RuntimeOptions): Promise<BatchGetFormDataByIdListResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appType)) {
+      body["appType"] = request.appType;
+    }
+
+    if (!Util.isUnset(request.formInstanceIdList)) {
+      body["formInstanceIdList"] = request.formInstanceIdList;
+    }
+
+    if (!Util.isUnset(request.formUuid)) {
+      body["formUuid"] = request.formUuid;
+    }
+
+    if (!Util.isUnset(request.needFormInstanceValue)) {
+      body["needFormInstanceValue"] = request.needFormInstanceValue;
+    }
+
+    if (!Util.isUnset(request.systemToken)) {
+      body["systemToken"] = request.systemToken;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<BatchGetFormDataByIdListResponse>(await this.doROARequest("BatchGetFormDataByIdList", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/forms/instances/ids/query`, "json", req, runtime), new BatchGetFormDataByIdListResponse({}));
+  }
+
+  async batchRemovalByFormInstanceIdList(request: BatchRemovalByFormInstanceIdListRequest): Promise<BatchRemovalByFormInstanceIdListResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BatchRemovalByFormInstanceIdListHeaders({ });
+    return await this.batchRemovalByFormInstanceIdListWithOptions(request, headers, runtime);
+  }
+
+  async batchRemovalByFormInstanceIdListWithOptions(request: BatchRemovalByFormInstanceIdListRequest, headers: BatchRemovalByFormInstanceIdListHeaders, runtime: $Util.RuntimeOptions): Promise<BatchRemovalByFormInstanceIdListResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appType)) {
+      body["appType"] = request.appType;
+    }
+
+    if (!Util.isUnset(request.asynchronousExecution)) {
+      body["asynchronousExecution"] = request.asynchronousExecution;
+    }
+
+    if (!Util.isUnset(request.executeExpression)) {
+      body["executeExpression"] = request.executeExpression;
+    }
+
+    if (!Util.isUnset(request.formInstanceIdList)) {
+      body["formInstanceIdList"] = request.formInstanceIdList;
+    }
+
+    if (!Util.isUnset(request.formUuid)) {
+      body["formUuid"] = request.formUuid;
+    }
+
+    if (!Util.isUnset(request.systemToken)) {
+      body["systemToken"] = request.systemToken;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<BatchRemovalByFormInstanceIdListResponse>(await this.doROARequest("BatchRemovalByFormInstanceIdList", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/forms/instances/batchRemove`, "none", req, runtime), new BatchRemovalByFormInstanceIdListResponse({}));
+  }
+
+  async batchSaveFormData(request: BatchSaveFormDataRequest): Promise<BatchSaveFormDataResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BatchSaveFormDataHeaders({ });
+    return await this.batchSaveFormDataWithOptions(request, headers, runtime);
+  }
+
+  async batchSaveFormDataWithOptions(request: BatchSaveFormDataRequest, headers: BatchSaveFormDataHeaders, runtime: $Util.RuntimeOptions): Promise<BatchSaveFormDataResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appType)) {
+      body["appType"] = request.appType;
+    }
+
+    if (!Util.isUnset(request.asynchronousExecution)) {
+      body["asynchronousExecution"] = request.asynchronousExecution;
+    }
+
+    if (!Util.isUnset(request.formDataJsonList)) {
+      body["formDataJsonList"] = request.formDataJsonList;
+    }
+
+    if (!Util.isUnset(request.formUuid)) {
+      body["formUuid"] = request.formUuid;
+    }
+
+    if (!Util.isUnset(request.keepRunningAfterException)) {
+      body["keepRunningAfterException"] = request.keepRunningAfterException;
+    }
+
+    if (!Util.isUnset(request.noExecuteExpression)) {
+      body["noExecuteExpression"] = request.noExecuteExpression;
+    }
+
+    if (!Util.isUnset(request.systemToken)) {
+      body["systemToken"] = request.systemToken;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<BatchSaveFormDataResponse>(await this.doROARequest("BatchSaveFormData", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/forms/instances/batchSave`, "json", req, runtime), new BatchSaveFormDataResponse({}));
+  }
+
+  async batchUpdateFormDataByInstanceId(request: BatchUpdateFormDataByInstanceIdRequest): Promise<BatchUpdateFormDataByInstanceIdResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BatchUpdateFormDataByInstanceIdHeaders({ });
+    return await this.batchUpdateFormDataByInstanceIdWithOptions(request, headers, runtime);
+  }
+
+  async batchUpdateFormDataByInstanceIdWithOptions(request: BatchUpdateFormDataByInstanceIdRequest, headers: BatchUpdateFormDataByInstanceIdHeaders, runtime: $Util.RuntimeOptions): Promise<BatchUpdateFormDataByInstanceIdResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appType)) {
+      body["appType"] = request.appType;
+    }
+
+    if (!Util.isUnset(request.asynchronousExecution)) {
+      body["asynchronousExecution"] = request.asynchronousExecution;
+    }
+
+    if (!Util.isUnset(request.formInstanceIdList)) {
+      body["formInstanceIdList"] = request.formInstanceIdList;
+    }
+
+    if (!Util.isUnset(request.formUuid)) {
+      body["formUuid"] = request.formUuid;
+    }
+
+    if (!Util.isUnset(request.ignoreEmpty)) {
+      body["ignoreEmpty"] = request.ignoreEmpty;
+    }
+
+    if (!Util.isUnset(request.noExecuteExpression)) {
+      body["noExecuteExpression"] = request.noExecuteExpression;
+    }
+
+    if (!Util.isUnset(request.systemToken)) {
+      body["systemToken"] = request.systemToken;
+    }
+
+    if (!Util.isUnset(request.updateFormDataJson)) {
+      body["updateFormDataJson"] = request.updateFormDataJson;
+    }
+
+    if (!Util.isUnset(request.useLatestFormSchemaVersion)) {
+      body["useLatestFormSchemaVersion"] = request.useLatestFormSchemaVersion;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<BatchUpdateFormDataByInstanceIdResponse>(await this.doROARequest("BatchUpdateFormDataByInstanceId", "yida_1.0", "HTTP", "PUT", "AK", `/v1.0/yida/forms/instances/components`, "json", req, runtime), new BatchUpdateFormDataByInstanceIdResponse({}));
+  }
+
+  async batchUpdateFormDataByInstanceMap(request: BatchUpdateFormDataByInstanceMapRequest): Promise<BatchUpdateFormDataByInstanceMapResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BatchUpdateFormDataByInstanceMapHeaders({ });
+    return await this.batchUpdateFormDataByInstanceMapWithOptions(request, headers, runtime);
+  }
+
+  async batchUpdateFormDataByInstanceMapWithOptions(request: BatchUpdateFormDataByInstanceMapRequest, headers: BatchUpdateFormDataByInstanceMapHeaders, runtime: $Util.RuntimeOptions): Promise<BatchUpdateFormDataByInstanceMapResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appType)) {
+      body["appType"] = request.appType;
+    }
+
+    if (!Util.isUnset(request.asynchronousExecution)) {
+      body["asynchronousExecution"] = request.asynchronousExecution;
+    }
+
+    if (!Util.isUnset(request.formUuid)) {
+      body["formUuid"] = request.formUuid;
+    }
+
+    if (!Util.isUnset(request.ignoreEmpty)) {
+      body["ignoreEmpty"] = request.ignoreEmpty;
+    }
+
+    if (!Util.isUnset(request.noExecuteExpression)) {
+      body["noExecuteExpression"] = request.noExecuteExpression;
+    }
+
+    if (!Util.isUnset(request.systemToken)) {
+      body["systemToken"] = request.systemToken;
+    }
+
+    if (!Util.isUnset(request.updateFormDataJsonMap)) {
+      body["updateFormDataJsonMap"] = request.updateFormDataJsonMap;
+    }
+
+    if (!Util.isUnset(request.useLatestFormSchemaVersion)) {
+      body["useLatestFormSchemaVersion"] = request.useLatestFormSchemaVersion;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<BatchUpdateFormDataByInstanceMapResponse>(await this.doROARequest("BatchUpdateFormDataByInstanceMap", "yida_1.0", "HTTP", "PUT", "AK", `/v1.0/yida/forms/instances/datas`, "json", req, runtime), new BatchUpdateFormDataByInstanceMapResponse({}));
+  }
+
   async buyAuthorizationOrder(request: BuyAuthorizationOrderRequest): Promise<BuyAuthorizationOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new BuyAuthorizationOrderHeaders({ });
@@ -9421,6 +11655,59 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<CheckCloudAccountStatusResponse>(await this.doROARequest("CheckCloudAccountStatus", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/apps/cloudAccountStatus/${callerUid}`, "json", req, runtime), new CheckCloudAccountStatusResponse({}));
+  }
+
+  async createOrUpdateFormData(request: CreateOrUpdateFormDataRequest): Promise<CreateOrUpdateFormDataResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateOrUpdateFormDataHeaders({ });
+    return await this.createOrUpdateFormDataWithOptions(request, headers, runtime);
+  }
+
+  async createOrUpdateFormDataWithOptions(request: CreateOrUpdateFormDataRequest, headers: CreateOrUpdateFormDataHeaders, runtime: $Util.RuntimeOptions): Promise<CreateOrUpdateFormDataResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appType)) {
+      body["appType"] = request.appType;
+    }
+
+    if (!Util.isUnset(request.formDataJson)) {
+      body["formDataJson"] = request.formDataJson;
+    }
+
+    if (!Util.isUnset(request.formUuid)) {
+      body["formUuid"] = request.formUuid;
+    }
+
+    if (!Util.isUnset(request.noExecuteExpression)) {
+      body["noExecuteExpression"] = request.noExecuteExpression;
+    }
+
+    if (!Util.isUnset(request.searchCondition)) {
+      body["searchCondition"] = request.searchCondition;
+    }
+
+    if (!Util.isUnset(request.systemToken)) {
+      body["systemToken"] = request.systemToken;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreateOrUpdateFormDataResponse>(await this.doROARequest("CreateOrUpdateFormData", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/forms/instances/insertOrUpdate`, "json", req, runtime), new CreateOrUpdateFormDataResponse({}));
   }
 
   async deleteFormData(request: DeleteFormDataRequest): Promise<DeleteFormDataResponse> {
@@ -10408,6 +12695,10 @@ export default class Client extends OpenApi {
       body["modifiedToTimeGMT"] = request.modifiedToTimeGMT;
     }
 
+    if (!Util.isUnset(request.orderConfigJson)) {
+      body["orderConfigJson"] = request.orderConfigJson;
+    }
+
     if (!Util.isUnset(request.originatorId)) {
       body["originatorId"] = request.originatorId;
     }
@@ -11086,6 +13377,59 @@ export default class Client extends OpenApi {
     return $tea.cast<GetTaskCopiesResponse>(await this.doROARequest("GetTaskCopies", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/tasks/taskCopies`, "json", req, runtime), new GetTaskCopiesResponse({}));
   }
 
+  async listApplication(request: ListApplicationRequest): Promise<ListApplicationResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListApplicationHeaders({ });
+    return await this.listApplicationWithOptions(request, headers, runtime);
+  }
+
+  async listApplicationWithOptions(request: ListApplicationRequest, headers: ListApplicationHeaders, runtime: $Util.RuntimeOptions): Promise<ListApplicationResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appFilter)) {
+      query["appFilter"] = request.appFilter;
+    }
+
+    if (!Util.isUnset(request.appNameSearchKeyword)) {
+      query["appNameSearchKeyword"] = request.appNameSearchKeyword;
+    }
+
+    if (!Util.isUnset(request.corpId)) {
+      query["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.token)) {
+      query["token"] = request.token;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<ListApplicationResponse>(await this.doROARequest("ListApplication", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/organizations/applications`, "json", req, runtime), new ListApplicationResponse({}));
+  }
+
   async listApplicationAuthorizationServiceApplicationInformation(instanceId: string, request: ListApplicationAuthorizationServiceApplicationInformationRequest): Promise<ListApplicationAuthorizationServiceApplicationInformationResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListApplicationAuthorizationServiceApplicationInformationHeaders({ });
@@ -11490,6 +13834,91 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<NotifyAuthorizationResultResponse>(await this.doROARequest("NotifyAuthorizationResult", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/apps/authorizationResults/notify`, "json", req, runtime), new NotifyAuthorizationResultResponse({}));
+  }
+
+  async queryServiceRecord(request: QueryServiceRecordRequest): Promise<QueryServiceRecordResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryServiceRecordHeaders({ });
+    return await this.queryServiceRecordWithOptions(request, headers, runtime);
+  }
+
+  async queryServiceRecordWithOptions(request: QueryServiceRecordRequest, headers: QueryServiceRecordHeaders, runtime: $Util.RuntimeOptions): Promise<QueryServiceRecordResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appType)) {
+      query["appType"] = request.appType;
+    }
+
+    if (!Util.isUnset(request.formUuid)) {
+      query["formUuid"] = request.formUuid;
+    }
+
+    if (!Util.isUnset(request.hookType)) {
+      query["hookType"] = request.hookType;
+    }
+
+    if (!Util.isUnset(request.hookUuid)) {
+      query["hookUuid"] = request.hookUuid;
+    }
+
+    if (!Util.isUnset(request.instanceId)) {
+      query["instanceId"] = request.instanceId;
+    }
+
+    if (!Util.isUnset(request.invokeAfterDateGMT)) {
+      query["invokeAfterDateGMT"] = request.invokeAfterDateGMT;
+    }
+
+    if (!Util.isUnset(request.invokeBeforeDateGMT)) {
+      query["invokeBeforeDateGMT"] = request.invokeBeforeDateGMT;
+    }
+
+    if (!Util.isUnset(request.invokeStatus)) {
+      query["invokeStatus"] = request.invokeStatus;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.requestUrl)) {
+      query["requestUrl"] = request.requestUrl;
+    }
+
+    if (!Util.isUnset(request.sourceUuid)) {
+      query["sourceUuid"] = request.sourceUuid;
+    }
+
+    if (!Util.isUnset(request.success)) {
+      query["success"] = request.success;
+    }
+
+    if (!Util.isUnset(request.systemToken)) {
+      query["systemToken"] = request.systemToken;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryServiceRecordResponse>(await this.doROARequest("QueryServiceRecord", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/services/invocationRecords`, "json", req, runtime), new QueryServiceRecordResponse({}));
   }
 
   async redirectTask(request: RedirectTaskRequest): Promise<RedirectTaskResponse> {
@@ -12193,6 +14622,237 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<SearchFormDataIdListResponse>(await this.doROARequest("SearchFormDataIdList", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/forms/instances/ids/${appType}/${formUuid}`, "json", req, runtime), new SearchFormDataIdListResponse({}));
+  }
+
+  async searchFormDataRemovalTableData(request: SearchFormDataRemovalTableDataRequest): Promise<SearchFormDataRemovalTableDataResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SearchFormDataRemovalTableDataHeaders({ });
+    return await this.searchFormDataRemovalTableDataWithOptions(request, headers, runtime);
+  }
+
+  async searchFormDataRemovalTableDataWithOptions(request: SearchFormDataRemovalTableDataRequest, headers: SearchFormDataRemovalTableDataHeaders, runtime: $Util.RuntimeOptions): Promise<SearchFormDataRemovalTableDataResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appType)) {
+      body["appType"] = request.appType;
+    }
+
+    if (!Util.isUnset(request.createFromTimeGMT)) {
+      body["createFromTimeGMT"] = request.createFromTimeGMT;
+    }
+
+    if (!Util.isUnset(request.createToTimeGMT)) {
+      body["createToTimeGMT"] = request.createToTimeGMT;
+    }
+
+    if (!Util.isUnset(request.formUuid)) {
+      body["formUuid"] = request.formUuid;
+    }
+
+    if (!Util.isUnset(request.modifiedFromTimeGMT)) {
+      body["modifiedFromTimeGMT"] = request.modifiedFromTimeGMT;
+    }
+
+    if (!Util.isUnset(request.modifiedToTimeGMT)) {
+      body["modifiedToTimeGMT"] = request.modifiedToTimeGMT;
+    }
+
+    if (!Util.isUnset(request.orderConfigJson)) {
+      body["orderConfigJson"] = request.orderConfigJson;
+    }
+
+    if (!Util.isUnset(request.originatorId)) {
+      body["originatorId"] = request.originatorId;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      body["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      body["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.searchFieldJson)) {
+      body["searchFieldJson"] = request.searchFieldJson;
+    }
+
+    if (!Util.isUnset(request.systemToken)) {
+      body["systemToken"] = request.systemToken;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SearchFormDataRemovalTableDataResponse>(await this.doROARequest("SearchFormDataRemovalTableData", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/forms/instances/query`, "json", req, runtime), new SearchFormDataRemovalTableDataResponse({}));
+  }
+
+  async searchFormDataSecondGeneration(request: SearchFormDataSecondGenerationRequest): Promise<SearchFormDataSecondGenerationResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SearchFormDataSecondGenerationHeaders({ });
+    return await this.searchFormDataSecondGenerationWithOptions(request, headers, runtime);
+  }
+
+  async searchFormDataSecondGenerationWithOptions(request: SearchFormDataSecondGenerationRequest, headers: SearchFormDataSecondGenerationHeaders, runtime: $Util.RuntimeOptions): Promise<SearchFormDataSecondGenerationResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appType)) {
+      body["appType"] = request.appType;
+    }
+
+    if (!Util.isUnset(request.createFromTimeGMT)) {
+      body["createFromTimeGMT"] = request.createFromTimeGMT;
+    }
+
+    if (!Util.isUnset(request.createToTimeGMT)) {
+      body["createToTimeGMT"] = request.createToTimeGMT;
+    }
+
+    if (!Util.isUnset(request.formUuid)) {
+      body["formUuid"] = request.formUuid;
+    }
+
+    if (!Util.isUnset(request.modifiedFromTimeGMT)) {
+      body["modifiedFromTimeGMT"] = request.modifiedFromTimeGMT;
+    }
+
+    if (!Util.isUnset(request.modifiedToTimeGMT)) {
+      body["modifiedToTimeGMT"] = request.modifiedToTimeGMT;
+    }
+
+    if (!Util.isUnset(request.orderConfigJson)) {
+      body["orderConfigJson"] = request.orderConfigJson;
+    }
+
+    if (!Util.isUnset(request.originatorId)) {
+      body["originatorId"] = request.originatorId;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      body["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      body["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.searchCondition)) {
+      body["searchCondition"] = request.searchCondition;
+    }
+
+    if (!Util.isUnset(request.systemToken)) {
+      body["systemToken"] = request.systemToken;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SearchFormDataSecondGenerationResponse>(await this.doROARequest("SearchFormDataSecondGeneration", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/forms/instances/advances/queryAll`, "json", req, runtime), new SearchFormDataSecondGenerationResponse({}));
+  }
+
+  async searchFormDataSecondGenerationNoTableField(request: SearchFormDataSecondGenerationNoTableFieldRequest): Promise<SearchFormDataSecondGenerationNoTableFieldResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SearchFormDataSecondGenerationNoTableFieldHeaders({ });
+    return await this.searchFormDataSecondGenerationNoTableFieldWithOptions(request, headers, runtime);
+  }
+
+  async searchFormDataSecondGenerationNoTableFieldWithOptions(request: SearchFormDataSecondGenerationNoTableFieldRequest, headers: SearchFormDataSecondGenerationNoTableFieldHeaders, runtime: $Util.RuntimeOptions): Promise<SearchFormDataSecondGenerationNoTableFieldResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appType)) {
+      body["appType"] = request.appType;
+    }
+
+    if (!Util.isUnset(request.createFromTimeGMT)) {
+      body["createFromTimeGMT"] = request.createFromTimeGMT;
+    }
+
+    if (!Util.isUnset(request.createToTimeGMT)) {
+      body["createToTimeGMT"] = request.createToTimeGMT;
+    }
+
+    if (!Util.isUnset(request.formUuid)) {
+      body["formUuid"] = request.formUuid;
+    }
+
+    if (!Util.isUnset(request.modifiedFromTimeGMT)) {
+      body["modifiedFromTimeGMT"] = request.modifiedFromTimeGMT;
+    }
+
+    if (!Util.isUnset(request.modifiedToTimeGMT)) {
+      body["modifiedToTimeGMT"] = request.modifiedToTimeGMT;
+    }
+
+    if (!Util.isUnset(request.orderConfigJson)) {
+      body["orderConfigJson"] = request.orderConfigJson;
+    }
+
+    if (!Util.isUnset(request.originatorId)) {
+      body["originatorId"] = request.originatorId;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      body["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      body["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.searchCondition)) {
+      body["searchCondition"] = request.searchCondition;
+    }
+
+    if (!Util.isUnset(request.systemToken)) {
+      body["systemToken"] = request.systemToken;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SearchFormDataSecondGenerationNoTableFieldResponse>(await this.doROARequest("SearchFormDataSecondGenerationNoTableField", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/forms/instances/advances/query`, "json", req, runtime), new SearchFormDataSecondGenerationNoTableFieldResponse({}));
   }
 
   async searchFormDatas(request: SearchFormDatasRequest): Promise<SearchFormDatasResponse> {
