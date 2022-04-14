@@ -4,6 +4,1154 @@ from Tea.model import TeaModel
 from typing import Dict, List, Any
 
 
+class BatchGetFormDataByIdListHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class BatchGetFormDataByIdListRequest(TeaModel):
+    def __init__(
+        self,
+        app_type: str = None,
+        form_instance_id_list: List[str] = None,
+        form_uuid: str = None,
+        need_form_instance_value: bool = None,
+        system_token: str = None,
+        user_id: str = None,
+    ):
+        # 宜搭应用编码
+        self.app_type = app_type
+        # 表单实例id列表
+        self.form_instance_id_list = form_instance_id_list
+        # 表单编码
+        self.form_uuid = form_uuid
+        # 是否需要宜搭表单组件格式的实例数据
+        self.need_form_instance_value = need_form_instance_value
+        # 宜搭应用秘钥
+        self.system_token = system_token
+        # 钉钉userId
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_type is not None:
+            result['appType'] = self.app_type
+        if self.form_instance_id_list is not None:
+            result['formInstanceIdList'] = self.form_instance_id_list
+        if self.form_uuid is not None:
+            result['formUuid'] = self.form_uuid
+        if self.need_form_instance_value is not None:
+            result['needFormInstanceValue'] = self.need_form_instance_value
+        if self.system_token is not None:
+            result['systemToken'] = self.system_token
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appType') is not None:
+            self.app_type = m.get('appType')
+        if m.get('formInstanceIdList') is not None:
+            self.form_instance_id_list = m.get('formInstanceIdList')
+        if m.get('formUuid') is not None:
+            self.form_uuid = m.get('formUuid')
+        if m.get('needFormInstanceValue') is not None:
+            self.need_form_instance_value = m.get('needFormInstanceValue')
+        if m.get('systemToken') is not None:
+            self.system_token = m.get('systemToken')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class BatchGetFormDataByIdListResponseBodyResultModifyUserName(TeaModel):
+    def __init__(
+        self,
+        name_in_chinese: str = None,
+        name_in_english: str = None,
+    ):
+        # 中文名称
+        self.name_in_chinese = name_in_chinese
+        # 英文名称
+        self.name_in_english = name_in_english
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name_in_chinese is not None:
+            result['nameInChinese'] = self.name_in_chinese
+        if self.name_in_english is not None:
+            result['nameInEnglish'] = self.name_in_english
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nameInChinese') is not None:
+            self.name_in_chinese = m.get('nameInChinese')
+        if m.get('nameInEnglish') is not None:
+            self.name_in_english = m.get('nameInEnglish')
+        return self
+
+
+class BatchGetFormDataByIdListResponseBodyResultModifyUser(TeaModel):
+    def __init__(
+        self,
+        department_name: str = None,
+        email: str = None,
+        name: BatchGetFormDataByIdListResponseBodyResultModifyUserName = None,
+        user_id: str = None,
+    ):
+        # 部门名称
+        self.department_name = department_name
+        # 电子邮箱
+        self.email = email
+        # 名称
+        self.name = name
+        # 钉钉userId
+        self.user_id = user_id
+
+    def validate(self):
+        if self.name:
+            self.name.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.department_name is not None:
+            result['departmentName'] = self.department_name
+        if self.email is not None:
+            result['email'] = self.email
+        if self.name is not None:
+            result['name'] = self.name.to_map()
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('departmentName') is not None:
+            self.department_name = m.get('departmentName')
+        if m.get('email') is not None:
+            self.email = m.get('email')
+        if m.get('name') is not None:
+            temp_model = BatchGetFormDataByIdListResponseBodyResultModifyUserName()
+            self.name = temp_model.from_map(m['name'])
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class BatchGetFormDataByIdListResponseBodyResultOriginatorName(TeaModel):
+    def __init__(
+        self,
+        name_in_chinese: str = None,
+        name_in_english: str = None,
+    ):
+        # 中文名称
+        self.name_in_chinese = name_in_chinese
+        # 英文名称
+        self.name_in_english = name_in_english
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name_in_chinese is not None:
+            result['nameInChinese'] = self.name_in_chinese
+        if self.name_in_english is not None:
+            result['nameInEnglish'] = self.name_in_english
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nameInChinese') is not None:
+            self.name_in_chinese = m.get('nameInChinese')
+        if m.get('nameInEnglish') is not None:
+            self.name_in_english = m.get('nameInEnglish')
+        return self
+
+
+class BatchGetFormDataByIdListResponseBodyResultOriginator(TeaModel):
+    def __init__(
+        self,
+        department_name: str = None,
+        email: str = None,
+        name: BatchGetFormDataByIdListResponseBodyResultOriginatorName = None,
+        user_id: str = None,
+    ):
+        # 部门名称
+        self.department_name = department_name
+        # 电子邮箱
+        self.email = email
+        # 名称
+        self.name = name
+        # 钉钉userId
+        self.user_id = user_id
+
+    def validate(self):
+        if self.name:
+            self.name.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.department_name is not None:
+            result['departmentName'] = self.department_name
+        if self.email is not None:
+            result['email'] = self.email
+        if self.name is not None:
+            result['name'] = self.name.to_map()
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('departmentName') is not None:
+            self.department_name = m.get('departmentName')
+        if m.get('email') is not None:
+            self.email = m.get('email')
+        if m.get('name') is not None:
+            temp_model = BatchGetFormDataByIdListResponseBodyResultOriginatorName()
+            self.name = temp_model.from_map(m['name'])
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class BatchGetFormDataByIdListResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        create_time_gmt: str = None,
+        creator_user_id: str = None,
+        form_data: Dict[str, Any] = None,
+        form_instance_id: str = None,
+        form_uuid: str = None,
+        id: int = None,
+        instance_value: str = None,
+        modified_time_gmt: str = None,
+        modifier: str = None,
+        modify_user: BatchGetFormDataByIdListResponseBodyResultModifyUser = None,
+        originator: BatchGetFormDataByIdListResponseBodyResultOriginator = None,
+        sequence: str = None,
+        serial_number: str = None,
+        title: str = None,
+        version: int = None,
+    ):
+        # 创建时间
+        self.create_time_gmt = create_time_gmt
+        # 创建者的userId
+        self.creator_user_id = creator_user_id
+        # 表单实例数据
+        self.form_data = form_data
+        # 表单实例id
+        self.form_instance_id = form_instance_id
+        # 表单编码
+        self.form_uuid = form_uuid
+        # 数据库表记录主键id
+        self.id = id
+        # 实例数据
+        self.instance_value = instance_value
+        # 修改时间
+        self.modified_time_gmt = modified_time_gmt
+        # 修改者的钉钉userId
+        self.modifier = modifier
+        # 修改者
+        self.modify_user = modify_user
+        # 表单提交人
+        self.originator = originator
+        # 该表单实例对应的批量导入的批次号(如果是通过批量导入创建的)
+        self.sequence = sequence
+        # 流水号
+        self.serial_number = serial_number
+        # 标题
+        self.title = title
+        # 该表单实例对应的表单schema版本
+        self.version = version
+
+    def validate(self):
+        if self.modify_user:
+            self.modify_user.validate()
+        if self.originator:
+            self.originator.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.create_time_gmt is not None:
+            result['createTimeGMT'] = self.create_time_gmt
+        if self.creator_user_id is not None:
+            result['creatorUserId'] = self.creator_user_id
+        if self.form_data is not None:
+            result['formData'] = self.form_data
+        if self.form_instance_id is not None:
+            result['formInstanceId'] = self.form_instance_id
+        if self.form_uuid is not None:
+            result['formUuid'] = self.form_uuid
+        if self.id is not None:
+            result['id'] = self.id
+        if self.instance_value is not None:
+            result['instanceValue'] = self.instance_value
+        if self.modified_time_gmt is not None:
+            result['modifiedTimeGMT'] = self.modified_time_gmt
+        if self.modifier is not None:
+            result['modifier'] = self.modifier
+        if self.modify_user is not None:
+            result['modifyUser'] = self.modify_user.to_map()
+        if self.originator is not None:
+            result['originator'] = self.originator.to_map()
+        if self.sequence is not None:
+            result['sequence'] = self.sequence
+        if self.serial_number is not None:
+            result['serialNumber'] = self.serial_number
+        if self.title is not None:
+            result['title'] = self.title
+        if self.version is not None:
+            result['version'] = self.version
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('createTimeGMT') is not None:
+            self.create_time_gmt = m.get('createTimeGMT')
+        if m.get('creatorUserId') is not None:
+            self.creator_user_id = m.get('creatorUserId')
+        if m.get('formData') is not None:
+            self.form_data = m.get('formData')
+        if m.get('formInstanceId') is not None:
+            self.form_instance_id = m.get('formInstanceId')
+        if m.get('formUuid') is not None:
+            self.form_uuid = m.get('formUuid')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('instanceValue') is not None:
+            self.instance_value = m.get('instanceValue')
+        if m.get('modifiedTimeGMT') is not None:
+            self.modified_time_gmt = m.get('modifiedTimeGMT')
+        if m.get('modifier') is not None:
+            self.modifier = m.get('modifier')
+        if m.get('modifyUser') is not None:
+            temp_model = BatchGetFormDataByIdListResponseBodyResultModifyUser()
+            self.modify_user = temp_model.from_map(m['modifyUser'])
+        if m.get('originator') is not None:
+            temp_model = BatchGetFormDataByIdListResponseBodyResultOriginator()
+            self.originator = temp_model.from_map(m['originator'])
+        if m.get('sequence') is not None:
+            self.sequence = m.get('sequence')
+        if m.get('serialNumber') is not None:
+            self.serial_number = m.get('serialNumber')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('version') is not None:
+            self.version = m.get('version')
+        return self
+
+
+class BatchGetFormDataByIdListResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[BatchGetFormDataByIdListResponseBodyResult] = None,
+    ):
+        # 表单实例数据
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = BatchGetFormDataByIdListResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class BatchGetFormDataByIdListResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: BatchGetFormDataByIdListResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = BatchGetFormDataByIdListResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class BatchRemovalByFormInstanceIdListHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class BatchRemovalByFormInstanceIdListRequest(TeaModel):
+    def __init__(
+        self,
+        app_type: str = None,
+        asynchronous_execution: bool = None,
+        execute_expression: bool = None,
+        form_instance_id_list: List[str] = None,
+        form_uuid: str = None,
+        system_token: str = None,
+        user_id: str = None,
+    ):
+        # 宜搭应用编码
+        self.app_type = app_type
+        # 是否需要宜搭服务端异步执行该任务(选择异步执行删除操作，那么OpenAPI调用会立即返回，并且宜搭服务端会继续执行删除操作直至结束，且允许的单次删除数据量上限更大)
+        self.asynchronous_execution = asynchronous_execution
+        # 是否需要触发表单绑定的校验规则、关联业务规则和第三方服务回调（如果您的业务无必要执行这些，那么请填false以降低API的耗时以及获得更大的单次删除数据量上限）
+        self.execute_expression = execute_expression
+        # 表单实例id列表
+        self.form_instance_id_list = form_instance_id_list
+        # 表单编码
+        self.form_uuid = form_uuid
+        # 宜搭应用秘钥
+        self.system_token = system_token
+        # 钉钉userId
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_type is not None:
+            result['appType'] = self.app_type
+        if self.asynchronous_execution is not None:
+            result['asynchronousExecution'] = self.asynchronous_execution
+        if self.execute_expression is not None:
+            result['executeExpression'] = self.execute_expression
+        if self.form_instance_id_list is not None:
+            result['formInstanceIdList'] = self.form_instance_id_list
+        if self.form_uuid is not None:
+            result['formUuid'] = self.form_uuid
+        if self.system_token is not None:
+            result['systemToken'] = self.system_token
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appType') is not None:
+            self.app_type = m.get('appType')
+        if m.get('asynchronousExecution') is not None:
+            self.asynchronous_execution = m.get('asynchronousExecution')
+        if m.get('executeExpression') is not None:
+            self.execute_expression = m.get('executeExpression')
+        if m.get('formInstanceIdList') is not None:
+            self.form_instance_id_list = m.get('formInstanceIdList')
+        if m.get('formUuid') is not None:
+            self.form_uuid = m.get('formUuid')
+        if m.get('systemToken') is not None:
+            self.system_token = m.get('systemToken')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class BatchRemovalByFormInstanceIdListResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+    ):
+        self.headers = headers
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        return self
+
+
+class BatchSaveFormDataHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class BatchSaveFormDataRequest(TeaModel):
+    def __init__(
+        self,
+        app_type: str = None,
+        asynchronous_execution: bool = None,
+        form_data_json_list: List[str] = None,
+        form_uuid: str = None,
+        keep_running_after_exception: bool = None,
+        no_execute_expression: bool = None,
+        system_token: str = None,
+        user_id: str = None,
+    ):
+        # 宜搭应用编码
+        self.app_type = app_type
+        # 是否需要宜搭服务端异步执行该任务(如果选择异步创建表单实例，那么OpenAPI调用会立即返回，并且宜搭服务端会继续执行保存操作直至结束，且允许的单次保存数据量上限更大)
+        self.asynchronous_execution = asynchronous_execution
+        # 表单实例数据列表。表单实例数据的结构请参考 https://www.yuque.com/yida/support/agb8im#f26a51f429f9f19aa0b5b3ee847ac556_h3_31
+        self.form_data_json_list = form_data_json_list
+        # 表单编码
+        self.form_uuid = form_uuid
+        # 批量保存多条表单实例数据发生异常时是否跳过异常的表单实例并继续保存下一个表单实例数据。当noExecuteExpression为false时此参数才生效。
+        self.keep_running_after_exception = keep_running_after_exception
+        # 是否不触发表单绑定的校验规则、关联业务规则和第三方服务回调（如果您的业务无必要执行这些，那么请填true以减小API的耗时以及获得更大的单次保存数据量上限）
+        self.no_execute_expression = no_execute_expression
+        # 宜搭应用秘钥
+        self.system_token = system_token
+        # 钉钉userId
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_type is not None:
+            result['appType'] = self.app_type
+        if self.asynchronous_execution is not None:
+            result['asynchronousExecution'] = self.asynchronous_execution
+        if self.form_data_json_list is not None:
+            result['formDataJsonList'] = self.form_data_json_list
+        if self.form_uuid is not None:
+            result['formUuid'] = self.form_uuid
+        if self.keep_running_after_exception is not None:
+            result['keepRunningAfterException'] = self.keep_running_after_exception
+        if self.no_execute_expression is not None:
+            result['noExecuteExpression'] = self.no_execute_expression
+        if self.system_token is not None:
+            result['systemToken'] = self.system_token
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appType') is not None:
+            self.app_type = m.get('appType')
+        if m.get('asynchronousExecution') is not None:
+            self.asynchronous_execution = m.get('asynchronousExecution')
+        if m.get('formDataJsonList') is not None:
+            self.form_data_json_list = m.get('formDataJsonList')
+        if m.get('formUuid') is not None:
+            self.form_uuid = m.get('formUuid')
+        if m.get('keepRunningAfterException') is not None:
+            self.keep_running_after_exception = m.get('keepRunningAfterException')
+        if m.get('noExecuteExpression') is not None:
+            self.no_execute_expression = m.get('noExecuteExpression')
+        if m.get('systemToken') is not None:
+            self.system_token = m.get('systemToken')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class BatchSaveFormDataResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[str] = None,
+    ):
+        # 新增的表单实例的id列表
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class BatchSaveFormDataResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: BatchSaveFormDataResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = BatchSaveFormDataResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class BatchUpdateFormDataByInstanceIdHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class BatchUpdateFormDataByInstanceIdRequest(TeaModel):
+    def __init__(
+        self,
+        app_type: str = None,
+        asynchronous_execution: bool = None,
+        form_instance_id_list: List[str] = None,
+        form_uuid: str = None,
+        ignore_empty: bool = None,
+        no_execute_expression: bool = None,
+        system_token: str = None,
+        update_form_data_json: str = None,
+        use_latest_form_schema_version: bool = None,
+        user_id: str = None,
+    ):
+        # 宜搭应用编码
+        self.app_type = app_type
+        # 是否需要宜搭服务端异步执行该任务(选择异步执行那么OpenAPI调用会立即返回，并且任务会在宜搭服务端继续执行直至结束，且允许的单次更新数据量上限更大)
+        self.asynchronous_execution = asynchronous_execution
+        # 表单实例id列表
+        self.form_instance_id_list = form_instance_id_list
+        # 表单编码
+        self.form_uuid = form_uuid
+        # 是否忽略空值
+        self.ignore_empty = ignore_empty
+        # 是否不触发校验规则、关联业务规则和第三方服务回调（如果您的业务无必要触发这些那么请填true以增大单次更新允许的数据量上限以及API的执行速度）
+        self.no_execute_expression = no_execute_expression
+        # 宜搭应用秘钥
+        self.system_token = system_token
+        # 用于更新表单实例的数据, 格式为json字符串, 能解析成Map结构, 解析得到的Map的键为表单组件id, 值为表单组件值。详情参考 https://www.yuque.com/yida/support/agb8im#f26a51f429f9f19aa0b5b3ee847ac556_h3_31
+        self.update_form_data_json = update_form_data_json
+        # 是否使用最新的表单schema版本, 默认false
+        self.use_latest_form_schema_version = use_latest_form_schema_version
+        # 钉钉userId
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_type is not None:
+            result['appType'] = self.app_type
+        if self.asynchronous_execution is not None:
+            result['asynchronousExecution'] = self.asynchronous_execution
+        if self.form_instance_id_list is not None:
+            result['formInstanceIdList'] = self.form_instance_id_list
+        if self.form_uuid is not None:
+            result['formUuid'] = self.form_uuid
+        if self.ignore_empty is not None:
+            result['ignoreEmpty'] = self.ignore_empty
+        if self.no_execute_expression is not None:
+            result['noExecuteExpression'] = self.no_execute_expression
+        if self.system_token is not None:
+            result['systemToken'] = self.system_token
+        if self.update_form_data_json is not None:
+            result['updateFormDataJson'] = self.update_form_data_json
+        if self.use_latest_form_schema_version is not None:
+            result['useLatestFormSchemaVersion'] = self.use_latest_form_schema_version
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appType') is not None:
+            self.app_type = m.get('appType')
+        if m.get('asynchronousExecution') is not None:
+            self.asynchronous_execution = m.get('asynchronousExecution')
+        if m.get('formInstanceIdList') is not None:
+            self.form_instance_id_list = m.get('formInstanceIdList')
+        if m.get('formUuid') is not None:
+            self.form_uuid = m.get('formUuid')
+        if m.get('ignoreEmpty') is not None:
+            self.ignore_empty = m.get('ignoreEmpty')
+        if m.get('noExecuteExpression') is not None:
+            self.no_execute_expression = m.get('noExecuteExpression')
+        if m.get('systemToken') is not None:
+            self.system_token = m.get('systemToken')
+        if m.get('updateFormDataJson') is not None:
+            self.update_form_data_json = m.get('updateFormDataJson')
+        if m.get('useLatestFormSchemaVersion') is not None:
+            self.use_latest_form_schema_version = m.get('useLatestFormSchemaVersion')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class BatchUpdateFormDataByInstanceIdResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[str] = None,
+    ):
+        # 成功更新的表单实例的id
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class BatchUpdateFormDataByInstanceIdResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: BatchUpdateFormDataByInstanceIdResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = BatchUpdateFormDataByInstanceIdResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class BatchUpdateFormDataByInstanceMapHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class BatchUpdateFormDataByInstanceMapRequest(TeaModel):
+    def __init__(
+        self,
+        app_type: str = None,
+        asynchronous_execution: bool = None,
+        form_uuid: str = None,
+        ignore_empty: bool = None,
+        no_execute_expression: bool = None,
+        system_token: str = None,
+        update_form_data_json_map: Dict[str, Any] = None,
+        use_latest_form_schema_version: bool = None,
+        user_id: str = None,
+    ):
+        # 宜搭应用编码
+        self.app_type = app_type
+        # 该任务是否需要服务端异步执行(选择异步执行那么OpenAPI调用会立即返回并且任务在宜搭服务端继续执行，可支持更大的单次更新数据量上限)
+        self.asynchronous_execution = asynchronous_execution
+        # 表单编码
+        self.form_uuid = form_uuid
+        # 是否忽略空值
+        self.ignore_empty = ignore_empty
+        # 是否不需要触发表单绑定的校验规则、关联业务规则和第三方服务回调（如果您的业务无必要执行这些，那么请填true以减小API的耗时以及更大的单次更新数据量上限）
+        self.no_execute_expression = no_execute_expression
+        # 宜搭应用秘钥
+        self.system_token = system_token
+        # 表单实例数据, json字符串, 可以解析成Map, 解析后得到的Map的键是表单实例id, 值是表单实例更新值json字符串。具体结构请参考 https://www.yuque.com/yida/support/agb8im#f26a51f429f9f19aa0b5b3ee847ac556_h3_31
+        self.update_form_data_json_map = update_form_data_json_map
+        # 是否使用最新的表单schema版本, 默认false
+        self.use_latest_form_schema_version = use_latest_form_schema_version
+        # 钉钉userId
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_type is not None:
+            result['appType'] = self.app_type
+        if self.asynchronous_execution is not None:
+            result['asynchronousExecution'] = self.asynchronous_execution
+        if self.form_uuid is not None:
+            result['formUuid'] = self.form_uuid
+        if self.ignore_empty is not None:
+            result['ignoreEmpty'] = self.ignore_empty
+        if self.no_execute_expression is not None:
+            result['noExecuteExpression'] = self.no_execute_expression
+        if self.system_token is not None:
+            result['systemToken'] = self.system_token
+        if self.update_form_data_json_map is not None:
+            result['updateFormDataJsonMap'] = self.update_form_data_json_map
+        if self.use_latest_form_schema_version is not None:
+            result['useLatestFormSchemaVersion'] = self.use_latest_form_schema_version
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appType') is not None:
+            self.app_type = m.get('appType')
+        if m.get('asynchronousExecution') is not None:
+            self.asynchronous_execution = m.get('asynchronousExecution')
+        if m.get('formUuid') is not None:
+            self.form_uuid = m.get('formUuid')
+        if m.get('ignoreEmpty') is not None:
+            self.ignore_empty = m.get('ignoreEmpty')
+        if m.get('noExecuteExpression') is not None:
+            self.no_execute_expression = m.get('noExecuteExpression')
+        if m.get('systemToken') is not None:
+            self.system_token = m.get('systemToken')
+        if m.get('updateFormDataJsonMap') is not None:
+            self.update_form_data_json_map = m.get('updateFormDataJsonMap')
+        if m.get('useLatestFormSchemaVersion') is not None:
+            self.use_latest_form_schema_version = m.get('useLatestFormSchemaVersion')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class BatchUpdateFormDataByInstanceMapResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[str] = None,
+    ):
+        # 更新成功的表单实例ID
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class BatchUpdateFormDataByInstanceMapResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: BatchUpdateFormDataByInstanceMapResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = BatchUpdateFormDataByInstanceMapResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class BuyAuthorizationOrderHeaders(TeaModel):
     def __init__(
         self,
@@ -514,6 +1662,174 @@ class CheckCloudAccountStatusResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = CheckCloudAccountStatusResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CreateOrUpdateFormDataHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateOrUpdateFormDataRequest(TeaModel):
+    def __init__(
+        self,
+        app_type: str = None,
+        form_data_json: str = None,
+        form_uuid: str = None,
+        no_execute_expression: bool = None,
+        search_condition: str = None,
+        system_token: str = None,
+        user_id: str = None,
+    ):
+        # 宜搭应用编码
+        self.app_type = app_type
+        # 宜搭表单实例数据 json格式，如果存在满足检索条件的表单实例数据则用此值增量更新满足检索条件的的表单实例数据，否则用此值创建一条表单实例。表单实例数据的结构请参考 https://www.yuque.com/yida/support/agb8im#f26a51f429f9f19aa0b5b3ee847ac556_h3_31
+        self.form_data_json = form_data_json
+        # 表单编码
+        self.form_uuid = form_uuid
+        # 是否不触发校验规则、关联业务规则和第三方服务回调
+        self.no_execute_expression = no_execute_expression
+        # 用于检索表单实例数据的检索条件
+        self.search_condition = search_condition
+        # 宜搭应用秘钥
+        self.system_token = system_token
+        # 钉钉userId
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_type is not None:
+            result['appType'] = self.app_type
+        if self.form_data_json is not None:
+            result['formDataJson'] = self.form_data_json
+        if self.form_uuid is not None:
+            result['formUuid'] = self.form_uuid
+        if self.no_execute_expression is not None:
+            result['noExecuteExpression'] = self.no_execute_expression
+        if self.search_condition is not None:
+            result['searchCondition'] = self.search_condition
+        if self.system_token is not None:
+            result['systemToken'] = self.system_token
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appType') is not None:
+            self.app_type = m.get('appType')
+        if m.get('formDataJson') is not None:
+            self.form_data_json = m.get('formDataJson')
+        if m.get('formUuid') is not None:
+            self.form_uuid = m.get('formUuid')
+        if m.get('noExecuteExpression') is not None:
+            self.no_execute_expression = m.get('noExecuteExpression')
+        if m.get('searchCondition') is not None:
+            self.search_condition = m.get('searchCondition')
+        if m.get('systemToken') is not None:
+            self.system_token = m.get('systemToken')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class CreateOrUpdateFormDataResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[str] = None,
+    ):
+        # 新增的或者更新的表单实例id列表
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class CreateOrUpdateFormDataResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CreateOrUpdateFormDataResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CreateOrUpdateFormDataResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -4370,6 +5686,7 @@ class GetInstancesRequest(TeaModel):
         language: str = None,
         modified_from_time_gmt: str = None,
         modified_to_time_gmt: str = None,
+        order_config_json: str = None,
         originator_id: str = None,
         search_field_json: str = None,
         system_token: str = None,
@@ -4396,9 +5713,11 @@ class GetInstancesRequest(TeaModel):
         self.modified_from_time_gmt = modified_from_time_gmt
         # modifiedFrom和modifiedTo构成一个时间段，查询在该时间段有修改的数据列表。字符串格式，且为yyyy-MM-DD格式。 和modifiedFrom一起，相当于查询在 2018-01-01到2018-01-31之间(包含01和31号)被修改的数据。
         self.modified_to_time_gmt = modified_to_time_gmt
-        # 根据数据提交人工号查询
+        # 排序规则
+        self.order_config_json = order_config_json
+        # 数据提交人的钉钉userId
         self.originator_id = originator_id
-        # 根据表单内组件值查询
+        # 查询过滤条件，支持2种模式的过滤规则
         self.search_field_json = search_field_json
         # 应用秘钥。在应用数据中获取。
         self.system_token = system_token
@@ -4406,7 +5725,9 @@ class GetInstancesRequest(TeaModel):
         self.task_id = task_id
         # 钉钉userId
         self.user_id = user_id
+        # 当前第几页
         self.page_number = page_number
+        # 每页多少条数据
         self.page_size = page_size
 
     def validate(self):
@@ -4436,6 +5757,8 @@ class GetInstancesRequest(TeaModel):
             result['modifiedFromTimeGMT'] = self.modified_from_time_gmt
         if self.modified_to_time_gmt is not None:
             result['modifiedToTimeGMT'] = self.modified_to_time_gmt
+        if self.order_config_json is not None:
+            result['orderConfigJson'] = self.order_config_json
         if self.originator_id is not None:
             result['originatorId'] = self.originator_id
         if self.search_field_json is not None:
@@ -4472,6 +5795,8 @@ class GetInstancesRequest(TeaModel):
             self.modified_from_time_gmt = m.get('modifiedFromTimeGMT')
         if m.get('modifiedToTimeGMT') is not None:
             self.modified_to_time_gmt = m.get('modifiedToTimeGMT')
+        if m.get('orderConfigJson') is not None:
+            self.order_config_json = m.get('orderConfigJson')
         if m.get('originatorId') is not None:
             self.originator_id = m.get('originatorId')
         if m.get('searchFieldJson') is not None:
@@ -9353,6 +10678,287 @@ class GetTaskCopiesResponse(TeaModel):
         return self
 
 
+class ListApplicationHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListApplicationRequest(TeaModel):
+    def __init__(
+        self,
+        app_filter: str = None,
+        app_name_search_keyword: str = None,
+        corp_id: str = None,
+        page_number: int = None,
+        page_size: int = None,
+        token: str = None,
+        user_id: str = None,
+    ):
+        # 应用过滤条件, 不填则获取发布到了宜搭应用中心的宜搭应用, 填createdByMe获取我创建的宜搭应用, 填managedByMe获取我管理的宜搭应用
+        self.app_filter = app_filter
+        # 应用名称检索关键词
+        self.app_name_search_keyword = app_name_search_keyword
+        # 钉钉组织id
+        self.corp_id = corp_id
+        # 第几页
+        self.page_number = page_number
+        # 分页大小
+        self.page_size = page_size
+        # corpId+userId+CorpToken做md5加密计算生成的字符串(每个企业有自己的唯一corpToken), 获取具体计算详情请联系宜搭 dingtalk://dingtalkclient/action/sendmsg?dingtalk_id=somjffs
+        self.token = token
+        # 钉钉userId
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_filter is not None:
+            result['appFilter'] = self.app_filter
+        if self.app_name_search_keyword is not None:
+            result['appNameSearchKeyword'] = self.app_name_search_keyword
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.token is not None:
+            result['token'] = self.token
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appFilter') is not None:
+            self.app_filter = m.get('appFilter')
+        if m.get('appNameSearchKeyword') is not None:
+            self.app_name_search_keyword = m.get('appNameSearchKeyword')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('token') is not None:
+            self.token = m.get('token')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class ListApplicationResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        app_config: str = None,
+        app_type: str = None,
+        application_status: str = None,
+        corp_id: str = None,
+        creator_user_id: str = None,
+        description: str = None,
+        icon: str = None,
+        inexistence: str = None,
+        name: str = None,
+        sub_corp_id: str = None,
+    ):
+        # 宜搭应用配置
+        self.app_config = app_config
+        # 宜搭应用编码
+        self.app_type = app_type
+        # 应用状态
+        self.application_status = application_status
+        # 钉钉组织id
+        self.corp_id = corp_id
+        # 创建者的userId
+        self.creator_user_id = creator_user_id
+        # 描述信息
+        self.description = description
+        # 宜搭图标编码
+        self.icon = icon
+        # 是否被删除了
+        self.inexistence = inexistence
+        # 名称
+        self.name = name
+        # 子组织的钉钉CorpId
+        self.sub_corp_id = sub_corp_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_config is not None:
+            result['appConfig'] = self.app_config
+        if self.app_type is not None:
+            result['appType'] = self.app_type
+        if self.application_status is not None:
+            result['applicationStatus'] = self.application_status
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.creator_user_id is not None:
+            result['creatorUserId'] = self.creator_user_id
+        if self.description is not None:
+            result['description'] = self.description
+        if self.icon is not None:
+            result['icon'] = self.icon
+        if self.inexistence is not None:
+            result['inexistence'] = self.inexistence
+        if self.name is not None:
+            result['name'] = self.name
+        if self.sub_corp_id is not None:
+            result['subCorpId'] = self.sub_corp_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appConfig') is not None:
+            self.app_config = m.get('appConfig')
+        if m.get('appType') is not None:
+            self.app_type = m.get('appType')
+        if m.get('applicationStatus') is not None:
+            self.application_status = m.get('applicationStatus')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('creatorUserId') is not None:
+            self.creator_user_id = m.get('creatorUserId')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
+        if m.get('inexistence') is not None:
+            self.inexistence = m.get('inexistence')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('subCorpId') is not None:
+            self.sub_corp_id = m.get('subCorpId')
+        return self
+
+
+class ListApplicationResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: List[ListApplicationResponseBodyData] = None,
+        page_number: int = None,
+        total_count: int = None,
+    ):
+        # 数据
+        self.data = data
+        # 当前第几页
+        self.page_number = page_number
+        # 总数量
+        self.total_count = total_count
+
+    def validate(self):
+        if self.data:
+            for k in self.data:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['data'] = []
+        if self.data is not None:
+            for k in self.data:
+                result['data'].append(k.to_map() if k else None)
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.data = []
+        if m.get('data') is not None:
+            for k in m.get('data'):
+                temp_model = ListApplicationResponseBodyData()
+                self.data.append(temp_model.from_map(k))
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class ListApplicationResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ListApplicationResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ListApplicationResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ListApplicationAuthorizationServiceApplicationInformationHeaders(TeaModel):
     def __init__(
         self,
@@ -11454,6 +13060,357 @@ class NotifyAuthorizationResultResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = NotifyAuthorizationResultResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryServiceRecordHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryServiceRecordRequest(TeaModel):
+    def __init__(
+        self,
+        app_type: str = None,
+        form_uuid: str = None,
+        hook_type: str = None,
+        hook_uuid: str = None,
+        instance_id: str = None,
+        invoke_after_date_gmt: str = None,
+        invoke_before_date_gmt: str = None,
+        invoke_status: str = None,
+        page_number: int = None,
+        page_size: int = None,
+        request_url: str = None,
+        source_uuid: str = None,
+        success: bool = None,
+        system_token: str = None,
+        user_id: str = None,
+    ):
+        # 宜搭应用编码
+        self.app_type = app_type
+        # 表单编码
+        self.form_uuid = form_uuid
+        # 服务类型
+        self.hook_type = hook_type
+        # 本次服务调用的唯一ID
+        self.hook_uuid = hook_uuid
+        # 表单实例ID
+        self.instance_id = instance_id
+        # 服务在此时间之后调用的
+        self.invoke_after_date_gmt = invoke_after_date_gmt
+        # 服务在此时间之前调用的
+        self.invoke_before_date_gmt = invoke_before_date_gmt
+        # 服务调用状态
+        self.invoke_status = invoke_status
+        # 分页第几页
+        self.page_number = page_number
+        # 分页大小
+        self.page_size = page_size
+        # 服务调用地址包含的部分字符串，用于模糊搜索
+        self.request_url = request_url
+        # 被重试的服务调用唯一ID(此次服务调用是重试哪个执行失败的服务调用)
+        self.source_uuid = source_uuid
+        # 服务调用是否成功(不传此参数则查询全部的)
+        self.success = success
+        # 宜搭应用秘钥
+        self.system_token = system_token
+        # 操作人的钉钉userId
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_type is not None:
+            result['appType'] = self.app_type
+        if self.form_uuid is not None:
+            result['formUuid'] = self.form_uuid
+        if self.hook_type is not None:
+            result['hookType'] = self.hook_type
+        if self.hook_uuid is not None:
+            result['hookUuid'] = self.hook_uuid
+        if self.instance_id is not None:
+            result['instanceId'] = self.instance_id
+        if self.invoke_after_date_gmt is not None:
+            result['invokeAfterDateGMT'] = self.invoke_after_date_gmt
+        if self.invoke_before_date_gmt is not None:
+            result['invokeBeforeDateGMT'] = self.invoke_before_date_gmt
+        if self.invoke_status is not None:
+            result['invokeStatus'] = self.invoke_status
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.request_url is not None:
+            result['requestUrl'] = self.request_url
+        if self.source_uuid is not None:
+            result['sourceUuid'] = self.source_uuid
+        if self.success is not None:
+            result['success'] = self.success
+        if self.system_token is not None:
+            result['systemToken'] = self.system_token
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appType') is not None:
+            self.app_type = m.get('appType')
+        if m.get('formUuid') is not None:
+            self.form_uuid = m.get('formUuid')
+        if m.get('hookType') is not None:
+            self.hook_type = m.get('hookType')
+        if m.get('hookUuid') is not None:
+            self.hook_uuid = m.get('hookUuid')
+        if m.get('instanceId') is not None:
+            self.instance_id = m.get('instanceId')
+        if m.get('invokeAfterDateGMT') is not None:
+            self.invoke_after_date_gmt = m.get('invokeAfterDateGMT')
+        if m.get('invokeBeforeDateGMT') is not None:
+            self.invoke_before_date_gmt = m.get('invokeBeforeDateGMT')
+        if m.get('invokeStatus') is not None:
+            self.invoke_status = m.get('invokeStatus')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('requestUrl') is not None:
+            self.request_url = m.get('requestUrl')
+        if m.get('sourceUuid') is not None:
+            self.source_uuid = m.get('sourceUuid')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        if m.get('systemToken') is not None:
+            self.system_token = m.get('systemToken')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class QueryServiceRecordResponseBodyValues(TeaModel):
+    def __init__(
+        self,
+        form_instance_id: str = None,
+        form_uuid: str = None,
+        hook_type: str = None,
+        hook_uuid: str = None,
+        invoke_parameter: str = None,
+        invoke_result: str = None,
+        invoke_status: str = None,
+        invoke_success: str = None,
+        invoke_url: str = None,
+        service_content: str = None,
+        service_name: str = None,
+        service_parameter: str = None,
+        source_uuid: str = None,
+    ):
+        # 表单实例id
+        self.form_instance_id = form_instance_id
+        # 表单编码
+        self.form_uuid = form_uuid
+        # 服务类型
+        self.hook_type = hook_type
+        # 本次服务调用的唯一ID
+        self.hook_uuid = hook_uuid
+        # 服务调用的实际入参
+        self.invoke_parameter = invoke_parameter
+        # 服务调用的返回结果
+        self.invoke_result = invoke_result
+        # 服务调用状态
+        self.invoke_status = invoke_status
+        # 服务调用是否成功
+        self.invoke_success = invoke_success
+        # 服务调用地址
+        self.invoke_url = invoke_url
+        # 宜搭调用目标服务时传的实际参数
+        self.service_content = service_content
+        # 服务名称
+        self.service_name = service_name
+        # 服务调用的实际入参
+        self.service_parameter = service_parameter
+        # 重试的服务调用唯一ID(此次服务调用是重试哪个执行失败的服务调用)
+        self.source_uuid = source_uuid
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.form_instance_id is not None:
+            result['formInstanceId'] = self.form_instance_id
+        if self.form_uuid is not None:
+            result['formUuid'] = self.form_uuid
+        if self.hook_type is not None:
+            result['hookType'] = self.hook_type
+        if self.hook_uuid is not None:
+            result['hookUuid'] = self.hook_uuid
+        if self.invoke_parameter is not None:
+            result['invokeParameter'] = self.invoke_parameter
+        if self.invoke_result is not None:
+            result['invokeResult'] = self.invoke_result
+        if self.invoke_status is not None:
+            result['invokeStatus'] = self.invoke_status
+        if self.invoke_success is not None:
+            result['invokeSuccess'] = self.invoke_success
+        if self.invoke_url is not None:
+            result['invokeUrl'] = self.invoke_url
+        if self.service_content is not None:
+            result['serviceContent'] = self.service_content
+        if self.service_name is not None:
+            result['serviceName'] = self.service_name
+        if self.service_parameter is not None:
+            result['serviceParameter'] = self.service_parameter
+        if self.source_uuid is not None:
+            result['sourceUuid'] = self.source_uuid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('formInstanceId') is not None:
+            self.form_instance_id = m.get('formInstanceId')
+        if m.get('formUuid') is not None:
+            self.form_uuid = m.get('formUuid')
+        if m.get('hookType') is not None:
+            self.hook_type = m.get('hookType')
+        if m.get('hookUuid') is not None:
+            self.hook_uuid = m.get('hookUuid')
+        if m.get('invokeParameter') is not None:
+            self.invoke_parameter = m.get('invokeParameter')
+        if m.get('invokeResult') is not None:
+            self.invoke_result = m.get('invokeResult')
+        if m.get('invokeStatus') is not None:
+            self.invoke_status = m.get('invokeStatus')
+        if m.get('invokeSuccess') is not None:
+            self.invoke_success = m.get('invokeSuccess')
+        if m.get('invokeUrl') is not None:
+            self.invoke_url = m.get('invokeUrl')
+        if m.get('serviceContent') is not None:
+            self.service_content = m.get('serviceContent')
+        if m.get('serviceName') is not None:
+            self.service_name = m.get('serviceName')
+        if m.get('serviceParameter') is not None:
+            self.service_parameter = m.get('serviceParameter')
+        if m.get('sourceUuid') is not None:
+            self.source_uuid = m.get('sourceUuid')
+        return self
+
+
+class QueryServiceRecordResponseBody(TeaModel):
+    def __init__(
+        self,
+        total_count: int = None,
+        values: List[QueryServiceRecordResponseBodyValues] = None,
+    ):
+        # 总数量
+        self.total_count = total_count
+        # 服务调用记录数组
+        self.values = values
+
+    def validate(self):
+        if self.values:
+            for k in self.values:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        result['values'] = []
+        if self.values is not None:
+            for k in self.values:
+                result['values'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        self.values = []
+        if m.get('values') is not None:
+            for k in m.get('values'):
+                temp_model = QueryServiceRecordResponseBodyValues()
+                self.values.append(temp_model.from_map(k))
+        return self
+
+
+class QueryServiceRecordResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryServiceRecordResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryServiceRecordResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -13692,6 +15649,1618 @@ class SearchFormDataIdListResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = SearchFormDataIdListResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SearchFormDataRemovalTableDataHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SearchFormDataRemovalTableDataRequest(TeaModel):
+    def __init__(
+        self,
+        app_type: str = None,
+        create_from_time_gmt: str = None,
+        create_to_time_gmt: str = None,
+        form_uuid: str = None,
+        modified_from_time_gmt: str = None,
+        modified_to_time_gmt: str = None,
+        order_config_json: str = None,
+        originator_id: str = None,
+        page_number: int = None,
+        page_size: int = None,
+        search_field_json: str = None,
+        system_token: str = None,
+        user_id: str = None,
+    ):
+        # 宜搭应用编码
+        self.app_type = app_type
+        # 创建时间起始值
+        self.create_from_time_gmt = create_from_time_gmt
+        # 创建时间终止值
+        self.create_to_time_gmt = create_to_time_gmt
+        # 表单编码
+        self.form_uuid = form_uuid
+        # 修改时间起始值
+        self.modified_from_time_gmt = modified_from_time_gmt
+        # 修改时间终止值
+        self.modified_to_time_gmt = modified_to_time_gmt
+        # 排序规则, json格式数据
+        self.order_config_json = order_config_json
+        # 表单提交人的钉钉userId
+        self.originator_id = originator_id
+        # 当前第几页
+        self.page_number = page_number
+        # 分页大小
+        self.page_size = page_size
+        # 用于模糊查询表单实例的查询或精确查询的条件
+        self.search_field_json = search_field_json
+        # 宜搭应用秘钥
+        self.system_token = system_token
+        # 钉钉userId
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_type is not None:
+            result['appType'] = self.app_type
+        if self.create_from_time_gmt is not None:
+            result['createFromTimeGMT'] = self.create_from_time_gmt
+        if self.create_to_time_gmt is not None:
+            result['createToTimeGMT'] = self.create_to_time_gmt
+        if self.form_uuid is not None:
+            result['formUuid'] = self.form_uuid
+        if self.modified_from_time_gmt is not None:
+            result['modifiedFromTimeGMT'] = self.modified_from_time_gmt
+        if self.modified_to_time_gmt is not None:
+            result['modifiedToTimeGMT'] = self.modified_to_time_gmt
+        if self.order_config_json is not None:
+            result['orderConfigJson'] = self.order_config_json
+        if self.originator_id is not None:
+            result['originatorId'] = self.originator_id
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.search_field_json is not None:
+            result['searchFieldJson'] = self.search_field_json
+        if self.system_token is not None:
+            result['systemToken'] = self.system_token
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appType') is not None:
+            self.app_type = m.get('appType')
+        if m.get('createFromTimeGMT') is not None:
+            self.create_from_time_gmt = m.get('createFromTimeGMT')
+        if m.get('createToTimeGMT') is not None:
+            self.create_to_time_gmt = m.get('createToTimeGMT')
+        if m.get('formUuid') is not None:
+            self.form_uuid = m.get('formUuid')
+        if m.get('modifiedFromTimeGMT') is not None:
+            self.modified_from_time_gmt = m.get('modifiedFromTimeGMT')
+        if m.get('modifiedToTimeGMT') is not None:
+            self.modified_to_time_gmt = m.get('modifiedToTimeGMT')
+        if m.get('orderConfigJson') is not None:
+            self.order_config_json = m.get('orderConfigJson')
+        if m.get('originatorId') is not None:
+            self.originator_id = m.get('originatorId')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('searchFieldJson') is not None:
+            self.search_field_json = m.get('searchFieldJson')
+        if m.get('systemToken') is not None:
+            self.system_token = m.get('systemToken')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class SearchFormDataRemovalTableDataResponseBodyDataModifyUserName(TeaModel):
+    def __init__(
+        self,
+        name_in_chinese: str = None,
+        name_in_english: str = None,
+    ):
+        # 中文名称
+        self.name_in_chinese = name_in_chinese
+        # 英文名称
+        self.name_in_english = name_in_english
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name_in_chinese is not None:
+            result['nameInChinese'] = self.name_in_chinese
+        if self.name_in_english is not None:
+            result['nameInEnglish'] = self.name_in_english
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nameInChinese') is not None:
+            self.name_in_chinese = m.get('nameInChinese')
+        if m.get('nameInEnglish') is not None:
+            self.name_in_english = m.get('nameInEnglish')
+        return self
+
+
+class SearchFormDataRemovalTableDataResponseBodyDataModifyUser(TeaModel):
+    def __init__(
+        self,
+        department_name: str = None,
+        email: str = None,
+        name: SearchFormDataRemovalTableDataResponseBodyDataModifyUserName = None,
+        user_id: str = None,
+    ):
+        # 部门名称
+        self.department_name = department_name
+        # 电子邮箱
+        self.email = email
+        # 名称
+        self.name = name
+        # 钉钉userId
+        self.user_id = user_id
+
+    def validate(self):
+        if self.name:
+            self.name.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.department_name is not None:
+            result['departmentName'] = self.department_name
+        if self.email is not None:
+            result['email'] = self.email
+        if self.name is not None:
+            result['name'] = self.name.to_map()
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('departmentName') is not None:
+            self.department_name = m.get('departmentName')
+        if m.get('email') is not None:
+            self.email = m.get('email')
+        if m.get('name') is not None:
+            temp_model = SearchFormDataRemovalTableDataResponseBodyDataModifyUserName()
+            self.name = temp_model.from_map(m['name'])
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class SearchFormDataRemovalTableDataResponseBodyDataOriginatorName(TeaModel):
+    def __init__(
+        self,
+        name_in_chinese: str = None,
+        name_in_english: str = None,
+    ):
+        # 中文名称
+        self.name_in_chinese = name_in_chinese
+        # 英文名称
+        self.name_in_english = name_in_english
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name_in_chinese is not None:
+            result['nameInChinese'] = self.name_in_chinese
+        if self.name_in_english is not None:
+            result['nameInEnglish'] = self.name_in_english
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nameInChinese') is not None:
+            self.name_in_chinese = m.get('nameInChinese')
+        if m.get('nameInEnglish') is not None:
+            self.name_in_english = m.get('nameInEnglish')
+        return self
+
+
+class SearchFormDataRemovalTableDataResponseBodyDataOriginator(TeaModel):
+    def __init__(
+        self,
+        department_name: str = None,
+        email: str = None,
+        name: SearchFormDataRemovalTableDataResponseBodyDataOriginatorName = None,
+        user_id: str = None,
+    ):
+        # 部门名称
+        self.department_name = department_name
+        # 电子邮箱
+        self.email = email
+        # 名称
+        self.name = name
+        # 钉钉userId
+        self.user_id = user_id
+
+    def validate(self):
+        if self.name:
+            self.name.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.department_name is not None:
+            result['departmentName'] = self.department_name
+        if self.email is not None:
+            result['email'] = self.email
+        if self.name is not None:
+            result['name'] = self.name.to_map()
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('departmentName') is not None:
+            self.department_name = m.get('departmentName')
+        if m.get('email') is not None:
+            self.email = m.get('email')
+        if m.get('name') is not None:
+            temp_model = SearchFormDataRemovalTableDataResponseBodyDataOriginatorName()
+            self.name = temp_model.from_map(m['name'])
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class SearchFormDataRemovalTableDataResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        create_time_gmt: str = None,
+        creator_user_id: str = None,
+        form_data: Dict[str, Any] = None,
+        form_instance_id: str = None,
+        form_uuid: str = None,
+        id: int = None,
+        instance_value: str = None,
+        modified_time_gmt: str = None,
+        modifier: str = None,
+        modify_user: SearchFormDataRemovalTableDataResponseBodyDataModifyUser = None,
+        originator: SearchFormDataRemovalTableDataResponseBodyDataOriginator = None,
+        sequence: str = None,
+        serial_number: str = None,
+        title: str = None,
+        version: int = None,
+    ):
+        # 创建时间
+        self.create_time_gmt = create_time_gmt
+        # 创建者的userId
+        self.creator_user_id = creator_user_id
+        # 表单实例数据。结构说明参考  https://www.yuque.com/yida/support/agb8im#jksEx
+        self.form_data = form_data
+        # 表单实例id
+        self.form_instance_id = form_instance_id
+        # 表单编码
+        self.form_uuid = form_uuid
+        # 数据库表记录的主键id
+        self.id = id
+        # 实例数据
+        self.instance_value = instance_value
+        # 修改时间
+        self.modified_time_gmt = modified_time_gmt
+        # 修改者的钉钉userId
+        self.modifier = modifier
+        # 修改者
+        self.modify_user = modify_user
+        # 发起人
+        self.originator = originator
+        # 一次批量导入对应的批次号
+        self.sequence = sequence
+        # 流水号
+        self.serial_number = serial_number
+        # 标题
+        self.title = title
+        # 该实例对应的表单schema版本
+        self.version = version
+
+    def validate(self):
+        if self.modify_user:
+            self.modify_user.validate()
+        if self.originator:
+            self.originator.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.create_time_gmt is not None:
+            result['createTimeGMT'] = self.create_time_gmt
+        if self.creator_user_id is not None:
+            result['creatorUserId'] = self.creator_user_id
+        if self.form_data is not None:
+            result['formData'] = self.form_data
+        if self.form_instance_id is not None:
+            result['formInstanceId'] = self.form_instance_id
+        if self.form_uuid is not None:
+            result['formUuid'] = self.form_uuid
+        if self.id is not None:
+            result['id'] = self.id
+        if self.instance_value is not None:
+            result['instanceValue'] = self.instance_value
+        if self.modified_time_gmt is not None:
+            result['modifiedTimeGMT'] = self.modified_time_gmt
+        if self.modifier is not None:
+            result['modifier'] = self.modifier
+        if self.modify_user is not None:
+            result['modifyUser'] = self.modify_user.to_map()
+        if self.originator is not None:
+            result['originator'] = self.originator.to_map()
+        if self.sequence is not None:
+            result['sequence'] = self.sequence
+        if self.serial_number is not None:
+            result['serialNumber'] = self.serial_number
+        if self.title is not None:
+            result['title'] = self.title
+        if self.version is not None:
+            result['version'] = self.version
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('createTimeGMT') is not None:
+            self.create_time_gmt = m.get('createTimeGMT')
+        if m.get('creatorUserId') is not None:
+            self.creator_user_id = m.get('creatorUserId')
+        if m.get('formData') is not None:
+            self.form_data = m.get('formData')
+        if m.get('formInstanceId') is not None:
+            self.form_instance_id = m.get('formInstanceId')
+        if m.get('formUuid') is not None:
+            self.form_uuid = m.get('formUuid')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('instanceValue') is not None:
+            self.instance_value = m.get('instanceValue')
+        if m.get('modifiedTimeGMT') is not None:
+            self.modified_time_gmt = m.get('modifiedTimeGMT')
+        if m.get('modifier') is not None:
+            self.modifier = m.get('modifier')
+        if m.get('modifyUser') is not None:
+            temp_model = SearchFormDataRemovalTableDataResponseBodyDataModifyUser()
+            self.modify_user = temp_model.from_map(m['modifyUser'])
+        if m.get('originator') is not None:
+            temp_model = SearchFormDataRemovalTableDataResponseBodyDataOriginator()
+            self.originator = temp_model.from_map(m['originator'])
+        if m.get('sequence') is not None:
+            self.sequence = m.get('sequence')
+        if m.get('serialNumber') is not None:
+            self.serial_number = m.get('serialNumber')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('version') is not None:
+            self.version = m.get('version')
+        return self
+
+
+class SearchFormDataRemovalTableDataResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: List[SearchFormDataRemovalTableDataResponseBodyData] = None,
+        has_more_data: bool = None,
+        page_number: int = None,
+        total_count: int = None,
+    ):
+        # 数据
+        self.data = data
+        # 是否还有数据
+        self.has_more_data = has_more_data
+        # 当前第几页
+        self.page_number = page_number
+        # 总数量
+        self.total_count = total_count
+
+    def validate(self):
+        if self.data:
+            for k in self.data:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['data'] = []
+        if self.data is not None:
+            for k in self.data:
+                result['data'].append(k.to_map() if k else None)
+        if self.has_more_data is not None:
+            result['hasMoreData'] = self.has_more_data
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.data = []
+        if m.get('data') is not None:
+            for k in m.get('data'):
+                temp_model = SearchFormDataRemovalTableDataResponseBodyData()
+                self.data.append(temp_model.from_map(k))
+        if m.get('hasMoreData') is not None:
+            self.has_more_data = m.get('hasMoreData')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class SearchFormDataRemovalTableDataResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SearchFormDataRemovalTableDataResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SearchFormDataRemovalTableDataResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SearchFormDataSecondGenerationHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SearchFormDataSecondGenerationRequest(TeaModel):
+    def __init__(
+        self,
+        app_type: str = None,
+        create_from_time_gmt: str = None,
+        create_to_time_gmt: str = None,
+        form_uuid: str = None,
+        modified_from_time_gmt: str = None,
+        modified_to_time_gmt: str = None,
+        order_config_json: str = None,
+        originator_id: str = None,
+        page_number: int = None,
+        page_size: int = None,
+        search_condition: str = None,
+        system_token: str = None,
+        user_id: str = None,
+    ):
+        # 宜搭应用编码
+        self.app_type = app_type
+        # 创建时间起始值
+        self.create_from_time_gmt = create_from_time_gmt
+        # 创建时间终止值
+        self.create_to_time_gmt = create_to_time_gmt
+        # 表单编码
+        self.form_uuid = form_uuid
+        # 修改时间起始值
+        self.modified_from_time_gmt = modified_from_time_gmt
+        # 修改时间终止值
+        self.modified_to_time_gmt = modified_to_time_gmt
+        # 排序规则
+        self.order_config_json = order_config_json
+        # 表单提交人的钉钉userId
+        self.originator_id = originator_id
+        # 当前第几页
+        self.page_number = page_number
+        # 分页大小
+        self.page_size = page_size
+        # 用于检索表单实例数据的检索条件
+        self.search_condition = search_condition
+        # 宜搭应用秘钥
+        self.system_token = system_token
+        # 钉钉userId
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_type is not None:
+            result['appType'] = self.app_type
+        if self.create_from_time_gmt is not None:
+            result['createFromTimeGMT'] = self.create_from_time_gmt
+        if self.create_to_time_gmt is not None:
+            result['createToTimeGMT'] = self.create_to_time_gmt
+        if self.form_uuid is not None:
+            result['formUuid'] = self.form_uuid
+        if self.modified_from_time_gmt is not None:
+            result['modifiedFromTimeGMT'] = self.modified_from_time_gmt
+        if self.modified_to_time_gmt is not None:
+            result['modifiedToTimeGMT'] = self.modified_to_time_gmt
+        if self.order_config_json is not None:
+            result['orderConfigJson'] = self.order_config_json
+        if self.originator_id is not None:
+            result['originatorId'] = self.originator_id
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.search_condition is not None:
+            result['searchCondition'] = self.search_condition
+        if self.system_token is not None:
+            result['systemToken'] = self.system_token
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appType') is not None:
+            self.app_type = m.get('appType')
+        if m.get('createFromTimeGMT') is not None:
+            self.create_from_time_gmt = m.get('createFromTimeGMT')
+        if m.get('createToTimeGMT') is not None:
+            self.create_to_time_gmt = m.get('createToTimeGMT')
+        if m.get('formUuid') is not None:
+            self.form_uuid = m.get('formUuid')
+        if m.get('modifiedFromTimeGMT') is not None:
+            self.modified_from_time_gmt = m.get('modifiedFromTimeGMT')
+        if m.get('modifiedToTimeGMT') is not None:
+            self.modified_to_time_gmt = m.get('modifiedToTimeGMT')
+        if m.get('orderConfigJson') is not None:
+            self.order_config_json = m.get('orderConfigJson')
+        if m.get('originatorId') is not None:
+            self.originator_id = m.get('originatorId')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('searchCondition') is not None:
+            self.search_condition = m.get('searchCondition')
+        if m.get('systemToken') is not None:
+            self.system_token = m.get('systemToken')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class SearchFormDataSecondGenerationResponseBodyDataModifyUserName(TeaModel):
+    def __init__(
+        self,
+        name_in_chinese: str = None,
+        name_in_english: str = None,
+    ):
+        # 中文名称
+        self.name_in_chinese = name_in_chinese
+        # 英文名称
+        self.name_in_english = name_in_english
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name_in_chinese is not None:
+            result['nameInChinese'] = self.name_in_chinese
+        if self.name_in_english is not None:
+            result['nameInEnglish'] = self.name_in_english
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nameInChinese') is not None:
+            self.name_in_chinese = m.get('nameInChinese')
+        if m.get('nameInEnglish') is not None:
+            self.name_in_english = m.get('nameInEnglish')
+        return self
+
+
+class SearchFormDataSecondGenerationResponseBodyDataModifyUser(TeaModel):
+    def __init__(
+        self,
+        department_name: str = None,
+        email: str = None,
+        name: SearchFormDataSecondGenerationResponseBodyDataModifyUserName = None,
+        user_id: str = None,
+    ):
+        # 部门名称
+        self.department_name = department_name
+        # 电子邮箱
+        self.email = email
+        # 名称
+        self.name = name
+        # 钉钉userId
+        self.user_id = user_id
+
+    def validate(self):
+        if self.name:
+            self.name.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.department_name is not None:
+            result['departmentName'] = self.department_name
+        if self.email is not None:
+            result['email'] = self.email
+        if self.name is not None:
+            result['name'] = self.name.to_map()
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('departmentName') is not None:
+            self.department_name = m.get('departmentName')
+        if m.get('email') is not None:
+            self.email = m.get('email')
+        if m.get('name') is not None:
+            temp_model = SearchFormDataSecondGenerationResponseBodyDataModifyUserName()
+            self.name = temp_model.from_map(m['name'])
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class SearchFormDataSecondGenerationResponseBodyDataOriginatorName(TeaModel):
+    def __init__(
+        self,
+        name_in_chinese: str = None,
+        name_in_english: str = None,
+    ):
+        # 中文名称
+        self.name_in_chinese = name_in_chinese
+        # 英文名称
+        self.name_in_english = name_in_english
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name_in_chinese is not None:
+            result['nameInChinese'] = self.name_in_chinese
+        if self.name_in_english is not None:
+            result['nameInEnglish'] = self.name_in_english
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nameInChinese') is not None:
+            self.name_in_chinese = m.get('nameInChinese')
+        if m.get('nameInEnglish') is not None:
+            self.name_in_english = m.get('nameInEnglish')
+        return self
+
+
+class SearchFormDataSecondGenerationResponseBodyDataOriginator(TeaModel):
+    def __init__(
+        self,
+        department_name: str = None,
+        email: str = None,
+        name: SearchFormDataSecondGenerationResponseBodyDataOriginatorName = None,
+        user_id: str = None,
+    ):
+        # 部门名称
+        self.department_name = department_name
+        # 电子邮箱
+        self.email = email
+        # 名称
+        self.name = name
+        # 钉钉userId
+        self.user_id = user_id
+
+    def validate(self):
+        if self.name:
+            self.name.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.department_name is not None:
+            result['departmentName'] = self.department_name
+        if self.email is not None:
+            result['email'] = self.email
+        if self.name is not None:
+            result['name'] = self.name.to_map()
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('departmentName') is not None:
+            self.department_name = m.get('departmentName')
+        if m.get('email') is not None:
+            self.email = m.get('email')
+        if m.get('name') is not None:
+            temp_model = SearchFormDataSecondGenerationResponseBodyDataOriginatorName()
+            self.name = temp_model.from_map(m['name'])
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class SearchFormDataSecondGenerationResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        create_time_gmt: str = None,
+        creator_user_id: str = None,
+        form_data: Dict[str, Any] = None,
+        form_instance_id: str = None,
+        form_uuid: str = None,
+        id: int = None,
+        instance_value: str = None,
+        modified_time_gmt: str = None,
+        modifier: str = None,
+        modify_user: SearchFormDataSecondGenerationResponseBodyDataModifyUser = None,
+        originator: SearchFormDataSecondGenerationResponseBodyDataOriginator = None,
+        sequence: str = None,
+        serial_number: str = None,
+        title: str = None,
+        version: int = None,
+    ):
+        # 创建时间
+        self.create_time_gmt = create_time_gmt
+        # 创建者的userId
+        self.creator_user_id = creator_user_id
+        # 表单实例数据以Map结构展示。结构说明参考  https://www.yuque.com/yida/support/agb8im#jksEx
+        self.form_data = form_data
+        # 表单实例id
+        self.form_instance_id = form_instance_id
+        # 表单编码
+        self.form_uuid = form_uuid
+        # 数据库表记录主键id
+        self.id = id
+        # 表单实例数据以宜搭组件值格式展示
+        self.instance_value = instance_value
+        # 修改时间
+        self.modified_time_gmt = modified_time_gmt
+        # 修改者的钉钉userId
+        self.modifier = modifier
+        # 修改者
+        self.modify_user = modify_user
+        # 发起人
+        self.originator = originator
+        # 此表单实例所对应的批量导入批次号(如果该表单实例是通过批量导入创建的)
+        self.sequence = sequence
+        # 流水号
+        self.serial_number = serial_number
+        # 标题
+        self.title = title
+        # 表单实例对应的表单schema版本
+        self.version = version
+
+    def validate(self):
+        if self.modify_user:
+            self.modify_user.validate()
+        if self.originator:
+            self.originator.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.create_time_gmt is not None:
+            result['createTimeGMT'] = self.create_time_gmt
+        if self.creator_user_id is not None:
+            result['creatorUserId'] = self.creator_user_id
+        if self.form_data is not None:
+            result['formData'] = self.form_data
+        if self.form_instance_id is not None:
+            result['formInstanceId'] = self.form_instance_id
+        if self.form_uuid is not None:
+            result['formUuid'] = self.form_uuid
+        if self.id is not None:
+            result['id'] = self.id
+        if self.instance_value is not None:
+            result['instanceValue'] = self.instance_value
+        if self.modified_time_gmt is not None:
+            result['modifiedTimeGMT'] = self.modified_time_gmt
+        if self.modifier is not None:
+            result['modifier'] = self.modifier
+        if self.modify_user is not None:
+            result['modifyUser'] = self.modify_user.to_map()
+        if self.originator is not None:
+            result['originator'] = self.originator.to_map()
+        if self.sequence is not None:
+            result['sequence'] = self.sequence
+        if self.serial_number is not None:
+            result['serialNumber'] = self.serial_number
+        if self.title is not None:
+            result['title'] = self.title
+        if self.version is not None:
+            result['version'] = self.version
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('createTimeGMT') is not None:
+            self.create_time_gmt = m.get('createTimeGMT')
+        if m.get('creatorUserId') is not None:
+            self.creator_user_id = m.get('creatorUserId')
+        if m.get('formData') is not None:
+            self.form_data = m.get('formData')
+        if m.get('formInstanceId') is not None:
+            self.form_instance_id = m.get('formInstanceId')
+        if m.get('formUuid') is not None:
+            self.form_uuid = m.get('formUuid')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('instanceValue') is not None:
+            self.instance_value = m.get('instanceValue')
+        if m.get('modifiedTimeGMT') is not None:
+            self.modified_time_gmt = m.get('modifiedTimeGMT')
+        if m.get('modifier') is not None:
+            self.modifier = m.get('modifier')
+        if m.get('modifyUser') is not None:
+            temp_model = SearchFormDataSecondGenerationResponseBodyDataModifyUser()
+            self.modify_user = temp_model.from_map(m['modifyUser'])
+        if m.get('originator') is not None:
+            temp_model = SearchFormDataSecondGenerationResponseBodyDataOriginator()
+            self.originator = temp_model.from_map(m['originator'])
+        if m.get('sequence') is not None:
+            self.sequence = m.get('sequence')
+        if m.get('serialNumber') is not None:
+            self.serial_number = m.get('serialNumber')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('version') is not None:
+            self.version = m.get('version')
+        return self
+
+
+class SearchFormDataSecondGenerationResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: List[SearchFormDataSecondGenerationResponseBodyData] = None,
+        page_number: int = None,
+        total_count: int = None,
+    ):
+        # 表单实例数据
+        self.data = data
+        # 当前第几页
+        self.page_number = page_number
+        # 总数量
+        self.total_count = total_count
+
+    def validate(self):
+        if self.data:
+            for k in self.data:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['data'] = []
+        if self.data is not None:
+            for k in self.data:
+                result['data'].append(k.to_map() if k else None)
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.data = []
+        if m.get('data') is not None:
+            for k in m.get('data'):
+                temp_model = SearchFormDataSecondGenerationResponseBodyData()
+                self.data.append(temp_model.from_map(k))
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class SearchFormDataSecondGenerationResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SearchFormDataSecondGenerationResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SearchFormDataSecondGenerationResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SearchFormDataSecondGenerationNoTableFieldHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SearchFormDataSecondGenerationNoTableFieldRequest(TeaModel):
+    def __init__(
+        self,
+        app_type: str = None,
+        create_from_time_gmt: str = None,
+        create_to_time_gmt: str = None,
+        form_uuid: str = None,
+        modified_from_time_gmt: str = None,
+        modified_to_time_gmt: str = None,
+        order_config_json: str = None,
+        originator_id: str = None,
+        page_number: int = None,
+        page_size: int = None,
+        search_condition: str = None,
+        system_token: str = None,
+        user_id: str = None,
+    ):
+        # 宜搭应用编码
+        self.app_type = app_type
+        # 创建时间起始值
+        self.create_from_time_gmt = create_from_time_gmt
+        # 创建时间终止值
+        self.create_to_time_gmt = create_to_time_gmt
+        # 表单编码
+        self.form_uuid = form_uuid
+        # 修改时间起始值
+        self.modified_from_time_gmt = modified_from_time_gmt
+        # 修改时间终止值
+        self.modified_to_time_gmt = modified_to_time_gmt
+        # 排序规则
+        self.order_config_json = order_config_json
+        # 表单提交人的钉钉userId
+        self.originator_id = originator_id
+        # 当前第几页
+        self.page_number = page_number
+        # 分页大小
+        self.page_size = page_size
+        # 用于检索表单实例数据的检索条件
+        self.search_condition = search_condition
+        # 宜搭应用秘钥
+        self.system_token = system_token
+        # 钉钉userId
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_type is not None:
+            result['appType'] = self.app_type
+        if self.create_from_time_gmt is not None:
+            result['createFromTimeGMT'] = self.create_from_time_gmt
+        if self.create_to_time_gmt is not None:
+            result['createToTimeGMT'] = self.create_to_time_gmt
+        if self.form_uuid is not None:
+            result['formUuid'] = self.form_uuid
+        if self.modified_from_time_gmt is not None:
+            result['modifiedFromTimeGMT'] = self.modified_from_time_gmt
+        if self.modified_to_time_gmt is not None:
+            result['modifiedToTimeGMT'] = self.modified_to_time_gmt
+        if self.order_config_json is not None:
+            result['orderConfigJson'] = self.order_config_json
+        if self.originator_id is not None:
+            result['originatorId'] = self.originator_id
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.search_condition is not None:
+            result['searchCondition'] = self.search_condition
+        if self.system_token is not None:
+            result['systemToken'] = self.system_token
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appType') is not None:
+            self.app_type = m.get('appType')
+        if m.get('createFromTimeGMT') is not None:
+            self.create_from_time_gmt = m.get('createFromTimeGMT')
+        if m.get('createToTimeGMT') is not None:
+            self.create_to_time_gmt = m.get('createToTimeGMT')
+        if m.get('formUuid') is not None:
+            self.form_uuid = m.get('formUuid')
+        if m.get('modifiedFromTimeGMT') is not None:
+            self.modified_from_time_gmt = m.get('modifiedFromTimeGMT')
+        if m.get('modifiedToTimeGMT') is not None:
+            self.modified_to_time_gmt = m.get('modifiedToTimeGMT')
+        if m.get('orderConfigJson') is not None:
+            self.order_config_json = m.get('orderConfigJson')
+        if m.get('originatorId') is not None:
+            self.originator_id = m.get('originatorId')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('searchCondition') is not None:
+            self.search_condition = m.get('searchCondition')
+        if m.get('systemToken') is not None:
+            self.system_token = m.get('systemToken')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUserName(TeaModel):
+    def __init__(
+        self,
+        name_in_chinese: str = None,
+        name_in_english: str = None,
+    ):
+        # 中文名称
+        self.name_in_chinese = name_in_chinese
+        # 英文名称
+        self.name_in_english = name_in_english
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name_in_chinese is not None:
+            result['nameInChinese'] = self.name_in_chinese
+        if self.name_in_english is not None:
+            result['nameInEnglish'] = self.name_in_english
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nameInChinese') is not None:
+            self.name_in_chinese = m.get('nameInChinese')
+        if m.get('nameInEnglish') is not None:
+            self.name_in_english = m.get('nameInEnglish')
+        return self
+
+
+class SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUser(TeaModel):
+    def __init__(
+        self,
+        department_name: str = None,
+        email: str = None,
+        name: SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUserName = None,
+        user_id: str = None,
+    ):
+        # 部门名称
+        self.department_name = department_name
+        # 电子邮箱
+        self.email = email
+        # 名称
+        self.name = name
+        # 钉钉userId
+        self.user_id = user_id
+
+    def validate(self):
+        if self.name:
+            self.name.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.department_name is not None:
+            result['departmentName'] = self.department_name
+        if self.email is not None:
+            result['email'] = self.email
+        if self.name is not None:
+            result['name'] = self.name.to_map()
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('departmentName') is not None:
+            self.department_name = m.get('departmentName')
+        if m.get('email') is not None:
+            self.email = m.get('email')
+        if m.get('name') is not None:
+            temp_model = SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUserName()
+            self.name = temp_model.from_map(m['name'])
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginatorName(TeaModel):
+    def __init__(
+        self,
+        name_in_chinese: str = None,
+        name_in_english: str = None,
+    ):
+        # 中文名称
+        self.name_in_chinese = name_in_chinese
+        # 英文名称
+        self.name_in_english = name_in_english
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name_in_chinese is not None:
+            result['nameInChinese'] = self.name_in_chinese
+        if self.name_in_english is not None:
+            result['nameInEnglish'] = self.name_in_english
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nameInChinese') is not None:
+            self.name_in_chinese = m.get('nameInChinese')
+        if m.get('nameInEnglish') is not None:
+            self.name_in_english = m.get('nameInEnglish')
+        return self
+
+
+class SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginator(TeaModel):
+    def __init__(
+        self,
+        department_name: str = None,
+        email: str = None,
+        name: SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginatorName = None,
+        user_id: str = None,
+    ):
+        # 部门名称
+        self.department_name = department_name
+        # 电子邮箱
+        self.email = email
+        # 名称
+        self.name = name
+        # 钉钉userId
+        self.user_id = user_id
+
+    def validate(self):
+        if self.name:
+            self.name.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.department_name is not None:
+            result['departmentName'] = self.department_name
+        if self.email is not None:
+            result['email'] = self.email
+        if self.name is not None:
+            result['name'] = self.name.to_map()
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('departmentName') is not None:
+            self.department_name = m.get('departmentName')
+        if m.get('email') is not None:
+            self.email = m.get('email')
+        if m.get('name') is not None:
+            temp_model = SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginatorName()
+            self.name = temp_model.from_map(m['name'])
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class SearchFormDataSecondGenerationNoTableFieldResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        create_time_gmt: str = None,
+        creator_user_id: str = None,
+        form_data: Dict[str, Any] = None,
+        form_instance_id: str = None,
+        form_uuid: str = None,
+        id: int = None,
+        instance_value: str = None,
+        modified_time_gmt: str = None,
+        modifier: str = None,
+        modify_user: SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUser = None,
+        originator: SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginator = None,
+        sequence: str = None,
+        serial_number: str = None,
+        title: str = None,
+        version: int = None,
+    ):
+        # 创建时间
+        self.create_time_gmt = create_time_gmt
+        # 创建者的userId
+        self.creator_user_id = creator_user_id
+        # 表单实例数据。结构说明参考 https://www.yuque.com/yida/support/agb8im#jksEx
+        self.form_data = form_data
+        # 表单实例id
+        self.form_instance_id = form_instance_id
+        # 表单编码
+        self.form_uuid = form_uuid
+        # 数据库表记录主键id
+        self.id = id
+        # 表单实例数据
+        self.instance_value = instance_value
+        # 修改时间
+        self.modified_time_gmt = modified_time_gmt
+        # 修改者的钉钉userId
+        self.modifier = modifier
+        # 修改者
+        self.modify_user = modify_user
+        # 表单实例提交人
+        self.originator = originator
+        # 此表单实例所对应的批量导入批次号(如果该表单实例是通过批量导入创建的)
+        self.sequence = sequence
+        # 流水号
+        self.serial_number = serial_number
+        # 标题
+        self.title = title
+        # 该表单实例对应的表单schema版本
+        self.version = version
+
+    def validate(self):
+        if self.modify_user:
+            self.modify_user.validate()
+        if self.originator:
+            self.originator.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.create_time_gmt is not None:
+            result['createTimeGMT'] = self.create_time_gmt
+        if self.creator_user_id is not None:
+            result['creatorUserId'] = self.creator_user_id
+        if self.form_data is not None:
+            result['formData'] = self.form_data
+        if self.form_instance_id is not None:
+            result['formInstanceId'] = self.form_instance_id
+        if self.form_uuid is not None:
+            result['formUuid'] = self.form_uuid
+        if self.id is not None:
+            result['id'] = self.id
+        if self.instance_value is not None:
+            result['instanceValue'] = self.instance_value
+        if self.modified_time_gmt is not None:
+            result['modifiedTimeGMT'] = self.modified_time_gmt
+        if self.modifier is not None:
+            result['modifier'] = self.modifier
+        if self.modify_user is not None:
+            result['modifyUser'] = self.modify_user.to_map()
+        if self.originator is not None:
+            result['originator'] = self.originator.to_map()
+        if self.sequence is not None:
+            result['sequence'] = self.sequence
+        if self.serial_number is not None:
+            result['serialNumber'] = self.serial_number
+        if self.title is not None:
+            result['title'] = self.title
+        if self.version is not None:
+            result['version'] = self.version
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('createTimeGMT') is not None:
+            self.create_time_gmt = m.get('createTimeGMT')
+        if m.get('creatorUserId') is not None:
+            self.creator_user_id = m.get('creatorUserId')
+        if m.get('formData') is not None:
+            self.form_data = m.get('formData')
+        if m.get('formInstanceId') is not None:
+            self.form_instance_id = m.get('formInstanceId')
+        if m.get('formUuid') is not None:
+            self.form_uuid = m.get('formUuid')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('instanceValue') is not None:
+            self.instance_value = m.get('instanceValue')
+        if m.get('modifiedTimeGMT') is not None:
+            self.modified_time_gmt = m.get('modifiedTimeGMT')
+        if m.get('modifier') is not None:
+            self.modifier = m.get('modifier')
+        if m.get('modifyUser') is not None:
+            temp_model = SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUser()
+            self.modify_user = temp_model.from_map(m['modifyUser'])
+        if m.get('originator') is not None:
+            temp_model = SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginator()
+            self.originator = temp_model.from_map(m['originator'])
+        if m.get('sequence') is not None:
+            self.sequence = m.get('sequence')
+        if m.get('serialNumber') is not None:
+            self.serial_number = m.get('serialNumber')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('version') is not None:
+            self.version = m.get('version')
+        return self
+
+
+class SearchFormDataSecondGenerationNoTableFieldResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: List[SearchFormDataSecondGenerationNoTableFieldResponseBodyData] = None,
+        page_number: int = None,
+        total_count: int = None,
+    ):
+        # 数据
+        self.data = data
+        # 当前第几页
+        self.page_number = page_number
+        # 总数量
+        self.total_count = total_count
+
+    def validate(self):
+        if self.data:
+            for k in self.data:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['data'] = []
+        if self.data is not None:
+            for k in self.data:
+                result['data'].append(k.to_map() if k else None)
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.data = []
+        if m.get('data') is not None:
+            for k in m.get('data'):
+                temp_model = SearchFormDataSecondGenerationNoTableFieldResponseBodyData()
+                self.data.append(temp_model.from_map(k))
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class SearchFormDataSecondGenerationNoTableFieldResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SearchFormDataSecondGenerationNoTableFieldResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SearchFormDataSecondGenerationNoTableFieldResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

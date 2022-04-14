@@ -1768,7 +1768,7 @@ class BillSettementFlightResponseBodyModuleDataList(TeaModel):
         itinerary_num: str = None,
         itinerary_price: float = None,
         most_difference_dept_time: str = None,
-        most_difference_discount: float = None,
+        most_difference_discount: str = None,
         most_difference_flight_no: str = None,
         most_difference_price: float = None,
         most_difference_reason: str = None,

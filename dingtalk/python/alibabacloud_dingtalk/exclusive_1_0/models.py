@@ -4473,6 +4473,356 @@ class ListMiniAppHistoryVersionResponse(TeaModel):
         return self
 
 
+class ListPartnerRolesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListPartnerRolesResponseBodyListVisibleDepts(TeaModel):
+    def __init__(
+        self,
+        dept_id: int = None,
+        name: str = None,
+    ):
+        # 部门id
+        self.dept_id = dept_id
+        # 部门名称
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
+class ListPartnerRolesResponseBodyListVisibleUsers(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        user_id: str = None,
+    ):
+        # 员工姓名
+        self.name = name
+        # 员工id
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class ListPartnerRolesResponseBodyListWarningDepts(TeaModel):
+    def __init__(
+        self,
+        dept_id: int = None,
+        name: str = None,
+    ):
+        # 部门id
+        self.dept_id = dept_id
+        # 部门名称
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
+class ListPartnerRolesResponseBodyListWarningUsers(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        user_id: str = None,
+    ):
+        # 员工姓名
+        self.name = name
+        # 员工id
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class ListPartnerRolesResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        id: int = None,
+        is_necessary: int = None,
+        name: str = None,
+        visible_depts: List[ListPartnerRolesResponseBodyListVisibleDepts] = None,
+        visible_users: List[ListPartnerRolesResponseBodyListVisibleUsers] = None,
+        warning_depts: List[ListPartnerRolesResponseBodyListWarningDepts] = None,
+        warning_users: List[ListPartnerRolesResponseBodyListWarningUsers] = None,
+    ):
+        # 角色id
+        self.id = id
+        # 是否必邀角色
+        self.is_necessary = is_necessary
+        # 角色名称
+        self.name = name
+        # 可见部门
+        self.visible_depts = visible_depts
+        # 可见员工
+        self.visible_users = visible_users
+        # 预警部门
+        self.warning_depts = warning_depts
+        # 预警成员
+        self.warning_users = warning_users
+
+    def validate(self):
+        if self.visible_depts:
+            for k in self.visible_depts:
+                if k:
+                    k.validate()
+        if self.visible_users:
+            for k in self.visible_users:
+                if k:
+                    k.validate()
+        if self.warning_depts:
+            for k in self.warning_depts:
+                if k:
+                    k.validate()
+        if self.warning_users:
+            for k in self.warning_users:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.is_necessary is not None:
+            result['isNecessary'] = self.is_necessary
+        if self.name is not None:
+            result['name'] = self.name
+        result['visibleDepts'] = []
+        if self.visible_depts is not None:
+            for k in self.visible_depts:
+                result['visibleDepts'].append(k.to_map() if k else None)
+        result['visibleUsers'] = []
+        if self.visible_users is not None:
+            for k in self.visible_users:
+                result['visibleUsers'].append(k.to_map() if k else None)
+        result['warningDepts'] = []
+        if self.warning_depts is not None:
+            for k in self.warning_depts:
+                result['warningDepts'].append(k.to_map() if k else None)
+        result['warningUsers'] = []
+        if self.warning_users is not None:
+            for k in self.warning_users:
+                result['warningUsers'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('isNecessary') is not None:
+            self.is_necessary = m.get('isNecessary')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        self.visible_depts = []
+        if m.get('visibleDepts') is not None:
+            for k in m.get('visibleDepts'):
+                temp_model = ListPartnerRolesResponseBodyListVisibleDepts()
+                self.visible_depts.append(temp_model.from_map(k))
+        self.visible_users = []
+        if m.get('visibleUsers') is not None:
+            for k in m.get('visibleUsers'):
+                temp_model = ListPartnerRolesResponseBodyListVisibleUsers()
+                self.visible_users.append(temp_model.from_map(k))
+        self.warning_depts = []
+        if m.get('warningDepts') is not None:
+            for k in m.get('warningDepts'):
+                temp_model = ListPartnerRolesResponseBodyListWarningDepts()
+                self.warning_depts.append(temp_model.from_map(k))
+        self.warning_users = []
+        if m.get('warningUsers') is not None:
+            for k in m.get('warningUsers'):
+                temp_model = ListPartnerRolesResponseBodyListWarningUsers()
+                self.warning_users.append(temp_model.from_map(k))
+        return self
+
+
+class ListPartnerRolesResponseBody(TeaModel):
+    def __init__(
+        self,
+        list: List[ListPartnerRolesResponseBodyList] = None,
+    ):
+        self.list = list
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = ListPartnerRolesResponseBodyList()
+                self.list.append(temp_model.from_map(k))
+        return self
+
+
+class ListPartnerRolesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ListPartnerRolesResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ListPartnerRolesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ListPunchScheduleByConditionWithPagingHeaders(TeaModel):
     def __init__(
         self,

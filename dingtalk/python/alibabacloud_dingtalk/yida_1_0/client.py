@@ -23,6 +23,466 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def batch_get_form_data_by_id_list(
+        self,
+        request: dingtalkyida__1__0_models.BatchGetFormDataByIdListRequest,
+    ) -> dingtalkyida__1__0_models.BatchGetFormDataByIdListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.BatchGetFormDataByIdListHeaders()
+        return self.batch_get_form_data_by_id_list_with_options(request, headers, runtime)
+
+    async def batch_get_form_data_by_id_list_async(
+        self,
+        request: dingtalkyida__1__0_models.BatchGetFormDataByIdListRequest,
+    ) -> dingtalkyida__1__0_models.BatchGetFormDataByIdListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.BatchGetFormDataByIdListHeaders()
+        return await self.batch_get_form_data_by_id_list_with_options_async(request, headers, runtime)
+
+    def batch_get_form_data_by_id_list_with_options(
+        self,
+        request: dingtalkyida__1__0_models.BatchGetFormDataByIdListRequest,
+        headers: dingtalkyida__1__0_models.BatchGetFormDataByIdListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.BatchGetFormDataByIdListResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_type):
+            body['appType'] = request.app_type
+        if not UtilClient.is_unset(request.form_instance_id_list):
+            body['formInstanceIdList'] = request.form_instance_id_list
+        if not UtilClient.is_unset(request.form_uuid):
+            body['formUuid'] = request.form_uuid
+        if not UtilClient.is_unset(request.need_form_instance_value):
+            body['needFormInstanceValue'] = request.need_form_instance_value
+        if not UtilClient.is_unset(request.system_token):
+            body['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.BatchGetFormDataByIdListResponse(),
+            self.do_roarequest('BatchGetFormDataByIdList', 'yida_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/yida/forms/instances/ids/query', 'json', req, runtime)
+        )
+
+    async def batch_get_form_data_by_id_list_with_options_async(
+        self,
+        request: dingtalkyida__1__0_models.BatchGetFormDataByIdListRequest,
+        headers: dingtalkyida__1__0_models.BatchGetFormDataByIdListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.BatchGetFormDataByIdListResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_type):
+            body['appType'] = request.app_type
+        if not UtilClient.is_unset(request.form_instance_id_list):
+            body['formInstanceIdList'] = request.form_instance_id_list
+        if not UtilClient.is_unset(request.form_uuid):
+            body['formUuid'] = request.form_uuid
+        if not UtilClient.is_unset(request.need_form_instance_value):
+            body['needFormInstanceValue'] = request.need_form_instance_value
+        if not UtilClient.is_unset(request.system_token):
+            body['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.BatchGetFormDataByIdListResponse(),
+            await self.do_roarequest_async('BatchGetFormDataByIdList', 'yida_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/yida/forms/instances/ids/query', 'json', req, runtime)
+        )
+
+    def batch_removal_by_form_instance_id_list(
+        self,
+        request: dingtalkyida__1__0_models.BatchRemovalByFormInstanceIdListRequest,
+    ) -> dingtalkyida__1__0_models.BatchRemovalByFormInstanceIdListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.BatchRemovalByFormInstanceIdListHeaders()
+        return self.batch_removal_by_form_instance_id_list_with_options(request, headers, runtime)
+
+    async def batch_removal_by_form_instance_id_list_async(
+        self,
+        request: dingtalkyida__1__0_models.BatchRemovalByFormInstanceIdListRequest,
+    ) -> dingtalkyida__1__0_models.BatchRemovalByFormInstanceIdListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.BatchRemovalByFormInstanceIdListHeaders()
+        return await self.batch_removal_by_form_instance_id_list_with_options_async(request, headers, runtime)
+
+    def batch_removal_by_form_instance_id_list_with_options(
+        self,
+        request: dingtalkyida__1__0_models.BatchRemovalByFormInstanceIdListRequest,
+        headers: dingtalkyida__1__0_models.BatchRemovalByFormInstanceIdListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.BatchRemovalByFormInstanceIdListResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_type):
+            body['appType'] = request.app_type
+        if not UtilClient.is_unset(request.asynchronous_execution):
+            body['asynchronousExecution'] = request.asynchronous_execution
+        if not UtilClient.is_unset(request.execute_expression):
+            body['executeExpression'] = request.execute_expression
+        if not UtilClient.is_unset(request.form_instance_id_list):
+            body['formInstanceIdList'] = request.form_instance_id_list
+        if not UtilClient.is_unset(request.form_uuid):
+            body['formUuid'] = request.form_uuid
+        if not UtilClient.is_unset(request.system_token):
+            body['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.BatchRemovalByFormInstanceIdListResponse(),
+            self.do_roarequest('BatchRemovalByFormInstanceIdList', 'yida_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/yida/forms/instances/batchRemove', 'none', req, runtime)
+        )
+
+    async def batch_removal_by_form_instance_id_list_with_options_async(
+        self,
+        request: dingtalkyida__1__0_models.BatchRemovalByFormInstanceIdListRequest,
+        headers: dingtalkyida__1__0_models.BatchRemovalByFormInstanceIdListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.BatchRemovalByFormInstanceIdListResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_type):
+            body['appType'] = request.app_type
+        if not UtilClient.is_unset(request.asynchronous_execution):
+            body['asynchronousExecution'] = request.asynchronous_execution
+        if not UtilClient.is_unset(request.execute_expression):
+            body['executeExpression'] = request.execute_expression
+        if not UtilClient.is_unset(request.form_instance_id_list):
+            body['formInstanceIdList'] = request.form_instance_id_list
+        if not UtilClient.is_unset(request.form_uuid):
+            body['formUuid'] = request.form_uuid
+        if not UtilClient.is_unset(request.system_token):
+            body['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.BatchRemovalByFormInstanceIdListResponse(),
+            await self.do_roarequest_async('BatchRemovalByFormInstanceIdList', 'yida_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/yida/forms/instances/batchRemove', 'none', req, runtime)
+        )
+
+    def batch_save_form_data(
+        self,
+        request: dingtalkyida__1__0_models.BatchSaveFormDataRequest,
+    ) -> dingtalkyida__1__0_models.BatchSaveFormDataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.BatchSaveFormDataHeaders()
+        return self.batch_save_form_data_with_options(request, headers, runtime)
+
+    async def batch_save_form_data_async(
+        self,
+        request: dingtalkyida__1__0_models.BatchSaveFormDataRequest,
+    ) -> dingtalkyida__1__0_models.BatchSaveFormDataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.BatchSaveFormDataHeaders()
+        return await self.batch_save_form_data_with_options_async(request, headers, runtime)
+
+    def batch_save_form_data_with_options(
+        self,
+        request: dingtalkyida__1__0_models.BatchSaveFormDataRequest,
+        headers: dingtalkyida__1__0_models.BatchSaveFormDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.BatchSaveFormDataResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_type):
+            body['appType'] = request.app_type
+        if not UtilClient.is_unset(request.asynchronous_execution):
+            body['asynchronousExecution'] = request.asynchronous_execution
+        if not UtilClient.is_unset(request.form_data_json_list):
+            body['formDataJsonList'] = request.form_data_json_list
+        if not UtilClient.is_unset(request.form_uuid):
+            body['formUuid'] = request.form_uuid
+        if not UtilClient.is_unset(request.keep_running_after_exception):
+            body['keepRunningAfterException'] = request.keep_running_after_exception
+        if not UtilClient.is_unset(request.no_execute_expression):
+            body['noExecuteExpression'] = request.no_execute_expression
+        if not UtilClient.is_unset(request.system_token):
+            body['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.BatchSaveFormDataResponse(),
+            self.do_roarequest('BatchSaveFormData', 'yida_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/yida/forms/instances/batchSave', 'json', req, runtime)
+        )
+
+    async def batch_save_form_data_with_options_async(
+        self,
+        request: dingtalkyida__1__0_models.BatchSaveFormDataRequest,
+        headers: dingtalkyida__1__0_models.BatchSaveFormDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.BatchSaveFormDataResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_type):
+            body['appType'] = request.app_type
+        if not UtilClient.is_unset(request.asynchronous_execution):
+            body['asynchronousExecution'] = request.asynchronous_execution
+        if not UtilClient.is_unset(request.form_data_json_list):
+            body['formDataJsonList'] = request.form_data_json_list
+        if not UtilClient.is_unset(request.form_uuid):
+            body['formUuid'] = request.form_uuid
+        if not UtilClient.is_unset(request.keep_running_after_exception):
+            body['keepRunningAfterException'] = request.keep_running_after_exception
+        if not UtilClient.is_unset(request.no_execute_expression):
+            body['noExecuteExpression'] = request.no_execute_expression
+        if not UtilClient.is_unset(request.system_token):
+            body['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.BatchSaveFormDataResponse(),
+            await self.do_roarequest_async('BatchSaveFormData', 'yida_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/yida/forms/instances/batchSave', 'json', req, runtime)
+        )
+
+    def batch_update_form_data_by_instance_id(
+        self,
+        request: dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceIdRequest,
+    ) -> dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceIdResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceIdHeaders()
+        return self.batch_update_form_data_by_instance_id_with_options(request, headers, runtime)
+
+    async def batch_update_form_data_by_instance_id_async(
+        self,
+        request: dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceIdRequest,
+    ) -> dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceIdResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceIdHeaders()
+        return await self.batch_update_form_data_by_instance_id_with_options_async(request, headers, runtime)
+
+    def batch_update_form_data_by_instance_id_with_options(
+        self,
+        request: dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceIdRequest,
+        headers: dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceIdResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_type):
+            body['appType'] = request.app_type
+        if not UtilClient.is_unset(request.asynchronous_execution):
+            body['asynchronousExecution'] = request.asynchronous_execution
+        if not UtilClient.is_unset(request.form_instance_id_list):
+            body['formInstanceIdList'] = request.form_instance_id_list
+        if not UtilClient.is_unset(request.form_uuid):
+            body['formUuid'] = request.form_uuid
+        if not UtilClient.is_unset(request.ignore_empty):
+            body['ignoreEmpty'] = request.ignore_empty
+        if not UtilClient.is_unset(request.no_execute_expression):
+            body['noExecuteExpression'] = request.no_execute_expression
+        if not UtilClient.is_unset(request.system_token):
+            body['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.update_form_data_json):
+            body['updateFormDataJson'] = request.update_form_data_json
+        if not UtilClient.is_unset(request.use_latest_form_schema_version):
+            body['useLatestFormSchemaVersion'] = request.use_latest_form_schema_version
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceIdResponse(),
+            self.do_roarequest('BatchUpdateFormDataByInstanceId', 'yida_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/yida/forms/instances/components', 'json', req, runtime)
+        )
+
+    async def batch_update_form_data_by_instance_id_with_options_async(
+        self,
+        request: dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceIdRequest,
+        headers: dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceIdResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_type):
+            body['appType'] = request.app_type
+        if not UtilClient.is_unset(request.asynchronous_execution):
+            body['asynchronousExecution'] = request.asynchronous_execution
+        if not UtilClient.is_unset(request.form_instance_id_list):
+            body['formInstanceIdList'] = request.form_instance_id_list
+        if not UtilClient.is_unset(request.form_uuid):
+            body['formUuid'] = request.form_uuid
+        if not UtilClient.is_unset(request.ignore_empty):
+            body['ignoreEmpty'] = request.ignore_empty
+        if not UtilClient.is_unset(request.no_execute_expression):
+            body['noExecuteExpression'] = request.no_execute_expression
+        if not UtilClient.is_unset(request.system_token):
+            body['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.update_form_data_json):
+            body['updateFormDataJson'] = request.update_form_data_json
+        if not UtilClient.is_unset(request.use_latest_form_schema_version):
+            body['useLatestFormSchemaVersion'] = request.use_latest_form_schema_version
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceIdResponse(),
+            await self.do_roarequest_async('BatchUpdateFormDataByInstanceId', 'yida_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/yida/forms/instances/components', 'json', req, runtime)
+        )
+
+    def batch_update_form_data_by_instance_map(
+        self,
+        request: dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceMapRequest,
+    ) -> dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceMapResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceMapHeaders()
+        return self.batch_update_form_data_by_instance_map_with_options(request, headers, runtime)
+
+    async def batch_update_form_data_by_instance_map_async(
+        self,
+        request: dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceMapRequest,
+    ) -> dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceMapResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceMapHeaders()
+        return await self.batch_update_form_data_by_instance_map_with_options_async(request, headers, runtime)
+
+    def batch_update_form_data_by_instance_map_with_options(
+        self,
+        request: dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceMapRequest,
+        headers: dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceMapHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceMapResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_type):
+            body['appType'] = request.app_type
+        if not UtilClient.is_unset(request.asynchronous_execution):
+            body['asynchronousExecution'] = request.asynchronous_execution
+        if not UtilClient.is_unset(request.form_uuid):
+            body['formUuid'] = request.form_uuid
+        if not UtilClient.is_unset(request.ignore_empty):
+            body['ignoreEmpty'] = request.ignore_empty
+        if not UtilClient.is_unset(request.no_execute_expression):
+            body['noExecuteExpression'] = request.no_execute_expression
+        if not UtilClient.is_unset(request.system_token):
+            body['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.update_form_data_json_map):
+            body['updateFormDataJsonMap'] = request.update_form_data_json_map
+        if not UtilClient.is_unset(request.use_latest_form_schema_version):
+            body['useLatestFormSchemaVersion'] = request.use_latest_form_schema_version
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceMapResponse(),
+            self.do_roarequest('BatchUpdateFormDataByInstanceMap', 'yida_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/yida/forms/instances/datas', 'json', req, runtime)
+        )
+
+    async def batch_update_form_data_by_instance_map_with_options_async(
+        self,
+        request: dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceMapRequest,
+        headers: dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceMapHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceMapResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_type):
+            body['appType'] = request.app_type
+        if not UtilClient.is_unset(request.asynchronous_execution):
+            body['asynchronousExecution'] = request.asynchronous_execution
+        if not UtilClient.is_unset(request.form_uuid):
+            body['formUuid'] = request.form_uuid
+        if not UtilClient.is_unset(request.ignore_empty):
+            body['ignoreEmpty'] = request.ignore_empty
+        if not UtilClient.is_unset(request.no_execute_expression):
+            body['noExecuteExpression'] = request.no_execute_expression
+        if not UtilClient.is_unset(request.system_token):
+            body['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.update_form_data_json_map):
+            body['updateFormDataJsonMap'] = request.update_form_data_json_map
+        if not UtilClient.is_unset(request.use_latest_form_schema_version):
+            body['useLatestFormSchemaVersion'] = request.use_latest_form_schema_version
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceMapResponse(),
+            await self.do_roarequest_async('BatchUpdateFormDataByInstanceMap', 'yida_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/yida/forms/instances/datas', 'json', req, runtime)
+        )
+
     def buy_authorization_order(
         self,
         request: dingtalkyida__1__0_models.BuyAuthorizationOrderRequest,
@@ -299,6 +759,94 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkyida__1__0_models.CheckCloudAccountStatusResponse(),
             await self.do_roarequest_async('CheckCloudAccountStatus', 'yida_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/yida/apps/cloudAccountStatus/{caller_uid}', 'json', req, runtime)
+        )
+
+    def create_or_update_form_data(
+        self,
+        request: dingtalkyida__1__0_models.CreateOrUpdateFormDataRequest,
+    ) -> dingtalkyida__1__0_models.CreateOrUpdateFormDataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.CreateOrUpdateFormDataHeaders()
+        return self.create_or_update_form_data_with_options(request, headers, runtime)
+
+    async def create_or_update_form_data_async(
+        self,
+        request: dingtalkyida__1__0_models.CreateOrUpdateFormDataRequest,
+    ) -> dingtalkyida__1__0_models.CreateOrUpdateFormDataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.CreateOrUpdateFormDataHeaders()
+        return await self.create_or_update_form_data_with_options_async(request, headers, runtime)
+
+    def create_or_update_form_data_with_options(
+        self,
+        request: dingtalkyida__1__0_models.CreateOrUpdateFormDataRequest,
+        headers: dingtalkyida__1__0_models.CreateOrUpdateFormDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.CreateOrUpdateFormDataResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_type):
+            body['appType'] = request.app_type
+        if not UtilClient.is_unset(request.form_data_json):
+            body['formDataJson'] = request.form_data_json
+        if not UtilClient.is_unset(request.form_uuid):
+            body['formUuid'] = request.form_uuid
+        if not UtilClient.is_unset(request.no_execute_expression):
+            body['noExecuteExpression'] = request.no_execute_expression
+        if not UtilClient.is_unset(request.search_condition):
+            body['searchCondition'] = request.search_condition
+        if not UtilClient.is_unset(request.system_token):
+            body['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.CreateOrUpdateFormDataResponse(),
+            self.do_roarequest('CreateOrUpdateFormData', 'yida_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/yida/forms/instances/insertOrUpdate', 'json', req, runtime)
+        )
+
+    async def create_or_update_form_data_with_options_async(
+        self,
+        request: dingtalkyida__1__0_models.CreateOrUpdateFormDataRequest,
+        headers: dingtalkyida__1__0_models.CreateOrUpdateFormDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.CreateOrUpdateFormDataResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_type):
+            body['appType'] = request.app_type
+        if not UtilClient.is_unset(request.form_data_json):
+            body['formDataJson'] = request.form_data_json
+        if not UtilClient.is_unset(request.form_uuid):
+            body['formUuid'] = request.form_uuid
+        if not UtilClient.is_unset(request.no_execute_expression):
+            body['noExecuteExpression'] = request.no_execute_expression
+        if not UtilClient.is_unset(request.search_condition):
+            body['searchCondition'] = request.search_condition
+        if not UtilClient.is_unset(request.system_token):
+            body['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.CreateOrUpdateFormDataResponse(),
+            await self.do_roarequest_async('CreateOrUpdateFormData', 'yida_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/yida/forms/instances/insertOrUpdate', 'json', req, runtime)
         )
 
     def delete_form_data(
@@ -1996,6 +2544,8 @@ class Client(OpenApiClient):
             body['modifiedFromTimeGMT'] = request.modified_from_time_gmt
         if not UtilClient.is_unset(request.modified_to_time_gmt):
             body['modifiedToTimeGMT'] = request.modified_to_time_gmt
+        if not UtilClient.is_unset(request.order_config_json):
+            body['orderConfigJson'] = request.order_config_json
         if not UtilClient.is_unset(request.originator_id):
             body['originatorId'] = request.originator_id
         if not UtilClient.is_unset(request.search_field_json):
@@ -2052,6 +2602,8 @@ class Client(OpenApiClient):
             body['modifiedFromTimeGMT'] = request.modified_from_time_gmt
         if not UtilClient.is_unset(request.modified_to_time_gmt):
             body['modifiedToTimeGMT'] = request.modified_to_time_gmt
+        if not UtilClient.is_unset(request.order_config_json):
+            body['orderConfigJson'] = request.order_config_json
         if not UtilClient.is_unset(request.originator_id):
             body['originatorId'] = request.originator_id
         if not UtilClient.is_unset(request.search_field_json):
@@ -3193,6 +3745,94 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetTaskCopies', 'yida_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/yida/tasks/taskCopies', 'json', req, runtime)
         )
 
+    def list_application(
+        self,
+        request: dingtalkyida__1__0_models.ListApplicationRequest,
+    ) -> dingtalkyida__1__0_models.ListApplicationResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.ListApplicationHeaders()
+        return self.list_application_with_options(request, headers, runtime)
+
+    async def list_application_async(
+        self,
+        request: dingtalkyida__1__0_models.ListApplicationRequest,
+    ) -> dingtalkyida__1__0_models.ListApplicationResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.ListApplicationHeaders()
+        return await self.list_application_with_options_async(request, headers, runtime)
+
+    def list_application_with_options(
+        self,
+        request: dingtalkyida__1__0_models.ListApplicationRequest,
+        headers: dingtalkyida__1__0_models.ListApplicationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.ListApplicationResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.app_filter):
+            query['appFilter'] = request.app_filter
+        if not UtilClient.is_unset(request.app_name_search_keyword):
+            query['appNameSearchKeyword'] = request.app_name_search_keyword
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.token):
+            query['token'] = request.token
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.ListApplicationResponse(),
+            self.do_roarequest('ListApplication', 'yida_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/yida/organizations/applications', 'json', req, runtime)
+        )
+
+    async def list_application_with_options_async(
+        self,
+        request: dingtalkyida__1__0_models.ListApplicationRequest,
+        headers: dingtalkyida__1__0_models.ListApplicationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.ListApplicationResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.app_filter):
+            query['appFilter'] = request.app_filter
+        if not UtilClient.is_unset(request.app_name_search_keyword):
+            query['appNameSearchKeyword'] = request.app_name_search_keyword
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.token):
+            query['token'] = request.token
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.ListApplicationResponse(),
+            await self.do_roarequest_async('ListApplication', 'yida_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/yida/organizations/applications', 'json', req, runtime)
+        )
+
     def list_application_authorization_service_application_information(
         self,
         instance_id: str,
@@ -3937,6 +4577,126 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkyida__1__0_models.NotifyAuthorizationResultResponse(),
             await self.do_roarequest_async('NotifyAuthorizationResult', 'yida_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/yida/apps/authorizationResults/notify', 'json', req, runtime)
+        )
+
+    def query_service_record(
+        self,
+        request: dingtalkyida__1__0_models.QueryServiceRecordRequest,
+    ) -> dingtalkyida__1__0_models.QueryServiceRecordResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.QueryServiceRecordHeaders()
+        return self.query_service_record_with_options(request, headers, runtime)
+
+    async def query_service_record_async(
+        self,
+        request: dingtalkyida__1__0_models.QueryServiceRecordRequest,
+    ) -> dingtalkyida__1__0_models.QueryServiceRecordResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.QueryServiceRecordHeaders()
+        return await self.query_service_record_with_options_async(request, headers, runtime)
+
+    def query_service_record_with_options(
+        self,
+        request: dingtalkyida__1__0_models.QueryServiceRecordRequest,
+        headers: dingtalkyida__1__0_models.QueryServiceRecordHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.QueryServiceRecordResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.app_type):
+            query['appType'] = request.app_type
+        if not UtilClient.is_unset(request.form_uuid):
+            query['formUuid'] = request.form_uuid
+        if not UtilClient.is_unset(request.hook_type):
+            query['hookType'] = request.hook_type
+        if not UtilClient.is_unset(request.hook_uuid):
+            query['hookUuid'] = request.hook_uuid
+        if not UtilClient.is_unset(request.instance_id):
+            query['instanceId'] = request.instance_id
+        if not UtilClient.is_unset(request.invoke_after_date_gmt):
+            query['invokeAfterDateGMT'] = request.invoke_after_date_gmt
+        if not UtilClient.is_unset(request.invoke_before_date_gmt):
+            query['invokeBeforeDateGMT'] = request.invoke_before_date_gmt
+        if not UtilClient.is_unset(request.invoke_status):
+            query['invokeStatus'] = request.invoke_status
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.request_url):
+            query['requestUrl'] = request.request_url
+        if not UtilClient.is_unset(request.source_uuid):
+            query['sourceUuid'] = request.source_uuid
+        if not UtilClient.is_unset(request.success):
+            query['success'] = request.success
+        if not UtilClient.is_unset(request.system_token):
+            query['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.QueryServiceRecordResponse(),
+            self.do_roarequest('QueryServiceRecord', 'yida_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/yida/services/invocationRecords', 'json', req, runtime)
+        )
+
+    async def query_service_record_with_options_async(
+        self,
+        request: dingtalkyida__1__0_models.QueryServiceRecordRequest,
+        headers: dingtalkyida__1__0_models.QueryServiceRecordHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.QueryServiceRecordResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.app_type):
+            query['appType'] = request.app_type
+        if not UtilClient.is_unset(request.form_uuid):
+            query['formUuid'] = request.form_uuid
+        if not UtilClient.is_unset(request.hook_type):
+            query['hookType'] = request.hook_type
+        if not UtilClient.is_unset(request.hook_uuid):
+            query['hookUuid'] = request.hook_uuid
+        if not UtilClient.is_unset(request.instance_id):
+            query['instanceId'] = request.instance_id
+        if not UtilClient.is_unset(request.invoke_after_date_gmt):
+            query['invokeAfterDateGMT'] = request.invoke_after_date_gmt
+        if not UtilClient.is_unset(request.invoke_before_date_gmt):
+            query['invokeBeforeDateGMT'] = request.invoke_before_date_gmt
+        if not UtilClient.is_unset(request.invoke_status):
+            query['invokeStatus'] = request.invoke_status
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.request_url):
+            query['requestUrl'] = request.request_url
+        if not UtilClient.is_unset(request.source_uuid):
+            query['sourceUuid'] = request.source_uuid
+        if not UtilClient.is_unset(request.success):
+            query['success'] = request.success
+        if not UtilClient.is_unset(request.system_token):
+            query['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.QueryServiceRecordResponse(),
+            await self.do_roarequest_async('QueryServiceRecord', 'yida_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/yida/services/invocationRecords', 'json', req, runtime)
         )
 
     def redirect_task(
@@ -5147,6 +5907,342 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkyida__1__0_models.SearchFormDataIdListResponse(),
             await self.do_roarequest_async('SearchFormDataIdList', 'yida_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/yida/forms/instances/ids/{app_type}/{form_uuid}', 'json', req, runtime)
+        )
+
+    def search_form_data_removal_table_data(
+        self,
+        request: dingtalkyida__1__0_models.SearchFormDataRemovalTableDataRequest,
+    ) -> dingtalkyida__1__0_models.SearchFormDataRemovalTableDataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.SearchFormDataRemovalTableDataHeaders()
+        return self.search_form_data_removal_table_data_with_options(request, headers, runtime)
+
+    async def search_form_data_removal_table_data_async(
+        self,
+        request: dingtalkyida__1__0_models.SearchFormDataRemovalTableDataRequest,
+    ) -> dingtalkyida__1__0_models.SearchFormDataRemovalTableDataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.SearchFormDataRemovalTableDataHeaders()
+        return await self.search_form_data_removal_table_data_with_options_async(request, headers, runtime)
+
+    def search_form_data_removal_table_data_with_options(
+        self,
+        request: dingtalkyida__1__0_models.SearchFormDataRemovalTableDataRequest,
+        headers: dingtalkyida__1__0_models.SearchFormDataRemovalTableDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.SearchFormDataRemovalTableDataResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_type):
+            body['appType'] = request.app_type
+        if not UtilClient.is_unset(request.create_from_time_gmt):
+            body['createFromTimeGMT'] = request.create_from_time_gmt
+        if not UtilClient.is_unset(request.create_to_time_gmt):
+            body['createToTimeGMT'] = request.create_to_time_gmt
+        if not UtilClient.is_unset(request.form_uuid):
+            body['formUuid'] = request.form_uuid
+        if not UtilClient.is_unset(request.modified_from_time_gmt):
+            body['modifiedFromTimeGMT'] = request.modified_from_time_gmt
+        if not UtilClient.is_unset(request.modified_to_time_gmt):
+            body['modifiedToTimeGMT'] = request.modified_to_time_gmt
+        if not UtilClient.is_unset(request.order_config_json):
+            body['orderConfigJson'] = request.order_config_json
+        if not UtilClient.is_unset(request.originator_id):
+            body['originatorId'] = request.originator_id
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.search_field_json):
+            body['searchFieldJson'] = request.search_field_json
+        if not UtilClient.is_unset(request.system_token):
+            body['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.SearchFormDataRemovalTableDataResponse(),
+            self.do_roarequest('SearchFormDataRemovalTableData', 'yida_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/yida/forms/instances/query', 'json', req, runtime)
+        )
+
+    async def search_form_data_removal_table_data_with_options_async(
+        self,
+        request: dingtalkyida__1__0_models.SearchFormDataRemovalTableDataRequest,
+        headers: dingtalkyida__1__0_models.SearchFormDataRemovalTableDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.SearchFormDataRemovalTableDataResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_type):
+            body['appType'] = request.app_type
+        if not UtilClient.is_unset(request.create_from_time_gmt):
+            body['createFromTimeGMT'] = request.create_from_time_gmt
+        if not UtilClient.is_unset(request.create_to_time_gmt):
+            body['createToTimeGMT'] = request.create_to_time_gmt
+        if not UtilClient.is_unset(request.form_uuid):
+            body['formUuid'] = request.form_uuid
+        if not UtilClient.is_unset(request.modified_from_time_gmt):
+            body['modifiedFromTimeGMT'] = request.modified_from_time_gmt
+        if not UtilClient.is_unset(request.modified_to_time_gmt):
+            body['modifiedToTimeGMT'] = request.modified_to_time_gmt
+        if not UtilClient.is_unset(request.order_config_json):
+            body['orderConfigJson'] = request.order_config_json
+        if not UtilClient.is_unset(request.originator_id):
+            body['originatorId'] = request.originator_id
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.search_field_json):
+            body['searchFieldJson'] = request.search_field_json
+        if not UtilClient.is_unset(request.system_token):
+            body['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.SearchFormDataRemovalTableDataResponse(),
+            await self.do_roarequest_async('SearchFormDataRemovalTableData', 'yida_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/yida/forms/instances/query', 'json', req, runtime)
+        )
+
+    def search_form_data_second_generation(
+        self,
+        request: dingtalkyida__1__0_models.SearchFormDataSecondGenerationRequest,
+    ) -> dingtalkyida__1__0_models.SearchFormDataSecondGenerationResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.SearchFormDataSecondGenerationHeaders()
+        return self.search_form_data_second_generation_with_options(request, headers, runtime)
+
+    async def search_form_data_second_generation_async(
+        self,
+        request: dingtalkyida__1__0_models.SearchFormDataSecondGenerationRequest,
+    ) -> dingtalkyida__1__0_models.SearchFormDataSecondGenerationResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.SearchFormDataSecondGenerationHeaders()
+        return await self.search_form_data_second_generation_with_options_async(request, headers, runtime)
+
+    def search_form_data_second_generation_with_options(
+        self,
+        request: dingtalkyida__1__0_models.SearchFormDataSecondGenerationRequest,
+        headers: dingtalkyida__1__0_models.SearchFormDataSecondGenerationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.SearchFormDataSecondGenerationResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_type):
+            body['appType'] = request.app_type
+        if not UtilClient.is_unset(request.create_from_time_gmt):
+            body['createFromTimeGMT'] = request.create_from_time_gmt
+        if not UtilClient.is_unset(request.create_to_time_gmt):
+            body['createToTimeGMT'] = request.create_to_time_gmt
+        if not UtilClient.is_unset(request.form_uuid):
+            body['formUuid'] = request.form_uuid
+        if not UtilClient.is_unset(request.modified_from_time_gmt):
+            body['modifiedFromTimeGMT'] = request.modified_from_time_gmt
+        if not UtilClient.is_unset(request.modified_to_time_gmt):
+            body['modifiedToTimeGMT'] = request.modified_to_time_gmt
+        if not UtilClient.is_unset(request.order_config_json):
+            body['orderConfigJson'] = request.order_config_json
+        if not UtilClient.is_unset(request.originator_id):
+            body['originatorId'] = request.originator_id
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.search_condition):
+            body['searchCondition'] = request.search_condition
+        if not UtilClient.is_unset(request.system_token):
+            body['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.SearchFormDataSecondGenerationResponse(),
+            self.do_roarequest('SearchFormDataSecondGeneration', 'yida_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/yida/forms/instances/advances/queryAll', 'json', req, runtime)
+        )
+
+    async def search_form_data_second_generation_with_options_async(
+        self,
+        request: dingtalkyida__1__0_models.SearchFormDataSecondGenerationRequest,
+        headers: dingtalkyida__1__0_models.SearchFormDataSecondGenerationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.SearchFormDataSecondGenerationResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_type):
+            body['appType'] = request.app_type
+        if not UtilClient.is_unset(request.create_from_time_gmt):
+            body['createFromTimeGMT'] = request.create_from_time_gmt
+        if not UtilClient.is_unset(request.create_to_time_gmt):
+            body['createToTimeGMT'] = request.create_to_time_gmt
+        if not UtilClient.is_unset(request.form_uuid):
+            body['formUuid'] = request.form_uuid
+        if not UtilClient.is_unset(request.modified_from_time_gmt):
+            body['modifiedFromTimeGMT'] = request.modified_from_time_gmt
+        if not UtilClient.is_unset(request.modified_to_time_gmt):
+            body['modifiedToTimeGMT'] = request.modified_to_time_gmt
+        if not UtilClient.is_unset(request.order_config_json):
+            body['orderConfigJson'] = request.order_config_json
+        if not UtilClient.is_unset(request.originator_id):
+            body['originatorId'] = request.originator_id
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.search_condition):
+            body['searchCondition'] = request.search_condition
+        if not UtilClient.is_unset(request.system_token):
+            body['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.SearchFormDataSecondGenerationResponse(),
+            await self.do_roarequest_async('SearchFormDataSecondGeneration', 'yida_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/yida/forms/instances/advances/queryAll', 'json', req, runtime)
+        )
+
+    def search_form_data_second_generation_no_table_field(
+        self,
+        request: dingtalkyida__1__0_models.SearchFormDataSecondGenerationNoTableFieldRequest,
+    ) -> dingtalkyida__1__0_models.SearchFormDataSecondGenerationNoTableFieldResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.SearchFormDataSecondGenerationNoTableFieldHeaders()
+        return self.search_form_data_second_generation_no_table_field_with_options(request, headers, runtime)
+
+    async def search_form_data_second_generation_no_table_field_async(
+        self,
+        request: dingtalkyida__1__0_models.SearchFormDataSecondGenerationNoTableFieldRequest,
+    ) -> dingtalkyida__1__0_models.SearchFormDataSecondGenerationNoTableFieldResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.SearchFormDataSecondGenerationNoTableFieldHeaders()
+        return await self.search_form_data_second_generation_no_table_field_with_options_async(request, headers, runtime)
+
+    def search_form_data_second_generation_no_table_field_with_options(
+        self,
+        request: dingtalkyida__1__0_models.SearchFormDataSecondGenerationNoTableFieldRequest,
+        headers: dingtalkyida__1__0_models.SearchFormDataSecondGenerationNoTableFieldHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.SearchFormDataSecondGenerationNoTableFieldResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_type):
+            body['appType'] = request.app_type
+        if not UtilClient.is_unset(request.create_from_time_gmt):
+            body['createFromTimeGMT'] = request.create_from_time_gmt
+        if not UtilClient.is_unset(request.create_to_time_gmt):
+            body['createToTimeGMT'] = request.create_to_time_gmt
+        if not UtilClient.is_unset(request.form_uuid):
+            body['formUuid'] = request.form_uuid
+        if not UtilClient.is_unset(request.modified_from_time_gmt):
+            body['modifiedFromTimeGMT'] = request.modified_from_time_gmt
+        if not UtilClient.is_unset(request.modified_to_time_gmt):
+            body['modifiedToTimeGMT'] = request.modified_to_time_gmt
+        if not UtilClient.is_unset(request.order_config_json):
+            body['orderConfigJson'] = request.order_config_json
+        if not UtilClient.is_unset(request.originator_id):
+            body['originatorId'] = request.originator_id
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.search_condition):
+            body['searchCondition'] = request.search_condition
+        if not UtilClient.is_unset(request.system_token):
+            body['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.SearchFormDataSecondGenerationNoTableFieldResponse(),
+            self.do_roarequest('SearchFormDataSecondGenerationNoTableField', 'yida_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/yida/forms/instances/advances/query', 'json', req, runtime)
+        )
+
+    async def search_form_data_second_generation_no_table_field_with_options_async(
+        self,
+        request: dingtalkyida__1__0_models.SearchFormDataSecondGenerationNoTableFieldRequest,
+        headers: dingtalkyida__1__0_models.SearchFormDataSecondGenerationNoTableFieldHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.SearchFormDataSecondGenerationNoTableFieldResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_type):
+            body['appType'] = request.app_type
+        if not UtilClient.is_unset(request.create_from_time_gmt):
+            body['createFromTimeGMT'] = request.create_from_time_gmt
+        if not UtilClient.is_unset(request.create_to_time_gmt):
+            body['createToTimeGMT'] = request.create_to_time_gmt
+        if not UtilClient.is_unset(request.form_uuid):
+            body['formUuid'] = request.form_uuid
+        if not UtilClient.is_unset(request.modified_from_time_gmt):
+            body['modifiedFromTimeGMT'] = request.modified_from_time_gmt
+        if not UtilClient.is_unset(request.modified_to_time_gmt):
+            body['modifiedToTimeGMT'] = request.modified_to_time_gmt
+        if not UtilClient.is_unset(request.order_config_json):
+            body['orderConfigJson'] = request.order_config_json
+        if not UtilClient.is_unset(request.originator_id):
+            body['originatorId'] = request.originator_id
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.search_condition):
+            body['searchCondition'] = request.search_condition
+        if not UtilClient.is_unset(request.system_token):
+            body['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.SearchFormDataSecondGenerationNoTableFieldResponse(),
+            await self.do_roarequest_async('SearchFormDataSecondGenerationNoTableField', 'yida_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/yida/forms/instances/advances/query', 'json', req, runtime)
         )
 
     def search_form_datas(

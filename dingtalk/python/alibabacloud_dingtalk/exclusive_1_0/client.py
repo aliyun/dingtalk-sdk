@@ -1631,6 +1631,62 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('ListMiniAppHistoryVersion', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/miniApps/versions/historyLists', 'json', req, runtime)
         )
 
+    def list_partner_roles(
+        self,
+        parent_id: str,
+    ) -> dingtalkexclusive__1__0_models.ListPartnerRolesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.ListPartnerRolesHeaders()
+        return self.list_partner_roles_with_options(parent_id, headers, runtime)
+
+    async def list_partner_roles_async(
+        self,
+        parent_id: str,
+    ) -> dingtalkexclusive__1__0_models.ListPartnerRolesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.ListPartnerRolesHeaders()
+        return await self.list_partner_roles_with_options_async(parent_id, headers, runtime)
+
+    def list_partner_roles_with_options(
+        self,
+        parent_id: str,
+        headers: dingtalkexclusive__1__0_models.ListPartnerRolesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.ListPartnerRolesResponse:
+        parent_id = OpenApiUtilClient.get_encode_param(parent_id)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.ListPartnerRolesResponse(),
+            self.do_roarequest('ListPartnerRoles', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/partners/roles/{parent_id}', 'json', req, runtime)
+        )
+
+    async def list_partner_roles_with_options_async(
+        self,
+        parent_id: str,
+        headers: dingtalkexclusive__1__0_models.ListPartnerRolesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.ListPartnerRolesResponse:
+        parent_id = OpenApiUtilClient.get_encode_param(parent_id)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.ListPartnerRolesResponse(),
+            await self.do_roarequest_async('ListPartnerRoles', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/partners/roles/{parent_id}', 'json', req, runtime)
+        )
+
     def list_punch_schedule_by_condition_with_paging(
         self,
         request: dingtalkexclusive__1__0_models.ListPunchScheduleByConditionWithPagingRequest,
