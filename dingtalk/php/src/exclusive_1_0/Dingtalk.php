@@ -68,6 +68,8 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListMiniAppAvailableVersionR
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListMiniAppHistoryVersionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListMiniAppHistoryVersionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListMiniAppHistoryVersionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListPartnerRolesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListPartnerRolesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListPunchScheduleByConditionWithPagingHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListPunchScheduleByConditionWithPagingRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListPunchScheduleByConditionWithPagingResponse;
@@ -1179,6 +1181,43 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return ListMiniAppHistoryVersionResponse::fromMap($this->doROARequest('ListMiniAppHistoryVersion', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/miniApps/versions/historyLists', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $parentId
+     *
+     * @return ListPartnerRolesResponse
+     */
+    public function listPartnerRoles($parentId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListPartnerRolesHeaders([]);
+
+        return $this->listPartnerRolesWithOptions($parentId, $headers, $runtime);
+    }
+
+    /**
+     * @param string                  $parentId
+     * @param ListPartnerRolesHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return ListPartnerRolesResponse
+     */
+    public function listPartnerRolesWithOptions($parentId, $headers, $runtime)
+    {
+        $parentId    = OpenApiUtilClient::getEncodeParam($parentId);
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return ListPartnerRolesResponse::fromMap($this->doROARequest('ListPartnerRoles', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/partners/roles/' . $parentId . '', 'json', $req, $runtime));
     }
 
     /**

@@ -6,66 +6,45 @@ namespace AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class GetInstancesRequest extends Model
+class SearchFormDataSecondGenerationNoTableFieldRequest extends Model
 {
     /**
-     * @description 应用编码
+     * @description 宜搭应用编码
      *
      * @var string
      */
     public $appType;
 
     /**
-     * @description 审批结果。可选值为：agree, disagree。 分别表示：同意， 拒绝。
-     *
-     * @var string
-     */
-    public $approvedResult;
-
-    /**
-     * @description createFrom和createTo两个时间构造一个时间段。查询在该时间段创建的数据列表, 字符串格式，且为yyyy-MM-DD格式
+     * @description 创建时间起始值
      *
      * @var string
      */
     public $createFromTimeGMT;
 
     /**
-     * @description createFrom和createTo两个时间构造一个时间段。查询在该时间段创建的数据列表。字符串格式，且为yyyy-MM-DD格式。 和createFrom一起，相当于查询在 2018-01-01到2018-01-31之间(包含01和31号)创建的数据。
+     * @description 创建时间终止值
      *
      * @var string
      */
     public $createToTimeGMT;
 
     /**
-     * @description 表单ID
+     * @description 表单编码
      *
      * @var string
      */
     public $formUuid;
 
     /**
-     * @description 实例状态, 可选值为：RUNNING,TERMINATED,COMPLETED,ERROR。 分别代表：运行中，已终止，已完成，异常。
-     *
-     * @var string
-     */
-    public $instanceStatus;
-
-    /**
-     * @description 语言。可选值：zh_CN/en_US 默认：zh_CN
-     *
-     * @var string
-     */
-    public $language;
-
-    /**
-     * @description modifiedFrom和modifiedTo构成一个时间段，查询在该时间段有修改的数据列表。字符串格式，且为yyyy-MM-DD格式
+     * @description 修改时间起始值
      *
      * @var string
      */
     public $modifiedFromTimeGMT;
 
     /**
-     * @description modifiedFrom和modifiedTo构成一个时间段，查询在该时间段有修改的数据列表。字符串格式，且为yyyy-MM-DD格式。 和modifiedFrom一起，相当于查询在 2018-01-01到2018-01-31之间(包含01和31号)被修改的数据。
+     * @description 修改时间终止值
      *
      * @var string
      */
@@ -79,39 +58,11 @@ class GetInstancesRequest extends Model
     public $orderConfigJson;
 
     /**
-     * @description 数据提交人的钉钉userId
+     * @description 表单提交人的钉钉userId
      *
      * @var string
      */
     public $originatorId;
-
-    /**
-     * @description 查询过滤条件，支持2种模式的过滤规则
-     *
-     * @var string
-     */
-    public $searchFieldJson;
-
-    /**
-     * @description 应用秘钥。在应用数据中获取。
-     *
-     * @var string
-     */
-    public $systemToken;
-
-    /**
-     * @description 任务ID。一般用不到。
-     *
-     * @var string
-     */
-    public $taskId;
-
-    /**
-     * @description 钉钉userId
-     *
-     * @var string
-     */
-    public $userId;
 
     /**
      * @description 当前第几页
@@ -121,29 +72,46 @@ class GetInstancesRequest extends Model
     public $pageNumber;
 
     /**
-     * @description 每页多少条数据
+     * @description 分页大小
      *
      * @var int
      */
     public $pageSize;
+
+    /**
+     * @description 用于检索表单实例数据的检索条件
+     *
+     * @var string
+     */
+    public $searchCondition;
+
+    /**
+     * @description 宜搭应用秘钥
+     *
+     * @var string
+     */
+    public $systemToken;
+
+    /**
+     * @description 钉钉userId
+     *
+     * @var string
+     */
+    public $userId;
     protected $_name = [
         'appType'             => 'appType',
-        'approvedResult'      => 'approvedResult',
         'createFromTimeGMT'   => 'createFromTimeGMT',
         'createToTimeGMT'     => 'createToTimeGMT',
         'formUuid'            => 'formUuid',
-        'instanceStatus'      => 'instanceStatus',
-        'language'            => 'language',
         'modifiedFromTimeGMT' => 'modifiedFromTimeGMT',
         'modifiedToTimeGMT'   => 'modifiedToTimeGMT',
         'orderConfigJson'     => 'orderConfigJson',
         'originatorId'        => 'originatorId',
-        'searchFieldJson'     => 'searchFieldJson',
-        'systemToken'         => 'systemToken',
-        'taskId'              => 'taskId',
-        'userId'              => 'userId',
         'pageNumber'          => 'pageNumber',
         'pageSize'            => 'pageSize',
+        'searchCondition'     => 'searchCondition',
+        'systemToken'         => 'systemToken',
+        'userId'              => 'userId',
     ];
 
     public function validate()
@@ -156,9 +124,6 @@ class GetInstancesRequest extends Model
         if (null !== $this->appType) {
             $res['appType'] = $this->appType;
         }
-        if (null !== $this->approvedResult) {
-            $res['approvedResult'] = $this->approvedResult;
-        }
         if (null !== $this->createFromTimeGMT) {
             $res['createFromTimeGMT'] = $this->createFromTimeGMT;
         }
@@ -167,12 +132,6 @@ class GetInstancesRequest extends Model
         }
         if (null !== $this->formUuid) {
             $res['formUuid'] = $this->formUuid;
-        }
-        if (null !== $this->instanceStatus) {
-            $res['instanceStatus'] = $this->instanceStatus;
-        }
-        if (null !== $this->language) {
-            $res['language'] = $this->language;
         }
         if (null !== $this->modifiedFromTimeGMT) {
             $res['modifiedFromTimeGMT'] = $this->modifiedFromTimeGMT;
@@ -186,23 +145,20 @@ class GetInstancesRequest extends Model
         if (null !== $this->originatorId) {
             $res['originatorId'] = $this->originatorId;
         }
-        if (null !== $this->searchFieldJson) {
-            $res['searchFieldJson'] = $this->searchFieldJson;
-        }
-        if (null !== $this->systemToken) {
-            $res['systemToken'] = $this->systemToken;
-        }
-        if (null !== $this->taskId) {
-            $res['taskId'] = $this->taskId;
-        }
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
-        }
         if (null !== $this->pageNumber) {
             $res['pageNumber'] = $this->pageNumber;
         }
         if (null !== $this->pageSize) {
             $res['pageSize'] = $this->pageSize;
+        }
+        if (null !== $this->searchCondition) {
+            $res['searchCondition'] = $this->searchCondition;
+        }
+        if (null !== $this->systemToken) {
+            $res['systemToken'] = $this->systemToken;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -211,16 +167,13 @@ class GetInstancesRequest extends Model
     /**
      * @param array $map
      *
-     * @return GetInstancesRequest
+     * @return SearchFormDataSecondGenerationNoTableFieldRequest
      */
     public static function fromMap($map = [])
     {
         $model = new self();
         if (isset($map['appType'])) {
             $model->appType = $map['appType'];
-        }
-        if (isset($map['approvedResult'])) {
-            $model->approvedResult = $map['approvedResult'];
         }
         if (isset($map['createFromTimeGMT'])) {
             $model->createFromTimeGMT = $map['createFromTimeGMT'];
@@ -230,12 +183,6 @@ class GetInstancesRequest extends Model
         }
         if (isset($map['formUuid'])) {
             $model->formUuid = $map['formUuid'];
-        }
-        if (isset($map['instanceStatus'])) {
-            $model->instanceStatus = $map['instanceStatus'];
-        }
-        if (isset($map['language'])) {
-            $model->language = $map['language'];
         }
         if (isset($map['modifiedFromTimeGMT'])) {
             $model->modifiedFromTimeGMT = $map['modifiedFromTimeGMT'];
@@ -249,23 +196,20 @@ class GetInstancesRequest extends Model
         if (isset($map['originatorId'])) {
             $model->originatorId = $map['originatorId'];
         }
-        if (isset($map['searchFieldJson'])) {
-            $model->searchFieldJson = $map['searchFieldJson'];
-        }
-        if (isset($map['systemToken'])) {
-            $model->systemToken = $map['systemToken'];
-        }
-        if (isset($map['taskId'])) {
-            $model->taskId = $map['taskId'];
-        }
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
-        }
         if (isset($map['pageNumber'])) {
             $model->pageNumber = $map['pageNumber'];
         }
         if (isset($map['pageSize'])) {
             $model->pageSize = $map['pageSize'];
+        }
+        if (isset($map['searchCondition'])) {
+            $model->searchCondition = $map['searchCondition'];
+        }
+        if (isset($map['systemToken'])) {
+            $model->systemToken = $map['systemToken'];
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

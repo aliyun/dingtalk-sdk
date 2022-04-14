@@ -298,7 +298,7 @@ class dataList extends Model
     /**
      * @description 低价提醒（折扣）
      *
-     * @var float
+     * @var string
      */
     public $mostDifferenceDiscount;
 

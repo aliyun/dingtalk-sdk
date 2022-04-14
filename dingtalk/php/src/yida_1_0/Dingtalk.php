@@ -5,6 +5,21 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vyida_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\BatchGetFormDataByIdListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\BatchGetFormDataByIdListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\BatchGetFormDataByIdListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\BatchRemovalByFormInstanceIdListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\BatchRemovalByFormInstanceIdListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\BatchRemovalByFormInstanceIdListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\BatchSaveFormDataHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\BatchSaveFormDataRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\BatchSaveFormDataResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\BatchUpdateFormDataByInstanceIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\BatchUpdateFormDataByInstanceIdRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\BatchUpdateFormDataByInstanceIdResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\BatchUpdateFormDataByInstanceMapHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\BatchUpdateFormDataByInstanceMapRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\BatchUpdateFormDataByInstanceMapResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\BuyAuthorizationOrderHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\BuyAuthorizationOrderRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\BuyAuthorizationOrderResponse;
@@ -14,6 +29,9 @@ use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\BuyFreshOrderResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\CheckCloudAccountStatusHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\CheckCloudAccountStatusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\CheckCloudAccountStatusResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\CreateOrUpdateFormDataHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\CreateOrUpdateFormDataRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\CreateOrUpdateFormDataResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\DeleteFormDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\DeleteFormDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\DeleteFormDataResponse;
@@ -119,9 +137,12 @@ use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListApplicationAuthorizationServi
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListApplicationAuthorizationServiceConnectorInformationHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListApplicationAuthorizationServiceConnectorInformationRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListApplicationAuthorizationServiceConnectorInformationResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListApplicationHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListApplicationInformationHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListApplicationInformationRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListApplicationInformationResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListApplicationRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListApplicationResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListCommodityHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListCommodityRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListCommodityResponse;
@@ -140,6 +161,9 @@ use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\LoginCodeGenResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\NotifyAuthorizationResultHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\NotifyAuthorizationResultRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\NotifyAuthorizationResultResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\QueryServiceRecordHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\QueryServiceRecordRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\QueryServiceRecordResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\RedirectTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\RedirectTaskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\RedirectTaskResponse;
@@ -182,6 +206,15 @@ use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SearchEmployeeFieldValuesResponse
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SearchFormDataIdListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SearchFormDataIdListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SearchFormDataIdListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SearchFormDataRemovalTableDataHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SearchFormDataRemovalTableDataRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SearchFormDataRemovalTableDataResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SearchFormDataSecondGenerationHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SearchFormDataSecondGenerationNoTableFieldHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SearchFormDataSecondGenerationNoTableFieldRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SearchFormDataSecondGenerationNoTableFieldResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SearchFormDataSecondGenerationRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SearchFormDataSecondGenerationResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SearchFormDatasHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SearchFormDatasRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SearchFormDatasResponse;
@@ -241,6 +274,321 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param BatchGetFormDataByIdListRequest $request
+     *
+     * @return BatchGetFormDataByIdListResponse
+     */
+    public function batchGetFormDataByIdList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchGetFormDataByIdListHeaders([]);
+
+        return $this->batchGetFormDataByIdListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param BatchGetFormDataByIdListRequest $request
+     * @param BatchGetFormDataByIdListHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return BatchGetFormDataByIdListResponse
+     */
+    public function batchGetFormDataByIdListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appType)) {
+            @$body['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->formInstanceIdList)) {
+            @$body['formInstanceIdList'] = $request->formInstanceIdList;
+        }
+        if (!Utils::isUnset($request->formUuid)) {
+            @$body['formUuid'] = $request->formUuid;
+        }
+        if (!Utils::isUnset($request->needFormInstanceValue)) {
+            @$body['needFormInstanceValue'] = $request->needFormInstanceValue;
+        }
+        if (!Utils::isUnset($request->systemToken)) {
+            @$body['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return BatchGetFormDataByIdListResponse::fromMap($this->doROARequest('BatchGetFormDataByIdList', 'yida_1.0', 'HTTP', 'POST', 'AK', '/v1.0/yida/forms/instances/ids/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param BatchRemovalByFormInstanceIdListRequest $request
+     *
+     * @return BatchRemovalByFormInstanceIdListResponse
+     */
+    public function batchRemovalByFormInstanceIdList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchRemovalByFormInstanceIdListHeaders([]);
+
+        return $this->batchRemovalByFormInstanceIdListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param BatchRemovalByFormInstanceIdListRequest $request
+     * @param BatchRemovalByFormInstanceIdListHeaders $headers
+     * @param RuntimeOptions                          $runtime
+     *
+     * @return BatchRemovalByFormInstanceIdListResponse
+     */
+    public function batchRemovalByFormInstanceIdListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appType)) {
+            @$body['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->asynchronousExecution)) {
+            @$body['asynchronousExecution'] = $request->asynchronousExecution;
+        }
+        if (!Utils::isUnset($request->executeExpression)) {
+            @$body['executeExpression'] = $request->executeExpression;
+        }
+        if (!Utils::isUnset($request->formInstanceIdList)) {
+            @$body['formInstanceIdList'] = $request->formInstanceIdList;
+        }
+        if (!Utils::isUnset($request->formUuid)) {
+            @$body['formUuid'] = $request->formUuid;
+        }
+        if (!Utils::isUnset($request->systemToken)) {
+            @$body['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return BatchRemovalByFormInstanceIdListResponse::fromMap($this->doROARequest('BatchRemovalByFormInstanceIdList', 'yida_1.0', 'HTTP', 'POST', 'AK', '/v1.0/yida/forms/instances/batchRemove', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param BatchSaveFormDataRequest $request
+     *
+     * @return BatchSaveFormDataResponse
+     */
+    public function batchSaveFormData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchSaveFormDataHeaders([]);
+
+        return $this->batchSaveFormDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param BatchSaveFormDataRequest $request
+     * @param BatchSaveFormDataHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return BatchSaveFormDataResponse
+     */
+    public function batchSaveFormDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appType)) {
+            @$body['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->asynchronousExecution)) {
+            @$body['asynchronousExecution'] = $request->asynchronousExecution;
+        }
+        if (!Utils::isUnset($request->formDataJsonList)) {
+            @$body['formDataJsonList'] = $request->formDataJsonList;
+        }
+        if (!Utils::isUnset($request->formUuid)) {
+            @$body['formUuid'] = $request->formUuid;
+        }
+        if (!Utils::isUnset($request->keepRunningAfterException)) {
+            @$body['keepRunningAfterException'] = $request->keepRunningAfterException;
+        }
+        if (!Utils::isUnset($request->noExecuteExpression)) {
+            @$body['noExecuteExpression'] = $request->noExecuteExpression;
+        }
+        if (!Utils::isUnset($request->systemToken)) {
+            @$body['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return BatchSaveFormDataResponse::fromMap($this->doROARequest('BatchSaveFormData', 'yida_1.0', 'HTTP', 'POST', 'AK', '/v1.0/yida/forms/instances/batchSave', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param BatchUpdateFormDataByInstanceIdRequest $request
+     *
+     * @return BatchUpdateFormDataByInstanceIdResponse
+     */
+    public function batchUpdateFormDataByInstanceId($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchUpdateFormDataByInstanceIdHeaders([]);
+
+        return $this->batchUpdateFormDataByInstanceIdWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param BatchUpdateFormDataByInstanceIdRequest $request
+     * @param BatchUpdateFormDataByInstanceIdHeaders $headers
+     * @param RuntimeOptions                         $runtime
+     *
+     * @return BatchUpdateFormDataByInstanceIdResponse
+     */
+    public function batchUpdateFormDataByInstanceIdWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appType)) {
+            @$body['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->asynchronousExecution)) {
+            @$body['asynchronousExecution'] = $request->asynchronousExecution;
+        }
+        if (!Utils::isUnset($request->formInstanceIdList)) {
+            @$body['formInstanceIdList'] = $request->formInstanceIdList;
+        }
+        if (!Utils::isUnset($request->formUuid)) {
+            @$body['formUuid'] = $request->formUuid;
+        }
+        if (!Utils::isUnset($request->ignoreEmpty)) {
+            @$body['ignoreEmpty'] = $request->ignoreEmpty;
+        }
+        if (!Utils::isUnset($request->noExecuteExpression)) {
+            @$body['noExecuteExpression'] = $request->noExecuteExpression;
+        }
+        if (!Utils::isUnset($request->systemToken)) {
+            @$body['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->updateFormDataJson)) {
+            @$body['updateFormDataJson'] = $request->updateFormDataJson;
+        }
+        if (!Utils::isUnset($request->useLatestFormSchemaVersion)) {
+            @$body['useLatestFormSchemaVersion'] = $request->useLatestFormSchemaVersion;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return BatchUpdateFormDataByInstanceIdResponse::fromMap($this->doROARequest('BatchUpdateFormDataByInstanceId', 'yida_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/yida/forms/instances/components', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param BatchUpdateFormDataByInstanceMapRequest $request
+     *
+     * @return BatchUpdateFormDataByInstanceMapResponse
+     */
+    public function batchUpdateFormDataByInstanceMap($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchUpdateFormDataByInstanceMapHeaders([]);
+
+        return $this->batchUpdateFormDataByInstanceMapWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param BatchUpdateFormDataByInstanceMapRequest $request
+     * @param BatchUpdateFormDataByInstanceMapHeaders $headers
+     * @param RuntimeOptions                          $runtime
+     *
+     * @return BatchUpdateFormDataByInstanceMapResponse
+     */
+    public function batchUpdateFormDataByInstanceMapWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appType)) {
+            @$body['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->asynchronousExecution)) {
+            @$body['asynchronousExecution'] = $request->asynchronousExecution;
+        }
+        if (!Utils::isUnset($request->formUuid)) {
+            @$body['formUuid'] = $request->formUuid;
+        }
+        if (!Utils::isUnset($request->ignoreEmpty)) {
+            @$body['ignoreEmpty'] = $request->ignoreEmpty;
+        }
+        if (!Utils::isUnset($request->noExecuteExpression)) {
+            @$body['noExecuteExpression'] = $request->noExecuteExpression;
+        }
+        if (!Utils::isUnset($request->systemToken)) {
+            @$body['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->updateFormDataJsonMap)) {
+            @$body['updateFormDataJsonMap'] = $request->updateFormDataJsonMap;
+        }
+        if (!Utils::isUnset($request->useLatestFormSchemaVersion)) {
+            @$body['useLatestFormSchemaVersion'] = $request->useLatestFormSchemaVersion;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return BatchUpdateFormDataByInstanceMapResponse::fromMap($this->doROARequest('BatchUpdateFormDataByInstanceMap', 'yida_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/yida/forms/instances/datas', 'json', $req, $runtime));
     }
 
     /**
@@ -430,6 +778,66 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CheckCloudAccountStatusResponse::fromMap($this->doROARequest('CheckCloudAccountStatus', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/apps/cloudAccountStatus/' . $callerUid . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CreateOrUpdateFormDataRequest $request
+     *
+     * @return CreateOrUpdateFormDataResponse
+     */
+    public function createOrUpdateFormData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateOrUpdateFormDataHeaders([]);
+
+        return $this->createOrUpdateFormDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateOrUpdateFormDataRequest $request
+     * @param CreateOrUpdateFormDataHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return CreateOrUpdateFormDataResponse
+     */
+    public function createOrUpdateFormDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appType)) {
+            @$body['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->formDataJson)) {
+            @$body['formDataJson'] = $request->formDataJson;
+        }
+        if (!Utils::isUnset($request->formUuid)) {
+            @$body['formUuid'] = $request->formUuid;
+        }
+        if (!Utils::isUnset($request->noExecuteExpression)) {
+            @$body['noExecuteExpression'] = $request->noExecuteExpression;
+        }
+        if (!Utils::isUnset($request->searchCondition)) {
+            @$body['searchCondition'] = $request->searchCondition;
+        }
+        if (!Utils::isUnset($request->systemToken)) {
+            @$body['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateOrUpdateFormDataResponse::fromMap($this->doROARequest('CreateOrUpdateFormData', 'yida_1.0', 'HTTP', 'POST', 'AK', '/v1.0/yida/forms/instances/insertOrUpdate', 'json', $req, $runtime));
     }
 
     /**
@@ -1596,6 +2004,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->modifiedToTimeGMT)) {
             @$body['modifiedToTimeGMT'] = $request->modifiedToTimeGMT;
         }
+        if (!Utils::isUnset($request->orderConfigJson)) {
+            @$body['orderConfigJson'] = $request->orderConfigJson;
+        }
         if (!Utils::isUnset($request->originatorId)) {
             @$body['originatorId'] = $request->originatorId;
         }
@@ -2381,6 +2792,66 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param ListApplicationRequest $request
+     *
+     * @return ListApplicationResponse
+     */
+    public function listApplication($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListApplicationHeaders([]);
+
+        return $this->listApplicationWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ListApplicationRequest $request
+     * @param ListApplicationHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return ListApplicationResponse
+     */
+    public function listApplicationWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->appFilter)) {
+            @$query['appFilter'] = $request->appFilter;
+        }
+        if (!Utils::isUnset($request->appNameSearchKeyword)) {
+            @$query['appNameSearchKeyword'] = $request->appNameSearchKeyword;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            @$query['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->token)) {
+            @$query['token'] = $request->token;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ListApplicationResponse::fromMap($this->doROARequest('ListApplication', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/organizations/applications', 'json', $req, $runtime));
+    }
+
+    /**
      * @param string                                                           $instanceId
      * @param ListApplicationAuthorizationServiceApplicationInformationRequest $request
      *
@@ -2876,6 +3347,90 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return NotifyAuthorizationResultResponse::fromMap($this->doROARequest('NotifyAuthorizationResult', 'yida_1.0', 'HTTP', 'POST', 'AK', '/v1.0/yida/apps/authorizationResults/notify', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryServiceRecordRequest $request
+     *
+     * @return QueryServiceRecordResponse
+     */
+    public function queryServiceRecord($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryServiceRecordHeaders([]);
+
+        return $this->queryServiceRecordWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryServiceRecordRequest $request
+     * @param QueryServiceRecordHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return QueryServiceRecordResponse
+     */
+    public function queryServiceRecordWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->appType)) {
+            @$query['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->formUuid)) {
+            @$query['formUuid'] = $request->formUuid;
+        }
+        if (!Utils::isUnset($request->hookType)) {
+            @$query['hookType'] = $request->hookType;
+        }
+        if (!Utils::isUnset($request->hookUuid)) {
+            @$query['hookUuid'] = $request->hookUuid;
+        }
+        if (!Utils::isUnset($request->instanceId)) {
+            @$query['instanceId'] = $request->instanceId;
+        }
+        if (!Utils::isUnset($request->invokeAfterDateGMT)) {
+            @$query['invokeAfterDateGMT'] = $request->invokeAfterDateGMT;
+        }
+        if (!Utils::isUnset($request->invokeBeforeDateGMT)) {
+            @$query['invokeBeforeDateGMT'] = $request->invokeBeforeDateGMT;
+        }
+        if (!Utils::isUnset($request->invokeStatus)) {
+            @$query['invokeStatus'] = $request->invokeStatus;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->requestUrl)) {
+            @$query['requestUrl'] = $request->requestUrl;
+        }
+        if (!Utils::isUnset($request->sourceUuid)) {
+            @$query['sourceUuid'] = $request->sourceUuid;
+        }
+        if (!Utils::isUnset($request->success)) {
+            @$query['success'] = $request->success;
+        }
+        if (!Utils::isUnset($request->systemToken)) {
+            @$query['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryServiceRecordResponse::fromMap($this->doROARequest('QueryServiceRecord', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/services/invocationRecords', 'json', $req, $runtime));
     }
 
     /**
@@ -3694,6 +4249,240 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return SearchFormDataIdListResponse::fromMap($this->doROARequest('SearchFormDataIdList', 'yida_1.0', 'HTTP', 'POST', 'AK', '/v1.0/yida/forms/instances/ids/' . $appType . '/' . $formUuid . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param SearchFormDataRemovalTableDataRequest $request
+     *
+     * @return SearchFormDataRemovalTableDataResponse
+     */
+    public function searchFormDataRemovalTableData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SearchFormDataRemovalTableDataHeaders([]);
+
+        return $this->searchFormDataRemovalTableDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SearchFormDataRemovalTableDataRequest $request
+     * @param SearchFormDataRemovalTableDataHeaders $headers
+     * @param RuntimeOptions                        $runtime
+     *
+     * @return SearchFormDataRemovalTableDataResponse
+     */
+    public function searchFormDataRemovalTableDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appType)) {
+            @$body['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->createFromTimeGMT)) {
+            @$body['createFromTimeGMT'] = $request->createFromTimeGMT;
+        }
+        if (!Utils::isUnset($request->createToTimeGMT)) {
+            @$body['createToTimeGMT'] = $request->createToTimeGMT;
+        }
+        if (!Utils::isUnset($request->formUuid)) {
+            @$body['formUuid'] = $request->formUuid;
+        }
+        if (!Utils::isUnset($request->modifiedFromTimeGMT)) {
+            @$body['modifiedFromTimeGMT'] = $request->modifiedFromTimeGMT;
+        }
+        if (!Utils::isUnset($request->modifiedToTimeGMT)) {
+            @$body['modifiedToTimeGMT'] = $request->modifiedToTimeGMT;
+        }
+        if (!Utils::isUnset($request->orderConfigJson)) {
+            @$body['orderConfigJson'] = $request->orderConfigJson;
+        }
+        if (!Utils::isUnset($request->originatorId)) {
+            @$body['originatorId'] = $request->originatorId;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$body['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->searchFieldJson)) {
+            @$body['searchFieldJson'] = $request->searchFieldJson;
+        }
+        if (!Utils::isUnset($request->systemToken)) {
+            @$body['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SearchFormDataRemovalTableDataResponse::fromMap($this->doROARequest('SearchFormDataRemovalTableData', 'yida_1.0', 'HTTP', 'POST', 'AK', '/v1.0/yida/forms/instances/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param SearchFormDataSecondGenerationRequest $request
+     *
+     * @return SearchFormDataSecondGenerationResponse
+     */
+    public function searchFormDataSecondGeneration($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SearchFormDataSecondGenerationHeaders([]);
+
+        return $this->searchFormDataSecondGenerationWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SearchFormDataSecondGenerationRequest $request
+     * @param SearchFormDataSecondGenerationHeaders $headers
+     * @param RuntimeOptions                        $runtime
+     *
+     * @return SearchFormDataSecondGenerationResponse
+     */
+    public function searchFormDataSecondGenerationWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appType)) {
+            @$body['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->createFromTimeGMT)) {
+            @$body['createFromTimeGMT'] = $request->createFromTimeGMT;
+        }
+        if (!Utils::isUnset($request->createToTimeGMT)) {
+            @$body['createToTimeGMT'] = $request->createToTimeGMT;
+        }
+        if (!Utils::isUnset($request->formUuid)) {
+            @$body['formUuid'] = $request->formUuid;
+        }
+        if (!Utils::isUnset($request->modifiedFromTimeGMT)) {
+            @$body['modifiedFromTimeGMT'] = $request->modifiedFromTimeGMT;
+        }
+        if (!Utils::isUnset($request->modifiedToTimeGMT)) {
+            @$body['modifiedToTimeGMT'] = $request->modifiedToTimeGMT;
+        }
+        if (!Utils::isUnset($request->orderConfigJson)) {
+            @$body['orderConfigJson'] = $request->orderConfigJson;
+        }
+        if (!Utils::isUnset($request->originatorId)) {
+            @$body['originatorId'] = $request->originatorId;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$body['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->searchCondition)) {
+            @$body['searchCondition'] = $request->searchCondition;
+        }
+        if (!Utils::isUnset($request->systemToken)) {
+            @$body['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SearchFormDataSecondGenerationResponse::fromMap($this->doROARequest('SearchFormDataSecondGeneration', 'yida_1.0', 'HTTP', 'POST', 'AK', '/v1.0/yida/forms/instances/advances/queryAll', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param SearchFormDataSecondGenerationNoTableFieldRequest $request
+     *
+     * @return SearchFormDataSecondGenerationNoTableFieldResponse
+     */
+    public function searchFormDataSecondGenerationNoTableField($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SearchFormDataSecondGenerationNoTableFieldHeaders([]);
+
+        return $this->searchFormDataSecondGenerationNoTableFieldWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SearchFormDataSecondGenerationNoTableFieldRequest $request
+     * @param SearchFormDataSecondGenerationNoTableFieldHeaders $headers
+     * @param RuntimeOptions                                    $runtime
+     *
+     * @return SearchFormDataSecondGenerationNoTableFieldResponse
+     */
+    public function searchFormDataSecondGenerationNoTableFieldWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appType)) {
+            @$body['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->createFromTimeGMT)) {
+            @$body['createFromTimeGMT'] = $request->createFromTimeGMT;
+        }
+        if (!Utils::isUnset($request->createToTimeGMT)) {
+            @$body['createToTimeGMT'] = $request->createToTimeGMT;
+        }
+        if (!Utils::isUnset($request->formUuid)) {
+            @$body['formUuid'] = $request->formUuid;
+        }
+        if (!Utils::isUnset($request->modifiedFromTimeGMT)) {
+            @$body['modifiedFromTimeGMT'] = $request->modifiedFromTimeGMT;
+        }
+        if (!Utils::isUnset($request->modifiedToTimeGMT)) {
+            @$body['modifiedToTimeGMT'] = $request->modifiedToTimeGMT;
+        }
+        if (!Utils::isUnset($request->orderConfigJson)) {
+            @$body['orderConfigJson'] = $request->orderConfigJson;
+        }
+        if (!Utils::isUnset($request->originatorId)) {
+            @$body['originatorId'] = $request->originatorId;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$body['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->searchCondition)) {
+            @$body['searchCondition'] = $request->searchCondition;
+        }
+        if (!Utils::isUnset($request->systemToken)) {
+            @$body['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SearchFormDataSecondGenerationNoTableFieldResponse::fromMap($this->doROARequest('SearchFormDataSecondGenerationNoTableField', 'yida_1.0', 'HTTP', 'POST', 'AK', '/v1.0/yida/forms/instances/advances/query', 'json', $req, $runtime));
     }
 
     /**
