@@ -641,13 +641,19 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("DeleteRelationMetaField", "crm_1.0", "HTTP", "POST", "AK", "/v1.0/crm/relations/metas/fields/remove", "json", req, runtime), new DeleteRelationMetaFieldResponse());
     }
 
-    public DescribeCrmPersonalCustomerObjectMetaResponse describeCrmPersonalCustomerObjectMeta() throws Exception {
+    public DescribeCrmPersonalCustomerObjectMetaResponse describeCrmPersonalCustomerObjectMeta(DescribeCrmPersonalCustomerObjectMetaRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         DescribeCrmPersonalCustomerObjectMetaHeaders headers = new DescribeCrmPersonalCustomerObjectMetaHeaders();
-        return this.describeCrmPersonalCustomerObjectMetaWithOptions(headers, runtime);
+        return this.describeCrmPersonalCustomerObjectMetaWithOptions(request, headers, runtime);
     }
 
-    public DescribeCrmPersonalCustomerObjectMetaResponse describeCrmPersonalCustomerObjectMetaWithOptions(DescribeCrmPersonalCustomerObjectMetaHeaders headers, RuntimeOptions runtime) throws Exception {
+    public DescribeCrmPersonalCustomerObjectMetaResponse describeCrmPersonalCustomerObjectMetaWithOptions(DescribeCrmPersonalCustomerObjectMetaRequest request, DescribeCrmPersonalCustomerObjectMetaHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.relationType)) {
+            query.put("relationType", request.relationType);
+        }
+
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -658,7 +664,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
-            new TeaPair("headers", realHeaders)
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
         return TeaModel.toModel(this.doROARequest("DescribeCrmPersonalCustomerObjectMeta", "crm_1.0", "HTTP", "GET", "AK", "/v1.0/crm/personalCustomers/objectMeta", "json", req, runtime), new DescribeCrmPersonalCustomerObjectMetaResponse());
     }

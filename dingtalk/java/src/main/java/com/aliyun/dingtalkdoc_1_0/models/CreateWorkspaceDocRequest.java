@@ -24,6 +24,9 @@ public class CreateWorkspaceDocRequest extends TeaModel {
     @NameInMap("templateId")
     public String templateId;
 
+    @NameInMap("templateType")
+    public String templateType;
+
     public static CreateWorkspaceDocRequest build(java.util.Map<String, ?> map) throws Exception {
         CreateWorkspaceDocRequest self = new CreateWorkspaceDocRequest();
         return TeaModel.build(map, self);
@@ -67,6 +70,14 @@ public class CreateWorkspaceDocRequest extends TeaModel {
     }
     public String getTemplateId() {
         return this.templateId;
+    }
+
+    public CreateWorkspaceDocRequest setTemplateType(String templateType) {
+        this.templateType = templateType;
+        return this;
+    }
+    public String getTemplateType() {
+        return this.templateType;
     }
 
 }

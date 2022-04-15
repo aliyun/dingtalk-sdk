@@ -165,6 +165,92 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("BatchSendOTO", "robot_1.0", "HTTP", "POST", "AK", "/v1.0/robot/oToMessages/batchSend", "json", req, runtime), new BatchSendOTOResponse());
     }
 
+    public OrgGroupQueryResponse orgGroupQuery(OrgGroupQueryRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        OrgGroupQueryHeaders headers = new OrgGroupQueryHeaders();
+        return this.orgGroupQueryWithOptions(request, headers, runtime);
+    }
+
+    public OrgGroupQueryResponse orgGroupQueryWithOptions(OrgGroupQueryRequest request, OrgGroupQueryHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
+            body.put("maxResults", request.maxResults);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
+            body.put("nextToken", request.nextToken);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
+            body.put("openConversationId", request.openConversationId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.processQueryKey)) {
+            body.put("processQueryKey", request.processQueryKey);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.robotCode)) {
+            body.put("robotCode", request.robotCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.token)) {
+            body.put("token", request.token);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("OrgGroupQuery", "robot_1.0", "HTTP", "POST", "AK", "/v1.0/robot/groupMessages/query", "json", req, runtime), new OrgGroupQueryResponse());
+    }
+
+    public OrgGroupRecallResponse orgGroupRecall(OrgGroupRecallRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        OrgGroupRecallHeaders headers = new OrgGroupRecallHeaders();
+        return this.orgGroupRecallWithOptions(request, headers, runtime);
+    }
+
+    public OrgGroupRecallResponse orgGroupRecallWithOptions(OrgGroupRecallRequest request, OrgGroupRecallHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
+            body.put("openConversationId", request.openConversationId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.processQueryKeys)) {
+            body.put("processQueryKeys", request.processQueryKeys);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.robotCode)) {
+            body.put("robotCode", request.robotCode);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("OrgGroupRecall", "robot_1.0", "HTTP", "POST", "AK", "/v1.0/robot/groupMessages/recall", "json", req, runtime), new OrgGroupRecallResponse());
+    }
+
     public OrgGroupSendResponse orgGroupSend(OrgGroupSendRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         OrgGroupSendHeaders headers = new OrgGroupSendHeaders();

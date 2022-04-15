@@ -78,14 +78,6 @@ public class SearchFormDataSecondGenerationResponseBody extends TeaModel {
     }
 
     public static class SearchFormDataSecondGenerationResponseBodyDataModifyUser extends TeaModel {
-        // 部门名称
-        @NameInMap("departmentName")
-        public String departmentName;
-
-        // 电子邮箱
-        @NameInMap("email")
-        public String email;
-
         // 名称
         @NameInMap("name")
         public SearchFormDataSecondGenerationResponseBodyDataModifyUserName name;
@@ -97,22 +89,6 @@ public class SearchFormDataSecondGenerationResponseBody extends TeaModel {
         public static SearchFormDataSecondGenerationResponseBodyDataModifyUser build(java.util.Map<String, ?> map) throws Exception {
             SearchFormDataSecondGenerationResponseBodyDataModifyUser self = new SearchFormDataSecondGenerationResponseBodyDataModifyUser();
             return TeaModel.build(map, self);
-        }
-
-        public SearchFormDataSecondGenerationResponseBodyDataModifyUser setDepartmentName(String departmentName) {
-            this.departmentName = departmentName;
-            return this;
-        }
-        public String getDepartmentName() {
-            return this.departmentName;
-        }
-
-        public SearchFormDataSecondGenerationResponseBodyDataModifyUser setEmail(String email) {
-            this.email = email;
-            return this;
-        }
-        public String getEmail() {
-            return this.email;
         }
 
         public SearchFormDataSecondGenerationResponseBodyDataModifyUser setName(SearchFormDataSecondGenerationResponseBodyDataModifyUserName name) {
@@ -166,14 +142,6 @@ public class SearchFormDataSecondGenerationResponseBody extends TeaModel {
     }
 
     public static class SearchFormDataSecondGenerationResponseBodyDataOriginator extends TeaModel {
-        // 部门名称
-        @NameInMap("departmentName")
-        public String departmentName;
-
-        // 电子邮箱
-        @NameInMap("email")
-        public String email;
-
         // 名称
         @NameInMap("name")
         public SearchFormDataSecondGenerationResponseBodyDataOriginatorName name;
@@ -185,22 +153,6 @@ public class SearchFormDataSecondGenerationResponseBody extends TeaModel {
         public static SearchFormDataSecondGenerationResponseBodyDataOriginator build(java.util.Map<String, ?> map) throws Exception {
             SearchFormDataSecondGenerationResponseBodyDataOriginator self = new SearchFormDataSecondGenerationResponseBodyDataOriginator();
             return TeaModel.build(map, self);
-        }
-
-        public SearchFormDataSecondGenerationResponseBodyDataOriginator setDepartmentName(String departmentName) {
-            this.departmentName = departmentName;
-            return this;
-        }
-        public String getDepartmentName() {
-            return this.departmentName;
-        }
-
-        public SearchFormDataSecondGenerationResponseBodyDataOriginator setEmail(String email) {
-            this.email = email;
-            return this;
-        }
-        public String getEmail() {
-            return this.email;
         }
 
         public SearchFormDataSecondGenerationResponseBodyDataOriginator setName(SearchFormDataSecondGenerationResponseBodyDataOriginatorName name) {

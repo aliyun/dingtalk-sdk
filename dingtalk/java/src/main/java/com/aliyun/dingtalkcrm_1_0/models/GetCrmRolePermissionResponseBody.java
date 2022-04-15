@@ -59,10 +59,6 @@ public class GetCrmRolePermissionResponseBody extends TeaModel {
         public java.util.List<Double> deptIdList;
 
         // 管理员工列表
-        @NameInMap("staffIdList")
-        public java.util.List<String> staffIdList;
-
-        // 管理员工列表
         @NameInMap("userIdList")
         public java.util.List<String> userIdList;
 
@@ -77,14 +73,6 @@ public class GetCrmRolePermissionResponseBody extends TeaModel {
         }
         public java.util.List<Double> getDeptIdList() {
             return this.deptIdList;
-        }
-
-        public GetCrmRolePermissionResponseBodyPermissionsManagingScopeListExt setStaffIdList(java.util.List<String> staffIdList) {
-            this.staffIdList = staffIdList;
-            return this;
-        }
-        public java.util.List<String> getStaffIdList() {
-            return this.staffIdList;
         }
 
         public GetCrmRolePermissionResponseBodyPermissionsManagingScopeListExt setUserIdList(java.util.List<String> userIdList) {
@@ -182,10 +170,6 @@ public class GetCrmRolePermissionResponseBody extends TeaModel {
         @NameInMap("name")
         public String name;
 
-        // 角色的userId（此字段废弃，请使用userId字段）
-        @NameInMap("staffId")
-        public String staffId;
-
         // 角色类型
         @NameInMap("type")
         public String type;
@@ -213,14 +197,6 @@ public class GetCrmRolePermissionResponseBody extends TeaModel {
         }
         public String getName() {
             return this.name;
-        }
-
-        public GetCrmRolePermissionResponseBodyPermissionsRoleMemberList setStaffId(String staffId) {
-            this.staffId = staffId;
-            return this;
-        }
-        public String getStaffId() {
-            return this.staffId;
         }
 
         public GetCrmRolePermissionResponseBodyPermissionsRoleMemberList setType(String type) {

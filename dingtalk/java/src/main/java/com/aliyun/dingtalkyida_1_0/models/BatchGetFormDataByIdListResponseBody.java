@@ -54,14 +54,6 @@ public class BatchGetFormDataByIdListResponseBody extends TeaModel {
     }
 
     public static class BatchGetFormDataByIdListResponseBodyResultModifyUser extends TeaModel {
-        // 部门名称
-        @NameInMap("departmentName")
-        public String departmentName;
-
-        // 电子邮箱
-        @NameInMap("email")
-        public String email;
-
         // 名称
         @NameInMap("name")
         public BatchGetFormDataByIdListResponseBodyResultModifyUserName name;
@@ -73,22 +65,6 @@ public class BatchGetFormDataByIdListResponseBody extends TeaModel {
         public static BatchGetFormDataByIdListResponseBodyResultModifyUser build(java.util.Map<String, ?> map) throws Exception {
             BatchGetFormDataByIdListResponseBodyResultModifyUser self = new BatchGetFormDataByIdListResponseBodyResultModifyUser();
             return TeaModel.build(map, self);
-        }
-
-        public BatchGetFormDataByIdListResponseBodyResultModifyUser setDepartmentName(String departmentName) {
-            this.departmentName = departmentName;
-            return this;
-        }
-        public String getDepartmentName() {
-            return this.departmentName;
-        }
-
-        public BatchGetFormDataByIdListResponseBodyResultModifyUser setEmail(String email) {
-            this.email = email;
-            return this;
-        }
-        public String getEmail() {
-            return this.email;
         }
 
         public BatchGetFormDataByIdListResponseBodyResultModifyUser setName(BatchGetFormDataByIdListResponseBodyResultModifyUserName name) {
@@ -142,14 +118,6 @@ public class BatchGetFormDataByIdListResponseBody extends TeaModel {
     }
 
     public static class BatchGetFormDataByIdListResponseBodyResultOriginator extends TeaModel {
-        // 部门名称
-        @NameInMap("departmentName")
-        public String departmentName;
-
-        // 电子邮箱
-        @NameInMap("email")
-        public String email;
-
         // 名称
         @NameInMap("name")
         public BatchGetFormDataByIdListResponseBodyResultOriginatorName name;
@@ -161,22 +129,6 @@ public class BatchGetFormDataByIdListResponseBody extends TeaModel {
         public static BatchGetFormDataByIdListResponseBodyResultOriginator build(java.util.Map<String, ?> map) throws Exception {
             BatchGetFormDataByIdListResponseBodyResultOriginator self = new BatchGetFormDataByIdListResponseBodyResultOriginator();
             return TeaModel.build(map, self);
-        }
-
-        public BatchGetFormDataByIdListResponseBodyResultOriginator setDepartmentName(String departmentName) {
-            this.departmentName = departmentName;
-            return this;
-        }
-        public String getDepartmentName() {
-            return this.departmentName;
-        }
-
-        public BatchGetFormDataByIdListResponseBodyResultOriginator setEmail(String email) {
-            this.email = email;
-            return this;
-        }
-        public String getEmail() {
-            return this.email;
         }
 
         public BatchGetFormDataByIdListResponseBodyResultOriginator setName(BatchGetFormDataByIdListResponseBodyResultOriginatorName name) {
