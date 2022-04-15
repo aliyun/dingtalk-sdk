@@ -8,13 +8,10 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
-    public class CreateGroupResponseBody : TeaModel {
-        /// <summary>
-        /// 群id
-        /// </summary>
-        [NameInMap("openConversationId")]
+    public class DescribeCrmPersonalCustomerObjectMetaRequest : TeaModel {
+        [NameInMap("relationType")]
         [Validation(Required=false)]
-        public string OpenConversationId { get; set; }
+        public string RelationType { get; set; }
 
     }
 

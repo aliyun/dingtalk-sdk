@@ -8,45 +8,41 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
-    public class CreateWorkspaceDocRequest : TeaModel {
+    public class ListTemplateRequest : TeaModel {
         /// <summary>
-        /// 文档类型
+        /// 查询模版数量
         /// </summary>
-        [NameInMap("docType")]
+        [NameInMap("maxResults")]
         [Validation(Required=false)]
-        public string DocType { get; set; }
+        public int? MaxResults { get; set; }
 
         /// <summary>
-        /// 文档名
+        /// 翻页token
         /// </summary>
-        [NameInMap("name")]
+        [NameInMap("nextToken")]
         [Validation(Required=false)]
-        public string Name { get; set; }
+        public string NextToken { get; set; }
 
         /// <summary>
-        /// 操作人unionId
+        /// 操作用户unionId
         /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]
         public string OperatorId { get; set; }
 
         /// <summary>
-        /// 父节点nodeId
+        /// 模版类型
         /// </summary>
-        [NameInMap("parentNodeId")]
-        [Validation(Required=false)]
-        public string ParentNodeId { get; set; }
-
-        /// <summary>
-        /// 文档模板id
-        /// </summary>
-        [NameInMap("templateId")]
-        [Validation(Required=false)]
-        public string TemplateId { get; set; }
-
         [NameInMap("templateType")]
         [Validation(Required=false)]
         public string TemplateType { get; set; }
+
+        /// <summary>
+        /// 团队空间Id
+        /// </summary>
+        [NameInMap("workspaceId")]
+        [Validation(Required=false)]
+        public string WorkspaceId { get; set; }
 
     }
 

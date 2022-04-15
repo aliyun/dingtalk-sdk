@@ -86,12 +86,6 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             [Validation(Required=false)]
             public BatchGetFormDataByIdListResponseBodyResultModifyUser ModifyUser { get; set; }
             public class BatchGetFormDataByIdListResponseBodyResultModifyUser : TeaModel {
-                [NameInMap("departmentName")]
-                [Validation(Required=false)]
-                public string DepartmentName { get; set; }
-                [NameInMap("email")]
-                [Validation(Required=false)]
-                public string Email { get; set; }
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public BatchGetFormDataByIdListResponseBodyResultModifyUserName Name { get; set; }
@@ -123,12 +117,6 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             [Validation(Required=false)]
             public BatchGetFormDataByIdListResponseBodyResultOriginator Originator { get; set; }
             public class BatchGetFormDataByIdListResponseBodyResultOriginator : TeaModel {
-                [NameInMap("departmentName")]
-                [Validation(Required=false)]
-                public string DepartmentName { get; set; }
-                [NameInMap("email")]
-                [Validation(Required=false)]
-                public string Email { get; set; }
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public BatchGetFormDataByIdListResponseBodyResultOriginatorName Name { get; set; }

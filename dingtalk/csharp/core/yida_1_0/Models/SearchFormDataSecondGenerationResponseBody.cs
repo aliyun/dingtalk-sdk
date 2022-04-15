@@ -86,12 +86,6 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             [Validation(Required=false)]
             public SearchFormDataSecondGenerationResponseBodyDataModifyUser ModifyUser { get; set; }
             public class SearchFormDataSecondGenerationResponseBodyDataModifyUser : TeaModel {
-                [NameInMap("departmentName")]
-                [Validation(Required=false)]
-                public string DepartmentName { get; set; }
-                [NameInMap("email")]
-                [Validation(Required=false)]
-                public string Email { get; set; }
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public SearchFormDataSecondGenerationResponseBodyDataModifyUserName Name { get; set; }
@@ -123,12 +117,6 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             [Validation(Required=false)]
             public SearchFormDataSecondGenerationResponseBodyDataOriginator Originator { get; set; }
             public class SearchFormDataSecondGenerationResponseBodyDataOriginator : TeaModel {
-                [NameInMap("departmentName")]
-                [Validation(Required=false)]
-                public string DepartmentName { get; set; }
-                [NameInMap("email")]
-                [Validation(Required=false)]
-                public string Email { get; set; }
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public SearchFormDataSecondGenerationResponseBodyDataOriginatorName Name { get; set; }
