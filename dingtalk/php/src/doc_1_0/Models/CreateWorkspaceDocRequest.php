@@ -42,12 +42,18 @@ class CreateWorkspaceDocRequest extends Model
      * @var string
      */
     public $templateId;
+
+    /**
+     * @var string
+     */
+    public $templateType;
     protected $_name = [
         'docType'      => 'docType',
         'name'         => 'name',
         'operatorId'   => 'operatorId',
         'parentNodeId' => 'parentNodeId',
         'templateId'   => 'templateId',
+        'templateType' => 'templateType',
     ];
 
     public function validate()
@@ -71,6 +77,9 @@ class CreateWorkspaceDocRequest extends Model
         }
         if (null !== $this->templateId) {
             $res['templateId'] = $this->templateId;
+        }
+        if (null !== $this->templateType) {
+            $res['templateType'] = $this->templateType;
         }
 
         return $res;
@@ -98,6 +107,9 @@ class CreateWorkspaceDocRequest extends Model
         }
         if (isset($map['templateId'])) {
             $model->templateId = $map['templateId'];
+        }
+        if (isset($map['templateType'])) {
+            $model->templateType = $map['templateType'];
         }
 
         return $model;

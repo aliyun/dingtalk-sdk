@@ -17,6 +17,12 @@ use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\BatchRecallOTOResponse;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\BatchSendOTOHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\BatchSendOTORequest;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\BatchSendOTOResponse;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\OrgGroupQueryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\OrgGroupQueryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\OrgGroupQueryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\OrgGroupRecallHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\OrgGroupRecallRequest;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\OrgGroupRecallResponse;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\OrgGroupSendHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\OrgGroupSendRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\OrgGroupSendResponse;
@@ -229,6 +235,111 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return BatchSendOTOResponse::fromMap($this->doROARequest('BatchSendOTO', 'robot_1.0', 'HTTP', 'POST', 'AK', '/v1.0/robot/oToMessages/batchSend', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param OrgGroupQueryRequest $request
+     *
+     * @return OrgGroupQueryResponse
+     */
+    public function orgGroupQuery($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new OrgGroupQueryHeaders([]);
+
+        return $this->orgGroupQueryWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param OrgGroupQueryRequest $request
+     * @param OrgGroupQueryHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return OrgGroupQueryResponse
+     */
+    public function orgGroupQueryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            @$body['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$body['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->processQueryKey)) {
+            @$body['processQueryKey'] = $request->processQueryKey;
+        }
+        if (!Utils::isUnset($request->robotCode)) {
+            @$body['robotCode'] = $request->robotCode;
+        }
+        if (!Utils::isUnset($request->token)) {
+            @$body['token'] = $request->token;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return OrgGroupQueryResponse::fromMap($this->doROARequest('OrgGroupQuery', 'robot_1.0', 'HTTP', 'POST', 'AK', '/v1.0/robot/groupMessages/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param OrgGroupRecallRequest $request
+     *
+     * @return OrgGroupRecallResponse
+     */
+    public function orgGroupRecall($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new OrgGroupRecallHeaders([]);
+
+        return $this->orgGroupRecallWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param OrgGroupRecallRequest $request
+     * @param OrgGroupRecallHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return OrgGroupRecallResponse
+     */
+    public function orgGroupRecallWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->processQueryKeys)) {
+            @$body['processQueryKeys'] = $request->processQueryKeys;
+        }
+        if (!Utils::isUnset($request->robotCode)) {
+            @$body['robotCode'] = $request->robotCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return OrgGroupRecallResponse::fromMap($this->doROARequest('OrgGroupRecall', 'robot_1.0', 'HTTP', 'POST', 'AK', '/v1.0/robot/groupMessages/recall', 'json', $req, $runtime));
     }
 
     /**

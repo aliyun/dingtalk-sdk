@@ -36,6 +36,12 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryJobsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryPositionsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryPositionsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryPositionsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SolutionTaskInitHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SolutionTaskInitRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SolutionTaskInitResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SolutionTaskSaveHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SolutionTaskSaveRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SolutionTaskSaveResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -553,5 +559,141 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryPositionsResponse::fromMap($this->doROARequest('QueryPositions', 'hrm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/hrm/positions/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param SolutionTaskInitRequest $request
+     *
+     * @return SolutionTaskInitResponse
+     */
+    public function solutionTaskInit($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SolutionTaskInitHeaders([]);
+
+        return $this->solutionTaskInitWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SolutionTaskInitRequest $request
+     * @param SolutionTaskInitHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return SolutionTaskInitResponse
+     */
+    public function solutionTaskInitWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->solutionType)) {
+            @$query['solutionType'] = $request->solutionType;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->category)) {
+            @$body['category'] = $request->category;
+        }
+        if (!Utils::isUnset($request->claimTime)) {
+            @$body['claimTime'] = $request->claimTime;
+        }
+        if (!Utils::isUnset($request->description)) {
+            @$body['description'] = $request->description;
+        }
+        if (!Utils::isUnset($request->finishTime)) {
+            @$body['finishTime'] = $request->finishTime;
+        }
+        if (!Utils::isUnset($request->outerId)) {
+            @$body['outerId'] = $request->outerId;
+        }
+        if (!Utils::isUnset($request->status)) {
+            @$body['status'] = $request->status;
+        }
+        if (!Utils::isUnset($request->title)) {
+            @$body['title'] = $request->title;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SolutionTaskInitResponse::fromMap($this->doROARequest('SolutionTaskInit', 'hrm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/hrm/solutions/tasks/init', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param SolutionTaskSaveRequest $request
+     *
+     * @return SolutionTaskSaveResponse
+     */
+    public function solutionTaskSave($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SolutionTaskSaveHeaders([]);
+
+        return $this->solutionTaskSaveWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SolutionTaskSaveRequest $request
+     * @param SolutionTaskSaveHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return SolutionTaskSaveResponse
+     */
+    public function solutionTaskSaveWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->solutionType)) {
+            @$query['solutionType'] = $request->solutionType;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->category)) {
+            @$body['category'] = $request->category;
+        }
+        if (!Utils::isUnset($request->claimTime)) {
+            @$body['claimTime'] = $request->claimTime;
+        }
+        if (!Utils::isUnset($request->description)) {
+            @$body['description'] = $request->description;
+        }
+        if (!Utils::isUnset($request->finishTime)) {
+            @$body['finishTime'] = $request->finishTime;
+        }
+        if (!Utils::isUnset($request->outerId)) {
+            @$body['outerId'] = $request->outerId;
+        }
+        if (!Utils::isUnset($request->status)) {
+            @$body['status'] = $request->status;
+        }
+        if (!Utils::isUnset($request->title)) {
+            @$body['title'] = $request->title;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SolutionTaskSaveResponse::fromMap($this->doROARequest('SolutionTaskSave', 'hrm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/hrm/solutions/tasks/save', 'none', $req, $runtime));
     }
 }

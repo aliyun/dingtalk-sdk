@@ -61,6 +61,12 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetWorkspaceNodeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetWorkspaceNodeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetWorkspaceNodeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetWorkspaceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InsertBlocksHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InsertBlocksRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InsertBlocksResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\ListTemplateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\ListTemplateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\ListTemplateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SearchWorkspaceDocsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SearchWorkspaceDocsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SearchWorkspaceDocsResponse;
@@ -476,6 +482,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->templateId)) {
             @$body['templateId'] = $request->templateId;
+        }
+        if (!Utils::isUnset($request->templateType)) {
+            @$body['templateType'] = $request->templateType;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -1010,6 +1019,111 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetWorkspaceNodeResponse::fromMap($this->doROARequest('GetWorkspaceNode', 'doc_1.0', 'HTTP', 'GET', 'AK', '/v1.0/doc/workspaces/' . $workspaceId . '/docs/' . $nodeId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string              $documentId
+     * @param InsertBlocksRequest $request
+     *
+     * @return InsertBlocksResponse
+     */
+    public function insertBlocks($documentId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new InsertBlocksHeaders([]);
+
+        return $this->insertBlocksWithOptions($documentId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string              $documentId
+     * @param InsertBlocksRequest $request
+     * @param InsertBlocksHeaders $headers
+     * @param RuntimeOptions      $runtime
+     *
+     * @return InsertBlocksResponse
+     */
+    public function insertBlocksWithOptions($documentId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $documentId = OpenApiUtilClient::getEncodeParam($documentId);
+        $body       = [];
+        if (!Utils::isUnset($request->blocks)) {
+            @$body['blocks'] = $request->blocks;
+        }
+        if (!Utils::isUnset($request->location)) {
+            @$body['location'] = $request->location;
+        }
+        if (!Utils::isUnset($request->operatorId)) {
+            @$body['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return InsertBlocksResponse::fromMap($this->doROARequest('InsertBlocks', 'doc_1.0', 'HTTP', 'POST', 'AK', '/v1.0/doc/documents/' . $documentId . '/blocks', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param ListTemplateRequest $request
+     *
+     * @return ListTemplateResponse
+     */
+    public function listTemplate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListTemplateHeaders([]);
+
+        return $this->listTemplateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ListTemplateRequest $request
+     * @param ListTemplateHeaders $headers
+     * @param RuntimeOptions      $runtime
+     *
+     * @return ListTemplateResponse
+     */
+    public function listTemplateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        if (!Utils::isUnset($request->templateType)) {
+            @$query['templateType'] = $request->templateType;
+        }
+        if (!Utils::isUnset($request->workspaceId)) {
+            @$query['workspaceId'] = $request->workspaceId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ListTemplateResponse::fromMap($this->doROARequest('ListTemplate', 'doc_1.0', 'HTTP', 'GET', 'AK', '/v1.0/doc/templates', 'json', $req, $runtime));
     }
 
     /**

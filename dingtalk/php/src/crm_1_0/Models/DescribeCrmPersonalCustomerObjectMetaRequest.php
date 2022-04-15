@@ -6,16 +6,14 @@ namespace AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class CreateGroupResponseBody extends Model
+class DescribeCrmPersonalCustomerObjectMetaRequest extends Model
 {
     /**
-     * @description 群id
-     *
      * @var string
      */
-    public $openConversationId;
+    public $relationType;
     protected $_name = [
-        'openConversationId' => 'openConversationId',
+        'relationType' => 'relationType',
     ];
 
     public function validate()
@@ -25,8 +23,8 @@ class CreateGroupResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->openConversationId) {
-            $res['openConversationId'] = $this->openConversationId;
+        if (null !== $this->relationType) {
+            $res['relationType'] = $this->relationType;
         }
 
         return $res;
@@ -35,13 +33,13 @@ class CreateGroupResponseBody extends Model
     /**
      * @param array $map
      *
-     * @return CreateGroupResponseBody
+     * @return DescribeCrmPersonalCustomerObjectMetaRequest
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['openConversationId'])) {
-            $model->openConversationId = $map['openConversationId'];
+        if (isset($map['relationType'])) {
+            $model->relationType = $map['relationType'];
         }
 
         return $model;

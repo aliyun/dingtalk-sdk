@@ -48,6 +48,7 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DeleteRelationMetaFieldHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DeleteRelationMetaFieldRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DeleteRelationMetaFieldResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeCrmPersonalCustomerObjectMetaHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeCrmPersonalCustomerObjectMetaRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeCrmPersonalCustomerObjectMetaResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaRequest;
@@ -898,24 +899,32 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param DescribeCrmPersonalCustomerObjectMetaRequest $request
+     *
      * @return DescribeCrmPersonalCustomerObjectMetaResponse
      */
-    public function describeCrmPersonalCustomerObjectMeta()
+    public function describeCrmPersonalCustomerObjectMeta($request)
     {
         $runtime = new RuntimeOptions([]);
         $headers = new DescribeCrmPersonalCustomerObjectMetaHeaders([]);
 
-        return $this->describeCrmPersonalCustomerObjectMetaWithOptions($headers, $runtime);
+        return $this->describeCrmPersonalCustomerObjectMetaWithOptions($request, $headers, $runtime);
     }
 
     /**
+     * @param DescribeCrmPersonalCustomerObjectMetaRequest $request
      * @param DescribeCrmPersonalCustomerObjectMetaHeaders $headers
      * @param RuntimeOptions                               $runtime
      *
      * @return DescribeCrmPersonalCustomerObjectMetaResponse
      */
-    public function describeCrmPersonalCustomerObjectMetaWithOptions($headers, $runtime)
+    public function describeCrmPersonalCustomerObjectMetaWithOptions($request, $headers, $runtime)
     {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->relationType)) {
+            @$query['relationType'] = $request->relationType;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -925,6 +934,7 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
         ]);
 
         return DescribeCrmPersonalCustomerObjectMetaResponse::fromMap($this->doROARequest('DescribeCrmPersonalCustomerObjectMeta', 'crm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/crm/personalCustomers/objectMeta', 'json', $req, $runtime));

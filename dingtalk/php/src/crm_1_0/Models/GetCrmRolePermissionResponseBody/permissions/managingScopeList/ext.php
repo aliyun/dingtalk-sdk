@@ -20,18 +20,10 @@ class ext extends Model
      *
      * @var string[]
      */
-    public $staffIdList;
-
-    /**
-     * @description 管理员工列表
-     *
-     * @var string[]
-     */
     public $userIdList;
     protected $_name = [
-        'deptIdList'  => 'deptIdList',
-        'staffIdList' => 'staffIdList',
-        'userIdList'  => 'userIdList',
+        'deptIdList' => 'deptIdList',
+        'userIdList' => 'userIdList',
     ];
 
     public function validate()
@@ -43,9 +35,6 @@ class ext extends Model
         $res = [];
         if (null !== $this->deptIdList) {
             $res['deptIdList'] = $this->deptIdList;
-        }
-        if (null !== $this->staffIdList) {
-            $res['staffIdList'] = $this->staffIdList;
         }
         if (null !== $this->userIdList) {
             $res['userIdList'] = $this->userIdList;
@@ -65,11 +54,6 @@ class ext extends Model
         if (isset($map['deptIdList'])) {
             if (!empty($map['deptIdList'])) {
                 $model->deptIdList = $map['deptIdList'];
-            }
-        }
-        if (isset($map['staffIdList'])) {
-            if (!empty($map['staffIdList'])) {
-                $model->staffIdList = $map['staffIdList'];
             }
         }
         if (isset($map['userIdList'])) {

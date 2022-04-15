@@ -23,13 +23,6 @@ class roleMemberList extends Model
     public $name;
 
     /**
-     * @description 角色的userId（此字段废弃，请使用userId字段）
-     *
-     * @var string
-     */
-    public $staffId;
-
-    /**
      * @description 角色类型
      *
      * @var string
@@ -45,7 +38,6 @@ class roleMemberList extends Model
     protected $_name = [
         'memberId' => 'memberId',
         'name'     => 'name',
-        'staffId'  => 'staffId',
         'type'     => 'type',
         'userId'   => 'userId',
     ];
@@ -62,9 +54,6 @@ class roleMemberList extends Model
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
-        }
-        if (null !== $this->staffId) {
-            $res['staffId'] = $this->staffId;
         }
         if (null !== $this->type) {
             $res['type'] = $this->type;
@@ -89,9 +78,6 @@ class roleMemberList extends Model
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];
-        }
-        if (isset($map['staffId'])) {
-            $model->staffId = $map['staffId'];
         }
         if (isset($map['type'])) {
             $model->type = $map['type'];
