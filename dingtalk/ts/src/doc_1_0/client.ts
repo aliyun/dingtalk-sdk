@@ -604,6 +604,7 @@ export class CreateWorkspaceDocRequest extends $tea.Model {
   operatorId?: string;
   parentNodeId?: string;
   templateId?: string;
+  templateType?: string;
   static names(): { [key: string]: string } {
     return {
       docType: 'docType',
@@ -611,6 +612,7 @@ export class CreateWorkspaceDocRequest extends $tea.Model {
       operatorId: 'operatorId',
       parentNodeId: 'parentNodeId',
       templateId: 'templateId',
+      templateType: 'templateType',
     };
   }
 
@@ -621,6 +623,7 @@ export class CreateWorkspaceDocRequest extends $tea.Model {
       operatorId: 'string',
       parentNodeId: 'string',
       templateId: 'string',
+      templateType: 'string',
     };
   }
 
@@ -1517,6 +1520,172 @@ export class GetWorkspaceNodeResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: GetWorkspaceNodeResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InsertBlocksHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InsertBlocksRequest extends $tea.Model {
+  blocks?: InsertBlocksRequestBlocks[];
+  location?: InsertBlocksRequestLocation;
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      blocks: 'blocks',
+      location: 'location',
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      blocks: { 'type': 'array', 'itemType': InsertBlocksRequestBlocks },
+      location: InsertBlocksRequestLocation,
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InsertBlocksResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListTemplateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListTemplateRequest extends $tea.Model {
+  maxResults?: number;
+  nextToken?: string;
+  operatorId?: string;
+  templateType?: string;
+  workspaceId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      operatorId: 'operatorId',
+      templateType: 'templateType',
+      workspaceId: 'workspaceId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxResults: 'number',
+      nextToken: 'string',
+      operatorId: 'string',
+      templateType: 'string',
+      workspaceId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListTemplateResponseBody extends $tea.Model {
+  hasMore?: boolean;
+  nextToken?: string;
+  templateList?: ListTemplateResponseBodyTemplateList[];
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      nextToken: 'nextToken',
+      templateList: 'templateList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      nextToken: 'string',
+      templateList: { 'type': 'array', 'itemType': ListTemplateResponseBodyTemplateList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListTemplateResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ListTemplateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ListTemplateResponseBody,
     };
   }
 
@@ -2437,6 +2606,200 @@ export class GetWorkspaceNodeResponseBodyWorkspaceBO extends $tea.Model {
   }
 }
 
+export class InsertBlocksRequestBlocksParagraphChildrenTextTextStyle extends $tea.Model {
+  bold?: boolean;
+  dataType?: string;
+  fontSize?: number;
+  sizeUnit?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bold: 'bold',
+      dataType: 'dataType',
+      fontSize: 'fontSize',
+      sizeUnit: 'sizeUnit',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bold: 'boolean',
+      dataType: 'string',
+      fontSize: 'number',
+      sizeUnit: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InsertBlocksRequestBlocksParagraphChildrenText extends $tea.Model {
+  content?: string;
+  textStyle?: InsertBlocksRequestBlocksParagraphChildrenTextTextStyle;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+      textStyle: 'textStyle',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: 'string',
+      textStyle: InsertBlocksRequestBlocksParagraphChildrenTextTextStyle,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InsertBlocksRequestBlocksParagraphChildren extends $tea.Model {
+  elementType?: string;
+  text?: InsertBlocksRequestBlocksParagraphChildrenText;
+  static names(): { [key: string]: string } {
+    return {
+      elementType: 'elementType',
+      text: 'text',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      elementType: 'string',
+      text: InsertBlocksRequestBlocksParagraphChildrenText,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InsertBlocksRequestBlocksParagraphStyle extends $tea.Model {
+  headingLevel?: string;
+  static names(): { [key: string]: string } {
+    return {
+      headingLevel: 'headingLevel',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headingLevel: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InsertBlocksRequestBlocksParagraph extends $tea.Model {
+  children?: InsertBlocksRequestBlocksParagraphChildren[];
+  style?: InsertBlocksRequestBlocksParagraphStyle;
+  static names(): { [key: string]: string } {
+    return {
+      children: 'children',
+      style: 'style',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      children: { 'type': 'array', 'itemType': InsertBlocksRequestBlocksParagraphChildren },
+      style: InsertBlocksRequestBlocksParagraphStyle,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InsertBlocksRequestBlocks extends $tea.Model {
+  blockType?: string;
+  paragraph?: InsertBlocksRequestBlocksParagraph;
+  static names(): { [key: string]: string } {
+    return {
+      blockType: 'blockType',
+      paragraph: 'paragraph',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      blockType: 'string',
+      paragraph: InsertBlocksRequestBlocksParagraph,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InsertBlocksRequestLocation extends $tea.Model {
+  head?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      head: 'head',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      head: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListTemplateResponseBodyTemplateList extends $tea.Model {
+  coverUrl?: string;
+  createTime?: number;
+  docType?: string;
+  id?: string;
+  templateType?: string;
+  title?: string;
+  updateTime?: number;
+  workspaceId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      coverUrl: 'coverUrl',
+      createTime: 'createTime',
+      docType: 'docType',
+      id: 'id',
+      templateType: 'templateType',
+      title: 'title',
+      updateTime: 'updateTime',
+      workspaceId: 'workspaceId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      coverUrl: 'string',
+      createTime: 'number',
+      docType: 'string',
+      id: 'string',
+      templateType: 'string',
+      title: 'string',
+      updateTime: 'number',
+      workspaceId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SearchWorkspaceDocsResponseBodyDocsNodeBO extends $tea.Model {
   docType?: string;
   lastEditTime?: number;
@@ -2857,6 +3220,10 @@ export default class Client extends OpenApi {
       body["templateId"] = request.templateId;
     }
 
+    if (!Util.isUnset(request.templateType)) {
+      body["templateType"] = request.templateType;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -3226,6 +3593,89 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<GetWorkspaceNodeResponse>(await this.doROARequest("GetWorkspaceNode", "doc_1.0", "HTTP", "GET", "AK", `/v1.0/doc/workspaces/${workspaceId}/docs/${nodeId}`, "json", req, runtime), new GetWorkspaceNodeResponse({}));
+  }
+
+  async insertBlocks(documentId: string, request: InsertBlocksRequest): Promise<InsertBlocksResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new InsertBlocksHeaders({ });
+    return await this.insertBlocksWithOptions(documentId, request, headers, runtime);
+  }
+
+  async insertBlocksWithOptions(documentId: string, request: InsertBlocksRequest, headers: InsertBlocksHeaders, runtime: $Util.RuntimeOptions): Promise<InsertBlocksResponse> {
+    Util.validateModel(request);
+    documentId = OpenApiUtil.getEncodeParam(documentId);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.blocks)) {
+      body["blocks"] = request.blocks;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.location))) {
+      body["location"] = request.location;
+    }
+
+    if (!Util.isUnset(request.operatorId)) {
+      body["operatorId"] = request.operatorId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<InsertBlocksResponse>(await this.doROARequest("InsertBlocks", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/documents/${documentId}/blocks`, "none", req, runtime), new InsertBlocksResponse({}));
+  }
+
+  async listTemplate(request: ListTemplateRequest): Promise<ListTemplateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListTemplateHeaders({ });
+    return await this.listTemplateWithOptions(request, headers, runtime);
+  }
+
+  async listTemplateWithOptions(request: ListTemplateRequest, headers: ListTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<ListTemplateResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    if (!Util.isUnset(request.templateType)) {
+      query["templateType"] = request.templateType;
+    }
+
+    if (!Util.isUnset(request.workspaceId)) {
+      query["workspaceId"] = request.workspaceId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<ListTemplateResponse>(await this.doROARequest("ListTemplate", "doc_1.0", "HTTP", "GET", "AK", `/v1.0/doc/templates`, "json", req, runtime), new ListTemplateResponse({}));
   }
 
   async searchWorkspaceDocs(request: SearchWorkspaceDocsRequest): Promise<SearchWorkspaceDocsResponse> {

@@ -1005,6 +1005,174 @@ export class QueryPositionsResponse extends $tea.Model {
   }
 }
 
+export class SolutionTaskInitHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SolutionTaskInitRequest extends $tea.Model {
+  category?: string;
+  claimTime?: number;
+  description?: string;
+  finishTime?: number;
+  outerId?: string;
+  status?: string;
+  title?: string;
+  userId?: string;
+  solutionType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      category: 'category',
+      claimTime: 'claimTime',
+      description: 'description',
+      finishTime: 'finishTime',
+      outerId: 'outerId',
+      status: 'status',
+      title: 'title',
+      userId: 'userId',
+      solutionType: 'solutionType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      category: 'string',
+      claimTime: 'number',
+      description: 'string',
+      finishTime: 'number',
+      outerId: 'string',
+      status: 'string',
+      title: 'string',
+      userId: 'string',
+      solutionType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SolutionTaskInitResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SolutionTaskSaveHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SolutionTaskSaveRequest extends $tea.Model {
+  category?: string;
+  claimTime?: number;
+  description?: string;
+  finishTime?: number;
+  outerId?: string;
+  status?: string;
+  title?: string;
+  userId?: string;
+  solutionType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      category: 'category',
+      claimTime: 'claimTime',
+      description: 'description',
+      finishTime: 'finishTime',
+      outerId: 'outerId',
+      status: 'status',
+      title: 'title',
+      userId: 'userId',
+      solutionType: 'solutionType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      category: 'string',
+      claimTime: 'number',
+      description: 'string',
+      finishTime: 'number',
+      outerId: 'string',
+      status: 'string',
+      title: 'string',
+      userId: 'string',
+      solutionType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SolutionTaskSaveResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AddHrmPreentryRequestGroupsSectionsEmpFieldVOList extends $tea.Model {
   fieldCode?: string;
   value?: string;
@@ -1947,6 +2115,132 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<QueryPositionsResponse>(await this.doROARequest("QueryPositions", "hrm_1.0", "HTTP", "POST", "AK", `/v1.0/hrm/positions/query`, "json", req, runtime), new QueryPositionsResponse({}));
+  }
+
+  async solutionTaskInit(request: SolutionTaskInitRequest): Promise<SolutionTaskInitResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SolutionTaskInitHeaders({ });
+    return await this.solutionTaskInitWithOptions(request, headers, runtime);
+  }
+
+  async solutionTaskInitWithOptions(request: SolutionTaskInitRequest, headers: SolutionTaskInitHeaders, runtime: $Util.RuntimeOptions): Promise<SolutionTaskInitResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.solutionType)) {
+      query["solutionType"] = request.solutionType;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.category)) {
+      body["category"] = request.category;
+    }
+
+    if (!Util.isUnset(request.claimTime)) {
+      body["claimTime"] = request.claimTime;
+    }
+
+    if (!Util.isUnset(request.description)) {
+      body["description"] = request.description;
+    }
+
+    if (!Util.isUnset(request.finishTime)) {
+      body["finishTime"] = request.finishTime;
+    }
+
+    if (!Util.isUnset(request.outerId)) {
+      body["outerId"] = request.outerId;
+    }
+
+    if (!Util.isUnset(request.status)) {
+      body["status"] = request.status;
+    }
+
+    if (!Util.isUnset(request.title)) {
+      body["title"] = request.title;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SolutionTaskInitResponse>(await this.doROARequest("SolutionTaskInit", "hrm_1.0", "HTTP", "POST", "AK", `/v1.0/hrm/solutions/tasks/init`, "none", req, runtime), new SolutionTaskInitResponse({}));
+  }
+
+  async solutionTaskSave(request: SolutionTaskSaveRequest): Promise<SolutionTaskSaveResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SolutionTaskSaveHeaders({ });
+    return await this.solutionTaskSaveWithOptions(request, headers, runtime);
+  }
+
+  async solutionTaskSaveWithOptions(request: SolutionTaskSaveRequest, headers: SolutionTaskSaveHeaders, runtime: $Util.RuntimeOptions): Promise<SolutionTaskSaveResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.solutionType)) {
+      query["solutionType"] = request.solutionType;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.category)) {
+      body["category"] = request.category;
+    }
+
+    if (!Util.isUnset(request.claimTime)) {
+      body["claimTime"] = request.claimTime;
+    }
+
+    if (!Util.isUnset(request.description)) {
+      body["description"] = request.description;
+    }
+
+    if (!Util.isUnset(request.finishTime)) {
+      body["finishTime"] = request.finishTime;
+    }
+
+    if (!Util.isUnset(request.outerId)) {
+      body["outerId"] = request.outerId;
+    }
+
+    if (!Util.isUnset(request.status)) {
+      body["status"] = request.status;
+    }
+
+    if (!Util.isUnset(request.title)) {
+      body["title"] = request.title;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SolutionTaskSaveResponse>(await this.doROARequest("SolutionTaskSave", "hrm_1.0", "HTTP", "POST", "AK", `/v1.0/hrm/solutions/tasks/save`, "none", req, runtime), new SolutionTaskSaveResponse({}));
   }
 
 }

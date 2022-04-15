@@ -828,18 +828,15 @@ export class CreateGroupRequest extends $tea.Model {
 }
 
 export class CreateGroupResponseBody extends $tea.Model {
-  chatId?: string;
   openConversationId?: string;
   static names(): { [key: string]: string } {
     return {
-      chatId: 'chatId',
       openConversationId: 'openConversationId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      chatId: 'string',
       openConversationId: 'string',
     };
   }
@@ -1382,6 +1379,25 @@ export class DescribeCrmPersonalCustomerObjectMetaHeaders extends $tea.Model {
     return {
       commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DescribeCrmPersonalCustomerObjectMetaRequest extends $tea.Model {
+  relationType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      relationType: 'relationType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      relationType: 'string',
     };
   }
 
@@ -6700,12 +6716,10 @@ export class GetCrmRolePermissionResponseBodyPermissionsFieldScopes extends $tea
 
 export class GetCrmRolePermissionResponseBodyPermissionsManagingScopeListExt extends $tea.Model {
   deptIdList?: number[];
-  staffIdList?: string[];
   userIdList?: string[];
   static names(): { [key: string]: string } {
     return {
       deptIdList: 'deptIdList',
-      staffIdList: 'staffIdList',
       userIdList: 'userIdList',
     };
   }
@@ -6713,7 +6727,6 @@ export class GetCrmRolePermissionResponseBodyPermissionsManagingScopeListExt ext
   static types(): { [key: string]: any } {
     return {
       deptIdList: { 'type': 'array', 'itemType': 'number' },
-      staffIdList: { 'type': 'array', 'itemType': 'string' },
       userIdList: { 'type': 'array', 'itemType': 'string' },
     };
   }
@@ -6773,14 +6786,12 @@ export class GetCrmRolePermissionResponseBodyPermissionsOperateScopes extends $t
 export class GetCrmRolePermissionResponseBodyPermissionsRoleMemberList extends $tea.Model {
   memberId?: string;
   name?: string;
-  staffId?: string;
   type?: string;
   userId?: string;
   static names(): { [key: string]: string } {
     return {
       memberId: 'memberId',
       name: 'name',
-      staffId: 'staffId',
       type: 'type',
       userId: 'userId',
     };
@@ -6790,7 +6801,6 @@ export class GetCrmRolePermissionResponseBodyPermissionsRoleMemberList extends $
     return {
       memberId: 'string',
       name: 'string',
-      staffId: 'string',
       type: 'string',
       userId: 'string',
     };
@@ -8997,13 +9007,19 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteRelationMetaFieldResponse>(await this.doROARequest("DeleteRelationMetaField", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/relations/metas/fields/remove`, "json", req, runtime), new DeleteRelationMetaFieldResponse({}));
   }
 
-  async describeCrmPersonalCustomerObjectMeta(): Promise<DescribeCrmPersonalCustomerObjectMetaResponse> {
+  async describeCrmPersonalCustomerObjectMeta(request: DescribeCrmPersonalCustomerObjectMetaRequest): Promise<DescribeCrmPersonalCustomerObjectMetaResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DescribeCrmPersonalCustomerObjectMetaHeaders({ });
-    return await this.describeCrmPersonalCustomerObjectMetaWithOptions(headers, runtime);
+    return await this.describeCrmPersonalCustomerObjectMetaWithOptions(request, headers, runtime);
   }
 
-  async describeCrmPersonalCustomerObjectMetaWithOptions(headers: DescribeCrmPersonalCustomerObjectMetaHeaders, runtime: $Util.RuntimeOptions): Promise<DescribeCrmPersonalCustomerObjectMetaResponse> {
+  async describeCrmPersonalCustomerObjectMetaWithOptions(request: DescribeCrmPersonalCustomerObjectMetaRequest, headers: DescribeCrmPersonalCustomerObjectMetaHeaders, runtime: $Util.RuntimeOptions): Promise<DescribeCrmPersonalCustomerObjectMetaResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.relationType)) {
+      query["relationType"] = request.relationType;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -9015,6 +9031,7 @@ export default class Client extends OpenApi {
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
+      query: OpenApiUtil.query(query),
     });
     return $tea.cast<DescribeCrmPersonalCustomerObjectMetaResponse>(await this.doROARequest("DescribeCrmPersonalCustomerObjectMeta", "crm_1.0", "HTTP", "GET", "AK", `/v1.0/crm/personalCustomers/objectMeta`, "json", req, runtime), new DescribeCrmPersonalCustomerObjectMetaResponse({}));
   }

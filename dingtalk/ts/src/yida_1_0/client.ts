@@ -8392,14 +8392,10 @@ export class BatchGetFormDataByIdListResponseBodyResultModifyUserName extends $t
 }
 
 export class BatchGetFormDataByIdListResponseBodyResultModifyUser extends $tea.Model {
-  departmentName?: string;
-  email?: string;
   name?: BatchGetFormDataByIdListResponseBodyResultModifyUserName;
   userId?: string;
   static names(): { [key: string]: string } {
     return {
-      departmentName: 'departmentName',
-      email: 'email',
       name: 'name',
       userId: 'userId',
     };
@@ -8407,8 +8403,6 @@ export class BatchGetFormDataByIdListResponseBodyResultModifyUser extends $tea.M
 
   static types(): { [key: string]: any } {
     return {
-      departmentName: 'string',
-      email: 'string',
       name: BatchGetFormDataByIdListResponseBodyResultModifyUserName,
       userId: 'string',
     };
@@ -8442,14 +8436,10 @@ export class BatchGetFormDataByIdListResponseBodyResultOriginatorName extends $t
 }
 
 export class BatchGetFormDataByIdListResponseBodyResultOriginator extends $tea.Model {
-  departmentName?: string;
-  email?: string;
   name?: BatchGetFormDataByIdListResponseBodyResultOriginatorName;
   userId?: string;
   static names(): { [key: string]: string } {
     return {
-      departmentName: 'departmentName',
-      email: 'email',
       name: 'name',
       userId: 'userId',
     };
@@ -8457,8 +8447,6 @@ export class BatchGetFormDataByIdListResponseBodyResultOriginator extends $tea.M
 
   static types(): { [key: string]: any } {
     return {
-      departmentName: 'string',
-      email: 'string',
       name: BatchGetFormDataByIdListResponseBodyResultOriginatorName,
       userId: 'string',
     };
@@ -10722,14 +10710,10 @@ export class SearchFormDataSecondGenerationResponseBodyDataModifyUserName extend
 }
 
 export class SearchFormDataSecondGenerationResponseBodyDataModifyUser extends $tea.Model {
-  departmentName?: string;
-  email?: string;
   name?: SearchFormDataSecondGenerationResponseBodyDataModifyUserName;
   userId?: string;
   static names(): { [key: string]: string } {
     return {
-      departmentName: 'departmentName',
-      email: 'email',
       name: 'name',
       userId: 'userId',
     };
@@ -10737,8 +10721,6 @@ export class SearchFormDataSecondGenerationResponseBodyDataModifyUser extends $t
 
   static types(): { [key: string]: any } {
     return {
-      departmentName: 'string',
-      email: 'string',
       name: SearchFormDataSecondGenerationResponseBodyDataModifyUserName,
       userId: 'string',
     };
@@ -10772,14 +10754,10 @@ export class SearchFormDataSecondGenerationResponseBodyDataOriginatorName extend
 }
 
 export class SearchFormDataSecondGenerationResponseBodyDataOriginator extends $tea.Model {
-  departmentName?: string;
-  email?: string;
   name?: SearchFormDataSecondGenerationResponseBodyDataOriginatorName;
   userId?: string;
   static names(): { [key: string]: string } {
     return {
-      departmentName: 'departmentName',
-      email: 'email',
       name: 'name',
       userId: 'userId',
     };
@@ -10787,8 +10765,6 @@ export class SearchFormDataSecondGenerationResponseBodyDataOriginator extends $t
 
   static types(): { [key: string]: any } {
     return {
-      departmentName: 'string',
-      email: 'string',
       name: SearchFormDataSecondGenerationResponseBodyDataOriginatorName,
       userId: 'string',
     };
