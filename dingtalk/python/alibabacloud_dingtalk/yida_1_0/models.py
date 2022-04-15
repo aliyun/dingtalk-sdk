@@ -138,15 +138,9 @@ class BatchGetFormDataByIdListResponseBodyResultModifyUserName(TeaModel):
 class BatchGetFormDataByIdListResponseBodyResultModifyUser(TeaModel):
     def __init__(
         self,
-        department_name: str = None,
-        email: str = None,
         name: BatchGetFormDataByIdListResponseBodyResultModifyUserName = None,
         user_id: str = None,
     ):
-        # 部门名称
-        self.department_name = department_name
-        # 电子邮箱
-        self.email = email
         # 名称
         self.name = name
         # 钉钉userId
@@ -162,10 +156,6 @@ class BatchGetFormDataByIdListResponseBodyResultModifyUser(TeaModel):
             return _map
 
         result = dict()
-        if self.department_name is not None:
-            result['departmentName'] = self.department_name
-        if self.email is not None:
-            result['email'] = self.email
         if self.name is not None:
             result['name'] = self.name.to_map()
         if self.user_id is not None:
@@ -174,10 +164,6 @@ class BatchGetFormDataByIdListResponseBodyResultModifyUser(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('departmentName') is not None:
-            self.department_name = m.get('departmentName')
-        if m.get('email') is not None:
-            self.email = m.get('email')
         if m.get('name') is not None:
             temp_model = BatchGetFormDataByIdListResponseBodyResultModifyUserName()
             self.name = temp_model.from_map(m['name'])
@@ -224,15 +210,9 @@ class BatchGetFormDataByIdListResponseBodyResultOriginatorName(TeaModel):
 class BatchGetFormDataByIdListResponseBodyResultOriginator(TeaModel):
     def __init__(
         self,
-        department_name: str = None,
-        email: str = None,
         name: BatchGetFormDataByIdListResponseBodyResultOriginatorName = None,
         user_id: str = None,
     ):
-        # 部门名称
-        self.department_name = department_name
-        # 电子邮箱
-        self.email = email
         # 名称
         self.name = name
         # 钉钉userId
@@ -248,10 +228,6 @@ class BatchGetFormDataByIdListResponseBodyResultOriginator(TeaModel):
             return _map
 
         result = dict()
-        if self.department_name is not None:
-            result['departmentName'] = self.department_name
-        if self.email is not None:
-            result['email'] = self.email
         if self.name is not None:
             result['name'] = self.name.to_map()
         if self.user_id is not None:
@@ -260,10 +236,6 @@ class BatchGetFormDataByIdListResponseBodyResultOriginator(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('departmentName') is not None:
-            self.department_name = m.get('departmentName')
-        if m.get('email') is not None:
-            self.email = m.get('email')
         if m.get('name') is not None:
             temp_model = BatchGetFormDataByIdListResponseBodyResultOriginatorName()
             self.name = temp_model.from_map(m['name'])
@@ -16378,15 +16350,9 @@ class SearchFormDataSecondGenerationResponseBodyDataModifyUserName(TeaModel):
 class SearchFormDataSecondGenerationResponseBodyDataModifyUser(TeaModel):
     def __init__(
         self,
-        department_name: str = None,
-        email: str = None,
         name: SearchFormDataSecondGenerationResponseBodyDataModifyUserName = None,
         user_id: str = None,
     ):
-        # 部门名称
-        self.department_name = department_name
-        # 电子邮箱
-        self.email = email
         # 名称
         self.name = name
         # 钉钉userId
@@ -16402,10 +16368,6 @@ class SearchFormDataSecondGenerationResponseBodyDataModifyUser(TeaModel):
             return _map
 
         result = dict()
-        if self.department_name is not None:
-            result['departmentName'] = self.department_name
-        if self.email is not None:
-            result['email'] = self.email
         if self.name is not None:
             result['name'] = self.name.to_map()
         if self.user_id is not None:
@@ -16414,10 +16376,6 @@ class SearchFormDataSecondGenerationResponseBodyDataModifyUser(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('departmentName') is not None:
-            self.department_name = m.get('departmentName')
-        if m.get('email') is not None:
-            self.email = m.get('email')
         if m.get('name') is not None:
             temp_model = SearchFormDataSecondGenerationResponseBodyDataModifyUserName()
             self.name = temp_model.from_map(m['name'])
@@ -16464,15 +16422,9 @@ class SearchFormDataSecondGenerationResponseBodyDataOriginatorName(TeaModel):
 class SearchFormDataSecondGenerationResponseBodyDataOriginator(TeaModel):
     def __init__(
         self,
-        department_name: str = None,
-        email: str = None,
         name: SearchFormDataSecondGenerationResponseBodyDataOriginatorName = None,
         user_id: str = None,
     ):
-        # 部门名称
-        self.department_name = department_name
-        # 电子邮箱
-        self.email = email
         # 名称
         self.name = name
         # 钉钉userId
@@ -16488,10 +16440,6 @@ class SearchFormDataSecondGenerationResponseBodyDataOriginator(TeaModel):
             return _map
 
         result = dict()
-        if self.department_name is not None:
-            result['departmentName'] = self.department_name
-        if self.email is not None:
-            result['email'] = self.email
         if self.name is not None:
             result['name'] = self.name.to_map()
         if self.user_id is not None:
@@ -16500,10 +16448,6 @@ class SearchFormDataSecondGenerationResponseBodyDataOriginator(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('departmentName') is not None:
-            self.department_name = m.get('departmentName')
-        if m.get('email') is not None:
-            self.email = m.get('email')
         if m.get('name') is not None:
             temp_model = SearchFormDataSecondGenerationResponseBodyDataOriginatorName()
             self.name = temp_model.from_map(m['name'])

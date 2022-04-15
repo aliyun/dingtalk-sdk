@@ -776,3 +776,203 @@ class Client(OpenApiClient):
             dingtalkhrm__1__0_models.QueryPositionsResponse(),
             await self.do_roarequest_async('QueryPositions', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/positions/query', 'json', req, runtime)
         )
+
+    def solution_task_init(
+        self,
+        request: dingtalkhrm__1__0_models.SolutionTaskInitRequest,
+    ) -> dingtalkhrm__1__0_models.SolutionTaskInitResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.SolutionTaskInitHeaders()
+        return self.solution_task_init_with_options(request, headers, runtime)
+
+    async def solution_task_init_async(
+        self,
+        request: dingtalkhrm__1__0_models.SolutionTaskInitRequest,
+    ) -> dingtalkhrm__1__0_models.SolutionTaskInitResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.SolutionTaskInitHeaders()
+        return await self.solution_task_init_with_options_async(request, headers, runtime)
+
+    def solution_task_init_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.SolutionTaskInitRequest,
+        headers: dingtalkhrm__1__0_models.SolutionTaskInitHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.SolutionTaskInitResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.solution_type):
+            query['solutionType'] = request.solution_type
+        body = {}
+        if not UtilClient.is_unset(request.category):
+            body['category'] = request.category
+        if not UtilClient.is_unset(request.claim_time):
+            body['claimTime'] = request.claim_time
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.finish_time):
+            body['finishTime'] = request.finish_time
+        if not UtilClient.is_unset(request.outer_id):
+            body['outerId'] = request.outer_id
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.SolutionTaskInitResponse(),
+            self.do_roarequest('SolutionTaskInit', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/solutions/tasks/init', 'none', req, runtime)
+        )
+
+    async def solution_task_init_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.SolutionTaskInitRequest,
+        headers: dingtalkhrm__1__0_models.SolutionTaskInitHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.SolutionTaskInitResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.solution_type):
+            query['solutionType'] = request.solution_type
+        body = {}
+        if not UtilClient.is_unset(request.category):
+            body['category'] = request.category
+        if not UtilClient.is_unset(request.claim_time):
+            body['claimTime'] = request.claim_time
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.finish_time):
+            body['finishTime'] = request.finish_time
+        if not UtilClient.is_unset(request.outer_id):
+            body['outerId'] = request.outer_id
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.SolutionTaskInitResponse(),
+            await self.do_roarequest_async('SolutionTaskInit', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/solutions/tasks/init', 'none', req, runtime)
+        )
+
+    def solution_task_save(
+        self,
+        request: dingtalkhrm__1__0_models.SolutionTaskSaveRequest,
+    ) -> dingtalkhrm__1__0_models.SolutionTaskSaveResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.SolutionTaskSaveHeaders()
+        return self.solution_task_save_with_options(request, headers, runtime)
+
+    async def solution_task_save_async(
+        self,
+        request: dingtalkhrm__1__0_models.SolutionTaskSaveRequest,
+    ) -> dingtalkhrm__1__0_models.SolutionTaskSaveResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.SolutionTaskSaveHeaders()
+        return await self.solution_task_save_with_options_async(request, headers, runtime)
+
+    def solution_task_save_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.SolutionTaskSaveRequest,
+        headers: dingtalkhrm__1__0_models.SolutionTaskSaveHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.SolutionTaskSaveResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.solution_type):
+            query['solutionType'] = request.solution_type
+        body = {}
+        if not UtilClient.is_unset(request.category):
+            body['category'] = request.category
+        if not UtilClient.is_unset(request.claim_time):
+            body['claimTime'] = request.claim_time
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.finish_time):
+            body['finishTime'] = request.finish_time
+        if not UtilClient.is_unset(request.outer_id):
+            body['outerId'] = request.outer_id
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.SolutionTaskSaveResponse(),
+            self.do_roarequest('SolutionTaskSave', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/solutions/tasks/save', 'none', req, runtime)
+        )
+
+    async def solution_task_save_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.SolutionTaskSaveRequest,
+        headers: dingtalkhrm__1__0_models.SolutionTaskSaveHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.SolutionTaskSaveResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.solution_type):
+            query['solutionType'] = request.solution_type
+        body = {}
+        if not UtilClient.is_unset(request.category):
+            body['category'] = request.category
+        if not UtilClient.is_unset(request.claim_time):
+            body['claimTime'] = request.claim_time
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.finish_time):
+            body['finishTime'] = request.finish_time
+        if not UtilClient.is_unset(request.outer_id):
+            body['outerId'] = request.outer_id
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.SolutionTaskSaveResponse(),
+            await self.do_roarequest_async('SolutionTaskSave', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/solutions/tasks/save', 'none', req, runtime)
+        )

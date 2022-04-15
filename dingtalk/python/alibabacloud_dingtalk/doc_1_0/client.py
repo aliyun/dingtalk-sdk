@@ -589,6 +589,8 @@ class Client(OpenApiClient):
             body['parentNodeId'] = request.parent_node_id
         if not UtilClient.is_unset(request.template_id):
             body['templateId'] = request.template_id
+        if not UtilClient.is_unset(request.template_type):
+            body['templateType'] = request.template_type
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -623,6 +625,8 @@ class Client(OpenApiClient):
             body['parentNodeId'] = request.parent_node_id
         if not UtilClient.is_unset(request.template_id):
             body['templateId'] = request.template_id
+        if not UtilClient.is_unset(request.template_type):
+            body['templateType'] = request.template_type
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1443,6 +1447,164 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkdoc__1__0_models.GetWorkspaceNodeResponse(),
             await self.do_roarequest_async('GetWorkspaceNode', 'doc_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/doc/workspaces/{workspace_id}/docs/{node_id}', 'json', req, runtime)
+        )
+
+    def insert_blocks(
+        self,
+        document_id: str,
+        request: dingtalkdoc__1__0_models.InsertBlocksRequest,
+    ) -> dingtalkdoc__1__0_models.InsertBlocksResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.InsertBlocksHeaders()
+        return self.insert_blocks_with_options(document_id, request, headers, runtime)
+
+    async def insert_blocks_async(
+        self,
+        document_id: str,
+        request: dingtalkdoc__1__0_models.InsertBlocksRequest,
+    ) -> dingtalkdoc__1__0_models.InsertBlocksResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.InsertBlocksHeaders()
+        return await self.insert_blocks_with_options_async(document_id, request, headers, runtime)
+
+    def insert_blocks_with_options(
+        self,
+        document_id: str,
+        request: dingtalkdoc__1__0_models.InsertBlocksRequest,
+        headers: dingtalkdoc__1__0_models.InsertBlocksHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.InsertBlocksResponse:
+        UtilClient.validate_model(request)
+        document_id = OpenApiUtilClient.get_encode_param(document_id)
+        body = {}
+        if not UtilClient.is_unset(request.blocks):
+            body['blocks'] = request.blocks
+        if not UtilClient.is_unset(request.location):
+            body['location'] = request.location
+        if not UtilClient.is_unset(request.operator_id):
+            body['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.InsertBlocksResponse(),
+            self.do_roarequest('InsertBlocks', 'doc_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/doc/documents/{document_id}/blocks', 'none', req, runtime)
+        )
+
+    async def insert_blocks_with_options_async(
+        self,
+        document_id: str,
+        request: dingtalkdoc__1__0_models.InsertBlocksRequest,
+        headers: dingtalkdoc__1__0_models.InsertBlocksHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.InsertBlocksResponse:
+        UtilClient.validate_model(request)
+        document_id = OpenApiUtilClient.get_encode_param(document_id)
+        body = {}
+        if not UtilClient.is_unset(request.blocks):
+            body['blocks'] = request.blocks
+        if not UtilClient.is_unset(request.location):
+            body['location'] = request.location
+        if not UtilClient.is_unset(request.operator_id):
+            body['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.InsertBlocksResponse(),
+            await self.do_roarequest_async('InsertBlocks', 'doc_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/doc/documents/{document_id}/blocks', 'none', req, runtime)
+        )
+
+    def list_template(
+        self,
+        request: dingtalkdoc__1__0_models.ListTemplateRequest,
+    ) -> dingtalkdoc__1__0_models.ListTemplateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.ListTemplateHeaders()
+        return self.list_template_with_options(request, headers, runtime)
+
+    async def list_template_async(
+        self,
+        request: dingtalkdoc__1__0_models.ListTemplateRequest,
+    ) -> dingtalkdoc__1__0_models.ListTemplateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.ListTemplateHeaders()
+        return await self.list_template_with_options_async(request, headers, runtime)
+
+    def list_template_with_options(
+        self,
+        request: dingtalkdoc__1__0_models.ListTemplateRequest,
+        headers: dingtalkdoc__1__0_models.ListTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.ListTemplateResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.template_type):
+            query['templateType'] = request.template_type
+        if not UtilClient.is_unset(request.workspace_id):
+            query['workspaceId'] = request.workspace_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.ListTemplateResponse(),
+            self.do_roarequest('ListTemplate', 'doc_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/doc/templates', 'json', req, runtime)
+        )
+
+    async def list_template_with_options_async(
+        self,
+        request: dingtalkdoc__1__0_models.ListTemplateRequest,
+        headers: dingtalkdoc__1__0_models.ListTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.ListTemplateResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.template_type):
+            query['templateType'] = request.template_type
+        if not UtilClient.is_unset(request.workspace_id):
+            query['workspaceId'] = request.workspace_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.ListTemplateResponse(),
+            await self.do_roarequest_async('ListTemplate', 'doc_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/doc/templates', 'json', req, runtime)
         )
 
     def search_workspace_docs(

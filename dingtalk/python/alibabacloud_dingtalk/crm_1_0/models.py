@@ -2541,11 +2541,8 @@ class CreateGroupRequest(TeaModel):
 class CreateGroupResponseBody(TeaModel):
     def __init__(
         self,
-        chat_id: str = None,
         open_conversation_id: str = None,
     ):
-        # 群聊id
-        self.chat_id = chat_id
         # 群id
         self.open_conversation_id = open_conversation_id
 
@@ -2558,16 +2555,12 @@ class CreateGroupResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.chat_id is not None:
-            result['chatId'] = self.chat_id
         if self.open_conversation_id is not None:
             result['openConversationId'] = self.open_conversation_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('chatId') is not None:
-            self.chat_id = m.get('chatId')
         if m.get('openConversationId') is not None:
             self.open_conversation_id = m.get('openConversationId')
         return self
@@ -3800,6 +3793,33 @@ class DescribeCrmPersonalCustomerObjectMetaHeaders(TeaModel):
             self.common_headers = m.get('commonHeaders')
         if m.get('x-acs-dingtalk-access-token') is not None:
             self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DescribeCrmPersonalCustomerObjectMetaRequest(TeaModel):
+    def __init__(
+        self,
+        relation_type: str = None,
+    ):
+        self.relation_type = relation_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.relation_type is not None:
+            result['relationType'] = self.relation_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('relationType') is not None:
+            self.relation_type = m.get('relationType')
         return self
 
 
@@ -8280,13 +8300,10 @@ class GetCrmRolePermissionResponseBodyPermissionsManagingScopeListExt(TeaModel):
     def __init__(
         self,
         dept_id_list: List[float] = None,
-        staff_id_list: List[str] = None,
         user_id_list: List[str] = None,
     ):
         # 管理部门列表
         self.dept_id_list = dept_id_list
-        # 管理员工列表
-        self.staff_id_list = staff_id_list
         # 管理员工列表
         self.user_id_list = user_id_list
 
@@ -8301,8 +8318,6 @@ class GetCrmRolePermissionResponseBodyPermissionsManagingScopeListExt(TeaModel):
         result = dict()
         if self.dept_id_list is not None:
             result['deptIdList'] = self.dept_id_list
-        if self.staff_id_list is not None:
-            result['staffIdList'] = self.staff_id_list
         if self.user_id_list is not None:
             result['userIdList'] = self.user_id_list
         return result
@@ -8311,8 +8326,6 @@ class GetCrmRolePermissionResponseBodyPermissionsManagingScopeListExt(TeaModel):
         m = m or dict()
         if m.get('deptIdList') is not None:
             self.dept_id_list = m.get('deptIdList')
-        if m.get('staffIdList') is not None:
-            self.staff_id_list = m.get('staffIdList')
         if m.get('userIdList') is not None:
             self.user_id_list = m.get('userIdList')
         return self
@@ -8402,7 +8415,6 @@ class GetCrmRolePermissionResponseBodyPermissionsRoleMemberList(TeaModel):
         self,
         member_id: str = None,
         name: str = None,
-        staff_id: str = None,
         type: str = None,
         user_id: str = None,
     ):
@@ -8410,8 +8422,6 @@ class GetCrmRolePermissionResponseBodyPermissionsRoleMemberList(TeaModel):
         self.member_id = member_id
         # 角色名
         self.name = name
-        # 角色的userId（此字段废弃，请使用userId字段）
-        self.staff_id = staff_id
         # 角色类型
         self.type = type
         # 角色的userId
@@ -8430,8 +8440,6 @@ class GetCrmRolePermissionResponseBodyPermissionsRoleMemberList(TeaModel):
             result['memberId'] = self.member_id
         if self.name is not None:
             result['name'] = self.name
-        if self.staff_id is not None:
-            result['staffId'] = self.staff_id
         if self.type is not None:
             result['type'] = self.type
         if self.user_id is not None:
@@ -8444,8 +8452,6 @@ class GetCrmRolePermissionResponseBodyPermissionsRoleMemberList(TeaModel):
             self.member_id = m.get('memberId')
         if m.get('name') is not None:
             self.name = m.get('name')
-        if m.get('staffId') is not None:
-            self.staff_id = m.get('staffId')
         if m.get('type') is not None:
             self.type = m.get('type')
         if m.get('userId') is not None:

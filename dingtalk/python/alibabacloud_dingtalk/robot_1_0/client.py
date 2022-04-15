@@ -307,6 +307,162 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('BatchSendOTO', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/oToMessages/batchSend', 'json', req, runtime)
         )
 
+    def org_group_query(
+        self,
+        request: dingtalkrobot__1__0_models.OrgGroupQueryRequest,
+    ) -> dingtalkrobot__1__0_models.OrgGroupQueryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.OrgGroupQueryHeaders()
+        return self.org_group_query_with_options(request, headers, runtime)
+
+    async def org_group_query_async(
+        self,
+        request: dingtalkrobot__1__0_models.OrgGroupQueryRequest,
+    ) -> dingtalkrobot__1__0_models.OrgGroupQueryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.OrgGroupQueryHeaders()
+        return await self.org_group_query_with_options_async(request, headers, runtime)
+
+    def org_group_query_with_options(
+        self,
+        request: dingtalkrobot__1__0_models.OrgGroupQueryRequest,
+        headers: dingtalkrobot__1__0_models.OrgGroupQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.OrgGroupQueryResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.process_query_key):
+            body['processQueryKey'] = request.process_query_key
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        if not UtilClient.is_unset(request.token):
+            body['token'] = request.token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.OrgGroupQueryResponse(),
+            self.do_roarequest('OrgGroupQuery', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/groupMessages/query', 'json', req, runtime)
+        )
+
+    async def org_group_query_with_options_async(
+        self,
+        request: dingtalkrobot__1__0_models.OrgGroupQueryRequest,
+        headers: dingtalkrobot__1__0_models.OrgGroupQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.OrgGroupQueryResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.process_query_key):
+            body['processQueryKey'] = request.process_query_key
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        if not UtilClient.is_unset(request.token):
+            body['token'] = request.token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.OrgGroupQueryResponse(),
+            await self.do_roarequest_async('OrgGroupQuery', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/groupMessages/query', 'json', req, runtime)
+        )
+
+    def org_group_recall(
+        self,
+        request: dingtalkrobot__1__0_models.OrgGroupRecallRequest,
+    ) -> dingtalkrobot__1__0_models.OrgGroupRecallResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.OrgGroupRecallHeaders()
+        return self.org_group_recall_with_options(request, headers, runtime)
+
+    async def org_group_recall_async(
+        self,
+        request: dingtalkrobot__1__0_models.OrgGroupRecallRequest,
+    ) -> dingtalkrobot__1__0_models.OrgGroupRecallResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.OrgGroupRecallHeaders()
+        return await self.org_group_recall_with_options_async(request, headers, runtime)
+
+    def org_group_recall_with_options(
+        self,
+        request: dingtalkrobot__1__0_models.OrgGroupRecallRequest,
+        headers: dingtalkrobot__1__0_models.OrgGroupRecallHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.OrgGroupRecallResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.process_query_keys):
+            body['processQueryKeys'] = request.process_query_keys
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.OrgGroupRecallResponse(),
+            self.do_roarequest('OrgGroupRecall', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/groupMessages/recall', 'json', req, runtime)
+        )
+
+    async def org_group_recall_with_options_async(
+        self,
+        request: dingtalkrobot__1__0_models.OrgGroupRecallRequest,
+        headers: dingtalkrobot__1__0_models.OrgGroupRecallHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.OrgGroupRecallResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.process_query_keys):
+            body['processQueryKeys'] = request.process_query_keys
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.OrgGroupRecallResponse(),
+            await self.do_roarequest_async('OrgGroupRecall', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/groupMessages/recall', 'json', req, runtime)
+        )
+
     def org_group_send(
         self,
         request: dingtalkrobot__1__0_models.OrgGroupSendRequest,

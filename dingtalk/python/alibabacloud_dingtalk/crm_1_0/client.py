@@ -1143,28 +1143,40 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('DeleteRelationMetaField', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/relations/metas/fields/remove', 'json', req, runtime)
         )
 
-    def describe_crm_personal_customer_object_meta(self) -> dingtalkcrm__1__0_models.DescribeCrmPersonalCustomerObjectMetaResponse:
+    def describe_crm_personal_customer_object_meta(
+        self,
+        request: dingtalkcrm__1__0_models.DescribeCrmPersonalCustomerObjectMetaRequest,
+    ) -> dingtalkcrm__1__0_models.DescribeCrmPersonalCustomerObjectMetaResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.DescribeCrmPersonalCustomerObjectMetaHeaders()
-        return self.describe_crm_personal_customer_object_meta_with_options(headers, runtime)
+        return self.describe_crm_personal_customer_object_meta_with_options(request, headers, runtime)
 
-    async def describe_crm_personal_customer_object_meta_async(self) -> dingtalkcrm__1__0_models.DescribeCrmPersonalCustomerObjectMetaResponse:
+    async def describe_crm_personal_customer_object_meta_async(
+        self,
+        request: dingtalkcrm__1__0_models.DescribeCrmPersonalCustomerObjectMetaRequest,
+    ) -> dingtalkcrm__1__0_models.DescribeCrmPersonalCustomerObjectMetaResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.DescribeCrmPersonalCustomerObjectMetaHeaders()
-        return await self.describe_crm_personal_customer_object_meta_with_options_async(headers, runtime)
+        return await self.describe_crm_personal_customer_object_meta_with_options_async(request, headers, runtime)
 
     def describe_crm_personal_customer_object_meta_with_options(
         self,
+        request: dingtalkcrm__1__0_models.DescribeCrmPersonalCustomerObjectMetaRequest,
         headers: dingtalkcrm__1__0_models.DescribeCrmPersonalCustomerObjectMetaHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.DescribeCrmPersonalCustomerObjectMetaResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.relation_type):
+            query['relationType'] = request.relation_type
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=real_headers
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
         )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.DescribeCrmPersonalCustomerObjectMetaResponse(),
@@ -1173,16 +1185,22 @@ class Client(OpenApiClient):
 
     async def describe_crm_personal_customer_object_meta_with_options_async(
         self,
+        request: dingtalkcrm__1__0_models.DescribeCrmPersonalCustomerObjectMetaRequest,
         headers: dingtalkcrm__1__0_models.DescribeCrmPersonalCustomerObjectMetaHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.DescribeCrmPersonalCustomerObjectMetaResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.relation_type):
+            query['relationType'] = request.relation_type
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=real_headers
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
         )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.DescribeCrmPersonalCustomerObjectMetaResponse(),

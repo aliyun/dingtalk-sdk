@@ -2719,3 +2719,291 @@ class QueryPositionsResponse(TeaModel):
         return self
 
 
+class SolutionTaskInitHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SolutionTaskInitRequest(TeaModel):
+    def __init__(
+        self,
+        category: str = None,
+        claim_time: int = None,
+        description: str = None,
+        finish_time: int = None,
+        outer_id: str = None,
+        status: str = None,
+        title: str = None,
+        user_id: str = None,
+        solution_type: str = None,
+    ):
+        # 任务业务模块，如training, performance等
+        self.category = category
+        # 任务要求的截止时间
+        self.claim_time = claim_time
+        # 任务描述
+        self.description = description
+        # 任务完成时间
+        self.finish_time = finish_time
+        # 外部的任务唯一标识
+        self.outer_id = outer_id
+        # 任务状态，如running,finished
+        self.status = status
+        # 任务名称
+        self.title = title
+        # 任务执行人userId
+        self.user_id = user_id
+        # 解决方案类型
+        self.solution_type = solution_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.category is not None:
+            result['category'] = self.category
+        if self.claim_time is not None:
+            result['claimTime'] = self.claim_time
+        if self.description is not None:
+            result['description'] = self.description
+        if self.finish_time is not None:
+            result['finishTime'] = self.finish_time
+        if self.outer_id is not None:
+            result['outerId'] = self.outer_id
+        if self.status is not None:
+            result['status'] = self.status
+        if self.title is not None:
+            result['title'] = self.title
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.solution_type is not None:
+            result['solutionType'] = self.solution_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('category') is not None:
+            self.category = m.get('category')
+        if m.get('claimTime') is not None:
+            self.claim_time = m.get('claimTime')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('finishTime') is not None:
+            self.finish_time = m.get('finishTime')
+        if m.get('outerId') is not None:
+            self.outer_id = m.get('outerId')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('solutionType') is not None:
+            self.solution_type = m.get('solutionType')
+        return self
+
+
+class SolutionTaskInitResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+    ):
+        self.headers = headers
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        return self
+
+
+class SolutionTaskSaveHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SolutionTaskSaveRequest(TeaModel):
+    def __init__(
+        self,
+        category: str = None,
+        claim_time: int = None,
+        description: str = None,
+        finish_time: int = None,
+        outer_id: str = None,
+        status: str = None,
+        title: str = None,
+        user_id: str = None,
+        solution_type: str = None,
+    ):
+        # 任务业务模块，如training, performance等
+        self.category = category
+        # 任务要求的截止时间
+        self.claim_time = claim_time
+        # 任务描述
+        self.description = description
+        # 任务完成时间
+        self.finish_time = finish_time
+        # 外部的任务唯一标识
+        self.outer_id = outer_id
+        # 任务状态，如running,finished
+        self.status = status
+        # 任务名称
+        self.title = title
+        # 任务执行人userId
+        self.user_id = user_id
+        # 解决方案类型
+        self.solution_type = solution_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.category is not None:
+            result['category'] = self.category
+        if self.claim_time is not None:
+            result['claimTime'] = self.claim_time
+        if self.description is not None:
+            result['description'] = self.description
+        if self.finish_time is not None:
+            result['finishTime'] = self.finish_time
+        if self.outer_id is not None:
+            result['outerId'] = self.outer_id
+        if self.status is not None:
+            result['status'] = self.status
+        if self.title is not None:
+            result['title'] = self.title
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.solution_type is not None:
+            result['solutionType'] = self.solution_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('category') is not None:
+            self.category = m.get('category')
+        if m.get('claimTime') is not None:
+            self.claim_time = m.get('claimTime')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('finishTime') is not None:
+            self.finish_time = m.get('finishTime')
+        if m.get('outerId') is not None:
+            self.outer_id = m.get('outerId')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('solutionType') is not None:
+            self.solution_type = m.get('solutionType')
+        return self
+
+
+class SolutionTaskSaveResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+    ):
+        self.headers = headers
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        return self
+
+

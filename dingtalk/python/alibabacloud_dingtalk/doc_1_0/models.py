@@ -1349,6 +1349,7 @@ class CreateWorkspaceDocRequest(TeaModel):
         operator_id: str = None,
         parent_node_id: str = None,
         template_id: str = None,
+        template_type: str = None,
     ):
         # 文档类型
         self.doc_type = doc_type
@@ -1360,6 +1361,7 @@ class CreateWorkspaceDocRequest(TeaModel):
         self.parent_node_id = parent_node_id
         # 文档模板id
         self.template_id = template_id
+        self.template_type = template_type
 
     def validate(self):
         pass
@@ -1380,6 +1382,8 @@ class CreateWorkspaceDocRequest(TeaModel):
             result['parentNodeId'] = self.parent_node_id
         if self.template_id is not None:
             result['templateId'] = self.template_id
+        if self.template_type is not None:
+            result['templateType'] = self.template_type
         return result
 
     def from_map(self, m: dict = None):
@@ -1394,6 +1398,8 @@ class CreateWorkspaceDocRequest(TeaModel):
             self.parent_node_id = m.get('parentNodeId')
         if m.get('templateId') is not None:
             self.template_id = m.get('templateId')
+        if m.get('templateType') is not None:
+            self.template_type = m.get('templateType')
         return self
 
 
@@ -3454,6 +3460,634 @@ class GetWorkspaceNodeResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = GetWorkspaceNodeResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class InsertBlocksHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class InsertBlocksRequestBlocksParagraphChildrenTextTextStyle(TeaModel):
+    def __init__(
+        self,
+        bold: bool = None,
+        data_type: str = None,
+        font_size: int = None,
+        size_unit: str = None,
+    ):
+        # 是否加粗
+        self.bold = bold
+        # 数据类型
+        self.data_type = data_type
+        # 字体大小
+        self.font_size = font_size
+        # 字体大小单位
+        self.size_unit = size_unit
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.bold is not None:
+            result['bold'] = self.bold
+        if self.data_type is not None:
+            result['dataType'] = self.data_type
+        if self.font_size is not None:
+            result['fontSize'] = self.font_size
+        if self.size_unit is not None:
+            result['sizeUnit'] = self.size_unit
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bold') is not None:
+            self.bold = m.get('bold')
+        if m.get('dataType') is not None:
+            self.data_type = m.get('dataType')
+        if m.get('fontSize') is not None:
+            self.font_size = m.get('fontSize')
+        if m.get('sizeUnit') is not None:
+            self.size_unit = m.get('sizeUnit')
+        return self
+
+
+class InsertBlocksRequestBlocksParagraphChildrenText(TeaModel):
+    def __init__(
+        self,
+        content: str = None,
+        text_style: InsertBlocksRequestBlocksParagraphChildrenTextTextStyle = None,
+    ):
+        # 文本内容
+        self.content = content
+        # 文字样式
+        self.text_style = text_style
+
+    def validate(self):
+        if self.text_style:
+            self.text_style.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        if self.text_style is not None:
+            result['textStyle'] = self.text_style.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('textStyle') is not None:
+            temp_model = InsertBlocksRequestBlocksParagraphChildrenTextTextStyle()
+            self.text_style = temp_model.from_map(m['textStyle'])
+        return self
+
+
+class InsertBlocksRequestBlocksParagraphChildren(TeaModel):
+    def __init__(
+        self,
+        element_type: str = None,
+        text: InsertBlocksRequestBlocksParagraphChildrenText = None,
+    ):
+        # 元素类型
+        self.element_type = element_type
+        # 文本元素
+        self.text = text
+
+    def validate(self):
+        if self.text:
+            self.text.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.element_type is not None:
+            result['elementType'] = self.element_type
+        if self.text is not None:
+            result['text'] = self.text.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('elementType') is not None:
+            self.element_type = m.get('elementType')
+        if m.get('text') is not None:
+            temp_model = InsertBlocksRequestBlocksParagraphChildrenText()
+            self.text = temp_model.from_map(m['text'])
+        return self
+
+
+class InsertBlocksRequestBlocksParagraphStyle(TeaModel):
+    def __init__(
+        self,
+        heading_level: str = None,
+    ):
+        # 标题样式
+        self.heading_level = heading_level
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.heading_level is not None:
+            result['headingLevel'] = self.heading_level
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headingLevel') is not None:
+            self.heading_level = m.get('headingLevel')
+        return self
+
+
+class InsertBlocksRequestBlocksParagraph(TeaModel):
+    def __init__(
+        self,
+        children: List[InsertBlocksRequestBlocksParagraphChildren] = None,
+        style: InsertBlocksRequestBlocksParagraphStyle = None,
+    ):
+        # 子节点
+        self.children = children
+        # 段落样式
+        self.style = style
+
+    def validate(self):
+        if self.children:
+            for k in self.children:
+                if k:
+                    k.validate()
+        if self.style:
+            self.style.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['children'] = []
+        if self.children is not None:
+            for k in self.children:
+                result['children'].append(k.to_map() if k else None)
+        if self.style is not None:
+            result['style'] = self.style.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.children = []
+        if m.get('children') is not None:
+            for k in m.get('children'):
+                temp_model = InsertBlocksRequestBlocksParagraphChildren()
+                self.children.append(temp_model.from_map(k))
+        if m.get('style') is not None:
+            temp_model = InsertBlocksRequestBlocksParagraphStyle()
+            self.style = temp_model.from_map(m['style'])
+        return self
+
+
+class InsertBlocksRequestBlocks(TeaModel):
+    def __init__(
+        self,
+        block_type: str = None,
+        paragraph: InsertBlocksRequestBlocksParagraph = None,
+    ):
+        # 元素类型标识
+        self.block_type = block_type
+        # 段落元素
+        self.paragraph = paragraph
+
+    def validate(self):
+        if self.paragraph:
+            self.paragraph.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.block_type is not None:
+            result['blockType'] = self.block_type
+        if self.paragraph is not None:
+            result['paragraph'] = self.paragraph.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('blockType') is not None:
+            self.block_type = m.get('blockType')
+        if m.get('paragraph') is not None:
+            temp_model = InsertBlocksRequestBlocksParagraph()
+            self.paragraph = temp_model.from_map(m['paragraph'])
+        return self
+
+
+class InsertBlocksRequestLocation(TeaModel):
+    def __init__(
+        self,
+        head: bool = None,
+    ):
+        # 头部插入
+        self.head = head
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.head is not None:
+            result['head'] = self.head
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('head') is not None:
+            self.head = m.get('head')
+        return self
+
+
+class InsertBlocksRequest(TeaModel):
+    def __init__(
+        self,
+        blocks: List[InsertBlocksRequestBlocks] = None,
+        location: InsertBlocksRequestLocation = None,
+        operator_id: str = None,
+    ):
+        # 元素数组
+        self.blocks = blocks
+        # 位置信息
+        self.location = location
+        # 操作用户unionId
+        self.operator_id = operator_id
+
+    def validate(self):
+        if self.blocks:
+            for k in self.blocks:
+                if k:
+                    k.validate()
+        if self.location:
+            self.location.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['blocks'] = []
+        if self.blocks is not None:
+            for k in self.blocks:
+                result['blocks'].append(k.to_map() if k else None)
+        if self.location is not None:
+            result['location'] = self.location.to_map()
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.blocks = []
+        if m.get('blocks') is not None:
+            for k in m.get('blocks'):
+                temp_model = InsertBlocksRequestBlocks()
+                self.blocks.append(temp_model.from_map(k))
+        if m.get('location') is not None:
+            temp_model = InsertBlocksRequestLocation()
+            self.location = temp_model.from_map(m['location'])
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class InsertBlocksResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+    ):
+        self.headers = headers
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        return self
+
+
+class ListTemplateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListTemplateRequest(TeaModel):
+    def __init__(
+        self,
+        max_results: int = None,
+        next_token: str = None,
+        operator_id: str = None,
+        template_type: str = None,
+        workspace_id: str = None,
+    ):
+        # 查询模版数量
+        self.max_results = max_results
+        # 翻页token
+        self.next_token = next_token
+        # 操作用户unionId
+        self.operator_id = operator_id
+        # 模版类型
+        self.template_type = template_type
+        # 团队空间Id
+        self.workspace_id = workspace_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        if self.template_type is not None:
+            result['templateType'] = self.template_type
+        if self.workspace_id is not None:
+            result['workspaceId'] = self.workspace_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        if m.get('templateType') is not None:
+            self.template_type = m.get('templateType')
+        if m.get('workspaceId') is not None:
+            self.workspace_id = m.get('workspaceId')
+        return self
+
+
+class ListTemplateResponseBodyTemplateList(TeaModel):
+    def __init__(
+        self,
+        cover_url: str = None,
+        create_time: int = None,
+        doc_type: str = None,
+        id: str = None,
+        template_type: str = None,
+        title: str = None,
+        update_time: int = None,
+        workspace_id: str = None,
+    ):
+        # 模版预览url
+        self.cover_url = cover_url
+        # 模版创建时间
+        self.create_time = create_time
+        # 模版对应文档类型
+        self.doc_type = doc_type
+        # 模版Id
+        self.id = id
+        # 模版类型
+        self.template_type = template_type
+        # 模版标题
+        self.title = title
+        # 模版修改时间
+        self.update_time = update_time
+        # 模版归属空间Id
+        self.workspace_id = workspace_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.cover_url is not None:
+            result['coverUrl'] = self.cover_url
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.doc_type is not None:
+            result['docType'] = self.doc_type
+        if self.id is not None:
+            result['id'] = self.id
+        if self.template_type is not None:
+            result['templateType'] = self.template_type
+        if self.title is not None:
+            result['title'] = self.title
+        if self.update_time is not None:
+            result['updateTime'] = self.update_time
+        if self.workspace_id is not None:
+            result['workspaceId'] = self.workspace_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('coverUrl') is not None:
+            self.cover_url = m.get('coverUrl')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('docType') is not None:
+            self.doc_type = m.get('docType')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('templateType') is not None:
+            self.template_type = m.get('templateType')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('updateTime') is not None:
+            self.update_time = m.get('updateTime')
+        if m.get('workspaceId') is not None:
+            self.workspace_id = m.get('workspaceId')
+        return self
+
+
+class ListTemplateResponseBody(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        next_token: str = None,
+        template_list: List[ListTemplateResponseBodyTemplateList] = None,
+    ):
+        # 是否还有更多模版
+        self.has_more = has_more
+        # 后续结果的偏移
+        self.next_token = next_token
+        # 模版信息列表
+        self.template_list = template_list
+
+    def validate(self):
+        if self.template_list:
+            for k in self.template_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        result['templateList'] = []
+        if self.template_list is not None:
+            for k in self.template_list:
+                result['templateList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        self.template_list = []
+        if m.get('templateList') is not None:
+            for k in m.get('templateList'):
+                temp_model = ListTemplateResponseBodyTemplateList()
+                self.template_list.append(temp_model.from_map(k))
+        return self
+
+
+class ListTemplateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ListTemplateResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ListTemplateResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

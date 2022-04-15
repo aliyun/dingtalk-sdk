@@ -649,6 +649,335 @@ class BatchSendOTOResponse(TeaModel):
         return self
 
 
+class OrgGroupQueryHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class OrgGroupQueryRequest(TeaModel):
+    def __init__(
+        self,
+        max_results: int = None,
+        next_token: str = None,
+        open_conversation_id: str = None,
+        process_query_key: str = None,
+        robot_code: str = None,
+        token: str = None,
+    ):
+        # 分页查询每页的数量
+        self.max_results = max_results
+        # 一次查询后返回的加密的分页凭证，首次查询不填
+        self.next_token = next_token
+        # 开放的群id
+        self.open_conversation_id = open_conversation_id
+        # 发送消息返回的加密消息id
+        self.process_query_key = process_query_key
+        # 企业机器人的robotcode
+        self.robot_code = robot_code
+        # 群内机器人的webhook中的Token
+        self.token = token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.process_query_key is not None:
+            result['processQueryKey'] = self.process_query_key
+        if self.robot_code is not None:
+            result['robotCode'] = self.robot_code
+        if self.token is not None:
+            result['token'] = self.token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('processQueryKey') is not None:
+            self.process_query_key = m.get('processQueryKey')
+        if m.get('robotCode') is not None:
+            self.robot_code = m.get('robotCode')
+        if m.get('token') is not None:
+            self.token = m.get('token')
+        return self
+
+
+class OrgGroupQueryResponseBody(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        next_token: str = None,
+        read_user_ids: List[str] = None,
+        send_status: str = None,
+    ):
+        # 分页查询是否还有人员可查询消息已读状态
+        self.has_more = has_more
+        # 下次分页查询的加密凭证
+        self.next_token = next_token
+        # 消息已读人的userId列表
+        self.read_user_ids = read_user_ids
+        # 消息发送状态
+        self.send_status = send_status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.read_user_ids is not None:
+            result['readUserIds'] = self.read_user_ids
+        if self.send_status is not None:
+            result['sendStatus'] = self.send_status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('readUserIds') is not None:
+            self.read_user_ids = m.get('readUserIds')
+        if m.get('sendStatus') is not None:
+            self.send_status = m.get('sendStatus')
+        return self
+
+
+class OrgGroupQueryResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: OrgGroupQueryResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = OrgGroupQueryResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class OrgGroupRecallHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class OrgGroupRecallRequest(TeaModel):
+    def __init__(
+        self,
+        open_conversation_id: str = None,
+        process_query_keys: List[str] = None,
+        robot_code: str = None,
+    ):
+        # 开放的群id
+        self.open_conversation_id = open_conversation_id
+        # 消息id
+        self.process_query_keys = process_query_keys
+        # 机器人的robotCode
+        self.robot_code = robot_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.process_query_keys is not None:
+            result['processQueryKeys'] = self.process_query_keys
+        if self.robot_code is not None:
+            result['robotCode'] = self.robot_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('processQueryKeys') is not None:
+            self.process_query_keys = m.get('processQueryKeys')
+        if m.get('robotCode') is not None:
+            self.robot_code = m.get('robotCode')
+        return self
+
+
+class OrgGroupRecallResponseBody(TeaModel):
+    def __init__(
+        self,
+        failed_result: Dict[str, str] = None,
+        success_result: List[str] = None,
+    ):
+        # 撤回失败的消息id及原因
+        self.failed_result = failed_result
+        # 撤回成功的消息id
+        self.success_result = success_result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.failed_result is not None:
+            result['failedResult'] = self.failed_result
+        if self.success_result is not None:
+            result['successResult'] = self.success_result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('failedResult') is not None:
+            self.failed_result = m.get('failedResult')
+        if m.get('successResult') is not None:
+            self.success_result = m.get('successResult')
+        return self
+
+
+class OrgGroupRecallResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: OrgGroupRecallResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = OrgGroupRecallResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class OrgGroupSendHeaders(TeaModel):
     def __init__(
         self,
