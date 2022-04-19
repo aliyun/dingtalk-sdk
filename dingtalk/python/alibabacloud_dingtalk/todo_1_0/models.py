@@ -2641,6 +2641,303 @@ class GetTodoTypeConfigResponse(TeaModel):
         return self
 
 
+class QueryOrgTodoByUserHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryOrgTodoByUserRequest(TeaModel):
+    def __init__(
+        self,
+        is_done: bool = None,
+        max_results: int = None,
+        next_token: str = None,
+    ):
+        # 待办完成状态。
+        self.is_done = is_done
+        # 每页数量。
+        self.max_results = max_results
+        # 分页游标。如果一个查询条件一次无法全部返回结果，会返回分页token，下次查询带上该token后会返回后续数据，直到分页token为null表示数据已经全部查询完毕。
+        self.next_token = next_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.is_done is not None:
+            result['isDone'] = self.is_done
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('isDone') is not None:
+            self.is_done = m.get('isDone')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        return self
+
+
+class QueryOrgTodoByUserResponseBodyTodoCardsDetailUrl(TeaModel):
+    def __init__(
+        self,
+        app_url: str = None,
+        pc_url: str = None,
+    ):
+        # 移动端url地址
+        self.app_url = app_url
+        # pc端url地址
+        self.pc_url = pc_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_url is not None:
+            result['appUrl'] = self.app_url
+        if self.pc_url is not None:
+            result['pcUrl'] = self.pc_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appUrl') is not None:
+            self.app_url = m.get('appUrl')
+        if m.get('pcUrl') is not None:
+            self.pc_url = m.get('pcUrl')
+        return self
+
+
+class QueryOrgTodoByUserResponseBodyTodoCards(TeaModel):
+    def __init__(
+        self,
+        biz_tag: str = None,
+        created_time: int = None,
+        creator_id: str = None,
+        detail_url: QueryOrgTodoByUserResponseBodyTodoCardsDetailUrl = None,
+        due_time: int = None,
+        is_done: bool = None,
+        modified_time: int = None,
+        priority: int = None,
+        source_id: str = None,
+        subject: str = None,
+        task_id: str = None,
+    ):
+        # 所属应用
+        self.biz_tag = biz_tag
+        # 创建时间
+        self.created_time = created_time
+        # 创建者id
+        self.creator_id = creator_id
+        # 详情页链接
+        self.detail_url = detail_url
+        # 待办截止时间
+        self.due_time = due_time
+        # 待办完成状态
+        self.is_done = is_done
+        # 更新时间
+        self.modified_time = modified_time
+        # 优先级
+        self.priority = priority
+        # 来源id
+        self.source_id = source_id
+        # 待办标题
+        self.subject = subject
+        # 待办id
+        self.task_id = task_id
+
+    def validate(self):
+        if self.detail_url:
+            self.detail_url.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_tag is not None:
+            result['bizTag'] = self.biz_tag
+        if self.created_time is not None:
+            result['createdTime'] = self.created_time
+        if self.creator_id is not None:
+            result['creatorId'] = self.creator_id
+        if self.detail_url is not None:
+            result['detailUrl'] = self.detail_url.to_map()
+        if self.due_time is not None:
+            result['dueTime'] = self.due_time
+        if self.is_done is not None:
+            result['isDone'] = self.is_done
+        if self.modified_time is not None:
+            result['modifiedTime'] = self.modified_time
+        if self.priority is not None:
+            result['priority'] = self.priority
+        if self.source_id is not None:
+            result['sourceId'] = self.source_id
+        if self.subject is not None:
+            result['subject'] = self.subject
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizTag') is not None:
+            self.biz_tag = m.get('bizTag')
+        if m.get('createdTime') is not None:
+            self.created_time = m.get('createdTime')
+        if m.get('creatorId') is not None:
+            self.creator_id = m.get('creatorId')
+        if m.get('detailUrl') is not None:
+            temp_model = QueryOrgTodoByUserResponseBodyTodoCardsDetailUrl()
+            self.detail_url = temp_model.from_map(m['detailUrl'])
+        if m.get('dueTime') is not None:
+            self.due_time = m.get('dueTime')
+        if m.get('isDone') is not None:
+            self.is_done = m.get('isDone')
+        if m.get('modifiedTime') is not None:
+            self.modified_time = m.get('modifiedTime')
+        if m.get('priority') is not None:
+            self.priority = m.get('priority')
+        if m.get('sourceId') is not None:
+            self.source_id = m.get('sourceId')
+        if m.get('subject') is not None:
+            self.subject = m.get('subject')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        return self
+
+
+class QueryOrgTodoByUserResponseBody(TeaModel):
+    def __init__(
+        self,
+        max_results: int = None,
+        next_token: str = None,
+        todo_cards: List[QueryOrgTodoByUserResponseBodyTodoCards] = None,
+    ):
+        # 每页数量
+        self.max_results = max_results
+        # 翻页token
+        self.next_token = next_token
+        # 待办卡片列表
+        self.todo_cards = todo_cards
+
+    def validate(self):
+        if self.todo_cards:
+            for k in self.todo_cards:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        result['todoCards'] = []
+        if self.todo_cards is not None:
+            for k in self.todo_cards:
+                result['todoCards'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        self.todo_cards = []
+        if m.get('todoCards') is not None:
+            for k in m.get('todoCards'):
+                temp_model = QueryOrgTodoByUserResponseBodyTodoCards()
+                self.todo_cards.append(temp_model.from_map(k))
+        return self
+
+
+class QueryOrgTodoByUserResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryOrgTodoByUserResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryOrgTodoByUserResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryOrgTodoTasksHeaders(TeaModel):
     def __init__(
         self,

@@ -1825,6 +1825,282 @@ class BatchGetGroupSetConfigResponse(TeaModel):
         return self
 
 
+class BatchQuerySendMessageTaskHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class BatchQuerySendMessageTaskRequest(TeaModel):
+    def __init__(
+        self,
+        get_read_count: bool = None,
+        gmt_create_end: str = None,
+        gmt_create_start: str = None,
+        max_results: int = None,
+        next_token: str = None,
+        open_group_set_id: str = None,
+        open_team_id: str = None,
+        task_name: str = None,
+    ):
+        # 是否获取群发任务已读数量，默认false
+        self.get_read_count = get_read_count
+        # 任务查询结束时间
+        self.gmt_create_end = gmt_create_end
+        # 任务查询开始时间
+        self.gmt_create_start = gmt_create_start
+        # 每页条数
+        self.max_results = max_results
+        # 游标
+        self.next_token = next_token
+        # 开放群组ID，在服务群-群组- ID信息中获取
+        self.open_group_set_id = open_group_set_id
+        # 开放团队ID
+        self.open_team_id = open_team_id
+        # 任务名称
+        self.task_name = task_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.get_read_count is not None:
+            result['getReadCount'] = self.get_read_count
+        if self.gmt_create_end is not None:
+            result['gmtCreateEnd'] = self.gmt_create_end
+        if self.gmt_create_start is not None:
+            result['gmtCreateStart'] = self.gmt_create_start
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.open_group_set_id is not None:
+            result['openGroupSetId'] = self.open_group_set_id
+        if self.open_team_id is not None:
+            result['openTeamId'] = self.open_team_id
+        if self.task_name is not None:
+            result['taskName'] = self.task_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('getReadCount') is not None:
+            self.get_read_count = m.get('getReadCount')
+        if m.get('gmtCreateEnd') is not None:
+            self.gmt_create_end = m.get('gmtCreateEnd')
+        if m.get('gmtCreateStart') is not None:
+            self.gmt_create_start = m.get('gmtCreateStart')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('openGroupSetId') is not None:
+            self.open_group_set_id = m.get('openGroupSetId')
+        if m.get('openTeamId') is not None:
+            self.open_team_id = m.get('openTeamId')
+        if m.get('taskName') is not None:
+            self.task_name = m.get('taskName')
+        return self
+
+
+class BatchQuerySendMessageTaskResponseBodyRecords(TeaModel):
+    def __init__(
+        self,
+        create_name: str = None,
+        create_time_str: str = None,
+        create_union_id: str = None,
+        open_batch_task_id: str = None,
+        read_group_inc: int = None,
+        send_group_inc: int = None,
+        send_message_status: str = None,
+        send_task_time_str: str = None,
+        task_name: str = None,
+    ):
+        self.create_name = create_name
+        self.create_time_str = create_time_str
+        self.create_union_id = create_union_id
+        self.open_batch_task_id = open_batch_task_id
+        self.read_group_inc = read_group_inc
+        self.send_group_inc = send_group_inc
+        self.send_message_status = send_message_status
+        self.send_task_time_str = send_task_time_str
+        self.task_name = task_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.create_name is not None:
+            result['createName'] = self.create_name
+        if self.create_time_str is not None:
+            result['createTimeStr'] = self.create_time_str
+        if self.create_union_id is not None:
+            result['createUnionId'] = self.create_union_id
+        if self.open_batch_task_id is not None:
+            result['openBatchTaskId'] = self.open_batch_task_id
+        if self.read_group_inc is not None:
+            result['readGroupInc'] = self.read_group_inc
+        if self.send_group_inc is not None:
+            result['sendGroupInc'] = self.send_group_inc
+        if self.send_message_status is not None:
+            result['sendMessageStatus'] = self.send_message_status
+        if self.send_task_time_str is not None:
+            result['sendTaskTimeStr'] = self.send_task_time_str
+        if self.task_name is not None:
+            result['taskName'] = self.task_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('createName') is not None:
+            self.create_name = m.get('createName')
+        if m.get('createTimeStr') is not None:
+            self.create_time_str = m.get('createTimeStr')
+        if m.get('createUnionId') is not None:
+            self.create_union_id = m.get('createUnionId')
+        if m.get('openBatchTaskId') is not None:
+            self.open_batch_task_id = m.get('openBatchTaskId')
+        if m.get('readGroupInc') is not None:
+            self.read_group_inc = m.get('readGroupInc')
+        if m.get('sendGroupInc') is not None:
+            self.send_group_inc = m.get('sendGroupInc')
+        if m.get('sendMessageStatus') is not None:
+            self.send_message_status = m.get('sendMessageStatus')
+        if m.get('sendTaskTimeStr') is not None:
+            self.send_task_time_str = m.get('sendTaskTimeStr')
+        if m.get('taskName') is not None:
+            self.task_name = m.get('taskName')
+        return self
+
+
+class BatchQuerySendMessageTaskResponseBody(TeaModel):
+    def __init__(
+        self,
+        max_results: int = None,
+        next_token: str = None,
+        records: List[BatchQuerySendMessageTaskResponseBodyRecords] = None,
+        total_count: float = None,
+    ):
+        self.max_results = max_results
+        # Id of the request
+        self.next_token = next_token
+        self.records = records
+        self.total_count = total_count
+
+    def validate(self):
+        if self.records:
+            for k in self.records:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        result['records'] = []
+        if self.records is not None:
+            for k in self.records:
+                result['records'].append(k.to_map() if k else None)
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        self.records = []
+        if m.get('records') is not None:
+            for k in m.get('records'):
+                temp_model = BatchQuerySendMessageTaskResponseBodyRecords()
+                self.records.append(temp_model.from_map(k))
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class BatchQuerySendMessageTaskResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: BatchQuerySendMessageTaskResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = BatchQuerySendMessageTaskResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class BoundTemplateToTeamHeaders(TeaModel):
     def __init__(
         self,
@@ -5238,6 +5514,580 @@ class QueryGroupSetResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = QueryGroupSetResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QuerySendMsgTaskStatisticsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QuerySendMsgTaskStatisticsRequest(TeaModel):
+    def __init__(
+        self,
+        max_results: int = None,
+        next_token: str = None,
+        open_batch_task_id: str = None,
+        open_team_id: str = None,
+    ):
+        # 每页条数
+        self.max_results = max_results
+        # 游标，首页为空
+        self.next_token = next_token
+        # 开放群发任务ID
+        self.open_batch_task_id = open_batch_task_id
+        # 开放团队ID
+        self.open_team_id = open_team_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.open_batch_task_id is not None:
+            result['openBatchTaskId'] = self.open_batch_task_id
+        if self.open_team_id is not None:
+            result['openTeamId'] = self.open_team_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('openBatchTaskId') is not None:
+            self.open_batch_task_id = m.get('openBatchTaskId')
+        if m.get('openTeamId') is not None:
+            self.open_team_id = m.get('openTeamId')
+        return self
+
+
+class QuerySendMsgTaskStatisticsResponseBodyRecordsGroup(TeaModel):
+    def __init__(
+        self,
+        biz_id: str = None,
+        group_name: str = None,
+        group_set_name: str = None,
+        open_conversation_id: str = None,
+        open_group_set_id: str = None,
+        open_team_id: str = None,
+    ):
+        self.biz_id = biz_id
+        self.group_name = group_name
+        self.group_set_name = group_set_name
+        self.open_conversation_id = open_conversation_id
+        self.open_group_set_id = open_group_set_id
+        self.open_team_id = open_team_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_id is not None:
+            result['bizId'] = self.biz_id
+        if self.group_name is not None:
+            result['groupName'] = self.group_name
+        if self.group_set_name is not None:
+            result['groupSetName'] = self.group_set_name
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.open_group_set_id is not None:
+            result['openGroupSetId'] = self.open_group_set_id
+        if self.open_team_id is not None:
+            result['openTeamId'] = self.open_team_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizId') is not None:
+            self.biz_id = m.get('bizId')
+        if m.get('groupName') is not None:
+            self.group_name = m.get('groupName')
+        if m.get('groupSetName') is not None:
+            self.group_set_name = m.get('groupSetName')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('openGroupSetId') is not None:
+            self.open_group_set_id = m.get('openGroupSetId')
+        if m.get('openTeamId') is not None:
+            self.open_team_id = m.get('openTeamId')
+        return self
+
+
+class QuerySendMsgTaskStatisticsResponseBodyRecordsGroupUserReadStatistics(TeaModel):
+    def __init__(
+        self,
+        open_batch_task_id: str = None,
+        open_conversation_id: str = None,
+        read_user_inc: int = None,
+        send_user_inc: int = None,
+        un_read_user_inc: int = None,
+    ):
+        self.open_batch_task_id = open_batch_task_id
+        self.open_conversation_id = open_conversation_id
+        self.read_user_inc = read_user_inc
+        self.send_user_inc = send_user_inc
+        self.un_read_user_inc = un_read_user_inc
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_batch_task_id is not None:
+            result['openBatchTaskId'] = self.open_batch_task_id
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.read_user_inc is not None:
+            result['readUserInc'] = self.read_user_inc
+        if self.send_user_inc is not None:
+            result['sendUserInc'] = self.send_user_inc
+        if self.un_read_user_inc is not None:
+            result['unReadUserInc'] = self.un_read_user_inc
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openBatchTaskId') is not None:
+            self.open_batch_task_id = m.get('openBatchTaskId')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('readUserInc') is not None:
+            self.read_user_inc = m.get('readUserInc')
+        if m.get('sendUserInc') is not None:
+            self.send_user_inc = m.get('sendUserInc')
+        if m.get('unReadUserInc') is not None:
+            self.un_read_user_inc = m.get('unReadUserInc')
+        return self
+
+
+class QuerySendMsgTaskStatisticsResponseBodyRecords(TeaModel):
+    def __init__(
+        self,
+        error_detail: str = None,
+        group: QuerySendMsgTaskStatisticsResponseBodyRecordsGroup = None,
+        group_user_read_statistics: QuerySendMsgTaskStatisticsResponseBodyRecordsGroupUserReadStatistics = None,
+        open_msg_id: str = None,
+        status: str = None,
+    ):
+        self.error_detail = error_detail
+        self.group = group
+        self.group_user_read_statistics = group_user_read_statistics
+        self.open_msg_id = open_msg_id
+        self.status = status
+
+    def validate(self):
+        if self.group:
+            self.group.validate()
+        if self.group_user_read_statistics:
+            self.group_user_read_statistics.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.error_detail is not None:
+            result['errorDetail'] = self.error_detail
+        if self.group is not None:
+            result['group'] = self.group.to_map()
+        if self.group_user_read_statistics is not None:
+            result['groupUserReadStatistics'] = self.group_user_read_statistics.to_map()
+        if self.open_msg_id is not None:
+            result['openMsgId'] = self.open_msg_id
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('errorDetail') is not None:
+            self.error_detail = m.get('errorDetail')
+        if m.get('group') is not None:
+            temp_model = QuerySendMsgTaskStatisticsResponseBodyRecordsGroup()
+            self.group = temp_model.from_map(m['group'])
+        if m.get('groupUserReadStatistics') is not None:
+            temp_model = QuerySendMsgTaskStatisticsResponseBodyRecordsGroupUserReadStatistics()
+            self.group_user_read_statistics = temp_model.from_map(m['groupUserReadStatistics'])
+        if m.get('openMsgId') is not None:
+            self.open_msg_id = m.get('openMsgId')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class QuerySendMsgTaskStatisticsResponseBody(TeaModel):
+    def __init__(
+        self,
+        max_results: int = None,
+        next_token: str = None,
+        records: List[QuerySendMsgTaskStatisticsResponseBodyRecords] = None,
+        total_count: int = None,
+    ):
+        self.max_results = max_results
+        self.next_token = next_token
+        self.records = records
+        # Id of the request
+        self.total_count = total_count
+
+    def validate(self):
+        if self.records:
+            for k in self.records:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        result['records'] = []
+        if self.records is not None:
+            for k in self.records:
+                result['records'].append(k.to_map() if k else None)
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        self.records = []
+        if m.get('records') is not None:
+            for k in m.get('records'):
+                temp_model = QuerySendMsgTaskStatisticsResponseBodyRecords()
+                self.records.append(temp_model.from_map(k))
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class QuerySendMsgTaskStatisticsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QuerySendMsgTaskStatisticsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QuerySendMsgTaskStatisticsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QuerySendMsgTaskStatisticsDetailHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QuerySendMsgTaskStatisticsDetailRequest(TeaModel):
+    def __init__(
+        self,
+        max_results: int = None,
+        next_token: str = None,
+        open_batch_task_id: str = None,
+        open_conversation_id: str = None,
+        open_team_id: str = None,
+    ):
+        # 每页条数
+        self.max_results = max_results
+        # 游标，首页传递空
+        self.next_token = next_token
+        # 开放群发任务ID
+        self.open_batch_task_id = open_batch_task_id
+        # 开放会话ID
+        self.open_conversation_id = open_conversation_id
+        # 开放团队ID
+        self.open_team_id = open_team_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.open_batch_task_id is not None:
+            result['openBatchTaskId'] = self.open_batch_task_id
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.open_team_id is not None:
+            result['openTeamId'] = self.open_team_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('openBatchTaskId') is not None:
+            self.open_batch_task_id = m.get('openBatchTaskId')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('openTeamId') is not None:
+            self.open_team_id = m.get('openTeamId')
+        return self
+
+
+class QuerySendMsgTaskStatisticsDetailResponseBodyRecords(TeaModel):
+    def __init__(
+        self,
+        open_batch_task_id: str = None,
+        open_conversation_id: str = None,
+        read_status: int = None,
+        read_time_str: str = None,
+        receiver_name: str = None,
+        receiver_union_id: str = None,
+    ):
+        self.open_batch_task_id = open_batch_task_id
+        self.open_conversation_id = open_conversation_id
+        self.read_status = read_status
+        self.read_time_str = read_time_str
+        self.receiver_name = receiver_name
+        self.receiver_union_id = receiver_union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_batch_task_id is not None:
+            result['openBatchTaskId'] = self.open_batch_task_id
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.read_status is not None:
+            result['readStatus'] = self.read_status
+        if self.read_time_str is not None:
+            result['readTimeStr'] = self.read_time_str
+        if self.receiver_name is not None:
+            result['receiverName'] = self.receiver_name
+        if self.receiver_union_id is not None:
+            result['receiverUnionId'] = self.receiver_union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openBatchTaskId') is not None:
+            self.open_batch_task_id = m.get('openBatchTaskId')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('readStatus') is not None:
+            self.read_status = m.get('readStatus')
+        if m.get('readTimeStr') is not None:
+            self.read_time_str = m.get('readTimeStr')
+        if m.get('receiverName') is not None:
+            self.receiver_name = m.get('receiverName')
+        if m.get('receiverUnionId') is not None:
+            self.receiver_union_id = m.get('receiverUnionId')
+        return self
+
+
+class QuerySendMsgTaskStatisticsDetailResponseBody(TeaModel):
+    def __init__(
+        self,
+        max_results: int = None,
+        next_token: str = None,
+        records: List[QuerySendMsgTaskStatisticsDetailResponseBodyRecords] = None,
+        total_count: int = None,
+    ):
+        self.max_results = max_results
+        self.next_token = next_token
+        self.records = records
+        # Id of the request
+        self.total_count = total_count
+
+    def validate(self):
+        if self.records:
+            for k in self.records:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        result['records'] = []
+        if self.records is not None:
+            for k in self.records:
+                result['records'].append(k.to_map() if k else None)
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        self.records = []
+        if m.get('records') is not None:
+            for k in m.get('records'):
+                temp_model = QuerySendMsgTaskStatisticsDetailResponseBodyRecords()
+                self.records.append(temp_model.from_map(k))
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class QuerySendMsgTaskStatisticsDetailResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QuerySendMsgTaskStatisticsDetailResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QuerySendMsgTaskStatisticsDetailResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

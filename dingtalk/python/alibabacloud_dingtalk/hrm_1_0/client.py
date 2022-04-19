@@ -832,7 +832,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.SolutionTaskInitResponse(),
-            self.do_roarequest('SolutionTaskInit', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/solutions/tasks/init', 'none', req, runtime)
+            self.do_roarequest('SolutionTaskInit', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/solutions/tasks/init', 'json', req, runtime)
         )
 
     async def solution_task_init_with_options_async(
@@ -874,7 +874,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.SolutionTaskInitResponse(),
-            await self.do_roarequest_async('SolutionTaskInit', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/solutions/tasks/init', 'none', req, runtime)
+            await self.do_roarequest_async('SolutionTaskInit', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/solutions/tasks/init', 'json', req, runtime)
         )
 
     def solution_task_save(
@@ -932,7 +932,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.SolutionTaskSaveResponse(),
-            self.do_roarequest('SolutionTaskSave', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/solutions/tasks/save', 'none', req, runtime)
+            self.do_roarequest('SolutionTaskSave', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/solutions/tasks/save', 'json', req, runtime)
         )
 
     async def solution_task_save_with_options_async(
@@ -974,5 +974,5 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.SolutionTaskSaveResponse(),
-            await self.do_roarequest_async('SolutionTaskSave', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/solutions/tasks/save', 'none', req, runtime)
+            await self.do_roarequest_async('SolutionTaskSave', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/solutions/tasks/save', 'json', req, runtime)
         )

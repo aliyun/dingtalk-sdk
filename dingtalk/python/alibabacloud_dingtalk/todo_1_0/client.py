@@ -657,6 +657,84 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetTodoTypeConfig', 'todo_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/todo/users/{union_id}/configs/types/{card_type_id}', 'json', req, runtime)
         )
 
+    def query_org_todo_by_user(
+        self,
+        union_id: str,
+        request: dingtalktodo__1__0_models.QueryOrgTodoByUserRequest,
+    ) -> dingtalktodo__1__0_models.QueryOrgTodoByUserResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktodo__1__0_models.QueryOrgTodoByUserHeaders()
+        return self.query_org_todo_by_user_with_options(union_id, request, headers, runtime)
+
+    async def query_org_todo_by_user_async(
+        self,
+        union_id: str,
+        request: dingtalktodo__1__0_models.QueryOrgTodoByUserRequest,
+    ) -> dingtalktodo__1__0_models.QueryOrgTodoByUserResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktodo__1__0_models.QueryOrgTodoByUserHeaders()
+        return await self.query_org_todo_by_user_with_options_async(union_id, request, headers, runtime)
+
+    def query_org_todo_by_user_with_options(
+        self,
+        union_id: str,
+        request: dingtalktodo__1__0_models.QueryOrgTodoByUserRequest,
+        headers: dingtalktodo__1__0_models.QueryOrgTodoByUserHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktodo__1__0_models.QueryOrgTodoByUserResponse:
+        UtilClient.validate_model(request)
+        union_id = OpenApiUtilClient.get_encode_param(union_id)
+        body = {}
+        if not UtilClient.is_unset(request.is_done):
+            body['isDone'] = request.is_done
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalktodo__1__0_models.QueryOrgTodoByUserResponse(),
+            self.do_roarequest('QueryOrgTodoByUser', 'todo_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/todo/users/{union_id}/organizations/tasks/query', 'json', req, runtime)
+        )
+
+    async def query_org_todo_by_user_with_options_async(
+        self,
+        union_id: str,
+        request: dingtalktodo__1__0_models.QueryOrgTodoByUserRequest,
+        headers: dingtalktodo__1__0_models.QueryOrgTodoByUserHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktodo__1__0_models.QueryOrgTodoByUserResponse:
+        UtilClient.validate_model(request)
+        union_id = OpenApiUtilClient.get_encode_param(union_id)
+        body = {}
+        if not UtilClient.is_unset(request.is_done):
+            body['isDone'] = request.is_done
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalktodo__1__0_models.QueryOrgTodoByUserResponse(),
+            await self.do_roarequest_async('QueryOrgTodoByUser', 'todo_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/todo/users/{union_id}/organizations/tasks/query', 'json', req, runtime)
+        )
+
     def query_org_todo_tasks(
         self,
         union_id: str,

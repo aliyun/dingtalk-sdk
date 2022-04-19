@@ -743,6 +743,98 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('BatchGetGroupSetConfig', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/groupSetConfigs/batchQuery', 'json', req, runtime)
         )
 
+    def batch_query_send_message_task(
+        self,
+        request: dingtalkservice_group__1__0_models.BatchQuerySendMessageTaskRequest,
+    ) -> dingtalkservice_group__1__0_models.BatchQuerySendMessageTaskResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.BatchQuerySendMessageTaskHeaders()
+        return self.batch_query_send_message_task_with_options(request, headers, runtime)
+
+    async def batch_query_send_message_task_async(
+        self,
+        request: dingtalkservice_group__1__0_models.BatchQuerySendMessageTaskRequest,
+    ) -> dingtalkservice_group__1__0_models.BatchQuerySendMessageTaskResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.BatchQuerySendMessageTaskHeaders()
+        return await self.batch_query_send_message_task_with_options_async(request, headers, runtime)
+
+    def batch_query_send_message_task_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.BatchQuerySendMessageTaskRequest,
+        headers: dingtalkservice_group__1__0_models.BatchQuerySendMessageTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.BatchQuerySendMessageTaskResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.get_read_count):
+            body['getReadCount'] = request.get_read_count
+        if not UtilClient.is_unset(request.gmt_create_end):
+            body['gmtCreateEnd'] = request.gmt_create_end
+        if not UtilClient.is_unset(request.gmt_create_start):
+            body['gmtCreateStart'] = request.gmt_create_start
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.open_group_set_id):
+            body['openGroupSetId'] = request.open_group_set_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.task_name):
+            body['taskName'] = request.task_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.BatchQuerySendMessageTaskResponse(),
+            self.do_roarequest('BatchQuerySendMessageTask', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/tasks/query', 'json', req, runtime)
+        )
+
+    async def batch_query_send_message_task_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.BatchQuerySendMessageTaskRequest,
+        headers: dingtalkservice_group__1__0_models.BatchQuerySendMessageTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.BatchQuerySendMessageTaskResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.get_read_count):
+            body['getReadCount'] = request.get_read_count
+        if not UtilClient.is_unset(request.gmt_create_end):
+            body['gmtCreateEnd'] = request.gmt_create_end
+        if not UtilClient.is_unset(request.gmt_create_start):
+            body['gmtCreateStart'] = request.gmt_create_start
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.open_group_set_id):
+            body['openGroupSetId'] = request.open_group_set_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.task_name):
+            body['taskName'] = request.task_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.BatchQuerySendMessageTaskResponse(),
+            await self.do_roarequest_async('BatchQuerySendMessageTask', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/tasks/query', 'json', req, runtime)
+        )
+
     def bound_template_to_team(
         self,
         request: dingtalkservice_group__1__0_models.BoundTemplateToTeamRequest,
@@ -2005,6 +2097,162 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.QueryGroupSetResponse(),
             await self.do_roarequest_async('QueryGroupSet', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/groupSets', 'json', req, runtime)
+        )
+
+    def query_send_msg_task_statistics(
+        self,
+        request: dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsRequest,
+    ) -> dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsHeaders()
+        return self.query_send_msg_task_statistics_with_options(request, headers, runtime)
+
+    async def query_send_msg_task_statistics_async(
+        self,
+        request: dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsRequest,
+    ) -> dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsHeaders()
+        return await self.query_send_msg_task_statistics_with_options_async(request, headers, runtime)
+
+    def query_send_msg_task_statistics_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsRequest,
+        headers: dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.open_batch_task_id):
+            body['openBatchTaskId'] = request.open_batch_task_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsResponse(),
+            self.do_roarequest('QuerySendMsgTaskStatistics', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/tasks/statistics/query', 'json', req, runtime)
+        )
+
+    async def query_send_msg_task_statistics_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsRequest,
+        headers: dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.open_batch_task_id):
+            body['openBatchTaskId'] = request.open_batch_task_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsResponse(),
+            await self.do_roarequest_async('QuerySendMsgTaskStatistics', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/tasks/statistics/query', 'json', req, runtime)
+        )
+
+    def query_send_msg_task_statistics_detail(
+        self,
+        request: dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsDetailRequest,
+    ) -> dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsDetailResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsDetailHeaders()
+        return self.query_send_msg_task_statistics_detail_with_options(request, headers, runtime)
+
+    async def query_send_msg_task_statistics_detail_async(
+        self,
+        request: dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsDetailRequest,
+    ) -> dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsDetailResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsDetailHeaders()
+        return await self.query_send_msg_task_statistics_detail_with_options_async(request, headers, runtime)
+
+    def query_send_msg_task_statistics_detail_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsDetailRequest,
+        headers: dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsDetailResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.open_batch_task_id):
+            body['openBatchTaskId'] = request.open_batch_task_id
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsDetailResponse(),
+            self.do_roarequest('QuerySendMsgTaskStatisticsDetail', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/tasks/statistics/details/query', 'json', req, runtime)
+        )
+
+    async def query_send_msg_task_statistics_detail_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsDetailRequest,
+        headers: dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsDetailResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.open_batch_task_id):
+            body['openBatchTaskId'] = request.open_batch_task_id
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsDetailResponse(),
+            await self.do_roarequest_async('QuerySendMsgTaskStatisticsDetail', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/tasks/statistics/details/query', 'json', req, runtime)
         )
 
     def query_service_group_message_read_status(
