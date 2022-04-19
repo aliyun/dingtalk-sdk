@@ -6,16 +6,16 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
 {
-    public class SolutionTaskSaveResponse : TeaModel {
+    public class QueryOrgTodoByUserResponse : TeaModel {
         [NameInMap("headers")]
         [Validation(Required=true)]
         public Dictionary<string, string> Headers { get; set; }
 
         [NameInMap("body")]
         [Validation(Required=true)]
-        public SolutionTaskSaveResponseBody Body { get; set; }
+        public QueryOrgTodoByUserResponseBody Body { get; set; }
 
     }
 

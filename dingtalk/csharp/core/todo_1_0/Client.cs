@@ -700,6 +700,88 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             return TeaModel.ToObject<GetTodoTypeConfigResponse>(await DoROARequestAsync("GetTodoTypeConfig", "todo_1.0", "HTTP", "GET", "AK", "/v1.0/todo/users/" + unionId + "/configs/types/" + cardTypeId, "json", req, runtime));
         }
 
+        public QueryOrgTodoByUserResponse QueryOrgTodoByUser(string unionId, QueryOrgTodoByUserRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryOrgTodoByUserHeaders headers = new QueryOrgTodoByUserHeaders();
+            return QueryOrgTodoByUserWithOptions(unionId, request, headers, runtime);
+        }
+
+        public async Task<QueryOrgTodoByUserResponse> QueryOrgTodoByUserAsync(string unionId, QueryOrgTodoByUserRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryOrgTodoByUserHeaders headers = new QueryOrgTodoByUserHeaders();
+            return await QueryOrgTodoByUserWithOptionsAsync(unionId, request, headers, runtime);
+        }
+
+        public QueryOrgTodoByUserResponse QueryOrgTodoByUserWithOptions(string unionId, QueryOrgTodoByUserRequest request, QueryOrgTodoByUserHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            unionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(unionId);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsDone))
+            {
+                body["isDone"] = request.IsDone;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                body["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                body["nextToken"] = request.NextToken;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<QueryOrgTodoByUserResponse>(DoROARequest("QueryOrgTodoByUser", "todo_1.0", "HTTP", "POST", "AK", "/v1.0/todo/users/" + unionId + "/organizations/tasks/query", "json", req, runtime));
+        }
+
+        public async Task<QueryOrgTodoByUserResponse> QueryOrgTodoByUserWithOptionsAsync(string unionId, QueryOrgTodoByUserRequest request, QueryOrgTodoByUserHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            unionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(unionId);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsDone))
+            {
+                body["isDone"] = request.IsDone;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                body["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                body["nextToken"] = request.NextToken;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<QueryOrgTodoByUserResponse>(await DoROARequestAsync("QueryOrgTodoByUser", "todo_1.0", "HTTP", "POST", "AK", "/v1.0/todo/users/" + unionId + "/organizations/tasks/query", "json", req, runtime));
+        }
+
         public QueryOrgTodoTasksResponse QueryOrgTodoTasks(string unionId, QueryOrgTodoTasksRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

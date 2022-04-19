@@ -954,7 +954,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<SolutionTaskInitResponse>(DoROARequest("SolutionTaskInit", "hrm_1.0", "HTTP", "POST", "AK", "/v1.0/hrm/solutions/tasks/init", "none", req, runtime));
+            return TeaModel.ToObject<SolutionTaskInitResponse>(DoROARequest("SolutionTaskInit", "hrm_1.0", "HTTP", "POST", "AK", "/v1.0/hrm/solutions/tasks/init", "json", req, runtime));
         }
 
         public async Task<SolutionTaskInitResponse> SolutionTaskInitWithOptionsAsync(SolutionTaskInitRequest request, SolutionTaskInitHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1013,7 +1013,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<SolutionTaskInitResponse>(await DoROARequestAsync("SolutionTaskInit", "hrm_1.0", "HTTP", "POST", "AK", "/v1.0/hrm/solutions/tasks/init", "none", req, runtime));
+            return TeaModel.ToObject<SolutionTaskInitResponse>(await DoROARequestAsync("SolutionTaskInit", "hrm_1.0", "HTTP", "POST", "AK", "/v1.0/hrm/solutions/tasks/init", "json", req, runtime));
         }
 
         public SolutionTaskSaveResponse SolutionTaskSave(SolutionTaskSaveRequest request)
@@ -1086,7 +1086,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<SolutionTaskSaveResponse>(DoROARequest("SolutionTaskSave", "hrm_1.0", "HTTP", "POST", "AK", "/v1.0/hrm/solutions/tasks/save", "none", req, runtime));
+            return TeaModel.ToObject<SolutionTaskSaveResponse>(DoROARequest("SolutionTaskSave", "hrm_1.0", "HTTP", "POST", "AK", "/v1.0/hrm/solutions/tasks/save", "json", req, runtime));
         }
 
         public async Task<SolutionTaskSaveResponse> SolutionTaskSaveWithOptionsAsync(SolutionTaskSaveRequest request, SolutionTaskSaveHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1145,7 +1145,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<SolutionTaskSaveResponse>(await DoROARequestAsync("SolutionTaskSave", "hrm_1.0", "HTTP", "POST", "AK", "/v1.0/hrm/solutions/tasks/save", "none", req, runtime));
+            return TeaModel.ToObject<SolutionTaskSaveResponse>(await DoROARequestAsync("SolutionTaskSave", "hrm_1.0", "HTTP", "POST", "AK", "/v1.0/hrm/solutions/tasks/save", "json", req, runtime));
         }
 
     }
