@@ -8,6 +8,10 @@ public class SolutionTaskInitResponse extends TeaModel {
     @Validation(required = true)
     public java.util.Map<String, String> headers;
 
+    @NameInMap("body")
+    @Validation(required = true)
+    public SolutionTaskInitResponseBody body;
+
     public static SolutionTaskInitResponse build(java.util.Map<String, ?> map) throws Exception {
         SolutionTaskInitResponse self = new SolutionTaskInitResponse();
         return TeaModel.build(map, self);
@@ -19,6 +23,14 @@ public class SolutionTaskInitResponse extends TeaModel {
     }
     public java.util.Map<String, String> getHeaders() {
         return this.headers;
+    }
+
+    public SolutionTaskInitResponse setBody(SolutionTaskInitResponseBody body) {
+        this.body = body;
+        return this;
+    }
+    public SolutionTaskInitResponseBody getBody() {
+        return this.body;
     }
 
 }
