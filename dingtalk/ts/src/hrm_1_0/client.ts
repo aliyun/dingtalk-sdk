@@ -1070,17 +1070,39 @@ export class SolutionTaskInitRequest extends $tea.Model {
   }
 }
 
+export class SolutionTaskInitResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SolutionTaskInitResponse extends $tea.Model {
   headers: { [key: string]: string };
+  body: SolutionTaskInitResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      body: 'body',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SolutionTaskInitResponseBody,
     };
   }
 
@@ -1154,17 +1176,39 @@ export class SolutionTaskSaveRequest extends $tea.Model {
   }
 }
 
+export class SolutionTaskSaveResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SolutionTaskSaveResponse extends $tea.Model {
   headers: { [key: string]: string };
+  body: SolutionTaskSaveResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      body: 'body',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SolutionTaskSaveResponseBody,
     };
   }
 
@@ -2177,7 +2221,7 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SolutionTaskInitResponse>(await this.doROARequest("SolutionTaskInit", "hrm_1.0", "HTTP", "POST", "AK", `/v1.0/hrm/solutions/tasks/init`, "none", req, runtime), new SolutionTaskInitResponse({}));
+    return $tea.cast<SolutionTaskInitResponse>(await this.doROARequest("SolutionTaskInit", "hrm_1.0", "HTTP", "POST", "AK", `/v1.0/hrm/solutions/tasks/init`, "json", req, runtime), new SolutionTaskInitResponse({}));
   }
 
   async solutionTaskSave(request: SolutionTaskSaveRequest): Promise<SolutionTaskSaveResponse> {
@@ -2240,7 +2284,7 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SolutionTaskSaveResponse>(await this.doROARequest("SolutionTaskSave", "hrm_1.0", "HTTP", "POST", "AK", `/v1.0/hrm/solutions/tasks/save`, "none", req, runtime), new SolutionTaskSaveResponse({}));
+    return $tea.cast<SolutionTaskSaveResponse>(await this.doROARequest("SolutionTaskSave", "hrm_1.0", "HTTP", "POST", "AK", `/v1.0/hrm/solutions/tasks/save`, "json", req, runtime), new SolutionTaskSaveResponse({}));
   }
 
 }

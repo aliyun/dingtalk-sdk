@@ -995,6 +995,100 @@ export class GetTodoTypeConfigResponse extends $tea.Model {
   }
 }
 
+export class QueryOrgTodoByUserHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryOrgTodoByUserRequest extends $tea.Model {
+  isDone?: boolean;
+  maxResults?: number;
+  nextToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      isDone: 'isDone',
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      isDone: 'boolean',
+      maxResults: 'number',
+      nextToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryOrgTodoByUserResponseBody extends $tea.Model {
+  maxResults?: number;
+  nextToken?: string;
+  todoCards?: QueryOrgTodoByUserResponseBodyTodoCards[];
+  static names(): { [key: string]: string } {
+    return {
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      todoCards: 'todoCards',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxResults: 'number',
+      nextToken: 'string',
+      todoCards: { 'type': 'array', 'itemType': QueryOrgTodoByUserResponseBodyTodoCards },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryOrgTodoByUserResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryOrgTodoByUserResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryOrgTodoByUserResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryOrgTodoTasksHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1899,6 +1993,77 @@ export class GetTodoTypeConfigResponseBodyContentFieldList extends $tea.Model {
   }
 }
 
+export class QueryOrgTodoByUserResponseBodyTodoCardsDetailUrl extends $tea.Model {
+  appUrl?: string;
+  pcUrl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appUrl: 'appUrl',
+      pcUrl: 'pcUrl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appUrl: 'string',
+      pcUrl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryOrgTodoByUserResponseBodyTodoCards extends $tea.Model {
+  bizTag?: string;
+  createdTime?: number;
+  creatorId?: string;
+  detailUrl?: QueryOrgTodoByUserResponseBodyTodoCardsDetailUrl;
+  dueTime?: number;
+  isDone?: boolean;
+  modifiedTime?: number;
+  priority?: number;
+  sourceId?: string;
+  subject?: string;
+  taskId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizTag: 'bizTag',
+      createdTime: 'createdTime',
+      creatorId: 'creatorId',
+      detailUrl: 'detailUrl',
+      dueTime: 'dueTime',
+      isDone: 'isDone',
+      modifiedTime: 'modifiedTime',
+      priority: 'priority',
+      sourceId: 'sourceId',
+      subject: 'subject',
+      taskId: 'taskId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizTag: 'string',
+      createdTime: 'number',
+      creatorId: 'string',
+      detailUrl: QueryOrgTodoByUserResponseBodyTodoCardsDetailUrl,
+      dueTime: 'number',
+      isDone: 'boolean',
+      modifiedTime: 'number',
+      priority: 'number',
+      sourceId: 'string',
+      subject: 'string',
+      taskId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryOrgTodoTasksResponseBodyTodoCardsDetailUrl extends $tea.Model {
   appUrl?: string;
   pcUrl?: string;
@@ -2558,6 +2723,44 @@ export default class Client extends OpenApi {
       headers: realHeaders,
     });
     return $tea.cast<GetTodoTypeConfigResponse>(await this.doROARequest("GetTodoTypeConfig", "todo_1.0", "HTTP", "GET", "AK", `/v1.0/todo/users/${unionId}/configs/types/${cardTypeId}`, "json", req, runtime), new GetTodoTypeConfigResponse({}));
+  }
+
+  async queryOrgTodoByUser(unionId: string, request: QueryOrgTodoByUserRequest): Promise<QueryOrgTodoByUserResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryOrgTodoByUserHeaders({ });
+    return await this.queryOrgTodoByUserWithOptions(unionId, request, headers, runtime);
+  }
+
+  async queryOrgTodoByUserWithOptions(unionId: string, request: QueryOrgTodoByUserRequest, headers: QueryOrgTodoByUserHeaders, runtime: $Util.RuntimeOptions): Promise<QueryOrgTodoByUserResponse> {
+    Util.validateModel(request);
+    unionId = OpenApiUtil.getEncodeParam(unionId);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.isDone)) {
+      body["isDone"] = request.isDone;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      body["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      body["nextToken"] = request.nextToken;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<QueryOrgTodoByUserResponse>(await this.doROARequest("QueryOrgTodoByUser", "todo_1.0", "HTTP", "POST", "AK", `/v1.0/todo/users/${unionId}/organizations/tasks/query`, "json", req, runtime), new QueryOrgTodoByUserResponse({}));
   }
 
   async queryOrgTodoTasks(unionId: string, request: QueryOrgTodoTasksRequest): Promise<QueryOrgTodoTasksResponse> {
