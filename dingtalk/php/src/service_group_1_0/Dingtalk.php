@@ -29,6 +29,9 @@ use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\AssignTicketResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\BatchGetGroupSetConfigHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\BatchGetGroupSetConfigRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\BatchGetGroupSetConfigResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\BatchQuerySendMessageTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\BatchQuerySendMessageTaskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\BatchQuerySendMessageTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\BoundTemplateToTeamHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\BoundTemplateToTeamRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\BoundTemplateToTeamResponse;
@@ -79,6 +82,12 @@ use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryGroupSetHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryGroupSetRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryGroupSetResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QuerySendMsgTaskStatisticsDetailHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QuerySendMsgTaskStatisticsDetailRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QuerySendMsgTaskStatisticsDetailResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QuerySendMsgTaskStatisticsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QuerySendMsgTaskStatisticsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QuerySendMsgTaskStatisticsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryServiceGroupMessageReadStatusHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryServiceGroupMessageReadStatusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryServiceGroupMessageReadStatusResponse;
@@ -627,6 +636,69 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return BatchGetGroupSetConfigResponse::fromMap($this->doROARequest('BatchGetGroupSetConfig', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/groupSetConfigs/batchQuery', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param BatchQuerySendMessageTaskRequest $request
+     *
+     * @return BatchQuerySendMessageTaskResponse
+     */
+    public function batchQuerySendMessageTask($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchQuerySendMessageTaskHeaders([]);
+
+        return $this->batchQuerySendMessageTaskWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param BatchQuerySendMessageTaskRequest $request
+     * @param BatchQuerySendMessageTaskHeaders $headers
+     * @param RuntimeOptions                   $runtime
+     *
+     * @return BatchQuerySendMessageTaskResponse
+     */
+    public function batchQuerySendMessageTaskWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->getReadCount)) {
+            @$body['getReadCount'] = $request->getReadCount;
+        }
+        if (!Utils::isUnset($request->gmtCreateEnd)) {
+            @$body['gmtCreateEnd'] = $request->gmtCreateEnd;
+        }
+        if (!Utils::isUnset($request->gmtCreateStart)) {
+            @$body['gmtCreateStart'] = $request->gmtCreateStart;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            @$body['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$body['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->openGroupSetId)) {
+            @$body['openGroupSetId'] = $request->openGroupSetId;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$body['openTeamId'] = $request->openTeamId;
+        }
+        if (!Utils::isUnset($request->taskName)) {
+            @$body['taskName'] = $request->taskName;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return BatchQuerySendMessageTaskResponse::fromMap($this->doROARequest('BatchQuerySendMessageTask', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/tasks/query', 'json', $req, $runtime));
     }
 
     /**
@@ -1474,6 +1546,111 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryGroupSetResponse::fromMap($this->doROARequest('QueryGroupSet', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', '/v1.0/serviceGroup/groupSets', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QuerySendMsgTaskStatisticsRequest $request
+     *
+     * @return QuerySendMsgTaskStatisticsResponse
+     */
+    public function querySendMsgTaskStatistics($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QuerySendMsgTaskStatisticsHeaders([]);
+
+        return $this->querySendMsgTaskStatisticsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QuerySendMsgTaskStatisticsRequest $request
+     * @param QuerySendMsgTaskStatisticsHeaders $headers
+     * @param RuntimeOptions                    $runtime
+     *
+     * @return QuerySendMsgTaskStatisticsResponse
+     */
+    public function querySendMsgTaskStatisticsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            @$body['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$body['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->openBatchTaskId)) {
+            @$body['openBatchTaskId'] = $request->openBatchTaskId;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$body['openTeamId'] = $request->openTeamId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return QuerySendMsgTaskStatisticsResponse::fromMap($this->doROARequest('QuerySendMsgTaskStatistics', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/tasks/statistics/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QuerySendMsgTaskStatisticsDetailRequest $request
+     *
+     * @return QuerySendMsgTaskStatisticsDetailResponse
+     */
+    public function querySendMsgTaskStatisticsDetail($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QuerySendMsgTaskStatisticsDetailHeaders([]);
+
+        return $this->querySendMsgTaskStatisticsDetailWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QuerySendMsgTaskStatisticsDetailRequest $request
+     * @param QuerySendMsgTaskStatisticsDetailHeaders $headers
+     * @param RuntimeOptions                          $runtime
+     *
+     * @return QuerySendMsgTaskStatisticsDetailResponse
+     */
+    public function querySendMsgTaskStatisticsDetailWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            @$body['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$body['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->openBatchTaskId)) {
+            @$body['openBatchTaskId'] = $request->openBatchTaskId;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$body['openTeamId'] = $request->openTeamId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return QuerySendMsgTaskStatisticsDetailResponse::fromMap($this->doROARequest('QuerySendMsgTaskStatisticsDetail', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/tasks/statistics/details/query', 'json', $req, $runtime));
     }
 
     /**

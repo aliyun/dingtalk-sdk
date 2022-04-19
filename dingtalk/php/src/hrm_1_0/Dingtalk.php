@@ -626,7 +626,7 @@ class Dingtalk extends OpenApiClient
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return SolutionTaskInitResponse::fromMap($this->doROARequest('SolutionTaskInit', 'hrm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/hrm/solutions/tasks/init', 'none', $req, $runtime));
+        return SolutionTaskInitResponse::fromMap($this->doROARequest('SolutionTaskInit', 'hrm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/hrm/solutions/tasks/init', 'json', $req, $runtime));
     }
 
     /**
@@ -694,6 +694,6 @@ class Dingtalk extends OpenApiClient
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return SolutionTaskSaveResponse::fromMap($this->doROARequest('SolutionTaskSave', 'hrm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/hrm/solutions/tasks/save', 'none', $req, $runtime));
+        return SolutionTaskSaveResponse::fromMap($this->doROARequest('SolutionTaskSave', 'hrm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/hrm/solutions/tasks/save', 'json', $req, $runtime));
     }
 }

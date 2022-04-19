@@ -25,6 +25,9 @@ use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\GetTodoTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\GetTodoTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\GetTodoTypeConfigHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\GetTodoTypeConfigResponse;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\QueryOrgTodoByUserHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\QueryOrgTodoByUserRequest;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\QueryOrgTodoByUserResponse;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\QueryOrgTodoTasksHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\QueryOrgTodoTasksRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\QueryOrgTodoTasksResponse;
@@ -470,6 +473,57 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetTodoTypeConfigResponse::fromMap($this->doROARequest('GetTodoTypeConfig', 'todo_1.0', 'HTTP', 'GET', 'AK', '/v1.0/todo/users/' . $unionId . '/configs/types/' . $cardTypeId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                    $unionId
+     * @param QueryOrgTodoByUserRequest $request
+     *
+     * @return QueryOrgTodoByUserResponse
+     */
+    public function queryOrgTodoByUser($unionId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryOrgTodoByUserHeaders([]);
+
+        return $this->queryOrgTodoByUserWithOptions($unionId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                    $unionId
+     * @param QueryOrgTodoByUserRequest $request
+     * @param QueryOrgTodoByUserHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return QueryOrgTodoByUserResponse
+     */
+    public function queryOrgTodoByUserWithOptions($unionId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $unionId = OpenApiUtilClient::getEncodeParam($unionId);
+        $body    = [];
+        if (!Utils::isUnset($request->isDone)) {
+            @$body['isDone'] = $request->isDone;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            @$body['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$body['nextToken'] = $request->nextToken;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return QueryOrgTodoByUserResponse::fromMap($this->doROARequest('QueryOrgTodoByUser', 'todo_1.0', 'HTTP', 'POST', 'AK', '/v1.0/todo/users/' . $unionId . '/organizations/tasks/query', 'json', $req, $runtime));
     }
 
     /**

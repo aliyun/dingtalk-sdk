@@ -2,11 +2,11 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class SolutionTaskSaveResponse extends Model
+class QuerySendMsgTaskStatisticsDetailResponse extends Model
 {
     /**
      * @var string[]
@@ -14,7 +14,7 @@ class SolutionTaskSaveResponse extends Model
     public $headers;
 
     /**
-     * @var SolutionTaskSaveResponseBody
+     * @var QuerySendMsgTaskStatisticsDetailResponseBody
      */
     public $body;
     protected $_name = [
@@ -44,7 +44,7 @@ class SolutionTaskSaveResponse extends Model
     /**
      * @param array $map
      *
-     * @return SolutionTaskSaveResponse
+     * @return QuerySendMsgTaskStatisticsDetailResponse
      */
     public static function fromMap($map = [])
     {
@@ -53,7 +53,7 @@ class SolutionTaskSaveResponse extends Model
             $model->headers = $map['headers'];
         }
         if (isset($map['body'])) {
-            $model->body = SolutionTaskSaveResponseBody::fromMap($map['body']);
+            $model->body = QuerySendMsgTaskStatisticsDetailResponseBody::fromMap($map['body']);
         }
 
         return $model;
