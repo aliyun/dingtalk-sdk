@@ -37,6 +37,13 @@ class GetSearchTabResponseBody extends Model
     public $priority;
 
     /**
+     * @description 数据来源,非必填,默认来源为钉钉搜索内部引擎
+     *
+     * @var string
+     */
+    public $source;
+
+    /**
      * @description 数据源状态，1表示上线，0表示下线
      *
      * @var int
@@ -54,6 +61,7 @@ class GetSearchTabResponseBody extends Model
         'gmtModified' => 'gmtModified',
         'name'        => 'name',
         'priority'    => 'priority',
+        'source'      => 'source',
         'status'      => 'status',
         'tabId'       => 'tabId',
     ];
@@ -76,6 +84,9 @@ class GetSearchTabResponseBody extends Model
         }
         if (null !== $this->priority) {
             $res['priority'] = $this->priority;
+        }
+        if (null !== $this->source) {
+            $res['source'] = $this->source;
         }
         if (null !== $this->status) {
             $res['status'] = $this->status;
@@ -106,6 +117,9 @@ class GetSearchTabResponseBody extends Model
         }
         if (isset($map['priority'])) {
             $model->priority = $map['priority'];
+        }
+        if (isset($map['source'])) {
+            $model->source = $map['source'];
         }
         if (isset($map['status'])) {
             $model->status = $map['status'];

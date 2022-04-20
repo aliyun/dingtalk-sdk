@@ -121,6 +121,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->priority)) {
             @$body['priority'] = $request->priority;
         }
+        if (!Utils::isUnset($request->source)) {
+            @$body['source'] = $request->source;
+        }
         if (!Utils::isUnset($request->status)) {
             @$body['status'] = $request->status;
         }
@@ -475,6 +478,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->priority)) {
             @$body['priority'] = $request->priority;
+        }
+        if (!Utils::isUnset($request->source)) {
+            @$body['source'] = $request->source;
         }
         if (!Utils::isUnset($request->status)) {
             @$body['status'] = $request->status;

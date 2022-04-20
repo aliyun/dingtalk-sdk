@@ -343,6 +343,13 @@ class dataList extends Model
     public $status;
 
     /**
+     * @description 子订单号
+     *
+     * @var string
+     */
+    public $subOrderId;
+
+    /**
      * @description 出行人use id
      *
      * @var string
@@ -425,6 +432,7 @@ class dataList extends Model
         'specialOrder'          => 'specialOrder',
         'specialReason'         => 'specialReason',
         'status'                => 'status',
+        'subOrderId'            => 'subOrderId',
         'travelerId'            => 'travelerId',
         'travelerJobNo'         => 'travelerJobNo',
         'travelerName'          => 'travelerName',
@@ -582,6 +590,9 @@ class dataList extends Model
         }
         if (null !== $this->status) {
             $res['status'] = $this->status;
+        }
+        if (null !== $this->subOrderId) {
+            $res['subOrderId'] = $this->subOrderId;
         }
         if (null !== $this->travelerId) {
             $res['travelerId'] = $this->travelerId;
@@ -753,6 +764,9 @@ class dataList extends Model
         }
         if (isset($map['status'])) {
             $model->status = $map['status'];
+        }
+        if (isset($map['subOrderId'])) {
+            $model->subOrderId = $map['subOrderId'];
         }
         if (isset($map['travelerId'])) {
             $model->travelerId = $map['travelerId'];

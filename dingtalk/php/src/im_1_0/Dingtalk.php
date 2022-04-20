@@ -37,12 +37,21 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetSceneGroupMembersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InteractiveCardCreateInstanceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InteractiveCardCreateInstanceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InteractiveCardCreateInstanceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryGroupMemberHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryGroupMemberRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryGroupMemberResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryGroupMuteStatusHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryGroupMuteStatusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryGroupMuteStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryMembersOfGroupRoleHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryMembersOfGroupRoleRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryMembersOfGroupRoleResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QuerySingleGroupHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QuerySingleGroupRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QuerySingleGroupResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryUnReadMessageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryUnReadMessageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryUnReadMessageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\RemoveGroupMemberHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\RemoveGroupMemberRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\RemoveGroupMemberResponse;
@@ -634,6 +643,48 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param QueryGroupMemberRequest $request
+     *
+     * @return QueryGroupMemberResponse
+     */
+    public function queryGroupMember($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryGroupMemberHeaders([]);
+
+        return $this->queryGroupMemberWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryGroupMemberRequest $request
+     * @param QueryGroupMemberHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return QueryGroupMemberResponse
+     */
+    public function queryGroupMemberWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$query['openConversationId'] = $request->openConversationId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryGroupMemberResponse::fromMap($this->doROARequest('QueryGroupMember', 'im_1.0', 'HTTP', 'GET', 'AK', '/v1.0/im/interconnections/conversations/members', 'json', $req, $runtime));
+    }
+
+    /**
      * @param QueryGroupMuteStatusRequest $request
      *
      * @return QueryGroupMuteStatusResponse
@@ -724,6 +775,96 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryMembersOfGroupRoleResponse::fromMap($this->doROARequest('QueryMembersOfGroupRole', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/sceneGroups/roles/members/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QuerySingleGroupRequest $request
+     *
+     * @return QuerySingleGroupResponse
+     */
+    public function querySingleGroup($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QuerySingleGroupHeaders([]);
+
+        return $this->querySingleGroupWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QuerySingleGroupRequest $request
+     * @param QuerySingleGroupHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return QuerySingleGroupResponse
+     */
+    public function querySingleGroupWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->groupMembers)) {
+            @$body['groupMembers'] = $request->groupMembers;
+        }
+        if (!Utils::isUnset($request->groupTemplateId)) {
+            @$body['groupTemplateId'] = $request->groupTemplateId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return QuerySingleGroupResponse::fromMap($this->doROARequest('QuerySingleGroup', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/interconnections/doubleGroups/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryUnReadMessageRequest $request
+     *
+     * @return QueryUnReadMessageResponse
+     */
+    public function queryUnReadMessage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryUnReadMessageHeaders([]);
+
+        return $this->queryUnReadMessageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryUnReadMessageRequest $request
+     * @param QueryUnReadMessageHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return QueryUnReadMessageResponse
+     */
+    public function queryUnReadMessageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appUserId)) {
+            @$body['appUserId'] = $request->appUserId;
+        }
+        if (!Utils::isUnset($request->openConversationIds)) {
+            @$body['openConversationIds'] = $request->openConversationIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return QueryUnReadMessageResponse::fromMap($this->doROARequest('QueryUnReadMessage', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/interconnections/unReadMsgs/query', 'json', $req, $runtime));
     }
 
     /**
