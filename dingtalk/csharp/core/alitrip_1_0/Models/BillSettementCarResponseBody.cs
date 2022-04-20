@@ -74,6 +74,7 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0.Models
                 public string SpecialOrder { get; set; }
                 public string SpecialReason { get; set; }
                 public long? Status { get; set; }
+                public string SubOrderId { get; set; }
                 public string TravelerId { get; set; }
                 public string TravelerJobNo { get; set; }
                 public string TravelerName { get; set; }
