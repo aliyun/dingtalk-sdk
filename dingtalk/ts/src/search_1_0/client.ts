@@ -92,11 +92,13 @@ export class CreateSearchTabHeaders extends $tea.Model {
 export class CreateSearchTabRequest extends $tea.Model {
   name?: string;
   priority?: number;
+  source?: string;
   status?: number;
   static names(): { [key: string]: string } {
     return {
       name: 'name',
       priority: 'priority',
+      source: 'source',
       status: 'status',
     };
   }
@@ -105,6 +107,7 @@ export class CreateSearchTabRequest extends $tea.Model {
     return {
       name: 'string',
       priority: 'number',
+      source: 'string',
       status: 'number',
     };
   }
@@ -451,6 +454,7 @@ export class GetSearchTabResponseBody extends $tea.Model {
   gmtModified?: string;
   name?: string;
   priority?: number;
+  source?: string;
   status?: number;
   tabId?: number;
   static names(): { [key: string]: string } {
@@ -459,6 +463,7 @@ export class GetSearchTabResponseBody extends $tea.Model {
       gmtModified: 'gmtModified',
       name: 'name',
       priority: 'priority',
+      source: 'source',
       status: 'status',
       tabId: 'tabId',
     };
@@ -470,6 +475,7 @@ export class GetSearchTabResponseBody extends $tea.Model {
       gmtModified: 'string',
       name: 'string',
       priority: 'number',
+      source: 'string',
       status: 'number',
       tabId: 'number',
     };
@@ -671,11 +677,13 @@ export class UpdateSearchTabHeaders extends $tea.Model {
 export class UpdateSearchTabRequest extends $tea.Model {
   name?: string;
   priority?: number;
+  source?: string;
   status?: number;
   static names(): { [key: string]: string } {
     return {
       name: 'name',
       priority: 'priority',
+      source: 'source',
       status: 'status',
     };
   }
@@ -684,6 +692,7 @@ export class UpdateSearchTabRequest extends $tea.Model {
     return {
       name: 'string',
       priority: 'number',
+      source: 'string',
       status: 'number',
     };
   }
@@ -806,6 +815,7 @@ export class ListSearchTabsByOrgIdResponseBodySearchTabResult extends $tea.Model
   gmtModified?: string;
   name?: string;
   priority?: number;
+  source?: string;
   status?: number;
   tabId?: number;
   static names(): { [key: string]: string } {
@@ -814,6 +824,7 @@ export class ListSearchTabsByOrgIdResponseBodySearchTabResult extends $tea.Model
       gmtModified: 'gmtModified',
       name: 'name',
       priority: 'priority',
+      source: 'source',
       status: 'status',
       tabId: 'tabId',
     };
@@ -825,6 +836,7 @@ export class ListSearchTabsByOrgIdResponseBodySearchTabResult extends $tea.Model
       gmtModified: 'string',
       name: 'string',
       priority: 'number',
+      source: 'string',
       status: 'number',
       tabId: 'number',
     };
@@ -893,6 +905,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.priority)) {
       body["priority"] = request.priority;
+    }
+
+    if (!Util.isUnset(request.source)) {
+      body["source"] = request.source;
     }
 
     if (!Util.isUnset(request.status)) {
@@ -1143,6 +1159,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.priority)) {
       body["priority"] = request.priority;
+    }
+
+    if (!Util.isUnset(request.source)) {
+      body["source"] = request.source;
     }
 
     if (!Util.isUnset(request.status)) {

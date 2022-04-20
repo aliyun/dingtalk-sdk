@@ -967,6 +967,91 @@ export class InteractiveCardCreateInstanceResponse extends $tea.Model {
   }
 }
 
+export class QueryGroupMemberHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryGroupMemberRequest extends $tea.Model {
+  openConversationId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openConversationId: 'openConversationId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openConversationId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryGroupMemberResponseBody extends $tea.Model {
+  groupMembers?: QueryGroupMemberResponseBodyGroupMembers[];
+  openConversationId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      groupMembers: 'groupMembers',
+      openConversationId: 'openConversationId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      groupMembers: { 'type': 'array', 'itemType': QueryGroupMemberResponseBodyGroupMembers },
+      openConversationId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryGroupMemberResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryGroupMemberResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryGroupMemberResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryGroupMuteStatusHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1135,6 +1220,179 @@ export class QueryMembersOfGroupRoleResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: QueryMembersOfGroupRoleResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QuerySingleGroupHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QuerySingleGroupRequest extends $tea.Model {
+  groupMembers?: QuerySingleGroupRequestGroupMembers[];
+  groupTemplateId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      groupMembers: 'groupMembers',
+      groupTemplateId: 'groupTemplateId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      groupMembers: { 'type': 'array', 'itemType': QuerySingleGroupRequestGroupMembers },
+      groupTemplateId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QuerySingleGroupResponseBody extends $tea.Model {
+  openConversations?: QuerySingleGroupResponseBodyOpenConversations[];
+  static names(): { [key: string]: string } {
+    return {
+      openConversations: 'openConversations',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openConversations: { 'type': 'array', 'itemType': QuerySingleGroupResponseBodyOpenConversations },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QuerySingleGroupResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QuerySingleGroupResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QuerySingleGroupResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUnReadMessageHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUnReadMessageRequest extends $tea.Model {
+  appUserId?: string;
+  openConversationIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      appUserId: 'appUserId',
+      openConversationIds: 'openConversationIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appUserId: 'string',
+      openConversationIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUnReadMessageResponseBody extends $tea.Model {
+  unReadCount?: number;
+  unReadItems?: QueryUnReadMessageResponseBodyUnReadItems[];
+  static names(): { [key: string]: string } {
+    return {
+      unReadCount: 'unReadCount',
+      unReadItems: 'unReadItems',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      unReadCount: 'number',
+      unReadItems: { 'type': 'array', 'itemType': QueryUnReadMessageResponseBodyUnReadItems },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUnReadMessageResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryUnReadMessageResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryUnReadMessageResponseBody,
     };
   }
 
@@ -2580,6 +2838,37 @@ export class InteractiveCardCreateInstanceRequestCardData extends $tea.Model {
   }
 }
 
+export class QueryGroupMemberResponseBodyGroupMembers extends $tea.Model {
+  groupMemberAvatar?: string;
+  groupMemberDynamics?: string;
+  groupMemberId?: string;
+  groupMemberName?: string;
+  groupMemberType?: number;
+  static names(): { [key: string]: string } {
+    return {
+      groupMemberAvatar: 'groupMemberAvatar',
+      groupMemberDynamics: 'groupMemberDynamics',
+      groupMemberId: 'groupMemberId',
+      groupMemberName: 'groupMemberName',
+      groupMemberType: 'groupMemberType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      groupMemberAvatar: 'string',
+      groupMemberDynamics: 'string',
+      groupMemberId: 'string',
+      groupMemberName: 'string',
+      groupMemberType: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryGroupMuteStatusResponseBodyUserMuteResult extends $tea.Model {
   muteEndTime?: number;
   muteStartTime?: number;
@@ -2597,6 +2886,75 @@ export class QueryGroupMuteStatusResponseBodyUserMuteResult extends $tea.Model {
       muteEndTime: 'number',
       muteStartTime: 'number',
       userMuteMode: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QuerySingleGroupRequestGroupMembers extends $tea.Model {
+  appUserId?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appUserId: 'appUserId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appUserId: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QuerySingleGroupResponseBodyOpenConversations extends $tea.Model {
+  appUserId?: string;
+  openConversationId?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appUserId: 'appUserId',
+      openConversationId: 'openConversationId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appUserId: 'string',
+      openConversationId: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUnReadMessageResponseBodyUnReadItems extends $tea.Model {
+  openConversationId?: string;
+  unReadCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      openConversationId: 'openConversationId',
+      unReadCount: 'unReadCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openConversationId: 'string',
+      unReadCount: 'number',
     };
   }
 
@@ -3218,6 +3576,35 @@ export default class Client extends OpenApi {
     return $tea.cast<InteractiveCardCreateInstanceResponse>(await this.doROARequest("InteractiveCardCreateInstance", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/interactiveCards/instances`, "json", req, runtime), new InteractiveCardCreateInstanceResponse({}));
   }
 
+  async queryGroupMember(request: QueryGroupMemberRequest): Promise<QueryGroupMemberResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryGroupMemberHeaders({ });
+    return await this.queryGroupMemberWithOptions(request, headers, runtime);
+  }
+
+  async queryGroupMemberWithOptions(request: QueryGroupMemberRequest, headers: QueryGroupMemberHeaders, runtime: $Util.RuntimeOptions): Promise<QueryGroupMemberResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openConversationId)) {
+      query["openConversationId"] = request.openConversationId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryGroupMemberResponse>(await this.doROARequest("QueryGroupMember", "im_1.0", "HTTP", "GET", "AK", `/v1.0/im/interconnections/conversations/members`, "json", req, runtime), new QueryGroupMemberResponse({}));
+  }
+
   async queryGroupMuteStatus(request: QueryGroupMuteStatusRequest): Promise<QueryGroupMuteStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryGroupMuteStatusHeaders({ });
@@ -3286,6 +3673,72 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<QueryMembersOfGroupRoleResponse>(await this.doROARequest("QueryMembersOfGroupRole", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/sceneGroups/roles/members/query`, "json", req, runtime), new QueryMembersOfGroupRoleResponse({}));
+  }
+
+  async querySingleGroup(request: QuerySingleGroupRequest): Promise<QuerySingleGroupResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QuerySingleGroupHeaders({ });
+    return await this.querySingleGroupWithOptions(request, headers, runtime);
+  }
+
+  async querySingleGroupWithOptions(request: QuerySingleGroupRequest, headers: QuerySingleGroupHeaders, runtime: $Util.RuntimeOptions): Promise<QuerySingleGroupResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.groupMembers)) {
+      body["groupMembers"] = request.groupMembers;
+    }
+
+    if (!Util.isUnset(request.groupTemplateId)) {
+      body["groupTemplateId"] = request.groupTemplateId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<QuerySingleGroupResponse>(await this.doROARequest("QuerySingleGroup", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/interconnections/doubleGroups/query`, "json", req, runtime), new QuerySingleGroupResponse({}));
+  }
+
+  async queryUnReadMessage(request: QueryUnReadMessageRequest): Promise<QueryUnReadMessageResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryUnReadMessageHeaders({ });
+    return await this.queryUnReadMessageWithOptions(request, headers, runtime);
+  }
+
+  async queryUnReadMessageWithOptions(request: QueryUnReadMessageRequest, headers: QueryUnReadMessageHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUnReadMessageResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appUserId)) {
+      body["appUserId"] = request.appUserId;
+    }
+
+    if (!Util.isUnset(request.openConversationIds)) {
+      body["openConversationIds"] = request.openConversationIds;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<QueryUnReadMessageResponse>(await this.doROARequest("QueryUnReadMessage", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/interconnections/unReadMsgs/query`, "json", req, runtime), new QueryUnReadMessageResponse({}));
   }
 
   async sendInteractiveCard(request: SendInteractiveCardRequest): Promise<SendInteractiveCardResponse> {

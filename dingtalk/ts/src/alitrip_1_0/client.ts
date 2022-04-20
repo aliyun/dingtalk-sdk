@@ -1537,6 +1537,7 @@ export class BillSettementCarResponseBodyModuleDataList extends $tea.Model {
   specialOrder?: string;
   specialReason?: string;
   status?: number;
+  subOrderId?: string;
   travelerId?: string;
   travelerJobNo?: string;
   travelerName?: string;
@@ -1592,6 +1593,7 @@ export class BillSettementCarResponseBodyModuleDataList extends $tea.Model {
       specialOrder: 'specialOrder',
       specialReason: 'specialReason',
       status: 'status',
+      subOrderId: 'subOrderId',
       travelerId: 'travelerId',
       travelerJobNo: 'travelerJobNo',
       travelerName: 'travelerName',
@@ -1650,6 +1652,7 @@ export class BillSettementCarResponseBodyModuleDataList extends $tea.Model {
       specialOrder: 'string',
       specialReason: 'string',
       status: 'number',
+      subOrderId: 'string',
       travelerId: 'string',
       travelerJobNo: 'string',
       travelerName: 'string',
