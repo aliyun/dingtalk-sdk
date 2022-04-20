@@ -121,6 +121,8 @@ class Client(OpenApiClient):
             body['name'] = request.name
         if not UtilClient.is_unset(request.priority):
             body['priority'] = request.priority
+        if not UtilClient.is_unset(request.source):
+            body['source'] = request.source
         if not UtilClient.is_unset(request.status):
             body['status'] = request.status
         real_headers = {}
@@ -149,6 +151,8 @@ class Client(OpenApiClient):
             body['name'] = request.name
         if not UtilClient.is_unset(request.priority):
             body['priority'] = request.priority
+        if not UtilClient.is_unset(request.source):
+            body['source'] = request.source
         if not UtilClient.is_unset(request.status):
             body['status'] = request.status
         real_headers = {}
@@ -655,6 +659,8 @@ class Client(OpenApiClient):
             body['name'] = request.name
         if not UtilClient.is_unset(request.priority):
             body['priority'] = request.priority
+        if not UtilClient.is_unset(request.source):
+            body['source'] = request.source
         if not UtilClient.is_unset(request.status):
             body['status'] = request.status
         real_headers = {}
@@ -685,6 +691,8 @@ class Client(OpenApiClient):
             body['name'] = request.name
         if not UtilClient.is_unset(request.priority):
             body['priority'] = request.priority
+        if not UtilClient.is_unset(request.source):
+            body['source'] = request.source
         if not UtilClient.is_unset(request.status):
             body['status'] = request.status
         real_headers = {}

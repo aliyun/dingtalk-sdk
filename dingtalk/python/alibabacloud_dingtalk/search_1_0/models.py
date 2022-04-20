@@ -214,12 +214,15 @@ class CreateSearchTabRequest(TeaModel):
         self,
         name: str = None,
         priority: int = None,
+        source: str = None,
         status: int = None,
     ):
         # 数据源名称
         self.name = name
         # 数据源优先级，数值越小优先级越高
         self.priority = priority
+        # 数据来源,非必填,默认来源为钉钉搜索内部引擎
+        self.source = source
         # 数据源状态，1表示上线，0表示下线
         self.status = status
 
@@ -236,6 +239,8 @@ class CreateSearchTabRequest(TeaModel):
             result['name'] = self.name
         if self.priority is not None:
             result['priority'] = self.priority
+        if self.source is not None:
+            result['source'] = self.source
         if self.status is not None:
             result['status'] = self.status
         return result
@@ -246,6 +251,8 @@ class CreateSearchTabRequest(TeaModel):
             self.name = m.get('name')
         if m.get('priority') is not None:
             self.priority = m.get('priority')
+        if m.get('source') is not None:
+            self.source = m.get('source')
         if m.get('status') is not None:
             self.status = m.get('status')
         return self
@@ -903,6 +910,7 @@ class GetSearchTabResponseBody(TeaModel):
         gmt_modified: str = None,
         name: str = None,
         priority: int = None,
+        source: str = None,
         status: int = None,
         tab_id: int = None,
     ):
@@ -914,6 +922,8 @@ class GetSearchTabResponseBody(TeaModel):
         self.name = name
         # 数据源优先级，数值越小优先级越高
         self.priority = priority
+        # 数据来源,非必填,默认来源为钉钉搜索内部引擎
+        self.source = source
         # 数据源状态，1表示上线，0表示下线
         self.status = status
         # 数据源的id,范围为3000-4000
@@ -936,6 +946,8 @@ class GetSearchTabResponseBody(TeaModel):
             result['name'] = self.name
         if self.priority is not None:
             result['priority'] = self.priority
+        if self.source is not None:
+            result['source'] = self.source
         if self.status is not None:
             result['status'] = self.status
         if self.tab_id is not None:
@@ -952,6 +964,8 @@ class GetSearchTabResponseBody(TeaModel):
             self.name = m.get('name')
         if m.get('priority') is not None:
             self.priority = m.get('priority')
+        if m.get('source') is not None:
+            self.source = m.get('source')
         if m.get('status') is not None:
             self.status = m.get('status')
         if m.get('tabId') is not None:
@@ -1173,6 +1187,7 @@ class ListSearchTabsByOrgIdResponseBodySearchTabResult(TeaModel):
         gmt_modified: str = None,
         name: str = None,
         priority: int = None,
+        source: str = None,
         status: int = None,
         tab_id: int = None,
     ):
@@ -1184,6 +1199,8 @@ class ListSearchTabsByOrgIdResponseBodySearchTabResult(TeaModel):
         self.name = name
         # 数据源优先级，数值越小优先级越高
         self.priority = priority
+        # 数据来源,非必填,默认来源为钉钉搜索内部引擎
+        self.source = source
         # 数据源状态，1表示上线，0表示下线
         self.status = status
         # 数据源的id,范围为3000-4000
@@ -1206,6 +1223,8 @@ class ListSearchTabsByOrgIdResponseBodySearchTabResult(TeaModel):
             result['name'] = self.name
         if self.priority is not None:
             result['priority'] = self.priority
+        if self.source is not None:
+            result['source'] = self.source
         if self.status is not None:
             result['status'] = self.status
         if self.tab_id is not None:
@@ -1222,6 +1241,8 @@ class ListSearchTabsByOrgIdResponseBodySearchTabResult(TeaModel):
             self.name = m.get('name')
         if m.get('priority') is not None:
             self.priority = m.get('priority')
+        if m.get('source') is not None:
+            self.source = m.get('source')
         if m.get('status') is not None:
             self.status = m.get('status')
         if m.get('tabId') is not None:
@@ -1340,12 +1361,15 @@ class UpdateSearchTabRequest(TeaModel):
         self,
         name: str = None,
         priority: int = None,
+        source: str = None,
         status: int = None,
     ):
         # 数据源名称
         self.name = name
         # 数据源优先级，数值越小优先级越高
         self.priority = priority
+        # 数据来源,非必填,默认来源为钉钉搜索内部引擎
+        self.source = source
         # 数据源状态，1表示上线，0表示下线
         self.status = status
 
@@ -1362,6 +1386,8 @@ class UpdateSearchTabRequest(TeaModel):
             result['name'] = self.name
         if self.priority is not None:
             result['priority'] = self.priority
+        if self.source is not None:
+            result['source'] = self.source
         if self.status is not None:
             result['status'] = self.status
         return result
@@ -1372,6 +1398,8 @@ class UpdateSearchTabRequest(TeaModel):
             self.name = m.get('name')
         if m.get('priority') is not None:
             self.priority = m.get('priority')
+        if m.get('source') is not None:
+            self.source = m.get('source')
         if m.get('status') is not None:
             self.status = m.get('status')
         return self

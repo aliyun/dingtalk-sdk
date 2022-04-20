@@ -811,6 +811,70 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('InteractiveCardCreateInstance', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interactiveCards/instances', 'json', req, runtime)
         )
 
+    def query_group_member(
+        self,
+        request: dingtalkim__1__0_models.QueryGroupMemberRequest,
+    ) -> dingtalkim__1__0_models.QueryGroupMemberResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.QueryGroupMemberHeaders()
+        return self.query_group_member_with_options(request, headers, runtime)
+
+    async def query_group_member_async(
+        self,
+        request: dingtalkim__1__0_models.QueryGroupMemberRequest,
+    ) -> dingtalkim__1__0_models.QueryGroupMemberResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.QueryGroupMemberHeaders()
+        return await self.query_group_member_with_options_async(request, headers, runtime)
+
+    def query_group_member_with_options(
+        self,
+        request: dingtalkim__1__0_models.QueryGroupMemberRequest,
+        headers: dingtalkim__1__0_models.QueryGroupMemberHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.QueryGroupMemberResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            query['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.QueryGroupMemberResponse(),
+            self.do_roarequest('QueryGroupMember', 'im_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/im/interconnections/conversations/members', 'json', req, runtime)
+        )
+
+    async def query_group_member_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.QueryGroupMemberRequest,
+        headers: dingtalkim__1__0_models.QueryGroupMemberHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.QueryGroupMemberResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            query['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.QueryGroupMemberResponse(),
+            await self.do_roarequest_async('QueryGroupMember', 'im_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/im/interconnections/conversations/members', 'json', req, runtime)
+        )
+
     def query_group_mute_status(
         self,
         request: dingtalkim__1__0_models.QueryGroupMuteStatusRequest,
@@ -949,6 +1013,142 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkim__1__0_models.QueryMembersOfGroupRoleResponse(),
             await self.do_roarequest_async('QueryMembersOfGroupRole', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/sceneGroups/roles/members/query', 'json', req, runtime)
+        )
+
+    def query_single_group(
+        self,
+        request: dingtalkim__1__0_models.QuerySingleGroupRequest,
+    ) -> dingtalkim__1__0_models.QuerySingleGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.QuerySingleGroupHeaders()
+        return self.query_single_group_with_options(request, headers, runtime)
+
+    async def query_single_group_async(
+        self,
+        request: dingtalkim__1__0_models.QuerySingleGroupRequest,
+    ) -> dingtalkim__1__0_models.QuerySingleGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.QuerySingleGroupHeaders()
+        return await self.query_single_group_with_options_async(request, headers, runtime)
+
+    def query_single_group_with_options(
+        self,
+        request: dingtalkim__1__0_models.QuerySingleGroupRequest,
+        headers: dingtalkim__1__0_models.QuerySingleGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.QuerySingleGroupResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.group_members):
+            body['groupMembers'] = request.group_members
+        if not UtilClient.is_unset(request.group_template_id):
+            body['groupTemplateId'] = request.group_template_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.QuerySingleGroupResponse(),
+            self.do_roarequest('QuerySingleGroup', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/doubleGroups/query', 'json', req, runtime)
+        )
+
+    async def query_single_group_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.QuerySingleGroupRequest,
+        headers: dingtalkim__1__0_models.QuerySingleGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.QuerySingleGroupResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.group_members):
+            body['groupMembers'] = request.group_members
+        if not UtilClient.is_unset(request.group_template_id):
+            body['groupTemplateId'] = request.group_template_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.QuerySingleGroupResponse(),
+            await self.do_roarequest_async('QuerySingleGroup', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/doubleGroups/query', 'json', req, runtime)
+        )
+
+    def query_un_read_message(
+        self,
+        request: dingtalkim__1__0_models.QueryUnReadMessageRequest,
+    ) -> dingtalkim__1__0_models.QueryUnReadMessageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.QueryUnReadMessageHeaders()
+        return self.query_un_read_message_with_options(request, headers, runtime)
+
+    async def query_un_read_message_async(
+        self,
+        request: dingtalkim__1__0_models.QueryUnReadMessageRequest,
+    ) -> dingtalkim__1__0_models.QueryUnReadMessageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.QueryUnReadMessageHeaders()
+        return await self.query_un_read_message_with_options_async(request, headers, runtime)
+
+    def query_un_read_message_with_options(
+        self,
+        request: dingtalkim__1__0_models.QueryUnReadMessageRequest,
+        headers: dingtalkim__1__0_models.QueryUnReadMessageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.QueryUnReadMessageResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_user_id):
+            body['appUserId'] = request.app_user_id
+        if not UtilClient.is_unset(request.open_conversation_ids):
+            body['openConversationIds'] = request.open_conversation_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.QueryUnReadMessageResponse(),
+            self.do_roarequest('QueryUnReadMessage', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/unReadMsgs/query', 'json', req, runtime)
+        )
+
+    async def query_un_read_message_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.QueryUnReadMessageRequest,
+        headers: dingtalkim__1__0_models.QueryUnReadMessageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.QueryUnReadMessageResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_user_id):
+            body['appUserId'] = request.app_user_id
+        if not UtilClient.is_unset(request.open_conversation_ids):
+            body['openConversationIds'] = request.open_conversation_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.QueryUnReadMessageResponse(),
+            await self.do_roarequest_async('QueryUnReadMessage', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/unReadMsgs/query', 'json', req, runtime)
         )
 
     def send_interactive_card(

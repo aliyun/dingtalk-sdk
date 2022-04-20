@@ -1129,6 +1129,7 @@ class BillSettementCarResponseBodyModuleDataList(TeaModel):
         special_order: str = None,
         special_reason: str = None,
         status: int = None,
+        sub_order_id: str = None,
         traveler_id: str = None,
         traveler_job_no: str = None,
         traveler_name: str = None,
@@ -1230,6 +1231,8 @@ class BillSettementCarResponseBodyModuleDataList(TeaModel):
         self.special_reason = special_reason
         # 入账状态
         self.status = status
+        # 子订单号
+        self.sub_order_id = sub_order_id
         # 出行人use id
         self.traveler_id = traveler_id
         # 出行人工号
@@ -1346,6 +1349,8 @@ class BillSettementCarResponseBodyModuleDataList(TeaModel):
             result['specialReason'] = self.special_reason
         if self.status is not None:
             result['status'] = self.status
+        if self.sub_order_id is not None:
+            result['subOrderId'] = self.sub_order_id
         if self.traveler_id is not None:
             result['travelerId'] = self.traveler_id
         if self.traveler_job_no is not None:
@@ -1456,6 +1461,8 @@ class BillSettementCarResponseBodyModuleDataList(TeaModel):
             self.special_reason = m.get('specialReason')
         if m.get('status') is not None:
             self.status = m.get('status')
+        if m.get('subOrderId') is not None:
+            self.sub_order_id = m.get('subOrderId')
         if m.get('travelerId') is not None:
             self.traveler_id = m.get('travelerId')
         if m.get('travelerJobNo') is not None:
