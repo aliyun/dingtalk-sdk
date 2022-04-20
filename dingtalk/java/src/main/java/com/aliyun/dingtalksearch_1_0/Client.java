@@ -68,6 +68,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("priority", request.priority);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.source)) {
+            body.put("source", request.source);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.status)) {
             body.put("status", request.status);
         }
@@ -316,6 +320,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.priority)) {
             body.put("priority", request.priority);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.source)) {
+            body.put("source", request.source);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.status)) {

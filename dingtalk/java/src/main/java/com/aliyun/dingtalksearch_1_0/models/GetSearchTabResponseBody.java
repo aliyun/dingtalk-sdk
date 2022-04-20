@@ -20,6 +20,10 @@ public class GetSearchTabResponseBody extends TeaModel {
     @NameInMap("priority")
     public Integer priority;
 
+    // 数据来源,非必填,默认来源为钉钉搜索内部引擎
+    @NameInMap("source")
+    public String source;
+
     // 数据源状态，1表示上线，0表示下线
     @NameInMap("status")
     public Integer status;
@@ -63,6 +67,14 @@ public class GetSearchTabResponseBody extends TeaModel {
     }
     public Integer getPriority() {
         return this.priority;
+    }
+
+    public GetSearchTabResponseBody setSource(String source) {
+        this.source = source;
+        return this;
+    }
+    public String getSource() {
+        return this.source;
     }
 
     public GetSearchTabResponseBody setStatus(Integer status) {

@@ -249,6 +249,10 @@ public class BillSettementCarResponseBody extends TeaModel {
         @NameInMap("status")
         public Long status;
 
+        // 子订单号
+        @NameInMap("subOrderId")
+        public String subOrderId;
+
         // 出行人use id
         @NameInMap("travelerId")
         public String travelerId;
@@ -656,6 +660,14 @@ public class BillSettementCarResponseBody extends TeaModel {
         }
         public Long getStatus() {
             return this.status;
+        }
+
+        public BillSettementCarResponseBodyModuleDataList setSubOrderId(String subOrderId) {
+            this.subOrderId = subOrderId;
+            return this;
+        }
+        public String getSubOrderId() {
+            return this.subOrderId;
         }
 
         public BillSettementCarResponseBodyModuleDataList setTravelerId(String travelerId) {
