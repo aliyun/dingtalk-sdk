@@ -1065,6 +1065,97 @@ export class CancelTicketResponse extends $tea.Model {
   }
 }
 
+export class CategoryStatisticsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CategoryStatisticsRequest extends $tea.Model {
+  maxDt?: string;
+  minDt?: string;
+  openTeamId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      maxDt: 'maxDt',
+      minDt: 'minDt',
+      openTeamId: 'openTeamId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxDt: 'string',
+      minDt: 'string',
+      openTeamId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CategoryStatisticsResponseBody extends $tea.Model {
+  categoryStatisticsRecords?: CategoryStatisticsResponseBodyCategoryStatisticsRecords[];
+  categoryTrend?: CategoryStatisticsResponseBodyCategoryTrend[];
+  static names(): { [key: string]: string } {
+    return {
+      categoryStatisticsRecords: 'categoryStatisticsRecords',
+      categoryTrend: 'categoryTrend',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      categoryStatisticsRecords: { 'type': 'array', 'itemType': CategoryStatisticsResponseBodyCategoryStatisticsRecords },
+      categoryTrend: { 'type': 'array', 'itemType': CategoryStatisticsResponseBodyCategoryTrend },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CategoryStatisticsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CategoryStatisticsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CategoryStatisticsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CloseHumanSessionHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1623,6 +1714,106 @@ export class DeleteKnowledgeResponse extends $tea.Model {
   }
 }
 
+export class EmotionStatisticsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EmotionStatisticsRequest extends $tea.Model {
+  maxDt?: string;
+  maxEmotion?: number;
+  minDt?: string;
+  minEmotion?: number;
+  openConversationIds?: string;
+  openGroupSetId?: string;
+  openTeamId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      maxDt: 'maxDt',
+      maxEmotion: 'maxEmotion',
+      minDt: 'minDt',
+      minEmotion: 'minEmotion',
+      openConversationIds: 'openConversationIds',
+      openGroupSetId: 'openGroupSetId',
+      openTeamId: 'openTeamId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxDt: 'string',
+      maxEmotion: 'number',
+      minDt: 'string',
+      minEmotion: 'number',
+      openConversationIds: 'string',
+      openGroupSetId: 'string',
+      openTeamId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EmotionStatisticsResponseBody extends $tea.Model {
+  emotionStatisticsRecords?: EmotionStatisticsResponseBodyEmotionStatisticsRecords[];
+  static names(): { [key: string]: string } {
+    return {
+      emotionStatisticsRecords: 'emotionStatisticsRecords',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      emotionStatisticsRecords: { 'type': 'array', 'itemType': EmotionStatisticsResponseBodyEmotionStatisticsRecords },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EmotionStatisticsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: EmotionStatisticsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: EmotionStatisticsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class FinishTicketHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1687,6 +1878,88 @@ export class FinishTicketResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetNegativeWordCloudHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetNegativeWordCloudRequest extends $tea.Model {
+  openTeamId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openTeamId: 'openTeamId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openTeamId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetNegativeWordCloudResponseBody extends $tea.Model {
+  words?: GetNegativeWordCloudResponseBodyWords[];
+  static names(): { [key: string]: string } {
+    return {
+      words: 'words',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      words: { 'type': 'array', 'itemType': GetNegativeWordCloudResponseBodyWords },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetNegativeWordCloudResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetNegativeWordCloudResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetNegativeWordCloudResponseBody,
     };
   }
 
@@ -2002,6 +2275,364 @@ export class GetTicketResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: GetTicketResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetWordCloudHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetWordCloudRequest extends $tea.Model {
+  openTeamId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openTeamId: 'openTeamId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openTeamId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetWordCloudResponseBody extends $tea.Model {
+  words?: GetWordCloudResponseBodyWords[];
+  static names(): { [key: string]: string } {
+    return {
+      words: 'words',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      words: { 'type': 'array', 'itemType': GetWordCloudResponseBodyWords },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetWordCloudResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetWordCloudResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetWordCloudResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupStatisticsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupStatisticsRequest extends $tea.Model {
+  maxDt?: string;
+  minDt?: string;
+  openTeamId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      maxDt: 'maxDt',
+      minDt: 'minDt',
+      openTeamId: 'openTeamId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxDt: 'string',
+      minDt: 'string',
+      openTeamId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupStatisticsResponseBody extends $tea.Model {
+  groupCount?: number;
+  groupTrend?: GroupStatisticsResponseBodyGroupTrend[];
+  increaseGroupCount?: number;
+  increaseRate?: string;
+  static names(): { [key: string]: string } {
+    return {
+      groupCount: 'groupCount',
+      groupTrend: 'groupTrend',
+      increaseGroupCount: 'increaseGroupCount',
+      increaseRate: 'increaseRate',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      groupCount: 'number',
+      groupTrend: { 'type': 'array', 'itemType': GroupStatisticsResponseBodyGroupTrend },
+      increaseGroupCount: 'number',
+      increaseRate: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupStatisticsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GroupStatisticsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GroupStatisticsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IntentionCategoryStatisticsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IntentionCategoryStatisticsRequest extends $tea.Model {
+  maxDt?: string;
+  minDt?: string;
+  openTeamId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      maxDt: 'maxDt',
+      minDt: 'minDt',
+      openTeamId: 'openTeamId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxDt: 'string',
+      minDt: 'string',
+      openTeamId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IntentionCategoryStatisticsResponseBody extends $tea.Model {
+  intentionCategoryRecords?: IntentionCategoryStatisticsResponseBodyIntentionCategoryRecords[];
+  static names(): { [key: string]: string } {
+    return {
+      intentionCategoryRecords: 'intentionCategoryRecords',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      intentionCategoryRecords: { 'type': 'array', 'itemType': IntentionCategoryStatisticsResponseBodyIntentionCategoryRecords },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IntentionCategoryStatisticsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: IntentionCategoryStatisticsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: IntentionCategoryStatisticsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IntentionStatisticsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IntentionStatisticsRequest extends $tea.Model {
+  maxDt?: string;
+  minDt?: string;
+  openTeamId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      maxDt: 'maxDt',
+      minDt: 'minDt',
+      openTeamId: 'openTeamId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxDt: 'string',
+      minDt: 'string',
+      openTeamId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IntentionStatisticsResponseBody extends $tea.Model {
+  intentionStatisticsRecords?: IntentionStatisticsResponseBodyIntentionStatisticsRecords[];
+  intentionTrend?: IntentionStatisticsResponseBodyIntentionTrend[];
+  static names(): { [key: string]: string } {
+    return {
+      intentionStatisticsRecords: 'intentionStatisticsRecords',
+      intentionTrend: 'intentionTrend',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      intentionStatisticsRecords: { 'type': 'array', 'itemType': IntentionStatisticsResponseBodyIntentionStatisticsRecords },
+      intentionTrend: { 'type': 'array', 'itemType': IntentionStatisticsResponseBodyIntentionTrend },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IntentionStatisticsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: IntentionStatisticsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: IntentionStatisticsResponseBody,
     };
   }
 
@@ -3395,6 +4026,100 @@ export class TakeTicketResponse extends $tea.Model {
   }
 }
 
+export class TopicStatisticsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TopicStatisticsRequest extends $tea.Model {
+  maxDt?: string;
+  minDt?: string;
+  openConversationIds?: string;
+  openTeamId?: string;
+  searchContent?: string;
+  static names(): { [key: string]: string } {
+    return {
+      maxDt: 'maxDt',
+      minDt: 'minDt',
+      openConversationIds: 'openConversationIds',
+      openTeamId: 'openTeamId',
+      searchContent: 'searchContent',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxDt: 'string',
+      minDt: 'string',
+      openConversationIds: 'string',
+      openTeamId: 'string',
+      searchContent: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TopicStatisticsResponseBody extends $tea.Model {
+  topicStatisticsRecords?: TopicStatisticsResponseBodyTopicStatisticsRecords[];
+  static names(): { [key: string]: string } {
+    return {
+      topicStatisticsRecords: 'topicStatisticsRecords',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      topicStatisticsRecords: { 'type': 'array', 'itemType': TopicStatisticsResponseBodyTopicStatisticsRecords },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TopicStatisticsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: TopicStatisticsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: TopicStatisticsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class TransferTicketHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4202,6 +4927,56 @@ export class CancelTicketRequestTicketMemo extends $tea.Model {
   }
 }
 
+export class CategoryStatisticsResponseBodyCategoryStatisticsRecords extends $tea.Model {
+  count?: number;
+  lastCount?: number;
+  name?: string;
+  static names(): { [key: string]: string } {
+    return {
+      count: 'count',
+      lastCount: 'lastCount',
+      name: 'name',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      count: 'number',
+      lastCount: 'number',
+      name: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CategoryStatisticsResponseBodyCategoryTrend extends $tea.Model {
+  count?: number;
+  dt?: string;
+  name?: string;
+  static names(): { [key: string]: string } {
+    return {
+      count: 'count',
+      dt: 'dt',
+      name: 'name',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      count: 'number',
+      dt: 'string',
+      name: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateTicketRequestNotify extends $tea.Model {
   groupNoticeReceiverUnionIds?: string[];
   noticeAllGroupMember?: boolean;
@@ -4277,6 +5052,31 @@ export class CreateTicketRequestSceneContext extends $tea.Model {
   }
 }
 
+export class EmotionStatisticsResponseBodyEmotionStatisticsRecords extends $tea.Model {
+  count?: number;
+  dt?: string;
+  emotionScore?: number;
+  static names(): { [key: string]: string } {
+    return {
+      count: 'count',
+      dt: 'dt',
+      emotionScore: 'emotionScore',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      count: 'number',
+      dt: 'string',
+      emotionScore: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class FinishTicketRequestNotify extends $tea.Model {
   groupNoticeReceiverUnionIds?: string[];
   noticeAllGroupMember?: boolean;
@@ -4338,6 +5138,28 @@ export class FinishTicketRequestTicketMemo extends $tea.Model {
     return {
       attachments: { 'type': 'array', 'itemType': FinishTicketRequestTicketMemoAttachments },
       memo: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetNegativeWordCloudResponseBodyWords extends $tea.Model {
+  count?: number;
+  word?: string;
+  static names(): { [key: string]: string } {
+    return {
+      count: 'count',
+      word: 'word',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      count: 'number',
+      word: 'string',
     };
   }
 
@@ -4429,6 +5251,134 @@ export class GetTicketResponseBodyTemplate extends $tea.Model {
       openTemplateBizId: 'string',
       openTemplateId: 'string',
       templateName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetWordCloudResponseBodyWords extends $tea.Model {
+  count?: number;
+  word?: string;
+  static names(): { [key: string]: string } {
+    return {
+      count: 'count',
+      word: 'word',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      count: 'number',
+      word: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupStatisticsResponseBodyGroupTrend extends $tea.Model {
+  count?: number;
+  dt?: string;
+  static names(): { [key: string]: string } {
+    return {
+      count: 'count',
+      dt: 'dt',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      count: 'number',
+      dt: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IntentionCategoryStatisticsResponseBodyIntentionCategoryRecords extends $tea.Model {
+  askCount?: number;
+  categoryName?: string;
+  dissatisfiedCount?: number;
+  errorCount?: number;
+  praiseCount?: number;
+  suggestCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      askCount: 'askCount',
+      categoryName: 'categoryName',
+      dissatisfiedCount: 'dissatisfiedCount',
+      errorCount: 'errorCount',
+      praiseCount: 'praiseCount',
+      suggestCount: 'suggestCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      askCount: 'number',
+      categoryName: 'string',
+      dissatisfiedCount: 'number',
+      errorCount: 'number',
+      praiseCount: 'number',
+      suggestCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IntentionStatisticsResponseBodyIntentionStatisticsRecords extends $tea.Model {
+  count?: number;
+  intention?: string;
+  lastCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      count: 'count',
+      intention: 'intention',
+      lastCount: 'lastCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      count: 'number',
+      intention: 'string',
+      lastCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IntentionStatisticsResponseBodyIntentionTrend extends $tea.Model {
+  count?: number;
+  dt?: string;
+  intention?: string;
+  static names(): { [key: string]: string } {
+    return {
+      count: 'count',
+      dt: 'dt',
+      intention: 'intention',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      count: 'number',
+      dt: 'string',
+      intention: 'string',
     };
   }
 
@@ -5212,6 +6162,34 @@ export class SetRobotConfigResponseBodyResult extends $tea.Model {
   }
 }
 
+export class TopicStatisticsResponseBodyTopicStatisticsRecords extends $tea.Model {
+  dt?: string;
+  msgCount?: number;
+  participantsNum?: number;
+  topicNum?: number;
+  static names(): { [key: string]: string } {
+    return {
+      dt: 'dt',
+      msgCount: 'msgCount',
+      participantsNum: 'participantsNum',
+      topicNum: 'topicNum',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dt: 'string',
+      msgCount: 'number',
+      participantsNum: 'number',
+      topicNum: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class TransferTicketRequestNotify extends $tea.Model {
   groupNoticeReceiverUnionIds?: string[];
   noticeAllGroupMember?: boolean;
@@ -5973,6 +6951,43 @@ export default class Client extends OpenApi {
     return $tea.cast<CancelTicketResponse>(await this.doROARequest("CancelTicket", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/tickets/cancel`, "none", req, runtime), new CancelTicketResponse({}));
   }
 
+  async categoryStatistics(request: CategoryStatisticsRequest): Promise<CategoryStatisticsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CategoryStatisticsHeaders({ });
+    return await this.categoryStatisticsWithOptions(request, headers, runtime);
+  }
+
+  async categoryStatisticsWithOptions(request: CategoryStatisticsRequest, headers: CategoryStatisticsHeaders, runtime: $Util.RuntimeOptions): Promise<CategoryStatisticsResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxDt)) {
+      query["maxDt"] = request.maxDt;
+    }
+
+    if (!Util.isUnset(request.minDt)) {
+      query["minDt"] = request.minDt;
+    }
+
+    if (!Util.isUnset(request.openTeamId)) {
+      query["openTeamId"] = request.openTeamId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<CategoryStatisticsResponse>(await this.doROARequest("CategoryStatistics", "serviceGroup_1.0", "HTTP", "GET", "AK", `/v1.0/serviceGroup/voices/dashboards/categories/statistics`, "json", req, runtime), new CategoryStatisticsResponse({}));
+  }
+
   async closeHumanSession(request: CloseHumanSessionRequest): Promise<CloseHumanSessionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CloseHumanSessionHeaders({ });
@@ -6231,6 +7246,59 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteKnowledgeResponse>(await this.doROARequest("DeleteKnowledge", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/knowledges/batchDelete`, "json", req, runtime), new DeleteKnowledgeResponse({}));
   }
 
+  async emotionStatistics(request: EmotionStatisticsRequest): Promise<EmotionStatisticsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new EmotionStatisticsHeaders({ });
+    return await this.emotionStatisticsWithOptions(request, headers, runtime);
+  }
+
+  async emotionStatisticsWithOptions(request: EmotionStatisticsRequest, headers: EmotionStatisticsHeaders, runtime: $Util.RuntimeOptions): Promise<EmotionStatisticsResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxDt)) {
+      query["maxDt"] = request.maxDt;
+    }
+
+    if (!Util.isUnset(request.maxEmotion)) {
+      query["maxEmotion"] = request.maxEmotion;
+    }
+
+    if (!Util.isUnset(request.minDt)) {
+      query["minDt"] = request.minDt;
+    }
+
+    if (!Util.isUnset(request.minEmotion)) {
+      query["minEmotion"] = request.minEmotion;
+    }
+
+    if (!Util.isUnset(request.openConversationIds)) {
+      query["openConversationIds"] = request.openConversationIds;
+    }
+
+    if (!Util.isUnset(request.openGroupSetId)) {
+      query["openGroupSetId"] = request.openGroupSetId;
+    }
+
+    if (!Util.isUnset(request.openTeamId)) {
+      query["openTeamId"] = request.openTeamId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<EmotionStatisticsResponse>(await this.doROARequest("EmotionStatistics", "serviceGroup_1.0", "HTTP", "GET", "AK", `/v1.0/serviceGroup/voices/emotions/statistics`, "json", req, runtime), new EmotionStatisticsResponse({}));
+  }
+
   async finishTicket(request: FinishTicketRequest): Promise<FinishTicketResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new FinishTicketHeaders({ });
@@ -6274,6 +7342,35 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<FinishTicketResponse>(await this.doROARequest("FinishTicket", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/tickets/finish`, "none", req, runtime), new FinishTicketResponse({}));
+  }
+
+  async getNegativeWordCloud(request: GetNegativeWordCloudRequest): Promise<GetNegativeWordCloudResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetNegativeWordCloudHeaders({ });
+    return await this.getNegativeWordCloudWithOptions(request, headers, runtime);
+  }
+
+  async getNegativeWordCloudWithOptions(request: GetNegativeWordCloudRequest, headers: GetNegativeWordCloudHeaders, runtime: $Util.RuntimeOptions): Promise<GetNegativeWordCloudResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openTeamId)) {
+      query["openTeamId"] = request.openTeamId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetNegativeWordCloudResponse>(await this.doROARequest("GetNegativeWordCloud", "serviceGroup_1.0", "HTTP", "GET", "AK", `/v1.0/serviceGroup/voices/negatives/wordClouds`, "json", req, runtime), new GetNegativeWordCloudResponse({}));
   }
 
   async getOssTempUrl(request: GetOssTempUrlRequest): Promise<GetOssTempUrlResponse> {
@@ -6389,6 +7486,146 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<GetTicketResponse>(await this.doROARequest("GetTicket", "serviceGroup_1.0", "HTTP", "GET", "AK", `/v1.0/serviceGroup/tickets`, "json", req, runtime), new GetTicketResponse({}));
+  }
+
+  async getWordCloud(request: GetWordCloudRequest): Promise<GetWordCloudResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetWordCloudHeaders({ });
+    return await this.getWordCloudWithOptions(request, headers, runtime);
+  }
+
+  async getWordCloudWithOptions(request: GetWordCloudRequest, headers: GetWordCloudHeaders, runtime: $Util.RuntimeOptions): Promise<GetWordCloudResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openTeamId)) {
+      query["openTeamId"] = request.openTeamId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetWordCloudResponse>(await this.doROARequest("GetWordCloud", "serviceGroup_1.0", "HTTP", "GET", "AK", `/v1.0/serviceGroup/voices/wordClouds`, "json", req, runtime), new GetWordCloudResponse({}));
+  }
+
+  async groupStatistics(request: GroupStatisticsRequest): Promise<GroupStatisticsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GroupStatisticsHeaders({ });
+    return await this.groupStatisticsWithOptions(request, headers, runtime);
+  }
+
+  async groupStatisticsWithOptions(request: GroupStatisticsRequest, headers: GroupStatisticsHeaders, runtime: $Util.RuntimeOptions): Promise<GroupStatisticsResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxDt)) {
+      query["maxDt"] = request.maxDt;
+    }
+
+    if (!Util.isUnset(request.minDt)) {
+      query["minDt"] = request.minDt;
+    }
+
+    if (!Util.isUnset(request.openTeamId)) {
+      query["openTeamId"] = request.openTeamId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GroupStatisticsResponse>(await this.doROARequest("GroupStatistics", "serviceGroup_1.0", "HTTP", "GET", "AK", `/v1.0/serviceGroup/voices/dashboards/groups/statistics`, "json", req, runtime), new GroupStatisticsResponse({}));
+  }
+
+  async intentionCategoryStatistics(request: IntentionCategoryStatisticsRequest): Promise<IntentionCategoryStatisticsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new IntentionCategoryStatisticsHeaders({ });
+    return await this.intentionCategoryStatisticsWithOptions(request, headers, runtime);
+  }
+
+  async intentionCategoryStatisticsWithOptions(request: IntentionCategoryStatisticsRequest, headers: IntentionCategoryStatisticsHeaders, runtime: $Util.RuntimeOptions): Promise<IntentionCategoryStatisticsResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxDt)) {
+      query["maxDt"] = request.maxDt;
+    }
+
+    if (!Util.isUnset(request.minDt)) {
+      query["minDt"] = request.minDt;
+    }
+
+    if (!Util.isUnset(request.openTeamId)) {
+      query["openTeamId"] = request.openTeamId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<IntentionCategoryStatisticsResponse>(await this.doROARequest("IntentionCategoryStatistics", "serviceGroup_1.0", "HTTP", "GET", "AK", `/v1.0/serviceGroup/voices/dashboards/intentionCategories/statistics`, "json", req, runtime), new IntentionCategoryStatisticsResponse({}));
+  }
+
+  async intentionStatistics(request: IntentionStatisticsRequest): Promise<IntentionStatisticsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new IntentionStatisticsHeaders({ });
+    return await this.intentionStatisticsWithOptions(request, headers, runtime);
+  }
+
+  async intentionStatisticsWithOptions(request: IntentionStatisticsRequest, headers: IntentionStatisticsHeaders, runtime: $Util.RuntimeOptions): Promise<IntentionStatisticsResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxDt)) {
+      query["maxDt"] = request.maxDt;
+    }
+
+    if (!Util.isUnset(request.minDt)) {
+      query["minDt"] = request.minDt;
+    }
+
+    if (!Util.isUnset(request.openTeamId)) {
+      query["openTeamId"] = request.openTeamId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<IntentionStatisticsResponse>(await this.doROARequest("IntentionStatistics", "serviceGroup_1.0", "HTTP", "GET", "AK", `/v1.0/serviceGroup/voices/dashboards/intentions/statistics`, "json", req, runtime), new IntentionStatisticsResponse({}));
   }
 
   async listTicketOperateRecord(request: ListTicketOperateRecordRequest): Promise<ListTicketOperateRecordResponse> {
@@ -7062,6 +8299,51 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<TakeTicketResponse>(await this.doROARequest("TakeTicket", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/tickets/apply`, "none", req, runtime), new TakeTicketResponse({}));
+  }
+
+  async topicStatistics(request: TopicStatisticsRequest): Promise<TopicStatisticsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new TopicStatisticsHeaders({ });
+    return await this.topicStatisticsWithOptions(request, headers, runtime);
+  }
+
+  async topicStatisticsWithOptions(request: TopicStatisticsRequest, headers: TopicStatisticsHeaders, runtime: $Util.RuntimeOptions): Promise<TopicStatisticsResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxDt)) {
+      query["maxDt"] = request.maxDt;
+    }
+
+    if (!Util.isUnset(request.minDt)) {
+      query["minDt"] = request.minDt;
+    }
+
+    if (!Util.isUnset(request.openConversationIds)) {
+      query["openConversationIds"] = request.openConversationIds;
+    }
+
+    if (!Util.isUnset(request.openTeamId)) {
+      query["openTeamId"] = request.openTeamId;
+    }
+
+    if (!Util.isUnset(request.searchContent)) {
+      query["searchContent"] = request.searchContent;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<TopicStatisticsResponse>(await this.doROARequest("TopicStatistics", "serviceGroup_1.0", "HTTP", "GET", "AK", `/v1.0/serviceGroup/voices/topics/statistics`, "json", req, runtime), new TopicStatisticsResponse({}));
   }
 
   async transferTicket(request: TransferTicketRequest): Promise<TransferTicketResponse> {

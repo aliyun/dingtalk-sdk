@@ -30,7 +30,7 @@ export class GrantHonorHeaders extends $tea.Model {
 }
 
 export class GrantHonorRequest extends $tea.Model {
-  expirationTime?: string;
+  expirationTime?: number;
   grantReason?: string;
   granterName?: string;
   noticeAnnouncer?: boolean;
@@ -51,7 +51,7 @@ export class GrantHonorRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      expirationTime: 'string',
+      expirationTime: 'number',
       grantReason: 'string',
       granterName: 'string',
       noticeAnnouncer: 'boolean',

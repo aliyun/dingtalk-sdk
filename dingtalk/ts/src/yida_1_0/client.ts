@@ -10859,14 +10859,10 @@ export class SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUse
 }
 
 export class SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUser extends $tea.Model {
-  departmentName?: string;
-  email?: string;
   name?: SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUserName;
   userId?: string;
   static names(): { [key: string]: string } {
     return {
-      departmentName: 'departmentName',
-      email: 'email',
       name: 'name',
       userId: 'userId',
     };
@@ -10874,8 +10870,6 @@ export class SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUse
 
   static types(): { [key: string]: any } {
     return {
-      departmentName: 'string',
-      email: 'string',
       name: SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUserName,
       userId: 'string',
     };
@@ -10909,14 +10903,10 @@ export class SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginato
 }
 
 export class SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginator extends $tea.Model {
-  departmentName?: string;
-  email?: string;
   name?: SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginatorName;
   userId?: string;
   static names(): { [key: string]: string } {
     return {
-      departmentName: 'departmentName',
-      email: 'email',
       name: 'name',
       userId: 'userId',
     };
@@ -10924,8 +10914,6 @@ export class SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginato
 
   static types(): { [key: string]: any } {
     return {
-      departmentName: 'string',
-      email: 'string',
       name: SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginatorName,
       userId: 'string',
     };

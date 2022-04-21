@@ -7,6 +7,112 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class AddLeaveTypeHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddLeaveTypeRequest extends $tea.Model {
+  bizType?: string;
+  extras?: string;
+  hoursInPerDay?: number;
+  leaveCertificate?: AddLeaveTypeRequestLeaveCertificate;
+  leaveName?: string;
+  leaveViewUnit?: string;
+  naturalDayLeave?: boolean;
+  submitTimeRule?: AddLeaveTypeRequestSubmitTimeRule;
+  opUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizType: 'bizType',
+      extras: 'extras',
+      hoursInPerDay: 'hoursInPerDay',
+      leaveCertificate: 'leaveCertificate',
+      leaveName: 'leaveName',
+      leaveViewUnit: 'leaveViewUnit',
+      naturalDayLeave: 'naturalDayLeave',
+      submitTimeRule: 'submitTimeRule',
+      opUserId: 'opUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizType: 'string',
+      extras: 'string',
+      hoursInPerDay: 'number',
+      leaveCertificate: AddLeaveTypeRequestLeaveCertificate,
+      leaveName: 'string',
+      leaveViewUnit: 'string',
+      naturalDayLeave: 'boolean',
+      submitTimeRule: AddLeaveTypeRequestSubmitTimeRule,
+      opUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddLeaveTypeResponseBody extends $tea.Model {
+  result?: AddLeaveTypeResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: AddLeaveTypeResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddLeaveTypeResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: AddLeaveTypeResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: AddLeaveTypeResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AttendanceBleDevicesAddHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1113,6 +1219,115 @@ export class SyncScheduleInfoResponse extends $tea.Model {
   }
 }
 
+export class UpdateLeaveTypeHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateLeaveTypeRequest extends $tea.Model {
+  bizType?: string;
+  extras?: string;
+  hoursInPerDay?: number;
+  leaveCertificate?: UpdateLeaveTypeRequestLeaveCertificate;
+  leaveCode?: string;
+  leaveName?: string;
+  leaveViewUnit?: string;
+  naturalDayLeave?: boolean;
+  submitTimeRule?: UpdateLeaveTypeRequestSubmitTimeRule;
+  opUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizType: 'bizType',
+      extras: 'extras',
+      hoursInPerDay: 'hoursInPerDay',
+      leaveCertificate: 'leaveCertificate',
+      leaveCode: 'leaveCode',
+      leaveName: 'leaveName',
+      leaveViewUnit: 'leaveViewUnit',
+      naturalDayLeave: 'naturalDayLeave',
+      submitTimeRule: 'submitTimeRule',
+      opUserId: 'opUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizType: 'string',
+      extras: 'string',
+      hoursInPerDay: 'number',
+      leaveCertificate: UpdateLeaveTypeRequestLeaveCertificate,
+      leaveCode: 'string',
+      leaveName: 'string',
+      leaveViewUnit: 'string',
+      naturalDayLeave: 'boolean',
+      submitTimeRule: UpdateLeaveTypeRequestSubmitTimeRule,
+      opUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateLeaveTypeResponseBody extends $tea.Model {
+  result?: UpdateLeaveTypeResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: UpdateLeaveTypeResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateLeaveTypeResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateLeaveTypeResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateLeaveTypeResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ResultDurationSettingsValue extends $tea.Model {
   calcType?: number;
   durationType?: number;
@@ -1157,6 +1372,158 @@ export class ResultDurationSettingsValue extends $tea.Model {
       holidayPlanOvertimeRedress: 'boolean',
       holidayPlanOvertimeRedressBy: 'string',
       holidayPlanVacationRate: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddLeaveTypeRequestLeaveCertificate extends $tea.Model {
+  duration?: number;
+  enable?: boolean;
+  promptInformation?: string;
+  unit?: string;
+  static names(): { [key: string]: string } {
+    return {
+      duration: 'duration',
+      enable: 'enable',
+      promptInformation: 'promptInformation',
+      unit: 'unit',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      duration: 'number',
+      enable: 'boolean',
+      promptInformation: 'string',
+      unit: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddLeaveTypeRequestSubmitTimeRule extends $tea.Model {
+  enableTimeLimit?: boolean;
+  timeType?: string;
+  timeUnit?: string;
+  timeValue?: number;
+  static names(): { [key: string]: string } {
+    return {
+      enableTimeLimit: 'enableTimeLimit',
+      timeType: 'timeType',
+      timeUnit: 'timeUnit',
+      timeValue: 'timeValue',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      enableTimeLimit: 'boolean',
+      timeType: 'string',
+      timeUnit: 'string',
+      timeValue: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddLeaveTypeResponseBodyResultLeaveCertificate extends $tea.Model {
+  duration?: number;
+  enable?: boolean;
+  promptInformation?: string;
+  unit?: string;
+  static names(): { [key: string]: string } {
+    return {
+      duration: 'duration',
+      enable: 'enable',
+      promptInformation: 'promptInformation',
+      unit: 'unit',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      duration: 'number',
+      enable: 'boolean',
+      promptInformation: 'string',
+      unit: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddLeaveTypeResponseBodyResultSubmitTimeRule extends $tea.Model {
+  enableTimeLimit?: boolean;
+  timeType?: string;
+  timeUnit?: string;
+  timeValue?: number;
+  static names(): { [key: string]: string } {
+    return {
+      enableTimeLimit: 'enableTimeLimit',
+      timeType: 'timeType',
+      timeUnit: 'timeUnit',
+      timeValue: 'timeValue',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      enableTimeLimit: 'boolean',
+      timeType: 'string',
+      timeUnit: 'string',
+      timeValue: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddLeaveTypeResponseBodyResult extends $tea.Model {
+  bizType?: string;
+  hoursInPerDay?: number;
+  leaveCertificate?: AddLeaveTypeResponseBodyResultLeaveCertificate;
+  leaveCode?: string;
+  leaveName?: string;
+  leaveViewUnit?: string;
+  naturalDayLeave?: boolean;
+  submitTimeRule?: AddLeaveTypeResponseBodyResultSubmitTimeRule;
+  static names(): { [key: string]: string } {
+    return {
+      bizType: 'bizType',
+      hoursInPerDay: 'hoursInPerDay',
+      leaveCertificate: 'leaveCertificate',
+      leaveCode: 'leaveCode',
+      leaveName: 'leaveName',
+      leaveViewUnit: 'leaveViewUnit',
+      naturalDayLeave: 'naturalDayLeave',
+      submitTimeRule: 'submitTimeRule',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizType: 'string',
+      hoursInPerDay: 'number',
+      leaveCertificate: AddLeaveTypeResponseBodyResultLeaveCertificate,
+      leaveCode: 'string',
+      leaveName: 'string',
+      leaveViewUnit: 'string',
+      naturalDayLeave: 'boolean',
+      submitTimeRule: AddLeaveTypeResponseBodyResultSubmitTimeRule,
     };
   }
 
@@ -1762,6 +2129,158 @@ export class SyncScheduleInfoRequestScheduleInfos extends $tea.Model {
   }
 }
 
+export class UpdateLeaveTypeRequestLeaveCertificate extends $tea.Model {
+  duration?: number;
+  enable?: boolean;
+  promptInformation?: string;
+  unit?: string;
+  static names(): { [key: string]: string } {
+    return {
+      duration: 'duration',
+      enable: 'enable',
+      promptInformation: 'promptInformation',
+      unit: 'unit',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      duration: 'number',
+      enable: 'boolean',
+      promptInformation: 'string',
+      unit: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateLeaveTypeRequestSubmitTimeRule extends $tea.Model {
+  enableTimeLimit?: boolean;
+  timeType?: string;
+  timeUnit?: string;
+  timeValue?: number;
+  static names(): { [key: string]: string } {
+    return {
+      enableTimeLimit: 'enableTimeLimit',
+      timeType: 'timeType',
+      timeUnit: 'timeUnit',
+      timeValue: 'timeValue',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      enableTimeLimit: 'boolean',
+      timeType: 'string',
+      timeUnit: 'string',
+      timeValue: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateLeaveTypeResponseBodyResultLeaveCertificate extends $tea.Model {
+  duration?: number;
+  enable?: boolean;
+  promptInformation?: string;
+  unit?: string;
+  static names(): { [key: string]: string } {
+    return {
+      duration: 'duration',
+      enable: 'enable',
+      promptInformation: 'promptInformation',
+      unit: 'unit',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      duration: 'number',
+      enable: 'boolean',
+      promptInformation: 'string',
+      unit: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateLeaveTypeResponseBodyResultSubmitTimeRule extends $tea.Model {
+  enableTimeLimit?: boolean;
+  timeType?: string;
+  timeUnit?: string;
+  timeValue?: number;
+  static names(): { [key: string]: string } {
+    return {
+      enableTimeLimit: 'enableTimeLimit',
+      timeType: 'timeType',
+      timeUnit: 'timeUnit',
+      timeValue: 'timeValue',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      enableTimeLimit: 'boolean',
+      timeType: 'string',
+      timeUnit: 'string',
+      timeValue: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateLeaveTypeResponseBodyResult extends $tea.Model {
+  bizType?: string;
+  hoursInPerDay?: number;
+  leaveCertificate?: UpdateLeaveTypeResponseBodyResultLeaveCertificate;
+  leaveCode?: string;
+  leaveName?: string;
+  leaveViewUnit?: string;
+  naturalDayLeave?: boolean;
+  submitTimeRule?: UpdateLeaveTypeResponseBodyResultSubmitTimeRule;
+  static names(): { [key: string]: string } {
+    return {
+      bizType: 'bizType',
+      hoursInPerDay: 'hoursInPerDay',
+      leaveCertificate: 'leaveCertificate',
+      leaveCode: 'leaveCode',
+      leaveName: 'leaveName',
+      leaveViewUnit: 'leaveViewUnit',
+      naturalDayLeave: 'naturalDayLeave',
+      submitTimeRule: 'submitTimeRule',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizType: 'string',
+      hoursInPerDay: 'number',
+      leaveCertificate: UpdateLeaveTypeResponseBodyResultLeaveCertificate,
+      leaveCode: 'string',
+      leaveName: 'string',
+      leaveViewUnit: 'string',
+      naturalDayLeave: 'boolean',
+      submitTimeRule: UpdateLeaveTypeResponseBodyResultSubmitTimeRule,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ResultDurationSettingsValueSkipTimeByFrames extends $tea.Model {
   startTime?: string;
   endTime?: string;
@@ -1821,6 +2340,69 @@ export default class Client extends OpenApi {
 
   }
 
+
+  async addLeaveType(request: AddLeaveTypeRequest): Promise<AddLeaveTypeResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AddLeaveTypeHeaders({ });
+    return await this.addLeaveTypeWithOptions(request, headers, runtime);
+  }
+
+  async addLeaveTypeWithOptions(request: AddLeaveTypeRequest, headers: AddLeaveTypeHeaders, runtime: $Util.RuntimeOptions): Promise<AddLeaveTypeResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.opUserId)) {
+      query["opUserId"] = request.opUserId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizType)) {
+      body["bizType"] = request.bizType;
+    }
+
+    if (!Util.isUnset(request.extras)) {
+      body["extras"] = request.extras;
+    }
+
+    if (!Util.isUnset(request.hoursInPerDay)) {
+      body["hoursInPerDay"] = request.hoursInPerDay;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.leaveCertificate))) {
+      body["leaveCertificate"] = request.leaveCertificate;
+    }
+
+    if (!Util.isUnset(request.leaveName)) {
+      body["leaveName"] = request.leaveName;
+    }
+
+    if (!Util.isUnset(request.leaveViewUnit)) {
+      body["leaveViewUnit"] = request.leaveViewUnit;
+    }
+
+    if (!Util.isUnset(request.naturalDayLeave)) {
+      body["naturalDayLeave"] = request.naturalDayLeave;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.submitTimeRule))) {
+      body["submitTimeRule"] = request.submitTimeRule;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<AddLeaveTypeResponse>(await this.doROARequest("AddLeaveType", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/leaves/types`, "json", req, runtime), new AddLeaveTypeResponse({}));
+  }
 
   async attendanceBleDevicesAdd(request: AttendanceBleDevicesAddRequest): Promise<AttendanceBleDevicesAddResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2284,6 +2866,73 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<SyncScheduleInfoResponse>(await this.doROARequest("SyncScheduleInfo", "attendance_1.0", "HTTP", "PUT", "AK", `/v1.0/attendance/schedules/additionalInfo`, "none", req, runtime), new SyncScheduleInfoResponse({}));
+  }
+
+  async updateLeaveType(request: UpdateLeaveTypeRequest): Promise<UpdateLeaveTypeResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateLeaveTypeHeaders({ });
+    return await this.updateLeaveTypeWithOptions(request, headers, runtime);
+  }
+
+  async updateLeaveTypeWithOptions(request: UpdateLeaveTypeRequest, headers: UpdateLeaveTypeHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateLeaveTypeResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.opUserId)) {
+      query["opUserId"] = request.opUserId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizType)) {
+      body["bizType"] = request.bizType;
+    }
+
+    if (!Util.isUnset(request.extras)) {
+      body["extras"] = request.extras;
+    }
+
+    if (!Util.isUnset(request.hoursInPerDay)) {
+      body["hoursInPerDay"] = request.hoursInPerDay;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.leaveCertificate))) {
+      body["leaveCertificate"] = request.leaveCertificate;
+    }
+
+    if (!Util.isUnset(request.leaveCode)) {
+      body["leaveCode"] = request.leaveCode;
+    }
+
+    if (!Util.isUnset(request.leaveName)) {
+      body["leaveName"] = request.leaveName;
+    }
+
+    if (!Util.isUnset(request.leaveViewUnit)) {
+      body["leaveViewUnit"] = request.leaveViewUnit;
+    }
+
+    if (!Util.isUnset(request.naturalDayLeave)) {
+      body["naturalDayLeave"] = request.naturalDayLeave;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.submitTimeRule))) {
+      body["submitTimeRule"] = request.submitTimeRule;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateLeaveTypeResponse>(await this.doROARequest("UpdateLeaveType", "attendance_1.0", "HTTP", "PUT", "AK", `/v1.0/attendance/leaves/types`, "json", req, runtime), new UpdateLeaveTypeResponse({}));
   }
 
 }
