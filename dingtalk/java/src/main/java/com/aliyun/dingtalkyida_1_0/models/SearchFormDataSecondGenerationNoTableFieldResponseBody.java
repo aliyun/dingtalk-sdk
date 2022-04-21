@@ -78,14 +78,6 @@ public class SearchFormDataSecondGenerationNoTableFieldResponseBody extends TeaM
     }
 
     public static class SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUser extends TeaModel {
-        // 部门名称
-        @NameInMap("departmentName")
-        public String departmentName;
-
-        // 电子邮箱
-        @NameInMap("email")
-        public String email;
-
         // 名称
         @NameInMap("name")
         public SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUserName name;
@@ -97,22 +89,6 @@ public class SearchFormDataSecondGenerationNoTableFieldResponseBody extends TeaM
         public static SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUser build(java.util.Map<String, ?> map) throws Exception {
             SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUser self = new SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUser();
             return TeaModel.build(map, self);
-        }
-
-        public SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUser setDepartmentName(String departmentName) {
-            this.departmentName = departmentName;
-            return this;
-        }
-        public String getDepartmentName() {
-            return this.departmentName;
-        }
-
-        public SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUser setEmail(String email) {
-            this.email = email;
-            return this;
-        }
-        public String getEmail() {
-            return this.email;
         }
 
         public SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUser setName(SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUserName name) {
@@ -166,14 +142,6 @@ public class SearchFormDataSecondGenerationNoTableFieldResponseBody extends TeaM
     }
 
     public static class SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginator extends TeaModel {
-        // 部门名称
-        @NameInMap("departmentName")
-        public String departmentName;
-
-        // 电子邮箱
-        @NameInMap("email")
-        public String email;
-
         // 名称
         @NameInMap("name")
         public SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginatorName name;
@@ -185,22 +153,6 @@ public class SearchFormDataSecondGenerationNoTableFieldResponseBody extends TeaM
         public static SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginator build(java.util.Map<String, ?> map) throws Exception {
             SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginator self = new SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginator();
             return TeaModel.build(map, self);
-        }
-
-        public SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginator setDepartmentName(String departmentName) {
-            this.departmentName = departmentName;
-            return this;
-        }
-        public String getDepartmentName() {
-            return this.departmentName;
-        }
-
-        public SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginator setEmail(String email) {
-            this.email = email;
-            return this;
-        }
-        public String getEmail() {
-            return this.email;
         }
 
         public SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginator setName(SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginatorName name) {
@@ -246,7 +198,7 @@ public class SearchFormDataSecondGenerationNoTableFieldResponseBody extends TeaM
         @NameInMap("id")
         public Long id;
 
-        // 表单实例数据
+        // 表单实例数据以组件值格式展示
         @NameInMap("instanceValue")
         public String instanceValue;
 

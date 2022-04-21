@@ -6,7 +6,7 @@ import com.aliyun.tea.*;
 public class GrantHonorRequest extends TeaModel {
     // 有效期到期时间 时间戳. 会处理成到期那天的23:59:59秒的时间戳
     @NameInMap("expirationTime")
-    public String expirationTime;
+    public Long expirationTime;
 
     // 颁奖词，最多可以填50字
     @NameInMap("grantReason")
@@ -24,7 +24,7 @@ public class GrantHonorRequest extends TeaModel {
     @NameInMap("noticeSingle")
     public Boolean noticeSingle;
 
-    // 接受人staffId
+    // 接受人userId
     @NameInMap("receiverUserIds")
     public java.util.List<String> receiverUserIds;
 
@@ -37,11 +37,11 @@ public class GrantHonorRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public GrantHonorRequest setExpirationTime(String expirationTime) {
+    public GrantHonorRequest setExpirationTime(Long expirationTime) {
         this.expirationTime = expirationTime;
         return this;
     }
-    public String getExpirationTime() {
+    public Long getExpirationTime() {
         return this.expirationTime;
     }
 

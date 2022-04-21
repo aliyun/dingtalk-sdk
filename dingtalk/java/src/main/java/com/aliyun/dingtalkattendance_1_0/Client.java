@@ -21,6 +21,69 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    public AddLeaveTypeResponse addLeaveType(AddLeaveTypeRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        AddLeaveTypeHeaders headers = new AddLeaveTypeHeaders();
+        return this.addLeaveTypeWithOptions(request, headers, runtime);
+    }
+
+    public AddLeaveTypeResponse addLeaveTypeWithOptions(AddLeaveTypeRequest request, AddLeaveTypeHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.opUserId)) {
+            query.put("opUserId", request.opUserId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizType)) {
+            body.put("bizType", request.bizType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.extras)) {
+            body.put("extras", request.extras);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.hoursInPerDay)) {
+            body.put("hoursInPerDay", request.hoursInPerDay);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.leaveCertificate))) {
+            body.put("leaveCertificate", request.leaveCertificate);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.leaveName)) {
+            body.put("leaveName", request.leaveName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.leaveViewUnit)) {
+            body.put("leaveViewUnit", request.leaveViewUnit);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.naturalDayLeave)) {
+            body.put("naturalDayLeave", request.naturalDayLeave);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.submitTimeRule))) {
+            body.put("submitTimeRule", request.submitTimeRule);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("AddLeaveType", "attendance_1.0", "HTTP", "POST", "AK", "/v1.0/attendance/leaves/types", "json", req, runtime), new AddLeaveTypeResponse());
+    }
+
     public AttendanceBleDevicesAddResponse attendanceBleDevicesAdd(AttendanceBleDevicesAddRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         AttendanceBleDevicesAddHeaders headers = new AttendanceBleDevicesAddHeaders();
@@ -483,5 +546,72 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("SyncScheduleInfo", "attendance_1.0", "HTTP", "PUT", "AK", "/v1.0/attendance/schedules/additionalInfo", "none", req, runtime), new SyncScheduleInfoResponse());
+    }
+
+    public UpdateLeaveTypeResponse updateLeaveType(UpdateLeaveTypeRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        UpdateLeaveTypeHeaders headers = new UpdateLeaveTypeHeaders();
+        return this.updateLeaveTypeWithOptions(request, headers, runtime);
+    }
+
+    public UpdateLeaveTypeResponse updateLeaveTypeWithOptions(UpdateLeaveTypeRequest request, UpdateLeaveTypeHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.opUserId)) {
+            query.put("opUserId", request.opUserId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizType)) {
+            body.put("bizType", request.bizType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.extras)) {
+            body.put("extras", request.extras);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.hoursInPerDay)) {
+            body.put("hoursInPerDay", request.hoursInPerDay);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.leaveCertificate))) {
+            body.put("leaveCertificate", request.leaveCertificate);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.leaveCode)) {
+            body.put("leaveCode", request.leaveCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.leaveName)) {
+            body.put("leaveName", request.leaveName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.leaveViewUnit)) {
+            body.put("leaveViewUnit", request.leaveViewUnit);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.naturalDayLeave)) {
+            body.put("naturalDayLeave", request.naturalDayLeave);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.submitTimeRule))) {
+            body.put("submitTimeRule", request.submitTimeRule);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("UpdateLeaveType", "attendance_1.0", "HTTP", "PUT", "AK", "/v1.0/attendance/leaves/types", "json", req, runtime), new UpdateLeaveTypeResponse());
     }
 }
