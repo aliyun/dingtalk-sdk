@@ -23,6 +23,106 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def add_leave_type(
+        self,
+        request: dingtalkattendance__1__0_models.AddLeaveTypeRequest,
+    ) -> dingtalkattendance__1__0_models.AddLeaveTypeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.AddLeaveTypeHeaders()
+        return self.add_leave_type_with_options(request, headers, runtime)
+
+    async def add_leave_type_async(
+        self,
+        request: dingtalkattendance__1__0_models.AddLeaveTypeRequest,
+    ) -> dingtalkattendance__1__0_models.AddLeaveTypeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.AddLeaveTypeHeaders()
+        return await self.add_leave_type_with_options_async(request, headers, runtime)
+
+    def add_leave_type_with_options(
+        self,
+        request: dingtalkattendance__1__0_models.AddLeaveTypeRequest,
+        headers: dingtalkattendance__1__0_models.AddLeaveTypeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.AddLeaveTypeResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        body = {}
+        if not UtilClient.is_unset(request.biz_type):
+            body['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.extras):
+            body['extras'] = request.extras
+        if not UtilClient.is_unset(request.hours_in_per_day):
+            body['hoursInPerDay'] = request.hours_in_per_day
+        if not UtilClient.is_unset(request.leave_certificate):
+            body['leaveCertificate'] = request.leave_certificate
+        if not UtilClient.is_unset(request.leave_name):
+            body['leaveName'] = request.leave_name
+        if not UtilClient.is_unset(request.leave_view_unit):
+            body['leaveViewUnit'] = request.leave_view_unit
+        if not UtilClient.is_unset(request.natural_day_leave):
+            body['naturalDayLeave'] = request.natural_day_leave
+        if not UtilClient.is_unset(request.submit_time_rule):
+            body['submitTimeRule'] = request.submit_time_rule
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.AddLeaveTypeResponse(),
+            self.do_roarequest('AddLeaveType', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/leaves/types', 'json', req, runtime)
+        )
+
+    async def add_leave_type_with_options_async(
+        self,
+        request: dingtalkattendance__1__0_models.AddLeaveTypeRequest,
+        headers: dingtalkattendance__1__0_models.AddLeaveTypeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.AddLeaveTypeResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        body = {}
+        if not UtilClient.is_unset(request.biz_type):
+            body['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.extras):
+            body['extras'] = request.extras
+        if not UtilClient.is_unset(request.hours_in_per_day):
+            body['hoursInPerDay'] = request.hours_in_per_day
+        if not UtilClient.is_unset(request.leave_certificate):
+            body['leaveCertificate'] = request.leave_certificate
+        if not UtilClient.is_unset(request.leave_name):
+            body['leaveName'] = request.leave_name
+        if not UtilClient.is_unset(request.leave_view_unit):
+            body['leaveViewUnit'] = request.leave_view_unit
+        if not UtilClient.is_unset(request.natural_day_leave):
+            body['naturalDayLeave'] = request.natural_day_leave
+        if not UtilClient.is_unset(request.submit_time_rule):
+            body['submitTimeRule'] = request.submit_time_rule
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.AddLeaveTypeResponse(),
+            await self.do_roarequest_async('AddLeaveType', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/leaves/types', 'json', req, runtime)
+        )
+
     def attendance_ble_devices_add(
         self,
         request: dingtalkattendance__1__0_models.AttendanceBleDevicesAddRequest,
@@ -943,4 +1043,108 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.SyncScheduleInfoResponse(),
             await self.do_roarequest_async('SyncScheduleInfo', 'attendance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/attendance/schedules/additionalInfo', 'none', req, runtime)
+        )
+
+    def update_leave_type(
+        self,
+        request: dingtalkattendance__1__0_models.UpdateLeaveTypeRequest,
+    ) -> dingtalkattendance__1__0_models.UpdateLeaveTypeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.UpdateLeaveTypeHeaders()
+        return self.update_leave_type_with_options(request, headers, runtime)
+
+    async def update_leave_type_async(
+        self,
+        request: dingtalkattendance__1__0_models.UpdateLeaveTypeRequest,
+    ) -> dingtalkattendance__1__0_models.UpdateLeaveTypeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.UpdateLeaveTypeHeaders()
+        return await self.update_leave_type_with_options_async(request, headers, runtime)
+
+    def update_leave_type_with_options(
+        self,
+        request: dingtalkattendance__1__0_models.UpdateLeaveTypeRequest,
+        headers: dingtalkattendance__1__0_models.UpdateLeaveTypeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.UpdateLeaveTypeResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        body = {}
+        if not UtilClient.is_unset(request.biz_type):
+            body['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.extras):
+            body['extras'] = request.extras
+        if not UtilClient.is_unset(request.hours_in_per_day):
+            body['hoursInPerDay'] = request.hours_in_per_day
+        if not UtilClient.is_unset(request.leave_certificate):
+            body['leaveCertificate'] = request.leave_certificate
+        if not UtilClient.is_unset(request.leave_code):
+            body['leaveCode'] = request.leave_code
+        if not UtilClient.is_unset(request.leave_name):
+            body['leaveName'] = request.leave_name
+        if not UtilClient.is_unset(request.leave_view_unit):
+            body['leaveViewUnit'] = request.leave_view_unit
+        if not UtilClient.is_unset(request.natural_day_leave):
+            body['naturalDayLeave'] = request.natural_day_leave
+        if not UtilClient.is_unset(request.submit_time_rule):
+            body['submitTimeRule'] = request.submit_time_rule
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.UpdateLeaveTypeResponse(),
+            self.do_roarequest('UpdateLeaveType', 'attendance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/attendance/leaves/types', 'json', req, runtime)
+        )
+
+    async def update_leave_type_with_options_async(
+        self,
+        request: dingtalkattendance__1__0_models.UpdateLeaveTypeRequest,
+        headers: dingtalkattendance__1__0_models.UpdateLeaveTypeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.UpdateLeaveTypeResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        body = {}
+        if not UtilClient.is_unset(request.biz_type):
+            body['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.extras):
+            body['extras'] = request.extras
+        if not UtilClient.is_unset(request.hours_in_per_day):
+            body['hoursInPerDay'] = request.hours_in_per_day
+        if not UtilClient.is_unset(request.leave_certificate):
+            body['leaveCertificate'] = request.leave_certificate
+        if not UtilClient.is_unset(request.leave_code):
+            body['leaveCode'] = request.leave_code
+        if not UtilClient.is_unset(request.leave_name):
+            body['leaveName'] = request.leave_name
+        if not UtilClient.is_unset(request.leave_view_unit):
+            body['leaveViewUnit'] = request.leave_view_unit
+        if not UtilClient.is_unset(request.natural_day_leave):
+            body['naturalDayLeave'] = request.natural_day_leave
+        if not UtilClient.is_unset(request.submit_time_rule):
+            body['submitTimeRule'] = request.submit_time_rule
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.UpdateLeaveTypeResponse(),
+            await self.do_roarequest_async('UpdateLeaveType', 'attendance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/attendance/leaves/types', 'json', req, runtime)
         )

@@ -40,7 +40,7 @@ class GrantHonorHeaders(TeaModel):
 class GrantHonorRequest(TeaModel):
     def __init__(
         self,
-        expiration_time: str = None,
+        expiration_time: int = None,
         grant_reason: str = None,
         granter_name: str = None,
         notice_announcer: bool = None,
@@ -58,7 +58,7 @@ class GrantHonorRequest(TeaModel):
         self.notice_announcer = notice_announcer
         # 是否触达单聊会话通知
         self.notice_single = notice_single
-        # 接受人staffId
+        # 接受人userId
         self.receiver_user_ids = receiver_user_ids
         # 发送人userId
         self.sender_user_id = sender_user_id

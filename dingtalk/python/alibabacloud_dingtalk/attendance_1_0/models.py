@@ -4,6 +4,473 @@ from Tea.model import TeaModel
 from typing import Dict, List, Any
 
 
+class AddLeaveTypeHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AddLeaveTypeRequestLeaveCertificate(TeaModel):
+    def __init__(
+        self,
+        duration: float = None,
+        enable: bool = None,
+        prompt_information: str = None,
+        unit: str = None,
+    ):
+        # 超过多长时间需提供请假证明
+        self.duration = duration
+        # 是否开启请假证明
+        self.enable = enable
+        # 请假提示文案
+        self.prompt_information = prompt_information
+        # 请假证明单位hour，day
+        self.unit = unit
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.duration is not None:
+            result['duration'] = self.duration
+        if self.enable is not None:
+            result['enable'] = self.enable
+        if self.prompt_information is not None:
+            result['promptInformation'] = self.prompt_information
+        if self.unit is not None:
+            result['unit'] = self.unit
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('duration') is not None:
+            self.duration = m.get('duration')
+        if m.get('enable') is not None:
+            self.enable = m.get('enable')
+        if m.get('promptInformation') is not None:
+            self.prompt_information = m.get('promptInformation')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        return self
+
+
+class AddLeaveTypeRequestSubmitTimeRule(TeaModel):
+    def __init__(
+        self,
+        enable_time_limit: bool = None,
+        time_type: str = None,
+        time_unit: str = None,
+        time_value: int = None,
+    ):
+        # 是否开启限时提交功能：仅且为true时开启
+        self.enable_time_limit = enable_time_limit
+        # 限制类型：before-提前；after-补交
+        self.time_type = time_type
+        # 时间单位：day-天；hour-小时
+        self.time_unit = time_unit
+        # 限制值：timeUnit=day时，有效值范围[0~30] 天；timeUnit=hour时，有效值范围[0~24] 小时
+        self.time_value = time_value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.enable_time_limit is not None:
+            result['enableTimeLimit'] = self.enable_time_limit
+        if self.time_type is not None:
+            result['timeType'] = self.time_type
+        if self.time_unit is not None:
+            result['timeUnit'] = self.time_unit
+        if self.time_value is not None:
+            result['timeValue'] = self.time_value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('enableTimeLimit') is not None:
+            self.enable_time_limit = m.get('enableTimeLimit')
+        if m.get('timeType') is not None:
+            self.time_type = m.get('timeType')
+        if m.get('timeUnit') is not None:
+            self.time_unit = m.get('timeUnit')
+        if m.get('timeValue') is not None:
+            self.time_value = m.get('timeValue')
+        return self
+
+
+class AddLeaveTypeRequest(TeaModel):
+    def __init__(
+        self,
+        biz_type: str = None,
+        extras: str = None,
+        hours_in_per_day: int = None,
+        leave_certificate: AddLeaveTypeRequestLeaveCertificate = None,
+        leave_name: str = None,
+        leave_view_unit: str = None,
+        natural_day_leave: bool = None,
+        submit_time_rule: AddLeaveTypeRequestSubmitTimeRule = None,
+        op_user_id: str = None,
+    ):
+        # 假期类型，普通假期或者加班转调休假期。(general_leave、lieu_leave其中一种)
+        self.biz_type = biz_type
+        # 调休假有效期规则(validity_type:有效类型 absolute_time(绝对时间)、relative_time(相对时间)其中一种 validity_value:延长日期(当validity_type为absolute_time该值该值不为空且满足yy-mm格式 validity_type为relative_time该值为大于1的整数))
+        self.extras = extras
+        # 每天折算的工作时长(百分之一 例如1天=10小时=1000)
+        self.hours_in_per_day = hours_in_per_day
+        # 请假证明
+        self.leave_certificate = leave_certificate
+        # 假期名称
+        self.leave_name = leave_name
+        # 请假单位，可以按照天半天或者小时请假。(day、halfDay、hour其中一种)
+        self.leave_view_unit = leave_view_unit
+        # 是否按照自然日统计请假时长，当为false的时候，用户发起请假时候会根据用户在请假时间段内的排班情况来计算请假时长。
+        self.natural_day_leave = natural_day_leave
+        # 限时提交规则
+        self.submit_time_rule = submit_time_rule
+        # 操作者ID
+        self.op_user_id = op_user_id
+
+    def validate(self):
+        if self.leave_certificate:
+            self.leave_certificate.validate()
+        if self.submit_time_rule:
+            self.submit_time_rule.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.extras is not None:
+            result['extras'] = self.extras
+        if self.hours_in_per_day is not None:
+            result['hoursInPerDay'] = self.hours_in_per_day
+        if self.leave_certificate is not None:
+            result['leaveCertificate'] = self.leave_certificate.to_map()
+        if self.leave_name is not None:
+            result['leaveName'] = self.leave_name
+        if self.leave_view_unit is not None:
+            result['leaveViewUnit'] = self.leave_view_unit
+        if self.natural_day_leave is not None:
+            result['naturalDayLeave'] = self.natural_day_leave
+        if self.submit_time_rule is not None:
+            result['submitTimeRule'] = self.submit_time_rule.to_map()
+        if self.op_user_id is not None:
+            result['opUserId'] = self.op_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('extras') is not None:
+            self.extras = m.get('extras')
+        if m.get('hoursInPerDay') is not None:
+            self.hours_in_per_day = m.get('hoursInPerDay')
+        if m.get('leaveCertificate') is not None:
+            temp_model = AddLeaveTypeRequestLeaveCertificate()
+            self.leave_certificate = temp_model.from_map(m['leaveCertificate'])
+        if m.get('leaveName') is not None:
+            self.leave_name = m.get('leaveName')
+        if m.get('leaveViewUnit') is not None:
+            self.leave_view_unit = m.get('leaveViewUnit')
+        if m.get('naturalDayLeave') is not None:
+            self.natural_day_leave = m.get('naturalDayLeave')
+        if m.get('submitTimeRule') is not None:
+            temp_model = AddLeaveTypeRequestSubmitTimeRule()
+            self.submit_time_rule = temp_model.from_map(m['submitTimeRule'])
+        if m.get('opUserId') is not None:
+            self.op_user_id = m.get('opUserId')
+        return self
+
+
+class AddLeaveTypeResponseBodyResultLeaveCertificate(TeaModel):
+    def __init__(
+        self,
+        duration: float = None,
+        enable: bool = None,
+        prompt_information: str = None,
+        unit: str = None,
+    ):
+        # 超过多长时间需提供请假证明
+        self.duration = duration
+        # 是否开启请假证明
+        self.enable = enable
+        # 请假提示文案
+        self.prompt_information = prompt_information
+        # 请假证明单位hour，day
+        self.unit = unit
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.duration is not None:
+            result['duration'] = self.duration
+        if self.enable is not None:
+            result['enable'] = self.enable
+        if self.prompt_information is not None:
+            result['promptInformation'] = self.prompt_information
+        if self.unit is not None:
+            result['unit'] = self.unit
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('duration') is not None:
+            self.duration = m.get('duration')
+        if m.get('enable') is not None:
+            self.enable = m.get('enable')
+        if m.get('promptInformation') is not None:
+            self.prompt_information = m.get('promptInformation')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        return self
+
+
+class AddLeaveTypeResponseBodyResultSubmitTimeRule(TeaModel):
+    def __init__(
+        self,
+        enable_time_limit: bool = None,
+        time_type: str = None,
+        time_unit: str = None,
+        time_value: int = None,
+    ):
+        # 是否开启限时提交功能：仅且为true时开启
+        self.enable_time_limit = enable_time_limit
+        # 限制类型：before-提前；after-补交
+        self.time_type = time_type
+        # 时间单位：day-天；hour-小时
+        self.time_unit = time_unit
+        # 限制值：timeUnit=day时，有效值范围[0~30] 天；timeUnit=hour时，有效值范围[0~24] 小时
+        self.time_value = time_value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.enable_time_limit is not None:
+            result['enableTimeLimit'] = self.enable_time_limit
+        if self.time_type is not None:
+            result['timeType'] = self.time_type
+        if self.time_unit is not None:
+            result['timeUnit'] = self.time_unit
+        if self.time_value is not None:
+            result['timeValue'] = self.time_value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('enableTimeLimit') is not None:
+            self.enable_time_limit = m.get('enableTimeLimit')
+        if m.get('timeType') is not None:
+            self.time_type = m.get('timeType')
+        if m.get('timeUnit') is not None:
+            self.time_unit = m.get('timeUnit')
+        if m.get('timeValue') is not None:
+            self.time_value = m.get('timeValue')
+        return self
+
+
+class AddLeaveTypeResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        biz_type: str = None,
+        hours_in_per_day: int = None,
+        leave_certificate: AddLeaveTypeResponseBodyResultLeaveCertificate = None,
+        leave_code: str = None,
+        leave_name: str = None,
+        leave_view_unit: str = None,
+        natural_day_leave: bool = None,
+        submit_time_rule: AddLeaveTypeResponseBodyResultSubmitTimeRule = None,
+    ):
+        # 假期类型，普通假期或者加班转调休假期。(general_leave、lieu_leave其中一种)
+        self.biz_type = biz_type
+        # 每天折算的工作时长(百分之一 例如1天=10小时=1000)
+        self.hours_in_per_day = hours_in_per_day
+        # 请假证明
+        self.leave_certificate = leave_certificate
+        # 假期类型唯一标识
+        self.leave_code = leave_code
+        # 假期名称
+        self.leave_name = leave_name
+        # 请假单位，可以按照天半天或者小时请假。(day、halfDay、hour其中一种)
+        self.leave_view_unit = leave_view_unit
+        # 是否按照自然日统计请假时长，当为false的时候，用户发起请假时候会根据用户在请假时间段内的排班情况来计算请假时长。
+        self.natural_day_leave = natural_day_leave
+        # 限时提交规则
+        self.submit_time_rule = submit_time_rule
+
+    def validate(self):
+        if self.leave_certificate:
+            self.leave_certificate.validate()
+        if self.submit_time_rule:
+            self.submit_time_rule.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.hours_in_per_day is not None:
+            result['hoursInPerDay'] = self.hours_in_per_day
+        if self.leave_certificate is not None:
+            result['leaveCertificate'] = self.leave_certificate.to_map()
+        if self.leave_code is not None:
+            result['leaveCode'] = self.leave_code
+        if self.leave_name is not None:
+            result['leaveName'] = self.leave_name
+        if self.leave_view_unit is not None:
+            result['leaveViewUnit'] = self.leave_view_unit
+        if self.natural_day_leave is not None:
+            result['naturalDayLeave'] = self.natural_day_leave
+        if self.submit_time_rule is not None:
+            result['submitTimeRule'] = self.submit_time_rule.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('hoursInPerDay') is not None:
+            self.hours_in_per_day = m.get('hoursInPerDay')
+        if m.get('leaveCertificate') is not None:
+            temp_model = AddLeaveTypeResponseBodyResultLeaveCertificate()
+            self.leave_certificate = temp_model.from_map(m['leaveCertificate'])
+        if m.get('leaveCode') is not None:
+            self.leave_code = m.get('leaveCode')
+        if m.get('leaveName') is not None:
+            self.leave_name = m.get('leaveName')
+        if m.get('leaveViewUnit') is not None:
+            self.leave_view_unit = m.get('leaveViewUnit')
+        if m.get('naturalDayLeave') is not None:
+            self.natural_day_leave = m.get('naturalDayLeave')
+        if m.get('submitTimeRule') is not None:
+            temp_model = AddLeaveTypeResponseBodyResultSubmitTimeRule()
+            self.submit_time_rule = temp_model.from_map(m['submitTimeRule'])
+        return self
+
+
+class AddLeaveTypeResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: AddLeaveTypeResponseBodyResult = None,
+    ):
+        # 返回参数
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = AddLeaveTypeResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class AddLeaveTypeResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: AddLeaveTypeResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = AddLeaveTypeResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class AttendanceBleDevicesAddHeaders(TeaModel):
     def __init__(
         self,
@@ -3123,6 +3590,480 @@ class SyncScheduleInfoResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        return self
+
+
+class UpdateLeaveTypeHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateLeaveTypeRequestLeaveCertificate(TeaModel):
+    def __init__(
+        self,
+        duration: float = None,
+        enable: bool = None,
+        prompt_information: str = None,
+        unit: str = None,
+    ):
+        # 超过多长时间需提供请假证明
+        self.duration = duration
+        # 是否开启请假证明
+        self.enable = enable
+        # 请假提示文案
+        self.prompt_information = prompt_information
+        # 请假证明单位hour，day
+        self.unit = unit
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.duration is not None:
+            result['duration'] = self.duration
+        if self.enable is not None:
+            result['enable'] = self.enable
+        if self.prompt_information is not None:
+            result['promptInformation'] = self.prompt_information
+        if self.unit is not None:
+            result['unit'] = self.unit
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('duration') is not None:
+            self.duration = m.get('duration')
+        if m.get('enable') is not None:
+            self.enable = m.get('enable')
+        if m.get('promptInformation') is not None:
+            self.prompt_information = m.get('promptInformation')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        return self
+
+
+class UpdateLeaveTypeRequestSubmitTimeRule(TeaModel):
+    def __init__(
+        self,
+        enable_time_limit: bool = None,
+        time_type: str = None,
+        time_unit: str = None,
+        time_value: int = None,
+    ):
+        # 是否开启限时提交功能：仅且为true时开启
+        self.enable_time_limit = enable_time_limit
+        # 限制类型：before-提前；after-补交
+        self.time_type = time_type
+        # 时间单位：day-天；hour-小时
+        self.time_unit = time_unit
+        # 限制值：timeUnit=day时，有效值范围[0~30] 天；timeUnit=hour时，有效值范围[0~24] 小时
+        self.time_value = time_value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.enable_time_limit is not None:
+            result['enableTimeLimit'] = self.enable_time_limit
+        if self.time_type is not None:
+            result['timeType'] = self.time_type
+        if self.time_unit is not None:
+            result['timeUnit'] = self.time_unit
+        if self.time_value is not None:
+            result['timeValue'] = self.time_value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('enableTimeLimit') is not None:
+            self.enable_time_limit = m.get('enableTimeLimit')
+        if m.get('timeType') is not None:
+            self.time_type = m.get('timeType')
+        if m.get('timeUnit') is not None:
+            self.time_unit = m.get('timeUnit')
+        if m.get('timeValue') is not None:
+            self.time_value = m.get('timeValue')
+        return self
+
+
+class UpdateLeaveTypeRequest(TeaModel):
+    def __init__(
+        self,
+        biz_type: str = None,
+        extras: str = None,
+        hours_in_per_day: int = None,
+        leave_certificate: UpdateLeaveTypeRequestLeaveCertificate = None,
+        leave_code: str = None,
+        leave_name: str = None,
+        leave_view_unit: str = None,
+        natural_day_leave: bool = None,
+        submit_time_rule: UpdateLeaveTypeRequestSubmitTimeRule = None,
+        op_user_id: str = None,
+    ):
+        # 假期类型，普通假期或者加班转调休假期。(general_leave、lieu_leave其中一种)
+        self.biz_type = biz_type
+        # 调休假有效期规则(validity_type:有效类型 absolute_time(绝对时间)、relative_time(相对时间)其中一种 validity_value:延长日期(当validity_type为absolute_time该值该值不为空且满足yy-mm格式 validity_type为relative_time该值为大于1的整数))
+        self.extras = extras
+        # 每天折算的工作时长(百分之一 例如1天=10小时=1000)
+        self.hours_in_per_day = hours_in_per_day
+        # 请假证明
+        self.leave_certificate = leave_certificate
+        # 假期类型唯一标识
+        self.leave_code = leave_code
+        # 假期名称
+        self.leave_name = leave_name
+        # 请假单位，可以按照天半天或者小时请假。(day、halfDay、hour其中一种)
+        self.leave_view_unit = leave_view_unit
+        # 是否按照自然日统计请假时长，当为false的时候，用户发起请假时候会根据用户在请假时间段内的排班情况来计算请假时长。
+        self.natural_day_leave = natural_day_leave
+        # 限时提交规则
+        self.submit_time_rule = submit_time_rule
+        # 操作者ID
+        self.op_user_id = op_user_id
+
+    def validate(self):
+        if self.leave_certificate:
+            self.leave_certificate.validate()
+        if self.submit_time_rule:
+            self.submit_time_rule.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.extras is not None:
+            result['extras'] = self.extras
+        if self.hours_in_per_day is not None:
+            result['hoursInPerDay'] = self.hours_in_per_day
+        if self.leave_certificate is not None:
+            result['leaveCertificate'] = self.leave_certificate.to_map()
+        if self.leave_code is not None:
+            result['leaveCode'] = self.leave_code
+        if self.leave_name is not None:
+            result['leaveName'] = self.leave_name
+        if self.leave_view_unit is not None:
+            result['leaveViewUnit'] = self.leave_view_unit
+        if self.natural_day_leave is not None:
+            result['naturalDayLeave'] = self.natural_day_leave
+        if self.submit_time_rule is not None:
+            result['submitTimeRule'] = self.submit_time_rule.to_map()
+        if self.op_user_id is not None:
+            result['opUserId'] = self.op_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('extras') is not None:
+            self.extras = m.get('extras')
+        if m.get('hoursInPerDay') is not None:
+            self.hours_in_per_day = m.get('hoursInPerDay')
+        if m.get('leaveCertificate') is not None:
+            temp_model = UpdateLeaveTypeRequestLeaveCertificate()
+            self.leave_certificate = temp_model.from_map(m['leaveCertificate'])
+        if m.get('leaveCode') is not None:
+            self.leave_code = m.get('leaveCode')
+        if m.get('leaveName') is not None:
+            self.leave_name = m.get('leaveName')
+        if m.get('leaveViewUnit') is not None:
+            self.leave_view_unit = m.get('leaveViewUnit')
+        if m.get('naturalDayLeave') is not None:
+            self.natural_day_leave = m.get('naturalDayLeave')
+        if m.get('submitTimeRule') is not None:
+            temp_model = UpdateLeaveTypeRequestSubmitTimeRule()
+            self.submit_time_rule = temp_model.from_map(m['submitTimeRule'])
+        if m.get('opUserId') is not None:
+            self.op_user_id = m.get('opUserId')
+        return self
+
+
+class UpdateLeaveTypeResponseBodyResultLeaveCertificate(TeaModel):
+    def __init__(
+        self,
+        duration: float = None,
+        enable: bool = None,
+        prompt_information: str = None,
+        unit: str = None,
+    ):
+        # 超过多长时间需提供请假证明
+        self.duration = duration
+        # 是否开启请假证明
+        self.enable = enable
+        # 请假提示文案
+        self.prompt_information = prompt_information
+        # 请假证明单位hour，day
+        self.unit = unit
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.duration is not None:
+            result['duration'] = self.duration
+        if self.enable is not None:
+            result['enable'] = self.enable
+        if self.prompt_information is not None:
+            result['promptInformation'] = self.prompt_information
+        if self.unit is not None:
+            result['unit'] = self.unit
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('duration') is not None:
+            self.duration = m.get('duration')
+        if m.get('enable') is not None:
+            self.enable = m.get('enable')
+        if m.get('promptInformation') is not None:
+            self.prompt_information = m.get('promptInformation')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        return self
+
+
+class UpdateLeaveTypeResponseBodyResultSubmitTimeRule(TeaModel):
+    def __init__(
+        self,
+        enable_time_limit: bool = None,
+        time_type: str = None,
+        time_unit: str = None,
+        time_value: int = None,
+    ):
+        # 是否开启限时提交功能：仅且为true时开启
+        self.enable_time_limit = enable_time_limit
+        # 限制类型：before-提前；after-补交
+        self.time_type = time_type
+        # 时间单位：day-天；hour-小时
+        self.time_unit = time_unit
+        # 限制值：timeUnit=day时，有效值范围[0~30] 天；timeUnit=hour时，有效值范围[0~24] 小时
+        self.time_value = time_value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.enable_time_limit is not None:
+            result['enableTimeLimit'] = self.enable_time_limit
+        if self.time_type is not None:
+            result['timeType'] = self.time_type
+        if self.time_unit is not None:
+            result['timeUnit'] = self.time_unit
+        if self.time_value is not None:
+            result['timeValue'] = self.time_value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('enableTimeLimit') is not None:
+            self.enable_time_limit = m.get('enableTimeLimit')
+        if m.get('timeType') is not None:
+            self.time_type = m.get('timeType')
+        if m.get('timeUnit') is not None:
+            self.time_unit = m.get('timeUnit')
+        if m.get('timeValue') is not None:
+            self.time_value = m.get('timeValue')
+        return self
+
+
+class UpdateLeaveTypeResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        biz_type: str = None,
+        hours_in_per_day: int = None,
+        leave_certificate: UpdateLeaveTypeResponseBodyResultLeaveCertificate = None,
+        leave_code: str = None,
+        leave_name: str = None,
+        leave_view_unit: str = None,
+        natural_day_leave: bool = None,
+        submit_time_rule: UpdateLeaveTypeResponseBodyResultSubmitTimeRule = None,
+    ):
+        # 假期类型，普通假期或者加班转调休假期。(general_leave、lieu_leave其中一种)
+        self.biz_type = biz_type
+        # 每天折算的工作时长(百分之一 例如1天=10小时=1000)
+        self.hours_in_per_day = hours_in_per_day
+        # 请假证明
+        self.leave_certificate = leave_certificate
+        # 假期类型唯一标识
+        self.leave_code = leave_code
+        # 假期名称
+        self.leave_name = leave_name
+        # 请假单位，可以按照天半天或者小时请假。(day、halfDay、hour其中一种)
+        self.leave_view_unit = leave_view_unit
+        # 是否按照自然日统计请假时长，当为false的时候，用户发起请假时候会根据用户在请假时间段内的排班情况来计算请假时长。
+        self.natural_day_leave = natural_day_leave
+        # 限时提交规则
+        self.submit_time_rule = submit_time_rule
+
+    def validate(self):
+        if self.leave_certificate:
+            self.leave_certificate.validate()
+        if self.submit_time_rule:
+            self.submit_time_rule.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.hours_in_per_day is not None:
+            result['hoursInPerDay'] = self.hours_in_per_day
+        if self.leave_certificate is not None:
+            result['leaveCertificate'] = self.leave_certificate.to_map()
+        if self.leave_code is not None:
+            result['leaveCode'] = self.leave_code
+        if self.leave_name is not None:
+            result['leaveName'] = self.leave_name
+        if self.leave_view_unit is not None:
+            result['leaveViewUnit'] = self.leave_view_unit
+        if self.natural_day_leave is not None:
+            result['naturalDayLeave'] = self.natural_day_leave
+        if self.submit_time_rule is not None:
+            result['submitTimeRule'] = self.submit_time_rule.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('hoursInPerDay') is not None:
+            self.hours_in_per_day = m.get('hoursInPerDay')
+        if m.get('leaveCertificate') is not None:
+            temp_model = UpdateLeaveTypeResponseBodyResultLeaveCertificate()
+            self.leave_certificate = temp_model.from_map(m['leaveCertificate'])
+        if m.get('leaveCode') is not None:
+            self.leave_code = m.get('leaveCode')
+        if m.get('leaveName') is not None:
+            self.leave_name = m.get('leaveName')
+        if m.get('leaveViewUnit') is not None:
+            self.leave_view_unit = m.get('leaveViewUnit')
+        if m.get('naturalDayLeave') is not None:
+            self.natural_day_leave = m.get('naturalDayLeave')
+        if m.get('submitTimeRule') is not None:
+            temp_model = UpdateLeaveTypeResponseBodyResultSubmitTimeRule()
+            self.submit_time_rule = temp_model.from_map(m['submitTimeRule'])
+        return self
+
+
+class UpdateLeaveTypeResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: UpdateLeaveTypeResponseBodyResult = None,
+    ):
+        # 返回参数
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = UpdateLeaveTypeResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class UpdateLeaveTypeResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: UpdateLeaveTypeResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = UpdateLeaveTypeResponseBody()
+            self.body = temp_model.from_map(m['body'])
         return self
 
 

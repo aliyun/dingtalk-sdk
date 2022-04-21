@@ -2497,6 +2497,254 @@ class CancelTicketResponse(TeaModel):
         return self
 
 
+class CategoryStatisticsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CategoryStatisticsRequest(TeaModel):
+    def __init__(
+        self,
+        max_dt: str = None,
+        min_dt: str = None,
+        open_team_id: str = None,
+    ):
+        # 截止日期
+        self.max_dt = max_dt
+        # 起始日期
+        self.min_dt = min_dt
+        # 开放团队ID
+        self.open_team_id = open_team_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_dt is not None:
+            result['maxDt'] = self.max_dt
+        if self.min_dt is not None:
+            result['minDt'] = self.min_dt
+        if self.open_team_id is not None:
+            result['openTeamId'] = self.open_team_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxDt') is not None:
+            self.max_dt = m.get('maxDt')
+        if m.get('minDt') is not None:
+            self.min_dt = m.get('minDt')
+        if m.get('openTeamId') is not None:
+            self.open_team_id = m.get('openTeamId')
+        return self
+
+
+class CategoryStatisticsResponseBodyCategoryStatisticsRecords(TeaModel):
+    def __init__(
+        self,
+        count: int = None,
+        last_count: int = None,
+        name: str = None,
+    ):
+        # 心声数量
+        self.count = count
+        # 上期心声数量
+        self.last_count = last_count
+        # 分类名称
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.count is not None:
+            result['count'] = self.count
+        if self.last_count is not None:
+            result['lastCount'] = self.last_count
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('count') is not None:
+            self.count = m.get('count')
+        if m.get('lastCount') is not None:
+            self.last_count = m.get('lastCount')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
+class CategoryStatisticsResponseBodyCategoryTrend(TeaModel):
+    def __init__(
+        self,
+        count: int = None,
+        dt: str = None,
+        name: str = None,
+    ):
+        # 心声数量
+        self.count = count
+        # 日期
+        self.dt = dt
+        # 分类名称
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.count is not None:
+            result['count'] = self.count
+        if self.dt is not None:
+            result['dt'] = self.dt
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('count') is not None:
+            self.count = m.get('count')
+        if m.get('dt') is not None:
+            self.dt = m.get('dt')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
+class CategoryStatisticsResponseBody(TeaModel):
+    def __init__(
+        self,
+        category_statistics_records: List[CategoryStatisticsResponseBodyCategoryStatisticsRecords] = None,
+        category_trend: List[CategoryStatisticsResponseBodyCategoryTrend] = None,
+    ):
+        # 分类统计
+        self.category_statistics_records = category_statistics_records
+        # 分类趋势
+        self.category_trend = category_trend
+
+    def validate(self):
+        if self.category_statistics_records:
+            for k in self.category_statistics_records:
+                if k:
+                    k.validate()
+        if self.category_trend:
+            for k in self.category_trend:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['categoryStatisticsRecords'] = []
+        if self.category_statistics_records is not None:
+            for k in self.category_statistics_records:
+                result['categoryStatisticsRecords'].append(k.to_map() if k else None)
+        result['categoryTrend'] = []
+        if self.category_trend is not None:
+            for k in self.category_trend:
+                result['categoryTrend'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.category_statistics_records = []
+        if m.get('categoryStatisticsRecords') is not None:
+            for k in m.get('categoryStatisticsRecords'):
+                temp_model = CategoryStatisticsResponseBodyCategoryStatisticsRecords()
+                self.category_statistics_records.append(temp_model.from_map(k))
+        self.category_trend = []
+        if m.get('categoryTrend') is not None:
+            for k in m.get('categoryTrend'):
+                temp_model = CategoryStatisticsResponseBodyCategoryTrend()
+                self.category_trend.append(temp_model.from_map(k))
+        return self
+
+
+class CategoryStatisticsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CategoryStatisticsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CategoryStatisticsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CloseHumanSessionHeaders(TeaModel):
     def __init__(
         self,
@@ -3544,6 +3792,224 @@ class DeleteKnowledgeResponse(TeaModel):
         return self
 
 
+class EmotionStatisticsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class EmotionStatisticsRequest(TeaModel):
+    def __init__(
+        self,
+        max_dt: str = None,
+        max_emotion: float = None,
+        min_dt: str = None,
+        min_emotion: float = None,
+        open_conversation_ids: str = None,
+        open_group_set_id: str = None,
+        open_team_id: str = None,
+    ):
+        # 截止日期
+        self.max_dt = max_dt
+        # 最大情绪值
+        self.max_emotion = max_emotion
+        # 起始日期
+        self.min_dt = min_dt
+        # 最小情绪值
+        self.min_emotion = min_emotion
+        # 开放群ID列表（多个以逗号拼接）
+        self.open_conversation_ids = open_conversation_ids
+        # 开放群分组ID
+        self.open_group_set_id = open_group_set_id
+        # 开放团队ID
+        self.open_team_id = open_team_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_dt is not None:
+            result['maxDt'] = self.max_dt
+        if self.max_emotion is not None:
+            result['maxEmotion'] = self.max_emotion
+        if self.min_dt is not None:
+            result['minDt'] = self.min_dt
+        if self.min_emotion is not None:
+            result['minEmotion'] = self.min_emotion
+        if self.open_conversation_ids is not None:
+            result['openConversationIds'] = self.open_conversation_ids
+        if self.open_group_set_id is not None:
+            result['openGroupSetId'] = self.open_group_set_id
+        if self.open_team_id is not None:
+            result['openTeamId'] = self.open_team_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxDt') is not None:
+            self.max_dt = m.get('maxDt')
+        if m.get('maxEmotion') is not None:
+            self.max_emotion = m.get('maxEmotion')
+        if m.get('minDt') is not None:
+            self.min_dt = m.get('minDt')
+        if m.get('minEmotion') is not None:
+            self.min_emotion = m.get('minEmotion')
+        if m.get('openConversationIds') is not None:
+            self.open_conversation_ids = m.get('openConversationIds')
+        if m.get('openGroupSetId') is not None:
+            self.open_group_set_id = m.get('openGroupSetId')
+        if m.get('openTeamId') is not None:
+            self.open_team_id = m.get('openTeamId')
+        return self
+
+
+class EmotionStatisticsResponseBodyEmotionStatisticsRecords(TeaModel):
+    def __init__(
+        self,
+        count: int = None,
+        dt: str = None,
+        emotion_score: float = None,
+    ):
+        # 心声数量
+        self.count = count
+        # 日期
+        self.dt = dt
+        # 负面情绪值（0-1,越大越负面)
+        self.emotion_score = emotion_score
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.count is not None:
+            result['count'] = self.count
+        if self.dt is not None:
+            result['dt'] = self.dt
+        if self.emotion_score is not None:
+            result['emotionScore'] = self.emotion_score
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('count') is not None:
+            self.count = m.get('count')
+        if m.get('dt') is not None:
+            self.dt = m.get('dt')
+        if m.get('emotionScore') is not None:
+            self.emotion_score = m.get('emotionScore')
+        return self
+
+
+class EmotionStatisticsResponseBody(TeaModel):
+    def __init__(
+        self,
+        emotion_statistics_records: List[EmotionStatisticsResponseBodyEmotionStatisticsRecords] = None,
+    ):
+        # 情感统计
+        self.emotion_statistics_records = emotion_statistics_records
+
+    def validate(self):
+        if self.emotion_statistics_records:
+            for k in self.emotion_statistics_records:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['emotionStatisticsRecords'] = []
+        if self.emotion_statistics_records is not None:
+            for k in self.emotion_statistics_records:
+                result['emotionStatisticsRecords'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.emotion_statistics_records = []
+        if m.get('emotionStatisticsRecords') is not None:
+            for k in m.get('emotionStatisticsRecords'):
+                temp_model = EmotionStatisticsResponseBodyEmotionStatisticsRecords()
+                self.emotion_statistics_records.append(temp_model.from_map(k))
+        return self
+
+
+class EmotionStatisticsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: EmotionStatisticsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = EmotionStatisticsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class FinishTicketHeaders(TeaModel):
     def __init__(
         self,
@@ -3781,6 +4247,175 @@ class FinishTicketResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        return self
+
+
+class GetNegativeWordCloudHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetNegativeWordCloudRequest(TeaModel):
+    def __init__(
+        self,
+        open_team_id: str = None,
+    ):
+        # 开放团队ID
+        self.open_team_id = open_team_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_team_id is not None:
+            result['openTeamId'] = self.open_team_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openTeamId') is not None:
+            self.open_team_id = m.get('openTeamId')
+        return self
+
+
+class GetNegativeWordCloudResponseBodyWords(TeaModel):
+    def __init__(
+        self,
+        count: int = None,
+        word: str = None,
+    ):
+        # 词数量
+        self.count = count
+        # 词名
+        self.word = word
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.count is not None:
+            result['count'] = self.count
+        if self.word is not None:
+            result['word'] = self.word
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('count') is not None:
+            self.count = m.get('count')
+        if m.get('word') is not None:
+            self.word = m.get('word')
+        return self
+
+
+class GetNegativeWordCloudResponseBody(TeaModel):
+    def __init__(
+        self,
+        words: List[GetNegativeWordCloudResponseBodyWords] = None,
+    ):
+        # 词列表
+        self.words = words
+
+    def validate(self):
+        if self.words:
+            for k in self.words:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['words'] = []
+        if self.words is not None:
+            for k in self.words:
+                result['words'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.words = []
+        if m.get('words') is not None:
+            for k in m.get('words'):
+                temp_model = GetNegativeWordCloudResponseBodyWords()
+                self.words.append(temp_model.from_map(k))
+        return self
+
+
+class GetNegativeWordCloudResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetNegativeWordCloudResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetNegativeWordCloudResponseBody()
+            self.body = temp_model.from_map(m['body'])
         return self
 
 
@@ -4461,6 +5096,838 @@ class GetTicketResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = GetTicketResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetWordCloudHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetWordCloudRequest(TeaModel):
+    def __init__(
+        self,
+        open_team_id: str = None,
+    ):
+        # 开放团队ID
+        self.open_team_id = open_team_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_team_id is not None:
+            result['openTeamId'] = self.open_team_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openTeamId') is not None:
+            self.open_team_id = m.get('openTeamId')
+        return self
+
+
+class GetWordCloudResponseBodyWords(TeaModel):
+    def __init__(
+        self,
+        count: int = None,
+        word: str = None,
+    ):
+        # 词数量
+        self.count = count
+        # 词名
+        self.word = word
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.count is not None:
+            result['count'] = self.count
+        if self.word is not None:
+            result['word'] = self.word
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('count') is not None:
+            self.count = m.get('count')
+        if m.get('word') is not None:
+            self.word = m.get('word')
+        return self
+
+
+class GetWordCloudResponseBody(TeaModel):
+    def __init__(
+        self,
+        words: List[GetWordCloudResponseBodyWords] = None,
+    ):
+        # 词列表
+        self.words = words
+
+    def validate(self):
+        if self.words:
+            for k in self.words:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['words'] = []
+        if self.words is not None:
+            for k in self.words:
+                result['words'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.words = []
+        if m.get('words') is not None:
+            for k in m.get('words'):
+                temp_model = GetWordCloudResponseBodyWords()
+                self.words.append(temp_model.from_map(k))
+        return self
+
+
+class GetWordCloudResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetWordCloudResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetWordCloudResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GroupStatisticsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GroupStatisticsRequest(TeaModel):
+    def __init__(
+        self,
+        max_dt: str = None,
+        min_dt: str = None,
+        open_team_id: str = None,
+    ):
+        # 截止日期
+        self.max_dt = max_dt
+        # 起始日期
+        self.min_dt = min_dt
+        # 开放团队ID
+        self.open_team_id = open_team_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_dt is not None:
+            result['maxDt'] = self.max_dt
+        if self.min_dt is not None:
+            result['minDt'] = self.min_dt
+        if self.open_team_id is not None:
+            result['openTeamId'] = self.open_team_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxDt') is not None:
+            self.max_dt = m.get('maxDt')
+        if m.get('minDt') is not None:
+            self.min_dt = m.get('minDt')
+        if m.get('openTeamId') is not None:
+            self.open_team_id = m.get('openTeamId')
+        return self
+
+
+class GroupStatisticsResponseBodyGroupTrend(TeaModel):
+    def __init__(
+        self,
+        count: int = None,
+        dt: str = None,
+    ):
+        # 群数量
+        self.count = count
+        # 日期
+        self.dt = dt
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.count is not None:
+            result['count'] = self.count
+        if self.dt is not None:
+            result['dt'] = self.dt
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('count') is not None:
+            self.count = m.get('count')
+        if m.get('dt') is not None:
+            self.dt = m.get('dt')
+        return self
+
+
+class GroupStatisticsResponseBody(TeaModel):
+    def __init__(
+        self,
+        group_count: int = None,
+        group_trend: List[GroupStatisticsResponseBodyGroupTrend] = None,
+        increase_group_count: int = None,
+        increase_rate: str = None,
+    ):
+        # (本期)群总数
+        self.group_count = group_count
+        # 群趋势
+        self.group_trend = group_trend
+        # 较上期增长数
+        self.increase_group_count = increase_group_count
+        # 较上期增长率(已乘以100）
+        self.increase_rate = increase_rate
+
+    def validate(self):
+        if self.group_trend:
+            for k in self.group_trend:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.group_count is not None:
+            result['groupCount'] = self.group_count
+        result['groupTrend'] = []
+        if self.group_trend is not None:
+            for k in self.group_trend:
+                result['groupTrend'].append(k.to_map() if k else None)
+        if self.increase_group_count is not None:
+            result['increaseGroupCount'] = self.increase_group_count
+        if self.increase_rate is not None:
+            result['increaseRate'] = self.increase_rate
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('groupCount') is not None:
+            self.group_count = m.get('groupCount')
+        self.group_trend = []
+        if m.get('groupTrend') is not None:
+            for k in m.get('groupTrend'):
+                temp_model = GroupStatisticsResponseBodyGroupTrend()
+                self.group_trend.append(temp_model.from_map(k))
+        if m.get('increaseGroupCount') is not None:
+            self.increase_group_count = m.get('increaseGroupCount')
+        if m.get('increaseRate') is not None:
+            self.increase_rate = m.get('increaseRate')
+        return self
+
+
+class GroupStatisticsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GroupStatisticsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GroupStatisticsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class IntentionCategoryStatisticsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class IntentionCategoryStatisticsRequest(TeaModel):
+    def __init__(
+        self,
+        max_dt: str = None,
+        min_dt: str = None,
+        open_team_id: str = None,
+    ):
+        # 截止日期
+        self.max_dt = max_dt
+        # 起始日期
+        self.min_dt = min_dt
+        # 开放团队ID
+        self.open_team_id = open_team_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_dt is not None:
+            result['maxDt'] = self.max_dt
+        if self.min_dt is not None:
+            result['minDt'] = self.min_dt
+        if self.open_team_id is not None:
+            result['openTeamId'] = self.open_team_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxDt') is not None:
+            self.max_dt = m.get('maxDt')
+        if m.get('minDt') is not None:
+            self.min_dt = m.get('minDt')
+        if m.get('openTeamId') is not None:
+            self.open_team_id = m.get('openTeamId')
+        return self
+
+
+class IntentionCategoryStatisticsResponseBodyIntentionCategoryRecords(TeaModel):
+    def __init__(
+        self,
+        ask_count: int = None,
+        category_name: str = None,
+        dissatisfied_count: int = None,
+        error_count: int = None,
+        praise_count: int = None,
+        suggest_count: int = None,
+    ):
+        # 求助咨询量
+        self.ask_count = ask_count
+        # 分类名
+        self.category_name = category_name
+        # 不满辱骂量
+        self.dissatisfied_count = dissatisfied_count
+        # 产品异常量
+        self.error_count = error_count
+        # 赞扬量
+        self.praise_count = praise_count
+        # 产品建议量
+        self.suggest_count = suggest_count
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ask_count is not None:
+            result['askCount'] = self.ask_count
+        if self.category_name is not None:
+            result['categoryName'] = self.category_name
+        if self.dissatisfied_count is not None:
+            result['dissatisfiedCount'] = self.dissatisfied_count
+        if self.error_count is not None:
+            result['errorCount'] = self.error_count
+        if self.praise_count is not None:
+            result['praiseCount'] = self.praise_count
+        if self.suggest_count is not None:
+            result['suggestCount'] = self.suggest_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('askCount') is not None:
+            self.ask_count = m.get('askCount')
+        if m.get('categoryName') is not None:
+            self.category_name = m.get('categoryName')
+        if m.get('dissatisfiedCount') is not None:
+            self.dissatisfied_count = m.get('dissatisfiedCount')
+        if m.get('errorCount') is not None:
+            self.error_count = m.get('errorCount')
+        if m.get('praiseCount') is not None:
+            self.praise_count = m.get('praiseCount')
+        if m.get('suggestCount') is not None:
+            self.suggest_count = m.get('suggestCount')
+        return self
+
+
+class IntentionCategoryStatisticsResponseBody(TeaModel):
+    def __init__(
+        self,
+        intention_category_records: List[IntentionCategoryStatisticsResponseBodyIntentionCategoryRecords] = None,
+    ):
+        # 统计明细
+        self.intention_category_records = intention_category_records
+
+    def validate(self):
+        if self.intention_category_records:
+            for k in self.intention_category_records:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['intentionCategoryRecords'] = []
+        if self.intention_category_records is not None:
+            for k in self.intention_category_records:
+                result['intentionCategoryRecords'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.intention_category_records = []
+        if m.get('intentionCategoryRecords') is not None:
+            for k in m.get('intentionCategoryRecords'):
+                temp_model = IntentionCategoryStatisticsResponseBodyIntentionCategoryRecords()
+                self.intention_category_records.append(temp_model.from_map(k))
+        return self
+
+
+class IntentionCategoryStatisticsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: IntentionCategoryStatisticsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = IntentionCategoryStatisticsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class IntentionStatisticsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class IntentionStatisticsRequest(TeaModel):
+    def __init__(
+        self,
+        max_dt: str = None,
+        min_dt: str = None,
+        open_team_id: str = None,
+    ):
+        # 截止日期
+        self.max_dt = max_dt
+        # 起始日期
+        self.min_dt = min_dt
+        # 开放团队ID
+        self.open_team_id = open_team_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_dt is not None:
+            result['maxDt'] = self.max_dt
+        if self.min_dt is not None:
+            result['minDt'] = self.min_dt
+        if self.open_team_id is not None:
+            result['openTeamId'] = self.open_team_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxDt') is not None:
+            self.max_dt = m.get('maxDt')
+        if m.get('minDt') is not None:
+            self.min_dt = m.get('minDt')
+        if m.get('openTeamId') is not None:
+            self.open_team_id = m.get('openTeamId')
+        return self
+
+
+class IntentionStatisticsResponseBodyIntentionStatisticsRecords(TeaModel):
+    def __init__(
+        self,
+        count: int = None,
+        intention: str = None,
+        last_count: int = None,
+    ):
+        # 心声数量
+        self.count = count
+        # 意图
+        self.intention = intention
+        # 上期心声数量
+        self.last_count = last_count
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.count is not None:
+            result['count'] = self.count
+        if self.intention is not None:
+            result['intention'] = self.intention
+        if self.last_count is not None:
+            result['lastCount'] = self.last_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('count') is not None:
+            self.count = m.get('count')
+        if m.get('intention') is not None:
+            self.intention = m.get('intention')
+        if m.get('lastCount') is not None:
+            self.last_count = m.get('lastCount')
+        return self
+
+
+class IntentionStatisticsResponseBodyIntentionTrend(TeaModel):
+    def __init__(
+        self,
+        count: int = None,
+        dt: str = None,
+        intention: str = None,
+    ):
+        # 心声数量
+        self.count = count
+        # 日期
+        self.dt = dt
+        # 意图
+        self.intention = intention
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.count is not None:
+            result['count'] = self.count
+        if self.dt is not None:
+            result['dt'] = self.dt
+        if self.intention is not None:
+            result['intention'] = self.intention
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('count') is not None:
+            self.count = m.get('count')
+        if m.get('dt') is not None:
+            self.dt = m.get('dt')
+        if m.get('intention') is not None:
+            self.intention = m.get('intention')
+        return self
+
+
+class IntentionStatisticsResponseBody(TeaModel):
+    def __init__(
+        self,
+        intention_statistics_records: List[IntentionStatisticsResponseBodyIntentionStatisticsRecords] = None,
+        intention_trend: List[IntentionStatisticsResponseBodyIntentionTrend] = None,
+    ):
+        # 意图统计
+        self.intention_statistics_records = intention_statistics_records
+        # 意图趋势
+        self.intention_trend = intention_trend
+
+    def validate(self):
+        if self.intention_statistics_records:
+            for k in self.intention_statistics_records:
+                if k:
+                    k.validate()
+        if self.intention_trend:
+            for k in self.intention_trend:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['intentionStatisticsRecords'] = []
+        if self.intention_statistics_records is not None:
+            for k in self.intention_statistics_records:
+                result['intentionStatisticsRecords'].append(k.to_map() if k else None)
+        result['intentionTrend'] = []
+        if self.intention_trend is not None:
+            for k in self.intention_trend:
+                result['intentionTrend'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.intention_statistics_records = []
+        if m.get('intentionStatisticsRecords') is not None:
+            for k in m.get('intentionStatisticsRecords'):
+                temp_model = IntentionStatisticsResponseBodyIntentionStatisticsRecords()
+                self.intention_statistics_records.append(temp_model.from_map(k))
+        self.intention_trend = []
+        if m.get('intentionTrend') is not None:
+            for k in m.get('intentionTrend'):
+                temp_model = IntentionStatisticsResponseBodyIntentionTrend()
+                self.intention_trend.append(temp_model.from_map(k))
+        return self
+
+
+class IntentionStatisticsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: IntentionStatisticsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = IntentionStatisticsResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -8206,6 +9673,217 @@ class TakeTicketResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        return self
+
+
+class TopicStatisticsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class TopicStatisticsRequest(TeaModel):
+    def __init__(
+        self,
+        max_dt: str = None,
+        min_dt: str = None,
+        open_conversation_ids: str = None,
+        open_team_id: str = None,
+        search_content: str = None,
+    ):
+        # 截止日期
+        self.max_dt = max_dt
+        # 起始日期
+        self.min_dt = min_dt
+        # 开放群ID列表（多个用逗号拼接）
+        self.open_conversation_ids = open_conversation_ids
+        # 开放团队ID
+        self.open_team_id = open_team_id
+        # 搜索内容
+        self.search_content = search_content
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_dt is not None:
+            result['maxDt'] = self.max_dt
+        if self.min_dt is not None:
+            result['minDt'] = self.min_dt
+        if self.open_conversation_ids is not None:
+            result['openConversationIds'] = self.open_conversation_ids
+        if self.open_team_id is not None:
+            result['openTeamId'] = self.open_team_id
+        if self.search_content is not None:
+            result['searchContent'] = self.search_content
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxDt') is not None:
+            self.max_dt = m.get('maxDt')
+        if m.get('minDt') is not None:
+            self.min_dt = m.get('minDt')
+        if m.get('openConversationIds') is not None:
+            self.open_conversation_ids = m.get('openConversationIds')
+        if m.get('openTeamId') is not None:
+            self.open_team_id = m.get('openTeamId')
+        if m.get('searchContent') is not None:
+            self.search_content = m.get('searchContent')
+        return self
+
+
+class TopicStatisticsResponseBodyTopicStatisticsRecords(TeaModel):
+    def __init__(
+        self,
+        dt: str = None,
+        msg_count: int = None,
+        participants_num: int = None,
+        topic_num: int = None,
+    ):
+        # 日期
+        self.dt = dt
+        # 消息量
+        self.msg_count = msg_count
+        # 参与人数
+        self.participants_num = participants_num
+        # 话题数量
+        self.topic_num = topic_num
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dt is not None:
+            result['dt'] = self.dt
+        if self.msg_count is not None:
+            result['msgCount'] = self.msg_count
+        if self.participants_num is not None:
+            result['participantsNum'] = self.participants_num
+        if self.topic_num is not None:
+            result['topicNum'] = self.topic_num
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dt') is not None:
+            self.dt = m.get('dt')
+        if m.get('msgCount') is not None:
+            self.msg_count = m.get('msgCount')
+        if m.get('participantsNum') is not None:
+            self.participants_num = m.get('participantsNum')
+        if m.get('topicNum') is not None:
+            self.topic_num = m.get('topicNum')
+        return self
+
+
+class TopicStatisticsResponseBody(TeaModel):
+    def __init__(
+        self,
+        topic_statistics_records: List[TopicStatisticsResponseBodyTopicStatisticsRecords] = None,
+    ):
+        # 话题趋势
+        self.topic_statistics_records = topic_statistics_records
+
+    def validate(self):
+        if self.topic_statistics_records:
+            for k in self.topic_statistics_records:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['topicStatisticsRecords'] = []
+        if self.topic_statistics_records is not None:
+            for k in self.topic_statistics_records:
+                result['topicStatisticsRecords'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.topic_statistics_records = []
+        if m.get('topicStatisticsRecords') is not None:
+            for k in m.get('topicStatisticsRecords'):
+                temp_model = TopicStatisticsResponseBodyTopicStatisticsRecords()
+                self.topic_statistics_records.append(temp_model.from_map(k))
+        return self
+
+
+class TopicStatisticsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: TopicStatisticsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = TopicStatisticsResponseBody()
+            self.body = temp_model.from_map(m['body'])
         return self
 
 

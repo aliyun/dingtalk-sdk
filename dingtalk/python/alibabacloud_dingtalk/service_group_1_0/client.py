@@ -999,6 +999,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('CancelTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/tickets/cancel', 'none', req, runtime)
         )
 
+    def category_statistics(
+        self,
+        request: dingtalkservice_group__1__0_models.CategoryStatisticsRequest,
+    ) -> dingtalkservice_group__1__0_models.CategoryStatisticsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.CategoryStatisticsHeaders()
+        return self.category_statistics_with_options(request, headers, runtime)
+
+    async def category_statistics_async(
+        self,
+        request: dingtalkservice_group__1__0_models.CategoryStatisticsRequest,
+    ) -> dingtalkservice_group__1__0_models.CategoryStatisticsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.CategoryStatisticsHeaders()
+        return await self.category_statistics_with_options_async(request, headers, runtime)
+
+    def category_statistics_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.CategoryStatisticsRequest,
+        headers: dingtalkservice_group__1__0_models.CategoryStatisticsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.CategoryStatisticsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_dt):
+            query['maxDt'] = request.max_dt
+        if not UtilClient.is_unset(request.min_dt):
+            query['minDt'] = request.min_dt
+        if not UtilClient.is_unset(request.open_team_id):
+            query['openTeamId'] = request.open_team_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.CategoryStatisticsResponse(),
+            self.do_roarequest('CategoryStatistics', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/voices/dashboards/categories/statistics', 'json', req, runtime)
+        )
+
+    async def category_statistics_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.CategoryStatisticsRequest,
+        headers: dingtalkservice_group__1__0_models.CategoryStatisticsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.CategoryStatisticsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_dt):
+            query['maxDt'] = request.max_dt
+        if not UtilClient.is_unset(request.min_dt):
+            query['minDt'] = request.min_dt
+        if not UtilClient.is_unset(request.open_team_id):
+            query['openTeamId'] = request.open_team_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.CategoryStatisticsResponse(),
+            await self.do_roarequest_async('CategoryStatistics', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/voices/dashboards/categories/statistics', 'json', req, runtime)
+        )
+
     def close_human_session(
         self,
         request: dingtalkservice_group__1__0_models.CloseHumanSessionRequest,
@@ -1467,6 +1539,94 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('DeleteKnowledge', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/knowledges/batchDelete', 'json', req, runtime)
         )
 
+    def emotion_statistics(
+        self,
+        request: dingtalkservice_group__1__0_models.EmotionStatisticsRequest,
+    ) -> dingtalkservice_group__1__0_models.EmotionStatisticsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.EmotionStatisticsHeaders()
+        return self.emotion_statistics_with_options(request, headers, runtime)
+
+    async def emotion_statistics_async(
+        self,
+        request: dingtalkservice_group__1__0_models.EmotionStatisticsRequest,
+    ) -> dingtalkservice_group__1__0_models.EmotionStatisticsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.EmotionStatisticsHeaders()
+        return await self.emotion_statistics_with_options_async(request, headers, runtime)
+
+    def emotion_statistics_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.EmotionStatisticsRequest,
+        headers: dingtalkservice_group__1__0_models.EmotionStatisticsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.EmotionStatisticsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_dt):
+            query['maxDt'] = request.max_dt
+        if not UtilClient.is_unset(request.max_emotion):
+            query['maxEmotion'] = request.max_emotion
+        if not UtilClient.is_unset(request.min_dt):
+            query['minDt'] = request.min_dt
+        if not UtilClient.is_unset(request.min_emotion):
+            query['minEmotion'] = request.min_emotion
+        if not UtilClient.is_unset(request.open_conversation_ids):
+            query['openConversationIds'] = request.open_conversation_ids
+        if not UtilClient.is_unset(request.open_group_set_id):
+            query['openGroupSetId'] = request.open_group_set_id
+        if not UtilClient.is_unset(request.open_team_id):
+            query['openTeamId'] = request.open_team_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.EmotionStatisticsResponse(),
+            self.do_roarequest('EmotionStatistics', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/voices/emotions/statistics', 'json', req, runtime)
+        )
+
+    async def emotion_statistics_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.EmotionStatisticsRequest,
+        headers: dingtalkservice_group__1__0_models.EmotionStatisticsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.EmotionStatisticsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_dt):
+            query['maxDt'] = request.max_dt
+        if not UtilClient.is_unset(request.max_emotion):
+            query['maxEmotion'] = request.max_emotion
+        if not UtilClient.is_unset(request.min_dt):
+            query['minDt'] = request.min_dt
+        if not UtilClient.is_unset(request.min_emotion):
+            query['minEmotion'] = request.min_emotion
+        if not UtilClient.is_unset(request.open_conversation_ids):
+            query['openConversationIds'] = request.open_conversation_ids
+        if not UtilClient.is_unset(request.open_group_set_id):
+            query['openGroupSetId'] = request.open_group_set_id
+        if not UtilClient.is_unset(request.open_team_id):
+            query['openTeamId'] = request.open_team_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.EmotionStatisticsResponse(),
+            await self.do_roarequest_async('EmotionStatistics', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/voices/emotions/statistics', 'json', req, runtime)
+        )
+
     def finish_ticket(
         self,
         request: dingtalkservice_group__1__0_models.FinishTicketRequest,
@@ -1545,6 +1705,70 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.FinishTicketResponse(),
             await self.do_roarequest_async('FinishTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/tickets/finish', 'none', req, runtime)
+        )
+
+    def get_negative_word_cloud(
+        self,
+        request: dingtalkservice_group__1__0_models.GetNegativeWordCloudRequest,
+    ) -> dingtalkservice_group__1__0_models.GetNegativeWordCloudResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.GetNegativeWordCloudHeaders()
+        return self.get_negative_word_cloud_with_options(request, headers, runtime)
+
+    async def get_negative_word_cloud_async(
+        self,
+        request: dingtalkservice_group__1__0_models.GetNegativeWordCloudRequest,
+    ) -> dingtalkservice_group__1__0_models.GetNegativeWordCloudResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.GetNegativeWordCloudHeaders()
+        return await self.get_negative_word_cloud_with_options_async(request, headers, runtime)
+
+    def get_negative_word_cloud_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.GetNegativeWordCloudRequest,
+        headers: dingtalkservice_group__1__0_models.GetNegativeWordCloudHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.GetNegativeWordCloudResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.open_team_id):
+            query['openTeamId'] = request.open_team_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.GetNegativeWordCloudResponse(),
+            self.do_roarequest('GetNegativeWordCloud', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/voices/negatives/wordClouds', 'json', req, runtime)
+        )
+
+    async def get_negative_word_cloud_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.GetNegativeWordCloudRequest,
+        headers: dingtalkservice_group__1__0_models.GetNegativeWordCloudHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.GetNegativeWordCloudResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.open_team_id):
+            query['openTeamId'] = request.open_team_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.GetNegativeWordCloudResponse(),
+            await self.do_roarequest_async('GetNegativeWordCloud', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/voices/negatives/wordClouds', 'json', req, runtime)
         )
 
     def get_oss_temp_url(
@@ -1765,6 +1989,286 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.GetTicketResponse(),
             await self.do_roarequest_async('GetTicket', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/tickets', 'json', req, runtime)
+        )
+
+    def get_word_cloud(
+        self,
+        request: dingtalkservice_group__1__0_models.GetWordCloudRequest,
+    ) -> dingtalkservice_group__1__0_models.GetWordCloudResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.GetWordCloudHeaders()
+        return self.get_word_cloud_with_options(request, headers, runtime)
+
+    async def get_word_cloud_async(
+        self,
+        request: dingtalkservice_group__1__0_models.GetWordCloudRequest,
+    ) -> dingtalkservice_group__1__0_models.GetWordCloudResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.GetWordCloudHeaders()
+        return await self.get_word_cloud_with_options_async(request, headers, runtime)
+
+    def get_word_cloud_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.GetWordCloudRequest,
+        headers: dingtalkservice_group__1__0_models.GetWordCloudHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.GetWordCloudResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.open_team_id):
+            query['openTeamId'] = request.open_team_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.GetWordCloudResponse(),
+            self.do_roarequest('GetWordCloud', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/voices/wordClouds', 'json', req, runtime)
+        )
+
+    async def get_word_cloud_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.GetWordCloudRequest,
+        headers: dingtalkservice_group__1__0_models.GetWordCloudHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.GetWordCloudResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.open_team_id):
+            query['openTeamId'] = request.open_team_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.GetWordCloudResponse(),
+            await self.do_roarequest_async('GetWordCloud', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/voices/wordClouds', 'json', req, runtime)
+        )
+
+    def group_statistics(
+        self,
+        request: dingtalkservice_group__1__0_models.GroupStatisticsRequest,
+    ) -> dingtalkservice_group__1__0_models.GroupStatisticsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.GroupStatisticsHeaders()
+        return self.group_statistics_with_options(request, headers, runtime)
+
+    async def group_statistics_async(
+        self,
+        request: dingtalkservice_group__1__0_models.GroupStatisticsRequest,
+    ) -> dingtalkservice_group__1__0_models.GroupStatisticsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.GroupStatisticsHeaders()
+        return await self.group_statistics_with_options_async(request, headers, runtime)
+
+    def group_statistics_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.GroupStatisticsRequest,
+        headers: dingtalkservice_group__1__0_models.GroupStatisticsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.GroupStatisticsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_dt):
+            query['maxDt'] = request.max_dt
+        if not UtilClient.is_unset(request.min_dt):
+            query['minDt'] = request.min_dt
+        if not UtilClient.is_unset(request.open_team_id):
+            query['openTeamId'] = request.open_team_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.GroupStatisticsResponse(),
+            self.do_roarequest('GroupStatistics', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/voices/dashboards/groups/statistics', 'json', req, runtime)
+        )
+
+    async def group_statistics_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.GroupStatisticsRequest,
+        headers: dingtalkservice_group__1__0_models.GroupStatisticsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.GroupStatisticsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_dt):
+            query['maxDt'] = request.max_dt
+        if not UtilClient.is_unset(request.min_dt):
+            query['minDt'] = request.min_dt
+        if not UtilClient.is_unset(request.open_team_id):
+            query['openTeamId'] = request.open_team_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.GroupStatisticsResponse(),
+            await self.do_roarequest_async('GroupStatistics', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/voices/dashboards/groups/statistics', 'json', req, runtime)
+        )
+
+    def intention_category_statistics(
+        self,
+        request: dingtalkservice_group__1__0_models.IntentionCategoryStatisticsRequest,
+    ) -> dingtalkservice_group__1__0_models.IntentionCategoryStatisticsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.IntentionCategoryStatisticsHeaders()
+        return self.intention_category_statistics_with_options(request, headers, runtime)
+
+    async def intention_category_statistics_async(
+        self,
+        request: dingtalkservice_group__1__0_models.IntentionCategoryStatisticsRequest,
+    ) -> dingtalkservice_group__1__0_models.IntentionCategoryStatisticsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.IntentionCategoryStatisticsHeaders()
+        return await self.intention_category_statistics_with_options_async(request, headers, runtime)
+
+    def intention_category_statistics_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.IntentionCategoryStatisticsRequest,
+        headers: dingtalkservice_group__1__0_models.IntentionCategoryStatisticsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.IntentionCategoryStatisticsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_dt):
+            query['maxDt'] = request.max_dt
+        if not UtilClient.is_unset(request.min_dt):
+            query['minDt'] = request.min_dt
+        if not UtilClient.is_unset(request.open_team_id):
+            query['openTeamId'] = request.open_team_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.IntentionCategoryStatisticsResponse(),
+            self.do_roarequest('IntentionCategoryStatistics', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/voices/dashboards/intentionCategories/statistics', 'json', req, runtime)
+        )
+
+    async def intention_category_statistics_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.IntentionCategoryStatisticsRequest,
+        headers: dingtalkservice_group__1__0_models.IntentionCategoryStatisticsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.IntentionCategoryStatisticsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_dt):
+            query['maxDt'] = request.max_dt
+        if not UtilClient.is_unset(request.min_dt):
+            query['minDt'] = request.min_dt
+        if not UtilClient.is_unset(request.open_team_id):
+            query['openTeamId'] = request.open_team_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.IntentionCategoryStatisticsResponse(),
+            await self.do_roarequest_async('IntentionCategoryStatistics', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/voices/dashboards/intentionCategories/statistics', 'json', req, runtime)
+        )
+
+    def intention_statistics(
+        self,
+        request: dingtalkservice_group__1__0_models.IntentionStatisticsRequest,
+    ) -> dingtalkservice_group__1__0_models.IntentionStatisticsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.IntentionStatisticsHeaders()
+        return self.intention_statistics_with_options(request, headers, runtime)
+
+    async def intention_statistics_async(
+        self,
+        request: dingtalkservice_group__1__0_models.IntentionStatisticsRequest,
+    ) -> dingtalkservice_group__1__0_models.IntentionStatisticsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.IntentionStatisticsHeaders()
+        return await self.intention_statistics_with_options_async(request, headers, runtime)
+
+    def intention_statistics_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.IntentionStatisticsRequest,
+        headers: dingtalkservice_group__1__0_models.IntentionStatisticsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.IntentionStatisticsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_dt):
+            query['maxDt'] = request.max_dt
+        if not UtilClient.is_unset(request.min_dt):
+            query['minDt'] = request.min_dt
+        if not UtilClient.is_unset(request.open_team_id):
+            query['openTeamId'] = request.open_team_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.IntentionStatisticsResponse(),
+            self.do_roarequest('IntentionStatistics', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/voices/dashboards/intentions/statistics', 'json', req, runtime)
+        )
+
+    async def intention_statistics_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.IntentionStatisticsRequest,
+        headers: dingtalkservice_group__1__0_models.IntentionStatisticsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.IntentionStatisticsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_dt):
+            query['maxDt'] = request.max_dt
+        if not UtilClient.is_unset(request.min_dt):
+            query['minDt'] = request.min_dt
+        if not UtilClient.is_unset(request.open_team_id):
+            query['openTeamId'] = request.open_team_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.IntentionStatisticsResponse(),
+            await self.do_roarequest_async('IntentionStatistics', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/voices/dashboards/intentions/statistics', 'json', req, runtime)
         )
 
     def list_ticket_operate_record(
@@ -2961,6 +3465,86 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.TakeTicketResponse(),
             await self.do_roarequest_async('TakeTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/tickets/apply', 'none', req, runtime)
+        )
+
+    def topic_statistics(
+        self,
+        request: dingtalkservice_group__1__0_models.TopicStatisticsRequest,
+    ) -> dingtalkservice_group__1__0_models.TopicStatisticsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.TopicStatisticsHeaders()
+        return self.topic_statistics_with_options(request, headers, runtime)
+
+    async def topic_statistics_async(
+        self,
+        request: dingtalkservice_group__1__0_models.TopicStatisticsRequest,
+    ) -> dingtalkservice_group__1__0_models.TopicStatisticsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.TopicStatisticsHeaders()
+        return await self.topic_statistics_with_options_async(request, headers, runtime)
+
+    def topic_statistics_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.TopicStatisticsRequest,
+        headers: dingtalkservice_group__1__0_models.TopicStatisticsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.TopicStatisticsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_dt):
+            query['maxDt'] = request.max_dt
+        if not UtilClient.is_unset(request.min_dt):
+            query['minDt'] = request.min_dt
+        if not UtilClient.is_unset(request.open_conversation_ids):
+            query['openConversationIds'] = request.open_conversation_ids
+        if not UtilClient.is_unset(request.open_team_id):
+            query['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.search_content):
+            query['searchContent'] = request.search_content
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.TopicStatisticsResponse(),
+            self.do_roarequest('TopicStatistics', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/voices/topics/statistics', 'json', req, runtime)
+        )
+
+    async def topic_statistics_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.TopicStatisticsRequest,
+        headers: dingtalkservice_group__1__0_models.TopicStatisticsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.TopicStatisticsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_dt):
+            query['maxDt'] = request.max_dt
+        if not UtilClient.is_unset(request.min_dt):
+            query['minDt'] = request.min_dt
+        if not UtilClient.is_unset(request.open_conversation_ids):
+            query['openConversationIds'] = request.open_conversation_ids
+        if not UtilClient.is_unset(request.open_team_id):
+            query['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.search_content):
+            query['searchContent'] = request.search_content
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.TopicStatisticsResponse(),
+            await self.do_roarequest_async('TopicStatistics', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/voices/topics/statistics', 'json', req, runtime)
         )
 
     def transfer_ticket(

@@ -16857,15 +16857,9 @@ class SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUserName(T
 class SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUser(TeaModel):
     def __init__(
         self,
-        department_name: str = None,
-        email: str = None,
         name: SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUserName = None,
         user_id: str = None,
     ):
-        # 部门名称
-        self.department_name = department_name
-        # 电子邮箱
-        self.email = email
         # 名称
         self.name = name
         # 钉钉userId
@@ -16881,10 +16875,6 @@ class SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUser(TeaMo
             return _map
 
         result = dict()
-        if self.department_name is not None:
-            result['departmentName'] = self.department_name
-        if self.email is not None:
-            result['email'] = self.email
         if self.name is not None:
             result['name'] = self.name.to_map()
         if self.user_id is not None:
@@ -16893,10 +16883,6 @@ class SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUser(TeaMo
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('departmentName') is not None:
-            self.department_name = m.get('departmentName')
-        if m.get('email') is not None:
-            self.email = m.get('email')
         if m.get('name') is not None:
             temp_model = SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUserName()
             self.name = temp_model.from_map(m['name'])
@@ -16943,15 +16929,9 @@ class SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginatorName(T
 class SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginator(TeaModel):
     def __init__(
         self,
-        department_name: str = None,
-        email: str = None,
         name: SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginatorName = None,
         user_id: str = None,
     ):
-        # 部门名称
-        self.department_name = department_name
-        # 电子邮箱
-        self.email = email
         # 名称
         self.name = name
         # 钉钉userId
@@ -16967,10 +16947,6 @@ class SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginator(TeaMo
             return _map
 
         result = dict()
-        if self.department_name is not None:
-            result['departmentName'] = self.department_name
-        if self.email is not None:
-            result['email'] = self.email
         if self.name is not None:
             result['name'] = self.name.to_map()
         if self.user_id is not None:
@@ -16979,10 +16955,6 @@ class SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginator(TeaMo
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('departmentName') is not None:
-            self.department_name = m.get('departmentName')
-        if m.get('email') is not None:
-            self.email = m.get('email')
         if m.get('name') is not None:
             temp_model = SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginatorName()
             self.name = temp_model.from_map(m['name'])
@@ -17022,7 +16994,7 @@ class SearchFormDataSecondGenerationNoTableFieldResponseBodyData(TeaModel):
         self.form_uuid = form_uuid
         # 数据库表记录主键id
         self.id = id
-        # 表单实例数据
+        # 表单实例数据以组件值格式展示
         self.instance_value = instance_value
         # 修改时间
         self.modified_time_gmt = modified_time_gmt
