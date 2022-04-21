@@ -11,7 +11,7 @@ class GrantHonorRequest extends Model
     /**
      * @description 有效期到期时间 时间戳. 会处理成到期那天的23:59:59秒的时间戳
      *
-     * @var string
+     * @var int
      */
     public $expirationTime;
 
@@ -44,7 +44,7 @@ class GrantHonorRequest extends Model
     public $noticeSingle;
 
     /**
-     * @description 接受人staffId
+     * @description 接受人userId
      *
      * @var string[]
      */

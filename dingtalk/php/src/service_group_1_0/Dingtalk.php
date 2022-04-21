@@ -38,6 +38,9 @@ use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\BoundTemplateToTeamRespo
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CancelTicketHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CancelTicketRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CancelTicketResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CategoryStatisticsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CategoryStatisticsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CategoryStatisticsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CloseHumanSessionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CloseHumanSessionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CloseHumanSessionResponse;
@@ -56,9 +59,15 @@ use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CreateTicketResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\DeleteKnowledgeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\DeleteKnowledgeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\DeleteKnowledgeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\EmotionStatisticsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\EmotionStatisticsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\EmotionStatisticsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\FinishTicketHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\FinishTicketRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\FinishTicketResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\GetNegativeWordCloudHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\GetNegativeWordCloudRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\GetNegativeWordCloudResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\GetOssTempUrlHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\GetOssTempUrlRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\GetOssTempUrlResponse;
@@ -68,6 +77,18 @@ use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\GetStoragePolicyResponse
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\GetTicketHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\GetTicketRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\GetTicketResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\GetWordCloudHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\GetWordCloudRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\GetWordCloudResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\GroupStatisticsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\GroupStatisticsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\GroupStatisticsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\IntentionCategoryStatisticsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\IntentionCategoryStatisticsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\IntentionCategoryStatisticsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\IntentionStatisticsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\IntentionStatisticsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\IntentionStatisticsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\ListTicketOperateRecordHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\ListTicketOperateRecordRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\ListTicketOperateRecordResponse;
@@ -112,6 +133,9 @@ use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\SetRobotConfigResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\TakeTicketHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\TakeTicketRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\TakeTicketResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\TopicStatisticsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\TopicStatisticsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\TopicStatisticsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\TransferTicketHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\TransferTicketRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\TransferTicketResponse;
@@ -813,6 +837,54 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param CategoryStatisticsRequest $request
+     *
+     * @return CategoryStatisticsResponse
+     */
+    public function categoryStatistics($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CategoryStatisticsHeaders([]);
+
+        return $this->categoryStatisticsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CategoryStatisticsRequest $request
+     * @param CategoryStatisticsHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return CategoryStatisticsResponse
+     */
+    public function categoryStatisticsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->maxDt)) {
+            @$query['maxDt'] = $request->maxDt;
+        }
+        if (!Utils::isUnset($request->minDt)) {
+            @$query['minDt'] = $request->minDt;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$query['openTeamId'] = $request->openTeamId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return CategoryStatisticsResponse::fromMap($this->doROARequest('CategoryStatistics', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', '/v1.0/serviceGroup/voices/dashboards/categories/statistics', 'json', $req, $runtime));
+    }
+
+    /**
      * @param CloseHumanSessionRequest $request
      *
      * @return CloseHumanSessionResponse
@@ -1128,6 +1200,66 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param EmotionStatisticsRequest $request
+     *
+     * @return EmotionStatisticsResponse
+     */
+    public function emotionStatistics($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new EmotionStatisticsHeaders([]);
+
+        return $this->emotionStatisticsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param EmotionStatisticsRequest $request
+     * @param EmotionStatisticsHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return EmotionStatisticsResponse
+     */
+    public function emotionStatisticsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->maxDt)) {
+            @$query['maxDt'] = $request->maxDt;
+        }
+        if (!Utils::isUnset($request->maxEmotion)) {
+            @$query['maxEmotion'] = $request->maxEmotion;
+        }
+        if (!Utils::isUnset($request->minDt)) {
+            @$query['minDt'] = $request->minDt;
+        }
+        if (!Utils::isUnset($request->minEmotion)) {
+            @$query['minEmotion'] = $request->minEmotion;
+        }
+        if (!Utils::isUnset($request->openConversationIds)) {
+            @$query['openConversationIds'] = $request->openConversationIds;
+        }
+        if (!Utils::isUnset($request->openGroupSetId)) {
+            @$query['openGroupSetId'] = $request->openGroupSetId;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$query['openTeamId'] = $request->openTeamId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return EmotionStatisticsResponse::fromMap($this->doROARequest('EmotionStatistics', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', '/v1.0/serviceGroup/voices/emotions/statistics', 'json', $req, $runtime));
+    }
+
+    /**
      * @param FinishTicketRequest $request
      *
      * @return FinishTicketResponse
@@ -1179,6 +1311,48 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return FinishTicketResponse::fromMap($this->doROARequest('FinishTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/tickets/finish', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param GetNegativeWordCloudRequest $request
+     *
+     * @return GetNegativeWordCloudResponse
+     */
+    public function getNegativeWordCloud($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetNegativeWordCloudHeaders([]);
+
+        return $this->getNegativeWordCloudWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetNegativeWordCloudRequest $request
+     * @param GetNegativeWordCloudHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return GetNegativeWordCloudResponse
+     */
+    public function getNegativeWordCloudWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$query['openTeamId'] = $request->openTeamId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetNegativeWordCloudResponse::fromMap($this->doROARequest('GetNegativeWordCloud', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', '/v1.0/serviceGroup/voices/negatives/wordClouds', 'json', $req, $runtime));
     }
 
     /**
@@ -1326,6 +1500,192 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetTicketResponse::fromMap($this->doROARequest('GetTicket', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', '/v1.0/serviceGroup/tickets', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetWordCloudRequest $request
+     *
+     * @return GetWordCloudResponse
+     */
+    public function getWordCloud($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetWordCloudHeaders([]);
+
+        return $this->getWordCloudWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetWordCloudRequest $request
+     * @param GetWordCloudHeaders $headers
+     * @param RuntimeOptions      $runtime
+     *
+     * @return GetWordCloudResponse
+     */
+    public function getWordCloudWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$query['openTeamId'] = $request->openTeamId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetWordCloudResponse::fromMap($this->doROARequest('GetWordCloud', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', '/v1.0/serviceGroup/voices/wordClouds', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GroupStatisticsRequest $request
+     *
+     * @return GroupStatisticsResponse
+     */
+    public function groupStatistics($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GroupStatisticsHeaders([]);
+
+        return $this->groupStatisticsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GroupStatisticsRequest $request
+     * @param GroupStatisticsHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return GroupStatisticsResponse
+     */
+    public function groupStatisticsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->maxDt)) {
+            @$query['maxDt'] = $request->maxDt;
+        }
+        if (!Utils::isUnset($request->minDt)) {
+            @$query['minDt'] = $request->minDt;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$query['openTeamId'] = $request->openTeamId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GroupStatisticsResponse::fromMap($this->doROARequest('GroupStatistics', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', '/v1.0/serviceGroup/voices/dashboards/groups/statistics', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param IntentionCategoryStatisticsRequest $request
+     *
+     * @return IntentionCategoryStatisticsResponse
+     */
+    public function intentionCategoryStatistics($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new IntentionCategoryStatisticsHeaders([]);
+
+        return $this->intentionCategoryStatisticsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param IntentionCategoryStatisticsRequest $request
+     * @param IntentionCategoryStatisticsHeaders $headers
+     * @param RuntimeOptions                     $runtime
+     *
+     * @return IntentionCategoryStatisticsResponse
+     */
+    public function intentionCategoryStatisticsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->maxDt)) {
+            @$query['maxDt'] = $request->maxDt;
+        }
+        if (!Utils::isUnset($request->minDt)) {
+            @$query['minDt'] = $request->minDt;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$query['openTeamId'] = $request->openTeamId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return IntentionCategoryStatisticsResponse::fromMap($this->doROARequest('IntentionCategoryStatistics', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', '/v1.0/serviceGroup/voices/dashboards/intentionCategories/statistics', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param IntentionStatisticsRequest $request
+     *
+     * @return IntentionStatisticsResponse
+     */
+    public function intentionStatistics($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new IntentionStatisticsHeaders([]);
+
+        return $this->intentionStatisticsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param IntentionStatisticsRequest $request
+     * @param IntentionStatisticsHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return IntentionStatisticsResponse
+     */
+    public function intentionStatisticsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->maxDt)) {
+            @$query['maxDt'] = $request->maxDt;
+        }
+        if (!Utils::isUnset($request->minDt)) {
+            @$query['minDt'] = $request->minDt;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$query['openTeamId'] = $request->openTeamId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return IntentionStatisticsResponse::fromMap($this->doROARequest('IntentionStatistics', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', '/v1.0/serviceGroup/voices/dashboards/intentions/statistics', 'json', $req, $runtime));
     }
 
     /**
@@ -2134,6 +2494,60 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return TakeTicketResponse::fromMap($this->doROARequest('TakeTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/tickets/apply', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param TopicStatisticsRequest $request
+     *
+     * @return TopicStatisticsResponse
+     */
+    public function topicStatistics($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new TopicStatisticsHeaders([]);
+
+        return $this->topicStatisticsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param TopicStatisticsRequest $request
+     * @param TopicStatisticsHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return TopicStatisticsResponse
+     */
+    public function topicStatisticsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->maxDt)) {
+            @$query['maxDt'] = $request->maxDt;
+        }
+        if (!Utils::isUnset($request->minDt)) {
+            @$query['minDt'] = $request->minDt;
+        }
+        if (!Utils::isUnset($request->openConversationIds)) {
+            @$query['openConversationIds'] = $request->openConversationIds;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$query['openTeamId'] = $request->openTeamId;
+        }
+        if (!Utils::isUnset($request->searchContent)) {
+            @$query['searchContent'] = $request->searchContent;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return TopicStatisticsResponse::fromMap($this->doROARequest('TopicStatistics', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', '/v1.0/serviceGroup/voices/topics/statistics', 'json', $req, $runtime));
     }
 
     /**

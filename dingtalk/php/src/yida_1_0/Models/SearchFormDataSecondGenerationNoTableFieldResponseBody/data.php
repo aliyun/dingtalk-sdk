@@ -53,7 +53,7 @@ class data extends Model
     public $id;
 
     /**
-     * @description 表单实例数据
+     * @description 表单实例数据以组件值格式展示
      *
      * @var string
      */

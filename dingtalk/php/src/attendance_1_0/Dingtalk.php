@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vattendance_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\AddLeaveTypeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\AddLeaveTypeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\AddLeaveTypeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\AttendanceBleDevicesAddHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\AttendanceBleDevicesAddRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\AttendanceBleDevicesAddResponse;
@@ -43,6 +46,9 @@ use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetUserHolidaysResponse;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\SyncScheduleInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\SyncScheduleInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\SyncScheduleInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\UpdateLeaveTypeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\UpdateLeaveTypeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\UpdateLeaveTypeResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -57,6 +63,74 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param AddLeaveTypeRequest $request
+     *
+     * @return AddLeaveTypeResponse
+     */
+    public function addLeaveType($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddLeaveTypeHeaders([]);
+
+        return $this->addLeaveTypeWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param AddLeaveTypeRequest $request
+     * @param AddLeaveTypeHeaders $headers
+     * @param RuntimeOptions      $runtime
+     *
+     * @return AddLeaveTypeResponse
+     */
+    public function addLeaveTypeWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->opUserId)) {
+            @$query['opUserId'] = $request->opUserId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->bizType)) {
+            @$body['bizType'] = $request->bizType;
+        }
+        if (!Utils::isUnset($request->extras)) {
+            @$body['extras'] = $request->extras;
+        }
+        if (!Utils::isUnset($request->hoursInPerDay)) {
+            @$body['hoursInPerDay'] = $request->hoursInPerDay;
+        }
+        if (!Utils::isUnset($request->leaveCertificate)) {
+            @$body['leaveCertificate'] = $request->leaveCertificate;
+        }
+        if (!Utils::isUnset($request->leaveName)) {
+            @$body['leaveName'] = $request->leaveName;
+        }
+        if (!Utils::isUnset($request->leaveViewUnit)) {
+            @$body['leaveViewUnit'] = $request->leaveViewUnit;
+        }
+        if (!Utils::isUnset($request->naturalDayLeave)) {
+            @$body['naturalDayLeave'] = $request->naturalDayLeave;
+        }
+        if (!Utils::isUnset($request->submitTimeRule)) {
+            @$body['submitTimeRule'] = $request->submitTimeRule;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return AddLeaveTypeResponse::fromMap($this->doROARequest('AddLeaveType', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/leaves/types', 'json', $req, $runtime));
     }
 
     /**
@@ -670,5 +744,76 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return SyncScheduleInfoResponse::fromMap($this->doROARequest('SyncScheduleInfo', 'attendance_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/attendance/schedules/additionalInfo', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param UpdateLeaveTypeRequest $request
+     *
+     * @return UpdateLeaveTypeResponse
+     */
+    public function updateLeaveType($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateLeaveTypeHeaders([]);
+
+        return $this->updateLeaveTypeWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateLeaveTypeRequest $request
+     * @param UpdateLeaveTypeHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return UpdateLeaveTypeResponse
+     */
+    public function updateLeaveTypeWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->opUserId)) {
+            @$query['opUserId'] = $request->opUserId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->bizType)) {
+            @$body['bizType'] = $request->bizType;
+        }
+        if (!Utils::isUnset($request->extras)) {
+            @$body['extras'] = $request->extras;
+        }
+        if (!Utils::isUnset($request->hoursInPerDay)) {
+            @$body['hoursInPerDay'] = $request->hoursInPerDay;
+        }
+        if (!Utils::isUnset($request->leaveCertificate)) {
+            @$body['leaveCertificate'] = $request->leaveCertificate;
+        }
+        if (!Utils::isUnset($request->leaveCode)) {
+            @$body['leaveCode'] = $request->leaveCode;
+        }
+        if (!Utils::isUnset($request->leaveName)) {
+            @$body['leaveName'] = $request->leaveName;
+        }
+        if (!Utils::isUnset($request->leaveViewUnit)) {
+            @$body['leaveViewUnit'] = $request->leaveViewUnit;
+        }
+        if (!Utils::isUnset($request->naturalDayLeave)) {
+            @$body['naturalDayLeave'] = $request->naturalDayLeave;
+        }
+        if (!Utils::isUnset($request->submitTimeRule)) {
+            @$body['submitTimeRule'] = $request->submitTimeRule;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateLeaveTypeResponse::fromMap($this->doROARequest('UpdateLeaveType', 'attendance_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/attendance/leaves/types', 'json', $req, $runtime));
     }
 }
