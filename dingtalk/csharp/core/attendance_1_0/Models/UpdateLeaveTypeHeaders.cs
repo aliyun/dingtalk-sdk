@@ -8,7 +8,7 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
 {
-    public class AttendanceBleDevicesAddHeaders : TeaModel {
+    public class UpdateLeaveTypeHeaders : TeaModel {
         [NameInMap("commonHeaders")]
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }

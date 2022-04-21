@@ -26,6 +26,138 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
         }
 
 
+        public AddLeaveTypeResponse AddLeaveType(AddLeaveTypeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddLeaveTypeHeaders headers = new AddLeaveTypeHeaders();
+            return AddLeaveTypeWithOptions(request, headers, runtime);
+        }
+
+        public async Task<AddLeaveTypeResponse> AddLeaveTypeAsync(AddLeaveTypeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddLeaveTypeHeaders headers = new AddLeaveTypeHeaders();
+            return await AddLeaveTypeWithOptionsAsync(request, headers, runtime);
+        }
+
+        public AddLeaveTypeResponse AddLeaveTypeWithOptions(AddLeaveTypeRequest request, AddLeaveTypeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUserId))
+            {
+                query["opUserId"] = request.OpUserId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizType))
+            {
+                body["bizType"] = request.BizType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extras))
+            {
+                body["extras"] = request.Extras;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HoursInPerDay))
+            {
+                body["hoursInPerDay"] = request.HoursInPerDay;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LeaveCertificate.ToMap()))
+            {
+                body["leaveCertificate"] = request.LeaveCertificate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LeaveName))
+            {
+                body["leaveName"] = request.LeaveName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LeaveViewUnit))
+            {
+                body["leaveViewUnit"] = request.LeaveViewUnit;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NaturalDayLeave))
+            {
+                body["naturalDayLeave"] = request.NaturalDayLeave;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubmitTimeRule.ToMap()))
+            {
+                body["submitTimeRule"] = request.SubmitTimeRule;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<AddLeaveTypeResponse>(DoROARequest("AddLeaveType", "attendance_1.0", "HTTP", "POST", "AK", "/v1.0/attendance/leaves/types", "json", req, runtime));
+        }
+
+        public async Task<AddLeaveTypeResponse> AddLeaveTypeWithOptionsAsync(AddLeaveTypeRequest request, AddLeaveTypeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUserId))
+            {
+                query["opUserId"] = request.OpUserId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizType))
+            {
+                body["bizType"] = request.BizType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extras))
+            {
+                body["extras"] = request.Extras;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HoursInPerDay))
+            {
+                body["hoursInPerDay"] = request.HoursInPerDay;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LeaveCertificate.ToMap()))
+            {
+                body["leaveCertificate"] = request.LeaveCertificate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LeaveName))
+            {
+                body["leaveName"] = request.LeaveName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LeaveViewUnit))
+            {
+                body["leaveViewUnit"] = request.LeaveViewUnit;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NaturalDayLeave))
+            {
+                body["naturalDayLeave"] = request.NaturalDayLeave;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubmitTimeRule.ToMap()))
+            {
+                body["submitTimeRule"] = request.SubmitTimeRule;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<AddLeaveTypeResponse>(await DoROARequestAsync("AddLeaveType", "attendance_1.0", "HTTP", "POST", "AK", "/v1.0/attendance/leaves/types", "json", req, runtime));
+        }
+
         public AttendanceBleDevicesAddResponse AttendanceBleDevicesAdd(AttendanceBleDevicesAddRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1030,6 +1162,146 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             return TeaModel.ToObject<SyncScheduleInfoResponse>(await DoROARequestAsync("SyncScheduleInfo", "attendance_1.0", "HTTP", "PUT", "AK", "/v1.0/attendance/schedules/additionalInfo", "none", req, runtime));
+        }
+
+        public UpdateLeaveTypeResponse UpdateLeaveType(UpdateLeaveTypeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateLeaveTypeHeaders headers = new UpdateLeaveTypeHeaders();
+            return UpdateLeaveTypeWithOptions(request, headers, runtime);
+        }
+
+        public async Task<UpdateLeaveTypeResponse> UpdateLeaveTypeAsync(UpdateLeaveTypeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateLeaveTypeHeaders headers = new UpdateLeaveTypeHeaders();
+            return await UpdateLeaveTypeWithOptionsAsync(request, headers, runtime);
+        }
+
+        public UpdateLeaveTypeResponse UpdateLeaveTypeWithOptions(UpdateLeaveTypeRequest request, UpdateLeaveTypeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUserId))
+            {
+                query["opUserId"] = request.OpUserId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizType))
+            {
+                body["bizType"] = request.BizType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extras))
+            {
+                body["extras"] = request.Extras;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HoursInPerDay))
+            {
+                body["hoursInPerDay"] = request.HoursInPerDay;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LeaveCertificate.ToMap()))
+            {
+                body["leaveCertificate"] = request.LeaveCertificate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LeaveCode))
+            {
+                body["leaveCode"] = request.LeaveCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LeaveName))
+            {
+                body["leaveName"] = request.LeaveName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LeaveViewUnit))
+            {
+                body["leaveViewUnit"] = request.LeaveViewUnit;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NaturalDayLeave))
+            {
+                body["naturalDayLeave"] = request.NaturalDayLeave;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubmitTimeRule.ToMap()))
+            {
+                body["submitTimeRule"] = request.SubmitTimeRule;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<UpdateLeaveTypeResponse>(DoROARequest("UpdateLeaveType", "attendance_1.0", "HTTP", "PUT", "AK", "/v1.0/attendance/leaves/types", "json", req, runtime));
+        }
+
+        public async Task<UpdateLeaveTypeResponse> UpdateLeaveTypeWithOptionsAsync(UpdateLeaveTypeRequest request, UpdateLeaveTypeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUserId))
+            {
+                query["opUserId"] = request.OpUserId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizType))
+            {
+                body["bizType"] = request.BizType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extras))
+            {
+                body["extras"] = request.Extras;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HoursInPerDay))
+            {
+                body["hoursInPerDay"] = request.HoursInPerDay;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LeaveCertificate.ToMap()))
+            {
+                body["leaveCertificate"] = request.LeaveCertificate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LeaveCode))
+            {
+                body["leaveCode"] = request.LeaveCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LeaveName))
+            {
+                body["leaveName"] = request.LeaveName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LeaveViewUnit))
+            {
+                body["leaveViewUnit"] = request.LeaveViewUnit;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NaturalDayLeave))
+            {
+                body["naturalDayLeave"] = request.NaturalDayLeave;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubmitTimeRule.ToMap()))
+            {
+                body["submitTimeRule"] = request.SubmitTimeRule;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<UpdateLeaveTypeResponse>(await DoROARequestAsync("UpdateLeaveType", "attendance_1.0", "HTTP", "PUT", "AK", "/v1.0/attendance/leaves/types", "json", req, runtime));
         }
 
     }

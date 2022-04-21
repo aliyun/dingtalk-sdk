@@ -59,7 +59,7 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             public long? Id { get; set; }
 
             /// <summary>
-            /// 表单实例数据
+            /// 表单实例数据以组件值格式展示
             /// </summary>
             [NameInMap("instanceValue")]
             [Validation(Required=false)]
@@ -86,12 +86,6 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             [Validation(Required=false)]
             public SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUser ModifyUser { get; set; }
             public class SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUser : TeaModel {
-                [NameInMap("departmentName")]
-                [Validation(Required=false)]
-                public string DepartmentName { get; set; }
-                [NameInMap("email")]
-                [Validation(Required=false)]
-                public string Email { get; set; }
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUserName Name { get; set; }
@@ -123,12 +117,6 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             [Validation(Required=false)]
             public SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginator Originator { get; set; }
             public class SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginator : TeaModel {
-                [NameInMap("departmentName")]
-                [Validation(Required=false)]
-                public string DepartmentName { get; set; }
-                [NameInMap("email")]
-                [Validation(Required=false)]
-                public string Email { get; set; }
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginatorName Name { get; set; }

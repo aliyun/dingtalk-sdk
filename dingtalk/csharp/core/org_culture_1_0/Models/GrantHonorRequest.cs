@@ -14,7 +14,7 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0.Models
         /// </summary>
         [NameInMap("expirationTime")]
         [Validation(Required=false)]
-        public string ExpirationTime { get; set; }
+        public long? ExpirationTime { get; set; }
 
         /// <summary>
         /// 颁奖词，最多可以填50字
@@ -45,7 +45,7 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0.Models
         public bool? NoticeSingle { get; set; }
 
         /// <summary>
-        /// 接受人staffId
+        /// 接受人userId
         /// </summary>
         [NameInMap("receiverUserIds")]
         [Validation(Required=false)]
