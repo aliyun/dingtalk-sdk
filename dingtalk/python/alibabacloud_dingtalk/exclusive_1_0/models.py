@@ -290,6 +290,146 @@ class CreateTrustedDeviceResponse(TeaModel):
         return self
 
 
+class CreateTrustedDeviceBatchHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateTrustedDeviceBatchRequest(TeaModel):
+    def __init__(
+        self,
+        mac_address_list: List[str] = None,
+        platform: str = None,
+        user_id: str = None,
+    ):
+        # mac地址列表
+        self.mac_address_list = mac_address_list
+        # 平台
+        self.platform = platform
+        # 员工id
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.mac_address_list is not None:
+            result['macAddressList'] = self.mac_address_list
+        if self.platform is not None:
+            result['platform'] = self.platform
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('macAddressList') is not None:
+            self.mac_address_list = m.get('macAddressList')
+        if m.get('platform') is not None:
+            self.platform = m.get('platform')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class CreateTrustedDeviceBatchResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        # 处理结果
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class CreateTrustedDeviceBatchResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CreateTrustedDeviceBatchResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CreateTrustedDeviceBatchResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class DeleteCommentHeaders(TeaModel):
     def __init__(
         self,
@@ -4075,6 +4215,472 @@ class GetUserAppVersionSummaryResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = GetUserAppVersionSummaryResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ListAuditLogHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListAuditLogRequest(TeaModel):
+    def __init__(
+        self,
+        end_date: int = None,
+        next_biz_id: int = None,
+        next_gmt_create: int = None,
+        page_size: int = None,
+        start_date: int = None,
+    ):
+        # 操作日志截止时间，unix时间戳，单位ms
+        self.end_date = end_date
+        # 操作记录文件id，作为分页偏移量，与nextGmtCreate一起使用，返回记录的bizId为nextBizId且gmtCreate为nextGmtCreate之后的操作列表，分页查询获取下一页时，传最后一条记录的bizId和gmtCreate。
+        self.next_biz_id = next_biz_id
+        # 操作记录生成时间，作为分页偏移量，分页查询时必传，unix时间戳，单位ms
+        self.next_gmt_create = next_gmt_create
+        # 操作列表长度，最大500
+        self.page_size = page_size
+        # 操作日志起始时间，unix时间戳，单位ms
+        self.start_date = start_date
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end_date is not None:
+            result['endDate'] = self.end_date
+        if self.next_biz_id is not None:
+            result['nextBizId'] = self.next_biz_id
+        if self.next_gmt_create is not None:
+            result['nextGmtCreate'] = self.next_gmt_create
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.start_date is not None:
+            result['startDate'] = self.start_date
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('endDate') is not None:
+            self.end_date = m.get('endDate')
+        if m.get('nextBizId') is not None:
+            self.next_biz_id = m.get('nextBizId')
+        if m.get('nextGmtCreate') is not None:
+            self.next_gmt_create = m.get('nextGmtCreate')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('startDate') is not None:
+            self.start_date = m.get('startDate')
+        return self
+
+
+class ListAuditLogResponseBodyListDocMemberList(TeaModel):
+    def __init__(
+        self,
+        member_name: str = None,
+        member_type: int = None,
+        member_type_view: str = None,
+        permission_role: int = None,
+        permission_role_view: str = None,
+    ):
+        # 成员名称
+        self.member_name = member_name
+        # 成员类型
+        self.member_type = member_type
+        # 成员类型翻译值
+        self.member_type_view = member_type_view
+        # 权限类型
+        self.permission_role = permission_role
+        # 权限类型翻译值
+        self.permission_role_view = permission_role_view
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.member_name is not None:
+            result['memberName'] = self.member_name
+        if self.member_type is not None:
+            result['memberType'] = self.member_type
+        if self.member_type_view is not None:
+            result['memberTypeView'] = self.member_type_view
+        if self.permission_role is not None:
+            result['permissionRole'] = self.permission_role
+        if self.permission_role_view is not None:
+            result['permissionRoleView'] = self.permission_role_view
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('memberName') is not None:
+            self.member_name = m.get('memberName')
+        if m.get('memberType') is not None:
+            self.member_type = m.get('memberType')
+        if m.get('memberTypeView') is not None:
+            self.member_type_view = m.get('memberTypeView')
+        if m.get('permissionRole') is not None:
+            self.permission_role = m.get('permissionRole')
+        if m.get('permissionRoleView') is not None:
+            self.permission_role_view = m.get('permissionRoleView')
+        return self
+
+
+class ListAuditLogResponseBodyListDocReceiverList(TeaModel):
+    def __init__(
+        self,
+        receiver_name: str = None,
+        receiver_type: int = None,
+        receiver_type_view: str = None,
+    ):
+        # 成员名称
+        self.receiver_name = receiver_name
+        # 成员类型
+        self.receiver_type = receiver_type
+        # 成员类型翻译值
+        self.receiver_type_view = receiver_type_view
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.receiver_name is not None:
+            result['receiverName'] = self.receiver_name
+        if self.receiver_type is not None:
+            result['receiverType'] = self.receiver_type
+        if self.receiver_type_view is not None:
+            result['receiverTypeView'] = self.receiver_type_view
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('receiverName') is not None:
+            self.receiver_name = m.get('receiverName')
+        if m.get('receiverType') is not None:
+            self.receiver_type = m.get('receiverType')
+        if m.get('receiverTypeView') is not None:
+            self.receiver_type_view = m.get('receiverTypeView')
+        return self
+
+
+class ListAuditLogResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        action: int = None,
+        action_view: str = None,
+        biz_id: str = None,
+        doc_member_list: List[ListAuditLogResponseBodyListDocMemberList] = None,
+        doc_receiver_list: List[ListAuditLogResponseBodyListDocReceiverList] = None,
+        gmt_create: int = None,
+        gmt_modified: int = None,
+        ip_address: str = None,
+        operate_module: int = None,
+        operate_module_view: str = None,
+        operator_name: str = None,
+        org_name: str = None,
+        platform: int = None,
+        platform_view: str = None,
+        real_name: str = None,
+        receiver_name: str = None,
+        receiver_type: int = None,
+        receiver_type_view: str = None,
+        resource: str = None,
+        resource_extension: str = None,
+        resource_size: int = None,
+        status: int = None,
+        target_space_id: int = None,
+        user_id: str = None,
+    ):
+        # 操作类型
+        self.action = action
+        # 操作类型翻译值
+        self.action_view = action_view
+        # 文件id
+        self.biz_id = biz_id
+        # 接收成员列表，仅分享文档返回
+        self.doc_member_list = doc_member_list
+        # 成员授权列表，仅文档授权返回
+        self.doc_receiver_list = doc_receiver_list
+        # 记录生成时间，unix时间戳，单位ms
+        self.gmt_create = gmt_create
+        # 记录修改时间，unix时间戳，单位ms
+        self.gmt_modified = gmt_modified
+        # 操作机器ip
+        self.ip_address = ip_address
+        # 操作来源空间
+        self.operate_module = operate_module
+        # 操作来源翻译值
+        self.operate_module_view = operate_module_view
+        # 用户昵称
+        self.operator_name = operator_name
+        # 文件所属组织名称
+        self.org_name = org_name
+        # 操作端
+        self.platform = platform
+        # 操作端翻译值
+        self.platform_view = platform_view
+        # 用户姓名
+        self.real_name = real_name
+        # 文件接收方名称
+        self.receiver_name = receiver_name
+        # 文件接收方类型
+        self.receiver_type = receiver_type
+        # 文件接收方类型翻译值
+        self.receiver_type_view = receiver_type_view
+        # test.docx
+        self.resource = resource
+        # 文件类型
+        self.resource_extension = resource_extension
+        # 文件大小
+        self.resource_size = resource_size
+        # 记录状态
+        self.status = status
+        # 空间id
+        self.target_space_id = target_space_id
+        # 员工的userId
+        self.user_id = user_id
+
+    def validate(self):
+        if self.doc_member_list:
+            for k in self.doc_member_list:
+                if k:
+                    k.validate()
+        if self.doc_receiver_list:
+            for k in self.doc_receiver_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action is not None:
+            result['action'] = self.action
+        if self.action_view is not None:
+            result['actionView'] = self.action_view
+        if self.biz_id is not None:
+            result['bizId'] = self.biz_id
+        result['docMemberList'] = []
+        if self.doc_member_list is not None:
+            for k in self.doc_member_list:
+                result['docMemberList'].append(k.to_map() if k else None)
+        result['docReceiverList'] = []
+        if self.doc_receiver_list is not None:
+            for k in self.doc_receiver_list:
+                result['docReceiverList'].append(k.to_map() if k else None)
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.gmt_modified is not None:
+            result['gmtModified'] = self.gmt_modified
+        if self.ip_address is not None:
+            result['ipAddress'] = self.ip_address
+        if self.operate_module is not None:
+            result['operateModule'] = self.operate_module
+        if self.operate_module_view is not None:
+            result['operateModuleView'] = self.operate_module_view
+        if self.operator_name is not None:
+            result['operatorName'] = self.operator_name
+        if self.org_name is not None:
+            result['orgName'] = self.org_name
+        if self.platform is not None:
+            result['platform'] = self.platform
+        if self.platform_view is not None:
+            result['platformView'] = self.platform_view
+        if self.real_name is not None:
+            result['realName'] = self.real_name
+        if self.receiver_name is not None:
+            result['receiverName'] = self.receiver_name
+        if self.receiver_type is not None:
+            result['receiverType'] = self.receiver_type
+        if self.receiver_type_view is not None:
+            result['receiverTypeView'] = self.receiver_type_view
+        if self.resource is not None:
+            result['resource'] = self.resource
+        if self.resource_extension is not None:
+            result['resourceExtension'] = self.resource_extension
+        if self.resource_size is not None:
+            result['resourceSize'] = self.resource_size
+        if self.status is not None:
+            result['status'] = self.status
+        if self.target_space_id is not None:
+            result['targetSpaceId'] = self.target_space_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('action') is not None:
+            self.action = m.get('action')
+        if m.get('actionView') is not None:
+            self.action_view = m.get('actionView')
+        if m.get('bizId') is not None:
+            self.biz_id = m.get('bizId')
+        self.doc_member_list = []
+        if m.get('docMemberList') is not None:
+            for k in m.get('docMemberList'):
+                temp_model = ListAuditLogResponseBodyListDocMemberList()
+                self.doc_member_list.append(temp_model.from_map(k))
+        self.doc_receiver_list = []
+        if m.get('docReceiverList') is not None:
+            for k in m.get('docReceiverList'):
+                temp_model = ListAuditLogResponseBodyListDocReceiverList()
+                self.doc_receiver_list.append(temp_model.from_map(k))
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('gmtModified') is not None:
+            self.gmt_modified = m.get('gmtModified')
+        if m.get('ipAddress') is not None:
+            self.ip_address = m.get('ipAddress')
+        if m.get('operateModule') is not None:
+            self.operate_module = m.get('operateModule')
+        if m.get('operateModuleView') is not None:
+            self.operate_module_view = m.get('operateModuleView')
+        if m.get('operatorName') is not None:
+            self.operator_name = m.get('operatorName')
+        if m.get('orgName') is not None:
+            self.org_name = m.get('orgName')
+        if m.get('platform') is not None:
+            self.platform = m.get('platform')
+        if m.get('platformView') is not None:
+            self.platform_view = m.get('platformView')
+        if m.get('realName') is not None:
+            self.real_name = m.get('realName')
+        if m.get('receiverName') is not None:
+            self.receiver_name = m.get('receiverName')
+        if m.get('receiverType') is not None:
+            self.receiver_type = m.get('receiverType')
+        if m.get('receiverTypeView') is not None:
+            self.receiver_type_view = m.get('receiverTypeView')
+        if m.get('resource') is not None:
+            self.resource = m.get('resource')
+        if m.get('resourceExtension') is not None:
+            self.resource_extension = m.get('resourceExtension')
+        if m.get('resourceSize') is not None:
+            self.resource_size = m.get('resourceSize')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('targetSpaceId') is not None:
+            self.target_space_id = m.get('targetSpaceId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class ListAuditLogResponseBody(TeaModel):
+    def __init__(
+        self,
+        list: List[ListAuditLogResponseBodyList] = None,
+    ):
+        # 记录列表
+        self.list = list
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = ListAuditLogResponseBodyList()
+                self.list.append(temp_model.from_map(k))
+        return self
+
+
+class ListAuditLogResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ListAuditLogResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ListAuditLogResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

@@ -1071,6 +1071,90 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('CategoryStatistics', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/voices/dashboards/categories/statistics', 'json', req, runtime)
         )
 
+    def close_conversation(
+        self,
+        request: dingtalkservice_group__1__0_models.CloseConversationRequest,
+    ) -> dingtalkservice_group__1__0_models.CloseConversationResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.CloseConversationHeaders()
+        return self.close_conversation_with_options(request, headers, runtime)
+
+    async def close_conversation_async(
+        self,
+        request: dingtalkservice_group__1__0_models.CloseConversationRequest,
+    ) -> dingtalkservice_group__1__0_models.CloseConversationResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.CloseConversationHeaders()
+        return await self.close_conversation_with_options_async(request, headers, runtime)
+
+    def close_conversation_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.CloseConversationRequest,
+        headers: dingtalkservice_group__1__0_models.CloseConversationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.CloseConversationResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.conversation_id):
+            body['conversationId'] = request.conversation_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.server_tips):
+            body['serverTips'] = request.server_tips
+        if not UtilClient.is_unset(request.service_token):
+            body['serviceToken'] = request.service_token
+        if not UtilClient.is_unset(request.target_channel):
+            body['targetChannel'] = request.target_channel
+        if not UtilClient.is_unset(request.visitor_token):
+            body['visitorToken'] = request.visitor_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.CloseConversationResponse(),
+            self.do_roarequest('CloseConversation', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/conversions', 'json', req, runtime)
+        )
+
+    async def close_conversation_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.CloseConversationRequest,
+        headers: dingtalkservice_group__1__0_models.CloseConversationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.CloseConversationResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.conversation_id):
+            body['conversationId'] = request.conversation_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.server_tips):
+            body['serverTips'] = request.server_tips
+        if not UtilClient.is_unset(request.service_token):
+            body['serviceToken'] = request.service_token
+        if not UtilClient.is_unset(request.target_channel):
+            body['targetChannel'] = request.target_channel
+        if not UtilClient.is_unset(request.visitor_token):
+            body['visitorToken'] = request.visitor_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.CloseConversationResponse(),
+            await self.do_roarequest_async('CloseConversation', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/conversions', 'json', req, runtime)
+        )
+
     def close_human_session(
         self,
         request: dingtalkservice_group__1__0_models.CloseHumanSessionRequest,
@@ -1137,6 +1221,278 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.CloseHumanSessionResponse(),
             await self.do_roarequest_async('CloseHumanSession', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/humanSessions/close', 'json', req, runtime)
+        )
+
+    def conversation_created_notify(
+        self,
+        request: dingtalkservice_group__1__0_models.ConversationCreatedNotifyRequest,
+    ) -> dingtalkservice_group__1__0_models.ConversationCreatedNotifyResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.ConversationCreatedNotifyHeaders()
+        return self.conversation_created_notify_with_options(request, headers, runtime)
+
+    async def conversation_created_notify_async(
+        self,
+        request: dingtalkservice_group__1__0_models.ConversationCreatedNotifyRequest,
+    ) -> dingtalkservice_group__1__0_models.ConversationCreatedNotifyResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.ConversationCreatedNotifyHeaders()
+        return await self.conversation_created_notify_with_options_async(request, headers, runtime)
+
+    def conversation_created_notify_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.ConversationCreatedNotifyRequest,
+        headers: dingtalkservice_group__1__0_models.ConversationCreatedNotifyHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.ConversationCreatedNotifyResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.alipay_user_id):
+            body['alipayUserId'] = request.alipay_user_id
+        if not UtilClient.is_unset(request.conversation_id):
+            body['conversationId'] = request.conversation_id
+        if not UtilClient.is_unset(request.nick_name):
+            body['nickName'] = request.nick_name
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.server_name):
+            body['serverName'] = request.server_name
+        if not UtilClient.is_unset(request.server_tips):
+            body['serverTips'] = request.server_tips
+        if not UtilClient.is_unset(request.service_token):
+            body['serviceToken'] = request.service_token
+        if not UtilClient.is_unset(request.timeout_remind_tips):
+            body['timeoutRemindTips'] = request.timeout_remind_tips
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.visitor_token):
+            body['visitorToken'] = request.visitor_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.ConversationCreatedNotifyResponse(),
+            self.do_roarequest('ConversationCreatedNotify', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/customers', 'json', req, runtime)
+        )
+
+    async def conversation_created_notify_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.ConversationCreatedNotifyRequest,
+        headers: dingtalkservice_group__1__0_models.ConversationCreatedNotifyHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.ConversationCreatedNotifyResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.alipay_user_id):
+            body['alipayUserId'] = request.alipay_user_id
+        if not UtilClient.is_unset(request.conversation_id):
+            body['conversationId'] = request.conversation_id
+        if not UtilClient.is_unset(request.nick_name):
+            body['nickName'] = request.nick_name
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.server_name):
+            body['serverName'] = request.server_name
+        if not UtilClient.is_unset(request.server_tips):
+            body['serverTips'] = request.server_tips
+        if not UtilClient.is_unset(request.service_token):
+            body['serviceToken'] = request.service_token
+        if not UtilClient.is_unset(request.timeout_remind_tips):
+            body['timeoutRemindTips'] = request.timeout_remind_tips
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.visitor_token):
+            body['visitorToken'] = request.visitor_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.ConversationCreatedNotifyResponse(),
+            await self.do_roarequest_async('ConversationCreatedNotify', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/customers', 'json', req, runtime)
+        )
+
+    def conversation_transfer_begin_notify(
+        self,
+        request: dingtalkservice_group__1__0_models.ConversationTransferBeginNotifyRequest,
+    ) -> dingtalkservice_group__1__0_models.ConversationTransferBeginNotifyResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.ConversationTransferBeginNotifyHeaders()
+        return self.conversation_transfer_begin_notify_with_options(request, headers, runtime)
+
+    async def conversation_transfer_begin_notify_async(
+        self,
+        request: dingtalkservice_group__1__0_models.ConversationTransferBeginNotifyRequest,
+    ) -> dingtalkservice_group__1__0_models.ConversationTransferBeginNotifyResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.ConversationTransferBeginNotifyHeaders()
+        return await self.conversation_transfer_begin_notify_with_options_async(request, headers, runtime)
+
+    def conversation_transfer_begin_notify_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.ConversationTransferBeginNotifyRequest,
+        headers: dingtalkservice_group__1__0_models.ConversationTransferBeginNotifyHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.ConversationTransferBeginNotifyResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.conversation_id):
+            body['conversationId'] = request.conversation_id
+        if not UtilClient.is_unset(request.memo):
+            body['memo'] = request.memo
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.service_token):
+            body['serviceToken'] = request.service_token
+        if not UtilClient.is_unset(request.source_skill_group_id):
+            body['sourceSkillGroupId'] = request.source_skill_group_id
+        if not UtilClient.is_unset(request.target_skill_group_id):
+            body['targetSkillGroupId'] = request.target_skill_group_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.ConversationTransferBeginNotifyResponse(),
+            self.do_roarequest('ConversationTransferBeginNotify', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/transfers', 'json', req, runtime)
+        )
+
+    async def conversation_transfer_begin_notify_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.ConversationTransferBeginNotifyRequest,
+        headers: dingtalkservice_group__1__0_models.ConversationTransferBeginNotifyHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.ConversationTransferBeginNotifyResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.conversation_id):
+            body['conversationId'] = request.conversation_id
+        if not UtilClient.is_unset(request.memo):
+            body['memo'] = request.memo
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.service_token):
+            body['serviceToken'] = request.service_token
+        if not UtilClient.is_unset(request.source_skill_group_id):
+            body['sourceSkillGroupId'] = request.source_skill_group_id
+        if not UtilClient.is_unset(request.target_skill_group_id):
+            body['targetSkillGroupId'] = request.target_skill_group_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.ConversationTransferBeginNotifyResponse(),
+            await self.do_roarequest_async('ConversationTransferBeginNotify', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/transfers', 'json', req, runtime)
+        )
+
+    def conversation_transfer_complete_notify(
+        self,
+        request: dingtalkservice_group__1__0_models.ConversationTransferCompleteNotifyRequest,
+    ) -> dingtalkservice_group__1__0_models.ConversationTransferCompleteNotifyResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.ConversationTransferCompleteNotifyHeaders()
+        return self.conversation_transfer_complete_notify_with_options(request, headers, runtime)
+
+    async def conversation_transfer_complete_notify_async(
+        self,
+        request: dingtalkservice_group__1__0_models.ConversationTransferCompleteNotifyRequest,
+    ) -> dingtalkservice_group__1__0_models.ConversationTransferCompleteNotifyResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.ConversationTransferCompleteNotifyHeaders()
+        return await self.conversation_transfer_complete_notify_with_options_async(request, headers, runtime)
+
+    def conversation_transfer_complete_notify_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.ConversationTransferCompleteNotifyRequest,
+        headers: dingtalkservice_group__1__0_models.ConversationTransferCompleteNotifyHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.ConversationTransferCompleteNotifyResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.alipay_user_id):
+            body['alipayUserId'] = request.alipay_user_id
+        if not UtilClient.is_unset(request.conversation_id):
+            body['conversationId'] = request.conversation_id
+        if not UtilClient.is_unset(request.nick_name):
+            body['nickName'] = request.nick_name
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.service_token):
+            body['serviceToken'] = request.service_token
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.visitor_token):
+            body['visitorToken'] = request.visitor_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.ConversationTransferCompleteNotifyResponse(),
+            self.do_roarequest('ConversationTransferCompleteNotify', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/completes', 'json', req, runtime)
+        )
+
+    async def conversation_transfer_complete_notify_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.ConversationTransferCompleteNotifyRequest,
+        headers: dingtalkservice_group__1__0_models.ConversationTransferCompleteNotifyHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.ConversationTransferCompleteNotifyResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.alipay_user_id):
+            body['alipayUserId'] = request.alipay_user_id
+        if not UtilClient.is_unset(request.conversation_id):
+            body['conversationId'] = request.conversation_id
+        if not UtilClient.is_unset(request.nick_name):
+            body['nickName'] = request.nick_name
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.service_token):
+            body['serviceToken'] = request.service_token
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.visitor_token):
+            body['visitorToken'] = request.visitor_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.ConversationTransferCompleteNotifyResponse(),
+            await self.do_roarequest_async('ConversationTransferCompleteNotify', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/completes', 'json', req, runtime)
         )
 
     def create_group(
@@ -1705,6 +2061,86 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.FinishTicketResponse(),
             await self.do_roarequest_async('FinishTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/tickets/finish', 'none', req, runtime)
+        )
+
+    def get_auth_token(
+        self,
+        request: dingtalkservice_group__1__0_models.GetAuthTokenRequest,
+    ) -> dingtalkservice_group__1__0_models.GetAuthTokenResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.GetAuthTokenHeaders()
+        return self.get_auth_token_with_options(request, headers, runtime)
+
+    async def get_auth_token_async(
+        self,
+        request: dingtalkservice_group__1__0_models.GetAuthTokenRequest,
+    ) -> dingtalkservice_group__1__0_models.GetAuthTokenResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.GetAuthTokenHeaders()
+        return await self.get_auth_token_with_options_async(request, headers, runtime)
+
+    def get_auth_token_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.GetAuthTokenRequest,
+        headers: dingtalkservice_group__1__0_models.GetAuthTokenHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.GetAuthTokenResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.channel):
+            body['channel'] = request.channel
+        if not UtilClient.is_unset(request.effective_time):
+            body['effectiveTime'] = request.effective_time
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.server_id):
+            body['serverId'] = request.server_id
+        if not UtilClient.is_unset(request.server_name):
+            body['serverName'] = request.server_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.GetAuthTokenResponse(),
+            self.do_roarequest('GetAuthToken', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/get/tokens', 'json', req, runtime)
+        )
+
+    async def get_auth_token_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.GetAuthTokenRequest,
+        headers: dingtalkservice_group__1__0_models.GetAuthTokenHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.GetAuthTokenResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.channel):
+            body['channel'] = request.channel
+        if not UtilClient.is_unset(request.effective_time):
+            body['effectiveTime'] = request.effective_time
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.server_id):
+            body['serverId'] = request.server_id
+        if not UtilClient.is_unset(request.server_name):
+            body['serverName'] = request.server_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.GetAuthTokenResponse(),
+            await self.do_roarequest_async('GetAuthToken', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/get/tokens', 'json', req, runtime)
         )
 
     def get_negative_word_cloud(
@@ -2467,6 +2903,74 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('QueryActiveUsers', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/groups/queryActiveUsers', 'json', req, runtime)
         )
 
+    def query_customer_card(
+        self,
+        request: dingtalkservice_group__1__0_models.QueryCustomerCardRequest,
+    ) -> dingtalkservice_group__1__0_models.QueryCustomerCardResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.QueryCustomerCardHeaders()
+        return self.query_customer_card_with_options(request, headers, runtime)
+
+    async def query_customer_card_async(
+        self,
+        request: dingtalkservice_group__1__0_models.QueryCustomerCardRequest,
+    ) -> dingtalkservice_group__1__0_models.QueryCustomerCardResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.QueryCustomerCardHeaders()
+        return await self.query_customer_card_with_options_async(request, headers, runtime)
+
+    def query_customer_card_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.QueryCustomerCardRequest,
+        headers: dingtalkservice_group__1__0_models.QueryCustomerCardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.QueryCustomerCardResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.json_params):
+            body['jsonParams'] = request.json_params
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.QueryCustomerCardResponse(),
+            self.do_roarequest('QueryCustomerCard', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/userDetials', 'json', req, runtime)
+        )
+
+    async def query_customer_card_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.QueryCustomerCardRequest,
+        headers: dingtalkservice_group__1__0_models.QueryCustomerCardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.QueryCustomerCardResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.json_params):
+            body['jsonParams'] = request.json_params
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.QueryCustomerCardResponse(),
+            await self.do_roarequest_async('QueryCustomerCard', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/userDetials', 'json', req, runtime)
+        )
+
     def query_group(
         self,
         request: dingtalkservice_group__1__0_models.QueryGroupRequest,
@@ -2837,6 +3341,94 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.QueryServiceGroupMessageReadStatusResponse(),
             await self.do_roarequest_async('QueryServiceGroupMessageReadStatus', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/messages/readStatus/query', 'json', req, runtime)
+        )
+
+    def queue_notify(
+        self,
+        request: dingtalkservice_group__1__0_models.QueueNotifyRequest,
+    ) -> dingtalkservice_group__1__0_models.QueueNotifyResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.QueueNotifyHeaders()
+        return self.queue_notify_with_options(request, headers, runtime)
+
+    async def queue_notify_async(
+        self,
+        request: dingtalkservice_group__1__0_models.QueueNotifyRequest,
+    ) -> dingtalkservice_group__1__0_models.QueueNotifyResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.QueueNotifyHeaders()
+        return await self.queue_notify_with_options_async(request, headers, runtime)
+
+    def queue_notify_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.QueueNotifyRequest,
+        headers: dingtalkservice_group__1__0_models.QueueNotifyHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.QueueNotifyResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.estimate_wait_min):
+            body['estimateWaitMin'] = request.estimate_wait_min
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.queue_place):
+            body['queuePlace'] = request.queue_place
+        if not UtilClient.is_unset(request.service_token):
+            body['serviceToken'] = request.service_token
+        if not UtilClient.is_unset(request.target_channel):
+            body['targetChannel'] = request.target_channel
+        if not UtilClient.is_unset(request.tips):
+            body['tips'] = request.tips
+        if not UtilClient.is_unset(request.visitor_token):
+            body['visitorToken'] = request.visitor_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.QueueNotifyResponse(),
+            self.do_roarequest('QueueNotify', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/dts', 'json', req, runtime)
+        )
+
+    async def queue_notify_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.QueueNotifyRequest,
+        headers: dingtalkservice_group__1__0_models.QueueNotifyHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.QueueNotifyResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.estimate_wait_min):
+            body['estimateWaitMin'] = request.estimate_wait_min
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.queue_place):
+            body['queuePlace'] = request.queue_place
+        if not UtilClient.is_unset(request.service_token):
+            body['serviceToken'] = request.service_token
+        if not UtilClient.is_unset(request.target_channel):
+            body['targetChannel'] = request.target_channel
+        if not UtilClient.is_unset(request.tips):
+            body['tips'] = request.tips
+        if not UtilClient.is_unset(request.visitor_token):
+            body['visitorToken'] = request.visitor_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.QueueNotifyResponse(),
+            await self.do_roarequest_async('QueueNotify', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/dts', 'json', req, runtime)
         )
 
     def resubmit_ticket(

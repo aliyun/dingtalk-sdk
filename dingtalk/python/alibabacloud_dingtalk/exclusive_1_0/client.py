@@ -167,6 +167,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('CreateTrustedDevice', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/trustedDevices', 'json', req, runtime)
         )
 
+    def create_trusted_device_batch(
+        self,
+        request: dingtalkexclusive__1__0_models.CreateTrustedDeviceBatchRequest,
+    ) -> dingtalkexclusive__1__0_models.CreateTrustedDeviceBatchResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.CreateTrustedDeviceBatchHeaders()
+        return self.create_trusted_device_batch_with_options(request, headers, runtime)
+
+    async def create_trusted_device_batch_async(
+        self,
+        request: dingtalkexclusive__1__0_models.CreateTrustedDeviceBatchRequest,
+    ) -> dingtalkexclusive__1__0_models.CreateTrustedDeviceBatchResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.CreateTrustedDeviceBatchHeaders()
+        return await self.create_trusted_device_batch_with_options_async(request, headers, runtime)
+
+    def create_trusted_device_batch_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.CreateTrustedDeviceBatchRequest,
+        headers: dingtalkexclusive__1__0_models.CreateTrustedDeviceBatchHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.CreateTrustedDeviceBatchResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.mac_address_list):
+            body['macAddressList'] = request.mac_address_list
+        if not UtilClient.is_unset(request.platform):
+            body['platform'] = request.platform
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.CreateTrustedDeviceBatchResponse(),
+            self.do_roarequest('CreateTrustedDeviceBatch', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/trusts/devices', 'json', req, runtime)
+        )
+
+    async def create_trusted_device_batch_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.CreateTrustedDeviceBatchRequest,
+        headers: dingtalkexclusive__1__0_models.CreateTrustedDeviceBatchHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.CreateTrustedDeviceBatchResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.mac_address_list):
+            body['macAddressList'] = request.mac_address_list
+        if not UtilClient.is_unset(request.platform):
+            body['platform'] = request.platform
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.CreateTrustedDeviceBatchResponse(),
+            await self.do_roarequest_async('CreateTrustedDeviceBatch', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/trusts/devices', 'json', req, runtime)
+        )
+
     def delete_comment(
         self,
         publisher_id: str,
@@ -1481,6 +1553,86 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkexclusive__1__0_models.GetUserAppVersionSummaryResponse(),
             await self.do_roarequest_async('GetUserAppVersionSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/data/appVersion/org/{data_id}', 'json', req, runtime)
+        )
+
+    def list_audit_log(
+        self,
+        request: dingtalkexclusive__1__0_models.ListAuditLogRequest,
+    ) -> dingtalkexclusive__1__0_models.ListAuditLogResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.ListAuditLogHeaders()
+        return self.list_audit_log_with_options(request, headers, runtime)
+
+    async def list_audit_log_async(
+        self,
+        request: dingtalkexclusive__1__0_models.ListAuditLogRequest,
+    ) -> dingtalkexclusive__1__0_models.ListAuditLogResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.ListAuditLogHeaders()
+        return await self.list_audit_log_with_options_async(request, headers, runtime)
+
+    def list_audit_log_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.ListAuditLogRequest,
+        headers: dingtalkexclusive__1__0_models.ListAuditLogHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.ListAuditLogResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.end_date):
+            query['endDate'] = request.end_date
+        if not UtilClient.is_unset(request.next_biz_id):
+            query['nextBizId'] = request.next_biz_id
+        if not UtilClient.is_unset(request.next_gmt_create):
+            query['nextGmtCreate'] = request.next_gmt_create
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.start_date):
+            query['startDate'] = request.start_date
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.ListAuditLogResponse(),
+            self.do_roarequest('ListAuditLog', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/fileAuditLogs', 'json', req, runtime)
+        )
+
+    async def list_audit_log_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.ListAuditLogRequest,
+        headers: dingtalkexclusive__1__0_models.ListAuditLogHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.ListAuditLogResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.end_date):
+            query['endDate'] = request.end_date
+        if not UtilClient.is_unset(request.next_biz_id):
+            query['nextBizId'] = request.next_biz_id
+        if not UtilClient.is_unset(request.next_gmt_create):
+            query['nextGmtCreate'] = request.next_gmt_create
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.start_date):
+            query['startDate'] = request.start_date
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.ListAuditLogResponse(),
+            await self.do_roarequest_async('ListAuditLog', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/fileAuditLogs', 'json', req, runtime)
         )
 
     def list_mini_app_available_version(

@@ -2745,6 +2745,188 @@ class CategoryStatisticsResponse(TeaModel):
         return self
 
 
+class CloseConversationHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CloseConversationRequest(TeaModel):
+    def __init__(
+        self,
+        conversation_id: str = None,
+        open_team_id: str = None,
+        server_tips: str = None,
+        service_token: str = None,
+        target_channel: str = None,
+        visitor_token: str = None,
+    ):
+        # DT端会话ID
+        self.conversation_id = conversation_id
+        # 开放团队ID
+        self.open_team_id = open_team_id
+        # 客户信息
+        self.server_tips = server_tips
+        # 对应外部渠道的会话ID
+        self.service_token = service_token
+        # 渠道类型
+        self.target_channel = target_channel
+        # DT端定义的
+        self.visitor_token = visitor_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.conversation_id is not None:
+            result['conversationId'] = self.conversation_id
+        if self.open_team_id is not None:
+            result['openTeamId'] = self.open_team_id
+        if self.server_tips is not None:
+            result['serverTips'] = self.server_tips
+        if self.service_token is not None:
+            result['serviceToken'] = self.service_token
+        if self.target_channel is not None:
+            result['targetChannel'] = self.target_channel
+        if self.visitor_token is not None:
+            result['visitorToken'] = self.visitor_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('conversationId') is not None:
+            self.conversation_id = m.get('conversationId')
+        if m.get('openTeamId') is not None:
+            self.open_team_id = m.get('openTeamId')
+        if m.get('serverTips') is not None:
+            self.server_tips = m.get('serverTips')
+        if m.get('serviceToken') is not None:
+            self.service_token = m.get('serviceToken')
+        if m.get('targetChannel') is not None:
+            self.target_channel = m.get('targetChannel')
+        if m.get('visitorToken') is not None:
+            self.visitor_token = m.get('visitorToken')
+        return self
+
+
+class CloseConversationResponseBody(TeaModel):
+    def __init__(
+        self,
+        ding_open_errcode: int = None,
+        error_msg: str = None,
+        result: bool = None,
+        success: bool = None,
+    ):
+        # dingOpenErrcode
+        self.ding_open_errcode = ding_open_errcode
+        # errorMsg
+        self.error_msg = error_msg
+        # result
+        self.result = result
+        # success
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_open_errcode is not None:
+            result['dingOpenErrcode'] = self.ding_open_errcode
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingOpenErrcode') is not None:
+            self.ding_open_errcode = m.get('dingOpenErrcode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class CloseConversationResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CloseConversationResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CloseConversationResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CloseHumanSessionHeaders(TeaModel):
     def __init__(
         self,
@@ -2873,6 +3055,586 @@ class CloseHumanSessionResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = CloseHumanSessionResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ConversationCreatedNotifyHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ConversationCreatedNotifyRequest(TeaModel):
+    def __init__(
+        self,
+        alipay_user_id: str = None,
+        conversation_id: str = None,
+        nick_name: str = None,
+        open_team_id: str = None,
+        server_name: str = None,
+        server_tips: str = None,
+        service_token: str = None,
+        timeout_remind_tips: str = None,
+        user_id: str = None,
+        visitor_token: str = None,
+    ):
+        # 小二客服2088
+        self.alipay_user_id = alipay_user_id
+        # DT端会话ID
+        self.conversation_id = conversation_id
+        # 小二客服昵称
+        self.nick_name = nick_name
+        # 开放团队id
+        self.open_team_id = open_team_id
+        # 客服名称
+        self.server_name = server_name
+        # 客服服务提示
+        self.server_tips = server_tips
+        self.service_token = service_token
+        # 超时规则提示
+        self.timeout_remind_tips = timeout_remind_tips
+        # 小二客服id
+        self.user_id = user_id
+        # DT端定义的，标识唯一的访客
+        self.visitor_token = visitor_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.alipay_user_id is not None:
+            result['alipayUserId'] = self.alipay_user_id
+        if self.conversation_id is not None:
+            result['conversationId'] = self.conversation_id
+        if self.nick_name is not None:
+            result['nickName'] = self.nick_name
+        if self.open_team_id is not None:
+            result['openTeamId'] = self.open_team_id
+        if self.server_name is not None:
+            result['serverName'] = self.server_name
+        if self.server_tips is not None:
+            result['serverTips'] = self.server_tips
+        if self.service_token is not None:
+            result['serviceToken'] = self.service_token
+        if self.timeout_remind_tips is not None:
+            result['timeoutRemindTips'] = self.timeout_remind_tips
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.visitor_token is not None:
+            result['visitorToken'] = self.visitor_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('alipayUserId') is not None:
+            self.alipay_user_id = m.get('alipayUserId')
+        if m.get('conversationId') is not None:
+            self.conversation_id = m.get('conversationId')
+        if m.get('nickName') is not None:
+            self.nick_name = m.get('nickName')
+        if m.get('openTeamId') is not None:
+            self.open_team_id = m.get('openTeamId')
+        if m.get('serverName') is not None:
+            self.server_name = m.get('serverName')
+        if m.get('serverTips') is not None:
+            self.server_tips = m.get('serverTips')
+        if m.get('serviceToken') is not None:
+            self.service_token = m.get('serviceToken')
+        if m.get('timeoutRemindTips') is not None:
+            self.timeout_remind_tips = m.get('timeoutRemindTips')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('visitorToken') is not None:
+            self.visitor_token = m.get('visitorToken')
+        return self
+
+
+class ConversationCreatedNotifyResponseBody(TeaModel):
+    def __init__(
+        self,
+        ding_open_errcode: int = None,
+        error_msg: str = None,
+        result: bool = None,
+        success: bool = None,
+    ):
+        # dingOpenErrcode
+        self.ding_open_errcode = ding_open_errcode
+        # errorMsg
+        self.error_msg = error_msg
+        # 回调是否执行成功
+        self.result = result
+        # 回调是否请求成
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_open_errcode is not None:
+            result['dingOpenErrcode'] = self.ding_open_errcode
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingOpenErrcode') is not None:
+            self.ding_open_errcode = m.get('dingOpenErrcode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class ConversationCreatedNotifyResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ConversationCreatedNotifyResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ConversationCreatedNotifyResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ConversationTransferBeginNotifyHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ConversationTransferBeginNotifyRequest(TeaModel):
+    def __init__(
+        self,
+        conversation_id: str = None,
+        memo: str = None,
+        open_team_id: str = None,
+        service_token: str = None,
+        source_skill_group_id: str = None,
+        target_skill_group_id: str = None,
+    ):
+        # DT端会话ID
+        self.conversation_id = conversation_id
+        # 转接备注
+        self.memo = memo
+        # 团队ID
+        self.open_team_id = open_team_id
+        # 对应外部渠道的会话ID
+        self.service_token = service_token
+        # 原始技能组ID
+        self.source_skill_group_id = source_skill_group_id
+        # 目标技能组ID
+        self.target_skill_group_id = target_skill_group_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.conversation_id is not None:
+            result['conversationId'] = self.conversation_id
+        if self.memo is not None:
+            result['memo'] = self.memo
+        if self.open_team_id is not None:
+            result['openTeamId'] = self.open_team_id
+        if self.service_token is not None:
+            result['serviceToken'] = self.service_token
+        if self.source_skill_group_id is not None:
+            result['sourceSkillGroupId'] = self.source_skill_group_id
+        if self.target_skill_group_id is not None:
+            result['targetSkillGroupId'] = self.target_skill_group_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('conversationId') is not None:
+            self.conversation_id = m.get('conversationId')
+        if m.get('memo') is not None:
+            self.memo = m.get('memo')
+        if m.get('openTeamId') is not None:
+            self.open_team_id = m.get('openTeamId')
+        if m.get('serviceToken') is not None:
+            self.service_token = m.get('serviceToken')
+        if m.get('sourceSkillGroupId') is not None:
+            self.source_skill_group_id = m.get('sourceSkillGroupId')
+        if m.get('targetSkillGroupId') is not None:
+            self.target_skill_group_id = m.get('targetSkillGroupId')
+        return self
+
+
+class ConversationTransferBeginNotifyResponseBody(TeaModel):
+    def __init__(
+        self,
+        ding_open_errcode: int = None,
+        error_msg: str = None,
+        result: bool = None,
+        success: bool = None,
+    ):
+        # dingOpenErrcode
+        self.ding_open_errcode = ding_open_errcode
+        # errorMsg
+        self.error_msg = error_msg
+        # result
+        self.result = result
+        # success
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_open_errcode is not None:
+            result['dingOpenErrcode'] = self.ding_open_errcode
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingOpenErrcode') is not None:
+            self.ding_open_errcode = m.get('dingOpenErrcode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class ConversationTransferBeginNotifyResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ConversationTransferBeginNotifyResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ConversationTransferBeginNotifyResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ConversationTransferCompleteNotifyHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ConversationTransferCompleteNotifyRequest(TeaModel):
+    def __init__(
+        self,
+        alipay_user_id: str = None,
+        conversation_id: str = None,
+        nick_name: str = None,
+        open_team_id: str = None,
+        service_token: str = None,
+        user_id: str = None,
+        visitor_token: str = None,
+    ):
+        # 小二2088id
+        self.alipay_user_id = alipay_user_id
+        # DT端会话ID
+        self.conversation_id = conversation_id
+        # 小二昵称
+        self.nick_name = nick_name
+        # 开放团队id
+        self.open_team_id = open_team_id
+        # 对应外部渠道的会话ID
+        self.service_token = service_token
+        # 小二id
+        self.user_id = user_id
+        # DT端定义的，标识唯一的访
+        self.visitor_token = visitor_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.alipay_user_id is not None:
+            result['alipayUserId'] = self.alipay_user_id
+        if self.conversation_id is not None:
+            result['conversationId'] = self.conversation_id
+        if self.nick_name is not None:
+            result['nickName'] = self.nick_name
+        if self.open_team_id is not None:
+            result['openTeamId'] = self.open_team_id
+        if self.service_token is not None:
+            result['serviceToken'] = self.service_token
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.visitor_token is not None:
+            result['visitorToken'] = self.visitor_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('alipayUserId') is not None:
+            self.alipay_user_id = m.get('alipayUserId')
+        if m.get('conversationId') is not None:
+            self.conversation_id = m.get('conversationId')
+        if m.get('nickName') is not None:
+            self.nick_name = m.get('nickName')
+        if m.get('openTeamId') is not None:
+            self.open_team_id = m.get('openTeamId')
+        if m.get('serviceToken') is not None:
+            self.service_token = m.get('serviceToken')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('visitorToken') is not None:
+            self.visitor_token = m.get('visitorToken')
+        return self
+
+
+class ConversationTransferCompleteNotifyResponseBody(TeaModel):
+    def __init__(
+        self,
+        ding_open_errcode: int = None,
+        error_msg: str = None,
+        result: bool = None,
+        success: bool = None,
+    ):
+        # dingOpenErrcode
+        self.ding_open_errcode = ding_open_errcode
+        # errorMsg
+        self.error_msg = error_msg
+        # result
+        self.result = result
+        # success
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_open_errcode is not None:
+            result['dingOpenErrcode'] = self.ding_open_errcode
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingOpenErrcode') is not None:
+            self.ding_open_errcode = m.get('dingOpenErrcode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class ConversationTransferCompleteNotifyResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ConversationTransferCompleteNotifyResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ConversationTransferCompleteNotifyResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -4247,6 +5009,239 @@ class FinishTicketResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        return self
+
+
+class GetAuthTokenHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetAuthTokenRequest(TeaModel):
+    def __init__(
+        self,
+        channel: str = None,
+        effective_time: int = None,
+        open_team_id: str = None,
+        server_id: str = None,
+        server_name: str = None,
+    ):
+        # 渠道DT/LINKS
+        self.channel = channel
+        # token有效时间（秒）-可不传
+        self.effective_time = effective_time
+        # 团队ID
+        self.open_team_id = open_team_id
+        # 小二id
+        self.server_id = server_id
+        # 小二名称
+        self.server_name = server_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.channel is not None:
+            result['channel'] = self.channel
+        if self.effective_time is not None:
+            result['effectiveTime'] = self.effective_time
+        if self.open_team_id is not None:
+            result['openTeamId'] = self.open_team_id
+        if self.server_id is not None:
+            result['serverId'] = self.server_id
+        if self.server_name is not None:
+            result['serverName'] = self.server_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('channel') is not None:
+            self.channel = m.get('channel')
+        if m.get('effectiveTime') is not None:
+            self.effective_time = m.get('effectiveTime')
+        if m.get('openTeamId') is not None:
+            self.open_team_id = m.get('openTeamId')
+        if m.get('serverId') is not None:
+            self.server_id = m.get('serverId')
+        if m.get('serverName') is not None:
+            self.server_name = m.get('serverName')
+        return self
+
+
+class GetAuthTokenResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        auth_token: str = None,
+        channel: str = None,
+        effective_time: int = None,
+        server_id: str = None,
+        server_name: str = None,
+    ):
+        # token
+        self.auth_token = auth_token
+        # 小二渠道来源 DT/LINKS
+        self.channel = channel
+        # token有效期秒
+        self.effective_time = effective_time
+        # 小二id
+        self.server_id = server_id
+        # 小二名称
+        self.server_name = server_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.auth_token is not None:
+            result['authToken'] = self.auth_token
+        if self.channel is not None:
+            result['channel'] = self.channel
+        if self.effective_time is not None:
+            result['effectiveTime'] = self.effective_time
+        if self.server_id is not None:
+            result['serverId'] = self.server_id
+        if self.server_name is not None:
+            result['serverName'] = self.server_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('authToken') is not None:
+            self.auth_token = m.get('authToken')
+        if m.get('channel') is not None:
+            self.channel = m.get('channel')
+        if m.get('effectiveTime') is not None:
+            self.effective_time = m.get('effectiveTime')
+        if m.get('serverId') is not None:
+            self.server_id = m.get('serverId')
+        if m.get('serverName') is not None:
+            self.server_name = m.get('serverName')
+        return self
+
+
+class GetAuthTokenResponseBody(TeaModel):
+    def __init__(
+        self,
+        ding_open_errcode: int = None,
+        error_msg: str = None,
+        result: GetAuthTokenResponseBodyResult = None,
+        success: bool = None,
+    ):
+        # 错误码
+        self.ding_open_errcode = ding_open_errcode
+        # errorMsg
+        self.error_msg = error_msg
+        # 返回的对象
+        self.result = result
+        # 是否成功
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_open_errcode is not None:
+            result['dingOpenErrcode'] = self.ding_open_errcode
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingOpenErrcode') is not None:
+            self.ding_open_errcode = m.get('dingOpenErrcode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('result') is not None:
+            temp_model = GetAuthTokenResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class GetAuthTokenResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetAuthTokenResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetAuthTokenResponseBody()
+            self.body = temp_model.from_map(m['body'])
         return self
 
 
@@ -6611,6 +7606,159 @@ class QueryActiveUsersResponse(TeaModel):
         return self
 
 
+class QueryCustomerCardHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryCustomerCardRequest(TeaModel):
+    def __init__(
+        self,
+        json_params: str = None,
+        open_team_id: str = None,
+    ):
+        # 查询jsonString
+        self.json_params = json_params
+        self.open_team_id = open_team_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.json_params is not None:
+            result['jsonParams'] = self.json_params
+        if self.open_team_id is not None:
+            result['openTeamId'] = self.open_team_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('jsonParams') is not None:
+            self.json_params = m.get('jsonParams')
+        if m.get('openTeamId') is not None:
+            self.open_team_id = m.get('openTeamId')
+        return self
+
+
+class QueryCustomerCardResponseBody(TeaModel):
+    def __init__(
+        self,
+        ding_open_errcode: int = None,
+        error_msg: str = None,
+        result: bool = None,
+        success: bool = None,
+    ):
+        # dingOpenErrcode
+        self.ding_open_errcode = ding_open_errcode
+        # errorMsg
+        self.error_msg = error_msg
+        # result
+        self.result = result
+        # success
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_open_errcode is not None:
+            result['dingOpenErrcode'] = self.ding_open_errcode
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingOpenErrcode') is not None:
+            self.ding_open_errcode = m.get('dingOpenErrcode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class QueryCustomerCardResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryCustomerCardResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryCustomerCardResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryGroupHeaders(TeaModel):
     def __init__(
         self,
@@ -7808,6 +8956,195 @@ class QueryServiceGroupMessageReadStatusResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = QueryServiceGroupMessageReadStatusResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueueNotifyHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueueNotifyRequest(TeaModel):
+    def __init__(
+        self,
+        estimate_wait_min: int = None,
+        open_team_id: str = None,
+        queue_place: int = None,
+        service_token: str = None,
+        target_channel: str = None,
+        tips: str = None,
+        visitor_token: str = None,
+    ):
+        # 预计等待时间，单位：分钟
+        self.estimate_wait_min = estimate_wait_min
+        # 开放团队ID
+        self.open_team_id = open_team_id
+        # 当前排队次序
+        self.queue_place = queue_place
+        # 会话id
+        self.service_token = service_token
+        # 渠道类型
+        self.target_channel = target_channel
+        # 展示文案
+        self.tips = tips
+        # DT端定义的访客token
+        self.visitor_token = visitor_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.estimate_wait_min is not None:
+            result['estimateWaitMin'] = self.estimate_wait_min
+        if self.open_team_id is not None:
+            result['openTeamId'] = self.open_team_id
+        if self.queue_place is not None:
+            result['queuePlace'] = self.queue_place
+        if self.service_token is not None:
+            result['serviceToken'] = self.service_token
+        if self.target_channel is not None:
+            result['targetChannel'] = self.target_channel
+        if self.tips is not None:
+            result['tips'] = self.tips
+        if self.visitor_token is not None:
+            result['visitorToken'] = self.visitor_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('estimateWaitMin') is not None:
+            self.estimate_wait_min = m.get('estimateWaitMin')
+        if m.get('openTeamId') is not None:
+            self.open_team_id = m.get('openTeamId')
+        if m.get('queuePlace') is not None:
+            self.queue_place = m.get('queuePlace')
+        if m.get('serviceToken') is not None:
+            self.service_token = m.get('serviceToken')
+        if m.get('targetChannel') is not None:
+            self.target_channel = m.get('targetChannel')
+        if m.get('tips') is not None:
+            self.tips = m.get('tips')
+        if m.get('visitorToken') is not None:
+            self.visitor_token = m.get('visitorToken')
+        return self
+
+
+class QueueNotifyResponseBody(TeaModel):
+    def __init__(
+        self,
+        ding_open_errcode: int = None,
+        error_msg: str = None,
+        result: bool = None,
+        success: bool = None,
+    ):
+        # dingOpenErrcode
+        self.ding_open_errcode = ding_open_errcode
+        # errorMsg
+        self.error_msg = error_msg
+        # 执行是否成功
+        self.result = result
+        # 回调是否成功
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_open_errcode is not None:
+            result['dingOpenErrcode'] = self.ding_open_errcode
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingOpenErrcode') is not None:
+            self.ding_open_errcode = m.get('dingOpenErrcode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class QueueNotifyResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueueNotifyResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueueNotifyResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
