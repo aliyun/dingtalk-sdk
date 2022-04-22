@@ -8,6 +8,9 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\BanOrOpenGroupWordsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\BanOrOpenGroupWordsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\BanOrOpenGroupWordsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateTrustedDeviceBatchHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateTrustedDeviceBatchRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateTrustedDeviceBatchResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateTrustedDeviceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateTrustedDeviceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateTrustedDeviceResponse;
@@ -62,6 +65,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetTrustDeviceListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetUserAppVersionSummaryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetUserAppVersionSummaryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetUserAppVersionSummaryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListAuditLogHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListAuditLogRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListAuditLogResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListMiniAppAvailableVersionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListMiniAppAvailableVersionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListMiniAppAvailableVersionResponse;
@@ -213,6 +219,54 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CreateTrustedDeviceResponse::fromMap($this->doROARequest('CreateTrustedDevice', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/trustedDevices', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CreateTrustedDeviceBatchRequest $request
+     *
+     * @return CreateTrustedDeviceBatchResponse
+     */
+    public function createTrustedDeviceBatch($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateTrustedDeviceBatchHeaders([]);
+
+        return $this->createTrustedDeviceBatchWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateTrustedDeviceBatchRequest $request
+     * @param CreateTrustedDeviceBatchHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return CreateTrustedDeviceBatchResponse
+     */
+    public function createTrustedDeviceBatchWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->macAddressList)) {
+            @$body['macAddressList'] = $request->macAddressList;
+        }
+        if (!Utils::isUnset($request->platform)) {
+            @$body['platform'] = $request->platform;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateTrustedDeviceBatchResponse::fromMap($this->doROARequest('CreateTrustedDeviceBatch', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/trusts/devices', 'json', $req, $runtime));
     }
 
     /**
@@ -1082,6 +1136,60 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetUserAppVersionSummaryResponse::fromMap($this->doROARequest('GetUserAppVersionSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/data/appVersion/org/' . $dataId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ListAuditLogRequest $request
+     *
+     * @return ListAuditLogResponse
+     */
+    public function listAuditLog($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListAuditLogHeaders([]);
+
+        return $this->listAuditLogWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ListAuditLogRequest $request
+     * @param ListAuditLogHeaders $headers
+     * @param RuntimeOptions      $runtime
+     *
+     * @return ListAuditLogResponse
+     */
+    public function listAuditLogWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->endDate)) {
+            @$query['endDate'] = $request->endDate;
+        }
+        if (!Utils::isUnset($request->nextBizId)) {
+            @$query['nextBizId'] = $request->nextBizId;
+        }
+        if (!Utils::isUnset($request->nextGmtCreate)) {
+            @$query['nextGmtCreate'] = $request->nextGmtCreate;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->startDate)) {
+            @$query['startDate'] = $request->startDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ListAuditLogResponse::fromMap($this->doROARequest('ListAuditLog', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/fileAuditLogs', 'json', $req, $runtime));
     }
 
     /**
