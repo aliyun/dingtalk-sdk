@@ -1156,6 +1156,112 @@ export class CategoryStatisticsResponse extends $tea.Model {
   }
 }
 
+export class CloseConversationHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CloseConversationRequest extends $tea.Model {
+  conversationId?: string;
+  openTeamId?: string;
+  serverTips?: string;
+  serviceToken?: string;
+  targetChannel?: string;
+  visitorToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      conversationId: 'conversationId',
+      openTeamId: 'openTeamId',
+      serverTips: 'serverTips',
+      serviceToken: 'serviceToken',
+      targetChannel: 'targetChannel',
+      visitorToken: 'visitorToken',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      conversationId: 'string',
+      openTeamId: 'string',
+      serverTips: 'string',
+      serviceToken: 'string',
+      targetChannel: 'string',
+      visitorToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CloseConversationResponseBody extends $tea.Model {
+  dingOpenErrcode?: number;
+  errorMsg?: string;
+  result?: boolean;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      dingOpenErrcode: 'dingOpenErrcode',
+      errorMsg: 'errorMsg',
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingOpenErrcode: 'number',
+      errorMsg: 'string',
+      result: 'boolean',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CloseConversationResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CloseConversationResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CloseConversationResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CloseHumanSessionHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1233,6 +1339,339 @@ export class CloseHumanSessionResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: CloseHumanSessionResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConversationCreatedNotifyHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConversationCreatedNotifyRequest extends $tea.Model {
+  alipayUserId?: string;
+  conversationId?: string;
+  nickName?: string;
+  openTeamId?: string;
+  serverName?: string;
+  serverTips?: string;
+  serviceToken?: string;
+  timeoutRemindTips?: string;
+  userId?: string;
+  visitorToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      alipayUserId: 'alipayUserId',
+      conversationId: 'conversationId',
+      nickName: 'nickName',
+      openTeamId: 'openTeamId',
+      serverName: 'serverName',
+      serverTips: 'serverTips',
+      serviceToken: 'serviceToken',
+      timeoutRemindTips: 'timeoutRemindTips',
+      userId: 'userId',
+      visitorToken: 'visitorToken',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      alipayUserId: 'string',
+      conversationId: 'string',
+      nickName: 'string',
+      openTeamId: 'string',
+      serverName: 'string',
+      serverTips: 'string',
+      serviceToken: 'string',
+      timeoutRemindTips: 'string',
+      userId: 'string',
+      visitorToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConversationCreatedNotifyResponseBody extends $tea.Model {
+  dingOpenErrcode?: number;
+  errorMsg?: string;
+  result?: boolean;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      dingOpenErrcode: 'dingOpenErrcode',
+      errorMsg: 'errorMsg',
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingOpenErrcode: 'number',
+      errorMsg: 'string',
+      result: 'boolean',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConversationCreatedNotifyResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ConversationCreatedNotifyResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ConversationCreatedNotifyResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConversationTransferBeginNotifyHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConversationTransferBeginNotifyRequest extends $tea.Model {
+  conversationId?: string;
+  memo?: string;
+  openTeamId?: string;
+  serviceToken?: string;
+  sourceSkillGroupId?: string;
+  targetSkillGroupId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      conversationId: 'conversationId',
+      memo: 'memo',
+      openTeamId: 'openTeamId',
+      serviceToken: 'serviceToken',
+      sourceSkillGroupId: 'sourceSkillGroupId',
+      targetSkillGroupId: 'targetSkillGroupId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      conversationId: 'string',
+      memo: 'string',
+      openTeamId: 'string',
+      serviceToken: 'string',
+      sourceSkillGroupId: 'string',
+      targetSkillGroupId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConversationTransferBeginNotifyResponseBody extends $tea.Model {
+  dingOpenErrcode?: number;
+  errorMsg?: string;
+  result?: boolean;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      dingOpenErrcode: 'dingOpenErrcode',
+      errorMsg: 'errorMsg',
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingOpenErrcode: 'number',
+      errorMsg: 'string',
+      result: 'boolean',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConversationTransferBeginNotifyResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ConversationTransferBeginNotifyResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ConversationTransferBeginNotifyResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConversationTransferCompleteNotifyHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConversationTransferCompleteNotifyRequest extends $tea.Model {
+  alipayUserId?: string;
+  conversationId?: string;
+  nickName?: string;
+  openTeamId?: string;
+  serviceToken?: string;
+  userId?: string;
+  visitorToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      alipayUserId: 'alipayUserId',
+      conversationId: 'conversationId',
+      nickName: 'nickName',
+      openTeamId: 'openTeamId',
+      serviceToken: 'serviceToken',
+      userId: 'userId',
+      visitorToken: 'visitorToken',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      alipayUserId: 'string',
+      conversationId: 'string',
+      nickName: 'string',
+      openTeamId: 'string',
+      serviceToken: 'string',
+      userId: 'string',
+      visitorToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConversationTransferCompleteNotifyResponseBody extends $tea.Model {
+  dingOpenErrcode?: number;
+  errorMsg?: string;
+  result?: boolean;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      dingOpenErrcode: 'dingOpenErrcode',
+      errorMsg: 'errorMsg',
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingOpenErrcode: 'number',
+      errorMsg: 'string',
+      result: 'boolean',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConversationTransferCompleteNotifyResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ConversationTransferCompleteNotifyResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ConversationTransferCompleteNotifyResponseBody,
     };
   }
 
@@ -1878,6 +2317,109 @@ export class FinishTicketResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAuthTokenHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAuthTokenRequest extends $tea.Model {
+  channel?: string;
+  effectiveTime?: number;
+  openTeamId?: string;
+  serverId?: string;
+  serverName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      channel: 'channel',
+      effectiveTime: 'effectiveTime',
+      openTeamId: 'openTeamId',
+      serverId: 'serverId',
+      serverName: 'serverName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      channel: 'string',
+      effectiveTime: 'number',
+      openTeamId: 'string',
+      serverId: 'string',
+      serverName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAuthTokenResponseBody extends $tea.Model {
+  dingOpenErrcode?: number;
+  errorMsg?: string;
+  result?: GetAuthTokenResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      dingOpenErrcode: 'dingOpenErrcode',
+      errorMsg: 'errorMsg',
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingOpenErrcode: 'number',
+      errorMsg: 'string',
+      result: GetAuthTokenResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAuthTokenResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetAuthTokenResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetAuthTokenResponseBody,
     };
   }
 
@@ -2877,6 +3419,100 @@ export class QueryActiveUsersResponse extends $tea.Model {
   }
 }
 
+export class QueryCustomerCardHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCustomerCardRequest extends $tea.Model {
+  jsonParams?: string;
+  openTeamId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      jsonParams: 'jsonParams',
+      openTeamId: 'openTeamId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      jsonParams: 'string',
+      openTeamId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCustomerCardResponseBody extends $tea.Model {
+  dingOpenErrcode?: number;
+  errorMsg?: string;
+  result?: boolean;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      dingOpenErrcode: 'dingOpenErrcode',
+      errorMsg: 'errorMsg',
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingOpenErrcode: 'number',
+      errorMsg: 'string',
+      result: 'boolean',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCustomerCardResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryCustomerCardResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryCustomerCardResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryGroupHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3366,6 +4002,115 @@ export class QueryServiceGroupMessageReadStatusResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: QueryServiceGroupMessageReadStatusResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueueNotifyHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueueNotifyRequest extends $tea.Model {
+  estimateWaitMin?: number;
+  openTeamId?: string;
+  queuePlace?: number;
+  serviceToken?: string;
+  targetChannel?: string;
+  tips?: string;
+  visitorToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      estimateWaitMin: 'estimateWaitMin',
+      openTeamId: 'openTeamId',
+      queuePlace: 'queuePlace',
+      serviceToken: 'serviceToken',
+      targetChannel: 'targetChannel',
+      tips: 'tips',
+      visitorToken: 'visitorToken',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      estimateWaitMin: 'number',
+      openTeamId: 'string',
+      queuePlace: 'number',
+      serviceToken: 'string',
+      targetChannel: 'string',
+      tips: 'string',
+      visitorToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueueNotifyResponseBody extends $tea.Model {
+  dingOpenErrcode?: number;
+  errorMsg?: string;
+  result?: boolean;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      dingOpenErrcode: 'dingOpenErrcode',
+      errorMsg: 'errorMsg',
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingOpenErrcode: 'number',
+      errorMsg: 'string',
+      result: 'boolean',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueueNotifyResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueueNotifyResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueueNotifyResponseBody,
     };
   }
 
@@ -5138,6 +5883,37 @@ export class FinishTicketRequestTicketMemo extends $tea.Model {
     return {
       attachments: { 'type': 'array', 'itemType': FinishTicketRequestTicketMemoAttachments },
       memo: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAuthTokenResponseBodyResult extends $tea.Model {
+  authToken?: string;
+  channel?: string;
+  effectiveTime?: number;
+  serverId?: string;
+  serverName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      authToken: 'authToken',
+      channel: 'channel',
+      effectiveTime: 'effectiveTime',
+      serverId: 'serverId',
+      serverName: 'serverName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      authToken: 'string',
+      channel: 'string',
+      effectiveTime: 'number',
+      serverId: 'string',
+      serverName: 'string',
     };
   }
 
@@ -6988,6 +7764,55 @@ export default class Client extends OpenApi {
     return $tea.cast<CategoryStatisticsResponse>(await this.doROARequest("CategoryStatistics", "serviceGroup_1.0", "HTTP", "GET", "AK", `/v1.0/serviceGroup/voices/dashboards/categories/statistics`, "json", req, runtime), new CategoryStatisticsResponse({}));
   }
 
+  async closeConversation(request: CloseConversationRequest): Promise<CloseConversationResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CloseConversationHeaders({ });
+    return await this.closeConversationWithOptions(request, headers, runtime);
+  }
+
+  async closeConversationWithOptions(request: CloseConversationRequest, headers: CloseConversationHeaders, runtime: $Util.RuntimeOptions): Promise<CloseConversationResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.conversationId)) {
+      body["conversationId"] = request.conversationId;
+    }
+
+    if (!Util.isUnset(request.openTeamId)) {
+      body["openTeamId"] = request.openTeamId;
+    }
+
+    if (!Util.isUnset(request.serverTips)) {
+      body["serverTips"] = request.serverTips;
+    }
+
+    if (!Util.isUnset(request.serviceToken)) {
+      body["serviceToken"] = request.serviceToken;
+    }
+
+    if (!Util.isUnset(request.targetChannel)) {
+      body["targetChannel"] = request.targetChannel;
+    }
+
+    if (!Util.isUnset(request.visitorToken)) {
+      body["visitorToken"] = request.visitorToken;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CloseConversationResponse>(await this.doROARequest("CloseConversation", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/conversions`, "json", req, runtime), new CloseConversationResponse({}));
+  }
+
   async closeHumanSession(request: CloseHumanSessionRequest): Promise<CloseHumanSessionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CloseHumanSessionHeaders({ });
@@ -7019,6 +7844,173 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<CloseHumanSessionResponse>(await this.doROARequest("CloseHumanSession", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/humanSessions/close`, "json", req, runtime), new CloseHumanSessionResponse({}));
+  }
+
+  async conversationCreatedNotify(request: ConversationCreatedNotifyRequest): Promise<ConversationCreatedNotifyResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ConversationCreatedNotifyHeaders({ });
+    return await this.conversationCreatedNotifyWithOptions(request, headers, runtime);
+  }
+
+  async conversationCreatedNotifyWithOptions(request: ConversationCreatedNotifyRequest, headers: ConversationCreatedNotifyHeaders, runtime: $Util.RuntimeOptions): Promise<ConversationCreatedNotifyResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.alipayUserId)) {
+      body["alipayUserId"] = request.alipayUserId;
+    }
+
+    if (!Util.isUnset(request.conversationId)) {
+      body["conversationId"] = request.conversationId;
+    }
+
+    if (!Util.isUnset(request.nickName)) {
+      body["nickName"] = request.nickName;
+    }
+
+    if (!Util.isUnset(request.openTeamId)) {
+      body["openTeamId"] = request.openTeamId;
+    }
+
+    if (!Util.isUnset(request.serverName)) {
+      body["serverName"] = request.serverName;
+    }
+
+    if (!Util.isUnset(request.serverTips)) {
+      body["serverTips"] = request.serverTips;
+    }
+
+    if (!Util.isUnset(request.serviceToken)) {
+      body["serviceToken"] = request.serviceToken;
+    }
+
+    if (!Util.isUnset(request.timeoutRemindTips)) {
+      body["timeoutRemindTips"] = request.timeoutRemindTips;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    if (!Util.isUnset(request.visitorToken)) {
+      body["visitorToken"] = request.visitorToken;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<ConversationCreatedNotifyResponse>(await this.doROARequest("ConversationCreatedNotify", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/customers`, "json", req, runtime), new ConversationCreatedNotifyResponse({}));
+  }
+
+  async conversationTransferBeginNotify(request: ConversationTransferBeginNotifyRequest): Promise<ConversationTransferBeginNotifyResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ConversationTransferBeginNotifyHeaders({ });
+    return await this.conversationTransferBeginNotifyWithOptions(request, headers, runtime);
+  }
+
+  async conversationTransferBeginNotifyWithOptions(request: ConversationTransferBeginNotifyRequest, headers: ConversationTransferBeginNotifyHeaders, runtime: $Util.RuntimeOptions): Promise<ConversationTransferBeginNotifyResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.conversationId)) {
+      body["conversationId"] = request.conversationId;
+    }
+
+    if (!Util.isUnset(request.memo)) {
+      body["memo"] = request.memo;
+    }
+
+    if (!Util.isUnset(request.openTeamId)) {
+      body["openTeamId"] = request.openTeamId;
+    }
+
+    if (!Util.isUnset(request.serviceToken)) {
+      body["serviceToken"] = request.serviceToken;
+    }
+
+    if (!Util.isUnset(request.sourceSkillGroupId)) {
+      body["sourceSkillGroupId"] = request.sourceSkillGroupId;
+    }
+
+    if (!Util.isUnset(request.targetSkillGroupId)) {
+      body["targetSkillGroupId"] = request.targetSkillGroupId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<ConversationTransferBeginNotifyResponse>(await this.doROARequest("ConversationTransferBeginNotify", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/transfers`, "json", req, runtime), new ConversationTransferBeginNotifyResponse({}));
+  }
+
+  async conversationTransferCompleteNotify(request: ConversationTransferCompleteNotifyRequest): Promise<ConversationTransferCompleteNotifyResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ConversationTransferCompleteNotifyHeaders({ });
+    return await this.conversationTransferCompleteNotifyWithOptions(request, headers, runtime);
+  }
+
+  async conversationTransferCompleteNotifyWithOptions(request: ConversationTransferCompleteNotifyRequest, headers: ConversationTransferCompleteNotifyHeaders, runtime: $Util.RuntimeOptions): Promise<ConversationTransferCompleteNotifyResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.alipayUserId)) {
+      body["alipayUserId"] = request.alipayUserId;
+    }
+
+    if (!Util.isUnset(request.conversationId)) {
+      body["conversationId"] = request.conversationId;
+    }
+
+    if (!Util.isUnset(request.nickName)) {
+      body["nickName"] = request.nickName;
+    }
+
+    if (!Util.isUnset(request.openTeamId)) {
+      body["openTeamId"] = request.openTeamId;
+    }
+
+    if (!Util.isUnset(request.serviceToken)) {
+      body["serviceToken"] = request.serviceToken;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    if (!Util.isUnset(request.visitorToken)) {
+      body["visitorToken"] = request.visitorToken;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<ConversationTransferCompleteNotifyResponse>(await this.doROARequest("ConversationTransferCompleteNotify", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/completes`, "json", req, runtime), new ConversationTransferCompleteNotifyResponse({}));
   }
 
   async createGroup(request: CreateGroupRequest): Promise<CreateGroupResponse> {
@@ -7342,6 +8334,51 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<FinishTicketResponse>(await this.doROARequest("FinishTicket", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/tickets/finish`, "none", req, runtime), new FinishTicketResponse({}));
+  }
+
+  async getAuthToken(request: GetAuthTokenRequest): Promise<GetAuthTokenResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetAuthTokenHeaders({ });
+    return await this.getAuthTokenWithOptions(request, headers, runtime);
+  }
+
+  async getAuthTokenWithOptions(request: GetAuthTokenRequest, headers: GetAuthTokenHeaders, runtime: $Util.RuntimeOptions): Promise<GetAuthTokenResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.channel)) {
+      body["channel"] = request.channel;
+    }
+
+    if (!Util.isUnset(request.effectiveTime)) {
+      body["effectiveTime"] = request.effectiveTime;
+    }
+
+    if (!Util.isUnset(request.openTeamId)) {
+      body["openTeamId"] = request.openTeamId;
+    }
+
+    if (!Util.isUnset(request.serverId)) {
+      body["serverId"] = request.serverId;
+    }
+
+    if (!Util.isUnset(request.serverName)) {
+      body["serverName"] = request.serverName;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<GetAuthTokenResponse>(await this.doROARequest("GetAuthToken", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/get/tokens`, "json", req, runtime), new GetAuthTokenResponse({}));
   }
 
   async getNegativeWordCloud(request: GetNegativeWordCloudRequest): Promise<GetNegativeWordCloudResponse> {
@@ -7721,6 +8758,39 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryActiveUsersResponse>(await this.doROARequest("QueryActiveUsers", "serviceGroup_1.0", "HTTP", "GET", "AK", `/v1.0/serviceGroup/groups/queryActiveUsers`, "json", req, runtime), new QueryActiveUsersResponse({}));
   }
 
+  async queryCustomerCard(request: QueryCustomerCardRequest): Promise<QueryCustomerCardResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryCustomerCardHeaders({ });
+    return await this.queryCustomerCardWithOptions(request, headers, runtime);
+  }
+
+  async queryCustomerCardWithOptions(request: QueryCustomerCardRequest, headers: QueryCustomerCardHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCustomerCardResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.jsonParams)) {
+      body["jsonParams"] = request.jsonParams;
+    }
+
+    if (!Util.isUnset(request.openTeamId)) {
+      body["openTeamId"] = request.openTeamId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<QueryCustomerCardResponse>(await this.doROARequest("QueryCustomerCard", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/userDetials`, "json", req, runtime), new QueryCustomerCardResponse({}));
+  }
+
   async queryGroup(request: QueryGroupRequest): Promise<QueryGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryGroupHeaders({ });
@@ -7916,6 +8986,59 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<QueryServiceGroupMessageReadStatusResponse>(await this.doROARequest("QueryServiceGroupMessageReadStatus", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/messages/readStatus/query`, "json", req, runtime), new QueryServiceGroupMessageReadStatusResponse({}));
+  }
+
+  async queueNotify(request: QueueNotifyRequest): Promise<QueueNotifyResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueueNotifyHeaders({ });
+    return await this.queueNotifyWithOptions(request, headers, runtime);
+  }
+
+  async queueNotifyWithOptions(request: QueueNotifyRequest, headers: QueueNotifyHeaders, runtime: $Util.RuntimeOptions): Promise<QueueNotifyResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.estimateWaitMin)) {
+      body["estimateWaitMin"] = request.estimateWaitMin;
+    }
+
+    if (!Util.isUnset(request.openTeamId)) {
+      body["openTeamId"] = request.openTeamId;
+    }
+
+    if (!Util.isUnset(request.queuePlace)) {
+      body["queuePlace"] = request.queuePlace;
+    }
+
+    if (!Util.isUnset(request.serviceToken)) {
+      body["serviceToken"] = request.serviceToken;
+    }
+
+    if (!Util.isUnset(request.targetChannel)) {
+      body["targetChannel"] = request.targetChannel;
+    }
+
+    if (!Util.isUnset(request.tips)) {
+      body["tips"] = request.tips;
+    }
+
+    if (!Util.isUnset(request.visitorToken)) {
+      body["visitorToken"] = request.visitorToken;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<QueueNotifyResponse>(await this.doROARequest("QueueNotify", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/dts`, "json", req, runtime), new QueueNotifyResponse({}));
   }
 
   async resubmitTicket(request: ResubmitTicketRequest): Promise<ResubmitTicketResponse> {

@@ -186,6 +186,94 @@ export class CreateTrustedDeviceResponse extends $tea.Model {
   }
 }
 
+export class CreateTrustedDeviceBatchHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateTrustedDeviceBatchRequest extends $tea.Model {
+  macAddressList?: string[];
+  platform?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      macAddressList: 'macAddressList',
+      platform: 'platform',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      macAddressList: { 'type': 'array', 'itemType': 'string' },
+      platform: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateTrustedDeviceBatchResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateTrustedDeviceBatchResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CreateTrustedDeviceBatchResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CreateTrustedDeviceBatchResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DeleteCommentHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1787,6 +1875,100 @@ export class GetUserAppVersionSummaryResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: GetUserAppVersionSummaryResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListAuditLogHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListAuditLogRequest extends $tea.Model {
+  endDate?: number;
+  nextBizId?: number;
+  nextGmtCreate?: number;
+  pageSize?: number;
+  startDate?: number;
+  static names(): { [key: string]: string } {
+    return {
+      endDate: 'endDate',
+      nextBizId: 'nextBizId',
+      nextGmtCreate: 'nextGmtCreate',
+      pageSize: 'pageSize',
+      startDate: 'startDate',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      endDate: 'number',
+      nextBizId: 'number',
+      nextGmtCreate: 'number',
+      pageSize: 'number',
+      startDate: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListAuditLogResponseBody extends $tea.Model {
+  list?: ListAuditLogResponseBodyList[];
+  static names(): { [key: string]: string } {
+    return {
+      list: 'list',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      list: { 'type': 'array', 'itemType': ListAuditLogResponseBodyList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListAuditLogResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ListAuditLogResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ListAuditLogResponseBody,
     };
   }
 
@@ -3532,6 +3714,150 @@ export class GetUserAppVersionSummaryResponseBodyData extends $tea.Model {
   }
 }
 
+export class ListAuditLogResponseBodyListDocMemberList extends $tea.Model {
+  memberName?: string;
+  memberType?: number;
+  memberTypeView?: string;
+  permissionRole?: number;
+  permissionRoleView?: string;
+  static names(): { [key: string]: string } {
+    return {
+      memberName: 'memberName',
+      memberType: 'memberType',
+      memberTypeView: 'memberTypeView',
+      permissionRole: 'permissionRole',
+      permissionRoleView: 'permissionRoleView',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      memberName: 'string',
+      memberType: 'number',
+      memberTypeView: 'string',
+      permissionRole: 'number',
+      permissionRoleView: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListAuditLogResponseBodyListDocReceiverList extends $tea.Model {
+  receiverName?: string;
+  receiverType?: number;
+  receiverTypeView?: string;
+  static names(): { [key: string]: string } {
+    return {
+      receiverName: 'receiverName',
+      receiverType: 'receiverType',
+      receiverTypeView: 'receiverTypeView',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      receiverName: 'string',
+      receiverType: 'number',
+      receiverTypeView: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListAuditLogResponseBodyList extends $tea.Model {
+  action?: number;
+  actionView?: string;
+  bizId?: string;
+  docMemberList?: ListAuditLogResponseBodyListDocMemberList[];
+  docReceiverList?: ListAuditLogResponseBodyListDocReceiverList[];
+  gmtCreate?: number;
+  gmtModified?: number;
+  ipAddress?: string;
+  operateModule?: number;
+  operateModuleView?: string;
+  operatorName?: string;
+  orgName?: string;
+  platform?: number;
+  platformView?: string;
+  realName?: string;
+  receiverName?: string;
+  receiverType?: number;
+  receiverTypeView?: string;
+  resource?: string;
+  resourceExtension?: string;
+  resourceSize?: number;
+  status?: number;
+  targetSpaceId?: number;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      action: 'action',
+      actionView: 'actionView',
+      bizId: 'bizId',
+      docMemberList: 'docMemberList',
+      docReceiverList: 'docReceiverList',
+      gmtCreate: 'gmtCreate',
+      gmtModified: 'gmtModified',
+      ipAddress: 'ipAddress',
+      operateModule: 'operateModule',
+      operateModuleView: 'operateModuleView',
+      operatorName: 'operatorName',
+      orgName: 'orgName',
+      platform: 'platform',
+      platformView: 'platformView',
+      realName: 'realName',
+      receiverName: 'receiverName',
+      receiverType: 'receiverType',
+      receiverTypeView: 'receiverTypeView',
+      resource: 'resource',
+      resourceExtension: 'resourceExtension',
+      resourceSize: 'resourceSize',
+      status: 'status',
+      targetSpaceId: 'targetSpaceId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      action: 'number',
+      actionView: 'string',
+      bizId: 'string',
+      docMemberList: { 'type': 'array', 'itemType': ListAuditLogResponseBodyListDocMemberList },
+      docReceiverList: { 'type': 'array', 'itemType': ListAuditLogResponseBodyListDocReceiverList },
+      gmtCreate: 'number',
+      gmtModified: 'number',
+      ipAddress: 'string',
+      operateModule: 'number',
+      operateModuleView: 'string',
+      operatorName: 'string',
+      orgName: 'string',
+      platform: 'number',
+      platformView: 'string',
+      realName: 'string',
+      receiverName: 'string',
+      receiverType: 'number',
+      receiverTypeView: 'string',
+      resource: 'string',
+      resourceExtension: 'string',
+      resourceSize: 'number',
+      status: 'number',
+      targetSpaceId: 'number',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListMiniAppAvailableVersionResponseBodyList extends $tea.Model {
   buildStatus?: number;
   version?: string;
@@ -3884,6 +4210,43 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<CreateTrustedDeviceResponse>(await this.doROARequest("CreateTrustedDevice", "exclusive_1.0", "HTTP", "POST", "AK", `/v1.0/exclusive/trustedDevices`, "json", req, runtime), new CreateTrustedDeviceResponse({}));
+  }
+
+  async createTrustedDeviceBatch(request: CreateTrustedDeviceBatchRequest): Promise<CreateTrustedDeviceBatchResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateTrustedDeviceBatchHeaders({ });
+    return await this.createTrustedDeviceBatchWithOptions(request, headers, runtime);
+  }
+
+  async createTrustedDeviceBatchWithOptions(request: CreateTrustedDeviceBatchRequest, headers: CreateTrustedDeviceBatchHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTrustedDeviceBatchResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.macAddressList)) {
+      body["macAddressList"] = request.macAddressList;
+    }
+
+    if (!Util.isUnset(request.platform)) {
+      body["platform"] = request.platform;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreateTrustedDeviceBatchResponse>(await this.doROARequest("CreateTrustedDeviceBatch", "exclusive_1.0", "HTTP", "POST", "AK", `/v1.0/exclusive/trusts/devices`, "json", req, runtime), new CreateTrustedDeviceBatchResponse({}));
   }
 
   async deleteComment(publisherId: string, commentId: string): Promise<DeleteCommentResponse> {
@@ -4492,6 +4855,51 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<GetUserAppVersionSummaryResponse>(await this.doROARequest("GetUserAppVersionSummary", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/data/appVersion/org/${dataId}`, "json", req, runtime), new GetUserAppVersionSummaryResponse({}));
+  }
+
+  async listAuditLog(request: ListAuditLogRequest): Promise<ListAuditLogResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListAuditLogHeaders({ });
+    return await this.listAuditLogWithOptions(request, headers, runtime);
+  }
+
+  async listAuditLogWithOptions(request: ListAuditLogRequest, headers: ListAuditLogHeaders, runtime: $Util.RuntimeOptions): Promise<ListAuditLogResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.endDate)) {
+      query["endDate"] = request.endDate;
+    }
+
+    if (!Util.isUnset(request.nextBizId)) {
+      query["nextBizId"] = request.nextBizId;
+    }
+
+    if (!Util.isUnset(request.nextGmtCreate)) {
+      query["nextGmtCreate"] = request.nextGmtCreate;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.startDate)) {
+      query["startDate"] = request.startDate;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<ListAuditLogResponse>(await this.doROARequest("ListAuditLog", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/fileAuditLogs`, "json", req, runtime), new ListAuditLogResponse({}));
   }
 
   async listMiniAppAvailableVersion(request: ListMiniAppAvailableVersionRequest): Promise<ListMiniAppAvailableVersionResponse> {
