@@ -900,6 +900,7 @@ export class CreateGroupSetRequest extends $tea.Model {
   ownerUserId?: string;
   relationType?: string;
   templateId?: string;
+  welcome?: string;
   static names(): { [key: string]: string } {
     return {
       creatorUserId: 'creatorUserId',
@@ -911,6 +912,7 @@ export class CreateGroupSetRequest extends $tea.Model {
       ownerUserId: 'ownerUserId',
       relationType: 'relationType',
       templateId: 'templateId',
+      welcome: 'welcome',
     };
   }
 
@@ -925,6 +927,7 @@ export class CreateGroupSetRequest extends $tea.Model {
       ownerUserId: 'string',
       relationType: 'string',
       templateId: 'string',
+      welcome: 'string',
     };
   }
 
@@ -936,6 +939,7 @@ export class CreateGroupSetRequest extends $tea.Model {
 export class CreateGroupSetResponseBody extends $tea.Model {
   gmtCreate?: string;
   gmtModified?: string;
+  inviteLink?: string;
   lastOpenConversationId?: string;
   manager?: CreateGroupSetResponseBodyManager[];
   managerUserIds?: string;
@@ -953,6 +957,7 @@ export class CreateGroupSetResponseBody extends $tea.Model {
     return {
       gmtCreate: 'gmtCreate',
       gmtModified: 'gmtModified',
+      inviteLink: 'inviteLink',
       lastOpenConversationId: 'lastOpenConversationId',
       manager: 'manager',
       managerUserIds: 'managerUserIds',
@@ -973,6 +978,7 @@ export class CreateGroupSetResponseBody extends $tea.Model {
     return {
       gmtCreate: 'string',
       gmtModified: 'string',
+      inviteLink: 'string',
       lastOpenConversationId: 'string',
       manager: { 'type': 'array', 'itemType': CreateGroupSetResponseBodyManager },
       managerUserIds: 'string',
@@ -2046,6 +2052,7 @@ export class GetGroupSetResponseBody extends $tea.Model {
   gmtCreate?: string;
   gmtModified?: string;
   groupChatCount?: number;
+  inviteLink?: string;
   lastOpenConversationId?: string;
   manager?: GetGroupSetResponseBodyManager[];
   managerUserIds?: string;
@@ -2064,6 +2071,7 @@ export class GetGroupSetResponseBody extends $tea.Model {
       gmtCreate: 'gmtCreate',
       gmtModified: 'gmtModified',
       groupChatCount: 'groupChatCount',
+      inviteLink: 'inviteLink',
       lastOpenConversationId: 'lastOpenConversationId',
       manager: 'manager',
       managerUserIds: 'managerUserIds',
@@ -2085,6 +2093,7 @@ export class GetGroupSetResponseBody extends $tea.Model {
       gmtCreate: 'string',
       gmtModified: 'string',
       groupChatCount: 'number',
+      inviteLink: 'string',
       lastOpenConversationId: 'string',
       manager: { 'type': 'array', 'itemType': GetGroupSetResponseBodyManager },
       managerUserIds: 'string',
@@ -8843,6 +8852,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.templateId)) {
       body["templateId"] = request.templateId;
+    }
+
+    if (!Util.isUnset(request.welcome)) {
+      body["welcome"] = request.welcome;
     }
 
     let realHeaders : {[key: string ]: string} = { };

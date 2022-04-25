@@ -4798,6 +4798,100 @@ export class ListConnectorInformationResponse extends $tea.Model {
   }
 }
 
+export class ListFormRemarksHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListFormRemarksRequest extends $tea.Model {
+  appType?: string;
+  formInstanceIdList?: string[];
+  formUuid?: string;
+  systemToken?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appType: 'appType',
+      formInstanceIdList: 'formInstanceIdList',
+      formUuid: 'formUuid',
+      systemToken: 'systemToken',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appType: 'string',
+      formInstanceIdList: { 'type': 'array', 'itemType': 'string' },
+      formUuid: 'string',
+      systemToken: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListFormRemarksResponseBody extends $tea.Model {
+  formRemarkVoMap?: { [key: string]: any };
+  static names(): { [key: string]: string } {
+    return {
+      formRemarkVoMap: 'formRemarkVoMap',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      formRemarkVoMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListFormRemarksResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ListFormRemarksResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ListFormRemarksResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListNavigationByFormTypeHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -13601,6 +13695,51 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<ListConnectorInformationResponse>(await this.doROARequest("ListConnectorInformation", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/plugins/infos/${instanceId}`, "json", req, runtime), new ListConnectorInformationResponse({}));
+  }
+
+  async listFormRemarks(request: ListFormRemarksRequest): Promise<ListFormRemarksResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListFormRemarksHeaders({ });
+    return await this.listFormRemarksWithOptions(request, headers, runtime);
+  }
+
+  async listFormRemarksWithOptions(request: ListFormRemarksRequest, headers: ListFormRemarksHeaders, runtime: $Util.RuntimeOptions): Promise<ListFormRemarksResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appType)) {
+      body["appType"] = request.appType;
+    }
+
+    if (!Util.isUnset(request.formInstanceIdList)) {
+      body["formInstanceIdList"] = request.formInstanceIdList;
+    }
+
+    if (!Util.isUnset(request.formUuid)) {
+      body["formUuid"] = request.formUuid;
+    }
+
+    if (!Util.isUnset(request.systemToken)) {
+      body["systemToken"] = request.systemToken;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<ListFormRemarksResponse>(await this.doROARequest("ListFormRemarks", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/forms/remarks/query`, "json", req, runtime), new ListFormRemarksResponse({}));
   }
 
   async listNavigationByFormType(request: ListNavigationByFormTypeRequest): Promise<ListNavigationByFormTypeResponse> {

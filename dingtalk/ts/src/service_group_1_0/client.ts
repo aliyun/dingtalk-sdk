@@ -4119,6 +4119,233 @@ export class QueueNotifyResponse extends $tea.Model {
   }
 }
 
+export class ReportCustomerDetailHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ReportCustomerDetailRequest extends $tea.Model {
+  hasLogin?: boolean;
+  hasOpenConv?: boolean;
+  maxDt?: string;
+  minDt?: string;
+  openConversationId?: string;
+  openTeamId?: string;
+  pageNumber?: number;
+  pageSize?: number;
+  static names(): { [key: string]: string } {
+    return {
+      hasLogin: 'hasLogin',
+      hasOpenConv: 'hasOpenConv',
+      maxDt: 'maxDt',
+      minDt: 'minDt',
+      openConversationId: 'openConversationId',
+      openTeamId: 'openTeamId',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasLogin: 'boolean',
+      hasOpenConv: 'boolean',
+      maxDt: 'string',
+      minDt: 'string',
+      openConversationId: 'string',
+      openTeamId: 'string',
+      pageNumber: 'number',
+      pageSize: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ReportCustomerDetailResponseBody extends $tea.Model {
+  currentPage?: number;
+  pageSize?: number;
+  records?: ReportCustomerDetailResponseBodyRecords[];
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      currentPage: 'currentPage',
+      pageSize: 'pageSize',
+      records: 'records',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      currentPage: 'number',
+      pageSize: 'number',
+      records: { 'type': 'array', 'itemType': ReportCustomerDetailResponseBodyRecords },
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ReportCustomerDetailResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ReportCustomerDetailResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ReportCustomerDetailResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ReportCustomerStatisticsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ReportCustomerStatisticsRequest extends $tea.Model {
+  groupOwnerUserIds?: string[];
+  groupTags?: string[];
+  maxDt?: string;
+  minDt?: string;
+  openConversationIds?: string[];
+  openGroupSetId?: string;
+  openTeamId?: string;
+  pageNumber?: number;
+  pageSize?: number;
+  static names(): { [key: string]: string } {
+    return {
+      groupOwnerUserIds: 'groupOwnerUserIds',
+      groupTags: 'groupTags',
+      maxDt: 'maxDt',
+      minDt: 'minDt',
+      openConversationIds: 'openConversationIds',
+      openGroupSetId: 'openGroupSetId',
+      openTeamId: 'openTeamId',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      groupOwnerUserIds: { 'type': 'array', 'itemType': 'string' },
+      groupTags: { 'type': 'array', 'itemType': 'string' },
+      maxDt: 'string',
+      minDt: 'string',
+      openConversationIds: { 'type': 'array', 'itemType': 'string' },
+      openGroupSetId: 'string',
+      openTeamId: 'string',
+      pageNumber: 'number',
+      pageSize: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ReportCustomerStatisticsResponseBody extends $tea.Model {
+  currentPage?: number;
+  pageSize?: number;
+  records?: ReportCustomerStatisticsResponseBodyRecords[];
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      currentPage: 'currentPage',
+      pageSize: 'pageSize',
+      records: 'records',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      currentPage: 'number',
+      pageSize: 'number',
+      records: { 'type': 'array', 'itemType': ReportCustomerStatisticsResponseBodyRecords },
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ReportCustomerStatisticsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ReportCustomerStatisticsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ReportCustomerStatisticsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ResubmitTicketHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -6515,6 +6742,95 @@ export class QueryServiceGroupMessageReadStatusResponseBodyRecords extends $tea.
       receiverUnionId: 'string',
       receiverUserId: 'string',
       sendTimeStr: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ReportCustomerDetailResponseBodyRecords extends $tea.Model {
+  atRobotCnt?: number;
+  customerName?: string;
+  groupName?: string;
+  hasLogin?: boolean;
+  hasOpenConv?: boolean;
+  sendMsgCnt?: number;
+  unionId?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      atRobotCnt: 'atRobotCnt',
+      customerName: 'customerName',
+      groupName: 'groupName',
+      hasLogin: 'hasLogin',
+      hasOpenConv: 'hasOpenConv',
+      sendMsgCnt: 'sendMsgCnt',
+      unionId: 'unionId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      atRobotCnt: 'number',
+      customerName: 'string',
+      groupName: 'string',
+      hasLogin: 'boolean',
+      hasOpenConv: 'boolean',
+      sendMsgCnt: 'number',
+      unionId: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ReportCustomerStatisticsResponseBodyRecords extends $tea.Model {
+  atRobotCnt?: number;
+  bizId?: string;
+  customerCnt?: number;
+  groupName?: string;
+  groupSetName?: string;
+  loginCnt?: number;
+  openConvCnt?: number;
+  openConversationId?: string;
+  openGroupSetId?: string;
+  sendMsgCnt?: number;
+  senderCnt?: number;
+  static names(): { [key: string]: string } {
+    return {
+      atRobotCnt: 'atRobotCnt',
+      bizId: 'bizId',
+      customerCnt: 'customerCnt',
+      groupName: 'groupName',
+      groupSetName: 'groupSetName',
+      loginCnt: 'loginCnt',
+      openConvCnt: 'openConvCnt',
+      openConversationId: 'openConversationId',
+      openGroupSetId: 'openGroupSetId',
+      sendMsgCnt: 'sendMsgCnt',
+      senderCnt: 'senderCnt',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      atRobotCnt: 'number',
+      bizId: 'string',
+      customerCnt: 'number',
+      groupName: 'string',
+      groupSetName: 'string',
+      loginCnt: 'number',
+      openConvCnt: 'number',
+      openConversationId: 'string',
+      openGroupSetId: 'string',
+      sendMsgCnt: 'number',
+      senderCnt: 'number',
     };
   }
 
@@ -9039,6 +9355,124 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<QueueNotifyResponse>(await this.doROARequest("QueueNotify", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/dts`, "json", req, runtime), new QueueNotifyResponse({}));
+  }
+
+  async reportCustomerDetail(request: ReportCustomerDetailRequest): Promise<ReportCustomerDetailResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ReportCustomerDetailHeaders({ });
+    return await this.reportCustomerDetailWithOptions(request, headers, runtime);
+  }
+
+  async reportCustomerDetailWithOptions(request: ReportCustomerDetailRequest, headers: ReportCustomerDetailHeaders, runtime: $Util.RuntimeOptions): Promise<ReportCustomerDetailResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.hasLogin)) {
+      body["hasLogin"] = request.hasLogin;
+    }
+
+    if (!Util.isUnset(request.hasOpenConv)) {
+      body["hasOpenConv"] = request.hasOpenConv;
+    }
+
+    if (!Util.isUnset(request.maxDt)) {
+      body["maxDt"] = request.maxDt;
+    }
+
+    if (!Util.isUnset(request.minDt)) {
+      body["minDt"] = request.minDt;
+    }
+
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.openTeamId)) {
+      body["openTeamId"] = request.openTeamId;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      body["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      body["pageSize"] = request.pageSize;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<ReportCustomerDetailResponse>(await this.doROARequest("ReportCustomerDetail", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/customers/activities/details/query`, "json", req, runtime), new ReportCustomerDetailResponse({}));
+  }
+
+  async reportCustomerStatistics(request: ReportCustomerStatisticsRequest): Promise<ReportCustomerStatisticsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ReportCustomerStatisticsHeaders({ });
+    return await this.reportCustomerStatisticsWithOptions(request, headers, runtime);
+  }
+
+  async reportCustomerStatisticsWithOptions(request: ReportCustomerStatisticsRequest, headers: ReportCustomerStatisticsHeaders, runtime: $Util.RuntimeOptions): Promise<ReportCustomerStatisticsResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.groupOwnerUserIds)) {
+      body["groupOwnerUserIds"] = request.groupOwnerUserIds;
+    }
+
+    if (!Util.isUnset(request.groupTags)) {
+      body["groupTags"] = request.groupTags;
+    }
+
+    if (!Util.isUnset(request.maxDt)) {
+      body["maxDt"] = request.maxDt;
+    }
+
+    if (!Util.isUnset(request.minDt)) {
+      body["minDt"] = request.minDt;
+    }
+
+    if (!Util.isUnset(request.openConversationIds)) {
+      body["openConversationIds"] = request.openConversationIds;
+    }
+
+    if (!Util.isUnset(request.openGroupSetId)) {
+      body["openGroupSetId"] = request.openGroupSetId;
+    }
+
+    if (!Util.isUnset(request.openTeamId)) {
+      body["openTeamId"] = request.openTeamId;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      body["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      body["pageSize"] = request.pageSize;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<ReportCustomerStatisticsResponse>(await this.doROARequest("ReportCustomerStatistics", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/customers/activities/statistics/query`, "json", req, runtime), new ReportCustomerStatisticsResponse({}));
   }
 
   async resubmitTicket(request: ResubmitTicketRequest): Promise<ResubmitTicketResponse> {

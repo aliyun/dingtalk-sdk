@@ -838,6 +838,91 @@ export class GetClosingAccountsResponse extends $tea.Model {
   }
 }
 
+export class GetLeaveTypeHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetLeaveTypeRequest extends $tea.Model {
+  opUserId?: string;
+  vacationSource?: string;
+  static names(): { [key: string]: string } {
+    return {
+      opUserId: 'opUserId',
+      vacationSource: 'vacationSource',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      opUserId: 'string',
+      vacationSource: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetLeaveTypeResponseBody extends $tea.Model {
+  result?: GetLeaveTypeResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': GetLeaveTypeResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetLeaveTypeResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetLeaveTypeResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetLeaveTypeResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetMachineHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1148,6 +1233,103 @@ export class GetUserHolidaysResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: GetUserHolidaysResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ProcessApproveCreateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ProcessApproveCreateRequest extends $tea.Model {
+  approveId?: string;
+  opUserId?: string;
+  punchParam?: ProcessApproveCreateRequestPunchParam;
+  subType?: string;
+  tagName?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      approveId: 'approveId',
+      opUserId: 'opUserId',
+      punchParam: 'punchParam',
+      subType: 'subType',
+      tagName: 'tagName',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      approveId: 'string',
+      opUserId: 'string',
+      punchParam: ProcessApproveCreateRequestPunchParam,
+      subType: 'string',
+      tagName: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ProcessApproveCreateResponseBody extends $tea.Model {
+  result?: ProcessApproveCreateResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: ProcessApproveCreateResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ProcessApproveCreateResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ProcessApproveCreateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ProcessApproveCreateResponseBody,
     };
   }
 
@@ -1810,6 +1992,111 @@ export class GetClosingAccountsResponseBodyResult extends $tea.Model {
   }
 }
 
+export class GetLeaveTypeResponseBodyResultLeaveCertificate extends $tea.Model {
+  duration?: number;
+  enable?: boolean;
+  promptInformation?: string;
+  unit?: string;
+  static names(): { [key: string]: string } {
+    return {
+      duration: 'duration',
+      enable: 'enable',
+      promptInformation: 'promptInformation',
+      unit: 'unit',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      duration: 'number',
+      enable: 'boolean',
+      promptInformation: 'string',
+      unit: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetLeaveTypeResponseBodyResultSubmitTimeRule extends $tea.Model {
+  enableTimeLimit?: boolean;
+  timeType?: string;
+  timeUnit?: string;
+  timeValue?: number;
+  static names(): { [key: string]: string } {
+    return {
+      enableTimeLimit: 'enableTimeLimit',
+      timeType: 'timeType',
+      timeUnit: 'timeUnit',
+      timeValue: 'timeValue',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      enableTimeLimit: 'boolean',
+      timeType: 'string',
+      timeUnit: 'string',
+      timeValue: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetLeaveTypeResponseBodyResult extends $tea.Model {
+  bizType?: string;
+  hoursInPerDay?: number;
+  leaveCertificate?: GetLeaveTypeResponseBodyResultLeaveCertificate;
+  leaveCode?: string;
+  leaveName?: string;
+  leaveViewUnit?: string;
+  naturalDayLeave?: boolean;
+  source?: string;
+  submitTimeRule?: GetLeaveTypeResponseBodyResultSubmitTimeRule;
+  validityType?: string;
+  validityValue?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizType: 'bizType',
+      hoursInPerDay: 'hoursInPerDay',
+      leaveCertificate: 'leaveCertificate',
+      leaveCode: 'leaveCode',
+      leaveName: 'leaveName',
+      leaveViewUnit: 'leaveViewUnit',
+      naturalDayLeave: 'naturalDayLeave',
+      source: 'source',
+      submitTimeRule: 'submitTimeRule',
+      validityType: 'validityType',
+      validityValue: 'validityValue',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizType: 'string',
+      hoursInPerDay: 'number',
+      leaveCertificate: GetLeaveTypeResponseBodyResultLeaveCertificate,
+      leaveCode: 'string',
+      leaveName: 'string',
+      leaveViewUnit: 'string',
+      naturalDayLeave: 'boolean',
+      source: 'string',
+      submitTimeRule: GetLeaveTypeResponseBodyResultSubmitTimeRule,
+      validityType: 'string',
+      validityValue: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetMachineResponseBodyResultMachineBluetoothVO extends $tea.Model {
   address?: string;
   bluetoothCheckWithFace?: boolean;
@@ -2093,6 +2380,53 @@ export class GetUserHolidaysResponseBodyResult extends $tea.Model {
     return {
       holidays: { 'type': 'array', 'itemType': GetUserHolidaysResponseBodyResultHolidays },
       userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ProcessApproveCreateRequestPunchParam extends $tea.Model {
+  positionId?: string;
+  positionName?: string;
+  positionType?: string;
+  punchTime?: number;
+  static names(): { [key: string]: string } {
+    return {
+      positionId: 'positionId',
+      positionName: 'positionName',
+      positionType: 'positionType',
+      punchTime: 'punchTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      positionId: 'string',
+      positionName: 'string',
+      positionType: 'string',
+      punchTime: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ProcessApproveCreateResponseBodyResult extends $tea.Model {
+  dingtalkApproveId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dingtalkApproveId: 'dingtalkApproveId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingtalkApproveId: 'string',
     };
   }
 
@@ -2712,6 +3046,39 @@ export default class Client extends OpenApi {
     return $tea.cast<GetClosingAccountsResponse>(await this.doROARequest("GetClosingAccounts", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/closingAccounts/rules/query`, "json", req, runtime), new GetClosingAccountsResponse({}));
   }
 
+  async getLeaveType(request: GetLeaveTypeRequest): Promise<GetLeaveTypeResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetLeaveTypeHeaders({ });
+    return await this.getLeaveTypeWithOptions(request, headers, runtime);
+  }
+
+  async getLeaveTypeWithOptions(request: GetLeaveTypeRequest, headers: GetLeaveTypeHeaders, runtime: $Util.RuntimeOptions): Promise<GetLeaveTypeResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.opUserId)) {
+      query["opUserId"] = request.opUserId;
+    }
+
+    if (!Util.isUnset(request.vacationSource)) {
+      query["vacationSource"] = request.vacationSource;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetLeaveTypeResponse>(await this.doROARequest("GetLeaveType", "attendance_1.0", "HTTP", "GET", "AK", `/v1.0/attendance/leaves/types`, "json", req, runtime), new GetLeaveTypeResponse({}));
+  }
+
   async getMachine(devId: string): Promise<GetMachineResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetMachineHeaders({ });
@@ -2833,6 +3200,55 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<GetUserHolidaysResponse>(await this.doROARequest("GetUserHolidays", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/holidays`, "json", req, runtime), new GetUserHolidaysResponse({}));
+  }
+
+  async processApproveCreate(request: ProcessApproveCreateRequest): Promise<ProcessApproveCreateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ProcessApproveCreateHeaders({ });
+    return await this.processApproveCreateWithOptions(request, headers, runtime);
+  }
+
+  async processApproveCreateWithOptions(request: ProcessApproveCreateRequest, headers: ProcessApproveCreateHeaders, runtime: $Util.RuntimeOptions): Promise<ProcessApproveCreateResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.approveId)) {
+      body["approveId"] = request.approveId;
+    }
+
+    if (!Util.isUnset(request.opUserId)) {
+      body["opUserId"] = request.opUserId;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.punchParam))) {
+      body["punchParam"] = request.punchParam;
+    }
+
+    if (!Util.isUnset(request.subType)) {
+      body["subType"] = request.subType;
+    }
+
+    if (!Util.isUnset(request.tagName)) {
+      body["tagName"] = request.tagName;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<ProcessApproveCreateResponse>(await this.doROARequest("ProcessApproveCreate", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/workflows/checkInForms`, "json", req, runtime), new ProcessApproveCreateResponse({}));
   }
 
   async syncScheduleInfo(request: SyncScheduleInfoRequest): Promise<SyncScheduleInfoResponse> {
