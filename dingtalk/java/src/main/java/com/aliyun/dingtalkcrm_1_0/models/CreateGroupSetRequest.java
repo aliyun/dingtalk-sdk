@@ -31,6 +31,9 @@ public class CreateGroupSetRequest extends TeaModel {
     @NameInMap("templateId")
     public String templateId;
 
+    @NameInMap("welcome")
+    public String welcome;
+
     public static CreateGroupSetRequest build(java.util.Map<String, ?> map) throws Exception {
         CreateGroupSetRequest self = new CreateGroupSetRequest();
         return TeaModel.build(map, self);
@@ -106,6 +109,14 @@ public class CreateGroupSetRequest extends TeaModel {
     }
     public String getTemplateId() {
         return this.templateId;
+    }
+
+    public CreateGroupSetRequest setWelcome(String welcome) {
+        this.welcome = welcome;
+        return this;
+    }
+    public String getWelcome() {
+        return this.welcome;
     }
 
 }

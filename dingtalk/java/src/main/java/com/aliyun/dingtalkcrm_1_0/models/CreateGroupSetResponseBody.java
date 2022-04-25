@@ -10,6 +10,9 @@ public class CreateGroupSetResponseBody extends TeaModel {
     @NameInMap("gmtModified")
     public String gmtModified;
 
+    @NameInMap("inviteLink")
+    public String inviteLink;
+
     @NameInMap("lastOpenConversationId")
     public String lastOpenConversationId;
 
@@ -68,6 +71,14 @@ public class CreateGroupSetResponseBody extends TeaModel {
     }
     public String getGmtModified() {
         return this.gmtModified;
+    }
+
+    public CreateGroupSetResponseBody setInviteLink(String inviteLink) {
+        this.inviteLink = inviteLink;
+        return this;
+    }
+    public String getInviteLink() {
+        return this.inviteLink;
     }
 
     public CreateGroupSetResponseBody setLastOpenConversationId(String lastOpenConversationId) {

@@ -14,6 +14,9 @@ public class GetGroupSetResponseBody extends TeaModel {
     @NameInMap("groupChatCount")
     public Integer groupChatCount;
 
+    @NameInMap("inviteLink")
+    public String inviteLink;
+
     @NameInMap("lastOpenConversationId")
     public String lastOpenConversationId;
 
@@ -80,6 +83,14 @@ public class GetGroupSetResponseBody extends TeaModel {
     }
     public Integer getGroupChatCount() {
         return this.groupChatCount;
+    }
+
+    public GetGroupSetResponseBody setInviteLink(String inviteLink) {
+        this.inviteLink = inviteLink;
+        return this;
+    }
+    public String getInviteLink() {
+        return this.inviteLink;
     }
 
     public GetGroupSetResponseBody setLastOpenConversationId(String lastOpenConversationId) {
